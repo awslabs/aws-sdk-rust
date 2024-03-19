@@ -5,23 +5,20 @@ pub use crate::operation::list_workflow_types::_list_workflow_types_input::ListW
 
 impl ListWorkflowTypesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_workflow_types();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_workflow_types::ListWorkflowTypesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_workflow_types();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListWorkflowTypes`.
-///
+/// 
 /// <p>Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.</p>
 /// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
@@ -37,33 +34,32 @@ impl ListWorkflowTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkflowTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_workflow_types::builders::ListWorkflowTypesInputBuilder,
+                    inner: crate::operation::list_workflow_types::builders::ListWorkflowTypesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        crate::operation::list_workflow_types::ListWorkflowTypesError,
-    > for ListWorkflowTypesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_workflow_types::ListWorkflowTypesOutput,
+                    crate::operation::list_workflow_types::ListWorkflowTypesError,
+                > for ListWorkflowTypesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
+                        crate::operation::list_workflow_types::ListWorkflowTypesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListWorkflowTypesFluentBuilder {
     /// Creates a new `ListWorkflowTypes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,59 +68,50 @@ impl ListWorkflowTypesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_workflow_types::ListWorkflowTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_workflow_types::ListWorkflowTypes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_workflow_types::ListWorkflowTypes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
-        crate::operation::list_workflow_types::ListWorkflowTypesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_workflow_types::ListWorkflowTypesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_types::ListWorkflowTypesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_workflow_types::ListWorkflowTypes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_workflow_types::ListWorkflowTypes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_workflow_types::ListWorkflowTypesOutput, crate::operation::list_workflow_types::ListWorkflowTypesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator {
-        crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator {
+                                crate::operation::list_workflow_types::paginator::ListWorkflowTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the domain in which the workflow types have been registered.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -213,3 +200,4 @@ impl ListWorkflowTypesFluentBuilder {
         self.inner.get_reverse_order()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The start time or end time for an hours of operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HoursOfOperationTimeSlice {
+pub struct HoursOfOperationTimeSlice  {
     /// <p>The hours.</p>
     pub hours: i32,
     /// <p>The minutes.</p>
     pub minutes: i32,
 }
-impl HoursOfOperationTimeSlice {
+impl  HoursOfOperationTimeSlice  {
     /// <p>The hours.</p>
     pub fn hours(&self) -> i32 {
         self.hours
@@ -42,8 +42,7 @@ impl HoursOfOperationTimeSliceBuilder {
     }
     /// <p>The hours.</p>
     pub fn set_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hours = input;
-        self
+        self.hours = input; self
     }
     /// <p>The hours.</p>
     pub fn get_hours(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl HoursOfOperationTimeSliceBuilder {
     }
     /// <p>The minutes.</p>
     pub fn set_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minutes = input;
-        self
+        self.minutes = input; self
     }
     /// <p>The minutes.</p>
     pub fn get_minutes(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl HoursOfOperationTimeSliceBuilder {
     /// - [`hours`](crate::types::builders::HoursOfOperationTimeSliceBuilder::hours)
     /// - [`minutes`](crate::types::builders::HoursOfOperationTimeSliceBuilder::minutes)
     pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationTimeSlice, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HoursOfOperationTimeSlice {
-            hours: self.hours.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hours",
-                    "hours was not specified but it is required when building HoursOfOperationTimeSlice",
-                )
-            })?,
-            minutes: self.minutes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minutes",
-                    "minutes was not specified but it is required when building HoursOfOperationTimeSlice",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HoursOfOperationTimeSlice {
+                hours: self.hours
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hours", "hours was not specified but it is required when building HoursOfOperationTimeSlice")
+                    )?
+                ,
+                minutes: self.minutes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minutes", "minutes was not specified but it is required when building HoursOfOperationTimeSlice")
+                    )?
+                ,
+            }
+        )
     }
 }
+

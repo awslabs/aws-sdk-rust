@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStreamingUrlInput {
+pub struct CreateStreamingUrlInput  {
     /// <p>The name of the stack.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet.</p>
@@ -16,21 +16,21 @@ pub struct CreateStreamingUrlInput {
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub session_context: ::std::option::Option<::std::string::String>,
 }
-impl CreateStreamingUrlInput {
+impl  CreateStreamingUrlInput  {
     /// <p>The name of the stack.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The identifier of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
@@ -38,7 +38,7 @@ impl CreateStreamingUrlInput {
         self.validity
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn session_context(&self) -> ::std::option::Option<&str> {
+    pub fn session_context(&self) -> ::std::option::Option<& str> {
         self.session_context.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The identifier of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.validity = input;
-        self
+        self.validity = input; self
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub fn get_validity(&self) -> &::std::option::Option<i64> {
@@ -141,25 +136,30 @@ impl CreateStreamingUrlInputBuilder {
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_session_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_context = input;
-        self
+        self.session_context = input; self
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn get_session_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_context
     }
     /// Consumes the builder and constructs a [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_streaming_url::CreateStreamingUrlInput {
-            stack_name: self.stack_name,
-            fleet_name: self.fleet_name,
-            user_id: self.user_id,
-            application_id: self.application_id,
-            validity: self.validity,
-            session_context: self.session_context,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_streaming_url::CreateStreamingUrlInput {
+                stack_name: self.stack_name
+                ,
+                fleet_name: self.fleet_name
+                ,
+                user_id: self.user_id
+                ,
+                application_id: self.application_id
+                ,
+                validity: self.validity
+                ,
+                session_context: self.session_context
+                ,
+            }
+        )
     }
 }
+

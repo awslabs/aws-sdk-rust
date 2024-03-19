@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApiKeysOutput {
+pub struct ListApiKeysOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub api_key_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,
+    pub api_key_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKeySummary>>,
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation.</p>
     pub application_integration_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApiKeysOutput {
+impl  ListApiKeysOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_key_summaries.is_none()`.
-    pub fn api_key_summaries(&self) -> &[crate::types::ApiKeySummary] {
-        self.api_key_summaries.as_deref().unwrap_or_default()
+    pub fn api_key_summaries(&self) -> & [crate::types::ApiKeySummary] {
+        self.api_key_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation.</p>
-    pub fn application_integration_url(&self) -> ::std::option::Option<&str> {
+    pub fn application_integration_url(&self) -> ::std::option::Option<& str> {
         self.application_integration_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApiKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApiKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListApiKeysOutput`](crate::operation::list_api_keys::ListApiKeysOutput).
     pub fn builder() -> crate::operation::list_api_keys::builders::ListApiKeysOutputBuilder {
@@ -44,7 +45,7 @@ impl ListApiKeysOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiKeysOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) api_key_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,
+    pub(crate) api_key_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKeySummary>>,
     pub(crate) application_integration_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl ListApiKeysOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl ListApiKeysOutputBuilder {
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn api_key_summaries(mut self, input: crate::types::ApiKeySummary) -> Self {
         let mut v = self.api_key_summaries.unwrap_or_default();
-        v.push(input);
-        self.api_key_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.api_key_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn set_api_key_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>) -> Self {
-        self.api_key_summaries = input;
-        self
+    pub fn set_api_key_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKeySummary>>) -> Self {
+        self.api_key_summaries = input; self
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn get_api_key_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>> {
+    pub fn get_api_key_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApiKeySummary>> {
         &self.api_key_summaries
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation.</p>
@@ -90,29 +89,32 @@ impl ListApiKeysOutputBuilder {
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation.</p>
     pub fn set_application_integration_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_integration_url = input;
-        self
+        self.application_integration_url = input; self
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation.</p>
     pub fn get_application_integration_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_integration_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApiKeysOutput`](crate::operation::list_api_keys::ListApiKeysOutput).
     pub fn build(self) -> crate::operation::list_api_keys::ListApiKeysOutput {
         crate::operation::list_api_keys::ListApiKeysOutput {
-            next_marker: self.next_marker,
-            api_key_summaries: self.api_key_summaries,
-            application_integration_url: self.application_integration_url,
+            next_marker: self.next_marker
+            ,
+            api_key_summaries: self.api_key_summaries
+            ,
+            application_integration_url: self.application_integration_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

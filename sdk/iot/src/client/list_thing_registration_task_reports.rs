@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingRegistrationTaskReports`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_id(impl Into<String>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::set_task_id):<br>required: **true**<br><p>The id of the task.</p><br>
     ///   - [`report_type(ReportType)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::report_type) / [`set_report_type(Option<ReportType>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::set_report_type):<br>required: **true**<br><p>The type of task report.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request.</p><br>
-    /// - On success, responds with [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput) with field(s):
+                            /// - On success, responds with [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput) with field(s):
     ///   - [`resource_links(Option<Vec::<String>>)`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput::resource_links): <p>Links to the task resources.</p>
     ///   - [`report_type(Option<ReportType>)`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput::report_type): <p>The type of task report.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListThingRegistrationTaskReportsError>`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError)
-    pub fn list_thing_registration_task_reports(
-        &self,
-    ) -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder {
-        crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListThingRegistrationTaskReportsError>`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError)
+    pub fn list_thing_registration_task_reports(&self) -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder {
+                                crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

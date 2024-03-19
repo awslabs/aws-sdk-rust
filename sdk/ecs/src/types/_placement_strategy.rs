@@ -3,19 +3,19 @@
 /// <p>The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task placement strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlacementStrategy {
+pub struct PlacementStrategy  {
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
     pub r#type: ::std::option::Option<crate::types::PlacementStrategyType>,
     /// <p>The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that's applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this field is not used.</p>
     pub field: ::std::option::Option<::std::string::String>,
 }
-impl PlacementStrategy {
+impl  PlacementStrategy  {
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PlacementStrategyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PlacementStrategyType> {
         self.r#type.as_ref()
     }
     /// <p>The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that's applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this field is not used.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PlacementStrategyBuilder {
     }
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PlacementStrategyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PlacementStrategyType> {
@@ -55,8 +54,7 @@ impl PlacementStrategyBuilder {
     }
     /// <p>The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that's applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this field is not used.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The field to apply the placement strategy against. For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that's applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the <code>random</code> placement strategy, this field is not used.</p>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PlacementStrategyBuilder {
     /// Consumes the builder and constructs a [`PlacementStrategy`](crate::types::PlacementStrategy).
     pub fn build(self) -> crate::types::PlacementStrategy {
         crate::types::PlacementStrategy {
-            r#type: self.r#type,
-            field: self.field,
+            r#type: self.r#type
+            ,
+            field: self.field
+            ,
         }
     }
 }
+

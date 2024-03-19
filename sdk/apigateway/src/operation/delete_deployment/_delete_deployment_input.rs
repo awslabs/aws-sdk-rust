@@ -3,19 +3,19 @@
 /// <p>Requests API Gateway to delete a Deployment resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentInput {
+pub struct DeleteDeploymentInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Deployment resource to delete.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeploymentInput {
+impl  DeleteDeploymentInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the Deployment resource to delete.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteDeploymentInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteDeploymentInputBuilder {
     }
     /// <p>The identifier of the Deployment resource to delete.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The identifier of the Deployment resource to delete.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_deployment::DeleteDeploymentInput {
-            rest_api_id: self.rest_api_id,
-            deployment_id: self.deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_deployment::DeleteDeploymentInput {
+                rest_api_id: self.rest_api_id
+                ,
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

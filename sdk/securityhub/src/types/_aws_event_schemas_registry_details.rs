@@ -3,7 +3,7 @@
 /// <p>A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventSchemasRegistryDetails {
+pub struct AwsEventSchemasRegistryDetails  {
     /// <p>A description of the registry to be created.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
@@ -11,17 +11,17 @@ pub struct AwsEventSchemasRegistryDetails {
     /// <p>The name of the schema registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventSchemasRegistryDetails {
+impl  AwsEventSchemasRegistryDetails  {
     /// <p>A description of the registry to be created.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The name of the schema registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsEventSchemasRegistryDetailsBuilder {
     }
     /// <p>A description of the registry to be created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the registry to be created.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsEventSchemasRegistryDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsEventSchemasRegistryDetailsBuilder {
     }
     /// <p>The name of the schema registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the schema registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AwsEventSchemasRegistryDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventSchemasRegistryDetails`](crate::types::AwsEventSchemasRegistryDetails).
     pub fn build(self) -> crate::types::AwsEventSchemasRegistryDetails {
         crate::types::AwsEventSchemasRegistryDetails {
-            description: self.description,
-            registry_arn: self.registry_arn,
-            registry_name: self.registry_name,
+            description: self.description
+            ,
+            registry_arn: self.registry_arn
+            ,
+            registry_name: self.registry_name
+            ,
         }
     }
 }
+

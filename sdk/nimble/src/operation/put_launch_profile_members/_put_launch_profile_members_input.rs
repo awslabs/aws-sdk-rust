@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLaunchProfileMembersInput {
+pub struct PutLaunchProfileMembersInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the identity store.</p>
@@ -10,31 +10,32 @@ pub struct PutLaunchProfileMembersInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of members.</p>
-    pub members: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
+    pub members: ::std::option::Option<::std::vec::Vec::<crate::types::NewLaunchProfileMember>>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl PutLaunchProfileMembersInput {
+impl  PutLaunchProfileMembersInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>A list of members.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
-    pub fn members(&self) -> &[crate::types::NewLaunchProfileMember] {
-        self.members.as_deref().unwrap_or_default()
+    pub fn members(&self) -> & [crate::types::NewLaunchProfileMember] {
+        self.members.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -52,7 +53,7 @@ pub struct PutLaunchProfileMembersInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec::<crate::types::NewLaunchProfileMember>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl PutLaunchProfileMembersInputBuilder {
@@ -63,8 +64,7 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>The ID of the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The ID of the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +105,16 @@ impl PutLaunchProfileMembersInputBuilder {
     /// <p>A list of members.</p>
     pub fn members(mut self, input: crate::types::NewLaunchProfileMember) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NewLaunchProfileMember>>) -> Self {
+        self.members = input; self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NewLaunchProfileMember>> {
         &self.members
     }
     /// <p>The studio ID.</p>
@@ -128,26 +125,28 @@ impl PutLaunchProfileMembersInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
-            client_token: self.client_token,
-            identity_store_id: self.identity_store_id,
-            launch_profile_id: self.launch_profile_id,
-            members: self.members,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
+                client_token: self.client_token
+                ,
+                identity_store_id: self.identity_store_id
+                ,
+                launch_profile_id: self.launch_profile_id
+                ,
+                members: self.members
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeScheduledInstanceAvailability.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScheduledInstanceAvailabilityInput {
+pub struct DescribeScheduledInstanceAvailabilityInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
@@ -15,7 +15,7 @@ pub struct DescribeScheduledInstanceAvailabilityInput {
     /// <li>
     /// <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The time period for the first schedule to start.</p>
     pub first_slot_start_time_range: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -29,7 +29,7 @@ pub struct DescribeScheduledInstanceAvailabilityInput {
     /// <p>The schedule recurrence.</p>
     pub recurrence: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>,
 }
-impl DescribeScheduledInstanceAvailabilityInput {
+impl  DescribeScheduledInstanceAvailabilityInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -43,13 +43,14 @@ impl DescribeScheduledInstanceAvailabilityInput {
     /// <li>
     /// <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn first_slot_start_time_range(&self) -> ::std::option::Option<&crate::types::SlotDateTimeRangeRequest> {
+    pub fn first_slot_start_time_range(&self) -> ::std::option::Option<& crate::types::SlotDateTimeRangeRequest> {
         self.first_slot_start_time_range.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -65,11 +66,11 @@ impl DescribeScheduledInstanceAvailabilityInput {
         self.min_slot_duration_in_hours
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The schedule recurrence.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::ScheduledInstanceRecurrenceRequest> {
+    pub fn recurrence(&self) -> ::std::option::Option<& crate::types::ScheduledInstanceRecurrenceRequest> {
         self.recurrence.as_ref()
     }
 }
@@ -85,7 +86,7 @@ impl DescribeScheduledInstanceAvailabilityInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) first_slot_start_time_range: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) max_slot_duration_in_hours: ::std::option::Option<i32>,
@@ -101,8 +102,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -123,9 +123,9 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -136,9 +136,8 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// <li>
     /// <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -149,7 +148,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// <li>
     /// <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The time period for the first schedule to start.</p>
@@ -160,8 +159,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn set_first_slot_start_time_range(mut self, input: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>) -> Self {
-        self.first_slot_start_time_range = input;
-        self
+        self.first_slot_start_time_range = input; self
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn get_first_slot_start_time_range(&self) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
@@ -174,8 +172,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -188,8 +185,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and less than 1,720.</p>
     pub fn set_max_slot_duration_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_slot_duration_in_hours = input;
-        self
+        self.max_slot_duration_in_hours = input; self
     }
     /// <p>The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and less than 1,720.</p>
     pub fn get_max_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
@@ -202,8 +198,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
     pub fn set_min_slot_duration_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_slot_duration_in_hours = input;
-        self
+        self.min_slot_duration_in_hours = input; self
     }
     /// <p>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
     pub fn get_min_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
@@ -216,8 +211,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,31 +225,34 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     }
     /// <p>The schedule recurrence.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>) -> Self {
-        self.recurrence = input;
-        self
+        self.recurrence = input; self
     }
     /// <p>The schedule recurrence.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
         &self.recurrence
     }
     /// Consumes the builder and constructs a [`DescribeScheduledInstanceAvailabilityInput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                first_slot_start_time_range: self.first_slot_start_time_range,
-                max_results: self.max_results,
-                max_slot_duration_in_hours: self.max_slot_duration_in_hours,
-                min_slot_duration_in_hours: self.min_slot_duration_in_hours,
-                next_token: self.next_token,
-                recurrence: self.recurrence,
-            },
+                dry_run: self.dry_run
+                ,
+                filters: self.filters
+                ,
+                first_slot_start_time_range: self.first_slot_start_time_range
+                ,
+                max_results: self.max_results
+                ,
+                max_slot_duration_in_hours: self.max_slot_duration_in_hours
+                ,
+                min_slot_duration_in_hours: self.min_slot_duration_in_hours
+                ,
+                next_token: self.next_token
+                ,
+                recurrence: self.recurrence
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeFolderContentsInput {
+pub struct DescribeFolderContentsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
@@ -20,21 +20,21 @@ pub struct DescribeFolderContentsInput {
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub include: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFolderContentsInput {
+impl  DescribeFolderContentsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The sorting criteria.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::ResourceSortType> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::ResourceSortType> {
         self.sort.as_ref()
     }
     /// <p>The order for the contents of the folder.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::OrderType> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::OrderType> {
         self.order.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -42,19 +42,19 @@ impl DescribeFolderContentsInput {
         self.limit
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The type of items.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FolderContentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FolderContentType> {
         self.r#type.as_ref()
     }
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
-    pub fn include(&self) -> ::std::option::Option<&str> {
+    pub fn include(&self) -> ::std::option::Option<& str> {
         self.include.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeFolderContentsInput {
+impl  ::std::fmt::Debug for DescribeFolderContentsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderContentsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -96,8 +96,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The sorting criteria.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ResourceSortType>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>The sorting criteria.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::ResourceSortType> {
@@ -139,8 +136,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The order for the contents of the folder.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order for the contents of the folder.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderType> {
@@ -153,8 +149,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -167,8 +162,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The type of items.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FolderContentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of items.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FolderContentType> {
@@ -195,30 +188,34 @@ impl DescribeFolderContentsInputBuilder {
     }
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn set_include(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.include = input;
-        self
+        self.include = input; self
     }
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn get_include(&self) -> &::std::option::Option<::std::string::String> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeFolderContentsInput`](crate::operation::describe_folder_contents::DescribeFolderContentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_folder_contents::DescribeFolderContentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_folder_contents::DescribeFolderContentsInput {
-            authentication_token: self.authentication_token,
-            folder_id: self.folder_id,
-            sort: self.sort,
-            order: self.order,
-            limit: self.limit,
-            marker: self.marker,
-            r#type: self.r#type,
-            include: self.include,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_folder_contents::DescribeFolderContentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_folder_contents::DescribeFolderContentsInput {
+                authentication_token: self.authentication_token
+                ,
+                folder_id: self.folder_id
+                ,
+                sort: self.sort
+                ,
+                order: self.order
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+                r#type: self.r#type
+                ,
+                include: self.include
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeFolderContentsInputBuilder {
@@ -235,3 +232,4 @@ impl ::std::fmt::Debug for DescribeFolderContentsInputBuilder {
         formatter.finish()
     }
 }
+

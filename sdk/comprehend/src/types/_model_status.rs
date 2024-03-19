@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let modelstatus = unimplemented!();
 /// match modelstatus {
@@ -36,16 +36,14 @@
 /// Specifically, when `modelstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ModelStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -65,88 +63,80 @@ pub enum ModelStatus {
     Training,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ModelStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETING" => ModelStatus::Deleting,
-            "IN_ERROR" => ModelStatus::InError,
-            "STOPPED" => ModelStatus::Stopped,
-            "STOP_REQUESTED" => ModelStatus::StopRequested,
-            "SUBMITTED" => ModelStatus::Submitted,
-            "TRAINED" => ModelStatus::Trained,
-            "TRAINED_WITH_WARNING" => ModelStatus::TrainedWithWarning,
-            "TRAINING" => ModelStatus::Training,
-            other => ModelStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DELETING" => ModelStatus::Deleting,
+"IN_ERROR" => ModelStatus::InError,
+"STOPPED" => ModelStatus::Stopped,
+"STOP_REQUESTED" => ModelStatus::StopRequested,
+"SUBMITTED" => ModelStatus::Submitted,
+"TRAINED" => ModelStatus::Trained,
+"TRAINED_WITH_WARNING" => ModelStatus::TrainedWithWarning,
+"TRAINING" => ModelStatus::Training,
+other => ModelStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ModelStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ModelStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ModelStatus::from(s))
+                    }
+                }
 impl ModelStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ModelStatus::Deleting => "DELETING",
-            ModelStatus::InError => "IN_ERROR",
-            ModelStatus::Stopped => "STOPPED",
-            ModelStatus::StopRequested => "STOP_REQUESTED",
-            ModelStatus::Submitted => "SUBMITTED",
-            ModelStatus::Trained => "TRAINED",
-            ModelStatus::TrainedWithWarning => "TRAINED_WITH_WARNING",
-            ModelStatus::Training => "TRAINING",
-            ModelStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETING",
-            "IN_ERROR",
-            "STOPPED",
-            "STOP_REQUESTED",
-            "SUBMITTED",
-            "TRAINED",
-            "TRAINED_WITH_WARNING",
-            "TRAINING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ModelStatus::Deleting => "DELETING",
+    ModelStatus::InError => "IN_ERROR",
+    ModelStatus::Stopped => "STOPPED",
+    ModelStatus::StopRequested => "STOP_REQUESTED",
+    ModelStatus::Submitted => "SUBMITTED",
+    ModelStatus::Trained => "TRAINED",
+    ModelStatus::TrainedWithWarning => "TRAINED_WITH_WARNING",
+    ModelStatus::Training => "TRAINING",
+    ModelStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETING", "IN_ERROR", "STOPPED", "STOP_REQUESTED", "SUBMITTED", "TRAINED", "TRAINED_WITH_WARNING", "TRAINING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ModelStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ModelStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ModelStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ModelStatus::Deleting => write!(f, "DELETING"),
-            ModelStatus::InError => write!(f, "IN_ERROR"),
-            ModelStatus::Stopped => write!(f, "STOPPED"),
-            ModelStatus::StopRequested => write!(f, "STOP_REQUESTED"),
-            ModelStatus::Submitted => write!(f, "SUBMITTED"),
-            ModelStatus::Trained => write!(f, "TRAINED"),
-            ModelStatus::TrainedWithWarning => write!(f, "TRAINED_WITH_WARNING"),
-            ModelStatus::Training => write!(f, "TRAINING"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ModelStatus::Deleting => write!(f, "DELETING"),
+ModelStatus::InError => write!(f, "IN_ERROR"),
+ModelStatus::Stopped => write!(f, "STOPPED"),
+ModelStatus::StopRequested => write!(f, "STOP_REQUESTED"),
+ModelStatus::Submitted => write!(f, "SUBMITTED"),
+ModelStatus::Trained => write!(f, "TRAINED"),
+ModelStatus::TrainedWithWarning => write!(f, "TRAINED_WITH_WARNING"),
+ModelStatus::Training => write!(f, "TRAINING"),
+ModelStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

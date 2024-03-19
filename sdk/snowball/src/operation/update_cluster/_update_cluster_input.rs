@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterInput {
+pub struct UpdateClusterInput  {
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
@@ -22,41 +22,41 @@ pub struct UpdateClusterInput {
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateClusterInput {
+impl  UpdateClusterInput  {
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The updated description of this cluster.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn resources(&self) -> ::std::option::Option<&crate::types::JobResource> {
+    pub fn resources(&self) -> ::std::option::Option<& crate::types::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(&self) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> ::std::option::Option<& crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
-    pub fn address_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
-    pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> ::std::option::Option<& crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> ::std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> ::std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The updated description of this cluster.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of this cluster.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
-        self.resources = input;
-        self
+        self.resources = input; self
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
@@ -146,8 +142,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
-        self.on_device_service_configuration = input;
-        self
+        self.on_device_service_configuration = input; self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
@@ -160,8 +155,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_id = input;
-        self
+        self.address_id = input; self
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
-        self.shipping_option = input;
-        self
+        self.shipping_option = input; self
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
     pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
@@ -188,8 +181,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
@@ -202,27 +194,36 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forwarding_address_id = input;
-        self
+        self.forwarding_address_id = input; self
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.forwarding_address_id
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_id: self.cluster_id,
-            role_arn: self.role_arn,
-            description: self.description,
-            resources: self.resources,
-            on_device_service_configuration: self.on_device_service_configuration,
-            address_id: self.address_id,
-            shipping_option: self.shipping_option,
-            notification: self.notification,
-            forwarding_address_id: self.forwarding_address_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster::UpdateClusterInput {
+                cluster_id: self.cluster_id
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+                resources: self.resources
+                ,
+                on_device_service_configuration: self.on_device_service_configuration
+                ,
+                address_id: self.address_id
+                ,
+                shipping_option: self.shipping_option
+                ,
+                notification: self.notification
+                ,
+                forwarding_address_id: self.forwarding_address_id
+                ,
+            }
+        )
     }
 }
+

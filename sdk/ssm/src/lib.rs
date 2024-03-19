@@ -14,90 +14,92 @@
 #![allow(clippy::unnecessary_map_on_constructor)]
 #![allow(rustdoc::bare_urls)]
 #![allow(rustdoc::redundant_explicit_links)]
+
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.
-//!
+//! 
 //! This reference is intended to be used with the [Amazon Web Services Systems Manager User Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/). To get started, see [Setting up Amazon Web Services Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html).
-//!
+//! 
 //! __Related resources__
 //!   - For information about each of the capabilities that comprise Systems Manager, see [Systems Manager capabilities](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities) in the _Amazon Web Services Systems Manager User Guide_.
 //!   - For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the _ [Systems Manager Automation runbook reference](https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html) _.
 //!   - For information about AppConfig, a capability of Systems Manager, see the _ [AppConfig User Guide](https://docs.aws.amazon.com/appconfig/latest/userguide/) _ and the _ [AppConfig API Reference](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/) _.
 //!   - For information about Incident Manager, a capability of Systems Manager, see the _ [Systems Manager Incident Manager User Guide](https://docs.aws.amazon.com/incident-manager/latest/userguide/) _ and the _ [Systems Manager Incident Manager API Reference](https://docs.aws.amazon.com/incident-manager/latest/APIReference/) _.
-//!
+//! 
 //! ## Getting Started
-//!
+//! 
 //! > Examples are available for many services and operations, check out the
 //! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
-//!
+//! 
 //! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 //! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-ssm` to
 //! your project, add the following to your **Cargo.toml** file:
-//!
+//! 
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ssm = "1.19.0"
+//! aws-sdk-ssm = "0.0.0-local"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//!
+//! 
 //! Then in code, a client can be created with the following:
-//!
+//! 
 //! ```rust,no_run
 //! use aws_sdk_ssm as ssm;
-//!
+//! 
 //! #[::tokio::main]
 //! async fn main() -> Result<(), ssm::Error> {
 //!     let config = aws_config::load_from_env().await;
 //!     let client = aws_sdk_ssm::Client::new(&config);
-//!
+//! 
 //!     // ... make some calls with the client
-//!
+//! 
 //!     Ok(())
 //! }
 //! ```
-//!
+//! 
 //! See the [client documentation](https://docs.rs/aws-sdk-ssm/latest/aws_sdk_ssm/client/struct.Client.html)
 //! for information on what calls can be made, and the inputs and outputs for each of those calls.
-//!
+//! 
 //! ## Using the SDK
-//!
+//! 
 //! Until the SDK is released, we will be adding information about using the SDK to the
 //! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
 //! additional sections for the guide by opening an issue and describing what you are trying to do.
-//!
+//! 
 //! ## Getting Help
-//!
+//! 
 //! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 //! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 //! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
 //! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
-//!
-//!
+//! 
+//! 
 //! # Crate Organization
-//!
+//! 
 //! The entry point for most customers will be [`Client`], which exposes one method for each API
 //! offered by Amazon Simple Systems Manager (SSM). The return value of each of these methods is a "fluent builder",
 //! where the different inputs for that API are added by builder-style function call chaining,
 //! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
-//!
+//! 
 //! Some of these API inputs may be structs or enums to provide more complex structured information.
 //! These structs and enums live in [`types`](crate::types). There are some simpler types for
 //! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
-//!
+//! 
 //! All types required to configure a client via the [`Config`](crate::Config) struct live
 //! in [`config`](crate::config).
-//!
+//! 
 //! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
 //! is the input, output, and error type for that API, as well as builders to construct each of those.
-//!
+//! 
 //! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
 //! client can return. Any other error type can be converted to this `Error` type via the
 //! [`From`](std::convert::From) trait.
-//!
+//! 
 //! The other modules within this crate are not required for normal usage.
+
 
 // Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
 pub use error_meta::Error;
@@ -107,14 +109,14 @@ pub use config::Config;
 
 /// Client for calling Amazon Simple Systems Manager (SSM).
 /// ## Constructing a `Client`
-///
+/// 
 /// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
 /// crate should be used to automatically resolve this config using
 /// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
 /// across multiple different AWS SDK clients. This config resolution process can be customized
 /// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
 /// the [builder pattern] to customize the default config.
-///
+/// 
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
@@ -122,12 +124,12 @@ pub use config::Config;
 /// let client = aws_sdk_ssm::Client::new(&config);
 /// # }
 /// ```
-///
+/// 
 /// Occasionally, SDKs may have additional service-specific values that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
 /// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
-///
+/// 
 /// ```rust,no_run
 /// # async fn wrapper() {
 /// let sdk_config = ::aws_config::load_from_env().await;
@@ -138,12 +140,12 @@ pub use config::Config;
 ///     .build();
 /// # }
 /// ```
-///
+/// 
 /// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-///
+/// 
 /// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
 /// be done once at application start-up.
-///
+/// 
 /// [`Config`]: crate::Config
 /// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
 /// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
@@ -153,20 +155,20 @@ pub use config::Config;
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 /// # Using the `Client`
-///
+/// 
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AddTagsToResource`](crate::operation::add_tags_to_resource) operation has
 /// a [`Client::add_tags_to_resource`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
-///
+/// 
 /// ```rust,ignore
 /// let result = client.add_tags_to_resource()
 ///     .resource_type("example")
 ///     .send()
 ///     .await;
 /// ```
-///
+/// 
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
@@ -212,3 +214,4 @@ mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;
+

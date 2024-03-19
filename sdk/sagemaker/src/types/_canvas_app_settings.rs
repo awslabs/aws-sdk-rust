@@ -3,7 +3,7 @@
 /// <p>The SageMaker Canvas application settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanvasAppSettings {
+pub struct CanvasAppSettings  {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
     pub time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
@@ -11,7 +11,7 @@ pub struct CanvasAppSettings {
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
     /// <p>The settings for connecting to an external data source with OAuth.</p>
-    pub identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
+    pub identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderOAuthSetting>>,
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub direct_deploy_settings: ::std::option::Option<crate::types::DirectDeploySettings>,
     /// <p>The settings for document querying.</p>
@@ -19,35 +19,36 @@ pub struct CanvasAppSettings {
     /// <p>The generative AI settings for the SageMaker Canvas application.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
 }
-impl CanvasAppSettings {
+impl  CanvasAppSettings  {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
-    pub fn time_series_forecasting_settings(&self) -> ::std::option::Option<&crate::types::TimeSeriesForecastingSettings> {
+    pub fn time_series_forecasting_settings(&self) -> ::std::option::Option<& crate::types::TimeSeriesForecastingSettings> {
         self.time_series_forecasting_settings.as_ref()
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
-    pub fn model_register_settings(&self) -> ::std::option::Option<&crate::types::ModelRegisterSettings> {
+    pub fn model_register_settings(&self) -> ::std::option::Option<& crate::types::ModelRegisterSettings> {
         self.model_register_settings.as_ref()
     }
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
-    pub fn workspace_settings(&self) -> ::std::option::Option<&crate::types::WorkspaceSettings> {
+    pub fn workspace_settings(&self) -> ::std::option::Option<& crate::types::WorkspaceSettings> {
         self.workspace_settings.as_ref()
     }
     /// <p>The settings for connecting to an external data source with OAuth.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_provider_o_auth_settings.is_none()`.
-    pub fn identity_provider_o_auth_settings(&self) -> &[crate::types::IdentityProviderOAuthSetting] {
-        self.identity_provider_o_auth_settings.as_deref().unwrap_or_default()
+    pub fn identity_provider_o_auth_settings(&self) -> & [crate::types::IdentityProviderOAuthSetting] {
+        self.identity_provider_o_auth_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
-    pub fn direct_deploy_settings(&self) -> ::std::option::Option<&crate::types::DirectDeploySettings> {
+    pub fn direct_deploy_settings(&self) -> ::std::option::Option<& crate::types::DirectDeploySettings> {
         self.direct_deploy_settings.as_ref()
     }
     /// <p>The settings for document querying.</p>
-    pub fn kendra_settings(&self) -> ::std::option::Option<&crate::types::KendraSettings> {
+    pub fn kendra_settings(&self) -> ::std::option::Option<& crate::types::KendraSettings> {
         self.kendra_settings.as_ref()
     }
     /// <p>The generative AI settings for the SageMaker Canvas application.</p>
-    pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
+    pub fn generative_ai_settings(&self) -> ::std::option::Option<& crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
     }
 }
@@ -65,7 +66,7 @@ pub struct CanvasAppSettingsBuilder {
     pub(crate) time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     pub(crate) model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
     pub(crate) workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
-    pub(crate) identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
+    pub(crate) identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderOAuthSetting>>,
     pub(crate) direct_deploy_settings: ::std::option::Option<crate::types::DirectDeploySettings>,
     pub(crate) kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
@@ -78,8 +79,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
     pub fn set_time_series_forecasting_settings(mut self, input: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>) -> Self {
-        self.time_series_forecasting_settings = input;
-        self
+        self.time_series_forecasting_settings = input; self
     }
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
     pub fn get_time_series_forecasting_settings(&self) -> &::std::option::Option<crate::types::TimeSeriesForecastingSettings> {
@@ -92,8 +92,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
     pub fn set_model_register_settings(mut self, input: ::std::option::Option<crate::types::ModelRegisterSettings>) -> Self {
-        self.model_register_settings = input;
-        self
+        self.model_register_settings = input; self
     }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
     pub fn get_model_register_settings(&self) -> &::std::option::Option<crate::types::ModelRegisterSettings> {
@@ -106,8 +105,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub fn set_workspace_settings(mut self, input: ::std::option::Option<crate::types::WorkspaceSettings>) -> Self {
-        self.workspace_settings = input;
-        self
+        self.workspace_settings = input; self
     }
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub fn get_workspace_settings(&self) -> &::std::option::Option<crate::types::WorkspaceSettings> {
@@ -120,20 +118,16 @@ impl CanvasAppSettingsBuilder {
     /// <p>The settings for connecting to an external data source with OAuth.</p>
     pub fn identity_provider_o_auth_settings(mut self, input: crate::types::IdentityProviderOAuthSetting) -> Self {
         let mut v = self.identity_provider_o_auth_settings.unwrap_or_default();
-        v.push(input);
-        self.identity_provider_o_auth_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identity_provider_o_auth_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The settings for connecting to an external data source with OAuth.</p>
-    pub fn set_identity_provider_o_auth_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
-    ) -> Self {
-        self.identity_provider_o_auth_settings = input;
-        self
+    pub fn set_identity_provider_o_auth_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderOAuthSetting>>) -> Self {
+        self.identity_provider_o_auth_settings = input; self
     }
     /// <p>The settings for connecting to an external data source with OAuth.</p>
-    pub fn get_identity_provider_o_auth_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>> {
+    pub fn get_identity_provider_o_auth_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderOAuthSetting>> {
         &self.identity_provider_o_auth_settings
     }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
@@ -143,8 +137,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub fn set_direct_deploy_settings(mut self, input: ::std::option::Option<crate::types::DirectDeploySettings>) -> Self {
-        self.direct_deploy_settings = input;
-        self
+        self.direct_deploy_settings = input; self
     }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub fn get_direct_deploy_settings(&self) -> &::std::option::Option<crate::types::DirectDeploySettings> {
@@ -157,8 +150,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>The settings for document querying.</p>
     pub fn set_kendra_settings(mut self, input: ::std::option::Option<crate::types::KendraSettings>) -> Self {
-        self.kendra_settings = input;
-        self
+        self.kendra_settings = input; self
     }
     /// <p>The settings for document querying.</p>
     pub fn get_kendra_settings(&self) -> &::std::option::Option<crate::types::KendraSettings> {
@@ -171,8 +163,7 @@ impl CanvasAppSettingsBuilder {
     }
     /// <p>The generative AI settings for the SageMaker Canvas application.</p>
     pub fn set_generative_ai_settings(mut self, input: ::std::option::Option<crate::types::GenerativeAiSettings>) -> Self {
-        self.generative_ai_settings = input;
-        self
+        self.generative_ai_settings = input; self
     }
     /// <p>The generative AI settings for the SageMaker Canvas application.</p>
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
@@ -181,13 +172,21 @@ impl CanvasAppSettingsBuilder {
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
-            time_series_forecasting_settings: self.time_series_forecasting_settings,
-            model_register_settings: self.model_register_settings,
-            workspace_settings: self.workspace_settings,
-            identity_provider_o_auth_settings: self.identity_provider_o_auth_settings,
-            direct_deploy_settings: self.direct_deploy_settings,
-            kendra_settings: self.kendra_settings,
-            generative_ai_settings: self.generative_ai_settings,
+            time_series_forecasting_settings: self.time_series_forecasting_settings
+            ,
+            model_register_settings: self.model_register_settings
+            ,
+            workspace_settings: self.workspace_settings
+            ,
+            identity_provider_o_auth_settings: self.identity_provider_o_auth_settings
+            ,
+            direct_deploy_settings: self.direct_deploy_settings
+            ,
+            kendra_settings: self.kendra_settings
+            ,
+            generative_ai_settings: self.generative_ai_settings
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes a Reserved Instance whose queued purchase was successfully deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuccessfulQueuedPurchaseDeletion {
+pub struct SuccessfulQueuedPurchaseDeletion  {
     /// <p>The ID of the Reserved Instance.</p>
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
-impl SuccessfulQueuedPurchaseDeletion {
+impl  SuccessfulQueuedPurchaseDeletion  {
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<& str> {
         self.reserved_instances_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SuccessfulQueuedPurchaseDeletionBuilder {
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_id = input;
-        self
+        self.reserved_instances_id = input; self
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SuccessfulQueuedPurchaseDeletionBuilder {
     /// Consumes the builder and constructs a [`SuccessfulQueuedPurchaseDeletion`](crate::types::SuccessfulQueuedPurchaseDeletion).
     pub fn build(self) -> crate::types::SuccessfulQueuedPurchaseDeletion {
         crate::types::SuccessfulQueuedPurchaseDeletion {
-            reserved_instances_id: self.reserved_instances_id,
+            reserved_instances_id: self.reserved_instances_id
+            ,
         }
     }
 }
+

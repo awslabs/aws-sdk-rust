@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct StartStreamTranscriptionInput {
+pub struct StartStreamTranscriptionInput  {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
@@ -112,11 +112,11 @@ pub struct StartStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
     pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
 }
-impl StartStreamTranscriptionInput {
+impl  StartStreamTranscriptionInput  {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
@@ -133,7 +133,7 @@ impl StartStreamTranscriptionInput {
     /// <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
-    pub fn media_encoding(&self) -> ::std::option::Option<&crate::types::MediaEncoding> {
+    pub fn media_encoding(&self) -> ::std::option::Option<& crate::types::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
@@ -141,19 +141,17 @@ impl StartStreamTranscriptionInput {
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn audio_stream(
-        &self,
-    ) -> &::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError> {
+    pub fn audio_stream(&self) -> & ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError> {
         &self.audio_stream
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
@@ -161,14 +159,14 @@ impl StartStreamTranscriptionInput {
     /// <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<& crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
@@ -194,33 +192,33 @@ impl StartStreamTranscriptionInput {
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn partial_results_stability(&self) -> ::std::option::Option<&crate::types::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> ::std::option::Option<& crate::types::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::ContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<& crate::types::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
     /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::ContentRedactionType> {
+    pub fn content_redaction_type(&self) -> ::std::option::Option<& crate::types::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-    pub fn pii_entity_types(&self) -> ::std::option::Option<&str> {
+    pub fn pii_entity_types(&self) -> ::std::option::Option<& str> {
         self.pii_entity_types.as_deref()
     }
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
-    pub fn language_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn language_model_name(&self) -> ::std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
     /// <p>Enables automatic language identification for your transcription.</p>
@@ -238,12 +236,12 @@ impl StartStreamTranscriptionInput {
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
-    pub fn language_options(&self) -> ::std::option::Option<&str> {
+    pub fn language_options(&self) -> ::std::option::Option<& str> {
         self.language_options.as_deref()
     }
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
-    pub fn preferred_language(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn preferred_language(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.preferred_language.as_ref()
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
@@ -258,7 +256,7 @@ impl StartStreamTranscriptionInput {
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
-    pub fn vocabulary_names(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_names(&self) -> ::std::option::Option<& str> {
         self.vocabulary_names.as_deref()
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
@@ -266,7 +264,7 @@ impl StartStreamTranscriptionInput {
     /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
-    pub fn vocabulary_filter_names(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_names(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_names.as_deref()
     }
 }
@@ -286,8 +284,7 @@ pub struct StartStreamTranscriptionInputBuilder {
     pub(crate) media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_stream:
-        ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>,
+    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) show_speaker_label: ::std::option::Option<bool>,
@@ -318,8 +315,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
@@ -335,8 +331,7 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.media_sample_rate_hertz = input;
-        self
+        self.media_sample_rate_hertz = input; self
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
@@ -368,8 +363,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
-        self.media_encoding = input;
-        self
+        self.media_encoding = input; self
     }
     /// <p>Specify the encoding of your input audio. Supported formats are:</p>
     /// <ul>
@@ -399,8 +393,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p><important>
@@ -419,8 +412,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
@@ -430,30 +422,18 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     /// This field is required.
-    pub fn audio_stream(
-        mut self,
-        input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
-    ) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
-        >,
-    ) -> Self {
-        self.audio_stream = input;
-        self
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>) -> Self {
+        self.audio_stream = input; self
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>
-    {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>> {
         &self.audio_stream
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
@@ -471,8 +451,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p><important>
@@ -495,8 +474,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
-        self.vocabulary_filter_method = input;
-        self
+        self.vocabulary_filter_method = input; self
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
@@ -514,8 +492,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn set_show_speaker_label(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_speaker_label = input;
-        self
+        self.show_speaker_label = input; self
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -535,8 +512,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_enable_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_channel_identification = input;
-        self
+        self.enable_channel_identification = input; self
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
@@ -552,8 +528,7 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
     pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_channels = input;
-        self
+        self.number_of_channels = input; self
     }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
     pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
@@ -566,8 +541,7 @@ impl StartStreamTranscriptionInputBuilder {
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub fn set_enable_partial_results_stabilization(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_partial_results_stabilization = input;
-        self
+        self.enable_partial_results_stabilization = input; self
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub fn get_enable_partial_results_stabilization(&self) -> &::std::option::Option<bool> {
@@ -584,8 +558,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub fn set_partial_results_stability(mut self, input: ::std::option::Option<crate::types::PartialResultsStability>) -> Self {
-        self.partial_results_stability = input;
-        self
+        self.partial_results_stability = input; self
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
@@ -606,8 +579,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentIdentificationType>) -> Self {
-        self.content_identification_type = input;
-        self
+        self.content_identification_type = input; self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
@@ -629,8 +601,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
     pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentRedactionType>) -> Self {
-        self.content_redaction_type = input;
-        self
+        self.content_redaction_type = input; self
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
     /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
@@ -650,8 +621,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pii_entity_types = input;
-        self
+        self.pii_entity_types = input; self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     /// <p>To include <code>PiiEntityTypes</code> in your request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
@@ -670,8 +640,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
     pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_model_name = input;
-        self
+        self.language_model_name = input; self
     }
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -696,8 +665,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     /// <p>Streaming language identification can't be combined with custom language models or redaction.</p>
     pub fn set_identify_language(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.identify_language = input;
-        self
+        self.identify_language = input; self
     }
     /// <p>Enables automatic language identification for your transcription.</p>
     /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. Including language options can improve transcription accuracy.</p>
@@ -725,8 +693,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
     /// </important>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_options = input;
-        self
+        self.language_options = input; self
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
@@ -746,8 +713,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
     pub fn set_preferred_language(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.preferred_language = input;
-        self
+        self.preferred_language = input; self
     }
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
@@ -767,8 +733,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.identify_multiple_languages = input;
-        self
+        self.identify_multiple_languages = input; self
     }
     /// <p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p>
     /// <p>If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream. Including <code>LanguageOptions</code> restricts <code>IdentifyMultipleLanguages</code> to only the language options that you specify, which can improve transcription accuracy.</p>
@@ -792,8 +757,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
     pub fn set_vocabulary_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_names = input;
-        self
+        self.vocabulary_names = input; self
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p><important>
@@ -818,8 +782,7 @@ impl StartStreamTranscriptionInputBuilder {
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
     pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_names = input;
-        self
+        self.vocabulary_filter_names = input; self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p><important>
@@ -832,41 +795,60 @@ impl StartStreamTranscriptionInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamTranscriptionInput`](crate::operation::start_stream_transcription::StartStreamTranscriptionInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`audio_stream`](crate::operation::start_stream_transcription::builders::StartStreamTranscriptionInputBuilder::audio_stream)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_stream_transcription::StartStreamTranscriptionInput {
-            language_code: self.language_code,
-            media_sample_rate_hertz: self.media_sample_rate_hertz,
-            media_encoding: self.media_encoding,
-            vocabulary_name: self.vocabulary_name,
-            session_id: self.session_id,
-            audio_stream: self.audio_stream.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audio_stream",
-                    "audio_stream was not specified but it is required when building StartStreamTranscriptionInput",
-                )
-            })?,
-            vocabulary_filter_name: self.vocabulary_filter_name,
-            vocabulary_filter_method: self.vocabulary_filter_method,
-            show_speaker_label: self.show_speaker_label,
-            enable_channel_identification: self.enable_channel_identification,
-            number_of_channels: self.number_of_channels,
-            enable_partial_results_stabilization: self.enable_partial_results_stabilization,
-            partial_results_stability: self.partial_results_stability,
-            content_identification_type: self.content_identification_type,
-            content_redaction_type: self.content_redaction_type,
-            pii_entity_types: self.pii_entity_types,
-            language_model_name: self.language_model_name,
-            identify_language: self.identify_language,
-            language_options: self.language_options,
-            preferred_language: self.preferred_language,
-            identify_multiple_languages: self.identify_multiple_languages,
-            vocabulary_names: self.vocabulary_names,
-            vocabulary_filter_names: self.vocabulary_filter_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_stream_transcription::StartStreamTranscriptionInput {
+                language_code: self.language_code
+                ,
+                media_sample_rate_hertz: self.media_sample_rate_hertz
+                ,
+                media_encoding: self.media_encoding
+                ,
+                vocabulary_name: self.vocabulary_name
+                ,
+                session_id: self.session_id
+                ,
+                audio_stream: self.audio_stream
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartStreamTranscriptionInput")
+                    )?
+                ,
+                vocabulary_filter_name: self.vocabulary_filter_name
+                ,
+                vocabulary_filter_method: self.vocabulary_filter_method
+                ,
+                show_speaker_label: self.show_speaker_label
+                ,
+                enable_channel_identification: self.enable_channel_identification
+                ,
+                number_of_channels: self.number_of_channels
+                ,
+                enable_partial_results_stabilization: self.enable_partial_results_stabilization
+                ,
+                partial_results_stability: self.partial_results_stability
+                ,
+                content_identification_type: self.content_identification_type
+                ,
+                content_redaction_type: self.content_redaction_type
+                ,
+                pii_entity_types: self.pii_entity_types
+                ,
+                language_model_name: self.language_model_name
+                ,
+                identify_language: self.identify_language
+                ,
+                language_options: self.language_options
+                ,
+                preferred_language: self.preferred_language
+                ,
+                identify_multiple_languages: self.identify_multiple_languages
+                ,
+                vocabulary_names: self.vocabulary_names
+                ,
+                vocabulary_filter_names: self.vocabulary_filter_names
+                ,
+            }
+        )
     }
 }
+

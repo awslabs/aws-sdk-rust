@@ -5,55 +5,51 @@ pub use crate::operation::get_function_event_invoke_config::_get_function_event_
 
 impl GetFunctionEventInvokeConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_function_event_invoke_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_function_event_invoke_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetFunctionEventInvokeConfig`.
-///
+/// 
 /// <p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigInputBuilder,
+                    inner: crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
-    > for GetFunctionEventInvokeConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
+                    crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
+                > for GetFunctionEventInvokeConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
+                        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetFunctionEventInvokeConfigFluentBuilder {
     /// Creates a new `GetFunctionEventInvokeConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetFunctionEventInvokeConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
-        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput, crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -168,3 +155,4 @@ impl GetFunctionEventInvokeConfigFluentBuilder {
         self.inner.get_qualifier()
     }
 }
+

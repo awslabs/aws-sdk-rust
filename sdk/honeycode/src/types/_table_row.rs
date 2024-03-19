@@ -3,22 +3,20 @@
 /// <p>An object that contains attributes about a single row in a table</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableRow {
+pub struct TableRow  {
     /// <p>The id of the row in the table.</p>
     pub row_id: ::std::string::String,
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
-    pub cells: ::std::vec::Vec<crate::types::Cell>,
+    pub cells: ::std::vec::Vec::<crate::types::Cell>,
 }
-impl TableRow {
+impl  TableRow  {
     /// <p>The id of the row in the table.</p>
-    pub fn row_id(&self) -> &str {
-        use std::ops::Deref;
-        self.row_id.deref()
+    pub fn row_id(&self) -> & str {
+        use std::ops::Deref; self.row_id.deref()
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
-    pub fn cells(&self) -> &[crate::types::Cell] {
-        use std::ops::Deref;
-        self.cells.deref()
+    pub fn cells(&self) -> & [crate::types::Cell] {
+        use std::ops::Deref; self.cells.deref()
     }
 }
 impl TableRow {
@@ -33,7 +31,7 @@ impl TableRow {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableRowBuilder {
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
-    pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec::<crate::types::Cell>>,
 }
 impl TableRowBuilder {
     /// <p>The id of the row in the table.</p>
@@ -44,8 +42,7 @@ impl TableRowBuilder {
     }
     /// <p>The id of the row in the table.</p>
     pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.row_id = input;
-        self
+        self.row_id = input; self
     }
     /// <p>The id of the row in the table.</p>
     pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl TableRowBuilder {
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input);
-        self.cells = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cells = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
-    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Cell>>) -> Self {
+        self.cells = input; self
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
-    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cell>> {
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Cell>> {
         &self.cells
     }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
@@ -76,19 +72,20 @@ impl TableRowBuilder {
     /// - [`row_id`](crate::types::builders::TableRowBuilder::row_id)
     /// - [`cells`](crate::types::builders::TableRowBuilder::cells)
     pub fn build(self) -> ::std::result::Result<crate::types::TableRow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableRow {
-            row_id: self.row_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "row_id",
-                    "row_id was not specified but it is required when building TableRow",
-                )
-            })?,
-            cells: self.cells.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cells",
-                    "cells was not specified but it is required when building TableRow",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableRow {
+                row_id: self.row_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("row_id", "row_id was not specified but it is required when building TableRow")
+                    )?
+                ,
+                cells: self.cells
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cells", "cells was not specified but it is required when building TableRow")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMessagesInput {
+pub struct ListMessagesInput  {
     /// <p>The identifier of the Amazon Q web experience conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the Amazon Q application.</p>
@@ -14,21 +14,21 @@ pub struct ListMessagesInput {
     /// <p>The maximum number of messages to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMessagesInput {
+impl  ListMessagesInput  {
     /// <p>The identifier of the Amazon Q web experience conversation.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>The identifier for the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of messages to return.</p>
@@ -62,8 +62,7 @@ impl ListMessagesInputBuilder {
     }
     /// <p>The identifier of the Amazon Q web experience conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The identifier of the Amazon Q web experience conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListMessagesInputBuilder {
     }
     /// <p>The identifier for the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier for the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl ListMessagesInputBuilder {
     }
     /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl ListMessagesInputBuilder {
     }
     /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,23 +116,28 @@ impl ListMessagesInputBuilder {
     }
     /// <p>The maximum number of messages to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of messages to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMessagesInput`](crate::operation::list_messages::ListMessagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_messages::ListMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_messages::ListMessagesInput {
-            conversation_id: self.conversation_id,
-            application_id: self.application_id,
-            user_id: self.user_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_messages::ListMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_messages::ListMessagesInput {
+                conversation_id: self.conversation_id
+                ,
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

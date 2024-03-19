@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotificationSubscriptionsInput {
+pub struct DescribeNotificationSubscriptionsInput  {
     /// <p>The ID of the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -10,13 +10,13 @@ pub struct DescribeNotificationSubscriptionsInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeNotificationSubscriptionsInput {
+impl  DescribeNotificationSubscriptionsInput  {
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -48,8 +48,7 @@ impl DescribeNotificationSubscriptionsInputBuilder {
     }
     /// <p>The ID of the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The ID of the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeNotificationSubscriptionsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl DescribeNotificationSubscriptionsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeNotificationSubscriptionsInput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsInput {
-                organization_id: self.organization_id,
-                marker: self.marker,
-                limit: self.limit,
-            },
+                organization_id: self.organization_id
+                ,
+                marker: self.marker
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

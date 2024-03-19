@@ -3,16 +3,17 @@
 /// <p>Source server post migration custom action filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceServerActionsRequestFilters {
+pub struct SourceServerActionsRequestFilters  {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub action_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub action_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SourceServerActionsRequestFilters {
+impl  SourceServerActionsRequestFilters  {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_ids.is_none()`.
-    pub fn action_ids(&self) -> &[::std::string::String] {
-        self.action_ids.as_deref().unwrap_or_default()
+    pub fn action_ids(&self) -> & [::std::string::String] {
+        self.action_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SourceServerActionsRequestFilters {
@@ -26,7 +27,7 @@ impl SourceServerActionsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceServerActionsRequestFiltersBuilder {
-    pub(crate) action_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) action_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SourceServerActionsRequestFiltersBuilder {
     /// Appends an item to `action_ids`.
@@ -36,21 +37,24 @@ impl SourceServerActionsRequestFiltersBuilder {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
     pub fn action_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_ids.unwrap_or_default();
-        v.push(input.into());
-        self.action_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn set_action_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.action_ids = input;
-        self
+    pub fn set_action_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.action_ids = input; self
     }
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn get_action_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.action_ids
     }
     /// Consumes the builder and constructs a [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).
     pub fn build(self) -> crate::types::SourceServerActionsRequestFilters {
-        crate::types::SourceServerActionsRequestFilters { action_ids: self.action_ids }
+        crate::types::SourceServerActionsRequestFilters {
+            action_ids: self.action_ids
+            ,
+        }
     }
 }
+

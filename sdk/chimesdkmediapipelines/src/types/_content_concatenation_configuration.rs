@@ -3,13 +3,13 @@
 /// <p>The composited content configuration object for a specified media pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentConcatenationConfiguration {
+pub struct ContentConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     pub state: crate::types::ArtifactsConcatenationState,
 }
-impl ContentConcatenationConfiguration {
+impl  ContentConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+    pub fn state(&self) -> & crate::types::ArtifactsConcatenationState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl ContentConcatenationConfigurationBuilder {
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
@@ -46,13 +45,15 @@ impl ContentConcatenationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::ContentConcatenationConfigurationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::ContentConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContentConcatenationConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ContentConcatenationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContentConcatenationConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ContentConcatenationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

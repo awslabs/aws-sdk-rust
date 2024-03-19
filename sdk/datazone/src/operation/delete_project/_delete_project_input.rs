@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the project that is to be deleted.</p>
@@ -10,13 +10,13 @@ pub struct DeleteProjectInput {
     /// Optional flag to asynchronously delete child entities within the project
     pub skip_deletion_check: ::std::option::Option<bool>,
 }
-impl DeleteProjectInput {
+impl  DeleteProjectInput  {
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the project that is to be deleted.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// Optional flag to asynchronously delete child entities within the project
@@ -48,8 +48,7 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The identifier of the project that is to be deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the project that is to be deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteProjectInputBuilder {
     }
     /// Optional flag to asynchronously delete child entities within the project
     pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_deletion_check = input;
-        self
+        self.skip_deletion_check = input; self
     }
     /// Optional flag to asynchronously delete child entities within the project
     pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
         &self.skip_deletion_check
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            skip_deletion_check: self.skip_deletion_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                skip_deletion_check: self.skip_deletion_check
+                ,
+            }
+        )
     }
 }
+

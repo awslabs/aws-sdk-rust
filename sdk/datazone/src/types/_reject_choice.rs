@@ -3,22 +3,23 @@
 /// <p>The details of the automatically generated business metadata that is rejected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectChoice {
+pub struct RejectChoice  {
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
     pub prediction_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
-    pub prediction_choices: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub prediction_choices: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
-impl RejectChoice {
+impl  RejectChoice  {
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
-    pub fn prediction_target(&self) -> ::std::option::Option<&str> {
+    pub fn prediction_target(&self) -> ::std::option::Option<& str> {
         self.prediction_target.as_deref()
     }
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prediction_choices.is_none()`.
-    pub fn prediction_choices(&self) -> &[i32] {
-        self.prediction_choices.as_deref().unwrap_or_default()
+    pub fn prediction_choices(&self) -> & [i32] {
+        self.prediction_choices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RejectChoice {
@@ -33,7 +34,7 @@ impl RejectChoice {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectChoiceBuilder {
     pub(crate) prediction_target: ::std::option::Option<::std::string::String>,
-    pub(crate) prediction_choices: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) prediction_choices: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl RejectChoiceBuilder {
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
@@ -43,8 +44,7 @@ impl RejectChoiceBuilder {
     }
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
     pub fn set_prediction_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prediction_target = input;
-        self
+        self.prediction_target = input; self
     }
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
     pub fn get_prediction_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl RejectChoiceBuilder {
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
     pub fn prediction_choices(mut self, input: i32) -> Self {
         let mut v = self.prediction_choices.unwrap_or_default();
-        v.push(input);
-        self.prediction_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prediction_choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
-    pub fn set_prediction_choices(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.prediction_choices = input;
-        self
+    pub fn set_prediction_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.prediction_choices = input; self
     }
     /// <p>Specifies the the automatically generated business metadata that can be rejected.</p>
-    pub fn get_prediction_choices(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_prediction_choices(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.prediction_choices
     }
     /// Consumes the builder and constructs a [`RejectChoice`](crate::types::RejectChoice).
     pub fn build(self) -> crate::types::RejectChoice {
         crate::types::RejectChoice {
-            prediction_target: self.prediction_target,
-            prediction_choices: self.prediction_choices,
+            prediction_target: self.prediction_target
+            ,
+            prediction_choices: self.prediction_choices
+            ,
         }
     }
 }
+

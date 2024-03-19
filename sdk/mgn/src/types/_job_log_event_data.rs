@@ -3,7 +3,7 @@
 /// <p>Job log data</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobLogEventData {
+pub struct JobLogEventData  {
     /// <p>Job Event Source Server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Job Event conversion Server ID.</p>
@@ -13,21 +13,21 @@ pub struct JobLogEventData {
     /// <p>Job error.</p>
     pub raw_error: ::std::option::Option<::std::string::String>,
 }
-impl JobLogEventData {
+impl  JobLogEventData  {
     /// <p>Job Event Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Job Event conversion Server ID.</p>
-    pub fn conversion_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversion_server_id(&self) -> ::std::option::Option<& str> {
         self.conversion_server_id.as_deref()
     }
     /// <p>Job Event Target instance ID.</p>
-    pub fn target_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_instance_id(&self) -> ::std::option::Option<& str> {
         self.target_instance_id.as_deref()
     }
     /// <p>Job error.</p>
-    pub fn raw_error(&self) -> ::std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<& str> {
         self.raw_error.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl JobLogEventDataBuilder {
     }
     /// <p>Job Event Source Server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Job Event Source Server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl JobLogEventDataBuilder {
     }
     /// <p>Job Event conversion Server ID.</p>
     pub fn set_conversion_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversion_server_id = input;
-        self
+        self.conversion_server_id = input; self
     }
     /// <p>Job Event conversion Server ID.</p>
     pub fn get_conversion_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl JobLogEventDataBuilder {
     }
     /// <p>Job Event Target instance ID.</p>
     pub fn set_target_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_instance_id = input;
-        self
+        self.target_instance_id = input; self
     }
     /// <p>Job Event Target instance ID.</p>
     pub fn get_target_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl JobLogEventDataBuilder {
     }
     /// <p>Job error.</p>
     pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_error = input;
-        self
+        self.raw_error = input; self
     }
     /// <p>Job error.</p>
     pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl JobLogEventDataBuilder {
     /// Consumes the builder and constructs a [`JobLogEventData`](crate::types::JobLogEventData).
     pub fn build(self) -> crate::types::JobLogEventData {
         crate::types::JobLogEventData {
-            source_server_id: self.source_server_id,
-            conversion_server_id: self.conversion_server_id,
-            target_instance_id: self.target_instance_id,
-            raw_error: self.raw_error,
+            source_server_id: self.source_server_id
+            ,
+            conversion_server_id: self.conversion_server_id
+            ,
+            target_instance_id: self.target_instance_id
+            ,
+            raw_error: self.raw_error
+            ,
         }
     }
 }
+

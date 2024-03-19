@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timecodeburninposition = unimplemented!();
 /// match timecodeburninposition {
@@ -37,16 +37,14 @@
 /// Specifically, when `timecodeburninposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimecodeBurninPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TimecodeBurninPosition {
     #[allow(missing_docs)] // documentation missing in model
     BottomCenter,
@@ -68,92 +66,83 @@ pub enum TimecodeBurninPosition {
     TopRight,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TimecodeBurninPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOTTOM_CENTER" => TimecodeBurninPosition::BottomCenter,
-            "BOTTOM_LEFT" => TimecodeBurninPosition::BottomLeft,
-            "BOTTOM_RIGHT" => TimecodeBurninPosition::BottomRight,
-            "MIDDLE_CENTER" => TimecodeBurninPosition::MiddleCenter,
-            "MIDDLE_LEFT" => TimecodeBurninPosition::MiddleLeft,
-            "MIDDLE_RIGHT" => TimecodeBurninPosition::MiddleRight,
-            "TOP_CENTER" => TimecodeBurninPosition::TopCenter,
-            "TOP_LEFT" => TimecodeBurninPosition::TopLeft,
-            "TOP_RIGHT" => TimecodeBurninPosition::TopRight,
-            other => TimecodeBurninPosition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BOTTOM_CENTER" => TimecodeBurninPosition::BottomCenter,
+"BOTTOM_LEFT" => TimecodeBurninPosition::BottomLeft,
+"BOTTOM_RIGHT" => TimecodeBurninPosition::BottomRight,
+"MIDDLE_CENTER" => TimecodeBurninPosition::MiddleCenter,
+"MIDDLE_LEFT" => TimecodeBurninPosition::MiddleLeft,
+"MIDDLE_RIGHT" => TimecodeBurninPosition::MiddleRight,
+"TOP_CENTER" => TimecodeBurninPosition::TopCenter,
+"TOP_LEFT" => TimecodeBurninPosition::TopLeft,
+"TOP_RIGHT" => TimecodeBurninPosition::TopRight,
+other => TimecodeBurninPosition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TimecodeBurninPosition {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TimecodeBurninPosition::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TimecodeBurninPosition::from(s))
+                    }
+                }
 impl TimecodeBurninPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TimecodeBurninPosition::BottomCenter => "BOTTOM_CENTER",
-            TimecodeBurninPosition::BottomLeft => "BOTTOM_LEFT",
-            TimecodeBurninPosition::BottomRight => "BOTTOM_RIGHT",
-            TimecodeBurninPosition::MiddleCenter => "MIDDLE_CENTER",
-            TimecodeBurninPosition::MiddleLeft => "MIDDLE_LEFT",
-            TimecodeBurninPosition::MiddleRight => "MIDDLE_RIGHT",
-            TimecodeBurninPosition::TopCenter => "TOP_CENTER",
-            TimecodeBurninPosition::TopLeft => "TOP_LEFT",
-            TimecodeBurninPosition::TopRight => "TOP_RIGHT",
-            TimecodeBurninPosition::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOTTOM_CENTER",
-            "BOTTOM_LEFT",
-            "BOTTOM_RIGHT",
-            "MIDDLE_CENTER",
-            "MIDDLE_LEFT",
-            "MIDDLE_RIGHT",
-            "TOP_CENTER",
-            "TOP_LEFT",
-            "TOP_RIGHT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TimecodeBurninPosition::BottomCenter => "BOTTOM_CENTER",
+    TimecodeBurninPosition::BottomLeft => "BOTTOM_LEFT",
+    TimecodeBurninPosition::BottomRight => "BOTTOM_RIGHT",
+    TimecodeBurninPosition::MiddleCenter => "MIDDLE_CENTER",
+    TimecodeBurninPosition::MiddleLeft => "MIDDLE_LEFT",
+    TimecodeBurninPosition::MiddleRight => "MIDDLE_RIGHT",
+    TimecodeBurninPosition::TopCenter => "TOP_CENTER",
+    TimecodeBurninPosition::TopLeft => "TOP_LEFT",
+    TimecodeBurninPosition::TopRight => "TOP_RIGHT",
+    TimecodeBurninPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOTTOM_CENTER", "BOTTOM_LEFT", "BOTTOM_RIGHT", "MIDDLE_CENTER", "MIDDLE_LEFT", "MIDDLE_RIGHT", "TOP_CENTER", "TOP_LEFT", "TOP_RIGHT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TimecodeBurninPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TimecodeBurninPosition {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TimecodeBurninPosition {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TimecodeBurninPosition::BottomCenter => write!(f, "BOTTOM_CENTER"),
-            TimecodeBurninPosition::BottomLeft => write!(f, "BOTTOM_LEFT"),
-            TimecodeBurninPosition::BottomRight => write!(f, "BOTTOM_RIGHT"),
-            TimecodeBurninPosition::MiddleCenter => write!(f, "MIDDLE_CENTER"),
-            TimecodeBurninPosition::MiddleLeft => write!(f, "MIDDLE_LEFT"),
-            TimecodeBurninPosition::MiddleRight => write!(f, "MIDDLE_RIGHT"),
-            TimecodeBurninPosition::TopCenter => write!(f, "TOP_CENTER"),
-            TimecodeBurninPosition::TopLeft => write!(f, "TOP_LEFT"),
-            TimecodeBurninPosition::TopRight => write!(f, "TOP_RIGHT"),
-            TimecodeBurninPosition::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TimecodeBurninPosition::BottomCenter => write!(f, "BOTTOM_CENTER"),
+TimecodeBurninPosition::BottomLeft => write!(f, "BOTTOM_LEFT"),
+TimecodeBurninPosition::BottomRight => write!(f, "BOTTOM_RIGHT"),
+TimecodeBurninPosition::MiddleCenter => write!(f, "MIDDLE_CENTER"),
+TimecodeBurninPosition::MiddleLeft => write!(f, "MIDDLE_LEFT"),
+TimecodeBurninPosition::MiddleRight => write!(f, "MIDDLE_RIGHT"),
+TimecodeBurninPosition::TopCenter => write!(f, "TOP_CENTER"),
+TimecodeBurninPosition::TopLeft => write!(f, "TOP_LEFT"),
+TimecodeBurninPosition::TopRight => write!(f, "TOP_RIGHT"),
+TimecodeBurninPosition::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

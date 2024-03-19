@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UngroupResourcesInput {
+pub struct UngroupResourcesInput  {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UngroupResourcesInput {
+impl  UngroupResourcesInput  {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UngroupResourcesInput {
@@ -32,7 +33,7 @@ impl UngroupResourcesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UngroupResourcesInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UngroupResourcesInputBuilder {
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
@@ -43,8 +44,7 @@ impl UngroupResourcesInputBuilder {
     }
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UngroupResourcesInputBuilder {
     /// <p>The ARNs of the resources to be removed from the group.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>The ARNs of the resources to be removed from the group.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// Consumes the builder and constructs a [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::ungroup_resources::UngroupResourcesInput {
-            group: self.group,
-            resource_arns: self.resource_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::ungroup_resources::UngroupResourcesInput {
+                group: self.group
+                ,
+                resource_arns: self.resource_arns
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The set of properties on a table for configuring magnetic store writes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MagneticStoreWriteProperties {
+pub struct MagneticStoreWriteProperties  {
     /// <p>A flag to enable magnetic store writes.</p>
     pub enable_magnetic_store_writes: bool,
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
     pub magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
 }
-impl MagneticStoreWriteProperties {
+impl  MagneticStoreWriteProperties  {
     /// <p>A flag to enable magnetic store writes.</p>
     pub fn enable_magnetic_store_writes(&self) -> bool {
         self.enable_magnetic_store_writes
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    pub fn magnetic_store_rejected_data_location(&self) -> ::std::option::Option<&crate::types::MagneticStoreRejectedDataLocation> {
+    pub fn magnetic_store_rejected_data_location(&self) -> ::std::option::Option<& crate::types::MagneticStoreRejectedDataLocation> {
         self.magnetic_store_rejected_data_location.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MagneticStoreWritePropertiesBuilder {
     }
     /// <p>A flag to enable magnetic store writes.</p>
     pub fn set_enable_magnetic_store_writes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_magnetic_store_writes = input;
-        self
+        self.enable_magnetic_store_writes = input; self
     }
     /// <p>A flag to enable magnetic store writes.</p>
     pub fn get_enable_magnetic_store_writes(&self) -> &::std::option::Option<bool> {
@@ -55,12 +54,8 @@ impl MagneticStoreWritePropertiesBuilder {
         self
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    pub fn set_magnetic_store_rejected_data_location(
-        mut self,
-        input: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
-    ) -> Self {
-        self.magnetic_store_rejected_data_location = input;
-        self
+    pub fn set_magnetic_store_rejected_data_location(mut self, input: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>) -> Self {
+        self.magnetic_store_rejected_data_location = input; self
     }
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
     pub fn get_magnetic_store_rejected_data_location(&self) -> &::std::option::Option<crate::types::MagneticStoreRejectedDataLocation> {
@@ -70,14 +65,17 @@ impl MagneticStoreWritePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_magnetic_store_writes`](crate::types::builders::MagneticStoreWritePropertiesBuilder::enable_magnetic_store_writes)
     pub fn build(self) -> ::std::result::Result<crate::types::MagneticStoreWriteProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MagneticStoreWriteProperties {
-            enable_magnetic_store_writes: self.enable_magnetic_store_writes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_magnetic_store_writes",
-                    "enable_magnetic_store_writes was not specified but it is required when building MagneticStoreWriteProperties",
-                )
-            })?,
-            magnetic_store_rejected_data_location: self.magnetic_store_rejected_data_location,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MagneticStoreWriteProperties {
+                enable_magnetic_store_writes: self.enable_magnetic_store_writes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_magnetic_store_writes", "enable_magnetic_store_writes was not specified but it is required when building MagneticStoreWriteProperties")
+                    )?
+                ,
+                magnetic_store_rejected_data_location: self.magnetic_store_rejected_data_location
+                ,
+            }
+        )
     }
 }
+

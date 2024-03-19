@@ -3,26 +3,25 @@
 /// <p>This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentOverride {
+pub struct SegmentOverride  {
     /// <p>The ARN of the segment to use.</p>
     pub segment: ::std::string::String,
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub evaluation_order: i64,
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub weights: ::std::collections::HashMap<::std::string::String, i64>,
+    pub weights: ::std::collections::HashMap::<::std::string::String, i64>,
 }
-impl SegmentOverride {
+impl  SegmentOverride  {
     /// <p>The ARN of the segment to use.</p>
-    pub fn segment(&self) -> &str {
-        use std::ops::Deref;
-        self.segment.deref()
+    pub fn segment(&self) -> & str {
+        use std::ops::Deref; self.segment.deref()
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn evaluation_order(&self) -> i64 {
         self.evaluation_order
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn weights(&self) -> &::std::collections::HashMap<::std::string::String, i64> {
+    pub fn weights(&self) -> & ::std::collections::HashMap::<::std::string::String, i64> {
         &self.weights
     }
 }
@@ -39,7 +38,7 @@ impl SegmentOverride {
 pub struct SegmentOverrideBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_order: ::std::option::Option<i64>,
-    pub(crate) weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) weights: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>,
 }
 impl SegmentOverrideBuilder {
     /// <p>The ARN of the segment to use.</p>
@@ -50,8 +49,7 @@ impl SegmentOverrideBuilder {
     }
     /// <p>The ARN of the segment to use.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>The ARN of the segment to use.</p>
     pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl SegmentOverrideBuilder {
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn set_evaluation_order(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.evaluation_order = input;
-        self
+        self.evaluation_order = input; self
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn get_evaluation_order(&self) -> &::std::option::Option<i64> {
@@ -79,17 +76,16 @@ impl SegmentOverrideBuilder {
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
     pub fn weights(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.weights.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.weights = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.weights = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn set_weights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
-        self.weights = input;
-        self
+    pub fn set_weights(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>) -> Self {
+        self.weights = input; self
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn get_weights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_weights(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>> {
         &self.weights
     }
     /// Consumes the builder and constructs a [`SegmentOverride`](crate::types::SegmentOverride).
@@ -98,25 +94,25 @@ impl SegmentOverrideBuilder {
     /// - [`evaluation_order`](crate::types::builders::SegmentOverrideBuilder::evaluation_order)
     /// - [`weights`](crate::types::builders::SegmentOverrideBuilder::weights)
     pub fn build(self) -> ::std::result::Result<crate::types::SegmentOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SegmentOverride {
-            segment: self.segment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "segment",
-                    "segment was not specified but it is required when building SegmentOverride",
-                )
-            })?,
-            evaluation_order: self.evaluation_order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_order",
-                    "evaluation_order was not specified but it is required when building SegmentOverride",
-                )
-            })?,
-            weights: self.weights.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "weights",
-                    "weights was not specified but it is required when building SegmentOverride",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SegmentOverride {
+                segment: self.segment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("segment", "segment was not specified but it is required when building SegmentOverride")
+                    )?
+                ,
+                evaluation_order: self.evaluation_order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_order", "evaluation_order was not specified but it is required when building SegmentOverride")
+                    )?
+                ,
+                weights: self.weights
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("weights", "weights was not specified but it is required when building SegmentOverride")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A chat message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChatMessage {
+pub struct ChatMessage  {
     /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub content_type: ::std::string::String,
     /// <p>The content of the chat message.</p>
@@ -17,11 +17,10 @@ pub struct ChatMessage {
     /// </ul>
     pub content: ::std::string::String,
 }
-impl ChatMessage {
+impl  ChatMessage  {
     /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
     /// <p>The content of the chat message.</p>
     /// <ul>
@@ -32,9 +31,8 @@ impl ChatMessage {
     /// <li>
     /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
-    pub fn content(&self) -> &str {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & str {
+        use std::ops::Deref; self.content.deref()
     }
 }
 impl ChatMessage {
@@ -60,8 +58,7 @@ impl ChatMessageBuilder {
     }
     /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl ChatMessageBuilder {
     /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the chat message.</p>
     /// <ul>
@@ -111,19 +107,20 @@ impl ChatMessageBuilder {
     /// - [`content_type`](crate::types::builders::ChatMessageBuilder::content_type)
     /// - [`content`](crate::types::builders::ChatMessageBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::ChatMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChatMessage {
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building ChatMessage",
-                )
-            })?,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building ChatMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChatMessage {
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building ChatMessage")
+                    )?
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building ChatMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

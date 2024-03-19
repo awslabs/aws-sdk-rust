@@ -3,14 +3,14 @@
 /// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsupportedFeatureException {
+pub struct UnsupportedFeatureException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl UnsupportedFeatureException {
+impl  UnsupportedFeatureException  {
     #[allow(missing_docs)] // documentation missing in model
     pub fn can_retry(&self) -> bool {
         self.can_retry
@@ -18,14 +18,12 @@ impl UnsupportedFeatureException {
 }
 impl UnsupportedFeatureException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "UnsupportedFeatureException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -39,9 +37,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedFeat
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedFeatureException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl UnsupportedFeatureException {
     /// Creates a new builder-style object to manufacture [`UnsupportedFeatureException`](crate::types::error::UnsupportedFeatureException).
@@ -67,8 +63,7 @@ impl UnsupportedFeatureExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,43 +77,43 @@ impl UnsupportedFeatureExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
         &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::types::error::UnsupportedFeatureException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::UnsupportedFeatureExceptionBuilder::message)
     /// - [`can_retry`](crate::types::error::builders::UnsupportedFeatureExceptionBuilder::can_retry)
     pub fn build(self) -> ::std::result::Result<crate::types::error::UnsupportedFeatureException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::UnsupportedFeatureException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building UnsupportedFeatureException",
-                )
-            })?,
-            can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "can_retry",
-                    "can_retry was not specified but it is required when building UnsupportedFeatureException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::UnsupportedFeatureException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building UnsupportedFeatureException")
+                    )?
+                ,
+                can_retry: self.can_retry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("can_retry", "can_retry was not specified but it is required when building UnsupportedFeatureException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

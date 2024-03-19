@@ -2,37 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPropertyValueOutput {
+pub struct GetPropertyValueOutput  {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
-    pub property_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>>,
+    pub property_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyLatestValue>>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A table of property values.</p>
-    pub tabular_property_values:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>>>,
+    pub tabular_property_values: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>>>,
     _request_id: Option<String>,
 }
-impl GetPropertyValueOutput {
+impl  GetPropertyValueOutput  {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
-    pub fn property_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>> {
+    pub fn property_values(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PropertyLatestValue>> {
         self.property_values.as_ref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A table of property values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tabular_property_values.is_none()`.
-    pub fn tabular_property_values(&self) -> &[::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>] {
-        self.tabular_property_values.as_deref().unwrap_or_default()
+    pub fn tabular_property_values(&self) -> & [::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>] {
+        self.tabular_property_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPropertyValueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueOutput`](crate::operation::get_property_value::GetPropertyValueOutput).
     pub fn builder() -> crate::operation::get_property_value::builders::GetPropertyValueOutputBuilder {
@@ -44,10 +44,9 @@ impl GetPropertyValueOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPropertyValueOutputBuilder {
-    pub(crate) property_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>>,
+    pub(crate) property_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyLatestValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tabular_property_values:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>>>,
+    pub(crate) tabular_property_values: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>>>,
     _request_id: Option<String>,
 }
 impl GetPropertyValueOutputBuilder {
@@ -58,22 +57,16 @@ impl GetPropertyValueOutputBuilder {
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
     pub fn property_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyLatestValue) -> Self {
         let mut hash_map = self.property_values.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.property_values = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.property_values = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
-    pub fn set_property_values(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>>,
-    ) -> Self {
-        self.property_values = input;
-        self
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyLatestValue>>) -> Self {
+        self.property_values = input; self
     }
     /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
-    pub fn get_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>> {
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyLatestValue>> {
         &self.property_values
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -83,8 +76,7 @@ impl GetPropertyValueOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,45 +87,40 @@ impl GetPropertyValueOutputBuilder {
     /// To override the contents of this collection use [`set_tabular_property_values`](Self::set_tabular_property_values).
     ///
     /// <p>A table of property values.</p>
-    pub fn tabular_property_values(
-        mut self,
-        input: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>,
-    ) -> Self {
+    pub fn tabular_property_values(mut self, input: ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>) -> Self {
         let mut v = self.tabular_property_values.unwrap_or_default();
-        v.push(input);
-        self.tabular_property_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tabular_property_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A table of property values.</p>
-    pub fn set_tabular_property_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>>>,
-    ) -> Self {
-        self.tabular_property_values = input;
-        self
+    pub fn set_tabular_property_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>>>) -> Self {
+        self.tabular_property_values = input; self
     }
     /// <p>A table of property values.</p>
-    pub fn get_tabular_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>>> {
+    pub fn get_tabular_property_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::DataValue>>>> {
         &self.tabular_property_values
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPropertyValueOutput`](crate::operation::get_property_value::GetPropertyValueOutput).
     pub fn build(self) -> crate::operation::get_property_value::GetPropertyValueOutput {
         crate::operation::get_property_value::GetPropertyValueOutput {
-            property_values: self.property_values,
-            next_token: self.next_token,
-            tabular_property_values: self.tabular_property_values,
+            property_values: self.property_values
+            ,
+            next_token: self.next_token
+            ,
+            tabular_property_values: self.tabular_property_values
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

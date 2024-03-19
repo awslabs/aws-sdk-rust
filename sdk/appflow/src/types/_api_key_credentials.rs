@@ -3,24 +3,23 @@
 /// <p>The API key credentials required for API key authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ApiKeyCredentials {
+pub struct ApiKeyCredentials  {
     /// <p>The API key required for API key authentication.</p>
     pub api_key: ::std::string::String,
     /// <p>The API secret key required for API key authentication.</p>
     pub api_secret_key: ::std::option::Option<::std::string::String>,
 }
-impl ApiKeyCredentials {
+impl  ApiKeyCredentials  {
     /// <p>The API key required for API key authentication.</p>
-    pub fn api_key(&self) -> &str {
-        use std::ops::Deref;
-        self.api_key.deref()
+    pub fn api_key(&self) -> & str {
+        use std::ops::Deref; self.api_key.deref()
     }
     /// <p>The API secret key required for API key authentication.</p>
-    pub fn api_secret_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_secret_key(&self) -> ::std::option::Option<& str> {
         self.api_secret_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for ApiKeyCredentials {
+impl  ::std::fmt::Debug for ApiKeyCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ApiKeyCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl ApiKeyCredentialsBuilder {
     }
     /// <p>The API key required for API key authentication.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>The API key required for API key authentication.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ApiKeyCredentialsBuilder {
     }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn set_api_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_secret_key = input;
-        self
+        self.api_secret_key = input; self
     }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn get_api_secret_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl ApiKeyCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key`](crate::types::builders::ApiKeyCredentialsBuilder::api_key)
     pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApiKeyCredentials {
-            api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_key",
-                    "api_key was not specified but it is required when building ApiKeyCredentials",
-                )
-            })?,
-            api_secret_key: self.api_secret_key,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApiKeyCredentials {
+                api_key: self.api_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_key", "api_key was not specified but it is required when building ApiKeyCredentials")
+                    )?
+                ,
+                api_secret_key: self.api_secret_key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredentialsBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for ApiKeyCredentialsBuilder {
         formatter.finish()
     }
 }
+

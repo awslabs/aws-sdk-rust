@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectStackSetDriftOutput {
+pub struct DetectStackSetDriftOutput  {
     /// <p>The ID of the drift detection stack set operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DetectStackSetDriftOutput {
+impl  DetectStackSetDriftOutput  {
     /// <p>The ID of the drift detection stack set operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectStackSetDriftOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectStackSetDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackSetDriftOutput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput).
     pub fn builder() -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder {
@@ -44,8 +44,7 @@ impl DetectStackSetDriftOutputBuilder {
     /// <p>The ID of the drift detection stack set operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The ID of the drift detection stack set operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
@@ -53,19 +52,21 @@ impl DetectStackSetDriftOutputBuilder {
         &self.operation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectStackSetDriftOutput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput).
     pub fn build(self) -> crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput {
         crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput {
-            operation_id: self.operation_id,
+            operation_id: self.operation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

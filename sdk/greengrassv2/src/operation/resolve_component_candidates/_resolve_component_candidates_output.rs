@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveComponentCandidatesOutput {
+pub struct ResolveComponentCandidatesOutput  {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    pub resolved_component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>>,
+    pub resolved_component_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedComponentVersion>>,
     _request_id: Option<String>,
 }
-impl ResolveComponentCandidatesOutput {
+impl  ResolveComponentCandidatesOutput  {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolved_component_versions.is_none()`.
-    pub fn resolved_component_versions(&self) -> &[crate::types::ResolvedComponentVersion] {
-        self.resolved_component_versions.as_deref().unwrap_or_default()
+    pub fn resolved_component_versions(&self) -> & [crate::types::ResolvedComponentVersion] {
+        self.resolved_component_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ResolveComponentCandidatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResolveComponentCandidatesOutput {
     /// Creates a new builder-style object to manufacture [`ResolveComponentCandidatesOutput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput).
     pub fn builder() -> crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesOutputBuilder {
@@ -31,7 +32,7 @@ impl ResolveComponentCandidatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesOutputBuilder {
-    pub(crate) resolved_component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>>,
+    pub(crate) resolved_component_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedComponentVersion>>,
     _request_id: Option<String>,
 }
 impl ResolveComponentCandidatesOutputBuilder {
@@ -42,33 +43,34 @@ impl ResolveComponentCandidatesOutputBuilder {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
     pub fn resolved_component_versions(mut self, input: crate::types::ResolvedComponentVersion) -> Self {
         let mut v = self.resolved_component_versions.unwrap_or_default();
-        v.push(input);
-        self.resolved_component_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resolved_component_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    pub fn set_resolved_component_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>>) -> Self {
-        self.resolved_component_versions = input;
-        self
+    pub fn set_resolved_component_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolvedComponentVersion>>) -> Self {
+        self.resolved_component_versions = input; self
     }
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    pub fn get_resolved_component_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>> {
+    pub fn get_resolved_component_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolvedComponentVersion>> {
         &self.resolved_component_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResolveComponentCandidatesOutput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput).
     pub fn build(self) -> crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput {
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput {
-            resolved_component_versions: self.resolved_component_versions,
+            resolved_component_versions: self.resolved_component_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

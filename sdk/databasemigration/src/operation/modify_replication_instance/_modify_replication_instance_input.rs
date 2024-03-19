@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationInstanceInput {
+pub struct ModifyReplicationInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
@@ -14,7 +14,7 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
@@ -45,9 +45,9 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub network_type: ::std::option::Option<::std::string::String>,
 }
-impl ModifyReplicationInstanceInput {
+impl  ModifyReplicationInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> ::std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
@@ -60,21 +60,22 @@ impl ModifyReplicationInstanceInput {
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
-    pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_class(&self) -> ::std::option::Option<& str> {
         self.replication_instance_class.as_deref()
     }
     /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
@@ -83,7 +84,7 @@ impl ModifyReplicationInstanceInput {
     }
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
@@ -105,11 +106,11 @@ impl ModifyReplicationInstanceInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn replication_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_instance_identifier.as_deref()
     }
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
+    pub fn network_type(&self) -> ::std::option::Option<& str> {
         self.network_type.as_deref()
     }
 }
@@ -128,7 +129,7 @@ pub struct ModifyReplicationInstanceInputBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
     pub(crate) replication_instance_class: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -146,8 +147,7 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_arn = input;
-        self
+        self.replication_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +160,7 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -174,8 +173,7 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
@@ -190,8 +188,7 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_class = input;
-        self
+        self.replication_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
@@ -205,17 +202,16 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
@@ -233,8 +229,7 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
@@ -251,8 +246,7 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -267,8 +261,7 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
@@ -284,8 +277,7 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_major_version_upgrade = input;
-        self
+        self.allow_major_version_upgrade = input; self
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
@@ -317,8 +309,7 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
@@ -340,8 +331,7 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_identifier = input;
-        self
+        self.replication_instance_identifier = input; self
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -354,33 +344,42 @@ impl ModifyReplicationInstanceInputBuilder {
     }
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
     /// Consumes the builder and constructs a [`ModifyReplicationInstanceInput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_instance::ModifyReplicationInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_replication_instance::ModifyReplicationInstanceInput {
-            replication_instance_arn: self.replication_instance_arn,
-            allocated_storage: self.allocated_storage,
-            apply_immediately: self.apply_immediately,
-            replication_instance_class: self.replication_instance_class,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            multi_az: self.multi_az,
-            engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            replication_instance_identifier: self.replication_instance_identifier,
-            network_type: self.network_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_replication_instance::ModifyReplicationInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_replication_instance::ModifyReplicationInstanceInput {
+                replication_instance_arn: self.replication_instance_arn
+                ,
+                allocated_storage: self.allocated_storage
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+                replication_instance_class: self.replication_instance_class
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                multi_az: self.multi_az
+                ,
+                engine_version: self.engine_version
+                ,
+                allow_major_version_upgrade: self.allow_major_version_upgrade
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                replication_instance_identifier: self.replication_instance_identifier
+                ,
+                network_type: self.network_type
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatastoreInput {
+pub struct CreateDatastoreInput  {
     /// <p>The name of the data store.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
@@ -10,7 +10,7 @@ pub struct CreateDatastoreInput {
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the data store.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
@@ -18,33 +18,34 @@ pub struct CreateDatastoreInput {
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
-impl CreateDatastoreInput {
+impl  CreateDatastoreInput  {
     /// <p>The name of the data store.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_name(&self) -> ::std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
-    pub fn datastore_storage(&self) -> ::std::option::Option<&crate::types::DatastoreStorage> {
+    pub fn datastore_storage(&self) -> ::std::option::Option<& crate::types::DatastoreStorage> {
         self.datastore_storage.as_ref()
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Metadata which can be used to manage the data store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    pub fn file_format_configuration(&self) -> ::std::option::Option<&crate::types::FileFormatConfiguration> {
+    pub fn file_format_configuration(&self) -> ::std::option::Option<& crate::types::FileFormatConfiguration> {
         self.file_format_configuration.as_ref()
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
-    pub fn datastore_partitions(&self) -> ::std::option::Option<&crate::types::DatastorePartitions> {
+    pub fn datastore_partitions(&self) -> ::std::option::Option<& crate::types::DatastorePartitions> {
         self.datastore_partitions.as_ref()
     }
 }
@@ -62,7 +63,7 @@ pub struct CreateDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_storage: ::std::option::Option<crate::types::DatastoreStorage>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) file_format_configuration: ::std::option::Option<crate::types::FileFormatConfiguration>,
     pub(crate) datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
@@ -75,8 +76,7 @@ impl CreateDatastoreInputBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>The name of the data store.</p>
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl CreateDatastoreInputBuilder {
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn set_datastore_storage(mut self, input: ::std::option::Option<crate::types::DatastoreStorage>) -> Self {
-        self.datastore_storage = input;
-        self
+        self.datastore_storage = input; self
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn get_datastore_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorage> {
@@ -103,8 +102,7 @@ impl CreateDatastoreInputBuilder {
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -117,17 +115,16 @@ impl CreateDatastoreInputBuilder {
     /// <p>Metadata which can be used to manage the data store.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the data store.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the data store.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
@@ -141,8 +138,7 @@ impl CreateDatastoreInputBuilder {
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn set_file_format_configuration(mut self, input: ::std::option::Option<crate::types::FileFormatConfiguration>) -> Self {
-        self.file_format_configuration = input;
-        self
+        self.file_format_configuration = input; self
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -157,24 +153,30 @@ impl CreateDatastoreInputBuilder {
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn set_datastore_partitions(mut self, input: ::std::option::Option<crate::types::DatastorePartitions>) -> Self {
-        self.datastore_partitions = input;
-        self
+        self.datastore_partitions = input; self
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn get_datastore_partitions(&self) -> &::std::option::Option<crate::types::DatastorePartitions> {
         &self.datastore_partitions
     }
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreInput {
-            datastore_name: self.datastore_name,
-            datastore_storage: self.datastore_storage,
-            retention_period: self.retention_period,
-            tags: self.tags,
-            file_format_configuration: self.file_format_configuration,
-            datastore_partitions: self.datastore_partitions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_datastore::CreateDatastoreInput {
+                datastore_name: self.datastore_name
+                ,
+                datastore_storage: self.datastore_storage
+                ,
+                retention_period: self.retention_period
+                ,
+                tags: self.tags
+                ,
+                file_format_configuration: self.file_format_configuration
+                ,
+                datastore_partitions: self.datastore_partitions
+                ,
+            }
+        )
     }
 }
+

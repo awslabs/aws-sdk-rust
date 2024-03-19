@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketCorsInput {
+pub struct PutBucketCorsInput  {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -16,27 +16,27 @@ pub struct PutBucketCorsInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl PutBucketCorsInput {
+impl  PutBucketCorsInput  {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn cors_configuration(&self) -> ::std::option::Option<&crate::types::CorsConfiguration> {
+    pub fn cors_configuration(&self) -> ::std::option::Option<& crate::types::CorsConfiguration> {
         self.cors_configuration.as_ref()
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a></p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    pub fn content_md5(&self) -> ::std::option::Option<&str> {
+    pub fn content_md5(&self) -> ::std::option::Option<& str> {
         self.content_md5.as_deref()
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<& crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl PutBucketCorsInputBuilder {
     }
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl PutBucketCorsInputBuilder {
     }
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::CorsConfiguration>) -> Self {
-        self.cors_configuration = input;
-        self
+        self.cors_configuration = input; self
     }
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::CorsConfiguration> {
@@ -97,8 +95,7 @@ impl PutBucketCorsInputBuilder {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a></p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_md5 = input;
-        self
+        self.content_md5 = input; self
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a></p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
@@ -114,8 +111,7 @@ impl PutBucketCorsInputBuilder {
     /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input;
-        self
+        self.checksum_algorithm = input; self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
@@ -129,23 +125,28 @@ impl PutBucketCorsInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutBucketCorsInput`](crate::operation::put_bucket_cors::PutBucketCorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_cors::PutBucketCorsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_bucket_cors::PutBucketCorsInput {
-            bucket: self.bucket,
-            cors_configuration: self.cors_configuration,
-            content_md5: self.content_md5,
-            checksum_algorithm: self.checksum_algorithm,
-            expected_bucket_owner: self.expected_bucket_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_cors::PutBucketCorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_bucket_cors::PutBucketCorsInput {
+                bucket: self.bucket
+                ,
+                cors_configuration: self.cors_configuration
+                ,
+                content_md5: self.content_md5
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
+        )
     }
 }
+

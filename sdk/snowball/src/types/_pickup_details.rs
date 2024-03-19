@@ -3,7 +3,7 @@
 /// <p>Information identifying the person picking up the device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PickupDetails {
+pub struct PickupDetails  {
     /// <p>The name of the person picking up the device.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the person picking up the device.</p>
@@ -19,37 +19,37 @@ pub struct PickupDetails {
     /// <p>The unique ID for a device that will be picked up.</p>
     pub device_pickup_id: ::std::option::Option<::std::string::String>,
 }
-impl PickupDetails {
+impl  PickupDetails  {
     /// <p>The name of the person picking up the device.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The phone number of the person picking up the device.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The email address of the person picking up the device.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
-    pub fn identification_number(&self) -> ::std::option::Option<&str> {
+    pub fn identification_number(&self) -> ::std::option::Option<& str> {
         self.identification_number.as_deref()
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
-    pub fn identification_expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn identification_expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.identification_expiration_date.as_ref()
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
-    pub fn identification_issuing_org(&self) -> ::std::option::Option<&str> {
+    pub fn identification_issuing_org(&self) -> ::std::option::Option<& str> {
         self.identification_issuing_org.as_deref()
     }
     /// <p>The unique ID for a device that will be picked up.</p>
-    pub fn device_pickup_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_pickup_id(&self) -> ::std::option::Option<& str> {
         self.device_pickup_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for PickupDetails {
+impl  ::std::fmt::Debug for PickupDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PickupDetails");
         formatter.field("name", &self.name);
@@ -89,8 +89,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>The name of the person picking up the device.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the person picking up the device.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>The phone number of the person picking up the device.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number of the person picking up the device.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>The email address of the person picking up the device.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the person picking up the device.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
     pub fn set_identification_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identification_number = input;
-        self
+        self.identification_number = input; self
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
     pub fn get_identification_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
     pub fn set_identification_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.identification_expiration_date = input;
-        self
+        self.identification_expiration_date = input; self
     }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
     pub fn get_identification_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +154,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
     pub fn set_identification_issuing_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identification_issuing_org = input;
-        self
+        self.identification_issuing_org = input; self
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
     pub fn get_identification_issuing_org(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl PickupDetailsBuilder {
     }
     /// <p>The unique ID for a device that will be picked up.</p>
     pub fn set_device_pickup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_pickup_id = input;
-        self
+        self.device_pickup_id = input; self
     }
     /// <p>The unique ID for a device that will be picked up.</p>
     pub fn get_device_pickup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,13 +176,20 @@ impl PickupDetailsBuilder {
     /// Consumes the builder and constructs a [`PickupDetails`](crate::types::PickupDetails).
     pub fn build(self) -> crate::types::PickupDetails {
         crate::types::PickupDetails {
-            name: self.name,
-            phone_number: self.phone_number,
-            email: self.email,
-            identification_number: self.identification_number,
-            identification_expiration_date: self.identification_expiration_date,
-            identification_issuing_org: self.identification_issuing_org,
-            device_pickup_id: self.device_pickup_id,
+            name: self.name
+            ,
+            phone_number: self.phone_number
+            ,
+            email: self.email
+            ,
+            identification_number: self.identification_number
+            ,
+            identification_expiration_date: self.identification_expiration_date
+            ,
+            identification_issuing_org: self.identification_issuing_org
+            ,
+            device_pickup_id: self.device_pickup_id
+            ,
         }
     }
 }
@@ -206,3 +206,4 @@ impl ::std::fmt::Debug for PickupDetailsBuilder {
         formatter.finish()
     }
 }
+

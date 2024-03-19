@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAddressOutput {
+pub struct CreateAddressOutput  {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub address_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAddressOutput {
+impl  CreateAddressOutput  {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
-    pub fn address_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<& str> {
         self.address_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAddressOutput {
     /// Creates a new builder-style object to manufacture [`CreateAddressOutput`](crate::operation::create_address::CreateAddressOutput).
     pub fn builder() -> crate::operation::create_address::builders::CreateAddressOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAddressOutputBuilder {
     }
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_id = input;
-        self
+        self.address_id = input; self
     }
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAddressOutput`](crate::operation::create_address::CreateAddressOutput).
     pub fn build(self) -> crate::operation::create_address::CreateAddressOutput {
         crate::operation::create_address::CreateAddressOutput {
-            address_id: self.address_id,
+            address_id: self.address_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

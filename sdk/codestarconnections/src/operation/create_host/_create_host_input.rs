@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHostInput {
+pub struct CreateHostInput  {
     /// <p>The name of the host to be created.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
@@ -12,30 +12,31 @@ pub struct CreateHostInput {
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>Tags for the host to be created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateHostInput {
+impl  CreateHostInput  {
     /// <p>The name of the host to be created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> ::std::option::Option<& str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>Tags for the host to be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateHostInput {
@@ -53,7 +54,7 @@ pub struct CreateHostInputBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) provider_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateHostInputBuilder {
     /// <p>The name of the host to be created.</p>
@@ -64,8 +65,7 @@ impl CreateHostInputBuilder {
     }
     /// <p>The name of the host to be created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the host to be created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl CreateHostInputBuilder {
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -94,8 +93,7 @@ impl CreateHostInputBuilder {
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
     pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_endpoint = input;
-        self
+        self.provider_endpoint = input; self
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
     pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl CreateHostInputBuilder {
     }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
@@ -122,27 +119,34 @@ impl CreateHostInputBuilder {
     /// <p>Tags for the host to be created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags for the host to be created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the host to be created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_host::CreateHostInput {
-            name: self.name,
-            provider_type: self.provider_type,
-            provider_endpoint: self.provider_endpoint,
-            vpc_configuration: self.vpc_configuration,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_host::CreateHostInput {
+                name: self.name
+                ,
+                provider_type: self.provider_type
+                ,
+                provider_endpoint: self.provider_endpoint
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

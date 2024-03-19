@@ -3,15 +3,15 @@
 /// <p>Details about the response from the Lambda parsing of the output from the pre-processing step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PreProcessingParsedResponse {
+pub struct PreProcessingParsedResponse  {
     /// <p>The text returned by the parsing of the pre-processing step, explaining the steps that the agent plans to take in orchestration, if the user input is valid.</p>
     pub rationale: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user input is valid or not. If <code>false</code>, the agent doesn't proceed to orchestration.</p>
     pub is_valid: ::std::option::Option<bool>,
 }
-impl PreProcessingParsedResponse {
+impl  PreProcessingParsedResponse  {
     /// <p>The text returned by the parsing of the pre-processing step, explaining the steps that the agent plans to take in orchestration, if the user input is valid.</p>
-    pub fn rationale(&self) -> ::std::option::Option<&str> {
+    pub fn rationale(&self) -> ::std::option::Option<& str> {
         self.rationale.as_deref()
     }
     /// <p>Whether the user input is valid or not. If <code>false</code>, the agent doesn't proceed to orchestration.</p>
@@ -19,7 +19,7 @@ impl PreProcessingParsedResponse {
         self.is_valid
     }
 }
-impl ::std::fmt::Debug for PreProcessingParsedResponse {
+impl  ::std::fmt::Debug for PreProcessingParsedResponse  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PreProcessingParsedResponse");
         formatter.field("rationale", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl PreProcessingParsedResponseBuilder {
     }
     /// <p>The text returned by the parsing of the pre-processing step, explaining the steps that the agent plans to take in orchestration, if the user input is valid.</p>
     pub fn set_rationale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rationale = input;
-        self
+        self.rationale = input; self
     }
     /// <p>The text returned by the parsing of the pre-processing step, explaining the steps that the agent plans to take in orchestration, if the user input is valid.</p>
     pub fn get_rationale(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PreProcessingParsedResponseBuilder {
     }
     /// <p>Whether the user input is valid or not. If <code>false</code>, the agent doesn't proceed to orchestration.</p>
     pub fn set_is_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_valid = input;
-        self
+        self.is_valid = input; self
     }
     /// <p>Whether the user input is valid or not. If <code>false</code>, the agent doesn't proceed to orchestration.</p>
     pub fn get_is_valid(&self) -> &::std::option::Option<bool> {
@@ -73,8 +71,10 @@ impl PreProcessingParsedResponseBuilder {
     /// Consumes the builder and constructs a [`PreProcessingParsedResponse`](crate::types::PreProcessingParsedResponse).
     pub fn build(self) -> crate::types::PreProcessingParsedResponse {
         crate::types::PreProcessingParsedResponse {
-            rationale: self.rationale,
-            is_valid: self.is_valid,
+            rationale: self.rationale
+            ,
+            is_valid: self.is_valid
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for PreProcessingParsedResponseBuilder {
         formatter.finish()
     }
 }
+

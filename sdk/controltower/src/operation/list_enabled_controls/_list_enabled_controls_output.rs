@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnabledControlsOutput {
+pub struct ListEnabledControlsOutput  {
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub enabled_controls: ::std::vec::Vec<crate::types::EnabledControlSummary>,
+    pub enabled_controls: ::std::vec::Vec::<crate::types::EnabledControlSummary>,
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListEnabledControlsOutput {
+impl  ListEnabledControlsOutput  {
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn enabled_controls(&self) -> &[crate::types::EnabledControlSummary] {
-        use std::ops::Deref;
-        self.enabled_controls.deref()
+    pub fn enabled_controls(&self) -> & [crate::types::EnabledControlSummary] {
+        use std::ops::Deref; self.enabled_controls.deref()
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEnabledControlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEnabledControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
     pub fn builder() -> crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListEnabledControlsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnabledControlsOutputBuilder {
-    pub(crate) enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
+    pub(crate) enabled_controls: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListEnabledControlsOutputBuilder {
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub fn enabled_controls(mut self, input: crate::types::EnabledControlSummary) -> Self {
         let mut v = self.enabled_controls.unwrap_or_default();
-        v.push(input);
-        self.enabled_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.enabled_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn set_enabled_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>) -> Self {
-        self.enabled_controls = input;
-        self
+    pub fn set_enabled_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlSummary>>) -> Self {
+        self.enabled_controls = input; self
     }
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn get_enabled_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
+    pub fn get_enabled_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlSummary>> {
         &self.enabled_controls
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
@@ -68,38 +66,37 @@ impl ListEnabledControlsOutputBuilder {
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled_controls`](crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder::enabled_controls)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsOutput {
-            enabled_controls: self.enabled_controls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled_controls",
-                    "enabled_controls was not specified but it is required when building ListEnabledControlsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_enabled_controls::ListEnabledControlsOutput {
+                enabled_controls: self.enabled_controls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled_controls", "enabled_controls was not specified but it is required when building ListEnabledControlsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

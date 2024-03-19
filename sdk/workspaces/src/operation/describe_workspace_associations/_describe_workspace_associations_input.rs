@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceAssociationsInput {
+pub struct DescribeWorkspaceAssociationsInput  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource types of the associated resources.</p>
-    pub associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::WorkSpaceAssociatedResourceType>>,
+    pub associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::WorkSpaceAssociatedResourceType>>,
 }
-impl DescribeWorkspaceAssociationsInput {
+impl  DescribeWorkspaceAssociationsInput  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The resource types of the associated resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
-    pub fn associated_resource_types(&self) -> &[crate::types::WorkSpaceAssociatedResourceType] {
-        self.associated_resource_types.as_deref().unwrap_or_default()
+    pub fn associated_resource_types(&self) -> & [crate::types::WorkSpaceAssociatedResourceType] {
+        self.associated_resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeWorkspaceAssociationsInput {
@@ -32,7 +33,7 @@ impl DescribeWorkspaceAssociationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAssociationsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::WorkSpaceAssociatedResourceType>>,
+    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::WorkSpaceAssociatedResourceType>>,
 }
 impl DescribeWorkspaceAssociationsInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
@@ -43,8 +44,7 @@ impl DescribeWorkspaceAssociationsInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,32 +57,28 @@ impl DescribeWorkspaceAssociationsInputBuilder {
     /// <p>The resource types of the associated resources.</p>
     pub fn associated_resource_types(mut self, input: crate::types::WorkSpaceAssociatedResourceType) -> Self {
         let mut v = self.associated_resource_types.unwrap_or_default();
-        v.push(input);
-        self.associated_resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types of the associated resources.</p>
-    pub fn set_associated_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkSpaceAssociatedResourceType>>,
-    ) -> Self {
-        self.associated_resource_types = input;
-        self
+    pub fn set_associated_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkSpaceAssociatedResourceType>>) -> Self {
+        self.associated_resource_types = input; self
     }
     /// <p>The resource types of the associated resources.</p>
-    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkSpaceAssociatedResourceType>> {
+    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkSpaceAssociatedResourceType>> {
         &self.associated_resource_types
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceAssociationsInput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput {
-            workspace_id: self.workspace_id,
-            associated_resource_types: self.associated_resource_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput {
+                workspace_id: self.workspace_id
+                ,
+                associated_resource_types: self.associated_resource_types
+                ,
+            }
+        )
     }
 }
+

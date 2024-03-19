@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePermissionGroupOutput {
+pub struct DeletePermissionGroupOutput  {
     /// <p>The unique identifier for the deleted permission group.</p>
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeletePermissionGroupOutput {
+impl  DeletePermissionGroupOutput  {
     /// <p>The unique identifier for the deleted permission group.</p>
-    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePermissionGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionGroupOutput`](crate::operation::delete_permission_group::DeletePermissionGroupOutput).
     pub fn builder() -> crate::operation::delete_permission_group::builders::DeletePermissionGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl DeletePermissionGroupOutputBuilder {
     }
     /// <p>The unique identifier for the deleted permission group.</p>
     pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_group_id = input;
-        self
+        self.permission_group_id = input; self
     }
     /// <p>The unique identifier for the deleted permission group.</p>
     pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_group_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePermissionGroupOutput`](crate::operation::delete_permission_group::DeletePermissionGroupOutput).
     pub fn build(self) -> crate::operation::delete_permission_group::DeletePermissionGroupOutput {
         crate::operation::delete_permission_group::DeletePermissionGroupOutput {
-            permission_group_id: self.permission_group_id,
+            permission_group_id: self.permission_group_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

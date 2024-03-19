@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMonitorOutput {
+pub struct CreateMonitorOutput  {
     /// <p>The ARN of the monitor.</p>
     pub monitor_arn: ::std::string::String,
     /// <p>The name of the monitor.</p>
@@ -12,22 +12,20 @@ pub struct CreateMonitorOutput {
     /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateMonitorOutput {
+impl  CreateMonitorOutput  {
     /// <p>The ARN of the monitor.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> & str {
+        use std::ops::Deref; self.monitor_name.deref()
     }
     /// <p>The state of the monitor.</p>
-    pub fn state(&self) -> &crate::types::MonitorState {
+    pub fn state(&self) -> & crate::types::MonitorState {
         &self.state
     }
     /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
@@ -35,15 +33,15 @@ impl CreateMonitorOutput {
         self.aggregation_period
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateMonitorOutput`](crate::operation::create_monitor::CreateMonitorOutput).
     pub fn builder() -> crate::operation::create_monitor::builders::CreateMonitorOutputBuilder {
@@ -59,7 +57,7 @@ pub struct CreateMonitorOutputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::MonitorState>,
     pub(crate) aggregation_period: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateMonitorOutputBuilder {
@@ -71,8 +69,7 @@ impl CreateMonitorOutputBuilder {
     }
     /// <p>The ARN of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The ARN of the monitor.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl CreateMonitorOutputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl CreateMonitorOutputBuilder {
     }
     /// <p>The state of the monitor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MonitorState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the monitor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitorState> {
@@ -115,8 +110,7 @@ impl CreateMonitorOutputBuilder {
     }
     /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
@@ -129,58 +123,57 @@ impl CreateMonitorOutputBuilder {
     /// <p>The list of key-value pairs assigned to the monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMonitorOutput`](crate::operation::create_monitor::CreateMonitorOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_arn`](crate::operation::create_monitor::builders::CreateMonitorOutputBuilder::monitor_arn)
     /// - [`monitor_name`](crate::operation::create_monitor::builders::CreateMonitorOutputBuilder::monitor_name)
     /// - [`state`](crate::operation::create_monitor::builders::CreateMonitorOutputBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_monitor::CreateMonitorOutput {
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building CreateMonitorOutput",
-                )
-            })?,
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building CreateMonitorOutput",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building CreateMonitorOutput",
-                )
-            })?,
-            aggregation_period: self.aggregation_period,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_monitor::CreateMonitorOutput {
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building CreateMonitorOutput")
+                    )?
+                ,
+                monitor_name: self.monitor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_name", "monitor_name was not specified but it is required when building CreateMonitorOutput")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building CreateMonitorOutput")
+                    )?
+                ,
+                aggregation_period: self.aggregation_period
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

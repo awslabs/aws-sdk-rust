@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbEngineVersion {
+pub struct DbEngineVersion  {
     /// <p>The name of the database engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
@@ -21,32 +21,32 @@ pub struct DbEngineVersion {
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub db_engine_media_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
+    pub supported_character_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
+    pub supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
+    pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub supported_timezones: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>,
+    pub supported_timezones: ::std::option::Option<::std::vec::Vec::<crate::types::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exportable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub supports_read_replica: ::std::option::Option<bool>,
     /// <p>A list of the supported DB engine modes.</p>
-    pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_engine_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub supported_feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_feature_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
@@ -66,7 +66,7 @@ pub struct DbEngineVersion {
     /// <p>The creation time of the DB engine version.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub supports_babelfish: ::std::option::Option<bool>,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -75,75 +75,80 @@ pub struct DbEngineVersion {
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub supports_integrations: ::std::option::Option<bool>,
 }
-impl DbEngineVersion {
+impl  DbEngineVersion  {
     /// <p>The name of the database engine.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>The description of the database engine.</p>
-    pub fn db_engine_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_description(&self) -> ::std::option::Option<& str> {
         self.db_engine_description.as_deref()
     }
     /// <p>The description of the database engine version.</p>
-    pub fn db_engine_version_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_version_description(&self) -> ::std::option::Option<& str> {
         self.db_engine_version_description.as_deref()
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-    pub fn default_character_set(&self) -> ::std::option::Option<&crate::types::CharacterSet> {
+    pub fn default_character_set(&self) -> ::std::option::Option<& crate::types::CharacterSet> {
         self.default_character_set.as_ref()
     }
     /// <p>The EC2 image</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::CustomDbEngineVersionAmi> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::CustomDbEngineVersionAmi> {
         self.image.as_ref()
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-    pub fn db_engine_media_type(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_media_type(&self) -> ::std::option::Option<& str> {
         self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_character_sets.is_none()`.
-    pub fn supported_character_sets(&self) -> &[crate::types::CharacterSet] {
-        self.supported_character_sets.as_deref().unwrap_or_default()
+    pub fn supported_character_sets(&self) -> & [crate::types::CharacterSet] {
+        self.supported_character_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_nchar_character_sets.is_none()`.
-    pub fn supported_nchar_character_sets(&self) -> &[crate::types::CharacterSet] {
-        self.supported_nchar_character_sets.as_deref().unwrap_or_default()
+    pub fn supported_nchar_character_sets(&self) -> & [crate::types::CharacterSet] {
+        self.supported_nchar_character_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_upgrade_target.is_none()`.
-    pub fn valid_upgrade_target(&self) -> &[crate::types::UpgradeTarget] {
-        self.valid_upgrade_target.as_deref().unwrap_or_default()
+    pub fn valid_upgrade_target(&self) -> & [crate::types::UpgradeTarget] {
+        self.valid_upgrade_target.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_timezones.is_none()`.
-    pub fn supported_timezones(&self) -> &[crate::types::Timezone] {
-        self.supported_timezones.as_deref().unwrap_or_default()
+    pub fn supported_timezones(&self) -> & [crate::types::Timezone] {
+        self.supported_timezones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exportable_log_types.is_none()`.
-    pub fn exportable_log_types(&self) -> &[::std::string::String] {
-        self.exportable_log_types.as_deref().unwrap_or_default()
+    pub fn exportable_log_types(&self) -> & [::std::string::String] {
+        self.exportable_log_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
@@ -154,28 +159,30 @@ impl DbEngineVersion {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_modes.is_none()`.
-    pub fn supported_engine_modes(&self) -> &[::std::string::String] {
-        self.supported_engine_modes.as_deref().unwrap_or_default()
+    pub fn supported_engine_modes(&self) -> & [::std::string::String] {
+        self.supported_engine_modes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_feature_names.is_none()`.
-    pub fn supported_feature_names(&self) -> &[::std::string::String] {
-        self.supported_feature_names.as_deref().unwrap_or_default()
+    pub fn supported_feature_names(&self) -> & [::std::string::String] {
+        self.supported_feature_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
@@ -187,41 +194,42 @@ impl DbEngineVersion {
         self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.database_installation_files_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
     /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_version_arn(&self) -> ::std::option::Option<& str> {
         self.db_engine_version_arn.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
+    pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<& str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
@@ -230,10 +238,11 @@ impl DbEngineVersion {
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ca_certificate_identifiers.is_none()`.
-    pub fn supported_ca_certificate_identifiers(&self) -> &[::std::string::String] {
-        self.supported_ca_certificate_identifiers.as_deref().unwrap_or_default()
+    pub fn supported_ca_certificate_identifiers(&self) -> & [::std::string::String] {
+        self.supported_ca_certificate_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -264,15 +273,15 @@ pub struct DbEngineVersionBuilder {
     pub(crate) default_character_set: ::std::option::Option<crate::types::CharacterSet>,
     pub(crate) image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     pub(crate) db_engine_media_type: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
-    pub(crate) supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
-    pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
-    pub(crate) supported_timezones: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>,
-    pub(crate) exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_character_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>,
+    pub(crate) supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>,
+    pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>,
+    pub(crate) supported_timezones: ::std::option::Option<::std::vec::Vec::<crate::types::Timezone>>,
+    pub(crate) exportable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     pub(crate) supports_read_replica: ::std::option::Option<bool>,
-    pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supported_feature_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) supports_parallel_query: ::std::option::Option<bool>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
@@ -282,11 +291,11 @@ pub struct DbEngineVersionBuilder {
     pub(crate) db_engine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
     pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
-    pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) supports_integrations: ::std::option::Option<bool>,
 }
@@ -298,8 +307,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The name of the database engine.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the database engine.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,8 +320,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The version number of the database engine.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the database engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +333,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_family = input;
-        self
+        self.db_parameter_group_family = input; self
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +346,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The description of the database engine.</p>
     pub fn set_db_engine_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_description = input;
-        self
+        self.db_engine_description = input; self
     }
     /// <p>The description of the database engine.</p>
     pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -354,8 +359,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The description of the database engine version.</p>
     pub fn set_db_engine_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_version_description = input;
-        self
+        self.db_engine_version_description = input; self
     }
     /// <p>The description of the database engine version.</p>
     pub fn get_db_engine_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -368,8 +372,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn set_default_character_set(mut self, input: ::std::option::Option<crate::types::CharacterSet>) -> Self {
-        self.default_character_set = input;
-        self
+        self.default_character_set = input; self
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn get_default_character_set(&self) -> &::std::option::Option<crate::types::CharacterSet> {
@@ -382,8 +385,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The EC2 image</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The EC2 image</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::CustomDbEngineVersionAmi> {
@@ -396,8 +398,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub fn set_db_engine_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_media_type = input;
-        self
+        self.db_engine_media_type = input; self
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub fn get_db_engine_media_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -410,17 +411,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_character_sets(mut self, input: crate::types::CharacterSet) -> Self {
         let mut v = self.supported_character_sets.unwrap_or_default();
-        v.push(input);
-        self.supported_character_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_character_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn set_supported_character_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>) -> Self {
-        self.supported_character_sets = input;
-        self
+    pub fn set_supported_character_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>) -> Self {
+        self.supported_character_sets = input; self
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn get_supported_character_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>> {
+    pub fn get_supported_character_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>> {
         &self.supported_character_sets
     }
     /// Appends an item to `supported_nchar_character_sets`.
@@ -430,17 +430,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub fn supported_nchar_character_sets(mut self, input: crate::types::CharacterSet) -> Self {
         let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-        v.push(input);
-        self.supported_nchar_character_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_nchar_character_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn set_supported_nchar_character_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>) -> Self {
-        self.supported_nchar_character_sets = input;
-        self
+    pub fn set_supported_nchar_character_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>>) -> Self {
+        self.supported_nchar_character_sets = input; self
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn get_supported_nchar_character_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>> {
+    pub fn get_supported_nchar_character_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CharacterSet>> {
         &self.supported_nchar_character_sets
     }
     /// Appends an item to `valid_upgrade_target`.
@@ -450,17 +449,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     pub fn valid_upgrade_target(mut self, input: crate::types::UpgradeTarget) -> Self {
         let mut v = self.valid_upgrade_target.unwrap_or_default();
-        v.push(input);
-        self.valid_upgrade_target = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.valid_upgrade_target = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn set_valid_upgrade_target(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>) -> Self {
-        self.valid_upgrade_target = input;
-        self
+    pub fn set_valid_upgrade_target(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>) -> Self {
+        self.valid_upgrade_target = input; self
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn get_valid_upgrade_target(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>> {
+    pub fn get_valid_upgrade_target(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>> {
         &self.valid_upgrade_target
     }
     /// Appends an item to `supported_timezones`.
@@ -470,17 +468,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
     pub fn supported_timezones(mut self, input: crate::types::Timezone) -> Self {
         let mut v = self.supported_timezones.unwrap_or_default();
-        v.push(input);
-        self.supported_timezones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_timezones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn set_supported_timezones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>) -> Self {
-        self.supported_timezones = input;
-        self
+    pub fn set_supported_timezones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Timezone>>) -> Self {
+        self.supported_timezones = input; self
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn get_supported_timezones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Timezone>> {
+    pub fn get_supported_timezones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Timezone>> {
         &self.supported_timezones
     }
     /// Appends an item to `exportable_log_types`.
@@ -490,17 +487,16 @@ impl DbEngineVersionBuilder {
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
     pub fn exportable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exportable_log_types.unwrap_or_default();
-        v.push(input.into());
-        self.exportable_log_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exportable_log_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn set_exportable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exportable_log_types = input;
-        self
+    pub fn set_exportable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exportable_log_types = input; self
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn get_exportable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exportable_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exportable_log_types
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
@@ -510,8 +506,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_log_exports_to_cloudwatch_logs = input;
-        self
+        self.supports_log_exports_to_cloudwatch_logs = input; self
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
@@ -524,8 +519,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub fn set_supports_read_replica(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_read_replica = input;
-        self
+        self.supports_read_replica = input; self
     }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub fn get_supports_read_replica(&self) -> &::std::option::Option<bool> {
@@ -538,17 +532,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of the supported DB engine modes.</p>
     pub fn supported_engine_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_engine_modes.unwrap_or_default();
-        v.push(input.into());
-        self.supported_engine_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_engine_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn set_supported_engine_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_engine_modes = input;
-        self
+    pub fn set_supported_engine_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_engine_modes = input; self
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_engine_modes
     }
     /// Appends an item to `supported_feature_names`.
@@ -559,7 +552,7 @@ impl DbEngineVersionBuilder {
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
@@ -567,35 +560,34 @@ impl DbEngineVersionBuilder {
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     pub fn supported_feature_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_feature_names.unwrap_or_default();
-        v.push(input.into());
-        self.supported_feature_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_feature_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn set_supported_feature_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_feature_names = input;
-        self
+    pub fn set_supported_feature_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_feature_names = input; self
     }
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn get_supported_feature_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_feature_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_feature_names
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
@@ -605,8 +597,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -619,8 +610,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn set_supports_parallel_query(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_parallel_query = input;
-        self
+        self.supports_parallel_query = input; self
     }
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn get_supports_parallel_query(&self) -> &::std::option::Option<bool> {
@@ -633,8 +623,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_global_databases = input;
-        self
+        self.supports_global_databases = input; self
     }
     /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
@@ -647,8 +636,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The major engine version of the CEV.</p>
     pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
+        self.major_engine_version = input; self
     }
     /// <p>The major engine version of the CEV.</p>
     pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -661,8 +649,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
     pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_bucket_name = input;
-        self
+        self.database_installation_files_s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
     pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -675,8 +662,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_prefix = input;
-        self
+        self.database_installation_files_s3_prefix = input; self
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -689,8 +675,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The ARN of the custom engine version.</p>
     pub fn set_db_engine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_version_arn = input;
-        self
+        self.db_engine_version_arn = input; self
     }
     /// <p>The ARN of the custom engine version.</p>
     pub fn get_db_engine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -703,8 +688,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -717,8 +701,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The creation time of the DB engine version.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The creation time of the DB engine version.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -731,17 +714,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
@@ -751,8 +733,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn set_supports_babelfish(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_babelfish = input;
-        self
+        self.supports_babelfish = input; self
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
@@ -765,8 +746,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_custom_db_engine_version_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_db_engine_version_manifest = input;
-        self
+        self.custom_db_engine_version_manifest = input; self
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
@@ -779,8 +759,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn set_supports_certificate_rotation_without_restart(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_certificate_rotation_without_restart = input;
-        self
+        self.supports_certificate_rotation_without_restart = input; self
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn get_supports_certificate_rotation_without_restart(&self) -> &::std::option::Option<bool> {
@@ -794,19 +773,18 @@ impl DbEngineVersionBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn supported_ca_certificate_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.supported_ca_certificate_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_ca_certificate_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_ca_certificate_identifiers = input;
-        self
+    pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_ca_certificate_identifiers = input; self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_ca_certificate_identifiers
     }
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
@@ -818,8 +796,7 @@ impl DbEngineVersionBuilder {
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_supports_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_local_write_forwarding = input;
-        self
+        self.supports_local_write_forwarding = input; self
     }
     /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -833,8 +810,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn set_supports_integrations(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_integrations = input;
-        self
+        self.supports_integrations = input; self
     }
     /// <p>Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.</p>
     pub fn get_supports_integrations(&self) -> &::std::option::Option<bool> {
@@ -843,39 +819,73 @@ impl DbEngineVersionBuilder {
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            db_parameter_group_family: self.db_parameter_group_family,
-            db_engine_description: self.db_engine_description,
-            db_engine_version_description: self.db_engine_version_description,
-            default_character_set: self.default_character_set,
-            image: self.image,
-            db_engine_media_type: self.db_engine_media_type,
-            supported_character_sets: self.supported_character_sets,
-            supported_nchar_character_sets: self.supported_nchar_character_sets,
-            valid_upgrade_target: self.valid_upgrade_target,
-            supported_timezones: self.supported_timezones,
-            exportable_log_types: self.exportable_log_types,
-            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
-            supports_read_replica: self.supports_read_replica,
-            supported_engine_modes: self.supported_engine_modes,
-            supported_feature_names: self.supported_feature_names,
-            status: self.status,
-            supports_parallel_query: self.supports_parallel_query,
-            supports_global_databases: self.supports_global_databases,
-            major_engine_version: self.major_engine_version,
-            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
-            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-            db_engine_version_arn: self.db_engine_version_arn,
-            kms_key_id: self.kms_key_id,
-            create_time: self.create_time,
-            tag_list: self.tag_list,
-            supports_babelfish: self.supports_babelfish,
-            custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
-            supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
-            supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
-            supports_local_write_forwarding: self.supports_local_write_forwarding,
-            supports_integrations: self.supports_integrations,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            db_parameter_group_family: self.db_parameter_group_family
+            ,
+            db_engine_description: self.db_engine_description
+            ,
+            db_engine_version_description: self.db_engine_version_description
+            ,
+            default_character_set: self.default_character_set
+            ,
+            image: self.image
+            ,
+            db_engine_media_type: self.db_engine_media_type
+            ,
+            supported_character_sets: self.supported_character_sets
+            ,
+            supported_nchar_character_sets: self.supported_nchar_character_sets
+            ,
+            valid_upgrade_target: self.valid_upgrade_target
+            ,
+            supported_timezones: self.supported_timezones
+            ,
+            exportable_log_types: self.exportable_log_types
+            ,
+            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs
+            ,
+            supports_read_replica: self.supports_read_replica
+            ,
+            supported_engine_modes: self.supported_engine_modes
+            ,
+            supported_feature_names: self.supported_feature_names
+            ,
+            status: self.status
+            ,
+            supports_parallel_query: self.supports_parallel_query
+            ,
+            supports_global_databases: self.supports_global_databases
+            ,
+            major_engine_version: self.major_engine_version
+            ,
+            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name
+            ,
+            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix
+            ,
+            db_engine_version_arn: self.db_engine_version_arn
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            create_time: self.create_time
+            ,
+            tag_list: self.tag_list
+            ,
+            supports_babelfish: self.supports_babelfish
+            ,
+            custom_db_engine_version_manifest: self.custom_db_engine_version_manifest
+            ,
+            supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart
+            ,
+            supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers
+            ,
+            supports_local_write_forwarding: self.supports_local_write_forwarding
+            ,
+            supports_integrations: self.supports_integrations
+            ,
         }
     }
 }
+

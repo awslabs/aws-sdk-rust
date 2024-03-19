@@ -3,7 +3,7 @@
 /// <p>Describes a finding for a Network Access Scope.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessScopeAnalysisFinding {
+pub struct AccessScopeAnalysisFinding  {
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Network Access Scope.</p>
@@ -11,26 +11,27 @@ pub struct AccessScopeAnalysisFinding {
     /// <p>The ID of the finding.</p>
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The finding components.</p>
-    pub finding_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub finding_components: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>,
 }
-impl AccessScopeAnalysisFinding {
+impl  AccessScopeAnalysisFinding  {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_analysis_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_analysis_id.as_deref()
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
     /// <p>The finding components.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_components.is_none()`.
-    pub fn finding_components(&self) -> &[crate::types::PathComponent] {
-        self.finding_components.as_deref().unwrap_or_default()
+    pub fn finding_components(&self) -> & [crate::types::PathComponent] {
+        self.finding_components.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AccessScopeAnalysisFinding {
@@ -47,7 +48,7 @@ pub struct AccessScopeAnalysisFindingBuilder {
     pub(crate) network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub(crate) finding_components: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>,
 }
 impl AccessScopeAnalysisFindingBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
@@ -57,8 +58,7 @@ impl AccessScopeAnalysisFindingBuilder {
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn set_network_insights_access_scope_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_analysis_id = input;
-        self
+        self.network_insights_access_scope_analysis_id = input; self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn get_network_insights_access_scope_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl AccessScopeAnalysisFindingBuilder {
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_id = input;
-        self
+        self.network_insights_access_scope_id = input; self
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl AccessScopeAnalysisFindingBuilder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The ID of the finding.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl AccessScopeAnalysisFindingBuilder {
     /// <p>The finding components.</p>
     pub fn finding_components(mut self, input: crate::types::PathComponent) -> Self {
         let mut v = self.finding_components.unwrap_or_default();
-        v.push(input);
-        self.finding_components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The finding components.</p>
-    pub fn set_finding_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>) -> Self {
-        self.finding_components = input;
-        self
+    pub fn set_finding_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>) -> Self {
+        self.finding_components = input; self
     }
     /// <p>The finding components.</p>
-    pub fn get_finding_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+    pub fn get_finding_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>> {
         &self.finding_components
     }
     /// Consumes the builder and constructs a [`AccessScopeAnalysisFinding`](crate::types::AccessScopeAnalysisFinding).
     pub fn build(self) -> crate::types::AccessScopeAnalysisFinding {
         crate::types::AccessScopeAnalysisFinding {
-            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id,
-            network_insights_access_scope_id: self.network_insights_access_scope_id,
-            finding_id: self.finding_id,
-            finding_components: self.finding_components,
+            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
+            ,
+            network_insights_access_scope_id: self.network_insights_access_scope_id
+            ,
+            finding_id: self.finding_id
+            ,
+            finding_components: self.finding_components
+            ,
         }
     }
 }
+

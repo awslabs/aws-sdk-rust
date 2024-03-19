@@ -5,54 +5,50 @@ pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_input::Descr
 
 impl DescribeIpv6PoolsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_ipv6_pools();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_ipv6_pools();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeIpv6Pools`.
-///
+/// 
 /// <p>Describes your IPv6 address pools.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIpv6PoolsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder,
+                    inner: crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-    > for DescribeIpv6PoolsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
+                    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
+                > for DescribeIpv6PoolsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
+                        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeIpv6PoolsFluentBuilder {
     /// Creates a new `DescribeIpv6Pools`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeIpv6PoolsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_ipv6_pools::DescribeIpv6Pools::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_ipv6_pools::DescribeIpv6Pools::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_ipv6_pools::DescribeIpv6Pools::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_ipv6_pools::DescribeIpv6Pools::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput, crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator {
-        crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator {
+                                crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PoolIds`.
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
@@ -124,12 +111,12 @@ impl DescribeIpv6PoolsFluentBuilder {
         self
     }
     /// <p>The IDs of the IPv6 address pools.</p>
-    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
     /// <p>The IDs of the IPv6 address pools.</p>
-    pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_pool_ids()
     }
     /// <p>The token for the next page of results.</p>
@@ -182,10 +169,10 @@ impl DescribeIpv6PoolsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -199,16 +186,16 @@ impl DescribeIpv6PoolsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -216,16 +203,17 @@ impl DescribeIpv6PoolsFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
 }
+

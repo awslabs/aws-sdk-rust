@@ -3,28 +3,29 @@
 /// <p>A list of the replication groups</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionalConfiguration {
+pub struct RegionalConfiguration  {
     /// <p>The name of the secondary cluster</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region where the cluster is stored</p>
     pub replication_group_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
-    pub resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
+    pub resharding_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>,
 }
-impl RegionalConfiguration {
+impl  RegionalConfiguration  {
     /// <p>The name of the secondary cluster</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The Amazon region where the cluster is stored</p>
-    pub fn replication_group_region(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_region(&self) -> ::std::option::Option<& str> {
         self.replication_group_region.as_deref()
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resharding_configuration.is_none()`.
-    pub fn resharding_configuration(&self) -> &[crate::types::ReshardingConfiguration] {
-        self.resharding_configuration.as_deref().unwrap_or_default()
+    pub fn resharding_configuration(&self) -> & [crate::types::ReshardingConfiguration] {
+        self.resharding_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegionalConfiguration {
@@ -40,7 +41,7 @@ impl RegionalConfiguration {
 pub struct RegionalConfigurationBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_region: ::std::option::Option<::std::string::String>,
-    pub(crate) resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
+    pub(crate) resharding_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>,
 }
 impl RegionalConfigurationBuilder {
     /// <p>The name of the secondary cluster</p>
@@ -51,8 +52,7 @@ impl RegionalConfigurationBuilder {
     }
     /// <p>The name of the secondary cluster</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The name of the secondary cluster</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl RegionalConfigurationBuilder {
     }
     /// <p>The Amazon region where the cluster is stored</p>
     pub fn set_replication_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_region = input;
-        self
+        self.replication_group_region = input; self
     }
     /// <p>The Amazon region where the cluster is stored</p>
     pub fn get_replication_group_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,25 +79,28 @@ impl RegionalConfigurationBuilder {
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
     pub fn resharding_configuration(mut self, input: crate::types::ReshardingConfiguration) -> Self {
         let mut v = self.resharding_configuration.unwrap_or_default();
-        v.push(input);
-        self.resharding_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resharding_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
-    pub fn set_resharding_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>) -> Self {
-        self.resharding_configuration = input;
-        self
+    pub fn set_resharding_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>) -> Self {
+        self.resharding_configuration = input; self
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
-    pub fn get_resharding_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>> {
+    pub fn get_resharding_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>> {
         &self.resharding_configuration
     }
     /// Consumes the builder and constructs a [`RegionalConfiguration`](crate::types::RegionalConfiguration).
     pub fn build(self) -> crate::types::RegionalConfiguration {
         crate::types::RegionalConfiguration {
-            replication_group_id: self.replication_group_id,
-            replication_group_region: self.replication_group_region,
-            resharding_configuration: self.resharding_configuration,
+            replication_group_id: self.replication_group_id
+            ,
+            replication_group_region: self.replication_group_region
+            ,
+            resharding_configuration: self.resharding_configuration
+            ,
         }
     }
 }
+

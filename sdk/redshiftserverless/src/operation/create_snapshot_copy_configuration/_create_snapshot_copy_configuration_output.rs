@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotCopyConfigurationOutput {
+pub struct CreateSnapshotCopyConfigurationOutput  {
     /// <p>The snapshot copy configuration object that is returned.</p>
     pub snapshot_copy_configuration: ::std::option::Option<crate::types::SnapshotCopyConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateSnapshotCopyConfigurationOutput {
+impl  CreateSnapshotCopyConfigurationOutput  {
     /// <p>The snapshot copy configuration object that is returned.</p>
-    pub fn snapshot_copy_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotCopyConfiguration> {
+    pub fn snapshot_copy_configuration(&self) -> ::std::option::Option<& crate::types::SnapshotCopyConfiguration> {
         self.snapshot_copy_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSnapshotCopyConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSnapshotCopyConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotCopyConfigurationOutput`](crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationOutput).
     pub fn builder() -> crate::operation::create_snapshot_copy_configuration::builders::CreateSnapshotCopyConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateSnapshotCopyConfigurationOutputBuilder {
     }
     /// <p>The snapshot copy configuration object that is returned.</p>
     pub fn set_snapshot_copy_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotCopyConfiguration>) -> Self {
-        self.snapshot_copy_configuration = input;
-        self
+        self.snapshot_copy_configuration = input; self
     }
     /// <p>The snapshot copy configuration object that is returned.</p>
     pub fn get_snapshot_copy_configuration(&self) -> &::std::option::Option<crate::types::SnapshotCopyConfiguration> {
         &self.snapshot_copy_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyConfigurationOutput`](crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationOutput).
     pub fn build(self) -> crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationOutput {
         crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationOutput {
-            snapshot_copy_configuration: self.snapshot_copy_configuration,
+            snapshot_copy_configuration: self.snapshot_copy_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

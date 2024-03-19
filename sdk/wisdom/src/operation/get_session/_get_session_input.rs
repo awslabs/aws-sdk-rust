@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSessionInput {
+pub struct GetSessionInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSessionInput {
+impl  GetSessionInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSessionInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetSessionInputBuilder {
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetSessionInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput {
-            assistant_id: self.assistant_id,
-            session_id: self.session_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_session::GetSessionInput {
+                assistant_id: self.assistant_id
+                ,
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

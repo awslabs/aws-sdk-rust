@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegistrationAttachmentInput {
+pub struct CreateRegistrationAttachmentInput  {
     /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
     pub attachment_body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
     pub attachment_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateRegistrationAttachmentInput {
+impl  CreateRegistrationAttachmentInput  {
     /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
-    pub fn attachment_body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn attachment_body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.attachment_body.as_ref()
     }
     /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
-    pub fn attachment_url(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_url(&self) -> ::std::option::Option<& str> {
         self.attachment_url.as_deref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateRegistrationAttachmentInput {
 pub struct CreateRegistrationAttachmentInputBuilder {
     pub(crate) attachment_body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) attachment_url: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRegistrationAttachmentInputBuilder {
@@ -56,8 +57,7 @@ impl CreateRegistrationAttachmentInputBuilder {
     }
     /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn set_attachment_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.attachment_body = input;
-        self
+        self.attachment_body = input; self
     }
     /// <p>The registration file to upload. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn get_attachment_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -70,8 +70,7 @@ impl CreateRegistrationAttachmentInputBuilder {
     }
     /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
     pub fn set_attachment_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_url = input;
-        self
+        self.attachment_url = input; self
     }
     /// <p>A URL to the required registration file. For example, you can provide the S3 object URL.</p>
     pub fn get_attachment_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,17 +83,16 @@ impl CreateRegistrationAttachmentInputBuilder {
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
@@ -104,25 +102,26 @@ impl CreateRegistrationAttachmentInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRegistrationAttachmentInput`](crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput {
-            attachment_body: self.attachment_body,
-            attachment_url: self.attachment_url,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput {
+                attachment_body: self.attachment_body
+                ,
+                attachment_url: self.attachment_url
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

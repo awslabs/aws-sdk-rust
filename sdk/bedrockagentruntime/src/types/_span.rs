@@ -3,13 +3,13 @@
 /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Span {
+pub struct Span  {
     /// <p>Where the text with a citation starts in the generated output.</p>
     pub start: ::std::option::Option<i32>,
     /// <p>Where the text with a citation ends in the generated output.</p>
     pub end: ::std::option::Option<i32>,
 }
-impl Span {
+impl  Span  {
     /// <p>Where the text with a citation starts in the generated output.</p>
     pub fn start(&self) -> ::std::option::Option<i32> {
         self.start
@@ -41,8 +41,7 @@ impl SpanBuilder {
     }
     /// <p>Where the text with a citation starts in the generated output.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>Where the text with a citation starts in the generated output.</p>
     pub fn get_start(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl SpanBuilder {
     }
     /// <p>Where the text with a citation ends in the generated output.</p>
     pub fn set_end(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>Where the text with a citation ends in the generated output.</p>
     pub fn get_end(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl SpanBuilder {
     /// Consumes the builder and constructs a [`Span`](crate::types::Span).
     pub fn build(self) -> crate::types::Span {
         crate::types::Span {
-            start: self.start,
-            end: self.end,
+            start: self.start
+            ,
+            end: self.end
+            ,
         }
     }
 }
+

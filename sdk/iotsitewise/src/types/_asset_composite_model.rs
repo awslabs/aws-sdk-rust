@@ -3,7 +3,7 @@
 /// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetCompositeModel {
+pub struct AssetCompositeModel  {
     /// <p>The name of the composite model.</p>
     pub name: ::std::string::String,
     /// <p>The description of the composite model.</p>
@@ -11,38 +11,35 @@ pub struct AssetCompositeModel {
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub r#type: ::std::string::String,
     /// <p>The asset properties that this composite model defines.</p>
-    pub properties: ::std::vec::Vec<crate::types::AssetProperty>,
+    pub properties: ::std::vec::Vec::<crate::types::AssetProperty>,
     /// <p>The ID of the asset composite model.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
-impl AssetCompositeModel {
+impl  AssetCompositeModel  {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn properties(&self) -> &[crate::types::AssetProperty] {
-        use std::ops::Deref;
-        self.properties.deref()
+    pub fn properties(&self) -> & [crate::types::AssetProperty] {
+        use std::ops::Deref; self.properties.deref()
     }
     /// <p>The ID of the asset composite model.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -60,7 +57,7 @@ pub struct AssetCompositeModelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec::<crate::types::AssetProperty>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
@@ -73,8 +70,7 @@ impl AssetCompositeModelBuilder {
     }
     /// <p>The name of the composite model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the composite model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl AssetCompositeModelBuilder {
     }
     /// <p>The description of the composite model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the composite model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl AssetCompositeModelBuilder {
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,17 +110,16 @@ impl AssetCompositeModelBuilder {
     /// <p>The asset properties that this composite model defines.</p>
     pub fn properties(mut self, input: crate::types::AssetProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetProperty>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The asset properties that this composite model defines.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetProperty>> {
         &self.properties
     }
     /// <p>The ID of the asset composite model.</p>
@@ -136,8 +129,7 @@ impl AssetCompositeModelBuilder {
     }
     /// <p>The ID of the asset composite model.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the asset composite model.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +142,7 @@ impl AssetCompositeModelBuilder {
     }
     /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,28 +154,31 @@ impl AssetCompositeModelBuilder {
     /// - [`r#type`](crate::types::builders::AssetCompositeModelBuilder::r#type)
     /// - [`properties`](crate::types::builders::AssetCompositeModelBuilder::properties)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModel, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetCompositeModel {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssetCompositeModel",
-                )
-            })?,
-            description: self.description,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AssetCompositeModel",
-                )
-            })?,
-            properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "properties",
-                    "properties was not specified but it is required when building AssetCompositeModel",
-                )
-            })?,
-            id: self.id,
-            external_id: self.external_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetCompositeModel {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssetCompositeModel")
+                    )?
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AssetCompositeModel")
+                    )?
+                ,
+                properties: self.properties
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("properties", "properties was not specified but it is required when building AssetCompositeModel")
+                    )?
+                ,
+                id: self.id
+                ,
+                external_id: self.external_id
+                ,
+            }
+        )
     }
 }
+

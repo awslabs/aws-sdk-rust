@@ -3,22 +3,22 @@
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetWorkUnitResultsOutput {
+pub struct GetWorkUnitResultsOutput  {
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     pub result_stream: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetWorkUnitResultsOutput {
+impl  GetWorkUnitResultsOutput  {
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub fn result_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn result_stream(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.result_stream
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkUnitResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkUnitResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput).
     pub fn builder() -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder {
@@ -41,27 +41,29 @@ impl GetWorkUnitResultsOutputBuilder {
     }
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     pub fn set_result_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.result_stream = input;
-        self
+        self.result_stream = input; self
     }
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     pub fn get_result_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.result_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput).
     pub fn build(self) -> crate::operation::get_work_unit_results::GetWorkUnitResultsOutput {
         crate::operation::get_work_unit_results::GetWorkUnitResultsOutput {
-            result_stream: self.result_stream.unwrap_or_default(),
+            result_stream: self.result_stream
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

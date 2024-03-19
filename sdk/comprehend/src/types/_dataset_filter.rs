@@ -3,7 +3,7 @@
 /// <p>Filter the datasets based on creation time or dataset status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetFilter {
+pub struct DatasetFilter  {
     /// <p>Filter the datasets based on the dataset status.</p>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>Filter the datasets based on the dataset type.</p>
@@ -13,21 +13,21 @@ pub struct DatasetFilter {
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DatasetFilter {
+impl  DatasetFilter  {
     /// <p>Filter the datasets based on the dataset status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>Filter the datasets based on the dataset type.</p>
-    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DatasetFilterBuilder {
     }
     /// <p>Filter the datasets based on the dataset status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Filter the datasets based on the dataset status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
@@ -69,8 +68,7 @@ impl DatasetFilterBuilder {
     }
     /// <p>Filter the datasets based on the dataset type.</p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>Filter the datasets based on the dataset type.</p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
@@ -83,8 +81,7 @@ impl DatasetFilterBuilder {
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl DatasetFilterBuilder {
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl DatasetFilterBuilder {
     /// Consumes the builder and constructs a [`DatasetFilter`](crate::types::DatasetFilter).
     pub fn build(self) -> crate::types::DatasetFilter {
         crate::types::DatasetFilter {
-            status: self.status,
-            dataset_type: self.dataset_type,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
+            status: self.status
+            ,
+            dataset_type: self.dataset_type
+            ,
+            creation_time_after: self.creation_time_after
+            ,
+            creation_time_before: self.creation_time_before
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object representing the Source Network recovery Lifecycle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryLifeCycle {
+pub struct RecoveryLifeCycle  {
     /// <p>The date and time the last Source Network recovery was initiated.</p>
     pub api_call_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
@@ -11,17 +11,17 @@ pub struct RecoveryLifeCycle {
     /// <p>The status of the last recovery status of this Source Network.</p>
     pub last_recovery_result: ::std::option::Option<crate::types::RecoveryResult>,
 }
-impl RecoveryLifeCycle {
+impl  RecoveryLifeCycle  {
     /// <p>The date and time the last Source Network recovery was initiated.</p>
-    pub fn api_call_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn api_call_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.api_call_date_time.as_ref()
     }
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the last recovery status of this Source Network.</p>
-    pub fn last_recovery_result(&self) -> ::std::option::Option<&crate::types::RecoveryResult> {
+    pub fn last_recovery_result(&self) -> ::std::option::Option<& crate::types::RecoveryResult> {
         self.last_recovery_result.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RecoveryLifeCycleBuilder {
     }
     /// <p>The date and time the last Source Network recovery was initiated.</p>
     pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.api_call_date_time = input;
-        self
+        self.api_call_date_time = input; self
     }
     /// <p>The date and time the last Source Network recovery was initiated.</p>
     pub fn get_api_call_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl RecoveryLifeCycleBuilder {
     }
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RecoveryLifeCycleBuilder {
     }
     /// <p>The status of the last recovery status of this Source Network.</p>
     pub fn set_last_recovery_result(mut self, input: ::std::option::Option<crate::types::RecoveryResult>) -> Self {
-        self.last_recovery_result = input;
-        self
+        self.last_recovery_result = input; self
     }
     /// <p>The status of the last recovery status of this Source Network.</p>
     pub fn get_last_recovery_result(&self) -> &::std::option::Option<crate::types::RecoveryResult> {
@@ -86,9 +83,13 @@ impl RecoveryLifeCycleBuilder {
     /// Consumes the builder and constructs a [`RecoveryLifeCycle`](crate::types::RecoveryLifeCycle).
     pub fn build(self) -> crate::types::RecoveryLifeCycle {
         crate::types::RecoveryLifeCycle {
-            api_call_date_time: self.api_call_date_time,
-            job_id: self.job_id,
-            last_recovery_result: self.last_recovery_result,
+            api_call_date_time: self.api_call_date_time
+            ,
+            job_id: self.job_id
+            ,
+            last_recovery_result: self.last_recovery_result
+            ,
         }
     }
 }
+

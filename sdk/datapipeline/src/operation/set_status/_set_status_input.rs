@@ -3,27 +3,28 @@
 /// <p>Contains the parameters for SetStatus.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetStatusInput {
+pub struct SetStatusInput  {
     /// <p>The ID of the pipeline that contains the objects.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub object_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl SetStatusInput {
+impl  SetStatusInput  {
     /// <p>The ID of the pipeline that contains the objects.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_ids.is_none()`.
-    pub fn object_ids(&self) -> &[::std::string::String] {
-        self.object_ids.as_deref().unwrap_or_default()
+    pub fn object_ids(&self) -> & [::std::string::String] {
+        self.object_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl SetStatusInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetStatusInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) object_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl SetStatusInputBuilder {
@@ -51,8 +52,7 @@ impl SetStatusInputBuilder {
     }
     /// <p>The ID of the pipeline that contains the objects.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline that contains the objects.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +65,16 @@ impl SetStatusInputBuilder {
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
     pub fn object_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_ids.unwrap_or_default();
-        v.push(input.into());
-        self.object_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.object_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.object_ids = input;
-        self
+    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.object_ids = input; self
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.object_ids
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
@@ -86,8 +85,7 @@ impl SetStatusInputBuilder {
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,10 +93,16 @@ impl SetStatusInputBuilder {
     }
     /// Consumes the builder and constructs a [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::set_status::SetStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_status::SetStatusInput {
-            pipeline_id: self.pipeline_id,
-            object_ids: self.object_ids,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::set_status::SetStatusInput {
+                pipeline_id: self.pipeline_id
+                ,
+                object_ids: self.object_ids
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

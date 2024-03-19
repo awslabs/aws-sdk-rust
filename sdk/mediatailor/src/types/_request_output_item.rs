@@ -3,7 +3,7 @@
 /// <p>The output configuration for this channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestOutputItem {
+pub struct RequestOutputItem  {
     /// <p>DASH manifest configuration parameters.</p>
     pub dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     /// <p>HLS playlist configuration parameters.</p>
@@ -13,24 +13,22 @@ pub struct RequestOutputItem {
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
     pub source_group: ::std::string::String,
 }
-impl RequestOutputItem {
+impl  RequestOutputItem  {
     /// <p>DASH manifest configuration parameters.</p>
-    pub fn dash_playlist_settings(&self) -> ::std::option::Option<&crate::types::DashPlaylistSettings> {
+    pub fn dash_playlist_settings(&self) -> ::std::option::Option<& crate::types::DashPlaylistSettings> {
         self.dash_playlist_settings.as_ref()
     }
     /// <p>HLS playlist configuration parameters.</p>
-    pub fn hls_playlist_settings(&self) -> ::std::option::Option<&crate::types::HlsPlaylistSettings> {
+    pub fn hls_playlist_settings(&self) -> ::std::option::Option<& crate::types::HlsPlaylistSettings> {
         self.hls_playlist_settings.as_ref()
     }
     /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
-    pub fn manifest_name(&self) -> &str {
-        use std::ops::Deref;
-        self.manifest_name.deref()
+    pub fn manifest_name(&self) -> & str {
+        use std::ops::Deref; self.manifest_name.deref()
     }
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
-    pub fn source_group(&self) -> &str {
-        use std::ops::Deref;
-        self.source_group.deref()
+    pub fn source_group(&self) -> & str {
+        use std::ops::Deref; self.source_group.deref()
     }
 }
 impl RequestOutputItem {
@@ -57,8 +55,7 @@ impl RequestOutputItemBuilder {
     }
     /// <p>DASH manifest configuration parameters.</p>
     pub fn set_dash_playlist_settings(mut self, input: ::std::option::Option<crate::types::DashPlaylistSettings>) -> Self {
-        self.dash_playlist_settings = input;
-        self
+        self.dash_playlist_settings = input; self
     }
     /// <p>DASH manifest configuration parameters.</p>
     pub fn get_dash_playlist_settings(&self) -> &::std::option::Option<crate::types::DashPlaylistSettings> {
@@ -71,8 +68,7 @@ impl RequestOutputItemBuilder {
     }
     /// <p>HLS playlist configuration parameters.</p>
     pub fn set_hls_playlist_settings(mut self, input: ::std::option::Option<crate::types::HlsPlaylistSettings>) -> Self {
-        self.hls_playlist_settings = input;
-        self
+        self.hls_playlist_settings = input; self
     }
     /// <p>HLS playlist configuration parameters.</p>
     pub fn get_hls_playlist_settings(&self) -> &::std::option::Option<crate::types::HlsPlaylistSettings> {
@@ -86,8 +82,7 @@ impl RequestOutputItemBuilder {
     }
     /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
     pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_name = input;
-        self
+        self.manifest_name = input; self
     }
     /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
     pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl RequestOutputItemBuilder {
     }
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
     pub fn set_source_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_group = input;
-        self
+        self.source_group = input; self
     }
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
     pub fn get_source_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +107,24 @@ impl RequestOutputItemBuilder {
     /// - [`manifest_name`](crate::types::builders::RequestOutputItemBuilder::manifest_name)
     /// - [`source_group`](crate::types::builders::RequestOutputItemBuilder::source_group)
     pub fn build(self) -> ::std::result::Result<crate::types::RequestOutputItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RequestOutputItem {
-            dash_playlist_settings: self.dash_playlist_settings,
-            hls_playlist_settings: self.hls_playlist_settings,
-            manifest_name: self.manifest_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest_name",
-                    "manifest_name was not specified but it is required when building RequestOutputItem",
-                )
-            })?,
-            source_group: self.source_group.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_group",
-                    "source_group was not specified but it is required when building RequestOutputItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RequestOutputItem {
+                dash_playlist_settings: self.dash_playlist_settings
+                ,
+                hls_playlist_settings: self.hls_playlist_settings
+                ,
+                manifest_name: self.manifest_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest_name", "manifest_name was not specified but it is required when building RequestOutputItem")
+                    )?
+                ,
+                source_group: self.source_group
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_group", "source_group was not specified but it is required when building RequestOutputItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

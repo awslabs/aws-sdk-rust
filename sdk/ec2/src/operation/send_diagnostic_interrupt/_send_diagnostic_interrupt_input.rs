@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendDiagnosticInterruptInput {
+pub struct SendDiagnosticInterruptInput  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl SendDiagnosticInterruptInput {
+impl  SendDiagnosticInterruptInput  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl SendDiagnosticInterruptInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl SendDiagnosticInterruptInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SendDiagnosticInterruptInput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput {
-            instance_id: self.instance_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput {
+                instance_id: self.instance_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAttributesRequest {
+pub struct UpdateAttributesRequest  {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub blacklist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blacklist: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateAttributesRequest {
+impl  UpdateAttributesRequest  {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blacklist.is_none()`.
-    pub fn blacklist(&self) -> &[::std::string::String] {
-        self.blacklist.as_deref().unwrap_or_default()
+    pub fn blacklist(&self) -> & [::std::string::String] {
+        self.blacklist.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateAttributesRequest {
@@ -26,7 +27,7 @@ impl UpdateAttributesRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAttributesRequestBuilder {
-    pub(crate) blacklist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blacklist: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateAttributesRequestBuilder {
     /// Appends an item to `blacklist`.
@@ -36,21 +37,24 @@ impl UpdateAttributesRequestBuilder {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     pub fn blacklist(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blacklist.unwrap_or_default();
-        v.push(input.into());
-        self.blacklist = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blacklist = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub fn set_blacklist(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blacklist = input;
-        self
+    pub fn set_blacklist(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blacklist = input; self
     }
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub fn get_blacklist(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blacklist(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blacklist
     }
     /// Consumes the builder and constructs a [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
     pub fn build(self) -> crate::types::UpdateAttributesRequest {
-        crate::types::UpdateAttributesRequest { blacklist: self.blacklist }
+        crate::types::UpdateAttributesRequest {
+            blacklist: self.blacklist
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemLustreConfiguration {
+pub struct UpdateFileSystemLustreConfiguration  {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
@@ -47,13 +47,13 @@ pub struct UpdateFileSystemLustreConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
 }
-impl UpdateFileSystemLustreConfiguration {
+impl  UpdateFileSystemLustreConfiguration  {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<& str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
-    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<& str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -72,7 +72,7 @@ impl UpdateFileSystemLustreConfiguration {
     /// <p><code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p></li>
     /// </ul>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
-    pub fn auto_import_policy(&self) -> ::std::option::Option<&crate::types::AutoImportPolicyType> {
+    pub fn auto_import_policy(&self) -> ::std::option::Option<& crate::types::AutoImportPolicyType> {
         self.auto_import_policy.as_ref()
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
@@ -84,15 +84,15 @@ impl UpdateFileSystemLustreConfiguration {
     /// </ul>
     /// <p>If you don't use <code>DataCompressionType</code>, the file system retains its current data compression configuration.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
-    pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::DataCompressionType> {
+    pub fn data_compression_type(&self) -> ::std::option::Option<& crate::types::DataCompressionType> {
         self.data_compression_type.as_ref()
     }
     /// <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
-    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LustreLogCreateConfiguration> {
+    pub fn log_configuration(&self) -> ::std::option::Option<& crate::types::LustreLogCreateConfiguration> {
         self.log_configuration.as_ref()
     }
     /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
-    pub fn root_squash_configuration(&self) -> ::std::option::Option<&crate::types::LustreRootSquashConfiguration> {
+    pub fn root_squash_configuration(&self) -> ::std::option::Option<& crate::types::LustreRootSquashConfiguration> {
         self.root_squash_configuration.as_ref()
     }
     /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
@@ -135,8 +135,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     }
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn set_weekly_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = input;
-        self
+        self.weekly_maintenance_start_time = input; self
     }
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +148,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_automatic_backup_start_time = input;
-        self
+        self.daily_automatic_backup_start_time = input; self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +161,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automatic_backup_retention_days = input;
-        self
+        self.automatic_backup_retention_days = input; self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
@@ -199,8 +196,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     /// </ul>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     pub fn set_auto_import_policy(mut self, input: ::std::option::Option<crate::types::AutoImportPolicyType>) -> Self {
-        self.auto_import_policy = input;
-        self
+        self.auto_import_policy = input; self
     }
     /// <p>(Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how Amazon FSx keeps your file and directory listing up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
@@ -240,8 +236,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     /// <p>If you don't use <code>DataCompressionType</code>, the file system retains its current data compression configuration.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::DataCompressionType>) -> Self {
-        self.data_compression_type = input;
-        self
+        self.data_compression_type = input; self
     }
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
@@ -262,8 +257,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     }
     /// <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LustreLogCreateConfiguration>) -> Self {
-        self.log_configuration = input;
-        self
+        self.log_configuration = input; self
     }
     /// <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LustreLogCreateConfiguration> {
@@ -276,8 +270,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     }
     /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub fn set_root_squash_configuration(mut self, input: ::std::option::Option<crate::types::LustreRootSquashConfiguration>) -> Self {
-        self.root_squash_configuration = input;
-        self
+        self.root_squash_configuration = input; self
     }
     /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
     pub fn get_root_squash_configuration(&self) -> &::std::option::Option<crate::types::LustreRootSquashConfiguration> {
@@ -304,8 +297,7 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput capacity</a>.</p>
     pub fn set_per_unit_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.per_unit_storage_throughput = input;
-        self
+        self.per_unit_storage_throughput = input; self
     }
     /// <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the deployment type of the file system, as follows:</p>
     /// <ul>
@@ -321,14 +313,23 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::types::UpdateFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemLustreConfiguration {
         crate::types::UpdateFileSystemLustreConfiguration {
-            weekly_maintenance_start_time: self.weekly_maintenance_start_time,
-            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
-            automatic_backup_retention_days: self.automatic_backup_retention_days,
-            auto_import_policy: self.auto_import_policy,
-            data_compression_type: self.data_compression_type,
-            log_configuration: self.log_configuration,
-            root_squash_configuration: self.root_squash_configuration,
-            per_unit_storage_throughput: self.per_unit_storage_throughput,
+            weekly_maintenance_start_time: self.weekly_maintenance_start_time
+            ,
+            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time
+            ,
+            automatic_backup_retention_days: self.automatic_backup_retention_days
+            ,
+            auto_import_policy: self.auto_import_policy
+            ,
+            data_compression_type: self.data_compression_type
+            ,
+            log_configuration: self.log_configuration
+            ,
+            root_squash_configuration: self.root_squash_configuration
+            ,
+            per_unit_storage_throughput: self.per_unit_storage_throughput
+            ,
         }
     }
 }
+

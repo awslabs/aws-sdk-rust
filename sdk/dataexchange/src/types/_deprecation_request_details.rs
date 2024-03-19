@@ -3,13 +3,13 @@
 /// <p>Extra details specific to a deprecation type notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecationRequestDetails {
+pub struct DeprecationRequestDetails  {
     /// <p>A datetime in the future when the data set will be deprecated.</p>
     pub deprecation_at: ::aws_smithy_types::DateTime,
 }
-impl DeprecationRequestDetails {
+impl  DeprecationRequestDetails  {
     /// <p>A datetime in the future when the data set will be deprecated.</p>
-    pub fn deprecation_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn deprecation_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.deprecation_at
     }
 }
@@ -35,8 +35,7 @@ impl DeprecationRequestDetailsBuilder {
     }
     /// <p>A datetime in the future when the data set will be deprecated.</p>
     pub fn set_deprecation_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deprecation_at = input;
-        self
+        self.deprecation_at = input; self
     }
     /// <p>A datetime in the future when the data set will be deprecated.</p>
     pub fn get_deprecation_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -46,13 +45,15 @@ impl DeprecationRequestDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`deprecation_at`](crate::types::builders::DeprecationRequestDetailsBuilder::deprecation_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DeprecationRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeprecationRequestDetails {
-            deprecation_at: self.deprecation_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deprecation_at",
-                    "deprecation_at was not specified but it is required when building DeprecationRequestDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeprecationRequestDetails {
+                deprecation_at: self.deprecation_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deprecation_at", "deprecation_at was not specified but it is required when building DeprecationRequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

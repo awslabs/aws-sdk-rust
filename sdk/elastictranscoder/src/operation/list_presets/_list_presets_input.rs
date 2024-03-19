@@ -3,19 +3,19 @@
 /// <p>The <code>ListPresetsRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPresetsInput {
+pub struct ListPresetsInput  {
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
     pub ascending: ::std::option::Option<::std::string::String>,
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPresetsInput {
+impl  ListPresetsInput  {
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
-    pub fn ascending(&self) -> ::std::option::Option<&str> {
+    pub fn ascending(&self) -> ::std::option::Option<& str> {
         self.ascending.as_deref()
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListPresetsInputBuilder {
     }
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
     pub fn set_ascending(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ascending = input;
-        self
+        self.ascending = input; self
     }
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
     pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ListPresetsInputBuilder {
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl ListPresetsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_presets::ListPresetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_presets::ListPresetsInput {
-            ascending: self.ascending,
-            page_token: self.page_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_presets::ListPresetsInput {
+                ascending: self.ascending
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSettingsInput {
+pub struct UpdateServiceSettingsInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
@@ -12,17 +12,17 @@ pub struct UpdateServiceSettingsInput {
     /// <p>Activates cross-account discovery.</p>
     pub enable_cross_accounts_discovery: ::std::option::Option<bool>,
 }
-impl UpdateServiceSettingsInput {
+impl  UpdateServiceSettingsInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-    pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    pub fn organization_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationConfiguration> {
+    pub fn organization_configuration(&self) -> ::std::option::Option<& crate::types::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
     /// <p>Activates cross-account discovery.</p>
@@ -54,8 +54,7 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_arn = input;
-        self
+        self.s3_bucket_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
     pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
-        self.organization_configuration = input;
-        self
+        self.organization_configuration = input; self
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
     pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
@@ -96,23 +93,26 @@ impl UpdateServiceSettingsInputBuilder {
     }
     /// <p>Activates cross-account discovery.</p>
     pub fn set_enable_cross_accounts_discovery(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_cross_accounts_discovery = input;
-        self
+        self.enable_cross_accounts_discovery = input; self
     }
     /// <p>Activates cross-account discovery.</p>
     pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
         &self.enable_cross_accounts_discovery
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_settings::UpdateServiceSettingsInput {
-            s3_bucket_arn: self.s3_bucket_arn,
-            sns_topic_arn: self.sns_topic_arn,
-            organization_configuration: self.organization_configuration,
-            enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_settings::UpdateServiceSettingsInput {
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                organization_configuration: self.organization_configuration
+                ,
+                enable_cross_accounts_discovery: self.enable_cross_accounts_discovery
+                ,
+            }
+        )
     }
 }
+

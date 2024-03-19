@@ -34,11 +34,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`Boolean`](crate::types::ConfigurationOptions::Boolean), extracting the inner [`BooleanConfigurationOptions`](crate::types::BooleanConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean(&self) -> ::std::result::Result<&crate::types::BooleanConfigurationOptions, &Self> {
-        if let ConfigurationOptions::Boolean(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::Boolean(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Boolean`](crate::types::ConfigurationOptions::Boolean).
     pub fn is_boolean(&self) -> bool {
@@ -47,11 +43,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`Double`](crate::types::ConfigurationOptions::Double), extracting the inner [`DoubleConfigurationOptions`](crate::types::DoubleConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double(&self) -> ::std::result::Result<&crate::types::DoubleConfigurationOptions, &Self> {
-        if let ConfigurationOptions::Double(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::Double(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Double`](crate::types::ConfigurationOptions::Double).
     pub fn is_double(&self) -> bool {
@@ -60,11 +52,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`Enum`](crate::types::ConfigurationOptions::Enum), extracting the inner [`EnumConfigurationOptions`](crate::types::EnumConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_enum(&self) -> ::std::result::Result<&crate::types::EnumConfigurationOptions, &Self> {
-        if let ConfigurationOptions::Enum(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::Enum(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Enum`](crate::types::ConfigurationOptions::Enum).
     pub fn is_enum(&self) -> bool {
@@ -73,11 +61,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`EnumList`](crate::types::ConfigurationOptions::EnumList), extracting the inner [`EnumListConfigurationOptions`](crate::types::EnumListConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_enum_list(&self) -> ::std::result::Result<&crate::types::EnumListConfigurationOptions, &Self> {
-        if let ConfigurationOptions::EnumList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::EnumList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EnumList`](crate::types::ConfigurationOptions::EnumList).
     pub fn is_enum_list(&self) -> bool {
@@ -86,11 +70,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`Integer`](crate::types::ConfigurationOptions::Integer), extracting the inner [`IntegerConfigurationOptions`](crate::types::IntegerConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer(&self) -> ::std::result::Result<&crate::types::IntegerConfigurationOptions, &Self> {
-        if let ConfigurationOptions::Integer(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::Integer(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Integer`](crate::types::ConfigurationOptions::Integer).
     pub fn is_integer(&self) -> bool {
@@ -99,11 +79,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`IntegerList`](crate::types::ConfigurationOptions::IntegerList), extracting the inner [`IntegerListConfigurationOptions`](crate::types::IntegerListConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_list(&self) -> ::std::result::Result<&crate::types::IntegerListConfigurationOptions, &Self> {
-        if let ConfigurationOptions::IntegerList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::IntegerList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IntegerList`](crate::types::ConfigurationOptions::IntegerList).
     pub fn is_integer_list(&self) -> bool {
@@ -112,11 +88,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`String`](crate::types::ConfigurationOptions::String), extracting the inner [`StringConfigurationOptions`](crate::types::StringConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string(&self) -> ::std::result::Result<&crate::types::StringConfigurationOptions, &Self> {
-        if let ConfigurationOptions::String(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::String(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`String`](crate::types::ConfigurationOptions::String).
     pub fn is_string(&self) -> bool {
@@ -125,11 +97,7 @@ impl ConfigurationOptions {
     /// Tries to convert the enum instance into [`StringList`](crate::types::ConfigurationOptions::StringList), extracting the inner [`StringListConfigurationOptions`](crate::types::StringListConfigurationOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_list(&self) -> ::std::result::Result<&crate::types::StringListConfigurationOptions, &Self> {
-        if let ConfigurationOptions::StringList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationOptions::StringList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringList`](crate::types::ConfigurationOptions::StringList).
     pub fn is_string_list(&self) -> bool {
@@ -140,3 +108,4 @@ impl ConfigurationOptions {
         matches!(self, Self::Unknown)
     }
 }
+

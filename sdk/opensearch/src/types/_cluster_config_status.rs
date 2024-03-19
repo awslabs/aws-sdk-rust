@@ -3,19 +3,19 @@
 /// <p>The cluster configuration status for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterConfigStatus {
+pub struct ClusterConfigStatus  {
     /// <p>Cluster configuration options for the specified domain.</p>
     pub options: ::std::option::Option<crate::types::ClusterConfig>,
     /// <p>The status of cluster configuration options for the specified domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl ClusterConfigStatus {
+impl  ClusterConfigStatus  {
     /// <p>Cluster configuration options for the specified domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::ClusterConfig> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::ClusterConfig> {
         self.options.as_ref()
     }
     /// <p>The status of cluster configuration options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ClusterConfigStatusBuilder {
     }
     /// <p>Cluster configuration options for the specified domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::ClusterConfig>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Cluster configuration options for the specified domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::ClusterConfig> {
@@ -57,8 +56,7 @@ impl ClusterConfigStatusBuilder {
     }
     /// <p>The status of cluster configuration options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of cluster configuration options for the specified domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,11 @@ impl ClusterConfigStatusBuilder {
     /// Consumes the builder and constructs a [`ClusterConfigStatus`](crate::types::ClusterConfigStatus).
     pub fn build(self) -> crate::types::ClusterConfigStatus {
         crate::types::ClusterConfigStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

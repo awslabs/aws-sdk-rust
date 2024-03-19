@@ -3,11 +3,11 @@
 /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTerminationPolicy {
+pub struct AutoTerminationPolicy  {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub idle_timeout: ::std::option::Option<i64>,
 }
-impl AutoTerminationPolicy {
+impl  AutoTerminationPolicy  {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub fn idle_timeout(&self) -> ::std::option::Option<i64> {
         self.idle_timeout
@@ -34,8 +34,7 @@ impl AutoTerminationPolicyBuilder {
     }
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub fn set_idle_timeout(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.idle_timeout = input;
-        self
+        self.idle_timeout = input; self
     }
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub fn get_idle_timeout(&self) -> &::std::option::Option<i64> {
@@ -44,7 +43,9 @@ impl AutoTerminationPolicyBuilder {
     /// Consumes the builder and constructs a [`AutoTerminationPolicy`](crate::types::AutoTerminationPolicy).
     pub fn build(self) -> crate::types::AutoTerminationPolicy {
         crate::types::AutoTerminationPolicy {
-            idle_timeout: self.idle_timeout,
+            idle_timeout: self.idle_timeout
+            ,
         }
     }
 }
+

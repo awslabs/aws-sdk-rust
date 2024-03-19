@@ -3,41 +3,43 @@
 /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesUserDetails {
+pub struct KubernetesUserDetails  {
     /// <p>The username of the user who called the Kubernetes API.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub uid: ::std::option::Option<::std::string::String>,
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub session_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub session_name: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Information about the impersonated user.</p>
     pub impersonated_user: ::std::option::Option<crate::types::ImpersonatedUser>,
 }
-impl KubernetesUserDetails {
+impl  KubernetesUserDetails  {
     /// <p>The username of the user who called the Kubernetes API.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    pub fn uid(&self) -> ::std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_name.is_none()`.
-    pub fn session_name(&self) -> &[::std::string::String] {
-        self.session_name.as_deref().unwrap_or_default()
+    pub fn session_name(&self) -> & [::std::string::String] {
+        self.session_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the impersonated user.</p>
-    pub fn impersonated_user(&self) -> ::std::option::Option<&crate::types::ImpersonatedUser> {
+    pub fn impersonated_user(&self) -> ::std::option::Option<& crate::types::ImpersonatedUser> {
         self.impersonated_user.as_ref()
     }
 }
@@ -54,8 +56,8 @@ impl KubernetesUserDetails {
 pub struct KubernetesUserDetailsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) uid: ::std::option::Option<::std::string::String>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) session_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) session_name: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) impersonated_user: ::std::option::Option<crate::types::ImpersonatedUser>,
 }
 impl KubernetesUserDetailsBuilder {
@@ -66,8 +68,7 @@ impl KubernetesUserDetailsBuilder {
     }
     /// <p>The username of the user who called the Kubernetes API.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user who called the Kubernetes API.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +81,7 @@ impl KubernetesUserDetailsBuilder {
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +94,16 @@ impl KubernetesUserDetailsBuilder {
     /// <p>The groups that include the user who called the Kubernetes API.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// Appends an item to `session_name`.
@@ -114,17 +113,16 @@ impl KubernetesUserDetailsBuilder {
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
     pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.session_name.unwrap_or_default();
-        v.push(input.into());
-        self.session_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.session_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub fn set_session_name(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.session_name = input;
-        self
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.session_name = input; self
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub fn get_session_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.session_name
     }
     /// <p>Information about the impersonated user.</p>
@@ -134,8 +132,7 @@ impl KubernetesUserDetailsBuilder {
     }
     /// <p>Information about the impersonated user.</p>
     pub fn set_impersonated_user(mut self, input: ::std::option::Option<crate::types::ImpersonatedUser>) -> Self {
-        self.impersonated_user = input;
-        self
+        self.impersonated_user = input; self
     }
     /// <p>Information about the impersonated user.</p>
     pub fn get_impersonated_user(&self) -> &::std::option::Option<crate::types::ImpersonatedUser> {
@@ -144,11 +141,17 @@ impl KubernetesUserDetailsBuilder {
     /// Consumes the builder and constructs a [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
     pub fn build(self) -> crate::types::KubernetesUserDetails {
         crate::types::KubernetesUserDetails {
-            username: self.username,
-            uid: self.uid,
-            groups: self.groups,
-            session_name: self.session_name,
-            impersonated_user: self.impersonated_user,
+            username: self.username
+            ,
+            uid: self.uid
+            ,
+            groups: self.groups
+            ,
+            session_name: self.session_name
+            ,
+            impersonated_user: self.impersonated_user
+            ,
         }
     }
 }
+

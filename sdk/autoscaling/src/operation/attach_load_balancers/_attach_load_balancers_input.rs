@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachLoadBalancersInput {
+pub struct AttachLoadBalancersInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub load_balancer_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AttachLoadBalancersInput {
+impl  AttachLoadBalancersInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
-    pub fn load_balancer_names(&self) -> &[::std::string::String] {
-        self.load_balancer_names.as_deref().unwrap_or_default()
+    pub fn load_balancer_names(&self) -> & [::std::string::String] {
+        self.load_balancer_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AttachLoadBalancersInput {
@@ -32,7 +33,7 @@ impl AttachLoadBalancersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancersInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AttachLoadBalancersInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -43,8 +44,7 @@ impl AttachLoadBalancersInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl AttachLoadBalancersInputBuilder {
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
     pub fn load_balancer_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.load_balancer_names = input;
-        self
+    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.load_balancer_names = input; self
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.load_balancer_names
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancersInput`](crate::operation::attach_load_balancers::AttachLoadBalancersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::attach_load_balancers::AttachLoadBalancersInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            load_balancer_names: self.load_balancer_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_load_balancers::AttachLoadBalancersInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                load_balancer_names: self.load_balancer_names
+                ,
+            }
+        )
     }
 }
+

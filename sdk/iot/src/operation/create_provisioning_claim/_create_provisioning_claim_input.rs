@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProvisioningClaimInput {
+pub struct CreateProvisioningClaimInput  {
     /// <p>The name of the provisioning template to use.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateProvisioningClaimInput {
+impl  CreateProvisioningClaimInput  {
     /// <p>The name of the provisioning template to use.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateProvisioningClaimInputBuilder {
     }
     /// <p>The name of the provisioning template to use.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template to use.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`CreateProvisioningClaimInput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_provisioning_claim::CreateProvisioningClaimInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_provisioning_claim::CreateProvisioningClaimInput {
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_provisioning_claim::CreateProvisioningClaimInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_provisioning_claim::CreateProvisioningClaimInput {
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

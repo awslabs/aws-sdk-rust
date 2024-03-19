@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayInput {
+pub struct DeleteDirectConnectGatewayInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDirectConnectGatewayInput {
+impl  DeleteDirectConnectGatewayInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteDirectConnectGatewayInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput {
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput {
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AppSyncParameters {
+pub struct AppSyncParameters  {
     /// <p>The GraphQL operation; that is, the query, mutation, or subscription to be parsed and executed by the GraphQL service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a> in the <i>AppSync User Guide</i>.</p>
     pub graph_ql_operation: ::std::option::Option<::std::string::String>,
 }
-impl AppSyncParameters {
+impl  AppSyncParameters  {
     /// <p>The GraphQL operation; that is, the query, mutation, or subscription to be parsed and executed by the GraphQL service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a> in the <i>AppSync User Guide</i>.</p>
-    pub fn graph_ql_operation(&self) -> ::std::option::Option<&str> {
+    pub fn graph_ql_operation(&self) -> ::std::option::Option<& str> {
         self.graph_ql_operation.as_deref()
     }
 }
-impl ::std::fmt::Debug for AppSyncParameters {
+impl  ::std::fmt::Debug for AppSyncParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppSyncParameters");
         formatter.field("graph_ql_operation", &"*** Sensitive Data Redacted ***");
@@ -45,8 +45,7 @@ impl AppSyncParametersBuilder {
     /// <p>The GraphQL operation; that is, the query, mutation, or subscription to be parsed and executed by the GraphQL service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a> in the <i>AppSync User Guide</i>.</p>
     pub fn set_graph_ql_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_ql_operation = input;
-        self
+        self.graph_ql_operation = input; self
     }
     /// <p>The GraphQL operation; that is, the query, mutation, or subscription to be parsed and executed by the GraphQL service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a> in the <i>AppSync User Guide</i>.</p>
@@ -56,7 +55,8 @@ impl AppSyncParametersBuilder {
     /// Consumes the builder and constructs a [`AppSyncParameters`](crate::types::AppSyncParameters).
     pub fn build(self) -> crate::types::AppSyncParameters {
         crate::types::AppSyncParameters {
-            graph_ql_operation: self.graph_ql_operation,
+            graph_ql_operation: self.graph_ql_operation
+            ,
         }
     }
 }
@@ -67,3 +67,4 @@ impl ::std::fmt::Debug for AppSyncParametersBuilder {
         formatter.finish()
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorldExportJobsOutput {
+pub struct ListWorldExportJobsOutput  {
     /// <p>Summary information for world export jobs.</p>
-    pub world_export_job_summaries: ::std::vec::Vec<crate::types::WorldExportJobSummary>,
+    pub world_export_job_summaries: ::std::vec::Vec::<crate::types::WorldExportJobSummary>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWorldExportJobsOutput {
+impl  ListWorldExportJobsOutput  {
     /// <p>Summary information for world export jobs.</p>
-    pub fn world_export_job_summaries(&self) -> &[crate::types::WorldExportJobSummary] {
-        use std::ops::Deref;
-        self.world_export_job_summaries.deref()
+    pub fn world_export_job_summaries(&self) -> & [crate::types::WorldExportJobSummary] {
+        use std::ops::Deref; self.world_export_job_summaries.deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorldExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorldExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput).
     pub fn builder() -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListWorldExportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldExportJobsOutputBuilder {
-    pub(crate) world_export_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>,
+    pub(crate) world_export_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::WorldExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListWorldExportJobsOutputBuilder {
     /// <p>Summary information for world export jobs.</p>
     pub fn world_export_job_summaries(mut self, input: crate::types::WorldExportJobSummary) -> Self {
         let mut v = self.world_export_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.world_export_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.world_export_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for world export jobs.</p>
-    pub fn set_world_export_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>>) -> Self {
-        self.world_export_job_summaries = input;
-        self
+    pub fn set_world_export_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorldExportJobSummary>>) -> Self {
+        self.world_export_job_summaries = input; self
     }
     /// <p>Summary information for world export jobs.</p>
-    pub fn get_world_export_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldExportJobSummary>> {
+    pub fn get_world_export_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorldExportJobSummary>> {
         &self.world_export_job_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
@@ -68,38 +66,37 @@ impl ListWorldExportJobsOutputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorldExportJobsOutput`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`world_export_job_summaries`](crate::operation::list_world_export_jobs::builders::ListWorldExportJobsOutputBuilder::world_export_job_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_world_export_jobs::ListWorldExportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_world_export_jobs::ListWorldExportJobsOutput {
-            world_export_job_summaries: self.world_export_job_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "world_export_job_summaries",
-                    "world_export_job_summaries was not specified but it is required when building ListWorldExportJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_world_export_jobs::ListWorldExportJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_world_export_jobs::ListWorldExportJobsOutput {
+                world_export_job_summaries: self.world_export_job_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("world_export_job_summaries", "world_export_job_summaries was not specified but it is required when building ListWorldExportJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

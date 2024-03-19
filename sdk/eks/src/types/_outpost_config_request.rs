@@ -3,9 +3,9 @@
 /// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html">Creating a local cluster on an Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutpostConfigRequest {
+pub struct OutpostConfigRequest  {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
-    pub outpost_arns: ::std::vec::Vec<::std::string::String>,
+    pub outpost_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
     /// <p></p>
@@ -13,21 +13,19 @@ pub struct OutpostConfigRequest {
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub control_plane_placement: ::std::option::Option<crate::types::ControlPlanePlacementRequest>,
 }
-impl OutpostConfigRequest {
+impl  OutpostConfigRequest  {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
-    pub fn outpost_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.outpost_arns.deref()
+    pub fn outpost_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.outpost_arns.deref()
     }
     /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
     /// <p></p>
-    pub fn control_plane_instance_type(&self) -> &str {
-        use std::ops::Deref;
-        self.control_plane_instance_type.deref()
+    pub fn control_plane_instance_type(&self) -> & str {
+        use std::ops::Deref; self.control_plane_instance_type.deref()
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn control_plane_placement(&self) -> ::std::option::Option<&crate::types::ControlPlanePlacementRequest> {
+    pub fn control_plane_placement(&self) -> ::std::option::Option<& crate::types::ControlPlanePlacementRequest> {
         self.control_plane_placement.as_ref()
     }
 }
@@ -42,7 +40,7 @@ impl OutpostConfigRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutpostConfigRequestBuilder {
-    pub(crate) outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) outpost_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) control_plane_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) control_plane_placement: ::std::option::Option<crate::types::ControlPlanePlacementRequest>,
 }
@@ -54,17 +52,16 @@ impl OutpostConfigRequestBuilder {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
     pub fn outpost_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outpost_arns.unwrap_or_default();
-        v.push(input.into());
-        self.outpost_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outpost_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
-    pub fn set_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.outpost_arns = input;
-        self
+    pub fn set_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.outpost_arns = input; self
     }
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
-    pub fn get_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.outpost_arns
     }
     /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -79,8 +76,7 @@ impl OutpostConfigRequestBuilder {
     /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
     /// <p></p>
     pub fn set_control_plane_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_plane_instance_type = input;
-        self
+        self.control_plane_instance_type = input; self
     }
     /// <p>The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an instance type based on the number of nodes that your cluster will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.</p>
@@ -95,8 +91,7 @@ impl OutpostConfigRequestBuilder {
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_control_plane_placement(mut self, input: ::std::option::Option<crate::types::ControlPlanePlacementRequest>) -> Self {
-        self.control_plane_placement = input;
-        self
+        self.control_plane_placement = input; self
     }
     /// <p>An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_control_plane_placement(&self) -> &::std::option::Option<crate::types::ControlPlanePlacementRequest> {
@@ -107,20 +102,22 @@ impl OutpostConfigRequestBuilder {
     /// - [`outpost_arns`](crate::types::builders::OutpostConfigRequestBuilder::outpost_arns)
     /// - [`control_plane_instance_type`](crate::types::builders::OutpostConfigRequestBuilder::control_plane_instance_type)
     pub fn build(self) -> ::std::result::Result<crate::types::OutpostConfigRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutpostConfigRequest {
-            outpost_arns: self.outpost_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "outpost_arns",
-                    "outpost_arns was not specified but it is required when building OutpostConfigRequest",
-                )
-            })?,
-            control_plane_instance_type: self.control_plane_instance_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "control_plane_instance_type",
-                    "control_plane_instance_type was not specified but it is required when building OutpostConfigRequest",
-                )
-            })?,
-            control_plane_placement: self.control_plane_placement,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutpostConfigRequest {
+                outpost_arns: self.outpost_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("outpost_arns", "outpost_arns was not specified but it is required when building OutpostConfigRequest")
+                    )?
+                ,
+                control_plane_instance_type: self.control_plane_instance_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("control_plane_instance_type", "control_plane_instance_type was not specified but it is required when building OutpostConfigRequest")
+                    )?
+                ,
+                control_plane_placement: self.control_plane_placement
+                ,
+            }
+        )
     }
 }
+

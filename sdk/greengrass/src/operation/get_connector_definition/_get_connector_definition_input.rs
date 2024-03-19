@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectorDefinitionInput {
+pub struct GetConnectorDefinitionInput  {
     /// The ID of the connector definition.
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl GetConnectorDefinitionInput {
+impl  GetConnectorDefinitionInput  {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_definition_id(&self) -> ::std::option::Option<& str> {
         self.connector_definition_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetConnectorDefinitionInputBuilder {
     }
     /// The ID of the connector definition.
     pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_definition_id = input;
-        self
+        self.connector_definition_id = input; self
     }
     /// The ID of the connector definition.
     pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_definition_id
     }
     /// Consumes the builder and constructs a [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connector_definition::GetConnectorDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_connector_definition::GetConnectorDefinitionInput {
-            connector_definition_id: self.connector_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connector_definition::GetConnectorDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connector_definition::GetConnectorDefinitionInput {
+                connector_definition_id: self.connector_definition_id
+                ,
+            }
+        )
     }
 }
+

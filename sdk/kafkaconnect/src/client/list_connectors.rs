@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConnectors`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`connector_name_prefix(impl Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::connector_name_prefix) / [`set_connector_name_prefix(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_connector_name_prefix):<br>required: **false**<br><p>The name prefix that you want to use to search for and list connectors.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of connectors to list in one response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p><br>
-    /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
+                            /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
     ///   - [`connectors(Option<Vec::<ConnectorSummary>>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>An array of connector descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>
-    /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
+                            /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
     pub fn list_connectors(&self) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
-        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

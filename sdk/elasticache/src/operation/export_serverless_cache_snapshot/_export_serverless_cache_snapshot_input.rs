@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportServerlessCacheSnapshotInput {
+pub struct ExportServerlessCacheSnapshotInput  {
     /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis only.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
-impl ExportServerlessCacheSnapshotInput {
+impl  ExportServerlessCacheSnapshotInput  {
     /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis only.</p>
-    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
     /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis only.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExportServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_snapshot_name = input;
-        self
+        self.serverless_cache_snapshot_name = input; self
     }
     /// <p>The identifier of the serverless cache snapshot to be exported to S3. Available for Redis only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ExportServerlessCacheSnapshotInputBuilder {
     }
     /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis only.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must also be in same region as the snapshot. Available for Redis only.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }
     /// Consumes the builder and constructs a [`ExportServerlessCacheSnapshotInput`](crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotInput {
-            serverless_cache_snapshot_name: self.serverless_cache_snapshot_name,
-            s3_bucket_name: self.s3_bucket_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotInput {
+                serverless_cache_snapshot_name: self.serverless_cache_snapshot_name
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+            }
+        )
     }
 }
+

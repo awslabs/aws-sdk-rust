@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGatewayInput {
+pub struct CreateGatewayInput  {
     /// <p>The activation key of the created gateway.</p>
     pub activation_key: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the created gateway.</p>
@@ -10,26 +10,27 @@ pub struct CreateGatewayInput {
     /// <p>The type of created gateway.</p>
     pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGatewayInput {
+impl  CreateGatewayInput  {
     /// <p>The activation key of the created gateway.</p>
-    pub fn activation_key(&self) -> ::std::option::Option<&str> {
+    pub fn activation_key(&self) -> ::std::option::Option<& str> {
         self.activation_key.as_deref()
     }
     /// <p>The display name of the created gateway.</p>
-    pub fn gateway_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_display_name(&self) -> ::std::option::Option<& str> {
         self.gateway_display_name.as_deref()
     }
     /// <p>The type of created gateway.</p>
-    pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+    pub fn gateway_type(&self) -> ::std::option::Option<& crate::types::GatewayType> {
         self.gateway_type.as_ref()
     }
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGatewayInput {
@@ -46,7 +47,7 @@ pub struct CreateGatewayInputBuilder {
     pub(crate) activation_key: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_type: ::std::option::Option<crate::types::GatewayType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGatewayInputBuilder {
     /// <p>The activation key of the created gateway.</p>
@@ -57,8 +58,7 @@ impl CreateGatewayInputBuilder {
     }
     /// <p>The activation key of the created gateway.</p>
     pub fn set_activation_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activation_key = input;
-        self
+        self.activation_key = input; self
     }
     /// <p>The activation key of the created gateway.</p>
     pub fn get_activation_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateGatewayInputBuilder {
     }
     /// <p>The display name of the created gateway.</p>
     pub fn set_gateway_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_display_name = input;
-        self
+        self.gateway_display_name = input; self
     }
     /// <p>The display name of the created gateway.</p>
     pub fn get_gateway_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl CreateGatewayInputBuilder {
     }
     /// <p>The type of created gateway.</p>
     pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
-        self.gateway_type = input;
-        self
+        self.gateway_type = input; self
     }
     /// <p>The type of created gateway.</p>
     pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
@@ -101,28 +99,32 @@ impl CreateGatewayInputBuilder {
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayInput {
-            activation_key: self.activation_key,
-            gateway_display_name: self.gateway_display_name,
-            gateway_type: self.gateway_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_gateway::CreateGatewayInput {
+                activation_key: self.activation_key
+                ,
+                gateway_display_name: self.gateway_display_name
+                ,
+                gateway_type: self.gateway_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

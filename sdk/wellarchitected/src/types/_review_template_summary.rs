@@ -3,11 +3,11 @@
 /// <p>Summary of a review template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewTemplateSummary {
+pub struct ReviewTemplateSummary  {
     /// <p>Description of the review template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Lenses associated with the review template.</p>
-    pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lenses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An Amazon Web Services account ID.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
@@ -19,35 +19,36 @@ pub struct ReviewTemplateSummary {
     /// <p>The latest status of a review template.</p>
     pub update_status: ::std::option::Option<crate::types::ReviewTemplateUpdateStatus>,
 }
-impl ReviewTemplateSummary {
+impl  ReviewTemplateSummary  {
     /// <p>Description of the review template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Lenses associated with the review template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
-    pub fn lenses(&self) -> &[::std::string::String] {
-        self.lenses.as_deref().unwrap_or_default()
+    pub fn lenses(&self) -> & [::std::string::String] {
+        self.lenses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The name of the review template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest status of a review template.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::ReviewTemplateUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::ReviewTemplateUpdateStatus> {
         self.update_status.as_ref()
     }
 }
@@ -63,7 +64,7 @@ impl ReviewTemplateSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReviewTemplateSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lenses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
@@ -78,8 +79,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>Description of the review template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the review template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +92,16 @@ impl ReviewTemplateSummaryBuilder {
     /// <p>Lenses associated with the review template.</p>
     pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
-        v.push(input.into());
-        self.lenses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lenses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lenses associated with the review template.</p>
-    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lenses = input;
-        self
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lenses = input; self
     }
     /// <p>Lenses associated with the review template.</p>
-    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lenses
     }
     /// <p>An Amazon Web Services account ID.</p>
@@ -112,8 +111,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +137,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>The name of the review template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the review template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +163,7 @@ impl ReviewTemplateSummaryBuilder {
     }
     /// <p>The latest status of a review template.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::ReviewTemplateUpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The latest status of a review template.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::ReviewTemplateUpdateStatus> {
@@ -178,13 +172,21 @@ impl ReviewTemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`ReviewTemplateSummary`](crate::types::ReviewTemplateSummary).
     pub fn build(self) -> crate::types::ReviewTemplateSummary {
         crate::types::ReviewTemplateSummary {
-            description: self.description,
-            lenses: self.lenses,
-            owner: self.owner,
-            updated_at: self.updated_at,
-            template_arn: self.template_arn,
-            template_name: self.template_name,
-            update_status: self.update_status,
+            description: self.description
+            ,
+            lenses: self.lenses
+            ,
+            owner: self.owner
+            ,
+            updated_at: self.updated_at
+            ,
+            template_arn: self.template_arn
+            ,
+            template_name: self.template_name
+            ,
+            update_status: self.update_status
+            ,
         }
     }
 }
+

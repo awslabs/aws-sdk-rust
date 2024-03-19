@@ -22,7 +22,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,166 +33,118 @@ impl ::std::fmt::Display for Error {
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::DryRunOperation(inner) => inner.meta(),
-            Self::InternalServerError(inner) => inner.meta(),
-            Self::InvalidInputException(inner) => inner.meta(),
-            Self::ServiceUnavailableException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::DryRunOperation(inner) => inner.meta(),
+Self::InternalServerError(inner) => inner.meta(),
+Self::InvalidInputException(inner) => inner.meta(),
+Self::ServiceUnavailableException(inner) => inner.meta(),
+Self::ThrottlingException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_home_region_control::CreateHomeRegionControlError> for Error {
     fn from(err: crate::operation::create_home_region_control::CreateHomeRegionControlError) -> Self {
         match err {
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_home_region_control::CreateHomeRegionControlError::DryRunOperation(inner) => Error::DryRunOperation(inner),
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_home_region_control::CreateHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_home_region_control::DeleteHomeRegionControlError> for Error {
     fn from(err: crate::operation::delete_home_region_control::DeleteHomeRegionControlError) -> Self {
         match err {
-            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_home_region_control::DeleteHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError> for Error {
     fn from(err: crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError) -> Self {
         match err {
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -217,7 +169,7 @@ impl ::std::error::Error for Error {
             Error::InvalidInputException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -234,3 +186,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

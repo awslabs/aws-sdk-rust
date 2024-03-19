@@ -3,7 +3,7 @@
 /// <p>An object that represents the authorizations granted to aggregator accounts and regions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregationAuthorization {
+pub struct AggregationAuthorization  {
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
     pub aggregation_authorization_arn: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
@@ -13,21 +13,21 @@ pub struct AggregationAuthorization {
     /// <p>The time stamp when the aggregation authorization was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AggregationAuthorization {
+impl  AggregationAuthorization  {
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
-    pub fn aggregation_authorization_arn(&self) -> ::std::option::Option<&str> {
+    pub fn aggregation_authorization_arn(&self) -> ::std::option::Option<& str> {
         self.aggregation_authorization_arn.as_deref()
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn authorized_account_id(&self) -> ::std::option::Option<& str> {
         self.authorized_account_id.as_deref()
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn authorized_aws_region(&self) -> ::std::option::Option<& str> {
         self.authorized_aws_region.as_deref()
     }
     /// <p>The time stamp when the aggregation authorization was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AggregationAuthorizationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
     pub fn set_aggregation_authorization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregation_authorization_arn = input;
-        self
+        self.aggregation_authorization_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
     pub fn get_aggregation_authorization_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AggregationAuthorizationBuilder {
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn set_authorized_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorized_account_id = input;
-        self
+        self.authorized_account_id = input; self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn get_authorized_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AggregationAuthorizationBuilder {
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn set_authorized_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorized_aws_region = input;
-        self
+        self.authorized_aws_region = input; self
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn get_authorized_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AggregationAuthorizationBuilder {
     }
     /// <p>The time stamp when the aggregation authorization was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time stamp when the aggregation authorization was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl AggregationAuthorizationBuilder {
     /// Consumes the builder and constructs a [`AggregationAuthorization`](crate::types::AggregationAuthorization).
     pub fn build(self) -> crate::types::AggregationAuthorization {
         crate::types::AggregationAuthorization {
-            aggregation_authorization_arn: self.aggregation_authorization_arn,
-            authorized_account_id: self.authorized_account_id,
-            authorized_aws_region: self.authorized_aws_region,
-            creation_time: self.creation_time,
+            aggregation_authorization_arn: self.aggregation_authorization_arn
+            ,
+            authorized_account_id: self.authorized_account_id
+            ,
+            authorized_aws_region: self.authorized_aws_region
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

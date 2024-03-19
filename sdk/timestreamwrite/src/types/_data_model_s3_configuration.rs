@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataModelS3Configuration {
+pub struct DataModelS3Configuration  {
     /// <p></p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub object_key: ::std::option::Option<::std::string::String>,
 }
-impl DataModelS3Configuration {
+impl  DataModelS3Configuration  {
     /// <p></p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p></p>
-    pub fn object_key(&self) -> ::std::option::Option<&str> {
+    pub fn object_key(&self) -> ::std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataModelS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p></p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataModelS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// <p></p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataModelS3ConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataModelS3Configuration`](crate::types::DataModelS3Configuration).
     pub fn build(self) -> crate::types::DataModelS3Configuration {
         crate::types::DataModelS3Configuration {
-            bucket_name: self.bucket_name,
-            object_key: self.object_key,
+            bucket_name: self.bucket_name
+            ,
+            object_key: self.object_key
+            ,
         }
     }
 }
+

@@ -11,7 +11,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChatEvent {
+pub struct ChatEvent  {
     /// <p>Type of chat integration event.</p>
     pub r#type: crate::types::ChatEventType,
     /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
@@ -31,9 +31,9 @@ pub struct ChatEvent {
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl ChatEvent {
+impl  ChatEvent  {
     /// <p>Type of chat integration event.</p>
-    pub fn r#type(&self) -> &crate::types::ChatEventType {
+    pub fn r#type(&self) -> & crate::types::ChatEventType {
         &self.r#type
     }
     /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
@@ -43,7 +43,7 @@ impl ChatEvent {
     /// <li>
     /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
     /// </ul>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
@@ -53,7 +53,7 @@ impl ChatEvent {
     /// <li>
     /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
     /// </ul>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl ChatEventBuilder {
     }
     /// <p>Type of chat integration event.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChatEventType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of chat integration event.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChatEventType> {
@@ -107,8 +106,7 @@ impl ChatEventBuilder {
     /// <p>For allowed event content types, see the <code>ContentType</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or <code>EVENT</code>.</p>
     /// <ul>
@@ -139,8 +137,7 @@ impl ChatEventBuilder {
     /// <p>For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a> topic in the <i>Amazon Connect Participant Service API Reference</i>.</p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code> and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.</p>
     /// <ul>
@@ -156,15 +153,19 @@ impl ChatEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ChatEventBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ChatEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChatEvent {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ChatEvent",
-                )
-            })?,
-            content_type: self.content_type,
-            content: self.content,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChatEvent {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ChatEvent")
+                    )?
+                ,
+                content_type: self.content_type
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
+

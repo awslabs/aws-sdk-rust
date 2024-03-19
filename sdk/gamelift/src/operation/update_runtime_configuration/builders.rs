@@ -5,23 +5,20 @@ pub use crate::operation::update_runtime_configuration::_update_runtime_configur
 
 impl UpdateRuntimeConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_runtime_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_runtime_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRuntimeConfiguration`.
-///
+/// 
 /// <p>Updates the current runtime configuration for the specified fleet, which tells Amazon GameLift how to launch server processes on all instances in the fleet. You can update a fleet's runtime configuration at any time after the fleet is created; it does not need to be in <code>ACTIVE</code> status.</p>
 /// <p>To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code> with an updated set of server process configurations.</p>
 /// <p>If successful, the fleet's runtime configuration settings are updated. Each instance in the fleet regularly checks for and retrieves updated runtime configurations. Instances immediately begin complying with the new configuration by launching new server processes or not replacing existing processes when they shut down. Updating a fleet's runtime configuration never affects existing server processes.</p>
@@ -30,33 +27,32 @@ impl UpdateRuntimeConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder,
+                    inner: crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-    > for UpdateRuntimeConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
+                    crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+                > for UpdateRuntimeConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
+                        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRuntimeConfigurationFluentBuilder {
     /// Creates a new `UpdateRuntimeConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput,
-        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_runtime_configuration::UpdateRuntimeConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationOutput, crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -141,3 +128,4 @@ impl UpdateRuntimeConfigurationFluentBuilder {
         self.inner.get_runtime_configuration()
     }
 }
+

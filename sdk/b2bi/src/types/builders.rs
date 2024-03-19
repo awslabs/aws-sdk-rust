@@ -14,3 +14,4 @@ pub use crate::types::_s3_location::S3LocationBuilder;
 pub use crate::types::_edi_configuration::EdiConfigurationBuilder;
 
 pub use crate::types::_capability_summary::CapabilitySummaryBuilder;
+

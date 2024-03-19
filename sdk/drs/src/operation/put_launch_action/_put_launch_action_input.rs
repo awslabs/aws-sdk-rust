@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLaunchActionInput {
+pub struct PutLaunchActionInput  {
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch action code.</p>
@@ -22,17 +22,17 @@ pub struct PutLaunchActionInput {
     /// <p>Launch action category.</p>
     pub category: ::std::option::Option<crate::types::LaunchActionCategory>,
     /// <p>Launch action parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>,
     /// <p>Launch action description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PutLaunchActionInput {
+impl  PutLaunchActionInput  {
     /// <p>Launch configuration template Id or Source Server Id</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Launch action code.</p>
-    pub fn action_code(&self) -> ::std::option::Option<&str> {
+    pub fn action_code(&self) -> ::std::option::Option<& str> {
         self.action_code.as_deref()
     }
     /// <p>Launch action order.</p>
@@ -40,7 +40,7 @@ impl PutLaunchActionInput {
         self.order
     }
     /// <p>Launch action Id.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
@@ -52,23 +52,23 @@ impl PutLaunchActionInput {
         self.active
     }
     /// <p>Launch action name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Launch action version.</p>
-    pub fn action_version(&self) -> ::std::option::Option<&str> {
+    pub fn action_version(&self) -> ::std::option::Option<& str> {
         self.action_version.as_deref()
     }
     /// <p>Launch action category.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::LaunchActionCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::LaunchActionCategory> {
         self.category.as_ref()
     }
     /// <p>Launch action parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>> {
         self.parameters.as_ref()
     }
     /// <p>Launch action description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -92,7 +92,7 @@ pub struct PutLaunchActionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_version: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::LaunchActionCategory>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl PutLaunchActionInputBuilder {
@@ -104,8 +104,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action code.</p>
     pub fn set_action_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_code = input;
-        self
+        self.action_code = input; self
     }
     /// <p>Launch action code.</p>
     pub fn get_action_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Launch action order.</p>
     pub fn get_order(&self) -> &::std::option::Option<i32> {
@@ -149,8 +146,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action Id.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>Launch action Id.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.optional = input;
-        self
+        self.optional = input; self
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
     pub fn get_optional(&self) -> &::std::option::Option<bool> {
@@ -179,8 +174,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Whether the launch action is active.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Whether the launch action is active.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -194,8 +188,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Launch action name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +202,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action version.</p>
     pub fn set_action_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_version = input;
-        self
+        self.action_version = input; self
     }
     /// <p>Launch action version.</p>
     pub fn get_action_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +216,7 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action category.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::LaunchActionCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Launch action category.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::LaunchActionCategory> {
@@ -238,20 +229,16 @@ impl PutLaunchActionInputBuilder {
     /// <p>Launch action parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::LaunchActionParameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Launch action parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Launch action parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>> {
         &self.parameters
     }
     /// <p>Launch action description.</p>
@@ -262,29 +249,40 @@ impl PutLaunchActionInputBuilder {
     }
     /// <p>Launch action description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Launch action description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`PutLaunchActionInput`](crate::operation::put_launch_action::PutLaunchActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_launch_action::PutLaunchActionInput {
-            resource_id: self.resource_id,
-            action_code: self.action_code,
-            order: self.order,
-            action_id: self.action_id,
-            optional: self.optional,
-            active: self.active,
-            name: self.name,
-            action_version: self.action_version,
-            category: self.category,
-            parameters: self.parameters,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_launch_action::PutLaunchActionInput {
+                resource_id: self.resource_id
+                ,
+                action_code: self.action_code
+                ,
+                order: self.order
+                ,
+                action_id: self.action_id
+                ,
+                optional: self.optional
+                ,
+                active: self.active
+                ,
+                name: self.name
+                ,
+                action_version: self.action_version
+                ,
+                category: self.category
+                ,
+                parameters: self.parameters
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

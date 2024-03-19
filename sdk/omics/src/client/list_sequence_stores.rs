@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSequenceStores`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of stores to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(SequenceStoreFilter)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::filter) / [`set_filter(Option<SequenceStoreFilter>)`](crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput) with field(s):
+                            /// - On success, responds with [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`sequence_stores(Vec::<SequenceStoreDetail>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::sequence_stores): <p>A list of sequence stores.</p>
-    /// - On failure, responds with [`SdkError<ListSequenceStoresError>`](crate::operation::list_sequence_stores::ListSequenceStoresError)
+                            /// - On failure, responds with [`SdkError<ListSequenceStoresError>`](crate::operation::list_sequence_stores::ListSequenceStoresError)
     pub fn list_sequence_stores(&self) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder {
-        crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The container image used to create an Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerImage {
+pub struct ContainerImage  {
     /// <p>The URI locating the container image.</p>
     pub uri: ::std::string::String,
 }
-impl ContainerImage {
+impl  ContainerImage  {
     /// <p>The URI locating the container image.</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
 }
 impl ContainerImage {
@@ -36,8 +35,7 @@ impl ContainerImageBuilder {
     }
     /// <p>The URI locating the container image.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The URI locating the container image.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ContainerImageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::ContainerImageBuilder::uri)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerImage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContainerImage {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building ContainerImage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContainerImage {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building ContainerImage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

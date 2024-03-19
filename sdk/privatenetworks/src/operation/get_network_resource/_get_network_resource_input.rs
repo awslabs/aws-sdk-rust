@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkResourceInput {
+pub struct GetNetworkResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub network_resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkResourceInput {
+impl  GetNetworkResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_resource_arn(&self) -> ::std::option::Option<& str> {
         self.network_resource_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetNetworkResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn set_network_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_resource_arn = input;
-        self
+        self.network_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn get_network_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_resource_arn
     }
     /// Consumes the builder and constructs a [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_network_resource::GetNetworkResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_network_resource::GetNetworkResourceInput {
-            network_resource_arn: self.network_resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_resource::GetNetworkResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_network_resource::GetNetworkResourceInput {
+                network_resource_arn: self.network_resource_arn
+                ,
+            }
+        )
     }
 }
+

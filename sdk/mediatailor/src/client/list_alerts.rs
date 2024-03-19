@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAlerts`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p><br>
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource.</p><br>
-    /// - On success, responds with [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput) with field(s):
+                            /// - On success, responds with [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput) with field(s):
     ///   - [`items(Option<Vec::<Alert>>)`](crate::operation::list_alerts::ListAlertsOutput::items): <p>A list of alerts that are associated with this resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alerts::ListAlertsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::operation::list_alerts::ListAlertsError)
+                            /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::operation::list_alerts::ListAlertsError)
     pub fn list_alerts(&self) -> crate::operation::list_alerts::builders::ListAlertsFluentBuilder {
-        crate::operation::list_alerts::builders::ListAlertsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_alerts::builders::ListAlertsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

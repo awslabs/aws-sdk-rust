@@ -3,19 +3,19 @@
 /// <p>Contains vulnerability counts for a specific image pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImagePipelineAggregation {
+pub struct ImagePipelineAggregation  {
     /// <p>The Amazon Resource Name (ARN) that identifies the image pipeline for this aggregation.</p>
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image pipeline.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl ImagePipelineAggregation {
+impl  ImagePipelineAggregation  {
     /// <p>The Amazon Resource Name (ARN) that identifies the image pipeline for this aggregation.</p>
-    pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image pipeline.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ImagePipelineAggregationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the image pipeline for this aggregation.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_pipeline_arn = input;
-        self
+        self.image_pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the image pipeline for this aggregation.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ImagePipelineAggregationBuilder {
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image pipeline.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image pipeline.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -65,8 +63,11 @@ impl ImagePipelineAggregationBuilder {
     /// Consumes the builder and constructs a [`ImagePipelineAggregation`](crate::types::ImagePipelineAggregation).
     pub fn build(self) -> crate::types::ImagePipelineAggregation {
         crate::types::ImagePipelineAggregation {
-            image_pipeline_arn: self.image_pipeline_arn,
-            severity_counts: self.severity_counts,
+            image_pipeline_arn: self.image_pipeline_arn
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

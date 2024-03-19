@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCapacityReservationsOutput {
+pub struct DescribeCapacityReservationsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservations.</p>
-    pub capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub capacity_reservations: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
-impl DescribeCapacityReservationsOutput {
+impl  DescribeCapacityReservationsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the Capacity Reservations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservations.is_none()`.
-    pub fn capacity_reservations(&self) -> &[crate::types::CapacityReservation] {
-        self.capacity_reservations.as_deref().unwrap_or_default()
+    pub fn capacity_reservations(&self) -> & [crate::types::CapacityReservation] {
+        self.capacity_reservations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCapacityReservationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCapacityReservationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationsOutput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput).
     pub fn builder() -> crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeCapacityReservationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl DescribeCapacityReservationsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeCapacityReservationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeCapacityReservationsOutputBuilder {
     /// <p>Information about the Capacity Reservations.</p>
     pub fn capacity_reservations(mut self, input: crate::types::CapacityReservation) -> Self {
         let mut v = self.capacity_reservations.unwrap_or_default();
-        v.push(input);
-        self.capacity_reservations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_reservations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Capacity Reservations.</p>
-    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>) -> Self {
-        self.capacity_reservations = input;
-        self
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservation>>) -> Self {
+        self.capacity_reservations = input; self
     }
     /// <p>Information about the Capacity Reservations.</p>
-    pub fn get_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservation>> {
         &self.capacity_reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCapacityReservationsOutput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput).
     pub fn build(self) -> crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput {
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput {
-            next_token: self.next_token,
-            capacity_reservations: self.capacity_reservations,
+            next_token: self.next_token
+            ,
+            capacity_reservations: self.capacity_reservations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

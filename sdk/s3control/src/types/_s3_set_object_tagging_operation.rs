@@ -3,16 +3,17 @@
 /// <p>Contains the configuration parameters for a PUT Object Tagging operation. S3 Batch Operations passes every object to the underlying <code>PutObjectTagging</code> API operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PutObjectTagging</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3SetObjectTaggingOperation {
+pub struct S3SetObjectTaggingOperation  {
     /// <p></p>
-    pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub tag_set: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
 }
-impl S3SetObjectTaggingOperation {
+impl  S3SetObjectTaggingOperation  {
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_set.is_none()`.
-    pub fn tag_set(&self) -> &[crate::types::S3Tag] {
-        self.tag_set.as_deref().unwrap_or_default()
+    pub fn tag_set(&self) -> & [crate::types::S3Tag] {
+        self.tag_set.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3SetObjectTaggingOperation {
@@ -26,7 +27,7 @@ impl S3SetObjectTaggingOperation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SetObjectTaggingOperationBuilder {
-    pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) tag_set: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
 }
 impl S3SetObjectTaggingOperationBuilder {
     /// Appends an item to `tag_set`.
@@ -36,21 +37,24 @@ impl S3SetObjectTaggingOperationBuilder {
     /// <p></p>
     pub fn tag_set(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tag_set.unwrap_or_default();
-        v.push(input);
-        self.tag_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.tag_set = input;
-        self
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>) -> Self {
+        self.tag_set = input; self
     }
     /// <p></p>
-    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>> {
         &self.tag_set
     }
     /// Consumes the builder and constructs a [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
     pub fn build(self) -> crate::types::S3SetObjectTaggingOperation {
-        crate::types::S3SetObjectTaggingOperation { tag_set: self.tag_set }
+        crate::types::S3SetObjectTaggingOperation {
+            tag_set: self.tag_set
+            ,
+        }
     }
 }
+

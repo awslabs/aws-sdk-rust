@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInterconnectOutput {
+pub struct DeleteInterconnectOutput  {
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct DeleteInterconnectOutput {
     pub interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     _request_id: Option<String>,
 }
-impl DeleteInterconnectOutput {
+impl  DeleteInterconnectOutput  {
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
     /// <li>
@@ -41,15 +41,15 @@ impl DeleteInterconnectOutput {
     /// <li>
     /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
     /// </ul>
-    pub fn interconnect_state(&self) -> ::std::option::Option<&crate::types::InterconnectState> {
+    pub fn interconnect_state(&self) -> ::std::option::Option<& crate::types::InterconnectState> {
         self.interconnect_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteInterconnectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::operation::delete_interconnect::DeleteInterconnectOutput).
     pub fn builder() -> crate::operation::delete_interconnect::builders::DeleteInterconnectOutputBuilder {
@@ -104,8 +104,7 @@ impl DeleteInterconnectOutputBuilder {
     /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
     /// </ul>
     pub fn set_interconnect_state(mut self, input: ::std::option::Option<crate::types::InterconnectState>) -> Self {
-        self.interconnect_state = input;
-        self
+        self.interconnect_state = input; self
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -128,19 +127,21 @@ impl DeleteInterconnectOutputBuilder {
         &self.interconnect_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteInterconnectOutput`](crate::operation::delete_interconnect::DeleteInterconnectOutput).
     pub fn build(self) -> crate::operation::delete_interconnect::DeleteInterconnectOutput {
         crate::operation::delete_interconnect::DeleteInterconnectOutput {
-            interconnect_state: self.interconnect_state,
+            interconnect_state: self.interconnect_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

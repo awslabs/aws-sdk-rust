@@ -3,13 +3,13 @@
 /// <p>The input properties for the preloaded data store. Only data preloaded from Synthea is supported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PreloadDataConfig {
+pub struct PreloadDataConfig  {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub preload_data_type: crate::types::PreloadDataType,
 }
-impl PreloadDataConfig {
+impl  PreloadDataConfig  {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub fn preload_data_type(&self) -> &crate::types::PreloadDataType {
+    pub fn preload_data_type(&self) -> & crate::types::PreloadDataType {
         &self.preload_data_type
     }
 }
@@ -35,8 +35,7 @@ impl PreloadDataConfigBuilder {
     }
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub fn set_preload_data_type(mut self, input: ::std::option::Option<crate::types::PreloadDataType>) -> Self {
-        self.preload_data_type = input;
-        self
+        self.preload_data_type = input; self
     }
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub fn get_preload_data_type(&self) -> &::std::option::Option<crate::types::PreloadDataType> {
@@ -46,13 +45,15 @@ impl PreloadDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`preload_data_type`](crate::types::builders::PreloadDataConfigBuilder::preload_data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::PreloadDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PreloadDataConfig {
-            preload_data_type: self.preload_data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "preload_data_type",
-                    "preload_data_type was not specified but it is required when building PreloadDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PreloadDataConfig {
+                preload_data_type: self.preload_data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("preload_data_type", "preload_data_type was not specified but it is required when building PreloadDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

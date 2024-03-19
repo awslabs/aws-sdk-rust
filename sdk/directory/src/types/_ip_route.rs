@@ -3,19 +3,19 @@
 /// <p>IP address block. This is often the address block of the DNS server used for your self-managed domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpRoute {
+pub struct IpRoute  {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>Description of the address block.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl IpRoute {
+impl  IpRoute  {
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
-    pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> ::std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
     /// <p>Description of the address block.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IpRouteBuilder {
     }
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ip = input;
-        self
+        self.cidr_ip = input; self
     }
     /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IpRouteBuilder {
     }
     /// <p>Description of the address block.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the address block.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IpRouteBuilder {
     /// Consumes the builder and constructs a [`IpRoute`](crate::types::IpRoute).
     pub fn build(self) -> crate::types::IpRoute {
         crate::types::IpRoute {
-            cidr_ip: self.cidr_ip,
-            description: self.description,
+            cidr_ip: self.cidr_ip
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

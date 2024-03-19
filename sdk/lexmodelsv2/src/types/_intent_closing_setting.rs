@@ -3,7 +3,7 @@
 /// <p>Provides a statement the Amazon Lex conveys to the user when the intent is successfully fulfilled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentClosingSetting {
+pub struct IntentClosingSetting  {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
     pub closing_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -13,9 +13,9 @@ pub struct IntentClosingSetting {
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
     pub conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
 }
-impl IntentClosingSetting {
+impl  IntentClosingSetting  {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
-    pub fn closing_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn closing_response(&self) -> ::std::option::Option<& crate::types::ResponseSpecification> {
         self.closing_response.as_ref()
     }
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -23,11 +23,11 @@ impl IntentClosingSetting {
         self.active
     }
     /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
-    pub fn next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
+    pub fn next_step(&self) -> ::std::option::Option<& crate::types::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
-    pub fn conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn conditional(&self) -> ::std::option::Option<& crate::types::ConditionalSpecification> {
         self.conditional.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl IntentClosingSettingBuilder {
     }
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
     pub fn set_closing_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
-        self.closing_response = input;
-        self
+        self.closing_response = input; self
     }
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
     pub fn get_closing_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
@@ -69,8 +68,7 @@ impl IntentClosingSettingBuilder {
     }
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Specifies whether an intent's closing response is used. When this field is false, the closing response isn't sent to the user. If the <code>active</code> field isn't specified, the default is true.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl IntentClosingSettingBuilder {
     }
     /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
     pub fn set_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
-        self.next_step = input;
-        self
+        self.next_step = input; self
     }
     /// <p>Specifies the next step that the bot executes after playing the intent's closing response.</p>
     pub fn get_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
@@ -97,8 +94,7 @@ impl IntentClosingSettingBuilder {
     }
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
     pub fn set_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
-        self.conditional = input;
-        self
+        self.conditional = input; self
     }
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
     pub fn get_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
@@ -107,10 +103,15 @@ impl IntentClosingSettingBuilder {
     /// Consumes the builder and constructs a [`IntentClosingSetting`](crate::types::IntentClosingSetting).
     pub fn build(self) -> crate::types::IntentClosingSetting {
         crate::types::IntentClosingSetting {
-            closing_response: self.closing_response,
-            active: self.active,
-            next_step: self.next_step,
-            conditional: self.conditional,
+            closing_response: self.closing_response
+            ,
+            active: self.active
+            ,
+            next_step: self.next_step
+            ,
+            conditional: self.conditional
+            ,
         }
     }
 }
+

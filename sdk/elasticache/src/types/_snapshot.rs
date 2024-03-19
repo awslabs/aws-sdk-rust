@@ -3,7 +3,7 @@
 /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the source replication group.</p>
@@ -131,7 +131,7 @@ pub struct Snapshot {
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub node_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>,
+    pub node_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSnapshot>>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
@@ -139,29 +139,29 @@ pub struct Snapshot {
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
-impl Snapshot {
+impl  Snapshot  {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The unique identifier of the source replication group.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>A description of the source replication group.</p>
-    pub fn replication_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_description(&self) -> ::std::option::Option<& str> {
         self.replication_group_description.as_deref()
     }
     /// <p>The user-supplied identifier of the source cluster.</p>
-    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
-    pub fn snapshot_status(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_status(&self) -> ::std::option::Option<& str> {
         self.snapshot_status.as_deref()
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
-    pub fn snapshot_source(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_source(&self) -> ::std::option::Option<& str> {
         self.snapshot_source.as_deref()
     }
     /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
@@ -222,15 +222,15 @@ impl Snapshot {
     /// <li>
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
-    pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
+    pub fn cache_node_type(&self) -> ::std::option::Option<& str> {
         self.cache_node_type.as_deref()
     }
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cluster.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The number of cache nodes in the source cluster.</p>
@@ -239,15 +239,15 @@ impl Snapshot {
         self.num_cache_nodes
     }
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
-    pub fn preferred_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_availability_zone(&self) -> ::std::option::Option<& str> {
         self.preferred_availability_zone.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
-    pub fn preferred_outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_outpost_arn(&self) -> ::std::option::Option<& str> {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The date and time when the source cluster was created.</p>
-    pub fn cache_cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cache_cluster_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cache_cluster_create_time.as_ref()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -269,11 +269,11 @@ impl Snapshot {
     /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The port number used by each cache nodes in the source cluster.</p>
@@ -281,15 +281,15 @@ impl Snapshot {
         self.port
     }
     /// <p>The cache parameter group that is associated with the source cluster.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
-    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
@@ -303,7 +303,7 @@ impl Snapshot {
         self.snapshot_retention_limit
     }
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
-    pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_window(&self) -> ::std::option::Option<& str> {
         self.snapshot_window.as_deref()
     }
     /// <p>The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored replication group must be the same.</p>
@@ -311,25 +311,26 @@ impl Snapshot {
         self.num_node_groups
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
-    pub fn automatic_failover(&self) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
+    pub fn automatic_failover(&self) -> ::std::option::Option<& crate::types::AutomaticFailoverStatus> {
         self.automatic_failover.as_ref()
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_snapshots.is_none()`.
-    pub fn node_snapshots(&self) -> &[crate::types::NodeSnapshot] {
-        self.node_snapshots.as_deref().unwrap_or_default()
+    pub fn node_snapshots(&self) -> & [crate::types::NodeSnapshot] {
+        self.node_snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-    pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
+    pub fn data_tiering(&self) -> ::std::option::Option<& crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
 }
@@ -368,7 +369,7 @@ pub struct SnapshotBuilder {
     pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
     pub(crate) num_node_groups: ::std::option::Option<i32>,
     pub(crate) automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
-    pub(crate) node_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>,
+    pub(crate) node_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSnapshot>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
@@ -381,8 +382,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -395,8 +395,7 @@ impl SnapshotBuilder {
     }
     /// <p>The unique identifier of the source replication group.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The unique identifier of the source replication group.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -409,8 +408,7 @@ impl SnapshotBuilder {
     }
     /// <p>A description of the source replication group.</p>
     pub fn set_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_description = input;
-        self
+        self.replication_group_description = input; self
     }
     /// <p>A description of the source replication group.</p>
     pub fn get_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -423,8 +421,7 @@ impl SnapshotBuilder {
     }
     /// <p>The user-supplied identifier of the source cluster.</p>
     pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_cluster_id = input;
-        self
+        self.cache_cluster_id = input; self
     }
     /// <p>The user-supplied identifier of the source cluster.</p>
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -437,8 +434,7 @@ impl SnapshotBuilder {
     }
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
     pub fn set_snapshot_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_status = input;
-        self
+        self.snapshot_status = input; self
     }
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
     pub fn get_snapshot_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -451,8 +447,7 @@ impl SnapshotBuilder {
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
     pub fn set_snapshot_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_source = input;
-        self
+        self.snapshot_source = input; self
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
     pub fn get_snapshot_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -579,8 +574,7 @@ impl SnapshotBuilder {
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_node_type = input;
-        self
+        self.cache_node_type = input; self
     }
     /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -650,8 +644,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -664,8 +657,7 @@ impl SnapshotBuilder {
     }
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -680,8 +672,7 @@ impl SnapshotBuilder {
     /// <p>The number of cache nodes in the source cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_cache_nodes = input;
-        self
+        self.num_cache_nodes = input; self
     }
     /// <p>The number of cache nodes in the source cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
@@ -695,8 +686,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
     pub fn set_preferred_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_availability_zone = input;
-        self
+        self.preferred_availability_zone = input; self
     }
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
     pub fn get_preferred_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -709,8 +699,7 @@ impl SnapshotBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
     pub fn set_preferred_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_outpost_arn = input;
-        self
+        self.preferred_outpost_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
     pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -723,8 +712,7 @@ impl SnapshotBuilder {
     }
     /// <p>The date and time when the source cluster was created.</p>
     pub fn set_cache_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cache_cluster_create_time = input;
-        self
+        self.cache_cluster_create_time = input; self
     }
     /// <p>The date and time when the source cluster was created.</p>
     pub fn get_cache_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -773,8 +761,7 @@ impl SnapshotBuilder {
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -805,8 +792,7 @@ impl SnapshotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -819,8 +805,7 @@ impl SnapshotBuilder {
     }
     /// <p>The port number used by each cache nodes in the source cluster.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number used by each cache nodes in the source cluster.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -833,8 +818,7 @@ impl SnapshotBuilder {
     }
     /// <p>The cache parameter group that is associated with the source cluster.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>The cache parameter group that is associated with the source cluster.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -847,8 +831,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+        self.cache_subnet_group_name = input; self
     }
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
     pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -861,8 +844,7 @@ impl SnapshotBuilder {
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -875,8 +857,7 @@ impl SnapshotBuilder {
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -893,8 +874,7 @@ impl SnapshotBuilder {
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code> operation.</p>
     /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code> operation.</p>
@@ -909,8 +889,7 @@ impl SnapshotBuilder {
     }
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_window = input;
-        self
+        self.snapshot_window = input; self
     }
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -923,8 +902,7 @@ impl SnapshotBuilder {
     }
     /// <p>The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored replication group must be the same.</p>
     pub fn set_num_node_groups(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_node_groups = input;
-        self
+        self.num_node_groups = input; self
     }
     /// <p>The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored replication group must be the same.</p>
     pub fn get_num_node_groups(&self) -> &::std::option::Option<i32> {
@@ -937,8 +915,7 @@ impl SnapshotBuilder {
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
     pub fn set_automatic_failover(mut self, input: ::std::option::Option<crate::types::AutomaticFailoverStatus>) -> Self {
-        self.automatic_failover = input;
-        self
+        self.automatic_failover = input; self
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
     pub fn get_automatic_failover(&self) -> &::std::option::Option<crate::types::AutomaticFailoverStatus> {
@@ -951,17 +928,16 @@ impl SnapshotBuilder {
     /// <p>A list of the cache nodes in the source cluster.</p>
     pub fn node_snapshots(mut self, input: crate::types::NodeSnapshot) -> Self {
         let mut v = self.node_snapshots.unwrap_or_default();
-        v.push(input);
-        self.node_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub fn set_node_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>) -> Self {
-        self.node_snapshots = input;
-        self
+    pub fn set_node_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSnapshot>>) -> Self {
+        self.node_snapshots = input; self
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub fn get_node_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>> {
+    pub fn get_node_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeSnapshot>> {
         &self.node_snapshots
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
@@ -971,8 +947,7 @@ impl SnapshotBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -985,8 +960,7 @@ impl SnapshotBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -999,8 +973,7 @@ impl SnapshotBuilder {
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub fn set_data_tiering(mut self, input: ::std::option::Option<crate::types::DataTieringStatus>) -> Self {
-        self.data_tiering = input;
-        self
+        self.data_tiering = input; self
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
@@ -1009,34 +982,63 @@ impl SnapshotBuilder {
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            snapshot_name: self.snapshot_name,
-            replication_group_id: self.replication_group_id,
-            replication_group_description: self.replication_group_description,
-            cache_cluster_id: self.cache_cluster_id,
-            snapshot_status: self.snapshot_status,
-            snapshot_source: self.snapshot_source,
-            cache_node_type: self.cache_node_type,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            num_cache_nodes: self.num_cache_nodes,
-            preferred_availability_zone: self.preferred_availability_zone,
-            preferred_outpost_arn: self.preferred_outpost_arn,
-            cache_cluster_create_time: self.cache_cluster_create_time,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            topic_arn: self.topic_arn,
-            port: self.port,
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            cache_subnet_group_name: self.cache_subnet_group_name,
-            vpc_id: self.vpc_id,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            snapshot_window: self.snapshot_window,
-            num_node_groups: self.num_node_groups,
-            automatic_failover: self.automatic_failover,
-            node_snapshots: self.node_snapshots,
-            kms_key_id: self.kms_key_id,
-            arn: self.arn,
-            data_tiering: self.data_tiering,
+            snapshot_name: self.snapshot_name
+            ,
+            replication_group_id: self.replication_group_id
+            ,
+            replication_group_description: self.replication_group_description
+            ,
+            cache_cluster_id: self.cache_cluster_id
+            ,
+            snapshot_status: self.snapshot_status
+            ,
+            snapshot_source: self.snapshot_source
+            ,
+            cache_node_type: self.cache_node_type
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            num_cache_nodes: self.num_cache_nodes
+            ,
+            preferred_availability_zone: self.preferred_availability_zone
+            ,
+            preferred_outpost_arn: self.preferred_outpost_arn
+            ,
+            cache_cluster_create_time: self.cache_cluster_create_time
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            topic_arn: self.topic_arn
+            ,
+            port: self.port
+            ,
+            cache_parameter_group_name: self.cache_parameter_group_name
+            ,
+            cache_subnet_group_name: self.cache_subnet_group_name
+            ,
+            vpc_id: self.vpc_id
+            ,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade
+            ,
+            snapshot_retention_limit: self.snapshot_retention_limit
+            ,
+            snapshot_window: self.snapshot_window
+            ,
+            num_node_groups: self.num_node_groups
+            ,
+            automatic_failover: self.automatic_failover
+            ,
+            node_snapshots: self.node_snapshots
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            arn: self.arn
+            ,
+            data_tiering: self.data_tiering
+            ,
         }
     }
 }
+

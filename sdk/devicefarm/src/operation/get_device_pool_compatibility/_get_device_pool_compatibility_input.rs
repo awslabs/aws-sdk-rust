@@ -3,7 +3,7 @@
 /// <p>Represents a request to the get device pool compatibility operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevicePoolCompatibilityInput {
+pub struct GetDevicePoolCompatibilityInput  {
     /// <p>The device pool's ARN.</p>
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
@@ -54,13 +54,13 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <p>An object that contains information about the settings for a run.</p>
     pub configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
 }
-impl GetDevicePoolCompatibilityInput {
+impl  GetDevicePoolCompatibilityInput  {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_pool_arn(&self) -> ::std::option::Option<& str> {
         self.device_pool_arn.as_deref()
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The test type for the specified device pool.</p>
@@ -103,15 +103,15 @@ impl GetDevicePoolCompatibilityInput {
     /// <li>
     /// <p>XCTEST_UI.</p></li>
     /// </ul>
-    pub fn test_type(&self) -> ::std::option::Option<&crate::types::TestType> {
+    pub fn test_type(&self) -> ::std::option::Option<& crate::types::TestType> {
         self.test_type.as_ref()
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    pub fn test(&self) -> ::std::option::Option<&crate::types::ScheduleRunTest> {
+    pub fn test(&self) -> ::std::option::Option<& crate::types::ScheduleRunTest> {
         self.test.as_ref()
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ScheduleRunConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -141,8 +141,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>The device pool's ARN.</p>
     pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_pool_arn = input;
-        self
+        self.device_pool_arn = input; self
     }
     /// <p>The device pool's ARN.</p>
     pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +245,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>XCTEST_UI.</p></li>
     /// </ul>
     pub fn set_test_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.test_type = input;
-        self
+        self.test_type = input; self
     }
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
@@ -300,8 +297,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn get_test(&self) -> &::std::option::Option<crate::types::ScheduleRunTest> {
@@ -314,26 +310,28 @@ impl GetDevicePoolCompatibilityInputBuilder {
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleRunConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ScheduleRunConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
-            device_pool_arn: self.device_pool_arn,
-            app_arn: self.app_arn,
-            test_type: self.test_type,
-            test: self.test,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
+                device_pool_arn: self.device_pool_arn
+                ,
+                app_arn: self.app_arn
+                ,
+                test_type: self.test_type
+                ,
+                test: self.test
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

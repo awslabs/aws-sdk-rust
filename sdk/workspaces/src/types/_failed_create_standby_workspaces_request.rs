@@ -3,7 +3,7 @@
 /// <p>Describes the standby WorkSpace that could not be created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedCreateStandbyWorkspacesRequest {
+pub struct FailedCreateStandbyWorkspacesRequest  {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub standby_workspace_request: ::std::option::Option<crate::types::StandbyWorkspace>,
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
@@ -11,17 +11,17 @@ pub struct FailedCreateStandbyWorkspacesRequest {
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl FailedCreateStandbyWorkspacesRequest {
+impl  FailedCreateStandbyWorkspacesRequest  {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
-    pub fn standby_workspace_request(&self) -> ::std::option::Option<&crate::types::StandbyWorkspace> {
+    pub fn standby_workspace_request(&self) -> ::std::option::Option<& crate::types::StandbyWorkspace> {
         self.standby_workspace_request.as_ref()
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub fn set_standby_workspace_request(mut self, input: ::std::option::Option<crate::types::StandbyWorkspace>) -> Self {
-        self.standby_workspace_request = input;
-        self
+        self.standby_workspace_request = input; self
     }
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub fn get_standby_workspace_request(&self) -> &::std::option::Option<crate::types::StandbyWorkspace> {
@@ -62,8 +61,7 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FailedCreateStandbyWorkspacesRequestBuilder {
     /// Consumes the builder and constructs a [`FailedCreateStandbyWorkspacesRequest`](crate::types::FailedCreateStandbyWorkspacesRequest).
     pub fn build(self) -> crate::types::FailedCreateStandbyWorkspacesRequest {
         crate::types::FailedCreateStandbyWorkspacesRequest {
-            standby_workspace_request: self.standby_workspace_request,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            standby_workspace_request: self.standby_workspace_request
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

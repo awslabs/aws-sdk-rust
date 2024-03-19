@@ -19,13 +19,13 @@
 /// <p>For more information on the dataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported Dataset Permissions</a> in the FinSpace User Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePermission {
+pub struct ResourcePermission  {
     /// <p>Permission for a resource.</p>
     pub permission: ::std::option::Option<::std::string::String>,
 }
-impl ResourcePermission {
+impl  ResourcePermission  {
     /// <p>Permission for a resource.</p>
-    pub fn permission(&self) -> ::std::option::Option<&str> {
+    pub fn permission(&self) -> ::std::option::Option<& str> {
         self.permission.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ResourcePermissionBuilder {
     }
     /// <p>Permission for a resource.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>Permission for a resource.</p>
     pub fn get_permission(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,6 +58,10 @@ impl ResourcePermissionBuilder {
     }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
     pub fn build(self) -> crate::types::ResourcePermission {
-        crate::types::ResourcePermission { permission: self.permission }
+        crate::types::ResourcePermission {
+            permission: self.permission
+            ,
+        }
     }
 }
+

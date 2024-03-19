@@ -3,7 +3,7 @@
 /// <p>The CPU options for the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CpuOptions {
+pub struct CpuOptions  {
     /// <p>The number of CPU cores for the instance.</p>
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per CPU core.</p>
@@ -11,7 +11,7 @@ pub struct CpuOptions {
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
-impl CpuOptions {
+impl  CpuOptions  {
     /// <p>The number of CPU cores for the instance.</p>
     pub fn core_count(&self) -> ::std::option::Option<i32> {
         self.core_count
@@ -21,7 +21,7 @@ impl CpuOptions {
         self.threads_per_core
     }
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
-    pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
+    pub fn amd_sev_snp(&self) -> ::std::option::Option<& crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of CPU cores for the instance.</p>
     pub fn set_core_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.core_count = input;
-        self
+        self.core_count = input; self
     }
     /// <p>The number of CPU cores for the instance.</p>
     pub fn get_core_count(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of threads per CPU core.</p>
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threads_per_core = input;
-        self
+        self.threads_per_core = input; self
     }
     /// <p>The number of threads per CPU core.</p>
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl CpuOptionsBuilder {
     }
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn set_amd_sev_snp(mut self, input: ::std::option::Option<crate::types::AmdSevSnpSpecification>) -> Self {
-        self.amd_sev_snp = input;
-        self
+        self.amd_sev_snp = input; self
     }
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn get_amd_sev_snp(&self) -> &::std::option::Option<crate::types::AmdSevSnpSpecification> {
@@ -86,9 +83,13 @@ impl CpuOptionsBuilder {
     /// Consumes the builder and constructs a [`CpuOptions`](crate::types::CpuOptions).
     pub fn build(self) -> crate::types::CpuOptions {
         crate::types::CpuOptions {
-            core_count: self.core_count,
-            threads_per_core: self.threads_per_core,
-            amd_sev_snp: self.amd_sev_snp,
+            core_count: self.core_count
+            ,
+            threads_per_core: self.threads_per_core
+            ,
+            amd_sev_snp: self.amd_sev_snp
+            ,
         }
     }
 }
+

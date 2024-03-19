@@ -3,7 +3,7 @@
 /// <p>The selected data source to filter the conversation log.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLogsDataSourceFilterBy {
+pub struct ConversationLogsDataSourceFilterBy  {
     /// <p>The start time for the conversation log.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The end time for the conversation log.</p>
@@ -11,17 +11,17 @@ pub struct ConversationLogsDataSourceFilterBy {
     /// <p>The selection to filter by input mode for the conversation logs.</p>
     pub input_mode: crate::types::ConversationLogsInputModeFilter,
 }
-impl ConversationLogsDataSourceFilterBy {
+impl  ConversationLogsDataSourceFilterBy  {
     /// <p>The start time for the conversation log.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The end time for the conversation log.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
     /// <p>The selection to filter by input mode for the conversation logs.</p>
-    pub fn input_mode(&self) -> &crate::types::ConversationLogsInputModeFilter {
+    pub fn input_mode(&self) -> & crate::types::ConversationLogsInputModeFilter {
         &self.input_mode
     }
 }
@@ -49,8 +49,7 @@ impl ConversationLogsDataSourceFilterByBuilder {
     }
     /// <p>The start time for the conversation log.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time for the conversation log.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -64,8 +63,7 @@ impl ConversationLogsDataSourceFilterByBuilder {
     }
     /// <p>The end time for the conversation log.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time for the conversation log.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +77,7 @@ impl ConversationLogsDataSourceFilterByBuilder {
     }
     /// <p>The selection to filter by input mode for the conversation logs.</p>
     pub fn set_input_mode(mut self, input: ::std::option::Option<crate::types::ConversationLogsInputModeFilter>) -> Self {
-        self.input_mode = input;
-        self
+        self.input_mode = input; self
     }
     /// <p>The selection to filter by input mode for the conversation logs.</p>
     pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::ConversationLogsInputModeFilter> {
@@ -92,25 +89,25 @@ impl ConversationLogsDataSourceFilterByBuilder {
     /// - [`end_time`](crate::types::builders::ConversationLogsDataSourceFilterByBuilder::end_time)
     /// - [`input_mode`](crate::types::builders::ConversationLogsDataSourceFilterByBuilder::input_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSourceFilterBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConversationLogsDataSourceFilterBy {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building ConversationLogsDataSourceFilterBy",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building ConversationLogsDataSourceFilterBy",
-                )
-            })?,
-            input_mode: self.input_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_mode",
-                    "input_mode was not specified but it is required when building ConversationLogsDataSourceFilterBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConversationLogsDataSourceFilterBy {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building ConversationLogsDataSourceFilterBy")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building ConversationLogsDataSourceFilterBy")
+                    )?
+                ,
+                input_mode: self.input_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_mode", "input_mode was not specified but it is required when building ConversationLogsDataSourceFilterBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

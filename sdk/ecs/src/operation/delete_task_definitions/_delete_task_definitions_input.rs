@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTaskDefinitionsInput {
+pub struct DeleteTaskDefinitionsInput  {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub task_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub task_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteTaskDefinitionsInput {
+impl  DeleteTaskDefinitionsInput  {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_definitions.is_none()`.
-    pub fn task_definitions(&self) -> &[::std::string::String] {
-        self.task_definitions.as_deref().unwrap_or_default()
+    pub fn task_definitions(&self) -> & [::std::string::String] {
+        self.task_definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteTaskDefinitionsInput {
@@ -27,7 +28,7 @@ impl DeleteTaskDefinitionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskDefinitionsInputBuilder {
-    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteTaskDefinitionsInputBuilder {
     /// Appends an item to `task_definitions`.
@@ -38,28 +39,28 @@ impl DeleteTaskDefinitionsInputBuilder {
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
     pub fn task_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.task_definitions.unwrap_or_default();
-        v.push(input.into());
-        self.task_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.task_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.task_definitions = input;
-        self
+    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.task_definitions = input; self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.task_definitions
     }
     /// Consumes the builder and constructs a [`DeleteTaskDefinitionsInput`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput {
-            task_definitions: self.task_definitions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput {
+                task_definitions: self.task_definitions
+                ,
+            }
+        )
     }
 }
+

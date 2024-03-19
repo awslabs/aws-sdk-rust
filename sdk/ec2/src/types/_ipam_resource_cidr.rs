@@ -3,7 +3,7 @@
 /// <p>The CIDR for an IPAM resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamResourceCidr {
+pub struct IpamResourceCidr  {
     /// <p>The IPAM ID for an IPAM resource.</p>
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The scope ID for an IPAM resource.</p>
@@ -23,7 +23,7 @@ pub struct IpamResourceCidr {
     /// <p>The type of IPAM resource.</p>
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The tags for an IPAM resource.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>,
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
     /// <li>
@@ -43,48 +43,49 @@ pub struct IpamResourceCidr {
     /// <p>The ID of a VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl IpamResourceCidr {
+impl  IpamResourceCidr  {
     /// <p>The IPAM ID for an IPAM resource.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>The scope ID for an IPAM resource.</p>
-    pub fn ipam_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_scope_id(&self) -> ::std::option::Option<& str> {
         self.ipam_scope_id.as_deref()
     }
     /// <p>The pool ID for an IPAM resource.</p>
-    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services Region for an IPAM resource.</p>
-    pub fn resource_region(&self) -> ::std::option::Option<&str> {
+    pub fn resource_region(&self) -> ::std::option::Option<& str> {
         self.resource_region.as_deref()
     }
     /// <p>The Amazon Web Services account number of the owner of an IPAM resource.</p>
-    pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> ::std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The ID of an IPAM resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The name of an IPAM resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The CIDR for an IPAM resource.</p>
-    pub fn resource_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn resource_cidr(&self) -> ::std::option::Option<& str> {
         self.resource_cidr.as_deref()
     }
     /// <p>The type of IPAM resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::IpamResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tags for an IPAM resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::IpamResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::IpamResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -99,19 +100,19 @@ impl IpamResourceCidr {
         self.ip_usage
     }
     /// <p>The compliance status of the IPAM resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::IpamComplianceStatus> {
+    pub fn compliance_status(&self) -> ::std::option::Option<& crate::types::IpamComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The management state of the resource. For more information about management states, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn management_state(&self) -> ::std::option::Option<&crate::types::IpamManagementState> {
+    pub fn management_state(&self) -> ::std::option::Option<& crate::types::IpamManagementState> {
         self.management_state.as_ref()
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn overlap_status(&self) -> ::std::option::Option<&crate::types::IpamOverlapStatus> {
+    pub fn overlap_status(&self) -> ::std::option::Option<& crate::types::IpamOverlapStatus> {
         self.overlap_status.as_ref()
     }
     /// <p>The ID of a VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -135,7 +136,7 @@ pub struct IpamResourceCidrBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::IpamResourceType>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>,
     pub(crate) ip_usage: ::std::option::Option<f64>,
     pub(crate) compliance_status: ::std::option::Option<crate::types::IpamComplianceStatus>,
     pub(crate) management_state: ::std::option::Option<crate::types::IpamManagementState>,
@@ -150,8 +151,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The IPAM ID for an IPAM resource.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>The IPAM ID for an IPAM resource.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +164,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The scope ID for an IPAM resource.</p>
     pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_scope_id = input;
-        self
+        self.ipam_scope_id = input; self
     }
     /// <p>The scope ID for an IPAM resource.</p>
     pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +177,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The pool ID for an IPAM resource.</p>
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// <p>The pool ID for an IPAM resource.</p>
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +190,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The Amazon Web Services Region for an IPAM resource.</p>
     pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_region = input;
-        self
+        self.resource_region = input; self
     }
     /// <p>The Amazon Web Services Region for an IPAM resource.</p>
     pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +203,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The Amazon Web Services account number of the owner of an IPAM resource.</p>
     pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_id = input;
-        self
+        self.resource_owner_id = input; self
     }
     /// <p>The Amazon Web Services account number of the owner of an IPAM resource.</p>
     pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +216,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The ID of an IPAM resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of an IPAM resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +229,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The name of an IPAM resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of an IPAM resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +242,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The CIDR for an IPAM resource.</p>
     pub fn set_resource_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_cidr = input;
-        self
+        self.resource_cidr = input; self
     }
     /// <p>The CIDR for an IPAM resource.</p>
     pub fn get_resource_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +255,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The type of IPAM resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of IPAM resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamResourceType> {
@@ -276,17 +268,16 @@ impl IpamResourceCidrBuilder {
     /// <p>The tags for an IPAM resource.</p>
     pub fn resource_tags(mut self, input: crate::types::IpamResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for an IPAM resource.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The tags for an IPAM resource.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>> {
         &self.resource_tags
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
@@ -312,8 +303,7 @@ impl IpamResourceCidrBuilder {
     /// <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs).</p></li>
     /// </ul>
     pub fn set_ip_usage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.ip_usage = input;
-        self
+        self.ip_usage = input; self
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -334,8 +324,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The compliance status of the IPAM resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::IpamComplianceStatus>) -> Self {
-        self.compliance_status = input;
-        self
+        self.compliance_status = input; self
     }
     /// <p>The compliance status of the IPAM resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::IpamComplianceStatus> {
@@ -348,8 +337,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The management state of the resource. For more information about management states, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn set_management_state(mut self, input: ::std::option::Option<crate::types::IpamManagementState>) -> Self {
-        self.management_state = input;
-        self
+        self.management_state = input; self
     }
     /// <p>The management state of the resource. For more information about management states, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn get_management_state(&self) -> &::std::option::Option<crate::types::IpamManagementState> {
@@ -362,8 +350,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn set_overlap_status(mut self, input: ::std::option::Option<crate::types::IpamOverlapStatus>) -> Self {
-        self.overlap_status = input;
-        self
+        self.overlap_status = input; self
     }
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn get_overlap_status(&self) -> &::std::option::Option<crate::types::IpamOverlapStatus> {
@@ -376,8 +363,7 @@ impl IpamResourceCidrBuilder {
     }
     /// <p>The ID of a VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of a VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -386,21 +372,37 @@ impl IpamResourceCidrBuilder {
     /// Consumes the builder and constructs a [`IpamResourceCidr`](crate::types::IpamResourceCidr).
     pub fn build(self) -> crate::types::IpamResourceCidr {
         crate::types::IpamResourceCidr {
-            ipam_id: self.ipam_id,
-            ipam_scope_id: self.ipam_scope_id,
-            ipam_pool_id: self.ipam_pool_id,
-            resource_region: self.resource_region,
-            resource_owner_id: self.resource_owner_id,
-            resource_id: self.resource_id,
-            resource_name: self.resource_name,
-            resource_cidr: self.resource_cidr,
-            resource_type: self.resource_type,
-            resource_tags: self.resource_tags,
-            ip_usage: self.ip_usage,
-            compliance_status: self.compliance_status,
-            management_state: self.management_state,
-            overlap_status: self.overlap_status,
-            vpc_id: self.vpc_id,
+            ipam_id: self.ipam_id
+            ,
+            ipam_scope_id: self.ipam_scope_id
+            ,
+            ipam_pool_id: self.ipam_pool_id
+            ,
+            resource_region: self.resource_region
+            ,
+            resource_owner_id: self.resource_owner_id
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_name: self.resource_name
+            ,
+            resource_cidr: self.resource_cidr
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_tags: self.resource_tags
+            ,
+            ip_usage: self.ip_usage
+            ,
+            compliance_status: self.compliance_status
+            ,
+            management_state: self.management_state
+            ,
+            overlap_status: self.overlap_status
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

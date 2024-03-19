@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceInput {
+pub struct DeleteServiceInput  {
     /// <p>The ID of the environment that the service is in.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Deletes a Refactor Spaces service.</p><note>
@@ -12,19 +12,19 @@ pub struct DeleteServiceInput {
     /// <p>The ID of the service to delete.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServiceInput {
+impl  DeleteServiceInput  {
     /// <p>The ID of the environment that the service is in.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn application_identifier(&self) -> ::std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The ID of the service to delete.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>The ID of the environment that the service is in.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment that the service is in.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DeleteServiceInputBuilder {
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_identifier = input;
-        self
+        self.application_identifier = input; self
     }
     /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
@@ -88,21 +86,24 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>The ID of the service to delete.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID of the service to delete.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            service_identifier: self.service_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service::DeleteServiceInput {
+                environment_identifier: self.environment_identifier
+                ,
+                application_identifier: self.application_identifier
+                ,
+                service_identifier: self.service_identifier
+                ,
+            }
+        )
     }
 }
+

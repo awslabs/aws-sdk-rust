@@ -3,7 +3,7 @@
 /// <p>A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SeverityLevel {
+pub struct SeverityLevel  {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code></p>
     pub code: ::std::option::Option<::std::string::String>,
@@ -26,10 +26,10 @@ pub struct SeverityLevel {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl SeverityLevel {
+impl  SeverityLevel  {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code></p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The name of the severity level that corresponds to the severity level code.</p><note>
@@ -49,7 +49,7 @@ impl SeverityLevel {
     /// </ul>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl SeverityLevelBuilder {
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code></p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The code for case severity level.</p>
     /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code></p>
@@ -124,8 +123,7 @@ impl SeverityLevelBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the severity level that corresponds to the severity level code.</p><note>
     /// <p>The values returned by the API are different from the values that appear in the Amazon Web Services Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center.</p>
@@ -150,8 +148,11 @@ impl SeverityLevelBuilder {
     /// Consumes the builder and constructs a [`SeverityLevel`](crate::types::SeverityLevel).
     pub fn build(self) -> crate::types::SeverityLevel {
         crate::types::SeverityLevel {
-            code: self.code,
-            name: self.name,
+            code: self.code
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaAvailabilityProvider {
+pub struct LambdaAvailabilityProvider  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     pub lambda_arn: ::std::string::String,
 }
-impl LambdaAvailabilityProvider {
+impl  LambdaAvailabilityProvider  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
 }
 impl LambdaAvailabilityProvider {
@@ -36,8 +35,7 @@ impl LambdaAvailabilityProviderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaAvailabilityProviderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_arn`](crate::types::builders::LambdaAvailabilityProviderBuilder::lambda_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaAvailabilityProvider, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaAvailabilityProvider {
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building LambdaAvailabilityProvider",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaAvailabilityProvider {
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building LambdaAvailabilityProvider")
+                    )?
+                ,
+            }
+        )
     }
 }
+

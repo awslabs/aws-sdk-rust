@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncResourceInput {
+pub struct SyncResourceInput  {
     /// <p>The type of resource of which the application will be associated.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
-impl SyncResourceInput {
+impl  SyncResourceInput  {
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SyncResourceInputBuilder {
     }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -56,20 +55,22 @@ impl SyncResourceInputBuilder {
     }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }
     /// Consumes the builder and constructs a [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::sync_resource::SyncResourceInput {
-            resource_type: self.resource_type,
-            resource: self.resource,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::sync_resource::SyncResourceInput {
+                resource_type: self.resource_type
+                ,
+                resource: self.resource
+                ,
+            }
+        )
     }
 }
+

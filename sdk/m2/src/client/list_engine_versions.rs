@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEngineVersions`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`engine_type(EngineType)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::set_engine_type):<br>required: **false**<br><p>The type of target platform.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return.</p><br>
-    /// - On success, responds with [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput) with field(s):
     ///   - [`engine_versions(Vec::<EngineVersionsSummary>)`](crate::operation::list_engine_versions::ListEngineVersionsOutput::engine_versions): <p>Returns the engine versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_engine_versions::ListEngineVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListEngineVersionsError>`](crate::operation::list_engine_versions::ListEngineVersionsError)
+                            /// - On failure, responds with [`SdkError<ListEngineVersionsError>`](crate::operation::list_engine_versions::ListEngineVersionsError)
     pub fn list_engine_versions(&self) -> crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder {
-        crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

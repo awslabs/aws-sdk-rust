@@ -3,11 +3,11 @@
 /// <p>Sets the number of <i>concurrent processes</i> that transfer OData records from your SAP instance. A concurrent process is query that retrieves a batch of records as part of a flow run. Amazon AppFlow can run multiple concurrent processes in parallel to transfer data faster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SapoDataParallelismConfig {
+pub struct SapoDataParallelismConfig  {
     /// <p>The maximum number of processes that Amazon AppFlow runs at the same time when it retrieves your data from your SAP application.</p>
     pub max_parallelism: i32,
 }
-impl SapoDataParallelismConfig {
+impl  SapoDataParallelismConfig  {
     /// <p>The maximum number of processes that Amazon AppFlow runs at the same time when it retrieves your data from your SAP application.</p>
     pub fn max_parallelism(&self) -> i32 {
         self.max_parallelism
@@ -35,8 +35,7 @@ impl SapoDataParallelismConfigBuilder {
     }
     /// <p>The maximum number of processes that Amazon AppFlow runs at the same time when it retrieves your data from your SAP application.</p>
     pub fn set_max_parallelism(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_parallelism = input;
-        self
+        self.max_parallelism = input; self
     }
     /// <p>The maximum number of processes that Amazon AppFlow runs at the same time when it retrieves your data from your SAP application.</p>
     pub fn get_max_parallelism(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl SapoDataParallelismConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_parallelism`](crate::types::builders::SapoDataParallelismConfigBuilder::max_parallelism)
     pub fn build(self) -> ::std::result::Result<crate::types::SapoDataParallelismConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SapoDataParallelismConfig {
-            max_parallelism: self.max_parallelism.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_parallelism",
-                    "max_parallelism was not specified but it is required when building SapoDataParallelismConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SapoDataParallelismConfig {
+                max_parallelism: self.max_parallelism
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_parallelism", "max_parallelism was not specified but it is required when building SapoDataParallelismConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImportJobOutput {
+pub struct GetImportJobOutput  {
     /// <p>The import job.</p>
     pub import_job: ::std::option::Option<crate::types::ImportJobData>,
     _request_id: Option<String>,
 }
-impl GetImportJobOutput {
+impl  GetImportJobOutput  {
     /// <p>The import job.</p>
-    pub fn import_job(&self) -> ::std::option::Option<&crate::types::ImportJobData> {
+    pub fn import_job(&self) -> ::std::option::Option<& crate::types::ImportJobData> {
         self.import_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput).
     pub fn builder() -> crate::operation::get_import_job::builders::GetImportJobOutputBuilder {
@@ -40,27 +40,28 @@ impl GetImportJobOutputBuilder {
     }
     /// <p>The import job.</p>
     pub fn set_import_job(mut self, input: ::std::option::Option<crate::types::ImportJobData>) -> Self {
-        self.import_job = input;
-        self
+        self.import_job = input; self
     }
     /// <p>The import job.</p>
     pub fn get_import_job(&self) -> &::std::option::Option<crate::types::ImportJobData> {
         &self.import_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput).
     pub fn build(self) -> crate::operation::get_import_job::GetImportJobOutput {
         crate::operation::get_import_job::GetImportJobOutput {
-            import_job: self.import_job,
+            import_job: self.import_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

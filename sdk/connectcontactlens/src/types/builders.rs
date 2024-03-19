@@ -12,3 +12,4 @@ pub use crate::types::_transcript::TranscriptBuilder;
 pub use crate::types::_issue_detected::IssueDetectedBuilder;
 
 pub use crate::types::_character_offsets::CharacterOffsetsBuilder;
+

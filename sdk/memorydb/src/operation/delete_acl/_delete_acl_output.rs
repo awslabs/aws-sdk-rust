@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAclOutput {
+pub struct DeleteAclOutput  {
     /// <p>The Access Control List object that has been deleted.</p>
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }
-impl DeleteAclOutput {
+impl  DeleteAclOutput  {
     /// <p>The Access Control List object that has been deleted.</p>
-    pub fn acl(&self) -> ::std::option::Option<&crate::types::Acl> {
+    pub fn acl(&self) -> ::std::option::Option<& crate::types::Acl> {
         self.acl.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAclOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAclOutput`](crate::operation::delete_acl::DeleteAclOutput).
     pub fn builder() -> crate::operation::delete_acl::builders::DeleteAclOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteAclOutputBuilder {
     }
     /// <p>The Access Control List object that has been deleted.</p>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::Acl>) -> Self {
-        self.acl = input;
-        self
+        self.acl = input; self
     }
     /// <p>The Access Control List object that has been deleted.</p>
     pub fn get_acl(&self) -> &::std::option::Option<crate::types::Acl> {
         &self.acl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAclOutput`](crate::operation::delete_acl::DeleteAclOutput).
     pub fn build(self) -> crate::operation::delete_acl::DeleteAclOutput {
         crate::operation::delete_acl::DeleteAclOutput {
-            acl: self.acl,
+            acl: self.acl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

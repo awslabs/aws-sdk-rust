@@ -3,7 +3,7 @@
 /// <p>Defines an Application Component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppComponent {
+pub struct AppComponent  {
     /// <p>Name of the Application Component.</p>
     pub name: ::std::string::String,
     /// <p>The type of Application Component.</p>
@@ -15,21 +15,19 @@ pub struct AppComponent {
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl AppComponent {
+impl  AppComponent  {
     /// <p>Name of the Application Component.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of Application Component.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>Identifier of the Application Component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
@@ -37,9 +35,7 @@ impl AppComponent {
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.additional_info.as_ref()
     }
 }
@@ -57,7 +53,7 @@ pub struct AppComponentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl AppComponentBuilder {
     /// <p>Name of the Application Component.</p>
@@ -68,8 +64,7 @@ impl AppComponentBuilder {
     }
     /// <p>Name of the Application Component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the Application Component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +78,7 @@ impl AppComponentBuilder {
     }
     /// <p>The type of Application Component.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of Application Component.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl AppComponentBuilder {
     }
     /// <p>Identifier of the Application Component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Identifier of the Application Component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,32 +106,26 @@ impl AppComponentBuilder {
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`AppComponent`](crate::types::AppComponent).
@@ -146,21 +133,24 @@ impl AppComponentBuilder {
     /// - [`name`](crate::types::builders::AppComponentBuilder::name)
     /// - [`r#type`](crate::types::builders::AppComponentBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::AppComponent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppComponent {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AppComponent",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AppComponent",
-                )
-            })?,
-            id: self.id,
-            additional_info: self.additional_info,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppComponent {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AppComponent")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AppComponent")
+                    )?
+                ,
+                id: self.id
+                ,
+                additional_info: self.additional_info
+                ,
+            }
+        )
     }
 }
+

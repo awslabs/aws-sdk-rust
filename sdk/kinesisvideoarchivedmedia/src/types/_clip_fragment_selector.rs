@@ -4,19 +4,19 @@
 /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClipFragmentSelector {
+pub struct ClipFragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fragment_selector_type: crate::types::ClipFragmentSelectorType,
     /// <p>The range of timestamps to return.</p>
     pub timestamp_range: ::std::option::Option<crate::types::ClipTimestampRange>,
 }
-impl ClipFragmentSelector {
+impl  ClipFragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn fragment_selector_type(&self) -> &crate::types::ClipFragmentSelectorType {
+    pub fn fragment_selector_type(&self) -> & crate::types::ClipFragmentSelectorType {
         &self.fragment_selector_type
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> ::std::option::Option<&crate::types::ClipTimestampRange> {
+    pub fn timestamp_range(&self) -> ::std::option::Option<& crate::types::ClipTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ClipFragmentSelectorBuilder {
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn set_fragment_selector_type(mut self, input: ::std::option::Option<crate::types::ClipFragmentSelectorType>) -> Self {
-        self.fragment_selector_type = input;
-        self
+        self.fragment_selector_type = input; self
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn get_fragment_selector_type(&self) -> &::std::option::Option<crate::types::ClipFragmentSelectorType> {
@@ -58,8 +57,7 @@ impl ClipFragmentSelectorBuilder {
     }
     /// <p>The range of timestamps to return.</p>
     pub fn set_timestamp_range(mut self, input: ::std::option::Option<crate::types::ClipTimestampRange>) -> Self {
-        self.timestamp_range = input;
-        self
+        self.timestamp_range = input; self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn get_timestamp_range(&self) -> &::std::option::Option<crate::types::ClipTimestampRange> {
@@ -69,14 +67,17 @@ impl ClipFragmentSelectorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fragment_selector_type`](crate::types::builders::ClipFragmentSelectorBuilder::fragment_selector_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ClipFragmentSelector, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ClipFragmentSelector {
-            fragment_selector_type: self.fragment_selector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fragment_selector_type",
-                    "fragment_selector_type was not specified but it is required when building ClipFragmentSelector",
-                )
-            })?,
-            timestamp_range: self.timestamp_range,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ClipFragmentSelector {
+                fragment_selector_type: self.fragment_selector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fragment_selector_type", "fragment_selector_type was not specified but it is required when building ClipFragmentSelector")
+                    )?
+                ,
+                timestamp_range: self.timestamp_range
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Contains the output of DescribeSpotPriceHistory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSpotPriceHistoryOutput {
+pub struct DescribeSpotPriceHistoryOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is an empty string (<code>""</code>) or <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The historical Spot prices.</p>
-    pub spot_price_history: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>,
+    pub spot_price_history: ::std::option::Option<::std::vec::Vec::<crate::types::SpotPrice>>,
     _request_id: Option<String>,
 }
-impl DescribeSpotPriceHistoryOutput {
+impl  DescribeSpotPriceHistoryOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is an empty string (<code>""</code>) or <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The historical Spot prices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_price_history.is_none()`.
-    pub fn spot_price_history(&self) -> &[crate::types::SpotPrice] {
-        self.spot_price_history.as_deref().unwrap_or_default()
+    pub fn spot_price_history(&self) -> & [crate::types::SpotPrice] {
+        self.spot_price_history.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSpotPriceHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSpotPriceHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
     pub fn builder() -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeSpotPriceHistoryOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) spot_price_history: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>,
+    pub(crate) spot_price_history: ::std::option::Option<::std::vec::Vec::<crate::types::SpotPrice>>,
     _request_id: Option<String>,
 }
 impl DescribeSpotPriceHistoryOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeSpotPriceHistoryOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is an empty string (<code>""</code>) or <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is an empty string (<code>""</code>) or <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeSpotPriceHistoryOutputBuilder {
     /// <p>The historical Spot prices.</p>
     pub fn spot_price_history(mut self, input: crate::types::SpotPrice) -> Self {
         let mut v = self.spot_price_history.unwrap_or_default();
-        v.push(input);
-        self.spot_price_history = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.spot_price_history = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The historical Spot prices.</p>
-    pub fn set_spot_price_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>) -> Self {
-        self.spot_price_history = input;
-        self
+    pub fn set_spot_price_history(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SpotPrice>>) -> Self {
+        self.spot_price_history = input; self
     }
     /// <p>The historical Spot prices.</p>
-    pub fn get_spot_price_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>> {
+    pub fn get_spot_price_history(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SpotPrice>> {
         &self.spot_price_history
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
     pub fn build(self) -> crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
         crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
-            next_token: self.next_token,
-            spot_price_history: self.spot_price_history,
+            next_token: self.next_token
+            ,
+            spot_price_history: self.spot_price_history
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

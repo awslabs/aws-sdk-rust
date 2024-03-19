@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeviceOutput {
+pub struct DeleteDeviceOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput).
     pub fn builder() -> crate::operation::delete_device::builders::DeleteDeviceOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteDeviceOutputBuilder {
 }
 impl DeleteDeviceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput).
     pub fn build(self) -> crate::operation::delete_device::DeleteDeviceOutput {
         crate::operation::delete_device::DeleteDeviceOutput {
@@ -40,3 +40,4 @@ impl DeleteDeviceOutputBuilder {
         }
     }
 }
+

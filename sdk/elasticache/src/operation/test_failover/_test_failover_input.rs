@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestFailoverInput {
+pub struct TestFailoverInput  {
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
 }
-impl TestFailoverInput {
+impl  TestFailoverInput  {
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
-    pub fn node_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_group_id(&self) -> ::std::option::Option<& str> {
         self.node_group_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TestFailoverInputBuilder {
     }
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl TestFailoverInputBuilder {
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_group_id = input;
-        self
+        self.node_group_id = input; self
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_group_id
     }
     /// Consumes the builder and constructs a [`TestFailoverInput`](crate::operation::test_failover::TestFailoverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_failover::TestFailoverInput {
-            replication_group_id: self.replication_group_id,
-            node_group_id: self.node_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_failover::TestFailoverInput {
+                replication_group_id: self.replication_group_id
+                ,
+                node_group_id: self.node_group_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>The location where Audit Manager saves assessment reports for the given assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssessmentReportsDestination {
+pub struct AssessmentReportsDestination  {
     /// <p>The destination type, such as Amazon S3.</p>
     pub destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
     /// <p>The destination bucket where Audit Manager stores assessment reports.</p>
     pub destination: ::std::option::Option<::std::string::String>,
 }
-impl AssessmentReportsDestination {
+impl  AssessmentReportsDestination  {
     /// <p>The destination type, such as Amazon S3.</p>
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::AssessmentReportDestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::AssessmentReportDestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>The destination bucket where Audit Manager stores assessment reports.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssessmentReportsDestination {
+impl  ::std::fmt::Debug for AssessmentReportsDestination  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentReportsDestination");
         formatter.field("destination_type", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl AssessmentReportsDestinationBuilder {
     }
     /// <p>The destination type, such as Amazon S3.</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::AssessmentReportDestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>The destination type, such as Amazon S3.</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::AssessmentReportDestinationType> {
@@ -63,8 +62,7 @@ impl AssessmentReportsDestinationBuilder {
     }
     /// <p>The destination bucket where Audit Manager stores assessment reports.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination bucket where Audit Manager stores assessment reports.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl AssessmentReportsDestinationBuilder {
     /// Consumes the builder and constructs a [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
     pub fn build(self) -> crate::types::AssessmentReportsDestination {
         crate::types::AssessmentReportsDestination {
-            destination_type: self.destination_type,
-            destination: self.destination,
+            destination_type: self.destination_type
+            ,
+            destination: self.destination
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for AssessmentReportsDestinationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssociatePhoneNumberWithUserInput {
+pub struct AssociatePhoneNumberWithUserInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
@@ -10,21 +10,21 @@ pub struct AssociatePhoneNumberWithUserInput {
     /// <p>The phone number, in E.164 format.</p>
     pub e164_phone_number: ::std::option::Option<::std::string::String>,
 }
-impl AssociatePhoneNumberWithUserInput {
+impl  AssociatePhoneNumberWithUserInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> ::std::option::Option<& str> {
         self.e164_phone_number.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssociatePhoneNumberWithUserInput {
+impl  ::std::fmt::Debug for AssociatePhoneNumberWithUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatePhoneNumberWithUserInput");
         formatter.field("account_id", &self.account_id);
@@ -57,8 +57,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl AssociatePhoneNumberWithUserInputBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,25 +85,24 @@ impl AssociatePhoneNumberWithUserInputBuilder {
     }
     /// <p>The phone number, in E.164 format.</p>
     pub fn set_e164_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e164_phone_number = input;
-        self
+        self.e164_phone_number = input; self
     }
     /// <p>The phone number, in E.164 format.</p>
     pub fn get_e164_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.e164_phone_number
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumberWithUserInput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput {
-            account_id: self.account_id,
-            user_id: self.user_id,
-            e164_phone_number: self.e164_phone_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput {
+                account_id: self.account_id
+                ,
+                user_id: self.user_id
+                ,
+                e164_phone_number: self.e164_phone_number
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AssociatePhoneNumberWithUserInputBuilder {
@@ -117,3 +114,4 @@ impl ::std::fmt::Debug for AssociatePhoneNumberWithUserInputBuilder {
         formatter.finish()
     }
 }
+

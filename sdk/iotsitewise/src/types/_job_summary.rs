@@ -3,7 +3,7 @@
 /// <p>Contains the job summary information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSummary {
+pub struct JobSummary  {
     /// <p>The ID of the job.</p>
     pub id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
@@ -25,16 +25,14 @@ pub struct JobSummary {
     /// </ul>
     pub status: crate::types::JobStatus,
 }
-impl JobSummary {
+impl  JobSummary  {
     /// <p>The ID of the job.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -51,7 +49,7 @@ impl JobSummary {
     /// <li>
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::JobStatus {
+    pub fn status(&self) -> & crate::types::JobStatus {
         &self.status
     }
 }
@@ -79,8 +77,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl JobSummaryBuilder {
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -164,25 +159,25 @@ impl JobSummaryBuilder {
     /// - [`name`](crate::types::builders::JobSummaryBuilder::name)
     /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building JobSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building JobSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building JobSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building JobSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

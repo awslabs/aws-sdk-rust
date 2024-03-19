@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamsInput {
+pub struct ListStreamsInput  {
     /// <p>The maximum number of results to return at a time.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used to get the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListStreamsInput {
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub ascending_order: ::std::option::Option<bool>,
 }
-impl ListStreamsInput {
+impl  ListStreamsInput  {
     /// <p>The maximum number of results to return at a time.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token used to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
@@ -47,8 +47,7 @@ impl ListStreamsInputBuilder {
     }
     /// <p>The maximum number of results to return at a time.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at a time.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListStreamsInputBuilder {
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl ListStreamsInputBuilder {
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Set to true to return the list of streams in ascending order.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
@@ -84,10 +81,16 @@ impl ListStreamsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            ascending_order: self.ascending_order,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_streams::ListStreamsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

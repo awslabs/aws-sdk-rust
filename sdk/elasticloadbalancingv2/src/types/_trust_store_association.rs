@@ -3,13 +3,13 @@
 /// <p>Information about the resources a trust store is associated with.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustStoreAssociation {
+pub struct TrustStoreAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl TrustStoreAssociation {
+impl  TrustStoreAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TrustStoreAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl TrustStoreAssociationBuilder {
     /// Consumes the builder and constructs a [`TrustStoreAssociation`](crate::types::TrustStoreAssociation).
     pub fn build(self) -> crate::types::TrustStoreAssociation {
         crate::types::TrustStoreAssociation {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

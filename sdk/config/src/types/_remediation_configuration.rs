@@ -3,7 +3,7 @@
 /// <p>An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemediationConfiguration {
+pub struct RemediationConfiguration  {
     /// <p>The name of the Config rule.</p>
     pub config_rule_name: ::std::string::String,
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
@@ -15,7 +15,7 @@ pub struct RemediationConfiguration {
     /// </note>
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>An object of the RemediationParameterValue.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RemediationParameterValue>>,
     /// <p>The type of a resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The remediation is triggered automatically.</p>
@@ -33,33 +33,31 @@ pub struct RemediationConfiguration {
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub created_by_service: ::std::option::Option<::std::string::String>,
 }
-impl RemediationConfiguration {
+impl  RemediationConfiguration  {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.config_rule_name.deref()
+    pub fn config_rule_name(&self) -> & str {
+        use std::ops::Deref; self.config_rule_name.deref()
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    pub fn target_type(&self) -> &crate::types::RemediationTargetType {
+    pub fn target_type(&self) -> & crate::types::RemediationTargetType {
         &self.target_type
     }
     /// <p>Target ID is the name of the SSM document.</p>
-    pub fn target_id(&self) -> &str {
-        use std::ops::Deref;
-        self.target_id.deref()
+    pub fn target_id(&self) -> & str {
+        use std::ops::Deref; self.target_id.deref()
     }
     /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
-    pub fn target_version(&self) -> ::std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<& str> {
         self.target_version.as_deref()
     }
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::RemediationParameterValue>> {
         self.parameters.as_ref()
     }
     /// <p>The type of a resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The remediation is triggered automatically.</p>
@@ -67,7 +65,7 @@ impl RemediationConfiguration {
         self.automatic
     }
     /// <p>An ExecutionControls object.</p>
-    pub fn execution_controls(&self) -> ::std::option::Option<&crate::types::ExecutionControls> {
+    pub fn execution_controls(&self) -> ::std::option::Option<& crate::types::ExecutionControls> {
         self.execution_controls.as_ref()
     }
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
@@ -81,11 +79,11 @@ impl RemediationConfiguration {
         self.retry_attempt_seconds
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
-    pub fn created_by_service(&self) -> ::std::option::Option<&str> {
+    pub fn created_by_service(&self) -> ::std::option::Option<& str> {
         self.created_by_service.as_deref()
     }
 }
@@ -104,7 +102,7 @@ pub struct RemediationConfigurationBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::RemediationTargetType>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RemediationParameterValue>>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) automatic: ::std::option::Option<bool>,
     pub(crate) execution_controls: ::std::option::Option<crate::types::ExecutionControls>,
@@ -122,8 +120,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::RemediationTargetType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::RemediationTargetType> {
@@ -152,8 +148,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>Target ID is the name of the SSM document.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>Target ID is the name of the SSM document.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl RemediationConfigurationBuilder {
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_version = input;
-        self
+        self.target_version = input; self
     }
     /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
@@ -186,22 +180,16 @@ impl RemediationConfigurationBuilder {
     /// <p>An object of the RemediationParameterValue.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RemediationParameterValue) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RemediationParameterValue>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RemediationParameterValue>> {
         &self.parameters
     }
     /// <p>The type of a resource.</p>
@@ -211,8 +199,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The type of a resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of a resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +212,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The remediation is triggered automatically.</p>
     pub fn set_automatic(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.automatic = input;
-        self
+        self.automatic = input; self
     }
     /// <p>The remediation is triggered automatically.</p>
     pub fn get_automatic(&self) -> &::std::option::Option<bool> {
@@ -239,8 +225,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>An ExecutionControls object.</p>
     pub fn set_execution_controls(mut self, input: ::std::option::Option<crate::types::ExecutionControls>) -> Self {
-        self.execution_controls = input;
-        self
+        self.execution_controls = input; self
     }
     /// <p>An ExecutionControls object.</p>
     pub fn get_execution_controls(&self) -> &::std::option::Option<crate::types::ExecutionControls> {
@@ -255,8 +240,7 @@ impl RemediationConfigurationBuilder {
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub fn set_maximum_automatic_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_automatic_attempts = input;
-        self
+        self.maximum_automatic_attempts = input; self
     }
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
@@ -272,8 +256,7 @@ impl RemediationConfigurationBuilder {
     /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
     /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub fn set_retry_attempt_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.retry_attempt_seconds = input;
-        self
+        self.retry_attempt_seconds = input; self
     }
     /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
     /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
@@ -287,8 +270,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +283,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub fn set_created_by_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by_service = input;
-        self
+        self.created_by_service = input; self
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub fn get_created_by_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -314,34 +295,44 @@ impl RemediationConfigurationBuilder {
     /// - [`target_type`](crate::types::builders::RemediationConfigurationBuilder::target_type)
     /// - [`target_id`](crate::types::builders::RemediationConfigurationBuilder::target_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RemediationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RemediationConfiguration {
-            config_rule_name: self.config_rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "config_rule_name",
-                    "config_rule_name was not specified but it is required when building RemediationConfiguration",
-                )
-            })?,
-            target_type: self.target_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_type",
-                    "target_type was not specified but it is required when building RemediationConfiguration",
-                )
-            })?,
-            target_id: self.target_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_id",
-                    "target_id was not specified but it is required when building RemediationConfiguration",
-                )
-            })?,
-            target_version: self.target_version,
-            parameters: self.parameters,
-            resource_type: self.resource_type,
-            automatic: self.automatic.unwrap_or_default(),
-            execution_controls: self.execution_controls,
-            maximum_automatic_attempts: self.maximum_automatic_attempts,
-            retry_attempt_seconds: self.retry_attempt_seconds,
-            arn: self.arn,
-            created_by_service: self.created_by_service,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RemediationConfiguration {
+                config_rule_name: self.config_rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("config_rule_name", "config_rule_name was not specified but it is required when building RemediationConfiguration")
+                    )?
+                ,
+                target_type: self.target_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_type", "target_type was not specified but it is required when building RemediationConfiguration")
+                    )?
+                ,
+                target_id: self.target_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_id", "target_id was not specified but it is required when building RemediationConfiguration")
+                    )?
+                ,
+                target_version: self.target_version
+                ,
+                parameters: self.parameters
+                ,
+                resource_type: self.resource_type
+                ,
+                automatic: self.automatic
+                    .unwrap_or_default()
+                ,
+                execution_controls: self.execution_controls
+                ,
+                maximum_automatic_attempts: self.maximum_automatic_attempts
+                ,
+                retry_attempt_seconds: self.retry_attempt_seconds
+                ,
+                arn: self.arn
+                ,
+                created_by_service: self.created_by_service
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An invalidation batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidationBatch {
+pub struct InvalidationBatch  {
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub paths: ::std::option::Option<crate::types::Paths>,
     /// <p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>.</p>
@@ -11,17 +11,16 @@ pub struct InvalidationBatch {
     /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
     pub caller_reference: ::std::string::String,
 }
-impl InvalidationBatch {
+impl  InvalidationBatch  {
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn paths(&self) -> ::std::option::Option<&crate::types::Paths> {
+    pub fn paths(&self) -> ::std::option::Option<& crate::types::Paths> {
         self.paths.as_ref()
     }
     /// <p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>.</p>
     /// <p>If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>.</p>
     /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
-    pub fn caller_reference(&self) -> &str {
-        use std::ops::Deref;
-        self.caller_reference.deref()
+    pub fn caller_reference(&self) -> & str {
+        use std::ops::Deref; self.caller_reference.deref()
     }
 }
 impl InvalidationBatch {
@@ -47,8 +46,7 @@ impl InvalidationBatchBuilder {
     }
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_paths(mut self, input: ::std::option::Option<crate::types::Paths>) -> Self {
-        self.paths = input;
-        self
+        self.paths = input; self
     }
     /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn get_paths(&self) -> &::std::option::Option<crate::types::Paths> {
@@ -66,8 +64,7 @@ impl InvalidationBatchBuilder {
     /// <p>If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>.</p>
     /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>.</p>
     /// <p>If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>.</p>
@@ -79,14 +76,17 @@ impl InvalidationBatchBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::InvalidationBatchBuilder::caller_reference)
     pub fn build(self) -> ::std::result::Result<crate::types::InvalidationBatch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InvalidationBatch {
-            paths: self.paths,
-            caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "caller_reference",
-                    "caller_reference was not specified but it is required when building InvalidationBatch",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InvalidationBatch {
+                paths: self.paths
+                ,
+                caller_reference: self.caller_reference
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("caller_reference", "caller_reference was not specified but it is required when building InvalidationBatch")
+                    )?
+                ,
+            }
+        )
     }
 }
+

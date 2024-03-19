@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePortfolioInput {
+pub struct CreatePortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -18,11 +18,11 @@ pub struct CreatePortfolioInput {
     /// <p>The name of the portfolio provider.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl CreatePortfolioInput {
+impl  CreatePortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -30,29 +30,30 @@ impl CreatePortfolioInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The name to use for display purposes.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the portfolio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the portfolio provider.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>One or more tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -71,7 +72,7 @@ pub struct CreatePortfolioInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePortfolioInputBuilder {
@@ -94,8 +95,7 @@ impl CreatePortfolioInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -115,8 +115,7 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The name to use for display purposes.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name to use for display purposes.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The description of the portfolio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the portfolio.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +142,7 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,17 +155,16 @@ impl CreatePortfolioInputBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -179,24 +175,30 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreatePortfolioInput`](crate::operation::create_portfolio::CreatePortfolioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_portfolio::CreatePortfolioInput {
-            accept_language: self.accept_language,
-            display_name: self.display_name,
-            description: self.description,
-            provider_name: self.provider_name,
-            tags: self.tags,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_portfolio::CreatePortfolioInput {
+                accept_language: self.accept_language
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                provider_name: self.provider_name
+                ,
+                tags: self.tags
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

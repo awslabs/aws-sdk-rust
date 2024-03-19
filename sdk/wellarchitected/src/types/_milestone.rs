@@ -3,7 +3,7 @@
 /// <p>A milestone return object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Milestone {
+pub struct Milestone  {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: ::std::option::Option<i32>,
@@ -15,7 +15,7 @@ pub struct Milestone {
     /// <p>A workload return object.</p>
     pub workload: ::std::option::Option<crate::types::Workload>,
 }
-impl Milestone {
+impl  Milestone  {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(&self) -> ::std::option::Option<i32> {
@@ -23,15 +23,15 @@ impl Milestone {
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(&self) -> ::std::option::Option<&str> {
+    pub fn milestone_name(&self) -> ::std::option::Option<& str> {
         self.milestone_name.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn recorded_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn recorded_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.recorded_at.as_ref()
     }
     /// <p>A workload return object.</p>
-    pub fn workload(&self) -> ::std::option::Option<&crate::types::Workload> {
+    pub fn workload(&self) -> ::std::option::Option<& crate::types::Workload> {
         self.workload.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl MilestoneBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -78,8 +77,7 @@ impl MilestoneBuilder {
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.milestone_name = input;
-        self
+        self.milestone_name = input; self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
@@ -93,8 +91,7 @@ impl MilestoneBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_recorded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.recorded_at = input;
-        self
+        self.recorded_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_recorded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,8 +104,7 @@ impl MilestoneBuilder {
     }
     /// <p>A workload return object.</p>
     pub fn set_workload(mut self, input: ::std::option::Option<crate::types::Workload>) -> Self {
-        self.workload = input;
-        self
+        self.workload = input; self
     }
     /// <p>A workload return object.</p>
     pub fn get_workload(&self) -> &::std::option::Option<crate::types::Workload> {
@@ -117,10 +113,15 @@ impl MilestoneBuilder {
     /// Consumes the builder and constructs a [`Milestone`](crate::types::Milestone).
     pub fn build(self) -> crate::types::Milestone {
         crate::types::Milestone {
-            milestone_number: self.milestone_number,
-            milestone_name: self.milestone_name,
-            recorded_at: self.recorded_at,
-            workload: self.workload,
+            milestone_number: self.milestone_number
+            ,
+            milestone_name: self.milestone_name
+            ,
+            recorded_at: self.recorded_at
+            ,
+            workload: self.workload
+            ,
         }
     }
 }
+

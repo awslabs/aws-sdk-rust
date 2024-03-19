@@ -4,22 +4,23 @@
 /// <p>A network function instance is a function in a function package .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolVnfInfo {
+pub struct GetSolVnfInfo  {
     /// <p>State of the network function instance.</p>
     pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
     /// <p>Compute info used by the network function instance.</p>
-    pub vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
+    pub vnfc_resource_info: ::std::option::Option<::std::vec::Vec::<crate::types::GetSolVnfcResourceInfo>>,
 }
-impl GetSolVnfInfo {
+impl  GetSolVnfInfo  {
     /// <p>State of the network function instance.</p>
-    pub fn vnf_state(&self) -> ::std::option::Option<&crate::types::VnfOperationalState> {
+    pub fn vnf_state(&self) -> ::std::option::Option<& crate::types::VnfOperationalState> {
         self.vnf_state.as_ref()
     }
     /// <p>Compute info used by the network function instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vnfc_resource_info.is_none()`.
-    pub fn vnfc_resource_info(&self) -> &[crate::types::GetSolVnfcResourceInfo] {
-        self.vnfc_resource_info.as_deref().unwrap_or_default()
+    pub fn vnfc_resource_info(&self) -> & [crate::types::GetSolVnfcResourceInfo] {
+        self.vnfc_resource_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetSolVnfInfo {
@@ -34,7 +35,7 @@ impl GetSolVnfInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolVnfInfoBuilder {
     pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
-    pub(crate) vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
+    pub(crate) vnfc_resource_info: ::std::option::Option<::std::vec::Vec::<crate::types::GetSolVnfcResourceInfo>>,
 }
 impl GetSolVnfInfoBuilder {
     /// <p>State of the network function instance.</p>
@@ -44,8 +45,7 @@ impl GetSolVnfInfoBuilder {
     }
     /// <p>State of the network function instance.</p>
     pub fn set_vnf_state(mut self, input: ::std::option::Option<crate::types::VnfOperationalState>) -> Self {
-        self.vnf_state = input;
-        self
+        self.vnf_state = input; self
     }
     /// <p>State of the network function instance.</p>
     pub fn get_vnf_state(&self) -> &::std::option::Option<crate::types::VnfOperationalState> {
@@ -58,24 +58,26 @@ impl GetSolVnfInfoBuilder {
     /// <p>Compute info used by the network function instance.</p>
     pub fn vnfc_resource_info(mut self, input: crate::types::GetSolVnfcResourceInfo) -> Self {
         let mut v = self.vnfc_resource_info.unwrap_or_default();
-        v.push(input);
-        self.vnfc_resource_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vnfc_resource_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn set_vnfc_resource_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>) -> Self {
-        self.vnfc_resource_info = input;
-        self
+    pub fn set_vnfc_resource_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GetSolVnfcResourceInfo>>) -> Self {
+        self.vnfc_resource_info = input; self
     }
     /// <p>Compute info used by the network function instance.</p>
-    pub fn get_vnfc_resource_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>> {
+    pub fn get_vnfc_resource_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GetSolVnfcResourceInfo>> {
         &self.vnfc_resource_info
     }
     /// Consumes the builder and constructs a [`GetSolVnfInfo`](crate::types::GetSolVnfInfo).
     pub fn build(self) -> crate::types::GetSolVnfInfo {
         crate::types::GetSolVnfInfo {
-            vnf_state: self.vnf_state,
-            vnfc_resource_info: self.vnfc_resource_info,
+            vnf_state: self.vnf_state
+            ,
+            vnfc_resource_info: self.vnfc_resource_info
+            ,
         }
     }
 }
+

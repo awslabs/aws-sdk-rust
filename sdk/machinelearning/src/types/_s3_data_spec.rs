@@ -3,7 +3,7 @@
 /// <p>Describes the data specification of a <code>DataSource</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataSpec {
+pub struct S3DataSpec  {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
     pub data_location_s3: ::std::string::String,
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
@@ -50,11 +50,10 @@ pub struct S3DataSpec {
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub data_schema_location_s3: ::std::option::Option<::std::string::String>,
 }
-impl S3DataSpec {
+impl  S3DataSpec  {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
-    pub fn data_location_s3(&self) -> &str {
-        use std::ops::Deref;
-        self.data_location_s3.deref()
+    pub fn data_location_s3(&self) -> & str {
+        use std::ops::Deref; self.data_location_s3.deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -83,7 +82,7 @@ impl S3DataSpec {
     /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p>
     /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></p></li>
     /// </ul>
-    pub fn data_rearrangement(&self) -> ::std::option::Option<&str> {
+    pub fn data_rearrangement(&self) -> ::std::option::Option<& str> {
         self.data_rearrangement.as_deref()
     }
     /// <p>A JSON string that represents the schema for an Amazon S3 <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
@@ -98,11 +97,11 @@ impl S3DataSpec {
     /// <p>"attributes": [</p>
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
-    pub fn data_schema(&self) -> ::std::option::Option<&str> {
+    pub fn data_schema(&self) -> ::std::option::Option<& str> {
         self.data_schema.as_deref()
     }
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
-    pub fn data_schema_location_s3(&self) -> ::std::option::Option<&str> {
+    pub fn data_schema_location_s3(&self) -> ::std::option::Option<& str> {
         self.data_schema_location_s3.as_deref()
     }
 }
@@ -131,8 +130,7 @@ impl S3DataSpecBuilder {
     }
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
     pub fn set_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_location_s3 = input;
-        self
+        self.data_location_s3 = input; self
     }
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
     pub fn get_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +195,7 @@ impl S3DataSpecBuilder {
     /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></p></li>
     /// </ul>
     pub fn set_data_rearrangement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_rearrangement = input;
-        self
+        self.data_rearrangement = input; self
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -259,8 +256,7 @@ impl S3DataSpecBuilder {
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
     pub fn set_data_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_schema = input;
-        self
+        self.data_schema = input; self
     }
     /// <p>A JSON string that represents the schema for an Amazon S3 <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
     /// <p>You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
@@ -284,8 +280,7 @@ impl S3DataSpecBuilder {
     }
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub fn set_data_schema_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_schema_location_s3 = input;
-        self
+        self.data_schema_location_s3 = input; self
     }
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub fn get_data_schema_location_s3(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,16 +290,21 @@ impl S3DataSpecBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_location_s3`](crate::types::builders::S3DataSpecBuilder::data_location_s3)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DataSpec, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DataSpec {
-            data_location_s3: self.data_location_s3.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_location_s3",
-                    "data_location_s3 was not specified but it is required when building S3DataSpec",
-                )
-            })?,
-            data_rearrangement: self.data_rearrangement,
-            data_schema: self.data_schema,
-            data_schema_location_s3: self.data_schema_location_s3,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DataSpec {
+                data_location_s3: self.data_location_s3
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_location_s3", "data_location_s3 was not specified but it is required when building S3DataSpec")
+                    )?
+                ,
+                data_rearrangement: self.data_rearrangement
+                ,
+                data_schema: self.data_schema
+                ,
+                data_schema_location_s3: self.data_schema_location_s3
+                ,
+            }
+        )
     }
 }
+

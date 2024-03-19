@@ -3,13 +3,13 @@
 /// <p>An object that represents the Amazon Web Services Private Certificate Authority certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceConnectTlsCertificateAuthority {
+pub struct ServiceConnectTlsCertificateAuthority  {
     /// <p>The ARN of the Amazon Web Services Private Certificate Authority certificate.</p>
     pub aws_pca_authority_arn: ::std::option::Option<::std::string::String>,
 }
-impl ServiceConnectTlsCertificateAuthority {
+impl  ServiceConnectTlsCertificateAuthority  {
     /// <p>The ARN of the Amazon Web Services Private Certificate Authority certificate.</p>
-    pub fn aws_pca_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn aws_pca_authority_arn(&self) -> ::std::option::Option<& str> {
         self.aws_pca_authority_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ServiceConnectTlsCertificateAuthorityBuilder {
     }
     /// <p>The ARN of the Amazon Web Services Private Certificate Authority certificate.</p>
     pub fn set_aws_pca_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_pca_authority_arn = input;
-        self
+        self.aws_pca_authority_arn = input; self
     }
     /// <p>The ARN of the Amazon Web Services Private Certificate Authority certificate.</p>
     pub fn get_aws_pca_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ServiceConnectTlsCertificateAuthorityBuilder {
     /// Consumes the builder and constructs a [`ServiceConnectTlsCertificateAuthority`](crate::types::ServiceConnectTlsCertificateAuthority).
     pub fn build(self) -> crate::types::ServiceConnectTlsCertificateAuthority {
         crate::types::ServiceConnectTlsCertificateAuthority {
-            aws_pca_authority_arn: self.aws_pca_authority_arn,
+            aws_pca_authority_arn: self.aws_pca_authority_arn
+            ,
         }
     }
 }
+

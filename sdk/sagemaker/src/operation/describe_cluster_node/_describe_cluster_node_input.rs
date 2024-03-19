@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterNodeInput {
+pub struct DescribeClusterNodeInput  {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeClusterNodeInput {
+impl  DescribeClusterNodeInput  {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeClusterNodeInputBuilder {
     }
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the instance is.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeClusterNodeInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`DescribeClusterNodeInput`](crate::operation::describe_cluster_node::DescribeClusterNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_cluster_node::DescribeClusterNodeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_cluster_node::DescribeClusterNodeInput {
-            cluster_name: self.cluster_name,
-            node_id: self.node_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cluster_node::DescribeClusterNodeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cluster_node::DescribeClusterNodeInput {
+                cluster_name: self.cluster_name
+                ,
+                node_id: self.node_id
+                ,
+            }
+        )
     }
 }
+

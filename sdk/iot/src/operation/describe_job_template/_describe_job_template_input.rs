@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobTemplateInput {
+pub struct DescribeJobTemplateInput  {
     /// <p>The unique identifier of the job template.</p>
     pub job_template_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeJobTemplateInput {
+impl  DescribeJobTemplateInput  {
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_template_id(&self) -> ::std::option::Option<& str> {
         self.job_template_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeJobTemplateInputBuilder {
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_template_id = input;
-        self
+        self.job_template_id = input; self
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_template_id
     }
     /// Consumes the builder and constructs a [`DescribeJobTemplateInput`](crate::operation::describe_job_template::DescribeJobTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_job_template::DescribeJobTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_job_template::DescribeJobTemplateInput {
-            job_template_id: self.job_template_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job_template::DescribeJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_job_template::DescribeJobTemplateInput {
+                job_template_id: self.job_template_id
+                ,
+            }
+        )
     }
 }
+

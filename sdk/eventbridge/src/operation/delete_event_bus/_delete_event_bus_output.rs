@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventBusOutput {
+pub struct DeleteEventBusOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteEventBusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteEventBusOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventBusOutput`](crate::operation::delete_event_bus::DeleteEventBusOutput).
     pub fn builder() -> crate::operation::delete_event_bus::builders::DeleteEventBusOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteEventBusOutputBuilder {
 }
 impl DeleteEventBusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteEventBusOutput`](crate::operation::delete_event_bus::DeleteEventBusOutput).
     pub fn build(self) -> crate::operation::delete_event_bus::DeleteEventBusOutput {
         crate::operation::delete_event_bus::DeleteEventBusOutput {
@@ -40,3 +40,4 @@ impl DeleteEventBusOutputBuilder {
         }
     }
 }
+

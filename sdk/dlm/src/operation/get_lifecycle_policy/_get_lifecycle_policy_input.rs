@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLifecyclePolicyInput {
+pub struct GetLifecyclePolicyInput  {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLifecyclePolicyInput {
+impl  GetLifecyclePolicyInput  {
     /// <p>The identifier of the lifecycle policy.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetLifecyclePolicyInputBuilder {
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput { policy_id: self.policy_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput {
+                policy_id: self.policy_id
+                ,
+            }
+        )
     }
 }
+

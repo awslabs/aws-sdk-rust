@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFailbackReplicationConfigurationOutput {
+pub struct GetFailbackReplicationConfigurationOutput  {
     /// <p>The ID of the Recovery Instance.</p>
     pub recovery_instance_id: ::std::string::String,
     /// <p>The name of the Failback Replication Configuration.</p>
@@ -13,14 +13,13 @@ pub struct GetFailbackReplicationConfigurationOutput {
     pub use_private_ip: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl GetFailbackReplicationConfigurationOutput {
+impl  GetFailbackReplicationConfigurationOutput  {
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn recovery_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.recovery_instance_id.deref()
+    pub fn recovery_instance_id(&self) -> & str {
+        use std::ops::Deref; self.recovery_instance_id.deref()
     }
     /// <p>The name of the Failback Replication Configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
@@ -33,10 +32,10 @@ impl GetFailbackReplicationConfigurationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetFailbackReplicationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFailbackReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetFailbackReplicationConfigurationOutput`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput).
     pub fn builder() -> crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationOutputBuilder {
@@ -63,8 +62,7 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     }
     /// <p>The ID of the Recovery Instance.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The ID of the Recovery Instance.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bandwidth_throttling = input;
-        self
+        self.bandwidth_throttling = input; self
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
@@ -105,44 +101,42 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn set_use_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_private_ip = input;
-        self
+        self.use_private_ip = input; self
     }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn get_use_private_ip(&self) -> &::std::option::Option<bool> {
         &self.use_private_ip
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFailbackReplicationConfigurationOutput`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`recovery_instance_id`](crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationOutputBuilder::recovery_instance_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput {
-                recovery_instance_id: self.recovery_instance_id.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "recovery_instance_id",
-                        "recovery_instance_id was not specified but it is required when building GetFailbackReplicationConfigurationOutput",
-                    )
-                })?,
-                name: self.name,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                use_private_ip: self.use_private_ip,
+                recovery_instance_id: self.recovery_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recovery_instance_id", "recovery_instance_id was not specified but it is required when building GetFailbackReplicationConfigurationOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                use_private_ip: self.use_private_ip
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

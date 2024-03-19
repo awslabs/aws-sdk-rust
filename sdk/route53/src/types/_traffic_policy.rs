@@ -3,7 +3,7 @@
 /// <p>A complex type that contains settings for a traffic policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficPolicy {
+pub struct TrafficPolicy  {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     pub id: ::std::string::String,
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
@@ -17,32 +17,29 @@ pub struct TrafficPolicy {
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl TrafficPolicy {
+impl  TrafficPolicy  {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn version(&self) -> i32 {
         self.version
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> &crate::types::RrType {
+    pub fn r#type(&self) -> & crate::types::RrType {
         &self.r#type
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn document(&self) -> &str {
-        use std::ops::Deref;
-        self.document.deref()
+    pub fn document(&self) -> & str {
+        use std::ops::Deref; self.document.deref()
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -73,8 +70,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -103,8 +98,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RrType> {
@@ -133,8 +126,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +139,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,38 +153,37 @@ impl TrafficPolicyBuilder {
     /// - [`r#type`](crate::types::builders::TrafficPolicyBuilder::r#type)
     /// - [`document`](crate::types::builders::TrafficPolicyBuilder::document)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrafficPolicy {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building TrafficPolicy",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building TrafficPolicy",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TrafficPolicy",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building TrafficPolicy",
-                )
-            })?,
-            document: self.document.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document",
-                    "document was not specified but it is required when building TrafficPolicy",
-                )
-            })?,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrafficPolicy {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building TrafficPolicy")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building TrafficPolicy")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TrafficPolicy")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building TrafficPolicy")
+                    )?
+                ,
+                document: self.document
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document", "document was not specified but it is required when building TrafficPolicy")
+                    )?
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

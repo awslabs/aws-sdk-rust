@@ -3,36 +3,32 @@
 /// <p>Specifies a transform that renames a single data property key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenameField {
+pub struct RenameField  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub source_path: ::std::vec::Vec<::std::string::String>,
+    pub source_path: ::std::vec::Vec::<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub target_path: ::std::vec::Vec<::std::string::String>,
+    pub target_path: ::std::vec::Vec::<::std::string::String>,
 }
-impl RenameField {
+impl  RenameField  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn source_path(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.source_path.deref()
+    pub fn source_path(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.source_path.deref()
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn target_path(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.target_path.deref()
+    pub fn target_path(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.target_path.deref()
     }
 }
 impl RenameField {
@@ -47,9 +43,9 @@ impl RenameField {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenameFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) source_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) source_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) target_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RenameFieldBuilder {
     /// <p>The name of the transform node.</p>
@@ -60,8 +56,7 @@ impl RenameFieldBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +69,16 @@ impl RenameFieldBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `source_path`.
@@ -94,17 +88,16 @@ impl RenameFieldBuilder {
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
     pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_path.unwrap_or_default();
-        v.push(input.into());
-        self.source_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn set_source_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_path = input;
-        self
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_path = input; self
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn get_source_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_path
     }
     /// Appends an item to `target_path`.
@@ -114,17 +107,16 @@ impl RenameFieldBuilder {
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
     pub fn target_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_path.unwrap_or_default();
-        v.push(input.into());
-        self.target_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn set_target_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_path = input;
-        self
+    pub fn set_target_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_path = input; self
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn get_target_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_path
     }
     /// Consumes the builder and constructs a [`RenameField`](crate::types::RenameField).
@@ -134,31 +126,30 @@ impl RenameFieldBuilder {
     /// - [`source_path`](crate::types::builders::RenameFieldBuilder::source_path)
     /// - [`target_path`](crate::types::builders::RenameFieldBuilder::target_path)
     pub fn build(self) -> ::std::result::Result<crate::types::RenameField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RenameField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RenameField",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building RenameField",
-                )
-            })?,
-            source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_path",
-                    "source_path was not specified but it is required when building RenameField",
-                )
-            })?,
-            target_path: self.target_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_path",
-                    "target_path was not specified but it is required when building RenameField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RenameField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RenameField")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building RenameField")
+                    )?
+                ,
+                source_path: self.source_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_path", "source_path was not specified but it is required when building RenameField")
+                    )?
+                ,
+                target_path: self.target_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_path", "target_path was not specified but it is required when building RenameField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

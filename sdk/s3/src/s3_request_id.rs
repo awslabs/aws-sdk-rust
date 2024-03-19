@@ -60,7 +60,10 @@ where
 }
 
 /// Applies the extended request ID to a generic error builder
-pub(crate) fn apply_extended_request_id(builder: ErrorMetadataBuilder, headers: &Headers) -> ErrorMetadataBuilder {
+pub(crate) fn apply_extended_request_id(
+    builder: ErrorMetadataBuilder,
+    headers: &Headers,
+) -> ErrorMetadataBuilder {
     if let Some(extended_request_id) = headers.extended_request_id() {
         builder.custom(EXTENDED_REQUEST_ID, extended_request_id)
     } else {
@@ -76,7 +79,8 @@ mod test {
 
     #[test]
     fn handle_missing_header() {
-        let resp = Response::try_from(http::Response::builder().status(400).body("").unwrap()).unwrap();
+        let resp =
+            Response::try_from(http::Response::builder().status(400).body("").unwrap()).unwrap();
         let mut builder = ErrorMetadata::builder().message("123");
         builder = apply_extended_request_id(builder, resp.headers());
         assert_eq!(builder.build().extended_request_id(), None);
@@ -84,7 +88,9 @@ mod test {
 
     #[test]
     fn test_extended_request_id_sdk_error() {
-        let without_extended_request_id = || Response::try_from(http::Response::builder().body(SdkBody::empty()).unwrap()).unwrap();
+        let without_extended_request_id = || {
+            Response::try_from(http::Response::builder().body(SdkBody::empty()).unwrap()).unwrap()
+        };
         let with_extended_request_id = || {
             Response::try_from(
                 http::Response::builder()
@@ -96,13 +102,18 @@ mod test {
         };
         assert_eq!(
             None,
-            SdkError::<(), _>::response_error("test", without_extended_request_id()).extended_request_id()
+            SdkError::<(), _>::response_error("test", without_extended_request_id())
+                .extended_request_id()
         );
         assert_eq!(
             Some("some-request-id"),
-            SdkError::<(), _>::response_error("test", with_extended_request_id()).extended_request_id()
+            SdkError::<(), _>::response_error("test", with_extended_request_id())
+                .extended_request_id()
         );
-        assert_eq!(None, SdkError::service_error((), without_extended_request_id()).extended_request_id());
+        assert_eq!(
+            None,
+            SdkError::service_error((), without_extended_request_id()).extended_request_id()
+        );
         assert_eq!(
             Some("some-request-id"),
             SdkError::service_error((), with_extended_request_id()).extended_request_id()
@@ -128,14 +139,19 @@ mod test {
 
         headers.append("x-amz-id-2", "some-request-id");
         assert_eq!(
-            ErrorMetadata::builder().custom(EXTENDED_REQUEST_ID, "some-request-id").build(),
+            ErrorMetadata::builder()
+                .custom(EXTENDED_REQUEST_ID, "some-request-id")
+                .build(),
             apply_extended_request_id(ErrorMetadata::builder(), &headers).build(),
         );
     }
 
     #[test]
     fn test_error_metadata_extended_request_id_impl() {
-        let err = ErrorMetadata::builder().custom(EXTENDED_REQUEST_ID, "some-request-id").build();
+        let err = ErrorMetadata::builder()
+            .custom(EXTENDED_REQUEST_ID, "some-request-id")
+            .build();
         assert_eq!(Some("some-request-id"), err.extended_request_id());
     }
 }
+

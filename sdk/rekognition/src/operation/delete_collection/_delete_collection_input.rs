@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCollectionInput {
+pub struct DeleteCollectionInput  {
     /// <p>ID of the collection to delete.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCollectionInput {
+impl  DeleteCollectionInput  {
     /// <p>ID of the collection to delete.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteCollectionInputBuilder {
     }
     /// <p>ID of the collection to delete.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>ID of the collection to delete.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_id
     }
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_collection::DeleteCollectionInput {
-            collection_id: self.collection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_collection::DeleteCollectionInput {
+                collection_id: self.collection_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStageInput {
+pub struct UpdateStageInput  {
     /// <p>ARN of the stage to be updated.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the stage to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateStageInput {
+impl  UpdateStageInput  {
     /// <p>ARN of the stage to be updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the stage to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateStageInputBuilder {
     }
     /// <p>ARN of the stage to be updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the stage to be updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateStageInputBuilder {
     }
     /// <p>Name of the stage to be updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the stage to be updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl UpdateStageInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
-            arn: self.arn,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_stage::UpdateStageInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

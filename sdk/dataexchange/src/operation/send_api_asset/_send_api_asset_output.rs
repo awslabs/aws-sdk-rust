@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendApiAssetOutput {
+pub struct SendApiAssetOutput  {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub response_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub response_headers: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl SendApiAssetOutput {
+impl  SendApiAssetOutput  {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn response_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn response_headers(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.response_headers.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendApiAssetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendApiAssetOutput {
     /// Creates a new builder-style object to manufacture [`SendApiAssetOutput`](crate::operation::send_api_asset::SendApiAssetOutput).
     pub fn builder() -> crate::operation::send_api_asset::builders::SendApiAssetOutputBuilder {
@@ -36,7 +36,7 @@ impl SendApiAssetOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendApiAssetOutputBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
-    pub(crate) response_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_headers: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl SendApiAssetOutputBuilder {
@@ -47,8 +47,7 @@ impl SendApiAssetOutputBuilder {
     }
     /// <p>The response body from the underlying API tracked by the API asset.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The response body from the underlying API tracked by the API asset.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,43 +58,38 @@ impl SendApiAssetOutputBuilder {
     /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
     ///
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn response_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.response_headers.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.response_headers = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.response_headers = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn set_response_headers(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.response_headers = input;
-        self
+    pub fn set_response_headers(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.response_headers = input; self
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn get_response_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_headers(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.response_headers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendApiAssetOutput`](crate::operation::send_api_asset::SendApiAssetOutput).
     pub fn build(self) -> crate::operation::send_api_asset::SendApiAssetOutput {
         crate::operation::send_api_asset::SendApiAssetOutput {
-            body: self.body,
-            response_headers: self.response_headers,
+            body: self.body
+            ,
+            response_headers: self.response_headers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingActivitiesOutput {
+pub struct DescribeScalingActivitiesOutput  {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
+    pub activities: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeScalingActivitiesOutput {
+impl  DescribeScalingActivitiesOutput  {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
-    pub fn activities(&self) -> &[crate::types::Activity] {
-        self.activities.as_deref().unwrap_or_default()
+    pub fn activities(&self) -> & [crate::types::Activity] {
+        self.activities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScalingActivitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScalingActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
     pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeScalingActivitiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesOutputBuilder {
-    pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
+    pub(crate) activities: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeScalingActivitiesOutputBuilder {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
     pub fn activities(mut self, input: crate::types::Activity) -> Self {
         let mut v = self.activities.unwrap_or_default();
-        v.push(input);
-        self.activities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.activities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
-        self.activities = input;
-        self
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>) -> Self {
+        self.activities = input; self
     }
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Activity>> {
         &self.activities
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeScalingActivitiesOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
     pub fn build(self) -> crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput {
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput {
-            activities: self.activities,
-            next_token: self.next_token,
+            activities: self.activities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

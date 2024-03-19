@@ -3,19 +3,19 @@
 /// <p>Object that describes the frequency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Frequency {
+pub struct Frequency  {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub value: f64,
     /// <p>Frequency units.</p>
     pub units: crate::types::FrequencyUnits,
 }
-impl Frequency {
+impl  Frequency  {
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>Frequency units.</p>
-    pub fn units(&self) -> &crate::types::FrequencyUnits {
+    pub fn units(&self) -> & crate::types::FrequencyUnits {
         &self.units
     }
 }
@@ -42,8 +42,7 @@ impl FrequencyBuilder {
     }
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl FrequencyBuilder {
     }
     /// <p>Frequency units.</p>
     pub fn set_units(mut self, input: ::std::option::Option<crate::types::FrequencyUnits>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
     }
     /// <p>Frequency units.</p>
     pub fn get_units(&self) -> &::std::option::Option<crate::types::FrequencyUnits> {
@@ -69,19 +67,20 @@ impl FrequencyBuilder {
     /// - [`value`](crate::types::builders::FrequencyBuilder::value)
     /// - [`units`](crate::types::builders::FrequencyBuilder::units)
     pub fn build(self) -> ::std::result::Result<crate::types::Frequency, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Frequency {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Frequency",
-                )
-            })?,
-            units: self.units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "units",
-                    "units was not specified but it is required when building Frequency",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Frequency {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Frequency")
+                    )?
+                ,
+                units: self.units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("units", "units was not specified but it is required when building Frequency")
+                    )?
+                ,
+            }
+        )
     }
 }
+

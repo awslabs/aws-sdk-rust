@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let databasestatus = unimplemented!();
 /// match databasestatus {
@@ -34,16 +34,14 @@
 /// Specifically, when `databasestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatabaseStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `DatabaseStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DatabaseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -59,73 +57,74 @@ pub enum DatabaseStatus {
     Warning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DatabaseStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERROR" => DatabaseStatus::Error,
-            "RUNNING" => DatabaseStatus::Running,
-            "STARTING" => DatabaseStatus::Starting,
-            "STOPPED" => DatabaseStatus::Stopped,
-            "UNKNOWN" => DatabaseStatus::UnknownValue,
-            "WARNING" => DatabaseStatus::Warning,
-            other => DatabaseStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ERROR" => DatabaseStatus::Error,
+"RUNNING" => DatabaseStatus::Running,
+"STARTING" => DatabaseStatus::Starting,
+"STOPPED" => DatabaseStatus::Stopped,
+"UNKNOWN" => DatabaseStatus::UnknownValue,
+"WARNING" => DatabaseStatus::Warning,
+other => DatabaseStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DatabaseStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DatabaseStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DatabaseStatus::from(s))
+                    }
+                }
 impl DatabaseStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DatabaseStatus::Error => "ERROR",
-            DatabaseStatus::Running => "RUNNING",
-            DatabaseStatus::Starting => "STARTING",
-            DatabaseStatus::Stopped => "STOPPED",
-            DatabaseStatus::UnknownValue => "UNKNOWN",
-            DatabaseStatus::Warning => "WARNING",
-            DatabaseStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DatabaseStatus::Error => "ERROR",
+    DatabaseStatus::Running => "RUNNING",
+    DatabaseStatus::Starting => "STARTING",
+    DatabaseStatus::Stopped => "STOPPED",
+    DatabaseStatus::UnknownValue => "UNKNOWN",
+    DatabaseStatus::Warning => "WARNING",
+    DatabaseStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DatabaseStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DatabaseStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DatabaseStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DatabaseStatus::Error => write!(f, "ERROR"),
-            DatabaseStatus::Running => write!(f, "RUNNING"),
-            DatabaseStatus::Starting => write!(f, "STARTING"),
-            DatabaseStatus::Stopped => write!(f, "STOPPED"),
-            DatabaseStatus::UnknownValue => write!(f, "UNKNOWN"),
-            DatabaseStatus::Warning => write!(f, "WARNING"),
-            DatabaseStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DatabaseStatus::Error => write!(f, "ERROR"),
+DatabaseStatus::Running => write!(f, "RUNNING"),
+DatabaseStatus::Starting => write!(f, "STARTING"),
+DatabaseStatus::Stopped => write!(f, "STOPPED"),
+DatabaseStatus::UnknownValue => write!(f, "UNKNOWN"),
+DatabaseStatus::Warning => write!(f, "WARNING"),
+DatabaseStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

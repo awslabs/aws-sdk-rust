@@ -4,22 +4,20 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CidrAuthorizationContext {
+pub struct CidrAuthorizationContext  {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub message: ::std::string::String,
     /// <p>The signed authorization message for the prefix and account.</p>
     pub signature: ::std::string::String,
 }
-impl CidrAuthorizationContext {
+impl  CidrAuthorizationContext  {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(&self) -> &str {
-        use std::ops::Deref;
-        self.signature.deref()
+    pub fn signature(&self) -> & str {
+        use std::ops::Deref; self.signature.deref()
     }
 }
 impl CidrAuthorizationContext {
@@ -45,8 +43,7 @@ impl CidrAuthorizationContextBuilder {
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl CidrAuthorizationContextBuilder {
     }
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl CidrAuthorizationContextBuilder {
     /// - [`message`](crate::types::builders::CidrAuthorizationContextBuilder::message)
     /// - [`signature`](crate::types::builders::CidrAuthorizationContextBuilder::signature)
     pub fn build(self) -> ::std::result::Result<crate::types::CidrAuthorizationContext, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CidrAuthorizationContext {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building CidrAuthorizationContext",
-                )
-            })?,
-            signature: self.signature.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signature",
-                    "signature was not specified but it is required when building CidrAuthorizationContext",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CidrAuthorizationContext {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building CidrAuthorizationContext")
+                    )?
+                ,
+                signature: self.signature
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signature", "signature was not specified but it is required when building CidrAuthorizationContext")
+                    )?
+                ,
+            }
+        )
     }
 }
+

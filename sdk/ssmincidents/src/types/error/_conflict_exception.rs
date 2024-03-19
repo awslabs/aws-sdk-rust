@@ -3,7 +3,7 @@
 /// <p>Updating or deleting a resource causes an inconsistent state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// The identifier of the requested resource
@@ -14,30 +14,28 @@ pub struct ConflictException {
     pub retry_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConflictException {
+impl  ConflictException  {
     /// The identifier of the requested resource
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// The resource type
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// If present in the output, the operation can be retried after this time
-    pub fn retry_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn retry_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.retry_after.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -51,9 +49,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConflictExcepti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -81,8 +77,7 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl ConflictExceptionBuilder {
     }
     /// The identifier of the requested resource
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// The identifier of the requested resource
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +103,7 @@ impl ConflictExceptionBuilder {
     }
     /// The resource type
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// The resource type
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -123,39 +116,43 @@ impl ConflictExceptionBuilder {
     }
     /// If present in the output, the operation can be retried after this time
     pub fn set_retry_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.retry_after = input;
-        self
+        self.retry_after = input; self
     }
     /// If present in the output, the operation can be retried after this time
     pub fn get_retry_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.retry_after
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ConflictException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ConflictException",
-                )
-            })?,
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-            retry_after: self.retry_after,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::ConflictException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+                retry_after: self.retry_after
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

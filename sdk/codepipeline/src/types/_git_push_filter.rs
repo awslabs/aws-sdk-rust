@@ -3,7 +3,7 @@
 /// <p>The event criteria that specify when a specified repository event will start the pipeline for the specified trigger configuration, such as the lists of Git tags to include and exclude.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitPushFilter {
+pub struct GitPushFilter  {
     /// <p>The field that contains the details for the Git tags trigger configuration.</p>
     pub tags: ::std::option::Option<crate::types::GitTagFilterCriteria>,
     /// <p>The field that specifies to filter on branches for the push trigger configuration.</p>
@@ -11,17 +11,17 @@ pub struct GitPushFilter {
     /// <p>The field that specifies to filter on file paths for the push trigger configuration.</p>
     pub file_paths: ::std::option::Option<crate::types::GitFilePathFilterCriteria>,
 }
-impl GitPushFilter {
+impl  GitPushFilter  {
     /// <p>The field that contains the details for the Git tags trigger configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::GitTagFilterCriteria> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::GitTagFilterCriteria> {
         self.tags.as_ref()
     }
     /// <p>The field that specifies to filter on branches for the push trigger configuration.</p>
-    pub fn branches(&self) -> ::std::option::Option<&crate::types::GitBranchFilterCriteria> {
+    pub fn branches(&self) -> ::std::option::Option<& crate::types::GitBranchFilterCriteria> {
         self.branches.as_ref()
     }
     /// <p>The field that specifies to filter on file paths for the push trigger configuration.</p>
-    pub fn file_paths(&self) -> ::std::option::Option<&crate::types::GitFilePathFilterCriteria> {
+    pub fn file_paths(&self) -> ::std::option::Option<& crate::types::GitFilePathFilterCriteria> {
         self.file_paths.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GitPushFilterBuilder {
     }
     /// <p>The field that contains the details for the Git tags trigger configuration.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::GitTagFilterCriteria>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>The field that contains the details for the Git tags trigger configuration.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::GitTagFilterCriteria> {
@@ -62,8 +61,7 @@ impl GitPushFilterBuilder {
     }
     /// <p>The field that specifies to filter on branches for the push trigger configuration.</p>
     pub fn set_branches(mut self, input: ::std::option::Option<crate::types::GitBranchFilterCriteria>) -> Self {
-        self.branches = input;
-        self
+        self.branches = input; self
     }
     /// <p>The field that specifies to filter on branches for the push trigger configuration.</p>
     pub fn get_branches(&self) -> &::std::option::Option<crate::types::GitBranchFilterCriteria> {
@@ -76,8 +74,7 @@ impl GitPushFilterBuilder {
     }
     /// <p>The field that specifies to filter on file paths for the push trigger configuration.</p>
     pub fn set_file_paths(mut self, input: ::std::option::Option<crate::types::GitFilePathFilterCriteria>) -> Self {
-        self.file_paths = input;
-        self
+        self.file_paths = input; self
     }
     /// <p>The field that specifies to filter on file paths for the push trigger configuration.</p>
     pub fn get_file_paths(&self) -> &::std::option::Option<crate::types::GitFilePathFilterCriteria> {
@@ -86,9 +83,13 @@ impl GitPushFilterBuilder {
     /// Consumes the builder and constructs a [`GitPushFilter`](crate::types::GitPushFilter).
     pub fn build(self) -> crate::types::GitPushFilter {
         crate::types::GitPushFilter {
-            tags: self.tags,
-            branches: self.branches,
-            file_paths: self.file_paths,
+            tags: self.tags
+            ,
+            branches: self.branches
+            ,
+            file_paths: self.file_paths
+            ,
         }
     }
 }
+

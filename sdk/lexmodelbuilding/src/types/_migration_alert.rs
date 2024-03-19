@@ -3,7 +3,7 @@
 /// <p>Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MigrationAlert {
+pub struct MigrationAlert  {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
     /// <li>
@@ -15,11 +15,11 @@ pub struct MigrationAlert {
     /// <p>A message that describes why the alert was issued.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the alert.</p>
-    pub details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub details: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reference_urls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl MigrationAlert {
+impl  MigrationAlert  {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
     /// <li>
@@ -27,24 +27,26 @@ impl MigrationAlert {
     /// <li>
     /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MigrationAlertType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MigrationAlertType> {
         self.r#type.as_ref()
     }
     /// <p>A message that describes why the alert was issued.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Additional details about the alert.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
-    pub fn details(&self) -> &[::std::string::String] {
-        self.details.as_deref().unwrap_or_default()
+    pub fn details(&self) -> & [::std::string::String] {
+        self.details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_urls.is_none()`.
-    pub fn reference_urls(&self) -> &[::std::string::String] {
-        self.reference_urls.as_deref().unwrap_or_default()
+    pub fn reference_urls(&self) -> & [::std::string::String] {
+        self.reference_urls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MigrationAlert {
@@ -60,8 +62,8 @@ impl MigrationAlert {
 pub struct MigrationAlertBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) reference_urls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl MigrationAlertBuilder {
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -83,8 +85,7 @@ impl MigrationAlertBuilder {
     /// <p><code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MigrationAlertType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
@@ -103,8 +104,7 @@ impl MigrationAlertBuilder {
     }
     /// <p>A message that describes why the alert was issued.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that describes why the alert was issued.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,17 +117,16 @@ impl MigrationAlertBuilder {
     /// <p>Additional details about the alert.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input.into());
-        self.details = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional details about the alert.</p>
-    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.details = input; self
     }
     /// <p>Additional details about the alert.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.details
     }
     /// Appends an item to `reference_urls`.
@@ -137,26 +136,30 @@ impl MigrationAlertBuilder {
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
     pub fn reference_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reference_urls.unwrap_or_default();
-        v.push(input.into());
-        self.reference_urls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reference_urls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn set_reference_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reference_urls = input;
-        self
+    pub fn set_reference_urls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reference_urls = input; self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn get_reference_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reference_urls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reference_urls
     }
     /// Consumes the builder and constructs a [`MigrationAlert`](crate::types::MigrationAlert).
     pub fn build(self) -> crate::types::MigrationAlert {
         crate::types::MigrationAlert {
-            r#type: self.r#type,
-            message: self.message,
-            details: self.details,
-            reference_urls: self.reference_urls,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
+            details: self.details
+            ,
+            reference_urls: self.reference_urls
+            ,
         }
     }
 }
+

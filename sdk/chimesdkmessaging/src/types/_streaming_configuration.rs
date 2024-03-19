@@ -3,21 +3,20 @@
 /// <p>The configuration for connecting a messaging stream to Amazon Kinesis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingConfiguration {
+pub struct StreamingConfiguration  {
     /// <p>The data type of the configuration.</p>
     pub data_type: crate::types::MessagingDataType,
     /// <p>The ARN of the resource in the configuration.</p>
     pub resource_arn: ::std::string::String,
 }
-impl StreamingConfiguration {
+impl  StreamingConfiguration  {
     /// <p>The data type of the configuration.</p>
-    pub fn data_type(&self) -> &crate::types::MessagingDataType {
+    pub fn data_type(&self) -> & crate::types::MessagingDataType {
         &self.data_type
     }
     /// <p>The ARN of the resource in the configuration.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl StreamingConfiguration {
@@ -43,8 +42,7 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>The data type of the configuration.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::MessagingDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the configuration.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::MessagingDataType> {
@@ -58,8 +56,7 @@ impl StreamingConfigurationBuilder {
     }
     /// <p>The ARN of the resource in the configuration.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource in the configuration.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl StreamingConfigurationBuilder {
     /// - [`data_type`](crate::types::builders::StreamingConfigurationBuilder::data_type)
     /// - [`resource_arn`](crate::types::builders::StreamingConfigurationBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamingConfiguration {
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building StreamingConfiguration",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building StreamingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StreamingConfiguration {
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building StreamingConfiguration")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building StreamingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

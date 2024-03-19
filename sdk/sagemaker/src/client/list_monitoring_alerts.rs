@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMonitoringAlerts`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::set_monitoring_schedule_name):<br>required: **true**<br><p>The name of a monitoring schedule.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListMonitoringAlerts</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display. The default is 100.</p><br>
-    /// - On success, responds with [`ListMonitoringAlertsOutput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput) with field(s):
+                            /// - On success, responds with [`ListMonitoringAlertsOutput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput) with field(s):
     ///   - [`monitoring_alert_summaries(Option<Vec::<MonitoringAlertSummary>>)`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput::monitoring_alert_summaries): <p>A JSON array where each element is a summary for a monitoring alert.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListMonitoringAlertsError>`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsError)
+                            /// - On failure, responds with [`SdkError<ListMonitoringAlertsError>`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsError)
     pub fn list_monitoring_alerts(&self) -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder {
-        crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

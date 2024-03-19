@@ -5,54 +5,50 @@ pub use crate::operation::describe_job_queues::_describe_job_queues_input::Descr
 
 impl DescribeJobQueuesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_job_queues();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_job_queues::DescribeJobQueuesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_job_queues();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeJobQueues`.
-///
+/// 
 /// <p>Describes one or more of your job queues.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJobQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder,
+                    inner: crate::operation::describe_job_queues::builders::DescribeJobQueuesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        crate::operation::describe_job_queues::DescribeJobQueuesError,
-    > for DescribeJobQueuesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_job_queues::DescribeJobQueuesOutput,
+                    crate::operation::describe_job_queues::DescribeJobQueuesError,
+                > for DescribeJobQueuesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
+                        crate::operation::describe_job_queues::DescribeJobQueuesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeJobQueuesFluentBuilder {
     /// Creates a new `DescribeJobQueues`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeJobQueuesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_job_queues::DescribeJobQueuesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_job_queues::DescribeJobQueues::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_job_queues::DescribeJobQueues::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
-        crate::operation::describe_job_queues::DescribeJobQueuesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job_queues::DescribeJobQueuesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_job_queues::DescribeJobQueues::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_job_queues::DescribeJobQueues::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_job_queues::DescribeJobQueuesOutput, crate::operation::describe_job_queues::DescribeJobQueuesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator {
-        crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator {
+                                crate::operation::describe_job_queues::paginator::DescribeJobQueuesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `jobQueues`.
     ///
     /// To override the contents of this collection use [`set_job_queues`](Self::set_job_queues).
@@ -124,12 +111,12 @@ impl DescribeJobQueuesFluentBuilder {
         self
     }
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    pub fn set_job_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_job_queues(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_queues(input);
         self
     }
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    pub fn get_job_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_queues(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_job_queues()
     }
     /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -167,3 +154,4 @@ impl DescribeJobQueuesFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRuntimeVersions`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p><br>
-    /// - On success, responds with [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput) with field(s):
     ///   - [`runtime_versions(Option<Vec::<RuntimeVersion>>)`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput::runtime_versions): <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeRuntimeVersionsError>`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError)
+                            /// - On failure, responds with [`SdkError<DescribeRuntimeVersionsError>`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError)
     pub fn describe_runtime_versions(&self) -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder {
-        crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

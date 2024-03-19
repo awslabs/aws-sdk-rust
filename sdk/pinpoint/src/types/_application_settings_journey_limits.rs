@@ -3,7 +3,7 @@
 /// <p>The default sending limits for journeys in the application. To override these limits and define custom limits for a specific journey, use the Journey resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSettingsJourneyLimits {
+pub struct ApplicationSettingsJourneyLimits  {
     /// <p>The daily number of messages that an endpoint can receive from all journeys. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub daily_cap: ::std::option::Option<i32>,
     /// <p>The default maximum number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
@@ -11,13 +11,13 @@ pub struct ApplicationSettingsJourneyLimits {
     /// <p>The default maximum number of messages that a single journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub total_cap: ::std::option::Option<i32>,
 }
-impl ApplicationSettingsJourneyLimits {
+impl  ApplicationSettingsJourneyLimits  {
     /// <p>The daily number of messages that an endpoint can receive from all journeys. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn daily_cap(&self) -> ::std::option::Option<i32> {
         self.daily_cap
     }
     /// <p>The default maximum number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
-    pub fn timeframe_cap(&self) -> ::std::option::Option<&crate::types::JourneyTimeframeCap> {
+    pub fn timeframe_cap(&self) -> ::std::option::Option<& crate::types::JourneyTimeframeCap> {
         self.timeframe_cap.as_ref()
     }
     /// <p>The default maximum number of messages that a single journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
@@ -48,8 +48,7 @@ impl ApplicationSettingsJourneyLimitsBuilder {
     }
     /// <p>The daily number of messages that an endpoint can receive from all journeys. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn set_daily_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.daily_cap = input;
-        self
+        self.daily_cap = input; self
     }
     /// <p>The daily number of messages that an endpoint can receive from all journeys. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn get_daily_cap(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ApplicationSettingsJourneyLimitsBuilder {
     }
     /// <p>The default maximum number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
     pub fn set_timeframe_cap(mut self, input: ::std::option::Option<crate::types::JourneyTimeframeCap>) -> Self {
-        self.timeframe_cap = input;
-        self
+        self.timeframe_cap = input; self
     }
     /// <p>The default maximum number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
     pub fn get_timeframe_cap(&self) -> &::std::option::Option<crate::types::JourneyTimeframeCap> {
@@ -76,8 +74,7 @@ impl ApplicationSettingsJourneyLimitsBuilder {
     }
     /// <p>The default maximum number of messages that a single journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn set_total_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_cap = input;
-        self
+        self.total_cap = input; self
     }
     /// <p>The default maximum number of messages that a single journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn get_total_cap(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ApplicationSettingsJourneyLimitsBuilder {
     /// Consumes the builder and constructs a [`ApplicationSettingsJourneyLimits`](crate::types::ApplicationSettingsJourneyLimits).
     pub fn build(self) -> crate::types::ApplicationSettingsJourneyLimits {
         crate::types::ApplicationSettingsJourneyLimits {
-            daily_cap: self.daily_cap,
-            timeframe_cap: self.timeframe_cap,
-            total_cap: self.total_cap,
+            daily_cap: self.daily_cap
+            ,
+            timeframe_cap: self.timeframe_cap
+            ,
+            total_cap: self.total_cap
+            ,
         }
     }
 }
+

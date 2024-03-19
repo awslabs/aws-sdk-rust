@@ -3,7 +3,7 @@
 /// <p>Used to provide Reserved Instance preferences for the recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstanceOptions {
+pub struct ReservedInstanceOptions  {
     /// <p>The payment plan to use for your Reserved Instance.</p>
     pub purchasing_option: crate::types::PurchasingOption,
     /// <p>The flexibility to change the instance types needed for your Reserved Instance.</p>
@@ -11,17 +11,17 @@ pub struct ReservedInstanceOptions {
     /// <p>The preferred duration of the Reserved Instance term.</p>
     pub term_length: crate::types::TermLength,
 }
-impl ReservedInstanceOptions {
+impl  ReservedInstanceOptions  {
     /// <p>The payment plan to use for your Reserved Instance.</p>
-    pub fn purchasing_option(&self) -> &crate::types::PurchasingOption {
+    pub fn purchasing_option(&self) -> & crate::types::PurchasingOption {
         &self.purchasing_option
     }
     /// <p>The flexibility to change the instance types needed for your Reserved Instance.</p>
-    pub fn offering_class(&self) -> &crate::types::OfferingClass {
+    pub fn offering_class(&self) -> & crate::types::OfferingClass {
         &self.offering_class
     }
     /// <p>The preferred duration of the Reserved Instance term.</p>
-    pub fn term_length(&self) -> &crate::types::TermLength {
+    pub fn term_length(&self) -> & crate::types::TermLength {
         &self.term_length
     }
 }
@@ -49,8 +49,7 @@ impl ReservedInstanceOptionsBuilder {
     }
     /// <p>The payment plan to use for your Reserved Instance.</p>
     pub fn set_purchasing_option(mut self, input: ::std::option::Option<crate::types::PurchasingOption>) -> Self {
-        self.purchasing_option = input;
-        self
+        self.purchasing_option = input; self
     }
     /// <p>The payment plan to use for your Reserved Instance.</p>
     pub fn get_purchasing_option(&self) -> &::std::option::Option<crate::types::PurchasingOption> {
@@ -64,8 +63,7 @@ impl ReservedInstanceOptionsBuilder {
     }
     /// <p>The flexibility to change the instance types needed for your Reserved Instance.</p>
     pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClass>) -> Self {
-        self.offering_class = input;
-        self
+        self.offering_class = input; self
     }
     /// <p>The flexibility to change the instance types needed for your Reserved Instance.</p>
     pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClass> {
@@ -79,8 +77,7 @@ impl ReservedInstanceOptionsBuilder {
     }
     /// <p>The preferred duration of the Reserved Instance term.</p>
     pub fn set_term_length(mut self, input: ::std::option::Option<crate::types::TermLength>) -> Self {
-        self.term_length = input;
-        self
+        self.term_length = input; self
     }
     /// <p>The preferred duration of the Reserved Instance term.</p>
     pub fn get_term_length(&self) -> &::std::option::Option<crate::types::TermLength> {
@@ -92,25 +89,25 @@ impl ReservedInstanceOptionsBuilder {
     /// - [`offering_class`](crate::types::builders::ReservedInstanceOptionsBuilder::offering_class)
     /// - [`term_length`](crate::types::builders::ReservedInstanceOptionsBuilder::term_length)
     pub fn build(self) -> ::std::result::Result<crate::types::ReservedInstanceOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReservedInstanceOptions {
-            purchasing_option: self.purchasing_option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "purchasing_option",
-                    "purchasing_option was not specified but it is required when building ReservedInstanceOptions",
-                )
-            })?,
-            offering_class: self.offering_class.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "offering_class",
-                    "offering_class was not specified but it is required when building ReservedInstanceOptions",
-                )
-            })?,
-            term_length: self.term_length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "term_length",
-                    "term_length was not specified but it is required when building ReservedInstanceOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReservedInstanceOptions {
+                purchasing_option: self.purchasing_option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("purchasing_option", "purchasing_option was not specified but it is required when building ReservedInstanceOptions")
+                    )?
+                ,
+                offering_class: self.offering_class
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("offering_class", "offering_class was not specified but it is required when building ReservedInstanceOptions")
+                    )?
+                ,
+                term_length: self.term_length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("term_length", "term_length was not specified but it is required when building ReservedInstanceOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

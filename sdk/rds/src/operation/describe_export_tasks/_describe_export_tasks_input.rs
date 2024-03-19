@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExportTasksInput {
+pub struct DescribeExportTasksInput  {
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub export_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
@@ -33,7 +33,7 @@ pub struct DescribeExportTasksInput {
     /// <p><code>starting</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
@@ -43,13 +43,13 @@ pub struct DescribeExportTasksInput {
     /// <p>The type of source for the export.</p>
     pub source_type: ::std::option::Option<crate::types::ExportSourceType>,
 }
-impl DescribeExportTasksInput {
+impl  DescribeExportTasksInput  {
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn export_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn export_task_identifier(&self) -> ::std::option::Option<& str> {
         self.export_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
@@ -78,13 +78,14 @@ impl DescribeExportTasksInput {
     /// <p><code>starting</code></p></li>
     /// </ul></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
@@ -94,7 +95,7 @@ impl DescribeExportTasksInput {
         self.max_records
     }
     /// <p>The type of source for the export.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ExportSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::ExportSourceType> {
         self.source_type.as_ref()
     }
 }
@@ -111,7 +112,7 @@ impl DescribeExportTasksInput {
 pub struct DescribeExportTasksInputBuilder {
     pub(crate) export_task_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) source_type: ::std::option::Option<crate::types::ExportSourceType>,
@@ -124,8 +125,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_task_identifier = input;
-        self
+        self.export_task_identifier = input; self
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +138,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,9 +176,9 @@ impl DescribeExportTasksInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
@@ -207,9 +206,8 @@ impl DescribeExportTasksInputBuilder {
     /// <p><code>starting</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
     /// <p>Supported filters include the following:</p>
@@ -237,7 +235,7 @@ impl DescribeExportTasksInputBuilder {
     /// <p><code>starting</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
@@ -247,8 +245,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeExportTasks</code> request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +262,7 @@ impl DescribeExportTasksInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -281,25 +277,30 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The type of source for the export.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of source for the export.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
         &self.source_type
     }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
-            export_task_identifier: self.export_task_identifier,
-            source_arn: self.source_arn,
-            filters: self.filters,
-            marker: self.marker,
-            max_records: self.max_records,
-            source_type: self.source_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_export_tasks::DescribeExportTasksInput {
+                export_task_identifier: self.export_task_identifier
+                ,
+                source_arn: self.source_arn
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+                source_type: self.source_type
+                ,
+            }
+        )
     }
 }
+

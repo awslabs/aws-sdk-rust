@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTopicInput {
+pub struct UpdateTopicInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -10,17 +10,17 @@ pub struct UpdateTopicInput {
     /// <p>The definition of the topic that you want to update.</p>
     pub topic: ::std::option::Option<crate::types::TopicDetails>,
 }
-impl UpdateTopicInput {
+impl  UpdateTopicInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The definition of the topic that you want to update.</p>
-    pub fn topic(&self) -> ::std::option::Option<&crate::types::TopicDetails> {
+    pub fn topic(&self) -> ::std::option::Option<& crate::types::TopicDetails> {
         self.topic.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateTopicInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateTopicInputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl UpdateTopicInputBuilder {
     }
     /// <p>The definition of the topic that you want to update.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<crate::types::TopicDetails>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The definition of the topic that you want to update.</p>
     pub fn get_topic(&self) -> &::std::option::Option<crate::types::TopicDetails> {
@@ -87,10 +84,16 @@ impl UpdateTopicInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateTopicInput`](crate::operation::update_topic::UpdateTopicInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_topic::UpdateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_topic::UpdateTopicInput {
-            aws_account_id: self.aws_account_id,
-            topic_id: self.topic_id,
-            topic: self.topic,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_topic::UpdateTopicInput {
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                topic: self.topic
+                ,
+            }
+        )
     }
 }
+

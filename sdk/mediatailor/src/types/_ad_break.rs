@@ -3,7 +3,7 @@
 /// <p>Ad break configuration parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdBreak {
+pub struct AdBreak  {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
@@ -17,11 +17,11 @@ pub struct AdBreak {
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
     pub time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub ad_break_metadata: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub ad_break_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
-impl AdBreak {
+impl  AdBreak  {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
@@ -29,24 +29,25 @@ impl AdBreak {
         self.offset_millis
     }
     /// <p>Ad break slate configuration.</p>
-    pub fn slate(&self) -> ::std::option::Option<&crate::types::SlateSource> {
+    pub fn slate(&self) -> ::std::option::Option<& crate::types::SlateSource> {
         self.slate.as_ref()
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
-    pub fn splice_insert_message(&self) -> ::std::option::Option<&crate::types::SpliceInsertMessage> {
+    pub fn splice_insert_message(&self) -> ::std::option::Option<& crate::types::SpliceInsertMessage> {
         self.splice_insert_message.as_ref()
     }
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
-    pub fn time_signal_message(&self) -> ::std::option::Option<&crate::types::TimeSignalMessage> {
+    pub fn time_signal_message(&self) -> ::std::option::Option<& crate::types::TimeSignalMessage> {
         self.time_signal_message.as_ref()
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_break_metadata.is_none()`.
-    pub fn ad_break_metadata(&self) -> &[crate::types::KeyValuePair] {
-        self.ad_break_metadata.as_deref().unwrap_or_default()
+    pub fn ad_break_metadata(&self) -> & [crate::types::KeyValuePair] {
+        self.ad_break_metadata.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AdBreak {
@@ -65,7 +66,7 @@ pub struct AdBreakBuilder {
     pub(crate) slate: ::std::option::Option<crate::types::SlateSource>,
     pub(crate) splice_insert_message: ::std::option::Option<crate::types::SpliceInsertMessage>,
     pub(crate) time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
-    pub(crate) ad_break_metadata: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub(crate) ad_break_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
 impl AdBreakBuilder {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
@@ -75,8 +76,7 @@ impl AdBreakBuilder {
     }
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
@@ -90,8 +90,7 @@ impl AdBreakBuilder {
     }
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
     pub fn set_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.offset_millis = input;
-        self
+        self.offset_millis = input; self
     }
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
     pub fn get_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -104,8 +103,7 @@ impl AdBreakBuilder {
     }
     /// <p>Ad break slate configuration.</p>
     pub fn set_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
-        self.slate = input;
-        self
+        self.slate = input; self
     }
     /// <p>Ad break slate configuration.</p>
     pub fn get_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
@@ -118,8 +116,7 @@ impl AdBreakBuilder {
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
     pub fn set_splice_insert_message(mut self, input: ::std::option::Option<crate::types::SpliceInsertMessage>) -> Self {
-        self.splice_insert_message = input;
-        self
+        self.splice_insert_message = input; self
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
     pub fn get_splice_insert_message(&self) -> &::std::option::Option<crate::types::SpliceInsertMessage> {
@@ -136,8 +133,7 @@ impl AdBreakBuilder {
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
     pub fn set_time_signal_message(mut self, input: ::std::option::Option<crate::types::TimeSignalMessage>) -> Self {
-        self.time_signal_message = input;
-        self
+        self.time_signal_message = input; self
     }
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
@@ -152,28 +148,35 @@ impl AdBreakBuilder {
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
     pub fn ad_break_metadata(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.ad_break_metadata.unwrap_or_default();
-        v.push(input);
-        self.ad_break_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ad_break_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub fn set_ad_break_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.ad_break_metadata = input;
-        self
+    pub fn set_ad_break_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>) -> Self {
+        self.ad_break_metadata = input; self
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub fn get_ad_break_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_ad_break_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>> {
         &self.ad_break_metadata
     }
     /// Consumes the builder and constructs a [`AdBreak`](crate::types::AdBreak).
     pub fn build(self) -> crate::types::AdBreak {
         crate::types::AdBreak {
-            message_type: self.message_type,
-            offset_millis: self.offset_millis.unwrap_or_default(),
-            slate: self.slate,
-            splice_insert_message: self.splice_insert_message,
-            time_signal_message: self.time_signal_message,
-            ad_break_metadata: self.ad_break_metadata,
+            message_type: self.message_type
+            ,
+            offset_millis: self.offset_millis
+                .unwrap_or_default()
+            ,
+            slate: self.slate
+            ,
+            splice_insert_message: self.splice_insert_message
+            ,
+            time_signal_message: self.time_signal_message
+            ,
+            ad_break_metadata: self.ad_break_metadata
+            ,
         }
     }
 }
+

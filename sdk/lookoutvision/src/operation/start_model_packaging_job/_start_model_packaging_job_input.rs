@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartModelPackagingJobInput {
+pub struct StartModelPackagingJobInput  {
     /// <p>The name of the project which contains the version of the model that you want to package.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model within the project that you want to package.</p>
@@ -18,31 +18,31 @@ pub struct StartModelPackagingJobInput {
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartModelPackagingJobInput {
+impl  StartModelPackagingJobInput  {
     /// <p>The name of the project which contains the version of the model that you want to package.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The version of the model within the project that you want to package.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The configuration for the model packaging job.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ModelPackagingConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ModelPackagingConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>A description for the model packaging job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl StartModelPackagingJobInputBuilder {
     }
     /// <p>The name of the project which contains the version of the model that you want to package.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project which contains the version of the model that you want to package.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl StartModelPackagingJobInputBuilder {
     }
     /// <p>The version of the model within the project that you want to package.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model within the project that you want to package.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl StartModelPackagingJobInputBuilder {
     }
     /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl StartModelPackagingJobInputBuilder {
     }
     /// <p>The configuration for the model packaging job.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ModelPackagingConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration for the model packaging job.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
@@ -131,8 +127,7 @@ impl StartModelPackagingJobInputBuilder {
     }
     /// <p>A description for the model packaging job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the model packaging job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl StartModelPackagingJobInputBuilder {
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases.</p>
@@ -159,19 +153,23 @@ impl StartModelPackagingJobInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartModelPackagingJobInput`](crate::operation::start_model_packaging_job::StartModelPackagingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_model_packaging_job::StartModelPackagingJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_model_packaging_job::StartModelPackagingJobInput {
-            project_name: self.project_name,
-            model_version: self.model_version,
-            job_name: self.job_name,
-            configuration: self.configuration,
-            description: self.description,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_model_packaging_job::StartModelPackagingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_model_packaging_job::StartModelPackagingJobInput {
+                project_name: self.project_name
+                ,
+                model_version: self.model_version
+                ,
+                job_name: self.job_name
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

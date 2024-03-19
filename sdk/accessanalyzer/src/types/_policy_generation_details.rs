@@ -3,15 +3,14 @@
 /// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyGenerationDetails {
+pub struct PolicyGenerationDetails  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub principal_arn: ::std::string::String,
 }
-impl PolicyGenerationDetails {
+impl  PolicyGenerationDetails  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.principal_arn.deref()
+    pub fn principal_arn(&self) -> & str {
+        use std::ops::Deref; self.principal_arn.deref()
     }
 }
 impl PolicyGenerationDetails {
@@ -36,8 +35,7 @@ impl PolicyGenerationDetailsBuilder {
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PolicyGenerationDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principal_arn`](crate::types::builders::PolicyGenerationDetailsBuilder::principal_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::PolicyGenerationDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PolicyGenerationDetails {
-            principal_arn: self.principal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_arn",
-                    "principal_arn was not specified but it is required when building PolicyGenerationDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PolicyGenerationDetails {
+                principal_arn: self.principal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_arn", "principal_arn was not specified but it is required when building PolicyGenerationDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

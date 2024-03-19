@@ -4,7 +4,7 @@
 /// <p>This type contains the full information about a service, including configuration details. It's returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html">CreateService</a>, <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeService.html">DescribeService</a>, and <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteService.html">DeleteService</a> actions. A subset of this information is returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html">ListServices</a> action using the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ServiceSummary.html">ServiceSummary</a> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>The customer-provided service name.</p>
     pub service_name: ::std::string::String,
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
@@ -42,36 +42,33 @@ pub struct Service {
     /// <p>The observability configuration of this service.</p>
     pub observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
-impl Service {
+impl  Service  {
     /// <p>The customer-provided service name.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> & str {
+        use std::ops::Deref; self.service_name.deref()
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
-    pub fn service_id(&self) -> &str {
-        use std::ops::Deref;
-        self.service_id.deref()
+    pub fn service_id(&self) -> & str {
+        use std::ops::Deref; self.service_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
-    pub fn service_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.service_arn.deref()
+    pub fn service_arn(&self) -> & str {
+        use std::ops::Deref; self.service_arn.deref()
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
-    pub fn service_url(&self) -> ::std::option::Option<&str> {
+    pub fn service_url(&self) -> ::std::option::Option<& str> {
         self.service_url.as_deref()
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
@@ -81,35 +78,35 @@ impl Service {
     /// <li>
     /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::ServiceStatus {
+    pub fn status(&self) -> & crate::types::ServiceStatus {
         &self.status
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
-    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
-    pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> ::std::option::Option<& crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
-    pub fn health_check_configuration(&self) -> ::std::option::Option<&crate::types::HealthCheckConfiguration> {
+    pub fn health_check_configuration(&self) -> ::std::option::Option<& crate::types::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
-    pub fn auto_scaling_configuration_summary(&self) -> ::std::option::Option<&crate::types::AutoScalingConfigurationSummary> {
+    pub fn auto_scaling_configuration_summary(&self) -> ::std::option::Option<& crate::types::AutoScalingConfigurationSummary> {
         self.auto_scaling_configuration_summary.as_ref()
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The observability configuration of this service.</p>
-    pub fn observability_configuration(&self) -> ::std::option::Option<&crate::types::ServiceObservabilityConfiguration> {
+    pub fn observability_configuration(&self) -> ::std::option::Option<& crate::types::ServiceObservabilityConfiguration> {
         self.observability_configuration.as_ref()
     }
 }
@@ -149,8 +146,7 @@ impl ServiceBuilder {
     }
     /// <p>The customer-provided service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The customer-provided service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl ServiceBuilder {
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +174,7 @@ impl ServiceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +187,7 @@ impl ServiceBuilder {
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn set_service_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_url = input;
-        self
+        self.service_url = input; self
     }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn get_service_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +201,7 @@ impl ServiceBuilder {
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +215,7 @@ impl ServiceBuilder {
     }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -237,8 +228,7 @@ impl ServiceBuilder {
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_at = input;
-        self
+        self.deleted_at = input; self
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -264,8 +254,7 @@ impl ServiceBuilder {
     /// <p><code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
@@ -285,8 +274,7 @@ impl ServiceBuilder {
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
     pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
-        self.source_configuration = input;
-        self
+        self.source_configuration = input; self
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
@@ -300,8 +288,7 @@ impl ServiceBuilder {
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
     pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
-        self.instance_configuration = input;
-        self
+        self.instance_configuration = input; self
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
     pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
@@ -314,8 +301,7 @@ impl ServiceBuilder {
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -328,8 +314,7 @@ impl ServiceBuilder {
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
     pub fn set_health_check_configuration(mut self, input: ::std::option::Option<crate::types::HealthCheckConfiguration>) -> Self {
-        self.health_check_configuration = input;
-        self
+        self.health_check_configuration = input; self
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
     pub fn get_health_check_configuration(&self) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
@@ -343,8 +328,7 @@ impl ServiceBuilder {
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
     pub fn set_auto_scaling_configuration_summary(mut self, input: ::std::option::Option<crate::types::AutoScalingConfigurationSummary>) -> Self {
-        self.auto_scaling_configuration_summary = input;
-        self
+        self.auto_scaling_configuration_summary = input; self
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
     pub fn get_auto_scaling_configuration_summary(&self) -> &::std::option::Option<crate::types::AutoScalingConfigurationSummary> {
@@ -358,8 +342,7 @@ impl ServiceBuilder {
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -372,8 +355,7 @@ impl ServiceBuilder {
     }
     /// <p>The observability configuration of this service.</p>
     pub fn set_observability_configuration(mut self, input: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>) -> Self {
-        self.observability_configuration = input;
-        self
+        self.observability_configuration = input; self
     }
     /// <p>The observability configuration of this service.</p>
     pub fn get_observability_configuration(&self) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
@@ -388,52 +370,58 @@ impl ServiceBuilder {
     /// - [`updated_at`](crate::types::builders::ServiceBuilder::updated_at)
     /// - [`status`](crate::types::builders::ServiceBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::Service, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Service {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building Service",
-                )
-            })?,
-            service_id: self.service_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_id",
-                    "service_id was not specified but it is required when building Service",
-                )
-            })?,
-            service_arn: self.service_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_arn",
-                    "service_arn was not specified but it is required when building Service",
-                )
-            })?,
-            service_url: self.service_url,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building Service",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building Service",
-                )
-            })?,
-            deleted_at: self.deleted_at,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Service",
-                )
-            })?,
-            source_configuration: self.source_configuration,
-            instance_configuration: self.instance_configuration,
-            encryption_configuration: self.encryption_configuration,
-            health_check_configuration: self.health_check_configuration,
-            auto_scaling_configuration_summary: self.auto_scaling_configuration_summary,
-            network_configuration: self.network_configuration,
-            observability_configuration: self.observability_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Service {
+                service_name: self.service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_name", "service_name was not specified but it is required when building Service")
+                    )?
+                ,
+                service_id: self.service_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_id", "service_id was not specified but it is required when building Service")
+                    )?
+                ,
+                service_arn: self.service_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_arn", "service_arn was not specified but it is required when building Service")
+                    )?
+                ,
+                service_url: self.service_url
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building Service")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building Service")
+                    )?
+                ,
+                deleted_at: self.deleted_at
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Service")
+                    )?
+                ,
+                source_configuration: self.source_configuration
+                ,
+                instance_configuration: self.instance_configuration
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                health_check_configuration: self.health_check_configuration
+                ,
+                auto_scaling_configuration_summary: self.auto_scaling_configuration_summary
+                ,
+                network_configuration: self.network_configuration
+                ,
+                observability_configuration: self.observability_configuration
+                ,
+            }
+        )
     }
 }
+

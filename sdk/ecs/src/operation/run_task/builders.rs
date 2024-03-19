@@ -5,23 +5,20 @@ pub use crate::operation::run_task::_run_task_input::RunTaskInputBuilder;
 
 impl RunTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::run_task::RunTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_task::RunTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.run_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::run_task::RunTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::run_task::RunTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.run_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RunTask`.
-///
+/// 
 /// <p>Starts a new task using the specified task definition.</p>
 /// <p>You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement constraints and placement strategies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>Alternatively, you can use <code>StartTask</code> to use your own scheduler or place tasks manually on specific container instances.</p><note>
@@ -39,27 +36,32 @@ impl RunTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::run_task::builders::RunTaskInputBuilder,
+                    inner: crate::operation::run_task::builders::RunTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
-impl crate::client::customize::internal::CustomizableSend<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError>
-    for RunTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+impl
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::run_task::RunTaskOutput,
+                    crate::operation::run_task::RunTaskError,
+                > for RunTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::run_task::RunTaskOutput,
+                        crate::operation::run_task::RunTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RunTaskFluentBuilder {
     /// Creates a new `RunTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -68,50 +70,44 @@ impl RunTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::run_task::RunTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_task::RunTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::run_task::RunTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::run_task::RunTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError, Self>
-    {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::run_task::RunTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::run_task::RunTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::run_task::RunTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::run_task::RunTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::run_task::RunTaskOutput, crate::operation::run_task::RunTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `capacityProviderStrategy`.
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
@@ -128,10 +124,7 @@ impl RunTaskFluentBuilder {
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn set_capacity_provider_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
+    pub fn set_capacity_provider_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>) -> Self {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
@@ -139,7 +132,7 @@ impl RunTaskFluentBuilder {
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_capacity_provider_strategy()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -291,12 +284,12 @@ impl RunTaskFluentBuilder {
         self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>) -> Self {
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>>) -> Self {
         self.inner = self.inner.set_placement_constraints(input);
         self
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
     /// Appends an item to `placementStrategy`.
@@ -309,12 +302,12 @@ impl RunTaskFluentBuilder {
         self
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
-    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>) -> Self {
+    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>>) -> Self {
         self.inner = self.inner.set_placement_strategy(input);
         self
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
-    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>> {
         self.inner.get_placement_strategy()
     }
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -426,7 +419,7 @@ impl RunTaskFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -448,7 +441,7 @@ impl RunTaskFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
@@ -504,12 +497,13 @@ impl RunTaskFluentBuilder {
         self
     }
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
     /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
-    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskVolumeConfiguration>> {
         self.inner.get_volume_configurations()
     }
 }
+

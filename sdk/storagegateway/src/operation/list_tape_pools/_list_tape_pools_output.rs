@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTapePoolsOutput {
+pub struct ListTapePoolsOutput  {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.</p>
-    pub pool_infos: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>,
+    pub pool_infos: ::std::option::Option<::std::vec::Vec::<crate::types::PoolInfo>>,
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTapePoolsOutput {
+impl  ListTapePoolsOutput  {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_infos.is_none()`.
-    pub fn pool_infos(&self) -> &[crate::types::PoolInfo] {
-        self.pool_infos.as_deref().unwrap_or_default()
+    pub fn pool_infos(&self) -> & [crate::types::PoolInfo] {
+        self.pool_infos.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTapePoolsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTapePoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListTapePoolsOutput`](crate::operation::list_tape_pools::ListTapePoolsOutput).
     pub fn builder() -> crate::operation::list_tape_pools::builders::ListTapePoolsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTapePoolsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapePoolsOutputBuilder {
-    pub(crate) pool_infos: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>,
+    pub(crate) pool_infos: ::std::option::Option<::std::vec::Vec::<crate::types::PoolInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTapePoolsOutputBuilder {
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.</p>
     pub fn pool_infos(mut self, input: crate::types::PoolInfo) -> Self {
         let mut v = self.pool_infos.unwrap_or_default();
-        v.push(input);
-        self.pool_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pool_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.</p>
-    pub fn set_pool_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>) -> Self {
-        self.pool_infos = input;
-        self
+    pub fn set_pool_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PoolInfo>>) -> Self {
+        self.pool_infos = input; self
     }
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array.</p>
-    pub fn get_pool_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>> {
+    pub fn get_pool_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PoolInfo>> {
         &self.pool_infos
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body.</p>
@@ -69,28 +69,30 @@ impl ListTapePoolsOutputBuilder {
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTapePoolsOutput`](crate::operation::list_tape_pools::ListTapePoolsOutput).
     pub fn build(self) -> crate::operation::list_tape_pools::ListTapePoolsOutput {
         crate::operation::list_tape_pools::ListTapePoolsOutput {
-            pool_infos: self.pool_infos,
-            marker: self.marker,
+            pool_infos: self.pool_infos
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

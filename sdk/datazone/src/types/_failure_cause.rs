@@ -3,13 +3,13 @@
 /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailureCause {
+pub struct FailureCause  {
     /// <p>The description of the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl FailureCause {
+impl  FailureCause  {
     /// <p>The description of the error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl FailureCauseBuilder {
     }
     /// <p>The description of the error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The description of the error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl FailureCauseBuilder {
     }
     /// Consumes the builder and constructs a [`FailureCause`](crate::types::FailureCause).
     pub fn build(self) -> crate::types::FailureCause {
-        crate::types::FailureCause { message: self.message }
+        crate::types::FailureCause {
+            message: self.message
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBuildInput {
+pub struct UpdateBuildInput  {
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
@@ -10,17 +10,17 @@ pub struct UpdateBuildInput {
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl UpdateBuildInput {
+impl  UpdateBuildInput  {
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
-    pub fn build_id(&self) -> ::std::option::Option<&str> {
+    pub fn build_id(&self) -> ::std::option::Option<& str> {
         self.build_id.as_deref()
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateBuildInputBuilder {
     }
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_id = input;
-        self
+        self.build_id = input; self
     }
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateBuildInputBuilder {
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UpdateBuildInputBuilder {
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl UpdateBuildInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateBuildInput`](crate::operation::update_build::UpdateBuildInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_build::UpdateBuildInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_build::UpdateBuildInput {
-            build_id: self.build_id,
-            name: self.name,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_build::UpdateBuildInput {
+                build_id: self.build_id
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

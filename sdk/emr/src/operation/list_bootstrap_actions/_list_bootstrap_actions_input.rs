@@ -3,19 +3,19 @@
 /// <p>This input determines which bootstrap actions to retrieve.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBootstrapActionsInput {
+pub struct ListBootstrapActionsInput  {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListBootstrapActionsInput {
+impl  ListBootstrapActionsInput  {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_bootstrap_actions::ListBootstrapActionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
-            cluster_id: self.cluster_id,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bootstrap_actions::ListBootstrapActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
+                cluster_id: self.cluster_id
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

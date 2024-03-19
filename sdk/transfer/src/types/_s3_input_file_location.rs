@@ -5,19 +5,19 @@
 /// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder. If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>: each upload overwrites the previous version of the <i>bob</i> file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3InputFileLocation {
+pub struct S3InputFileLocation  {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl S3InputFileLocation {
+impl  S3InputFileLocation  {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3InputFileLocationBuilder {
     }
     /// <p>Specifies the S3 bucket for the customer input file.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Specifies the S3 bucket for the customer input file.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl S3InputFileLocationBuilder {
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl S3InputFileLocationBuilder {
     /// Consumes the builder and constructs a [`S3InputFileLocation`](crate::types::S3InputFileLocation).
     pub fn build(self) -> crate::types::S3InputFileLocation {
         crate::types::S3InputFileLocation {
-            bucket: self.bucket,
-            key: self.key,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

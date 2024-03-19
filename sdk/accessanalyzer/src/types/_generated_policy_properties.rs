@@ -3,7 +3,7 @@
 /// <p>Contains the generated policy details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneratedPolicyProperties {
+pub struct GeneratedPolicyProperties  {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub is_complete: ::std::option::Option<bool>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
@@ -11,18 +11,17 @@ pub struct GeneratedPolicyProperties {
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
     pub cloud_trail_properties: ::std::option::Option<crate::types::CloudTrailProperties>,
 }
-impl GeneratedPolicyProperties {
+impl  GeneratedPolicyProperties  {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub fn is_complete(&self) -> ::std::option::Option<bool> {
         self.is_complete
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.principal_arn.deref()
+    pub fn principal_arn(&self) -> & str {
+        use std::ops::Deref; self.principal_arn.deref()
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    pub fn cloud_trail_properties(&self) -> ::std::option::Option<&crate::types::CloudTrailProperties> {
+    pub fn cloud_trail_properties(&self) -> ::std::option::Option<& crate::types::CloudTrailProperties> {
         self.cloud_trail_properties.as_ref()
     }
 }
@@ -49,8 +48,7 @@ impl GeneratedPolicyPropertiesBuilder {
     }
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub fn set_is_complete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_complete = input;
-        self
+        self.is_complete = input; self
     }
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub fn get_is_complete(&self) -> &::std::option::Option<bool> {
@@ -64,8 +62,7 @@ impl GeneratedPolicyPropertiesBuilder {
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl GeneratedPolicyPropertiesBuilder {
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
     pub fn set_cloud_trail_properties(mut self, input: ::std::option::Option<crate::types::CloudTrailProperties>) -> Self {
-        self.cloud_trail_properties = input;
-        self
+        self.cloud_trail_properties = input; self
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
     pub fn get_cloud_trail_properties(&self) -> &::std::option::Option<crate::types::CloudTrailProperties> {
@@ -89,15 +85,19 @@ impl GeneratedPolicyPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principal_arn`](crate::types::builders::GeneratedPolicyPropertiesBuilder::principal_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::GeneratedPolicyProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeneratedPolicyProperties {
-            is_complete: self.is_complete,
-            principal_arn: self.principal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_arn",
-                    "principal_arn was not specified but it is required when building GeneratedPolicyProperties",
-                )
-            })?,
-            cloud_trail_properties: self.cloud_trail_properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeneratedPolicyProperties {
+                is_complete: self.is_complete
+                ,
+                principal_arn: self.principal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_arn", "principal_arn was not specified but it is required when building GeneratedPolicyProperties")
+                    )?
+                ,
+                cloud_trail_properties: self.cloud_trail_properties
+                ,
+            }
+        )
     }
 }
+

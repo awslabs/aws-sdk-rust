@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDocumentInput {
+pub struct DeleteDocumentInput  {
     /// <p>The name of the document.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
@@ -12,17 +12,17 @@ pub struct DeleteDocumentInput {
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeleteDocumentInput {
+impl  DeleteDocumentInput  {
     /// <p>The name of the document.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
@@ -55,8 +55,7 @@ impl DeleteDocumentInputBuilder {
     }
     /// <p>The name of the document.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the document.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteDocumentInputBuilder {
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DeleteDocumentInputBuilder {
     }
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl DeleteDocumentInputBuilder {
     }
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_document::DeleteDocumentInput {
-            name: self.name,
-            document_version: self.document_version,
-            version_name: self.version_name,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_document::DeleteDocumentInput {
+                name: self.name
+                ,
+                document_version: self.document_version
+                ,
+                version_name: self.version_name
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

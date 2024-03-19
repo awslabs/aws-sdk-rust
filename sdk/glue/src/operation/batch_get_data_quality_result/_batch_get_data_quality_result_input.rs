@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDataQualityResultInput {
+pub struct BatchGetDataQualityResultInput  {
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub result_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetDataQualityResultInput {
+impl  BatchGetDataQualityResultInput  {
     /// <p>A list of unique result IDs for the data quality results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_ids.is_none()`.
-    pub fn result_ids(&self) -> &[::std::string::String] {
-        self.result_ids.as_deref().unwrap_or_default()
+    pub fn result_ids(&self) -> & [::std::string::String] {
+        self.result_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetDataQualityResultInput {
@@ -25,7 +26,7 @@ impl BatchGetDataQualityResultInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultInputBuilder {
-    pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) result_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetDataQualityResultInputBuilder {
     /// Appends an item to `result_ids`.
@@ -35,26 +36,26 @@ impl BatchGetDataQualityResultInputBuilder {
     /// <p>A list of unique result IDs for the data quality results.</p>
     pub fn result_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.result_ids.unwrap_or_default();
-        v.push(input.into());
-        self.result_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.result_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.result_ids = input;
-        self
+    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.result_ids = input; self
     }
     /// <p>A list of unique result IDs for the data quality results.</p>
-    pub fn get_result_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_result_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.result_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput { result_ids: self.result_ids })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput {
+                result_ids: self.result_ids
+                ,
+            }
+        )
     }
 }
+

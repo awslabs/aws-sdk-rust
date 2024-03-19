@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInferenceComponents`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(InferenceComponentSortKey)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::sort_by) / [`set_sort_by(Option<InferenceComponentSortKey>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field by which to sort the inference components in the response. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(OrderKey)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.</p><br>
@@ -16,11 +16,12 @@ impl super::Client {
     ///   - [`status_equals(InferenceComponentStatus)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::status_equals) / [`set_status_equals(Option<InferenceComponentStatus>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_status_equals):<br>required: **false**<br><p>Filters the results to only those inference components with the specified status.</p><br>
     ///   - [`endpoint_name_equals(impl Into<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::endpoint_name_equals) / [`set_endpoint_name_equals(Option<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_endpoint_name_equals):<br>required: **false**<br><p>An endpoint name to filter the listed inference components. The response includes only those inference components that are hosted at the specified endpoint.</p><br>
     ///   - [`variant_name_equals(impl Into<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::variant_name_equals) / [`set_variant_name_equals(Option<String>)`](crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::set_variant_name_equals):<br>required: **false**<br><p>A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.</p><br>
-    /// - On success, responds with [`ListInferenceComponentsOutput`](crate::operation::list_inference_components::ListInferenceComponentsOutput) with field(s):
+                            /// - On success, responds with [`ListInferenceComponentsOutput`](crate::operation::list_inference_components::ListInferenceComponentsOutput) with field(s):
     ///   - [`inference_components(Option<Vec::<InferenceComponentSummary>>)`](crate::operation::list_inference_components::ListInferenceComponentsOutput::inference_components): <p>A list of inference components and their properties that matches any of the filters you specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_components::ListInferenceComponentsOutput::next_token): <p>The token to use in a subsequent request to get the next set of results following a truncated response.</p>
-    /// - On failure, responds with [`SdkError<ListInferenceComponentsError>`](crate::operation::list_inference_components::ListInferenceComponentsError)
+                            /// - On failure, responds with [`SdkError<ListInferenceComponentsError>`](crate::operation::list_inference_components::ListInferenceComponentsError)
     pub fn list_inference_components(&self) -> crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder {
-        crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_inference_components::builders::ListInferenceComponentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

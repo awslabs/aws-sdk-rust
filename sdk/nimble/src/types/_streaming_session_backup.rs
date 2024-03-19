@@ -3,7 +3,7 @@
 /// <p>Information about the streaming session backup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingSessionBackup {
+pub struct StreamingSessionBackup  {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in for when the resource was created.</p>
@@ -23,47 +23,47 @@ pub struct StreamingSessionBackup {
     /// <p>The ID of the backup.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StreamingSessionBackup {
+impl  StreamingSessionBackup  {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ISO timestamp in for when the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The user ID of the user that owns the streaming session.</p>
-    pub fn owned_by(&self) -> ::std::option::Option<&str> {
+    pub fn owned_by(&self) -> ::std::option::Option<& str> {
         self.owned_by.as_deref()
     }
     /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The streaming session state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::StreamingSessionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::StreamingSessionState> {
         self.state.as_ref()
     }
     /// <p>The status code.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::StreamingSessionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::StreamingSessionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The status message for the streaming session backup.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The ID of the backup.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,7 +87,7 @@ pub struct StreamingSessionBackupBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::StreamingSessionStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StreamingSessionBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
@@ -97,8 +97,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The ISO timestamp in for when the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The ISO timestamp in for when the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +123,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owned_by = input;
-        self
+        self.owned_by = input; self
     }
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The streaming session state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StreamingSessionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The streaming session state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamingSessionState> {
@@ -181,8 +175,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The status code.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StreamingSessionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StreamingSessionStatusCode> {
@@ -195,8 +188,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The status message for the streaming session backup.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for the streaming session backup.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl StreamingSessionBackupBuilder {
     }
     /// <p>The ID of the backup.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The ID of the backup.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,32 +214,42 @@ impl StreamingSessionBackupBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StreamingSessionBackup`](crate::types::StreamingSessionBackup).
     pub fn build(self) -> crate::types::StreamingSessionBackup {
         crate::types::StreamingSessionBackup {
-            arn: self.arn,
-            created_at: self.created_at,
-            launch_profile_id: self.launch_profile_id,
-            owned_by: self.owned_by,
-            session_id: self.session_id,
-            state: self.state,
-            status_code: self.status_code,
-            status_message: self.status_message,
-            backup_id: self.backup_id,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            launch_profile_id: self.launch_profile_id
+            ,
+            owned_by: self.owned_by
+            ,
+            session_id: self.session_id
+            ,
+            state: self.state
+            ,
+            status_code: self.status_code
+            ,
+            status_message: self.status_message
+            ,
+            backup_id: self.backup_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

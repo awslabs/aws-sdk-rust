@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCellsOutput {
+pub struct ListCellsOutput  {
     /// <p>A list of cells.</p>
-    pub cells: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>,
+    pub cells: ::std::option::Option<::std::vec::Vec::<crate::types::CellOutput>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCellsOutput {
+impl  ListCellsOutput  {
     /// <p>A list of cells.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
-    pub fn cells(&self) -> &[crate::types::CellOutput] {
-        self.cells.as_deref().unwrap_or_default()
+    pub fn cells(&self) -> & [crate::types::CellOutput] {
+        self.cells.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCellsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCellsOutput {
     /// Creates a new builder-style object to manufacture [`ListCellsOutput`](crate::operation::list_cells::ListCellsOutput).
     pub fn builder() -> crate::operation::list_cells::builders::ListCellsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCellsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCellsOutputBuilder {
-    pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec::<crate::types::CellOutput>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCellsOutputBuilder {
     /// <p>A list of cells.</p>
     pub fn cells(mut self, input: crate::types::CellOutput) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input);
-        self.cells = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cells = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cells.</p>
-    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CellOutput>>) -> Self {
+        self.cells = input; self
     }
     /// <p>A list of cells.</p>
-    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellOutput>> {
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CellOutput>> {
         &self.cells
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -69,28 +69,30 @@ impl ListCellsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCellsOutput`](crate::operation::list_cells::ListCellsOutput).
     pub fn build(self) -> crate::operation::list_cells::ListCellsOutput {
         crate::operation::list_cells::ListCellsOutput {
-            cells: self.cells,
-            next_token: self.next_token,
+            cells: self.cells
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

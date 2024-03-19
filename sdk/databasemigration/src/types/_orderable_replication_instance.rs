@@ -3,7 +3,7 @@
 /// <p>In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderableReplicationInstance {
+pub struct OrderableReplicationInstance  {
     /// <p>The version of the replication engine.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
@@ -20,24 +20,24 @@ pub struct OrderableReplicationInstance {
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub included_allocated_storage: i32,
     /// <p>List of Availability Zones for this replication instance.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub release_status: ::std::option::Option<crate::types::ReleaseStatusValues>,
 }
-impl OrderableReplicationInstance {
+impl  OrderableReplicationInstance  {
     /// <p>The version of the replication engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
-    pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_class(&self) -> ::std::option::Option<& str> {
         self.replication_instance_class.as_deref()
     }
     /// <p>The type of storage used by the replication instance.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
@@ -57,15 +57,16 @@ impl OrderableReplicationInstance {
         self.included_allocated_storage
     }
     /// <p>List of Availability Zones for this replication instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn release_status(&self) -> ::std::option::Option<&crate::types::ReleaseStatusValues> {
+    pub fn release_status(&self) -> ::std::option::Option<& crate::types::ReleaseStatusValues> {
         self.release_status.as_ref()
     }
 }
@@ -87,7 +88,7 @@ pub struct OrderableReplicationInstanceBuilder {
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
     pub(crate) default_allocated_storage: ::std::option::Option<i32>,
     pub(crate) included_allocated_storage: ::std::option::Option<i32>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) release_status: ::std::option::Option<crate::types::ReleaseStatusValues>,
 }
 impl OrderableReplicationInstanceBuilder {
@@ -98,8 +99,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The version of the replication engine.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the replication engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl OrderableReplicationInstanceBuilder {
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_class = input;
-        self
+        self.replication_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>.</p>
@@ -129,8 +128,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The type of storage used by the replication instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The type of storage used by the replication instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
     pub fn set_min_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_allocated_storage = input;
-        self
+        self.min_allocated_storage = input; self
     }
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
     pub fn get_min_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -157,8 +154,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_allocated_storage = input;
-        self
+        self.max_allocated_storage = input; self
     }
     /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication instance.</p>
     pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -171,8 +167,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The default amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn set_default_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_allocated_storage = input;
-        self
+        self.default_allocated_storage = input; self
     }
     /// <p>The default amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn get_default_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -185,8 +180,7 @@ impl OrderableReplicationInstanceBuilder {
     }
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn set_included_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.included_allocated_storage = input;
-        self
+        self.included_allocated_storage = input; self
     }
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn get_included_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -199,17 +193,16 @@ impl OrderableReplicationInstanceBuilder {
     /// <p>List of Availability Zones for this replication instance.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Availability Zones for this replication instance.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>List of Availability Zones for this replication instance.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
@@ -223,8 +216,7 @@ impl OrderableReplicationInstanceBuilder {
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn set_release_status(mut self, input: ::std::option::Option<crate::types::ReleaseStatusValues>) -> Self {
-        self.release_status = input;
-        self
+        self.release_status = input; self
     }
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
@@ -235,15 +227,29 @@ impl OrderableReplicationInstanceBuilder {
     /// Consumes the builder and constructs a [`OrderableReplicationInstance`](crate::types::OrderableReplicationInstance).
     pub fn build(self) -> crate::types::OrderableReplicationInstance {
         crate::types::OrderableReplicationInstance {
-            engine_version: self.engine_version,
-            replication_instance_class: self.replication_instance_class,
-            storage_type: self.storage_type,
-            min_allocated_storage: self.min_allocated_storage.unwrap_or_default(),
-            max_allocated_storage: self.max_allocated_storage.unwrap_or_default(),
-            default_allocated_storage: self.default_allocated_storage.unwrap_or_default(),
-            included_allocated_storage: self.included_allocated_storage.unwrap_or_default(),
-            availability_zones: self.availability_zones,
-            release_status: self.release_status,
+            engine_version: self.engine_version
+            ,
+            replication_instance_class: self.replication_instance_class
+            ,
+            storage_type: self.storage_type
+            ,
+            min_allocated_storage: self.min_allocated_storage
+                .unwrap_or_default()
+            ,
+            max_allocated_storage: self.max_allocated_storage
+                .unwrap_or_default()
+            ,
+            default_allocated_storage: self.default_allocated_storage
+                .unwrap_or_default()
+            ,
+            included_allocated_storage: self.included_allocated_storage
+                .unwrap_or_default()
+            ,
+            availability_zones: self.availability_zones
+            ,
+            release_status: self.release_status
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootBrokerOutput {
+pub struct RebootBrokerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub cluster_operation_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RebootBrokerOutput {
+impl  RebootBrokerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RebootBrokerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RebootBrokerOutput {
     /// Creates a new builder-style object to manufacture [`RebootBrokerOutput`](crate::operation::reboot_broker::RebootBrokerOutput).
     pub fn builder() -> crate::operation::reboot_broker::builders::RebootBrokerOutputBuilder {
@@ -47,8 +47,7 @@ impl RebootBrokerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl RebootBrokerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_operation_arn = input;
-        self
+        self.cluster_operation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub fn get_cluster_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_operation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RebootBrokerOutput`](crate::operation::reboot_broker::RebootBrokerOutput).
     pub fn build(self) -> crate::operation::reboot_broker::RebootBrokerOutput {
         crate::operation::reboot_broker::RebootBrokerOutput {
-            cluster_arn: self.cluster_arn,
-            cluster_operation_arn: self.cluster_operation_arn,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_operation_arn: self.cluster_operation_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

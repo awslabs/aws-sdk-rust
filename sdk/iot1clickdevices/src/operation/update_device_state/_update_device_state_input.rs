@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDeviceStateInput {
+pub struct UpdateDeviceStateInput  {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateDeviceStateInput {
+impl  UpdateDeviceStateInput  {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
@@ -41,8 +41,7 @@ impl UpdateDeviceStateInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl UpdateDeviceStateInputBuilder {
     }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_device_state::UpdateDeviceStateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_device_state::UpdateDeviceStateInput {
-            device_id: self.device_id,
-            enabled: self.enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device_state::UpdateDeviceStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_device_state::UpdateDeviceStateInput {
+                device_id: self.device_id
+                ,
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

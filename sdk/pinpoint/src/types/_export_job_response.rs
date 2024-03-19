@@ -3,7 +3,7 @@
 /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportJobResponse {
+pub struct ExportJobResponse  {
     /// <p>The unique identifier for the application that's associated with the export job.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
@@ -17,7 +17,7 @@ pub struct ExportJobResponse {
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
     pub failed_pieces: ::std::option::Option<i32>,
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The unique identifier for the export job.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
@@ -31,9 +31,9 @@ pub struct ExportJobResponse {
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ExportJobResponse {
+impl  ExportJobResponse  {
     /// <p>The unique identifier for the application that's associated with the export job.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
@@ -41,15 +41,15 @@ impl ExportJobResponse {
         self.completed_pieces
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
-    pub fn completion_date(&self) -> ::std::option::Option<&str> {
+    pub fn completion_date(&self) -> ::std::option::Option<& str> {
         self.completion_date.as_deref()
     }
     /// <p>The date, in ISO 8601 format, when the export job was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The resource settings that apply to the export job.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::ExportJobResource> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::ExportJobResource> {
         self.definition.as_ref()
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
@@ -57,17 +57,18 @@ impl ExportJobResponse {
         self.failed_pieces
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[::std::string::String] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [::std::string::String] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifier for the export job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
@@ -83,7 +84,7 @@ impl ExportJobResponse {
         self.total_processed
     }
     /// <p>The job type. This value is EXPORT for export jobs.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -104,7 +105,7 @@ pub struct ExportJobResponseBuilder {
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::ExportJobResource>,
     pub(crate) failed_pieces: ::std::option::Option<i32>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) total_failures: ::std::option::Option<i32>,
@@ -121,8 +122,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The unique identifier for the application that's associated with the export job.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application that's associated with the export job.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +135,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
     pub fn set_completed_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.completed_pieces = input;
-        self
+        self.completed_pieces = input; self
     }
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
     pub fn get_completed_pieces(&self) -> &::std::option::Option<i32> {
@@ -149,8 +148,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
     pub fn set_completion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.completion_date = input;
-        self
+        self.completion_date = input; self
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
     pub fn get_completion_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +162,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The date, in ISO 8601 format, when the export job was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date, in ISO 8601 format, when the export job was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +176,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The resource settings that apply to the export job.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::ExportJobResource>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The resource settings that apply to the export job.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::ExportJobResource> {
@@ -193,8 +189,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
     pub fn set_failed_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_pieces = input;
-        self
+        self.failed_pieces = input; self
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
     pub fn get_failed_pieces(&self) -> &::std::option::Option<i32> {
@@ -207,17 +202,16 @@ impl ExportJobResponseBuilder {
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
     pub fn failures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input.into());
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failures = input; self
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failures
     }
     /// <p>The unique identifier for the export job.</p>
@@ -228,8 +222,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The unique identifier for the export job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the export job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +236,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -257,8 +249,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
     pub fn set_total_failures(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_failures = input;
-        self
+        self.total_failures = input; self
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
     pub fn get_total_failures(&self) -> &::std::option::Option<i32> {
@@ -271,8 +262,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
     pub fn set_total_pieces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_pieces = input;
-        self
+        self.total_pieces = input; self
     }
     /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
     pub fn get_total_pieces(&self) -> &::std::option::Option<i32> {
@@ -285,8 +275,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The total number of endpoint definitions that were processed by the export job.</p>
     pub fn set_total_processed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_processed = input;
-        self
+        self.total_processed = input; self
     }
     /// <p>The total number of endpoint definitions that were processed by the export job.</p>
     pub fn get_total_processed(&self) -> &::std::option::Option<i32> {
@@ -300,8 +289,7 @@ impl ExportJobResponseBuilder {
     }
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,19 +298,33 @@ impl ExportJobResponseBuilder {
     /// Consumes the builder and constructs a [`ExportJobResponse`](crate::types::ExportJobResponse).
     pub fn build(self) -> crate::types::ExportJobResponse {
         crate::types::ExportJobResponse {
-            application_id: self.application_id,
-            completed_pieces: self.completed_pieces,
-            completion_date: self.completion_date,
-            creation_date: self.creation_date,
-            definition: self.definition,
-            failed_pieces: self.failed_pieces,
-            failures: self.failures,
-            id: self.id,
-            job_status: self.job_status,
-            total_failures: self.total_failures,
-            total_pieces: self.total_pieces,
-            total_processed: self.total_processed,
-            r#type: self.r#type,
+            application_id: self.application_id
+            ,
+            completed_pieces: self.completed_pieces
+            ,
+            completion_date: self.completion_date
+            ,
+            creation_date: self.creation_date
+            ,
+            definition: self.definition
+            ,
+            failed_pieces: self.failed_pieces
+            ,
+            failures: self.failures
+            ,
+            id: self.id
+            ,
+            job_status: self.job_status
+            ,
+            total_failures: self.total_failures
+            ,
+            total_pieces: self.total_pieces
+            ,
+            total_processed: self.total_processed
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

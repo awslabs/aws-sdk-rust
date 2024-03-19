@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAliasInput {
+pub struct CreateAliasInput  {
     /// <p>The organization under which the member (user or group) exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The member (user or group) to which this alias is added.</p>
@@ -10,17 +10,17 @@ pub struct CreateAliasInput {
     /// <p>The alias to add to the member set.</p>
     pub alias: ::std::option::Option<::std::string::String>,
 }
-impl CreateAliasInput {
+impl  CreateAliasInput  {
     /// <p>The organization under which the member (user or group) exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The member (user or group) to which this alias is added.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The alias to add to the member set.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>The organization under which the member (user or group) exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The organization under which the member (user or group) exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>The member (user or group) to which this alias is added.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The member (user or group) to which this alias is added.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl CreateAliasInputBuilder {
     }
     /// <p>The alias to add to the member set.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias to add to the member set.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl CreateAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_alias::CreateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_alias::CreateAliasInput {
-            organization_id: self.organization_id,
-            entity_id: self.entity_id,
-            alias: self.alias,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_alias::CreateAliasInput {
+                organization_id: self.organization_id
+                ,
+                entity_id: self.entity_id
+                ,
+                alias: self.alias
+                ,
+            }
+        )
     }
 }
+

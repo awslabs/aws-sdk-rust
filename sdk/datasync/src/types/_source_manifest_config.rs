@@ -3,13 +3,13 @@
 /// <p>Specifies the manifest that you want DataSync to use and where it's hosted. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceManifestConfig {
+pub struct SourceManifestConfig  {
     /// <p>Specifies the S3 bucket where you're hosting your manifest.</p>
     pub s3: ::std::option::Option<crate::types::S3ManifestConfig>,
 }
-impl SourceManifestConfig {
+impl  SourceManifestConfig  {
     /// <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3ManifestConfig> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3ManifestConfig> {
         self.s3.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl SourceManifestConfigBuilder {
     }
     /// <p>Specifies the S3 bucket where you're hosting your manifest.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ManifestConfig>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>Specifies the S3 bucket where you're hosting your manifest.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ManifestConfig> {
@@ -44,6 +43,10 @@ impl SourceManifestConfigBuilder {
     }
     /// Consumes the builder and constructs a [`SourceManifestConfig`](crate::types::SourceManifestConfig).
     pub fn build(self) -> crate::types::SourceManifestConfig {
-        crate::types::SourceManifestConfig { s3: self.s3 }
+        crate::types::SourceManifestConfig {
+            s3: self.s3
+            ,
+        }
     }
 }
+

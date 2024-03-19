@@ -3,13 +3,13 @@
 /// <p>The collection of ownership settings for a space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnershipSettings {
+pub struct OwnershipSettings  {
     /// <p>The user profile who is the owner of the private space.</p>
     pub owner_user_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl OwnershipSettings {
+impl  OwnershipSettings  {
     /// <p>The user profile who is the owner of the private space.</p>
-    pub fn owner_user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn owner_user_profile_name(&self) -> ::std::option::Option<& str> {
         self.owner_user_profile_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl OwnershipSettingsBuilder {
     }
     /// <p>The user profile who is the owner of the private space.</p>
     pub fn set_owner_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_user_profile_name = input;
-        self
+        self.owner_user_profile_name = input; self
     }
     /// <p>The user profile who is the owner of the private space.</p>
     pub fn get_owner_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl OwnershipSettingsBuilder {
     /// Consumes the builder and constructs a [`OwnershipSettings`](crate::types::OwnershipSettings).
     pub fn build(self) -> crate::types::OwnershipSettings {
         crate::types::OwnershipSettings {
-            owner_user_profile_name: self.owner_user_profile_name,
+            owner_user_profile_name: self.owner_user_profile_name
+            ,
         }
     }
 }
+

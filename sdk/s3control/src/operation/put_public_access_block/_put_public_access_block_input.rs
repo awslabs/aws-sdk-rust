@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPublicAccessBlockInput {
+pub struct PutPublicAccessBlockInput  {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl PutPublicAccessBlockInput {
+impl  PutPublicAccessBlockInput  {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
-    pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> ::std::option::Option<& crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutPublicAccessBlockInputBuilder {
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
-        self.public_access_block_configuration = input;
-        self
+        self.public_access_block_configuration = input; self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
@@ -56,21 +55,22 @@ impl PutPublicAccessBlockInputBuilder {
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::operation::put_public_access_block::PutPublicAccessBlockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_public_access_block::PutPublicAccessBlockInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_public_access_block::PutPublicAccessBlockInput {
-            public_access_block_configuration: self.public_access_block_configuration,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_public_access_block::PutPublicAccessBlockInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_public_access_block::PutPublicAccessBlockInput {
+                public_access_block_configuration: self.public_access_block_configuration
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

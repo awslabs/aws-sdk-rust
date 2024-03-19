@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateAlertManagerDefinition</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAlertManagerDefinitionInput {
+pub struct CreateAlertManagerDefinitionInput  {
     /// <p>The ID of the workspace to add the alert manager definition to.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.</p>
@@ -12,18 +12,18 @@ pub struct CreateAlertManagerDefinitionInput {
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateAlertManagerDefinitionInput {
+impl  CreateAlertManagerDefinitionInput  {
     /// <p>The ID of the workspace to add the alert manager definition to.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
     }
     /// <p>The ID of the workspace to add the alert manager definition to.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to add the alert manager definition to.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
     /// <p>The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.</p>
     /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
@@ -83,24 +81,24 @@ impl CreateAlertManagerDefinitionInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAlertManagerDefinitionInput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput {
-            workspace_id: self.workspace_id,
-            data: self.data,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput {
+                workspace_id: self.workspace_id
+                ,
+                data: self.data
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

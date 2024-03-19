@@ -3,19 +3,19 @@
 /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerativeAiSettings {
+pub struct GenerativeAiSettings  {
     /// <p>Contains specifications about the Amazon Lex runtime generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub runtime_settings: ::std::option::Option<crate::types::RuntimeSettings>,
     /// <p>Contains specifications about the Amazon Lex build time generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub buildtime_settings: ::std::option::Option<crate::types::BuildtimeSettings>,
 }
-impl GenerativeAiSettings {
+impl  GenerativeAiSettings  {
     /// <p>Contains specifications about the Amazon Lex runtime generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
-    pub fn runtime_settings(&self) -> ::std::option::Option<&crate::types::RuntimeSettings> {
+    pub fn runtime_settings(&self) -> ::std::option::Option<& crate::types::RuntimeSettings> {
         self.runtime_settings.as_ref()
     }
     /// <p>Contains specifications about the Amazon Lex build time generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
-    pub fn buildtime_settings(&self) -> ::std::option::Option<&crate::types::BuildtimeSettings> {
+    pub fn buildtime_settings(&self) -> ::std::option::Option<& crate::types::BuildtimeSettings> {
         self.buildtime_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GenerativeAiSettingsBuilder {
     }
     /// <p>Contains specifications about the Amazon Lex runtime generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn set_runtime_settings(mut self, input: ::std::option::Option<crate::types::RuntimeSettings>) -> Self {
-        self.runtime_settings = input;
-        self
+        self.runtime_settings = input; self
     }
     /// <p>Contains specifications about the Amazon Lex runtime generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn get_runtime_settings(&self) -> &::std::option::Option<crate::types::RuntimeSettings> {
@@ -55,8 +54,7 @@ impl GenerativeAiSettingsBuilder {
     }
     /// <p>Contains specifications about the Amazon Lex build time generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn set_buildtime_settings(mut self, input: ::std::option::Option<crate::types::BuildtimeSettings>) -> Self {
-        self.buildtime_settings = input;
-        self
+        self.buildtime_settings = input; self
     }
     /// <p>Contains specifications about the Amazon Lex build time generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn get_buildtime_settings(&self) -> &::std::option::Option<crate::types::BuildtimeSettings> {
@@ -65,8 +63,11 @@ impl GenerativeAiSettingsBuilder {
     /// Consumes the builder and constructs a [`GenerativeAiSettings`](crate::types::GenerativeAiSettings).
     pub fn build(self) -> crate::types::GenerativeAiSettings {
         crate::types::GenerativeAiSettings {
-            runtime_settings: self.runtime_settings,
-            buildtime_settings: self.buildtime_settings,
+            runtime_settings: self.runtime_settings
+            ,
+            buildtime_settings: self.buildtime_settings
+            ,
         }
     }
 }
+

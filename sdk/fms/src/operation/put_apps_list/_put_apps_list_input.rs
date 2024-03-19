@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAppsListInput {
+pub struct PutAppsListInput  {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
     pub apps_list: ::std::option::Option<crate::types::AppsListData>,
     /// <p>The tags associated with the resource.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutAppsListInput {
+impl  PutAppsListInput  {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
-    pub fn apps_list(&self) -> ::std::option::Option<&crate::types::AppsListData> {
+    pub fn apps_list(&self) -> ::std::option::Option<& crate::types::AppsListData> {
         self.apps_list.as_ref()
     }
     /// <p>The tags associated with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutAppsListInput {
@@ -32,7 +33,7 @@ impl PutAppsListInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppsListInputBuilder {
     pub(crate) apps_list: ::std::option::Option<crate::types::AppsListData>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutAppsListInputBuilder {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
@@ -43,8 +44,7 @@ impl PutAppsListInputBuilder {
     }
     /// <p>The details of the Firewall Manager applications list to be created.</p>
     pub fn set_apps_list(mut self, input: ::std::option::Option<crate::types::AppsListData>) -> Self {
-        self.apps_list = input;
-        self
+        self.apps_list = input; self
     }
     /// <p>The details of the Firewall Manager applications list to be created.</p>
     pub fn get_apps_list(&self) -> &::std::option::Option<crate::types::AppsListData> {
@@ -57,24 +57,28 @@ impl PutAppsListInputBuilder {
     /// <p>The tags associated with the resource.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutAppsListInput`](crate::operation::put_apps_list::PutAppsListInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_apps_list::PutAppsListInput {
-            apps_list: self.apps_list,
-            tag_list: self.tag_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_apps_list::PutAppsListInput {
+                apps_list: self.apps_list
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

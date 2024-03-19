@@ -3,25 +3,25 @@
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrailProperties {
+pub struct TrailProperties  {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub cloud_trail_arn: ::std::string::String,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub all_regions: ::std::option::Option<bool>,
 }
-impl TrailProperties {
+impl  TrailProperties  {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn cloud_trail_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cloud_trail_arn.deref()
+    pub fn cloud_trail_arn(&self) -> & str {
+        use std::ops::Deref; self.cloud_trail_arn.deref()
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(&self) -> ::std::option::Option<bool> {
@@ -40,7 +40,7 @@ impl TrailProperties {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrailPropertiesBuilder {
     pub(crate) cloud_trail_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) all_regions: ::std::option::Option<bool>,
 }
 impl TrailPropertiesBuilder {
@@ -52,8 +52,7 @@ impl TrailPropertiesBuilder {
     }
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub fn set_cloud_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_trail_arn = input;
-        self
+        self.cloud_trail_arn = input; self
     }
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub fn get_cloud_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +65,16 @@ impl TrailPropertiesBuilder {
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
@@ -86,8 +84,7 @@ impl TrailPropertiesBuilder {
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_regions = input;
-        self
+        self.all_regions = input; self
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
@@ -97,15 +94,19 @@ impl TrailPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cloud_trail_arn`](crate::types::builders::TrailPropertiesBuilder::cloud_trail_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TrailProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrailProperties {
-            cloud_trail_arn: self.cloud_trail_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cloud_trail_arn",
-                    "cloud_trail_arn was not specified but it is required when building TrailProperties",
-                )
-            })?,
-            regions: self.regions,
-            all_regions: self.all_regions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrailProperties {
+                cloud_trail_arn: self.cloud_trail_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cloud_trail_arn", "cloud_trail_arn was not specified but it is required when building TrailProperties")
+                    )?
+                ,
+                regions: self.regions
+                ,
+                all_regions: self.all_regions
+                ,
+            }
+        )
     }
 }
+

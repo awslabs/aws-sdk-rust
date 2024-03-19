@@ -3,14 +3,14 @@
 /// Placeholder documentation for AcceptInputDeviceTransferResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptInputDeviceTransferOutput {
+pub struct AcceptInputDeviceTransferOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AcceptInputDeviceTransferOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
     pub fn builder() -> crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferOutputBuilder {
@@ -26,14 +26,14 @@ pub struct AcceptInputDeviceTransferOutputBuilder {
 }
 impl AcceptInputDeviceTransferOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
     pub fn build(self) -> crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput {
         crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput {
@@ -41,3 +41,4 @@ impl AcceptInputDeviceTransferOutputBuilder {
         }
     }
 }
+

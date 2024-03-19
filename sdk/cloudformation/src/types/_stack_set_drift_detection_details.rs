@@ -6,7 +6,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting unmanaged changes in stack sets</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSetDriftDetectionDetails {
+pub struct StackSetDriftDetectionDetails  {
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
     /// <li>
@@ -55,7 +55,7 @@ pub struct StackSetDriftDetectionDetails {
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
     pub failed_stack_instances_count: ::std::option::Option<i32>,
 }
-impl StackSetDriftDetectionDetails {
+impl  StackSetDriftDetectionDetails  {
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
     /// <li>
@@ -65,7 +65,7 @@ impl StackSetDriftDetectionDetails {
     /// <li>
     /// <p><code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
     /// </ul>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::StackSetDriftStatus> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::StackSetDriftStatus> {
         self.drift_status.as_ref()
     }
     /// <p>The status of the stack set drift detection operation.</p>
@@ -81,11 +81,11 @@ impl StackSetDriftDetectionDetails {
     /// <li>
     /// <p><code>STOPPED</code>: The user has canceled the drift detection operation.</p></li>
     /// </ul>
-    pub fn drift_detection_status(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionStatus> {
+    pub fn drift_detection_status(&self) -> ::std::option::Option<& crate::types::StackSetDriftDetectionStatus> {
         self.drift_detection_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The total number of stack instances belonging to this stack set.</p>
@@ -164,8 +164,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <p><code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p></li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackSetDriftStatus>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
@@ -210,8 +209,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <p><code>STOPPED</code>: The user has canceled the drift detection operation.</p></li>
     /// </ul>
     pub fn set_drift_detection_status(mut self, input: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>) -> Self {
-        self.drift_detection_status = input;
-        self
+        self.drift_detection_status = input; self
     }
     /// <p>The status of the stack set drift detection operation.</p>
     /// <ul>
@@ -236,8 +234,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
     pub fn set_last_drift_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_drift_check_timestamp = input;
-        self
+        self.last_drift_check_timestamp = input; self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
     pub fn get_last_drift_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -272,8 +269,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <p>Stack instances currently being checked for drift.</p></li>
     /// </ul>
     pub fn set_total_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_stack_instances_count = input;
-        self
+        self.total_stack_instances_count = input; self
     }
     /// <p>The total number of stack instances belonging to this stack set.</p>
     /// <p>The total number of stack instances is equal to the total of:</p>
@@ -297,8 +293,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     }
     /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack don't match their expected configuration.</p>
     pub fn set_drifted_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.drifted_stack_instances_count = input;
-        self
+        self.drifted_stack_instances_count = input; self
     }
     /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack don't match their expected configuration.</p>
     pub fn get_drifted_stack_instances_count(&self) -> &::std::option::Option<i32> {
@@ -311,8 +306,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     }
     /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
     pub fn set_in_sync_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.in_sync_stack_instances_count = input;
-        self
+        self.in_sync_stack_instances_count = input; self
     }
     /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
     pub fn get_in_sync_stack_instances_count(&self) -> &::std::option::Option<i32> {
@@ -325,8 +319,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     }
     /// <p>The number of stack instances that are currently being checked for drift.</p>
     pub fn set_in_progress_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.in_progress_stack_instances_count = input;
-        self
+        self.in_progress_stack_instances_count = input; self
     }
     /// <p>The number of stack instances that are currently being checked for drift.</p>
     pub fn get_in_progress_stack_instances_count(&self) -> &::std::option::Option<i32> {
@@ -339,8 +332,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     }
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
     pub fn set_failed_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_stack_instances_count = input;
-        self
+        self.failed_stack_instances_count = input; self
     }
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
     pub fn get_failed_stack_instances_count(&self) -> &::std::option::Option<i32> {
@@ -349,14 +341,23 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// Consumes the builder and constructs a [`StackSetDriftDetectionDetails`](crate::types::StackSetDriftDetectionDetails).
     pub fn build(self) -> crate::types::StackSetDriftDetectionDetails {
         crate::types::StackSetDriftDetectionDetails {
-            drift_status: self.drift_status,
-            drift_detection_status: self.drift_detection_status,
-            last_drift_check_timestamp: self.last_drift_check_timestamp,
-            total_stack_instances_count: self.total_stack_instances_count,
-            drifted_stack_instances_count: self.drifted_stack_instances_count,
-            in_sync_stack_instances_count: self.in_sync_stack_instances_count,
-            in_progress_stack_instances_count: self.in_progress_stack_instances_count,
-            failed_stack_instances_count: self.failed_stack_instances_count,
+            drift_status: self.drift_status
+            ,
+            drift_detection_status: self.drift_detection_status
+            ,
+            last_drift_check_timestamp: self.last_drift_check_timestamp
+            ,
+            total_stack_instances_count: self.total_stack_instances_count
+            ,
+            drifted_stack_instances_count: self.drifted_stack_instances_count
+            ,
+            in_sync_stack_instances_count: self.in_sync_stack_instances_count
+            ,
+            in_progress_stack_instances_count: self.in_progress_stack_instances_count
+            ,
+            failed_stack_instances_count: self.failed_stack_instances_count
+            ,
         }
     }
 }
+

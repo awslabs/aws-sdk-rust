@@ -16,3 +16,4 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 pub use crate::types::error::_device_retired_exception::DeviceRetiredExceptionBuilder;
 
 pub use crate::types::error::_device_offline_exception::DeviceOfflineExceptionBuilder;
+

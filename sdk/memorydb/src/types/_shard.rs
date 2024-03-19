@@ -3,7 +3,7 @@
 /// <p>Represents a collection of nodes in a cluster. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Shard {
+pub struct Shard  {
     /// <p>The name of the shard</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
@@ -11,28 +11,29 @@ pub struct Shard {
     /// <p>The keyspace for this shard.</p>
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>A list containing information about individual nodes within the shard</p>
-    pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
+    pub nodes: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
     /// <p>The number of nodes in the shard</p>
     pub number_of_nodes: ::std::option::Option<i32>,
 }
-impl Shard {
+impl  Shard  {
     /// <p>The name of the shard</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The keyspace for this shard.</p>
-    pub fn slots(&self) -> ::std::option::Option<&str> {
+    pub fn slots(&self) -> ::std::option::Option<& str> {
         self.slots.as_deref()
     }
     /// <p>A list containing information about individual nodes within the shard</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
-    pub fn nodes(&self) -> &[crate::types::Node] {
-        self.nodes.as_deref().unwrap_or_default()
+    pub fn nodes(&self) -> & [crate::types::Node] {
+        self.nodes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of nodes in the shard</p>
     pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
@@ -53,7 +54,7 @@ pub struct ShardBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) slots: ::std::option::Option<::std::string::String>,
-    pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
+    pub(crate) nodes: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
 }
 impl ShardBuilder {
@@ -64,8 +65,7 @@ impl ShardBuilder {
     }
     /// <p>The name of the shard</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the shard</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ShardBuilder {
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ShardBuilder {
     }
     /// <p>The keyspace for this shard.</p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slots = input;
-        self
+        self.slots = input; self
     }
     /// <p>The keyspace for this shard.</p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +104,16 @@ impl ShardBuilder {
     /// <p>A list containing information about individual nodes within the shard</p>
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes.unwrap_or_default();
-        v.push(input);
-        self.nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing information about individual nodes within the shard</p>
-    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
-        self.nodes = input;
-        self
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Node>>) -> Self {
+        self.nodes = input; self
     }
     /// <p>A list containing information about individual nodes within the shard</p>
-    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Node>> {
         &self.nodes
     }
     /// <p>The number of nodes in the shard</p>
@@ -126,8 +123,7 @@ impl ShardBuilder {
     }
     /// <p>The number of nodes in the shard</p>
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input;
-        self
+        self.number_of_nodes = input; self
     }
     /// <p>The number of nodes in the shard</p>
     pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
@@ -136,11 +132,17 @@ impl ShardBuilder {
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     pub fn build(self) -> crate::types::Shard {
         crate::types::Shard {
-            name: self.name,
-            status: self.status,
-            slots: self.slots,
-            nodes: self.nodes,
-            number_of_nodes: self.number_of_nodes,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            slots: self.slots
+            ,
+            nodes: self.nodes
+            ,
+            number_of_nodes: self.number_of_nodes
+            ,
         }
     }
 }
+

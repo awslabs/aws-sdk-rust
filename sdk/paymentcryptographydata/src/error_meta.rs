@@ -22,7 +22,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,48 +33,42 @@ impl ::std::fmt::Display for Error {
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::VerificationFailedException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::InternalServerException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
-            Self::ValidationException(inner) => inner.meta(),
-            Self::VerificationFailedException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::InternalServerException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::ThrottlingException(inner) => inner.meta(),
+Self::ValidationException(inner) => inner.meta(),
+Self::VerificationFailedException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -90,17 +84,16 @@ impl From<crate::operation::decrypt_data::DecryptDataError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -116,56 +109,41 @@ impl From<crate::operation::encrypt_data::EncryptDataError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::generate_card_validation_data::GenerateCardValidationDataError> for Error {
     fn from(err: crate::operation::generate_card_validation_data::GenerateCardValidationDataError) -> Self {
         match err {
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::generate_card_validation_data::GenerateCardValidationDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -181,17 +159,16 @@ impl From<crate::operation::generate_mac::GenerateMacError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -207,17 +184,16 @@ impl From<crate::operation::generate_pin_data::GeneratePinDataError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -233,17 +209,16 @@ impl From<crate::operation::re_encrypt_data::ReEncryptDataError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -259,105 +234,68 @@ impl From<crate::operation::translate_pin_data::TranslatePinDataError> for Error
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError> for Error {
     fn from(err: crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError) -> Self {
         match err {
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::VerificationFailedException(inner) => {
-                Error::VerificationFailedException(inner)
-            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
             crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::verify_card_validation_data::VerifyCardValidationDataError> for Error {
     fn from(err: crate::operation::verify_card_validation_data::VerifyCardValidationDataError) -> Self {
         match err {
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::VerificationFailedException(inner) => {
-                Error::VerificationFailedException(inner)
-            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
             crate::operation::verify_card_validation_data::VerifyCardValidationDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -374,17 +312,16 @@ impl From<crate::operation::verify_mac::VerifyMacError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_pin_data::VerifyPinDataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_pin_data::VerifyPinDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_pin_data::VerifyPinDataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -410,7 +347,7 @@ impl ::std::error::Error for Error {
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::VerificationFailedException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -427,3 +364,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Provides the configuration information for the identifiers of your users.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserIdentityConfiguration {
+pub struct UserIdentityConfiguration  {
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     pub identity_attribute_name: ::std::option::Option<::std::string::String>,
 }
-impl UserIdentityConfiguration {
+impl  UserIdentityConfiguration  {
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
-    pub fn identity_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn identity_attribute_name(&self) -> ::std::option::Option<& str> {
         self.identity_attribute_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl UserIdentityConfigurationBuilder {
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     pub fn set_identity_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_attribute_name = input;
-        self
+        self.identity_attribute_name = input; self
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     pub fn get_identity_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl UserIdentityConfigurationBuilder {
     /// Consumes the builder and constructs a [`UserIdentityConfiguration`](crate::types::UserIdentityConfiguration).
     pub fn build(self) -> crate::types::UserIdentityConfiguration {
         crate::types::UserIdentityConfiguration {
-            identity_attribute_name: self.identity_attribute_name,
+            identity_attribute_name: self.identity_attribute_name
+            ,
         }
     }
 }
+

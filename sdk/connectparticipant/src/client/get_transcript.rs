@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTranscript`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`contact_id(impl Into<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_contact_id):<br>required: **false**<br><p>The contactId from the current contact chain for which transcript is needed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the page. Default: 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p><br>
@@ -11,12 +11,13 @@ impl super::Client {
     ///   - [`sort_order(SortKey)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::sort_order) / [`set_sort_order(Option<SortKey>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for the records. Default: DESCENDING.</p><br>
     ///   - [`start_position(StartPosition)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::start_position) / [`set_start_position(Option<StartPosition>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_start_position):<br>required: **false**<br><p>A filtering option for where to start.</p><br>
     ///   - [`connection_token(impl Into<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::set_connection_token):<br>required: **true**<br><p>The authentication token associated with the participant's connection.</p><br>
-    /// - On success, responds with [`GetTranscriptOutput`](crate::operation::get_transcript::GetTranscriptOutput) with field(s):
+                            /// - On success, responds with [`GetTranscriptOutput`](crate::operation::get_transcript::GetTranscriptOutput) with field(s):
     ///   - [`initial_contact_id(Option<String>)`](crate::operation::get_transcript::GetTranscriptOutput::initial_contact_id): <p>The initial contact ID for the contact.</p>
     ///   - [`transcript(Option<Vec::<Item>>)`](crate::operation::get_transcript::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transcript::GetTranscriptOutput::next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::operation::get_transcript::GetTranscriptError)
+                            /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::operation::get_transcript::GetTranscriptError)
     pub fn get_transcript(&self) -> crate::operation::get_transcript::builders::GetTranscriptFluentBuilder {
-        crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::new(self.handle.clone())
+                            }
 }
+

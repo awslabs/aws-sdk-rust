@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeletePhoneNumberInput {
+pub struct BatchDeletePhoneNumberInput  {
     /// <p>List of phone number IDs.</p>
-    pub phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub phone_number_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchDeletePhoneNumberInput {
+impl  BatchDeletePhoneNumberInput  {
     /// <p>List of phone number IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
-    pub fn phone_number_ids(&self) -> &[::std::string::String] {
-        self.phone_number_ids.as_deref().unwrap_or_default()
+    pub fn phone_number_ids(&self) -> & [::std::string::String] {
+        self.phone_number_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeletePhoneNumberInput {
@@ -25,7 +26,7 @@ impl BatchDeletePhoneNumberInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberInputBuilder {
-    pub(crate) phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phone_number_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchDeletePhoneNumberInputBuilder {
     /// Appends an item to `phone_number_ids`.
@@ -35,28 +36,26 @@ impl BatchDeletePhoneNumberInputBuilder {
     /// <p>List of phone number IDs.</p>
     pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
-        v.push(input.into());
-        self.phone_number_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.phone_number_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of phone number IDs.</p>
-    pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.phone_number_ids = input;
-        self
+    pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.phone_number_ids = input; self
     }
     /// <p>List of phone number IDs.</p>
-    pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.phone_number_ids
     }
     /// Consumes the builder and constructs a [`BatchDeletePhoneNumberInput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput {
-            phone_number_ids: self.phone_number_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput {
+                phone_number_ids: self.phone_number_ids
+                ,
+            }
+        )
     }
 }
+

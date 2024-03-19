@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRevocationStatusInput {
+pub struct GetRevocationStatusInput  {
     /// <p>The timestamp of the signature that validates the profile or job.</p>
     pub signature_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of a signing platform.</p>
@@ -19,23 +19,23 @@ pub struct GetRevocationStatusInput {
     /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
     /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
     /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
-    pub certificate_hashes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_hashes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetRevocationStatusInput {
+impl  GetRevocationStatusInput  {
     /// <p>The timestamp of the signature that validates the profile or job.</p>
-    pub fn signature_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn signature_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.signature_timestamp.as_ref()
     }
     /// <p>The ID of a signing platform.</p>
-    pub fn platform_id(&self) -> ::std::option::Option<&str> {
+    pub fn platform_id(&self) -> ::std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>The version of a signing profile.</p>
-    pub fn profile_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version_arn(&self) -> ::std::option::Option<& str> {
         self.profile_version_arn.as_deref()
     }
     /// <p>The ARN of a signing job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
@@ -46,10 +46,11 @@ impl GetRevocationStatusInput {
     /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
     /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
     /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_hashes.is_none()`.
-    pub fn certificate_hashes(&self) -> &[::std::string::String] {
-        self.certificate_hashes.as_deref().unwrap_or_default()
+    pub fn certificate_hashes(&self) -> & [::std::string::String] {
+        self.certificate_hashes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetRevocationStatusInput {
@@ -67,7 +68,7 @@ pub struct GetRevocationStatusInputBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_hashes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_hashes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetRevocationStatusInputBuilder {
     /// <p>The timestamp of the signature that validates the profile or job.</p>
@@ -78,8 +79,7 @@ impl GetRevocationStatusInputBuilder {
     }
     /// <p>The timestamp of the signature that validates the profile or job.</p>
     pub fn set_signature_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.signature_timestamp = input;
-        self
+        self.signature_timestamp = input; self
     }
     /// <p>The timestamp of the signature that validates the profile or job.</p>
     pub fn get_signature_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,8 +93,7 @@ impl GetRevocationStatusInputBuilder {
     }
     /// <p>The ID of a signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// <p>The ID of a signing platform.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl GetRevocationStatusInputBuilder {
     }
     /// <p>The version of a signing profile.</p>
     pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version_arn = input;
-        self
+        self.profile_version_arn = input; self
     }
     /// <p>The version of a signing profile.</p>
     pub fn get_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl GetRevocationStatusInputBuilder {
     }
     /// <p>The ARN of a signing job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The ARN of a signing job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,9 +141,9 @@ impl GetRevocationStatusInputBuilder {
     /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
     pub fn certificate_hashes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_hashes.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_hashes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_hashes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
@@ -156,9 +153,8 @@ impl GetRevocationStatusInputBuilder {
     /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
     /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
     /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
-    pub fn set_certificate_hashes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_hashes = input;
-        self
+    pub fn set_certificate_hashes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_hashes = input; self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
@@ -168,20 +164,25 @@ impl GetRevocationStatusInputBuilder {
     /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
     /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
     /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
-    pub fn get_certificate_hashes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_hashes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_hashes
     }
     /// Consumes the builder and constructs a [`GetRevocationStatusInput`](crate::operation::get_revocation_status::GetRevocationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_revocation_status::GetRevocationStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_revocation_status::GetRevocationStatusInput {
-            signature_timestamp: self.signature_timestamp,
-            platform_id: self.platform_id,
-            profile_version_arn: self.profile_version_arn,
-            job_arn: self.job_arn,
-            certificate_hashes: self.certificate_hashes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_revocation_status::GetRevocationStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_revocation_status::GetRevocationStatusInput {
+                signature_timestamp: self.signature_timestamp
+                ,
+                platform_id: self.platform_id
+                ,
+                profile_version_arn: self.profile_version_arn
+                ,
+                job_arn: self.job_arn
+                ,
+                certificate_hashes: self.certificate_hashes
+                ,
+            }
+        )
     }
 }
+

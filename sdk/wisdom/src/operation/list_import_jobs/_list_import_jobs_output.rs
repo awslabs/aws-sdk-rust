@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportJobsOutput {
+pub struct ListImportJobsOutput  {
     /// <p>Summary information about the import jobs.</p>
-    pub import_job_summaries: ::std::vec::Vec<crate::types::ImportJobSummary>,
+    pub import_job_summaries: ::std::vec::Vec::<crate::types::ImportJobSummary>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListImportJobsOutput {
+impl  ListImportJobsOutput  {
     /// <p>Summary information about the import jobs.</p>
-    pub fn import_job_summaries(&self) -> &[crate::types::ImportJobSummary] {
-        use std::ops::Deref;
-        self.import_job_summaries.deref()
+    pub fn import_job_summaries(&self) -> & [crate::types::ImportJobSummary] {
+        use std::ops::Deref; self.import_job_summaries.deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput).
     pub fn builder() -> crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListImportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportJobsOutputBuilder {
-    pub(crate) import_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>,
+    pub(crate) import_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListImportJobsOutputBuilder {
     /// <p>Summary information about the import jobs.</p>
     pub fn import_job_summaries(mut self, input: crate::types::ImportJobSummary) -> Self {
         let mut v = self.import_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.import_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.import_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information about the import jobs.</p>
-    pub fn set_import_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>) -> Self {
-        self.import_job_summaries = input;
-        self
+    pub fn set_import_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>>) -> Self {
+        self.import_job_summaries = input; self
     }
     /// <p>Summary information about the import jobs.</p>
-    pub fn get_import_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>> {
+    pub fn get_import_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>> {
         &self.import_job_summaries
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -68,37 +66,37 @@ impl ListImportJobsOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`import_job_summaries`](crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder::import_job_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_import_jobs::ListImportJobsOutput {
-            import_job_summaries: self.import_job_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_job_summaries",
-                    "import_job_summaries was not specified but it is required when building ListImportJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_import_jobs::ListImportJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_import_jobs::ListImportJobsOutput {
+                import_job_summaries: self.import_job_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_job_summaries", "import_job_summaries was not specified but it is required when building ListImportJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

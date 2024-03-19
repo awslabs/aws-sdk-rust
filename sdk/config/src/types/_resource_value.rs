@@ -3,13 +3,13 @@
 /// <p>The dynamic value of the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceValue {
+pub struct ResourceValue  {
     /// <p>The value is a resource ID.</p>
     pub value: crate::types::ResourceValueType,
 }
-impl ResourceValue {
+impl  ResourceValue  {
     /// <p>The value is a resource ID.</p>
-    pub fn value(&self) -> &crate::types::ResourceValueType {
+    pub fn value(&self) -> & crate::types::ResourceValueType {
         &self.value
     }
 }
@@ -35,8 +35,7 @@ impl ResourceValueBuilder {
     }
     /// <p>The value is a resource ID.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::ResourceValueType>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value is a resource ID.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::ResourceValueType> {
@@ -46,13 +45,15 @@ impl ResourceValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ResourceValueBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceValue {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ResourceValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceValue {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ResourceValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

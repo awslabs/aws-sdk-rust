@@ -8,22 +8,23 @@
 /// <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagInfoForResource {
+pub struct TagInfoForResource  {
     /// <p></p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TagInfoForResource {
+impl  TagInfoForResource  {
     /// <p></p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TagInfoForResource {
@@ -38,7 +39,7 @@ impl TagInfoForResource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagInfoForResourceBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TagInfoForResourceBuilder {
     /// <p></p>
@@ -48,8 +49,7 @@ impl TagInfoForResourceBuilder {
     }
     /// <p></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,24 +62,26 @@ impl TagInfoForResourceBuilder {
     /// <p></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p></p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`TagInfoForResource`](crate::types::TagInfoForResource).
     pub fn build(self) -> crate::types::TagInfoForResource {
         crate::types::TagInfoForResource {
-            resource_arn: self.resource_arn,
-            tag_list: self.tag_list,
+            resource_arn: self.resource_arn
+            ,
+            tag_list: self.tag_list
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomRoutingPortMappingsInput {
+pub struct ListCustomRoutingPortMappingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
@@ -12,13 +12,13 @@ pub struct ListCustomRoutingPortMappingsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCustomRoutingPortMappingsInput {
+impl  ListCustomRoutingPortMappingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
@@ -26,7 +26,7 @@ impl ListCustomRoutingPortMappingsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListCustomRoutingPortMappingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
     pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
     pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListCustomRoutingPortMappingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListCustomRoutingPortMappingsInputBuilder {
     }
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl ListCustomRoutingPortMappingsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsInput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput {
-            accelerator_arn: self.accelerator_arn,
-            endpoint_group_arn: self.endpoint_group_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput {
+                accelerator_arn: self.accelerator_arn
+                ,
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

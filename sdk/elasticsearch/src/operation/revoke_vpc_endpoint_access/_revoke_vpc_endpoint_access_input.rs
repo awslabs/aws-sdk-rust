@@ -3,19 +3,19 @@
 /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeVpcEndpointAccessInput {
+pub struct RevokeVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to revoke access from.</p>
     pub account: ::std::option::Option<::std::string::String>,
 }
-impl RevokeVpcEndpointAccessInput {
+impl  RevokeVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The account ID to revoke access from.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RevokeVpcEndpointAccessInputBuilder {
     }
     /// <p>The name of the OpenSearch Service domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the OpenSearch Service domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl RevokeVpcEndpointAccessInputBuilder {
     }
     /// <p>The account ID to revoke access from.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The account ID to revoke access from.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
     /// Consumes the builder and constructs a [`RevokeVpcEndpointAccessInput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput {
-            domain_name: self.domain_name,
-            account: self.account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput {
+                domain_name: self.domain_name
+                ,
+                account: self.account
+                ,
+            }
+        )
     }
 }
+

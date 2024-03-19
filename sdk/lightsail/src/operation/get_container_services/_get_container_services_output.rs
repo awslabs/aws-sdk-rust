@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerServicesOutput {
+pub struct GetContainerServicesOutput  {
     /// <p>An array of objects that describe one or more container services.</p>
-    pub container_services: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
+    pub container_services: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerService>>,
     _request_id: Option<String>,
 }
-impl GetContainerServicesOutput {
+impl  GetContainerServicesOutput  {
     /// <p>An array of objects that describe one or more container services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_services.is_none()`.
-    pub fn container_services(&self) -> &[crate::types::ContainerService] {
-        self.container_services.as_deref().unwrap_or_default()
+    pub fn container_services(&self) -> & [crate::types::ContainerService] {
+        self.container_services.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContainerServicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContainerServicesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicesOutput`](crate::operation::get_container_services::GetContainerServicesOutput).
     pub fn builder() -> crate::operation::get_container_services::builders::GetContainerServicesOutputBuilder {
@@ -31,7 +32,7 @@ impl GetContainerServicesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServicesOutputBuilder {
-    pub(crate) container_services: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
+    pub(crate) container_services: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerService>>,
     _request_id: Option<String>,
 }
 impl GetContainerServicesOutputBuilder {
@@ -42,33 +43,34 @@ impl GetContainerServicesOutputBuilder {
     /// <p>An array of objects that describe one or more container services.</p>
     pub fn container_services(mut self, input: crate::types::ContainerService) -> Self {
         let mut v = self.container_services.unwrap_or_default();
-        v.push(input);
-        self.container_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.container_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe one or more container services.</p>
-    pub fn set_container_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>) -> Self {
-        self.container_services = input;
-        self
+    pub fn set_container_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerService>>) -> Self {
+        self.container_services = input; self
     }
     /// <p>An array of objects that describe one or more container services.</p>
-    pub fn get_container_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerService>> {
+    pub fn get_container_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerService>> {
         &self.container_services
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContainerServicesOutput`](crate::operation::get_container_services::GetContainerServicesOutput).
     pub fn build(self) -> crate::operation::get_container_services::GetContainerServicesOutput {
         crate::operation::get_container_services::GetContainerServicesOutput {
-            container_services: self.container_services,
+            container_services: self.container_services
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

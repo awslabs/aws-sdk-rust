@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteGremlinProfileQueryInput {
+pub struct ExecuteGremlinProfileQueryInput  {
     /// <p>The Gremlin query string to profile.</p>
     pub gremlin_query: ::std::option::Option<::std::string::String>,
     /// <p>If this flag is set to <code>TRUE</code>, the query results are gathered and displayed as part of the profile report. If <code>FALSE</code>, only the result count is displayed.</p>
@@ -14,9 +14,9 @@ pub struct ExecuteGremlinProfileQueryInput {
     /// <p>If this flag is set to <code>TRUE</code>, the results include a detailed report of all index operations that took place during query execution and serialization.</p>
     pub index_ops: ::std::option::Option<bool>,
 }
-impl ExecuteGremlinProfileQueryInput {
+impl  ExecuteGremlinProfileQueryInput  {
     /// <p>The Gremlin query string to profile.</p>
-    pub fn gremlin_query(&self) -> ::std::option::Option<&str> {
+    pub fn gremlin_query(&self) -> ::std::option::Option<& str> {
         self.gremlin_query.as_deref()
     }
     /// <p>If this flag is set to <code>TRUE</code>, the query results are gathered and displayed as part of the profile report. If <code>FALSE</code>, only the result count is displayed.</p>
@@ -28,7 +28,7 @@ impl ExecuteGremlinProfileQueryInput {
         self.chop
     }
     /// <p>If non-null, the gathered results are returned in a serialized response message in the format specified by this parameter. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin profile API in Neptune</a> for more information.</p>
-    pub fn serializer(&self) -> ::std::option::Option<&str> {
+    pub fn serializer(&self) -> ::std::option::Option<& str> {
         self.serializer.as_deref()
     }
     /// <p>If this flag is set to <code>TRUE</code>, the results include a detailed report of all index operations that took place during query execution and serialization.</p>
@@ -62,8 +62,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
     }
     /// <p>The Gremlin query string to profile.</p>
     pub fn set_gremlin_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gremlin_query = input;
-        self
+        self.gremlin_query = input; self
     }
     /// <p>The Gremlin query string to profile.</p>
     pub fn get_gremlin_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
     }
     /// <p>If this flag is set to <code>TRUE</code>, the query results are gathered and displayed as part of the profile report. If <code>FALSE</code>, only the result count is displayed.</p>
     pub fn set_results(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.results = input;
-        self
+        self.results = input; self
     }
     /// <p>If this flag is set to <code>TRUE</code>, the query results are gathered and displayed as part of the profile report. If <code>FALSE</code>, only the result count is displayed.</p>
     pub fn get_results(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
     }
     /// <p>If non-zero, causes the results string to be truncated at that number of characters. If set to zero, the string contains all the results.</p>
     pub fn set_chop(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.chop = input;
-        self
+        self.chop = input; self
     }
     /// <p>If non-zero, causes the results string to be truncated at that number of characters. If set to zero, the string contains all the results.</p>
     pub fn get_chop(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
     }
     /// <p>If non-null, the gathered results are returned in a serialized response message in the format specified by this parameter. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin profile API in Neptune</a> for more information.</p>
     pub fn set_serializer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serializer = input;
-        self
+        self.serializer = input; self
     }
     /// <p>If non-null, the gathered results are returned in a serialized response message in the format specified by this parameter. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin profile API in Neptune</a> for more information.</p>
     pub fn get_serializer(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,26 +114,28 @@ impl ExecuteGremlinProfileQueryInputBuilder {
     }
     /// <p>If this flag is set to <code>TRUE</code>, the results include a detailed report of all index operations that took place during query execution and serialization.</p>
     pub fn set_index_ops(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.index_ops = input;
-        self
+        self.index_ops = input; self
     }
     /// <p>If this flag is set to <code>TRUE</code>, the results include a detailed report of all index operations that took place during query execution and serialization.</p>
     pub fn get_index_ops(&self) -> &::std::option::Option<bool> {
         &self.index_ops
     }
     /// Consumes the builder and constructs a [`ExecuteGremlinProfileQueryInput`](crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput {
-            gremlin_query: self.gremlin_query,
-            results: self.results,
-            chop: self.chop,
-            serializer: self.serializer,
-            index_ops: self.index_ops,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput {
+                gremlin_query: self.gremlin_query
+                ,
+                results: self.results
+                ,
+                chop: self.chop
+                ,
+                serializer: self.serializer
+                ,
+                index_ops: self.index_ops
+                ,
+            }
+        )
     }
 }
+

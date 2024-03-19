@@ -3,7 +3,7 @@
 /// Update Agent Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAgentInput {
+pub struct UpdateAgentInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Name for a resource.
@@ -23,25 +23,25 @@ pub struct UpdateAgentInput {
     /// Configuration for prompt override.
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
 }
-impl UpdateAgentInput {
+impl  UpdateAgentInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Name for a resource.
-    pub fn agent_name(&self) -> ::std::option::Option<&str> {
+    pub fn agent_name(&self) -> ::std::option::Option<& str> {
         self.agent_name.as_deref()
     }
     /// Instruction for the agent.
-    pub fn instruction(&self) -> ::std::option::Option<&str> {
+    pub fn instruction(&self) -> ::std::option::Option<& str> {
         self.instruction.as_deref()
     }
     /// ARN or name of a Bedrock model.
-    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+    pub fn foundation_model(&self) -> ::std::option::Option<& str> {
         self.foundation_model.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Max Session Time.
@@ -49,19 +49,19 @@ impl UpdateAgentInput {
         self.idle_session_ttl_in_seconds
     }
     /// ARN of a IAM role.
-    pub fn agent_resource_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_resource_role_arn(&self) -> ::std::option::Option<& str> {
         self.agent_resource_role_arn.as_deref()
     }
     /// A KMS key ARN
-    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.customer_encryption_key_arn.as_deref()
     }
     /// Configuration for prompt override.
-    pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
+    pub fn prompt_override_configuration(&self) -> ::std::option::Option<& crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAgentInput {
+impl  ::std::fmt::Debug for UpdateAgentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAgentInput");
         formatter.field("agent_id", &self.agent_id);
@@ -106,8 +106,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_name = input;
-        self
+        self.agent_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Instruction for the agent.
     pub fn set_instruction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instruction = input;
-        self
+        self.instruction = input; self
     }
     /// Instruction for the agent.
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl UpdateAgentInputBuilder {
     }
     /// ARN or name of a Bedrock model.
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.foundation_model = input;
-        self
+        self.foundation_model = input; self
     }
     /// ARN or name of a Bedrock model.
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +172,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Max Session Time.
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// Max Session Time.
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -192,8 +186,7 @@ impl UpdateAgentInputBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_resource_role_arn = input;
-        self
+        self.agent_resource_role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +199,7 @@ impl UpdateAgentInputBuilder {
     }
     /// A KMS key ARN
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_encryption_key_arn = input;
-        self
+        self.customer_encryption_key_arn = input; self
     }
     /// A KMS key ARN
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +212,7 @@ impl UpdateAgentInputBuilder {
     }
     /// Configuration for prompt override.
     pub fn set_prompt_override_configuration(mut self, input: ::std::option::Option<crate::types::PromptOverrideConfiguration>) -> Self {
-        self.prompt_override_configuration = input;
-        self
+        self.prompt_override_configuration = input; self
     }
     /// Configuration for prompt override.
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
@@ -229,17 +220,28 @@ impl UpdateAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agent::UpdateAgentInput {
-            agent_id: self.agent_id,
-            agent_name: self.agent_name,
-            instruction: self.instruction,
-            foundation_model: self.foundation_model,
-            description: self.description,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            agent_resource_role_arn: self.agent_resource_role_arn,
-            customer_encryption_key_arn: self.customer_encryption_key_arn,
-            prompt_override_configuration: self.prompt_override_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_agent::UpdateAgentInput {
+                agent_id: self.agent_id
+                ,
+                agent_name: self.agent_name
+                ,
+                instruction: self.instruction
+                ,
+                foundation_model: self.foundation_model
+                ,
+                description: self.description
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                agent_resource_role_arn: self.agent_resource_role_arn
+                ,
+                customer_encryption_key_arn: self.customer_encryption_key_arn
+                ,
+                prompt_override_configuration: self.prompt_override_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAgentInputBuilder {
@@ -257,3 +259,4 @@ impl ::std::fmt::Debug for UpdateAgentInputBuilder {
         formatter.finish()
     }
 }
+

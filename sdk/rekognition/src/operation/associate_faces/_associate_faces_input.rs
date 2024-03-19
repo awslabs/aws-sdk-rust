@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateFacesInput {
+pub struct AssociateFacesInput  {
     /// <p>The ID of an existing collection containing the UserID.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the existing UserID.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub user_match_threshold: ::std::option::Option<f32>,
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateFacesInput {
+impl  AssociateFacesInput  {
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>The ID for the existing UserID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
-    pub fn face_ids(&self) -> &[::std::string::String] {
-        self.face_ids.as_deref().unwrap_or_default()
+    pub fn face_ids(&self) -> & [::std::string::String] {
+        self.face_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn user_match_threshold(&self) -> ::std::option::Option<f32> {
         self.user_match_threshold
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -51,7 +52,7 @@ impl AssociateFacesInput {
 pub struct AssociateFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_match_threshold: ::std::option::Option<f32>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +65,7 @@ impl AssociateFacesInputBuilder {
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl AssociateFacesInputBuilder {
     }
     /// <p>The ID for the existing UserID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID for the existing UserID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +92,16 @@ impl AssociateFacesInputBuilder {
     /// <p>An array of FaceIDs to associate with the UserID.</p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_ids.unwrap_or_default();
-        v.push(input.into());
-        self.face_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.face_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.face_ids = input;
-        self
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.face_ids = input; self
     }
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.face_ids
     }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
@@ -113,8 +111,7 @@ impl AssociateFacesInputBuilder {
     }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn set_user_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.user_match_threshold = input;
-        self
+        self.user_match_threshold = input; self
     }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn get_user_match_threshold(&self) -> &::std::option::Option<f32> {
@@ -127,23 +124,28 @@ impl AssociateFacesInputBuilder {
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`AssociateFacesInput`](crate::operation::associate_faces::AssociateFacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_faces::AssociateFacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_faces::AssociateFacesInput {
-            collection_id: self.collection_id,
-            user_id: self.user_id,
-            face_ids: self.face_ids,
-            user_match_threshold: self.user_match_threshold,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_faces::AssociateFacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_faces::AssociateFacesInput {
+                collection_id: self.collection_id
+                ,
+                user_id: self.user_id
+                ,
+                face_ids: self.face_ids
+                ,
+                user_match_threshold: self.user_match_threshold
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

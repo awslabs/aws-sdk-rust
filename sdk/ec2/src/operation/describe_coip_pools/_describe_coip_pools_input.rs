@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCoipPoolsInput {
+pub struct DescribeCoipPoolsInput  {
     /// <p>The IDs of the address pools.</p>
-    pub pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pool_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -12,7 +12,7 @@ pub struct DescribeCoipPoolsInput {
     /// <li>
     /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
@@ -20,12 +20,13 @@ pub struct DescribeCoipPoolsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeCoipPoolsInput {
+impl  DescribeCoipPoolsInput  {
     /// <p>The IDs of the address pools.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_ids.is_none()`.
-    pub fn pool_ids(&self) -> &[::std::string::String] {
-        self.pool_ids.as_deref().unwrap_or_default()
+    pub fn pool_ids(&self) -> & [::std::string::String] {
+        self.pool_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -34,17 +35,18 @@ impl DescribeCoipPoolsInput {
     /// <li>
     /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -63,8 +65,8 @@ impl DescribeCoipPoolsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCoipPoolsInputBuilder {
-    pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -77,17 +79,16 @@ impl DescribeCoipPoolsInputBuilder {
     /// <p>The IDs of the address pools.</p>
     pub fn pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_ids.unwrap_or_default();
-        v.push(input.into());
-        self.pool_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pool_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pool_ids = input;
-        self
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.pool_ids = input; self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.pool_ids
     }
     /// Appends an item to `filters`.
@@ -103,9 +104,9 @@ impl DescribeCoipPoolsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -114,9 +115,8 @@ impl DescribeCoipPoolsInputBuilder {
     /// <li>
     /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -125,7 +125,7 @@ impl DescribeCoipPoolsInputBuilder {
     /// <li>
     /// <p><code>coip-pool.pool-id</code> - The ID of the address pool.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -135,8 +135,7 @@ impl DescribeCoipPoolsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -149,8 +148,7 @@ impl DescribeCoipPoolsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,23 +161,28 @@ impl DescribeCoipPoolsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_coip_pools::DescribeCoipPoolsInput {
-            pool_ids: self.pool_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_coip_pools::DescribeCoipPoolsInput {
+                pool_ids: self.pool_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

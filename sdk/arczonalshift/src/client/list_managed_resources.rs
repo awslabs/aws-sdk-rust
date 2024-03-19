@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedResources`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
-    /// - On success, responds with [`ListManagedResourcesOutput`](crate::operation::list_managed_resources::ListManagedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListManagedResourcesOutput`](crate::operation::list_managed_resources::ListManagedResourcesOutput) with field(s):
     ///   - [`items(Vec::<ManagedResourceSummary>)`](crate::operation::list_managed_resources::ListManagedResourcesOutput::items): <p>The items in the response list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_resources::ListManagedResourcesOutput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListManagedResourcesError>`](crate::operation::list_managed_resources::ListManagedResourcesError)
+                            /// - On failure, responds with [`SdkError<ListManagedResourcesError>`](crate::operation::list_managed_resources::ListManagedResourcesError)
     pub fn list_managed_resources(&self) -> crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder {
-        crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_managed_resources::builders::ListManagedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

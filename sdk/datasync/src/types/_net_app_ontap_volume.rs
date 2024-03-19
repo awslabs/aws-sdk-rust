@@ -3,7 +3,7 @@
 /// <p>The information that DataSync Discovery collects about a volume in your on-premises storage system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetAppOntapVolume {
+pub struct NetAppOntapVolume  {
     /// <p>The name of the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the volume.</p>
@@ -29,20 +29,20 @@ pub struct NetAppOntapVolume {
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
     pub max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
     pub lun_count: ::std::option::Option<i64>,
 }
-impl NetAppOntapVolume {
+impl  NetAppOntapVolume  {
     /// <p>The name of the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>The universally unique identifier (UUID) of the volume.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The number of CIFS shares in the volume.</p>
@@ -50,15 +50,15 @@ impl NetAppOntapVolume {
         self.cifs_share_count
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
-    pub fn security_style(&self) -> ::std::option::Option<&str> {
+    pub fn security_style(&self) -> ::std::option::Option<& str> {
         self.security_style.as_deref()
     }
     /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
-    pub fn svm_uuid(&self) -> ::std::option::Option<&str> {
+    pub fn svm_uuid(&self) -> ::std::option::Option<& str> {
         self.svm_uuid.as_deref()
     }
     /// <p>The name of the SVM associated with the volume.</p>
-    pub fn svm_name(&self) -> ::std::option::Option<&str> {
+    pub fn svm_name(&self) -> ::std::option::Option<& str> {
         self.svm_name.as_deref()
     }
     /// <p>The storage space that's being used in the volume.</p>
@@ -82,18 +82,19 @@ impl NetAppOntapVolume {
         self.snapshot_capacity_used
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
-    pub fn max_p95_performance(&self) -> ::std::option::Option<&crate::types::MaxP95Performance> {
+    pub fn max_p95_performance(&self) -> ::std::option::Option<& crate::types::MaxP95Performance> {
         self.max_p95_performance.as_ref()
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
-    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
-        self.recommendations.as_deref().unwrap_or_default()
+    pub fn recommendations(&self) -> & [crate::types::Recommendation] {
+        self.recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<& crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
@@ -124,7 +125,7 @@ pub struct NetAppOntapVolumeBuilder {
     pub(crate) nfs_exported: ::std::option::Option<bool>,
     pub(crate) snapshot_capacity_used: ::std::option::Option<i64>,
     pub(crate) max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
-    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) lun_count: ::std::option::Option<i64>,
 }
@@ -136,8 +137,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The name of the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>The name of the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +150,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The universally unique identifier (UUID) of the volume.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The universally unique identifier (UUID) of the volume.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +163,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The number of CIFS shares in the volume.</p>
     pub fn set_cifs_share_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cifs_share_count = input;
-        self
+        self.cifs_share_count = input; self
     }
     /// <p>The number of CIFS shares in the volume.</p>
     pub fn get_cifs_share_count(&self) -> &::std::option::Option<i64> {
@@ -178,8 +176,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
     pub fn set_security_style(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_style = input;
-        self
+        self.security_style = input; self
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
     pub fn get_security_style(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +189,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
     pub fn set_svm_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.svm_uuid = input;
-        self
+        self.svm_uuid = input; self
     }
     /// <p>The UUID of the storage virtual machine (SVM) associated with the volume.</p>
     pub fn get_svm_uuid(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +202,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The name of the SVM associated with the volume.</p>
     pub fn set_svm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.svm_name = input;
-        self
+        self.svm_name = input; self
     }
     /// <p>The name of the SVM associated with the volume.</p>
     pub fn get_svm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +215,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The storage space that's being used in the volume.</p>
     pub fn set_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity_used = input;
-        self
+        self.capacity_used = input; self
     }
     /// <p>The storage space that's being used in the volume.</p>
     pub fn get_capacity_used(&self) -> &::std::option::Option<i64> {
@@ -234,8 +228,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The total storage space that's available in the volume.</p>
     pub fn set_capacity_provisioned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity_provisioned = input;
-        self
+        self.capacity_provisioned = input; self
     }
     /// <p>The total storage space that's available in the volume.</p>
     pub fn get_capacity_provisioned(&self) -> &::std::option::Option<i64> {
@@ -248,8 +241,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The storage space that's being used in the volume without accounting for compression or deduplication.</p>
     pub fn set_logical_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.logical_capacity_used = input;
-        self
+        self.logical_capacity_used = input; self
     }
     /// <p>The storage space that's being used in the volume without accounting for compression or deduplication.</p>
     pub fn get_logical_capacity_used(&self) -> &::std::option::Option<i64> {
@@ -262,8 +254,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The number of NFS volumes in the volume.</p>
     pub fn set_nfs_exported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.nfs_exported = input;
-        self
+        self.nfs_exported = input; self
     }
     /// <p>The number of NFS volumes in the volume.</p>
     pub fn get_nfs_exported(&self) -> &::std::option::Option<bool> {
@@ -276,8 +267,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The amount of storage in the volume that's being used for snapshots.</p>
     pub fn set_snapshot_capacity_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.snapshot_capacity_used = input;
-        self
+        self.snapshot_capacity_used = input; self
     }
     /// <p>The amount of storage in the volume that's being used for snapshots.</p>
     pub fn get_snapshot_capacity_used(&self) -> &::std::option::Option<i64> {
@@ -290,8 +280,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
     pub fn set_max_p95_performance(mut self, input: ::std::option::Option<crate::types::MaxP95Performance>) -> Self {
-        self.max_p95_performance = input;
-        self
+        self.max_p95_performance = input; self
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
     pub fn get_max_p95_performance(&self) -> &::std::option::Option<crate::types::MaxP95Performance> {
@@ -304,17 +293,16 @@ impl NetAppOntapVolumeBuilder {
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input; self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
@@ -326,8 +314,7 @@ impl NetAppOntapVolumeBuilder {
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
-        self.recommendation_status = input;
-        self
+        self.recommendation_status = input; self
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
@@ -341,8 +328,7 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
     pub fn set_lun_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.lun_count = input;
-        self
+        self.lun_count = input; self
     }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
     pub fn get_lun_count(&self) -> &::std::option::Option<i64> {
@@ -351,21 +337,38 @@ impl NetAppOntapVolumeBuilder {
     /// Consumes the builder and constructs a [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
     pub fn build(self) -> crate::types::NetAppOntapVolume {
         crate::types::NetAppOntapVolume {
-            volume_name: self.volume_name,
-            resource_id: self.resource_id,
-            cifs_share_count: self.cifs_share_count,
-            security_style: self.security_style,
-            svm_uuid: self.svm_uuid,
-            svm_name: self.svm_name,
-            capacity_used: self.capacity_used,
-            capacity_provisioned: self.capacity_provisioned,
-            logical_capacity_used: self.logical_capacity_used,
-            nfs_exported: self.nfs_exported.unwrap_or_default(),
-            snapshot_capacity_used: self.snapshot_capacity_used,
-            max_p95_performance: self.max_p95_performance,
-            recommendations: self.recommendations,
-            recommendation_status: self.recommendation_status,
-            lun_count: self.lun_count,
+            volume_name: self.volume_name
+            ,
+            resource_id: self.resource_id
+            ,
+            cifs_share_count: self.cifs_share_count
+            ,
+            security_style: self.security_style
+            ,
+            svm_uuid: self.svm_uuid
+            ,
+            svm_name: self.svm_name
+            ,
+            capacity_used: self.capacity_used
+            ,
+            capacity_provisioned: self.capacity_provisioned
+            ,
+            logical_capacity_used: self.logical_capacity_used
+            ,
+            nfs_exported: self.nfs_exported
+                .unwrap_or_default()
+            ,
+            snapshot_capacity_used: self.snapshot_capacity_used
+            ,
+            max_p95_performance: self.max_p95_performance
+            ,
+            recommendations: self.recommendations
+            ,
+            recommendation_status: self.recommendation_status
+            ,
+            lun_count: self.lun_count
+            ,
         }
     }
 }
+

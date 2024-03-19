@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxVolumeInput {
+pub struct CreateKxVolumeInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
@@ -18,47 +18,48 @@ pub struct CreateKxVolumeInput {
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
-    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateKxVolumeInput {
+impl  CreateKxVolumeInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>A unique identifier for the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>A description of the volume.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
-    pub fn nas1_configuration(&self) -> ::std::option::Option<&crate::types::KxNas1Configuration> {
+    pub fn nas1_configuration(&self) -> ::std::option::Option<& crate::types::KxNas1Configuration> {
         self.nas1_configuration.as_ref()
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The identifier of the availability zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
-    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
-        self.availability_zone_ids.as_deref().unwrap_or_default()
+    pub fn availability_zone_ids(&self) -> & [::std::string::String] {
+        self.availability_zone_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -80,8 +81,8 @@ pub struct CreateKxVolumeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nas1_configuration: ::std::option::Option<crate::types::KxNas1Configuration>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateKxVolumeInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -91,8 +92,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. When you select <code>NAS_1</code> volume type, you must also provide <code>nas1Configuration</code>.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
@@ -136,8 +134,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>A description of the volume.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the volume.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
-        self.nas1_configuration = input;
-        self
+        self.nas1_configuration = input; self
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
@@ -179,8 +174,7 @@ impl CreateKxVolumeInputBuilder {
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
@@ -193,17 +187,16 @@ impl CreateKxVolumeInputBuilder {
     /// <p>The identifier of the availability zones.</p>
     pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zone_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zone_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zone_ids = input;
-        self
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input; self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zone_ids
     }
     /// Adds a key-value pair to `tags`.
@@ -213,33 +206,42 @@ impl CreateKxVolumeInputBuilder {
     /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the volume. You can add up to 50 tags to a volume.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKxVolumeInput`](crate::operation::create_kx_volume::CreateKxVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_volume::CreateKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_kx_volume::CreateKxVolumeInput {
-            client_token: self.client_token,
-            environment_id: self.environment_id,
-            volume_type: self.volume_type,
-            volume_name: self.volume_name,
-            description: self.description,
-            nas1_configuration: self.nas1_configuration,
-            az_mode: self.az_mode,
-            availability_zone_ids: self.availability_zone_ids,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_volume::CreateKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_volume::CreateKxVolumeInput {
+                client_token: self.client_token
+                ,
+                environment_id: self.environment_id
+                ,
+                volume_type: self.volume_type
+                ,
+                volume_name: self.volume_name
+                ,
+                description: self.description
+                ,
+                nas1_configuration: self.nas1_configuration
+                ,
+                az_mode: self.az_mode
+                ,
+                availability_zone_ids: self.availability_zone_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

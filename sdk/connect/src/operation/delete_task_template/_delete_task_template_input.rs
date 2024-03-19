@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTaskTemplateInput {
+pub struct DeleteTaskTemplateInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the task template.</p>
     pub task_template_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTaskTemplateInput {
+impl  DeleteTaskTemplateInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_template_id(&self) -> ::std::option::Option<& str> {
         self.task_template_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteTaskTemplateInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteTaskTemplateInputBuilder {
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_template_id = input;
-        self
+        self.task_template_id = input; self
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_template_id
     }
     /// Consumes the builder and constructs a [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_task_template::DeleteTaskTemplateInput {
-            instance_id: self.instance_id,
-            task_template_id: self.task_template_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_task_template::DeleteTaskTemplateInput {
+                instance_id: self.instance_id
+                ,
+                task_template_id: self.task_template_id
+                ,
+            }
+        )
     }
 }
+

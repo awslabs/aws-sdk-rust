@@ -3,7 +3,7 @@
 /// <p>Configure image tests for your pipeline build. Tests run after building the image, to verify that the AMI or container image is valid before distributing it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageTestsConfiguration {
+pub struct ImageTestsConfiguration  {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub image_tests_enabled: ::std::option::Option<bool>,
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
@@ -11,7 +11,7 @@ pub struct ImageTestsConfiguration {
     /// </note>
     pub timeout_minutes: ::std::option::Option<i32>,
 }
-impl ImageTestsConfiguration {
+impl  ImageTestsConfiguration  {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub fn image_tests_enabled(&self) -> ::std::option::Option<bool> {
         self.image_tests_enabled
@@ -45,8 +45,7 @@ impl ImageTestsConfigurationBuilder {
     }
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub fn set_image_tests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.image_tests_enabled = input;
-        self
+        self.image_tests_enabled = input; self
     }
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub fn get_image_tests_enabled(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl ImageTestsConfigurationBuilder {
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_minutes = input;
-        self
+        self.timeout_minutes = input; self
     }
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
@@ -75,8 +73,11 @@ impl ImageTestsConfigurationBuilder {
     /// Consumes the builder and constructs a [`ImageTestsConfiguration`](crate::types::ImageTestsConfiguration).
     pub fn build(self) -> crate::types::ImageTestsConfiguration {
         crate::types::ImageTestsConfiguration {
-            image_tests_enabled: self.image_tests_enabled,
-            timeout_minutes: self.timeout_minutes,
+            image_tests_enabled: self.image_tests_enabled
+            ,
+            timeout_minutes: self.timeout_minutes
+            ,
         }
     }
 }
+

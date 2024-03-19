@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprovisionIpamByoasnInput {
+pub struct DeprovisionIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IPAM ID.</p>
@@ -10,17 +10,17 @@ pub struct DeprovisionIpamByoasnInput {
     /// <p>An ASN.</p>
     pub asn: ::std::option::Option<::std::string::String>,
 }
-impl DeprovisionIpamByoasnInput {
+impl  DeprovisionIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IPAM ID.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>An ASN.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeprovisionIpamByoasnInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl DeprovisionIpamByoasnInputBuilder {
     }
     /// <p>The IPAM ID.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>The IPAM ID.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DeprovisionIpamByoasnInputBuilder {
     }
     /// <p>An ASN.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>An ASN.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
         &self.asn
     }
     /// Consumes the builder and constructs a [`DeprovisionIpamByoasnInput`](crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput {
-            dry_run: self.dry_run,
-            ipam_id: self.ipam_id,
-            asn: self.asn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput {
+                dry_run: self.dry_run
+                ,
+                ipam_id: self.ipam_id
+                ,
+                asn: self.asn
+                ,
+            }
+        )
     }
 }
+

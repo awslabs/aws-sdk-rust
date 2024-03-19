@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigRuleInput {
+pub struct PutConfigRuleInput  {
     /// <p>The rule that you want to add to your account.</p>
     pub config_rule: ::std::option::Option<crate::types::ConfigRule>,
     /// <p>An array of tag object.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutConfigRuleInput {
+impl  PutConfigRuleInput  {
     /// <p>The rule that you want to add to your account.</p>
-    pub fn config_rule(&self) -> ::std::option::Option<&crate::types::ConfigRule> {
+    pub fn config_rule(&self) -> ::std::option::Option<& crate::types::ConfigRule> {
         self.config_rule.as_ref()
     }
     /// <p>An array of tag object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutConfigRuleInput {
@@ -32,7 +33,7 @@ impl PutConfigRuleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigRuleInputBuilder {
     pub(crate) config_rule: ::std::option::Option<crate::types::ConfigRule>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutConfigRuleInputBuilder {
     /// <p>The rule that you want to add to your account.</p>
@@ -43,8 +44,7 @@ impl PutConfigRuleInputBuilder {
     }
     /// <p>The rule that you want to add to your account.</p>
     pub fn set_config_rule(mut self, input: ::std::option::Option<crate::types::ConfigRule>) -> Self {
-        self.config_rule = input;
-        self
+        self.config_rule = input; self
     }
     /// <p>The rule that you want to add to your account.</p>
     pub fn get_config_rule(&self) -> &::std::option::Option<crate::types::ConfigRule> {
@@ -57,26 +57,28 @@ impl PutConfigRuleInputBuilder {
     /// <p>An array of tag object.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tag object.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tag object.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_config_rule::PutConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_config_rule::PutConfigRuleInput {
-            config_rule: self.config_rule,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_config_rule::PutConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_config_rule::PutConfigRuleInput {
+                config_rule: self.config_rule
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogsLogGroup {
+pub struct CloudWatchLogsLogGroup  {
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code></p>
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchLogsLogGroup {
+impl  CloudWatchLogsLogGroup  {
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code></p>
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> ::std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CloudWatchLogsLogGroupBuilder {
     }
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code></p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_arn = input;
-        self
+        self.log_group_arn = input; self
     }
     /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code></p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CloudWatchLogsLogGroupBuilder {
     /// Consumes the builder and constructs a [`CloudWatchLogsLogGroup`](crate::types::CloudWatchLogsLogGroup).
     pub fn build(self) -> crate::types::CloudWatchLogsLogGroup {
         crate::types::CloudWatchLogsLogGroup {
-            log_group_arn: self.log_group_arn,
+            log_group_arn: self.log_group_arn
+            ,
         }
     }
 }
+

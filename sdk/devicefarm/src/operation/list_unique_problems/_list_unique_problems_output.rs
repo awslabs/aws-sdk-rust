@@ -3,7 +3,7 @@
 /// <p>Represents the result of a list unique problems request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUniqueProblemsOutput {
+pub struct ListUniqueProblemsOutput  {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -22,13 +22,12 @@ pub struct ListUniqueProblemsOutput {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub unique_problems:
-        ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
+    pub unique_problems: ::std::option::Option<::std::collections::HashMap::<crate::types::ExecutionResult, ::std::vec::Vec::<crate::types::UniqueProblem>>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListUniqueProblemsOutput {
+impl  ListUniqueProblemsOutput  {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -47,21 +46,19 @@ impl ListUniqueProblemsOutput {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn unique_problems(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>> {
+    pub fn unique_problems(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::ExecutionResult, ::std::vec::Vec::<crate::types::UniqueProblem>>> {
         self.unique_problems.as_ref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUniqueProblemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUniqueProblemsOutput {
     /// Creates a new builder-style object to manufacture [`ListUniqueProblemsOutput`](crate::operation::list_unique_problems::ListUniqueProblemsOutput).
     pub fn builder() -> crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder {
@@ -73,8 +70,7 @@ impl ListUniqueProblemsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUniqueProblemsOutputBuilder {
-    pub(crate) unique_problems:
-        ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
+    pub(crate) unique_problems: ::std::option::Option<::std::collections::HashMap::<crate::types::ExecutionResult, ::std::vec::Vec::<crate::types::UniqueProblem>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -101,11 +97,11 @@ impl ListUniqueProblemsOutputBuilder {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn unique_problems(mut self, k: crate::types::ExecutionResult, v: ::std::vec::Vec<crate::types::UniqueProblem>) -> Self {
+    pub fn unique_problems(mut self, k: crate::types::ExecutionResult, v: ::std::vec::Vec::<crate::types::UniqueProblem>) -> Self {
         let mut hash_map = self.unique_problems.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.unique_problems = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.unique_problems = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
@@ -125,12 +121,8 @@ impl ListUniqueProblemsOutputBuilder {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn set_unique_problems(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
-    ) -> Self {
-        self.unique_problems = input;
-        self
+    pub fn set_unique_problems(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ExecutionResult, ::std::vec::Vec::<crate::types::UniqueProblem>>>) -> Self {
+        self.unique_problems = input; self
     }
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
@@ -150,9 +142,7 @@ impl ListUniqueProblemsOutputBuilder {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn get_unique_problems(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>> {
+    pub fn get_unique_problems(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ExecutionResult, ::std::vec::Vec::<crate::types::UniqueProblem>>> {
         &self.unique_problems
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
@@ -162,28 +152,30 @@ impl ListUniqueProblemsOutputBuilder {
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUniqueProblemsOutput`](crate::operation::list_unique_problems::ListUniqueProblemsOutput).
     pub fn build(self) -> crate::operation::list_unique_problems::ListUniqueProblemsOutput {
         crate::operation::list_unique_problems::ListUniqueProblemsOutput {
-            unique_problems: self.unique_problems,
-            next_token: self.next_token,
+            unique_problems: self.unique_problems
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

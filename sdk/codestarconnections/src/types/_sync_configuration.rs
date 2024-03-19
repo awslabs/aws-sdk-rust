@@ -3,7 +3,7 @@
 /// <p>Information, such as repository, branch, provider, and resource names for a specific sync configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncConfiguration {
+pub struct SyncConfiguration  {
     /// <p>The branch associated with a specific sync configuration.</p>
     pub branch: ::std::string::String,
     /// <p>The file path to the configuration file associated with a specific sync configuration. The path should point to an actual file in the sync configurations linked repository.</p>
@@ -27,55 +27,49 @@ pub struct SyncConfiguration {
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
-impl SyncConfiguration {
+impl  SyncConfiguration  {
     /// <p>The branch associated with a specific sync configuration.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
     /// <p>The file path to the configuration file associated with a specific sync configuration. The path should point to an actual file in the sync configurations linked repository.</p>
-    pub fn config_file(&self) -> ::std::option::Option<&str> {
+    pub fn config_file(&self) -> ::std::option::Option<& str> {
         self.config_file.as_deref()
     }
     /// <p>The owner ID for the repository associated with a specific sync configuration, such as the owner ID in GitHub.</p>
-    pub fn owner_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owner_id.deref()
+    pub fn owner_id(&self) -> & str {
+        use std::ops::Deref; self.owner_id.deref()
     }
     /// <p>The connection provider type associated with a specific sync configuration, such as GitHub.</p>
-    pub fn provider_type(&self) -> &crate::types::ProviderType {
+    pub fn provider_type(&self) -> & crate::types::ProviderType {
         &self.provider_type
     }
     /// <p>The ID of the repository link associated with a specific sync configuration.</p>
-    pub fn repository_link_id(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_link_id.deref()
+    pub fn repository_link_id(&self) -> & str {
+        use std::ops::Deref; self.repository_link_id.deref()
     }
     /// <p>The name of the repository associated with a specific sync configuration.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
     /// <p>The name of the connection resource associated with a specific sync configuration.</p>
-    pub fn resource_name(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_name.deref()
+    pub fn resource_name(&self) -> & str {
+        use std::ops::Deref; self.resource_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with a specific sync configuration.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The type of sync for a specific sync configuration.</p>
-    pub fn sync_type(&self) -> &crate::types::SyncConfigurationType {
+    pub fn sync_type(&self) -> & crate::types::SyncConfigurationType {
         &self.sync_type
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
-    pub fn publish_deployment_status(&self) -> ::std::option::Option<&crate::types::PublishDeploymentStatus> {
+    pub fn publish_deployment_status(&self) -> ::std::option::Option<& crate::types::PublishDeploymentStatus> {
         self.publish_deployment_status.as_ref()
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
-    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
+    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<& crate::types::TriggerResourceUpdateOn> {
         self.trigger_resource_update_on.as_ref()
     }
 }
@@ -111,8 +105,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The branch associated with a specific sync configuration.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch associated with a specific sync configuration.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +118,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The file path to the configuration file associated with a specific sync configuration. The path should point to an actual file in the sync configurations linked repository.</p>
     pub fn set_config_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_file = input;
-        self
+        self.config_file = input; self
     }
     /// <p>The file path to the configuration file associated with a specific sync configuration. The path should point to an actual file in the sync configurations linked repository.</p>
     pub fn get_config_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +132,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The owner ID for the repository associated with a specific sync configuration, such as the owner ID in GitHub.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The owner ID for the repository associated with a specific sync configuration, such as the owner ID in GitHub.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +146,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The connection provider type associated with a specific sync configuration, such as GitHub.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The connection provider type associated with a specific sync configuration, such as GitHub.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -170,8 +160,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The ID of the repository link associated with a specific sync configuration.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link associated with a specific sync configuration.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +174,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The name of the repository associated with a specific sync configuration.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository associated with a specific sync configuration.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +188,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The name of the connection resource associated with a specific sync configuration.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the connection resource associated with a specific sync configuration.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +202,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with a specific sync configuration.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with a specific sync configuration.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +216,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>The type of sync for a specific sync configuration.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The type of sync for a specific sync configuration.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
@@ -244,8 +229,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
-        self.publish_deployment_status = input;
-        self
+        self.publish_deployment_status = input; self
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
@@ -258,8 +242,7 @@ impl SyncConfigurationBuilder {
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
-        self.trigger_resource_update_on = input;
-        self
+        self.trigger_resource_update_on = input; self
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
@@ -276,58 +259,56 @@ impl SyncConfigurationBuilder {
     /// - [`role_arn`](crate::types::builders::SyncConfigurationBuilder::role_arn)
     /// - [`sync_type`](crate::types::builders::SyncConfigurationBuilder::sync_type)
     pub fn build(self) -> ::std::result::Result<crate::types::SyncConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SyncConfiguration {
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            config_file: self.config_file,
-            owner_id: self.owner_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner_id",
-                    "owner_id was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            provider_type: self.provider_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_type",
-                    "provider_type was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            repository_link_id: self.repository_link_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_link_id",
-                    "repository_link_id was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            resource_name: self.resource_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_name",
-                    "resource_name was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            sync_type: self.sync_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_type",
-                    "sync_type was not specified but it is required when building SyncConfiguration",
-                )
-            })?,
-            publish_deployment_status: self.publish_deployment_status,
-            trigger_resource_update_on: self.trigger_resource_update_on,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SyncConfiguration {
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                config_file: self.config_file
+                ,
+                owner_id: self.owner_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner_id", "owner_id was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                provider_type: self.provider_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_type", "provider_type was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                repository_link_id: self.repository_link_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_link_id", "repository_link_id was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                resource_name: self.resource_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_name", "resource_name was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                sync_type: self.sync_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_type", "sync_type was not specified but it is required when building SyncConfiguration")
+                    )?
+                ,
+                publish_deployment_status: self.publish_deployment_status
+                ,
+                trigger_resource_update_on: self.trigger_resource_update_on
+                ,
+            }
+        )
     }
 }
+

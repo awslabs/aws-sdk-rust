@@ -3,28 +3,29 @@
 /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneratorDetails {
+pub struct GeneratorDetails  {
     /// <p>The name of the detector used to identify the code vulnerability.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the detector used to identify the code vulnerability.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GeneratorDetails {
+impl  GeneratorDetails  {
     /// <p>The name of the detector used to identify the code vulnerability.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the detector used to identify the code vulnerability.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GeneratorDetails {
@@ -40,7 +41,7 @@ impl GeneratorDetails {
 pub struct GeneratorDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GeneratorDetailsBuilder {
     /// <p>The name of the detector used to identify the code vulnerability.</p>
@@ -50,8 +51,7 @@ impl GeneratorDetailsBuilder {
     }
     /// <p>The name of the detector used to identify the code vulnerability.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the detector used to identify the code vulnerability.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl GeneratorDetailsBuilder {
     }
     /// <p>The description of the detector used to identify the code vulnerability.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the detector used to identify the code vulnerability.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl GeneratorDetailsBuilder {
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>An array of tags used to identify the detector associated with the finding.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// Consumes the builder and constructs a [`GeneratorDetails`](crate::types::GeneratorDetails).
     pub fn build(self) -> crate::types::GeneratorDetails {
         crate::types::GeneratorDetails {
-            name: self.name,
-            description: self.description,
-            labels: self.labels,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            labels: self.labels
+            ,
         }
     }
 }
+

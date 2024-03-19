@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceExperimentDataStorageConfig {
+pub struct InferenceExperimentDataStorageConfig  {
     /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
@@ -11,17 +11,17 @@ pub struct InferenceExperimentDataStorageConfig {
     /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub content_type: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
-impl InferenceExperimentDataStorageConfig {
+impl  InferenceExperimentDataStorageConfig  {
     /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::CaptureContentTypeHeader> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::CaptureContentTypeHeader> {
         self.content_type.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl InferenceExperimentDataStorageConfigBuilder {
     }
     /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The Amazon S3 bucket where the inference request and response data is stored.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl InferenceExperimentDataStorageConfigBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl InferenceExperimentDataStorageConfigBuilder {
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CaptureContentTypeHeader>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
@@ -87,9 +84,13 @@ impl InferenceExperimentDataStorageConfigBuilder {
     /// Consumes the builder and constructs a [`InferenceExperimentDataStorageConfig`](crate::types::InferenceExperimentDataStorageConfig).
     pub fn build(self) -> crate::types::InferenceExperimentDataStorageConfig {
         crate::types::InferenceExperimentDataStorageConfig {
-            destination: self.destination,
-            kms_key: self.kms_key,
-            content_type: self.content_type,
+            destination: self.destination
+            ,
+            kms_key: self.kms_key
+            ,
+            content_type: self.content_type
+            ,
         }
     }
 }
+

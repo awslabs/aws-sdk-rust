@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourceSetOutput {
+pub struct PutResourceSetOutput  {
     /// <p>Details about the resource set.</p>
     pub resource_set: ::std::option::Option<crate::types::ResourceSet>,
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
     pub resource_set_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl PutResourceSetOutput {
+impl  PutResourceSetOutput  {
     /// <p>Details about the resource set.</p>
-    pub fn resource_set(&self) -> ::std::option::Option<&crate::types::ResourceSet> {
+    pub fn resource_set(&self) -> ::std::option::Option<& crate::types::ResourceSet> {
         self.resource_set.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_set_arn.deref()
+    pub fn resource_set_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_set_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutResourceSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceSetOutput`](crate::operation::put_resource_set::PutResourceSetOutput).
     pub fn builder() -> crate::operation::put_resource_set::builders::PutResourceSetOutputBuilder {
@@ -49,8 +48,7 @@ impl PutResourceSetOutputBuilder {
     }
     /// <p>Details about the resource set.</p>
     pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
-        self.resource_set = input;
-        self
+        self.resource_set = input; self
     }
     /// <p>Details about the resource set.</p>
     pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
@@ -64,37 +62,37 @@ impl PutResourceSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
     pub fn set_resource_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_set_arn = input;
-        self
+        self.resource_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
     pub fn get_resource_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutResourceSetOutput`](crate::operation::put_resource_set::PutResourceSetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_set_arn`](crate::operation::put_resource_set::builders::PutResourceSetOutputBuilder::resource_set_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_set::PutResourceSetOutput {
-            resource_set: self.resource_set,
-            resource_set_arn: self.resource_set_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_set_arn",
-                    "resource_set_arn was not specified but it is required when building PutResourceSetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_set::PutResourceSetOutput {
+                resource_set: self.resource_set
+                ,
+                resource_set_arn: self.resource_set_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_set_arn", "resource_set_arn was not specified but it is required when building PutResourceSetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

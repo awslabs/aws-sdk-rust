@@ -3,13 +3,13 @@
 /// <p>Information about input answers for a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationAnswerInput {
+pub struct EvaluationAnswerInput  {
     /// <p>The value for an answer in a contact evaluation.</p>
     pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
-impl EvaluationAnswerInput {
+impl  EvaluationAnswerInput  {
     /// <p>The value for an answer in a contact evaluation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::EvaluationAnswerData> {
         self.value.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EvaluationAnswerInputBuilder {
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::EvaluationAnswerData>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
@@ -43,6 +42,10 @@ impl EvaluationAnswerInputBuilder {
     }
     /// Consumes the builder and constructs a [`EvaluationAnswerInput`](crate::types::EvaluationAnswerInput).
     pub fn build(self) -> crate::types::EvaluationAnswerInput {
-        crate::types::EvaluationAnswerInput { value: self.value }
+        crate::types::EvaluationAnswerInput {
+            value: self.value
+            ,
+        }
     }
 }
+

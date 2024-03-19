@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateWebsiteAuthorizationProviderInput {
+pub struct AssociateWebsiteAuthorizationProviderInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authorization provider type.</p>
@@ -10,17 +10,17 @@ pub struct AssociateWebsiteAuthorizationProviderInput {
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl AssociateWebsiteAuthorizationProviderInput {
+impl  AssociateWebsiteAuthorizationProviderInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(&self) -> ::std::option::Option<&crate::types::AuthorizationProviderType> {
+    pub fn authorization_provider_type(&self) -> ::std::option::Option<& crate::types::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>The authorization provider type.</p>
     pub fn set_authorization_provider_type(mut self, input: ::std::option::Option<crate::types::AuthorizationProviderType>) -> Self {
-        self.authorization_provider_type = input;
-        self
+        self.authorization_provider_type = input; self
     }
     /// <p>The authorization provider type.</p>
     pub fn get_authorization_provider_type(&self) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
@@ -77,26 +75,24 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteAuthorizationProviderInput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput {
-                fleet_arn: self.fleet_arn,
-                authorization_provider_type: self.authorization_provider_type,
-                domain_name: self.domain_name,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                authorization_provider_type: self.authorization_provider_type
+                ,
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

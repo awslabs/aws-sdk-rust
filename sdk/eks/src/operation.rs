@@ -168,3 +168,4 @@ pub mod update_nodegroup_version;
 
 /// Types for the `UpdatePodIdentityAssociation` operation.
 pub mod update_pod_identity_association;
+

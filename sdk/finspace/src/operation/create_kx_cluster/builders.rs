@@ -5,54 +5,50 @@ pub use crate::operation::create_kx_cluster::_create_kx_cluster_input::CreateKxC
 
 impl CreateKxClusterInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_kx_cluster::CreateKxClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_kx_cluster::CreateKxClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_kx_cluster();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_kx_cluster::CreateKxClusterOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_kx_cluster::CreateKxClusterError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_kx_cluster();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateKxCluster`.
-///
+/// 
 /// <p>Creates a new kdb cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKxClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_kx_cluster::builders::CreateKxClusterInputBuilder,
+                    inner: crate::operation::create_kx_cluster::builders::CreateKxClusterInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_kx_cluster::CreateKxClusterOutput,
-        crate::operation::create_kx_cluster::CreateKxClusterError,
-    > for CreateKxClusterFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_kx_cluster::CreateKxClusterOutput,
-            crate::operation::create_kx_cluster::CreateKxClusterError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_kx_cluster::CreateKxClusterOutput,
+                    crate::operation::create_kx_cluster::CreateKxClusterError,
+                > for CreateKxClusterFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_kx_cluster::CreateKxClusterOutput,
+                        crate::operation::create_kx_cluster::CreateKxClusterError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateKxClusterFluentBuilder {
     /// Creates a new `CreateKxCluster`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateKxClusterFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_kx_cluster::CreateKxClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_kx_cluster::CreateKxClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_kx_cluster::CreateKxCluster::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_kx_cluster::CreateKxCluster::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_kx_cluster::CreateKxClusterOutput,
-        crate::operation::create_kx_cluster::CreateKxClusterError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_kx_cluster::CreateKxClusterOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_cluster::CreateKxClusterError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_kx_cluster::CreateKxCluster::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_kx_cluster::CreateKxCluster::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_kx_cluster::CreateKxClusterOutput, crate::operation::create_kx_cluster::CreateKxClusterError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -224,12 +211,12 @@ impl CreateKxClusterFluentBuilder {
         self
     }
     /// <p>A list of databases that will be available for querying.</p>
-    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>) -> Self {
         self.inner = self.inner.set_databases(input);
         self
     }
     /// <p>A list of databases that will be available for querying.</p>
-    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>> {
         self.inner.get_databases()
     }
     /// Appends an item to `cacheStorageConfigurations`.
@@ -242,15 +229,12 @@ impl CreateKxClusterFluentBuilder {
         self
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    pub fn set_cache_storage_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>>,
-    ) -> Self {
+    pub fn set_cache_storage_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>>) -> Self {
         self.inner = self.inner.set_cache_storage_configurations(input);
         self
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store.</p>
-    pub fn get_cache_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>> {
+    pub fn get_cache_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCacheStorageConfiguration>> {
         self.inner.get_cache_storage_configurations()
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
@@ -347,12 +331,12 @@ impl CreateKxClusterFluentBuilder {
         self
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>) -> Self {
+    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>) -> Self {
         self.inner = self.inner.set_command_line_arguments(input);
         self
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
+    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>> {
         self.inner.get_command_line_arguments()
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster.</p>
@@ -453,12 +437,12 @@ impl CreateKxClusterFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The structure that stores the configuration details of a scaling group.</p>
@@ -476,3 +460,4 @@ impl CreateKxClusterFluentBuilder {
         self.inner.get_scaling_group_configuration()
     }
 }
+

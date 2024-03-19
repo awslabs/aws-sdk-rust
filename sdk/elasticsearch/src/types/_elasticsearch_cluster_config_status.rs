@@ -3,19 +3,19 @@
 /// <p>Specifies the configuration status for the specified Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticsearchClusterConfigStatus {
+pub struct ElasticsearchClusterConfigStatus  {
     /// <p>Specifies the cluster configuration for the specified Elasticsearch domain.</p>
     pub options: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     /// <p>Specifies the status of the configuration for the specified Elasticsearch domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl ElasticsearchClusterConfigStatus {
+impl  ElasticsearchClusterConfigStatus  {
     /// <p>Specifies the cluster configuration for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::ElasticsearchClusterConfig> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::ElasticsearchClusterConfig> {
         self.options.as_ref()
     }
     /// <p>Specifies the status of the configuration for the specified Elasticsearch domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ElasticsearchClusterConfigStatusBuilder {
     }
     /// <p>Specifies the cluster configuration for the specified Elasticsearch domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::ElasticsearchClusterConfig>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Specifies the cluster configuration for the specified Elasticsearch domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::ElasticsearchClusterConfig> {
@@ -57,8 +56,7 @@ impl ElasticsearchClusterConfigStatusBuilder {
     }
     /// <p>Specifies the status of the configuration for the specified Elasticsearch domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the status of the configuration for the specified Elasticsearch domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,11 @@ impl ElasticsearchClusterConfigStatusBuilder {
     /// Consumes the builder and constructs a [`ElasticsearchClusterConfigStatus`](crate::types::ElasticsearchClusterConfigStatus).
     pub fn build(self) -> crate::types::ElasticsearchClusterConfigStatus {
         crate::types::ElasticsearchClusterConfigStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

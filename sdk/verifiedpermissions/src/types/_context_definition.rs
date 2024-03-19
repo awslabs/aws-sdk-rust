@@ -8,7 +8,7 @@
 pub enum ContextDefinition {
     /// <p>An list of attributes that are needed to successfully evaluate an authorization request. Each attribute in this array must include a map of a data type and its value.</p>
     /// <p>Example: <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code></p>
-    ContextMap(::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>),
+    ContextMap(::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,12 +23,8 @@ impl ContextDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`ContextMap`](crate::types::ContextDefinition::ContextMap), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_context_map(&self) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>, &Self> {
-        if let ContextDefinition::ContextMap(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_context_map(&self) -> ::std::result::Result<&::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>, &Self> {
+        if let ContextDefinition::ContextMap(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContextMap`](crate::types::ContextDefinition::ContextMap).
     pub fn is_context_map(&self) -> bool {
@@ -39,3 +35,4 @@ impl ContextDefinition {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_v
 
 impl PutManagedRuleSetVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_managed_rule_set_versions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_managed_rule_set_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutManagedRuleSetVersions`.
-///
+/// 
 /// <p>Defines the versions of your managed rule set that you are offering to the customers. Customers see your offerings as managed rule groups with versioning.</p><note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers.</p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
@@ -31,33 +28,32 @@ impl PutManagedRuleSetVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder,
+                    inner: crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-    > for PutManagedRuleSetVersionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
+                    crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
+                > for PutManagedRuleSetVersionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
+                        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutManagedRuleSetVersionsFluentBuilder {
     /// Creates a new `PutManagedRuleSetVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput,
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsOutput, crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,17 +204,13 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub fn set_versions_to_publish(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
-    ) -> Self {
+    pub fn set_versions_to_publish(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>>) -> Self {
         self.inner = self.inner.set_versions_to_publish(input);
         self
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub fn get_versions_to_publish(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
+    pub fn get_versions_to_publish(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>> {
         self.inner.get_versions_to_publish()
     }
 }
+

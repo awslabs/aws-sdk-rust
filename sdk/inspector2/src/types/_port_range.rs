@@ -3,13 +3,13 @@
 /// <p>Details about the port range associated with a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortRange {
+pub struct PortRange  {
     /// <p>The beginning port in a port range.</p>
     pub begin: i32,
     /// <p>The ending port in a port range.</p>
     pub end: i32,
 }
-impl PortRange {
+impl  PortRange  {
     /// <p>The beginning port in a port range.</p>
     pub fn begin(&self) -> i32 {
         self.begin
@@ -42,8 +42,7 @@ impl PortRangeBuilder {
     }
     /// <p>The beginning port in a port range.</p>
     pub fn set_begin(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin = input;
-        self
+        self.begin = input; self
     }
     /// <p>The beginning port in a port range.</p>
     pub fn get_begin(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl PortRangeBuilder {
     }
     /// <p>The ending port in a port range.</p>
     pub fn set_end(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The ending port in a port range.</p>
     pub fn get_end(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl PortRangeBuilder {
     /// - [`begin`](crate::types::builders::PortRangeBuilder::begin)
     /// - [`end`](crate::types::builders::PortRangeBuilder::end)
     pub fn build(self) -> ::std::result::Result<crate::types::PortRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortRange {
-            begin: self.begin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "begin",
-                    "begin was not specified but it is required when building PortRange",
-                )
-            })?,
-            end: self.end.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end",
-                    "end was not specified but it is required when building PortRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortRange {
+                begin: self.begin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("begin", "begin was not specified but it is required when building PortRange")
+                    )?
+                ,
+                end: self.end
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end", "end was not specified but it is required when building PortRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

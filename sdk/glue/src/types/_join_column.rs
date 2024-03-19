@@ -3,22 +3,20 @@
 /// <p>Specifies a column to be joined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JoinColumn {
+pub struct JoinColumn  {
     /// <p>The column to be joined.</p>
     pub from: ::std::string::String,
     /// <p>The key of the column to be joined.</p>
-    pub keys: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>,
 }
-impl JoinColumn {
+impl  JoinColumn  {
     /// <p>The column to be joined.</p>
-    pub fn from(&self) -> &str {
-        use std::ops::Deref;
-        self.from.deref()
+    pub fn from(&self) -> & str {
+        use std::ops::Deref; self.from.deref()
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.keys.deref()
+    pub fn keys(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        use std::ops::Deref; self.keys.deref()
     }
 }
 impl JoinColumn {
@@ -33,7 +31,7 @@ impl JoinColumn {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinColumnBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
 }
 impl JoinColumnBuilder {
     /// <p>The column to be joined.</p>
@@ -44,8 +42,7 @@ impl JoinColumnBuilder {
     }
     /// <p>The column to be joined.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The column to be joined.</p>
     pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,19 +53,18 @@ impl JoinColumnBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>The key of the column to be joined.</p>
-    pub fn keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn keys(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input);
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.keys
     }
     /// Consumes the builder and constructs a [`JoinColumn`](crate::types::JoinColumn).
@@ -76,19 +72,20 @@ impl JoinColumnBuilder {
     /// - [`from`](crate::types::builders::JoinColumnBuilder::from)
     /// - [`keys`](crate::types::builders::JoinColumnBuilder::keys)
     pub fn build(self) -> ::std::result::Result<crate::types::JoinColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JoinColumn {
-            from: self.from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "from",
-                    "from was not specified but it is required when building JoinColumn",
-                )
-            })?,
-            keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keys",
-                    "keys was not specified but it is required when building JoinColumn",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JoinColumn {
+                from: self.from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("from", "from was not specified but it is required when building JoinColumn")
+                    )?
+                ,
+                keys: self.keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keys", "keys was not specified but it is required when building JoinColumn")
+                    )?
+                ,
+            }
+        )
     }
 }
+

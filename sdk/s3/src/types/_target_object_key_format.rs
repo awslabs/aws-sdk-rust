@@ -3,19 +3,19 @@
 /// <p>Amazon S3 key format for log objects. Only one format, PartitionedPrefix or SimplePrefix, is allowed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetObjectKeyFormat {
+pub struct TargetObjectKeyFormat  {
     /// <p>To use the simple format for S3 keys for log objects. To specify SimplePrefix format, set SimplePrefix to {}.</p>
     pub simple_prefix: ::std::option::Option<crate::types::SimplePrefix>,
     /// <p>Partitioned S3 key for log objects.</p>
     pub partitioned_prefix: ::std::option::Option<crate::types::PartitionedPrefix>,
 }
-impl TargetObjectKeyFormat {
+impl  TargetObjectKeyFormat  {
     /// <p>To use the simple format for S3 keys for log objects. To specify SimplePrefix format, set SimplePrefix to {}.</p>
-    pub fn simple_prefix(&self) -> ::std::option::Option<&crate::types::SimplePrefix> {
+    pub fn simple_prefix(&self) -> ::std::option::Option<& crate::types::SimplePrefix> {
         self.simple_prefix.as_ref()
     }
     /// <p>Partitioned S3 key for log objects.</p>
-    pub fn partitioned_prefix(&self) -> ::std::option::Option<&crate::types::PartitionedPrefix> {
+    pub fn partitioned_prefix(&self) -> ::std::option::Option<& crate::types::PartitionedPrefix> {
         self.partitioned_prefix.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TargetObjectKeyFormatBuilder {
     }
     /// <p>To use the simple format for S3 keys for log objects. To specify SimplePrefix format, set SimplePrefix to {}.</p>
     pub fn set_simple_prefix(mut self, input: ::std::option::Option<crate::types::SimplePrefix>) -> Self {
-        self.simple_prefix = input;
-        self
+        self.simple_prefix = input; self
     }
     /// <p>To use the simple format for S3 keys for log objects. To specify SimplePrefix format, set SimplePrefix to {}.</p>
     pub fn get_simple_prefix(&self) -> &::std::option::Option<crate::types::SimplePrefix> {
@@ -55,8 +54,7 @@ impl TargetObjectKeyFormatBuilder {
     }
     /// <p>Partitioned S3 key for log objects.</p>
     pub fn set_partitioned_prefix(mut self, input: ::std::option::Option<crate::types::PartitionedPrefix>) -> Self {
-        self.partitioned_prefix = input;
-        self
+        self.partitioned_prefix = input; self
     }
     /// <p>Partitioned S3 key for log objects.</p>
     pub fn get_partitioned_prefix(&self) -> &::std::option::Option<crate::types::PartitionedPrefix> {
@@ -65,8 +63,11 @@ impl TargetObjectKeyFormatBuilder {
     /// Consumes the builder and constructs a [`TargetObjectKeyFormat`](crate::types::TargetObjectKeyFormat).
     pub fn build(self) -> crate::types::TargetObjectKeyFormat {
         crate::types::TargetObjectKeyFormat {
-            simple_prefix: self.simple_prefix,
-            partitioned_prefix: self.partitioned_prefix,
+            simple_prefix: self.simple_prefix
+            ,
+            partitioned_prefix: self.partitioned_prefix
+            ,
         }
     }
 }
+

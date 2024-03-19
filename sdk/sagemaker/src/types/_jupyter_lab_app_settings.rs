@@ -3,38 +3,41 @@
 /// <p>The settings for the JupyterLab application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JupyterLabAppSettings {
+pub struct JupyterLabAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
-    pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
+    pub custom_images: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>,
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
-    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
-impl JupyterLabAppSettings {
+impl  JupyterLabAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
-    pub fn custom_images(&self) -> &[crate::types::CustomImage] {
-        self.custom_images.as_deref().unwrap_or_default()
+    pub fn custom_images(&self) -> & [crate::types::CustomImage] {
+        self.custom_images.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_config_arns.is_none()`.
-    pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
-        self.lifecycle_config_arns.as_deref().unwrap_or_default()
+    pub fn lifecycle_config_arns(&self) -> & [::std::string::String] {
+        self.lifecycle_config_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repositories.is_none()`.
-    pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
-        self.code_repositories.as_deref().unwrap_or_default()
+    pub fn code_repositories(&self) -> & [crate::types::CodeRepository] {
+        self.code_repositories.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JupyterLabAppSettings {
@@ -49,9 +52,9 @@ impl JupyterLabAppSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JupyterLabAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
-    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub(crate) custom_images: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>,
+    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
 impl JupyterLabAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -61,8 +64,7 @@ impl JupyterLabAppSettingsBuilder {
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -75,17 +77,16 @@ impl JupyterLabAppSettingsBuilder {
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
     pub fn custom_images(mut self, input: crate::types::CustomImage) -> Self {
         let mut v = self.custom_images.unwrap_or_default();
-        v.push(input);
-        self.custom_images = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_images = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
-    pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
-        self.custom_images = input;
-        self
+    pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>>) -> Self {
+        self.custom_images = input; self
     }
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
-    pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
+    pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomImage>> {
         &self.custom_images
     }
     /// Appends an item to `lifecycle_config_arns`.
@@ -95,17 +96,16 @@ impl JupyterLabAppSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     pub fn lifecycle_config_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_config_arns.unwrap_or_default();
-        v.push(input.into());
-        self.lifecycle_config_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lifecycle_config_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
-    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lifecycle_config_arns = input;
-        self
+    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lifecycle_config_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
-    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lifecycle_config_arns
     }
     /// Appends an item to `code_repositories`.
@@ -115,26 +115,30 @@ impl JupyterLabAppSettingsBuilder {
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
     pub fn code_repositories(mut self, input: crate::types::CodeRepository) -> Self {
         let mut v = self.code_repositories.unwrap_or_default();
-        v.push(input);
-        self.code_repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>) -> Self {
-        self.code_repositories = input;
-        self
+    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>) -> Self {
+        self.code_repositories = input; self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
+    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>> {
         &self.code_repositories
     }
     /// Consumes the builder and constructs a [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
     pub fn build(self) -> crate::types::JupyterLabAppSettings {
         crate::types::JupyterLabAppSettings {
-            default_resource_spec: self.default_resource_spec,
-            custom_images: self.custom_images,
-            lifecycle_config_arns: self.lifecycle_config_arns,
-            code_repositories: self.code_repositories,
+            default_resource_spec: self.default_resource_spec
+            ,
+            custom_images: self.custom_images
+            ,
+            lifecycle_config_arns: self.lifecycle_config_arns
+            ,
+            code_repositories: self.code_repositories
+            ,
         }
     }
 }
+

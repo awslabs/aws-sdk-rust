@@ -3,13 +3,13 @@
 /// <p>Contains information about the connection draining configuration for the load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerConnectionDraining {
+pub struct AwsElbLoadBalancerConnectionDraining  {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub timeout: ::std::option::Option<i32>,
 }
-impl AwsElbLoadBalancerConnectionDraining {
+impl  AwsElbLoadBalancerConnectionDraining  {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -41,8 +41,7 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     }
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AwsElbLoadBalancerConnectionDrainingBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionDraining`](crate::types::AwsElbLoadBalancerConnectionDraining).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerConnectionDraining {
         crate::types::AwsElbLoadBalancerConnectionDraining {
-            enabled: self.enabled,
-            timeout: self.timeout,
+            enabled: self.enabled
+            ,
+            timeout: self.timeout
+            ,
         }
     }
 }
+

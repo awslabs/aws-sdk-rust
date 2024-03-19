@@ -3,7 +3,7 @@
 /// <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaxAgeRule {
+pub struct MaxAgeRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub enabled: bool,
     /// <p>Specify the number of days to retain an application versions.</p>
@@ -11,7 +11,7 @@ pub struct MaxAgeRule {
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub delete_source_from_s3: ::std::option::Option<bool>,
 }
-impl MaxAgeRule {
+impl  MaxAgeRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -49,8 +49,7 @@ impl MaxAgeRuleBuilder {
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl MaxAgeRuleBuilder {
     }
     /// <p>Specify the number of days to retain an application versions.</p>
     pub fn set_max_age_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_age_in_days = input;
-        self
+        self.max_age_in_days = input; self
     }
     /// <p>Specify the number of days to retain an application versions.</p>
     pub fn get_max_age_in_days(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl MaxAgeRuleBuilder {
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn set_delete_source_from_s3(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_source_from_s3 = input;
-        self
+        self.delete_source_from_s3 = input; self
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn get_delete_source_from_s3(&self) -> &::std::option::Option<bool> {
@@ -88,15 +85,19 @@ impl MaxAgeRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::MaxAgeRuleBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::MaxAgeRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MaxAgeRule {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building MaxAgeRule",
-                )
-            })?,
-            max_age_in_days: self.max_age_in_days,
-            delete_source_from_s3: self.delete_source_from_s3,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MaxAgeRule {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building MaxAgeRule")
+                    )?
+                ,
+                max_age_in_days: self.max_age_in_days
+                ,
+                delete_source_from_s3: self.delete_source_from_s3
+                ,
+            }
+        )
     }
 }
+

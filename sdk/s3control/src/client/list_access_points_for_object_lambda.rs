@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessPointsForObjectLambda`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::set_account_id):<br>required: **true**<br><p>The account ID for the account that owns the specified Object Lambda Access Point.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::set_next_token):<br>required: **false**<br><p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p><br>
-    /// - On success, responds with [`ListAccessPointsForObjectLambdaOutput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput) with field(s):
+                            /// - On success, responds with [`ListAccessPointsForObjectLambdaOutput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput) with field(s):
     ///   - [`object_lambda_access_point_list(Option<Vec::<ObjectLambdaAccessPoint>>)`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput::object_lambda_access_point_list): <p>Returns list of Object Lambda Access Points.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput::next_token): <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPointsForObjectLambdaError>`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError)
-    pub fn list_access_points_for_object_lambda(
-        &self,
-    ) -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder {
-        crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAccessPointsForObjectLambdaError>`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError)
+    pub fn list_access_points_for_object_lambda(&self) -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder {
+                                crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaFluentBuilder::new(self.handle.clone())
+                            }
 }
+

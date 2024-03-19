@@ -3,19 +3,19 @@
 /// <p>Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaceMatch {
+pub struct FaceMatch  {
     /// <p>Confidence in the match of this face with the input face.</p>
     pub similarity: ::std::option::Option<f32>,
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
     pub face: ::std::option::Option<crate::types::Face>,
 }
-impl FaceMatch {
+impl  FaceMatch  {
     /// <p>Confidence in the match of this face with the input face.</p>
     pub fn similarity(&self) -> ::std::option::Option<f32> {
         self.similarity
     }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
-    pub fn face(&self) -> ::std::option::Option<&crate::types::Face> {
+    pub fn face(&self) -> ::std::option::Option<& crate::types::Face> {
         self.face.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl FaceMatchBuilder {
     }
     /// <p>Confidence in the match of this face with the input face.</p>
     pub fn set_similarity(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.similarity = input;
-        self
+        self.similarity = input; self
     }
     /// <p>Confidence in the match of this face with the input face.</p>
     pub fn get_similarity(&self) -> &::std::option::Option<f32> {
@@ -55,8 +54,7 @@ impl FaceMatchBuilder {
     }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::Face>) -> Self {
-        self.face = input;
-        self
+        self.face = input; self
     }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
     pub fn get_face(&self) -> &::std::option::Option<crate::types::Face> {
@@ -65,8 +63,11 @@ impl FaceMatchBuilder {
     /// Consumes the builder and constructs a [`FaceMatch`](crate::types::FaceMatch).
     pub fn build(self) -> crate::types::FaceMatch {
         crate::types::FaceMatch {
-            similarity: self.similarity,
-            face: self.face,
+            similarity: self.similarity
+            ,
+            face: self.face
+            ,
         }
     }
 }
+

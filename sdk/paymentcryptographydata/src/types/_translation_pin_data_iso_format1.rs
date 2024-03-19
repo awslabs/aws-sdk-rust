@@ -3,7 +3,8 @@
 /// <p>Parameters that are required for ISO9564 PIN format 1 tranlation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranslationPinDataIsoFormat1 {}
+pub struct TranslationPinDataIsoFormat1  {
+}
 impl TranslationPinDataIsoFormat1 {
     /// Creates a new builder-style object to manufacture [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).
     pub fn builder() -> crate::types::builders::TranslationPinDataIsoFormat1Builder {
@@ -14,10 +15,13 @@ impl TranslationPinDataIsoFormat1 {
 /// A builder for [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct TranslationPinDataIsoFormat1Builder {}
+pub struct TranslationPinDataIsoFormat1Builder {
+}
 impl TranslationPinDataIsoFormat1Builder {
     /// Consumes the builder and constructs a [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).
     pub fn build(self) -> crate::types::TranslationPinDataIsoFormat1 {
-        crate::types::TranslationPinDataIsoFormat1 {}
+        crate::types::TranslationPinDataIsoFormat1 {
+        }
     }
 }
+

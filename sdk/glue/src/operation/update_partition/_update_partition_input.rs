@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePartitionInput {
+pub struct UpdatePartitionInput  {
     /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the table in question resides.</p>
@@ -10,33 +10,34 @@ pub struct UpdatePartitionInput {
     /// <p>The name of the table in which the partition to be updated is located.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>List of partition key values that define the partition to update.</p>
-    pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub partition_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub partition_input: ::std::option::Option<crate::types::PartitionInput>,
 }
-impl UpdatePartitionInput {
+impl  UpdatePartitionInput  {
     /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table in which the partition to be updated is located.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_value_list.is_none()`.
-    pub fn partition_value_list(&self) -> &[::std::string::String] {
-        self.partition_value_list.as_deref().unwrap_or_default()
+    pub fn partition_value_list(&self) -> & [::std::string::String] {
+        self.partition_value_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
-    pub fn partition_input(&self) -> ::std::option::Option<&crate::types::PartitionInput> {
+    pub fn partition_input(&self) -> ::std::option::Option<& crate::types::PartitionInput> {
         self.partition_input.as_ref()
     }
 }
@@ -54,7 +55,7 @@ pub struct UpdatePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) partition_input: ::std::option::Option<crate::types::PartitionInput>,
 }
 impl UpdatePartitionInputBuilder {
@@ -65,8 +66,7 @@ impl UpdatePartitionInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +80,7 @@ impl UpdatePartitionInputBuilder {
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl UpdatePartitionInputBuilder {
     }
     /// <p>The name of the table in which the partition to be updated is located.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table in which the partition to be updated is located.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +107,16 @@ impl UpdatePartitionInputBuilder {
     /// <p>List of partition key values that define the partition to update.</p>
     pub fn partition_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
-        v.push(input.into());
-        self.partition_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.partition_value_list = input;
-        self
+    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.partition_value_list = input; self
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.partition_value_list
     }
     /// <p>The new partition object to update the partition to.</p>
@@ -132,8 +129,7 @@ impl UpdatePartitionInputBuilder {
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub fn set_partition_input(mut self, input: ::std::option::Option<crate::types::PartitionInput>) -> Self {
-        self.partition_input = input;
-        self
+        self.partition_input = input; self
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
@@ -141,15 +137,21 @@ impl UpdatePartitionInputBuilder {
         &self.partition_input
     }
     /// Consumes the builder and constructs a [`UpdatePartitionInput`](crate::operation::update_partition::UpdatePartitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_partition::UpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_partition::UpdatePartitionInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            partition_value_list: self.partition_value_list,
-            partition_input: self.partition_input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_partition::UpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_partition::UpdatePartitionInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                partition_value_list: self.partition_value_list
+                ,
+                partition_input: self.partition_input
+                ,
+            }
+        )
     }
 }
+

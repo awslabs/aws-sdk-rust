@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetEnvironmentOutput {
+pub struct GetEnvironmentOutput  {
     /// <p>The name of the environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
@@ -20,7 +20,7 @@ pub struct GetEnvironmentOutput {
     /// <p>The current state of the environment.</p>
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the environment resource.</p>
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
     /// <p>A timestamp that indicates when the environment was last updated.</p>
@@ -29,57 +29,57 @@ pub struct GetEnvironmentOutput {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetEnvironmentOutput {
+impl  GetEnvironmentOutput  {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn network_fabric_type(&self) -> ::std::option::Option<&crate::types::NetworkFabricType> {
+    pub fn network_fabric_type(&self) -> ::std::option::Option<& crate::types::NetworkFabricType> {
         self.network_fabric_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The current state of the environment.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EnvironmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the environment resource.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorResponse> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the environment is created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetEnvironmentOutput {
+impl  ::std::fmt::Debug for GetEnvironmentOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentOutput");
         formatter.field("name", &self.name);
@@ -99,10 +99,10 @@ impl ::std::fmt::Debug for GetEnvironmentOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
     pub fn builder() -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
@@ -122,7 +122,7 @@ pub struct GetEnvironmentOutputBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::EnvironmentState>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorResponse>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -136,8 +136,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +149,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +162,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The description of the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +175,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +188,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The network fabric type of the environment.</p>
     pub fn set_network_fabric_type(mut self, input: ::std::option::Option<crate::types::NetworkFabricType>) -> Self {
-        self.network_fabric_type = input;
-        self
+        self.network_fabric_type = input; self
     }
     /// <p>The network fabric type of the environment.</p>
     pub fn get_network_fabric_type(&self) -> &::std::option::Option<crate::types::NetworkFabricType> {
@@ -206,8 +201,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +214,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +227,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>The current state of the environment.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the environment.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
@@ -248,17 +240,16 @@ impl GetEnvironmentOutputBuilder {
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Any error associated with the environment resource.</p>
@@ -268,8 +259,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>Any error associated with the environment resource.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Any error associated with the environment resource.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorResponse> {
@@ -282,8 +272,7 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -296,37 +285,48 @@ impl GetEnvironmentOutputBuilder {
     }
     /// <p>A timestamp that indicates when the environment is created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>A timestamp that indicates when the environment is created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
     pub fn build(self) -> crate::operation::get_environment::GetEnvironmentOutput {
         crate::operation::get_environment::GetEnvironmentOutput {
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
-            environment_id: self.environment_id,
-            network_fabric_type: self.network_fabric_type,
-            owner_account_id: self.owner_account_id,
-            transit_gateway_id: self.transit_gateway_id,
-            state: self.state,
-            tags: self.tags,
-            error: self.error,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            environment_id: self.environment_id
+            ,
+            network_fabric_type: self.network_fabric_type
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
+            error: self.error
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
             _request_id: self._request_id,
         }
     }
@@ -350,3 +350,4 @@ impl ::std::fmt::Debug for GetEnvironmentOutputBuilder {
         formatter.finish()
     }
 }
+

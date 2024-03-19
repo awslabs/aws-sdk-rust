@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactChannelOutput {
+pub struct GetContactChannelOutput  {
     /// <p>The ARN of the contact that the channel belongs to.</p>
     pub contact_arn: ::std::string::String,
     /// <p>The ARN of the contact channel.</p>
@@ -17,40 +17,37 @@ pub struct GetContactChannelOutput {
     pub activation_status: ::std::option::Option<crate::types::ActivationStatus>,
     _request_id: Option<String>,
 }
-impl GetContactChannelOutput {
+impl  GetContactChannelOutput  {
     /// <p>The ARN of the contact that the channel belongs to.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_channel_arn.deref()
+    pub fn contact_channel_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_channel_arn.deref()
     }
     /// <p>The name of the contact channel</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
-    pub fn r#type(&self) -> &crate::types::ChannelType {
+    pub fn r#type(&self) -> & crate::types::ChannelType {
         &self.r#type
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn delivery_address(&self) -> ::std::option::Option<&crate::types::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> ::std::option::Option<& crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
-    pub fn activation_status(&self) -> ::std::option::Option<&crate::types::ActivationStatus> {
+    pub fn activation_status(&self) -> ::std::option::Option<& crate::types::ActivationStatus> {
         self.activation_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContactChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetContactChannelOutput`](crate::operation::get_contact_channel::GetContactChannelOutput).
     pub fn builder() -> crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder {
@@ -79,8 +76,7 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>The ARN of the contact that the channel belongs to.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The ARN of the contact that the channel belongs to.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>The ARN of the contact channel.</p>
     pub fn set_contact_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_arn = input;
-        self
+        self.contact_channel_arn = input; self
     }
     /// <p>The ARN of the contact channel.</p>
     pub fn get_contact_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +104,7 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>The name of the contact channel</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the contact channel</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
@@ -139,8 +132,7 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
-        self.delivery_address = input;
-        self
+        self.delivery_address = input; self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
@@ -153,59 +145,57 @@ impl GetContactChannelOutputBuilder {
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
     pub fn set_activation_status(mut self, input: ::std::option::Option<crate::types::ActivationStatus>) -> Self {
-        self.activation_status = input;
-        self
+        self.activation_status = input; self
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
     pub fn get_activation_status(&self) -> &::std::option::Option<crate::types::ActivationStatus> {
         &self.activation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContactChannelOutput`](crate::operation::get_contact_channel::GetContactChannelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::contact_arn)
     /// - [`contact_channel_arn`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::contact_channel_arn)
     /// - [`name`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::name)
     /// - [`r#type`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::r#type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact_channel::GetContactChannelOutput {
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building GetContactChannelOutput",
-                )
-            })?,
-            contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_channel_arn",
-                    "contact_channel_arn was not specified but it is required when building GetContactChannelOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetContactChannelOutput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building GetContactChannelOutput",
-                )
-            })?,
-            delivery_address: self.delivery_address,
-            activation_status: self.activation_status,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_channel::GetContactChannelOutput {
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building GetContactChannelOutput")
+                    )?
+                ,
+                contact_channel_arn: self.contact_channel_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_channel_arn", "contact_channel_arn was not specified but it is required when building GetContactChannelOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetContactChannelOutput")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building GetContactChannelOutput")
+                    )?
+                ,
+                delivery_address: self.delivery_address
+                ,
+                activation_status: self.activation_status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

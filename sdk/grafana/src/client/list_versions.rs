@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVersions`](crate::operation::list_versions::builders::ListVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use when requesting the next set of results. You receive this token from a previous <code>ListVersions</code> operation.</p><br>
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_versions::builders::ListVersionsFluentBuilder::set_workspace_id):<br>required: **false**<br><p>The ID of the workspace to list the available upgrade versions. If not included, lists all versions of Grafana that are supported for <code>CreateWorkspace</code>.</p><br>
-    /// - On success, responds with [`ListVersionsOutput`](crate::operation::list_versions::ListVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListVersionsOutput`](crate::operation::list_versions::ListVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_versions::ListVersionsOutput::next_token): <p>The token to use in a subsequent <code>ListVersions</code> operation to return the next set of results.</p>
     ///   - [`grafana_versions(Option<Vec::<String>>)`](crate::operation::list_versions::ListVersionsOutput::grafana_versions): <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    /// - On failure, responds with [`SdkError<ListVersionsError>`](crate::operation::list_versions::ListVersionsError)
+                            /// - On failure, responds with [`SdkError<ListVersionsError>`](crate::operation::list_versions::ListVersionsError)
     pub fn list_versions(&self) -> crate::operation::list_versions::builders::ListVersionsFluentBuilder {
-        crate::operation::list_versions::builders::ListVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_versions::builders::ListVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The border options for a table border.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableBorderOptions {
+pub struct TableBorderOptions  {
     /// <p>The color of a table border.</p>
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The thickness of a table border.</p>
@@ -11,9 +11,9 @@ pub struct TableBorderOptions {
     /// <p>The style (none, solid) of a table border.</p>
     pub style: ::std::option::Option<crate::types::TableBorderStyle>,
 }
-impl TableBorderOptions {
+impl  TableBorderOptions  {
     /// <p>The color of a table border.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>The thickness of a table border.</p>
@@ -21,7 +21,7 @@ impl TableBorderOptions {
         self.thickness
     }
     /// <p>The style (none, solid) of a table border.</p>
-    pub fn style(&self) -> ::std::option::Option<&crate::types::TableBorderStyle> {
+    pub fn style(&self) -> ::std::option::Option<& crate::types::TableBorderStyle> {
         self.style.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TableBorderOptionsBuilder {
     }
     /// <p>The color of a table border.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The color of a table border.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TableBorderOptionsBuilder {
     }
     /// <p>The thickness of a table border.</p>
     pub fn set_thickness(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.thickness = input;
-        self
+        self.thickness = input; self
     }
     /// <p>The thickness of a table border.</p>
     pub fn get_thickness(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl TableBorderOptionsBuilder {
     }
     /// <p>The style (none, solid) of a table border.</p>
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::TableBorderStyle>) -> Self {
-        self.style = input;
-        self
+        self.style = input; self
     }
     /// <p>The style (none, solid) of a table border.</p>
     pub fn get_style(&self) -> &::std::option::Option<crate::types::TableBorderStyle> {
@@ -86,9 +83,13 @@ impl TableBorderOptionsBuilder {
     /// Consumes the builder and constructs a [`TableBorderOptions`](crate::types::TableBorderOptions).
     pub fn build(self) -> crate::types::TableBorderOptions {
         crate::types::TableBorderOptions {
-            color: self.color,
-            thickness: self.thickness,
-            style: self.style,
+            color: self.color
+            ,
+            thickness: self.thickness
+            ,
+            style: self.style
+            ,
         }
     }
 }
+

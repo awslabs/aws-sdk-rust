@@ -4,7 +4,7 @@
 /// <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/dg/">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationSet {
+pub struct ConfigurationSet  {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct ConfigurationSet {
     /// </ul>
     pub name: ::std::string::String,
 }
-impl ConfigurationSet {
+impl  ConfigurationSet  {
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -22,9 +22,8 @@ impl ConfigurationSet {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ConfigurationSet {
@@ -61,8 +60,7 @@ impl ConfigurationSetBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration set. The name must meet the following requirements:</p>
     /// <ul>
@@ -78,13 +76,15 @@ impl ConfigurationSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ConfigurationSetBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfigurationSet {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConfigurationSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfigurationSet {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConfigurationSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

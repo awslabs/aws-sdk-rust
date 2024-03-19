@@ -3,7 +3,7 @@
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateBackendAuthForgotPasswordConfig {
+pub struct UpdateBackendAuthForgotPasswordConfig  {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
@@ -11,21 +11,21 @@ pub struct UpdateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub sms_settings: ::std::option::Option<crate::types::SmsSettings>,
 }
-impl UpdateBackendAuthForgotPasswordConfig {
+impl  UpdateBackendAuthForgotPasswordConfig  {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
-    pub fn delivery_method(&self) -> ::std::option::Option<&crate::types::DeliveryMethod> {
+    pub fn delivery_method(&self) -> ::std::option::Option<& crate::types::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn email_settings(&self) -> ::std::option::Option<&crate::types::EmailSettings> {
+    pub fn email_settings(&self) -> ::std::option::Option<& crate::types::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
-    pub fn sms_settings(&self) -> ::std::option::Option<&crate::types::SmsSettings> {
+    pub fn sms_settings(&self) -> ::std::option::Option<& crate::types::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateBackendAuthForgotPasswordConfig {
+impl  ::std::fmt::Debug for UpdateBackendAuthForgotPasswordConfig  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendAuthForgotPasswordConfig");
         formatter.field("delivery_method", &self.delivery_method);
@@ -57,8 +57,7 @@ impl UpdateBackendAuthForgotPasswordConfigBuilder {
     }
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     pub fn set_delivery_method(mut self, input: ::std::option::Option<crate::types::DeliveryMethod>) -> Self {
-        self.delivery_method = input;
-        self
+        self.delivery_method = input; self
     }
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
     pub fn get_delivery_method(&self) -> &::std::option::Option<crate::types::DeliveryMethod> {
@@ -71,8 +70,7 @@ impl UpdateBackendAuthForgotPasswordConfigBuilder {
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub fn set_email_settings(mut self, input: ::std::option::Option<crate::types::EmailSettings>) -> Self {
-        self.email_settings = input;
-        self
+        self.email_settings = input; self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
     pub fn get_email_settings(&self) -> &::std::option::Option<crate::types::EmailSettings> {
@@ -85,8 +83,7 @@ impl UpdateBackendAuthForgotPasswordConfigBuilder {
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub fn set_sms_settings(mut self, input: ::std::option::Option<crate::types::SmsSettings>) -> Self {
-        self.sms_settings = input;
-        self
+        self.sms_settings = input; self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an Amplify app user forgets their password.</p>
     pub fn get_sms_settings(&self) -> &::std::option::Option<crate::types::SmsSettings> {
@@ -95,9 +92,12 @@ impl UpdateBackendAuthForgotPasswordConfigBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendAuthForgotPasswordConfig`](crate::types::UpdateBackendAuthForgotPasswordConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthForgotPasswordConfig {
         crate::types::UpdateBackendAuthForgotPasswordConfig {
-            delivery_method: self.delivery_method,
-            email_settings: self.email_settings,
-            sms_settings: self.sms_settings,
+            delivery_method: self.delivery_method
+            ,
+            email_settings: self.email_settings
+            ,
+            sms_settings: self.sms_settings
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for UpdateBackendAuthForgotPasswordConfigBuilder {
         formatter.finish()
     }
 }
+

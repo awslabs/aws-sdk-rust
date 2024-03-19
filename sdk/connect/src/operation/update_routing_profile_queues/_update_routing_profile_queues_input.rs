@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoutingProfileQueuesInput {
+pub struct UpdateRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub queue_configs: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueConfig>>,
 }
-impl UpdateRoutingProfileQueuesInput {
+impl  UpdateRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_configs.is_none()`.
-    pub fn queue_configs(&self) -> &[crate::types::RoutingProfileQueueConfig] {
-        self.queue_configs.as_deref().unwrap_or_default()
+    pub fn queue_configs(&self) -> & [crate::types::RoutingProfileQueueConfig] {
+        self.queue_configs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRoutingProfileQueuesInput {
@@ -39,7 +40,7 @@ impl UpdateRoutingProfileQueuesInput {
 pub struct UpdateRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub(crate) queue_configs: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueConfig>>,
 }
 impl UpdateRoutingProfileQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -50,8 +51,7 @@ impl UpdateRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl UpdateRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_profile_id = input;
-        self
+        self.routing_profile_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl UpdateRoutingProfileQueuesInputBuilder {
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
     pub fn queue_configs(mut self, input: crate::types::RoutingProfileQueueConfig) -> Self {
         let mut v = self.queue_configs.unwrap_or_default();
-        v.push(input);
-        self.queue_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queue_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
-        self.queue_configs = input;
-        self
+    pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueConfig>>) -> Self {
+        self.queue_configs = input; self
     }
     /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
-    pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+    pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueConfig>> {
         &self.queue_configs
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileQueuesInput`](crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesInput {
-            instance_id: self.instance_id,
-            routing_profile_id: self.routing_profile_id,
-            queue_configs: self.queue_configs,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesInput {
+                instance_id: self.instance_id
+                ,
+                routing_profile_id: self.routing_profile_id
+                ,
+                queue_configs: self.queue_configs
+                ,
+            }
+        )
     }
 }
+

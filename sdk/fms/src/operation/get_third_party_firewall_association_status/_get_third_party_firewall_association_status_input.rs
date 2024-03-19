@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetThirdPartyFirewallAssociationStatusInput {
+pub struct GetThirdPartyFirewallAssociationStatusInput  {
     /// <p>The name of the third-party firewall vendor.</p>
     pub third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }
-impl GetThirdPartyFirewallAssociationStatusInput {
+impl  GetThirdPartyFirewallAssociationStatusInput  {
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn third_party_firewall(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewall> {
+    pub fn third_party_firewall(&self) -> ::std::option::Option<& crate::types::ThirdPartyFirewall> {
         self.third_party_firewall.as_ref()
     }
 }
@@ -34,24 +34,20 @@ impl GetThirdPartyFirewallAssociationStatusInputBuilder {
     }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
-        self.third_party_firewall = input;
-        self
+        self.third_party_firewall = input; self
     }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         &self.third_party_firewall
     }
     /// Consumes the builder and constructs a [`GetThirdPartyFirewallAssociationStatusInput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput {
-                third_party_firewall: self.third_party_firewall,
-            },
+                third_party_firewall: self.third_party_firewall
+                ,
+            }
         )
     }
 }
+

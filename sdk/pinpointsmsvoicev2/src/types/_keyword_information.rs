@@ -3,7 +3,7 @@
 /// <p>The information for all keywords in a pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeywordInformation {
+pub struct KeywordInformation  {
     /// <p>The keyword as a string.</p>
     pub keyword: ::std::string::String,
     /// <p>A custom message that can be used with the keyword.</p>
@@ -11,19 +11,17 @@ pub struct KeywordInformation {
     /// <p>The action to perform for the keyword.</p>
     pub keyword_action: crate::types::KeywordAction,
 }
-impl KeywordInformation {
+impl  KeywordInformation  {
     /// <p>The keyword as a string.</p>
-    pub fn keyword(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword.deref()
+    pub fn keyword(&self) -> & str {
+        use std::ops::Deref; self.keyword.deref()
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword_message.deref()
+    pub fn keyword_message(&self) -> & str {
+        use std::ops::Deref; self.keyword_message.deref()
     }
     /// <p>The action to perform for the keyword.</p>
-    pub fn keyword_action(&self) -> &crate::types::KeywordAction {
+    pub fn keyword_action(&self) -> & crate::types::KeywordAction {
         &self.keyword_action
     }
 }
@@ -51,8 +49,7 @@ impl KeywordInformationBuilder {
     }
     /// <p>The keyword as a string.</p>
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// <p>The keyword as a string.</p>
     pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl KeywordInformationBuilder {
     }
     /// <p>A custom message that can be used with the keyword.</p>
     pub fn set_keyword_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword_message = input;
-        self
+        self.keyword_message = input; self
     }
     /// <p>A custom message that can be used with the keyword.</p>
     pub fn get_keyword_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl KeywordInformationBuilder {
     }
     /// <p>The action to perform for the keyword.</p>
     pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
-        self.keyword_action = input;
-        self
+        self.keyword_action = input; self
     }
     /// <p>The action to perform for the keyword.</p>
     pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
@@ -94,25 +89,25 @@ impl KeywordInformationBuilder {
     /// - [`keyword_message`](crate::types::builders::KeywordInformationBuilder::keyword_message)
     /// - [`keyword_action`](crate::types::builders::KeywordInformationBuilder::keyword_action)
     pub fn build(self) -> ::std::result::Result<crate::types::KeywordInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeywordInformation {
-            keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyword",
-                    "keyword was not specified but it is required when building KeywordInformation",
-                )
-            })?,
-            keyword_message: self.keyword_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyword_message",
-                    "keyword_message was not specified but it is required when building KeywordInformation",
-                )
-            })?,
-            keyword_action: self.keyword_action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyword_action",
-                    "keyword_action was not specified but it is required when building KeywordInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeywordInformation {
+                keyword: self.keyword
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyword", "keyword was not specified but it is required when building KeywordInformation")
+                    )?
+                ,
+                keyword_message: self.keyword_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyword_message", "keyword_message was not specified but it is required when building KeywordInformation")
+                    )?
+                ,
+                keyword_action: self.keyword_action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyword_action", "keyword_action was not specified but it is required when building KeywordInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

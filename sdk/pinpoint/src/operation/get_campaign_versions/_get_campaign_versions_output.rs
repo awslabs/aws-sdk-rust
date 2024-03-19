@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignVersionsOutput {
+pub struct GetCampaignVersionsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     pub campaigns_response: ::std::option::Option<crate::types::CampaignsResponse>,
     _request_id: Option<String>,
 }
-impl GetCampaignVersionsOutput {
+impl  GetCampaignVersionsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn campaigns_response(&self) -> ::std::option::Option<&crate::types::CampaignsResponse> {
+    pub fn campaigns_response(&self) -> ::std::option::Option<& crate::types::CampaignsResponse> {
         self.campaigns_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCampaignVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCampaignVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionsOutput`](crate::operation::get_campaign_versions::GetCampaignVersionsOutput).
     pub fn builder() -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCampaignVersionsOutputBuilder {
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     pub fn set_campaigns_response(mut self, input: ::std::option::Option<crate::types::CampaignsResponse>) -> Self {
-        self.campaigns_response = input;
-        self
+        self.campaigns_response = input; self
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     pub fn get_campaigns_response(&self) -> &::std::option::Option<crate::types::CampaignsResponse> {
         &self.campaigns_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCampaignVersionsOutput`](crate::operation::get_campaign_versions::GetCampaignVersionsOutput).
     pub fn build(self) -> crate::operation::get_campaign_versions::GetCampaignVersionsOutput {
         crate::operation::get_campaign_versions::GetCampaignVersionsOutput {
-            campaigns_response: self.campaigns_response,
+            campaigns_response: self.campaigns_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

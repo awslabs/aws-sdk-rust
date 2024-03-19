@@ -3,15 +3,14 @@
 /// <p>A imported variant item's source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VariantImportItemSource {
+pub struct VariantImportItemSource  {
     /// <p>The source file's location in Amazon S3.</p>
     pub source: ::std::string::String,
 }
-impl VariantImportItemSource {
+impl  VariantImportItemSource  {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
 }
 impl VariantImportItemSource {
@@ -36,8 +35,7 @@ impl VariantImportItemSourceBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl VariantImportItemSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::VariantImportItemSourceBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::VariantImportItemSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VariantImportItemSource {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building VariantImportItemSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VariantImportItemSource {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building VariantImportItemSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

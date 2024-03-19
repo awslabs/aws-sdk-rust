@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBatchJobOutput {
+pub struct StartBatchJobOutput  {
     /// <p>The unique identifier of this execution of the batch job.</p>
     pub execution_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartBatchJobOutput {
+impl  StartBatchJobOutput  {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    pub fn execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_id.deref()
+    pub fn execution_id(&self) -> & str {
+        use std::ops::Deref; self.execution_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartBatchJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartBatchJobOutput {
     /// Creates a new builder-style object to manufacture [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
     pub fn builder() -> crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder {
@@ -42,36 +41,35 @@ impl StartBatchJobOutputBuilder {
     }
     /// <p>The unique identifier of this execution of the batch job.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The unique identifier of this execution of the batch job.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_id`](crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder::execution_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobOutput {
-            execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_id",
-                    "execution_id was not specified but it is required when building StartBatchJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_batch_job::StartBatchJobOutput {
+                execution_id: self.execution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_id", "execution_id was not specified but it is required when building StartBatchJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

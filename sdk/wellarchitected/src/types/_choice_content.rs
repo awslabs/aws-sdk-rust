@@ -3,19 +3,19 @@
 /// <p>The choice content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChoiceContent {
+pub struct ChoiceContent  {
     /// <p>The display text for the choice content.</p>
     pub display_text: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the choice content.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl ChoiceContent {
+impl  ChoiceContent  {
     /// <p>The display text for the choice content.</p>
-    pub fn display_text(&self) -> ::std::option::Option<&str> {
+    pub fn display_text(&self) -> ::std::option::Option<& str> {
         self.display_text.as_deref()
     }
     /// <p>The URL for the choice content.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ChoiceContentBuilder {
     }
     /// <p>The display text for the choice content.</p>
     pub fn set_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_text = input;
-        self
+        self.display_text = input; self
     }
     /// <p>The display text for the choice content.</p>
     pub fn get_display_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ChoiceContentBuilder {
     }
     /// <p>The URL for the choice content.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL for the choice content.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ChoiceContentBuilder {
     /// Consumes the builder and constructs a [`ChoiceContent`](crate::types::ChoiceContent).
     pub fn build(self) -> crate::types::ChoiceContent {
         crate::types::ChoiceContent {
-            display_text: self.display_text,
-            url: self.url,
+            display_text: self.display_text
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

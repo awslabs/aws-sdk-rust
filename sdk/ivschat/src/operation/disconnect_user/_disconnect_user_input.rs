@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DisconnectUserInput {
+pub struct DisconnectUserInput  {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>ID of the user (connection) to disconnect from the room.</p>
@@ -10,21 +10,21 @@ pub struct DisconnectUserInput {
     /// <p>Reason for disconnecting the user.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectUserInput {
+impl  DisconnectUserInput  {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn room_identifier(&self) -> ::std::option::Option<& str> {
         self.room_identifier.as_deref()
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Reason for disconnecting the user.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for DisconnectUserInput {
+impl  ::std::fmt::Debug for DisconnectUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DisconnectUserInput");
         formatter.field("room_identifier", &self.room_identifier);
@@ -57,8 +57,7 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_identifier = input;
-        self
+        self.room_identifier = input; self
     }
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,22 +84,24 @@ impl DisconnectUserInputBuilder {
     }
     /// <p>Reason for disconnecting the user.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Reason for disconnecting the user.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disconnect_user::DisconnectUserInput {
-            room_identifier: self.room_identifier,
-            user_id: self.user_id,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disconnect_user::DisconnectUserInput {
+                room_identifier: self.room_identifier
+                ,
+                user_id: self.user_id
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DisconnectUserInputBuilder {
@@ -113,3 +113,4 @@ impl ::std::fmt::Debug for DisconnectUserInputBuilder {
         formatter.finish()
     }
 }
+

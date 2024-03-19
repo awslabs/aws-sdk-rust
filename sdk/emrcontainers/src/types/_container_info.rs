@@ -21,11 +21,7 @@ impl ContainerInfo {
     /// Tries to convert the enum instance into [`EksInfo`](crate::types::ContainerInfo::EksInfo), extracting the inner [`EksInfo`](crate::types::EksInfo).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eks_info(&self) -> ::std::result::Result<&crate::types::EksInfo, &Self> {
-        if let ContainerInfo::EksInfo(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ContainerInfo::EksInfo(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EksInfo`](crate::types::ContainerInfo::EksInfo).
     pub fn is_eks_info(&self) -> bool {
@@ -36,3 +32,4 @@ impl ContainerInfo {
         matches!(self, Self::Unknown)
     }
 }
+

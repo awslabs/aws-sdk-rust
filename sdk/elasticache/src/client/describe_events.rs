@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEvents`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_identifier(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::source_identifier) / [`set_source_identifier(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_source_identifier):<br>required: **false**<br><p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p><br>
     ///   - [`source_type(SourceType)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::source_type) / [`set_source_type(Option<SourceType>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_source_type):<br>required: **false**<br><p>The event source to retrieve events for. If no value is specified, all events are returned.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_start_time):<br>required: **false**<br><p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p> <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`duration(i32)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::duration) / [`set_duration(Option<i32>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_duration):<br>required: **false**<br><p>The number of minutes worth of events to retrieve.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: minimum 20; maximum 100.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
+                            /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`events(Option<Vec::<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
+                            /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
     pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

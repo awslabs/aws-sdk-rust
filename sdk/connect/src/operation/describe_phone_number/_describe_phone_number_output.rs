@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePhoneNumberOutput {
+pub struct DescribePhoneNumberOutput  {
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     pub claimed_phone_number_summary: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>,
     _request_id: Option<String>,
 }
-impl DescribePhoneNumberOutput {
+impl  DescribePhoneNumberOutput  {
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
-    pub fn claimed_phone_number_summary(&self) -> ::std::option::Option<&crate::types::ClaimedPhoneNumberSummary> {
+    pub fn claimed_phone_number_summary(&self) -> ::std::option::Option<& crate::types::ClaimedPhoneNumberSummary> {
         self.claimed_phone_number_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePhoneNumberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumberOutput`](crate::operation::describe_phone_number::DescribePhoneNumberOutput).
     pub fn builder() -> crate::operation::describe_phone_number::builders::DescribePhoneNumberOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribePhoneNumberOutputBuilder {
     }
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     pub fn set_claimed_phone_number_summary(mut self, input: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>) -> Self {
-        self.claimed_phone_number_summary = input;
-        self
+        self.claimed_phone_number_summary = input; self
     }
     /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
     pub fn get_claimed_phone_number_summary(&self) -> &::std::option::Option<crate::types::ClaimedPhoneNumberSummary> {
         &self.claimed_phone_number_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePhoneNumberOutput`](crate::operation::describe_phone_number::DescribePhoneNumberOutput).
     pub fn build(self) -> crate::operation::describe_phone_number::DescribePhoneNumberOutput {
         crate::operation::describe_phone_number::DescribePhoneNumberOutput {
-            claimed_phone_number_summary: self.claimed_phone_number_summary,
+            claimed_phone_number_summary: self.claimed_phone_number_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

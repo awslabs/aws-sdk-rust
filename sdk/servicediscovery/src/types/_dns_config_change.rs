@@ -3,15 +3,14 @@
 /// <p>A complex type that contains information about changes to the Route&nbsp;53 DNS records that Cloud Map creates when you register an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DnsConfigChange {
+pub struct DnsConfigChange  {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub dns_records: ::std::vec::Vec<crate::types::DnsRecord>,
+    pub dns_records: ::std::vec::Vec::<crate::types::DnsRecord>,
 }
-impl DnsConfigChange {
+impl  DnsConfigChange  {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> &[crate::types::DnsRecord] {
-        use std::ops::Deref;
-        self.dns_records.deref()
+    pub fn dns_records(&self) -> & [crate::types::DnsRecord] {
+        use std::ops::Deref; self.dns_records.deref()
     }
 }
 impl DnsConfigChange {
@@ -25,7 +24,7 @@ impl DnsConfigChange {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsConfigChangeBuilder {
-    pub(crate) dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
+    pub(crate) dns_records: ::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>>,
 }
 impl DnsConfigChangeBuilder {
     /// Appends an item to `dns_records`.
@@ -35,30 +34,31 @@ impl DnsConfigChangeBuilder {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(mut self, input: crate::types::DnsRecord) -> Self {
         let mut v = self.dns_records.unwrap_or_default();
-        v.push(input);
-        self.dns_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dns_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn set_dns_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>) -> Self {
-        self.dns_records = input;
-        self
+    pub fn set_dns_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>>) -> Self {
+        self.dns_records = input; self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn get_dns_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+    pub fn get_dns_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DnsRecord>> {
         &self.dns_records
     }
     /// Consumes the builder and constructs a [`DnsConfigChange`](crate::types::DnsConfigChange).
     /// This method will fail if any of the following fields are not set:
     /// - [`dns_records`](crate::types::builders::DnsConfigChangeBuilder::dns_records)
     pub fn build(self) -> ::std::result::Result<crate::types::DnsConfigChange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DnsConfigChange {
-            dns_records: self.dns_records.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dns_records",
-                    "dns_records was not specified but it is required when building DnsConfigChange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DnsConfigChange {
+                dns_records: self.dns_records
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dns_records", "dns_records was not specified but it is required when building DnsConfigChange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

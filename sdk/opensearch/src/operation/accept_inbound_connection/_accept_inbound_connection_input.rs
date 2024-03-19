@@ -3,13 +3,13 @@
 /// <p>Container for the parameters to the <code>AcceptInboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptInboundConnectionInput {
+pub struct AcceptInboundConnectionInput  {
     /// <p>The ID of the inbound connection to accept.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
-impl AcceptInboundConnectionInput {
+impl  AcceptInboundConnectionInput  {
     /// <p>The ID of the inbound connection to accept.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl AcceptInboundConnectionInputBuilder {
     }
     /// <p>The ID of the inbound connection to accept.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the inbound connection to accept.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
     /// Consumes the builder and constructs a [`AcceptInboundConnectionInput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_inbound_connection::AcceptInboundConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_inbound_connection::AcceptInboundConnectionInput {
-            connection_id: self.connection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_inbound_connection::AcceptInboundConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_inbound_connection::AcceptInboundConnectionInput {
+                connection_id: self.connection_id
+                ,
+            }
+        )
     }
 }
+

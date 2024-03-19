@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkerBlockInput {
+pub struct DeleteWorkerBlockInput  {
     /// <p>The ID of the Worker to unblock.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkerBlockInput {
+impl  DeleteWorkerBlockInput  {
     /// <p>The ID of the Worker to unblock.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteWorkerBlockInputBuilder {
     }
     /// <p>The ID of the Worker to unblock.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker to unblock.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteWorkerBlockInputBuilder {
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DeleteWorkerBlockInput`](crate::operation::delete_worker_block::DeleteWorkerBlockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_worker_block::DeleteWorkerBlockInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_worker_block::DeleteWorkerBlockInput {
-            worker_id: self.worker_id,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_worker_block::DeleteWorkerBlockInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_worker_block::DeleteWorkerBlockInput {
+                worker_id: self.worker_id
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

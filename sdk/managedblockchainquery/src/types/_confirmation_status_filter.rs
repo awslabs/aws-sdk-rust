@@ -3,15 +3,14 @@
 /// <p>The container for the <code>ConfirmationStatusFilter</code> that filters for the <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a> of the results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfirmationStatusFilter {
+pub struct ConfirmationStatusFilter  {
     /// <p>The container to determine whether to list results that have only reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
-    pub include: ::std::vec::Vec<crate::types::ConfirmationStatus>,
+    pub include: ::std::vec::Vec::<crate::types::ConfirmationStatus>,
 }
-impl ConfirmationStatusFilter {
+impl  ConfirmationStatusFilter  {
     /// <p>The container to determine whether to list results that have only reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
-    pub fn include(&self) -> &[crate::types::ConfirmationStatus] {
-        use std::ops::Deref;
-        self.include.deref()
+    pub fn include(&self) -> & [crate::types::ConfirmationStatus] {
+        use std::ops::Deref; self.include.deref()
     }
 }
 impl ConfirmationStatusFilter {
@@ -25,7 +24,7 @@ impl ConfirmationStatusFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmationStatusFilterBuilder {
-    pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ConfirmationStatus>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec::<crate::types::ConfirmationStatus>>,
 }
 impl ConfirmationStatusFilterBuilder {
     /// Appends an item to `include`.
@@ -35,30 +34,31 @@ impl ConfirmationStatusFilterBuilder {
     /// <p>The container to determine whether to list results that have only reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
     pub fn include(mut self, input: crate::types::ConfirmationStatus) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container to determine whether to list results that have only reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfirmationStatus>>) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfirmationStatus>>) -> Self {
+        self.include = input; self
     }
     /// <p>The container to determine whether to list results that have only reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfirmationStatus>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfirmationStatus>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`ConfirmationStatusFilter`](crate::types::ConfirmationStatusFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`include`](crate::types::builders::ConfirmationStatusFilterBuilder::include)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfirmationStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfirmationStatusFilter {
-            include: self.include.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "include",
-                    "include was not specified but it is required when building ConfirmationStatusFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfirmationStatusFilter {
+                include: self.include
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("include", "include was not specified but it is required when building ConfirmationStatusFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

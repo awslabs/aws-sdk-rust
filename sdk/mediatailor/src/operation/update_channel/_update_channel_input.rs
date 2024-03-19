@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// <p>The name of the channel.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub filler_slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>The channel's output properties.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::RequestOutputItem>>,
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
     pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
     /// <p>The list of audiences defined in channel.</p>
-    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateChannelInput {
+impl  UpdateChannelInput  {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
-    pub fn filler_slate(&self) -> ::std::option::Option<&crate::types::SlateSource> {
+    pub fn filler_slate(&self) -> ::std::option::Option<& crate::types::SlateSource> {
         self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::RequestOutputItem] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::RequestOutputItem] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
-    pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
+    pub fn time_shift_configuration(&self) -> ::std::option::Option<& crate::types::TimeShiftConfiguration> {
         self.time_shift_configuration.as_ref()
     }
     /// <p>The list of audiences defined in channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
-    pub fn audiences(&self) -> &[::std::string::String] {
-        self.audiences.as_deref().unwrap_or_default()
+    pub fn audiences(&self) -> & [::std::string::String] {
+        self.audiences.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateChannelInput {
@@ -53,9 +55,9 @@ impl UpdateChannelInput {
 pub struct UpdateChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) filler_slate: ::std::option::Option<crate::types::SlateSource>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::RequestOutputItem>>,
     pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
-    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateChannelInputBuilder {
     /// <p>The name of the channel.</p>
@@ -66,8 +68,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +81,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn set_filler_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
-        self.filler_slate = input;
-        self
+        self.filler_slate = input; self
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
@@ -94,17 +94,16 @@ impl UpdateChannelInputBuilder {
     /// <p>The channel's output properties.</p>
     pub fn outputs(mut self, input: crate::types::RequestOutputItem) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The channel's output properties.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RequestOutputItem>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>The channel's output properties.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RequestOutputItem>> {
         &self.outputs
     }
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
@@ -114,8 +113,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
     pub fn set_time_shift_configuration(mut self, input: ::std::option::Option<crate::types::TimeShiftConfiguration>) -> Self {
-        self.time_shift_configuration = input;
-        self
+        self.time_shift_configuration = input; self
     }
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
@@ -128,29 +126,34 @@ impl UpdateChannelInputBuilder {
     /// <p>The list of audiences defined in channel.</p>
     pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.audiences.unwrap_or_default();
-        v.push(input.into());
-        self.audiences = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.audiences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of audiences defined in channel.</p>
-    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.audiences = input;
-        self
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.audiences = input; self
     }
     /// <p>The list of audiences defined in channel.</p>
-    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.audiences
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            channel_name: self.channel_name,
-            filler_slate: self.filler_slate,
-            outputs: self.outputs,
-            time_shift_configuration: self.time_shift_configuration,
-            audiences: self.audiences,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                channel_name: self.channel_name
+                ,
+                filler_slate: self.filler_slate
+                ,
+                outputs: self.outputs
+                ,
+                time_shift_configuration: self.time_shift_configuration
+                ,
+                audiences: self.audiences
+                ,
+            }
+        )
     }
 }
+

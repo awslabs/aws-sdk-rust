@@ -3,7 +3,7 @@
 /// <p>Specifies S3 configuration information for the input data for the data ingestion job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionS3InputConfiguration {
+pub struct IngestionS3InputConfiguration  {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion.</p>
     pub bucket: ::std::string::String,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion.</p>
@@ -12,19 +12,18 @@ pub struct IngestionS3InputConfiguration {
     /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub key_pattern: ::std::option::Option<::std::string::String>,
 }
-impl IngestionS3InputConfiguration {
+impl  IngestionS3InputConfiguration  {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
     /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
-    pub fn key_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn key_pattern(&self) -> ::std::option::Option<& str> {
         self.key_pattern.as_deref()
     }
 }
@@ -52,8 +51,7 @@ impl IngestionS3InputConfigurationBuilder {
     }
     /// <p>The name of the S3 bucket used for the input data for the data ingestion.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the S3 bucket used for the input data for the data ingestion.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl IngestionS3InputConfigurationBuilder {
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +79,7 @@ impl IngestionS3InputConfigurationBuilder {
     /// <p>The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
     /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub fn set_key_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pattern = input;
-        self
+        self.key_pattern = input; self
     }
     /// <p>The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
     /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
@@ -94,15 +90,19 @@ impl IngestionS3InputConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::IngestionS3InputConfigurationBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionS3InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionS3InputConfiguration {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building IngestionS3InputConfiguration",
-                )
-            })?,
-            prefix: self.prefix,
-            key_pattern: self.key_pattern,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionS3InputConfiguration {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building IngestionS3InputConfiguration")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+                key_pattern: self.key_pattern
+                ,
+            }
+        )
     }
 }
+

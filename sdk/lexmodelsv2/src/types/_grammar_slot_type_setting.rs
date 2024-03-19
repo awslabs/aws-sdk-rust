@@ -3,13 +3,13 @@
 /// <p>Settings requried for a slot type based on a grammar that you provide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrammarSlotTypeSetting {
+pub struct GrammarSlotTypeSetting  {
     /// <p>The source of the grammar used to create the slot type.</p>
     pub source: ::std::option::Option<crate::types::GrammarSlotTypeSource>,
 }
-impl GrammarSlotTypeSetting {
+impl  GrammarSlotTypeSetting  {
     /// <p>The source of the grammar used to create the slot type.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::GrammarSlotTypeSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::GrammarSlotTypeSource> {
         self.source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl GrammarSlotTypeSettingBuilder {
     }
     /// <p>The source of the grammar used to create the slot type.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::GrammarSlotTypeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the grammar used to create the slot type.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::GrammarSlotTypeSource> {
@@ -43,6 +42,10 @@ impl GrammarSlotTypeSettingBuilder {
     }
     /// Consumes the builder and constructs a [`GrammarSlotTypeSetting`](crate::types::GrammarSlotTypeSetting).
     pub fn build(self) -> crate::types::GrammarSlotTypeSetting {
-        crate::types::GrammarSlotTypeSetting { source: self.source }
+        crate::types::GrammarSlotTypeSetting {
+            source: self.source
+            ,
+        }
     }
 }
+

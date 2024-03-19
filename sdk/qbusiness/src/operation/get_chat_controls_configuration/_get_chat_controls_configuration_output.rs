@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChatControlsConfigurationOutput {
+pub struct GetChatControlsConfigurationOutput  {
     /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub response_scope: ::std::option::Option<crate::types::ResponseScope>,
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
     /// <p>The topic specific controls configured for a Amazon Q application.</p>
-    pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub topic_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetChatControlsConfigurationOutput {
+impl  GetChatControlsConfigurationOutput  {
     /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
-    pub fn response_scope(&self) -> ::std::option::Option<&crate::types::ResponseScope> {
+    pub fn response_scope(&self) -> ::std::option::Option<& crate::types::ResponseScope> {
         self.response_scope.as_ref()
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
-    pub fn blocked_phrases(&self) -> ::std::option::Option<&crate::types::BlockedPhrasesConfiguration> {
+    pub fn blocked_phrases(&self) -> ::std::option::Option<& crate::types::BlockedPhrasesConfiguration> {
         self.blocked_phrases.as_ref()
     }
     /// <p>The topic specific controls configured for a Amazon Q application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations.is_none()`.
-    pub fn topic_configurations(&self) -> &[crate::types::TopicConfiguration] {
-        self.topic_configurations.as_deref().unwrap_or_default()
+    pub fn topic_configurations(&self) -> & [crate::types::TopicConfiguration] {
+        self.topic_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetChatControlsConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetChatControlsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetChatControlsConfigurationOutput`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput).
     pub fn builder() -> crate::operation::get_chat_controls_configuration::builders::GetChatControlsConfigurationOutputBuilder {
@@ -51,7 +52,7 @@ impl GetChatControlsConfigurationOutput {
 pub struct GetChatControlsConfigurationOutputBuilder {
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
     pub(crate) blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
-    pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,8 +64,7 @@ impl GetChatControlsConfigurationOutputBuilder {
     }
     /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn set_response_scope(mut self, input: ::std::option::Option<crate::types::ResponseScope>) -> Self {
-        self.response_scope = input;
-        self
+        self.response_scope = input; self
     }
     /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
@@ -77,8 +77,7 @@ impl GetChatControlsConfigurationOutputBuilder {
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn set_blocked_phrases(mut self, input: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>) -> Self {
-        self.blocked_phrases = input;
-        self
+        self.blocked_phrases = input; self
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn get_blocked_phrases(&self) -> &::std::option::Option<crate::types::BlockedPhrasesConfiguration> {
@@ -91,17 +90,16 @@ impl GetChatControlsConfigurationOutputBuilder {
     /// <p>The topic specific controls configured for a Amazon Q application.</p>
     pub fn topic_configurations(mut self, input: crate::types::TopicConfiguration) -> Self {
         let mut v = self.topic_configurations.unwrap_or_default();
-        v.push(input);
-        self.topic_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topic_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The topic specific controls configured for a Amazon Q application.</p>
-    pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
-        self.topic_configurations = input;
-        self
+    pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>) -> Self {
+        self.topic_configurations = input; self
     }
     /// <p>The topic specific controls configured for a Amazon Q application.</p>
-    pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>> {
         &self.topic_configurations
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
@@ -111,30 +109,34 @@ impl GetChatControlsConfigurationOutputBuilder {
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetChatControlsConfigurationOutput`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput).
     pub fn build(self) -> crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput {
         crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput {
-            response_scope: self.response_scope,
-            blocked_phrases: self.blocked_phrases,
-            topic_configurations: self.topic_configurations,
-            next_token: self.next_token,
+            response_scope: self.response_scope
+            ,
+            blocked_phrases: self.blocked_phrases
+            ,
+            topic_configurations: self.topic_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

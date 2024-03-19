@@ -3,7 +3,7 @@
 /// <p>TCP flags and masks to inspect packets for, used in stateless rules <code>MatchAttributes</code> settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TcpFlagField {
+pub struct TcpFlagField  {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
@@ -12,11 +12,11 @@ pub struct TcpFlagField {
     /// <li>
     /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
-    pub flags: ::std::vec::Vec<crate::types::TcpFlag>,
+    pub flags: ::std::vec::Vec::<crate::types::TcpFlag>,
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
+    pub masks: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>>,
 }
-impl TcpFlagField {
+impl  TcpFlagField  {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
@@ -25,15 +25,15 @@ impl TcpFlagField {
     /// <li>
     /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
-    pub fn flags(&self) -> &[crate::types::TcpFlag] {
-        use std::ops::Deref;
-        self.flags.deref()
+    pub fn flags(&self) -> & [crate::types::TcpFlag] {
+        use std::ops::Deref; self.flags.deref()
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.masks.is_none()`.
-    pub fn masks(&self) -> &[crate::types::TcpFlag] {
-        self.masks.as_deref().unwrap_or_default()
+    pub fn masks(&self) -> & [crate::types::TcpFlag] {
+        self.masks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TcpFlagField {
@@ -47,8 +47,8 @@ impl TcpFlagField {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TcpFlagFieldBuilder {
-    pub(crate) flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
-    pub(crate) masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
+    pub(crate) flags: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>>,
+    pub(crate) masks: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>>,
 }
 impl TcpFlagFieldBuilder {
     /// Appends an item to `flags`.
@@ -65,9 +65,9 @@ impl TcpFlagFieldBuilder {
     /// </ul>
     pub fn flags(mut self, input: crate::types::TcpFlag) -> Self {
         let mut v = self.flags.unwrap_or_default();
-        v.push(input);
-        self.flags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.flags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
@@ -77,9 +77,8 @@ impl TcpFlagFieldBuilder {
     /// <li>
     /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
-    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>) -> Self {
-        self.flags = input;
-        self
+    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>>) -> Self {
+        self.flags = input; self
     }
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
@@ -89,7 +88,7 @@ impl TcpFlagFieldBuilder {
     /// <li>
     /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
-    pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>> {
+    pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>> {
         &self.flags
     }
     /// Appends an item to `masks`.
@@ -99,31 +98,33 @@ impl TcpFlagFieldBuilder {
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
     pub fn masks(mut self, input: crate::types::TcpFlag) -> Self {
         let mut v = self.masks.unwrap_or_default();
-        v.push(input);
-        self.masks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.masks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn set_masks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>) -> Self {
-        self.masks = input;
-        self
+    pub fn set_masks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>>) -> Self {
+        self.masks = input; self
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn get_masks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>> {
+    pub fn get_masks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TcpFlag>> {
         &self.masks
     }
     /// Consumes the builder and constructs a [`TcpFlagField`](crate::types::TcpFlagField).
     /// This method will fail if any of the following fields are not set:
     /// - [`flags`](crate::types::builders::TcpFlagFieldBuilder::flags)
     pub fn build(self) -> ::std::result::Result<crate::types::TcpFlagField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TcpFlagField {
-            flags: self.flags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "flags",
-                    "flags was not specified but it is required when building TcpFlagField",
-                )
-            })?,
-            masks: self.masks,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TcpFlagField {
+                flags: self.flags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("flags", "flags was not specified but it is required when building TcpFlagField")
+                    )?
+                ,
+                masks: self.masks
+                ,
+            }
+        )
     }
 }
+

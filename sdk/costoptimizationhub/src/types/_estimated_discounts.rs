@@ -3,7 +3,7 @@
 /// <p>Estimated discount details of the current and recommended resource configuration for a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EstimatedDiscounts {
+pub struct EstimatedDiscounts  {
     /// <p>Estimated Savings Plans discounts.</p>
     pub savings_plans_discount: ::std::option::Option<f64>,
     /// <p>Estimated reserved instance discounts.</p>
@@ -11,7 +11,7 @@ pub struct EstimatedDiscounts {
     /// <p>Estimated other discounts include all discounts that are not itemized. Itemized discounts include <code>reservedInstanceDiscount</code> and <code>savingsPlansDiscount</code>.</p>
     pub other_discount: ::std::option::Option<f64>,
 }
-impl EstimatedDiscounts {
+impl  EstimatedDiscounts  {
     /// <p>Estimated Savings Plans discounts.</p>
     pub fn savings_plans_discount(&self) -> ::std::option::Option<f64> {
         self.savings_plans_discount
@@ -48,8 +48,7 @@ impl EstimatedDiscountsBuilder {
     }
     /// <p>Estimated Savings Plans discounts.</p>
     pub fn set_savings_plans_discount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.savings_plans_discount = input;
-        self
+        self.savings_plans_discount = input; self
     }
     /// <p>Estimated Savings Plans discounts.</p>
     pub fn get_savings_plans_discount(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl EstimatedDiscountsBuilder {
     }
     /// <p>Estimated reserved instance discounts.</p>
     pub fn set_reserved_instances_discount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.reserved_instances_discount = input;
-        self
+        self.reserved_instances_discount = input; self
     }
     /// <p>Estimated reserved instance discounts.</p>
     pub fn get_reserved_instances_discount(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl EstimatedDiscountsBuilder {
     }
     /// <p>Estimated other discounts include all discounts that are not itemized. Itemized discounts include <code>reservedInstanceDiscount</code> and <code>savingsPlansDiscount</code>.</p>
     pub fn set_other_discount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.other_discount = input;
-        self
+        self.other_discount = input; self
     }
     /// <p>Estimated other discounts include all discounts that are not itemized. Itemized discounts include <code>reservedInstanceDiscount</code> and <code>savingsPlansDiscount</code>.</p>
     pub fn get_other_discount(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,13 @@ impl EstimatedDiscountsBuilder {
     /// Consumes the builder and constructs a [`EstimatedDiscounts`](crate::types::EstimatedDiscounts).
     pub fn build(self) -> crate::types::EstimatedDiscounts {
         crate::types::EstimatedDiscounts {
-            savings_plans_discount: self.savings_plans_discount,
-            reserved_instances_discount: self.reserved_instances_discount,
-            other_discount: self.other_discount,
+            savings_plans_discount: self.savings_plans_discount
+            ,
+            reserved_instances_discount: self.reserved_instances_discount
+            ,
+            other_discount: self.other_discount
+            ,
         }
     }
 }
+

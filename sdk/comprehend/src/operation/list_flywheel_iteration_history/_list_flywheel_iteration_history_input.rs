@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFlywheelIterationHistoryInput {
+pub struct ListFlywheelIterationHistoryInput  {
     /// <p>The ARN of the flywheel.</p>
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filter the flywheel iteration history based on creation time.</p>
@@ -12,17 +12,17 @@ pub struct ListFlywheelIterationHistoryInput {
     /// <p>Maximum number of iteration history results to return</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListFlywheelIterationHistoryInput {
+impl  ListFlywheelIterationHistoryInput  {
     /// <p>The ARN of the flywheel.</p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::FlywheelIterationFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::FlywheelIterationFilter> {
         self.filter.as_ref()
     }
     /// <p>Next token</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of iteration history results to return</p>
@@ -55,8 +55,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
     }
     /// <p>The ARN of the flywheel.</p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// <p>The ARN of the flywheel.</p>
     pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
     }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelIterationFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FlywheelIterationFilter> {
@@ -83,8 +81,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
     }
     /// <p>Next token</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl ListFlywheelIterationHistoryInputBuilder {
     }
     /// <p>Maximum number of iteration history results to return</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of iteration history results to return</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFlywheelIterationHistoryInput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput {
-            flywheel_arn: self.flywheel_arn,
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput {
+                flywheel_arn: self.flywheel_arn
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

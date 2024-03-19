@@ -5,23 +5,20 @@ pub use crate::operation::update_identity_provider::_update_identity_provider_in
 
 impl UpdateIdentityProviderInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_identity_provider();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_identity_provider::UpdateIdentityProviderError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_identity_provider();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateIdentityProvider`.
-///
+/// 
 /// <p>Updates IdP information for a user pool.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
@@ -35,33 +32,32 @@ impl UpdateIdentityProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder,
+                    inner: crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        crate::operation::update_identity_provider::UpdateIdentityProviderError,
-    > for UpdateIdentityProviderFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
+                    crate::operation::update_identity_provider::UpdateIdentityProviderError,
+                > for UpdateIdentityProviderFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
+                        crate::operation::update_identity_provider::UpdateIdentityProviderError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateIdentityProviderFluentBuilder {
     /// Creates a new `UpdateIdentityProvider`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl UpdateIdentityProviderFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_identity_provider::UpdateIdentityProvider::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_identity_provider::UpdateIdentityProvider::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_provider::UpdateIdentityProviderOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_identity_provider::UpdateIdentityProvider::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_identity_provider::UpdateIdentityProvider::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider::UpdateIdentityProviderOutput, crate::operation::update_identity_provider::UpdateIdentityProviderError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -197,11 +184,7 @@ impl UpdateIdentityProviderFluentBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn provider_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_details(k.into(), v.into());
         self
     }
@@ -253,10 +236,7 @@ impl UpdateIdentityProviderFluentBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn set_provider_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_provider_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_provider_details(input);
         self
     }
@@ -308,7 +288,7 @@ impl UpdateIdentityProviderFluentBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_provider_details()
     }
     /// Adds a key-value pair to `AttributeMapping`.
@@ -316,24 +296,17 @@ impl UpdateIdentityProviderFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
     ///
     /// <p>The IdP attribute mapping to be changed.</p>
-    pub fn attribute_mapping(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_mapping(k.into(), v.into());
         self
     }
     /// <p>The IdP attribute mapping to be changed.</p>
-    pub fn set_attribute_mapping(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_mapping(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attribute_mapping(input);
         self
     }
     /// <p>The IdP attribute mapping to be changed.</p>
-    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_attribute_mapping()
     }
     /// Appends an item to `IdpIdentifiers`.
@@ -346,12 +319,13 @@ impl UpdateIdentityProviderFluentBuilder {
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_idp_identifiers()
     }
 }
+

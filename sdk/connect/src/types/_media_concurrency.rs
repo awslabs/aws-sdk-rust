@@ -3,7 +3,7 @@
 /// <p>Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaConcurrency {
+pub struct MediaConcurrency  {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub channel: crate::types::Channel,
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
@@ -14,9 +14,9 @@ pub struct MediaConcurrency {
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub cross_channel_behavior: ::std::option::Option<crate::types::CrossChannelBehavior>,
 }
-impl MediaConcurrency {
+impl  MediaConcurrency  {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn channel(&self) -> &crate::types::Channel {
+    pub fn channel(&self) -> & crate::types::Channel {
         &self.channel
     }
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
@@ -27,7 +27,7 @@ impl MediaConcurrency {
         self.concurrency
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
-    pub fn cross_channel_behavior(&self) -> ::std::option::Option<&crate::types::CrossChannelBehavior> {
+    pub fn cross_channel_behavior(&self) -> ::std::option::Option<& crate::types::CrossChannelBehavior> {
         self.cross_channel_behavior.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MediaConcurrencyBuilder {
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -76,8 +75,7 @@ impl MediaConcurrencyBuilder {
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn set_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.concurrency = input;
-        self
+        self.concurrency = input; self
     }
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
@@ -93,8 +91,7 @@ impl MediaConcurrencyBuilder {
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub fn set_cross_channel_behavior(mut self, input: ::std::option::Option<crate::types::CrossChannelBehavior>) -> Self {
-        self.cross_channel_behavior = input;
-        self
+        self.cross_channel_behavior = input; self
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub fn get_cross_channel_behavior(&self) -> &::std::option::Option<crate::types::CrossChannelBehavior> {
@@ -105,20 +102,22 @@ impl MediaConcurrencyBuilder {
     /// - [`channel`](crate::types::builders::MediaConcurrencyBuilder::channel)
     /// - [`concurrency`](crate::types::builders::MediaConcurrencyBuilder::concurrency)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaConcurrency, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaConcurrency {
-            channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel",
-                    "channel was not specified but it is required when building MediaConcurrency",
-                )
-            })?,
-            concurrency: self.concurrency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "concurrency",
-                    "concurrency was not specified but it is required when building MediaConcurrency",
-                )
-            })?,
-            cross_channel_behavior: self.cross_channel_behavior,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaConcurrency {
+                channel: self.channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel", "channel was not specified but it is required when building MediaConcurrency")
+                    )?
+                ,
+                concurrency: self.concurrency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("concurrency", "concurrency was not specified but it is required when building MediaConcurrency")
+                    )?
+                ,
+                cross_channel_behavior: self.cross_channel_behavior
+                ,
+            }
+        )
     }
 }
+

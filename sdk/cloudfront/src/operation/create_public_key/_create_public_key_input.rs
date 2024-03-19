@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePublicKeyInput {
+pub struct CreatePublicKeyInput  {
     /// <p>A CloudFront public key configuration.</p>
     pub public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
 }
-impl CreatePublicKeyInput {
+impl  CreatePublicKeyInput  {
     /// <p>A CloudFront public key configuration.</p>
-    pub fn public_key_config(&self) -> ::std::option::Option<&crate::types::PublicKeyConfig> {
+    pub fn public_key_config(&self) -> ::std::option::Option<& crate::types::PublicKeyConfig> {
         self.public_key_config.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl CreatePublicKeyInputBuilder {
     }
     /// <p>A CloudFront public key configuration.</p>
     pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
-        self.public_key_config = input;
-        self
+        self.public_key_config = input; self
     }
     /// <p>A CloudFront public key configuration.</p>
     pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
         &self.public_key_config
     }
     /// Consumes the builder and constructs a [`CreatePublicKeyInput`](crate::operation::create_public_key::CreatePublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_public_key::CreatePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_public_key::CreatePublicKeyInput {
-            public_key_config: self.public_key_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_public_key::CreatePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_public_key::CreatePublicKeyInput {
+                public_key_config: self.public_key_config
+                ,
+            }
+        )
     }
 }
+

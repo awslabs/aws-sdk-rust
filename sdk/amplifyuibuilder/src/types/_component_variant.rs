@@ -3,25 +3,19 @@
 /// <p>Describes the style configuration of a unique variation of a main component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentVariant {
+pub struct ComponentVariant  {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub variant_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub variant_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
-impl ComponentVariant {
+impl  ComponentVariant  {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub fn variant_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn variant_values(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.variant_values.as_ref()
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn overrides(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn overrides(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.overrides.as_ref()
     }
 }
@@ -36,10 +30,8 @@ impl ComponentVariant {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentVariantBuilder {
-    pub(crate) variant_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) variant_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl ComponentVariantBuilder {
     /// Adds a key-value pair to `variant_values`.
@@ -47,26 +39,18 @@ impl ComponentVariantBuilder {
     /// To override the contents of this collection use [`set_variant_values`](Self::set_variant_values).
     ///
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub fn variant_values(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variant_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variant_values.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.variant_values = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.variant_values = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub fn set_variant_values(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.variant_values = input;
-        self
+    pub fn set_variant_values(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.variant_values = input; self
     }
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub fn get_variant_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_variant_values(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.variant_values
     }
     /// Adds a key-value pair to `overrides`.
@@ -74,39 +58,28 @@ impl ComponentVariantBuilder {
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
     ///
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.overrides.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.overrides = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.overrides = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.overrides = input; self
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`ComponentVariant`](crate::types::ComponentVariant).
     pub fn build(self) -> crate::types::ComponentVariant {
         crate::types::ComponentVariant {
-            variant_values: self.variant_values,
-            overrides: self.overrides,
+            variant_values: self.variant_values
+            ,
+            overrides: self.overrides
+            ,
         }
     }
 }
+

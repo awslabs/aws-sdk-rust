@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetContentOutput {
+pub struct CreateDatasetContentOutput  {
     /// <p>The version ID of the dataset contents that are being created.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDatasetContentOutput {
+impl  CreateDatasetContentOutput  {
     /// <p>The version ID of the dataset contents that are being created.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDatasetContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDatasetContentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput).
     pub fn builder() -> crate::operation::create_dataset_content::builders::CreateDatasetContentOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateDatasetContentOutputBuilder {
     }
     /// <p>The version ID of the dataset contents that are being created.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID of the dataset contents that are being created.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput).
     pub fn build(self) -> crate::operation::create_dataset_content::CreateDatasetContentOutput {
         crate::operation::create_dataset_content::CreateDatasetContentOutput {
-            version_id: self.version_id,
+            version_id: self.version_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

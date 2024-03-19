@@ -3,7 +3,7 @@
 /// <p>Contains details of a coverage map filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageMapFilter {
+pub struct CoverageMapFilter  {
     /// <p>The operator to compare coverage on.</p>
     pub comparison: crate::types::CoverageMapComparison,
     /// <p>The tag key associated with the coverage map filter.</p>
@@ -11,18 +11,17 @@ pub struct CoverageMapFilter {
     /// <p>The tag value associated with the coverage map filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl CoverageMapFilter {
+impl  CoverageMapFilter  {
     /// <p>The operator to compare coverage on.</p>
-    pub fn comparison(&self) -> &crate::types::CoverageMapComparison {
+    pub fn comparison(&self) -> & crate::types::CoverageMapComparison {
         &self.comparison
     }
     /// <p>The tag key associated with the coverage map filter.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The tag value associated with the coverage map filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl CoverageMapFilterBuilder {
     }
     /// <p>The operator to compare coverage on.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CoverageMapComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The operator to compare coverage on.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CoverageMapComparison> {
@@ -65,8 +63,7 @@ impl CoverageMapFilterBuilder {
     }
     /// <p>The tag key associated with the coverage map filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag key associated with the coverage map filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl CoverageMapFilterBuilder {
     }
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl CoverageMapFilterBuilder {
     /// - [`comparison`](crate::types::builders::CoverageMapFilterBuilder::comparison)
     /// - [`key`](crate::types::builders::CoverageMapFilterBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::CoverageMapFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CoverageMapFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CoverageMapFilter",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building CoverageMapFilter",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CoverageMapFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CoverageMapFilter")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building CoverageMapFilter")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

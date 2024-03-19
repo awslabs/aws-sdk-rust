@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSearchSuggestionsInput {
+pub struct GetSearchSuggestionsInput  {
     /// <p>The name of the SageMaker resource to search for.</p>
     pub resource: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Limits the property names that are included in the response.</p>
     pub suggestion_query: ::std::option::Option<crate::types::SuggestionQuery>,
 }
-impl GetSearchSuggestionsInput {
+impl  GetSearchSuggestionsInput  {
     /// <p>The name of the SageMaker resource to search for.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource.as_ref()
     }
     /// <p>Limits the property names that are included in the response.</p>
-    pub fn suggestion_query(&self) -> ::std::option::Option<&crate::types::SuggestionQuery> {
+    pub fn suggestion_query(&self) -> ::std::option::Option<& crate::types::SuggestionQuery> {
         self.suggestion_query.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSearchSuggestionsInputBuilder {
     }
     /// <p>The name of the SageMaker resource to search for.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name of the SageMaker resource to search for.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -55,21 +54,22 @@ impl GetSearchSuggestionsInputBuilder {
     }
     /// <p>Limits the property names that are included in the response.</p>
     pub fn set_suggestion_query(mut self, input: ::std::option::Option<crate::types::SuggestionQuery>) -> Self {
-        self.suggestion_query = input;
-        self
+        self.suggestion_query = input; self
     }
     /// <p>Limits the property names that are included in the response.</p>
     pub fn get_suggestion_query(&self) -> &::std::option::Option<crate::types::SuggestionQuery> {
         &self.suggestion_query
     }
     /// Consumes the builder and constructs a [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_search_suggestions::GetSearchSuggestionsInput {
-            resource: self.resource,
-            suggestion_query: self.suggestion_query,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_search_suggestions::GetSearchSuggestionsInput {
+                resource: self.resource
+                ,
+                suggestion_query: self.suggestion_query
+                ,
+            }
+        )
     }
 }
+

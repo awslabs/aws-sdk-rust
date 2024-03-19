@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGameServers`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`game_server_group_name(impl Into<String>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::set_game_server_group_name):<br>required: **true**<br><p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::set_sort_order):<br>required: **false**<br><p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p><br>
-    /// - On success, responds with [`ListGameServersOutput`](crate::operation::list_game_servers::ListGameServersOutput) with field(s):
+                            /// - On success, responds with [`ListGameServersOutput`](crate::operation::list_game_servers::ListGameServersOutput) with field(s):
     ///   - [`game_servers(Option<Vec::<GameServer>>)`](crate::operation::list_game_servers::ListGameServersOutput::game_servers): <p>A collection of game server objects that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_game_servers::ListGameServersOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<ListGameServersError>`](crate::operation::list_game_servers::ListGameServersError)
+                            /// - On failure, responds with [`SdkError<ListGameServersError>`](crate::operation::list_game_servers::ListGameServersError)
     pub fn list_game_servers(&self) -> crate::operation::list_game_servers::builders::ListGameServersFluentBuilder {
-        crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

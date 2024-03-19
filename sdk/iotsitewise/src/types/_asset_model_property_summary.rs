@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a property associated with a model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetModelPropertySummary {
+pub struct AssetModelPropertySummary  {
     /// <p>The ID of the property.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
@@ -19,48 +19,48 @@ pub struct AssetModelPropertySummary {
     /// <p>The ID of the composite model that contains the asset model property.</p>
     pub asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The structured path to the property from the root of the asset model.</p>
-    pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>,
+    pub path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>,
     /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
-impl AssetModelPropertySummary {
+impl  AssetModelPropertySummary  {
     /// <p>The ID of the property.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data type of the property.</p>
-    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+    pub fn data_type(&self) -> & crate::types::PropertyDataType {
         &self.data_type
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> ::std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> ::std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PropertyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PropertyType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the composite model that contains the asset model property.</p>
-    pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_id.as_deref()
     }
     /// <p>The structured path to the property from the root of the asset model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path.is_none()`.
-    pub fn path(&self) -> &[crate::types::AssetModelPropertyPathSegment] {
-        self.path.as_deref().unwrap_or_default()
+    pub fn path(&self) -> & [crate::types::AssetModelPropertyPathSegment] {
+        self.path.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -82,7 +82,7 @@ pub struct AssetModelPropertySummaryBuilder {
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PropertyType>,
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelPropertySummaryBuilder {
@@ -93,8 +93,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The ID of the property.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the property.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the property.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The data type of the property.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the property.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::PropertyDataType> {
@@ -137,8 +134,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn set_data_type_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type_spec = input;
-        self
+        self.data_type_spec = input; self
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn get_data_type_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +147,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
@@ -180,8 +174,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The ID of the composite model that contains the asset model property.</p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+        self.asset_model_composite_model_id = input; self
     }
     /// <p>The ID of the composite model that contains the asset model property.</p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,17 +187,16 @@ impl AssetModelPropertySummaryBuilder {
     /// <p>The structured path to the property from the root of the asset model.</p>
     pub fn path(mut self, input: crate::types::AssetModelPropertyPathSegment) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The structured path to the property from the root of the asset model.</p>
-    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>) -> Self {
+        self.path = input; self
     }
     /// <p>The structured path to the property from the root of the asset model.</p>
-    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>> {
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>> {
         &self.path
     }
     /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -214,8 +206,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,26 +217,34 @@ impl AssetModelPropertySummaryBuilder {
     /// - [`name`](crate::types::builders::AssetModelPropertySummaryBuilder::name)
     /// - [`data_type`](crate::types::builders::AssetModelPropertySummaryBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetModelPropertySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetModelPropertySummary {
-            id: self.id,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssetModelPropertySummary",
-                )
-            })?,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building AssetModelPropertySummary",
-                )
-            })?,
-            data_type_spec: self.data_type_spec,
-            unit: self.unit,
-            r#type: self.r#type,
-            asset_model_composite_model_id: self.asset_model_composite_model_id,
-            path: self.path,
-            external_id: self.external_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetModelPropertySummary {
+                id: self.id
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssetModelPropertySummary")
+                    )?
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building AssetModelPropertySummary")
+                    )?
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                unit: self.unit
+                ,
+                r#type: self.r#type
+                ,
+                asset_model_composite_model_id: self.asset_model_composite_model_id
+                ,
+                path: self.path
+                ,
+                external_id: self.external_id
+                ,
+            }
+        )
     }
 }
+

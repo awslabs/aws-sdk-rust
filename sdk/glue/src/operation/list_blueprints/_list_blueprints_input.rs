@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBlueprintsInput {
+pub struct ListBlueprintsInput  {
     /// <p>A continuation token, if this is a continuation request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of a list to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ListBlueprintsInput {
+impl  ListBlueprintsInput  {
     /// <p>A continuation token, if this is a continuation request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of a list to return.</p>
@@ -20,7 +20,7 @@ impl ListBlueprintsInput {
         self.max_results
     }
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl ListBlueprintsInput {
 pub struct ListBlueprintsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ListBlueprintsInputBuilder {
     /// <p>A continuation token, if this is a continuation request.</p>
@@ -47,8 +47,7 @@ impl ListBlueprintsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListBlueprintsInputBuilder {
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,27 +73,30 @@ impl ListBlueprintsInputBuilder {
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Filters the list by an Amazon Web Services resource tag.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListBlueprintsInput`](crate::operation::list_blueprints::ListBlueprintsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_blueprints::ListBlueprintsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_blueprints::ListBlueprintsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_blueprints::ListBlueprintsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_blueprints::ListBlueprintsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

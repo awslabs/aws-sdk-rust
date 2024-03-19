@@ -3,22 +3,22 @@
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendBounceOutput {
+pub struct SendBounceOutput  {
     /// <p>The message ID of the bounce message.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SendBounceOutput {
+impl  SendBounceOutput  {
     /// <p>The message ID of the bounce message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendBounceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendBounceOutput {
     /// Creates a new builder-style object to manufacture [`SendBounceOutput`](crate::operation::send_bounce::SendBounceOutput).
     pub fn builder() -> crate::operation::send_bounce::builders::SendBounceOutputBuilder {
@@ -41,27 +41,28 @@ impl SendBounceOutputBuilder {
     }
     /// <p>The message ID of the bounce message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The message ID of the bounce message.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendBounceOutput`](crate::operation::send_bounce::SendBounceOutput).
     pub fn build(self) -> crate::operation::send_bounce::SendBounceOutput {
         crate::operation::send_bounce::SendBounceOutput {
-            message_id: self.message_id,
+            message_id: self.message_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

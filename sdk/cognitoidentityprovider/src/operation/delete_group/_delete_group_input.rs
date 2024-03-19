@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGroupInput {
+pub struct DeleteGroupInput  {
     /// <p>The name of the group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGroupInput {
+impl  DeleteGroupInput  {
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_group::DeleteGroupInput {
-            group_name: self.group_name,
-            user_pool_id: self.user_pool_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_group::DeleteGroupInput {
+                group_name: self.group_name
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+            }
+        )
     }
 }
+

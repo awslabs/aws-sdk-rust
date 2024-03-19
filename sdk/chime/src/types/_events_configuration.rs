@@ -3,7 +3,7 @@
 /// <p>The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EventsConfiguration {
+pub struct EventsConfiguration  {
     /// <p>The bot ID.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
@@ -11,21 +11,21 @@ pub struct EventsConfiguration {
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
-impl EventsConfiguration {
+impl  EventsConfiguration  {
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
-    pub fn outbound_events_https_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn outbound_events_https_endpoint(&self) -> ::std::option::Option<& str> {
         self.outbound_events_https_endpoint.as_deref()
     }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for EventsConfiguration {
+impl  ::std::fmt::Debug for EventsConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EventsConfiguration");
         formatter.field("bot_id", &self.bot_id);
@@ -57,8 +57,7 @@ impl EventsConfigurationBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot ID.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl EventsConfigurationBuilder {
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
     pub fn set_outbound_events_https_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outbound_events_https_endpoint = input;
-        self
+        self.outbound_events_https_endpoint = input; self
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
     pub fn get_outbound_events_https_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl EventsConfigurationBuilder {
     }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl EventsConfigurationBuilder {
     /// Consumes the builder and constructs a [`EventsConfiguration`](crate::types::EventsConfiguration).
     pub fn build(self) -> crate::types::EventsConfiguration {
         crate::types::EventsConfiguration {
-            bot_id: self.bot_id,
-            outbound_events_https_endpoint: self.outbound_events_https_endpoint,
-            lambda_function_arn: self.lambda_function_arn,
+            bot_id: self.bot_id
+            ,
+            outbound_events_https_endpoint: self.outbound_events_https_endpoint
+            ,
+            lambda_function_arn: self.lambda_function_arn
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for EventsConfigurationBuilder {
         formatter.finish()
     }
 }
+

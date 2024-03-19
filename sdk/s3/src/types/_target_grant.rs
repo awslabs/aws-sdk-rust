@@ -4,19 +4,19 @@
 /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGrant {
+pub struct TargetGrant  {
     /// <p>Container for the person being granted permissions.</p>
     pub grantee: ::std::option::Option<crate::types::Grantee>,
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub permission: ::std::option::Option<crate::types::BucketLogsPermission>,
 }
-impl TargetGrant {
+impl  TargetGrant  {
     /// <p>Container for the person being granted permissions.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::BucketLogsPermission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::BucketLogsPermission> {
         self.permission.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl TargetGrantBuilder {
     }
     /// <p>Container for the person being granted permissions.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>Container for the person being granted permissions.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
@@ -56,8 +55,7 @@ impl TargetGrantBuilder {
     }
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::BucketLogsPermission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::BucketLogsPermission> {
@@ -66,8 +64,11 @@ impl TargetGrantBuilder {
     /// Consumes the builder and constructs a [`TargetGrant`](crate::types::TargetGrant).
     pub fn build(self) -> crate::types::TargetGrant {
         crate::types::TargetGrant {
-            grantee: self.grantee,
-            permission: self.permission,
+            grantee: self.grantee
+            ,
+            permission: self.permission
+            ,
         }
     }
 }
+

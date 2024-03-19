@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCacheSubnetGroupOutput {
+pub struct ModifyCacheSubnetGroupOutput  {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct ModifyCacheSubnetGroupOutput {
     pub cache_subnet_group: ::std::option::Option<crate::types::CacheSubnetGroup>,
     _request_id: Option<String>,
 }
-impl ModifyCacheSubnetGroupOutput {
+impl  ModifyCacheSubnetGroupOutput  {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
     /// <li>
@@ -21,15 +21,15 @@ impl ModifyCacheSubnetGroupOutput {
     /// <li>
     /// <p><code>ModifyCacheSubnetGroup</code></p></li>
     /// </ul>
-    pub fn cache_subnet_group(&self) -> ::std::option::Option<&crate::types::CacheSubnetGroup> {
+    pub fn cache_subnet_group(&self) -> ::std::option::Option<& crate::types::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyCacheSubnetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupOutput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput).
     pub fn builder() -> crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupOutputBuilder {
@@ -64,8 +64,7 @@ impl ModifyCacheSubnetGroupOutputBuilder {
     /// <p><code>ModifyCacheSubnetGroup</code></p></li>
     /// </ul>
     pub fn set_cache_subnet_group(mut self, input: ::std::option::Option<crate::types::CacheSubnetGroup>) -> Self {
-        self.cache_subnet_group = input;
-        self
+        self.cache_subnet_group = input; self
     }
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
@@ -78,19 +77,21 @@ impl ModifyCacheSubnetGroupOutputBuilder {
         &self.cache_subnet_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyCacheSubnetGroupOutput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput).
     pub fn build(self) -> crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput {
         crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput {
-            cache_subnet_group: self.cache_subnet_group,
+            cache_subnet_group: self.cache_subnet_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

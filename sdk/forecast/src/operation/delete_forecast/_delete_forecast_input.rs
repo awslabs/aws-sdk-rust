@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteForecastInput {
+pub struct DeleteForecastInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     pub forecast_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteForecastInput {
+impl  DeleteForecastInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteForecastInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.forecast_arn
     }
     /// Consumes the builder and constructs a [`DeleteForecastInput`](crate::operation::delete_forecast::DeleteForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_forecast::DeleteForecastInput {
-            forecast_arn: self.forecast_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_forecast::DeleteForecastInput {
+                forecast_arn: self.forecast_arn
+                ,
+            }
+        )
     }
 }
+

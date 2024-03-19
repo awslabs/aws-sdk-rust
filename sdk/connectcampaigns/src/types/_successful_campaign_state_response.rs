@@ -3,19 +3,19 @@
 /// Successful response of campaign state
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuccessfulCampaignStateResponse {
+pub struct SuccessfulCampaignStateResponse  {
     /// Identifier representing a Campaign
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// State of a campaign
     pub state: ::std::option::Option<crate::types::CampaignState>,
 }
-impl SuccessfulCampaignStateResponse {
+impl  SuccessfulCampaignStateResponse  {
     /// Identifier representing a Campaign
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// State of a campaign
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CampaignState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CampaignState> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SuccessfulCampaignStateResponseBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// Identifier representing a Campaign
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuccessfulCampaignStateResponseBuilder {
     }
     /// State of a campaign
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// State of a campaign
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
@@ -65,8 +63,11 @@ impl SuccessfulCampaignStateResponseBuilder {
     /// Consumes the builder and constructs a [`SuccessfulCampaignStateResponse`](crate::types::SuccessfulCampaignStateResponse).
     pub fn build(self) -> crate::types::SuccessfulCampaignStateResponse {
         crate::types::SuccessfulCampaignStateResponse {
-            campaign_id: self.campaign_id,
-            state: self.state,
+            campaign_id: self.campaign_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

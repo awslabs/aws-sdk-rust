@@ -3,7 +3,7 @@
 /// <p>Contains a summary of lifecycle policy resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicySummary {
+pub struct LifecyclePolicySummary  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the lifecycle policy.</p>
@@ -23,47 +23,47 @@ pub struct LifecyclePolicySummary {
     /// <p>The timestamp for the last time Image Builder ran the lifecycle policy.</p>
     pub date_last_run: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>To help manage your lifecycle policy resources, you can assign your own metadata to each resource in the form of tags. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl LifecyclePolicySummary {
+impl  LifecyclePolicySummary  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Optional description for the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The lifecycle policy resource status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyStatus> {
         self.status.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The type of resources the lifecycle policy targets.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The timestamp when Image Builder created the lifecycle policy resource.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The timestamp when Image Builder updated the lifecycle policy resource.</p>
-    pub fn date_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The timestamp for the last time Image Builder ran the lifecycle policy.</p>
-    pub fn date_last_run(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_last_run(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_last_run.as_ref()
     }
     /// <p>To help manage your lifecycle policy resources, you can assign your own metadata to each resource in the form of tags. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -87,7 +87,7 @@ pub struct LifecyclePolicySummaryBuilder {
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_last_run: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
@@ -97,8 +97,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>Optional description for the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Optional description for the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The lifecycle policy resource status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The lifecycle policy resource status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStatus> {
@@ -153,8 +149,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The type of resources the lifecycle policy targets.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resources the lifecycle policy targets.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceType> {
@@ -181,8 +175,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The timestamp when Image Builder created the lifecycle policy resource.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The timestamp when Image Builder created the lifecycle policy resource.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +188,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The timestamp when Image Builder updated the lifecycle policy resource.</p>
     pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// <p>The timestamp when Image Builder updated the lifecycle policy resource.</p>
     pub fn get_date_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,8 +201,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The timestamp for the last time Image Builder ran the lifecycle policy.</p>
     pub fn set_date_last_run(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_last_run = input;
-        self
+        self.date_last_run = input; self
     }
     /// <p>The timestamp for the last time Image Builder ran the lifecycle policy.</p>
     pub fn get_date_last_run(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,32 +214,42 @@ impl LifecyclePolicySummaryBuilder {
     /// <p>To help manage your lifecycle policy resources, you can assign your own metadata to each resource in the form of tags. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>To help manage your lifecycle policy resources, you can assign your own metadata to each resource in the form of tags. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>To help manage your lifecycle policy resources, you can assign your own metadata to each resource in the form of tags. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LifecyclePolicySummary`](crate::types::LifecyclePolicySummary).
     pub fn build(self) -> crate::types::LifecyclePolicySummary {
         crate::types::LifecyclePolicySummary {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            execution_role: self.execution_role,
-            resource_type: self.resource_type,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            date_last_run: self.date_last_run,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            execution_role: self.execution_role
+            ,
+            resource_type: self.resource_type
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            date_last_run: self.date_last_run
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

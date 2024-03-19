@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplateVersionsOutput {
+pub struct ListTemplateVersionsOutput  {
     /// <p>Provides information about all the versions of a specific message template.</p>
     pub template_versions_response: ::std::option::Option<crate::types::TemplateVersionsResponse>,
     _request_id: Option<String>,
 }
-impl ListTemplateVersionsOutput {
+impl  ListTemplateVersionsOutput  {
     /// <p>Provides information about all the versions of a specific message template.</p>
-    pub fn template_versions_response(&self) -> ::std::option::Option<&crate::types::TemplateVersionsResponse> {
+    pub fn template_versions_response(&self) -> ::std::option::Option<& crate::types::TemplateVersionsResponse> {
         self.template_versions_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTemplateVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
     pub fn builder() -> crate::operation::list_template_versions::builders::ListTemplateVersionsOutputBuilder {
@@ -41,27 +41,28 @@ impl ListTemplateVersionsOutputBuilder {
     }
     /// <p>Provides information about all the versions of a specific message template.</p>
     pub fn set_template_versions_response(mut self, input: ::std::option::Option<crate::types::TemplateVersionsResponse>) -> Self {
-        self.template_versions_response = input;
-        self
+        self.template_versions_response = input; self
     }
     /// <p>Provides information about all the versions of a specific message template.</p>
     pub fn get_template_versions_response(&self) -> &::std::option::Option<crate::types::TemplateVersionsResponse> {
         &self.template_versions_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
     pub fn build(self) -> crate::operation::list_template_versions::ListTemplateVersionsOutput {
         crate::operation::list_template_versions::ListTemplateVersionsOutput {
-            template_versions_response: self.template_versions_response,
+            template_versions_response: self.template_versions_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

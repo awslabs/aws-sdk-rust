@@ -3,7 +3,7 @@
 /// <p>Summary of the details of a <code>Channel</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ChannelSummary {
+pub struct ChannelSummary  {
     /// <p>The name of the channel.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
@@ -17,33 +17,33 @@ pub struct ChannelSummary {
     /// <p>The time at which the last message in a channel was sent.</p>
     pub last_message_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ChannelSummary {
+impl  ChannelSummary  {
     /// <p>The name of the channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The mode of the channel.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ChannelMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ChannelMode> {
         self.mode.as_ref()
     }
     /// <p>The privacy setting of the channel.</p>
-    pub fn privacy(&self) -> ::std::option::Option<&crate::types::ChannelPrivacy> {
+    pub fn privacy(&self) -> ::std::option::Option<& crate::types::ChannelPrivacy> {
         self.privacy.as_ref()
     }
     /// <p>The metadata of the channel.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The time at which the last message in a channel was sent.</p>
-    pub fn last_message_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_message_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_message_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for ChannelSummary {
+impl  ::std::fmt::Debug for ChannelSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelSummary");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -81,8 +81,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The mode of the channel.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The mode of the channel.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
@@ -123,8 +120,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The privacy setting of the channel.</p>
     pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
-        self.privacy = input;
-        self
+        self.privacy = input; self
     }
     /// <p>The privacy setting of the channel.</p>
     pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
@@ -137,8 +133,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The metadata of the channel.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the channel.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +146,7 @@ impl ChannelSummaryBuilder {
     }
     /// <p>The time at which the last message in a channel was sent.</p>
     pub fn set_last_message_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_message_timestamp = input;
-        self
+        self.last_message_timestamp = input; self
     }
     /// <p>The time at which the last message in a channel was sent.</p>
     pub fn get_last_message_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,12 +155,18 @@ impl ChannelSummaryBuilder {
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
-            name: self.name,
-            channel_arn: self.channel_arn,
-            mode: self.mode,
-            privacy: self.privacy,
-            metadata: self.metadata,
-            last_message_timestamp: self.last_message_timestamp,
+            name: self.name
+            ,
+            channel_arn: self.channel_arn
+            ,
+            mode: self.mode
+            ,
+            privacy: self.privacy
+            ,
+            metadata: self.metadata
+            ,
+            last_message_timestamp: self.last_message_timestamp
+            ,
         }
     }
 }
@@ -182,3 +182,4 @@ impl ::std::fmt::Debug for ChannelSummaryBuilder {
         formatter.finish()
     }
 }
+

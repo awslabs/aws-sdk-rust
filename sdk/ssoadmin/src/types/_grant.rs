@@ -26,11 +26,7 @@ impl Grant {
     /// Tries to convert the enum instance into [`AuthorizationCode`](crate::types::Grant::AuthorizationCode), extracting the inner [`AuthorizationCodeGrant`](crate::types::AuthorizationCodeGrant).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_authorization_code(&self) -> ::std::result::Result<&crate::types::AuthorizationCodeGrant, &Self> {
-        if let Grant::AuthorizationCode(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Grant::AuthorizationCode(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AuthorizationCode`](crate::types::Grant::AuthorizationCode).
     pub fn is_authorization_code(&self) -> bool {
@@ -39,11 +35,7 @@ impl Grant {
     /// Tries to convert the enum instance into [`JwtBearer`](crate::types::Grant::JwtBearer), extracting the inner [`JwtBearerGrant`](crate::types::JwtBearerGrant).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_jwt_bearer(&self) -> ::std::result::Result<&crate::types::JwtBearerGrant, &Self> {
-        if let Grant::JwtBearer(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Grant::JwtBearer(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`JwtBearer`](crate::types::Grant::JwtBearer).
     pub fn is_jwt_bearer(&self) -> bool {
@@ -52,11 +44,7 @@ impl Grant {
     /// Tries to convert the enum instance into [`RefreshToken`](crate::types::Grant::RefreshToken), extracting the inner [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_refresh_token(&self) -> ::std::result::Result<&crate::types::RefreshTokenGrant, &Self> {
-        if let Grant::RefreshToken(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Grant::RefreshToken(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RefreshToken`](crate::types::Grant::RefreshToken).
     pub fn is_refresh_token(&self) -> bool {
@@ -65,11 +53,7 @@ impl Grant {
     /// Tries to convert the enum instance into [`TokenExchange`](crate::types::Grant::TokenExchange), extracting the inner [`TokenExchangeGrant`](crate::types::TokenExchangeGrant).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_token_exchange(&self) -> ::std::result::Result<&crate::types::TokenExchangeGrant, &Self> {
-        if let Grant::TokenExchange(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Grant::TokenExchange(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TokenExchange`](crate::types::Grant::TokenExchange).
     pub fn is_token_exchange(&self) -> bool {
@@ -80,3 +64,4 @@ impl Grant {
         matches!(self, Self::Unknown)
     }
 }
+

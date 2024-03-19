@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+pub struct EnableAwsNetworkPerformanceMetricSubscriptionOutput  {
     /// <p>Indicates whether the subscribe action was successful.</p>
     pub output: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl EnableAwsNetworkPerformanceMetricSubscriptionOutput {
+impl  EnableAwsNetworkPerformanceMetricSubscriptionOutput  {
     /// <p>Indicates whether the subscribe action was successful.</p>
     pub fn output(&self) -> ::std::option::Option<bool> {
         self.output
     }
 }
 impl ::aws_types::request_id::RequestId for EnableAwsNetworkPerformanceMetricSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableAwsNetworkPerformanceMetricSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionOutputBuilder {
         crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionOutputBuilder::default()
     }
 }
@@ -42,27 +40,28 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionOutputBuilder {
     }
     /// <p>Indicates whether the subscribe action was successful.</p>
     pub fn set_output(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>Indicates whether the subscribe action was successful.</p>
     pub fn get_output(&self) -> &::std::option::Option<bool> {
         &self.output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput).
     pub fn build(self) -> crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput {
         crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput {
-            output: self.output,
+            output: self.output
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

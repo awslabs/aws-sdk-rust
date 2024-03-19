@@ -3,28 +3,29 @@
 /// <p>Contains information about the custom domain name association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Association {
+pub struct Association  {
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date for the certificate.</p>
     pub custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    pub certificate_associations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>>,
+    pub certificate_associations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateAssociation>>,
 }
-impl Association {
+impl  Association  {
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
     /// <p>The expiration date for the certificate.</p>
-    pub fn custom_domain_certificate_expiry_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn custom_domain_certificate_expiry_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.custom_domain_certificate_expiry_date.as_ref()
     }
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_associations.is_none()`.
-    pub fn certificate_associations(&self) -> &[crate::types::CertificateAssociation] {
-        self.certificate_associations.as_deref().unwrap_or_default()
+    pub fn certificate_associations(&self) -> & [crate::types::CertificateAssociation] {
+        self.certificate_associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Association {
@@ -40,7 +41,7 @@ impl Association {
 pub struct AssociationBuilder {
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) certificate_associations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>>,
+    pub(crate) certificate_associations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateAssociation>>,
 }
 impl AssociationBuilder {
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
@@ -50,8 +51,7 @@ impl AssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl AssociationBuilder {
     }
     /// <p>The expiration date for the certificate.</p>
     pub fn set_custom_domain_certificate_expiry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.custom_domain_certificate_expiry_date = input;
-        self
+        self.custom_domain_certificate_expiry_date = input; self
     }
     /// <p>The expiration date for the certificate.</p>
     pub fn get_custom_domain_certificate_expiry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -78,25 +77,28 @@ impl AssociationBuilder {
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
     pub fn certificate_associations(mut self, input: crate::types::CertificateAssociation) -> Self {
         let mut v = self.certificate_associations.unwrap_or_default();
-        v.push(input);
-        self.certificate_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificate_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    pub fn set_certificate_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>>) -> Self {
-        self.certificate_associations = input;
-        self
+    pub fn set_certificate_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateAssociation>>) -> Self {
+        self.certificate_associations = input; self
     }
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    pub fn get_certificate_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>> {
+    pub fn get_certificate_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateAssociation>> {
         &self.certificate_associations
     }
     /// Consumes the builder and constructs a [`Association`](crate::types::Association).
     pub fn build(self) -> crate::types::Association {
         crate::types::Association {
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-            custom_domain_certificate_expiry_date: self.custom_domain_certificate_expiry_date,
-            certificate_associations: self.certificate_associations,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn
+            ,
+            custom_domain_certificate_expiry_date: self.custom_domain_certificate_expiry_date
+            ,
+            certificate_associations: self.certificate_associations
+            ,
         }
     }
 }
+

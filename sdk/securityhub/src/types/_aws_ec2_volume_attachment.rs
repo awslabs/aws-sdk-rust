@@ -3,7 +3,7 @@
 /// <p>An attachment to an Amazon EC2 volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2VolumeAttachment {
+pub struct AwsEc2VolumeAttachment  {
     /// <p>The datetime when the attachment initiated.</p>
     pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
@@ -25,9 +25,9 @@ pub struct AwsEc2VolumeAttachment {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2VolumeAttachment {
+impl  AwsEc2VolumeAttachment  {
     /// <p>The datetime when the attachment initiated.</p>
-    pub fn attach_time(&self) -> ::std::option::Option<&str> {
+    pub fn attach_time(&self) -> ::std::option::Option<& str> {
         self.attach_time.as_deref()
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
@@ -35,7 +35,7 @@ impl AwsEc2VolumeAttachment {
         self.delete_on_termination
     }
     /// <p>The identifier of the EC2 instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
@@ -51,7 +51,7 @@ impl AwsEc2VolumeAttachment {
     /// <li>
     /// <p><code>detached</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The datetime when the attachment initiated.</p>
     pub fn set_attach_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attach_time = input;
-        self
+        self.attach_time = input; self
     }
     /// <p>The datetime when the attachment initiated.</p>
     pub fn get_attach_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -107,8 +105,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     }
     /// <p>The identifier of the EC2 instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the EC2 instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     /// <p><code>detached</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
@@ -167,10 +163,15 @@ impl AwsEc2VolumeAttachmentBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VolumeAttachment`](crate::types::AwsEc2VolumeAttachment).
     pub fn build(self) -> crate::types::AwsEc2VolumeAttachment {
         crate::types::AwsEc2VolumeAttachment {
-            attach_time: self.attach_time,
-            delete_on_termination: self.delete_on_termination,
-            instance_id: self.instance_id,
-            status: self.status,
+            attach_time: self.attach_time
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            instance_id: self.instance_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

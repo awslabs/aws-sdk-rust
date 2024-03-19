@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListShareInvitations`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_name_prefix(impl Into<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::workload_name_prefix) / [`set_workload_name_prefix(Option<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_workload_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each workload name returned in the results.</p><br>
     ///   - [`lens_name_prefix(impl Into<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::lens_name_prefix) / [`set_lens_name_prefix(Option<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_lens_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each lens name returned in the results.</p><br>
     ///   - [`share_resource_type(ShareResourceType)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::share_resource_type) / [`set_share_resource_type(Option<ShareResourceType>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_share_resource_type):<br>required: **false**<br><p>The type of share invitations to be returned.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`profile_name_prefix(impl Into<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::profile_name_prefix) / [`set_profile_name_prefix(Option<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_profile_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each profile name returned in the results.</p><br>
     ///   - [`template_name_prefix(impl Into<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::template_name_prefix) / [`set_template_name_prefix(Option<String>)`](crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::set_template_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each review template name returned in the results.</p><br>
-    /// - On success, responds with [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput) with field(s):
+                            /// - On success, responds with [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput) with field(s):
     ///   - [`share_invitation_summaries(Option<Vec::<ShareInvitationSummary>>)`](crate::operation::list_share_invitations::ListShareInvitationsOutput::share_invitation_summaries): <p>List of share invitation summaries in a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_share_invitations::ListShareInvitationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListShareInvitationsError>`](crate::operation::list_share_invitations::ListShareInvitationsError)
+                            /// - On failure, responds with [`SdkError<ListShareInvitationsError>`](crate::operation::list_share_invitations::ListShareInvitationsError)
     pub fn list_share_invitations(&self) -> crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder {
-        crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_share_invitations::builders::ListShareInvitationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

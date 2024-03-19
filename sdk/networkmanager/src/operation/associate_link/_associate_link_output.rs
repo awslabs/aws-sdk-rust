@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateLinkOutput {
+pub struct AssociateLinkOutput  {
     /// <p>The link association.</p>
     pub link_association: ::std::option::Option<crate::types::LinkAssociation>,
     _request_id: Option<String>,
 }
-impl AssociateLinkOutput {
+impl  AssociateLinkOutput  {
     /// <p>The link association.</p>
-    pub fn link_association(&self) -> ::std::option::Option<&crate::types::LinkAssociation> {
+    pub fn link_association(&self) -> ::std::option::Option<& crate::types::LinkAssociation> {
         self.link_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateLinkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateLinkOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLinkOutput`](crate::operation::associate_link::AssociateLinkOutput).
     pub fn builder() -> crate::operation::associate_link::builders::AssociateLinkOutputBuilder {
@@ -40,27 +40,28 @@ impl AssociateLinkOutputBuilder {
     }
     /// <p>The link association.</p>
     pub fn set_link_association(mut self, input: ::std::option::Option<crate::types::LinkAssociation>) -> Self {
-        self.link_association = input;
-        self
+        self.link_association = input; self
     }
     /// <p>The link association.</p>
     pub fn get_link_association(&self) -> &::std::option::Option<crate::types::LinkAssociation> {
         &self.link_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateLinkOutput`](crate::operation::associate_link::AssociateLinkOutput).
     pub fn build(self) -> crate::operation::associate_link::AssociateLinkOutput {
         crate::operation::associate_link::AssociateLinkOutput {
-            link_association: self.link_association,
+            link_association: self.link_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

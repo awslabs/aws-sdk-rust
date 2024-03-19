@@ -3,7 +3,7 @@
 /// <p>The limit configuration of the visual display for an axis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemsLimitConfiguration {
+pub struct ItemsLimitConfiguration  {
     /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
     pub items_limit: ::std::option::Option<i64>,
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
@@ -15,7 +15,7 @@ pub struct ItemsLimitConfiguration {
     /// </ul>
     pub other_categories: ::std::option::Option<crate::types::OtherCategories>,
 }
-impl ItemsLimitConfiguration {
+impl  ItemsLimitConfiguration  {
     /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
     pub fn items_limit(&self) -> ::std::option::Option<i64> {
         self.items_limit
@@ -27,7 +27,7 @@ impl ItemsLimitConfiguration {
     /// <li>
     /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
-    pub fn other_categories(&self) -> ::std::option::Option<&crate::types::OtherCategories> {
+    pub fn other_categories(&self) -> ::std::option::Option<& crate::types::OtherCategories> {
         self.other_categories.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl ItemsLimitConfigurationBuilder {
     }
     /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
     pub fn set_items_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.items_limit = input;
-        self
+        self.items_limit = input; self
     }
     /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
     pub fn get_items_limit(&self) -> &::std::option::Option<i64> {
@@ -79,8 +78,7 @@ impl ItemsLimitConfigurationBuilder {
     /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub fn set_other_categories(mut self, input: ::std::option::Option<crate::types::OtherCategories>) -> Self {
-        self.other_categories = input;
-        self
+        self.other_categories = input; self
     }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
@@ -95,8 +93,11 @@ impl ItemsLimitConfigurationBuilder {
     /// Consumes the builder and constructs a [`ItemsLimitConfiguration`](crate::types::ItemsLimitConfiguration).
     pub fn build(self) -> crate::types::ItemsLimitConfiguration {
         crate::types::ItemsLimitConfiguration {
-            items_limit: self.items_limit,
-            other_categories: self.other_categories,
+            items_limit: self.items_limit
+            ,
+            other_categories: self.other_categories
+            ,
         }
     }
 }
+

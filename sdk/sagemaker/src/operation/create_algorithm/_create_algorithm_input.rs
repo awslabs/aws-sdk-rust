@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAlgorithmInput {
+pub struct CreateAlgorithmInput  {
     /// <p>The name of the algorithm.</p>
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the algorithm.</p>
@@ -40,15 +40,15 @@ pub struct CreateAlgorithmInput {
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAlgorithmInput {
+impl  CreateAlgorithmInput  {
     /// <p>The name of the algorithm.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
     /// <p>A description of the algorithm.</p>
-    pub fn algorithm_description(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_description(&self) -> ::std::option::Option<& str> {
         self.algorithm_description.as_deref()
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
@@ -68,7 +68,7 @@ impl CreateAlgorithmInput {
     /// <li>
     /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
     /// </ul>
-    pub fn training_specification(&self) -> ::std::option::Option<&crate::types::TrainingSpecification> {
+    pub fn training_specification(&self) -> ::std::option::Option<& crate::types::TrainingSpecification> {
         self.training_specification.as_ref()
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
@@ -80,11 +80,11 @@ impl CreateAlgorithmInput {
     /// <li>
     /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
     /// </ul>
-    pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
+    pub fn inference_specification(&self) -> ::std::option::Option<& crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn validation_specification(&self) -> ::std::option::Option<&crate::types::AlgorithmValidationSpecification> {
+    pub fn validation_specification(&self) -> ::std::option::Option<& crate::types::AlgorithmValidationSpecification> {
         self.validation_specification.as_ref()
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
@@ -92,10 +92,11 @@ impl CreateAlgorithmInput {
         self.certify_for_marketplace
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAlgorithmInput {
@@ -115,7 +116,7 @@ pub struct CreateAlgorithmInputBuilder {
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     pub(crate) validation_specification: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     pub(crate) certify_for_marketplace: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAlgorithmInputBuilder {
     /// <p>The name of the algorithm.</p>
@@ -126,8 +127,7 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>The name of the algorithm.</p>
     pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// <p>The name of the algorithm.</p>
     pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +140,7 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>A description of the algorithm.</p>
     pub fn set_algorithm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_description = input;
-        self
+        self.algorithm_description = input; self
     }
     /// <p>A description of the algorithm.</p>
     pub fn get_algorithm_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +186,7 @@ impl CreateAlgorithmInputBuilder {
     /// <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p></li>
     /// </ul>
     pub fn set_training_specification(mut self, input: ::std::option::Option<crate::types::TrainingSpecification>) -> Self {
-        self.training_specification = input;
-        self
+        self.training_specification = input; self
     }
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
@@ -233,8 +231,7 @@ impl CreateAlgorithmInputBuilder {
     /// <p>The input and output content formats that the algorithm supports for inference.</p></li>
     /// </ul>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
-        self.inference_specification = input;
-        self
+        self.inference_specification = input; self
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
@@ -255,8 +252,7 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     pub fn set_validation_specification(mut self, input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>) -> Self {
-        self.validation_specification = input;
-        self
+        self.validation_specification = input; self
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     pub fn get_validation_specification(&self) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
@@ -269,8 +265,7 @@ impl CreateAlgorithmInputBuilder {
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     pub fn set_certify_for_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.certify_for_marketplace = input;
-        self
+        self.certify_for_marketplace = input; self
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     pub fn get_certify_for_marketplace(&self) -> &::std::option::Option<bool> {
@@ -283,31 +278,38 @@ impl CreateAlgorithmInputBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAlgorithmInput`](crate::operation::create_algorithm::CreateAlgorithmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_algorithm::CreateAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_algorithm::CreateAlgorithmInput {
-            algorithm_name: self.algorithm_name,
-            algorithm_description: self.algorithm_description,
-            training_specification: self.training_specification,
-            inference_specification: self.inference_specification,
-            validation_specification: self.validation_specification,
-            certify_for_marketplace: self.certify_for_marketplace,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_algorithm::CreateAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_algorithm::CreateAlgorithmInput {
+                algorithm_name: self.algorithm_name
+                ,
+                algorithm_description: self.algorithm_description
+                ,
+                training_specification: self.training_specification
+                ,
+                inference_specification: self.inference_specification
+                ,
+                validation_specification: self.validation_specification
+                ,
+                certify_for_marketplace: self.certify_for_marketplace
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

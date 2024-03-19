@@ -3,7 +3,7 @@
 /// <p>l An error associated with package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageVersionError {
+pub struct PackageVersionError  {
     /// <p>The error code associated with the error. Valid error codes are:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct PackageVersionError {
     /// <p>The error message associated with the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl PackageVersionError {
+impl  PackageVersionError  {
     /// <p>The error code associated with the error. Valid error codes are:</p>
     /// <ul>
     /// <li>
@@ -39,11 +39,11 @@ impl PackageVersionError {
     /// <li>
     /// <p><code>SKIPPED</code></p></li>
     /// </ul>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::PackageVersionErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::PackageVersionErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message associated with the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl PackageVersionErrorBuilder {
     /// <p><code>SKIPPED</code></p></li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::PackageVersionErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with the error. Valid error codes are:</p>
     /// <ul>
@@ -125,8 +124,7 @@ impl PackageVersionErrorBuilder {
     }
     /// <p>The error message associated with the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message associated with the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,11 @@ impl PackageVersionErrorBuilder {
     /// Consumes the builder and constructs a [`PackageVersionError`](crate::types::PackageVersionError).
     pub fn build(self) -> crate::types::PackageVersionError {
         crate::types::PackageVersionError {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

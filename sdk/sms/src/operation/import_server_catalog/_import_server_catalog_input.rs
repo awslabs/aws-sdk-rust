@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportServerCatalogInput {}
+pub struct ImportServerCatalogInput  {
+}
 impl ImportServerCatalogInput {
     /// Creates a new builder-style object to manufacture [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).
     pub fn builder() -> crate::operation::import_server_catalog::builders::ImportServerCatalogInputBuilder {
@@ -13,13 +14,15 @@ impl ImportServerCatalogInput {
 /// A builder for [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ImportServerCatalogInputBuilder {}
+pub struct ImportServerCatalogInputBuilder {
+}
 impl ImportServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_server_catalog::ImportServerCatalogInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_server_catalog::ImportServerCatalogInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_server_catalog::ImportServerCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_server_catalog::ImportServerCatalogInput {
+            }
+        )
     }
 }
+

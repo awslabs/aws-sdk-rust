@@ -3,13 +3,13 @@
 /// <p>The result of the <code>DeleteSnapshotCopyGrant</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotCopyGrantInput {
+pub struct DeleteSnapshotCopyGrantInput  {
     /// <p>The name of the snapshot copy grant to delete.</p>
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSnapshotCopyGrantInput {
+impl  DeleteSnapshotCopyGrantInput  {
     /// <p>The name of the snapshot copy grant to delete.</p>
-    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteSnapshotCopyGrantInputBuilder {
     }
     /// <p>The name of the snapshot copy grant to delete.</p>
     pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = input;
-        self
+        self.snapshot_copy_grant_name = input; self
     }
     /// <p>The name of the snapshot copy grant to delete.</p>
     pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_copy_grant_name
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
-            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
+                snapshot_copy_grant_name: self.snapshot_copy_grant_name
+                ,
+            }
+        )
     }
 }
+

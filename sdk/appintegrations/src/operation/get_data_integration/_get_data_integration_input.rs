@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataIntegrationInput {
+pub struct GetDataIntegrationInput  {
     /// <p>A unique identifier.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetDataIntegrationInput {
+impl  GetDataIntegrationInput  {
     /// <p>A unique identifier.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetDataIntegrationInputBuilder {
     }
     /// <p>A unique identifier.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>A unique identifier.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_integration::GetDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_integration::GetDataIntegrationInput { identifier: self.identifier })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_integration::GetDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_integration::GetDataIntegrationInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLoaderJobInput {
+pub struct StartLoaderJobInput  {
     /// <p>The <code>source</code> parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.</p>
     /// <p>The URI can be in any of the following formats.</p>
     /// <ul>
@@ -87,7 +87,7 @@ pub struct StartLoaderJobInput {
     /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
-    pub parser_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parser_configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p><code>updateSingleCardinalityProperties</code> is an optional parameter that controls how the bulk loader treats a new value for single-cardinality vertex or edge properties. This is not supported for loading openCypher data.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
@@ -111,14 +111,14 @@ pub struct StartLoaderJobInput {
     /// </ol>
     /// <p>Because of the <code>dependencies</code> parameter, the bulk loader will not start <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.</p>
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
-    pub dependencies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dependencies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to <code>True</code> when openCypher relationship IDs are explicitly provided in the load data (recommended).</p>
     /// <p>When <code>userProvidedEdgeIds</code> is absent or set to <code>True</code>, an <code>:ID</code> column must be present in every relationship file in the load.</p>
     /// <p>When <code>userProvidedEdgeIds</code> is present and set to <code>False</code>, relationship files in the load <b>must not</b> contain an <code>:ID</code> column. Instead, the Neptune loader automatically generates an ID for each relationship.</p>
     /// <p>It's useful to provide relationship IDs explicitly so that the loader can resume loading after error in the CSV data have been fixed, without having to reload any relationships that have already been loaded. If relationship IDs have not been explicitly assigned, the loader cannot resume a failed load if any relationship file has had to be corrected, and must instead reload all the relationships.</p>
     pub user_provided_edge_ids: ::std::option::Option<bool>,
 }
-impl StartLoaderJobInput {
+impl  StartLoaderJobInput  {
     /// <p>The <code>source</code> parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.</p>
     /// <p>The URI can be in any of the following formats.</p>
     /// <ul>
@@ -131,7 +131,7 @@ impl StartLoaderJobInput {
     /// </ul>
     /// <p>The <code>object-key-name</code> element of the URI is equivalent to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters">prefix</a> parameter in an S3 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a> API call. It identifies all the objects in the specified S3 bucket whose names begin with that prefix. That can be a single file or folder, or multiple files and/or folders.</p>
     /// <p>The specified folder or folders can contain multiple vertex files and multiple edge files.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The format of the data. For more information about data formats for the Neptune <code>Loader</code> command, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html">Load Data Formats</a>.</p>
@@ -150,15 +150,15 @@ impl StartLoaderJobInput {
     /// <li>
     /// <p><b> <code>turtle</code> </b> for the <a href="https://www.w3.org/TR/turtle/">Turtle RDF data format</a>.</p></li>
     /// </ul>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The Amazon region of the S3 bucket. This must match the Amazon Region of the DB cluster.</p>
-    pub fn s3_bucket_region(&self) -> ::std::option::Option<&crate::types::S3BucketRegion> {
+    pub fn s3_bucket_region(&self) -> ::std::option::Option<& crate::types::S3BucketRegion> {
         self.s3_bucket_region.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for an IAM role to be assumed by the Neptune DB instance for access to the S3 bucket. The IAM role ARN provided here should be attached to the DB cluster (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html">Adding the IAM Role to an Amazon Neptune Cluster</a>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The load job mode.</p>
@@ -175,7 +175,7 @@ impl StartLoaderJobInput {
     /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::Mode> {
         self.mode.as_ref()
     }
     /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
@@ -201,7 +201,7 @@ impl StartLoaderJobInput {
     /// </ul>
     /// <p><i>Default value</i>: <code>HIGH</code></p>
     /// <p>The <code>parallelism</code> setting can sometimes result in a deadlock between threads when loading openCypher data. When this happens, Neptune returns the <code>LOAD_DATA_DEADLOCK</code> error. You can generally fix the issue by setting <code>parallelism</code> to a lower setting and retrying the load command.</p>
-    pub fn parallelism(&self) -> ::std::option::Option<&crate::types::Parallelism> {
+    pub fn parallelism(&self) -> ::std::option::Option<& crate::types::Parallelism> {
         self.parallelism.as_ref()
     }
     /// <p><b> <code>parserConfiguration</code> </b> &nbsp; – &nbsp; An optional object with additional parser configuration values. Each of the child parameters is also optional:</p>
@@ -217,7 +217,7 @@ impl StartLoaderJobInput {
     /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
-    pub fn parser_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parser_configuration(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parser_configuration.as_ref()
     }
     /// <p><code>updateSingleCardinalityProperties</code> is an optional parameter that controls how the bulk loader treats a new value for single-cardinality vertex or edge properties. This is not supported for loading openCypher data.</p>
@@ -247,10 +247,11 @@ impl StartLoaderJobInput {
     /// </ol>
     /// <p>Because of the <code>dependencies</code> parameter, the bulk loader will not start <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.</p>
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
-    pub fn dependencies(&self) -> &[::std::string::String] {
-        self.dependencies.as_deref().unwrap_or_default()
+    pub fn dependencies(&self) -> & [::std::string::String] {
+        self.dependencies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to <code>True</code> when openCypher relationship IDs are explicitly provided in the load data (recommended).</p>
     /// <p>When <code>userProvidedEdgeIds</code> is absent or set to <code>True</code>, an <code>:ID</code> column must be present in every relationship file in the load.</p>
@@ -278,10 +279,10 @@ pub struct StartLoaderJobInputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) fail_on_error: ::std::option::Option<bool>,
     pub(crate) parallelism: ::std::option::Option<crate::types::Parallelism>,
-    pub(crate) parser_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parser_configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) update_single_cardinality_properties: ::std::option::Option<bool>,
     pub(crate) queue_request: ::std::option::Option<bool>,
-    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_provided_edge_ids: ::std::option::Option<bool>,
 }
 impl StartLoaderJobInputBuilder {
@@ -315,8 +316,7 @@ impl StartLoaderJobInputBuilder {
     /// <p>The <code>object-key-name</code> element of the URI is equivalent to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters">prefix</a> parameter in an S3 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a> API call. It identifies all the objects in the specified S3 bucket whose names begin with that prefix. That can be a single file or folder, or multiple files and/or folders.</p>
     /// <p>The specified folder or folders can contain multiple vertex files and multiple edge files.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The <code>source</code> parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.</p>
     /// <p>The URI can be in any of the following formats.</p>
@@ -371,8 +371,7 @@ impl StartLoaderJobInputBuilder {
     /// <p><b> <code>turtle</code> </b> for the <a href="https://www.w3.org/TR/turtle/">Turtle RDF data format</a>.</p></li>
     /// </ul>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the data. For more information about data formats for the Neptune <code>Loader</code> command, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html">Load Data Formats</a>.</p>
     /// <p class="title"><b>Allowed values</b></p>
@@ -401,8 +400,7 @@ impl StartLoaderJobInputBuilder {
     }
     /// <p>The Amazon region of the S3 bucket. This must match the Amazon Region of the DB cluster.</p>
     pub fn set_s3_bucket_region(mut self, input: ::std::option::Option<crate::types::S3BucketRegion>) -> Self {
-        self.s3_bucket_region = input;
-        self
+        self.s3_bucket_region = input; self
     }
     /// <p>The Amazon region of the S3 bucket. This must match the Amazon Region of the DB cluster.</p>
     pub fn get_s3_bucket_region(&self) -> &::std::option::Option<crate::types::S3BucketRegion> {
@@ -416,8 +414,7 @@ impl StartLoaderJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for an IAM role to be assumed by the Neptune DB instance for access to the S3 bucket. The IAM role ARN provided here should be attached to the DB cluster (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html">Adding the IAM Role to an Amazon Neptune Cluster</a>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for an IAM role to be assumed by the Neptune DB instance for access to the S3 bucket. The IAM role ARN provided here should be attached to the DB cluster (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html">Adding the IAM Role to an Amazon Neptune Cluster</a>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -456,8 +453,7 @@ impl StartLoaderJobInputBuilder {
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The load job mode.</p>
     /// <p><i>Allowed values</i>: <code>RESUME</code>, <code>NEW</code>, <code>AUTO</code>.</p>
@@ -491,8 +487,7 @@ impl StartLoaderJobInputBuilder {
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
     /// <p>When this parameter is set to <code>"TRUE"</code>, the loader stops as soon as it encounters an error. Data loaded up to that point persists.</p>
     pub fn set_fail_on_error(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_on_error = input;
-        self
+        self.fail_on_error = input; self
     }
     /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
@@ -537,8 +532,7 @@ impl StartLoaderJobInputBuilder {
     /// <p><i>Default value</i>: <code>HIGH</code></p>
     /// <p>The <code>parallelism</code> setting can sometimes result in a deadlock between threads when loading openCypher data. When this happens, Neptune returns the <code>LOAD_DATA_DEADLOCK</code> error. You can generally fix the issue by setting <code>parallelism</code> to a lower setting and retrying the load command.</p>
     pub fn set_parallelism(mut self, input: ::std::option::Option<crate::types::Parallelism>) -> Self {
-        self.parallelism = input;
-        self
+        self.parallelism = input; self
     }
     /// <p>The optional <code>parallelism</code> parameter can be set to reduce the number of threads used by the bulk load process.</p>
     /// <p><i>Allowed values</i>:</p>
@@ -575,15 +569,11 @@ impl StartLoaderJobInputBuilder {
     /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
-    pub fn parser_configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parser_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parser_configuration.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parser_configuration = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parser_configuration = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p><b> <code>parserConfiguration</code> </b> &nbsp; – &nbsp; An optional object with additional parser configuration values. Each of the child parameters is also optional:</p>
     /// <p class="title"><b></b></p>
@@ -598,12 +588,8 @@ impl StartLoaderJobInputBuilder {
     /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
-    pub fn set_parser_configuration(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.parser_configuration = input;
-        self
+    pub fn set_parser_configuration(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parser_configuration = input; self
     }
     /// <p><b> <code>parserConfiguration</code> </b> &nbsp; – &nbsp; An optional object with additional parser configuration values. Each of the child parameters is also optional:</p>
     /// <p class="title"><b></b></p>
@@ -618,7 +604,7 @@ impl StartLoaderJobInputBuilder {
     /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
-    pub fn get_parser_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parser_configuration(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parser_configuration
     }
     /// <p><code>updateSingleCardinalityProperties</code> is an optional parameter that controls how the bulk loader treats a new value for single-cardinality vertex or edge properties. This is not supported for loading openCypher data.</p>
@@ -636,8 +622,7 @@ impl StartLoaderJobInputBuilder {
     /// <p>By default, or when <code>updateSingleCardinalityProperties</code> is explicitly set to <code>"FALSE"</code>, the loader treats a new value as an error, because it violates single cardinality.</p>
     /// <p>When <code>updateSingleCardinalityProperties</code> is set to <code>"TRUE"</code>, on the other hand, the bulk loader replaces the existing value with the new one. If multiple edge or single-cardinality vertex property values are provided in the source file(s) being loaded, the final value at the end of the bulk load could be any one of those new values. The loader only guarantees that the existing value has been replaced by one of the new ones.</p>
     pub fn set_update_single_cardinality_properties(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.update_single_cardinality_properties = input;
-        self
+        self.update_single_cardinality_properties = input; self
     }
     /// <p><code>updateSingleCardinalityProperties</code> is an optional parameter that controls how the bulk loader treats a new value for single-cardinality vertex or edge properties. This is not supported for loading openCypher data.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
@@ -662,8 +647,7 @@ impl StartLoaderJobInputBuilder {
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     pub fn set_queue_request(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.queue_request = input;
-        self
+        self.queue_request = input; self
     }
     /// <p>This is an optional flag parameter that indicates whether the load request can be queued up or not.</p>
     /// <p>You don't have to wait for one load job to complete before issuing the next one, because Neptune can queue up as many as 64 jobs at a time, provided that their <code>queueRequest</code> parameters are all set to <code>"TRUE"</code>. The queue order of the jobs will be first-in-first-out (FIFO).</p>
@@ -690,9 +674,9 @@ impl StartLoaderJobInputBuilder {
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
     pub fn dependencies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dependencies.unwrap_or_default();
-        v.push(input.into());
-        self.dependencies = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dependencies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This is an optional parameter that can make a queued load request contingent on the successful completion of one or more previous jobs in the queue.</p>
     /// <p>Neptune can queue up as many as 64 load requests at a time, if their <code>queueRequest</code> parameters are set to <code>"TRUE"</code>. The <code>dependencies</code> parameter lets you make execution of such a queued request dependent on the successful completion of one or more specified previous requests in the queue.</p>
@@ -705,9 +689,8 @@ impl StartLoaderJobInputBuilder {
     /// </ol>
     /// <p>Because of the <code>dependencies</code> parameter, the bulk loader will not start <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.</p>
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
-    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dependencies = input;
-        self
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dependencies = input; self
     }
     /// <p>This is an optional parameter that can make a queued load request contingent on the successful completion of one or more previous jobs in the queue.</p>
     /// <p>Neptune can queue up as many as 64 load requests at a time, if their <code>queueRequest</code> parameters are set to <code>"TRUE"</code>. The <code>dependencies</code> parameter lets you make execution of such a queued request dependent on the successful completion of one or more specified previous requests in the queue.</p>
@@ -720,7 +703,7 @@ impl StartLoaderJobInputBuilder {
     /// </ol>
     /// <p>Because of the <code>dependencies</code> parameter, the bulk loader will not start <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.</p>
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
-    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dependencies
     }
     /// <p>This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to <code>True</code> when openCypher relationship IDs are explicitly provided in the load data (recommended).</p>
@@ -736,8 +719,7 @@ impl StartLoaderJobInputBuilder {
     /// <p>When <code>userProvidedEdgeIds</code> is present and set to <code>False</code>, relationship files in the load <b>must not</b> contain an <code>:ID</code> column. Instead, the Neptune loader automatically generates an ID for each relationship.</p>
     /// <p>It's useful to provide relationship IDs explicitly so that the loader can resume loading after error in the CSV data have been fixed, without having to reload any relationships that have already been loaded. If relationship IDs have not been explicitly assigned, the loader cannot resume a failed load if any relationship file has had to be corrected, and must instead reload all the relationships.</p>
     pub fn set_user_provided_edge_ids(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_provided_edge_ids = input;
-        self
+        self.user_provided_edge_ids = input; self
     }
     /// <p>This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to <code>True</code> when openCypher relationship IDs are explicitly provided in the load data (recommended).</p>
     /// <p>When <code>userProvidedEdgeIds</code> is absent or set to <code>True</code>, an <code>:ID</code> column must be present in every relationship file in the load.</p>
@@ -747,22 +729,35 @@ impl StartLoaderJobInputBuilder {
         &self.user_provided_edge_ids
     }
     /// Consumes the builder and constructs a [`StartLoaderJobInput`](crate::operation::start_loader_job::StartLoaderJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_loader_job::StartLoaderJobInput {
-            source: self.source,
-            format: self.format,
-            s3_bucket_region: self.s3_bucket_region,
-            iam_role_arn: self.iam_role_arn,
-            mode: self.mode,
-            fail_on_error: self.fail_on_error,
-            parallelism: self.parallelism,
-            parser_configuration: self.parser_configuration,
-            update_single_cardinality_properties: self.update_single_cardinality_properties,
-            queue_request: self.queue_request,
-            dependencies: self.dependencies,
-            user_provided_edge_ids: self.user_provided_edge_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_loader_job::StartLoaderJobInput {
+                source: self.source
+                ,
+                format: self.format
+                ,
+                s3_bucket_region: self.s3_bucket_region
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                mode: self.mode
+                ,
+                fail_on_error: self.fail_on_error
+                ,
+                parallelism: self.parallelism
+                ,
+                parser_configuration: self.parser_configuration
+                ,
+                update_single_cardinality_properties: self.update_single_cardinality_properties
+                ,
+                queue_request: self.queue_request
+                ,
+                dependencies: self.dependencies
+                ,
+                user_provided_edge_ids: self.user_provided_edge_ids
+                ,
+            }
+        )
     }
 }
+

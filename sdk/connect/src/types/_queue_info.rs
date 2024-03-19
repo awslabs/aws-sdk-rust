@@ -3,19 +3,19 @@
 /// <p>If this contact was queued, this contains information about the queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueueInfo {
+pub struct QueueInfo  {
     /// <p>The unique identifier for the queue.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub enqueue_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl QueueInfo {
+impl  QueueInfo  {
     /// <p>The unique identifier for the queue.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
-    pub fn enqueue_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enqueue_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enqueue_timestamp.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl QueueInfoBuilder {
     }
     /// <p>The unique identifier for the queue.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the queue.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl QueueInfoBuilder {
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub fn set_enqueue_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enqueue_timestamp = input;
-        self
+        self.enqueue_timestamp = input; self
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub fn get_enqueue_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl QueueInfoBuilder {
     /// Consumes the builder and constructs a [`QueueInfo`](crate::types::QueueInfo).
     pub fn build(self) -> crate::types::QueueInfo {
         crate::types::QueueInfo {
-            id: self.id,
-            enqueue_timestamp: self.enqueue_timestamp,
+            id: self.id
+            ,
+            enqueue_timestamp: self.enqueue_timestamp
+            ,
         }
     }
 }
+

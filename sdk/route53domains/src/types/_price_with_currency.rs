@@ -3,21 +3,20 @@
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriceWithCurrency {
+pub struct PriceWithCurrency  {
     /// <p>The price of a domain, in a specific currency.</p>
     pub price: f64,
     /// <p>The currency specifier.</p>
     pub currency: ::std::string::String,
 }
-impl PriceWithCurrency {
+impl  PriceWithCurrency  {
     /// <p>The price of a domain, in a specific currency.</p>
     pub fn price(&self) -> f64 {
         self.price
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(&self) -> &str {
-        use std::ops::Deref;
-        self.currency.deref()
+    pub fn currency(&self) -> & str {
+        use std::ops::Deref; self.currency.deref()
     }
 }
 impl PriceWithCurrency {
@@ -43,8 +42,7 @@ impl PriceWithCurrencyBuilder {
     }
     /// <p>The price of a domain, in a specific currency.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The price of a domain, in a specific currency.</p>
     pub fn get_price(&self) -> &::std::option::Option<f64> {
@@ -58,8 +56,7 @@ impl PriceWithCurrencyBuilder {
     }
     /// <p>The currency specifier.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The currency specifier.</p>
     pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,14 +66,18 @@ impl PriceWithCurrencyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`currency`](crate::types::builders::PriceWithCurrencyBuilder::currency)
     pub fn build(self) -> ::std::result::Result<crate::types::PriceWithCurrency, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PriceWithCurrency {
-            price: self.price.unwrap_or_default(),
-            currency: self.currency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "currency",
-                    "currency was not specified but it is required when building PriceWithCurrency",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PriceWithCurrency {
+                price: self.price
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("currency", "currency was not specified but it is required when building PriceWithCurrency")
+                    )?
+                ,
+            }
+        )
     }
 }
+

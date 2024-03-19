@@ -3,7 +3,7 @@
 /// <p>Details about an Amazon S3 object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3ObjectDetails {
+pub struct AwsS3ObjectDetails  {
     /// <p>Indicates when the object was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub last_modified: ::std::option::Option<::std::string::String>,
@@ -18,30 +18,30 @@ pub struct AwsS3ObjectDetails {
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3ObjectDetails {
+impl  AwsS3ObjectDetails  {
     /// <p>Indicates when the object was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified(&self) -> ::std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The version of the object.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
-    pub fn server_side_encryption(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<& str> {
         self.server_side_encryption.as_deref()
     }
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
-    pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssekms_key_id(&self) -> ::std::option::Option<& str> {
         self.ssekms_key_id.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl AwsS3ObjectDetailsBuilder {
     /// <p>Indicates when the object was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>Indicates when the object was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -88,8 +87,7 @@ impl AwsS3ObjectDetailsBuilder {
     }
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl AwsS3ObjectDetailsBuilder {
     }
     /// <p>The version of the object.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version of the object.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl AwsS3ObjectDetailsBuilder {
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +126,7 @@ impl AwsS3ObjectDetailsBuilder {
     }
     /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_side_encryption = input;
-        self
+        self.server_side_encryption = input; self
     }
     /// <p>If the object is stored using server-side encryption, the value of the server-side encryption algorithm used when storing this object in Amazon S3.</p>
     pub fn get_server_side_encryption(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +139,7 @@ impl AwsS3ObjectDetailsBuilder {
     }
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
     pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssekms_key_id = input;
-        self
+        self.ssekms_key_id = input; self
     }
     /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
     pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,12 +148,19 @@ impl AwsS3ObjectDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3ObjectDetails`](crate::types::AwsS3ObjectDetails).
     pub fn build(self) -> crate::types::AwsS3ObjectDetails {
         crate::types::AwsS3ObjectDetails {
-            last_modified: self.last_modified,
-            e_tag: self.e_tag,
-            version_id: self.version_id,
-            content_type: self.content_type,
-            server_side_encryption: self.server_side_encryption,
-            ssekms_key_id: self.ssekms_key_id,
+            last_modified: self.last_modified
+            ,
+            e_tag: self.e_tag
+            ,
+            version_id: self.version_id
+            ,
+            content_type: self.content_type
+            ,
+            server_side_encryption: self.server_side_encryption
+            ,
+            ssekms_key_id: self.ssekms_key_id
+            ,
         }
     }
 }
+

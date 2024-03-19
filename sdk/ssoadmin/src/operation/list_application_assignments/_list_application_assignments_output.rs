@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationAssignmentsOutput {
+pub struct ListApplicationAssignmentsOutput  {
     /// <p>The list of users assigned to an application.</p>
-    pub application_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignment>>,
+    pub application_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssignment>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationAssignmentsOutput {
+impl  ListApplicationAssignmentsOutput  {
     /// <p>The list of users assigned to an application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_assignments.is_none()`.
-    pub fn application_assignments(&self) -> &[crate::types::ApplicationAssignment] {
-        self.application_assignments.as_deref().unwrap_or_default()
+    pub fn application_assignments(&self) -> & [crate::types::ApplicationAssignment] {
+        self.application_assignments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationAssignmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationAssignmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationAssignmentsOutput`](crate::operation::list_application_assignments::ListApplicationAssignmentsOutput).
     pub fn builder() -> crate::operation::list_application_assignments::builders::ListApplicationAssignmentsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListApplicationAssignmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationAssignmentsOutputBuilder {
-    pub(crate) application_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignment>>,
+    pub(crate) application_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssignment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListApplicationAssignmentsOutputBuilder {
     /// <p>The list of users assigned to an application.</p>
     pub fn application_assignments(mut self, input: crate::types::ApplicationAssignment) -> Self {
         let mut v = self.application_assignments.unwrap_or_default();
-        v.push(input);
-        self.application_assignments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_assignments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of users assigned to an application.</p>
-    pub fn set_application_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignment>>) -> Self {
-        self.application_assignments = input;
-        self
+    pub fn set_application_assignments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssignment>>) -> Self {
+        self.application_assignments = input; self
     }
     /// <p>The list of users assigned to an application.</p>
-    pub fn get_application_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignment>> {
+    pub fn get_application_assignments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssignment>> {
         &self.application_assignments
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -69,28 +69,30 @@ impl ListApplicationAssignmentsOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationAssignmentsOutput`](crate::operation::list_application_assignments::ListApplicationAssignmentsOutput).
     pub fn build(self) -> crate::operation::list_application_assignments::ListApplicationAssignmentsOutput {
         crate::operation::list_application_assignments::ListApplicationAssignmentsOutput {
-            application_assignments: self.application_assignments,
-            next_token: self.next_token,
+            application_assignments: self.application_assignments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

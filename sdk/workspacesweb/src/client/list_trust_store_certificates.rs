@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrustStoreCertificates`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`trust_store_arn(impl Into<String>)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::set_trust_store_arn):<br>required: **true**<br><p>The ARN of the trust store</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput) with field(s):
+                            /// - On success, responds with [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput) with field(s):
     ///   - [`certificate_list(Option<Vec::<CertificateSummary>>)`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput::certificate_list): <p>The certificate list.</p>
     ///   - [`trust_store_arn(String)`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput::trust_store_arn): <p>The ARN of the trust store.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
-    /// - On failure, responds with [`SdkError<ListTrustStoreCertificatesError>`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError)
-    pub fn list_trust_store_certificates(
-        &self,
-    ) -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder {
-        crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTrustStoreCertificatesError>`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError)
+    pub fn list_trust_store_certificates(&self) -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder {
+                                crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

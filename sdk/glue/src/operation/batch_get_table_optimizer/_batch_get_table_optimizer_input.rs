@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTableOptimizerInput {
+pub struct BatchGetTableOptimizerInput  {
     /// <p>A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers to retrieve.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerEntry>>,
 }
-impl BatchGetTableOptimizerInput {
+impl  BatchGetTableOptimizerInput  {
     /// <p>A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::BatchGetTableOptimizerEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::BatchGetTableOptimizerEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetTableOptimizerInput {
@@ -25,7 +26,7 @@ impl BatchGetTableOptimizerInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTableOptimizerInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerEntry>>,
 }
 impl BatchGetTableOptimizerInputBuilder {
     /// Appends an item to `entries`.
@@ -35,26 +36,26 @@ impl BatchGetTableOptimizerInputBuilder {
     /// <p>A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers to retrieve.</p>
     pub fn entries(mut self, input: crate::types::BatchGetTableOptimizerEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers to retrieve.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers to retrieve.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchGetTableOptimizerInput`](crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput { entries: self.entries })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput {
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

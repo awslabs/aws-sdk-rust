@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSettingsInput {
+pub struct DescribeSettingsInput  {
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the directory settings for which to retrieve information.</p>
@@ -10,17 +10,17 @@ pub struct DescribeSettingsInput {
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSettingsInput {
+impl  DescribeSettingsInput  {
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The status of the directory settings for which to retrieve information.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DirectoryConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DirectoryConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeSettingsInputBuilder {
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeSettingsInputBuilder {
     }
     /// <p>The status of the directory settings for which to retrieve information.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DirectoryConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the directory settings for which to retrieve information.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DirectoryConfigurationStatus> {
@@ -76,21 +74,24 @@ impl DescribeSettingsInputBuilder {
     }
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call to <code>DescribeSettings</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeSettingsInput`](crate::operation::describe_settings::DescribeSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_settings::DescribeSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_settings::DescribeSettingsInput {
-            directory_id: self.directory_id,
-            status: self.status,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_settings::DescribeSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_settings::DescribeSettingsInput {
+                directory_id: self.directory_id
+                ,
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

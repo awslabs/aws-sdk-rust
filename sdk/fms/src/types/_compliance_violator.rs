@@ -3,7 +3,7 @@
 /// <p>Details of the resource that is not protected by the policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComplianceViolator {
+pub struct ComplianceViolator  {
     /// <p>The resource ID.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the resource is not protected by the policy.</p>
@@ -11,23 +11,23 @@ pub struct ComplianceViolator {
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ComplianceViolator {
+impl  ComplianceViolator  {
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The reason that the resource is not protected by the policy.</p>
-    pub fn violation_reason(&self) -> ::std::option::Option<&crate::types::ViolationReason> {
+    pub fn violation_reason(&self) -> ::std::option::Option<& crate::types::ViolationReason> {
         self.violation_reason.as_ref()
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct ComplianceViolatorBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_reason: ::std::option::Option<crate::types::ViolationReason>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceViolatorBuilder {
     /// <p>The resource ID.</p>
@@ -55,8 +55,7 @@ impl ComplianceViolatorBuilder {
     }
     /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ComplianceViolatorBuilder {
     }
     /// <p>The reason that the resource is not protected by the policy.</p>
     pub fn set_violation_reason(mut self, input: ::std::option::Option<crate::types::ViolationReason>) -> Self {
-        self.violation_reason = input;
-        self
+        self.violation_reason = input; self
     }
     /// <p>The reason that the resource is not protected by the policy.</p>
     pub fn get_violation_reason(&self) -> &::std::option::Option<crate::types::ViolationReason> {
@@ -83,8 +81,7 @@ impl ComplianceViolatorBuilder {
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,26 +94,30 @@ impl ComplianceViolatorBuilder {
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ComplianceViolator`](crate::types::ComplianceViolator).
     pub fn build(self) -> crate::types::ComplianceViolator {
         crate::types::ComplianceViolator {
-            resource_id: self.resource_id,
-            violation_reason: self.violation_reason,
-            resource_type: self.resource_type,
-            metadata: self.metadata,
+            resource_id: self.resource_id
+            ,
+            violation_reason: self.violation_reason
+            ,
+            resource_type: self.resource_type
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
+

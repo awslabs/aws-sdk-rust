@@ -3,7 +3,7 @@
 /// <p>Information, including performance data and capacity usage, provided by DataSync Discovery about a resource in your on-premises storage system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceMetrics {
+pub struct ResourceMetrics  {
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
@@ -15,25 +15,25 @@ pub struct ResourceMetrics {
     /// <p>The type of on-premises storage system resource.</p>
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
 }
-impl ResourceMetrics {
+impl  ResourceMetrics  {
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
-    pub fn p95_metrics(&self) -> ::std::option::Option<&crate::types::P95Metrics> {
+    pub fn p95_metrics(&self) -> ::std::option::Option<& crate::types::P95Metrics> {
         self.p95_metrics.as_ref()
     }
     /// <p>The storage capacity of the on-premises storage system resource.</p>
-    pub fn capacity(&self) -> ::std::option::Option<&crate::types::Capacity> {
+    pub fn capacity(&self) -> ::std::option::Option<& crate::types::Capacity> {
         self.capacity.as_ref()
     }
     /// <p>The universally unique identifier (UUID) of the on-premises storage system resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of on-premises storage system resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::DiscoveryResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::DiscoveryResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ResourceMetricsBuilder {
     }
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +75,7 @@ impl ResourceMetricsBuilder {
     }
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
     pub fn set_p95_metrics(mut self, input: ::std::option::Option<crate::types::P95Metrics>) -> Self {
-        self.p95_metrics = input;
-        self
+        self.p95_metrics = input; self
     }
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
     pub fn get_p95_metrics(&self) -> &::std::option::Option<crate::types::P95Metrics> {
@@ -90,8 +88,7 @@ impl ResourceMetricsBuilder {
     }
     /// <p>The storage capacity of the on-premises storage system resource.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::Capacity>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The storage capacity of the on-premises storage system resource.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::Capacity> {
@@ -104,8 +101,7 @@ impl ResourceMetricsBuilder {
     }
     /// <p>The universally unique identifier (UUID) of the on-premises storage system resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The universally unique identifier (UUID) of the on-premises storage system resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl ResourceMetricsBuilder {
     }
     /// <p>The type of on-premises storage system resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of on-premises storage system resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
@@ -128,11 +123,17 @@ impl ResourceMetricsBuilder {
     /// Consumes the builder and constructs a [`ResourceMetrics`](crate::types::ResourceMetrics).
     pub fn build(self) -> crate::types::ResourceMetrics {
         crate::types::ResourceMetrics {
-            timestamp: self.timestamp,
-            p95_metrics: self.p95_metrics,
-            capacity: self.capacity,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
+            timestamp: self.timestamp
+            ,
+            p95_metrics: self.p95_metrics
+            ,
+            capacity: self.capacity
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

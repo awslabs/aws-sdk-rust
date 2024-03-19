@@ -3,7 +3,7 @@
 /// <p>The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypeExecutor {
+pub struct ActionTypeExecutor  {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     pub configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.</p>
@@ -16,20 +16,20 @@ pub struct ActionTypeExecutor {
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
     pub job_timeout: ::std::option::Option<i32>,
 }
-impl ActionTypeExecutor {
+impl  ActionTypeExecutor  {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ExecutorConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ExecutorConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.</p>
-    pub fn r#type(&self) -> &crate::types::ExecutorType {
+    pub fn r#type(&self) -> & crate::types::ExecutorType {
         &self.r#type
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    pub fn policy_statements_template(&self) -> ::std::option::Option<&str> {
+    pub fn policy_statements_template(&self) -> ::std::option::Option<& str> {
         self.policy_statements_template.as_deref()
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
@@ -62,8 +62,7 @@ impl ActionTypeExecutorBuilder {
     }
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExecutorConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExecutorConfiguration> {
@@ -77,8 +76,7 @@ impl ActionTypeExecutorBuilder {
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ExecutorType> {
@@ -97,8 +95,7 @@ impl ActionTypeExecutorBuilder {
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub fn set_policy_statements_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_statements_template = input;
-        self
+        self.policy_statements_template = input; self
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
@@ -114,8 +111,7 @@ impl ActionTypeExecutorBuilder {
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
     pub fn set_job_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.job_timeout = input;
-        self
+        self.job_timeout = input; self
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
     pub fn get_job_timeout(&self) -> &::std::option::Option<i32> {
@@ -125,16 +121,21 @@ impl ActionTypeExecutorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ActionTypeExecutorBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeExecutor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionTypeExecutor {
-            configuration: self.configuration,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ActionTypeExecutor",
-                )
-            })?,
-            policy_statements_template: self.policy_statements_template,
-            job_timeout: self.job_timeout,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionTypeExecutor {
+                configuration: self.configuration
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ActionTypeExecutor")
+                    )?
+                ,
+                policy_statements_template: self.policy_statements_template
+                ,
+                job_timeout: self.job_timeout
+                ,
+            }
+        )
     }
 }
+

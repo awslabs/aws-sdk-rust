@@ -3,23 +3,22 @@
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAnalysisSchemesOutput {
+pub struct DescribeAnalysisSchemesOutput  {
     /// <p>The analysis scheme descriptions.</p>
-    pub analysis_schemes: ::std::vec::Vec<crate::types::AnalysisSchemeStatus>,
+    pub analysis_schemes: ::std::vec::Vec::<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
-impl DescribeAnalysisSchemesOutput {
+impl  DescribeAnalysisSchemesOutput  {
     /// <p>The analysis scheme descriptions.</p>
-    pub fn analysis_schemes(&self) -> &[crate::types::AnalysisSchemeStatus] {
-        use std::ops::Deref;
-        self.analysis_schemes.deref()
+    pub fn analysis_schemes(&self) -> & [crate::types::AnalysisSchemeStatus] {
+        use std::ops::Deref; self.analysis_schemes.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAnalysisSchemesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAnalysisSchemesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
     pub fn builder() -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeAnalysisSchemesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutputBuilder {
-    pub(crate) analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub(crate) analysis_schemes: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutputBuilder {
@@ -42,45 +41,41 @@ impl DescribeAnalysisSchemesOutputBuilder {
     /// <p>The analysis scheme descriptions.</p>
     pub fn analysis_schemes(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
         let mut v = self.analysis_schemes.unwrap_or_default();
-        v.push(input);
-        self.analysis_schemes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_schemes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The analysis scheme descriptions.</p>
-    pub fn set_analysis_schemes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>) -> Self {
-        self.analysis_schemes = input;
-        self
+    pub fn set_analysis_schemes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSchemeStatus>>) -> Self {
+        self.analysis_schemes = input; self
     }
     /// <p>The analysis scheme descriptions.</p>
-    pub fn get_analysis_schemes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>> {
+    pub fn get_analysis_schemes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSchemeStatus>> {
         &self.analysis_schemes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_schemes`](crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder::analysis_schemes)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
-            analysis_schemes: self.analysis_schemes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_schemes",
-                    "analysis_schemes was not specified but it is required when building DescribeAnalysisSchemesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
+                analysis_schemes: self.analysis_schemes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_schemes", "analysis_schemes was not specified but it is required when building DescribeAnalysisSchemesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

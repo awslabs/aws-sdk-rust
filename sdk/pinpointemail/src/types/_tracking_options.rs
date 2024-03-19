@@ -4,15 +4,14 @@
 /// <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackingOptions {
+pub struct TrackingOptions  {
     /// <p>The domain that you want to use for tracking open and click events.</p>
     pub custom_redirect_domain: ::std::string::String,
 }
-impl TrackingOptions {
+impl  TrackingOptions  {
     /// <p>The domain that you want to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.custom_redirect_domain.deref()
+    pub fn custom_redirect_domain(&self) -> & str {
+        use std::ops::Deref; self.custom_redirect_domain.deref()
     }
 }
 impl TrackingOptions {
@@ -37,8 +36,7 @@ impl TrackingOptionsBuilder {
     }
     /// <p>The domain that you want to use for tracking open and click events.</p>
     pub fn set_custom_redirect_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_redirect_domain = input;
-        self
+        self.custom_redirect_domain = input; self
     }
     /// <p>The domain that you want to use for tracking open and click events.</p>
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,13 +46,15 @@ impl TrackingOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_redirect_domain`](crate::types::builders::TrackingOptionsBuilder::custom_redirect_domain)
     pub fn build(self) -> ::std::result::Result<crate::types::TrackingOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrackingOptions {
-            custom_redirect_domain: self.custom_redirect_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "custom_redirect_domain",
-                    "custom_redirect_domain was not specified but it is required when building TrackingOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrackingOptions {
+                custom_redirect_domain: self.custom_redirect_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("custom_redirect_domain", "custom_redirect_domain was not specified but it is required when building TrackingOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

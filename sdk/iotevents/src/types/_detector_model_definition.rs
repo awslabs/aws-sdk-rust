@@ -3,22 +3,20 @@
 /// <p>Information that defines how a detector operates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectorModelDefinition {
+pub struct DetectorModelDefinition  {
     /// <p>Information about the states of the detector.</p>
-    pub states: ::std::vec::Vec<crate::types::State>,
+    pub states: ::std::vec::Vec::<crate::types::State>,
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub initial_state_name: ::std::string::String,
 }
-impl DetectorModelDefinition {
+impl  DetectorModelDefinition  {
     /// <p>Information about the states of the detector.</p>
-    pub fn states(&self) -> &[crate::types::State] {
-        use std::ops::Deref;
-        self.states.deref()
+    pub fn states(&self) -> & [crate::types::State] {
+        use std::ops::Deref; self.states.deref()
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn initial_state_name(&self) -> &str {
-        use std::ops::Deref;
-        self.initial_state_name.deref()
+    pub fn initial_state_name(&self) -> & str {
+        use std::ops::Deref; self.initial_state_name.deref()
     }
 }
 impl DetectorModelDefinition {
@@ -32,7 +30,7 @@ impl DetectorModelDefinition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorModelDefinitionBuilder {
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::State>>,
     pub(crate) initial_state_name: ::std::option::Option<::std::string::String>,
 }
 impl DetectorModelDefinitionBuilder {
@@ -43,17 +41,16 @@ impl DetectorModelDefinitionBuilder {
     /// <p>Information about the states of the detector.</p>
     pub fn states(mut self, input: crate::types::State) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the states of the detector.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::State>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::State>>) -> Self {
+        self.states = input; self
     }
     /// <p>Information about the states of the detector.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::State>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::State>> {
         &self.states
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
@@ -64,8 +61,7 @@ impl DetectorModelDefinitionBuilder {
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub fn set_initial_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_state_name = input;
-        self
+        self.initial_state_name = input; self
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub fn get_initial_state_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl DetectorModelDefinitionBuilder {
     /// - [`states`](crate::types::builders::DetectorModelDefinitionBuilder::states)
     /// - [`initial_state_name`](crate::types::builders::DetectorModelDefinitionBuilder::initial_state_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DetectorModelDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DetectorModelDefinition {
-            states: self.states.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "states",
-                    "states was not specified but it is required when building DetectorModelDefinition",
-                )
-            })?,
-            initial_state_name: self.initial_state_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "initial_state_name",
-                    "initial_state_name was not specified but it is required when building DetectorModelDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DetectorModelDefinition {
+                states: self.states
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("states", "states was not specified but it is required when building DetectorModelDefinition")
+                    )?
+                ,
+                initial_state_name: self.initial_state_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("initial_state_name", "initial_state_name was not specified but it is required when building DetectorModelDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

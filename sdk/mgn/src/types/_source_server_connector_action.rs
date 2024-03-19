@@ -3,19 +3,19 @@
 /// <p>Source Server connector action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceServerConnectorAction {
+pub struct SourceServerConnectorAction  {
     /// <p>Source Server connector action credentials secret arn.</p>
     pub credentials_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Source Server connector action connector arn.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
 }
-impl SourceServerConnectorAction {
+impl  SourceServerConnectorAction  {
     /// <p>Source Server connector action credentials secret arn.</p>
-    pub fn credentials_secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_secret_arn(&self) -> ::std::option::Option<& str> {
         self.credentials_secret_arn.as_deref()
     }
     /// <p>Source Server connector action connector arn.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SourceServerConnectorActionBuilder {
     }
     /// <p>Source Server connector action credentials secret arn.</p>
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_secret_arn = input;
-        self
+        self.credentials_secret_arn = input; self
     }
     /// <p>Source Server connector action credentials secret arn.</p>
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SourceServerConnectorActionBuilder {
     }
     /// <p>Source Server connector action connector arn.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>Source Server connector action connector arn.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SourceServerConnectorActionBuilder {
     /// Consumes the builder and constructs a [`SourceServerConnectorAction`](crate::types::SourceServerConnectorAction).
     pub fn build(self) -> crate::types::SourceServerConnectorAction {
         crate::types::SourceServerConnectorAction {
-            credentials_secret_arn: self.credentials_secret_arn,
-            connector_arn: self.connector_arn,
+            credentials_secret_arn: self.credentials_secret_arn
+            ,
+            connector_arn: self.connector_arn
+            ,
         }
     }
 }
+

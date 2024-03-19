@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasourcePackagesOutput {
+pub struct UpdateDatasourcePackagesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateDatasourcePackagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDatasourcePackagesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput).
     pub fn builder() -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateDatasourcePackagesOutputBuilder {
 }
 impl UpdateDatasourcePackagesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput).
     pub fn build(self) -> crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput {
         crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput {
@@ -40,3 +40,4 @@ impl UpdateDatasourcePackagesOutputBuilder {
         }
     }
 }
+

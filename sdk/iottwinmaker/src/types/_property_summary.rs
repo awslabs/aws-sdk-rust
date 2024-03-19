@@ -3,7 +3,7 @@
 /// <p>This is an object that contains the information of a property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertySummary {
+pub struct PropertySummary  {
     /// <p>This is the schema for the property.</p>
     pub definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     /// <p>This is the name of the property.</p>
@@ -13,18 +13,17 @@ pub struct PropertySummary {
     /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
     pub are_all_property_values_returned: ::std::option::Option<bool>,
 }
-impl PropertySummary {
+impl  PropertySummary  {
     /// <p>This is the schema for the property.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::PropertyDefinitionResponse> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::PropertyDefinitionResponse> {
         self.definition.as_ref()
     }
     /// <p>This is the name of the property.</p>
-    pub fn property_name(&self) -> &str {
-        use std::ops::Deref;
-        self.property_name.deref()
+    pub fn property_name(&self) -> & str {
+        use std::ops::Deref; self.property_name.deref()
     }
     /// <p>This is the value for the property.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::DataValue> {
         self.value.as_ref()
     }
     /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
@@ -56,8 +55,7 @@ impl PropertySummaryBuilder {
     }
     /// <p>This is the schema for the property.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PropertyDefinitionResponse>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>This is the schema for the property.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PropertyDefinitionResponse> {
@@ -71,8 +69,7 @@ impl PropertySummaryBuilder {
     }
     /// <p>This is the name of the property.</p>
     pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_name = input;
-        self
+        self.property_name = input; self
     }
     /// <p>This is the name of the property.</p>
     pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl PropertySummaryBuilder {
     }
     /// <p>This is the value for the property.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>This is the value for the property.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DataValue> {
@@ -99,8 +95,7 @@ impl PropertySummaryBuilder {
     }
     /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
     pub fn set_are_all_property_values_returned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.are_all_property_values_returned = input;
-        self
+        self.are_all_property_values_returned = input; self
     }
     /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
     pub fn get_are_all_property_values_returned(&self) -> &::std::option::Option<bool> {
@@ -110,16 +105,21 @@ impl PropertySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`property_name`](crate::types::builders::PropertySummaryBuilder::property_name)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PropertySummary {
-            definition: self.definition,
-            property_name: self.property_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_name",
-                    "property_name was not specified but it is required when building PropertySummary",
-                )
-            })?,
-            value: self.value,
-            are_all_property_values_returned: self.are_all_property_values_returned,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PropertySummary {
+                definition: self.definition
+                ,
+                property_name: self.property_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_name", "property_name was not specified but it is required when building PropertySummary")
+                    )?
+                ,
+                value: self.value
+                ,
+                are_all_property_values_returned: self.are_all_property_values_returned
+                ,
+            }
+        )
     }
 }
+

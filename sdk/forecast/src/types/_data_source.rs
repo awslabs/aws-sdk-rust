@@ -3,13 +3,13 @@
 /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
 }
-impl DataSource {
+impl  DataSource  {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
-    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<& crate::types::S3Config> {
         self.s3_config.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DataSourceBuilder {
     }
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
-        self.s3_config = input;
-        self
+        self.s3_config = input; self
     }
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
@@ -44,6 +43,10 @@ impl DataSourceBuilder {
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
-        crate::types::DataSource { s3_config: self.s3_config }
+        crate::types::DataSource {
+            s3_config: self.s3_config
+            ,
+        }
     }
 }
+

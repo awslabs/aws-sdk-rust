@@ -3,7 +3,7 @@
 /// <p>The processing rules for when a registration can be associated with an origination identity and disassociated from an origination identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedAssociation {
+pub struct SupportedAssociation  {
     /// <p>Defines the behavior of when an origination identity and registration can be associated with each other.</p>
     pub resource_type: ::std::string::String,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
@@ -29,14 +29,13 @@ pub struct SupportedAssociation {
     /// </ul>
     pub disassociation_behavior: crate::types::RegistrationDisassociationBehavior,
 }
-impl SupportedAssociation {
+impl  SupportedAssociation  {
     /// <p>Defines the behavior of when an origination identity and registration can be associated with each other.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The association behavior.</p>
@@ -48,7 +47,7 @@ impl SupportedAssociation {
     /// <li>
     /// <p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
-    pub fn association_behavior(&self) -> &crate::types::RegistrationAssociationBehavior {
+    pub fn association_behavior(&self) -> & crate::types::RegistrationAssociationBehavior {
         &self.association_behavior
     }
     /// <p>The disassociation behavior.</p>
@@ -60,7 +59,7 @@ impl SupportedAssociation {
     /// <li>
     /// <p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
-    pub fn disassociation_behavior(&self) -> &crate::types::RegistrationDisassociationBehavior {
+    pub fn disassociation_behavior(&self) -> & crate::types::RegistrationDisassociationBehavior {
         &self.disassociation_behavior
     }
 }
@@ -89,8 +88,7 @@ impl SupportedAssociationBuilder {
     }
     /// <p>Defines the behavior of when an origination identity and registration can be associated with each other.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Defines the behavior of when an origination identity and registration can be associated with each other.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl SupportedAssociationBuilder {
     /// <p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     pub fn set_association_behavior(mut self, input: ::std::option::Option<crate::types::RegistrationAssociationBehavior>) -> Self {
-        self.association_behavior = input;
-        self
+        self.association_behavior = input; self
     }
     /// <p>The association behavior.</p>
     /// <ul>
@@ -173,8 +169,7 @@ impl SupportedAssociationBuilder {
     /// <p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     pub fn set_disassociation_behavior(mut self, input: ::std::option::Option<crate::types::RegistrationDisassociationBehavior>) -> Self {
-        self.disassociation_behavior = input;
-        self
+        self.disassociation_behavior = input; self
     }
     /// <p>The disassociation behavior.</p>
     /// <ul>
@@ -194,26 +189,27 @@ impl SupportedAssociationBuilder {
     /// - [`association_behavior`](crate::types::builders::SupportedAssociationBuilder::association_behavior)
     /// - [`disassociation_behavior`](crate::types::builders::SupportedAssociationBuilder::disassociation_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::SupportedAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SupportedAssociation {
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building SupportedAssociation",
-                )
-            })?,
-            iso_country_code: self.iso_country_code,
-            association_behavior: self.association_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "association_behavior",
-                    "association_behavior was not specified but it is required when building SupportedAssociation",
-                )
-            })?,
-            disassociation_behavior: self.disassociation_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "disassociation_behavior",
-                    "disassociation_behavior was not specified but it is required when building SupportedAssociation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SupportedAssociation {
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building SupportedAssociation")
+                    )?
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                association_behavior: self.association_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("association_behavior", "association_behavior was not specified but it is required when building SupportedAssociation")
+                    )?
+                ,
+                disassociation_behavior: self.disassociation_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("disassociation_behavior", "disassociation_behavior was not specified but it is required when building SupportedAssociation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

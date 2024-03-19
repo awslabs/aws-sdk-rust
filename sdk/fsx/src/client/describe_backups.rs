@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBackups`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`backup_ids(impl Into<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::backup_ids) / [`set_backup_ids(Option<Vec::<String>>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_backup_ids):<br>required: **false**<br><p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p><br>
-    /// - On success, responds with [`DescribeBackupsOutput`](crate::operation::describe_backups::DescribeBackupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeBackupsOutput`](crate::operation::describe_backups::DescribeBackupsOutput) with field(s):
     ///   - [`backups(Option<Vec::<Backup>>)`](crate::operation::describe_backups::DescribeBackupsOutput::backups): <p>An array of backups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_backups::DescribeBackupsOutput::next_token): <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups.</p>
-    /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::operation::describe_backups::DescribeBackupsError)
+                            /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::operation::describe_backups::DescribeBackupsError)
     pub fn describe_backups(&self) -> crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder {
-        crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

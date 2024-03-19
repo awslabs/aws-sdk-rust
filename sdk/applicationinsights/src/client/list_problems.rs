@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProblems`](crate::operation::list_problems::builders::ListProblemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_resource_group_name):<br>required: **false**<br><p>The name of the resource group.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_start_time):<br>required: **false**<br><p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p><br>
@@ -12,13 +12,14 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`component_name(impl Into<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_component_name):<br>required: **false**<br><p>The name of the component.</p><br>
     ///   - [`visibility(Visibility)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::visibility) / [`set_visibility(Option<Visibility>)`](crate::operation::list_problems::builders::ListProblemsFluentBuilder::set_visibility):<br>required: **false**<br><p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p><br>
-    /// - On success, responds with [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput) with field(s):
+                            /// - On success, responds with [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput) with field(s):
     ///   - [`problem_list(Option<Vec::<Problem>>)`](crate::operation::list_problems::ListProblemsOutput::problem_list): <p>The list of problems.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::resource_group_name): <p>The name of the resource group.</p>
     ///   - [`account_id(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::account_id): <p>The AWS account ID for the resource group owner.</p>
-    /// - On failure, responds with [`SdkError<ListProblemsError>`](crate::operation::list_problems::ListProblemsError)
+                            /// - On failure, responds with [`SdkError<ListProblemsError>`](crate::operation::list_problems::ListProblemsError)
     pub fn list_problems(&self) -> crate::operation::list_problems::builders::ListProblemsFluentBuilder {
-        crate::operation::list_problems::builders::ListProblemsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_problems::builders::ListProblemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

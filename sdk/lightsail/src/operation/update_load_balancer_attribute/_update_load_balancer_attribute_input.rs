@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLoadBalancerAttributeInput {
+pub struct UpdateLoadBalancerAttributeInput  {
     /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute you want to update.</p>
@@ -24,13 +24,13 @@ pub struct UpdateLoadBalancerAttributeInput {
     /// </ul>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLoadBalancerAttributeInput {
+impl  UpdateLoadBalancerAttributeInput  {
     /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the attribute you want to update.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::LoadBalancerAttributeName> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& crate::types::LoadBalancerAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The value that you want to specify for the attribute name.</p>
@@ -48,7 +48,7 @@ impl UpdateLoadBalancerAttributeInput {
     /// <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p></li>
     /// </ul>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     }
     /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     }
     /// <p>The name of the attribute you want to update.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::LoadBalancerAttributeName>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the attribute you want to update.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::LoadBalancerAttributeName> {
@@ -134,8 +132,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p></li>
     /// </ul>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value that you want to specify for the attribute name.</p>
     /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
@@ -156,16 +153,17 @@ impl UpdateLoadBalancerAttributeInputBuilder {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`UpdateLoadBalancerAttributeInput`](crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput {
-            load_balancer_name: self.load_balancer_name,
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+                attribute_name: self.attribute_name
+                ,
+                attribute_value: self.attribute_value
+                ,
+            }
+        )
     }
 }
+

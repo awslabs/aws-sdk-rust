@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestAuthorizationOutput {
+pub struct TestAuthorizationOutput  {
     /// <p>The authentication results.</p>
-    pub auth_results: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
+    pub auth_results: ::std::option::Option<::std::vec::Vec::<crate::types::AuthResult>>,
     _request_id: Option<String>,
 }
-impl TestAuthorizationOutput {
+impl  TestAuthorizationOutput  {
     /// <p>The authentication results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth_results.is_none()`.
-    pub fn auth_results(&self) -> &[crate::types::AuthResult] {
-        self.auth_results.as_deref().unwrap_or_default()
+    pub fn auth_results(&self) -> & [crate::types::AuthResult] {
+        self.auth_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TestAuthorizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput).
     pub fn builder() -> crate::operation::test_authorization::builders::TestAuthorizationOutputBuilder {
@@ -31,7 +32,7 @@ impl TestAuthorizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestAuthorizationOutputBuilder {
-    pub(crate) auth_results: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
+    pub(crate) auth_results: ::std::option::Option<::std::vec::Vec::<crate::types::AuthResult>>,
     _request_id: Option<String>,
 }
 impl TestAuthorizationOutputBuilder {
@@ -42,33 +43,34 @@ impl TestAuthorizationOutputBuilder {
     /// <p>The authentication results.</p>
     pub fn auth_results(mut self, input: crate::types::AuthResult) -> Self {
         let mut v = self.auth_results.unwrap_or_default();
-        v.push(input);
-        self.auth_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authentication results.</p>
-    pub fn set_auth_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>) -> Self {
-        self.auth_results = input;
-        self
+    pub fn set_auth_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthResult>>) -> Self {
+        self.auth_results = input; self
     }
     /// <p>The authentication results.</p>
-    pub fn get_auth_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthResult>> {
+    pub fn get_auth_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthResult>> {
         &self.auth_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput).
     pub fn build(self) -> crate::operation::test_authorization::TestAuthorizationOutput {
         crate::operation::test_authorization::TestAuthorizationOutput {
-            auth_results: self.auth_results,
+            auth_results: self.auth_results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

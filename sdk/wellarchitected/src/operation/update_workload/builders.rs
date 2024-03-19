@@ -5,54 +5,50 @@ pub use crate::operation::update_workload::_update_workload_input::UpdateWorkloa
 
 impl UpdateWorkloadInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_workload::UpdateWorkloadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_workload::UpdateWorkloadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_workload();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_workload::UpdateWorkloadOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_workload::UpdateWorkloadError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_workload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateWorkload`.
-///
+/// 
 /// <p>Update an existing workload.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkloadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_workload::builders::UpdateWorkloadInputBuilder,
+                    inner: crate::operation::update_workload::builders::UpdateWorkloadInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_workload::UpdateWorkloadOutput,
-        crate::operation::update_workload::UpdateWorkloadError,
-    > for UpdateWorkloadFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_workload::UpdateWorkloadOutput,
-            crate::operation::update_workload::UpdateWorkloadError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_workload::UpdateWorkloadOutput,
+                    crate::operation::update_workload::UpdateWorkloadError,
+                > for UpdateWorkloadFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_workload::UpdateWorkloadOutput,
+                        crate::operation::update_workload::UpdateWorkloadError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateWorkloadFluentBuilder {
     /// Creates a new `UpdateWorkload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateWorkloadFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workload::UpdateWorkloadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_workload::UpdateWorkloadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_workload::UpdateWorkload::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_workload::UpdateWorkload::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_workload::UpdateWorkloadOutput,
-        crate::operation::update_workload::UpdateWorkloadError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_workload::UpdateWorkloadOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workload::UpdateWorkloadError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_workload::UpdateWorkload::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_workload::UpdateWorkload::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_workload::UpdateWorkloadOutput, crate::operation::update_workload::UpdateWorkloadError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -177,12 +164,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `AwsRegions`.
@@ -195,12 +182,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aws_regions(input);
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_aws_regions()
     }
     /// Appends an item to `NonAwsRegions`.
@@ -213,12 +200,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_non_aws_regions(input);
         self
     }
     /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_non_aws_regions()
     }
     /// Appends an item to `PillarPriorities`.
@@ -231,12 +218,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pillar_priorities(input);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_pillar_priorities()
     }
     /// <p>The URL of the architectural design for the workload.</p>
@@ -538,12 +525,13 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_applications()
     }
 }
+

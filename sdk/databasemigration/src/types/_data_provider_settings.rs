@@ -34,11 +34,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`DocDbSettings`](crate::types::DataProviderSettings::DocDbSettings), extracting the inner [`DocDbDataProviderSettings`](crate::types::DocDbDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_doc_db_settings(&self) -> ::std::result::Result<&crate::types::DocDbDataProviderSettings, &Self> {
-        if let DataProviderSettings::DocDbSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::DocDbSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DocDbSettings`](crate::types::DataProviderSettings::DocDbSettings).
     pub fn is_doc_db_settings(&self) -> bool {
@@ -47,11 +43,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`MariaDbSettings`](crate::types::DataProviderSettings::MariaDbSettings), extracting the inner [`MariaDbDataProviderSettings`](crate::types::MariaDbDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_maria_db_settings(&self) -> ::std::result::Result<&crate::types::MariaDbDataProviderSettings, &Self> {
-        if let DataProviderSettings::MariaDbSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::MariaDbSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MariaDbSettings`](crate::types::DataProviderSettings::MariaDbSettings).
     pub fn is_maria_db_settings(&self) -> bool {
@@ -60,11 +52,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`MicrosoftSqlServerSettings`](crate::types::DataProviderSettings::MicrosoftSqlServerSettings), extracting the inner [`MicrosoftSqlServerDataProviderSettings`](crate::types::MicrosoftSqlServerDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_microsoft_sql_server_settings(&self) -> ::std::result::Result<&crate::types::MicrosoftSqlServerDataProviderSettings, &Self> {
-        if let DataProviderSettings::MicrosoftSqlServerSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::MicrosoftSqlServerSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MicrosoftSqlServerSettings`](crate::types::DataProviderSettings::MicrosoftSqlServerSettings).
     pub fn is_microsoft_sql_server_settings(&self) -> bool {
@@ -73,11 +61,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`MongoDbSettings`](crate::types::DataProviderSettings::MongoDbSettings), extracting the inner [`MongoDbDataProviderSettings`](crate::types::MongoDbDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_mongo_db_settings(&self) -> ::std::result::Result<&crate::types::MongoDbDataProviderSettings, &Self> {
-        if let DataProviderSettings::MongoDbSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::MongoDbSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MongoDbSettings`](crate::types::DataProviderSettings::MongoDbSettings).
     pub fn is_mongo_db_settings(&self) -> bool {
@@ -86,11 +70,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`MySqlSettings`](crate::types::DataProviderSettings::MySqlSettings), extracting the inner [`MySqlDataProviderSettings`](crate::types::MySqlDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_my_sql_settings(&self) -> ::std::result::Result<&crate::types::MySqlDataProviderSettings, &Self> {
-        if let DataProviderSettings::MySqlSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::MySqlSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MySqlSettings`](crate::types::DataProviderSettings::MySqlSettings).
     pub fn is_my_sql_settings(&self) -> bool {
@@ -99,11 +79,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`OracleSettings`](crate::types::DataProviderSettings::OracleSettings), extracting the inner [`OracleDataProviderSettings`](crate::types::OracleDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oracle_settings(&self) -> ::std::result::Result<&crate::types::OracleDataProviderSettings, &Self> {
-        if let DataProviderSettings::OracleSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::OracleSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OracleSettings`](crate::types::DataProviderSettings::OracleSettings).
     pub fn is_oracle_settings(&self) -> bool {
@@ -112,11 +88,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`PostgreSqlSettings`](crate::types::DataProviderSettings::PostgreSqlSettings), extracting the inner [`PostgreSqlDataProviderSettings`](crate::types::PostgreSqlDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_postgre_sql_settings(&self) -> ::std::result::Result<&crate::types::PostgreSqlDataProviderSettings, &Self> {
-        if let DataProviderSettings::PostgreSqlSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::PostgreSqlSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PostgreSqlSettings`](crate::types::DataProviderSettings::PostgreSqlSettings).
     pub fn is_postgre_sql_settings(&self) -> bool {
@@ -125,11 +97,7 @@ impl DataProviderSettings {
     /// Tries to convert the enum instance into [`RedshiftSettings`](crate::types::DataProviderSettings::RedshiftSettings), extracting the inner [`RedshiftDataProviderSettings`](crate::types::RedshiftDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_settings(&self) -> ::std::result::Result<&crate::types::RedshiftDataProviderSettings, &Self> {
-        if let DataProviderSettings::RedshiftSettings(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataProviderSettings::RedshiftSettings(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftSettings`](crate::types::DataProviderSettings::RedshiftSettings).
     pub fn is_redshift_settings(&self) -> bool {
@@ -140,3 +108,4 @@ impl DataProviderSettings {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecommendationResources`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`status(ResourceStatus)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::status) / [`set_status(Option<ResourceStatus>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the resource</p><br>
     ///   - [`region_code(impl Into<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::region_code) / [`set_region_code(Option<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::set_region_code):<br>required: **false**<br><p>The AWS Region code of the resource</p><br>
     ///   - [`recommendation_identifier(impl Into<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::recommendation_identifier) / [`set_recommendation_identifier(Option<String>)`](crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::set_recommendation_identifier):<br>required: **true**<br><p>The Recommendation identifier</p><br>
-    /// - On success, responds with [`ListRecommendationResourcesOutput`](crate::operation::list_recommendation_resources::ListRecommendationResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListRecommendationResourcesOutput`](crate::operation::list_recommendation_resources::ListRecommendationResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendation_resources::ListRecommendationResourcesOutput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`recommendation_resource_summaries(Vec::<RecommendationResourceSummary>)`](crate::operation::list_recommendation_resources::ListRecommendationResourcesOutput::recommendation_resource_summaries): <p>A list of Recommendation Resources</p>
-    /// - On failure, responds with [`SdkError<ListRecommendationResourcesError>`](crate::operation::list_recommendation_resources::ListRecommendationResourcesError)
-    pub fn list_recommendation_resources(
-        &self,
-    ) -> crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder {
-        crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListRecommendationResourcesError>`](crate::operation::list_recommendation_resources::ListRecommendationResourcesError)
+    pub fn list_recommendation_resources(&self) -> crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder {
+                                crate::operation::list_recommendation_resources::builders::ListRecommendationResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueryDefinitionInput {
+pub struct DeleteQueryDefinitionInput  {
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     pub query_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQueryDefinitionInput {
+impl  DeleteQueryDefinitionInput  {
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
-    pub fn query_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_definition_id(&self) -> ::std::option::Option<& str> {
         self.query_definition_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteQueryDefinitionInputBuilder {
     }
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     pub fn set_query_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_definition_id = input;
-        self
+        self.query_definition_id = input; self
     }
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     pub fn get_query_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_definition_id
     }
     /// Consumes the builder and constructs a [`DeleteQueryDefinitionInput`](crate::operation::delete_query_definition::DeleteQueryDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_query_definition::DeleteQueryDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_query_definition::DeleteQueryDefinitionInput {
-            query_definition_id: self.query_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_query_definition::DeleteQueryDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_query_definition::DeleteQueryDefinitionInput {
+                query_definition_id: self.query_definition_id
+                ,
+            }
+        )
     }
 }
+

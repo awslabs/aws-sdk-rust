@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateApplicationFleetInput {
+pub struct AssociateApplicationFleetInput  {
     /// <p>The name of the fleet.</p>
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateApplicationFleetInput {
+impl  AssociateApplicationFleetInput  {
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateApplicationFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AssociateApplicationFleetInputBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
     /// Consumes the builder and constructs a [`AssociateApplicationFleetInput`](crate::operation::associate_application_fleet::AssociateApplicationFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_application_fleet::AssociateApplicationFleetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
-            fleet_name: self.fleet_name,
-            application_arn: self.application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_application_fleet::AssociateApplicationFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
+                fleet_name: self.fleet_name
+                ,
+                application_arn: self.application_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A summary of resources that aren't compliant. The summary is organized according to resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NonCompliantSummary {
+pub struct NonCompliantSummary  {
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
-impl NonCompliantSummary {
+impl  NonCompliantSummary  {
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub fn non_compliant_count(&self) -> i32 {
         self.non_compliant_count
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    pub fn severity_summary(&self) -> ::std::option::Option<&crate::types::SeveritySummary> {
+    pub fn severity_summary(&self) -> ::std::option::Option<& crate::types::SeveritySummary> {
         self.severity_summary.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl NonCompliantSummaryBuilder {
     }
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub fn set_non_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.non_compliant_count = input;
-        self
+        self.non_compliant_count = input; self
     }
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub fn get_non_compliant_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl NonCompliantSummaryBuilder {
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn set_severity_summary(mut self, input: ::std::option::Option<crate::types::SeveritySummary>) -> Self {
-        self.severity_summary = input;
-        self
+        self.severity_summary = input; self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn get_severity_summary(&self) -> &::std::option::Option<crate::types::SeveritySummary> {
@@ -65,8 +63,12 @@ impl NonCompliantSummaryBuilder {
     /// Consumes the builder and constructs a [`NonCompliantSummary`](crate::types::NonCompliantSummary).
     pub fn build(self) -> crate::types::NonCompliantSummary {
         crate::types::NonCompliantSummary {
-            non_compliant_count: self.non_compliant_count.unwrap_or_default(),
-            severity_summary: self.severity_summary,
+            non_compliant_count: self.non_compliant_count
+                .unwrap_or_default()
+            ,
+            severity_summary: self.severity_summary
+            ,
         }
     }
 }
+

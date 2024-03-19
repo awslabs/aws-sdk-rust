@@ -3,7 +3,7 @@
 /// <p>The current resource quotas associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountLimit {
+pub struct AccountLimit  {
     /// <p>The name of the attribute to apply the account limit to.</p>
     pub name: crate::types::AccountLimitName,
     /// <p>The current amount that has been spent, in US dollars.</p>
@@ -11,9 +11,9 @@ pub struct AccountLimit {
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub max: i64,
 }
-impl AccountLimit {
+impl  AccountLimit  {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn name(&self) -> &crate::types::AccountLimitName {
+    pub fn name(&self) -> & crate::types::AccountLimitName {
         &self.name
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
@@ -49,8 +49,7 @@ impl AccountLimitBuilder {
     }
     /// <p>The name of the attribute to apply the account limit to.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AccountLimitName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute to apply the account limit to.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AccountLimitName> {
@@ -64,8 +63,7 @@ impl AccountLimitBuilder {
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.used = input;
-        self
+        self.used = input; self
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn get_used(&self) -> &::std::option::Option<i64> {
@@ -79,8 +77,7 @@ impl AccountLimitBuilder {
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn get_max(&self) -> &::std::option::Option<i64> {
@@ -90,15 +87,21 @@ impl AccountLimitBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AccountLimitBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccountLimit {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AccountLimit",
-                )
-            })?,
-            used: self.used.unwrap_or_default(),
-            max: self.max.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccountLimit {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AccountLimit")
+                    )?
+                ,
+                used: self.used
+                    .unwrap_or_default()
+                ,
+                max: self.max
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

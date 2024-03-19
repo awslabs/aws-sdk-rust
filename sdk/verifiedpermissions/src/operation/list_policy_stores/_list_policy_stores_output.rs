@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPolicyStoresOutput {
+pub struct ListPolicyStoresOutput  {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of policy stores in the account.</p>
-    pub policy_stores: ::std::vec::Vec<crate::types::PolicyStoreItem>,
+    pub policy_stores: ::std::vec::Vec::<crate::types::PolicyStoreItem>,
     _request_id: Option<String>,
 }
-impl ListPolicyStoresOutput {
+impl  ListPolicyStoresOutput  {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn policy_stores(&self) -> &[crate::types::PolicyStoreItem] {
-        use std::ops::Deref;
-        self.policy_stores.deref()
+    pub fn policy_stores(&self) -> & [crate::types::PolicyStoreItem] {
+        use std::ops::Deref; self.policy_stores.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPolicyStoresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPolicyStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput).
     pub fn builder() -> crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder {
@@ -37,7 +36,7 @@ impl ListPolicyStoresOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyStoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_stores: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>,
+    pub(crate) policy_stores: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyStoreItem>>,
     _request_id: Option<String>,
 }
 impl ListPolicyStoresOutputBuilder {
@@ -48,8 +47,7 @@ impl ListPolicyStoresOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListPolicyStoresOutputBuilder {
     /// <p>The list of policy stores in the account.</p>
     pub fn policy_stores(mut self, input: crate::types::PolicyStoreItem) -> Self {
         let mut v = self.policy_stores.unwrap_or_default();
-        v.push(input);
-        self.policy_stores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_stores = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn set_policy_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>>) -> Self {
-        self.policy_stores = input;
-        self
+    pub fn set_policy_stores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyStoreItem>>) -> Self {
+        self.policy_stores = input; self
     }
     /// <p>The list of policy stores in the account.</p>
-    pub fn get_policy_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreItem>> {
+    pub fn get_policy_stores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyStoreItem>> {
         &self.policy_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_stores`](crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder::policy_stores)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_policy_stores::ListPolicyStoresOutput {
-            next_token: self.next_token,
-            policy_stores: self.policy_stores.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_stores",
-                    "policy_stores was not specified but it is required when building ListPolicyStoresOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policy_stores::ListPolicyStoresOutput {
+                next_token: self.next_token
+                ,
+                policy_stores: self.policy_stores
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_stores", "policy_stores was not specified but it is required when building ListPolicyStoresOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

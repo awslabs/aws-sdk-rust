@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTextTranslationJobsInput {
+pub struct ListTextTranslationJobsInput  {
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     pub filter: ::std::option::Option<crate::types::TextTranslationJobFilter>,
     /// <p>The token to request the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListTextTranslationJobsInput {
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListTextTranslationJobsInput {
+impl  ListTextTranslationJobsInput  {
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::TextTranslationJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::TextTranslationJobFilter> {
         self.filter.as_ref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
@@ -47,8 +47,7 @@ impl ListTextTranslationJobsInputBuilder {
     }
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TextTranslationJobFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::TextTranslationJobFilter> {
@@ -61,8 +60,7 @@ impl ListTextTranslationJobsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListTextTranslationJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in each page. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTextTranslationJobsInput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput {
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput {
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

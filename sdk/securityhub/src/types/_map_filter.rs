@@ -3,7 +3,7 @@
 /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MapFilter {
+pub struct MapFilter  {
     /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
@@ -30,13 +30,13 @@ pub struct MapFilter {
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub comparison: ::std::option::Option<crate::types::MapFilterComparison>,
 }
-impl MapFilter {
+impl  MapFilter  {
     /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The condition to apply to the key value when filtering Security Hub findings with a map filter.</p>
@@ -59,7 +59,7 @@ impl MapFilter {
     /// <p><code>CONTAINS</code> filters can only be used with other <code>CONTAINS</code> filters. <code>NOT_CONTAINS</code> filters can only be used with other <code>NOT_CONTAINS</code> filters.</p>
     /// <p>You can’t have both a <code>CONTAINS</code> filter and a <code>NOT_CONTAINS</code> filter on the same field. Similarly, you can’t have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field. Combining filters in this way returns an error.</p>
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::MapFilterComparison> {
+    pub fn comparison(&self) -> ::std::option::Option<& crate::types::MapFilterComparison> {
         self.comparison.as_ref()
     }
 }
@@ -86,8 +86,7 @@ impl MapFilterBuilder {
     }
     /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl MapFilterBuilder {
     }
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl MapFilterBuilder {
     /// <p>You can’t have both a <code>CONTAINS</code> filter and a <code>NOT_CONTAINS</code> filter on the same field. Similarly, you can’t have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field. Combining filters in this way returns an error.</p>
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::MapFilterComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The condition to apply to the key value when filtering Security Hub findings with a map filter.</p>
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
@@ -181,9 +178,13 @@ impl MapFilterBuilder {
     /// Consumes the builder and constructs a [`MapFilter`](crate::types::MapFilter).
     pub fn build(self) -> crate::types::MapFilter {
         crate::types::MapFilter {
-            key: self.key,
-            value: self.value,
-            comparison: self.comparison,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            comparison: self.comparison
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Summary of an alias for an Agent.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentAliasSummary {
+pub struct AgentAliasSummary  {
     /// Id for an Agent Alias generated at the server side.
     pub agent_alias_id: ::std::string::String,
     /// Name for a resource.
@@ -11,7 +11,7 @@ pub struct AgentAliasSummary {
     /// Description of the Resource.
     pub description: ::std::option::Option<::std::string::String>,
     /// Routing configuration for an Agent alias.
-    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
     /// The statuses an Agent Alias can be in.
     pub agent_alias_status: crate::types::AgentAliasStatus,
     /// Time Stamp.
@@ -19,37 +19,36 @@ pub struct AgentAliasSummary {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl AgentAliasSummary {
+impl  AgentAliasSummary  {
     /// Id for an Agent Alias generated at the server side.
-    pub fn agent_alias_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_alias_id.deref()
+    pub fn agent_alias_id(&self) -> & str {
+        use std::ops::Deref; self.agent_alias_id.deref()
     }
     /// Name for a resource.
-    pub fn agent_alias_name(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_alias_name.deref()
+    pub fn agent_alias_name(&self) -> & str {
+        use std::ops::Deref; self.agent_alias_name.deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Routing configuration for an Agent alias.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
-    pub fn routing_configuration(&self) -> &[crate::types::AgentAliasRoutingConfigurationListItem] {
-        self.routing_configuration.as_deref().unwrap_or_default()
+    pub fn routing_configuration(&self) -> & [crate::types::AgentAliasRoutingConfigurationListItem] {
+        self.routing_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// The statuses an Agent Alias can be in.
-    pub fn agent_alias_status(&self) -> &crate::types::AgentAliasStatus {
+    pub fn agent_alias_status(&self) -> & crate::types::AgentAliasStatus {
         &self.agent_alias_status
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -67,7 +66,7 @@ pub struct AgentAliasSummaryBuilder {
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>,
     pub(crate) agent_alias_status: ::std::option::Option<crate::types::AgentAliasStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -81,8 +80,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// Id for an Agent Alias generated at the server side.
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// Id for an Agent Alias generated at the server side.
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_name = input;
-        self
+        self.agent_alias_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,20 +120,16 @@ impl AgentAliasSummaryBuilder {
     /// Routing configuration for an Agent alias.
     pub fn routing_configuration(mut self, input: crate::types::AgentAliasRoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
-        v.push(input);
-        self.routing_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// Routing configuration for an Agent alias.
-    pub fn set_routing_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
-    ) -> Self {
-        self.routing_configuration = input;
-        self
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>>) -> Self {
+        self.routing_configuration = input; self
     }
     /// Routing configuration for an Agent alias.
-    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentAliasRoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// The statuses an Agent Alias can be in.
@@ -148,8 +140,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// The statuses an Agent Alias can be in.
     pub fn set_agent_alias_status(mut self, input: ::std::option::Option<crate::types::AgentAliasStatus>) -> Self {
-        self.agent_alias_status = input;
-        self
+        self.agent_alias_status = input; self
     }
     /// The statuses an Agent Alias can be in.
     pub fn get_agent_alias_status(&self) -> &::std::option::Option<crate::types::AgentAliasStatus> {
@@ -163,8 +154,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,8 +168,7 @@ impl AgentAliasSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,39 +182,39 @@ impl AgentAliasSummaryBuilder {
     /// - [`created_at`](crate::types::builders::AgentAliasSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AgentAliasSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentAliasSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentAliasSummary {
-            agent_alias_id: self.agent_alias_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_id",
-                    "agent_alias_id was not specified but it is required when building AgentAliasSummary",
-                )
-            })?,
-            agent_alias_name: self.agent_alias_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_name",
-                    "agent_alias_name was not specified but it is required when building AgentAliasSummary",
-                )
-            })?,
-            description: self.description,
-            routing_configuration: self.routing_configuration,
-            agent_alias_status: self.agent_alias_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_status",
-                    "agent_alias_status was not specified but it is required when building AgentAliasSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AgentAliasSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentAliasSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentAliasSummary {
+                agent_alias_id: self.agent_alias_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_id", "agent_alias_id was not specified but it is required when building AgentAliasSummary")
+                    )?
+                ,
+                agent_alias_name: self.agent_alias_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_name", "agent_alias_name was not specified but it is required when building AgentAliasSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                routing_configuration: self.routing_configuration
+                ,
+                agent_alias_status: self.agent_alias_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_status", "agent_alias_status was not specified but it is required when building AgentAliasSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AgentAliasSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentAliasSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>If you are updating an endpoint with the <code>RetainAllVariantProperties</code> option of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a> set to <code>true</code>, the <code>VariantProperty</code> objects listed in the <code>ExcludeRetainedVariantProperties</code> parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a> override the existing variant properties of the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VariantProperty {
+pub struct VariantProperty  {
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct VariantProperty {
     /// </ul>
     pub variant_property_type: ::std::option::Option<crate::types::VariantPropertyType>,
 }
-impl VariantProperty {
+impl  VariantProperty  {
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
     /// <li>
@@ -26,7 +26,7 @@ impl VariantProperty {
     /// <li>
     /// <p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
-    pub fn variant_property_type(&self) -> ::std::option::Option<&crate::types::VariantPropertyType> {
+    pub fn variant_property_type(&self) -> ::std::option::Option<& crate::types::VariantPropertyType> {
         self.variant_property_type.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl VariantPropertyBuilder {
     /// <p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     pub fn set_variant_property_type(mut self, input: ::std::option::Option<crate::types::VariantPropertyType>) -> Self {
-        self.variant_property_type = input;
-        self
+        self.variant_property_type = input; self
     }
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
@@ -86,7 +85,9 @@ impl VariantPropertyBuilder {
     /// Consumes the builder and constructs a [`VariantProperty`](crate::types::VariantProperty).
     pub fn build(self) -> crate::types::VariantProperty {
         crate::types::VariantProperty {
-            variant_property_type: self.variant_property_type,
+            variant_property_type: self.variant_property_type
+            ,
         }
     }
 }
+

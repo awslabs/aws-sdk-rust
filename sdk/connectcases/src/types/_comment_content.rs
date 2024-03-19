@@ -3,20 +3,19 @@
 /// <p>Represents the content of a <code>Comment</code> to be returned to agents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommentContent {
+pub struct CommentContent  {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     pub body: ::std::string::String,
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub content_type: crate::types::CommentBodyTextType,
 }
-impl CommentContent {
+impl  CommentContent  {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn body(&self) -> &str {
-        use std::ops::Deref;
-        self.body.deref()
+    pub fn body(&self) -> & str {
+        use std::ops::Deref; self.body.deref()
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    pub fn content_type(&self) -> &crate::types::CommentBodyTextType {
+    pub fn content_type(&self) -> & crate::types::CommentBodyTextType {
         &self.content_type
     }
 }
@@ -43,8 +42,7 @@ impl CommentContentBuilder {
     }
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl CommentContentBuilder {
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CommentBodyTextType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CommentBodyTextType> {
@@ -70,19 +67,20 @@ impl CommentContentBuilder {
     /// - [`body`](crate::types::builders::CommentContentBuilder::body)
     /// - [`content_type`](crate::types::builders::CommentContentBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::CommentContent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CommentContent {
-            body: self.body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "body",
-                    "body was not specified but it is required when building CommentContent",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building CommentContent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CommentContent {
+                body: self.body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("body", "body was not specified but it is required when building CommentContent")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building CommentContent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

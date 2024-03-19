@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGraphInput {
+pub struct CreateGraphInput  {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>Specifies a KMS key to use to encrypt data in the new graph.</p>
@@ -21,14 +21,14 @@ pub struct CreateGraphInput {
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub provisioned_memory: ::std::option::Option<i32>,
 }
-impl CreateGraphInput {
+impl  CreateGraphInput  {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn graph_name(&self) -> ::std::option::Option<&str> {
+    pub fn graph_name(&self) -> ::std::option::Option<& str> {
         self.graph_name.as_deref()
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
@@ -36,11 +36,11 @@ impl CreateGraphInput {
         self.public_connectivity
     }
     /// <p>Specifies a KMS key to use to encrypt data in the new graph.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
-    pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchConfiguration> {
+    pub fn vector_search_configuration(&self) -> ::std::option::Option<& crate::types::VectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
     /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
@@ -68,7 +68,7 @@ impl CreateGraphInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGraphInputBuilder {
     pub(crate) graph_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
@@ -87,8 +87,7 @@ impl CreateGraphInputBuilder {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_graph_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_name = input;
-        self
+        self.graph_name = input; self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
@@ -102,17 +101,16 @@ impl CreateGraphInputBuilder {
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
@@ -122,8 +120,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_connectivity = input;
-        self
+        self.public_connectivity = input; self
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
@@ -136,8 +133,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>Specifies a KMS key to use to encrypt data in the new graph.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>Specifies a KMS key to use to encrypt data in the new graph.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub fn set_vector_search_configuration(mut self, input: ::std::option::Option<crate::types::VectorSearchConfiguration>) -> Self {
-        self.vector_search_configuration = input;
-        self
+        self.vector_search_configuration = input; self
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
@@ -164,8 +159,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replica_count = input;
-        self
+        self.replica_count = input; self
     }
     /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
@@ -178,8 +172,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -193,8 +186,7 @@ impl CreateGraphInputBuilder {
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_memory = input;
-        self
+        self.provisioned_memory = input; self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
@@ -202,15 +194,26 @@ impl CreateGraphInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateGraphInput`](crate::operation::create_graph::CreateGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_graph::CreateGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_graph::CreateGraphInput {
-            graph_name: self.graph_name,
-            tags: self.tags,
-            public_connectivity: self.public_connectivity,
-            kms_key_identifier: self.kms_key_identifier,
-            vector_search_configuration: self.vector_search_configuration,
-            replica_count: self.replica_count,
-            deletion_protection: self.deletion_protection,
-            provisioned_memory: self.provisioned_memory,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_graph::CreateGraphInput {
+                graph_name: self.graph_name
+                ,
+                tags: self.tags
+                ,
+                public_connectivity: self.public_connectivity
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                vector_search_configuration: self.vector_search_configuration
+                ,
+                replica_count: self.replica_count
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                provisioned_memory: self.provisioned_memory
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,19 @@
 /// <p>Provides information about the results of a request to create or update an endpoint that's associated with an event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemResponse {
+pub struct ItemResponse  {
     /// <p>The response that was received after the endpoint data was accepted.</p>
     pub endpoint_item_response: ::std::option::Option<crate::types::EndpointItemResponse>,
     /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
-    pub events_item_response: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>>,
+    pub events_item_response: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EventItemResponse>>,
 }
-impl ItemResponse {
+impl  ItemResponse  {
     /// <p>The response that was received after the endpoint data was accepted.</p>
-    pub fn endpoint_item_response(&self) -> ::std::option::Option<&crate::types::EndpointItemResponse> {
+    pub fn endpoint_item_response(&self) -> ::std::option::Option<& crate::types::EndpointItemResponse> {
         self.endpoint_item_response.as_ref()
     }
     /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
-    pub fn events_item_response(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>> {
+    pub fn events_item_response(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::EventItemResponse>> {
         self.events_item_response.as_ref()
     }
 }
@@ -33,7 +31,7 @@ impl ItemResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemResponseBuilder {
     pub(crate) endpoint_item_response: ::std::option::Option<crate::types::EndpointItemResponse>,
-    pub(crate) events_item_response: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>>,
+    pub(crate) events_item_response: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EventItemResponse>>,
 }
 impl ItemResponseBuilder {
     /// <p>The response that was received after the endpoint data was accepted.</p>
@@ -43,8 +41,7 @@ impl ItemResponseBuilder {
     }
     /// <p>The response that was received after the endpoint data was accepted.</p>
     pub fn set_endpoint_item_response(mut self, input: ::std::option::Option<crate::types::EndpointItemResponse>) -> Self {
-        self.endpoint_item_response = input;
-        self
+        self.endpoint_item_response = input; self
     }
     /// <p>The response that was received after the endpoint data was accepted.</p>
     pub fn get_endpoint_item_response(&self) -> &::std::option::Option<crate::types::EndpointItemResponse> {
@@ -57,29 +54,26 @@ impl ItemResponseBuilder {
     /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
     pub fn events_item_response(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EventItemResponse) -> Self {
         let mut hash_map = self.events_item_response.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.events_item_response = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.events_item_response = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
-    pub fn set_events_item_response(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>>,
-    ) -> Self {
-        self.events_item_response = input;
-        self
+    pub fn set_events_item_response(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EventItemResponse>>) -> Self {
+        self.events_item_response = input; self
     }
     /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
-    pub fn get_events_item_response(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>> {
+    pub fn get_events_item_response(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EventItemResponse>> {
         &self.events_item_response
     }
     /// Consumes the builder and constructs a [`ItemResponse`](crate::types::ItemResponse).
     pub fn build(self) -> crate::types::ItemResponse {
         crate::types::ItemResponse {
-            endpoint_item_response: self.endpoint_item_response,
-            events_item_response: self.events_item_response,
+            endpoint_item_response: self.endpoint_item_response
+            ,
+            events_item_response: self.events_item_response
+            ,
         }
     }
 }
+

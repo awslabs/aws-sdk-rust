@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAdminsManagingAccount`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::set_next_token):<br>required: **false**<br><p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p><br>
-    /// - On success, responds with [`ListAdminsManagingAccountOutput`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountOutput) with field(s):
+                            /// - On success, responds with [`ListAdminsManagingAccountOutput`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountOutput) with field(s):
     ///   - [`admin_accounts(Option<Vec::<String>>)`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountOutput::admin_accounts): <p>The list of accounts who manage member accounts within their <code>AdminScope</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountOutput::next_token): <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListAdminsManagingAccountError>`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountError)
+                            /// - On failure, responds with [`SdkError<ListAdminsManagingAccountError>`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountError)
     pub fn list_admins_managing_account(&self) -> crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder {
-        crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_admins_managing_account::builders::ListAdminsManagingAccountFluentBuilder::new(self.handle.clone())
+                            }
 }
+

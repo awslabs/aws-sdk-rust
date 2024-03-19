@@ -5,55 +5,51 @@ pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metri
 
 impl DescribeAlarmsForMetricInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_alarms_for_metric();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_alarms_for_metric();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAlarmsForMetric`.
-///
+/// 
 /// <p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p>
 /// <p>This operation retrieves only standard alarms that are based on the specified metric. It does not return alarms based on math expressions that use the specified metric, or composite alarms that use the specified metric.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
+                    inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-    > for DescribeAlarmsForMetricFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
+                    crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+                > for DescribeAlarmsForMetricFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
+                        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAlarmsForMetricFluentBuilder {
     /// Creates a new `DescribeAlarmsForMetric`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DescribeAlarmsForMetricFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
-        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput, crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the metric.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -175,12 +162,12 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -212,3 +199,4 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner.get_unit()
     }
 }
+

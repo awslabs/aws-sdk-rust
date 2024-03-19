@@ -3,7 +3,7 @@
 /// <p>An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailContent {
+pub struct EmailContent  {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     pub simple: ::std::option::Option<crate::types::Message>,
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -27,9 +27,9 @@ pub struct EmailContent {
     /// <p>The template to use for the email message.</p>
     pub template: ::std::option::Option<crate::types::Template>,
 }
-impl EmailContent {
+impl  EmailContent  {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
-    pub fn simple(&self) -> ::std::option::Option<&crate::types::Message> {
+    pub fn simple(&self) -> ::std::option::Option<& crate::types::Message> {
         self.simple.as_ref()
     }
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -49,11 +49,11 @@ impl EmailContent {
     /// <li>
     /// <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p></li>
     /// </ul>
-    pub fn raw(&self) -> ::std::option::Option<&crate::types::RawMessage> {
+    pub fn raw(&self) -> ::std::option::Option<& crate::types::RawMessage> {
         self.raw.as_ref()
     }
     /// <p>The template to use for the email message.</p>
-    pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -80,8 +80,7 @@ impl EmailContentBuilder {
     }
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     pub fn set_simple(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
-        self.simple = input;
-        self
+        self.simple = input; self
     }
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     pub fn get_simple(&self) -> &::std::option::Option<crate::types::Message> {
@@ -126,8 +125,7 @@ impl EmailContentBuilder {
     /// <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p></li>
     /// </ul>
     pub fn set_raw(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
-        self.raw = input;
-        self
+        self.raw = input; self
     }
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -156,8 +154,7 @@ impl EmailContentBuilder {
     }
     /// <p>The template to use for the email message.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The template to use for the email message.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -166,9 +163,13 @@ impl EmailContentBuilder {
     /// Consumes the builder and constructs a [`EmailContent`](crate::types::EmailContent).
     pub fn build(self) -> crate::types::EmailContent {
         crate::types::EmailContent {
-            simple: self.simple,
-            raw: self.raw,
-            template: self.template,
+            simple: self.simple
+            ,
+            raw: self.raw
+            ,
+            template: self.template
+            ,
         }
     }
 }
+

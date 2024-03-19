@@ -3,19 +3,19 @@
 /// <p>Details about a Lambda layer version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaLayerVersionDetails {
+pub struct AwsLambdaLayerVersionDetails  {
     /// <p>The version number.</p>
     pub version: ::std::option::Option<i64>,
     /// <p>The layer's compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a> in the <i>Lambda Developer Guide</i>.</p>
     /// <p>Array Members: Maximum number of 5 items.</p>
     /// <p>Valid Values: <code>nodejs | nodejs4.3 | nodejs6.10 | nodejs8.10 | nodejs10.x | nodejs12.x | nodejs14.x | nodejs16.x | java8 | java8.al2 | java11 | python2.7 | python3.6 | python3.7 | python3.8 | python3.9 | dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1 | dotnetcore3.1 | dotnet6 | nodejs4.3-edge | go1.x | ruby2.5 | ruby2.7 | provided | provided.al2 | nodejs18.x | python3.10 | java17 | ruby3.2 | python3.11 | nodejs20.x | provided.al2023 | python3.12 | java21</code></p>
-    pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub compatible_runtimes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub created_date: ::std::option::Option<::std::string::String>,
 }
-impl AwsLambdaLayerVersionDetails {
+impl  AwsLambdaLayerVersionDetails  {
     /// <p>The version number.</p>
     pub fn version(&self) -> ::std::option::Option<i64> {
         self.version
@@ -24,14 +24,15 @@ impl AwsLambdaLayerVersionDetails {
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a> in the <i>Lambda Developer Guide</i>.</p>
     /// <p>Array Members: Maximum number of 5 items.</p>
     /// <p>Valid Values: <code>nodejs | nodejs4.3 | nodejs6.10 | nodejs8.10 | nodejs10.x | nodejs12.x | nodejs14.x | nodejs16.x | java8 | java8.al2 | java11 | python2.7 | python3.6 | python3.7 | python3.8 | python3.9 | dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1 | dotnetcore3.1 | dotnet6 | nodejs4.3-edge | go1.x | ruby2.5 | ruby2.7 | provided | provided.al2 | nodejs18.x | python3.10 | java17 | ruby3.2 | python3.11 | nodejs20.x | provided.al2023 | python3.12 | java21</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_runtimes.is_none()`.
-    pub fn compatible_runtimes(&self) -> &[::std::string::String] {
-        self.compatible_runtimes.as_deref().unwrap_or_default()
+    pub fn compatible_runtimes(&self) -> & [::std::string::String] {
+        self.compatible_runtimes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
 }
@@ -47,7 +48,7 @@ impl AwsLambdaLayerVersionDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaLayerVersionDetailsBuilder {
     pub(crate) version: ::std::option::Option<i64>,
-    pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaLayerVersionDetailsBuilder {
@@ -58,8 +59,7 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -75,23 +75,22 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     /// <p>Valid Values: <code>nodejs | nodejs4.3 | nodejs6.10 | nodejs8.10 | nodejs10.x | nodejs12.x | nodejs14.x | nodejs16.x | java8 | java8.al2 | java11 | python2.7 | python3.6 | python3.7 | python3.8 | python3.9 | dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1 | dotnetcore3.1 | dotnet6 | nodejs4.3-edge | go1.x | ruby2.5 | ruby2.7 | provided | provided.al2 | nodejs18.x | python3.10 | java17 | ruby3.2 | python3.11 | nodejs20.x | provided.al2023 | python3.12 | java21</code></p>
     pub fn compatible_runtimes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
-        v.push(input.into());
-        self.compatible_runtimes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.compatible_runtimes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The layer's compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a> in the <i>Lambda Developer Guide</i>.</p>
     /// <p>Array Members: Maximum number of 5 items.</p>
     /// <p>Valid Values: <code>nodejs | nodejs4.3 | nodejs6.10 | nodejs8.10 | nodejs10.x | nodejs12.x | nodejs14.x | nodejs16.x | java8 | java8.al2 | java11 | python2.7 | python3.6 | python3.7 | python3.8 | python3.9 | dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1 | dotnetcore3.1 | dotnet6 | nodejs4.3-edge | go1.x | ruby2.5 | ruby2.7 | provided | provided.al2 | nodejs18.x | python3.10 | java17 | ruby3.2 | python3.11 | nodejs20.x | provided.al2023 | python3.12 | java21</code></p>
-    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.compatible_runtimes = input;
-        self
+    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.compatible_runtimes = input; self
     }
     /// <p>The layer's compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a> in the <i>Lambda Developer Guide</i>.</p>
     /// <p>Array Members: Maximum number of 5 items.</p>
     /// <p>Valid Values: <code>nodejs | nodejs4.3 | nodejs6.10 | nodejs8.10 | nodejs10.x | nodejs12.x | nodejs14.x | nodejs16.x | java8 | java8.al2 | java11 | python2.7 | python3.6 | python3.7 | python3.8 | python3.9 | dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1 | dotnetcore3.1 | dotnet6 | nodejs4.3-edge | go1.x | ruby2.5 | ruby2.7 | provided | provided.al2 | nodejs18.x | python3.10 | java17 | ruby3.2 | python3.11 | nodejs20.x | provided.al2023 | python3.12 | java21</code></p>
-    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.compatible_runtimes
     }
     /// <p>Indicates when the version was created.</p>
@@ -103,8 +102,7 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -114,9 +112,13 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
     pub fn build(self) -> crate::types::AwsLambdaLayerVersionDetails {
         crate::types::AwsLambdaLayerVersionDetails {
-            version: self.version,
-            compatible_runtimes: self.compatible_runtimes,
-            created_date: self.created_date,
+            version: self.version
+            ,
+            compatible_runtimes: self.compatible_runtimes
+            ,
+            created_date: self.created_date
+            ,
         }
     }
 }
+

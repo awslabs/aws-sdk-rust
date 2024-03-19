@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetFeedback`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the anomaly detector.</p><br>
     ///   - [`anomaly_group_time_series_feedback(AnomalyGroupTimeSeries)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::anomaly_group_time_series_feedback) / [`set_anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeries>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_anomaly_group_time_series_feedback):<br>required: **true**<br><p>The anomalous metric and group ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput) with field(s):
+                            /// - On success, responds with [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput) with field(s):
     ///   - [`anomaly_group_time_series_feedback(Option<Vec::<TimeSeriesFeedback>>)`](crate::operation::get_feedback::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_feedback::GetFeedbackOutput::next_token): <p>The pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<GetFeedbackError>`](crate::operation::get_feedback::GetFeedbackError)
+                            /// - On failure, responds with [`SdkError<GetFeedbackError>`](crate::operation::get_feedback::GetFeedbackError)
     pub fn get_feedback(&self) -> crate::operation::get_feedback::builders::GetFeedbackFluentBuilder {
-        crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::new(self.handle.clone())
+                            }
 }
+

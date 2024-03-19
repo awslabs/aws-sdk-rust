@@ -218,3 +218,4 @@ pub fn de_ipam(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
     }
     Ok(builder.build())
 }
+

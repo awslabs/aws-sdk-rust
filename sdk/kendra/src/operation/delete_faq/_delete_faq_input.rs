@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFaqInput {
+pub struct DeleteFaqInput  {
     /// <p>The identifier of the FAQ you want to remove.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for the FAQ.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFaqInput {
+impl  DeleteFaqInput  {
     /// <p>The identifier of the FAQ you want to remove.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for the FAQ.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFaqInputBuilder {
     }
     /// <p>The identifier of the FAQ you want to remove.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the FAQ you want to remove.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteFaqInputBuilder {
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for the FAQ.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteFaqInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFaqInput`](crate::operation::delete_faq::DeleteFaqInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_faq::DeleteFaqInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_faq::DeleteFaqInput {
-            id: self.id,
-            index_id: self.index_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_faq::DeleteFaqInput {
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberorderstatus = unimplemented!();
 /// match phonenumberorderstatus {
@@ -39,16 +39,14 @@
 /// Specifically, when `phonenumberorderstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberOrderStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PhoneNumberOrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     CancelRequested,
@@ -74,100 +72,89 @@ pub enum PhoneNumberOrderStatus {
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PhoneNumberOrderStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CancelRequested" => PhoneNumberOrderStatus::CancelRequested,
-            "Cancelled" => PhoneNumberOrderStatus::Cancelled,
-            "ChangeRequested" => PhoneNumberOrderStatus::ChangeRequested,
-            "Exception" => PhoneNumberOrderStatus::Exception,
-            "FOC" => PhoneNumberOrderStatus::Foc,
-            "Failed" => PhoneNumberOrderStatus::Failed,
-            "Partial" => PhoneNumberOrderStatus::Partial,
-            "PendingDocuments" => PhoneNumberOrderStatus::PendingDocuments,
-            "Processing" => PhoneNumberOrderStatus::Processing,
-            "Submitted" => PhoneNumberOrderStatus::Submitted,
-            "Successful" => PhoneNumberOrderStatus::Successful,
-            other => PhoneNumberOrderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CancelRequested" => PhoneNumberOrderStatus::CancelRequested,
+"Cancelled" => PhoneNumberOrderStatus::Cancelled,
+"ChangeRequested" => PhoneNumberOrderStatus::ChangeRequested,
+"Exception" => PhoneNumberOrderStatus::Exception,
+"FOC" => PhoneNumberOrderStatus::Foc,
+"Failed" => PhoneNumberOrderStatus::Failed,
+"Partial" => PhoneNumberOrderStatus::Partial,
+"PendingDocuments" => PhoneNumberOrderStatus::PendingDocuments,
+"Processing" => PhoneNumberOrderStatus::Processing,
+"Submitted" => PhoneNumberOrderStatus::Submitted,
+"Successful" => PhoneNumberOrderStatus::Successful,
+other => PhoneNumberOrderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PhoneNumberOrderStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PhoneNumberOrderStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PhoneNumberOrderStatus::from(s))
+                    }
+                }
 impl PhoneNumberOrderStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PhoneNumberOrderStatus::CancelRequested => "CancelRequested",
-            PhoneNumberOrderStatus::Cancelled => "Cancelled",
-            PhoneNumberOrderStatus::ChangeRequested => "ChangeRequested",
-            PhoneNumberOrderStatus::Exception => "Exception",
-            PhoneNumberOrderStatus::Foc => "FOC",
-            PhoneNumberOrderStatus::Failed => "Failed",
-            PhoneNumberOrderStatus::Partial => "Partial",
-            PhoneNumberOrderStatus::PendingDocuments => "PendingDocuments",
-            PhoneNumberOrderStatus::Processing => "Processing",
-            PhoneNumberOrderStatus::Submitted => "Submitted",
-            PhoneNumberOrderStatus::Successful => "Successful",
-            PhoneNumberOrderStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CancelRequested",
-            "Cancelled",
-            "ChangeRequested",
-            "Exception",
-            "FOC",
-            "Failed",
-            "Partial",
-            "PendingDocuments",
-            "Processing",
-            "Submitted",
-            "Successful",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PhoneNumberOrderStatus::CancelRequested => "CancelRequested",
+    PhoneNumberOrderStatus::Cancelled => "Cancelled",
+    PhoneNumberOrderStatus::ChangeRequested => "ChangeRequested",
+    PhoneNumberOrderStatus::Exception => "Exception",
+    PhoneNumberOrderStatus::Foc => "FOC",
+    PhoneNumberOrderStatus::Failed => "Failed",
+    PhoneNumberOrderStatus::Partial => "Partial",
+    PhoneNumberOrderStatus::PendingDocuments => "PendingDocuments",
+    PhoneNumberOrderStatus::Processing => "Processing",
+    PhoneNumberOrderStatus::Submitted => "Submitted",
+    PhoneNumberOrderStatus::Successful => "Successful",
+    PhoneNumberOrderStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CancelRequested", "Cancelled", "ChangeRequested", "Exception", "FOC", "Failed", "Partial", "PendingDocuments", "Processing", "Submitted", "Successful"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PhoneNumberOrderStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PhoneNumberOrderStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PhoneNumberOrderStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PhoneNumberOrderStatus::CancelRequested => write!(f, "CancelRequested"),
-            PhoneNumberOrderStatus::Cancelled => write!(f, "Cancelled"),
-            PhoneNumberOrderStatus::ChangeRequested => write!(f, "ChangeRequested"),
-            PhoneNumberOrderStatus::Exception => write!(f, "Exception"),
-            PhoneNumberOrderStatus::Foc => write!(f, "FOC"),
-            PhoneNumberOrderStatus::Failed => write!(f, "Failed"),
-            PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
-            PhoneNumberOrderStatus::PendingDocuments => write!(f, "PendingDocuments"),
-            PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
-            PhoneNumberOrderStatus::Submitted => write!(f, "Submitted"),
-            PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
-            PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PhoneNumberOrderStatus::CancelRequested => write!(f, "CancelRequested"),
+PhoneNumberOrderStatus::Cancelled => write!(f, "Cancelled"),
+PhoneNumberOrderStatus::ChangeRequested => write!(f, "ChangeRequested"),
+PhoneNumberOrderStatus::Exception => write!(f, "Exception"),
+PhoneNumberOrderStatus::Foc => write!(f, "FOC"),
+PhoneNumberOrderStatus::Failed => write!(f, "Failed"),
+PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
+PhoneNumberOrderStatus::PendingDocuments => write!(f, "PendingDocuments"),
+PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
+PhoneNumberOrderStatus::Submitted => write!(f, "Submitted"),
+PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
+PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

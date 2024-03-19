@@ -54,7 +54,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -81,230 +81,160 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::DirectoryInUseException(inner) => inner.meta(),
-            Self::DirectoryServiceAuthenticationFailedException(inner) => inner.meta(),
-            Self::DirectoryUnavailableException(inner) => inner.meta(),
-            Self::EmailAddressInUseException(inner) => inner.meta(),
-            Self::EntityAlreadyRegisteredException(inner) => inner.meta(),
-            Self::EntityNotFoundException(inner) => inner.meta(),
-            Self::EntityStateException(inner) => inner.meta(),
-            Self::InvalidConfigurationException(inner) => inner.meta(),
-            Self::InvalidCustomSesConfigurationException(inner) => inner.meta(),
-            Self::InvalidParameterException(inner) => inner.meta(),
-            Self::InvalidPasswordException(inner) => inner.meta(),
-            Self::LimitExceededException(inner) => inner.meta(),
-            Self::MailDomainInUseException(inner) => inner.meta(),
-            Self::MailDomainNotFoundException(inner) => inner.meta(),
-            Self::MailDomainStateException(inner) => inner.meta(),
-            Self::NameAvailabilityException(inner) => inner.meta(),
-            Self::OrganizationNotFoundException(inner) => inner.meta(),
-            Self::OrganizationStateException(inner) => inner.meta(),
-            Self::ReservedNameException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::TooManyTagsException(inner) => inner.meta(),
-            Self::UnsupportedOperationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::DirectoryInUseException(inner) => inner.meta(),
+Self::DirectoryServiceAuthenticationFailedException(inner) => inner.meta(),
+Self::DirectoryUnavailableException(inner) => inner.meta(),
+Self::EmailAddressInUseException(inner) => inner.meta(),
+Self::EntityAlreadyRegisteredException(inner) => inner.meta(),
+Self::EntityNotFoundException(inner) => inner.meta(),
+Self::EntityStateException(inner) => inner.meta(),
+Self::InvalidConfigurationException(inner) => inner.meta(),
+Self::InvalidCustomSesConfigurationException(inner) => inner.meta(),
+Self::InvalidParameterException(inner) => inner.meta(),
+Self::InvalidPasswordException(inner) => inner.meta(),
+Self::LimitExceededException(inner) => inner.meta(),
+Self::MailDomainInUseException(inner) => inner.meta(),
+Self::MailDomainNotFoundException(inner) => inner.meta(),
+Self::MailDomainStateException(inner) => inner.meta(),
+Self::NameAvailabilityException(inner) => inner.meta(),
+Self::OrganizationNotFoundException(inner) => inner.meta(),
+Self::OrganizationStateException(inner) => inner.meta(),
+Self::ReservedNameException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::TooManyTagsException(inner) => inner.meta(),
+Self::UnsupportedOperationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError> for Error {
     fn from(err: crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError) -> Self {
         match err {
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_member_to_group::AssociateMemberToGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_member_to_group::AssociateMemberToGroupError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_member_to_group::AssociateMemberToGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_member_to_group::AssociateMemberToGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::associate_member_to_group::AssociateMemberToGroupError> for Error {
     fn from(err: crate::operation::associate_member_to_group::AssociateMemberToGroupError) -> Self {
         match err {
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::associate_member_to_group::AssociateMemberToGroupError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::associate_member_to_group::AssociateMemberToGroupError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::associate_member_to_group::AssociateMemberToGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError> for Error {
     fn from(err: crate::operation::assume_impersonation_role::AssumeImpersonationRoleError) -> Self {
         match err {
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::assume_impersonation_role::AssumeImpersonationRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError> for Error {
     fn from(err: crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError) -> Self {
         match err {
-            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_alias::CreateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_alias::CreateAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_alias::CreateAliasError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -324,73 +254,48 @@ impl From<crate::operation::create_alias::CreateAliasError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError> for Error {
     fn from(err: crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError) -> Self {
         match err {
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::NameAvailabilityException(inner) => {
-                Error::NameAvailabilityException(inner)
-            }
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::create_availability_configuration::CreateAvailabilityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_group::CreateGroupError> for Error {
     fn from(err: crate::operation::create_group::CreateGroupError) -> Self {
         match err {
-            crate::operation::create_group::CreateGroupError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::create_group::CreateGroupError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::create_group::CreateGroupError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::create_group::CreateGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_group::CreateGroupError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
@@ -402,99 +307,66 @@ impl From<crate::operation::create_group::CreateGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_impersonation_role::CreateImpersonationRoleError> for Error {
     fn from(err: crate::operation::create_impersonation_role::CreateImpersonationRoleError) -> Self {
         match err {
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::create_impersonation_role::CreateImpersonationRoleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::create_impersonation_role::CreateImpersonationRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError> for Error {
     fn from(err: crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError) -> Self {
         match err {
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_organization::CreateOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_organization::CreateOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_organization::CreateOrganizationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -502,77 +374,59 @@ impl From<crate::operation::create_organization::CreateOrganizationError> for Er
     fn from(err: crate::operation::create_organization::CreateOrganizationError) -> Self {
         match err {
             crate::operation::create_organization::CreateOrganizationError::DirectoryInUseException(inner) => Error::DirectoryInUseException(inner),
-            crate::operation::create_organization::CreateOrganizationError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
-            crate::operation::create_organization::CreateOrganizationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
+            crate::operation::create_organization::CreateOrganizationError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::create_organization::CreateOrganizationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_organization::CreateOrganizationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_organization::CreateOrganizationError::NameAvailabilityException(inner) => {
-                Error::NameAvailabilityException(inner)
-            }
+            crate::operation::create_organization::CreateOrganizationError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
             crate::operation::create_organization::CreateOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resource::CreateResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resource::CreateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resource::CreateResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_resource::CreateResourceError> for Error {
     fn from(err: crate::operation::create_resource::CreateResourceError) -> Self {
         match err {
-            crate::operation::create_resource::CreateResourceError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
-            crate::operation::create_resource::CreateResourceError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
+            crate::operation::create_resource::CreateResourceError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
+            crate::operation::create_resource::CreateResourceError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::create_resource::CreateResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_resource::CreateResourceError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
-            crate::operation::create_resource::CreateResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::create_resource::CreateResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::create_resource::CreateResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::create_resource::CreateResourceError::ReservedNameException(inner) => Error::ReservedNameException(inner),
-            crate::operation::create_resource::CreateResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::create_resource::CreateResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::create_resource::CreateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user::CreateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user::CreateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user::CreateUserError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_user::CreateUserError> for Error {
     fn from(err: crate::operation::create_user::CreateUserError) -> Self {
         match err {
-            crate::operation::create_user::CreateUserError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::create_user::CreateUserError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::create_user::CreateUserError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::create_user::CreateUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_user::CreateUserError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
@@ -585,47 +439,38 @@ impl From<crate::operation::create_user::CreateUserError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_access_control_rule::DeleteAccessControlRuleError> for Error {
     fn from(err: crate::operation::delete_access_control_rule::DeleteAccessControlRuleError) -> Self {
         match err {
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_access_control_rule::DeleteAccessControlRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alias::DeleteAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alias::DeleteAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alias::DeleteAliasError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -641,107 +486,68 @@ impl From<crate::operation::delete_alias::DeleteAliasError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError> for Error {
     fn from(err: crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError) -> Self {
         match err {
-            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError> for Error {
     fn from(err: crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError) -> Self {
         match err {
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::OrganizationNotFoundException(
-                inner,
-            ) => Error::OrganizationNotFoundException(inner),
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_group::DeleteGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_group::DeleteGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_group::DeleteGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_group::DeleteGroupError> for Error {
     fn from(err: crate::operation::delete_group::DeleteGroupError) -> Self {
         match err {
-            crate::operation::delete_group::DeleteGroupError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::delete_group::DeleteGroupError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::delete_group::DeleteGroupError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::delete_group::DeleteGroupError::EntityStateException(inner) => Error::EntityStateException(inner),
             crate::operation::delete_group::DeleteGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -752,202 +558,134 @@ impl From<crate::operation::delete_group::DeleteGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_impersonation_role::DeleteImpersonationRoleError> for Error {
     fn from(err: crate::operation::delete_impersonation_role::DeleteImpersonationRoleError) -> Self {
         match err {
-            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_impersonation_role::DeleteImpersonationRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError> for Error {
     fn from(err: crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError) -> Self {
         match err {
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError> for Error {
     fn from(err: crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError) -> Self {
         match err {
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError> for Error {
     fn from(err: crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError) -> Self {
         match err {
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_organization::DeleteOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_organization::DeleteOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_organization::DeleteOrganizationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_organization::DeleteOrganizationError> for Error {
     fn from(err: crate::operation::delete_organization::DeleteOrganizationError) -> Self {
         match err {
-            crate::operation::delete_organization::DeleteOrganizationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_organization::DeleteOrganizationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_organization::DeleteOrganizationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_organization::DeleteOrganizationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_organization::DeleteOrganizationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_organization::DeleteOrganizationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_organization::DeleteOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource::DeleteResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource::DeleteResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource::DeleteResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -956,69 +694,53 @@ impl From<crate::operation::delete_resource::DeleteResourceError> for Error {
         match err {
             crate::operation::delete_resource::DeleteResourceError::EntityStateException(inner) => Error::EntityStateException(inner),
             crate::operation::delete_resource::DeleteResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_resource::DeleteResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::delete_resource::DeleteResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::delete_resource::DeleteResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-            crate::operation::delete_resource::DeleteResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::delete_resource::DeleteResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_resource::DeleteResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retention_policy::DeleteRetentionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retention_policy::DeleteRetentionPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retention_policy::DeleteRetentionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retention_policy::DeleteRetentionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_retention_policy::DeleteRetentionPolicyError> for Error {
     fn from(err: crate::operation::delete_retention_policy::DeleteRetentionPolicyError) -> Self {
         match err {
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::delete_retention_policy::DeleteRetentionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user::DeleteUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user::DeleteUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user::DeleteUserError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_user::DeleteUserError> for Error {
     fn from(err: crate::operation::delete_user::DeleteUserError) -> Self {
         match err {
-            crate::operation::delete_user::DeleteUserError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::delete_user::DeleteUserError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::delete_user::DeleteUserError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::delete_user::DeleteUserError::EntityStateException(inner) => Error::EntityStateException(inner),
             crate::operation::delete_user::DeleteUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1029,138 +751,90 @@ impl From<crate::operation::delete_user::DeleteUserError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError> for Error {
     fn from(err: crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError) -> Self {
         match err {
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::deregister_mail_domain::DeregisterMailDomainError> for Error {
     fn from(err: crate::operation::deregister_mail_domain::DeregisterMailDomainError) -> Self {
         match err {
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError::InvalidCustomSesConfigurationException(inner) => {
-                Error::InvalidCustomSesConfigurationException(inner)
-            }
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError::MailDomainInUseException(inner) => {
-                Error::MailDomainInUseException(inner)
-            }
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError::InvalidCustomSesConfigurationException(inner) => Error::InvalidCustomSesConfigurationException(inner),
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError::MailDomainInUseException(inner) => Error::MailDomainInUseException(inner),
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::deregister_mail_domain::DeregisterMailDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError> for Error {
     fn from(err: crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError) -> Self {
         match err {
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::OrganizationNotFoundException(
-                inner,
-            ) => Error::OrganizationNotFoundException(inner),
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::OrganizationStateException(
-                inner,
-            ) => Error::OrganizationStateException(inner),
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_entity::DescribeEntityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_entity::DescribeEntityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_entity::DescribeEntityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1169,25 +843,22 @@ impl From<crate::operation::describe_entity::DescribeEntityError> for Error {
         match err {
             crate::operation::describe_entity::DescribeEntityError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::describe_entity::DescribeEntityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_entity::DescribeEntityError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::describe_entity::DescribeEntityError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::describe_entity::DescribeEntityError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::describe_entity::DescribeEntityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_group::DescribeGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_group::DescribeGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_group::DescribeGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1202,114 +873,84 @@ impl From<crate::operation::describe_group::DescribeGroupError> for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError> for Error {
     fn from(err: crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError) -> Self {
         match err {
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError> for Error {
     fn from(err: crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError) -> Self {
         match err {
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_organization::DescribeOrganizationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_organization::DescribeOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_organization::DescribeOrganizationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_organization::DescribeOrganizationError> for Error {
     fn from(err: crate::operation::describe_organization::DescribeOrganizationError) -> Self {
         match err {
-            crate::operation::describe_organization::DescribeOrganizationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::describe_organization::DescribeOrganizationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::describe_organization::DescribeOrganizationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_organization::DescribeOrganizationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::describe_organization::DescribeOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource::DescribeResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource::DescribeResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource::DescribeResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1318,28 +959,23 @@ impl From<crate::operation::describe_resource::DescribeResourceError> for Error 
         match err {
             crate::operation::describe_resource::DescribeResourceError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::describe_resource::DescribeResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::describe_resource::DescribeResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::describe_resource::DescribeResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::describe_resource::DescribeResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-            crate::operation::describe_resource::DescribeResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::describe_resource::DescribeResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::describe_resource::DescribeResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_user::DescribeUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_user::DescribeUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_user::DescribeUserError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1354,269 +990,169 @@ impl From<crate::operation::describe_user::DescribeUserError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError> for Error {
     fn from(err: crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError) -> Self {
         match err {
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError> for Error {
     fn from(err: crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError) -> Self {
         match err {
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::DirectoryServiceAuthenticationFailedException(
-                inner,
-            ) => Error::DirectoryServiceAuthenticationFailedException(inner),
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_control_effect::GetAccessControlEffectError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_control_effect::GetAccessControlEffectError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_control_effect::GetAccessControlEffectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_control_effect::GetAccessControlEffectError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_access_control_effect::GetAccessControlEffectError> for Error {
     fn from(err: crate::operation::get_access_control_effect::GetAccessControlEffectError) -> Self {
         match err {
-            crate::operation::get_access_control_effect::GetAccessControlEffectError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::get_access_control_effect::GetAccessControlEffectError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_access_control_effect::GetAccessControlEffectError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_access_control_effect::GetAccessControlEffectError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::get_access_control_effect::GetAccessControlEffectError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_access_control_effect::GetAccessControlEffectError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_access_control_effect::GetAccessControlEffectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_access_control_effect::GetAccessControlEffectError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_access_control_effect::GetAccessControlEffectError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::get_access_control_effect::GetAccessControlEffectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_access_control_effect::GetAccessControlEffectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError> for Error {
     fn from(err: crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError) -> Self {
         match err {
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role::GetImpersonationRoleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_impersonation_role::GetImpersonationRoleError> for Error {
     fn from(err: crate::operation::get_impersonation_role::GetImpersonationRoleError) -> Self {
         match err {
-            crate::operation::get_impersonation_role::GetImpersonationRoleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_impersonation_role::GetImpersonationRoleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_impersonation_role::GetImpersonationRoleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::get_impersonation_role::GetImpersonationRoleError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_impersonation_role::GetImpersonationRoleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_impersonation_role::GetImpersonationRoleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_impersonation_role::GetImpersonationRoleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::get_impersonation_role::GetImpersonationRoleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_impersonation_role::GetImpersonationRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError> for Error {
     fn from(err: crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError) -> Self {
         match err {
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mailbox_details::GetMailboxDetailsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1624,30 +1160,23 @@ impl From<crate::operation::get_mailbox_details::GetMailboxDetailsError> for Err
     fn from(err: crate::operation::get_mailbox_details::GetMailboxDetailsError) -> Self {
         match err {
             crate::operation::get_mailbox_details::GetMailboxDetailsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
-            crate::operation::get_mailbox_details::GetMailboxDetailsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_mailbox_details::GetMailboxDetailsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_mailbox_details::GetMailboxDetailsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::get_mailbox_details::GetMailboxDetailsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_mailbox_details::GetMailboxDetailsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_mailbox_details::GetMailboxDetailsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::get_mailbox_details::GetMailboxDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mail_domain::GetMailDomainError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mail_domain::GetMailDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mail_domain::GetMailDomainError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1656,139 +1185,92 @@ impl From<crate::operation::get_mail_domain::GetMailDomainError> for Error {
         match err {
             crate::operation::get_mail_domain::GetMailDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_mail_domain::GetMailDomainError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
-            crate::operation::get_mail_domain::GetMailDomainError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::get_mail_domain::GetMailDomainError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::get_mail_domain::GetMailDomainError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::get_mail_domain::GetMailDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError> for Error {
     fn from(err: crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError) -> Self {
         match err {
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError> for Error {
     fn from(err: crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError) -> Self {
         match err {
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_access_control_rules::ListAccessControlRulesError> for Error {
     fn from(err: crate::operation::list_access_control_rules::ListAccessControlRulesError) -> Self {
         match err {
-            crate::operation::list_access_control_rules::ListAccessControlRulesError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_access_control_rules::ListAccessControlRulesError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_access_control_rules::ListAccessControlRulesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_access_control_rules::ListAccessControlRulesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_access_control_rules::ListAccessControlRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1804,55 +1286,38 @@ impl From<crate::operation::list_aliases::ListAliasesError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError> for Error {
     fn from(err: crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError) -> Self {
         match err {
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_group_members::ListGroupMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_group_members::ListGroupMembersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_group_members::ListGroupMembersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1862,27 +1327,22 @@ impl From<crate::operation::list_group_members::ListGroupMembersError> for Error
             crate::operation::list_group_members::ListGroupMembersError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::list_group_members::ListGroupMembersError::EntityStateException(inner) => Error::EntityStateException(inner),
             crate::operation::list_group_members::ListGroupMembersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_group_members::ListGroupMembersError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_group_members::ListGroupMembersError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_group_members::ListGroupMembersError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_group_members::ListGroupMembersError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_group_members::ListGroupMembersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups::ListGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups::ListGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups::ListGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1897,150 +1357,111 @@ impl From<crate::operation::list_groups::ListGroupsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups_for_entity::ListGroupsForEntityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups_for_entity::ListGroupsForEntityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_groups_for_entity::ListGroupsForEntityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_groups_for_entity::ListGroupsForEntityError> for Error {
     fn from(err: crate::operation::list_groups_for_entity::ListGroupsForEntityError) -> Self {
         match err {
-            crate::operation::list_groups_for_entity::ListGroupsForEntityError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::list_groups_for_entity::ListGroupsForEntityError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::list_groups_for_entity::ListGroupsForEntityError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_groups_for_entity::ListGroupsForEntityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_impersonation_roles::ListImpersonationRolesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_impersonation_roles::ListImpersonationRolesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_impersonation_roles::ListImpersonationRolesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_impersonation_roles::ListImpersonationRolesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_impersonation_roles::ListImpersonationRolesError> for Error {
     fn from(err: crate::operation::list_impersonation_roles::ListImpersonationRolesError) -> Self {
         match err {
-            crate::operation::list_impersonation_roles::ListImpersonationRolesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_impersonation_roles::ListImpersonationRolesError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_impersonation_roles::ListImpersonationRolesError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_impersonation_roles::ListImpersonationRolesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_impersonation_roles::ListImpersonationRolesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_impersonation_roles::ListImpersonationRolesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_impersonation_roles::ListImpersonationRolesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError> for Error {
     fn from(err: crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError) -> Self {
         match err {
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError> for Error {
     fn from(err: crate::operation::list_mailbox_permissions::ListMailboxPermissionsError) -> Self {
         match err {
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_mailbox_permissions::ListMailboxPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mail_domains::ListMailDomainsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mail_domains::ListMailDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mail_domains::ListMailDomainsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2048,106 +1469,69 @@ impl From<crate::operation::list_mail_domains::ListMailDomainsError> for Error {
     fn from(err: crate::operation::list_mail_domains::ListMailDomainsError) -> Self {
         match err {
             crate::operation::list_mail_domains::ListMailDomainsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_mail_domains::ListMailDomainsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::list_mail_domains::ListMailDomainsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::list_mail_domains::ListMailDomainsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_mail_domains::ListMailDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError> for Error {
     fn from(err: crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError) -> Self {
         match err {
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError> for Error {
     fn from(err: crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError) -> Self {
         match err {
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizations::ListOrganizationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizations::ListOrganizationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizations::ListOrganizationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2159,56 +1543,42 @@ impl From<crate::operation::list_organizations::ListOrganizationsError> for Erro
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_delegates::ListResourceDelegatesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_delegates::ListResourceDelegatesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_delegates::ListResourceDelegatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_delegates::ListResourceDelegatesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_resource_delegates::ListResourceDelegatesError> for Error {
     fn from(err: crate::operation::list_resource_delegates::ListResourceDelegatesError) -> Self {
         match err {
-            crate::operation::list_resource_delegates::ListResourceDelegatesError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::list_resource_delegates::ListResourceDelegatesError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::list_resource_delegates::ListResourceDelegatesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_resource_delegates::ListResourceDelegatesError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::list_resource_delegates::ListResourceDelegatesError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::list_resource_delegates::ListResourceDelegatesError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_resource_delegates::ListResourceDelegatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources::ListResourcesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources::ListResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources::ListResourcesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2223,41 +1593,37 @@ impl From<crate::operation::list_resources::ListResourcesError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users::ListUsersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users::ListUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users::ListUsersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2271,339 +1637,225 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_control_rule::PutAccessControlRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_access_control_rule::PutAccessControlRuleError> for Error {
     fn from(err: crate::operation::put_access_control_rule::PutAccessControlRuleError) -> Self {
         match err {
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::put_access_control_rule::PutAccessControlRuleError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::put_access_control_rule::PutAccessControlRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_access_control_rule::PutAccessControlRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError> for Error {
     fn from(err: crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError) -> Self {
         match err {
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError> for Error {
     fn from(err: crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError) -> Self {
         match err {
-            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError> for Error {
     fn from(err: crate::operation::put_mailbox_permissions::PutMailboxPermissionsError) -> Self {
         match err {
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
+            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::put_mailbox_permissions::PutMailboxPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError> for Error {
     fn from(err: crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError) -> Self {
         match err {
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_retention_policy::PutRetentionPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_retention_policy::PutRetentionPolicyError> for Error {
     fn from(err: crate::operation::put_retention_policy::PutRetentionPolicyError) -> Self {
         match err {
-            crate::operation::put_retention_policy::PutRetentionPolicyError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
+            crate::operation::put_retention_policy::PutRetentionPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::put_retention_policy::PutRetentionPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::put_retention_policy::PutRetentionPolicyError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::put_retention_policy::PutRetentionPolicyError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::put_retention_policy::PutRetentionPolicyError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::put_retention_policy::PutRetentionPolicyError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::put_retention_policy::PutRetentionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::register_mail_domain::RegisterMailDomainError> for Error {
     fn from(err: crate::operation::register_mail_domain::RegisterMailDomainError) -> Self {
         match err {
-            crate::operation::register_mail_domain::RegisterMailDomainError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
+            crate::operation::register_mail_domain::RegisterMailDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::register_mail_domain::RegisterMailDomainError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::register_mail_domain::RegisterMailDomainError::MailDomainInUseException(inner) => {
-                Error::MailDomainInUseException(inner)
-            }
-            crate::operation::register_mail_domain::RegisterMailDomainError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::register_mail_domain::RegisterMailDomainError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::register_mail_domain::RegisterMailDomainError::MailDomainInUseException(inner) => Error::MailDomainInUseException(inner),
+            crate::operation::register_mail_domain::RegisterMailDomainError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::register_mail_domain::RegisterMailDomainError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::register_mail_domain::RegisterMailDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_to_work_mail::RegisterToWorkMailError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::register_to_work_mail::RegisterToWorkMailError> for Error {
     fn from(err: crate::operation::register_to_work_mail::RegisterToWorkMailError) -> Self {
         match err {
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::EmailAddressInUseException(inner) => {
-                Error::EmailAddressInUseException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::EntityAlreadyRegisteredException(inner) => {
-                Error::EntityAlreadyRegisteredException(inner)
-            }
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::EmailAddressInUseException(inner) => Error::EmailAddressInUseException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::EntityAlreadyRegisteredException(inner) => Error::EntityAlreadyRegisteredException(inner),
             crate::operation::register_to_work_mail::RegisterToWorkMailError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::register_to_work_mail::RegisterToWorkMailError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::MailDomainNotFoundException(inner) => {
-                Error::MailDomainNotFoundException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::MailDomainStateException(inner) => {
-                Error::MailDomainStateException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::register_to_work_mail::RegisterToWorkMailError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::register_to_work_mail::RegisterToWorkMailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_password::ResetPasswordError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_password::ResetPasswordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_password::ResetPasswordError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::reset_password::ResetPasswordError> for Error {
     fn from(err: crate::operation::reset_password::ResetPasswordError) -> Self {
         match err {
-            crate::operation::reset_password::ResetPasswordError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::reset_password::ResetPasswordError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::reset_password::ResetPasswordError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::reset_password::ResetPasswordError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::reset_password::ResetPasswordError::EntityStateException(inner) => Error::EntityStateException(inner),
@@ -2616,55 +1868,41 @@ impl From<crate::operation::reset_password::ResetPasswordError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_mailbox_export_job::StartMailboxExportJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_mailbox_export_job::StartMailboxExportJobError> for Error {
     fn from(err: crate::operation::start_mailbox_export_job::StartMailboxExportJobError) -> Self {
         match err {
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::start_mailbox_export_job::StartMailboxExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2679,57 +1917,40 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::test_availability_configuration::TestAvailabilityConfigurationError> for Error {
     fn from(err: crate::operation::test_availability_configuration::TestAvailabilityConfigurationError) -> Self {
         match err {
-            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::test_availability_configuration::TestAvailabilityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2741,100 +1962,65 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError> for Error {
     fn from(err: crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError) -> Self {
         match err {
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError> for Error {
     fn from(err: crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError) -> Self {
         match err {
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::MailDomainNotFoundException(inner) => {
-                Error::MailDomainNotFoundException(inner)
-            }
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::MailDomainStateException(inner) => {
-                Error::MailDomainStateException(inner)
-            }
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_group::UpdateGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_group::UpdateGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_group::UpdateGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2851,62 +2037,43 @@ impl From<crate::operation::update_group::UpdateGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_impersonation_role::UpdateImpersonationRoleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_impersonation_role::UpdateImpersonationRoleError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_impersonation_role::UpdateImpersonationRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_impersonation_role::UpdateImpersonationRoleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_impersonation_role::UpdateImpersonationRoleError> for Error {
     fn from(err: crate::operation::update_impersonation_role::UpdateImpersonationRoleError) -> Self {
         match err {
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_impersonation_role::UpdateImpersonationRoleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_impersonation_role::UpdateImpersonationRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2915,177 +2082,117 @@ impl From<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError> for E
         match err {
             crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::update_mailbox_quota::UpdateMailboxQuotaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError> for Error {
     fn from(err: crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError) -> Self {
         match err {
-            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
+            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError> for Error {
     fn from(err: crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError) -> Self {
         match err {
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EmailAddressInUseException(inner) => {
-                Error::EmailAddressInUseException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EntityNotFoundException(inner) => {
-                Error::EntityNotFoundException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EntityStateException(inner) => {
-                Error::EntityStateException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::MailDomainNotFoundException(inner) => {
-                Error::MailDomainNotFoundException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::MailDomainStateException(inner) => {
-                Error::MailDomainStateException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::OrganizationStateException(inner) => {
-                Error::OrganizationStateException(inner)
-            }
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EmailAddressInUseException(inner) => Error::EmailAddressInUseException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource::UpdateResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource::UpdateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource::UpdateResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_resource::UpdateResourceError> for Error {
     fn from(err: crate::operation::update_resource::UpdateResourceError) -> Self {
         match err {
-            crate::operation::update_resource::UpdateResourceError::DirectoryUnavailableException(inner) => {
-                Error::DirectoryUnavailableException(inner)
-            }
+            crate::operation::update_resource::UpdateResourceError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::update_resource::UpdateResourceError::EmailAddressInUseException(inner) => Error::EmailAddressInUseException(inner),
             crate::operation::update_resource::UpdateResourceError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::update_resource::UpdateResourceError::EntityStateException(inner) => Error::EntityStateException(inner),
-            crate::operation::update_resource::UpdateResourceError::InvalidConfigurationException(inner) => {
-                Error::InvalidConfigurationException(inner)
-            }
+            crate::operation::update_resource::UpdateResourceError::InvalidConfigurationException(inner) => Error::InvalidConfigurationException(inner),
             crate::operation::update_resource::UpdateResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_resource::UpdateResourceError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
             crate::operation::update_resource::UpdateResourceError::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
             crate::operation::update_resource::UpdateResourceError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
-            crate::operation::update_resource::UpdateResourceError::OrganizationNotFoundException(inner) => {
-                Error::OrganizationNotFoundException(inner)
-            }
+            crate::operation::update_resource::UpdateResourceError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::update_resource::UpdateResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-            crate::operation::update_resource::UpdateResourceError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::update_resource::UpdateResourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::update_resource::UpdateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user::UpdateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user::UpdateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user::UpdateUserError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_user::UpdateUserError> for Error {
     fn from(err: crate::operation::update_user::UpdateUserError) -> Self {
         match err {
-            crate::operation::update_user::UpdateUserError::DirectoryServiceAuthenticationFailedException(inner) => {
-                Error::DirectoryServiceAuthenticationFailedException(inner)
-            }
+            crate::operation::update_user::UpdateUserError::DirectoryServiceAuthenticationFailedException(inner) => Error::DirectoryServiceAuthenticationFailedException(inner),
             crate::operation::update_user::UpdateUserError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
             crate::operation::update_user::UpdateUserError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::update_user::UpdateUserError::EntityStateException(inner) => Error::EntityStateException(inner),
@@ -3122,7 +2229,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnsupportedOperationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -3155,3 +2262,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

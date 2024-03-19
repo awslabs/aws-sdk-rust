@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelQueryOutput {
+pub struct CancelQueryOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CancelQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelQueryOutput {
     /// Creates a new builder-style object to manufacture [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
     pub fn builder() -> crate::operation::cancel_query::builders::CancelQueryOutputBuilder {
@@ -25,14 +25,14 @@ pub struct CancelQueryOutputBuilder {
 }
 impl CancelQueryOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
     pub fn build(self) -> crate::operation::cancel_query::CancelQueryOutput {
         crate::operation::cancel_query::CancelQueryOutput {
@@ -40,3 +40,4 @@ impl CancelQueryOutputBuilder {
         }
     }
 }
+

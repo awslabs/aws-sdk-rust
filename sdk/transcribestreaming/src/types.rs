@@ -176,3 +176,4 @@ pub mod builders;
 
 /// Error types that Amazon Transcribe Streaming Service can respond with.
 pub mod error;
+

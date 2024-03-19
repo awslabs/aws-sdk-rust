@@ -5,23 +5,20 @@ pub use crate::operation::retrieve::_retrieve_input::RetrieveInputBuilder;
 
 impl RetrieveInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::retrieve::RetrieveOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::retrieve::RetrieveError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.retrieve();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::retrieve::RetrieveOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::retrieve::RetrieveError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.retrieve();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `Retrieve`.
-///
+/// 
 /// <p>Retrieves relevant passages or text excerpts given an input query.</p>
 /// <p>This API is similar to the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Query.html">Query</a> API. However, by default, the <code>Query</code> API only returns excerpt passages of up to 100 token words. With the <code>Retrieve</code> API, you can retrieve longer passages of up to 200 token words and up to 100 semantically relevant passages. This doesn't include question-answer or FAQ type responses from your index. The passages are text excerpts that can be semantically extracted from multiple documents and multiple parts of the same document. If in extreme cases your documents produce zero passages using the <code>Retrieve</code> API, you can alternatively use the <code>Query</code> API and its types of responses.</p>
 /// <p>You can also do the following:</p>
@@ -42,27 +39,32 @@ impl RetrieveInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::retrieve::builders::RetrieveInputBuilder,
+                    inner: crate::operation::retrieve::builders::RetrieveInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
-impl crate::client::customize::internal::CustomizableSend<crate::operation::retrieve::RetrieveOutput, crate::operation::retrieve::RetrieveError>
-    for RetrieveFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::operation::retrieve::RetrieveOutput, crate::operation::retrieve::RetrieveError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+impl
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::retrieve::RetrieveOutput,
+                    crate::operation::retrieve::RetrieveError,
+                > for RetrieveFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::retrieve::RetrieveOutput,
+                        crate::operation::retrieve::RetrieveError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RetrieveFluentBuilder {
     /// Creates a new `Retrieve`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,50 +73,44 @@ impl RetrieveFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retrieve::RetrieveOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::retrieve::RetrieveError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::retrieve::Retrieve::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::retrieve::Retrieve::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<crate::operation::retrieve::RetrieveOutput, crate::operation::retrieve::RetrieveError, Self>
-    {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve::RetrieveError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::retrieve::Retrieve::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::retrieve::Retrieve::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::retrieve::RetrieveOutput, crate::operation::retrieve::RetrieveError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -170,12 +166,12 @@ impl RetrieveFluentBuilder {
         self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_requested_document_attributes()
     }
     /// Appends an item to `DocumentRelevanceOverrideConfigurations`.
@@ -192,19 +188,14 @@ impl RetrieveFluentBuilder {
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn set_document_relevance_override_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
-    ) -> Self {
+    pub fn set_document_relevance_override_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>>) -> Self {
         self.inner = self.inner.set_document_relevance_override_configurations(input);
         self
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn get_document_relevance_override_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>> {
+    pub fn get_document_relevance_override_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>> {
         self.inner.get_document_relevance_override_configurations()
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
@@ -250,3 +241,4 @@ impl RetrieveFluentBuilder {
         self.inner.get_user_context()
     }
 }
+

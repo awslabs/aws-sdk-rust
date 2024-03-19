@@ -3,11 +3,11 @@
 /// <p>The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoomRetentionSettings {
+pub struct RoomRetentionSettings  {
     /// <p>The number of days for which to retain chat-room messages.</p>
     pub retention_days: ::std::option::Option<i32>,
 }
-impl RoomRetentionSettings {
+impl  RoomRetentionSettings  {
     /// <p>The number of days for which to retain chat-room messages.</p>
     pub fn retention_days(&self) -> ::std::option::Option<i32> {
         self.retention_days
@@ -34,8 +34,7 @@ impl RoomRetentionSettingsBuilder {
     }
     /// <p>The number of days for which to retain chat-room messages.</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
     }
     /// <p>The number of days for which to retain chat-room messages.</p>
     pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl RoomRetentionSettingsBuilder {
     /// Consumes the builder and constructs a [`RoomRetentionSettings`](crate::types::RoomRetentionSettings).
     pub fn build(self) -> crate::types::RoomRetentionSettings {
         crate::types::RoomRetentionSettings {
-            retention_days: self.retention_days,
+            retention_days: self.retention_days
+            ,
         }
     }
 }
+

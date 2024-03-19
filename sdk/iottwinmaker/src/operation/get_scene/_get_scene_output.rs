@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSceneOutput {
+pub struct GetSceneOutput  {
     /// <p>The ID of the workspace that contains the scene.</p>
     pub workspace_id: ::std::string::String,
     /// <p>The ID of the scene.</p>
@@ -18,72 +18,69 @@ pub struct GetSceneOutput {
     /// <p>The description of the scene.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The response metadata.</p>
-    pub scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The generated scene metadata.</p>
-    pub generated_scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub generated_scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The SceneResponse error.</p>
     pub error: ::std::option::Option<crate::types::SceneError>,
     _request_id: Option<String>,
 }
-impl GetSceneOutput {
+impl  GetSceneOutput  {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> &str {
-        use std::ops::Deref;
-        self.scene_id.deref()
+    pub fn scene_id(&self) -> & str {
+        use std::ops::Deref; self.scene_id.deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> &str {
-        use std::ops::Deref;
-        self.content_location.deref()
+    pub fn content_location(&self) -> & str {
+        use std::ops::Deref; self.content_location.deref()
     }
     /// <p>The ARN of the scene.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The description of the scene.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[::std::string::String] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [::std::string::String] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The response metadata.</p>
-    pub fn scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn scene_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.scene_metadata.as_ref()
     }
     /// <p>The generated scene metadata.</p>
-    pub fn generated_scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn generated_scene_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.generated_scene_metadata.as_ref()
     }
     /// <p>The SceneResponse error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::SceneError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::SceneError> {
         self.error.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSceneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSceneOutput {
     /// Creates a new builder-style object to manufacture [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput).
     pub fn builder() -> crate::operation::get_scene::builders::GetSceneOutputBuilder {
@@ -102,9 +99,9 @@ pub struct GetSceneOutputBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) generated_scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) generated_scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::SceneError>,
     _request_id: Option<String>,
 }
@@ -117,8 +114,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The ID of the scene.</p>
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scene_id = input;
-        self
+        self.scene_id = input; self
     }
     /// <p>The ID of the scene.</p>
     pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn set_content_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_location = input;
-        self
+        self.content_location = input; self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +156,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The ARN of the scene.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the scene.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +170,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The date and time when the scene was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time when the scene was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -192,8 +184,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The date and time when the scene was last updated.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The date and time when the scene was last updated.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -206,8 +197,7 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The description of the scene.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the scene.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,17 +210,16 @@ impl GetSceneOutputBuilder {
     /// <p>A list of capabilities that the scene uses to render.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input.into());
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capabilities
     }
     /// Adds a key-value pair to `scene_metadata`.
@@ -238,26 +227,18 @@ impl GetSceneOutputBuilder {
     /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
     ///
     /// <p>The response metadata.</p>
-    pub fn scene_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scene_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.scene_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.scene_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.scene_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The response metadata.</p>
-    pub fn set_scene_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.scene_metadata = input;
-        self
+    pub fn set_scene_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.scene_metadata = input; self
     }
     /// <p>The response metadata.</p>
-    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.scene_metadata
     }
     /// Adds a key-value pair to `generated_scene_metadata`.
@@ -265,26 +246,18 @@ impl GetSceneOutputBuilder {
     /// To override the contents of this collection use [`set_generated_scene_metadata`](Self::set_generated_scene_metadata).
     ///
     /// <p>The generated scene metadata.</p>
-    pub fn generated_scene_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_scene_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.generated_scene_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.generated_scene_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.generated_scene_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The generated scene metadata.</p>
-    pub fn set_generated_scene_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.generated_scene_metadata = input;
-        self
+    pub fn set_generated_scene_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.generated_scene_metadata = input; self
     }
     /// <p>The generated scene metadata.</p>
-    pub fn get_generated_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_generated_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.generated_scene_metadata
     }
     /// <p>The SceneResponse error.</p>
@@ -294,22 +267,21 @@ impl GetSceneOutputBuilder {
     }
     /// <p>The SceneResponse error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::SceneError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The SceneResponse error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::SceneError> {
         &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::operation::get_scene::builders::GetSceneOutputBuilder::workspace_id)
@@ -319,49 +291,51 @@ impl GetSceneOutputBuilder {
     /// - [`creation_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::update_date_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_scene::GetSceneOutput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            scene_id: self.scene_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scene_id",
-                    "scene_id was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            content_location: self.content_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_location",
-                    "content_location was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building GetSceneOutput",
-                )
-            })?,
-            description: self.description,
-            capabilities: self.capabilities,
-            scene_metadata: self.scene_metadata,
-            generated_scene_metadata: self.generated_scene_metadata,
-            error: self.error,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_scene::GetSceneOutput {
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                scene_id: self.scene_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scene_id", "scene_id was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                content_location: self.content_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_location", "content_location was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building GetSceneOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                capabilities: self.capabilities
+                ,
+                scene_metadata: self.scene_metadata
+                ,
+                generated_scene_metadata: self.generated_scene_metadata
+                ,
+                error: self.error
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateFindingsUnprocessedFinding {
+pub struct BatchUpdateFindingsUnprocessedFinding  {
     /// <p>The identifier of the finding that was not updated.</p>
     pub finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     /// <p>The code associated with the error. Possible values are:</p>
@@ -39,9 +39,9 @@ pub struct BatchUpdateFindingsUnprocessedFinding {
     /// </ul>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchUpdateFindingsUnprocessedFinding {
+impl  BatchUpdateFindingsUnprocessedFinding  {
     /// <p>The identifier of the finding that was not updated.</p>
-    pub fn finding_identifier(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
+    pub fn finding_identifier(&self) -> ::std::option::Option<& crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
     /// <p>The code associated with the error. Possible values are:</p>
@@ -59,7 +59,7 @@ impl BatchUpdateFindingsUnprocessedFinding {
     /// <li>
     /// <p><code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p></li>
     /// </ul>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message associated with the error. Possible values are:</p>
@@ -77,7 +77,7 @@ impl BatchUpdateFindingsUnprocessedFinding {
     /// <li>
     /// <p><code>Invalid Input</code></p></li>
     /// </ul>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -105,8 +105,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     }
     /// <p>The identifier of the finding that was not updated.</p>
     pub fn set_finding_identifier(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>) -> Self {
-        self.finding_identifier = input;
-        self
+        self.finding_identifier = input; self
     }
     /// <p>The identifier of the finding that was not updated.</p>
     pub fn get_finding_identifier(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
@@ -148,8 +147,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <p><code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p></li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The code associated with the error. Possible values are:</p>
     /// <ul>
@@ -205,8 +203,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <p><code>Invalid Input</code></p></li>
     /// </ul>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message associated with the error. Possible values are:</p>
     /// <ul>
@@ -229,9 +226,13 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateFindingsUnprocessedFinding`](crate::types::BatchUpdateFindingsUnprocessedFinding).
     pub fn build(self) -> crate::types::BatchUpdateFindingsUnprocessedFinding {
         crate::types::BatchUpdateFindingsUnprocessedFinding {
-            finding_identifier: self.finding_identifier,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            finding_identifier: self.finding_identifier
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

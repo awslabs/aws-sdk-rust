@@ -3,11 +3,11 @@
 /// <p>The connector metadata specific to Salesforce.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceMetadata {
+pub struct SalesforceMetadata  {
     /// <p>The desired authorization scope for the Salesforce account.</p>
-    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    pub data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>>,
+    pub data_transfer_apis: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceDataTransferApi>>,
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
     /// <dt>
@@ -29,20 +29,22 @@ pub struct SalesforceMetadata {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    pub oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>>,
+    pub oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec::<crate::types::OAuth2GrantType>>,
 }
-impl SalesforceMetadata {
+impl  SalesforceMetadata  {
     /// <p>The desired authorization scope for the Salesforce account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
-    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
-        self.o_auth_scopes.as_deref().unwrap_or_default()
+    pub fn o_auth_scopes(&self) -> & [::std::string::String] {
+        self.o_auth_scopes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_transfer_apis.is_none()`.
-    pub fn data_transfer_apis(&self) -> &[crate::types::SalesforceDataTransferApi] {
-        self.data_transfer_apis.as_deref().unwrap_or_default()
+    pub fn data_transfer_apis(&self) -> & [crate::types::SalesforceDataTransferApi] {
+        self.data_transfer_apis.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
@@ -65,10 +67,11 @@ impl SalesforceMetadata {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.oauth2_grant_types_supported.is_none()`.
-    pub fn oauth2_grant_types_supported(&self) -> &[crate::types::OAuth2GrantType] {
-        self.oauth2_grant_types_supported.as_deref().unwrap_or_default()
+    pub fn oauth2_grant_types_supported(&self) -> & [crate::types::OAuth2GrantType] {
+        self.oauth2_grant_types_supported.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SalesforceMetadata {
@@ -82,9 +85,9 @@ impl SalesforceMetadata {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceMetadataBuilder {
-    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>>,
-    pub(crate) oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>>,
+    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) data_transfer_apis: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceDataTransferApi>>,
+    pub(crate) oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec::<crate::types::OAuth2GrantType>>,
 }
 impl SalesforceMetadataBuilder {
     /// Appends an item to `o_auth_scopes`.
@@ -94,17 +97,16 @@ impl SalesforceMetadataBuilder {
     /// <p>The desired authorization scope for the Salesforce account.</p>
     pub fn o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.o_auth_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.o_auth_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The desired authorization scope for the Salesforce account.</p>
-    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.o_auth_scopes = input;
-        self
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.o_auth_scopes = input; self
     }
     /// <p>The desired authorization scope for the Salesforce account.</p>
-    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.o_auth_scopes
     }
     /// Appends an item to `data_transfer_apis`.
@@ -114,17 +116,16 @@ impl SalesforceMetadataBuilder {
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
     pub fn data_transfer_apis(mut self, input: crate::types::SalesforceDataTransferApi) -> Self {
         let mut v = self.data_transfer_apis.unwrap_or_default();
-        v.push(input);
-        self.data_transfer_apis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_transfer_apis = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    pub fn set_data_transfer_apis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>>) -> Self {
-        self.data_transfer_apis = input;
-        self
+    pub fn set_data_transfer_apis(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceDataTransferApi>>) -> Self {
+        self.data_transfer_apis = input; self
     }
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    pub fn get_data_transfer_apis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>> {
+    pub fn get_data_transfer_apis(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SalesforceDataTransferApi>> {
         &self.data_transfer_apis
     }
     /// Appends an item to `oauth2_grant_types_supported`.
@@ -154,9 +155,9 @@ impl SalesforceMetadataBuilder {
     /// </dl>
     pub fn oauth2_grant_types_supported(mut self, input: crate::types::OAuth2GrantType) -> Self {
         let mut v = self.oauth2_grant_types_supported.unwrap_or_default();
-        v.push(input);
-        self.oauth2_grant_types_supported = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.oauth2_grant_types_supported = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
@@ -179,9 +180,8 @@ impl SalesforceMetadataBuilder {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    pub fn set_oauth2_grant_types_supported(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>>) -> Self {
-        self.oauth2_grant_types_supported = input;
-        self
+    pub fn set_oauth2_grant_types_supported(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OAuth2GrantType>>) -> Self {
+        self.oauth2_grant_types_supported = input; self
     }
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
@@ -204,15 +204,19 @@ impl SalesforceMetadataBuilder {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    pub fn get_oauth2_grant_types_supported(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>> {
+    pub fn get_oauth2_grant_types_supported(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OAuth2GrantType>> {
         &self.oauth2_grant_types_supported
     }
     /// Consumes the builder and constructs a [`SalesforceMetadata`](crate::types::SalesforceMetadata).
     pub fn build(self) -> crate::types::SalesforceMetadata {
         crate::types::SalesforceMetadata {
-            o_auth_scopes: self.o_auth_scopes,
-            data_transfer_apis: self.data_transfer_apis,
-            oauth2_grant_types_supported: self.oauth2_grant_types_supported,
+            o_auth_scopes: self.o_auth_scopes
+            ,
+            data_transfer_apis: self.data_transfer_apis
+            ,
+            oauth2_grant_types_supported: self.oauth2_grant_types_supported
+            ,
         }
     }
 }
+

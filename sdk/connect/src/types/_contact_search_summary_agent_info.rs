@@ -3,19 +3,19 @@
 /// <p>Information about the agent who accepted the contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactSearchSummaryAgentInfo {
+pub struct ContactSearchSummaryAgentInfo  {
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ContactSearchSummaryAgentInfo {
+impl  ContactSearchSummaryAgentInfo  {
     /// <p>The identifier of the agent who accepted the contact.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
-    pub fn connected_to_agent_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn connected_to_agent_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.connected_to_agent_timestamp.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ContactSearchSummaryAgentInfoBuilder {
     }
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ContactSearchSummaryAgentInfoBuilder {
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn set_connected_to_agent_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.connected_to_agent_timestamp = input;
-        self
+        self.connected_to_agent_timestamp = input; self
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn get_connected_to_agent_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl ContactSearchSummaryAgentInfoBuilder {
     /// Consumes the builder and constructs a [`ContactSearchSummaryAgentInfo`](crate::types::ContactSearchSummaryAgentInfo).
     pub fn build(self) -> crate::types::ContactSearchSummaryAgentInfo {
         crate::types::ContactSearchSummaryAgentInfo {
-            id: self.id,
-            connected_to_agent_timestamp: self.connected_to_agent_timestamp,
+            id: self.id
+            ,
+            connected_to_agent_timestamp: self.connected_to_agent_timestamp
+            ,
         }
     }
 }
+

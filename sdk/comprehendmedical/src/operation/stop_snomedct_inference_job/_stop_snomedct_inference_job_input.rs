@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopSnomedctInferenceJobInput {
+pub struct StopSnomedctInferenceJobInput  {
     /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl StopSnomedctInferenceJobInput {
+impl  StopSnomedctInferenceJobInput  {
     /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopSnomedctInferenceJobInputBuilder {
     }
     /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job id of the asynchronous InferSNOMEDCT job to be stopped.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopSnomedctInferenceJobInput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

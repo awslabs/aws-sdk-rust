@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVoicesInput {
+pub struct DescribeVoicesInput  {
     /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub engine: ::std::option::Option<crate::types::Engine>,
     /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
@@ -12,13 +12,13 @@ pub struct DescribeVoicesInput {
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVoicesInput {
+impl  DescribeVoicesInput  {
     /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
-    pub fn engine(&self) -> ::std::option::Option<&crate::types::Engine> {
+    pub fn engine(&self) -> ::std::option::Option<& crate::types::Engine> {
         self.engine.as_ref()
     }
     /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
@@ -26,7 +26,7 @@ impl DescribeVoicesInput {
         self.include_additional_language_codes
     }
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DescribeVoicesInputBuilder {
     }
     /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::Engine>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
@@ -68,8 +67,7 @@ impl DescribeVoicesInputBuilder {
     }
     /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -82,8 +80,7 @@ impl DescribeVoicesInputBuilder {
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
     pub fn set_include_additional_language_codes(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_additional_language_codes = input;
-        self
+        self.include_additional_language_codes = input; self
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
     pub fn get_include_additional_language_codes(&self) -> &::std::option::Option<bool> {
@@ -96,22 +93,26 @@ impl DescribeVoicesInputBuilder {
     }
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_voices::DescribeVoicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_voices::DescribeVoicesInput {
-            engine: self.engine,
-            language_code: self.language_code,
-            include_additional_language_codes: self.include_additional_language_codes,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_voices::DescribeVoicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_voices::DescribeVoicesInput {
+                engine: self.engine
+                ,
+                language_code: self.language_code
+                ,
+                include_additional_language_codes: self.include_additional_language_codes
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

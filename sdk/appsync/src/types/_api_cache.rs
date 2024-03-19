@@ -3,7 +3,7 @@
 /// <p>The <code>ApiCache</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiCache {
+pub struct ApiCache  {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub ttl: i64,
@@ -81,7 +81,7 @@ pub struct ApiCache {
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
-impl ApiCache {
+impl  ApiCache  {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(&self) -> i64 {
@@ -94,7 +94,7 @@ impl ApiCache {
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
-    pub fn api_caching_behavior(&self) -> ::std::option::Option<&crate::types::ApiCachingBehavior> {
+    pub fn api_caching_behavior(&self) -> ::std::option::Option<& crate::types::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
@@ -142,7 +142,7 @@ impl ApiCache {
     /// <li>
     /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApiCacheType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ApiCacheType> {
         self.r#type.as_ref()
     }
     /// <p>The cache instance status.</p>
@@ -158,7 +158,7 @@ impl ApiCache {
     /// <li>
     /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApiCacheStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApiCacheStatus> {
         self.status.as_ref()
     }
     /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
@@ -169,7 +169,7 @@ impl ApiCache {
     /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
     /// </ul>
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn health_metrics_config(&self) -> ::std::option::Option<&crate::types::CacheHealthMetricsConfig> {
+    pub fn health_metrics_config(&self) -> ::std::option::Option<& crate::types::CacheHealthMetricsConfig> {
         self.health_metrics_config.as_ref()
     }
 }
@@ -202,8 +202,7 @@ impl ApiCacheBuilder {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
@@ -229,8 +228,7 @@ impl ApiCacheBuilder {
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
-        self.api_caching_behavior = input;
-        self
+        self.api_caching_behavior = input; self
     }
     /// <p>Caching behavior.</p>
     /// <ul>
@@ -249,8 +247,7 @@ impl ApiCacheBuilder {
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.transit_encryption_enabled = input;
-        self
+        self.transit_encryption_enabled = input; self
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -263,8 +260,7 @@ impl ApiCacheBuilder {
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.at_rest_encryption_enabled = input;
-        self
+        self.at_rest_encryption_enabled = input; self
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -349,8 +345,7 @@ impl ApiCacheBuilder {
     /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
@@ -423,8 +418,7 @@ impl ApiCacheBuilder {
     /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApiCacheStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The cache instance status.</p>
     /// <ul>
@@ -463,8 +457,7 @@ impl ApiCacheBuilder {
     /// </ul>
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_health_metrics_config(mut self, input: ::std::option::Option<crate::types::CacheHealthMetricsConfig>) -> Self {
-        self.health_metrics_config = input;
-        self
+        self.health_metrics_config = input; self
     }
     /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
     /// <ul>
@@ -480,13 +473,24 @@ impl ApiCacheBuilder {
     /// Consumes the builder and constructs a [`ApiCache`](crate::types::ApiCache).
     pub fn build(self) -> crate::types::ApiCache {
         crate::types::ApiCache {
-            ttl: self.ttl.unwrap_or_default(),
-            api_caching_behavior: self.api_caching_behavior,
-            transit_encryption_enabled: self.transit_encryption_enabled.unwrap_or_default(),
-            at_rest_encryption_enabled: self.at_rest_encryption_enabled.unwrap_or_default(),
-            r#type: self.r#type,
-            status: self.status,
-            health_metrics_config: self.health_metrics_config,
+            ttl: self.ttl
+                .unwrap_or_default()
+            ,
+            api_caching_behavior: self.api_caching_behavior
+            ,
+            transit_encryption_enabled: self.transit_encryption_enabled
+                .unwrap_or_default()
+            ,
+            at_rest_encryption_enabled: self.at_rest_encryption_enabled
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            health_metrics_config: self.health_metrics_config
+            ,
         }
     }
 }
+

@@ -3,26 +3,25 @@
 /// <p>An object that contains a list of permissions to be applied to a list of dashboard IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobDashboardOverridePermissions {
+pub struct AssetBundleImportJobDashboardOverridePermissions  {
     /// <p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>
-    pub dashboard_ids: ::std::vec::Vec<::std::string::String>,
+    pub dashboard_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of permissions for the dashboards that you want to apply overrides to.</p>
     pub permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
     /// <p>A structure that contains the link sharing configurations that you want to apply overrides to.</p>
     pub link_sharing_configuration: ::std::option::Option<crate::types::AssetBundleResourceLinkSharingConfiguration>,
 }
-impl AssetBundleImportJobDashboardOverridePermissions {
+impl  AssetBundleImportJobDashboardOverridePermissions  {
     /// <p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>
-    pub fn dashboard_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.dashboard_ids.deref()
+    pub fn dashboard_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.dashboard_ids.deref()
     }
     /// <p>A list of permissions for the dashboards that you want to apply overrides to.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::AssetBundleResourcePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::AssetBundleResourcePermissions> {
         self.permissions.as_ref()
     }
     /// <p>A structure that contains the link sharing configurations that you want to apply overrides to.</p>
-    pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::AssetBundleResourceLinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> ::std::option::Option<& crate::types::AssetBundleResourceLinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
@@ -37,7 +36,7 @@ impl AssetBundleImportJobDashboardOverridePermissions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDashboardOverridePermissionsBuilder {
-    pub(crate) dashboard_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dashboard_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
     pub(crate) link_sharing_configuration: ::std::option::Option<crate::types::AssetBundleResourceLinkSharingConfiguration>,
 }
@@ -49,17 +48,16 @@ impl AssetBundleImportJobDashboardOverridePermissionsBuilder {
     /// <p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>
     pub fn dashboard_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dashboard_ids.unwrap_or_default();
-        v.push(input.into());
-        self.dashboard_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dashboard_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>
-    pub fn set_dashboard_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dashboard_ids = input;
-        self
+    pub fn set_dashboard_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dashboard_ids = input; self
     }
     /// <p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>
-    pub fn get_dashboard_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dashboard_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dashboard_ids
     }
     /// <p>A list of permissions for the dashboards that you want to apply overrides to.</p>
@@ -69,8 +67,7 @@ impl AssetBundleImportJobDashboardOverridePermissionsBuilder {
     }
     /// <p>A list of permissions for the dashboards that you want to apply overrides to.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::AssetBundleResourcePermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>A list of permissions for the dashboards that you want to apply overrides to.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::AssetBundleResourcePermissions> {
@@ -83,8 +80,7 @@ impl AssetBundleImportJobDashboardOverridePermissionsBuilder {
     }
     /// <p>A structure that contains the link sharing configurations that you want to apply overrides to.</p>
     pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleResourceLinkSharingConfiguration>) -> Self {
-        self.link_sharing_configuration = input;
-        self
+        self.link_sharing_configuration = input; self
     }
     /// <p>A structure that contains the link sharing configurations that you want to apply overrides to.</p>
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleResourceLinkSharingConfiguration> {
@@ -93,18 +89,20 @@ impl AssetBundleImportJobDashboardOverridePermissionsBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobDashboardOverridePermissions`](crate::types::AssetBundleImportJobDashboardOverridePermissions).
     /// This method will fail if any of the following fields are not set:
     /// - [`dashboard_ids`](crate::types::builders::AssetBundleImportJobDashboardOverridePermissionsBuilder::dashboard_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDashboardOverridePermissions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDashboardOverridePermissions {
-            dashboard_ids: self.dashboard_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_ids",
-                    "dashboard_ids was not specified but it is required when building AssetBundleImportJobDashboardOverridePermissions",
-                )
-            })?,
-            permissions: self.permissions,
-            link_sharing_configuration: self.link_sharing_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobDashboardOverridePermissions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobDashboardOverridePermissions {
+                dashboard_ids: self.dashboard_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_ids", "dashboard_ids was not specified but it is required when building AssetBundleImportJobDashboardOverridePermissions")
+                    )?
+                ,
+                permissions: self.permissions
+                ,
+                link_sharing_configuration: self.link_sharing_configuration
+                ,
+            }
+        )
     }
 }
+

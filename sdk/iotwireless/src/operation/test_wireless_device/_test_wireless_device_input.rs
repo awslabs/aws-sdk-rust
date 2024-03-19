@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestWirelessDeviceInput {
+pub struct TestWirelessDeviceInput  {
     /// <p>The ID of the wireless device to test.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl TestWirelessDeviceInput {
+impl  TestWirelessDeviceInput  {
     /// <p>The ID of the wireless device to test.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl TestWirelessDeviceInputBuilder {
     }
     /// <p>The ID of the wireless device to test.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the wireless device to test.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::test_wireless_device::TestWirelessDeviceInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_wireless_device::TestWirelessDeviceInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

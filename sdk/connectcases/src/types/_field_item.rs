@@ -3,15 +3,14 @@
 /// <p>Object for field related information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldItem {
+pub struct FieldItem  {
     /// <p>Unique identifier of a field.</p>
     pub id: ::std::string::String,
 }
-impl FieldItem {
+impl  FieldItem  {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl FieldItem {
@@ -36,8 +35,7 @@ impl FieldItemBuilder {
     }
     /// <p>Unique identifier of a field.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique identifier of a field.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FieldItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::FieldItemBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldItem {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FieldItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldItem {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FieldItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

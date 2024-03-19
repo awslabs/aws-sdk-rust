@@ -3,7 +3,7 @@
 /// <p>Returns a summary of a pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineSummary {
+pub struct PipelineSummary  {
     /// <p>The name of the pipeline.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p>
@@ -27,9 +27,9 @@ pub struct PipelineSummary {
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PipelineSummary {
+impl  PipelineSummary  {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version number of the pipeline.</p>
@@ -47,19 +47,19 @@ impl PipelineSummary {
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
-    pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
+    pub fn pipeline_type(&self) -> ::std::option::Option<& crate::types::PipelineType> {
         self.pipeline_type.as_ref()
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
-    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+    pub fn execution_mode(&self) -> ::std::option::Option<& crate::types::ExecutionMode> {
         self.execution_mode.as_ref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the pipeline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The version number of the pipeline.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the pipeline.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -137,8 +135,7 @@ impl PipelineSummaryBuilder {
     /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
-        self.pipeline_type = input;
-        self
+        self.pipeline_type = input; self
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
@@ -161,8 +158,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
-        self.execution_mode = input;
-        self
+        self.execution_mode = input; self
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
@@ -175,8 +171,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -189,8 +184,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
     pub fn set_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated = input;
-        self
+        self.updated = input; self
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
     pub fn get_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -199,12 +193,19 @@ impl PipelineSummaryBuilder {
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {
         crate::types::PipelineSummary {
-            name: self.name,
-            version: self.version,
-            pipeline_type: self.pipeline_type,
-            execution_mode: self.execution_mode,
-            created: self.created,
-            updated: self.updated,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            pipeline_type: self.pipeline_type
+            ,
+            execution_mode: self.execution_mode
+            ,
+            created: self.created
+            ,
+            updated: self.updated
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpcAttachmentOutput {
+pub struct UpdateVpcAttachmentOutput  {
     /// <p>Describes the updated VPC attachment.</p>
     pub vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
 }
-impl UpdateVpcAttachmentOutput {
+impl  UpdateVpcAttachmentOutput  {
     /// <p>Describes the updated VPC attachment.</p>
-    pub fn vpc_attachment(&self) -> ::std::option::Option<&crate::types::VpcAttachment> {
+    pub fn vpc_attachment(&self) -> ::std::option::Option<& crate::types::VpcAttachment> {
         self.vpc_attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVpcAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput).
     pub fn builder() -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateVpcAttachmentOutputBuilder {
     }
     /// <p>Describes the updated VPC attachment.</p>
     pub fn set_vpc_attachment(mut self, input: ::std::option::Option<crate::types::VpcAttachment>) -> Self {
-        self.vpc_attachment = input;
-        self
+        self.vpc_attachment = input; self
     }
     /// <p>Describes the updated VPC attachment.</p>
     pub fn get_vpc_attachment(&self) -> &::std::option::Option<crate::types::VpcAttachment> {
         &self.vpc_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput).
     pub fn build(self) -> crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput {
         crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput {
-            vpc_attachment: self.vpc_attachment,
+            vpc_attachment: self.vpc_attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

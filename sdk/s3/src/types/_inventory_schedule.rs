@@ -3,13 +3,13 @@
 /// <p>Specifies the schedule for generating inventory results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventorySchedule {
+pub struct InventorySchedule  {
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub frequency: crate::types::InventoryFrequency,
 }
-impl InventorySchedule {
+impl  InventorySchedule  {
     /// <p>Specifies how frequently inventory results are produced.</p>
-    pub fn frequency(&self) -> &crate::types::InventoryFrequency {
+    pub fn frequency(&self) -> & crate::types::InventoryFrequency {
         &self.frequency
     }
 }
@@ -35,8 +35,7 @@ impl InventoryScheduleBuilder {
     }
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::InventoryFrequency>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::InventoryFrequency> {
@@ -46,13 +45,15 @@ impl InventoryScheduleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`frequency`](crate::types::builders::InventoryScheduleBuilder::frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::InventorySchedule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventorySchedule {
-            frequency: self.frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frequency",
-                    "frequency was not specified but it is required when building InventorySchedule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventorySchedule {
+                frequency: self.frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frequency", "frequency was not specified but it is required when building InventorySchedule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

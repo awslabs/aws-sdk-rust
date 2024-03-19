@@ -3,7 +3,7 @@
 /// <p>Summary of the device fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceFleetSummary {
+pub struct DeviceFleetSummary  {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
     pub device_fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the device fleet.</p>
@@ -13,21 +13,21 @@ pub struct DeviceFleetSummary {
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeviceFleetSummary {
+impl  DeviceFleetSummary  {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn device_fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_arn(&self) -> ::std::option::Option<& str> {
         self.device_fleet_arn.as_deref()
     }
     /// <p>Name of the device fleet.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>Timestamp of when the device fleet was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl DeviceFleetSummaryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
     pub fn set_device_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_arn = input;
-        self
+        self.device_fleet_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
     pub fn get_device_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DeviceFleetSummaryBuilder {
     }
     /// <p>Name of the device fleet.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>Name of the device fleet.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DeviceFleetSummaryBuilder {
     }
     /// <p>Timestamp of when the device fleet was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Timestamp of when the device fleet was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +96,7 @@ impl DeviceFleetSummaryBuilder {
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -109,10 +105,15 @@ impl DeviceFleetSummaryBuilder {
     /// Consumes the builder and constructs a [`DeviceFleetSummary`](crate::types::DeviceFleetSummary).
     pub fn build(self) -> crate::types::DeviceFleetSummary {
         crate::types::DeviceFleetSummary {
-            device_fleet_arn: self.device_fleet_arn,
-            device_fleet_name: self.device_fleet_name,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            device_fleet_arn: self.device_fleet_arn
+            ,
+            device_fleet_name: self.device_fleet_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

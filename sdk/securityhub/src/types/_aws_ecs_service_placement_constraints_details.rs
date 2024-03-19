@@ -3,21 +3,21 @@
 /// <p>A placement constraint for the tasks in the service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsServicePlacementConstraintsDetails {
+pub struct AwsEcsServicePlacementConstraintsDetails  {
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsServicePlacementConstraintsDetails {
+impl  AwsEcsServicePlacementConstraintsDetails  {
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AwsEcsServicePlacementConstraintsDetailsBuilder {
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl AwsEcsServicePlacementConstraintsDetailsBuilder {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code></p>
@@ -70,8 +68,11 @@ impl AwsEcsServicePlacementConstraintsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsServicePlacementConstraintsDetails`](crate::types::AwsEcsServicePlacementConstraintsDetails).
     pub fn build(self) -> crate::types::AwsEcsServicePlacementConstraintsDetails {
         crate::types::AwsEcsServicePlacementConstraintsDetails {
-            expression: self.expression,
-            r#type: self.r#type,
+            expression: self.expression
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

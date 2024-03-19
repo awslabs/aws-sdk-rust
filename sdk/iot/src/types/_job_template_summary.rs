@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the job template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobTemplateSummary {
+pub struct JobTemplateSummary  {
     /// <p>The ARN of the job template.</p>
     pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the job template.</p>
@@ -13,21 +13,21 @@ pub struct JobTemplateSummary {
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl JobTemplateSummary {
+impl  JobTemplateSummary  {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_template_arn(&self) -> ::std::option::Option<& str> {
         self.job_template_arn.as_deref()
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_template_id(&self) -> ::std::option::Option<& str> {
         self.job_template_id.as_deref()
     }
     /// <p>A description of the job template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl JobTemplateSummaryBuilder {
     }
     /// <p>The ARN of the job template.</p>
     pub fn set_job_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_template_arn = input;
-        self
+        self.job_template_arn = input; self
     }
     /// <p>The ARN of the job template.</p>
     pub fn get_job_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl JobTemplateSummaryBuilder {
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_template_id = input;
-        self
+        self.job_template_id = input; self
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl JobTemplateSummaryBuilder {
     }
     /// <p>A description of the job template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the job template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl JobTemplateSummaryBuilder {
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl JobTemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`JobTemplateSummary`](crate::types::JobTemplateSummary).
     pub fn build(self) -> crate::types::JobTemplateSummary {
         crate::types::JobTemplateSummary {
-            job_template_arn: self.job_template_arn,
-            job_template_id: self.job_template_id,
-            description: self.description,
-            created_at: self.created_at,
+            job_template_arn: self.job_template_arn
+            ,
+            job_template_id: self.job_template_id
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

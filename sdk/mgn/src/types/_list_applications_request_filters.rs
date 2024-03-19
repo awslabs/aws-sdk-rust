@@ -3,30 +3,32 @@
 /// <p>Applications list filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsRequestFilters {
+pub struct ListApplicationsRequestFilters  {
     /// <p>Filter applications list by application ID.</p>
-    pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filter applications list by archival status.</p>
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Filter applications list by wave ID.</p>
-    pub wave_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wave_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListApplicationsRequestFilters {
+impl  ListApplicationsRequestFilters  {
     /// <p>Filter applications list by application ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
-    pub fn application_ids(&self) -> &[::std::string::String] {
-        self.application_ids.as_deref().unwrap_or_default()
+    pub fn application_ids(&self) -> & [::std::string::String] {
+        self.application_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn is_archived(&self) -> ::std::option::Option<bool> {
         self.is_archived
     }
     /// <p>Filter applications list by wave ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wave_ids.is_none()`.
-    pub fn wave_ids(&self) -> &[::std::string::String] {
-        self.wave_ids.as_deref().unwrap_or_default()
+    pub fn wave_ids(&self) -> & [::std::string::String] {
+        self.wave_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListApplicationsRequestFilters {
@@ -40,9 +42,9 @@ impl ListApplicationsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsRequestFiltersBuilder {
-    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,
-    pub(crate) wave_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) wave_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListApplicationsRequestFiltersBuilder {
     /// Appends an item to `application_ids`.
@@ -52,17 +54,16 @@ impl ListApplicationsRequestFiltersBuilder {
     /// <p>Filter applications list by application ID.</p>
     pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
-        v.push(input.into());
-        self.application_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter applications list by application ID.</p>
-    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_ids = input;
-        self
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_ids = input; self
     }
     /// <p>Filter applications list by application ID.</p>
-    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_ids
     }
     /// <p>Filter applications list by archival status.</p>
@@ -72,8 +73,7 @@ impl ListApplicationsRequestFiltersBuilder {
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
@@ -86,25 +86,28 @@ impl ListApplicationsRequestFiltersBuilder {
     /// <p>Filter applications list by wave ID.</p>
     pub fn wave_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wave_ids.unwrap_or_default();
-        v.push(input.into());
-        self.wave_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wave_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn set_wave_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wave_ids = input;
-        self
+    pub fn set_wave_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wave_ids = input; self
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn get_wave_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wave_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wave_ids
     }
     /// Consumes the builder and constructs a [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
     pub fn build(self) -> crate::types::ListApplicationsRequestFilters {
         crate::types::ListApplicationsRequestFilters {
-            application_ids: self.application_ids,
-            is_archived: self.is_archived,
-            wave_ids: self.wave_ids,
+            application_ids: self.application_ids
+            ,
+            is_archived: self.is_archived
+            ,
+            wave_ids: self.wave_ids
+            ,
         }
     }
 }
+

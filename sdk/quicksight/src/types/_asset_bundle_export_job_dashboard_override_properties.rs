@@ -3,22 +3,20 @@
 /// <p>Controls how a specific <code>Dashboard</code> resource is parameterized in the returned CloudFormation template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleExportJobDashboardOverrideProperties {
+pub struct AssetBundleExportJobDashboardOverrideProperties  {
     /// <p>The ARN of the specific <code>Dashboard</code> resource whose override properties are configured in this structure.</p>
     pub arn: ::std::string::String,
     /// <p>A list of <code>Dashboard</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub properties: ::std::vec::Vec<crate::types::AssetBundleExportJobDashboardPropertyToOverride>,
+    pub properties: ::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardPropertyToOverride>,
 }
-impl AssetBundleExportJobDashboardOverrideProperties {
+impl  AssetBundleExportJobDashboardOverrideProperties  {
     /// <p>The ARN of the specific <code>Dashboard</code> resource whose override properties are configured in this structure.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A list of <code>Dashboard</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(&self) -> &[crate::types::AssetBundleExportJobDashboardPropertyToOverride] {
-        use std::ops::Deref;
-        self.properties.deref()
+    pub fn properties(&self) -> & [crate::types::AssetBundleExportJobDashboardPropertyToOverride] {
+        use std::ops::Deref; self.properties.deref()
     }
 }
 impl AssetBundleExportJobDashboardOverrideProperties {
@@ -33,7 +31,7 @@ impl AssetBundleExportJobDashboardOverrideProperties {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobDashboardOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardPropertyToOverride>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardPropertyToOverride>>,
 }
 impl AssetBundleExportJobDashboardOverridePropertiesBuilder {
     /// <p>The ARN of the specific <code>Dashboard</code> resource whose override properties are configured in this structure.</p>
@@ -44,8 +42,7 @@ impl AssetBundleExportJobDashboardOverridePropertiesBuilder {
     }
     /// <p>The ARN of the specific <code>Dashboard</code> resource whose override properties are configured in this structure.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the specific <code>Dashboard</code> resource whose override properties are configured in this structure.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,42 +55,37 @@ impl AssetBundleExportJobDashboardOverridePropertiesBuilder {
     /// <p>A list of <code>Dashboard</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     pub fn properties(mut self, input: crate::types::AssetBundleExportJobDashboardPropertyToOverride) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Dashboard</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardPropertyToOverride>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardPropertyToOverride>>) -> Self {
+        self.properties = input; self
     }
     /// <p>A list of <code>Dashboard</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardPropertyToOverride>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardPropertyToOverride>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobDashboardOverrideProperties`](crate::types::AssetBundleExportJobDashboardOverrideProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AssetBundleExportJobDashboardOverridePropertiesBuilder::arn)
     /// - [`properties`](crate::types::builders::AssetBundleExportJobDashboardOverridePropertiesBuilder::properties)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleExportJobDashboardOverrideProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleExportJobDashboardOverrideProperties {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AssetBundleExportJobDashboardOverrideProperties",
-                )
-            })?,
-            properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "properties",
-                    "properties was not specified but it is required when building AssetBundleExportJobDashboardOverrideProperties",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleExportJobDashboardOverrideProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleExportJobDashboardOverrideProperties {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AssetBundleExportJobDashboardOverrideProperties")
+                    )?
+                ,
+                properties: self.properties
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("properties", "properties was not specified but it is required when building AssetBundleExportJobDashboardOverrideProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

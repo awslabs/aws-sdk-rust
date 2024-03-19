@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReferenceStoreOutput {
+pub struct GetReferenceStoreOutput  {
     /// <p>The store's ID.</p>
     pub id: ::std::string::String,
     /// <p>The store's ARN.</p>
@@ -17,39 +17,37 @@ pub struct GetReferenceStoreOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetReferenceStoreOutput {
+impl  GetReferenceStoreOutput  {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<& crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
 impl ::aws_types::request_id::RequestId for GetReferenceStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceStoreOutput`](crate::operation::get_reference_store::GetReferenceStoreOutput).
     pub fn builder() -> crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder {
@@ -78,8 +76,7 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The store's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>The store's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The store's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The store's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +116,7 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>The store's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The store's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +129,7 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
-        self.sse_config = input;
-        self
+        self.sse_config = input; self
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
@@ -150,53 +143,53 @@ impl GetReferenceStoreOutputBuilder {
     }
     /// <p>When the store was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the store was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReferenceStoreOutput`](crate::operation::get_reference_store::GetReferenceStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder::id)
     /// - [`arn`](crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder::arn)
     /// - [`creation_time`](crate::operation::get_reference_store::builders::GetReferenceStoreOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_reference_store::GetReferenceStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_reference_store::GetReferenceStoreOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetReferenceStoreOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetReferenceStoreOutput",
-                )
-            })?,
-            name: self.name,
-            description: self.description,
-            sse_config: self.sse_config,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetReferenceStoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference_store::GetReferenceStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reference_store::GetReferenceStoreOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetReferenceStoreOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetReferenceStoreOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetReferenceStoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

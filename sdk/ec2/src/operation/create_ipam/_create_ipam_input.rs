@@ -2,49 +2,51 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIpamInput {
+pub struct CreateIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A description for the IPAM.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub tier: ::std::option::Option<crate::types::IpamTier>,
 }
-impl CreateIpamInput {
+impl  CreateIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>A description for the IPAM.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_regions.is_none()`.
-    pub fn operating_regions(&self) -> &[crate::types::AddIpamOperatingRegion] {
-        self.operating_regions.as_deref().unwrap_or_default()
+    pub fn operating_regions(&self) -> & [crate::types::AddIpamOperatingRegion] {
+        self.operating_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::IpamTier> {
         self.tier.as_ref()
     }
 }
@@ -61,8 +63,8 @@ impl CreateIpamInput {
 pub struct CreateIpamInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
 }
@@ -74,8 +76,7 @@ impl CreateIpamInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -88,8 +89,7 @@ impl CreateIpamInputBuilder {
     }
     /// <p>A description for the IPAM.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the IPAM.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,19 +103,18 @@ impl CreateIpamInputBuilder {
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub fn operating_regions(mut self, input: crate::types::AddIpamOperatingRegion) -> Self {
         let mut v = self.operating_regions.unwrap_or_default();
-        v.push(input);
-        self.operating_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operating_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
-        self.operating_regions = input;
-        self
+    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>>) -> Self {
+        self.operating_regions = input; self
     }
     /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddIpamOperatingRegion>> {
         &self.operating_regions
     }
     /// Appends an item to `tag_specifications`.
@@ -125,17 +124,16 @@ impl CreateIpamInputBuilder {
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -145,8 +143,7 @@ impl CreateIpamInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl CreateIpamInputBuilder {
     }
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::IpamTier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
@@ -168,13 +164,22 @@ impl CreateIpamInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ipam::CreateIpamInput {
-            dry_run: self.dry_run,
-            description: self.description,
-            operating_regions: self.operating_regions,
-            tag_specifications: self.tag_specifications,
-            client_token: self.client_token,
-            tier: self.tier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_ipam::CreateIpamInput {
+                dry_run: self.dry_run
+                ,
+                description: self.description
+                ,
+                operating_regions: self.operating_regions
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                client_token: self.client_token
+                ,
+                tier: self.tier
+                ,
+            }
+        )
     }
 }
+

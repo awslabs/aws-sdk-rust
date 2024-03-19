@@ -3,7 +3,7 @@
 /// <p>Error details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>Error details message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Error details code.</p>
@@ -13,21 +13,21 @@ pub struct ErrorDetails {
     /// <p>Error details resourceType.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl ErrorDetails {
+impl  ErrorDetails  {
     /// <p>Error details message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Error details code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Error details resourceId.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Error details resourceType.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>Error details message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Error details message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>Error details code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Error details code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>Error details resourceId.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Error details resourceId.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>Error details resourceType.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Error details resourceType.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ErrorDetailsBuilder {
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {
         crate::types::ErrorDetails {
-            message: self.message,
-            code: self.code,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
+            message: self.message
+            ,
+            code: self.code
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationCustomRulePolicyInput {
+pub struct GetOrganizationCustomRulePolicyInput  {
     /// <p>The name of your organization Config Custom Policy rule.</p>
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }
-impl GetOrganizationCustomRulePolicyInput {
+impl  GetOrganizationCustomRulePolicyInput  {
     /// <p>The name of your organization Config Custom Policy rule.</p>
-    pub fn organization_config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_config_rule_name(&self) -> ::std::option::Option<& str> {
         self.organization_config_rule_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetOrganizationCustomRulePolicyInputBuilder {
     }
     /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_config_rule_name = input;
-        self
+        self.organization_config_rule_name = input; self
     }
     /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_config_rule_name
     }
     /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput {
-                organization_config_rule_name: self.organization_config_rule_name,
-            },
+                organization_config_rule_name: self.organization_config_rule_name
+                ,
+            }
         )
     }
 }
+

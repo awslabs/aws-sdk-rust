@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateByteMatchSetInput {
+pub struct UpdateByteMatchSetInput  {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -16,15 +16,15 @@ pub struct UpdateByteMatchSetInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>,
+    pub updates: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetUpdate>>,
 }
-impl UpdateByteMatchSetInput {
+impl  UpdateByteMatchSetInput  {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn byte_match_set_id(&self) -> ::std::option::Option<& str> {
         self.byte_match_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
@@ -36,10 +36,11 @@ impl UpdateByteMatchSetInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
-    pub fn updates(&self) -> &[crate::types::ByteMatchSetUpdate] {
-        self.updates.as_deref().unwrap_or_default()
+    pub fn updates(&self) -> & [crate::types::ByteMatchSetUpdate] {
+        self.updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateByteMatchSetInput {
@@ -55,7 +56,7 @@ impl UpdateByteMatchSetInput {
 pub struct UpdateByteMatchSetInputBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
-    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetUpdate>>,
 }
 impl UpdateByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
@@ -66,8 +67,7 @@ impl UpdateByteMatchSetInputBuilder {
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.byte_match_set_id = input;
-        self
+        self.byte_match_set_id = input; self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl UpdateByteMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,9 +102,9 @@ impl UpdateByteMatchSetInputBuilder {
     /// </ul>
     pub fn updates(mut self, input: crate::types::ByteMatchSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -116,9 +115,8 @@ impl UpdateByteMatchSetInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -129,18 +127,21 @@ impl UpdateByteMatchSetInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateByteMatchSetInput`](crate::operation::update_byte_match_set::UpdateByteMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_byte_match_set::UpdateByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_byte_match_set::UpdateByteMatchSetInput {
-            byte_match_set_id: self.byte_match_set_id,
-            change_token: self.change_token,
-            updates: self.updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_byte_match_set::UpdateByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_byte_match_set::UpdateByteMatchSetInput {
+                byte_match_set_id: self.byte_match_set_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+            }
+        )
     }
 }
+

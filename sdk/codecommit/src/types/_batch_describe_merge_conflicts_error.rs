@@ -3,7 +3,7 @@
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeMergeConflictsError {
+pub struct BatchDescribeMergeConflictsError  {
     /// <p>The path to the file.</p>
     pub file_path: ::std::string::String,
     /// <p>The name of the exception.</p>
@@ -11,21 +11,18 @@ pub struct BatchDescribeMergeConflictsError {
     /// <p>The message provided by the exception.</p>
     pub message: ::std::string::String,
 }
-impl BatchDescribeMergeConflictsError {
+impl  BatchDescribeMergeConflictsError  {
     /// <p>The path to the file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
     /// <p>The name of the exception.</p>
-    pub fn exception_name(&self) -> &str {
-        use std::ops::Deref;
-        self.exception_name.deref()
+    pub fn exception_name(&self) -> & str {
+        use std::ops::Deref; self.exception_name.deref()
     }
     /// <p>The message provided by the exception.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl BatchDescribeMergeConflictsError {
@@ -52,8 +49,7 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The path to the file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The path to the file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The name of the exception.</p>
     pub fn set_exception_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exception_name = input;
-        self
+        self.exception_name = input; self
     }
     /// <p>The name of the exception.</p>
     pub fn get_exception_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The message provided by the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message provided by the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     /// - [`exception_name`](crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::exception_name)
     /// - [`message`](crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchDescribeMergeConflictsError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchDescribeMergeConflictsError {
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building BatchDescribeMergeConflictsError",
-                )
-            })?,
-            exception_name: self.exception_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exception_name",
-                    "exception_name was not specified but it is required when building BatchDescribeMergeConflictsError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building BatchDescribeMergeConflictsError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchDescribeMergeConflictsError {
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building BatchDescribeMergeConflictsError")
+                    )?
+                ,
+                exception_name: self.exception_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exception_name", "exception_name was not specified but it is required when building BatchDescribeMergeConflictsError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building BatchDescribeMergeConflictsError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

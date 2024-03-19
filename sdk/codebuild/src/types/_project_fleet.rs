@@ -3,13 +3,13 @@
 /// <p>Information about the compute fleet of the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Working with reserved capacity in CodeBuild</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectFleet {
+pub struct ProjectFleet  {
     /// <p>Specifies the compute fleet ARN for the build project.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
 }
-impl ProjectFleet {
+impl  ProjectFleet  {
     /// <p>Specifies the compute fleet ARN for the build project.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ProjectFleetBuilder {
     }
     /// <p>Specifies the compute fleet ARN for the build project.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>Specifies the compute fleet ARN for the build project.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ProjectFleetBuilder {
     }
     /// Consumes the builder and constructs a [`ProjectFleet`](crate::types::ProjectFleet).
     pub fn build(self) -> crate::types::ProjectFleet {
-        crate::types::ProjectFleet { fleet_arn: self.fleet_arn }
+        crate::types::ProjectFleet {
+            fleet_arn: self.fleet_arn
+            ,
+        }
     }
 }
+

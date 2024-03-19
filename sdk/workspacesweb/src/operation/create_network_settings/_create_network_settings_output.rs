@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNetworkSettingsOutput {
+pub struct CreateNetworkSettingsOutput  {
     /// <p>The ARN of the network settings.</p>
     pub network_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateNetworkSettingsOutput {
+impl  CreateNetworkSettingsOutput  {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_settings_arn.deref()
+    pub fn network_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.network_settings_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNetworkSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput).
     pub fn builder() -> crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateNetworkSettingsOutputBuilder {
     }
     /// <p>The ARN of the network settings.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`network_settings_arn`](crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder::network_settings_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_network_settings::CreateNetworkSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_network_settings::CreateNetworkSettingsOutput {
-            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_settings_arn",
-                    "network_settings_arn was not specified but it is required when building CreateNetworkSettingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_network_settings::CreateNetworkSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_network_settings::CreateNetworkSettingsOutput {
+                network_settings_arn: self.network_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_settings_arn", "network_settings_arn was not specified but it is required when building CreateNetworkSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

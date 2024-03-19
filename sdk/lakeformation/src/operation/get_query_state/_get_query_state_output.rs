@@ -3,7 +3,7 @@
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryStateOutput {
+pub struct GetQueryStateOutput  {
     /// <p>An error message when the operation fails.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
@@ -20,9 +20,9 @@ pub struct GetQueryStateOutput {
     pub state: crate::types::QueryStateString,
     _request_id: Option<String>,
 }
-impl GetQueryStateOutput {
+impl  GetQueryStateOutput  {
     /// <p>An error message when the operation fails.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
@@ -36,15 +36,15 @@ impl GetQueryStateOutput {
     /// <li>
     /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p></li>
     /// </ul>
-    pub fn state(&self) -> &crate::types::QueryStateString {
+    pub fn state(&self) -> & crate::types::QueryStateString {
         &self.state
     }
 }
 impl ::aws_types::request_id::RequestId for GetQueryStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetQueryStateOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
     pub fn builder() -> crate::operation::get_query_state::builders::GetQueryStateOutputBuilder {
@@ -68,8 +68,7 @@ impl GetQueryStateOutputBuilder {
     }
     /// <p>An error message when the operation fails.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error message when the operation fails.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl GetQueryStateOutputBuilder {
     /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::QueryStateString>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
     /// <ul>
@@ -121,29 +119,30 @@ impl GetQueryStateOutputBuilder {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::operation::get_query_state::builders::GetQueryStateOutputBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_query_state::GetQueryStateOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_query_state::GetQueryStateOutput {
-            error: self.error,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building GetQueryStateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_state::GetQueryStateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_state::GetQueryStateOutput {
+                error: self.error
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building GetQueryStateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

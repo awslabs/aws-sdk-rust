@@ -3,7 +3,7 @@
 /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StringValueWhenUnsetConfiguration {
+pub struct StringValueWhenUnsetConfiguration  {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct StringValueWhenUnsetConfiguration {
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub custom_value: ::std::option::Option<::std::string::String>,
 }
-impl StringValueWhenUnsetConfiguration {
+impl  StringValueWhenUnsetConfiguration  {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -23,15 +23,15 @@ impl StringValueWhenUnsetConfiguration {
     /// <li>
     /// <p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
-    pub fn value_when_unset_option(&self) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
+    pub fn value_when_unset_option(&self) -> ::std::option::Option<& crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    pub fn custom_value(&self) -> ::std::option::Option<&str> {
+    pub fn custom_value(&self) -> ::std::option::Option<& str> {
         self.custom_value.as_deref()
     }
 }
-impl ::std::fmt::Debug for StringValueWhenUnsetConfiguration {
+impl  ::std::fmt::Debug for StringValueWhenUnsetConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StringValueWhenUnsetConfiguration");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
@@ -73,8 +73,7 @@ impl StringValueWhenUnsetConfigurationBuilder {
     /// <p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn set_value_when_unset_option(mut self, input: ::std::option::Option<crate::types::ValueWhenUnsetOption>) -> Self {
-        self.value_when_unset_option = input;
-        self
+        self.value_when_unset_option = input; self
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
@@ -93,8 +92,7 @@ impl StringValueWhenUnsetConfigurationBuilder {
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn set_custom_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_value = input;
-        self
+        self.custom_value = input; self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn get_custom_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,10 @@ impl StringValueWhenUnsetConfigurationBuilder {
     /// Consumes the builder and constructs a [`StringValueWhenUnsetConfiguration`](crate::types::StringValueWhenUnsetConfiguration).
     pub fn build(self) -> crate::types::StringValueWhenUnsetConfiguration {
         crate::types::StringValueWhenUnsetConfiguration {
-            value_when_unset_option: self.value_when_unset_option,
-            custom_value: self.custom_value,
+            value_when_unset_option: self.value_when_unset_option
+            ,
+            custom_value: self.custom_value
+            ,
         }
     }
 }
@@ -116,3 +116,4 @@ impl ::std::fmt::Debug for StringValueWhenUnsetConfigurationBuilder {
         formatter.finish()
     }
 }
+

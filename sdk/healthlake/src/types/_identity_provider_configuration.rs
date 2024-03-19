@@ -3,7 +3,7 @@
 /// <p>The identity provider configuration that you gave when the data store was created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityProviderConfiguration {
+pub struct IdentityProviderConfiguration  {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
     pub authorization_strategy: crate::types::AuthorizationStrategy,
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
@@ -18,9 +18,9 @@ pub struct IdentityProviderConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
     pub idp_lambda_arn: ::std::option::Option<::std::string::String>,
 }
-impl IdentityProviderConfiguration {
+impl  IdentityProviderConfiguration  {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub fn authorization_strategy(&self) -> &crate::types::AuthorizationStrategy {
+    pub fn authorization_strategy(&self) -> & crate::types::AuthorizationStrategy {
         &self.authorization_strategy
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
@@ -33,11 +33,11 @@ impl IdentityProviderConfiguration {
     /// <p><code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
     /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
     /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
-    pub fn idp_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn idp_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.idp_lambda_arn.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl IdentityProviderConfigurationBuilder {
     }
     /// <p>The authorization strategy that you selected when you created the data store.</p>
     pub fn set_authorization_strategy(mut self, input: ::std::option::Option<crate::types::AuthorizationStrategy>) -> Self {
-        self.authorization_strategy = input;
-        self
+        self.authorization_strategy = input; self
     }
     /// <p>The authorization strategy that you selected when you created the data store.</p>
     pub fn get_authorization_strategy(&self) -> &::std::option::Option<crate::types::AuthorizationStrategy> {
@@ -80,8 +79,7 @@ impl IdentityProviderConfigurationBuilder {
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fn set_fine_grained_authorization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fine_grained_authorization_enabled = input;
-        self
+        self.fine_grained_authorization_enabled = input; self
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fn get_fine_grained_authorization_enabled(&self) -> &::std::option::Option<bool> {
@@ -104,8 +102,7 @@ impl IdentityProviderConfigurationBuilder {
     /// <p><code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
     /// <p><code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
     /// <p><code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
@@ -123,8 +120,7 @@ impl IdentityProviderConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
     pub fn set_idp_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idp_lambda_arn = input;
-        self
+        self.idp_lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
     pub fn get_idp_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,16 +130,22 @@ impl IdentityProviderConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`authorization_strategy`](crate::types::builders::IdentityProviderConfigurationBuilder::authorization_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IdentityProviderConfiguration {
-            authorization_strategy: self.authorization_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "authorization_strategy",
-                    "authorization_strategy was not specified but it is required when building IdentityProviderConfiguration",
-                )
-            })?,
-            fine_grained_authorization_enabled: self.fine_grained_authorization_enabled.unwrap_or_default(),
-            metadata: self.metadata,
-            idp_lambda_arn: self.idp_lambda_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IdentityProviderConfiguration {
+                authorization_strategy: self.authorization_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("authorization_strategy", "authorization_strategy was not specified but it is required when building IdentityProviderConfiguration")
+                    )?
+                ,
+                fine_grained_authorization_enabled: self.fine_grained_authorization_enabled
+                    .unwrap_or_default()
+                ,
+                metadata: self.metadata
+                ,
+                idp_lambda_arn: self.idp_lambda_arn
+                ,
+            }
+        )
     }
 }
+

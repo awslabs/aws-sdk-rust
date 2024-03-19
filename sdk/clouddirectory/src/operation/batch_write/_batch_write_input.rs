@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchWriteInput {
+pub struct BatchWriteInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::BatchWriteOperation>>,
 }
-impl BatchWriteInput {
+impl  BatchWriteInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A list of operations that are part of the batch.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::BatchWriteOperation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::BatchWriteOperation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchWriteInput {
@@ -32,7 +33,7 @@ impl BatchWriteInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchWriteInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::BatchWriteOperation>>,
 }
 impl BatchWriteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
@@ -43,8 +44,7 @@ impl BatchWriteInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl BatchWriteInputBuilder {
     /// <p>A list of operations that are part of the batch.</p>
     pub fn operations(mut self, input: crate::types::BatchWriteOperation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchWriteOperation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchWriteOperation>> {
         &self.operations
     }
     /// Consumes the builder and constructs a [`BatchWriteInput`](crate::operation::batch_write::BatchWriteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_write::BatchWriteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_write::BatchWriteInput {
-            directory_arn: self.directory_arn,
-            operations: self.operations,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::batch_write::BatchWriteInput {
+                directory_arn: self.directory_arn
+                ,
+                operations: self.operations
+                ,
+            }
+        )
     }
 }
+

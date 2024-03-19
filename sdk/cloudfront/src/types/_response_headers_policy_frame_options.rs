@@ -4,21 +4,21 @@
 /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyFrameOptions {
+pub struct ResponseHeadersPolicyFrameOptions  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub r#override: bool,
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub frame_option: crate::types::FrameOptionsList,
 }
-impl ResponseHeadersPolicyFrameOptions {
+impl  ResponseHeadersPolicyFrameOptions  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    pub fn frame_option(&self) -> &crate::types::FrameOptionsList {
+    pub fn frame_option(&self) -> & crate::types::FrameOptionsList {
         &self.frame_option
     }
 }
@@ -45,8 +45,7 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn set_frame_option(mut self, input: ::std::option::Option<crate::types::FrameOptionsList>) -> Self {
-        self.frame_option = input;
-        self
+        self.frame_option = input; self
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
@@ -75,19 +73,20 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::r#override)
     /// - [`frame_option`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::frame_option)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyFrameOptions {
-            r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#override",
-                    "r#override was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
-                )
-            })?,
-            frame_option: self.frame_option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frame_option",
-                    "frame_option was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyFrameOptions {
+                r#override: self.r#override
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#override", "r#override was not specified but it is required when building ResponseHeadersPolicyFrameOptions")
+                    )?
+                ,
+                frame_option: self.frame_option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frame_option", "frame_option was not specified but it is required when building ResponseHeadersPolicyFrameOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

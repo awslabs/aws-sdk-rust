@@ -3,22 +3,20 @@
 /// <p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that is used in conjunction with the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName">KeyName</a> and <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values">Values</a> parameters to search for profiles using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalSearchKey {
+pub struct AdditionalSearchKey  {
     /// <p>A searchable identifier of a customer profile.</p>
     pub key_name: ::std::string::String,
     /// <p>A list of key values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl AdditionalSearchKey {
+impl  AdditionalSearchKey  {
     /// <p>A searchable identifier of a customer profile.</p>
-    pub fn key_name(&self) -> &str {
-        use std::ops::Deref;
-        self.key_name.deref()
+    pub fn key_name(&self) -> & str {
+        use std::ops::Deref; self.key_name.deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl AdditionalSearchKey {
@@ -33,7 +31,7 @@ impl AdditionalSearchKey {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalSearchKeyBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AdditionalSearchKeyBuilder {
     /// <p>A searchable identifier of a customer profile.</p>
@@ -44,8 +42,7 @@ impl AdditionalSearchKeyBuilder {
     }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl AdditionalSearchKeyBuilder {
     /// <p>A list of key values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>A list of key values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`AdditionalSearchKey`](crate::types::AdditionalSearchKey).
@@ -76,19 +72,20 @@ impl AdditionalSearchKeyBuilder {
     /// - [`key_name`](crate::types::builders::AdditionalSearchKeyBuilder::key_name)
     /// - [`values`](crate::types::builders::AdditionalSearchKeyBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::AdditionalSearchKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AdditionalSearchKey {
-            key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_name",
-                    "key_name was not specified but it is required when building AdditionalSearchKey",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building AdditionalSearchKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AdditionalSearchKey {
+                key_name: self.key_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_name", "key_name was not specified but it is required when building AdditionalSearchKey")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building AdditionalSearchKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLunaClientInput {
+pub struct DeleteLunaClientInput  {
     /// <p>The ARN of the client to delete.</p>
     pub client_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLunaClientInput {
+impl  DeleteLunaClientInput  {
     /// <p>The ARN of the client to delete.</p>
-    pub fn client_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<& str> {
         self.client_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteLunaClientInputBuilder {
     }
     /// <p>The ARN of the client to delete.</p>
     pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_arn = input;
-        self
+        self.client_arn = input; self
     }
     /// <p>The ARN of the client to delete.</p>
     pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_arn
     }
     /// Consumes the builder and constructs a [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_luna_client::DeleteLunaClientInput { client_arn: self.client_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_luna_client::DeleteLunaClientInput {
+                client_arn: self.client_arn
+                ,
+            }
+        )
     }
 }
+

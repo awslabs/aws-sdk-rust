@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseConfigurationOutput {
+pub struct GetLicenseConfigurationOutput  {
     /// <p>Unique ID for the license configuration.</p>
     pub license_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -14,7 +14,7 @@ pub struct GetLicenseConfigurationOutput {
     /// <p>Dimension for which the licenses are counted.</p>
     pub license_counting_type: ::std::option::Option<crate::types::LicenseCountingType>,
     /// <p>License rules.</p>
-    pub license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub license_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Number of available licenses.</p>
     pub license_count: ::std::option::Option<i64>,
     /// <p>Sets the number of available licenses as a hard limit.</p>
@@ -26,45 +26,46 @@ pub struct GetLicenseConfigurationOutput {
     /// <p>Account ID of the owner of the license configuration.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Summaries of the licenses consumed by resources.</p>
-    pub consumed_license_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>>,
+    pub consumed_license_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedLicenseSummary>>,
     /// <p>Summaries of the managed resources.</p>
-    pub managed_resource_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>,
+    pub managed_resource_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedResourceSummary>>,
     /// <p>Tags for the license configuration.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Product information.</p>
-    pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    pub product_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>,
     /// <p>Automated discovery information.</p>
     pub automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl GetLicenseConfigurationOutput {
+impl  GetLicenseConfigurationOutput  {
     /// <p>Unique ID for the license configuration.</p>
-    pub fn license_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_id(&self) -> ::std::option::Option<& str> {
         self.license_configuration_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Name of the license configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Dimension for which the licenses are counted.</p>
-    pub fn license_counting_type(&self) -> ::std::option::Option<&crate::types::LicenseCountingType> {
+    pub fn license_counting_type(&self) -> ::std::option::Option<& crate::types::LicenseCountingType> {
         self.license_counting_type.as_ref()
     }
     /// <p>License rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_rules.is_none()`.
-    pub fn license_rules(&self) -> &[::std::string::String] {
-        self.license_rules.as_deref().unwrap_or_default()
+    pub fn license_rules(&self) -> & [::std::string::String] {
+        self.license_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Number of available licenses.</p>
     pub fn license_count(&self) -> ::std::option::Option<i64> {
@@ -79,39 +80,43 @@ impl GetLicenseConfigurationOutput {
         self.consumed_licenses
     }
     /// <p>License configuration status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Account ID of the owner of the license configuration.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>Summaries of the licenses consumed by resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_license_summary_list.is_none()`.
-    pub fn consumed_license_summary_list(&self) -> &[crate::types::ConsumedLicenseSummary] {
-        self.consumed_license_summary_list.as_deref().unwrap_or_default()
+    pub fn consumed_license_summary_list(&self) -> & [crate::types::ConsumedLicenseSummary] {
+        self.consumed_license_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Summaries of the managed resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_resource_summary_list.is_none()`.
-    pub fn managed_resource_summary_list(&self) -> &[crate::types::ManagedResourceSummary] {
-        self.managed_resource_summary_list.as_deref().unwrap_or_default()
+    pub fn managed_resource_summary_list(&self) -> & [crate::types::ManagedResourceSummary] {
+        self.managed_resource_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags for the license configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Product information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_list.is_none()`.
-    pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
-        self.product_information_list.as_deref().unwrap_or_default()
+    pub fn product_information_list(&self) -> & [crate::types::ProductInformation] {
+        self.product_information_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Automated discovery information.</p>
-    pub fn automated_discovery_information(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryInformation> {
+    pub fn automated_discovery_information(&self) -> ::std::option::Option<& crate::types::AutomatedDiscoveryInformation> {
         self.automated_discovery_information.as_ref()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -120,10 +125,10 @@ impl GetLicenseConfigurationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetLicenseConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationOutput`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput).
     pub fn builder() -> crate::operation::get_license_configuration::builders::GetLicenseConfigurationOutputBuilder {
@@ -140,16 +145,16 @@ pub struct GetLicenseConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) license_counting_type: ::std::option::Option<crate::types::LicenseCountingType>,
-    pub(crate) license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) license_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) license_count: ::std::option::Option<i64>,
     pub(crate) license_count_hard_limit: ::std::option::Option<bool>,
     pub(crate) consumed_licenses: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) consumed_license_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>>,
-    pub(crate) managed_resource_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    pub(crate) consumed_license_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedLicenseSummary>>,
+    pub(crate) managed_resource_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedResourceSummary>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>,
     pub(crate) automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
     pub(crate) disassociate_when_not_found: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -162,8 +167,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Unique ID for the license configuration.</p>
     pub fn set_license_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_id = input;
-        self
+        self.license_configuration_id = input; self
     }
     /// <p>Unique ID for the license configuration.</p>
     pub fn get_license_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +180,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +193,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Name of the license configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the license configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +206,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Description of the license configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the license configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +219,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Dimension for which the licenses are counted.</p>
     pub fn set_license_counting_type(mut self, input: ::std::option::Option<crate::types::LicenseCountingType>) -> Self {
-        self.license_counting_type = input;
-        self
+        self.license_counting_type = input; self
     }
     /// <p>Dimension for which the licenses are counted.</p>
     pub fn get_license_counting_type(&self) -> &::std::option::Option<crate::types::LicenseCountingType> {
@@ -232,17 +232,16 @@ impl GetLicenseConfigurationOutputBuilder {
     /// <p>License rules.</p>
     pub fn license_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_rules.unwrap_or_default();
-        v.push(input.into());
-        self.license_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.license_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>License rules.</p>
-    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.license_rules = input;
-        self
+    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.license_rules = input; self
     }
     /// <p>License rules.</p>
-    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.license_rules
     }
     /// <p>Number of available licenses.</p>
@@ -252,8 +251,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Number of available licenses.</p>
     pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.license_count = input;
-        self
+        self.license_count = input; self
     }
     /// <p>Number of available licenses.</p>
     pub fn get_license_count(&self) -> &::std::option::Option<i64> {
@@ -266,8 +264,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Sets the number of available licenses as a hard limit.</p>
     pub fn set_license_count_hard_limit(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.license_count_hard_limit = input;
-        self
+        self.license_count_hard_limit = input; self
     }
     /// <p>Sets the number of available licenses as a hard limit.</p>
     pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
@@ -280,8 +277,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Number of licenses assigned to resources.</p>
     pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.consumed_licenses = input;
-        self
+        self.consumed_licenses = input; self
     }
     /// <p>Number of licenses assigned to resources.</p>
     pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
@@ -294,8 +290,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>License configuration status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>License configuration status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +303,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Account ID of the owner of the license configuration.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>Account ID of the owner of the license configuration.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,17 +316,16 @@ impl GetLicenseConfigurationOutputBuilder {
     /// <p>Summaries of the licenses consumed by resources.</p>
     pub fn consumed_license_summary_list(mut self, input: crate::types::ConsumedLicenseSummary) -> Self {
         let mut v = self.consumed_license_summary_list.unwrap_or_default();
-        v.push(input);
-        self.consumed_license_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.consumed_license_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries of the licenses consumed by resources.</p>
-    pub fn set_consumed_license_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>>) -> Self {
-        self.consumed_license_summary_list = input;
-        self
+    pub fn set_consumed_license_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConsumedLicenseSummary>>) -> Self {
+        self.consumed_license_summary_list = input; self
     }
     /// <p>Summaries of the licenses consumed by resources.</p>
-    pub fn get_consumed_license_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedLicenseSummary>> {
+    pub fn get_consumed_license_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConsumedLicenseSummary>> {
         &self.consumed_license_summary_list
     }
     /// Appends an item to `managed_resource_summary_list`.
@@ -342,17 +335,16 @@ impl GetLicenseConfigurationOutputBuilder {
     /// <p>Summaries of the managed resources.</p>
     pub fn managed_resource_summary_list(mut self, input: crate::types::ManagedResourceSummary) -> Self {
         let mut v = self.managed_resource_summary_list.unwrap_or_default();
-        v.push(input);
-        self.managed_resource_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_resource_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries of the managed resources.</p>
-    pub fn set_managed_resource_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>) -> Self {
-        self.managed_resource_summary_list = input;
-        self
+    pub fn set_managed_resource_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedResourceSummary>>) -> Self {
+        self.managed_resource_summary_list = input; self
     }
     /// <p>Summaries of the managed resources.</p>
-    pub fn get_managed_resource_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>> {
+    pub fn get_managed_resource_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedResourceSummary>> {
         &self.managed_resource_summary_list
     }
     /// Appends an item to `tags`.
@@ -362,17 +354,16 @@ impl GetLicenseConfigurationOutputBuilder {
     /// <p>Tags for the license configuration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags for the license configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the license configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `product_information_list`.
@@ -382,17 +373,16 @@ impl GetLicenseConfigurationOutputBuilder {
     /// <p>Product information.</p>
     pub fn product_information_list(mut self, input: crate::types::ProductInformation) -> Self {
         let mut v = self.product_information_list.unwrap_or_default();
-        v.push(input);
-        self.product_information_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_information_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Product information.</p>
-    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>) -> Self {
-        self.product_information_list = input;
-        self
+    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>) -> Self {
+        self.product_information_list = input; self
     }
     /// <p>Product information.</p>
-    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>> {
         &self.product_information_list
     }
     /// <p>Automated discovery information.</p>
@@ -402,8 +392,7 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>Automated discovery information.</p>
     pub fn set_automated_discovery_information(mut self, input: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>) -> Self {
-        self.automated_discovery_information = input;
-        self
+        self.automated_discovery_information = input; self
     }
     /// <p>Automated discovery information.</p>
     pub fn get_automated_discovery_information(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryInformation> {
@@ -416,43 +405,60 @@ impl GetLicenseConfigurationOutputBuilder {
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disassociate_when_not_found = input;
-        self
+        self.disassociate_when_not_found = input; self
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         &self.disassociate_when_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLicenseConfigurationOutput`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput).
     pub fn build(self) -> crate::operation::get_license_configuration::GetLicenseConfigurationOutput {
         crate::operation::get_license_configuration::GetLicenseConfigurationOutput {
-            license_configuration_id: self.license_configuration_id,
-            license_configuration_arn: self.license_configuration_arn,
-            name: self.name,
-            description: self.description,
-            license_counting_type: self.license_counting_type,
-            license_rules: self.license_rules,
-            license_count: self.license_count,
-            license_count_hard_limit: self.license_count_hard_limit,
-            consumed_licenses: self.consumed_licenses,
-            status: self.status,
-            owner_account_id: self.owner_account_id,
-            consumed_license_summary_list: self.consumed_license_summary_list,
-            managed_resource_summary_list: self.managed_resource_summary_list,
-            tags: self.tags,
-            product_information_list: self.product_information_list,
-            automated_discovery_information: self.automated_discovery_information,
-            disassociate_when_not_found: self.disassociate_when_not_found,
+            license_configuration_id: self.license_configuration_id
+            ,
+            license_configuration_arn: self.license_configuration_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            license_counting_type: self.license_counting_type
+            ,
+            license_rules: self.license_rules
+            ,
+            license_count: self.license_count
+            ,
+            license_count_hard_limit: self.license_count_hard_limit
+            ,
+            consumed_licenses: self.consumed_licenses
+            ,
+            status: self.status
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            consumed_license_summary_list: self.consumed_license_summary_list
+            ,
+            managed_resource_summary_list: self.managed_resource_summary_list
+            ,
+            tags: self.tags
+            ,
+            product_information_list: self.product_information_list
+            ,
+            automated_discovery_information: self.automated_discovery_information
+            ,
+            disassociate_when_not_found: self.disassociate_when_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

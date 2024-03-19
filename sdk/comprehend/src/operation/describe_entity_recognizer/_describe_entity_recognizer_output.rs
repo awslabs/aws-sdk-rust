@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityRecognizerOutput {
+pub struct DescribeEntityRecognizerOutput  {
     /// <p>Describes information associated with an entity recognizer.</p>
     pub entity_recognizer_properties: ::std::option::Option<crate::types::EntityRecognizerProperties>,
     _request_id: Option<String>,
 }
-impl DescribeEntityRecognizerOutput {
+impl  DescribeEntityRecognizerOutput  {
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn entity_recognizer_properties(&self) -> ::std::option::Option<&crate::types::EntityRecognizerProperties> {
+    pub fn entity_recognizer_properties(&self) -> ::std::option::Option<& crate::types::EntityRecognizerProperties> {
         self.entity_recognizer_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEntityRecognizerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
     pub fn builder() -> crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeEntityRecognizerOutputBuilder {
     }
     /// <p>Describes information associated with an entity recognizer.</p>
     pub fn set_entity_recognizer_properties(mut self, input: ::std::option::Option<crate::types::EntityRecognizerProperties>) -> Self {
-        self.entity_recognizer_properties = input;
-        self
+        self.entity_recognizer_properties = input; self
     }
     /// <p>Describes information associated with an entity recognizer.</p>
     pub fn get_entity_recognizer_properties(&self) -> &::std::option::Option<crate::types::EntityRecognizerProperties> {
         &self.entity_recognizer_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
     pub fn build(self) -> crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput {
         crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput {
-            entity_recognizer_properties: self.entity_recognizer_properties,
+            entity_recognizer_properties: self.entity_recognizer_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

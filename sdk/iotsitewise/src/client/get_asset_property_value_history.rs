@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetAssetPropertyValueHistory`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`asset_id(impl Into<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_asset_id):<br>required: **false**<br><p>The ID of the asset, in UUID format.</p><br>
     ///   - [`property_id(impl Into<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::property_id) / [`set_property_id(Option<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_property_id):<br>required: **false**<br><p>The ID of the asset property, in UUID format.</p><br>
     ///   - [`property_alias(impl Into<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::property_alias) / [`set_property_alias(Option<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_property_alias):<br>required: **false**<br><p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p><br>
@@ -13,13 +13,12 @@ impl super::Client {
     ///   - [`time_ordering(TimeOrdering)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::time_ordering) / [`set_time_ordering(Option<TimeOrdering>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_time_ordering):<br>required: **false**<br><p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code></p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul>  <li>   <p>The size of the result set is equal to 4 MB.</p></li>  <li>   <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li> </ul><br>
-    /// - On success, responds with [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput) with field(s):
+                            /// - On success, responds with [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput) with field(s):
     ///   - [`asset_property_value_history(Vec::<AssetPropertyValue>)`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput::asset_property_value_history): <p>The asset property's value history.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<GetAssetPropertyValueHistoryError>`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError)
-    pub fn get_asset_property_value_history(
-        &self,
-    ) -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder {
-        crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetAssetPropertyValueHistoryError>`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError)
+    pub fn get_asset_property_value_history(&self) -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder {
+                                crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

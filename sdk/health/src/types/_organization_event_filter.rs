@@ -3,15 +3,15 @@
 /// <p>The values to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationEventFilter {
+pub struct OrganizationEventFilter  {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_type_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub start_time: ::std::option::Option<crate::types::DateTimeRange>,
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
@@ -19,74 +19,82 @@ pub struct OrganizationEventFilter {
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub last_updated_time: ::std::option::Option<crate::types::DateTimeRange>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
-    pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    pub event_type_categories: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>,
     /// <p>A list of event status codes.</p>
-    pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    pub event_status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>,
 }
-impl OrganizationEventFilter {
+impl  OrganizationEventFilter  {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_codes.is_none()`.
-    pub fn event_type_codes(&self) -> &[::std::string::String] {
-        self.event_type_codes.as_deref().unwrap_or_default()
+    pub fn event_type_codes(&self) -> & [::std::string::String] {
+        self.event_type_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
-    pub fn aws_account_ids(&self) -> &[::std::string::String] {
-        self.aws_account_ids.as_deref().unwrap_or_default()
+    pub fn aws_account_ids(&self) -> & [::std::string::String] {
+        self.aws_account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[::std::string::String] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [::std::string::String] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&crate::types::DateTimeRange> {
+    pub fn start_time(&self) -> ::std::option::Option<& crate::types::DateTimeRange> {
         self.start_time.as_ref()
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&crate::types::DateTimeRange> {
+    pub fn end_time(&self) -> ::std::option::Option<& crate::types::DateTimeRange> {
         self.end_time.as_ref()
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&crate::types::DateTimeRange> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& crate::types::DateTimeRange> {
         self.last_updated_time.as_ref()
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_arns.is_none()`.
-    pub fn entity_arns(&self) -> &[::std::string::String] {
-        self.entity_arns.as_deref().unwrap_or_default()
+    pub fn entity_arns(&self) -> & [::std::string::String] {
+        self.entity_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_values.is_none()`.
-    pub fn entity_values(&self) -> &[::std::string::String] {
-        self.entity_values.as_deref().unwrap_or_default()
+    pub fn entity_values(&self) -> & [::std::string::String] {
+        self.entity_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_categories.is_none()`.
-    pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
-        self.event_type_categories.as_deref().unwrap_or_default()
+    pub fn event_type_categories(&self) -> & [crate::types::EventTypeCategory] {
+        self.event_type_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of event status codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_status_codes.is_none()`.
-    pub fn event_status_codes(&self) -> &[crate::types::EventStatusCode] {
-        self.event_status_codes.as_deref().unwrap_or_default()
+    pub fn event_status_codes(&self) -> & [crate::types::EventStatusCode] {
+        self.event_status_codes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OrganizationEventFilter {
@@ -100,17 +108,17 @@ impl OrganizationEventFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationEventFilterBuilder {
-    pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<crate::types::DateTimeRange>,
     pub(crate) end_time: ::std::option::Option<crate::types::DateTimeRange>,
     pub(crate) last_updated_time: ::std::option::Option<crate::types::DateTimeRange>,
-    pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) entity_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>,
+    pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>,
 }
 impl OrganizationEventFilterBuilder {
     /// Appends an item to `event_type_codes`.
@@ -120,17 +128,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
     pub fn event_type_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_type_codes.unwrap_or_default();
-        v.push(input.into());
-        self.event_type_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_type_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub fn set_event_type_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_type_codes = input;
-        self
+    pub fn set_event_type_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_type_codes = input; self
     }
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub fn get_event_type_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_type_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_type_codes
     }
     /// Appends an item to `aws_account_ids`.
@@ -140,17 +147,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.aws_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_account_ids = input;
-        self
+    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_account_ids = input; self
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_account_ids
     }
     /// Appends an item to `services`.
@@ -160,17 +166,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input.into());
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.services = input; self
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.services
     }
     /// Appends an item to `regions`.
@@ -180,17 +185,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of Amazon Web Services Regions.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
@@ -200,8 +204,7 @@ impl OrganizationEventFilterBuilder {
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::DateTimeRange>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
@@ -214,8 +217,7 @@ impl OrganizationEventFilterBuilder {
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<crate::types::DateTimeRange>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
@@ -228,8 +230,7 @@ impl OrganizationEventFilterBuilder {
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<crate::types::DateTimeRange>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
@@ -242,17 +243,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of entity ARNs (unique identifiers).</p>
     pub fn entity_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_arns.unwrap_or_default();
-        v.push(input.into());
-        self.entity_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn set_entity_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_arns = input;
-        self
+    pub fn set_entity_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_arns = input; self
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn get_entity_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_arns
     }
     /// Appends an item to `entity_values`.
@@ -262,17 +262,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
     pub fn entity_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_values.unwrap_or_default();
-        v.push(input.into());
-        self.entity_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
-    pub fn set_entity_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_values = input;
-        self
+    pub fn set_entity_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_values = input; self
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
-    pub fn get_entity_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_values
     }
     /// Appends an item to `event_type_categories`.
@@ -282,17 +281,16 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn event_type_categories(mut self, input: crate::types::EventTypeCategory) -> Self {
         let mut v = self.event_type_categories.unwrap_or_default();
-        v.push(input);
-        self.event_type_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_type_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn set_event_type_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>) -> Self {
-        self.event_type_categories = input;
-        self
+    pub fn set_event_type_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>) -> Self {
+        self.event_type_categories = input; self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
+    pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>> {
         &self.event_type_categories
     }
     /// Appends an item to `event_status_codes`.
@@ -302,33 +300,44 @@ impl OrganizationEventFilterBuilder {
     /// <p>A list of event status codes.</p>
     pub fn event_status_codes(mut self, input: crate::types::EventStatusCode) -> Self {
         let mut v = self.event_status_codes.unwrap_or_default();
-        v.push(input);
-        self.event_status_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_status_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event status codes.</p>
-    pub fn set_event_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>) -> Self {
-        self.event_status_codes = input;
-        self
+    pub fn set_event_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>) -> Self {
+        self.event_status_codes = input; self
     }
     /// <p>A list of event status codes.</p>
-    pub fn get_event_status_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>> {
+    pub fn get_event_status_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>> {
         &self.event_status_codes
     }
     /// Consumes the builder and constructs a [`OrganizationEventFilter`](crate::types::OrganizationEventFilter).
     pub fn build(self) -> crate::types::OrganizationEventFilter {
         crate::types::OrganizationEventFilter {
-            event_type_codes: self.event_type_codes,
-            aws_account_ids: self.aws_account_ids,
-            services: self.services,
-            regions: self.regions,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            last_updated_time: self.last_updated_time,
-            entity_arns: self.entity_arns,
-            entity_values: self.entity_values,
-            event_type_categories: self.event_type_categories,
-            event_status_codes: self.event_status_codes,
+            event_type_codes: self.event_type_codes
+            ,
+            aws_account_ids: self.aws_account_ids
+            ,
+            services: self.services
+            ,
+            regions: self.regions
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            entity_arns: self.entity_arns
+            ,
+            entity_values: self.entity_values
+            ,
+            event_type_categories: self.event_type_categories
+            ,
+            event_status_codes: self.event_status_codes
+            ,
         }
     }
 }
+

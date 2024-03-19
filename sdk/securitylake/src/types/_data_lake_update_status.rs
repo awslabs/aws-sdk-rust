@@ -3,7 +3,7 @@
 /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request. This is set to Completed after the configuration is updated, or removed if deletion of the data lake is successful.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeUpdateStatus {
+pub struct DataLakeUpdateStatus  {
     /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
@@ -11,17 +11,17 @@ pub struct DataLakeUpdateStatus {
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
     pub exception: ::std::option::Option<crate::types::DataLakeUpdateException>,
 }
-impl DataLakeUpdateStatus {
+impl  DataLakeUpdateStatus  {
     /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataLakeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataLakeStatus> {
         self.status.as_ref()
     }
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
-    pub fn exception(&self) -> ::std::option::Option<&crate::types::DataLakeUpdateException> {
+    pub fn exception(&self) -> ::std::option::Option<& crate::types::DataLakeUpdateException> {
         self.exception.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DataLakeUpdateStatusBuilder {
     }
     /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DataLakeUpdateStatusBuilder {
     }
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataLakeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request that was requested.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataLakeStatus> {
@@ -76,8 +74,7 @@ impl DataLakeUpdateStatusBuilder {
     }
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
     pub fn set_exception(mut self, input: ::std::option::Option<crate::types::DataLakeUpdateException>) -> Self {
-        self.exception = input;
-        self
+        self.exception = input; self
     }
     /// <p>The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request which failed.</p>
     pub fn get_exception(&self) -> &::std::option::Option<crate::types::DataLakeUpdateException> {
@@ -86,9 +83,13 @@ impl DataLakeUpdateStatusBuilder {
     /// Consumes the builder and constructs a [`DataLakeUpdateStatus`](crate::types::DataLakeUpdateStatus).
     pub fn build(self) -> crate::types::DataLakeUpdateStatus {
         crate::types::DataLakeUpdateStatus {
-            request_id: self.request_id,
-            status: self.status,
-            exception: self.exception,
+            request_id: self.request_id
+            ,
+            status: self.status
+            ,
+            exception: self.exception
+            ,
         }
     }
 }
+

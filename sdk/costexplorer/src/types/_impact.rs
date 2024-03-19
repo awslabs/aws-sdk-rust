@@ -3,7 +3,7 @@
 /// <p>The dollar value of the anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Impact {
+pub struct Impact  {
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
     pub max_impact: f64,
     /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
@@ -15,7 +15,7 @@ pub struct Impact {
     /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
     pub total_impact_percentage: ::std::option::Option<f64>,
 }
-impl Impact {
+impl  Impact  {
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
     pub fn max_impact(&self) -> f64 {
         self.max_impact
@@ -63,8 +63,7 @@ impl ImpactBuilder {
     }
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
     pub fn set_max_impact(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_impact = input;
-        self
+        self.max_impact = input; self
     }
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
     pub fn get_max_impact(&self) -> &::std::option::Option<f64> {
@@ -77,8 +76,7 @@ impl ImpactBuilder {
     }
     /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
     pub fn set_total_impact(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_impact = input;
-        self
+        self.total_impact = input; self
     }
     /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
     pub fn get_total_impact(&self) -> &::std::option::Option<f64> {
@@ -91,8 +89,7 @@ impl ImpactBuilder {
     }
     /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
     pub fn set_total_actual_spend(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_actual_spend = input;
-        self
+        self.total_actual_spend = input; self
     }
     /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
     pub fn get_total_actual_spend(&self) -> &::std::option::Option<f64> {
@@ -105,8 +102,7 @@ impl ImpactBuilder {
     }
     /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
     pub fn set_total_expected_spend(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_expected_spend = input;
-        self
+        self.total_expected_spend = input; self
     }
     /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
     pub fn get_total_expected_spend(&self) -> &::std::option::Option<f64> {
@@ -119,8 +115,7 @@ impl ImpactBuilder {
     }
     /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
     pub fn set_total_impact_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_impact_percentage = input;
-        self
+        self.total_impact_percentage = input; self
     }
     /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
     pub fn get_total_impact_percentage(&self) -> &::std::option::Option<f64> {
@@ -129,11 +124,19 @@ impl ImpactBuilder {
     /// Consumes the builder and constructs a [`Impact`](crate::types::Impact).
     pub fn build(self) -> crate::types::Impact {
         crate::types::Impact {
-            max_impact: self.max_impact.unwrap_or_default(),
-            total_impact: self.total_impact.unwrap_or_default(),
-            total_actual_spend: self.total_actual_spend,
-            total_expected_spend: self.total_expected_spend,
-            total_impact_percentage: self.total_impact_percentage,
+            max_impact: self.max_impact
+                .unwrap_or_default()
+            ,
+            total_impact: self.total_impact
+                .unwrap_or_default()
+            ,
+            total_actual_spend: self.total_actual_spend
+            ,
+            total_expected_spend: self.total_expected_spend
+            ,
+            total_impact_percentage: self.total_impact_percentage
+            ,
         }
     }
 }
+

@@ -4,19 +4,19 @@
 /// <p>You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for Secrets Manager.</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecretsManagerSecretConfiguration {
+pub struct SecretsManagerSecretConfiguration  {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub secret_policy: ::std::option::Option<::std::string::String>,
 }
-impl SecretsManagerSecretConfiguration {
+impl  SecretsManagerSecretConfiguration  {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-    pub fn secret_policy(&self) -> ::std::option::Option<&str> {
+    pub fn secret_policy(&self) -> ::std::option::Option<& str> {
         self.secret_policy.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SecretsManagerSecretConfigurationBuilder {
     }
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SecretsManagerSecretConfigurationBuilder {
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub fn set_secret_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_policy = input;
-        self
+        self.secret_policy = input; self
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub fn get_secret_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl SecretsManagerSecretConfigurationBuilder {
     /// Consumes the builder and constructs a [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
     pub fn build(self) -> crate::types::SecretsManagerSecretConfiguration {
         crate::types::SecretsManagerSecretConfiguration {
-            kms_key_id: self.kms_key_id,
-            secret_policy: self.secret_policy,
+            kms_key_id: self.kms_key_id
+            ,
+            secret_policy: self.secret_policy
+            ,
         }
     }
 }
+

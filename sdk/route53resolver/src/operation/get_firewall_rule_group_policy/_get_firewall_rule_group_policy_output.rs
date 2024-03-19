@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFirewallRuleGroupPolicyOutput {
+pub struct GetFirewallRuleGroupPolicyOutput  {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetFirewallRuleGroupPolicyOutput {
+impl  GetFirewallRuleGroupPolicyOutput  {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
-    pub fn firewall_rule_group_policy(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_rule_group_policy(&self) -> ::std::option::Option<& str> {
         self.firewall_rule_group_policy.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFirewallRuleGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput).
     pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetFirewallRuleGroupPolicyOutputBuilder {
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn set_firewall_rule_group_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_rule_group_policy = input;
-        self
+        self.firewall_rule_group_policy = input; self
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).</p>
     pub fn get_firewall_rule_group_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput).
     pub fn build(self) -> crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput {
         crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput {
-            firewall_rule_group_policy: self.firewall_rule_group_policy,
+            firewall_rule_group_policy: self.firewall_rule_group_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

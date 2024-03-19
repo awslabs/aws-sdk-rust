@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActionInput {
+pub struct DescribeActionInput  {
     /// <p>The ID of the action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeActionInput {
+impl  DescribeActionInput  {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeActionInputBuilder {
     }
     /// <p>The ID of the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
     /// Consumes the builder and constructs a [`DescribeActionInput`](crate::operation::describe_action::DescribeActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_action::DescribeActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_action::DescribeActionInput { action_id: self.action_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_action::DescribeActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_action::DescribeActionInput {
+                action_id: self.action_id
+                ,
+            }
+        )
     }
 }
+

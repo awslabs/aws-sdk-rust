@@ -3,7 +3,7 @@
 /// <p>Describes the media accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaDeviceInfo {
+pub struct MediaDeviceInfo  {
     /// <p>The number of media accelerators for the instance type.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The name of the media accelerator.</p>
@@ -13,21 +13,21 @@ pub struct MediaDeviceInfo {
     /// <p>Describes the memory available to the media accelerator.</p>
     pub memory_info: ::std::option::Option<crate::types::MediaDeviceMemoryInfo>,
 }
-impl MediaDeviceInfo {
+impl  MediaDeviceInfo  {
     /// <p>The number of media accelerators for the instance type.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The name of the media accelerator.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the media accelerator.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
     /// <p>Describes the memory available to the media accelerator.</p>
-    pub fn memory_info(&self) -> ::std::option::Option<&crate::types::MediaDeviceMemoryInfo> {
+    pub fn memory_info(&self) -> ::std::option::Option<& crate::types::MediaDeviceMemoryInfo> {
         self.memory_info.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MediaDeviceInfoBuilder {
     }
     /// <p>The number of media accelerators for the instance type.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of media accelerators for the instance type.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl MediaDeviceInfoBuilder {
     }
     /// <p>The name of the media accelerator.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the media accelerator.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl MediaDeviceInfoBuilder {
     }
     /// <p>The manufacturer of the media accelerator.</p>
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer = input;
-        self
+        self.manufacturer = input; self
     }
     /// <p>The manufacturer of the media accelerator.</p>
     pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MediaDeviceInfoBuilder {
     }
     /// <p>Describes the memory available to the media accelerator.</p>
     pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::MediaDeviceMemoryInfo>) -> Self {
-        self.memory_info = input;
-        self
+        self.memory_info = input; self
     }
     /// <p>Describes the memory available to the media accelerator.</p>
     pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::MediaDeviceMemoryInfo> {
@@ -107,10 +103,15 @@ impl MediaDeviceInfoBuilder {
     /// Consumes the builder and constructs a [`MediaDeviceInfo`](crate::types::MediaDeviceInfo).
     pub fn build(self) -> crate::types::MediaDeviceInfo {
         crate::types::MediaDeviceInfo {
-            count: self.count,
-            name: self.name,
-            manufacturer: self.manufacturer,
-            memory_info: self.memory_info,
+            count: self.count
+            ,
+            name: self.name
+            ,
+            manufacturer: self.manufacturer
+            ,
+            memory_info: self.memory_info
+            ,
         }
     }
 }
+

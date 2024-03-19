@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateActiveModelVersionOutput {
+pub struct UpdateActiveModelVersionOutput  {
     /// <p>The name of the machine learning model for which the active model version was set.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the machine learning model for which the active model version was set.</p>
@@ -17,13 +17,13 @@ pub struct UpdateActiveModelVersionOutput {
     pub previous_active_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateActiveModelVersionOutput {
+impl  UpdateActiveModelVersionOutput  {
     /// <p>The name of the machine learning model for which the active model version was set.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model for which the active model version was set.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The version that is currently active of the machine learning model for which the active model version was set.</p>
@@ -35,19 +35,19 @@ impl UpdateActiveModelVersionOutput {
         self.previous_active_version
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that is the current active model version.</p>
-    pub fn current_active_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn current_active_version_arn(&self) -> ::std::option::Option<& str> {
         self.current_active_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that was the previous active model version.</p>
-    pub fn previous_active_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn previous_active_version_arn(&self) -> ::std::option::Option<& str> {
         self.previous_active_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateActiveModelVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateActiveModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateActiveModelVersionOutput`](crate::operation::update_active_model_version::UpdateActiveModelVersionOutput).
     pub fn builder() -> crate::operation::update_active_model_version::builders::UpdateActiveModelVersionOutputBuilder {
@@ -75,8 +75,7 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The name of the machine learning model for which the active model version was set.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the machine learning model for which the active model version was set.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model for which the active model version was set.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model for which the active model version was set.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The version that is currently active of the machine learning model for which the active model version was set.</p>
     pub fn set_current_active_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_active_version = input;
-        self
+        self.current_active_version = input; self
     }
     /// <p>The version that is currently active of the machine learning model for which the active model version was set.</p>
     pub fn get_current_active_version(&self) -> &::std::option::Option<i64> {
@@ -117,8 +114,7 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The previous version that was active of the machine learning model for which the active model version was set.</p>
     pub fn set_previous_active_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.previous_active_version = input;
-        self
+        self.previous_active_version = input; self
     }
     /// <p>The previous version that was active of the machine learning model for which the active model version was set.</p>
     pub fn get_previous_active_version(&self) -> &::std::option::Option<i64> {
@@ -131,8 +127,7 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that is the current active model version.</p>
     pub fn set_current_active_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_active_version_arn = input;
-        self
+        self.current_active_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that is the current active model version.</p>
     pub fn get_current_active_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,38 @@ impl UpdateActiveModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that was the previous active model version.</p>
     pub fn set_previous_active_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.previous_active_version_arn = input;
-        self
+        self.previous_active_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model version that was the previous active model version.</p>
     pub fn get_previous_active_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_active_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateActiveModelVersionOutput`](crate::operation::update_active_model_version::UpdateActiveModelVersionOutput).
     pub fn build(self) -> crate::operation::update_active_model_version::UpdateActiveModelVersionOutput {
         crate::operation::update_active_model_version::UpdateActiveModelVersionOutput {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            current_active_version: self.current_active_version,
-            previous_active_version: self.previous_active_version,
-            current_active_version_arn: self.current_active_version_arn,
-            previous_active_version_arn: self.previous_active_version_arn,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            current_active_version: self.current_active_version
+            ,
+            previous_active_version: self.previous_active_version
+            ,
+            current_active_version_arn: self.current_active_version_arn
+            ,
+            previous_active_version_arn: self.previous_active_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

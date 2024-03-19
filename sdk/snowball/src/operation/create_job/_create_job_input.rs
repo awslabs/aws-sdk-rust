@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobInput {
+pub struct CreateJobInput  {
     /// <p>Defines the type of job that you're creating.</p>
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
@@ -61,40 +61,40 @@ pub struct CreateJobInput {
     /// <p>Information identifying the person picking up the device.</p>
     pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
 }
-impl CreateJobInput {
+impl  CreateJobInput  {
     /// <p>Defines the type of job that you're creating.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
     /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
     /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
-    pub fn resources(&self) -> ::std::option::Option<&crate::types::JobResource> {
+    pub fn resources(&self) -> ::std::option::Option<& crate::types::JobResource> {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn on_device_service_configuration(&self) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> ::std::option::Option<& crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
-    pub fn address_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<& str> {
         self.address_id.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_capacity_preference(&self) -> ::std::option::Option<&crate::types::SnowballCapacity> {
+    pub fn snowball_capacity_preference(&self) -> ::std::option::Option<& crate::types::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
@@ -108,15 +108,15 @@ impl CreateJobInput {
     /// <li>
     /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
-    pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> ::std::option::Option<& crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
-    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<& crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The type of Snow Family devices to use for this job.</p><note>
@@ -125,36 +125,36 @@ impl CreateJobInput {
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn snowball_type(&self) -> ::std::option::Option<&crate::types::SnowballType> {
+    pub fn snowball_type(&self) -> ::std::option::Option<& crate::types::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
-    pub fn forwarding_address_id(&self) -> ::std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> ::std::option::Option<& str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> ::std::option::Option<&crate::types::TaxDocuments> {
+    pub fn tax_documents(&self) -> ::std::option::Option<& crate::types::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>Defines the device configuration for an Snowcone job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfiguration> {
+    pub fn device_configuration(&self) -> ::std::option::Option<& crate::types::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
-    pub fn remote_management(&self) -> ::std::option::Option<&crate::types::RemoteManagement> {
+    pub fn remote_management(&self) -> ::std::option::Option<& crate::types::RemoteManagement> {
         self.remote_management.as_ref()
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> ::std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> ::std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
-    pub fn impact_level(&self) -> ::std::option::Option<&crate::types::ImpactLevel> {
+    pub fn impact_level(&self) -> ::std::option::Option<& crate::types::ImpactLevel> {
         self.impact_level.as_ref()
     }
     /// <p>Information identifying the person picking up the device.</p>
-    pub fn pickup_details(&self) -> ::std::option::Option<&crate::types::PickupDetails> {
+    pub fn pickup_details(&self) -> ::std::option::Option<& crate::types::PickupDetails> {
         self.pickup_details.as_ref()
     }
 }
@@ -197,8 +197,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Defines the type of job that you're creating.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>Defines the type of job that you're creating.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
@@ -215,8 +214,7 @@ impl CreateJobInputBuilder {
     /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
     /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
-        self.resources = input;
-        self
+        self.resources = input; self
     }
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
     /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
@@ -231,8 +229,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
-        self.on_device_service_configuration = input;
-        self
+        self.on_device_service_configuration = input; self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
@@ -245,8 +242,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +255,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_id = input;
-        self
+        self.address_id = input; self
     }
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
     pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +268,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +281,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,8 +296,7 @@ impl CreateJobInputBuilder {
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_snowball_capacity_preference(mut self, input: ::std::option::Option<crate::types::SnowballCapacity>) -> Self {
-        self.snowball_capacity_preference = input;
-        self
+        self.snowball_capacity_preference = input; self
     }
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -338,8 +330,7 @@ impl CreateJobInputBuilder {
     /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
-        self.shipping_option = input;
-        self
+        self.shipping_option = input; self
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -362,8 +353,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input;
-        self
+        self.notification = input; self
     }
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
@@ -376,8 +366,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +389,7 @@ impl CreateJobInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
-        self.snowball_type = input;
-        self
+        self.snowball_type = input; self
     }
     /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
@@ -419,8 +407,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
     pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forwarding_address_id = input;
-        self
+        self.forwarding_address_id = input; self
     }
     /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
     pub fn get_forwarding_address_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -433,8 +420,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn set_tax_documents(mut self, input: ::std::option::Option<crate::types::TaxDocuments>) -> Self {
-        self.tax_documents = input;
-        self
+        self.tax_documents = input; self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
@@ -449,8 +435,7 @@ impl CreateJobInputBuilder {
     /// <p>Defines the device configuration for an Snowcone job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfiguration>) -> Self {
-        self.device_configuration = input;
-        self
+        self.device_configuration = input; self
     }
     /// <p>Defines the device configuration for an Snowcone job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
@@ -464,8 +449,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
     pub fn set_remote_management(mut self, input: ::std::option::Option<crate::types::RemoteManagement>) -> Self {
-        self.remote_management = input;
-        self
+        self.remote_management = input; self
     }
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
     pub fn get_remote_management(&self) -> &::std::option::Option<crate::types::RemoteManagement> {
@@ -478,8 +462,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub fn set_long_term_pricing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_term_pricing_id = input;
-        self
+        self.long_term_pricing_id = input; self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub fn get_long_term_pricing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -492,8 +475,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
     pub fn set_impact_level(mut self, input: ::std::option::Option<crate::types::ImpactLevel>) -> Self {
-        self.impact_level = input;
-        self
+        self.impact_level = input; self
     }
     /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
     pub fn get_impact_level(&self) -> &::std::option::Option<crate::types::ImpactLevel> {
@@ -506,8 +488,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Information identifying the person picking up the device.</p>
     pub fn set_pickup_details(mut self, input: ::std::option::Option<crate::types::PickupDetails>) -> Self {
-        self.pickup_details = input;
-        self
+        self.pickup_details = input; self
     }
     /// <p>Information identifying the person picking up the device.</p>
     pub fn get_pickup_details(&self) -> &::std::option::Option<crate::types::PickupDetails> {
@@ -515,26 +496,48 @@ impl CreateJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
-            job_type: self.job_type,
-            resources: self.resources,
-            on_device_service_configuration: self.on_device_service_configuration,
-            description: self.description,
-            address_id: self.address_id,
-            kms_key_arn: self.kms_key_arn,
-            role_arn: self.role_arn,
-            snowball_capacity_preference: self.snowball_capacity_preference,
-            shipping_option: self.shipping_option,
-            notification: self.notification,
-            cluster_id: self.cluster_id,
-            snowball_type: self.snowball_type,
-            forwarding_address_id: self.forwarding_address_id,
-            tax_documents: self.tax_documents,
-            device_configuration: self.device_configuration,
-            remote_management: self.remote_management,
-            long_term_pricing_id: self.long_term_pricing_id,
-            impact_level: self.impact_level,
-            pickup_details: self.pickup_details,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_job::CreateJobInput {
+                job_type: self.job_type
+                ,
+                resources: self.resources
+                ,
+                on_device_service_configuration: self.on_device_service_configuration
+                ,
+                description: self.description
+                ,
+                address_id: self.address_id
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                snowball_capacity_preference: self.snowball_capacity_preference
+                ,
+                shipping_option: self.shipping_option
+                ,
+                notification: self.notification
+                ,
+                cluster_id: self.cluster_id
+                ,
+                snowball_type: self.snowball_type
+                ,
+                forwarding_address_id: self.forwarding_address_id
+                ,
+                tax_documents: self.tax_documents
+                ,
+                device_configuration: self.device_configuration
+                ,
+                remote_management: self.remote_management
+                ,
+                long_term_pricing_id: self.long_term_pricing_id
+                ,
+                impact_level: self.impact_level
+                ,
+                pickup_details: self.pickup_details
+                ,
+            }
+        )
     }
 }
+

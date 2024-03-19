@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStudioLifecycleConfigs`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p><br>
@@ -14,13 +14,12 @@ impl super::Client {
     ///   - [`modified_time_after(DateTime)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::modified_time_after) / [`set_modified_time_after(Option<DateTime>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_modified_time_after):<br>required: **false**<br><p>A filter that returns only Lifecycle Configurations modified after the specified time.</p><br>
     ///   - [`sort_by(StudioLifecycleConfigSortKey)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::sort_by) / [`set_sort_by(Option<StudioLifecycleConfigSortKey>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The property used to sort results. The default value is CreationTime.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is Descending.</p><br>
-    /// - On success, responds with [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput) with field(s):
+                            /// - On success, responds with [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     ///   - [`studio_lifecycle_configs(Option<Vec::<StudioLifecycleConfigDetails>>)`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput::studio_lifecycle_configs): <p>A list of Lifecycle Configurations and their properties.</p>
-    /// - On failure, responds with [`SdkError<ListStudioLifecycleConfigsError>`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError)
-    pub fn list_studio_lifecycle_configs(
-        &self,
-    ) -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder {
-        crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListStudioLifecycleConfigsError>`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError)
+    pub fn list_studio_lifecycle_configs(&self) -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder {
+                                crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

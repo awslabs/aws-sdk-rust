@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthPolicyOutput {
+pub struct GetAuthPolicyOutput  {
     /// <p>The auth policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the auth type is <code>NONE</code>, then any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
@@ -13,29 +13,29 @@ pub struct GetAuthPolicyOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetAuthPolicyOutput {
+impl  GetAuthPolicyOutput  {
     /// <p>The auth policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the auth type is <code>NONE</code>, then any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AuthPolicyState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AuthPolicyState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the auth policy was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the auth policy was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAuthPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAuthPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthPolicyOutput`](crate::operation::get_auth_policy::GetAuthPolicyOutput).
     pub fn builder() -> crate::operation::get_auth_policy::builders::GetAuthPolicyOutputBuilder {
@@ -61,8 +61,7 @@ impl GetAuthPolicyOutputBuilder {
     }
     /// <p>The auth policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The auth policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetAuthPolicyOutputBuilder {
     }
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the auth type is <code>NONE</code>, then any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AuthPolicyState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the auth type is <code>NONE</code>, then any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AuthPolicyState> {
@@ -89,8 +87,7 @@ impl GetAuthPolicyOutputBuilder {
     }
     /// <p>The date and time that the auth policy was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the auth policy was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,30 +100,34 @@ impl GetAuthPolicyOutputBuilder {
     }
     /// <p>The date and time that the auth policy was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the auth policy was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAuthPolicyOutput`](crate::operation::get_auth_policy::GetAuthPolicyOutput).
     pub fn build(self) -> crate::operation::get_auth_policy::GetAuthPolicyOutput {
         crate::operation::get_auth_policy::GetAuthPolicyOutput {
-            policy: self.policy,
-            state: self.state,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
+            policy: self.policy
+            ,
+            state: self.state
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

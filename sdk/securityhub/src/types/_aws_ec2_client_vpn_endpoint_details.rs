@@ -3,7 +3,7 @@
 /// <p>Describes an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointDetails {
+pub struct AwsEc2ClientVpnEndpointDetails  {
     /// <p>The ID of the Client VPN endpoint.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the endpoint.</p>
@@ -11,7 +11,7 @@ pub struct AwsEc2ClientVpnEndpointDetails {
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
     pub client_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the DNS servers to be used for DNS resolution.</p>
-    pub dns_server: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_server: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     pub split_tunnel: ::std::option::Option<bool>,
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
@@ -21,11 +21,11 @@ pub struct AwsEc2ClientVpnEndpointDetails {
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub server_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub authentication_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>,
+    pub authentication_options: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>,
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
     pub connection_log_options: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails>,
     /// <p>The IDs of the security groups for the target network.</p>
-    pub security_group_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the self-service portal.</p>
@@ -37,31 +37,32 @@ pub struct AwsEc2ClientVpnEndpointDetails {
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub client_login_banner_options: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails>,
 }
-impl AwsEc2ClientVpnEndpointDetails {
+impl  AwsEc2ClientVpnEndpointDetails  {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>A brief description of the endpoint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
-    pub fn client_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn client_cidr_block(&self) -> ::std::option::Option<& str> {
         self.client_cidr_block.as_deref()
     }
     /// <p>Information about the DNS servers to be used for DNS resolution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_server.is_none()`.
-    pub fn dns_server(&self) -> &[::std::string::String] {
-        self.dns_server.as_deref().unwrap_or_default()
+    pub fn dns_server(&self) -> & [::std::string::String] {
+        self.dns_server.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     pub fn split_tunnel(&self) -> ::std::option::Option<bool> {
         self.split_tunnel
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
-    pub fn transport_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn transport_protocol(&self) -> ::std::option::Option<& str> {
         self.transport_protocol.as_deref()
     }
     /// <p>The port number for the Client VPN endpoint.</p>
@@ -69,35 +70,37 @@ impl AwsEc2ClientVpnEndpointDetails {
         self.vpn_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    pub fn server_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.server_certificate_arn.as_deref()
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_options.is_none()`.
-    pub fn authentication_options(&self) -> &[crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails] {
-        self.authentication_options.as_deref().unwrap_or_default()
+    pub fn authentication_options(&self) -> & [crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails] {
+        self.authentication_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    pub fn connection_log_options(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails> {
+    pub fn connection_log_options(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails> {
         self.connection_log_options.as_ref()
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_id_set.is_none()`.
-    pub fn security_group_id_set(&self) -> &[::std::string::String] {
-        self.security_group_id_set.as_deref().unwrap_or_default()
+    pub fn security_group_id_set(&self) -> & [::std::string::String] {
+        self.security_group_id_set.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The URL of the self-service portal.</p>
-    pub fn self_service_portal_url(&self) -> ::std::option::Option<&str> {
+    pub fn self_service_portal_url(&self) -> ::std::option::Option<& str> {
         self.self_service_portal_url.as_deref()
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn client_connect_options(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails> {
+    pub fn client_connect_options(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails> {
         self.client_connect_options.as_ref()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
@@ -105,7 +108,7 @@ impl AwsEc2ClientVpnEndpointDetails {
         self.session_timeout_hours
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn client_login_banner_options(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails> {
+    pub fn client_login_banner_options(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails> {
         self.client_login_banner_options.as_ref()
     }
 }
@@ -123,14 +126,14 @@ pub struct AwsEc2ClientVpnEndpointDetailsBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) dns_server: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_server: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) split_tunnel: ::std::option::Option<bool>,
     pub(crate) transport_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_port: ::std::option::Option<i32>,
     pub(crate) server_certificate_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>,
+    pub(crate) authentication_options: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>,
     pub(crate) connection_log_options: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails>,
-    pub(crate) security_group_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) self_service_portal_url: ::std::option::Option<::std::string::String>,
     pub(crate) client_connect_options: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails>,
@@ -145,8 +148,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The ID of the Client VPN endpoint.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +161,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>A brief description of the endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +174,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
     pub fn set_client_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_cidr_block = input;
-        self
+        self.client_cidr_block = input; self
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
     pub fn get_client_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,17 +187,16 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     /// <p>Information about the DNS servers to be used for DNS resolution.</p>
     pub fn dns_server(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_server.unwrap_or_default();
-        v.push(input.into());
-        self.dns_server = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_server = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the DNS servers to be used for DNS resolution.</p>
-    pub fn set_dns_server(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_server = input;
-        self
+    pub fn set_dns_server(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_server = input; self
     }
     /// <p>Information about the DNS servers to be used for DNS resolution.</p>
-    pub fn get_dns_server(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_server(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_server
     }
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
@@ -207,8 +206,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     pub fn set_split_tunnel(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.split_tunnel = input;
-        self
+        self.split_tunnel = input; self
     }
     /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     pub fn get_split_tunnel(&self) -> &::std::option::Option<bool> {
@@ -221,8 +219,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
     pub fn set_transport_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transport_protocol = input;
-        self
+        self.transport_protocol = input; self
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
     pub fn get_transport_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +232,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The port number for the Client VPN endpoint.</p>
     pub fn set_vpn_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vpn_port = input;
-        self
+        self.vpn_port = input; self
     }
     /// <p>The port number for the Client VPN endpoint.</p>
     pub fn get_vpn_port(&self) -> &::std::option::Option<i32> {
@@ -249,8 +245,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub fn set_server_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_arn = input;
-        self
+        self.server_certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,22 +258,16 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
     pub fn authentication_options(mut self, input: crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails) -> Self {
         let mut v = self.authentication_options.unwrap_or_default();
-        v.push(input);
-        self.authentication_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.authentication_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub fn set_authentication_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>,
-    ) -> Self {
-        self.authentication_options = input;
-        self
+    pub fn set_authentication_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>>) -> Self {
+        self.authentication_options = input; self
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub fn get_authentication_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>> {
+    pub fn get_authentication_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>> {
         &self.authentication_options
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
@@ -287,12 +276,8 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
         self
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    pub fn set_connection_log_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails>,
-    ) -> Self {
-        self.connection_log_options = input;
-        self
+    pub fn set_connection_log_options(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails>) -> Self {
+        self.connection_log_options = input; self
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
     pub fn get_connection_log_options(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails> {
@@ -305,17 +290,16 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     /// <p>The IDs of the security groups for the target network.</p>
     pub fn security_group_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_id_set.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_id_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_id_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    pub fn set_security_group_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_id_set = input;
-        self
+    pub fn set_security_group_id_set(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_id_set = input; self
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    pub fn get_security_group_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_id_set(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_id_set
     }
     /// <p>The ID of the VPC.</p>
@@ -325,8 +309,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -339,8 +322,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The URL of the self-service portal.</p>
     pub fn set_self_service_portal_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.self_service_portal_url = input;
-        self
+        self.self_service_portal_url = input; self
     }
     /// <p>The URL of the self-service portal.</p>
     pub fn get_self_service_portal_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,12 +334,8 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
         self
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn set_client_connect_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails>,
-    ) -> Self {
-        self.client_connect_options = input;
-        self
+    pub fn set_client_connect_options(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails>) -> Self {
+        self.client_connect_options = input; self
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub fn get_client_connect_options(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails> {
@@ -370,8 +348,7 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     }
     /// <p>The maximum VPN session duration time in hours.</p>
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout_hours = input;
-        self
+        self.session_timeout_hours = input; self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
     pub fn get_session_timeout_hours(&self) -> &::std::option::Option<i32> {
@@ -383,12 +360,8 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
         self
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn set_client_login_banner_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails>,
-    ) -> Self {
-        self.client_login_banner_options = input;
-        self
+    pub fn set_client_login_banner_options(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails>) -> Self {
+        self.client_login_banner_options = input; self
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn get_client_login_banner_options(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails> {
@@ -397,22 +370,39 @@ impl AwsEc2ClientVpnEndpointDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointDetails`](crate::types::AwsEc2ClientVpnEndpointDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointDetails {
         crate::types::AwsEc2ClientVpnEndpointDetails {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            description: self.description,
-            client_cidr_block: self.client_cidr_block,
-            dns_server: self.dns_server,
-            split_tunnel: self.split_tunnel,
-            transport_protocol: self.transport_protocol,
-            vpn_port: self.vpn_port,
-            server_certificate_arn: self.server_certificate_arn,
-            authentication_options: self.authentication_options,
-            connection_log_options: self.connection_log_options,
-            security_group_id_set: self.security_group_id_set,
-            vpc_id: self.vpc_id,
-            self_service_portal_url: self.self_service_portal_url,
-            client_connect_options: self.client_connect_options,
-            session_timeout_hours: self.session_timeout_hours,
-            client_login_banner_options: self.client_login_banner_options,
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id
+            ,
+            description: self.description
+            ,
+            client_cidr_block: self.client_cidr_block
+            ,
+            dns_server: self.dns_server
+            ,
+            split_tunnel: self.split_tunnel
+            ,
+            transport_protocol: self.transport_protocol
+            ,
+            vpn_port: self.vpn_port
+            ,
+            server_certificate_arn: self.server_certificate_arn
+            ,
+            authentication_options: self.authentication_options
+            ,
+            connection_log_options: self.connection_log_options
+            ,
+            security_group_id_set: self.security_group_id_set
+            ,
+            vpc_id: self.vpc_id
+            ,
+            self_service_portal_url: self.self_service_portal_url
+            ,
+            client_connect_options: self.client_connect_options
+            ,
+            session_timeout_hours: self.session_timeout_hours
+            ,
+            client_login_banner_options: self.client_login_banner_options
+            ,
         }
     }
 }
+

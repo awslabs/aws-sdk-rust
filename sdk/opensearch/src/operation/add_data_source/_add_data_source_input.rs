@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>AddDataSource</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddDataSourceInput {
+pub struct AddDataSourceInput  {
     /// <p>The name of the domain to add the data source to.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the data source.</p>
@@ -13,21 +13,21 @@ pub struct AddDataSourceInput {
     /// <p>A description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AddDataSourceInput {
+impl  AddDataSourceInput  {
     /// <p>The name of the domain to add the data source to.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A name for the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of data source.</p>
-    pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
+    pub fn data_source_type(&self) -> ::std::option::Option<& crate::types::DataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>A description of the data source.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl AddDataSourceInputBuilder {
     }
     /// <p>The name of the domain to add the data source to.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain to add the data source to.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl AddDataSourceInputBuilder {
     }
     /// <p>A name for the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl AddDataSourceInputBuilder {
     }
     /// <p>The type of data source.</p>
     pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.data_source_type = input;
-        self
+        self.data_source_type = input; self
     }
     /// <p>The type of data source.</p>
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
@@ -100,22 +97,26 @@ impl AddDataSourceInputBuilder {
     }
     /// <p>A description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`AddDataSourceInput`](crate::operation::add_data_source::AddDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_data_source::AddDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_data_source::AddDataSourceInput {
-            domain_name: self.domain_name,
-            name: self.name,
-            data_source_type: self.data_source_type,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_data_source::AddDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_data_source::AddDataSourceInput {
+                domain_name: self.domain_name
+                ,
+                name: self.name
+                ,
+                data_source_type: self.data_source_type
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

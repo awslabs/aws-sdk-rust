@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcePolicyInput {
+pub struct GetResourcePolicyInput  {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
-impl GetResourcePolicyInput {
+impl  GetResourcePolicyInput  {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GetResourcePolicyInputBuilder {
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -47,9 +46,13 @@ impl GetResourcePolicyInputBuilder {
         &self.secret_id
     }
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_policy::GetResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_resource_policy::GetResourcePolicyInput { secret_id: self.secret_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_policy::GetResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_policy::GetResourcePolicyInput {
+                secret_id: self.secret_id
+                ,
+            }
+        )
     }
 }
+

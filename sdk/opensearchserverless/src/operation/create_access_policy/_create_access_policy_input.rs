@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPolicyInput {
+pub struct CreateAccessPolicyInput  {
     /// <p>The type of policy.</p>
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the policy.</p>
@@ -14,25 +14,25 @@ pub struct CreateAccessPolicyInput {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateAccessPolicyInput {
+impl  CreateAccessPolicyInput  {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The type of policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
@@ -77,8 +76,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,24 +116,28 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyInput {
-            r#type: self.r#type,
-            name: self.name,
-            description: self.description,
-            policy: self.policy,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_policy::CreateAccessPolicyInput {
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                policy: self.policy
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

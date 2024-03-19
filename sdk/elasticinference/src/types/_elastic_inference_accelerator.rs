@@ -3,7 +3,7 @@
 /// <p>The details of an Elastic Inference Accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticInferenceAccelerator {
+pub struct ElasticInferenceAccelerator  {
     /// <p>The health of the Elastic Inference Accelerator.</p>
     pub accelerator_health: ::std::option::Option<crate::types::ElasticInferenceAcceleratorHealth>,
     /// <p>The type of the Elastic Inference Accelerator.</p>
@@ -15,25 +15,25 @@ pub struct ElasticInferenceAccelerator {
     /// <p>The ARN of the resource that the Elastic Inference Accelerator is attached to.</p>
     pub attached_resource: ::std::option::Option<::std::string::String>,
 }
-impl ElasticInferenceAccelerator {
+impl  ElasticInferenceAccelerator  {
     /// <p>The health of the Elastic Inference Accelerator.</p>
-    pub fn accelerator_health(&self) -> ::std::option::Option<&crate::types::ElasticInferenceAcceleratorHealth> {
+    pub fn accelerator_health(&self) -> ::std::option::Option<& crate::types::ElasticInferenceAcceleratorHealth> {
         self.accelerator_health.as_ref()
     }
     /// <p>The type of the Elastic Inference Accelerator.</p>
-    pub fn accelerator_type(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_type(&self) -> ::std::option::Option<& str> {
         self.accelerator_type.as_deref()
     }
     /// <p>The ID of the Elastic Inference Accelerator.</p>
-    pub fn accelerator_id(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_id(&self) -> ::std::option::Option<& str> {
         self.accelerator_id.as_deref()
     }
     /// <p>The availability zone where the Elastic Inference Accelerator is present.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The ARN of the resource that the Elastic Inference Accelerator is attached to.</p>
-    pub fn attached_resource(&self) -> ::std::option::Option<&str> {
+    pub fn attached_resource(&self) -> ::std::option::Option<& str> {
         self.attached_resource.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ElasticInferenceAcceleratorBuilder {
     }
     /// <p>The health of the Elastic Inference Accelerator.</p>
     pub fn set_accelerator_health(mut self, input: ::std::option::Option<crate::types::ElasticInferenceAcceleratorHealth>) -> Self {
-        self.accelerator_health = input;
-        self
+        self.accelerator_health = input; self
     }
     /// <p>The health of the Elastic Inference Accelerator.</p>
     pub fn get_accelerator_health(&self) -> &::std::option::Option<crate::types::ElasticInferenceAcceleratorHealth> {
@@ -76,8 +75,7 @@ impl ElasticInferenceAcceleratorBuilder {
     }
     /// <p>The type of the Elastic Inference Accelerator.</p>
     pub fn set_accelerator_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_type = input;
-        self
+        self.accelerator_type = input; self
     }
     /// <p>The type of the Elastic Inference Accelerator.</p>
     pub fn get_accelerator_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ElasticInferenceAcceleratorBuilder {
     }
     /// <p>The ID of the Elastic Inference Accelerator.</p>
     pub fn set_accelerator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_id = input;
-        self
+        self.accelerator_id = input; self
     }
     /// <p>The ID of the Elastic Inference Accelerator.</p>
     pub fn get_accelerator_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ElasticInferenceAcceleratorBuilder {
     }
     /// <p>The availability zone where the Elastic Inference Accelerator is present.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The availability zone where the Elastic Inference Accelerator is present.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl ElasticInferenceAcceleratorBuilder {
     }
     /// <p>The ARN of the resource that the Elastic Inference Accelerator is attached to.</p>
     pub fn set_attached_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attached_resource = input;
-        self
+        self.attached_resource = input; self
     }
     /// <p>The ARN of the resource that the Elastic Inference Accelerator is attached to.</p>
     pub fn get_attached_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl ElasticInferenceAcceleratorBuilder {
     /// Consumes the builder and constructs a [`ElasticInferenceAccelerator`](crate::types::ElasticInferenceAccelerator).
     pub fn build(self) -> crate::types::ElasticInferenceAccelerator {
         crate::types::ElasticInferenceAccelerator {
-            accelerator_health: self.accelerator_health,
-            accelerator_type: self.accelerator_type,
-            accelerator_id: self.accelerator_id,
-            availability_zone: self.availability_zone,
-            attached_resource: self.attached_resource,
+            accelerator_health: self.accelerator_health
+            ,
+            accelerator_type: self.accelerator_type
+            ,
+            accelerator_id: self.accelerator_id
+            ,
+            availability_zone: self.availability_zone
+            ,
+            attached_resource: self.attached_resource
+            ,
         }
     }
 }
+

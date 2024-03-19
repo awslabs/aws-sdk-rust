@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRegexPatternSetOutput {
+pub struct UpdateRegexPatternSetOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.</p>
     pub next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateRegexPatternSetOutput {
+impl  UpdateRegexPatternSetOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.</p>
-    pub fn next_lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> ::std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRegexPatternSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetOutput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput).
     pub fn builder() -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateRegexPatternSetOutputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.</p>
     pub fn set_next_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_lock_token = input;
-        self
+        self.next_lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.</p>
     pub fn get_next_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_lock_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetOutput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput).
     pub fn build(self) -> crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput {
         crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput {
-            next_lock_token: self.next_lock_token,
+            next_lock_token: self.next_lock_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

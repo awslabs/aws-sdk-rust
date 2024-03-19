@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTableOptimizerOutput {
+pub struct BatchGetTableOptimizerOutput  {
     /// <p>A list of <code>BatchTableOptimizer</code> objects.</p>
-    pub table_optimizers: ::std::option::Option<::std::vec::Vec<crate::types::BatchTableOptimizer>>,
+    pub table_optimizers: ::std::option::Option<::std::vec::Vec::<crate::types::BatchTableOptimizer>>,
     /// <p>A list of errors from the operation.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerError>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerError>>,
     _request_id: Option<String>,
 }
-impl BatchGetTableOptimizerOutput {
+impl  BatchGetTableOptimizerOutput  {
     /// <p>A list of <code>BatchTableOptimizer</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_optimizers.is_none()`.
-    pub fn table_optimizers(&self) -> &[crate::types::BatchTableOptimizer] {
-        self.table_optimizers.as_deref().unwrap_or_default()
+    pub fn table_optimizers(&self) -> & [crate::types::BatchTableOptimizer] {
+        self.table_optimizers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of errors from the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::BatchGetTableOptimizerError] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::BatchGetTableOptimizerError] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetTableOptimizerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetTableOptimizerOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTableOptimizerOutput`](crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerOutput).
     pub fn builder() -> crate::operation::batch_get_table_optimizer::builders::BatchGetTableOptimizerOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetTableOptimizerOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTableOptimizerOutputBuilder {
-    pub(crate) table_optimizers: ::std::option::Option<::std::vec::Vec<crate::types::BatchTableOptimizer>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerError>>,
+    pub(crate) table_optimizers: ::std::option::Option<::std::vec::Vec::<crate::types::BatchTableOptimizer>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerError>>,
     _request_id: Option<String>,
 }
 impl BatchGetTableOptimizerOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetTableOptimizerOutputBuilder {
     /// <p>A list of <code>BatchTableOptimizer</code> objects.</p>
     pub fn table_optimizers(mut self, input: crate::types::BatchTableOptimizer) -> Self {
         let mut v = self.table_optimizers.unwrap_or_default();
-        v.push(input);
-        self.table_optimizers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_optimizers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>BatchTableOptimizer</code> objects.</p>
-    pub fn set_table_optimizers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchTableOptimizer>>) -> Self {
-        self.table_optimizers = input;
-        self
+    pub fn set_table_optimizers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchTableOptimizer>>) -> Self {
+        self.table_optimizers = input; self
     }
     /// <p>A list of <code>BatchTableOptimizer</code> objects.</p>
-    pub fn get_table_optimizers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchTableOptimizer>> {
+    pub fn get_table_optimizers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchTableOptimizer>> {
         &self.table_optimizers
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl BatchGetTableOptimizerOutputBuilder {
     /// <p>A list of errors from the operation.</p>
     pub fn failures(mut self, input: crate::types::BatchGetTableOptimizerError) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors from the operation.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerError>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerError>>) -> Self {
+        self.failures = input; self
     }
     /// <p>A list of errors from the operation.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerError>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetTableOptimizerError>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetTableOptimizerOutput`](crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerOutput).
     pub fn build(self) -> crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerOutput {
         crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerOutput {
-            table_optimizers: self.table_optimizers,
-            failures: self.failures,
+            table_optimizers: self.table_optimizers
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

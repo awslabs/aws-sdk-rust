@@ -3,7 +3,7 @@
 /// <p>Describes the price for a Reserved Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PriceSchedule {
+pub struct PriceSchedule  {
     /// <p>The current price schedule, as determined by the term remaining for the Reserved Instance in the listing.</p>
     /// <p>A specific price schedule is always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be active for months 2 and 1.</p>
     pub active: ::std::option::Option<bool>,
@@ -14,14 +14,14 @@ pub struct PriceSchedule {
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub term: ::std::option::Option<i64>,
 }
-impl PriceSchedule {
+impl  PriceSchedule  {
     /// <p>The current price schedule, as determined by the term remaining for the Reserved Instance in the listing.</p>
     /// <p>A specific price schedule is always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be active for months 2 and 1.</p>
     pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> ::std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
     /// <p>The fixed price for the term.</p>
@@ -59,8 +59,7 @@ impl PriceScheduleBuilder {
     /// <p>The current price schedule, as determined by the term remaining for the Reserved Instance in the listing.</p>
     /// <p>A specific price schedule is always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be active for months 2 and 1.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>The current price schedule, as determined by the term remaining for the Reserved Instance in the listing.</p>
     /// <p>A specific price schedule is always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be active for months 2 and 1.</p>
@@ -74,8 +73,7 @@ impl PriceScheduleBuilder {
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
@@ -88,8 +86,7 @@ impl PriceScheduleBuilder {
     }
     /// <p>The fixed price for the term.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The fixed price for the term.</p>
     pub fn get_price(&self) -> &::std::option::Option<f64> {
@@ -102,8 +99,7 @@ impl PriceScheduleBuilder {
     }
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub fn set_term(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.</p>
     pub fn get_term(&self) -> &::std::option::Option<i64> {
@@ -112,10 +108,15 @@ impl PriceScheduleBuilder {
     /// Consumes the builder and constructs a [`PriceSchedule`](crate::types::PriceSchedule).
     pub fn build(self) -> crate::types::PriceSchedule {
         crate::types::PriceSchedule {
-            active: self.active,
-            currency_code: self.currency_code,
-            price: self.price,
-            term: self.term,
+            active: self.active
+            ,
+            currency_code: self.currency_code
+            ,
+            price: self.price
+            ,
+            term: self.term
+            ,
         }
     }
 }
+

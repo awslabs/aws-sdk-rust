@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddPermissionInput {
+pub struct AddPermissionInput  {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the new policy statement.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    pub aws_account_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_account_id: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    pub action_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub action_name: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AddPermissionInput {
+impl  AddPermissionInput  {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>A unique identifier for the new policy statement.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
-    pub fn aws_account_id(&self) -> &[::std::string::String] {
-        self.aws_account_id.as_deref().unwrap_or_default()
+    pub fn aws_account_id(&self) -> & [::std::string::String] {
+        self.aws_account_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_name.is_none()`.
-    pub fn action_name(&self) -> &[::std::string::String] {
-        self.action_name.as_deref().unwrap_or_default()
+    pub fn action_name(&self) -> & [::std::string::String] {
+        self.action_name.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddPermissionInput {
@@ -49,8 +51,8 @@ impl AddPermissionInput {
 pub struct AddPermissionInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) action_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) action_name: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AddPermissionInputBuilder {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -61,8 +63,7 @@ impl AddPermissionInputBuilder {
     }
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +77,7 @@ impl AddPermissionInputBuilder {
     }
     /// <p>A unique identifier for the new policy statement.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A unique identifier for the new policy statement.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,17 +90,16 @@ impl AddPermissionInputBuilder {
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_account_id.unwrap_or_default();
-        v.push(input.into());
-        self.aws_account_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_account_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_account_id
     }
     /// Appends an item to `action_name`.
@@ -111,30 +110,34 @@ impl AddPermissionInputBuilder {
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_name.unwrap_or_default();
-        v.push(input.into());
-        self.action_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    pub fn set_action_name(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.action_name = input;
-        self
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.action_name = input; self
     }
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    pub fn get_action_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.action_name
     }
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_permission::AddPermissionInput {
-            topic_arn: self.topic_arn,
-            label: self.label,
-            aws_account_id: self.aws_account_id,
-            action_name: self.action_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_permission::AddPermissionInput {
+                topic_arn: self.topic_arn
+                ,
+                label: self.label
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                action_name: self.action_name
+                ,
+            }
+        )
     }
 }
+

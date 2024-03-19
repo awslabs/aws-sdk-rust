@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when Upsolver is used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpsolverDestinationProperties {
+pub struct UpsolverDestinationProperties  {
     /// <p>The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files.</p>
@@ -11,18 +11,17 @@ pub struct UpsolverDestinationProperties {
     /// <p>The configuration that determines how data is formatted when Upsolver is used as the flow destination.</p>
     pub s3_output_format_config: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>,
 }
-impl UpsolverDestinationProperties {
+impl  UpsolverDestinationProperties  {
     /// <p>The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<& str> {
         self.bucket_prefix.as_deref()
     }
     /// <p>The configuration that determines how data is formatted when Upsolver is used as the flow destination.</p>
-    pub fn s3_output_format_config(&self) -> ::std::option::Option<&crate::types::UpsolverS3OutputFormatConfig> {
+    pub fn s3_output_format_config(&self) -> ::std::option::Option<& crate::types::UpsolverS3OutputFormatConfig> {
         self.s3_output_format_config.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl UpsolverDestinationPropertiesBuilder {
     }
     /// <p>The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl UpsolverDestinationPropertiesBuilder {
     }
     /// <p>The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files.</p>
     pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_prefix = input;
-        self
+        self.bucket_prefix = input; self
     }
     /// <p>The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files.</p>
     pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl UpsolverDestinationPropertiesBuilder {
     }
     /// <p>The configuration that determines how data is formatted when Upsolver is used as the flow destination.</p>
     pub fn set_s3_output_format_config(mut self, input: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>) -> Self {
-        self.s3_output_format_config = input;
-        self
+        self.s3_output_format_config = input; self
     }
     /// <p>The configuration that determines how data is formatted when Upsolver is used as the flow destination.</p>
     pub fn get_s3_output_format_config(&self) -> &::std::option::Option<crate::types::UpsolverS3OutputFormatConfig> {
@@ -90,15 +86,19 @@ impl UpsolverDestinationPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::UpsolverDestinationPropertiesBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::UpsolverDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpsolverDestinationProperties {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building UpsolverDestinationProperties",
-                )
-            })?,
-            bucket_prefix: self.bucket_prefix,
-            s3_output_format_config: self.s3_output_format_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpsolverDestinationProperties {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building UpsolverDestinationProperties")
+                    )?
+                ,
+                bucket_prefix: self.bucket_prefix
+                ,
+                s3_output_format_config: self.s3_output_format_config
+                ,
+            }
+        )
     }
 }
+

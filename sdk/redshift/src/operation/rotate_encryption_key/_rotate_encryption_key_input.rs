@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotateEncryptionKeyInput {
+pub struct RotateEncryptionKeyInput  {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl RotateEncryptionKeyInput {
+impl  RotateEncryptionKeyInput  {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl RotateEncryptionKeyInputBuilder {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
@@ -48,12 +47,13 @@ impl RotateEncryptionKeyInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::rotate_encryption_key::RotateEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::rotate_encryption_key::RotateEncryptionKeyInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_encryption_key::RotateEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

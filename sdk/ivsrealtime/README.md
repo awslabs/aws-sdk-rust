@@ -75,7 +75,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ivsrealtime = "1.17.0"
+aws-sdk-ivsrealtime = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 

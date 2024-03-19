@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMembersOutput {
+pub struct CreateMembersOutput  {
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
-    pub members: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
+    pub members: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
-    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
-impl CreateMembersOutput {
+impl  CreateMembersOutput  {
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
-    pub fn members(&self) -> &[crate::types::MemberDetail] {
-        self.members.as_deref().unwrap_or_default()
+    pub fn members(&self) -> & [crate::types::MemberDetail] {
+        self.members.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
-    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
-        self.unprocessed_accounts.as_deref().unwrap_or_default()
+    pub fn unprocessed_accounts(&self) -> & [crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMembersOutput {
     /// Creates a new builder-style object to manufacture [`CreateMembersOutput`](crate::operation::create_members::CreateMembersOutput).
     pub fn builder() -> crate::operation::create_members::builders::CreateMembersOutputBuilder {
@@ -39,8 +41,8 @@ impl CreateMembersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMembersOutputBuilder {
-    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
-    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl CreateMembersOutputBuilder {
@@ -51,17 +53,16 @@ impl CreateMembersOutputBuilder {
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
     pub fn members(mut self, input: crate::types::MemberDetail) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
-    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>) -> Self {
+        self.members = input; self
     }
     /// <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
-    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>> {
         &self.members
     }
     /// Appends an item to `unprocessed_accounts`.
@@ -71,34 +72,36 @@ impl CreateMembersOutputBuilder {
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
-    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     /// <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
-    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMembersOutput`](crate::operation::create_members::CreateMembersOutput).
     pub fn build(self) -> crate::operation::create_members::CreateMembersOutput {
         crate::operation::create_members::CreateMembersOutput {
-            members: self.members,
-            unprocessed_accounts: self.unprocessed_accounts,
+            members: self.members
+            ,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

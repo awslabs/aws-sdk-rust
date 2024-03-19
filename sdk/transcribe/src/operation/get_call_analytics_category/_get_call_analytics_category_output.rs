@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCallAnalyticsCategoryOutput {
+pub struct GetCallAnalyticsCategoryOutput  {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
     pub category_properties: ::std::option::Option<crate::types::CategoryProperties>,
     _request_id: Option<String>,
 }
-impl GetCallAnalyticsCategoryOutput {
+impl  GetCallAnalyticsCategoryOutput  {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
-    pub fn category_properties(&self) -> ::std::option::Option<&crate::types::CategoryProperties> {
+    pub fn category_properties(&self) -> ::std::option::Option<& crate::types::CategoryProperties> {
         self.category_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCallAnalyticsCategoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCallAnalyticsCategoryOutput {
     /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryOutput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryOutput).
     pub fn builder() -> crate::operation::get_call_analytics_category::builders::GetCallAnalyticsCategoryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetCallAnalyticsCategoryOutputBuilder {
     }
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
     pub fn set_category_properties(mut self, input: ::std::option::Option<crate::types::CategoryProperties>) -> Self {
-        self.category_properties = input;
-        self
+        self.category_properties = input; self
     }
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
     pub fn get_category_properties(&self) -> &::std::option::Option<crate::types::CategoryProperties> {
         &self.category_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCallAnalyticsCategoryOutput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryOutput).
     pub fn build(self) -> crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryOutput {
         crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryOutput {
-            category_properties: self.category_properties,
+            category_properties: self.category_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

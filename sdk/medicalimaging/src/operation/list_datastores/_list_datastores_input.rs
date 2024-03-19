@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDatastoresInput {
+pub struct ListDatastoresInput  {
     /// <p>The data store status.</p>
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>The pagination token used to request the list of data stores on the next page.</p>
@@ -10,13 +10,13 @@ pub struct ListDatastoresInput {
     /// <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDatastoresInput {
+impl  ListDatastoresInput  {
     /// <p>The data store status.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
+    pub fn datastore_status(&self) -> ::std::option::Option<& crate::types::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
     /// <p>The pagination token used to request the list of data stores on the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
@@ -47,8 +47,7 @@ impl ListDatastoresInputBuilder {
     }
     /// <p>The data store status.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input;
-        self
+        self.datastore_status = input; self
     }
     /// <p>The data store status.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
@@ -61,8 +60,7 @@ impl ListDatastoresInputBuilder {
     }
     /// <p>The pagination token used to request the list of data stores on the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to request the list of data stores on the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListDatastoresInputBuilder {
     }
     /// <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Valid Range: Minimum value of 1. Maximum value of 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDatastoresInput`](crate::operation::list_datastores::ListDatastoresInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_datastores::ListDatastoresInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_datastores::ListDatastoresInput {
-            datastore_status: self.datastore_status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_datastores::ListDatastoresInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_datastores::ListDatastoresInput {
+                datastore_status: self.datastore_status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

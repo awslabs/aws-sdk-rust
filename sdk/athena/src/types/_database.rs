@@ -3,26 +3,25 @@
 /// <p>Contains metadata information for a database in a data catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Database {
+pub struct Database  {
     /// <p>The name of the database.</p>
     pub name: ::std::string::String,
     /// <p>An optional description of the database.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom key/value pairs.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Database {
+impl  Database  {
     /// <p>The name of the database.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>An optional description of the database.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A set of custom key/value pairs.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -39,7 +38,7 @@ impl Database {
 pub struct DatabaseBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DatabaseBuilder {
     /// <p>The name of the database.</p>
@@ -50,8 +49,7 @@ impl DatabaseBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl DatabaseBuilder {
     }
     /// <p>An optional description of the database.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the database.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,32 +75,35 @@ impl DatabaseBuilder {
     /// <p>A set of custom key/value pairs.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of custom key/value pairs.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A set of custom key/value pairs.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DatabaseBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Database, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Database {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Database",
-                )
-            })?,
-            description: self.description,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Database {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Database")
+                    )?
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

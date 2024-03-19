@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBulkDeploymentDetailedReportsInput {
+pub struct ListBulkDeploymentDetailedReportsInput  {
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
     /// The maximum number of results to be returned per request.
@@ -10,17 +10,17 @@ pub struct ListBulkDeploymentDetailedReportsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListBulkDeploymentDetailedReportsInput {
+impl  ListBulkDeploymentDetailedReportsInput  {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> ::std::option::Option<&str> {
+    pub fn max_results(&self) -> ::std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
     }
     /// The ID of the bulk deployment.
     pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bulk_deployment_id = input;
-        self
+        self.bulk_deployment_id = input; self
     }
     /// The ID of the bulk deployment.
     pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of results to be returned per request.
     pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBulkDeploymentDetailedReportsInput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput {
-                bulk_deployment_id: self.bulk_deployment_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                bulk_deployment_id: self.bulk_deployment_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

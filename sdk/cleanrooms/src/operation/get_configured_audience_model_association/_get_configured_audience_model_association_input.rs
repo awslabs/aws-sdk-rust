@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfiguredAudienceModelAssociationInput {
+pub struct GetConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub configured_audience_model_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the membership that contains the configured audience model association that you want to retrieve.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetConfiguredAudienceModelAssociationInput {
+impl  GetConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
-    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_association_identifier.as_deref()
     }
     /// <p>A unique identifier for the membership that contains the configured audience model association that you want to retrieve.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub fn set_configured_audience_model_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_association_identifier = input;
-        self
+        self.configured_audience_model_association_identifier = input; self
     }
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub fn get_configured_audience_model_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the membership that contains the configured audience model association that you want to retrieve.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for the membership that contains the configured audience model association that you want to retrieve.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`GetConfiguredAudienceModelAssociationInput`](crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationInput {
-                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier,
-                membership_identifier: self.membership_identifier,
-            },
+                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+            }
         )
     }
 }
+

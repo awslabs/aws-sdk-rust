@@ -3,15 +3,15 @@
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalWorkflowExecutionSignaledEventAttributes {
+pub struct ExternalWorkflowExecutionSignaledEventAttributes  {
     /// <p>The external workflow execution that the signal was delivered to.</p>
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub initiated_event_id: i64,
 }
-impl ExternalWorkflowExecutionSignaledEventAttributes {
+impl  ExternalWorkflowExecutionSignaledEventAttributes  {
     /// <p>The external workflow execution that the signal was delivered to.</p>
-    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -42,8 +42,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     }
     /// <p>The external workflow execution that the signal was delivered to.</p>
     pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.workflow_execution = input;
-        self
+        self.workflow_execution = input; self
     }
     /// <p>The external workflow execution that the signal was delivered to.</p>
     pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
@@ -57,8 +56,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.initiated_event_id = input;
-        self
+        self.initiated_event_id = input; self
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,12 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::types::ExternalWorkflowExecutionSignaledEventAttributes).
     pub fn build(self) -> crate::types::ExternalWorkflowExecutionSignaledEventAttributes {
         crate::types::ExternalWorkflowExecutionSignaledEventAttributes {
-            workflow_execution: self.workflow_execution,
-            initiated_event_id: self.initiated_event_id.unwrap_or_default(),
+            workflow_execution: self.workflow_execution
+            ,
+            initiated_event_id: self.initiated_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

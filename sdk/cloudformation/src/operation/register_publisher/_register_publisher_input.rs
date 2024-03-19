@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterPublisherInput {
+pub struct RegisterPublisherInput  {
     /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
     pub accept_terms_and_conditions: ::std::option::Option<bool>,
@@ -10,7 +10,7 @@ pub struct RegisterPublisherInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterPublisherInput {
+impl  RegisterPublisherInput  {
     /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
     pub fn accept_terms_and_conditions(&self) -> ::std::option::Option<bool> {
@@ -18,7 +18,7 @@ impl RegisterPublisherInput {
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl RegisterPublisherInputBuilder {
     /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
     pub fn set_accept_terms_and_conditions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.accept_terms_and_conditions = input;
-        self
+        self.accept_terms_and_conditions = input; self
     }
     /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to register to publish public extensions to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
@@ -63,8 +62,7 @@ impl RegisterPublisherInputBuilder {
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -72,12 +70,15 @@ impl RegisterPublisherInputBuilder {
         &self.connection_arn
     }
     /// Consumes the builder and constructs a [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_publisher::RegisterPublisherInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_publisher::RegisterPublisherInput {
-            accept_terms_and_conditions: self.accept_terms_and_conditions,
-            connection_arn: self.connection_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_publisher::RegisterPublisherInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_publisher::RegisterPublisherInput {
+                accept_terms_and_conditions: self.accept_terms_and_conditions
+                ,
+                connection_arn: self.connection_arn
+                ,
+            }
+        )
     }
 }
+

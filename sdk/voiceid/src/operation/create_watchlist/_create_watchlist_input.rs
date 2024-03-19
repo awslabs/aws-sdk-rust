@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateWatchlistInput {
+pub struct CreateWatchlistInput  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the watchlist.</p>
@@ -12,25 +12,25 @@ pub struct CreateWatchlistInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateWatchlistInput {
+impl  CreateWatchlistInput  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the watchlist.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of this watchlist.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateWatchlistInput {
+impl  ::std::fmt::Debug for CreateWatchlistInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWatchlistInput");
         formatter.field("domain_id", &self.domain_id);
@@ -65,8 +65,7 @@ impl CreateWatchlistInputBuilder {
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateWatchlistInputBuilder {
     }
     /// <p>The name of the watchlist.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the watchlist.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl CreateWatchlistInputBuilder {
     }
     /// <p>A brief description of this watchlist.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of this watchlist.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,23 +105,26 @@ impl CreateWatchlistInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateWatchlistInput`](crate::operation::create_watchlist::CreateWatchlistInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_watchlist::CreateWatchlistInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_watchlist::CreateWatchlistInput {
-            domain_id: self.domain_id,
-            name: self.name,
-            description: self.description,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_watchlist::CreateWatchlistInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_watchlist::CreateWatchlistInput {
+                domain_id: self.domain_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateWatchlistInputBuilder {
@@ -137,3 +137,4 @@ impl ::std::fmt::Debug for CreateWatchlistInputBuilder {
         formatter.finish()
     }
 }
+

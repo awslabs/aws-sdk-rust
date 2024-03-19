@@ -3,7 +3,7 @@
 /// <p>This structure defines a metric that you want to use to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDefinitionConfig {
+pub struct MetricDefinitionConfig  {
     /// <p>A name for the metric.</p>
     pub name: ::std::string::String,
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
@@ -16,29 +16,26 @@ pub struct MetricDefinitionConfig {
     /// <p>A label for the units that the metric is measuring.</p>
     pub unit_label: ::std::option::Option<::std::string::String>,
 }
-impl MetricDefinitionConfig {
+impl  MetricDefinitionConfig  {
     /// <p>A name for the metric.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
-    pub fn entity_id_key(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id_key.deref()
+    pub fn entity_id_key(&self) -> & str {
+        use std::ops::Deref; self.entity_id_key.deref()
     }
     /// <p>The value that is tracked to produce the metric.</p>
-    pub fn value_key(&self) -> &str {
-        use std::ops::Deref;
-        self.value_key.deref()
+    pub fn value_key(&self) -> & str {
+        use std::ops::Deref; self.value_key.deref()
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>A label for the units that the metric is measuring.</p>
-    pub fn unit_label(&self) -> ::std::option::Option<&str> {
+    pub fn unit_label(&self) -> ::std::option::Option<& str> {
         self.unit_label.as_deref()
     }
 }
@@ -68,8 +65,7 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>A name for the metric.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the metric.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +79,7 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
     pub fn set_entity_id_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id_key = input;
-        self
+        self.entity_id_key = input; self
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
     pub fn get_entity_id_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +93,7 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>The value that is tracked to produce the metric.</p>
     pub fn set_value_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_key = input;
-        self
+        self.value_key = input; self
     }
     /// <p>The value that is tracked to produce the metric.</p>
     pub fn get_value_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl MetricDefinitionConfigBuilder {
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
@@ -129,8 +122,7 @@ impl MetricDefinitionConfigBuilder {
     }
     /// <p>A label for the units that the metric is measuring.</p>
     pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit_label = input;
-        self
+        self.unit_label = input; self
     }
     /// <p>A label for the units that the metric is measuring.</p>
     pub fn get_unit_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,27 +134,29 @@ impl MetricDefinitionConfigBuilder {
     /// - [`entity_id_key`](crate::types::builders::MetricDefinitionConfigBuilder::entity_id_key)
     /// - [`value_key`](crate::types::builders::MetricDefinitionConfigBuilder::value_key)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinitionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricDefinitionConfig {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building MetricDefinitionConfig",
-                )
-            })?,
-            entity_id_key: self.entity_id_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id_key",
-                    "entity_id_key was not specified but it is required when building MetricDefinitionConfig",
-                )
-            })?,
-            value_key: self.value_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value_key",
-                    "value_key was not specified but it is required when building MetricDefinitionConfig",
-                )
-            })?,
-            event_pattern: self.event_pattern,
-            unit_label: self.unit_label,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricDefinitionConfig {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building MetricDefinitionConfig")
+                    )?
+                ,
+                entity_id_key: self.entity_id_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id_key", "entity_id_key was not specified but it is required when building MetricDefinitionConfig")
+                    )?
+                ,
+                value_key: self.value_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value_key", "value_key was not specified but it is required when building MetricDefinitionConfig")
+                    )?
+                ,
+                event_pattern: self.event_pattern
+                ,
+                unit_label: self.unit_label
+                ,
+            }
+        )
     }
 }
+

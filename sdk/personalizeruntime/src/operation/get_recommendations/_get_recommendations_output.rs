@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationsOutput {
+pub struct GetRecommendationsOutput  {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub item_list: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
+    pub item_list: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRecommendationsOutput {
+impl  GetRecommendationsOutput  {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item_list.is_none()`.
-    pub fn item_list(&self) -> &[crate::types::PredictedItem] {
-        self.item_list.as_deref().unwrap_or_default()
+    pub fn item_list(&self) -> & [crate::types::PredictedItem] {
+        self.item_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
     pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetRecommendationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutputBuilder {
-    pub(crate) item_list: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
+    pub(crate) item_list: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetRecommendationsOutputBuilder {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
     pub fn item_list(mut self, input: crate::types::PredictedItem) -> Self {
         let mut v = self.item_list.unwrap_or_default();
-        v.push(input);
-        self.item_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.item_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub fn set_item_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>) -> Self {
-        self.item_list = input;
-        self
+    pub fn set_item_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>>) -> Self {
+        self.item_list = input; self
     }
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
-    pub fn get_item_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+    pub fn get_item_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredictedItem>> {
         &self.item_list
     }
     /// <p>The ID of the recommendation.</p>
@@ -69,28 +69,30 @@ impl GetRecommendationsOutputBuilder {
     }
     /// <p>The ID of the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The ID of the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_recommendations::GetRecommendationsOutput {
         crate::operation::get_recommendations::GetRecommendationsOutput {
-            item_list: self.item_list,
-            recommendation_id: self.recommendation_id,
+            item_list: self.item_list
+            ,
+            recommendation_id: self.recommendation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

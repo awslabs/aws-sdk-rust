@@ -3,7 +3,7 @@
 /// <p>Returns information about the resource being evaluated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDetails {
+pub struct ResourceDetails  {
     /// <p>A unique resource ID for an evaluation.</p>
     pub resource_id: ::std::string::String,
     /// <p>The type of resource being evaluated.</p>
@@ -16,27 +16,24 @@ pub struct ResourceDetails {
     /// </note>
     pub resource_configuration_schema_type: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>,
 }
-impl ResourceDetails {
+impl  ResourceDetails  {
     /// <p>A unique resource ID for an evaluation.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The type of resource being evaluated.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
-    pub fn resource_configuration(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_configuration.deref()
+    pub fn resource_configuration(&self) -> & str {
+        use std::ops::Deref; self.resource_configuration.deref()
     }
     /// <p>The schema type of the resource configuration.</p><note>
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
-    pub fn resource_configuration_schema_type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationSchemaType> {
+    pub fn resource_configuration_schema_type(&self) -> ::std::option::Option<& crate::types::ResourceConfigurationSchemaType> {
         self.resource_configuration_schema_type.as_ref()
     }
 }
@@ -65,8 +62,7 @@ impl ResourceDetailsBuilder {
     }
     /// <p>A unique resource ID for an evaluation.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>A unique resource ID for an evaluation.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl ResourceDetailsBuilder {
     }
     /// <p>The type of resource being evaluated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource being evaluated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl ResourceDetailsBuilder {
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
     pub fn set_resource_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_configuration = input;
-        self
+        self.resource_configuration = input; self
     }
     /// <p>The resource definition to be evaluated as per the resource configuration schema type.</p>
     pub fn get_resource_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +109,7 @@ impl ResourceDetailsBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing extensions through the CloudFormation registry</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the CloudFormation User Guide.</p>
     /// </note>
     pub fn set_resource_configuration_schema_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationSchemaType>) -> Self {
-        self.resource_configuration_schema_type = input;
-        self
+        self.resource_configuration_schema_type = input; self
     }
     /// <p>The schema type of the resource configuration.</p><note>
     /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
@@ -131,26 +124,27 @@ impl ResourceDetailsBuilder {
     /// - [`resource_type`](crate::types::builders::ResourceDetailsBuilder::resource_type)
     /// - [`resource_configuration`](crate::types::builders::ResourceDetailsBuilder::resource_configuration)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceDetails {
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ResourceDetails",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building ResourceDetails",
-                )
-            })?,
-            resource_configuration: self.resource_configuration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_configuration",
-                    "resource_configuration was not specified but it is required when building ResourceDetails",
-                )
-            })?,
-            resource_configuration_schema_type: self.resource_configuration_schema_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceDetails {
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ResourceDetails")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building ResourceDetails")
+                    )?
+                ,
+                resource_configuration: self.resource_configuration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_configuration", "resource_configuration was not specified but it is required when building ResourceDetails")
+                    )?
+                ,
+                resource_configuration_schema_type: self.resource_configuration_schema_type
+                ,
+            }
+        )
     }
 }
+

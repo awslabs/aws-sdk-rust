@@ -3,7 +3,7 @@
 /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <code>FieldToMatch</code> option <code>JsonBody</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonMatchPattern {
+pub struct JsonMatchPattern  {
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
     pub all: ::std::option::Option<crate::types::All>,
@@ -12,12 +12,12 @@ pub struct JsonMatchPattern {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
-    pub included_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub included_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl JsonMatchPattern {
+impl  JsonMatchPattern  {
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
-    pub fn all(&self) -> ::std::option::Option<&crate::types::All> {
+    pub fn all(&self) -> ::std::option::Option<& crate::types::All> {
         self.all.as_ref()
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
@@ -25,10 +25,11 @@ impl JsonMatchPattern {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_paths.is_none()`.
-    pub fn included_paths(&self) -> &[::std::string::String] {
-        self.included_paths.as_deref().unwrap_or_default()
+    pub fn included_paths(&self) -> & [::std::string::String] {
+        self.included_paths.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JsonMatchPattern {
@@ -43,7 +44,7 @@ impl JsonMatchPattern {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JsonMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
-    pub(crate) included_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) included_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl JsonMatchPatternBuilder {
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
@@ -55,8 +56,7 @@ impl JsonMatchPatternBuilder {
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
     pub fn set_all(mut self, input: ::std::option::Option<crate::types::All>) -> Self {
-        self.all = input;
-        self
+        self.all = input; self
     }
     /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
@@ -74,32 +74,34 @@ impl JsonMatchPatternBuilder {
     /// </note>
     pub fn included_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.included_paths.unwrap_or_default();
-        v.push(input.into());
-        self.included_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.included_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
-    pub fn set_included_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.included_paths = input;
-        self
+    pub fn set_included_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.included_paths = input; self
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
-    pub fn get_included_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_included_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.included_paths
     }
     /// Consumes the builder and constructs a [`JsonMatchPattern`](crate::types::JsonMatchPattern).
     pub fn build(self) -> crate::types::JsonMatchPattern {
         crate::types::JsonMatchPattern {
-            all: self.all,
-            included_paths: self.included_paths,
+            all: self.all
+            ,
+            included_paths: self.included_paths
+            ,
         }
     }
 }
+

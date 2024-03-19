@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceProfileOutput {
+pub struct GetDeviceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
@@ -15,33 +15,33 @@ pub struct GetDeviceProfileOutput {
     pub sidewalk: ::std::option::Option<crate::types::SidewalkGetDeviceProfile>,
     _request_id: Option<String>,
 }
-impl GetDeviceProfileOutput {
+impl  GetDeviceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the device profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Information about the device profile.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanDeviceProfile> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanDeviceProfile> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Information about the Sidewalk parameters in the device profile.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkGetDeviceProfile> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkGetDeviceProfile> {
         self.sidewalk.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeviceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeviceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::operation::get_device_profile::GetDeviceProfileOutput).
     pub fn builder() -> crate::operation::get_device_profile::builders::GetDeviceProfileOutputBuilder {
@@ -68,8 +68,7 @@ impl GetDeviceProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetDeviceProfileOutputBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl GetDeviceProfileOutputBuilder {
     }
     /// <p>The ID of the device profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the device profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl GetDeviceProfileOutputBuilder {
     }
     /// <p>Information about the device profile.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDeviceProfile>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>Information about the device profile.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDeviceProfile> {
@@ -124,31 +120,36 @@ impl GetDeviceProfileOutputBuilder {
     }
     /// <p>Information about the Sidewalk parameters in the device profile.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkGetDeviceProfile>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>Information about the Sidewalk parameters in the device profile.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkGetDeviceProfile> {
         &self.sidewalk
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeviceProfileOutput`](crate::operation::get_device_profile::GetDeviceProfileOutput).
     pub fn build(self) -> crate::operation::get_device_profile::GetDeviceProfileOutput {
         crate::operation::get_device_profile::GetDeviceProfileOutput {
-            arn: self.arn,
-            name: self.name,
-            id: self.id,
-            lo_ra_wan: self.lo_ra_wan,
-            sidewalk: self.sidewalk,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            lo_ra_wan: self.lo_ra_wan
+            ,
+            sidewalk: self.sidewalk
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

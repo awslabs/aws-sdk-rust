@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTargetAccountConfigurationInput {
+pub struct GetTargetAccountConfigurationInput  {
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTargetAccountConfigurationInput {
+impl  GetTargetAccountConfigurationInput  {
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_template_id(&self) -> ::std::option::Option<& str> {
         self.experiment_template_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTargetAccountConfigurationInputBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_experiment_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_template_id = input;
-        self
+        self.experiment_template_id = input; self
     }
     /// <p>The ID of the experiment template.</p>
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetTargetAccountConfigurationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetTargetAccountConfigurationInput`](crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput {
-            experiment_template_id: self.experiment_template_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput {
+                experiment_template_id: self.experiment_template_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

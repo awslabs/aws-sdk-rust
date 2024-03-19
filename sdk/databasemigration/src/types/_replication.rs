@@ -3,7 +3,7 @@
 /// <p>Provides information that describes a serverless replication created by the <code>CreateReplication</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Replication {
+pub struct Replication  {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
     pub replication_config_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -51,7 +51,7 @@ pub struct Replication {
     /// </ul>
     pub stop_reason: ::std::option::Option<::std::string::String>,
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
     pub replication_stats: ::std::option::Option<crate::types::ReplicationStats>,
     /// <p>The replication type.</p>
@@ -73,33 +73,33 @@ pub struct Replication {
     /// <p>The timestamp when DMS will deprovision the replication.</p>
     pub replication_deprovision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Replication {
+impl  Replication  {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn replication_config_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_config_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_config_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
-    pub fn replication_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_config_arn(&self) -> ::std::option::Option<& str> {
         self.replication_config_arn.as_deref()
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
-    pub fn source_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.source_endpoint_arn.as_deref()
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
-    pub fn target_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.target_endpoint_arn.as_deref()
     }
     /// <p>The type of the serverless replication.</p>
-    pub fn replication_type(&self) -> ::std::option::Option<&crate::types::MigrationTypeValue> {
+    pub fn replication_type(&self) -> ::std::option::Option<& crate::types::MigrationTypeValue> {
         self.replication_type.as_ref()
     }
     /// <p>The current status of the serverless replication.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
-    pub fn provision_data(&self) -> ::std::option::Option<&crate::types::ProvisionData> {
+    pub fn provision_data(&self) -> ::std::option::Option<& crate::types::ProvisionData> {
         self.provision_data.as_ref()
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
@@ -133,53 +133,54 @@ impl Replication {
     /// <li>
     /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
-    pub fn stop_reason(&self) -> ::std::option::Option<&str> {
+    pub fn stop_reason(&self) -> ::std::option::Option<& str> {
         self.stop_reason.as_deref()
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_messages.is_none()`.
-    pub fn failure_messages(&self) -> &[::std::string::String] {
-        self.failure_messages.as_deref().unwrap_or_default()
+    pub fn failure_messages(&self) -> & [::std::string::String] {
+        self.failure_messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
-    pub fn replication_stats(&self) -> ::std::option::Option<&crate::types::ReplicationStats> {
+    pub fn replication_stats(&self) -> ::std::option::Option<& crate::types::ReplicationStats> {
         self.replication_stats.as_ref()
     }
     /// <p>The replication type.</p>
-    pub fn start_replication_type(&self) -> ::std::option::Option<&str> {
+    pub fn start_replication_type(&self) -> ::std::option::Option<& str> {
         self.start_replication_type.as_deref()
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn cdc_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cdc_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn cdc_start_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_start_position(&self) -> ::std::option::Option<& str> {
         self.cdc_start_position.as_deref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn cdc_stop_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_stop_position(&self) -> ::std::option::Option<& str> {
         self.cdc_stop_position.as_deref()
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    pub fn recovery_checkpoint(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_checkpoint(&self) -> ::std::option::Option<& str> {
         self.recovery_checkpoint.as_deref()
     }
     /// <p>The time the serverless replication was created.</p>
-    pub fn replication_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replication_create_time.as_ref()
     }
     /// <p>The time the serverless replication was updated.</p>
-    pub fn replication_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replication_update_time.as_ref()
     }
     /// <p>The timestamp when replication was last stopped.</p>
-    pub fn replication_last_stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_last_stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replication_last_stop_time.as_ref()
     }
     /// <p>The timestamp when DMS will deprovision the replication.</p>
-    pub fn replication_deprovision_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn replication_deprovision_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.replication_deprovision_time.as_ref()
     }
 }
@@ -202,7 +203,7 @@ pub struct ReplicationBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) provision_data: ::std::option::Option<crate::types::ProvisionData>,
     pub(crate) stop_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) replication_stats: ::std::option::Option<crate::types::ReplicationStats>,
     pub(crate) start_replication_type: ::std::option::Option<::std::string::String>,
     pub(crate) cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -222,8 +223,7 @@ impl ReplicationBuilder {
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
     pub fn set_replication_config_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_config_identifier = input;
-        self
+        self.replication_config_identifier = input; self
     }
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
     pub fn get_replication_config_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +236,7 @@ impl ReplicationBuilder {
     }
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
     pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_config_arn = input;
-        self
+        self.replication_config_arn = input; self
     }
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
     pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +249,7 @@ impl ReplicationBuilder {
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
     pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_endpoint_arn = input;
-        self
+        self.source_endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
     pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +262,7 @@ impl ReplicationBuilder {
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
     pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_endpoint_arn = input;
-        self
+        self.target_endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
     pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +275,7 @@ impl ReplicationBuilder {
     }
     /// <p>The type of the serverless replication.</p>
     pub fn set_replication_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
-        self.replication_type = input;
-        self
+        self.replication_type = input; self
     }
     /// <p>The type of the serverless replication.</p>
     pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
@@ -292,8 +288,7 @@ impl ReplicationBuilder {
     }
     /// <p>The current status of the serverless replication.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the serverless replication.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +301,7 @@ impl ReplicationBuilder {
     }
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
     pub fn set_provision_data(mut self, input: ::std::option::Option<crate::types::ProvisionData>) -> Self {
-        self.provision_data = input;
-        self
+        self.provision_data = input; self
     }
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
     pub fn get_provision_data(&self) -> &::std::option::Option<crate::types::ProvisionData> {
@@ -380,8 +374,7 @@ impl ReplicationBuilder {
     /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub fn set_stop_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stop_reason = input;
-        self
+        self.stop_reason = input; self
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -424,17 +417,16 @@ impl ReplicationBuilder {
     /// <p>Error and other information about why a serverless replication failed.</p>
     pub fn failure_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_messages.unwrap_or_default();
-        v.push(input.into());
-        self.failure_messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn set_failure_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_messages = input;
-        self
+    pub fn set_failure_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_messages = input; self
     }
     /// <p>Error and other information about why a serverless replication failed.</p>
-    pub fn get_failure_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_messages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_messages
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
@@ -444,8 +436,7 @@ impl ReplicationBuilder {
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
     pub fn set_replication_stats(mut self, input: ::std::option::Option<crate::types::ReplicationStats>) -> Self {
-        self.replication_stats = input;
-        self
+        self.replication_stats = input; self
     }
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
     pub fn get_replication_stats(&self) -> &::std::option::Option<crate::types::ReplicationStats> {
@@ -458,8 +449,7 @@ impl ReplicationBuilder {
     }
     /// <p>The replication type.</p>
     pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_replication_type = input;
-        self
+        self.start_replication_type = input; self
     }
     /// <p>The replication type.</p>
     pub fn get_start_replication_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -472,8 +462,7 @@ impl ReplicationBuilder {
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cdc_start_time = input;
-        self
+        self.cdc_start_time = input; self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn get_cdc_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -486,8 +475,7 @@ impl ReplicationBuilder {
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_start_position = input;
-        self
+        self.cdc_start_position = input; self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -500,8 +488,7 @@ impl ReplicationBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_stop_position = input;
-        self
+        self.cdc_stop_position = input; self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     pub fn get_cdc_stop_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -514,8 +501,7 @@ impl ReplicationBuilder {
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
     pub fn set_recovery_checkpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_checkpoint = input;
-        self
+        self.recovery_checkpoint = input; self
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
     pub fn get_recovery_checkpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -528,8 +514,7 @@ impl ReplicationBuilder {
     }
     /// <p>The time the serverless replication was created.</p>
     pub fn set_replication_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.replication_create_time = input;
-        self
+        self.replication_create_time = input; self
     }
     /// <p>The time the serverless replication was created.</p>
     pub fn get_replication_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -542,8 +527,7 @@ impl ReplicationBuilder {
     }
     /// <p>The time the serverless replication was updated.</p>
     pub fn set_replication_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.replication_update_time = input;
-        self
+        self.replication_update_time = input; self
     }
     /// <p>The time the serverless replication was updated.</p>
     pub fn get_replication_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -556,8 +540,7 @@ impl ReplicationBuilder {
     }
     /// <p>The timestamp when replication was last stopped.</p>
     pub fn set_replication_last_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.replication_last_stop_time = input;
-        self
+        self.replication_last_stop_time = input; self
     }
     /// <p>The timestamp when replication was last stopped.</p>
     pub fn get_replication_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -570,8 +553,7 @@ impl ReplicationBuilder {
     }
     /// <p>The timestamp when DMS will deprovision the replication.</p>
     pub fn set_replication_deprovision_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.replication_deprovision_time = input;
-        self
+        self.replication_deprovision_time = input; self
     }
     /// <p>The timestamp when DMS will deprovision the replication.</p>
     pub fn get_replication_deprovision_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -580,25 +562,45 @@ impl ReplicationBuilder {
     /// Consumes the builder and constructs a [`Replication`](crate::types::Replication).
     pub fn build(self) -> crate::types::Replication {
         crate::types::Replication {
-            replication_config_identifier: self.replication_config_identifier,
-            replication_config_arn: self.replication_config_arn,
-            source_endpoint_arn: self.source_endpoint_arn,
-            target_endpoint_arn: self.target_endpoint_arn,
-            replication_type: self.replication_type,
-            status: self.status,
-            provision_data: self.provision_data,
-            stop_reason: self.stop_reason,
-            failure_messages: self.failure_messages,
-            replication_stats: self.replication_stats,
-            start_replication_type: self.start_replication_type,
-            cdc_start_time: self.cdc_start_time,
-            cdc_start_position: self.cdc_start_position,
-            cdc_stop_position: self.cdc_stop_position,
-            recovery_checkpoint: self.recovery_checkpoint,
-            replication_create_time: self.replication_create_time,
-            replication_update_time: self.replication_update_time,
-            replication_last_stop_time: self.replication_last_stop_time,
-            replication_deprovision_time: self.replication_deprovision_time,
+            replication_config_identifier: self.replication_config_identifier
+            ,
+            replication_config_arn: self.replication_config_arn
+            ,
+            source_endpoint_arn: self.source_endpoint_arn
+            ,
+            target_endpoint_arn: self.target_endpoint_arn
+            ,
+            replication_type: self.replication_type
+            ,
+            status: self.status
+            ,
+            provision_data: self.provision_data
+            ,
+            stop_reason: self.stop_reason
+            ,
+            failure_messages: self.failure_messages
+            ,
+            replication_stats: self.replication_stats
+            ,
+            start_replication_type: self.start_replication_type
+            ,
+            cdc_start_time: self.cdc_start_time
+            ,
+            cdc_start_position: self.cdc_start_position
+            ,
+            cdc_stop_position: self.cdc_stop_position
+            ,
+            recovery_checkpoint: self.recovery_checkpoint
+            ,
+            replication_create_time: self.replication_create_time
+            ,
+            replication_update_time: self.replication_update_time
+            ,
+            replication_last_stop_time: self.replication_last_stop_time
+            ,
+            replication_deprovision_time: self.replication_deprovision_time
+            ,
         }
     }
 }
+

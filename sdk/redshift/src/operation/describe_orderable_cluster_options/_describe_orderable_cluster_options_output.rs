@@ -3,30 +3,31 @@
 /// <p>Contains the output from the <code>DescribeOrderableClusterOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrderableClusterOptionsOutput {
+pub struct DescribeOrderableClusterOptionsOutput  {
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
-    pub orderable_cluster_options: ::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>>,
+    pub orderable_cluster_options: ::std::option::Option<::std::vec::Vec::<crate::types::OrderableClusterOption>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeOrderableClusterOptionsOutput {
+impl  DescribeOrderableClusterOptionsOutput  {
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orderable_cluster_options.is_none()`.
-    pub fn orderable_cluster_options(&self) -> &[crate::types::OrderableClusterOption] {
-        self.orderable_cluster_options.as_deref().unwrap_or_default()
+    pub fn orderable_cluster_options(&self) -> & [crate::types::OrderableClusterOption] {
+        self.orderable_cluster_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeOrderableClusterOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeOrderableClusterOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableClusterOptionsOutput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput).
     pub fn builder() -> crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeOrderableClusterOptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableClusterOptionsOutputBuilder {
-    pub(crate) orderable_cluster_options: ::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>>,
+    pub(crate) orderable_cluster_options: ::std::option::Option<::std::vec::Vec::<crate::types::OrderableClusterOption>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeOrderableClusterOptionsOutputBuilder {
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
     pub fn orderable_cluster_options(mut self, input: crate::types::OrderableClusterOption) -> Self {
         let mut v = self.orderable_cluster_options.unwrap_or_default();
-        v.push(input);
-        self.orderable_cluster_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.orderable_cluster_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
-    pub fn set_orderable_cluster_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>>) -> Self {
-        self.orderable_cluster_options = input;
-        self
+    pub fn set_orderable_cluster_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrderableClusterOption>>) -> Self {
+        self.orderable_cluster_options = input; self
     }
     /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
-    pub fn get_orderable_cluster_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>> {
+    pub fn get_orderable_cluster_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrderableClusterOption>> {
         &self.orderable_cluster_options
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
@@ -70,28 +70,30 @@ impl DescribeOrderableClusterOptionsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeOrderableClusterOptionsOutput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput).
     pub fn build(self) -> crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput {
         crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput {
-            orderable_cluster_options: self.orderable_cluster_options,
-            marker: self.marker,
+            orderable_cluster_options: self.orderable_cluster_options
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

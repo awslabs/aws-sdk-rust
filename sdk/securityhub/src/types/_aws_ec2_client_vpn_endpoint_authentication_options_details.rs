@@ -3,7 +3,7 @@
 /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
+pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsDetails  {
     /// <p>The authentication type used.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Active Directory, if applicable. With Active Directory authentication, clients are authenticated against existing Active Directory groups.</p>
@@ -13,25 +13,21 @@ pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
     pub federated_authentication: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
 }
-impl AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
+impl  AwsEc2ClientVpnEndpointAuthenticationOptionsDetails  {
     /// <p>The authentication type used.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Information about the Active Directory, if applicable. With Active Directory authentication, clients are authenticated against existing Active Directory groups.</p>
-    pub fn active_directory(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails> {
+    pub fn active_directory(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails> {
         self.active_directory.as_ref()
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn mutual_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails> {
+    pub fn mutual_authentication(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails> {
         self.mutual_authentication.as_ref()
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn federated_authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails> {
+    pub fn federated_authentication(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails> {
         self.federated_authentication.as_ref()
     }
 }
@@ -49,8 +45,7 @@ pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) active_directory: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails>,
     pub(crate) mutual_authentication: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>,
-    pub(crate) federated_authentication:
-        ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
+    pub(crate) federated_authentication: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
 }
 impl AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder {
     /// <p>The authentication type used.</p>
@@ -60,8 +55,7 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder {
     }
     /// <p>The authentication type used.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The authentication type used.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,12 +67,8 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder {
         self
     }
     /// <p>Information about the Active Directory, if applicable. With Active Directory authentication, clients are authenticated against existing Active Directory groups.</p>
-    pub fn set_active_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails>,
-    ) -> Self {
-        self.active_directory = input;
-        self
+    pub fn set_active_directory(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails>) -> Self {
+        self.active_directory = input; self
     }
     /// <p>Information about the Active Directory, if applicable. With Active Directory authentication, clients are authenticated against existing Active Directory groups.</p>
     pub fn get_active_directory(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails> {
@@ -90,48 +80,38 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder {
         self
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn set_mutual_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>,
-    ) -> Self {
-        self.mutual_authentication = input;
-        self
+    pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>) -> Self {
+        self.mutual_authentication = input; self
     }
     /// <p>Information about the authentication certificates, if applicable.</p>
-    pub fn get_mutual_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails> {
+    pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails> {
         &self.mutual_authentication
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn federated_authentication(
-        mut self,
-        input: crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails,
-    ) -> Self {
+    pub fn federated_authentication(mut self, input: crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails) -> Self {
         self.federated_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn set_federated_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
-    ) -> Self {
-        self.federated_authentication = input;
-        self
+    pub fn set_federated_authentication(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>) -> Self {
+        self.federated_authentication = input; self
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
-    pub fn get_federated_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails> {
+    pub fn get_federated_authentication(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails> {
         &self.federated_authentication
     }
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointAuthenticationOptionsDetails`](crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
         crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails {
-            r#type: self.r#type,
-            active_directory: self.active_directory,
-            mutual_authentication: self.mutual_authentication,
-            federated_authentication: self.federated_authentication,
+            r#type: self.r#type
+            ,
+            active_directory: self.active_directory
+            ,
+            mutual_authentication: self.mutual_authentication
+            ,
+            federated_authentication: self.federated_authentication
+            ,
         }
     }
 }
+

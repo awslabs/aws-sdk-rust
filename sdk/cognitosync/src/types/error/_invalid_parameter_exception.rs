@@ -3,21 +3,19 @@
 /// Thrown when a request parameter does not comply with the associated constraints.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     /// Message returned by InvalidParameterException.
     pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidParameterException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -31,9 +29,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidParamete
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::types::error::InvalidParameterException).
@@ -58,36 +54,37 @@ impl InvalidParameterExceptionBuilder {
     }
     /// Message returned by InvalidParameterException.
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Message returned by InvalidParameterException.
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidParameterException`](crate::types::error::InvalidParameterException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::InvalidParameterExceptionBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidParameterException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::InvalidParameterException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building InvalidParameterException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::InvalidParameterException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building InvalidParameterException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

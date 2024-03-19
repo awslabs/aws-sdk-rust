@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGrantInput {
+pub struct DeleteGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Status reason for the delete request.</p>
@@ -10,17 +10,17 @@ pub struct DeleteGrantInput {
     /// <p>Current version of the grant.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGrantInput {
+impl  DeleteGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Current version of the grant.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteGrantInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteGrantInputBuilder {
     }
     /// <p>The Status reason for the delete request.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The Status reason for the delete request.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl DeleteGrantInputBuilder {
     }
     /// <p>Current version of the grant.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Current version of the grant.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl DeleteGrantInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_grant::DeleteGrantInput {
-            grant_arn: self.grant_arn,
-            status_reason: self.status_reason,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_grant::DeleteGrantInput {
+                grant_arn: self.grant_arn
+                ,
+                status_reason: self.status_reason
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

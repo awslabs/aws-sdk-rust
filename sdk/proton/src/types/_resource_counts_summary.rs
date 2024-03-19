@@ -3,7 +3,7 @@
 /// <p>Summary counts of each Proton resource types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCountsSummary {
+pub struct ResourceCountsSummary  {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
     pub total: i32,
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
@@ -15,7 +15,7 @@ pub struct ResourceCountsSummary {
     /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
     pub behind_minor: ::std::option::Option<i32>,
 }
-impl ResourceCountsSummary {
+impl  ResourceCountsSummary  {
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
     pub fn total(&self) -> i32 {
         self.total
@@ -63,8 +63,7 @@ impl ResourceCountsSummaryBuilder {
     }
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
     pub fn get_total(&self) -> &::std::option::Option<i32> {
@@ -77,8 +76,7 @@ impl ResourceCountsSummaryBuilder {
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
     pub fn get_failed(&self) -> &::std::option::Option<i32> {
@@ -91,8 +89,7 @@ impl ResourceCountsSummaryBuilder {
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
     pub fn set_up_to_date(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.up_to_date = input;
-        self
+        self.up_to_date = input; self
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
     pub fn get_up_to_date(&self) -> &::std::option::Option<i32> {
@@ -105,8 +102,7 @@ impl ResourceCountsSummaryBuilder {
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a major template version update.</p>
     pub fn set_behind_major(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.behind_major = input;
-        self
+        self.behind_major = input; self
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a major template version update.</p>
     pub fn get_behind_major(&self) -> &::std::option::Option<i32> {
@@ -119,8 +115,7 @@ impl ResourceCountsSummaryBuilder {
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
     pub fn set_behind_minor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.behind_minor = input;
-        self
+        self.behind_minor = input; self
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
     pub fn get_behind_minor(&self) -> &::std::option::Option<i32> {
@@ -130,17 +125,23 @@ impl ResourceCountsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total`](crate::types::builders::ResourceCountsSummaryBuilder::total)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceCountsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceCountsSummary {
-            total: self.total.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total",
-                    "total was not specified but it is required when building ResourceCountsSummary",
-                )
-            })?,
-            failed: self.failed,
-            up_to_date: self.up_to_date,
-            behind_major: self.behind_major,
-            behind_minor: self.behind_minor,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceCountsSummary {
+                total: self.total
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total", "total was not specified but it is required when building ResourceCountsSummary")
+                    )?
+                ,
+                failed: self.failed
+                ,
+                up_to_date: self.up_to_date
+                ,
+                behind_major: self.behind_major
+                ,
+                behind_minor: self.behind_minor
+                ,
+            }
+        )
     }
 }
+

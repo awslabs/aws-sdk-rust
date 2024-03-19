@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetOutput {
+pub struct CreateFleetOutput  {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fleet_attributes: ::std::option::Option<crate::types::FleetAttributes>,
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    pub location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
+    pub location_states: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>,
     _request_id: Option<String>,
 }
-impl CreateFleetOutput {
+impl  CreateFleetOutput  {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
-    pub fn fleet_attributes(&self) -> ::std::option::Option<&crate::types::FleetAttributes> {
+    pub fn fleet_attributes(&self) -> ::std::option::Option<& crate::types::FleetAttributes> {
         self.fleet_attributes.as_ref()
     }
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_states.is_none()`.
-    pub fn location_states(&self) -> &[crate::types::LocationState] {
-        self.location_states.as_deref().unwrap_or_default()
+    pub fn location_states(&self) -> & [crate::types::LocationState] {
+        self.location_states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFleetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFleetOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput).
     pub fn builder() -> crate::operation::create_fleet::builders::CreateFleetOutputBuilder {
@@ -38,7 +39,7 @@ impl CreateFleetOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetOutputBuilder {
     pub(crate) fleet_attributes: ::std::option::Option<crate::types::FleetAttributes>,
-    pub(crate) location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
+    pub(crate) location_states: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>,
     _request_id: Option<String>,
 }
 impl CreateFleetOutputBuilder {
@@ -49,8 +50,7 @@ impl CreateFleetOutputBuilder {
     }
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn set_fleet_attributes(mut self, input: ::std::option::Option<crate::types::FleetAttributes>) -> Self {
-        self.fleet_attributes = input;
-        self
+        self.fleet_attributes = input; self
     }
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn get_fleet_attributes(&self) -> &::std::option::Option<crate::types::FleetAttributes> {
@@ -63,34 +63,36 @@ impl CreateFleetOutputBuilder {
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
     pub fn location_states(mut self, input: crate::types::LocationState) -> Self {
         let mut v = self.location_states.unwrap_or_default();
-        v.push(input);
-        self.location_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.location_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>) -> Self {
-        self.location_states = input;
-        self
+    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LocationState>>) -> Self {
+        self.location_states = input; self
     }
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
+    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LocationState>> {
         &self.location_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput).
     pub fn build(self) -> crate::operation::create_fleet::CreateFleetOutput {
         crate::operation::create_fleet::CreateFleetOutput {
-            fleet_attributes: self.fleet_attributes,
-            location_states: self.location_states,
+            fleet_attributes: self.fleet_attributes
+            ,
+            location_states: self.location_states
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

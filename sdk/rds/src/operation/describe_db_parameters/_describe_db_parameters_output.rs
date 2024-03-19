@@ -3,30 +3,31 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbParametersOutput {
+pub struct DescribeDbParametersOutput  {
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDbParametersOutput {
+impl  DescribeDbParametersOutput  {
     /// <p>A list of <code>Parameter</code> values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDbParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDbParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
     pub fn builder() -> crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDbParametersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbParametersOutputBuilder {
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeDbParametersOutputBuilder {
     /// <p>A list of <code>Parameter</code> values.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -70,28 +70,30 @@ impl DescribeDbParametersOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
     pub fn build(self) -> crate::operation::describe_db_parameters::DescribeDbParametersOutput {
         crate::operation::describe_db_parameters::DescribeDbParametersOutput {
-            parameters: self.parameters,
-            marker: self.marker,
+            parameters: self.parameters
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

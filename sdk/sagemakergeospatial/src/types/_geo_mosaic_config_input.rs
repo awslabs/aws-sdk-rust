@@ -3,22 +3,23 @@
 /// <p>Input configuration information for the geomosaic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoMosaicConfigInput {
+pub struct GeoMosaicConfigInput  {
     /// <p>The name of the algorithm being used for geomosaic.</p>
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     /// <p>The target bands for geomosaic.</p>
-    pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GeoMosaicConfigInput {
+impl  GeoMosaicConfigInput  {
     /// <p>The name of the algorithm being used for geomosaic.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&crate::types::AlgorithmNameGeoMosaic> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& crate::types::AlgorithmNameGeoMosaic> {
         self.algorithm_name.as_ref()
     }
     /// <p>The target bands for geomosaic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
-    pub fn target_bands(&self) -> &[::std::string::String] {
-        self.target_bands.as_deref().unwrap_or_default()
+    pub fn target_bands(&self) -> & [::std::string::String] {
+        self.target_bands.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GeoMosaicConfigInput {
@@ -33,7 +34,7 @@ impl GeoMosaicConfigInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMosaicConfigInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
-    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GeoMosaicConfigInputBuilder {
     /// <p>The name of the algorithm being used for geomosaic.</p>
@@ -43,8 +44,7 @@ impl GeoMosaicConfigInputBuilder {
     }
     /// <p>The name of the algorithm being used for geomosaic.</p>
     pub fn set_algorithm_name(mut self, input: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// <p>The name of the algorithm being used for geomosaic.</p>
     pub fn get_algorithm_name(&self) -> &::std::option::Option<crate::types::AlgorithmNameGeoMosaic> {
@@ -57,24 +57,26 @@ impl GeoMosaicConfigInputBuilder {
     /// <p>The target bands for geomosaic.</p>
     pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-        v.push(input.into());
-        self.target_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target bands for geomosaic.</p>
-    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_bands = input;
-        self
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_bands = input; self
     }
     /// <p>The target bands for geomosaic.</p>
-    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).
     pub fn build(self) -> crate::types::GeoMosaicConfigInput {
         crate::types::GeoMosaicConfigInput {
-            algorithm_name: self.algorithm_name,
-            target_bands: self.target_bands,
+            algorithm_name: self.algorithm_name
+            ,
+            target_bands: self.target_bands
+            ,
         }
     }
 }
+

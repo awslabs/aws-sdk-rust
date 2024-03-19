@@ -3,13 +3,13 @@
 /// <p>DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicDnsNamespaceProperties {
+pub struct PublicDnsNamespaceProperties  {
     /// <p>DNS properties for the public DNS namespace.</p>
     pub dns_properties: ::std::option::Option<crate::types::PublicDnsPropertiesMutable>,
 }
-impl PublicDnsNamespaceProperties {
+impl  PublicDnsNamespaceProperties  {
     /// <p>DNS properties for the public DNS namespace.</p>
-    pub fn dns_properties(&self) -> ::std::option::Option<&crate::types::PublicDnsPropertiesMutable> {
+    pub fn dns_properties(&self) -> ::std::option::Option<& crate::types::PublicDnsPropertiesMutable> {
         self.dns_properties.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PublicDnsNamespacePropertiesBuilder {
     }
     /// <p>DNS properties for the public DNS namespace.</p>
     pub fn set_dns_properties(mut self, input: ::std::option::Option<crate::types::PublicDnsPropertiesMutable>) -> Self {
-        self.dns_properties = input;
-        self
+        self.dns_properties = input; self
     }
     /// <p>DNS properties for the public DNS namespace.</p>
     pub fn get_dns_properties(&self) -> &::std::option::Option<crate::types::PublicDnsPropertiesMutable> {
@@ -45,7 +44,9 @@ impl PublicDnsNamespacePropertiesBuilder {
     /// Consumes the builder and constructs a [`PublicDnsNamespaceProperties`](crate::types::PublicDnsNamespaceProperties).
     pub fn build(self) -> crate::types::PublicDnsNamespaceProperties {
         crate::types::PublicDnsNamespaceProperties {
-            dns_properties: self.dns_properties,
+            dns_properties: self.dns_properties
+            ,
         }
     }
 }
+

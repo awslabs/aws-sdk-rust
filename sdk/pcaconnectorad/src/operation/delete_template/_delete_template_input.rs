@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTemplateInput {
+pub struct DeleteTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTemplateInput {
+impl  DeleteTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_arn
     }
     /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::operation::delete_template::DeleteTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_template::DeleteTemplateInput {
-            template_arn: self.template_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_template::DeleteTemplateInput {
+                template_arn: self.template_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides information about an WAF Regional rule group. The rule group is a collection of rules for inspecting and controlling web requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRegionalRuleGroupDetails {
+pub struct AwsWafRegionalRuleGroupDetails  {
     /// <p>A name for the metrics for this rule group.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group.</p>
@@ -11,26 +11,27 @@ pub struct AwsWafRegionalRuleGroupDetails {
     /// <p>The ID of the rule group.</p>
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
 }
-impl AwsWafRegionalRuleGroupDetails {
+impl  AwsWafRegionalRuleGroupDetails  {
     /// <p>A name for the metrics for this rule group.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the rule group.</p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AwsWafRegionalRuleGroupRulesDetails] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AwsWafRegionalRuleGroupRulesDetails] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsWafRegionalRuleGroupDetails {
@@ -47,7 +48,7 @@ pub struct AwsWafRegionalRuleGroupDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
 }
 impl AwsWafRegionalRuleGroupDetailsBuilder {
     /// <p>A name for the metrics for this rule group.</p>
@@ -57,8 +58,7 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     }
     /// <p>A name for the metrics for this rule group.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>A name for the metrics for this rule group.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     }
     /// <p>The descriptive name of the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name of the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     }
     /// <p>The ID of the rule group.</p>
     pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_id = input;
-        self
+        self.rule_group_id = input; self
     }
     /// <p>The ID of the rule group.</p>
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count.</p>
     pub fn rules(mut self, input: crate::types::AwsWafRegionalRuleGroupRulesDetails) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafRegionalRuleGroupRulesDetails>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsWafRegionalRuleGroupRulesDetails>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupDetails`](crate::types::AwsWafRegionalRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalRuleGroupDetails {
         crate::types::AwsWafRegionalRuleGroupDetails {
-            metric_name: self.metric_name,
-            name: self.name,
-            rule_group_id: self.rule_group_id,
-            rules: self.rules,
+            metric_name: self.metric_name
+            ,
+            name: self.name
+            ,
+            rule_group_id: self.rule_group_id
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that represents additional options for display formatting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisplayFormatOptions {
+pub struct DisplayFormatOptions  {
     /// <p>A Boolean value that indicates whether to use blank cell format.</p>
     pub use_blank_cell_format: bool,
     /// <p>Determines the blank cell format.</p>
@@ -29,25 +29,25 @@ pub struct DisplayFormatOptions {
     /// <p>The currency symbol, such as <code>USD</code>.</p>
     pub currency_symbol: ::std::option::Option<::std::string::String>,
 }
-impl DisplayFormatOptions {
+impl  DisplayFormatOptions  {
     /// <p>A Boolean value that indicates whether to use blank cell format.</p>
     pub fn use_blank_cell_format(&self) -> bool {
         self.use_blank_cell_format
     }
     /// <p>Determines the blank cell format.</p>
-    pub fn blank_cell_format(&self) -> ::std::option::Option<&str> {
+    pub fn blank_cell_format(&self) -> ::std::option::Option<& str> {
         self.blank_cell_format.as_deref()
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
-    pub fn date_format(&self) -> ::std::option::Option<&str> {
+    pub fn date_format(&self) -> ::std::option::Option<& str> {
         self.date_format.as_deref()
     }
     /// <p>Determines the decimal separator.</p>
-    pub fn decimal_separator(&self) -> ::std::option::Option<&crate::types::TopicNumericSeparatorSymbol> {
+    pub fn decimal_separator(&self) -> ::std::option::Option<& crate::types::TopicNumericSeparatorSymbol> {
         self.decimal_separator.as_ref()
     }
     /// <p>Determines the grouping separator.</p>
-    pub fn grouping_separator(&self) -> ::std::option::Option<&str> {
+    pub fn grouping_separator(&self) -> ::std::option::Option<& str> {
         self.grouping_separator.as_deref()
     }
     /// <p>A Boolean value that indicates whether to use grouping.</p>
@@ -59,23 +59,23 @@ impl DisplayFormatOptions {
         self.fraction_digits
     }
     /// <p>The prefix value for a display format.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The suffix value for a display format.</p>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<& str> {
         self.suffix.as_deref()
     }
     /// <p>The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>, <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.</p>
-    pub fn unit_scaler(&self) -> ::std::option::Option<&crate::types::NumberScale> {
+    pub fn unit_scaler(&self) -> ::std::option::Option<& crate::types::NumberScale> {
         self.unit_scaler.as_ref()
     }
     /// <p>The negative format.</p>
-    pub fn negative_format(&self) -> ::std::option::Option<&crate::types::NegativeFormat> {
+    pub fn negative_format(&self) -> ::std::option::Option<& crate::types::NegativeFormat> {
         self.negative_format.as_ref()
     }
     /// <p>The currency symbol, such as <code>USD</code>.</p>
-    pub fn currency_symbol(&self) -> ::std::option::Option<&str> {
+    pub fn currency_symbol(&self) -> ::std::option::Option<& str> {
         self.currency_symbol.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>A Boolean value that indicates whether to use blank cell format.</p>
     pub fn set_use_blank_cell_format(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_blank_cell_format = input;
-        self
+        self.use_blank_cell_format = input; self
     }
     /// <p>A Boolean value that indicates whether to use blank cell format.</p>
     pub fn get_use_blank_cell_format(&self) -> &::std::option::Option<bool> {
@@ -125,8 +124,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>Determines the blank cell format.</p>
     pub fn set_blank_cell_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blank_cell_format = input;
-        self
+        self.blank_cell_format = input; self
     }
     /// <p>Determines the blank cell format.</p>
     pub fn get_blank_cell_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
     pub fn set_date_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_format = input;
-        self
+        self.date_format = input; self
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
     pub fn get_date_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>Determines the decimal separator.</p>
     pub fn set_decimal_separator(mut self, input: ::std::option::Option<crate::types::TopicNumericSeparatorSymbol>) -> Self {
-        self.decimal_separator = input;
-        self
+        self.decimal_separator = input; self
     }
     /// <p>Determines the decimal separator.</p>
     pub fn get_decimal_separator(&self) -> &::std::option::Option<crate::types::TopicNumericSeparatorSymbol> {
@@ -167,8 +163,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>Determines the grouping separator.</p>
     pub fn set_grouping_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grouping_separator = input;
-        self
+        self.grouping_separator = input; self
     }
     /// <p>Determines the grouping separator.</p>
     pub fn get_grouping_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>A Boolean value that indicates whether to use grouping.</p>
     pub fn set_use_grouping(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_grouping = input;
-        self
+        self.use_grouping = input; self
     }
     /// <p>A Boolean value that indicates whether to use grouping.</p>
     pub fn get_use_grouping(&self) -> &::std::option::Option<bool> {
@@ -195,8 +189,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>Determines the number of fraction digits.</p>
     pub fn set_fraction_digits(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fraction_digits = input;
-        self
+        self.fraction_digits = input; self
     }
     /// <p>Determines the number of fraction digits.</p>
     pub fn get_fraction_digits(&self) -> &::std::option::Option<i32> {
@@ -209,8 +202,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>The prefix value for a display format.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix value for a display format.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +215,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>The suffix value for a display format.</p>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>The suffix value for a display format.</p>
     pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +228,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>, <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.</p>
     pub fn set_unit_scaler(mut self, input: ::std::option::Option<crate::types::NumberScale>) -> Self {
-        self.unit_scaler = input;
-        self
+        self.unit_scaler = input; self
     }
     /// <p>The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>, <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.</p>
     pub fn get_unit_scaler(&self) -> &::std::option::Option<crate::types::NumberScale> {
@@ -251,8 +241,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>The negative format.</p>
     pub fn set_negative_format(mut self, input: ::std::option::Option<crate::types::NegativeFormat>) -> Self {
-        self.negative_format = input;
-        self
+        self.negative_format = input; self
     }
     /// <p>The negative format.</p>
     pub fn get_negative_format(&self) -> &::std::option::Option<crate::types::NegativeFormat> {
@@ -265,8 +254,7 @@ impl DisplayFormatOptionsBuilder {
     }
     /// <p>The currency symbol, such as <code>USD</code>.</p>
     pub fn set_currency_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_symbol = input;
-        self
+        self.currency_symbol = input; self
     }
     /// <p>The currency symbol, such as <code>USD</code>.</p>
     pub fn get_currency_symbol(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,18 +263,34 @@ impl DisplayFormatOptionsBuilder {
     /// Consumes the builder and constructs a [`DisplayFormatOptions`](crate::types::DisplayFormatOptions).
     pub fn build(self) -> crate::types::DisplayFormatOptions {
         crate::types::DisplayFormatOptions {
-            use_blank_cell_format: self.use_blank_cell_format.unwrap_or_default(),
-            blank_cell_format: self.blank_cell_format,
-            date_format: self.date_format,
-            decimal_separator: self.decimal_separator,
-            grouping_separator: self.grouping_separator,
-            use_grouping: self.use_grouping.unwrap_or_default(),
-            fraction_digits: self.fraction_digits.unwrap_or_default(),
-            prefix: self.prefix,
-            suffix: self.suffix,
-            unit_scaler: self.unit_scaler,
-            negative_format: self.negative_format,
-            currency_symbol: self.currency_symbol,
+            use_blank_cell_format: self.use_blank_cell_format
+                .unwrap_or_default()
+            ,
+            blank_cell_format: self.blank_cell_format
+            ,
+            date_format: self.date_format
+            ,
+            decimal_separator: self.decimal_separator
+            ,
+            grouping_separator: self.grouping_separator
+            ,
+            use_grouping: self.use_grouping
+                .unwrap_or_default()
+            ,
+            fraction_digits: self.fraction_digits
+                .unwrap_or_default()
+            ,
+            prefix: self.prefix
+            ,
+            suffix: self.suffix
+            ,
+            unit_scaler: self.unit_scaler
+            ,
+            negative_format: self.negative_format
+            ,
+            currency_symbol: self.currency_symbol
+            ,
         }
     }
 }
+

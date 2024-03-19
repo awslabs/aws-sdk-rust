@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImages`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`names(impl Into<String>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::set_names):<br>required: **false**<br><p>The names of the public or private images to describe.</p><br>
     ///   - [`arns(impl Into<String>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::arns) / [`set_arns(Option<Vec::<String>>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::set_arns):<br>required: **false**<br><p>The ARNs of the public, private, and shared images to describe.</p><br>
     ///   - [`r#type(VisibilityType)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::type) / [`set_type(Option<VisibilityType>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::set_type):<br>required: **false**<br><p>The type of image (public, private, or shared) to describe.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_images::builders::DescribeImagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
-    /// - On success, responds with [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput) with field(s):
+                            /// - On success, responds with [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput) with field(s):
     ///   - [`images(Option<Vec::<Image>>)`](crate::operation::describe_images::DescribeImagesOutput::images): <p>Information about the images.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_images::DescribeImagesOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::operation::describe_images::DescribeImagesError)
+                            /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::operation::describe_images::DescribeImagesError)
     pub fn describe_images(&self) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
-        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

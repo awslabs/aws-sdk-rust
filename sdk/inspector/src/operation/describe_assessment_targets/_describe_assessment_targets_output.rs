@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssessmentTargetsOutput {
+pub struct DescribeAssessmentTargetsOutput  {
     /// <p>Information about the assessment targets.</p>
-    pub assessment_targets: ::std::vec::Vec<crate::types::AssessmentTarget>,
+    pub assessment_targets: ::std::vec::Vec::<crate::types::AssessmentTarget>,
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    pub failed_items: ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
-impl DescribeAssessmentTargetsOutput {
+impl  DescribeAssessmentTargetsOutput  {
     /// <p>Information about the assessment targets.</p>
-    pub fn assessment_targets(&self) -> &[crate::types::AssessmentTarget] {
-        use std::ops::Deref;
-        self.assessment_targets.deref()
+    pub fn assessment_targets(&self) -> & [crate::types::AssessmentTarget] {
+        use std::ops::Deref; self.assessment_targets.deref()
     }
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+    pub fn failed_items(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails> {
         &self.failed_items
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssessmentTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAssessmentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentTargetsOutput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput).
     pub fn builder() -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsOutputBuilder {
@@ -36,8 +35,8 @@ impl DescribeAssessmentTargetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsOutputBuilder {
-    pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
-    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>>,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentTargetsOutputBuilder {
@@ -48,17 +47,16 @@ impl DescribeAssessmentTargetsOutputBuilder {
     /// <p>Information about the assessment targets.</p>
     pub fn assessment_targets(mut self, input: crate::types::AssessmentTarget) -> Self {
         let mut v = self.assessment_targets.unwrap_or_default();
-        v.push(input);
-        self.assessment_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assessment_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the assessment targets.</p>
-    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>) -> Self {
-        self.assessment_targets = input;
-        self
+    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>>) -> Self {
+        self.assessment_targets = input; self
     }
     /// <p>Information about the assessment targets.</p>
-    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentTarget>> {
         &self.assessment_targets
     }
     /// Adds a key-value pair to `failed_items`.
@@ -68,55 +66,47 @@ impl DescribeAssessmentTargetsOutputBuilder {
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.failed_items = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.failed_items = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
-    ) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>) -> Self {
+        self.failed_items = input; self
     }
     /// <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAssessmentTargetsOutput`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`assessment_targets`](crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsOutputBuilder::assessment_targets)
     /// - [`failed_items`](crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsOutputBuilder::failed_items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput {
-            assessment_targets: self.assessment_targets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_targets",
-                    "assessment_targets was not specified but it is required when building DescribeAssessmentTargetsOutput",
-                )
-            })?,
-            failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failed_items",
-                    "failed_items was not specified but it is required when building DescribeAssessmentTargetsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput {
+                assessment_targets: self.assessment_targets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_targets", "assessment_targets was not specified but it is required when building DescribeAssessmentTargetsOutput")
+                    )?
+                ,
+                failed_items: self.failed_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failed_items", "failed_items was not specified but it is required when building DescribeAssessmentTargetsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

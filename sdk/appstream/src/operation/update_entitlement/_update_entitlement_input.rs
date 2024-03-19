@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEntitlementInput {
+pub struct UpdateEntitlementInput  {
     /// <p>The name of the entitlement.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
@@ -12,30 +12,31 @@ pub struct UpdateEntitlementInput {
     /// <p>Specifies whether all or only selected apps are entitled.</p>
     pub app_visibility: ::std::option::Option<crate::types::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>,
 }
-impl UpdateEntitlementInput {
+impl  UpdateEntitlementInput  {
     /// <p>The name of the entitlement.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The description of the entitlement.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether all or only selected apps are entitled.</p>
-    pub fn app_visibility(&self) -> ::std::option::Option<&crate::types::AppVisibility> {
+    pub fn app_visibility(&self) -> ::std::option::Option<& crate::types::AppVisibility> {
         self.app_visibility.as_ref()
     }
     /// <p>The attributes of the entitlement.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::EntitlementAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::EntitlementAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateEntitlementInput {
@@ -53,7 +54,7 @@ pub struct UpdateEntitlementInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) app_visibility: ::std::option::Option<crate::types::AppVisibility>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>,
 }
 impl UpdateEntitlementInputBuilder {
     /// <p>The name of the entitlement.</p>
@@ -64,8 +65,7 @@ impl UpdateEntitlementInputBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the entitlement.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateEntitlementInputBuilder {
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl UpdateEntitlementInputBuilder {
     }
     /// <p>The description of the entitlement.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the entitlement.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdateEntitlementInputBuilder {
     }
     /// <p>Specifies whether all or only selected apps are entitled.</p>
     pub fn set_app_visibility(mut self, input: ::std::option::Option<crate::types::AppVisibility>) -> Self {
-        self.app_visibility = input;
-        self
+        self.app_visibility = input; self
     }
     /// <p>Specifies whether all or only selected apps are entitled.</p>
     pub fn get_app_visibility(&self) -> &::std::option::Option<crate::types::AppVisibility> {
@@ -121,29 +118,34 @@ impl UpdateEntitlementInputBuilder {
     /// <p>The attributes of the entitlement.</p>
     pub fn attributes(mut self, input: crate::types::EntitlementAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdateEntitlementInput`](crate::operation::update_entitlement::UpdateEntitlementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_entitlement::UpdateEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_entitlement::UpdateEntitlementInput {
-            name: self.name,
-            stack_name: self.stack_name,
-            description: self.description,
-            app_visibility: self.app_visibility,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_entitlement::UpdateEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_entitlement::UpdateEntitlementInput {
+                name: self.name
+                ,
+                stack_name: self.stack_name
+                ,
+                description: self.description
+                ,
+                app_visibility: self.app_visibility
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

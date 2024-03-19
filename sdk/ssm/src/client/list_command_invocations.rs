@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCommandInvocations`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`command_id(impl Into<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::command_id) / [`set_command_id(Option<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_command_id):<br>required: **false**<br><p>(Optional) The invocations for a specific command ID.</p><br>
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_instance_id):<br>required: **false**<br><p>(Optional) The command execution details for a specific managed node ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_max_results):<br>required: **false**<br><p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`filters(CommandFilter)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::filters) / [`set_filters(Option<Vec::<CommandFilter>>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_filters):<br>required: **false**<br><p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p><br>
     ///   - [`details(bool)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::details) / [`set_details(Option<bool>)`](crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::set_details):<br>required: **false**<br><p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>.</p><br>
-    /// - On success, responds with [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput) with field(s):
+                            /// - On success, responds with [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput) with field(s):
     ///   - [`command_invocations(Option<Vec::<CommandInvocation>>)`](crate::operation::list_command_invocations::ListCommandInvocationsOutput::command_invocations): <p>(Optional) A list of all invocations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_command_invocations::ListCommandInvocationsOutput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    /// - On failure, responds with [`SdkError<ListCommandInvocationsError>`](crate::operation::list_command_invocations::ListCommandInvocationsError)
+                            /// - On failure, responds with [`SdkError<ListCommandInvocationsError>`](crate::operation::list_command_invocations::ListCommandInvocationsError)
     pub fn list_command_invocations(&self) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder {
-        crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

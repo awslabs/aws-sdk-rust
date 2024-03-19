@@ -3,7 +3,7 @@
 /// <p>Updates a Model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelInput {
+pub struct UpdateModelInput  {
     /// <p>The API identifier.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The content-type for the model, for example, "application/json".</p>
@@ -17,29 +17,29 @@ pub struct UpdateModelInput {
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub schema: ::std::option::Option<::std::string::String>,
 }
-impl UpdateModelInput {
+impl  UpdateModelInput  {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The description of the model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API identifier.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content-type for the model, for example, "application/json".</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The description of the model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl UpdateModelInputBuilder {
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,13 +144,22 @@ impl UpdateModelInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
-            api_id: self.api_id,
-            content_type: self.content_type,
-            description: self.description,
-            model_id: self.model_id,
-            name: self.name,
-            schema: self.schema,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_model::UpdateModelInput {
+                api_id: self.api_id
+                ,
+                content_type: self.content_type
+                ,
+                description: self.description
+                ,
+                model_id: self.model_id
+                ,
+                name: self.name
+                ,
+                schema: self.schema
+                ,
+            }
+        )
     }
 }
+

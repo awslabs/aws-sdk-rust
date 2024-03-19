@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFindingsFilters`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput) with field(s):
+                            /// - On success, responds with [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput) with field(s):
     ///   - [`findings_filter_list_items(Option<Vec::<FindingsFilterListItem>>)`](crate::operation::list_findings_filters::ListFindingsFiltersOutput::findings_filter_list_items): <p>An array of objects, one for each filter that's associated with the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings_filters::ListFindingsFiltersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListFindingsFiltersError>`](crate::operation::list_findings_filters::ListFindingsFiltersError)
+                            /// - On failure, responds with [`SdkError<ListFindingsFiltersError>`](crate::operation::list_findings_filters::ListFindingsFiltersError)
     pub fn list_findings_filters(&self) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder {
-        crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

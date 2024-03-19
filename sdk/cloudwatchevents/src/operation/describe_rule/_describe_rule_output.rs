@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRuleOutput {
+pub struct DescribeRuleOutput  {
     /// <p>The name of the rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -25,53 +25,53 @@ pub struct DescribeRuleOutput {
     pub created_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRuleOutput {
+impl  DescribeRuleOutput  {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>Specifies whether the rule is enabled or disabled.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RuleState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RuleState> {
         self.state.as_ref()
     }
     /// <p>The description of the rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
-    pub fn managed_by(&self) -> ::std::option::Option<&str> {
+    pub fn managed_by(&self) -> ::std::option::Option<& str> {
         self.managed_by.as_deref()
     }
     /// <p>The name of the event bus associated with the rule.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleOutput`](crate::operation::describe_rule::DescribeRuleOutput).
     pub fn builder() -> crate::operation::describe_rule::builders::DescribeRuleOutputBuilder {
@@ -103,8 +103,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +155,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>Specifies whether the rule is enabled or disabled.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RuleState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Specifies whether the rule is enabled or disabled.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RuleState> {
@@ -173,8 +168,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The description of the rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +181,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +194,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
     pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_by = input;
-        self
+        self.managed_by = input; self
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
     pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +207,7 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The name of the event bus associated with the rule.</p>
     pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The name of the event bus associated with the rule.</p>
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,36 +220,46 @@ impl DescribeRuleOutputBuilder {
     }
     /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRuleOutput`](crate::operation::describe_rule::DescribeRuleOutput).
     pub fn build(self) -> crate::operation::describe_rule::DescribeRuleOutput {
         crate::operation::describe_rule::DescribeRuleOutput {
-            name: self.name,
-            arn: self.arn,
-            event_pattern: self.event_pattern,
-            schedule_expression: self.schedule_expression,
-            state: self.state,
-            description: self.description,
-            role_arn: self.role_arn,
-            managed_by: self.managed_by,
-            event_bus_name: self.event_bus_name,
-            created_by: self.created_by,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            event_pattern: self.event_pattern
+            ,
+            schedule_expression: self.schedule_expression
+            ,
+            state: self.state
+            ,
+            description: self.description
+            ,
+            role_arn: self.role_arn
+            ,
+            managed_by: self.managed_by
+            ,
+            event_bus_name: self.event_bus_name
+            ,
+            created_by: self.created_by
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

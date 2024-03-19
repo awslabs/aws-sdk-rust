@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInvitations`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_next_token):<br>required: **false**<br><p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p><br>
-    /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
+                            /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec::<MemberDetail>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
-    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
+                            /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
     pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

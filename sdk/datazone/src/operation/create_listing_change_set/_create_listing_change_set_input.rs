@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListingChangeSetInput {
+pub struct CreateListingChangeSetInput  {
     /// <p></p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -16,29 +16,29 @@ pub struct CreateListingChangeSetInput {
     /// <p></p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateListingChangeSetInput {
+impl  CreateListingChangeSetInput  {
     /// <p></p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p></p>
-    pub fn entity_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn entity_identifier(&self) -> ::std::option::Option<& str> {
         self.entity_identifier.as_deref()
     }
     /// <p></p>
-    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn entity_type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.entity_type.as_ref()
     }
     /// <p></p>
-    pub fn entity_revision(&self) -> ::std::option::Option<&str> {
+    pub fn entity_revision(&self) -> ::std::option::Option<& str> {
         self.entity_revision.as_deref()
     }
     /// <p></p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p></p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p></p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_entity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_identifier = input;
-        self
+        self.entity_identifier = input; self
     }
     /// <p></p>
     pub fn get_entity_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p></p>
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -113,8 +110,7 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_entity_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_revision = input;
-        self
+        self.entity_revision = input; self
     }
     /// <p></p>
     pub fn get_entity_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p></p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
@@ -142,27 +137,30 @@ impl CreateListingChangeSetInputBuilder {
     }
     /// <p></p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p></p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateListingChangeSetInput`](crate::operation::create_listing_change_set::CreateListingChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_listing_change_set::CreateListingChangeSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_listing_change_set::CreateListingChangeSetInput {
-            domain_identifier: self.domain_identifier,
-            entity_identifier: self.entity_identifier,
-            entity_type: self.entity_type,
-            entity_revision: self.entity_revision,
-            action: self.action,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_listing_change_set::CreateListingChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_listing_change_set::CreateListingChangeSetInput {
+                domain_identifier: self.domain_identifier
+                ,
+                entity_identifier: self.entity_identifier
+                ,
+                entity_type: self.entity_type
+                ,
+                entity_revision: self.entity_revision
+                ,
+                action: self.action
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

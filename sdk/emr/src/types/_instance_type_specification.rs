@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceTypeSpecification {
+pub struct InstanceTypeSpecification  {
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
@@ -15,17 +15,17 @@ pub struct InstanceTypeSpecification {
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
     pub bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    pub ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
+    pub ebs_block_devices: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDevice>>,
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
-impl InstanceTypeSpecification {
+impl  InstanceTypeSpecification  {
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
@@ -33,7 +33,7 @@ impl InstanceTypeSpecification {
         self.weighted_capacity
     }
     /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
-    pub fn bid_price(&self) -> ::std::option::Option<&str> {
+    pub fn bid_price(&self) -> ::std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
@@ -41,23 +41,25 @@ impl InstanceTypeSpecification {
         self.bid_price_as_percentage_of_on_demand_price
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
-    pub fn configurations(&self) -> &[crate::types::Configuration] {
-        self.configurations.as_deref().unwrap_or_default()
+    pub fn configurations(&self) -> & [crate::types::Configuration] {
+        self.configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_block_devices.is_none()`.
-    pub fn ebs_block_devices(&self) -> &[crate::types::EbsBlockDevice] {
-        self.ebs_block_devices.as_deref().unwrap_or_default()
+    pub fn ebs_block_devices(&self) -> & [crate::types::EbsBlockDevice] {
+        self.ebs_block_devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
-    pub fn custom_ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> ::std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
@@ -76,8 +78,8 @@ pub struct InstanceTypeSpecificationBuilder {
     pub(crate) weighted_capacity: ::std::option::Option<i32>,
     pub(crate) bid_price: ::std::option::Option<::std::string::String>,
     pub(crate) bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
-    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    pub(crate) ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
+    pub(crate) ebs_block_devices: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDevice>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) custom_ami_id: ::std::option::Option<::std::string::String>,
 }
@@ -89,8 +91,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +104,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weighted_capacity = input;
-        self
+        self.weighted_capacity = input; self
     }
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
     pub fn get_weighted_capacity(&self) -> &::std::option::Option<i32> {
@@ -117,8 +117,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bid_price = input;
-        self
+        self.bid_price = input; self
     }
     /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
     pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
     pub fn set_bid_price_as_percentage_of_on_demand_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.bid_price_as_percentage_of_on_demand_price = input;
-        self
+        self.bid_price_as_percentage_of_on_demand_price = input; self
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
     pub fn get_bid_price_as_percentage_of_on_demand_price(&self) -> &::std::option::Option<f64> {
@@ -145,17 +143,16 @@ impl InstanceTypeSpecificationBuilder {
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-        v.push(input);
-        self.configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
+        self.configurations = input; self
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         &self.configurations
     }
     /// Appends an item to `ebs_block_devices`.
@@ -165,17 +162,16 @@ impl InstanceTypeSpecificationBuilder {
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
     pub fn ebs_block_devices(mut self, input: crate::types::EbsBlockDevice) -> Self {
         let mut v = self.ebs_block_devices.unwrap_or_default();
-        v.push(input);
-        self.ebs_block_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ebs_block_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    pub fn set_ebs_block_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>) -> Self {
-        self.ebs_block_devices = input;
-        self
+    pub fn set_ebs_block_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDevice>>) -> Self {
+        self.ebs_block_devices = input; self
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    pub fn get_ebs_block_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>> {
+    pub fn get_ebs_block_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDevice>> {
         &self.ebs_block_devices
     }
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
@@ -185,8 +181,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
@@ -199,8 +194,7 @@ impl InstanceTypeSpecificationBuilder {
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_ami_id = input;
-        self
+        self.custom_ami_id = input; self
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
     pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,14 +203,23 @@ impl InstanceTypeSpecificationBuilder {
     /// Consumes the builder and constructs a [`InstanceTypeSpecification`](crate::types::InstanceTypeSpecification).
     pub fn build(self) -> crate::types::InstanceTypeSpecification {
         crate::types::InstanceTypeSpecification {
-            instance_type: self.instance_type,
-            weighted_capacity: self.weighted_capacity,
-            bid_price: self.bid_price,
-            bid_price_as_percentage_of_on_demand_price: self.bid_price_as_percentage_of_on_demand_price,
-            configurations: self.configurations,
-            ebs_block_devices: self.ebs_block_devices,
-            ebs_optimized: self.ebs_optimized,
-            custom_ami_id: self.custom_ami_id,
+            instance_type: self.instance_type
+            ,
+            weighted_capacity: self.weighted_capacity
+            ,
+            bid_price: self.bid_price
+            ,
+            bid_price_as_percentage_of_on_demand_price: self.bid_price_as_percentage_of_on_demand_price
+            ,
+            configurations: self.configurations
+            ,
+            ebs_block_devices: self.ebs_block_devices
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
+            custom_ami_id: self.custom_ami_id
+            ,
         }
     }
 }
+

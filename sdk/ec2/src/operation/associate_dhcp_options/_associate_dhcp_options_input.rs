@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateDhcpOptionsInput {
+pub struct AssociateDhcpOptionsInput  {
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
@@ -10,13 +10,13 @@ pub struct AssociateDhcpOptionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl AssociateDhcpOptionsInput {
+impl  AssociateDhcpOptionsInput  {
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
-    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
+    pub fn dhcp_options_id(&self) -> ::std::option::Option<& str> {
         self.dhcp_options_id.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl AssociateDhcpOptionsInputBuilder {
     }
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
     pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dhcp_options_id = input;
-        self
+        self.dhcp_options_id = input; self
     }
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
     pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AssociateDhcpOptionsInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl AssociateDhcpOptionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateDhcpOptionsInput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput {
-            dhcp_options_id: self.dhcp_options_id,
-            vpc_id: self.vpc_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput {
+                dhcp_options_id: self.dhcp_options_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

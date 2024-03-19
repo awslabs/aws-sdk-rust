@@ -3,13 +3,13 @@
 /// Placeholder documentation for ChannelEgressEndpoint
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelEgressEndpoint {
+pub struct ChannelEgressEndpoint  {
     /// Public IP of where a channel's output comes from
     pub source_ip: ::std::option::Option<::std::string::String>,
 }
-impl ChannelEgressEndpoint {
+impl  ChannelEgressEndpoint  {
     /// Public IP of where a channel's output comes from
-    pub fn source_ip(&self) -> ::std::option::Option<&str> {
+    pub fn source_ip(&self) -> ::std::option::Option<& str> {
         self.source_ip.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ChannelEgressEndpointBuilder {
     }
     /// Public IP of where a channel's output comes from
     pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_ip = input;
-        self
+        self.source_ip = input; self
     }
     /// Public IP of where a channel's output comes from
     pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ChannelEgressEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::types::ChannelEgressEndpoint).
     pub fn build(self) -> crate::types::ChannelEgressEndpoint {
-        crate::types::ChannelEgressEndpoint { source_ip: self.source_ip }
+        crate::types::ChannelEgressEndpoint {
+            source_ip: self.source_ip
+            ,
+        }
     }
 }
+

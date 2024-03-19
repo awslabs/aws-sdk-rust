@@ -2,29 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetSecretValueInput {
+pub struct BatchGetSecretValueInput  {
     /// <p>The ARN or names of the secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub secret_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub secret_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters to choose which secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>BatchGetSecretValue</code> again with the value from <code>NextToken</code>. To use this parameter, you must also use the <code>Filters</code> parameter.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetSecretValueInput {
+impl  BatchGetSecretValueInput  {
     /// <p>The ARN or names of the secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_id_list.is_none()`.
-    pub fn secret_id_list(&self) -> &[::std::string::String] {
-        self.secret_id_list.as_deref().unwrap_or_default()
+    pub fn secret_id_list(&self) -> & [::std::string::String] {
+        self.secret_id_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters to choose which secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>BatchGetSecretValue</code> again with the value from <code>NextToken</code>. To use this parameter, you must also use the <code>Filters</code> parameter.</p>
@@ -32,7 +34,7 @@ impl BatchGetSecretValueInput {
         self.max_results
     }
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +49,8 @@ impl BatchGetSecretValueInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSecretValueInputBuilder {
-    pub(crate) secret_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) secret_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -60,17 +62,16 @@ impl BatchGetSecretValueInputBuilder {
     /// <p>The ARN or names of the secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
     pub fn secret_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secret_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.secret_id_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.secret_id_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN or names of the secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub fn set_secret_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.secret_id_list = input;
-        self
+    pub fn set_secret_id_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.secret_id_list = input; self
     }
     /// <p>The ARN or names of the secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub fn get_secret_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secret_id_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.secret_id_list
     }
     /// Appends an item to `filters`.
@@ -80,17 +81,16 @@ impl BatchGetSecretValueInputBuilder {
     /// <p>The filters to choose which secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters to choose which secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters to choose which secrets to retrieve. You must include <code>Filters</code> or <code>SecretIdList</code>, but not both.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The number of results to include in the response.</p>
@@ -102,8 +102,7 @@ impl BatchGetSecretValueInputBuilder {
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>BatchGetSecretValue</code> again with the value from <code>NextToken</code>. To use this parameter, you must also use the <code>Filters</code> parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>BatchGetSecretValue</code> again with the value from <code>NextToken</code>. To use this parameter, you must also use the <code>Filters</code> parameter.</p>
@@ -117,23 +116,26 @@ impl BatchGetSecretValueInputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetSecretValueInput`](crate::operation::batch_get_secret_value::BatchGetSecretValueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_secret_value::BatchGetSecretValueInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_secret_value::BatchGetSecretValueInput {
-            secret_id_list: self.secret_id_list,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_secret_value::BatchGetSecretValueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_secret_value::BatchGetSecretValueInput {
+                secret_id_list: self.secret_id_list
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

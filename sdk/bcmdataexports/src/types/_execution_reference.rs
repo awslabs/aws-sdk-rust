@@ -3,20 +3,19 @@
 /// <p>The reference for the data export update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionReference {
+pub struct ExecutionReference  {
     /// <p>The ID for this specific execution.</p>
     pub execution_id: ::std::string::String,
     /// <p>The status of this specific execution.</p>
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
-impl ExecutionReference {
+impl  ExecutionReference  {
     /// <p>The ID for this specific execution.</p>
-    pub fn execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_id.deref()
+    pub fn execution_id(&self) -> & str {
+        use std::ops::Deref; self.execution_id.deref()
     }
     /// <p>The status of this specific execution.</p>
-    pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn execution_status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl ExecutionReferenceBuilder {
     }
     /// <p>The ID for this specific execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The ID for this specific execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ExecutionReferenceBuilder {
     }
     /// <p>The status of this specific execution.</p>
     pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.execution_status = input;
-        self
+        self.execution_status = input; self
     }
     /// <p>The status of this specific execution.</p>
     pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
@@ -69,14 +66,17 @@ impl ExecutionReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_id`](crate::types::builders::ExecutionReferenceBuilder::execution_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecutionReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExecutionReference {
-            execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_id",
-                    "execution_id was not specified but it is required when building ExecutionReference",
-                )
-            })?,
-            execution_status: self.execution_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExecutionReference {
+                execution_id: self.execution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_id", "execution_id was not specified but it is required when building ExecutionReference")
+                    )?
+                ,
+                execution_status: self.execution_status
+                ,
+            }
+        )
     }
 }
+

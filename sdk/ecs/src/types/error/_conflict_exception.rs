@@ -10,32 +10,31 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     /// <p>The existing task ARNs which are already associated with the <code>clientToken</code>.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Message that describes the cause of the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConflictException {
+impl  ConflictException  {
     /// <p>The existing task ARNs which are already associated with the <code>clientToken</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +49,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConflictExcepti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -65,7 +62,7 @@ impl ConflictException {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -77,17 +74,16 @@ impl ConflictExceptionBuilder {
     /// <p>The existing task ARNs which are already associated with the <code>clientToken</code>.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The existing task ARNs which are already associated with the <code>clientToken</code>.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The existing task ARNs which are already associated with the <code>clientToken</code>.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>Message that describes the cause of the exception.</p>
@@ -97,30 +93,32 @@ impl ConflictExceptionBuilder {
     }
     /// <p>Message that describes the cause of the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Message that describes the cause of the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     pub fn build(self) -> crate::types::error::ConflictException {
         crate::types::error::ConflictException {
-            resource_ids: self.resource_ids,
-            message: self.message,
+            resource_ids: self.resource_ids
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

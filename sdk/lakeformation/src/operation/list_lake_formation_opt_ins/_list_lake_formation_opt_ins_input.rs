@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLakeFormationOptInsInput {
+pub struct ListLakeFormationOptInsInput  {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>A structure for the resource.</p>
@@ -12,13 +12,13 @@ pub struct ListLakeFormationOptInsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLakeFormationOptInsInput {
+impl  ListLakeFormationOptInsInput  {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>A structure for the resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -26,7 +26,7 @@ impl ListLakeFormationOptInsInput {
         self.max_results
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListLakeFormationOptInsInputBuilder {
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
@@ -68,8 +67,7 @@ impl ListLakeFormationOptInsInputBuilder {
     }
     /// <p>A structure for the resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>A structure for the resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -82,8 +80,7 @@ impl ListLakeFormationOptInsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,25 +93,26 @@ impl ListLakeFormationOptInsInputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLakeFormationOptInsInput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput {
-            principal: self.principal,
-            resource: self.resource,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput {
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

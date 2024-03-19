@@ -3,24 +3,26 @@
 /// <p>The Git tags specified as filter criteria for whether a Git tag repository event will start the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitTagFilterCriteria {
+pub struct GitTagFilterCriteria  {
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
-    pub includes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub includes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
-    pub excludes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GitTagFilterCriteria {
+impl  GitTagFilterCriteria  {
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
-    pub fn includes(&self) -> &[::std::string::String] {
-        self.includes.as_deref().unwrap_or_default()
+    pub fn includes(&self) -> & [::std::string::String] {
+        self.includes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
-    pub fn excludes(&self) -> &[::std::string::String] {
-        self.excludes.as_deref().unwrap_or_default()
+    pub fn excludes(&self) -> & [::std::string::String] {
+        self.excludes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GitTagFilterCriteria {
@@ -34,8 +36,8 @@ impl GitTagFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitTagFilterCriteriaBuilder {
-    pub(crate) includes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GitTagFilterCriteriaBuilder {
     /// Appends an item to `includes`.
@@ -45,17 +47,16 @@ impl GitTagFilterCriteriaBuilder {
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
     pub fn includes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.includes.unwrap_or_default();
-        v.push(input.into());
-        self.includes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.includes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
-    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.includes = input;
-        self
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.includes = input; self
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be included as criteria that starts the pipeline.</p>
-    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.includes
     }
     /// Appends an item to `excludes`.
@@ -65,24 +66,26 @@ impl GitTagFilterCriteriaBuilder {
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
     pub fn excludes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excludes.unwrap_or_default();
-        v.push(input.into());
-        self.excludes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excludes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
-    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excludes = input;
-        self
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excludes = input; self
     }
     /// <p>The list of patterns of Git tags that, when pushed, are to be excluded from starting the pipeline.</p>
-    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excludes
     }
     /// Consumes the builder and constructs a [`GitTagFilterCriteria`](crate::types::GitTagFilterCriteria).
     pub fn build(self) -> crate::types::GitTagFilterCriteria {
         crate::types::GitTagFilterCriteria {
-            includes: self.includes,
-            excludes: self.excludes,
+            includes: self.includes
+            ,
+            excludes: self.excludes
+            ,
         }
     }
 }
+

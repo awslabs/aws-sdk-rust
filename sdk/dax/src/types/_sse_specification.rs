@@ -3,11 +3,11 @@
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseSpecification {
+pub struct SseSpecification  {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub enabled: bool,
 }
-impl SseSpecification {
+impl  SseSpecification  {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -35,8 +35,7 @@ impl SseSpecificationBuilder {
     }
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl SseSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::SseSpecificationBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::SseSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SseSpecification {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building SseSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SseSpecification {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building SseSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

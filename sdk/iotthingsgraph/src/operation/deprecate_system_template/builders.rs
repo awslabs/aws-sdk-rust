@@ -5,55 +5,51 @@ pub use crate::operation::deprecate_system_template::_deprecate_system_template_
 
 impl DeprecateSystemTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.deprecate_system_template();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.deprecate_system_template();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeprecateSystemTemplate`.
-///
+/// 
 /// <p>Deprecates the specified system.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeprecateSystemTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder,
+                    inner: crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-    > for DeprecateSystemTemplateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
+                    crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
+                > for DeprecateSystemTemplateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
+                        crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeprecateSystemTemplateFluentBuilder {
     /// Creates a new `DeprecateSystemTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DeprecateSystemTemplateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::deprecate_system_template::DeprecateSystemTemplate::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::deprecate_system_template::DeprecateSystemTemplate::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deprecate_system_template::DeprecateSystemTemplateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::deprecate_system_template::DeprecateSystemTemplate::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::deprecate_system_template::DeprecateSystemTemplate::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput, crate::operation::deprecate_system_template::DeprecateSystemTemplateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
@@ -130,3 +117,4 @@ impl DeprecateSystemTemplateFluentBuilder {
         self.inner.get_id()
     }
 }
+

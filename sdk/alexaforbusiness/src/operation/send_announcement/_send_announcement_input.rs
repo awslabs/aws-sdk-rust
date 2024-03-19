@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendAnnouncementInput {
+pub struct SendAnnouncementInput  {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub room_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub room_filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub content: ::std::option::Option<crate::types::Content>,
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
@@ -12,15 +12,16 @@ pub struct SendAnnouncementInput {
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl SendAnnouncementInput {
+impl  SendAnnouncementInput  {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.room_filters.is_none()`.
-    pub fn room_filters(&self) -> &[crate::types::Filter] {
-        self.room_filters.as_deref().unwrap_or_default()
+    pub fn room_filters(&self) -> & [crate::types::Filter] {
+        self.room_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::Content> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::Content> {
         self.content.as_ref()
     }
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
@@ -28,7 +29,7 @@ impl SendAnnouncementInput {
         self.time_to_live_in_seconds
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -43,7 +44,7 @@ impl SendAnnouncementInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAnnouncementInputBuilder {
-    pub(crate) room_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) room_filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) content: ::std::option::Option<crate::types::Content>,
     pub(crate) time_to_live_in_seconds: ::std::option::Option<i32>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +57,16 @@ impl SendAnnouncementInputBuilder {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
     pub fn room_filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.room_filters.unwrap_or_default();
-        v.push(input);
-        self.room_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.room_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn set_room_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.room_filters = input;
-        self
+    pub fn set_room_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.room_filters = input; self
     }
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    pub fn get_room_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_room_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.room_filters
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
@@ -77,8 +77,7 @@ impl SendAnnouncementInputBuilder {
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::Content> {
@@ -91,8 +90,7 @@ impl SendAnnouncementInputBuilder {
     }
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub fn set_time_to_live_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.time_to_live_in_seconds = input;
-        self
+        self.time_to_live_in_seconds = input; self
     }
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub fn get_time_to_live_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -106,22 +104,26 @@ impl SendAnnouncementInputBuilder {
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_announcement::SendAnnouncementInput {
-            room_filters: self.room_filters,
-            content: self.content,
-            time_to_live_in_seconds: self.time_to_live_in_seconds,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_announcement::SendAnnouncementInput {
+                room_filters: self.room_filters
+                ,
+                content: self.content
+                ,
+                time_to_live_in_seconds: self.time_to_live_in_seconds
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

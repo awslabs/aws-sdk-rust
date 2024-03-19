@@ -3,22 +3,20 @@
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListenerTlsFileCertificate {
+pub struct ListenerTlsFileCertificate  {
     /// <p>The certificate chain for the certificate.</p>
     pub certificate_chain: ::std::string::String,
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub private_key: ::std::string::String,
 }
-impl ListenerTlsFileCertificate {
+impl  ListenerTlsFileCertificate  {
     /// <p>The certificate chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_chain.deref()
+    pub fn certificate_chain(&self) -> & str {
+        use std::ops::Deref; self.certificate_chain.deref()
     }
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn private_key(&self) -> &str {
-        use std::ops::Deref;
-        self.private_key.deref()
+    pub fn private_key(&self) -> & str {
+        use std::ops::Deref; self.private_key.deref()
     }
 }
 impl ListenerTlsFileCertificate {
@@ -44,8 +42,7 @@ impl ListenerTlsFileCertificateBuilder {
     }
     /// <p>The certificate chain for the certificate.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The certificate chain for the certificate.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ListenerTlsFileCertificateBuilder {
     }
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ListenerTlsFileCertificateBuilder {
     /// - [`certificate_chain`](crate::types::builders::ListenerTlsFileCertificateBuilder::certificate_chain)
     /// - [`private_key`](crate::types::builders::ListenerTlsFileCertificateBuilder::private_key)
     pub fn build(self) -> ::std::result::Result<crate::types::ListenerTlsFileCertificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListenerTlsFileCertificate {
-            certificate_chain: self.certificate_chain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_chain",
-                    "certificate_chain was not specified but it is required when building ListenerTlsFileCertificate",
-                )
-            })?,
-            private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_key",
-                    "private_key was not specified but it is required when building ListenerTlsFileCertificate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListenerTlsFileCertificate {
+                certificate_chain: self.certificate_chain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_chain", "certificate_chain was not specified but it is required when building ListenerTlsFileCertificate")
+                    )?
+                ,
+                private_key: self.private_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("private_key", "private_key was not specified but it is required when building ListenerTlsFileCertificate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

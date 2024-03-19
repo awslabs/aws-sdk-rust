@@ -5,54 +5,50 @@ pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_
 
 impl GetApproximateUsageRecordsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_approximate_usage_records();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_approximate_usage_records();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetApproximateUsageRecords`.
-///
+/// 
 /// <p>Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApproximateUsageRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsInputBuilder,
+                    inner: crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
-    > for GetApproximateUsageRecordsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
-            crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
+                    crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
+                > for GetApproximateUsageRecordsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
+                        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetApproximateUsageRecordsFluentBuilder {
     /// Creates a new `GetApproximateUsageRecords`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl GetApproximateUsageRecordsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_approximate_usage_records::GetApproximateUsageRecords::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecords::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput,
-        crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_approximate_usage_records::GetApproximateUsageRecords::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_approximate_usage_records::GetApproximateUsageRecords::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput, crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>How granular you want the data to be. You can enable data at hourly or daily granularity.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
         self.inner = self.inner.granularity(input);
@@ -132,12 +119,12 @@ impl GetApproximateUsageRecordsFluentBuilder {
         self
     }
     /// <p>The service metadata for the service or services you want to query. If not specified, all elements are returned.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_services(input);
         self
     }
     /// <p>The service metadata for the service or services you want to query. If not specified, all elements are returned.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_services()
     }
     /// <p>The service to evaluate for the usage records. You can choose resource-level data at daily granularity, or hourly granularity with or without resource-level data.</p>
@@ -155,3 +142,4 @@ impl GetApproximateUsageRecordsFluentBuilder {
         self.inner.get_approximation_dimension()
     }
 }
+

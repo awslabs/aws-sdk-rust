@@ -3,7 +3,7 @@
 /// <p>Represents a request to the update project operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProjectInput {
+pub struct UpdateProjectInput  {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents the new name of the project that you are updating.</p>
@@ -13,13 +13,13 @@ pub struct UpdateProjectInput {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl UpdateProjectInput {
+impl  UpdateProjectInput  {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A string that represents the new name of the project that you are updating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
@@ -27,7 +27,7 @@ impl UpdateProjectInput {
         self.default_job_timeout_minutes
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>A string that represents the new name of the project that you are updating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A string that represents the new name of the project that you are updating.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     pub fn set_default_job_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_job_timeout_minutes = input;
-        self
+        self.default_job_timeout_minutes = input; self
     }
     /// <p>The number of minutes a test run in the project executes before it times out.</p>
     pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -98,22 +95,26 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
-            arn: self.arn,
-            name: self.name,
-            default_job_timeout_minutes: self.default_job_timeout_minutes,
-            vpc_config: self.vpc_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_project::UpdateProjectInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                default_job_timeout_minutes: self.default_job_timeout_minutes
+                ,
+                vpc_config: self.vpc_config
+                ,
+            }
+        )
     }
 }
+

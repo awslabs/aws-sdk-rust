@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterIdentityProviderInput {
+pub struct DeregisterIdentityProviderInput  {
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
     pub product: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterIdentityProviderInput {
+impl  DeregisterIdentityProviderInput  {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<& str> {
         self.product.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeregisterIdentityProviderInputBuilder {
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input;
-        self
+        self.identity_provider = input; self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
@@ -56,23 +55,22 @@ impl DeregisterIdentityProviderInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
         &self.product
     }
     /// Consumes the builder and constructs a [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
-            identity_provider: self.identity_provider,
-            product: self.product,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
+                identity_provider: self.identity_provider
+                ,
+                product: self.product
+                ,
+            }
+        )
     }
 }
+

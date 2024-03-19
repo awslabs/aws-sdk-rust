@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannels`](crate::operation::list_channels::builders::ListChannelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_group_name(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::channel_group_name) / [`set_channel_group_name(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_channel_group_name):<br>required: **true**<br><p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p><br>
-    /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
     ///   - [`items(Option<Vec::<ChannelListConfiguration>>)`](crate::operation::list_channels::ListChannelsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): <p>The pagination token from the GET list request.</p>
-    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
+                            /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
     pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
-        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

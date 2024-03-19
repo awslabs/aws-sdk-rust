@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedCacheNodesOfferingsInput {
+pub struct DescribeReservedCacheNodesOfferingsInput  {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
@@ -81,10 +81,10 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReservedCacheNodesOfferingsInput {
+impl  DescribeReservedCacheNodesOfferingsInput  {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
-    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_cache_nodes_offering_id.as_deref()
     }
     /// <p>The cache node type filter value. Use this parameter to show only the available offerings matching the specified cache node type.</p>
@@ -145,21 +145,21 @@ impl DescribeReservedCacheNodesOfferingsInput {
     /// <li>
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
-    pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
+    pub fn cache_node_type(&self) -> ::std::option::Option<& str> {
         self.cache_node_type.as_deref()
     }
     /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
-    pub fn duration(&self) -> ::std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
-    pub fn product_description(&self) -> ::std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code></p>
-    pub fn offering_type(&self) -> ::std::option::Option<&str> {
+    pub fn offering_type(&self) -> ::std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -169,7 +169,7 @@ impl DescribeReservedCacheNodesOfferingsInput {
         self.max_records
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -202,8 +202,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_cache_nodes_offering_id = input;
-        self
+        self.reserved_cache_nodes_offering_id = input; self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
@@ -331,8 +330,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_node_type = input;
-        self
+        self.cache_node_type = input; self
     }
     /// <p>The cache node type filter value. Use this parameter to show only the available offerings matching the specified cache node type.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -404,8 +402,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
@@ -419,8 +416,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     }
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -435,8 +431,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code></p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code></p>
@@ -454,8 +449,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -470,30 +464,32 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOfferingsInput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput {
-                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
-                cache_node_type: self.cache_node_type,
-                duration: self.duration,
-                product_description: self.product_description,
-                offering_type: self.offering_type,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id
+                ,
+                cache_node_type: self.cache_node_type
+                ,
+                duration: self.duration
+                ,
+                product_description: self.product_description
+                ,
+                offering_type: self.offering_type
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

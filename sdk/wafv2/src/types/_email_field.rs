@@ -4,7 +4,7 @@
 /// <p>This data type is used in the <code>RequestInspectionACFP</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailField {
+pub struct EmailField  {
     /// <p>The name of the email field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -17,7 +17,7 @@ pub struct EmailField {
     /// </ul>
     pub identifier: ::std::string::String,
 }
-impl EmailField {
+impl  EmailField  {
     /// <p>The name of the email field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -28,9 +28,8 @@ impl EmailField {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p></li>
     /// </ul>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
 }
 impl EmailField {
@@ -73,8 +72,7 @@ impl EmailFieldBuilder {
     /// <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p></li>
     /// </ul>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The name of the email field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -93,13 +91,15 @@ impl EmailFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::EmailFieldBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::EmailField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EmailField {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building EmailField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EmailField {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building EmailField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

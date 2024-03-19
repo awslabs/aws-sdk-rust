@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchQuantumTasks`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in the response.</p><br>
     ///   - [`filters(SearchQuantumTasksFilter)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<SearchQuantumTasksFilter>>)`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::set_filters):<br>required: **true**<br><p>Array of <code>SearchQuantumTasksFilter</code> objects.</p><br>
-    /// - On success, responds with [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput) with field(s):
+                            /// - On success, responds with [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput) with field(s):
     ///   - [`quantum_tasks(Vec::<QuantumTaskSummary>)`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput::quantum_tasks): <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput::next_token): <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    /// - On failure, responds with [`SdkError<SearchQuantumTasksError>`](crate::operation::search_quantum_tasks::SearchQuantumTasksError)
+                            /// - On failure, responds with [`SdkError<SearchQuantumTasksError>`](crate::operation::search_quantum_tasks::SearchQuantumTasksError)
     pub fn search_quantum_tasks(&self) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder {
-        crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>This is a structure that contains the status of Amazon Web Services service access, and whether you have a valid service-linked role to enable multi-account search for your organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrgConfiguration {
+pub struct OrgConfiguration  {
     /// <p>This value displays whether your Amazon Web Services service access is <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub aws_service_access_status: crate::types::AwsServiceAccessStatus,
     /// <p>This value shows whether or not you have a valid a service-linked role required to start the multi-account search feature.</p>
     pub service_linked_role: ::std::option::Option<::std::string::String>,
 }
-impl OrgConfiguration {
+impl  OrgConfiguration  {
     /// <p>This value displays whether your Amazon Web Services service access is <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn aws_service_access_status(&self) -> &crate::types::AwsServiceAccessStatus {
+    pub fn aws_service_access_status(&self) -> & crate::types::AwsServiceAccessStatus {
         &self.aws_service_access_status
     }
     /// <p>This value shows whether or not you have a valid a service-linked role required to start the multi-account search feature.</p>
-    pub fn service_linked_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_linked_role(&self) -> ::std::option::Option<& str> {
         self.service_linked_role.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl OrgConfigurationBuilder {
     }
     /// <p>This value displays whether your Amazon Web Services service access is <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_aws_service_access_status(mut self, input: ::std::option::Option<crate::types::AwsServiceAccessStatus>) -> Self {
-        self.aws_service_access_status = input;
-        self
+        self.aws_service_access_status = input; self
     }
     /// <p>This value displays whether your Amazon Web Services service access is <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn get_aws_service_access_status(&self) -> &::std::option::Option<crate::types::AwsServiceAccessStatus> {
@@ -56,8 +55,7 @@ impl OrgConfigurationBuilder {
     }
     /// <p>This value shows whether or not you have a valid a service-linked role required to start the multi-account search feature.</p>
     pub fn set_service_linked_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_linked_role = input;
-        self
+        self.service_linked_role = input; self
     }
     /// <p>This value shows whether or not you have a valid a service-linked role required to start the multi-account search feature.</p>
     pub fn get_service_linked_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl OrgConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`aws_service_access_status`](crate::types::builders::OrgConfigurationBuilder::aws_service_access_status)
     pub fn build(self) -> ::std::result::Result<crate::types::OrgConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrgConfiguration {
-            aws_service_access_status: self.aws_service_access_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_service_access_status",
-                    "aws_service_access_status was not specified but it is required when building OrgConfiguration",
-                )
-            })?,
-            service_linked_role: self.service_linked_role,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrgConfiguration {
+                aws_service_access_status: self.aws_service_access_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_service_access_status", "aws_service_access_status was not specified but it is required when building OrgConfiguration")
+                    )?
+                ,
+                service_linked_role: self.service_linked_role
+                ,
+            }
+        )
     }
 }
+

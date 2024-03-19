@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteGeofenceOutput {
+pub struct BatchDeleteGeofenceOutput  {
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchDeleteGeofenceError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchDeleteGeofenceError>,
     _request_id: Option<String>,
 }
-impl BatchDeleteGeofenceOutput {
+impl  BatchDeleteGeofenceOutput  {
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn errors(&self) -> &[crate::types::BatchDeleteGeofenceError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchDeleteGeofenceError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteGeofenceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput).
     pub fn builder() -> crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchDeleteGeofenceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteGeofenceError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteGeofenceOutputBuilder {
@@ -41,43 +40,41 @@ impl BatchDeleteGeofenceOutputBuilder {
     /// <p>Contains error details for each geofence that failed to delete.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteGeofenceError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteGeofenceError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteGeofenceError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteGeofenceError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceOutput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchDeleteGeofenceOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDeleteGeofenceOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

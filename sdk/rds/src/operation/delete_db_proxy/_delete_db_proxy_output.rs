@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbProxyOutput {
+pub struct DeleteDbProxyOutput  {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
     pub db_proxy: ::std::option::Option<crate::types::DbProxy>,
     _request_id: Option<String>,
 }
-impl DeleteDbProxyOutput {
+impl  DeleteDbProxyOutput  {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
-    pub fn db_proxy(&self) -> ::std::option::Option<&crate::types::DbProxy> {
+    pub fn db_proxy(&self) -> ::std::option::Option<& crate::types::DbProxy> {
         self.db_proxy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDbProxyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDbProxyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbProxyOutput`](crate::operation::delete_db_proxy::DeleteDbProxyOutput).
     pub fn builder() -> crate::operation::delete_db_proxy::builders::DeleteDbProxyOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteDbProxyOutputBuilder {
     }
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
     pub fn set_db_proxy(mut self, input: ::std::option::Option<crate::types::DbProxy>) -> Self {
-        self.db_proxy = input;
-        self
+        self.db_proxy = input; self
     }
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
     pub fn get_db_proxy(&self) -> &::std::option::Option<crate::types::DbProxy> {
         &self.db_proxy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDbProxyOutput`](crate::operation::delete_db_proxy::DeleteDbProxyOutput).
     pub fn build(self) -> crate::operation::delete_db_proxy::DeleteDbProxyOutput {
         crate::operation::delete_db_proxy::DeleteDbProxyOutput {
-            db_proxy: self.db_proxy,
+            db_proxy: self.db_proxy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

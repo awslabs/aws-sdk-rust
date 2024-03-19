@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetMembershipDatasourcesOutput {
+pub struct BatchGetMembershipDatasourcesOutput  {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
+    pub membership_datasources: ::std::option::Option<::std::vec::Vec::<crate::types::MembershipDatasources>>,
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
+    pub unprocessed_graphs: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedGraph>>,
     _request_id: Option<String>,
 }
-impl BatchGetMembershipDatasourcesOutput {
+impl  BatchGetMembershipDatasourcesOutput  {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.membership_datasources.is_none()`.
-    pub fn membership_datasources(&self) -> &[crate::types::MembershipDatasources] {
-        self.membership_datasources.as_deref().unwrap_or_default()
+    pub fn membership_datasources(&self) -> & [crate::types::MembershipDatasources] {
+        self.membership_datasources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_graphs.is_none()`.
-    pub fn unprocessed_graphs(&self) -> &[crate::types::UnprocessedGraph] {
-        self.unprocessed_graphs.as_deref().unwrap_or_default()
+    pub fn unprocessed_graphs(&self) -> & [crate::types::UnprocessedGraph] {
+        self.unprocessed_graphs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetMembershipDatasourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetMembershipDatasourcesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
     pub fn builder() -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetMembershipDatasourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesOutputBuilder {
-    pub(crate) membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
-    pub(crate) unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
+    pub(crate) membership_datasources: ::std::option::Option<::std::vec::Vec::<crate::types::MembershipDatasources>>,
+    pub(crate) unprocessed_graphs: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedGraph>>,
     _request_id: Option<String>,
 }
 impl BatchGetMembershipDatasourcesOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetMembershipDatasourcesOutputBuilder {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
     pub fn membership_datasources(mut self, input: crate::types::MembershipDatasources) -> Self {
         let mut v = self.membership_datasources.unwrap_or_default();
-        v.push(input);
-        self.membership_datasources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.membership_datasources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn set_membership_datasources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>) -> Self {
-        self.membership_datasources = input;
-        self
+    pub fn set_membership_datasources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MembershipDatasources>>) -> Self {
+        self.membership_datasources = input; self
     }
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn get_membership_datasources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>> {
+    pub fn get_membership_datasources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MembershipDatasources>> {
         &self.membership_datasources
     }
     /// Appends an item to `unprocessed_graphs`.
@@ -71,34 +72,36 @@ impl BatchGetMembershipDatasourcesOutputBuilder {
     /// <p>Graphs that data source package information could not be retrieved for.</p>
     pub fn unprocessed_graphs(mut self, input: crate::types::UnprocessedGraph) -> Self {
         let mut v = self.unprocessed_graphs.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_graphs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_graphs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub fn set_unprocessed_graphs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>) -> Self {
-        self.unprocessed_graphs = input;
-        self
+    pub fn set_unprocessed_graphs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedGraph>>) -> Self {
+        self.unprocessed_graphs = input; self
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub fn get_unprocessed_graphs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>> {
+    pub fn get_unprocessed_graphs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedGraph>> {
         &self.unprocessed_graphs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
     pub fn build(self) -> crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput {
         crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput {
-            membership_datasources: self.membership_datasources,
-            unprocessed_graphs: self.unprocessed_graphs,
+            membership_datasources: self.membership_datasources
+            ,
+            unprocessed_graphs: self.unprocessed_graphs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

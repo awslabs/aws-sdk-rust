@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbRecommendationOutput {
+pub struct ModifyDbRecommendationOutput  {
     /// <p>The recommendation for your DB instances, DB clusters, and DB parameter groups.</p>
     pub db_recommendation: ::std::option::Option<crate::types::DbRecommendation>,
     _request_id: Option<String>,
 }
-impl ModifyDbRecommendationOutput {
+impl  ModifyDbRecommendationOutput  {
     /// <p>The recommendation for your DB instances, DB clusters, and DB parameter groups.</p>
-    pub fn db_recommendation(&self) -> ::std::option::Option<&crate::types::DbRecommendation> {
+    pub fn db_recommendation(&self) -> ::std::option::Option<& crate::types::DbRecommendation> {
         self.db_recommendation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyDbRecommendationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyDbRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbRecommendationOutput`](crate::operation::modify_db_recommendation::ModifyDbRecommendationOutput).
     pub fn builder() -> crate::operation::modify_db_recommendation::builders::ModifyDbRecommendationOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyDbRecommendationOutputBuilder {
     }
     /// <p>The recommendation for your DB instances, DB clusters, and DB parameter groups.</p>
     pub fn set_db_recommendation(mut self, input: ::std::option::Option<crate::types::DbRecommendation>) -> Self {
-        self.db_recommendation = input;
-        self
+        self.db_recommendation = input; self
     }
     /// <p>The recommendation for your DB instances, DB clusters, and DB parameter groups.</p>
     pub fn get_db_recommendation(&self) -> &::std::option::Option<crate::types::DbRecommendation> {
         &self.db_recommendation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyDbRecommendationOutput`](crate::operation::modify_db_recommendation::ModifyDbRecommendationOutput).
     pub fn build(self) -> crate::operation::modify_db_recommendation::ModifyDbRecommendationOutput {
         crate::operation::modify_db_recommendation::ModifyDbRecommendationOutput {
-            db_recommendation: self.db_recommendation,
+            db_recommendation: self.db_recommendation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

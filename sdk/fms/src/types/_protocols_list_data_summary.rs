@@ -3,7 +3,7 @@
 /// <p>Details of the Firewall Manager protocols list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtocolsListDataSummary {
+pub struct ProtocolsListDataSummary  {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     pub list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specified protocols list.</p>
@@ -11,26 +11,27 @@ pub struct ProtocolsListDataSummary {
     /// <p>The name of the specified protocols list.</p>
     pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub protocols_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ProtocolsListDataSummary {
+impl  ProtocolsListDataSummary  {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn list_arn(&self) -> ::std::option::Option<& str> {
         self.list_arn.as_deref()
     }
     /// <p>The ID of the specified protocols list.</p>
-    pub fn list_id(&self) -> ::std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<& str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the specified protocols list.</p>
-    pub fn list_name(&self) -> ::std::option::Option<&str> {
+    pub fn list_name(&self) -> ::std::option::Option<& str> {
         self.list_name.as_deref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols_list.is_none()`.
-    pub fn protocols_list(&self) -> &[::std::string::String] {
-        self.protocols_list.as_deref().unwrap_or_default()
+    pub fn protocols_list(&self) -> & [::std::string::String] {
+        self.protocols_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProtocolsListDataSummary {
@@ -47,7 +48,7 @@ pub struct ProtocolsListDataSummaryBuilder {
     pub(crate) list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
     pub(crate) list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) protocols_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ProtocolsListDataSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
@@ -57,8 +58,7 @@ impl ProtocolsListDataSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     pub fn set_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_arn = input;
-        self
+        self.list_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     pub fn get_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ProtocolsListDataSummaryBuilder {
     }
     /// <p>The ID of the specified protocols list.</p>
     pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_id = input;
-        self
+        self.list_id = input; self
     }
     /// <p>The ID of the specified protocols list.</p>
     pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ProtocolsListDataSummaryBuilder {
     }
     /// <p>The name of the specified protocols list.</p>
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_name = input;
-        self
+        self.list_name = input; self
     }
     /// <p>The name of the specified protocols list.</p>
     pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl ProtocolsListDataSummaryBuilder {
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub fn protocols_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protocols_list.unwrap_or_default();
-        v.push(input.into());
-        self.protocols_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.protocols_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn set_protocols_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.protocols_list = input;
-        self
+    pub fn set_protocols_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.protocols_list = input; self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn get_protocols_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protocols_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.protocols_list
     }
     /// Consumes the builder and constructs a [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).
     pub fn build(self) -> crate::types::ProtocolsListDataSummary {
         crate::types::ProtocolsListDataSummary {
-            list_arn: self.list_arn,
-            list_id: self.list_id,
-            list_name: self.list_name,
-            protocols_list: self.protocols_list,
+            list_arn: self.list_arn
+            ,
+            list_id: self.list_id
+            ,
+            list_name: self.list_name
+            ,
+            protocols_list: self.protocols_list
+            ,
         }
     }
 }
+

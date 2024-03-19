@@ -5,7 +5,7 @@
 /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>UpdateServiceSetting</code> API operation to change the default setting. Or, use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceSetting {
+pub struct ServiceSetting  {
     /// <p>The ID of the service setting.</p>
     pub setting_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the service setting.</p>
@@ -27,25 +27,25 @@ pub struct ServiceSetting {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl ServiceSetting {
+impl  ServiceSetting  {
     /// <p>The ID of the service setting.</p>
-    pub fn setting_id(&self) -> ::std::option::Option<&str> {
+    pub fn setting_id(&self) -> ::std::option::Option<& str> {
         self.setting_id.as_deref()
     }
     /// <p>The value of the service setting.</p>
-    pub fn setting_value(&self) -> ::std::option::Option<&str> {
+    pub fn setting_value(&self) -> ::std::option::Option<& str> {
         self.setting_value.as_deref()
     }
     /// <p>The last time the service setting was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
-    pub fn last_modified_user(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> ::std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
     /// <p>The ARN of the service setting.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
@@ -57,7 +57,7 @@ impl ServiceSetting {
     /// <li>
     /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -87,8 +87,7 @@ impl ServiceSettingBuilder {
     }
     /// <p>The ID of the service setting.</p>
     pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.setting_id = input;
-        self
+        self.setting_id = input; self
     }
     /// <p>The ID of the service setting.</p>
     pub fn get_setting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl ServiceSettingBuilder {
     }
     /// <p>The value of the service setting.</p>
     pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.setting_value = input;
-        self
+        self.setting_value = input; self
     }
     /// <p>The value of the service setting.</p>
     pub fn get_setting_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl ServiceSettingBuilder {
     }
     /// <p>The last time the service setting was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last time the service setting was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +126,7 @@ impl ServiceSettingBuilder {
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
     pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_user = input;
-        self
+        self.last_modified_user = input; self
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
     pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl ServiceSettingBuilder {
     }
     /// <p>The ARN of the service setting.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the service setting.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +168,7 @@ impl ServiceSettingBuilder {
     /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
@@ -191,12 +185,19 @@ impl ServiceSettingBuilder {
     /// Consumes the builder and constructs a [`ServiceSetting`](crate::types::ServiceSetting).
     pub fn build(self) -> crate::types::ServiceSetting {
         crate::types::ServiceSetting {
-            setting_id: self.setting_id,
-            setting_value: self.setting_value,
-            last_modified_date: self.last_modified_date,
-            last_modified_user: self.last_modified_user,
-            arn: self.arn,
-            status: self.status,
+            setting_id: self.setting_id
+            ,
+            setting_value: self.setting_value
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            last_modified_user: self.last_modified_user
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

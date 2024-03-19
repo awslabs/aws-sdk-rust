@@ -3,7 +3,7 @@
 /// <p>The values used to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventAccountFilter {
+pub struct EventAccountFilter  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
@@ -11,16 +11,15 @@ pub struct EventAccountFilter {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
-impl EventAccountFilter {
+impl  EventAccountFilter  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn event_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.event_arn.deref()
+    pub fn event_arn(&self) -> & str {
+        use std::ops::Deref; self.event_arn.deref()
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
@@ -51,8 +50,7 @@ impl EventAccountFilterBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -67,8 +65,7 @@ impl EventAccountFilterBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,14 +75,17 @@ impl EventAccountFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_arn`](crate::types::builders::EventAccountFilterBuilder::event_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EventAccountFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventAccountFilter {
-            event_arn: self.event_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_arn",
-                    "event_arn was not specified but it is required when building EventAccountFilter",
-                )
-            })?,
-            aws_account_id: self.aws_account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventAccountFilter {
+                event_arn: self.event_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_arn", "event_arn was not specified but it is required when building EventAccountFilter")
+                    )?
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+            }
+        )
     }
 }
+

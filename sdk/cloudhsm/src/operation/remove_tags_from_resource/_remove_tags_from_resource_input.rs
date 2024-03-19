@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsFromResourceInput {
+pub struct RemoveTagsFromResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_key_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveTagsFromResourceInput {
+impl  RemoveTagsFromResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_list.is_none()`.
-    pub fn tag_key_list(&self) -> &[::std::string::String] {
-        self.tag_key_list.as_deref().unwrap_or_default()
+    pub fn tag_key_list(&self) -> & [::std::string::String] {
+        self.tag_key_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveTagsFromResourceInput {
@@ -34,7 +35,7 @@ impl RemoveTagsFromResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_key_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
@@ -45,8 +46,7 @@ impl RemoveTagsFromResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,31 +60,30 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     pub fn tag_key_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_key_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_key_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_key_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_key_list = input;
-        self
+    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_key_list = input; self
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-            resource_arn: self.resource_arn,
-            tag_key_list: self.tag_key_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                tag_key_list: self.tag_key_list
+                ,
+            }
+        )
     }
 }
+

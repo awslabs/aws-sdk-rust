@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTriggers`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`dependent_job_name(impl Into<String>)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::dependent_job_name) / [`set_dependent_job_name(Option<String>)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::set_dependent_job_name):<br>required: **false**<br><p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_triggers::builders::GetTriggersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the response.</p><br>
-    /// - On success, responds with [`GetTriggersOutput`](crate::operation::get_triggers::GetTriggersOutput) with field(s):
+                            /// - On success, responds with [`GetTriggersOutput`](crate::operation::get_triggers::GetTriggersOutput) with field(s):
     ///   - [`triggers(Option<Vec::<Trigger>>)`](crate::operation::get_triggers::GetTriggersOutput::triggers): <p>A list of triggers for the specified job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_triggers::GetTriggersOutput::next_token): <p>A continuation token, if not all the requested triggers have yet been returned.</p>
-    /// - On failure, responds with [`SdkError<GetTriggersError>`](crate::operation::get_triggers::GetTriggersError)
+                            /// - On failure, responds with [`SdkError<GetTriggersError>`](crate::operation::get_triggers::GetTriggersError)
     pub fn get_triggers(&self) -> crate::operation::get_triggers::builders::GetTriggersFluentBuilder {
-        crate::operation::get_triggers::builders::GetTriggersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_triggers::builders::GetTriggersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

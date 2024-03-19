@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainInput {
+pub struct UpdateDomainInput  {
     /// <p>The ID of the domain to be updated.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of settings.</p>
@@ -15,7 +15,7 @@ pub struct UpdateDomainInput {
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
@@ -26,33 +26,34 @@ pub struct UpdateDomainInput {
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
 }
-impl UpdateDomainInput {
+impl  UpdateDomainInput  {
     /// <p>The ID of the domain to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A collection of settings.</p>
-    pub fn default_user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
+    pub fn default_user_settings(&self) -> ::std::option::Option<& crate::types::UserSettings> {
         self.default_user_settings.as_ref()
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
-    pub fn domain_settings_for_update(&self) -> ::std::option::Option<&crate::types::DomainSettingsForUpdate> {
+    pub fn domain_settings_for_update(&self) -> ::std::option::Option<& crate::types::DomainSettingsForUpdate> {
         self.domain_settings_for_update.as_ref()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
+    pub fn app_security_group_management(&self) -> ::std::option::Option<& crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
     /// <p>The default settings used to create a space within the domain.</p>
-    pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
+    pub fn default_space_settings(&self) -> ::std::option::Option<& crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
@@ -62,7 +63,7 @@ impl UpdateDomainInput {
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
-    pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
+    pub fn app_network_access_type(&self) -> ::std::option::Option<& crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
     }
 }
@@ -82,7 +83,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
 }
 impl UpdateDomainInputBuilder {
@@ -94,8 +95,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The ID of the domain to be updated.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the domain to be updated.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>A collection of settings.</p>
     pub fn set_default_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
-        self.default_user_settings = input;
-        self
+        self.default_user_settings = input; self
     }
     /// <p>A collection of settings.</p>
     pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
@@ -122,8 +121,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub fn set_domain_settings_for_update(mut self, input: ::std::option::Option<crate::types::DomainSettingsForUpdate>) -> Self {
-        self.domain_settings_for_update = input;
-        self
+        self.domain_settings_for_update = input; self
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub fn get_domain_settings_for_update(&self) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
@@ -136,8 +134,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn set_app_security_group_management(mut self, input: ::std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
-        self.app_security_group_management = input;
-        self
+        self.app_security_group_management = input; self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
@@ -150,8 +147,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The default settings used to create a space within the domain.</p>
     pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
-        self.default_space_settings = input;
-        self
+        self.default_space_settings = input; self
     }
     /// <p>The default settings used to create a space within the domain.</p>
     pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
@@ -165,19 +161,18 @@ impl UpdateDomainInputBuilder {
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
@@ -201,8 +196,7 @@ impl UpdateDomainInputBuilder {
     /// </ul>
     /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
-        self.app_network_access_type = input;
-        self
+        self.app_network_access_type = input; self
     }
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
@@ -216,17 +210,25 @@ impl UpdateDomainInputBuilder {
         &self.app_network_access_type
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
-            domain_id: self.domain_id,
-            default_user_settings: self.default_user_settings,
-            domain_settings_for_update: self.domain_settings_for_update,
-            app_security_group_management: self.app_security_group_management,
-            default_space_settings: self.default_space_settings,
-            subnet_ids: self.subnet_ids,
-            app_network_access_type: self.app_network_access_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain::UpdateDomainInput {
+                domain_id: self.domain_id
+                ,
+                default_user_settings: self.default_user_settings
+                ,
+                domain_settings_for_update: self.domain_settings_for_update
+                ,
+                app_security_group_management: self.app_security_group_management
+                ,
+                default_space_settings: self.default_space_settings
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                app_network_access_type: self.app_network_access_type
+                ,
+            }
+        )
     }
 }
+

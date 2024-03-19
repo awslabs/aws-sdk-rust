@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResizeInput {
+pub struct DescribeResizeInput  {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DescribeResizeInput {
+impl  DescribeResizeInput  {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl DescribeResizeInputBuilder {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
@@ -48,11 +47,13 @@ impl DescribeResizeInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`DescribeResizeInput`](crate::operation::describe_resize::DescribeResizeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_resize::DescribeResizeInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_resize::DescribeResizeInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

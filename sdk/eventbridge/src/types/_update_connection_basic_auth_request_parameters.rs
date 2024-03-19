@@ -3,23 +3,23 @@
 /// <p>Contains the Basic authorization parameters for the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateConnectionBasicAuthRequestParameters {
+pub struct UpdateConnectionBasicAuthRequestParameters  {
     /// <p>The user name to use for Basic authorization.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConnectionBasicAuthRequestParameters {
+impl  UpdateConnectionBasicAuthRequestParameters  {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateConnectionBasicAuthRequestParameters {
+impl  ::std::fmt::Debug for UpdateConnectionBasicAuthRequestParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionBasicAuthRequestParameters");
         formatter.field("username", &self.username);
@@ -49,8 +49,7 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
     }
     /// <p>The user name to use for Basic authorization.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name to use for Basic authorization.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionBasicAuthRequestParameters`](crate::types::UpdateConnectionBasicAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionBasicAuthRequestParameters {
         crate::types::UpdateConnectionBasicAuthRequestParameters {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for UpdateConnectionBasicAuthRequestParametersBuilder {
         formatter.finish()
     }
 }
+

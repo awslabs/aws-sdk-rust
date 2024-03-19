@@ -3,7 +3,7 @@
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IngestEndpoint {
+pub struct IngestEndpoint  {
     /// The system generated unique identifier for the IngestEndpoint
     pub id: ::std::option::Option<::std::string::String>,
     /// The system generated password for ingest authentication.
@@ -13,25 +13,25 @@ pub struct IngestEndpoint {
     /// The system generated username for ingest authentication.
     pub username: ::std::option::Option<::std::string::String>,
 }
-impl IngestEndpoint {
+impl  IngestEndpoint  {
     /// The system generated unique identifier for the IngestEndpoint
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The system generated password for ingest authentication.
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// The ingest URL to which the source stream should be sent.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// The system generated username for ingest authentication.
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
-impl ::std::fmt::Debug for IngestEndpoint {
+impl  ::std::fmt::Debug for IngestEndpoint  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IngestEndpoint");
         formatter.field("id", &self.id);
@@ -65,8 +65,7 @@ impl IngestEndpointBuilder {
     }
     /// The system generated unique identifier for the IngestEndpoint
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The system generated unique identifier for the IngestEndpoint
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl IngestEndpointBuilder {
     }
     /// The system generated password for ingest authentication.
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// The system generated password for ingest authentication.
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl IngestEndpointBuilder {
     }
     /// The ingest URL to which the source stream should be sent.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// The ingest URL to which the source stream should be sent.
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl IngestEndpointBuilder {
     }
     /// The system generated username for ingest authentication.
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// The system generated username for ingest authentication.
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl IngestEndpointBuilder {
     /// Consumes the builder and constructs a [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn build(self) -> crate::types::IngestEndpoint {
         crate::types::IngestEndpoint {
-            id: self.id,
-            password: self.password,
-            url: self.url,
-            username: self.username,
+            id: self.id
+            ,
+            password: self.password
+            ,
+            url: self.url
+            ,
+            username: self.username
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for IngestEndpointBuilder {
         formatter.finish()
     }
 }
+

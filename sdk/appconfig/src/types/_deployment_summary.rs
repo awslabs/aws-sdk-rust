@@ -3,7 +3,7 @@
 /// <p>Information about the deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentSummary {
+pub struct DeploymentSummary  {
     /// <p>The sequence number of the deployment.</p>
     pub deployment_number: i32,
     /// <p>The name of the configuration.</p>
@@ -29,17 +29,17 @@ pub struct DeploymentSummary {
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
 }
-impl DeploymentSummary {
+impl  DeploymentSummary  {
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(&self) -> i32 {
         self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>The version of the configuration.</p>
-    pub fn configuration_version(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_version(&self) -> ::std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -47,7 +47,7 @@ impl DeploymentSummary {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
-    pub fn growth_type(&self) -> ::std::option::Option<&crate::types::GrowthType> {
+    pub fn growth_type(&self) -> ::std::option::Option<& crate::types::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -59,7 +59,7 @@ impl DeploymentSummary {
         self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DeploymentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DeploymentState> {
         self.state.as_ref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -67,15 +67,15 @@ impl DeploymentSummary {
         self.percentage_complete
     }
     /// <p>Time the deployment started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Time the deployment completed.</p>
-    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(&self) -> ::std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<& str> {
         self.version_label.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deployment_number = input;
-        self
+        self.deployment_number = input; self
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
@@ -125,8 +124,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// <p>The name of the configuration.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The version of the configuration.</p>
     pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_version = input;
-        self
+        self.configuration_version = input; self
     }
     /// <p>The version of the configuration.</p>
     pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deployment_duration_in_minutes = input;
-        self
+        self.deployment_duration_in_minutes = input; self
     }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -167,8 +163,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
-        self.growth_type = input;
-        self
+        self.growth_type = input; self
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
@@ -181,8 +176,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.growth_factor = input;
-        self
+        self.growth_factor = input; self
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
@@ -195,8 +189,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.final_bake_time_in_minutes = input;
-        self
+        self.final_bake_time_in_minutes = input; self
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -209,8 +202,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The state of the deployment.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DeploymentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the deployment.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DeploymentState> {
@@ -223,8 +215,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.percentage_complete = input;
-        self
+        self.percentage_complete = input; self
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn get_percentage_complete(&self) -> &::std::option::Option<f32> {
@@ -237,8 +228,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>Time the deployment started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>Time the deployment started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +241,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>Time the deployment completed.</p>
     pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_at = input;
-        self
+        self.completed_at = input; self
     }
     /// <p>Time the deployment completed.</p>
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,8 +254,7 @@ impl DeploymentSummaryBuilder {
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,18 +263,34 @@ impl DeploymentSummaryBuilder {
     /// Consumes the builder and constructs a [`DeploymentSummary`](crate::types::DeploymentSummary).
     pub fn build(self) -> crate::types::DeploymentSummary {
         crate::types::DeploymentSummary {
-            deployment_number: self.deployment_number.unwrap_or_default(),
-            configuration_name: self.configuration_name,
-            configuration_version: self.configuration_version,
-            deployment_duration_in_minutes: self.deployment_duration_in_minutes.unwrap_or_default(),
-            growth_type: self.growth_type,
-            growth_factor: self.growth_factor,
-            final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-            state: self.state,
-            percentage_complete: self.percentage_complete,
-            started_at: self.started_at,
-            completed_at: self.completed_at,
-            version_label: self.version_label,
+            deployment_number: self.deployment_number
+                .unwrap_or_default()
+            ,
+            configuration_name: self.configuration_name
+            ,
+            configuration_version: self.configuration_version
+            ,
+            deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                .unwrap_or_default()
+            ,
+            growth_type: self.growth_type
+            ,
+            growth_factor: self.growth_factor
+            ,
+            final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                .unwrap_or_default()
+            ,
+            state: self.state
+            ,
+            percentage_complete: self.percentage_complete
+            ,
+            started_at: self.started_at
+            ,
+            completed_at: self.completed_at
+            ,
+            version_label: self.version_label
+            ,
         }
     }
 }
+

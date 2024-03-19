@@ -69,3 +69,4 @@ pub mod update_secret_version_stage;
 
 /// Types for the `ValidateResourcePolicy` operation.
 pub mod validate_resource_policy;
+

@@ -3,22 +3,20 @@
 /// <p>Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an EC2 instance that is already participating in another started assessment run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentAlreadyRunningAssessment {
+pub struct AgentAlreadyRunningAssessment  {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     pub agent_id: ::std::string::String,
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub assessment_run_arn: ::std::string::String,
 }
-impl AgentAlreadyRunningAssessment {
+impl  AgentAlreadyRunningAssessment  {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn assessment_run_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_run_arn.deref()
+    pub fn assessment_run_arn(&self) -> & str {
+        use std::ops::Deref; self.assessment_run_arn.deref()
     }
 }
 impl AgentAlreadyRunningAssessment {
@@ -44,8 +42,7 @@ impl AgentAlreadyRunningAssessmentBuilder {
     }
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl AgentAlreadyRunningAssessmentBuilder {
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_run_arn = input;
-        self
+        self.assessment_run_arn = input; self
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl AgentAlreadyRunningAssessmentBuilder {
     /// - [`agent_id`](crate::types::builders::AgentAlreadyRunningAssessmentBuilder::agent_id)
     /// - [`assessment_run_arn`](crate::types::builders::AgentAlreadyRunningAssessmentBuilder::assessment_run_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentAlreadyRunningAssessment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentAlreadyRunningAssessment {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building AgentAlreadyRunningAssessment",
-                )
-            })?,
-            assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_run_arn",
-                    "assessment_run_arn was not specified but it is required when building AgentAlreadyRunningAssessment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentAlreadyRunningAssessment {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building AgentAlreadyRunningAssessment")
+                    )?
+                ,
+                assessment_run_arn: self.assessment_run_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_run_arn", "assessment_run_arn was not specified but it is required when building AgentAlreadyRunningAssessment")
+                    )?
+                ,
+            }
+        )
     }
 }
+

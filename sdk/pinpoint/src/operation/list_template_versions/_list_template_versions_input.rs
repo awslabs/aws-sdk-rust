@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplateVersionsInput {
+pub struct ListTemplateVersionsInput  {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -12,21 +12,21 @@ pub struct ListTemplateVersionsInput {
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub template_type: ::std::option::Option<::std::string::String>,
 }
-impl ListTemplateVersionsInput {
+impl  ListTemplateVersionsInput  {
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn page_size(&self) -> ::std::option::Option<&str> {
+    pub fn page_size(&self) -> ::std::option::Option<& str> {
         self.page_size.as_deref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&str> {
+    pub fn template_type(&self) -> ::std::option::Option<& str> {
         self.template_type.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListTemplateVersionsInputBuilder {
     }
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListTemplateVersionsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListTemplateVersionsInputBuilder {
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl ListTemplateVersionsInputBuilder {
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_type = input;
-        self
+        self.template_type = input; self
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_type
     }
     /// Consumes the builder and constructs a [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_template_versions::ListTemplateVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_template_versions::ListTemplateVersionsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-            template_name: self.template_name,
-            template_type: self.template_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_template_versions::ListTemplateVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_template_versions::ListTemplateVersionsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+            }
+        )
     }
 }
+

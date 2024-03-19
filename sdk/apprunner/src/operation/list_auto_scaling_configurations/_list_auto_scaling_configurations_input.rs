@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAutoScalingConfigurationsInput {
+pub struct ListAutoScalingConfigurationsInput  {
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
@@ -16,9 +16,9 @@ pub struct ListAutoScalingConfigurationsInput {
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAutoScalingConfigurationsInput {
+impl  ListAutoScalingConfigurationsInput  {
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
@@ -34,7 +34,7 @@ impl ListAutoScalingConfigurationsInput {
     }
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_name = input;
-        self
+        self.auto_scaling_configuration_name = input; self
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code></p>
     pub fn set_latest_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.latest_only = input;
-        self
+        self.latest_only = input; self
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
@@ -98,8 +96,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
@@ -115,8 +112,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
@@ -124,17 +120,19 @@ impl ListAutoScalingConfigurationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAutoScalingConfigurationsInput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput {
-            auto_scaling_configuration_name: self.auto_scaling_configuration_name,
-            latest_only: self.latest_only,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput {
+                auto_scaling_configuration_name: self.auto_scaling_configuration_name
+                ,
+                latest_only: self.latest_only
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

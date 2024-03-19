@@ -3,13 +3,13 @@
 /// <p>A request to delete an existing email identity. When you delete an identity, you lose the ability to use Amazon Pinpoint to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEmailIdentityInput {
+pub struct DeleteEmailIdentityInput  {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEmailIdentityInput {
+impl  DeleteEmailIdentityInput  {
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteEmailIdentityInputBuilder {
     }
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_identity
     }
     /// Consumes the builder and constructs a [`DeleteEmailIdentityInput`](crate::operation::delete_email_identity::DeleteEmailIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_email_identity::DeleteEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_email_identity::DeleteEmailIdentityInput {
-            email_identity: self.email_identity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_identity::DeleteEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_email_identity::DeleteEmailIdentityInput {
+                email_identity: self.email_identity
+                ,
+            }
+        )
     }
 }
+

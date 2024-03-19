@@ -3,22 +3,20 @@
 /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemCollectionSizeLimitExceededException {
+pub struct ItemCollectionSizeLimitExceededException  {
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ItemCollectionSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ItemCollectionSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ItemCollectionSizeLimitExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ItemCollectionS
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ItemCollectionSizeLimitExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ItemCollectionSizeLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ItemCollectionSizeLimitExceededException`](crate::types::error::ItemCollectionSizeLimitExceededException).
@@ -59,29 +55,30 @@ impl ItemCollectionSizeLimitExceededExceptionBuilder {
     }
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ItemCollectionSizeLimitExceededException`](crate::types::error::ItemCollectionSizeLimitExceededException).
     pub fn build(self) -> crate::types::error::ItemCollectionSizeLimitExceededException {
         crate::types::error::ItemCollectionSizeLimitExceededException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

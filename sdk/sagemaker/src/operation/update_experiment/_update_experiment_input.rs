@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExperimentInput {
+pub struct UpdateExperimentInput  {
     /// <p>The name of the experiment to update.</p>
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
@@ -10,17 +10,17 @@ pub struct UpdateExperimentInput {
     /// <p>The description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateExperimentInput {
+impl  UpdateExperimentInput  {
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>The name of the experiment to update.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment to update.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>The description of the experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
-            experiment_name: self.experiment_name,
-            display_name: self.display_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_experiment::UpdateExperimentInput {
+                experiment_name: self.experiment_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

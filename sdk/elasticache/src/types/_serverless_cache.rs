@@ -3,7 +3,7 @@
 /// <p>The resource representing a serverless cache.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessCache {
+pub struct ServerlessCache  {
     /// <p>The unique identifier of the serverless cache.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the serverless cache.</p>
@@ -23,7 +23,7 @@ pub struct ServerlessCache {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
@@ -33,83 +33,85 @@ pub struct ServerlessCache {
     /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
-impl ServerlessCache {
+impl  ServerlessCache  {
     /// <p>The unique identifier of the serverless cache.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>A description of the serverless cache.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the serverless cache was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The current status of the serverless cache. The allowed values are CREATING, AVAILABLE, DELETING, CREATE-FAILED and MODIFYING.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The engine the serverless cache is compatible with.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the engine the serverless cache is compatible with.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The name and version number of the engine the serverless cache is compatible with.</p>
-    pub fn full_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn full_engine_version(&self) -> ::std::option::Option<& str> {
         self.full_engine_version.as_deref()
     }
     /// <p>The cache usage limit for the serverless cache.</p>
-    pub fn cache_usage_limits(&self) -> ::std::option::Option<&crate::types::CacheUsageLimits> {
+    pub fn cache_usage_limits(&self) -> ::std::option::Option<& crate::types::CacheUsageLimits> {
         self.cache_usage_limits.as_ref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
-    pub fn reader_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+    pub fn reader_endpoint(&self) -> ::std::option::Option<& crate::types::Endpoint> {
         self.reader_endpoint.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the serverless cache.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
-    pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_snapshot_time(&self) -> ::std::option::Option<& str> {
         self.daily_snapshot_time.as_deref()
     }
 }
@@ -133,12 +135,12 @@ pub struct ServerlessCacheBuilder {
     pub(crate) full_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
@@ -150,8 +152,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The unique identifier of the serverless cache.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>The unique identifier of the serverless cache.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +165,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>A description of the serverless cache.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the serverless cache.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +178,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>When the serverless cache was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>When the serverless cache was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -192,8 +191,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The current status of the serverless cache. The allowed values are CREATING, AVAILABLE, DELETING, CREATE-FAILED and MODIFYING.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the serverless cache. The allowed values are CREATING, AVAILABLE, DELETING, CREATE-FAILED and MODIFYING.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +204,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The engine the serverless cache is compatible with.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine the serverless cache is compatible with.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +217,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The version number of the engine the serverless cache is compatible with.</p>
     pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
+        self.major_engine_version = input; self
     }
     /// <p>The version number of the engine the serverless cache is compatible with.</p>
     pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +230,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The name and version number of the engine the serverless cache is compatible with.</p>
     pub fn set_full_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.full_engine_version = input;
-        self
+        self.full_engine_version = input; self
     }
     /// <p>The name and version number of the engine the serverless cache is compatible with.</p>
     pub fn get_full_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +243,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The cache usage limit for the serverless cache.</p>
     pub fn set_cache_usage_limits(mut self, input: ::std::option::Option<crate::types::CacheUsageLimits>) -> Self {
-        self.cache_usage_limits = input;
-        self
+        self.cache_usage_limits = input; self
     }
     /// <p>The cache usage limit for the serverless cache.</p>
     pub fn get_cache_usage_limits(&self) -> &::std::option::Option<crate::types::CacheUsageLimits> {
@@ -262,8 +256,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt data at rest in the serverless cache.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,17 +269,16 @@ impl ServerlessCacheBuilder {
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
@@ -296,8 +288,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
@@ -310,8 +301,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn set_reader_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
-        self.reader_endpoint = input;
-        self
+        self.reader_endpoint = input; self
     }
     /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn get_reader_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
@@ -324,8 +314,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the serverless cache.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the serverless cache.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -338,8 +327,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,17 +340,16 @@ impl ServerlessCacheBuilder {
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
@@ -372,8 +359,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -386,8 +372,7 @@ impl ServerlessCacheBuilder {
     }
     /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
     pub fn set_daily_snapshot_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_snapshot_time = input;
-        self
+        self.daily_snapshot_time = input; self
     }
     /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -396,23 +381,41 @@ impl ServerlessCacheBuilder {
     /// Consumes the builder and constructs a [`ServerlessCache`](crate::types::ServerlessCache).
     pub fn build(self) -> crate::types::ServerlessCache {
         crate::types::ServerlessCache {
-            serverless_cache_name: self.serverless_cache_name,
-            description: self.description,
-            create_time: self.create_time,
-            status: self.status,
-            engine: self.engine,
-            major_engine_version: self.major_engine_version,
-            full_engine_version: self.full_engine_version,
-            cache_usage_limits: self.cache_usage_limits,
-            kms_key_id: self.kms_key_id,
-            security_group_ids: self.security_group_ids,
-            endpoint: self.endpoint,
-            reader_endpoint: self.reader_endpoint,
-            arn: self.arn,
-            user_group_id: self.user_group_id,
-            subnet_ids: self.subnet_ids,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            daily_snapshot_time: self.daily_snapshot_time,
+            serverless_cache_name: self.serverless_cache_name
+            ,
+            description: self.description
+            ,
+            create_time: self.create_time
+            ,
+            status: self.status
+            ,
+            engine: self.engine
+            ,
+            major_engine_version: self.major_engine_version
+            ,
+            full_engine_version: self.full_engine_version
+            ,
+            cache_usage_limits: self.cache_usage_limits
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            endpoint: self.endpoint
+            ,
+            reader_endpoint: self.reader_endpoint
+            ,
+            arn: self.arn
+            ,
+            user_group_id: self.user_group_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            snapshot_retention_limit: self.snapshot_retention_limit
+            ,
+            daily_snapshot_time: self.daily_snapshot_time
+            ,
         }
     }
 }
+

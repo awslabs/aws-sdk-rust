@@ -3,30 +3,29 @@
 /// <p>Specifies a request to execute a statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteStatementRequest {
+pub struct ExecuteStatementRequest  {
     /// <p>Specifies the transaction ID of the request.</p>
     pub transaction_id: ::std::string::String,
     /// <p>Specifies the statement of the request.</p>
     pub statement: ::std::string::String,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ValueHolder>>,
 }
-impl ExecuteStatementRequest {
+impl  ExecuteStatementRequest  {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn transaction_id(&self) -> &str {
-        use std::ops::Deref;
-        self.transaction_id.deref()
+    pub fn transaction_id(&self) -> & str {
+        use std::ops::Deref; self.transaction_id.deref()
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn statement(&self) -> &str {
-        use std::ops::Deref;
-        self.statement.deref()
+    pub fn statement(&self) -> & str {
+        use std::ops::Deref; self.statement.deref()
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::ValueHolder] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::ValueHolder] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExecuteStatementRequest {
@@ -42,7 +41,7 @@ impl ExecuteStatementRequest {
 pub struct ExecuteStatementRequestBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ValueHolder>>,
 }
 impl ExecuteStatementRequestBuilder {
     /// <p>Specifies the transaction ID of the request.</p>
@@ -53,8 +52,7 @@ impl ExecuteStatementRequestBuilder {
     }
     /// <p>Specifies the transaction ID of the request.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>Specifies the transaction ID of the request.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,7 @@ impl ExecuteStatementRequestBuilder {
     }
     /// <p>Specifies the statement of the request.</p>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>Specifies the statement of the request.</p>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,17 +79,16 @@ impl ExecuteStatementRequestBuilder {
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
     pub fn parameters(mut self, input: crate::types::ValueHolder) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValueHolder>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValueHolder>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::types::ExecuteStatementRequest).
@@ -100,20 +96,22 @@ impl ExecuteStatementRequestBuilder {
     /// - [`transaction_id`](crate::types::builders::ExecuteStatementRequestBuilder::transaction_id)
     /// - [`statement`](crate::types::builders::ExecuteStatementRequestBuilder::statement)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecuteStatementRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExecuteStatementRequest {
-            transaction_id: self.transaction_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transaction_id",
-                    "transaction_id was not specified but it is required when building ExecuteStatementRequest",
-                )
-            })?,
-            statement: self.statement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statement",
-                    "statement was not specified but it is required when building ExecuteStatementRequest",
-                )
-            })?,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExecuteStatementRequest {
+                transaction_id: self.transaction_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transaction_id", "transaction_id was not specified but it is required when building ExecuteStatementRequest")
+                    )?
+                ,
+                statement: self.statement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statement", "statement was not specified but it is required when building ExecuteStatementRequest")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

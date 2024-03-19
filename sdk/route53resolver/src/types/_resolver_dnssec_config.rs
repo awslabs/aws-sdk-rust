@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about a configuration for DNSSEC validation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolverDnssecConfig {
+pub struct ResolverDnssecConfig  {
     /// <p>The ID for a configuration for DNSSEC validation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
@@ -23,17 +23,17 @@ pub struct ResolverDnssecConfig {
     /// </ul>
     pub validation_status: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>,
 }
-impl ResolverDnssecConfig {
+impl  ResolverDnssecConfig  {
     /// <p>The ID for a configuration for DNSSEC validation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
@@ -47,7 +47,7 @@ impl ResolverDnssecConfig {
     /// <li>
     /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
     /// </ul>
-    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::ResolverDnssecValidationStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<& crate::types::ResolverDnssecValidationStatus> {
         self.validation_status.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The ID for a configuration for DNSSEC validation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for a configuration for DNSSEC validation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ResolverDnssecConfigBuilder {
     }
     /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl ResolverDnssecConfigBuilder {
     /// <p><b>DISABLED</b> DNSSEC validation is disabled.</p></li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::ResolverDnssecValidationStatus>) -> Self {
-        self.validation_status = input;
-        self
+        self.validation_status = input; self
     }
     /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
     /// <ul>
@@ -157,10 +153,15 @@ impl ResolverDnssecConfigBuilder {
     /// Consumes the builder and constructs a [`ResolverDnssecConfig`](crate::types::ResolverDnssecConfig).
     pub fn build(self) -> crate::types::ResolverDnssecConfig {
         crate::types::ResolverDnssecConfig {
-            id: self.id,
-            owner_id: self.owner_id,
-            resource_id: self.resource_id,
-            validation_status: self.validation_status,
+            id: self.id
+            ,
+            owner_id: self.owner_id
+            ,
+            resource_id: self.resource_id
+            ,
+            validation_status: self.validation_status
+            ,
         }
     }
 }
+

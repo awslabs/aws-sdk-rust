@@ -3,38 +3,40 @@
 /// <p>Represents a collection of API keys as represented by an ApiKeys resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiKeysOutput {
+pub struct GetApiKeysOutput  {
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The current page of elements from this collection.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKey>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetApiKeysOutput {
+impl  GetApiKeysOutput  {
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[::std::string::String] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [::std::string::String] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current page of elements from this collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::ApiKey] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::ApiKey] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApiKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApiKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput).
     pub fn builder() -> crate::operation::get_api_keys::builders::GetApiKeysOutputBuilder {
@@ -46,8 +48,8 @@ impl GetApiKeysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiKeysOutputBuilder {
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKey>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +61,16 @@ impl GetApiKeysOutputBuilder {
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
     pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input.into());
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.warnings
     }
     /// Appends an item to `items`.
@@ -79,17 +80,16 @@ impl GetApiKeysOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(mut self, input: crate::types::ApiKey) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApiKey>>) -> Self {
+        self.items = input; self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKey>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApiKey>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>
@@ -99,29 +99,32 @@ impl GetApiKeysOutputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
         &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput).
     pub fn build(self) -> crate::operation::get_api_keys::GetApiKeysOutput {
         crate::operation::get_api_keys::GetApiKeysOutput {
-            warnings: self.warnings,
-            items: self.items,
-            position: self.position,
+            warnings: self.warnings
+            ,
+            items: self.items
+            ,
+            position: self.position
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

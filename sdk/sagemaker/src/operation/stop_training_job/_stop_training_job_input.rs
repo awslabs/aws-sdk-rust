@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopTrainingJobInput {
+pub struct StopTrainingJobInput  {
     /// <p>The name of the training job to stop.</p>
     pub training_job_name: ::std::option::Option<::std::string::String>,
 }
-impl StopTrainingJobInput {
+impl  StopTrainingJobInput  {
     /// <p>The name of the training job to stop.</p>
-    pub fn training_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn training_job_name(&self) -> ::std::option::Option<& str> {
         self.training_job_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopTrainingJobInputBuilder {
     }
     /// <p>The name of the training job to stop.</p>
     pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_job_name = input;
-        self
+        self.training_job_name = input; self
     }
     /// <p>The name of the training job to stop.</p>
     pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_job_name
     }
     /// Consumes the builder and constructs a [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_training_job::StopTrainingJobInput {
-            training_job_name: self.training_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_training_job::StopTrainingJobInput {
+                training_job_name: self.training_job_name
+                ,
+            }
+        )
     }
 }
+

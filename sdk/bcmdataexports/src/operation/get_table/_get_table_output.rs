@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableOutput {
+pub struct GetTableOutput  {
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The table description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. Tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified.</p>
-    pub table_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub table_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The schema of the table.</p>
-    pub schema: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub schema: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>,
     _request_id: Option<String>,
 }
-impl GetTableOutput {
+impl  GetTableOutput  {
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The table description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. Tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified.</p>
-    pub fn table_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn table_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.table_properties.as_ref()
     }
     /// <p>The schema of the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
-    pub fn schema(&self) -> &[crate::types::Column] {
-        self.schema.as_deref().unwrap_or_default()
+    pub fn schema(&self) -> & [crate::types::Column] {
+        self.schema.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTableOutput {
     /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::operation::get_table::GetTableOutput).
     pub fn builder() -> crate::operation::get_table::builders::GetTableOutputBuilder {
@@ -51,8 +52,8 @@ impl GetTableOutput {
 pub struct GetTableOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) table_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) schema: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub(crate) table_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) schema: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -63,8 +64,7 @@ impl GetTableOutputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl GetTableOutputBuilder {
     }
     /// <p>The table description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The table description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,26 +88,18 @@ impl GetTableOutputBuilder {
     /// To override the contents of this collection use [`set_table_properties`](Self::set_table_properties).
     ///
     /// <p>TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. Tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified.</p>
-    pub fn table_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.table_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.table_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.table_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. Tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified.</p>
-    pub fn set_table_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.table_properties = input;
-        self
+    pub fn set_table_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.table_properties = input; self
     }
     /// <p>TableProperties are additional configurations you can provide to change the data and schema of a table. Each table can have different TableProperties. Tables are not required to have any TableProperties. Each table property has a default value that it assumes if not specified.</p>
-    pub fn get_table_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_table_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.table_properties
     }
     /// Appends an item to `schema`.
@@ -118,36 +109,40 @@ impl GetTableOutputBuilder {
     /// <p>The schema of the table.</p>
     pub fn schema(mut self, input: crate::types::Column) -> Self {
         let mut v = self.schema.unwrap_or_default();
-        v.push(input);
-        self.schema = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The schema of the table.</p>
-    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
-        self.schema = input;
-        self
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>) -> Self {
+        self.schema = input; self
     }
     /// <p>The schema of the table.</p>
-    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Column>> {
         &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTableOutput`](crate::operation::get_table::GetTableOutput).
     pub fn build(self) -> crate::operation::get_table::GetTableOutput {
         crate::operation::get_table::GetTableOutput {
-            table_name: self.table_name,
-            description: self.description,
-            table_properties: self.table_properties,
-            schema: self.schema,
+            table_name: self.table_name
+            ,
+            description: self.description
+            ,
+            table_properties: self.table_properties
+            ,
+            schema: self.schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

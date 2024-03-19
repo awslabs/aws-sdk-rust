@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendAlexaOfferToMasterInput {
+pub struct SendAlexaOfferToMasterInput  {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the sender client.</p>
@@ -10,17 +10,17 @@ pub struct SendAlexaOfferToMasterInput {
     /// <p>The base64-encoded SDP offer content.</p>
     pub message_payload: ::std::option::Option<::std::string::String>,
 }
-impl SendAlexaOfferToMasterInput {
+impl  SendAlexaOfferToMasterInput  {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn sender_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_client_id(&self) -> ::std::option::Option<& str> {
         self.sender_client_id.as_deref()
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn message_payload(&self) -> ::std::option::Option<&str> {
+    pub fn message_payload(&self) -> ::std::option::Option<& str> {
         self.message_payload.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SendAlexaOfferToMasterInputBuilder {
     }
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SendAlexaOfferToMasterInputBuilder {
     }
     /// <p>The unique identifier for the sender client.</p>
     pub fn set_sender_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_client_id = input;
-        self
+        self.sender_client_id = input; self
     }
     /// <p>The unique identifier for the sender client.</p>
     pub fn get_sender_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl SendAlexaOfferToMasterInputBuilder {
     }
     /// <p>The base64-encoded SDP offer content.</p>
     pub fn set_message_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_payload = input;
-        self
+        self.message_payload = input; self
     }
     /// <p>The base64-encoded SDP offer content.</p>
     pub fn get_message_payload(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_payload
     }
     /// Consumes the builder and constructs a [`SendAlexaOfferToMasterInput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput {
-            channel_arn: self.channel_arn,
-            sender_client_id: self.sender_client_id,
-            message_payload: self.message_payload,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput {
+                channel_arn: self.channel_arn
+                ,
+                sender_client_id: self.sender_client_id
+                ,
+                message_payload: self.message_payload
+                ,
+            }
+        )
     }
 }
+

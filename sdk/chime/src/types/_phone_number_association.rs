@@ -3,7 +3,7 @@
 /// <p>The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberAssociation {
+pub struct PhoneNumberAssociation  {
     /// <p>Contains the ID for the entity specified in Name.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
@@ -11,17 +11,17 @@ pub struct PhoneNumberAssociation {
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub associated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PhoneNumberAssociation {
+impl  PhoneNumberAssociation  {
     /// <p>Contains the ID for the entity specified in Name.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::PhoneNumberAssociationName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::PhoneNumberAssociationName> {
         self.name.as_ref()
     }
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
-    pub fn associated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn associated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.associated_timestamp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PhoneNumberAssociationBuilder {
     }
     /// <p>Contains the ID for the entity specified in Name.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Contains the ID for the entity specified in Name.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PhoneNumberAssociationBuilder {
     }
     /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::PhoneNumberAssociationName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
@@ -76,8 +74,7 @@ impl PhoneNumberAssociationBuilder {
     }
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub fn set_associated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.associated_timestamp = input;
-        self
+        self.associated_timestamp = input; self
     }
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub fn get_associated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl PhoneNumberAssociationBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberAssociation`](crate::types::PhoneNumberAssociation).
     pub fn build(self) -> crate::types::PhoneNumberAssociation {
         crate::types::PhoneNumberAssociation {
-            value: self.value,
-            name: self.name,
-            associated_timestamp: self.associated_timestamp,
+            value: self.value
+            ,
+            name: self.name
+            ,
+            associated_timestamp: self.associated_timestamp
+            ,
         }
     }
 }
+

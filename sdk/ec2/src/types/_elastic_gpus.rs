@@ -6,7 +6,7 @@
 /// <p>Describes an Elastic Graphics accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticGpus {
+pub struct ElasticGpus  {
     /// <p>The ID of the Elastic Graphics accelerator.</p>
     pub elastic_gpu_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in the which the Elastic Graphics accelerator resides.</p>
@@ -20,38 +20,39 @@ pub struct ElasticGpus {
     /// <p>The ID of the instance to which the Elastic Graphics accelerator is attached.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ElasticGpus {
+impl  ElasticGpus  {
     /// <p>The ID of the Elastic Graphics accelerator.</p>
-    pub fn elastic_gpu_id(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_gpu_id(&self) -> ::std::option::Option<& str> {
         self.elastic_gpu_id.as_deref()
     }
     /// <p>The Availability Zone in the which the Elastic Graphics accelerator resides.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The type of Elastic Graphics accelerator.</p>
-    pub fn elastic_gpu_type(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_gpu_type(&self) -> ::std::option::Option<& str> {
         self.elastic_gpu_type.as_deref()
     }
     /// <p>The status of the Elastic Graphics accelerator.</p>
-    pub fn elastic_gpu_health(&self) -> ::std::option::Option<&crate::types::ElasticGpuHealth> {
+    pub fn elastic_gpu_health(&self) -> ::std::option::Option<& crate::types::ElasticGpuHealth> {
         self.elastic_gpu_health.as_ref()
     }
     /// <p>The state of the Elastic Graphics accelerator.</p>
-    pub fn elastic_gpu_state(&self) -> ::std::option::Option<&crate::types::ElasticGpuState> {
+    pub fn elastic_gpu_state(&self) -> ::std::option::Option<& crate::types::ElasticGpuState> {
         self.elastic_gpu_state.as_ref()
     }
     /// <p>The ID of the instance to which the Elastic Graphics accelerator is attached.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ElasticGpus {
@@ -71,7 +72,7 @@ pub struct ElasticGpusBuilder {
     pub(crate) elastic_gpu_health: ::std::option::Option<crate::types::ElasticGpuHealth>,
     pub(crate) elastic_gpu_state: ::std::option::Option<crate::types::ElasticGpuState>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ElasticGpusBuilder {
     /// <p>The ID of the Elastic Graphics accelerator.</p>
@@ -81,8 +82,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The ID of the Elastic Graphics accelerator.</p>
     pub fn set_elastic_gpu_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_gpu_id = input;
-        self
+        self.elastic_gpu_id = input; self
     }
     /// <p>The ID of the Elastic Graphics accelerator.</p>
     pub fn get_elastic_gpu_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The Availability Zone in the which the Elastic Graphics accelerator resides.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in the which the Elastic Graphics accelerator resides.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The type of Elastic Graphics accelerator.</p>
     pub fn set_elastic_gpu_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_gpu_type = input;
-        self
+        self.elastic_gpu_type = input; self
     }
     /// <p>The type of Elastic Graphics accelerator.</p>
     pub fn get_elastic_gpu_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The status of the Elastic Graphics accelerator.</p>
     pub fn set_elastic_gpu_health(mut self, input: ::std::option::Option<crate::types::ElasticGpuHealth>) -> Self {
-        self.elastic_gpu_health = input;
-        self
+        self.elastic_gpu_health = input; self
     }
     /// <p>The status of the Elastic Graphics accelerator.</p>
     pub fn get_elastic_gpu_health(&self) -> &::std::option::Option<crate::types::ElasticGpuHealth> {
@@ -137,8 +134,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The state of the Elastic Graphics accelerator.</p>
     pub fn set_elastic_gpu_state(mut self, input: ::std::option::Option<crate::types::ElasticGpuState>) -> Self {
-        self.elastic_gpu_state = input;
-        self
+        self.elastic_gpu_state = input; self
     }
     /// <p>The state of the Elastic Graphics accelerator.</p>
     pub fn get_elastic_gpu_state(&self) -> &::std::option::Option<crate::types::ElasticGpuState> {
@@ -151,8 +147,7 @@ impl ElasticGpusBuilder {
     }
     /// <p>The ID of the instance to which the Elastic Graphics accelerator is attached.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance to which the Elastic Graphics accelerator is attached.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,29 +160,36 @@ impl ElasticGpusBuilder {
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the Elastic Graphics accelerator.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ElasticGpus`](crate::types::ElasticGpus).
     pub fn build(self) -> crate::types::ElasticGpus {
         crate::types::ElasticGpus {
-            elastic_gpu_id: self.elastic_gpu_id,
-            availability_zone: self.availability_zone,
-            elastic_gpu_type: self.elastic_gpu_type,
-            elastic_gpu_health: self.elastic_gpu_health,
-            elastic_gpu_state: self.elastic_gpu_state,
-            instance_id: self.instance_id,
-            tags: self.tags,
+            elastic_gpu_id: self.elastic_gpu_id
+            ,
+            availability_zone: self.availability_zone
+            ,
+            elastic_gpu_type: self.elastic_gpu_type
+            ,
+            elastic_gpu_health: self.elastic_gpu_health
+            ,
+            elastic_gpu_state: self.elastic_gpu_state
+            ,
+            instance_id: self.instance_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

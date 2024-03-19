@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMacieSessionInput {}
+pub struct GetMacieSessionInput  {
+}
 impl GetMacieSessionInput {
     /// Creates a new builder-style object to manufacture [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
     pub fn builder() -> crate::operation::get_macie_session::builders::GetMacieSessionInputBuilder {
@@ -13,12 +14,15 @@ impl GetMacieSessionInput {
 /// A builder for [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetMacieSessionInputBuilder {}
+pub struct GetMacieSessionInputBuilder {
+}
 impl GetMacieSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_macie_session::GetMacieSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_macie_session::GetMacieSessionInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_macie_session::GetMacieSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_macie_session::GetMacieSessionInput {
+            }
+        )
     }
 }
+

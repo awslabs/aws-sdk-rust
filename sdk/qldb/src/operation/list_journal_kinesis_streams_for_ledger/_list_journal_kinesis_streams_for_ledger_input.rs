@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJournalKinesisStreamsForLedgerInput {
+pub struct ListJournalKinesisStreamsForLedgerInput  {
     /// <p>The name of the ledger.</p>
     pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
@@ -10,9 +10,9 @@ pub struct ListJournalKinesisStreamsForLedgerInput {
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListJournalKinesisStreamsForLedgerInput {
+impl  ListJournalKinesisStreamsForLedgerInput  {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
+    pub fn ledger_name(&self) -> ::std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
@@ -20,7 +20,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
         self.max_results
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ledger_name = input;
-        self
+        self.ledger_name = input; self
     }
     /// <p>The name of the ledger.</p>
     pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerInput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput {
-                ledger_name: self.ledger_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                ledger_name: self.ledger_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

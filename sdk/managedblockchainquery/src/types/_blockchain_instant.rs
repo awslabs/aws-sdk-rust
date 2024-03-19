@@ -3,17 +3,17 @@
 /// <p>The container for time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockchainInstant {
+pub struct BlockchainInstant  {
     /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BlockchainInstant {
+impl  BlockchainInstant  {
     /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
-    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl BlockchainInstantBuilder {
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p><note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
@@ -53,6 +52,10 @@ impl BlockchainInstantBuilder {
     }
     /// Consumes the builder and constructs a [`BlockchainInstant`](crate::types::BlockchainInstant).
     pub fn build(self) -> crate::types::BlockchainInstant {
-        crate::types::BlockchainInstant { time: self.time }
+        crate::types::BlockchainInstant {
+            time: self.time
+            ,
+        }
     }
 }
+

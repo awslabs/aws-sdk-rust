@@ -3,7 +3,7 @@
 /// <p>Contains details about the start of the execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ExecutionStartedEventDetails {
+pub struct ExecutionStartedEventDetails  {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
@@ -15,29 +15,29 @@ pub struct ExecutionStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl ExecutionStartedEventDetails {
+impl  ExecutionStartedEventDetails  {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_alias_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
-    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_version_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for ExecutionStartedEventDetails {
+impl  ::std::fmt::Debug for ExecutionStartedEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionStartedEventDetails");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
@@ -73,8 +73,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
-        self.input_details = input;
-        self
+        self.input_details = input; self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn get_input_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
@@ -101,8 +99,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
     pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,11 +134,16 @@ impl ExecutionStartedEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ExecutionStartedEventDetails`](crate::types::ExecutionStartedEventDetails).
     pub fn build(self) -> crate::types::ExecutionStartedEventDetails {
         crate::types::ExecutionStartedEventDetails {
-            input: self.input,
-            input_details: self.input_details,
-            role_arn: self.role_arn,
-            state_machine_alias_arn: self.state_machine_alias_arn,
-            state_machine_version_arn: self.state_machine_version_arn,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            role_arn: self.role_arn
+            ,
+            state_machine_alias_arn: self.state_machine_alias_arn
+            ,
+            state_machine_version_arn: self.state_machine_version_arn
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for ExecutionStartedEventDetailsBuilder {
         formatter.finish()
     }
 }
+

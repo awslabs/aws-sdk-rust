@@ -3,13 +3,13 @@
 /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SidewalkResourceTypeEventConfiguration {
+pub struct SidewalkResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub wireless_device_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl SidewalkResourceTypeEventConfiguration {
+impl  SidewalkResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_device_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SidewalkResourceTypeEventConfigurationBuilder {
     }
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn set_wireless_device_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_device_event_topic = input;
-        self
+        self.wireless_device_event_topic = input; self
     }
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn get_wireless_device_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -44,7 +43,9 @@ impl SidewalkResourceTypeEventConfigurationBuilder {
     /// Consumes the builder and constructs a [`SidewalkResourceTypeEventConfiguration`](crate::types::SidewalkResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::SidewalkResourceTypeEventConfiguration {
         crate::types::SidewalkResourceTypeEventConfiguration {
-            wireless_device_event_topic: self.wireless_device_event_topic,
+            wireless_device_event_topic: self.wireless_device_event_topic
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DedicatedIpPool {
+pub struct DedicatedIpPool  {
     /// <p>The name of the dedicated IP pool.</p>
     pub pool_name: ::std::string::String,
     /// <p>The type of the dedicated IP pool.</p>
@@ -15,11 +15,10 @@ pub struct DedicatedIpPool {
     /// </ul>
     pub scaling_mode: crate::types::ScalingMode,
 }
-impl DedicatedIpPool {
+impl  DedicatedIpPool  {
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn pool_name(&self) -> &str {
-        use std::ops::Deref;
-        self.pool_name.deref()
+    pub fn pool_name(&self) -> & str {
+        use std::ops::Deref; self.pool_name.deref()
     }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
@@ -28,7 +27,7 @@ impl DedicatedIpPool {
     /// <li>
     /// <p><code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p></li>
     /// </ul>
-    pub fn scaling_mode(&self) -> &crate::types::ScalingMode {
+    pub fn scaling_mode(&self) -> & crate::types::ScalingMode {
         &self.scaling_mode
     }
 }
@@ -55,8 +54,7 @@ impl DedicatedIpPoolBuilder {
     }
     /// <p>The name of the dedicated IP pool.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The name of the dedicated IP pool.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl DedicatedIpPoolBuilder {
     /// <p><code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p></li>
     /// </ul>
     pub fn set_scaling_mode(mut self, input: ::std::option::Option<crate::types::ScalingMode>) -> Self {
-        self.scaling_mode = input;
-        self
+        self.scaling_mode = input; self
     }
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
@@ -100,19 +97,20 @@ impl DedicatedIpPoolBuilder {
     /// - [`pool_name`](crate::types::builders::DedicatedIpPoolBuilder::pool_name)
     /// - [`scaling_mode`](crate::types::builders::DedicatedIpPoolBuilder::scaling_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIpPool, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DedicatedIpPool {
-            pool_name: self.pool_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pool_name",
-                    "pool_name was not specified but it is required when building DedicatedIpPool",
-                )
-            })?,
-            scaling_mode: self.scaling_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scaling_mode",
-                    "scaling_mode was not specified but it is required when building DedicatedIpPool",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DedicatedIpPool {
+                pool_name: self.pool_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pool_name", "pool_name was not specified but it is required when building DedicatedIpPool")
+                    )?
+                ,
+                scaling_mode: self.scaling_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scaling_mode", "scaling_mode was not specified but it is required when building DedicatedIpPool")
+                    )?
+                ,
+            }
+        )
     }
 }
+

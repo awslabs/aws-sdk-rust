@@ -3,15 +3,14 @@
 /// <p>A set of rules defining the approval rules for a patch baseline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PatchRuleGroup {
+pub struct PatchRuleGroup  {
     /// <p>The rules that make up the rule group.</p>
-    pub patch_rules: ::std::vec::Vec<crate::types::PatchRule>,
+    pub patch_rules: ::std::vec::Vec::<crate::types::PatchRule>,
 }
-impl PatchRuleGroup {
+impl  PatchRuleGroup  {
     /// <p>The rules that make up the rule group.</p>
-    pub fn patch_rules(&self) -> &[crate::types::PatchRule] {
-        use std::ops::Deref;
-        self.patch_rules.deref()
+    pub fn patch_rules(&self) -> & [crate::types::PatchRule] {
+        use std::ops::Deref; self.patch_rules.deref()
     }
 }
 impl PatchRuleGroup {
@@ -25,7 +24,7 @@ impl PatchRuleGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchRuleGroupBuilder {
-    pub(crate) patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
+    pub(crate) patch_rules: ::std::option::Option<::std::vec::Vec::<crate::types::PatchRule>>,
 }
 impl PatchRuleGroupBuilder {
     /// Appends an item to `patch_rules`.
@@ -35,30 +34,31 @@ impl PatchRuleGroupBuilder {
     /// <p>The rules that make up the rule group.</p>
     pub fn patch_rules(mut self, input: crate::types::PatchRule) -> Self {
         let mut v = self.patch_rules.unwrap_or_default();
-        v.push(input);
-        self.patch_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules that make up the rule group.</p>
-    pub fn set_patch_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>) -> Self {
-        self.patch_rules = input;
-        self
+    pub fn set_patch_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchRule>>) -> Self {
+        self.patch_rules = input; self
     }
     /// <p>The rules that make up the rule group.</p>
-    pub fn get_patch_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchRule>> {
+    pub fn get_patch_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchRule>> {
         &self.patch_rules
     }
     /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::types::PatchRuleGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`patch_rules`](crate::types::builders::PatchRuleGroupBuilder::patch_rules)
     pub fn build(self) -> ::std::result::Result<crate::types::PatchRuleGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PatchRuleGroup {
-            patch_rules: self.patch_rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_rules",
-                    "patch_rules was not specified but it is required when building PatchRuleGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PatchRuleGroup {
+                patch_rules: self.patch_rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_rules", "patch_rules was not specified but it is required when building PatchRuleGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

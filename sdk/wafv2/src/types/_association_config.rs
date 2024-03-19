@@ -7,27 +7,21 @@
 /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationConfig {
+pub struct AssociationConfig  {
     /// <p>Customizes the maximum size of the request body that your protected CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access resources forward to WAF for inspection. The default size is 16 KB (16,384 bytes). You can change the setting for any of the available resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>Example JSON: <code> { "API_GATEWAY": "KB_48", "APP_RUNNER_SERVICE": "KB_32" }</code></p>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
-    pub request_body: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
-    >,
+    pub request_body: ::std::option::Option<::std::collections::HashMap::<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>>,
 }
-impl AssociationConfig {
+impl  AssociationConfig  {
     /// <p>Customizes the maximum size of the request body that your protected CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access resources forward to WAF for inspection. The default size is 16 KB (16,384 bytes). You can change the setting for any of the available resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>Example JSON: <code> { "API_GATEWAY": "KB_48", "APP_RUNNER_SERVICE": "KB_32" }</code></p>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
-    pub fn request_body(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
-    > {
+    pub fn request_body(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>> {
         self.request_body.as_ref()
     }
 }
@@ -42,9 +36,7 @@ impl AssociationConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationConfigBuilder {
-    pub(crate) request_body: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
-    >,
+    pub(crate) request_body: ::std::option::Option<::std::collections::HashMap::<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>>,
 }
 impl AssociationConfigBuilder {
     /// Adds a key-value pair to `request_body`.
@@ -58,40 +50,32 @@ impl AssociationConfigBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
     pub fn request_body(mut self, k: crate::types::AssociatedResourceType, v: crate::types::RequestBodyAssociatedResourceTypeConfig) -> Self {
         let mut hash_map = self.request_body.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.request_body = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.request_body = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Customizes the maximum size of the request body that your protected CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access resources forward to WAF for inspection. The default size is 16 KB (16,384 bytes). You can change the setting for any of the available resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>Example JSON: <code> { "API_GATEWAY": "KB_48", "APP_RUNNER_SERVICE": "KB_32" }</code></p>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
-    pub fn set_request_body(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
-        >,
-    ) -> Self {
-        self.request_body = input;
-        self
+    pub fn set_request_body(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>>) -> Self {
+        self.request_body = input; self
     }
     /// <p>Customizes the maximum size of the request body that your protected CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access resources forward to WAF for inspection. The default size is 16 KB (16,384 bytes). You can change the setting for any of the available resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>Example JSON: <code> { "API_GATEWAY": "KB_48", "APP_RUNNER_SERVICE": "KB_32" }</code></p>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
-    pub fn get_request_body(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
-    > {
+    pub fn get_request_body(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>> {
         &self.request_body
     }
     /// Consumes the builder and constructs a [`AssociationConfig`](crate::types::AssociationConfig).
     pub fn build(self) -> crate::types::AssociationConfig {
         crate::types::AssociationConfig {
-            request_body: self.request_body,
+            request_body: self.request_body
+            ,
         }
     }
 }
+

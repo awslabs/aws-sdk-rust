@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSolNetworkOperations`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListSolNetworkOperationsOutput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput) with field(s):
+                            /// - On success, responds with [`ListSolNetworkOperationsOutput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`network_operations(Option<Vec::<ListSolNetworkOperationsInfo>>)`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput::network_operations): <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    /// - On failure, responds with [`SdkError<ListSolNetworkOperationsError>`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsError)
+                            /// - On failure, responds with [`SdkError<ListSolNetworkOperationsError>`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsError)
     pub fn list_sol_network_operations(&self) -> crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder {
-        crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

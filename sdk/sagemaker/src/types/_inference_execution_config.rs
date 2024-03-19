@@ -3,7 +3,7 @@
 /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceExecutionConfig {
+pub struct InferenceExecutionConfig  {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct InferenceExecutionConfig {
     /// </ul>
     pub mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
-impl InferenceExecutionConfig {
+impl  InferenceExecutionConfig  {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl InferenceExecutionConfig {
     /// <li>
     /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::InferenceExecutionMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::InferenceExecutionMode> {
         self.mode.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl InferenceExecutionConfigBuilder {
     /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::InferenceExecutionMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
@@ -74,6 +73,10 @@ impl InferenceExecutionConfigBuilder {
     }
     /// Consumes the builder and constructs a [`InferenceExecutionConfig`](crate::types::InferenceExecutionConfig).
     pub fn build(self) -> crate::types::InferenceExecutionConfig {
-        crate::types::InferenceExecutionConfig { mode: self.mode }
+        crate::types::InferenceExecutionConfig {
+            mode: self.mode
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or an Resilience Hub-native identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhysicalResource {
+pub struct PhysicalResource  {
     /// <p>The name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>Logical identifier of the resource.</p>
@@ -13,13 +13,13 @@ pub struct PhysicalResource {
     /// <p>The type of resource.</p>
     pub resource_type: ::std::string::String,
     /// <p>The application components that belong to this resource.</p>
-    pub app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
+    pub app_components: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>,
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub excluded: ::std::option::Option<bool>,
     /// <p>Type of input source.</p>
@@ -27,38 +27,36 @@ pub struct PhysicalResource {
     /// <p>Name of the parent resource.</p>
     pub parent_resource_name: ::std::option::Option<::std::string::String>,
 }
-impl PhysicalResource {
+impl  PhysicalResource  {
     /// <p>The name of the resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>Logical identifier of the resource.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>Identifier of the physical resource.</p>
-    pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<& crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The application components that belong to this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_components.is_none()`.
-    pub fn app_components(&self) -> &[crate::types::AppComponent] {
-        self.app_components.as_deref().unwrap_or_default()
+    pub fn app_components(&self) -> & [crate::types::AppComponent] {
+        self.app_components.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.additional_info.as_ref()
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
@@ -66,11 +64,11 @@ impl PhysicalResource {
         self.excluded
     }
     /// <p>Type of input source.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ResourceSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::ResourceSourceType> {
         self.source_type.as_ref()
     }
     /// <p>Name of the parent resource.</p>
-    pub fn parent_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn parent_resource_name(&self) -> ::std::option::Option<& str> {
         self.parent_resource_name.as_deref()
     }
 }
@@ -89,8 +87,8 @@ pub struct PhysicalResourceBuilder {
     pub(crate) logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     pub(crate) physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) app_components: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) source_type: ::std::option::Option<crate::types::ResourceSourceType>,
     pub(crate) parent_resource_name: ::std::option::Option<::std::string::String>,
@@ -103,8 +101,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Logical identifier of the resource.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>Logical identifier of the resource.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
@@ -133,8 +129,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Identifier of the physical resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<crate::types::PhysicalResourceId>) -> Self {
-        self.physical_resource_id = input;
-        self
+        self.physical_resource_id = input; self
     }
     /// <p>Identifier of the physical resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
@@ -148,8 +143,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,17 +156,16 @@ impl PhysicalResourceBuilder {
     /// <p>The application components that belong to this resource.</p>
     pub fn app_components(mut self, input: crate::types::AppComponent) -> Self {
         let mut v = self.app_components.unwrap_or_default();
-        v.push(input);
-        self.app_components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The application components that belong to this resource.</p>
-    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>) -> Self {
-        self.app_components = input;
-        self
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>) -> Self {
+        self.app_components = input; self
     }
     /// <p>The application components that belong to this resource.</p>
-    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponent>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>> {
         &self.app_components
     }
     /// Adds a key-value pair to `additional_info`.
@@ -184,32 +177,26 @@ impl PhysicalResourceBuilder {
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code></p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.additional_info
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
@@ -219,8 +206,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
@@ -233,8 +219,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Type of input source.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ResourceSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>Type of input source.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ResourceSourceType> {
@@ -247,8 +232,7 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Name of the parent resource.</p>
     pub fn set_parent_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_resource_name = input;
-        self
+        self.parent_resource_name = input; self
     }
     /// <p>Name of the parent resource.</p>
     pub fn get_parent_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,21 +242,31 @@ impl PhysicalResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::PhysicalResourceBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PhysicalResource {
-            resource_name: self.resource_name,
-            logical_resource_id: self.logical_resource_id,
-            physical_resource_id: self.physical_resource_id,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building PhysicalResource",
-                )
-            })?,
-            app_components: self.app_components,
-            additional_info: self.additional_info,
-            excluded: self.excluded,
-            source_type: self.source_type,
-            parent_resource_name: self.parent_resource_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PhysicalResource {
+                resource_name: self.resource_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building PhysicalResource")
+                    )?
+                ,
+                app_components: self.app_components
+                ,
+                additional_info: self.additional_info
+                ,
+                excluded: self.excluded
+                ,
+                source_type: self.source_type
+                ,
+                parent_resource_name: self.parent_resource_name
+                ,
+            }
+        )
     }
 }
+

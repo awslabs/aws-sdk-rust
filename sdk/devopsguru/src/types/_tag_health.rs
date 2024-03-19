@@ -3,7 +3,7 @@
 /// <p>Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services tag <i>key</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagHealth {
+pub struct TagHealth  {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
@@ -16,20 +16,20 @@ pub struct TagHealth {
     /// <p>Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.</p>
     pub analyzed_resource_count: ::std::option::Option<i64>,
 }
-impl TagHealth {
+impl  TagHealth  {
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn app_boundary_key(&self) -> ::std::option::Option<&str> {
+    pub fn app_boundary_key(&self) -> ::std::option::Option<& str> {
         self.app_boundary_key.as_deref()
     }
     /// <p>The value in an Amazon Web Services tag.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
-    pub fn tag_value(&self) -> ::std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<& str> {
         self.tag_value.as_deref()
     }
     /// <p>Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services tag, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.</p>
-    pub fn insight(&self) -> ::std::option::Option<&crate::types::InsightHealth> {
+    pub fn insight(&self) -> ::std::option::Option<& crate::types::InsightHealth> {
         self.insight.as_ref()
     }
     /// <p>Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.</p>
@@ -65,8 +65,7 @@ impl TagHealthBuilder {
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     pub fn set_app_boundary_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_boundary_key = input;
-        self
+        self.app_boundary_key = input; self
     }
     /// <p>An Amazon Web Services tag <i>key</i> that is used to identify the Amazon Web Services resources that DevOps Guru analyzes. All Amazon Web Services resources in your account and Region tagged with this <i>key</i> make up your DevOps Guru application and analysis boundary.</p><important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
@@ -83,8 +82,7 @@ impl TagHealthBuilder {
     /// <p>The value in an Amazon Web Services tag.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_value = input;
-        self
+        self.tag_value = input; self
     }
     /// <p>The value in an Amazon Web Services tag.</p>
     /// <p>The tag's <i>value</i> is an optional field used to associate a string with the tag <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for a tag value.</p>
@@ -98,8 +96,7 @@ impl TagHealthBuilder {
     }
     /// <p>Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services tag, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.</p>
     pub fn set_insight(mut self, input: ::std::option::Option<crate::types::InsightHealth>) -> Self {
-        self.insight = input;
-        self
+        self.insight = input; self
     }
     /// <p>Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services tag, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.</p>
     pub fn get_insight(&self) -> &::std::option::Option<crate::types::InsightHealth> {
@@ -112,8 +109,7 @@ impl TagHealthBuilder {
     }
     /// <p>Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.</p>
     pub fn set_analyzed_resource_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.analyzed_resource_count = input;
-        self
+        self.analyzed_resource_count = input; self
     }
     /// <p>Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.</p>
     pub fn get_analyzed_resource_count(&self) -> &::std::option::Option<i64> {
@@ -122,10 +118,15 @@ impl TagHealthBuilder {
     /// Consumes the builder and constructs a [`TagHealth`](crate::types::TagHealth).
     pub fn build(self) -> crate::types::TagHealth {
         crate::types::TagHealth {
-            app_boundary_key: self.app_boundary_key,
-            tag_value: self.tag_value,
-            insight: self.insight,
-            analyzed_resource_count: self.analyzed_resource_count,
+            app_boundary_key: self.app_boundary_key
+            ,
+            tag_value: self.tag_value
+            ,
+            insight: self.insight
+            ,
+            analyzed_resource_count: self.analyzed_resource_count
+            ,
         }
     }
 }
+

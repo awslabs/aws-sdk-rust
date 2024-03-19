@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFunctionUrlConfigInput {
+pub struct UpdateFunctionUrlConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -30,7 +30,7 @@ pub struct UpdateFunctionUrlConfigInput {
     /// </ul>
     pub invoke_mode: ::std::option::Option<crate::types::InvokeMode>,
 }
-impl UpdateFunctionUrlConfigInput {
+impl  UpdateFunctionUrlConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -42,19 +42,19 @@ impl UpdateFunctionUrlConfigInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The alias name.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> ::std::option::Option<&crate::types::Cors> {
+    pub fn cors(&self) -> ::std::option::Option<& crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>Use one of the following options:</p>
@@ -64,7 +64,7 @@ impl UpdateFunctionUrlConfigInput {
     /// <li>
     /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
-    pub fn invoke_mode(&self) -> ::std::option::Option<&crate::types::InvokeMode> {
+    pub fn invoke_mode(&self) -> ::std::option::Option<& crate::types::InvokeMode> {
         self.invoke_mode.as_ref()
     }
 }
@@ -114,8 +114,7 @@ impl UpdateFunctionUrlConfigInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -138,8 +137,7 @@ impl UpdateFunctionUrlConfigInputBuilder {
     }
     /// <p>The alias name.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>The alias name.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl UpdateFunctionUrlConfigInputBuilder {
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
@@ -166,8 +163,7 @@ impl UpdateFunctionUrlConfigInputBuilder {
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn set_cors(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
-        self.cors = input;
-        self
+        self.cors = input; self
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn get_cors(&self) -> &::std::option::Option<crate::types::Cors> {
@@ -192,8 +188,7 @@ impl UpdateFunctionUrlConfigInputBuilder {
     /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn set_invoke_mode(mut self, input: ::std::option::Option<crate::types::InvokeMode>) -> Self {
-        self.invoke_mode = input;
-        self
+        self.invoke_mode = input; self
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -206,18 +201,21 @@ impl UpdateFunctionUrlConfigInputBuilder {
         &self.invoke_mode
     }
     /// Consumes the builder and constructs a [`UpdateFunctionUrlConfigInput`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput {
-            function_name: self.function_name,
-            qualifier: self.qualifier,
-            auth_type: self.auth_type,
-            cors: self.cors,
-            invoke_mode: self.invoke_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput {
+                function_name: self.function_name
+                ,
+                qualifier: self.qualifier
+                ,
+                auth_type: self.auth_type
+                ,
+                cors: self.cors
+                ,
+                invoke_mode: self.invoke_mode
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateScraper</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScraperInput {
+pub struct CreateScraperInput  {
     /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
@@ -15,31 +15,31 @@ pub struct CreateScraperInput {
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateScraperInput {
+impl  CreateScraperInput  {
     /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
-    pub fn scrape_configuration(&self) -> ::std::option::Option<&crate::types::ScrapeConfiguration> {
+    pub fn scrape_configuration(&self) -> ::std::option::Option<& crate::types::ScrapeConfiguration> {
         self.scrape_configuration.as_ref()
     }
     /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,7 +59,7 @@ pub struct CreateScraperInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateScraperInputBuilder {
     /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
@@ -69,8 +69,7 @@ impl CreateScraperInputBuilder {
     }
     /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl CreateScraperInputBuilder {
     }
     /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
-        self.scrape_configuration = input;
-        self
+        self.scrape_configuration = input; self
     }
     /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
@@ -99,8 +97,7 @@ impl CreateScraperInputBuilder {
     }
     /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -114,8 +111,7 @@ impl CreateScraperInputBuilder {
     }
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -128,8 +124,7 @@ impl CreateScraperInputBuilder {
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,30 +137,36 @@ impl CreateScraperInputBuilder {
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScraperInput`](crate::operation::create_scraper::CreateScraperInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_scraper::CreateScraperInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_scraper::CreateScraperInput {
-            alias: self.alias,
-            scrape_configuration: self.scrape_configuration,
-            source: self.source,
-            destination: self.destination,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scraper::CreateScraperInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_scraper::CreateScraperInput {
+                alias: self.alias
+                ,
+                scrape_configuration: self.scrape_configuration
+                ,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

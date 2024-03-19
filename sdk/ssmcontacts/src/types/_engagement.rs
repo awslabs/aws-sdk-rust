@@ -3,7 +3,7 @@
 /// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Engagement {
+pub struct Engagement  {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub engagement_arn: ::std::string::String,
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
@@ -17,32 +17,29 @@ pub struct Engagement {
     /// <p>The time that the engagement ended.</p>
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Engagement {
+impl  Engagement  {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.engagement_arn.deref()
+    pub fn engagement_arn(&self) -> & str {
+        use std::ops::Deref; self.engagement_arn.deref()
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> &str {
-        use std::ops::Deref;
-        self.sender.deref()
+    pub fn sender(&self) -> & str {
+        use std::ops::Deref; self.sender.deref()
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
-    pub fn incident_id(&self) -> ::std::option::Option<&str> {
+    pub fn incident_id(&self) -> ::std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -73,8 +70,7 @@ impl EngagementBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub fn set_engagement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engagement_arn = input;
-        self
+        self.engagement_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub fn get_engagement_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl EngagementBuilder {
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl EngagementBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender = input;
-        self
+        self.sender = input; self
     }
     /// <p>The user that started the engagement.</p>
     pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl EngagementBuilder {
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_id = input;
-        self
+        self.incident_id = input; self
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +124,7 @@ impl EngagementBuilder {
     }
     /// <p>The time that the engagement began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time that the engagement began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +137,7 @@ impl EngagementBuilder {
     }
     /// <p>The time that the engagement ended.</p>
     pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input;
-        self
+        self.stop_time = input; self
     }
     /// <p>The time that the engagement ended.</p>
     pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -158,28 +149,31 @@ impl EngagementBuilder {
     /// - [`contact_arn`](crate::types::builders::EngagementBuilder::contact_arn)
     /// - [`sender`](crate::types::builders::EngagementBuilder::sender)
     pub fn build(self) -> ::std::result::Result<crate::types::Engagement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Engagement {
-            engagement_arn: self.engagement_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engagement_arn",
-                    "engagement_arn was not specified but it is required when building Engagement",
-                )
-            })?,
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building Engagement",
-                )
-            })?,
-            sender: self.sender.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sender",
-                    "sender was not specified but it is required when building Engagement",
-                )
-            })?,
-            incident_id: self.incident_id,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Engagement {
+                engagement_arn: self.engagement_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engagement_arn", "engagement_arn was not specified but it is required when building Engagement")
+                    )?
+                ,
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building Engagement")
+                    )?
+                ,
+                sender: self.sender
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sender", "sender was not specified but it is required when building Engagement")
+                    )?
+                ,
+                incident_id: self.incident_id
+                ,
+                start_time: self.start_time
+                ,
+                stop_time: self.stop_time
+                ,
+            }
+        )
     }
 }
+

@@ -3,33 +3,34 @@
 /// <p>Represents the request to delete user attributes as an administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminDeleteUserAttributesInput {
+pub struct AdminDeleteUserAttributesInput  {
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AdminDeleteUserAttributesInput {
+impl  AdminDeleteUserAttributesInput  {
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attribute_names.is_none()`.
-    pub fn user_attribute_names(&self) -> &[::std::string::String] {
-        self.user_attribute_names.as_deref().unwrap_or_default()
+    pub fn user_attribute_names(&self) -> & [::std::string::String] {
+        self.user_attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AdminDeleteUserAttributesInput {
+impl  ::std::fmt::Debug for AdminDeleteUserAttributesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminDeleteUserAttributesInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -51,7 +52,7 @@ impl AdminDeleteUserAttributesInput {
 pub struct AdminDeleteUserAttributesInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AdminDeleteUserAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
@@ -62,8 +63,7 @@ impl AdminDeleteUserAttributesInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl AdminDeleteUserAttributesInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,33 +91,32 @@ impl AdminDeleteUserAttributesInputBuilder {
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.user_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_attribute_names = input;
-        self
+    pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_attribute_names = input; self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_attribute_names
     }
     /// Consumes the builder and constructs a [`AdminDeleteUserAttributesInput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            user_attribute_names: self.user_attribute_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                user_attribute_names: self.user_attribute_names
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminDeleteUserAttributesInputBuilder {
@@ -130,3 +128,4 @@ impl ::std::fmt::Debug for AdminDeleteUserAttributesInputBuilder {
         formatter.finish()
     }
 }
+

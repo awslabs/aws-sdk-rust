@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStateMachineAliasOutput {
+pub struct CreateStateMachineAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
     pub state_machine_alias_arn: ::std::string::String,
     /// <p>The date the state machine alias was created.</p>
     pub creation_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl CreateStateMachineAliasOutput {
+impl  CreateStateMachineAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
-    pub fn state_machine_alias_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.state_machine_alias_arn.deref()
+    pub fn state_machine_alias_arn(&self) -> & str {
+        use std::ops::Deref; self.state_machine_alias_arn.deref()
     }
     /// <p>The date the state machine alias was created.</p>
-    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date
     }
 }
 impl ::aws_types::request_id::RequestId for CreateStateMachineAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
     pub fn builder() -> crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder {
@@ -49,8 +48,7 @@ impl CreateStateMachineAliasOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,46 +62,41 @@ impl CreateStateMachineAliasOutputBuilder {
     }
     /// <p>The date the state machine alias was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the state machine alias was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_alias_arn`](crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder::state_machine_alias_arn)
     /// - [`creation_date`](crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder::creation_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
-            state_machine_alias_arn: self.state_machine_alias_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_alias_arn",
-                    "state_machine_alias_arn was not specified but it is required when building CreateStateMachineAliasOutput",
-                )
-            })?,
-            creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date",
-                    "creation_date was not specified but it is required when building CreateStateMachineAliasOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
+                state_machine_alias_arn: self.state_machine_alias_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_alias_arn", "state_machine_alias_arn was not specified but it is required when building CreateStateMachineAliasOutput")
+                    )?
+                ,
+                creation_date: self.creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date", "creation_date was not specified but it is required when building CreateStateMachineAliasOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

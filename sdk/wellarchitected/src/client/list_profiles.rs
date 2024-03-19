@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProfiles`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`profile_name_prefix(impl Into<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::profile_name_prefix) / [`set_profile_name_prefix(Option<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_profile_name_prefix):<br>required: **false**<br><p>An optional string added to the beginning of each profile name returned in the results.</p><br>
     ///   - [`profile_owner_type(ProfileOwnerType)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::profile_owner_type) / [`set_profile_owner_type(Option<ProfileOwnerType>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_profile_owner_type):<br>required: **false**<br><p>Profile owner type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
-    /// - On success, responds with [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput) with field(s):
     ///   - [`profile_summaries(Option<Vec::<ProfileSummary>>)`](crate::operation::list_profiles::ListProfilesOutput::profile_summaries): <p>Profile summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiles::ListProfilesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
+                            /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
     pub fn list_profiles(&self) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
-        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

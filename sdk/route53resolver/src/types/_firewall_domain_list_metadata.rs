@@ -4,7 +4,7 @@
 /// <p>To retrieve full information for a firewall domain list, call <code>GetFirewallDomainList</code> and <code>ListFirewallDomains</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallDomainListMetadata {
+pub struct FirewallDomainListMetadata  {
     /// <p>The ID of the domain list.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
@@ -16,25 +16,25 @@ pub struct FirewallDomainListMetadata {
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub managed_owner_name: ::std::option::Option<::std::string::String>,
 }
-impl FirewallDomainListMetadata {
+impl  FirewallDomainListMetadata  {
     /// <p>The ID of the domain list.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the domain list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
-    pub fn managed_owner_name(&self) -> ::std::option::Option<&str> {
+    pub fn managed_owner_name(&self) -> ::std::option::Option<& str> {
         self.managed_owner_name.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl FirewallDomainListMetadataBuilder {
     }
     /// <p>The ID of the domain list.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the domain list.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl FirewallDomainListMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl FirewallDomainListMetadataBuilder {
     }
     /// <p>The name of the domain list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl FirewallDomainListMetadataBuilder {
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl FirewallDomainListMetadataBuilder {
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn set_managed_owner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_owner_name = input;
-        self
+        self.managed_owner_name = input; self
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,11 +124,17 @@ impl FirewallDomainListMetadataBuilder {
     /// Consumes the builder and constructs a [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
     pub fn build(self) -> crate::types::FirewallDomainListMetadata {
         crate::types::FirewallDomainListMetadata {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            creator_request_id: self.creator_request_id,
-            managed_owner_name: self.managed_owner_name,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            creator_request_id: self.creator_request_id
+            ,
+            managed_owner_name: self.managed_owner_name
+            ,
         }
     }
 }
+

@@ -5,112 +5,96 @@ pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassocia
 
 impl DisassociateTransitGatewayConnectPeerInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disassociate_transit_gateway_connect_peer();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disassociate_transit_gateway_connect_peer();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisassociateTransitGatewayConnectPeer`.
-///
+/// 
 /// <p>Disassociates a transit gateway Connect peer from a device and link.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayConnectPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder,
+                    inner: crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
-    > for DisassociateTransitGatewayConnectPeerFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
-            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
+                    crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
+                > for DisassociateTransitGatewayConnectPeerFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
+                        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisassociateTransitGatewayConnectPeerFluentBuilder {
     /// Creates a new `DisassociateTransitGatewayConnectPeer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DisassociateTransitGatewayConnectPeer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeer::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeer::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeer::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeer::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput, crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
@@ -140,3 +124,4 @@ impl DisassociateTransitGatewayConnectPeerFluentBuilder {
         self.inner.get_transit_gateway_connect_peer_arn()
     }
 }
+

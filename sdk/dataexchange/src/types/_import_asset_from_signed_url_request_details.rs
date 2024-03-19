@@ -3,7 +3,7 @@
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportAssetFromSignedUrlRequestDetails {
+pub struct ImportAssetFromSignedUrlRequestDetails  {
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     pub asset_name: ::std::string::String,
     /// <p>The unique identifier for the data set associated with this import job.</p>
@@ -13,26 +13,22 @@ pub struct ImportAssetFromSignedUrlRequestDetails {
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub revision_id: ::std::string::String,
 }
-impl ImportAssetFromSignedUrlRequestDetails {
+impl  ImportAssetFromSignedUrlRequestDetails  {
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
-    pub fn asset_name(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_name.deref()
+    pub fn asset_name(&self) -> & str {
+        use std::ops::Deref; self.asset_name.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
-    pub fn md5_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.md5_hash.deref()
+    pub fn md5_hash(&self) -> & str {
+        use std::ops::Deref; self.md5_hash.deref()
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ImportAssetFromSignedUrlRequestDetails {
@@ -60,8 +56,7 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
-        self
+        self.asset_name = input; self
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn set_md5_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5_hash = input;
-        self
+        self.md5_hash = input; self
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn get_md5_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,34 +110,31 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     /// - [`data_set_id`](crate::types::builders::ImportAssetFromSignedUrlRequestDetailsBuilder::data_set_id)
     /// - [`md5_hash`](crate::types::builders::ImportAssetFromSignedUrlRequestDetailsBuilder::md5_hash)
     /// - [`revision_id`](crate::types::builders::ImportAssetFromSignedUrlRequestDetailsBuilder::revision_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportAssetFromSignedUrlRequestDetails {
-            asset_name: self.asset_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_name",
-                    "asset_name was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails",
-                )
-            })?,
-            md5_hash: self.md5_hash.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "md5_hash",
-                    "md5_hash was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ImportAssetFromSignedUrlRequestDetails {
+                asset_name: self.asset_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_name", "asset_name was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails")
+                    )?
+                ,
+                md5_hash: self.md5_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("md5_hash", "md5_hash was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetFromSignedUrlRequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

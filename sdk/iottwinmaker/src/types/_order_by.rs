@@ -3,21 +3,20 @@
 /// <p>Filter criteria that orders the return output. It can be sorted in ascending or descending order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderBy {
+pub struct OrderBy  {
     /// <p>The set order that filters results.</p>
     pub order: ::std::option::Option<crate::types::Order>,
     /// <p>The property name.</p>
     pub property_name: ::std::string::String,
 }
-impl OrderBy {
+impl  OrderBy  {
     /// <p>The set order that filters results.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
     /// <p>The property name.</p>
-    pub fn property_name(&self) -> &str {
-        use std::ops::Deref;
-        self.property_name.deref()
+    pub fn property_name(&self) -> & str {
+        use std::ops::Deref; self.property_name.deref()
     }
 }
 impl OrderBy {
@@ -42,8 +41,7 @@ impl OrderByBuilder {
     }
     /// <p>The set order that filters results.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The set order that filters results.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
@@ -57,8 +55,7 @@ impl OrderByBuilder {
     }
     /// <p>The property name.</p>
     pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_name = input;
-        self
+        self.property_name = input; self
     }
     /// <p>The property name.</p>
     pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl OrderByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`property_name`](crate::types::builders::OrderByBuilder::property_name)
     pub fn build(self) -> ::std::result::Result<crate::types::OrderBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrderBy {
-            order: self.order,
-            property_name: self.property_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_name",
-                    "property_name was not specified but it is required when building OrderBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrderBy {
+                order: self.order
+                ,
+                property_name: self.property_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_name", "property_name was not specified but it is required when building OrderBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetReportsOutput {
+pub struct BatchGetReportsOutput  {
     /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
-    pub reports: ::std::option::Option<::std::vec::Vec<crate::types::Report>>,
+    pub reports: ::std::option::Option<::std::vec::Vec::<crate::types::Report>>,
     /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
-    pub reports_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reports_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchGetReportsOutput {
+impl  BatchGetReportsOutput  {
     /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports.is_none()`.
-    pub fn reports(&self) -> &[crate::types::Report] {
-        self.reports.as_deref().unwrap_or_default()
+    pub fn reports(&self) -> & [crate::types::Report] {
+        self.reports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports_not_found.is_none()`.
-    pub fn reports_not_found(&self) -> &[::std::string::String] {
-        self.reports_not_found.as_deref().unwrap_or_default()
+    pub fn reports_not_found(&self) -> & [::std::string::String] {
+        self.reports_not_found.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetReportsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetReportsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetReportsOutput`](crate::operation::batch_get_reports::BatchGetReportsOutput).
     pub fn builder() -> crate::operation::batch_get_reports::builders::BatchGetReportsOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetReportsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetReportsOutputBuilder {
-    pub(crate) reports: ::std::option::Option<::std::vec::Vec<crate::types::Report>>,
-    pub(crate) reports_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reports: ::std::option::Option<::std::vec::Vec::<crate::types::Report>>,
+    pub(crate) reports_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetReportsOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetReportsOutputBuilder {
     /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
     pub fn reports(mut self, input: crate::types::Report) -> Self {
         let mut v = self.reports.unwrap_or_default();
-        v.push(input);
-        self.reports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
-    pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Report>>) -> Self {
-        self.reports = input;
-        self
+    pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Report>>) -> Self {
+        self.reports = input; self
     }
     /// <p>The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.</p>
-    pub fn get_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Report>> {
+    pub fn get_reports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Report>> {
         &self.reports
     }
     /// Appends an item to `reports_not_found`.
@@ -71,34 +72,36 @@ impl BatchGetReportsOutputBuilder {
     /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
     pub fn reports_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reports_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.reports_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reports_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
-    pub fn set_reports_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reports_not_found = input;
-        self
+    pub fn set_reports_not_found(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reports_not_found = input; self
     }
     /// <p>An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.</p>
-    pub fn get_reports_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reports_not_found(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reports_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetReportsOutput`](crate::operation::batch_get_reports::BatchGetReportsOutput).
     pub fn build(self) -> crate::operation::batch_get_reports::BatchGetReportsOutput {
         crate::operation::batch_get_reports::BatchGetReportsOutput {
-            reports: self.reports,
-            reports_not_found: self.reports_not_found,
+            reports: self.reports
+            ,
+            reports_not_found: self.reports_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

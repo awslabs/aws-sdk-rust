@@ -3,7 +3,7 @@
 /// <p>Provides help information on the registration field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationFieldDisplayHints {
+pub struct RegistrationFieldDisplayHints  {
     /// <p>The title of the display hint.</p>
     pub title: ::std::string::String,
     /// <p>A short description of the display hint.</p>
@@ -15,47 +15,46 @@ pub struct RegistrationFieldDisplayHints {
     /// <p>The link to the document the display hint is associated with.</p>
     pub documentation_link: ::std::option::Option<::std::string::String>,
     /// <p>An array of SelectOptionDescription objects.</p>
-    pub select_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::SelectOptionDescription>>,
+    pub select_option_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::SelectOptionDescription>>,
     /// <p>The validation rules for the text field.</p>
     pub text_validation_description: ::std::option::Option<::std::string::String>,
     /// <p>Example text of what the value of a field should contain.</p>
     pub example_text_value: ::std::option::Option<::std::string::String>,
 }
-impl RegistrationFieldDisplayHints {
+impl  RegistrationFieldDisplayHints  {
     /// <p>The title of the display hint.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>A short description of the display hint.</p>
-    pub fn short_description(&self) -> &str {
-        use std::ops::Deref;
-        self.short_description.deref()
+    pub fn short_description(&self) -> & str {
+        use std::ops::Deref; self.short_description.deref()
     }
     /// <p>A full description of the display hint.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The title of the document the display hint is associated with.</p>
-    pub fn documentation_title(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_title(&self) -> ::std::option::Option<& str> {
         self.documentation_title.as_deref()
     }
     /// <p>The link to the document the display hint is associated with.</p>
-    pub fn documentation_link(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_link(&self) -> ::std::option::Option<& str> {
         self.documentation_link.as_deref()
     }
     /// <p>An array of SelectOptionDescription objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.select_option_descriptions.is_none()`.
-    pub fn select_option_descriptions(&self) -> &[crate::types::SelectOptionDescription] {
-        self.select_option_descriptions.as_deref().unwrap_or_default()
+    pub fn select_option_descriptions(&self) -> & [crate::types::SelectOptionDescription] {
+        self.select_option_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The validation rules for the text field.</p>
-    pub fn text_validation_description(&self) -> ::std::option::Option<&str> {
+    pub fn text_validation_description(&self) -> ::std::option::Option<& str> {
         self.text_validation_description.as_deref()
     }
     /// <p>Example text of what the value of a field should contain.</p>
-    pub fn example_text_value(&self) -> ::std::option::Option<&str> {
+    pub fn example_text_value(&self) -> ::std::option::Option<& str> {
         self.example_text_value.as_deref()
     }
 }
@@ -75,7 +74,7 @@ pub struct RegistrationFieldDisplayHintsBuilder {
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_title: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_link: ::std::option::Option<::std::string::String>,
-    pub(crate) select_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::SelectOptionDescription>>,
+    pub(crate) select_option_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::SelectOptionDescription>>,
     pub(crate) text_validation_description: ::std::option::Option<::std::string::String>,
     pub(crate) example_text_value: ::std::option::Option<::std::string::String>,
 }
@@ -88,8 +87,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>The title of the display hint.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the display hint.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>A short description of the display hint.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>A short description of the display hint.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>A full description of the display hint.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>A full description of the display hint.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn set_documentation_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_title = input;
-        self
+        self.documentation_title = input; self
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn get_documentation_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn set_documentation_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_link = input;
-        self
+        self.documentation_link = input; self
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn get_documentation_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,17 +153,16 @@ impl RegistrationFieldDisplayHintsBuilder {
     /// <p>An array of SelectOptionDescription objects.</p>
     pub fn select_option_descriptions(mut self, input: crate::types::SelectOptionDescription) -> Self {
         let mut v = self.select_option_descriptions.unwrap_or_default();
-        v.push(input);
-        self.select_option_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.select_option_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of SelectOptionDescription objects.</p>
-    pub fn set_select_option_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectOptionDescription>>) -> Self {
-        self.select_option_descriptions = input;
-        self
+    pub fn set_select_option_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SelectOptionDescription>>) -> Self {
+        self.select_option_descriptions = input; self
     }
     /// <p>An array of SelectOptionDescription objects.</p>
-    pub fn get_select_option_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectOptionDescription>> {
+    pub fn get_select_option_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SelectOptionDescription>> {
         &self.select_option_descriptions
     }
     /// <p>The validation rules for the text field.</p>
@@ -179,8 +172,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>The validation rules for the text field.</p>
     pub fn set_text_validation_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_validation_description = input;
-        self
+        self.text_validation_description = input; self
     }
     /// <p>The validation rules for the text field.</p>
     pub fn get_text_validation_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +185,7 @@ impl RegistrationFieldDisplayHintsBuilder {
     }
     /// <p>Example text of what the value of a field should contain.</p>
     pub fn set_example_text_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.example_text_value = input;
-        self
+        self.example_text_value = input; self
     }
     /// <p>Example text of what the value of a field should contain.</p>
     pub fn get_example_text_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,25 +196,32 @@ impl RegistrationFieldDisplayHintsBuilder {
     /// - [`title`](crate::types::builders::RegistrationFieldDisplayHintsBuilder::title)
     /// - [`short_description`](crate::types::builders::RegistrationFieldDisplayHintsBuilder::short_description)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationFieldDisplayHints, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationFieldDisplayHints {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building RegistrationFieldDisplayHints",
-                )
-            })?,
-            short_description: self.short_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "short_description",
-                    "short_description was not specified but it is required when building RegistrationFieldDisplayHints",
-                )
-            })?,
-            long_description: self.long_description,
-            documentation_title: self.documentation_title,
-            documentation_link: self.documentation_link,
-            select_option_descriptions: self.select_option_descriptions,
-            text_validation_description: self.text_validation_description,
-            example_text_value: self.example_text_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationFieldDisplayHints {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building RegistrationFieldDisplayHints")
+                    )?
+                ,
+                short_description: self.short_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("short_description", "short_description was not specified but it is required when building RegistrationFieldDisplayHints")
+                    )?
+                ,
+                long_description: self.long_description
+                ,
+                documentation_title: self.documentation_title
+                ,
+                documentation_link: self.documentation_link
+                ,
+                select_option_descriptions: self.select_option_descriptions
+                ,
+                text_validation_description: self.text_validation_description
+                ,
+                example_text_value: self.example_text_value
+                ,
+            }
+        )
     }
 }
+

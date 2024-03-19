@@ -3,19 +3,19 @@
 /// <p>When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseInputUpdate {
+pub struct KinesisFirehoseInputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
-impl KinesisFirehoseInputUpdate {
+impl  KinesisFirehoseInputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
-    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<& str> {
         self.resource_arn_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> ::std::option::Option<& str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl KinesisFirehoseInputUpdateBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn_update = input;
-        self
+        self.resource_arn_update = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.</p>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl KinesisFirehoseInputUpdateBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn_update = input;
-        self
+        self.role_arn_update = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl KinesisFirehoseInputUpdateBuilder {
     /// Consumes the builder and constructs a [`KinesisFirehoseInputUpdate`](crate::types::KinesisFirehoseInputUpdate).
     pub fn build(self) -> crate::types::KinesisFirehoseInputUpdate {
         crate::types::KinesisFirehoseInputUpdate {
-            resource_arn_update: self.resource_arn_update,
-            role_arn_update: self.role_arn_update,
+            resource_arn_update: self.resource_arn_update
+            ,
+            role_arn_update: self.role_arn_update
+            ,
         }
     }
 }
+

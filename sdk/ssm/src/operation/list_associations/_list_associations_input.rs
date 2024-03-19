@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssociationsInput {
+pub struct ListAssociationsInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
+    pub association_filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAssociationsInput {
+impl  ListAssociationsInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_filter_list.is_none()`.
-    pub fn association_filter_list(&self) -> &[crate::types::AssociationFilter] {
-        self.association_filter_list.as_deref().unwrap_or_default()
+    pub fn association_filter_list(&self) -> & [crate::types::AssociationFilter] {
+        self.association_filter_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,7 +42,7 @@ impl ListAssociationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsInputBuilder {
-    pub(crate) association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
+    pub(crate) association_filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -55,21 +56,20 @@ impl ListAssociationsInputBuilder {
     /// </note>
     pub fn association_filter_list(mut self, input: crate::types::AssociationFilter) -> Self {
         let mut v = self.association_filter_list.unwrap_or_default();
-        v.push(input);
-        self.association_filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.association_filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>) -> Self {
-        self.association_filter_list = input;
-        self
+    pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationFilter>>) -> Self {
+        self.association_filter_list = input; self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {
+    pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociationFilter>> {
         &self.association_filter_list
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -79,8 +79,7 @@ impl ListAssociationsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -93,21 +92,24 @@ impl ListAssociationsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_associations::ListAssociationsInput {
-            association_filter_list: self.association_filter_list,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_associations::ListAssociationsInput {
+                association_filter_list: self.association_filter_list
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

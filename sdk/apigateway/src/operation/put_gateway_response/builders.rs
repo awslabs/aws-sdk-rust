@@ -5,54 +5,50 @@ pub use crate::operation::put_gateway_response::_put_gateway_response_input::Put
 
 impl PutGatewayResponseInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_gateway_response();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_gateway_response::PutGatewayResponseOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_gateway_response::PutGatewayResponseError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_gateway_response();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutGatewayResponse`.
-///
+/// 
 /// <p>Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGatewayResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder,
+                    inner: crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        crate::operation::put_gateway_response::PutGatewayResponseError,
-    > for PutGatewayResponseFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_gateway_response::PutGatewayResponseOutput,
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_gateway_response::PutGatewayResponseOutput,
+                    crate::operation::put_gateway_response::PutGatewayResponseError,
+                > for PutGatewayResponseFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_gateway_response::PutGatewayResponseOutput,
+                        crate::operation::put_gateway_response::PutGatewayResponseError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutGatewayResponseFluentBuilder {
     /// Creates a new `PutGatewayResponse`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PutGatewayResponseFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_gateway_response::PutGatewayResponse::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_gateway_response::PutGatewayResponse::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        crate::operation::put_gateway_response::PutGatewayResponseError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_gateway_response::PutGatewayResponseOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_gateway_response::PutGatewayResponse::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_gateway_response::PutGatewayResponse::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_gateway_response::PutGatewayResponseOutput, crate::operation::put_gateway_response::PutGatewayResponseError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
@@ -155,24 +142,17 @@ impl PutGatewayResponseFluentBuilder {
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
     ///
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn response_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_parameters(k.into(), v.into());
         self
     }
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn set_response_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_response_parameters()
     }
     /// Adds a key-value pair to `responseTemplates`.
@@ -180,24 +160,18 @@ impl PutGatewayResponseFluentBuilder {
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
     ///
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn response_templates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_templates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_templates(k.into(), v.into());
         self
     }
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn set_response_templates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_response_templates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_response_templates(input);
         self
     }
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_response_templates()
     }
 }
+

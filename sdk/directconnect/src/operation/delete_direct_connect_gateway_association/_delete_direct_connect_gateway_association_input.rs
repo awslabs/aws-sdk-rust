@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayAssociationInput {
+pub struct DeleteDirectConnectGatewayAssociationInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
@@ -10,17 +10,17 @@ pub struct DeleteDirectConnectGatewayAssociationInput {
     /// <p>The ID of the virtual private gateway.</p>
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDirectConnectGatewayAssociationInput {
+impl  DeleteDirectConnectGatewayAssociationInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,26 +73,24 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_gateway_id = input;
-        self
+        self.virtual_gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput {
-                association_id: self.association_id,
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                virtual_gateway_id: self.virtual_gateway_id,
-            },
+                association_id: self.association_id
+                ,
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                virtual_gateway_id: self.virtual_gateway_id
+                ,
+            }
         )
     }
 }
+

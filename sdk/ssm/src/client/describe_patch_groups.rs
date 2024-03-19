@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePatchGroups`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of patch groups to return (per page).</p><br>
     ///   - [`filters(PatchOrchestratorFilter)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::filters) / [`set_filters(Option<Vec::<PatchOrchestratorFilter>>)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::set_filters):<br>required: **false**<br><p>Each element in the array is a structure containing a key-value pair.</p> <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p> <ul>  <li>   <p><b> <code>NAME_PREFIX</code> </b></p>   <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p></li>  <li>   <p><b> <code>OPERATING_SYSTEM</code> </b></p>   <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li> </ul><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribePatchGroupsOutput`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribePatchGroupsOutput`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput) with field(s):
     ///   - [`mappings(Option<Vec::<PatchGroupPatchBaselineMapping>>)`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput::mappings): <p>Each entry in the array contains:</p> <ul>  <li>   <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>  <li>   <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li> </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribePatchGroupsError>`](crate::operation::describe_patch_groups::DescribePatchGroupsError)
+                            /// - On failure, responds with [`SdkError<DescribePatchGroupsError>`](crate::operation::describe_patch_groups::DescribePatchGroupsError)
     pub fn describe_patch_groups(&self) -> crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder {
-        crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_patch_groups::builders::DescribePatchGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

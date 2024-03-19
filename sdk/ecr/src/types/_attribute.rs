@@ -3,20 +3,19 @@
 /// <p>This data type is used in the <code>ImageScanFinding</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The attribute key.</p>
     pub key: ::std::string::String,
     /// <p>The value assigned to the attribute key.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Attribute {
+impl  Attribute  {
     /// <p>The attribute key.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value assigned to the attribute key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AttributeBuilder {
     }
     /// <p>The attribute key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The attribute key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AttributeBuilder {
     }
     /// <p>The value assigned to the attribute key.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value assigned to the attribute key.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::AttributeBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::Attribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Attribute {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building Attribute",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Attribute {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Attribute")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

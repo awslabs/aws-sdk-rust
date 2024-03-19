@@ -3,15 +3,14 @@
 /// <p>VPC connection properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectionProperties {
+pub struct VpcConnectionProperties  {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     pub vpc_connection_arn: ::std::string::String,
 }
-impl VpcConnectionProperties {
+impl  VpcConnectionProperties  {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn vpc_connection_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_connection_arn.deref()
+    pub fn vpc_connection_arn(&self) -> & str {
+        use std::ops::Deref; self.vpc_connection_arn.deref()
     }
 }
 impl VpcConnectionProperties {
@@ -36,8 +35,7 @@ impl VpcConnectionPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connection_arn = input;
-        self
+        self.vpc_connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl VpcConnectionPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_connection_arn`](crate::types::builders::VpcConnectionPropertiesBuilder::vpc_connection_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcConnectionProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcConnectionProperties {
-            vpc_connection_arn: self.vpc_connection_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_connection_arn",
-                    "vpc_connection_arn was not specified but it is required when building VpcConnectionProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcConnectionProperties {
+                vpc_connection_arn: self.vpc_connection_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_connection_arn", "vpc_connection_arn was not specified but it is required when building VpcConnectionProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

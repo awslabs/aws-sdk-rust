@@ -3,13 +3,13 @@
 /// <p>A structure that describes the options for the access portal associated with an application that can be updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationPortalOptions {
+pub struct UpdateApplicationPortalOptions  {
     /// <p>A structure that describes the sign-in options for an application portal.</p>
     pub sign_in_options: ::std::option::Option<crate::types::SignInOptions>,
 }
-impl UpdateApplicationPortalOptions {
+impl  UpdateApplicationPortalOptions  {
     /// <p>A structure that describes the sign-in options for an application portal.</p>
-    pub fn sign_in_options(&self) -> ::std::option::Option<&crate::types::SignInOptions> {
+    pub fn sign_in_options(&self) -> ::std::option::Option<& crate::types::SignInOptions> {
         self.sign_in_options.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl UpdateApplicationPortalOptionsBuilder {
     }
     /// <p>A structure that describes the sign-in options for an application portal.</p>
     pub fn set_sign_in_options(mut self, input: ::std::option::Option<crate::types::SignInOptions>) -> Self {
-        self.sign_in_options = input;
-        self
+        self.sign_in_options = input; self
     }
     /// <p>A structure that describes the sign-in options for an application portal.</p>
     pub fn get_sign_in_options(&self) -> &::std::option::Option<crate::types::SignInOptions> {
@@ -44,7 +43,9 @@ impl UpdateApplicationPortalOptionsBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationPortalOptions`](crate::types::UpdateApplicationPortalOptions).
     pub fn build(self) -> crate::types::UpdateApplicationPortalOptions {
         crate::types::UpdateApplicationPortalOptions {
-            sign_in_options: self.sign_in_options,
+            sign_in_options: self.sign_in_options
+            ,
         }
     }
 }
+

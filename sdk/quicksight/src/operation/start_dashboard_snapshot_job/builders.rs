@@ -5,23 +5,20 @@ pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapsho
 
 impl StartDashboardSnapshotJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_dashboard_snapshot_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_dashboard_snapshot_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartDashboardSnapshotJob`.
-///
+/// 
 /// <p>Starts an asynchronous job that generates a dashboard snapshot. You can request one of the following format configurations per API call.</p>
 /// <ul>
 /// <li>
@@ -35,33 +32,32 @@ impl StartDashboardSnapshotJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder,
+                    inner: crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-    > for StartDashboardSnapshotJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
+                    crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+                > for StartDashboardSnapshotJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
+                        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartDashboardSnapshotJobFluentBuilder {
     /// Creates a new `StartDashboardSnapshotJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl StartDashboardSnapshotJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput, crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -188,3 +175,4 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self.inner.get_snapshot_configuration()
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The IP address type status for the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpAddressTypeStatus {
+pub struct IpAddressTypeStatus  {
     /// <p>The IP address options for the domain.</p>
     pub options: crate::types::IpAddressType,
     /// <p>Provides the current status of an entity.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl IpAddressTypeStatus {
+impl  IpAddressTypeStatus  {
     /// <p>The IP address options for the domain.</p>
-    pub fn options(&self) -> &crate::types::IpAddressType {
+    pub fn options(&self) -> & crate::types::IpAddressType {
         &self.options
     }
     /// <p>Provides the current status of an entity.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl IpAddressTypeStatusBuilder {
     }
     /// <p>The IP address options for the domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The IP address options for the domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::IpAddressType> {
@@ -57,8 +56,7 @@ impl IpAddressTypeStatusBuilder {
     }
     /// <p>Provides the current status of an entity.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Provides the current status of an entity.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -68,14 +66,17 @@ impl IpAddressTypeStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::IpAddressTypeStatusBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::IpAddressTypeStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpAddressTypeStatus {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building IpAddressTypeStatus",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpAddressTypeStatus {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building IpAddressTypeStatus")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

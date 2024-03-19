@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RequestLaunchTemplateData {
+pub struct RequestLaunchTemplateData  {
     /// <p>The ID of the kernel.</p><important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
@@ -15,9 +15,9 @@ pub struct RequestLaunchTemplateData {
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
     pub iam_instance_profile: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest>,
     /// <p>The block device mapping.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
     /// <ul>
@@ -60,20 +60,20 @@ pub struct RequestLaunchTemplateData {
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateTagSpecificationRequest>>,
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
+    pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>>,
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
+    pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The market (purchasing) option for the instances.</p>
     pub instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest>,
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
@@ -83,7 +83,7 @@ pub struct RequestLaunchTemplateData {
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>,
     /// <p>The license configurations.</p>
-    pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
+    pub license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest>,
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -113,11 +113,11 @@ pub struct RequestLaunchTemplateData {
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub disable_api_stop: ::std::option::Option<bool>,
 }
-impl RequestLaunchTemplateData {
+impl  RequestLaunchTemplateData  {
     /// <p>The ID of the kernel.</p><important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
+    pub fn kernel_id(&self) -> ::std::option::Option<& str> {
         self.kernel_id.as_deref()
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
@@ -125,20 +125,22 @@ impl RequestLaunchTemplateData {
         self.ebs_optimized
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<& crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The block device mapping.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::LaunchTemplateBlockDeviceMappingRequest] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::LaunchTemplateBlockDeviceMappingRequest] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
-    pub fn network_interfaces(&self) -> &[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest] {
-        self.network_interfaces.as_deref().unwrap_or_default()
+    pub fn network_interfaces(&self) -> & [crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest] {
+        self.network_interfaces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
@@ -157,32 +159,32 @@ impl RequestLaunchTemplateData {
     /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p><important>
     /// <p>If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
     /// </important>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The monitoring for the instance.</p>
-    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::LaunchTemplatesMonitoringRequest> {
+    pub fn monitoring(&self) -> ::std::option::Option<& crate::types::LaunchTemplatesMonitoringRequest> {
         self.monitoring.as_ref()
     }
     /// <p>The placement for the instance.</p>
-    pub fn placement(&self) -> ::std::option::Option<&crate::types::LaunchTemplatePlacementRequest> {
+    pub fn placement(&self) -> ::std::option::Option<& crate::types::LaunchTemplatePlacementRequest> {
         self.placement.as_ref()
     }
     /// <p>The ID of the RAM disk.</p><important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    pub fn ram_disk_id(&self) -> ::std::option::Option<&str> {
+    pub fn ram_disk_id(&self) -> ::std::option::Option<& str> {
         self.ram_disk_id.as_deref()
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
@@ -191,82 +193,88 @@ impl RequestLaunchTemplateData {
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code></p>
-    pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
+    pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<& crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
-    pub fn user_data(&self) -> ::std::option::Option<&str> {
+    pub fn user_data(&self) -> ::std::option::Option<& str> {
         self.user_data.as_deref()
     }
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::LaunchTemplateTagSpecificationRequest] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::LaunchTemplateTagSpecificationRequest] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specifications.is_none()`.
-    pub fn elastic_gpu_specifications(&self) -> &[crate::types::ElasticGpuSpecification] {
-        self.elastic_gpu_specifications.as_deref().unwrap_or_default()
+    pub fn elastic_gpu_specifications(&self) -> & [crate::types::ElasticGpuSpecification] {
+        self.elastic_gpu_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
-    pub fn elastic_inference_accelerators(&self) -> &[crate::types::LaunchTemplateElasticInferenceAccelerator] {
-        self.elastic_inference_accelerators.as_deref().unwrap_or_default()
+    pub fn elastic_inference_accelerators(&self) -> & [crate::types::LaunchTemplateElasticInferenceAccelerator] {
+        self.elastic_inference_accelerators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The market (purchasing) option for the instances.</p>
-    pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMarketOptionsRequest> {
+    pub fn instance_market_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMarketOptionsRequest> {
         self.instance_market_options.as_ref()
     }
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
-    pub fn credit_specification(&self) -> ::std::option::Option<&crate::types::CreditSpecificationRequest> {
+    pub fn credit_specification(&self) -> ::std::option::Option<& crate::types::CreditSpecificationRequest> {
         self.credit_specification.as_ref()
     }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateCpuOptionsRequest> {
+    pub fn cpu_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateCpuOptionsRequest> {
         self.cpu_options.as_ref()
     }
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::LaunchTemplateCapacityReservationSpecificationRequest> {
+    pub fn capacity_reservation_specification(&self) -> ::std::option::Option<& crate::types::LaunchTemplateCapacityReservationSpecificationRequest> {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p>The license configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
-    pub fn license_specifications(&self) -> &[crate::types::LaunchTemplateLicenseConfigurationRequest] {
-        self.license_specifications.as_deref().unwrap_or_default()
+    pub fn license_specifications(&self) -> & [crate::types::LaunchTemplateLicenseConfigurationRequest] {
+        self.license_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHibernationOptionsRequest> {
+    pub fn hibernation_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateHibernationOptionsRequest> {
         self.hibernation_options.as_ref()
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataOptionsRequest> {
+    pub fn metadata_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMetadataOptionsRequest> {
         self.metadata_options.as_ref()
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
-    pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateEnclaveOptionsRequest> {
+    pub fn enclave_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateEnclaveOptionsRequest> {
         self.enclave_options.as_ref()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
@@ -283,15 +291,15 @@ impl RequestLaunchTemplateData {
     /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<& crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
-    pub fn private_dns_name_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplatePrivateDnsNameOptionsRequest> {
+    pub fn private_dns_name_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplatePrivateDnsNameOptionsRequest> {
         self.private_dns_name_options.as_ref()
     }
     /// <p>The maintenance options for the instance.</p>
-    pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest> {
+    pub fn maintenance_options(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest> {
         self.maintenance_options.as_ref()
     }
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -299,7 +307,7 @@ impl RequestLaunchTemplateData {
         self.disable_api_stop
     }
 }
-impl ::std::fmt::Debug for RequestLaunchTemplateData {
+impl  ::std::fmt::Debug for RequestLaunchTemplateData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RequestLaunchTemplateData");
         formatter.field("kernel_id", &self.kernel_id);
@@ -350,8 +358,8 @@ pub struct RequestLaunchTemplateDataBuilder {
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) iam_instance_profile: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest>,
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
-    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -361,16 +369,16 @@ pub struct RequestLaunchTemplateDataBuilder {
     pub(crate) disable_api_termination: ::std::option::Option<bool>,
     pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
-    pub(crate) elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
-    pub(crate) elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateTagSpecificationRequest>>,
+    pub(crate) elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>>,
+    pub(crate) elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest>,
     pub(crate) credit_specification: ::std::option::Option<crate::types::CreditSpecificationRequest>,
     pub(crate) cpu_options: ::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>,
-    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
+    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
     pub(crate) hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest>,
     pub(crate) metadata_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest>,
     pub(crate) enclave_options: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest>,
@@ -391,8 +399,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
+        self.kernel_id = input; self
     }
     /// <p>The ID of the kernel.</p><important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -407,8 +414,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
@@ -420,12 +426,8 @@ impl RequestLaunchTemplateDataBuilder {
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest>,
-    ) -> Self {
-        self.iam_instance_profile = input;
-        self
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest>) -> Self {
+        self.iam_instance_profile = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
     pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest> {
@@ -438,20 +440,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The block device mapping.</p>
     pub fn block_device_mappings(mut self, input: crate::types::LaunchTemplateBlockDeviceMappingRequest) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The block device mapping.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
-    ) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateBlockDeviceMappingRequest>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>The block device mapping.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateBlockDeviceMappingRequest>> {
         &self.block_device_mappings
     }
     /// Appends an item to `network_interfaces`.
@@ -461,22 +459,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
     pub fn network_interfaces(mut self, input: crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
-    ) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>) -> Self {
+        self.network_interfaces = input; self
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>> {
         &self.network_interfaces
     }
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
@@ -518,8 +510,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
@@ -550,8 +541,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
@@ -569,8 +559,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
     /// </important>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p><important>
     /// <p>If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
@@ -585,8 +574,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The monitoring for the instance.</p>
     pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::LaunchTemplatesMonitoringRequest>) -> Self {
-        self.monitoring = input;
-        self
+        self.monitoring = input; self
     }
     /// <p>The monitoring for the instance.</p>
     pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::LaunchTemplatesMonitoringRequest> {
@@ -599,8 +587,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The placement for the instance.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::LaunchTemplatePlacementRequest>) -> Self {
-        self.placement = input;
-        self
+        self.placement = input; self
     }
     /// <p>The placement for the instance.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::LaunchTemplatePlacementRequest> {
@@ -617,8 +604,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn set_ram_disk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ram_disk_id = input;
-        self
+        self.ram_disk_id = input; self
     }
     /// <p>The ID of the RAM disk.</p><important>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -633,8 +619,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
     pub fn set_disable_api_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_api_termination = input;
-        self
+        self.disable_api_termination = input; self
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
     pub fn get_disable_api_termination(&self) -> &::std::option::Option<bool> {
@@ -649,8 +634,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code></p>
     pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
-        self.instance_initiated_shutdown_behavior = input;
-        self
+        self.instance_initiated_shutdown_behavior = input; self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code></p>
@@ -666,8 +650,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_data = input;
-        self
+        self.user_data = input; self
     }
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
@@ -681,20 +664,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub fn tag_specifications(mut self, input: crate::types::LaunchTemplateTagSpecificationRequest) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateTagSpecificationRequest>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateTagSpecificationRequest>> {
         &self.tag_specifications
     }
     /// Appends an item to `elastic_gpu_specifications`.
@@ -706,21 +685,20 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     pub fn elastic_gpu_specifications(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         let mut v = self.elastic_gpu_specifications.unwrap_or_default();
-        v.push(input);
-        self.elastic_gpu_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elastic_gpu_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub fn set_elastic_gpu_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
-        self.elastic_gpu_specifications = input;
-        self
+    pub fn set_elastic_gpu_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>>) -> Self {
+        self.elastic_gpu_specifications = input; self
     }
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub fn get_elastic_gpu_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
+    pub fn get_elastic_gpu_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>> {
         &self.elastic_gpu_specifications
     }
     /// Appends an item to `elastic_inference_accelerators`.
@@ -733,28 +711,22 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::LaunchTemplateElasticInferenceAccelerator) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
-        v.push(input);
-        self.elastic_inference_accelerators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elastic_inference_accelerators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn set_elastic_inference_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
-    ) -> Self {
-        self.elastic_inference_accelerators = input;
-        self
+    pub fn set_elastic_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateElasticInferenceAccelerator>>) -> Self {
+        self.elastic_inference_accelerators = input; self
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn get_elastic_inference_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>> {
+    pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateElasticInferenceAccelerator>> {
         &self.elastic_inference_accelerators
     }
     /// Appends an item to `security_group_ids`.
@@ -764,17 +736,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `security_groups`.
@@ -784,17 +755,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The market (purchasing) option for the instances.</p>
@@ -804,8 +774,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The market (purchasing) option for the instances.</p>
     pub fn set_instance_market_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest>) -> Self {
-        self.instance_market_options = input;
-        self
+        self.instance_market_options = input; self
     }
     /// <p>The market (purchasing) option for the instances.</p>
     pub fn get_instance_market_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest> {
@@ -818,8 +787,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
     pub fn set_credit_specification(mut self, input: ::std::option::Option<crate::types::CreditSpecificationRequest>) -> Self {
-        self.credit_specification = input;
-        self
+        self.credit_specification = input; self
     }
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
     pub fn get_credit_specification(&self) -> &::std::option::Option<crate::types::CreditSpecificationRequest> {
@@ -832,8 +800,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest>) -> Self {
-        self.cpu_options = input;
-        self
+        self.cpu_options = input; self
     }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest> {
@@ -845,17 +812,11 @@ impl RequestLaunchTemplateDataBuilder {
         self
     }
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn set_capacity_reservation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>,
-    ) -> Self {
-        self.capacity_reservation_specification = input;
-        self
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>) -> Self {
+        self.capacity_reservation_specification = input; self
     }
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn get_capacity_reservation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest> {
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest> {
         &self.capacity_reservation_specification
     }
     /// Appends an item to `license_specifications`.
@@ -865,20 +826,16 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>The license configurations.</p>
     pub fn license_specifications(mut self, input: crate::types::LaunchTemplateLicenseConfigurationRequest) -> Self {
         let mut v = self.license_specifications.unwrap_or_default();
-        v.push(input);
-        self.license_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.license_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The license configurations.</p>
-    pub fn set_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
-    ) -> Self {
-        self.license_specifications = input;
-        self
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateLicenseConfigurationRequest>>) -> Self {
+        self.license_specifications = input; self
     }
     /// <p>The license configurations.</p>
-    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateLicenseConfigurationRequest>> {
         &self.license_specifications
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -888,8 +845,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_hibernation_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest>) -> Self {
-        self.hibernation_options = input;
-        self
+        self.hibernation_options = input; self
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest> {
@@ -902,8 +858,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest>) -> Self {
-        self.metadata_options = input;
-        self
+        self.metadata_options = input; self
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest> {
@@ -918,8 +873,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest>) -> Self {
-        self.enclave_options = input;
-        self
+        self.enclave_options = input; self
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
@@ -959,8 +913,7 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
-        self.instance_requirements = input;
-        self
+        self.instance_requirements = input; self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
     /// <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any unspecified optional attribute is set to its default.</p>
@@ -986,8 +939,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
     pub fn set_private_dns_name_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptionsRequest>) -> Self {
-        self.private_dns_name_options = input;
-        self
+        self.private_dns_name_options = input; self
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
     pub fn get_private_dns_name_options(&self) -> &::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptionsRequest> {
@@ -1000,8 +952,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>The maintenance options for the instance.</p>
     pub fn set_maintenance_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>) -> Self {
-        self.maintenance_options = input;
-        self
+        self.maintenance_options = input; self
     }
     /// <p>The maintenance options for the instance.</p>
     pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest> {
@@ -1014,8 +965,7 @@ impl RequestLaunchTemplateDataBuilder {
     }
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_api_stop = input;
-        self
+        self.disable_api_stop = input; self
     }
     /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
@@ -1024,37 +974,68 @@ impl RequestLaunchTemplateDataBuilder {
     /// Consumes the builder and constructs a [`RequestLaunchTemplateData`](crate::types::RequestLaunchTemplateData).
     pub fn build(self) -> crate::types::RequestLaunchTemplateData {
         crate::types::RequestLaunchTemplateData {
-            kernel_id: self.kernel_id,
-            ebs_optimized: self.ebs_optimized,
-            iam_instance_profile: self.iam_instance_profile,
-            block_device_mappings: self.block_device_mappings,
-            network_interfaces: self.network_interfaces,
-            image_id: self.image_id,
-            instance_type: self.instance_type,
-            key_name: self.key_name,
-            monitoring: self.monitoring,
-            placement: self.placement,
-            ram_disk_id: self.ram_disk_id,
-            disable_api_termination: self.disable_api_termination,
-            instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior,
-            user_data: self.user_data,
-            tag_specifications: self.tag_specifications,
-            elastic_gpu_specifications: self.elastic_gpu_specifications,
-            elastic_inference_accelerators: self.elastic_inference_accelerators,
-            security_group_ids: self.security_group_ids,
-            security_groups: self.security_groups,
-            instance_market_options: self.instance_market_options,
-            credit_specification: self.credit_specification,
-            cpu_options: self.cpu_options,
-            capacity_reservation_specification: self.capacity_reservation_specification,
-            license_specifications: self.license_specifications,
-            hibernation_options: self.hibernation_options,
-            metadata_options: self.metadata_options,
-            enclave_options: self.enclave_options,
-            instance_requirements: self.instance_requirements,
-            private_dns_name_options: self.private_dns_name_options,
-            maintenance_options: self.maintenance_options,
-            disable_api_stop: self.disable_api_stop,
+            kernel_id: self.kernel_id
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
+            iam_instance_profile: self.iam_instance_profile
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            image_id: self.image_id
+            ,
+            instance_type: self.instance_type
+            ,
+            key_name: self.key_name
+            ,
+            monitoring: self.monitoring
+            ,
+            placement: self.placement
+            ,
+            ram_disk_id: self.ram_disk_id
+            ,
+            disable_api_termination: self.disable_api_termination
+            ,
+            instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior
+            ,
+            user_data: self.user_data
+            ,
+            tag_specifications: self.tag_specifications
+            ,
+            elastic_gpu_specifications: self.elastic_gpu_specifications
+            ,
+            elastic_inference_accelerators: self.elastic_inference_accelerators
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            security_groups: self.security_groups
+            ,
+            instance_market_options: self.instance_market_options
+            ,
+            credit_specification: self.credit_specification
+            ,
+            cpu_options: self.cpu_options
+            ,
+            capacity_reservation_specification: self.capacity_reservation_specification
+            ,
+            license_specifications: self.license_specifications
+            ,
+            hibernation_options: self.hibernation_options
+            ,
+            metadata_options: self.metadata_options
+            ,
+            enclave_options: self.enclave_options
+            ,
+            instance_requirements: self.instance_requirements
+            ,
+            private_dns_name_options: self.private_dns_name_options
+            ,
+            maintenance_options: self.maintenance_options
+            ,
+            disable_api_stop: self.disable_api_stop
+            ,
         }
     }
 }
@@ -1095,3 +1076,4 @@ impl ::std::fmt::Debug for RequestLaunchTemplateDataBuilder {
         formatter.finish()
     }
 }
+

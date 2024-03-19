@@ -3,7 +3,7 @@
 /// <p>The details of the form entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FormEntryOutput {
+pub struct FormEntryOutput  {
     /// <p>The name of the type of the form entry.</p>
     pub type_name: ::std::string::String,
     /// <p>The type revision of the form entry.</p>
@@ -11,23 +11,21 @@ pub struct FormEntryOutput {
     /// <p>Specifies whether a form entry is required.</p>
     pub required: ::std::option::Option<bool>,
 }
-impl FormEntryOutput {
+impl  FormEntryOutput  {
     /// <p>The name of the type of the form entry.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> & str {
+        use std::ops::Deref; self.type_name.deref()
     }
     /// <p>The type revision of the form entry.</p>
-    pub fn type_revision(&self) -> &str {
-        use std::ops::Deref;
-        self.type_revision.deref()
+    pub fn type_revision(&self) -> & str {
+        use std::ops::Deref; self.type_revision.deref()
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
     }
 }
-impl ::std::fmt::Debug for FormEntryOutput {
+impl  ::std::fmt::Debug for FormEntryOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FormEntryOutput");
         formatter.field("type_name", &"*** Sensitive Data Redacted ***");
@@ -60,8 +58,7 @@ impl FormEntryOutputBuilder {
     }
     /// <p>The name of the type of the form entry.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the type of the form entry.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +72,7 @@ impl FormEntryOutputBuilder {
     }
     /// <p>The type revision of the form entry.</p>
     pub fn set_type_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_revision = input;
-        self
+        self.type_revision = input; self
     }
     /// <p>The type revision of the form entry.</p>
     pub fn get_type_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +85,7 @@ impl FormEntryOutputBuilder {
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -101,21 +96,22 @@ impl FormEntryOutputBuilder {
     /// - [`type_name`](crate::types::builders::FormEntryOutputBuilder::type_name)
     /// - [`type_revision`](crate::types::builders::FormEntryOutputBuilder::type_revision)
     pub fn build(self) -> ::std::result::Result<crate::types::FormEntryOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormEntryOutput {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building FormEntryOutput",
-                )
-            })?,
-            type_revision: self.type_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_revision",
-                    "type_revision was not specified but it is required when building FormEntryOutput",
-                )
-            })?,
-            required: self.required,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FormEntryOutput {
+                type_name: self.type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_name", "type_name was not specified but it is required when building FormEntryOutput")
+                    )?
+                ,
+                type_revision: self.type_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_revision", "type_revision was not specified but it is required when building FormEntryOutput")
+                    )?
+                ,
+                required: self.required
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for FormEntryOutputBuilder {
@@ -127,3 +123,4 @@ impl ::std::fmt::Debug for FormEntryOutputBuilder {
         formatter.finish()
     }
 }
+

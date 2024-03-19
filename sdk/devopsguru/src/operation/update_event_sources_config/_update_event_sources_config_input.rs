@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventSourcesConfigInput {
+pub struct UpdateEventSourcesConfigInput  {
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     pub event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
 }
-impl UpdateEventSourcesConfigInput {
+impl  UpdateEventSourcesConfigInput  {
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
-    pub fn event_sources(&self) -> ::std::option::Option<&crate::types::EventSourcesConfig> {
+    pub fn event_sources(&self) -> ::std::option::Option<& crate::types::EventSourcesConfig> {
         self.event_sources.as_ref()
     }
 }
@@ -33,22 +33,20 @@ impl UpdateEventSourcesConfigInputBuilder {
     }
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     pub fn set_event_sources(mut self, input: ::std::option::Option<crate::types::EventSourcesConfig>) -> Self {
-        self.event_sources = input;
-        self
+        self.event_sources = input; self
     }
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     pub fn get_event_sources(&self) -> &::std::option::Option<crate::types::EventSourcesConfig> {
         &self.event_sources
     }
     /// Consumes the builder and constructs a [`UpdateEventSourcesConfigInput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput {
-            event_sources: self.event_sources,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput {
+                event_sources: self.event_sources
+                ,
+            }
+        )
     }
 }
+

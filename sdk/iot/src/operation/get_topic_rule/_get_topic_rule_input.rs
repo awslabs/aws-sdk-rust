@@ -3,13 +3,13 @@
 /// <p>The input for the GetTopicRule operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTopicRuleInput {
+pub struct GetTopicRuleInput  {
     /// <p>The name of the rule.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
-impl GetTopicRuleInput {
+impl  GetTopicRuleInput  {
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl GetTopicRuleInputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_topic_rule::GetTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_topic_rule::GetTopicRuleInput { rule_name: self.rule_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_topic_rule::GetTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_topic_rule::GetTopicRuleInput {
+                rule_name: self.rule_name
+                ,
+            }
+        )
     }
 }
+

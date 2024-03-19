@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnnotationStoreVersionsOutput {
+pub struct DeleteAnnotationStoreVersionsOutput  {
     /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::VersionDeleteError>>,
     _request_id: Option<String>,
 }
-impl DeleteAnnotationStoreVersionsOutput {
+impl  DeleteAnnotationStoreVersionsOutput  {
     /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::VersionDeleteError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::VersionDeleteError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAnnotationStoreVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAnnotationStoreVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreVersionsOutput`](crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsOutput).
     pub fn builder() -> crate::operation::delete_annotation_store_versions::builders::DeleteAnnotationStoreVersionsOutputBuilder {
@@ -31,7 +32,7 @@ impl DeleteAnnotationStoreVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreVersionsOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::VersionDeleteError>>,
     _request_id: Option<String>,
 }
 impl DeleteAnnotationStoreVersionsOutputBuilder {
@@ -42,33 +43,34 @@ impl DeleteAnnotationStoreVersionsOutputBuilder {
     /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
     pub fn errors(mut self, input: crate::types::VersionDeleteError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VersionDeleteError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Any errors that occur when attempting to delete an annotation store version.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VersionDeleteError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreVersionsOutput`](crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsOutput).
     pub fn build(self) -> crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsOutput {
         crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

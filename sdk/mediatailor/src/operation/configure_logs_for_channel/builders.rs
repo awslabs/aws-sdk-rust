@@ -5,54 +5,50 @@ pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channe
 
 impl ConfigureLogsForChannelInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.configure_logs_for_channel();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.configure_logs_for_channel();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ConfigureLogsForChannel`.
-///
+/// 
 /// <p>Configures Amazon CloudWatch log settings for a channel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder,
+                    inner: crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-    > for ConfigureLogsForChannelFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
+                    crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+                > for ConfigureLogsForChannelFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
+                        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ConfigureLogsForChannelFluentBuilder {
     /// Creates a new `ConfigureLogsForChannel`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ConfigureLogsForChannelFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::configure_logs_for_channel::ConfigureLogsForChannel::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannel::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
-        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::configure_logs_for_channel::ConfigureLogsForChannel::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::configure_logs_for_channel::ConfigureLogsForChannel::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput, crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the channel.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -132,12 +119,13 @@ impl ConfigureLogsForChannelFluentBuilder {
         self
     }
     /// <p>The types of logs to collect.</p>
-    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>) -> Self {
         self.inner = self.inner.set_log_types(input);
         self
     }
     /// <p>The types of logs to collect.</p>
-    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogType>> {
         self.inner.get_log_types()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeywordOutput {
+pub struct DeleteKeywordOutput  {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
     pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
@@ -15,33 +15,33 @@ pub struct DeleteKeywordOutput {
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
     _request_id: Option<String>,
 }
-impl DeleteKeywordOutput {
+impl  DeleteKeywordOutput  {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    pub fn origination_identity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> ::std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The keyword that was deleted.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
+    pub fn keyword(&self) -> ::std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>The message that was associated with the deleted keyword.</p>
-    pub fn keyword_message(&self) -> ::std::option::Option<&str> {
+    pub fn keyword_message(&self) -> ::std::option::Option<& str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action that was associated with the deleted keyword.</p>
-    pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
+    pub fn keyword_action(&self) -> ::std::option::Option<& crate::types::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteKeywordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteKeywordOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeywordOutput`](crate::operation::delete_keyword::DeleteKeywordOutput).
     pub fn builder() -> crate::operation::delete_keyword::builders::DeleteKeywordOutputBuilder {
@@ -68,8 +68,7 @@ impl DeleteKeywordOutputBuilder {
     }
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
     pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_identity_arn = input;
-        self
+        self.origination_identity_arn = input; self
     }
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
     pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DeleteKeywordOutputBuilder {
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_identity = input;
-        self
+        self.origination_identity = input; self
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DeleteKeywordOutputBuilder {
     }
     /// <p>The keyword that was deleted.</p>
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// <p>The keyword that was deleted.</p>
     pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DeleteKeywordOutputBuilder {
     }
     /// <p>The message that was associated with the deleted keyword.</p>
     pub fn set_keyword_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword_message = input;
-        self
+        self.keyword_message = input; self
     }
     /// <p>The message that was associated with the deleted keyword.</p>
     pub fn get_keyword_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl DeleteKeywordOutputBuilder {
     }
     /// <p>The action that was associated with the deleted keyword.</p>
     pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
-        self.keyword_action = input;
-        self
+        self.keyword_action = input; self
     }
     /// <p>The action that was associated with the deleted keyword.</p>
     pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
         &self.keyword_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteKeywordOutput`](crate::operation::delete_keyword::DeleteKeywordOutput).
     pub fn build(self) -> crate::operation::delete_keyword::DeleteKeywordOutput {
         crate::operation::delete_keyword::DeleteKeywordOutput {
-            origination_identity_arn: self.origination_identity_arn,
-            origination_identity: self.origination_identity,
-            keyword: self.keyword,
-            keyword_message: self.keyword_message,
-            keyword_action: self.keyword_action,
+            origination_identity_arn: self.origination_identity_arn
+            ,
+            origination_identity: self.origination_identity
+            ,
+            keyword: self.keyword
+            ,
+            keyword_message: self.keyword_message
+            ,
+            keyword_action: self.keyword_action
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

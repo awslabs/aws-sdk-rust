@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUploadStatusInput {
+pub struct GetUploadStatusInput  {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
-impl GetUploadStatusInput {
+impl  GetUploadStatusInput  {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetUploadStatusInputBuilder {
     }
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     /// Consumes the builder and constructs a [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusInput { upload_id: self.upload_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_upload_status::GetUploadStatusInput {
+                upload_id: self.upload_id
+                ,
+            }
+        )
     }
 }
+

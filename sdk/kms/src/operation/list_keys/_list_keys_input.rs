@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeysInput {
+pub struct ListKeysInput  {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListKeysInput {
+impl  ListKeysInput  {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ListKeysInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -59,8 +58,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,9 +66,14 @@ impl ListKeysInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_keys::ListKeysInput {
-            limit: self.limit,
-            marker: self.marker,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_keys::ListKeysInput {
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

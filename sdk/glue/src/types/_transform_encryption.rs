@@ -4,19 +4,19 @@
 /// <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformEncryption {
+pub struct TransformEncryption  {
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
     pub ml_user_data_encryption: ::std::option::Option<crate::types::MlUserDataEncryption>,
     /// <p>The name of the security configuration.</p>
     pub task_run_security_configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl TransformEncryption {
+impl  TransformEncryption  {
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
-    pub fn ml_user_data_encryption(&self) -> ::std::option::Option<&crate::types::MlUserDataEncryption> {
+    pub fn ml_user_data_encryption(&self) -> ::std::option::Option<& crate::types::MlUserDataEncryption> {
         self.ml_user_data_encryption.as_ref()
     }
     /// <p>The name of the security configuration.</p>
-    pub fn task_run_security_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn task_run_security_configuration_name(&self) -> ::std::option::Option<& str> {
         self.task_run_security_configuration_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl TransformEncryptionBuilder {
     }
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
     pub fn set_ml_user_data_encryption(mut self, input: ::std::option::Option<crate::types::MlUserDataEncryption>) -> Self {
-        self.ml_user_data_encryption = input;
-        self
+        self.ml_user_data_encryption = input; self
     }
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
     pub fn get_ml_user_data_encryption(&self) -> &::std::option::Option<crate::types::MlUserDataEncryption> {
@@ -56,8 +55,7 @@ impl TransformEncryptionBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_task_run_security_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_run_security_configuration_name = input;
-        self
+        self.task_run_security_configuration_name = input; self
     }
     /// <p>The name of the security configuration.</p>
     pub fn get_task_run_security_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl TransformEncryptionBuilder {
     /// Consumes the builder and constructs a [`TransformEncryption`](crate::types::TransformEncryption).
     pub fn build(self) -> crate::types::TransformEncryption {
         crate::types::TransformEncryption {
-            ml_user_data_encryption: self.ml_user_data_encryption,
-            task_run_security_configuration_name: self.task_run_security_configuration_name,
+            ml_user_data_encryption: self.ml_user_data_encryption
+            ,
+            task_run_security_configuration_name: self.task_run_security_configuration_name
+            ,
         }
     }
 }
+

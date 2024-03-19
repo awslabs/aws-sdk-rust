@@ -3,19 +3,19 @@
 /// <p>Override settings to configure the intent state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentOverride {
+pub struct IntentOverride  {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
+    pub slots: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SlotValueOverride>>,
 }
-impl IntentOverride {
+impl  IntentOverride  {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>> {
+    pub fn slots(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::SlotValueOverride>> {
         self.slots.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl IntentOverride {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentOverrideBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SlotValueOverride>>,
 }
 impl IntentOverrideBuilder {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
@@ -41,8 +41,7 @@ impl IntentOverrideBuilder {
     }
     /// <p>The name of the intent. Only required when you're switching intents.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent. Only required when you're switching intents.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,27 +54,26 @@ impl IntentOverrideBuilder {
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
     pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SlotValueOverride) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.slots = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.slots = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn set_slots(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
-    ) -> Self {
-        self.slots = input;
-        self
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SlotValueOverride>>) -> Self {
+        self.slots = input; self
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>> {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::SlotValueOverride>> {
         &self.slots
     }
     /// Consumes the builder and constructs a [`IntentOverride`](crate::types::IntentOverride).
     pub fn build(self) -> crate::types::IntentOverride {
         crate::types::IntentOverride {
-            name: self.name,
-            slots: self.slots,
+            name: self.name
+            ,
+            slots: self.slots
+            ,
         }
     }
 }
+

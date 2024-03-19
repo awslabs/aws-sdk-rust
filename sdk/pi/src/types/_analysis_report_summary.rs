@@ -3,7 +3,7 @@
 /// <p>Retrieves the details of the performance analysis report.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisReportSummary {
+pub struct AnalysisReportSummary  {
     /// <p>The name of the analysis report.</p>
     pub analysis_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The time you created the analysis report.</p>
@@ -15,34 +15,35 @@ pub struct AnalysisReportSummary {
     /// <p>The status of the analysis report.</p>
     pub status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>List of all the tags added to the analysis report.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl AnalysisReportSummary {
+impl  AnalysisReportSummary  {
     /// <p>The name of the analysis report.</p>
-    pub fn analysis_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_report_id(&self) -> ::std::option::Option<& str> {
         self.analysis_report_id.as_deref()
     }
     /// <p>The time you created the analysis report.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The start time of the analysis in the report.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the analysis in the report.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status of the analysis report.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AnalysisStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AnalysisStatus> {
         self.status.as_ref()
     }
     /// <p>List of all the tags added to the analysis report.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnalysisReportSummary {
@@ -61,7 +62,7 @@ pub struct AnalysisReportSummaryBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AnalysisStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AnalysisReportSummaryBuilder {
     /// <p>The name of the analysis report.</p>
@@ -71,8 +72,7 @@ impl AnalysisReportSummaryBuilder {
     }
     /// <p>The name of the analysis report.</p>
     pub fn set_analysis_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_report_id = input;
-        self
+        self.analysis_report_id = input; self
     }
     /// <p>The name of the analysis report.</p>
     pub fn get_analysis_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl AnalysisReportSummaryBuilder {
     }
     /// <p>The time you created the analysis report.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time you created the analysis report.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl AnalysisReportSummaryBuilder {
     }
     /// <p>The start time of the analysis in the report.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the analysis in the report.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,8 +111,7 @@ impl AnalysisReportSummaryBuilder {
     }
     /// <p>The end time of the analysis in the report.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the analysis in the report.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +124,7 @@ impl AnalysisReportSummaryBuilder {
     }
     /// <p>The status of the analysis report.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the analysis report.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AnalysisStatus> {
@@ -141,28 +137,34 @@ impl AnalysisReportSummaryBuilder {
     /// <p>List of all the tags added to the analysis report.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of all the tags added to the analysis report.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>List of all the tags added to the analysis report.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AnalysisReportSummary`](crate::types::AnalysisReportSummary).
     pub fn build(self) -> crate::types::AnalysisReportSummary {
         crate::types::AnalysisReportSummary {
-            analysis_report_id: self.analysis_report_id,
-            create_time: self.create_time,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            status: self.status,
-            tags: self.tags,
+            analysis_report_id: self.analysis_report_id
+            ,
+            create_time: self.create_time
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

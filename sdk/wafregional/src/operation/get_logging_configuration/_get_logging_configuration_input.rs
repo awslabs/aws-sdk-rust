@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoggingConfigurationInput {
+pub struct GetLoggingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetLoggingConfigurationInput {
+impl  GetLoggingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetLoggingConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_logging_configuration::GetLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

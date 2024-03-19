@@ -56,3 +56,4 @@ pub fn de_metric(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

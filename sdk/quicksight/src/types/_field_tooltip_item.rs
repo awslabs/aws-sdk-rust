@@ -3,7 +3,7 @@
 /// <p>The tooltip item for the fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldTooltipItem {
+pub struct FieldTooltipItem  {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
     pub field_id: ::std::string::String,
     /// <p>The label of the tooltip item.</p>
@@ -13,22 +13,21 @@ pub struct FieldTooltipItem {
     /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
     pub tooltip_target: ::std::option::Option<crate::types::TooltipTarget>,
 }
-impl FieldTooltipItem {
+impl  FieldTooltipItem  {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The label of the tooltip item.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The visibility of the tooltip item.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
-    pub fn tooltip_target(&self) -> ::std::option::Option<&crate::types::TooltipTarget> {
+    pub fn tooltip_target(&self) -> ::std::option::Option<& crate::types::TooltipTarget> {
         self.tooltip_target.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>The label of the tooltip item.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label of the tooltip item.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>The visibility of the tooltip item.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the tooltip item.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -99,8 +95,7 @@ impl FieldTooltipItemBuilder {
     }
     /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
     pub fn set_tooltip_target(mut self, input: ::std::option::Option<crate::types::TooltipTarget>) -> Self {
-        self.tooltip_target = input;
-        self
+        self.tooltip_target = input; self
     }
     /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
     pub fn get_tooltip_target(&self) -> &::std::option::Option<crate::types::TooltipTarget> {
@@ -110,16 +105,21 @@ impl FieldTooltipItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FieldTooltipItemBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldTooltipItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldTooltipItem {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building FieldTooltipItem",
-                )
-            })?,
-            label: self.label,
-            visibility: self.visibility,
-            tooltip_target: self.tooltip_target,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldTooltipItem {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building FieldTooltipItem")
+                    )?
+                ,
+                label: self.label
+                ,
+                visibility: self.visibility
+                ,
+                tooltip_target: self.tooltip_target
+                ,
+            }
+        )
     }
 }
+

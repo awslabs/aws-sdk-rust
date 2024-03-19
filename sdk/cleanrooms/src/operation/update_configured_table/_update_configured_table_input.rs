@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredTableInput {
+pub struct UpdateConfiguredTableInput  {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the configured table.</p>
@@ -10,17 +10,17 @@ pub struct UpdateConfiguredTableInput {
     /// <p>A new description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfiguredTableInput {
+impl  UpdateConfiguredTableInput  {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>A new name for the configured table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the configured table.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateConfiguredTableInputBuilder {
     }
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
     pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_identifier = input;
-        self
+        self.configured_table_identifier = input; self
     }
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateConfiguredTableInputBuilder {
     }
     /// <p>A new name for the configured table.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new name for the configured table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateConfiguredTableInputBuilder {
     }
     /// <p>A new description for the configured table.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the configured table.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_configured_table::UpdateConfiguredTableInput {
-            configured_table_identifier: self.configured_table_identifier,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configured_table::UpdateConfiguredTableInput {
+                configured_table_identifier: self.configured_table_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

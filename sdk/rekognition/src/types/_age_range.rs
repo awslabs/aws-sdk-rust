@@ -4,13 +4,13 @@
 /// <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgeRange {
+pub struct AgeRange  {
     /// <p>The lowest estimated age.</p>
     pub low: ::std::option::Option<i32>,
     /// <p>The highest estimated age.</p>
     pub high: ::std::option::Option<i32>,
 }
-impl AgeRange {
+impl  AgeRange  {
     /// <p>The lowest estimated age.</p>
     pub fn low(&self) -> ::std::option::Option<i32> {
         self.low
@@ -42,8 +42,7 @@ impl AgeRangeBuilder {
     }
     /// <p>The lowest estimated age.</p>
     pub fn set_low(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.low = input;
-        self
+        self.low = input; self
     }
     /// <p>The lowest estimated age.</p>
     pub fn get_low(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl AgeRangeBuilder {
     }
     /// <p>The highest estimated age.</p>
     pub fn set_high(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.high = input;
-        self
+        self.high = input; self
     }
     /// <p>The highest estimated age.</p>
     pub fn get_high(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl AgeRangeBuilder {
     /// Consumes the builder and constructs a [`AgeRange`](crate::types::AgeRange).
     pub fn build(self) -> crate::types::AgeRange {
         crate::types::AgeRange {
-            low: self.low,
-            high: self.high,
+            low: self.low
+            ,
+            high: self.high
+            ,
         }
     }
 }
+

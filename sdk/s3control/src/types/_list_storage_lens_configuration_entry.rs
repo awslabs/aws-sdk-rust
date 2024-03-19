@@ -3,7 +3,7 @@
 /// <p>Part of <code>ListStorageLensConfigurationResult</code>. Each entry includes the description of the S3 Storage Lens configuration, its home Region, whether it is enabled, its Amazon Resource Name (ARN), and config ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStorageLensConfigurationEntry {
+pub struct ListStorageLensConfigurationEntry  {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     pub id: ::std::string::String,
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
@@ -13,21 +13,18 @@ pub struct ListStorageLensConfigurationEntry {
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub is_enabled: bool,
 }
-impl ListStorageLensConfigurationEntry {
+impl  ListStorageLensConfigurationEntry  {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn storage_lens_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.storage_lens_arn.deref()
+    pub fn storage_lens_arn(&self) -> & str {
+        use std::ops::Deref; self.storage_lens_arn.deref()
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    pub fn home_region(&self) -> &str {
-        use std::ops::Deref;
-        self.home_region.deref()
+    pub fn home_region(&self) -> & str {
+        use std::ops::Deref; self.home_region.deref()
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn is_enabled(&self) -> bool {
@@ -59,8 +56,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
     pub fn set_storage_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_lens_arn = input;
-        self
+        self.storage_lens_arn = input; self
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
     pub fn get_storage_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
@@ -116,26 +109,28 @@ impl ListStorageLensConfigurationEntryBuilder {
     /// - [`storage_lens_arn`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::storage_lens_arn)
     /// - [`home_region`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::home_region)
     pub fn build(self) -> ::std::result::Result<crate::types::ListStorageLensConfigurationEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListStorageLensConfigurationEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ListStorageLensConfigurationEntry",
-                )
-            })?,
-            storage_lens_arn: self.storage_lens_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_lens_arn",
-                    "storage_lens_arn was not specified but it is required when building ListStorageLensConfigurationEntry",
-                )
-            })?,
-            home_region: self.home_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "home_region",
-                    "home_region was not specified but it is required when building ListStorageLensConfigurationEntry",
-                )
-            })?,
-            is_enabled: self.is_enabled.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListStorageLensConfigurationEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ListStorageLensConfigurationEntry")
+                    )?
+                ,
+                storage_lens_arn: self.storage_lens_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_lens_arn", "storage_lens_arn was not specified but it is required when building ListStorageLensConfigurationEntry")
+                    )?
+                ,
+                home_region: self.home_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("home_region", "home_region was not specified but it is required when building ListStorageLensConfigurationEntry")
+                    )?
+                ,
+                is_enabled: self.is_enabled
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

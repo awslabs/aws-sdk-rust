@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolFunctionPackagesOutput {
+pub struct ListSolFunctionPackagesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub function_packages: ::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>,
+    pub function_packages: ::std::vec::Vec::<crate::types::ListSolFunctionPackageInfo>,
     _request_id: Option<String>,
 }
-impl ListSolFunctionPackagesOutput {
+impl  ListSolFunctionPackagesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn function_packages(&self) -> &[crate::types::ListSolFunctionPackageInfo] {
-        use std::ops::Deref;
-        self.function_packages.deref()
+    pub fn function_packages(&self) -> & [crate::types::ListSolFunctionPackageInfo] {
+        use std::ops::Deref; self.function_packages.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSolFunctionPackagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSolFunctionPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
     pub fn builder() -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListSolFunctionPackagesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) function_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
+    pub(crate) function_packages: ::std::option::Option<::std::vec::Vec::<crate::types::ListSolFunctionPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionPackagesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListSolFunctionPackagesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,46 +60,43 @@ impl ListSolFunctionPackagesOutputBuilder {
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
     pub fn function_packages(mut self, input: crate::types::ListSolFunctionPackageInfo) -> Self {
         let mut v = self.function_packages.unwrap_or_default();
-        v.push(input);
-        self.function_packages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.function_packages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn set_function_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>) -> Self {
-        self.function_packages = input;
-        self
+    pub fn set_function_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListSolFunctionPackageInfo>>) -> Self {
+        self.function_packages = input; self
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn get_function_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>> {
+    pub fn get_function_packages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListSolFunctionPackageInfo>> {
         &self.function_packages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`function_packages`](crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder::function_packages)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
-            next_token: self.next_token,
-            function_packages: self.function_packages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_packages",
-                    "function_packages was not specified but it is required when building ListSolFunctionPackagesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
+                next_token: self.next_token
+                ,
+                function_packages: self.function_packages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_packages", "function_packages was not specified but it is required when building ListSolFunctionPackagesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

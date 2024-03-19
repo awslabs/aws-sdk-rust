@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeRevisionInput {
+pub struct RevokeRevisionInput  {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
@@ -10,17 +10,17 @@ pub struct RevokeRevisionInput {
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub revocation_comment: ::std::option::Option<::std::string::String>,
 }
-impl RevokeRevisionInput {
+impl  RevokeRevisionInput  {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> ::std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> ::std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RevokeRevisionInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RevokeRevisionInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl RevokeRevisionInputBuilder {
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn set_revocation_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revocation_comment = input;
-        self
+        self.revocation_comment = input; self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn get_revocation_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.revocation_comment
     }
     /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::revoke_revision::RevokeRevisionInput {
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-            revocation_comment: self.revocation_comment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_revision::RevokeRevisionInput {
+                data_set_id: self.data_set_id
+                ,
+                revision_id: self.revision_id
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+            }
+        )
     }
 }
+

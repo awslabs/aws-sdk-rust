@@ -26,11 +26,7 @@ impl DatasetOrgAttributes {
     /// Tries to convert the enum instance into [`Gdg`](crate::types::DatasetOrgAttributes::Gdg), extracting the inner [`GdgAttributes`](crate::types::GdgAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_gdg(&self) -> ::std::result::Result<&crate::types::GdgAttributes, &Self> {
-        if let DatasetOrgAttributes::Gdg(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DatasetOrgAttributes::Gdg(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Gdg`](crate::types::DatasetOrgAttributes::Gdg).
     pub fn is_gdg(&self) -> bool {
@@ -39,11 +35,7 @@ impl DatasetOrgAttributes {
     /// Tries to convert the enum instance into [`Po`](crate::types::DatasetOrgAttributes::Po), extracting the inner [`PoAttributes`](crate::types::PoAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_po(&self) -> ::std::result::Result<&crate::types::PoAttributes, &Self> {
-        if let DatasetOrgAttributes::Po(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DatasetOrgAttributes::Po(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Po`](crate::types::DatasetOrgAttributes::Po).
     pub fn is_po(&self) -> bool {
@@ -52,11 +44,7 @@ impl DatasetOrgAttributes {
     /// Tries to convert the enum instance into [`Ps`](crate::types::DatasetOrgAttributes::Ps), extracting the inner [`PsAttributes`](crate::types::PsAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ps(&self) -> ::std::result::Result<&crate::types::PsAttributes, &Self> {
-        if let DatasetOrgAttributes::Ps(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DatasetOrgAttributes::Ps(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ps`](crate::types::DatasetOrgAttributes::Ps).
     pub fn is_ps(&self) -> bool {
@@ -65,11 +53,7 @@ impl DatasetOrgAttributes {
     /// Tries to convert the enum instance into [`Vsam`](crate::types::DatasetOrgAttributes::Vsam), extracting the inner [`VsamAttributes`](crate::types::VsamAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vsam(&self) -> ::std::result::Result<&crate::types::VsamAttributes, &Self> {
-        if let DatasetOrgAttributes::Vsam(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DatasetOrgAttributes::Vsam(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Vsam`](crate::types::DatasetOrgAttributes::Vsam).
     pub fn is_vsam(&self) -> bool {
@@ -80,3 +64,4 @@ impl DatasetOrgAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

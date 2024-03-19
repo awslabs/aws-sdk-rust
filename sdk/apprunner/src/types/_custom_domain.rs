@@ -3,34 +3,34 @@
 /// <p>Describes a custom domain that's associated with an App Runner service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomDomain {
+pub struct CustomDomain  {
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub domain_name: ::std::string::String,
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
     pub enable_www_subdomain: bool,
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub certificate_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
+    pub certificate_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateValidationRecord>>,
     /// <p>The current state of the domain name association.</p>
     pub status: crate::types::CustomDomainAssociationStatus,
 }
-impl CustomDomain {
+impl  CustomDomain  {
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
     pub fn enable_www_subdomain(&self) -> bool {
         self.enable_www_subdomain
     }
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_validation_records.is_none()`.
-    pub fn certificate_validation_records(&self) -> &[crate::types::CertificateValidationRecord] {
-        self.certificate_validation_records.as_deref().unwrap_or_default()
+    pub fn certificate_validation_records(&self) -> & [crate::types::CertificateValidationRecord] {
+        self.certificate_validation_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current state of the domain name association.</p>
-    pub fn status(&self) -> &crate::types::CustomDomainAssociationStatus {
+    pub fn status(&self) -> & crate::types::CustomDomainAssociationStatus {
         &self.status
     }
 }
@@ -47,7 +47,7 @@ impl CustomDomain {
 pub struct CustomDomainBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_www_subdomain: ::std::option::Option<bool>,
-    pub(crate) certificate_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
+    pub(crate) certificate_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateValidationRecord>>,
     pub(crate) status: ::std::option::Option<crate::types::CustomDomainAssociationStatus>,
 }
 impl CustomDomainBuilder {
@@ -59,8 +59,7 @@ impl CustomDomainBuilder {
     }
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl CustomDomainBuilder {
     }
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
     pub fn set_enable_www_subdomain(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_www_subdomain = input;
-        self
+        self.enable_www_subdomain = input; self
     }
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
     pub fn get_enable_www_subdomain(&self) -> &::std::option::Option<bool> {
@@ -88,20 +86,16 @@ impl CustomDomainBuilder {
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
     pub fn certificate_validation_records(mut self, input: crate::types::CertificateValidationRecord) -> Self {
         let mut v = self.certificate_validation_records.unwrap_or_default();
-        v.push(input);
-        self.certificate_validation_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificate_validation_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub fn set_certificate_validation_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
-    ) -> Self {
-        self.certificate_validation_records = input;
-        self
+    pub fn set_certificate_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateValidationRecord>>) -> Self {
+        self.certificate_validation_records = input; self
     }
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub fn get_certificate_validation_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>> {
+    pub fn get_certificate_validation_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateValidationRecord>> {
         &self.certificate_validation_records
     }
     /// <p>The current state of the domain name association.</p>
@@ -112,8 +106,7 @@ impl CustomDomainBuilder {
     }
     /// <p>The current state of the domain name association.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomDomainAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the domain name association.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomDomainAssociationStatus> {
@@ -125,26 +118,27 @@ impl CustomDomainBuilder {
     /// - [`enable_www_subdomain`](crate::types::builders::CustomDomainBuilder::enable_www_subdomain)
     /// - [`status`](crate::types::builders::CustomDomainBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomDomain, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomDomain {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building CustomDomain",
-                )
-            })?,
-            enable_www_subdomain: self.enable_www_subdomain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_www_subdomain",
-                    "enable_www_subdomain was not specified but it is required when building CustomDomain",
-                )
-            })?,
-            certificate_validation_records: self.certificate_validation_records,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CustomDomain",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomDomain {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building CustomDomain")
+                    )?
+                ,
+                enable_www_subdomain: self.enable_www_subdomain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_www_subdomain", "enable_www_subdomain was not specified but it is required when building CustomDomain")
+                    )?
+                ,
+                certificate_validation_records: self.certificate_validation_records
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CustomDomain")
+                    )?
+                ,
+            }
+        )
     }
 }
+

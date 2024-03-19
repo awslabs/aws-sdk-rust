@@ -3,7 +3,7 @@
 /// <p>The component update request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentUpdateRequest {
+pub struct ComponentUpdateRequest  {
     /// <p>The update type of the component update request.</p>
     pub update_type: ::std::option::Option<crate::types::ComponentUpdateType>,
     /// <p>The description of the component type.</p>
@@ -11,32 +11,29 @@ pub struct ComponentUpdateRequest {
     /// <p>The ID of the component type.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
-    pub property_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
+    pub property_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>,
     /// <p>The property group updates.</p>
-    pub property_group_updates:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
+    pub property_group_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }
-impl ComponentUpdateRequest {
+impl  ComponentUpdateRequest  {
     /// <p>The update type of the component update request.</p>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::ComponentUpdateType> {
+    pub fn update_type(&self) -> ::std::option::Option<& crate::types::ComponentUpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The description of the component type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
-    pub fn property_updates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>> {
+    pub fn property_updates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>> {
         self.property_updates.as_ref()
     }
     /// <p>The property group updates.</p>
-    pub fn property_group_updates(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
+    pub fn property_group_updates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
         self.property_group_updates.as_ref()
     }
 }
@@ -54,9 +51,8 @@ pub struct ComponentUpdateRequestBuilder {
     pub(crate) update_type: ::std::option::Option<crate::types::ComponentUpdateType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
-    pub(crate) property_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
-    pub(crate) property_group_updates:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
+    pub(crate) property_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>,
+    pub(crate) property_group_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }
 impl ComponentUpdateRequestBuilder {
     /// <p>The update type of the component update request.</p>
@@ -66,8 +62,7 @@ impl ComponentUpdateRequestBuilder {
     }
     /// <p>The update type of the component update request.</p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::ComponentUpdateType>) -> Self {
-        self.update_type = input;
-        self
+        self.update_type = input; self
     }
     /// <p>The update type of the component update request.</p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::ComponentUpdateType> {
@@ -80,8 +75,7 @@ impl ComponentUpdateRequestBuilder {
     }
     /// <p>The description of the component type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the component type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +88,7 @@ impl ComponentUpdateRequestBuilder {
     }
     /// <p>The ID of the component type.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>The ID of the component type.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,20 +101,16 @@ impl ComponentUpdateRequestBuilder {
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
     pub fn property_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyRequest) -> Self {
         let mut hash_map = self.property_updates.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.property_updates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.property_updates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
-    pub fn set_property_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
-    ) -> Self {
-        self.property_updates = input;
-        self
+    pub fn set_property_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>) -> Self {
+        self.property_updates = input; self
     }
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
-    pub fn get_property_updates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>> {
+    pub fn get_property_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>> {
         &self.property_updates
     }
     /// Adds a key-value pair to `property_group_updates`.
@@ -129,38 +118,34 @@ impl ComponentUpdateRequestBuilder {
     /// To override the contents of this collection use [`set_property_group_updates`](Self::set_property_group_updates).
     ///
     /// <p>The property group updates.</p>
-    pub fn property_group_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentPropertyGroupRequest,
-    ) -> Self {
+    pub fn property_group_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentPropertyGroupRequest) -> Self {
         let mut hash_map = self.property_group_updates.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.property_group_updates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.property_group_updates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The property group updates.</p>
-    pub fn set_property_group_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
-    ) -> Self {
-        self.property_group_updates = input;
-        self
+    pub fn set_property_group_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>) -> Self {
+        self.property_group_updates = input; self
     }
     /// <p>The property group updates.</p>
-    pub fn get_property_group_updates(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
+    pub fn get_property_group_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
         &self.property_group_updates
     }
     /// Consumes the builder and constructs a [`ComponentUpdateRequest`](crate::types::ComponentUpdateRequest).
     pub fn build(self) -> crate::types::ComponentUpdateRequest {
         crate::types::ComponentUpdateRequest {
-            update_type: self.update_type,
-            description: self.description,
-            component_type_id: self.component_type_id,
-            property_updates: self.property_updates,
-            property_group_updates: self.property_group_updates,
+            update_type: self.update_type
+            ,
+            description: self.description
+            ,
+            component_type_id: self.component_type_id
+            ,
+            property_updates: self.property_updates
+            ,
+            property_group_updates: self.property_group_updates
+            ,
         }
     }
 }
+

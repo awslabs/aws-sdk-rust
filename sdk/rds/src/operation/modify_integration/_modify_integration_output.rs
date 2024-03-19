@@ -3,7 +3,7 @@
 /// <p>A zero-ETL integration with Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyIntegrationOutput {
+pub struct ModifyIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Redshift data warehouse used as the target for replication.</p>
@@ -15,80 +15,82 @@ pub struct ModifyIntegrationOutput {
     /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key used to to encrypt the integration.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption context for the integration. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The current status of the integration.</p>
     pub status: ::std::option::Option<crate::types::IntegrationStatus>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with the integration.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>,
     /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
     pub data_filter: ::std::option::Option<::std::string::String>,
     /// <p>A description of the integration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ModifyIntegrationOutput {
+impl  ModifyIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The ARN of the Redshift data warehouse used as the target for replication.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The name of the integration.</p>
-    pub fn integration_name(&self) -> ::std::option::Option<&str> {
+    pub fn integration_name(&self) -> ::std::option::Option<& str> {
         self.integration_name.as_deref()
     }
     /// <p>The ARN of the integration.</p>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
     /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key used to to encrypt the integration.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption context for the integration. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_encryption_context.as_ref()
     }
     /// <p>The current status of the integration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IntegrationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IntegrationStatus> {
         self.status.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Any errors associated with the integration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::IntegrationError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::IntegrationError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
-    pub fn data_filter(&self) -> ::std::option::Option<&str> {
+    pub fn data_filter(&self) -> ::std::option::Option<& str> {
         self.data_filter.as_deref()
     }
     /// <p>A description of the integration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyIntegrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIntegrationOutput`](crate::operation::modify_integration::ModifyIntegrationOutput).
     pub fn builder() -> crate::operation::modify_integration::builders::ModifyIntegrationOutputBuilder {
@@ -105,11 +107,11 @@ pub struct ModifyIntegrationOutputBuilder {
     pub(crate) integration_name: ::std::option::Option<::std::string::String>,
     pub(crate) integration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::IntegrationStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>,
     pub(crate) data_filter: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -122,8 +124,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +137,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The ARN of the Redshift data warehouse used as the target for replication.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of the Redshift data warehouse used as the target for replication.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +150,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The name of the integration.</p>
     pub fn set_integration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_name = input;
-        self
+        self.integration_name = input; self
     }
     /// <p>The name of the integration.</p>
     pub fn get_integration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +163,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The ARN of the integration.</p>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The ARN of the integration.</p>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +176,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key used to to encrypt the integration.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key used to to encrypt the integration.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,28 +187,18 @@ impl ModifyIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
     ///
     /// <p>The encryption context for the integration. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn additional_encryption_context(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_encryption_context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_encryption_context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The encryption context for the integration. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn set_additional_encryption_context(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_encryption_context = input;
-        self
+    pub fn set_additional_encryption_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_encryption_context = input; self
     }
     /// <p>The encryption context for the integration. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn get_additional_encryption_context(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_encryption_context
     }
     /// <p>The current status of the integration.</p>
@@ -221,8 +208,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The current status of the integration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IntegrationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the integration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IntegrationStatus> {
@@ -235,17 +221,16 @@ impl ModifyIntegrationOutputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
@@ -255,8 +240,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -269,17 +253,16 @@ impl ModifyIntegrationOutputBuilder {
     /// <p>Any errors associated with the integration.</p>
     pub fn errors(mut self, input: crate::types::IntegrationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any errors associated with the integration.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Any errors associated with the integration.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntegrationError>> {
         &self.errors
     }
     /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
@@ -289,8 +272,7 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
     pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_filter = input;
-        self
+        self.data_filter = input; self
     }
     /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,38 +285,50 @@ impl ModifyIntegrationOutputBuilder {
     }
     /// <p>A description of the integration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the integration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyIntegrationOutput`](crate::operation::modify_integration::ModifyIntegrationOutput).
     pub fn build(self) -> crate::operation::modify_integration::ModifyIntegrationOutput {
         crate::operation::modify_integration::ModifyIntegrationOutput {
-            source_arn: self.source_arn,
-            target_arn: self.target_arn,
-            integration_name: self.integration_name,
-            integration_arn: self.integration_arn,
-            kms_key_id: self.kms_key_id,
-            additional_encryption_context: self.additional_encryption_context,
-            status: self.status,
-            tags: self.tags,
-            create_time: self.create_time,
-            errors: self.errors,
-            data_filter: self.data_filter,
-            description: self.description,
+            source_arn: self.source_arn
+            ,
+            target_arn: self.target_arn
+            ,
+            integration_name: self.integration_name
+            ,
+            integration_arn: self.integration_arn
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            additional_encryption_context: self.additional_encryption_context
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
+            create_time: self.create_time
+            ,
+            errors: self.errors
+            ,
+            data_filter: self.data_filter
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

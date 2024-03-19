@@ -3,15 +3,15 @@
 /// <p>Contains the parameters for DeactivatePipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeactivatePipelineInput {
+pub struct DeactivatePipelineInput  {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub cancel_active: ::std::option::Option<bool>,
 }
-impl DeactivatePipelineInput {
+impl  DeactivatePipelineInput  {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
@@ -42,8 +42,7 @@ impl DeactivatePipelineInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeactivatePipelineInputBuilder {
     }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub fn set_cancel_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cancel_active = input;
-        self
+        self.cancel_active = input; self
     }
     /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
     pub fn get_cancel_active(&self) -> &::std::option::Option<bool> {
         &self.cancel_active
     }
     /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::operation::deactivate_pipeline::DeactivatePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deactivate_pipeline::DeactivatePipelineInput {
-            pipeline_id: self.pipeline_id,
-            cancel_active: self.cancel_active,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deactivate_pipeline::DeactivatePipelineInput {
+                pipeline_id: self.pipeline_id
+                ,
+                cancel_active: self.cancel_active
+                ,
+            }
+        )
     }
 }
+

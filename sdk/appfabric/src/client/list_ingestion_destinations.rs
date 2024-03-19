@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIngestionDestinations`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_bundle_identifier(impl Into<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::set_app_bundle_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p><br>
     ///   - [`ingestion_identifier(impl Into<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::ingestion_identifier) / [`set_ingestion_identifier(Option<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::set_ingestion_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p><br>
-    /// - On success, responds with [`ListIngestionDestinationsOutput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput) with field(s):
+                            /// - On success, responds with [`ListIngestionDestinationsOutput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput) with field(s):
     ///   - [`ingestion_destinations(Vec::<IngestionDestinationSummary>)`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput::ingestion_destinations): <p>Contains a list of ingestion destination summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
-    /// - On failure, responds with [`SdkError<ListIngestionDestinationsError>`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsError)
+                            /// - On failure, responds with [`SdkError<ListIngestionDestinationsError>`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsError)
     pub fn list_ingestion_destinations(&self) -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder {
-        crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

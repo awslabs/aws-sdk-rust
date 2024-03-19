@@ -3,7 +3,7 @@
 /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobListEntry {
+pub struct JobListEntry  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this job.</p>
@@ -19,13 +19,13 @@ pub struct JobListEntry {
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl JobListEntry {
+impl  JobListEntry  {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current state of this job.</p>
-    pub fn job_state(&self) -> ::std::option::Option<&crate::types::JobState> {
+    pub fn job_state(&self) -> ::std::option::Option<& crate::types::JobState> {
         self.job_state.as_ref()
     }
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
@@ -33,19 +33,19 @@ impl JobListEntry {
         self.is_master
     }
     /// <p>The type of job.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The type of device used with this job.</p>
-    pub fn snowball_type(&self) -> ::std::option::Option<&crate::types::SnowballType> {
+    pub fn snowball_type(&self) -> ::std::option::Option<& crate::types::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this job.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The current state of this job.</p>
     pub fn set_job_state(mut self, input: ::std::option::Option<crate::types::JobState>) -> Self {
-        self.job_state = input;
-        self
+        self.job_state = input; self
     }
     /// <p>The current state of this job.</p>
     pub fn get_job_state(&self) -> &::std::option::Option<crate::types::JobState> {
@@ -104,8 +102,7 @@ impl JobListEntryBuilder {
     }
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
     pub fn set_is_master(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_master = input;
-        self
+        self.is_master = input; self
     }
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
     pub fn get_is_master(&self) -> &::std::option::Option<bool> {
@@ -118,8 +115,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The type of job.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The type of job.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
@@ -132,8 +128,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The type of device used with this job.</p>
     pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
-        self.snowball_type = input;
-        self
+        self.snowball_type = input; self
     }
     /// <p>The type of device used with this job.</p>
     pub fn get_snowball_type(&self) -> &::std::option::Option<crate::types::SnowballType> {
@@ -146,8 +141,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The creation date for this job.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date for this job.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl JobListEntryBuilder {
     }
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,22 @@ impl JobListEntryBuilder {
     /// Consumes the builder and constructs a [`JobListEntry`](crate::types::JobListEntry).
     pub fn build(self) -> crate::types::JobListEntry {
         crate::types::JobListEntry {
-            job_id: self.job_id,
-            job_state: self.job_state,
-            is_master: self.is_master.unwrap_or_default(),
-            job_type: self.job_type,
-            snowball_type: self.snowball_type,
-            creation_date: self.creation_date,
-            description: self.description,
+            job_id: self.job_id
+            ,
+            job_state: self.job_state
+            ,
+            is_master: self.is_master
+                .unwrap_or_default()
+            ,
+            job_type: self.job_type
+            ,
+            snowball_type: self.snowball_type
+            ,
+            creation_date: self.creation_date
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

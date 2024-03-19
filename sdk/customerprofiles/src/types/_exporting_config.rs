@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportingConfig {
+pub struct ExportingConfig  {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }
-impl ExportingConfig {
+impl  ExportingConfig  {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_exporting(&self) -> ::std::option::Option<&crate::types::S3ExportingConfig> {
+    pub fn s3_exporting(&self) -> ::std::option::Option<& crate::types::S3ExportingConfig> {
         self.s3_exporting.as_ref()
     }
 }
@@ -36,8 +36,7 @@ impl ExportingConfigBuilder {
     }
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub fn set_s3_exporting(mut self, input: ::std::option::Option<crate::types::S3ExportingConfig>) -> Self {
-        self.s3_exporting = input;
-        self
+        self.s3_exporting = input; self
     }
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub fn get_s3_exporting(&self) -> &::std::option::Option<crate::types::S3ExportingConfig> {
@@ -46,7 +45,9 @@ impl ExportingConfigBuilder {
     /// Consumes the builder and constructs a [`ExportingConfig`](crate::types::ExportingConfig).
     pub fn build(self) -> crate::types::ExportingConfig {
         crate::types::ExportingConfig {
-            s3_exporting: self.s3_exporting,
+            s3_exporting: self.s3_exporting
+            ,
         }
     }
 }
+

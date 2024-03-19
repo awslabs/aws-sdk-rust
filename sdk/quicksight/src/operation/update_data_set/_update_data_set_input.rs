@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSetInput {
+pub struct UpdateDataSetInput  {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -10,84 +10,87 @@ pub struct UpdateDataSetInput {
     /// <p>The display name for the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub physical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
+    pub physical_table_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>>,
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
+    pub logical_table_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>>,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
+    pub column_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
+    pub field_folders: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>>,
     /// <p>The row-level security configuration for the data you want to create.</p>
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub row_level_permission_tag_configuration: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
+    pub column_level_permission_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameter declarations of the dataset.</p>
-    pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    pub dataset_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>>,
 }
-impl UpdateDataSetInput {
+impl  UpdateDataSetInput  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The display name for the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub fn physical_table_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
+    pub fn physical_table_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>> {
         self.physical_table_map.as_ref()
     }
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub fn logical_table_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>> {
+    pub fn logical_table_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>> {
         self.logical_table_map.as_ref()
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
-    pub fn import_mode(&self) -> ::std::option::Option<&crate::types::DataSetImportMode> {
+    pub fn import_mode(&self) -> ::std::option::Option<& crate::types::DataSetImportMode> {
         self.import_mode.as_ref()
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_groups.is_none()`.
-    pub fn column_groups(&self) -> &[crate::types::ColumnGroup] {
-        self.column_groups.as_deref().unwrap_or_default()
+    pub fn column_groups(&self) -> & [crate::types::ColumnGroup] {
+        self.column_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub fn field_folders(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
+    pub fn field_folders(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>> {
         self.field_folders.as_ref()
     }
     /// <p>The row-level security configuration for the data you want to create.</p>
-    pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
+    pub fn row_level_permission_data_set(&self) -> ::std::option::Option<& crate::types::RowLevelPermissionDataSet> {
         self.row_level_permission_data_set.as_ref()
     }
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    pub fn row_level_permission_tag_configuration(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionTagConfiguration> {
+    pub fn row_level_permission_tag_configuration(&self) -> ::std::option::Option<& crate::types::RowLevelPermissionTagConfiguration> {
         self.row_level_permission_tag_configuration.as_ref()
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_level_permission_rules.is_none()`.
-    pub fn column_level_permission_rules(&self) -> &[crate::types::ColumnLevelPermissionRule] {
-        self.column_level_permission_rules.as_deref().unwrap_or_default()
+    pub fn column_level_permission_rules(&self) -> & [crate::types::ColumnLevelPermissionRule] {
+        self.column_level_permission_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
-    pub fn data_set_usage_configuration(&self) -> ::std::option::Option<&crate::types::DataSetUsageConfiguration> {
+    pub fn data_set_usage_configuration(&self) -> ::std::option::Option<& crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
     /// <p>The parameter declarations of the dataset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_parameters.is_none()`.
-    pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
-        self.dataset_parameters.as_deref().unwrap_or_default()
+    pub fn dataset_parameters(&self) -> & [crate::types::DatasetParameter] {
+        self.dataset_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateDataSetInput {
@@ -104,16 +107,16 @@ pub struct UpdateDataSetInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) physical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
-    pub(crate) logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
+    pub(crate) physical_table_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>>,
+    pub(crate) logical_table_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>>,
     pub(crate) import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
-    pub(crate) column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
-    pub(crate) field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
+    pub(crate) column_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>>,
+    pub(crate) field_folders: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>>,
     pub(crate) row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     pub(crate) row_level_permission_tag_configuration: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
-    pub(crate) column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
+    pub(crate) column_level_permission_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>>,
     pub(crate) data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
-    pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>>,
 }
 impl UpdateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -124,8 +127,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +141,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +155,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The display name for the dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name for the dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,20 +168,16 @@ impl UpdateDataSetInputBuilder {
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
     pub fn physical_table_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PhysicalTable) -> Self {
         let mut hash_map = self.physical_table_map.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.physical_table_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.physical_table_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub fn set_physical_table_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
-    ) -> Self {
-        self.physical_table_map = input;
-        self
+    pub fn set_physical_table_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>>) -> Self {
+        self.physical_table_map = input; self
     }
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
+    pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>> {
         &self.physical_table_map
     }
     /// Adds a key-value pair to `logical_table_map`.
@@ -191,20 +187,16 @@ impl UpdateDataSetInputBuilder {
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
     pub fn logical_table_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::LogicalTable) -> Self {
         let mut hash_map = self.logical_table_map.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.logical_table_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.logical_table_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub fn set_logical_table_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
-    ) -> Self {
-        self.logical_table_map = input;
-        self
+    pub fn set_logical_table_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>>) -> Self {
+        self.logical_table_map = input; self
     }
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub fn get_logical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>> {
+    pub fn get_logical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>> {
         &self.logical_table_map
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
@@ -215,8 +207,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::DataSetImportMode>) -> Self {
-        self.import_mode = input;
-        self
+        self.import_mode = input; self
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
@@ -229,17 +220,16 @@ impl UpdateDataSetInputBuilder {
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn column_groups(mut self, input: crate::types::ColumnGroup) -> Self {
         let mut v = self.column_groups.unwrap_or_default();
-        v.push(input);
-        self.column_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>) -> Self {
-        self.column_groups = input;
-        self
+    pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>>) -> Self {
+        self.column_groups = input; self
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
+    pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>> {
         &self.column_groups
     }
     /// Adds a key-value pair to `field_folders`.
@@ -249,20 +239,16 @@ impl UpdateDataSetInputBuilder {
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub fn field_folders(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FieldFolder) -> Self {
         let mut hash_map = self.field_folders.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.field_folders = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.field_folders = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub fn set_field_folders(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
-    ) -> Self {
-        self.field_folders = input;
-        self
+    pub fn set_field_folders(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>>) -> Self {
+        self.field_folders = input; self
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub fn get_field_folders(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
+    pub fn get_field_folders(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>> {
         &self.field_folders
     }
     /// <p>The row-level security configuration for the data you want to create.</p>
@@ -272,8 +258,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The row-level security configuration for the data you want to create.</p>
     pub fn set_row_level_permission_data_set(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>) -> Self {
-        self.row_level_permission_data_set = input;
-        self
+        self.row_level_permission_data_set = input; self
     }
     /// <p>The row-level security configuration for the data you want to create.</p>
     pub fn get_row_level_permission_data_set(&self) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
@@ -285,12 +270,8 @@ impl UpdateDataSetInputBuilder {
         self
     }
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    pub fn set_row_level_permission_tag_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
-    ) -> Self {
-        self.row_level_permission_tag_configuration = input;
-        self
+    pub fn set_row_level_permission_tag_configuration(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>) -> Self {
+        self.row_level_permission_tag_configuration = input; self
     }
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub fn get_row_level_permission_tag_configuration(&self) -> &::std::option::Option<crate::types::RowLevelPermissionTagConfiguration> {
@@ -303,20 +284,16 @@ impl UpdateDataSetInputBuilder {
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub fn column_level_permission_rules(mut self, input: crate::types::ColumnLevelPermissionRule) -> Self {
         let mut v = self.column_level_permission_rules.unwrap_or_default();
-        v.push(input);
-        self.column_level_permission_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_level_permission_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn set_column_level_permission_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
-    ) -> Self {
-        self.column_level_permission_rules = input;
-        self
+    pub fn set_column_level_permission_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>>) -> Self {
+        self.column_level_permission_rules = input; self
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn get_column_level_permission_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>> {
+    pub fn get_column_level_permission_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>> {
         &self.column_level_permission_rules
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -326,8 +303,7 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn set_data_set_usage_configuration(mut self, input: ::std::option::Option<crate::types::DataSetUsageConfiguration>) -> Self {
-        self.data_set_usage_configuration = input;
-        self
+        self.data_set_usage_configuration = input; self
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn get_data_set_usage_configuration(&self) -> &::std::option::Option<crate::types::DataSetUsageConfiguration> {
@@ -340,37 +316,50 @@ impl UpdateDataSetInputBuilder {
     /// <p>The parameter declarations of the dataset.</p>
     pub fn dataset_parameters(mut self, input: crate::types::DatasetParameter) -> Self {
         let mut v = self.dataset_parameters.unwrap_or_default();
-        v.push(input);
-        self.dataset_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dataset_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter declarations of the dataset.</p>
-    pub fn set_dataset_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>) -> Self {
-        self.dataset_parameters = input;
-        self
+    pub fn set_dataset_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>>) -> Self {
+        self.dataset_parameters = input; self
     }
     /// <p>The parameter declarations of the dataset.</p>
-    pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
+    pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>> {
         &self.dataset_parameters
     }
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_set::UpdateDataSetInput {
-            aws_account_id: self.aws_account_id,
-            data_set_id: self.data_set_id,
-            name: self.name,
-            physical_table_map: self.physical_table_map,
-            logical_table_map: self.logical_table_map,
-            import_mode: self.import_mode,
-            column_groups: self.column_groups,
-            field_folders: self.field_folders,
-            row_level_permission_data_set: self.row_level_permission_data_set,
-            row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
-            column_level_permission_rules: self.column_level_permission_rules,
-            data_set_usage_configuration: self.data_set_usage_configuration,
-            dataset_parameters: self.dataset_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_set::UpdateDataSetInput {
+                aws_account_id: self.aws_account_id
+                ,
+                data_set_id: self.data_set_id
+                ,
+                name: self.name
+                ,
+                physical_table_map: self.physical_table_map
+                ,
+                logical_table_map: self.logical_table_map
+                ,
+                import_mode: self.import_mode
+                ,
+                column_groups: self.column_groups
+                ,
+                field_folders: self.field_folders
+                ,
+                row_level_permission_data_set: self.row_level_permission_data_set
+                ,
+                row_level_permission_tag_configuration: self.row_level_permission_tag_configuration
+                ,
+                column_level_permission_rules: self.column_level_permission_rules
+                ,
+                data_set_usage_configuration: self.data_set_usage_configuration
+                ,
+                dataset_parameters: self.dataset_parameters
+                ,
+            }
+        )
     }
 }
+

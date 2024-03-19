@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventOutput {
+pub struct GetEventOutput  {
     /// <p>The details of the event.</p>
     pub event: ::std::option::Option<crate::types::Event>,
     _request_id: Option<String>,
 }
-impl GetEventOutput {
+impl  GetEventOutput  {
     /// <p>The details of the event.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::Event> {
         self.event.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEventOutput {
     /// Creates a new builder-style object to manufacture [`GetEventOutput`](crate::operation::get_event::GetEventOutput).
     pub fn builder() -> crate::operation::get_event::builders::GetEventOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEventOutputBuilder {
     }
     /// <p>The details of the event.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The details of the event.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
         &self.event
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEventOutput`](crate::operation::get_event::GetEventOutput).
     pub fn build(self) -> crate::operation::get_event::GetEventOutput {
         crate::operation::get_event::GetEventOutput {
-            event: self.event,
+            event: self.event
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

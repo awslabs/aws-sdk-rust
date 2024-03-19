@@ -3,11 +3,11 @@
 /// <p>Specifies the configuration for cold storage options such as enabled</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColdStorageOptions {
+pub struct ColdStorageOptions  {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub enabled: bool,
 }
-impl ColdStorageOptions {
+impl  ColdStorageOptions  {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -35,8 +35,7 @@ impl ColdStorageOptionsBuilder {
     }
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl ColdStorageOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::ColdStorageOptionsBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::ColdStorageOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColdStorageOptions {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building ColdStorageOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColdStorageOptions {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building ColdStorageOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

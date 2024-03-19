@@ -3,13 +3,13 @@
 /// Webvtt Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WebvttDestinationSettings {
+pub struct WebvttDestinationSettings  {
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     pub style_control: ::std::option::Option<crate::types::WebvttDestinationStyleControl>,
 }
-impl WebvttDestinationSettings {
+impl  WebvttDestinationSettings  {
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
-    pub fn style_control(&self) -> ::std::option::Option<&crate::types::WebvttDestinationStyleControl> {
+    pub fn style_control(&self) -> ::std::option::Option<& crate::types::WebvttDestinationStyleControl> {
         self.style_control.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl WebvttDestinationSettingsBuilder {
     }
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     pub fn set_style_control(mut self, input: ::std::option::Option<crate::types::WebvttDestinationStyleControl>) -> Self {
-        self.style_control = input;
-        self
+        self.style_control = input; self
     }
     /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions. PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT. NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
     pub fn get_style_control(&self) -> &::std::option::Option<crate::types::WebvttDestinationStyleControl> {
@@ -44,7 +43,9 @@ impl WebvttDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::types::WebvttDestinationSettings).
     pub fn build(self) -> crate::types::WebvttDestinationSettings {
         crate::types::WebvttDestinationSettings {
-            style_control: self.style_control,
+            style_control: self.style_control
+            ,
         }
     }
 }
+

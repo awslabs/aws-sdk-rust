@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssessmentReportInput {
+pub struct GetAssessmentReportInput  {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
@@ -10,17 +10,17 @@ pub struct GetAssessmentReportInput {
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub report_type: ::std::option::Option<crate::types::ReportType>,
 }
-impl GetAssessmentReportInput {
+impl  GetAssessmentReportInput  {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    pub fn report_file_format(&self) -> ::std::option::Option<&crate::types::ReportFileFormat> {
+    pub fn report_file_format(&self) -> ::std::option::Option<& crate::types::ReportFileFormat> {
         self.report_file_format.as_ref()
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
-    pub fn report_type(&self) -> ::std::option::Option<&crate::types::ReportType> {
+    pub fn report_type(&self) -> ::std::option::Option<& crate::types::ReportType> {
         self.report_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GetAssessmentReportInputBuilder {
     }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_run_arn = input;
-        self
+        self.assessment_run_arn = input; self
     }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetAssessmentReportInputBuilder {
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
     pub fn set_report_file_format(mut self, input: ::std::option::Option<crate::types::ReportFileFormat>) -> Self {
-        self.report_file_format = input;
-        self
+        self.report_file_format = input; self
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
     pub fn get_report_file_format(&self) -> &::std::option::Option<crate::types::ReportFileFormat> {
@@ -78,22 +76,24 @@ impl GetAssessmentReportInputBuilder {
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
-        self.report_type = input;
-        self
+        self.report_type = input; self
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
         &self.report_type
     }
     /// Consumes the builder and constructs a [`GetAssessmentReportInput`](crate::operation::get_assessment_report::GetAssessmentReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_assessment_report::GetAssessmentReportInput {
-            assessment_run_arn: self.assessment_run_arn,
-            report_file_format: self.report_file_format,
-            report_type: self.report_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_assessment_report::GetAssessmentReportInput {
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                report_file_format: self.report_file_format
+                ,
+                report_type: self.report_type
+                ,
+            }
+        )
     }
 }
+

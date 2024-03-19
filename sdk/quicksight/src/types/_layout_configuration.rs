@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayoutConfiguration {
+pub struct LayoutConfiguration  {
     /// <p>A type of layout that can be used on a sheet. In a grid layout, visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size. A grid layout can be configured to behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.</p>
     pub grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
     /// <p>A free-form is optimized for a fixed width and has more control over the exact placement of layout elements.</p>
@@ -12,17 +12,17 @@ pub struct LayoutConfiguration {
     /// <p>A section based layout organizes visuals into multiple sections and has customized header, footer and page break.</p>
     pub section_based_layout: ::std::option::Option<crate::types::SectionBasedLayoutConfiguration>,
 }
-impl LayoutConfiguration {
+impl  LayoutConfiguration  {
     /// <p>A type of layout that can be used on a sheet. In a grid layout, visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size. A grid layout can be configured to behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.</p>
-    pub fn grid_layout(&self) -> ::std::option::Option<&crate::types::GridLayoutConfiguration> {
+    pub fn grid_layout(&self) -> ::std::option::Option<& crate::types::GridLayoutConfiguration> {
         self.grid_layout.as_ref()
     }
     /// <p>A free-form is optimized for a fixed width and has more control over the exact placement of layout elements.</p>
-    pub fn free_form_layout(&self) -> ::std::option::Option<&crate::types::FreeFormLayoutConfiguration> {
+    pub fn free_form_layout(&self) -> ::std::option::Option<& crate::types::FreeFormLayoutConfiguration> {
         self.free_form_layout.as_ref()
     }
     /// <p>A section based layout organizes visuals into multiple sections and has customized header, footer and page break.</p>
-    pub fn section_based_layout(&self) -> ::std::option::Option<&crate::types::SectionBasedLayoutConfiguration> {
+    pub fn section_based_layout(&self) -> ::std::option::Option<& crate::types::SectionBasedLayoutConfiguration> {
         self.section_based_layout.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>A type of layout that can be used on a sheet. In a grid layout, visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size. A grid layout can be configured to behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.</p>
     pub fn set_grid_layout(mut self, input: ::std::option::Option<crate::types::GridLayoutConfiguration>) -> Self {
-        self.grid_layout = input;
-        self
+        self.grid_layout = input; self
     }
     /// <p>A type of layout that can be used on a sheet. In a grid layout, visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size. A grid layout can be configured to behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.</p>
     pub fn get_grid_layout(&self) -> &::std::option::Option<crate::types::GridLayoutConfiguration> {
@@ -63,8 +62,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>A free-form is optimized for a fixed width and has more control over the exact placement of layout elements.</p>
     pub fn set_free_form_layout(mut self, input: ::std::option::Option<crate::types::FreeFormLayoutConfiguration>) -> Self {
-        self.free_form_layout = input;
-        self
+        self.free_form_layout = input; self
     }
     /// <p>A free-form is optimized for a fixed width and has more control over the exact placement of layout elements.</p>
     pub fn get_free_form_layout(&self) -> &::std::option::Option<crate::types::FreeFormLayoutConfiguration> {
@@ -77,8 +75,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>A section based layout organizes visuals into multiple sections and has customized header, footer and page break.</p>
     pub fn set_section_based_layout(mut self, input: ::std::option::Option<crate::types::SectionBasedLayoutConfiguration>) -> Self {
-        self.section_based_layout = input;
-        self
+        self.section_based_layout = input; self
     }
     /// <p>A section based layout organizes visuals into multiple sections and has customized header, footer and page break.</p>
     pub fn get_section_based_layout(&self) -> &::std::option::Option<crate::types::SectionBasedLayoutConfiguration> {
@@ -87,9 +84,13 @@ impl LayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`LayoutConfiguration`](crate::types::LayoutConfiguration).
     pub fn build(self) -> crate::types::LayoutConfiguration {
         crate::types::LayoutConfiguration {
-            grid_layout: self.grid_layout,
-            free_form_layout: self.free_form_layout,
-            section_based_layout: self.section_based_layout,
+            grid_layout: self.grid_layout
+            ,
+            free_form_layout: self.free_form_layout
+            ,
+            section_based_layout: self.section_based_layout
+            ,
         }
     }
 }
+

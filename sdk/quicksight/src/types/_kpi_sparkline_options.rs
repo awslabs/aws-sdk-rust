@@ -3,7 +3,7 @@
 /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiSparklineOptions {
+pub struct KpiSparklineOptions  {
     /// <p>The visibility of the sparkline.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The type of the sparkline.</p>
@@ -13,21 +13,21 @@ pub struct KpiSparklineOptions {
     /// <p>The tooltip visibility of the sparkline.</p>
     pub tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl KpiSparklineOptions {
+impl  KpiSparklineOptions  {
     /// <p>The visibility of the sparkline.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The type of the sparkline.</p>
-    pub fn r#type(&self) -> &crate::types::KpiSparklineType {
+    pub fn r#type(&self) -> & crate::types::KpiSparklineType {
         &self.r#type
     }
     /// <p>The color of the sparkline.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>The tooltip visibility of the sparkline.</p>
-    pub fn tooltip_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn tooltip_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.tooltip_visibility.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl KpiSparklineOptionsBuilder {
     }
     /// <p>The visibility of the sparkline.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the sparkline.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -70,8 +69,7 @@ impl KpiSparklineOptionsBuilder {
     }
     /// <p>The type of the sparkline.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KpiSparklineType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the sparkline.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KpiSparklineType> {
@@ -84,8 +82,7 @@ impl KpiSparklineOptionsBuilder {
     }
     /// <p>The color of the sparkline.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The color of the sparkline.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl KpiSparklineOptionsBuilder {
     }
     /// <p>The tooltip visibility of the sparkline.</p>
     pub fn set_tooltip_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.tooltip_visibility = input;
-        self
+        self.tooltip_visibility = input; self
     }
     /// <p>The tooltip visibility of the sparkline.</p>
     pub fn get_tooltip_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -109,16 +105,21 @@ impl KpiSparklineOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::KpiSparklineOptionsBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::KpiSparklineOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KpiSparklineOptions {
-            visibility: self.visibility,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building KpiSparklineOptions",
-                )
-            })?,
-            color: self.color,
-            tooltip_visibility: self.tooltip_visibility,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KpiSparklineOptions {
+                visibility: self.visibility
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building KpiSparklineOptions")
+                    )?
+                ,
+                color: self.color
+                ,
+                tooltip_visibility: self.tooltip_visibility
+                ,
+            }
+        )
     }
 }
+

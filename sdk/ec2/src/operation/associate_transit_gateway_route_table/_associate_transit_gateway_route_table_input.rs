@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTransitGatewayRouteTableInput {
+pub struct AssociateTransitGatewayRouteTableInput  {
     /// <p>The ID of the transit gateway route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment.</p>
@@ -10,13 +10,13 @@ pub struct AssociateTransitGatewayRouteTableInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl AssociateTransitGatewayRouteTableInput {
+impl  AssociateTransitGatewayRouteTableInput  {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl AssociateTransitGatewayRouteTableInputBuilder {
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AssociateTransitGatewayRouteTableInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl AssociateTransitGatewayRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayRouteTableInput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

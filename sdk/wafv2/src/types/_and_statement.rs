@@ -3,15 +3,14 @@
 /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AndStatement {
+pub struct AndStatement  {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested.</p>
-    pub statements: ::std::vec::Vec<crate::types::Statement>,
+    pub statements: ::std::vec::Vec::<crate::types::Statement>,
 }
-impl AndStatement {
+impl  AndStatement  {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested.</p>
-    pub fn statements(&self) -> &[crate::types::Statement] {
-        use std::ops::Deref;
-        self.statements.deref()
+    pub fn statements(&self) -> & [crate::types::Statement] {
+        use std::ops::Deref; self.statements.deref()
     }
 }
 impl AndStatement {
@@ -25,7 +24,7 @@ impl AndStatement {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AndStatementBuilder {
-    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec::<crate::types::Statement>>,
 }
 impl AndStatementBuilder {
     /// Appends an item to `statements`.
@@ -35,30 +34,31 @@ impl AndStatementBuilder {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested.</p>
     pub fn statements(mut self, input: crate::types::Statement) -> Self {
         let mut v = self.statements.unwrap_or_default();
-        v.push(input);
-        self.statements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested.</p>
-    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>) -> Self {
-        self.statements = input;
-        self
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Statement>>) -> Self {
+        self.statements = input; self
     }
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested.</p>
-    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Statement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Statement>> {
         &self.statements
     }
     /// Consumes the builder and constructs a [`AndStatement`](crate::types::AndStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`statements`](crate::types::builders::AndStatementBuilder::statements)
     pub fn build(self) -> ::std::result::Result<crate::types::AndStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AndStatement {
-            statements: self.statements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statements",
-                    "statements was not specified but it is required when building AndStatement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AndStatement {
+                statements: self.statements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statements", "statements was not specified but it is required when building AndStatement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

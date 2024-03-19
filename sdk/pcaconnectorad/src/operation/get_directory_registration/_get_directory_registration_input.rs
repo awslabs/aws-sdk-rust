@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDirectoryRegistrationInput {
+pub struct GetDirectoryRegistrationInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub directory_registration_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetDirectoryRegistrationInput {
+impl  GetDirectoryRegistrationInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
-    pub fn directory_registration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_registration_arn(&self) -> ::std::option::Option<& str> {
         self.directory_registration_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetDirectoryRegistrationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn set_directory_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_registration_arn = input;
-        self
+        self.directory_registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn get_directory_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_registration_arn
     }
     /// Consumes the builder and constructs a [`GetDirectoryRegistrationInput`](crate::operation::get_directory_registration::GetDirectoryRegistrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_directory_registration::GetDirectoryRegistrationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_directory_registration::GetDirectoryRegistrationInput {
-            directory_registration_arn: self.directory_registration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_directory_registration::GetDirectoryRegistrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_directory_registration::GetDirectoryRegistrationInput {
+                directory_registration_arn: self.directory_registration_arn
+                ,
+            }
+        )
     }
 }
+

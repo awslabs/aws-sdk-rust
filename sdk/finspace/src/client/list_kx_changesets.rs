@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKxChangesets`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the kdb database.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
-    /// - On success, responds with [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput) with field(s):
+                            /// - On success, responds with [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput) with field(s):
     ///   - [`kx_changesets(Option<Vec::<KxChangesetListEntry>>)`](crate::operation::list_kx_changesets::ListKxChangesetsOutput::kx_changesets): <p>A list of changesets for a database.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_changesets::ListKxChangesetsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    /// - On failure, responds with [`SdkError<ListKxChangesetsError>`](crate::operation::list_kx_changesets::ListKxChangesetsError)
+                            /// - On failure, responds with [`SdkError<ListKxChangesetsError>`](crate::operation::list_kx_changesets::ListKxChangesetsError)
     pub fn list_kx_changesets(&self) -> crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder {
-        crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_kx_changesets::builders::ListKxChangesetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

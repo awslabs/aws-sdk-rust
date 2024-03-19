@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceFleetInput {
+pub struct ModifyInstanceFleetInput  {
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration parameters of the instance fleet.</p>
     pub instance_fleet: ::std::option::Option<crate::types::InstanceFleetModifyConfig>,
 }
-impl ModifyInstanceFleetInput {
+impl  ModifyInstanceFleetInput  {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The configuration parameters of the instance fleet.</p>
-    pub fn instance_fleet(&self) -> ::std::option::Option<&crate::types::InstanceFleetModifyConfig> {
+    pub fn instance_fleet(&self) -> ::std::option::Option<& crate::types::InstanceFleetModifyConfig> {
         self.instance_fleet.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyInstanceFleetInputBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ModifyInstanceFleetInputBuilder {
     }
     /// <p>The configuration parameters of the instance fleet.</p>
     pub fn set_instance_fleet(mut self, input: ::std::option::Option<crate::types::InstanceFleetModifyConfig>) -> Self {
-        self.instance_fleet = input;
-        self
+        self.instance_fleet = input; self
     }
     /// <p>The configuration parameters of the instance fleet.</p>
     pub fn get_instance_fleet(&self) -> &::std::option::Option<crate::types::InstanceFleetModifyConfig> {
         &self.instance_fleet
     }
     /// Consumes the builder and constructs a [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
-            cluster_id: self.cluster_id,
-            instance_fleet: self.instance_fleet,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
+                cluster_id: self.cluster_id
+                ,
+                instance_fleet: self.instance_fleet
+                ,
+            }
+        )
     }
 }
+

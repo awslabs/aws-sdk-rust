@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserProfileInput {
+pub struct CreateUserProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user for which the user profile is created.</p>
@@ -12,21 +12,21 @@ pub struct CreateUserProfileInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateUserProfileInput {
+impl  CreateUserProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the user for which the user profile is created.</p>
-    pub fn user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn user_identifier(&self) -> ::std::option::Option<& str> {
         self.user_identifier.as_deref()
     }
     /// <p>The user type of the user for which the user profile is created.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>The identifier of the user for which the user profile is created.</p>
     pub fn set_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_identifier = input;
-        self
+        self.user_identifier = input; self
     }
     /// <p>The identifier of the user for which the user profile is created.</p>
     pub fn get_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>The user type of the user for which the user profile is created.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>The user type of the user for which the user profile is created.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -98,22 +95,26 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
-            domain_identifier: self.domain_identifier,
-            user_identifier: self.user_identifier,
-            user_type: self.user_type,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_user_profile::CreateUserProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                user_identifier: self.user_identifier
+                ,
+                user_type: self.user_type
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

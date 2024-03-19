@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRoleAliasOutput {
+pub struct DescribeRoleAliasOutput  {
     /// <p>The role alias description.</p>
     pub role_alias_description: ::std::option::Option<crate::types::RoleAliasDescription>,
     _request_id: Option<String>,
 }
-impl DescribeRoleAliasOutput {
+impl  DescribeRoleAliasOutput  {
     /// <p>The role alias description.</p>
-    pub fn role_alias_description(&self) -> ::std::option::Option<&crate::types::RoleAliasDescription> {
+    pub fn role_alias_description(&self) -> ::std::option::Option<& crate::types::RoleAliasDescription> {
         self.role_alias_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRoleAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRoleAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput).
     pub fn builder() -> crate::operation::describe_role_alias::builders::DescribeRoleAliasOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeRoleAliasOutputBuilder {
     }
     /// <p>The role alias description.</p>
     pub fn set_role_alias_description(mut self, input: ::std::option::Option<crate::types::RoleAliasDescription>) -> Self {
-        self.role_alias_description = input;
-        self
+        self.role_alias_description = input; self
     }
     /// <p>The role alias description.</p>
     pub fn get_role_alias_description(&self) -> &::std::option::Option<crate::types::RoleAliasDescription> {
         &self.role_alias_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput).
     pub fn build(self) -> crate::operation::describe_role_alias::DescribeRoleAliasOutput {
         crate::operation::describe_role_alias::DescribeRoleAliasOutput {
-            role_alias_description: self.role_alias_description,
+            role_alias_description: self.role_alias_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

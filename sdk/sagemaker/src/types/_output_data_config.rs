@@ -3,7 +3,7 @@
 /// <p>Provides information about how to store model training results (model artifacts).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputDataConfig {
+pub struct OutputDataConfig  {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct OutputDataConfig {
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
     pub compression_type: ::std::option::Option<crate::types::OutputCompressionType>,
 }
-impl OutputDataConfig {
+impl  OutputDataConfig  {
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
     /// <li>
@@ -45,15 +45,15 @@ impl OutputDataConfig {
     /// </ul>
     /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3 Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is not supported for Amazon S3 Express One Zone</p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
-    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::OutputCompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<& crate::types::OutputCompressionType> {
         self.compression_type.as_ref()
     }
 }
@@ -112,8 +112,7 @@ impl OutputDataConfigBuilder {
     /// <p>If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3 Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is not supported for Amazon S3 Express One Zone</p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
@@ -143,8 +142,7 @@ impl OutputDataConfigBuilder {
     }
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl OutputDataConfigBuilder {
     }
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
     pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::OutputCompressionType>) -> Self {
-        self.compression_type = input;
-        self
+        self.compression_type = input; self
     }
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
     pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::OutputCompressionType> {
@@ -167,9 +164,13 @@ impl OutputDataConfigBuilder {
     /// Consumes the builder and constructs a [`OutputDataConfig`](crate::types::OutputDataConfig).
     pub fn build(self) -> crate::types::OutputDataConfig {
         crate::types::OutputDataConfig {
-            kms_key_id: self.kms_key_id,
-            s3_output_path: self.s3_output_path,
-            compression_type: self.compression_type,
+            kms_key_id: self.kms_key_id
+            ,
+            s3_output_path: self.s3_output_path
+            ,
+            compression_type: self.compression_type
+            ,
         }
     }
 }
+

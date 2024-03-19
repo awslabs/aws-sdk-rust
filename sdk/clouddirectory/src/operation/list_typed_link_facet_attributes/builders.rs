@@ -5,54 +5,50 @@ pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_fac
 
 impl ListTypedLinkFacetAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_typed_link_facet_attributes();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_typed_link_facet_attributes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListTypedLinkFacetAttributes`.
-///
+/// 
 /// <p>Returns a paginated list of all attribute definitions for a particular <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder,
+                    inner: crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-    > for ListTypedLinkFacetAttributesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
+                    crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
+                > for ListTypedLinkFacetAttributesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
+                        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListTypedLinkFacetAttributesFluentBuilder {
     /// Creates a new `ListTypedLinkFacetAttributes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
-        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput, crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator {
-        crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator {
+                                crate::operation::list_typed_link_facet_attributes::paginator::ListTypedLinkFacetAttributesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -171,3 +158,4 @@ impl ListTypedLinkFacetAttributesFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

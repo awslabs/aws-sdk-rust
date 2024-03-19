@@ -5,7 +5,7 @@
 /// <p>Amazon Kendra cannot create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly created metadata field to your index field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeCondition {
+pub struct DocumentAttributeCondition  {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
@@ -17,22 +17,21 @@ pub struct DocumentAttributeCondition {
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub condition_on_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
-impl DocumentAttributeCondition {
+impl  DocumentAttributeCondition  {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn condition_document_attribute_key(&self) -> &str {
-        use std::ops::Deref;
-        self.condition_document_attribute_key.deref()
+    pub fn condition_document_attribute_key(&self) -> & str {
+        use std::ops::Deref; self.condition_document_attribute_key.deref()
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    pub fn operator(&self) -> &crate::types::ConditionOperator {
+    pub fn operator(&self) -> & crate::types::ConditionOperator {
         &self.operator
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    pub fn condition_on_value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn condition_on_value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.condition_on_value.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn set_condition_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_document_attribute_key = input;
-        self
+        self.condition_document_attribute_key = input; self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
@@ -83,8 +81,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ConditionOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
@@ -100,8 +97,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub fn set_condition_on_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.condition_on_value = input;
-        self
+        self.condition_on_value = input; self
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
@@ -113,20 +109,22 @@ impl DocumentAttributeConditionBuilder {
     /// - [`condition_document_attribute_key`](crate::types::builders::DocumentAttributeConditionBuilder::condition_document_attribute_key)
     /// - [`operator`](crate::types::builders::DocumentAttributeConditionBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentAttributeCondition {
-            condition_document_attribute_key: self.condition_document_attribute_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_document_attribute_key",
-                    "condition_document_attribute_key was not specified but it is required when building DocumentAttributeCondition",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building DocumentAttributeCondition",
-                )
-            })?,
-            condition_on_value: self.condition_on_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentAttributeCondition {
+                condition_document_attribute_key: self.condition_document_attribute_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition_document_attribute_key", "condition_document_attribute_key was not specified but it is required when building DocumentAttributeCondition")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building DocumentAttributeCondition")
+                    )?
+                ,
+                condition_on_value: self.condition_on_value
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A variable declared at the pipeline level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineVariableDeclaration {
+pub struct PipelineVariableDeclaration  {
     /// <p>The name of a pipeline-level variable.</p>
     pub name: ::std::string::String,
     /// <p>The value of a pipeline-level variable.</p>
@@ -11,18 +11,17 @@ pub struct PipelineVariableDeclaration {
     /// <p>The description of a pipeline-level variable. It's used to add additional context about the variable, and not being used at time when pipeline executes.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PipelineVariableDeclaration {
+impl  PipelineVariableDeclaration  {
     /// <p>The name of a pipeline-level variable.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of a pipeline-level variable.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The description of a pipeline-level variable. It's used to add additional context about the variable, and not being used at time when pipeline executes.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl PipelineVariableDeclarationBuilder {
     }
     /// <p>The name of a pipeline-level variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a pipeline-level variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl PipelineVariableDeclarationBuilder {
     }
     /// <p>The value of a pipeline-level variable.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The value of a pipeline-level variable.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl PipelineVariableDeclarationBuilder {
     }
     /// <p>The description of a pipeline-level variable. It's used to add additional context about the variable, and not being used at time when pipeline executes.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a pipeline-level variable. It's used to add additional context about the variable, and not being used at time when pipeline executes.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl PipelineVariableDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PipelineVariableDeclarationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::PipelineVariableDeclaration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipelineVariableDeclaration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PipelineVariableDeclaration",
-                )
-            })?,
-            default_value: self.default_value,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipelineVariableDeclaration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PipelineVariableDeclaration")
+                    )?
+                ,
+                default_value: self.default_value
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

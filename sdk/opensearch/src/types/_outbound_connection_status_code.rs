@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outboundconnectionstatuscode = unimplemented!();
 /// match outboundconnectionstatuscode {
@@ -38,16 +38,14 @@
 /// Specifically, when `outboundconnectionstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutboundConnectionStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum OutboundConnectionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -71,96 +69,86 @@ pub enum OutboundConnectionStatusCode {
     ValidationFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for OutboundConnectionStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => OutboundConnectionStatusCode::Active,
-            "APPROVED" => OutboundConnectionStatusCode::Approved,
-            "DELETED" => OutboundConnectionStatusCode::Deleted,
-            "DELETING" => OutboundConnectionStatusCode::Deleting,
-            "PENDING_ACCEPTANCE" => OutboundConnectionStatusCode::PendingAcceptance,
-            "PROVISIONING" => OutboundConnectionStatusCode::Provisioning,
-            "REJECTED" => OutboundConnectionStatusCode::Rejected,
-            "REJECTING" => OutboundConnectionStatusCode::Rejecting,
-            "VALIDATING" => OutboundConnectionStatusCode::Validating,
-            "VALIDATION_FAILED" => OutboundConnectionStatusCode::ValidationFailed,
-            other => OutboundConnectionStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE" => OutboundConnectionStatusCode::Active,
+"APPROVED" => OutboundConnectionStatusCode::Approved,
+"DELETED" => OutboundConnectionStatusCode::Deleted,
+"DELETING" => OutboundConnectionStatusCode::Deleting,
+"PENDING_ACCEPTANCE" => OutboundConnectionStatusCode::PendingAcceptance,
+"PROVISIONING" => OutboundConnectionStatusCode::Provisioning,
+"REJECTED" => OutboundConnectionStatusCode::Rejected,
+"REJECTING" => OutboundConnectionStatusCode::Rejecting,
+"VALIDATING" => OutboundConnectionStatusCode::Validating,
+"VALIDATION_FAILED" => OutboundConnectionStatusCode::ValidationFailed,
+other => OutboundConnectionStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for OutboundConnectionStatusCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(OutboundConnectionStatusCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(OutboundConnectionStatusCode::from(s))
+                    }
+                }
 impl OutboundConnectionStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OutboundConnectionStatusCode::Active => "ACTIVE",
-            OutboundConnectionStatusCode::Approved => "APPROVED",
-            OutboundConnectionStatusCode::Deleted => "DELETED",
-            OutboundConnectionStatusCode::Deleting => "DELETING",
-            OutboundConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
-            OutboundConnectionStatusCode::Provisioning => "PROVISIONING",
-            OutboundConnectionStatusCode::Rejected => "REJECTED",
-            OutboundConnectionStatusCode::Rejecting => "REJECTING",
-            OutboundConnectionStatusCode::Validating => "VALIDATING",
-            OutboundConnectionStatusCode::ValidationFailed => "VALIDATION_FAILED",
-            OutboundConnectionStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "APPROVED",
-            "DELETED",
-            "DELETING",
-            "PENDING_ACCEPTANCE",
-            "PROVISIONING",
-            "REJECTED",
-            "REJECTING",
-            "VALIDATING",
-            "VALIDATION_FAILED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OutboundConnectionStatusCode::Active => "ACTIVE",
+    OutboundConnectionStatusCode::Approved => "APPROVED",
+    OutboundConnectionStatusCode::Deleted => "DELETED",
+    OutboundConnectionStatusCode::Deleting => "DELETING",
+    OutboundConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
+    OutboundConnectionStatusCode::Provisioning => "PROVISIONING",
+    OutboundConnectionStatusCode::Rejected => "REJECTED",
+    OutboundConnectionStatusCode::Rejecting => "REJECTING",
+    OutboundConnectionStatusCode::Validating => "VALIDATING",
+    OutboundConnectionStatusCode::ValidationFailed => "VALIDATION_FAILED",
+    OutboundConnectionStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "APPROVED", "DELETED", "DELETING", "PENDING_ACCEPTANCE", "PROVISIONING", "REJECTED", "REJECTING", "VALIDATING", "VALIDATION_FAILED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for OutboundConnectionStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl OutboundConnectionStatusCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for OutboundConnectionStatusCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            OutboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
-            OutboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
-            OutboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
-            OutboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
-            OutboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
-            OutboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
-            OutboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
-            OutboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
-            OutboundConnectionStatusCode::Validating => write!(f, "VALIDATING"),
-            OutboundConnectionStatusCode::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            OutboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                OutboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
+OutboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
+OutboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
+OutboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
+OutboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+OutboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
+OutboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
+OutboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
+OutboundConnectionStatusCode::Validating => write!(f, "VALIDATING"),
+OutboundConnectionStatusCode::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+OutboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

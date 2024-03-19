@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePublishingDestinationInput {
+pub struct DescribePublishingDestinationInput  {
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribePublishingDestinationInput {
+impl  DescribePublishingDestinationInput  {
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_id(&self) -> ::std::option::Option<& str> {
         self.destination_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribePublishingDestinationInputBuilder {
     }
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribePublishingDestinationInputBuilder {
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_id
     }
     /// Consumes the builder and constructs a [`DescribePublishingDestinationInput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_publishing_destination::DescribePublishingDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_publishing_destination::DescribePublishingDestinationInput {
-            detector_id: self.detector_id,
-            destination_id: self.destination_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_publishing_destination::DescribePublishingDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_publishing_destination::DescribePublishingDestinationInput {
+                detector_id: self.detector_id
+                ,
+                destination_id: self.destination_id
+                ,
+            }
+        )
     }
 }
+

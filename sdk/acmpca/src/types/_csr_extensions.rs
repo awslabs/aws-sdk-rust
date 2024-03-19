@@ -3,22 +3,23 @@
 /// <p>Describes the certificate extensions to be added to the certificate signing request (CSR).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsrExtensions {
+pub struct CsrExtensions  {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub key_usage: ::std::option::Option<crate::types::KeyUsage>,
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub subject_information_access: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
+    pub subject_information_access: ::std::option::Option<::std::vec::Vec::<crate::types::AccessDescription>>,
 }
-impl CsrExtensions {
+impl  CsrExtensions  {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
-    pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsage> {
+    pub fn key_usage(&self) -> ::std::option::Option<& crate::types::KeyUsage> {
         self.key_usage.as_ref()
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_information_access.is_none()`.
-    pub fn subject_information_access(&self) -> &[crate::types::AccessDescription] {
-        self.subject_information_access.as_deref().unwrap_or_default()
+    pub fn subject_information_access(&self) -> & [crate::types::AccessDescription] {
+        self.subject_information_access.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CsrExtensions {
@@ -33,7 +34,7 @@ impl CsrExtensions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsrExtensionsBuilder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsage>,
-    pub(crate) subject_information_access: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
+    pub(crate) subject_information_access: ::std::option::Option<::std::vec::Vec::<crate::types::AccessDescription>>,
 }
 impl CsrExtensionsBuilder {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
@@ -43,8 +44,7 @@ impl CsrExtensionsBuilder {
     }
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsage>) -> Self {
-        self.key_usage = input;
-        self
+        self.key_usage = input; self
     }
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsage> {
@@ -57,24 +57,26 @@ impl CsrExtensionsBuilder {
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     pub fn subject_information_access(mut self, input: crate::types::AccessDescription) -> Self {
         let mut v = self.subject_information_access.unwrap_or_default();
-        v.push(input);
-        self.subject_information_access = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subject_information_access = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn set_subject_information_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>) -> Self {
-        self.subject_information_access = input;
-        self
+    pub fn set_subject_information_access(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessDescription>>) -> Self {
+        self.subject_information_access = input; self
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn get_subject_information_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>> {
+    pub fn get_subject_information_access(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessDescription>> {
         &self.subject_information_access
     }
     /// Consumes the builder and constructs a [`CsrExtensions`](crate::types::CsrExtensions).
     pub fn build(self) -> crate::types::CsrExtensions {
         crate::types::CsrExtensions {
-            key_usage: self.key_usage,
-            subject_information_access: self.subject_information_access,
+            key_usage: self.key_usage
+            ,
+            subject_information_access: self.subject_information_access
+            ,
         }
     }
 }
+

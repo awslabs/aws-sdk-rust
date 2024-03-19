@@ -3,7 +3,7 @@
 /// <p>A <code>TopBottomFilter</code> filters values that are at the top or the bottom.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopBottomFilter {
+pub struct TopBottomFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
@@ -11,20 +11,19 @@ pub struct TopBottomFilter {
     /// <p>The number of items to include in the top bottom filter results.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub aggregation_sort_configurations: ::std::vec::Vec<crate::types::AggregationSortConfiguration>,
+    pub aggregation_sort_configurations: ::std::vec::Vec::<crate::types::AggregationSortConfiguration>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
 }
-impl TopBottomFilter {
+impl  TopBottomFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.filter_id.deref()
+    pub fn filter_id(&self) -> & str {
+        use std::ops::Deref; self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The number of items to include in the top bottom filter results.</p>
@@ -32,16 +31,15 @@ impl TopBottomFilter {
         self.limit
     }
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub fn aggregation_sort_configurations(&self) -> &[crate::types::AggregationSortConfiguration] {
-        use std::ops::Deref;
-        self.aggregation_sort_configurations.deref()
+    pub fn aggregation_sort_configurations(&self) -> & [crate::types::AggregationSortConfiguration] {
+        use std::ops::Deref; self.aggregation_sort_configurations.deref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> ::std::option::Option<& crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
 }
@@ -59,7 +57,7 @@ pub struct TopBottomFilterBuilder {
     pub(crate) filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) limit: ::std::option::Option<i32>,
-    pub(crate) aggregation_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>>,
+    pub(crate) aggregation_sort_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::AggregationSortConfiguration>>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,7 @@ impl TopBottomFilterBuilder {
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn set_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_id = input;
-        self
+        self.filter_id = input; self
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl TopBottomFilterBuilder {
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -101,8 +97,7 @@ impl TopBottomFilterBuilder {
     }
     /// <p>The number of items to include in the top bottom filter results.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The number of items to include in the top bottom filter results.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -115,20 +110,16 @@ impl TopBottomFilterBuilder {
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
     pub fn aggregation_sort_configurations(mut self, input: crate::types::AggregationSortConfiguration) -> Self {
         let mut v = self.aggregation_sort_configurations.unwrap_or_default();
-        v.push(input);
-        self.aggregation_sort_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregation_sort_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub fn set_aggregation_sort_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>>,
-    ) -> Self {
-        self.aggregation_sort_configurations = input;
-        self
+    pub fn set_aggregation_sort_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregationSortConfiguration>>) -> Self {
+        self.aggregation_sort_configurations = input; self
     }
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    pub fn get_aggregation_sort_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>> {
+    pub fn get_aggregation_sort_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregationSortConfiguration>> {
         &self.aggregation_sort_configurations
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -138,8 +129,7 @@ impl TopBottomFilterBuilder {
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.time_granularity = input;
-        self
+        self.time_granularity = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
@@ -152,8 +142,7 @@ impl TopBottomFilterBuilder {
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,23 +153,28 @@ impl TopBottomFilterBuilder {
     /// - [`filter_id`](crate::types::builders::TopBottomFilterBuilder::filter_id)
     /// - [`aggregation_sort_configurations`](crate::types::builders::TopBottomFilterBuilder::aggregation_sort_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::TopBottomFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TopBottomFilter {
-            filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_id",
-                    "filter_id was not specified but it is required when building TopBottomFilter",
-                )
-            })?,
-            column: self.column,
-            limit: self.limit,
-            aggregation_sort_configurations: self.aggregation_sort_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_sort_configurations",
-                    "aggregation_sort_configurations was not specified but it is required when building TopBottomFilter",
-                )
-            })?,
-            time_granularity: self.time_granularity,
-            parameter_name: self.parameter_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TopBottomFilter {
+                filter_id: self.filter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_id", "filter_id was not specified but it is required when building TopBottomFilter")
+                    )?
+                ,
+                column: self.column
+                ,
+                limit: self.limit
+                ,
+                aggregation_sort_configurations: self.aggregation_sort_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_sort_configurations", "aggregation_sort_configurations was not specified but it is required when building TopBottomFilter")
+                    )?
+                ,
+                time_granularity: self.time_granularity
+                ,
+                parameter_name: self.parameter_name
+                ,
+            }
+        )
     }
 }
+

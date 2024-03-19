@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewaysInput {
+pub struct DescribeDirectConnectGatewaysInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -11,9 +11,9 @@ pub struct DescribeDirectConnectGatewaysInput {
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDirectConnectGatewaysInput {
+impl  DescribeDirectConnectGatewaysInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -22,7 +22,7 @@ impl DescribeDirectConnectGatewaysInput {
         self.max_results
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DescribeDirectConnectGatewaysInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl DescribeDirectConnectGatewaysInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -80,24 +78,24 @@ impl DescribeDirectConnectGatewaysInputBuilder {
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysInput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput {
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput {
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

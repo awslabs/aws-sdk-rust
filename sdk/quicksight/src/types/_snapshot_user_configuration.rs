@@ -3,16 +3,17 @@
 /// <p>A structure that contains information about the users that the dashboard snapshot is generated for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotUserConfiguration {
+pub struct SnapshotUserConfiguration  {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
+    pub anonymous_users: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUser>>,
 }
-impl SnapshotUserConfiguration {
+impl  SnapshotUserConfiguration  {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
-    pub fn anonymous_users(&self) -> &[crate::types::SnapshotAnonymousUser] {
-        self.anonymous_users.as_deref().unwrap_or_default()
+    pub fn anonymous_users(&self) -> & [crate::types::SnapshotAnonymousUser] {
+        self.anonymous_users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotUserConfiguration {
@@ -26,7 +27,7 @@ impl SnapshotUserConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotUserConfigurationBuilder {
-    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>,
+    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUser>>,
 }
 impl SnapshotUserConfigurationBuilder {
     /// Appends an item to `anonymous_users`.
@@ -36,23 +37,24 @@ impl SnapshotUserConfigurationBuilder {
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
     pub fn anonymous_users(mut self, input: crate::types::SnapshotAnonymousUser) -> Self {
         let mut v = self.anonymous_users.unwrap_or_default();
-        v.push(input);
-        self.anonymous_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anonymous_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>>) -> Self {
-        self.anonymous_users = input;
-        self
+    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUser>>) -> Self {
+        self.anonymous_users = input; self
     }
     /// <p>An array of records that describe the anonymous users that the dashboard snapshot is generated for.</p>
-    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUser>> {
+    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUser>> {
         &self.anonymous_users
     }
     /// Consumes the builder and constructs a [`SnapshotUserConfiguration`](crate::types::SnapshotUserConfiguration).
     pub fn build(self) -> crate::types::SnapshotUserConfiguration {
         crate::types::SnapshotUserConfiguration {
-            anonymous_users: self.anonymous_users,
+            anonymous_users: self.anonymous_users
+            ,
         }
     }
 }
+

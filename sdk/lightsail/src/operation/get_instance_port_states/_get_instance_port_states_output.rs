@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstancePortStatesOutput {
+pub struct GetInstancePortStatesOutput  {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub port_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>,
+    pub port_states: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortState>>,
     _request_id: Option<String>,
 }
-impl GetInstancePortStatesOutput {
+impl  GetInstancePortStatesOutput  {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_states.is_none()`.
-    pub fn port_states(&self) -> &[crate::types::InstancePortState] {
-        self.port_states.as_deref().unwrap_or_default()
+    pub fn port_states(&self) -> & [crate::types::InstancePortState] {
+        self.port_states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInstancePortStatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInstancePortStatesOutput {
     /// Creates a new builder-style object to manufacture [`GetInstancePortStatesOutput`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput).
     pub fn builder() -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesOutputBuilder {
@@ -31,7 +32,7 @@ impl GetInstancePortStatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancePortStatesOutputBuilder {
-    pub(crate) port_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>,
+    pub(crate) port_states: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortState>>,
     _request_id: Option<String>,
 }
 impl GetInstancePortStatesOutputBuilder {
@@ -42,33 +43,34 @@ impl GetInstancePortStatesOutputBuilder {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
     pub fn port_states(mut self, input: crate::types::InstancePortState) -> Self {
         let mut v = self.port_states.unwrap_or_default();
-        v.push(input);
-        self.port_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn set_port_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>>) -> Self {
-        self.port_states = input;
-        self
+    pub fn set_port_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortState>>) -> Self {
+        self.port_states = input; self
     }
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn get_port_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortState>> {
+    pub fn get_port_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstancePortState>> {
         &self.port_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInstancePortStatesOutput`](crate::operation::get_instance_port_states::GetInstancePortStatesOutput).
     pub fn build(self) -> crate::operation::get_instance_port_states::GetInstancePortStatesOutput {
         crate::operation::get_instance_port_states::GetInstancePortStatesOutput {
-            port_states: self.port_states,
+            port_states: self.port_states
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBridgeSourceOutput {
+pub struct UpdateBridgeSourceOutput  {
     /// The Amazon Resource Number (ARN) of the bridge.
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The bridge's source.
     pub source: ::std::option::Option<crate::types::BridgeSource>,
     _request_id: Option<String>,
 }
-impl UpdateBridgeSourceOutput {
+impl  UpdateBridgeSourceOutput  {
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     /// The bridge's source.
-    pub fn source(&self) -> ::std::option::Option<&crate::types::BridgeSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::BridgeSource> {
         self.source.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateBridgeSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateBridgeSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeSourceOutput`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput).
     pub fn builder() -> crate::operation::update_bridge_source::builders::UpdateBridgeSourceOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateBridgeSourceOutputBuilder {
     }
     /// The Amazon Resource Number (ARN) of the bridge.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     /// The Amazon Resource Number (ARN) of the bridge.
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl UpdateBridgeSourceOutputBuilder {
     }
     /// The bridge's source.
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::BridgeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// The bridge's source.
     pub fn get_source(&self) -> &::std::option::Option<crate::types::BridgeSource> {
         &self.source
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateBridgeSourceOutput`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput).
     pub fn build(self) -> crate::operation::update_bridge_source::UpdateBridgeSourceOutput {
         crate::operation::update_bridge_source::UpdateBridgeSourceOutput {
-            bridge_arn: self.bridge_arn,
-            source: self.source,
+            bridge_arn: self.bridge_arn
+            ,
+            source: self.source
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

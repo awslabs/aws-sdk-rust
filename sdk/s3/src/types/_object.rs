@@ -3,7 +3,7 @@
 /// <p>An object consists of data and its descriptive metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Object {
+pub struct Object  {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Creation date of the object.</p>
@@ -21,7 +21,7 @@ pub struct Object {
     /// </note>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    pub checksum_algorithm: ::std::option::Option<::std::vec::Vec::<crate::types::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object</p>
     pub size: ::std::option::Option<i64>,
     /// <p>The class of storage used to store the object.</p><note>
@@ -37,13 +37,13 @@ pub struct Object {
     /// </note>
     pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
 }
-impl Object {
+impl  Object  {
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
@@ -57,14 +57,15 @@ impl Object {
     /// </ul><note>
     /// <p><b>Directory buckets</b> - MD5 is not supported by directory buckets.</p>
     /// </note>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checksum_algorithm.is_none()`.
-    pub fn checksum_algorithm(&self) -> &[crate::types::ChecksumAlgorithm] {
-        self.checksum_algorithm.as_deref().unwrap_or_default()
+    pub fn checksum_algorithm(&self) -> & [crate::types::ChecksumAlgorithm] {
+        self.checksum_algorithm.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Size in bytes of the object</p>
     pub fn size(&self) -> ::std::option::Option<i64> {
@@ -73,19 +74,19 @@ impl Object {
     /// <p>The class of storage used to store the object.</p><note>
     /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
-    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::ObjectStorageClass> {
+    pub fn storage_class(&self) -> ::std::option::Option<& crate::types::ObjectStorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>The owner of the object</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner.</p>
     /// </note>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
-    pub fn restore_status(&self) -> ::std::option::Option<&crate::types::RestoreStatus> {
+    pub fn restore_status(&self) -> ::std::option::Option<& crate::types::RestoreStatus> {
         self.restore_status.as_ref()
     }
 }
@@ -103,7 +104,7 @@ pub struct ObjectBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    pub(crate) checksum_algorithm: ::std::option::Option<::std::vec::Vec::<crate::types::ChecksumAlgorithm>>,
     pub(crate) size: ::std::option::Option<i64>,
     pub(crate) storage_class: ::std::option::Option<crate::types::ObjectStorageClass>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
@@ -117,8 +118,7 @@ impl ObjectBuilder {
     }
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +131,7 @@ impl ObjectBuilder {
     }
     /// <p>Creation date of the object.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>Creation date of the object.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +164,7 @@ impl ObjectBuilder {
     /// <p><b>Directory buckets</b> - MD5 is not supported by directory buckets.</p>
     /// </note>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
@@ -189,17 +187,16 @@ impl ObjectBuilder {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         let mut v = self.checksum_algorithm.unwrap_or_default();
-        v.push(input);
-        self.checksum_algorithm = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.checksum_algorithm = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>) -> Self {
-        self.checksum_algorithm = input;
-        self
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChecksumAlgorithm>>) -> Self {
+        self.checksum_algorithm = input; self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChecksumAlgorithm>> {
         &self.checksum_algorithm
     }
     /// <p>Size in bytes of the object</p>
@@ -209,8 +206,7 @@ impl ObjectBuilder {
     }
     /// <p>Size in bytes of the object</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>Size in bytes of the object</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -227,8 +223,7 @@ impl ObjectBuilder {
     /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::ObjectStorageClass>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The class of storage used to store the object.</p><note>
     /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
@@ -247,8 +242,7 @@ impl ObjectBuilder {
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner.</p>
     /// </note>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the object</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner.</p>
@@ -267,8 +261,7 @@ impl ObjectBuilder {
     /// <p>This functionality is not supported for directory buckets. Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn set_restore_status(mut self, input: ::std::option::Option<crate::types::RestoreStatus>) -> Self {
-        self.restore_status = input;
-        self
+        self.restore_status = input; self
     }
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
@@ -279,14 +272,23 @@ impl ObjectBuilder {
     /// Consumes the builder and constructs a [`Object`](crate::types::Object).
     pub fn build(self) -> crate::types::Object {
         crate::types::Object {
-            key: self.key,
-            last_modified: self.last_modified,
-            e_tag: self.e_tag,
-            checksum_algorithm: self.checksum_algorithm,
-            size: self.size,
-            storage_class: self.storage_class,
-            owner: self.owner,
-            restore_status: self.restore_status,
+            key: self.key
+            ,
+            last_modified: self.last_modified
+            ,
+            e_tag: self.e_tag
+            ,
+            checksum_algorithm: self.checksum_algorithm
+            ,
+            size: self.size
+            ,
+            storage_class: self.storage_class
+            ,
+            owner: self.owner
+            ,
+            restore_status: self.restore_status
+            ,
         }
     }
 }
+

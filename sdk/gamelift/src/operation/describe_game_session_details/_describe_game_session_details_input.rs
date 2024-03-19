@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGameSessionDetailsInput {
+pub struct DescribeGameSessionDetailsInput  {
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the game session to retrieve.</p>
@@ -18,25 +18,25 @@ pub struct DescribeGameSessionDetailsInput {
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGameSessionDetailsInput {
+impl  DescribeGameSessionDetailsInput  {
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for the game session to retrieve.</p>
-    pub fn game_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn game_session_id(&self) -> ::std::option::Option<& str> {
         self.game_session_id.as_deref()
     }
     /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
     /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory).</p>
-    pub fn status_filter(&self) -> ::std::option::Option<&str> {
+    pub fn status_filter(&self) -> ::std::option::Option<& str> {
         self.status_filter.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -44,7 +44,7 @@ impl DescribeGameSessionDetailsInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>A unique identifier for the game session to retrieve.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_session_id = input;
-        self
+        self.game_session_id = input; self
     }
     /// <p>A unique identifier for the game session to retrieve.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory).</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_filter = input;
-        self
+        self.status_filter = input; self
     }
     /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory).</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -159,28 +153,32 @@ impl DescribeGameSessionDetailsInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionDetailsInput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput {
-            fleet_id: self.fleet_id,
-            game_session_id: self.game_session_id,
-            alias_id: self.alias_id,
-            location: self.location,
-            status_filter: self.status_filter,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput {
+                fleet_id: self.fleet_id
+                ,
+                game_session_id: self.game_session_id
+                ,
+                alias_id: self.alias_id
+                ,
+                location: self.location
+                ,
+                status_filter: self.status_filter
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

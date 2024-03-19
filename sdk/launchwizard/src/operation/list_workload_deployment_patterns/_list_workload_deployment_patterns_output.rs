@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkloadDeploymentPatternsOutput {
+pub struct ListWorkloadDeploymentPatternsOutput  {
     /// <p>Describes the workload deployment patterns.</p>
-    pub workload_deployment_patterns: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>>,
+    pub workload_deployment_patterns: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadDeploymentPatternDataSummary>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWorkloadDeploymentPatternsOutput {
+impl  ListWorkloadDeploymentPatternsOutput  {
     /// <p>Describes the workload deployment patterns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workload_deployment_patterns.is_none()`.
-    pub fn workload_deployment_patterns(&self) -> &[crate::types::WorkloadDeploymentPatternDataSummary] {
-        self.workload_deployment_patterns.as_deref().unwrap_or_default()
+    pub fn workload_deployment_patterns(&self) -> & [crate::types::WorkloadDeploymentPatternDataSummary] {
+        self.workload_deployment_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkloadDeploymentPatternsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkloadDeploymentPatternsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadDeploymentPatternsOutput`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput).
     pub fn builder() -> crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListWorkloadDeploymentPatternsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkloadDeploymentPatternsOutputBuilder {
-    pub(crate) workload_deployment_patterns: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>>,
+    pub(crate) workload_deployment_patterns: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadDeploymentPatternDataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListWorkloadDeploymentPatternsOutputBuilder {
     /// <p>Describes the workload deployment patterns.</p>
     pub fn workload_deployment_patterns(mut self, input: crate::types::WorkloadDeploymentPatternDataSummary) -> Self {
         let mut v = self.workload_deployment_patterns.unwrap_or_default();
-        v.push(input);
-        self.workload_deployment_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workload_deployment_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the workload deployment patterns.</p>
-    pub fn set_workload_deployment_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>>,
-    ) -> Self {
-        self.workload_deployment_patterns = input;
-        self
+    pub fn set_workload_deployment_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadDeploymentPatternDataSummary>>) -> Self {
+        self.workload_deployment_patterns = input; self
     }
     /// <p>Describes the workload deployment patterns.</p>
-    pub fn get_workload_deployment_patterns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>> {
+    pub fn get_workload_deployment_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkloadDeploymentPatternDataSummary>> {
         &self.workload_deployment_patterns
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -72,28 +69,30 @@ impl ListWorkloadDeploymentPatternsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkloadDeploymentPatternsOutput`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput).
     pub fn build(self) -> crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput {
         crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput {
-            workload_deployment_patterns: self.workload_deployment_patterns,
-            next_token: self.next_token,
+            workload_deployment_patterns: self.workload_deployment_patterns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

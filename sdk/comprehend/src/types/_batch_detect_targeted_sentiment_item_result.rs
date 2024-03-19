@@ -3,22 +3,23 @@
 /// <p>Analysis results for one of the documents in the batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetectTargetedSentimentItemResult {
+pub struct BatchDetectTargetedSentimentItemResult  {
     /// <p>The zero-based index of this result in the input list.</p>
     pub index: ::std::option::Option<i32>,
     /// <p>An array of targeted sentiment entities.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub entities: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>,
 }
-impl BatchDetectTargetedSentimentItemResult {
+impl  BatchDetectTargetedSentimentItemResult  {
     /// <p>The zero-based index of this result in the input list.</p>
     pub fn index(&self) -> ::std::option::Option<i32> {
         self.index
     }
     /// <p>An array of targeted sentiment entities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
-    pub fn entities(&self) -> &[crate::types::TargetedSentimentEntity] {
-        self.entities.as_deref().unwrap_or_default()
+    pub fn entities(&self) -> & [crate::types::TargetedSentimentEntity] {
+        self.entities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDetectTargetedSentimentItemResult {
@@ -33,7 +34,7 @@ impl BatchDetectTargetedSentimentItemResult {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
-    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>,
 }
 impl BatchDetectTargetedSentimentItemResultBuilder {
     /// <p>The zero-based index of this result in the input list.</p>
@@ -43,8 +44,7 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
     }
     /// <p>The zero-based index of this result in the input list.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The zero-based index of this result in the input list.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -57,24 +57,26 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
     /// <p>An array of targeted sentiment entities.</p>
     pub fn entities(mut self, input: crate::types::TargetedSentimentEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>) -> Self {
+        self.entities = input; self
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>> {
         &self.entities
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentItemResult`](crate::types::BatchDetectTargetedSentimentItemResult).
     pub fn build(self) -> crate::types::BatchDetectTargetedSentimentItemResult {
         crate::types::BatchDetectTargetedSentimentItemResult {
-            index: self.index,
-            entities: self.entities,
+            index: self.index
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

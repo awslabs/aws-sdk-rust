@@ -3,7 +3,7 @@
 /// <p>The structure representing the listProfileTimesRequest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfileTimesInput {
+pub struct ListProfileTimesInput  {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the time range from which to list the profiles.</p>
@@ -29,17 +29,17 @@ pub struct ListProfileTimesInput {
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListProfileTimesInput {
+impl  ListProfileTimesInput  {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values.</p>
@@ -51,11 +51,11 @@ impl ListProfileTimesInput {
     /// <li>
     /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
+    pub fn period(&self) -> ::std::option::Option<& crate::types::AggregationPeriod> {
         self.period.as_ref()
     }
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<& crate::types::OrderBy> {
         self.order_by.as_ref()
     }
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.</p>
@@ -65,7 +65,7 @@ impl ListProfileTimesInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ListProfileTimesInputBuilder {
     }
     /// <p>The name of the profiling group.</p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profiling_group_name = input;
-        self
+        self.profiling_group_name = input; self
     }
     /// <p>The name of the profiling group.</p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl ListProfileTimesInputBuilder {
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +125,7 @@ impl ListProfileTimesInputBuilder {
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -158,8 +155,7 @@ impl ListProfileTimesInputBuilder {
     /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values.</p>
     /// <ul>
@@ -180,8 +176,7 @@ impl ListProfileTimesInputBuilder {
     }
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
@@ -194,8 +189,7 @@ impl ListProfileTimesInputBuilder {
     }
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -212,8 +206,7 @@ impl ListProfileTimesInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -222,17 +215,25 @@ impl ListProfileTimesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesInput {
-            profiling_group_name: self.profiling_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            period: self.period,
-            order_by: self.order_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_profile_times::ListProfileTimesInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                period: self.period
+                ,
+                order_by: self.order_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

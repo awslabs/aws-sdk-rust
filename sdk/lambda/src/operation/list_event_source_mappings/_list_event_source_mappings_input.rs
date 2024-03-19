@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventSourceMappingsInput {
+pub struct ListEventSourceMappingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
     /// <li>
@@ -38,7 +38,7 @@ pub struct ListEventSourceMappingsInput {
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListEventSourceMappingsInput {
+impl  ListEventSourceMappingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ impl ListEventSourceMappingsInput {
     /// <li>
     /// <p><b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p></li>
     /// </ul>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The name or ARN of the Lambda function.</p>
@@ -70,11 +70,11 @@ impl ListEventSourceMappingsInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>A pagination token returned by a previous call.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
@@ -134,8 +134,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <p><b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p></li>
     /// </ul>
     pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
@@ -186,8 +185,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -212,8 +210,7 @@ impl ListEventSourceMappingsInputBuilder {
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,25 +223,26 @@ impl ListEventSourceMappingsInputBuilder {
     }
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListEventSourceMappingsInput`](crate::operation::list_event_source_mappings::ListEventSourceMappingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_source_mappings::ListEventSourceMappingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_event_source_mappings::ListEventSourceMappingsInput {
-            event_source_arn: self.event_source_arn,
-            function_name: self.function_name,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_source_mappings::ListEventSourceMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_event_source_mappings::ListEventSourceMappingsInput {
+                event_source_arn: self.event_source_arn
+                ,
+                function_name: self.function_name
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

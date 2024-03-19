@@ -3,7 +3,7 @@
 /// <p>An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
@@ -11,26 +11,27 @@ pub struct Template {
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub template_data: ::std::option::Option<::std::string::String>,
     /// <p>The list of message headers that will be added to the email message.</p>
-    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    pub headers: ::std::option::Option<::std::vec::Vec::<crate::types::MessageHeader>>,
 }
-impl Template {
+impl  Template  {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn template_data(&self) -> ::std::option::Option<&str> {
+    pub fn template_data(&self) -> ::std::option::Option<& str> {
         self.template_data.as_deref()
     }
     /// <p>The list of message headers that will be added to the email message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
-    pub fn headers(&self) -> &[crate::types::MessageHeader] {
-        self.headers.as_deref().unwrap_or_default()
+    pub fn headers(&self) -> & [crate::types::MessageHeader] {
+        self.headers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Template {
@@ -47,7 +48,7 @@ pub struct TemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,
-    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec::<crate::types::MessageHeader>>,
 }
 impl TemplateBuilder {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
@@ -57,8 +58,7 @@ impl TemplateBuilder {
     }
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl TemplateBuilder {
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn set_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_data = input;
-        self
+        self.template_data = input; self
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl TemplateBuilder {
     /// <p>The list of message headers that will be added to the email message.</p>
     pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
         let mut v = self.headers.unwrap_or_default();
-        v.push(input);
-        self.headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of message headers that will be added to the email message.</p>
-    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
-        self.headers = input;
-        self
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageHeader>>) -> Self {
+        self.headers = input; self
     }
     /// <p>The list of message headers that will be added to the email message.</p>
-    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageHeader>> {
         &self.headers
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            template_name: self.template_name,
-            template_arn: self.template_arn,
-            template_data: self.template_data,
-            headers: self.headers,
+            template_name: self.template_name
+            ,
+            template_arn: self.template_arn
+            ,
+            template_data: self.template_data
+            ,
+            headers: self.headers
+            ,
         }
     }
 }
+

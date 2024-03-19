@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReportGroupInput {
+pub struct UpdateReportGroupInput  {
     /// <p>The ARN of the report group to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Used to specify an updated export type. Valid values are:</p>
@@ -15,11 +15,11 @@ pub struct UpdateReportGroupInput {
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p>An updated list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateReportGroupInput {
+impl  UpdateReportGroupInput  {
     /// <p>The ARN of the report group to update.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
@@ -29,15 +29,16 @@ impl UpdateReportGroupInput {
     /// <li>
     /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
-    pub fn export_config(&self) -> ::std::option::Option<&crate::types::ReportExportConfig> {
+    pub fn export_config(&self) -> ::std::option::Option<& crate::types::ReportExportConfig> {
         self.export_config.as_ref()
     }
     /// <p>An updated list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateReportGroupInput {
@@ -53,7 +54,7 @@ impl UpdateReportGroupInput {
 pub struct UpdateReportGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateReportGroupInputBuilder {
     /// <p>The ARN of the report group to update.</p>
@@ -64,8 +65,7 @@ impl UpdateReportGroupInputBuilder {
     }
     /// <p>The ARN of the report group to update.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the report group to update.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +90,7 @@ impl UpdateReportGroupInputBuilder {
     /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
-        self.export_config = input;
-        self
+        self.export_config = input; self
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
@@ -111,29 +110,32 @@ impl UpdateReportGroupInputBuilder {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An updated list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An updated list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_report_group::UpdateReportGroupInput {
-            arn: self.arn,
-            export_config: self.export_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_report_group::UpdateReportGroupInput {
+                arn: self.arn
+                ,
+                export_config: self.export_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about the location of training output or the output of a model packaging job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl S3LocationBuilder {
     }
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl S3LocationBuilder {
     }
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket: self.bucket,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

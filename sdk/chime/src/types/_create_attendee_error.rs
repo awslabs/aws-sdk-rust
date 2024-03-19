@@ -3,7 +3,7 @@
 /// <p>The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAttendeeError {
+pub struct CreateAttendeeError  {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,21 +11,21 @@ pub struct CreateAttendeeError {
     /// <p>The error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl CreateAttendeeError {
+impl  CreateAttendeeError  {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_user_id(&self) -> ::std::option::Option<& str> {
         self.external_user_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateAttendeeError {
+impl  ::std::fmt::Debug for CreateAttendeeError  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeError");
         formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl CreateAttendeeErrorBuilder {
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_user_id = input;
-        self
+        self.external_user_id = input; self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CreateAttendeeErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateAttendeeErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl CreateAttendeeErrorBuilder {
     /// Consumes the builder and constructs a [`CreateAttendeeError`](crate::types::CreateAttendeeError).
     pub fn build(self) -> crate::types::CreateAttendeeError {
         crate::types::CreateAttendeeError {
-            external_user_id: self.external_user_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            external_user_id: self.external_user_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for CreateAttendeeErrorBuilder {
         formatter.finish()
     }
 }
+

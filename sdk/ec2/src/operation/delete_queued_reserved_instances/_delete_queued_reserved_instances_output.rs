@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueuedReservedInstancesOutput {
+pub struct DeleteQueuedReservedInstancesOutput  {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    pub successful_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>>,
+    pub successful_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulQueuedPurchaseDeletion>>,
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    pub failed_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>>,
+    pub failed_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::FailedQueuedPurchaseDeletion>>,
     _request_id: Option<String>,
 }
-impl DeleteQueuedReservedInstancesOutput {
+impl  DeleteQueuedReservedInstancesOutput  {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_queued_purchase_deletions.is_none()`.
-    pub fn successful_queued_purchase_deletions(&self) -> &[crate::types::SuccessfulQueuedPurchaseDeletion] {
-        self.successful_queued_purchase_deletions.as_deref().unwrap_or_default()
+    pub fn successful_queued_purchase_deletions(&self) -> & [crate::types::SuccessfulQueuedPurchaseDeletion] {
+        self.successful_queued_purchase_deletions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_queued_purchase_deletions.is_none()`.
-    pub fn failed_queued_purchase_deletions(&self) -> &[crate::types::FailedQueuedPurchaseDeletion] {
-        self.failed_queued_purchase_deletions.as_deref().unwrap_or_default()
+    pub fn failed_queued_purchase_deletions(&self) -> & [crate::types::FailedQueuedPurchaseDeletion] {
+        self.failed_queued_purchase_deletions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteQueuedReservedInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteQueuedReservedInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedReservedInstancesOutput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput).
     pub fn builder() -> crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesOutputBuilder {
@@ -39,8 +41,8 @@ impl DeleteQueuedReservedInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedReservedInstancesOutputBuilder {
-    pub(crate) successful_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>>,
-    pub(crate) failed_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>>,
+    pub(crate) successful_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulQueuedPurchaseDeletion>>,
+    pub(crate) failed_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec::<crate::types::FailedQueuedPurchaseDeletion>>,
     _request_id: Option<String>,
 }
 impl DeleteQueuedReservedInstancesOutputBuilder {
@@ -51,22 +53,16 @@ impl DeleteQueuedReservedInstancesOutputBuilder {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
     pub fn successful_queued_purchase_deletions(mut self, input: crate::types::SuccessfulQueuedPurchaseDeletion) -> Self {
         let mut v = self.successful_queued_purchase_deletions.unwrap_or_default();
-        v.push(input);
-        self.successful_queued_purchase_deletions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful_queued_purchase_deletions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    pub fn set_successful_queued_purchase_deletions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>>,
-    ) -> Self {
-        self.successful_queued_purchase_deletions = input;
-        self
+    pub fn set_successful_queued_purchase_deletions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulQueuedPurchaseDeletion>>) -> Self {
+        self.successful_queued_purchase_deletions = input; self
     }
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    pub fn get_successful_queued_purchase_deletions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>> {
+    pub fn get_successful_queued_purchase_deletions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulQueuedPurchaseDeletion>> {
         &self.successful_queued_purchase_deletions
     }
     /// Appends an item to `failed_queued_purchase_deletions`.
@@ -76,37 +72,36 @@ impl DeleteQueuedReservedInstancesOutputBuilder {
     /// <p>Information about the queued purchases that could not be deleted.</p>
     pub fn failed_queued_purchase_deletions(mut self, input: crate::types::FailedQueuedPurchaseDeletion) -> Self {
         let mut v = self.failed_queued_purchase_deletions.unwrap_or_default();
-        v.push(input);
-        self.failed_queued_purchase_deletions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_queued_purchase_deletions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    pub fn set_failed_queued_purchase_deletions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>>,
-    ) -> Self {
-        self.failed_queued_purchase_deletions = input;
-        self
+    pub fn set_failed_queued_purchase_deletions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedQueuedPurchaseDeletion>>) -> Self {
+        self.failed_queued_purchase_deletions = input; self
     }
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    pub fn get_failed_queued_purchase_deletions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>> {
+    pub fn get_failed_queued_purchase_deletions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedQueuedPurchaseDeletion>> {
         &self.failed_queued_purchase_deletions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesOutput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput).
     pub fn build(self) -> crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput {
         crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput {
-            successful_queued_purchase_deletions: self.successful_queued_purchase_deletions,
-            failed_queued_purchase_deletions: self.failed_queued_purchase_deletions,
+            successful_queued_purchase_deletions: self.successful_queued_purchase_deletions
+            ,
+            failed_queued_purchase_deletions: self.failed_queued_purchase_deletions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

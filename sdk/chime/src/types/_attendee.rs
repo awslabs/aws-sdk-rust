@@ -4,7 +4,7 @@
 /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Attendee {
+pub struct Attendee  {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -12,21 +12,21 @@ pub struct Attendee {
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub join_token: ::std::option::Option<::std::string::String>,
 }
-impl Attendee {
+impl  Attendee  {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_user_id(&self) -> ::std::option::Option<& str> {
         self.external_user_id.as_deref()
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(&self) -> ::std::option::Option<&str> {
+    pub fn attendee_id(&self) -> ::std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    pub fn join_token(&self) -> ::std::option::Option<&str> {
+    pub fn join_token(&self) -> ::std::option::Option<& str> {
         self.join_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for Attendee {
+impl  ::std::fmt::Debug for Attendee  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Attendee");
         formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
@@ -58,8 +58,7 @@ impl AttendeeBuilder {
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_user_id = input;
-        self
+        self.external_user_id = input; self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl AttendeeBuilder {
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attendee_id = input;
-        self
+        self.attendee_id = input; self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl AttendeeBuilder {
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.join_token = input;
-        self
+        self.join_token = input; self
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub fn get_join_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +93,12 @@ impl AttendeeBuilder {
     /// Consumes the builder and constructs a [`Attendee`](crate::types::Attendee).
     pub fn build(self) -> crate::types::Attendee {
         crate::types::Attendee {
-            external_user_id: self.external_user_id,
-            attendee_id: self.attendee_id,
-            join_token: self.join_token,
+            external_user_id: self.external_user_id
+            ,
+            attendee_id: self.attendee_id
+            ,
+            join_token: self.join_token
+            ,
         }
     }
 }
@@ -111,3 +111,4 @@ impl ::std::fmt::Debug for AttendeeBuilder {
         formatter.finish()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Contains information about the restore testing plan that Backup used to initiate the restore job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreJobCreator {
+pub struct RestoreJobCreator  {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
 }
-impl RestoreJobCreator {
+impl  RestoreJobCreator  {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
-    pub fn restore_testing_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_arn(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RestoreJobCreatorBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_arn = input;
-        self
+        self.restore_testing_plan_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl RestoreJobCreatorBuilder {
     /// Consumes the builder and constructs a [`RestoreJobCreator`](crate::types::RestoreJobCreator).
     pub fn build(self) -> crate::types::RestoreJobCreator {
         crate::types::RestoreJobCreator {
-            restore_testing_plan_arn: self.restore_testing_plan_arn,
+            restore_testing_plan_arn: self.restore_testing_plan_arn
+            ,
         }
     }
 }
+

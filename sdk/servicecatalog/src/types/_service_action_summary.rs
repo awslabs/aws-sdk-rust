@@ -3,7 +3,7 @@
 /// <p>Detailed information about the self-service action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceActionSummary {
+pub struct ServiceActionSummary  {
     /// <p>The self-service action identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action name.</p>
@@ -13,21 +13,21 @@ pub struct ServiceActionSummary {
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub definition_type: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
 }
-impl ServiceActionSummary {
+impl  ServiceActionSummary  {
     /// <p>The self-service action identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The self-service action name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The self-service action description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::ServiceActionDefinitionType> {
+    pub fn definition_type(&self) -> ::std::option::Option<& crate::types::ServiceActionDefinitionType> {
         self.definition_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ServiceActionSummaryBuilder {
     }
     /// <p>The self-service action identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The self-service action identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ServiceActionSummaryBuilder {
     }
     /// <p>The self-service action name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The self-service action name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ServiceActionSummaryBuilder {
     }
     /// <p>The self-service action description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The self-service action description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ServiceActionSummaryBuilder {
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::ServiceActionDefinitionType>) -> Self {
-        self.definition_type = input;
-        self
+        self.definition_type = input; self
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
@@ -107,10 +103,15 @@ impl ServiceActionSummaryBuilder {
     /// Consumes the builder and constructs a [`ServiceActionSummary`](crate::types::ServiceActionSummary).
     pub fn build(self) -> crate::types::ServiceActionSummary {
         crate::types::ServiceActionSummary {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            definition_type: self.definition_type,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            definition_type: self.definition_type
+            ,
         }
     }
 }
+

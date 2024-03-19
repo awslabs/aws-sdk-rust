@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxDatabaseOutput {
+pub struct UpdateKxDatabaseOutput  {
     /// <p>The name of the kdb database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
@@ -13,29 +13,29 @@ pub struct UpdateKxDatabaseOutput {
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateKxDatabaseOutput {
+impl  UpdateKxDatabaseOutput  {
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A description of the database.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKxDatabaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKxDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKxDatabaseOutput`](crate::operation::update_kx_database::UpdateKxDatabaseOutput).
     pub fn builder() -> crate::operation::update_kx_database::builders::UpdateKxDatabaseOutputBuilder {
@@ -61,8 +61,7 @@ impl UpdateKxDatabaseOutputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateKxDatabaseOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdateKxDatabaseOutputBuilder {
     }
     /// <p>A description of the database.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the database.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl UpdateKxDatabaseOutputBuilder {
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKxDatabaseOutput`](crate::operation::update_kx_database::UpdateKxDatabaseOutput).
     pub fn build(self) -> crate::operation::update_kx_database::UpdateKxDatabaseOutput {
         crate::operation::update_kx_database::UpdateKxDatabaseOutput {
-            database_name: self.database_name,
-            environment_id: self.environment_id,
-            description: self.description,
-            last_modified_timestamp: self.last_modified_timestamp,
+            database_name: self.database_name
+            ,
+            environment_id: self.environment_id
+            ,
+            description: self.description
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

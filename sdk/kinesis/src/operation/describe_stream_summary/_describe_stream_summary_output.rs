@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStreamSummaryOutput {
+pub struct DescribeStreamSummaryOutput  {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     pub stream_description_summary: ::std::option::Option<crate::types::StreamDescriptionSummary>,
     _request_id: Option<String>,
 }
-impl DescribeStreamSummaryOutput {
+impl  DescribeStreamSummaryOutput  {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
-    pub fn stream_description_summary(&self) -> ::std::option::Option<&crate::types::StreamDescriptionSummary> {
+    pub fn stream_description_summary(&self) -> ::std::option::Option<& crate::types::StreamDescriptionSummary> {
         self.stream_description_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStreamSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStreamSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput).
     pub fn builder() -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeStreamSummaryOutputBuilder {
     }
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     pub fn set_stream_description_summary(mut self, input: ::std::option::Option<crate::types::StreamDescriptionSummary>) -> Self {
-        self.stream_description_summary = input;
-        self
+        self.stream_description_summary = input; self
     }
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     pub fn get_stream_description_summary(&self) -> &::std::option::Option<crate::types::StreamDescriptionSummary> {
         &self.stream_description_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput).
     pub fn build(self) -> crate::operation::describe_stream_summary::DescribeStreamSummaryOutput {
         crate::operation::describe_stream_summary::DescribeStreamSummaryOutput {
-            stream_description_summary: self.stream_description_summary,
+            stream_description_summary: self.stream_description_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

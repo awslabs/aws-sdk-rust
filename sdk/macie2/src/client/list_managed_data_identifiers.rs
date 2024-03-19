@@ -2,16 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedDataIdentifiers`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput) with field(s):
+                            /// - On success, responds with [`ListManagedDataIdentifiersOutput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput) with field(s):
     ///   - [`items(Option<Vec::<ManagedDataIdentifierSummary>>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListManagedDataIdentifiersError>`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError)
-    pub fn list_managed_data_identifiers(
-        &self,
-    ) -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder {
-        crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListManagedDataIdentifiersError>`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError)
+    pub fn list_managed_data_identifiers(&self) -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder {
+                                crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,17 +3,16 @@
 /// <p>Information about the dashboard that you want to embed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnonymousUserDashboardEmbeddingConfiguration {
+pub struct AnonymousUserDashboardEmbeddingConfiguration  {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub initial_dashboard_id: ::std::string::String,
 }
-impl AnonymousUserDashboardEmbeddingConfiguration {
+impl  AnonymousUserDashboardEmbeddingConfiguration  {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_dashboard_id(&self) -> &str {
-        use std::ops::Deref;
-        self.initial_dashboard_id.deref()
+    pub fn initial_dashboard_id(&self) -> & str {
+        use std::ops::Deref; self.initial_dashboard_id.deref()
     }
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
@@ -40,8 +39,7 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn set_initial_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_dashboard_id = input;
-        self
+        self.initial_dashboard_id = input; self
     }
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
@@ -51,16 +49,16 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     /// Consumes the builder and constructs a [`AnonymousUserDashboardEmbeddingConfiguration`](crate::types::AnonymousUserDashboardEmbeddingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`initial_dashboard_id`](crate::types::builders::AnonymousUserDashboardEmbeddingConfigurationBuilder::initial_dashboard_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AnonymousUserDashboardEmbeddingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnonymousUserDashboardEmbeddingConfiguration {
-            initial_dashboard_id: self.initial_dashboard_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "initial_dashboard_id",
-                    "initial_dashboard_id was not specified but it is required when building AnonymousUserDashboardEmbeddingConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AnonymousUserDashboardEmbeddingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AnonymousUserDashboardEmbeddingConfiguration {
+                initial_dashboard_id: self.initial_dashboard_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("initial_dashboard_id", "initial_dashboard_id was not specified but it is required when building AnonymousUserDashboardEmbeddingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

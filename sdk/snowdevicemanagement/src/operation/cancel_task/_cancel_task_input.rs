@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelTaskInput {
+pub struct CancelTaskInput  {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelTaskInput {
+impl  CancelTaskInput  {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CancelTaskInputBuilder {
     }
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl CancelTaskInputBuilder {
     }
     /// Consumes the builder and constructs a [`CancelTaskInput`](crate::operation::cancel_task::CancelTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_task::CancelTaskInput { task_id: self.task_id })
+        ::std::result::Result::Ok(
+            crate::operation::cancel_task::CancelTaskInput {
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

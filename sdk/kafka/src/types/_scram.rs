@@ -3,11 +3,11 @@
 /// <p>Details for SASL/SCRAM client authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scram {
+pub struct Scram  {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl Scram {
+impl  Scram  {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl ScramBuilder {
     }
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl ScramBuilder {
     }
     /// Consumes the builder and constructs a [`Scram`](crate::types::Scram).
     pub fn build(self) -> crate::types::Scram {
-        crate::types::Scram { enabled: self.enabled }
+        crate::types::Scram {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

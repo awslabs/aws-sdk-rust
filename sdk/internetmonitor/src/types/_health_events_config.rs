@@ -8,7 +8,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthEventsConfig {
+pub struct HealthEventsConfig  {
     /// <p>The health event threshold percentage set for availability scores.</p>
     pub availability_score_threshold: f64,
     /// <p>The health event threshold percentage set for performance scores.</p>
@@ -18,7 +18,7 @@ pub struct HealthEventsConfig {
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance issue.</p>
     pub performance_local_health_events_config: ::std::option::Option<crate::types::LocalHealthEventsConfig>,
 }
-impl HealthEventsConfig {
+impl  HealthEventsConfig  {
     /// <p>The health event threshold percentage set for availability scores.</p>
     pub fn availability_score_threshold(&self) -> f64 {
         self.availability_score_threshold
@@ -28,11 +28,11 @@ impl HealthEventsConfig {
         self.performance_score_threshold
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local availability issue.</p>
-    pub fn availability_local_health_events_config(&self) -> ::std::option::Option<&crate::types::LocalHealthEventsConfig> {
+    pub fn availability_local_health_events_config(&self) -> ::std::option::Option<& crate::types::LocalHealthEventsConfig> {
         self.availability_local_health_events_config.as_ref()
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance issue.</p>
-    pub fn performance_local_health_events_config(&self) -> ::std::option::Option<&crate::types::LocalHealthEventsConfig> {
+    pub fn performance_local_health_events_config(&self) -> ::std::option::Option<& crate::types::LocalHealthEventsConfig> {
         self.performance_local_health_events_config.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl HealthEventsConfigBuilder {
     }
     /// <p>The health event threshold percentage set for availability scores.</p>
     pub fn set_availability_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.availability_score_threshold = input;
-        self
+        self.availability_score_threshold = input; self
     }
     /// <p>The health event threshold percentage set for availability scores.</p>
     pub fn get_availability_score_threshold(&self) -> &::std::option::Option<f64> {
@@ -74,8 +73,7 @@ impl HealthEventsConfigBuilder {
     }
     /// <p>The health event threshold percentage set for performance scores.</p>
     pub fn set_performance_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.performance_score_threshold = input;
-        self
+        self.performance_score_threshold = input; self
     }
     /// <p>The health event threshold percentage set for performance scores.</p>
     pub fn get_performance_score_threshold(&self) -> &::std::option::Option<f64> {
@@ -88,8 +86,7 @@ impl HealthEventsConfigBuilder {
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local availability issue.</p>
     pub fn set_availability_local_health_events_config(mut self, input: ::std::option::Option<crate::types::LocalHealthEventsConfig>) -> Self {
-        self.availability_local_health_events_config = input;
-        self
+        self.availability_local_health_events_config = input; self
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local availability issue.</p>
     pub fn get_availability_local_health_events_config(&self) -> &::std::option::Option<crate::types::LocalHealthEventsConfig> {
@@ -102,8 +99,7 @@ impl HealthEventsConfigBuilder {
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance issue.</p>
     pub fn set_performance_local_health_events_config(mut self, input: ::std::option::Option<crate::types::LocalHealthEventsConfig>) -> Self {
-        self.performance_local_health_events_config = input;
-        self
+        self.performance_local_health_events_config = input; self
     }
     /// <p>The configuration that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance issue.</p>
     pub fn get_performance_local_health_events_config(&self) -> &::std::option::Option<crate::types::LocalHealthEventsConfig> {
@@ -112,10 +108,17 @@ impl HealthEventsConfigBuilder {
     /// Consumes the builder and constructs a [`HealthEventsConfig`](crate::types::HealthEventsConfig).
     pub fn build(self) -> crate::types::HealthEventsConfig {
         crate::types::HealthEventsConfig {
-            availability_score_threshold: self.availability_score_threshold.unwrap_or_default(),
-            performance_score_threshold: self.performance_score_threshold.unwrap_or_default(),
-            availability_local_health_events_config: self.availability_local_health_events_config,
-            performance_local_health_events_config: self.performance_local_health_events_config,
+            availability_score_threshold: self.availability_score_threshold
+                .unwrap_or_default()
+            ,
+            performance_score_threshold: self.performance_score_threshold
+                .unwrap_or_default()
+            ,
+            availability_local_health_events_config: self.availability_local_health_events_config
+            ,
+            performance_local_health_events_config: self.performance_local_health_events_config
+            ,
         }
     }
 }
+

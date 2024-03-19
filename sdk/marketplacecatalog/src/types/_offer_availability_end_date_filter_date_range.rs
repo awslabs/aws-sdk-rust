@@ -3,19 +3,19 @@
 /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with date range as input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferAvailabilityEndDateFilterDateRange {
+pub struct OfferAvailabilityEndDateFilterDateRange  {
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer after a date.</p>
     pub after_value: ::std::option::Option<::std::string::String>,
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer before a date.</p>
     pub before_value: ::std::option::Option<::std::string::String>,
 }
-impl OfferAvailabilityEndDateFilterDateRange {
+impl  OfferAvailabilityEndDateFilterDateRange  {
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer after a date.</p>
-    pub fn after_value(&self) -> ::std::option::Option<&str> {
+    pub fn after_value(&self) -> ::std::option::Option<& str> {
         self.after_value.as_deref()
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer before a date.</p>
-    pub fn before_value(&self) -> ::std::option::Option<&str> {
+    pub fn before_value(&self) -> ::std::option::Option<& str> {
         self.before_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OfferAvailabilityEndDateFilterDateRangeBuilder {
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer after a date.</p>
     pub fn set_after_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_value = input;
-        self
+        self.after_value = input; self
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer after a date.</p>
     pub fn get_after_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OfferAvailabilityEndDateFilterDateRangeBuilder {
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer before a date.</p>
     pub fn set_before_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.before_value = input;
-        self
+        self.before_value = input; self
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer before a date.</p>
     pub fn get_before_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OfferAvailabilityEndDateFilterDateRangeBuilder {
     /// Consumes the builder and constructs a [`OfferAvailabilityEndDateFilterDateRange`](crate::types::OfferAvailabilityEndDateFilterDateRange).
     pub fn build(self) -> crate::types::OfferAvailabilityEndDateFilterDateRange {
         crate::types::OfferAvailabilityEndDateFilterDateRange {
-            after_value: self.after_value,
-            before_value: self.before_value,
+            after_value: self.after_value
+            ,
+            before_value: self.before_value
+            ,
         }
     }
 }
+

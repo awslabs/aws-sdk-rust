@@ -2,13 +2,13 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetFaceSearch`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::set_job_id):<br>required: **true**<br><p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results.</p><br>
     ///   - [`sort_by(FaceSearchSortBy)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::sort_by) / [`set_sort_by(Option<FaceSearchSortBy>)`](crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces.</p><br>
-    /// - On success, responds with [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput) with field(s):
+                            /// - On success, responds with [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_face_search::GetFaceSearchOutput::job_status): <p>The current status of the face search job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_face_search::GetFaceSearchOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_face_search::GetFaceSearchOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results.</p>
@@ -17,8 +17,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::get_face_search::GetFaceSearchOutput::job_id): <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
     ///   - [`video(Option<Video>)`](crate::operation::get_face_search::GetFaceSearchOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_face_search::GetFaceSearchOutput::job_tag): <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    /// - On failure, responds with [`SdkError<GetFaceSearchError>`](crate::operation::get_face_search::GetFaceSearchError)
+                            /// - On failure, responds with [`SdkError<GetFaceSearchError>`](crate::operation::get_face_search::GetFaceSearchError)
     pub fn get_face_search(&self) -> crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder {
-        crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_face_search::builders::GetFaceSearchFluentBuilder::new(self.handle.clone())
+                            }
 }
+

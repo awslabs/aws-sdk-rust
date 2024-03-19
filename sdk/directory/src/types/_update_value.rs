@@ -3,13 +3,13 @@
 /// <p>The value for a given type of <code>UpdateSettings</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateValue {
+pub struct UpdateValue  {
     /// <p>The OS update related settings.</p>
     pub os_update_settings: ::std::option::Option<crate::types::OsUpdateSettings>,
 }
-impl UpdateValue {
+impl  UpdateValue  {
     /// <p>The OS update related settings.</p>
-    pub fn os_update_settings(&self) -> ::std::option::Option<&crate::types::OsUpdateSettings> {
+    pub fn os_update_settings(&self) -> ::std::option::Option<& crate::types::OsUpdateSettings> {
         self.os_update_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl UpdateValueBuilder {
     }
     /// <p>The OS update related settings.</p>
     pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
-        self.os_update_settings = input;
-        self
+        self.os_update_settings = input; self
     }
     /// <p>The OS update related settings.</p>
     pub fn get_os_update_settings(&self) -> &::std::option::Option<crate::types::OsUpdateSettings> {
@@ -44,7 +43,9 @@ impl UpdateValueBuilder {
     /// Consumes the builder and constructs a [`UpdateValue`](crate::types::UpdateValue).
     pub fn build(self) -> crate::types::UpdateValue {
         crate::types::UpdateValue {
-            os_update_settings: self.os_update_settings,
+            os_update_settings: self.os_update_settings
+            ,
         }
     }
 }
+

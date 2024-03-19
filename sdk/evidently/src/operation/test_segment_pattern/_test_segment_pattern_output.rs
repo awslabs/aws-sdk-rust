@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSegmentPatternOutput {
+pub struct TestSegmentPatternOutput  {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
     pub r#match: bool,
     _request_id: Option<String>,
 }
-impl TestSegmentPatternOutput {
+impl  TestSegmentPatternOutput  {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
     pub fn r#match(&self) -> bool {
         self.r#match
     }
 }
 impl ::aws_types::request_id::RequestId for TestSegmentPatternOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestSegmentPatternOutput {
     /// Creates a new builder-style object to manufacture [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
     pub fn builder() -> crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder {
@@ -41,37 +41,35 @@ impl TestSegmentPatternOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
     pub fn set_match(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
     pub fn get_match(&self) -> &::std::option::Option<bool> {
         &self.r#match
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#match`](crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::r#match)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternOutput {
-            r#match: self.r#match.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#match",
-                    "r#match was not specified but it is required when building TestSegmentPatternOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_segment_pattern::TestSegmentPatternOutput {
+                r#match: self.r#match
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#match", "r#match was not specified but it is required when building TestSegmentPatternOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

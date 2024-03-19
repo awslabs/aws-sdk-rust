@@ -3,7 +3,7 @@
 /// <p>Describes a state change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StateReason {
+pub struct StateReason  {
     /// <p>The reason code for the state change.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message for the state change.</p>
@@ -35,9 +35,9 @@ pub struct StateReason {
     /// </ul>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl StateReason {
+impl  StateReason  {
     /// <p>The reason code for the state change.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The message for the state change.</p>
@@ -67,7 +67,7 @@ impl StateReason {
     /// <li>
     /// <p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p></li>
     /// </ul>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -93,8 +93,7 @@ impl StateReasonBuilder {
     }
     /// <p>The reason code for the state change.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The reason code for the state change.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +158,7 @@ impl StateReasonBuilder {
     /// <p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p></li>
     /// </ul>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message for the state change.</p>
     /// <ul>
@@ -195,8 +193,11 @@ impl StateReasonBuilder {
     /// Consumes the builder and constructs a [`StateReason`](crate::types::StateReason).
     pub fn build(self) -> crate::types::StateReason {
         crate::types::StateReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

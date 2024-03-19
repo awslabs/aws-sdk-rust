@@ -3,19 +3,19 @@
 /// <p>The input for the GetPolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyVersionInput {
+pub struct GetPolicyVersionInput  {
     /// <p>The name of the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
     pub policy_version_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPolicyVersionInput {
+impl  GetPolicyVersionInput  {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<& str> {
         self.policy_version_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetPolicyVersionInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetPolicyVersionInputBuilder {
     }
     /// <p>The policy version ID.</p>
     pub fn set_policy_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// <p>The policy version ID.</p>
     pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_version_id
     }
     /// Consumes the builder and constructs a [`GetPolicyVersionInput`](crate::operation::get_policy_version::GetPolicyVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_policy_version::GetPolicyVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy_version::GetPolicyVersionInput {
-            policy_name: self.policy_name,
-            policy_version_id: self.policy_version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_policy_version::GetPolicyVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_policy_version::GetPolicyVersionInput {
+                policy_name: self.policy_name
+                ,
+                policy_version_id: self.policy_version_id
+                ,
+            }
+        )
     }
 }
+

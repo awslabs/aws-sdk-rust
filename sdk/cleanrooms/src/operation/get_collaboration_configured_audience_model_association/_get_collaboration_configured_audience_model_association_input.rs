@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCollaborationConfiguredAudienceModelAssociationInput {
+pub struct GetCollaborationConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the collaboration that the configured audience model association belongs to. Accepts a collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub configured_audience_model_association_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetCollaborationConfiguredAudienceModelAssociationInput {
+impl  GetCollaborationConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for the collaboration that the configured audience model association belongs to. Accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
-    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_association_identifier.as_deref()
     }
 }
 impl GetCollaborationConfiguredAudienceModelAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationConfiguredAudienceModelAssociationInput`](crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationInput).
-    pub fn builder() -> crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationInputBuilder{
+    pub fn builder() -> crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationInputBuilder {
         crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationInputBuilder::default()
     }
 }
@@ -41,8 +41,7 @@ impl GetCollaborationConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the collaboration that the configured audience model association belongs to. Accepts a collaboration ID.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for the collaboration that the configured audience model association belongs to. Accepts a collaboration ID.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetCollaborationConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub fn set_configured_audience_model_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_association_identifier = input;
-        self
+        self.configured_audience_model_association_identifier = input; self
     }
     /// <p>A unique identifier for the configured audience model association that you want to retrieve.</p>
     pub fn get_configured_audience_model_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_audience_model_association_identifier
     }
     /// Consumes the builder and constructs a [`GetCollaborationConfiguredAudienceModelAssociationInput`](crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationInput {
-                collaboration_identifier: self.collaboration_identifier,
-                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier
+                ,
+            }
         )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The request to create a new streaming distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStreamingDistributionInput {
+pub struct CreateStreamingDistributionInput  {
     /// <p>The streaming distribution's configuration information.</p>
     pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }
-impl CreateStreamingDistributionInput {
+impl  CreateStreamingDistributionInput  {
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn streaming_distribution_config(&self) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
+    pub fn streaming_distribution_config(&self) -> ::std::option::Option<& crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
 }
@@ -35,22 +35,20 @@ impl CreateStreamingDistributionInputBuilder {
     }
     /// <p>The streaming distribution's configuration information.</p>
     pub fn set_streaming_distribution_config(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfig>) -> Self {
-        self.streaming_distribution_config = input;
-        self
+        self.streaming_distribution_config = input; self
     }
     /// <p>The streaming distribution's configuration information.</p>
     pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
         &self.streaming_distribution_config
     }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionInput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_streaming_distribution::CreateStreamingDistributionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_streaming_distribution::CreateStreamingDistributionInput {
-            streaming_distribution_config: self.streaming_distribution_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_streaming_distribution::CreateStreamingDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionInput {
+                streaming_distribution_config: self.streaming_distribution_config
+                ,
+            }
+        )
     }
 }
+

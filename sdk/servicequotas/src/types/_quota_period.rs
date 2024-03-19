@@ -3,19 +3,19 @@
 /// <p>Information about the quota period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuotaPeriod {
+pub struct QuotaPeriod  {
     /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub period_value: ::std::option::Option<i32>,
     /// <p>The time unit.</p>
     pub period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
-impl QuotaPeriod {
+impl  QuotaPeriod  {
     /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn period_value(&self) -> ::std::option::Option<i32> {
         self.period_value
     }
     /// <p>The time unit.</p>
-    pub fn period_unit(&self) -> ::std::option::Option<&crate::types::PeriodUnit> {
+    pub fn period_unit(&self) -> ::std::option::Option<& crate::types::PeriodUnit> {
         self.period_unit.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl QuotaPeriodBuilder {
     }
     /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn set_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period_value = input;
-        self
+        self.period_value = input; self
     }
     /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn get_period_value(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl QuotaPeriodBuilder {
     }
     /// <p>The time unit.</p>
     pub fn set_period_unit(mut self, input: ::std::option::Option<crate::types::PeriodUnit>) -> Self {
-        self.period_unit = input;
-        self
+        self.period_unit = input; self
     }
     /// <p>The time unit.</p>
     pub fn get_period_unit(&self) -> &::std::option::Option<crate::types::PeriodUnit> {
@@ -65,8 +63,11 @@ impl QuotaPeriodBuilder {
     /// Consumes the builder and constructs a [`QuotaPeriod`](crate::types::QuotaPeriod).
     pub fn build(self) -> crate::types::QuotaPeriod {
         crate::types::QuotaPeriod {
-            period_value: self.period_value,
-            period_unit: self.period_unit,
+            period_value: self.period_value
+            ,
+            period_unit: self.period_unit
+            ,
         }
     }
 }
+

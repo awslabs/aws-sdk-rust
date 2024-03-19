@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCatalogItemInput {
+pub struct GetCatalogItemInput  {
     /// <p>The ID of the catalog item.</p>
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCatalogItemInput {
+impl  GetCatalogItemInput  {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> ::std::option::Option<& str> {
         self.catalog_item_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetCatalogItemInputBuilder {
     }
     /// <p>The ID of the catalog item.</p>
     pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_item_id = input;
-        self
+        self.catalog_item_id = input; self
     }
     /// <p>The ID of the catalog item.</p>
     pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_item_id
     }
     /// Consumes the builder and constructs a [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_catalog_item::GetCatalogItemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_catalog_item::GetCatalogItemInput {
-            catalog_item_id: self.catalog_item_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_catalog_item::GetCatalogItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_catalog_item::GetCatalogItemInput {
+                catalog_item_id: self.catalog_item_id
+                ,
+            }
+        )
     }
 }
+

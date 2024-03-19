@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetPartitionOutput {
+pub struct BatchGetPartitionOutput  {
     /// <p>A list of the requested partitions.</p>
-    pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
+    pub partitions: ::std::option::Option<::std::vec::Vec::<crate::types::Partition>>,
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub unprocessed_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub unprocessed_keys: ::std::option::Option<::std::vec::Vec::<crate::types::PartitionValueList>>,
     _request_id: Option<String>,
 }
-impl BatchGetPartitionOutput {
+impl  BatchGetPartitionOutput  {
     /// <p>A list of the requested partitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions.is_none()`.
-    pub fn partitions(&self) -> &[crate::types::Partition] {
-        self.partitions.as_deref().unwrap_or_default()
+    pub fn partitions(&self) -> & [crate::types::Partition] {
+        self.partitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_keys.is_none()`.
-    pub fn unprocessed_keys(&self) -> &[crate::types::PartitionValueList] {
-        self.unprocessed_keys.as_deref().unwrap_or_default()
+    pub fn unprocessed_keys(&self) -> & [crate::types::PartitionValueList] {
+        self.unprocessed_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetPartitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetPartitionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetPartitionOutput`](crate::operation::batch_get_partition::BatchGetPartitionOutput).
     pub fn builder() -> crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetPartitionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetPartitionOutputBuilder {
-    pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
-    pub(crate) unprocessed_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) partitions: ::std::option::Option<::std::vec::Vec::<crate::types::Partition>>,
+    pub(crate) unprocessed_keys: ::std::option::Option<::std::vec::Vec::<crate::types::PartitionValueList>>,
     _request_id: Option<String>,
 }
 impl BatchGetPartitionOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetPartitionOutputBuilder {
     /// <p>A list of the requested partitions.</p>
     pub fn partitions(mut self, input: crate::types::Partition) -> Self {
         let mut v = self.partitions.unwrap_or_default();
-        v.push(input);
-        self.partitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the requested partitions.</p>
-    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>) -> Self {
-        self.partitions = input;
-        self
+    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Partition>>) -> Self {
+        self.partitions = input; self
     }
     /// <p>A list of the requested partitions.</p>
-    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Partition>> {
         &self.partitions
     }
     /// Appends an item to `unprocessed_keys`.
@@ -71,34 +72,36 @@ impl BatchGetPartitionOutputBuilder {
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
     pub fn unprocessed_keys(mut self, input: crate::types::PartitionValueList) -> Self {
         let mut v = self.unprocessed_keys.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub fn set_unprocessed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
-        self.unprocessed_keys = input;
-        self
+    pub fn set_unprocessed_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PartitionValueList>>) -> Self {
+        self.unprocessed_keys = input; self
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub fn get_unprocessed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_unprocessed_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PartitionValueList>> {
         &self.unprocessed_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetPartitionOutput`](crate::operation::batch_get_partition::BatchGetPartitionOutput).
     pub fn build(self) -> crate::operation::batch_get_partition::BatchGetPartitionOutput {
         crate::operation::batch_get_partition::BatchGetPartitionOutput {
-            partitions: self.partitions,
-            unprocessed_keys: self.unprocessed_keys,
+            partitions: self.partitions
+            ,
+            unprocessed_keys: self.unprocessed_keys
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

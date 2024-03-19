@@ -3,7 +3,7 @@
 /// <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupDeveloperIdentityInput {
+pub struct LookupDeveloperIdentityInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -15,17 +15,17 @@ pub struct LookupDeveloperIdentityInput {
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl LookupDeveloperIdentityInput {
+impl  LookupDeveloperIdentityInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn developer_user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn developer_user_identifier(&self) -> ::std::option::Option<& str> {
         self.developer_user_identifier.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
@@ -33,7 +33,7 @@ impl LookupDeveloperIdentityInput {
         self.max_results
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl LookupDeveloperIdentityInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl LookupDeveloperIdentityInputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl LookupDeveloperIdentityInputBuilder {
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
     pub fn set_developer_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.developer_user_identifier = input;
-        self
+        self.developer_user_identifier = input; self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
     pub fn get_developer_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl LookupDeveloperIdentityInputBuilder {
     }
     /// <p>The maximum number of identities to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of identities to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,26 +115,28 @@ impl LookupDeveloperIdentityInputBuilder {
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupDeveloperIdentityInput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput {
-            identity_pool_id: self.identity_pool_id,
-            identity_id: self.identity_id,
-            developer_user_identifier: self.developer_user_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_id: self.identity_id
+                ,
+                developer_user_identifier: self.developer_user_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

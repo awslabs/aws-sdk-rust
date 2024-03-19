@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceNetworkVpcAssociations`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::set_service_network_identifier):<br>required: **false**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
     ///   - [`vpc_identifier(impl Into<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::vpc_identifier) / [`set_vpc_identifier(Option<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::set_vpc_identifier):<br>required: **false**<br><p>The ID or Amazon Resource Name (ARN) of the VPC.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListServiceNetworkVpcAssociationsOutput`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput) with field(s):
     ///   - [`items(Vec::<ServiceNetworkVpcAssociationSummary>)`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput::items): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListServiceNetworkVpcAssociationsError>`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError)
-    pub fn list_service_network_vpc_associations(
-        &self,
-    ) -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder {
-        crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListServiceNetworkVpcAssociationsError>`](crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError)
+    pub fn list_service_network_vpc_associations(&self) -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder {
+                                crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

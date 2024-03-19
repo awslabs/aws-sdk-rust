@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelZonalShiftInput {
+pub struct CancelZonalShiftInput  {
     /// <p>The internally-generated identifier of a zonal shift.</p>
     pub zonal_shift_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelZonalShiftInput {
+impl  CancelZonalShiftInput  {
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(&self) -> ::std::option::Option<&str> {
+    pub fn zonal_shift_id(&self) -> ::std::option::Option<& str> {
         self.zonal_shift_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl CancelZonalShiftInputBuilder {
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
     pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zonal_shift_id = input;
-        self
+        self.zonal_shift_id = input; self
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
     pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.zonal_shift_id
     }
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
-            zonal_shift_id: self.zonal_shift_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
+                zonal_shift_id: self.zonal_shift_id
+                ,
+            }
+        )
     }
 }
+

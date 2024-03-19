@@ -3,7 +3,7 @@
 /// <p>Describes the code generation job configuration for a React project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReactStartCodegenJobData {
+pub struct ReactStartCodegenJobData  {
     /// <p>The JavaScript module type.</p>
     pub module: ::std::option::Option<crate::types::JsModule>,
     /// <p>The ECMAScript specification to use.</p>
@@ -17,19 +17,19 @@ pub struct ReactStartCodegenJobData {
     /// <p>The API configuration for the code generation job.</p>
     pub api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
-    pub dependencies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dependencies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ReactStartCodegenJobData {
+impl  ReactStartCodegenJobData  {
     /// <p>The JavaScript module type.</p>
-    pub fn module(&self) -> ::std::option::Option<&crate::types::JsModule> {
+    pub fn module(&self) -> ::std::option::Option<& crate::types::JsModule> {
         self.module.as_ref()
     }
     /// <p>The ECMAScript specification to use.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::JsTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::JsTarget> {
         self.target.as_ref()
     }
     /// <p>The file type to use for a JavaScript project.</p>
-    pub fn script(&self) -> ::std::option::Option<&crate::types::JsScript> {
+    pub fn script(&self) -> ::std::option::Option<& crate::types::JsScript> {
         self.script.as_ref()
     }
     /// <p>Specifies whether the code generation job should render type declaration files.</p>
@@ -41,11 +41,11 @@ impl ReactStartCodegenJobData {
         self.inline_source_map
     }
     /// <p>The API configuration for the code generation job.</p>
-    pub fn api_configuration(&self) -> ::std::option::Option<&crate::types::ApiConfiguration> {
+    pub fn api_configuration(&self) -> ::std::option::Option<& crate::types::ApiConfiguration> {
         self.api_configuration.as_ref()
     }
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
-    pub fn dependencies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dependencies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dependencies.as_ref()
     }
 }
@@ -66,7 +66,7 @@ pub struct ReactStartCodegenJobDataBuilder {
     pub(crate) render_type_declarations: ::std::option::Option<bool>,
     pub(crate) inline_source_map: ::std::option::Option<bool>,
     pub(crate) api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
-    pub(crate) dependencies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dependencies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ReactStartCodegenJobDataBuilder {
     /// <p>The JavaScript module type.</p>
@@ -76,8 +76,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>The JavaScript module type.</p>
     pub fn set_module(mut self, input: ::std::option::Option<crate::types::JsModule>) -> Self {
-        self.module = input;
-        self
+        self.module = input; self
     }
     /// <p>The JavaScript module type.</p>
     pub fn get_module(&self) -> &::std::option::Option<crate::types::JsModule> {
@@ -90,8 +89,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>The ECMAScript specification to use.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::JsTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The ECMAScript specification to use.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::JsTarget> {
@@ -104,8 +102,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>The file type to use for a JavaScript project.</p>
     pub fn set_script(mut self, input: ::std::option::Option<crate::types::JsScript>) -> Self {
-        self.script = input;
-        self
+        self.script = input; self
     }
     /// <p>The file type to use for a JavaScript project.</p>
     pub fn get_script(&self) -> &::std::option::Option<crate::types::JsScript> {
@@ -118,8 +115,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>Specifies whether the code generation job should render type declaration files.</p>
     pub fn set_render_type_declarations(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.render_type_declarations = input;
-        self
+        self.render_type_declarations = input; self
     }
     /// <p>Specifies whether the code generation job should render type declaration files.</p>
     pub fn get_render_type_declarations(&self) -> &::std::option::Option<bool> {
@@ -132,8 +128,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>Specifies whether the code generation job should render inline source maps.</p>
     pub fn set_inline_source_map(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inline_source_map = input;
-        self
+        self.inline_source_map = input; self
     }
     /// <p>Specifies whether the code generation job should render inline source maps.</p>
     pub fn get_inline_source_map(&self) -> &::std::option::Option<bool> {
@@ -146,8 +141,7 @@ impl ReactStartCodegenJobDataBuilder {
     }
     /// <p>The API configuration for the code generation job.</p>
     pub fn set_api_configuration(mut self, input: ::std::option::Option<crate::types::ApiConfiguration>) -> Self {
-        self.api_configuration = input;
-        self
+        self.api_configuration = input; self
     }
     /// <p>The API configuration for the code generation job.</p>
     pub fn get_api_configuration(&self) -> &::std::option::Option<crate::types::ApiConfiguration> {
@@ -160,32 +154,38 @@ impl ReactStartCodegenJobDataBuilder {
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
     pub fn dependencies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dependencies.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dependencies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dependencies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
-    pub fn set_dependencies(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.dependencies = input;
-        self
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dependencies = input; self
     }
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
-    pub fn get_dependencies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dependencies
     }
     /// Consumes the builder and constructs a [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
     pub fn build(self) -> crate::types::ReactStartCodegenJobData {
         crate::types::ReactStartCodegenJobData {
-            module: self.module,
-            target: self.target,
-            script: self.script,
-            render_type_declarations: self.render_type_declarations.unwrap_or_default(),
-            inline_source_map: self.inline_source_map.unwrap_or_default(),
-            api_configuration: self.api_configuration,
-            dependencies: self.dependencies,
+            module: self.module
+            ,
+            target: self.target
+            ,
+            script: self.script
+            ,
+            render_type_declarations: self.render_type_declarations
+                .unwrap_or_default()
+            ,
+            inline_source_map: self.inline_source_map
+                .unwrap_or_default()
+            ,
+            api_configuration: self.api_configuration
+            ,
+            dependencies: self.dependencies
+            ,
         }
     }
 }
+

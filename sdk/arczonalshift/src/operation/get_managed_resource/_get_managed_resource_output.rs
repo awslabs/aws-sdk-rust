@@ -2,61 +2,61 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetManagedResourceOutput {
+pub struct GetManagedResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub applied_weights: ::std::collections::HashMap<::std::string::String, f32>,
+    pub applied_weights: ::std::collections::HashMap::<::std::string::String, f32>,
     /// <p>The zonal shifts that are currently active for a resource.</p>
-    pub zonal_shifts: ::std::vec::Vec<crate::types::ZonalShiftInResource>,
+    pub zonal_shifts: ::std::vec::Vec::<crate::types::ZonalShiftInResource>,
     /// <p>An array of the autoshifts that are active for the resource.</p>
-    pub autoshifts: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>,
+    pub autoshifts: ::std::option::Option<::std::vec::Vec::<crate::types::AutoshiftInResource>>,
     /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
     pub practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
     /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     pub zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
     _request_id: Option<String>,
 }
-impl GetManagedResourceOutput {
+impl  GetManagedResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn applied_weights(&self) -> &::std::collections::HashMap<::std::string::String, f32> {
+    pub fn applied_weights(&self) -> & ::std::collections::HashMap::<::std::string::String, f32> {
         &self.applied_weights
     }
     /// <p>The zonal shifts that are currently active for a resource.</p>
-    pub fn zonal_shifts(&self) -> &[crate::types::ZonalShiftInResource] {
-        use std::ops::Deref;
-        self.zonal_shifts.deref()
+    pub fn zonal_shifts(&self) -> & [crate::types::ZonalShiftInResource] {
+        use std::ops::Deref; self.zonal_shifts.deref()
     }
     /// <p>An array of the autoshifts that are active for the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.autoshifts.is_none()`.
-    pub fn autoshifts(&self) -> &[crate::types::AutoshiftInResource] {
-        self.autoshifts.as_deref().unwrap_or_default()
+    pub fn autoshifts(&self) -> & [crate::types::AutoshiftInResource] {
+        self.autoshifts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
-    pub fn practice_run_configuration(&self) -> ::std::option::Option<&crate::types::PracticeRunConfiguration> {
+    pub fn practice_run_configuration(&self) -> ::std::option::Option<& crate::types::PracticeRunConfiguration> {
         self.practice_run_configuration.as_ref()
     }
     /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
-    pub fn zonal_autoshift_status(&self) -> ::std::option::Option<&crate::types::ZonalAutoshiftStatus> {
+    pub fn zonal_autoshift_status(&self) -> ::std::option::Option<& crate::types::ZonalAutoshiftStatus> {
         self.zonal_autoshift_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetManagedResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetManagedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput).
     pub fn builder() -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
@@ -70,9 +70,9 @@ impl GetManagedResourceOutput {
 pub struct GetManagedResourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) applied_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
-    pub(crate) zonal_shifts: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>,
-    pub(crate) autoshifts: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>,
+    pub(crate) applied_weights: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>>,
+    pub(crate) zonal_shifts: ::std::option::Option<::std::vec::Vec::<crate::types::ZonalShiftInResource>>,
+    pub(crate) autoshifts: ::std::option::Option<::std::vec::Vec::<crate::types::AutoshiftInResource>>,
     pub(crate) practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
     pub(crate) zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
     _request_id: Option<String>,
@@ -85,8 +85,7 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl GetManagedResourceOutputBuilder {
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
     pub fn applied_weights(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f32) -> Self {
         let mut hash_map = self.applied_weights.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.applied_weights = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.applied_weights = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn set_applied_weights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>) -> Self {
-        self.applied_weights = input;
-        self
+    pub fn set_applied_weights(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>>) -> Self {
+        self.applied_weights = input; self
     }
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    pub fn get_applied_weights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f32>> {
+    pub fn get_applied_weights(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>> {
         &self.applied_weights
     }
     /// Appends an item to `zonal_shifts`.
@@ -133,17 +130,16 @@ impl GetManagedResourceOutputBuilder {
     /// <p>The zonal shifts that are currently active for a resource.</p>
     pub fn zonal_shifts(mut self, input: crate::types::ZonalShiftInResource) -> Self {
         let mut v = self.zonal_shifts.unwrap_or_default();
-        v.push(input);
-        self.zonal_shifts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.zonal_shifts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The zonal shifts that are currently active for a resource.</p>
-    pub fn set_zonal_shifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>) -> Self {
-        self.zonal_shifts = input;
-        self
+    pub fn set_zonal_shifts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ZonalShiftInResource>>) -> Self {
+        self.zonal_shifts = input; self
     }
     /// <p>The zonal shifts that are currently active for a resource.</p>
-    pub fn get_zonal_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>> {
+    pub fn get_zonal_shifts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ZonalShiftInResource>> {
         &self.zonal_shifts
     }
     /// Appends an item to `autoshifts`.
@@ -153,17 +149,16 @@ impl GetManagedResourceOutputBuilder {
     /// <p>An array of the autoshifts that are active for the resource.</p>
     pub fn autoshifts(mut self, input: crate::types::AutoshiftInResource) -> Self {
         let mut v = self.autoshifts.unwrap_or_default();
-        v.push(input);
-        self.autoshifts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.autoshifts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the autoshifts that are active for the resource.</p>
-    pub fn set_autoshifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>) -> Self {
-        self.autoshifts = input;
-        self
+    pub fn set_autoshifts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoshiftInResource>>) -> Self {
+        self.autoshifts = input; self
     }
     /// <p>An array of the autoshifts that are active for the resource.</p>
-    pub fn get_autoshifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>> {
+    pub fn get_autoshifts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoshiftInResource>> {
         &self.autoshifts
     }
     /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
@@ -173,8 +168,7 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
     pub fn set_practice_run_configuration(mut self, input: ::std::option::Option<crate::types::PracticeRunConfiguration>) -> Self {
-        self.practice_run_configuration = input;
-        self
+        self.practice_run_configuration = input; self
     }
     /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
     pub fn get_practice_run_configuration(&self) -> &::std::option::Option<crate::types::PracticeRunConfiguration> {
@@ -187,49 +181,51 @@ impl GetManagedResourceOutputBuilder {
     }
     /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
-        self.zonal_autoshift_status = input;
-        self
+        self.zonal_autoshift_status = input; self
     }
     /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetManagedResourceOutput`](crate::operation::get_managed_resource::GetManagedResourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`applied_weights`](crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::applied_weights)
     /// - [`zonal_shifts`](crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::zonal_shifts)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceOutput {
-            arn: self.arn,
-            name: self.name,
-            applied_weights: self.applied_weights.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "applied_weights",
-                    "applied_weights was not specified but it is required when building GetManagedResourceOutput",
-                )
-            })?,
-            zonal_shifts: self.zonal_shifts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "zonal_shifts",
-                    "zonal_shifts was not specified but it is required when building GetManagedResourceOutput",
-                )
-            })?,
-            autoshifts: self.autoshifts,
-            practice_run_configuration: self.practice_run_configuration,
-            zonal_autoshift_status: self.zonal_autoshift_status,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_managed_resource::GetManagedResourceOutput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                applied_weights: self.applied_weights
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("applied_weights", "applied_weights was not specified but it is required when building GetManagedResourceOutput")
+                    )?
+                ,
+                zonal_shifts: self.zonal_shifts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_shifts", "zonal_shifts was not specified but it is required when building GetManagedResourceOutput")
+                    )?
+                ,
+                autoshifts: self.autoshifts
+                ,
+                practice_run_configuration: self.practice_run_configuration
+                ,
+                zonal_autoshift_status: self.zonal_autoshift_status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

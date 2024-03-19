@@ -3,13 +3,13 @@
 /// <p>A structure that contains configuration data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
     pub lex: ::std::option::Option<crate::types::LexConfiguration>,
 }
-impl Configuration {
+impl  Configuration  {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
-    pub fn lex(&self) -> ::std::option::Option<&crate::types::LexConfiguration> {
+    pub fn lex(&self) -> ::std::option::Option<& crate::types::LexConfiguration> {
         self.lex.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ConfigurationBuilder {
     }
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
     pub fn set_lex(mut self, input: ::std::option::Option<crate::types::LexConfiguration>) -> Self {
-        self.lex = input;
-        self
+        self.lex = input; self
     }
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
     pub fn get_lex(&self) -> &::std::option::Option<crate::types::LexConfiguration> {
@@ -44,6 +43,10 @@ impl ConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {
-        crate::types::Configuration { lex: self.lex }
+        crate::types::Configuration {
+            lex: self.lex
+            ,
+        }
     }
 }
+

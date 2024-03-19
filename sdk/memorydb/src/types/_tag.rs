@@ -3,19 +3,19 @@
 /// <p>A tag that can be added to an MemoryDB resource. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your MemoryDB resources. When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. A tag with a null Value is permitted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging-resources.html">Tagging your MemoryDB resources</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key for the tag. May not be null.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag's value. May be null.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Tag {
+impl  Tag  {
     /// <p>The key for the tag. May not be null.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag's value. May be null.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TagBuilder {
     }
     /// <p>The key for the tag. May not be null.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for the tag. May not be null.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TagBuilder {
     }
     /// <p>The tag's value. May be null.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The tag's value. May be null.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TagBuilder {
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

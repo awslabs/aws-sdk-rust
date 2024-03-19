@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let m2tsaudioduration = unimplemented!();
 /// match m2tsaudioduration {
@@ -30,16 +30,14 @@
 /// Specifically, when `m2tsaudioduration` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `M2tsAudioDuration::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum M2tsAudioDuration {
     #[allow(missing_docs)] // documentation missing in model
     DefaultCodecDuration,
@@ -47,61 +45,62 @@ pub enum M2tsAudioDuration {
     MatchVideoDuration,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for M2tsAudioDuration {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT_CODEC_DURATION" => M2tsAudioDuration::DefaultCodecDuration,
-            "MATCH_VIDEO_DURATION" => M2tsAudioDuration::MatchVideoDuration,
-            other => M2tsAudioDuration::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DEFAULT_CODEC_DURATION" => M2tsAudioDuration::DefaultCodecDuration,
+"MATCH_VIDEO_DURATION" => M2tsAudioDuration::MatchVideoDuration,
+other => M2tsAudioDuration::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for M2tsAudioDuration {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(M2tsAudioDuration::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(M2tsAudioDuration::from(s))
+                    }
+                }
 impl M2tsAudioDuration {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            M2tsAudioDuration::DefaultCodecDuration => "DEFAULT_CODEC_DURATION",
-            M2tsAudioDuration::MatchVideoDuration => "MATCH_VIDEO_DURATION",
-            M2tsAudioDuration::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT_CODEC_DURATION", "MATCH_VIDEO_DURATION"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    M2tsAudioDuration::DefaultCodecDuration => "DEFAULT_CODEC_DURATION",
+    M2tsAudioDuration::MatchVideoDuration => "MATCH_VIDEO_DURATION",
+    M2tsAudioDuration::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEFAULT_CODEC_DURATION", "MATCH_VIDEO_DURATION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for M2tsAudioDuration {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl M2tsAudioDuration {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for M2tsAudioDuration {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            M2tsAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
-            M2tsAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
-            M2tsAudioDuration::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                M2tsAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
+M2tsAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
+M2tsAudioDuration::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

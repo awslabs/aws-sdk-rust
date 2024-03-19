@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelsInput {
+pub struct GetModelsInput  {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
@@ -12,17 +12,17 @@ pub struct GetModelsInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetModelsInput {
+impl  GetModelsInput  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The next token for the subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return for the request.</p>
@@ -54,8 +54,7 @@ impl GetModelsInputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetModelsInputBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -82,8 +80,7 @@ impl GetModelsInputBuilder {
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl GetModelsInputBuilder {
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,11 +101,18 @@ impl GetModelsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_models::GetModelsInput {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_models::GetModelsInput {
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

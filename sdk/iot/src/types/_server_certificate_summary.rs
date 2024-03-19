@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a server certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerCertificateSummary {
+pub struct ServerCertificateSummary  {
     /// <p>The ARN of the server certificate.</p>
     pub server_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the server certificate.</p>
@@ -11,17 +11,17 @@ pub struct ServerCertificateSummary {
     /// <p>Details that explain the status of the server certificate.</p>
     pub server_certificate_status_detail: ::std::option::Option<::std::string::String>,
 }
-impl ServerCertificateSummary {
+impl  ServerCertificateSummary  {
     /// <p>The ARN of the server certificate.</p>
-    pub fn server_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.server_certificate_arn.as_deref()
     }
     /// <p>The status of the server certificate.</p>
-    pub fn server_certificate_status(&self) -> ::std::option::Option<&crate::types::ServerCertificateStatus> {
+    pub fn server_certificate_status(&self) -> ::std::option::Option<& crate::types::ServerCertificateStatus> {
         self.server_certificate_status.as_ref()
     }
     /// <p>Details that explain the status of the server certificate.</p>
-    pub fn server_certificate_status_detail(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_status_detail(&self) -> ::std::option::Option<& str> {
         self.server_certificate_status_detail.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ServerCertificateSummaryBuilder {
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn set_server_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_arn = input;
-        self
+        self.server_certificate_arn = input; self
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ServerCertificateSummaryBuilder {
     }
     /// <p>The status of the server certificate.</p>
     pub fn set_server_certificate_status(mut self, input: ::std::option::Option<crate::types::ServerCertificateStatus>) -> Self {
-        self.server_certificate_status = input;
-        self
+        self.server_certificate_status = input; self
     }
     /// <p>The status of the server certificate.</p>
     pub fn get_server_certificate_status(&self) -> &::std::option::Option<crate::types::ServerCertificateStatus> {
@@ -76,8 +74,7 @@ impl ServerCertificateSummaryBuilder {
     }
     /// <p>Details that explain the status of the server certificate.</p>
     pub fn set_server_certificate_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_status_detail = input;
-        self
+        self.server_certificate_status_detail = input; self
     }
     /// <p>Details that explain the status of the server certificate.</p>
     pub fn get_server_certificate_status_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ServerCertificateSummaryBuilder {
     /// Consumes the builder and constructs a [`ServerCertificateSummary`](crate::types::ServerCertificateSummary).
     pub fn build(self) -> crate::types::ServerCertificateSummary {
         crate::types::ServerCertificateSummary {
-            server_certificate_arn: self.server_certificate_arn,
-            server_certificate_status: self.server_certificate_status,
-            server_certificate_status_detail: self.server_certificate_status_detail,
+            server_certificate_arn: self.server_certificate_arn
+            ,
+            server_certificate_status: self.server_certificate_status
+            ,
+            server_certificate_status_detail: self.server_certificate_status_detail
+            ,
         }
     }
 }
+

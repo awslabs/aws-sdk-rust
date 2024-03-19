@@ -3,7 +3,7 @@
 /// <p>A configuration option setting for the environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElasticBeanstalkEnvironmentOptionSetting {
+pub struct AwsElasticBeanstalkEnvironmentOptionSetting  {
     /// <p>The type of resource that the configuration option is associated with.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the option.</p>
@@ -13,21 +13,21 @@ pub struct AwsElasticBeanstalkEnvironmentOptionSetting {
     /// <p>The value of the configuration setting.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsElasticBeanstalkEnvironmentOptionSetting {
+impl  AwsElasticBeanstalkEnvironmentOptionSetting  {
     /// <p>The type of resource that the configuration option is associated with.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the option.</p>
-    pub fn option_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_name(&self) -> ::std::option::Option<& str> {
         self.option_name.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The value of the configuration setting.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     }
     /// <p>The type of resource that the configuration option is associated with.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The type of resource that the configuration option is associated with.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     }
     /// <p>The name of the option.</p>
     pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_name = input;
-        self
+        self.option_name = input; self
     }
     /// <p>The name of the option.</p>
     pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     }
     /// <p>The value of the configuration setting.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the configuration setting.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::types::AwsElasticBeanstalkEnvironmentOptionSetting).
     pub fn build(self) -> crate::types::AwsElasticBeanstalkEnvironmentOptionSetting {
         crate::types::AwsElasticBeanstalkEnvironmentOptionSetting {
-            namespace: self.namespace,
-            option_name: self.option_name,
-            resource_name: self.resource_name,
-            value: self.value,
+            namespace: self.namespace
+            ,
+            option_name: self.option_name
+            ,
+            resource_name: self.resource_name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldLevelEncryptionConfig {
+pub struct FieldLevelEncryptionConfig  {
     /// <p>A unique number that ensures the request can't be replayed.</p>
     pub caller_reference: ::std::string::String,
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
@@ -13,22 +13,21 @@ pub struct FieldLevelEncryptionConfig {
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
     pub content_type_profile_config: ::std::option::Option<crate::types::ContentTypeProfileConfig>,
 }
-impl FieldLevelEncryptionConfig {
+impl  FieldLevelEncryptionConfig  {
     /// <p>A unique number that ensures the request can't be replayed.</p>
-    pub fn caller_reference(&self) -> &str {
-        use std::ops::Deref;
-        self.caller_reference.deref()
+    pub fn caller_reference(&self) -> & str {
+        use std::ops::Deref; self.caller_reference.deref()
     }
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
-    pub fn query_arg_profile_config(&self) -> ::std::option::Option<&crate::types::QueryArgProfileConfig> {
+    pub fn query_arg_profile_config(&self) -> ::std::option::Option<& crate::types::QueryArgProfileConfig> {
         self.query_arg_profile_config.as_ref()
     }
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
-    pub fn content_type_profile_config(&self) -> ::std::option::Option<&crate::types::ContentTypeProfileConfig> {
+    pub fn content_type_profile_config(&self) -> ::std::option::Option<& crate::types::ContentTypeProfileConfig> {
         self.content_type_profile_config.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl FieldLevelEncryptionConfigBuilder {
     }
     /// <p>A unique number that ensures the request can't be replayed.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A unique number that ensures the request can't be replayed.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl FieldLevelEncryptionConfigBuilder {
     }
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>An optional comment about the configuration. The comment cannot be longer than 128 characters.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl FieldLevelEncryptionConfigBuilder {
     }
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
     pub fn set_query_arg_profile_config(mut self, input: ::std::option::Option<crate::types::QueryArgProfileConfig>) -> Self {
-        self.query_arg_profile_config = input;
-        self
+        self.query_arg_profile_config = input; self
     }
     /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.</p>
     pub fn get_query_arg_profile_config(&self) -> &::std::option::Option<crate::types::QueryArgProfileConfig> {
@@ -99,8 +95,7 @@ impl FieldLevelEncryptionConfigBuilder {
     }
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
     pub fn set_content_type_profile_config(mut self, input: ::std::option::Option<crate::types::ContentTypeProfileConfig>) -> Self {
-        self.content_type_profile_config = input;
-        self
+        self.content_type_profile_config = input; self
     }
     /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.</p>
     pub fn get_content_type_profile_config(&self) -> &::std::option::Option<crate::types::ContentTypeProfileConfig> {
@@ -110,16 +105,21 @@ impl FieldLevelEncryptionConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::FieldLevelEncryptionConfigBuilder::caller_reference)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionConfig {
-            caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "caller_reference",
-                    "caller_reference was not specified but it is required when building FieldLevelEncryptionConfig",
-                )
-            })?,
-            comment: self.comment,
-            query_arg_profile_config: self.query_arg_profile_config,
-            content_type_profile_config: self.content_type_profile_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldLevelEncryptionConfig {
+                caller_reference: self.caller_reference
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("caller_reference", "caller_reference was not specified but it is required when building FieldLevelEncryptionConfig")
+                    )?
+                ,
+                comment: self.comment
+                ,
+                query_arg_profile_config: self.query_arg_profile_config
+                ,
+                content_type_profile_config: self.content_type_profile_config
+                ,
+            }
+        )
     }
 }
+

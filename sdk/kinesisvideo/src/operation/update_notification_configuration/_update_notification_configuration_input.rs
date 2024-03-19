@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNotificationConfigurationInput {
+pub struct UpdateNotificationConfigurationInput  {
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -10,17 +10,17 @@ pub struct UpdateNotificationConfigurationInput {
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
-impl UpdateNotificationConfigurationInput {
+impl  UpdateNotificationConfigurationInput  {
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl UpdateNotificationConfigurationInputBuilder {
     }
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl UpdateNotificationConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,26 +73,24 @@ impl UpdateNotificationConfigurationInputBuilder {
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`UpdateNotificationConfigurationInput`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                notification_configuration: self.notification_configuration,
-            },
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                notification_configuration: self.notification_configuration
+                ,
+            }
         )
     }
 }
+

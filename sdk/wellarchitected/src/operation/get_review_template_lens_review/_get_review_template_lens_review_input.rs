@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReviewTemplateLensReviewInput {
+pub struct GetReviewTemplateLensReviewInput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -11,16 +11,16 @@ pub struct GetReviewTemplateLensReviewInput {
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: ::std::option::Option<::std::string::String>,
 }
-impl GetReviewTemplateLensReviewInput {
+impl  GetReviewTemplateLensReviewInput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetReviewTemplateLensReviewInputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetReviewTemplateLensReviewInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -79,15 +77,15 @@ impl GetReviewTemplateLensReviewInputBuilder {
         &self.lens_alias
     }
     /// Consumes the builder and constructs a [`GetReviewTemplateLensReviewInput`](crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput {
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+            }
+        )
     }
 }
+

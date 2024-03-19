@@ -3,7 +3,7 @@
 /// <p>Represents a device type that an app is tested against.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The device's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device's display name.</p>
@@ -58,29 +58,29 @@ pub struct Device {
     /// <p>The name of the fleet to which this device belongs.</p>
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The instances that belong to this device.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceInstance>>,
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub availability: ::std::option::Option<crate::types::DeviceAvailability>,
 }
-impl Device {
+impl  Device  {
     /// <p>The device's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The device's display name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The device's manufacturer name.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
     /// <p>The device's model name.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The device's model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The device's form factor.</p>
@@ -91,7 +91,7 @@ impl Device {
     /// <li>
     /// <p>TABLET</p></li>
     /// </ul>
-    pub fn form_factor(&self) -> ::std::option::Option<&crate::types::DeviceFormFactor> {
+    pub fn form_factor(&self) -> ::std::option::Option<& crate::types::DeviceFormFactor> {
         self.form_factor.as_ref()
     }
     /// <p>The device's platform.</p>
@@ -102,19 +102,19 @@ impl Device {
     /// <li>
     /// <p>IOS</p></li>
     /// </ul>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::DevicePlatform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::DevicePlatform> {
         self.platform.as_ref()
     }
     /// <p>The device's operating system type.</p>
-    pub fn os(&self) -> ::std::option::Option<&str> {
+    pub fn os(&self) -> ::std::option::Option<& str> {
         self.os.as_deref()
     }
     /// <p>Information about the device's CPU.</p>
-    pub fn cpu(&self) -> ::std::option::Option<&crate::types::Cpu> {
+    pub fn cpu(&self) -> ::std::option::Option<& crate::types::Cpu> {
         self.cpu.as_ref()
     }
     /// <p>The resolution of the device.</p>
-    pub fn resolution(&self) -> ::std::option::Option<&crate::types::Resolution> {
+    pub fn resolution(&self) -> ::std::option::Option<& crate::types::Resolution> {
         self.resolution.as_ref()
     }
     /// <p>The device's heap size, expressed in bytes.</p>
@@ -126,15 +126,15 @@ impl Device {
         self.memory
     }
     /// <p>The device's image name.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The device's carrier.</p>
-    pub fn carrier(&self) -> ::std::option::Option<&str> {
+    pub fn carrier(&self) -> ::std::option::Option<& str> {
         self.carrier.as_deref()
     }
     /// <p>The device's radio.</p>
-    pub fn radio(&self) -> ::std::option::Option<&str> {
+    pub fn radio(&self) -> ::std::option::Option<& str> {
         self.radio.as_deref()
     }
     /// <p>Specifies whether remote access has been enabled for the specified device.</p>
@@ -147,21 +147,22 @@ impl Device {
         self.remote_debug_enabled
     }
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
-    pub fn fleet_type(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_type(&self) -> ::std::option::Option<& str> {
         self.fleet_type.as_deref()
     }
     /// <p>The name of the fleet to which this device belongs.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The instances that belong to this device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::DeviceInstance] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::DeviceInstance] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
-    pub fn availability(&self) -> ::std::option::Option<&crate::types::DeviceAvailability> {
+    pub fn availability(&self) -> ::std::option::Option<& crate::types::DeviceAvailability> {
         self.availability.as_ref()
     }
 }
@@ -195,7 +196,7 @@ pub struct DeviceBuilder {
     pub(crate) remote_debug_enabled: ::std::option::Option<bool>,
     pub(crate) fleet_type: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceInstance>>,
     pub(crate) availability: ::std::option::Option<crate::types::DeviceAvailability>,
 }
 impl DeviceBuilder {
@@ -206,8 +207,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The device's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +220,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's display name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The device's display name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +233,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's manufacturer name.</p>
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer = input;
-        self
+        self.manufacturer = input; self
     }
     /// <p>The device's manufacturer name.</p>
     pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +246,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's model name.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The device's model name.</p>
     pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +259,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The device's model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -290,8 +286,7 @@ impl DeviceBuilder {
     /// <p>TABLET</p></li>
     /// </ul>
     pub fn set_form_factor(mut self, input: ::std::option::Option<crate::types::DeviceFormFactor>) -> Self {
-        self.form_factor = input;
-        self
+        self.form_factor = input; self
     }
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
@@ -325,8 +320,7 @@ impl DeviceBuilder {
     /// <p>IOS</p></li>
     /// </ul>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::DevicePlatform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
@@ -346,8 +340,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's operating system type.</p>
     pub fn set_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os = input;
-        self
+        self.os = input; self
     }
     /// <p>The device's operating system type.</p>
     pub fn get_os(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +353,7 @@ impl DeviceBuilder {
     }
     /// <p>Information about the device's CPU.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<crate::types::Cpu>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>Information about the device's CPU.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<crate::types::Cpu> {
@@ -374,8 +366,7 @@ impl DeviceBuilder {
     }
     /// <p>The resolution of the device.</p>
     pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::Resolution>) -> Self {
-        self.resolution = input;
-        self
+        self.resolution = input; self
     }
     /// <p>The resolution of the device.</p>
     pub fn get_resolution(&self) -> &::std::option::Option<crate::types::Resolution> {
@@ -388,8 +379,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's heap size, expressed in bytes.</p>
     pub fn set_heap_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.heap_size = input;
-        self
+        self.heap_size = input; self
     }
     /// <p>The device's heap size, expressed in bytes.</p>
     pub fn get_heap_size(&self) -> &::std::option::Option<i64> {
@@ -402,8 +392,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's total memory size, expressed in bytes.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The device's total memory size, expressed in bytes.</p>
     pub fn get_memory(&self) -> &::std::option::Option<i64> {
@@ -416,8 +405,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's image name.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The device's image name.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -430,8 +418,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's carrier.</p>
     pub fn set_carrier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.carrier = input;
-        self
+        self.carrier = input; self
     }
     /// <p>The device's carrier.</p>
     pub fn get_carrier(&self) -> &::std::option::Option<::std::string::String> {
@@ -444,8 +431,7 @@ impl DeviceBuilder {
     }
     /// <p>The device's radio.</p>
     pub fn set_radio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.radio = input;
-        self
+        self.radio = input; self
     }
     /// <p>The device's radio.</p>
     pub fn get_radio(&self) -> &::std::option::Option<::std::string::String> {
@@ -458,8 +444,7 @@ impl DeviceBuilder {
     }
     /// <p>Specifies whether remote access has been enabled for the specified device.</p>
     pub fn set_remote_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_access_enabled = input;
-        self
+        self.remote_access_enabled = input; self
     }
     /// <p>Specifies whether remote access has been enabled for the specified device.</p>
     pub fn get_remote_access_enabled(&self) -> &::std::option::Option<bool> {
@@ -474,8 +459,7 @@ impl DeviceBuilder {
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_debug_enabled = input;
-        self
+        self.remote_debug_enabled = input; self
     }
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
@@ -489,8 +473,7 @@ impl DeviceBuilder {
     }
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
     pub fn set_fleet_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_type = input;
-        self
+        self.fleet_type = input; self
     }
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
     pub fn get_fleet_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -503,8 +486,7 @@ impl DeviceBuilder {
     }
     /// <p>The name of the fleet to which this device belongs.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet to which this device belongs.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -517,17 +499,16 @@ impl DeviceBuilder {
     /// <p>The instances that belong to this device.</p>
     pub fn instances(mut self, input: crate::types::DeviceInstance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances that belong to this device.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceInstance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The instances that belong to this device.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceInstance>> {
         &self.instances
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
@@ -537,8 +518,7 @@ impl DeviceBuilder {
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub fn set_availability(mut self, input: ::std::option::Option<crate::types::DeviceAvailability>) -> Self {
-        self.availability = input;
-        self
+        self.availability = input; self
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub fn get_availability(&self) -> &::std::option::Option<crate::types::DeviceAvailability> {
@@ -547,27 +527,49 @@ impl DeviceBuilder {
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {
         crate::types::Device {
-            arn: self.arn,
-            name: self.name,
-            manufacturer: self.manufacturer,
-            model: self.model,
-            model_id: self.model_id,
-            form_factor: self.form_factor,
-            platform: self.platform,
-            os: self.os,
-            cpu: self.cpu,
-            resolution: self.resolution,
-            heap_size: self.heap_size,
-            memory: self.memory,
-            image: self.image,
-            carrier: self.carrier,
-            radio: self.radio,
-            remote_access_enabled: self.remote_access_enabled,
-            remote_debug_enabled: self.remote_debug_enabled,
-            fleet_type: self.fleet_type,
-            fleet_name: self.fleet_name,
-            instances: self.instances,
-            availability: self.availability,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            manufacturer: self.manufacturer
+            ,
+            model: self.model
+            ,
+            model_id: self.model_id
+            ,
+            form_factor: self.form_factor
+            ,
+            platform: self.platform
+            ,
+            os: self.os
+            ,
+            cpu: self.cpu
+            ,
+            resolution: self.resolution
+            ,
+            heap_size: self.heap_size
+            ,
+            memory: self.memory
+            ,
+            image: self.image
+            ,
+            carrier: self.carrier
+            ,
+            radio: self.radio
+            ,
+            remote_access_enabled: self.remote_access_enabled
+            ,
+            remote_debug_enabled: self.remote_debug_enabled
+            ,
+            fleet_type: self.fleet_type
+            ,
+            fleet_name: self.fleet_name
+            ,
+            instances: self.instances
+            ,
+            availability: self.availability
+            ,
         }
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>ListPipelines</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelinesOutput {
+pub struct ListPipelinesOutput  {
     /// <p>The list of pipelines.</p>
-    pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
+    pub pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineSummary>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPipelinesOutput {
+impl  ListPipelinesOutput  {
     /// <p>The list of pipelines.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipelines.is_none()`.
-    pub fn pipelines(&self) -> &[crate::types::PipelineSummary] {
-        self.pipelines.as_deref().unwrap_or_default()
+    pub fn pipelines(&self) -> & [crate::types::PipelineSummary] {
+        self.pipelines.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPipelinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
     pub fn builder() -> crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPipelinesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
+    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListPipelinesOutputBuilder {
     /// <p>The list of pipelines.</p>
     pub fn pipelines(mut self, input: crate::types::PipelineSummary) -> Self {
         let mut v = self.pipelines.unwrap_or_default();
-        v.push(input);
-        self.pipelines = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipelines = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of pipelines.</p>
-    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>) -> Self {
-        self.pipelines = input;
-        self
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineSummary>>) -> Self {
+        self.pipelines = input; self
     }
     /// <p>The list of pipelines.</p>
-    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineSummary>> {
         &self.pipelines
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
@@ -70,28 +70,30 @@ impl ListPipelinesOutputBuilder {
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
     pub fn build(self) -> crate::operation::list_pipelines::ListPipelinesOutput {
         crate::operation::list_pipelines::ListPipelinesOutput {
-            pipelines: self.pipelines,
-            next_token: self.next_token,
+            pipelines: self.pipelines
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

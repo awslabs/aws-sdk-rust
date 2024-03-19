@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeServerLifeCycleStateInput {
+pub struct ChangeServerLifeCycleStateInput  {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The request to change the source server migration lifecycle state.</p>
@@ -10,17 +10,17 @@ pub struct ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ChangeServerLifeCycleStateInput {
+impl  ChangeServerLifeCycleStateInput  {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn life_cycle(&self) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
+    pub fn life_cycle(&self) -> ::std::option::Option<& crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
         self.life_cycle.as_ref()
     }
     /// <p>The request to change the source server migration account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>) -> Self {
-        self.life_cycle = input;
-        self
+        self.life_cycle = input; self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
@@ -77,24 +75,24 @@ impl ChangeServerLifeCycleStateInputBuilder {
     }
     /// <p>The request to change the source server migration account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The request to change the source server migration account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateInput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
-            source_server_id: self.source_server_id,
-            life_cycle: self.life_cycle,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
+                source_server_id: self.source_server_id
+                ,
+                life_cycle: self.life_cycle
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

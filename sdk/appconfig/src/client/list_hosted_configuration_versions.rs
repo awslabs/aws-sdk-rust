@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListHostedConfigurationVersions`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::set_application_id):<br>required: **true**<br><p>The application ID.</p><br>
     ///   - [`configuration_profile_id(impl Into<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::set_configuration_profile_id):<br>required: **true**<br><p>The configuration profile ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`version_label(impl Into<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::version_label) / [`set_version_label(Option<String>)`](crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::set_version_label):<br>required: **false**<br><p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p><br>
-    /// - On success, responds with [`ListHostedConfigurationVersionsOutput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListHostedConfigurationVersionsOutput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput) with field(s):
     ///   - [`items(Option<Vec::<HostedConfigurationVersionSummary>>)`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListHostedConfigurationVersionsError>`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError)
-    pub fn list_hosted_configuration_versions(
-        &self,
-    ) -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder {
-        crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListHostedConfigurationVersionsError>`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError)
+    pub fn list_hosted_configuration_versions(&self) -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder {
+                                crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

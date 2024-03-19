@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationSummariesOutput {
+pub struct ListRecommendationSummariesOutput  {
     /// <p>The total overall savings for the aggregated view.</p>
     pub estimated_total_deduped_savings: ::std::option::Option<f64>,
     /// <p>List of all savings recommendations.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>>,
     /// <p>The dimension used to group the recommendations by.</p>
     pub group_by: ::std::option::Option<::std::string::String>,
     /// <p>The currency code used for the recommendation.</p>
@@ -15,35 +15,36 @@ pub struct ListRecommendationSummariesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRecommendationSummariesOutput {
+impl  ListRecommendationSummariesOutput  {
     /// <p>The total overall savings for the aggregated view.</p>
     pub fn estimated_total_deduped_savings(&self) -> ::std::option::Option<f64> {
         self.estimated_total_deduped_savings
     }
     /// <p>List of all savings recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::RecommendationSummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::RecommendationSummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The dimension used to group the recommendations by.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&str> {
+    pub fn group_by(&self) -> ::std::option::Option<& str> {
         self.group_by.as_deref()
     }
     /// <p>The currency code used for the recommendation.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecommendationSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecommendationSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationSummariesOutput`](crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput).
     pub fn builder() -> crate::operation::list_recommendation_summaries::builders::ListRecommendationSummariesOutputBuilder {
@@ -56,7 +57,7 @@ impl ListRecommendationSummariesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationSummariesOutputBuilder {
     pub(crate) estimated_total_deduped_savings: ::std::option::Option<f64>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>>,
     pub(crate) group_by: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,8 +71,7 @@ impl ListRecommendationSummariesOutputBuilder {
     }
     /// <p>The total overall savings for the aggregated view.</p>
     pub fn set_estimated_total_deduped_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_total_deduped_savings = input;
-        self
+        self.estimated_total_deduped_savings = input; self
     }
     /// <p>The total overall savings for the aggregated view.</p>
     pub fn get_estimated_total_deduped_savings(&self) -> &::std::option::Option<f64> {
@@ -84,17 +84,16 @@ impl ListRecommendationSummariesOutputBuilder {
     /// <p>List of all savings recommendations.</p>
     pub fn items(mut self, input: crate::types::RecommendationSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of all savings recommendations.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>List of all savings recommendations.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>> {
         &self.items
     }
     /// <p>The dimension used to group the recommendations by.</p>
@@ -104,8 +103,7 @@ impl ListRecommendationSummariesOutputBuilder {
     }
     /// <p>The dimension used to group the recommendations by.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>The dimension used to group the recommendations by.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ListRecommendationSummariesOutputBuilder {
     }
     /// <p>The currency code used for the recommendation.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code used for the recommendation.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,31 +129,36 @@ impl ListRecommendationSummariesOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecommendationSummariesOutput`](crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput).
     pub fn build(self) -> crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput {
         crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput {
-            estimated_total_deduped_savings: self.estimated_total_deduped_savings,
-            items: self.items,
-            group_by: self.group_by,
-            currency_code: self.currency_code,
-            next_token: self.next_token,
+            estimated_total_deduped_savings: self.estimated_total_deduped_savings
+            ,
+            items: self.items
+            ,
+            group_by: self.group_by
+            ,
+            currency_code: self.currency_code
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

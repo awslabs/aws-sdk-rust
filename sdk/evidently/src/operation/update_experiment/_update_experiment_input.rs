@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExperimentInput {
+pub struct UpdateExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to update.</p>
@@ -10,9 +10,9 @@ pub struct UpdateExperimentInput {
     /// <p>An optional description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
+    pub treatments: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
+    pub metric_goals: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
@@ -25,33 +25,35 @@ pub struct UpdateExperimentInput {
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
 }
-impl UpdateExperimentInput {
+impl  UpdateExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
+    pub fn experiment(&self) -> ::std::option::Option<& str> {
         self.experiment.as_deref()
     }
     /// <p>An optional description of the experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
-    pub fn treatments(&self) -> &[crate::types::TreatmentConfig] {
-        self.treatments.as_deref().unwrap_or_default()
+    pub fn treatments(&self) -> & [crate::types::TreatmentConfig] {
+        self.treatments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
-    pub fn metric_goals(&self) -> &[crate::types::MetricGoalConfig] {
-        self.metric_goals.as_deref().unwrap_or_default()
+    pub fn metric_goals(&self) -> & [crate::types::MetricGoalConfig] {
+        self.metric_goals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
+    pub fn randomization_salt(&self) -> ::std::option::Option<& str> {
         self.randomization_salt.as_deref()
     }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
@@ -60,7 +62,7 @@ impl UpdateExperimentInput {
         self.sampling_rate
     }
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
+    pub fn segment(&self) -> ::std::option::Option<& str> {
         self.segment.as_deref()
     }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
@@ -68,7 +70,7 @@ impl UpdateExperimentInput {
         self.remove_segment
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn online_ab_config(&self) -> ::std::option::Option<&crate::types::OnlineAbConfig> {
+    pub fn online_ab_config(&self) -> ::std::option::Option<& crate::types::OnlineAbConfig> {
         self.online_ab_config.as_ref()
     }
 }
@@ -86,8 +88,8 @@ pub struct UpdateExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
-    pub(crate) metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
+    pub(crate) treatments: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>,
+    pub(crate) metric_goals: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>,
     pub(crate) randomization_salt: ::std::option::Option<::std::string::String>,
     pub(crate) sampling_rate: ::std::option::Option<i64>,
     pub(crate) segment: ::std::option::Option<::std::string::String>,
@@ -103,8 +105,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +119,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>The name of the experiment to update.</p>
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment = input;
-        self
+        self.experiment = input; self
     }
     /// <p>The name of the experiment to update.</p>
     pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +132,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>An optional description of the experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,17 +145,16 @@ impl UpdateExperimentInputBuilder {
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
     pub fn treatments(mut self, input: crate::types::TreatmentConfig) -> Self {
         let mut v = self.treatments.unwrap_or_default();
-        v.push(input);
-        self.treatments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.treatments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
-        self.treatments = input;
-        self
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>) -> Self {
+        self.treatments = input; self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>> {
         &self.treatments
     }
     /// Appends an item to `metric_goals`.
@@ -166,17 +164,16 @@ impl UpdateExperimentInputBuilder {
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(mut self, input: crate::types::MetricGoalConfig) -> Self {
         let mut v = self.metric_goals.unwrap_or_default();
-        v.push(input);
-        self.metric_goals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_goals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
-        self.metric_goals = input;
-        self
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>) -> Self {
+        self.metric_goals = input; self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>> {
         &self.metric_goals
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
@@ -186,8 +183,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.randomization_salt = input;
-        self
+        self.randomization_salt = input; self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +198,7 @@ impl UpdateExperimentInputBuilder {
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sampling_rate = input;
-        self
+        self.sampling_rate = input; self
     }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
@@ -217,8 +212,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +225,7 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn set_remove_segment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_segment = input;
-        self
+        self.remove_segment = input; self
     }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
     pub fn get_remove_segment(&self) -> &::std::option::Option<bool> {
@@ -245,28 +238,38 @@ impl UpdateExperimentInputBuilder {
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn set_online_ab_config(mut self, input: ::std::option::Option<crate::types::OnlineAbConfig>) -> Self {
-        self.online_ab_config = input;
-        self
+        self.online_ab_config = input; self
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn get_online_ab_config(&self) -> &::std::option::Option<crate::types::OnlineAbConfig> {
         &self.online_ab_config
     }
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
-            description: self.description,
-            treatments: self.treatments,
-            metric_goals: self.metric_goals,
-            randomization_salt: self.randomization_salt,
-            sampling_rate: self.sampling_rate,
-            segment: self.segment,
-            remove_segment: self.remove_segment,
-            online_ab_config: self.online_ab_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_experiment::UpdateExperimentInput {
+                project: self.project
+                ,
+                experiment: self.experiment
+                ,
+                description: self.description
+                ,
+                treatments: self.treatments
+                ,
+                metric_goals: self.metric_goals
+                ,
+                randomization_salt: self.randomization_salt
+                ,
+                sampling_rate: self.sampling_rate
+                ,
+                segment: self.segment
+                ,
+                remove_segment: self.remove_segment
+                ,
+                online_ab_config: self.online_ab_config
+                ,
+            }
+        )
     }
 }
+

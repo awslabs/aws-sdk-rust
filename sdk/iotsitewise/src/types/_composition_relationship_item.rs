@@ -3,13 +3,13 @@
 /// <p>Represents a composite model that composed an asset model of type <code>COMPONENT_MODEL</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositionRelationshipItem {
+pub struct CompositionRelationshipItem  {
     /// <p>The ID of the component.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl CompositionRelationshipItem {
+impl  CompositionRelationshipItem  {
     /// <p>The ID of the component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CompositionRelationshipItemBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CompositionRelationshipItemBuilder {
     }
     /// Consumes the builder and constructs a [`CompositionRelationshipItem`](crate::types::CompositionRelationshipItem).
     pub fn build(self) -> crate::types::CompositionRelationshipItem {
-        crate::types::CompositionRelationshipItem { id: self.id }
+        crate::types::CompositionRelationshipItem {
+            id: self.id
+            ,
+        }
     }
 }
+

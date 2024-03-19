@@ -3,13 +3,13 @@
 /// <p>The pagination configuration for a table visual or boxplot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PaginationConfiguration {
+pub struct PaginationConfiguration  {
     /// <p>Indicates how many items render in one page.</p>
     pub page_size: i64,
     /// <p>Indicates the page number.</p>
     pub page_number: i64,
 }
-impl PaginationConfiguration {
+impl  PaginationConfiguration  {
     /// <p>Indicates how many items render in one page.</p>
     pub fn page_size(&self) -> i64 {
         self.page_size
@@ -42,8 +42,7 @@ impl PaginationConfigurationBuilder {
     }
     /// <p>Indicates how many items render in one page.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>Indicates how many items render in one page.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl PaginationConfigurationBuilder {
     }
     /// <p>Indicates the page number.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// <p>Indicates the page number.</p>
     pub fn get_page_number(&self) -> &::std::option::Option<i64> {
@@ -69,19 +67,20 @@ impl PaginationConfigurationBuilder {
     /// - [`page_size`](crate::types::builders::PaginationConfigurationBuilder::page_size)
     /// - [`page_number`](crate::types::builders::PaginationConfigurationBuilder::page_number)
     pub fn build(self) -> ::std::result::Result<crate::types::PaginationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PaginationConfiguration {
-            page_size: self.page_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_size",
-                    "page_size was not specified but it is required when building PaginationConfiguration",
-                )
-            })?,
-            page_number: self.page_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_number",
-                    "page_number was not specified but it is required when building PaginationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PaginationConfiguration {
+                page_size: self.page_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_size", "page_size was not specified but it is required when building PaginationConfiguration")
+                    )?
+                ,
+                page_number: self.page_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_number", "page_number was not specified but it is required when building PaginationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

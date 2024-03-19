@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelsOutput {
+pub struct GetModelsOutput  {
     /// <p>The next page token to be used in subsequent requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of models.</p>
-    pub models: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
+    pub models: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>,
     _request_id: Option<String>,
 }
-impl GetModelsOutput {
+impl  GetModelsOutput  {
     /// <p>The next page token to be used in subsequent requests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of models.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
-    pub fn models(&self) -> &[crate::types::Model] {
-        self.models.as_deref().unwrap_or_default()
+    pub fn models(&self) -> & [crate::types::Model] {
+        self.models.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput).
     pub fn builder() -> crate::operation::get_models::builders::GetModelsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetModelsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>,
     _request_id: Option<String>,
 }
 impl GetModelsOutputBuilder {
@@ -49,8 +50,7 @@ impl GetModelsOutputBuilder {
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetModelsOutputBuilder {
     /// <p>The array of models.</p>
     pub fn models(mut self, input: crate::types::Model) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of models.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Model>>) -> Self {
+        self.models = input; self
     }
     /// <p>The array of models.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Model>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Model>> {
         &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput).
     pub fn build(self) -> crate::operation::get_models::GetModelsOutput {
         crate::operation::get_models::GetModelsOutput {
-            next_token: self.next_token,
-            models: self.models,
+            next_token: self.next_token
+            ,
+            models: self.models
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

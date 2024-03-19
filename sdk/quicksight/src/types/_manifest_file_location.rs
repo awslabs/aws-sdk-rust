@@ -3,22 +3,20 @@
 /// <p>Amazon S3 manifest file location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManifestFileLocation {
+pub struct ManifestFileLocation  {
     /// <p>Amazon S3 bucket.</p>
     pub bucket: ::std::string::String,
     /// <p>Amazon S3 key that identifies an object.</p>
     pub key: ::std::string::String,
 }
-impl ManifestFileLocation {
+impl  ManifestFileLocation  {
     /// <p>Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>Amazon S3 key that identifies an object.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
 }
 impl ManifestFileLocation {
@@ -44,8 +42,7 @@ impl ManifestFileLocationBuilder {
     }
     /// <p>Amazon S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Amazon S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ManifestFileLocationBuilder {
     }
     /// <p>Amazon S3 key that identifies an object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Amazon S3 key that identifies an object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ManifestFileLocationBuilder {
     /// - [`bucket`](crate::types::builders::ManifestFileLocationBuilder::bucket)
     /// - [`key`](crate::types::builders::ManifestFileLocationBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::ManifestFileLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ManifestFileLocation {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building ManifestFileLocation",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ManifestFileLocation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ManifestFileLocation {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building ManifestFileLocation")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ManifestFileLocation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOperationInput {
+pub struct GetOperationInput  {
     /// <p>The ID of the operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetOperationInput {
+impl  GetOperationInput  {
     /// <p>The ID of the operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetOperationInputBuilder {
     }
     /// <p>The ID of the operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The ID of the operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_operation::GetOperationInput {
-            operation_id: self.operation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_operation::GetOperationInput {
+                operation_id: self.operation_id
+                ,
+            }
+        )
     }
 }
+

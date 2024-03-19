@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateAliasInput {
+pub struct CreateTemplateAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the template.</p>
@@ -12,17 +12,17 @@ pub struct CreateTemplateAliasInput {
     /// <p>The version number of the template.</p>
     pub template_version_number: ::std::option::Option<i64>,
 }
-impl CreateTemplateAliasInput {
+impl  CreateTemplateAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>An ID for the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The version number of the template.</p>
@@ -55,8 +55,7 @@ impl CreateTemplateAliasInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateTemplateAliasInputBuilder {
     }
     /// <p>An ID for the template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>An ID for the template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateTemplateAliasInputBuilder {
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl CreateTemplateAliasInputBuilder {
     }
     /// <p>The version number of the template.</p>
     pub fn set_template_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.template_version_number = input;
-        self
+        self.template_version_number = input; self
     }
     /// <p>The version number of the template.</p>
     pub fn get_template_version_number(&self) -> &::std::option::Option<i64> {
         &self.template_version_number
     }
     /// Consumes the builder and constructs a [`CreateTemplateAliasInput`](crate::operation::create_template_alias::CreateTemplateAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_template_alias::CreateTemplateAliasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_template_alias::CreateTemplateAliasInput {
-            aws_account_id: self.aws_account_id,
-            template_id: self.template_id,
-            alias_name: self.alias_name,
-            template_version_number: self.template_version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_template_alias::CreateTemplateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_template_alias::CreateTemplateAliasInput {
+                aws_account_id: self.aws_account_id
+                ,
+                template_id: self.template_id
+                ,
+                alias_name: self.alias_name
+                ,
+                template_version_number: self.template_version_number
+                ,
+            }
+        )
     }
 }
+

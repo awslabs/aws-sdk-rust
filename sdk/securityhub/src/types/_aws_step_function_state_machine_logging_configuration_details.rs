@@ -3,27 +3,28 @@
 /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
+pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails  {
     /// <p>An array of objects that describes where your execution history events will be logged.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     /// <p>Determines whether execution data is included in your log. When set to false, data is excluded.</p>
     pub include_execution_data: ::std::option::Option<bool>,
     /// <p>Defines which category of execution history events are logged.</p>
     pub level: ::std::option::Option<::std::string::String>,
 }
-impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
+impl  AwsStepFunctionStateMachineLoggingConfigurationDetails  {
     /// <p>An array of objects that describes where your execution history events will be logged.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Determines whether execution data is included in your log. When set to false, data is excluded.</p>
     pub fn include_execution_data(&self) -> ::std::option::Option<bool> {
         self.include_execution_data
     }
     /// <p>Defines which category of execution history events are logged.</p>
-    pub fn level(&self) -> ::std::option::Option<&str> {
+    pub fn level(&self) -> ::std::option::Option<& str> {
         self.level.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     pub(crate) include_execution_data: ::std::option::Option<bool>,
     pub(crate) level: ::std::option::Option<::std::string::String>,
 }
@@ -50,22 +51,16 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     /// <p>An array of objects that describes where your execution history events will be logged.</p>
     pub fn destinations(mut self, input: crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describes where your execution history events will be logged.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>An array of objects that describes where your execution history events will be logged.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>> {
         &self.destinations
     }
     /// <p>Determines whether execution data is included in your log. When set to false, data is excluded.</p>
@@ -75,8 +70,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     }
     /// <p>Determines whether execution data is included in your log. When set to false, data is excluded.</p>
     pub fn set_include_execution_data(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_execution_data = input;
-        self
+        self.include_execution_data = input; self
     }
     /// <p>Determines whether execution data is included in your log. When set to false, data is excluded.</p>
     pub fn get_include_execution_data(&self) -> &::std::option::Option<bool> {
@@ -89,8 +83,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     }
     /// <p>Defines which category of execution history events are logged.</p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>Defines which category of execution history events are logged.</p>
     pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,9 +92,13 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineLoggingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails).
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails {
         crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails {
-            destinations: self.destinations,
-            include_execution_data: self.include_execution_data,
-            level: self.level,
+            destinations: self.destinations
+            ,
+            include_execution_data: self.include_execution_data
+            ,
+            level: self.level
+            ,
         }
     }
 }
+

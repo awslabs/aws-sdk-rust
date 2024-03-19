@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOptedOutNumberOutput {
+pub struct DeleteOptedOutNumberOutput  {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The OptOutListName that the phone number was removed from.</p>
@@ -15,21 +15,21 @@ pub struct DeleteOptedOutNumberOutput {
     pub end_user_opted_out: bool,
     _request_id: Option<String>,
 }
-impl DeleteOptedOutNumberOutput {
+impl  DeleteOptedOutNumberOutput  {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    pub fn opt_out_list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
-    pub fn opted_out_number(&self) -> ::std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> ::std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn opted_out_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
     /// <p>This is true if it was the end user who requested their phone number be removed.</p>
@@ -38,10 +38,10 @@ impl DeleteOptedOutNumberOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteOptedOutNumberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteOptedOutNumberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptedOutNumberOutput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput).
     pub fn builder() -> crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberOutputBuilder {
@@ -68,8 +68,7 @@ impl DeleteOptedOutNumberOutputBuilder {
     }
     /// <p>The OptOutListArn that the phone number was removed from.</p>
     pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The OptOutListArn that the phone number was removed from.</p>
     pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DeleteOptedOutNumberOutputBuilder {
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DeleteOptedOutNumberOutputBuilder {
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
     pub fn set_opted_out_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opted_out_number = input;
-        self
+        self.opted_out_number = input; self
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
     pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DeleteOptedOutNumberOutputBuilder {
     }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_opted_out_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.opted_out_timestamp = input;
-        self
+        self.opted_out_timestamp = input; self
     }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_opted_out_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,31 +120,37 @@ impl DeleteOptedOutNumberOutputBuilder {
     }
     /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.end_user_opted_out = input;
-        self
+        self.end_user_opted_out = input; self
     }
     /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn get_end_user_opted_out(&self) -> &::std::option::Option<bool> {
         &self.end_user_opted_out
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteOptedOutNumberOutput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput).
     pub fn build(self) -> crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput {
         crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput {
-            opt_out_list_arn: self.opt_out_list_arn,
-            opt_out_list_name: self.opt_out_list_name,
-            opted_out_number: self.opted_out_number,
-            opted_out_timestamp: self.opted_out_timestamp,
-            end_user_opted_out: self.end_user_opted_out.unwrap_or_default(),
+            opt_out_list_arn: self.opt_out_list_arn
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            opted_out_number: self.opted_out_number
+            ,
+            opted_out_timestamp: self.opted_out_timestamp
+            ,
+            end_user_opted_out: self.end_user_opted_out
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

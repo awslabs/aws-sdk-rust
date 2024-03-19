@@ -3,24 +3,25 @@
 /// <p>The result of a <code>DescribeDomainNodes</code> request. Contains information about the nodes on the requested domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainNodesOutput {
+pub struct DescribeDomainNodesOutput  {
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    pub domain_nodes_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>>,
+    pub domain_nodes_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNodesStatus>>,
     _request_id: Option<String>,
 }
-impl DescribeDomainNodesOutput {
+impl  DescribeDomainNodesOutput  {
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_nodes_status_list.is_none()`.
-    pub fn domain_nodes_status_list(&self) -> &[crate::types::DomainNodesStatus] {
-        self.domain_nodes_status_list.as_deref().unwrap_or_default()
+    pub fn domain_nodes_status_list(&self) -> & [crate::types::DomainNodesStatus] {
+        self.domain_nodes_status_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainNodesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDomainNodesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainNodesOutput`](crate::operation::describe_domain_nodes::DescribeDomainNodesOutput).
     pub fn builder() -> crate::operation::describe_domain_nodes::builders::DescribeDomainNodesOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeDomainNodesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainNodesOutputBuilder {
-    pub(crate) domain_nodes_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>>,
+    pub(crate) domain_nodes_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNodesStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainNodesOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeDomainNodesOutputBuilder {
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
     pub fn domain_nodes_status_list(mut self, input: crate::types::DomainNodesStatus) -> Self {
         let mut v = self.domain_nodes_status_list.unwrap_or_default();
-        v.push(input);
-        self.domain_nodes_status_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_nodes_status_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    pub fn set_domain_nodes_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>>) -> Self {
-        self.domain_nodes_status_list = input;
-        self
+    pub fn set_domain_nodes_status_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNodesStatus>>) -> Self {
+        self.domain_nodes_status_list = input; self
     }
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    pub fn get_domain_nodes_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>> {
+    pub fn get_domain_nodes_status_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainNodesStatus>> {
         &self.domain_nodes_status_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDomainNodesOutput`](crate::operation::describe_domain_nodes::DescribeDomainNodesOutput).
     pub fn build(self) -> crate::operation::describe_domain_nodes::DescribeDomainNodesOutput {
         crate::operation::describe_domain_nodes::DescribeDomainNodesOutput {
-            domain_nodes_status_list: self.domain_nodes_status_list,
+            domain_nodes_status_list: self.domain_nodes_status_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

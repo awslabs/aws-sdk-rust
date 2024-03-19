@@ -3,7 +3,7 @@
 /// <p>Summary of a predefined attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredefinedAttributeSummary {
+pub struct PredefinedAttributeSummary  {
     /// <p>The name of the predefined attribute.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Last modified time.</p>
@@ -11,17 +11,17 @@ pub struct PredefinedAttributeSummary {
     /// <p>Last modified region.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
-impl PredefinedAttributeSummary {
+impl  PredefinedAttributeSummary  {
     /// <p>The name of the predefined attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Last modified time.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Last modified region.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PredefinedAttributeSummaryBuilder {
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PredefinedAttributeSummaryBuilder {
     }
     /// <p>Last modified time.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Last modified time.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl PredefinedAttributeSummaryBuilder {
     }
     /// <p>Last modified region.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>Last modified region.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PredefinedAttributeSummaryBuilder {
     /// Consumes the builder and constructs a [`PredefinedAttributeSummary`](crate::types::PredefinedAttributeSummary).
     pub fn build(self) -> crate::types::PredefinedAttributeSummary {
         crate::types::PredefinedAttributeSummary {
-            name: self.name,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            name: self.name
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
         }
     }
 }
+

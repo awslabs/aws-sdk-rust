@@ -3,13 +3,13 @@
 /// <p>Additional rules to specify resources that should be exempt from ad-hoc lifecycle actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceStateUpdateExclusionRules {
+pub struct ResourceStateUpdateExclusionRules  {
     /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
     pub amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
-impl ResourceStateUpdateExclusionRules {
+impl  ResourceStateUpdateExclusionRules  {
     /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
-    pub fn amis(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
+    pub fn amis(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
         self.amis.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ResourceStateUpdateExclusionRulesBuilder {
     }
     /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
     pub fn set_amis(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>) -> Self {
-        self.amis = input;
-        self
+        self.amis = input; self
     }
     /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
     pub fn get_amis(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
@@ -43,6 +42,10 @@ impl ResourceStateUpdateExclusionRulesBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceStateUpdateExclusionRules`](crate::types::ResourceStateUpdateExclusionRules).
     pub fn build(self) -> crate::types::ResourceStateUpdateExclusionRules {
-        crate::types::ResourceStateUpdateExclusionRules { amis: self.amis }
+        crate::types::ResourceStateUpdateExclusionRules {
+            amis: self.amis
+            ,
+        }
     }
 }
+

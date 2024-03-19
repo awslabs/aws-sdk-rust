@@ -3,19 +3,19 @@
 /// <p>Describes a load permission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadPermissionRequest {
+pub struct LoadPermissionRequest  {
     /// <p>The name of the group.</p>
     pub group: ::std::option::Option<crate::types::PermissionGroup>,
     /// <p>The Amazon Web Services account ID.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl LoadPermissionRequest {
+impl  LoadPermissionRequest  {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::PermissionGroup> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::PermissionGroup> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LoadPermissionRequestBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_group(&self) -> &::std::option::Option<crate::types::PermissionGroup> {
@@ -55,8 +54,7 @@ impl LoadPermissionRequestBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LoadPermissionRequestBuilder {
     /// Consumes the builder and constructs a [`LoadPermissionRequest`](crate::types::LoadPermissionRequest).
     pub fn build(self) -> crate::types::LoadPermissionRequest {
         crate::types::LoadPermissionRequest {
-            group: self.group,
-            user_id: self.user_id,
+            group: self.group
+            ,
+            user_id: self.user_id
+            ,
         }
     }
 }
+

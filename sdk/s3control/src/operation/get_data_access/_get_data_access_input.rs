@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataAccessInput {
+pub struct GetDataAccessInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 URI path of the data to which you are requesting temporary access credentials. If the requesting account has an access grant for this data, S3 Access Grants vends temporary access credentials in the response.</p>
@@ -30,13 +30,13 @@ pub struct GetDataAccessInput {
     /// <p>The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass this value if the target data that you would like to access is a path to an object. Do not pass this value if the target data is a bucket or a bucket and a prefix.</p>
     pub target_type: ::std::option::Option<crate::types::S3PrefixType>,
 }
-impl GetDataAccessInput {
+impl  GetDataAccessInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The S3 URI path of the data to which you are requesting temporary access credentials. If the requesting account has an access grant for this data, S3 Access Grants vends temporary access credentials in the response.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The type of permission granted to your S3 data, which can be set to one of the following values:</p>
@@ -48,7 +48,7 @@ impl GetDataAccessInput {
     /// <li>
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>The session duration, in seconds, of the temporary access credential that S3 Access Grants vends to the grantee or client application. The default value is 1 hour, but the grantee can specify a range from 900 seconds (15 minutes) up to 43200 seconds (12 hours). If the grantee requests a value higher than this maximum, the operation fails.</p>
@@ -62,11 +62,11 @@ impl GetDataAccessInput {
     /// <li>
     /// <p><code>Minimal</code> – The scope of the returned temporary access token is the same as the requested target scope as long as the requested scope is the same as or a subset of the grant scope.</p></li>
     /// </ul>
-    pub fn privilege(&self) -> ::std::option::Option<&crate::types::Privilege> {
+    pub fn privilege(&self) -> ::std::option::Option<& crate::types::Privilege> {
         self.privilege.as_ref()
     }
     /// <p>The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass this value if the target data that you would like to access is a path to an object. Do not pass this value if the target data is a bucket or a bucket and a prefix.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::S3PrefixType> {
+    pub fn target_type(&self) -> ::std::option::Option<& crate::types::S3PrefixType> {
         self.target_type.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl GetDataAccessInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl GetDataAccessInputBuilder {
     }
     /// <p>The S3 URI path of the data to which you are requesting temporary access credentials. If the requesting account has an access grant for this data, S3 Access Grants vends temporary access credentials in the response.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The S3 URI path of the data to which you are requesting temporary access credentials. If the requesting account has an access grant for this data, S3 Access Grants vends temporary access credentials in the response.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl GetDataAccessInputBuilder {
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The type of permission granted to your S3 data, which can be set to one of the following values:</p>
     /// <ul>
@@ -165,8 +162,7 @@ impl GetDataAccessInputBuilder {
     }
     /// <p>The session duration, in seconds, of the temporary access credential that S3 Access Grants vends to the grantee or client application. The default value is 1 hour, but the grantee can specify a range from 900 seconds (15 minutes) up to 43200 seconds (12 hours). If the grantee requests a value higher than this maximum, the operation fails.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The session duration, in seconds, of the temporary access credential that S3 Access Grants vends to the grantee or client application. The default value is 1 hour, but the grantee can specify a range from 900 seconds (15 minutes) up to 43200 seconds (12 hours). If the grantee requests a value higher than this maximum, the operation fails.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -191,8 +187,7 @@ impl GetDataAccessInputBuilder {
     /// <p><code>Minimal</code> – The scope of the returned temporary access token is the same as the requested target scope as long as the requested scope is the same as or a subset of the grant scope.</p></li>
     /// </ul>
     pub fn set_privilege(mut self, input: ::std::option::Option<crate::types::Privilege>) -> Self {
-        self.privilege = input;
-        self
+        self.privilege = input; self
     }
     /// <p>The scope of the temporary access credential that S3 Access Grants vends to the grantee or client application.</p>
     /// <ul>
@@ -211,24 +206,30 @@ impl GetDataAccessInputBuilder {
     }
     /// <p>The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass this value if the target data that you would like to access is a path to an object. Do not pass this value if the target data is a bucket or a bucket and a prefix.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::S3PrefixType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass this value if the target data that you would like to access is a path to an object. Do not pass this value if the target data is a bucket or a bucket and a prefix.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::S3PrefixType> {
         &self.target_type
     }
     /// Consumes the builder and constructs a [`GetDataAccessInput`](crate::operation::get_data_access::GetDataAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_access::GetDataAccessInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_access::GetDataAccessInput {
-            account_id: self.account_id,
-            target: self.target,
-            permission: self.permission,
-            duration_seconds: self.duration_seconds,
-            privilege: self.privilege,
-            target_type: self.target_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_access::GetDataAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_access::GetDataAccessInput {
+                account_id: self.account_id
+                ,
+                target: self.target
+                ,
+                permission: self.permission
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                privilege: self.privilege
+                ,
+                target_type: self.target_type
+                ,
+            }
+        )
     }
 }
+

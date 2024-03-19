@@ -3,7 +3,7 @@
 /// <p>The file used to structure and automate Audit Manager assessments for a given compliance standard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssessmentFramework {
+pub struct AssessmentFramework  {
     /// <p>The unique identifier for the framework.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the framework.</p>
@@ -11,29 +11,30 @@ pub struct AssessmentFramework {
     /// <p>The metadata of a framework, such as the name, ID, or description.</p>
     pub metadata: ::std::option::Option<crate::types::FrameworkMetadata>,
     /// <p>The control sets that are associated with the framework.</p>
-    pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
+    pub control_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentControlSet>>,
 }
-impl AssessmentFramework {
+impl  AssessmentFramework  {
     /// <p>The unique identifier for the framework.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the framework.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The metadata of a framework, such as the name, ID, or description.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::FrameworkMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::FrameworkMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The control sets that are associated with the framework.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
-    pub fn control_sets(&self) -> &[crate::types::AssessmentControlSet] {
-        self.control_sets.as_deref().unwrap_or_default()
+    pub fn control_sets(&self) -> & [crate::types::AssessmentControlSet] {
+        self.control_sets.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AssessmentFramework {
+impl  ::std::fmt::Debug for AssessmentFramework  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentFramework");
         formatter.field("id", &"*** Sensitive Data Redacted ***");
@@ -57,7 +58,7 @@ pub struct AssessmentFrameworkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::FrameworkMetadata>,
-    pub(crate) control_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>,
+    pub(crate) control_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentControlSet>>,
 }
 impl AssessmentFrameworkBuilder {
     /// <p>The unique identifier for the framework.</p>
@@ -67,8 +68,7 @@ impl AssessmentFrameworkBuilder {
     }
     /// <p>The unique identifier for the framework.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the framework.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl AssessmentFrameworkBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the framework.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the framework.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl AssessmentFrameworkBuilder {
     }
     /// <p>The metadata of a framework, such as the name, ID, or description.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::FrameworkMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of a framework, such as the name, ID, or description.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::FrameworkMetadata> {
@@ -109,26 +107,29 @@ impl AssessmentFrameworkBuilder {
     /// <p>The control sets that are associated with the framework.</p>
     pub fn control_sets(mut self, input: crate::types::AssessmentControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
-        v.push(input);
-        self.control_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.control_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The control sets that are associated with the framework.</p>
-    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>>) -> Self {
-        self.control_sets = input;
-        self
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentControlSet>>) -> Self {
+        self.control_sets = input; self
     }
     /// <p>The control sets that are associated with the framework.</p>
-    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentControlSet>> {
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentControlSet>> {
         &self.control_sets
     }
     /// Consumes the builder and constructs a [`AssessmentFramework`](crate::types::AssessmentFramework).
     pub fn build(self) -> crate::types::AssessmentFramework {
         crate::types::AssessmentFramework {
-            id: self.id,
-            arn: self.arn,
-            metadata: self.metadata,
-            control_sets: self.control_sets,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            metadata: self.metadata
+            ,
+            control_sets: self.control_sets
+            ,
         }
     }
 }
@@ -142,3 +143,4 @@ impl ::std::fmt::Debug for AssessmentFrameworkBuilder {
         formatter.finish()
     }
 }
+

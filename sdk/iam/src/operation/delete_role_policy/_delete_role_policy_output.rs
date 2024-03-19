@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRolePolicyOutput {
+pub struct DeleteRolePolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteRolePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRolePolicyOutput`](crate::operation::delete_role_policy::DeleteRolePolicyOutput).
     pub fn builder() -> crate::operation::delete_role_policy::builders::DeleteRolePolicyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteRolePolicyOutputBuilder {
 }
 impl DeleteRolePolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteRolePolicyOutput`](crate::operation::delete_role_policy::DeleteRolePolicyOutput).
     pub fn build(self) -> crate::operation::delete_role_policy::DeleteRolePolicyOutput {
         crate::operation::delete_role_policy::DeleteRolePolicyOutput {
@@ -40,3 +40,4 @@ impl DeleteRolePolicyOutputBuilder {
         }
     }
 }
+

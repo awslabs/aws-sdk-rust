@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApprovalRuleTemplateDescriptionInput {
+pub struct UpdateApprovalRuleTemplateDescriptionInput  {
     /// <p>The name of the template for which you want to update the description.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the approval rule template.</p>
     pub approval_rule_template_description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApprovalRuleTemplateDescriptionInput {
+impl  UpdateApprovalRuleTemplateDescriptionInput  {
     /// <p>The name of the template for which you want to update the description.</p>
-    pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn approval_rule_template_description(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_description(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
     }
     /// <p>The name of the template for which you want to update the description.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_name = input;
-        self
+        self.approval_rule_template_name = input; self
     }
     /// <p>The name of the template for which you want to update the description.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
     }
     /// <p>The updated description of the approval rule template.</p>
     pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_description = input;
-        self
+        self.approval_rule_template_description = input; self
     }
     /// <p>The updated description of the approval rule template.</p>
     pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_description
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateDescriptionInput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-                approval_rule_template_description: self.approval_rule_template_description,
-            },
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+                approval_rule_template_description: self.approval_rule_template_description
+                ,
+            }
         )
     }
 }
+

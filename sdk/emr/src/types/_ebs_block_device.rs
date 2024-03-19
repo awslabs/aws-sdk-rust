@@ -3,19 +3,19 @@
 /// <p>Configuration of requested EBS block device associated with the instance group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsBlockDevice {
+pub struct EbsBlockDevice  {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub device: ::std::option::Option<::std::string::String>,
 }
-impl EbsBlockDevice {
+impl  EbsBlockDevice  {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn volume_specification(&self) -> ::std::option::Option<&crate::types::VolumeSpecification> {
+    pub fn volume_specification(&self) -> ::std::option::Option<& crate::types::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-    pub fn device(&self) -> ::std::option::Option<&str> {
+    pub fn device(&self) -> ::std::option::Option<& str> {
         self.device.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EbsBlockDeviceBuilder {
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn set_volume_specification(mut self, input: ::std::option::Option<crate::types::VolumeSpecification>) -> Self {
-        self.volume_specification = input;
-        self
+        self.volume_specification = input; self
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn get_volume_specification(&self) -> &::std::option::Option<crate::types::VolumeSpecification> {
@@ -55,8 +54,7 @@ impl EbsBlockDeviceBuilder {
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EbsBlockDeviceBuilder {
     /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::types::EbsBlockDevice).
     pub fn build(self) -> crate::types::EbsBlockDevice {
         crate::types::EbsBlockDevice {
-            volume_specification: self.volume_specification,
-            device: self.device,
+            volume_specification: self.volume_specification
+            ,
+            device: self.device
+            ,
         }
     }
 }
+

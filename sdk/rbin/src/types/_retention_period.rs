@@ -3,19 +3,19 @@
 /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetentionPeriod {
+pub struct RetentionPeriod  {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub retention_period_value: i32,
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub retention_period_unit: crate::types::RetentionPeriodUnit,
 }
-impl RetentionPeriod {
+impl  RetentionPeriod  {
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub fn retention_period_value(&self) -> i32 {
         self.retention_period_value
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn retention_period_unit(&self) -> &crate::types::RetentionPeriodUnit {
+    pub fn retention_period_unit(&self) -> & crate::types::RetentionPeriodUnit {
         &self.retention_period_unit
     }
 }
@@ -42,8 +42,7 @@ impl RetentionPeriodBuilder {
     }
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub fn set_retention_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_value = input;
-        self
+        self.retention_period_value = input; self
     }
     /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub fn get_retention_period_value(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl RetentionPeriodBuilder {
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn set_retention_period_unit(mut self, input: ::std::option::Option<crate::types::RetentionPeriodUnit>) -> Self {
-        self.retention_period_unit = input;
-        self
+        self.retention_period_unit = input; self
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn get_retention_period_unit(&self) -> &::std::option::Option<crate::types::RetentionPeriodUnit> {
@@ -69,19 +67,20 @@ impl RetentionPeriodBuilder {
     /// - [`retention_period_value`](crate::types::builders::RetentionPeriodBuilder::retention_period_value)
     /// - [`retention_period_unit`](crate::types::builders::RetentionPeriodBuilder::retention_period_unit)
     pub fn build(self) -> ::std::result::Result<crate::types::RetentionPeriod, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetentionPeriod {
-            retention_period_value: self.retention_period_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "retention_period_value",
-                    "retention_period_value was not specified but it is required when building RetentionPeriod",
-                )
-            })?,
-            retention_period_unit: self.retention_period_unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "retention_period_unit",
-                    "retention_period_unit was not specified but it is required when building RetentionPeriod",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetentionPeriod {
+                retention_period_value: self.retention_period_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("retention_period_value", "retention_period_value was not specified but it is required when building RetentionPeriod")
+                    )?
+                ,
+                retention_period_unit: self.retention_period_unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("retention_period_unit", "retention_period_unit was not specified but it is required when building RetentionPeriod")
+                    )?
+                ,
+            }
+        )
     }
 }
+

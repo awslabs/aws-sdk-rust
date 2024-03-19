@@ -3,19 +3,19 @@
 /// <p>Aggregate status of Agent components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateStatus {
+pub struct AggregateStatus  {
     /// <p>Aggregate status.</p>
     pub status: crate::types::AgentStatus,
     /// <p>Sparse map of failure signatures.</p>
-    pub signature_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub signature_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>,
 }
-impl AggregateStatus {
+impl  AggregateStatus  {
     /// <p>Aggregate status.</p>
-    pub fn status(&self) -> &crate::types::AgentStatus {
+    pub fn status(&self) -> & crate::types::AgentStatus {
         &self.status
     }
     /// <p>Sparse map of failure signatures.</p>
-    pub fn signature_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn signature_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, bool>> {
         self.signature_map.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl AggregateStatus {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
-    pub(crate) signature_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) signature_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>,
 }
 impl AggregateStatusBuilder {
     /// <p>Aggregate status.</p>
@@ -42,8 +42,7 @@ impl AggregateStatusBuilder {
     }
     /// <p>Aggregate status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Aggregate status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -56,31 +55,33 @@ impl AggregateStatusBuilder {
     /// <p>Sparse map of failure signatures.</p>
     pub fn signature_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.signature_map.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.signature_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.signature_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Sparse map of failure signatures.</p>
-    pub fn set_signature_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>) -> Self {
-        self.signature_map = input;
-        self
+    pub fn set_signature_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>>) -> Self {
+        self.signature_map = input; self
     }
     /// <p>Sparse map of failure signatures.</p>
-    pub fn get_signature_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_signature_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, bool>> {
         &self.signature_map
     }
     /// Consumes the builder and constructs a [`AggregateStatus`](crate::types::AggregateStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::AggregateStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AggregateStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AggregateStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AggregateStatus",
-                )
-            })?,
-            signature_map: self.signature_map,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AggregateStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AggregateStatus")
+                    )?
+                ,
+                signature_map: self.signature_map
+                ,
+            }
+        )
     }
 }
+

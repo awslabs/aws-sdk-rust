@@ -3,13 +3,13 @@
 /// <p>The query to retrieve metric data points.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricQuery {
+pub struct MetricQuery  {
     /// <p>The Performance Insights query that you can use to retrieve Performance Insights metric data points.</p>
     pub performance_insights_metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }
-impl MetricQuery {
+impl  MetricQuery  {
     /// <p>The Performance Insights query that you can use to retrieve Performance Insights metric data points.</p>
-    pub fn performance_insights_metric_query(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
+    pub fn performance_insights_metric_query(&self) -> ::std::option::Option<& crate::types::PerformanceInsightsMetricQuery> {
         self.performance_insights_metric_query.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MetricQueryBuilder {
     }
     /// <p>The Performance Insights query that you can use to retrieve Performance Insights metric data points.</p>
     pub fn set_performance_insights_metric_query(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>) -> Self {
-        self.performance_insights_metric_query = input;
-        self
+        self.performance_insights_metric_query = input; self
     }
     /// <p>The Performance Insights query that you can use to retrieve Performance Insights metric data points.</p>
     pub fn get_performance_insights_metric_query(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
@@ -44,7 +43,9 @@ impl MetricQueryBuilder {
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).
     pub fn build(self) -> crate::types::MetricQuery {
         crate::types::MetricQuery {
-            performance_insights_metric_query: self.performance_insights_metric_query,
+            performance_insights_metric_query: self.performance_insights_metric_query
+            ,
         }
     }
 }
+

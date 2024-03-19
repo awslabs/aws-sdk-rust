@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDetectMitigationActionsExecutions`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_id(impl Into<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_task_id):<br>required: **false**<br><p>The unique identifier of the task.</p><br>
     ///   - [`violation_id(impl Into<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::violation_id) / [`set_violation_id(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_violation_id):<br>required: **false**<br><p>The unique identifier of the violation.</p><br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_thing_name):<br>required: **false**<br><p>The name of the thing whose mitigation actions are listed.</p><br>
@@ -11,15 +11,12 @@ impl super::Client {
     ///   - [`end_time(DateTime)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_end_time):<br>required: **false**<br><p>The end of the time period for which ML Detect mitigation actions executions are returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    /// - On success, responds with [`ListDetectMitigationActionsExecutionsOutput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListDetectMitigationActionsExecutionsOutput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput) with field(s):
     ///   - [`actions_executions(Option<Vec::<DetectMitigationActionExecution>>)`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput::actions_executions): <p>List of actions executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListDetectMitigationActionsExecutionsError>`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError)
-    pub fn list_detect_mitigation_actions_executions(
-        &self,
-    ) -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder {
-        crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListDetectMitigationActionsExecutionsError>`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError)
+    pub fn list_detect_mitigation_actions_executions(&self) -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder {
+                                crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

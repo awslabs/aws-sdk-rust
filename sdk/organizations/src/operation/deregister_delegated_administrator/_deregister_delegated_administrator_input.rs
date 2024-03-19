@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterDelegatedAdministratorInput {
+pub struct DeregisterDelegatedAdministratorInput  {
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     pub service_principal: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterDelegatedAdministratorInput {
+impl  DeregisterDelegatedAdministratorInput  {
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    pub fn service_principal(&self) -> ::std::option::Option<&str> {
+    pub fn service_principal(&self) -> ::std::option::Option<& str> {
         self.service_principal.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
     }
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_principal = input;
-        self
+        self.service_principal = input; self
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
@@ -69,17 +67,15 @@ impl DeregisterDelegatedAdministratorInputBuilder {
         &self.service_principal
     }
     /// Consumes the builder and constructs a [`DeregisterDelegatedAdministratorInput`](crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput {
-                account_id: self.account_id,
-                service_principal: self.service_principal,
-            },
+                account_id: self.account_id
+                ,
+                service_principal: self.service_principal
+                ,
+            }
         )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePortfolioShareStatusInput {
+pub struct DescribePortfolioShareStatusInput  {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribePortfolioShareStatusInput {
+impl  DescribePortfolioShareStatusInput  {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    pub fn portfolio_share_token(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> ::std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribePortfolioShareStatusInputBuilder {
     }
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
     pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_share_token = input;
-        self
+        self.portfolio_share_token = input; self
     }
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
     pub fn get_portfolio_share_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.portfolio_share_token
     }
     /// Consumes the builder and constructs a [`DescribePortfolioShareStatusInput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
-            portfolio_share_token: self.portfolio_share_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
+                portfolio_share_token: self.portfolio_share_token
+                ,
+            }
+        )
     }
 }
+

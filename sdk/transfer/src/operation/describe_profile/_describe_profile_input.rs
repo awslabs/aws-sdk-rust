@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProfileInput {
+pub struct DescribeProfileInput  {
     /// <p>The identifier of the profile that you want described.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeProfileInput {
+impl  DescribeProfileInput  {
     /// <p>The identifier of the profile that you want described.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeProfileInputBuilder {
     }
     /// <p>The identifier of the profile that you want described.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The identifier of the profile that you want described.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
     /// Consumes the builder and constructs a [`DescribeProfileInput`](crate::operation::describe_profile::DescribeProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_profile::DescribeProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_profile::DescribeProfileInput { profile_id: self.profile_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_profile::DescribeProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_profile::DescribeProfileInput {
+                profile_id: self.profile_id
+                ,
+            }
+        )
     }
 }
+

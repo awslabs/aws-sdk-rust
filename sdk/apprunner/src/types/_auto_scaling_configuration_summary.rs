@@ -4,7 +4,7 @@
 /// <p>This type contains limited information about an auto scaling configuration. It includes only identification information, without configuration details. It's returned by the <code>ListAutoScalingConfigurations</code> action. Complete configuration information is returned by the <code>CreateAutoScalingConfiguration</code>, <code>DescribeAutoScalingConfiguration</code>, and <code>DeleteAutoScalingConfiguration</code> actions using the <code>AutoScalingConfiguration</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingConfigurationSummary {
+pub struct AutoScalingConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
@@ -20,13 +20,13 @@ pub struct AutoScalingConfigurationSummary {
     /// <p>Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does not have an auto scaling configuration ARN specified during creation. Each account can have only one default <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any revision under the same <code>AutoScalingConfigurationName</code>.</p>
     pub is_default: ::std::option::Option<bool>,
 }
-impl AutoScalingConfigurationSummary {
+impl  AutoScalingConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
@@ -34,11 +34,11 @@ impl AutoScalingConfigurationSummary {
         self.auto_scaling_configuration_revision
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AutoScalingConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AutoScalingConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Indicates if this auto scaling configuration has an App Runner service associated with it. A value of <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no services are associated.</p>
@@ -77,8 +77,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     pub fn set_auto_scaling_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_arn = input;
-        self
+        self.auto_scaling_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     pub fn get_auto_scaling_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_name = input;
-        self
+        self.auto_scaling_configuration_name = input; self
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn set_auto_scaling_configuration_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.auto_scaling_configuration_revision = input;
-        self
+        self.auto_scaling_configuration_revision = input; self
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn get_auto_scaling_configuration_revision(&self) -> &::std::option::Option<i32> {
@@ -119,8 +116,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoScalingConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoScalingConfigurationStatus> {
@@ -133,8 +129,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -147,8 +142,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>Indicates if this auto scaling configuration has an App Runner service associated with it. A value of <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no services are associated.</p>
     pub fn set_has_associated_service(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_associated_service = input;
-        self
+        self.has_associated_service = input; self
     }
     /// <p>Indicates if this auto scaling configuration has an App Runner service associated with it. A value of <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no services are associated.</p>
     pub fn get_has_associated_service(&self) -> &::std::option::Option<bool> {
@@ -161,8 +155,7 @@ impl AutoScalingConfigurationSummaryBuilder {
     }
     /// <p>Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does not have an auto scaling configuration ARN specified during creation. Each account can have only one default <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any revision under the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does not have an auto scaling configuration ARN specified during creation. Each account can have only one default <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any revision under the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -171,13 +164,22 @@ impl AutoScalingConfigurationSummaryBuilder {
     /// Consumes the builder and constructs a [`AutoScalingConfigurationSummary`](crate::types::AutoScalingConfigurationSummary).
     pub fn build(self) -> crate::types::AutoScalingConfigurationSummary {
         crate::types::AutoScalingConfigurationSummary {
-            auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
-            auto_scaling_configuration_name: self.auto_scaling_configuration_name,
-            auto_scaling_configuration_revision: self.auto_scaling_configuration_revision.unwrap_or_default(),
-            status: self.status,
-            created_at: self.created_at,
-            has_associated_service: self.has_associated_service,
-            is_default: self.is_default,
+            auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
+            ,
+            auto_scaling_configuration_name: self.auto_scaling_configuration_name
+            ,
+            auto_scaling_configuration_revision: self.auto_scaling_configuration_revision
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            has_associated_service: self.has_associated_service
+            ,
+            is_default: self.is_default
+            ,
         }
     }
 }
+

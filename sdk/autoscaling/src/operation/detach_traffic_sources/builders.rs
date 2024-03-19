@@ -5,55 +5,51 @@ pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_input:
 
 impl DetachTrafficSourcesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.detach_traffic_sources();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.detach_traffic_sources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DetachTrafficSources`.
-///
+/// 
 /// <p>Detaches one or more traffic sources from the specified Auto Scaling group.</p>
 /// <p>When you detach a traffic source, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the traffic source using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachTrafficSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder,
+                    inner: crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
-    > for DetachTrafficSourcesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
-            crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+                    crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
+                > for DetachTrafficSourcesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+                        crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DetachTrafficSourcesFluentBuilder {
     /// Creates a new `DetachTrafficSources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DetachTrafficSourcesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::detach_traffic_sources::DetachTrafficSources::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::detach_traffic_sources::DetachTrafficSources::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
-        crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_traffic_sources::DetachTrafficSourcesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::detach_traffic_sources::DetachTrafficSources::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::detach_traffic_sources::DetachTrafficSources::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput, crate::operation::detach_traffic_sources::DetachTrafficSourcesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
@@ -133,12 +120,13 @@ impl DetachTrafficSourcesFluentBuilder {
         self
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn set_traffic_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>) -> Self {
+    pub fn set_traffic_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrafficSourceIdentifier>>) -> Self {
         self.inner = self.inner.set_traffic_sources(input);
         self
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
+    pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrafficSourceIdentifier>> {
         self.inner.get_traffic_sources()
     }
 }
+

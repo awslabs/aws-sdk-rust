@@ -3,7 +3,7 @@
 /// <p>A high-level summary of a component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -13,7 +13,7 @@ pub struct ComponentSummary {
     /// <p>The operating system platform of the component.</p>
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_os_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Describes the current status of the component.</p>
     pub state: ::std::option::Option<crate::types::ComponentState>,
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
@@ -27,65 +27,66 @@ pub struct ComponentSummary {
     /// <p>The original creation date of the component.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags that apply to the component.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
     pub obfuscate: bool,
 }
-impl ComponentSummary {
+impl  ComponentSummary  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The operating system platform of the component.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_os_versions.is_none()`.
-    pub fn supported_os_versions(&self) -> &[::std::string::String] {
-        self.supported_os_versions.as_deref().unwrap_or_default()
+    pub fn supported_os_versions(&self) -> & [::std::string::String] {
+        self.supported_os_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes the current status of the component.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ComponentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ComponentState> {
         self.state.as_ref()
     }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ComponentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The owner of the component.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The description of the component.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description for the current version of the component.</p>
-    pub fn change_description(&self) -> ::std::option::Option<&str> {
+    pub fn change_description(&self) -> ::std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The original creation date of the component.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
-    pub fn publisher(&self) -> ::std::option::Option<&str> {
+    pub fn publisher(&self) -> ::std::option::Option<& str> {
         self.publisher.as_deref()
     }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
@@ -108,14 +109,14 @@ pub struct ComponentSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
-    pub(crate) supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_os_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::ComponentState>,
     pub(crate) r#type: ::std::option::Option<crate::types::ComponentType>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) change_description: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) publisher: ::std::option::Option<::std::string::String>,
     pub(crate) obfuscate: ::std::option::Option<bool>,
 }
@@ -127,8 +128,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +141,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The version of the component.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the component.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +167,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The operating system platform of the component.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system platform of the component.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -183,17 +180,16 @@ impl ComponentSummaryBuilder {
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_os_versions.unwrap_or_default();
-        v.push(input.into());
-        self.supported_os_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_os_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn set_supported_os_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_os_versions = input;
-        self
+    pub fn set_supported_os_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_os_versions = input; self
     }
     /// <p>The operating system (OS) version that the component supports. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_os_versions
     }
     /// <p>Describes the current status of the component.</p>
@@ -203,8 +199,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>Describes the current status of the component.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ComponentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Describes the current status of the component.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ComponentState> {
@@ -217,8 +212,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
@@ -231,8 +225,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The owner of the component.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the component.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +238,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The description of the component.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the component.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +251,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The change description for the current version of the component.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_description = input;
-        self
+        self.change_description = input; self
     }
     /// <p>The change description for the current version of the component.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +264,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The original creation date of the component.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The original creation date of the component.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,17 +277,16 @@ impl ComponentSummaryBuilder {
     /// <p>The tags that apply to the component.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
@@ -307,8 +296,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     pub fn set_publisher(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher = input;
-        self
+        self.publisher = input; self
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +309,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
     pub fn set_obfuscate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.obfuscate = input;
-        self
+        self.obfuscate = input; self
     }
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
     pub fn get_obfuscate(&self) -> &::std::option::Option<bool> {
@@ -331,20 +318,36 @@ impl ComponentSummaryBuilder {
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {
         crate::types::ComponentSummary {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            platform: self.platform,
-            supported_os_versions: self.supported_os_versions,
-            state: self.state,
-            r#type: self.r#type,
-            owner: self.owner,
-            description: self.description,
-            change_description: self.change_description,
-            date_created: self.date_created,
-            tags: self.tags,
-            publisher: self.publisher,
-            obfuscate: self.obfuscate.unwrap_or_default(),
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            platform: self.platform
+            ,
+            supported_os_versions: self.supported_os_versions
+            ,
+            state: self.state
+            ,
+            r#type: self.r#type
+            ,
+            owner: self.owner
+            ,
+            description: self.description
+            ,
+            change_description: self.change_description
+            ,
+            date_created: self.date_created
+            ,
+            tags: self.tags
+            ,
+            publisher: self.publisher
+            ,
+            obfuscate: self.obfuscate
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

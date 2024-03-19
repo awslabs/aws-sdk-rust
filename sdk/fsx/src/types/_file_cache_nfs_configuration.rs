@@ -3,22 +3,23 @@
 /// <p>The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileCacheNfsConfiguration {
+pub struct FileCacheNfsConfiguration  {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     pub version: ::std::option::Option<crate::types::NfsVersion>,
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl FileCacheNfsConfiguration {
+impl  FileCacheNfsConfiguration  {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::NfsVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::NfsVersion> {
         self.version.as_ref()
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
-    pub fn dns_ips(&self) -> &[::std::string::String] {
-        self.dns_ips.as_deref().unwrap_or_default()
+    pub fn dns_ips(&self) -> & [::std::string::String] {
+        self.dns_ips.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FileCacheNfsConfiguration {
@@ -33,7 +34,7 @@ impl FileCacheNfsConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileCacheNfsConfigurationBuilder {
     pub(crate) version: ::std::option::Option<crate::types::NfsVersion>,
-    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FileCacheNfsConfigurationBuilder {
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
@@ -44,8 +45,7 @@ impl FileCacheNfsConfigurationBuilder {
     }
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::NfsVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::NfsVersion> {
@@ -58,24 +58,26 @@ impl FileCacheNfsConfigurationBuilder {
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
     pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_ips = input;
-        self
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_ips = input; self
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_ips
     }
     /// Consumes the builder and constructs a [`FileCacheNfsConfiguration`](crate::types::FileCacheNfsConfiguration).
     pub fn build(self) -> crate::types::FileCacheNfsConfiguration {
         crate::types::FileCacheNfsConfiguration {
-            version: self.version,
-            dns_ips: self.dns_ips,
+            version: self.version
+            ,
+            dns_ips: self.dns_ips
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLifecyclePolicyInput {
+pub struct PutLifecyclePolicyInput  {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub lifecycle_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutLifecyclePolicyInput {
+impl  PutLifecyclePolicyInput  {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
-    pub fn lifecycle_policy(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl PutLifecyclePolicyInputBuilder {
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn set_lifecycle_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy = input;
-        self
+        self.lifecycle_policy = input; self
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn get_lifecycle_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy
     }
     /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput {
-            container_name: self.container_name,
-            lifecycle_policy: self.lifecycle_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput {
+                container_name: self.container_name
+                ,
+                lifecycle_policy: self.lifecycle_policy
+                ,
+            }
+        )
     }
 }
+

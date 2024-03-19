@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpamResourceDiscoveryAssociations`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`ipam_resource_discovery_association_ids(impl Into<String>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::ipam_resource_discovery_association_ids) / [`set_ipam_resource_discovery_association_ids(Option<Vec::<String>>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::set_ipam_resource_discovery_association_ids):<br>required: **false**<br><p>The resource discovery association IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource discovery associations to return in one page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::set_filters):<br>required: **false**<br><p>The resource discovery association filters.</p><br>
-    /// - On success, responds with [`DescribeIpamResourceDiscoveryAssociationsOutput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeIpamResourceDiscoveryAssociationsOutput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput) with field(s):
     ///   - [`ipam_resource_discovery_associations(Option<Vec::<IpamResourceDiscoveryAssociation>>)`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput::ipam_resource_discovery_associations): <p>The resource discovery associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveryAssociationsError>`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError)
-    pub fn describe_ipam_resource_discovery_associations(
-        &self,
-    ) -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
-        crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeIpamResourceDiscoveryAssociationsError>`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError)
+    pub fn describe_ipam_resource_discovery_associations(&self) -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder {
+                                crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,30 +3,32 @@
 /// <p>Describes a core network segment, which are dedicated routes. Only attachments within this segment can communicate with each other.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkSegment {
+pub struct CoreNetworkSegment  {
     /// <p>The name of a core network segment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where the edges are located.</p>
-    pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub edge_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The shared segments of a core network.</p>
-    pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub shared_segments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CoreNetworkSegment {
+impl  CoreNetworkSegment  {
     /// <p>The name of a core network segment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Regions where the edges are located.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
-    pub fn edge_locations(&self) -> &[::std::string::String] {
-        self.edge_locations.as_deref().unwrap_or_default()
+    pub fn edge_locations(&self) -> & [::std::string::String] {
+        self.edge_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The shared segments of a core network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_segments.is_none()`.
-    pub fn shared_segments(&self) -> &[::std::string::String] {
-        self.shared_segments.as_deref().unwrap_or_default()
+    pub fn shared_segments(&self) -> & [::std::string::String] {
+        self.shared_segments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreNetworkSegment {
@@ -41,8 +43,8 @@ impl CoreNetworkSegment {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkSegmentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CoreNetworkSegmentBuilder {
     /// <p>The name of a core network segment.</p>
@@ -52,8 +54,7 @@ impl CoreNetworkSegmentBuilder {
     }
     /// <p>The name of a core network segment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a core network segment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl CoreNetworkSegmentBuilder {
     /// <p>The Regions where the edges are located.</p>
     pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_locations.unwrap_or_default();
-        v.push(input.into());
-        self.edge_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.edge_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Regions where the edges are located.</p>
-    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.edge_locations = input;
-        self
+    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.edge_locations = input; self
     }
     /// <p>The Regions where the edges are located.</p>
-    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.edge_locations
     }
     /// Appends an item to `shared_segments`.
@@ -86,25 +86,28 @@ impl CoreNetworkSegmentBuilder {
     /// <p>The shared segments of a core network.</p>
     pub fn shared_segments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_segments.unwrap_or_default();
-        v.push(input.into());
-        self.shared_segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.shared_segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The shared segments of a core network.</p>
-    pub fn set_shared_segments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.shared_segments = input;
-        self
+    pub fn set_shared_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.shared_segments = input; self
     }
     /// <p>The shared segments of a core network.</p>
-    pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.shared_segments
     }
     /// Consumes the builder and constructs a [`CoreNetworkSegment`](crate::types::CoreNetworkSegment).
     pub fn build(self) -> crate::types::CoreNetworkSegment {
         crate::types::CoreNetworkSegment {
-            name: self.name,
-            edge_locations: self.edge_locations,
-            shared_segments: self.shared_segments,
+            name: self.name
+            ,
+            edge_locations: self.edge_locations
+            ,
+            shared_segments: self.shared_segments
+            ,
         }
     }
 }
+

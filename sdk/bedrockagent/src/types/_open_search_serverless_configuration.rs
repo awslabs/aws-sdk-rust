@@ -3,7 +3,7 @@
 /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpenSearchServerlessConfiguration {
+pub struct OpenSearchServerlessConfiguration  {
     /// Arn of an OpenSearch Serverless collection.
     pub collection_arn: ::std::string::String,
     /// Arn of an OpenSearch Serverless index.
@@ -11,19 +11,17 @@ pub struct OpenSearchServerlessConfiguration {
     /// A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names
     pub field_mapping: ::std::option::Option<crate::types::OpenSearchServerlessFieldMapping>,
 }
-impl OpenSearchServerlessConfiguration {
+impl  OpenSearchServerlessConfiguration  {
     /// Arn of an OpenSearch Serverless collection.
-    pub fn collection_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collection_arn.deref()
+    pub fn collection_arn(&self) -> & str {
+        use std::ops::Deref; self.collection_arn.deref()
     }
     /// Arn of an OpenSearch Serverless index.
-    pub fn vector_index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vector_index_name.deref()
+    pub fn vector_index_name(&self) -> & str {
+        use std::ops::Deref; self.vector_index_name.deref()
     }
     /// A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names
-    pub fn field_mapping(&self) -> ::std::option::Option<&crate::types::OpenSearchServerlessFieldMapping> {
+    pub fn field_mapping(&self) -> ::std::option::Option<& crate::types::OpenSearchServerlessFieldMapping> {
         self.field_mapping.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl OpenSearchServerlessConfigurationBuilder {
     }
     /// Arn of an OpenSearch Serverless collection.
     pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_arn = input;
-        self
+        self.collection_arn = input; self
     }
     /// Arn of an OpenSearch Serverless collection.
     pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl OpenSearchServerlessConfigurationBuilder {
     }
     /// Arn of an OpenSearch Serverless index.
     pub fn set_vector_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vector_index_name = input;
-        self
+        self.vector_index_name = input; self
     }
     /// Arn of an OpenSearch Serverless index.
     pub fn get_vector_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl OpenSearchServerlessConfigurationBuilder {
     }
     /// A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names
     pub fn set_field_mapping(mut self, input: ::std::option::Option<crate::types::OpenSearchServerlessFieldMapping>) -> Self {
-        self.field_mapping = input;
-        self
+        self.field_mapping = input; self
     }
     /// A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names
     pub fn get_field_mapping(&self) -> &::std::option::Option<crate::types::OpenSearchServerlessFieldMapping> {
@@ -93,20 +88,22 @@ impl OpenSearchServerlessConfigurationBuilder {
     /// - [`collection_arn`](crate::types::builders::OpenSearchServerlessConfigurationBuilder::collection_arn)
     /// - [`vector_index_name`](crate::types::builders::OpenSearchServerlessConfigurationBuilder::vector_index_name)
     pub fn build(self) -> ::std::result::Result<crate::types::OpenSearchServerlessConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OpenSearchServerlessConfiguration {
-            collection_arn: self.collection_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collection_arn",
-                    "collection_arn was not specified but it is required when building OpenSearchServerlessConfiguration",
-                )
-            })?,
-            vector_index_name: self.vector_index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vector_index_name",
-                    "vector_index_name was not specified but it is required when building OpenSearchServerlessConfiguration",
-                )
-            })?,
-            field_mapping: self.field_mapping,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OpenSearchServerlessConfiguration {
+                collection_arn: self.collection_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collection_arn", "collection_arn was not specified but it is required when building OpenSearchServerlessConfiguration")
+                    )?
+                ,
+                vector_index_name: self.vector_index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vector_index_name", "vector_index_name was not specified but it is required when building OpenSearchServerlessConfiguration")
+                    )?
+                ,
+                field_mapping: self.field_mapping
+                ,
+            }
+        )
     }
 }
+

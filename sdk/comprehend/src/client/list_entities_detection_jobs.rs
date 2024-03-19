@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEntitiesDetectionJobs`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EntitiesDetectionJobFilter)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::filter) / [`set_filter(Option<EntitiesDetectionJobFilter>)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListEntitiesDetectionJobsOutput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput) with field(s):
+                            /// - On success, responds with [`ListEntitiesDetectionJobsOutput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput) with field(s):
     ///   - [`entities_detection_job_properties_list(Option<Vec::<EntitiesDetectionJobProperties>>)`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput::entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListEntitiesDetectionJobsError>`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsError)
+                            /// - On failure, responds with [`SdkError<ListEntitiesDetectionJobsError>`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsError)
     pub fn list_entities_detection_jobs(&self) -> crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder {
-        crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

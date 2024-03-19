@@ -3,21 +3,20 @@
 /// <p>Describes an execution job for an Amplify app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p>Describes the summary for an execution job for an Amplify app.</p>
     pub summary: ::std::option::Option<crate::types::JobSummary>,
     /// <p>The execution steps for an execution job, for an Amplify app.</p>
-    pub steps: ::std::vec::Vec<crate::types::Step>,
+    pub steps: ::std::vec::Vec::<crate::types::Step>,
 }
-impl Job {
+impl  Job  {
     /// <p>Describes the summary for an execution job for an Amplify app.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::JobSummary> {
         self.summary.as_ref()
     }
     /// <p>The execution steps for an execution job, for an Amplify app.</p>
-    pub fn steps(&self) -> &[crate::types::Step] {
-        use std::ops::Deref;
-        self.steps.deref()
+    pub fn steps(&self) -> & [crate::types::Step] {
+        use std::ops::Deref; self.steps.deref()
     }
 }
 impl Job {
@@ -32,7 +31,7 @@ impl Job {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::JobSummary>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::Step>>,
 }
 impl JobBuilder {
     /// <p>Describes the summary for an execution job for an Amplify app.</p>
@@ -43,8 +42,7 @@ impl JobBuilder {
     }
     /// <p>Describes the summary for an execution job for an Amplify app.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>Describes the summary for an execution job for an Amplify app.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
@@ -57,31 +55,33 @@ impl JobBuilder {
     /// <p>The execution steps for an execution job, for an Amplify app.</p>
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The execution steps for an execution job, for an Amplify app.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Step>>) -> Self {
+        self.steps = input; self
     }
     /// <p>The execution steps for an execution job, for an Amplify app.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Step>> {
         &self.steps
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     /// This method will fail if any of the following fields are not set:
     /// - [`steps`](crate::types::builders::JobBuilder::steps)
     pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Job {
-            summary: self.summary,
-            steps: self.steps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "steps",
-                    "steps was not specified but it is required when building Job",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Job {
+                summary: self.summary
+                ,
+                steps: self.steps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("steps", "steps was not specified but it is required when building Job")
+                    )?
+                ,
+            }
+        )
     }
 }
+

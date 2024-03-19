@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImageVersionInput {
+pub struct CreateImageVersionInput  {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
@@ -17,7 +17,7 @@ pub struct CreateImageVersionInput {
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of aliases created with the image version.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
     /// <li>
@@ -57,7 +57,7 @@ pub struct CreateImageVersionInput {
     /// <p>The maintainer description of the image version.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
 }
-impl CreateImageVersionInput {
+impl  CreateImageVersionInput  {
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
@@ -66,22 +66,23 @@ impl CreateImageVersionInput {
     /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
     /// </region>
     /// </acct-id></code></p>
-    pub fn base_image(&self) -> ::std::option::Option<&str> {
+    pub fn base_image(&self) -> ::std::option::Option<& str> {
         self.base_image.as_deref()
     }
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>A list of aliases created with the image version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
-    pub fn aliases(&self) -> &[::std::string::String] {
-        self.aliases.as_deref().unwrap_or_default()
+    pub fn aliases(&self) -> & [::std::string::String] {
+        self.aliases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
@@ -94,7 +95,7 @@ impl CreateImageVersionInput {
     /// <li>
     /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
     /// </ul>
-    pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> ::std::option::Option<& crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
@@ -106,15 +107,15 @@ impl CreateImageVersionInput {
     /// <li>
     /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
     /// </ul>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The machine learning framework vended in the image version.</p>
-    pub fn ml_framework(&self) -> ::std::option::Option<&str> {
+    pub fn ml_framework(&self) -> ::std::option::Option<& str> {
         self.ml_framework.as_deref()
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(&self) -> ::std::option::Option<&str> {
+    pub fn programming_lang(&self) -> ::std::option::Option<& str> {
         self.programming_lang.as_deref()
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
@@ -124,7 +125,7 @@ impl CreateImageVersionInput {
     /// <li>
     /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
     /// </ul>
-    pub fn processor(&self) -> ::std::option::Option<&crate::types::Processor> {
+    pub fn processor(&self) -> ::std::option::Option<& crate::types::Processor> {
         self.processor.as_ref()
     }
     /// <p>Indicates Horovod compatibility.</p>
@@ -132,7 +133,7 @@ impl CreateImageVersionInput {
         self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(&self) -> ::std::option::Option<&str> {
+    pub fn release_notes(&self) -> ::std::option::Option<& str> {
         self.release_notes.as_deref()
     }
 }
@@ -150,7 +151,7 @@ pub struct CreateImageVersionInputBuilder {
     pub(crate) base_image: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
-    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
     pub(crate) ml_framework: ::std::option::Option<::std::string::String>,
@@ -182,8 +183,7 @@ impl CreateImageVersionInputBuilder {
     /// </region>
     /// </acct-id></code></p>
     pub fn set_base_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_image = input;
-        self
+        self.base_image = input; self
     }
     /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
@@ -204,8 +204,7 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +218,7 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,17 +231,16 @@ impl CreateImageVersionInputBuilder {
     /// <p>A list of aliases created with the image version.</p>
     pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input.into());
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aliases = input; self
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aliases
     }
     /// <p>The stability of the image version, specified by the maintainer.</p>
@@ -273,8 +270,7 @@ impl CreateImageVersionInputBuilder {
     /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
     /// </ul>
     pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
-        self.vendor_guidance = input;
-        self
+        self.vendor_guidance = input; self
     }
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
@@ -313,8 +309,7 @@ impl CreateImageVersionInputBuilder {
     /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
@@ -335,8 +330,7 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_framework = input;
-        self
+        self.ml_framework = input; self
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn get_ml_framework(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +343,7 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>The supported programming language and its version.</p>
     pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.programming_lang = input;
-        self
+        self.programming_lang = input; self
     }
     /// <p>The supported programming language and its version.</p>
     pub fn get_programming_lang(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +368,7 @@ impl CreateImageVersionInputBuilder {
     /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
     /// </ul>
     pub fn set_processor(mut self, input: ::std::option::Option<crate::types::Processor>) -> Self {
-        self.processor = input;
-        self
+        self.processor = input; self
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
@@ -395,8 +387,7 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.horovod = input;
-        self
+        self.horovod = input; self
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn get_horovod(&self) -> &::std::option::Option<bool> {
@@ -409,30 +400,40 @@ impl CreateImageVersionInputBuilder {
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_notes = input;
-        self
+        self.release_notes = input; self
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
     /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_image_version::CreateImageVersionInput {
-            base_image: self.base_image,
-            client_token: self.client_token,
-            image_name: self.image_name,
-            aliases: self.aliases,
-            vendor_guidance: self.vendor_guidance,
-            job_type: self.job_type,
-            ml_framework: self.ml_framework,
-            programming_lang: self.programming_lang,
-            processor: self.processor,
-            horovod: self.horovod,
-            release_notes: self.release_notes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_image_version::CreateImageVersionInput {
+                base_image: self.base_image
+                ,
+                client_token: self.client_token
+                ,
+                image_name: self.image_name
+                ,
+                aliases: self.aliases
+                ,
+                vendor_guidance: self.vendor_guidance
+                ,
+                job_type: self.job_type
+                ,
+                ml_framework: self.ml_framework
+                ,
+                programming_lang: self.programming_lang
+                ,
+                processor: self.processor
+                ,
+                horovod: self.horovod
+                ,
+                release_notes: self.release_notes
+                ,
+            }
+        )
     }
 }
+

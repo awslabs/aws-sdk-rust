@@ -7,24 +7,22 @@
 /// <p>The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlInjectionMatchSetSummary {
+pub struct SqlInjectionMatchSetSummary  {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: ::std::string::String,
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub name: ::std::string::String,
 }
-impl SqlInjectionMatchSetSummary {
+impl  SqlInjectionMatchSetSummary  {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sql_injection_match_set_id.deref()
+    pub fn sql_injection_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.sql_injection_match_set_id.deref()
     }
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl SqlInjectionMatchSetSummary {
@@ -52,8 +50,7 @@ impl SqlInjectionMatchSetSummaryBuilder {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_injection_match_set_id = input;
-        self
+        self.sql_injection_match_set_id = input; self
     }
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
@@ -68,8 +65,7 @@ impl SqlInjectionMatchSetSummaryBuilder {
     }
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl SqlInjectionMatchSetSummaryBuilder {
     /// - [`sql_injection_match_set_id`](crate::types::builders::SqlInjectionMatchSetSummaryBuilder::sql_injection_match_set_id)
     /// - [`name`](crate::types::builders::SqlInjectionMatchSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SqlInjectionMatchSetSummary {
-            sql_injection_match_set_id: self.sql_injection_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_injection_match_set_id",
-                    "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SqlInjectionMatchSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SqlInjectionMatchSetSummary {
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_injection_match_set_id", "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SqlInjectionMatchSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes SAML options for an OpenSearch Serverless security configuration in the form of a key-value map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamlConfigOptions {
+pub struct SamlConfigOptions  {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
     pub metadata: ::std::string::String,
     /// <p>A user attribute for this SAML integration.</p>
@@ -13,18 +13,17 @@ pub struct SamlConfigOptions {
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub session_timeout: ::std::option::Option<i32>,
 }
-impl SamlConfigOptions {
+impl  SamlConfigOptions  {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn metadata(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata.deref()
+    pub fn metadata(&self) -> & str {
+        use std::ops::Deref; self.metadata.deref()
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn user_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn user_attribute(&self) -> ::std::option::Option<& str> {
         self.user_attribute.as_deref()
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn group_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn group_attribute(&self) -> ::std::option::Option<& str> {
         self.group_attribute.as_deref()
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
@@ -57,8 +56,7 @@ impl SamlConfigOptionsBuilder {
     }
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl SamlConfigOptionsBuilder {
     }
     /// <p>A user attribute for this SAML integration.</p>
     pub fn set_user_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_attribute = input;
-        self
+        self.user_attribute = input; self
     }
     /// <p>A user attribute for this SAML integration.</p>
     pub fn get_user_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl SamlConfigOptionsBuilder {
     }
     /// <p>The group attribute for this SAML integration.</p>
     pub fn set_group_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_attribute = input;
-        self
+        self.group_attribute = input; self
     }
     /// <p>The group attribute for this SAML integration.</p>
     pub fn get_group_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl SamlConfigOptionsBuilder {
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout = input;
-        self
+        self.session_timeout = input; self
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn get_session_timeout(&self) -> &::std::option::Option<i32> {
@@ -110,16 +105,21 @@ impl SamlConfigOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata`](crate::types::builders::SamlConfigOptionsBuilder::metadata)
     pub fn build(self) -> ::std::result::Result<crate::types::SamlConfigOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SamlConfigOptions {
-            metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata",
-                    "metadata was not specified but it is required when building SamlConfigOptions",
-                )
-            })?,
-            user_attribute: self.user_attribute,
-            group_attribute: self.group_attribute,
-            session_timeout: self.session_timeout,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SamlConfigOptions {
+                metadata: self.metadata
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata", "metadata was not specified but it is required when building SamlConfigOptions")
+                    )?
+                ,
+                user_attribute: self.user_attribute
+                ,
+                group_attribute: self.group_attribute
+                ,
+                session_timeout: self.session_timeout
+                ,
+            }
+        )
     }
 }
+

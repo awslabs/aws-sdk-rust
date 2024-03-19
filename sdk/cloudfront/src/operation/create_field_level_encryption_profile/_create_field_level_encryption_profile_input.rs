@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFieldLevelEncryptionProfileInput {
+pub struct CreateFieldLevelEncryptionProfileInput  {
     /// <p>The request to create a field-level encryption profile.</p>
     pub field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
 }
-impl CreateFieldLevelEncryptionProfileInput {
+impl  CreateFieldLevelEncryptionProfileInput  {
     /// <p>The request to create a field-level encryption profile.</p>
-    pub fn field_level_encryption_profile_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileConfig> {
+    pub fn field_level_encryption_profile_config(&self) -> ::std::option::Option<& crate::types::FieldLevelEncryptionProfileConfig> {
         self.field_level_encryption_profile_config.as_ref()
     }
 }
@@ -33,28 +33,21 @@ impl CreateFieldLevelEncryptionProfileInputBuilder {
         self
     }
     /// <p>The request to create a field-level encryption profile.</p>
-    pub fn set_field_level_encryption_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
-    ) -> Self {
-        self.field_level_encryption_profile_config = input;
-        self
+    pub fn set_field_level_encryption_profile_config(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>) -> Self {
+        self.field_level_encryption_profile_config = input; self
     }
     /// <p>The request to create a field-level encryption profile.</p>
     pub fn get_field_level_encryption_profile_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
         &self.field_level_encryption_profile_config
     }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionProfileInput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput {
-                field_level_encryption_profile_config: self.field_level_encryption_profile_config,
-            },
+                field_level_encryption_profile_config: self.field_level_encryption_profile_config
+                ,
+            }
         )
     }
 }
+

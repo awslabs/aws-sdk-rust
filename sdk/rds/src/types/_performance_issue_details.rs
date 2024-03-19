@@ -3,33 +3,34 @@
 /// <p>Details of the performance issue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceIssueDetails {
+pub struct PerformanceIssueDetails  {
     /// <p>The time when the performance issue started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the performance issue stopped.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metrics that are relevant to the performance issue.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>,
     /// <p>The analysis of the performance issue. The information might contain markdown.</p>
     pub analysis: ::std::option::Option<::std::string::String>,
 }
-impl PerformanceIssueDetails {
+impl  PerformanceIssueDetails  {
     /// <p>The time when the performance issue started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the performance issue stopped.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The metrics that are relevant to the performance issue.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::Metric] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::Metric] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The analysis of the performance issue. The information might contain markdown.</p>
-    pub fn analysis(&self) -> ::std::option::Option<&str> {
+    pub fn analysis(&self) -> ::std::option::Option<& str> {
         self.analysis.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl PerformanceIssueDetails {
 pub struct PerformanceIssueDetailsBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>,
     pub(crate) analysis: ::std::option::Option<::std::string::String>,
 }
 impl PerformanceIssueDetailsBuilder {
@@ -57,8 +58,7 @@ impl PerformanceIssueDetailsBuilder {
     }
     /// <p>The time when the performance issue started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the performance issue started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -71,8 +71,7 @@ impl PerformanceIssueDetailsBuilder {
     }
     /// <p>The time when the performance issue stopped.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time when the performance issue stopped.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -85,17 +84,16 @@ impl PerformanceIssueDetailsBuilder {
     /// <p>The metrics that are relevant to the performance issue.</p>
     pub fn metrics(mut self, input: crate::types::Metric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics that are relevant to the performance issue.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The metrics that are relevant to the performance issue.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Metric>> {
         &self.metrics
     }
     /// <p>The analysis of the performance issue. The information might contain markdown.</p>
@@ -105,8 +103,7 @@ impl PerformanceIssueDetailsBuilder {
     }
     /// <p>The analysis of the performance issue. The information might contain markdown.</p>
     pub fn set_analysis(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis = input;
-        self
+        self.analysis = input; self
     }
     /// <p>The analysis of the performance issue. The information might contain markdown.</p>
     pub fn get_analysis(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl PerformanceIssueDetailsBuilder {
     /// Consumes the builder and constructs a [`PerformanceIssueDetails`](crate::types::PerformanceIssueDetails).
     pub fn build(self) -> crate::types::PerformanceIssueDetails {
         crate::types::PerformanceIssueDetails {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            metrics: self.metrics,
-            analysis: self.analysis,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            metrics: self.metrics
+            ,
+            analysis: self.analysis
+            ,
         }
     }
 }
+

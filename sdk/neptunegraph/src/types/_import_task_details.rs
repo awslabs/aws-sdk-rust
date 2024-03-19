@@ -3,7 +3,7 @@
 /// <p>Contains details about an import task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTaskDetails {
+pub struct ImportTaskDetails  {
     /// <p>Status of the import task.</p>
     pub status: ::std::string::String,
     /// <p>Time at which the import task started.</p>
@@ -21,14 +21,13 @@ pub struct ImportTaskDetails {
     /// <p>The number of dictionary entries in the import task.</p>
     pub dictionary_entry_count: i64,
 }
-impl ImportTaskDetails {
+impl  ImportTaskDetails  {
     /// <p>Status of the import task.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>Time at which the import task started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>Seconds elapsed since the import task started.</p>
@@ -44,7 +43,7 @@ impl ImportTaskDetails {
         self.error_count
     }
     /// <p>Details about the errors that have been encountered.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&str> {
+    pub fn error_details(&self) -> ::std::option::Option<& str> {
         self.error_details.as_deref()
     }
     /// <p>The number of statements in the import task.</p>
@@ -85,8 +84,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>Status of the import task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the import task.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>Time at which the import task started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Time at which the import task started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -115,8 +112,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>Seconds elapsed since the import task started.</p>
     pub fn set_time_elapsed_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.time_elapsed_seconds = input;
-        self
+        self.time_elapsed_seconds = input; self
     }
     /// <p>Seconds elapsed since the import task started.</p>
     pub fn get_time_elapsed_seconds(&self) -> &::std::option::Option<i64> {
@@ -130,8 +126,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>The percentage progress so far.</p>
     pub fn set_progress_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.progress_percentage = input;
-        self
+        self.progress_percentage = input; self
     }
     /// <p>The percentage progress so far.</p>
     pub fn get_progress_percentage(&self) -> &::std::option::Option<i32> {
@@ -145,8 +140,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>The number of errors encountered so far.</p>
     pub fn set_error_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_count = input;
-        self
+        self.error_count = input; self
     }
     /// <p>The number of errors encountered so far.</p>
     pub fn get_error_count(&self) -> &::std::option::Option<i32> {
@@ -159,8 +153,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>Details about the errors that have been encountered.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Details about the errors that have been encountered.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +167,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>The number of statements in the import task.</p>
     pub fn set_statement_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.statement_count = input;
-        self
+        self.statement_count = input; self
     }
     /// <p>The number of statements in the import task.</p>
     pub fn get_statement_count(&self) -> &::std::option::Option<i64> {
@@ -189,8 +181,7 @@ impl ImportTaskDetailsBuilder {
     }
     /// <p>The number of dictionary entries in the import task.</p>
     pub fn set_dictionary_entry_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.dictionary_entry_count = input;
-        self
+        self.dictionary_entry_count = input; self
     }
     /// <p>The number of dictionary entries in the import task.</p>
     pub fn get_dictionary_entry_count(&self) -> &::std::option::Option<i64> {
@@ -206,50 +197,47 @@ impl ImportTaskDetailsBuilder {
     /// - [`statement_count`](crate::types::builders::ImportTaskDetailsBuilder::statement_count)
     /// - [`dictionary_entry_count`](crate::types::builders::ImportTaskDetailsBuilder::dictionary_entry_count)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportTaskDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportTaskDetails {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            time_elapsed_seconds: self.time_elapsed_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_elapsed_seconds",
-                    "time_elapsed_seconds was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            progress_percentage: self.progress_percentage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "progress_percentage",
-                    "progress_percentage was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            error_count: self.error_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_count",
-                    "error_count was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            error_details: self.error_details,
-            statement_count: self.statement_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statement_count",
-                    "statement_count was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-            dictionary_entry_count: self.dictionary_entry_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dictionary_entry_count",
-                    "dictionary_entry_count was not specified but it is required when building ImportTaskDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportTaskDetails {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                time_elapsed_seconds: self.time_elapsed_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_elapsed_seconds", "time_elapsed_seconds was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                progress_percentage: self.progress_percentage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("progress_percentage", "progress_percentage was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                error_count: self.error_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_count", "error_count was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                error_details: self.error_details
+                ,
+                statement_count: self.statement_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statement_count", "statement_count was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+                dictionary_entry_count: self.dictionary_entry_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dictionary_entry_count", "dictionary_entry_count was not specified but it is required when building ImportTaskDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

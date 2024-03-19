@@ -3,13 +3,13 @@
 /// <p>Contains the inputs for the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSnapshotLimitsInput {
+pub struct GetSnapshotLimitsInput  {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSnapshotLimitsInput {
+impl  GetSnapshotLimitsInput  {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl GetSnapshotLimitsInputBuilder {
     }
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

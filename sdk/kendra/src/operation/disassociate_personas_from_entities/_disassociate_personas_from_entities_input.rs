@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatePersonasFromEntitiesInput {
+pub struct DisassociatePersonasFromEntitiesInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    pub entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociatePersonasFromEntitiesInput {
+impl  DisassociatePersonasFromEntitiesInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_ids.is_none()`.
-    pub fn entity_ids(&self) -> &[::std::string::String] {
-        self.entity_ids.as_deref().unwrap_or_default()
+    pub fn entity_ids(&self) -> & [::std::string::String] {
+        self.entity_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociatePersonasFromEntitiesInput {
@@ -39,7 +40,7 @@ impl DisassociatePersonasFromEntitiesInput {
 pub struct DisassociatePersonasFromEntitiesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociatePersonasFromEntitiesInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -50,8 +51,7 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,32 +78,30 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
     pub fn entity_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_ids.unwrap_or_default();
-        v.push(input.into());
-        self.entity_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_ids = input;
-        self
+    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_ids = input; self
     }
     /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_ids
     }
     /// Consumes the builder and constructs a [`DisassociatePersonasFromEntitiesInput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput {
-                id: self.id,
-                index_id: self.index_id,
-                entity_ids: self.entity_ids,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+                entity_ids: self.entity_ids
+                ,
+            }
         )
     }
 }
+

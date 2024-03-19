@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupOutput {
+pub struct UpdateGroupOutput  {
     /// <p>The update description of the resource group.</p>
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }
-impl UpdateGroupOutput {
+impl  UpdateGroupOutput  {
     /// <p>The update description of the resource group.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::Group> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::Group> {
         self.group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn builder() -> crate::operation::update_group::builders::UpdateGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateGroupOutputBuilder {
     }
     /// <p>The update description of the resource group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<crate::types::Group>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The update description of the resource group.</p>
     pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
         &self.group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn build(self) -> crate::operation::update_group::UpdateGroupOutput {
         crate::operation::update_group::UpdateGroupOutput {
-            group: self.group,
+            group: self.group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

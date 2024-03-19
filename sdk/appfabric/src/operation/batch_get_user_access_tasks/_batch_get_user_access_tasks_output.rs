@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetUserAccessTasksOutput {
+pub struct BatchGetUserAccessTasksOutput  {
     /// <p>Contains a list of user access results.</p>
-    pub user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
+    pub user_access_results_list: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,
 }
-impl BatchGetUserAccessTasksOutput {
+impl  BatchGetUserAccessTasksOutput  {
     /// <p>Contains a list of user access results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_access_results_list.is_none()`.
-    pub fn user_access_results_list(&self) -> &[crate::types::UserAccessResultItem] {
-        self.user_access_results_list.as_deref().unwrap_or_default()
+    pub fn user_access_results_list(&self) -> & [crate::types::UserAccessResultItem] {
+        self.user_access_results_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetUserAccessTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetUserAccessTasksOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
     pub fn builder() -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchGetUserAccessTasksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksOutputBuilder {
-    pub(crate) user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
+    pub(crate) user_access_results_list: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,
 }
 impl BatchGetUserAccessTasksOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchGetUserAccessTasksOutputBuilder {
     /// <p>Contains a list of user access results.</p>
     pub fn user_access_results_list(mut self, input: crate::types::UserAccessResultItem) -> Self {
         let mut v = self.user_access_results_list.unwrap_or_default();
-        v.push(input);
-        self.user_access_results_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_access_results_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of user access results.</p>
-    pub fn set_user_access_results_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>) -> Self {
-        self.user_access_results_list = input;
-        self
+    pub fn set_user_access_results_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAccessResultItem>>) -> Self {
+        self.user_access_results_list = input; self
     }
     /// <p>Contains a list of user access results.</p>
-    pub fn get_user_access_results_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>> {
+    pub fn get_user_access_results_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAccessResultItem>> {
         &self.user_access_results_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
     pub fn build(self) -> crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput {
         crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput {
-            user_access_results_list: self.user_access_results_list,
+            user_access_results_list: self.user_access_results_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateThirdPartyFirewallOutput {
+pub struct AssociateThirdPartyFirewallOutput  {
     /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct AssociateThirdPartyFirewallOutput {
     pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }
-impl AssociateThirdPartyFirewallOutput {
+impl  AssociateThirdPartyFirewallOutput  {
     /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
     /// <ul>
     /// <li>
@@ -33,15 +33,15 @@ impl AssociateThirdPartyFirewallOutput {
     /// <li>
     /// <p><code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p></li>
     /// </ul>
-    pub fn third_party_firewall_status(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> ::std::option::Option<& crate::types::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateThirdPartyFirewallOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateThirdPartyFirewallOutput {
     /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallOutput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput).
     pub fn builder() -> crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder {
@@ -88,8 +88,7 @@ impl AssociateThirdPartyFirewallOutputBuilder {
     /// <p><code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p></li>
     /// </ul>
     pub fn set_third_party_firewall_status(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>) -> Self {
-        self.third_party_firewall_status = input;
-        self
+        self.third_party_firewall_status = input; self
     }
     /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
     /// <ul>
@@ -108,19 +107,21 @@ impl AssociateThirdPartyFirewallOutputBuilder {
         &self.third_party_firewall_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallOutput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput).
     pub fn build(self) -> crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput {
         crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput {
-            third_party_firewall_status: self.third_party_firewall_status,
+            third_party_firewall_status: self.third_party_firewall_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

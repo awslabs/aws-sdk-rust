@@ -3,25 +3,23 @@
 /// <p>The input failed to meet the constraints specified by the Amazon Web Services service in a specified field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The field name where the invalid entry was detected.</p>
     pub name: ::std::string::String,
     /// <p>A message about the validation exception.</p>
     pub message: ::std::string::String,
 }
-impl ValidationExceptionField {
+impl  ValidationExceptionField  {
     /// <p>The field name where the invalid entry was detected.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A message about the validation exception.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
-impl ::std::fmt::Debug for ValidationExceptionField {
+impl  ::std::fmt::Debug for ValidationExceptionField  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
         formatter.field("name", &self.name);
@@ -52,8 +50,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The field name where the invalid entry was detected.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The field name where the invalid entry was detected.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>A message about the validation exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the validation exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl ValidationExceptionFieldBuilder {
     /// - [`name`](crate::types::builders::ValidationExceptionFieldBuilder::name)
     /// - [`message`](crate::types::builders::ValidationExceptionFieldBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationExceptionField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationExceptionField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ValidationExceptionField",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ValidationExceptionField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationExceptionField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ValidationExceptionField")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ValidationExceptionField")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ValidationExceptionFieldBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for ValidationExceptionFieldBuilder {
         formatter.finish()
     }
 }
+

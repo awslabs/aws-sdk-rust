@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditMitigationActionsExecutionsInput {
+pub struct ListAuditMitigationActionsExecutionsInput  {
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify this filter to limit results to those with a specific status.</p>
@@ -14,17 +14,17 @@ pub struct ListAuditMitigationActionsExecutionsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAuditMitigationActionsExecutionsInput {
+impl  ListAuditMitigationActionsExecutionsInput  {
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
-    pub fn action_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn action_status(&self) -> ::std::option::Option<& crate::types::AuditMitigationActionsExecutionStatus> {
         self.action_status.as_ref()
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -32,7 +32,7 @@ impl ListAuditMitigationActionsExecutionsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     }
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
     pub fn set_action_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>) -> Self {
-        self.action_status = input;
-        self
+        self.action_status = input; self
     }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
     pub fn get_action_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
@@ -91,8 +89,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,28 +115,28 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsExecutionsInput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput {
-                task_id: self.task_id,
-                action_status: self.action_status,
-                finding_id: self.finding_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                task_id: self.task_id
+                ,
+                action_status: self.action_status
+                ,
+                finding_id: self.finding_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

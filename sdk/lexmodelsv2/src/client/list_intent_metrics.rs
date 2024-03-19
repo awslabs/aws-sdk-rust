@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIntentMetrics`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier for the bot for which you want to retrieve intent metrics.</p><br>
     ///   - [`start_date_time(DateTime)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::start_date_time) / [`set_start_date_time(Option<DateTime>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_start_date_time):<br>required: **true**<br><p>The timestamp that marks the beginning of the range of time for which you want to see intent metrics.</p><br>
     ///   - [`end_date_time(DateTime)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::end_date_time) / [`set_end_date_time(Option<DateTime>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_end_date_time):<br>required: **true**<br><p>The date and time that marks the end of the range of time for which you want to see intent metrics.</p><br>
@@ -13,12 +13,13 @@ impl super::Client {
     ///   - [`filters(AnalyticsIntentFilter)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::filters) / [`set_filters(Option<Vec::<AnalyticsIntentFilter>>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_filters):<br>required: **false**<br><p>A list of objects, each of which describes a condition by which you want to filter the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the ListIntentMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListIntentMetrics request to return the next page of results. For a complete set of results, call the ListIntentMetrics operation until the nextToken returned in the response is null.</p><br>
-    /// - On success, responds with [`ListIntentMetricsOutput`](crate::operation::list_intent_metrics::ListIntentMetricsOutput) with field(s):
+                            /// - On success, responds with [`ListIntentMetricsOutput`](crate::operation::list_intent_metrics::ListIntentMetricsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_intent_metrics::ListIntentMetricsOutput::bot_id): <p>The identifier for the bot for which you retrieved intent metrics.</p>
     ///   - [`results(Option<Vec::<AnalyticsIntentResult>>)`](crate::operation::list_intent_metrics::ListIntentMetricsOutput::results): <p>The results for the intent metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_intent_metrics::ListIntentMetricsOutput::next_token): <p>If the response from the ListIntentMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListIntentMetrics request to return the next page of results. For a complete set of results, call the ListIntentMetrics operation until the nextToken returned in the response is null.</p>
-    /// - On failure, responds with [`SdkError<ListIntentMetricsError>`](crate::operation::list_intent_metrics::ListIntentMetricsError)
+                            /// - On failure, responds with [`SdkError<ListIntentMetricsError>`](crate::operation::list_intent_metrics::ListIntentMetricsError)
     pub fn list_intent_metrics(&self) -> crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder {
-        crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_intent_metrics::builders::ListIntentMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

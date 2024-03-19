@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyRecommendationsReceivedInput {
+pub struct NotifyRecommendationsReceivedInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the recommendations.</p>
-    pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recommendation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl NotifyRecommendationsReceivedInput {
+impl  NotifyRecommendationsReceivedInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
-    pub fn recommendation_ids(&self) -> &[::std::string::String] {
-        self.recommendation_ids.as_deref().unwrap_or_default()
+    pub fn recommendation_ids(&self) -> & [::std::string::String] {
+        self.recommendation_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NotifyRecommendationsReceivedInput {
@@ -39,7 +40,7 @@ impl NotifyRecommendationsReceivedInput {
 pub struct NotifyRecommendationsReceivedInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NotifyRecommendationsReceivedInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -50,8 +51,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl NotifyRecommendationsReceivedInputBuilder {
     /// <p>The identifiers of the recommendations.</p>
     pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
-            assistant_id: self.assistant_id,
-            session_id: self.session_id,
-            recommendation_ids: self.recommendation_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
+                assistant_id: self.assistant_id
+                ,
+                session_id: self.session_id
+                ,
+                recommendation_ids: self.recommendation_ids
+                ,
+            }
+        )
     }
 }
+

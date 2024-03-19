@@ -3,15 +3,15 @@
 /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileSystemLustreConfiguration {
+pub struct DeleteFileSystemLustreConfiguration  {
     /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p><note>
     /// <p>The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code> to <code>false</code> in order to delete the file system and take a final backup.</p>
     /// </note>
     pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub final_backup_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DeleteFileSystemLustreConfiguration {
+impl  DeleteFileSystemLustreConfiguration  {
     /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p><note>
     /// <p>The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code> to <code>false</code> in order to delete the file system and take a final backup.</p>
     /// </note>
@@ -19,10 +19,11 @@ impl DeleteFileSystemLustreConfiguration {
         self.skip_final_backup
     }
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
-    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
-        self.final_backup_tags.as_deref().unwrap_or_default()
+    pub fn final_backup_tags(&self) -> & [crate::types::Tag] {
+        self.final_backup_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteFileSystemLustreConfiguration {
@@ -37,7 +38,7 @@ impl DeleteFileSystemLustreConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemLustreConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
-    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DeleteFileSystemLustreConfigurationBuilder {
     /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p><note>
@@ -51,8 +52,7 @@ impl DeleteFileSystemLustreConfigurationBuilder {
     /// <p>The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code> to <code>false</code> in order to delete the file system and take a final backup.</p>
     /// </note>
     pub fn set_skip_final_backup(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_final_backup = input;
-        self
+        self.skip_final_backup = input; self
     }
     /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p><note>
     /// <p>The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code> to <code>false</code> in order to delete the file system and take a final backup.</p>
@@ -67,24 +67,26 @@ impl DeleteFileSystemLustreConfigurationBuilder {
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
     pub fn final_backup_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.final_backup_tags.unwrap_or_default();
-        v.push(input);
-        self.final_backup_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.final_backup_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.final_backup_tags = input;
-        self
+    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.final_backup_tags = input; self
     }
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemLustreConfiguration`](crate::types::DeleteFileSystemLustreConfiguration).
     pub fn build(self) -> crate::types::DeleteFileSystemLustreConfiguration {
         crate::types::DeleteFileSystemLustreConfiguration {
-            skip_final_backup: self.skip_final_backup,
-            final_backup_tags: self.final_backup_tags,
+            skip_final_backup: self.skip_final_backup
+            ,
+            final_backup_tags: self.final_backup_tags
+            ,
         }
     }
 }
+

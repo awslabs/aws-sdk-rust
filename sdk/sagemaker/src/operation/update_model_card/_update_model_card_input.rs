@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateModelCardInput {
+pub struct UpdateModelCardInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
@@ -21,14 +21,14 @@ pub struct UpdateModelCardInput {
     /// </ul>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
 }
-impl UpdateModelCardInput {
+impl  UpdateModelCardInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
-    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
@@ -42,11 +42,11 @@ impl UpdateModelCardInput {
     /// <li>
     /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
-    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateModelCardInput {
+impl  ::std::fmt::Debug for UpdateModelCardInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateModelCardInput");
         formatter.field("model_card_name", &self.model_card_name);
@@ -79,8 +79,7 @@ impl UpdateModelCardInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl UpdateModelCardInputBuilder {
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
@@ -130,8 +128,7 @@ impl UpdateModelCardInputBuilder {
     /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input;
-        self
+        self.model_card_status = input; self
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -148,14 +145,17 @@ impl UpdateModelCardInputBuilder {
         &self.model_card_status
     }
     /// Consumes the builder and constructs a [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_model_card::UpdateModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_model_card::UpdateModelCardInput {
-            model_card_name: self.model_card_name,
-            content: self.content,
-            model_card_status: self.model_card_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model_card::UpdateModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_model_card::UpdateModelCardInput {
+                model_card_name: self.model_card_name
+                ,
+                content: self.content
+                ,
+                model_card_status: self.model_card_status
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateModelCardInputBuilder {
@@ -167,3 +167,4 @@ impl ::std::fmt::Debug for UpdateModelCardInputBuilder {
         formatter.finish()
     }
 }
+

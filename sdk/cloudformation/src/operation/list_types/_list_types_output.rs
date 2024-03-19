@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTypesOutput {
+pub struct ListTypesOutput  {
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>,
+    pub type_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TypeSummary>>,
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTypesOutput {
+impl  ListTypesOutput  {
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.type_summaries.is_none()`.
-    pub fn type_summaries(&self) -> &[crate::types::TypeSummary] {
-        self.type_summaries.as_deref().unwrap_or_default()
+    pub fn type_summaries(&self) -> & [crate::types::TypeSummary] {
+        self.type_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
     pub fn builder() -> crate::operation::list_types::builders::ListTypesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesOutputBuilder {
-    pub(crate) type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>,
+    pub(crate) type_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTypesOutputBuilder {
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
     pub fn type_summaries(mut self, input: crate::types::TypeSummary) -> Self {
         let mut v = self.type_summaries.unwrap_or_default();
-        v.push(input);
-        self.type_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.type_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub fn set_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>) -> Self {
-        self.type_summaries = input;
-        self
+    pub fn set_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TypeSummary>>) -> Self {
+        self.type_summaries = input; self
     }
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub fn get_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>> {
+    pub fn get_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TypeSummary>> {
         &self.type_summaries
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -69,28 +69,30 @@ impl ListTypesOutputBuilder {
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
     pub fn build(self) -> crate::operation::list_types::ListTypesOutput {
         crate::operation::list_types::ListTypesOutput {
-            type_summaries: self.type_summaries,
-            next_token: self.next_token,
+            type_summaries: self.type_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

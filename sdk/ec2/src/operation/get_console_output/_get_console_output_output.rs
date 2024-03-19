@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConsoleOutputOutput {
+pub struct GetConsoleOutputOutput  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
@@ -11,25 +11,25 @@ pub struct GetConsoleOutputOutput {
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetConsoleOutputOutput {
+impl  GetConsoleOutputOutput  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    pub fn output(&self) -> ::std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>The time at which the output was last updated.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConsoleOutputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConsoleOutputOutput {
     /// Creates a new builder-style object to manufacture [`GetConsoleOutputOutput`](crate::operation::get_console_output::GetConsoleOutputOutput).
     pub fn builder() -> crate::operation::get_console_output::builders::GetConsoleOutputOutputBuilder {
@@ -54,8 +54,7 @@ impl GetConsoleOutputOutputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetConsoleOutputOutputBuilder {
     }
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetConsoleOutputOutputBuilder {
     }
     /// <p>The time at which the output was last updated.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time at which the output was last updated.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConsoleOutputOutput`](crate::operation::get_console_output::GetConsoleOutputOutput).
     pub fn build(self) -> crate::operation::get_console_output::GetConsoleOutputOutput {
         crate::operation::get_console_output::GetConsoleOutputOutput {
-            instance_id: self.instance_id,
-            output: self.output,
-            timestamp: self.timestamp,
+            instance_id: self.instance_id
+            ,
+            output: self.output
+            ,
+            timestamp: self.timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

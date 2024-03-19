@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMessageMoveTaskOutput {
+pub struct StartMessageMoveTaskOutput  {
     /// <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
     pub task_handle: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartMessageMoveTaskOutput {
+impl  StartMessageMoveTaskOutput  {
     /// <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
-    pub fn task_handle(&self) -> ::std::option::Option<&str> {
+    pub fn task_handle(&self) -> ::std::option::Option<& str> {
         self.task_handle.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMessageMoveTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMessageMoveTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput).
     pub fn builder() -> crate::operation::start_message_move_task::builders::StartMessageMoveTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMessageMoveTaskOutputBuilder {
     }
     /// <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
     pub fn set_task_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_handle = input;
-        self
+        self.task_handle = input; self
     }
     /// <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
     pub fn get_task_handle(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_handle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput).
     pub fn build(self) -> crate::operation::start_message_move_task::StartMessageMoveTaskOutput {
         crate::operation::start_message_move_task::StartMessageMoveTaskOutput {
-            task_handle: self.task_handle,
+            task_handle: self.task_handle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNotifications`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain.</p><br>
     ///   - [`r#type(NotificationType)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::type) / [`set_type(Option<NotificationType>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_type):<br>required: **true**<br><p>The type of notifications.</p><br>
     ///   - [`after_timestamp(DateTime)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::after_timestamp) / [`set_after_timestamp(Option<DateTime>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_after_timestamp):<br>required: **false**<br><p>The time after which you want to list notifications.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`task_status(TaskStatus)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::task_status) / [`set_task_status(Option<TaskStatus>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_task_status):<br>required: **false**<br><p>The task status of notifications.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of notifications to return in a single call to <code>ListNotifications</code>. When the number of notifications to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p><br>
-    /// - On success, responds with [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput) with field(s):
+                            /// - On success, responds with [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput) with field(s):
     ///   - [`notifications(Option<Vec::<NotificationOutput>>)`](crate::operation::list_notifications::ListNotificationsOutput::notifications): <p>The results of the <code>ListNotifications</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_notifications::ListNotificationsOutput::next_token): <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
-    /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::operation::list_notifications::ListNotificationsError)
+                            /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::operation::list_notifications::ListNotificationsError)
     pub fn list_notifications(&self) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {
-        crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

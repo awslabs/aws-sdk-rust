@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePlaceIndexInput {
+pub struct UpdatePlaceIndexInput  {
     /// <p>The name of the place index resource to update.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
@@ -13,22 +13,22 @@ pub struct UpdatePlaceIndexInput {
     /// <p>Updates the data storage option for the place index resource.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
 }
-impl UpdatePlaceIndexInput {
+impl  UpdatePlaceIndexInput  {
     /// <p>The name of the place index resource to update.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Updates the description for the place index resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Updates the data storage option for the place index resource.</p>
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdatePlaceIndexInputBuilder {
     }
     /// <p>The name of the place index resource to update.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the place index resource to update.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl UpdatePlaceIndexInputBuilder {
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -88,8 +86,7 @@ impl UpdatePlaceIndexInputBuilder {
     }
     /// <p>Updates the description for the place index resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Updates the description for the place index resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,22 +99,26 @@ impl UpdatePlaceIndexInputBuilder {
     }
     /// <p>Updates the data storage option for the place index resource.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// <p>Updates the data storage option for the place index resource.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.data_source_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexInput`](crate::operation::update_place_index::UpdatePlaceIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_place_index::UpdatePlaceIndexInput {
-            index_name: self.index_name,
-            pricing_plan: self.pricing_plan,
-            description: self.description,
-            data_source_configuration: self.data_source_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_place_index::UpdatePlaceIndexInput {
+                index_name: self.index_name
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+            }
+        )
     }
 }
+

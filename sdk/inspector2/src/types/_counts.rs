@@ -3,19 +3,19 @@
 /// <p>a structure that contains information on the count of resources within a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Counts {
+pub struct Counts  {
     /// <p>The number of resources.</p>
     pub count: i64,
     /// <p>The key associated with this group</p>
     pub group_key: ::std::option::Option<crate::types::GroupKey>,
 }
-impl Counts {
+impl  Counts  {
     /// <p>The number of resources.</p>
     pub fn count(&self) -> i64 {
         self.count
     }
     /// <p>The key associated with this group</p>
-    pub fn group_key(&self) -> ::std::option::Option<&crate::types::GroupKey> {
+    pub fn group_key(&self) -> ::std::option::Option<& crate::types::GroupKey> {
         self.group_key.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CountsBuilder {
     }
     /// <p>The number of resources.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of resources.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl CountsBuilder {
     }
     /// <p>The key associated with this group</p>
     pub fn set_group_key(mut self, input: ::std::option::Option<crate::types::GroupKey>) -> Self {
-        self.group_key = input;
-        self
+        self.group_key = input; self
     }
     /// <p>The key associated with this group</p>
     pub fn get_group_key(&self) -> &::std::option::Option<crate::types::GroupKey> {
@@ -65,8 +63,12 @@ impl CountsBuilder {
     /// Consumes the builder and constructs a [`Counts`](crate::types::Counts).
     pub fn build(self) -> crate::types::Counts {
         crate::types::Counts {
-            count: self.count.unwrap_or_default(),
-            group_key: self.group_key,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            group_key: self.group_key
+            ,
         }
     }
 }
+

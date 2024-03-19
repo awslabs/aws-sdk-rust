@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servererrorcategory = unimplemented!();
 /// match servererrorcategory {
@@ -33,16 +33,14 @@
 /// Specifically, when `servererrorcategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerErrorCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ServerErrorCategory {
     #[allow(missing_docs)] // documentation missing in model
     ArchitectureError,
@@ -56,76 +54,71 @@ pub enum ServerErrorCategory {
     PermissionError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ServerErrorCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARCHITECTURE_ERROR" => ServerErrorCategory::ArchitectureError,
-            "CONNECTIVITY_ERROR" => ServerErrorCategory::ConnectivityError,
-            "CREDENTIAL_ERROR" => ServerErrorCategory::CredentialError,
-            "OTHER_ERROR" => ServerErrorCategory::OtherError,
-            "PERMISSION_ERROR" => ServerErrorCategory::PermissionError,
-            other => ServerErrorCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ARCHITECTURE_ERROR" => ServerErrorCategory::ArchitectureError,
+"CONNECTIVITY_ERROR" => ServerErrorCategory::ConnectivityError,
+"CREDENTIAL_ERROR" => ServerErrorCategory::CredentialError,
+"OTHER_ERROR" => ServerErrorCategory::OtherError,
+"PERMISSION_ERROR" => ServerErrorCategory::PermissionError,
+other => ServerErrorCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ServerErrorCategory {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ServerErrorCategory::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ServerErrorCategory::from(s))
+                    }
+                }
 impl ServerErrorCategory {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServerErrorCategory::ArchitectureError => "ARCHITECTURE_ERROR",
-            ServerErrorCategory::ConnectivityError => "CONNECTIVITY_ERROR",
-            ServerErrorCategory::CredentialError => "CREDENTIAL_ERROR",
-            ServerErrorCategory::OtherError => "OTHER_ERROR",
-            ServerErrorCategory::PermissionError => "PERMISSION_ERROR",
-            ServerErrorCategory::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARCHITECTURE_ERROR",
-            "CONNECTIVITY_ERROR",
-            "CREDENTIAL_ERROR",
-            "OTHER_ERROR",
-            "PERMISSION_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServerErrorCategory::ArchitectureError => "ARCHITECTURE_ERROR",
+    ServerErrorCategory::ConnectivityError => "CONNECTIVITY_ERROR",
+    ServerErrorCategory::CredentialError => "CREDENTIAL_ERROR",
+    ServerErrorCategory::OtherError => "OTHER_ERROR",
+    ServerErrorCategory::PermissionError => "PERMISSION_ERROR",
+    ServerErrorCategory::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARCHITECTURE_ERROR", "CONNECTIVITY_ERROR", "CREDENTIAL_ERROR", "OTHER_ERROR", "PERMISSION_ERROR"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ServerErrorCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ServerErrorCategory {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ServerErrorCategory {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ServerErrorCategory::ArchitectureError => write!(f, "ARCHITECTURE_ERROR"),
-            ServerErrorCategory::ConnectivityError => write!(f, "CONNECTIVITY_ERROR"),
-            ServerErrorCategory::CredentialError => write!(f, "CREDENTIAL_ERROR"),
-            ServerErrorCategory::OtherError => write!(f, "OTHER_ERROR"),
-            ServerErrorCategory::PermissionError => write!(f, "PERMISSION_ERROR"),
-            ServerErrorCategory::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ServerErrorCategory::ArchitectureError => write!(f, "ARCHITECTURE_ERROR"),
+ServerErrorCategory::ConnectivityError => write!(f, "CONNECTIVITY_ERROR"),
+ServerErrorCategory::CredentialError => write!(f, "CREDENTIAL_ERROR"),
+ServerErrorCategory::OtherError => write!(f, "OTHER_ERROR"),
+ServerErrorCategory::PermissionError => write!(f, "PERMISSION_ERROR"),
+ServerErrorCategory::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegexPatternSetInput {
+pub struct CreateRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -17,13 +17,13 @@ pub struct CreateRegexPatternSetInput {
     /// <p>A description of the set that helps with identification.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Array of regular expression strings.</p>
-    pub regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
+    pub regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRegexPatternSetInput {
+impl  CreateRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -34,24 +34,26 @@ impl CreateRegexPatternSetInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A description of the set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Array of regular expression strings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regular_expression_list.is_none()`.
-    pub fn regular_expression_list(&self) -> &[crate::types::Regex] {
-        self.regular_expression_list.as_deref().unwrap_or_default()
+    pub fn regular_expression_list(&self) -> & [crate::types::Regex] {
+        self.regular_expression_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRegexPatternSetInput {
@@ -68,8 +70,8 @@ pub struct CreateRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRegexPatternSetInputBuilder {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -80,8 +82,7 @@ impl CreateRegexPatternSetInputBuilder {
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +110,7 @@ impl CreateRegexPatternSetInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -130,8 +130,7 @@ impl CreateRegexPatternSetInputBuilder {
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,17 +143,16 @@ impl CreateRegexPatternSetInputBuilder {
     /// <p>Array of regular expression strings.</p>
     pub fn regular_expression_list(mut self, input: crate::types::Regex) -> Self {
         let mut v = self.regular_expression_list.unwrap_or_default();
-        v.push(input);
-        self.regular_expression_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regular_expression_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of regular expression strings.</p>
-    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
-        self.regular_expression_list = input;
-        self
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>) -> Self {
+        self.regular_expression_list = input; self
     }
     /// <p>Array of regular expression strings.</p>
-    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// Appends an item to `tags`.
@@ -164,30 +162,34 @@ impl CreateRegexPatternSetInputBuilder {
     /// <p>An array of key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
-            name: self.name,
-            scope: self.scope,
-            description: self.description,
-            regular_expression_list: self.regular_expression_list,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                description: self.description
+                ,
+                regular_expression_list: self.regular_expression_list
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

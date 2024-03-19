@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobsInput {
+pub struct GetJobsInput  {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetJobsInput {
+impl  GetJobsInput  {
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the response.</p>
@@ -40,8 +40,7 @@ impl GetJobsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl GetJobsInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,9 +61,14 @@ impl GetJobsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetJobsInput`](crate::operation::get_jobs::GetJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_jobs::GetJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_jobs::GetJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_jobs::GetJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourceLogLevelInput {
+pub struct PutResourceLogLevelInput  {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -10,17 +10,17 @@ pub struct PutResourceLogLevelInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
-impl PutResourceLogLevelInput {
+impl  PutResourceLogLevelInput  {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PutResourceLogLevelInputBuilder {
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutResourceLogLevelInputBuilder {
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl PutResourceLogLevelInputBuilder {
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`PutResourceLogLevelInput`](crate::operation::put_resource_log_level::PutResourceLogLevelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_log_level::PutResourceLogLevelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_resource_log_level::PutResourceLogLevelInput {
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-            log_level: self.log_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_log_level::PutResourceLogLevelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_log_level::PutResourceLogLevelInput {
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+                log_level: self.log_level
+                ,
+            }
+        )
     }
 }
+

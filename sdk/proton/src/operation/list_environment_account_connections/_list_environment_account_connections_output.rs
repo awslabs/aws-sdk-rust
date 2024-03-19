@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentAccountConnectionsOutput {
+pub struct ListEnvironmentAccountConnectionsOutput  {
     /// <p>An array of environment account connections with details that's returned by Proton.</p>
-    pub environment_account_connections: ::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>,
+    pub environment_account_connections: ::std::vec::Vec::<crate::types::EnvironmentAccountConnectionSummary>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListEnvironmentAccountConnectionsOutput {
+impl  ListEnvironmentAccountConnectionsOutput  {
     /// <p>An array of environment account connections with details that's returned by Proton.</p>
-    pub fn environment_account_connections(&self) -> &[crate::types::EnvironmentAccountConnectionSummary] {
-        use std::ops::Deref;
-        self.environment_account_connections.deref()
+    pub fn environment_account_connections(&self) -> & [crate::types::EnvironmentAccountConnectionSummary] {
+        use std::ops::Deref; self.environment_account_connections.deref()
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEnvironmentAccountConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEnvironmentAccountConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
     pub fn builder() -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListEnvironmentAccountConnectionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsOutputBuilder {
-    pub(crate) environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
+    pub(crate) environment_account_connections: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentAccountConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,20 +47,16 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
     /// <p>An array of environment account connections with details that's returned by Proton.</p>
     pub fn environment_account_connections(mut self, input: crate::types::EnvironmentAccountConnectionSummary) -> Self {
         let mut v = self.environment_account_connections.unwrap_or_default();
-        v.push(input);
-        self.environment_account_connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment_account_connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of environment account connections with details that's returned by Proton.</p>
-    pub fn set_environment_account_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
-    ) -> Self {
-        self.environment_account_connections = input;
-        self
+    pub fn set_environment_account_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentAccountConnectionSummary>>) -> Self {
+        self.environment_account_connections = input; self
     }
     /// <p>An array of environment account connections with details that's returned by Proton.</p>
-    pub fn get_environment_account_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>> {
+    pub fn get_environment_account_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentAccountConnectionSummary>> {
         &self.environment_account_connections
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
@@ -71,42 +66,37 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`environment_account_connections`](crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder::environment_account_connections)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
-                environment_account_connections: self.environment_account_connections.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "environment_account_connections",
-                        "environment_account_connections was not specified but it is required when building ListEnvironmentAccountConnectionsOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                environment_account_connections: self.environment_account_connections
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_account_connections", "environment_account_connections was not specified but it is required when building ListEnvironmentAccountConnectionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

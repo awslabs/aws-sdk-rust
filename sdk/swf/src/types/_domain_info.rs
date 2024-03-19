@@ -3,7 +3,7 @@
 /// <p>Contains general information about a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainInfo {
+pub struct DomainInfo  {
     /// <p>The name of the domain. This name is unique within the account.</p>
     pub name: ::std::string::String,
     /// <p>The status of the domain:</p>
@@ -19,11 +19,10 @@ pub struct DomainInfo {
     /// <p>The ARN of the domain.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DomainInfo {
+impl  DomainInfo  {
     /// <p>The name of the domain. This name is unique within the account.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status of the domain:</p>
     /// <ul>
@@ -32,15 +31,15 @@ impl DomainInfo {
     /// <li>
     /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::RegistrationStatus {
+    pub fn status(&self) -> & crate::types::RegistrationStatus {
         &self.status
     }
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the domain.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -69,8 +68,7 @@ impl DomainInfoBuilder {
     }
     /// <p>The name of the domain. This name is unique within the account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain. This name is unique within the account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DomainInfoBuilder {
     /// <p><code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the domain:</p>
     /// <ul>
@@ -116,8 +113,7 @@ impl DomainInfoBuilder {
     }
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +126,7 @@ impl DomainInfoBuilder {
     }
     /// <p>The ARN of the domain.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the domain.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,21 +137,24 @@ impl DomainInfoBuilder {
     /// - [`name`](crate::types::builders::DomainInfoBuilder::name)
     /// - [`status`](crate::types::builders::DomainInfoBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainInfo {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DomainInfo",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DomainInfo",
-                )
-            })?,
-            description: self.description,
-            arn: self.arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainInfo {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DomainInfo")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DomainInfo")
+                    )?
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

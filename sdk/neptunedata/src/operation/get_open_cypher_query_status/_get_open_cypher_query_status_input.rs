@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpenCypherQueryStatusInput {
+pub struct GetOpenCypherQueryStatusInput  {
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl GetOpenCypherQueryStatusInput {
+impl  GetOpenCypherQueryStatusInput  {
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetOpenCypherQueryStatusInputBuilder {
     }
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`GetOpenCypherQueryStatusInput`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput { query_id: self.query_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusInput {
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

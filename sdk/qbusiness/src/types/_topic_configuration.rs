@@ -3,36 +3,35 @@
 /// <p>The topic specific controls configured for an Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicConfiguration {
+pub struct TopicConfiguration  {
     /// <p>A name for your topic control configuration.</p>
     pub name: ::std::string::String,
     /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
-    pub example_chat_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub example_chat_messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Rules defined for a topic configuration.</p>
-    pub rules: ::std::vec::Vec<crate::types::Rule>,
+    pub rules: ::std::vec::Vec::<crate::types::Rule>,
 }
-impl TopicConfiguration {
+impl  TopicConfiguration  {
     /// <p>A name for your topic control configuration.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.example_chat_messages.is_none()`.
-    pub fn example_chat_messages(&self) -> &[::std::string::String] {
-        self.example_chat_messages.as_deref().unwrap_or_default()
+    pub fn example_chat_messages(&self) -> & [::std::string::String] {
+        self.example_chat_messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Rules defined for a topic configuration.</p>
-    pub fn rules(&self) -> &[crate::types::Rule] {
-        use std::ops::Deref;
-        self.rules.deref()
+    pub fn rules(&self) -> & [crate::types::Rule] {
+        use std::ops::Deref; self.rules.deref()
     }
 }
 impl TopicConfiguration {
@@ -48,8 +47,8 @@ impl TopicConfiguration {
 pub struct TopicConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) example_chat_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) example_chat_messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
 }
 impl TopicConfigurationBuilder {
     /// <p>A name for your topic control configuration.</p>
@@ -60,8 +59,7 @@ impl TopicConfigurationBuilder {
     }
     /// <p>A name for your topic control configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for your topic control configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +72,7 @@ impl TopicConfigurationBuilder {
     }
     /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +85,16 @@ impl TopicConfigurationBuilder {
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
     pub fn example_chat_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.example_chat_messages.unwrap_or_default();
-        v.push(input.into());
-        self.example_chat_messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.example_chat_messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
-    pub fn set_example_chat_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.example_chat_messages = input;
-        self
+    pub fn set_example_chat_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.example_chat_messages = input; self
     }
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
-    pub fn get_example_chat_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_example_chat_messages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.example_chat_messages
     }
     /// Appends an item to `rules`.
@@ -108,17 +104,16 @@ impl TopicConfigurationBuilder {
     /// <p>Rules defined for a topic configuration.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules defined for a topic configuration.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Rules defined for a topic configuration.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`TopicConfiguration`](crate::types::TopicConfiguration).
@@ -126,21 +121,24 @@ impl TopicConfigurationBuilder {
     /// - [`name`](crate::types::builders::TopicConfigurationBuilder::name)
     /// - [`rules`](crate::types::builders::TopicConfigurationBuilder::rules)
     pub fn build(self) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TopicConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TopicConfiguration",
-                )
-            })?,
-            description: self.description,
-            example_chat_messages: self.example_chat_messages,
-            rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rules",
-                    "rules was not specified but it is required when building TopicConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TopicConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TopicConfiguration")
+                    )?
+                ,
+                description: self.description
+                ,
+                example_chat_messages: self.example_chat_messages
+                ,
+                rules: self.rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rules", "rules was not specified but it is required when building TopicConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

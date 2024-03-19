@@ -3,15 +3,14 @@
 /// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlAttributeValue {
+pub struct AccessControlAttributeValue  {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub source: ::std::vec::Vec<::std::string::String>,
+    pub source: ::std::vec::Vec::<::std::string::String>,
 }
-impl AccessControlAttributeValue {
+impl  AccessControlAttributeValue  {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub fn source(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.source.deref()
     }
 }
 impl AccessControlAttributeValue {
@@ -25,7 +24,7 @@ impl AccessControlAttributeValue {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlAttributeValueBuilder {
-    pub(crate) source: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AccessControlAttributeValueBuilder {
     /// Appends an item to `source`.
@@ -35,30 +34,31 @@ impl AccessControlAttributeValueBuilder {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source.unwrap_or_default();
-        v.push(input.into());
-        self.source = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub fn set_source(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source = input; self
     }
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub fn get_source(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source
     }
     /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::types::AccessControlAttributeValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::AccessControlAttributeValueBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessControlAttributeValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessControlAttributeValue {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building AccessControlAttributeValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessControlAttributeValue {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building AccessControlAttributeValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

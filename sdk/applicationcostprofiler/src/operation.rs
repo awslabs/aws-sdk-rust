@@ -18,3 +18,4 @@ pub mod put_report_definition;
 
 /// Types for the `UpdateReportDefinition` operation.
 pub mod update_report_definition;
+

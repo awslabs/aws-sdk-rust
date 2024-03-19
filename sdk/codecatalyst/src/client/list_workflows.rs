@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkflows`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`space_name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     ///   - [`project_name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_project_name):<br>required: **true**<br><p>The name of the project in the space.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
     ///   - [`sort_by(WorkflowSortCriteria)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::sort_by) / [`set_sort_by(Option<Vec::<WorkflowSortCriteria>>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Information used to sort the items in the returned list.</p><br>
-    /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Option<Vec::<WorkflowSummary>>)`](crate::operation::list_workflows::ListWorkflowsOutput::items): <p>Information about the workflows in a project.</p>
-    /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
+                            /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
     pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

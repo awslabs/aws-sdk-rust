@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectInvitationInput {
+pub struct RejectInvitationInput  {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
     /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
-impl RejectInvitationInput {
+impl  RejectInvitationInput  {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
     /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl RejectInvitationInputBuilder {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
     /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
     /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
@@ -47,9 +46,13 @@ impl RejectInvitationInputBuilder {
         &self.graph_arn
     }
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reject_invitation::RejectInvitationInput { graph_arn: self.graph_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_invitation::RejectInvitationInput {
+                graph_arn: self.graph_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that describes a property of a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceProperty {
+pub struct ResourceProperty  {
     /// <p>The name of this property of the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the information about this resource property was last updated.</p>
@@ -11,17 +11,17 @@ pub struct ResourceProperty {
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
     pub data: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl ResourceProperty {
+impl  ResourceProperty  {
     /// <p>The name of this property of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    pub fn last_reported_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_reported_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_reported_at.as_ref()
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.data.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ResourcePropertyBuilder {
     }
     /// <p>The name of this property of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this property of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ResourcePropertyBuilder {
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
     pub fn set_last_reported_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_reported_at = input;
-        self
+        self.last_reported_at = input; self
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
     pub fn get_last_reported_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl ResourcePropertyBuilder {
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -86,9 +83,13 @@ impl ResourcePropertyBuilder {
     /// Consumes the builder and constructs a [`ResourceProperty`](crate::types::ResourceProperty).
     pub fn build(self) -> crate::types::ResourceProperty {
         crate::types::ResourceProperty {
-            name: self.name,
-            last_reported_at: self.last_reported_at,
-            data: self.data,
+            name: self.name
+            ,
+            last_reported_at: self.last_reported_at
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

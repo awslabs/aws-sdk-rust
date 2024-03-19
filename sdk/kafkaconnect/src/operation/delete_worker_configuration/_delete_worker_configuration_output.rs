@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkerConfigurationOutput {
+pub struct DeleteWorkerConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you requested to delete.</p>
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the worker configuration.</p>
     pub worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,
     _request_id: Option<String>,
 }
-impl DeleteWorkerConfigurationOutput {
+impl  DeleteWorkerConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you requested to delete.</p>
-    pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn worker_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.worker_configuration_arn.as_deref()
     }
     /// <p>The state of the worker configuration.</p>
-    pub fn worker_configuration_state(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationState> {
+    pub fn worker_configuration_state(&self) -> ::std::option::Option<& crate::types::WorkerConfigurationState> {
         self.worker_configuration_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteWorkerConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteWorkerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerConfigurationOutput`](crate::operation::delete_worker_configuration::DeleteWorkerConfigurationOutput).
     pub fn builder() -> crate::operation::delete_worker_configuration::builders::DeleteWorkerConfigurationOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteWorkerConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you requested to delete.</p>
     pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_configuration_arn = input;
-        self
+        self.worker_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you requested to delete.</p>
     pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteWorkerConfigurationOutputBuilder {
     }
     /// <p>The state of the worker configuration.</p>
     pub fn set_worker_configuration_state(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationState>) -> Self {
-        self.worker_configuration_state = input;
-        self
+        self.worker_configuration_state = input; self
     }
     /// <p>The state of the worker configuration.</p>
     pub fn get_worker_configuration_state(&self) -> &::std::option::Option<crate::types::WorkerConfigurationState> {
         &self.worker_configuration_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteWorkerConfigurationOutput`](crate::operation::delete_worker_configuration::DeleteWorkerConfigurationOutput).
     pub fn build(self) -> crate::operation::delete_worker_configuration::DeleteWorkerConfigurationOutput {
         crate::operation::delete_worker_configuration::DeleteWorkerConfigurationOutput {
-            worker_configuration_arn: self.worker_configuration_arn,
-            worker_configuration_state: self.worker_configuration_state,
+            worker_configuration_arn: self.worker_configuration_arn
+            ,
+            worker_configuration_state: self.worker_configuration_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An Amazon EC2 or External instance that's running the Amazon ECS agent and has been registered with a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerInstance {
+pub struct ContainerInstance  {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
@@ -15,9 +15,9 @@ pub struct ContainerInstance {
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     pub version_info: ::std::option::Option<crate::types::VersionInfo>,
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub remaining_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub remaining_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub registered_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub registered_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
     /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service tasks running on the container instance are removed if possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -33,11 +33,11 @@ pub struct ContainerInstance {
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
     pub agent_update_status: ::std::option::Option<crate::types::AgentUpdateStatus>,
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec::<crate::types::Attachment>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -56,21 +56,21 @@ pub struct ContainerInstance {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An object representing the health status of the container instance.</p>
     pub health_status: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
 }
-impl ContainerInstance {
+impl  ContainerInstance  {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn container_instance_arn(&self) -> ::std::option::Option<& str> {
         self.container_instance_arn.as_deref()
     }
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
-    pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The capacity provider that's associated with the container instance.</p>
-    pub fn capacity_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_provider_name(&self) -> ::std::option::Option<& str> {
         self.capacity_provider_name.as_deref()
     }
     /// <p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
@@ -78,29 +78,31 @@ impl ContainerInstance {
         self.version
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
-    pub fn version_info(&self) -> ::std::option::Option<&crate::types::VersionInfo> {
+    pub fn version_info(&self) -> ::std::option::Option<& crate::types::VersionInfo> {
         self.version_info.as_ref()
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remaining_resources.is_none()`.
-    pub fn remaining_resources(&self) -> &[crate::types::Resource] {
-        self.remaining_resources.as_deref().unwrap_or_default()
+    pub fn remaining_resources(&self) -> & [crate::types::Resource] {
+        self.remaining_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registered_resources.is_none()`.
-    pub fn registered_resources(&self) -> &[crate::types::Resource] {
-        self.registered_resources.as_deref().unwrap_or_default()
+    pub fn registered_resources(&self) -> & [crate::types::Resource] {
+        self.registered_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
     /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service tasks running on the container instance are removed if possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The reason that the container instance reached its current status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task placement requests.</p>
@@ -116,24 +118,26 @@ impl ContainerInstance {
         self.pending_tasks_count
     }
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
-    pub fn agent_update_status(&self) -> ::std::option::Option<&crate::types::AgentUpdateStatus> {
+    pub fn agent_update_status(&self) -> ::std::option::Option<& crate::types::AgentUpdateStatus> {
         self.agent_update_status.as_ref()
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
-    pub fn registered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registered_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
-    pub fn attachments(&self) -> &[crate::types::Attachment] {
-        self.attachments.as_deref().unwrap_or_default()
+    pub fn attachments(&self) -> & [crate::types::Attachment] {
+        self.attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -153,13 +157,14 @@ impl ContainerInstance {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object representing the health status of the container instance.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceHealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::ContainerInstanceHealthStatus> {
         self.health_status.as_ref()
     }
 }
@@ -179,18 +184,18 @@ pub struct ContainerInstanceBuilder {
     pub(crate) capacity_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) version_info: ::std::option::Option<crate::types::VersionInfo>,
-    pub(crate) remaining_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    pub(crate) registered_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) remaining_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
+    pub(crate) registered_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) agent_connected: ::std::option::Option<bool>,
     pub(crate) running_tasks_count: ::std::option::Option<i32>,
     pub(crate) pending_tasks_count: ::std::option::Option<i32>,
     pub(crate) agent_update_status: ::std::option::Option<crate::types::AgentUpdateStatus>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::Attachment>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) health_status: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
 }
 impl ContainerInstanceBuilder {
@@ -201,8 +206,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_instance_arn = input;
-        self
+        self.container_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +219,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
     pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
     pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +232,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The capacity provider that's associated with the container instance.</p>
     pub fn set_capacity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_provider_name = input;
-        self
+        self.capacity_provider_name = input; self
     }
     /// <p>The capacity provider that's associated with the container instance.</p>
     pub fn get_capacity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +245,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -257,8 +258,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     pub fn set_version_info(mut self, input: ::std::option::Option<crate::types::VersionInfo>) -> Self {
-        self.version_info = input;
-        self
+        self.version_info = input; self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
     pub fn get_version_info(&self) -> &::std::option::Option<crate::types::VersionInfo> {
@@ -271,17 +271,16 @@ impl ContainerInstanceBuilder {
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
     pub fn remaining_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.remaining_resources.unwrap_or_default();
-        v.push(input);
-        self.remaining_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remaining_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub fn set_remaining_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.remaining_resources = input;
-        self
+    pub fn set_remaining_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.remaining_resources = input; self
     }
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    pub fn get_remaining_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_remaining_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.remaining_resources
     }
     /// Appends an item to `registered_resources`.
@@ -291,17 +290,16 @@ impl ContainerInstanceBuilder {
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
     pub fn registered_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.registered_resources.unwrap_or_default();
-        v.push(input);
-        self.registered_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registered_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub fn set_registered_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.registered_resources = input;
-        self
+    pub fn set_registered_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.registered_resources = input; self
     }
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    pub fn get_registered_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_registered_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.registered_resources
     }
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
@@ -315,8 +313,7 @@ impl ContainerInstanceBuilder {
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
     /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service tasks running on the container instance are removed if possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
@@ -331,8 +328,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The reason that the container instance reached its current status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason that the container instance reached its current status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -345,8 +341,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task placement requests.</p>
     pub fn set_agent_connected(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.agent_connected = input;
-        self
+        self.agent_connected = input; self
     }
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task placement requests.</p>
     pub fn get_agent_connected(&self) -> &::std::option::Option<bool> {
@@ -359,8 +354,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_tasks_count = input;
-        self
+        self.running_tasks_count = input; self
     }
     /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn get_running_tasks_count(&self) -> &::std::option::Option<i32> {
@@ -373,8 +367,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     pub fn set_pending_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_tasks_count = input;
-        self
+        self.pending_tasks_count = input; self
     }
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     pub fn get_pending_tasks_count(&self) -> &::std::option::Option<i32> {
@@ -387,8 +380,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
     pub fn set_agent_update_status(mut self, input: ::std::option::Option<crate::types::AgentUpdateStatus>) -> Self {
-        self.agent_update_status = input;
-        self
+        self.agent_update_status = input; self
     }
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
     pub fn get_agent_update_status(&self) -> &::std::option::Option<crate::types::AgentUpdateStatus> {
@@ -401,17 +393,16 @@ impl ContainerInstanceBuilder {
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
@@ -421,8 +412,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
     pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registered_at = input;
-        self
+        self.registered_at = input; self
     }
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
     pub fn get_registered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -435,17 +425,16 @@ impl ContainerInstanceBuilder {
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
     pub fn attachments(mut self, input: crate::types::Attachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attachment>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attachment>> {
         &self.attachments
     }
     /// Appends an item to `tags`.
@@ -472,9 +461,9 @@ impl ContainerInstanceBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -494,9 +483,8 @@ impl ContainerInstanceBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -516,7 +504,7 @@ impl ContainerInstanceBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>An object representing the health status of the container instance.</p>
@@ -526,8 +514,7 @@ impl ContainerInstanceBuilder {
     }
     /// <p>An object representing the health status of the container instance.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>An object representing the health status of the container instance.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceHealthStatus> {
@@ -536,24 +523,47 @@ impl ContainerInstanceBuilder {
     /// Consumes the builder and constructs a [`ContainerInstance`](crate::types::ContainerInstance).
     pub fn build(self) -> crate::types::ContainerInstance {
         crate::types::ContainerInstance {
-            container_instance_arn: self.container_instance_arn,
-            ec2_instance_id: self.ec2_instance_id,
-            capacity_provider_name: self.capacity_provider_name,
-            version: self.version.unwrap_or_default(),
-            version_info: self.version_info,
-            remaining_resources: self.remaining_resources,
-            registered_resources: self.registered_resources,
-            status: self.status,
-            status_reason: self.status_reason,
-            agent_connected: self.agent_connected.unwrap_or_default(),
-            running_tasks_count: self.running_tasks_count.unwrap_or_default(),
-            pending_tasks_count: self.pending_tasks_count.unwrap_or_default(),
-            agent_update_status: self.agent_update_status,
-            attributes: self.attributes,
-            registered_at: self.registered_at,
-            attachments: self.attachments,
-            tags: self.tags,
-            health_status: self.health_status,
+            container_instance_arn: self.container_instance_arn
+            ,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            capacity_provider_name: self.capacity_provider_name
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            version_info: self.version_info
+            ,
+            remaining_resources: self.remaining_resources
+            ,
+            registered_resources: self.registered_resources
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            agent_connected: self.agent_connected
+                .unwrap_or_default()
+            ,
+            running_tasks_count: self.running_tasks_count
+                .unwrap_or_default()
+            ,
+            pending_tasks_count: self.pending_tasks_count
+                .unwrap_or_default()
+            ,
+            agent_update_status: self.agent_update_status
+            ,
+            attributes: self.attributes
+            ,
+            registered_at: self.registered_at
+            ,
+            attachments: self.attachments
+            ,
+            tags: self.tags
+            ,
+            health_status: self.health_status
+            ,
         }
     }
 }
+

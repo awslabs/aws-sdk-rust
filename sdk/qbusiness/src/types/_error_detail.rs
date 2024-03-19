@@ -3,19 +3,19 @@
 /// <p>Provides information about a data source sync error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// <p>The message explaining the data source sync error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with the data source sync error.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
 }
-impl ErrorDetail {
+impl  ErrorDetail  {
     /// <p>The message explaining the data source sync error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The code associated with the data source sync error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ErrorDetailBuilder {
     }
     /// <p>The message explaining the data source sync error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message explaining the data source sync error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ErrorDetailBuilder {
     }
     /// <p>The code associated with the data source sync error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The code associated with the data source sync error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -65,8 +63,11 @@ impl ErrorDetailBuilder {
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
         crate::types::ErrorDetail {
-            error_message: self.error_message,
-            error_code: self.error_code,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

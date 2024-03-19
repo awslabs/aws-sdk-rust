@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainsInput {
+pub struct ListDomainsInput  {
     /// <p>The status of the data source.</p>
     pub status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The maximum number of domains to return in a single call to <code>ListDomains</code>. When the number of domains to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
@@ -10,9 +10,9 @@ pub struct ListDomainsInput {
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDomainsInput {
+impl  ListDomainsInput  {
     /// <p>The status of the data source.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DomainStatus> {
         self.status.as_ref()
     }
     /// <p>The maximum number of domains to return in a single call to <code>ListDomains</code>. When the number of domains to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
@@ -20,7 +20,7 @@ impl ListDomainsInput {
         self.max_results
     }
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListDomainsInputBuilder {
     }
     /// <p>The status of the data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
@@ -61,8 +60,7 @@ impl ListDomainsInputBuilder {
     }
     /// <p>The maximum number of domains to return in a single call to <code>ListDomains</code>. When the number of domains to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of domains to return in a single call to <code>ListDomains</code>. When the number of domains to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,8 +73,7 @@ impl ListDomainsInputBuilder {
     }
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,10 +81,16 @@ impl ListDomainsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
-            status: self.status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_domains::ListDomainsInput {
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

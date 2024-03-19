@@ -3,26 +3,25 @@
 /// <p>Describes a filter for a specific list of related-item resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsItemRelatedItemsFilter {
+pub struct OpsItemRelatedItemsFilter  {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
     pub key: crate::types::OpsItemRelatedItemsFilterKey,
     /// <p>The values for the filter.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
     pub operator: crate::types::OpsItemRelatedItemsFilterOperator,
 }
-impl OpsItemRelatedItemsFilter {
+impl  OpsItemRelatedItemsFilter  {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-    pub fn key(&self) -> &crate::types::OpsItemRelatedItemsFilterKey {
+    pub fn key(&self) -> & crate::types::OpsItemRelatedItemsFilterKey {
         &self.key
     }
     /// <p>The values for the filter.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub fn operator(&self) -> &crate::types::OpsItemRelatedItemsFilterOperator {
+    pub fn operator(&self) -> & crate::types::OpsItemRelatedItemsFilterOperator {
         &self.operator
     }
 }
@@ -38,7 +37,7 @@ impl OpsItemRelatedItemsFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemsFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>,
 }
 impl OpsItemRelatedItemsFilterBuilder {
@@ -50,8 +49,7 @@ impl OpsItemRelatedItemsFilterBuilder {
     }
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey> {
@@ -64,17 +62,16 @@ impl OpsItemRelatedItemsFilterBuilder {
     /// <p>The values for the filter.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values for the filter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values for the filter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
@@ -85,8 +82,7 @@ impl OpsItemRelatedItemsFilterBuilder {
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator> {
@@ -98,25 +94,25 @@ impl OpsItemRelatedItemsFilterBuilder {
     /// - [`values`](crate::types::builders::OpsItemRelatedItemsFilterBuilder::values)
     /// - [`operator`](crate::types::builders::OpsItemRelatedItemsFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::OpsItemRelatedItemsFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OpsItemRelatedItemsFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building OpsItemRelatedItemsFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building OpsItemRelatedItemsFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building OpsItemRelatedItemsFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OpsItemRelatedItemsFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building OpsItemRelatedItemsFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building OpsItemRelatedItemsFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building OpsItemRelatedItemsFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

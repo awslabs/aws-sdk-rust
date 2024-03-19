@@ -3,22 +3,20 @@
 /// <p>Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileSystemConfig {
+pub struct FileSystemConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     pub arn: ::std::string::String,
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
     pub local_mount_path: ::std::string::String,
 }
-impl FileSystemConfig {
+impl  FileSystemConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(&self) -> &str {
-        use std::ops::Deref;
-        self.local_mount_path.deref()
+    pub fn local_mount_path(&self) -> & str {
+        use std::ops::Deref; self.local_mount_path.deref()
     }
 }
 impl FileSystemConfig {
@@ -44,8 +42,7 @@ impl FileSystemConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FileSystemConfigBuilder {
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
     pub fn set_local_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_mount_path = input;
-        self
+        self.local_mount_path = input; self
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
     pub fn get_local_mount_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FileSystemConfigBuilder {
     /// - [`arn`](crate::types::builders::FileSystemConfigBuilder::arn)
     /// - [`local_mount_path`](crate::types::builders::FileSystemConfigBuilder::local_mount_path)
     pub fn build(self) -> ::std::result::Result<crate::types::FileSystemConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FileSystemConfig {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building FileSystemConfig",
-                )
-            })?,
-            local_mount_path: self.local_mount_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "local_mount_path",
-                    "local_mount_path was not specified but it is required when building FileSystemConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FileSystemConfig {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building FileSystemConfig")
+                    )?
+                ,
+                local_mount_path: self.local_mount_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("local_mount_path", "local_mount_path was not specified but it is required when building FileSystemConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

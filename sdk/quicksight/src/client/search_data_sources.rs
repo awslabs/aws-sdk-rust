@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchDataSources`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
     ///   - [`filters(DataSourceSearchFilter)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::filters) / [`set_filters(Option<Vec::<DataSourceSearchFilter>>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::set_filters):<br>required: **true**<br><p>The filters to apply to the search.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`SearchDataSourcesOutput`](crate::operation::search_data_sources::SearchDataSourcesOutput) with field(s):
+                            /// - On success, responds with [`SearchDataSourcesOutput`](crate::operation::search_data_sources::SearchDataSourcesOutput) with field(s):
     ///   - [`data_source_summaries(Option<Vec::<DataSourceSummary>>)`](crate::operation::search_data_sources::SearchDataSourcesOutput::data_source_summaries): <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_data_sources::SearchDataSourcesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`status(i32)`](crate::operation::search_data_sources::SearchDataSourcesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_data_sources::SearchDataSourcesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<SearchDataSourcesError>`](crate::operation::search_data_sources::SearchDataSourcesError)
+                            /// - On failure, responds with [`SdkError<SearchDataSourcesError>`](crate::operation::search_data_sources::SearchDataSourcesError)
     pub fn search_data_sources(&self) -> crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder {
-        crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_data_sources::builders::SearchDataSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

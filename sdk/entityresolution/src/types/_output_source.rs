@@ -3,30 +3,28 @@
 /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputSource {
+pub struct OutputSource  {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
     pub output_s3_path: ::std::string::String,
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub output: ::std::vec::Vec<crate::types::OutputAttribute>,
+    pub output: ::std::vec::Vec::<crate::types::OutputAttribute>,
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub apply_normalization: ::std::option::Option<bool>,
 }
-impl OutputSource {
+impl  OutputSource  {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn output_s3_path(&self) -> &str {
-        use std::ops::Deref;
-        self.output_s3_path.deref()
+    pub fn output_s3_path(&self) -> & str {
+        use std::ops::Deref; self.output_s3_path.deref()
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
-    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_arn(&self) -> ::std::option::Option<& str> {
         self.kms_arn.as_deref()
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn output(&self) -> &[crate::types::OutputAttribute] {
-        use std::ops::Deref;
-        self.output.deref()
+    pub fn output(&self) -> & [crate::types::OutputAttribute] {
+        use std::ops::Deref; self.output.deref()
     }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn apply_normalization(&self) -> ::std::option::Option<bool> {
@@ -46,7 +44,7 @@ impl OutputSource {
 pub struct OutputSourceBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) output: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
+    pub(crate) output: ::std::option::Option<::std::vec::Vec::<crate::types::OutputAttribute>>,
     pub(crate) apply_normalization: ::std::option::Option<bool>,
 }
 impl OutputSourceBuilder {
@@ -58,8 +56,7 @@ impl OutputSourceBuilder {
     }
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
     pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_path = input;
-        self
+        self.output_s3_path = input; self
     }
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
     pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl OutputSourceBuilder {
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_arn = input;
-        self
+        self.kms_arn = input; self
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +82,16 @@ impl OutputSourceBuilder {
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
     pub fn output(mut self, input: crate::types::OutputAttribute) -> Self {
         let mut v = self.output.unwrap_or_default();
-        v.push(input);
-        self.output = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn set_output(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>) -> Self {
-        self.output = input;
-        self
+    pub fn set_output(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputAttribute>>) -> Self {
+        self.output = input; self
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
-    pub fn get_output(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>> {
+    pub fn get_output(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputAttribute>> {
         &self.output
     }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
@@ -106,8 +101,7 @@ impl OutputSourceBuilder {
     }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_normalization = input;
-        self
+        self.apply_normalization = input; self
     }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
@@ -118,21 +112,24 @@ impl OutputSourceBuilder {
     /// - [`output_s3_path`](crate::types::builders::OutputSourceBuilder::output_s3_path)
     /// - [`output`](crate::types::builders::OutputSourceBuilder::output)
     pub fn build(self) -> ::std::result::Result<crate::types::OutputSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutputSource {
-            output_s3_path: self.output_s3_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_s3_path",
-                    "output_s3_path was not specified but it is required when building OutputSource",
-                )
-            })?,
-            kms_arn: self.kms_arn,
-            output: self.output.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output",
-                    "output was not specified but it is required when building OutputSource",
-                )
-            })?,
-            apply_normalization: self.apply_normalization,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutputSource {
+                output_s3_path: self.output_s3_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("output_s3_path", "output_s3_path was not specified but it is required when building OutputSource")
+                    )?
+                ,
+                kms_arn: self.kms_arn
+                ,
+                output: self.output
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("output", "output was not specified but it is required when building OutputSource")
+                    )?
+                ,
+                apply_normalization: self.apply_normalization
+                ,
+            }
+        )
     }
 }
+

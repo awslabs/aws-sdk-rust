@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCodegenJobOutput {
+pub struct StartCodegenJobOutput  {
     /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
     pub entity: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,
 }
-impl StartCodegenJobOutput {
+impl  StartCodegenJobOutput  {
     /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
-    pub fn entity(&self) -> ::std::option::Option<&crate::types::CodegenJob> {
+    pub fn entity(&self) -> ::std::option::Option<& crate::types::CodegenJob> {
         self.entity.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartCodegenJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartCodegenJobOutput {
     /// Creates a new builder-style object to manufacture [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput).
     pub fn builder() -> crate::operation::start_codegen_job::builders::StartCodegenJobOutputBuilder {
@@ -40,27 +40,28 @@ impl StartCodegenJobOutputBuilder {
     }
     /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
     pub fn set_entity(mut self, input: ::std::option::Option<crate::types::CodegenJob>) -> Self {
-        self.entity = input;
-        self
+        self.entity = input; self
     }
     /// <p>The code generation job for a UI component that is associated with an Amplify app.</p>
     pub fn get_entity(&self) -> &::std::option::Option<crate::types::CodegenJob> {
         &self.entity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput).
     pub fn build(self) -> crate::operation::start_codegen_job::StartCodegenJobOutput {
         crate::operation::start_codegen_job::StartCodegenJobOutput {
-            entity: self.entity,
+            entity: self.entity
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

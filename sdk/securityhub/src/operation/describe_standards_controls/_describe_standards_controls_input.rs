@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStandardsControlsInput {
+pub struct DescribeStandardsControlsInput  {
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub standards_subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -11,14 +11,14 @@ pub struct DescribeStandardsControlsInput {
     /// <p>The maximum number of security standard controls to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeStandardsControlsInput {
+impl  DescribeStandardsControlsInput  {
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    pub fn standards_subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn standards_subscription_arn(&self) -> ::std::option::Option<& str> {
         self.standards_subscription_arn.as_deref()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of security standard controls to return.</p>
@@ -50,8 +50,7 @@ impl DescribeStandardsControlsInputBuilder {
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub fn set_standards_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standards_subscription_arn = input;
-        self
+        self.standards_subscription_arn = input; self
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub fn get_standards_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl DescribeStandardsControlsInputBuilder {
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -81,24 +79,24 @@ impl DescribeStandardsControlsInputBuilder {
     }
     /// <p>The maximum number of security standard controls to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of security standard controls to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeStandardsControlsInput`](crate::operation::describe_standards_controls::DescribeStandardsControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_standards_controls::DescribeStandardsControlsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
-            standards_subscription_arn: self.standards_subscription_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_standards_controls::DescribeStandardsControlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
+                standards_subscription_arn: self.standards_subscription_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

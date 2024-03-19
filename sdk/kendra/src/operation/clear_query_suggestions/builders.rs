@@ -5,56 +5,52 @@ pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_inpu
 
 impl ClearQuerySuggestionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.clear_query_suggestions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.clear_query_suggestions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ClearQuerySuggestions`.
-///
+/// 
 /// <p>Clears existing query suggestions from an index.</p>
 /// <p>This deletes existing suggestions only, not the queries in the query log. After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. If you do not see any new suggestions, then please allow Amazon Kendra to collect enough queries to learn new suggestions.</p>
 /// <p><code>ClearQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ClearQuerySuggestionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder,
+                    inner: crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
-    > for ClearQuerySuggestionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
-            crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
+                    crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
+                > for ClearQuerySuggestionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
+                        crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ClearQuerySuggestionsFluentBuilder {
     /// Creates a new `ClearQuerySuggestions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl ClearQuerySuggestionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::clear_query_suggestions::ClearQuerySuggestions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::clear_query_suggestions::ClearQuerySuggestions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::clear_query_suggestions::ClearQuerySuggestionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::clear_query_suggestions::ClearQuerySuggestions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::clear_query_suggestions::ClearQuerySuggestions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput, crate::operation::clear_query_suggestions::ClearQuerySuggestionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -125,3 +112,4 @@ impl ClearQuerySuggestionsFluentBuilder {
         self.inner.get_index_id()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The conditional formatting options of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiConditionalFormattingOption {
+pub struct KpiConditionalFormattingOption  {
     /// <p>The conditional formatting for the primary value of a KPI visual.</p>
     pub primary_value: ::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting>,
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
@@ -13,21 +13,21 @@ pub struct KpiConditionalFormattingOption {
     /// <p>The conditional formatting for the comparison value of a KPI visual.</p>
     pub comparison_value: ::std::option::Option<crate::types::KpiComparisonValueConditionalFormatting>,
 }
-impl KpiConditionalFormattingOption {
+impl  KpiConditionalFormattingOption  {
     /// <p>The conditional formatting for the primary value of a KPI visual.</p>
-    pub fn primary_value(&self) -> ::std::option::Option<&crate::types::KpiPrimaryValueConditionalFormatting> {
+    pub fn primary_value(&self) -> ::std::option::Option<& crate::types::KpiPrimaryValueConditionalFormatting> {
         self.primary_value.as_ref()
     }
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
-    pub fn progress_bar(&self) -> ::std::option::Option<&crate::types::KpiProgressBarConditionalFormatting> {
+    pub fn progress_bar(&self) -> ::std::option::Option<& crate::types::KpiProgressBarConditionalFormatting> {
         self.progress_bar.as_ref()
     }
     /// <p>The conditional formatting for the actual value of a KPI visual.</p>
-    pub fn actual_value(&self) -> ::std::option::Option<&crate::types::KpiActualValueConditionalFormatting> {
+    pub fn actual_value(&self) -> ::std::option::Option<& crate::types::KpiActualValueConditionalFormatting> {
         self.actual_value.as_ref()
     }
     /// <p>The conditional formatting for the comparison value of a KPI visual.</p>
-    pub fn comparison_value(&self) -> ::std::option::Option<&crate::types::KpiComparisonValueConditionalFormatting> {
+    pub fn comparison_value(&self) -> ::std::option::Option<& crate::types::KpiComparisonValueConditionalFormatting> {
         self.comparison_value.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl KpiConditionalFormattingOptionBuilder {
     }
     /// <p>The conditional formatting for the primary value of a KPI visual.</p>
     pub fn set_primary_value(mut self, input: ::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting>) -> Self {
-        self.primary_value = input;
-        self
+        self.primary_value = input; self
     }
     /// <p>The conditional formatting for the primary value of a KPI visual.</p>
     pub fn get_primary_value(&self) -> &::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting> {
@@ -69,8 +68,7 @@ impl KpiConditionalFormattingOptionBuilder {
     }
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
     pub fn set_progress_bar(mut self, input: ::std::option::Option<crate::types::KpiProgressBarConditionalFormatting>) -> Self {
-        self.progress_bar = input;
-        self
+        self.progress_bar = input; self
     }
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
     pub fn get_progress_bar(&self) -> &::std::option::Option<crate::types::KpiProgressBarConditionalFormatting> {
@@ -83,8 +81,7 @@ impl KpiConditionalFormattingOptionBuilder {
     }
     /// <p>The conditional formatting for the actual value of a KPI visual.</p>
     pub fn set_actual_value(mut self, input: ::std::option::Option<crate::types::KpiActualValueConditionalFormatting>) -> Self {
-        self.actual_value = input;
-        self
+        self.actual_value = input; self
     }
     /// <p>The conditional formatting for the actual value of a KPI visual.</p>
     pub fn get_actual_value(&self) -> &::std::option::Option<crate::types::KpiActualValueConditionalFormatting> {
@@ -97,8 +94,7 @@ impl KpiConditionalFormattingOptionBuilder {
     }
     /// <p>The conditional formatting for the comparison value of a KPI visual.</p>
     pub fn set_comparison_value(mut self, input: ::std::option::Option<crate::types::KpiComparisonValueConditionalFormatting>) -> Self {
-        self.comparison_value = input;
-        self
+        self.comparison_value = input; self
     }
     /// <p>The conditional formatting for the comparison value of a KPI visual.</p>
     pub fn get_comparison_value(&self) -> &::std::option::Option<crate::types::KpiComparisonValueConditionalFormatting> {
@@ -107,10 +103,15 @@ impl KpiConditionalFormattingOptionBuilder {
     /// Consumes the builder and constructs a [`KpiConditionalFormattingOption`](crate::types::KpiConditionalFormattingOption).
     pub fn build(self) -> crate::types::KpiConditionalFormattingOption {
         crate::types::KpiConditionalFormattingOption {
-            primary_value: self.primary_value,
-            progress_bar: self.progress_bar,
-            actual_value: self.actual_value,
-            comparison_value: self.comparison_value,
+            primary_value: self.primary_value
+            ,
+            progress_bar: self.progress_bar
+            ,
+            actual_value: self.actual_value
+            ,
+            comparison_value: self.comparison_value
+            ,
         }
     }
 }
+

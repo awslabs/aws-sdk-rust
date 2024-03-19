@@ -25,7 +25,9 @@ pub fn parse_aws_query_compatible_error(headers: &Headers) -> Option<(&str, &str
 
 #[cfg(test)]
 mod test {
-    use crate::aws_query_compatible_errors::{parse_aws_query_compatible_error, X_AMZN_QUERY_ERROR};
+    use crate::aws_query_compatible_errors::{
+        parse_aws_query_compatible_error, X_AMZN_QUERY_ERROR,
+    };
     use aws_smithy_runtime_api::http::Response;
 
     #[test]
@@ -39,7 +41,10 @@ mod test {
 
         let actual = parse_aws_query_compatible_error(response.headers());
 
-        assert_eq!(Some(("AWS.SimpleQueueService.NonExistentQueue", "Sender")), actual,);
+        assert_eq!(
+            Some(("AWS.SimpleQueueService.NonExistentQueue", "Sender")),
+            actual,
+        );
     }
 
     #[test]
@@ -59,9 +64,10 @@ mod test {
     #[test]
     fn parse_aws_query_compatible_error_should_return_none_when_there_is_no_target_header() {
         let mut response: http::Response<()> = http::Response::default();
-        response
-            .headers_mut()
-            .insert("x-amzn-requestid", http::HeaderValue::from_static("a918fbf2-457a-4fe1-99ba-5685ce220fc1"));
+        response.headers_mut().insert(
+            "x-amzn-requestid",
+            http::HeaderValue::from_static("a918fbf2-457a-4fe1-99ba-5685ce220fc1"),
+        );
         let response = Response::try_from(response).unwrap();
 
         let actual = parse_aws_query_compatible_error(response.headers());
@@ -69,3 +75,4 @@ mod test {
         assert_eq!(None, actual);
     }
 }
+

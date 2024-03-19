@@ -3,7 +3,7 @@
 /// <p>The details about the developer that published the skill.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeveloperInfo {
+pub struct DeveloperInfo  {
     /// <p>The name of the developer.</p>
     pub developer_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the privacy policy.</p>
@@ -13,21 +13,21 @@ pub struct DeveloperInfo {
     /// <p>The website of the developer.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl DeveloperInfo {
+impl  DeveloperInfo  {
     /// <p>The name of the developer.</p>
-    pub fn developer_name(&self) -> ::std::option::Option<&str> {
+    pub fn developer_name(&self) -> ::std::option::Option<& str> {
         self.developer_name.as_deref()
     }
     /// <p>The URL of the privacy policy.</p>
-    pub fn privacy_policy(&self) -> ::std::option::Option<&str> {
+    pub fn privacy_policy(&self) -> ::std::option::Option<& str> {
         self.privacy_policy.as_deref()
     }
     /// <p>The email of the developer.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The website of the developer.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeveloperInfoBuilder {
     }
     /// <p>The name of the developer.</p>
     pub fn set_developer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.developer_name = input;
-        self
+        self.developer_name = input; self
     }
     /// <p>The name of the developer.</p>
     pub fn get_developer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeveloperInfoBuilder {
     }
     /// <p>The URL of the privacy policy.</p>
     pub fn set_privacy_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.privacy_policy = input;
-        self
+        self.privacy_policy = input; self
     }
     /// <p>The URL of the privacy policy.</p>
     pub fn get_privacy_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DeveloperInfoBuilder {
     }
     /// <p>The email of the developer.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of the developer.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DeveloperInfoBuilder {
     }
     /// <p>The website of the developer.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The website of the developer.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DeveloperInfoBuilder {
     /// Consumes the builder and constructs a [`DeveloperInfo`](crate::types::DeveloperInfo).
     pub fn build(self) -> crate::types::DeveloperInfo {
         crate::types::DeveloperInfo {
-            developer_name: self.developer_name,
-            privacy_policy: self.privacy_policy,
-            email: self.email,
-            url: self.url,
+            developer_name: self.developer_name
+            ,
+            privacy_policy: self.privacy_policy
+            ,
+            email: self.email
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

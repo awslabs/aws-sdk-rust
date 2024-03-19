@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHubInput {
+pub struct DeleteHubInput  {
     /// <p>The name of the hub to delete.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHubInput {
+impl  DeleteHubInput  {
     /// <p>The name of the hub to delete.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteHubInputBuilder {
     }
     /// <p>The name of the hub to delete.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The name of the hub to delete.</p>
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteHubInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteHubInput`](crate::operation::delete_hub::DeleteHubInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_hub::DeleteHubInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_hub::DeleteHubInput { hub_name: self.hub_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_hub::DeleteHubInput {
+                hub_name: self.hub_name
+                ,
+            }
+        )
     }
 }
+

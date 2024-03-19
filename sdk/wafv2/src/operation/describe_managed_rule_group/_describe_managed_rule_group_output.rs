@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeManagedRuleGroupOutput {
+pub struct DescribeManagedRuleGroupOutput  {
     /// <p>The managed rule group's version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
@@ -11,7 +11,7 @@ pub struct DescribeManagedRuleGroupOutput {
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.</p>
     pub capacity: ::std::option::Option<i64>,
     /// <p></p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleSummary>>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
     /// <li>
@@ -26,18 +26,18 @@ pub struct DescribeManagedRuleGroupOutput {
     /// </ul>
     pub label_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub available_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub consumed_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
     _request_id: Option<String>,
 }
-impl DescribeManagedRuleGroupOutput {
+impl  DescribeManagedRuleGroupOutput  {
     /// <p>The managed rule group's version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
@@ -46,10 +46,11 @@ impl DescribeManagedRuleGroupOutput {
         self.capacity
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::RuleSummary] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::RuleSummary] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
@@ -63,27 +64,29 @@ impl DescribeManagedRuleGroupOutput {
     /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
-    pub fn label_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn label_namespace(&self) -> ::std::option::Option<& str> {
         self.label_namespace.as_deref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_labels.is_none()`.
-    pub fn available_labels(&self) -> &[crate::types::LabelSummary] {
-        self.available_labels.as_deref().unwrap_or_default()
+    pub fn available_labels(&self) -> & [crate::types::LabelSummary] {
+        self.available_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_labels.is_none()`.
-    pub fn consumed_labels(&self) -> &[crate::types::LabelSummary] {
-        self.consumed_labels.as_deref().unwrap_or_default()
+    pub fn consumed_labels(&self) -> & [crate::types::LabelSummary] {
+        self.consumed_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeManagedRuleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeManagedRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
     pub fn builder() -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder {
@@ -98,10 +101,10 @@ pub struct DescribeManagedRuleGroupOutputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i64>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleSummary>>,
     pub(crate) label_namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub(crate) available_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
+    pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeManagedRuleGroupOutputBuilder {
@@ -112,8 +115,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     }
     /// <p>The managed rule group's version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The managed rule group's version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +128,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +143,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.</p>
@@ -157,17 +157,16 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// <p></p>
     pub fn rules(mut self, input: crate::types::RuleSummary) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleSummary>>) -> Self {
+        self.rules = input; self
     }
     /// <p></p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleSummary>> {
         &self.rules
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
@@ -199,8 +198,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_namespace = input;
-        self
+        self.label_namespace = input; self
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
@@ -224,17 +222,16 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub fn available_labels(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.available_labels.unwrap_or_default();
-        v.push(input);
-        self.available_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.available_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
-        self.available_labels = input;
-        self
+    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>) -> Self {
+        self.available_labels = input; self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>> {
         &self.available_labels
     }
     /// Appends an item to `consumed_labels`.
@@ -244,39 +241,46 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
     pub fn consumed_labels(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.consumed_labels.unwrap_or_default();
-        v.push(input);
-        self.consumed_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.consumed_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
-        self.consumed_labels = input;
-        self
+    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>) -> Self {
+        self.consumed_labels = input; self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>> {
         &self.consumed_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
     pub fn build(self) -> crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput {
         crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput {
-            version_name: self.version_name,
-            sns_topic_arn: self.sns_topic_arn,
-            capacity: self.capacity,
-            rules: self.rules,
-            label_namespace: self.label_namespace,
-            available_labels: self.available_labels,
-            consumed_labels: self.consumed_labels,
+            version_name: self.version_name
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            capacity: self.capacity
+            ,
+            rules: self.rules
+            ,
+            label_namespace: self.label_namespace
+            ,
+            available_labels: self.available_labels
+            ,
+            consumed_labels: self.consumed_labels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

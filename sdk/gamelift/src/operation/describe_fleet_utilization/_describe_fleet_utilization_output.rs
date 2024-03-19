@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetUtilizationOutput {
+pub struct DescribeFleetUtilizationOutput  {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fleet_utilization: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
+    pub fleet_utilization: ::std::option::Option<::std::vec::Vec::<crate::types::FleetUtilization>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFleetUtilizationOutput {
+impl  DescribeFleetUtilizationOutput  {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_utilization.is_none()`.
-    pub fn fleet_utilization(&self) -> &[crate::types::FleetUtilization] {
-        self.fleet_utilization.as_deref().unwrap_or_default()
+    pub fn fleet_utilization(&self) -> & [crate::types::FleetUtilization] {
+        self.fleet_utilization.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFleetUtilizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFleetUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetUtilizationOutput`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput).
     pub fn builder() -> crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeFleetUtilizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetUtilizationOutputBuilder {
-    pub(crate) fleet_utilization: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
+    pub(crate) fleet_utilization: ::std::option::Option<::std::vec::Vec::<crate::types::FleetUtilization>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeFleetUtilizationOutputBuilder {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
     pub fn fleet_utilization(mut self, input: crate::types::FleetUtilization) -> Self {
         let mut v = self.fleet_utilization.unwrap_or_default();
-        v.push(input);
-        self.fleet_utilization = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fleet_utilization = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn set_fleet_utilization(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>) -> Self {
-        self.fleet_utilization = input;
-        self
+    pub fn set_fleet_utilization(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FleetUtilization>>) -> Self {
+        self.fleet_utilization = input; self
     }
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn get_fleet_utilization(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>> {
+    pub fn get_fleet_utilization(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FleetUtilization>> {
         &self.fleet_utilization
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -69,28 +69,30 @@ impl DescribeFleetUtilizationOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFleetUtilizationOutput`](crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput).
     pub fn build(self) -> crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput {
         crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput {
-            fleet_utilization: self.fleet_utilization,
-            next_token: self.next_token,
+            fleet_utilization: self.fleet_utilization
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

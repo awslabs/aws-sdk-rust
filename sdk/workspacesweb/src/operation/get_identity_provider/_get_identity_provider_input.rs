@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityProviderInput {
+pub struct GetIdentityProviderInput  {
     /// <p>The ARN of the identity provider.</p>
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetIdentityProviderInput {
+impl  GetIdentityProviderInput  {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_provider_arn(&self) -> ::std::option::Option<& str> {
         self.identity_provider_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetIdentityProviderInputBuilder {
     }
     /// <p>The ARN of the identity provider.</p>
     pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_provider_arn = input;
-        self
+        self.identity_provider_arn = input; self
     }
     /// <p>The ARN of the identity provider.</p>
     pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_arn
     }
     /// Consumes the builder and constructs a [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_identity_provider::GetIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_identity_provider::GetIdentityProviderInput {
-            identity_provider_arn: self.identity_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_provider::GetIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_provider::GetIdentityProviderInput {
+                identity_provider_arn: self.identity_provider_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The input to the RegisterCertificate operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterCertificateInput {
+pub struct RegisterCertificateInput  {
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
@@ -15,13 +15,13 @@ pub struct RegisterCertificateInput {
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
 }
-impl RegisterCertificateInput {
+impl  RegisterCertificateInput  {
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> ::std::option::Option<& str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
-    pub fn ca_certificate_pem(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_pem(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_pem.as_deref()
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
@@ -31,7 +31,7 @@ impl RegisterCertificateInput {
         self.set_as_active
     }
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateStatus> {
         self.status.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl RegisterCertificateInputBuilder {
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_pem = input;
-        self
+        self.certificate_pem = input; self
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl RegisterCertificateInputBuilder {
     }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
     pub fn set_ca_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_pem = input;
-        self
+        self.ca_certificate_pem = input; self
     }
     /// <p>The CA certificate used to sign the device certificate being registered.</p>
     pub fn get_ca_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl RegisterCertificateInputBuilder {
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.set_as_active = input;
-        self
+        self.set_as_active = input; self
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
@@ -108,23 +105,26 @@ impl RegisterCertificateInputBuilder {
     }
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the register certificate request. Valid values that you can use include <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_certificate::RegisterCertificateInput {
-            certificate_pem: self.certificate_pem,
-            ca_certificate_pem: self.ca_certificate_pem,
-            set_as_active: self.set_as_active,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_certificate::RegisterCertificateInput {
+                certificate_pem: self.certificate_pem
+                ,
+                ca_certificate_pem: self.ca_certificate_pem
+                ,
+                set_as_active: self.set_as_active
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

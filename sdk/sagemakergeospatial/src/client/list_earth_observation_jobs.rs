@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEarthObservationJobs`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`status_equals(EarthObservationJobStatus)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::status_equals) / [`set_status_equals(Option<EarthObservationJobStatus>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that retrieves only jobs with a specific status.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p><br>
     ///   - [`sort_by(impl Into<String>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::sort_by) / [`set_sort_by(Option<String>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return.</p><br>
-    /// - On success, responds with [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput) with field(s):
     ///   - [`earth_observation_job_summaries(Vec::<ListEarthObservationJobOutputConfig>)`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput::earth_observation_job_summaries): <p>Contains summary information about the Earth Observation jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListEarthObservationJobsError>`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError)
+                            /// - On failure, responds with [`SdkError<ListEarthObservationJobsError>`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError)
     pub fn list_earth_observation_jobs(&self) -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder {
-        crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

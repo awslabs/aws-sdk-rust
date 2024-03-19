@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicename = unimplemented!();
 /// match servicename {
@@ -53,16 +53,14 @@
 /// Specifically, when `servicename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ServiceName {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
@@ -116,156 +114,131 @@ pub enum ServiceName {
     Swf,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ServiceName {
-    fn from(s: &str) -> Self {
-        match s {
-            "API_GATEWAY" => ServiceName::ApiGateway,
-            "APPLICATION_ELB" => ServiceName::ApplicationElb,
-            "AUTO_SCALING_GROUP" => ServiceName::AutoScalingGroup,
-            "CLOUD_FRONT" => ServiceName::CloudFront,
-            "DYNAMO_DB" => ServiceName::DynamoDb,
-            "EC2" => ServiceName::Ec2,
-            "ECS" => ServiceName::Ecs,
-            "EKS" => ServiceName::Eks,
-            "ELASTIC_BEANSTALK" => ServiceName::ElasticBeanstalk,
-            "ELASTI_CACHE" => ServiceName::ElastiCache,
-            "ELB" => ServiceName::Elb,
-            "ES" => ServiceName::Es,
-            "KINESIS" => ServiceName::Kinesis,
-            "LAMBDA" => ServiceName::Lambda,
-            "NAT_GATEWAY" => ServiceName::NatGateway,
-            "NETWORK_ELB" => ServiceName::NetworkElb,
-            "RDS" => ServiceName::Rds,
-            "REDSHIFT" => ServiceName::Redshift,
-            "ROUTE_53" => ServiceName::Route53,
-            "S3" => ServiceName::S3,
-            "SAGE_MAKER" => ServiceName::SageMaker,
-            "SNS" => ServiceName::Sns,
-            "SQS" => ServiceName::Sqs,
-            "STEP_FUNCTIONS" => ServiceName::StepFunctions,
-            "SWF" => ServiceName::Swf,
-            other => ServiceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "API_GATEWAY" => ServiceName::ApiGateway,
+"APPLICATION_ELB" => ServiceName::ApplicationElb,
+"AUTO_SCALING_GROUP" => ServiceName::AutoScalingGroup,
+"CLOUD_FRONT" => ServiceName::CloudFront,
+"DYNAMO_DB" => ServiceName::DynamoDb,
+"EC2" => ServiceName::Ec2,
+"ECS" => ServiceName::Ecs,
+"EKS" => ServiceName::Eks,
+"ELASTIC_BEANSTALK" => ServiceName::ElasticBeanstalk,
+"ELASTI_CACHE" => ServiceName::ElastiCache,
+"ELB" => ServiceName::Elb,
+"ES" => ServiceName::Es,
+"KINESIS" => ServiceName::Kinesis,
+"LAMBDA" => ServiceName::Lambda,
+"NAT_GATEWAY" => ServiceName::NatGateway,
+"NETWORK_ELB" => ServiceName::NetworkElb,
+"RDS" => ServiceName::Rds,
+"REDSHIFT" => ServiceName::Redshift,
+"ROUTE_53" => ServiceName::Route53,
+"S3" => ServiceName::S3,
+"SAGE_MAKER" => ServiceName::SageMaker,
+"SNS" => ServiceName::Sns,
+"SQS" => ServiceName::Sqs,
+"STEP_FUNCTIONS" => ServiceName::StepFunctions,
+"SWF" => ServiceName::Swf,
+other => ServiceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ServiceName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ServiceName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ServiceName::from(s))
+                    }
+                }
 impl ServiceName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceName::ApiGateway => "API_GATEWAY",
-            ServiceName::ApplicationElb => "APPLICATION_ELB",
-            ServiceName::AutoScalingGroup => "AUTO_SCALING_GROUP",
-            ServiceName::CloudFront => "CLOUD_FRONT",
-            ServiceName::DynamoDb => "DYNAMO_DB",
-            ServiceName::Ec2 => "EC2",
-            ServiceName::Ecs => "ECS",
-            ServiceName::Eks => "EKS",
-            ServiceName::ElasticBeanstalk => "ELASTIC_BEANSTALK",
-            ServiceName::ElastiCache => "ELASTI_CACHE",
-            ServiceName::Elb => "ELB",
-            ServiceName::Es => "ES",
-            ServiceName::Kinesis => "KINESIS",
-            ServiceName::Lambda => "LAMBDA",
-            ServiceName::NatGateway => "NAT_GATEWAY",
-            ServiceName::NetworkElb => "NETWORK_ELB",
-            ServiceName::Rds => "RDS",
-            ServiceName::Redshift => "REDSHIFT",
-            ServiceName::Route53 => "ROUTE_53",
-            ServiceName::S3 => "S3",
-            ServiceName::SageMaker => "SAGE_MAKER",
-            ServiceName::Sns => "SNS",
-            ServiceName::Sqs => "SQS",
-            ServiceName::StepFunctions => "STEP_FUNCTIONS",
-            ServiceName::Swf => "SWF",
-            ServiceName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "API_GATEWAY",
-            "APPLICATION_ELB",
-            "AUTO_SCALING_GROUP",
-            "CLOUD_FRONT",
-            "DYNAMO_DB",
-            "EC2",
-            "ECS",
-            "EKS",
-            "ELASTIC_BEANSTALK",
-            "ELASTI_CACHE",
-            "ELB",
-            "ES",
-            "KINESIS",
-            "LAMBDA",
-            "NAT_GATEWAY",
-            "NETWORK_ELB",
-            "RDS",
-            "REDSHIFT",
-            "ROUTE_53",
-            "S3",
-            "SAGE_MAKER",
-            "SNS",
-            "SQS",
-            "STEP_FUNCTIONS",
-            "SWF",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceName::ApiGateway => "API_GATEWAY",
+    ServiceName::ApplicationElb => "APPLICATION_ELB",
+    ServiceName::AutoScalingGroup => "AUTO_SCALING_GROUP",
+    ServiceName::CloudFront => "CLOUD_FRONT",
+    ServiceName::DynamoDb => "DYNAMO_DB",
+    ServiceName::Ec2 => "EC2",
+    ServiceName::Ecs => "ECS",
+    ServiceName::Eks => "EKS",
+    ServiceName::ElasticBeanstalk => "ELASTIC_BEANSTALK",
+    ServiceName::ElastiCache => "ELASTI_CACHE",
+    ServiceName::Elb => "ELB",
+    ServiceName::Es => "ES",
+    ServiceName::Kinesis => "KINESIS",
+    ServiceName::Lambda => "LAMBDA",
+    ServiceName::NatGateway => "NAT_GATEWAY",
+    ServiceName::NetworkElb => "NETWORK_ELB",
+    ServiceName::Rds => "RDS",
+    ServiceName::Redshift => "REDSHIFT",
+    ServiceName::Route53 => "ROUTE_53",
+    ServiceName::S3 => "S3",
+    ServiceName::SageMaker => "SAGE_MAKER",
+    ServiceName::Sns => "SNS",
+    ServiceName::Sqs => "SQS",
+    ServiceName::StepFunctions => "STEP_FUNCTIONS",
+    ServiceName::Swf => "SWF",
+    ServiceName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["API_GATEWAY", "APPLICATION_ELB", "AUTO_SCALING_GROUP", "CLOUD_FRONT", "DYNAMO_DB", "EC2", "ECS", "EKS", "ELASTIC_BEANSTALK", "ELASTI_CACHE", "ELB", "ES", "KINESIS", "LAMBDA", "NAT_GATEWAY", "NETWORK_ELB", "RDS", "REDSHIFT", "ROUTE_53", "S3", "SAGE_MAKER", "SNS", "SQS", "STEP_FUNCTIONS", "SWF"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ServiceName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ServiceName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ServiceName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ServiceName::ApiGateway => write!(f, "API_GATEWAY"),
-            ServiceName::ApplicationElb => write!(f, "APPLICATION_ELB"),
-            ServiceName::AutoScalingGroup => write!(f, "AUTO_SCALING_GROUP"),
-            ServiceName::CloudFront => write!(f, "CLOUD_FRONT"),
-            ServiceName::DynamoDb => write!(f, "DYNAMO_DB"),
-            ServiceName::Ec2 => write!(f, "EC2"),
-            ServiceName::Ecs => write!(f, "ECS"),
-            ServiceName::Eks => write!(f, "EKS"),
-            ServiceName::ElasticBeanstalk => write!(f, "ELASTIC_BEANSTALK"),
-            ServiceName::ElastiCache => write!(f, "ELASTI_CACHE"),
-            ServiceName::Elb => write!(f, "ELB"),
-            ServiceName::Es => write!(f, "ES"),
-            ServiceName::Kinesis => write!(f, "KINESIS"),
-            ServiceName::Lambda => write!(f, "LAMBDA"),
-            ServiceName::NatGateway => write!(f, "NAT_GATEWAY"),
-            ServiceName::NetworkElb => write!(f, "NETWORK_ELB"),
-            ServiceName::Rds => write!(f, "RDS"),
-            ServiceName::Redshift => write!(f, "REDSHIFT"),
-            ServiceName::Route53 => write!(f, "ROUTE_53"),
-            ServiceName::S3 => write!(f, "S3"),
-            ServiceName::SageMaker => write!(f, "SAGE_MAKER"),
-            ServiceName::Sns => write!(f, "SNS"),
-            ServiceName::Sqs => write!(f, "SQS"),
-            ServiceName::StepFunctions => write!(f, "STEP_FUNCTIONS"),
-            ServiceName::Swf => write!(f, "SWF"),
-            ServiceName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ServiceName::ApiGateway => write!(f, "API_GATEWAY"),
+ServiceName::ApplicationElb => write!(f, "APPLICATION_ELB"),
+ServiceName::AutoScalingGroup => write!(f, "AUTO_SCALING_GROUP"),
+ServiceName::CloudFront => write!(f, "CLOUD_FRONT"),
+ServiceName::DynamoDb => write!(f, "DYNAMO_DB"),
+ServiceName::Ec2 => write!(f, "EC2"),
+ServiceName::Ecs => write!(f, "ECS"),
+ServiceName::Eks => write!(f, "EKS"),
+ServiceName::ElasticBeanstalk => write!(f, "ELASTIC_BEANSTALK"),
+ServiceName::ElastiCache => write!(f, "ELASTI_CACHE"),
+ServiceName::Elb => write!(f, "ELB"),
+ServiceName::Es => write!(f, "ES"),
+ServiceName::Kinesis => write!(f, "KINESIS"),
+ServiceName::Lambda => write!(f, "LAMBDA"),
+ServiceName::NatGateway => write!(f, "NAT_GATEWAY"),
+ServiceName::NetworkElb => write!(f, "NETWORK_ELB"),
+ServiceName::Rds => write!(f, "RDS"),
+ServiceName::Redshift => write!(f, "REDSHIFT"),
+ServiceName::Route53 => write!(f, "ROUTE_53"),
+ServiceName::S3 => write!(f, "S3"),
+ServiceName::SageMaker => write!(f, "SAGE_MAKER"),
+ServiceName::Sns => write!(f, "SNS"),
+ServiceName::Sqs => write!(f, "SQS"),
+ServiceName::StepFunctions => write!(f, "STEP_FUNCTIONS"),
+ServiceName::Swf => write!(f, "SWF"),
+ServiceName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

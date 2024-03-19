@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkspaceImageInput {
+pub struct CreateWorkspaceImageInput  {
     /// <p>The name of the new WorkSpace image.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the new WorkSpace image.</p>
@@ -10,26 +10,27 @@ pub struct CreateWorkspaceImageInput {
     /// <p>The identifier of the source WorkSpace</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateWorkspaceImageInput {
+impl  CreateWorkspaceImageInput  {
     /// <p>The name of the new WorkSpace image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new WorkSpace image.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the source WorkSpace</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateWorkspaceImageInput {
@@ -46,7 +47,7 @@ pub struct CreateWorkspaceImageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateWorkspaceImageInputBuilder {
     /// <p>The name of the new WorkSpace image.</p>
@@ -57,8 +58,7 @@ impl CreateWorkspaceImageInputBuilder {
     }
     /// <p>The name of the new WorkSpace image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new WorkSpace image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateWorkspaceImageInputBuilder {
     }
     /// <p>The description of the new WorkSpace image.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new WorkSpace image.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl CreateWorkspaceImageInputBuilder {
     }
     /// <p>The identifier of the source WorkSpace</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the source WorkSpace</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,29 +99,32 @@ impl CreateWorkspaceImageInputBuilder {
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_workspace_image::CreateWorkspaceImageInput {
-            name: self.name,
-            description: self.description,
-            workspace_id: self.workspace_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workspace_image::CreateWorkspaceImageInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                workspace_id: self.workspace_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

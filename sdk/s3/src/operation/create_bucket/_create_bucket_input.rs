@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBucketInput {
+pub struct CreateBucketInput  {
     /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -47,52 +47,52 @@ pub struct CreateBucketInput {
     /// </note>
     pub object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
 }
-impl CreateBucketInput {
+impl  CreateBucketInput  {
     /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn acl(&self) -> ::std::option::Option<&crate::types::BucketCannedAcl> {
+    pub fn acl(&self) -> ::std::option::Option<& crate::types::BucketCannedAcl> {
         self.acl.as_ref()
     }
     /// <p>The name of the bucket to create.</p>
     /// <p><b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <code>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </code>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i></p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The configuration information for the bucket.</p>
-    pub fn create_bucket_configuration(&self) -> ::std::option::Option<&crate::types::CreateBucketConfiguration> {
+    pub fn create_bucket_configuration(&self) -> ::std::option::Option<& crate::types::CreateBucketConfiguration> {
         self.create_bucket_configuration.as_ref()
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn grant_full_control(&self) -> ::std::option::Option<&str> {
+    pub fn grant_full_control(&self) -> ::std::option::Option<& str> {
         self.grant_full_control.as_deref()
     }
     /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn grant_read(&self) -> ::std::option::Option<&str> {
+    pub fn grant_read(&self) -> ::std::option::Option<& str> {
         self.grant_read.as_deref()
     }
     /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn grant_read_acp(&self) -> ::std::option::Option<&str> {
+    pub fn grant_read_acp(&self) -> ::std::option::Option<& str> {
         self.grant_read_acp.as_deref()
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn grant_write(&self) -> ::std::option::Option<&str> {
+    pub fn grant_write(&self) -> ::std::option::Option<& str> {
         self.grant_write.as_deref()
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn grant_write_acp(&self) -> ::std::option::Option<&str> {
+    pub fn grant_write_acp(&self) -> ::std::option::Option<& str> {
         self.grant_write_acp.as_deref()
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
@@ -108,7 +108,7 @@ impl CreateBucketInput {
     /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
-    pub fn object_ownership(&self) -> ::std::option::Option<&crate::types::ObjectOwnership> {
+    pub fn object_ownership(&self) -> ::std::option::Option<& crate::types::ObjectOwnership> {
         self.object_ownership.as_ref()
     }
 }
@@ -146,8 +146,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::BucketCannedAcl>) -> Self {
-        self.acl = input;
-        self
+        self.acl = input; self
     }
     /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -167,8 +166,7 @@ impl CreateBucketInputBuilder {
     /// <p><b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <code>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </code>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i></p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket to create.</p>
     /// <p><b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -183,8 +181,7 @@ impl CreateBucketInputBuilder {
     }
     /// <p>The configuration information for the bucket.</p>
     pub fn set_create_bucket_configuration(mut self, input: ::std::option::Option<crate::types::CreateBucketConfiguration>) -> Self {
-        self.create_bucket_configuration = input;
-        self
+        self.create_bucket_configuration = input; self
     }
     /// <p>The configuration information for the bucket.</p>
     pub fn get_create_bucket_configuration(&self) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
@@ -201,8 +198,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_full_control = input;
-        self
+        self.grant_full_control = input; self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -221,8 +217,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_read = input;
-        self
+        self.grant_read = input; self
     }
     /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -241,8 +236,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_read_acp = input;
-        self
+        self.grant_read_acp = input; self
     }
     /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -263,8 +257,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_write = input;
-        self
+        self.grant_write = input; self
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
@@ -284,8 +277,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_write_acp = input;
-        self
+        self.grant_write_acp = input; self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -304,8 +296,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_object_lock_enabled_for_bucket(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.object_lock_enabled_for_bucket = input;
-        self
+        self.object_lock_enabled_for_bucket = input; self
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -332,8 +323,7 @@ impl CreateBucketInputBuilder {
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn set_object_ownership(mut self, input: ::std::option::Option<crate::types::ObjectOwnership>) -> Self {
-        self.object_ownership = input;
-        self
+        self.object_ownership = input; self
     }
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
@@ -346,20 +336,31 @@ impl CreateBucketInputBuilder {
         &self.object_ownership
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_bucket::CreateBucketInput {
-            acl: self.acl,
-            bucket: self.bucket,
-            create_bucket_configuration: self.create_bucket_configuration,
-            grant_full_control: self.grant_full_control,
-            grant_read: self.grant_read,
-            grant_read_acp: self.grant_read_acp,
-            grant_write: self.grant_write,
-            grant_write_acp: self.grant_write_acp,
-            object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket,
-            object_ownership: self.object_ownership,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_bucket::CreateBucketInput {
+                acl: self.acl
+                ,
+                bucket: self.bucket
+                ,
+                create_bucket_configuration: self.create_bucket_configuration
+                ,
+                grant_full_control: self.grant_full_control
+                ,
+                grant_read: self.grant_read
+                ,
+                grant_read_acp: self.grant_read_acp
+                ,
+                grant_write: self.grant_write
+                ,
+                grant_write_acp: self.grant_write_acp
+                ,
+                object_lock_enabled_for_bucket: self.object_lock_enabled_for_bucket
+                ,
+                object_ownership: self.object_ownership
+                ,
+            }
+        )
     }
 }
+

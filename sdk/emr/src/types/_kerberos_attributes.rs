@@ -3,7 +3,7 @@
 /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KerberosAttributes {
+pub struct KerberosAttributes  {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
     pub realm: ::std::option::Option<::std::string::String>,
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
@@ -15,25 +15,25 @@ pub struct KerberosAttributes {
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
     pub ad_domain_join_password: ::std::option::Option<::std::string::String>,
 }
-impl KerberosAttributes {
+impl  KerberosAttributes  {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
-    pub fn realm(&self) -> ::std::option::Option<&str> {
+    pub fn realm(&self) -> ::std::option::Option<& str> {
         self.realm.as_deref()
     }
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
-    pub fn kdc_admin_password(&self) -> ::std::option::Option<&str> {
+    pub fn kdc_admin_password(&self) -> ::std::option::Option<& str> {
         self.kdc_admin_password.as_deref()
     }
     /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
-    pub fn cross_realm_trust_principal_password(&self) -> ::std::option::Option<&str> {
+    pub fn cross_realm_trust_principal_password(&self) -> ::std::option::Option<& str> {
         self.cross_realm_trust_principal_password.as_deref()
     }
     /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
-    pub fn ad_domain_join_user(&self) -> ::std::option::Option<&str> {
+    pub fn ad_domain_join_user(&self) -> ::std::option::Option<& str> {
         self.ad_domain_join_user.as_deref()
     }
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
-    pub fn ad_domain_join_password(&self) -> ::std::option::Option<&str> {
+    pub fn ad_domain_join_password(&self) -> ::std::option::Option<& str> {
         self.ad_domain_join_password.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl KerberosAttributesBuilder {
     }
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
     pub fn set_realm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.realm = input;
-        self
+        self.realm = input; self
     }
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>.</p>
     pub fn get_realm(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl KerberosAttributesBuilder {
     }
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
     pub fn set_kdc_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kdc_admin_password = input;
-        self
+        self.kdc_admin_password = input; self
     }
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
     pub fn get_kdc_admin_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl KerberosAttributesBuilder {
     }
     /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
     pub fn set_cross_realm_trust_principal_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cross_realm_trust_principal_password = input;
-        self
+        self.cross_realm_trust_principal_password = input; self
     }
     /// <p>Required only when establishing a cross-realm trust with a KDC in a different realm. The cross-realm principal password, which must be identical across realms.</p>
     pub fn get_cross_realm_trust_principal_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl KerberosAttributesBuilder {
     }
     /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
     pub fn set_ad_domain_join_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ad_domain_join_user = input;
-        self
+        self.ad_domain_join_user = input; self
     }
     /// <p>Required only when establishing a cross-realm trust with an Active Directory domain. A user with sufficient privileges to join resources to the domain.</p>
     pub fn get_ad_domain_join_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl KerberosAttributesBuilder {
     }
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
     pub fn set_ad_domain_join_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ad_domain_join_password = input;
-        self
+        self.ad_domain_join_password = input; self
     }
     /// <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
     pub fn get_ad_domain_join_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,11 +125,17 @@ impl KerberosAttributesBuilder {
     /// Consumes the builder and constructs a [`KerberosAttributes`](crate::types::KerberosAttributes).
     pub fn build(self) -> crate::types::KerberosAttributes {
         crate::types::KerberosAttributes {
-            realm: self.realm,
-            kdc_admin_password: self.kdc_admin_password,
-            cross_realm_trust_principal_password: self.cross_realm_trust_principal_password,
-            ad_domain_join_user: self.ad_domain_join_user,
-            ad_domain_join_password: self.ad_domain_join_password,
+            realm: self.realm
+            ,
+            kdc_admin_password: self.kdc_admin_password
+            ,
+            cross_realm_trust_principal_password: self.cross_realm_trust_principal_password
+            ,
+            ad_domain_join_user: self.ad_domain_join_user
+            ,
+            ad_domain_join_password: self.ad_domain_join_password
+            ,
         }
     }
 }
+

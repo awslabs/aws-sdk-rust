@@ -3,7 +3,7 @@
 /// <p>Provides counts for human-labeled tasks in the labeling job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelCountersForWorkteam {
+pub struct LabelCountersForWorkteam  {
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub human_labeled: ::std::option::Option<i32>,
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
@@ -11,7 +11,7 @@ pub struct LabelCountersForWorkteam {
     /// <p>The total number of tasks in the labeling job.</p>
     pub total: ::std::option::Option<i32>,
 }
-impl LabelCountersForWorkteam {
+impl  LabelCountersForWorkteam  {
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub fn human_labeled(&self) -> ::std::option::Option<i32> {
         self.human_labeled
@@ -48,8 +48,7 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub fn set_human_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.human_labeled = input;
-        self
+        self.human_labeled = input; self
     }
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub fn get_human_labeled(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
     pub fn set_pending_human(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_human = input;
-        self
+        self.pending_human = input; self
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
     pub fn get_pending_human(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of tasks in the labeling job.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total number of tasks in the labeling job.</p>
     pub fn get_total(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl LabelCountersForWorkteamBuilder {
     /// Consumes the builder and constructs a [`LabelCountersForWorkteam`](crate::types::LabelCountersForWorkteam).
     pub fn build(self) -> crate::types::LabelCountersForWorkteam {
         crate::types::LabelCountersForWorkteam {
-            human_labeled: self.human_labeled,
-            pending_human: self.pending_human,
-            total: self.total,
+            human_labeled: self.human_labeled
+            ,
+            pending_human: self.pending_human
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::describe_events_for_organization::_describe_events_for
 
 impl DescribeEventsForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_events_for_organization();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_events_for_organization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeEventsForOrganization`.
-///
+/// 
 /// <p>Returns information about events across your organization in Organizations. You can use the<code>filters</code> parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:</p>
 /// <ul>
 /// <li>
@@ -39,33 +36,32 @@ impl DescribeEventsForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder,
+                    inner: crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-    > for DescribeEventsForOrganizationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
+                    crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+                > for DescribeEventsForOrganizationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
+                        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeEventsForOrganizationFluentBuilder {
     /// Creates a new `DescribeEventsForOrganization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -74,59 +70,50 @@ impl DescribeEventsForOrganizationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_events_for_organization::DescribeEventsForOrganization::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganization::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_events_for_organization::DescribeEventsForOrganization::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_events_for_organization::DescribeEventsForOrganization::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput, crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator {
-        crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator {
+                                crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Values to narrow the results returned.</p>
     pub fn filter(mut self, input: crate::types::OrganizationEventFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -184,3 +171,4 @@ impl DescribeEventsForOrganizationFluentBuilder {
         self.inner.get_locale()
     }
 }
+

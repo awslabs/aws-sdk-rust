@@ -3,16 +3,17 @@
 /// <p>A structure that represents a collective constant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollectiveConstant {
+pub struct CollectiveConstant  {
     /// <p>A list of values for the collective constant.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CollectiveConstant {
+impl  CollectiveConstant  {
     /// <p>A list of values for the collective constant.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[::std::string::String] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [::std::string::String] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CollectiveConstant {
@@ -26,7 +27,7 @@ impl CollectiveConstant {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectiveConstantBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CollectiveConstantBuilder {
     /// Appends an item to `value_list`.
@@ -36,21 +37,24 @@ impl CollectiveConstantBuilder {
     /// <p>A list of values for the collective constant.</p>
     pub fn value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input.into());
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values for the collective constant.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>A list of values for the collective constant.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value_list
     }
     /// Consumes the builder and constructs a [`CollectiveConstant`](crate::types::CollectiveConstant).
     pub fn build(self) -> crate::types::CollectiveConstant {
-        crate::types::CollectiveConstant { value_list: self.value_list }
+        crate::types::CollectiveConstant {
+            value_list: self.value_list
+            ,
+        }
     }
 }
+

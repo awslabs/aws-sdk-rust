@@ -3,7 +3,7 @@
 /// <p>Returns the details of authentication used by a proxy to log in as a specific database user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserAuthConfigInfo {
+pub struct UserAuthConfigInfo  {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database user to which the proxy connects.</p>
@@ -17,29 +17,29 @@ pub struct UserAuthConfigInfo {
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
     pub client_password_auth_type: ::std::option::Option<crate::types::ClientPasswordAuthType>,
 }
-impl UserAuthConfigInfo {
+impl  UserAuthConfigInfo  {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the database user to which the proxy connects.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
-    pub fn auth_scheme(&self) -> ::std::option::Option<&crate::types::AuthScheme> {
+    pub fn auth_scheme(&self) -> ::std::option::Option<& crate::types::AuthScheme> {
         self.auth_scheme.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
-    pub fn iam_auth(&self) -> ::std::option::Option<&crate::types::IamAuthMode> {
+    pub fn iam_auth(&self) -> ::std::option::Option<& crate::types::IamAuthMode> {
         self.iam_auth.as_ref()
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    pub fn client_password_auth_type(&self) -> ::std::option::Option<&crate::types::ClientPasswordAuthType> {
+    pub fn client_password_auth_type(&self) -> ::std::option::Option<& crate::types::ClientPasswordAuthType> {
         self.client_password_auth_type.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>The name of the database user to which the proxy connects.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the database user to which the proxy connects.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
     pub fn set_auth_scheme(mut self, input: ::std::option::Option<crate::types::AuthScheme>) -> Self {
-        self.auth_scheme = input;
-        self
+        self.auth_scheme = input; self
     }
     /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
     pub fn get_auth_scheme(&self) -> &::std::option::Option<crate::types::AuthScheme> {
@@ -111,8 +108,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn set_iam_auth(mut self, input: ::std::option::Option<crate::types::IamAuthMode>) -> Self {
-        self.iam_auth = input;
-        self
+        self.iam_auth = input; self
     }
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn get_iam_auth(&self) -> &::std::option::Option<crate::types::IamAuthMode> {
@@ -139,8 +134,7 @@ impl UserAuthConfigInfoBuilder {
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
     pub fn set_client_password_auth_type(mut self, input: ::std::option::Option<crate::types::ClientPasswordAuthType>) -> Self {
-        self.client_password_auth_type = input;
-        self
+        self.client_password_auth_type = input; self
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
     pub fn get_client_password_auth_type(&self) -> &::std::option::Option<crate::types::ClientPasswordAuthType> {
@@ -149,12 +143,19 @@ impl UserAuthConfigInfoBuilder {
     /// Consumes the builder and constructs a [`UserAuthConfigInfo`](crate::types::UserAuthConfigInfo).
     pub fn build(self) -> crate::types::UserAuthConfigInfo {
         crate::types::UserAuthConfigInfo {
-            description: self.description,
-            user_name: self.user_name,
-            auth_scheme: self.auth_scheme,
-            secret_arn: self.secret_arn,
-            iam_auth: self.iam_auth,
-            client_password_auth_type: self.client_password_auth_type,
+            description: self.description
+            ,
+            user_name: self.user_name
+            ,
+            auth_scheme: self.auth_scheme
+            ,
+            secret_arn: self.secret_arn
+            ,
+            iam_auth: self.iam_auth
+            ,
+            client_password_auth_type: self.client_password_auth_type
+            ,
         }
     }
 }
+

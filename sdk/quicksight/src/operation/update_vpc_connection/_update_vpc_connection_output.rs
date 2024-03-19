@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpcConnectionOutput {
+pub struct UpdateVpcConnectionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC connection that you are updating. This ID is a unique identifier for each Amazon Web Services Region in anAmazon Web Services account.</p>
@@ -17,25 +17,25 @@ pub struct UpdateVpcConnectionOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl UpdateVpcConnectionOutput {
+impl  UpdateVpcConnectionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the VPC connection that you are updating. This ID is a unique identifier for each Amazon Web Services Region in anAmazon Web Services account.</p>
-    pub fn vpc_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_id.as_deref()
     }
     /// <p>The update status of the VPC connection's last update.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::VpcConnectionResourceStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::VpcConnectionResourceStatus> {
         self.update_status.as_ref()
     }
     /// <p>The availability status of the VPC connection.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::VpcConnectionAvailabilityStatus> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::VpcConnectionAvailabilityStatus> {
         self.availability_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -44,10 +44,10 @@ impl UpdateVpcConnectionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVpcConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcConnectionOutput`](crate::operation::update_vpc_connection::UpdateVpcConnectionOutput).
     pub fn builder() -> crate::operation::update_vpc_connection::builders::UpdateVpcConnectionOutputBuilder {
@@ -75,8 +75,7 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The ID of the VPC connection that you are updating. This ID is a unique identifier for each Amazon Web Services Region in anAmazon Web Services account.</p>
     pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connection_id = input;
-        self
+        self.vpc_connection_id = input; self
     }
     /// <p>The ID of the VPC connection that you are updating. This ID is a unique identifier for each Amazon Web Services Region in anAmazon Web Services account.</p>
     pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The update status of the VPC connection's last update.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionResourceStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The update status of the VPC connection's last update.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::VpcConnectionResourceStatus> {
@@ -117,8 +114,7 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The availability status of the VPC connection.</p>
     pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>) -> Self {
-        self.availability_status = input;
-        self
+        self.availability_status = input; self
     }
     /// <p>The availability status of the VPC connection.</p>
     pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::VpcConnectionAvailabilityStatus> {
@@ -131,8 +127,7 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,39 @@ impl UpdateVpcConnectionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVpcConnectionOutput`](crate::operation::update_vpc_connection::UpdateVpcConnectionOutput).
     pub fn build(self) -> crate::operation::update_vpc_connection::UpdateVpcConnectionOutput {
         crate::operation::update_vpc_connection::UpdateVpcConnectionOutput {
-            arn: self.arn,
-            vpc_connection_id: self.vpc_connection_id,
-            update_status: self.update_status,
-            availability_status: self.availability_status,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            vpc_connection_id: self.vpc_connection_id
+            ,
+            update_status: self.update_status
+            ,
+            availability_status: self.availability_status
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

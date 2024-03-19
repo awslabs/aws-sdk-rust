@@ -30,11 +30,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`AmiProductFilters`](crate::types::EntityTypeFilters::AmiProductFilters), extracting the inner [`AmiProductFilters`](crate::types::AmiProductFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ami_product_filters(&self) -> ::std::result::Result<&crate::types::AmiProductFilters, &Self> {
-        if let EntityTypeFilters::AmiProductFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::AmiProductFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AmiProductFilters`](crate::types::EntityTypeFilters::AmiProductFilters).
     pub fn is_ami_product_filters(&self) -> bool {
@@ -43,11 +39,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`ContainerProductFilters`](crate::types::EntityTypeFilters::ContainerProductFilters), extracting the inner [`ContainerProductFilters`](crate::types::ContainerProductFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_container_product_filters(&self) -> ::std::result::Result<&crate::types::ContainerProductFilters, &Self> {
-        if let EntityTypeFilters::ContainerProductFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::ContainerProductFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContainerProductFilters`](crate::types::EntityTypeFilters::ContainerProductFilters).
     pub fn is_container_product_filters(&self) -> bool {
@@ -56,11 +48,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`DataProductFilters`](crate::types::EntityTypeFilters::DataProductFilters), extracting the inner [`DataProductFilters`](crate::types::DataProductFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_data_product_filters(&self) -> ::std::result::Result<&crate::types::DataProductFilters, &Self> {
-        if let EntityTypeFilters::DataProductFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::DataProductFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DataProductFilters`](crate::types::EntityTypeFilters::DataProductFilters).
     pub fn is_data_product_filters(&self) -> bool {
@@ -69,11 +57,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`OfferFilters`](crate::types::EntityTypeFilters::OfferFilters), extracting the inner [`OfferFilters`](crate::types::OfferFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_offer_filters(&self) -> ::std::result::Result<&crate::types::OfferFilters, &Self> {
-        if let EntityTypeFilters::OfferFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::OfferFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OfferFilters`](crate::types::EntityTypeFilters::OfferFilters).
     pub fn is_offer_filters(&self) -> bool {
@@ -82,11 +66,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`ResaleAuthorizationFilters`](crate::types::EntityTypeFilters::ResaleAuthorizationFilters), extracting the inner [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resale_authorization_filters(&self) -> ::std::result::Result<&crate::types::ResaleAuthorizationFilters, &Self> {
-        if let EntityTypeFilters::ResaleAuthorizationFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::ResaleAuthorizationFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ResaleAuthorizationFilters`](crate::types::EntityTypeFilters::ResaleAuthorizationFilters).
     pub fn is_resale_authorization_filters(&self) -> bool {
@@ -95,11 +75,7 @@ impl EntityTypeFilters {
     /// Tries to convert the enum instance into [`SaaSProductFilters`](crate::types::EntityTypeFilters::SaaSProductFilters), extracting the inner [`SaaSProductFilters`](crate::types::SaaSProductFilters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_saa_s_product_filters(&self) -> ::std::result::Result<&crate::types::SaaSProductFilters, &Self> {
-        if let EntityTypeFilters::SaaSProductFilters(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeFilters::SaaSProductFilters(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SaaSProductFilters`](crate::types::EntityTypeFilters::SaaSProductFilters).
     pub fn is_saa_s_product_filters(&self) -> bool {
@@ -110,3 +86,4 @@ impl EntityTypeFilters {
         matches!(self, Self::Unknown)
     }
 }
+

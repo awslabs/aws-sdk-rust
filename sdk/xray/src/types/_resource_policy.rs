@@ -3,7 +3,7 @@
 /// <p>A resource policy grants one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy is associated with a specific Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
@@ -13,21 +13,21 @@ pub struct ResourcePolicy {
     /// <p>When the policy was last updated, in Unix time seconds.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ResourcePolicy {
+impl  ResourcePolicy  {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
-    pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> ::std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision_id = input;
-        self
+        self.policy_revision_id = input; self
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ResourcePolicyBuilder {
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {
         crate::types::ResourcePolicy {
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
-            policy_revision_id: self.policy_revision_id,
-            last_updated_time: self.last_updated_time,
+            policy_name: self.policy_name
+            ,
+            policy_document: self.policy_document
+            ,
+            policy_revision_id: self.policy_revision_id
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelInput {
+pub struct DeleteModelInput  {
     /// <p>The model ID of the model to delete.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type of the model to delete.</p>
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
 }
-impl DeleteModelInput {
+impl  DeleteModelInput  {
     /// <p>The model ID of the model to delete.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type of the model to delete.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteModelInputBuilder {
     }
     /// <p>The model ID of the model to delete.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID of the model to delete.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteModelInputBuilder {
     }
     /// <p>The model type of the model to delete.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type of the model to delete.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -65,9 +63,14 @@ impl DeleteModelInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_model::DeleteModelInput {
-            model_id: self.model_id,
-            model_type: self.model_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_model::DeleteModelInput {
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+            }
+        )
     }
 }
+

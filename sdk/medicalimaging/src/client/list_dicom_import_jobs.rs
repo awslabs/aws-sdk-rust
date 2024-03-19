@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDICOMImportJobs`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`datastore_id(impl Into<String>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
     ///   - [`job_status(JobStatus)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::job_status) / [`set_job_status(Option<JobStatus>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::set_job_status):<br>required: **false**<br><p>The filters for listing import jobs based on status.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to request the list of import jobs on the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The max results count. The upper bound is determined by load testing.</p><br>
-    /// - On success, responds with [`ListDicomImportJobsOutput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDicomImportJobsOutput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput) with field(s):
     ///   - [`job_summaries(Vec::<DicomImportJobSummary>)`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput::job_summaries): <p>A list of job summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput::next_token): <p>The pagination token used to retrieve the list of import jobs on the next page.</p>
-    /// - On failure, responds with [`SdkError<ListDICOMImportJobsError>`](crate::operation::list_dicom_import_jobs::ListDICOMImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListDICOMImportJobsError>`](crate::operation::list_dicom_import_jobs::ListDICOMImportJobsError)
     pub fn list_dicom_import_jobs(&self) -> crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder {
-        crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dicom_import_jobs::builders::ListDICOMImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

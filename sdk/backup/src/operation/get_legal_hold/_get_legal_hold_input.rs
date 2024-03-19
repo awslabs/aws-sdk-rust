@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLegalHoldInput {
+pub struct GetLegalHoldInput  {
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLegalHoldInput {
+impl  GetLegalHoldInput  {
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
-    pub fn legal_hold_id(&self) -> ::std::option::Option<&str> {
+    pub fn legal_hold_id(&self) -> ::std::option::Option<& str> {
         self.legal_hold_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetLegalHoldInputBuilder {
     }
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
     pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.legal_hold_id = input;
-        self
+        self.legal_hold_id = input; self
     }
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
     pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_hold_id
     }
     /// Consumes the builder and constructs a [`GetLegalHoldInput`](crate::operation::get_legal_hold::GetLegalHoldInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_legal_hold::GetLegalHoldInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_legal_hold::GetLegalHoldInput {
-            legal_hold_id: self.legal_hold_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_legal_hold::GetLegalHoldInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_legal_hold::GetLegalHoldInput {
+                legal_hold_id: self.legal_hold_id
+                ,
+            }
+        )
     }
 }
+

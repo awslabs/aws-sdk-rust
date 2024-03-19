@@ -3,15 +3,14 @@
 /// <p>The details of the Amazon Redshift cluster storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftClusterStorage {
+pub struct RedshiftClusterStorage  {
     /// <p>The name of an Amazon Redshift cluster.</p>
     pub cluster_name: ::std::string::String,
 }
-impl RedshiftClusterStorage {
+impl  RedshiftClusterStorage  {
     /// <p>The name of an Amazon Redshift cluster.</p>
-    pub fn cluster_name(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_name.deref()
+    pub fn cluster_name(&self) -> & str {
+        use std::ops::Deref; self.cluster_name.deref()
     }
 }
 impl RedshiftClusterStorage {
@@ -36,8 +35,7 @@ impl RedshiftClusterStorageBuilder {
     }
     /// <p>The name of an Amazon Redshift cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of an Amazon Redshift cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RedshiftClusterStorageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cluster_name`](crate::types::builders::RedshiftClusterStorageBuilder::cluster_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftClusterStorage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftClusterStorage {
-            cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cluster_name",
-                    "cluster_name was not specified but it is required when building RedshiftClusterStorage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftClusterStorage {
+                cluster_name: self.cluster_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cluster_name", "cluster_name was not specified but it is required when building RedshiftClusterStorage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

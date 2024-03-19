@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatabases`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p><br>
     ///   - [`database(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::database) / [`set_database(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_database):<br>required: **true**<br><p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p><br>
     ///   - [`secret_arn(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::secret_arn) / [`set_secret_arn(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_secret_arn):<br>required: **false**<br><p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_next_token):<br>required: **false**<br><p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results.</p><br>
     ///   - [`workgroup_name(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_workgroup_name):<br>required: **false**<br><p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p><br>
-    /// - On success, responds with [`ListDatabasesOutput`](crate::operation::list_databases::ListDatabasesOutput) with field(s):
+                            /// - On success, responds with [`ListDatabasesOutput`](crate::operation::list_databases::ListDatabasesOutput) with field(s):
     ///   - [`databases(Option<Vec::<String>>)`](crate::operation::list_databases::ListDatabasesOutput::databases): <p>The names of databases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_databases::ListDatabasesOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
-    /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
+                            /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
     pub fn list_databases(&self) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
-        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSamlProviderInput {
+pub struct DeleteSamlProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     pub saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSamlProviderInput {
+impl  DeleteSamlProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    pub fn saml_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn saml_provider_arn(&self) -> ::std::option::Option<& str> {
         self.saml_provider_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteSamlProviderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.saml_provider_arn = input;
-        self
+        self.saml_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.saml_provider_arn
     }
     /// Consumes the builder and constructs a [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_saml_provider::DeleteSamlProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_saml_provider::DeleteSamlProviderInput {
-            saml_provider_arn: self.saml_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_saml_provider::DeleteSamlProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_saml_provider::DeleteSamlProviderInput {
+                saml_provider_arn: self.saml_provider_arn
+                ,
+            }
+        )
     }
 }
+

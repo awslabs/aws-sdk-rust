@@ -4,15 +4,15 @@
 /// <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsServiceRecommendedOptionProjectedMetric {
+pub struct EcsServiceRecommendedOptionProjectedMetric  {
     /// <p>The recommended CPU size for the Amazon ECS service.</p>
     pub recommended_cpu_units: i32,
     /// <p>The recommended memory size for the Amazon ECS service.</p>
     pub recommended_memory_size: i32,
     /// <p>An array of objects that describe the projected metric.</p>
-    pub projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>>,
+    pub projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedMetric>>,
 }
-impl EcsServiceRecommendedOptionProjectedMetric {
+impl  EcsServiceRecommendedOptionProjectedMetric  {
     /// <p>The recommended CPU size for the Amazon ECS service.</p>
     pub fn recommended_cpu_units(&self) -> i32 {
         self.recommended_cpu_units
@@ -22,10 +22,11 @@ impl EcsServiceRecommendedOptionProjectedMetric {
         self.recommended_memory_size
     }
     /// <p>An array of objects that describe the projected metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_metrics.is_none()`.
-    pub fn projected_metrics(&self) -> &[crate::types::EcsServiceProjectedMetric] {
-        self.projected_metrics.as_deref().unwrap_or_default()
+    pub fn projected_metrics(&self) -> & [crate::types::EcsServiceProjectedMetric] {
+        self.projected_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsServiceRecommendedOptionProjectedMetric {
@@ -41,7 +42,7 @@ impl EcsServiceRecommendedOptionProjectedMetric {
 pub struct EcsServiceRecommendedOptionProjectedMetricBuilder {
     pub(crate) recommended_cpu_units: ::std::option::Option<i32>,
     pub(crate) recommended_memory_size: ::std::option::Option<i32>,
-    pub(crate) projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>>,
+    pub(crate) projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedMetric>>,
 }
 impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     /// <p>The recommended CPU size for the Amazon ECS service.</p>
@@ -51,8 +52,7 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     }
     /// <p>The recommended CPU size for the Amazon ECS service.</p>
     pub fn set_recommended_cpu_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.recommended_cpu_units = input;
-        self
+        self.recommended_cpu_units = input; self
     }
     /// <p>The recommended CPU size for the Amazon ECS service.</p>
     pub fn get_recommended_cpu_units(&self) -> &::std::option::Option<i32> {
@@ -65,8 +65,7 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     }
     /// <p>The recommended memory size for the Amazon ECS service.</p>
     pub fn set_recommended_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.recommended_memory_size = input;
-        self
+        self.recommended_memory_size = input; self
     }
     /// <p>The recommended memory size for the Amazon ECS service.</p>
     pub fn get_recommended_memory_size(&self) -> &::std::option::Option<i32> {
@@ -79,25 +78,30 @@ impl EcsServiceRecommendedOptionProjectedMetricBuilder {
     /// <p>An array of objects that describe the projected metric.</p>
     pub fn projected_metrics(mut self, input: crate::types::EcsServiceProjectedMetric) -> Self {
         let mut v = self.projected_metrics.unwrap_or_default();
-        v.push(input);
-        self.projected_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.projected_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the projected metric.</p>
-    pub fn set_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>>) -> Self {
-        self.projected_metrics = input;
-        self
+    pub fn set_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedMetric>>) -> Self {
+        self.projected_metrics = input; self
     }
     /// <p>An array of objects that describe the projected metric.</p>
-    pub fn get_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>> {
+    pub fn get_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedMetric>> {
         &self.projected_metrics
     }
     /// Consumes the builder and constructs a [`EcsServiceRecommendedOptionProjectedMetric`](crate::types::EcsServiceRecommendedOptionProjectedMetric).
     pub fn build(self) -> crate::types::EcsServiceRecommendedOptionProjectedMetric {
         crate::types::EcsServiceRecommendedOptionProjectedMetric {
-            recommended_cpu_units: self.recommended_cpu_units.unwrap_or_default(),
-            recommended_memory_size: self.recommended_memory_size.unwrap_or_default(),
-            projected_metrics: self.projected_metrics,
+            recommended_cpu_units: self.recommended_cpu_units
+                .unwrap_or_default()
+            ,
+            recommended_memory_size: self.recommended_memory_size
+                .unwrap_or_default()
+            ,
+            projected_metrics: self.projected_metrics
+            ,
         }
     }
 }
+

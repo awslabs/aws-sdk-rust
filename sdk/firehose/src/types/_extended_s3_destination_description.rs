@@ -3,7 +3,7 @@
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtendedS3DestinationDescription {
+pub struct ExtendedS3DestinationDescription  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub role_arn: ::std::string::String,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -35,67 +35,65 @@ pub struct ExtendedS3DestinationDescription {
     /// <p>The time zone you prefer. UTC is the default.</p>
     pub custom_time_zone: ::std::option::Option<::std::string::String>,
 }
-impl ExtendedS3DestinationDescription {
+impl  ExtendedS3DestinationDescription  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn error_output_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn error_output_prefix(&self) -> ::std::option::Option<& str> {
         self.error_output_prefix.as_deref()
     }
     /// <p>The buffering option.</p>
-    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::BufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<& crate::types::BufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
-    pub fn compression_format(&self) -> &crate::types::CompressionFormat {
+    pub fn compression_format(&self) -> & crate::types::CompressionFormat {
         &self.compression_format
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::S3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<& crate::types::S3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The configuration for backup in Amazon S3.</p>
-    pub fn s3_backup_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_backup_description(&self) -> ::std::option::Option<& crate::types::S3DestinationDescription> {
         self.s3_backup_description.as_ref()
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
-    pub fn data_format_conversion_configuration(&self) -> ::std::option::Option<&crate::types::DataFormatConversionConfiguration> {
+    pub fn data_format_conversion_configuration(&self) -> ::std::option::Option<& crate::types::DataFormatConversionConfiguration> {
         self.data_format_conversion_configuration.as_ref()
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
-    pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
+    pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<& crate::types::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
     }
     /// <p>Specify a file extension. It will override the default file extension</p>
-    pub fn file_extension(&self) -> ::std::option::Option<&str> {
+    pub fn file_extension(&self) -> ::std::option::Option<& str> {
         self.file_extension.as_deref()
     }
     /// <p>The time zone you prefer. UTC is the default.</p>
-    pub fn custom_time_zone(&self) -> ::std::option::Option<&str> {
+    pub fn custom_time_zone(&self) -> ::std::option::Option<& str> {
         self.custom_time_zone.as_deref()
     }
 }
@@ -135,8 +133,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +173,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn set_error_output_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_output_prefix = input;
-        self
+        self.error_output_prefix = input; self
     }
     /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn get_error_output_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +187,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The buffering option.</p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::BufferingHints>) -> Self {
-        self.buffering_hints = input;
-        self
+        self.buffering_hints = input; self
     }
     /// <p>The buffering option.</p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::BufferingHints> {
@@ -208,8 +201,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn set_compression_format(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
-        self.compression_format = input;
-        self
+        self.compression_format = input; self
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn get_compression_format(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
@@ -223,8 +215,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -237,8 +228,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -251,8 +241,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>The data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -265,8 +254,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The Amazon S3 backup mode.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::S3BackupMode>) -> Self {
-        self.s3_backup_mode = input;
-        self
+        self.s3_backup_mode = input; self
     }
     /// <p>The Amazon S3 backup mode.</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::S3BackupMode> {
@@ -279,8 +267,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The configuration for backup in Amazon S3.</p>
     pub fn set_s3_backup_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
-        self.s3_backup_description = input;
-        self
+        self.s3_backup_description = input; self
     }
     /// <p>The configuration for backup in Amazon S3.</p>
     pub fn get_s3_backup_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
@@ -293,8 +280,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
     pub fn set_data_format_conversion_configuration(mut self, input: ::std::option::Option<crate::types::DataFormatConversionConfiguration>) -> Self {
-        self.data_format_conversion_configuration = input;
-        self
+        self.data_format_conversion_configuration = input; self
     }
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
     pub fn get_data_format_conversion_configuration(&self) -> &::std::option::Option<crate::types::DataFormatConversionConfiguration> {
@@ -307,8 +293,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn set_dynamic_partitioning_configuration(mut self, input: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>) -> Self {
-        self.dynamic_partitioning_configuration = input;
-        self
+        self.dynamic_partitioning_configuration = input; self
     }
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn get_dynamic_partitioning_configuration(&self) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
@@ -321,8 +306,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>Specify a file extension. It will override the default file extension</p>
     pub fn set_file_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_extension = input;
-        self
+        self.file_extension = input; self
     }
     /// <p>Specify a file extension. It will override the default file extension</p>
     pub fn get_file_extension(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +319,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
     }
     /// <p>The time zone you prefer. UTC is the default.</p>
     pub fn set_custom_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_time_zone = input;
-        self
+        self.custom_time_zone = input; self
     }
     /// <p>The time zone you prefer. UTC is the default.</p>
     pub fn get_custom_time_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,37 +331,49 @@ impl ExtendedS3DestinationDescriptionBuilder {
     /// - [`bucket_arn`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::bucket_arn)
     /// - [`compression_format`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::compression_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ExtendedS3DestinationDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExtendedS3DestinationDescription {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ExtendedS3DestinationDescription",
-                )
-            })?,
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building ExtendedS3DestinationDescription",
-                )
-            })?,
-            prefix: self.prefix,
-            error_output_prefix: self.error_output_prefix,
-            buffering_hints: self.buffering_hints,
-            compression_format: self.compression_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compression_format",
-                    "compression_format was not specified but it is required when building ExtendedS3DestinationDescription",
-                )
-            })?,
-            encryption_configuration: self.encryption_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            processing_configuration: self.processing_configuration,
-            s3_backup_mode: self.s3_backup_mode,
-            s3_backup_description: self.s3_backup_description,
-            data_format_conversion_configuration: self.data_format_conversion_configuration,
-            dynamic_partitioning_configuration: self.dynamic_partitioning_configuration,
-            file_extension: self.file_extension,
-            custom_time_zone: self.custom_time_zone,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExtendedS3DestinationDescription {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ExtendedS3DestinationDescription")
+                    )?
+                ,
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building ExtendedS3DestinationDescription")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+                error_output_prefix: self.error_output_prefix
+                ,
+                buffering_hints: self.buffering_hints
+                ,
+                compression_format: self.compression_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compression_format", "compression_format was not specified but it is required when building ExtendedS3DestinationDescription")
+                    )?
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                cloud_watch_logging_options: self.cloud_watch_logging_options
+                ,
+                processing_configuration: self.processing_configuration
+                ,
+                s3_backup_mode: self.s3_backup_mode
+                ,
+                s3_backup_description: self.s3_backup_description
+                ,
+                data_format_conversion_configuration: self.data_format_conversion_configuration
+                ,
+                dynamic_partitioning_configuration: self.dynamic_partitioning_configuration
+                ,
+                file_extension: self.file_extension
+                ,
+                custom_time_zone: self.custom_time_zone
+                ,
+            }
+        )
     }
 }
+

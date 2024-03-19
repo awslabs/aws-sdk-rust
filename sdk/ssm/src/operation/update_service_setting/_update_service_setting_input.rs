@@ -3,7 +3,7 @@
 /// <p>The request body of the UpdateServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSettingInput {
+pub struct UpdateServiceSettingInput  {
     /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
     /// <ul>
     /// <li>
@@ -47,7 +47,7 @@ pub struct UpdateServiceSettingInput {
     /// </ul>
     pub setting_value: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServiceSettingInput {
+impl  UpdateServiceSettingInput  {
     /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
     /// <ul>
     /// <li>
@@ -69,7 +69,7 @@ impl UpdateServiceSettingInput {
     /// </ul><note>
     /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
     /// </note>
-    pub fn setting_id(&self) -> ::std::option::Option<&str> {
+    pub fn setting_id(&self) -> ::std::option::Option<& str> {
         self.setting_id.as_deref()
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
@@ -91,7 +91,7 @@ impl UpdateServiceSettingInput {
     /// <li>
     /// <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p></li>
     /// </ul>
-    pub fn setting_value(&self) -> ::std::option::Option<&str> {
+    pub fn setting_value(&self) -> ::std::option::Option<& str> {
         self.setting_value.as_deref()
     }
 }
@@ -158,8 +158,7 @@ impl UpdateServiceSettingInputBuilder {
     /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
     /// </note>
     pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.setting_id = input;
-        self
+        self.setting_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to update. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
     /// <ul>
@@ -229,8 +228,7 @@ impl UpdateServiceSettingInputBuilder {
     /// <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p></li>
     /// </ul>
     pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.setting_value = input;
-        self
+        self.setting_value = input; self
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
@@ -255,13 +253,15 @@ impl UpdateServiceSettingInputBuilder {
         &self.setting_value
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_setting::UpdateServiceSettingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_setting::UpdateServiceSettingInput {
-            setting_id: self.setting_id,
-            setting_value: self.setting_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_setting::UpdateServiceSettingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_setting::UpdateServiceSettingInput {
+                setting_id: self.setting_id
+                ,
+                setting_value: self.setting_value
+                ,
+            }
+        )
     }
 }
+

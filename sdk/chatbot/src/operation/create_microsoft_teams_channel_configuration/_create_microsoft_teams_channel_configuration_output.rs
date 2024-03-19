@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMicrosoftTeamsChannelConfigurationOutput {
+pub struct CreateMicrosoftTeamsChannelConfigurationOutput  {
     /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
     pub channel_configuration: ::std::option::Option<crate::types::TeamsChannelConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateMicrosoftTeamsChannelConfigurationOutput {
+impl  CreateMicrosoftTeamsChannelConfigurationOutput  {
     /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
-    pub fn channel_configuration(&self) -> ::std::option::Option<&crate::types::TeamsChannelConfiguration> {
+    pub fn channel_configuration(&self) -> ::std::option::Option<& crate::types::TeamsChannelConfiguration> {
         self.channel_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMicrosoftTeamsChannelConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMicrosoftTeamsChannelConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateMicrosoftTeamsChannelConfigurationOutput`](crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationOutput).
-    pub fn builder() -> crate::operation::create_microsoft_teams_channel_configuration::builders::CreateMicrosoftTeamsChannelConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_microsoft_teams_channel_configuration::builders::CreateMicrosoftTeamsChannelConfigurationOutputBuilder {
         crate::operation::create_microsoft_teams_channel_configuration::builders::CreateMicrosoftTeamsChannelConfigurationOutputBuilder::default()
     }
 }
@@ -41,27 +40,28 @@ impl CreateMicrosoftTeamsChannelConfigurationOutputBuilder {
     }
     /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
     pub fn set_channel_configuration(mut self, input: ::std::option::Option<crate::types::TeamsChannelConfiguration>) -> Self {
-        self.channel_configuration = input;
-        self
+        self.channel_configuration = input; self
     }
     /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
     pub fn get_channel_configuration(&self) -> &::std::option::Option<crate::types::TeamsChannelConfiguration> {
         &self.channel_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMicrosoftTeamsChannelConfigurationOutput`](crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationOutput).
     pub fn build(self) -> crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationOutput {
         crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationOutput {
-            channel_configuration: self.channel_configuration,
+            channel_configuration: self.channel_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationJobVpcConfig {
+pub struct RecommendationJobVpcConfig  {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RecommendationJobVpcConfig {
+impl  RecommendationJobVpcConfig  {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
-    pub fn subnets(&self) -> &[::std::string::String] {
-        self.subnets.as_deref().unwrap_or_default()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        self.subnets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendationJobVpcConfig {
@@ -34,8 +36,8 @@ impl RecommendationJobVpcConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobVpcConfigBuilder {
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RecommendationJobVpcConfigBuilder {
     /// Appends an item to `security_group_ids`.
@@ -45,17 +47,16 @@ impl RecommendationJobVpcConfigBuilder {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `subnets`.
@@ -65,24 +66,26 @@ impl RecommendationJobVpcConfigBuilder {
     /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>The ID of the subnets in the VPC to which you want to connect your model.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Consumes the builder and constructs a [`RecommendationJobVpcConfig`](crate::types::RecommendationJobVpcConfig).
     pub fn build(self) -> crate::types::RecommendationJobVpcConfig {
         crate::types::RecommendationJobVpcConfig {
-            security_group_ids: self.security_group_ids,
-            subnets: self.subnets,
+            security_group_ids: self.security_group_ids
+            ,
+            subnets: self.subnets
+            ,
         }
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Information about notes for a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationNote {
+pub struct EvaluationNote  {
     /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
     /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
     /// </note>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationNote {
+impl  EvaluationNote  {
     /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
     /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
     /// </note>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EvaluationNoteBuilder {
     /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
     /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
@@ -53,6 +52,10 @@ impl EvaluationNoteBuilder {
     }
     /// Consumes the builder and constructs a [`EvaluationNote`](crate::types::EvaluationNote).
     pub fn build(self) -> crate::types::EvaluationNote {
-        crate::types::EvaluationNote { value: self.value }
+        crate::types::EvaluationNote {
+            value: self.value
+            ,
+        }
     }
 }
+

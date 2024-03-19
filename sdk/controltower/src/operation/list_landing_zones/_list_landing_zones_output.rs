@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLandingZonesOutput {
+pub struct ListLandingZonesOutput  {
     /// <p>The ARN of the landing zone.</p>
-    pub landing_zones: ::std::vec::Vec<crate::types::LandingZoneSummary>,
+    pub landing_zones: ::std::vec::Vec::<crate::types::LandingZoneSummary>,
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLandingZonesOutput {
+impl  ListLandingZonesOutput  {
     /// <p>The ARN of the landing zone.</p>
-    pub fn landing_zones(&self) -> &[crate::types::LandingZoneSummary] {
-        use std::ops::Deref;
-        self.landing_zones.deref()
+    pub fn landing_zones(&self) -> & [crate::types::LandingZoneSummary] {
+        use std::ops::Deref; self.landing_zones.deref()
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLandingZonesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLandingZonesOutput {
     /// Creates a new builder-style object to manufacture [`ListLandingZonesOutput`](crate::operation::list_landing_zones::ListLandingZonesOutput).
     pub fn builder() -> crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListLandingZonesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLandingZonesOutputBuilder {
-    pub(crate) landing_zones: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>>,
+    pub(crate) landing_zones: ::std::option::Option<::std::vec::Vec::<crate::types::LandingZoneSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListLandingZonesOutputBuilder {
     /// <p>The ARN of the landing zone.</p>
     pub fn landing_zones(mut self, input: crate::types::LandingZoneSummary) -> Self {
         let mut v = self.landing_zones.unwrap_or_default();
-        v.push(input);
-        self.landing_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.landing_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the landing zone.</p>
-    pub fn set_landing_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>>) -> Self {
-        self.landing_zones = input;
-        self
+    pub fn set_landing_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LandingZoneSummary>>) -> Self {
+        self.landing_zones = input; self
     }
     /// <p>The ARN of the landing zone.</p>
-    pub fn get_landing_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>> {
+    pub fn get_landing_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LandingZoneSummary>> {
         &self.landing_zones
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
@@ -68,37 +66,37 @@ impl ListLandingZonesOutputBuilder {
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLandingZonesOutput`](crate::operation::list_landing_zones::ListLandingZonesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`landing_zones`](crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder::landing_zones)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_landing_zones::ListLandingZonesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_landing_zones::ListLandingZonesOutput {
-            landing_zones: self.landing_zones.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "landing_zones",
-                    "landing_zones was not specified but it is required when building ListLandingZonesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_landing_zones::ListLandingZonesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_landing_zones::ListLandingZonesOutput {
+                landing_zones: self.landing_zones
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("landing_zones", "landing_zones was not specified but it is required when building ListLandingZonesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

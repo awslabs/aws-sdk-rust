@@ -3,7 +3,7 @@
 /// <p>This contains metadata about a restore testing selection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTestingSelectionForList {
+pub struct RestoreTestingSelectionForList  {
     /// <p>This is the date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,2018 12:11:30.087 AM.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
@@ -19,31 +19,27 @@ pub struct RestoreTestingSelectionForList {
     /// <p>Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).</p>
     pub validation_window_hours: i32,
 }
-impl RestoreTestingSelectionForList {
+impl  RestoreTestingSelectionForList  {
     /// <p>This is the date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,2018 12:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn protected_resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.protected_resource_type.deref()
+    pub fn protected_resource_type(&self) -> & str {
+        use std::ops::Deref; self.protected_resource_type.deref()
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name must consist of only alphanumeric characters and underscores. Maximum length is 50.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>Unique name of a restore testing selection.</p>
-    pub fn restore_testing_selection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_selection_name.deref()
+    pub fn restore_testing_selection_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_selection_name.deref()
     }
     /// <p>This value represents the time, in hours, data is retained after a restore test so that optional validation can be completed.</p>
     /// <p>Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).</p>
@@ -78,8 +74,7 @@ impl RestoreTestingSelectionForListBuilder {
     }
     /// <p>This is the date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,2018 12:11:30.087 AM.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>This is the date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,2018 12:11:30.087 AM.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,8 +88,7 @@ impl RestoreTestingSelectionForListBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +102,7 @@ impl RestoreTestingSelectionForListBuilder {
     }
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn set_protected_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protected_resource_type = input;
-        self
+        self.protected_resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn get_protected_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +118,7 @@ impl RestoreTestingSelectionForListBuilder {
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name must consist of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name must consist of only alphanumeric characters and underscores. Maximum length is 50.</p>
@@ -141,8 +133,7 @@ impl RestoreTestingSelectionForListBuilder {
     }
     /// <p>Unique name of a restore testing selection.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>Unique name of a restore testing selection.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +148,7 @@ impl RestoreTestingSelectionForListBuilder {
     /// <p>This value represents the time, in hours, data is retained after a restore test so that optional validation can be completed.</p>
     /// <p>Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).</p>
     pub fn set_validation_window_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.validation_window_hours = input;
-        self
+        self.validation_window_hours = input; self
     }
     /// <p>This value represents the time, in hours, data is retained after a restore test so that optional validation can be completed.</p>
     /// <p>Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).</p>
@@ -173,38 +163,38 @@ impl RestoreTestingSelectionForListBuilder {
     /// - [`restore_testing_plan_name`](crate::types::builders::RestoreTestingSelectionForListBuilder::restore_testing_plan_name)
     /// - [`restore_testing_selection_name`](crate::types::builders::RestoreTestingSelectionForListBuilder::restore_testing_selection_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RestoreTestingSelectionForList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RestoreTestingSelectionForList {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building RestoreTestingSelectionForList",
-                )
-            })?,
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building RestoreTestingSelectionForList",
-                )
-            })?,
-            protected_resource_type: self.protected_resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protected_resource_type",
-                    "protected_resource_type was not specified but it is required when building RestoreTestingSelectionForList",
-                )
-            })?,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building RestoreTestingSelectionForList",
-                )
-            })?,
-            restore_testing_selection_name: self.restore_testing_selection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_selection_name",
-                    "restore_testing_selection_name was not specified but it is required when building RestoreTestingSelectionForList",
-                )
-            })?,
-            validation_window_hours: self.validation_window_hours.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RestoreTestingSelectionForList {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building RestoreTestingSelectionForList")
+                    )?
+                ,
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building RestoreTestingSelectionForList")
+                    )?
+                ,
+                protected_resource_type: self.protected_resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protected_resource_type", "protected_resource_type was not specified but it is required when building RestoreTestingSelectionForList")
+                    )?
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building RestoreTestingSelectionForList")
+                    )?
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_selection_name", "restore_testing_selection_name was not specified but it is required when building RestoreTestingSelectionForList")
+                    )?
+                ,
+                validation_window_hours: self.validation_window_hours
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

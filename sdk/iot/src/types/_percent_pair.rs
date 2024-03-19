@@ -3,13 +3,13 @@
 /// <p>Describes the percentile and percentile value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PercentPair {
+pub struct PercentPair  {
     /// <p>The percentile.</p>
     pub percent: f64,
     /// <p>The value of the percentile.</p>
     pub value: f64,
 }
-impl PercentPair {
+impl  PercentPair  {
     /// <p>The percentile.</p>
     pub fn percent(&self) -> f64 {
         self.percent
@@ -41,8 +41,7 @@ impl PercentPairBuilder {
     }
     /// <p>The percentile.</p>
     pub fn set_percent(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percent = input;
-        self
+        self.percent = input; self
     }
     /// <p>The percentile.</p>
     pub fn get_percent(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl PercentPairBuilder {
     }
     /// <p>The value of the percentile.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the percentile.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,13 @@ impl PercentPairBuilder {
     /// Consumes the builder and constructs a [`PercentPair`](crate::types::PercentPair).
     pub fn build(self) -> crate::types::PercentPair {
         crate::types::PercentPair {
-            percent: self.percent.unwrap_or_default(),
-            value: self.value.unwrap_or_default(),
+            percent: self.percent
+                .unwrap_or_default()
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

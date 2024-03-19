@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsFromResourceInput {
+pub struct RemoveTagsFromResourceInput  {
     /// <p>The type of resource from which you want to remove a tag.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
@@ -18,13 +18,13 @@ pub struct RemoveTagsFromResourceInput {
     /// </note>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveTagsFromResourceInput {
+impl  RemoveTagsFromResourceInput  {
     /// <p>The type of resource from which you want to remove a tag.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceTypeForTagging> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceTypeForTagging> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
@@ -36,14 +36,15 @@ impl RemoveTagsFromResourceInput {
     /// <p>For the Document and Parameter values, use the name of the resource.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
     /// </note>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveTagsFromResourceInput {
@@ -59,7 +60,7 @@ impl RemoveTagsFromResourceInput {
 pub struct RemoveTagsFromResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInputBuilder {
     /// <p>The type of resource from which you want to remove a tag.</p><note>
@@ -74,8 +75,7 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource from which you want to remove a tag.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -107,8 +107,7 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
     /// </note>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
     /// <p>ManagedInstance: mi-012345abcde</p>
@@ -129,30 +128,30 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>Tag keys that you want to remove from the specified resource.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

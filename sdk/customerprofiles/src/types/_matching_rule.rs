@@ -39,15 +39,14 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchingRule {
+pub struct MatchingRule  {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub rule: ::std::vec::Vec<::std::string::String>,
+    pub rule: ::std::vec::Vec::<::std::string::String>,
 }
-impl MatchingRule {
+impl  MatchingRule  {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub fn rule(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.rule.deref()
+    pub fn rule(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.rule.deref()
     }
 }
 impl MatchingRule {
@@ -61,7 +60,7 @@ impl MatchingRule {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchingRuleBuilder {
-    pub(crate) rule: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rule: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl MatchingRuleBuilder {
     /// Appends an item to `rule`.
@@ -71,30 +70,31 @@ impl MatchingRuleBuilder {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
     pub fn rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule.unwrap_or_default();
-        v.push(input.into());
-        self.rule = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub fn set_rule(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rule = input;
-        self
+    pub fn set_rule(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rule = input; self
     }
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    pub fn get_rule(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rule(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rule
     }
     /// Consumes the builder and constructs a [`MatchingRule`](crate::types::MatchingRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule`](crate::types::builders::MatchingRuleBuilder::rule)
     pub fn build(self) -> ::std::result::Result<crate::types::MatchingRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MatchingRule {
-            rule: self.rule.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule",
-                    "rule was not specified but it is required when building MatchingRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MatchingRule {
+                rule: self.rule
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule", "rule was not specified but it is required when building MatchingRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecateSystemTemplateInput {
+pub struct DeprecateSystemTemplateInput  {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeprecateSystemTemplateInput {
+impl  DeprecateSystemTemplateInput  {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeprecateSystemTemplateInputBuilder {
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
@@ -52,12 +51,13 @@ impl DeprecateSystemTemplateInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeprecateSystemTemplateInput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_system_template::DeprecateSystemTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deprecate_system_template::DeprecateSystemTemplateInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprecate_system_template::DeprecateSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deprecate_system_template::DeprecateSystemTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

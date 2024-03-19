@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWorkspaceApplicationOutput {
+pub struct DisassociateWorkspaceApplicationOutput  {
     /// <p>Information about the targeted association.</p>
     pub association: ::std::option::Option<crate::types::WorkspaceResourceAssociation>,
     _request_id: Option<String>,
 }
-impl DisassociateWorkspaceApplicationOutput {
+impl  DisassociateWorkspaceApplicationOutput  {
     /// <p>Information about the targeted association.</p>
-    pub fn association(&self) -> ::std::option::Option<&crate::types::WorkspaceResourceAssociation> {
+    pub fn association(&self) -> ::std::option::Option<& crate::types::WorkspaceResourceAssociation> {
         self.association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateWorkspaceApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateWorkspaceApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWorkspaceApplicationOutput`](crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationOutput).
     pub fn builder() -> crate::operation::disassociate_workspace_application::builders::DisassociateWorkspaceApplicationOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateWorkspaceApplicationOutputBuilder {
     }
     /// <p>Information about the targeted association.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::WorkspaceResourceAssociation>) -> Self {
-        self.association = input;
-        self
+        self.association = input; self
     }
     /// <p>Information about the targeted association.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::WorkspaceResourceAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateWorkspaceApplicationOutput`](crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationOutput).
     pub fn build(self) -> crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationOutput {
         crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationOutput {
-            association: self.association,
+            association: self.association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

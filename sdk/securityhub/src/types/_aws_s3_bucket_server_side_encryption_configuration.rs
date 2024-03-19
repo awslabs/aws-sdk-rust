@@ -3,16 +3,17 @@
 /// <p>The encryption configuration for the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketServerSideEncryptionConfiguration {
+pub struct AwsS3BucketServerSideEncryptionConfiguration  {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }
-impl AwsS3BucketServerSideEncryptionConfiguration {
+impl  AwsS3BucketServerSideEncryptionConfiguration  {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AwsS3BucketServerSideEncryptionRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AwsS3BucketServerSideEncryptionRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsS3BucketServerSideEncryptionConfiguration {
@@ -26,7 +27,7 @@ impl AwsS3BucketServerSideEncryptionConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketServerSideEncryptionConfigurationBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }
 impl AwsS3BucketServerSideEncryptionConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -36,21 +37,24 @@ impl AwsS3BucketServerSideEncryptionConfigurationBuilder {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     pub fn rules(mut self, input: crate::types::AwsS3BucketServerSideEncryptionRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketServerSideEncryptionRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketServerSideEncryptionRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionConfiguration`](crate::types::AwsS3BucketServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketServerSideEncryptionConfiguration {
-        crate::types::AwsS3BucketServerSideEncryptionConfiguration { rules: self.rules }
+        crate::types::AwsS3BucketServerSideEncryptionConfiguration {
+            rules: self.rules
+            ,
+        }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(EndpointSortKey)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::sort_by) / [`set_sort_by(Option<EndpointSortKey>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sorts the list of results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(OrderKey)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`last_modified_time_before(DateTime)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_last_modified_time_before):<br>required: **false**<br><p>A filter that returns only endpoints that were modified before the specified timestamp.</p><br>
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>A filter that returns only endpoints that were modified after the specified timestamp.</p><br>
     ///   - [`status_equals(EndpointStatus)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::status_equals) / [`set_status_equals(Option<EndpointStatus>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that returns only endpoints with the specified status.</p><br>
-    /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
     ///   - [`endpoints(Option<Vec::<EndpointSummary>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p>An array or endpoint objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
+                            /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
     pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

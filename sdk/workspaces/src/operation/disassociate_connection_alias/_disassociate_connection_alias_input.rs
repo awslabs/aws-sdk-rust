@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateConnectionAliasInput {
+pub struct DisassociateConnectionAliasInput  {
     /// <p>The identifier of the connection alias to disassociate.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateConnectionAliasInput {
+impl  DisassociateConnectionAliasInput  {
     /// <p>The identifier of the connection alias to disassociate.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DisassociateConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the connection alias to disassociate.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>The identifier of the connection alias to disassociate.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_id
     }
     /// Consumes the builder and constructs a [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput { alias_id: self.alias_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput {
+                alias_id: self.alias_id
+                ,
+            }
+        )
     }
 }
+

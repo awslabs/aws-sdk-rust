@@ -3,7 +3,7 @@
 /// <p>Specifications about the inference parameters that were provided alongside the prompt. These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters for foundation models</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceConfiguration {
+pub struct InferenceConfiguration  {
     /// <p>The likelihood of the model selecting higher-probability options while generating a response. A lower value makes the model more likely to choose higher-probability options, while a higher value makes the model more likely to choose lower-probability options.</p>
     pub temperature: ::std::option::Option<f32>,
     /// <p>While generating a response, the model determines the probability of the following token at each point of generation. The value that you set for <code>Top P</code> determines the number of most-likely candidates from which the model chooses the next token in the sequence. For example, if you set <code>topP</code> to 80, the model only selects the next token from the top 80% of the probability distribution of next tokens.</p>
@@ -13,9 +13,9 @@ pub struct InferenceConfiguration {
     /// <p>The maximum number of tokens allowed in the generated response.</p>
     pub maximum_length: ::std::option::Option<i32>,
     /// <p>A list of stop sequences. A stop sequence is a sequence of characters that causes the model to stop generating the response.</p>
-    pub stop_sequences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub stop_sequences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl InferenceConfiguration {
+impl  InferenceConfiguration  {
     /// <p>The likelihood of the model selecting higher-probability options while generating a response. A lower value makes the model more likely to choose higher-probability options, while a higher value makes the model more likely to choose lower-probability options.</p>
     pub fn temperature(&self) -> ::std::option::Option<f32> {
         self.temperature
@@ -33,10 +33,11 @@ impl InferenceConfiguration {
         self.maximum_length
     }
     /// <p>A list of stop sequences. A stop sequence is a sequence of characters that causes the model to stop generating the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_sequences.is_none()`.
-    pub fn stop_sequences(&self) -> &[::std::string::String] {
-        self.stop_sequences.as_deref().unwrap_or_default()
+    pub fn stop_sequences(&self) -> & [::std::string::String] {
+        self.stop_sequences.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InferenceConfiguration {
@@ -54,7 +55,7 @@ pub struct InferenceConfigurationBuilder {
     pub(crate) top_p: ::std::option::Option<f32>,
     pub(crate) top_k: ::std::option::Option<i32>,
     pub(crate) maximum_length: ::std::option::Option<i32>,
-    pub(crate) stop_sequences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stop_sequences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InferenceConfigurationBuilder {
     /// <p>The likelihood of the model selecting higher-probability options while generating a response. A lower value makes the model more likely to choose higher-probability options, while a higher value makes the model more likely to choose lower-probability options.</p>
@@ -64,8 +65,7 @@ impl InferenceConfigurationBuilder {
     }
     /// <p>The likelihood of the model selecting higher-probability options while generating a response. A lower value makes the model more likely to choose higher-probability options, while a higher value makes the model more likely to choose lower-probability options.</p>
     pub fn set_temperature(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.temperature = input;
-        self
+        self.temperature = input; self
     }
     /// <p>The likelihood of the model selecting higher-probability options while generating a response. A lower value makes the model more likely to choose higher-probability options, while a higher value makes the model more likely to choose lower-probability options.</p>
     pub fn get_temperature(&self) -> &::std::option::Option<f32> {
@@ -78,8 +78,7 @@ impl InferenceConfigurationBuilder {
     }
     /// <p>While generating a response, the model determines the probability of the following token at each point of generation. The value that you set for <code>Top P</code> determines the number of most-likely candidates from which the model chooses the next token in the sequence. For example, if you set <code>topP</code> to 80, the model only selects the next token from the top 80% of the probability distribution of next tokens.</p>
     pub fn set_top_p(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.top_p = input;
-        self
+        self.top_p = input; self
     }
     /// <p>While generating a response, the model determines the probability of the following token at each point of generation. The value that you set for <code>Top P</code> determines the number of most-likely candidates from which the model chooses the next token in the sequence. For example, if you set <code>topP</code> to 80, the model only selects the next token from the top 80% of the probability distribution of next tokens.</p>
     pub fn get_top_p(&self) -> &::std::option::Option<f32> {
@@ -92,8 +91,7 @@ impl InferenceConfigurationBuilder {
     }
     /// <p>While generating a response, the model determines the probability of the following token at each point of generation. The value that you set for <code>topK</code> is the number of most-likely candidates from which the model chooses the next token in the sequence. For example, if you set <code>topK</code> to 50, the model selects the next token from among the top 50 most likely choices.</p>
     pub fn set_top_k(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.top_k = input;
-        self
+        self.top_k = input; self
     }
     /// <p>While generating a response, the model determines the probability of the following token at each point of generation. The value that you set for <code>topK</code> is the number of most-likely candidates from which the model chooses the next token in the sequence. For example, if you set <code>topK</code> to 50, the model selects the next token from among the top 50 most likely choices.</p>
     pub fn get_top_k(&self) -> &::std::option::Option<i32> {
@@ -106,8 +104,7 @@ impl InferenceConfigurationBuilder {
     }
     /// <p>The maximum number of tokens allowed in the generated response.</p>
     pub fn set_maximum_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_length = input;
-        self
+        self.maximum_length = input; self
     }
     /// <p>The maximum number of tokens allowed in the generated response.</p>
     pub fn get_maximum_length(&self) -> &::std::option::Option<i32> {
@@ -120,27 +117,32 @@ impl InferenceConfigurationBuilder {
     /// <p>A list of stop sequences. A stop sequence is a sequence of characters that causes the model to stop generating the response.</p>
     pub fn stop_sequences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stop_sequences.unwrap_or_default();
-        v.push(input.into());
-        self.stop_sequences = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.stop_sequences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of stop sequences. A stop sequence is a sequence of characters that causes the model to stop generating the response.</p>
-    pub fn set_stop_sequences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.stop_sequences = input;
-        self
+    pub fn set_stop_sequences(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.stop_sequences = input; self
     }
     /// <p>A list of stop sequences. A stop sequence is a sequence of characters that causes the model to stop generating the response.</p>
-    pub fn get_stop_sequences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stop_sequences(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.stop_sequences
     }
     /// Consumes the builder and constructs a [`InferenceConfiguration`](crate::types::InferenceConfiguration).
     pub fn build(self) -> crate::types::InferenceConfiguration {
         crate::types::InferenceConfiguration {
-            temperature: self.temperature,
-            top_p: self.top_p,
-            top_k: self.top_k,
-            maximum_length: self.maximum_length,
-            stop_sequences: self.stop_sequences,
+            temperature: self.temperature
+            ,
+            top_p: self.top_p
+            ,
+            top_k: self.top_k
+            ,
+            maximum_length: self.maximum_length
+            ,
+            stop_sequences: self.stop_sequences
+            ,
         }
     }
 }
+

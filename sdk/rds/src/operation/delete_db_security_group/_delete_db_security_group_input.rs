@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbSecurityGroupInput {
+pub struct DeleteDbSecurityGroupInput  {
     /// <p>The name of the DB security group to delete.</p><note>
     /// <p>You can't delete the default DB security group.</p>
     /// </note>
@@ -20,7 +20,7 @@ pub struct DeleteDbSecurityGroupInput {
     /// </ul>
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbSecurityGroupInput {
+impl  DeleteDbSecurityGroupInput  {
     /// <p>The name of the DB security group to delete.</p><note>
     /// <p>You can't delete the default DB security group.</p>
     /// </note>
@@ -35,7 +35,7 @@ impl DeleteDbSecurityGroupInput {
     /// <li>
     /// <p>Must not be "Default"</p></li>
     /// </ul>
-    pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_security_group_name(&self) -> ::std::option::Option<& str> {
         self.db_security_group_name.as_deref()
     }
 }
@@ -87,8 +87,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// <p>Must not be "Default"</p></li>
     /// </ul>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_security_group_name = input;
-        self
+        self.db_security_group_name = input; self
     }
     /// <p>The name of the DB security group to delete.</p><note>
     /// <p>You can't delete the default DB security group.</p>
@@ -108,12 +107,13 @@ impl DeleteDbSecurityGroupInputBuilder {
         &self.db_security_group_name
     }
     /// Consumes the builder and constructs a [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
-            db_security_group_name: self.db_security_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
+                db_security_group_name: self.db_security_group_name
+                ,
+            }
+        )
     }
 }
+

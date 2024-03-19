@@ -3,32 +3,35 @@
 /// <p>Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlApplicationConfigurationUpdate {
+pub struct SqlApplicationConfigurationUpdate  {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    pub input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
+    pub input_updates: ::std::option::Option<::std::vec::Vec::<crate::types::InputUpdate>>,
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    pub output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
+    pub output_updates: ::std::option::Option<::std::vec::Vec::<crate::types::OutputUpdate>>,
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    pub reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub reference_data_source_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceUpdate>>,
 }
-impl SqlApplicationConfigurationUpdate {
+impl  SqlApplicationConfigurationUpdate  {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_updates.is_none()`.
-    pub fn input_updates(&self) -> &[crate::types::InputUpdate] {
-        self.input_updates.as_deref().unwrap_or_default()
+    pub fn input_updates(&self) -> & [crate::types::InputUpdate] {
+        self.input_updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_updates.is_none()`.
-    pub fn output_updates(&self) -> &[crate::types::OutputUpdate] {
-        self.output_updates.as_deref().unwrap_or_default()
+    pub fn output_updates(&self) -> & [crate::types::OutputUpdate] {
+        self.output_updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_updates.is_none()`.
-    pub fn reference_data_source_updates(&self) -> &[crate::types::ReferenceDataSourceUpdate] {
-        self.reference_data_source_updates.as_deref().unwrap_or_default()
+    pub fn reference_data_source_updates(&self) -> & [crate::types::ReferenceDataSourceUpdate] {
+        self.reference_data_source_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SqlApplicationConfigurationUpdate {
@@ -42,9 +45,9 @@ impl SqlApplicationConfigurationUpdate {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlApplicationConfigurationUpdateBuilder {
-    pub(crate) input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
-    pub(crate) output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
-    pub(crate) reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
+    pub(crate) input_updates: ::std::option::Option<::std::vec::Vec::<crate::types::InputUpdate>>,
+    pub(crate) output_updates: ::std::option::Option<::std::vec::Vec::<crate::types::OutputUpdate>>,
+    pub(crate) reference_data_source_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceUpdate>>,
 }
 impl SqlApplicationConfigurationUpdateBuilder {
     /// Appends an item to `input_updates`.
@@ -54,17 +57,16 @@ impl SqlApplicationConfigurationUpdateBuilder {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
     pub fn input_updates(mut self, input: crate::types::InputUpdate) -> Self {
         let mut v = self.input_updates.unwrap_or_default();
-        v.push(input);
-        self.input_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    pub fn set_input_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>) -> Self {
-        self.input_updates = input;
-        self
+    pub fn set_input_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputUpdate>>) -> Self {
+        self.input_updates = input; self
     }
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    pub fn get_input_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>> {
+    pub fn get_input_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputUpdate>> {
         &self.input_updates
     }
     /// Appends an item to `output_updates`.
@@ -74,17 +76,16 @@ impl SqlApplicationConfigurationUpdateBuilder {
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
     pub fn output_updates(mut self, input: crate::types::OutputUpdate) -> Self {
         let mut v = self.output_updates.unwrap_or_default();
-        v.push(input);
-        self.output_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    pub fn set_output_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>) -> Self {
-        self.output_updates = input;
-        self
+    pub fn set_output_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputUpdate>>) -> Self {
+        self.output_updates = input; self
     }
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    pub fn get_output_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>> {
+    pub fn get_output_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputUpdate>> {
         &self.output_updates
     }
     /// Appends an item to `reference_data_source_updates`.
@@ -94,28 +95,28 @@ impl SqlApplicationConfigurationUpdateBuilder {
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
     pub fn reference_data_source_updates(mut self, input: crate::types::ReferenceDataSourceUpdate) -> Self {
         let mut v = self.reference_data_source_updates.unwrap_or_default();
-        v.push(input);
-        self.reference_data_source_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reference_data_source_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    pub fn set_reference_data_source_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
-    ) -> Self {
-        self.reference_data_source_updates = input;
-        self
+    pub fn set_reference_data_source_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceUpdate>>) -> Self {
+        self.reference_data_source_updates = input; self
     }
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    pub fn get_reference_data_source_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>> {
+    pub fn get_reference_data_source_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceUpdate>> {
         &self.reference_data_source_updates
     }
     /// Consumes the builder and constructs a [`SqlApplicationConfigurationUpdate`](crate::types::SqlApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::SqlApplicationConfigurationUpdate {
         crate::types::SqlApplicationConfigurationUpdate {
-            input_updates: self.input_updates,
-            output_updates: self.output_updates,
-            reference_data_source_updates: self.reference_data_source_updates,
+            input_updates: self.input_updates
+            ,
+            output_updates: self.output_updates
+            ,
+            reference_data_source_updates: self.reference_data_source_updates
+            ,
         }
     }
 }
+

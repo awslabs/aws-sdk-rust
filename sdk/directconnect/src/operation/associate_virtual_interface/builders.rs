@@ -5,56 +5,52 @@ pub use crate::operation::associate_virtual_interface::_associate_virtual_interf
 
 impl AssociateVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.associate_virtual_interface();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.associate_virtual_interface();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssociateVirtualInterface`.
-///
+/// 
 /// <p>Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to Amazon Web Services is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.</p>
 /// <p>Virtual interfaces associated with a hosted connection cannot be associated with a LAG; hosted connections must be migrated along with their virtual interfaces using <code>AssociateHostedConnection</code>.</p>
 /// <p>To reassociate a virtual interface to a new connection or LAG, the requester must own either the virtual interface itself or the connection to which the virtual interface is currently associated. Additionally, the requester must own the connection or LAG for the association.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder,
+                    inner: crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
-    > for AssociateVirtualInterfaceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
-            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
+                    crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
+                > for AssociateVirtualInterfaceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
+                        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssociateVirtualInterfaceFluentBuilder {
     /// Creates a new `AssociateVirtualInterface`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl AssociateVirtualInterfaceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::associate_virtual_interface::AssociateVirtualInterface::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::associate_virtual_interface::AssociateVirtualInterface::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
-        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::associate_virtual_interface::AssociateVirtualInterface::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::associate_virtual_interface::AssociateVirtualInterface::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput, crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the virtual interface.</p>
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
@@ -139,3 +126,4 @@ impl AssociateVirtualInterfaceFluentBuilder {
         self.inner.get_connection_id()
     }
 }
+

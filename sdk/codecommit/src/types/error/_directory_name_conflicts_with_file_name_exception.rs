@@ -3,22 +3,20 @@
 /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryNameConflictsWithFileNameException {
+pub struct DirectoryNameConflictsWithFileNameException  {
     /// <p>Any message associated with the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl DirectoryNameConflictsWithFileNameException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for DirectoryNameConflictsWithFileNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "DirectoryNameConflictsWithFileNameException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::DirectoryNameCo
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DirectoryNameConflictsWithFileNameException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DirectoryNameConflictsWithFileNameException {
     /// Creates a new builder-style object to manufacture [`DirectoryNameConflictsWithFileNameException`](crate::types::error::DirectoryNameConflictsWithFileNameException).
@@ -59,29 +55,30 @@ impl DirectoryNameConflictsWithFileNameExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Any message associated with the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`DirectoryNameConflictsWithFileNameException`](crate::types::error::DirectoryNameConflictsWithFileNameException).
     pub fn build(self) -> crate::types::error::DirectoryNameConflictsWithFileNameException {
         crate::types::error::DirectoryNameConflictsWithFileNameException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

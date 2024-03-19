@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>UploadSigningCertificate</code> and <code>ListSigningCertificates</code> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningCertificate {
+pub struct SigningCertificate  {
     /// <p>The name of the user the signing certificate is associated with.</p>
     pub user_name: ::std::string::String,
     /// <p>The ID for the signing certificate.</p>
@@ -16,28 +16,25 @@ pub struct SigningCertificate {
     /// <p>The date when the signing certificate was uploaded.</p>
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SigningCertificate {
+impl  SigningCertificate  {
     /// <p>The name of the user the signing certificate is associated with.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The ID for the signing certificate.</p>
-    pub fn certificate_id(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_id.deref()
+    pub fn certificate_id(&self) -> & str {
+        use std::ops::Deref; self.certificate_id.deref()
     }
     /// <p>The contents of the signing certificate.</p>
-    pub fn certificate_body(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_body.deref()
+    pub fn certificate_body(&self) -> & str {
+        use std::ops::Deref; self.certificate_body.deref()
     }
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
-    pub fn status(&self) -> &crate::types::StatusType {
+    pub fn status(&self) -> & crate::types::StatusType {
         &self.status
     }
     /// <p>The date when the signing certificate was uploaded.</p>
-    pub fn upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn upload_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
 }
@@ -67,8 +64,7 @@ impl SigningCertificateBuilder {
     }
     /// <p>The name of the user the signing certificate is associated with.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user the signing certificate is associated with.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +78,7 @@ impl SigningCertificateBuilder {
     }
     /// <p>The ID for the signing certificate.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The ID for the signing certificate.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +92,7 @@ impl SigningCertificateBuilder {
     }
     /// <p>The contents of the signing certificate.</p>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_body = input;
-        self
+        self.certificate_body = input; self
     }
     /// <p>The contents of the signing certificate.</p>
     pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +106,7 @@ impl SigningCertificateBuilder {
     }
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
@@ -126,8 +119,7 @@ impl SigningCertificateBuilder {
     }
     /// <p>The date when the signing certificate was uploaded.</p>
     pub fn set_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.upload_date = input;
-        self
+        self.upload_date = input; self
     }
     /// <p>The date when the signing certificate was uploaded.</p>
     pub fn get_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,32 +132,32 @@ impl SigningCertificateBuilder {
     /// - [`certificate_body`](crate::types::builders::SigningCertificateBuilder::certificate_body)
     /// - [`status`](crate::types::builders::SigningCertificateBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::SigningCertificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SigningCertificate {
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building SigningCertificate",
-                )
-            })?,
-            certificate_id: self.certificate_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_id",
-                    "certificate_id was not specified but it is required when building SigningCertificate",
-                )
-            })?,
-            certificate_body: self.certificate_body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_body",
-                    "certificate_body was not specified but it is required when building SigningCertificate",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building SigningCertificate",
-                )
-            })?,
-            upload_date: self.upload_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SigningCertificate {
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building SigningCertificate")
+                    )?
+                ,
+                certificate_id: self.certificate_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_id", "certificate_id was not specified but it is required when building SigningCertificate")
+                    )?
+                ,
+                certificate_body: self.certificate_body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_body", "certificate_body was not specified but it is required when building SigningCertificate")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building SigningCertificate")
+                    )?
+                ,
+                upload_date: self.upload_date
+                ,
+            }
+        )
     }
 }
+

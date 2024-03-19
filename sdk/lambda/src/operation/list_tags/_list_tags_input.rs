@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsInput {
+pub struct ListTagsInput  {
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsInput {
+impl  ListTagsInput  {
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ListTagsInputBuilder {
     }
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl ListTagsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput { resource: self.resource })
+        ::std::result::Result::Ok(
+            crate::operation::list_tags::ListTagsInput {
+                resource: self.resource
+                ,
+            }
+        )
     }
 }
+

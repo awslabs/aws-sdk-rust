@@ -20,3 +20,4 @@ pub use crate::types::_check_summary::CheckSummaryBuilder;
 pub use crate::types::_recommendation::RecommendationBuilder;
 
 pub use crate::types::_organization_recommendation::OrganizationRecommendationBuilder;
+

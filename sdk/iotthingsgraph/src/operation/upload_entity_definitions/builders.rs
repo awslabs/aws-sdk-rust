@@ -5,23 +5,20 @@ pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_
 
 impl UploadEntityDefinitionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.upload_entity_definitions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.upload_entity_definitions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UploadEntityDefinitions`.
-///
+/// 
 /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter is set to <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true, all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>
 /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
 /// <p>The IDs for all of the entities should be in URN format. Each entity must be in the user's namespace. Users can't create entities in the public namespace, but entity definitions can refer to entities in the public namespace.</p>
@@ -30,33 +27,32 @@ impl UploadEntityDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder,
+                    inner: crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-    > for UploadEntityDefinitionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
+                    crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
+                > for UploadEntityDefinitionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
+                        crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UploadEntityDefinitionsFluentBuilder {
     /// Creates a new `UploadEntityDefinitions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl UploadEntityDefinitionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::upload_entity_definitions::UploadEntityDefinitions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::upload_entity_definitions::UploadEntityDefinitions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_entity_definitions::UploadEntityDefinitionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::upload_entity_definitions::UploadEntityDefinitions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::upload_entity_definitions::UploadEntityDefinitions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput, crate::operation::upload_entity_definitions::UploadEntityDefinitionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
     pub fn document(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.inner = self.inner.document(input);
@@ -155,3 +142,4 @@ impl UploadEntityDefinitionsFluentBuilder {
         self.inner.get_deprecate_existing_entities()
     }
 }
+

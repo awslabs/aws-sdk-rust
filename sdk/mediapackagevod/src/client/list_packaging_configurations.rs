@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackagingConfigurations`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br>Upper bound on number of records to return.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
     ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::set_packaging_group_id):<br>required: **false**<br>Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.<br>
-    /// - On success, responds with [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_configurations(Option<Vec::<PackagingConfiguration>>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
-    /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsError)
-    pub fn list_packaging_configurations(
-        &self,
-    ) -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder {
-        crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsError)
+    pub fn list_packaging_configurations(&self) -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder {
+                                crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

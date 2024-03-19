@@ -3,7 +3,7 @@
 /// <p>Defines a disruption compliance recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationDisruptionCompliance {
+pub struct RecommendationDisruptionCompliance  {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
     pub expected_compliance_status: crate::types::ComplianceStatus,
     /// <p>The expected RTO after applying the recommended configuration change.</p>
@@ -15,9 +15,9 @@ pub struct RecommendationDisruptionCompliance {
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub expected_rpo_description: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationDisruptionCompliance {
+impl  RecommendationDisruptionCompliance  {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
-    pub fn expected_compliance_status(&self) -> &crate::types::ComplianceStatus {
+    pub fn expected_compliance_status(&self) -> & crate::types::ComplianceStatus {
         &self.expected_compliance_status
     }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
@@ -25,7 +25,7 @@ impl RecommendationDisruptionCompliance {
         self.expected_rto_in_secs
     }
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
-    pub fn expected_rto_description(&self) -> ::std::option::Option<&str> {
+    pub fn expected_rto_description(&self) -> ::std::option::Option<& str> {
         self.expected_rto_description.as_deref()
     }
     /// <p>The expected RPO after applying the recommended configuration change.</p>
@@ -33,7 +33,7 @@ impl RecommendationDisruptionCompliance {
         self.expected_rpo_in_secs
     }
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
-    pub fn expected_rpo_description(&self) -> ::std::option::Option<&str> {
+    pub fn expected_rpo_description(&self) -> ::std::option::Option<& str> {
         self.expected_rpo_description.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl RecommendationDisruptionComplianceBuilder {
     }
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
     pub fn set_expected_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.expected_compliance_status = input;
-        self
+        self.expected_compliance_status = input; self
     }
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
     pub fn get_expected_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -77,8 +76,7 @@ impl RecommendationDisruptionComplianceBuilder {
     }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub fn set_expected_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expected_rto_in_secs = input;
-        self
+        self.expected_rto_in_secs = input; self
     }
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub fn get_expected_rto_in_secs(&self) -> &::std::option::Option<i32> {
@@ -91,8 +89,7 @@ impl RecommendationDisruptionComplianceBuilder {
     }
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
     pub fn set_expected_rto_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_rto_description = input;
-        self
+        self.expected_rto_description = input; self
     }
     /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
     pub fn get_expected_rto_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl RecommendationDisruptionComplianceBuilder {
     }
     /// <p>The expected RPO after applying the recommended configuration change.</p>
     pub fn set_expected_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expected_rpo_in_secs = input;
-        self
+        self.expected_rpo_in_secs = input; self
     }
     /// <p>The expected RPO after applying the recommended configuration change.</p>
     pub fn get_expected_rpo_in_secs(&self) -> &::std::option::Option<i32> {
@@ -119,8 +115,7 @@ impl RecommendationDisruptionComplianceBuilder {
     }
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub fn set_expected_rpo_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_rpo_description = input;
-        self
+        self.expected_rpo_description = input; self
     }
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub fn get_expected_rpo_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,17 +125,25 @@ impl RecommendationDisruptionComplianceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expected_compliance_status`](crate::types::builders::RecommendationDisruptionComplianceBuilder::expected_compliance_status)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationDisruptionCompliance, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationDisruptionCompliance {
-            expected_compliance_status: self.expected_compliance_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expected_compliance_status",
-                    "expected_compliance_status was not specified but it is required when building RecommendationDisruptionCompliance",
-                )
-            })?,
-            expected_rto_in_secs: self.expected_rto_in_secs.unwrap_or_default(),
-            expected_rto_description: self.expected_rto_description,
-            expected_rpo_in_secs: self.expected_rpo_in_secs.unwrap_or_default(),
-            expected_rpo_description: self.expected_rpo_description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecommendationDisruptionCompliance {
+                expected_compliance_status: self.expected_compliance_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expected_compliance_status", "expected_compliance_status was not specified but it is required when building RecommendationDisruptionCompliance")
+                    )?
+                ,
+                expected_rto_in_secs: self.expected_rto_in_secs
+                    .unwrap_or_default()
+                ,
+                expected_rto_description: self.expected_rto_description
+                ,
+                expected_rpo_in_secs: self.expected_rpo_in_secs
+                    .unwrap_or_default()
+                ,
+                expected_rpo_description: self.expected_rpo_description
+                ,
+            }
+        )
     }
 }
+

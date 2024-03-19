@@ -3,7 +3,7 @@
 /// <p>A single controller area network (CAN) device interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanInterface {
+pub struct CanInterface  {
     /// <p>The unique name of the interface.</p>
     pub name: ::std::string::String,
     /// <p>The name of the communication protocol for the interface.</p>
@@ -11,18 +11,17 @@ pub struct CanInterface {
     /// <p>The version of the communication protocol for the interface.</p>
     pub protocol_version: ::std::option::Option<::std::string::String>,
 }
-impl CanInterface {
+impl  CanInterface  {
     /// <p>The unique name of the interface.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn protocol_name(&self) -> ::std::option::Option<&str> {
+    pub fn protocol_name(&self) -> ::std::option::Option<& str> {
         self.protocol_name.as_deref()
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn protocol_version(&self) -> ::std::option::Option<&str> {
+    pub fn protocol_version(&self) -> ::std::option::Option<& str> {
         self.protocol_version.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl CanInterfaceBuilder {
     }
     /// <p>The unique name of the interface.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name of the interface.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl CanInterfaceBuilder {
     }
     /// <p>The name of the communication protocol for the interface.</p>
     pub fn set_protocol_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol_name = input;
-        self
+        self.protocol_name = input; self
     }
     /// <p>The name of the communication protocol for the interface.</p>
     pub fn get_protocol_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl CanInterfaceBuilder {
     }
     /// <p>The version of the communication protocol for the interface.</p>
     pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol_version = input;
-        self
+        self.protocol_version = input; self
     }
     /// <p>The version of the communication protocol for the interface.</p>
     pub fn get_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl CanInterfaceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CanInterfaceBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CanInterface, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CanInterface {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CanInterface",
-                )
-            })?,
-            protocol_name: self.protocol_name,
-            protocol_version: self.protocol_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CanInterface {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CanInterface")
+                    )?
+                ,
+                protocol_name: self.protocol_name
+                ,
+                protocol_version: self.protocol_version
+                ,
+            }
+        )
     }
 }
+

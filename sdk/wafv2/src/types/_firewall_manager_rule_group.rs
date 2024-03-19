@@ -3,7 +3,7 @@
 /// <p>A rule group that's defined for an Firewall Manager WAF policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallManagerRuleGroup {
+pub struct FirewallManagerRuleGroup  {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub name: ::std::string::String,
     /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
@@ -18,29 +18,28 @@ pub struct FirewallManagerRuleGroup {
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
 }
-impl FirewallManagerRuleGroup {
+impl  FirewallManagerRuleGroup  {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
-    pub fn firewall_manager_statement(&self) -> ::std::option::Option<&crate::types::FirewallManagerStatement> {
+    pub fn firewall_manager_statement(&self) -> ::std::option::Option<& crate::types::FirewallManagerStatement> {
         self.firewall_manager_statement.as_ref()
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
-    pub fn override_action(&self) -> ::std::option::Option<&crate::types::OverrideAction> {
+    pub fn override_action(&self) -> ::std::option::Option<& crate::types::OverrideAction> {
         self.override_action.as_ref()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
-    pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
+    pub fn visibility_config(&self) -> ::std::option::Option<& crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
 }
@@ -70,8 +69,7 @@ impl FirewallManagerRuleGroupBuilder {
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl FirewallManagerRuleGroupBuilder {
     }
     /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -100,8 +97,7 @@ impl FirewallManagerRuleGroupBuilder {
     }
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub fn set_firewall_manager_statement(mut self, input: ::std::option::Option<crate::types::FirewallManagerStatement>) -> Self {
-        self.firewall_manager_statement = input;
-        self
+        self.firewall_manager_statement = input; self
     }
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub fn get_firewall_manager_statement(&self) -> &::std::option::Option<crate::types::FirewallManagerStatement> {
@@ -121,8 +117,7 @@ impl FirewallManagerRuleGroupBuilder {
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::OverrideAction>) -> Self {
-        self.override_action = input;
-        self
+        self.override_action = input; self
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
@@ -139,8 +134,7 @@ impl FirewallManagerRuleGroupBuilder {
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
-        self.visibility_config = input;
-        self
+        self.visibility_config = input; self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
@@ -150,17 +144,24 @@ impl FirewallManagerRuleGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FirewallManagerRuleGroupBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::FirewallManagerRuleGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirewallManagerRuleGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FirewallManagerRuleGroup",
-                )
-            })?,
-            priority: self.priority.unwrap_or_default(),
-            firewall_manager_statement: self.firewall_manager_statement,
-            override_action: self.override_action,
-            visibility_config: self.visibility_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirewallManagerRuleGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FirewallManagerRuleGroup")
+                    )?
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                firewall_manager_statement: self.firewall_manager_statement
+                ,
+                override_action: self.override_action
+                ,
+                visibility_config: self.visibility_config
+                ,
+            }
+        )
     }
 }
+

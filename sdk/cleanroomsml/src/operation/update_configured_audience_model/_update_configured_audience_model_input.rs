@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredAudienceModelInput {
+pub struct UpdateConfiguredAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to update.</p>
     pub configured_audience_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new output configuration.</p>
@@ -10,7 +10,7 @@ pub struct UpdateConfiguredAudienceModelInput {
     /// <p>The Amazon Resource Name (ARN) of the new audience model that you want to use.</p>
     pub audience_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new value for whether to share audience metrics.</p>
-    pub shared_audience_metrics: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>,
+    pub shared_audience_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>,
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub min_matching_seed_size: ::std::option::Option<i32>,
     /// <p>The new audience size configuration.</p>
@@ -18,35 +18,36 @@ pub struct UpdateConfiguredAudienceModelInput {
     /// <p>The new description of the configured audience model.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfiguredAudienceModelInput {
+impl  UpdateConfiguredAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to update.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
     /// <p>The new output configuration.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ConfiguredAudienceModelOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::ConfiguredAudienceModelOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the new audience model that you want to use.</p>
-    pub fn audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.audience_model_arn.as_deref()
     }
     /// <p>The new value for whether to share audience metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_audience_metrics.is_none()`.
-    pub fn shared_audience_metrics(&self) -> &[crate::types::SharedAudienceMetrics] {
-        self.shared_audience_metrics.as_deref().unwrap_or_default()
+    pub fn shared_audience_metrics(&self) -> & [crate::types::SharedAudienceMetrics] {
+        self.shared_audience_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn min_matching_seed_size(&self) -> ::std::option::Option<i32> {
         self.min_matching_seed_size
     }
     /// <p>The new audience size configuration.</p>
-    pub fn audience_size_config(&self) -> ::std::option::Option<&crate::types::AudienceSizeConfig> {
+    pub fn audience_size_config(&self) -> ::std::option::Option<& crate::types::AudienceSizeConfig> {
         self.audience_size_config.as_ref()
     }
     /// <p>The new description of the configured audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -64,7 +65,7 @@ pub struct UpdateConfiguredAudienceModelInputBuilder {
     pub(crate) configured_audience_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>,
     pub(crate) audience_model_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>,
+    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>,
     pub(crate) min_matching_seed_size: ::std::option::Option<i32>,
     pub(crate) audience_size_config: ::std::option::Option<crate::types::AudienceSizeConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -78,8 +79,7 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to update.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to update.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The new output configuration.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The new output configuration.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig> {
@@ -106,8 +105,7 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the new audience model that you want to use.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the new audience model that you want to use.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,17 +118,16 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     /// <p>The new value for whether to share audience metrics.</p>
     pub fn shared_audience_metrics(mut self, input: crate::types::SharedAudienceMetrics) -> Self {
         let mut v = self.shared_audience_metrics.unwrap_or_default();
-        v.push(input);
-        self.shared_audience_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shared_audience_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new value for whether to share audience metrics.</p>
-    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>) -> Self {
-        self.shared_audience_metrics = input;
-        self
+    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>) -> Self {
+        self.shared_audience_metrics = input; self
     }
     /// <p>The new value for whether to share audience metrics.</p>
-    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>> {
+    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>> {
         &self.shared_audience_metrics
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
@@ -140,8 +137,7 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn set_min_matching_seed_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_matching_seed_size = input;
-        self
+        self.min_matching_seed_size = input; self
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn get_min_matching_seed_size(&self) -> &::std::option::Option<i32> {
@@ -154,8 +150,7 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The new audience size configuration.</p>
     pub fn set_audience_size_config(mut self, input: ::std::option::Option<crate::types::AudienceSizeConfig>) -> Self {
-        self.audience_size_config = input;
-        self
+        self.audience_size_config = input; self
     }
     /// <p>The new audience size configuration.</p>
     pub fn get_audience_size_config(&self) -> &::std::option::Option<crate::types::AudienceSizeConfig> {
@@ -168,28 +163,32 @@ impl UpdateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The new description of the configured audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description of the configured audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredAudienceModelInput`](crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelInput {
-            configured_audience_model_arn: self.configured_audience_model_arn,
-            output_config: self.output_config,
-            audience_model_arn: self.audience_model_arn,
-            shared_audience_metrics: self.shared_audience_metrics,
-            min_matching_seed_size: self.min_matching_seed_size,
-            audience_size_config: self.audience_size_config,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelInput {
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+                output_config: self.output_config
+                ,
+                audience_model_arn: self.audience_model_arn
+                ,
+                shared_audience_metrics: self.shared_audience_metrics
+                ,
+                min_matching_seed_size: self.min_matching_seed_size
+                ,
+                audience_size_config: self.audience_size_config
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

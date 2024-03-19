@@ -3,30 +3,28 @@
 /// <p>A condition specified in the operation could not be evaluated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionalCheckFailedException {
+pub struct ConditionalCheckFailedException  {
     /// <p>The conditional request failed.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-    pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub item: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConditionalCheckFailedException {
+impl  ConditionalCheckFailedException  {
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-    pub fn item(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn item(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.item.as_ref()
     }
 }
 impl ConditionalCheckFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ConditionalCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConditionalCheckFailedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConditionalChec
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConditionalCheckFailedException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConditionalCheckFailedException {
     /// Creates a new builder-style object to manufacture [`ConditionalCheckFailedException`](crate::types::error::ConditionalCheckFailedException).
@@ -57,7 +53,7 @@ impl ConditionalCheckFailedException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionalCheckFailedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) item: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConditionalCheckFailedExceptionBuilder {
@@ -68,8 +64,7 @@ impl ConditionalCheckFailedExceptionBuilder {
     }
     /// <p>The conditional request failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The conditional request failed.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,39 +77,38 @@ impl ConditionalCheckFailedExceptionBuilder {
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
     pub fn item(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.item = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.item = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.item = input; self
     }
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-    pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.item
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConditionalCheckFailedException`](crate::types::error::ConditionalCheckFailedException).
     pub fn build(self) -> crate::types::error::ConditionalCheckFailedException {
         crate::types::error::ConditionalCheckFailedException {
-            message: self.message,
-            item: self.item,
+            message: self.message
+            ,
+            item: self.item
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Container for the request parameters to the <code>GetUpgradeStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUpgradeStatusInput {
+pub struct GetUpgradeStatusInput  {
     /// <p>The domain of the domain to get upgrade status information for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl GetUpgradeStatusInput {
+impl  GetUpgradeStatusInput  {
     /// <p>The domain of the domain to get upgrade status information for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl GetUpgradeStatusInputBuilder {
     }
     /// <p>The domain of the domain to get upgrade status information for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain of the domain to get upgrade status information for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_upgrade_status::GetUpgradeStatusInput {
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_upgrade_status::GetUpgradeStatusInput {
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTableFromRecoveryPointOutput {
+pub struct RestoreTableFromRecoveryPointOutput  {
     /// <p>Contains information about a table restore request.</p>
     pub table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,
 }
-impl RestoreTableFromRecoveryPointOutput {
+impl  RestoreTableFromRecoveryPointOutput  {
     /// <p>Contains information about a table restore request.</p>
-    pub fn table_restore_status(&self) -> ::std::option::Option<&crate::types::TableRestoreStatus> {
+    pub fn table_restore_status(&self) -> ::std::option::Option<& crate::types::TableRestoreStatus> {
         self.table_restore_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreTableFromRecoveryPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreTableFromRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromRecoveryPointOutput`](crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointOutput).
     pub fn builder() -> crate::operation::restore_table_from_recovery_point::builders::RestoreTableFromRecoveryPointOutputBuilder {
@@ -40,27 +40,28 @@ impl RestoreTableFromRecoveryPointOutputBuilder {
     }
     /// <p>Contains information about a table restore request.</p>
     pub fn set_table_restore_status(mut self, input: ::std::option::Option<crate::types::TableRestoreStatus>) -> Self {
-        self.table_restore_status = input;
-        self
+        self.table_restore_status = input; self
     }
     /// <p>Contains information about a table restore request.</p>
     pub fn get_table_restore_status(&self) -> &::std::option::Option<crate::types::TableRestoreStatus> {
         &self.table_restore_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreTableFromRecoveryPointOutput`](crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointOutput).
     pub fn build(self) -> crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointOutput {
         crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointOutput {
-            table_restore_status: self.table_restore_status,
+            table_restore_status: self.table_restore_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

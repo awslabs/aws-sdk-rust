@@ -5,23 +5,20 @@ pub use crate::operation::modify_db_snapshot_attribute::_modify_db_snapshot_attr
 
 impl ModifyDbSnapshotAttributeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_db_snapshot_attribute();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_db_snapshot_attribute();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyDBSnapshotAttribute`.
-///
+/// 
 /// <p>Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.</p>
 /// <p>To share a manual DB snapshot with other Amazon Web Services accounts, specify <code>restore</code> as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the Amazon Web Services accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which means it can be copied or restored by all Amazon Web Services accounts.</p><note>
 /// <p>Don't add the <code>all</code> value for any manual DB snapshots that contain private information that you don't want available to all Amazon Web Services accounts.</p>
@@ -31,33 +28,32 @@ impl ModifyDbSnapshotAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBSnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeInputBuilder,
+                    inner: crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
-        crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
-    > for ModifyDBSnapshotAttributeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
-            crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
+                    crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
+                > for ModifyDBSnapshotAttributeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
+                        crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyDBSnapshotAttributeFluentBuilder {
     /// Creates a new `ModifyDBSnapshotAttribute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttribute::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttribute::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput,
-        crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttribute::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttribute::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput, crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttributeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
@@ -162,13 +149,13 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
     }
     /// <p>A list of DB snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account IDs, or <code>all</code> to make the manual DB snapshot restorable by any Amazon Web Services account. Do not add the <code>all</code> value for any manual DB snapshots that contain private information that you don't want available to all Amazon Web Services accounts.</p>
-    pub fn set_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values_to_add(input);
         self
     }
     /// <p>A list of DB snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account IDs, or <code>all</code> to make the manual DB snapshot restorable by any Amazon Web Services account. Do not add the <code>all</code> value for any manual DB snapshots that contain private information that you don't want available to all Amazon Web Services accounts.</p>
-    pub fn get_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_values_to_add()
     }
     /// Appends an item to `ValuesToRemove`.
@@ -183,13 +170,14 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
     }
     /// <p>A list of DB snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account identifiers, or <code>all</code> to remove authorization for any Amazon Web Services account to copy or restore the DB snapshot. If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore the manual DB snapshot.</p>
-    pub fn set_values_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_values_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values_to_remove(input);
         self
     }
     /// <p>A list of DB snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account identifiers, or <code>all</code> to remove authorization for any Amazon Web Services account to copy or restore the DB snapshot. If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore the manual DB snapshot.</p>
-    pub fn get_values_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_values_to_remove()
     }
 }
+

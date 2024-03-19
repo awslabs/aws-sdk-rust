@@ -3,13 +3,13 @@
 /// <p>Input for <code>ListPlatformApplications</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPlatformApplicationsInput {
+pub struct ListPlatformApplicationsInput  {
     /// <p><code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve additional records that are available after the first page results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPlatformApplicationsInput {
+impl  ListPlatformApplicationsInput  {
     /// <p><code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve additional records that are available after the first page results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ListPlatformApplicationsInputBuilder {
     }
     /// <p><code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve additional records that are available after the first page results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p><code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve additional records that are available after the first page results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPlatformApplicationsInput`](crate::operation::list_platform_applications::ListPlatformApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_platform_applications::ListPlatformApplicationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_platform_applications::ListPlatformApplicationsInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_platform_applications::ListPlatformApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_platform_applications::ListPlatformApplicationsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

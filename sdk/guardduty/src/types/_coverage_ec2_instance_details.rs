@@ -6,7 +6,7 @@
 /// <p>Contains information about the Amazon EC2 instance runtime coverage details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageEc2InstanceDetails {
+pub struct CoverageEc2InstanceDetails  {
     /// <p>The Amazon EC2 instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the Amazon EC2 instance.</p>
@@ -26,21 +26,21 @@ pub struct CoverageEc2InstanceDetails {
     /// </note>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
-impl CoverageEc2InstanceDetails {
+impl  CoverageEc2InstanceDetails  {
     /// <p>The Amazon EC2 instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type of the Amazon EC2 instance.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The cluster ARN of the Amazon ECS cluster running on the Amazon EC2 instance.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>Information about the installed security agent.</p>
-    pub fn agent_details(&self) -> ::std::option::Option<&crate::types::AgentDetails> {
+    pub fn agent_details(&self) -> ::std::option::Option<& crate::types::AgentDetails> {
         self.agent_details.as_ref()
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
@@ -52,7 +52,7 @@ impl CoverageEc2InstanceDetails {
     /// </ul><note>
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters.</p>
     /// </note>
-    pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
+    pub fn management_type(&self) -> ::std::option::Option<& crate::types::ManagementType> {
         self.management_type.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>The Amazon EC2 instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The Amazon EC2 instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>The instance type of the Amazon EC2 instance.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the Amazon EC2 instance.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>The cluster ARN of the Amazon ECS cluster running on the Amazon EC2 instance.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The cluster ARN of the Amazon ECS cluster running on the Amazon EC2 instance.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl CoverageEc2InstanceDetailsBuilder {
     }
     /// <p>Information about the installed security agent.</p>
     pub fn set_agent_details(mut self, input: ::std::option::Option<crate::types::AgentDetails>) -> Self {
-        self.agent_details = input;
-        self
+        self.agent_details = input; self
     }
     /// <p>Information about the installed security agent.</p>
     pub fn get_agent_details(&self) -> &::std::option::Option<crate::types::AgentDetails> {
@@ -153,8 +149,7 @@ impl CoverageEc2InstanceDetailsBuilder {
     /// <p>The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters.</p>
     /// </note>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
-        self.management_type = input;
-        self
+        self.management_type = input; self
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
@@ -171,11 +166,17 @@ impl CoverageEc2InstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`CoverageEc2InstanceDetails`](crate::types::CoverageEc2InstanceDetails).
     pub fn build(self) -> crate::types::CoverageEc2InstanceDetails {
         crate::types::CoverageEc2InstanceDetails {
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            cluster_arn: self.cluster_arn,
-            agent_details: self.agent_details,
-            management_type: self.management_type,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            cluster_arn: self.cluster_arn
+            ,
+            agent_details: self.agent_details
+            ,
+            management_type: self.management_type
+            ,
         }
     }
 }
+

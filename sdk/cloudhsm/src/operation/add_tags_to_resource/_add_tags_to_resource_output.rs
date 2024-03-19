@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {
+pub struct AddTagsToResourceOutput  {
     /// <p>The status of the operation.</p>
     pub status: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AddTagsToResourceOutput {
+impl  AddTagsToResourceOutput  {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddTagsToResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
     pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder {
@@ -42,37 +41,35 @@ impl AddTagsToResourceOutputBuilder {
     }
     /// <p>The status of the operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AddTagsToResourceOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AddTagsToResourceOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

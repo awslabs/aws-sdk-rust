@@ -22,11 +22,7 @@ impl PinVerificationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624Pin`](crate::types::PinVerificationAttributes::Ibm3624Pin), extracting the inner [`Ibm3624PinVerification`](crate::types::Ibm3624PinVerification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ibm3624_pin(&self) -> ::std::result::Result<&crate::types::Ibm3624PinVerification, &Self> {
-        if let PinVerificationAttributes::Ibm3624Pin(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinVerificationAttributes::Ibm3624Pin(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ibm3624Pin`](crate::types::PinVerificationAttributes::Ibm3624Pin).
     pub fn is_ibm3624_pin(&self) -> bool {
@@ -35,11 +31,7 @@ impl PinVerificationAttributes {
     /// Tries to convert the enum instance into [`VisaPin`](crate::types::PinVerificationAttributes::VisaPin), extracting the inner [`VisaPinVerification`](crate::types::VisaPinVerification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_visa_pin(&self) -> ::std::result::Result<&crate::types::VisaPinVerification, &Self> {
-        if let PinVerificationAttributes::VisaPin(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinVerificationAttributes::VisaPin(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VisaPin`](crate::types::PinVerificationAttributes::VisaPin).
     pub fn is_visa_pin(&self) -> bool {
@@ -50,3 +42,4 @@ impl PinVerificationAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

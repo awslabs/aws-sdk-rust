@@ -3,7 +3,7 @@
 /// <p>An object representing the payment responsibilities accepted by the collaboration member for query compute costs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipQueryComputePaymentConfig {
+pub struct MembershipQueryComputePaymentConfig  {
     /// <p>Indicates whether the collaboration member has accepted to pay for query compute costs (<code>TRUE</code>) or has not accepted to pay for query compute costs (<code>FALSE</code>).</p>
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
@@ -15,7 +15,7 @@ pub struct MembershipQueryComputePaymentConfig {
     /// </ul>
     pub is_responsible: bool,
 }
-impl MembershipQueryComputePaymentConfig {
+impl  MembershipQueryComputePaymentConfig  {
     /// <p>Indicates whether the collaboration member has accepted to pay for query compute costs (<code>TRUE</code>) or has not accepted to pay for query compute costs (<code>FALSE</code>).</p>
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
@@ -67,8 +67,7 @@ impl MembershipQueryComputePaymentConfigBuilder {
     /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     pub fn set_is_responsible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_responsible = input;
-        self
+        self.is_responsible = input; self
     }
     /// <p>Indicates whether the collaboration member has accepted to pay for query compute costs (<code>TRUE</code>) or has not accepted to pay for query compute costs (<code>FALSE</code>).</p>
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
@@ -86,13 +85,15 @@ impl MembershipQueryComputePaymentConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`is_responsible`](crate::types::builders::MembershipQueryComputePaymentConfigBuilder::is_responsible)
     pub fn build(self) -> ::std::result::Result<crate::types::MembershipQueryComputePaymentConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MembershipQueryComputePaymentConfig {
-            is_responsible: self.is_responsible.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_responsible",
-                    "is_responsible was not specified but it is required when building MembershipQueryComputePaymentConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MembershipQueryComputePaymentConfig {
+                is_responsible: self.is_responsible
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_responsible", "is_responsible was not specified but it is required when building MembershipQueryComputePaymentConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

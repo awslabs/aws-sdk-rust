@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSetImportHistory`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
-    /// - On success, responds with [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput) with field(s):
+                            /// - On success, responds with [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput) with field(s):
     ///   - [`data_set_import_tasks(Vec::<DataSetImportTask>)`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput::data_set_import_tasks): <p>The data set import tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetImportHistoryError>`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryError)
+                            /// - On failure, responds with [`SdkError<ListDataSetImportHistoryError>`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryError)
     pub fn list_data_set_import_history(&self) -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder {
-        crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

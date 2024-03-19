@@ -3,28 +3,26 @@
 /// <p>A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkControlSet {
+pub struct UpdateAssessmentFrameworkControlSet  {
     /// <p>The unique identifier for the control set.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control set.</p>
     pub name: ::std::string::String,
     /// <p>The list of controls that are contained within the control set.</p>
-    pub controls: ::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>,
+    pub controls: ::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>,
 }
-impl UpdateAssessmentFrameworkControlSet {
+impl  UpdateAssessmentFrameworkControlSet  {
     /// <p>The unique identifier for the control set.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the control set.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The list of controls that are contained within the control set.</p>
-    pub fn controls(&self) -> &[crate::types::CreateAssessmentFrameworkControl] {
-        use std::ops::Deref;
-        self.controls.deref()
+    pub fn controls(&self) -> & [crate::types::CreateAssessmentFrameworkControl] {
+        use std::ops::Deref; self.controls.deref()
     }
 }
 impl UpdateAssessmentFrameworkControlSet {
@@ -40,7 +38,7 @@ impl UpdateAssessmentFrameworkControlSet {
 pub struct UpdateAssessmentFrameworkControlSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub(crate) controls: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl UpdateAssessmentFrameworkControlSetBuilder {
     /// <p>The unique identifier for the control set.</p>
@@ -50,8 +48,7 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     }
     /// <p>The unique identifier for the control set.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the control set.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     }
     /// <p>The name of the control set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,17 +75,16 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     /// <p>The list of controls that are contained within the control set.</p>
     pub fn controls(mut self, input: crate::types::CreateAssessmentFrameworkControl) -> Self {
         let mut v = self.controls.unwrap_or_default();
-        v.push(input);
-        self.controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of controls that are contained within the control set.</p>
-    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
-        self.controls = input;
-        self
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
+        self.controls = input; self
     }
     /// <p>The list of controls that are contained within the control set.</p>
-    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>> {
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>> {
         &self.controls
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkControlSet`](crate::types::UpdateAssessmentFrameworkControlSet).
@@ -97,20 +92,22 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     /// - [`name`](crate::types::builders::UpdateAssessmentFrameworkControlSetBuilder::name)
     /// - [`controls`](crate::types::builders::UpdateAssessmentFrameworkControlSetBuilder::controls)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateAssessmentFrameworkControlSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateAssessmentFrameworkControlSet {
-            id: self.id,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateAssessmentFrameworkControlSet",
-                )
-            })?,
-            controls: self.controls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "controls",
-                    "controls was not specified but it is required when building UpdateAssessmentFrameworkControlSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateAssessmentFrameworkControlSet {
+                id: self.id
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateAssessmentFrameworkControlSet")
+                    )?
+                ,
+                controls: self.controls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("controls", "controls was not specified but it is required when building UpdateAssessmentFrameworkControlSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

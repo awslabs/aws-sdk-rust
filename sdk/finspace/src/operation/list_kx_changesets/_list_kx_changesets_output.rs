@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxChangesetsOutput {
+pub struct ListKxChangesetsOutput  {
     /// <p>A list of changesets for a database.</p>
-    pub kx_changesets: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
+    pub kx_changesets: ::std::option::Option<::std::vec::Vec::<crate::types::KxChangesetListEntry>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListKxChangesetsOutput {
+impl  ListKxChangesetsOutput  {
     /// <p>A list of changesets for a database.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_changesets.is_none()`.
-    pub fn kx_changesets(&self) -> &[crate::types::KxChangesetListEntry] {
-        self.kx_changesets.as_deref().unwrap_or_default()
+    pub fn kx_changesets(&self) -> & [crate::types::KxChangesetListEntry] {
+        self.kx_changesets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListKxChangesetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListKxChangesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput).
     pub fn builder() -> crate::operation::list_kx_changesets::builders::ListKxChangesetsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListKxChangesetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxChangesetsOutputBuilder {
-    pub(crate) kx_changesets: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
+    pub(crate) kx_changesets: ::std::option::Option<::std::vec::Vec::<crate::types::KxChangesetListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListKxChangesetsOutputBuilder {
     /// <p>A list of changesets for a database.</p>
     pub fn kx_changesets(mut self, input: crate::types::KxChangesetListEntry) -> Self {
         let mut v = self.kx_changesets.unwrap_or_default();
-        v.push(input);
-        self.kx_changesets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kx_changesets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of changesets for a database.</p>
-    pub fn set_kx_changesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>) -> Self {
-        self.kx_changesets = input;
-        self
+    pub fn set_kx_changesets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxChangesetListEntry>>) -> Self {
+        self.kx_changesets = input; self
     }
     /// <p>A list of changesets for a database.</p>
-    pub fn get_kx_changesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>> {
+    pub fn get_kx_changesets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxChangesetListEntry>> {
         &self.kx_changesets
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -69,28 +69,30 @@ impl ListKxChangesetsOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput).
     pub fn build(self) -> crate::operation::list_kx_changesets::ListKxChangesetsOutput {
         crate::operation::list_kx_changesets::ListKxChangesetsOutput {
-            kx_changesets: self.kx_changesets,
-            next_token: self.next_token,
+            kx_changesets: self.kx_changesets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

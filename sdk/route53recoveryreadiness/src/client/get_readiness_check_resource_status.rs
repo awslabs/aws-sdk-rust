@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetReadinessCheckResourceStatus`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     ///   - [`readiness_check_name(impl Into<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::set_readiness_check_name):<br>required: **true**<br><p>Name of a readiness check.</p><br>
     ///   - [`resource_identifier(impl Into<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::set_resource_identifier):<br>required: **true**<br><p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p><br>
-    /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput) with field(s):
+                            /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::readiness): <p>The readiness at a rule level.</p>
     ///   - [`rules(Option<Vec::<RuleResult>>)`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput::rules): <p>Details of the rule's results.</p>
-    /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError)
-    pub fn get_readiness_check_resource_status(
-        &self,
-    ) -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder {
-        crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError)
+    pub fn get_readiness_check_resource_status(&self) -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder {
+                                crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

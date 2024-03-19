@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIngestionDestinationOutput {
+pub struct GetIngestionDestinationOutput  {
     /// <p>Contains information about an ingestion destination.</p>
     pub ingestion_destination: ::std::option::Option<crate::types::IngestionDestination>,
     _request_id: Option<String>,
 }
-impl GetIngestionDestinationOutput {
+impl  GetIngestionDestinationOutput  {
     /// <p>Contains information about an ingestion destination.</p>
-    pub fn ingestion_destination(&self) -> ::std::option::Option<&crate::types::IngestionDestination> {
+    pub fn ingestion_destination(&self) -> ::std::option::Option<& crate::types::IngestionDestination> {
         self.ingestion_destination.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIngestionDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIngestionDestinationOutput {
     /// Creates a new builder-style object to manufacture [`GetIngestionDestinationOutput`](crate::operation::get_ingestion_destination::GetIngestionDestinationOutput).
     pub fn builder() -> crate::operation::get_ingestion_destination::builders::GetIngestionDestinationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetIngestionDestinationOutputBuilder {
     }
     /// <p>Contains information about an ingestion destination.</p>
     pub fn set_ingestion_destination(mut self, input: ::std::option::Option<crate::types::IngestionDestination>) -> Self {
-        self.ingestion_destination = input;
-        self
+        self.ingestion_destination = input; self
     }
     /// <p>Contains information about an ingestion destination.</p>
     pub fn get_ingestion_destination(&self) -> &::std::option::Option<crate::types::IngestionDestination> {
         &self.ingestion_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIngestionDestinationOutput`](crate::operation::get_ingestion_destination::GetIngestionDestinationOutput).
     pub fn build(self) -> crate::operation::get_ingestion_destination::GetIngestionDestinationOutput {
         crate::operation::get_ingestion_destination::GetIngestionDestinationOutput {
-            ingestion_destination: self.ingestion_destination,
+            ingestion_destination: self.ingestion_destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

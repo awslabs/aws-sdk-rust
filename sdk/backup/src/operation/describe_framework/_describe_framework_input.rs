@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFrameworkInput {
+pub struct DescribeFrameworkInput  {
     /// <p>The unique name of a framework.</p>
     pub framework_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFrameworkInput {
+impl  DescribeFrameworkInput  {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeFrameworkInputBuilder {
     }
     /// <p>The unique name of a framework.</p>
     pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_name = input;
-        self
+        self.framework_name = input; self
     }
     /// <p>The unique name of a framework.</p>
     pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_name
     }
     /// Consumes the builder and constructs a [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_framework::DescribeFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_framework::DescribeFrameworkInput {
-            framework_name: self.framework_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_framework::DescribeFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_framework::DescribeFrameworkInput {
+                framework_name: self.framework_name
+                ,
+            }
+        )
     }
 }
+

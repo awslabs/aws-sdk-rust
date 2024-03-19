@@ -3,22 +3,20 @@
 /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDatabase {
+pub struct RedshiftDatabase  {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
     pub database_name: ::std::string::String,
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub cluster_identifier: ::std::string::String,
 }
-impl RedshiftDatabase {
+impl  RedshiftDatabase  {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_identifier.deref()
+    pub fn cluster_identifier(&self) -> & str {
+        use std::ops::Deref; self.cluster_identifier.deref()
     }
 }
 impl RedshiftDatabase {
@@ -44,8 +42,7 @@ impl RedshiftDatabaseBuilder {
     }
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl RedshiftDatabaseBuilder {
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl RedshiftDatabaseBuilder {
     /// - [`database_name`](crate::types::builders::RedshiftDatabaseBuilder::database_name)
     /// - [`cluster_identifier`](crate::types::builders::RedshiftDatabaseBuilder::cluster_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDatabase, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDatabase {
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building RedshiftDatabase",
-                )
-            })?,
-            cluster_identifier: self.cluster_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cluster_identifier",
-                    "cluster_identifier was not specified but it is required when building RedshiftDatabase",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDatabase {
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building RedshiftDatabase")
+                    )?
+                ,
+                cluster_identifier: self.cluster_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cluster_identifier", "cluster_identifier was not specified but it is required when building RedshiftDatabase")
+                    )?
+                ,
+            }
+        )
     }
 }
+

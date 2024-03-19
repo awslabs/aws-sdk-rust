@@ -3,7 +3,7 @@
 /// <p>This data type is used in the <code>Finding</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InspectorServiceAttributes {
+pub struct InspectorServiceAttributes  {
     /// <p>The schema version of this data type.</p>
     pub schema_version: i32,
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
@@ -11,17 +11,17 @@ pub struct InspectorServiceAttributes {
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
     pub rules_package_arn: ::std::option::Option<::std::string::String>,
 }
-impl InspectorServiceAttributes {
+impl  InspectorServiceAttributes  {
     /// <p>The schema version of this data type.</p>
     pub fn schema_version(&self) -> i32 {
         self.schema_version
     }
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
-    pub fn rules_package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rules_package_arn(&self) -> ::std::option::Option<& str> {
         self.rules_package_arn.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl InspectorServiceAttributesBuilder {
     }
     /// <p>The schema version of this data type.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The schema version of this data type.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl InspectorServiceAttributesBuilder {
     }
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
     pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_run_arn = input;
-        self
+        self.assessment_run_arn = input; self
     }
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
     pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl InspectorServiceAttributesBuilder {
     }
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
     pub fn set_rules_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rules_package_arn = input;
-        self
+        self.rules_package_arn = input; self
     }
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
     pub fn get_rules_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,14 @@ impl InspectorServiceAttributesBuilder {
     /// Consumes the builder and constructs a [`InspectorServiceAttributes`](crate::types::InspectorServiceAttributes).
     pub fn build(self) -> crate::types::InspectorServiceAttributes {
         crate::types::InspectorServiceAttributes {
-            schema_version: self.schema_version.unwrap_or_default(),
-            assessment_run_arn: self.assessment_run_arn,
-            rules_package_arn: self.rules_package_arn,
+            schema_version: self.schema_version
+                .unwrap_or_default()
+            ,
+            assessment_run_arn: self.assessment_run_arn
+            ,
+            rules_package_arn: self.rules_package_arn
+            ,
         }
     }
 }
+

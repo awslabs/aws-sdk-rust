@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRotationShiftsOutput {
+pub struct ListRotationShiftsOutput  {
     /// <p>Information about shifts that meet the filter criteria.</p>
-    pub rotation_shifts: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
+    pub rotation_shifts: ::std::option::Option<::std::vec::Vec::<crate::types::RotationShift>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRotationShiftsOutput {
+impl  ListRotationShiftsOutput  {
     /// <p>Information about shifts that meet the filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rotation_shifts.is_none()`.
-    pub fn rotation_shifts(&self) -> &[crate::types::RotationShift] {
-        self.rotation_shifts.as_deref().unwrap_or_default()
+    pub fn rotation_shifts(&self) -> & [crate::types::RotationShift] {
+        self.rotation_shifts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRotationShiftsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRotationShiftsOutput {
     /// Creates a new builder-style object to manufacture [`ListRotationShiftsOutput`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput).
     pub fn builder() -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRotationShiftsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationShiftsOutputBuilder {
-    pub(crate) rotation_shifts: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
+    pub(crate) rotation_shifts: ::std::option::Option<::std::vec::Vec::<crate::types::RotationShift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRotationShiftsOutputBuilder {
     /// <p>Information about shifts that meet the filter criteria.</p>
     pub fn rotation_shifts(mut self, input: crate::types::RotationShift) -> Self {
         let mut v = self.rotation_shifts.unwrap_or_default();
-        v.push(input);
-        self.rotation_shifts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rotation_shifts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about shifts that meet the filter criteria.</p>
-    pub fn set_rotation_shifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>) -> Self {
-        self.rotation_shifts = input;
-        self
+    pub fn set_rotation_shifts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RotationShift>>) -> Self {
+        self.rotation_shifts = input; self
     }
     /// <p>Information about shifts that meet the filter criteria.</p>
-    pub fn get_rotation_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
+    pub fn get_rotation_shifts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RotationShift>> {
         &self.rotation_shifts
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListRotationShiftsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRotationShiftsOutput`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput).
     pub fn build(self) -> crate::operation::list_rotation_shifts::ListRotationShiftsOutput {
         crate::operation::list_rotation_shifts::ListRotationShiftsOutput {
-            rotation_shifts: self.rotation_shifts,
-            next_token: self.next_token,
+            rotation_shifts: self.rotation_shifts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationOutput {
+pub struct GetRecommendationOutput  {
     /// <p>The Recommendation</p>
     pub recommendation: ::std::option::Option<crate::types::Recommendation>,
     _request_id: Option<String>,
 }
-impl GetRecommendationOutput {
+impl  GetRecommendationOutput  {
     /// <p>The Recommendation</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::Recommendation> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::Recommendation> {
         self.recommendation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecommendationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationOutput`](crate::operation::get_recommendation::GetRecommendationOutput).
     pub fn builder() -> crate::operation::get_recommendation::builders::GetRecommendationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetRecommendationOutputBuilder {
     }
     /// <p>The Recommendation</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::Recommendation>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>The Recommendation</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::Recommendation> {
         &self.recommendation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecommendationOutput`](crate::operation::get_recommendation::GetRecommendationOutput).
     pub fn build(self) -> crate::operation::get_recommendation::GetRecommendationOutput {
         crate::operation::get_recommendation::GetRecommendationOutput {
-            recommendation: self.recommendation,
+            recommendation: self.recommendation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

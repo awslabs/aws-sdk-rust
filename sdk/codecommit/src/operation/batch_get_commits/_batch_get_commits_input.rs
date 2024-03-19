@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCommitsInput {
+pub struct BatchGetCommitsInput  {
     /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    pub commit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub commit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the repository that contains the commits.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetCommitsInput {
+impl  BatchGetCommitsInput  {
     /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commit_ids.is_none()`.
-    pub fn commit_ids(&self) -> &[::std::string::String] {
-        self.commit_ids.as_deref().unwrap_or_default()
+    pub fn commit_ids(&self) -> & [::std::string::String] {
+        self.commit_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the repository that contains the commits.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
@@ -35,7 +36,7 @@ impl BatchGetCommitsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCommitsInputBuilder {
-    pub(crate) commit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) commit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsInputBuilder {
@@ -48,21 +49,20 @@ impl BatchGetCommitsInputBuilder {
     /// </note>
     pub fn commit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.commit_ids.unwrap_or_default();
-        v.push(input.into());
-        self.commit_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.commit_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    pub fn set_commit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.commit_ids = input;
-        self
+    pub fn set_commit_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.commit_ids = input; self
     }
     /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    pub fn get_commit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_commit_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.commit_ids
     }
     /// <p>The name of the repository that contains the commits.</p>
@@ -73,20 +73,22 @@ impl BatchGetCommitsInputBuilder {
     }
     /// <p>The name of the repository that contains the commits.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the commits.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
     /// Consumes the builder and constructs a [`BatchGetCommitsInput`](crate::operation::batch_get_commits::BatchGetCommitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_commits::BatchGetCommitsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_commits::BatchGetCommitsInput {
-            commit_ids: self.commit_ids,
-            repository_name: self.repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_commits::BatchGetCommitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_commits::BatchGetCommitsInput {
+                commit_ids: self.commit_ids
+                ,
+                repository_name: self.repository_name
+                ,
+            }
+        )
     }
 }
+

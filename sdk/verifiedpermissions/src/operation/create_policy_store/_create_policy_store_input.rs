@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePolicyStoreInput {
+pub struct CreatePolicyStoreInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
@@ -16,27 +16,27 @@ pub struct CreatePolicyStoreInput {
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreatePolicyStoreInput {
+impl  CreatePolicyStoreInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the validation setting for this policy store.</p>
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
-    pub fn validation_settings(&self) -> ::std::option::Option<&crate::types::ValidationSettings> {
+    pub fn validation_settings(&self) -> ::std::option::Option<& crate::types::ValidationSettings> {
         self.validation_settings.as_ref()
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreatePolicyStoreInput {
+impl  ::std::fmt::Debug for CreatePolicyStoreInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePolicyStoreInput");
         formatter.field("client_token", &self.client_token);
@@ -74,8 +74,7 @@ impl CreatePolicyStoreInputBuilder {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -98,8 +97,7 @@ impl CreatePolicyStoreInputBuilder {
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
     pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
-        self.validation_settings = input;
-        self
+        self.validation_settings = input; self
     }
     /// <p>Specifies the validation setting for this policy store.</p>
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p><important>
@@ -115,22 +113,24 @@ impl CreatePolicyStoreInputBuilder {
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_policy_store::CreatePolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_policy_store::CreatePolicyStoreInput {
-            client_token: self.client_token,
-            validation_settings: self.validation_settings,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy_store::CreatePolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_policy_store::CreatePolicyStoreInput {
+                client_token: self.client_token
+                ,
+                validation_settings: self.validation_settings
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreatePolicyStoreInputBuilder {
@@ -142,3 +142,4 @@ impl ::std::fmt::Debug for CreatePolicyStoreInputBuilder {
         formatter.finish()
     }
 }
+

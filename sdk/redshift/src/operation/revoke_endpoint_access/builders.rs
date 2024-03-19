@@ -5,54 +5,50 @@ pub use crate::operation::revoke_endpoint_access::_revoke_endpoint_access_input:
 
 impl RevokeEndpointAccessInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.revoke_endpoint_access();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.revoke_endpoint_access();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RevokeEndpointAccess`.
-///
+/// 
 /// <p>Revokes access to a cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeEndpointAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder,
+                    inner: crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
-    > for RevokeEndpointAccessFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
-            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
+                    crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
+                > for RevokeEndpointAccessFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
+                        crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RevokeEndpointAccessFluentBuilder {
     /// Creates a new `RevokeEndpointAccess`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RevokeEndpointAccessFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::revoke_endpoint_access::RevokeEndpointAccess::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccess::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_endpoint_access::RevokeEndpointAccessError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::revoke_endpoint_access::RevokeEndpointAccess::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::revoke_endpoint_access::RevokeEndpointAccess::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput, crate::operation::revoke_endpoint_access::RevokeEndpointAccessError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The cluster to revoke access from.</p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
@@ -146,12 +133,12 @@ impl RevokeEndpointAccessFluentBuilder {
         self
     }
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_ids()
     }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
@@ -169,3 +156,4 @@ impl RevokeEndpointAccessFluentBuilder {
         self.inner.get_force()
     }
 }
+

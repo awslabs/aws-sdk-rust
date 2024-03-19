@@ -2,35 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSavingsPlansInput {
+pub struct DescribeSavingsPlansInput  {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub savings_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub savings_plan_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IDs of the Savings Plans.</p>
-    pub savings_plan_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub savings_plan_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The states.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanState>>,
     /// <p>The filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanFilter>>,
 }
-impl DescribeSavingsPlansInput {
+impl  DescribeSavingsPlansInput  {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_arns.is_none()`.
-    pub fn savings_plan_arns(&self) -> &[::std::string::String] {
-        self.savings_plan_arns.as_deref().unwrap_or_default()
+    pub fn savings_plan_arns(&self) -> & [::std::string::String] {
+        self.savings_plan_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of the Savings Plans.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_ids.is_none()`.
-    pub fn savings_plan_ids(&self) -> &[::std::string::String] {
-        self.savings_plan_ids.as_deref().unwrap_or_default()
+    pub fn savings_plan_ids(&self) -> & [::std::string::String] {
+        self.savings_plan_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
@@ -38,16 +40,18 @@ impl DescribeSavingsPlansInput {
         self.max_results
     }
     /// <p>The states.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::SavingsPlanState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::SavingsPlanState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SavingsPlanFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SavingsPlanFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeSavingsPlansInput {
@@ -61,12 +65,12 @@ impl DescribeSavingsPlansInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansInputBuilder {
-    pub(crate) savings_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) savings_plan_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) savings_plan_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) savings_plan_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanState>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanFilter>>,
 }
 impl DescribeSavingsPlansInputBuilder {
     /// Appends an item to `savings_plan_arns`.
@@ -76,17 +80,16 @@ impl DescribeSavingsPlansInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
     pub fn savings_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.savings_plan_arns.unwrap_or_default();
-        v.push(input.into());
-        self.savings_plan_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.savings_plan_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn set_savings_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.savings_plan_arns = input;
-        self
+    pub fn set_savings_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.savings_plan_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn get_savings_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_savings_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.savings_plan_arns
     }
     /// Appends an item to `savings_plan_ids`.
@@ -96,17 +99,16 @@ impl DescribeSavingsPlansInputBuilder {
     /// <p>The IDs of the Savings Plans.</p>
     pub fn savings_plan_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.savings_plan_ids.unwrap_or_default();
-        v.push(input.into());
-        self.savings_plan_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.savings_plan_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn set_savings_plan_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.savings_plan_ids = input;
-        self
+    pub fn set_savings_plan_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.savings_plan_ids = input; self
     }
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn get_savings_plan_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_savings_plan_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.savings_plan_ids
     }
     /// <p>The token for the next page of results.</p>
@@ -116,8 +118,7 @@ impl DescribeSavingsPlansInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +131,7 @@ impl DescribeSavingsPlansInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -144,17 +144,16 @@ impl DescribeSavingsPlansInputBuilder {
     /// <p>The states.</p>
     pub fn states(mut self, input: crate::types::SavingsPlanState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The states.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanState>>) -> Self {
+        self.states = input; self
     }
     /// <p>The states.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanState>> {
         &self.states
     }
     /// Appends an item to `filters`.
@@ -164,31 +163,36 @@ impl DescribeSavingsPlansInputBuilder {
     /// <p>The filters.</p>
     pub fn filters(mut self, input: crate::types::SavingsPlanFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_savings_plans::DescribeSavingsPlansInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_savings_plans::DescribeSavingsPlansInput {
-            savings_plan_arns: self.savings_plan_arns,
-            savings_plan_ids: self.savings_plan_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            states: self.states,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_savings_plans::DescribeSavingsPlansInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_savings_plans::DescribeSavingsPlansInput {
+                savings_plan_arns: self.savings_plan_arns
+                ,
+                savings_plan_ids: self.savings_plan_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                states: self.states
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

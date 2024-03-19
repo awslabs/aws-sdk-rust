@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKnowledgeBases`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput) with field(s):
+                            /// - On success, responds with [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput) with field(s):
     ///   - [`knowledge_base_summaries(Vec::<KnowledgeBaseSummary>)`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput::knowledge_base_summaries): <p>Information about the knowledge bases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListKnowledgeBasesError>`](crate::operation::list_knowledge_bases::ListKnowledgeBasesError)
+                            /// - On failure, responds with [`SdkError<ListKnowledgeBasesError>`](crate::operation::list_knowledge_bases::ListKnowledgeBasesError)
     pub fn list_knowledge_bases(&self) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder {
-        crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

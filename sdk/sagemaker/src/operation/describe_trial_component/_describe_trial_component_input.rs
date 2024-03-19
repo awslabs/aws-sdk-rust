@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrialComponentInput {
+pub struct DescribeTrialComponentInput  {
     /// <p>The name of the trial component to describe.</p>
     pub trial_component_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTrialComponentInput {
+impl  DescribeTrialComponentInput  {
     /// <p>The name of the trial component to describe.</p>
-    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<& str> {
         self.trial_component_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeTrialComponentInputBuilder {
     }
     /// <p>The name of the trial component to describe.</p>
     pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_component_name = input;
-        self
+        self.trial_component_name = input; self
     }
     /// <p>The name of the trial component to describe.</p>
     pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_name
     }
     /// Consumes the builder and constructs a [`DescribeTrialComponentInput`](crate::operation::describe_trial_component::DescribeTrialComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trial_component::DescribeTrialComponentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_trial_component::DescribeTrialComponentInput {
-            trial_component_name: self.trial_component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trial_component::DescribeTrialComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_trial_component::DescribeTrialComponentInput {
+                trial_component_name: self.trial_component_name
+                ,
+            }
+        )
     }
 }
+

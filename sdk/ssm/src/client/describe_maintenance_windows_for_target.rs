@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindowsForTarget`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`targets(Target)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::targets) / [`set_targets(Option<Vec::<Target>>)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::set_targets):<br>required: **true**<br><p>The managed node ID or key-value pair to retrieve information about.</p><br>
     ///   - [`resource_type(MaintenanceWindowResourceType)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::resource_type) / [`set_resource_type(Option<MaintenanceWindowResourceType>)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::set_resource_type):<br>required: **true**<br><p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput) with field(s):
     ///   - [`window_identities(Option<Vec::<MaintenanceWindowIdentityForTarget>>)`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput::window_identities): <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsForTargetError>`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError)
-    pub fn describe_maintenance_windows_for_target(
-        &self,
-    ) -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder {
-        crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsForTargetError>`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError)
+    pub fn describe_maintenance_windows_for_target(&self) -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder {
+                                crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

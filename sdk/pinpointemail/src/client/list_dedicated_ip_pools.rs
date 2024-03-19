@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDedicatedIpPools`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput) with field(s):
+                            /// - On success, responds with [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput) with field(s):
     ///   - [`dedicated_ip_pools(Option<Vec::<String>>)`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput::dedicated_ip_pools): <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput::next_token): <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListDedicatedIpPoolsError>`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError)
+                            /// - On failure, responds with [`SdkError<ListDedicatedIpPoolsError>`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError)
     pub fn list_dedicated_ip_pools(&self) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder {
-        crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

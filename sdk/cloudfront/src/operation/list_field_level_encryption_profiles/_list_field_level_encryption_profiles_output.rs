@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFieldLevelEncryptionProfilesOutput {
+pub struct ListFieldLevelEncryptionProfilesOutput  {
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
     pub field_level_encryption_profile_list: ::std::option::Option<crate::types::FieldLevelEncryptionProfileList>,
     _request_id: Option<String>,
 }
-impl ListFieldLevelEncryptionProfilesOutput {
+impl  ListFieldLevelEncryptionProfilesOutput  {
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
-    pub fn field_level_encryption_profile_list(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileList> {
+    pub fn field_level_encryption_profile_list(&self) -> ::std::option::Option<& crate::types::FieldLevelEncryptionProfileList> {
         self.field_level_encryption_profile_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFieldLevelEncryptionProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFieldLevelEncryptionProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionProfilesOutput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput).
     pub fn builder() -> crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesOutputBuilder {
@@ -40,27 +40,28 @@ impl ListFieldLevelEncryptionProfilesOutputBuilder {
     }
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
     pub fn set_field_level_encryption_profile_list(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionProfileList>) -> Self {
-        self.field_level_encryption_profile_list = input;
-        self
+        self.field_level_encryption_profile_list = input; self
     }
     /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
     pub fn get_field_level_encryption_profile_list(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileList> {
         &self.field_level_encryption_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFieldLevelEncryptionProfilesOutput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput).
     pub fn build(self) -> crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput {
         crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput {
-            field_level_encryption_profile_list: self.field_level_encryption_profile_list,
+            field_level_encryption_profile_list: self.field_level_encryption_profile_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

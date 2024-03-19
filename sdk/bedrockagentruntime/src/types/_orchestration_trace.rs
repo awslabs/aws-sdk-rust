@@ -34,11 +34,7 @@ impl OrchestrationTrace {
     /// Tries to convert the enum instance into [`InvocationInput`](crate::types::OrchestrationTrace::InvocationInput), extracting the inner [`InvocationInput`](crate::types::InvocationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_invocation_input(&self) -> ::std::result::Result<&crate::types::InvocationInput, &Self> {
-        if let OrchestrationTrace::InvocationInput(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let OrchestrationTrace::InvocationInput(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InvocationInput`](crate::types::OrchestrationTrace::InvocationInput).
     pub fn is_invocation_input(&self) -> bool {
@@ -47,11 +43,7 @@ impl OrchestrationTrace {
     /// Tries to convert the enum instance into [`ModelInvocationInput`](crate::types::OrchestrationTrace::ModelInvocationInput), extracting the inner [`ModelInvocationInput`](crate::types::ModelInvocationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_model_invocation_input(&self) -> ::std::result::Result<&crate::types::ModelInvocationInput, &Self> {
-        if let OrchestrationTrace::ModelInvocationInput(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let OrchestrationTrace::ModelInvocationInput(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ModelInvocationInput`](crate::types::OrchestrationTrace::ModelInvocationInput).
     pub fn is_model_invocation_input(&self) -> bool {
@@ -60,11 +52,7 @@ impl OrchestrationTrace {
     /// Tries to convert the enum instance into [`Observation`](crate::types::OrchestrationTrace::Observation), extracting the inner [`Observation`](crate::types::Observation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_observation(&self) -> ::std::result::Result<&crate::types::Observation, &Self> {
-        if let OrchestrationTrace::Observation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let OrchestrationTrace::Observation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Observation`](crate::types::OrchestrationTrace::Observation).
     pub fn is_observation(&self) -> bool {
@@ -73,11 +61,7 @@ impl OrchestrationTrace {
     /// Tries to convert the enum instance into [`Rationale`](crate::types::OrchestrationTrace::Rationale), extracting the inner [`Rationale`](crate::types::Rationale).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rationale(&self) -> ::std::result::Result<&crate::types::Rationale, &Self> {
-        if let OrchestrationTrace::Rationale(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let OrchestrationTrace::Rationale(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Rationale`](crate::types::OrchestrationTrace::Rationale).
     pub fn is_rationale(&self) -> bool {
@@ -89,7 +73,8 @@ impl OrchestrationTrace {
     }
 }
 impl ::std::fmt::Debug for OrchestrationTrace {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    ::std::write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
+

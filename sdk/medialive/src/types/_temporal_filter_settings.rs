@@ -3,19 +3,19 @@
 /// Temporal Filter Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemporalFilterSettings {
+pub struct TemporalFilterSettings  {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     pub post_filter_sharpening: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub strength: ::std::option::Option<crate::types::TemporalFilterStrength>,
 }
-impl TemporalFilterSettings {
+impl  TemporalFilterSettings  {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
-    pub fn post_filter_sharpening(&self) -> ::std::option::Option<&crate::types::TemporalFilterPostFilterSharpening> {
+    pub fn post_filter_sharpening(&self) -> ::std::option::Option<& crate::types::TemporalFilterPostFilterSharpening> {
         self.post_filter_sharpening.as_ref()
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
-    pub fn strength(&self) -> ::std::option::Option<&crate::types::TemporalFilterStrength> {
+    pub fn strength(&self) -> ::std::option::Option<& crate::types::TemporalFilterStrength> {
         self.strength.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TemporalFilterSettingsBuilder {
     }
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     pub fn set_post_filter_sharpening(mut self, input: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>) -> Self {
-        self.post_filter_sharpening = input;
-        self
+        self.post_filter_sharpening = input; self
     }
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     pub fn get_post_filter_sharpening(&self) -> &::std::option::Option<crate::types::TemporalFilterPostFilterSharpening> {
@@ -55,8 +54,7 @@ impl TemporalFilterSettingsBuilder {
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub fn set_strength(mut self, input: ::std::option::Option<crate::types::TemporalFilterStrength>) -> Self {
-        self.strength = input;
-        self
+        self.strength = input; self
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     pub fn get_strength(&self) -> &::std::option::Option<crate::types::TemporalFilterStrength> {
@@ -65,8 +63,11 @@ impl TemporalFilterSettingsBuilder {
     /// Consumes the builder and constructs a [`TemporalFilterSettings`](crate::types::TemporalFilterSettings).
     pub fn build(self) -> crate::types::TemporalFilterSettings {
         crate::types::TemporalFilterSettings {
-            post_filter_sharpening: self.post_filter_sharpening,
-            strength: self.strength,
+            post_filter_sharpening: self.post_filter_sharpening
+            ,
+            strength: self.strength
+            ,
         }
     }
 }
+

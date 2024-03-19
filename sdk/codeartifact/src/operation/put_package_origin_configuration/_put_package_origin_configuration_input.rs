@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPackageOriginConfigurationInput {
+pub struct PutPackageOriginConfigurationInput  {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -29,21 +29,21 @@ pub struct PutPackageOriginConfigurationInput {
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
     pub restrictions: ::std::option::Option<crate::types::PackageOriginRestrictions>,
 }
-impl PutPackageOriginConfigurationInput {
+impl  PutPackageOriginConfigurationInput  {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>A format that specifies the type of the package to be updated.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
@@ -57,16 +57,16 @@ impl PutPackageOriginConfigurationInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package to be updated.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::PackageOriginRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<& crate::types::PackageOriginRestrictions> {
         self.restrictions.as_ref()
     }
 }
@@ -98,8 +98,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>The name of the repository that contains the package.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository that contains the package.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>A format that specifies the type of the package to be updated.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A format that specifies the type of the package to be updated.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -176,8 +172,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -201,8 +196,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     }
     /// <p>The name of the package to be updated.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package to be updated.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +212,7 @@ impl PutPackageOriginConfigurationInputBuilder {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
     pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::PackageOriginRestrictions>) -> Self {
-        self.restrictions = input;
-        self
+        self.restrictions = input; self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
@@ -227,20 +220,25 @@ impl PutPackageOriginConfigurationInputBuilder {
         &self.restrictions
     }
     /// Consumes the builder and constructs a [`PutPackageOriginConfigurationInput`](crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            restrictions: self.restrictions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                restrictions: self.restrictions
+                ,
+            }
+        )
     }
 }
+

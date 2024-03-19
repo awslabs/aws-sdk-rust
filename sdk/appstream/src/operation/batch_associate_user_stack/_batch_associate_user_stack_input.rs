@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateUserStackInput {
+pub struct BatchAssociateUserStackInput  {
     /// <p>The list of UserStackAssociation objects.</p>
-    pub user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub user_stack_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>>,
 }
-impl BatchAssociateUserStackInput {
+impl  BatchAssociateUserStackInput  {
     /// <p>The list of UserStackAssociation objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_stack_associations.is_none()`.
-    pub fn user_stack_associations(&self) -> &[crate::types::UserStackAssociation] {
-        self.user_stack_associations.as_deref().unwrap_or_default()
+    pub fn user_stack_associations(&self) -> & [crate::types::UserStackAssociation] {
+        self.user_stack_associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchAssociateUserStackInput {
@@ -25,7 +26,7 @@ impl BatchAssociateUserStackInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateUserStackInputBuilder {
-    pub(crate) user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub(crate) user_stack_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>>,
 }
 impl BatchAssociateUserStackInputBuilder {
     /// Appends an item to `user_stack_associations`.
@@ -35,28 +36,26 @@ impl BatchAssociateUserStackInputBuilder {
     /// <p>The list of UserStackAssociation objects.</p>
     pub fn user_stack_associations(mut self, input: crate::types::UserStackAssociation) -> Self {
         let mut v = self.user_stack_associations.unwrap_or_default();
-        v.push(input);
-        self.user_stack_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_stack_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>) -> Self {
-        self.user_stack_associations = input;
-        self
+    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>>) -> Self {
+        self.user_stack_associations = input; self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
+    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserStackAssociation>> {
         &self.user_stack_associations
     }
     /// Consumes the builder and constructs a [`BatchAssociateUserStackInput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput {
-            user_stack_associations: self.user_stack_associations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput {
+                user_stack_associations: self.user_stack_associations
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupOutput {
+pub struct UpdateGroupOutput  {
     /// <p>The name of the group.</p>
     pub group: ::std::option::Option<crate::types::Group>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct UpdateGroupOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl UpdateGroupOutput {
+impl  UpdateGroupOutput  {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::Group> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::Group> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl UpdateGroupOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn builder() -> crate::operation::update_group::builders::UpdateGroupOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateGroupOutputBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<crate::types::Group>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
@@ -68,8 +67,7 @@ impl UpdateGroupOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl UpdateGroupOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
     pub fn build(self) -> crate::operation::update_group::UpdateGroupOutput {
         crate::operation::update_group::UpdateGroupOutput {
-            group: self.group,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            group: self.group
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

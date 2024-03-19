@@ -3,15 +3,14 @@
 /// <p>The JSON payload of the action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionPayload {
+pub struct ActionPayload  {
     /// <p>The payload of the action in a JSON string.</p>
     pub string_value: ::std::string::String,
 }
-impl ActionPayload {
+impl  ActionPayload  {
     /// <p>The payload of the action in a JSON string.</p>
-    pub fn string_value(&self) -> &str {
-        use std::ops::Deref;
-        self.string_value.deref()
+    pub fn string_value(&self) -> & str {
+        use std::ops::Deref; self.string_value.deref()
     }
 }
 impl ActionPayload {
@@ -36,8 +35,7 @@ impl ActionPayloadBuilder {
     }
     /// <p>The payload of the action in a JSON string.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>The payload of the action in a JSON string.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ActionPayloadBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`string_value`](crate::types::builders::ActionPayloadBuilder::string_value)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionPayload, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionPayload {
-            string_value: self.string_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "string_value",
-                    "string_value was not specified but it is required when building ActionPayload",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionPayload {
+                string_value: self.string_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("string_value", "string_value was not specified but it is required when building ActionPayload")
+                    )?
+                ,
+            }
+        )
     }
 }
+

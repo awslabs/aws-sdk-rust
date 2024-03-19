@@ -3,7 +3,7 @@
 /// <p>The high-level information about a rule groups namespace. To retrieve more information, use <code>DescribeRuleGroupsNamespace</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupsNamespaceSummary {
+pub struct RuleGroupsNamespaceSummary  {
     /// <p>The ARN of the rule groups namespace.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the rule groups namespace.</p>
@@ -15,33 +15,31 @@ pub struct RuleGroupsNamespaceSummary {
     /// <p>The date and time that the rule groups namespace was most recently changed.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>The list of tag keys and values that are associated with the rule groups namespace.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RuleGroupsNamespaceSummary {
+impl  RuleGroupsNamespaceSummary  {
     /// <p>The ARN of the rule groups namespace.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the rule groups namespace.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A structure that displays the current status of the rule groups namespace.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the rule groups namespace was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time that the rule groups namespace was most recently changed.</p>
-    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.modified_at
     }
     /// <p>The list of tag keys and values that are associated with the rule groups namespace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -61,7 +59,7 @@ pub struct RuleGroupsNamespaceSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RuleGroupsNamespaceSummaryBuilder {
     /// <p>The ARN of the rule groups namespace.</p>
@@ -72,8 +70,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
     }
     /// <p>The ARN of the rule groups namespace.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the rule groups namespace.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
     }
     /// <p>The name of the rule groups namespace.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule groups namespace.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
     }
     /// <p>A structure that displays the current status of the rule groups namespace.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A structure that displays the current status of the rule groups namespace.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RuleGroupsNamespaceStatus> {
@@ -117,8 +112,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
     }
     /// <p>The date and time that the rule groups namespace was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the rule groups namespace was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +126,7 @@ impl RuleGroupsNamespaceSummaryBuilder {
     }
     /// <p>The date and time that the rule groups namespace was most recently changed.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The date and time that the rule groups namespace was most recently changed.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,17 +139,16 @@ impl RuleGroupsNamespaceSummaryBuilder {
     /// <p>The list of tag keys and values that are associated with the rule groups namespace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values that are associated with the rule groups namespace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values that are associated with the rule groups namespace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceSummary`](crate::types::RuleGroupsNamespaceSummary).
@@ -166,33 +158,34 @@ impl RuleGroupsNamespaceSummaryBuilder {
     /// - [`created_at`](crate::types::builders::RuleGroupsNamespaceSummaryBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::RuleGroupsNamespaceSummaryBuilder::modified_at)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupsNamespaceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleGroupsNamespaceSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RuleGroupsNamespaceSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RuleGroupsNamespaceSummary",
-                )
-            })?,
-            status: self.status,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building RuleGroupsNamespaceSummary",
-                )
-            })?,
-            modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "modified_at",
-                    "modified_at was not specified but it is required when building RuleGroupsNamespaceSummary",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleGroupsNamespaceSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RuleGroupsNamespaceSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RuleGroupsNamespaceSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building RuleGroupsNamespaceSummary")
+                    )?
+                ,
+                modified_at: self.modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("modified_at", "modified_at was not specified but it is required when building RuleGroupsNamespaceSummary")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

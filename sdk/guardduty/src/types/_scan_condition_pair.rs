@@ -3,19 +3,19 @@
 /// <p>Represents the <code>key:value</code> pair to be matched against given resource property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanConditionPair {
+pub struct ScanConditionPair  {
     /// <p>Represents the <b>key</b> in the map condition.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ScanConditionPair {
+impl  ScanConditionPair  {
     /// <p>Represents the <b>key</b> in the map condition.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ScanConditionPairBuilder {
     }
     /// <p>Represents the <b>key</b> in the map condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Represents the <b>key</b> in the map condition.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ScanConditionPairBuilder {
     }
     /// <p>Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ScanConditionPairBuilder {
     /// Consumes the builder and constructs a [`ScanConditionPair`](crate::types::ScanConditionPair).
     pub fn build(self) -> crate::types::ScanConditionPair {
         crate::types::ScanConditionPair {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

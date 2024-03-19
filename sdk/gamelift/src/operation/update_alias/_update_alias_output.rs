@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAliasOutput {
+pub struct UpdateAliasOutput  {
     /// <p>The updated alias resource.</p>
     pub alias: ::std::option::Option<crate::types::Alias>,
     _request_id: Option<String>,
 }
-impl UpdateAliasOutput {
+impl  UpdateAliasOutput  {
     /// <p>The updated alias resource.</p>
-    pub fn alias(&self) -> ::std::option::Option<&crate::types::Alias> {
+    pub fn alias(&self) -> ::std::option::Option<& crate::types::Alias> {
         self.alias.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAliasOutput`](crate::operation::update_alias::UpdateAliasOutput).
     pub fn builder() -> crate::operation::update_alias::builders::UpdateAliasOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateAliasOutputBuilder {
     }
     /// <p>The updated alias resource.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<crate::types::Alias>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The updated alias resource.</p>
     pub fn get_alias(&self) -> &::std::option::Option<crate::types::Alias> {
         &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::operation::update_alias::UpdateAliasOutput).
     pub fn build(self) -> crate::operation::update_alias::UpdateAliasOutput {
         crate::operation::update_alias::UpdateAliasOutput {
-            alias: self.alias,
+            alias: self.alias
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

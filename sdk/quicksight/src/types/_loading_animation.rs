@@ -3,13 +3,13 @@
 /// <p>The configuration of loading animation in free-form layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadingAnimation {
+pub struct LoadingAnimation  {
     /// <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl LoadingAnimation {
+impl  LoadingAnimation  {
     /// <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoadingAnimationBuilder {
     }
     /// <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -43,6 +42,10 @@ impl LoadingAnimationBuilder {
     }
     /// Consumes the builder and constructs a [`LoadingAnimation`](crate::types::LoadingAnimation).
     pub fn build(self) -> crate::types::LoadingAnimation {
-        crate::types::LoadingAnimation { visibility: self.visibility }
+        crate::types::LoadingAnimation {
+            visibility: self.visibility
+            ,
+        }
     }
 }
+

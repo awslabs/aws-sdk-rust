@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLifecyclePolicyOutput {
+pub struct UpdateLifecyclePolicyOutput  {
     /// <p>Details about the updated lifecycle policy.</p>
     pub lifecycle_policy_detail: ::std::option::Option<crate::types::LifecyclePolicyDetail>,
     _request_id: Option<String>,
 }
-impl UpdateLifecyclePolicyOutput {
+impl  UpdateLifecyclePolicyOutput  {
     /// <p>Details about the updated lifecycle policy.</p>
-    pub fn lifecycle_policy_detail(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetail> {
+    pub fn lifecycle_policy_detail(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyDetail> {
         self.lifecycle_policy_detail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateLifecyclePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLifecyclePolicyOutput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput).
     pub fn builder() -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateLifecyclePolicyOutputBuilder {
     }
     /// <p>Details about the updated lifecycle policy.</p>
     pub fn set_lifecycle_policy_detail(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetail>) -> Self {
-        self.lifecycle_policy_detail = input;
-        self
+        self.lifecycle_policy_detail = input; self
     }
     /// <p>Details about the updated lifecycle policy.</p>
     pub fn get_lifecycle_policy_detail(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetail> {
         &self.lifecycle_policy_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyOutput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput).
     pub fn build(self) -> crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput {
         crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput {
-            lifecycle_policy_detail: self.lifecycle_policy_detail,
+            lifecycle_policy_detail: self.lifecycle_policy_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

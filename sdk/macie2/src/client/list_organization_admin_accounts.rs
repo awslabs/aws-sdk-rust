@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput) with field(s):
+                            /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput) with field(s):
     ///   - [`admin_accounts(Option<Vec::<AdminAccount>>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::admin_accounts): <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError)
-    pub fn list_organization_admin_accounts(
-        &self,
-    ) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder {
-        crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError)
+    pub fn list_organization_admin_accounts(&self) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder {
+                                crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

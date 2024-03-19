@@ -3,29 +3,29 @@
 /// <p>An object representing a container instance host device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The path for the device on the host container instance.</p>
     pub host_path: ::std::string::String,
     /// <p>The path inside the container at which to expose the host device.</p>
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceCgroupPermission>>,
 }
-impl Device {
+impl  Device  {
     /// <p>The path for the device on the host container instance.</p>
-    pub fn host_path(&self) -> &str {
-        use std::ops::Deref;
-        self.host_path.deref()
+    pub fn host_path(&self) -> & str {
+        use std::ops::Deref; self.host_path.deref()
     }
     /// <p>The path inside the container at which to expose the host device.</p>
-    pub fn container_path(&self) -> ::std::option::Option<&str> {
+    pub fn container_path(&self) -> ::std::option::Option<& str> {
         self.container_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::DeviceCgroupPermission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::DeviceCgroupPermission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Device {
@@ -41,7 +41,7 @@ impl Device {
 pub struct DeviceBuilder {
     pub(crate) host_path: ::std::option::Option<::std::string::String>,
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceCgroupPermission>>,
 }
 impl DeviceBuilder {
     /// <p>The path for the device on the host container instance.</p>
@@ -52,8 +52,7 @@ impl DeviceBuilder {
     }
     /// <p>The path for the device on the host container instance.</p>
     pub fn set_host_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_path = input;
-        self
+        self.host_path = input; self
     }
     /// <p>The path for the device on the host container instance.</p>
     pub fn get_host_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl DeviceBuilder {
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,32 +78,35 @@ impl DeviceBuilder {
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
     pub fn permissions(mut self, input: crate::types::DeviceCgroupPermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceCgroupPermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceCgroupPermission>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     /// This method will fail if any of the following fields are not set:
     /// - [`host_path`](crate::types::builders::DeviceBuilder::host_path)
     pub fn build(self) -> ::std::result::Result<crate::types::Device, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Device {
-            host_path: self.host_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host_path",
-                    "host_path was not specified but it is required when building Device",
-                )
-            })?,
-            container_path: self.container_path,
-            permissions: self.permissions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Device {
+                host_path: self.host_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host_path", "host_path was not specified but it is required when building Device")
+                    )?
+                ,
+                container_path: self.container_path
+                ,
+                permissions: self.permissions
+                ,
+            }
+        )
     }
 }
+

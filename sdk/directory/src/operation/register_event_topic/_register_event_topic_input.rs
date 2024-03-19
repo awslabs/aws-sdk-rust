@@ -3,19 +3,19 @@
 /// <p>Registers a new event topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterEventTopicInput {
+pub struct RegisterEventTopicInput  {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
-impl RegisterEventTopicInput {
+impl  RegisterEventTopicInput  {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RegisterEventTopicInputBuilder {
     }
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl RegisterEventTopicInputBuilder {
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.topic_name
     }
     /// Consumes the builder and constructs a [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_event_topic::RegisterEventTopicInput {
-            directory_id: self.directory_id,
-            topic_name: self.topic_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_event_topic::RegisterEventTopicInput {
+                directory_id: self.directory_id
+                ,
+                topic_name: self.topic_name
+                ,
+            }
+        )
     }
 }
+

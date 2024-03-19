@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceConnectorOutput {
+pub struct CreateVoiceConnectorOutput  {
     /// <p>The Amazon Chime Voice Connector details.</p>
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
 }
-impl CreateVoiceConnectorOutput {
+impl  CreateVoiceConnectorOutput  {
     /// <p>The Amazon Chime Voice Connector details.</p>
-    pub fn voice_connector(&self) -> ::std::option::Option<&crate::types::VoiceConnector> {
+    pub fn voice_connector(&self) -> ::std::option::Option<& crate::types::VoiceConnector> {
         self.voice_connector.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateVoiceConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorOutput`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput).
     pub fn builder() -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateVoiceConnectorOutputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector details.</p>
     pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnector>) -> Self {
-        self.voice_connector = input;
-        self
+        self.voice_connector = input; self
     }
     /// <p>The Amazon Chime Voice Connector details.</p>
     pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnector> {
         &self.voice_connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorOutput`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput).
     pub fn build(self) -> crate::operation::create_voice_connector::CreateVoiceConnectorOutput {
         crate::operation::create_voice_connector::CreateVoiceConnectorOutput {
-            voice_connector: self.voice_connector,
+            voice_connector: self.voice_connector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

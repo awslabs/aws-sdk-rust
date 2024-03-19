@@ -3,24 +3,25 @@
 /// <p>The result message containing a list of managed actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEnvironmentManagedActionsOutput {
+pub struct DescribeEnvironmentManagedActionsOutput  {
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
+    pub managed_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedAction>>,
     _request_id: Option<String>,
 }
-impl DescribeEnvironmentManagedActionsOutput {
+impl  DescribeEnvironmentManagedActionsOutput  {
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_actions.is_none()`.
-    pub fn managed_actions(&self) -> &[crate::types::ManagedAction] {
-        self.managed_actions.as_deref().unwrap_or_default()
+    pub fn managed_actions(&self) -> & [crate::types::ManagedAction] {
+        self.managed_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEnvironmentManagedActionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEnvironmentManagedActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
     pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeEnvironmentManagedActionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsOutputBuilder {
-    pub(crate) managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
+    pub(crate) managed_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedAction>>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentManagedActionsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeEnvironmentManagedActionsOutputBuilder {
     /// <p>A list of upcoming and in-progress managed actions.</p>
     pub fn managed_actions(mut self, input: crate::types::ManagedAction) -> Self {
         let mut v = self.managed_actions.unwrap_or_default();
-        v.push(input);
-        self.managed_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn set_managed_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>) -> Self {
-        self.managed_actions = input;
-        self
+    pub fn set_managed_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedAction>>) -> Self {
+        self.managed_actions = input; self
     }
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn get_managed_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>> {
+    pub fn get_managed_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedAction>> {
         &self.managed_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
     pub fn build(self) -> crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput {
         crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput {
-            managed_actions: self.managed_actions,
+            managed_actions: self.managed_actions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

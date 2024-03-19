@@ -3,7 +3,7 @@
 /// <p>Describes the association between an application and a WorkSpace resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkspaceResourceAssociation {
+pub struct WorkspaceResourceAssociation  {
     /// <p>The identifier of the associated resource.</p>
     pub associated_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource types of the associated resource.</p>
@@ -19,33 +19,33 @@ pub struct WorkspaceResourceAssociation {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl WorkspaceResourceAssociation {
+impl  WorkspaceResourceAssociation  {
     /// <p>The identifier of the associated resource.</p>
-    pub fn associated_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn associated_resource_id(&self) -> ::std::option::Option<& str> {
         self.associated_resource_id.as_deref()
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn associated_resource_type(&self) -> ::std::option::Option<&crate::types::WorkSpaceAssociatedResourceType> {
+    pub fn associated_resource_type(&self) -> ::std::option::Option<& crate::types::WorkSpaceAssociatedResourceType> {
         self.associated_resource_type.as_ref()
     }
     /// <p>The time the association is created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The time the association status was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The status of the WorkSpace resource association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AssociationState> {
         self.state.as_ref()
     }
     /// <p>The reason the association deployment failed.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&crate::types::AssociationStateReason> {
+    pub fn state_reason(&self) -> ::std::option::Option<& crate::types::AssociationStateReason> {
         self.state_reason.as_ref()
     }
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn set_associated_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_resource_id = input;
-        self
+        self.associated_resource_id = input; self
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn get_associated_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The resource types of the associated resource.</p>
     pub fn set_associated_resource_type(mut self, input: ::std::option::Option<crate::types::WorkSpaceAssociatedResourceType>) -> Self {
-        self.associated_resource_type = input;
-        self
+        self.associated_resource_type = input; self
     }
     /// <p>The resource types of the associated resource.</p>
     pub fn get_associated_resource_type(&self) -> &::std::option::Option<crate::types::WorkSpaceAssociatedResourceType> {
@@ -104,8 +102,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The time the association is created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The time the association is created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The time the association status was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time the association status was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The status of the WorkSpace resource association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the WorkSpace resource association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AssociationState> {
@@ -146,8 +141,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The reason the association deployment failed.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<crate::types::AssociationStateReason>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason the association deployment failed.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<crate::types::AssociationStateReason> {
@@ -160,8 +154,7 @@ impl WorkspaceResourceAssociationBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl WorkspaceResourceAssociationBuilder {
     /// Consumes the builder and constructs a [`WorkspaceResourceAssociation`](crate::types::WorkspaceResourceAssociation).
     pub fn build(self) -> crate::types::WorkspaceResourceAssociation {
         crate::types::WorkspaceResourceAssociation {
-            associated_resource_id: self.associated_resource_id,
-            associated_resource_type: self.associated_resource_type,
-            created: self.created,
-            last_updated_time: self.last_updated_time,
-            state: self.state,
-            state_reason: self.state_reason,
-            workspace_id: self.workspace_id,
+            associated_resource_id: self.associated_resource_id
+            ,
+            associated_resource_type: self.associated_resource_type
+            ,
+            created: self.created
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            workspace_id: self.workspace_id
+            ,
         }
     }
 }
+

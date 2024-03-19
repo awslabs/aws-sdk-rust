@@ -3,7 +3,7 @@
 /// Settings for one failover condition.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverConditionSettings {
+pub struct FailoverConditionSettings  {
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
     pub audio_silence_settings: ::std::option::Option<crate::types::AudioSilenceFailoverSettings>,
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
@@ -11,17 +11,17 @@ pub struct FailoverConditionSettings {
     /// MediaLive will perform a failover if content is considered black for the specified period.
     pub video_black_settings: ::std::option::Option<crate::types::VideoBlackFailoverSettings>,
 }
-impl FailoverConditionSettings {
+impl  FailoverConditionSettings  {
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
-    pub fn audio_silence_settings(&self) -> ::std::option::Option<&crate::types::AudioSilenceFailoverSettings> {
+    pub fn audio_silence_settings(&self) -> ::std::option::Option<& crate::types::AudioSilenceFailoverSettings> {
         self.audio_silence_settings.as_ref()
     }
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
-    pub fn input_loss_settings(&self) -> ::std::option::Option<&crate::types::InputLossFailoverSettings> {
+    pub fn input_loss_settings(&self) -> ::std::option::Option<& crate::types::InputLossFailoverSettings> {
         self.input_loss_settings.as_ref()
     }
     /// MediaLive will perform a failover if content is considered black for the specified period.
-    pub fn video_black_settings(&self) -> ::std::option::Option<&crate::types::VideoBlackFailoverSettings> {
+    pub fn video_black_settings(&self) -> ::std::option::Option<& crate::types::VideoBlackFailoverSettings> {
         self.video_black_settings.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FailoverConditionSettingsBuilder {
     }
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
     pub fn set_audio_silence_settings(mut self, input: ::std::option::Option<crate::types::AudioSilenceFailoverSettings>) -> Self {
-        self.audio_silence_settings = input;
-        self
+        self.audio_silence_settings = input; self
     }
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
     pub fn get_audio_silence_settings(&self) -> &::std::option::Option<crate::types::AudioSilenceFailoverSettings> {
@@ -62,8 +61,7 @@ impl FailoverConditionSettingsBuilder {
     }
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
     pub fn set_input_loss_settings(mut self, input: ::std::option::Option<crate::types::InputLossFailoverSettings>) -> Self {
-        self.input_loss_settings = input;
-        self
+        self.input_loss_settings = input; self
     }
     /// MediaLive will perform a failover if content is not detected in this input for the specified period.
     pub fn get_input_loss_settings(&self) -> &::std::option::Option<crate::types::InputLossFailoverSettings> {
@@ -76,8 +74,7 @@ impl FailoverConditionSettingsBuilder {
     }
     /// MediaLive will perform a failover if content is considered black for the specified period.
     pub fn set_video_black_settings(mut self, input: ::std::option::Option<crate::types::VideoBlackFailoverSettings>) -> Self {
-        self.video_black_settings = input;
-        self
+        self.video_black_settings = input; self
     }
     /// MediaLive will perform a failover if content is considered black for the specified period.
     pub fn get_video_black_settings(&self) -> &::std::option::Option<crate::types::VideoBlackFailoverSettings> {
@@ -86,9 +83,13 @@ impl FailoverConditionSettingsBuilder {
     /// Consumes the builder and constructs a [`FailoverConditionSettings`](crate::types::FailoverConditionSettings).
     pub fn build(self) -> crate::types::FailoverConditionSettings {
         crate::types::FailoverConditionSettings {
-            audio_silence_settings: self.audio_silence_settings,
-            input_loss_settings: self.input_loss_settings,
-            video_black_settings: self.video_black_settings,
+            audio_silence_settings: self.audio_silence_settings
+            ,
+            input_loss_settings: self.input_loss_settings
+            ,
+            video_black_settings: self.video_black_settings
+            ,
         }
     }
 }
+

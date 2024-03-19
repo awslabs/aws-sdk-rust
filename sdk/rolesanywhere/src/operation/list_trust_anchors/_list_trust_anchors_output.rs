@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrustAnchorsOutput {
+pub struct ListTrustAnchorsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of trust anchors.</p>
-    pub trust_anchors: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,
+    pub trust_anchors: ::std::option::Option<::std::vec::Vec::<crate::types::TrustAnchorDetail>>,
     _request_id: Option<String>,
 }
-impl ListTrustAnchorsOutput {
+impl  ListTrustAnchorsOutput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of trust anchors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_anchors.is_none()`.
-    pub fn trust_anchors(&self) -> &[crate::types::TrustAnchorDetail] {
-        self.trust_anchors.as_deref().unwrap_or_default()
+    pub fn trust_anchors(&self) -> & [crate::types::TrustAnchorDetail] {
+        self.trust_anchors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTrustAnchorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTrustAnchorsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
     pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListTrustAnchorsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustAnchorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,
+    pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec::<crate::types::TrustAnchorDetail>>,
     _request_id: Option<String>,
 }
 impl ListTrustAnchorsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListTrustAnchorsOutputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListTrustAnchorsOutputBuilder {
     /// <p>A list of trust anchors.</p>
     pub fn trust_anchors(mut self, input: crate::types::TrustAnchorDetail) -> Self {
         let mut v = self.trust_anchors.unwrap_or_default();
-        v.push(input);
-        self.trust_anchors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trust_anchors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of trust anchors.</p>
-    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>) -> Self {
-        self.trust_anchors = input;
-        self
+    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustAnchorDetail>>) -> Self {
+        self.trust_anchors = input; self
     }
     /// <p>A list of trust anchors.</p>
-    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>> {
+    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustAnchorDetail>> {
         &self.trust_anchors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
     pub fn build(self) -> crate::operation::list_trust_anchors::ListTrustAnchorsOutput {
         crate::operation::list_trust_anchors::ListTrustAnchorsOutput {
-            next_token: self.next_token,
-            trust_anchors: self.trust_anchors,
+            next_token: self.next_token
+            ,
+            trust_anchors: self.trust_anchors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

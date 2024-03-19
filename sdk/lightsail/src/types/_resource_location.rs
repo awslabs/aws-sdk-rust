@@ -3,19 +3,19 @@
 /// <p>Describes the resource location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceLocation {
+pub struct ResourceLocation  {
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region name.</p>
     pub region_name: ::std::option::Option<crate::types::RegionName>,
 }
-impl ResourceLocation {
+impl  ResourceLocation  {
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The Amazon Web Services Region name.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&crate::types::RegionName> {
+    pub fn region_name(&self) -> ::std::option::Option<& crate::types::RegionName> {
         self.region_name.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceLocationBuilder {
     }
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResourceLocationBuilder {
     }
     /// <p>The Amazon Web Services Region name.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The Amazon Web Services Region name.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<crate::types::RegionName> {
@@ -65,8 +63,11 @@ impl ResourceLocationBuilder {
     /// Consumes the builder and constructs a [`ResourceLocation`](crate::types::ResourceLocation).
     pub fn build(self) -> crate::types::ResourceLocation {
         crate::types::ResourceLocation {
-            availability_zone: self.availability_zone,
-            region_name: self.region_name,
+            availability_zone: self.availability_zone
+            ,
+            region_name: self.region_name
+            ,
         }
     }
 }
+

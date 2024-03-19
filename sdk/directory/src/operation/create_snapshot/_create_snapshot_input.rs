@@ -3,19 +3,19 @@
 /// <p>Contains the inputs for the <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>The identifier of the directory of which to take a snapshot.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl CreateSnapshotInput {
+impl  CreateSnapshotInput  {
     /// <p>The identifier of the directory of which to take a snapshot.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The descriptive name to apply to the snapshot.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The identifier of the directory of which to take a snapshot.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory of which to take a snapshot.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
-            directory_id: self.directory_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_snapshot::CreateSnapshotInput {
+                directory_id: self.directory_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

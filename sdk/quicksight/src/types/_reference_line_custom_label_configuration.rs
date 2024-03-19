@@ -3,15 +3,14 @@
 /// <p>The configuration for a custom label on a <code>ReferenceLine</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceLineCustomLabelConfiguration {
+pub struct ReferenceLineCustomLabelConfiguration  {
     /// <p>The string text of the custom label.</p>
     pub custom_label: ::std::string::String,
 }
-impl ReferenceLineCustomLabelConfiguration {
+impl  ReferenceLineCustomLabelConfiguration  {
     /// <p>The string text of the custom label.</p>
-    pub fn custom_label(&self) -> &str {
-        use std::ops::Deref;
-        self.custom_label.deref()
+    pub fn custom_label(&self) -> & str {
+        use std::ops::Deref; self.custom_label.deref()
     }
 }
 impl ReferenceLineCustomLabelConfiguration {
@@ -36,8 +35,7 @@ impl ReferenceLineCustomLabelConfigurationBuilder {
     }
     /// <p>The string text of the custom label.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
     }
     /// <p>The string text of the custom label.</p>
     pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl ReferenceLineCustomLabelConfigurationBuilder {
     /// Consumes the builder and constructs a [`ReferenceLineCustomLabelConfiguration`](crate::types::ReferenceLineCustomLabelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_label`](crate::types::builders::ReferenceLineCustomLabelConfigurationBuilder::custom_label)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ReferenceLineCustomLabelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReferenceLineCustomLabelConfiguration {
-            custom_label: self.custom_label.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "custom_label",
-                    "custom_label was not specified but it is required when building ReferenceLineCustomLabelConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceLineCustomLabelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ReferenceLineCustomLabelConfiguration {
+                custom_label: self.custom_label
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("custom_label", "custom_label was not specified but it is required when building ReferenceLineCustomLabelConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

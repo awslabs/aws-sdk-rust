@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlModelInput {
+pub struct GetMlModelInput  {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
@@ -10,9 +10,9 @@ pub struct GetMlModelInput {
     /// <p>If false, <code>Recipe</code> is not returned.</p>
     pub verbose: ::std::option::Option<bool>,
 }
-impl GetMlModelInput {
+impl  GetMlModelInput  {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
@@ -45,8 +45,7 @@ impl GetMlModelInputBuilder {
     }
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetMlModelInputBuilder {
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verbose = input;
-        self
+        self.verbose = input; self
     }
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
@@ -74,9 +72,14 @@ impl GetMlModelInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ml_model::GetMlModelInput {
-            ml_model_id: self.ml_model_id,
-            verbose: self.verbose,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_ml_model::GetMlModelInput {
+                ml_model_id: self.ml_model_id
+                ,
+                verbose: self.verbose
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecordingConfigurationsOutput {
+pub struct ListRecordingConfigurationsOutput  {
     /// <p>List of the matching recording configurations.</p>
-    pub recording_configurations: ::std::vec::Vec<crate::types::RecordingConfigurationSummary>,
+    pub recording_configurations: ::std::vec::Vec::<crate::types::RecordingConfigurationSummary>,
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRecordingConfigurationsOutput {
+impl  ListRecordingConfigurationsOutput  {
     /// <p>List of the matching recording configurations.</p>
-    pub fn recording_configurations(&self) -> &[crate::types::RecordingConfigurationSummary] {
-        use std::ops::Deref;
-        self.recording_configurations.deref()
+    pub fn recording_configurations(&self) -> & [crate::types::RecordingConfigurationSummary] {
+        use std::ops::Deref; self.recording_configurations.deref()
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecordingConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecordingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
     pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListRecordingConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecordingConfigurationsOutputBuilder {
-    pub(crate) recording_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
+    pub(crate) recording_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RecordingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,20 +47,16 @@ impl ListRecordingConfigurationsOutputBuilder {
     /// <p>List of the matching recording configurations.</p>
     pub fn recording_configurations(mut self, input: crate::types::RecordingConfigurationSummary) -> Self {
         let mut v = self.recording_configurations.unwrap_or_default();
-        v.push(input);
-        self.recording_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recording_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching recording configurations.</p>
-    pub fn set_recording_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
-    ) -> Self {
-        self.recording_configurations = input;
-        self
+    pub fn set_recording_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecordingConfigurationSummary>>) -> Self {
+        self.recording_configurations = input; self
     }
     /// <p>List of the matching recording configurations.</p>
-    pub fn get_recording_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>> {
+    pub fn get_recording_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecordingConfigurationSummary>> {
         &self.recording_configurations
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -71,40 +66,37 @@ impl ListRecordingConfigurationsOutputBuilder {
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`recording_configurations`](crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder::recording_configurations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
-            recording_configurations: self.recording_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recording_configurations",
-                    "recording_configurations was not specified but it is required when building ListRecordingConfigurationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
+                recording_configurations: self.recording_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recording_configurations", "recording_configurations was not specified but it is required when building ListRecordingConfigurationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

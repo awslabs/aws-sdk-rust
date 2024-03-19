@@ -3,7 +3,7 @@
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DashboardOptions {
+pub struct DashboardOptions  {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct DashboardOptions {
     /// </ul>
     pub engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }
-impl DashboardOptions {
+impl  DashboardOptions  {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl DashboardOptions {
     /// <li>
     /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p></li>
     /// </ul>
-    pub fn engagement_metrics(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn engagement_metrics(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.engagement_metrics.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl DashboardOptionsBuilder {
     /// <p><code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p></li>
     /// </ul>
     pub fn set_engagement_metrics(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.engagement_metrics = input;
-        self
+        self.engagement_metrics = input; self
     }
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
@@ -74,7 +73,9 @@ impl DashboardOptionsBuilder {
     /// Consumes the builder and constructs a [`DashboardOptions`](crate::types::DashboardOptions).
     pub fn build(self) -> crate::types::DashboardOptions {
         crate::types::DashboardOptions {
-            engagement_metrics: self.engagement_metrics,
+            engagement_metrics: self.engagement_metrics
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverEndpointsInput {
+pub struct ListResolverEndpointsInput  {
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
@@ -11,25 +11,26 @@ pub struct ListResolverEndpointsInput {
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
-impl ListResolverEndpointsInput {
+impl  ListResolverEndpointsInput  {
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListResolverEndpointsInput {
@@ -45,7 +46,7 @@ impl ListResolverEndpointsInput {
 pub struct ListResolverEndpointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
 impl ListResolverEndpointsInputBuilder {
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints.</p>
@@ -55,8 +56,7 @@ impl ListResolverEndpointsInputBuilder {
     }
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -71,8 +71,7 @@ impl ListResolverEndpointsInputBuilder {
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
@@ -88,32 +87,34 @@ impl ListResolverEndpointsInputBuilder {
     /// </note>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListResolverEndpointsInput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resolver_endpoints::ListResolverEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resolver_endpoints::ListResolverEndpointsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resolver_endpoints::ListResolverEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

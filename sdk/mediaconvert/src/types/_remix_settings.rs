@@ -3,7 +3,7 @@
 /// Use Manual audio remixing to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemixSettings {
+pub struct RemixSettings  {
     /// Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description audio channel, you must also specify an audio description data channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub audio_description_audio_channel: ::std::option::Option<i32>,
     /// Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description data channel, you must also specify an audio description audio channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
@@ -15,7 +15,7 @@ pub struct RemixSettings {
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub channels_out: ::std::option::Option<i32>,
 }
-impl RemixSettings {
+impl  RemixSettings  {
     /// Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description audio channel, you must also specify an audio description data channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub fn audio_description_audio_channel(&self) -> ::std::option::Option<i32> {
         self.audio_description_audio_channel
@@ -25,7 +25,7 @@ impl RemixSettings {
         self.audio_description_data_channel
     }
     /// Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
-    pub fn channel_mapping(&self) -> ::std::option::Option<&crate::types::ChannelMapping> {
+    pub fn channel_mapping(&self) -> ::std::option::Option<& crate::types::ChannelMapping> {
         self.channel_mapping.as_ref()
     }
     /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
@@ -62,8 +62,7 @@ impl RemixSettingsBuilder {
     }
     /// Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description audio channel, you must also specify an audio description data channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub fn set_audio_description_audio_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.audio_description_audio_channel = input;
-        self
+        self.audio_description_audio_channel = input; self
     }
     /// Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description audio channel, you must also specify an audio description data channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub fn get_audio_description_audio_channel(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl RemixSettingsBuilder {
     }
     /// Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description data channel, you must also specify an audio description audio channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub fn set_audio_description_data_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.audio_description_data_channel = input;
-        self
+        self.audio_description_data_channel = input; self
     }
     /// Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes your audio signal across all output channels, while reducing their volume according to your data stream. When you specify an audio description data channel, you must also specify an audio description audio channel. For more information about audio description signals, see the BBC WHP 198 and 051 white papers.
     pub fn get_audio_description_data_channel(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl RemixSettingsBuilder {
     }
     /// Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
     pub fn set_channel_mapping(mut self, input: ::std::option::Option<crate::types::ChannelMapping>) -> Self {
-        self.channel_mapping = input;
-        self
+        self.channel_mapping = input; self
     }
     /// Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
     pub fn get_channel_mapping(&self) -> &::std::option::Option<crate::types::ChannelMapping> {
@@ -104,8 +101,7 @@ impl RemixSettingsBuilder {
     }
     /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub fn set_channels_in(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channels_in = input;
-        self
+        self.channels_in = input; self
     }
     /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub fn get_channels_in(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl RemixSettingsBuilder {
     }
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub fn set_channels_out(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channels_out = input;
-        self
+        self.channels_out = input; self
     }
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     pub fn get_channels_out(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl RemixSettingsBuilder {
     /// Consumes the builder and constructs a [`RemixSettings`](crate::types::RemixSettings).
     pub fn build(self) -> crate::types::RemixSettings {
         crate::types::RemixSettings {
-            audio_description_audio_channel: self.audio_description_audio_channel,
-            audio_description_data_channel: self.audio_description_data_channel,
-            channel_mapping: self.channel_mapping,
-            channels_in: self.channels_in,
-            channels_out: self.channels_out,
+            audio_description_audio_channel: self.audio_description_audio_channel
+            ,
+            audio_description_data_channel: self.audio_description_data_channel
+            ,
+            channel_mapping: self.channel_mapping
+            ,
+            channels_in: self.channels_in
+            ,
+            channels_out: self.channels_out
+            ,
         }
     }
 }
+

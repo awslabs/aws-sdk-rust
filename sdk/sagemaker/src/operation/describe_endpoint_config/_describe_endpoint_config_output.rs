@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointConfigOutput {
+pub struct DescribeEndpointConfigOutput  {
     /// <p>Name of the SageMaker endpoint configuration.</p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub endpoint_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    pub production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>,
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfig>,
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
@@ -20,7 +20,7 @@ pub struct DescribeEndpointConfigOutput {
     /// <p>The configuration parameters for an explainer.</p>
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    pub shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
@@ -29,53 +29,55 @@ pub struct DescribeEndpointConfigOutput {
     pub enable_network_isolation: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl DescribeEndpointConfigOutput {
+impl  DescribeEndpointConfigOutput  {
     /// <p>Name of the SageMaker endpoint configuration.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
-    pub fn endpoint_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_arn.as_deref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
-    pub fn production_variants(&self) -> &[crate::types::ProductionVariant] {
-        self.production_variants.as_deref().unwrap_or_default()
+    pub fn production_variants(&self) -> & [crate::types::ProductionVariant] {
+        self.production_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfig> {
+    pub fn data_capture_config(&self) -> ::std::option::Option<& crate::types::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
-    pub fn async_inference_config(&self) -> ::std::option::Option<&crate::types::AsyncInferenceConfig> {
+    pub fn async_inference_config(&self) -> ::std::option::Option<& crate::types::AsyncInferenceConfig> {
         self.async_inference_config.as_ref()
     }
     /// <p>The configuration parameters for an explainer.</p>
-    pub fn explainer_config(&self) -> ::std::option::Option<&crate::types::ExplainerConfig> {
+    pub fn explainer_config(&self) -> ::std::option::Option<& crate::types::ExplainerConfig> {
         self.explainer_config.as_ref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
-    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariant] {
-        self.shadow_production_variants.as_deref().unwrap_or_default()
+    pub fn shadow_production_variants(&self) -> & [crate::types::ProductionVariant] {
+        self.shadow_production_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
@@ -84,10 +86,10 @@ impl DescribeEndpointConfigOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEndpointConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointConfigOutput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput).
     pub fn builder() -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigOutputBuilder {
@@ -101,13 +103,13 @@ impl DescribeEndpointConfigOutput {
 pub struct DescribeEndpointConfigOutputBuilder {
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_config_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    pub(crate) production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>,
     pub(crate) data_capture_config: ::std::option::Option<crate::types::DataCaptureConfig>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) async_inference_config: ::std::option::Option<crate::types::AsyncInferenceConfig>,
     pub(crate) explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
-    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
@@ -122,8 +124,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Name of the SageMaker endpoint configuration.</p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_name = input;
-        self
+        self.endpoint_config_name = input; self
     }
     /// <p>Name of the SageMaker endpoint configuration.</p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +138,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub fn set_endpoint_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_arn = input;
-        self
+        self.endpoint_config_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub fn get_endpoint_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +151,16 @@ impl DescribeEndpointConfigOutputBuilder {
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub fn production_variants(mut self, input: crate::types::ProductionVariant) -> Self {
         let mut v = self.production_variants.unwrap_or_default();
-        v.push(input);
-        self.production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
-        self.production_variants = input;
-        self
+    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>) -> Self {
+        self.production_variants = input; self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>> {
         &self.production_variants
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
@@ -171,8 +170,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfig>) -> Self {
-        self.data_capture_config = input;
-        self
+        self.data_capture_config = input; self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfig> {
@@ -185,8 +183,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +197,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,8 +210,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn set_async_inference_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceConfig>) -> Self {
-        self.async_inference_config = input;
-        self
+        self.async_inference_config = input; self
     }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn get_async_inference_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
@@ -228,8 +223,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn set_explainer_config(mut self, input: ::std::option::Option<crate::types::ExplainerConfig>) -> Self {
-        self.explainer_config = input;
-        self
+        self.explainer_config = input; self
     }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
@@ -242,17 +236,16 @@ impl DescribeEndpointConfigOutputBuilder {
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     pub fn shadow_production_variants(mut self, input: crate::types::ProductionVariant) -> Self {
         let mut v = self.shadow_production_variants.unwrap_or_default();
-        v.push(input);
-        self.shadow_production_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shadow_production_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
-        self.shadow_production_variants = input;
-        self
+    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>>) -> Self {
+        self.shadow_production_variants = input; self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariant>> {
         &self.shadow_production_variants
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
@@ -262,8 +255,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +268,7 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -290,38 +281,50 @@ impl DescribeEndpointConfigOutputBuilder {
     }
     /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_network_isolation = input;
-        self
+        self.enable_network_isolation = input; self
     }
     /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
     pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
         &self.enable_network_isolation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEndpointConfigOutput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput).
     pub fn build(self) -> crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput {
         crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput {
-            endpoint_config_name: self.endpoint_config_name,
-            endpoint_config_arn: self.endpoint_config_arn,
-            production_variants: self.production_variants,
-            data_capture_config: self.data_capture_config,
-            kms_key_id: self.kms_key_id,
-            creation_time: self.creation_time,
-            async_inference_config: self.async_inference_config,
-            explainer_config: self.explainer_config,
-            shadow_production_variants: self.shadow_production_variants,
-            execution_role_arn: self.execution_role_arn,
-            vpc_config: self.vpc_config,
-            enable_network_isolation: self.enable_network_isolation,
+            endpoint_config_name: self.endpoint_config_name
+            ,
+            endpoint_config_arn: self.endpoint_config_arn
+            ,
+            production_variants: self.production_variants
+            ,
+            data_capture_config: self.data_capture_config
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            creation_time: self.creation_time
+            ,
+            async_inference_config: self.async_inference_config
+            ,
+            explainer_config: self.explainer_config
+            ,
+            shadow_production_variants: self.shadow_production_variants
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            vpc_config: self.vpc_config
+            ,
+            enable_network_isolation: self.enable_network_isolation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

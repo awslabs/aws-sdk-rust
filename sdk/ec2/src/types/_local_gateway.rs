@@ -3,7 +3,7 @@
 /// <p>Describes a local gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LocalGateway {
+pub struct LocalGateway  {
     /// <p>The ID of the local gateway.</p>
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
@@ -13,30 +13,31 @@ pub struct LocalGateway {
     /// <p>The state of the local gateway.</p>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the local gateway.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl LocalGateway {
+impl  LocalGateway  {
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The state of the local gateway.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The tags assigned to the local gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LocalGateway {
@@ -54,7 +55,7 @@ pub struct LocalGatewayBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl LocalGatewayBuilder {
     /// <p>The ID of the local gateway.</p>
@@ -64,8 +65,7 @@ impl LocalGatewayBuilder {
     }
     /// <p>The ID of the local gateway.</p>
     pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_gateway_id = input;
-        self
+        self.local_gateway_id = input; self
     }
     /// <p>The ID of the local gateway.</p>
     pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl LocalGatewayBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl LocalGatewayBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl LocalGatewayBuilder {
     }
     /// <p>The state of the local gateway.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the local gateway.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,32 @@ impl LocalGatewayBuilder {
     /// <p>The tags assigned to the local gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the local gateway.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the local gateway.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGateway`](crate::types::LocalGateway).
     pub fn build(self) -> crate::types::LocalGateway {
         crate::types::LocalGateway {
-            local_gateway_id: self.local_gateway_id,
-            outpost_arn: self.outpost_arn,
-            owner_id: self.owner_id,
-            state: self.state,
-            tags: self.tags,
+            local_gateway_id: self.local_gateway_id
+            ,
+            outpost_arn: self.outpost_arn
+            ,
+            owner_id: self.owner_id
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Returns information about errors in a BatchGetRepositories operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRepositoriesError {
+pub struct BatchGetRepositoriesError  {
     /// <p>The ID of a repository that either could not be found or was not in a valid state.</p>
     pub repository_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a repository that either could not be found or was not in a valid state.</p>
@@ -13,21 +13,21 @@ pub struct BatchGetRepositoriesError {
     /// <p>An error message that provides detail about why the repository either was not found or was not in a valid state.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetRepositoriesError {
+impl  BatchGetRepositoriesError  {
     /// <p>The ID of a repository that either could not be found or was not in a valid state.</p>
-    pub fn repository_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<& str> {
         self.repository_id.as_deref()
     }
     /// <p>The name of a repository that either could not be found or was not in a valid state.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An error code that specifies the type of failure.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetRepositoriesErrorCodeEnum> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::BatchGetRepositoriesErrorCodeEnum> {
         self.error_code.as_ref()
     }
     /// <p>An error message that provides detail about why the repository either was not found or was not in a valid state.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl BatchGetRepositoriesErrorBuilder {
     }
     /// <p>The ID of a repository that either could not be found or was not in a valid state.</p>
     pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_id = input;
-        self
+        self.repository_id = input; self
     }
     /// <p>The ID of a repository that either could not be found or was not in a valid state.</p>
     pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl BatchGetRepositoriesErrorBuilder {
     }
     /// <p>The name of a repository that either could not be found or was not in a valid state.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of a repository that either could not be found or was not in a valid state.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl BatchGetRepositoriesErrorBuilder {
     }
     /// <p>An error code that specifies the type of failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetRepositoriesErrorCodeEnum>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An error code that specifies the type of failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetRepositoriesErrorCodeEnum> {
@@ -97,8 +94,7 @@ impl BatchGetRepositoriesErrorBuilder {
     }
     /// <p>An error message that provides detail about why the repository either was not found or was not in a valid state.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An error message that provides detail about why the repository either was not found or was not in a valid state.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl BatchGetRepositoriesErrorBuilder {
     /// Consumes the builder and constructs a [`BatchGetRepositoriesError`](crate::types::BatchGetRepositoriesError).
     pub fn build(self) -> crate::types::BatchGetRepositoriesError {
         crate::types::BatchGetRepositoriesError {
-            repository_id: self.repository_id,
-            repository_name: self.repository_name,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            repository_id: self.repository_id
+            ,
+            repository_name: self.repository_name
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

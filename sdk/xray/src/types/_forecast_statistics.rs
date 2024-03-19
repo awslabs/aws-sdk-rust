@@ -3,13 +3,13 @@
 /// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ForecastStatistics {
+pub struct ForecastStatistics  {
     /// <p>The upper limit of fault counts for a service.</p>
     pub fault_count_high: ::std::option::Option<i64>,
     /// <p>The lower limit of fault counts for a service.</p>
     pub fault_count_low: ::std::option::Option<i64>,
 }
-impl ForecastStatistics {
+impl  ForecastStatistics  {
     /// <p>The upper limit of fault counts for a service.</p>
     pub fn fault_count_high(&self) -> ::std::option::Option<i64> {
         self.fault_count_high
@@ -41,8 +41,7 @@ impl ForecastStatisticsBuilder {
     }
     /// <p>The upper limit of fault counts for a service.</p>
     pub fn set_fault_count_high(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.fault_count_high = input;
-        self
+        self.fault_count_high = input; self
     }
     /// <p>The upper limit of fault counts for a service.</p>
     pub fn get_fault_count_high(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl ForecastStatisticsBuilder {
     }
     /// <p>The lower limit of fault counts for a service.</p>
     pub fn set_fault_count_low(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.fault_count_low = input;
-        self
+        self.fault_count_low = input; self
     }
     /// <p>The lower limit of fault counts for a service.</p>
     pub fn get_fault_count_low(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl ForecastStatisticsBuilder {
     /// Consumes the builder and constructs a [`ForecastStatistics`](crate::types::ForecastStatistics).
     pub fn build(self) -> crate::types::ForecastStatistics {
         crate::types::ForecastStatistics {
-            fault_count_high: self.fault_count_high,
-            fault_count_low: self.fault_count_low,
+            fault_count_high: self.fault_count_high
+            ,
+            fault_count_low: self.fault_count_low
+            ,
         }
     }
 }
+

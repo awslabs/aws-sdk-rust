@@ -3,30 +3,31 @@
 /// <p>The output for the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChangeSetsOutput {
+pub struct ListChangeSetsOutput  {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeSetSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListChangeSetsOutput {
+impl  ListChangeSetsOutput  {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
-    pub fn summaries(&self) -> &[crate::types::ChangeSetSummary] {
-        self.summaries.as_deref().unwrap_or_default()
+    pub fn summaries(&self) -> & [crate::types::ChangeSetSummary] {
+        self.summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListChangeSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChangeSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
     pub fn builder() -> crate::operation::list_change_sets::builders::ListChangeSetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListChangeSetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutputBuilder {
-    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListChangeSetsOutputBuilder {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
     pub fn summaries(mut self, input: crate::types::ChangeSetSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
-        v.push(input);
-        self.summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>) -> Self {
-        self.summaries = input;
-        self
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeSetSummary>>) -> Self {
+        self.summaries = input; self
     }
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChangeSetSummary>> {
         &self.summaries
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
@@ -70,28 +70,30 @@ impl ListChangeSetsOutputBuilder {
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
     pub fn build(self) -> crate::operation::list_change_sets::ListChangeSetsOutput {
         crate::operation::list_change_sets::ListChangeSetsOutput {
-            summaries: self.summaries,
-            next_token: self.next_token,
+            summaries: self.summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

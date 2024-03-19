@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTemplateInput {
+pub struct UpdateTemplateInput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub template: ::std::option::Option<crate::types::Template>,
 }
-impl UpdateTemplateInput {
+impl  UpdateTemplateInput  {
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
-    pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -34,17 +34,20 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
         &self.template
     }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput { template: self.template })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_template::UpdateTemplateInput {
+                template: self.template
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a software package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SoftwarePackage {
+pub struct SoftwarePackage  {
     /// <p>The name of the software package.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software package.</p>
@@ -27,49 +27,49 @@ pub struct SoftwarePackage {
     /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub source_layer_arn: ::std::option::Option<::std::string::String>,
 }
-impl SoftwarePackage {
+impl  SoftwarePackage  {
     /// <p>The name of the software package.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the software package.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The epoch of the software package.</p>
-    pub fn epoch(&self) -> ::std::option::Option<&str> {
+    pub fn epoch(&self) -> ::std::option::Option<& str> {
         self.epoch.as_deref()
     }
     /// <p>The release of the software package.</p>
-    pub fn release(&self) -> ::std::option::Option<&str> {
+    pub fn release(&self) -> ::std::option::Option<& str> {
         self.release.as_deref()
     }
     /// <p>The architecture used for the software package.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The source of the package.</p>
-    pub fn package_manager(&self) -> ::std::option::Option<&str> {
+    pub fn package_manager(&self) -> ::std::option::Option<& str> {
         self.package_manager.as_deref()
     }
     /// <p>The file system path to the package manager inventory file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The version of the software package in which the vulnerability has been resolved.</p>
-    pub fn fixed_in_version(&self) -> ::std::option::Option<&str> {
+    pub fn fixed_in_version(&self) -> ::std::option::Option<& str> {
         self.fixed_in_version.as_deref()
     }
     /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
-    pub fn remediation(&self) -> ::std::option::Option<&str> {
+    pub fn remediation(&self) -> ::std::option::Option<& str> {
         self.remediation.as_deref()
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(&self) -> ::std::option::Option<&str> {
+    pub fn source_layer_hash(&self) -> ::std::option::Option<& str> {
         self.source_layer_hash.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
-    pub fn source_layer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_layer_arn(&self) -> ::std::option::Option<& str> {
         self.source_layer_arn.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The name of the software package.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the software package.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The version of the software package.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the software package.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The epoch of the software package.</p>
     pub fn set_epoch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.epoch = input;
-        self
+        self.epoch = input; self
     }
     /// <p>The epoch of the software package.</p>
     pub fn get_epoch(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The release of the software package.</p>
     pub fn set_release(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release = input;
-        self
+        self.release = input; self
     }
     /// <p>The release of the software package.</p>
     pub fn get_release(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The architecture used for the software package.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture used for the software package.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +169,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The source of the package.</p>
     pub fn set_package_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_manager = input;
-        self
+        self.package_manager = input; self
     }
     /// <p>The source of the package.</p>
     pub fn get_package_manager(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The file system path to the package manager inventory file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The file system path to the package manager inventory file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn set_fixed_in_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fixed_in_version = input;
-        self
+        self.fixed_in_version = input; self
     }
     /// <p>The version of the software package in which the vulnerability has been resolved.</p>
     pub fn get_fixed_in_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +208,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remediation = input;
-        self
+        self.remediation = input; self
     }
     /// <p>Describes the actions a customer can take to resolve the vulnerability in the software package.</p>
     pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_layer_hash = input;
-        self
+        self.source_layer_hash = input; self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn get_source_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl SoftwarePackageBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn set_source_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_layer_arn = input;
-        self
+        self.source_layer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source layer.</p>
     pub fn get_source_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl SoftwarePackageBuilder {
     /// Consumes the builder and constructs a [`SoftwarePackage`](crate::types::SoftwarePackage).
     pub fn build(self) -> crate::types::SoftwarePackage {
         crate::types::SoftwarePackage {
-            name: self.name,
-            version: self.version,
-            epoch: self.epoch,
-            release: self.release,
-            architecture: self.architecture,
-            package_manager: self.package_manager,
-            file_path: self.file_path,
-            fixed_in_version: self.fixed_in_version,
-            remediation: self.remediation,
-            source_layer_hash: self.source_layer_hash,
-            source_layer_arn: self.source_layer_arn,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            epoch: self.epoch
+            ,
+            release: self.release
+            ,
+            architecture: self.architecture
+            ,
+            package_manager: self.package_manager
+            ,
+            file_path: self.file_path
+            ,
+            fixed_in_version: self.fixed_in_version
+            ,
+            remediation: self.remediation
+            ,
+            source_layer_hash: self.source_layer_hash
+            ,
+            source_layer_arn: self.source_layer_arn
+            ,
         }
     }
 }
+

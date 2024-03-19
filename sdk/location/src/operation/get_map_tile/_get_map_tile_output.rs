@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMapTileOutput {
+pub struct GetMapTileOutput  {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
@@ -11,25 +11,25 @@ pub struct GetMapTileOutput {
     pub cache_control: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetMapTileOutput {
+impl  GetMapTileOutput  {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
-    pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
-    pub fn cache_control(&self) -> ::std::option::Option<&str> {
+    pub fn cache_control(&self) -> ::std::option::Option<& str> {
         self.cache_control.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMapTileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMapTileOutput {
     /// Creates a new builder-style object to manufacture [`GetMapTileOutput`](crate::operation::get_map_tile::GetMapTileOutput).
     pub fn builder() -> crate::operation::get_map_tile::builders::GetMapTileOutputBuilder {
@@ -54,8 +54,7 @@ impl GetMapTileOutputBuilder {
     }
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     pub fn set_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.blob = input;
-        self
+        self.blob = input; self
     }
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -68,8 +67,7 @@ impl GetMapTileOutputBuilder {
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetMapTileOutputBuilder {
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_control
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMapTileOutput`](crate::operation::get_map_tile::GetMapTileOutput).
     pub fn build(self) -> crate::operation::get_map_tile::GetMapTileOutput {
         crate::operation::get_map_tile::GetMapTileOutput {
-            blob: self.blob,
-            content_type: self.content_type,
-            cache_control: self.cache_control,
+            blob: self.blob
+            ,
+            content_type: self.content_type
+            ,
+            cache_control: self.cache_control
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

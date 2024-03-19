@@ -3,7 +3,7 @@
 /// <p>A complex type containing the response information for the hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHostedZoneOutput {
+pub struct CreateHostedZoneOutput  {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
@@ -16,34 +16,33 @@ pub struct CreateHostedZoneOutput {
     pub location: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateHostedZoneOutput {
+impl  CreateHostedZoneOutput  {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn hosted_zone(&self) -> ::std::option::Option<&crate::types::HostedZone> {
+    pub fn hosted_zone(&self) -> ::std::option::Option<& crate::types::HostedZone> {
         self.hosted_zone.as_ref()
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<& crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
-    pub fn delegation_set(&self) -> ::std::option::Option<&crate::types::DelegationSet> {
+    pub fn delegation_set(&self) -> ::std::option::Option<& crate::types::DelegationSet> {
         self.delegation_set.as_ref()
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<& crate::types::Vpc> {
         self.vpc.as_ref()
     }
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHostedZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
     pub fn builder() -> crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder {
@@ -71,8 +70,7 @@ impl CreateHostedZoneOutputBuilder {
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
     pub fn set_hosted_zone(mut self, input: ::std::option::Option<crate::types::HostedZone>) -> Self {
-        self.hosted_zone = input;
-        self
+        self.hosted_zone = input; self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
     pub fn get_hosted_zone(&self) -> &::std::option::Option<crate::types::HostedZone> {
@@ -86,8 +84,7 @@ impl CreateHostedZoneOutputBuilder {
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
     pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
-        self.change_info = input;
-        self
+        self.change_info = input; self
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
     pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
@@ -101,8 +98,7 @@ impl CreateHostedZoneOutputBuilder {
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub fn set_delegation_set(mut self, input: ::std::option::Option<crate::types::DelegationSet>) -> Self {
-        self.delegation_set = input;
-        self
+        self.delegation_set = input; self
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
@@ -115,8 +111,7 @@ impl CreateHostedZoneOutputBuilder {
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
@@ -130,40 +125,43 @@ impl CreateHostedZoneOutputBuilder {
     }
     /// <p>The unique URL representing the new hosted zone.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The unique URL representing the new hosted zone.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder::location)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_hosted_zone::CreateHostedZoneOutput {
-            hosted_zone: self.hosted_zone,
-            change_info: self.change_info,
-            delegation_set: self.delegation_set,
-            vpc: self.vpc,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building CreateHostedZoneOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_hosted_zone::CreateHostedZoneOutput {
+                hosted_zone: self.hosted_zone
+                ,
+                change_info: self.change_info
+                ,
+                delegation_set: self.delegation_set
+                ,
+                vpc: self.vpc
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building CreateHostedZoneOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

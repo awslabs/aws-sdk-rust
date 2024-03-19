@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorContactInput {
+pub struct MonitorContactInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact.</p>
@@ -10,31 +10,32 @@ pub struct MonitorContactInput {
     /// <p>The identifier of the user account.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    pub allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
+    pub allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl MonitorContactInput {
+impl  MonitorContactInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_monitor_capabilities.is_none()`.
-    pub fn allowed_monitor_capabilities(&self) -> &[crate::types::MonitorCapability] {
-        self.allowed_monitor_capabilities.as_deref().unwrap_or_default()
+    pub fn allowed_monitor_capabilities(&self) -> & [crate::types::MonitorCapability] {
+        self.allowed_monitor_capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -52,7 +53,7 @@ pub struct MonitorContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
+    pub(crate) allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl MonitorContactInputBuilder {
@@ -64,8 +65,7 @@ impl MonitorContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl MonitorContactInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl MonitorContactInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +106,16 @@ impl MonitorContactInputBuilder {
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn allowed_monitor_capabilities(mut self, input: crate::types::MonitorCapability) -> Self {
         let mut v = self.allowed_monitor_capabilities.unwrap_or_default();
-        v.push(input);
-        self.allowed_monitor_capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_monitor_capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
-        self.allowed_monitor_capabilities = input;
-        self
+    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>>) -> Self {
+        self.allowed_monitor_capabilities = input; self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
+    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>> {
         &self.allowed_monitor_capabilities
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -128,23 +125,28 @@ impl MonitorContactInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`MonitorContactInput`](crate::operation::monitor_contact::MonitorContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::monitor_contact::MonitorContactInput {
-            instance_id: self.instance_id,
-            contact_id: self.contact_id,
-            user_id: self.user_id,
-            allowed_monitor_capabilities: self.allowed_monitor_capabilities,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::monitor_contact::MonitorContactInput {
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                user_id: self.user_id
+                ,
+                allowed_monitor_capabilities: self.allowed_monitor_capabilities
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

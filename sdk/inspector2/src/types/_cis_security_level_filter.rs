@@ -3,19 +3,19 @@
 /// <p>The CIS security level filter. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisSecurityLevelFilter {
+pub struct CisSecurityLevelFilter  {
     /// <p>The CIS security filter comparison value.</p>
     pub comparison: crate::types::CisSecurityLevelComparison,
     /// <p>The CIS security filter value.</p>
     pub value: crate::types::CisSecurityLevel,
 }
-impl CisSecurityLevelFilter {
+impl  CisSecurityLevelFilter  {
     /// <p>The CIS security filter comparison value.</p>
-    pub fn comparison(&self) -> &crate::types::CisSecurityLevelComparison {
+    pub fn comparison(&self) -> & crate::types::CisSecurityLevelComparison {
         &self.comparison
     }
     /// <p>The CIS security filter value.</p>
-    pub fn value(&self) -> &crate::types::CisSecurityLevel {
+    pub fn value(&self) -> & crate::types::CisSecurityLevel {
         &self.value
     }
 }
@@ -42,8 +42,7 @@ impl CisSecurityLevelFilterBuilder {
     }
     /// <p>The CIS security filter comparison value.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CisSecurityLevelComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The CIS security filter comparison value.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CisSecurityLevelComparison> {
@@ -57,8 +56,7 @@ impl CisSecurityLevelFilterBuilder {
     }
     /// <p>The CIS security filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The CIS security filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -69,19 +67,20 @@ impl CisSecurityLevelFilterBuilder {
     /// - [`comparison`](crate::types::builders::CisSecurityLevelFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CisSecurityLevelFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CisSecurityLevelFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisSecurityLevelFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CisSecurityLevelFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CisSecurityLevelFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisSecurityLevelFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CisSecurityLevelFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CisSecurityLevelFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

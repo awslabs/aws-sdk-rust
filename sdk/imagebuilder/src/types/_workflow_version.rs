@@ -3,7 +3,7 @@
 /// <p>Contains details about this version of the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowVersion {
+pub struct WorkflowVersion  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow.</p>
@@ -27,13 +27,13 @@ pub struct WorkflowVersion {
     /// <p>The timestamp when Image Builder created the workflow version.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowVersion {
+impl  WorkflowVersion  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The semantic version of the workflow resource. The format includes three nodes: <major>
@@ -45,23 +45,23 @@ impl WorkflowVersion {
     /// </patch>
     /// </minor>
     /// </major></p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Describes the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The owner of the workflow resource.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The timestamp when Image Builder created the workflow version.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
 }
@@ -92,8 +92,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +134,7 @@ impl WorkflowVersionBuilder {
     /// </minor>
     /// </major></p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The semantic version of the workflow resource. The format includes three nodes: <major>
     /// .
@@ -158,8 +155,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>Describes the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Describes the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +168,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -186,8 +181,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +194,7 @@ impl WorkflowVersionBuilder {
     }
     /// <p>The timestamp when Image Builder created the workflow version.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The timestamp when Image Builder created the workflow version.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,13 +203,21 @@ impl WorkflowVersionBuilder {
     /// Consumes the builder and constructs a [`WorkflowVersion`](crate::types::WorkflowVersion).
     pub fn build(self) -> crate::types::WorkflowVersion {
         crate::types::WorkflowVersion {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            description: self.description,
-            r#type: self.r#type,
-            owner: self.owner,
-            date_created: self.date_created,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            owner: self.owner
+            ,
+            date_created: self.date_created
+            ,
         }
     }
 }
+

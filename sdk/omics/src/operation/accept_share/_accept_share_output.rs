@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptShareOutput {
+pub struct AcceptShareOutput  {
     /// <p>The status of an analytics store share.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,
 }
-impl AcceptShareOutput {
+impl  AcceptShareOutput  {
     /// <p>The status of an analytics store share.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptShareOutput {
     /// Creates a new builder-style object to manufacture [`AcceptShareOutput`](crate::operation::accept_share::AcceptShareOutput).
     pub fn builder() -> crate::operation::accept_share::builders::AcceptShareOutputBuilder {
@@ -40,27 +40,28 @@ impl AcceptShareOutputBuilder {
     }
     /// <p>The status of an analytics store share.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an analytics store share.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptShareOutput`](crate::operation::accept_share::AcceptShareOutput).
     pub fn build(self) -> crate::operation::accept_share::AcceptShareOutput {
         crate::operation::accept_share::AcceptShareOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

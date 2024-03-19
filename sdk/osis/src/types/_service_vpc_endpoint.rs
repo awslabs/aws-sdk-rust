@@ -3,19 +3,19 @@
 /// <p>A container for information about VPC endpoints that were created to other services</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceVpcEndpoint {
+pub struct ServiceVpcEndpoint  {
     /// <p>The name of the service for which a VPC endpoint was created.</p>
     pub service_name: ::std::option::Option<crate::types::VpcEndpointServiceName>,
     /// <p>The ID of the VPC endpoint that was created.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl ServiceVpcEndpoint {
+impl  ServiceVpcEndpoint  {
     /// <p>The name of the service for which a VPC endpoint was created.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&crate::types::VpcEndpointServiceName> {
+    pub fn service_name(&self) -> ::std::option::Option<& crate::types::VpcEndpointServiceName> {
         self.service_name.as_ref()
     }
     /// <p>The ID of the VPC endpoint that was created.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ServiceVpcEndpointBuilder {
     }
     /// <p>The name of the service for which a VPC endpoint was created.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::VpcEndpointServiceName>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service for which a VPC endpoint was created.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<crate::types::VpcEndpointServiceName> {
@@ -55,8 +54,7 @@ impl ServiceVpcEndpointBuilder {
     }
     /// <p>The ID of the VPC endpoint that was created.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The ID of the VPC endpoint that was created.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ServiceVpcEndpointBuilder {
     /// Consumes the builder and constructs a [`ServiceVpcEndpoint`](crate::types::ServiceVpcEndpoint).
     pub fn build(self) -> crate::types::ServiceVpcEndpoint {
         crate::types::ServiceVpcEndpoint {
-            service_name: self.service_name,
-            vpc_endpoint_id: self.vpc_endpoint_id,
+            service_name: self.service_name
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
         }
     }
 }
+

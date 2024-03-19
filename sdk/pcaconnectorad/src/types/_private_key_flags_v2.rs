@@ -3,7 +3,7 @@
 /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateKeyFlagsV2 {
+pub struct PrivateKeyFlagsV2  {
     /// <p>Allows the private key to be exported.</p>
     pub exportable_key: ::std::option::Option<bool>,
     /// <p>Require user input when using the private key for enrollment.</p>
@@ -11,7 +11,7 @@ pub struct PrivateKeyFlagsV2 {
     /// <p>Defines the minimum client compatibility.</p>
     pub client_version: crate::types::ClientCompatibilityV2,
 }
-impl PrivateKeyFlagsV2 {
+impl  PrivateKeyFlagsV2  {
     /// <p>Allows the private key to be exported.</p>
     pub fn exportable_key(&self) -> ::std::option::Option<bool> {
         self.exportable_key
@@ -21,7 +21,7 @@ impl PrivateKeyFlagsV2 {
         self.strong_key_protection_required
     }
     /// <p>Defines the minimum client compatibility.</p>
-    pub fn client_version(&self) -> &crate::types::ClientCompatibilityV2 {
+    pub fn client_version(&self) -> & crate::types::ClientCompatibilityV2 {
         &self.client_version
     }
 }
@@ -48,8 +48,7 @@ impl PrivateKeyFlagsV2Builder {
     }
     /// <p>Allows the private key to be exported.</p>
     pub fn set_exportable_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable_key = input;
-        self
+        self.exportable_key = input; self
     }
     /// <p>Allows the private key to be exported.</p>
     pub fn get_exportable_key(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl PrivateKeyFlagsV2Builder {
     }
     /// <p>Require user input when using the private key for enrollment.</p>
     pub fn set_strong_key_protection_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.strong_key_protection_required = input;
-        self
+        self.strong_key_protection_required = input; self
     }
     /// <p>Require user input when using the private key for enrollment.</p>
     pub fn get_strong_key_protection_required(&self) -> &::std::option::Option<bool> {
@@ -77,8 +75,7 @@ impl PrivateKeyFlagsV2Builder {
     }
     /// <p>Defines the minimum client compatibility.</p>
     pub fn set_client_version(mut self, input: ::std::option::Option<crate::types::ClientCompatibilityV2>) -> Self {
-        self.client_version = input;
-        self
+        self.client_version = input; self
     }
     /// <p>Defines the minimum client compatibility.</p>
     pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientCompatibilityV2> {
@@ -88,15 +85,19 @@ impl PrivateKeyFlagsV2Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV2Builder::client_version)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV2 {
-            exportable_key: self.exportable_key,
-            strong_key_protection_required: self.strong_key_protection_required,
-            client_version: self.client_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_version",
-                    "client_version was not specified but it is required when building PrivateKeyFlagsV2",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivateKeyFlagsV2 {
+                exportable_key: self.exportable_key
+                ,
+                strong_key_protection_required: self.strong_key_protection_required
+                ,
+                client_version: self.client_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_version", "client_version was not specified but it is required when building PrivateKeyFlagsV2")
+                    )?
+                ,
+            }
+        )
     }
 }
+

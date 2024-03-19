@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPackageOutput {
+pub struct GetPackageOutput  {
     /// <p>The name of the software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the package.</p>
@@ -17,33 +17,33 @@ pub struct GetPackageOutput {
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPackageOutput {
+impl  GetPackageOutput  {
     /// <p>The name of the software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The ARN for the package.</p>
-    pub fn package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_arn(&self) -> ::std::option::Option<& str> {
         self.package_arn.as_deref()
     }
     /// <p>The package description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the default package version.</p>
-    pub fn default_version_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_name(&self) -> ::std::option::Option<& str> {
         self.default_version_name.as_deref()
     }
     /// <p>The date the package was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the package was last updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetPackageOutput {
+impl  ::std::fmt::Debug for GetPackageOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageOutput");
         formatter.field("package_name", &self.package_name);
@@ -57,10 +57,10 @@ impl ::std::fmt::Debug for GetPackageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPackageOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageOutput`](crate::operation::get_package::GetPackageOutput).
     pub fn builder() -> crate::operation::get_package::builders::GetPackageOutputBuilder {
@@ -88,8 +88,7 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The name of the software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The ARN for the package.</p>
     pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_arn = input;
-        self
+        self.package_arn = input; self
     }
     /// <p>The ARN for the package.</p>
     pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The package description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The name of the default package version.</p>
     pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_name = input;
-        self
+        self.default_version_name = input; self
     }
     /// <p>The name of the default package version.</p>
     pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +140,7 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The date the package was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the package was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -158,31 +153,36 @@ impl GetPackageOutputBuilder {
     }
     /// <p>The date when the package was last updated.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date when the package was last updated.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPackageOutput`](crate::operation::get_package::GetPackageOutput).
     pub fn build(self) -> crate::operation::get_package::GetPackageOutput {
         crate::operation::get_package::GetPackageOutput {
-            package_name: self.package_name,
-            package_arn: self.package_arn,
-            description: self.description,
-            default_version_name: self.default_version_name,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            package_name: self.package_name
+            ,
+            package_arn: self.package_arn
+            ,
+            description: self.description
+            ,
+            default_version_name: self.default_version_name
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
@@ -200,3 +200,4 @@ impl ::std::fmt::Debug for GetPackageOutputBuilder {
         formatter.finish()
     }
 }
+

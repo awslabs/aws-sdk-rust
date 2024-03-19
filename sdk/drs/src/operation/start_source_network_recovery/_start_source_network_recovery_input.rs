@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartSourceNetworkRecoveryInput {
+pub struct StartSourceNetworkRecoveryInput  {
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub source_networks: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
+    pub source_networks: ::std::option::Option<::std::vec::Vec::<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub deploy_as_new: ::std::option::Option<bool>,
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartSourceNetworkRecoveryInput {
+impl  StartSourceNetworkRecoveryInput  {
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_networks.is_none()`.
-    pub fn source_networks(&self) -> &[crate::types::StartSourceNetworkRecoveryRequestNetworkEntry] {
-        self.source_networks.as_deref().unwrap_or_default()
+    pub fn source_networks(&self) -> & [crate::types::StartSourceNetworkRecoveryRequestNetworkEntry] {
+        self.source_networks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub fn deploy_as_new(&self) -> ::std::option::Option<bool> {
         self.deploy_as_new
     }
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartSourceNetworkRecoveryInput {
+impl  ::std::fmt::Debug for StartSourceNetworkRecoveryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartSourceNetworkRecoveryInput");
         formatter.field("source_networks", &self.source_networks);
@@ -46,9 +47,9 @@ impl StartSourceNetworkRecoveryInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartSourceNetworkRecoveryInputBuilder {
-    pub(crate) source_networks: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
+    pub(crate) source_networks: ::std::option::Option<::std::vec::Vec::<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
     pub(crate) deploy_as_new: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartSourceNetworkRecoveryInputBuilder {
     /// Appends an item to `source_networks`.
@@ -58,20 +59,16 @@ impl StartSourceNetworkRecoveryInputBuilder {
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
     pub fn source_networks(mut self, input: crate::types::StartSourceNetworkRecoveryRequestNetworkEntry) -> Self {
         let mut v = self.source_networks.unwrap_or_default();
-        v.push(input);
-        self.source_networks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_networks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub fn set_source_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
-    ) -> Self {
-        self.source_networks = input;
-        self
+    pub fn set_source_networks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>) -> Self {
+        self.source_networks = input; self
     }
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    pub fn get_source_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>> {
+    pub fn get_source_networks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>> {
         &self.source_networks
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
@@ -81,8 +78,7 @@ impl StartSourceNetworkRecoveryInputBuilder {
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub fn set_deploy_as_new(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deploy_as_new = input;
-        self
+        self.deploy_as_new = input; self
     }
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
     pub fn get_deploy_as_new(&self) -> &::std::option::Option<bool> {
@@ -95,31 +91,30 @@ impl StartSourceNetworkRecoveryInputBuilder {
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartSourceNetworkRecoveryInput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput {
-            source_networks: self.source_networks,
-            deploy_as_new: self.deploy_as_new,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput {
+                source_networks: self.source_networks
+                ,
+                deploy_as_new: self.deploy_as_new
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartSourceNetworkRecoveryInputBuilder {
@@ -131,3 +126,4 @@ impl ::std::fmt::Debug for StartSourceNetworkRecoveryInputBuilder {
         formatter.finish()
     }
 }
+

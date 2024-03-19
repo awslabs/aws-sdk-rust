@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditFindingsOutput {
+pub struct ListAuditFindingsOutput  {
     /// <p>The findings (results) of the audit.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
+    pub findings: ::std::option::Option<::std::vec::Vec::<crate::types::AuditFinding>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAuditFindingsOutput {
+impl  ListAuditFindingsOutput  {
     /// <p>The findings (results) of the audit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
-    pub fn findings(&self) -> &[crate::types::AuditFinding] {
-        self.findings.as_deref().unwrap_or_default()
+    pub fn findings(&self) -> & [crate::types::AuditFinding] {
+        self.findings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAuditFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAuditFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
     pub fn builder() -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAuditFindingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditFindingsOutputBuilder {
-    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec::<crate::types::AuditFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAuditFindingsOutputBuilder {
     /// <p>The findings (results) of the audit.</p>
     pub fn findings(mut self, input: crate::types::AuditFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The findings (results) of the audit.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuditFinding>>) -> Self {
+        self.findings = input; self
     }
     /// <p>The findings (results) of the audit.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuditFinding>> {
         &self.findings
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -69,28 +69,30 @@ impl ListAuditFindingsOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
     pub fn build(self) -> crate::operation::list_audit_findings::ListAuditFindingsOutput {
         crate::operation::list_audit_findings::ListAuditFindingsOutput {
-            findings: self.findings,
-            next_token: self.next_token,
+            findings: self.findings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

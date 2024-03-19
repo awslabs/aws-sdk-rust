@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchFlowTemplates`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(FlowTemplateFilter)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::filters) / [`set_filters(Option<Vec::<FlowTemplateFilter>>)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::set_filters):<br>required: **false**<br><p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results. Use this when you're paginating results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`SearchFlowTemplatesOutput`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput) with field(s):
+                            /// - On success, responds with [`SearchFlowTemplatesOutput`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput) with field(s):
     ///   - [`summaries(Option<Vec::<FlowTemplateSummary>>)`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput::summaries): <p>An array of objects that contain summary information about each workflow in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<SearchFlowTemplatesError>`](crate::operation::search_flow_templates::SearchFlowTemplatesError)
+                            /// - On failure, responds with [`SdkError<SearchFlowTemplatesError>`](crate::operation::search_flow_templates::SearchFlowTemplatesError)
     #[deprecated(note = "since: 2022-08-30")]
     pub fn search_flow_templates(&self) -> crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder {
-        crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_flow_templates::builders::SearchFlowTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

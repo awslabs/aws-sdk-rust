@@ -3,19 +3,19 @@
 /// <p>Replication configuration of a server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerReplicationConfiguration {
+pub struct ServerReplicationConfiguration  {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The parameters for replicating the server.</p>
     pub server_replication_parameters: ::std::option::Option<crate::types::ServerReplicationParameters>,
 }
-impl ServerReplicationConfiguration {
+impl  ServerReplicationConfiguration  {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
-    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<& crate::types::Server> {
         self.server.as_ref()
     }
     /// <p>The parameters for replicating the server.</p>
-    pub fn server_replication_parameters(&self) -> ::std::option::Option<&crate::types::ServerReplicationParameters> {
+    pub fn server_replication_parameters(&self) -> ::std::option::Option<& crate::types::ServerReplicationParameters> {
         self.server_replication_parameters.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ServerReplicationConfigurationBuilder {
     }
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
     }
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
@@ -55,8 +54,7 @@ impl ServerReplicationConfigurationBuilder {
     }
     /// <p>The parameters for replicating the server.</p>
     pub fn set_server_replication_parameters(mut self, input: ::std::option::Option<crate::types::ServerReplicationParameters>) -> Self {
-        self.server_replication_parameters = input;
-        self
+        self.server_replication_parameters = input; self
     }
     /// <p>The parameters for replicating the server.</p>
     pub fn get_server_replication_parameters(&self) -> &::std::option::Option<crate::types::ServerReplicationParameters> {
@@ -65,8 +63,11 @@ impl ServerReplicationConfigurationBuilder {
     /// Consumes the builder and constructs a [`ServerReplicationConfiguration`](crate::types::ServerReplicationConfiguration).
     pub fn build(self) -> crate::types::ServerReplicationConfiguration {
         crate::types::ServerReplicationConfiguration {
-            server: self.server,
-            server_replication_parameters: self.server_replication_parameters,
+            server: self.server
+            ,
+            server_replication_parameters: self.server_replication_parameters
+            ,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOrganizations`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
-    /// - On success, responds with [`ListOrganizationsOutput`](crate::operation::list_organizations::ListOrganizationsOutput) with field(s):
+                            /// - On success, responds with [`ListOrganizationsOutput`](crate::operation::list_organizations::ListOrganizationsOutput) with field(s):
     ///   - [`organization_summaries(Option<Vec::<OrganizationSummary>>)`](crate::operation::list_organizations::ListOrganizationsOutput::organization_summaries): <p>The overview of owned organizations presented as a list of organization summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organizations::ListOrganizationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListOrganizationsError>`](crate::operation::list_organizations::ListOrganizationsError)
+                            /// - On failure, responds with [`SdkError<ListOrganizationsError>`](crate::operation::list_organizations::ListOrganizationsError)
     pub fn list_organizations(&self) -> crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder {
-        crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

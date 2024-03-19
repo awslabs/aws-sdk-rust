@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTaskExecutionInput {
+pub struct UpdateTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub options: ::std::option::Option<crate::types::Options>,
 }
-impl UpdateTaskExecutionInput {
+impl  UpdateTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.options.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateTaskExecutionInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_execution_arn = input;
-        self
+        self.task_execution_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl UpdateTaskExecutionInputBuilder {
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
@@ -69,13 +67,15 @@ impl UpdateTaskExecutionInputBuilder {
         &self.options
     }
     /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_task_execution::UpdateTaskExecutionInput {
-            task_execution_arn: self.task_execution_arn,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_task_execution::UpdateTaskExecutionInput {
+                task_execution_arn: self.task_execution_arn
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

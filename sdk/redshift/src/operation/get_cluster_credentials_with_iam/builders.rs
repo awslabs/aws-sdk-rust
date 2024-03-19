@@ -5,55 +5,51 @@ pub use crate::operation::get_cluster_credentials_with_iam::_get_cluster_credent
 
 impl GetClusterCredentialsWithIamInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_cluster_credentials_with_iam();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_cluster_credentials_with_iam();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetClusterCredentialsWithIAM`.
-///
+/// 
 /// <p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p>
 /// <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder,
+                    inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-    > for GetClusterCredentialsWithIAMFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+                    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+                > for GetClusterCredentialsWithIAMFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+                        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetClusterCredentialsWithIAMFluentBuilder {
     /// Creates a new `GetClusterCredentialsWithIAM`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput, crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
@@ -169,3 +156,4 @@ impl GetClusterCredentialsWithIAMFluentBuilder {
         self.inner.get_custom_domain_name()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnnotationStoreOutput {
+pub struct UpdateAnnotationStoreOutput  {
     /// <p>The store's ID.</p>
     pub id: ::std::string::String,
     /// <p>The store's genome reference.</p>
@@ -23,52 +23,49 @@ pub struct UpdateAnnotationStoreOutput {
     pub store_format: ::std::option::Option<crate::types::StoreFormat>,
     _request_id: Option<String>,
 }
-impl UpdateAnnotationStoreOutput {
+impl  UpdateAnnotationStoreOutput  {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
+    pub fn reference(&self) -> ::std::option::Option<& crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> &crate::types::StoreStatus {
+    pub fn status(&self) -> & crate::types::StoreStatus {
         &self.status
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>Parsing options for the store.</p>
-    pub fn store_options(&self) -> ::std::option::Option<&crate::types::StoreOptions> {
+    pub fn store_options(&self) -> ::std::option::Option<& crate::types::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> ::std::option::Option<&crate::types::StoreFormat> {
+    pub fn store_format(&self) -> ::std::option::Option<& crate::types::StoreFormat> {
         self.store_format.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAnnotationStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
     pub fn builder() -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder {
@@ -100,8 +97,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The store's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's genome reference.</p>
     pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// <p>The store's genome reference.</p>
     pub fn get_reference(&self) -> &::std::option::Option<crate::types::ReferenceItem> {
@@ -130,8 +125,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The store's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
@@ -145,8 +139,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The store's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +153,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The store's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +167,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>When the store was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the store was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -190,8 +181,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>When the store was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>When the store was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +194,7 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>Parsing options for the store.</p>
     pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
-        self.store_options = input;
-        self
+        self.store_options = input; self
     }
     /// <p>Parsing options for the store.</p>
     pub fn get_store_options(&self) -> &::std::option::Option<crate::types::StoreOptions> {
@@ -218,22 +207,21 @@ impl UpdateAnnotationStoreOutputBuilder {
     }
     /// <p>The annotation file format of the store.</p>
     pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
-        self.store_format = input;
-        self
+        self.store_format = input; self
     }
     /// <p>The annotation file format of the store.</p>
     pub fn get_store_format(&self) -> &::std::option::Option<crate::types::StoreFormat> {
         &self.store_format
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::id)
@@ -242,51 +230,48 @@ impl UpdateAnnotationStoreOutputBuilder {
     /// - [`description`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::description)
     /// - [`creation_time`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::creation_time)
     /// - [`update_time`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::update_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_annotation_store::UpdateAnnotationStoreOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_annotation_store::UpdateAnnotationStoreOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            reference: self.reference,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building UpdateAnnotationStoreOutput",
-                )
-            })?,
-            store_options: self.store_options,
-            store_format: self.store_format,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_annotation_store::UpdateAnnotationStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_annotation_store::UpdateAnnotationStoreOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                reference: self.reference
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building UpdateAnnotationStoreOutput")
+                    )?
+                ,
+                store_options: self.store_options
+                ,
+                store_format: self.store_format
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

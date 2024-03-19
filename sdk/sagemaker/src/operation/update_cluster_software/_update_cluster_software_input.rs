@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterSoftwareInput {
+pub struct UpdateClusterSoftwareInput  {
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateClusterSoftwareInput {
+impl  UpdateClusterSoftwareInput  {
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl UpdateClusterSoftwareInputBuilder {
     }
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster you want to update for security patching.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
     /// Consumes the builder and constructs a [`UpdateClusterSoftwareInput`](crate::operation::update_cluster_software::UpdateClusterSoftwareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_software::UpdateClusterSoftwareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_cluster_software::UpdateClusterSoftwareInput {
-            cluster_name: self.cluster_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster_software::UpdateClusterSoftwareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster_software::UpdateClusterSoftwareInput {
+                cluster_name: self.cluster_name
+                ,
+            }
+        )
     }
 }
+

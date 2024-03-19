@@ -21,11 +21,7 @@ impl ScrapeConfiguration {
     /// Tries to convert the enum instance into [`ConfigurationBlob`](crate::types::ScrapeConfiguration::ConfigurationBlob), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_configuration_blob(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
-        if let ScrapeConfiguration::ConfigurationBlob(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ScrapeConfiguration::ConfigurationBlob(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConfigurationBlob`](crate::types::ScrapeConfiguration::ConfigurationBlob).
     pub fn is_configuration_blob(&self) -> bool {
@@ -36,3 +32,4 @@ impl ScrapeConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectorInput {
+pub struct UpdateConnectorInput  {
     /// <p>Update Connector request connector ID.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Connector request name.</p>
@@ -10,17 +10,17 @@ pub struct UpdateConnectorInput {
     /// <p>Update Connector request SSM command config.</p>
     pub ssm_command_config: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>,
 }
-impl UpdateConnectorInput {
+impl  UpdateConnectorInput  {
     /// <p>Update Connector request connector ID.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>Update Connector request name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Update Connector request SSM command config.</p>
-    pub fn ssm_command_config(&self) -> ::std::option::Option<&crate::types::ConnectorSsmCommandConfig> {
+    pub fn ssm_command_config(&self) -> ::std::option::Option<& crate::types::ConnectorSsmCommandConfig> {
         self.ssm_command_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateConnectorInputBuilder {
     }
     /// <p>Update Connector request connector ID.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>Update Connector request connector ID.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateConnectorInputBuilder {
     }
     /// <p>Update Connector request name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Update Connector request name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateConnectorInputBuilder {
     }
     /// <p>Update Connector request SSM command config.</p>
     pub fn set_ssm_command_config(mut self, input: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>) -> Self {
-        self.ssm_command_config = input;
-        self
+        self.ssm_command_config = input; self
     }
     /// <p>Update Connector request SSM command config.</p>
     pub fn get_ssm_command_config(&self) -> &::std::option::Option<crate::types::ConnectorSsmCommandConfig> {
         &self.ssm_command_config
     }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_connector::UpdateConnectorInput {
-            connector_id: self.connector_id,
-            name: self.name,
-            ssm_command_config: self.ssm_command_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_connector::UpdateConnectorInput {
+                connector_id: self.connector_id
+                ,
+                name: self.name
+                ,
+                ssm_command_config: self.ssm_command_config
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::create_sip_media_application_call::_create_sip_media_a
 
 impl CreateSipMediaApplicationCallInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_sip_media_application_call();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_sip_media_application_call();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSipMediaApplicationCall`.
-///
+/// 
 /// <p>Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder,
+                    inner: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-    > for CreateSipMediaApplicationCallFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
+                    crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+                > for CreateSipMediaApplicationCallFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
+                        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSipMediaApplicationCallFluentBuilder {
     /// Creates a new `CreateSipMediaApplicationCall`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput, crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime SDK phone number inventory.</p>
     pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_phone_number(input.into());
@@ -160,15 +147,12 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn set_sip_headers(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_sip_headers(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_sip_headers(input);
         self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_sip_headers()
     }
     /// Adds a key-value pair to `ArgumentsMap`.
@@ -181,15 +165,13 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self
     }
     /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
-    pub fn set_arguments_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_arguments_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_arguments_map(input);
         self
     }
     /// <p>Context passed to a CreateSipMediaApplication API call. For example, you could pass key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code></p>
-    pub fn get_arguments_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_arguments_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_arguments_map()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePolicyVersionInput {
+pub struct CreatePolicyVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
@@ -24,10 +24,10 @@ pub struct CreatePolicyVersionInput {
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     pub set_as_default: ::std::option::Option<bool>,
 }
-impl CreatePolicyVersionInput {
+impl  CreatePolicyVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The JSON policy document that you want to use as the content for this new version of the policy.</p>
@@ -42,7 +42,7 @@ impl CreatePolicyVersionInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>Specifies whether to set this version as the policy's default version.</p>
@@ -78,8 +78,7 @@ impl CreatePolicyVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -116,8 +115,7 @@ impl CreatePolicyVersionInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON policy document that you want to use as the content for this new version of the policy.</p>
     /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -145,8 +143,7 @@ impl CreatePolicyVersionInputBuilder {
     /// <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p>
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_set_as_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.set_as_default = input;
-        self
+        self.set_as_default = input; self
     }
     /// <p>Specifies whether to set this version as the policy's default version.</p>
     /// <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p>
@@ -155,14 +152,17 @@ impl CreatePolicyVersionInputBuilder {
         &self.set_as_default
     }
     /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_policy_version::CreatePolicyVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_policy_version::CreatePolicyVersionInput {
-            policy_arn: self.policy_arn,
-            policy_document: self.policy_document,
-            set_as_default: self.set_as_default,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy_version::CreatePolicyVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_policy_version::CreatePolicyVersionInput {
+                policy_arn: self.policy_arn
+                ,
+                policy_document: self.policy_document
+                ,
+                set_as_default: self.set_as_default
+                ,
+            }
+        )
     }
 }
+

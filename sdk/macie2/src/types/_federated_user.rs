@@ -3,7 +3,7 @@
 /// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FederatedUser {
+pub struct FederatedUser  {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
@@ -15,25 +15,25 @@ pub struct FederatedUser {
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
     pub session_context: ::std::option::Option<crate::types::SessionContext>,
 }
-impl FederatedUser {
+impl  FederatedUser  {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
-    pub fn session_context(&self) -> ::std::option::Option<&crate::types::SessionContext> {
+    pub fn session_context(&self) -> ::std::option::Option<& crate::types::SessionContext> {
         self.session_context.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
     pub fn set_session_context(mut self, input: ::std::option::Option<crate::types::SessionContext>) -> Self {
-        self.session_context = input;
-        self
+        self.session_context = input; self
     }
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
     pub fn get_session_context(&self) -> &::std::option::Option<crate::types::SessionContext> {
@@ -128,11 +123,17 @@ impl FederatedUserBuilder {
     /// Consumes the builder and constructs a [`FederatedUser`](crate::types::FederatedUser).
     pub fn build(self) -> crate::types::FederatedUser {
         crate::types::FederatedUser {
-            access_key_id: self.access_key_id,
-            account_id: self.account_id,
-            arn: self.arn,
-            principal_id: self.principal_id,
-            session_context: self.session_context,
+            access_key_id: self.access_key_id
+            ,
+            account_id: self.account_id
+            ,
+            arn: self.arn
+            ,
+            principal_id: self.principal_id
+            ,
+            session_context: self.session_context
+            ,
         }
     }
 }
+

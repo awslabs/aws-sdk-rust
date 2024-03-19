@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOpsItemInput {
+pub struct DeleteOpsItemInput  {
     /// <p>The ID of the OpsItem that you want to delete.</p>
     pub ops_item_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteOpsItemInput {
+impl  DeleteOpsItemInput  {
     /// <p>The ID of the OpsItem that you want to delete.</p>
-    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteOpsItemInputBuilder {
     }
     /// <p>The ID of the OpsItem that you want to delete.</p>
     pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The ID of the OpsItem that you want to delete.</p>
     pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_id
     }
     /// Consumes the builder and constructs a [`DeleteOpsItemInput`](crate::operation::delete_ops_item::DeleteOpsItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ops_item::DeleteOpsItemInput {
-            ops_item_id: self.ops_item_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ops_item::DeleteOpsItemInput {
+                ops_item_id: self.ops_item_id
+                ,
+            }
+        )
     }
 }
+

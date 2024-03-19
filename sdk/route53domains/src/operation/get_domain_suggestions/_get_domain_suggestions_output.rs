@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainSuggestionsOutput {
+pub struct GetDomainSuggestionsOutput  {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    pub suggestions_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
+    pub suggestions_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSuggestion>>,
     _request_id: Option<String>,
 }
-impl GetDomainSuggestionsOutput {
+impl  GetDomainSuggestionsOutput  {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggestions_list.is_none()`.
-    pub fn suggestions_list(&self) -> &[crate::types::DomainSuggestion] {
-        self.suggestions_list.as_deref().unwrap_or_default()
+    pub fn suggestions_list(&self) -> & [crate::types::DomainSuggestion] {
+        self.suggestions_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDomainSuggestionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDomainSuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput).
     pub fn builder() -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsOutputBuilder {
@@ -31,7 +32,7 @@ impl GetDomainSuggestionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainSuggestionsOutputBuilder {
-    pub(crate) suggestions_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
+    pub(crate) suggestions_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSuggestion>>,
     _request_id: Option<String>,
 }
 impl GetDomainSuggestionsOutputBuilder {
@@ -42,33 +43,34 @@ impl GetDomainSuggestionsOutputBuilder {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
     pub fn suggestions_list(mut self, input: crate::types::DomainSuggestion) -> Self {
         let mut v = self.suggestions_list.unwrap_or_default();
-        v.push(input);
-        self.suggestions_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suggestions_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    pub fn set_suggestions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>) -> Self {
-        self.suggestions_list = input;
-        self
+    pub fn set_suggestions_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSuggestion>>) -> Self {
+        self.suggestions_list = input; self
     }
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    pub fn get_suggestions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>> {
+    pub fn get_suggestions_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainSuggestion>> {
         &self.suggestions_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDomainSuggestionsOutput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput).
     pub fn build(self) -> crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput {
         crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput {
-            suggestions_list: self.suggestions_list,
+            suggestions_list: self.suggestions_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

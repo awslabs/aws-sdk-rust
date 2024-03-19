@@ -3,7 +3,7 @@
 /// <p>The configuration for a <code>FilledMapVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilledMapConfiguration {
+pub struct FilledMapConfiguration  {
     /// <p>The field wells of the visual.</p>
     pub field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
@@ -19,33 +19,33 @@ pub struct FilledMapConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl FilledMapConfiguration {
+impl  FilledMapConfiguration  {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::FilledMapFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::FilledMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
-    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::FilledMapSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<& crate::types::FilledMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The window options of the filled map visual.</p>
-    pub fn window_options(&self) -> ::std::option::Option<&crate::types::GeospatialWindowOptions> {
+    pub fn window_options(&self) -> ::std::option::Option<& crate::types::GeospatialWindowOptions> {
         self.window_options.as_ref()
     }
     /// <p>The map style options of the filled map visual.</p>
-    pub fn map_style_options(&self) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
+    pub fn map_style_options(&self) -> ::std::option::Option<& crate::types::GeospatialMapStyleOptions> {
         self.map_style_options.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::FilledMapFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field wells of the visual.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::FilledMapFieldWells> {
@@ -90,8 +89,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::FilledMapSortConfiguration>) -> Self {
-        self.sort_configuration = input;
-        self
+        self.sort_configuration = input; self
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::FilledMapSortConfiguration> {
@@ -104,8 +102,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn get_legend(&self) -> &::std::option::Option<crate::types::LegendOptions> {
@@ -118,8 +115,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
@@ -132,8 +128,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The window options of the filled map visual.</p>
     pub fn set_window_options(mut self, input: ::std::option::Option<crate::types::GeospatialWindowOptions>) -> Self {
-        self.window_options = input;
-        self
+        self.window_options = input; self
     }
     /// <p>The window options of the filled map visual.</p>
     pub fn get_window_options(&self) -> &::std::option::Option<crate::types::GeospatialWindowOptions> {
@@ -146,8 +141,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The map style options of the filled map visual.</p>
     pub fn set_map_style_options(mut self, input: ::std::option::Option<crate::types::GeospatialMapStyleOptions>) -> Self {
-        self.map_style_options = input;
-        self
+        self.map_style_options = input; self
     }
     /// <p>The map style options of the filled map visual.</p>
     pub fn get_map_style_options(&self) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
@@ -160,8 +154,7 @@ impl FilledMapConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -170,13 +163,21 @@ impl FilledMapConfigurationBuilder {
     /// Consumes the builder and constructs a [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
     pub fn build(self) -> crate::types::FilledMapConfiguration {
         crate::types::FilledMapConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            legend: self.legend,
-            tooltip: self.tooltip,
-            window_options: self.window_options,
-            map_style_options: self.map_style_options,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            legend: self.legend
+            ,
+            tooltip: self.tooltip
+            ,
+            window_options: self.window_options
+            ,
+            map_style_options: self.map_style_options
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

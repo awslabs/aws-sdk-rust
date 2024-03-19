@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateGatewayToServerOutput {
+pub struct AssociateGatewayToServerOutput  {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AssociateGatewayToServerOutput {
+impl  AssociateGatewayToServerOutput  {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateGatewayToServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateGatewayToServerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput).
     pub fn builder() -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerOutputBuilder {
@@ -40,27 +40,28 @@ impl AssociateGatewayToServerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput).
     pub fn build(self) -> crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput {
         crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput {
-            gateway_arn: self.gateway_arn,
+            gateway_arn: self.gateway_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A structure that describes a filter for applications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsFilter {
+pub struct ListApplicationsFilter  {
     /// <p>An Amazon Web Services account ID number that filters the results in the response.</p>
     pub application_account: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an application provider that can filter the results in the response.</p>
     pub application_provider: ::std::option::Option<::std::string::String>,
 }
-impl ListApplicationsFilter {
+impl  ListApplicationsFilter  {
     /// <p>An Amazon Web Services account ID number that filters the results in the response.</p>
-    pub fn application_account(&self) -> ::std::option::Option<&str> {
+    pub fn application_account(&self) -> ::std::option::Option<& str> {
         self.application_account.as_deref()
     }
     /// <p>The ARN of an application provider that can filter the results in the response.</p>
-    pub fn application_provider(&self) -> ::std::option::Option<&str> {
+    pub fn application_provider(&self) -> ::std::option::Option<& str> {
         self.application_provider.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListApplicationsFilterBuilder {
     }
     /// <p>An Amazon Web Services account ID number that filters the results in the response.</p>
     pub fn set_application_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_account = input;
-        self
+        self.application_account = input; self
     }
     /// <p>An Amazon Web Services account ID number that filters the results in the response.</p>
     pub fn get_application_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ListApplicationsFilterBuilder {
     }
     /// <p>The ARN of an application provider that can filter the results in the response.</p>
     pub fn set_application_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_provider = input;
-        self
+        self.application_provider = input; self
     }
     /// <p>The ARN of an application provider that can filter the results in the response.</p>
     pub fn get_application_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ListApplicationsFilterBuilder {
     /// Consumes the builder and constructs a [`ListApplicationsFilter`](crate::types::ListApplicationsFilter).
     pub fn build(self) -> crate::types::ListApplicationsFilter {
         crate::types::ListApplicationsFilter {
-            application_account: self.application_account,
-            application_provider: self.application_provider,
+            application_account: self.application_account
+            ,
+            application_provider: self.application_provider
+            ,
         }
     }
 }
+

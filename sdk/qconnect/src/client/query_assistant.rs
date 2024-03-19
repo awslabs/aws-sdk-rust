@@ -2,22 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`QueryAssistant`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`assistant_id(impl Into<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_assistant_id):<br>required: **true**<br><p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     ///   - [`query_text(impl Into<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::query_text) / [`set_query_text(Option<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_query_text):<br>required: **true**<br><p>The text to search for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`session_id(impl Into<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_session_id):<br>required: **false**<br><p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     ///   - [`query_condition(QueryCondition)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::query_condition) / [`set_query_condition(Option<Vec::<QueryCondition>>)`](crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::set_query_condition):<br>required: **false**<br><p>Information about how to query content.</p><br>
-    /// - On success, responds with [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput) with field(s):
+                            /// - On success, responds with [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput) with field(s):
     ///   - [`results(Vec::<ResultData>)`](crate::operation::query_assistant::QueryAssistantOutput::results): <p>The results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_assistant::QueryAssistantOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::operation::query_assistant::QueryAssistantError)
-    #[deprecated(
-        note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications."
-    )]
+                            /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::operation::query_assistant::QueryAssistantError)
+    #[deprecated(note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
     pub fn query_assistant(&self) -> crate::operation::query_assistant::builders::QueryAssistantFluentBuilder {
-        crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::new(self.handle.clone())
+                            }
 }
+

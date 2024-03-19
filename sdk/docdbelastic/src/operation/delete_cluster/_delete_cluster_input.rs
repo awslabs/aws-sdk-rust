@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterInput {
+pub struct DeleteClusterInput  {
     /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterInput {
+impl  DeleteClusterInput  {
     /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteClusterInputBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
-            cluster_arn: self.cluster_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster::DeleteClusterInput {
+                cluster_arn: self.cluster_arn
+                ,
+            }
+        )
     }
 }
+

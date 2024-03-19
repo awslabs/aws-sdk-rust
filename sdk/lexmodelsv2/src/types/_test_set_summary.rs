@@ -3,7 +3,7 @@
 /// <p>Contains summary information about the test set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetSummary {
+pub struct TestSetSummary  {
     /// <p>The unique identifier of the test set.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test set.</p>
@@ -25,29 +25,29 @@ pub struct TestSetSummary {
     /// <p>The date and time at which the test set was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TestSetSummary {
+impl  TestSetSummary  {
     /// <p>The unique identifier of the test set.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The name of the test set.</p>
-    pub fn test_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_name(&self) -> ::std::option::Option<& str> {
         self.test_set_name.as_deref()
     }
     /// <p>The description of the test set.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the test set contains written or spoken data.</p>
-    pub fn modality(&self) -> ::std::option::Option<&crate::types::TestSetModality> {
+    pub fn modality(&self) -> ::std::option::Option<& crate::types::TestSetModality> {
         self.modality.as_ref()
     }
     /// <p>The status of the test set.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TestSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TestSetStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The number of turns in the test set.</p>
@@ -55,15 +55,15 @@ impl TestSetSummary {
         self.num_turns
     }
     /// <p>Contains information about the location at which the test set is stored.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::TestSetStorageLocation> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::TestSetStorageLocation> {
         self.storage_location.as_ref()
     }
     /// <p>The date and time at which the test set was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time at which the test set was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The unique identifier of the test set.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The unique identifier of the test set.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The name of the test set.</p>
     pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_name = input;
-        self
+        self.test_set_name = input; self
     }
     /// <p>The name of the test set.</p>
     pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The description of the test set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the test set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>Specifies whether the test set contains written or spoken data.</p>
     pub fn set_modality(mut self, input: ::std::option::Option<crate::types::TestSetModality>) -> Self {
-        self.modality = input;
-        self
+        self.modality = input; self
     }
     /// <p>Specifies whether the test set contains written or spoken data.</p>
     pub fn get_modality(&self) -> &::std::option::Option<crate::types::TestSetModality> {
@@ -153,8 +149,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The status of the test set.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the test set.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TestSetStatus> {
@@ -167,8 +162,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The number of turns in the test set.</p>
     pub fn set_num_turns(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_turns = input;
-        self
+        self.num_turns = input; self
     }
     /// <p>The number of turns in the test set.</p>
     pub fn get_num_turns(&self) -> &::std::option::Option<i32> {
@@ -195,8 +188,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>Contains information about the location at which the test set is stored.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>Contains information about the location at which the test set is stored.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
@@ -209,8 +201,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The date and time at which the test set was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time at which the test set was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +214,7 @@ impl TestSetSummaryBuilder {
     }
     /// <p>The date and time at which the test set was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time at which the test set was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,16 +223,27 @@ impl TestSetSummaryBuilder {
     /// Consumes the builder and constructs a [`TestSetSummary`](crate::types::TestSetSummary).
     pub fn build(self) -> crate::types::TestSetSummary {
         crate::types::TestSetSummary {
-            test_set_id: self.test_set_id,
-            test_set_name: self.test_set_name,
-            description: self.description,
-            modality: self.modality,
-            status: self.status,
-            role_arn: self.role_arn,
-            num_turns: self.num_turns,
-            storage_location: self.storage_location,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            test_set_id: self.test_set_id
+            ,
+            test_set_name: self.test_set_name
+            ,
+            description: self.description
+            ,
+            modality: self.modality
+            ,
+            status: self.status
+            ,
+            role_arn: self.role_arn
+            ,
+            num_turns: self.num_turns
+            ,
+            storage_location: self.storage_location
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

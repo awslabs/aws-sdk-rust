@@ -5,54 +5,50 @@ pub use crate::operation::merge_pull_request_by_three_way::_merge_pull_request_b
 
 impl MergePullRequestByThreeWayInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.merge_pull_request_by_three_way();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.merge_pull_request_by_three_way();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `MergePullRequestByThreeWay`.
-///
+/// 
 /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MergePullRequestByThreeWayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder,
+                    inner: crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-    > for MergePullRequestByThreeWayFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
+                    crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+                > for MergePullRequestByThreeWayFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
+                        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl MergePullRequestByThreeWayFluentBuilder {
     /// Creates a new `MergePullRequestByThreeWay`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl MergePullRequestByThreeWayFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput, crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
@@ -249,3 +236,4 @@ impl MergePullRequestByThreeWayFluentBuilder {
         self.inner.get_conflict_resolution()
     }
 }
+

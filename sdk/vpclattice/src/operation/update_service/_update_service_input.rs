@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceInput {
+pub struct UpdateServiceInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
@@ -16,13 +16,13 @@ pub struct UpdateServiceInput {
     /// </ul>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
-impl UpdateServiceInput {
+impl  UpdateServiceInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The type of IAM policy.</p>
@@ -32,7 +32,7 @@ impl UpdateServiceInput {
     /// <li>
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl UpdateServiceInputBuilder {
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -114,13 +111,17 @@ impl UpdateServiceInputBuilder {
         &self.auth_type
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
-            service_identifier: self.service_identifier,
-            certificate_arn: self.certificate_arn,
-            auth_type: self.auth_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service::UpdateServiceInput {
+                service_identifier: self.service_identifier
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                auth_type: self.auth_type
+                ,
+            }
+        )
     }
 }
+

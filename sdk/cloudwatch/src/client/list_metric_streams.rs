@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMetricStreams`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in one operation.</p><br>
-    /// - On success, responds with [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput) with field(s):
+                            /// - On success, responds with [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::next_token): <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     ///   - [`entries(Option<Vec::<MetricStreamEntry>>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::entries): <p>The array of metric stream information.</p>
-    /// - On failure, responds with [`SdkError<ListMetricStreamsError>`](crate::operation::list_metric_streams::ListMetricStreamsError)
+                            /// - On failure, responds with [`SdkError<ListMetricStreamsError>`](crate::operation::list_metric_streams::ListMetricStreamsError)
     pub fn list_metric_streams(&self) -> crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder {
-        crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

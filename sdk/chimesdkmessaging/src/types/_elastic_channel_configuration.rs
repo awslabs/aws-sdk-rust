@@ -3,7 +3,7 @@
 /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticChannelConfiguration {
+pub struct ElasticChannelConfiguration  {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     pub maximum_sub_channels: i32,
     /// <p>The maximum number of members allowed in a SubChannel.</p>
@@ -11,7 +11,7 @@ pub struct ElasticChannelConfiguration {
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub minimum_membership_percentage: i32,
 }
-impl ElasticChannelConfiguration {
+impl  ElasticChannelConfiguration  {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     pub fn maximum_sub_channels(&self) -> i32 {
         self.maximum_sub_channels
@@ -49,8 +49,7 @@ impl ElasticChannelConfigurationBuilder {
     }
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     pub fn set_maximum_sub_channels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_sub_channels = input;
-        self
+        self.maximum_sub_channels = input; self
     }
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     pub fn get_maximum_sub_channels(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl ElasticChannelConfigurationBuilder {
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     pub fn set_target_memberships_per_sub_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_memberships_per_sub_channel = input;
-        self
+        self.target_memberships_per_sub_channel = input; self
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     pub fn get_target_memberships_per_sub_channel(&self) -> &::std::option::Option<i32> {
@@ -79,8 +77,7 @@ impl ElasticChannelConfigurationBuilder {
     }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub fn set_minimum_membership_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_membership_percentage = input;
-        self
+        self.minimum_membership_percentage = input; self
     }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub fn get_minimum_membership_percentage(&self) -> &::std::option::Option<i32> {
@@ -92,25 +89,25 @@ impl ElasticChannelConfigurationBuilder {
     /// - [`target_memberships_per_sub_channel`](crate::types::builders::ElasticChannelConfigurationBuilder::target_memberships_per_sub_channel)
     /// - [`minimum_membership_percentage`](crate::types::builders::ElasticChannelConfigurationBuilder::minimum_membership_percentage)
     pub fn build(self) -> ::std::result::Result<crate::types::ElasticChannelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ElasticChannelConfiguration {
-            maximum_sub_channels: self.maximum_sub_channels.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "maximum_sub_channels",
-                    "maximum_sub_channels was not specified but it is required when building ElasticChannelConfiguration",
-                )
-            })?,
-            target_memberships_per_sub_channel: self.target_memberships_per_sub_channel.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_memberships_per_sub_channel",
-                    "target_memberships_per_sub_channel was not specified but it is required when building ElasticChannelConfiguration",
-                )
-            })?,
-            minimum_membership_percentage: self.minimum_membership_percentage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minimum_membership_percentage",
-                    "minimum_membership_percentage was not specified but it is required when building ElasticChannelConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ElasticChannelConfiguration {
+                maximum_sub_channels: self.maximum_sub_channels
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("maximum_sub_channels", "maximum_sub_channels was not specified but it is required when building ElasticChannelConfiguration")
+                    )?
+                ,
+                target_memberships_per_sub_channel: self.target_memberships_per_sub_channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_memberships_per_sub_channel", "target_memberships_per_sub_channel was not specified but it is required when building ElasticChannelConfiguration")
+                    )?
+                ,
+                minimum_membership_percentage: self.minimum_membership_percentage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minimum_membership_percentage", "minimum_membership_percentage was not specified but it is required when building ElasticChannelConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemProtectionInput {
+pub struct UpdateFileSystemProtectionInput  {
     /// <p>The ID of the file system to update.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file system's replication overwrite protection.</p>
@@ -17,9 +17,9 @@ pub struct UpdateFileSystemProtectionInput {
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,
 }
-impl UpdateFileSystemProtectionInput {
+impl  UpdateFileSystemProtectionInput  {
     /// <p>The ID of the file system to update.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The status of the file system's replication overwrite protection.</p>
@@ -32,7 +32,7 @@ impl UpdateFileSystemProtectionInput {
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
-    pub fn replication_overwrite_protection(&self) -> ::std::option::Option<&crate::types::ReplicationOverwriteProtection> {
+    pub fn replication_overwrite_protection(&self) -> ::std::option::Option<& crate::types::ReplicationOverwriteProtection> {
         self.replication_overwrite_protection.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateFileSystemProtectionInputBuilder {
     }
     /// <p>The ID of the file system to update.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system to update.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateFileSystemProtectionInputBuilder {
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn set_replication_overwrite_protection(mut self, input: ::std::option::Option<crate::types::ReplicationOverwriteProtection>) -> Self {
-        self.replication_overwrite_protection = input;
-        self
+        self.replication_overwrite_protection = input; self
     }
     /// <p>The status of the file system's replication overwrite protection.</p>
     /// <ul>
@@ -108,15 +106,15 @@ impl UpdateFileSystemProtectionInputBuilder {
         &self.replication_overwrite_protection
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemProtectionInput`](crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput {
-            file_system_id: self.file_system_id,
-            replication_overwrite_protection: self.replication_overwrite_protection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput {
+                file_system_id: self.file_system_id
+                ,
+                replication_overwrite_protection: self.replication_overwrite_protection
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents information about an action type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypeId {
+pub struct ActionTypeId  {
     /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct ActionTypeId {
     /// <p>A string that describes the action version.</p>
     pub version: ::std::string::String,
 }
-impl ActionTypeId {
+impl  ActionTypeId  {
     /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
     /// <ul>
     /// <li>
@@ -43,22 +43,20 @@ impl ActionTypeId {
     /// <li>
     /// <p>Approval</p></li>
     /// </ul>
-    pub fn category(&self) -> &crate::types::ActionCategory {
+    pub fn category(&self) -> & crate::types::ActionCategory {
         &self.category
     }
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
-    pub fn owner(&self) -> &crate::types::ActionOwner {
+    pub fn owner(&self) -> & crate::types::ActionOwner {
         &self.owner
     }
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of CodeDeploy, which would be specified as <code>CodeDeploy</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>A string that describes the action version.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl ActionTypeId {
@@ -114,8 +112,7 @@ impl ActionTypeIdBuilder {
     /// <p>Approval</p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values.</p>
     /// <ul>
@@ -143,8 +140,7 @@ impl ActionTypeIdBuilder {
     }
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::ActionOwner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::ActionOwner> {
@@ -158,8 +154,7 @@ impl ActionTypeIdBuilder {
     }
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of CodeDeploy, which would be specified as <code>CodeDeploy</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of CodeDeploy, which would be specified as <code>CodeDeploy</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +168,7 @@ impl ActionTypeIdBuilder {
     }
     /// <p>A string that describes the action version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A string that describes the action version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,31 +181,30 @@ impl ActionTypeIdBuilder {
     /// - [`provider`](crate::types::builders::ActionTypeIdBuilder::provider)
     /// - [`version`](crate::types::builders::ActionTypeIdBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeId, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionTypeId {
-            category: self.category.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "category",
-                    "category was not specified but it is required when building ActionTypeId",
-                )
-            })?,
-            owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner",
-                    "owner was not specified but it is required when building ActionTypeId",
-                )
-            })?,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building ActionTypeId",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building ActionTypeId",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionTypeId {
+                category: self.category
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("category", "category was not specified but it is required when building ActionTypeId")
+                    )?
+                ,
+                owner: self.owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner", "owner was not specified but it is required when building ActionTypeId")
+                    )?
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building ActionTypeId")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building ActionTypeId")
+                    )?
+                ,
+            }
+        )
     }
 }
+

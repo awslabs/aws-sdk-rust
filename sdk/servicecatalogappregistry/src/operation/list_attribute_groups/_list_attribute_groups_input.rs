@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAttributeGroupsInput {
+pub struct ListAttributeGroupsInput  {
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAttributeGroupsInput {
+impl  ListAttributeGroupsInput  {
     /// <p>The token to use to get the next page of results after a previous API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -40,8 +40,7 @@ impl ListAttributeGroupsInputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl ListAttributeGroupsInputBuilder {
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttributeGroupsInput`](crate::operation::list_attribute_groups::ListAttributeGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_attribute_groups::ListAttributeGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_attribute_groups::ListAttributeGroupsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_attribute_groups::ListAttributeGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_attribute_groups::ListAttributeGroupsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

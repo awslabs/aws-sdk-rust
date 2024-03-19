@@ -3,15 +3,14 @@
 /// <p>Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlueDataCatalogConfigurationUpdate {
+pub struct GlueDataCatalogConfigurationUpdate  {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub database_arn_update: ::std::string::String,
 }
-impl GlueDataCatalogConfigurationUpdate {
+impl  GlueDataCatalogConfigurationUpdate  {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(&self) -> &str {
-        use std::ops::Deref;
-        self.database_arn_update.deref()
+    pub fn database_arn_update(&self) -> & str {
+        use std::ops::Deref; self.database_arn_update.deref()
     }
 }
 impl GlueDataCatalogConfigurationUpdate {
@@ -36,8 +35,7 @@ impl GlueDataCatalogConfigurationUpdateBuilder {
     }
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub fn set_database_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn_update = input;
-        self
+        self.database_arn_update = input; self
     }
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub fn get_database_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GlueDataCatalogConfigurationUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`database_arn_update`](crate::types::builders::GlueDataCatalogConfigurationUpdateBuilder::database_arn_update)
     pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlueDataCatalogConfigurationUpdate {
-            database_arn_update: self.database_arn_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_arn_update",
-                    "database_arn_update was not specified but it is required when building GlueDataCatalogConfigurationUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlueDataCatalogConfigurationUpdate {
+                database_arn_update: self.database_arn_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_arn_update", "database_arn_update was not specified but it is required when building GlueDataCatalogConfigurationUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

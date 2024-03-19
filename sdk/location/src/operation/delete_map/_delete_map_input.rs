@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMapInput {
+pub struct DeleteMapInput  {
     /// <p>The name of the map resource to be deleted.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMapInput {
+impl  DeleteMapInput  {
     /// <p>The name of the map resource to be deleted.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteMapInputBuilder {
     }
     /// <p>The name of the map resource to be deleted.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The name of the map resource to be deleted.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteMapInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput { map_name: self.map_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_map::DeleteMapInput {
+                map_name: self.map_name
+                ,
+            }
+        )
     }
 }
+

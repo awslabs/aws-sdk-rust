@@ -3,7 +3,7 @@
 /// <p>A list of additional authentication providers for the GraphqlApi API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
+pub struct AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails  {
     /// <p>The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for Lambda function authorization.</p>
@@ -13,21 +13,21 @@ pub struct AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
     /// <p>The Amazon Cognito user pools configuration.</p>
     pub user_pool_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
 }
-impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
+impl  AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails  {
     /// <p>The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& str> {
         self.authentication_type.as_deref()
     }
     /// <p>The configuration for Lambda function authorization.</p>
-    pub fn lambda_authorizer_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails> {
+    pub fn lambda_authorizer_config(&self) -> ::std::option::Option<& crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails> {
         self.lambda_authorizer_config.as_ref()
     }
     /// <p>The OpenID Connect configuration.</p>
-    pub fn open_id_connect_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
+    pub fn open_id_connect_config(&self) -> ::std::option::Option<& crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>The Amazon Cognito user pools configuration.</p>
-    pub fn user_pool_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
+    pub fn user_pool_config(&self) -> ::std::option::Option<& crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
         self.user_pool_config.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     }
     /// <p>The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,12 +67,8 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
         self
     }
     /// <p>The configuration for Lambda function authorization.</p>
-    pub fn set_lambda_authorizer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
-    ) -> Self {
-        self.lambda_authorizer_config = input;
-        self
+    pub fn set_lambda_authorizer_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>) -> Self {
+        self.lambda_authorizer_config = input; self
     }
     /// <p>The configuration for Lambda function authorization.</p>
     pub fn get_lambda_authorizer_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails> {
@@ -86,8 +81,7 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     }
     /// <p>The OpenID Connect configuration.</p>
     pub fn set_open_id_connect_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>) -> Self {
-        self.open_id_connect_config = input;
-        self
+        self.open_id_connect_config = input; self
     }
     /// <p>The OpenID Connect configuration.</p>
     pub fn get_open_id_connect_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
@@ -100,8 +94,7 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     }
     /// <p>The Amazon Cognito user pools configuration.</p>
     pub fn set_user_pool_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>) -> Self {
-        self.user_pool_config = input;
-        self
+        self.user_pool_config = input; self
     }
     /// <p>The Amazon Cognito user pools configuration.</p>
     pub fn get_user_pool_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
@@ -110,10 +103,15 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails`](crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
         crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
-            authentication_type: self.authentication_type,
-            lambda_authorizer_config: self.lambda_authorizer_config,
-            open_id_connect_config: self.open_id_connect_config,
-            user_pool_config: self.user_pool_config,
+            authentication_type: self.authentication_type
+            ,
+            lambda_authorizer_config: self.lambda_authorizer_config
+            ,
+            open_id_connect_config: self.open_id_connect_config
+            ,
+            user_pool_config: self.user_pool_config
+            ,
         }
     }
 }
+

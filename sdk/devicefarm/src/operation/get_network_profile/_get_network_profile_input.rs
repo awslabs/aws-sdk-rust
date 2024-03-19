@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkProfileInput {
+pub struct GetNetworkProfileInput  {
     /// <p>The ARN of the network profile to return information about.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkProfileInput {
+impl  GetNetworkProfileInput  {
     /// <p>The ARN of the network profile to return information about.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the network profile to return information about.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the network profile to return information about.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_network_profile::GetNetworkProfileInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

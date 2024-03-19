@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSbomExportInput {
+pub struct GetSbomExportInput  {
     /// <p>The report ID of the SBOM export to get details for.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSbomExportInput {
+impl  GetSbomExportInput  {
     /// <p>The report ID of the SBOM export to get details for.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetSbomExportInputBuilder {
     }
     /// <p>The report ID of the SBOM export to get details for.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The report ID of the SBOM export to get details for.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     /// Consumes the builder and constructs a [`GetSbomExportInput`](crate::operation::get_sbom_export::GetSbomExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sbom_export::GetSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sbom_export::GetSbomExportInput { report_id: self.report_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sbom_export::GetSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sbom_export::GetSbomExportInput {
+                report_id: self.report_id
+                ,
+            }
+        )
     }
 }
+

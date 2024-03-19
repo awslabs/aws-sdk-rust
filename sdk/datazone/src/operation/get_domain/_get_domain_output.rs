@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainOutput {
+pub struct GetDomainOutput  {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub id: ::std::string::String,
     /// <p>The name of the Amazon DataZone domain.</p>
@@ -26,66 +26,64 @@ pub struct GetDomainOutput {
     /// <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetDomainOutput {
+impl  GetDomainOutput  {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the Amazon DataZone domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Amazon DataZone domain.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The single sing-on option of the specified Amazon DataZone domain.</p>
-    pub fn single_sign_on(&self) -> ::std::option::Option<&crate::types::SingleSignOn> {
+    pub fn single_sign_on(&self) -> ::std::option::Option<& crate::types::SingleSignOn> {
         self.single_sign_on.as_ref()
     }
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
-    pub fn domain_execution_role(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_execution_role.deref()
+    pub fn domain_execution_role(&self) -> & str {
+        use std::ops::Deref; self.domain_execution_role.deref()
     }
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>The status of the specified Amazon DataZone domain.</p>
-    pub fn status(&self) -> &crate::types::DomainStatus {
+    pub fn status(&self) -> & crate::types::DomainStatus {
         &self.status
     }
     /// <p>The URL of the data portal for this Amazon DataZone domain.</p>
-    pub fn portal_url(&self) -> ::std::option::Option<&str> {
+    pub fn portal_url(&self) -> ::std::option::Option<& str> {
         self.portal_url.as_deref()
     }
     /// <p>The timestamp of when the Amazon DataZone domain was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput).
     pub fn builder() -> crate::operation::get_domain::builders::GetDomainOutputBuilder {
@@ -108,7 +106,7 @@ pub struct GetDomainOutputBuilder {
     pub(crate) portal_url: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDomainOutputBuilder {
@@ -120,8 +118,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +144,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The description of the Amazon DataZone domain.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Amazon DataZone domain.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +157,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The single sing-on option of the specified Amazon DataZone domain.</p>
     pub fn set_single_sign_on(mut self, input: ::std::option::Option<crate::types::SingleSignOn>) -> Self {
-        self.single_sign_on = input;
-        self
+        self.single_sign_on = input; self
     }
     /// <p>The single sing-on option of the specified Amazon DataZone domain.</p>
     pub fn get_single_sign_on(&self) -> &::std::option::Option<crate::types::SingleSignOn> {
@@ -177,8 +171,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
     pub fn set_domain_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_execution_role = input;
-        self
+        self.domain_execution_role = input; self
     }
     /// <p>The domain execution role with which the Amazon DataZone domain is created.</p>
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +184,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the specified Amazon DataZone domain.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +197,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +211,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The status of the specified Amazon DataZone domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the specified Amazon DataZone domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
@@ -234,8 +224,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The URL of the data portal for this Amazon DataZone domain.</p>
     pub fn set_portal_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_url = input;
-        self
+        self.portal_url = input; self
     }
     /// <p>The URL of the data portal for this Amazon DataZone domain.</p>
     pub fn get_portal_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +237,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The timestamp of when the Amazon DataZone domain was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the Amazon DataZone domain was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -262,8 +250,7 @@ impl GetDomainOutputBuilder {
     }
     /// <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -276,63 +263,71 @@ impl GetDomainOutputBuilder {
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_domain::builders::GetDomainOutputBuilder::id)
     /// - [`domain_execution_role`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_execution_role)
     /// - [`status`](crate::operation::get_domain::builders::GetDomainOutputBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetDomainOutput",
-                )
-            })?,
-            name: self.name,
-            description: self.description,
-            single_sign_on: self.single_sign_on,
-            domain_execution_role: self.domain_execution_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_execution_role",
-                    "domain_execution_role was not specified but it is required when building GetDomainOutput",
-                )
-            })?,
-            arn: self.arn,
-            kms_key_identifier: self.kms_key_identifier,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetDomainOutput",
-                )
-            })?,
-            portal_url: self.portal_url,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_domain::GetDomainOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetDomainOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                single_sign_on: self.single_sign_on
+                ,
+                domain_execution_role: self.domain_execution_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_execution_role", "domain_execution_role was not specified but it is required when building GetDomainOutput")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetDomainOutput")
+                    )?
+                ,
+                portal_url: self.portal_url
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

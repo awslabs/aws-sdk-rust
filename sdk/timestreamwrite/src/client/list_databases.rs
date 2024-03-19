@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatabases`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_databases::builders::ListDatabasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p><br>
-    /// - On success, responds with [`ListDatabasesOutput`](crate::operation::list_databases::ListDatabasesOutput) with field(s):
+                            /// - On success, responds with [`ListDatabasesOutput`](crate::operation::list_databases::ListDatabasesOutput) with field(s):
     ///   - [`databases(Option<Vec::<Database>>)`](crate::operation::list_databases::ListDatabasesOutput::databases): <p>A list of database names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_databases::ListDatabasesOutput::next_token): <p>The pagination token. This parameter is returned when the response is truncated.</p>
-    /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
+                            /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::operation::list_databases::ListDatabasesError)
     pub fn list_databases(&self) -> crate::operation::list_databases::builders::ListDatabasesFluentBuilder {
-        crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_databases::builders::ListDatabasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

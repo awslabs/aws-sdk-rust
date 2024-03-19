@@ -3,22 +3,20 @@
 /// <p>Version information for agent components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentVersion {
+pub struct ComponentVersion  {
     /// <p>Component type.</p>
     pub component_type: ::std::string::String,
     /// <p>List of versions.</p>
-    pub versions: ::std::vec::Vec<::std::string::String>,
+    pub versions: ::std::vec::Vec::<::std::string::String>,
 }
-impl ComponentVersion {
+impl  ComponentVersion  {
     /// <p>Component type.</p>
-    pub fn component_type(&self) -> &str {
-        use std::ops::Deref;
-        self.component_type.deref()
+    pub fn component_type(&self) -> & str {
+        use std::ops::Deref; self.component_type.deref()
     }
     /// <p>List of versions.</p>
-    pub fn versions(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.versions.deref()
+    pub fn versions(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.versions.deref()
     }
 }
 impl ComponentVersion {
@@ -33,7 +31,7 @@ impl ComponentVersion {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentVersionBuilder {
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ComponentVersionBuilder {
     /// <p>Component type.</p>
@@ -44,8 +42,7 @@ impl ComponentVersionBuilder {
     }
     /// <p>Component type.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>Component type.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl ComponentVersionBuilder {
     /// <p>List of versions.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of versions.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// <p>List of versions.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.versions
     }
     /// Consumes the builder and constructs a [`ComponentVersion`](crate::types::ComponentVersion).
@@ -76,19 +72,20 @@ impl ComponentVersionBuilder {
     /// - [`component_type`](crate::types::builders::ComponentVersionBuilder::component_type)
     /// - [`versions`](crate::types::builders::ComponentVersionBuilder::versions)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentVersion {
-            component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type",
-                    "component_type was not specified but it is required when building ComponentVersion",
-                )
-            })?,
-            versions: self.versions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "versions",
-                    "versions was not specified but it is required when building ComponentVersion",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentVersion {
+                component_type: self.component_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type", "component_type was not specified but it is required when building ComponentVersion")
+                    )?
+                ,
+                versions: self.versions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("versions", "versions was not specified but it is required when building ComponentVersion")
+                    )?
+                ,
+            }
+        )
     }
 }
+

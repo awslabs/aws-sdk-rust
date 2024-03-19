@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDirectoryInput {
+pub struct CreateDirectoryInput  {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateDirectoryInput {
+impl  CreateDirectoryInput  {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryInput {
-            name: self.name,
-            schema_arn: self.schema_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_directory::CreateDirectoryInput {
+                name: self.name
+                ,
+                schema_arn: self.schema_arn
+                ,
+            }
+        )
     }
 }
+

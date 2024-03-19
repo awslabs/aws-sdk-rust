@@ -3,16 +3,17 @@
 /// <p>Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityNotificationAttributesInput {
+pub struct GetIdentityNotificationAttributesInput  {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetIdentityNotificationAttributesInput {
+impl  GetIdentityNotificationAttributesInput  {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
-    pub fn identities(&self) -> &[::std::string::String] {
-        self.identities.as_deref().unwrap_or_default()
+    pub fn identities(&self) -> & [::std::string::String] {
+        self.identities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetIdentityNotificationAttributesInput {
@@ -26,7 +27,7 @@ impl GetIdentityNotificationAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesInputBuilder {
-    pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetIdentityNotificationAttributesInputBuilder {
     /// Appends an item to `identities`.
@@ -36,28 +37,26 @@ impl GetIdentityNotificationAttributesInputBuilder {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
-        v.push(input.into());
-        self.identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identities = input;
-        self
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identities = input; self
     }
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identities
     }
     /// Consumes the builder and constructs a [`GetIdentityNotificationAttributesInput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput { identities: self.identities },
+            crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput {
+                identities: self.identities
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,8 @@
 /// <p>The connector metadata specific to Datadog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatadogMetadata {}
+pub struct DatadogMetadata  {
+}
 impl DatadogMetadata {
     /// Creates a new builder-style object to manufacture [`DatadogMetadata`](crate::types::DatadogMetadata).
     pub fn builder() -> crate::types::builders::DatadogMetadataBuilder {
@@ -14,10 +15,13 @@ impl DatadogMetadata {
 /// A builder for [`DatadogMetadata`](crate::types::DatadogMetadata).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DatadogMetadataBuilder {}
+pub struct DatadogMetadataBuilder {
+}
 impl DatadogMetadataBuilder {
     /// Consumes the builder and constructs a [`DatadogMetadata`](crate::types::DatadogMetadata).
     pub fn build(self) -> crate::types::DatadogMetadata {
-        crate::types::DatadogMetadata {}
+        crate::types::DatadogMetadata {
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>The name of the image.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image.</p>
@@ -27,7 +27,7 @@ pub struct Image {
     /// <p>The reason why the last state change occurred.</p>
     pub state_change_reason: ::std::option::Option<crate::types::ImageStateChangeReason>,
     /// <p>The applications associated with the image.</p>
-    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
     /// <p>The time the image was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
@@ -37,31 +37,31 @@ pub struct Image {
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    pub image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub image_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
 }
-impl Image {
+impl  Image  {
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the image.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the image from which this image was created.</p>
-    pub fn base_image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn base_image_arn(&self) -> ::std::option::Option<& str> {
         self.base_image_arn.as_deref()
     }
     /// <p>The image name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ImageState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ImageState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether the image is public or private.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::VisibilityType> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::VisibilityType> {
         self.visibility.as_ref()
     }
     /// <p>Indicates whether an image builder can be launched from this image.</p>
@@ -69,48 +69,50 @@ impl Image {
         self.image_builder_supported
     }
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
-    pub fn image_builder_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_builder_name(&self) -> ::std::option::Option<& str> {
         self.image_builder_name.as_deref()
     }
     /// <p>The operating system platform of the image.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformType> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::ImageStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::ImageStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The applications associated with the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
-    pub fn applications(&self) -> &[crate::types::Application] {
-        self.applications.as_deref().unwrap_or_default()
+    pub fn applications(&self) -> & [crate::types::Application] {
+        self.applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time the image was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
-    pub fn public_base_image_released_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn public_base_image_released_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.public_base_image_released_date.as_ref()
     }
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
-    pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> ::std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
-    pub fn image_permissions(&self) -> ::std::option::Option<&crate::types::ImagePermissions> {
+    pub fn image_permissions(&self) -> ::std::option::Option<& crate::types::ImagePermissions> {
         self.image_permissions.as_ref()
     }
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_errors.is_none()`.
-    pub fn image_errors(&self) -> &[crate::types::ResourceError] {
-        self.image_errors.as_deref().unwrap_or_default()
+    pub fn image_errors(&self) -> & [crate::types::ResourceError] {
+        self.image_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Image {
@@ -135,12 +137,12 @@ pub struct ImageBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::PlatformType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::ImageStateChangeReason>,
-    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) public_base_image_released_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
-    pub(crate) image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub(crate) image_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
@@ -151,8 +153,7 @@ impl ImageBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +166,7 @@ impl ImageBuilder {
     }
     /// <p>The ARN of the image.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the image.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +179,7 @@ impl ImageBuilder {
     }
     /// <p>The ARN of the image from which this image was created.</p>
     pub fn set_base_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_image_arn = input;
-        self
+        self.base_image_arn = input; self
     }
     /// <p>The ARN of the image from which this image was created.</p>
     pub fn get_base_image_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +192,7 @@ impl ImageBuilder {
     }
     /// <p>The image name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The image name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +205,7 @@ impl ImageBuilder {
     }
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageState> {
@@ -221,8 +218,7 @@ impl ImageBuilder {
     }
     /// <p>Indicates whether the image is public or private.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::VisibilityType>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Indicates whether the image is public or private.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::VisibilityType> {
@@ -235,8 +231,7 @@ impl ImageBuilder {
     }
     /// <p>Indicates whether an image builder can be launched from this image.</p>
     pub fn set_image_builder_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.image_builder_supported = input;
-        self
+        self.image_builder_supported = input; self
     }
     /// <p>Indicates whether an image builder can be launched from this image.</p>
     pub fn get_image_builder_supported(&self) -> &::std::option::Option<bool> {
@@ -249,8 +244,7 @@ impl ImageBuilder {
     }
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
     pub fn set_image_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_builder_name = input;
-        self
+        self.image_builder_name = input; self
     }
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
     pub fn get_image_builder_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +257,7 @@ impl ImageBuilder {
     }
     /// <p>The operating system platform of the image.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system platform of the image.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
@@ -277,8 +270,7 @@ impl ImageBuilder {
     }
     /// <p>The description to display.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to display.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +283,7 @@ impl ImageBuilder {
     }
     /// <p>The reason why the last state change occurred.</p>
     pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::ImageStateChangeReason>) -> Self {
-        self.state_change_reason = input;
-        self
+        self.state_change_reason = input; self
     }
     /// <p>The reason why the last state change occurred.</p>
     pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::ImageStateChangeReason> {
@@ -305,17 +296,16 @@ impl ImageBuilder {
     /// <p>The applications associated with the image.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The applications associated with the image.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>) -> Self {
+        self.applications = input; self
     }
     /// <p>The applications associated with the image.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Application>> {
         &self.applications
     }
     /// <p>The time the image was created.</p>
@@ -325,8 +315,7 @@ impl ImageBuilder {
     }
     /// <p>The time the image was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time the image was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -339,8 +328,7 @@ impl ImageBuilder {
     }
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub fn set_public_base_image_released_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.public_base_image_released_date = input;
-        self
+        self.public_base_image_released_date = input; self
     }
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub fn get_public_base_image_released_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -353,8 +341,7 @@ impl ImageBuilder {
     }
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.appstream_agent_version = input;
-        self
+        self.appstream_agent_version = input; self
     }
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +354,7 @@ impl ImageBuilder {
     }
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
     pub fn set_image_permissions(mut self, input: ::std::option::Option<crate::types::ImagePermissions>) -> Self {
-        self.image_permissions = input;
-        self
+        self.image_permissions = input; self
     }
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
     pub fn get_image_permissions(&self) -> &::std::option::Option<crate::types::ImagePermissions> {
@@ -381,39 +367,56 @@ impl ImageBuilder {
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
     pub fn image_errors(mut self, input: crate::types::ResourceError) -> Self {
         let mut v = self.image_errors.unwrap_or_default();
-        v.push(input);
-        self.image_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    pub fn set_image_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>) -> Self {
-        self.image_errors = input;
-        self
+    pub fn set_image_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>) -> Self {
+        self.image_errors = input; self
     }
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    pub fn get_image_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+    pub fn get_image_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>> {
         &self.image_errors
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
-            name: self.name,
-            arn: self.arn,
-            base_image_arn: self.base_image_arn,
-            display_name: self.display_name,
-            state: self.state,
-            visibility: self.visibility,
-            image_builder_supported: self.image_builder_supported,
-            image_builder_name: self.image_builder_name,
-            platform: self.platform,
-            description: self.description,
-            state_change_reason: self.state_change_reason,
-            applications: self.applications,
-            created_time: self.created_time,
-            public_base_image_released_date: self.public_base_image_released_date,
-            appstream_agent_version: self.appstream_agent_version,
-            image_permissions: self.image_permissions,
-            image_errors: self.image_errors,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            base_image_arn: self.base_image_arn
+            ,
+            display_name: self.display_name
+            ,
+            state: self.state
+            ,
+            visibility: self.visibility
+            ,
+            image_builder_supported: self.image_builder_supported
+            ,
+            image_builder_name: self.image_builder_name
+            ,
+            platform: self.platform
+            ,
+            description: self.description
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            applications: self.applications
+            ,
+            created_time: self.created_time
+            ,
+            public_base_image_released_date: self.public_base_image_released_date
+            ,
+            appstream_agent_version: self.appstream_agent_version
+            ,
+            image_permissions: self.image_permissions
+            ,
+            image_errors: self.image_errors
+            ,
         }
     }
 }
+

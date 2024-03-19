@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipelines`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pipeline_name_prefix(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::pipeline_name_prefix) / [`set_pipeline_name_prefix(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_pipeline_name_prefix):<br>required: **false**<br><p>The prefix of the pipeline name.</p><br>
     ///   - [`created_after(DateTime)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_created_after):<br>required: **false**<br><p>A filter that returns the pipelines that were created after a specified time.</p><br>
     ///   - [`created_before(DateTime)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::created_before) / [`set_created_before(Option<DateTime>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_created_before):<br>required: **false**<br><p>A filter that returns the pipelines that were created before a specified time.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of pipelines to return in the response.</p><br>
-    /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
+                            /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
     ///   - [`pipeline_summaries(Option<Vec::<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipeline_summaries): <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
+                            /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
     pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Two-line element set (TLE) data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TleData {
+pub struct TleData  {
     /// <p>First line of two-line element set (TLE) data.</p>
     pub tle_line1: ::std::string::String,
     /// <p>Second line of two-line element set (TLE) data.</p>
@@ -11,19 +11,17 @@ pub struct TleData {
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
     pub valid_time_range: ::std::option::Option<crate::types::TimeRange>,
 }
-impl TleData {
+impl  TleData  {
     /// <p>First line of two-line element set (TLE) data.</p>
-    pub fn tle_line1(&self) -> &str {
-        use std::ops::Deref;
-        self.tle_line1.deref()
+    pub fn tle_line1(&self) -> & str {
+        use std::ops::Deref; self.tle_line1.deref()
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
-    pub fn tle_line2(&self) -> &str {
-        use std::ops::Deref;
-        self.tle_line2.deref()
+    pub fn tle_line2(&self) -> & str {
+        use std::ops::Deref; self.tle_line2.deref()
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
-    pub fn valid_time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
+    pub fn valid_time_range(&self) -> ::std::option::Option<& crate::types::TimeRange> {
         self.valid_time_range.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl TleDataBuilder {
     }
     /// <p>First line of two-line element set (TLE) data.</p>
     pub fn set_tle_line1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tle_line1 = input;
-        self
+        self.tle_line1 = input; self
     }
     /// <p>First line of two-line element set (TLE) data.</p>
     pub fn get_tle_line1(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl TleDataBuilder {
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub fn set_tle_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tle_line2 = input;
-        self
+        self.tle_line2 = input; self
     }
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub fn get_tle_line2(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl TleDataBuilder {
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
     pub fn set_valid_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
-        self.valid_time_range = input;
-        self
+        self.valid_time_range = input; self
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
     pub fn get_valid_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
@@ -93,20 +88,22 @@ impl TleDataBuilder {
     /// - [`tle_line1`](crate::types::builders::TleDataBuilder::tle_line1)
     /// - [`tle_line2`](crate::types::builders::TleDataBuilder::tle_line2)
     pub fn build(self) -> ::std::result::Result<crate::types::TleData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TleData {
-            tle_line1: self.tle_line1.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tle_line1",
-                    "tle_line1 was not specified but it is required when building TleData",
-                )
-            })?,
-            tle_line2: self.tle_line2.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tle_line2",
-                    "tle_line2 was not specified but it is required when building TleData",
-                )
-            })?,
-            valid_time_range: self.valid_time_range,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TleData {
+                tle_line1: self.tle_line1
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tle_line1", "tle_line1 was not specified but it is required when building TleData")
+                    )?
+                ,
+                tle_line2: self.tle_line2
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tle_line2", "tle_line2 was not specified but it is required when building TleData")
+                    )?
+                ,
+                valid_time_range: self.valid_time_range
+                ,
+            }
+        )
     }
 }
+

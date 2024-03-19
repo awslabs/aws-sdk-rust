@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateSkillGroupWithRoomInput {
+pub struct AssociateSkillGroupWithRoomInput  {
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateSkillGroupWithRoomInput {
+impl  AssociateSkillGroupWithRoomInput  {
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
-    pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> ::std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl AssociateSkillGroupWithRoomInputBuilder {
     }
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_arn = input;
-        self
+        self.skill_group_arn = input; self
     }
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl AssociateSkillGroupWithRoomInputBuilder {
     }
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }
     /// Consumes the builder and constructs a [`AssociateSkillGroupWithRoomInput`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput {
-            skill_group_arn: self.skill_group_arn,
-            room_arn: self.room_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput {
+                skill_group_arn: self.skill_group_arn
+                ,
+                room_arn: self.room_arn
+                ,
+            }
+        )
     }
 }
+

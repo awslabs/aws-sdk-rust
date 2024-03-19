@@ -3,13 +3,13 @@
 /// <p>Contains the category by which to group the intents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentGroupBySpecification {
+pub struct AnalyticsIntentGroupBySpecification  {
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
     pub name: crate::types::AnalyticsIntentField,
 }
-impl AnalyticsIntentGroupBySpecification {
+impl  AnalyticsIntentGroupBySpecification  {
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
-    pub fn name(&self) -> &crate::types::AnalyticsIntentField {
+    pub fn name(&self) -> & crate::types::AnalyticsIntentField {
         &self.name
     }
 }
@@ -35,8 +35,7 @@ impl AnalyticsIntentGroupBySpecificationBuilder {
     }
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies whether to group the intent stages by their name or their end state.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentField> {
@@ -46,13 +45,15 @@ impl AnalyticsIntentGroupBySpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalyticsIntentGroupBySpecificationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsIntentGroupBySpecification {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsIntentGroupBySpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsIntentGroupBySpecification {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsIntentGroupBySpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

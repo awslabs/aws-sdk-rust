@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcEndpointConnectionNotificationInput {
+pub struct CreateVpcEndpointConnectionNotificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the endpoint service.</p>
@@ -12,35 +12,36 @@ pub struct CreateVpcEndpointConnectionNotificationInput {
     /// <p>The ARN of the SNS topic for the notifications.</p>
     pub connection_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connection_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateVpcEndpointConnectionNotificationInput {
+impl  CreateVpcEndpointConnectionNotificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the endpoint service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The ARN of the SNS topic for the notifications.</p>
-    pub fn connection_notification_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_notification_arn(&self) -> ::std::option::Option<& str> {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_events.is_none()`.
-    pub fn connection_events(&self) -> &[::std::string::String] {
-        self.connection_events.as_deref().unwrap_or_default()
+    pub fn connection_events(&self) -> & [::std::string::String] {
+        self.connection_events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct CreateVpcEndpointConnectionNotificationInputBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_notification_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connection_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcEndpointConnectionNotificationInputBuilder {
@@ -70,8 +71,7 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -84,8 +84,7 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>The ID of the endpoint service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the endpoint service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>The ID of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The ID of the endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>The ARN of the SNS topic for the notifications.</p>
     pub fn set_connection_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_notification_arn = input;
-        self
+        self.connection_notification_arn = input; self
     }
     /// <p>The ARN of the SNS topic for the notifications.</p>
     pub fn get_connection_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +124,16 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
     pub fn connection_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connection_events.unwrap_or_default();
-        v.push(input.into());
-        self.connection_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connection_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connection_events = input;
-        self
+    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.connection_events = input; self
     }
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.connection_events
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -147,29 +143,30 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointConnectionNotificationInput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationInput {
-                dry_run: self.dry_run,
-                service_id: self.service_id,
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                connection_notification_arn: self.connection_notification_arn,
-                connection_events: self.connection_events,
-                client_token: self.client_token,
-            },
+                dry_run: self.dry_run
+                ,
+                service_id: self.service_id
+                ,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                connection_notification_arn: self.connection_notification_arn
+                ,
+                connection_events: self.connection_events
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

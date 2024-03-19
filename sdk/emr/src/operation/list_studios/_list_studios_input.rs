@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStudiosInput {
+pub struct ListStudiosInput  {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListStudiosInput {
+impl  ListStudiosInput  {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -33,8 +33,7 @@ impl ListStudiosInputBuilder {
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -42,6 +41,12 @@ impl ListStudiosInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListStudiosInput`](crate::operation::list_studios::ListStudiosInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_studios::ListStudiosInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_studios::ListStudiosInput { marker: self.marker })
+        ::std::result::Result::Ok(
+            crate::operation::list_studios::ListStudiosInput {
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

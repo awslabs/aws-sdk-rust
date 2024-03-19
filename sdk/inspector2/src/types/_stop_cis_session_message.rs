@@ -3,7 +3,7 @@
 /// <p>The stop CIS session message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCisSessionMessage {
+pub struct StopCisSessionMessage  {
     /// <p>The status of the message.</p>
     pub status: crate::types::StopCisSessionStatus,
     /// <p>The reason for the message.</p>
@@ -17,29 +17,29 @@ pub struct StopCisSessionMessage {
     /// <p>The message benchmark profile.</p>
     pub benchmark_profile: ::std::option::Option<::std::string::String>,
 }
-impl StopCisSessionMessage {
+impl  StopCisSessionMessage  {
     /// <p>The status of the message.</p>
-    pub fn status(&self) -> &crate::types::StopCisSessionStatus {
+    pub fn status(&self) -> & crate::types::StopCisSessionStatus {
         &self.status
     }
     /// <p>The reason for the message.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The progress of the message.</p>
-    pub fn progress(&self) -> ::std::option::Option<&crate::types::StopCisMessageProgress> {
+    pub fn progress(&self) -> ::std::option::Option<& crate::types::StopCisMessageProgress> {
         self.progress.as_ref()
     }
     /// <p>The message compute platform.</p>
-    pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> ::std::option::Option<& crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
     /// <p>The message benchmark version.</p>
-    pub fn benchmark_version(&self) -> ::std::option::Option<&str> {
+    pub fn benchmark_version(&self) -> ::std::option::Option<& str> {
         self.benchmark_version.as_deref()
     }
     /// <p>The message benchmark profile.</p>
-    pub fn benchmark_profile(&self) -> ::std::option::Option<&str> {
+    pub fn benchmark_profile(&self) -> ::std::option::Option<& str> {
         self.benchmark_profile.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The status of the message.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StopCisSessionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the message.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StopCisSessionStatus> {
@@ -84,8 +83,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The reason for the message.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the message.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The progress of the message.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<crate::types::StopCisMessageProgress>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The progress of the message.</p>
     pub fn get_progress(&self) -> &::std::option::Option<crate::types::StopCisMessageProgress> {
@@ -113,8 +110,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The message compute platform.</p>
     pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
-        self.compute_platform = input;
-        self
+        self.compute_platform = input; self
     }
     /// <p>The message compute platform.</p>
     pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
@@ -127,8 +123,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The message benchmark version.</p>
     pub fn set_benchmark_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.benchmark_version = input;
-        self
+        self.benchmark_version = input; self
     }
     /// <p>The message benchmark version.</p>
     pub fn get_benchmark_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl StopCisSessionMessageBuilder {
     }
     /// <p>The message benchmark profile.</p>
     pub fn set_benchmark_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.benchmark_profile = input;
-        self
+        self.benchmark_profile = input; self
     }
     /// <p>The message benchmark profile.</p>
     pub fn get_benchmark_profile(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,18 +146,25 @@ impl StopCisSessionMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::StopCisSessionMessageBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::StopCisSessionMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StopCisSessionMessage {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building StopCisSessionMessage",
-                )
-            })?,
-            reason: self.reason,
-            progress: self.progress,
-            compute_platform: self.compute_platform,
-            benchmark_version: self.benchmark_version,
-            benchmark_profile: self.benchmark_profile,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StopCisSessionMessage {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building StopCisSessionMessage")
+                    )?
+                ,
+                reason: self.reason
+                ,
+                progress: self.progress
+                ,
+                compute_platform: self.compute_platform
+                ,
+                benchmark_version: self.benchmark_version
+                ,
+                benchmark_profile: self.benchmark_profile
+                ,
+            }
+        )
     }
 }
+

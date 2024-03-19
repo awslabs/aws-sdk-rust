@@ -3,22 +3,22 @@
 /// <p>The output from the GetThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetThingShadowOutput {
+pub struct GetThingShadowOutput  {
     /// <p>The state information, in JSON format.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
-impl GetThingShadowOutput {
+impl  GetThingShadowOutput  {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetThingShadowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`GetThingShadowOutput`](crate::operation::get_thing_shadow::GetThingShadowOutput).
     pub fn builder() -> crate::operation::get_thing_shadow::builders::GetThingShadowOutputBuilder {
@@ -41,27 +41,28 @@ impl GetThingShadowOutputBuilder {
     }
     /// <p>The state information, in JSON format.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The state information, in JSON format.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetThingShadowOutput`](crate::operation::get_thing_shadow::GetThingShadowOutput).
     pub fn build(self) -> crate::operation::get_thing_shadow::GetThingShadowOutput {
         crate::operation::get_thing_shadow::GetThingShadowOutput {
-            payload: self.payload,
+            payload: self.payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

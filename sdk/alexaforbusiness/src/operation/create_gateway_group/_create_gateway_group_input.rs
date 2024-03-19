@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGatewayGroupInput {
+pub struct CreateGatewayGroupInput  {
     /// <p>The name of the gateway group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the gateway group.</p>
@@ -10,26 +10,27 @@ pub struct CreateGatewayGroupInput {
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGatewayGroupInput {
+impl  CreateGatewayGroupInput  {
     /// <p>The name of the gateway group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGatewayGroupInput {
@@ -46,7 +47,7 @@ pub struct CreateGatewayGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGatewayGroupInputBuilder {
     /// <p>The name of the gateway group.</p>
@@ -57,8 +58,7 @@ impl CreateGatewayGroupInputBuilder {
     }
     /// <p>The name of the gateway group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the gateway group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateGatewayGroupInputBuilder {
     }
     /// <p>The description of the gateway group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the gateway group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CreateGatewayGroupInputBuilder {
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,29 +98,32 @@ impl CreateGatewayGroupInputBuilder {
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayGroupInput`](crate::operation::create_gateway_group::CreateGatewayGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_gateway_group::CreateGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_gateway_group::CreateGatewayGroupInput {
-            name: self.name,
-            description: self.description,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_gateway_group::CreateGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_gateway_group::CreateGatewayGroupInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

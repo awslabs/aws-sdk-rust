@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightVisual {
+pub struct InsightVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
@@ -14,38 +14,37 @@ pub struct InsightVisual {
     /// <p>The configuration of an insight visual.</p>
     pub insight_configuration: ::std::option::Option<crate::types::InsightConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
     /// <p>The dataset that is used in the insight visual.</p>
     pub data_set_identifier: ::std::string::String,
 }
-impl InsightVisual {
+impl  InsightVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> &str {
-        use std::ops::Deref;
-        self.visual_id.deref()
+    pub fn visual_id(&self) -> & str {
+        use std::ops::Deref; self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<& crate::types::VisualTitleLabelOptions> {
         self.title.as_ref()
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
+    pub fn subtitle(&self) -> ::std::option::Option<& crate::types::VisualSubtitleLabelOptions> {
         self.subtitle.as_ref()
     }
     /// <p>The configuration of an insight visual.</p>
-    pub fn insight_configuration(&self) -> ::std::option::Option<&crate::types::InsightConfiguration> {
+    pub fn insight_configuration(&self) -> ::std::option::Option<& crate::types::InsightConfiguration> {
         self.insight_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::VisualCustomAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The dataset that is used in the insight visual.</p>
-    pub fn data_set_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_identifier.deref()
+    pub fn data_set_identifier(&self) -> & str {
+        use std::ops::Deref; self.data_set_identifier.deref()
     }
 }
 impl InsightVisual {
@@ -63,7 +62,7 @@ pub struct InsightVisualBuilder {
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) insight_configuration: ::std::option::Option<crate::types::InsightConfiguration>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
 }
 impl InsightVisualBuilder {
@@ -75,8 +74,7 @@ impl InsightVisualBuilder {
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visual_id = input;
-        self
+        self.visual_id = input; self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl InsightVisualBuilder {
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn get_title(&self) -> &::std::option::Option<crate::types::VisualTitleLabelOptions> {
@@ -103,8 +100,7 @@ impl InsightVisualBuilder {
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<crate::types::VisualSubtitleLabelOptions> {
@@ -117,8 +113,7 @@ impl InsightVisualBuilder {
     }
     /// <p>The configuration of an insight visual.</p>
     pub fn set_insight_configuration(mut self, input: ::std::option::Option<crate::types::InsightConfiguration>) -> Self {
-        self.insight_configuration = input;
-        self
+        self.insight_configuration = input; self
     }
     /// <p>The configuration of an insight visual.</p>
     pub fn get_insight_configuration(&self) -> &::std::option::Option<crate::types::InsightConfiguration> {
@@ -131,17 +126,16 @@ impl InsightVisualBuilder {
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// <p>The dataset that is used in the insight visual.</p>
@@ -152,8 +146,7 @@ impl InsightVisualBuilder {
     }
     /// <p>The dataset that is used in the insight visual.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_identifier = input;
-        self
+        self.data_set_identifier = input; self
     }
     /// <p>The dataset that is used in the insight visual.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,23 +157,28 @@ impl InsightVisualBuilder {
     /// - [`visual_id`](crate::types::builders::InsightVisualBuilder::visual_id)
     /// - [`data_set_identifier`](crate::types::builders::InsightVisualBuilder::data_set_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::InsightVisual, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InsightVisual {
-            visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "visual_id",
-                    "visual_id was not specified but it is required when building InsightVisual",
-                )
-            })?,
-            title: self.title,
-            subtitle: self.subtitle,
-            insight_configuration: self.insight_configuration,
-            actions: self.actions,
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building InsightVisual",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InsightVisual {
+                visual_id: self.visual_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("visual_id", "visual_id was not specified but it is required when building InsightVisual")
+                    )?
+                ,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                insight_configuration: self.insight_configuration
+                ,
+                actions: self.actions
+                ,
+                data_set_identifier: self.data_set_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_identifier", "data_set_identifier was not specified but it is required when building InsightVisual")
+                    )?
+                ,
+            }
+        )
     }
 }
+

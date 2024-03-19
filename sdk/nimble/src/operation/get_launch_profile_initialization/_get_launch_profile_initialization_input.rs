@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLaunchProfileInitializationInput {
+pub struct GetLaunchProfileInitializationInput  {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The launch purpose.</p>
     pub launch_purpose: ::std::option::Option<::std::string::String>,
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
@@ -14,27 +14,28 @@ pub struct GetLaunchProfileInitializationInput {
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLaunchProfileInitializationInput {
+impl  GetLaunchProfileInitializationInput  {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_profile_protocol_versions.is_none()`.
-    pub fn launch_profile_protocol_versions(&self) -> &[::std::string::String] {
-        self.launch_profile_protocol_versions.as_deref().unwrap_or_default()
+    pub fn launch_profile_protocol_versions(&self) -> & [::std::string::String] {
+        self.launch_profile_protocol_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The launch purpose.</p>
-    pub fn launch_purpose(&self) -> ::std::option::Option<&str> {
+    pub fn launch_purpose(&self) -> ::std::option::Option<& str> {
         self.launch_purpose.as_deref()
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -50,7 +51,7 @@ impl GetLaunchProfileInitializationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) launch_purpose: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
@@ -64,8 +65,7 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl GetLaunchProfileInitializationInputBuilder {
     /// <p>The launch profile protocol versions supported by the client.</p>
     pub fn launch_profile_protocol_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_profile_protocol_versions.unwrap_or_default();
-        v.push(input.into());
-        self.launch_profile_protocol_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.launch_profile_protocol_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn set_launch_profile_protocol_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.launch_profile_protocol_versions = input;
-        self
+    pub fn set_launch_profile_protocol_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.launch_profile_protocol_versions = input; self
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn get_launch_profile_protocol_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_profile_protocol_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.launch_profile_protocol_versions
     }
     /// <p>The launch purpose.</p>
@@ -99,8 +98,7 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The launch purpose.</p>
     pub fn set_launch_purpose(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_purpose = input;
-        self
+        self.launch_purpose = input; self
     }
     /// <p>The launch purpose.</p>
     pub fn get_launch_purpose(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,26 +126,28 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileInitializationInput`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput {
-            launch_profile_id: self.launch_profile_id,
-            launch_profile_protocol_versions: self.launch_profile_protocol_versions,
-            launch_purpose: self.launch_purpose,
-            platform: self.platform,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput {
+                launch_profile_id: self.launch_profile_id
+                ,
+                launch_profile_protocol_versions: self.launch_profile_protocol_versions
+                ,
+                launch_purpose: self.launch_purpose
+                ,
+                platform: self.platform
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

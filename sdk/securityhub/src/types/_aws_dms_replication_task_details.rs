@@ -3,7 +3,7 @@
 /// <p>Provides details about an Database Migration Service (DMS) replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDmsReplicationTaskDetails {
+pub struct AwsDmsReplicationTaskDetails  {
     /// <p>Indicates when you want a change data capture (CDC) operation to start. <code>CCdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a CDC operation. <code>CdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
@@ -31,57 +31,57 @@ pub struct AwsDmsReplicationTaskDetails {
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.</p>
     pub task_data: ::std::option::Option<::std::string::String>,
 }
-impl AwsDmsReplicationTaskDetails {
+impl  AwsDmsReplicationTaskDetails  {
     /// <p>Indicates when you want a change data capture (CDC) operation to start. <code>CCdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
-    pub fn cdc_start_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_start_position(&self) -> ::std::option::Option<& str> {
         self.cdc_start_position.as_deref()
     }
     /// <p>Indicates the start time for a CDC operation. <code>CdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
-    pub fn cdc_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_start_time(&self) -> ::std::option::Option<& str> {
         self.cdc_start_time.as_deref()
     }
     /// <p>Indicates when you want a CDC operation to stop. The value can be either server time or commit time.</p>
-    pub fn cdc_stop_position(&self) -> ::std::option::Option<&str> {
+    pub fn cdc_stop_position(&self) -> ::std::option::Option<& str> {
         self.cdc_stop_position.as_deref()
     }
     /// <p>The migration type.</p>
-    pub fn migration_type(&self) -> ::std::option::Option<&str> {
+    pub fn migration_type(&self) -> ::std::option::Option<& str> {
         self.migration_type.as_deref()
     }
     /// <p>The identifier of the replication task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A display name for the resource identifier at the end of the <code>EndpointArn</code> response parameter. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-    pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> ::std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
     /// <p>The user-defined replication task identifier or name.</p>
-    pub fn replication_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_task_identifier.as_deref()
     }
     /// <p>The settings for the replication task.</p>
-    pub fn replication_task_settings(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_settings(&self) -> ::std::option::Option<& str> {
         self.replication_task_settings.as_deref()
     }
     /// <p>The ARN of the source endpoint.</p>
-    pub fn source_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.source_endpoint_arn.as_deref()
     }
     /// <p>The table mappings for the replication task, in JSON format.</p>
-    pub fn table_mappings(&self) -> ::std::option::Option<&str> {
+    pub fn table_mappings(&self) -> ::std::option::Option<& str> {
         self.table_mappings.as_deref()
     }
     /// <p>The ARN of the target endpoint.</p>
-    pub fn target_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.target_endpoint_arn.as_deref()
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.</p>
-    pub fn task_data(&self) -> ::std::option::Option<&str> {
+    pub fn task_data(&self) -> ::std::option::Option<& str> {
         self.task_data.as_deref()
     }
 }
@@ -118,8 +118,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. <code>CCdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
     pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_start_position = input;
-        self
+        self.cdc_start_position = input; self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. <code>CCdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
     pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>Indicates the start time for a CDC operation. <code>CdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
     pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_start_time = input;
-        self
+        self.cdc_start_time = input; self
     }
     /// <p>Indicates the start time for a CDC operation. <code>CdcStartPosition</code> or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only a value for one of these fields is included.</p>
     pub fn get_cdc_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>Indicates when you want a CDC operation to stop. The value can be either server time or commit time.</p>
     pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cdc_stop_position = input;
-        self
+        self.cdc_stop_position = input; self
     }
     /// <p>Indicates when you want a CDC operation to stop. The value can be either server time or commit time.</p>
     pub fn get_cdc_stop_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The migration type.</p>
     pub fn set_migration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_type = input;
-        self
+        self.migration_type = input; self
     }
     /// <p>The migration type.</p>
     pub fn get_migration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The identifier of the replication task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the replication task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>A display name for the resource identifier at the end of the <code>EndpointArn</code> response parameter. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>A display name for the resource identifier at the end of the <code>EndpointArn</code> response parameter. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
     pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_arn = input;
-        self
+        self.replication_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
     pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The user-defined replication task identifier or name.</p>
     pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_identifier = input;
-        self
+        self.replication_task_identifier = input; self
     }
     /// <p>The user-defined replication task identifier or name.</p>
     pub fn get_replication_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +222,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The settings for the replication task.</p>
     pub fn set_replication_task_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_settings = input;
-        self
+        self.replication_task_settings = input; self
     }
     /// <p>The settings for the replication task.</p>
     pub fn get_replication_task_settings(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +235,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The ARN of the source endpoint.</p>
     pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_endpoint_arn = input;
-        self
+        self.source_endpoint_arn = input; self
     }
     /// <p>The ARN of the source endpoint.</p>
     pub fn get_source_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +248,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The table mappings for the replication task, in JSON format.</p>
     pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_mappings = input;
-        self
+        self.table_mappings = input; self
     }
     /// <p>The table mappings for the replication task, in JSON format.</p>
     pub fn get_table_mappings(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +261,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>The ARN of the target endpoint.</p>
     pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_endpoint_arn = input;
-        self
+        self.target_endpoint_arn = input; self
     }
     /// <p>The ARN of the target endpoint.</p>
     pub fn get_target_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +274,7 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.</p>
     pub fn set_task_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_data = input;
-        self
+        self.task_data = input; self
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.</p>
     pub fn get_task_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -296,19 +283,33 @@ impl AwsDmsReplicationTaskDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsDmsReplicationTaskDetails`](crate::types::AwsDmsReplicationTaskDetails).
     pub fn build(self) -> crate::types::AwsDmsReplicationTaskDetails {
         crate::types::AwsDmsReplicationTaskDetails {
-            cdc_start_position: self.cdc_start_position,
-            cdc_start_time: self.cdc_start_time,
-            cdc_stop_position: self.cdc_stop_position,
-            migration_type: self.migration_type,
-            id: self.id,
-            resource_identifier: self.resource_identifier,
-            replication_instance_arn: self.replication_instance_arn,
-            replication_task_identifier: self.replication_task_identifier,
-            replication_task_settings: self.replication_task_settings,
-            source_endpoint_arn: self.source_endpoint_arn,
-            table_mappings: self.table_mappings,
-            target_endpoint_arn: self.target_endpoint_arn,
-            task_data: self.task_data,
+            cdc_start_position: self.cdc_start_position
+            ,
+            cdc_start_time: self.cdc_start_time
+            ,
+            cdc_stop_position: self.cdc_stop_position
+            ,
+            migration_type: self.migration_type
+            ,
+            id: self.id
+            ,
+            resource_identifier: self.resource_identifier
+            ,
+            replication_instance_arn: self.replication_instance_arn
+            ,
+            replication_task_identifier: self.replication_task_identifier
+            ,
+            replication_task_settings: self.replication_task_settings
+            ,
+            source_endpoint_arn: self.source_endpoint_arn
+            ,
+            table_mappings: self.table_mappings
+            ,
+            target_endpoint_arn: self.target_endpoint_arn
+            ,
+            task_data: self.task_data
+            ,
         }
     }
 }
+

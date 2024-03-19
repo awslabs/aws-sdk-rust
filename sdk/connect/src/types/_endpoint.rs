@@ -3,19 +3,19 @@
 /// <p>Information about the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>Type of the endpoint.</p>
     pub r#type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>Address of the endpoint.</p>
     pub address: ::std::option::Option<::std::string::String>,
 }
-impl Endpoint {
+impl  Endpoint  {
     /// <p>Type of the endpoint.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EndpointType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EndpointType> {
         self.r#type.as_ref()
     }
     /// <p>Address of the endpoint.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EndpointBuilder {
     }
     /// <p>Type of the endpoint.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the endpoint.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
@@ -55,8 +54,7 @@ impl EndpointBuilder {
     }
     /// <p>Address of the endpoint.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>Address of the endpoint.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EndpointBuilder {
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            r#type: self.r#type,
-            address: self.address,
+            r#type: self.r#type
+            ,
+            address: self.address
+            ,
         }
     }
 }
+

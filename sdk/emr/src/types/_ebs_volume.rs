@@ -3,19 +3,19 @@
 /// <p>EBS block device that's attached to an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsVolume {
+pub struct EbsVolume  {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The volume identifier of the EBS volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
-impl EbsVolume {
+impl  EbsVolume  {
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
-    pub fn device(&self) -> ::std::option::Option<&str> {
+    pub fn device(&self) -> ::std::option::Option<& str> {
         self.device.as_deref()
     }
     /// <p>The volume identifier of the EBS volume.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EbsVolumeBuilder {
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
     pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EbsVolumeBuilder {
     }
     /// <p>The volume identifier of the EBS volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The volume identifier of the EBS volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EbsVolumeBuilder {
     /// Consumes the builder and constructs a [`EbsVolume`](crate::types::EbsVolume).
     pub fn build(self) -> crate::types::EbsVolume {
         crate::types::EbsVolume {
-            device: self.device,
-            volume_id: self.volume_id,
+            device: self.device
+            ,
+            volume_id: self.volume_id
+            ,
         }
     }
 }
+

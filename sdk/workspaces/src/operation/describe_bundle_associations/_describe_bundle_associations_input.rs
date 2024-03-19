@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBundleAssociationsInput {
+pub struct DescribeBundleAssociationsInput  {
     /// <p>The identifier of the bundle.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource types of the associated resource.</p>
-    pub associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::BundleAssociatedResourceType>>,
+    pub associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::BundleAssociatedResourceType>>,
 }
-impl DescribeBundleAssociationsInput {
+impl  DescribeBundleAssociationsInput  {
     /// <p>The identifier of the bundle.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The resource types of the associated resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
-    pub fn associated_resource_types(&self) -> &[crate::types::BundleAssociatedResourceType] {
-        self.associated_resource_types.as_deref().unwrap_or_default()
+    pub fn associated_resource_types(&self) -> & [crate::types::BundleAssociatedResourceType] {
+        self.associated_resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeBundleAssociationsInput {
@@ -32,7 +33,7 @@ impl DescribeBundleAssociationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleAssociationsInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::BundleAssociatedResourceType>>,
+    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::BundleAssociatedResourceType>>,
 }
 impl DescribeBundleAssociationsInputBuilder {
     /// <p>The identifier of the bundle.</p>
@@ -43,8 +44,7 @@ impl DescribeBundleAssociationsInputBuilder {
     }
     /// <p>The identifier of the bundle.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The identifier of the bundle.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,32 +57,28 @@ impl DescribeBundleAssociationsInputBuilder {
     /// <p>The resource types of the associated resource.</p>
     pub fn associated_resource_types(mut self, input: crate::types::BundleAssociatedResourceType) -> Self {
         let mut v = self.associated_resource_types.unwrap_or_default();
-        v.push(input);
-        self.associated_resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn set_associated_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BundleAssociatedResourceType>>,
-    ) -> Self {
-        self.associated_resource_types = input;
-        self
+    pub fn set_associated_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BundleAssociatedResourceType>>) -> Self {
+        self.associated_resource_types = input; self
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleAssociatedResourceType>> {
+    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BundleAssociatedResourceType>> {
         &self.associated_resource_types
     }
     /// Consumes the builder and constructs a [`DescribeBundleAssociationsInput`](crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput {
-            bundle_id: self.bundle_id,
-            associated_resource_types: self.associated_resource_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput {
+                bundle_id: self.bundle_id
+                ,
+                associated_resource_types: self.associated_resource_types
+                ,
+            }
+        )
     }
 }
+

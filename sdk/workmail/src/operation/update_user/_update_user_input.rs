@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>The identifier for the organization under which the user exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the user to be updated.</p>
@@ -48,9 +48,9 @@ pub struct UpdateUserInput {
     /// <p>Updates the user's office.</p>
     pub office: ::std::option::Option<::std::string::String>,
 }
-impl UpdateUserInput {
+impl  UpdateUserInput  {
     /// <p>The identifier for the organization under which the user exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the user to be updated.</p>
@@ -63,24 +63,24 @@ impl UpdateUserInput {
     /// <li>
     /// <p>User name: user</p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Updates the user role.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i>.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::UserRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::UserRole> {
         self.role.as_ref()
     }
     /// <p>Updates the display name of the user.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Updates the user's first name.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>Updates the user's last name.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
@@ -88,47 +88,47 @@ impl UpdateUserInput {
         self.hidden_from_global_address_list
     }
     /// <p>Updates the user's initials.</p>
-    pub fn initials(&self) -> ::std::option::Option<&str> {
+    pub fn initials(&self) -> ::std::option::Option<& str> {
         self.initials.as_deref()
     }
     /// <p>Updates the user's contact details.</p>
-    pub fn telephone(&self) -> ::std::option::Option<&str> {
+    pub fn telephone(&self) -> ::std::option::Option<& str> {
         self.telephone.as_deref()
     }
     /// <p>Updates the user's street address.</p>
-    pub fn street(&self) -> ::std::option::Option<&str> {
+    pub fn street(&self) -> ::std::option::Option<& str> {
         self.street.as_deref()
     }
     /// <p>Updates the user's job title.</p>
-    pub fn job_title(&self) -> ::std::option::Option<&str> {
+    pub fn job_title(&self) -> ::std::option::Option<& str> {
         self.job_title.as_deref()
     }
     /// <p>Updates the user's city.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>Updates the user's company.</p>
-    pub fn company(&self) -> ::std::option::Option<&str> {
+    pub fn company(&self) -> ::std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>Updates the user's zipcode.</p>
-    pub fn zip_code(&self) -> ::std::option::Option<&str> {
+    pub fn zip_code(&self) -> ::std::option::Option<& str> {
         self.zip_code.as_deref()
     }
     /// <p>Updates the user's department.</p>
-    pub fn department(&self) -> ::std::option::Option<&str> {
+    pub fn department(&self) -> ::std::option::Option<& str> {
         self.department.as_deref()
     }
     /// <p>Updates the user's country.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>Updates the user's office.</p>
-    pub fn office(&self) -> ::std::option::Option<&str> {
+    pub fn office(&self) -> ::std::option::Option<& str> {
         self.office.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateUserInput {
+impl  ::std::fmt::Debug for UpdateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
         formatter.field("organization_id", &self.organization_id);
@@ -189,8 +189,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The identifier for the organization under which the user exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the user exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +221,7 @@ impl UpdateUserInputBuilder {
     /// <p>User name: user</p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier for the user to be updated.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -247,8 +245,7 @@ impl UpdateUserInputBuilder {
     /// <p>Updates the user role.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i>.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>Updates the user role.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i>.</p>
@@ -262,8 +259,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the display name of the user.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>Updates the display name of the user.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +272,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's first name.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>Updates the user's first name.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -290,8 +285,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's last name.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>Updates the user's last name.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -304,8 +298,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If enabled, the user is hidden from the global address list.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
@@ -318,8 +311,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's initials.</p>
     pub fn set_initials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initials = input;
-        self
+        self.initials = input; self
     }
     /// <p>Updates the user's initials.</p>
     pub fn get_initials(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +324,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's contact details.</p>
     pub fn set_telephone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.telephone = input;
-        self
+        self.telephone = input; self
     }
     /// <p>Updates the user's contact details.</p>
     pub fn get_telephone(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,8 +337,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's street address.</p>
     pub fn set_street(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street = input;
-        self
+        self.street = input; self
     }
     /// <p>Updates the user's street address.</p>
     pub fn get_street(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +350,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's job title.</p>
     pub fn set_job_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_title = input;
-        self
+        self.job_title = input; self
     }
     /// <p>Updates the user's job title.</p>
     pub fn get_job_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,8 +363,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's city.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>Updates the user's city.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -388,8 +376,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's company.</p>
     pub fn set_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company = input;
-        self
+        self.company = input; self
     }
     /// <p>Updates the user's company.</p>
     pub fn get_company(&self) -> &::std::option::Option<::std::string::String> {
@@ -402,8 +389,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's zipcode.</p>
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zip_code = input;
-        self
+        self.zip_code = input; self
     }
     /// <p>Updates the user's zipcode.</p>
     pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -416,8 +402,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's department.</p>
     pub fn set_department(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.department = input;
-        self
+        self.department = input; self
     }
     /// <p>Updates the user's department.</p>
     pub fn get_department(&self) -> &::std::option::Option<::std::string::String> {
@@ -430,8 +415,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's country.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>Updates the user's country.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -444,8 +428,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Updates the user's office.</p>
     pub fn set_office(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.office = input;
-        self
+        self.office = input; self
     }
     /// <p>Updates the user's office.</p>
     pub fn get_office(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,25 +436,44 @@ impl UpdateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-            role: self.role,
-            display_name: self.display_name,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            hidden_from_global_address_list: self.hidden_from_global_address_list,
-            initials: self.initials,
-            telephone: self.telephone,
-            street: self.street,
-            job_title: self.job_title,
-            city: self.city,
-            company: self.company,
-            zip_code: self.zip_code,
-            department: self.department,
-            country: self.country,
-            office: self.office,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                role: self.role
+                ,
+                display_name: self.display_name
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                hidden_from_global_address_list: self.hidden_from_global_address_list
+                ,
+                initials: self.initials
+                ,
+                telephone: self.telephone
+                ,
+                street: self.street
+                ,
+                job_title: self.job_title
+                ,
+                city: self.city
+                ,
+                company: self.company
+                ,
+                zip_code: self.zip_code
+                ,
+                department: self.department
+                ,
+                country: self.country
+                ,
+                office: self.office
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateUserInputBuilder {
@@ -497,3 +499,4 @@ impl ::std::fmt::Debug for UpdateUserInputBuilder {
         formatter.finish()
     }
 }
+

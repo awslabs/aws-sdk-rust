@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKnowledgeBaseInput {
+pub struct CreateKnowledgeBaseInput  {
     /// Client specified token used for idempotency checks
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Name for a resource.
@@ -16,35 +16,35 @@ pub struct CreateKnowledgeBaseInput {
     /// Configures the physical storage of ingested data in a knowledge base.
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
     /// A map of tag keys and values
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateKnowledgeBaseInput {
+impl  CreateKnowledgeBaseInput  {
     /// Client specified token used for idempotency checks
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// ARN of a IAM role.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Configures a bedrock knowledge base.
-    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseConfiguration> {
+    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
     /// Configures the physical storage of ingested data in a knowledge base.
-    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+    pub fn storage_configuration(&self) -> ::std::option::Option<& crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
     /// A map of tag keys and values
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,7 +65,7 @@ pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInputBuilder {
     /// Client specified token used for idempotency checks
@@ -75,8 +75,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// Client specified token used for idempotency checks
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Client specified token used for idempotency checks
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// Configures a bedrock knowledge base.
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
-        self.knowledge_base_configuration = input;
-        self
+        self.knowledge_base_configuration = input; self
     }
     /// Configures a bedrock knowledge base.
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
@@ -149,8 +144,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
-        self.storage_configuration = input;
-        self
+        self.storage_configuration = input; self
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
@@ -163,32 +157,38 @@ impl CreateKnowledgeBaseInputBuilder {
     /// A map of tag keys and values
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A map of tag keys and values
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A map of tag keys and values
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
-            client_token: self.client_token,
-            name: self.name,
-            description: self.description,
-            role_arn: self.role_arn,
-            knowledge_base_configuration: self.knowledge_base_configuration,
-            storage_configuration: self.storage_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                knowledge_base_configuration: self.knowledge_base_configuration
+                ,
+                storage_configuration: self.storage_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

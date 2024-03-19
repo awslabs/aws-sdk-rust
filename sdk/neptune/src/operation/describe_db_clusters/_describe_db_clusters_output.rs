@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbClustersOutput {
+pub struct DescribeDbClustersOutput  {
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
-    pub db_clusters: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>,
+    pub db_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::DbCluster>>,
     _request_id: Option<String>,
 }
-impl DescribeDbClustersOutput {
+impl  DescribeDbClustersOutput  {
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of DB clusters for the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_clusters.is_none()`.
-    pub fn db_clusters(&self) -> &[crate::types::DbCluster] {
-        self.db_clusters.as_deref().unwrap_or_default()
+    pub fn db_clusters(&self) -> & [crate::types::DbCluster] {
+        self.db_clusters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDbClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDbClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::operation::describe_db_clusters::DescribeDbClustersOutput).
     pub fn builder() -> crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDbClustersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_clusters: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>,
+    pub(crate) db_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::DbCluster>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClustersOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeDbClustersOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeDbClustersOutputBuilder {
     /// <p>Contains a list of DB clusters for the user.</p>
     pub fn db_clusters(mut self, input: crate::types::DbCluster) -> Self {
         let mut v = self.db_clusters.unwrap_or_default();
-        v.push(input);
-        self.db_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of DB clusters for the user.</p>
-    pub fn set_db_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>) -> Self {
-        self.db_clusters = input;
-        self
+    pub fn set_db_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbCluster>>) -> Self {
+        self.db_clusters = input; self
     }
     /// <p>Contains a list of DB clusters for the user.</p>
-    pub fn get_db_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbCluster>> {
+    pub fn get_db_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbCluster>> {
         &self.db_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::operation::describe_db_clusters::DescribeDbClustersOutput).
     pub fn build(self) -> crate::operation::describe_db_clusters::DescribeDbClustersOutput {
         crate::operation::describe_db_clusters::DescribeDbClustersOutput {
-            marker: self.marker,
-            db_clusters: self.db_clusters,
+            marker: self.marker
+            ,
+            db_clusters: self.db_clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

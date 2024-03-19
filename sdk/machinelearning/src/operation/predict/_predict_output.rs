@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictOutput {
+pub struct PredictOutput  {
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct PredictOutput {
     pub prediction: ::std::option::Option<crate::types::Prediction>,
     _request_id: Option<String>,
 }
-impl PredictOutput {
+impl  PredictOutput  {
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
     /// <li>
@@ -29,15 +29,15 @@ impl PredictOutput {
     /// <li>
     /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
-    pub fn prediction(&self) -> ::std::option::Option<&crate::types::Prediction> {
+    pub fn prediction(&self) -> ::std::option::Option<& crate::types::Prediction> {
         self.prediction.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PredictOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PredictOutput {
     /// Creates a new builder-style object to manufacture [`PredictOutput`](crate::operation::predict::PredictOutput).
     pub fn builder() -> crate::operation::predict::builders::PredictOutputBuilder {
@@ -80,8 +80,7 @@ impl PredictOutputBuilder {
     /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub fn set_prediction(mut self, input: ::std::option::Option<crate::types::Prediction>) -> Self {
-        self.prediction = input;
-        self
+        self.prediction = input; self
     }
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
@@ -98,19 +97,21 @@ impl PredictOutputBuilder {
         &self.prediction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PredictOutput`](crate::operation::predict::PredictOutput).
     pub fn build(self) -> crate::operation::predict::PredictOutput {
         crate::operation::predict::PredictOutput {
-            prediction: self.prediction,
+            prediction: self.prediction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

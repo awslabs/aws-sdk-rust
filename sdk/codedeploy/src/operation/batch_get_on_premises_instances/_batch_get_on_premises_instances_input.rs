@@ -3,16 +3,17 @@
 /// <p>Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetOnPremisesInstancesInput {
+pub struct BatchGetOnPremisesInstancesInput  {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetOnPremisesInstancesInput {
+impl  BatchGetOnPremisesInstancesInput  {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_names.is_none()`.
-    pub fn instance_names(&self) -> &[::std::string::String] {
-        self.instance_names.as_deref().unwrap_or_default()
+    pub fn instance_names(&self) -> & [::std::string::String] {
+        self.instance_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetOnPremisesInstancesInput {
@@ -26,7 +27,7 @@ impl BatchGetOnPremisesInstancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesInputBuilder {
-    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetOnPremisesInstancesInputBuilder {
     /// Appends an item to `instance_names`.
@@ -36,28 +37,26 @@ impl BatchGetOnPremisesInstancesInputBuilder {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
     pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
-        v.push(input.into());
-        self.instance_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_names = input;
-        self
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_names = input; self
     }
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_names
     }
     /// Consumes the builder and constructs a [`BatchGetOnPremisesInstancesInput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput {
-            instance_names: self.instance_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput {
+                instance_names: self.instance_names
+                ,
+            }
+        )
     }
 }
+

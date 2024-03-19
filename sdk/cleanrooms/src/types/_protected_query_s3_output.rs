@@ -3,15 +3,14 @@
 /// <p>Contains output information for protected queries with an S3 output type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQueryS3Output {
+pub struct ProtectedQueryS3Output  {
     /// <p>The S3 location of the result.</p>
     pub location: ::std::string::String,
 }
-impl ProtectedQueryS3Output {
+impl  ProtectedQueryS3Output  {
     /// <p>The S3 location of the result.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl ProtectedQueryS3Output {
@@ -36,8 +35,7 @@ impl ProtectedQueryS3OutputBuilder {
     }
     /// <p>The S3 location of the result.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The S3 location of the result.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ProtectedQueryS3OutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::types::builders::ProtectedQueryS3OutputBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3Output, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProtectedQueryS3Output {
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building ProtectedQueryS3Output",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProtectedQueryS3Output {
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building ProtectedQueryS3Output")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Information about the Kubernetes API call action described in this finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesApiCallAction {
+pub struct KubernetesApiCallAction  {
     /// <p>The Kubernetes API request URI.</p>
     pub request_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes API request HTTP verb.</p>
     pub verb: ::std::option::Option<::std::string::String>,
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    pub source_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The user agent of the caller of the Kubernetes API.</p>
     pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the remote IP address of the connection.</p>
@@ -27,27 +27,28 @@ pub struct KubernetesApiCallAction {
     /// <p>The name of the resource in the Kubernetes API call action.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
-impl KubernetesApiCallAction {
+impl  KubernetesApiCallAction  {
     /// <p>The Kubernetes API request URI.</p>
-    pub fn request_uri(&self) -> ::std::option::Option<&str> {
+    pub fn request_uri(&self) -> ::std::option::Option<& str> {
         self.request_uri.as_deref()
     }
     /// <p>The Kubernetes API request HTTP verb.</p>
-    pub fn verb(&self) -> ::std::option::Option<&str> {
+    pub fn verb(&self) -> ::std::option::Option<& str> {
         self.verb.as_deref()
     }
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ips.is_none()`.
-    pub fn source_ips(&self) -> &[::std::string::String] {
-        self.source_ips.as_deref().unwrap_or_default()
+    pub fn source_ips(&self) -> & [::std::string::String] {
+        self.source_ips.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user agent of the caller of the Kubernetes API.</p>
-    pub fn user_agent(&self) -> ::std::option::Option<&str> {
+    pub fn user_agent(&self) -> ::std::option::Option<& str> {
         self.user_agent.as_deref()
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
-    pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::RemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> ::std::option::Option<& crate::types::RemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
@@ -55,23 +56,23 @@ impl KubernetesApiCallAction {
         self.status_code
     }
     /// <p>Parameters related to the Kubernetes API call action.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The resource component in the Kubernetes API call action.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
-    pub fn subresource(&self) -> ::std::option::Option<&str> {
+    pub fn subresource(&self) -> ::std::option::Option<& str> {
         self.subresource.as_deref()
     }
     /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the resource in the Kubernetes API call action.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -88,7 +89,7 @@ impl KubernetesApiCallAction {
 pub struct KubernetesApiCallActionBuilder {
     pub(crate) request_uri: ::std::option::Option<::std::string::String>,
     pub(crate) verb: ::std::option::Option<::std::string::String>,
-    pub(crate) source_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_agent: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     pub(crate) status_code: ::std::option::Option<i32>,
@@ -106,8 +107,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The Kubernetes API request URI.</p>
     pub fn set_request_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_uri = input;
-        self
+        self.request_uri = input; self
     }
     /// <p>The Kubernetes API request URI.</p>
     pub fn get_request_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The Kubernetes API request HTTP verb.</p>
     pub fn set_verb(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verb = input;
-        self
+        self.verb = input; self
     }
     /// <p>The Kubernetes API request HTTP verb.</p>
     pub fn get_verb(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +133,16 @@ impl KubernetesApiCallActionBuilder {
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
     pub fn source_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_ips.unwrap_or_default();
-        v.push(input.into());
-        self.source_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    pub fn set_source_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_ips = input;
-        self
+    pub fn set_source_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_ips = input; self
     }
     /// <p>The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between the caller and the API endpoint.</p>
-    pub fn get_source_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_ips
     }
     /// <p>The user agent of the caller of the Kubernetes API.</p>
@@ -154,8 +152,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The user agent of the caller of the Kubernetes API.</p>
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_agent = input;
-        self
+        self.user_agent = input; self
     }
     /// <p>The user agent of the caller of the Kubernetes API.</p>
     pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +165,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
     pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
-        self.remote_ip_details = input;
-        self
+        self.remote_ip_details = input; self
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
     pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::RemoteIpDetails> {
@@ -182,8 +178,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -196,8 +191,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>Parameters related to the Kubernetes API call action.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>Parameters related to the Kubernetes API call action.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +204,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The resource component in the Kubernetes API call action.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource component in the Kubernetes API call action.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +217,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
     pub fn set_subresource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subresource = input;
-        self
+        self.subresource = input; self
     }
     /// <p>The name of the sub-resource in the Kubernetes API call action.</p>
     pub fn get_subresource(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +230,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the namespace where the Kubernetes API call action takes place.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +243,7 @@ impl KubernetesApiCallActionBuilder {
     }
     /// <p>The name of the resource in the Kubernetes API call action.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource in the Kubernetes API call action.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,17 +252,29 @@ impl KubernetesApiCallActionBuilder {
     /// Consumes the builder and constructs a [`KubernetesApiCallAction`](crate::types::KubernetesApiCallAction).
     pub fn build(self) -> crate::types::KubernetesApiCallAction {
         crate::types::KubernetesApiCallAction {
-            request_uri: self.request_uri,
-            verb: self.verb,
-            source_ips: self.source_ips,
-            user_agent: self.user_agent,
-            remote_ip_details: self.remote_ip_details,
-            status_code: self.status_code,
-            parameters: self.parameters,
-            resource: self.resource,
-            subresource: self.subresource,
-            namespace: self.namespace,
-            resource_name: self.resource_name,
+            request_uri: self.request_uri
+            ,
+            verb: self.verb
+            ,
+            source_ips: self.source_ips
+            ,
+            user_agent: self.user_agent
+            ,
+            remote_ip_details: self.remote_ip_details
+            ,
+            status_code: self.status_code
+            ,
+            parameters: self.parameters
+            ,
+            resource: self.resource
+            ,
+            subresource: self.subresource
+            ,
+            namespace: self.namespace
+            ,
+            resource_name: self.resource_name
+            ,
         }
     }
 }
+

@@ -2,48 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportsOutput {
+pub struct ListImportsOutput  {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub import_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>>,
+    pub import_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ImportSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The locale specified in the request.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListImportsOutput {
+impl  ListImportsOutput  {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_summaries.is_none()`.
-    pub fn import_summaries(&self) -> &[crate::types::ImportSummary] {
-        self.import_summaries.as_deref().unwrap_or_default()
+    pub fn import_summaries(&self) -> & [crate::types::ImportSummary] {
+        self.import_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The locale specified in the request.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListImportsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListImportsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
     pub fn builder() -> crate::operation::list_imports::builders::ListImportsOutputBuilder {
@@ -57,7 +58,7 @@ impl ListImportsOutput {
 pub struct ListImportsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) import_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>>,
+    pub(crate) import_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ImportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -70,8 +71,7 @@ impl ListImportsOutputBuilder {
     }
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl ListImportsOutputBuilder {
     }
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot that was imported. It will always be <code>DRAFT</code>.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,17 +97,16 @@ impl ListImportsOutputBuilder {
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     pub fn import_summaries(mut self, input: crate::types::ImportSummary) -> Self {
         let mut v = self.import_summaries.unwrap_or_default();
-        v.push(input);
-        self.import_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.import_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_import_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>>) -> Self {
-        self.import_summaries = input;
-        self
+    pub fn set_import_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportSummary>>) -> Self {
+        self.import_summaries = input; self
     }
     /// <p>Summary information for the imports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more imports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_import_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportSummary>> {
+    pub fn get_import_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportSummary>> {
         &self.import_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
@@ -118,8 +116,7 @@ impl ListImportsOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,31 +129,36 @@ impl ListImportsOutputBuilder {
     }
     /// <p>The locale specified in the request.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale specified in the request.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
     pub fn build(self) -> crate::operation::list_imports::ListImportsOutput {
         crate::operation::list_imports::ListImportsOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            import_summaries: self.import_summaries,
-            next_token: self.next_token,
-            locale_id: self.locale_id,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            import_summaries: self.import_summaries
+            ,
+            next_token: self.next_token
+            ,
+            locale_id: self.locale_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectPeerAssociationsOutput {
+pub struct GetConnectPeerAssociationsOutput  {
     /// <p>Displays a list of Connect peer associations.</p>
-    pub connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
+    pub connect_peer_associations: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectPeerAssociation>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetConnectPeerAssociationsOutput {
+impl  GetConnectPeerAssociationsOutput  {
     /// <p>Displays a list of Connect peer associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_peer_associations.is_none()`.
-    pub fn connect_peer_associations(&self) -> &[crate::types::ConnectPeerAssociation] {
-        self.connect_peer_associations.as_deref().unwrap_or_default()
+    pub fn connect_peer_associations(&self) -> & [crate::types::ConnectPeerAssociation] {
+        self.connect_peer_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConnectPeerAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConnectPeerAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput).
     pub fn builder() -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetConnectPeerAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectPeerAssociationsOutputBuilder {
-    pub(crate) connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
+    pub(crate) connect_peer_associations: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectPeerAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetConnectPeerAssociationsOutputBuilder {
     /// <p>Displays a list of Connect peer associations.</p>
     pub fn connect_peer_associations(mut self, input: crate::types::ConnectPeerAssociation) -> Self {
         let mut v = self.connect_peer_associations.unwrap_or_default();
-        v.push(input);
-        self.connect_peer_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connect_peer_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn set_connect_peer_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>) -> Self {
-        self.connect_peer_associations = input;
-        self
+    pub fn set_connect_peer_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectPeerAssociation>>) -> Self {
+        self.connect_peer_associations = input; self
     }
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn get_connect_peer_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>> {
+    pub fn get_connect_peer_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectPeerAssociation>> {
         &self.connect_peer_associations
     }
     /// <p>The token for the next page of results.</p>
@@ -69,28 +69,30 @@ impl GetConnectPeerAssociationsOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput).
     pub fn build(self) -> crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput {
         crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput {
-            connect_peer_associations: self.connect_peer_associations,
-            next_token: self.next_token,
+            connect_peer_associations: self.connect_peer_associations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a signal decoder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignalDecoder {
+pub struct SignalDecoder  {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
     pub fully_qualified_name: ::std::string::String,
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
@@ -17,31 +17,29 @@ pub struct SignalDecoder {
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub message_signal: ::std::option::Option<crate::types::MessageSignal>,
 }
-impl SignalDecoder {
+impl  SignalDecoder  {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
-    pub fn fully_qualified_name(&self) -> &str {
-        use std::ops::Deref;
-        self.fully_qualified_name.deref()
+    pub fn fully_qualified_name(&self) -> & str {
+        use std::ops::Deref; self.fully_qualified_name.deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> &crate::types::SignalDecoderType {
+    pub fn r#type(&self) -> & crate::types::SignalDecoderType {
         &self.r#type
     }
     /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
-    pub fn interface_id(&self) -> &str {
-        use std::ops::Deref;
-        self.interface_id.deref()
+    pub fn interface_id(&self) -> & str {
+        use std::ops::Deref; self.interface_id.deref()
     }
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
-    pub fn can_signal(&self) -> ::std::option::Option<&crate::types::CanSignal> {
+    pub fn can_signal(&self) -> ::std::option::Option<& crate::types::CanSignal> {
         self.can_signal.as_ref()
     }
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
-    pub fn obd_signal(&self) -> ::std::option::Option<&crate::types::ObdSignal> {
+    pub fn obd_signal(&self) -> ::std::option::Option<& crate::types::ObdSignal> {
         self.obd_signal.as_ref()
     }
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
-    pub fn message_signal(&self) -> ::std::option::Option<&crate::types::MessageSignal> {
+    pub fn message_signal(&self) -> ::std::option::Option<& crate::types::MessageSignal> {
         self.message_signal.as_ref()
     }
 }
@@ -72,8 +70,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
     pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_name = input;
-        self
+        self.fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SignalDecoderType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SignalDecoderType> {
@@ -102,8 +98,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
     pub fn set_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interface_id = input;
-        self
+        self.interface_id = input; self
     }
     /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
     pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +111,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
     pub fn set_can_signal(mut self, input: ::std::option::Option<crate::types::CanSignal>) -> Self {
-        self.can_signal = input;
-        self
+        self.can_signal = input; self
     }
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
     pub fn get_can_signal(&self) -> &::std::option::Option<crate::types::CanSignal> {
@@ -130,8 +124,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub fn set_obd_signal(mut self, input: ::std::option::Option<crate::types::ObdSignal>) -> Self {
-        self.obd_signal = input;
-        self
+        self.obd_signal = input; self
     }
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub fn get_obd_signal(&self) -> &::std::option::Option<crate::types::ObdSignal> {
@@ -144,8 +137,7 @@ impl SignalDecoderBuilder {
     }
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub fn set_message_signal(mut self, input: ::std::option::Option<crate::types::MessageSignal>) -> Self {
-        self.message_signal = input;
-        self
+        self.message_signal = input; self
     }
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub fn get_message_signal(&self) -> &::std::option::Option<crate::types::MessageSignal> {
@@ -157,28 +149,31 @@ impl SignalDecoderBuilder {
     /// - [`r#type`](crate::types::builders::SignalDecoderBuilder::r#type)
     /// - [`interface_id`](crate::types::builders::SignalDecoderBuilder::interface_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SignalDecoder, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SignalDecoder {
-            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fully_qualified_name",
-                    "fully_qualified_name was not specified but it is required when building SignalDecoder",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SignalDecoder",
-                )
-            })?,
-            interface_id: self.interface_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interface_id",
-                    "interface_id was not specified but it is required when building SignalDecoder",
-                )
-            })?,
-            can_signal: self.can_signal,
-            obd_signal: self.obd_signal,
-            message_signal: self.message_signal,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SignalDecoder {
+                fully_qualified_name: self.fully_qualified_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fully_qualified_name", "fully_qualified_name was not specified but it is required when building SignalDecoder")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SignalDecoder")
+                    )?
+                ,
+                interface_id: self.interface_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interface_id", "interface_id was not specified but it is required when building SignalDecoder")
+                    )?
+                ,
+                can_signal: self.can_signal
+                ,
+                obd_signal: self.obd_signal
+                ,
+                message_signal: self.message_signal
+                ,
+            }
+        )
     }
 }
+

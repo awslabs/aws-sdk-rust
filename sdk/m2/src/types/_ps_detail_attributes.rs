@@ -3,22 +3,20 @@
 /// <p>The supported properties for a PS type data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PsDetailAttributes {
+pub struct PsDetailAttributes  {
     /// <p>The format of the data set records.</p>
     pub format: ::std::string::String,
     /// <p>The character set encoding of the data set.</p>
     pub encoding: ::std::string::String,
 }
-impl PsDetailAttributes {
+impl  PsDetailAttributes  {
     /// <p>The format of the data set records.</p>
-    pub fn format(&self) -> &str {
-        use std::ops::Deref;
-        self.format.deref()
+    pub fn format(&self) -> & str {
+        use std::ops::Deref; self.format.deref()
     }
     /// <p>The character set encoding of the data set.</p>
-    pub fn encoding(&self) -> &str {
-        use std::ops::Deref;
-        self.encoding.deref()
+    pub fn encoding(&self) -> & str {
+        use std::ops::Deref; self.encoding.deref()
     }
 }
 impl PsDetailAttributes {
@@ -44,8 +42,7 @@ impl PsDetailAttributesBuilder {
     }
     /// <p>The format of the data set records.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the data set records.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl PsDetailAttributesBuilder {
     }
     /// <p>The character set encoding of the data set.</p>
     pub fn set_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>The character set encoding of the data set.</p>
     pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl PsDetailAttributesBuilder {
     /// - [`format`](crate::types::builders::PsDetailAttributesBuilder::format)
     /// - [`encoding`](crate::types::builders::PsDetailAttributesBuilder::encoding)
     pub fn build(self) -> ::std::result::Result<crate::types::PsDetailAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PsDetailAttributes {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building PsDetailAttributes",
-                )
-            })?,
-            encoding: self.encoding.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encoding",
-                    "encoding was not specified but it is required when building PsDetailAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PsDetailAttributes {
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building PsDetailAttributes")
+                    )?
+                ,
+                encoding: self.encoding
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encoding", "encoding was not specified but it is required when building PsDetailAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

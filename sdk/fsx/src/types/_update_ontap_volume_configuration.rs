@@ -3,7 +3,7 @@
 /// <p>Used to specify changes to the ONTAP configuration for the volume you are updating.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOntapVolumeConfiguration {
+pub struct UpdateOntapVolumeConfiguration  {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub junction_path: ::std::option::Option<::std::string::String>,
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
@@ -33,13 +33,13 @@ pub struct UpdateOntapVolumeConfiguration {
     /// <p>The configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
 }
-impl UpdateOntapVolumeConfiguration {
+impl  UpdateOntapVolumeConfiguration  {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn junction_path(&self) -> ::std::option::Option<&str> {
+    pub fn junction_path(&self) -> ::std::option::Option<& str> {
         self.junction_path.as_deref()
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
+    pub fn security_style(&self) -> ::std::option::Option<& crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
@@ -51,7 +51,7 @@ impl UpdateOntapVolumeConfiguration {
         self.storage_efficiency_enabled
     }
     /// <p>Update the volume's data tiering policy.</p>
-    pub fn tiering_policy(&self) -> ::std::option::Option<&crate::types::TieringPolicy> {
+    pub fn tiering_policy(&self) -> ::std::option::Option<& crate::types::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
@@ -65,7 +65,7 @@ impl UpdateOntapVolumeConfiguration {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn snapshot_policy(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_policy(&self) -> ::std::option::Option<& str> {
         self.snapshot_policy.as_deref()
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
@@ -73,7 +73,7 @@ impl UpdateOntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
-    pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
+    pub fn snaplock_configuration(&self) -> ::std::option::Option<& crate::types::UpdateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
     /// <p>The configured size of the volume, in bytes.</p>
@@ -110,8 +110,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn set_junction_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.junction_path = input;
-        self
+        self.junction_path = input; self
     }
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn get_junction_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
-        self.security_style = input;
-        self
+        self.security_style = input; self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn get_security_style(&self) -> &::std::option::Option<crate::types::SecurityStyle> {
@@ -138,8 +136,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
     pub fn set_size_in_megabytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_megabytes = input;
-        self
+        self.size_in_megabytes = input; self
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
     pub fn get_size_in_megabytes(&self) -> &::std::option::Option<i32> {
@@ -152,8 +149,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Default is <code>false</code>. Set to true to enable the deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn set_storage_efficiency_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_efficiency_enabled = input;
-        self
+        self.storage_efficiency_enabled = input; self
     }
     /// <p>Default is <code>false</code>. Set to true to enable the deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn get_storage_efficiency_enabled(&self) -> &::std::option::Option<bool> {
@@ -166,8 +162,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Update the volume's data tiering policy.</p>
     pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
-        self.tiering_policy = input;
-        self
+        self.tiering_policy = input; self
     }
     /// <p>Update the volume's data tiering policy.</p>
     pub fn get_tiering_policy(&self) -> &::std::option::Option<crate::types::TieringPolicy> {
@@ -200,8 +195,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_policy = input;
-        self
+        self.snapshot_policy = input; self
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -224,8 +218,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn set_copy_tags_to_backups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_backups = input;
-        self
+        self.copy_tags_to_backups = input; self
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
@@ -238,8 +231,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>) -> Self {
-        self.snaplock_configuration = input;
-        self
+        self.snaplock_configuration = input; self
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::UpdateSnaplockConfiguration> {
@@ -252,8 +244,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>The configured size of the volume, in bytes.</p>
     pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_bytes = input;
-        self
+        self.size_in_bytes = input; self
     }
     /// <p>The configured size of the volume, in bytes.</p>
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -262,15 +253,25 @@ impl UpdateOntapVolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOntapVolumeConfiguration {
         crate::types::UpdateOntapVolumeConfiguration {
-            junction_path: self.junction_path,
-            security_style: self.security_style,
-            size_in_megabytes: self.size_in_megabytes,
-            storage_efficiency_enabled: self.storage_efficiency_enabled,
-            tiering_policy: self.tiering_policy,
-            snapshot_policy: self.snapshot_policy,
-            copy_tags_to_backups: self.copy_tags_to_backups,
-            snaplock_configuration: self.snaplock_configuration,
-            size_in_bytes: self.size_in_bytes,
+            junction_path: self.junction_path
+            ,
+            security_style: self.security_style
+            ,
+            size_in_megabytes: self.size_in_megabytes
+            ,
+            storage_efficiency_enabled: self.storage_efficiency_enabled
+            ,
+            tiering_policy: self.tiering_policy
+            ,
+            snapshot_policy: self.snapshot_policy
+            ,
+            copy_tags_to_backups: self.copy_tags_to_backups
+            ,
+            snaplock_configuration: self.snaplock_configuration
+            ,
+            size_in_bytes: self.size_in_bytes
+            ,
         }
     }
 }
+

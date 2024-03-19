@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppsInput {
+pub struct ListAppsInput  {
     /// <p>The unique application IDs.</p>
-    pub app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAppsInput {
+impl  ListAppsInput  {
     /// <p>The unique application IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_ids.is_none()`.
-    pub fn app_ids(&self) -> &[::std::string::String] {
-        self.app_ids.as_deref().unwrap_or_default()
+    pub fn app_ids(&self) -> & [::std::string::String] {
+        self.app_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -37,7 +38,7 @@ impl ListAppsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsInputBuilder {
-    pub(crate) app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl ListAppsInputBuilder {
     /// <p>The unique application IDs.</p>
     pub fn app_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.app_ids.unwrap_or_default();
-        v.push(input.into());
-        self.app_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.app_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique application IDs.</p>
-    pub fn set_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.app_ids = input;
-        self
+    pub fn set_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.app_ids = input; self
     }
     /// <p>The unique application IDs.</p>
-    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.app_ids
     }
     /// <p>The token for the next set of results.</p>
@@ -69,8 +69,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -92,10 +90,16 @@ impl ListAppsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
-            app_ids: self.app_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_apps::ListAppsInput {
+                app_ids: self.app_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

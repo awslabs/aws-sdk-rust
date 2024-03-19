@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalTableSettingsOutput {
+pub struct UpdateGlobalTableSettingsOutput  {
     /// <p>The name of the global table.</p>
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
-    pub replica_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>>,
+    pub replica_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsDescription>>,
     _request_id: Option<String>,
 }
-impl UpdateGlobalTableSettingsOutput {
+impl  UpdateGlobalTableSettingsOutput  {
     /// <p>The name of the global table.</p>
-    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Region-specific settings for the global table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_settings.is_none()`.
-    pub fn replica_settings(&self) -> &[crate::types::ReplicaSettingsDescription] {
-        self.replica_settings.as_deref().unwrap_or_default()
+    pub fn replica_settings(&self) -> & [crate::types::ReplicaSettingsDescription] {
+        self.replica_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGlobalTableSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGlobalTableSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsOutput`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput).
     pub fn builder() -> crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsOutputBuilder {
@@ -38,7 +39,7 @@ impl UpdateGlobalTableSettingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsOutputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) replica_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>>,
+    pub(crate) replica_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsDescription>>,
     _request_id: Option<String>,
 }
 impl UpdateGlobalTableSettingsOutputBuilder {
@@ -49,8 +50,7 @@ impl UpdateGlobalTableSettingsOutputBuilder {
     }
     /// <p>The name of the global table.</p>
     pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_table_name = input;
-        self
+        self.global_table_name = input; self
     }
     /// <p>The name of the global table.</p>
     pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl UpdateGlobalTableSettingsOutputBuilder {
     /// <p>The Region-specific settings for the global table.</p>
     pub fn replica_settings(mut self, input: crate::types::ReplicaSettingsDescription) -> Self {
         let mut v = self.replica_settings.unwrap_or_default();
-        v.push(input);
-        self.replica_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Region-specific settings for the global table.</p>
-    pub fn set_replica_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>>) -> Self {
-        self.replica_settings = input;
-        self
+    pub fn set_replica_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsDescription>>) -> Self {
+        self.replica_settings = input; self
     }
     /// <p>The Region-specific settings for the global table.</p>
-    pub fn get_replica_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>> {
+    pub fn get_replica_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsDescription>> {
         &self.replica_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGlobalTableSettingsOutput`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput).
     pub fn build(self) -> crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput {
         crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput {
-            global_table_name: self.global_table_name,
-            replica_settings: self.replica_settings,
+            global_table_name: self.global_table_name
+            ,
+            replica_settings: self.replica_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

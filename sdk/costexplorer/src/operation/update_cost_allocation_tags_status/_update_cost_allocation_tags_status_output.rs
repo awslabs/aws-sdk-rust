@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCostAllocationTagsStatusOutput {
+pub struct UpdateCostAllocationTagsStatusOutput  {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,
 }
-impl UpdateCostAllocationTagsStatusOutput {
+impl  UpdateCostAllocationTagsStatusOutput  {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::UpdateCostAllocationTagsStatusError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::UpdateCostAllocationTagsStatusError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCostAllocationTagsStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCostAllocationTagsStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
     pub fn builder() -> crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusOutputBuilder {
@@ -31,7 +32,7 @@ impl UpdateCostAllocationTagsStatusOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,
 }
 impl UpdateCostAllocationTagsStatusOutputBuilder {
@@ -42,33 +43,34 @@ impl UpdateCostAllocationTagsStatusOutputBuilder {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns.</p>
     pub fn errors(mut self, input: crate::types::UpdateCostAllocationTagsStatusError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateCostAllocationTagsStatusError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateCostAllocationTagsStatusError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
     pub fn build(self) -> crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput {
         crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

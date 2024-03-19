@@ -3,20 +3,19 @@
 /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagementOptions {
+pub struct ListManagementOptions  {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: ::std::string::String,
     /// <p>The name of the topic.</p>
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
-impl ListManagementOptions {
+impl  ListManagementOptions  {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_list_name.deref()
+    pub fn contact_list_name(&self) -> & str {
+        use std::ops::Deref; self.contact_list_name.deref()
     }
     /// <p>The name of the topic.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ListManagementOptionsBuilder {
     }
     /// <p>The name of the contact list.</p>
     pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_list_name = input;
-        self
+        self.contact_list_name = input; self
     }
     /// <p>The name of the contact list.</p>
     pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ListManagementOptionsBuilder {
     }
     /// <p>The name of the topic.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The name of the topic.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ListManagementOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_list_name`](crate::types::builders::ListManagementOptionsBuilder::contact_list_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ListManagementOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListManagementOptions {
-            contact_list_name: self.contact_list_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_list_name",
-                    "contact_list_name was not specified but it is required when building ListManagementOptions",
-                )
-            })?,
-            topic_name: self.topic_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListManagementOptions {
+                contact_list_name: self.contact_list_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_list_name", "contact_list_name was not specified but it is required when building ListManagementOptions")
+                    )?
+                ,
+                topic_name: self.topic_name
+                ,
+            }
+        )
     }
 }
+

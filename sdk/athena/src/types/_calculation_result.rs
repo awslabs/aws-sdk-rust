@@ -3,7 +3,7 @@
 /// <p>Contains information about an application-specific calculation result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculationResult {
+pub struct CalculationResult  {
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
     pub std_out_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
@@ -13,21 +13,21 @@ pub struct CalculationResult {
     /// <p>The data format of the calculation result.</p>
     pub result_type: ::std::option::Option<::std::string::String>,
 }
-impl CalculationResult {
+impl  CalculationResult  {
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
-    pub fn std_out_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn std_out_s3_uri(&self) -> ::std::option::Option<& str> {
         self.std_out_s3_uri.as_deref()
     }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
-    pub fn std_error_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn std_error_s3_uri(&self) -> ::std::option::Option<& str> {
         self.std_error_s3_uri.as_deref()
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
-    pub fn result_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn result_s3_uri(&self) -> ::std::option::Option<& str> {
         self.result_s3_uri.as_deref()
     }
     /// <p>The data format of the calculation result.</p>
-    pub fn result_type(&self) -> ::std::option::Option<&str> {
+    pub fn result_type(&self) -> ::std::option::Option<& str> {
         self.result_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CalculationResultBuilder {
     }
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
     pub fn set_std_out_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.std_out_s3_uri = input;
-        self
+        self.std_out_s3_uri = input; self
     }
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
     pub fn get_std_out_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CalculationResultBuilder {
     }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
     pub fn set_std_error_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.std_error_s3_uri = input;
-        self
+        self.std_error_s3_uri = input; self
     }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
     pub fn get_std_error_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CalculationResultBuilder {
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
     pub fn set_result_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_s3_uri = input;
-        self
+        self.result_s3_uri = input; self
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
     pub fn get_result_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CalculationResultBuilder {
     }
     /// <p>The data format of the calculation result.</p>
     pub fn set_result_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_type = input;
-        self
+        self.result_type = input; self
     }
     /// <p>The data format of the calculation result.</p>
     pub fn get_result_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl CalculationResultBuilder {
     /// Consumes the builder and constructs a [`CalculationResult`](crate::types::CalculationResult).
     pub fn build(self) -> crate::types::CalculationResult {
         crate::types::CalculationResult {
-            std_out_s3_uri: self.std_out_s3_uri,
-            std_error_s3_uri: self.std_error_s3_uri,
-            result_s3_uri: self.result_s3_uri,
-            result_type: self.result_type,
+            std_out_s3_uri: self.std_out_s3_uri
+            ,
+            std_error_s3_uri: self.std_error_s3_uri
+            ,
+            result_s3_uri: self.result_s3_uri
+            ,
+            result_type: self.result_type
+            ,
         }
     }
 }
+

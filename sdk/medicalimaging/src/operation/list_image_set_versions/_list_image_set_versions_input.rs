@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageSetVersionsInput {
+pub struct ListImageSetVersionsInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The image set identifier.</p>
@@ -12,17 +12,17 @@ pub struct ListImageSetVersionsInput {
     /// <p>The max results count.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListImageSetVersionsInput {
+impl  ListImageSetVersionsInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_set_id(&self) -> ::std::option::Option<& str> {
         self.image_set_id.as_deref()
     }
     /// <p>The pagination token used to request the list of image set versions on the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The max results count.</p>
@@ -55,8 +55,7 @@ impl ListImageSetVersionsInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListImageSetVersionsInputBuilder {
     }
     /// <p>The image set identifier.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListImageSetVersionsInputBuilder {
     }
     /// <p>The pagination token used to request the list of image set versions on the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to request the list of image set versions on the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl ListImageSetVersionsInputBuilder {
     }
     /// <p>The max results count.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The max results count.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListImageSetVersionsInput`](crate::operation::list_image_set_versions::ListImageSetVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_image_set_versions::ListImageSetVersionsInput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_image_set_versions::ListImageSetVersionsInput {
+                datastore_id: self.datastore_id
+                ,
+                image_set_id: self.image_set_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

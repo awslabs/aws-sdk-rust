@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDimensionValuesOutput {
+pub struct GetDimensionValuesOutput  {
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
@@ -73,7 +73,7 @@ pub struct GetDimensionValuesOutput {
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p></li>
     /// </ul>
-    pub dimension_values: ::std::vec::Vec<crate::types::DimensionValuesWithAttributes>,
+    pub dimension_values: ::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     pub return_size: i32,
     /// <p>The total number of search results.</p>
@@ -82,7 +82,7 @@ pub struct GetDimensionValuesOutput {
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDimensionValuesOutput {
+impl  GetDimensionValuesOutput  {
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
@@ -153,9 +153,8 @@ impl GetDimensionValuesOutput {
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p></li>
     /// </ul>
-    pub fn dimension_values(&self) -> &[crate::types::DimensionValuesWithAttributes] {
-        use std::ops::Deref;
-        self.dimension_values.deref()
+    pub fn dimension_values(&self) -> & [crate::types::DimensionValuesWithAttributes] {
+        use std::ops::Deref; self.dimension_values.deref()
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     pub fn return_size(&self) -> i32 {
@@ -166,15 +165,15 @@ impl GetDimensionValuesOutput {
         self.total_size
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDimensionValuesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDimensionValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
     pub fn builder() -> crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder {
@@ -186,7 +185,7 @@ impl GetDimensionValuesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDimensionValuesOutputBuilder {
-    pub(crate) dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub(crate) dimension_values: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>>,
     pub(crate) return_size: ::std::option::Option<i32>,
     pub(crate) total_size: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -269,9 +268,9 @@ impl GetDimensionValuesOutputBuilder {
     /// </ul>
     pub fn dimension_values(mut self, input: crate::types::DimensionValuesWithAttributes) -> Self {
         let mut v = self.dimension_values.unwrap_or_default();
-        v.push(input);
-        self.dimension_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -343,9 +342,8 @@ impl GetDimensionValuesOutputBuilder {
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p></li>
     /// </ul>
-    pub fn set_dimension_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>) -> Self {
-        self.dimension_values = input;
-        self
+    pub fn set_dimension_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>>) -> Self {
+        self.dimension_values = input; self
     }
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -417,7 +415,7 @@ impl GetDimensionValuesOutputBuilder {
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p></li>
     /// </ul>
-    pub fn get_dimension_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
+    pub fn get_dimension_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>> {
         &self.dimension_values
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
@@ -428,8 +426,7 @@ impl GetDimensionValuesOutputBuilder {
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     pub fn set_return_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.return_size = input;
-        self
+        self.return_size = input; self
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
     pub fn get_return_size(&self) -> &::std::option::Option<i32> {
@@ -443,8 +440,7 @@ impl GetDimensionValuesOutputBuilder {
     }
     /// <p>The total number of search results.</p>
     pub fn set_total_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_size = input;
-        self
+        self.total_size = input; self
     }
     /// <p>The total number of search results.</p>
     pub fn get_total_size(&self) -> &::std::option::Option<i32> {
@@ -457,52 +453,49 @@ impl GetDimensionValuesOutputBuilder {
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_values`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::dimension_values)
     /// - [`return_size`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::return_size)
     /// - [`total_size`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::total_size)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_dimension_values::GetDimensionValuesOutput {
-            dimension_values: self.dimension_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_values",
-                    "dimension_values was not specified but it is required when building GetDimensionValuesOutput",
-                )
-            })?,
-            return_size: self.return_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "return_size",
-                    "return_size was not specified but it is required when building GetDimensionValuesOutput",
-                )
-            })?,
-            total_size: self.total_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_size",
-                    "total_size was not specified but it is required when building GetDimensionValuesOutput",
-                )
-            })?,
-            next_page_token: self.next_page_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dimension_values::GetDimensionValuesOutput {
+                dimension_values: self.dimension_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_values", "dimension_values was not specified but it is required when building GetDimensionValuesOutput")
+                    )?
+                ,
+                return_size: self.return_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("return_size", "return_size was not specified but it is required when building GetDimensionValuesOutput")
+                    )?
+                ,
+                total_size: self.total_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_size", "total_size was not specified but it is required when building GetDimensionValuesOutput")
+                    )?
+                ,
+                next_page_token: self.next_page_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

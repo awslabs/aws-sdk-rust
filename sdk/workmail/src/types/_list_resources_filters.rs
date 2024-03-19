@@ -3,7 +3,7 @@
 /// <p>Filtering options for <i>ListResources</i> operation. This is only used as input to Operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesFilters {
+pub struct ListResourcesFilters  {
     /// <p>Filters only resource that start with the entered name prefix .</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Filters only resource with the provided primary email prefix.</p>
@@ -11,17 +11,17 @@ pub struct ListResourcesFilters {
     /// <p>Filters only resource with the provided state.</p>
     pub state: ::std::option::Option<crate::types::EntityState>,
 }
-impl ListResourcesFilters {
+impl  ListResourcesFilters  {
     /// <p>Filters only resource that start with the entered name prefix .</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>Filters only resource with the provided primary email prefix.</p>
-    pub fn primary_email_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn primary_email_prefix(&self) -> ::std::option::Option<& str> {
         self.primary_email_prefix.as_deref()
     }
     /// <p>Filters only resource with the provided state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ListResourcesFiltersBuilder {
     }
     /// <p>Filters only resource that start with the entered name prefix .</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>Filters only resource that start with the entered name prefix .</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListResourcesFiltersBuilder {
     }
     /// <p>Filters only resource with the provided primary email prefix.</p>
     pub fn set_primary_email_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_email_prefix = input;
-        self
+        self.primary_email_prefix = input; self
     }
     /// <p>Filters only resource with the provided primary email prefix.</p>
     pub fn get_primary_email_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ListResourcesFiltersBuilder {
     }
     /// <p>Filters only resource with the provided state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Filters only resource with the provided state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -86,9 +83,13 @@ impl ListResourcesFiltersBuilder {
     /// Consumes the builder and constructs a [`ListResourcesFilters`](crate::types::ListResourcesFilters).
     pub fn build(self) -> crate::types::ListResourcesFilters {
         crate::types::ListResourcesFilters {
-            name_prefix: self.name_prefix,
-            primary_email_prefix: self.primary_email_prefix,
-            state: self.state,
+            name_prefix: self.name_prefix
+            ,
+            primary_email_prefix: self.primary_email_prefix
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

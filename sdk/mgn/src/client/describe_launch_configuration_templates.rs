@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLaunchConfigurationTemplates`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`launch_configuration_template_ids(impl Into<String>)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::launch_configuration_template_ids) / [`set_launch_configuration_template_ids(Option<Vec::<String>>)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::set_launch_configuration_template_ids):<br>required: **false**<br><p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p><br>
-    /// - On success, responds with [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput) with field(s):
+                            /// - On success, responds with [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput) with field(s):
     ///   - [`items(Option<Vec::<LaunchConfigurationTemplate>>)`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput::items): <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
-    /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesError)
-    pub fn describe_launch_configuration_templates(
-        &self,
-    ) -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder {
-        crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesError)
+    pub fn describe_launch_configuration_templates(&self) -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder {
+                                crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

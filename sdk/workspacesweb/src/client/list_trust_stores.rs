@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrustStores`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput) with field(s):
+                            /// - On success, responds with [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput) with field(s):
     ///   - [`trust_stores(Option<Vec::<TrustStoreSummary>>)`](crate::operation::list_trust_stores::ListTrustStoresOutput::trust_stores): <p>The trust stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trust_stores::ListTrustStoresOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListTrustStoresError>`](crate::operation::list_trust_stores::ListTrustStoresError)
+                            /// - On failure, responds with [`SdkError<ListTrustStoresError>`](crate::operation::list_trust_stores::ListTrustStoresError)
     pub fn list_trust_stores(&self) -> crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder {
-        crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

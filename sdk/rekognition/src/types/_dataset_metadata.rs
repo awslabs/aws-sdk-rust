@@ -3,7 +3,7 @@
 /// <p>Summary information for an Amazon Rekognition Custom Labels dataset. For more information, see <code>ProjectDescription</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetMetadata {
+pub struct DatasetMetadata  {
     /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the dataset.</p>
@@ -17,29 +17,29 @@ pub struct DatasetMetadata {
     /// <p>The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed.</p>
     pub status_message_code: ::std::option::Option<crate::types::DatasetStatusMessageCode>,
 }
-impl DatasetMetadata {
+impl  DatasetMetadata  {
     /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The type of the dataset.</p>
-    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The status for the dataset.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the dataset.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed.</p>
-    pub fn status_message_code(&self) -> ::std::option::Option<&crate::types::DatasetStatusMessageCode> {
+    pub fn status_message_code(&self) -> ::std::option::Option<& crate::types::DatasetStatusMessageCode> {
         self.status_message_code.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +82,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The type of the dataset.</p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>The type of the dataset.</p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
@@ -97,8 +95,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the dataset.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The status for the dataset.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status for the dataset.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
@@ -125,8 +121,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The status message for the dataset.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for the dataset.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl DatasetMetadataBuilder {
     }
     /// <p>The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed.</p>
     pub fn set_status_message_code(mut self, input: ::std::option::Option<crate::types::DatasetStatusMessageCode>) -> Self {
-        self.status_message_code = input;
-        self
+        self.status_message_code = input; self
     }
     /// <p>The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed.</p>
     pub fn get_status_message_code(&self) -> &::std::option::Option<crate::types::DatasetStatusMessageCode> {
@@ -149,12 +143,19 @@ impl DatasetMetadataBuilder {
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).
     pub fn build(self) -> crate::types::DatasetMetadata {
         crate::types::DatasetMetadata {
-            creation_timestamp: self.creation_timestamp,
-            dataset_type: self.dataset_type,
-            dataset_arn: self.dataset_arn,
-            status: self.status,
-            status_message: self.status_message,
-            status_message_code: self.status_message_code,
+            creation_timestamp: self.creation_timestamp
+            ,
+            dataset_type: self.dataset_type
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            status_message_code: self.status_message_code
+            ,
         }
     }
 }
+

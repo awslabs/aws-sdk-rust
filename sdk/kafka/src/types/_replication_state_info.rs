@@ -3,19 +3,19 @@
 /// Details about the state of a replicator
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationStateInfo {
+pub struct ReplicationStateInfo  {
     /// Code that describes the current state of the replicator.
     pub code: ::std::option::Option<::std::string::String>,
     /// Message that describes the state of the replicator.
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ReplicationStateInfo {
+impl  ReplicationStateInfo  {
     /// Code that describes the current state of the replicator.
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// Message that describes the state of the replicator.
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ReplicationStateInfoBuilder {
     }
     /// Code that describes the current state of the replicator.
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// Code that describes the current state of the replicator.
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReplicationStateInfoBuilder {
     }
     /// Message that describes the state of the replicator.
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Message that describes the state of the replicator.
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ReplicationStateInfoBuilder {
     /// Consumes the builder and constructs a [`ReplicationStateInfo`](crate::types::ReplicationStateInfo).
     pub fn build(self) -> crate::types::ReplicationStateInfo {
         crate::types::ReplicationStateInfo {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

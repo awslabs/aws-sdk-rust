@@ -3,22 +3,20 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>The name of the object that contains the data.</p>
     pub file_key: ::std::string::String,
 }
-impl S3Configuration {
+impl  S3Configuration  {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(&self) -> &str {
-        use std::ops::Deref;
-        self.file_key.deref()
+    pub fn file_key(&self) -> & str {
+        use std::ops::Deref; self.file_key.deref()
     }
 }
 impl S3Configuration {
@@ -44,8 +42,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The ARN of the S3 bucket that contains the data.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The ARN of the S3 bucket that contains the data.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The name of the object that contains the data.</p>
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key = input;
-        self
+        self.file_key = input; self
     }
     /// <p>The name of the object that contains the data.</p>
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl S3ConfigurationBuilder {
     /// - [`bucket_arn`](crate::types::builders::S3ConfigurationBuilder::bucket_arn)
     /// - [`file_key`](crate::types::builders::S3ConfigurationBuilder::file_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Configuration {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3Configuration",
-                )
-            })?,
-            file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_key",
-                    "file_key was not specified but it is required when building S3Configuration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Configuration {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+                file_key: self.file_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_key", "file_key was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

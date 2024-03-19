@@ -3,13 +3,13 @@
 /// <p>A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyDescriptorType {
+pub struct PolicyDescriptorType  {
     /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl PolicyDescriptorType {
+impl  PolicyDescriptorType  {
     /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PolicyDescriptorTypeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl PolicyDescriptorTypeBuilder {
     }
     /// Consumes the builder and constructs a [`PolicyDescriptorType`](crate::types::PolicyDescriptorType).
     pub fn build(self) -> crate::types::PolicyDescriptorType {
-        crate::types::PolicyDescriptorType { arn: self.arn }
+        crate::types::PolicyDescriptorType {
+            arn: self.arn
+            ,
+        }
     }
 }
+

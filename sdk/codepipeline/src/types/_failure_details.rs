@@ -3,7 +3,7 @@
 /// <p>Represents information about failure details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>The type of the failure.</p>
     pub r#type: crate::types::FailureType,
     /// <p>The message about the failure.</p>
@@ -11,18 +11,17 @@ pub struct FailureDetails {
     /// <p>The external ID of the run of the action that failed.</p>
     pub external_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl FailureDetails {
+impl  FailureDetails  {
     /// <p>The type of the failure.</p>
-    pub fn r#type(&self) -> &crate::types::FailureType {
+    pub fn r#type(&self) -> & crate::types::FailureType {
         &self.r#type
     }
     /// <p>The message about the failure.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> ::std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>The type of the failure.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FailureType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the failure.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FailureType> {
@@ -65,8 +63,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>The message about the failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message about the failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>The external ID of the run of the action that failed.</p>
     pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_execution_id = input;
-        self
+        self.external_execution_id = input; self
     }
     /// <p>The external ID of the run of the action that failed.</p>
     pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl FailureDetailsBuilder {
     /// - [`r#type`](crate::types::builders::FailureDetailsBuilder::r#type)
     /// - [`message`](crate::types::builders::FailureDetailsBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::FailureDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FailureDetails {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FailureDetails",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building FailureDetails",
-                )
-            })?,
-            external_execution_id: self.external_execution_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FailureDetails {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FailureDetails")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building FailureDetails")
+                    )?
+                ,
+                external_execution_id: self.external_execution_id
+                ,
+            }
+        )
     }
 }
+

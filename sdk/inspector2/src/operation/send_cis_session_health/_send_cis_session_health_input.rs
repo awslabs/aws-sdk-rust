@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendCisSessionHealthInput {
+pub struct SendCisSessionHealthInput  {
     /// <p>A unique identifier for the scan job.</p>
     pub scan_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique token that identifies the CIS session.</p>
     pub session_token: ::std::option::Option<::std::string::String>,
 }
-impl SendCisSessionHealthInput {
+impl  SendCisSessionHealthInput  {
     /// <p>A unique identifier for the scan job.</p>
-    pub fn scan_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn scan_job_id(&self) -> ::std::option::Option<& str> {
         self.scan_job_id.as_deref()
     }
     /// <p>The unique token that identifies the CIS session.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SendCisSessionHealthInputBuilder {
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn set_scan_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_job_id = input;
-        self
+        self.scan_job_id = input; self
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn get_scan_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl SendCisSessionHealthInputBuilder {
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_token
     }
     /// Consumes the builder and constructs a [`SendCisSessionHealthInput`](crate::operation::send_cis_session_health::SendCisSessionHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_cis_session_health::SendCisSessionHealthInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::send_cis_session_health::SendCisSessionHealthInput {
-            scan_job_id: self.scan_job_id,
-            session_token: self.session_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_cis_session_health::SendCisSessionHealthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_cis_session_health::SendCisSessionHealthInput {
+                scan_job_id: self.scan_job_id
+                ,
+                session_token: self.session_token
+                ,
+            }
+        )
     }
 }
+

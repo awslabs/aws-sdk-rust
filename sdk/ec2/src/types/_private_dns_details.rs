@@ -3,13 +3,13 @@
 /// <p>Information about the Private DNS name for interface endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateDnsDetails {
+pub struct PrivateDnsDetails  {
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
 }
-impl PrivateDnsDetails {
+impl  PrivateDnsDetails  {
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
-    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PrivateDnsDetailsBuilder {
     }
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
     pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
+        self.private_dns_name = input; self
     }
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PrivateDnsDetailsBuilder {
     /// Consumes the builder and constructs a [`PrivateDnsDetails`](crate::types::PrivateDnsDetails).
     pub fn build(self) -> crate::types::PrivateDnsDetails {
         crate::types::PrivateDnsDetails {
-            private_dns_name: self.private_dns_name,
+            private_dns_name: self.private_dns_name
+            ,
         }
     }
 }
+

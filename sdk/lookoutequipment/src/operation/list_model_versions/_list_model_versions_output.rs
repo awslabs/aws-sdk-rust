@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelVersionsOutput {
+pub struct ListModelVersionsOutput  {
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
     /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
     /// </note>
-    pub model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>>,
+    pub model_version_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVersionSummary>>,
     _request_id: Option<String>,
 }
-impl ListModelVersionsOutput {
+impl  ListModelVersionsOutput  {
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
     /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_version_summaries.is_none()`.
-    pub fn model_version_summaries(&self) -> &[crate::types::ModelVersionSummary] {
-        self.model_version_summaries.as_deref().unwrap_or_default()
+    pub fn model_version_summaries(&self) -> & [crate::types::ModelVersionSummary] {
+        self.model_version_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListModelVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelVersionsOutput`](crate::operation::list_model_versions::ListModelVersionsOutput).
     pub fn builder() -> crate::operation::list_model_versions::builders::ListModelVersionsOutputBuilder {
@@ -42,7 +43,7 @@ impl ListModelVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>>,
+    pub(crate) model_version_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListModelVersionsOutputBuilder {
@@ -53,8 +54,7 @@ impl ListModelVersionsOutputBuilder {
     }
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,38 +69,40 @@ impl ListModelVersionsOutputBuilder {
     /// </note>
     pub fn model_version_summaries(mut self, input: crate::types::ModelVersionSummary) -> Self {
         let mut v = self.model_version_summaries.unwrap_or_default();
-        v.push(input);
-        self.model_version_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_version_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
     /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
     /// </note>
-    pub fn set_model_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>>) -> Self {
-        self.model_version_summaries = input;
-        self
+    pub fn set_model_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVersionSummary>>) -> Self {
+        self.model_version_summaries = input; self
     }
     /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
     /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
     /// </note>
-    pub fn get_model_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>> {
+    pub fn get_model_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelVersionSummary>> {
         &self.model_version_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListModelVersionsOutput`](crate::operation::list_model_versions::ListModelVersionsOutput).
     pub fn build(self) -> crate::operation::list_model_versions::ListModelVersionsOutput {
         crate::operation::list_model_versions::ListModelVersionsOutput {
-            next_token: self.next_token,
-            model_version_summaries: self.model_version_summaries,
+            next_token: self.next_token
+            ,
+            model_version_summaries: self.model_version_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

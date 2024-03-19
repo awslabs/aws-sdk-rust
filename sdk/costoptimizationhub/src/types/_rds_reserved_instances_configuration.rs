@@ -3,7 +3,7 @@
 /// <p>The RDS reserved instances configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsReservedInstancesConfiguration {
+pub struct RdsReservedInstancesConfiguration  {
     /// <p>The account scope that you want your recommendations for.</p>
     pub account_scope: ::std::option::Option<::std::string::String>,
     /// <p>The service that you want your recommendations for.</p>
@@ -39,41 +39,41 @@ pub struct RdsReservedInstancesConfiguration {
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
     pub deployment_option: ::std::option::Option<::std::string::String>,
 }
-impl RdsReservedInstancesConfiguration {
+impl  RdsReservedInstancesConfiguration  {
     /// <p>The account scope that you want your recommendations for.</p>
-    pub fn account_scope(&self) -> ::std::option::Option<&str> {
+    pub fn account_scope(&self) -> ::std::option::Option<& str> {
         self.account_scope.as_deref()
     }
     /// <p>The service that you want your recommendations for.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    pub fn normalized_units_to_purchase(&self) -> ::std::option::Option<&str> {
+    pub fn normalized_units_to_purchase(&self) -> ::std::option::Option<& str> {
         self.normalized_units_to_purchase.as_deref()
     }
     /// <p>The reserved instances recommendation term in years.</p>
-    pub fn term(&self) -> ::std::option::Option<&str> {
+    pub fn term(&self) -> ::std::option::Option<& str> {
         self.term.as_deref()
     }
     /// <p>The payment option for the commitment.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&str> {
+    pub fn payment_option(&self) -> ::std::option::Option<& str> {
         self.payment_option.as_deref()
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn number_of_instances_to_purchase(&self) -> ::std::option::Option<&str> {
+    pub fn number_of_instances_to_purchase(&self) -> ::std::option::Option<& str> {
         self.number_of_instances_to_purchase.as_deref()
     }
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn instance_family(&self) -> ::std::option::Option<&str> {
+    pub fn instance_family(&self) -> ::std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
-    pub fn reserved_instances_region(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instances_region(&self) -> ::std::option::Option<& str> {
         self.reserved_instances_region.as_deref()
     }
     /// <p>Determines whether the recommendation is size flexible.</p>
@@ -81,31 +81,31 @@ impl RdsReservedInstancesConfiguration {
         self.size_flex_eligible
     }
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
-    pub fn current_generation(&self) -> ::std::option::Option<&str> {
+    pub fn current_generation(&self) -> ::std::option::Option<& str> {
         self.current_generation.as_deref()
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
-    pub fn upfront_cost(&self) -> ::std::option::Option<&str> {
+    pub fn upfront_cost(&self) -> ::std::option::Option<& str> {
         self.upfront_cost.as_deref()
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    pub fn monthly_recurring_cost(&self) -> ::std::option::Option<&str> {
+    pub fn monthly_recurring_cost(&self) -> ::std::option::Option<& str> {
         self.monthly_recurring_cost.as_deref()
     }
     /// <p>The license model that the recommended reservation supports.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>The database edition that the recommended reservation supports.</p>
-    pub fn database_edition(&self) -> ::std::option::Option<&str> {
+    pub fn database_edition(&self) -> ::std::option::Option<& str> {
         self.database_edition.as_deref()
     }
     /// <p>The database engine that the recommended reservation supports.</p>
-    pub fn database_engine(&self) -> ::std::option::Option<&str> {
+    pub fn database_engine(&self) -> ::std::option::Option<& str> {
         self.database_engine.as_deref()
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
-    pub fn deployment_option(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_option(&self) -> ::std::option::Option<& str> {
         self.deployment_option.as_deref()
     }
 }
@@ -146,8 +146,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The account scope that you want your recommendations for.</p>
     pub fn set_account_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_scope = input;
-        self
+        self.account_scope = input; self
     }
     /// <p>The account scope that you want your recommendations for.</p>
     pub fn get_account_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +159,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The service that you want your recommendations for.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The service that you want your recommendations for.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
     pub fn set_normalized_units_to_purchase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.normalized_units_to_purchase = input;
-        self
+        self.normalized_units_to_purchase = input; self
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
     pub fn get_normalized_units_to_purchase(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +185,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The reserved instances recommendation term in years.</p>
     pub fn set_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>The reserved instances recommendation term in years.</p>
     pub fn get_term(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +198,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The payment option for the commitment.</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The payment option for the commitment.</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +211,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
     pub fn set_number_of_instances_to_purchase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.number_of_instances_to_purchase = input;
-        self
+        self.number_of_instances_to_purchase = input; self
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
     pub fn get_number_of_instances_to_purchase(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +224,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +237,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +250,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub fn set_reserved_instances_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_region = input;
-        self
+        self.reserved_instances_region = input; self
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub fn get_reserved_instances_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +263,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>Determines whether the recommendation is size flexible.</p>
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.size_flex_eligible = input;
-        self
+        self.size_flex_eligible = input; self
     }
     /// <p>Determines whether the recommendation is size flexible.</p>
     pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
@@ -286,8 +276,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_generation = input;
-        self
+        self.current_generation = input; self
     }
     /// <p>Determines whether the recommendation is for a current generation instance.</p>
     pub fn get_current_generation(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,8 +289,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
     pub fn set_upfront_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upfront_cost = input;
-        self
+        self.upfront_cost = input; self
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
     pub fn get_upfront_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -314,8 +302,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
     pub fn set_monthly_recurring_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monthly_recurring_cost = input;
-        self
+        self.monthly_recurring_cost = input; self
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
     pub fn get_monthly_recurring_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -328,8 +315,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The license model that the recommended reservation supports.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The license model that the recommended reservation supports.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +328,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The database edition that the recommended reservation supports.</p>
     pub fn set_database_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_edition = input;
-        self
+        self.database_edition = input; self
     }
     /// <p>The database edition that the recommended reservation supports.</p>
     pub fn get_database_edition(&self) -> &::std::option::Option<::std::string::String> {
@@ -356,8 +341,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>The database engine that the recommended reservation supports.</p>
     pub fn set_database_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_engine = input;
-        self
+        self.database_engine = input; self
     }
     /// <p>The database engine that the recommended reservation supports.</p>
     pub fn get_database_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -370,8 +354,7 @@ impl RdsReservedInstancesConfigurationBuilder {
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
     pub fn set_deployment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_option = input;
-        self
+        self.deployment_option = input; self
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
     pub fn get_deployment_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -380,23 +363,41 @@ impl RdsReservedInstancesConfigurationBuilder {
     /// Consumes the builder and constructs a [`RdsReservedInstancesConfiguration`](crate::types::RdsReservedInstancesConfiguration).
     pub fn build(self) -> crate::types::RdsReservedInstancesConfiguration {
         crate::types::RdsReservedInstancesConfiguration {
-            account_scope: self.account_scope,
-            service: self.service,
-            normalized_units_to_purchase: self.normalized_units_to_purchase,
-            term: self.term,
-            payment_option: self.payment_option,
-            number_of_instances_to_purchase: self.number_of_instances_to_purchase,
-            instance_family: self.instance_family,
-            instance_type: self.instance_type,
-            reserved_instances_region: self.reserved_instances_region,
-            size_flex_eligible: self.size_flex_eligible,
-            current_generation: self.current_generation,
-            upfront_cost: self.upfront_cost,
-            monthly_recurring_cost: self.monthly_recurring_cost,
-            license_model: self.license_model,
-            database_edition: self.database_edition,
-            database_engine: self.database_engine,
-            deployment_option: self.deployment_option,
+            account_scope: self.account_scope
+            ,
+            service: self.service
+            ,
+            normalized_units_to_purchase: self.normalized_units_to_purchase
+            ,
+            term: self.term
+            ,
+            payment_option: self.payment_option
+            ,
+            number_of_instances_to_purchase: self.number_of_instances_to_purchase
+            ,
+            instance_family: self.instance_family
+            ,
+            instance_type: self.instance_type
+            ,
+            reserved_instances_region: self.reserved_instances_region
+            ,
+            size_flex_eligible: self.size_flex_eligible
+            ,
+            current_generation: self.current_generation
+            ,
+            upfront_cost: self.upfront_cost
+            ,
+            monthly_recurring_cost: self.monthly_recurring_cost
+            ,
+            license_model: self.license_model
+            ,
+            database_edition: self.database_edition
+            ,
+            database_engine: self.database_engine
+            ,
+            deployment_option: self.deployment_option
+            ,
         }
     }
 }
+

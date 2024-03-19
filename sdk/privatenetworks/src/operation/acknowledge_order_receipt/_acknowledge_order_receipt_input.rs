@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcknowledgeOrderReceiptInput {
+pub struct AcknowledgeOrderReceiptInput  {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub order_arn: ::std::option::Option<::std::string::String>,
 }
-impl AcknowledgeOrderReceiptInput {
+impl  AcknowledgeOrderReceiptInput  {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub fn order_arn(&self) -> ::std::option::Option<&str> {
+    pub fn order_arn(&self) -> ::std::option::Option<& str> {
         self.order_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl AcknowledgeOrderReceiptInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub fn set_order_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.order_arn = input;
-        self
+        self.order_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub fn get_order_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_arn
     }
     /// Consumes the builder and constructs a [`AcknowledgeOrderReceiptInput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput { order_arn: self.order_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput {
+                order_arn: self.order_arn
+                ,
+            }
+        )
     }
 }
+

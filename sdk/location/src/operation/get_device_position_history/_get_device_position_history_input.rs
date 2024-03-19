@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevicePositionHistoryInput {
+pub struct GetDevicePositionHistoryInput  {
     /// <p>The tracker resource receiving the request for the device position history.</p>
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The device whose position history you want to retrieve.</p>
@@ -28,18 +28,18 @@ pub struct GetDevicePositionHistoryInput {
     /// <p>Default value: <code>100</code></p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetDevicePositionHistoryInput {
+impl  GetDevicePositionHistoryInput  {
     /// <p>The tracker resource receiving the request for the device position history.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>The device whose position history you want to retrieve.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
@@ -48,7 +48,7 @@ impl GetDevicePositionHistoryInput {
     /// <li>
     /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
-    pub fn start_time_inclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time_inclusive(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time_inclusive.as_ref()
     }
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
@@ -57,7 +57,7 @@ impl GetDevicePositionHistoryInput {
     /// <li>
     /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
-    pub fn end_time_exclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time_exclusive(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time_exclusive.as_ref()
     }
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
@@ -93,8 +93,7 @@ impl GetDevicePositionHistoryInputBuilder {
     }
     /// <p>The tracker resource receiving the request for the device position history.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The tracker resource receiving the request for the device position history.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl GetDevicePositionHistoryInputBuilder {
     }
     /// <p>The device whose position history you want to retrieve.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The device whose position history you want to retrieve.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
@@ -149,8 +146,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn set_start_time_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time_inclusive = input;
-        self
+        self.start_time_inclusive = input; self
     }
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
@@ -178,8 +174,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn set_end_time_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time_exclusive = input;
-        self
+        self.end_time_exclusive = input; self
     }
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
@@ -199,8 +194,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
@@ -208,19 +202,23 @@ impl GetDevicePositionHistoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetDevicePositionHistoryInput`](crate::operation::get_device_position_history::GetDevicePositionHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_position_history::GetDevicePositionHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
-            tracker_name: self.tracker_name,
-            device_id: self.device_id,
-            next_token: self.next_token,
-            start_time_inclusive: self.start_time_inclusive,
-            end_time_exclusive: self.end_time_exclusive,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_position_history::GetDevicePositionHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
+                tracker_name: self.tracker_name
+                ,
+                device_id: self.device_id
+                ,
+                next_token: self.next_token
+                ,
+                start_time_inclusive: self.start_time_inclusive
+                ,
+                end_time_exclusive: self.end_time_exclusive
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

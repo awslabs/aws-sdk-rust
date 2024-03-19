@@ -3,7 +3,7 @@
 /// <p>Represents a metric pair for a predictive scaling policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictiveScalingPredefinedMetricPair {
+pub struct PredictiveScalingPredefinedMetricPair  {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
     pub predefined_metric_type: ::std::option::Option<crate::types::PredefinedMetricPairType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the total and average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -29,9 +29,9 @@ pub struct PredictiveScalingPredefinedMetricPair {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: ::std::option::Option<::std::string::String>,
 }
-impl PredictiveScalingPredefinedMetricPair {
+impl  PredictiveScalingPredefinedMetricPair  {
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
-    pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::PredefinedMetricPairType> {
+    pub fn predefined_metric_type(&self) -> ::std::option::Option<& crate::types::PredefinedMetricPairType> {
         self.predefined_metric_type.as_ref()
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the total and average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -55,7 +55,7 @@ impl PredictiveScalingPredefinedMetricPair {
     /// </target-group-name></p></li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn resource_label(&self) -> ::std::option::Option<&str> {
+    pub fn resource_label(&self) -> ::std::option::Option<& str> {
         self.resource_label.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl PredictiveScalingPredefinedMetricPairBuilder {
     }
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::PredefinedMetricPairType>) -> Self {
-        self.predefined_metric_type = input;
-        self
+        self.predefined_metric_type = input; self
     }
     /// <p>Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric. For example, if the metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used as the load metric, and the average CPU metric is used for the scaling metric.</p>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::PredefinedMetricPairType> {
@@ -136,8 +135,7 @@ impl PredictiveScalingPredefinedMetricPairBuilder {
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_label = input;
-        self
+        self.resource_label = input; self
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the total and average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -166,8 +164,11 @@ impl PredictiveScalingPredefinedMetricPairBuilder {
     /// Consumes the builder and constructs a [`PredictiveScalingPredefinedMetricPair`](crate::types::PredictiveScalingPredefinedMetricPair).
     pub fn build(self) -> crate::types::PredictiveScalingPredefinedMetricPair {
         crate::types::PredictiveScalingPredefinedMetricPair {
-            predefined_metric_type: self.predefined_metric_type,
-            resource_label: self.resource_label,
+            predefined_metric_type: self.predefined_metric_type
+            ,
+            resource_label: self.resource_label
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopSpeakerSearchTaskInput {
+pub struct StopSpeakerSearchTaskInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The speaker search task ID.</p>
     pub speaker_search_task_id: ::std::option::Option<::std::string::String>,
 }
-impl StopSpeakerSearchTaskInput {
+impl  StopSpeakerSearchTaskInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> ::std::option::Option<& str> {
         self.speaker_search_task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopSpeakerSearchTaskInputBuilder {
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl StopSpeakerSearchTaskInputBuilder {
     }
     /// <p>The speaker search task ID.</p>
     pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.speaker_search_task_id = input;
-        self
+        self.speaker_search_task_id = input; self
     }
     /// <p>The speaker search task ID.</p>
     pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.speaker_search_task_id
     }
     /// Consumes the builder and constructs a [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput {
-            identifier: self.identifier,
-            speaker_search_task_id: self.speaker_search_task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput {
+                identifier: self.identifier
+                ,
+                speaker_search_task_id: self.speaker_search_task_id
+                ,
+            }
+        )
     }
 }
+

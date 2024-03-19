@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetPackageVersionAssetOutput {
+pub struct GetPackageVersionAssetOutput  {
     /// <p>The binary file, or asset, that is downloaded.</p>
     pub asset: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The name of the asset that is downloaded.</p>
@@ -13,29 +13,29 @@ pub struct GetPackageVersionAssetOutput {
     pub package_version_revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPackageVersionAssetOutput {
+impl  GetPackageVersionAssetOutput  {
     /// <p>The binary file, or asset, that is downloaded.</p>
-    pub fn asset(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn asset(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.asset
     }
     /// <p>The name of the asset that is downloaded.</p>
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
+    pub fn asset_name(&self) -> ::std::option::Option<& str> {
         self.asset_name.as_deref()
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The name of the package version revision that contains the downloaded asset.</p>
-    pub fn package_version_revision(&self) -> ::std::option::Option<&str> {
+    pub fn package_version_revision(&self) -> ::std::option::Option<& str> {
         self.package_version_revision.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPackageVersionAssetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPackageVersionAssetOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionAssetOutput`](crate::operation::get_package_version_asset::GetPackageVersionAssetOutput).
     pub fn builder() -> crate::operation::get_package_version_asset::builders::GetPackageVersionAssetOutputBuilder {
@@ -61,8 +61,7 @@ impl GetPackageVersionAssetOutputBuilder {
     }
     /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn set_asset(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.asset = input;
-        self
+        self.asset = input; self
     }
     /// <p>The binary file, or asset, that is downloaded.</p>
     pub fn get_asset(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -75,8 +74,7 @@ impl GetPackageVersionAssetOutputBuilder {
     }
     /// <p>The name of the asset that is downloaded.</p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
-        self
+        self.asset_name = input; self
     }
     /// <p>The name of the asset that is downloaded.</p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetPackageVersionAssetOutputBuilder {
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,35 @@ impl GetPackageVersionAssetOutputBuilder {
     }
     /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn set_package_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version_revision = input;
-        self
+        self.package_version_revision = input; self
     }
     /// <p>The name of the package version revision that contains the downloaded asset.</p>
     pub fn get_package_version_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version_revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPackageVersionAssetOutput`](crate::operation::get_package_version_asset::GetPackageVersionAssetOutput).
     pub fn build(self) -> crate::operation::get_package_version_asset::GetPackageVersionAssetOutput {
         crate::operation::get_package_version_asset::GetPackageVersionAssetOutput {
-            asset: self.asset.unwrap_or_default(),
-            asset_name: self.asset_name,
-            package_version: self.package_version,
-            package_version_revision: self.package_version_revision,
+            asset: self.asset
+                .unwrap_or_default()
+            ,
+            asset_name: self.asset_name
+            ,
+            package_version: self.package_version
+            ,
+            package_version_revision: self.package_version_revision
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

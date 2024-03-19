@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStateMachineOutput {
+pub struct UpdateStateMachineOutput  {
     /// <p>The date and time the state machine was updated.</p>
     pub update_date: ::aws_smithy_types::DateTime,
     /// <p>The revision identifier for the updated state machine.</p>
@@ -12,26 +12,26 @@ pub struct UpdateStateMachineOutput {
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateStateMachineOutput {
+impl  UpdateStateMachineOutput  {
     /// <p>The date and time the state machine was updated.</p>
-    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date
     }
     /// <p>The revision identifier for the updated state machine.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
-    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateStateMachineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
     pub fn builder() -> crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder {
@@ -57,8 +57,7 @@ impl UpdateStateMachineOutputBuilder {
     }
     /// <p>The date and time the state machine was updated.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The date and time the state machine was updated.</p>
     pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -71,8 +70,7 @@ impl UpdateStateMachineOutputBuilder {
     }
     /// <p>The revision identifier for the updated state machine.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The revision identifier for the updated state machine.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl UpdateStateMachineOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
@@ -96,31 +93,32 @@ impl UpdateStateMachineOutputBuilder {
         &self.state_machine_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_date`](crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder::update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_state_machine::UpdateStateMachineOutput {
-            update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date",
-                    "update_date was not specified but it is required when building UpdateStateMachineOutput",
-                )
-            })?,
-            revision_id: self.revision_id,
-            state_machine_version_arn: self.state_machine_version_arn,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_state_machine::UpdateStateMachineOutput {
+                update_date: self.update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date", "update_date was not specified but it is required when building UpdateStateMachineOutput")
+                    )?
+                ,
+                revision_id: self.revision_id
+                ,
+                state_machine_version_arn: self.state_machine_version_arn
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

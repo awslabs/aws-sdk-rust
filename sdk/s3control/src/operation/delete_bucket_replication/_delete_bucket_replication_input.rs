@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBucketReplicationInput {
+pub struct DeleteBucketReplicationInput  {
     /// <p>The Amazon Web Services account ID of the Outposts bucket to delete the replication configuration for.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 on Outposts bucket to delete the replication configuration for.</p>
@@ -19,9 +19,9 @@ pub struct DeleteBucketReplicationInput {
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBucketReplicationInput {
+impl  DeleteBucketReplicationInput  {
     /// <p>The Amazon Web Services account ID of the Outposts bucket to delete the replication configuration for.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Specifies the S3 on Outposts bucket to delete the replication configuration for.</p>
@@ -36,7 +36,7 @@ impl DeleteBucketReplicationInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl DeleteBucketReplicationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Outposts bucket to delete the replication configuration for.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Outposts bucket to delete the replication configuration for.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl DeleteBucketReplicationInputBuilder {
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Specifies the S3 on Outposts bucket to delete the replication configuration for.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
@@ -119,15 +117,15 @@ impl DeleteBucketReplicationInputBuilder {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`DeleteBucketReplicationInput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bucket_replication::DeleteBucketReplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
-            account_id: self.account_id,
-            bucket: self.bucket,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket_replication::DeleteBucketReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecoveryInstancesOutput {
+pub struct DescribeRecoveryInstancesOutput  {
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of Recovery Instances.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryInstance>>,
     _request_id: Option<String>,
 }
-impl DescribeRecoveryInstancesOutput {
+impl  DescribeRecoveryInstancesOutput  {
     /// <p>The token of the next Recovery Instance to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of Recovery Instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::RecoveryInstance] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::RecoveryInstance] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRecoveryInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRecoveryInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput).
     pub fn builder() -> crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeRecoveryInstancesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryInstancesOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeRecoveryInstancesOutputBuilder {
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeRecoveryInstancesOutputBuilder {
     /// <p>An array of Recovery Instances.</p>
     pub fn items(mut self, input: crate::types::RecoveryInstance) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Recovery Instances.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryInstance>>) -> Self {
+        self.items = input; self
     }
     /// <p>An array of Recovery Instances.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstance>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecoveryInstance>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesOutput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput).
     pub fn build(self) -> crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput {
         crate::operation::describe_recovery_instances::DescribeRecoveryInstancesOutput {
-            next_token: self.next_token,
-            items: self.items,
+            next_token: self.next_token
+            ,
+            items: self.items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

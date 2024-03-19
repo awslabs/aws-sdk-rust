@@ -3,33 +3,34 @@
 /// <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstancesHealthInput {
+pub struct DescribeInstancesHealthInput  {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::InstancesHealthAttribute>>,
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInstancesHealthInput {
+impl  DescribeInstancesHealthInput  {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[crate::types::InstancesHealthAttribute] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [crate::types::InstancesHealthAttribute] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl DescribeInstancesHealthInput {
 pub struct DescribeInstancesHealthInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::InstancesHealthAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstancesHealthInputBuilder {
@@ -57,8 +58,7 @@ impl DescribeInstancesHealthInputBuilder {
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl DescribeInstancesHealthInputBuilder {
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl DescribeInstancesHealthInputBuilder {
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
     pub fn attribute_names(mut self, input: crate::types::InstancesHealthAttribute) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input);
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstancesHealthAttribute>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstancesHealthAttribute>> {
         &self.attribute_names
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
@@ -105,25 +103,26 @@ impl DescribeInstancesHealthInputBuilder {
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInstancesHealthInput`](crate::operation::describe_instances_health::DescribeInstancesHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instances_health::DescribeInstancesHealthInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_instances_health::DescribeInstancesHealthInput {
-            environment_name: self.environment_name,
-            environment_id: self.environment_id,
-            attribute_names: self.attribute_names,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instances_health::DescribeInstancesHealthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_instances_health::DescribeInstancesHealthInput {
+                environment_name: self.environment_name
+                ,
+                environment_id: self.environment_id
+                ,
+                attribute_names: self.attribute_names
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

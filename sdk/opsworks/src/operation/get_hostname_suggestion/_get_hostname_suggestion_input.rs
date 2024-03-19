@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostnameSuggestionInput {
+pub struct GetHostnameSuggestionInput  {
     /// <p>The layer ID.</p>
     pub layer_id: ::std::option::Option<::std::string::String>,
 }
-impl GetHostnameSuggestionInput {
+impl  GetHostnameSuggestionInput  {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> ::std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<& str> {
         self.layer_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetHostnameSuggestionInputBuilder {
     }
     /// <p>The layer ID.</p>
     pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_id = input;
-        self
+        self.layer_id = input; self
     }
     /// <p>The layer ID.</p>
     pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.layer_id
     }
     /// Consumes the builder and constructs a [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput { layer_id: self.layer_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput {
+                layer_id: self.layer_id
+                ,
+            }
+        )
     }
 }
+

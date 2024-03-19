@@ -3,13 +3,13 @@
 /// <p>Describes the storage location for an instance store-backed AMI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Storage {
+pub struct Storage  {
     /// <p>An Amazon S3 storage location.</p>
     pub s3: ::std::option::Option<crate::types::S3Storage>,
 }
-impl Storage {
+impl  Storage  {
     /// <p>An Amazon S3 storage location.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Storage> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3Storage> {
         self.s3.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StorageBuilder {
     }
     /// <p>An Amazon S3 storage location.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Storage>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>An Amazon S3 storage location.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Storage> {
@@ -43,6 +42,10 @@ impl StorageBuilder {
     }
     /// Consumes the builder and constructs a [`Storage`](crate::types::Storage).
     pub fn build(self) -> crate::types::Storage {
-        crate::types::Storage { s3: self.s3 }
+        crate::types::Storage {
+            s3: self.s3
+            ,
+        }
     }
 }
+

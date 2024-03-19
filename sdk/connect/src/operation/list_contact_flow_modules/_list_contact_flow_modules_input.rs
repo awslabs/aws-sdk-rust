@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactFlowModulesInput {
+pub struct ListContactFlowModulesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -12,13 +12,13 @@ pub struct ListContactFlowModulesInput {
     /// <p>The state of the flow module.</p>
     pub contact_flow_module_state: ::std::option::Option<crate::types::ContactFlowModuleState>,
 }
-impl ListContactFlowModulesInput {
+impl  ListContactFlowModulesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -26,7 +26,7 @@ impl ListContactFlowModulesInput {
         self.max_results
     }
     /// <p>The state of the flow module.</p>
-    pub fn contact_flow_module_state(&self) -> ::std::option::Option<&crate::types::ContactFlowModuleState> {
+    pub fn contact_flow_module_state(&self) -> ::std::option::Option<& crate::types::ContactFlowModuleState> {
         self.contact_flow_module_state.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListContactFlowModulesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListContactFlowModulesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListContactFlowModulesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl ListContactFlowModulesInputBuilder {
     }
     /// <p>The state of the flow module.</p>
     pub fn set_contact_flow_module_state(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
-        self.contact_flow_module_state = input;
-        self
+        self.contact_flow_module_state = input; self
     }
     /// <p>The state of the flow module.</p>
     pub fn get_contact_flow_module_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
         &self.contact_flow_module_state
     }
     /// Consumes the builder and constructs a [`ListContactFlowModulesInput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_flow_modules::ListContactFlowModulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_contact_flow_modules::ListContactFlowModulesInput {
-            instance_id: self.instance_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            contact_flow_module_state: self.contact_flow_module_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contact_flow_modules::ListContactFlowModulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_contact_flow_modules::ListContactFlowModulesInput {
+                instance_id: self.instance_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                contact_flow_module_state: self.contact_flow_module_state
+                ,
+            }
+        )
     }
 }
+

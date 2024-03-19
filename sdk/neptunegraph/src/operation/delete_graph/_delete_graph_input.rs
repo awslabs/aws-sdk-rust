@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGraphInput {
+pub struct DeleteGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a final graph snapshot is created before the graph is deleted. If <code>true</code> is specified, no graph snapshot is created. If <code>false</code> is specified, a graph snapshot is created before the graph is deleted.</p>
     pub skip_snapshot: ::std::option::Option<bool>,
 }
-impl DeleteGraphInput {
+impl  DeleteGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>Determines whether a final graph snapshot is created before the graph is deleted. If <code>true</code> is specified, no graph snapshot is created. If <code>false</code> is specified, a graph snapshot is created before the graph is deleted.</p>
@@ -41,8 +41,7 @@ impl DeleteGraphInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteGraphInputBuilder {
     }
     /// <p>Determines whether a final graph snapshot is created before the graph is deleted. If <code>true</code> is specified, no graph snapshot is created. If <code>false</code> is specified, a graph snapshot is created before the graph is deleted.</p>
     pub fn set_skip_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_snapshot = input;
-        self
+        self.skip_snapshot = input; self
     }
     /// <p>Determines whether a final graph snapshot is created before the graph is deleted. If <code>true</code> is specified, no graph snapshot is created. If <code>false</code> is specified, a graph snapshot is created before the graph is deleted.</p>
     pub fn get_skip_snapshot(&self) -> &::std::option::Option<bool> {
@@ -65,9 +63,14 @@ impl DeleteGraphInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteGraphInput`](crate::operation::delete_graph::DeleteGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_graph::DeleteGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_graph::DeleteGraphInput {
-            graph_identifier: self.graph_identifier,
-            skip_snapshot: self.skip_snapshot,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_graph::DeleteGraphInput {
+                graph_identifier: self.graph_identifier
+                ,
+                skip_snapshot: self.skip_snapshot
+                ,
+            }
+        )
     }
 }
+

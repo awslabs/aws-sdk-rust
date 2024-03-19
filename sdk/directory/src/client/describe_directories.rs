@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDirectories`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_ids(impl Into<String>)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::directory_ids) / [`set_directory_ids(Option<Vec::<String>>)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::set_directory_ids):<br>required: **false**<br><p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p><br>
-    /// - On success, responds with [`DescribeDirectoriesOutput`](crate::operation::describe_directories::DescribeDirectoriesOutput) with field(s):
+                            /// - On success, responds with [`DescribeDirectoriesOutput`](crate::operation::describe_directories::DescribeDirectoriesOutput) with field(s):
     ///   - [`directory_descriptions(Option<Vec::<DirectoryDescription>>)`](crate::operation::describe_directories::DescribeDirectoriesOutput::directory_descriptions): <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p> <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_directories::DescribeDirectoriesOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<DescribeDirectoriesError>`](crate::operation::describe_directories::DescribeDirectoriesError)
+                            /// - On failure, responds with [`SdkError<DescribeDirectoriesError>`](crate::operation::describe_directories::DescribeDirectoriesError)
     pub fn describe_directories(&self) -> crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder {
-        crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

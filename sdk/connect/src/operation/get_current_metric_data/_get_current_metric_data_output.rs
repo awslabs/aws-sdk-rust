@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCurrentMetricDataOutput {
+pub struct GetCurrentMetricDataOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the real-time metrics.</p>
-    pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
+    pub metric_results: ::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub data_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl GetCurrentMetricDataOutput {
+impl  GetCurrentMetricDataOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the real-time metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_results.is_none()`.
-    pub fn metric_results(&self) -> &[crate::types::CurrentMetricResult] {
-        self.metric_results.as_deref().unwrap_or_default()
+    pub fn metric_results(&self) -> & [crate::types::CurrentMetricResult] {
+        self.metric_results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-    pub fn data_snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_snapshot_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_snapshot_time.as_ref()
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
@@ -36,10 +37,10 @@ impl GetCurrentMetricDataOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetCurrentMetricDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCurrentMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentMetricDataOutput`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput).
     pub fn builder() -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataOutputBuilder {
@@ -52,7 +53,7 @@ impl GetCurrentMetricDataOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentMetricDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
+    pub(crate) metric_results: ::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricResult>>,
     pub(crate) data_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -67,8 +68,7 @@ impl GetCurrentMetricDataOutputBuilder {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
@@ -82,17 +82,16 @@ impl GetCurrentMetricDataOutputBuilder {
     /// <p>Information about the real-time metrics.</p>
     pub fn metric_results(mut self, input: crate::types::CurrentMetricResult) -> Self {
         let mut v = self.metric_results.unwrap_or_default();
-        v.push(input);
-        self.metric_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the real-time metrics.</p>
-    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>) -> Self {
-        self.metric_results = input;
-        self
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricResult>>) -> Self {
+        self.metric_results = input; self
     }
     /// <p>Information about the real-time metrics.</p>
-    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>> {
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CurrentMetricResult>> {
         &self.metric_results
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
@@ -102,8 +101,7 @@ impl GetCurrentMetricDataOutputBuilder {
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub fn set_data_snapshot_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_snapshot_time = input;
-        self
+        self.data_snapshot_time = input; self
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub fn get_data_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,30 +114,34 @@ impl GetCurrentMetricDataOutputBuilder {
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCurrentMetricDataOutput`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput).
     pub fn build(self) -> crate::operation::get_current_metric_data::GetCurrentMetricDataOutput {
         crate::operation::get_current_metric_data::GetCurrentMetricDataOutput {
-            next_token: self.next_token,
-            metric_results: self.metric_results,
-            data_snapshot_time: self.data_snapshot_time,
-            approximate_total_count: self.approximate_total_count,
+            next_token: self.next_token
+            ,
+            metric_results: self.metric_results
+            ,
+            data_snapshot_time: self.data_snapshot_time
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

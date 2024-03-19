@@ -3,7 +3,7 @@
 /// <p>Describes the properties of a file transfer protocol-enabled server that was specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribedServer {
+pub struct DescribedServer  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
     pub arn: ::std::string::String,
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -68,7 +68,7 @@ pub struct DescribedServer {
     /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
@@ -77,7 +77,7 @@ pub struct DescribedServer {
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub user_count: ::std::option::Option<i32>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
@@ -89,22 +89,21 @@ pub struct DescribedServer {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p><code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code></p>
-    pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub structured_log_destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
     /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
-    pub as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribedServer {
+impl  DescribedServer  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The protocol settings that are configured for your server.</p>
@@ -118,49 +117,49 @@ impl DescribedServer {
     /// <li>
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
-    pub fn protocol_details(&self) -> ::std::option::Option<&crate::types::ProtocolDetails> {
+    pub fn protocol_details(&self) -> ::std::option::Option<& crate::types::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
-    pub fn endpoint_details(&self) -> ::std::option::Option<&crate::types::EndpointDetails> {
+    pub fn endpoint_details(&self) -> ::std::option::Option<& crate::types::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::EndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& crate::types::EndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
-    pub fn host_key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn host_key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.host_key_fingerprint.as_deref()
     }
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
-    pub fn identity_provider_details(&self) -> ::std::option::Option<&crate::types::IdentityProviderDetails> {
+    pub fn identity_provider_details(&self) -> ::std::option::Option<& crate::types::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<& crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
-    pub fn logging_role(&self) -> ::std::option::Option<&str> {
+    pub fn logging_role(&self) -> ::std::option::Option<& str> {
         self.logging_role.as_deref()
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
-    pub fn post_authentication_login_banner(&self) -> ::std::option::Option<&str> {
+    pub fn post_authentication_login_banner(&self) -> ::std::option::Option<& str> {
         self.post_authentication_login_banner.as_deref()
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p><code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code></p>
-    pub fn pre_authentication_login_banner(&self) -> ::std::option::Option<&str> {
+    pub fn pre_authentication_login_banner(&self) -> ::std::option::Option<& str> {
         self.pre_authentication_login_banner.as_deref()
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
@@ -187,29 +186,31 @@ impl DescribedServer {
     /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[crate::types::Protocol] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [crate::types::Protocol] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_policy_name(&self) -> ::std::option::Option<& str> {
         self.security_policy_name.as_deref()
     }
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn user_count(&self) -> ::std::option::Option<i32> {
@@ -217,7 +218,7 @@ impl DescribedServer {
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
-    pub fn workflow_details(&self) -> ::std::option::Option<&crate::types::WorkflowDetails> {
+    pub fn workflow_details(&self) -> ::std::option::Option<& crate::types::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
     /// <p>Specifies the log groups to which your server logs are sent.</p>
@@ -226,22 +227,24 @@ impl DescribedServer {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p><code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.structured_log_destinations.is_none()`.
-    pub fn structured_log_destinations(&self) -> &[::std::string::String] {
-        self.structured_log_destinations.as_deref().unwrap_or_default()
+    pub fn structured_log_destinations(&self) -> & [::std::string::String] {
+        self.structured_log_destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
-    pub fn s3_storage_options(&self) -> ::std::option::Option<&crate::types::S3StorageOptions> {
+    pub fn s3_storage_options(&self) -> ::std::option::Option<& crate::types::S3StorageOptions> {
         self.s3_storage_options.as_ref()
     }
     /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.as2_service_managed_egress_ip_addresses.is_none()`.
-    pub fn as2_service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
-        self.as2_service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
+    pub fn as2_service_managed_egress_ip_addresses(&self) -> & [::std::string::String] {
+        self.as2_service_managed_egress_ip_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribedServer {
@@ -267,16 +270,16 @@ pub struct DescribedServerBuilder {
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) post_authentication_login_banner: ::std::option::Option<::std::string::String>,
     pub(crate) pre_authentication_login_banner: ::std::option::Option<::std::string::String>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
-    pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
-    pub(crate) as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -287,8 +290,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +303,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +336,7 @@ impl DescribedServerBuilder {
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub fn set_protocol_details(mut self, input: ::std::option::Option<crate::types::ProtocolDetails>) -> Self {
-        self.protocol_details = input;
-        self
+        self.protocol_details = input; self
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
@@ -359,8 +359,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
@@ -373,8 +372,7 @@ impl DescribedServerBuilder {
     }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::EndpointDetails>) -> Self {
-        self.endpoint_details = input;
-        self
+        self.endpoint_details = input; self
     }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::EndpointDetails> {
@@ -387,8 +385,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
-        self.endpoint_type = input;
-        self
+        self.endpoint_type = input; self
     }
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
@@ -401,8 +398,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
     pub fn set_host_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_key_fingerprint = input;
-        self
+        self.host_key_fingerprint = input; self
     }
     /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
     pub fn get_host_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -415,8 +411,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
     pub fn set_identity_provider_details(mut self, input: ::std::option::Option<crate::types::IdentityProviderDetails>) -> Self {
-        self.identity_provider_details = input;
-        self
+        self.identity_provider_details = input; self
     }
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
     pub fn get_identity_provider_details(&self) -> &::std::option::Option<crate::types::IdentityProviderDetails> {
@@ -435,8 +430,7 @@ impl DescribedServerBuilder {
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
-        self.identity_provider_type = input;
-        self
+        self.identity_provider_type = input; self
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
@@ -452,8 +446,7 @@ impl DescribedServerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_role = input;
-        self
+        self.logging_role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -470,8 +463,7 @@ impl DescribedServerBuilder {
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn set_post_authentication_login_banner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.post_authentication_login_banner = input;
-        self
+        self.post_authentication_login_banner = input; self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
@@ -488,8 +480,7 @@ impl DescribedServerBuilder {
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p><code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code></p>
     pub fn set_pre_authentication_login_banner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_authentication_login_banner = input;
-        self
+        self.pre_authentication_login_banner = input; self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p><code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code></p>
@@ -526,9 +517,9 @@ impl DescribedServerBuilder {
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -554,9 +545,8 @@ impl DescribedServerBuilder {
     /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
@@ -582,7 +572,7 @@ impl DescribedServerBuilder {
     /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Protocol>> {
         &self.protocols
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -592,8 +582,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_policy_name = input;
-        self
+        self.security_policy_name = input; self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -606,8 +595,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -622,8 +610,7 @@ impl DescribedServerBuilder {
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
@@ -637,17 +624,16 @@ impl DescribedServerBuilder {
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
@@ -657,8 +643,7 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn set_user_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.user_count = input;
-        self
+        self.user_count = input; self
     }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn get_user_count(&self) -> &::std::option::Option<i32> {
@@ -673,8 +658,7 @@ impl DescribedServerBuilder {
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     pub fn set_workflow_details(mut self, input: ::std::option::Option<crate::types::WorkflowDetails>) -> Self {
-        self.workflow_details = input;
-        self
+        self.workflow_details = input; self
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
@@ -693,9 +677,9 @@ impl DescribedServerBuilder {
     /// <p><code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code></p>
     pub fn structured_log_destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.structured_log_destinations.unwrap_or_default();
-        v.push(input.into());
-        self.structured_log_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.structured_log_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the log groups to which your server logs are sent.</p>
     /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
@@ -703,9 +687,8 @@ impl DescribedServerBuilder {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p><code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code></p>
-    pub fn set_structured_log_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.structured_log_destinations = input;
-        self
+    pub fn set_structured_log_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.structured_log_destinations = input; self
     }
     /// <p>Specifies the log groups to which your server logs are sent.</p>
     /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
@@ -713,7 +696,7 @@ impl DescribedServerBuilder {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p><code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code></p>
-    pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.structured_log_destinations
     }
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
@@ -725,8 +708,7 @@ impl DescribedServerBuilder {
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn set_s3_storage_options(mut self, input: ::std::option::Option<crate::types::S3StorageOptions>) -> Self {
-        self.s3_storage_options = input;
-        self
+        self.s3_storage_options = input; self
     }
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
@@ -741,53 +723,75 @@ impl DescribedServerBuilder {
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
     pub fn as2_service_managed_egress_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.as2_service_managed_egress_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.as2_service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.as2_service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
-    pub fn set_as2_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.as2_service_managed_egress_ip_addresses = input;
-        self
+    pub fn set_as2_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.as2_service_managed_egress_ip_addresses = input; self
     }
     /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
     /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
-    pub fn get_as2_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_as2_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.as2_service_managed_egress_ip_addresses
     }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedServerBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedServer, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedServer {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedServer",
-                )
-            })?,
-            certificate: self.certificate,
-            protocol_details: self.protocol_details,
-            domain: self.domain,
-            endpoint_details: self.endpoint_details,
-            endpoint_type: self.endpoint_type,
-            host_key_fingerprint: self.host_key_fingerprint,
-            identity_provider_details: self.identity_provider_details,
-            identity_provider_type: self.identity_provider_type,
-            logging_role: self.logging_role,
-            post_authentication_login_banner: self.post_authentication_login_banner,
-            pre_authentication_login_banner: self.pre_authentication_login_banner,
-            protocols: self.protocols,
-            security_policy_name: self.security_policy_name,
-            server_id: self.server_id,
-            state: self.state,
-            tags: self.tags,
-            user_count: self.user_count,
-            workflow_details: self.workflow_details,
-            structured_log_destinations: self.structured_log_destinations,
-            s3_storage_options: self.s3_storage_options,
-            as2_service_managed_egress_ip_addresses: self.as2_service_managed_egress_ip_addresses,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedServer {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedServer")
+                    )?
+                ,
+                certificate: self.certificate
+                ,
+                protocol_details: self.protocol_details
+                ,
+                domain: self.domain
+                ,
+                endpoint_details: self.endpoint_details
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                host_key_fingerprint: self.host_key_fingerprint
+                ,
+                identity_provider_details: self.identity_provider_details
+                ,
+                identity_provider_type: self.identity_provider_type
+                ,
+                logging_role: self.logging_role
+                ,
+                post_authentication_login_banner: self.post_authentication_login_banner
+                ,
+                pre_authentication_login_banner: self.pre_authentication_login_banner
+                ,
+                protocols: self.protocols
+                ,
+                security_policy_name: self.security_policy_name
+                ,
+                server_id: self.server_id
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                user_count: self.user_count
+                ,
+                workflow_details: self.workflow_details
+                ,
+                structured_log_destinations: self.structured_log_destinations
+                ,
+                s3_storage_options: self.s3_storage_options
+                ,
+                as2_service_managed_egress_ip_addresses: self.as2_service_managed_egress_ip_addresses
+                ,
+            }
+        )
     }
 }
+

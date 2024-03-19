@@ -3,19 +3,19 @@
 /// <p>The SageMaker Savings Plans recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SageMakerSavingsPlans {
+pub struct SageMakerSavingsPlans  {
     /// <p>The SageMaker Savings Plans configuration used for recommendations.</p>
     pub configuration: ::std::option::Option<crate::types::SageMakerSavingsPlansConfiguration>,
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::SavingsPlansCostCalculation>,
 }
-impl SageMakerSavingsPlans {
+impl  SageMakerSavingsPlans  {
     /// <p>The SageMaker Savings Plans configuration used for recommendations.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::SageMakerSavingsPlansConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::SageMakerSavingsPlansConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::SavingsPlansCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::SavingsPlansCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SageMakerSavingsPlansBuilder {
     }
     /// <p>The SageMaker Savings Plans configuration used for recommendations.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::SageMakerSavingsPlansConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The SageMaker Savings Plans configuration used for recommendations.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::SageMakerSavingsPlansConfiguration> {
@@ -55,8 +54,7 @@ impl SageMakerSavingsPlansBuilder {
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::SavingsPlansCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::SavingsPlansCostCalculation> {
@@ -65,8 +63,11 @@ impl SageMakerSavingsPlansBuilder {
     /// Consumes the builder and constructs a [`SageMakerSavingsPlans`](crate::types::SageMakerSavingsPlans).
     pub fn build(self) -> crate::types::SageMakerSavingsPlans {
         crate::types::SageMakerSavingsPlans {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

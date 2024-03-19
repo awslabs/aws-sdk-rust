@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExecutions`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_id(impl Into<String>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task.</p><br>
     ///   - [`state(ExecutionState)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::state) / [`set_state(Option<ExecutionState>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::set_state):<br>required: **false**<br><p>A structure used to filter the tasks by their current state.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tasks to list per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_executions::builders::ListExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to continue to the next page of tasks.</p><br>
-    /// - On success, responds with [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput) with field(s):
     ///   - [`executions(Option<Vec::<ExecutionSummary>>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_executions::ListExecutionsOutput::next_token): <p>A pagination token to continue to the next page of executions.</p>
-    /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
     pub fn list_executions(&self) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
-        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

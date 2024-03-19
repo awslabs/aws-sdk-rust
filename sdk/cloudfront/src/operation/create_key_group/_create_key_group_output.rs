@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyGroupOutput {
+pub struct CreateKeyGroupOutput  {
     /// <p>The key group that was just created.</p>
     pub key_group: ::std::option::Option<crate::types::KeyGroup>,
     /// <p>The URL of the key group.</p>
@@ -11,25 +11,25 @@ pub struct CreateKeyGroupOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateKeyGroupOutput {
+impl  CreateKeyGroupOutput  {
     /// <p>The key group that was just created.</p>
-    pub fn key_group(&self) -> ::std::option::Option<&crate::types::KeyGroup> {
+    pub fn key_group(&self) -> ::std::option::Option<& crate::types::KeyGroup> {
         self.key_group.as_ref()
     }
     /// <p>The URL of the key group.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The identifier for this version of the key group.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKeyGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKeyGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyGroupOutput`](crate::operation::create_key_group::CreateKeyGroupOutput).
     pub fn builder() -> crate::operation::create_key_group::builders::CreateKeyGroupOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateKeyGroupOutputBuilder {
     }
     /// <p>The key group that was just created.</p>
     pub fn set_key_group(mut self, input: ::std::option::Option<crate::types::KeyGroup>) -> Self {
-        self.key_group = input;
-        self
+        self.key_group = input; self
     }
     /// <p>The key group that was just created.</p>
     pub fn get_key_group(&self) -> &::std::option::Option<crate::types::KeyGroup> {
@@ -68,8 +67,7 @@ impl CreateKeyGroupOutputBuilder {
     }
     /// <p>The URL of the key group.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The URL of the key group.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateKeyGroupOutputBuilder {
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKeyGroupOutput`](crate::operation::create_key_group::CreateKeyGroupOutput).
     pub fn build(self) -> crate::operation::create_key_group::CreateKeyGroupOutput {
         crate::operation::create_key_group::CreateKeyGroupOutput {
-            key_group: self.key_group,
-            location: self.location,
-            e_tag: self.e_tag,
+            key_group: self.key_group
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,46 +3,46 @@
 /// <p>Data model for a batch load task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataModel {
+pub struct DataModel  {
     /// <p>Source column to be mapped to time.</p>
     pub time_column: ::std::option::Option<::std::string::String>,
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>Source to target mappings for dimensions.</p>
-    pub dimension_mappings: ::std::vec::Vec<crate::types::DimensionMapping>,
+    pub dimension_mappings: ::std::vec::Vec::<crate::types::DimensionMapping>,
     /// <p>Source to target mappings for multi-measure records.</p>
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Source to target mappings for measures.</p>
-    pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::MixedMeasureMapping>>,
     /// <p></p>
     pub measure_name_column: ::std::option::Option<::std::string::String>,
 }
-impl DataModel {
+impl  DataModel  {
     /// <p>Source column to be mapped to time.</p>
-    pub fn time_column(&self) -> ::std::option::Option<&str> {
+    pub fn time_column(&self) -> ::std::option::Option<& str> {
         self.time_column.as_deref()
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
-    pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
+    pub fn time_unit(&self) -> ::std::option::Option<& crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn dimension_mappings(&self) -> &[crate::types::DimensionMapping] {
-        use std::ops::Deref;
-        self.dimension_mappings.deref()
+    pub fn dimension_mappings(&self) -> & [crate::types::DimensionMapping] {
+        use std::ops::Deref; self.dimension_mappings.deref()
     }
     /// <p>Source to target mappings for multi-measure records.</p>
-    pub fn multi_measure_mappings(&self) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
+    pub fn multi_measure_mappings(&self) -> ::std::option::Option<& crate::types::MultiMeasureMappings> {
         self.multi_measure_mappings.as_ref()
     }
     /// <p>Source to target mappings for measures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mixed_measure_mappings.is_none()`.
-    pub fn mixed_measure_mappings(&self) -> &[crate::types::MixedMeasureMapping] {
-        self.mixed_measure_mappings.as_deref().unwrap_or_default()
+    pub fn mixed_measure_mappings(&self) -> & [crate::types::MixedMeasureMapping] {
+        self.mixed_measure_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    pub fn measure_name_column(&self) -> ::std::option::Option<&str> {
+    pub fn measure_name_column(&self) -> ::std::option::Option<& str> {
         self.measure_name_column.as_deref()
     }
 }
@@ -59,9 +59,9 @@ impl DataModel {
 pub struct DataModelBuilder {
     pub(crate) time_column: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
-    pub(crate) dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
+    pub(crate) dimension_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionMapping>>,
     pub(crate) multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
-    pub(crate) mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub(crate) mixed_measure_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::MixedMeasureMapping>>,
     pub(crate) measure_name_column: ::std::option::Option<::std::string::String>,
 }
 impl DataModelBuilder {
@@ -72,8 +72,7 @@ impl DataModelBuilder {
     }
     /// <p>Source column to be mapped to time.</p>
     pub fn set_time_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_column = input;
-        self
+        self.time_column = input; self
     }
     /// <p>Source column to be mapped to time.</p>
     pub fn get_time_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl DataModelBuilder {
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
-        self.time_unit = input;
-        self
+        self.time_unit = input; self
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
@@ -100,17 +98,16 @@ impl DataModelBuilder {
     /// <p>Source to target mappings for dimensions.</p>
     pub fn dimension_mappings(mut self, input: crate::types::DimensionMapping) -> Self {
         let mut v = self.dimension_mappings.unwrap_or_default();
-        v.push(input);
-        self.dimension_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn set_dimension_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>) -> Self {
-        self.dimension_mappings = input;
-        self
+    pub fn set_dimension_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionMapping>>) -> Self {
+        self.dimension_mappings = input; self
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn get_dimension_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
+    pub fn get_dimension_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionMapping>> {
         &self.dimension_mappings
     }
     /// <p>Source to target mappings for multi-measure records.</p>
@@ -120,8 +117,7 @@ impl DataModelBuilder {
     }
     /// <p>Source to target mappings for multi-measure records.</p>
     pub fn set_multi_measure_mappings(mut self, input: ::std::option::Option<crate::types::MultiMeasureMappings>) -> Self {
-        self.multi_measure_mappings = input;
-        self
+        self.multi_measure_mappings = input; self
     }
     /// <p>Source to target mappings for multi-measure records.</p>
     pub fn get_multi_measure_mappings(&self) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
@@ -134,17 +130,16 @@ impl DataModelBuilder {
     /// <p>Source to target mappings for measures.</p>
     pub fn mixed_measure_mappings(mut self, input: crate::types::MixedMeasureMapping) -> Self {
         let mut v = self.mixed_measure_mappings.unwrap_or_default();
-        v.push(input);
-        self.mixed_measure_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mixed_measure_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn set_mixed_measure_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>) -> Self {
-        self.mixed_measure_mappings = input;
-        self
+    pub fn set_mixed_measure_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MixedMeasureMapping>>) -> Self {
+        self.mixed_measure_mappings = input; self
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn get_mixed_measure_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
+    pub fn get_mixed_measure_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MixedMeasureMapping>> {
         &self.mixed_measure_mappings
     }
     /// <p></p>
@@ -154,8 +149,7 @@ impl DataModelBuilder {
     }
     /// <p></p>
     pub fn set_measure_name_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.measure_name_column = input;
-        self
+        self.measure_name_column = input; self
     }
     /// <p></p>
     pub fn get_measure_name_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,18 +159,25 @@ impl DataModelBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_mappings`](crate::types::builders::DataModelBuilder::dimension_mappings)
     pub fn build(self) -> ::std::result::Result<crate::types::DataModel, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataModel {
-            time_column: self.time_column,
-            time_unit: self.time_unit,
-            dimension_mappings: self.dimension_mappings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_mappings",
-                    "dimension_mappings was not specified but it is required when building DataModel",
-                )
-            })?,
-            multi_measure_mappings: self.multi_measure_mappings,
-            mixed_measure_mappings: self.mixed_measure_mappings,
-            measure_name_column: self.measure_name_column,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataModel {
+                time_column: self.time_column
+                ,
+                time_unit: self.time_unit
+                ,
+                dimension_mappings: self.dimension_mappings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_mappings", "dimension_mappings was not specified but it is required when building DataModel")
+                    )?
+                ,
+                multi_measure_mappings: self.multi_measure_mappings
+                ,
+                mixed_measure_mappings: self.mixed_measure_mappings
+                ,
+                measure_name_column: self.measure_name_column
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a scan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanSummary {
+pub struct ScanSummary  {
     /// <p>The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>.</p>
     pub scan_state: crate::types::ScanState,
     /// <p>The time when the scan was created.</p>
@@ -17,31 +17,29 @@ pub struct ScanSummary {
     /// <p>The ARN for the scan name.</p>
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
 }
-impl ScanSummary {
+impl  ScanSummary  {
     /// <p>The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>.</p>
-    pub fn scan_state(&self) -> &crate::types::ScanState {
+    pub fn scan_state(&self) -> & crate::types::ScanState {
         &self.scan_state
     }
     /// <p>The time when the scan was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The name of the scan.</p>
-    pub fn scan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_name.deref()
+    pub fn scan_name(&self) -> & str {
+        use std::ops::Deref; self.scan_name.deref()
     }
     /// <p>The identifier for the scan run.</p>
-    pub fn run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.run_id.deref()
+    pub fn run_id(&self) -> & str {
+        use std::ops::Deref; self.run_id.deref()
     }
     /// <p>The ARN for the scan name.</p>
-    pub fn scan_name_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name_arn(&self) -> ::std::option::Option<& str> {
         self.scan_name_arn.as_deref()
     }
 }
@@ -72,8 +70,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>.</p>
     pub fn set_scan_state(mut self, input: ::std::option::Option<crate::types::ScanState>) -> Self {
-        self.scan_state = input;
-        self
+        self.scan_state = input; self
     }
     /// <p>The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>.</p>
     pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ScanState> {
@@ -87,8 +84,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The time when the scan was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the scan was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +97,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,8 +111,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The name of the scan.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The identifier for the scan run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The identifier for the scan run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +138,7 @@ impl ScanSummaryBuilder {
     }
     /// <p>The ARN for the scan name.</p>
     pub fn set_scan_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name_arn = input;
-        self
+        self.scan_name_arn = input; self
     }
     /// <p>The ARN for the scan name.</p>
     pub fn get_scan_name_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,33 +151,34 @@ impl ScanSummaryBuilder {
     /// - [`scan_name`](crate::types::builders::ScanSummaryBuilder::scan_name)
     /// - [`run_id`](crate::types::builders::ScanSummaryBuilder::run_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ScanSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScanSummary {
-            scan_state: self.scan_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_state",
-                    "scan_state was not specified but it is required when building ScanSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ScanSummary",
-                )
-            })?,
-            updated_at: self.updated_at,
-            scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_name",
-                    "scan_name was not specified but it is required when building ScanSummary",
-                )
-            })?,
-            run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_id",
-                    "run_id was not specified but it is required when building ScanSummary",
-                )
-            })?,
-            scan_name_arn: self.scan_name_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScanSummary {
+                scan_state: self.scan_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_state", "scan_state was not specified but it is required when building ScanSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ScanSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                ,
+                scan_name: self.scan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_name", "scan_name was not specified but it is required when building ScanSummary")
+                    )?
+                ,
+                run_id: self.run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_id", "run_id was not specified but it is required when building ScanSummary")
+                    )?
+                ,
+                scan_name_arn: self.scan_name_arn
+                ,
+            }
+        )
     }
 }
+

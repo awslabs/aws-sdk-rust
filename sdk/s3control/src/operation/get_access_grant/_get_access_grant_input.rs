@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessGrantInput {
+pub struct GetAccessGrantInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
     pub access_grant_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessGrantInput {
+impl  GetAccessGrantInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
-    pub fn access_grant_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grant_id(&self) -> ::std::option::Option<& str> {
         self.access_grant_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAccessGrantInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetAccessGrantInputBuilder {
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
     pub fn set_access_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grant_id = input;
-        self
+        self.access_grant_id = input; self
     }
     /// <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p>
     pub fn get_access_grant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_grant_id
     }
     /// Consumes the builder and constructs a [`GetAccessGrantInput`](crate::operation::get_access_grant::GetAccessGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_access_grant::GetAccessGrantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_access_grant::GetAccessGrantInput {
-            account_id: self.account_id,
-            access_grant_id: self.access_grant_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_grant::GetAccessGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_access_grant::GetAccessGrantInput {
+                account_id: self.account_id
+                ,
+                access_grant_id: self.access_grant_id
+                ,
+            }
+        )
     }
 }
+

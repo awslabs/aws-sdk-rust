@@ -5,23 +5,20 @@ pub use crate::operation::get_bucket_cors::_get_bucket_cors_input::GetBucketCors
 
 impl GetBucketCorsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_cors::GetBucketCorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_bucket_cors::GetBucketCorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_bucket_cors();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_bucket_cors::GetBucketCorsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_bucket_cors::GetBucketCorsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_bucket_cors();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetBucketCors`.
-///
+/// 
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
@@ -40,33 +37,32 @@ impl GetBucketCorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketCorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_bucket_cors::builders::GetBucketCorsInputBuilder,
+                    inner: crate::operation::get_bucket_cors::builders::GetBucketCorsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_bucket_cors::GetBucketCorsOutput,
-        crate::operation::get_bucket_cors::GetBucketCorsError,
-    > for GetBucketCorsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_bucket_cors::GetBucketCorsOutput,
-            crate::operation::get_bucket_cors::GetBucketCorsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_bucket_cors::GetBucketCorsOutput,
+                    crate::operation::get_bucket_cors::GetBucketCorsError,
+                > for GetBucketCorsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_bucket_cors::GetBucketCorsOutput,
+                        crate::operation::get_bucket_cors::GetBucketCorsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetBucketCorsFluentBuilder {
     /// Creates a new `GetBucketCors`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -75,53 +71,44 @@ impl GetBucketCorsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_cors::GetBucketCorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_bucket_cors::GetBucketCorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_bucket_cors::GetBucketCors::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_bucket_cors::GetBucketCors::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_bucket_cors::GetBucketCorsOutput,
-        crate::operation::get_bucket_cors::GetBucketCorsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_bucket_cors::GetBucketCorsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bucket_cors::GetBucketCorsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_bucket_cors::GetBucketCors::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_bucket_cors::GetBucketCors::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_bucket_cors::GetBucketCorsOutput, crate::operation::get_bucket_cors::GetBucketCorsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The bucket name for which to get the cors configuration.</p>
     /// <p>When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.</p>
     /// <p>When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
@@ -157,3 +144,4 @@ impl GetBucketCorsFluentBuilder {
         self.inner.get_expected_bucket_owner()
     }
 }
+

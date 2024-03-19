@@ -3,20 +3,19 @@
 /// <p>Property key-value pairs passed into an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyGroup {
+pub struct PropertyGroup  {
     /// <p>Describes the key of an application execution property key-value pair.</p>
     pub property_group_id: ::std::string::String,
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub property_map: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub property_map: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl PropertyGroup {
+impl  PropertyGroup  {
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    pub fn property_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.property_group_id.deref()
+    pub fn property_group_id(&self) -> & str {
+        use std::ops::Deref; self.property_group_id.deref()
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn property_map(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn property_map(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.property_map
     }
 }
@@ -32,7 +31,7 @@ impl PropertyGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyGroupBuilder {
     pub(crate) property_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) property_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) property_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PropertyGroupBuilder {
     /// <p>Describes the key of an application execution property key-value pair.</p>
@@ -43,8 +42,7 @@ impl PropertyGroupBuilder {
     }
     /// <p>Describes the key of an application execution property key-value pair.</p>
     pub fn set_property_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_group_id = input;
-        self
+        self.property_group_id = input; self
     }
     /// <p>Describes the key of an application execution property key-value pair.</p>
     pub fn get_property_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +55,16 @@ impl PropertyGroupBuilder {
     /// <p>Describes the value of an application execution property key-value pair.</p>
     pub fn property_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.property_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.property_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.property_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn set_property_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.property_map = input;
-        self
+    pub fn set_property_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.property_map = input; self
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn get_property_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_property_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.property_map
     }
     /// Consumes the builder and constructs a [`PropertyGroup`](crate::types::PropertyGroup).
@@ -78,19 +72,20 @@ impl PropertyGroupBuilder {
     /// - [`property_group_id`](crate::types::builders::PropertyGroupBuilder::property_group_id)
     /// - [`property_map`](crate::types::builders::PropertyGroupBuilder::property_map)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertyGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PropertyGroup {
-            property_group_id: self.property_group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_group_id",
-                    "property_group_id was not specified but it is required when building PropertyGroup",
-                )
-            })?,
-            property_map: self.property_map.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_map",
-                    "property_map was not specified but it is required when building PropertyGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PropertyGroup {
+                property_group_id: self.property_group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_group_id", "property_group_id was not specified but it is required when building PropertyGroup")
+                    )?
+                ,
+                property_map: self.property_map
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_map", "property_map was not specified but it is required when building PropertyGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

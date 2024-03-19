@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFacesOutput {
+pub struct ListFacesOutput  {
     /// <p>An array of <code>Face</code> objects.</p>
-    pub faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
+    pub faces: ::std::option::Option<::std::vec::Vec::<crate::types::Face>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFacesOutput {
+impl  ListFacesOutput  {
     /// <p>An array of <code>Face</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faces.is_none()`.
-    pub fn faces(&self) -> &[crate::types::Face] {
-        self.faces.as_deref().unwrap_or_default()
+    pub fn faces(&self) -> & [crate::types::Face] {
+        self.faces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn face_model_version(&self) -> ::std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFacesOutput {
     /// Creates a new builder-style object to manufacture [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput).
     pub fn builder() -> crate::operation::list_faces::builders::ListFacesOutputBuilder {
@@ -43,7 +44,7 @@ impl ListFacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFacesOutputBuilder {
-    pub(crate) faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
+    pub(crate) faces: ::std::option::Option<::std::vec::Vec::<crate::types::Face>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl ListFacesOutputBuilder {
     /// <p>An array of <code>Face</code> objects.</p>
     pub fn faces(mut self, input: crate::types::Face) -> Self {
         let mut v = self.faces.unwrap_or_default();
-        v.push(input);
-        self.faces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.faces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Face</code> objects.</p>
-    pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Face>>) -> Self {
-        self.faces = input;
-        self
+    pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Face>>) -> Self {
+        self.faces = input; self
     }
     /// <p>An array of <code>Face</code> objects.</p>
-    pub fn get_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Face>> {
+    pub fn get_faces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Face>> {
         &self.faces
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
@@ -76,8 +76,7 @@ impl ListFacesOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl ListFacesOutputBuilder {
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_model_version = input;
-        self
+        self.face_model_version = input; self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.face_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput).
     pub fn build(self) -> crate::operation::list_faces::ListFacesOutput {
         crate::operation::list_faces::ListFacesOutput {
-            faces: self.faces,
-            next_token: self.next_token,
-            face_model_version: self.face_model_version,
+            faces: self.faces
+            ,
+            next_token: self.next_token
+            ,
+            face_model_version: self.face_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

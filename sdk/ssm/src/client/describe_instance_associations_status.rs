@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstanceAssociationsStatus`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::set_instance_id):<br>required: **true**<br><p>The managed node IDs for which you want association status information.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput) with field(s):
+                            /// - On success, responds with [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput) with field(s):
     ///   - [`instance_association_status_infos(Option<Vec::<InstanceAssociationStatusInfo>>)`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput::instance_association_status_infos): <p>Status information about the association.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstanceAssociationsStatusError>`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusError)
-    pub fn describe_instance_associations_status(
-        &self,
-    ) -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder {
-        crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeInstanceAssociationsStatusError>`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusError)
+    pub fn describe_instance_associations_status(&self) -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder {
+                                crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

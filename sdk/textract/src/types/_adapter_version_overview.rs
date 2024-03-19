@@ -3,7 +3,7 @@
 /// <p>Summary info for an adapter version. Contains information on the AdapterId, AdapterVersion, CreationTime, FeatureTypes, and Status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdapterVersionOverview {
+pub struct AdapterVersionOverview  {
     /// <p>A unique identifier for the adapter associated with a given adapter version.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>An identified for a given adapter version.</p>
@@ -11,37 +11,38 @@ pub struct AdapterVersionOverview {
     /// <p>The date and time that a given adapter version was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The feature types that the adapter version is operating on.</p>
-    pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     /// <p>Contains information on the status of a given adapter version.</p>
     pub status: ::std::option::Option<crate::types::AdapterVersionStatus>,
     /// <p>A message explaining the status of a given adapter vesion.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl AdapterVersionOverview {
+impl  AdapterVersionOverview  {
     /// <p>A unique identifier for the adapter associated with a given adapter version.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>An identified for a given adapter version.</p>
-    pub fn adapter_version(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_version(&self) -> ::std::option::Option<& str> {
         self.adapter_version.as_deref()
     }
     /// <p>The date and time that a given adapter version was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The feature types that the adapter version is operating on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
-    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
-        self.feature_types.as_deref().unwrap_or_default()
+    pub fn feature_types(&self) -> & [crate::types::FeatureType] {
+        self.feature_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains information on the status of a given adapter version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AdapterVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AdapterVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A message explaining the status of a given adapter vesion.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct AdapterVersionOverviewBuilder {
     pub(crate) adapter_id: ::std::option::Option<::std::string::String>,
     pub(crate) adapter_version: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     pub(crate) status: ::std::option::Option<crate::types::AdapterVersionStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +72,7 @@ impl AdapterVersionOverviewBuilder {
     }
     /// <p>A unique identifier for the adapter associated with a given adapter version.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A unique identifier for the adapter associated with a given adapter version.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl AdapterVersionOverviewBuilder {
     }
     /// <p>An identified for a given adapter version.</p>
     pub fn set_adapter_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_version = input;
-        self
+        self.adapter_version = input; self
     }
     /// <p>An identified for a given adapter version.</p>
     pub fn get_adapter_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl AdapterVersionOverviewBuilder {
     }
     /// <p>The date and time that a given adapter version was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a given adapter version was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,17 +111,16 @@ impl AdapterVersionOverviewBuilder {
     /// <p>The feature types that the adapter version is operating on.</p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
-        v.push(input);
-        self.feature_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The feature types that the adapter version is operating on.</p>
-    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
-        self.feature_types = input;
-        self
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>) -> Self {
+        self.feature_types = input; self
     }
     /// <p>The feature types that the adapter version is operating on.</p>
-    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>Contains information on the status of a given adapter version.</p>
@@ -133,8 +130,7 @@ impl AdapterVersionOverviewBuilder {
     }
     /// <p>Contains information on the status of a given adapter version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AdapterVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Contains information on the status of a given adapter version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AdapterVersionStatus> {
@@ -147,8 +143,7 @@ impl AdapterVersionOverviewBuilder {
     }
     /// <p>A message explaining the status of a given adapter vesion.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message explaining the status of a given adapter vesion.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,12 +152,19 @@ impl AdapterVersionOverviewBuilder {
     /// Consumes the builder and constructs a [`AdapterVersionOverview`](crate::types::AdapterVersionOverview).
     pub fn build(self) -> crate::types::AdapterVersionOverview {
         crate::types::AdapterVersionOverview {
-            adapter_id: self.adapter_id,
-            adapter_version: self.adapter_version,
-            creation_time: self.creation_time,
-            feature_types: self.feature_types,
-            status: self.status,
-            status_message: self.status_message,
+            adapter_id: self.adapter_id
+            ,
+            adapter_version: self.adapter_version
+            ,
+            creation_time: self.creation_time
+            ,
+            feature_types: self.feature_types
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

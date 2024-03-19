@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStorageSystemResourceMetrics`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`discovery_job_arn(impl Into<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::discovery_job_arn) / [`set_discovery_job_arn(Option<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_discovery_job_arn):<br>required: **true**<br><p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p><br>
     ///   - [`resource_type(DiscoveryResourceType)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::resource_type) / [`set_resource_type(Option<DiscoveryResourceType>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_resource_type):<br>required: **true**<br><p>Specifies the kind of storage system resource that you want information about.</p><br>
     ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_resource_id):<br>required: **true**<br><p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p><br>
@@ -11,15 +11,12 @@ impl super::Client {
     ///   - [`end_time(DateTime)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_end_time):<br>required: **false**<br><p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies how many results that you want in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p><br>
-    /// - On success, responds with [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput) with field(s):
+                            /// - On success, responds with [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput) with field(s):
     ///   - [`metrics(Option<Vec::<ResourceMetrics>>)`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput::metrics): <p>The details that your discovery job collected about your storage system resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    /// - On failure, responds with [`SdkError<DescribeStorageSystemResourceMetricsError>`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError)
-    pub fn describe_storage_system_resource_metrics(
-        &self,
-    ) -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder {
-        crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeStorageSystemResourceMetricsError>`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsError)
+    pub fn describe_storage_system_resource_metrics(&self) -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder {
+                                crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOutpostResolversInput {
+pub struct ListOutpostResolversInput  {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p>
@@ -11,9 +11,9 @@ pub struct ListOutpostResolversInput {
     /// <p></p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListOutpostResolversInput {
+impl  ListOutpostResolversInput  {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p>
@@ -22,7 +22,7 @@ impl ListOutpostResolversInput {
     }
     /// <p>For the first <code>ListOutpostResolver</code> request, omit this value.</p>
     /// <p></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListOutpostResolversInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListOutpostResolversInputBuilder {
     }
     /// <p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -79,8 +77,7 @@ impl ListOutpostResolversInputBuilder {
     /// <p>For the first <code>ListOutpostResolver</code> request, omit this value.</p>
     /// <p></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>ListOutpostResolver</code> request, omit this value.</p>
     /// <p></p>
@@ -88,14 +85,17 @@ impl ListOutpostResolversInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOutpostResolversInput`](crate::operation::list_outpost_resolvers::ListOutpostResolversInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_outpost_resolvers::ListOutpostResolversInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_outpost_resolvers::ListOutpostResolversInput {
-            outpost_arn: self.outpost_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_outpost_resolvers::ListOutpostResolversInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_outpost_resolvers::ListOutpostResolversInput {
+                outpost_arn: self.outpost_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

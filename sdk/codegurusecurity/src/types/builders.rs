@@ -34,3 +34,4 @@ pub use crate::types::_resource::ResourceBuilder;
 pub use crate::types::_batch_get_findings_error::BatchGetFindingsErrorBuilder;
 
 pub use crate::types::_finding_identifier::FindingIdentifierBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachRolePolicyInput {
+pub struct DetachRolePolicyInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub role_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DetachRolePolicyInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl DetachRolePolicyInput {
+impl  DetachRolePolicyInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DetachRolePolicyInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -65,8 +64,7 @@ impl DetachRolePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -74,12 +72,15 @@ impl DetachRolePolicyInputBuilder {
         &self.policy_arn
     }
     /// Consumes the builder and constructs a [`DetachRolePolicyInput`](crate::operation::detach_role_policy::DetachRolePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_role_policy::DetachRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_role_policy::DetachRolePolicyInput {
-            role_name: self.role_name,
-            policy_arn: self.policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_role_policy::DetachRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_role_policy::DetachRolePolicyInput {
+                role_name: self.role_name
+                ,
+                policy_arn: self.policy_arn
+                ,
+            }
+        )
     }
 }
+

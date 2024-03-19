@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVodSourceInput {
+pub struct DescribeVodSourceInput  {
     /// <p>The name of the source location associated with this VOD Source.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VOD Source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVodSourceInput {
+impl  DescribeVodSourceInput  {
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD Source.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeVodSourceInputBuilder {
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeVodSourceInputBuilder {
     }
     /// <p>The name of the VOD Source.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The name of the VOD Source.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_vod_source::DescribeVodSourceInput {
-            source_location_name: self.source_location_name,
-            vod_source_name: self.vod_source_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vod_source::DescribeVodSourceInput {
+                source_location_name: self.source_location_name
+                ,
+                vod_source_name: self.vod_source_name
+                ,
+            }
+        )
     }
 }
+

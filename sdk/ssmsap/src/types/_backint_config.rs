@@ -3,15 +3,15 @@
 /// <p>Configuration parameters for AWS Backint Agent for SAP HANA. You can backup your SAP HANA database with AWS Backup or Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackintConfig {
+pub struct BackintConfig  {
     /// <p>AWS service for your database backup.</p>
     pub backint_mode: crate::types::BackintMode,
     /// <p></p>
     pub ensure_no_backup_in_process: bool,
 }
-impl BackintConfig {
+impl  BackintConfig  {
     /// <p>AWS service for your database backup.</p>
-    pub fn backint_mode(&self) -> &crate::types::BackintMode {
+    pub fn backint_mode(&self) -> & crate::types::BackintMode {
         &self.backint_mode
     }
     /// <p></p>
@@ -42,8 +42,7 @@ impl BackintConfigBuilder {
     }
     /// <p>AWS service for your database backup.</p>
     pub fn set_backint_mode(mut self, input: ::std::option::Option<crate::types::BackintMode>) -> Self {
-        self.backint_mode = input;
-        self
+        self.backint_mode = input; self
     }
     /// <p>AWS service for your database backup.</p>
     pub fn get_backint_mode(&self) -> &::std::option::Option<crate::types::BackintMode> {
@@ -57,8 +56,7 @@ impl BackintConfigBuilder {
     }
     /// <p></p>
     pub fn set_ensure_no_backup_in_process(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ensure_no_backup_in_process = input;
-        self
+        self.ensure_no_backup_in_process = input; self
     }
     /// <p></p>
     pub fn get_ensure_no_backup_in_process(&self) -> &::std::option::Option<bool> {
@@ -69,19 +67,20 @@ impl BackintConfigBuilder {
     /// - [`backint_mode`](crate::types::builders::BackintConfigBuilder::backint_mode)
     /// - [`ensure_no_backup_in_process`](crate::types::builders::BackintConfigBuilder::ensure_no_backup_in_process)
     pub fn build(self) -> ::std::result::Result<crate::types::BackintConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BackintConfig {
-            backint_mode: self.backint_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "backint_mode",
-                    "backint_mode was not specified but it is required when building BackintConfig",
-                )
-            })?,
-            ensure_no_backup_in_process: self.ensure_no_backup_in_process.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ensure_no_backup_in_process",
-                    "ensure_no_backup_in_process was not specified but it is required when building BackintConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BackintConfig {
+                backint_mode: self.backint_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("backint_mode", "backint_mode was not specified but it is required when building BackintConfig")
+                    )?
+                ,
+                ensure_no_backup_in_process: self.ensure_no_backup_in_process
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ensure_no_backup_in_process", "ensure_no_backup_in_process was not specified but it is required when building BackintConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

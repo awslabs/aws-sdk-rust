@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeliveryStreamInput {
+pub struct DeleteDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Set this to true if you want to delete the delivery stream even if Firehose is unable to retire the grant for the CMK. Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
     pub allow_force_delete: ::std::option::Option<bool>,
 }
-impl DeleteDeliveryStreamInput {
+impl  DeleteDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> ::std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>Set this to true if you want to delete the delivery stream even if Firehose is unable to retire the grant for the CMK. Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying the delete operation.</p>
@@ -43,8 +43,7 @@ impl DeleteDeliveryStreamInputBuilder {
     }
     /// <p>The name of the delivery stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_name = input;
-        self
+        self.delivery_stream_name = input; self
     }
     /// <p>The name of the delivery stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl DeleteDeliveryStreamInputBuilder {
     /// <p>Set this to true if you want to delete the delivery stream even if Firehose is unable to retire the grant for the CMK. Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
     pub fn set_allow_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_force_delete = input;
-        self
+        self.allow_force_delete = input; self
     }
     /// <p>Set this to true if you want to delete the delivery stream even if Firehose is unable to retire the grant for the CMK. Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying the delete operation.</p>
     /// <p>The default value is false.</p>
@@ -68,13 +66,15 @@ impl DeleteDeliveryStreamInputBuilder {
         &self.allow_force_delete
     }
     /// Consumes the builder and constructs a [`DeleteDeliveryStreamInput`](crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput {
-            delivery_stream_name: self.delivery_stream_name,
-            allow_force_delete: self.allow_force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput {
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                allow_force_delete: self.allow_force_delete
+                ,
+            }
+        )
     }
 }
+

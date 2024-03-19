@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupCertificateAuthorityInput {
+pub struct GetGroupCertificateAuthorityInput  {
     /// The ID of the certificate authority.
     pub certificate_authority_id: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl GetGroupCertificateAuthorityInput {
+impl  GetGroupCertificateAuthorityInput  {
     /// The ID of the certificate authority.
-    pub fn certificate_authority_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_id(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_id.as_deref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetGroupCertificateAuthorityInputBuilder {
     }
     /// The ID of the certificate authority.
     pub fn set_certificate_authority_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_id = input;
-        self
+        self.certificate_authority_id = input; self
     }
     /// The ID of the certificate authority.
     pub fn get_certificate_authority_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetGroupCertificateAuthorityInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`GetGroupCertificateAuthorityInput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput {
-            certificate_authority_id: self.certificate_authority_id,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput {
+                certificate_authority_id: self.certificate_authority_id
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

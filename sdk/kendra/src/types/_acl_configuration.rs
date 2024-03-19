@@ -3,15 +3,14 @@
 /// <p>Provides information about the column that should be used for filtering the query response by groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AclConfiguration {
+pub struct AclConfiguration  {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub allowed_groups_column_name: ::std::string::String,
 }
-impl AclConfiguration {
+impl  AclConfiguration  {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
-    pub fn allowed_groups_column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.allowed_groups_column_name.deref()
+    pub fn allowed_groups_column_name(&self) -> & str {
+        use std::ops::Deref; self.allowed_groups_column_name.deref()
     }
 }
 impl AclConfiguration {
@@ -36,8 +35,7 @@ impl AclConfigurationBuilder {
     }
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub fn set_allowed_groups_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_groups_column_name = input;
-        self
+        self.allowed_groups_column_name = input; self
     }
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub fn get_allowed_groups_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AclConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_groups_column_name`](crate::types::builders::AclConfigurationBuilder::allowed_groups_column_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AclConfiguration {
-            allowed_groups_column_name: self.allowed_groups_column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_groups_column_name",
-                    "allowed_groups_column_name was not specified but it is required when building AclConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AclConfiguration {
+                allowed_groups_column_name: self.allowed_groups_column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_groups_column_name", "allowed_groups_column_name was not specified but it is required when building AclConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

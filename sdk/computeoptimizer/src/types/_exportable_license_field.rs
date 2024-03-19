@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportablelicensefield = unimplemented!();
 /// match exportablelicensefield {
@@ -49,16 +49,14 @@
 /// Specifically, when `exportablelicensefield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportableLicenseField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ExportableLicenseField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -104,146 +102,119 @@ pub enum ExportableLicenseField {
     Tags,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ExportableLicenseField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableLicenseField::AccountId,
-            "CurrentLicenseConfigurationInstanceType" => ExportableLicenseField::CurrentLicenseConfigurationInstanceType,
-            "CurrentLicenseConfigurationLicenseEdition" => ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition,
-            "CurrentLicenseConfigurationLicenseModel" => ExportableLicenseField::CurrentLicenseConfigurationLicenseModel,
-            "CurrentLicenseConfigurationLicenseName" => ExportableLicenseField::CurrentLicenseConfigurationLicenseName,
-            "CurrentLicenseConfigurationLicenseVersion" => ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion,
-            "CurrentLicenseConfigurationMetricsSource" => ExportableLicenseField::CurrentLicenseConfigurationMetricsSource,
-            "CurrentLicenseConfigurationNumberOfCores" => ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores,
-            "CurrentLicenseConfigurationOperatingSystem" => ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem,
-            "Finding" => ExportableLicenseField::LicenseFinding,
-            "FindingReasonCodes" => ExportableLicenseField::LicenseFindingReasonCodes,
-            "LastRefreshTimestamp" => ExportableLicenseField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableLicenseField::LookbackPeriodInDays,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsLicenseEdition" => ExportableLicenseField::RecommendationOptionsLicenseEdition,
-            "RecommendationOptionsLicenseModel" => ExportableLicenseField::RecommendationOptionsLicenseModel,
-            "RecommendationOptionsOperatingSystem" => ExportableLicenseField::RecommendationOptionsOperatingSystem,
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage,
-            "ResourceArn" => ExportableLicenseField::ResourceArn,
-            "Tags" => ExportableLicenseField::Tags,
-            other => ExportableLicenseField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccountId" => ExportableLicenseField::AccountId,
+"CurrentLicenseConfigurationInstanceType" => ExportableLicenseField::CurrentLicenseConfigurationInstanceType,
+"CurrentLicenseConfigurationLicenseEdition" => ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition,
+"CurrentLicenseConfigurationLicenseModel" => ExportableLicenseField::CurrentLicenseConfigurationLicenseModel,
+"CurrentLicenseConfigurationLicenseName" => ExportableLicenseField::CurrentLicenseConfigurationLicenseName,
+"CurrentLicenseConfigurationLicenseVersion" => ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion,
+"CurrentLicenseConfigurationMetricsSource" => ExportableLicenseField::CurrentLicenseConfigurationMetricsSource,
+"CurrentLicenseConfigurationNumberOfCores" => ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores,
+"CurrentLicenseConfigurationOperatingSystem" => ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem,
+"Finding" => ExportableLicenseField::LicenseFinding,
+"FindingReasonCodes" => ExportableLicenseField::LicenseFindingReasonCodes,
+"LastRefreshTimestamp" => ExportableLicenseField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableLicenseField::LookbackPeriodInDays,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsLicenseEdition" => ExportableLicenseField::RecommendationOptionsLicenseEdition,
+"RecommendationOptionsLicenseModel" => ExportableLicenseField::RecommendationOptionsLicenseModel,
+"RecommendationOptionsOperatingSystem" => ExportableLicenseField::RecommendationOptionsOperatingSystem,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage,
+"ResourceArn" => ExportableLicenseField::ResourceArn,
+"Tags" => ExportableLicenseField::Tags,
+other => ExportableLicenseField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ExportableLicenseField {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ExportableLicenseField::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ExportableLicenseField::from(s))
+                    }
+                }
 impl ExportableLicenseField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableLicenseField::AccountId => "AccountId",
-            ExportableLicenseField::CurrentLicenseConfigurationInstanceType => "CurrentLicenseConfigurationInstanceType",
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition => "CurrentLicenseConfigurationLicenseEdition",
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseModel => "CurrentLicenseConfigurationLicenseModel",
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseName => "CurrentLicenseConfigurationLicenseName",
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion => "CurrentLicenseConfigurationLicenseVersion",
-            ExportableLicenseField::CurrentLicenseConfigurationMetricsSource => "CurrentLicenseConfigurationMetricsSource",
-            ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores => "CurrentLicenseConfigurationNumberOfCores",
-            ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem => "CurrentLicenseConfigurationOperatingSystem",
-            ExportableLicenseField::LicenseFinding => "Finding",
-            ExportableLicenseField::LicenseFindingReasonCodes => "FindingReasonCodes",
-            ExportableLicenseField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableLicenseField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableLicenseField::RecommendationOptionsLicenseEdition => "RecommendationOptionsLicenseEdition",
-            ExportableLicenseField::RecommendationOptionsLicenseModel => "RecommendationOptionsLicenseModel",
-            ExportableLicenseField::RecommendationOptionsOperatingSystem => "RecommendationOptionsOperatingSystem",
-            ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableLicenseField::ResourceArn => "ResourceArn",
-            ExportableLicenseField::Tags => "Tags",
-            ExportableLicenseField::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId",
-            "CurrentLicenseConfigurationInstanceType",
-            "CurrentLicenseConfigurationLicenseEdition",
-            "CurrentLicenseConfigurationLicenseModel",
-            "CurrentLicenseConfigurationLicenseName",
-            "CurrentLicenseConfigurationLicenseVersion",
-            "CurrentLicenseConfigurationMetricsSource",
-            "CurrentLicenseConfigurationNumberOfCores",
-            "CurrentLicenseConfigurationOperatingSystem",
-            "Finding",
-            "FindingReasonCodes",
-            "LastRefreshTimestamp",
-            "LookbackPeriodInDays",
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            "RecommendationOptionsEstimatedMonthlySavingsValue",
-            "RecommendationOptionsLicenseEdition",
-            "RecommendationOptionsLicenseModel",
-            "RecommendationOptionsOperatingSystem",
-            "RecommendationOptionsSavingsOpportunityPercentage",
-            "ResourceArn",
-            "Tags",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableLicenseField::AccountId => "AccountId",
+    ExportableLicenseField::CurrentLicenseConfigurationInstanceType => "CurrentLicenseConfigurationInstanceType",
+    ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition => "CurrentLicenseConfigurationLicenseEdition",
+    ExportableLicenseField::CurrentLicenseConfigurationLicenseModel => "CurrentLicenseConfigurationLicenseModel",
+    ExportableLicenseField::CurrentLicenseConfigurationLicenseName => "CurrentLicenseConfigurationLicenseName",
+    ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion => "CurrentLicenseConfigurationLicenseVersion",
+    ExportableLicenseField::CurrentLicenseConfigurationMetricsSource => "CurrentLicenseConfigurationMetricsSource",
+    ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores => "CurrentLicenseConfigurationNumberOfCores",
+    ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem => "CurrentLicenseConfigurationOperatingSystem",
+    ExportableLicenseField::LicenseFinding => "Finding",
+    ExportableLicenseField::LicenseFindingReasonCodes => "FindingReasonCodes",
+    ExportableLicenseField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableLicenseField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableLicenseField::RecommendationOptionsLicenseEdition => "RecommendationOptionsLicenseEdition",
+    ExportableLicenseField::RecommendationOptionsLicenseModel => "RecommendationOptionsLicenseModel",
+    ExportableLicenseField::RecommendationOptionsOperatingSystem => "RecommendationOptionsOperatingSystem",
+    ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableLicenseField::ResourceArn => "ResourceArn",
+    ExportableLicenseField::Tags => "Tags",
+    ExportableLicenseField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentLicenseConfigurationInstanceType", "CurrentLicenseConfigurationLicenseEdition", "CurrentLicenseConfigurationLicenseModel", "CurrentLicenseConfigurationLicenseName", "CurrentLicenseConfigurationLicenseVersion", "CurrentLicenseConfigurationMetricsSource", "CurrentLicenseConfigurationNumberOfCores", "CurrentLicenseConfigurationOperatingSystem", "Finding", "FindingReasonCodes", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsLicenseEdition", "RecommendationOptionsLicenseModel", "RecommendationOptionsOperatingSystem", "RecommendationOptionsSavingsOpportunityPercentage", "ResourceArn", "Tags"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ExportableLicenseField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ExportableLicenseField {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ExportableLicenseField {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ExportableLicenseField::AccountId => write!(f, "AccountId"),
-            ExportableLicenseField::CurrentLicenseConfigurationInstanceType => write!(f, "CurrentLicenseConfigurationInstanceType"),
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition => write!(f, "CurrentLicenseConfigurationLicenseEdition"),
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseModel => write!(f, "CurrentLicenseConfigurationLicenseModel"),
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseName => write!(f, "CurrentLicenseConfigurationLicenseName"),
-            ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion => write!(f, "CurrentLicenseConfigurationLicenseVersion"),
-            ExportableLicenseField::CurrentLicenseConfigurationMetricsSource => write!(f, "CurrentLicenseConfigurationMetricsSource"),
-            ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores => write!(f, "CurrentLicenseConfigurationNumberOfCores"),
-            ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem => write!(f, "CurrentLicenseConfigurationOperatingSystem"),
-            ExportableLicenseField::LicenseFinding => write!(f, "Finding"),
-            ExportableLicenseField::LicenseFindingReasonCodes => write!(f, "FindingReasonCodes"),
-            ExportableLicenseField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
-            ExportableLicenseField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
-            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
-            }
-            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
-            }
-            ExportableLicenseField::RecommendationOptionsLicenseEdition => write!(f, "RecommendationOptionsLicenseEdition"),
-            ExportableLicenseField::RecommendationOptionsLicenseModel => write!(f, "RecommendationOptionsLicenseModel"),
-            ExportableLicenseField::RecommendationOptionsOperatingSystem => write!(f, "RecommendationOptionsOperatingSystem"),
-            ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage => {
-                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
-            }
-            ExportableLicenseField::ResourceArn => write!(f, "ResourceArn"),
-            ExportableLicenseField::Tags => write!(f, "Tags"),
-            ExportableLicenseField::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ExportableLicenseField::AccountId => write!(f, "AccountId"),
+ExportableLicenseField::CurrentLicenseConfigurationInstanceType => write!(f, "CurrentLicenseConfigurationInstanceType"),
+ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition => write!(f, "CurrentLicenseConfigurationLicenseEdition"),
+ExportableLicenseField::CurrentLicenseConfigurationLicenseModel => write!(f, "CurrentLicenseConfigurationLicenseModel"),
+ExportableLicenseField::CurrentLicenseConfigurationLicenseName => write!(f, "CurrentLicenseConfigurationLicenseName"),
+ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion => write!(f, "CurrentLicenseConfigurationLicenseVersion"),
+ExportableLicenseField::CurrentLicenseConfigurationMetricsSource => write!(f, "CurrentLicenseConfigurationMetricsSource"),
+ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores => write!(f, "CurrentLicenseConfigurationNumberOfCores"),
+ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem => write!(f, "CurrentLicenseConfigurationOperatingSystem"),
+ExportableLicenseField::LicenseFinding => write!(f, "Finding"),
+ExportableLicenseField::LicenseFindingReasonCodes => write!(f, "FindingReasonCodes"),
+ExportableLicenseField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+ExportableLicenseField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency => write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency"),
+ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue => write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue"),
+ExportableLicenseField::RecommendationOptionsLicenseEdition => write!(f, "RecommendationOptionsLicenseEdition"),
+ExportableLicenseField::RecommendationOptionsLicenseModel => write!(f, "RecommendationOptionsLicenseModel"),
+ExportableLicenseField::RecommendationOptionsOperatingSystem => write!(f, "RecommendationOptionsOperatingSystem"),
+ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage => write!(f, "RecommendationOptionsSavingsOpportunityPercentage"),
+ExportableLicenseField::ResourceArn => write!(f, "ResourceArn"),
+ExportableLicenseField::Tags => write!(f, "Tags"),
+ExportableLicenseField::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

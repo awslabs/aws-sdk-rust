@@ -3,7 +3,7 @@
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingSummaryV2 {
+pub struct FindingSummaryV2  {
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub analyzed_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the finding was created.</p>
@@ -25,47 +25,45 @@ pub struct FindingSummaryV2 {
     /// <p>The type of the external access or unused access finding.</p>
     pub finding_type: ::std::option::Option<crate::types::FindingType>,
 }
-impl FindingSummaryV2 {
+impl  FindingSummaryV2  {
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
-    pub fn analyzed_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn analyzed_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.analyzed_at
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The error that resulted in an Error finding.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The resource that the external principal has access to.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The type of the resource that the external principal has access to.</p>
-    pub fn resource_type(&self) -> &crate::types::ResourceType {
+    pub fn resource_type(&self) -> & crate::types::ResourceType {
         &self.resource_type
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_owner_account.deref()
+    pub fn resource_owner_account(&self) -> & str {
+        use std::ops::Deref; self.resource_owner_account.deref()
     }
     /// <p>The status of the finding.</p>
-    pub fn status(&self) -> &crate::types::FindingStatus {
+    pub fn status(&self) -> & crate::types::FindingStatus {
         &self.status
     }
     /// <p>The time at which the finding was most recently updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The type of the external access or unused access finding.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::FindingType> {
+    pub fn finding_type(&self) -> ::std::option::Option<& crate::types::FindingType> {
         self.finding_type.as_ref()
     }
 }
@@ -100,8 +98,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub fn set_analyzed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.analyzed_at = input;
-        self
+        self.analyzed_at = input; self
     }
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub fn get_analyzed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -115,8 +112,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The time at which the finding was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the finding was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +125,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The error that resulted in an Error finding.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error that resulted in an Error finding.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +139,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the finding.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +152,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The resource that the external principal has access to.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource that the external principal has access to.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +166,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The type of the resource that the external principal has access to.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource that the external principal has access to.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -188,8 +180,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_account = input;
-        self
+        self.resource_owner_account = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +194,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The status of the finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the finding.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
@@ -218,8 +208,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The time at which the finding was most recently updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the finding was most recently updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -232,8 +221,7 @@ impl FindingSummaryV2Builder {
     }
     /// <p>The type of the external access or unused access finding.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
-        self.finding_type = input;
-        self
+        self.finding_type = input; self
     }
     /// <p>The type of the external access or unused access finding.</p>
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::FindingType> {
@@ -249,52 +237,51 @@ impl FindingSummaryV2Builder {
     /// - [`status`](crate::types::builders::FindingSummaryV2Builder::status)
     /// - [`updated_at`](crate::types::builders::FindingSummaryV2Builder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::FindingSummaryV2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FindingSummaryV2 {
-            analyzed_at: self.analyzed_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analyzed_at",
-                    "analyzed_at was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            error: self.error,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            resource: self.resource,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_owner_account",
-                    "resource_owner_account was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building FindingSummaryV2",
-                )
-            })?,
-            finding_type: self.finding_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FindingSummaryV2 {
+                analyzed_at: self.analyzed_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analyzed_at", "analyzed_at was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                error: self.error
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                resource: self.resource
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                resource_owner_account: self.resource_owner_account
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_owner_account", "resource_owner_account was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building FindingSummaryV2")
+                    )?
+                ,
+                finding_type: self.finding_type
+                ,
+            }
+        )
     }
 }
+

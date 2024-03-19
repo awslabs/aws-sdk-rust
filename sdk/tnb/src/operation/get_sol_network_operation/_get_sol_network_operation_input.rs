@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolNetworkOperationInput {
+pub struct GetSolNetworkOperationInput  {
     /// <p>The identifier of the network operation.</p>
     pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSolNetworkOperationInput {
+impl  GetSolNetworkOperationInput  {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<& str> {
         self.ns_lcm_op_occ_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetSolNetworkOperationInputBuilder {
     }
     /// <p>The identifier of the network operation.</p>
     pub fn set_ns_lcm_op_occ_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_lcm_op_occ_id = input;
-        self
+        self.ns_lcm_op_occ_id = input; self
     }
     /// <p>The identifier of the network operation.</p>
     pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ns_lcm_op_occ_id
     }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationInput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_operation::GetSolNetworkOperationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sol_network_operation::GetSolNetworkOperationInput {
-            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_network_operation::GetSolNetworkOperationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_network_operation::GetSolNetworkOperationInput {
+                ns_lcm_op_occ_id: self.ns_lcm_op_occ_id
+                ,
+            }
+        )
     }
 }
+

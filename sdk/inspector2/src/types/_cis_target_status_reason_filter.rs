@@ -3,19 +3,19 @@
 /// <p>The CIS target status reason filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisTargetStatusReasonFilter {
+pub struct CisTargetStatusReasonFilter  {
     /// <p>The comparison value of the CIS target status reason filter.</p>
     pub comparison: crate::types::CisTargetStatusComparison,
     /// <p>The value of the CIS target status reason filter.</p>
     pub value: crate::types::CisTargetStatusReason,
 }
-impl CisTargetStatusReasonFilter {
+impl  CisTargetStatusReasonFilter  {
     /// <p>The comparison value of the CIS target status reason filter.</p>
-    pub fn comparison(&self) -> &crate::types::CisTargetStatusComparison {
+    pub fn comparison(&self) -> & crate::types::CisTargetStatusComparison {
         &self.comparison
     }
     /// <p>The value of the CIS target status reason filter.</p>
-    pub fn value(&self) -> &crate::types::CisTargetStatusReason {
+    pub fn value(&self) -> & crate::types::CisTargetStatusReason {
         &self.value
     }
 }
@@ -42,8 +42,7 @@ impl CisTargetStatusReasonFilterBuilder {
     }
     /// <p>The comparison value of the CIS target status reason filter.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CisTargetStatusComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The comparison value of the CIS target status reason filter.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CisTargetStatusComparison> {
@@ -57,8 +56,7 @@ impl CisTargetStatusReasonFilterBuilder {
     }
     /// <p>The value of the CIS target status reason filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::CisTargetStatusReason>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the CIS target status reason filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::CisTargetStatusReason> {
@@ -69,19 +67,20 @@ impl CisTargetStatusReasonFilterBuilder {
     /// - [`comparison`](crate::types::builders::CisTargetStatusReasonFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CisTargetStatusReasonFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CisTargetStatusReasonFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisTargetStatusReasonFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CisTargetStatusReasonFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CisTargetStatusReasonFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisTargetStatusReasonFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CisTargetStatusReasonFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CisTargetStatusReasonFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

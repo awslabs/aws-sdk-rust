@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasourcePackages`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`graph_arn(impl Into<String>)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::set_graph_arn):<br>required: **true**<br><p>The ARN of the behavior graph.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::set_next_token):<br>required: **false**<br><p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput) with field(s):
+                            /// - On success, responds with [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput) with field(s):
     ///   - [`datasource_packages(Option<HashMap::<DatasourcePackage, DatasourcePackageIngestDetail>>)`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput::datasource_packages): <p>Details on the data source packages active in the behavior graph.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput::next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListDatasourcePackagesError>`](crate::operation::list_datasource_packages::ListDatasourcePackagesError)
+                            /// - On failure, responds with [`SdkError<ListDatasourcePackagesError>`](crate::operation::list_datasource_packages::ListDatasourcePackagesError)
     pub fn list_datasource_packages(&self) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder {
-        crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

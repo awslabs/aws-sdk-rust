@@ -3,7 +3,7 @@
 /// <p>Information about an error received while accessing free trail data for an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeTrialInfoError {
+pub struct FreeTrialInfoError  {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     pub account_id: ::std::string::String,
     /// <p>The error code.</p>
@@ -11,20 +11,18 @@ pub struct FreeTrialInfoError {
     /// <p>The error message returned.</p>
     pub message: ::std::string::String,
 }
-impl FreeTrialInfoError {
+impl  FreeTrialInfoError  {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> &crate::types::FreeTrialInfoErrorCode {
+    pub fn code(&self) -> & crate::types::FreeTrialInfoErrorCode {
         &self.code
     }
     /// <p>The error message returned.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl FreeTrialInfoError {
@@ -51,8 +49,7 @@ impl FreeTrialInfoErrorBuilder {
     }
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FreeTrialInfoErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::FreeTrialInfoErrorCode> {
@@ -81,8 +77,7 @@ impl FreeTrialInfoErrorBuilder {
     }
     /// <p>The error message returned.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message returned.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl FreeTrialInfoErrorBuilder {
     /// - [`code`](crate::types::builders::FreeTrialInfoErrorBuilder::code)
     /// - [`message`](crate::types::builders::FreeTrialInfoErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialInfoError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FreeTrialInfoError {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building FreeTrialInfoError",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building FreeTrialInfoError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building FreeTrialInfoError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FreeTrialInfoError {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building FreeTrialInfoError")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building FreeTrialInfoError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building FreeTrialInfoError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

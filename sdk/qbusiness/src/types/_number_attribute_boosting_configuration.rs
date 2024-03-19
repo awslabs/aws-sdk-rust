@@ -4,19 +4,19 @@
 /// <p>For more information on how boosting document attributes work in Amazon Q, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting using document attributes</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberAttributeBoostingConfiguration {
+pub struct NumberAttributeBoostingConfiguration  {
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>NUMBER</code> type document attribute.</p>
     pub boosting_level: crate::types::DocumentAttributeBoostingLevel,
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub boosting_type: ::std::option::Option<crate::types::NumberAttributeBoostingType>,
 }
-impl NumberAttributeBoostingConfiguration {
+impl  NumberAttributeBoostingConfiguration  {
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>NUMBER</code> type document attribute.</p>
-    pub fn boosting_level(&self) -> &crate::types::DocumentAttributeBoostingLevel {
+    pub fn boosting_level(&self) -> & crate::types::DocumentAttributeBoostingLevel {
         &self.boosting_level
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
-    pub fn boosting_type(&self) -> ::std::option::Option<&crate::types::NumberAttributeBoostingType> {
+    pub fn boosting_type(&self) -> ::std::option::Option<& crate::types::NumberAttributeBoostingType> {
         self.boosting_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl NumberAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>NUMBER</code> type document attribute.</p>
     pub fn set_boosting_level(mut self, input: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>) -> Self {
-        self.boosting_level = input;
-        self
+        self.boosting_level = input; self
     }
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>NUMBER</code> type document attribute.</p>
     pub fn get_boosting_level(&self) -> &::std::option::Option<crate::types::DocumentAttributeBoostingLevel> {
@@ -57,8 +56,7 @@ impl NumberAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn set_boosting_type(mut self, input: ::std::option::Option<crate::types::NumberAttributeBoostingType>) -> Self {
-        self.boosting_type = input;
-        self
+        self.boosting_type = input; self
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn get_boosting_type(&self) -> &::std::option::Option<crate::types::NumberAttributeBoostingType> {
@@ -67,17 +65,18 @@ impl NumberAttributeBoostingConfigurationBuilder {
     /// Consumes the builder and constructs a [`NumberAttributeBoostingConfiguration`](crate::types::NumberAttributeBoostingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`boosting_level`](crate::types::builders::NumberAttributeBoostingConfigurationBuilder::boosting_level)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::NumberAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NumberAttributeBoostingConfiguration {
-            boosting_level: self.boosting_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "boosting_level",
-                    "boosting_level was not specified but it is required when building NumberAttributeBoostingConfiguration",
-                )
-            })?,
-            boosting_type: self.boosting_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::NumberAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::NumberAttributeBoostingConfiguration {
+                boosting_level: self.boosting_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("boosting_level", "boosting_level was not specified but it is required when building NumberAttributeBoostingConfiguration")
+                    )?
+                ,
+                boosting_type: self.boosting_type
+                ,
+            }
+        )
     }
 }
+

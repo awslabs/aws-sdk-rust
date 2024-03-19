@@ -3,7 +3,7 @@
 /// <p>The data associated with the custom terminology. For information about the custom terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html"> Creating a Custom Terminology</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TerminologyData {
+pub struct TerminologyData  {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     pub file: ::aws_smithy_types::Blob,
     /// <p>The data format of the custom terminology.</p>
@@ -26,13 +26,13 @@ pub struct TerminologyData {
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub directionality: ::std::option::Option<crate::types::Directionality>,
 }
-impl TerminologyData {
+impl  TerminologyData  {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn file(&self) -> &::aws_smithy_types::Blob {
+    pub fn file(&self) -> & ::aws_smithy_types::Blob {
         &self.file
     }
     /// <p>The data format of the custom terminology.</p>
-    pub fn format(&self) -> &crate::types::TerminologyDataFormat {
+    pub fn format(&self) -> & crate::types::TerminologyDataFormat {
         &self.format
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
@@ -51,11 +51,11 @@ impl TerminologyData {
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-    pub fn directionality(&self) -> ::std::option::Option<&crate::types::Directionality> {
+    pub fn directionality(&self) -> ::std::option::Option<& crate::types::Directionality> {
         self.directionality.as_ref()
     }
 }
-impl ::std::fmt::Debug for TerminologyData {
+impl  ::std::fmt::Debug for TerminologyData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyData");
         formatter.field("file", &"*** Sensitive Data Redacted ***");
@@ -88,8 +88,7 @@ impl TerminologyDataBuilder {
     }
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
     }
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     pub fn get_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -103,8 +102,7 @@ impl TerminologyDataBuilder {
     }
     /// <p>The data format of the custom terminology.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The data format of the custom terminology.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
@@ -147,8 +145,7 @@ impl TerminologyDataBuilder {
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub fn set_directionality(mut self, input: ::std::option::Option<crate::types::Directionality>) -> Self {
-        self.directionality = input;
-        self
+        self.directionality = input; self
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -174,21 +171,22 @@ impl TerminologyDataBuilder {
     /// - [`file`](crate::types::builders::TerminologyDataBuilder::file)
     /// - [`format`](crate::types::builders::TerminologyDataBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::TerminologyData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TerminologyData {
-            file: self.file.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file",
-                    "file was not specified but it is required when building TerminologyData",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building TerminologyData",
-                )
-            })?,
-            directionality: self.directionality,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TerminologyData {
+                file: self.file
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file", "file was not specified but it is required when building TerminologyData")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building TerminologyData")
+                    )?
+                ,
+                directionality: self.directionality
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TerminologyDataBuilder {
@@ -200,3 +198,4 @@ impl ::std::fmt::Debug for TerminologyDataBuilder {
         formatter.finish()
     }
 }
+

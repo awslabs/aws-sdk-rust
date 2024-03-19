@@ -3,15 +3,14 @@
 /// <p>A context that must be active for an intent to be selected by Amazon Lex.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputContext {
+pub struct InputContext  {
     /// <p>The name of the context.</p>
     pub name: ::std::string::String,
 }
-impl InputContext {
+impl  InputContext  {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl InputContext {
@@ -36,8 +35,7 @@ impl InputContextBuilder {
     }
     /// <p>The name of the context.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the context.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl InputContextBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::InputContextBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::InputContext, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputContext {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building InputContext",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputContext {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building InputContext")
+                    )?
+                ,
+            }
+        )
     }
 }
+

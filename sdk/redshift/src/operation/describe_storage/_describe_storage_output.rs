@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageOutput {
+pub struct DescribeStorageOutput  {
     /// <p>The total amount of storage currently used for snapshots.</p>
     pub total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The total amount of storage currently provisioned.</p>
     pub total_provisioned_storage_in_mega_bytes: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
-impl DescribeStorageOutput {
+impl  DescribeStorageOutput  {
     /// <p>The total amount of storage currently used for snapshots.</p>
     pub fn total_backup_size_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.total_backup_size_in_mega_bytes
@@ -20,10 +20,10 @@ impl DescribeStorageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStorageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStorageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
     pub fn builder() -> crate::operation::describe_storage::builders::DescribeStorageOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeStorageOutputBuilder {
     }
     /// <p>The total amount of storage currently used for snapshots.</p>
     pub fn set_total_backup_size_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_backup_size_in_mega_bytes = input;
-        self
+        self.total_backup_size_in_mega_bytes = input; self
     }
     /// <p>The total amount of storage currently used for snapshots.</p>
     pub fn get_total_backup_size_in_mega_bytes(&self) -> &::std::option::Option<f64> {
@@ -61,28 +60,30 @@ impl DescribeStorageOutputBuilder {
     }
     /// <p>The total amount of storage currently provisioned.</p>
     pub fn set_total_provisioned_storage_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_provisioned_storage_in_mega_bytes = input;
-        self
+        self.total_provisioned_storage_in_mega_bytes = input; self
     }
     /// <p>The total amount of storage currently provisioned.</p>
     pub fn get_total_provisioned_storage_in_mega_bytes(&self) -> &::std::option::Option<f64> {
         &self.total_provisioned_storage_in_mega_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
     pub fn build(self) -> crate::operation::describe_storage::DescribeStorageOutput {
         crate::operation::describe_storage::DescribeStorageOutput {
-            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes,
-            total_provisioned_storage_in_mega_bytes: self.total_provisioned_storage_in_mega_bytes,
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes
+            ,
+            total_provisioned_storage_in_mega_bytes: self.total_provisioned_storage_in_mega_bytes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

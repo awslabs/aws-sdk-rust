@@ -3,7 +3,7 @@
 /// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectLevelStatistics {
+pub struct ObjectLevelStatistics  {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub file_type: ::std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
@@ -11,7 +11,7 @@ pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub total: ::std::option::Option<i64>,
 }
-impl ObjectLevelStatistics {
+impl  ObjectLevelStatistics  {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub fn file_type(&self) -> ::std::option::Option<i64> {
         self.file_type
@@ -48,8 +48,7 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub fn set_file_type(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.file_type = input;
-        self
+        self.file_type = input; self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub fn get_file_type(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn set_storage_class(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn get_storage_class(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn get_total(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl ObjectLevelStatisticsBuilder {
     /// Consumes the builder and constructs a [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
     pub fn build(self) -> crate::types::ObjectLevelStatistics {
         crate::types::ObjectLevelStatistics {
-            file_type: self.file_type,
-            storage_class: self.storage_class,
-            total: self.total,
+            file_type: self.file_type
+            ,
+            storage_class: self.storage_class
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

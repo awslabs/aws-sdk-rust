@@ -3,7 +3,7 @@
 /// A mapping of Bedrock Knowledge Base fields to RDS column names
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsFieldMapping {
+pub struct RdsFieldMapping  {
     /// Name of the column
     pub primary_key_field: ::std::string::String,
     /// Name of the column
@@ -13,26 +13,22 @@ pub struct RdsFieldMapping {
     /// Name of the column
     pub metadata_field: ::std::string::String,
 }
-impl RdsFieldMapping {
+impl  RdsFieldMapping  {
     /// Name of the column
-    pub fn primary_key_field(&self) -> &str {
-        use std::ops::Deref;
-        self.primary_key_field.deref()
+    pub fn primary_key_field(&self) -> & str {
+        use std::ops::Deref; self.primary_key_field.deref()
     }
     /// Name of the column
-    pub fn vector_field(&self) -> &str {
-        use std::ops::Deref;
-        self.vector_field.deref()
+    pub fn vector_field(&self) -> & str {
+        use std::ops::Deref; self.vector_field.deref()
     }
     /// Name of the column
-    pub fn text_field(&self) -> &str {
-        use std::ops::Deref;
-        self.text_field.deref()
+    pub fn text_field(&self) -> & str {
+        use std::ops::Deref; self.text_field.deref()
     }
     /// Name of the column
-    pub fn metadata_field(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_field.deref()
+    pub fn metadata_field(&self) -> & str {
+        use std::ops::Deref; self.metadata_field.deref()
     }
 }
 impl RdsFieldMapping {
@@ -60,8 +56,7 @@ impl RdsFieldMappingBuilder {
     }
     /// Name of the column
     pub fn set_primary_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_key_field = input;
-        self
+        self.primary_key_field = input; self
     }
     /// Name of the column
     pub fn get_primary_key_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl RdsFieldMappingBuilder {
     }
     /// Name of the column
     pub fn set_vector_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vector_field = input;
-        self
+        self.vector_field = input; self
     }
     /// Name of the column
     pub fn get_vector_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl RdsFieldMappingBuilder {
     }
     /// Name of the column
     pub fn set_text_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_field = input;
-        self
+        self.text_field = input; self
     }
     /// Name of the column
     pub fn get_text_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl RdsFieldMappingBuilder {
     }
     /// Name of the column
     pub fn set_metadata_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_field = input;
-        self
+        self.metadata_field = input; self
     }
     /// Name of the column
     pub fn get_metadata_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl RdsFieldMappingBuilder {
     /// - [`text_field`](crate::types::builders::RdsFieldMappingBuilder::text_field)
     /// - [`metadata_field`](crate::types::builders::RdsFieldMappingBuilder::metadata_field)
     pub fn build(self) -> ::std::result::Result<crate::types::RdsFieldMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RdsFieldMapping {
-            primary_key_field: self.primary_key_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primary_key_field",
-                    "primary_key_field was not specified but it is required when building RdsFieldMapping",
-                )
-            })?,
-            vector_field: self.vector_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vector_field",
-                    "vector_field was not specified but it is required when building RdsFieldMapping",
-                )
-            })?,
-            text_field: self.text_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_field",
-                    "text_field was not specified but it is required when building RdsFieldMapping",
-                )
-            })?,
-            metadata_field: self.metadata_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_field",
-                    "metadata_field was not specified but it is required when building RdsFieldMapping",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RdsFieldMapping {
+                primary_key_field: self.primary_key_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primary_key_field", "primary_key_field was not specified but it is required when building RdsFieldMapping")
+                    )?
+                ,
+                vector_field: self.vector_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vector_field", "vector_field was not specified but it is required when building RdsFieldMapping")
+                    )?
+                ,
+                text_field: self.text_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_field", "text_field was not specified but it is required when building RdsFieldMapping")
+                    )?
+                ,
+                metadata_field: self.metadata_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_field", "metadata_field was not specified but it is required when building RdsFieldMapping")
+                    )?
+                ,
+            }
+        )
     }
 }
+

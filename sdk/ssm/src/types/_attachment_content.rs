@@ -3,7 +3,7 @@
 /// <p>A structure that includes attributes that describe a document attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentContent {
+pub struct AttachmentContent  {
     /// <p>The name of an attachment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The size of an attachment in bytes.</p>
@@ -15,9 +15,9 @@ pub struct AttachmentContent {
     /// <p>The URL location of the attachment content.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl AttachmentContent {
+impl  AttachmentContent  {
     /// <p>The name of an attachment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The size of an attachment in bytes.</p>
@@ -25,15 +25,15 @@ impl AttachmentContent {
         self.size
     }
     /// <p>The cryptographic hash value of the document content.</p>
-    pub fn hash(&self) -> ::std::option::Option<&str> {
+    pub fn hash(&self) -> ::std::option::Option<& str> {
         self.hash.as_deref()
     }
     /// <p>The hash algorithm used to calculate the hash value.</p>
-    pub fn hash_type(&self) -> ::std::option::Option<&crate::types::AttachmentHashType> {
+    pub fn hash_type(&self) -> ::std::option::Option<& crate::types::AttachmentHashType> {
         self.hash_type.as_ref()
     }
     /// <p>The URL location of the attachment content.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl AttachmentContentBuilder {
     }
     /// <p>The name of an attachment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an attachment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AttachmentContentBuilder {
     }
     /// <p>The size of an attachment in bytes.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of an attachment in bytes.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl AttachmentContentBuilder {
     }
     /// <p>The cryptographic hash value of the document content.</p>
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash = input;
-        self
+        self.hash = input; self
     }
     /// <p>The cryptographic hash value of the document content.</p>
     pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl AttachmentContentBuilder {
     }
     /// <p>The hash algorithm used to calculate the hash value.</p>
     pub fn set_hash_type(mut self, input: ::std::option::Option<crate::types::AttachmentHashType>) -> Self {
-        self.hash_type = input;
-        self
+        self.hash_type = input; self
     }
     /// <p>The hash algorithm used to calculate the hash value.</p>
     pub fn get_hash_type(&self) -> &::std::option::Option<crate::types::AttachmentHashType> {
@@ -118,8 +114,7 @@ impl AttachmentContentBuilder {
     }
     /// <p>The URL location of the attachment content.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL location of the attachment content.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,18 @@ impl AttachmentContentBuilder {
     /// Consumes the builder and constructs a [`AttachmentContent`](crate::types::AttachmentContent).
     pub fn build(self) -> crate::types::AttachmentContent {
         crate::types::AttachmentContent {
-            name: self.name,
-            size: self.size.unwrap_or_default(),
-            hash: self.hash,
-            hash_type: self.hash_type,
-            url: self.url,
+            name: self.name
+            ,
+            size: self.size
+                .unwrap_or_default()
+            ,
+            hash: self.hash
+            ,
+            hash_type: self.hash_type
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

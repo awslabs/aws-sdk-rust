@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateEntitiesToExperienceInput {
+pub struct AssociateEntitiesToExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub entity_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
+    pub entity_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityConfiguration>>,
 }
-impl AssociateEntitiesToExperienceInput {
+impl  AssociateEntitiesToExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_list.is_none()`.
-    pub fn entity_list(&self) -> &[crate::types::EntityConfiguration] {
-        self.entity_list.as_deref().unwrap_or_default()
+    pub fn entity_list(&self) -> & [crate::types::EntityConfiguration] {
+        self.entity_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssociateEntitiesToExperienceInput {
@@ -39,7 +40,7 @@ impl AssociateEntitiesToExperienceInput {
 pub struct AssociateEntitiesToExperienceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
+    pub(crate) entity_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityConfiguration>>,
 }
 impl AssociateEntitiesToExperienceInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -50,8 +51,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl AssociateEntitiesToExperienceInputBuilder {
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn entity_list(mut self, input: crate::types::EntityConfiguration) -> Self {
         let mut v = self.entity_list.unwrap_or_default();
-        v.push(input);
-        self.entity_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn set_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>) -> Self {
-        self.entity_list = input;
-        self
+    pub fn set_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityConfiguration>>) -> Self {
+        self.entity_list = input; self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn get_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
+    pub fn get_entity_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityConfiguration>> {
         &self.entity_list
     }
     /// Consumes the builder and constructs a [`AssociateEntitiesToExperienceInput`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput {
-            id: self.id,
-            index_id: self.index_id,
-            entity_list: self.entity_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput {
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+                entity_list: self.entity_list
+                ,
+            }
+        )
     }
 }
+

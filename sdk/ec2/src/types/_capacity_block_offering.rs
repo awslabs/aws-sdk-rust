@@ -3,7 +3,7 @@
 /// <p>The recommended Capacity Block that fits your search requirements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityBlockOffering {
+pub struct CapacityBlockOffering  {
     /// <p>The ID of the Capacity Block offering.</p>
     pub capacity_block_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the Capacity Block offering.</p>
@@ -25,17 +25,17 @@ pub struct CapacityBlockOffering {
     /// <p>The tenancy of the Capacity Block.</p>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
 }
-impl CapacityBlockOffering {
+impl  CapacityBlockOffering  {
     /// <p>The ID of the Capacity Block offering.</p>
-    pub fn capacity_block_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_block_offering_id(&self) -> ::std::option::Option<& str> {
         self.capacity_block_offering_id.as_deref()
     }
     /// <p>The instance type of the Capacity Block offering.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Availability Zone of the Capacity Block offering.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The number of instances in the Capacity Block offering.</p>
@@ -43,11 +43,11 @@ impl CapacityBlockOffering {
         self.instance_count
     }
     /// <p>The start date of the Capacity Block offering.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The end date of the Capacity Block offering.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The amount of time of the Capacity Block reservation in hours.</p>
@@ -55,15 +55,15 @@ impl CapacityBlockOffering {
         self.capacity_block_duration_hours
     }
     /// <p>The total price to be paid up front.</p>
-    pub fn upfront_fee(&self) -> ::std::option::Option<&str> {
+    pub fn upfront_fee(&self) -> ::std::option::Option<& str> {
         self.upfront_fee.as_deref()
     }
     /// <p>The currency of the payment for the Capacity Block.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The tenancy of the Capacity Block.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<& crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The ID of the Capacity Block offering.</p>
     pub fn set_capacity_block_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_block_offering_id = input;
-        self
+        self.capacity_block_offering_id = input; self
     }
     /// <p>The ID of the Capacity Block offering.</p>
     pub fn get_capacity_block_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The instance type of the Capacity Block offering.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the Capacity Block offering.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The Availability Zone of the Capacity Block offering.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the Capacity Block offering.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The number of instances in the Capacity Block offering.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of instances in the Capacity Block offering.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -153,8 +149,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The start date of the Capacity Block offering.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The start date of the Capacity Block offering.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +162,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The end date of the Capacity Block offering.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The end date of the Capacity Block offering.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +175,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The amount of time of the Capacity Block reservation in hours.</p>
     pub fn set_capacity_block_duration_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity_block_duration_hours = input;
-        self
+        self.capacity_block_duration_hours = input; self
     }
     /// <p>The amount of time of the Capacity Block reservation in hours.</p>
     pub fn get_capacity_block_duration_hours(&self) -> &::std::option::Option<i32> {
@@ -195,8 +188,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The total price to be paid up front.</p>
     pub fn set_upfront_fee(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upfront_fee = input;
-        self
+        self.upfront_fee = input; self
     }
     /// <p>The total price to be paid up front.</p>
     pub fn get_upfront_fee(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The currency of the payment for the Capacity Block.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency of the payment for the Capacity Block.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +214,7 @@ impl CapacityBlockOfferingBuilder {
     }
     /// <p>The tenancy of the Capacity Block.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::CapacityReservationTenancy>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The tenancy of the Capacity Block.</p>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
@@ -233,16 +223,27 @@ impl CapacityBlockOfferingBuilder {
     /// Consumes the builder and constructs a [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
     pub fn build(self) -> crate::types::CapacityBlockOffering {
         crate::types::CapacityBlockOffering {
-            capacity_block_offering_id: self.capacity_block_offering_id,
-            instance_type: self.instance_type,
-            availability_zone: self.availability_zone,
-            instance_count: self.instance_count,
-            start_date: self.start_date,
-            end_date: self.end_date,
-            capacity_block_duration_hours: self.capacity_block_duration_hours,
-            upfront_fee: self.upfront_fee,
-            currency_code: self.currency_code,
-            tenancy: self.tenancy,
+            capacity_block_offering_id: self.capacity_block_offering_id
+            ,
+            instance_type: self.instance_type
+            ,
+            availability_zone: self.availability_zone
+            ,
+            instance_count: self.instance_count
+            ,
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            capacity_block_duration_hours: self.capacity_block_duration_hours
+            ,
+            upfront_fee: self.upfront_fee
+            ,
+            currency_code: self.currency_code
+            ,
+            tenancy: self.tenancy
+            ,
         }
     }
 }
+

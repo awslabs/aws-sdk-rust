@@ -4,7 +4,7 @@
 /// <p>This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlInsightsMetadataItem {
+pub struct ControlInsightsMetadataItem  {
     /// <p>The name of the control.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the control.</p>
@@ -14,21 +14,21 @@ pub struct ControlInsightsMetadataItem {
     /// <p>The time when the control insights were last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ControlInsightsMetadataItem {
+impl  ControlInsightsMetadataItem  {
     /// <p>The name of the control.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the control.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control.</p>
-    pub fn evidence_insights(&self) -> ::std::option::Option<&crate::types::EvidenceInsights> {
+    pub fn evidence_insights(&self) -> ::std::option::Option<& crate::types::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
     /// <p>The time when the control insights were last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ControlInsightsMetadataItemBuilder {
     }
     /// <p>The name of the control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ControlInsightsMetadataItemBuilder {
     }
     /// <p>The unique identifier for the control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the control.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ControlInsightsMetadataItemBuilder {
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control.</p>
     pub fn set_evidence_insights(mut self, input: ::std::option::Option<crate::types::EvidenceInsights>) -> Self {
-        self.evidence_insights = input;
-        self
+        self.evidence_insights = input; self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control.</p>
     pub fn get_evidence_insights(&self) -> &::std::option::Option<crate::types::EvidenceInsights> {
@@ -98,8 +95,7 @@ impl ControlInsightsMetadataItemBuilder {
     }
     /// <p>The time when the control insights were last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The time when the control insights were last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,10 +104,15 @@ impl ControlInsightsMetadataItemBuilder {
     /// Consumes the builder and constructs a [`ControlInsightsMetadataItem`](crate::types::ControlInsightsMetadataItem).
     pub fn build(self) -> crate::types::ControlInsightsMetadataItem {
         crate::types::ControlInsightsMetadataItem {
-            name: self.name,
-            id: self.id,
-            evidence_insights: self.evidence_insights,
-            last_updated: self.last_updated,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            evidence_insights: self.evidence_insights
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

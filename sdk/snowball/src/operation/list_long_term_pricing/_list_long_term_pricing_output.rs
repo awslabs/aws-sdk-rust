@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLongTermPricingOutput {
+pub struct ListLongTermPricingOutput  {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
-    pub long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
+    pub long_term_pricing_entries: ::std::option::Option<::std::vec::Vec::<crate::types::LongTermPricingListEntry>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLongTermPricingOutput {
+impl  ListLongTermPricingOutput  {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.long_term_pricing_entries.is_none()`.
-    pub fn long_term_pricing_entries(&self) -> &[crate::types::LongTermPricingListEntry] {
-        self.long_term_pricing_entries.as_deref().unwrap_or_default()
+    pub fn long_term_pricing_entries(&self) -> & [crate::types::LongTermPricingListEntry] {
+        self.long_term_pricing_entries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLongTermPricingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLongTermPricingOutput {
     /// Creates a new builder-style object to manufacture [`ListLongTermPricingOutput`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput).
     pub fn builder() -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLongTermPricingOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLongTermPricingOutputBuilder {
-    pub(crate) long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
+    pub(crate) long_term_pricing_entries: ::std::option::Option<::std::vec::Vec::<crate::types::LongTermPricingListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListLongTermPricingOutputBuilder {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     pub fn long_term_pricing_entries(mut self, input: crate::types::LongTermPricingListEntry) -> Self {
         let mut v = self.long_term_pricing_entries.unwrap_or_default();
-        v.push(input);
-        self.long_term_pricing_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.long_term_pricing_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
-    pub fn set_long_term_pricing_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>) -> Self {
-        self.long_term_pricing_entries = input;
-        self
+    pub fn set_long_term_pricing_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LongTermPricingListEntry>>) -> Self {
+        self.long_term_pricing_entries = input; self
     }
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
-    pub fn get_long_term_pricing_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>> {
+    pub fn get_long_term_pricing_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LongTermPricingListEntry>> {
         &self.long_term_pricing_entries
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
@@ -69,28 +69,30 @@ impl ListLongTermPricingOutputBuilder {
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLongTermPricingOutput`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput).
     pub fn build(self) -> crate::operation::list_long_term_pricing::ListLongTermPricingOutput {
         crate::operation::list_long_term_pricing::ListLongTermPricingOutput {
-            long_term_pricing_entries: self.long_term_pricing_entries,
-            next_token: self.next_token,
+            long_term_pricing_entries: self.long_term_pricing_entries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

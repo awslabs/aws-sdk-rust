@@ -3,13 +3,13 @@
 /// <p>An object that describes the details of a number filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberFilter {
+pub struct NumberFilter  {
     /// <p>The highest number to be included in the filter.</p>
     pub upper_inclusive: ::std::option::Option<f64>,
     /// <p>The lowest number to be included in the filter.</p>
     pub lower_inclusive: ::std::option::Option<f64>,
 }
-impl NumberFilter {
+impl  NumberFilter  {
     /// <p>The highest number to be included in the filter.</p>
     pub fn upper_inclusive(&self) -> ::std::option::Option<f64> {
         self.upper_inclusive
@@ -41,8 +41,7 @@ impl NumberFilterBuilder {
     }
     /// <p>The highest number to be included in the filter.</p>
     pub fn set_upper_inclusive(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.upper_inclusive = input;
-        self
+        self.upper_inclusive = input; self
     }
     /// <p>The highest number to be included in the filter.</p>
     pub fn get_upper_inclusive(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl NumberFilterBuilder {
     }
     /// <p>The lowest number to be included in the filter.</p>
     pub fn set_lower_inclusive(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lower_inclusive = input;
-        self
+        self.lower_inclusive = input; self
     }
     /// <p>The lowest number to be included in the filter.</p>
     pub fn get_lower_inclusive(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl NumberFilterBuilder {
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {
         crate::types::NumberFilter {
-            upper_inclusive: self.upper_inclusive,
-            lower_inclusive: self.lower_inclusive,
+            upper_inclusive: self.upper_inclusive
+            ,
+            lower_inclusive: self.lower_inclusive
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An application node that represents a camera stream, a model, code, or output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Node {
+pub struct Node  {
     /// <p>The node's ID.</p>
     pub node_id: ::std::string::String,
     /// <p>The node's name.</p>
@@ -27,55 +27,49 @@ pub struct Node {
     /// <p>When the node was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
 }
-impl Node {
+impl  Node  {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> &str {
-        use std::ops::Deref;
-        self.node_id.deref()
+    pub fn node_id(&self) -> & str {
+        use std::ops::Deref; self.node_id.deref()
     }
     /// <p>The node's name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The node's category.</p>
-    pub fn category(&self) -> &crate::types::NodeCategory {
+    pub fn category(&self) -> & crate::types::NodeCategory {
         &self.category
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The node's package name.</p>
-    pub fn package_name(&self) -> &str {
-        use std::ops::Deref;
-        self.package_name.deref()
+    pub fn package_name(&self) -> & str {
+        use std::ops::Deref; self.package_name.deref()
     }
     /// <p>The node's package ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> & str {
+        use std::ops::Deref; self.package_id.deref()
     }
     /// <p>The node's ARN.</p>
-    pub fn package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_arn(&self) -> ::std::option::Option<& str> {
         self.package_arn.as_deref()
     }
     /// <p>The node's package version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> & str {
+        use std::ops::Deref; self.package_version.deref()
     }
     /// <p>The node's patch version.</p>
-    pub fn patch_version(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_version.deref()
+    pub fn patch_version(&self) -> & str {
+        use std::ops::Deref; self.patch_version.deref()
     }
     /// <p>The node's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the node was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
 }
@@ -111,8 +105,7 @@ impl NodeBuilder {
     }
     /// <p>The node's ID.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The node's ID.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +119,7 @@ impl NodeBuilder {
     }
     /// <p>The node's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The node's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +133,7 @@ impl NodeBuilder {
     }
     /// <p>The node's category.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::NodeCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The node's category.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::NodeCategory> {
@@ -155,8 +146,7 @@ impl NodeBuilder {
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +160,7 @@ impl NodeBuilder {
     }
     /// <p>The node's package name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The node's package name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +174,7 @@ impl NodeBuilder {
     }
     /// <p>The node's package ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The node's package ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +187,7 @@ impl NodeBuilder {
     }
     /// <p>The node's ARN.</p>
     pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_arn = input;
-        self
+        self.package_arn = input; self
     }
     /// <p>The node's ARN.</p>
     pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +201,7 @@ impl NodeBuilder {
     }
     /// <p>The node's package version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The node's package version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +215,7 @@ impl NodeBuilder {
     }
     /// <p>The node's patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>The node's patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +228,7 @@ impl NodeBuilder {
     }
     /// <p>The node's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The node's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +242,7 @@ impl NodeBuilder {
     }
     /// <p>When the node was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>When the node was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -276,58 +259,56 @@ impl NodeBuilder {
     /// - [`patch_version`](crate::types::builders::NodeBuilder::patch_version)
     /// - [`created_time`](crate::types::builders::NodeBuilder::created_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Node, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Node {
-            node_id: self.node_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_id",
-                    "node_id was not specified but it is required when building Node",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Node",
-                )
-            })?,
-            category: self.category.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "category",
-                    "category was not specified but it is required when building Node",
-                )
-            })?,
-            owner_account: self.owner_account,
-            package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_name",
-                    "package_name was not specified but it is required when building Node",
-                )
-            })?,
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building Node",
-                )
-            })?,
-            package_arn: self.package_arn,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building Node",
-                )
-            })?,
-            patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_version",
-                    "patch_version was not specified but it is required when building Node",
-                )
-            })?,
-            description: self.description,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building Node",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Node {
+                node_id: self.node_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("node_id", "node_id was not specified but it is required when building Node")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Node")
+                    )?
+                ,
+                category: self.category
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("category", "category was not specified but it is required when building Node")
+                    )?
+                ,
+                owner_account: self.owner_account
+                ,
+                package_name: self.package_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_name", "package_name was not specified but it is required when building Node")
+                    )?
+                ,
+                package_id: self.package_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_id", "package_id was not specified but it is required when building Node")
+                    )?
+                ,
+                package_arn: self.package_arn
+                ,
+                package_version: self.package_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "package_version was not specified but it is required when building Node")
+                    )?
+                ,
+                patch_version: self.patch_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_version", "patch_version was not specified but it is required when building Node")
+                    )?
+                ,
+                description: self.description
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building Node")
+                    )?
+                ,
+            }
+        )
     }
 }
+

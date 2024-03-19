@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGroupPolicyInput {
+pub struct DeleteGroupPolicyInput  {
     /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub group_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteGroupPolicyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGroupPolicyInput {
+impl  DeleteGroupPolicyInput  {
     /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The name identifying the policy document to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteGroupPolicyInputBuilder {
     /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -65,8 +64,7 @@ impl DeleteGroupPolicyInputBuilder {
     /// <p>The name identifying the policy document to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name identifying the policy document to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -74,12 +72,15 @@ impl DeleteGroupPolicyInputBuilder {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeleteGroupPolicyInput`](crate::operation::delete_group_policy::DeleteGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_group_policy::DeleteGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_group_policy::DeleteGroupPolicyInput {
-            group_name: self.group_name,
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_group_policy::DeleteGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_group_policy::DeleteGroupPolicyInput {
+                group_name: self.group_name
+                ,
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

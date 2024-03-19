@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectVersionInput {
+pub struct DeleteProjectVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProjectVersionInput {
+impl  DeleteProjectVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteProjectVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version_arn = input;
-        self
+        self.project_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_project_version::DeleteProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_project_version::DeleteProjectVersionInput {
-            project_version_arn: self.project_version_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project_version::DeleteProjectVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project_version::DeleteProjectVersionInput {
+                project_version_arn: self.project_version_arn
+                ,
+            }
+        )
     }
 }
+

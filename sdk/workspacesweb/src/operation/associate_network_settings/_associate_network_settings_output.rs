@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateNetworkSettingsOutput {
+pub struct AssociateNetworkSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The ARN of the network settings.</p>
     pub network_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AssociateNetworkSettingsOutput {
+impl  AssociateNetworkSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_settings_arn.deref()
+    pub fn network_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.network_settings_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateNetworkSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
     pub fn builder() -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder {
@@ -50,8 +48,7 @@ impl AssociateNetworkSettingsOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,46 +62,41 @@ impl AssociateNetworkSettingsOutputBuilder {
     }
     /// <p>The ARN of the network settings.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder::portal_arn)
     /// - [`network_settings_arn`](crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder::network_settings_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_network_settings::AssociateNetworkSettingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building AssociateNetworkSettingsOutput",
-                )
-            })?,
-            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_settings_arn",
-                    "network_settings_arn was not specified but it is required when building AssociateNetworkSettingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_network_settings::AssociateNetworkSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateNetworkSettingsOutput")
+                    )?
+                ,
+                network_settings_arn: self.network_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_settings_arn", "network_settings_arn was not specified but it is required when building AssociateNetworkSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

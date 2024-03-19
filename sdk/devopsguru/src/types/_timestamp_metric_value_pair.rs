@@ -3,15 +3,15 @@
 /// <p>A pair that contains metric values at the respective timestamp.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestampMetricValuePair {
+pub struct TimestampMetricValuePair  {
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
     pub metric_value: ::std::option::Option<f64>,
 }
-impl TimestampMetricValuePair {
+impl  TimestampMetricValuePair  {
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
@@ -41,8 +41,7 @@ impl TimestampMetricValuePairBuilder {
     }
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl TimestampMetricValuePairBuilder {
     }
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
     pub fn set_metric_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.metric_value = input;
-        self
+        self.metric_value = input; self
     }
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
     pub fn get_metric_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl TimestampMetricValuePairBuilder {
     /// Consumes the builder and constructs a [`TimestampMetricValuePair`](crate::types::TimestampMetricValuePair).
     pub fn build(self) -> crate::types::TimestampMetricValuePair {
         crate::types::TimestampMetricValuePair {
-            timestamp: self.timestamp,
-            metric_value: self.metric_value,
+            timestamp: self.timestamp
+            ,
+            metric_value: self.metric_value
+            ,
         }
     }
 }
+

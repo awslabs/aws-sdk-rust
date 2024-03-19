@@ -3,7 +3,7 @@
 /// <p>The configuration information for the bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBucketConfiguration {
+pub struct CreateBucketConfiguration  {
     /// <p>Specifies the Region where the bucket will be created. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1) by default.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -19,25 +19,25 @@ pub struct CreateBucketConfiguration {
     /// </note>
     pub bucket: ::std::option::Option<crate::types::BucketInfo>,
 }
-impl CreateBucketConfiguration {
+impl  CreateBucketConfiguration  {
     /// <p>Specifies the Region where the bucket will be created. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1) by default.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn location_constraint(&self) -> ::std::option::Option<&crate::types::BucketLocationConstraint> {
+    pub fn location_constraint(&self) -> ::std::option::Option<& crate::types::BucketLocationConstraint> {
         self.location_constraint.as_ref()
     }
     /// <p>Specifies the location where the bucket will be created.</p>
     /// <p>For directory buckets, the location type is Availability Zone.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::LocationInfo> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::LocationInfo> {
         self.location.as_ref()
     }
     /// <p>Specifies the information about the bucket that will be created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
-    pub fn bucket(&self) -> ::std::option::Option<&crate::types::BucketInfo> {
+    pub fn bucket(&self) -> ::std::option::Option<& crate::types::BucketInfo> {
         self.bucket.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl CreateBucketConfigurationBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_location_constraint(mut self, input: ::std::option::Option<crate::types::BucketLocationConstraint>) -> Self {
-        self.location_constraint = input;
-        self
+        self.location_constraint = input; self
     }
     /// <p>Specifies the Region where the bucket will be created. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1) by default.</p><note>
@@ -93,8 +92,7 @@ impl CreateBucketConfigurationBuilder {
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationInfo>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Specifies the location where the bucket will be created.</p>
     /// <p>For directory buckets, the location type is Availability Zone.</p><note>
@@ -114,8 +112,7 @@ impl CreateBucketConfigurationBuilder {
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<crate::types::BucketInfo>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Specifies the information about the bucket that will be created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
@@ -126,9 +123,13 @@ impl CreateBucketConfigurationBuilder {
     /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
     pub fn build(self) -> crate::types::CreateBucketConfiguration {
         crate::types::CreateBucketConfiguration {
-            location_constraint: self.location_constraint,
-            location: self.location,
-            bucket: self.bucket,
+            location_constraint: self.location_constraint
+            ,
+            location: self.location
+            ,
+            bucket: self.bucket
+            ,
         }
     }
 }
+

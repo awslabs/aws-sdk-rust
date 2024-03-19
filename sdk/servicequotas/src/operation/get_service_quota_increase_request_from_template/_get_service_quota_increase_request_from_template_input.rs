@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
+pub struct GetServiceQuotaIncreaseRequestFromTemplateInput  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
@@ -10,26 +10,24 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>Specifies the Amazon Web Services Region for which you made the request.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceQuotaIncreaseRequestFromTemplateInput {
+impl  GetServiceQuotaIncreaseRequestFromTemplateInput  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Specifies the Amazon Web Services Region for which you made the request.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
-        crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
+        crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder::default()
     }
 }
 
@@ -50,8 +48,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,26 +76,24 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
     }
     /// <p>Specifies the Amazon Web Services Region for which you made the request.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>Specifies the Amazon Web Services Region for which you made the request.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_region
     }
     /// Consumes the builder and constructs a [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput {
-                service_code: self.service_code,
-                quota_code: self.quota_code,
-                aws_region: self.aws_region,
-            },
+                service_code: self.service_code
+                ,
+                quota_code: self.quota_code
+                ,
+                aws_region: self.aws_region
+                ,
+            }
         )
     }
 }
+

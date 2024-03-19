@@ -3,9 +3,9 @@
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudTrailDetails {
+pub struct CloudTrailDetails  {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub trails: ::std::vec::Vec<crate::types::Trail>,
+    pub trails: ::std::vec::Vec::<crate::types::Trail>,
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub access_role: ::std::string::String,
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
@@ -13,23 +13,21 @@ pub struct CloudTrailDetails {
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CloudTrailDetails {
+impl  CloudTrailDetails  {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub fn trails(&self) -> &[crate::types::Trail] {
-        use std::ops::Deref;
-        self.trails.deref()
+    pub fn trails(&self) -> & [crate::types::Trail] {
+        use std::ops::Deref; self.trails.deref()
     }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
-    pub fn access_role(&self) -> &str {
-        use std::ops::Deref;
-        self.access_role.deref()
+    pub fn access_role(&self) -> & str {
+        use std::ops::Deref; self.access_role.deref()
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -44,7 +42,7 @@ impl CloudTrailDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudTrailDetailsBuilder {
-    pub(crate) trails: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
+    pub(crate) trails: ::std::option::Option<::std::vec::Vec::<crate::types::Trail>>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -57,17 +55,16 @@ impl CloudTrailDetailsBuilder {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
     pub fn trails(mut self, input: crate::types::Trail) -> Self {
         let mut v = self.trails.unwrap_or_default();
-        v.push(input);
-        self.trails = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trails = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub fn set_trails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>) -> Self {
-        self.trails = input;
-        self
+    pub fn set_trails(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Trail>>) -> Self {
+        self.trails = input; self
     }
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub fn get_trails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trail>> {
+    pub fn get_trails(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Trail>> {
         &self.trails
     }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
@@ -78,8 +75,7 @@ impl CloudTrailDetailsBuilder {
     }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
     }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub fn get_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl CloudTrailDetailsBuilder {
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,8 +102,7 @@ impl CloudTrailDetailsBuilder {
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,26 +114,27 @@ impl CloudTrailDetailsBuilder {
     /// - [`access_role`](crate::types::builders::CloudTrailDetailsBuilder::access_role)
     /// - [`start_time`](crate::types::builders::CloudTrailDetailsBuilder::start_time)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudTrailDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudTrailDetails {
-            trails: self.trails.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trails",
-                    "trails was not specified but it is required when building CloudTrailDetails",
-                )
-            })?,
-            access_role: self.access_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_role",
-                    "access_role was not specified but it is required when building CloudTrailDetails",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building CloudTrailDetails",
-                )
-            })?,
-            end_time: self.end_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudTrailDetails {
+                trails: self.trails
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trails", "trails was not specified but it is required when building CloudTrailDetails")
+                    )?
+                ,
+                access_role: self.access_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_role", "access_role was not specified but it is required when building CloudTrailDetails")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building CloudTrailDetails")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

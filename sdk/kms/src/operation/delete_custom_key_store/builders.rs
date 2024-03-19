@@ -5,23 +5,20 @@ pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_inpu
 
 impl DeleteCustomKeyStoreInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_custom_key_store();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_custom_key_store();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteCustomKeyStore`.
-///
+/// 
 /// <p>Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. This operation does not affect any backing elements of the custom key store. It does not delete the CloudHSM cluster that is associated with an CloudHSM key store, or affect any users or keys in the cluster. For an external key store, it does not affect the external key store proxy, external key manager, or any external keys.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p>
 /// <p>The custom key store that you delete cannot contain any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a>. Before deleting the key store, verify that you will never need to use any of the KMS keys in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a>. Then, use <code>ScheduleKeyDeletion</code> to delete the KMS keys from the key store. After the required waiting period expires and all KMS keys are deleted from the custom key store, use <code>DisconnectCustomKeyStore</code> to disconnect the key store from KMS. Then, you can delete the custom key store.</p>
@@ -47,33 +44,32 @@ impl DeleteCustomKeyStoreInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreInputBuilder,
+                    inner: crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-    > for DeleteCustomKeyStoreFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
+                    crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
+                > for DeleteCustomKeyStoreFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
+                        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteCustomKeyStoreFluentBuilder {
     /// Creates a new `DeleteCustomKeyStore`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -82,53 +78,44 @@ impl DeleteCustomKeyStoreFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_custom_key_store::DeleteCustomKeyStore::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStore::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_custom_key_store::DeleteCustomKeyStore::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_custom_key_store::DeleteCustomKeyStore::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput, crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
@@ -144,3 +131,4 @@ impl DeleteCustomKeyStoreFluentBuilder {
         self.inner.get_custom_key_store_id()
     }
 }
+

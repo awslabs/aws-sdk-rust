@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataModelConfiguration {
+pub struct DataModelConfiguration  {
     /// <p></p>
     pub data_model: ::std::option::Option<crate::types::DataModel>,
     /// <p></p>
     pub data_model_s3_configuration: ::std::option::Option<crate::types::DataModelS3Configuration>,
 }
-impl DataModelConfiguration {
+impl  DataModelConfiguration  {
     /// <p></p>
-    pub fn data_model(&self) -> ::std::option::Option<&crate::types::DataModel> {
+    pub fn data_model(&self) -> ::std::option::Option<& crate::types::DataModel> {
         self.data_model.as_ref()
     }
     /// <p></p>
-    pub fn data_model_s3_configuration(&self) -> ::std::option::Option<&crate::types::DataModelS3Configuration> {
+    pub fn data_model_s3_configuration(&self) -> ::std::option::Option<& crate::types::DataModelS3Configuration> {
         self.data_model_s3_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DataModelConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_data_model(mut self, input: ::std::option::Option<crate::types::DataModel>) -> Self {
-        self.data_model = input;
-        self
+        self.data_model = input; self
     }
     /// <p></p>
     pub fn get_data_model(&self) -> &::std::option::Option<crate::types::DataModel> {
@@ -55,8 +54,7 @@ impl DataModelConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_data_model_s3_configuration(mut self, input: ::std::option::Option<crate::types::DataModelS3Configuration>) -> Self {
-        self.data_model_s3_configuration = input;
-        self
+        self.data_model_s3_configuration = input; self
     }
     /// <p></p>
     pub fn get_data_model_s3_configuration(&self) -> &::std::option::Option<crate::types::DataModelS3Configuration> {
@@ -65,8 +63,11 @@ impl DataModelConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataModelConfiguration`](crate::types::DataModelConfiguration).
     pub fn build(self) -> crate::types::DataModelConfiguration {
         crate::types::DataModelConfiguration {
-            data_model: self.data_model,
-            data_model_s3_configuration: self.data_model_s3_configuration,
+            data_model: self.data_model
+            ,
+            data_model_s3_configuration: self.data_model_s3_configuration
+            ,
         }
     }
 }
+

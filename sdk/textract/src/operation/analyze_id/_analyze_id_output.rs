@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzeIdOutput {
+pub struct AnalyzeIdOutput  {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub identity_documents: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
+    pub identity_documents: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityDocument>>,
     /// <p>Information about the input document.</p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     pub analyze_id_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AnalyzeIdOutput {
+impl  AnalyzeIdOutput  {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_documents.is_none()`.
-    pub fn identity_documents(&self) -> &[crate::types::IdentityDocument] {
-        self.identity_documents.as_deref().unwrap_or_default()
+    pub fn identity_documents(&self) -> & [crate::types::IdentityDocument] {
+        self.identity_documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn analyze_id_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn analyze_id_model_version(&self) -> ::std::option::Option<& str> {
         self.analyze_id_model_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AnalyzeIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AnalyzeIdOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
     pub fn builder() -> crate::operation::analyze_id::builders::AnalyzeIdOutputBuilder {
@@ -43,7 +44,7 @@ impl AnalyzeIdOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeIdOutputBuilder {
-    pub(crate) identity_documents: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
+    pub(crate) identity_documents: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityDocument>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) analyze_id_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl AnalyzeIdOutputBuilder {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     pub fn identity_documents(mut self, input: crate::types::IdentityDocument) -> Self {
         let mut v = self.identity_documents.unwrap_or_default();
-        v.push(input);
-        self.identity_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identity_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn set_identity_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>) -> Self {
-        self.identity_documents = input;
-        self
+    pub fn set_identity_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityDocument>>) -> Self {
+        self.identity_documents = input; self
     }
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn get_identity_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>> {
+    pub fn get_identity_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentityDocument>> {
         &self.identity_documents
     }
     /// <p>Information about the input document.</p>
@@ -76,8 +76,7 @@ impl AnalyzeIdOutputBuilder {
     }
     /// <p>Information about the input document.</p>
     pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.document_metadata = input;
-        self
+        self.document_metadata = input; self
     }
     /// <p>Information about the input document.</p>
     pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
@@ -90,29 +89,32 @@ impl AnalyzeIdOutputBuilder {
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     pub fn set_analyze_id_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyze_id_model_version = input;
-        self
+        self.analyze_id_model_version = input; self
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     pub fn get_analyze_id_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_id_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
     pub fn build(self) -> crate::operation::analyze_id::AnalyzeIdOutput {
         crate::operation::analyze_id::AnalyzeIdOutput {
-            identity_documents: self.identity_documents,
-            document_metadata: self.document_metadata,
-            analyze_id_model_version: self.analyze_id_model_version,
+            identity_documents: self.identity_documents
+            ,
+            document_metadata: self.document_metadata
+            ,
+            analyze_id_model_version: self.analyze_id_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

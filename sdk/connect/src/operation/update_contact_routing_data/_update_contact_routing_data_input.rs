@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactRoutingDataInput {
+pub struct UpdateContactRoutingDataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -12,13 +12,13 @@ pub struct UpdateContactRoutingDataInput {
     /// <p>Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.</p>
     pub queue_priority: ::std::option::Option<i64>,
 }
-impl UpdateContactRoutingDataInput {
+impl  UpdateContactRoutingDataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The number of seconds to add or subtract from the contact's routing age. Contacts are routed to agents on a first-come, first-serve basis. This means that changing their amount of time in queue compared to others also changes their position in queue.</p>
@@ -55,8 +55,7 @@ impl UpdateContactRoutingDataInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateContactRoutingDataInputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateContactRoutingDataInputBuilder {
     }
     /// <p>The number of seconds to add or subtract from the contact's routing age. Contacts are routed to agents on a first-come, first-serve basis. This means that changing their amount of time in queue compared to others also changes their position in queue.</p>
     pub fn set_queue_time_adjustment_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.queue_time_adjustment_seconds = input;
-        self
+        self.queue_time_adjustment_seconds = input; self
     }
     /// <p>The number of seconds to add or subtract from the contact's routing age. Contacts are routed to agents on a first-come, first-serve basis. This means that changing their amount of time in queue compared to others also changes their position in queue.</p>
     pub fn get_queue_time_adjustment_seconds(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl UpdateContactRoutingDataInputBuilder {
     }
     /// <p>Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.</p>
     pub fn set_queue_priority(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.queue_priority = input;
-        self
+        self.queue_priority = input; self
     }
     /// <p>Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.</p>
     pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
         &self.queue_priority
     }
     /// Consumes the builder and constructs a [`UpdateContactRoutingDataInput`](crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput {
-            instance_id: self.instance_id,
-            contact_id: self.contact_id,
-            queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
-            queue_priority: self.queue_priority,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput {
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                queue_time_adjustment_seconds: self.queue_time_adjustment_seconds
+                ,
+                queue_priority: self.queue_priority
+                ,
+            }
+        )
     }
 }
+

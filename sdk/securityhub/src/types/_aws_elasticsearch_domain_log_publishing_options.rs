@@ -3,7 +3,7 @@
 /// <p>configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElasticsearchDomainLogPublishingOptions {
+pub struct AwsElasticsearchDomainLogPublishingOptions  {
     /// <p>Configures the OpenSearch index logs publishing.</p>
     pub index_slow_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     /// <p>Configures the OpenSearch search slow log publishing.</p>
@@ -11,17 +11,17 @@ pub struct AwsElasticsearchDomainLogPublishingOptions {
     /// <p>The log configuration.</p>
     pub audit_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
 }
-impl AwsElasticsearchDomainLogPublishingOptions {
+impl  AwsElasticsearchDomainLogPublishingOptions  {
     /// <p>Configures the OpenSearch index logs publishing.</p>
-    pub fn index_slow_logs(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
+    pub fn index_slow_logs(&self) -> ::std::option::Option<& crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
         self.index_slow_logs.as_ref()
     }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
-    pub fn search_slow_logs(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
+    pub fn search_slow_logs(&self) -> ::std::option::Option<& crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
         self.search_slow_logs.as_ref()
     }
     /// <p>The log configuration.</p>
-    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
+    pub fn audit_logs(&self) -> ::std::option::Option<& crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
         self.audit_logs.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
     }
     /// <p>Configures the OpenSearch index logs publishing.</p>
     pub fn set_index_slow_logs(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>) -> Self {
-        self.index_slow_logs = input;
-        self
+        self.index_slow_logs = input; self
     }
     /// <p>Configures the OpenSearch index logs publishing.</p>
     pub fn get_index_slow_logs(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
@@ -62,8 +61,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
     }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     pub fn set_search_slow_logs(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>) -> Self {
-        self.search_slow_logs = input;
-        self
+        self.search_slow_logs = input; self
     }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     pub fn get_search_slow_logs(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
@@ -76,8 +74,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
     }
     /// <p>The log configuration.</p>
     pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>) -> Self {
-        self.audit_logs = input;
-        self
+        self.audit_logs = input; self
     }
     /// <p>The log configuration.</p>
     pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig> {
@@ -86,9 +83,13 @@ impl AwsElasticsearchDomainLogPublishingOptionsBuilder {
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptions`](crate::types::AwsElasticsearchDomainLogPublishingOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainLogPublishingOptions {
         crate::types::AwsElasticsearchDomainLogPublishingOptions {
-            index_slow_logs: self.index_slow_logs,
-            search_slow_logs: self.search_slow_logs,
-            audit_logs: self.audit_logs,
+            index_slow_logs: self.index_slow_logs
+            ,
+            search_slow_logs: self.search_slow_logs
+            ,
+            audit_logs: self.audit_logs
+            ,
         }
     }
 }
+

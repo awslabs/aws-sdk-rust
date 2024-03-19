@@ -3,22 +3,22 @@
 /// Get Agent Version Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentVersionOutput {
+pub struct GetAgentVersionOutput  {
     /// Contains the information of an agent version.
     pub agent_version: ::std::option::Option<crate::types::AgentVersion>,
     _request_id: Option<String>,
 }
-impl GetAgentVersionOutput {
+impl  GetAgentVersionOutput  {
     /// Contains the information of an agent version.
-    pub fn agent_version(&self) -> ::std::option::Option<&crate::types::AgentVersion> {
+    pub fn agent_version(&self) -> ::std::option::Option<& crate::types::AgentVersion> {
         self.agent_version.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAgentVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAgentVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetAgentVersionOutput`](crate::operation::get_agent_version::GetAgentVersionOutput).
     pub fn builder() -> crate::operation::get_agent_version::builders::GetAgentVersionOutputBuilder {
@@ -42,27 +42,28 @@ impl GetAgentVersionOutputBuilder {
     }
     /// Contains the information of an agent version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<crate::types::AgentVersion>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Contains the information of an agent version.
     pub fn get_agent_version(&self) -> &::std::option::Option<crate::types::AgentVersion> {
         &self.agent_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAgentVersionOutput`](crate::operation::get_agent_version::GetAgentVersionOutput).
     pub fn build(self) -> crate::operation::get_agent_version::GetAgentVersionOutput {
         crate::operation::get_agent_version::GetAgentVersionOutput {
-            agent_version: self.agent_version,
+            agent_version: self.agent_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

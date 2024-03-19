@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutDocumentInput {
+pub struct BatchPutDocumentInput  {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q index to add the documents to.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more documents to add to the index.</p>
-    pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
+    pub documents: ::std::option::Option<::std::vec::Vec::<crate::types::Document>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source sync during which the documents were added.</p>
     pub data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchPutDocumentInput {
+impl  BatchPutDocumentInput  {
     /// <p>The identifier of the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q index to add the documents to.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>One or more documents to add to the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
-    pub fn documents(&self) -> &[crate::types::Document] {
-        self.documents.as_deref().unwrap_or_default()
+    pub fn documents(&self) -> & [crate::types::Document] {
+        self.documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The identifier of the data source sync during which the documents were added.</p>
-    pub fn data_source_sync_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_sync_id(&self) -> ::std::option::Option<& str> {
         self.data_source_sync_id.as_deref()
     }
 }
@@ -51,7 +52,7 @@ impl BatchPutDocumentInput {
 pub struct BatchPutDocumentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
+    pub(crate) documents: ::std::option::Option<::std::vec::Vec::<crate::types::Document>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +65,7 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>The identifier of the Amazon Q index to add the documents to.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Q index to add the documents to.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +92,16 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
         let mut v = self.documents.unwrap_or_default();
-        v.push(input);
-        self.documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more documents to add to the index.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
-        self.documents = input;
-        self
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Document>>) -> Self {
+        self.documents = input; self
     }
     /// <p>One or more documents to add to the index.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Document>> {
         &self.documents
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
@@ -113,8 +111,7 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,23 +124,28 @@ impl BatchPutDocumentInputBuilder {
     }
     /// <p>The identifier of the data source sync during which the documents were added.</p>
     pub fn set_data_source_sync_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_sync_id = input;
-        self
+        self.data_source_sync_id = input; self
     }
     /// <p>The identifier of the data source sync during which the documents were added.</p>
     pub fn get_data_source_sync_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_sync_id
     }
     /// Consumes the builder and constructs a [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_put_document::BatchPutDocumentInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            documents: self.documents,
-            role_arn: self.role_arn,
-            data_source_sync_id: self.data_source_sync_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_document::BatchPutDocumentInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                documents: self.documents
+                ,
+                role_arn: self.role_arn
+                ,
+                data_source_sync_id: self.data_source_sync_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Swaps the CNAMEs of two environments.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SwapEnvironmentCnamEsInput {
+pub struct SwapEnvironmentCnamEsInput  {
     /// <p>The ID of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
     pub source_environment_id: ::std::option::Option<::std::string::String>,
@@ -17,25 +17,25 @@ pub struct SwapEnvironmentCnamEsInput {
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
     pub destination_environment_name: ::std::option::Option<::std::string::String>,
 }
-impl SwapEnvironmentCnamEsInput {
+impl  SwapEnvironmentCnamEsInput  {
     /// <p>The ID of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
-    pub fn source_environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_environment_id(&self) -> ::std::option::Option<& str> {
         self.source_environment_id.as_deref()
     }
     /// <p>The name of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
-    pub fn source_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_environment_name(&self) -> ::std::option::Option<& str> {
         self.source_environment_name.as_deref()
     }
     /// <p>The ID of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
-    pub fn destination_environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_environment_id(&self) -> ::std::option::Option<& str> {
         self.destination_environment_id.as_deref()
     }
     /// <p>The name of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
-    pub fn destination_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_environment_name(&self) -> ::std::option::Option<& str> {
         self.destination_environment_name.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl SwapEnvironmentCnamEsInputBuilder {
     /// <p>The ID of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
     pub fn set_source_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_environment_id = input;
-        self
+        self.source_environment_id = input; self
     }
     /// <p>The ID of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.</p>
@@ -82,8 +81,7 @@ impl SwapEnvironmentCnamEsInputBuilder {
     /// <p>The name of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
     pub fn set_source_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_environment_name = input;
-        self
+        self.source_environment_name = input; self
     }
     /// <p>The name of the source environment.</p>
     /// <p>Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.</p>
@@ -99,8 +97,7 @@ impl SwapEnvironmentCnamEsInputBuilder {
     /// <p>The ID of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
     pub fn set_destination_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_environment_id = input;
-        self
+        self.destination_environment_id = input; self
     }
     /// <p>The ID of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.</p>
@@ -116,8 +113,7 @@ impl SwapEnvironmentCnamEsInputBuilder {
     /// <p>The name of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
     pub fn set_destination_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_environment_name = input;
-        self
+        self.destination_environment_name = input; self
     }
     /// <p>The name of the destination environment.</p>
     /// <p>Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.</p>
@@ -125,15 +121,19 @@ impl SwapEnvironmentCnamEsInputBuilder {
         &self.destination_environment_name
     }
     /// Consumes the builder and constructs a [`SwapEnvironmentCnamEsInput`](crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput {
-            source_environment_id: self.source_environment_id,
-            source_environment_name: self.source_environment_name,
-            destination_environment_id: self.destination_environment_id,
-            destination_environment_name: self.destination_environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput {
+                source_environment_id: self.source_environment_id
+                ,
+                source_environment_name: self.source_environment_name
+                ,
+                destination_environment_id: self.destination_environment_id
+                ,
+                destination_environment_name: self.destination_environment_name
+                ,
+            }
+        )
     }
 }
+

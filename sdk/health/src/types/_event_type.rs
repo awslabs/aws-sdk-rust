@@ -5,7 +5,7 @@
 /// <p>You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when Health delivers a specific event to your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html">Monitor for Health events with Amazon CloudWatch Events</a> in the <i>Health User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventType {
+pub struct EventType  {
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
@@ -13,17 +13,17 @@ pub struct EventType {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub category: ::std::option::Option<crate::types::EventTypeCategory>,
 }
-impl EventType {
+impl  EventType  {
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::EventTypeCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::EventTypeCategory> {
         self.category.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl EventTypeBuilder {
     }
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl EventTypeBuilder {
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl EventTypeBuilder {
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::EventTypeCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::EventTypeCategory> {
@@ -88,9 +85,13 @@ impl EventTypeBuilder {
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
     pub fn build(self) -> crate::types::EventType {
         crate::types::EventType {
-            service: self.service,
-            code: self.code,
-            category: self.category,
+            service: self.service
+            ,
+            code: self.code
+            ,
+            category: self.category
+            ,
         }
     }
 }
+

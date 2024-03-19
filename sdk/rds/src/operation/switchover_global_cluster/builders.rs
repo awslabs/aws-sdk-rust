@@ -5,23 +5,20 @@ pub use crate::operation::switchover_global_cluster::_switchover_global_cluster_
 
 impl SwitchoverGlobalClusterInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.switchover_global_cluster();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.switchover_global_cluster();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SwitchoverGlobalCluster`.
-///
+/// 
 /// <p>Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster. Switchover operations were previously called "managed planned failovers."</p>
 /// <p>Aurora promotes the specified secondary cluster to assume full read/write capabilities and demotes the current primary cluster to a secondary (read-only) cluster, maintaining the orginal replication topology. All secondary clusters are synchronized with the primary at the beginning of the process so the new primary continues operations for the Aurora global database without losing any data. Your database is unavailable for a short time while the primary and selected secondary clusters are assuming their new roles. For more information about switching over an Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation is intended for controlled environments, for operations such as "regional rotation" or to fall back to the original primary after a global database failover.</p>
@@ -29,33 +26,32 @@ impl SwitchoverGlobalClusterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SwitchoverGlobalClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::switchover_global_cluster::builders::SwitchoverGlobalClusterInputBuilder,
+                    inner: crate::operation::switchover_global_cluster::builders::SwitchoverGlobalClusterInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
-    > for SwitchoverGlobalClusterFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
-            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
+                    crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
+                > for SwitchoverGlobalClusterFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
+                        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SwitchoverGlobalClusterFluentBuilder {
     /// Creates a new `SwitchoverGlobalCluster`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl SwitchoverGlobalClusterFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::switchover_global_cluster::SwitchoverGlobalCluster::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::switchover_global_cluster::SwitchoverGlobalCluster::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput,
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::switchover_global_cluster::SwitchoverGlobalCluster::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::switchover_global_cluster::SwitchoverGlobalCluster::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput, crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -155,3 +142,4 @@ impl SwitchoverGlobalClusterFluentBuilder {
         self.inner.get_target_db_cluster_identifier()
     }
 }
+

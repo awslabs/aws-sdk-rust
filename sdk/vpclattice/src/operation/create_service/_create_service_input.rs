@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceInput {
+pub struct CreateServiceInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the service.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The custom domain name of the service.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
@@ -22,25 +22,25 @@ pub struct CreateServiceInput {
     /// </ul>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
-impl CreateServiceInput {
+impl  CreateServiceInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags for the service.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The type of IAM policy.</p>
@@ -50,7 +50,7 @@ impl CreateServiceInput {
     /// <li>
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
@@ -67,7 +67,7 @@ impl CreateServiceInput {
 pub struct CreateServiceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
@@ -80,8 +80,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +107,16 @@ impl CreateServiceInputBuilder {
     /// <p>The tags for the service.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the service.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the service.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The custom domain name of the service.</p>
@@ -129,8 +126,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The custom domain name of the service.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name of the service.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl CreateServiceInputBuilder {
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -183,16 +177,23 @@ impl CreateServiceInputBuilder {
         &self.auth_type
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
-            client_token: self.client_token,
-            name: self.name,
-            tags: self.tags,
-            custom_domain_name: self.custom_domain_name,
-            certificate_arn: self.certificate_arn,
-            auth_type: self.auth_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_service::CreateServiceInput {
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                custom_domain_name: self.custom_domain_name
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                auth_type: self.auth_type
+                ,
+            }
+        )
     }
 }
+

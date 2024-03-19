@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an Oracle data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OracleDataProviderSettings {
+pub struct OracleDataProviderSettings  {
     /// <p>The name of the Oracle server.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value for the Oracle data provider.</p>
@@ -26,9 +26,9 @@ pub struct OracleDataProviderSettings {
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the TDE password.</p>
     pub secrets_manager_security_db_encryption_access_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl OracleDataProviderSettings {
+impl  OracleDataProviderSettings  {
     /// <p>The name of the Oracle server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the Oracle data provider.</p>
@@ -36,36 +36,36 @@ impl OracleDataProviderSettings {
         self.port
     }
     /// <p>The database name on the Oracle data provider.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The SSL mode used to connect to the Oracle data provider. The default value is <code>none</code>.</p>
-    pub fn ssl_mode(&self) -> ::std::option::Option<&crate::types::DmsSslModeValue> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<& crate::types::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The address of your Oracle Automatic Storage Management (ASM) server. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
-    pub fn asm_server(&self) -> ::std::option::Option<&str> {
+    pub fn asm_server(&self) -> ::std::option::Option<& str> {
         self.asm_server.as_deref()
     }
     /// <p>The identifier of the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
     /// <p>Required only if your data provider uses the Oracle ASM server.</p>
-    pub fn secrets_manager_oracle_asm_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_oracle_asm_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_oracle_asm_secret_id.as_deref()
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
-    pub fn secrets_manager_oracle_asm_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_oracle_asm_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_oracle_asm_access_role_arn.as_deref()
     }
     /// <p>The identifier of the secret in Secrets Manager that contains the transparent data encryption (TDE) password. DMS requires this password to access Oracle redo logs encrypted by TDE using Binary Reader.</p>
-    pub fn secrets_manager_security_db_encryption_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_security_db_encryption_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_security_db_encryption_secret_id.as_deref()
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the TDE password.</p>
-    pub fn secrets_manager_security_db_encryption_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_security_db_encryption_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_security_db_encryption_access_role_arn.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The name of the Oracle server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the Oracle server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The port value for the Oracle data provider.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the Oracle data provider.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -127,8 +125,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The database name on the Oracle data provider.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name on the Oracle data provider.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The SSL mode used to connect to the Oracle data provider. The default value is <code>none</code>.</p>
     pub fn set_ssl_mode(mut self, input: ::std::option::Option<crate::types::DmsSslModeValue>) -> Self {
-        self.ssl_mode = input;
-        self
+        self.ssl_mode = input; self
     }
     /// <p>The SSL mode used to connect to the Oracle data provider. The default value is <code>none</code>.</p>
     pub fn get_ssl_mode(&self) -> &::std::option::Option<crate::types::DmsSslModeValue> {
@@ -155,8 +151,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The address of your Oracle Automatic Storage Management (ASM) server. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub fn set_asm_server(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asm_server = input;
-        self
+        self.asm_server = input; self
     }
     /// <p>The address of your Oracle Automatic Storage Management (ASM) server. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub fn get_asm_server(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +179,7 @@ impl OracleDataProviderSettingsBuilder {
     /// <p>The identifier of the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
     /// <p>Required only if your data provider uses the Oracle ASM server.</p>
     pub fn set_secrets_manager_oracle_asm_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_oracle_asm_secret_id = input;
-        self
+        self.secrets_manager_oracle_asm_secret_id = input; self
     }
     /// <p>The identifier of the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
     /// <p>Required only if your data provider uses the Oracle ASM server.</p>
@@ -200,8 +193,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
     pub fn set_secrets_manager_oracle_asm_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_oracle_asm_access_role_arn = input;
-        self
+        self.secrets_manager_oracle_asm_access_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the Oracle ASM connection details.</p>
     pub fn get_secrets_manager_oracle_asm_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +206,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The identifier of the secret in Secrets Manager that contains the transparent data encryption (TDE) password. DMS requires this password to access Oracle redo logs encrypted by TDE using Binary Reader.</p>
     pub fn set_secrets_manager_security_db_encryption_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_security_db_encryption_secret_id = input;
-        self
+        self.secrets_manager_security_db_encryption_secret_id = input; self
     }
     /// <p>The identifier of the secret in Secrets Manager that contains the transparent data encryption (TDE) password. DMS requires this password to access Oracle redo logs encrypted by TDE using Binary Reader.</p>
     pub fn get_secrets_manager_security_db_encryption_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +219,7 @@ impl OracleDataProviderSettingsBuilder {
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the TDE password.</p>
     pub fn set_secrets_manager_security_db_encryption_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_security_db_encryption_access_role_arn = input;
-        self
+        self.secrets_manager_security_db_encryption_access_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that provides access to the secret in Secrets Manager that contains the TDE password.</p>
     pub fn get_secrets_manager_security_db_encryption_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,16 +228,27 @@ impl OracleDataProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`OracleDataProviderSettings`](crate::types::OracleDataProviderSettings).
     pub fn build(self) -> crate::types::OracleDataProviderSettings {
         crate::types::OracleDataProviderSettings {
-            server_name: self.server_name,
-            port: self.port,
-            database_name: self.database_name,
-            ssl_mode: self.ssl_mode,
-            certificate_arn: self.certificate_arn,
-            asm_server: self.asm_server,
-            secrets_manager_oracle_asm_secret_id: self.secrets_manager_oracle_asm_secret_id,
-            secrets_manager_oracle_asm_access_role_arn: self.secrets_manager_oracle_asm_access_role_arn,
-            secrets_manager_security_db_encryption_secret_id: self.secrets_manager_security_db_encryption_secret_id,
-            secrets_manager_security_db_encryption_access_role_arn: self.secrets_manager_security_db_encryption_access_role_arn,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            database_name: self.database_name
+            ,
+            ssl_mode: self.ssl_mode
+            ,
+            certificate_arn: self.certificate_arn
+            ,
+            asm_server: self.asm_server
+            ,
+            secrets_manager_oracle_asm_secret_id: self.secrets_manager_oracle_asm_secret_id
+            ,
+            secrets_manager_oracle_asm_access_role_arn: self.secrets_manager_oracle_asm_access_role_arn
+            ,
+            secrets_manager_security_db_encryption_secret_id: self.secrets_manager_security_db_encryption_secret_id
+            ,
+            secrets_manager_security_db_encryption_access_role_arn: self.secrets_manager_security_db_encryption_access_role_arn
+            ,
         }
     }
 }
+

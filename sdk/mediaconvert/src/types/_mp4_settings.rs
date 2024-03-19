@@ -3,7 +3,7 @@
 /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Mp4Settings {
+pub struct Mp4Settings  {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
@@ -17,13 +17,13 @@ pub struct Mp4Settings {
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub mp4_major_brand: ::std::option::Option<::std::string::String>,
 }
-impl Mp4Settings {
+impl  Mp4Settings  {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::CmfcAudioDuration> {
+    pub fn audio_duration(&self) -> ::std::option::Option<& crate::types::CmfcAudioDuration> {
         self.audio_duration.as_ref()
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
-    pub fn cslg_atom(&self) -> ::std::option::Option<&crate::types::Mp4CslgAtom> {
+    pub fn cslg_atom(&self) -> ::std::option::Option<& crate::types::Mp4CslgAtom> {
         self.cslg_atom.as_ref()
     }
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
@@ -31,15 +31,15 @@ impl Mp4Settings {
         self.ctts_version
     }
     /// Inserts a free-space box immediately after the moov box.
-    pub fn free_space_box(&self) -> ::std::option::Option<&crate::types::Mp4FreeSpaceBox> {
+    pub fn free_space_box(&self) -> ::std::option::Option<& crate::types::Mp4FreeSpaceBox> {
         self.free_space_box.as_ref()
     }
     /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
-    pub fn moov_placement(&self) -> ::std::option::Option<&crate::types::Mp4MoovPlacement> {
+    pub fn moov_placement(&self) -> ::std::option::Option<& crate::types::Mp4MoovPlacement> {
         self.moov_placement.as_ref()
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
-    pub fn mp4_major_brand(&self) -> ::std::option::Option<&str> {
+    pub fn mp4_major_brand(&self) -> ::std::option::Option<& str> {
         self.mp4_major_brand.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl Mp4SettingsBuilder {
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::CmfcAudioDuration>) -> Self {
-        self.audio_duration = input;
-        self
+        self.audio_duration = input; self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::CmfcAudioDuration> {
@@ -83,8 +82,7 @@ impl Mp4SettingsBuilder {
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub fn set_cslg_atom(mut self, input: ::std::option::Option<crate::types::Mp4CslgAtom>) -> Self {
-        self.cslg_atom = input;
-        self
+        self.cslg_atom = input; self
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
     pub fn get_cslg_atom(&self) -> &::std::option::Option<crate::types::Mp4CslgAtom> {
@@ -97,8 +95,7 @@ impl Mp4SettingsBuilder {
     }
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
     pub fn set_ctts_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ctts_version = input;
-        self
+        self.ctts_version = input; self
     }
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
     pub fn get_ctts_version(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl Mp4SettingsBuilder {
     }
     /// Inserts a free-space box immediately after the moov box.
     pub fn set_free_space_box(mut self, input: ::std::option::Option<crate::types::Mp4FreeSpaceBox>) -> Self {
-        self.free_space_box = input;
-        self
+        self.free_space_box = input; self
     }
     /// Inserts a free-space box immediately after the moov box.
     pub fn get_free_space_box(&self) -> &::std::option::Option<crate::types::Mp4FreeSpaceBox> {
@@ -125,8 +121,7 @@ impl Mp4SettingsBuilder {
     }
     /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn set_moov_placement(mut self, input: ::std::option::Option<crate::types::Mp4MoovPlacement>) -> Self {
-        self.moov_placement = input;
-        self
+        self.moov_placement = input; self
     }
     /// To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
     pub fn get_moov_placement(&self) -> &::std::option::Option<crate::types::Mp4MoovPlacement> {
@@ -139,8 +134,7 @@ impl Mp4SettingsBuilder {
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub fn set_mp4_major_brand(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mp4_major_brand = input;
-        self
+        self.mp4_major_brand = input; self
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
     pub fn get_mp4_major_brand(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl Mp4SettingsBuilder {
     /// Consumes the builder and constructs a [`Mp4Settings`](crate::types::Mp4Settings).
     pub fn build(self) -> crate::types::Mp4Settings {
         crate::types::Mp4Settings {
-            audio_duration: self.audio_duration,
-            cslg_atom: self.cslg_atom,
-            ctts_version: self.ctts_version,
-            free_space_box: self.free_space_box,
-            moov_placement: self.moov_placement,
-            mp4_major_brand: self.mp4_major_brand,
+            audio_duration: self.audio_duration
+            ,
+            cslg_atom: self.cslg_atom
+            ,
+            ctts_version: self.ctts_version
+            ,
+            free_space_box: self.free_space_box
+            ,
+            moov_placement: self.moov_placement
+            ,
+            mp4_major_brand: self.mp4_major_brand
+            ,
         }
     }
 }
+

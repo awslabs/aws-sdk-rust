@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchSuspendUserInput {
+pub struct BatchSuspendUserInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the user IDs to suspend.</p>
-    pub user_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchSuspendUserInput {
+impl  BatchSuspendUserInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The request containing the user IDs to suspend.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_list.is_none()`.
-    pub fn user_id_list(&self) -> &[::std::string::String] {
-        self.user_id_list.as_deref().unwrap_or_default()
+    pub fn user_id_list(&self) -> & [::std::string::String] {
+        self.user_id_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchSuspendUserInput {
@@ -32,7 +33,7 @@ impl BatchSuspendUserInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSuspendUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchSuspendUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -43,8 +44,7 @@ impl BatchSuspendUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl BatchSuspendUserInputBuilder {
     /// <p>The request containing the user IDs to suspend.</p>
     pub fn user_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.user_id_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_id_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The request containing the user IDs to suspend.</p>
-    pub fn set_user_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_id_list = input;
-        self
+    pub fn set_user_id_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_id_list = input; self
     }
     /// <p>The request containing the user IDs to suspend.</p>
-    pub fn get_user_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_id_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_id_list
     }
     /// Consumes the builder and constructs a [`BatchSuspendUserInput`](crate::operation::batch_suspend_user::BatchSuspendUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_suspend_user::BatchSuspendUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_suspend_user::BatchSuspendUserInput {
-            account_id: self.account_id,
-            user_id_list: self.user_id_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_suspend_user::BatchSuspendUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_suspend_user::BatchSuspendUserInput {
+                account_id: self.account_id
+                ,
+                user_id_list: self.user_id_list
+                ,
+            }
+        )
     }
 }
+

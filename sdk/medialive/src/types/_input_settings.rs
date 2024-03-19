@@ -3,11 +3,11 @@
 /// Live Event input parameters. There can be multiple inputs in a single Live Event.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputSettings {
+pub struct InputSettings  {
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    pub audio_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AudioSelector>>,
+    pub audio_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AudioSelector>>,
     /// Used to select the caption input to use for inputs that have multiple available.
-    pub caption_selectors: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSelector>>,
+    pub caption_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSelector>>,
     /// Enable or disable the deblock filter when filtering.
     pub deblock_filter: ::std::option::Option<crate::types::InputDeblockFilter>,
     /// Enable or disable the denoise filter when filtering.
@@ -27,25 +27,27 @@ pub struct InputSettings {
     /// Informs which video elementary stream to decode for input types that have multiple available.
     pub video_selector: ::std::option::Option<crate::types::VideoSelector>,
 }
-impl InputSettings {
+impl  InputSettings  {
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_selectors.is_none()`.
-    pub fn audio_selectors(&self) -> &[crate::types::AudioSelector] {
-        self.audio_selectors.as_deref().unwrap_or_default()
+    pub fn audio_selectors(&self) -> & [crate::types::AudioSelector] {
+        self.audio_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// Used to select the caption input to use for inputs that have multiple available.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_selectors.is_none()`.
-    pub fn caption_selectors(&self) -> &[crate::types::CaptionSelector] {
-        self.caption_selectors.as_deref().unwrap_or_default()
+    pub fn caption_selectors(&self) -> & [crate::types::CaptionSelector] {
+        self.caption_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// Enable or disable the deblock filter when filtering.
-    pub fn deblock_filter(&self) -> ::std::option::Option<&crate::types::InputDeblockFilter> {
+    pub fn deblock_filter(&self) -> ::std::option::Option<& crate::types::InputDeblockFilter> {
         self.deblock_filter.as_ref()
     }
     /// Enable or disable the denoise filter when filtering.
-    pub fn denoise_filter(&self) -> ::std::option::Option<&crate::types::InputDenoiseFilter> {
+    pub fn denoise_filter(&self) -> ::std::option::Option<& crate::types::InputDenoiseFilter> {
         self.denoise_filter.as_ref()
     }
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
@@ -53,11 +55,11 @@ impl InputSettings {
         self.filter_strength
     }
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
-    pub fn input_filter(&self) -> ::std::option::Option<&crate::types::InputFilter> {
+    pub fn input_filter(&self) -> ::std::option::Option<& crate::types::InputFilter> {
         self.input_filter.as_ref()
     }
     /// Input settings.
-    pub fn network_input_settings(&self) -> ::std::option::Option<&crate::types::NetworkInputSettings> {
+    pub fn network_input_settings(&self) -> ::std::option::Option<& crate::types::NetworkInputSettings> {
         self.network_input_settings.as_ref()
     }
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
@@ -65,15 +67,15 @@ impl InputSettings {
         self.scte35_pid
     }
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
-    pub fn smpte2038_data_preference(&self) -> ::std::option::Option<&crate::types::Smpte2038DataPreference> {
+    pub fn smpte2038_data_preference(&self) -> ::std::option::Option<& crate::types::Smpte2038DataPreference> {
         self.smpte2038_data_preference.as_ref()
     }
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
-    pub fn source_end_behavior(&self) -> ::std::option::Option<&crate::types::InputSourceEndBehavior> {
+    pub fn source_end_behavior(&self) -> ::std::option::Option<& crate::types::InputSourceEndBehavior> {
         self.source_end_behavior.as_ref()
     }
     /// Informs which video elementary stream to decode for input types that have multiple available.
-    pub fn video_selector(&self) -> ::std::option::Option<&crate::types::VideoSelector> {
+    pub fn video_selector(&self) -> ::std::option::Option<& crate::types::VideoSelector> {
         self.video_selector.as_ref()
     }
 }
@@ -88,8 +90,8 @@ impl InputSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSettingsBuilder {
-    pub(crate) audio_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AudioSelector>>,
-    pub(crate) caption_selectors: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSelector>>,
+    pub(crate) audio_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AudioSelector>>,
+    pub(crate) caption_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSelector>>,
     pub(crate) deblock_filter: ::std::option::Option<crate::types::InputDeblockFilter>,
     pub(crate) denoise_filter: ::std::option::Option<crate::types::InputDenoiseFilter>,
     pub(crate) filter_strength: ::std::option::Option<i32>,
@@ -108,17 +110,16 @@ impl InputSettingsBuilder {
     /// Used to select the audio stream to decode for inputs that have multiple available.
     pub fn audio_selectors(mut self, input: crate::types::AudioSelector) -> Self {
         let mut v = self.audio_selectors.unwrap_or_default();
-        v.push(input);
-        self.audio_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audio_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    pub fn set_audio_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioSelector>>) -> Self {
-        self.audio_selectors = input;
-        self
+    pub fn set_audio_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudioSelector>>) -> Self {
+        self.audio_selectors = input; self
     }
     /// Used to select the audio stream to decode for inputs that have multiple available.
-    pub fn get_audio_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioSelector>> {
+    pub fn get_audio_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudioSelector>> {
         &self.audio_selectors
     }
     /// Appends an item to `caption_selectors`.
@@ -128,17 +129,16 @@ impl InputSettingsBuilder {
     /// Used to select the caption input to use for inputs that have multiple available.
     pub fn caption_selectors(mut self, input: crate::types::CaptionSelector) -> Self {
         let mut v = self.caption_selectors.unwrap_or_default();
-        v.push(input);
-        self.caption_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.caption_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// Used to select the caption input to use for inputs that have multiple available.
-    pub fn set_caption_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSelector>>) -> Self {
-        self.caption_selectors = input;
-        self
+    pub fn set_caption_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionSelector>>) -> Self {
+        self.caption_selectors = input; self
     }
     /// Used to select the caption input to use for inputs that have multiple available.
-    pub fn get_caption_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSelector>> {
+    pub fn get_caption_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CaptionSelector>> {
         &self.caption_selectors
     }
     /// Enable or disable the deblock filter when filtering.
@@ -148,8 +148,7 @@ impl InputSettingsBuilder {
     }
     /// Enable or disable the deblock filter when filtering.
     pub fn set_deblock_filter(mut self, input: ::std::option::Option<crate::types::InputDeblockFilter>) -> Self {
-        self.deblock_filter = input;
-        self
+        self.deblock_filter = input; self
     }
     /// Enable or disable the deblock filter when filtering.
     pub fn get_deblock_filter(&self) -> &::std::option::Option<crate::types::InputDeblockFilter> {
@@ -162,8 +161,7 @@ impl InputSettingsBuilder {
     }
     /// Enable or disable the denoise filter when filtering.
     pub fn set_denoise_filter(mut self, input: ::std::option::Option<crate::types::InputDenoiseFilter>) -> Self {
-        self.denoise_filter = input;
-        self
+        self.denoise_filter = input; self
     }
     /// Enable or disable the denoise filter when filtering.
     pub fn get_denoise_filter(&self) -> &::std::option::Option<crate::types::InputDenoiseFilter> {
@@ -176,8 +174,7 @@ impl InputSettingsBuilder {
     }
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
     pub fn set_filter_strength(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.filter_strength = input;
-        self
+        self.filter_strength = input; self
     }
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
     pub fn get_filter_strength(&self) -> &::std::option::Option<i32> {
@@ -190,8 +187,7 @@ impl InputSettingsBuilder {
     }
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
     pub fn set_input_filter(mut self, input: ::std::option::Option<crate::types::InputFilter>) -> Self {
-        self.input_filter = input;
-        self
+        self.input_filter = input; self
     }
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
     pub fn get_input_filter(&self) -> &::std::option::Option<crate::types::InputFilter> {
@@ -204,8 +200,7 @@ impl InputSettingsBuilder {
     }
     /// Input settings.
     pub fn set_network_input_settings(mut self, input: ::std::option::Option<crate::types::NetworkInputSettings>) -> Self {
-        self.network_input_settings = input;
-        self
+        self.network_input_settings = input; self
     }
     /// Input settings.
     pub fn get_network_input_settings(&self) -> &::std::option::Option<crate::types::NetworkInputSettings> {
@@ -218,8 +213,7 @@ impl InputSettingsBuilder {
     }
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
     pub fn set_scte35_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scte35_pid = input;
-        self
+        self.scte35_pid = input; self
     }
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
     pub fn get_scte35_pid(&self) -> &::std::option::Option<i32> {
@@ -232,8 +226,7 @@ impl InputSettingsBuilder {
     }
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
     pub fn set_smpte2038_data_preference(mut self, input: ::std::option::Option<crate::types::Smpte2038DataPreference>) -> Self {
-        self.smpte2038_data_preference = input;
-        self
+        self.smpte2038_data_preference = input; self
     }
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
     pub fn get_smpte2038_data_preference(&self) -> &::std::option::Option<crate::types::Smpte2038DataPreference> {
@@ -246,8 +239,7 @@ impl InputSettingsBuilder {
     }
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
     pub fn set_source_end_behavior(mut self, input: ::std::option::Option<crate::types::InputSourceEndBehavior>) -> Self {
-        self.source_end_behavior = input;
-        self
+        self.source_end_behavior = input; self
     }
     /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
     pub fn get_source_end_behavior(&self) -> &::std::option::Option<crate::types::InputSourceEndBehavior> {
@@ -260,8 +252,7 @@ impl InputSettingsBuilder {
     }
     /// Informs which video elementary stream to decode for input types that have multiple available.
     pub fn set_video_selector(mut self, input: ::std::option::Option<crate::types::VideoSelector>) -> Self {
-        self.video_selector = input;
-        self
+        self.video_selector = input; self
     }
     /// Informs which video elementary stream to decode for input types that have multiple available.
     pub fn get_video_selector(&self) -> &::std::option::Option<crate::types::VideoSelector> {
@@ -270,17 +261,29 @@ impl InputSettingsBuilder {
     /// Consumes the builder and constructs a [`InputSettings`](crate::types::InputSettings).
     pub fn build(self) -> crate::types::InputSettings {
         crate::types::InputSettings {
-            audio_selectors: self.audio_selectors,
-            caption_selectors: self.caption_selectors,
-            deblock_filter: self.deblock_filter,
-            denoise_filter: self.denoise_filter,
-            filter_strength: self.filter_strength,
-            input_filter: self.input_filter,
-            network_input_settings: self.network_input_settings,
-            scte35_pid: self.scte35_pid,
-            smpte2038_data_preference: self.smpte2038_data_preference,
-            source_end_behavior: self.source_end_behavior,
-            video_selector: self.video_selector,
+            audio_selectors: self.audio_selectors
+            ,
+            caption_selectors: self.caption_selectors
+            ,
+            deblock_filter: self.deblock_filter
+            ,
+            denoise_filter: self.denoise_filter
+            ,
+            filter_strength: self.filter_strength
+            ,
+            input_filter: self.input_filter
+            ,
+            network_input_settings: self.network_input_settings
+            ,
+            scte35_pid: self.scte35_pid
+            ,
+            smpte2038_data_preference: self.smpte2038_data_preference
+            ,
+            source_end_behavior: self.source_end_behavior
+            ,
+            video_selector: self.video_selector
+            ,
         }
     }
 }
+

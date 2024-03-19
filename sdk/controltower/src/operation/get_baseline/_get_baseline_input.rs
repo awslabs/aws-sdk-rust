@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBaselineInput {
+pub struct GetBaselineInput  {
     /// <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
     pub baseline_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetBaselineInput {
+impl  GetBaselineInput  {
     /// <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-    pub fn baseline_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_identifier(&self) -> ::std::option::Option<& str> {
         self.baseline_identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetBaselineInputBuilder {
     }
     /// <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
     pub fn set_baseline_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_identifier = input;
-        self
+        self.baseline_identifier = input; self
     }
     /// <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
     pub fn get_baseline_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetBaselineInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBaselineInput`](crate::operation::get_baseline::GetBaselineInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_baseline::GetBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_baseline::GetBaselineInput {
-            baseline_identifier: self.baseline_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_baseline::GetBaselineInput {
+                baseline_identifier: self.baseline_identifier
+                ,
+            }
+        )
     }
 }
+

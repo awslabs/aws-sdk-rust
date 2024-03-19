@@ -3,7 +3,7 @@
 /// <p>Returns summary information about a core network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkSummary {
+pub struct CoreNetworkSummary  {
     /// <p>The ID of a core network.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>a core network ARN.</p>
@@ -17,38 +17,39 @@ pub struct CoreNetworkSummary {
     /// <p>The description of a core network.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tags associated with a core network summary.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CoreNetworkSummary {
+impl  CoreNetworkSummary  {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>a core network ARN.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
     /// <p>The global network ID.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the account owner.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The state of a core network.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CoreNetworkState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CoreNetworkState> {
         self.state.as_ref()
     }
     /// <p>The description of a core network.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The key-value tags associated with a core network summary.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreNetworkSummary {
@@ -68,7 +69,7 @@ pub struct CoreNetworkSummaryBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CoreNetworkState>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CoreNetworkSummaryBuilder {
     /// <p>The ID of a core network.</p>
@@ -78,8 +79,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>a core network ARN.</p>
     pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_arn = input;
-        self
+        self.core_network_arn = input; self
     }
     /// <p>a core network ARN.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>The global network ID.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The global network ID.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>The ID of the account owner.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The ID of the account owner.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>The state of a core network.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CoreNetworkState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of a core network.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CoreNetworkState> {
@@ -148,8 +144,7 @@ impl CoreNetworkSummaryBuilder {
     }
     /// <p>The description of a core network.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a core network.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,29 +157,36 @@ impl CoreNetworkSummaryBuilder {
     /// <p>The key-value tags associated with a core network summary.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value tags associated with a core network summary.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value tags associated with a core network summary.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CoreNetworkSummary`](crate::types::CoreNetworkSummary).
     pub fn build(self) -> crate::types::CoreNetworkSummary {
         crate::types::CoreNetworkSummary {
-            core_network_id: self.core_network_id,
-            core_network_arn: self.core_network_arn,
-            global_network_id: self.global_network_id,
-            owner_account_id: self.owner_account_id,
-            state: self.state,
-            description: self.description,
-            tags: self.tags,
+            core_network_id: self.core_network_id
+            ,
+            core_network_arn: self.core_network_arn
+            ,
+            global_network_id: self.global_network_id
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            state: self.state
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

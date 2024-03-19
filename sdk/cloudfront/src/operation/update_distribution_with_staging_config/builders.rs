@@ -5,23 +5,20 @@ pub use crate::operation::update_distribution_with_staging_config::_update_distr
 
 impl UpdateDistributionWithStagingConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_distribution_with_staging_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_distribution_with_staging_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDistributionWithStagingConfig`.
-///
+/// 
 /// <p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p>
 /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
 /// <p>This API operation requires the following IAM permissions:</p>
@@ -34,33 +31,32 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder,
+                    inner: crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-    > for UpdateDistributionWithStagingConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
+                    crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
+                > for UpdateDistributionWithStagingConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
+                        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDistributionWithStagingConfigFluentBuilder {
     /// Creates a new `UpdateDistributionWithStagingConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,54 +65,44 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput,
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -147,7 +133,7 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,7 +142,7 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -165,10 +151,11 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }
 }
+

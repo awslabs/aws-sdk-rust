@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGroupsForEntityOutput {
+pub struct ListGroupsForEntityOutput  {
     /// <p>The overview of groups in an organization.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
     /// <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGroupsForEntityOutput {
+impl  ListGroupsForEntityOutput  {
     /// <p>The overview of groups in an organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::GroupIdentifier] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGroupsForEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGroupsForEntityOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsForEntityOutput`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput).
     pub fn builder() -> crate::operation::list_groups_for_entity::builders::ListGroupsForEntityOutputBuilder {
@@ -37,7 +38,7 @@ impl ListGroupsForEntityOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsForEntityOutputBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListGroupsForEntityOutputBuilder {
     /// <p>The overview of groups in an organization.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The overview of groups in an organization.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The overview of groups in an organization.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl ListGroupsForEntityOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGroupsForEntityOutput`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput).
     pub fn build(self) -> crate::operation::list_groups_for_entity::ListGroupsForEntityOutput {
         crate::operation::list_groups_for_entity::ListGroupsForEntityOutput {
-            groups: self.groups,
-            next_token: self.next_token,
+            groups: self.groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

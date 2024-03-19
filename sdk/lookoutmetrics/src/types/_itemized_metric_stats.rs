@@ -3,15 +3,15 @@
 /// <p>Aggregated statistics about a measure affected by an anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemizedMetricStats {
+pub struct ItemizedMetricStats  {
     /// <p>The name of the measure.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of times that the measure appears.</p>
     pub occurrence_count: i32,
 }
-impl ItemizedMetricStats {
+impl  ItemizedMetricStats  {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of times that the measure appears.</p>
@@ -41,8 +41,7 @@ impl ItemizedMetricStatsBuilder {
     }
     /// <p>The name of the measure.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the measure.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ItemizedMetricStatsBuilder {
     }
     /// <p>The number of times that the measure appears.</p>
     pub fn set_occurrence_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.occurrence_count = input;
-        self
+        self.occurrence_count = input; self
     }
     /// <p>The number of times that the measure appears.</p>
     pub fn get_occurrence_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl ItemizedMetricStatsBuilder {
     /// Consumes the builder and constructs a [`ItemizedMetricStats`](crate::types::ItemizedMetricStats).
     pub fn build(self) -> crate::types::ItemizedMetricStats {
         crate::types::ItemizedMetricStats {
-            metric_name: self.metric_name,
-            occurrence_count: self.occurrence_count.unwrap_or_default(),
+            metric_name: self.metric_name
+            ,
+            occurrence_count: self.occurrence_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

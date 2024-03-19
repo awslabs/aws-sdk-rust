@@ -3,7 +3,7 @@
 /// <p>Contains information summarizing an edge deployment plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeDeploymentPlanSummary {
+pub struct EdgeDeploymentPlanSummary  {
     /// <p>The ARN of the edge deployment plan.</p>
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge deployment plan.</p>
@@ -21,17 +21,17 @@ pub struct EdgeDeploymentPlanSummary {
     /// <p>The time when the edge deployment plan was last updated.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EdgeDeploymentPlanSummary {
+impl  EdgeDeploymentPlanSummary  {
     /// <p>The ARN of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_arn(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_arn.as_deref()
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>The name of the device fleet used for the deployment.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The number of edge devices with the successful deployment.</p>
@@ -47,11 +47,11 @@ impl EdgeDeploymentPlanSummary {
         self.edge_deployment_failed
     }
     /// <p>The time when the edge deployment plan was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the edge deployment plan was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The ARN of the edge deployment plan.</p>
     pub fn set_edge_deployment_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_deployment_plan_arn = input;
-        self
+        self.edge_deployment_plan_arn = input; self
     }
     /// <p>The ARN of the edge deployment plan.</p>
     pub fn get_edge_deployment_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+        self.edge_deployment_plan_name = input; self
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The name of the device fleet used for the deployment.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the device fleet used for the deployment.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The number of edge devices with the successful deployment.</p>
     pub fn set_edge_deployment_success(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.edge_deployment_success = input;
-        self
+        self.edge_deployment_success = input; self
     }
     /// <p>The number of edge devices with the successful deployment.</p>
     pub fn get_edge_deployment_success(&self) -> &::std::option::Option<i32> {
@@ -144,8 +140,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
     pub fn set_edge_deployment_pending(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.edge_deployment_pending = input;
-        self
+        self.edge_deployment_pending = input; self
     }
     /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
     pub fn get_edge_deployment_pending(&self) -> &::std::option::Option<i32> {
@@ -159,8 +154,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The number of edge devices that failed the deployment.</p>
     pub fn set_edge_deployment_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.edge_deployment_failed = input;
-        self
+        self.edge_deployment_failed = input; self
     }
     /// <p>The number of edge devices that failed the deployment.</p>
     pub fn get_edge_deployment_failed(&self) -> &::std::option::Option<i32> {
@@ -173,8 +167,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The time when the edge deployment plan was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the edge deployment plan was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +180,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
     }
     /// <p>The time when the edge deployment plan was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time when the edge deployment plan was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,14 +189,23 @@ impl EdgeDeploymentPlanSummaryBuilder {
     /// Consumes the builder and constructs a [`EdgeDeploymentPlanSummary`](crate::types::EdgeDeploymentPlanSummary).
     pub fn build(self) -> crate::types::EdgeDeploymentPlanSummary {
         crate::types::EdgeDeploymentPlanSummary {
-            edge_deployment_plan_arn: self.edge_deployment_plan_arn,
-            edge_deployment_plan_name: self.edge_deployment_plan_name,
-            device_fleet_name: self.device_fleet_name,
-            edge_deployment_success: self.edge_deployment_success,
-            edge_deployment_pending: self.edge_deployment_pending,
-            edge_deployment_failed: self.edge_deployment_failed,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            edge_deployment_plan_arn: self.edge_deployment_plan_arn
+            ,
+            edge_deployment_plan_name: self.edge_deployment_plan_name
+            ,
+            device_fleet_name: self.device_fleet_name
+            ,
+            edge_deployment_success: self.edge_deployment_success
+            ,
+            edge_deployment_pending: self.edge_deployment_pending
+            ,
+            edge_deployment_failed: self.edge_deployment_failed
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

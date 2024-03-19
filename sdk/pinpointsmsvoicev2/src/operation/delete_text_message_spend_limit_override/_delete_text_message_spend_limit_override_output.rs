@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTextMessageSpendLimitOverrideOutput {
+pub struct DeleteTextMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit, in US dollars.</p>
     pub monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DeleteTextMessageSpendLimitOverrideOutput {
+impl  DeleteTextMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit, in US dollars.</p>
     pub fn monthly_limit(&self) -> ::std::option::Option<i64> {
         self.monthly_limit
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTextMessageSpendLimitOverrideOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTextMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTextMessageSpendLimitOverrideOutput`](crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput).
     pub fn builder() -> crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteTextMessageSpendLimitOverrideOutputBuilder {
     }
     /// <p>The current monthly limit, in US dollars.</p>
     pub fn set_monthly_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.monthly_limit = input;
-        self
+        self.monthly_limit = input; self
     }
     /// <p>The current monthly limit, in US dollars.</p>
     pub fn get_monthly_limit(&self) -> &::std::option::Option<i64> {
         &self.monthly_limit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTextMessageSpendLimitOverrideOutput`](crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput).
     pub fn build(self) -> crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput {
         crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput {
-            monthly_limit: self.monthly_limit,
+            monthly_limit: self.monthly_limit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

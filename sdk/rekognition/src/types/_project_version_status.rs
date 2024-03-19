@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let projectversionstatus = unimplemented!();
 /// match projectversionstatus {
@@ -42,16 +42,14 @@
 /// Specifically, when `projectversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProjectVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     CopyingCompleted,
@@ -83,112 +81,98 @@ pub enum ProjectVersionStatus {
     TrainingInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ProjectVersionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COPYING_COMPLETED" => ProjectVersionStatus::CopyingCompleted,
-            "COPYING_FAILED" => ProjectVersionStatus::CopyingFailed,
-            "COPYING_IN_PROGRESS" => ProjectVersionStatus::CopyingInProgress,
-            "DELETING" => ProjectVersionStatus::Deleting,
-            "DEPRECATED" => ProjectVersionStatus::Deprecated,
-            "EXPIRED" => ProjectVersionStatus::Expired,
-            "FAILED" => ProjectVersionStatus::Failed,
-            "RUNNING" => ProjectVersionStatus::Running,
-            "STARTING" => ProjectVersionStatus::Starting,
-            "STOPPED" => ProjectVersionStatus::Stopped,
-            "STOPPING" => ProjectVersionStatus::Stopping,
-            "TRAINING_COMPLETED" => ProjectVersionStatus::TrainingCompleted,
-            "TRAINING_FAILED" => ProjectVersionStatus::TrainingFailed,
-            "TRAINING_IN_PROGRESS" => ProjectVersionStatus::TrainingInProgress,
-            other => ProjectVersionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COPYING_COMPLETED" => ProjectVersionStatus::CopyingCompleted,
+"COPYING_FAILED" => ProjectVersionStatus::CopyingFailed,
+"COPYING_IN_PROGRESS" => ProjectVersionStatus::CopyingInProgress,
+"DELETING" => ProjectVersionStatus::Deleting,
+"DEPRECATED" => ProjectVersionStatus::Deprecated,
+"EXPIRED" => ProjectVersionStatus::Expired,
+"FAILED" => ProjectVersionStatus::Failed,
+"RUNNING" => ProjectVersionStatus::Running,
+"STARTING" => ProjectVersionStatus::Starting,
+"STOPPED" => ProjectVersionStatus::Stopped,
+"STOPPING" => ProjectVersionStatus::Stopping,
+"TRAINING_COMPLETED" => ProjectVersionStatus::TrainingCompleted,
+"TRAINING_FAILED" => ProjectVersionStatus::TrainingFailed,
+"TRAINING_IN_PROGRESS" => ProjectVersionStatus::TrainingInProgress,
+other => ProjectVersionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ProjectVersionStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ProjectVersionStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ProjectVersionStatus::from(s))
+                    }
+                }
 impl ProjectVersionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProjectVersionStatus::CopyingCompleted => "COPYING_COMPLETED",
-            ProjectVersionStatus::CopyingFailed => "COPYING_FAILED",
-            ProjectVersionStatus::CopyingInProgress => "COPYING_IN_PROGRESS",
-            ProjectVersionStatus::Deleting => "DELETING",
-            ProjectVersionStatus::Deprecated => "DEPRECATED",
-            ProjectVersionStatus::Expired => "EXPIRED",
-            ProjectVersionStatus::Failed => "FAILED",
-            ProjectVersionStatus::Running => "RUNNING",
-            ProjectVersionStatus::Starting => "STARTING",
-            ProjectVersionStatus::Stopped => "STOPPED",
-            ProjectVersionStatus::Stopping => "STOPPING",
-            ProjectVersionStatus::TrainingCompleted => "TRAINING_COMPLETED",
-            ProjectVersionStatus::TrainingFailed => "TRAINING_FAILED",
-            ProjectVersionStatus::TrainingInProgress => "TRAINING_IN_PROGRESS",
-            ProjectVersionStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COPYING_COMPLETED",
-            "COPYING_FAILED",
-            "COPYING_IN_PROGRESS",
-            "DELETING",
-            "DEPRECATED",
-            "EXPIRED",
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "TRAINING_COMPLETED",
-            "TRAINING_FAILED",
-            "TRAINING_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProjectVersionStatus::CopyingCompleted => "COPYING_COMPLETED",
+    ProjectVersionStatus::CopyingFailed => "COPYING_FAILED",
+    ProjectVersionStatus::CopyingInProgress => "COPYING_IN_PROGRESS",
+    ProjectVersionStatus::Deleting => "DELETING",
+    ProjectVersionStatus::Deprecated => "DEPRECATED",
+    ProjectVersionStatus::Expired => "EXPIRED",
+    ProjectVersionStatus::Failed => "FAILED",
+    ProjectVersionStatus::Running => "RUNNING",
+    ProjectVersionStatus::Starting => "STARTING",
+    ProjectVersionStatus::Stopped => "STOPPED",
+    ProjectVersionStatus::Stopping => "STOPPING",
+    ProjectVersionStatus::TrainingCompleted => "TRAINING_COMPLETED",
+    ProjectVersionStatus::TrainingFailed => "TRAINING_FAILED",
+    ProjectVersionStatus::TrainingInProgress => "TRAINING_IN_PROGRESS",
+    ProjectVersionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COPYING_COMPLETED", "COPYING_FAILED", "COPYING_IN_PROGRESS", "DELETING", "DEPRECATED", "EXPIRED", "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "TRAINING_COMPLETED", "TRAINING_FAILED", "TRAINING_IN_PROGRESS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ProjectVersionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ProjectVersionStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ProjectVersionStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ProjectVersionStatus::CopyingCompleted => write!(f, "COPYING_COMPLETED"),
-            ProjectVersionStatus::CopyingFailed => write!(f, "COPYING_FAILED"),
-            ProjectVersionStatus::CopyingInProgress => write!(f, "COPYING_IN_PROGRESS"),
-            ProjectVersionStatus::Deleting => write!(f, "DELETING"),
-            ProjectVersionStatus::Deprecated => write!(f, "DEPRECATED"),
-            ProjectVersionStatus::Expired => write!(f, "EXPIRED"),
-            ProjectVersionStatus::Failed => write!(f, "FAILED"),
-            ProjectVersionStatus::Running => write!(f, "RUNNING"),
-            ProjectVersionStatus::Starting => write!(f, "STARTING"),
-            ProjectVersionStatus::Stopped => write!(f, "STOPPED"),
-            ProjectVersionStatus::Stopping => write!(f, "STOPPING"),
-            ProjectVersionStatus::TrainingCompleted => write!(f, "TRAINING_COMPLETED"),
-            ProjectVersionStatus::TrainingFailed => write!(f, "TRAINING_FAILED"),
-            ProjectVersionStatus::TrainingInProgress => write!(f, "TRAINING_IN_PROGRESS"),
-            ProjectVersionStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ProjectVersionStatus::CopyingCompleted => write!(f, "COPYING_COMPLETED"),
+ProjectVersionStatus::CopyingFailed => write!(f, "COPYING_FAILED"),
+ProjectVersionStatus::CopyingInProgress => write!(f, "COPYING_IN_PROGRESS"),
+ProjectVersionStatus::Deleting => write!(f, "DELETING"),
+ProjectVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+ProjectVersionStatus::Expired => write!(f, "EXPIRED"),
+ProjectVersionStatus::Failed => write!(f, "FAILED"),
+ProjectVersionStatus::Running => write!(f, "RUNNING"),
+ProjectVersionStatus::Starting => write!(f, "STARTING"),
+ProjectVersionStatus::Stopped => write!(f, "STOPPED"),
+ProjectVersionStatus::Stopping => write!(f, "STOPPING"),
+ProjectVersionStatus::TrainingCompleted => write!(f, "TRAINING_COMPLETED"),
+ProjectVersionStatus::TrainingFailed => write!(f, "TRAINING_FAILED"),
+ProjectVersionStatus::TrainingInProgress => write!(f, "TRAINING_IN_PROGRESS"),
+ProjectVersionStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

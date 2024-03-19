@@ -3,19 +3,19 @@
 /// <p>The result of the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpsEntity {
+pub struct OpsEntity  {
     /// <p>The query ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data returned by the query.</p>
-    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>,
+    pub data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsEntityItem>>,
 }
-impl OpsEntity {
+impl  OpsEntity  {
     /// <p>The query ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The data returned by the query.</p>
-    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>> {
+    pub fn data(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::OpsEntityItem>> {
         self.data.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl OpsEntity {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsEntityBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsEntityItem>>,
 }
 impl OpsEntityBuilder {
     /// <p>The query ID.</p>
@@ -41,8 +41,7 @@ impl OpsEntityBuilder {
     }
     /// <p>The query ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The query ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,24 +54,26 @@ impl OpsEntityBuilder {
     /// <p>The data returned by the query.</p>
     pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OpsEntityItem) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.data = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.data = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The data returned by the query.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsEntityItem>>) -> Self {
+        self.data = input; self
     }
     /// <p>The data returned by the query.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsEntityItem>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`OpsEntity`](crate::types::OpsEntity).
     pub fn build(self) -> crate::types::OpsEntity {
         crate::types::OpsEntity {
-            id: self.id,
-            data: self.data,
+            id: self.id
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

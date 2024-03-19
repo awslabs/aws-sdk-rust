@@ -3,7 +3,7 @@
 /// <p>Summary information about an evaluation form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormVersionSummary {
+pub struct EvaluationFormVersionSummary  {
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub evaluation_form_arn: ::std::string::String,
     /// <p>The unique identifier for the evaluation form.</p>
@@ -23,16 +23,14 @@ pub struct EvaluationFormVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub last_modified_by: ::std::string::String,
 }
-impl EvaluationFormVersionSummary {
+impl  EvaluationFormVersionSummary  {
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_arn.deref()
+    pub fn evaluation_form_arn(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_arn.deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_id.deref()
+    pub fn evaluation_form_id(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_id.deref()
     }
     /// <p>A version of the evaluation form.</p>
     pub fn evaluation_form_version(&self) -> i32 {
@@ -43,26 +41,24 @@ impl EvaluationFormVersionSummary {
         self.locked
     }
     /// <p>The status of the evaluation form.</p>
-    pub fn status(&self) -> &crate::types::EvaluationFormVersionStatus {
+    pub fn status(&self) -> & crate::types::EvaluationFormVersionStatus {
         &self.status
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    pub fn last_modified_by(&self) -> &str {
-        use std::ops::Deref;
-        self.last_modified_by.deref()
+    pub fn last_modified_by(&self) -> & str {
+        use std::ops::Deref; self.last_modified_by.deref()
     }
 }
 impl EvaluationFormVersionSummary {
@@ -95,8 +91,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_arn = input;
-        self
+        self.evaluation_form_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_id = input;
-        self
+        self.evaluation_form_id = input; self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>A version of the evaluation form.</p>
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_form_version = input;
-        self
+        self.evaluation_form_version = input; self
     }
     /// <p>A version of the evaluation form.</p>
     pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
@@ -140,8 +133,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
     pub fn set_locked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.locked = input;
-        self
+        self.locked = input; self
     }
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
     pub fn get_locked(&self) -> &::std::option::Option<bool> {
@@ -155,8 +147,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The status of the evaluation form.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationFormVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the evaluation form.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationFormVersionStatus> {
@@ -170,8 +161,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,8 +175,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +189,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -215,8 +203,7 @@ impl EvaluationFormVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,51 +219,51 @@ impl EvaluationFormVersionSummaryBuilder {
     /// - [`last_modified_time`](crate::types::builders::EvaluationFormVersionSummaryBuilder::last_modified_time)
     /// - [`last_modified_by`](crate::types::builders::EvaluationFormVersionSummaryBuilder::last_modified_by)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationFormVersionSummary {
-            evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_arn",
-                    "evaluation_form_arn was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_id",
-                    "evaluation_form_id was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
-            locked: self.locked.unwrap_or_default(),
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-            last_modified_by: self.last_modified_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_by",
-                    "last_modified_by was not specified but it is required when building EvaluationFormVersionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationFormVersionSummary {
+                evaluation_form_arn: self.evaluation_form_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_arn", "evaluation_form_arn was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                evaluation_form_id: self.evaluation_form_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_id", "evaluation_form_id was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                evaluation_form_version: self.evaluation_form_version
+                    .unwrap_or_default()
+                ,
+                locked: self.locked
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+                last_modified_by: self.last_modified_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_by", "last_modified_by was not specified but it is required when building EvaluationFormVersionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

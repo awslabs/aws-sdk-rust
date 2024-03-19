@@ -3,19 +3,19 @@
 /// <p>Deletes a origin access identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCloudFrontOriginAccessIdentityInput {
+pub struct DeleteCloudFrontOriginAccessIdentityInput  {
     /// <p>The origin access identity's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCloudFrontOriginAccessIdentityInput {
+impl  DeleteCloudFrontOriginAccessIdentityInput  {
     /// <p>The origin access identity's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
     }
     /// <p>The origin access identity's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The origin access identity's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteCloudFrontOriginAccessIdentityInput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

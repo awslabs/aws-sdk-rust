@@ -3,7 +3,7 @@
 /// <p>The request parameters represent the input of a SQL statement over an array of data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchExecuteStatementInput {
+pub struct BatchExecuteStatementInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
@@ -27,33 +27,33 @@ pub struct BatchExecuteStatementInput {
     /// </ul><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
+    pub parameter_sets: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::SqlParameter>>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchExecuteStatementInput {
+impl  BatchExecuteStatementInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
+    pub fn sql(&self) -> ::std::option::Option<& str> {
         self.sql.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The parameter set for the batch operation.</p>
@@ -66,14 +66,15 @@ impl BatchExecuteStatementInput {
     /// </ul><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_sets.is_none()`.
-    pub fn parameter_sets(&self) -> &[::std::vec::Vec<crate::types::SqlParameter>] {
-        self.parameter_sets.as_deref().unwrap_or_default()
+    pub fn parameter_sets(&self) -> & [::std::vec::Vec::<crate::types::SqlParameter>] {
+        self.parameter_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -93,7 +94,7 @@ pub struct BatchExecuteStatementInputBuilder {
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
+    pub(crate) parameter_sets: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::SqlParameter>>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchExecuteStatementInputBuilder {
@@ -105,8 +106,7 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
@@ -138,8 +137,7 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     pub fn set_sql(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql = input;
-        self
+        self.sql = input; self
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
     pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +167,7 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
@@ -193,11 +189,11 @@ impl BatchExecuteStatementInputBuilder {
     /// </ul><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn parameter_sets(mut self, input: ::std::vec::Vec<crate::types::SqlParameter>) -> Self {
+    pub fn parameter_sets(mut self, input: ::std::vec::Vec::<crate::types::SqlParameter>) -> Self {
         let mut v = self.parameter_sets.unwrap_or_default();
-        v.push(input);
-        self.parameter_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
@@ -209,9 +205,8 @@ impl BatchExecuteStatementInputBuilder {
     /// </ul><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameter_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>) -> Self {
-        self.parameter_sets = input;
-        self
+    pub fn set_parameter_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::SqlParameter>>>) -> Self {
+        self.parameter_sets = input; self
     }
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
@@ -223,7 +218,7 @@ impl BatchExecuteStatementInputBuilder {
     /// </ul><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameter_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
+    pub fn get_parameter_sets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::SqlParameter>>> {
         &self.parameter_sets
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
@@ -235,8 +230,7 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
@@ -244,18 +238,25 @@ impl BatchExecuteStatementInputBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-            resource_arn: self.resource_arn,
-            secret_arn: self.secret_arn,
-            sql: self.sql,
-            database: self.database,
-            schema: self.schema,
-            parameter_sets: self.parameter_sets,
-            transaction_id: self.transaction_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_execute_statement::BatchExecuteStatementInput {
+                resource_arn: self.resource_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                sql: self.sql
+                ,
+                database: self.database
+                ,
+                schema: self.schema
+                ,
+                parameter_sets: self.parameter_sets
+                ,
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

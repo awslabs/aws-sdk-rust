@@ -3,7 +3,7 @@
 /// <p>An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogPattern {
+pub struct LogPattern  {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub pattern_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
@@ -13,17 +13,17 @@ pub struct LogPattern {
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.</p>
     pub rank: i32,
 }
-impl LogPattern {
+impl  LogPattern  {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
-    pub fn pattern_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_set_name(&self) -> ::std::option::Option<& str> {
         self.pattern_set_name.as_deref()
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
-    pub fn pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_name(&self) -> ::std::option::Option<& str> {
         self.pattern_name.as_deref()
     }
     /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.</p>
@@ -55,8 +55,7 @@ impl LogPatternBuilder {
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn set_pattern_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_set_name = input;
-        self
+        self.pattern_set_name = input; self
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn get_pattern_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LogPatternBuilder {
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_name = input;
-        self
+        self.pattern_name = input; self
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LogPatternBuilder {
     }
     /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl LogPatternBuilder {
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.</p>
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rank = input;
-        self
+        self.rank = input; self
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.</p>
     pub fn get_rank(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,16 @@ impl LogPatternBuilder {
     /// Consumes the builder and constructs a [`LogPattern`](crate::types::LogPattern).
     pub fn build(self) -> crate::types::LogPattern {
         crate::types::LogPattern {
-            pattern_set_name: self.pattern_set_name,
-            pattern_name: self.pattern_name,
-            pattern: self.pattern,
-            rank: self.rank.unwrap_or_default(),
+            pattern_set_name: self.pattern_set_name
+            ,
+            pattern_name: self.pattern_name
+            ,
+            pattern: self.pattern
+            ,
+            rank: self.rank
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

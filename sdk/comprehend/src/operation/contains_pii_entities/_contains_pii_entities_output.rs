@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainsPiiEntitiesOutput {
+pub struct ContainsPiiEntitiesOutput  {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<crate::types::EntityLabel>>,
     _request_id: Option<String>,
 }
-impl ContainsPiiEntitiesOutput {
+impl  ContainsPiiEntitiesOutput  {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[crate::types::EntityLabel] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [crate::types::EntityLabel] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ContainsPiiEntitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ContainsPiiEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput).
     pub fn builder() -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder {
@@ -31,7 +32,7 @@ impl ContainsPiiEntitiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainsPiiEntitiesOutputBuilder {
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<crate::types::EntityLabel>>,
     _request_id: Option<String>,
 }
 impl ContainsPiiEntitiesOutputBuilder {
@@ -42,33 +43,34 @@ impl ContainsPiiEntitiesOutputBuilder {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
     pub fn labels(mut self, input: crate::types::EntityLabel) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input);
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityLabel>>) -> Self {
+        self.labels = input; self
     }
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityLabel>> {
         &self.labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput).
     pub fn build(self) -> crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput {
         crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput {
-            labels: self.labels,
+            labels: self.labels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

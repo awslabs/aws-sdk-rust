@@ -5,54 +5,50 @@ pub use crate::operation::describe_instance_connect_endpoints::_describe_instanc
 
 impl DescribeInstanceConnectEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_instance_connect_endpoints();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_instance_connect_endpoints();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeInstanceConnectEndpoints`.
-///
+/// 
 /// <p>Describes the specified EC2 Instance Connect Endpoints or all EC2 Instance Connect Endpoints.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceConnectEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder,
+                    inner: crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-    > for DescribeInstanceConnectEndpointsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+                    crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
+                > for DescribeInstanceConnectEndpointsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
+                        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// Creates a new `DescribeInstanceConnectEndpoints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput,
-        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpoints::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput, crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator {
-        crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator {
+                                crate::operation::describe_instance_connect_endpoints::paginator::DescribeInstanceConnectEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -170,10 +157,10 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -197,10 +184,10 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -210,7 +197,7 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -224,10 +211,10 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -237,7 +224,7 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `InstanceConnectEndpointIds`.
@@ -250,12 +237,13 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn set_instance_connect_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_instance_connect_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_connect_endpoint_ids(input);
         self
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn get_instance_connect_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_connect_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_instance_connect_endpoint_ids()
     }
 }
+

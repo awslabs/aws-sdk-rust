@@ -3,15 +3,15 @@
 /// <p>Provides the status code and message that result from processing data for an endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointItemResponse {
+pub struct EndpointItemResponse  {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub status_code: ::std::option::Option<i32>,
 }
-impl EndpointItemResponse {
+impl  EndpointItemResponse  {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
@@ -41,8 +41,7 @@ impl EndpointItemResponseBuilder {
     }
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EndpointItemResponseBuilder {
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl EndpointItemResponseBuilder {
     /// Consumes the builder and constructs a [`EndpointItemResponse`](crate::types::EndpointItemResponse).
     pub fn build(self) -> crate::types::EndpointItemResponse {
         crate::types::EndpointItemResponse {
-            message: self.message,
-            status_code: self.status_code,
+            message: self.message
+            ,
+            status_code: self.status_code
+            ,
         }
     }
 }
+

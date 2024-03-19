@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopQueryExecutionInput {
+pub struct StopQueryExecutionInput  {
     /// <p>The unique ID of the query execution to stop.</p>
     pub query_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl StopQueryExecutionInput {
+impl  StopQueryExecutionInput  {
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn query_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> ::std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopQueryExecutionInputBuilder {
     }
     /// <p>The unique ID of the query execution to stop.</p>
     pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_execution_id = input;
-        self
+        self.query_execution_id = input; self
     }
     /// <p>The unique ID of the query execution to stop.</p>
     pub fn get_query_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_execution_id
     }
     /// Consumes the builder and constructs a [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_query_execution::StopQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_query_execution::StopQueryExecutionInput {
-            query_execution_id: self.query_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_query_execution::StopQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_query_execution::StopQueryExecutionInput {
+                query_execution_id: self.query_execution_id
+                ,
+            }
+        )
     }
 }
+

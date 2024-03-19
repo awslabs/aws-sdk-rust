@@ -3,15 +3,15 @@
 /// <p>Specifies the performance metrics to use for the server that is used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageMetricBasis {
+pub struct UsageMetricBasis  {
     /// <p>A utilization metric that is used by the recommendations.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the specified utilization metric that is used by the recommendations.</p>
     pub percentage_adjust: ::std::option::Option<f64>,
 }
-impl UsageMetricBasis {
+impl  UsageMetricBasis  {
     /// <p>A utilization metric that is used by the recommendations.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the percentage of the specified utilization metric that is used by the recommendations.</p>
@@ -41,8 +41,7 @@ impl UsageMetricBasisBuilder {
     }
     /// <p>A utilization metric that is used by the recommendations.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A utilization metric that is used by the recommendations.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UsageMetricBasisBuilder {
     }
     /// <p>Specifies the percentage of the specified utilization metric that is used by the recommendations.</p>
     pub fn set_percentage_adjust(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percentage_adjust = input;
-        self
+        self.percentage_adjust = input; self
     }
     /// <p>Specifies the percentage of the specified utilization metric that is used by the recommendations.</p>
     pub fn get_percentage_adjust(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl UsageMetricBasisBuilder {
     /// Consumes the builder and constructs a [`UsageMetricBasis`](crate::types::UsageMetricBasis).
     pub fn build(self) -> crate::types::UsageMetricBasis {
         crate::types::UsageMetricBasis {
-            name: self.name,
-            percentage_adjust: self.percentage_adjust,
+            name: self.name
+            ,
+            percentage_adjust: self.percentage_adjust
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// Settings for the action to deactivate the image in a specific layer.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StaticImageOutputDeactivateScheduleActionSettings {
+pub struct StaticImageOutputDeactivateScheduleActionSettings  {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     pub fade_out: ::std::option::Option<i32>,
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub layer: ::std::option::Option<i32>,
     /// The name(s) of the output(s) the deactivation should apply to.
-    pub output_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub output_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StaticImageOutputDeactivateScheduleActionSettings {
+impl  StaticImageOutputDeactivateScheduleActionSettings  {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     pub fn fade_out(&self) -> ::std::option::Option<i32> {
         self.fade_out
@@ -21,10 +21,11 @@ impl StaticImageOutputDeactivateScheduleActionSettings {
         self.layer
     }
     /// The name(s) of the output(s) the deactivation should apply to.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_names.is_none()`.
-    pub fn output_names(&self) -> &[::std::string::String] {
-        self.output_names.as_deref().unwrap_or_default()
+    pub fn output_names(&self) -> & [::std::string::String] {
+        self.output_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StaticImageOutputDeactivateScheduleActionSettings {
@@ -40,7 +41,7 @@ impl StaticImageOutputDeactivateScheduleActionSettings {
 pub struct StaticImageOutputDeactivateScheduleActionSettingsBuilder {
     pub(crate) fade_out: ::std::option::Option<i32>,
     pub(crate) layer: ::std::option::Option<i32>,
-    pub(crate) output_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) output_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StaticImageOutputDeactivateScheduleActionSettingsBuilder {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
@@ -50,8 +51,7 @@ impl StaticImageOutputDeactivateScheduleActionSettingsBuilder {
     }
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     pub fn set_fade_out(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fade_out = input;
-        self
+        self.fade_out = input; self
     }
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     pub fn get_fade_out(&self) -> &::std::option::Option<i32> {
@@ -64,8 +64,7 @@ impl StaticImageOutputDeactivateScheduleActionSettingsBuilder {
     }
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn set_layer(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.layer = input;
-        self
+        self.layer = input; self
     }
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn get_layer(&self) -> &::std::option::Option<i32> {
@@ -78,25 +77,28 @@ impl StaticImageOutputDeactivateScheduleActionSettingsBuilder {
     /// The name(s) of the output(s) the deactivation should apply to.
     pub fn output_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.output_names.unwrap_or_default();
-        v.push(input.into());
-        self.output_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.output_names = ::std::option::Option::Some(v);
+                        self
     }
     /// The name(s) of the output(s) the deactivation should apply to.
-    pub fn set_output_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.output_names = input;
-        self
+    pub fn set_output_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.output_names = input; self
     }
     /// The name(s) of the output(s) the deactivation should apply to.
-    pub fn get_output_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_output_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.output_names
     }
     /// Consumes the builder and constructs a [`StaticImageOutputDeactivateScheduleActionSettings`](crate::types::StaticImageOutputDeactivateScheduleActionSettings).
     pub fn build(self) -> crate::types::StaticImageOutputDeactivateScheduleActionSettings {
         crate::types::StaticImageOutputDeactivateScheduleActionSettings {
-            fade_out: self.fade_out,
-            layer: self.layer,
-            output_names: self.output_names,
+            fade_out: self.fade_out
+            ,
+            layer: self.layer
+            ,
+            output_names: self.output_names
+            ,
         }
     }
 }
+

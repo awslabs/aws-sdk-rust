@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGroups`](crate::operation::list_groups::builders::ListGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_organization_id):<br>required: **true**<br><p>The identifier for the organization under which the groups exist.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`filters(ListGroupsFilters)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::filters) / [`set_filters(Option<ListGroupsFilters>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_filters):<br>required: **false**<br><p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p><br>
-    /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec::<Group>>)`](crate::operation::list_groups::ListGroupsOutput::groups): <p>The overview of groups for an organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups::ListGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::operation::list_groups::ListGroupsError)
+                            /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::operation::list_groups::ListGroupsError)
     pub fn list_groups(&self) -> crate::operation::list_groups::builders::ListGroupsFluentBuilder {
-        crate::operation::list_groups::builders::ListGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_groups::builders::ListGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

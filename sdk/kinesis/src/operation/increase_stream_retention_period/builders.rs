@@ -5,23 +5,20 @@ pub use crate::operation::increase_stream_retention_period::_increase_stream_ret
 
 impl IncreaseStreamRetentionPeriodInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.increase_stream_retention_period();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.increase_stream_retention_period();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `IncreaseStreamRetentionPeriod`.
-///
+/// 
 /// <p>Increases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).</p><note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl IncreaseStreamRetentionPeriodInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder,
+                    inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-    > for IncreaseStreamRetentionPeriodFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
+                    crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
+                > for IncreaseStreamRetentionPeriodFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
+                        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl IncreaseStreamRetentionPeriodFluentBuilder {
     /// Creates a new `IncreaseStreamRetentionPeriod`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput, crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the stream to modify.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -154,3 +141,4 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
         self.inner.get_stream_arn()
     }
 }
+

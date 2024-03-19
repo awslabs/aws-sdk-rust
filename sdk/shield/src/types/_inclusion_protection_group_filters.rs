@@ -3,40 +3,44 @@
 /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InclusionProtectionGroupFilters {
+pub struct InclusionProtectionGroupFilters  {
     /// <p>The ID of the protection group that you want to retrieve.</p>
-    pub protection_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub protection_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The pattern specification of the protection groups that you want to retrieve.</p>
-    pub patterns: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>>,
+    pub patterns: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupPattern>>,
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResourceType>>,
     /// <p>The aggregation setting of the protection groups that you want to retrieve.</p>
-    pub aggregations: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>>,
+    pub aggregations: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupAggregation>>,
 }
-impl InclusionProtectionGroupFilters {
+impl  InclusionProtectionGroupFilters  {
     /// <p>The ID of the protection group that you want to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protection_group_ids.is_none()`.
-    pub fn protection_group_ids(&self) -> &[::std::string::String] {
-        self.protection_group_ids.as_deref().unwrap_or_default()
+    pub fn protection_group_ids(&self) -> & [::std::string::String] {
+        self.protection_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pattern specification of the protection groups that you want to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patterns.is_none()`.
-    pub fn patterns(&self) -> &[crate::types::ProtectionGroupPattern] {
-        self.patterns.as_deref().unwrap_or_default()
+    pub fn patterns(&self) -> & [crate::types::ProtectionGroupPattern] {
+        self.patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[crate::types::ProtectedResourceType] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [crate::types::ProtectedResourceType] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The aggregation setting of the protection groups that you want to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregations.is_none()`.
-    pub fn aggregations(&self) -> &[crate::types::ProtectionGroupAggregation] {
-        self.aggregations.as_deref().unwrap_or_default()
+    pub fn aggregations(&self) -> & [crate::types::ProtectionGroupAggregation] {
+        self.aggregations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InclusionProtectionGroupFilters {
@@ -50,10 +54,10 @@ impl InclusionProtectionGroupFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InclusionProtectionGroupFiltersBuilder {
-    pub(crate) protection_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) patterns: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
-    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>>,
+    pub(crate) protection_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) patterns: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupPattern>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResourceType>>,
+    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupAggregation>>,
 }
 impl InclusionProtectionGroupFiltersBuilder {
     /// Appends an item to `protection_group_ids`.
@@ -63,17 +67,16 @@ impl InclusionProtectionGroupFiltersBuilder {
     /// <p>The ID of the protection group that you want to retrieve.</p>
     pub fn protection_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protection_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.protection_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.protection_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the protection group that you want to retrieve.</p>
-    pub fn set_protection_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.protection_group_ids = input;
-        self
+    pub fn set_protection_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.protection_group_ids = input; self
     }
     /// <p>The ID of the protection group that you want to retrieve.</p>
-    pub fn get_protection_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protection_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.protection_group_ids
     }
     /// Appends an item to `patterns`.
@@ -83,17 +86,16 @@ impl InclusionProtectionGroupFiltersBuilder {
     /// <p>The pattern specification of the protection groups that you want to retrieve.</p>
     pub fn patterns(mut self, input: crate::types::ProtectionGroupPattern) -> Self {
         let mut v = self.patterns.unwrap_or_default();
-        v.push(input);
-        self.patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The pattern specification of the protection groups that you want to retrieve.</p>
-    pub fn set_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>>) -> Self {
-        self.patterns = input;
-        self
+    pub fn set_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupPattern>>) -> Self {
+        self.patterns = input; self
     }
     /// <p>The pattern specification of the protection groups that you want to retrieve.</p>
-    pub fn get_patterns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>> {
+    pub fn get_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupPattern>> {
         &self.patterns
     }
     /// Appends an item to `resource_types`.
@@ -103,17 +105,16 @@ impl InclusionProtectionGroupFiltersBuilder {
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>.</p>
     pub fn resource_types(mut self, input: crate::types::ProtectedResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResourceType>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResourceType>> {
         &self.resource_types
     }
     /// Appends an item to `aggregations`.
@@ -123,26 +124,30 @@ impl InclusionProtectionGroupFiltersBuilder {
     /// <p>The aggregation setting of the protection groups that you want to retrieve.</p>
     pub fn aggregations(mut self, input: crate::types::ProtectionGroupAggregation) -> Self {
         let mut v = self.aggregations.unwrap_or_default();
-        v.push(input);
-        self.aggregations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The aggregation setting of the protection groups that you want to retrieve.</p>
-    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>>) -> Self {
-        self.aggregations = input;
-        self
+    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupAggregation>>) -> Self {
+        self.aggregations = input; self
     }
     /// <p>The aggregation setting of the protection groups that you want to retrieve.</p>
-    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupAggregation>> {
+    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectionGroupAggregation>> {
         &self.aggregations
     }
     /// Consumes the builder and constructs a [`InclusionProtectionGroupFilters`](crate::types::InclusionProtectionGroupFilters).
     pub fn build(self) -> crate::types::InclusionProtectionGroupFilters {
         crate::types::InclusionProtectionGroupFilters {
-            protection_group_ids: self.protection_group_ids,
-            patterns: self.patterns,
-            resource_types: self.resource_types,
-            aggregations: self.aggregations,
+            protection_group_ids: self.protection_group_ids
+            ,
+            patterns: self.patterns
+            ,
+            resource_types: self.resource_types
+            ,
+            aggregations: self.aggregations
+            ,
         }
     }
 }
+

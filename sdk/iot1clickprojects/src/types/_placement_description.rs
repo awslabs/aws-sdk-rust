@@ -3,39 +3,37 @@
 /// <p>An object describing a project's placement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlacementDescription {
+pub struct PlacementDescription  {
     /// <p>The name of the project containing the placement.</p>
     pub project_name: ::std::string::String,
     /// <p>The name of the placement.</p>
     pub placement_name: ::std::string::String,
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub attributes: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub attributes: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub updated_date: ::aws_smithy_types::DateTime,
 }
-impl PlacementDescription {
+impl  PlacementDescription  {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> & str {
+        use std::ops::Deref; self.project_name.deref()
     }
     /// <p>The name of the placement.</p>
-    pub fn placement_name(&self) -> &str {
-        use std::ops::Deref;
-        self.placement_name.deref()
+    pub fn placement_name(&self) -> & str {
+        use std::ops::Deref; self.placement_name.deref()
     }
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn attributes(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn attributes(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.attributes
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_date
     }
 }
@@ -52,7 +50,7 @@ impl PlacementDescription {
 pub struct PlacementDescriptionBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -65,8 +63,7 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The name of the project containing the placement.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project containing the placement.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The name of the placement.</p>
     pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_name = input;
-        self
+        self.placement_name = input; self
     }
     /// <p>The name of the placement.</p>
     pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +90,16 @@ impl PlacementDescriptionBuilder {
     /// <p>The user-defined attributes associated with the placement.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
@@ -115,8 +110,7 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,8 +124,7 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_date = input;
-        self
+        self.updated_date = input; self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,37 +138,35 @@ impl PlacementDescriptionBuilder {
     /// - [`created_date`](crate::types::builders::PlacementDescriptionBuilder::created_date)
     /// - [`updated_date`](crate::types::builders::PlacementDescriptionBuilder::updated_date)
     pub fn build(self) -> ::std::result::Result<crate::types::PlacementDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PlacementDescription {
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building PlacementDescription",
-                )
-            })?,
-            placement_name: self.placement_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "placement_name",
-                    "placement_name was not specified but it is required when building PlacementDescription",
-                )
-            })?,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building PlacementDescription",
-                )
-            })?,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building PlacementDescription",
-                )
-            })?,
-            updated_date: self.updated_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_date",
-                    "updated_date was not specified but it is required when building PlacementDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PlacementDescription {
+                project_name: self.project_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "project_name was not specified but it is required when building PlacementDescription")
+                    )?
+                ,
+                placement_name: self.placement_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("placement_name", "placement_name was not specified but it is required when building PlacementDescription")
+                    )?
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building PlacementDescription")
+                    )?
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building PlacementDescription")
+                    )?
+                ,
+                updated_date: self.updated_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_date", "updated_date was not specified but it is required when building PlacementDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

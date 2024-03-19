@@ -3,41 +3,43 @@
 /// <p>Describes a customer-owned address pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoipPool {
+pub struct CoipPool  {
     /// <p>The ID of the address pool.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The address ranges of the address pool.</p>
-    pub pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pool_cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the local gateway route table.</p>
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ARN of the address pool.</p>
     pub pool_arn: ::std::option::Option<::std::string::String>,
 }
-impl CoipPool {
+impl  CoipPool  {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The address ranges of the address pool.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_cidrs.is_none()`.
-    pub fn pool_cidrs(&self) -> &[::std::string::String] {
-        self.pool_cidrs.as_deref().unwrap_or_default()
+    pub fn pool_cidrs(&self) -> & [::std::string::String] {
+        self.pool_cidrs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the address pool.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
 }
@@ -53,9 +55,9 @@ impl CoipPool {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoipPoolBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pool_cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
 }
 impl CoipPoolBuilder {
@@ -66,8 +68,7 @@ impl CoipPoolBuilder {
     }
     /// <p>The ID of the address pool.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The ID of the address pool.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl CoipPoolBuilder {
     /// <p>The address ranges of the address pool.</p>
     pub fn pool_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_cidrs.unwrap_or_default();
-        v.push(input.into());
-        self.pool_cidrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pool_cidrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The address ranges of the address pool.</p>
-    pub fn set_pool_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pool_cidrs = input;
-        self
+    pub fn set_pool_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.pool_cidrs = input; self
     }
     /// <p>The address ranges of the address pool.</p>
-    pub fn get_pool_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pool_cidrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.pool_cidrs
     }
     /// <p>The ID of the local gateway route table.</p>
@@ -100,8 +100,7 @@ impl CoipPoolBuilder {
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+        self.local_gateway_route_table_id = input; self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,17 +113,16 @@ impl CoipPoolBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ARN of the address pool.</p>
@@ -134,8 +132,7 @@ impl CoipPoolBuilder {
     }
     /// <p>The ARN of the address pool.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The ARN of the address pool.</p>
     pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,11 +141,17 @@ impl CoipPoolBuilder {
     /// Consumes the builder and constructs a [`CoipPool`](crate::types::CoipPool).
     pub fn build(self) -> crate::types::CoipPool {
         crate::types::CoipPool {
-            pool_id: self.pool_id,
-            pool_cidrs: self.pool_cidrs,
-            local_gateway_route_table_id: self.local_gateway_route_table_id,
-            tags: self.tags,
-            pool_arn: self.pool_arn,
+            pool_id: self.pool_id
+            ,
+            pool_cidrs: self.pool_cidrs
+            ,
+            local_gateway_route_table_id: self.local_gateway_route_table_id
+            ,
+            tags: self.tags
+            ,
+            pool_arn: self.pool_arn
+            ,
         }
     }
 }
+

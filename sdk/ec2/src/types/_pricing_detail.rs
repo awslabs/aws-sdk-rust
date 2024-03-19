@@ -3,13 +3,13 @@
 /// <p>Describes a Reserved Instance offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PricingDetail {
+pub struct PricingDetail  {
     /// <p>The number of reservations available for the price.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The price per instance.</p>
     pub price: ::std::option::Option<f64>,
 }
-impl PricingDetail {
+impl  PricingDetail  {
     /// <p>The number of reservations available for the price.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
@@ -41,8 +41,7 @@ impl PricingDetailBuilder {
     }
     /// <p>The number of reservations available for the price.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of reservations available for the price.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl PricingDetailBuilder {
     }
     /// <p>The price per instance.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The price per instance.</p>
     pub fn get_price(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl PricingDetailBuilder {
     /// Consumes the builder and constructs a [`PricingDetail`](crate::types::PricingDetail).
     pub fn build(self) -> crate::types::PricingDetail {
         crate::types::PricingDetail {
-            count: self.count,
-            price: self.price,
+            count: self.count
+            ,
+            price: self.price
+            ,
         }
     }
 }
+

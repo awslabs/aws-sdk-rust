@@ -3,16 +3,17 @@
 /// <p>Describes a custom load metric for a predictive scaling policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictiveScalingCustomizedLoadMetric {
+pub struct PredictiveScalingCustomizedLoadMetric  {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data.</p>
-    pub metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub metric_data_queries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>,
 }
-impl PredictiveScalingCustomizedLoadMetric {
+impl  PredictiveScalingCustomizedLoadMetric  {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_queries.is_none()`.
-    pub fn metric_data_queries(&self) -> &[crate::types::MetricDataQuery] {
-        self.metric_data_queries.as_deref().unwrap_or_default()
+    pub fn metric_data_queries(&self) -> & [crate::types::MetricDataQuery] {
+        self.metric_data_queries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PredictiveScalingCustomizedLoadMetric {
@@ -26,7 +27,7 @@ impl PredictiveScalingCustomizedLoadMetric {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedLoadMetricBuilder {
-    pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedLoadMetricBuilder {
     /// Appends an item to `metric_data_queries`.
@@ -36,23 +37,24 @@ impl PredictiveScalingCustomizedLoadMetricBuilder {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data.</p>
     pub fn metric_data_queries(mut self, input: crate::types::MetricDataQuery) -> Self {
         let mut v = self.metric_data_queries.unwrap_or_default();
-        v.push(input);
-        self.metric_data_queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data_queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data.</p>
-    pub fn set_metric_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
-        self.metric_data_queries = input;
-        self
+    pub fn set_metric_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>) -> Self {
+        self.metric_data_queries = input; self
     }
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data.</p>
-    pub fn get_metric_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+    pub fn get_metric_data_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>> {
         &self.metric_data_queries
     }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedLoadMetric`](crate::types::PredictiveScalingCustomizedLoadMetric).
     pub fn build(self) -> crate::types::PredictiveScalingCustomizedLoadMetric {
         crate::types::PredictiveScalingCustomizedLoadMetric {
-            metric_data_queries: self.metric_data_queries,
+            metric_data_queries: self.metric_data_queries
+            ,
         }
     }
 }
+

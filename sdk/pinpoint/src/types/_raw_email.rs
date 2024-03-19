@@ -3,13 +3,13 @@
 /// <p>Specifies the contents of an email message, represented as a raw MIME message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RawEmail {
+pub struct RawEmail  {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl RawEmail {
+impl  RawEmail  {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RawEmailBuilder {
     }
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -43,6 +42,10 @@ impl RawEmailBuilder {
     }
     /// Consumes the builder and constructs a [`RawEmail`](crate::types::RawEmail).
     pub fn build(self) -> crate::types::RawEmail {
-        crate::types::RawEmail { data: self.data }
+        crate::types::RawEmail {
+            data: self.data
+            ,
+        }
     }
 }
+

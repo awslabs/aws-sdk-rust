@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClusterOperationsV2Output {
+pub struct ListClusterOperationsV2Output  {
     /// <p>An array of cluster operation information objects.</p>
-    pub cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationV2Summary>>,
+    pub cluster_operation_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationV2Summary>>,
     /// <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListClusterOperationsV2Output {
+impl  ListClusterOperationsV2Output  {
     /// <p>An array of cluster operation information objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_operation_info_list.is_none()`.
-    pub fn cluster_operation_info_list(&self) -> &[crate::types::ClusterOperationV2Summary] {
-        self.cluster_operation_info_list.as_deref().unwrap_or_default()
+    pub fn cluster_operation_info_list(&self) -> & [crate::types::ClusterOperationV2Summary] {
+        self.cluster_operation_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListClusterOperationsV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListClusterOperationsV2Output {
     /// Creates a new builder-style object to manufacture [`ListClusterOperationsV2Output`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output).
     pub fn builder() -> crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2OutputBuilder {
@@ -37,7 +38,7 @@ impl ListClusterOperationsV2Output {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterOperationsV2OutputBuilder {
-    pub(crate) cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationV2Summary>>,
+    pub(crate) cluster_operation_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationV2Summary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListClusterOperationsV2OutputBuilder {
     /// <p>An array of cluster operation information objects.</p>
     pub fn cluster_operation_info_list(mut self, input: crate::types::ClusterOperationV2Summary) -> Self {
         let mut v = self.cluster_operation_info_list.unwrap_or_default();
-        v.push(input);
-        self.cluster_operation_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cluster_operation_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of cluster operation information objects.</p>
-    pub fn set_cluster_operation_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationV2Summary>>) -> Self {
-        self.cluster_operation_info_list = input;
-        self
+    pub fn set_cluster_operation_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationV2Summary>>) -> Self {
+        self.cluster_operation_info_list = input; self
     }
     /// <p>An array of cluster operation information objects.</p>
-    pub fn get_cluster_operation_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationV2Summary>> {
+    pub fn get_cluster_operation_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationV2Summary>> {
         &self.cluster_operation_info_list
     }
     /// <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
@@ -69,28 +69,30 @@ impl ListClusterOperationsV2OutputBuilder {
     }
     /// <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListClusterOperationsV2Output`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output).
     pub fn build(self) -> crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output {
         crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output {
-            cluster_operation_info_list: self.cluster_operation_info_list,
-            next_token: self.next_token,
+            cluster_operation_info_list: self.cluster_operation_info_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

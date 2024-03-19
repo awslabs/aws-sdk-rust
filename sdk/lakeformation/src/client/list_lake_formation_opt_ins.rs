@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLakeFormationOptIns`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`principal(DataLakePrincipal)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::principal) / [`set_principal(Option<DataLakePrincipal>)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::set_principal):<br>required: **false**<br><p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p><br>
     ///   - [`resource(Resource)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::resource) / [`set_resource(Option<Resource>)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::set_resource):<br>required: **false**<br><p>A structure for the resource.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is not the first call to retrieve this list.</p><br>
-    /// - On success, responds with [`ListLakeFormationOptInsOutput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput) with field(s):
+                            /// - On success, responds with [`ListLakeFormationOptInsOutput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput) with field(s):
     ///   - [`lake_formation_opt_ins_info_list(Option<Vec::<LakeFormationOptInsInfo>>)`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput::lake_formation_opt_ins_info_list): <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    /// - On failure, responds with [`SdkError<ListLakeFormationOptInsError>`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError)
+                            /// - On failure, responds with [`SdkError<ListLakeFormationOptInsError>`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError)
     pub fn list_lake_formation_opt_ins(&self) -> crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder {
-        crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

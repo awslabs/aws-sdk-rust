@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTablesInput {
+pub struct ListTablesInput  {
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
@@ -10,13 +10,13 @@ pub struct ListTablesInput {
     /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListTablesInput {
+impl  ListTablesInput  {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
@@ -47,8 +47,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -84,10 +81,16 @@ impl ListTablesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
-            database_name: self.database_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_tables::ListTablesInput {
+                database_name: self.database_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

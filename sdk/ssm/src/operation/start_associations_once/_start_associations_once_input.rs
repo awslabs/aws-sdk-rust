@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAssociationsOnceInput {
+pub struct StartAssociationsOnceInput  {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub association_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StartAssociationsOnceInput {
+impl  StartAssociationsOnceInput  {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
-    pub fn association_ids(&self) -> &[::std::string::String] {
-        self.association_ids.as_deref().unwrap_or_default()
+    pub fn association_ids(&self) -> & [::std::string::String] {
+        self.association_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartAssociationsOnceInput {
@@ -25,7 +26,7 @@ impl StartAssociationsOnceInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAssociationsOnceInputBuilder {
-    pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) association_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StartAssociationsOnceInputBuilder {
     /// Appends an item to `association_ids`.
@@ -35,26 +36,26 @@ impl StartAssociationsOnceInputBuilder {
     /// <p>The association IDs that you want to run immediately and only one time.</p>
     pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
-        v.push(input.into());
-        self.association_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.association_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.association_ids = input;
-        self
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.association_ids = input; self
     }
     /// <p>The association IDs that you want to run immediately and only one time.</p>
-    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.association_ids
     }
     /// Consumes the builder and constructs a [`StartAssociationsOnceInput`](crate::operation::start_associations_once::StartAssociationsOnceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_associations_once::StartAssociationsOnceInput {
-            association_ids: self.association_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_associations_once::StartAssociationsOnceInput {
+                association_ids: self.association_ids
+                ,
+            }
+        )
     }
 }
+

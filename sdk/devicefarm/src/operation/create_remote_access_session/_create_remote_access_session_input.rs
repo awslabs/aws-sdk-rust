@@ -3,7 +3,7 @@
 /// <p>Creates and submits a request to start a remote access session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRemoteAccessSessionInput {
+pub struct CreateRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
@@ -41,22 +41,22 @@ pub struct CreateRemoteAccessSessionInput {
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
     pub skip_app_resign: ::std::option::Option<bool>,
 }
-impl CreateRemoteAccessSessionInput {
+impl  CreateRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn ssh_public_key(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
@@ -69,20 +69,20 @@ impl CreateRemoteAccessSessionInput {
         self.remote_record_enabled
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn remote_record_app_arn(&self) -> ::std::option::Option<& str> {
         self.remote_record_app_arn.as_deref()
     }
     /// <p>The name of the remote access session to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CreateRemoteAccessSessionConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::CreateRemoteAccessSessionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
@@ -94,7 +94,7 @@ impl CreateRemoteAccessSessionInput {
     /// <li>
     /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
-    pub fn interaction_mode(&self) -> ::std::option::Option<&crate::types::InteractionMode> {
+    pub fn interaction_mode(&self) -> ::std::option::Option<& crate::types::InteractionMode> {
         self.interaction_mode.as_ref()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
@@ -136,8 +136,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +150,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +178,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
@@ -198,8 +194,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_debug_enabled = input;
-        self
+        self.remote_debug_enabled = input; self
     }
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
@@ -213,8 +208,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
     pub fn set_remote_record_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_record_enabled = input;
-        self
+        self.remote_record_enabled = input; self
     }
     /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
     pub fn get_remote_record_enabled(&self) -> &::std::option::Option<bool> {
@@ -227,8 +221,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
     pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_record_app_arn = input;
-        self
+        self.remote_record_app_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
     pub fn get_remote_record_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +234,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The name of the remote access session to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the remote access session to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +249,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
@@ -272,8 +263,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The configuration information for the remote access session request.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration information for the remote access session request.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
@@ -302,8 +292,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
-        self.interaction_mode = input;
-        self
+        self.interaction_mode = input; self
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
@@ -326,8 +315,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
     pub fn set_skip_app_resign(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_app_resign = input;
-        self
+        self.skip_app_resign = input; self
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a></p>
@@ -335,25 +323,35 @@ impl CreateRemoteAccessSessionInputBuilder {
         &self.skip_app_resign
     }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionInput`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
-            project_arn: self.project_arn,
-            device_arn: self.device_arn,
-            instance_arn: self.instance_arn,
-            ssh_public_key: self.ssh_public_key,
-            remote_debug_enabled: self.remote_debug_enabled,
-            remote_record_enabled: self.remote_record_enabled,
-            remote_record_app_arn: self.remote_record_app_arn,
-            name: self.name,
-            client_id: self.client_id,
-            configuration: self.configuration,
-            interaction_mode: self.interaction_mode,
-            skip_app_resign: self.skip_app_resign,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
+                project_arn: self.project_arn
+                ,
+                device_arn: self.device_arn
+                ,
+                instance_arn: self.instance_arn
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                remote_debug_enabled: self.remote_debug_enabled
+                ,
+                remote_record_enabled: self.remote_record_enabled
+                ,
+                remote_record_app_arn: self.remote_record_app_arn
+                ,
+                name: self.name
+                ,
+                client_id: self.client_id
+                ,
+                configuration: self.configuration
+                ,
+                interaction_mode: self.interaction_mode
+                ,
+                skip_app_resign: self.skip_app_resign
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetModelsOutput {
+pub struct ListAssetModelsOutput  {
     /// <p>A list that summarizes each asset model.</p>
-    pub asset_model_summaries: ::std::vec::Vec<crate::types::AssetModelSummary>,
+    pub asset_model_summaries: ::std::vec::Vec::<crate::types::AssetModelSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAssetModelsOutput {
+impl  ListAssetModelsOutput  {
     /// <p>A list that summarizes each asset model.</p>
-    pub fn asset_model_summaries(&self) -> &[crate::types::AssetModelSummary] {
-        use std::ops::Deref;
-        self.asset_model_summaries.deref()
+    pub fn asset_model_summaries(&self) -> & [crate::types::AssetModelSummary] {
+        use std::ops::Deref; self.asset_model_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAssetModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAssetModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput).
     pub fn builder() -> crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAssetModelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetModelsOutputBuilder {
-    pub(crate) asset_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
+    pub(crate) asset_model_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAssetModelsOutputBuilder {
     /// <p>A list that summarizes each asset model.</p>
     pub fn asset_model_summaries(mut self, input: crate::types::AssetModelSummary) -> Self {
         let mut v = self.asset_model_summaries.unwrap_or_default();
-        v.push(input);
-        self.asset_model_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that summarizes each asset model.</p>
-    pub fn set_asset_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>) -> Self {
-        self.asset_model_summaries = input;
-        self
+    pub fn set_asset_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelSummary>>) -> Self {
+        self.asset_model_summaries = input; self
     }
     /// <p>A list that summarizes each asset model.</p>
-    pub fn get_asset_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>> {
+    pub fn get_asset_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelSummary>> {
         &self.asset_model_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -68,37 +66,37 @@ impl ListAssetModelsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_model_summaries`](crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder::asset_model_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsOutput {
-            asset_model_summaries: self.asset_model_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_summaries",
-                    "asset_model_summaries was not specified but it is required when building ListAssetModelsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_asset_models::ListAssetModelsOutput {
+                asset_model_summaries: self.asset_model_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_summaries", "asset_model_summaries was not specified but it is required when building ListAssetModelsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOrganizationInput {}
+pub struct DeleteOrganizationInput  {
+}
 impl DeleteOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
     pub fn builder() -> crate::operation::delete_organization::builders::DeleteOrganizationInputBuilder {
@@ -13,12 +14,15 @@ impl DeleteOrganizationInput {
 /// A builder for [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteOrganizationInputBuilder {}
+pub struct DeleteOrganizationInputBuilder {
+}
 impl DeleteOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_organization::DeleteOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_organization::DeleteOrganizationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_organization::DeleteOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_organization::DeleteOrganizationInput {
+            }
+        )
     }
 }
+

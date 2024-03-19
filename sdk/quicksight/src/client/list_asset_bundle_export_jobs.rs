@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssetBundleExportJobs`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that the export jobs were executed in.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput) with field(s):
     ///   - [`asset_bundle_export_job_summary_list(Option<Vec::<AssetBundleExportJobSummary>>)`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput::asset_bundle_export_job_summary_list): <p>A list of export job summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListAssetBundleExportJobsError>`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError)
+                            /// - On failure, responds with [`SdkError<ListAssetBundleExportJobsError>`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsError)
     pub fn list_asset_bundle_export_jobs(&self) -> crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder {
-        crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

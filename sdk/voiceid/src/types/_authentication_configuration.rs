@@ -3,11 +3,11 @@
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationConfiguration {
+pub struct AuthenticationConfiguration  {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub acceptance_threshold: i32,
 }
-impl AuthenticationConfiguration {
+impl  AuthenticationConfiguration  {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn acceptance_threshold(&self) -> i32 {
         self.acceptance_threshold
@@ -35,8 +35,7 @@ impl AuthenticationConfigurationBuilder {
     }
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn set_acceptance_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.acceptance_threshold = input;
-        self
+        self.acceptance_threshold = input; self
     }
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn get_acceptance_threshold(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl AuthenticationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`acceptance_threshold`](crate::types::builders::AuthenticationConfigurationBuilder::acceptance_threshold)
     pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuthenticationConfiguration {
-            acceptance_threshold: self.acceptance_threshold.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "acceptance_threshold",
-                    "acceptance_threshold was not specified but it is required when building AuthenticationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuthenticationConfiguration {
+                acceptance_threshold: self.acceptance_threshold
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("acceptance_threshold", "acceptance_threshold was not specified but it is required when building AuthenticationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

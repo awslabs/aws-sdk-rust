@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaInput {
+pub struct DeleteSchemaInput  {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
 }
-impl DeleteSchemaInput {
+impl  DeleteSchemaInput  {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-    pub fn schema_id(&self) -> ::std::option::Option<&crate::types::SchemaId> {
+    pub fn schema_id(&self) -> ::std::option::Option<& crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteSchemaInputBuilder {
     }
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
     }
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
     pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
         &self.schema_id
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_schema::DeleteSchemaInput { schema_id: self.schema_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema::DeleteSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_schema::DeleteSchemaInput {
+                schema_id: self.schema_id
+                ,
+            }
+        )
     }
 }
+

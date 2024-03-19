@@ -3,7 +3,7 @@
 /// <p>A unique identifier for an attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeKey {
+pub struct AttributeKey  {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     pub schema_arn: ::std::string::String,
     /// <p>The name of the facet that the attribute exists within.</p>
@@ -11,21 +11,18 @@ pub struct AttributeKey {
     /// <p>The name of the attribute.</p>
     pub name: ::std::string::String,
 }
-impl AttributeKey {
+impl  AttributeKey  {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
-    pub fn schema_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_arn.deref()
+    pub fn schema_arn(&self) -> & str {
+        use std::ops::Deref; self.schema_arn.deref()
     }
     /// <p>The name of the facet that the attribute exists within.</p>
-    pub fn facet_name(&self) -> &str {
-        use std::ops::Deref;
-        self.facet_name.deref()
+    pub fn facet_name(&self) -> & str {
+        use std::ops::Deref; self.facet_name.deref()
     }
     /// <p>The name of the attribute.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl AttributeKey {
@@ -52,8 +49,7 @@ impl AttributeKeyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl AttributeKeyBuilder {
     }
     /// <p>The name of the facet that the attribute exists within.</p>
     pub fn set_facet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.facet_name = input;
-        self
+        self.facet_name = input; self
     }
     /// <p>The name of the facet that the attribute exists within.</p>
     pub fn get_facet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl AttributeKeyBuilder {
     }
     /// <p>The name of the attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl AttributeKeyBuilder {
     /// - [`facet_name`](crate::types::builders::AttributeKeyBuilder::facet_name)
     /// - [`name`](crate::types::builders::AttributeKeyBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeKey {
-            schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_arn",
-                    "schema_arn was not specified but it is required when building AttributeKey",
-                )
-            })?,
-            facet_name: self.facet_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "facet_name",
-                    "facet_name was not specified but it is required when building AttributeKey",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AttributeKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeKey {
+                schema_arn: self.schema_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_arn", "schema_arn was not specified but it is required when building AttributeKey")
+                    )?
+                ,
+                facet_name: self.facet_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("facet_name", "facet_name was not specified but it is required when building AttributeKey")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AttributeKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

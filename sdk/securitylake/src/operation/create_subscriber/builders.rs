@@ -5,54 +5,50 @@ pub use crate::operation::create_subscriber::_create_subscriber_input::CreateSub
 
 impl CreateSubscriberInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscriber::CreateSubscriberOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_subscriber::CreateSubscriberError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_subscriber();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_subscriber::CreateSubscriberOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_subscriber::CreateSubscriberError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_subscriber();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSubscriber`.
-///
+/// 
 /// <p>Creates a subscription permission for accounts that are already enabled in Amazon Security Lake. You can create a subscriber with access to data in the current Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubscriberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder,
+                    inner: crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_subscriber::CreateSubscriberOutput,
-        crate::operation::create_subscriber::CreateSubscriberError,
-    > for CreateSubscriberFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_subscriber::CreateSubscriberOutput,
-            crate::operation::create_subscriber::CreateSubscriberError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_subscriber::CreateSubscriberOutput,
+                    crate::operation::create_subscriber::CreateSubscriberError,
+                > for CreateSubscriberFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_subscriber::CreateSubscriberOutput,
+                        crate::operation::create_subscriber::CreateSubscriberError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSubscriberFluentBuilder {
     /// Creates a new `CreateSubscriber`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSubscriberFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscriber::CreateSubscriberOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_subscriber::CreateSubscriberError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_subscriber::CreateSubscriber::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_subscriber::CreateSubscriber::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_subscriber::CreateSubscriberOutput,
-        crate::operation::create_subscriber::CreateSubscriberError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subscriber::CreateSubscriberError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_subscriber::CreateSubscriber::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_subscriber::CreateSubscriber::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_subscriber::CreateSubscriberOutput, crate::operation::create_subscriber::CreateSubscriberError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The AWS identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.inner = self.inner.subscriber_identity(input);
@@ -160,12 +147,12 @@ impl CreateSubscriberFluentBuilder {
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>> {
         self.inner.get_sources()
     }
     /// Appends an item to `accessTypes`.
@@ -178,12 +165,12 @@ impl CreateSubscriberFluentBuilder {
         self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>) -> Self {
+    pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessType>>) -> Self {
         self.inner = self.inner.set_access_types(input);
         self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
+    pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessType>> {
         self.inner.get_access_types()
     }
     /// Appends an item to `tags`.
@@ -196,12 +183,13 @@ impl CreateSubscriberFluentBuilder {
         self
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImportInput {
+pub struct StartImportInput  {
     /// <p>The ARN of the destination event data store. Use this parameter for a new import.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The source S3 bucket for the import. Use this parameter for a new import.</p>
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
     /// <p>Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
@@ -14,27 +14,28 @@ pub struct StartImportInput {
     /// <p>The ID of the import. Use this parameter when you are retrying an import.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
 }
-impl StartImportInput {
+impl  StartImportInput  {
     /// <p>The ARN of the destination event data store. Use this parameter for a new import.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[::std::string::String] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [::std::string::String] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The source S3 bucket for the import. Use this parameter for a new import.</p>
-    pub fn import_source(&self) -> ::std::option::Option<&crate::types::ImportSource> {
+    pub fn import_source(&self) -> ::std::option::Option<& crate::types::ImportSource> {
         self.import_source.as_ref()
     }
     /// <p>Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
-    pub fn start_event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_event_time.as_ref()
     }
     /// <p>Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
-    pub fn end_event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_event_time.as_ref()
     }
     /// <p>The ID of the import. Use this parameter when you are retrying an import.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
@@ -49,7 +50,7 @@ impl StartImportInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportInputBuilder {
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,
     pub(crate) start_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -63,17 +64,16 @@ impl StartImportInputBuilder {
     /// <p>The ARN of the destination event data store. Use this parameter for a new import.</p>
     pub fn destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input.into());
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the destination event data store. Use this parameter for a new import.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>The ARN of the destination event data store. Use this parameter for a new import.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destinations
     }
     /// <p>The source S3 bucket for the import. Use this parameter for a new import.</p>
@@ -83,8 +83,7 @@ impl StartImportInputBuilder {
     }
     /// <p>The source S3 bucket for the import. Use this parameter for a new import.</p>
     pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportSource>) -> Self {
-        self.import_source = input;
-        self
+        self.import_source = input; self
     }
     /// <p>The source S3 bucket for the import. Use this parameter for a new import.</p>
     pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
@@ -97,8 +96,7 @@ impl StartImportInputBuilder {
     }
     /// <p>Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
     pub fn set_start_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_event_time = input;
-        self
+        self.start_event_time = input; self
     }
     /// <p>Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
     pub fn get_start_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +109,7 @@ impl StartImportInputBuilder {
     }
     /// <p>Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
     pub fn set_end_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_event_time = input;
-        self
+        self.end_event_time = input; self
     }
     /// <p>Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.</p>
     pub fn get_end_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +122,7 @@ impl StartImportInputBuilder {
     }
     /// <p>The ID of the import. Use this parameter when you are retrying an import.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>The ID of the import. Use this parameter when you are retrying an import.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,12 +130,20 @@ impl StartImportInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
-            destinations: self.destinations,
-            import_source: self.import_source,
-            start_event_time: self.start_event_time,
-            end_event_time: self.end_event_time,
-            import_id: self.import_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_import::StartImportInput {
+                destinations: self.destinations
+                ,
+                import_source: self.import_source
+                ,
+                start_event_time: self.start_event_time
+                ,
+                end_event_time: self.end_event_time
+                ,
+                import_id: self.import_id
+                ,
+            }
+        )
     }
 }
+

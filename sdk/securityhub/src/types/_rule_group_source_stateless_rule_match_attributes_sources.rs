@@ -3,13 +3,13 @@
 /// <p>A source IP addresses and address range to inspect for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleMatchAttributesSources {
+pub struct RuleGroupSourceStatelessRuleMatchAttributesSources  {
     /// <p>An IP address or a block of IP addresses.</p>
     pub address_definition: ::std::option::Option<::std::string::String>,
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesSources {
+impl  RuleGroupSourceStatelessRuleMatchAttributesSources  {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(&self) -> ::std::option::Option<&str> {
+    pub fn address_definition(&self) -> ::std::option::Option<& str> {
         self.address_definition.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
     }
     /// <p>An IP address or a block of IP addresses.</p>
     pub fn set_address_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_definition = input;
-        self
+        self.address_definition = input; self
     }
     /// <p>An IP address or a block of IP addresses.</p>
     pub fn get_address_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources {
-            address_definition: self.address_definition,
+            address_definition: self.address_definition
+            ,
         }
     }
 }
+

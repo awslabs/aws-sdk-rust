@@ -3,7 +3,7 @@
 /// <p>Represents a database table in Timestream. Tables contain one or more related time series. You can modify the retention duration of the memory store and the magnetic store for a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Table {
+pub struct Table  {
     /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
@@ -29,17 +29,17 @@ pub struct Table {
     /// <p>The schema of the table.</p>
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
-impl Table {
+impl  Table  {
     /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Timestream table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the Timestream database that contains this table.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The current state of the table:</p>
@@ -49,27 +49,27 @@ impl Table {
     /// <li>
     /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
-    pub fn table_status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
+    pub fn table_status(&self) -> ::std::option::Option<& crate::types::TableStatus> {
         self.table_status.as_ref()
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
-    pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
+    pub fn retention_properties(&self) -> ::std::option::Option<& crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
     /// <p>The time when the Timestream table was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the Timestream table was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
+    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<& crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
     /// <p>The schema of the table.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl TableBuilder {
     }
     /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name that uniquely identifies this table.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl TableBuilder {
     }
     /// <p>The name of the Timestream table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Timestream table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +128,7 @@ impl TableBuilder {
     }
     /// <p>The name of the Timestream database that contains this table.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database that contains this table.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl TableBuilder {
     /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn set_table_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
-        self.table_status = input;
-        self
+        self.table_status = input; self
     }
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -176,8 +172,7 @@ impl TableBuilder {
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
     pub fn set_retention_properties(mut self, input: ::std::option::Option<crate::types::RetentionProperties>) -> Self {
-        self.retention_properties = input;
-        self
+        self.retention_properties = input; self
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
     pub fn get_retention_properties(&self) -> &::std::option::Option<crate::types::RetentionProperties> {
@@ -190,8 +185,7 @@ impl TableBuilder {
     }
     /// <p>The time when the Timestream table was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the Timestream table was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +198,7 @@ impl TableBuilder {
     }
     /// <p>The time when the Timestream table was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time when the Timestream table was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +211,7 @@ impl TableBuilder {
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn set_magnetic_store_write_properties(mut self, input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>) -> Self {
-        self.magnetic_store_write_properties = input;
-        self
+        self.magnetic_store_write_properties = input; self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
@@ -232,8 +224,7 @@ impl TableBuilder {
     }
     /// <p>The schema of the table.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema of the table.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
@@ -242,15 +233,25 @@ impl TableBuilder {
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {
         crate::types::Table {
-            arn: self.arn,
-            table_name: self.table_name,
-            database_name: self.database_name,
-            table_status: self.table_status,
-            retention_properties: self.retention_properties,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            magnetic_store_write_properties: self.magnetic_store_write_properties,
-            schema: self.schema,
+            arn: self.arn
+            ,
+            table_name: self.table_name
+            ,
+            database_name: self.database_name
+            ,
+            table_status: self.table_status
+            ,
+            retention_properties: self.retention_properties
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            magnetic_store_write_properties: self.magnetic_store_write_properties
+            ,
+            schema: self.schema
+            ,
         }
     }
 }
+

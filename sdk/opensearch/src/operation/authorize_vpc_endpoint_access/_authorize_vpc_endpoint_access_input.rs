@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeVpcEndpointAccessInput {
+pub struct AuthorizeVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub account: ::std::option::Option<::std::string::String>,
 }
-impl AuthorizeVpcEndpointAccessInput {
+impl  AuthorizeVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
     }
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
     /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
-            domain_name: self.domain_name,
-            account: self.account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
+                domain_name: self.domain_name
+                ,
+                account: self.account
+                ,
+            }
+        )
     }
 }
+

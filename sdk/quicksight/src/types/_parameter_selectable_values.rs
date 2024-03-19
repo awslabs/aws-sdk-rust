@@ -3,21 +3,22 @@
 /// <p>A list of selectable values that are used in a control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterSelectableValues {
+pub struct ParameterSelectableValues  {
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The column identifier that fetches values from the data set.</p>
     pub link_to_data_set_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
-impl ParameterSelectableValues {
+impl  ParameterSelectableValues  {
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The column identifier that fetches values from the data set.</p>
-    pub fn link_to_data_set_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn link_to_data_set_column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.link_to_data_set_column.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl ParameterSelectableValues {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterSelectableValuesBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) link_to_data_set_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl ParameterSelectableValuesBuilder {
@@ -43,17 +44,16 @@ impl ParameterSelectableValuesBuilder {
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The column identifier that fetches values from the data set.</p>
@@ -63,8 +63,7 @@ impl ParameterSelectableValuesBuilder {
     }
     /// <p>The column identifier that fetches values from the data set.</p>
     pub fn set_link_to_data_set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.link_to_data_set_column = input;
-        self
+        self.link_to_data_set_column = input; self
     }
     /// <p>The column identifier that fetches values from the data set.</p>
     pub fn get_link_to_data_set_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -73,8 +72,11 @@ impl ParameterSelectableValuesBuilder {
     /// Consumes the builder and constructs a [`ParameterSelectableValues`](crate::types::ParameterSelectableValues).
     pub fn build(self) -> crate::types::ParameterSelectableValues {
         crate::types::ParameterSelectableValues {
-            values: self.values,
-            link_to_data_set_column: self.link_to_data_set_column,
+            values: self.values
+            ,
+            link_to_data_set_column: self.link_to_data_set_column
+            ,
         }
     }
 }
+

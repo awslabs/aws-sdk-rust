@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartInvestigationInput {
+pub struct StartInvestigationInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
@@ -12,21 +12,21 @@ pub struct StartInvestigationInput {
     /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub scope_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StartInvestigationInput {
+impl  StartInvestigationInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn scope_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scope_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scope_start_time.as_ref()
     }
     /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn scope_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scope_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scope_end_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl StartInvestigationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartInvestigationInputBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
     pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartInvestigationInputBuilder {
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_scope_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scope_start_time = input;
-        self
+        self.scope_start_time = input; self
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_scope_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -100,22 +97,26 @@ impl StartInvestigationInputBuilder {
     }
     /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_scope_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scope_end_time = input;
-        self
+        self.scope_end_time = input; self
     }
     /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_scope_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scope_end_time
     }
     /// Consumes the builder and constructs a [`StartInvestigationInput`](crate::operation::start_investigation::StartInvestigationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_investigation::StartInvestigationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_investigation::StartInvestigationInput {
-            graph_arn: self.graph_arn,
-            entity_arn: self.entity_arn,
-            scope_start_time: self.scope_start_time,
-            scope_end_time: self.scope_end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_investigation::StartInvestigationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_investigation::StartInvestigationInput {
+                graph_arn: self.graph_arn
+                ,
+                entity_arn: self.entity_arn
+                ,
+                scope_start_time: self.scope_start_time
+                ,
+                scope_end_time: self.scope_end_time
+                ,
+            }
+        )
     }
 }
+

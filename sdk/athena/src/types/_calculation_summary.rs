@@ -3,7 +3,7 @@
 /// <p>Summary information for a notebook calculation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculationSummary {
+pub struct CalculationSummary  {
     /// <p>The calculation execution UUID.</p>
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the calculation.</p>
@@ -11,17 +11,17 @@ pub struct CalculationSummary {
     /// <p>Contains information about the status of the calculation.</p>
     pub status: ::std::option::Option<crate::types::CalculationStatus>,
 }
-impl CalculationSummary {
+impl  CalculationSummary  {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn calculation_execution_id(&self) -> ::std::option::Option<& str> {
         self.calculation_execution_id.as_deref()
     }
     /// <p>A description of the calculation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contains information about the status of the calculation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CalculationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CalculationStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CalculationSummaryBuilder {
     }
     /// <p>The calculation execution UUID.</p>
     pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculation_execution_id = input;
-        self
+        self.calculation_execution_id = input; self
     }
     /// <p>The calculation execution UUID.</p>
     pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CalculationSummaryBuilder {
     }
     /// <p>A description of the calculation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the calculation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CalculationSummaryBuilder {
     }
     /// <p>Contains information about the status of the calculation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CalculationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Contains information about the status of the calculation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CalculationStatus> {
@@ -86,9 +83,13 @@ impl CalculationSummaryBuilder {
     /// Consumes the builder and constructs a [`CalculationSummary`](crate::types::CalculationSummary).
     pub fn build(self) -> crate::types::CalculationSummary {
         crate::types::CalculationSummary {
-            calculation_execution_id: self.calculation_execution_id,
-            description: self.description,
-            status: self.status,
+            calculation_execution_id: self.calculation_execution_id
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

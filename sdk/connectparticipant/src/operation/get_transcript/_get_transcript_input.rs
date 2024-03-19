@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTranscriptInput {
+pub struct GetTranscriptInput  {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the page. Default: 10.</p>
@@ -18,9 +18,9 @@ pub struct GetTranscriptInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
-impl GetTranscriptInput {
+impl  GetTranscriptInput  {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The maximum number of results to return in the page. Default: 10.</p>
@@ -28,23 +28,23 @@ impl GetTranscriptInput {
         self.max_results
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
-    pub fn scan_direction(&self) -> ::std::option::Option<&crate::types::ScanDirection> {
+    pub fn scan_direction(&self) -> ::std::option::Option<& crate::types::ScanDirection> {
         self.scan_direction.as_ref()
     }
     /// <p>The sort order for the records. Default: DESCENDING.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortKey> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortKey> {
         self.sort_order.as_ref()
     }
     /// <p>A filtering option for where to start.</p>
-    pub fn start_position(&self) -> ::std::option::Option<&crate::types::StartPosition> {
+    pub fn start_position(&self) -> ::std::option::Option<& crate::types::StartPosition> {
         self.start_position.as_ref()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(&self) -> ::std::option::Option<&str> {
+    pub fn connection_token(&self) -> ::std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The maximum number of results to return in the page. Default: 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the page. Default: 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -103,8 +101,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
     pub fn set_scan_direction(mut self, input: ::std::option::Option<crate::types::ScanDirection>) -> Self {
-        self.scan_direction = input;
-        self
+        self.scan_direction = input; self
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.</p>
     pub fn get_scan_direction(&self) -> &::std::option::Option<crate::types::ScanDirection> {
@@ -131,8 +127,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The sort order for the records. Default: DESCENDING.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for the records. Default: DESCENDING.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortKey> {
@@ -145,8 +140,7 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>A filtering option for where to start.</p>
     pub fn set_start_position(mut self, input: ::std::option::Option<crate::types::StartPosition>) -> Self {
-        self.start_position = input;
-        self
+        self.start_position = input; self
     }
     /// <p>A filtering option for where to start.</p>
     pub fn get_start_position(&self) -> &::std::option::Option<crate::types::StartPosition> {
@@ -160,25 +154,32 @@ impl GetTranscriptInputBuilder {
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::operation::get_transcript::GetTranscriptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_transcript::GetTranscriptInput {
-            contact_id: self.contact_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            scan_direction: self.scan_direction,
-            sort_order: self.sort_order,
-            start_position: self.start_position,
-            connection_token: self.connection_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transcript::GetTranscriptInput {
+                contact_id: self.contact_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                scan_direction: self.scan_direction
+                ,
+                sort_order: self.sort_order
+                ,
+                start_position: self.start_position
+                ,
+                connection_token: self.connection_token
+                ,
+            }
+        )
     }
 }
+

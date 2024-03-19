@@ -3,13 +3,13 @@
 /// <p>The error in server analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerError {
+pub struct ServerError  {
     /// <p>The error category of server analysis.</p>
     pub server_error_category: ::std::option::Option<crate::types::ServerErrorCategory>,
 }
-impl ServerError {
+impl  ServerError  {
     /// <p>The error category of server analysis.</p>
-    pub fn server_error_category(&self) -> ::std::option::Option<&crate::types::ServerErrorCategory> {
+    pub fn server_error_category(&self) -> ::std::option::Option<& crate::types::ServerErrorCategory> {
         self.server_error_category.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ServerErrorBuilder {
     }
     /// <p>The error category of server analysis.</p>
     pub fn set_server_error_category(mut self, input: ::std::option::Option<crate::types::ServerErrorCategory>) -> Self {
-        self.server_error_category = input;
-        self
+        self.server_error_category = input; self
     }
     /// <p>The error category of server analysis.</p>
     pub fn get_server_error_category(&self) -> &::std::option::Option<crate::types::ServerErrorCategory> {
@@ -44,7 +43,9 @@ impl ServerErrorBuilder {
     /// Consumes the builder and constructs a [`ServerError`](crate::types::ServerError).
     pub fn build(self) -> crate::types::ServerError {
         crate::types::ServerError {
-            server_error_category: self.server_error_category,
+            server_error_category: self.server_error_category
+            ,
         }
     }
 }
+

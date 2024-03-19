@@ -3,7 +3,7 @@
 /// <p>A game session's properties plus the protection policy currently in force.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GameSessionDetail {
+pub struct GameSessionDetail  {
     /// <p>Object that describes a game session.</p>
     pub game_session: ::std::option::Option<crate::types::GameSession>,
     /// <p>Current status of protection for the game session.</p>
@@ -15,9 +15,9 @@ pub struct GameSessionDetail {
     /// </ul>
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
-impl GameSessionDetail {
+impl  GameSessionDetail  {
     /// <p>Object that describes a game session.</p>
-    pub fn game_session(&self) -> ::std::option::Option<&crate::types::GameSession> {
+    pub fn game_session(&self) -> ::std::option::Option<& crate::types::GameSession> {
         self.game_session.as_ref()
     }
     /// <p>Current status of protection for the game session.</p>
@@ -27,7 +27,7 @@ impl GameSessionDetail {
     /// <li>
     /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
-    pub fn protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
+    pub fn protection_policy(&self) -> ::std::option::Option<& crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl GameSessionDetailBuilder {
     }
     /// <p>Object that describes a game session.</p>
     pub fn set_game_session(mut self, input: ::std::option::Option<crate::types::GameSession>) -> Self {
-        self.game_session = input;
-        self
+        self.game_session = input; self
     }
     /// <p>Object that describes a game session.</p>
     pub fn get_game_session(&self) -> &::std::option::Option<crate::types::GameSession> {
@@ -79,8 +78,7 @@ impl GameSessionDetailBuilder {
     /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
-        self.protection_policy = input;
-        self
+        self.protection_policy = input; self
     }
     /// <p>Current status of protection for the game session.</p>
     /// <ul>
@@ -95,8 +93,11 @@ impl GameSessionDetailBuilder {
     /// Consumes the builder and constructs a [`GameSessionDetail`](crate::types::GameSessionDetail).
     pub fn build(self) -> crate::types::GameSessionDetail {
         crate::types::GameSessionDetail {
-            game_session: self.game_session,
-            protection_policy: self.protection_policy,
+            game_session: self.game_session
+            ,
+            protection_policy: self.protection_policy
+            ,
         }
     }
 }
+

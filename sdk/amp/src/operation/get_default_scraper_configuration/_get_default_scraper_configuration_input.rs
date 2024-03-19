@@ -3,7 +3,8 @@
 /// <p>Represents the input of a <code>GetDefaultScraperConfiguration</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDefaultScraperConfigurationInput {}
+pub struct GetDefaultScraperConfigurationInput  {
+}
 impl GetDefaultScraperConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultScraperConfigurationInput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput).
     pub fn builder() -> crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationInputBuilder {
@@ -14,15 +15,15 @@ impl GetDefaultScraperConfigurationInput {
 /// A builder for [`GetDefaultScraperConfigurationInput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetDefaultScraperConfigurationInputBuilder {}
+pub struct GetDefaultScraperConfigurationInputBuilder {
+}
 impl GetDefaultScraperConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultScraperConfigurationInput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput {
+            }
+        )
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Identity {
+pub struct Identity  {
     /// <p>An IAM Identity Center user identity.</p>
     pub user: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>An IAM Identity Center group identity.</p>
@@ -15,21 +15,21 @@ pub struct Identity {
     /// <p>An IAM role identity.</p>
     pub iam_role: ::std::option::Option<crate::types::IamRoleIdentity>,
 }
-impl Identity {
+impl  Identity  {
     /// <p>An IAM Identity Center user identity.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::UserIdentity> {
         self.user.as_ref()
     }
     /// <p>An IAM Identity Center group identity.</p>
-    pub fn group(&self) -> ::std::option::Option<&crate::types::GroupIdentity> {
+    pub fn group(&self) -> ::std::option::Option<& crate::types::GroupIdentity> {
         self.group.as_ref()
     }
     /// <p>An IAM user identity.</p>
-    pub fn iam_user(&self) -> ::std::option::Option<&crate::types::IamUserIdentity> {
+    pub fn iam_user(&self) -> ::std::option::Option<& crate::types::IamUserIdentity> {
         self.iam_user.as_ref()
     }
     /// <p>An IAM role identity.</p>
-    pub fn iam_role(&self) -> ::std::option::Option<&crate::types::IamRoleIdentity> {
+    pub fn iam_role(&self) -> ::std::option::Option<& crate::types::IamRoleIdentity> {
         self.iam_role.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl IdentityBuilder {
     }
     /// <p>An IAM Identity Center user identity.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>An IAM Identity Center user identity.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserIdentity> {
@@ -71,8 +70,7 @@ impl IdentityBuilder {
     }
     /// <p>An IAM Identity Center group identity.</p>
     pub fn set_group(mut self, input: ::std::option::Option<crate::types::GroupIdentity>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>An IAM Identity Center group identity.</p>
     pub fn get_group(&self) -> &::std::option::Option<crate::types::GroupIdentity> {
@@ -85,8 +83,7 @@ impl IdentityBuilder {
     }
     /// <p>An IAM user identity.</p>
     pub fn set_iam_user(mut self, input: ::std::option::Option<crate::types::IamUserIdentity>) -> Self {
-        self.iam_user = input;
-        self
+        self.iam_user = input; self
     }
     /// <p>An IAM user identity.</p>
     pub fn get_iam_user(&self) -> &::std::option::Option<crate::types::IamUserIdentity> {
@@ -99,8 +96,7 @@ impl IdentityBuilder {
     }
     /// <p>An IAM role identity.</p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<crate::types::IamRoleIdentity>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>An IAM role identity.</p>
     pub fn get_iam_role(&self) -> &::std::option::Option<crate::types::IamRoleIdentity> {
@@ -109,10 +105,15 @@ impl IdentityBuilder {
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {
         crate::types::Identity {
-            user: self.user,
-            group: self.group,
-            iam_user: self.iam_user,
-            iam_role: self.iam_role,
+            user: self.user
+            ,
+            group: self.group
+            ,
+            iam_user: self.iam_user
+            ,
+            iam_role: self.iam_role
+            ,
         }
     }
 }
+

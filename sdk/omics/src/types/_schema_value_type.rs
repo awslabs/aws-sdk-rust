@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schemavaluetype = unimplemented!();
 /// match schemavaluetype {
@@ -34,16 +34,14 @@
 /// Specifically, when `schemavaluetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SchemaValueType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SchemaValueType {
     /// BOOLEAN type
     Boolean,
@@ -59,73 +57,74 @@ pub enum SchemaValueType {
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SchemaValueType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOOLEAN" => SchemaValueType::Boolean,
-            "DOUBLE" => SchemaValueType::Double,
-            "FLOAT" => SchemaValueType::Float,
-            "INT" => SchemaValueType::Int,
-            "LONG" => SchemaValueType::Long,
-            "STRING" => SchemaValueType::String,
-            other => SchemaValueType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BOOLEAN" => SchemaValueType::Boolean,
+"DOUBLE" => SchemaValueType::Double,
+"FLOAT" => SchemaValueType::Float,
+"INT" => SchemaValueType::Int,
+"LONG" => SchemaValueType::Long,
+"STRING" => SchemaValueType::String,
+other => SchemaValueType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SchemaValueType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SchemaValueType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SchemaValueType::from(s))
+                    }
+                }
 impl SchemaValueType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SchemaValueType::Boolean => "BOOLEAN",
-            SchemaValueType::Double => "DOUBLE",
-            SchemaValueType::Float => "FLOAT",
-            SchemaValueType::Int => "INT",
-            SchemaValueType::Long => "LONG",
-            SchemaValueType::String => "STRING",
-            SchemaValueType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BOOLEAN", "DOUBLE", "FLOAT", "INT", "LONG", "STRING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SchemaValueType::Boolean => "BOOLEAN",
+    SchemaValueType::Double => "DOUBLE",
+    SchemaValueType::Float => "FLOAT",
+    SchemaValueType::Int => "INT",
+    SchemaValueType::Long => "LONG",
+    SchemaValueType::String => "STRING",
+    SchemaValueType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOOLEAN", "DOUBLE", "FLOAT", "INT", "LONG", "STRING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SchemaValueType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SchemaValueType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SchemaValueType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SchemaValueType::Boolean => write!(f, "BOOLEAN"),
-            SchemaValueType::Double => write!(f, "DOUBLE"),
-            SchemaValueType::Float => write!(f, "FLOAT"),
-            SchemaValueType::Int => write!(f, "INT"),
-            SchemaValueType::Long => write!(f, "LONG"),
-            SchemaValueType::String => write!(f, "STRING"),
-            SchemaValueType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SchemaValueType::Boolean => write!(f, "BOOLEAN"),
+SchemaValueType::Double => write!(f, "DOUBLE"),
+SchemaValueType::Float => write!(f, "FLOAT"),
+SchemaValueType::Int => write!(f, "INT"),
+SchemaValueType::Long => write!(f, "LONG"),
+SchemaValueType::String => write!(f, "STRING"),
+SchemaValueType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLedgers`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p><br>
-    /// - On success, responds with [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput) with field(s):
+                            /// - On success, responds with [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput) with field(s):
     ///   - [`ledgers(Option<Vec::<LedgerSummary>>)`](crate::operation::list_ledgers::ListLedgersOutput::ledgers): <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ledgers::ListLedgersOutput::next_token): <p>A pagination token, indicating whether there are more results available:</p> <ul>  <li>   <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p></li>  <li>   <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p></li> </ul>
-    /// - On failure, responds with [`SdkError<ListLedgersError>`](crate::operation::list_ledgers::ListLedgersError)
+                            /// - On failure, responds with [`SdkError<ListLedgersError>`](crate::operation::list_ledgers::ListLedgersError)
     pub fn list_ledgers(&self) -> crate::operation::list_ledgers::builders::ListLedgersFluentBuilder {
-        crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ledgers::builders::ListLedgersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

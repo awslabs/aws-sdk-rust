@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchRelatedItems`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
     ///   - [`case_id(impl Into<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::set_case_id):<br>required: **true**<br><p>A unique identifier of the case.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`filters(RelatedItemTypeFilter)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::filters) / [`set_filters(Option<Vec::<RelatedItemTypeFilter>>)`](crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::set_filters):<br>required: **false**<br><p>The list of types of related items and their parameters to use for filtering.</p><br>
-    /// - On success, responds with [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput) with field(s):
+                            /// - On success, responds with [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_related_items::SearchRelatedItemsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     ///   - [`related_items(Vec::<Option<SearchRelatedItemsResponseItem>>)`](crate::operation::search_related_items::SearchRelatedItemsOutput::related_items): <p>A list of items related to a case.</p>
-    /// - On failure, responds with [`SdkError<SearchRelatedItemsError>`](crate::operation::search_related_items::SearchRelatedItemsError)
+                            /// - On failure, responds with [`SdkError<SearchRelatedItemsError>`](crate::operation::search_related_items::SearchRelatedItemsError)
     pub fn search_related_items(&self) -> crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder {
-        crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_related_items::builders::SearchRelatedItemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

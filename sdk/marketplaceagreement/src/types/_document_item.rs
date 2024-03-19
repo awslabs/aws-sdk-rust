@@ -3,7 +3,7 @@
 /// <p>Includes the list of references to legal resources proposed by the proposer to the acceptor. Each <code>DocumentItem</code> refers to an individual reference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentItem {
+pub struct DocumentItem  {
     /// <p>Category of the document. Document types include:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct DocumentItem {
     /// <p>Version of standard contracts provided by AWS Marketplace. Required when Type is <code>StandardEula</code> or <code>StandardDsa</code>.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl DocumentItem {
+impl  DocumentItem  {
     /// <p>Category of the document. Document types include:</p>
     /// <ul>
     /// <li>
@@ -33,15 +33,15 @@ impl DocumentItem {
     /// <li>
     /// <p><code>StandardDsa</code> – DSA for AWS Marketplace. For more information about the DSA, see the AWS Data Exchange User Guide. You don’t provide a URL for this type because it’s managed by AWS Marketplace.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A URL to the legal document for buyers to read. Required when <code>Type</code> is <code>CustomEula</code>.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>Version of standard contracts provided by AWS Marketplace. Required when Type is <code>StandardEula</code> or <code>StandardDsa</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl DocumentItemBuilder {
     /// <p><code>StandardDsa</code> – DSA for AWS Marketplace. For more information about the DSA, see the AWS Data Exchange User Guide. You don’t provide a URL for this type because it’s managed by AWS Marketplace.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the document. Document types include:</p>
     /// <ul>
@@ -112,8 +111,7 @@ impl DocumentItemBuilder {
     }
     /// <p>A URL to the legal document for buyers to read. Required when <code>Type</code> is <code>CustomEula</code>.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>A URL to the legal document for buyers to read. Required when <code>Type</code> is <code>CustomEula</code>.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl DocumentItemBuilder {
     }
     /// <p>Version of standard contracts provided by AWS Marketplace. Required when Type is <code>StandardEula</code> or <code>StandardDsa</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of standard contracts provided by AWS Marketplace. Required when Type is <code>StandardEula</code> or <code>StandardDsa</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,9 +133,13 @@ impl DocumentItemBuilder {
     /// Consumes the builder and constructs a [`DocumentItem`](crate::types::DocumentItem).
     pub fn build(self) -> crate::types::DocumentItem {
         crate::types::DocumentItem {
-            r#type: self.r#type,
-            url: self.url,
-            version: self.version,
+            r#type: self.r#type
+            ,
+            url: self.url
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

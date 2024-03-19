@@ -3,7 +3,7 @@
 /// <p>Information about a message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub message_id: ::std::string::String,
     /// <p>The name of the input into which the message payload is transformed.</p>
@@ -13,23 +13,21 @@ pub struct Message {
     /// <p>The timestamp associated with the message.</p>
     pub timestamp: ::std::option::Option<crate::types::TimestampValue>,
 }
-impl Message {
+impl  Message  {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    pub fn message_id(&self) -> &str {
-        use std::ops::Deref;
-        self.message_id.deref()
+    pub fn message_id(&self) -> & str {
+        use std::ops::Deref; self.message_id.deref()
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
-    pub fn input_name(&self) -> &str {
-        use std::ops::Deref;
-        self.input_name.deref()
+    pub fn input_name(&self) -> & str {
+        use std::ops::Deref; self.input_name.deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+    pub fn payload(&self) -> & ::aws_smithy_types::Blob {
         &self.payload
     }
     /// <p>The timestamp associated with the message.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimestampValue> {
+    pub fn timestamp(&self) -> ::std::option::Option<& crate::types::TimestampValue> {
         self.timestamp.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl MessageBuilder {
     }
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl MessageBuilder {
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl MessageBuilder {
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -102,8 +97,7 @@ impl MessageBuilder {
     }
     /// <p>The timestamp associated with the message.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimestampValue>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp associated with the message.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimestampValue> {
@@ -115,26 +109,27 @@ impl MessageBuilder {
     /// - [`input_name`](crate::types::builders::MessageBuilder::input_name)
     /// - [`payload`](crate::types::builders::MessageBuilder::payload)
     pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Message {
-            message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_id",
-                    "message_id was not specified but it is required when building Message",
-                )
-            })?,
-            input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_name",
-                    "input_name was not specified but it is required when building Message",
-                )
-            })?,
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building Message",
-                )
-            })?,
-            timestamp: self.timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Message {
+                message_id: self.message_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_id", "message_id was not specified but it is required when building Message")
+                    )?
+                ,
+                input_name: self.input_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_name", "input_name was not specified but it is required when building Message")
+                    )?
+                ,
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building Message")
+                    )?
+                ,
+                timestamp: self.timestamp
+                ,
+            }
+        )
     }
 }
+

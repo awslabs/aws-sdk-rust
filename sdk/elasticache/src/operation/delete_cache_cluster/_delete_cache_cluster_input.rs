@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>DeleteCacheCluster</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCacheClusterInput {
+pub struct DeleteCacheClusterInput  {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub final_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCacheClusterInput {
+impl  DeleteCacheClusterInput  {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
-    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn final_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn final_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.final_snapshot_identifier.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteCacheClusterInputBuilder {
     }
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_cluster_id = input;
-        self
+        self.cache_cluster_id = input; self
     }
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteCacheClusterInputBuilder {
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn set_final_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_snapshot_identifier = input;
-        self
+        self.final_snapshot_identifier = input; self
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn get_final_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
-            cache_cluster_id: self.cache_cluster_id,
-            final_snapshot_identifier: self.final_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
+                cache_cluster_id: self.cache_cluster_id
+                ,
+                final_snapshot_identifier: self.final_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Contains the configuration settings of a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainConfiguration {
+pub struct DomainConfiguration  {
     /// <p>The retention period for workflow executions in this domain.</p>
     pub workflow_execution_retention_period_in_days: ::std::string::String,
 }
-impl DomainConfiguration {
+impl  DomainConfiguration  {
     /// <p>The retention period for workflow executions in this domain.</p>
-    pub fn workflow_execution_retention_period_in_days(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_execution_retention_period_in_days.deref()
+    pub fn workflow_execution_retention_period_in_days(&self) -> & str {
+        use std::ops::Deref; self.workflow_execution_retention_period_in_days.deref()
     }
 }
 impl DomainConfiguration {
@@ -36,8 +35,7 @@ impl DomainConfigurationBuilder {
     }
     /// <p>The retention period for workflow executions in this domain.</p>
     pub fn set_workflow_execution_retention_period_in_days(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_execution_retention_period_in_days = input;
-        self
+        self.workflow_execution_retention_period_in_days = input; self
     }
     /// <p>The retention period for workflow executions in this domain.</p>
     pub fn get_workflow_execution_retention_period_in_days(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DomainConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_execution_retention_period_in_days`](crate::types::builders::DomainConfigurationBuilder::workflow_execution_retention_period_in_days)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainConfiguration {
-            workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_execution_retention_period_in_days",
-                    "workflow_execution_retention_period_in_days was not specified but it is required when building DomainConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainConfiguration {
+                workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_execution_retention_period_in_days", "workflow_execution_retention_period_in_days was not specified but it is required when building DomainConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

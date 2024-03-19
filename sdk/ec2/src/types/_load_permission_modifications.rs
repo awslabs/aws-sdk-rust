@@ -3,24 +3,26 @@
 /// <p>Describes modifications to the load permissions of an Amazon FPGA image (AFI).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadPermissionModifications {
+pub struct LoadPermissionModifications  {
     /// <p>The load permissions to add.</p>
-    pub add: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
+    pub add: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>,
     /// <p>The load permissions to remove.</p>
-    pub remove: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
+    pub remove: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>,
 }
-impl LoadPermissionModifications {
+impl  LoadPermissionModifications  {
     /// <p>The load permissions to add.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add.is_none()`.
-    pub fn add(&self) -> &[crate::types::LoadPermissionRequest] {
-        self.add.as_deref().unwrap_or_default()
+    pub fn add(&self) -> & [crate::types::LoadPermissionRequest] {
+        self.add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The load permissions to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove.is_none()`.
-    pub fn remove(&self) -> &[crate::types::LoadPermissionRequest] {
-        self.remove.as_deref().unwrap_or_default()
+    pub fn remove(&self) -> & [crate::types::LoadPermissionRequest] {
+        self.remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoadPermissionModifications {
@@ -34,8 +36,8 @@ impl LoadPermissionModifications {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadPermissionModificationsBuilder {
-    pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
-    pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
+    pub(crate) add: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>,
+    pub(crate) remove: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>,
 }
 impl LoadPermissionModificationsBuilder {
     /// Appends an item to `add`.
@@ -45,17 +47,16 @@ impl LoadPermissionModificationsBuilder {
     /// <p>The load permissions to add.</p>
     pub fn add(mut self, input: crate::types::LoadPermissionRequest) -> Self {
         let mut v = self.add.unwrap_or_default();
-        v.push(input);
-        self.add = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The load permissions to add.</p>
-    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>) -> Self {
-        self.add = input;
-        self
+    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>) -> Self {
+        self.add = input; self
     }
     /// <p>The load permissions to add.</p>
-    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>> {
         &self.add
     }
     /// Appends an item to `remove`.
@@ -65,24 +66,26 @@ impl LoadPermissionModificationsBuilder {
     /// <p>The load permissions to remove.</p>
     pub fn remove(mut self, input: crate::types::LoadPermissionRequest) -> Self {
         let mut v = self.remove.unwrap_or_default();
-        v.push(input);
-        self.remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The load permissions to remove.</p>
-    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>) -> Self {
-        self.remove = input;
-        self
+    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>>) -> Self {
+        self.remove = input; self
     }
     /// <p>The load permissions to remove.</p>
-    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadPermissionRequest>> {
         &self.remove
     }
     /// Consumes the builder and constructs a [`LoadPermissionModifications`](crate::types::LoadPermissionModifications).
     pub fn build(self) -> crate::types::LoadPermissionModifications {
         crate::types::LoadPermissionModifications {
-            add: self.add,
-            remove: self.remove,
+            add: self.add
+            ,
+            remove: self.remove
+            ,
         }
     }
 }
+

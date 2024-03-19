@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRetrieverInput {
+pub struct GetRetrieverInput  {
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the retriever.</p>
     pub retriever_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRetrieverInput {
+impl  GetRetrieverInput  {
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the retriever.</p>
-    pub fn retriever_id(&self) -> ::std::option::Option<&str> {
+    pub fn retriever_id(&self) -> ::std::option::Option<& str> {
         self.retriever_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetRetrieverInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetRetrieverInputBuilder {
     }
     /// <p>The identifier of the retriever.</p>
     pub fn set_retriever_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retriever_id = input;
-        self
+        self.retriever_id = input; self
     }
     /// <p>The identifier of the retriever.</p>
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.retriever_id
     }
     /// Consumes the builder and constructs a [`GetRetrieverInput`](crate::operation::get_retriever::GetRetrieverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_retriever::GetRetrieverInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_retriever::GetRetrieverInput {
-            application_id: self.application_id,
-            retriever_id: self.retriever_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_retriever::GetRetrieverInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_retriever::GetRetrieverInput {
+                application_id: self.application_id
+                ,
+                retriever_id: self.retriever_id
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OcspConfiguration {
+pub struct OcspConfiguration  {
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub enabled: bool,
     /// <p>By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p><note>
@@ -13,7 +13,7 @@ pub struct OcspConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.</p>
     pub ocsp_custom_cname: ::std::option::Option<::std::string::String>,
 }
-impl OcspConfiguration {
+impl  OcspConfiguration  {
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -22,7 +22,7 @@ impl OcspConfiguration {
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.</p>
-    pub fn ocsp_custom_cname(&self) -> ::std::option::Option<&str> {
+    pub fn ocsp_custom_cname(&self) -> ::std::option::Option<& str> {
         self.ocsp_custom_cname.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl OcspConfigurationBuilder {
     }
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl OcspConfigurationBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.</p>
     pub fn set_ocsp_custom_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ocsp_custom_cname = input;
-        self
+        self.ocsp_custom_cname = input; self
     }
     /// <p>By default, Amazon Web Services Private CA injects an Amazon Web Services domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
@@ -83,14 +81,17 @@ impl OcspConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::OcspConfigurationBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::OcspConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OcspConfiguration {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building OcspConfiguration",
-                )
-            })?,
-            ocsp_custom_cname: self.ocsp_custom_cname,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OcspConfiguration {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building OcspConfiguration")
+                    )?
+                ,
+                ocsp_custom_cname: self.ocsp_custom_cname
+                ,
+            }
+        )
     }
 }
+

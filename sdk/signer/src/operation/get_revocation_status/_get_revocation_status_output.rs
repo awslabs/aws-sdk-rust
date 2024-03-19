@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRevocationStatusOutput {
+pub struct GetRevocationStatusOutput  {
     /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
-    pub revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub revoked_entities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetRevocationStatusOutput {
+impl  GetRevocationStatusOutput  {
     /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoked_entities.is_none()`.
-    pub fn revoked_entities(&self) -> &[::std::string::String] {
-        self.revoked_entities.as_deref().unwrap_or_default()
+    pub fn revoked_entities(&self) -> & [::std::string::String] {
+        self.revoked_entities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRevocationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRevocationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput).
     pub fn builder() -> crate::operation::get_revocation_status::builders::GetRevocationStatusOutputBuilder {
@@ -31,7 +32,7 @@ impl GetRevocationStatusOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevocationStatusOutputBuilder {
-    pub(crate) revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) revoked_entities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRevocationStatusOutputBuilder {
@@ -42,33 +43,34 @@ impl GetRevocationStatusOutputBuilder {
     /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
     pub fn revoked_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.revoked_entities.unwrap_or_default();
-        v.push(input.into());
-        self.revoked_entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.revoked_entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
-    pub fn set_revoked_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.revoked_entities = input;
-        self
+    pub fn set_revoked_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.revoked_entities = input; self
     }
     /// <p>A list of revoked entities (including zero or more of the signing profile ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
-    pub fn get_revoked_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_revoked_entities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.revoked_entities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput).
     pub fn build(self) -> crate::operation::get_revocation_status::GetRevocationStatusOutput {
         crate::operation::get_revocation_status::GetRevocationStatusOutput {
-            revoked_entities: self.revoked_entities,
+            revoked_entities: self.revoked_entities
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

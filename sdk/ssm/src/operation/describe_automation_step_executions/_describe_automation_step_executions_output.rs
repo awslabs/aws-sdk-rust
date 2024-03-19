@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAutomationStepExecutionsOutput {
+pub struct DescribeAutomationStepExecutionsOutput  {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    pub step_executions: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
+    pub step_executions: ::std::option::Option<::std::vec::Vec::<crate::types::StepExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAutomationStepExecutionsOutput {
+impl  DescribeAutomationStepExecutionsOutput  {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_executions.is_none()`.
-    pub fn step_executions(&self) -> &[crate::types::StepExecution] {
-        self.step_executions.as_deref().unwrap_or_default()
+    pub fn step_executions(&self) -> & [crate::types::StepExecution] {
+        self.step_executions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAutomationStepExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAutomationStepExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationStepExecutionsOutput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput).
     pub fn builder() -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAutomationStepExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutionsOutputBuilder {
-    pub(crate) step_executions: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
+    pub(crate) step_executions: ::std::option::Option<::std::vec::Vec::<crate::types::StepExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAutomationStepExecutionsOutputBuilder {
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
     pub fn step_executions(mut self, input: crate::types::StepExecution) -> Self {
         let mut v = self.step_executions.unwrap_or_default();
-        v.push(input);
-        self.step_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.step_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    pub fn set_step_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>) -> Self {
-        self.step_executions = input;
-        self
+    pub fn set_step_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StepExecution>>) -> Self {
+        self.step_executions = input; self
     }
     /// <p>A list of details about the current state of all steps that make up an execution.</p>
-    pub fn get_step_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecution>> {
+    pub fn get_step_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StepExecution>> {
         &self.step_executions
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeAutomationStepExecutionsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAutomationStepExecutionsOutput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput).
     pub fn build(self) -> crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput {
         crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput {
-            step_executions: self.step_executions,
-            next_token: self.next_token,
+            step_executions: self.step_executions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

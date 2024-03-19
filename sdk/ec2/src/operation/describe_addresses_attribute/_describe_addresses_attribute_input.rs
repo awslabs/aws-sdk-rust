@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddressesAttributeInput {
+pub struct DescribeAddressesAttributeInput  {
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The attribute of the IP address.</p>
     pub attribute: ::std::option::Option<crate::types::AddressAttributeName>,
     /// <p>The token for the next page of results.</p>
@@ -14,19 +14,20 @@ pub struct DescribeAddressesAttributeInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeAddressesAttributeInput {
+impl  DescribeAddressesAttributeInput  {
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
-    pub fn allocation_ids(&self) -> &[::std::string::String] {
-        self.allocation_ids.as_deref().unwrap_or_default()
+    pub fn allocation_ids(&self) -> & [::std::string::String] {
+        self.allocation_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::AddressAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::AddressAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -49,7 +50,7 @@ impl DescribeAddressesAttributeInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesAttributeInputBuilder {
-    pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) attribute: ::std::option::Option<crate::types::AddressAttributeName>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -63,17 +64,16 @@ impl DescribeAddressesAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation IDs.</p>
     pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.allocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allocation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allocation_ids = input;
-        self
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allocation_ids = input; self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allocation_ids
     }
     /// <p>The attribute of the IP address.</p>
@@ -83,8 +83,7 @@ impl DescribeAddressesAttributeInputBuilder {
     }
     /// <p>The attribute of the IP address.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::AddressAttributeName>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute of the IP address.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::AddressAttributeName> {
@@ -97,8 +96,7 @@ impl DescribeAddressesAttributeInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl DescribeAddressesAttributeInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -125,26 +122,28 @@ impl DescribeAddressesAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAddressesAttributeInput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput {
-            allocation_ids: self.allocation_ids,
-            attribute: self.attribute,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput {
+                allocation_ids: self.allocation_ids
+                ,
+                attribute: self.attribute
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

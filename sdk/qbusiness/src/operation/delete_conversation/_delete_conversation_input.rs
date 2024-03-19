@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConversationInput {
+pub struct DeleteConversationInput  {
     /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
@@ -10,17 +10,17 @@ pub struct DeleteConversationInput {
     /// <p>The identifier of the user who is deleting the conversation.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConversationInput {
+impl  DeleteConversationInput  {
     /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the user who is deleting the conversation.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteConversationInputBuilder {
     }
     /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteConversationInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl DeleteConversationInputBuilder {
     }
     /// <p>The identifier of the user who is deleting the conversation.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user who is deleting the conversation.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteConversationInput`](crate::operation::delete_conversation::DeleteConversationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_conversation::DeleteConversationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_conversation::DeleteConversationInput {
-            conversation_id: self.conversation_id,
-            application_id: self.application_id,
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_conversation::DeleteConversationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_conversation::DeleteConversationInput {
+                conversation_id: self.conversation_id
+                ,
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

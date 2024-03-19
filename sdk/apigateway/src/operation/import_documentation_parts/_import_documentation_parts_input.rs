@@ -3,7 +3,7 @@
 /// <p>Import documentation parts from an external (e.g., OpenAPI) definition file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportDocumentationPartsInput {
+pub struct ImportDocumentationPartsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
@@ -13,13 +13,13 @@ pub struct ImportDocumentationPartsInput {
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl ImportDocumentationPartsInput {
+impl  ImportDocumentationPartsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::PutMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::PutMode> {
         self.mode.as_ref()
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
@@ -27,7 +27,7 @@ impl ImportDocumentationPartsInput {
         self.fail_on_warnings
     }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ImportDocumentationPartsInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ImportDocumentationPartsInputBuilder {
     }
     /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
@@ -84,8 +82,7 @@ impl ImportDocumentationPartsInputBuilder {
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_on_warnings = input;
-        self
+        self.fail_on_warnings = input; self
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
@@ -99,25 +96,26 @@ impl ImportDocumentationPartsInputBuilder {
     }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.body
     }
     /// Consumes the builder and constructs a [`ImportDocumentationPartsInput`](crate::operation::import_documentation_parts::ImportDocumentationPartsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_documentation_parts::ImportDocumentationPartsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::import_documentation_parts::ImportDocumentationPartsInput {
-            rest_api_id: self.rest_api_id,
-            mode: self.mode,
-            fail_on_warnings: self.fail_on_warnings,
-            body: self.body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_documentation_parts::ImportDocumentationPartsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_documentation_parts::ImportDocumentationPartsInput {
+                rest_api_id: self.rest_api_id
+                ,
+                mode: self.mode
+                ,
+                fail_on_warnings: self.fail_on_warnings
+                ,
+                body: self.body
+                ,
+            }
+        )
     }
 }
+

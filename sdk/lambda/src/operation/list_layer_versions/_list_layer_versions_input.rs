@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLayerVersionsInput {
+pub struct ListLayerVersionsInput  {
     /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub compatible_runtime: ::std::option::Option<crate::types::Runtime>,
@@ -15,18 +15,18 @@ pub struct ListLayerVersionsInput {
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub compatible_architecture: ::std::option::Option<crate::types::Architecture>,
 }
-impl ListLayerVersionsInput {
+impl  ListLayerVersionsInput  {
     /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn compatible_runtime(&self) -> ::std::option::Option<&crate::types::Runtime> {
+    pub fn compatible_runtime(&self) -> ::std::option::Option<& crate::types::Runtime> {
         self.compatible_runtime.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(&self) -> ::std::option::Option<&str> {
+    pub fn layer_name(&self) -> ::std::option::Option<& str> {
         self.layer_name.as_deref()
     }
     /// <p>A pagination token returned by a previous call.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of versions to return.</p>
@@ -34,7 +34,7 @@ impl ListLayerVersionsInput {
         self.max_items
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    pub fn compatible_architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn compatible_architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.compatible_architecture.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl ListLayerVersionsInputBuilder {
     /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_compatible_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
-        self.compatible_runtime = input;
-        self
+        self.compatible_runtime = input; self
     }
     /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
@@ -81,8 +80,7 @@ impl ListLayerVersionsInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_name = input;
-        self
+        self.layer_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl ListLayerVersionsInputBuilder {
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token returned by a previous call.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl ListLayerVersionsInputBuilder {
     }
     /// <p>The maximum number of versions to return.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of versions to return.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -123,23 +119,28 @@ impl ListLayerVersionsInputBuilder {
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn set_compatible_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.compatible_architecture = input;
-        self
+        self.compatible_architecture = input; self
     }
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn get_compatible_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
         &self.compatible_architecture
     }
     /// Consumes the builder and constructs a [`ListLayerVersionsInput`](crate::operation::list_layer_versions::ListLayerVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_layer_versions::ListLayerVersionsInput {
-            compatible_runtime: self.compatible_runtime,
-            layer_name: self.layer_name,
-            marker: self.marker,
-            max_items: self.max_items,
-            compatible_architecture: self.compatible_architecture,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_layer_versions::ListLayerVersionsInput {
+                compatible_runtime: self.compatible_runtime
+                ,
+                layer_name: self.layer_name
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                compatible_architecture: self.compatible_architecture
+                ,
+            }
+        )
     }
 }
+

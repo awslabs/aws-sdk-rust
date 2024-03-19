@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCoverage`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector whose coverage details you want to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`filter_criteria(CoverageFilterCriteria)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::filter_criteria) / [`set_filter_criteria(Option<CoverageFilterCriteria>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_filter_criteria):<br>required: **false**<br><p>Represents the criteria used to filter the coverage details.</p><br>
     ///   - [`sort_criteria(CoverageSortCriteria)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<CoverageSortCriteria>)`](crate::operation::list_coverage::builders::ListCoverageFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>Represents the criteria used to sort the coverage details.</p><br>
-    /// - On success, responds with [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput) with field(s):
+                            /// - On success, responds with [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput) with field(s):
     ///   - [`resources(Option<Vec::<CoverageResource>>)`](crate::operation::list_coverage::ListCoverageOutput::resources): <p>A list of resources and their attributes providing cluster details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage::ListCoverageOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
+                            /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
     pub fn list_coverage(&self) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
-        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
+                            }
 }
+

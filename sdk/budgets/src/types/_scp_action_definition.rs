@@ -3,22 +3,20 @@
 /// <p>The service control policies (SCP) action definition details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScpActionDefinition {
+pub struct ScpActionDefinition  {
     /// <p>The policy ID attached.</p>
     pub policy_id: ::std::string::String,
     /// <p>A list of target IDs.</p>
-    pub target_ids: ::std::vec::Vec<::std::string::String>,
+    pub target_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl ScpActionDefinition {
+impl  ScpActionDefinition  {
     /// <p>The policy ID attached.</p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> & str {
+        use std::ops::Deref; self.policy_id.deref()
     }
     /// <p>A list of target IDs.</p>
-    pub fn target_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.target_ids.deref()
+    pub fn target_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.target_ids.deref()
     }
 }
 impl ScpActionDefinition {
@@ -33,7 +31,7 @@ impl ScpActionDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScpActionDefinitionBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ScpActionDefinitionBuilder {
     /// <p>The policy ID attached.</p>
@@ -44,8 +42,7 @@ impl ScpActionDefinitionBuilder {
     }
     /// <p>The policy ID attached.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The policy ID attached.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl ScpActionDefinitionBuilder {
     /// <p>A list of target IDs.</p>
     pub fn target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
-        v.push(input.into());
-        self.target_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of target IDs.</p>
-    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_ids = input;
-        self
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_ids = input; self
     }
     /// <p>A list of target IDs.</p>
-    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_ids
     }
     /// Consumes the builder and constructs a [`ScpActionDefinition`](crate::types::ScpActionDefinition).
@@ -76,19 +72,20 @@ impl ScpActionDefinitionBuilder {
     /// - [`policy_id`](crate::types::builders::ScpActionDefinitionBuilder::policy_id)
     /// - [`target_ids`](crate::types::builders::ScpActionDefinitionBuilder::target_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::ScpActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScpActionDefinition {
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building ScpActionDefinition",
-                )
-            })?,
-            target_ids: self.target_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_ids",
-                    "target_ids was not specified but it is required when building ScpActionDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScpActionDefinition {
+                policy_id: self.policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_id", "policy_id was not specified but it is required when building ScpActionDefinition")
+                    )?
+                ,
+                target_ids: self.target_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_ids", "target_ids was not specified but it is required when building ScpActionDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

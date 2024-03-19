@@ -5,55 +5,51 @@ pub use crate::operation::create_cache_cluster::_create_cache_cluster_input::Cre
 
 impl CreateCacheClusterInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cache_cluster::CreateCacheClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_cache_cluster();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_cache_cluster::CreateCacheClusterError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_cache_cluster();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCacheCluster`.
-///
+/// 
 /// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>
 /// <p>This operation is not supported for Redis (cluster mode enabled) clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCacheClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cache_cluster::builders::CreateCacheClusterInputBuilder,
+                    inner: crate::operation::create_cache_cluster::builders::CreateCacheClusterInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
-        crate::operation::create_cache_cluster::CreateCacheClusterError,
-    > for CreateCacheClusterFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_cache_cluster::CreateCacheClusterOutput,
-            crate::operation::create_cache_cluster::CreateCacheClusterError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+                    crate::operation::create_cache_cluster::CreateCacheClusterError,
+                > for CreateCacheClusterFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+                        crate::operation::create_cache_cluster::CreateCacheClusterError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCacheClusterFluentBuilder {
     /// Creates a new `CreateCacheCluster`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreateCacheClusterFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cache_cluster::CreateCacheClusterError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_cache_cluster::CreateCacheCluster::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_cache_cluster::CreateCacheCluster::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
-        crate::operation::create_cache_cluster::CreateCacheClusterError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_cache_cluster::CreateCacheClusterOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cache_cluster::CreateCacheClusterError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_cache_cluster::CreateCacheCluster::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_cache_cluster::CreateCacheCluster::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_cache_cluster::CreateCacheClusterOutput, crate::operation::create_cache_cluster::CreateCacheClusterError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
     /// <ul>
@@ -235,7 +222,7 @@ impl CreateCacheClusterFluentBuilder {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub fn set_preferred_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_preferred_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_preferred_availability_zones(input);
         self
     }
@@ -246,7 +233,7 @@ impl CreateCacheClusterFluentBuilder {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub fn get_preferred_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_preferred_availability_zones()
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
@@ -537,13 +524,13 @@ impl CreateCacheClusterFluentBuilder {
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_security_group_names(input);
         self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
     /// Appends an item to `SecurityGroupIds`.
@@ -558,13 +545,13 @@ impl CreateCacheClusterFluentBuilder {
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -577,12 +564,12 @@ impl CreateCacheClusterFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags to be added to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Appends an item to `SnapshotArns`.
@@ -601,7 +588,7 @@ impl CreateCacheClusterFluentBuilder {
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
@@ -609,7 +596,7 @@ impl CreateCacheClusterFluentBuilder {
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_snapshot_arns()
     }
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
@@ -825,12 +812,12 @@ impl CreateCacheClusterFluentBuilder {
         self
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn set_preferred_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_preferred_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_preferred_outpost_arns(input);
         self
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn get_preferred_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_preferred_outpost_arns()
     }
     /// Appends an item to `LogDeliveryConfigurations`.
@@ -843,15 +830,12 @@ impl CreateCacheClusterFluentBuilder {
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn set_log_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_log_delivery_configurations(input);
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>> {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>> {
         self.inner.get_log_delivery_configurations()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
@@ -897,3 +881,4 @@ impl CreateCacheClusterFluentBuilder {
         self.inner.get_ip_discovery()
     }
 }
+

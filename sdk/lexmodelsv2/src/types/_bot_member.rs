@@ -3,7 +3,7 @@
 /// <p>A bot that is a member of a network of bots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotMember {
+pub struct BotMember  {
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
     pub bot_member_id: ::std::string::String,
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
@@ -15,31 +15,26 @@ pub struct BotMember {
     /// <p>The version of a bot that is a member of this network of bots.</p>
     pub bot_member_version: ::std::string::String,
 }
-impl BotMember {
+impl  BotMember  {
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_member_id.deref()
+    pub fn bot_member_id(&self) -> & str {
+        use std::ops::Deref; self.bot_member_id.deref()
     }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_member_name.deref()
+    pub fn bot_member_name(&self) -> & str {
+        use std::ops::Deref; self.bot_member_name.deref()
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_alias_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_member_alias_id.deref()
+    pub fn bot_member_alias_id(&self) -> & str {
+        use std::ops::Deref; self.bot_member_alias_id.deref()
     }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_alias_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_member_alias_name.deref()
+    pub fn bot_member_alias_name(&self) -> & str {
+        use std::ops::Deref; self.bot_member_alias_name.deref()
     }
     /// <p>The version of a bot that is a member of this network of bots.</p>
-    pub fn bot_member_version(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_member_version.deref()
+    pub fn bot_member_version(&self) -> & str {
+        use std::ops::Deref; self.bot_member_version.deref()
     }
 }
 impl BotMember {
@@ -68,8 +63,7 @@ impl BotMemberBuilder {
     }
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
     pub fn set_bot_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_member_id = input;
-        self
+        self.bot_member_id = input; self
     }
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
     pub fn get_bot_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +77,7 @@ impl BotMemberBuilder {
     }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
     pub fn set_bot_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_member_name = input;
-        self
+        self.bot_member_name = input; self
     }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
     pub fn get_bot_member_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +91,7 @@ impl BotMemberBuilder {
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
     pub fn set_bot_member_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_member_alias_id = input;
-        self
+        self.bot_member_alias_id = input; self
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
     pub fn get_bot_member_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +105,7 @@ impl BotMemberBuilder {
     }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
     pub fn set_bot_member_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_member_alias_name = input;
-        self
+        self.bot_member_alias_name = input; self
     }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
     pub fn get_bot_member_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl BotMemberBuilder {
     }
     /// <p>The version of a bot that is a member of this network of bots.</p>
     pub fn set_bot_member_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_member_version = input;
-        self
+        self.bot_member_version = input; self
     }
     /// <p>The version of a bot that is a member of this network of bots.</p>
     pub fn get_bot_member_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,37 +133,35 @@ impl BotMemberBuilder {
     /// - [`bot_member_alias_name`](crate::types::builders::BotMemberBuilder::bot_member_alias_name)
     /// - [`bot_member_version`](crate::types::builders::BotMemberBuilder::bot_member_version)
     pub fn build(self) -> ::std::result::Result<crate::types::BotMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotMember {
-            bot_member_id: self.bot_member_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_member_id",
-                    "bot_member_id was not specified but it is required when building BotMember",
-                )
-            })?,
-            bot_member_name: self.bot_member_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_member_name",
-                    "bot_member_name was not specified but it is required when building BotMember",
-                )
-            })?,
-            bot_member_alias_id: self.bot_member_alias_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_member_alias_id",
-                    "bot_member_alias_id was not specified but it is required when building BotMember",
-                )
-            })?,
-            bot_member_alias_name: self.bot_member_alias_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_member_alias_name",
-                    "bot_member_alias_name was not specified but it is required when building BotMember",
-                )
-            })?,
-            bot_member_version: self.bot_member_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_member_version",
-                    "bot_member_version was not specified but it is required when building BotMember",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotMember {
+                bot_member_id: self.bot_member_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_member_id", "bot_member_id was not specified but it is required when building BotMember")
+                    )?
+                ,
+                bot_member_name: self.bot_member_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_member_name", "bot_member_name was not specified but it is required when building BotMember")
+                    )?
+                ,
+                bot_member_alias_id: self.bot_member_alias_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_member_alias_id", "bot_member_alias_id was not specified but it is required when building BotMember")
+                    )?
+                ,
+                bot_member_alias_name: self.bot_member_alias_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_member_alias_name", "bot_member_alias_name was not specified but it is required when building BotMember")
+                    )?
+                ,
+                bot_member_version: self.bot_member_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_member_version", "bot_member_version was not specified but it is required when building BotMember")
+                    )?
+                ,
+            }
+        )
     }
 }
+

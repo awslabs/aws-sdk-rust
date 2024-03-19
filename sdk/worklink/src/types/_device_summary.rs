@@ -3,19 +3,19 @@
 /// <p>The summary of devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceSummary {
+pub struct DeviceSummary  {
     /// <p>The ID of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the device.</p>
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
 }
-impl DeviceSummary {
+impl  DeviceSummary  {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
+    pub fn device_status(&self) -> ::std::option::Option<& crate::types::DeviceStatus> {
         self.device_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The ID of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The status of the device.</p>
     pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
-        self.device_status = input;
-        self
+        self.device_status = input; self
     }
     /// <p>The status of the device.</p>
     pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
@@ -65,8 +63,11 @@ impl DeviceSummaryBuilder {
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {
         crate::types::DeviceSummary {
-            device_id: self.device_id,
-            device_status: self.device_status,
+            device_id: self.device_id
+            ,
+            device_status: self.device_status
+            ,
         }
     }
 }
+

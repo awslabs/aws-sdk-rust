@@ -3,7 +3,7 @@
 /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdmChannelResponse {
+pub struct AdmChannelResponse  {
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the ADM channel was enabled.</p>
@@ -25,13 +25,13 @@ pub struct AdmChannelResponse {
     /// <p>The current version of the ADM channel.</p>
     pub version: ::std::option::Option<i32>,
 }
-impl AdmChannelResponse {
+impl  AdmChannelResponse  {
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time when the ADM channel was enabled.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the ADM channel is enabled for the application.</p>
@@ -43,7 +43,7 @@ impl AdmChannelResponse {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether the ADM channel is archived.</p>
@@ -51,15 +51,15 @@ impl AdmChannelResponse {
         self.is_archived
     }
     /// <p>The user who last modified the ADM channel.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time when the ADM channel was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The current version of the ADM channel.</p>
@@ -97,8 +97,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application that the ADM channel applies to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The date and time when the ADM channel was enabled.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time when the ADM channel was enabled.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>Specifies whether the ADM channel is enabled for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the ADM channel is enabled for the application.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -139,8 +136,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn set_has_credential(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_credential = input;
-        self
+        self.has_credential = input; self
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
@@ -153,8 +149,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>(Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>(Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>Specifies whether the ADM channel is archived.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// <p>Specifies whether the ADM channel is archived.</p>
     pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
@@ -181,8 +175,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The user who last modified the ADM channel.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The user who last modified the ADM channel.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The date and time when the ADM channel was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time when the ADM channel was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +202,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +215,7 @@ impl AdmChannelResponseBuilder {
     }
     /// <p>The current version of the ADM channel.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The current version of the ADM channel.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -234,16 +224,27 @@ impl AdmChannelResponseBuilder {
     /// Consumes the builder and constructs a [`AdmChannelResponse`](crate::types::AdmChannelResponse).
     pub fn build(self) -> crate::types::AdmChannelResponse {
         crate::types::AdmChannelResponse {
-            application_id: self.application_id,
-            creation_date: self.creation_date,
-            enabled: self.enabled,
-            has_credential: self.has_credential,
-            id: self.id,
-            is_archived: self.is_archived,
-            last_modified_by: self.last_modified_by,
-            last_modified_date: self.last_modified_date,
-            platform: self.platform,
-            version: self.version,
+            application_id: self.application_id
+            ,
+            creation_date: self.creation_date
+            ,
+            enabled: self.enabled
+            ,
+            has_credential: self.has_credential
+            ,
+            id: self.id
+            ,
+            is_archived: self.is_archived
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            platform: self.platform
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

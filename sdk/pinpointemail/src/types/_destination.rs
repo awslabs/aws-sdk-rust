@@ -3,32 +3,35 @@
 /// <p>An object that describes the recipients for an email.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cc_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bcc_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Destination {
+impl  Destination  {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.to_addresses.is_none()`.
-    pub fn to_addresses(&self) -> &[::std::string::String] {
-        self.to_addresses.as_deref().unwrap_or_default()
+    pub fn to_addresses(&self) -> & [::std::string::String] {
+        self.to_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cc_addresses.is_none()`.
-    pub fn cc_addresses(&self) -> &[::std::string::String] {
-        self.cc_addresses.as_deref().unwrap_or_default()
+    pub fn cc_addresses(&self) -> & [::std::string::String] {
+        self.cc_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bcc_addresses.is_none()`.
-    pub fn bcc_addresses(&self) -> &[::std::string::String] {
-        self.bcc_addresses.as_deref().unwrap_or_default()
+    pub fn bcc_addresses(&self) -> & [::std::string::String] {
+        self.bcc_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Destination {
@@ -42,9 +45,9 @@ impl Destination {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
-    pub(crate) to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) cc_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) bcc_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DestinationBuilder {
     /// Appends an item to `to_addresses`.
@@ -54,17 +57,16 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
     pub fn to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.to_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.to_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.to_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn set_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.to_addresses = input;
-        self
+    pub fn set_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.to_addresses = input; self
     }
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn get_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.to_addresses
     }
     /// Appends an item to `cc_addresses`.
@@ -74,17 +76,16 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
     pub fn cc_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cc_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.cc_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cc_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn set_cc_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cc_addresses = input;
-        self
+    pub fn set_cc_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cc_addresses = input; self
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn get_cc_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cc_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cc_addresses
     }
     /// Appends an item to `bcc_addresses`.
@@ -94,25 +95,28 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
     pub fn bcc_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bcc_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.bcc_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bcc_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn set_bcc_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bcc_addresses = input;
-        self
+    pub fn set_bcc_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bcc_addresses = input; self
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn get_bcc_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bcc_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bcc_addresses
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {
         crate::types::Destination {
-            to_addresses: self.to_addresses,
-            cc_addresses: self.cc_addresses,
-            bcc_addresses: self.bcc_addresses,
+            to_addresses: self.to_addresses
+            ,
+            cc_addresses: self.cc_addresses
+            ,
+            bcc_addresses: self.bcc_addresses
+            ,
         }
     }
 }
+

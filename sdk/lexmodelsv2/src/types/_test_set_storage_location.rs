@@ -3,7 +3,7 @@
 /// <p>Contains information about the location in which the test set is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetStorageLocation {
+pub struct TestSetStorageLocation  {
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
     pub s3_bucket_name: ::std::string::String,
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
@@ -11,19 +11,17 @@ pub struct TestSetStorageLocation {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl TestSetStorageLocation {
+impl  TestSetStorageLocation  {
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
-    pub fn s3_bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket_name.deref()
+    pub fn s3_bucket_name(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket_name.deref()
     }
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
-    pub fn s3_path(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_path.deref()
+    pub fn s3_path(&self) -> & str {
+        use std::ops::Deref; self.s3_path.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl TestSetStorageLocationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl TestSetStorageLocationBuilder {
     }
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
     pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_path = input;
-        self
+        self.s3_path = input; self
     }
     /// <p>The path inside the Amazon S3 bucket where the test set is stored.</p>
     pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl TestSetStorageLocationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting the test set.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl TestSetStorageLocationBuilder {
     /// - [`s3_bucket_name`](crate::types::builders::TestSetStorageLocationBuilder::s3_bucket_name)
     /// - [`s3_path`](crate::types::builders::TestSetStorageLocationBuilder::s3_path)
     pub fn build(self) -> ::std::result::Result<crate::types::TestSetStorageLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TestSetStorageLocation {
-            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket_name",
-                    "s3_bucket_name was not specified but it is required when building TestSetStorageLocation",
-                )
-            })?,
-            s3_path: self.s3_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_path",
-                    "s3_path was not specified but it is required when building TestSetStorageLocation",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TestSetStorageLocation {
+                s3_bucket_name: self.s3_bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket_name", "s3_bucket_name was not specified but it is required when building TestSetStorageLocation")
+                    )?
+                ,
+                s3_path: self.s3_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_path", "s3_path was not specified but it is required when building TestSetStorageLocation")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateCustomMetadataInput {
+pub struct CreateCustomMetadataInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -10,27 +10,27 @@ pub struct CreateCustomMetadataInput {
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Custom metadata in the form of name-value pairs.</p>
-    pub custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateCustomMetadataInput {
+impl  CreateCustomMetadataInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>Custom metadata in the form of name-value pairs.</p>
-    pub fn custom_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateCustomMetadataInput {
+impl  ::std::fmt::Debug for CreateCustomMetadataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomMetadataInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -54,7 +54,7 @@ pub struct CreateCustomMetadataInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateCustomMetadataInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
@@ -64,8 +64,7 @@ impl CreateCustomMetadataInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl CreateCustomMetadataInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl CreateCustomMetadataInputBuilder {
     }
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,39 +102,34 @@ impl CreateCustomMetadataInputBuilder {
     /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
     ///
     /// <p>Custom metadata in the form of name-value pairs.</p>
-    pub fn custom_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Custom metadata in the form of name-value pairs.</p>
-    pub fn set_custom_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_metadata = input;
-        self
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_metadata = input; self
     }
     /// <p>Custom metadata in the form of name-value pairs.</p>
-    pub fn get_custom_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_metadata
     }
     /// Consumes the builder and constructs a [`CreateCustomMetadataInput`](crate::operation::create_custom_metadata::CreateCustomMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_custom_metadata::CreateCustomMetadataInput {
-            authentication_token: self.authentication_token,
-            resource_id: self.resource_id,
-            version_id: self.version_id,
-            custom_metadata: self.custom_metadata,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_metadata::CreateCustomMetadataInput {
+                authentication_token: self.authentication_token
+                ,
+                resource_id: self.resource_id
+                ,
+                version_id: self.version_id
+                ,
+                custom_metadata: self.custom_metadata
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateCustomMetadataInputBuilder {
@@ -150,3 +142,4 @@ impl ::std::fmt::Debug for CreateCustomMetadataInputBuilder {
         formatter.finish()
     }
 }
+

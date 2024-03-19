@@ -3,19 +3,19 @@
 /// <p>An object representing the gateway route host name to match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayRouteHostnameMatch {
+pub struct GatewayRouteHostnameMatch  {
     /// <p>The exact host name to match on.</p>
     pub exact: ::std::option::Option<::std::string::String>,
     /// <p>The specified ending characters of the host name to match on.</p>
     pub suffix: ::std::option::Option<::std::string::String>,
 }
-impl GatewayRouteHostnameMatch {
+impl  GatewayRouteHostnameMatch  {
     /// <p>The exact host name to match on.</p>
-    pub fn exact(&self) -> ::std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<& str> {
         self.exact.as_deref()
     }
     /// <p>The specified ending characters of the host name to match on.</p>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<& str> {
         self.suffix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GatewayRouteHostnameMatchBuilder {
     }
     /// <p>The exact host name to match on.</p>
     pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exact = input;
-        self
+        self.exact = input; self
     }
     /// <p>The exact host name to match on.</p>
     pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GatewayRouteHostnameMatchBuilder {
     }
     /// <p>The specified ending characters of the host name to match on.</p>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>The specified ending characters of the host name to match on.</p>
     pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GatewayRouteHostnameMatchBuilder {
     /// Consumes the builder and constructs a [`GatewayRouteHostnameMatch`](crate::types::GatewayRouteHostnameMatch).
     pub fn build(self) -> crate::types::GatewayRouteHostnameMatch {
         crate::types::GatewayRouteHostnameMatch {
-            exact: self.exact,
-            suffix: self.suffix,
+            exact: self.exact
+            ,
+            suffix: self.suffix
+            ,
         }
     }
 }
+

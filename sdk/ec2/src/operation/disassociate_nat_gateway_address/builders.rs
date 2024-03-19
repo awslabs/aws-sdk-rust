@@ -5,56 +5,52 @@ pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_ga
 
 impl DisassociateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disassociate_nat_gateway_address();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disassociate_nat_gateway_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisassociateNatGatewayAddress`.
-///
+/// 
 /// <p>Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>
 /// <p>While disassociating is in progress, you cannot associate/disassociate additional EIPs while the connections are being drained. You are, however, allowed to delete the NAT gateway.</p>
 /// <p>An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated and supports the existing connections but does not support any new connections (new connections are distributed across the remaining associated EIPs). As the existing connections drain out, the EIPs (and the corresponding private IP addresses mapped to them) are released.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder,
+                    inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-    > for DisassociateNatGatewayAddressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
+                    crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+                > for DisassociateNatGatewayAddressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
+                        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisassociateNatGatewayAddressFluentBuilder {
     /// Creates a new `DisassociateNatGatewayAddress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput, crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
@@ -134,12 +121,12 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_association_ids()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
@@ -171,3 +158,4 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

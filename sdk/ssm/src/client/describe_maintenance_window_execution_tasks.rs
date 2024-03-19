@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindowExecutionTasks`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`window_execution_id(impl Into<String>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::window_execution_id) / [`set_window_execution_id(Option<String>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::set_window_execution_id):<br>required: **true**<br><p>The ID of the maintenance window execution whose task executions should be retrieved.</p><br>
     ///   - [`filters(MaintenanceWindowFilter)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<MaintenanceWindowFilter>>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::set_filters):<br>required: **false**<br><p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput) with field(s):
     ///   - [`window_execution_task_identities(Option<Vec::<MaintenanceWindowExecutionTaskIdentity>>)`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput::window_execution_task_identities): <p>Information about the task executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionTasksError>`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksError)
-    pub fn describe_maintenance_window_execution_tasks(
-        &self,
-    ) -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder {
-        crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionTasksError>`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksError)
+    pub fn describe_maintenance_window_execution_tasks(&self) -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder {
+                                crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

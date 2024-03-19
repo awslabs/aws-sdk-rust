@@ -3,29 +3,31 @@
 /// <p>Configuration values that override the container image Dockerfile settings. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image settings</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageConfig {
+pub struct ImageConfig  {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entry_point: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the working directory.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
 }
-impl ImageConfig {
+impl  ImageConfig  {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point.is_none()`.
-    pub fn entry_point(&self) -> &[::std::string::String] {
-        self.entry_point.as_deref().unwrap_or_default()
+    pub fn entry_point(&self) -> & [::std::string::String] {
+        self.entry_point.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
-    pub fn command(&self) -> &[::std::string::String] {
-        self.command.as_deref().unwrap_or_default()
+    pub fn command(&self) -> & [::std::string::String] {
+        self.command.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the working directory.</p>
-    pub fn working_directory(&self) -> ::std::option::Option<&str> {
+    pub fn working_directory(&self) -> ::std::option::Option<& str> {
         self.working_directory.as_deref()
     }
 }
@@ -40,8 +42,8 @@ impl ImageConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageConfigBuilder {
-    pub(crate) entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entry_point: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfigBuilder {
@@ -52,17 +54,16 @@ impl ImageConfigBuilder {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entry_point.unwrap_or_default();
-        v.push(input.into());
-        self.entry_point = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entry_point = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entry_point = input;
-        self
+    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entry_point = input; self
     }
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn get_entry_point(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entry_point
     }
     /// Appends an item to `command`.
@@ -72,17 +73,16 @@ impl ImageConfigBuilder {
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
-        v.push(input.into());
-        self.command = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.command = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.command = input;
-        self
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.command = input; self
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.command
     }
     /// <p>Specifies the working directory.</p>
@@ -92,8 +92,7 @@ impl ImageConfigBuilder {
     }
     /// <p>Specifies the working directory.</p>
     pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.working_directory = input;
-        self
+        self.working_directory = input; self
     }
     /// <p>Specifies the working directory.</p>
     pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,9 +101,13 @@ impl ImageConfigBuilder {
     /// Consumes the builder and constructs a [`ImageConfig`](crate::types::ImageConfig).
     pub fn build(self) -> crate::types::ImageConfig {
         crate::types::ImageConfig {
-            entry_point: self.entry_point,
-            command: self.command,
-            working_directory: self.working_directory,
+            entry_point: self.entry_point
+            ,
+            command: self.command
+            ,
+            working_directory: self.working_directory
+            ,
         }
     }
 }
+

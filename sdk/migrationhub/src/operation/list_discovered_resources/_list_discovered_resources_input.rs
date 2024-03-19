@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDiscoveredResourcesInput {
+pub struct ListDiscoveredResourcesInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i></p>
@@ -12,17 +12,17 @@ pub struct ListDiscoveredResourcesInput {
     /// <p>The maximum number of results returned per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDiscoveredResourcesInput {
+impl  ListDiscoveredResourcesInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i></p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results returned per page.</p>
@@ -55,8 +55,7 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>The name of the ProgressUpdateStream.</p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress_update_stream = input;
-        self
+        self.progress_update_stream = input; self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_task_name = input;
-        self
+        self.migration_task_name = input; self
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>The maximum number of results returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
-            progress_update_stream: self.progress_update_stream,
-            migration_task_name: self.migration_task_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_discovered_resources::ListDiscoveredResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

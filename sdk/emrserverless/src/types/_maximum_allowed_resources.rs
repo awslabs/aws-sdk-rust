@@ -3,7 +3,7 @@
 /// <p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaximumAllowedResources {
+pub struct MaximumAllowedResources  {
     /// <p>The maximum allowed CPU for an application.</p>
     pub cpu: ::std::string::String,
     /// <p>The maximum allowed resources for an application.</p>
@@ -11,19 +11,17 @@ pub struct MaximumAllowedResources {
     /// <p>The maximum allowed disk for an application.</p>
     pub disk: ::std::option::Option<::std::string::String>,
 }
-impl MaximumAllowedResources {
+impl  MaximumAllowedResources  {
     /// <p>The maximum allowed CPU for an application.</p>
-    pub fn cpu(&self) -> &str {
-        use std::ops::Deref;
-        self.cpu.deref()
+    pub fn cpu(&self) -> & str {
+        use std::ops::Deref; self.cpu.deref()
     }
     /// <p>The maximum allowed resources for an application.</p>
-    pub fn memory(&self) -> &str {
-        use std::ops::Deref;
-        self.memory.deref()
+    pub fn memory(&self) -> & str {
+        use std::ops::Deref; self.memory.deref()
     }
     /// <p>The maximum allowed disk for an application.</p>
-    pub fn disk(&self) -> ::std::option::Option<&str> {
+    pub fn disk(&self) -> ::std::option::Option<& str> {
         self.disk.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl MaximumAllowedResourcesBuilder {
     }
     /// <p>The maximum allowed CPU for an application.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The maximum allowed CPU for an application.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl MaximumAllowedResourcesBuilder {
     }
     /// <p>The maximum allowed resources for an application.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The maximum allowed resources for an application.</p>
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl MaximumAllowedResourcesBuilder {
     }
     /// <p>The maximum allowed disk for an application.</p>
     pub fn set_disk(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk = input;
-        self
+        self.disk = input; self
     }
     /// <p>The maximum allowed disk for an application.</p>
     pub fn get_disk(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl MaximumAllowedResourcesBuilder {
     /// - [`cpu`](crate::types::builders::MaximumAllowedResourcesBuilder::cpu)
     /// - [`memory`](crate::types::builders::MaximumAllowedResourcesBuilder::memory)
     pub fn build(self) -> ::std::result::Result<crate::types::MaximumAllowedResources, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MaximumAllowedResources {
-            cpu: self.cpu.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cpu",
-                    "cpu was not specified but it is required when building MaximumAllowedResources",
-                )
-            })?,
-            memory: self.memory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "memory",
-                    "memory was not specified but it is required when building MaximumAllowedResources",
-                )
-            })?,
-            disk: self.disk,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MaximumAllowedResources {
+                cpu: self.cpu
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cpu", "cpu was not specified but it is required when building MaximumAllowedResources")
+                    )?
+                ,
+                memory: self.memory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("memory", "memory was not specified but it is required when building MaximumAllowedResources")
+                    )?
+                ,
+                disk: self.disk
+                ,
+            }
+        )
     }
 }
+

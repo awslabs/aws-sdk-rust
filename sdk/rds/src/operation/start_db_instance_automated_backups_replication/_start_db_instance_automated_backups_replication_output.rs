@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDbInstanceAutomatedBackupsReplicationOutput {
+pub struct StartDbInstanceAutomatedBackupsReplicationOutput  {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     pub db_instance_automated_backup: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,
 }
-impl StartDbInstanceAutomatedBackupsReplicationOutput {
+impl  StartDbInstanceAutomatedBackupsReplicationOutput  {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(&self) -> ::std::option::Option<&crate::types::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(&self) -> ::std::option::Option<& crate::types::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDbInstanceAutomatedBackupsReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
-        crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
+        crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,28 @@ impl StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
     }
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     pub fn set_db_instance_automated_backup(mut self, input: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>) -> Self {
-        self.db_instance_automated_backup = input;
-        self
+        self.db_instance_automated_backup = input; self
     }
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     pub fn get_db_instance_automated_backup(&self) -> &::std::option::Option<crate::types::DbInstanceAutomatedBackup> {
         &self.db_instance_automated_backup
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
     pub fn build(self) -> crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput {
         crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput {
-            db_instance_automated_backup: self.db_instance_automated_backup,
+            db_instance_automated_backup: self.db_instance_automated_backup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

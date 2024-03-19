@@ -5,54 +5,50 @@ pub use crate::operation::create_media_stream_pipeline::_create_media_stream_pip
 
 impl CreateMediaStreamPipelineInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_media_stream_pipeline();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_media_stream_pipeline();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateMediaStreamPipeline`.
-///
+/// 
 /// <p>Creates a streaming media pipeline.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMediaStreamPipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_media_stream_pipeline::builders::CreateMediaStreamPipelineInputBuilder,
+                    inner: crate::operation::create_media_stream_pipeline::builders::CreateMediaStreamPipelineInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
-    > for CreateMediaStreamPipelineFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
-            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
+                    crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
+                > for CreateMediaStreamPipelineFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
+                        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateMediaStreamPipelineFluentBuilder {
     /// Creates a new `CreateMediaStreamPipeline`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateMediaStreamPipelineFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_media_stream_pipeline::CreateMediaStreamPipeline::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipeline::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput,
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_media_stream_pipeline::CreateMediaStreamPipeline::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipeline::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineOutput, crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -118,12 +105,12 @@ impl CreateMediaStreamPipelineFluentBuilder {
         self
     }
     /// <p>The data sources for the media pipeline.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The data sources for the media pipeline.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>> {
         self.inner.get_sources()
     }
     /// Appends an item to `Sinks`.
@@ -136,12 +123,12 @@ impl CreateMediaStreamPipelineFluentBuilder {
         self
     }
     /// <p>The data sink for the media pipeline.</p>
-    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>>) -> Self {
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>>) -> Self {
         self.inner = self.inner.set_sinks(input);
         self
     }
     /// <p>The data sink for the media pipeline.</p>
-    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>> {
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>> {
         self.inner.get_sinks()
     }
     /// <p>The token assigned to the client making the request.</p>
@@ -168,12 +155,13 @@ impl CreateMediaStreamPipelineFluentBuilder {
         self
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

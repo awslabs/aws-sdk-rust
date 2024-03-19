@@ -3,22 +3,23 @@
 /// <p>Types of broker engines.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrokerEngineType {
+pub struct BrokerEngineType  {
     /// <p>The broker's engine type.</p>
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The list of engine versions.</p>
-    pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
+    pub engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>,
 }
-impl BrokerEngineType {
+impl  BrokerEngineType  {
     /// <p>The broker's engine type.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The list of engine versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_versions.is_none()`.
-    pub fn engine_versions(&self) -> &[crate::types::EngineVersion] {
-        self.engine_versions.as_deref().unwrap_or_default()
+    pub fn engine_versions(&self) -> & [crate::types::EngineVersion] {
+        self.engine_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BrokerEngineType {
@@ -33,7 +34,7 @@ impl BrokerEngineType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerEngineTypeBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
-    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
+    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>,
 }
 impl BrokerEngineTypeBuilder {
     /// <p>The broker's engine type.</p>
@@ -43,8 +44,7 @@ impl BrokerEngineTypeBuilder {
     }
     /// <p>The broker's engine type.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The broker's engine type.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -57,24 +57,26 @@ impl BrokerEngineTypeBuilder {
     /// <p>The list of engine versions.</p>
     pub fn engine_versions(mut self, input: crate::types::EngineVersion) -> Self {
         let mut v = self.engine_versions.unwrap_or_default();
-        v.push(input);
-        self.engine_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of engine versions.</p>
-    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>) -> Self {
-        self.engine_versions = input;
-        self
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>) -> Self {
+        self.engine_versions = input; self
     }
     /// <p>The list of engine versions.</p>
-    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>> {
         &self.engine_versions
     }
     /// Consumes the builder and constructs a [`BrokerEngineType`](crate::types::BrokerEngineType).
     pub fn build(self) -> crate::types::BrokerEngineType {
         crate::types::BrokerEngineType {
-            engine_type: self.engine_type,
-            engine_versions: self.engine_versions,
+            engine_type: self.engine_type
+            ,
+            engine_versions: self.engine_versions
+            ,
         }
     }
 }
+

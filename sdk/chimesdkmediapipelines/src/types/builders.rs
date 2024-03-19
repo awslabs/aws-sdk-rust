@@ -152,3 +152,4 @@ pub use crate::types::_content_artifacts_configuration::ContentArtifactsConfigur
 pub use crate::types::_video_artifacts_configuration::VideoArtifactsConfigurationBuilder;
 
 pub use crate::types::_audio_artifacts_configuration::AudioArtifactsConfigurationBuilder;
+

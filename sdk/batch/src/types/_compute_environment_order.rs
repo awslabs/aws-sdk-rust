@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComputeEnvironmentOrder {
+pub struct ComputeEnvironmentOrder  {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     pub order: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment: ::std::option::Option<::std::string::String>,
 }
-impl ComputeEnvironmentOrder {
+impl  ComputeEnvironmentOrder  {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment(&self) -> ::std::option::Option<&str> {
+    pub fn compute_environment(&self) -> ::std::option::Option<& str> {
         self.compute_environment.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ComputeEnvironmentOrderBuilder {
     }
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     pub fn get_order(&self) -> &::std::option::Option<i32> {
@@ -59,8 +58,7 @@ impl ComputeEnvironmentOrderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn set_compute_environment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_environment = input;
-        self
+        self.compute_environment = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn get_compute_environment(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,11 @@ impl ComputeEnvironmentOrderBuilder {
     /// Consumes the builder and constructs a [`ComputeEnvironmentOrder`](crate::types::ComputeEnvironmentOrder).
     pub fn build(self) -> crate::types::ComputeEnvironmentOrder {
         crate::types::ComputeEnvironmentOrder {
-            order: self.order,
-            compute_environment: self.compute_environment,
+            order: self.order
+            ,
+            compute_environment: self.compute_environment
+            ,
         }
     }
 }
+

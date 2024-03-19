@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateCustomKeyStoreInput {
+pub struct CreateCustomKeyStoreInput  {
     /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
@@ -62,33 +62,33 @@ pub struct CreateCustomKeyStoreInput {
     /// <p>An Amazon VPC endpoint service keeps your communication with KMS in a private address space entirely within Amazon Web Services, but it requires more configuration, including establishing a Amazon VPC with multiple subnets, a VPC endpoint service, a network load balancer, and a verified private DNS name. A public endpoint is simpler to set up, but it might be slower and might not fulfill your security requirements. You might consider testing with a public endpoint, and then establishing a VPC endpoint service for production tasks. Note that this choice does not determine the location of the external key store proxy. Even if you choose a VPC endpoint service, the proxy can be hosted within the VPC or outside of Amazon Web Services such as in your corporate data center.</p>
     pub xks_proxy_connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
 }
-impl CreateCustomKeyStoreInput {
+impl  CreateCustomKeyStoreInput  {
     /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub fn custom_key_store_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_key_store_name(&self) -> ::std::option::Option<& str> {
         self.custom_key_store_name.as_deref()
     }
     /// <p>Identifies the CloudHSM cluster for an CloudHSM key store. This parameter is required for custom key stores with <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the cluster ID of any active CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
-    pub fn cloud_hsm_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_hsm_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
     /// <p>Specifies the certificate for an CloudHSM key store. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the content of the trust anchor certificate for the CloudHSM cluster. This is the content of the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
-    pub fn trust_anchor_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn trust_anchor_certificate(&self) -> ::std::option::Option<& str> {
         self.trust_anchor_certificate.as_deref()
     }
     /// <p>Specifies the <code>kmsuser</code> password for an CloudHSM key store. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser"> <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM cluster. KMS logs into the cluster as this user to manage key material on your behalf.</p>
     /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
     /// <p>This parameter tells KMS the <code>kmsuser</code> account password; it does not change the password in the CloudHSM cluster.</p>
-    pub fn key_store_password(&self) -> ::std::option::Option<&str> {
+    pub fn key_store_password(&self) -> ::std::option::Option<& str> {
         self.key_store_password.as_deref()
     }
     /// <p>Specifies the type of custom key store. The default value is <code>AWS_CLOUDHSM</code>.</p>
     /// <p>For a custom key store backed by an CloudHSM cluster, omit the parameter or enter <code>AWS_CLOUDHSM</code>. For a custom key store backed by an external key manager outside of Amazon Web Services, enter <code>EXTERNAL_KEY_STORE</code>. You cannot change this property after the key store is created.</p>
-    pub fn custom_key_store_type(&self) -> ::std::option::Option<&crate::types::CustomKeyStoreType> {
+    pub fn custom_key_store_type(&self) -> ::std::option::Option<& crate::types::CustomKeyStoreType> {
         self.custom_key_store_type.as_ref()
     }
     /// <p>Specifies the endpoint that KMS uses to send requests to the external key store proxy (XKS proxy). This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
@@ -105,7 +105,7 @@ impl CreateCustomKeyStoreInput {
     /// <li>
     /// <p>Each external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS name. The <code>XksProxyUriEndpoint</code> value for external key stores with <code>VPC_ENDPOINT_SERVICE</code> connectivity (private DNS name) must be unique in the Amazon Web Services account and Region.</p></li>
     /// </ul>
-    pub fn xks_proxy_uri_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn xks_proxy_uri_endpoint(&self) -> ::std::option::Option<& str> {
         self.xks_proxy_uri_endpoint.as_deref()
     }
     /// <p>Specifies the base path to the proxy APIs for this external key store. To find this value, see the documentation for your external key store proxy. This parameter is required for all custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
@@ -115,7 +115,7 @@ impl CreateCustomKeyStoreInput {
     /// <li>
     /// <p>The combined <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> values must be unique in the Amazon Web Services account and Region.</p></li>
     /// </ul>
-    pub fn xks_proxy_uri_path(&self) -> ::std::option::Option<&str> {
+    pub fn xks_proxy_uri_path(&self) -> ::std::option::Option<& str> {
         self.xks_proxy_uri_path.as_deref()
     }
     /// <p>Specifies the name of the Amazon VPC endpoint service for interface endpoints that is used to communicate with your external key store proxy (XKS proxy). This parameter is required when the value of <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code> and the value of <code>XksProxyConnectivity</code> is <code>VPC_ENDPOINT_SERVICE</code>.</p>
@@ -125,24 +125,24 @@ impl CreateCustomKeyStoreInput {
     /// <li>
     /// <p>External key stores with <code>VPC_ENDPOINT_SERVICE</code> connectivity can share an Amazon VPC, but each external key store must have its own VPC endpoint service and private DNS name.</p></li>
     /// </ul>
-    pub fn xks_proxy_vpc_endpoint_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn xks_proxy_vpc_endpoint_service_name(&self) -> ::std::option::Option<& str> {
         self.xks_proxy_vpc_endpoint_service_name.as_deref()
     }
     /// <p>Specifies an authentication credential for the external key store proxy (XKS proxy). This parameter is required for all custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>The <code>XksProxyAuthenticationCredential</code> has two required elements: <code>RawSecretAccessKey</code>, a secret key, and <code>AccessKeyId</code>, a unique identifier for the <code>RawSecretAccessKey</code>. For character requirements, see <a href="kms/latest/APIReference/API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
     /// <p>KMS uses this authentication credential to sign requests to the external key store proxy on your behalf. This credential is unrelated to Identity and Access Management (IAM) and Amazon Web Services credentials.</p>
     /// <p>This parameter doesn't set or change the authentication credentials on the XKS proxy. It just tells KMS the credential that you established on your external key store proxy. If you rotate your proxy authentication credential, use the <code>UpdateCustomKeyStore</code> operation to provide the new credential to KMS.</p>
-    pub fn xks_proxy_authentication_credential(&self) -> ::std::option::Option<&crate::types::XksProxyAuthenticationCredentialType> {
+    pub fn xks_proxy_authentication_credential(&self) -> ::std::option::Option<& crate::types::XksProxyAuthenticationCredentialType> {
         self.xks_proxy_authentication_credential.as_ref()
     }
     /// <p>Indicates how KMS communicates with the external key store proxy. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>If the external key store proxy uses a public endpoint, specify <code>PUBLIC_ENDPOINT</code>. If the external key store proxy uses a Amazon VPC endpoint service for communication with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. For help making this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/plan-xks-keystore.html#choose-xks-connectivity">Choosing a connectivity option</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>An Amazon VPC endpoint service keeps your communication with KMS in a private address space entirely within Amazon Web Services, but it requires more configuration, including establishing a Amazon VPC with multiple subnets, a VPC endpoint service, a network load balancer, and a verified private DNS name. A public endpoint is simpler to set up, but it might be slower and might not fulfill your security requirements. You might consider testing with a public endpoint, and then establishing a VPC endpoint service for production tasks. Note that this choice does not determine the location of the external key store proxy. Even if you choose a VPC endpoint service, the proxy can be hosted within the VPC or outside of Amazon Web Services such as in your corporate data center.</p>
-    pub fn xks_proxy_connectivity(&self) -> ::std::option::Option<&crate::types::XksProxyConnectivityType> {
+    pub fn xks_proxy_connectivity(&self) -> ::std::option::Option<& crate::types::XksProxyConnectivityType> {
         self.xks_proxy_connectivity.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateCustomKeyStoreInput {
+impl  ::std::fmt::Debug for CreateCustomKeyStoreInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomKeyStoreInput");
         formatter.field("custom_key_store_name", &self.custom_key_store_name);
@@ -193,8 +193,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn set_custom_key_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_key_store_name = input;
-        self
+        self.custom_key_store_name = input; self
     }
     /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -211,8 +210,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Identifies the CloudHSM cluster for an CloudHSM key store. This parameter is required for custom key stores with <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the cluster ID of any active CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     pub fn set_cloud_hsm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_hsm_cluster_id = input;
-        self
+        self.cloud_hsm_cluster_id = input; self
     }
     /// <p>Identifies the CloudHSM cluster for an CloudHSM key store. This parameter is required for custom key stores with <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the cluster ID of any active CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
@@ -228,8 +226,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Specifies the certificate for an CloudHSM key store. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the content of the trust anchor certificate for the CloudHSM cluster. This is the content of the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
     pub fn set_trust_anchor_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_anchor_certificate = input;
-        self
+        self.trust_anchor_certificate = input; self
     }
     /// <p>Specifies the certificate for an CloudHSM key store. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the content of the trust anchor certificate for the CloudHSM cluster. This is the content of the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
@@ -249,8 +246,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
     /// <p>This parameter tells KMS the <code>kmsuser</code> account password; it does not change the password in the CloudHSM cluster.</p>
     pub fn set_key_store_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_store_password = input;
-        self
+        self.key_store_password = input; self
     }
     /// <p>Specifies the <code>kmsuser</code> password for an CloudHSM key store. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser"> <code>kmsuser</code> crypto user (CU) account</a> in the specified CloudHSM cluster. KMS logs into the cluster as this user to manage key material on your behalf.</p>
@@ -268,8 +264,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Specifies the type of custom key store. The default value is <code>AWS_CLOUDHSM</code>.</p>
     /// <p>For a custom key store backed by an CloudHSM cluster, omit the parameter or enter <code>AWS_CLOUDHSM</code>. For a custom key store backed by an external key manager outside of Amazon Web Services, enter <code>EXTERNAL_KEY_STORE</code>. You cannot change this property after the key store is created.</p>
     pub fn set_custom_key_store_type(mut self, input: ::std::option::Option<crate::types::CustomKeyStoreType>) -> Self {
-        self.custom_key_store_type = input;
-        self
+        self.custom_key_store_type = input; self
     }
     /// <p>Specifies the type of custom key store. The default value is <code>AWS_CLOUDHSM</code>.</p>
     /// <p>For a custom key store backed by an CloudHSM cluster, omit the parameter or enter <code>AWS_CLOUDHSM</code>. For a custom key store backed by an external key manager outside of Amazon Web Services, enter <code>EXTERNAL_KEY_STORE</code>. You cannot change this property after the key store is created.</p>
@@ -309,8 +304,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Each external key store with <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS name. The <code>XksProxyUriEndpoint</code> value for external key stores with <code>VPC_ENDPOINT_SERVICE</code> connectivity (private DNS name) must be unique in the Amazon Web Services account and Region.</p></li>
     /// </ul>
     pub fn set_xks_proxy_uri_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xks_proxy_uri_endpoint = input;
-        self
+        self.xks_proxy_uri_endpoint = input; self
     }
     /// <p>Specifies the endpoint that KMS uses to send requests to the external key store proxy (XKS proxy). This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>The protocol must be HTTPS. KMS communicates on port 443. Do not specify the port in the <code>XksProxyUriEndpoint</code> value.</p>
@@ -348,8 +342,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>The combined <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> values must be unique in the Amazon Web Services account and Region.</p></li>
     /// </ul>
     pub fn set_xks_proxy_uri_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xks_proxy_uri_path = input;
-        self
+        self.xks_proxy_uri_path = input; self
     }
     /// <p>Specifies the base path to the proxy APIs for this external key store. To find this value, see the documentation for your external key store proxy. This parameter is required for all custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>The value must start with <code>/</code> and must end with <code>/kms/xks/v1</code> where <code>v1</code> represents the version of the KMS external key store proxy API. This path can include an optional prefix between the required elements such as <code>/<i>prefix</i>/kms/xks/v1</code>.</p>
@@ -380,8 +373,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>External key stores with <code>VPC_ENDPOINT_SERVICE</code> connectivity can share an Amazon VPC, but each external key store must have its own VPC endpoint service and private DNS name.</p></li>
     /// </ul>
     pub fn set_xks_proxy_vpc_endpoint_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xks_proxy_vpc_endpoint_service_name = input;
-        self
+        self.xks_proxy_vpc_endpoint_service_name = input; self
     }
     /// <p>Specifies the name of the Amazon VPC endpoint service for interface endpoints that is used to communicate with your external key store proxy (XKS proxy). This parameter is required when the value of <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code> and the value of <code>XksProxyConnectivity</code> is <code>VPC_ENDPOINT_SERVICE</code>.</p>
     /// <p>The Amazon VPC endpoint service must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-xks-keystore.html#xks-requirements">fulfill all requirements</a> for use with an external key store.</p>
@@ -405,12 +397,8 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>The <code>XksProxyAuthenticationCredential</code> has two required elements: <code>RawSecretAccessKey</code>, a secret key, and <code>AccessKeyId</code>, a unique identifier for the <code>RawSecretAccessKey</code>. For character requirements, see <a href="kms/latest/APIReference/API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
     /// <p>KMS uses this authentication credential to sign requests to the external key store proxy on your behalf. This credential is unrelated to Identity and Access Management (IAM) and Amazon Web Services credentials.</p>
     /// <p>This parameter doesn't set or change the authentication credentials on the XKS proxy. It just tells KMS the credential that you established on your external key store proxy. If you rotate your proxy authentication credential, use the <code>UpdateCustomKeyStore</code> operation to provide the new credential to KMS.</p>
-    pub fn set_xks_proxy_authentication_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>,
-    ) -> Self {
-        self.xks_proxy_authentication_credential = input;
-        self
+    pub fn set_xks_proxy_authentication_credential(mut self, input: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>) -> Self {
+        self.xks_proxy_authentication_credential = input; self
     }
     /// <p>Specifies an authentication credential for the external key store proxy (XKS proxy). This parameter is required for all custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>The <code>XksProxyAuthenticationCredential</code> has two required elements: <code>RawSecretAccessKey</code>, a secret key, and <code>AccessKeyId</code>, a unique identifier for the <code>RawSecretAccessKey</code>. For character requirements, see <a href="kms/latest/APIReference/API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
@@ -430,8 +418,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>If the external key store proxy uses a public endpoint, specify <code>PUBLIC_ENDPOINT</code>. If the external key store proxy uses a Amazon VPC endpoint service for communication with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. For help making this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/plan-xks-keystore.html#choose-xks-connectivity">Choosing a connectivity option</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>An Amazon VPC endpoint service keeps your communication with KMS in a private address space entirely within Amazon Web Services, but it requires more configuration, including establishing a Amazon VPC with multiple subnets, a VPC endpoint service, a network load balancer, and a verified private DNS name. A public endpoint is simpler to set up, but it might be slower and might not fulfill your security requirements. You might consider testing with a public endpoint, and then establishing a VPC endpoint service for production tasks. Note that this choice does not determine the location of the external key store proxy. Even if you choose a VPC endpoint service, the proxy can be hosted within the VPC or outside of Amazon Web Services such as in your corporate data center.</p>
     pub fn set_xks_proxy_connectivity(mut self, input: ::std::option::Option<crate::types::XksProxyConnectivityType>) -> Self {
-        self.xks_proxy_connectivity = input;
-        self
+        self.xks_proxy_connectivity = input; self
     }
     /// <p>Indicates how KMS communicates with the external key store proxy. This parameter is required for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>If the external key store proxy uses a public endpoint, specify <code>PUBLIC_ENDPOINT</code>. If the external key store proxy uses a Amazon VPC endpoint service for communication with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. For help making this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/plan-xks-keystore.html#choose-xks-connectivity">Choosing a connectivity option</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -440,22 +427,31 @@ impl CreateCustomKeyStoreInputBuilder {
         &self.xks_proxy_connectivity
     }
     /// Consumes the builder and constructs a [`CreateCustomKeyStoreInput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_custom_key_store::CreateCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_custom_key_store::CreateCustomKeyStoreInput {
-            custom_key_store_name: self.custom_key_store_name,
-            cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-            trust_anchor_certificate: self.trust_anchor_certificate,
-            key_store_password: self.key_store_password,
-            custom_key_store_type: self.custom_key_store_type,
-            xks_proxy_uri_endpoint: self.xks_proxy_uri_endpoint,
-            xks_proxy_uri_path: self.xks_proxy_uri_path,
-            xks_proxy_vpc_endpoint_service_name: self.xks_proxy_vpc_endpoint_service_name,
-            xks_proxy_authentication_credential: self.xks_proxy_authentication_credential,
-            xks_proxy_connectivity: self.xks_proxy_connectivity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_key_store::CreateCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_key_store::CreateCustomKeyStoreInput {
+                custom_key_store_name: self.custom_key_store_name
+                ,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id
+                ,
+                trust_anchor_certificate: self.trust_anchor_certificate
+                ,
+                key_store_password: self.key_store_password
+                ,
+                custom_key_store_type: self.custom_key_store_type
+                ,
+                xks_proxy_uri_endpoint: self.xks_proxy_uri_endpoint
+                ,
+                xks_proxy_uri_path: self.xks_proxy_uri_path
+                ,
+                xks_proxy_vpc_endpoint_service_name: self.xks_proxy_vpc_endpoint_service_name
+                ,
+                xks_proxy_authentication_credential: self.xks_proxy_authentication_credential
+                ,
+                xks_proxy_connectivity: self.xks_proxy_connectivity
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateCustomKeyStoreInputBuilder {
@@ -474,3 +470,4 @@ impl ::std::fmt::Debug for CreateCustomKeyStoreInputBuilder {
         formatter.finish()
     }
 }
+

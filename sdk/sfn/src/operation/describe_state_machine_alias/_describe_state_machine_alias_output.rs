@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeStateMachineAliasOutput {
+pub struct DescribeStateMachineAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the state machine alias.</p>
@@ -10,7 +10,7 @@ pub struct DescribeStateMachineAliasOutput {
     /// <p>A description of the alias.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration of the alias.</p>
-    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>,
     /// <p>The date the state machine alias was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the state machine alias was last updated.</p>
@@ -18,36 +18,37 @@ pub struct DescribeStateMachineAliasOutput {
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeStateMachineAliasOutput {
+impl  DescribeStateMachineAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_alias_arn.as_deref()
     }
     /// <p>The name of the state machine alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The routing configuration of the alias.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
-    pub fn routing_configuration(&self) -> &[crate::types::RoutingConfigurationListItem] {
-        self.routing_configuration.as_deref().unwrap_or_default()
+    pub fn routing_configuration(&self) -> & [crate::types::RoutingConfigurationListItem] {
+        self.routing_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date the state machine alias was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the state machine alias was last updated.</p>
     /// <p>For a newly created state machine, this is the same as the creation date.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for DescribeStateMachineAliasOutput {
+impl  ::std::fmt::Debug for DescribeStateMachineAliasOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStateMachineAliasOutput");
         formatter.field("state_machine_alias_arn", &self.state_machine_alias_arn);
@@ -61,10 +62,10 @@ impl ::std::fmt::Debug for DescribeStateMachineAliasOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStateMachineAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineAliasOutput`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput).
     pub fn builder() -> crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasOutputBuilder {
@@ -79,7 +80,7 @@ pub struct DescribeStateMachineAliasOutputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -92,8 +93,7 @@ impl DescribeStateMachineAliasOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl DescribeStateMachineAliasOutputBuilder {
     }
     /// <p>The name of the state machine alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the state machine alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl DescribeStateMachineAliasOutputBuilder {
     }
     /// <p>A description of the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +132,16 @@ impl DescribeStateMachineAliasOutputBuilder {
     /// <p>The routing configuration of the alias.</p>
     pub fn routing_configuration(mut self, input: crate::types::RoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
-        v.push(input);
-        self.routing_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routing_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routing configuration of the alias.</p>
-    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>) -> Self {
-        self.routing_configuration = input;
-        self
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>>) -> Self {
+        self.routing_configuration = input; self
     }
     /// <p>The routing configuration of the alias.</p>
-    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// <p>The date the state machine alias was created.</p>
@@ -154,8 +151,7 @@ impl DescribeStateMachineAliasOutputBuilder {
     }
     /// <p>The date the state machine alias was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the state machine alias was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,8 +166,7 @@ impl DescribeStateMachineAliasOutputBuilder {
     /// <p>The date the state machine alias was last updated.</p>
     /// <p>For a newly created state machine, this is the same as the creation date.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The date the state machine alias was last updated.</p>
     /// <p>For a newly created state machine, this is the same as the creation date.</p>
@@ -179,23 +174,29 @@ impl DescribeStateMachineAliasOutputBuilder {
         &self.update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStateMachineAliasOutput`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput).
     pub fn build(self) -> crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput {
         crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput {
-            state_machine_alias_arn: self.state_machine_alias_arn,
-            name: self.name,
-            description: self.description,
-            routing_configuration: self.routing_configuration,
-            creation_date: self.creation_date,
-            update_date: self.update_date,
+            state_machine_alias_arn: self.state_machine_alias_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            routing_configuration: self.routing_configuration
+            ,
+            creation_date: self.creation_date
+            ,
+            update_date: self.update_date
+            ,
             _request_id: self._request_id,
         }
     }
@@ -213,3 +214,4 @@ impl ::std::fmt::Debug for DescribeStateMachineAliasOutputBuilder {
         formatter.finish()
     }
 }
+

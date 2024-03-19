@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportTableToPointInTimeOutput {
+pub struct ExportTableToPointInTimeOutput  {
     /// <p>Contains a description of the table export.</p>
     pub export_description: ::std::option::Option<crate::types::ExportDescription>,
     _request_id: Option<String>,
 }
-impl ExportTableToPointInTimeOutput {
+impl  ExportTableToPointInTimeOutput  {
     /// <p>Contains a description of the table export.</p>
-    pub fn export_description(&self) -> ::std::option::Option<&crate::types::ExportDescription> {
+    pub fn export_description(&self) -> ::std::option::Option<& crate::types::ExportDescription> {
         self.export_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportTableToPointInTimeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportTableToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeOutput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput).
     pub fn builder() -> crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeOutputBuilder {
@@ -40,27 +40,28 @@ impl ExportTableToPointInTimeOutputBuilder {
     }
     /// <p>Contains a description of the table export.</p>
     pub fn set_export_description(mut self, input: ::std::option::Option<crate::types::ExportDescription>) -> Self {
-        self.export_description = input;
-        self
+        self.export_description = input; self
     }
     /// <p>Contains a description of the table export.</p>
     pub fn get_export_description(&self) -> &::std::option::Option<crate::types::ExportDescription> {
         &self.export_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportTableToPointInTimeOutput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput).
     pub fn build(self) -> crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput {
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput {
-            export_description: self.export_description,
+            export_description: self.export_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

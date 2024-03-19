@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReportDefinitions`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that Amazon Web Services returns for the operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A generic string.</p><br>
-    /// - On success, responds with [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput) with field(s):
     ///   - [`report_definitions(Option<Vec::<ReportDefinition>>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::report_definitions): <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::next_token): <p>A generic string.</p>
-    /// - On failure, responds with [`SdkError<DescribeReportDefinitionsError>`](crate::operation::describe_report_definitions::DescribeReportDefinitionsError)
+                            /// - On failure, responds with [`SdkError<DescribeReportDefinitionsError>`](crate::operation::describe_report_definitions::DescribeReportDefinitionsError)
     pub fn describe_report_definitions(&self) -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder {
-        crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

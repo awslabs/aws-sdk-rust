@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterControl {
+pub struct ParameterControl  {
     /// <p>A control from a date parameter that specifies date and time.</p>
     pub date_time_picker: ::std::option::Option<crate::types::ParameterDateTimePickerControl>,
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
@@ -18,29 +18,29 @@ pub struct ParameterControl {
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub slider: ::std::option::Option<crate::types::ParameterSliderControl>,
 }
-impl ParameterControl {
+impl  ParameterControl  {
     /// <p>A control from a date parameter that specifies date and time.</p>
-    pub fn date_time_picker(&self) -> ::std::option::Option<&crate::types::ParameterDateTimePickerControl> {
+    pub fn date_time_picker(&self) -> ::std::option::Option<& crate::types::ParameterDateTimePickerControl> {
         self.date_time_picker.as_ref()
     }
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
-    pub fn list(&self) -> ::std::option::Option<&crate::types::ParameterListControl> {
+    pub fn list(&self) -> ::std::option::Option<& crate::types::ParameterListControl> {
         self.list.as_ref()
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
-    pub fn dropdown(&self) -> ::std::option::Option<&crate::types::ParameterDropDownControl> {
+    pub fn dropdown(&self) -> ::std::option::Option<& crate::types::ParameterDropDownControl> {
         self.dropdown.as_ref()
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
-    pub fn text_field(&self) -> ::std::option::Option<&crate::types::ParameterTextFieldControl> {
+    pub fn text_field(&self) -> ::std::option::Option<& crate::types::ParameterTextFieldControl> {
         self.text_field.as_ref()
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
-    pub fn text_area(&self) -> ::std::option::Option<&crate::types::ParameterTextAreaControl> {
+    pub fn text_area(&self) -> ::std::option::Option<& crate::types::ParameterTextAreaControl> {
         self.text_area.as_ref()
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
-    pub fn slider(&self) -> ::std::option::Option<&crate::types::ParameterSliderControl> {
+    pub fn slider(&self) -> ::std::option::Option<& crate::types::ParameterSliderControl> {
         self.slider.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control from a date parameter that specifies date and time.</p>
     pub fn set_date_time_picker(mut self, input: ::std::option::Option<crate::types::ParameterDateTimePickerControl>) -> Self {
-        self.date_time_picker = input;
-        self
+        self.date_time_picker = input; self
     }
     /// <p>A control from a date parameter that specifies date and time.</p>
     pub fn get_date_time_picker(&self) -> &::std::option::Option<crate::types::ParameterDateTimePickerControl> {
@@ -84,8 +83,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
     pub fn set_list(mut self, input: ::std::option::Option<crate::types::ParameterListControl>) -> Self {
-        self.list = input;
-        self
+        self.list = input; self
     }
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
     pub fn get_list(&self) -> &::std::option::Option<crate::types::ParameterListControl> {
@@ -98,8 +96,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     pub fn set_dropdown(mut self, input: ::std::option::Option<crate::types::ParameterDropDownControl>) -> Self {
-        self.dropdown = input;
-        self
+        self.dropdown = input; self
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     pub fn get_dropdown(&self) -> &::std::option::Option<crate::types::ParameterDropDownControl> {
@@ -112,8 +109,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     pub fn set_text_field(mut self, input: ::std::option::Option<crate::types::ParameterTextFieldControl>) -> Self {
-        self.text_field = input;
-        self
+        self.text_field = input; self
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     pub fn get_text_field(&self) -> &::std::option::Option<crate::types::ParameterTextFieldControl> {
@@ -126,8 +122,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     pub fn set_text_area(mut self, input: ::std::option::Option<crate::types::ParameterTextAreaControl>) -> Self {
-        self.text_area = input;
-        self
+        self.text_area = input; self
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     pub fn get_text_area(&self) -> &::std::option::Option<crate::types::ParameterTextAreaControl> {
@@ -140,8 +135,7 @@ impl ParameterControlBuilder {
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub fn set_slider(mut self, input: ::std::option::Option<crate::types::ParameterSliderControl>) -> Self {
-        self.slider = input;
-        self
+        self.slider = input; self
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub fn get_slider(&self) -> &::std::option::Option<crate::types::ParameterSliderControl> {
@@ -150,12 +144,19 @@ impl ParameterControlBuilder {
     /// Consumes the builder and constructs a [`ParameterControl`](crate::types::ParameterControl).
     pub fn build(self) -> crate::types::ParameterControl {
         crate::types::ParameterControl {
-            date_time_picker: self.date_time_picker,
-            list: self.list,
-            dropdown: self.dropdown,
-            text_field: self.text_field,
-            text_area: self.text_area,
-            slider: self.slider,
+            date_time_picker: self.date_time_picker
+            ,
+            list: self.list
+            ,
+            dropdown: self.dropdown
+            ,
+            text_field: self.text_field
+            ,
+            text_area: self.text_area
+            ,
+            slider: self.slider
+            ,
         }
     }
 }
+

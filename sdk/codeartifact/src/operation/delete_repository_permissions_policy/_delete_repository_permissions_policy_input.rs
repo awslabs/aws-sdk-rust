@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryPermissionsPolicyInput {
+pub struct DeleteRepositoryPermissionsPolicyInput  {
     /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -12,21 +12,21 @@ pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub policy_revision: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRepositoryPermissionsPolicyInput {
+impl  DeleteRepositoryPermissionsPolicyInput  {
     /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
-    pub fn policy_revision(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision(&self) -> ::std::option::Option<& str> {
         self.policy_revision.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision = input;
-        self
+        self.policy_revision = input; self
     }
     /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryPermissionsPolicyInput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                repository: self.repository,
-                policy_revision: self.policy_revision,
-            },
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                policy_revision: self.policy_revision
+                ,
+            }
         )
     }
 }
+

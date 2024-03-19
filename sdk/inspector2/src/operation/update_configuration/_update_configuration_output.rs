@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationOutput {
+pub struct UpdateConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
     pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateConfigurationOutputBuilder {
 }
 impl UpdateConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
     pub fn build(self) -> crate::operation::update_configuration::UpdateConfigurationOutput {
         crate::operation::update_configuration::UpdateConfigurationOutput {
@@ -40,3 +40,4 @@ impl UpdateConfigurationOutputBuilder {
         }
     }
 }
+

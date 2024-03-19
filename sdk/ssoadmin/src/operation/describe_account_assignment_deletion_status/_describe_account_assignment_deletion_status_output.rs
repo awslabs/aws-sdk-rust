@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAssignmentDeletionStatusOutput {
+pub struct DescribeAccountAssignmentDeletionStatusOutput  {
     /// <p>The status object for the account assignment deletion operation.</p>
     pub account_assignment_deletion_status: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
-impl DescribeAccountAssignmentDeletionStatusOutput {
+impl  DescribeAccountAssignmentDeletionStatusOutput  {
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn account_assignment_deletion_status(&self) -> ::std::option::Option<&crate::types::AccountAssignmentOperationStatus> {
+    pub fn account_assignment_deletion_status(&self) -> ::std::option::Option<& crate::types::AccountAssignmentOperationStatus> {
         self.account_assignment_deletion_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountAssignmentDeletionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountAssignmentDeletionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusOutput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput).
-    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusOutputBuilder {
         crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusOutputBuilder::default()
     }
 }
@@ -41,27 +40,28 @@ impl DescribeAccountAssignmentDeletionStatusOutputBuilder {
     }
     /// <p>The status object for the account assignment deletion operation.</p>
     pub fn set_account_assignment_deletion_status(mut self, input: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>) -> Self {
-        self.account_assignment_deletion_status = input;
-        self
+        self.account_assignment_deletion_status = input; self
     }
     /// <p>The status object for the account assignment deletion operation.</p>
     pub fn get_account_assignment_deletion_status(&self) -> &::std::option::Option<crate::types::AccountAssignmentOperationStatus> {
         &self.account_assignment_deletion_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountAssignmentDeletionStatusOutput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput).
     pub fn build(self) -> crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput {
         crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput {
-            account_assignment_deletion_status: self.account_assignment_deletion_status,
+            account_assignment_deletion_status: self.account_assignment_deletion_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

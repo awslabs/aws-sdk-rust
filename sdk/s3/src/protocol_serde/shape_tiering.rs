@@ -37,25 +37,25 @@ pub fn de_tiering(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
             _ => {}
         }
     }
-    Ok(crate::serde_util::tiering_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(crate::serde_util::tiering_correct_errors(builder).build().map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }
 
-pub fn ser_tiering(
-    input: &crate::types::Tiering,
-    writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+pub fn ser_tiering(input: &crate::types::Tiering, writer: ::aws_smithy_xml::encode::ElWriter) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+     {
         let mut inner_writer = scope.start_el("Days").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(
+            ::aws_smithy_types::primitive::Encoder::from(input.days).encode()
+        );
     }
-    {
+     {
         let mut inner_writer = scope.start_el("AccessTier").finish();
-        inner_writer.data(input.access_tier.as_str());
+        inner_writer.data(
+            input.access_tier.as_str()
+        );
     }
     scope.finish();
     Ok(())
 }
+

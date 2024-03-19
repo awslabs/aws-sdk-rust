@@ -3,19 +3,19 @@
 /// Placeholder documentation for DescribeMultiplexProgramRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMultiplexProgramInput {
+pub struct DescribeMultiplexProgramInput  {
     /// The ID of the multiplex that the program belongs to.
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The name of the program.
     pub program_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMultiplexProgramInput {
+impl  DescribeMultiplexProgramInput  {
     /// The ID of the multiplex that the program belongs to.
-    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<& str> {
         self.multiplex_id.as_deref()
     }
     /// The name of the program.
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<& str> {
         self.program_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeMultiplexProgramInputBuilder {
     }
     /// The ID of the multiplex that the program belongs to.
     pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multiplex_id = input;
-        self
+        self.multiplex_id = input; self
     }
     /// The ID of the multiplex that the program belongs to.
     pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DescribeMultiplexProgramInputBuilder {
     }
     /// The name of the program.
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// The name of the program.
     pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.program_name
     }
     /// Consumes the builder and constructs a [`DescribeMultiplexProgramInput`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput {
-            multiplex_id: self.multiplex_id,
-            program_name: self.program_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput {
+                multiplex_id: self.multiplex_id
+                ,
+                program_name: self.program_name
+                ,
+            }
+        )
     }
 }
+

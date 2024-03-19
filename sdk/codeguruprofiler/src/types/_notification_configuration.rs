@@ -3,16 +3,17 @@
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationConfiguration {
+pub struct NotificationConfiguration  {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
 }
-impl NotificationConfiguration {
+impl  NotificationConfiguration  {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[crate::types::Channel] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [crate::types::Channel] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NotificationConfiguration {
@@ -26,7 +27,7 @@ impl NotificationConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationConfigurationBuilder {
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
 }
 impl NotificationConfigurationBuilder {
     /// Appends an item to `channels`.
@@ -36,21 +37,24 @@ impl NotificationConfigurationBuilder {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>) -> Self {
+        self.channels = input; self
     }
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Channel>> {
         &self.channels
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
-        crate::types::NotificationConfiguration { channels: self.channels }
+        crate::types::NotificationConfiguration {
+            channels: self.channels
+            ,
+        }
     }
 }
+

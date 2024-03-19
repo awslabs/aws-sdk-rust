@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceInput {
+pub struct DeleteInstanceInput  {
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceInput {
+impl  DeleteInstanceInput  {
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
-            instance_arn: self.instance_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance::DeleteInstanceInput {
+                instance_arn: self.instance_arn
+                ,
+            }
+        )
     }
 }
+

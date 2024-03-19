@@ -3,7 +3,7 @@
 /// <p>Provides information about the file paths that were affected by the threat.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilePaths {
+pub struct FilePaths  {
     /// <p>Path to the infected or suspicious file on the resource it was detected on.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the infected or suspicious file corresponding to the hash.</p>
@@ -13,21 +13,21 @@ pub struct FilePaths {
     /// <p>The hash value for the infected or suspicious file.</p>
     pub hash: ::std::option::Option<::std::string::String>,
 }
-impl FilePaths {
+impl  FilePaths  {
     /// <p>Path to the infected or suspicious file on the resource it was detected on.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The name of the infected or suspicious file corresponding to the hash.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The hash value for the infected or suspicious file.</p>
-    pub fn hash(&self) -> ::std::option::Option<&str> {
+    pub fn hash(&self) -> ::std::option::Option<& str> {
         self.hash.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl FilePathsBuilder {
     }
     /// <p>Path to the infected or suspicious file on the resource it was detected on.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>Path to the infected or suspicious file on the resource it was detected on.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FilePathsBuilder {
     }
     /// <p>The name of the infected or suspicious file corresponding to the hash.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the infected or suspicious file corresponding to the hash.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FilePathsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl FilePathsBuilder {
     }
     /// <p>The hash value for the infected or suspicious file.</p>
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash = input;
-        self
+        self.hash = input; self
     }
     /// <p>The hash value for the infected or suspicious file.</p>
     pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl FilePathsBuilder {
     /// Consumes the builder and constructs a [`FilePaths`](crate::types::FilePaths).
     pub fn build(self) -> crate::types::FilePaths {
         crate::types::FilePaths {
-            file_path: self.file_path,
-            file_name: self.file_name,
-            resource_id: self.resource_id,
-            hash: self.hash,
+            file_path: self.file_path
+            ,
+            file_name: self.file_name
+            ,
+            resource_id: self.resource_id
+            ,
+            hash: self.hash
+            ,
         }
     }
 }
+

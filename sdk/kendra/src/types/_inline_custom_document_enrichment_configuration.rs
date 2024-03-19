@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InlineCustomDocumentEnrichmentConfiguration {
+pub struct InlineCustomDocumentEnrichmentConfiguration  {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     pub condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
@@ -12,13 +12,13 @@ pub struct InlineCustomDocumentEnrichmentConfiguration {
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub document_content_deletion: bool,
 }
-impl InlineCustomDocumentEnrichmentConfiguration {
+impl  InlineCustomDocumentEnrichmentConfiguration  {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::DocumentAttributeCondition> {
         self.condition.as_ref()
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::DocumentAttributeTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::DocumentAttributeTarget> {
         self.target.as_ref()
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
@@ -49,8 +49,7 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
@@ -63,8 +62,7 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::DocumentAttributeTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::DocumentAttributeTarget> {
@@ -77,8 +75,7 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn set_document_content_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.document_content_deletion = input;
-        self
+        self.document_content_deletion = input; self
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn get_document_content_deletion(&self) -> &::std::option::Option<bool> {
@@ -87,9 +84,14 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     /// Consumes the builder and constructs a [`InlineCustomDocumentEnrichmentConfiguration`](crate::types::InlineCustomDocumentEnrichmentConfiguration).
     pub fn build(self) -> crate::types::InlineCustomDocumentEnrichmentConfiguration {
         crate::types::InlineCustomDocumentEnrichmentConfiguration {
-            condition: self.condition,
-            target: self.target,
-            document_content_deletion: self.document_content_deletion.unwrap_or_default(),
+            condition: self.condition
+            ,
+            target: self.target
+            ,
+            document_content_deletion: self.document_content_deletion
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

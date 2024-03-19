@@ -3,13 +3,13 @@
 /// <p>Input for <code>GetPlatformApplicationAttributes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlatformApplicationAttributesInput {
+pub struct GetPlatformApplicationAttributesInput  {
     /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetPlatformApplicationAttributesInput {
+impl  GetPlatformApplicationAttributesInput  {
     /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
-    pub fn platform_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_application_arn(&self) -> ::std::option::Option<& str> {
         self.platform_application_arn.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl GetPlatformApplicationAttributesInputBuilder {
     }
     /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_application_arn = input;
-        self
+        self.platform_application_arn = input; self
     }
     /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_application_arn
     }
     /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput {
-                platform_application_arn: self.platform_application_arn,
-            },
+                platform_application_arn: self.platform_application_arn
+                ,
+            }
         )
     }
 }
+

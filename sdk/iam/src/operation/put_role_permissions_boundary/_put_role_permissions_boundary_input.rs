@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRolePermissionsBoundaryInput {
+pub struct PutRolePermissionsBoundaryInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
@@ -10,15 +10,15 @@ pub struct PutRolePermissionsBoundaryInput {
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: ::std::option::Option<::std::string::String>,
 }
-impl PutRolePermissionsBoundaryInput {
+impl  PutRolePermissionsBoundaryInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(&self) -> ::std::option::Option<&str> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<& str> {
         self.permissions_boundary.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl PutRolePermissionsBoundaryInputBuilder {
     }
     /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PutRolePermissionsBoundaryInputBuilder {
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permissions_boundary = input;
-        self
+        self.permissions_boundary = input; self
     }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
@@ -74,15 +72,15 @@ impl PutRolePermissionsBoundaryInputBuilder {
         &self.permissions_boundary
     }
     /// Consumes the builder and constructs a [`PutRolePermissionsBoundaryInput`](crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput {
-            role_name: self.role_name,
-            permissions_boundary: self.permissions_boundary,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput {
+                role_name: self.role_name
+                ,
+                permissions_boundary: self.permissions_boundary
+                ,
+            }
+        )
     }
 }
+

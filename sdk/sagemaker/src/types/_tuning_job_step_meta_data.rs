@@ -3,13 +3,13 @@
 /// <p>Metadata for a tuning step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TuningJobStepMetaData {
+pub struct TuningJobStepMetaData  {
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl TuningJobStepMetaData {
+impl  TuningJobStepMetaData  {
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TuningJobStepMetaDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TuningJobStepMetaDataBuilder {
     }
     /// Consumes the builder and constructs a [`TuningJobStepMetaData`](crate::types::TuningJobStepMetaData).
     pub fn build(self) -> crate::types::TuningJobStepMetaData {
-        crate::types::TuningJobStepMetaData { arn: self.arn }
+        crate::types::TuningJobStepMetaData {
+            arn: self.arn
+            ,
+        }
     }
 }
+

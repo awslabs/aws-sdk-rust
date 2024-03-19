@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironmentOutputs`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_name(impl Into<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::set_environment_name):<br>required: **true**<br><p>The environment name.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p><br>
     ///   - [`deployment_id(impl Into<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::set_deployment_id):<br>required: **false**<br><p>The ID of the deployment whose outputs you want.</p><br>
-    /// - On success, responds with [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput::next_token): <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     ///   - [`outputs(Vec::<Output>)`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput::outputs): <p>An array of environment outputs with detail data.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentOutputsError>`](crate::operation::list_environment_outputs::ListEnvironmentOutputsError)
+                            /// - On failure, responds with [`SdkError<ListEnvironmentOutputsError>`](crate::operation::list_environment_outputs::ListEnvironmentOutputsError)
     pub fn list_environment_outputs(&self) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder {
-        crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

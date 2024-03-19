@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePushTemplateInput {
+pub struct UpdatePushTemplateInput  {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: ::std::option::Option<bool>,
@@ -10,7 +10,7 @@ pub struct UpdatePushTemplateInput {
     pub push_notification_template_request: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -24,21 +24,21 @@ pub struct UpdatePushTemplateInput {
     /// </ul>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePushTemplateInput {
+impl  UpdatePushTemplateInput  {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> ::std::option::Option<bool> {
         self.create_new_version
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_request(&self) -> ::std::option::Option<&crate::types::PushNotificationTemplateRequest> {
+    pub fn push_notification_template_request(&self) -> ::std::option::Option<& crate::types::PushNotificationTemplateRequest> {
         self.push_notification_template_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -50,7 +50,7 @@ impl UpdatePushTemplateInput {
     /// <li>
     /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -80,8 +80,7 @@ impl UpdatePushTemplateInputBuilder {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn set_create_new_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_new_version = input;
-        self
+        self.create_new_version = input; self
     }
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -96,8 +95,7 @@ impl UpdatePushTemplateInputBuilder {
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     pub fn set_push_notification_template_request(mut self, input: ::std::option::Option<crate::types::PushNotificationTemplateRequest>) -> Self {
-        self.push_notification_template_request = input;
-        self
+        self.push_notification_template_request = input; self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     pub fn get_push_notification_template_request(&self) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
@@ -111,14 +109,13 @@ impl UpdatePushTemplateInputBuilder {
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -134,7 +131,7 @@ impl UpdatePushTemplateInputBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -147,10 +144,9 @@ impl UpdatePushTemplateInputBuilder {
     /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the 
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
@@ -166,15 +162,19 @@ impl UpdatePushTemplateInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`UpdatePushTemplateInput`](crate::operation::update_push_template::UpdatePushTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_push_template::UpdatePushTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_push_template::UpdatePushTemplateInput {
-            create_new_version: self.create_new_version,
-            push_notification_template_request: self.push_notification_template_request,
-            template_name: self.template_name,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_push_template::UpdatePushTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_push_template::UpdatePushTemplateInput {
+                create_new_version: self.create_new_version
+                ,
+                push_notification_template_request: self.push_notification_template_request
+                ,
+                template_name: self.template_name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

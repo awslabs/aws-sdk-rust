@@ -3,19 +3,19 @@
 /// <p>Identifies the source of the finding change event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingHistoryUpdateSource {
+pub struct FindingHistoryUpdateSource  {
     /// <p>Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer).</p>
     pub r#type: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>,
     /// <p>The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings.</p>
     pub identity: ::std::option::Option<::std::string::String>,
 }
-impl FindingHistoryUpdateSource {
+impl  FindingHistoryUpdateSource  {
     /// <p>Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FindingHistoryUpdateSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FindingHistoryUpdateSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FindingHistoryUpdateSourceBuilder {
     }
     /// <p>Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingHistoryUpdateSourceType> {
@@ -55,8 +54,7 @@ impl FindingHistoryUpdateSourceBuilder {
     }
     /// <p>The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FindingHistoryUpdateSourceBuilder {
     /// Consumes the builder and constructs a [`FindingHistoryUpdateSource`](crate::types::FindingHistoryUpdateSource).
     pub fn build(self) -> crate::types::FindingHistoryUpdateSource {
         crate::types::FindingHistoryUpdateSource {
-            r#type: self.r#type,
-            identity: self.identity,
+            r#type: self.r#type
+            ,
+            identity: self.identity
+            ,
         }
     }
 }
+

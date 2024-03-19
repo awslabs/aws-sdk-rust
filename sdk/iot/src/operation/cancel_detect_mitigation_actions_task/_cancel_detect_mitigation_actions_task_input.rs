@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDetectMitigationActionsTaskInput {
+pub struct CancelDetectMitigationActionsTaskInput  {
     /// <p>The unique identifier of the task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelDetectMitigationActionsTaskInput {
+impl  CancelDetectMitigationActionsTaskInput  {
     /// <p>The unique identifier of the task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CancelDetectMitigationActionsTaskInputBuilder {
     }
     /// <p>The unique identifier of the task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier of the task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelDetectMitigationActionsTaskInput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput { task_id: self.task_id },
+            crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput {
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

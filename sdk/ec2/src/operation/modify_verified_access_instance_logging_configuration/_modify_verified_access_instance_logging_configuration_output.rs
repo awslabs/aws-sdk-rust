@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutput  {
     /// <p>The logging configuration for the Verified Access instance.</p>
     pub logging_configuration: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     _request_id: Option<String>,
 }
-impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+impl  ModifyVerifiedAccessInstanceLoggingConfigurationOutput  {
     /// <p>The logging configuration for the Verified Access instance.</p>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstanceLoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::VerifiedAccessInstanceLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
         crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder::default()
     }
 }
@@ -40,29 +40,28 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
     }
     /// <p>The logging configuration for the Verified Access instance.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p>The logging configuration for the Verified Access instance.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
         crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
-            logging_configuration: self.logging_configuration,
+            logging_configuration: self.logging_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

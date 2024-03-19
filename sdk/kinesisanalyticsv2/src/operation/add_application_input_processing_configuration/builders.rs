@@ -5,116 +5,96 @@ pub use crate::operation::add_application_input_processing_configuration::_add_a
 
 impl AddApplicationInputProcessingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_application_input_processing_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_application_input_processing_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddApplicationInputProcessingConfiguration`.
-///
+/// 
 /// <p>Adds an <code>InputProcessingConfiguration</code> to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records on the input stream before the application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder,
+                    inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-    > for AddApplicationInputProcessingConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+                    crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+                > for AddApplicationInputProcessingConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+                        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddApplicationInputProcessingConfigurationFluentBuilder {
     /// Creates a new `AddApplicationInputProcessingConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the AddApplicationInputProcessingConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput, crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -172,3 +152,4 @@ impl AddApplicationInputProcessingConfigurationFluentBuilder {
         self.inner.get_input_processing_configuration()
     }
 }
+

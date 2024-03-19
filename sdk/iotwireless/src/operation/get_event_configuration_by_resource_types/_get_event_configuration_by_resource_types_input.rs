@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventConfigurationByResourceTypesInput {}
+pub struct GetEventConfigurationByResourceTypesInput  {
+}
 impl GetEventConfigurationByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
     pub fn builder() -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesInputBuilder {
@@ -13,15 +14,15 @@ impl GetEventConfigurationByResourceTypesInput {
 /// A builder for [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetEventConfigurationByResourceTypesInputBuilder {}
+pub struct GetEventConfigurationByResourceTypesInputBuilder {
+}
 impl GetEventConfigurationByResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput {
+            }
+        )
     }
 }
+

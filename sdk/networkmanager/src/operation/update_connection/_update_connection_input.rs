@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectionInput {
+pub struct UpdateConnectionInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
@@ -15,26 +15,26 @@ pub struct UpdateConnectionInput {
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConnectionInput {
+impl  UpdateConnectionInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the link for the first device in the connection.</p>
-    pub fn link_id(&self) -> ::std::option::Option<&str> {
+    pub fn link_id(&self) -> ::std::option::Option<& str> {
         self.link_id.as_deref()
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn connected_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn connected_link_id(&self) -> ::std::option::Option<& str> {
         self.connected_link_id.as_deref()
     }
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_id = input;
-        self
+        self.link_id = input; self
     }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connected_link_id = input;
-        self
+        self.connected_link_id = input; self
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl UpdateConnectionInputBuilder {
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the connection.</p>
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
@@ -132,15 +127,21 @@ impl UpdateConnectionInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
-            global_network_id: self.global_network_id,
-            connection_id: self.connection_id,
-            link_id: self.link_id,
-            connected_link_id: self.connected_link_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_connection::UpdateConnectionInput {
+                global_network_id: self.global_network_id
+                ,
+                connection_id: self.connection_id
+                ,
+                link_id: self.link_id
+                ,
+                connected_link_id: self.connected_link_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

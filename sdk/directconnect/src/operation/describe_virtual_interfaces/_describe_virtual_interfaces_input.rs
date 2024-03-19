@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVirtualInterfacesInput {
+pub struct DescribeVirtualInterfacesInput  {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVirtualInterfacesInput {
+impl  DescribeVirtualInterfacesInput  {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribeVirtualInterfacesInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl DescribeVirtualInterfacesInputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_id
     }
     /// Consumes the builder and constructs a [`DescribeVirtualInterfacesInput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput {
-            connection_id: self.connection_id,
-            virtual_interface_id: self.virtual_interface_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput {
+                connection_id: self.connection_id
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+            }
+        )
     }
 }
+

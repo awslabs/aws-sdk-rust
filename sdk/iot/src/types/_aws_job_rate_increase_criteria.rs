@@ -3,13 +3,13 @@
 /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsJobRateIncreaseCriteria {
+pub struct AwsJobRateIncreaseCriteria  {
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub number_of_notified_things: ::std::option::Option<i32>,
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub number_of_succeeded_things: ::std::option::Option<i32>,
 }
-impl AwsJobRateIncreaseCriteria {
+impl  AwsJobRateIncreaseCriteria  {
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub fn number_of_notified_things(&self) -> ::std::option::Option<i32> {
         self.number_of_notified_things
@@ -41,8 +41,7 @@ impl AwsJobRateIncreaseCriteriaBuilder {
     }
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub fn set_number_of_notified_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_notified_things = input;
-        self
+        self.number_of_notified_things = input; self
     }
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub fn get_number_of_notified_things(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl AwsJobRateIncreaseCriteriaBuilder {
     }
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub fn set_number_of_succeeded_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_succeeded_things = input;
-        self
+        self.number_of_succeeded_things = input; self
     }
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AwsJobRateIncreaseCriteriaBuilder {
     /// Consumes the builder and constructs a [`AwsJobRateIncreaseCriteria`](crate::types::AwsJobRateIncreaseCriteria).
     pub fn build(self) -> crate::types::AwsJobRateIncreaseCriteria {
         crate::types::AwsJobRateIncreaseCriteria {
-            number_of_notified_things: self.number_of_notified_things,
-            number_of_succeeded_things: self.number_of_succeeded_things,
+            number_of_notified_things: self.number_of_notified_things
+            ,
+            number_of_succeeded_things: self.number_of_succeeded_things
+            ,
         }
     }
 }
+

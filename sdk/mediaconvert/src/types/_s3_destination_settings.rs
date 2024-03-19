@@ -3,7 +3,7 @@
 /// Settings associated with S3 destination
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationSettings {
+pub struct S3DestinationSettings  {
     /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
     pub access_control: ::std::option::Option<crate::types::S3DestinationAccessControl>,
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
@@ -11,17 +11,17 @@ pub struct S3DestinationSettings {
     /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub storage_class: ::std::option::Option<crate::types::S3StorageClass>,
 }
-impl S3DestinationSettings {
+impl  S3DestinationSettings  {
     /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
-    pub fn access_control(&self) -> ::std::option::Option<&crate::types::S3DestinationAccessControl> {
+    pub fn access_control(&self) -> ::std::option::Option<& crate::types::S3DestinationAccessControl> {
         self.access_control.as_ref()
     }
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::S3EncryptionSettings> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::S3EncryptionSettings> {
         self.encryption.as_ref()
     }
     /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
-    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::S3StorageClass> {
+    pub fn storage_class(&self) -> ::std::option::Option<& crate::types::S3StorageClass> {
         self.storage_class.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl S3DestinationSettingsBuilder {
     }
     /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
     pub fn set_access_control(mut self, input: ::std::option::Option<crate::types::S3DestinationAccessControl>) -> Self {
-        self.access_control = input;
-        self
+        self.access_control = input; self
     }
     /// Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE.
     pub fn get_access_control(&self) -> &::std::option::Option<crate::types::S3DestinationAccessControl> {
@@ -62,8 +61,7 @@ impl S3DestinationSettingsBuilder {
     }
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::S3EncryptionSettings>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::S3EncryptionSettings> {
@@ -76,8 +74,7 @@ impl S3DestinationSettingsBuilder {
     }
     /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::S3StorageClass> {
@@ -86,9 +83,13 @@ impl S3DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`S3DestinationSettings`](crate::types::S3DestinationSettings).
     pub fn build(self) -> crate::types::S3DestinationSettings {
         crate::types::S3DestinationSettings {
-            access_control: self.access_control,
-            encryption: self.encryption,
-            storage_class: self.storage_class,
+            access_control: self.access_control
+            ,
+            encryption: self.encryption
+            ,
+            storage_class: self.storage_class
+            ,
         }
     }
 }
+

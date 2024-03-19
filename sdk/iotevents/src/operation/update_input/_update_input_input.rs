@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInputInput {
+pub struct UpdateInputInput  {
     /// <p>The name of the input you want to update.</p>
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the input.</p>
@@ -10,17 +10,17 @@ pub struct UpdateInputInput {
     /// <p>The definition of the input.</p>
     pub input_definition: ::std::option::Option<crate::types::InputDefinition>,
 }
-impl UpdateInputInput {
+impl  UpdateInputInput  {
     /// <p>The name of the input you want to update.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(&self) -> ::std::option::Option<&str> {
+    pub fn input_description(&self) -> ::std::option::Option<& str> {
         self.input_description.as_deref()
     }
     /// <p>The definition of the input.</p>
-    pub fn input_definition(&self) -> ::std::option::Option<&crate::types::InputDefinition> {
+    pub fn input_definition(&self) -> ::std::option::Option<& crate::types::InputDefinition> {
         self.input_definition.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateInputInputBuilder {
     }
     /// <p>The name of the input you want to update.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The name of the input you want to update.</p>
     pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateInputInputBuilder {
     }
     /// <p>A brief description of the input.</p>
     pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_description = input;
-        self
+        self.input_description = input; self
     }
     /// <p>A brief description of the input.</p>
     pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl UpdateInputInputBuilder {
     }
     /// <p>The definition of the input.</p>
     pub fn set_input_definition(mut self, input: ::std::option::Option<crate::types::InputDefinition>) -> Self {
-        self.input_definition = input;
-        self
+        self.input_definition = input; self
     }
     /// <p>The definition of the input.</p>
     pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
@@ -86,10 +83,16 @@ impl UpdateInputInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
-            input_name: self.input_name,
-            input_description: self.input_description,
-            input_definition: self.input_definition,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_input::UpdateInputInput {
+                input_name: self.input_name
+                ,
+                input_description: self.input_description
+                ,
+                input_definition: self.input_definition
+                ,
+            }
+        )
     }
 }
+

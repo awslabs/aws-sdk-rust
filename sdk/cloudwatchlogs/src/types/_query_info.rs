@@ -3,7 +3,7 @@
 /// <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryInfo {
+pub struct QueryInfo  {
     /// <p>The unique ID number of this query.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The query string used in this query.</p>
@@ -15,17 +15,17 @@ pub struct QueryInfo {
     /// <p>The name of the log group scanned by this query.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
-impl QueryInfo {
+impl  QueryInfo  {
     /// <p>The unique ID number of this query.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The query string used in this query.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::QueryStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that this query was created.</p>
@@ -33,7 +33,7 @@ impl QueryInfo {
         self.create_time
     }
     /// <p>The name of the log group scanned by this query.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl QueryInfoBuilder {
     }
     /// <p>The unique ID number of this query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The unique ID number of this query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl QueryInfoBuilder {
     }
     /// <p>The query string used in this query.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string used in this query.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl QueryInfoBuilder {
     }
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
@@ -104,8 +101,7 @@ impl QueryInfoBuilder {
     }
     /// <p>The date and time that this query was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time that this query was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl QueryInfoBuilder {
     }
     /// <p>The name of the log group scanned by this query.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group scanned by this query.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl QueryInfoBuilder {
     /// Consumes the builder and constructs a [`QueryInfo`](crate::types::QueryInfo).
     pub fn build(self) -> crate::types::QueryInfo {
         crate::types::QueryInfo {
-            query_id: self.query_id,
-            query_string: self.query_string,
-            status: self.status,
-            create_time: self.create_time,
-            log_group_name: self.log_group_name,
+            query_id: self.query_id
+            ,
+            query_string: self.query_string
+            ,
+            status: self.status
+            ,
+            create_time: self.create_time
+            ,
+            log_group_name: self.log_group_name
+            ,
         }
     }
 }
+

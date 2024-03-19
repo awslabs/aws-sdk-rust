@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterUsageInput {
+pub struct RegisterUsageInput  {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Public Key Version provided by AWS Marketplace</p>
@@ -10,9 +10,9 @@ pub struct RegisterUsageInput {
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub nonce: ::std::option::Option<::std::string::String>,
 }
-impl RegisterUsageInput {
+impl  RegisterUsageInput  {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>Public Key Version provided by AWS Marketplace</p>
@@ -20,7 +20,7 @@ impl RegisterUsageInput {
         self.public_key_version
     }
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
-    pub fn nonce(&self) -> ::std::option::Option<&str> {
+    pub fn nonce(&self) -> ::std::option::Option<& str> {
         self.nonce.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RegisterUsageInputBuilder {
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RegisterUsageInputBuilder {
     }
     /// <p>Public Key Version provided by AWS Marketplace</p>
     pub fn set_public_key_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.public_key_version = input;
-        self
+        self.public_key_version = input; self
     }
     /// <p>Public Key Version provided by AWS Marketplace</p>
     pub fn get_public_key_version(&self) -> &::std::option::Option<i32> {
@@ -77,21 +75,24 @@ impl RegisterUsageInputBuilder {
     }
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nonce = input;
-        self
+        self.nonce = input; self
     }
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
         &self.nonce
     }
     /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_usage::RegisterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_usage::RegisterUsageInput {
-            product_code: self.product_code,
-            public_key_version: self.public_key_version,
-            nonce: self.nonce,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_usage::RegisterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_usage::RegisterUsageInput {
+                product_code: self.product_code
+                ,
+                public_key_version: self.public_key_version
+                ,
+                nonce: self.nonce
+                ,
+            }
+        )
     }
 }
+

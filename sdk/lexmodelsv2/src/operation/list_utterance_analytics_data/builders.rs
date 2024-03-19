@@ -5,23 +5,20 @@ pub use crate::operation::list_utterance_analytics_data::_list_utterance_analyti
 
 impl ListUtteranceAnalyticsDataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_utterance_analytics_data();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_utterance_analytics_data();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListUtteranceAnalyticsData`.
-///
+/// 
 /// <note>
 /// <p>To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
 /// </note>
@@ -40,33 +37,32 @@ impl ListUtteranceAnalyticsDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder,
+                    inner: crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-    > for ListUtteranceAnalyticsDataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
+                    crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+                > for ListUtteranceAnalyticsDataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
+                        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListUtteranceAnalyticsDataFluentBuilder {
     /// Creates a new `ListUtteranceAnalyticsData`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -75,59 +71,50 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput,
-        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsData::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput, crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator {
-        crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator {
+                                crate::operation::list_utterance_analytics_data::paginator::ListUtteranceAnalyticsDataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier for the bot for which you want to retrieve utterance analytics.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -194,12 +181,12 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -234,3 +221,4 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

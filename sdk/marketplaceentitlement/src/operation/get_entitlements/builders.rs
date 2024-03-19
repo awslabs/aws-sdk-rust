@@ -5,54 +5,50 @@ pub use crate::operation::get_entitlements::_get_entitlements_input::GetEntitlem
 
 impl GetEntitlementsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_entitlements::GetEntitlementsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_entitlements();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_entitlements::GetEntitlementsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_entitlements::GetEntitlementsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_entitlements();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetEntitlements`.
-///
+/// 
 /// <p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEntitlementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder,
+                    inner: crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_entitlements::GetEntitlementsOutput,
-        crate::operation::get_entitlements::GetEntitlementsError,
-    > for GetEntitlementsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_entitlements::GetEntitlementsOutput,
-            crate::operation::get_entitlements::GetEntitlementsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_entitlements::GetEntitlementsOutput,
+                    crate::operation::get_entitlements::GetEntitlementsError,
+                > for GetEntitlementsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_entitlements::GetEntitlementsOutput,
+                        crate::operation::get_entitlements::GetEntitlementsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetEntitlementsFluentBuilder {
     /// Creates a new `GetEntitlements`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl GetEntitlementsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_entitlements::GetEntitlementsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_entitlements::GetEntitlements::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_entitlements::GetEntitlements::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_entitlements::GetEntitlementsOutput,
-        crate::operation::get_entitlements::GetEntitlementsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_entitlements::GetEntitlements::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_entitlements::GetEntitlements::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_entitlements::GetEntitlementsOutput, crate::operation::get_entitlements::GetEntitlementsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_entitlements::paginator::GetEntitlementsPaginator {
-        crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_entitlements::paginator::GetEntitlementsPaginator {
+                                crate::operation::get_entitlements::paginator::GetEntitlementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_code(input.into());
@@ -133,22 +120,17 @@ impl GetEntitlementsFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v);
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_filter()
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
@@ -180,3 +162,4 @@ impl GetEntitlementsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::put_user_permissions_boundary::_put_user_permissions_b
 
 impl PutUserPermissionsBoundaryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_user_permissions_boundary();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_user_permissions_boundary();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutUserPermissionsBoundary`.
-///
+/// 
 /// <p>Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an Amazon Web Services managed policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the permissions for the user.</p><important>
 /// <p>Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions policy to the user. To learn how the effective permissions for a user are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the IAM User Guide.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutUserPermissionsBoundaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder,
+                    inner: crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-    > for PutUserPermissionsBoundaryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
+                    crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
+                > for PutUserPermissionsBoundaryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
+                        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutUserPermissionsBoundaryFluentBuilder {
     /// Creates a new `PutUserPermissionsBoundary`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl PutUserPermissionsBoundaryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput,
-        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundary::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput, crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the permissions boundary.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
@@ -145,3 +132,4 @@ impl PutUserPermissionsBoundaryFluentBuilder {
         self.inner.get_permissions_boundary()
     }
 }
+

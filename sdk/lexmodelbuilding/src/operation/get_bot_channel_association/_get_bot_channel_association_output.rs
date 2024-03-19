@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetBotChannelAssociationOutput {
+pub struct GetBotChannelAssociationOutput  {
     /// <p>The name of the association between the bot and the channel.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the association between the bot and the channel.</p>
@@ -16,7 +16,7 @@ pub struct GetBotChannelAssociationOutput {
     /// <p>The type of the messaging platform.</p>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub bot_configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the bot channel.</p>
     /// <ul>
     /// <li>
@@ -31,33 +31,33 @@ pub struct GetBotChannelAssociationOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBotChannelAssociationOutput {
+impl  GetBotChannelAssociationOutput  {
     /// <p>The name of the association between the bot and the channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the association between the bot and the channel.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    pub fn bot_alias(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias(&self) -> ::std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The date that the association between the bot and the channel was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The type of the messaging platform.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub fn bot_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn bot_configuration(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.bot_configuration.as_ref()
     }
     /// <p>The status of the bot channel.</p>
@@ -69,15 +69,15 @@ impl GetBotChannelAssociationOutput {
     /// <li>
     /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChannelStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ChannelStatus> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetBotChannelAssociationOutput {
+impl  ::std::fmt::Debug for GetBotChannelAssociationOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetBotChannelAssociationOutput");
         formatter.field("name", &self.name);
@@ -94,10 +94,10 @@ impl ::std::fmt::Debug for GetBotChannelAssociationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetBotChannelAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBotChannelAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationOutput`](crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput).
     pub fn builder() -> crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder {
@@ -115,7 +115,7 @@ pub struct GetBotChannelAssociationOutputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelType>,
-    pub(crate) bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) bot_configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ChannelStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -128,8 +128,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>The name of the association between the bot and the channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the association between the bot and the channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +141,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>A description of the association between the bot and the channel.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the association between the bot and the channel.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +154,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +167,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +180,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>The date that the association between the bot and the channel was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date that the association between the bot and the channel was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,8 +193,7 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>The type of the messaging platform.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the messaging platform.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
@@ -210,26 +204,18 @@ impl GetBotChannelAssociationOutputBuilder {
     /// To override the contents of this collection use [`set_bot_configuration`](Self::set_bot_configuration).
     ///
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub fn bot_configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.bot_configuration.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.bot_configuration = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.bot_configuration = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub fn set_bot_configuration(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.bot_configuration = input;
-        self
+    pub fn set_bot_configuration(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.bot_configuration = input; self
     }
     /// <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
-    pub fn get_bot_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_bot_configuration(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.bot_configuration
     }
     /// <p>The status of the bot channel.</p>
@@ -255,8 +241,7 @@ impl GetBotChannelAssociationOutputBuilder {
     /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the bot channel.</p>
     /// <ul>
@@ -277,34 +262,42 @@ impl GetBotChannelAssociationOutputBuilder {
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationOutput`](crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput).
     pub fn build(self) -> crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput {
         crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput {
-            name: self.name,
-            description: self.description,
-            bot_alias: self.bot_alias,
-            bot_name: self.bot_name,
-            created_date: self.created_date,
-            r#type: self.r#type,
-            bot_configuration: self.bot_configuration,
-            status: self.status,
-            failure_reason: self.failure_reason,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            bot_alias: self.bot_alias
+            ,
+            bot_name: self.bot_name
+            ,
+            created_date: self.created_date
+            ,
+            r#type: self.r#type
+            ,
+            bot_configuration: self.bot_configuration
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
             _request_id: self._request_id,
         }
     }
@@ -325,3 +318,4 @@ impl ::std::fmt::Debug for GetBotChannelAssociationOutputBuilder {
         formatter.finish()
     }
 }
+

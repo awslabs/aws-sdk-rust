@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceSetInput {
+pub struct DeleteResourceSetInput  {
     /// <p>Name of a resource set.</p>
     pub resource_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourceSetInput {
+impl  DeleteResourceSetInput  {
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> ::std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteResourceSetInputBuilder {
     }
     /// <p>Name of a resource set.</p>
     pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_set_name = input;
-        self
+        self.resource_set_name = input; self
     }
     /// <p>Name of a resource set.</p>
     pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_set_name
     }
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_resource_set::DeleteResourceSetInput {
-            resource_set_name: self.resource_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_set::DeleteResourceSetInput {
+                resource_set_name: self.resource_set_name
+                ,
+            }
+        )
     }
 }
+

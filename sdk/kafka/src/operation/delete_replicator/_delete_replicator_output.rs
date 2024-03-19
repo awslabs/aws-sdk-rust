@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicatorOutput {
+pub struct DeleteReplicatorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub replicator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the replicator.</p>
     pub replicator_state: ::std::option::Option<crate::types::ReplicatorState>,
     _request_id: Option<String>,
 }
-impl DeleteReplicatorOutput {
+impl  DeleteReplicatorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
     /// <p>The state of the replicator.</p>
-    pub fn replicator_state(&self) -> ::std::option::Option<&crate::types::ReplicatorState> {
+    pub fn replicator_state(&self) -> ::std::option::Option<& crate::types::ReplicatorState> {
         self.replicator_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteReplicatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteReplicatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicatorOutput`](crate::operation::delete_replicator::DeleteReplicatorOutput).
     pub fn builder() -> crate::operation::delete_replicator::builders::DeleteReplicatorOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteReplicatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteReplicatorOutputBuilder {
     }
     /// <p>The state of the replicator.</p>
     pub fn set_replicator_state(mut self, input: ::std::option::Option<crate::types::ReplicatorState>) -> Self {
-        self.replicator_state = input;
-        self
+        self.replicator_state = input; self
     }
     /// <p>The state of the replicator.</p>
     pub fn get_replicator_state(&self) -> &::std::option::Option<crate::types::ReplicatorState> {
         &self.replicator_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteReplicatorOutput`](crate::operation::delete_replicator::DeleteReplicatorOutput).
     pub fn build(self) -> crate::operation::delete_replicator::DeleteReplicatorOutput {
         crate::operation::delete_replicator::DeleteReplicatorOutput {
-            replicator_arn: self.replicator_arn,
-            replicator_state: self.replicator_state,
+            replicator_arn: self.replicator_arn
+            ,
+            replicator_state: self.replicator_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

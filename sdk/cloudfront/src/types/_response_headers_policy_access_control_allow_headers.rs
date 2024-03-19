@@ -4,21 +4,20 @@
 /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
+pub struct ResponseHeadersPolicyAccessControlAllowHeaders  {
     /// <p>The number of HTTP header names in the list.</p>
     pub quantity: i32,
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub items: ::std::vec::Vec<::std::string::String>,
+    pub items: ::std::vec::Vec::<::std::string::String>,
 }
-impl ResponseHeadersPolicyAccessControlAllowHeaders {
+impl  ResponseHeadersPolicyAccessControlAllowHeaders  {
     /// <p>The number of HTTP header names in the list.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub fn items(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {
@@ -33,7 +32,7 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     /// <p>The number of HTTP header names in the list.</p>
@@ -44,8 +43,7 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     }
     /// <p>The number of HTTP header names in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of HTTP header names in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -58,39 +56,37 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder::quantity)
     /// - [`items`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders",
-                )
-            })?,
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders")
+                    )?
+                ,
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders")
+                    )?
+                ,
+            }
+        )
     }
 }
+

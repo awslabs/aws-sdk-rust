@@ -5,54 +5,50 @@ pub use crate::operation::get_compliance_details_by_resource::_get_compliance_de
 
 impl GetComplianceDetailsByResourceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_compliance_details_by_resource();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_compliance_details_by_resource();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetComplianceDetailsByResource`.
-///
+/// 
 /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with each rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComplianceDetailsByResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceInputBuilder,
+                    inner: crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
-    > for GetComplianceDetailsByResourceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
-            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
+                    crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
+                > for GetComplianceDetailsByResourceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
+                        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetComplianceDetailsByResourceFluentBuilder {
     /// Creates a new `GetComplianceDetailsByResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl GetComplianceDetailsByResourceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResource::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResource::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput,
-        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResource::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResource::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput, crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator {
-        crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator {
+                                crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
@@ -154,13 +141,13 @@ impl GetComplianceDetailsByResourceFluentBuilder {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>>) -> Self {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComplianceType>> {
         self.inner.get_compliance_types()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -198,3 +185,4 @@ impl GetComplianceDetailsByResourceFluentBuilder {
         self.inner.get_resource_evaluation_id()
     }
 }
+

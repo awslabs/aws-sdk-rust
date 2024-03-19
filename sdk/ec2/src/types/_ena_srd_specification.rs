@@ -4,19 +4,19 @@
 /// <p>To improve the reliability of network packet delivery, ENA Express reorders network packets on the receiving end by default. However, some UDP-based applications are designed to handle network packets that are out of order to reduce the overhead for packet delivery at the network layer. When ENA Express is enabled, you can specify whether UDP network traffic uses it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnaSrdSpecification {
+pub struct EnaSrdSpecification  {
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
     pub ena_srd_enabled: ::std::option::Option<bool>,
     /// <p>Configures ENA Express for UDP network traffic.</p>
     pub ena_srd_udp_specification: ::std::option::Option<crate::types::EnaSrdUdpSpecification>,
 }
-impl EnaSrdSpecification {
+impl  EnaSrdSpecification  {
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
     pub fn ena_srd_enabled(&self) -> ::std::option::Option<bool> {
         self.ena_srd_enabled
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    pub fn ena_srd_udp_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdUdpSpecification> {
+    pub fn ena_srd_udp_specification(&self) -> ::std::option::Option<& crate::types::EnaSrdUdpSpecification> {
         self.ena_srd_udp_specification.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EnaSrdSpecificationBuilder {
     }
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
     pub fn set_ena_srd_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_srd_enabled = input;
-        self
+        self.ena_srd_enabled = input; self
     }
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
     pub fn get_ena_srd_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl EnaSrdSpecificationBuilder {
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
     pub fn set_ena_srd_udp_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdUdpSpecification>) -> Self {
-        self.ena_srd_udp_specification = input;
-        self
+        self.ena_srd_udp_specification = input; self
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
     pub fn get_ena_srd_udp_specification(&self) -> &::std::option::Option<crate::types::EnaSrdUdpSpecification> {
@@ -66,8 +64,11 @@ impl EnaSrdSpecificationBuilder {
     /// Consumes the builder and constructs a [`EnaSrdSpecification`](crate::types::EnaSrdSpecification).
     pub fn build(self) -> crate::types::EnaSrdSpecification {
         crate::types::EnaSrdSpecification {
-            ena_srd_enabled: self.ena_srd_enabled,
-            ena_srd_udp_specification: self.ena_srd_udp_specification,
+            ena_srd_enabled: self.ena_srd_enabled
+            ,
+            ena_srd_udp_specification: self.ena_srd_udp_specification
+            ,
         }
     }
 }
+

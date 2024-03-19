@@ -3,22 +3,20 @@
 /// <p>Provides the configuration information for the JSON token type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonTokenTypeConfiguration {
+pub struct JsonTokenTypeConfiguration  {
     /// <p>The user name attribute field.</p>
     pub user_name_attribute_field: ::std::string::String,
     /// <p>The group attribute field.</p>
     pub group_attribute_field: ::std::string::String,
 }
-impl JsonTokenTypeConfiguration {
+impl  JsonTokenTypeConfiguration  {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name_attribute_field.deref()
+    pub fn user_name_attribute_field(&self) -> & str {
+        use std::ops::Deref; self.user_name_attribute_field.deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> &str {
-        use std::ops::Deref;
-        self.group_attribute_field.deref()
+    pub fn group_attribute_field(&self) -> & str {
+        use std::ops::Deref; self.group_attribute_field.deref()
     }
 }
 impl JsonTokenTypeConfiguration {
@@ -44,8 +42,7 @@ impl JsonTokenTypeConfigurationBuilder {
     }
     /// <p>The user name attribute field.</p>
     pub fn set_user_name_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name_attribute_field = input;
-        self
+        self.user_name_attribute_field = input; self
     }
     /// <p>The user name attribute field.</p>
     pub fn get_user_name_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl JsonTokenTypeConfigurationBuilder {
     }
     /// <p>The group attribute field.</p>
     pub fn set_group_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_attribute_field = input;
-        self
+        self.group_attribute_field = input; self
     }
     /// <p>The group attribute field.</p>
     pub fn get_group_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl JsonTokenTypeConfigurationBuilder {
     /// - [`user_name_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::user_name_attribute_field)
     /// - [`group_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::group_attribute_field)
     pub fn build(self) -> ::std::result::Result<crate::types::JsonTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JsonTokenTypeConfiguration {
-            user_name_attribute_field: self.user_name_attribute_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name_attribute_field",
-                    "user_name_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
-                )
-            })?,
-            group_attribute_field: self.group_attribute_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_attribute_field",
-                    "group_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JsonTokenTypeConfiguration {
+                user_name_attribute_field: self.user_name_attribute_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name_attribute_field", "user_name_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration")
+                    )?
+                ,
+                group_attribute_field: self.group_attribute_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_attribute_field", "group_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

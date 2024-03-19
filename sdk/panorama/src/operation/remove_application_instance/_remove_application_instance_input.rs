@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveApplicationInstanceInput {
+pub struct RemoveApplicationInstanceInput  {
     /// <p>An application instance ID.</p>
     pub application_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveApplicationInstanceInput {
+impl  RemoveApplicationInstanceInput  {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> ::std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RemoveApplicationInstanceInputBuilder {
     }
     /// <p>An application instance ID.</p>
     pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id = input;
-        self
+        self.application_instance_id = input; self
     }
     /// <p>An application instance ID.</p>
     pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_instance_id
     }
     /// Consumes the builder and constructs a [`RemoveApplicationInstanceInput`](crate::operation::remove_application_instance::RemoveApplicationInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_application_instance::RemoveApplicationInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
-            application_instance_id: self.application_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_application_instance::RemoveApplicationInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
+                application_instance_id: self.application_instance_id
+                ,
+            }
+        )
     }
 }
+

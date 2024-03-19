@@ -4,16 +4,17 @@
 /// <p>Filters which game servers may be claimed when calling <code>ClaimGameServer</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClaimFilterOption {
+pub struct ClaimFilterOption  {
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    pub instance_statuses: ::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>>,
+    pub instance_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::FilterInstanceStatus>>,
 }
-impl ClaimFilterOption {
+impl  ClaimFilterOption  {
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_statuses.is_none()`.
-    pub fn instance_statuses(&self) -> &[crate::types::FilterInstanceStatus] {
-        self.instance_statuses.as_deref().unwrap_or_default()
+    pub fn instance_statuses(&self) -> & [crate::types::FilterInstanceStatus] {
+        self.instance_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ClaimFilterOption {
@@ -27,7 +28,7 @@ impl ClaimFilterOption {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimFilterOptionBuilder {
-    pub(crate) instance_statuses: ::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>>,
+    pub(crate) instance_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::FilterInstanceStatus>>,
 }
 impl ClaimFilterOptionBuilder {
     /// Appends an item to `instance_statuses`.
@@ -37,23 +38,24 @@ impl ClaimFilterOptionBuilder {
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
     pub fn instance_statuses(mut self, input: crate::types::FilterInstanceStatus) -> Self {
         let mut v = self.instance_statuses.unwrap_or_default();
-        v.push(input);
-        self.instance_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    pub fn set_instance_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>>) -> Self {
-        self.instance_statuses = input;
-        self
+    pub fn set_instance_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterInstanceStatus>>) -> Self {
+        self.instance_statuses = input; self
     }
     /// <p>List of instance statuses that game servers may be claimed on. If provided, the list must contain the <code>ACTIVE</code> status.</p>
-    pub fn get_instance_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterInstanceStatus>> {
+    pub fn get_instance_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterInstanceStatus>> {
         &self.instance_statuses
     }
     /// Consumes the builder and constructs a [`ClaimFilterOption`](crate::types::ClaimFilterOption).
     pub fn build(self) -> crate::types::ClaimFilterOption {
         crate::types::ClaimFilterOption {
-            instance_statuses: self.instance_statuses,
+            instance_statuses: self.instance_statuses
+            ,
         }
     }
 }
+

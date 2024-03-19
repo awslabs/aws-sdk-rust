@@ -3,7 +3,8 @@
 /// Media Package Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPackageOutputSettings {}
+pub struct MediaPackageOutputSettings  {
+}
 impl MediaPackageOutputSettings {
     /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
     pub fn builder() -> crate::types::builders::MediaPackageOutputSettingsBuilder {
@@ -14,10 +15,13 @@ impl MediaPackageOutputSettings {
 /// A builder for [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct MediaPackageOutputSettingsBuilder {}
+pub struct MediaPackageOutputSettingsBuilder {
+}
 impl MediaPackageOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputSettings {
-        crate::types::MediaPackageOutputSettings {}
+        crate::types::MediaPackageOutputSettings {
+        }
     }
 }
+

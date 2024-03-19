@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectivityInfoInput {
+pub struct GetConnectivityInfoInput  {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl GetConnectivityInfoInput {
+impl  GetConnectivityInfoInput  {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetConnectivityInfoInputBuilder {
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`GetConnectivityInfoInput`](crate::operation::get_connectivity_info::GetConnectivityInfoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_connectivity_info::GetConnectivityInfoInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_connectivity_info::GetConnectivityInfoInput { thing_name: self.thing_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connectivity_info::GetConnectivityInfoInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connectivity_info::GetConnectivityInfoInput {
+                thing_name: self.thing_name
+                ,
+            }
+        )
     }
 }
+

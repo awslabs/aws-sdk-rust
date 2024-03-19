@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteScheduledActionInput {
+pub struct BatchDeleteScheduledActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
-    pub scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub scheduled_action_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchDeleteScheduledActionInput {
+impl  BatchDeleteScheduledActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_action_names.is_none()`.
-    pub fn scheduled_action_names(&self) -> &[::std::string::String] {
-        self.scheduled_action_names.as_deref().unwrap_or_default()
+    pub fn scheduled_action_names(&self) -> & [::std::string::String] {
+        self.scheduled_action_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteScheduledActionInput {
@@ -32,7 +33,7 @@ impl BatchDeleteScheduledActionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchDeleteScheduledActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -43,8 +44,7 @@ impl BatchDeleteScheduledActionInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchDeleteScheduledActionInputBuilder {
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
     pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scheduled_action_names.unwrap_or_default();
-        v.push(input.into());
-        self.scheduled_action_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.scheduled_action_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
-    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.scheduled_action_names = input;
-        self
+    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.scheduled_action_names = input; self
     }
     /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.</p>
-    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.scheduled_action_names
     }
     /// Consumes the builder and constructs a [`BatchDeleteScheduledActionInput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            scheduled_action_names: self.scheduled_action_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                scheduled_action_names: self.scheduled_action_names
+                ,
+            }
+        )
     }
 }
+

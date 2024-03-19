@@ -3,19 +3,19 @@
 /// <p>Deletes a specified RequestValidator of a given RestApi.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRequestValidatorInput {
+pub struct DeleteRequestValidatorInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub request_validator_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRequestValidatorInput {
+impl  DeleteRequestValidatorInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the RequestValidator to be deleted.</p>
-    pub fn request_validator_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_validator_id(&self) -> ::std::option::Option<& str> {
         self.request_validator_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteRequestValidatorInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DeleteRequestValidatorInputBuilder {
     }
     /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub fn set_request_validator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_validator_id = input;
-        self
+        self.request_validator_id = input; self
     }
     /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub fn get_request_validator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_validator_id
     }
     /// Consumes the builder and constructs a [`DeleteRequestValidatorInput`](crate::operation::delete_request_validator::DeleteRequestValidatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_request_validator::DeleteRequestValidatorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_request_validator::DeleteRequestValidatorInput {
-            rest_api_id: self.rest_api_id,
-            request_validator_id: self.request_validator_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_request_validator::DeleteRequestValidatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_request_validator::DeleteRequestValidatorInput {
+                rest_api_id: self.rest_api_id
+                ,
+                request_validator_id: self.request_validator_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Details about a resource in a generated template</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDetail {
+pub struct ResourceDetail  {
     /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical id for this resource in the final generated template.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 256 key-value pairs that identifies the resource in the generated template. The key is the name of one of the primary identifiers for the resource. (Primary identifiers are specified in the <code>primaryIdentifier</code> list in the resource schema.) The value is the value of that primary identifier. For example, for a <code>AWS::DynamoDB::Table</code> resource, the primary identifiers is <code>TableName</code> so the key-value pair could be <code>"TableName": "MyDDBTable"</code>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a> in the <i>CloudFormation Command Line Interface User guide for extension development</i>.</p>
-    pub resource_identifier: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub resource_identifier: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Status of the processing of a resource in a generated template.</p>
     /// <dl>
     /// <dt>
@@ -41,19 +41,19 @@ pub struct ResourceDetail {
     /// <p>The reason for the resource detail, providing more information if a failure happened.</p>
     pub resource_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The warnings generated for this resource.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<crate::types::WarningDetail>>,
 }
-impl ResourceDetail {
+impl  ResourceDetail  {
     /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The logical id for this resource in the final generated template.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>A list of up to 256 key-value pairs that identifies the resource in the generated template. The key is the name of one of the primary identifiers for the resource. (Primary identifiers are specified in the <code>primaryIdentifier</code> list in the resource schema.) The value is the value of that primary identifier. For example, for a <code>AWS::DynamoDB::Table</code> resource, the primary identifiers is <code>TableName</code> so the key-value pair could be <code>"TableName": "MyDDBTable"</code>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a> in the <i>CloudFormation Command Line Interface User guide for extension development</i>.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.resource_identifier.as_ref()
     }
     /// <p>Status of the processing of a resource in a generated template.</p>
@@ -83,18 +83,19 @@ impl ResourceDetail {
     /// <p>The resource processing has failed.</p>
     /// </dd>
     /// </dl>
-    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<& crate::types::GeneratedTemplateResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The reason for the resource detail, providing more information if a failure happened.</p>
-    pub fn resource_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn resource_status_reason(&self) -> ::std::option::Option<& str> {
         self.resource_status_reason.as_deref()
     }
     /// <p>The warnings generated for this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[crate::types::WarningDetail] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [crate::types::WarningDetail] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceDetail {
@@ -110,10 +111,10 @@ impl ResourceDetail {
 pub struct ResourceDetailBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_identifier: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) resource_status: ::std::option::Option<crate::types::GeneratedTemplateResourceStatus>,
     pub(crate) resource_status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<crate::types::WarningDetail>>,
 }
 impl ResourceDetailBuilder {
     /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
@@ -123,8 +124,7 @@ impl ResourceDetailBuilder {
     }
     /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +137,7 @@ impl ResourceDetailBuilder {
     }
     /// <p>The logical id for this resource in the final generated template.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>The logical id for this resource in the final generated template.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,26 +148,18 @@ impl ResourceDetailBuilder {
     /// To override the contents of this collection use [`set_resource_identifier`](Self::set_resource_identifier).
     ///
     /// <p>A list of up to 256 key-value pairs that identifies the resource in the generated template. The key is the name of one of the primary identifiers for the resource. (Primary identifiers are specified in the <code>primaryIdentifier</code> list in the resource schema.) The value is the value of that primary identifier. For example, for a <code>AWS::DynamoDB::Table</code> resource, the primary identifiers is <code>TableName</code> so the key-value pair could be <code>"TableName": "MyDDBTable"</code>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a> in the <i>CloudFormation Command Line Interface User guide for extension development</i>.</p>
-    pub fn resource_identifier(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_identifier.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_identifier = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_identifier = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of up to 256 key-value pairs that identifies the resource in the generated template. The key is the name of one of the primary identifiers for the resource. (Primary identifiers are specified in the <code>primaryIdentifier</code> list in the resource schema.) The value is the value of that primary identifier. For example, for a <code>AWS::DynamoDB::Table</code> resource, the primary identifiers is <code>TableName</code> so the key-value pair could be <code>"TableName": "MyDDBTable"</code>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a> in the <i>CloudFormation Command Line Interface User guide for extension development</i>.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.resource_identifier = input; self
     }
     /// <p>A list of up to 256 key-value pairs that identifies the resource in the generated template. The key is the name of one of the primary identifiers for the resource. (Primary identifiers are specified in the <code>primaryIdentifier</code> list in the resource schema.) The value is the value of that primary identifier. For example, for a <code>AWS::DynamoDB::Table</code> resource, the primary identifiers is <code>TableName</code> so the key-value pair could be <code>"TableName": "MyDDBTable"</code>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a> in the <i>CloudFormation Command Line Interface User guide for extension development</i>.</p>
-    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.resource_identifier
     }
     /// <p>Status of the processing of a resource in a generated template.</p>
@@ -230,8 +221,7 @@ impl ResourceDetailBuilder {
     /// </dd>
     /// </dl>
     pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateResourceStatus>) -> Self {
-        self.resource_status = input;
-        self
+        self.resource_status = input; self
     }
     /// <p>Status of the processing of a resource in a generated template.</p>
     /// <dl>
@@ -270,8 +260,7 @@ impl ResourceDetailBuilder {
     }
     /// <p>The reason for the resource detail, providing more information if a failure happened.</p>
     pub fn set_resource_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_status_reason = input;
-        self
+        self.resource_status_reason = input; self
     }
     /// <p>The reason for the resource detail, providing more information if a failure happened.</p>
     pub fn get_resource_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,28 +273,34 @@ impl ResourceDetailBuilder {
     /// <p>The warnings generated for this resource.</p>
     pub fn warnings(mut self, input: crate::types::WarningDetail) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The warnings generated for this resource.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WarningDetail>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>The warnings generated for this resource.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WarningDetail>> {
         &self.warnings
     }
     /// Consumes the builder and constructs a [`ResourceDetail`](crate::types::ResourceDetail).
     pub fn build(self) -> crate::types::ResourceDetail {
         crate::types::ResourceDetail {
-            resource_type: self.resource_type,
-            logical_resource_id: self.logical_resource_id,
-            resource_identifier: self.resource_identifier,
-            resource_status: self.resource_status,
-            resource_status_reason: self.resource_status_reason,
-            warnings: self.warnings,
+            resource_type: self.resource_type
+            ,
+            logical_resource_id: self.logical_resource_id
+            ,
+            resource_identifier: self.resource_identifier
+            ,
+            resource_status: self.resource_status
+            ,
+            resource_status_reason: self.resource_status_reason
+            ,
+            warnings: self.warnings
+            ,
         }
     }
 }
+

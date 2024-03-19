@@ -21,11 +21,7 @@ impl TemplateSource {
     /// Tries to convert the enum instance into [`WorkflowId`](crate::types::TemplateSource::WorkflowId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_workflow_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let TemplateSource::WorkflowId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TemplateSource::WorkflowId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`WorkflowId`](crate::types::TemplateSource::WorkflowId).
     pub fn is_workflow_id(&self) -> bool {
@@ -36,3 +32,4 @@ impl TemplateSource {
         matches!(self, Self::Unknown)
     }
 }
+

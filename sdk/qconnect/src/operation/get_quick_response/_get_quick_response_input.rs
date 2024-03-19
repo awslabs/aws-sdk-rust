@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQuickResponseInput {
+pub struct GetQuickResponseInput  {
     /// <p>The identifier of the quick response.</p>
     pub quick_response_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl GetQuickResponseInput {
+impl  GetQuickResponseInput  {
     /// <p>The identifier of the quick response.</p>
-    pub fn quick_response_id(&self) -> ::std::option::Option<&str> {
+    pub fn quick_response_id(&self) -> ::std::option::Option<& str> {
         self.quick_response_id.as_deref()
     }
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetQuickResponseInputBuilder {
     }
     /// <p>The identifier of the quick response.</p>
     pub fn set_quick_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quick_response_id = input;
-        self
+        self.quick_response_id = input; self
     }
     /// <p>The identifier of the quick response.</p>
     pub fn get_quick_response_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetQuickResponseInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`GetQuickResponseInput`](crate::operation::get_quick_response::GetQuickResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_quick_response::GetQuickResponseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_quick_response::GetQuickResponseInput {
-            quick_response_id: self.quick_response_id,
-            knowledge_base_id: self.knowledge_base_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_quick_response::GetQuickResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_quick_response::GetQuickResponseInput {
+                quick_response_id: self.quick_response_id
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

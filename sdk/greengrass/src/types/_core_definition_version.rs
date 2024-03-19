@@ -3,16 +3,17 @@
 /// Information about a core definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreDefinitionVersion {
+pub struct CoreDefinitionVersion  {
     /// A list of cores in the core definition version.
-    pub cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
+    pub cores: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>,
 }
-impl CoreDefinitionVersion {
+impl  CoreDefinitionVersion  {
     /// A list of cores in the core definition version.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cores.is_none()`.
-    pub fn cores(&self) -> &[crate::types::Core] {
-        self.cores.as_deref().unwrap_or_default()
+    pub fn cores(&self) -> & [crate::types::Core] {
+        self.cores.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreDefinitionVersion {
@@ -26,7 +27,7 @@ impl CoreDefinitionVersion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreDefinitionVersionBuilder {
-    pub(crate) cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
+    pub(crate) cores: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>,
 }
 impl CoreDefinitionVersionBuilder {
     /// Appends an item to `cores`.
@@ -36,21 +37,24 @@ impl CoreDefinitionVersionBuilder {
     /// A list of cores in the core definition version.
     pub fn cores(mut self, input: crate::types::Core) -> Self {
         let mut v = self.cores.unwrap_or_default();
-        v.push(input);
-        self.cores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cores = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>) -> Self {
-        self.cores = input;
-        self
+    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>) -> Self {
+        self.cores = input; self
     }
     /// A list of cores in the core definition version.
-    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Core>> {
+    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Core>> {
         &self.cores
     }
     /// Consumes the builder and constructs a [`CoreDefinitionVersion`](crate::types::CoreDefinitionVersion).
     pub fn build(self) -> crate::types::CoreDefinitionVersion {
-        crate::types::CoreDefinitionVersion { cores: self.cores }
+        crate::types::CoreDefinitionVersion {
+            cores: self.cores
+            ,
+        }
     }
 }
+

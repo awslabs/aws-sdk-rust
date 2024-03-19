@@ -3,15 +3,15 @@
 /// <p>The name of a trail about which you want the current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrailStatusInput {
+pub struct GetTrailStatusInput  {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another Region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetTrailStatusInput {
+impl  GetTrailStatusInput  {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another Region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl GetTrailStatusInputBuilder {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another Region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another Region), you must specify its ARN. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -48,9 +47,13 @@ impl GetTrailStatusInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTrailStatusInput`](crate::operation::get_trail_status::GetTrailStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_trail_status::GetTrailStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_trail_status::GetTrailStatusInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail_status::GetTrailStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_trail_status::GetTrailStatusInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

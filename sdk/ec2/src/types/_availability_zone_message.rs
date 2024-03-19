@@ -3,13 +3,13 @@
 /// <p>Describes a message about an Availability Zone, Local Zone, or Wavelength Zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailabilityZoneMessage {
+pub struct AvailabilityZoneMessage  {
     /// <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AvailabilityZoneMessage {
+impl  AvailabilityZoneMessage  {
     /// <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AvailabilityZoneMessageBuilder {
     }
     /// <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AvailabilityZoneMessageBuilder {
     }
     /// Consumes the builder and constructs a [`AvailabilityZoneMessage`](crate::types::AvailabilityZoneMessage).
     pub fn build(self) -> crate::types::AvailabilityZoneMessage {
-        crate::types::AvailabilityZoneMessage { message: self.message }
+        crate::types::AvailabilityZoneMessage {
+            message: self.message
+            ,
+        }
     }
 }
+

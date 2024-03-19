@@ -5,30 +5,32 @@
 /// <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagValues {
+pub struct TagValues  {
     /// <p>The key for the tag.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The specific value of the tag.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
-impl TagValues {
+impl  TagValues  {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The specific value of the tag.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
-    pub fn match_options(&self) -> &[crate::types::MatchOption] {
-        self.match_options.as_deref().unwrap_or_default()
+    pub fn match_options(&self) -> & [crate::types::MatchOption] {
+        self.match_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TagValues {
@@ -43,8 +45,8 @@ impl TagValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagValuesBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
 impl TagValuesBuilder {
     /// <p>The key for the tag.</p>
@@ -54,8 +56,7 @@ impl TagValuesBuilder {
     }
     /// <p>The key for the tag.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for the tag.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +69,16 @@ impl TagValuesBuilder {
     /// <p>The specific value of the tag.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specific value of the tag.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The specific value of the tag.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Appends an item to `match_options`.
@@ -88,25 +88,28 @@ impl TagValuesBuilder {
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(mut self, input: crate::types::MatchOption) -> Self {
         let mut v = self.match_options.unwrap_or_default();
-        v.push(input);
-        self.match_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
-        self.match_options = input;
-        self
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>) -> Self {
+        self.match_options = input; self
     }
     /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`TagValues`](crate::types::TagValues).
     pub fn build(self) -> crate::types::TagValues {
         crate::types::TagValues {
-            key: self.key,
-            values: self.values,
-            match_options: self.match_options,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            match_options: self.match_options
+            ,
         }
     }
 }
+

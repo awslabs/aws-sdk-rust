@@ -3,7 +3,7 @@
 /// <p>Initialization scripts for studio components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StudioComponentInitializationScript {
+pub struct StudioComponentInitializationScript  {
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
@@ -13,25 +13,25 @@ pub struct StudioComponentInitializationScript {
     /// <p>The initialization script.</p>
     pub script: ::std::option::Option<::std::string::String>,
 }
-impl StudioComponentInitializationScript {
+impl  StudioComponentInitializationScript  {
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_version(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_protocol_version(&self) -> ::std::option::Option<& str> {
         self.launch_profile_protocol_version.as_deref()
     }
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::LaunchProfilePlatform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::LaunchProfilePlatform> {
         self.platform.as_ref()
     }
     /// <p>The method to use when running the initialization script.</p>
-    pub fn run_context(&self) -> ::std::option::Option<&crate::types::StudioComponentInitializationScriptRunContext> {
+    pub fn run_context(&self) -> ::std::option::Option<& crate::types::StudioComponentInitializationScriptRunContext> {
         self.run_context.as_ref()
     }
     /// <p>The initialization script.</p>
-    pub fn script(&self) -> ::std::option::Option<&str> {
+    pub fn script(&self) -> ::std::option::Option<& str> {
         self.script.as_deref()
     }
 }
-impl ::std::fmt::Debug for StudioComponentInitializationScript {
+impl  ::std::fmt::Debug for StudioComponentInitializationScript  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StudioComponentInitializationScript");
         formatter.field("launch_profile_protocol_version", &self.launch_profile_protocol_version);
@@ -65,8 +65,7 @@ impl StudioComponentInitializationScriptBuilder {
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn set_launch_profile_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_protocol_version = input;
-        self
+        self.launch_profile_protocol_version = input; self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn get_launch_profile_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl StudioComponentInitializationScriptBuilder {
     }
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::LaunchProfilePlatform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::LaunchProfilePlatform> {
@@ -93,8 +91,7 @@ impl StudioComponentInitializationScriptBuilder {
     }
     /// <p>The method to use when running the initialization script.</p>
     pub fn set_run_context(mut self, input: ::std::option::Option<crate::types::StudioComponentInitializationScriptRunContext>) -> Self {
-        self.run_context = input;
-        self
+        self.run_context = input; self
     }
     /// <p>The method to use when running the initialization script.</p>
     pub fn get_run_context(&self) -> &::std::option::Option<crate::types::StudioComponentInitializationScriptRunContext> {
@@ -107,8 +104,7 @@ impl StudioComponentInitializationScriptBuilder {
     }
     /// <p>The initialization script.</p>
     pub fn set_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script = input;
-        self
+        self.script = input; self
     }
     /// <p>The initialization script.</p>
     pub fn get_script(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl StudioComponentInitializationScriptBuilder {
     /// Consumes the builder and constructs a [`StudioComponentInitializationScript`](crate::types::StudioComponentInitializationScript).
     pub fn build(self) -> crate::types::StudioComponentInitializationScript {
         crate::types::StudioComponentInitializationScript {
-            launch_profile_protocol_version: self.launch_profile_protocol_version,
-            platform: self.platform,
-            run_context: self.run_context,
-            script: self.script,
+            launch_profile_protocol_version: self.launch_profile_protocol_version
+            ,
+            platform: self.platform
+            ,
+            run_context: self.run_context
+            ,
+            script: self.script
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for StudioComponentInitializationScriptBuilder {
         formatter.finish()
     }
 }
+

@@ -3,17 +3,16 @@
 /// <p>Parameters used when defining a mitigation action that move a set of things to a thing group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddThingsToThingGroupParams {
+pub struct AddThingsToThingGroupParams  {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub thing_group_names: ::std::vec::Vec<::std::string::String>,
+    pub thing_group_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub override_dynamic_groups: ::std::option::Option<bool>,
 }
-impl AddThingsToThingGroupParams {
+impl  AddThingsToThingGroupParams  {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn thing_group_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.thing_group_names.deref()
+    pub fn thing_group_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.thing_group_names.deref()
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn override_dynamic_groups(&self) -> ::std::option::Option<bool> {
@@ -31,7 +30,7 @@ impl AddThingsToThingGroupParams {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddThingsToThingGroupParamsBuilder {
-    pub(crate) thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) thing_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl AddThingsToThingGroupParamsBuilder {
@@ -42,17 +41,16 @@ impl AddThingsToThingGroupParamsBuilder {
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
     pub fn thing_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thing_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.thing_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.thing_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn set_thing_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.thing_group_names = input;
-        self
+    pub fn set_thing_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.thing_group_names = input; self
     }
     /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
-    pub fn get_thing_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.thing_group_names
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
@@ -62,8 +60,7 @@ impl AddThingsToThingGroupParamsBuilder {
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn set_override_dynamic_groups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.override_dynamic_groups = input;
-        self
+        self.override_dynamic_groups = input; self
     }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn get_override_dynamic_groups(&self) -> &::std::option::Option<bool> {
@@ -73,14 +70,17 @@ impl AddThingsToThingGroupParamsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_group_names`](crate::types::builders::AddThingsToThingGroupParamsBuilder::thing_group_names)
     pub fn build(self) -> ::std::result::Result<crate::types::AddThingsToThingGroupParams, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AddThingsToThingGroupParams {
-            thing_group_names: self.thing_group_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "thing_group_names",
-                    "thing_group_names was not specified but it is required when building AddThingsToThingGroupParams",
-                )
-            })?,
-            override_dynamic_groups: self.override_dynamic_groups,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AddThingsToThingGroupParams {
+                thing_group_names: self.thing_group_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("thing_group_names", "thing_group_names was not specified but it is required when building AddThingsToThingGroupParams")
+                    )?
+                ,
+                override_dynamic_groups: self.override_dynamic_groups
+                ,
+            }
+        )
     }
 }
+

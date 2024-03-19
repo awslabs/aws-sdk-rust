@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeCidrCollectionInput {
+pub struct ChangeCidrCollectionInput  {
     /// <p>The UUID of the CIDR collection to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
@@ -15,11 +15,11 @@ pub struct ChangeCidrCollectionInput {
     /// </ul>
     pub collection_version: ::std::option::Option<i64>,
     /// <p>Information about changes to a CIDR collection.</p>
-    pub changes: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
+    pub changes: ::std::option::Option<::std::vec::Vec::<crate::types::CidrCollectionChange>>,
 }
-impl ChangeCidrCollectionInput {
+impl  ChangeCidrCollectionInput  {
     /// <p>The UUID of the CIDR collection to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
@@ -34,10 +34,11 @@ impl ChangeCidrCollectionInput {
         self.collection_version
     }
     /// <p>Information about changes to a CIDR collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changes.is_none()`.
-    pub fn changes(&self) -> &[crate::types::CidrCollectionChange] {
-        self.changes.as_deref().unwrap_or_default()
+    pub fn changes(&self) -> & [crate::types::CidrCollectionChange] {
+        self.changes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ChangeCidrCollectionInput {
@@ -53,7 +54,7 @@ impl ChangeCidrCollectionInput {
 pub struct ChangeCidrCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) collection_version: ::std::option::Option<i64>,
-    pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
+    pub(crate) changes: ::std::option::Option<::std::vec::Vec::<crate::types::CidrCollectionChange>>,
 }
 impl ChangeCidrCollectionInputBuilder {
     /// <p>The UUID of the CIDR collection to update.</p>
@@ -64,8 +65,7 @@ impl ChangeCidrCollectionInputBuilder {
     }
     /// <p>The UUID of the CIDR collection to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The UUID of the CIDR collection to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl ChangeCidrCollectionInputBuilder {
     /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub fn set_collection_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.collection_version = input;
-        self
+        self.collection_version = input; self
     }
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
@@ -113,28 +112,30 @@ impl ChangeCidrCollectionInputBuilder {
     /// <p>Information about changes to a CIDR collection.</p>
     pub fn changes(mut self, input: crate::types::CidrCollectionChange) -> Self {
         let mut v = self.changes.unwrap_or_default();
-        v.push(input);
-        self.changes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.changes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about changes to a CIDR collection.</p>
-    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>) -> Self {
-        self.changes = input;
-        self
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CidrCollectionChange>>) -> Self {
+        self.changes = input; self
     }
     /// <p>Information about changes to a CIDR collection.</p>
-    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CidrCollectionChange>> {
         &self.changes
     }
     /// Consumes the builder and constructs a [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::change_cidr_collection::ChangeCidrCollectionInput {
-            id: self.id,
-            collection_version: self.collection_version,
-            changes: self.changes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::change_cidr_collection::ChangeCidrCollectionInput {
+                id: self.id
+                ,
+                collection_version: self.collection_version
+                ,
+                changes: self.changes
+                ,
+            }
+        )
     }
 }
+

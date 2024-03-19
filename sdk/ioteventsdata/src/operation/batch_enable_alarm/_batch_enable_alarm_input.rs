@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEnableAlarmInput {
+pub struct BatchEnableAlarmInput  {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub enable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
+    pub enable_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::EnableAlarmActionRequest>>,
 }
-impl BatchEnableAlarmInput {
+impl  BatchEnableAlarmInput  {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_action_requests.is_none()`.
-    pub fn enable_action_requests(&self) -> &[crate::types::EnableAlarmActionRequest] {
-        self.enable_action_requests.as_deref().unwrap_or_default()
+    pub fn enable_action_requests(&self) -> & [crate::types::EnableAlarmActionRequest] {
+        self.enable_action_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchEnableAlarmInput {
@@ -25,7 +26,7 @@ impl BatchEnableAlarmInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEnableAlarmInputBuilder {
-    pub(crate) enable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
+    pub(crate) enable_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::EnableAlarmActionRequest>>,
 }
 impl BatchEnableAlarmInputBuilder {
     /// Appends an item to `enable_action_requests`.
@@ -35,25 +36,26 @@ impl BatchEnableAlarmInputBuilder {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
     pub fn enable_action_requests(mut self, input: crate::types::EnableAlarmActionRequest) -> Self {
         let mut v = self.enable_action_requests.unwrap_or_default();
-        v.push(input);
-        self.enable_action_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.enable_action_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_enable_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>) -> Self {
-        self.enable_action_requests = input;
-        self
+    pub fn set_enable_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnableAlarmActionRequest>>) -> Self {
+        self.enable_action_requests = input; self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_enable_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
+    pub fn get_enable_action_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnableAlarmActionRequest>> {
         &self.enable_action_requests
     }
     /// Consumes the builder and constructs a [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_enable_alarm::BatchEnableAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_enable_alarm::BatchEnableAlarmInput {
-            enable_action_requests: self.enable_action_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_enable_alarm::BatchEnableAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_enable_alarm::BatchEnableAlarmInput {
+                enable_action_requests: self.enable_action_requests
+                ,
+            }
+        )
     }
 }
+

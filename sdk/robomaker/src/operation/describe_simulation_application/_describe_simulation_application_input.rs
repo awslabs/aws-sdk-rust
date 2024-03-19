@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationApplicationInput {
+pub struct DescribeSimulationApplicationInput  {
     /// <p>The application information for the simulation application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application to describe.</p>
     pub application_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSimulationApplicationInput {
+impl  DescribeSimulationApplicationInput  {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
+    pub fn application_version(&self) -> ::std::option::Option<& str> {
         self.application_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeSimulationApplicationInputBuilder {
     }
     /// <p>The application information for the simulation application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The application information for the simulation application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DescribeSimulationApplicationInputBuilder {
     }
     /// <p>The version of the simulation application to describe.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the simulation application to describe.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_version
     }
     /// Consumes the builder and constructs a [`DescribeSimulationApplicationInput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_simulation_application::DescribeSimulationApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_simulation_application::DescribeSimulationApplicationInput {
-            application: self.application,
-            application_version: self.application_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_simulation_application::DescribeSimulationApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_simulation_application::DescribeSimulationApplicationInput {
+                application: self.application
+                ,
+                application_version: self.application_version
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>An object that sets information about the composite component types of a component type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositeComponentTypeRequest {
+pub struct CompositeComponentTypeRequest  {
     /// <p>This is the <code>componentTypeId</code> that the <code>compositeComponentType</code> refers to.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
 }
-impl CompositeComponentTypeRequest {
+impl  CompositeComponentTypeRequest  {
     /// <p>This is the <code>componentTypeId</code> that the <code>compositeComponentType</code> refers to.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CompositeComponentTypeRequestBuilder {
     }
     /// <p>This is the <code>componentTypeId</code> that the <code>compositeComponentType</code> refers to.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>This is the <code>componentTypeId</code> that the <code>compositeComponentType</code> refers to.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CompositeComponentTypeRequestBuilder {
     /// Consumes the builder and constructs a [`CompositeComponentTypeRequest`](crate::types::CompositeComponentTypeRequest).
     pub fn build(self) -> crate::types::CompositeComponentTypeRequest {
         crate::types::CompositeComponentTypeRequest {
-            component_type_id: self.component_type_id,
+            component_type_id: self.component_type_id
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppOutput {
+pub struct CreateAppOutput  {
     /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }
-impl CreateAppOutput {
+impl  CreateAppOutput  {
     /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
-    pub fn app(&self) -> ::std::option::Option<&crate::types::App> {
+    pub fn app(&self) -> ::std::option::Option<& crate::types::App> {
         self.app.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput).
     pub fn builder() -> crate::operation::create_app::builders::CreateAppOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateAppOutputBuilder {
     }
     /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub fn set_app(mut self, input: ::std::option::Option<crate::types::App>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub fn get_app(&self) -> &::std::option::Option<crate::types::App> {
         &self.app
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput).
     pub fn build(self) -> crate::operation::create_app::CreateAppOutput {
         crate::operation::create_app::CreateAppOutput {
-            app: self.app,
+            app: self.app
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

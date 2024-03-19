@@ -3,16 +3,17 @@
 /// <p>The connector metadata specific to Amazon Honeycode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HoneycodeMetadata {
+pub struct HoneycodeMetadata  {
     /// <p>The desired authorization scope for the Amazon Honeycode account.</p>
-    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl HoneycodeMetadata {
+impl  HoneycodeMetadata  {
     /// <p>The desired authorization scope for the Amazon Honeycode account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
-    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
-        self.o_auth_scopes.as_deref().unwrap_or_default()
+    pub fn o_auth_scopes(&self) -> & [::std::string::String] {
+        self.o_auth_scopes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HoneycodeMetadata {
@@ -26,7 +27,7 @@ impl HoneycodeMetadata {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HoneycodeMetadataBuilder {
-    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl HoneycodeMetadataBuilder {
     /// Appends an item to `o_auth_scopes`.
@@ -36,23 +37,24 @@ impl HoneycodeMetadataBuilder {
     /// <p>The desired authorization scope for the Amazon Honeycode account.</p>
     pub fn o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.o_auth_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.o_auth_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The desired authorization scope for the Amazon Honeycode account.</p>
-    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.o_auth_scopes = input;
-        self
+    pub fn set_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.o_auth_scopes = input; self
     }
     /// <p>The desired authorization scope for the Amazon Honeycode account.</p>
-    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`HoneycodeMetadata`](crate::types::HoneycodeMetadata).
     pub fn build(self) -> crate::types::HoneycodeMetadata {
         crate::types::HoneycodeMetadata {
-            o_auth_scopes: self.o_auth_scopes,
+            o_auth_scopes: self.o_auth_scopes
+            ,
         }
     }
 }
+

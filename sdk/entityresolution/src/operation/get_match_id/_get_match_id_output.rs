@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMatchIdOutput {
+pub struct GetMatchIdOutput  {
     /// <p>The unique identifiers for this group of match records.</p>
     pub match_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetMatchIdOutput {
+impl  GetMatchIdOutput  {
     /// <p>The unique identifiers for this group of match records.</p>
-    pub fn match_id(&self) -> ::std::option::Option<&str> {
+    pub fn match_id(&self) -> ::std::option::Option<& str> {
         self.match_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMatchIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMatchIdOutput {
     /// Creates a new builder-style object to manufacture [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput).
     pub fn builder() -> crate::operation::get_match_id::builders::GetMatchIdOutputBuilder {
@@ -40,27 +40,28 @@ impl GetMatchIdOutputBuilder {
     }
     /// <p>The unique identifiers for this group of match records.</p>
     pub fn set_match_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.match_id = input;
-        self
+        self.match_id = input; self
     }
     /// <p>The unique identifiers for this group of match records.</p>
     pub fn get_match_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.match_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput).
     pub fn build(self) -> crate::operation::get_match_id::GetMatchIdOutput {
         crate::operation::get_match_id::GetMatchIdOutput {
-            match_id: self.match_id,
+            match_id: self.match_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

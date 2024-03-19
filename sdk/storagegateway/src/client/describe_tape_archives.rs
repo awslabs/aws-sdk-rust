@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTapeArchives`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`tape_arns(impl Into<String>)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::tape_arns) / [`set_tape_arns(Option<Vec::<String>>)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::set_tape_arns):<br>required: **false**<br><p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::set_marker):<br>required: **false**<br><p>An opaque string that indicates the position at which to begin describing virtual tapes.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::set_limit):<br>required: **false**<br><p>Specifies that the number of virtual tapes described be limited to the specified number.</p><br>
-    /// - On success, responds with [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput) with field(s):
+                            /// - On success, responds with [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput) with field(s):
     ///   - [`tape_archives(Option<Vec::<TapeArchive>>)`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput::tape_archives): <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput::marker): <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
-    /// - On failure, responds with [`SdkError<DescribeTapeArchivesError>`](crate::operation::describe_tape_archives::DescribeTapeArchivesError)
+                            /// - On failure, responds with [`SdkError<DescribeTapeArchivesError>`](crate::operation::describe_tape_archives::DescribeTapeArchivesError)
     pub fn describe_tape_archives(&self) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder {
-        crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_tape_archives::builders::DescribeTapeArchivesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

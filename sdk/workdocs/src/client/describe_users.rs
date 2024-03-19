@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUsers`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_organization_id):<br>required: **false**<br><p>The ID of the organization.</p><br>
     ///   - [`user_ids(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::user_ids) / [`set_user_ids(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_user_ids):<br>required: **false**<br><p>The IDs of the users.</p><br>
@@ -14,12 +14,13 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`fields(impl Into<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::fields) / [`set_fields(Option<String>)`](crate::operation::describe_users::builders::DescribeUsersFluentBuilder::set_fields):<br>required: **false**<br><p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p><br>
-    /// - On success, responds with [`DescribeUsersOutput`](crate::operation::describe_users::DescribeUsersOutput) with field(s):
+                            /// - On success, responds with [`DescribeUsersOutput`](crate::operation::describe_users::DescribeUsersOutput) with field(s):
     ///   - [`users(Option<Vec::<User>>)`](crate::operation::describe_users::DescribeUsersOutput::users): <p>The users.</p>
     ///   - [`total_number_of_users(Option<i64>)`](crate::operation::describe_users::DescribeUsersOutput::total_number_of_users): <p>The total number of users included in the results.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
+                            /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
     pub fn describe_users(&self) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
-        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

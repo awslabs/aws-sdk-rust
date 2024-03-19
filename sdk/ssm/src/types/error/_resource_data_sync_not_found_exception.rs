@@ -3,7 +3,7 @@
 /// <p>The specified sync name wasn't found.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDataSyncNotFoundException {
+pub struct ResourceDataSyncNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     pub sync_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -12,27 +12,25 @@ pub struct ResourceDataSyncNotFoundException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ResourceDataSyncNotFoundException {
+impl  ResourceDataSyncNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sync_name(&self) -> ::std::option::Option<&str> {
+    pub fn sync_name(&self) -> ::std::option::Option<& str> {
         self.sync_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sync_type(&self) -> ::std::option::Option<&str> {
+    pub fn sync_type(&self) -> ::std::option::Option<& str> {
         self.sync_type.as_deref()
     }
 }
 impl ResourceDataSyncNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ResourceDataSyncNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceDataSyncNotFoundException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -47,9 +45,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ResourceDataSyn
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceDataSyncNotFoundException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ResourceDataSyncNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceDataSyncNotFoundException`](crate::types::error::ResourceDataSyncNotFoundException).
@@ -75,8 +71,7 @@ impl ResourceDataSyncNotFoundExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_name = input;
-        self
+        self.sync_name = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ResourceDataSyncNotFoundExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,31 +97,34 @@ impl ResourceDataSyncNotFoundExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ResourceDataSyncNotFoundException`](crate::types::error::ResourceDataSyncNotFoundException).
     pub fn build(self) -> crate::types::error::ResourceDataSyncNotFoundException {
         crate::types::error::ResourceDataSyncNotFoundException {
-            sync_name: self.sync_name,
-            sync_type: self.sync_type,
-            message: self.message,
+            sync_name: self.sync_name
+            ,
+            sync_type: self.sync_type
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

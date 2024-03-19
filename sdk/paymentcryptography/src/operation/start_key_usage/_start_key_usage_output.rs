@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartKeyUsageOutput {
+pub struct StartKeyUsageOutput  {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }
-impl StartKeyUsageOutput {
+impl  StartKeyUsageOutput  {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::Key> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::Key> {
         self.key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartKeyUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartKeyUsageOutput {
     /// Creates a new builder-style object to manufacture [`StartKeyUsageOutput`](crate::operation::start_key_usage::StartKeyUsageOutput).
     pub fn builder() -> crate::operation::start_key_usage::builders::StartKeyUsageOutputBuilder {
@@ -41,27 +41,28 @@ impl StartKeyUsageOutputBuilder {
     }
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Key>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
         &self.key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartKeyUsageOutput`](crate::operation::start_key_usage::StartKeyUsageOutput).
     pub fn build(self) -> crate::operation::start_key_usage::StartKeyUsageOutput {
         crate::operation::start_key_usage::StartKeyUsageOutput {
-            key: self.key,
+            key: self.key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

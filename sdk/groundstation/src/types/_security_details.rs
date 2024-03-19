@@ -3,29 +3,26 @@
 /// <p>Information about endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityDetails {
+pub struct SecurityDetails  {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
+    pub security_group_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub role_arn: ::std::string::String,
 }
-impl SecurityDetails {
+impl  SecurityDetails  {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.security_group_ids.deref()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.security_group_ids.deref()
     }
     /// <p>ARN to a role needed for connecting streams to your instances.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl SecurityDetails {
@@ -39,8 +36,8 @@ impl SecurityDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityDetailsBuilder {
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl SecurityDetailsBuilder {
@@ -51,17 +48,16 @@ impl SecurityDetailsBuilder {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
@@ -71,17 +67,16 @@ impl SecurityDetailsBuilder {
     /// <p>The security groups to attach to the elastic network interfaces.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>ARN to a role needed for connecting streams to your instances.</p>
@@ -92,8 +87,7 @@ impl SecurityDetailsBuilder {
     }
     /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>ARN to a role needed for connecting streams to your instances.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +99,25 @@ impl SecurityDetailsBuilder {
     /// - [`security_group_ids`](crate::types::builders::SecurityDetailsBuilder::security_group_ids)
     /// - [`role_arn`](crate::types::builders::SecurityDetailsBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SecurityDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SecurityDetails {
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building SecurityDetails",
-                )
-            })?,
-            security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "security_group_ids",
-                    "security_group_ids was not specified but it is required when building SecurityDetails",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SecurityDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SecurityDetails {
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building SecurityDetails")
+                    )?
+                ,
+                security_group_ids: self.security_group_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("security_group_ids", "security_group_ids was not specified but it is required when building SecurityDetails")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SecurityDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

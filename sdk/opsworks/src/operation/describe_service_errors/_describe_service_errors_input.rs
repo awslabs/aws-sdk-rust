@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServiceErrorsInput {
+pub struct DescribeServiceErrorsInput  {
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub service_error_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_error_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeServiceErrorsInput {
+impl  DescribeServiceErrorsInput  {
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_error_ids.is_none()`.
-    pub fn service_error_ids(&self) -> &[::std::string::String] {
-        self.service_error_ids.as_deref().unwrap_or_default()
+    pub fn service_error_ids(&self) -> & [::std::string::String] {
+        self.service_error_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeServiceErrorsInput {
@@ -39,7 +40,7 @@ impl DescribeServiceErrorsInput {
 pub struct DescribeServiceErrorsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) service_error_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_error_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeServiceErrorsInputBuilder {
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
@@ -49,8 +50,7 @@ impl DescribeServiceErrorsInputBuilder {
     }
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +63,7 @@ impl DescribeServiceErrorsInputBuilder {
     }
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,28 +76,30 @@ impl DescribeServiceErrorsInputBuilder {
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
     pub fn service_error_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_error_ids.unwrap_or_default();
-        v.push(input.into());
-        self.service_error_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_error_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn set_service_error_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_error_ids = input;
-        self
+    pub fn set_service_error_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_error_ids = input; self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn get_service_error_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_error_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_error_ids
     }
     /// Consumes the builder and constructs a [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_service_errors::DescribeServiceErrorsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_service_errors::DescribeServiceErrorsInput {
-            stack_id: self.stack_id,
-            instance_id: self.instance_id,
-            service_error_ids: self.service_error_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_service_errors::DescribeServiceErrorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_service_errors::DescribeServiceErrorsInput {
+                stack_id: self.stack_id
+                ,
+                instance_id: self.instance_id
+                ,
+                service_error_ids: self.service_error_ids
+                ,
+            }
+        )
     }
 }
+

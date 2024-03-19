@@ -3,7 +3,7 @@
 /// <p>Structure that contains the settings for a media stream sink.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MediaStreamSink {
+pub struct MediaStreamSink  {
     /// <p>The ARN of the media stream sink.</p>
     pub sink_arn: ::std::string::String,
     /// <p>The media stream sink's type.</p>
@@ -13,14 +13,13 @@ pub struct MediaStreamSink {
     /// <p>The media stream sink's media stream type.</p>
     pub media_stream_type: crate::types::MediaStreamType,
 }
-impl MediaStreamSink {
+impl  MediaStreamSink  {
     /// <p>The ARN of the media stream sink.</p>
-    pub fn sink_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.sink_arn.deref()
+    pub fn sink_arn(&self) -> & str {
+        use std::ops::Deref; self.sink_arn.deref()
     }
     /// <p>The media stream sink's type.</p>
-    pub fn sink_type(&self) -> &crate::types::MediaStreamPipelineSinkType {
+    pub fn sink_type(&self) -> & crate::types::MediaStreamPipelineSinkType {
         &self.sink_type
     }
     /// <p>Specifies the number of streams that the sink can accept.</p>
@@ -28,11 +27,11 @@ impl MediaStreamSink {
         self.reserved_stream_capacity
     }
     /// <p>The media stream sink's media stream type.</p>
-    pub fn media_stream_type(&self) -> &crate::types::MediaStreamType {
+    pub fn media_stream_type(&self) -> & crate::types::MediaStreamType {
         &self.media_stream_type
     }
 }
-impl ::std::fmt::Debug for MediaStreamSink {
+impl  ::std::fmt::Debug for MediaStreamSink  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamSink");
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
@@ -67,8 +66,7 @@ impl MediaStreamSinkBuilder {
     }
     /// <p>The ARN of the media stream sink.</p>
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_arn = input;
-        self
+        self.sink_arn = input; self
     }
     /// <p>The ARN of the media stream sink.</p>
     pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl MediaStreamSinkBuilder {
     }
     /// <p>The media stream sink's type.</p>
     pub fn set_sink_type(mut self, input: ::std::option::Option<crate::types::MediaStreamPipelineSinkType>) -> Self {
-        self.sink_type = input;
-        self
+        self.sink_type = input; self
     }
     /// <p>The media stream sink's type.</p>
     pub fn get_sink_type(&self) -> &::std::option::Option<crate::types::MediaStreamPipelineSinkType> {
@@ -97,8 +94,7 @@ impl MediaStreamSinkBuilder {
     }
     /// <p>Specifies the number of streams that the sink can accept.</p>
     pub fn set_reserved_stream_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reserved_stream_capacity = input;
-        self
+        self.reserved_stream_capacity = input; self
     }
     /// <p>Specifies the number of streams that the sink can accept.</p>
     pub fn get_reserved_stream_capacity(&self) -> &::std::option::Option<i32> {
@@ -112,8 +108,7 @@ impl MediaStreamSinkBuilder {
     }
     /// <p>The media stream sink's media stream type.</p>
     pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
-        self.media_stream_type = input;
-        self
+        self.media_stream_type = input; self
     }
     /// <p>The media stream sink's media stream type.</p>
     pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
@@ -126,32 +121,30 @@ impl MediaStreamSinkBuilder {
     /// - [`reserved_stream_capacity`](crate::types::builders::MediaStreamSinkBuilder::reserved_stream_capacity)
     /// - [`media_stream_type`](crate::types::builders::MediaStreamSinkBuilder::media_stream_type)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSink, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaStreamSink {
-            sink_arn: self.sink_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sink_arn",
-                    "sink_arn was not specified but it is required when building MediaStreamSink",
-                )
-            })?,
-            sink_type: self.sink_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sink_type",
-                    "sink_type was not specified but it is required when building MediaStreamSink",
-                )
-            })?,
-            reserved_stream_capacity: self.reserved_stream_capacity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reserved_stream_capacity",
-                    "reserved_stream_capacity was not specified but it is required when building MediaStreamSink",
-                )
-            })?,
-            media_stream_type: self.media_stream_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "media_stream_type",
-                    "media_stream_type was not specified but it is required when building MediaStreamSink",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaStreamSink {
+                sink_arn: self.sink_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sink_arn", "sink_arn was not specified but it is required when building MediaStreamSink")
+                    )?
+                ,
+                sink_type: self.sink_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sink_type", "sink_type was not specified but it is required when building MediaStreamSink")
+                    )?
+                ,
+                reserved_stream_capacity: self.reserved_stream_capacity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reserved_stream_capacity", "reserved_stream_capacity was not specified but it is required when building MediaStreamSink")
+                    )?
+                ,
+                media_stream_type: self.media_stream_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("media_stream_type", "media_stream_type was not specified but it is required when building MediaStreamSink")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for MediaStreamSinkBuilder {
@@ -164,3 +157,4 @@ impl ::std::fmt::Debug for MediaStreamSinkBuilder {
         formatter.finish()
     }
 }
+

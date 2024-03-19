@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstanceFleetsInput {
+pub struct ListInstanceFleetsInput  {
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListInstanceFleetsInput {
+impl  ListInstanceFleetsInput  {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListInstanceFleetsInputBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl ListInstanceFleetsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListInstanceFleetsInput`](crate::operation::list_instance_fleets::ListInstanceFleetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_instance_fleets::ListInstanceFleetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_instance_fleets::ListInstanceFleetsInput {
-            cluster_id: self.cluster_id,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_instance_fleets::ListInstanceFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_instance_fleets::ListInstanceFleetsInput {
+                cluster_id: self.cluster_id
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

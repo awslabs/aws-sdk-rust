@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecommenderInput {
+pub struct UpdateRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
     pub recommender_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details of the recommender.</p>
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
 }
-impl UpdateRecommenderInput {
+impl  UpdateRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
+    pub fn recommender_config(&self) -> ::std::option::Option<& crate::types::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
     pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateRecommenderInputBuilder {
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
-        self.recommender_config = input;
-        self
+        self.recommender_config = input; self
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         &self.recommender_config
     }
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_recommender::UpdateRecommenderInput {
-            recommender_arn: self.recommender_arn,
-            recommender_config: self.recommender_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_recommender::UpdateRecommenderInput {
+                recommender_arn: self.recommender_arn
+                ,
+                recommender_config: self.recommender_config
+                ,
+            }
+        )
     }
 }
+

@@ -7,19 +7,19 @@
 /// <p>Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <code>XssMatchSet</code> or delete it from an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XssMatchSetUpdate {
+pub struct XssMatchSetUpdate  {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     pub action: crate::types::ChangeAction,
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub xss_match_tuple: ::std::option::Option<crate::types::XssMatchTuple>,
 }
-impl XssMatchSetUpdate {
+impl  XssMatchSetUpdate  {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-    pub fn action(&self) -> &crate::types::ChangeAction {
+    pub fn action(&self) -> & crate::types::ChangeAction {
         &self.action
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    pub fn xss_match_tuple(&self) -> ::std::option::Option<&crate::types::XssMatchTuple> {
+    pub fn xss_match_tuple(&self) -> ::std::option::Option<& crate::types::XssMatchTuple> {
         self.xss_match_tuple.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl XssMatchSetUpdateBuilder {
     }
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
@@ -61,8 +60,7 @@ impl XssMatchSetUpdateBuilder {
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn set_xss_match_tuple(mut self, input: ::std::option::Option<crate::types::XssMatchTuple>) -> Self {
-        self.xss_match_tuple = input;
-        self
+        self.xss_match_tuple = input; self
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn get_xss_match_tuple(&self) -> &::std::option::Option<crate::types::XssMatchTuple> {
@@ -72,14 +70,17 @@ impl XssMatchSetUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::XssMatchSetUpdateBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::XssMatchSetUpdate {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building XssMatchSetUpdate",
-                )
-            })?,
-            xss_match_tuple: self.xss_match_tuple,
-        })
+        ::std::result::Result::Ok(
+            crate::types::XssMatchSetUpdate {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building XssMatchSetUpdate")
+                    )?
+                ,
+                xss_match_tuple: self.xss_match_tuple
+                ,
+            }
+        )
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuerySuggestionsBlockListSummary {
+pub struct QuerySuggestionsBlockListSummary  {
     /// <p>The identifier of a block list.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the block list.</p>
@@ -19,25 +19,25 @@ pub struct QuerySuggestionsBlockListSummary {
     /// <p>The number of items in the block list file.</p>
     pub item_count: ::std::option::Option<i32>,
 }
-impl QuerySuggestionsBlockListSummary {
+impl  QuerySuggestionsBlockListSummary  {
     /// <p>The identifier of a block list.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the block list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the block list.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QuerySuggestionsBlockListStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::QuerySuggestionsBlockListStatus> {
         self.status.as_ref()
     }
     /// <p>The Unix timestamp when the block list was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the block list was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The number of items in the block list file.</p>
@@ -71,8 +71,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The identifier of a block list.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of a block list.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The name of the block list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the block list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The status of the block list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuerySuggestionsBlockListStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the block list.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QuerySuggestionsBlockListStatus> {
@@ -113,8 +110,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The Unix timestamp when the block list was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the block list was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +123,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The Unix timestamp when the block list was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the block list was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +136,7 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     }
     /// <p>The number of items in the block list file.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>The number of items in the block list file.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -151,12 +145,19 @@ impl QuerySuggestionsBlockListSummaryBuilder {
     /// Consumes the builder and constructs a [`QuerySuggestionsBlockListSummary`](crate::types::QuerySuggestionsBlockListSummary).
     pub fn build(self) -> crate::types::QuerySuggestionsBlockListSummary {
         crate::types::QuerySuggestionsBlockListSummary {
-            id: self.id,
-            name: self.name,
-            status: self.status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            item_count: self.item_count,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            item_count: self.item_count
+            ,
         }
     }
 }
+

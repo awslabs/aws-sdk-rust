@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssociatedStacksInput {
+pub struct ListAssociatedStacksInput  {
     /// <p>The name of the fleet.</p>
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAssociatedStacksInput {
+impl  ListAssociatedStacksInput  {
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListAssociatedStacksInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl ListAssociatedStacksInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAssociatedStacksInput`](crate::operation::list_associated_stacks::ListAssociatedStacksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_associated_stacks::ListAssociatedStacksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_associated_stacks::ListAssociatedStacksInput {
-            fleet_name: self.fleet_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_associated_stacks::ListAssociatedStacksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_associated_stacks::ListAssociatedStacksInput {
+                fleet_name: self.fleet_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

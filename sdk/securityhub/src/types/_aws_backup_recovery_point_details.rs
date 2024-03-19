@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about the recovery points stored in an Backup backup vault. A backup, or recovery point, represents the content of a resource at a specified time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsBackupRecoveryPointDetails {
+pub struct AwsBackupRecoveryPointDetails  {
     /// <p>The size, in bytes, of a backup.</p>
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault.</p>
@@ -61,41 +61,41 @@ pub struct AwsBackupRecoveryPointDetails {
     /// </ul>
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
-impl AwsBackupRecoveryPointDetails {
+impl  AwsBackupRecoveryPointDetails  {
     /// <p>The size, in bytes, of a backup.</p>
     pub fn backup_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_in_bytes
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    pub fn calculated_lifecycle(&self) -> ::std::option::Option<&crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails> {
+    pub fn calculated_lifecycle(&self) -> ::std::option::Option<& crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails> {
         self.calculated_lifecycle.as_ref()
     }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> ::std::option::Option<&str> {
+    pub fn completion_date(&self) -> ::std::option::Option<& str> {
         self.completion_date.as_deref()
     }
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::AwsBackupRecoveryPointCreatedByDetails> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::AwsBackupRecoveryPointCreatedByDetails> {
         self.created_by.as_ref()
     }
     /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The ARN for the server-side encryption key that is used to protect your backups.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
@@ -103,27 +103,27 @@ impl AwsBackupRecoveryPointDetails {
         self.is_encrypted
     }
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_restore_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_restore_time(&self) -> ::std::option::Option<& str> {
         self.last_restore_time.as_deref()
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::AwsBackupRecoveryPointLifecycleDetails> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::AwsBackupRecoveryPointLifecycleDetails> {
         self.lifecycle.as_ref()
     }
     /// <p>An ARN that uniquely identifies a recovery point.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null.</p>
-    pub fn source_backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.source_backup_vault_arn.as_deref()
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
@@ -137,11 +137,11 @@ impl AwsBackupRecoveryPointDetails {
     /// <li>
     /// <p><code>PARTIAL</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
@@ -153,7 +153,7 @@ impl AwsBackupRecoveryPointDetails {
     /// <li>
     /// <p><code>WARM</code></p></li>
     /// </ul>
-    pub fn storage_class(&self) -> ::std::option::Option<&str> {
+    pub fn storage_class(&self) -> ::std::option::Option<& str> {
         self.storage_class.as_deref()
     }
 }
@@ -196,8 +196,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The size, in bytes, of a backup.</p>
     pub fn set_backup_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.backup_size_in_bytes = input;
-        self
+        self.backup_size_in_bytes = input; self
     }
     /// <p>The size, in bytes, of a backup.</p>
     pub fn get_backup_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -210,8 +209,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +222,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +235,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
     pub fn set_calculated_lifecycle(mut self, input: ::std::option::Option<crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails>) -> Self {
-        self.calculated_lifecycle = input;
-        self
+        self.calculated_lifecycle = input; self
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
     pub fn get_calculated_lifecycle(&self) -> &::std::option::Option<crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails> {
@@ -252,8 +248,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_completion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.completion_date = input;
-        self
+        self.completion_date = input; self
     }
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_completion_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +261,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::AwsBackupRecoveryPointCreatedByDetails>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::AwsBackupRecoveryPointCreatedByDetails> {
@@ -280,8 +274,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +287,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The ARN for the server-side encryption key that is used to protect your backups.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The ARN for the server-side encryption key that is used to protect your backups.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +300,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,8 +313,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
     pub fn set_is_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_encrypted = input;
-        self
+        self.is_encrypted = input; self
     }
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
     pub fn get_is_encrypted(&self) -> &::std::option::Option<bool> {
@@ -336,8 +326,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_last_restore_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_restore_time = input;
-        self
+        self.last_restore_time = input; self
     }
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_last_restore_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +339,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::AwsBackupRecoveryPointLifecycleDetails>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::AwsBackupRecoveryPointLifecycleDetails> {
@@ -364,8 +352,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>An ARN that uniquely identifies a recovery point.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a recovery point.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -378,8 +365,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,8 +378,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -406,8 +391,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null.</p>
     pub fn set_source_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_backup_vault_arn = input;
-        self
+        self.source_backup_vault_arn = input; self
     }
     /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null.</p>
     pub fn get_source_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -440,8 +424,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
@@ -464,8 +447,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -494,8 +476,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     /// <p><code>WARM</code></p></li>
     /// </ul>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
@@ -512,25 +493,45 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointDetails`](crate::types::AwsBackupRecoveryPointDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointDetails {
         crate::types::AwsBackupRecoveryPointDetails {
-            backup_size_in_bytes: self.backup_size_in_bytes,
-            backup_vault_arn: self.backup_vault_arn,
-            backup_vault_name: self.backup_vault_name,
-            calculated_lifecycle: self.calculated_lifecycle,
-            completion_date: self.completion_date,
-            created_by: self.created_by,
-            creation_date: self.creation_date,
-            encryption_key_arn: self.encryption_key_arn,
-            iam_role_arn: self.iam_role_arn,
-            is_encrypted: self.is_encrypted,
-            last_restore_time: self.last_restore_time,
-            lifecycle: self.lifecycle,
-            recovery_point_arn: self.recovery_point_arn,
-            resource_arn: self.resource_arn,
-            resource_type: self.resource_type,
-            source_backup_vault_arn: self.source_backup_vault_arn,
-            status: self.status,
-            status_message: self.status_message,
-            storage_class: self.storage_class,
+            backup_size_in_bytes: self.backup_size_in_bytes
+            ,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            backup_vault_name: self.backup_vault_name
+            ,
+            calculated_lifecycle: self.calculated_lifecycle
+            ,
+            completion_date: self.completion_date
+            ,
+            created_by: self.created_by
+            ,
+            creation_date: self.creation_date
+            ,
+            encryption_key_arn: self.encryption_key_arn
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            is_encrypted: self.is_encrypted
+            ,
+            last_restore_time: self.last_restore_time
+            ,
+            lifecycle: self.lifecycle
+            ,
+            recovery_point_arn: self.recovery_point_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            resource_type: self.resource_type
+            ,
+            source_backup_vault_arn: self.source_backup_vault_arn
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            storage_class: self.storage_class
+            ,
         }
     }
 }
+

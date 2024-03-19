@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an instance profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceProfile {
+pub struct InstanceProfile  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the instance profile.</p>
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where the instance profile runs.</p>
@@ -25,21 +25,21 @@ pub struct InstanceProfile {
     /// <p>The identifier of the subnet group that is associated with the instance profile.</p>
     pub subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl InstanceProfile {
+impl  InstanceProfile  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the instance profile.</p>
-    pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The Availability Zone where the instance profile runs.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt the connection parameters for the instance profile.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyArn</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>Specifies the accessibility options for the instance profile. A value of <code>true</code> represents an instance profile with a public IP address. A value of <code>false</code> represents an instance profile with a private IP address. The default value is <code>true</code>.</p>
@@ -47,30 +47,31 @@ impl InstanceProfile {
         self.publicly_accessible
     }
     /// <p>Specifies the network type for the instance profile. A value of <code>IPV4</code> represents an instance profile with IPv4 network type and only supports IPv4 addressing. A value of <code>IPV6</code> represents an instance profile with IPv6 network type and only supports IPv6 addressing. A value of <code>DUAL</code> represents an instance profile with dual network type that supports IPv4 and IPv6 addressing.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
+    pub fn network_type(&self) -> ::std::option::Option<& str> {
         self.network_type.as_deref()
     }
     /// <p>The user-friendly name for the instance profile.</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>A description of the instance profile. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the instance profile was created.</p>
-    pub fn instance_profile_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn instance_profile_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.instance_profile_creation_time.as_ref()
     }
     /// <p>The identifier of the subnet group that is associated with the instance profile.</p>
-    pub fn subnet_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_group_identifier(&self) -> ::std::option::Option<& str> {
         self.subnet_group_identifier.as_deref()
     }
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
-    pub fn vpc_security_groups(&self) -> &[::std::string::String] {
-        self.vpc_security_groups.as_deref().unwrap_or_default()
+    pub fn vpc_security_groups(&self) -> & [::std::string::String] {
+        self.vpc_security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InstanceProfile {
@@ -93,7 +94,7 @@ pub struct InstanceProfileBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) subnet_group_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InstanceProfileBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the instance profile.</p>
@@ -103,8 +104,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the instance profile.</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_arn = input;
-        self
+        self.instance_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the instance profile.</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +117,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>The Availability Zone where the instance profile runs.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone where the instance profile runs.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl InstanceProfileBuilder {
     /// <p>If you don't specify a value for the <code>KmsKeyArn</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt the connection parameters for the instance profile.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyArn</code> parameter, then DMS uses your default encryption key.</p>
@@ -151,8 +149,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>Specifies the accessibility options for the instance profile. A value of <code>true</code> represents an instance profile with a public IP address. A value of <code>false</code> represents an instance profile with a private IP address. The default value is <code>true</code>.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies the accessibility options for the instance profile. A value of <code>true</code> represents an instance profile with a public IP address. A value of <code>false</code> represents an instance profile with a private IP address. The default value is <code>true</code>.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -165,8 +162,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>Specifies the network type for the instance profile. A value of <code>IPV4</code> represents an instance profile with IPv4 network type and only supports IPv4 addressing. A value of <code>IPV6</code> represents an instance profile with IPv6 network type and only supports IPv6 addressing. A value of <code>DUAL</code> represents an instance profile with dual network type that supports IPv4 and IPv6 addressing.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>Specifies the network type for the instance profile. A value of <code>IPV4</code> represents an instance profile with IPv4 network type and only supports IPv4 addressing. A value of <code>IPV6</code> represents an instance profile with IPv6 network type and only supports IPv6 addressing. A value of <code>DUAL</code> represents an instance profile with dual network type that supports IPv4 and IPv6 addressing.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>The user-friendly name for the instance profile.</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_name = input;
-        self
+        self.instance_profile_name = input; self
     }
     /// <p>The user-friendly name for the instance profile.</p>
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +188,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>A description of the instance profile. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the instance profile. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +201,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>The time the instance profile was created.</p>
     pub fn set_instance_profile_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.instance_profile_creation_time = input;
-        self
+        self.instance_profile_creation_time = input; self
     }
     /// <p>The time the instance profile was created.</p>
     pub fn get_instance_profile_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -221,8 +214,7 @@ impl InstanceProfileBuilder {
     }
     /// <p>The identifier of the subnet group that is associated with the instance profile.</p>
     pub fn set_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_group_identifier = input;
-        self
+        self.subnet_group_identifier = input; self
     }
     /// <p>The identifier of the subnet group that is associated with the instance profile.</p>
     pub fn get_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,32 +227,42 @@ impl InstanceProfileBuilder {
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
     pub fn vpc_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_groups = input;
-        self
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_groups = input; self
     }
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_groups
     }
     /// Consumes the builder and constructs a [`InstanceProfile`](crate::types::InstanceProfile).
     pub fn build(self) -> crate::types::InstanceProfile {
         crate::types::InstanceProfile {
-            instance_profile_arn: self.instance_profile_arn,
-            availability_zone: self.availability_zone,
-            kms_key_arn: self.kms_key_arn,
-            publicly_accessible: self.publicly_accessible,
-            network_type: self.network_type,
-            instance_profile_name: self.instance_profile_name,
-            description: self.description,
-            instance_profile_creation_time: self.instance_profile_creation_time,
-            subnet_group_identifier: self.subnet_group_identifier,
-            vpc_security_groups: self.vpc_security_groups,
+            instance_profile_arn: self.instance_profile_arn
+            ,
+            availability_zone: self.availability_zone
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            network_type: self.network_type
+            ,
+            instance_profile_name: self.instance_profile_name
+            ,
+            description: self.description
+            ,
+            instance_profile_creation_time: self.instance_profile_creation_time
+            ,
+            subnet_group_identifier: self.subnet_group_identifier
+            ,
+            vpc_security_groups: self.vpc_security_groups
+            ,
         }
     }
 }
+

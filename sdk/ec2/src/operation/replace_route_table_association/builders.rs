@@ -5,55 +5,51 @@ pub use crate::operation::replace_route_table_association::_replace_route_table_
 
 impl ReplaceRouteTableAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.replace_route_table_association();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.replace_route_table_association();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ReplaceRouteTableAssociation`.
-///
+/// 
 /// <p>Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC. After the operation completes, the subnet or gateway uses the routes in the new route table. For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>
 /// <p>You can also use this operation to change which table is the main route table in the VPC. Specify the main route table's association ID and the route table ID of the new main route table.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder,
+                    inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-    > for ReplaceRouteTableAssociationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+                    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
+                > for ReplaceRouteTableAssociationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+                        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ReplaceRouteTableAssociationFluentBuilder {
     /// Creates a new `ReplaceRouteTableAssociation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::replace_route_table_association::ReplaceRouteTableAssociation::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
-        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::replace_route_table_association::ReplaceRouteTableAssociation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::replace_route_table_association::ReplaceRouteTableAssociation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput, crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The association ID.</p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
@@ -152,3 +139,4 @@ impl ReplaceRouteTableAssociationFluentBuilder {
         self.inner.get_route_table_id()
     }
 }
+

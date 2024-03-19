@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMaintenanceWindowExecutionOutput {
+pub struct CancelMaintenanceWindowExecutionOutput  {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CancelMaintenanceWindowExecutionOutput {
+impl  CancelMaintenanceWindowExecutionOutput  {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelMaintenanceWindowExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelMaintenanceWindowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
     pub fn builder() -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder {
@@ -40,27 +40,28 @@ impl CancelMaintenanceWindowExecutionOutputBuilder {
     }
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
     pub fn build(self) -> crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput {
         crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput {
-            window_execution_id: self.window_execution_id,
+            window_execution_id: self.window_execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

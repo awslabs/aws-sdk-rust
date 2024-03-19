@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignalApplicationInstanceNodeInstancesInput {
+pub struct SignalApplicationInstanceNodeInstancesInput  {
     /// <p>An application instance ID.</p>
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of signals.</p>
-    pub node_signals: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
+    pub node_signals: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSignal>>,
 }
-impl SignalApplicationInstanceNodeInstancesInput {
+impl  SignalApplicationInstanceNodeInstancesInput  {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> ::std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>A list of signals.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_signals.is_none()`.
-    pub fn node_signals(&self) -> &[crate::types::NodeSignal] {
-        self.node_signals.as_deref().unwrap_or_default()
+    pub fn node_signals(&self) -> & [crate::types::NodeSignal] {
+        self.node_signals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SignalApplicationInstanceNodeInstancesInput {
@@ -32,7 +33,7 @@ impl SignalApplicationInstanceNodeInstancesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) node_signals: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
+    pub(crate) node_signals: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSignal>>,
 }
 impl SignalApplicationInstanceNodeInstancesInputBuilder {
     /// <p>An application instance ID.</p>
@@ -43,8 +44,7 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
     }
     /// <p>An application instance ID.</p>
     pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id = input;
-        self
+        self.application_instance_id = input; self
     }
     /// <p>An application instance ID.</p>
     pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
     /// <p>A list of signals.</p>
     pub fn node_signals(mut self, input: crate::types::NodeSignal) -> Self {
         let mut v = self.node_signals.unwrap_or_default();
-        v.push(input);
-        self.node_signals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_signals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of signals.</p>
-    pub fn set_node_signals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>) -> Self {
-        self.node_signals = input;
-        self
+    pub fn set_node_signals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeSignal>>) -> Self {
+        self.node_signals = input; self
     }
     /// <p>A list of signals.</p>
-    pub fn get_node_signals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
+    pub fn get_node_signals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeSignal>> {
         &self.node_signals
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput {
-                application_instance_id: self.application_instance_id,
-                node_signals: self.node_signals,
-            },
+                application_instance_id: self.application_instance_id
+                ,
+                node_signals: self.node_signals
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAddonInput {
+pub struct DeleteAddonInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
@@ -10,13 +10,13 @@ pub struct DeleteAddonInput {
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub preserve: ::std::option::Option<bool>,
 }
-impl DeleteAddonInput {
+impl  DeleteAddonInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
@@ -48,8 +48,7 @@ impl DeleteAddonInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteAddonInputBuilder {
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl DeleteAddonInputBuilder {
     }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub fn set_preserve(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserve = input;
-        self
+        self.preserve = input; self
     }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub fn get_preserve(&self) -> &::std::option::Option<bool> {
@@ -86,10 +83,16 @@ impl DeleteAddonInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAddonInput`](crate::operation::delete_addon::DeleteAddonInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_addon::DeleteAddonInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_addon::DeleteAddonInput {
-            cluster_name: self.cluster_name,
-            addon_name: self.addon_name,
-            preserve: self.preserve,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_addon::DeleteAddonInput {
+                cluster_name: self.cluster_name
+                ,
+                addon_name: self.addon_name
+                ,
+                preserve: self.preserve
+                ,
+            }
+        )
     }
 }
+

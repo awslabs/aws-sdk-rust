@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxEnvironmentNetworkInput {
+pub struct UpdateKxEnvironmentNetworkInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateKxEnvironmentNetworkInput {
+impl  UpdateKxEnvironmentNetworkInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfiguration> {
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<& crate::types::TransitGatewayConfiguration> {
         self.transit_gateway_configuration.as_ref()
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_dns_configuration.is_none()`.
-    pub fn custom_dns_configuration(&self) -> &[crate::types::CustomDnsServer] {
-        self.custom_dns_configuration.as_deref().unwrap_or_default()
+    pub fn custom_dns_configuration(&self) -> & [crate::types::CustomDnsServer] {
+        self.custom_dns_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl UpdateKxEnvironmentNetworkInput {
 pub struct UpdateKxEnvironmentNetworkInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
-    pub(crate) custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub(crate) custom_dns_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKxEnvironmentNetworkInputBuilder {
@@ -57,8 +58,7 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn set_transit_gateway_configuration(mut self, input: ::std::option::Option<crate::types::TransitGatewayConfiguration>) -> Self {
-        self.transit_gateway_configuration = input;
-        self
+        self.transit_gateway_configuration = input; self
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
@@ -85,17 +84,16 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
     pub fn custom_dns_configuration(mut self, input: crate::types::CustomDnsServer) -> Self {
         let mut v = self.custom_dns_configuration.unwrap_or_default();
-        v.push(input);
-        self.custom_dns_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_dns_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>) -> Self {
-        self.custom_dns_configuration = input;
-        self
+    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>) -> Self {
+        self.custom_dns_configuration = input; self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>> {
         &self.custom_dns_configuration
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -105,25 +103,26 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateKxEnvironmentNetworkInput`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput {
-            environment_id: self.environment_id,
-            transit_gateway_configuration: self.transit_gateway_configuration,
-            custom_dns_configuration: self.custom_dns_configuration,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput {
+                environment_id: self.environment_id
+                ,
+                transit_gateway_configuration: self.transit_gateway_configuration
+                ,
+                custom_dns_configuration: self.custom_dns_configuration
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

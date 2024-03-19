@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegisterAccountStatusOutput {
+pub struct GetRegisterAccountStatusOutput  {
     /// <p>The unique ID of the Amazon Web Services account, provided at account creation.</p>
     pub customer_account_id: ::std::string::String,
     /// <p>The status of registering your account and resources. The status can be one of:</p>
@@ -25,11 +25,10 @@ pub struct GetRegisterAccountStatusOutput {
     pub last_modification_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetRegisterAccountStatusOutput {
+impl  GetRegisterAccountStatusOutput  {
     /// <p>The unique ID of the Amazon Web Services account, provided at account creation.</p>
-    pub fn customer_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.customer_account_id.deref()
+    pub fn customer_account_id(&self) -> & str {
+        use std::ops::Deref; self.customer_account_id.deref()
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
@@ -40,31 +39,31 @@ impl GetRegisterAccountStatusOutput {
     /// <li>
     /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
-    pub fn account_status(&self) -> &crate::types::RegistrationStatus {
+    pub fn account_status(&self) -> & crate::types::RegistrationStatus {
         &self.account_status
     }
     /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn timestream_registration_response(&self) -> ::std::option::Option<&crate::types::TimestreamRegistrationResponse> {
+    pub fn timestream_registration_response(&self) -> ::std::option::Option<& crate::types::TimestreamRegistrationResponse> {
         self.timestream_registration_response.as_ref()
     }
     /// <p>Information about the registered IAM resources or errors, if any.</p>
-    pub fn iam_registration_response(&self) -> ::std::option::Option<&crate::types::IamRegistrationResponse> {
+    pub fn iam_registration_response(&self) -> ::std::option::Option<& crate::types::IamRegistrationResponse> {
         self.iam_registration_response.as_ref()
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
 }
 impl ::aws_types::request_id::RequestId for GetRegisterAccountStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRegisterAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
     pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder {
@@ -93,8 +92,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The unique ID of the Amazon Web Services account, provided at account creation.</p>
     pub fn set_customer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_account_id = input;
-        self
+        self.customer_account_id = input; self
     }
     /// <p>The unique ID of the Amazon Web Services account, provided at account creation.</p>
     pub fn get_customer_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     pub fn set_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.account_status = input;
-        self
+        self.account_status = input; self
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
@@ -146,8 +143,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
     pub fn set_timestream_registration_response(mut self, input: ::std::option::Option<crate::types::TimestreamRegistrationResponse>) -> Self {
-        self.timestream_registration_response = input;
-        self
+        self.timestream_registration_response = input; self
     }
     /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
     pub fn get_timestream_registration_response(&self) -> &::std::option::Option<crate::types::TimestreamRegistrationResponse> {
@@ -161,8 +157,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>Information about the registered IAM resources or errors, if any.</p>
     pub fn set_iam_registration_response(mut self, input: ::std::option::Option<crate::types::IamRegistrationResponse>) -> Self {
-        self.iam_registration_response = input;
-        self
+        self.iam_registration_response = input; self
     }
     /// <p>Information about the registered IAM resources or errors, if any.</p>
     pub fn get_iam_registration_response(&self) -> &::std::option::Option<crate::types::IamRegistrationResponse> {
@@ -176,8 +171,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,62 +185,57 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`customer_account_id`](crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::customer_account_id)
     /// - [`account_status`](crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::account_status)
     /// - [`creation_time`](crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::creation_time)
     /// - [`last_modification_time`](crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::last_modification_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_register_account_status::GetRegisterAccountStatusOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
-            customer_account_id: self.customer_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "customer_account_id",
-                    "customer_account_id was not specified but it is required when building GetRegisterAccountStatusOutput",
-                )
-            })?,
-            account_status: self.account_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_status",
-                    "account_status was not specified but it is required when building GetRegisterAccountStatusOutput",
-                )
-            })?,
-            timestream_registration_response: self.timestream_registration_response,
-            iam_registration_response: self.iam_registration_response,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetRegisterAccountStatusOutput",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building GetRegisterAccountStatusOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_register_account_status::GetRegisterAccountStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
+                customer_account_id: self.customer_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("customer_account_id", "customer_account_id was not specified but it is required when building GetRegisterAccountStatusOutput")
+                    )?
+                ,
+                account_status: self.account_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_status", "account_status was not specified but it is required when building GetRegisterAccountStatusOutput")
+                    )?
+                ,
+                timestream_registration_response: self.timestream_registration_response
+                ,
+                iam_registration_response: self.iam_registration_response
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetRegisterAccountStatusOutput")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building GetRegisterAccountStatusOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

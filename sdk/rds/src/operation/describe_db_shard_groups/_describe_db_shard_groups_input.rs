@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbShardGroupsInput {
+pub struct DescribeDbShardGroupsInput  {
     /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct DescribeDbShardGroupsInput {
     /// </ul>
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB shard groups to describe.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBShardGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -19,24 +19,25 @@ pub struct DescribeDbShardGroupsInput {
     /// <p>Constraints: Minimum 20, maximum 100</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeDbShardGroupsInput {
+impl  DescribeDbShardGroupsInput  {
     /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If supplied, must match an existing DB shard group identifier.</p></li>
     /// </ul>
-    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_identifier.as_deref()
     }
     /// <p>A filter that specifies one or more DB shard groups to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBShardGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -58,7 +59,7 @@ impl DescribeDbShardGroupsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbShardGroupsInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -80,8 +81,7 @@ impl DescribeDbShardGroupsInputBuilder {
     /// <p>If supplied, must match an existing DB shard group identifier.</p></li>
     /// </ul>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_identifier = input;
-        self
+        self.db_shard_group_identifier = input; self
     }
     /// <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the DB shard group. If this parameter is specified, information for only the specific DB shard group is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -99,17 +99,16 @@ impl DescribeDbShardGroupsInputBuilder {
     /// <p>A filter that specifies one or more DB shard groups to describe.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more DB shard groups to describe.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more DB shard groups to describe.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBShardGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -119,8 +118,7 @@ impl DescribeDbShardGroupsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBShardGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBShardGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +135,7 @@ impl DescribeDbShardGroupsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -147,15 +144,19 @@ impl DescribeDbShardGroupsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeDbShardGroupsInput`](crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput {
-            db_shard_group_identifier: self.db_shard_group_identifier,
-            filters: self.filters,
-            marker: self.marker,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput {
+                db_shard_group_identifier: self.db_shard_group_identifier
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

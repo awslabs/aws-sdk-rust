@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFailbackReplicationConfigurationInput {
+pub struct GetFailbackReplicationConfigurationInput  {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetFailbackReplicationConfigurationInput {
+impl  GetFailbackReplicationConfigurationInput  {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetFailbackReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`GetFailbackReplicationConfigurationInput`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput {
-                recovery_instance_id: self.recovery_instance_id,
-            },
+                recovery_instance_id: self.recovery_instance_id
+                ,
+            }
         )
     }
 }
+

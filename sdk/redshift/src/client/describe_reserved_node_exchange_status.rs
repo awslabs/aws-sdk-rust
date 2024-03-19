@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedNodeExchangeStatus`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reserved_node_id(impl Into<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::reserved_node_id) / [`set_reserved_node_id(Option<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::set_reserved_node_id):<br>required: **false**<br><p>The identifier of the source reserved node in a reserved-node exchange request.</p><br>
     ///   - [`reserved_node_exchange_request_id(impl Into<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::reserved_node_exchange_request_id) / [`set_reserved_node_exchange_request_id(Option<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::set_reserved_node_exchange_request_id):<br>required: **false**<br><p>The identifier of the reserved-node exchange request.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p><br>
-    /// - On success, responds with [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput) with field(s):
     ///   - [`reserved_node_exchange_status_details(Option<Vec::<ReservedNodeExchangeStatus>>)`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput::reserved_node_exchange_status_details): <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput::marker): <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedNodeExchangeStatusError>`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError)
-    pub fn describe_reserved_node_exchange_status(
-        &self,
-    ) -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder {
-        crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReservedNodeExchangeStatusError>`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError)
+    pub fn describe_reserved_node_exchange_status(&self) -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder {
+                                crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

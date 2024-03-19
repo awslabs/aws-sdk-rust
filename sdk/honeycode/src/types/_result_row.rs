@@ -3,21 +3,20 @@
 /// <p>A single row in the ResultSet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultRow {
+pub struct ResultRow  {
     /// <p>The ID for a particular row.</p>
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>List of all the data cells in a row.</p>
-    pub data_items: ::std::vec::Vec<crate::types::DataItem>,
+    pub data_items: ::std::vec::Vec::<crate::types::DataItem>,
 }
-impl ResultRow {
+impl  ResultRow  {
     /// <p>The ID for a particular row.</p>
-    pub fn row_id(&self) -> ::std::option::Option<&str> {
+    pub fn row_id(&self) -> ::std::option::Option<& str> {
         self.row_id.as_deref()
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn data_items(&self) -> &[crate::types::DataItem] {
-        use std::ops::Deref;
-        self.data_items.deref()
+    pub fn data_items(&self) -> & [crate::types::DataItem] {
+        use std::ops::Deref; self.data_items.deref()
     }
 }
 impl ResultRow {
@@ -32,7 +31,7 @@ impl ResultRow {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultRowBuilder {
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
-    pub(crate) data_items: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>,
+    pub(crate) data_items: ::std::option::Option<::std::vec::Vec::<crate::types::DataItem>>,
 }
 impl ResultRowBuilder {
     /// <p>The ID for a particular row.</p>
@@ -42,8 +41,7 @@ impl ResultRowBuilder {
     }
     /// <p>The ID for a particular row.</p>
     pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.row_id = input;
-        self
+        self.row_id = input; self
     }
     /// <p>The ID for a particular row.</p>
     pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,31 +54,33 @@ impl ResultRowBuilder {
     /// <p>List of all the data cells in a row.</p>
     pub fn data_items(mut self, input: crate::types::DataItem) -> Self {
         let mut v = self.data_items.unwrap_or_default();
-        v.push(input);
-        self.data_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn set_data_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>) -> Self {
-        self.data_items = input;
-        self
+    pub fn set_data_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataItem>>) -> Self {
+        self.data_items = input; self
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn get_data_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataItem>> {
+    pub fn get_data_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataItem>> {
         &self.data_items
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_items`](crate::types::builders::ResultRowBuilder::data_items)
     pub fn build(self) -> ::std::result::Result<crate::types::ResultRow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResultRow {
-            row_id: self.row_id,
-            data_items: self.data_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_items",
-                    "data_items was not specified but it is required when building ResultRow",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResultRow {
+                row_id: self.row_id
+                ,
+                data_items: self.data_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_items", "data_items was not specified but it is required when building ResultRow")
+                    )?
+                ,
+            }
+        )
     }
 }
+

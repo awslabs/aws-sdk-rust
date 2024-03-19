@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateCredentialReportInput {}
+pub struct GenerateCredentialReportInput  {
+}
 impl GenerateCredentialReportInput {
     /// Creates a new builder-style object to manufacture [`GenerateCredentialReportInput`](crate::operation::generate_credential_report::GenerateCredentialReportInput).
     pub fn builder() -> crate::operation::generate_credential_report::builders::GenerateCredentialReportInputBuilder {
@@ -13,15 +14,15 @@ impl GenerateCredentialReportInput {
 /// A builder for [`GenerateCredentialReportInput`](crate::operation::generate_credential_report::GenerateCredentialReportInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GenerateCredentialReportInputBuilder {}
+pub struct GenerateCredentialReportInputBuilder {
+}
 impl GenerateCredentialReportInputBuilder {
     /// Consumes the builder and constructs a [`GenerateCredentialReportInput`](crate::operation::generate_credential_report::GenerateCredentialReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_credential_report::GenerateCredentialReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::generate_credential_report::GenerateCredentialReportInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_credential_report::GenerateCredentialReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_credential_report::GenerateCredentialReportInput {
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilde
 
 impl CreateFlowInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_flow();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_flow::CreateFlowOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_flow::CreateFlowError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_flow();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateFlow`.
-///
+/// 
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
+                    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_flow::CreateFlowOutput,
-        crate::operation::create_flow::CreateFlowError,
-    > for CreateFlowFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_flow::CreateFlowOutput,
-            crate::operation::create_flow::CreateFlowError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_flow::CreateFlowOutput,
+                    crate::operation::create_flow::CreateFlowError,
+                > for CreateFlowFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_flow::CreateFlowOutput,
+                        crate::operation::create_flow::CreateFlowError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateFlowFluentBuilder {
     /// Creates a new `CreateFlow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateFlowFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_flow::CreateFlow::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_flow::CreateFlow::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_flow::CreateFlowOutput,
-        crate::operation::create_flow::CreateFlowError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_flow::CreateFlowError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_flow::CreateFlow::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_flow::CreateFlow::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlowOutput, crate::operation::create_flow::CreateFlowError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
@@ -132,12 +119,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
     /// Appends an item to `MediaStreams`.
@@ -150,12 +137,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>> {
         self.inner.get_media_streams()
     }
     /// The name of the flow.
@@ -182,12 +169,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The outputs that you want to add to this flow.
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// The outputs that you want to add to this flow.
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddOutputRequest>> {
         self.inner.get_outputs()
     }
     /// The settings for the source of the flow.
@@ -228,12 +215,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }
     /// Appends an item to `VpcInterfaces`.
@@ -246,12 +233,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The VPC interfaces you want on the flow.
-    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
     /// The VPC interfaces you want on the flow.
-    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }
     /// Create maintenance setting for a flow
@@ -269,3 +256,4 @@ impl CreateFlowFluentBuilder {
         self.inner.get_maintenance()
     }
 }
+

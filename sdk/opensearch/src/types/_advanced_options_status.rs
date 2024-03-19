@@ -14,19 +14,19 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvancedOptionsStatus {
+pub struct AdvancedOptionsStatus  {
     /// <p>The status of advanced options for the specified domain.</p>
-    pub options: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub options: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The status of advanced options for the specified domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl AdvancedOptionsStatus {
+impl  AdvancedOptionsStatus  {
     /// <p>The status of advanced options for the specified domain.</p>
-    pub fn options(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn options(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.options
     }
     /// <p>The status of advanced options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -41,7 +41,7 @@ impl AdvancedOptionsStatus {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedOptionsStatusBuilder {
-    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedOptionsStatusBuilder {
@@ -52,17 +52,16 @@ impl AdvancedOptionsStatusBuilder {
     /// <p>The status of advanced options for the specified domain.</p>
     pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The status of advanced options for the specified domain.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.options = input; self
     }
     /// <p>The status of advanced options for the specified domain.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// <p>The status of advanced options for the specified domain.</p>
@@ -73,8 +72,7 @@ impl AdvancedOptionsStatusBuilder {
     }
     /// <p>The status of advanced options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of advanced options for the specified domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -84,14 +82,17 @@ impl AdvancedOptionsStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::AdvancedOptionsStatusBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::AdvancedOptionsStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AdvancedOptionsStatus {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building AdvancedOptionsStatus",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AdvancedOptionsStatus {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building AdvancedOptionsStatus")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

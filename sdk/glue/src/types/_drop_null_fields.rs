@@ -3,38 +3,37 @@
 /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DropNullFields {
+pub struct DropNullFields  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub null_check_box_list: ::std::option::Option<crate::types::NullCheckBoxList>,
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub null_text_list: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>,
+    pub null_text_list: ::std::option::Option<::std::vec::Vec::<crate::types::NullValueField>>,
 }
-impl DropNullFields {
+impl  DropNullFields  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
-    pub fn null_check_box_list(&self) -> ::std::option::Option<&crate::types::NullCheckBoxList> {
+    pub fn null_check_box_list(&self) -> ::std::option::Option<& crate::types::NullCheckBoxList> {
         self.null_check_box_list.as_ref()
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.null_text_list.is_none()`.
-    pub fn null_text_list(&self) -> &[crate::types::NullValueField] {
-        self.null_text_list.as_deref().unwrap_or_default()
+    pub fn null_text_list(&self) -> & [crate::types::NullValueField] {
+        self.null_text_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DropNullFields {
@@ -49,9 +48,9 @@ impl DropNullFields {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DropNullFieldsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) null_check_box_list: ::std::option::Option<crate::types::NullCheckBoxList>,
-    pub(crate) null_text_list: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>,
+    pub(crate) null_text_list: ::std::option::Option<::std::vec::Vec::<crate::types::NullValueField>>,
 }
 impl DropNullFieldsBuilder {
     /// <p>The name of the transform node.</p>
@@ -62,8 +61,7 @@ impl DropNullFieldsBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,17 +74,16 @@ impl DropNullFieldsBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
@@ -96,8 +93,7 @@ impl DropNullFieldsBuilder {
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub fn set_null_check_box_list(mut self, input: ::std::option::Option<crate::types::NullCheckBoxList>) -> Self {
-        self.null_check_box_list = input;
-        self
+        self.null_check_box_list = input; self
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub fn get_null_check_box_list(&self) -> &::std::option::Option<crate::types::NullCheckBoxList> {
@@ -111,19 +107,18 @@ impl DropNullFieldsBuilder {
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
     pub fn null_text_list(mut self, input: crate::types::NullValueField) -> Self {
         let mut v = self.null_text_list.unwrap_or_default();
-        v.push(input);
-        self.null_text_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.null_text_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub fn set_null_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>) -> Self {
-        self.null_text_list = input;
-        self
+    pub fn set_null_text_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NullValueField>>) -> Self {
+        self.null_text_list = input; self
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub fn get_null_text_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NullValueField>> {
+    pub fn get_null_text_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NullValueField>> {
         &self.null_text_list
     }
     /// Consumes the builder and constructs a [`DropNullFields`](crate::types::DropNullFields).
@@ -131,21 +126,24 @@ impl DropNullFieldsBuilder {
     /// - [`name`](crate::types::builders::DropNullFieldsBuilder::name)
     /// - [`inputs`](crate::types::builders::DropNullFieldsBuilder::inputs)
     pub fn build(self) -> ::std::result::Result<crate::types::DropNullFields, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DropNullFields {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DropNullFields",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building DropNullFields",
-                )
-            })?,
-            null_check_box_list: self.null_check_box_list,
-            null_text_list: self.null_text_list,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DropNullFields {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DropNullFields")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building DropNullFields")
+                    )?
+                ,
+                null_check_box_list: self.null_check_box_list
+                ,
+                null_text_list: self.null_text_list
+                ,
+            }
+        )
     }
 }
+

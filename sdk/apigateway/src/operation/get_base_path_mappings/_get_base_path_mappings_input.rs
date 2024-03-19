@@ -3,7 +3,7 @@
 /// <p>A request to get information about a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBasePathMappingsInput {
+pub struct GetBasePathMappingsInput  {
     /// <p>The domain name of a BasePathMapping resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
@@ -11,13 +11,13 @@ pub struct GetBasePathMappingsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl GetBasePathMappingsInput {
+impl  GetBasePathMappingsInput  {
     /// <p>The domain name of a BasePathMapping resource.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -49,8 +49,7 @@ impl GetBasePathMappingsInputBuilder {
     }
     /// <p>The domain name of a BasePathMapping resource.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of a BasePathMapping resource.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetBasePathMappingsInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl GetBasePathMappingsInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetBasePathMappingsInput`](crate::operation::get_base_path_mappings::GetBasePathMappingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_base_path_mappings::GetBasePathMappingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_base_path_mappings::GetBasePathMappingsInput {
-            domain_name: self.domain_name,
-            position: self.position,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_base_path_mappings::GetBasePathMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_base_path_mappings::GetBasePathMappingsInput {
+                domain_name: self.domain_name
+                ,
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

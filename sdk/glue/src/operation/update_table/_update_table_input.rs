@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTableInput {
+pub struct UpdateTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
@@ -16,17 +16,17 @@ pub struct UpdateTableInput {
     /// <p>The version ID at which to update the table contents.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTableInput {
+impl  UpdateTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
-    pub fn table_input(&self) -> ::std::option::Option<&crate::types::TableInput> {
+    pub fn table_input(&self) -> ::std::option::Option<& crate::types::TableInput> {
         self.table_input.as_ref()
     }
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
@@ -34,11 +34,11 @@ impl UpdateTableInput {
         self.skip_archive
     }
     /// <p>The transaction ID at which to update the table contents.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The version ID at which to update the table contents.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn set_table_input(mut self, input: ::std::option::Option<crate::types::TableInput>) -> Self {
-        self.table_input = input;
-        self
+        self.table_input = input; self
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn get_table_input(&self) -> &::std::option::Option<crate::types::TableInput> {
@@ -112,8 +109,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub fn set_skip_archive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_archive = input;
-        self
+        self.skip_archive = input; self
     }
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub fn get_skip_archive(&self) -> &::std::option::Option<bool> {
@@ -126,8 +122,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The transaction ID at which to update the table contents.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction ID at which to update the table contents.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +135,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The version ID at which to update the table contents.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID at which to update the table contents.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,13 +143,22 @@ impl UpdateTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_input: self.table_input,
-            skip_archive: self.skip_archive,
-            transaction_id: self.transaction_id,
-            version_id: self.version_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_table::UpdateTableInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_input: self.table_input
+                ,
+                skip_archive: self.skip_archive
+                ,
+                transaction_id: self.transaction_id
+                ,
+                version_id: self.version_id
+                ,
+            }
+        )
     }
 }
+

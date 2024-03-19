@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGeneratedTemplateInput {
+pub struct CreateGeneratedTemplateInput  {
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>,
     /// <p>The name assigned to the generated template.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional name or ARN of a stack to use as the base stack for the generated template.</p>
@@ -13,24 +13,25 @@ pub struct CreateGeneratedTemplateInput {
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
-impl CreateGeneratedTemplateInput {
+impl  CreateGeneratedTemplateInput  {
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::ResourceDefinition] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::ResourceDefinition] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name assigned to the generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
     /// <p>An optional name or ARN of a stack to use as the base stack for the generated template.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
-    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<& crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateGeneratedTemplateInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGeneratedTemplateInputBuilder {
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>,
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
@@ -59,19 +60,18 @@ impl CreateGeneratedTemplateInputBuilder {
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
     pub fn resources(mut self, input: crate::types::ResourceDefinition) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>) -> Self {
+        self.resources = input; self
     }
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>> {
         &self.resources
     }
     /// <p>The name assigned to the generated template.</p>
@@ -82,8 +82,7 @@ impl CreateGeneratedTemplateInputBuilder {
     }
     /// <p>The name assigned to the generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name assigned to the generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateGeneratedTemplateInputBuilder {
     }
     /// <p>An optional name or ARN of a stack to use as the base stack for the generated template.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>An optional name or ARN of a stack to use as the base stack for the generated template.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,25 +108,26 @@ impl CreateGeneratedTemplateInputBuilder {
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
-        self.template_configuration = input;
-        self
+        self.template_configuration = input; self
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
         &self.template_configuration
     }
     /// Consumes the builder and constructs a [`CreateGeneratedTemplateInput`](crate::operation::create_generated_template::CreateGeneratedTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_generated_template::CreateGeneratedTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_generated_template::CreateGeneratedTemplateInput {
-            resources: self.resources,
-            generated_template_name: self.generated_template_name,
-            stack_name: self.stack_name,
-            template_configuration: self.template_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_generated_template::CreateGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_generated_template::CreateGeneratedTemplateInput {
+                resources: self.resources
+                ,
+                generated_template_name: self.generated_template_name
+                ,
+                stack_name: self.stack_name
+                ,
+                template_configuration: self.template_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExtensionAssociationInput {
+pub struct GetExtensionAssociationInput  {
     /// <p>The extension association ID to get.</p>
     pub extension_association_id: ::std::option::Option<::std::string::String>,
 }
-impl GetExtensionAssociationInput {
+impl  GetExtensionAssociationInput  {
     /// <p>The extension association ID to get.</p>
-    pub fn extension_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn extension_association_id(&self) -> ::std::option::Option<& str> {
         self.extension_association_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetExtensionAssociationInputBuilder {
     }
     /// <p>The extension association ID to get.</p>
     pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_association_id = input;
-        self
+        self.extension_association_id = input; self
     }
     /// <p>The extension association ID to get.</p>
     pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.extension_association_id
     }
     /// Consumes the builder and constructs a [`GetExtensionAssociationInput`](crate::operation::get_extension_association::GetExtensionAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_extension_association::GetExtensionAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_extension_association::GetExtensionAssociationInput {
-            extension_association_id: self.extension_association_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_extension_association::GetExtensionAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_extension_association::GetExtensionAssociationInput {
+                extension_association_id: self.extension_association_id
+                ,
+            }
+        )
     }
 }
+

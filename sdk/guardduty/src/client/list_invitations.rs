@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInvitations`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p><br>
-    /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
+                            /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec::<Invitation>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>A list of invitation descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
+                            /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
     pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

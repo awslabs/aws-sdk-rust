@@ -3,13 +3,13 @@
 /// <p>Used as the request parameter in the <code>ListAssessmentTargets</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentTargetFilter {
+pub struct AssessmentTargetFilter  {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     pub assessment_target_name_pattern: ::std::option::Option<::std::string::String>,
 }
-impl AssessmentTargetFilter {
+impl  AssessmentTargetFilter  {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-    pub fn assessment_target_name_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_target_name_pattern(&self) -> ::std::option::Option<& str> {
         self.assessment_target_name_pattern.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssessmentTargetFilterBuilder {
     }
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     pub fn set_assessment_target_name_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_target_name_pattern = input;
-        self
+        self.assessment_target_name_pattern = input; self
     }
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     pub fn get_assessment_target_name_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AssessmentTargetFilterBuilder {
     /// Consumes the builder and constructs a [`AssessmentTargetFilter`](crate::types::AssessmentTargetFilter).
     pub fn build(self) -> crate::types::AssessmentTargetFilter {
         crate::types::AssessmentTargetFilter {
-            assessment_target_name_pattern: self.assessment_target_name_pattern,
+            assessment_target_name_pattern: self.assessment_target_name_pattern
+            ,
         }
     }
 }
+

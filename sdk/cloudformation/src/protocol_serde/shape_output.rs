@@ -62,3 +62,4 @@ pub fn de_output(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

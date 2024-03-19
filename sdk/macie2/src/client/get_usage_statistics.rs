@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_by(UsageStatisticsFilter)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::filter_by) / [`set_filter_by(Option<Vec::<UsageStatisticsFilter>>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::set_filter_by):<br>required: **false**<br><p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`sort_by(UsageStatisticsSortBy)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::sort_by) / [`set_sort_by(Option<UsageStatisticsSortBy>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The criteria to use to sort the query results.</p><br>
     ///   - [`time_range(TimeRange)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::time_range) / [`set_time_range(Option<TimeRange>)`](crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::set_time_range):<br>required: **false**<br><p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p><br>
-    /// - On success, responds with [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput) with field(s):
+                            /// - On success, responds with [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     ///   - [`records(Option<Vec::<UsageRecord>>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     ///   - [`time_range(Option<TimeRange>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::operation::get_usage_statistics::GetUsageStatisticsError)
+                            /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::operation::get_usage_statistics::GetUsageStatisticsError)
     pub fn get_usage_statistics(&self) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder {
-        crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

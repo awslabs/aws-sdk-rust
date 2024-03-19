@@ -3,7 +3,7 @@
 /// <p>The details of the last deployment of the environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// <p>The identifier of the last deployment of the environment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the last deployment of the environment.</p>
@@ -13,32 +13,33 @@ pub struct Deployment {
     /// <p>The failure reason of the last deployment of the environment.</p>
     pub failure_reason: ::std::option::Option<crate::types::EnvironmentError>,
     /// <p>The messages of the last deployment of the environment.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
     pub is_deployment_complete: ::std::option::Option<bool>,
 }
-impl Deployment {
+impl  Deployment  {
     /// <p>The identifier of the last deployment of the environment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The type of the last deployment of the environment.</p>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>The status of the last deployment of the environment.</p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The failure reason of the last deployment of the environment.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::EnvironmentError> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& crate::types::EnvironmentError> {
         self.failure_reason.as_ref()
     }
     /// <p>The messages of the last deployment of the environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[::std::string::String] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [::std::string::String] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
     pub fn is_deployment_complete(&self) -> ::std::option::Option<bool> {
@@ -60,7 +61,7 @@ pub struct DeploymentBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) failure_reason: ::std::option::Option<crate::types::EnvironmentError>,
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_deployment_complete: ::std::option::Option<bool>,
 }
 impl DeploymentBuilder {
@@ -71,8 +72,7 @@ impl DeploymentBuilder {
     }
     /// <p>The identifier of the last deployment of the environment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The identifier of the last deployment of the environment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl DeploymentBuilder {
     }
     /// <p>The type of the last deployment of the environment.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>The type of the last deployment of the environment.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -99,8 +98,7 @@ impl DeploymentBuilder {
     }
     /// <p>The status of the last deployment of the environment.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The status of the last deployment of the environment.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -113,8 +111,7 @@ impl DeploymentBuilder {
     }
     /// <p>The failure reason of the last deployment of the environment.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::EnvironmentError>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The failure reason of the last deployment of the environment.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::EnvironmentError> {
@@ -127,17 +124,16 @@ impl DeploymentBuilder {
     /// <p>The messages of the last deployment of the environment.</p>
     pub fn messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input.into());
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The messages of the last deployment of the environment.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.messages = input; self
     }
     /// <p>The messages of the last deployment of the environment.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.messages
     }
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
@@ -147,8 +143,7 @@ impl DeploymentBuilder {
     }
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
     pub fn set_is_deployment_complete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_deployment_complete = input;
-        self
+        self.is_deployment_complete = input; self
     }
     /// <p>Specifies whether the last deployment of the environment is complete.</p>
     pub fn get_is_deployment_complete(&self) -> &::std::option::Option<bool> {
@@ -157,12 +152,19 @@ impl DeploymentBuilder {
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
-            deployment_id: self.deployment_id,
-            deployment_type: self.deployment_type,
-            deployment_status: self.deployment_status,
-            failure_reason: self.failure_reason,
-            messages: self.messages,
-            is_deployment_complete: self.is_deployment_complete,
+            deployment_id: self.deployment_id
+            ,
+            deployment_type: self.deployment_type
+            ,
+            deployment_status: self.deployment_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            messages: self.messages
+            ,
+            is_deployment_complete: self.is_deployment_complete
+            ,
         }
     }
 }
+

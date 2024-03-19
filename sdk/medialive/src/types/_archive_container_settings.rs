@@ -3,19 +3,19 @@
 /// Archive Container Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArchiveContainerSettings {
+pub struct ArchiveContainerSettings  {
     /// M2ts Settings
     pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     /// Raw Settings
     pub raw_settings: ::std::option::Option<crate::types::RawSettings>,
 }
-impl ArchiveContainerSettings {
+impl  ArchiveContainerSettings  {
     /// M2ts Settings
-    pub fn m2ts_settings(&self) -> ::std::option::Option<&crate::types::M2tsSettings> {
+    pub fn m2ts_settings(&self) -> ::std::option::Option<& crate::types::M2tsSettings> {
         self.m2ts_settings.as_ref()
     }
     /// Raw Settings
-    pub fn raw_settings(&self) -> ::std::option::Option<&crate::types::RawSettings> {
+    pub fn raw_settings(&self) -> ::std::option::Option<& crate::types::RawSettings> {
         self.raw_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ArchiveContainerSettingsBuilder {
     }
     /// M2ts Settings
     pub fn set_m2ts_settings(mut self, input: ::std::option::Option<crate::types::M2tsSettings>) -> Self {
-        self.m2ts_settings = input;
-        self
+        self.m2ts_settings = input; self
     }
     /// M2ts Settings
     pub fn get_m2ts_settings(&self) -> &::std::option::Option<crate::types::M2tsSettings> {
@@ -55,8 +54,7 @@ impl ArchiveContainerSettingsBuilder {
     }
     /// Raw Settings
     pub fn set_raw_settings(mut self, input: ::std::option::Option<crate::types::RawSettings>) -> Self {
-        self.raw_settings = input;
-        self
+        self.raw_settings = input; self
     }
     /// Raw Settings
     pub fn get_raw_settings(&self) -> &::std::option::Option<crate::types::RawSettings> {
@@ -65,8 +63,11 @@ impl ArchiveContainerSettingsBuilder {
     /// Consumes the builder and constructs a [`ArchiveContainerSettings`](crate::types::ArchiveContainerSettings).
     pub fn build(self) -> crate::types::ArchiveContainerSettings {
         crate::types::ArchiveContainerSettings {
-            m2ts_settings: self.m2ts_settings,
-            raw_settings: self.raw_settings,
+            m2ts_settings: self.m2ts_settings
+            ,
+            raw_settings: self.raw_settings
+            ,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>A file directly uploaded into a web experience chat.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentInput {
+pub struct AttachmentInput  {
     /// <p>The name of the file.</p>
     pub name: ::std::string::String,
     /// <p>The data contained within the uploaded file.</p>
     pub data: ::aws_smithy_types::Blob,
 }
-impl AttachmentInput {
+impl  AttachmentInput  {
     /// <p>The name of the file.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data contained within the uploaded file.</p>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
 }
@@ -43,8 +42,7 @@ impl AttachmentInputBuilder {
     }
     /// <p>The name of the file.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the file.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AttachmentInputBuilder {
     }
     /// <p>The data contained within the uploaded file.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The data contained within the uploaded file.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -70,19 +67,20 @@ impl AttachmentInputBuilder {
     /// - [`name`](crate::types::builders::AttachmentInputBuilder::name)
     /// - [`data`](crate::types::builders::AttachmentInputBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::AttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttachmentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AttachmentInput",
-                )
-            })?,
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building AttachmentInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttachmentInput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AttachmentInput")
+                    )?
+                ,
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building AttachmentInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

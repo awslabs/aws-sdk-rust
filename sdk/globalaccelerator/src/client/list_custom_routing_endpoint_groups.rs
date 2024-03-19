@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomRoutingEndpointGroups`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`listener_arn(impl Into<String>)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::listener_arn) / [`set_listener_arn(Option<String>)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::set_listener_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput) with field(s):
     ///   - [`endpoint_groups(Option<Vec::<CustomRoutingEndpointGroup>>)`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCustomRoutingEndpointGroupsError>`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError)
-    pub fn list_custom_routing_endpoint_groups(
-        &self,
-    ) -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder {
-        crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomRoutingEndpointGroupsError>`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError)
+    pub fn list_custom_routing_endpoint_groups(&self) -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder {
+                                crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

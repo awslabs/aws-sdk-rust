@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let decisiontype = unimplemented!();
 /// match decisiontype {
@@ -41,16 +41,14 @@
 /// Specifically, when `decisiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DecisionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DecisionType {
     #[allow(missing_docs)] // documentation missing in model
     CancelTimer,
@@ -80,108 +78,95 @@ pub enum DecisionType {
     StartTimer,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DecisionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CancelTimer" => DecisionType::CancelTimer,
-            "CancelWorkflowExecution" => DecisionType::CancelWorkflowExecution,
-            "CompleteWorkflowExecution" => DecisionType::CompleteWorkflowExecution,
-            "ContinueAsNewWorkflowExecution" => DecisionType::ContinueAsNewWorkflowExecution,
-            "FailWorkflowExecution" => DecisionType::FailWorkflowExecution,
-            "RecordMarker" => DecisionType::RecordMarker,
-            "RequestCancelActivityTask" => DecisionType::RequestCancelActivityTask,
-            "RequestCancelExternalWorkflowExecution" => DecisionType::RequestCancelExternalWorkflowExecution,
-            "ScheduleActivityTask" => DecisionType::ScheduleActivityTask,
-            "ScheduleLambdaFunction" => DecisionType::ScheduleLambdaFunction,
-            "SignalExternalWorkflowExecution" => DecisionType::SignalExternalWorkflowExecution,
-            "StartChildWorkflowExecution" => DecisionType::StartChildWorkflowExecution,
-            "StartTimer" => DecisionType::StartTimer,
-            other => DecisionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CancelTimer" => DecisionType::CancelTimer,
+"CancelWorkflowExecution" => DecisionType::CancelWorkflowExecution,
+"CompleteWorkflowExecution" => DecisionType::CompleteWorkflowExecution,
+"ContinueAsNewWorkflowExecution" => DecisionType::ContinueAsNewWorkflowExecution,
+"FailWorkflowExecution" => DecisionType::FailWorkflowExecution,
+"RecordMarker" => DecisionType::RecordMarker,
+"RequestCancelActivityTask" => DecisionType::RequestCancelActivityTask,
+"RequestCancelExternalWorkflowExecution" => DecisionType::RequestCancelExternalWorkflowExecution,
+"ScheduleActivityTask" => DecisionType::ScheduleActivityTask,
+"ScheduleLambdaFunction" => DecisionType::ScheduleLambdaFunction,
+"SignalExternalWorkflowExecution" => DecisionType::SignalExternalWorkflowExecution,
+"StartChildWorkflowExecution" => DecisionType::StartChildWorkflowExecution,
+"StartTimer" => DecisionType::StartTimer,
+other => DecisionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DecisionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DecisionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DecisionType::from(s))
+                    }
+                }
 impl DecisionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DecisionType::CancelTimer => "CancelTimer",
-            DecisionType::CancelWorkflowExecution => "CancelWorkflowExecution",
-            DecisionType::CompleteWorkflowExecution => "CompleteWorkflowExecution",
-            DecisionType::ContinueAsNewWorkflowExecution => "ContinueAsNewWorkflowExecution",
-            DecisionType::FailWorkflowExecution => "FailWorkflowExecution",
-            DecisionType::RecordMarker => "RecordMarker",
-            DecisionType::RequestCancelActivityTask => "RequestCancelActivityTask",
-            DecisionType::RequestCancelExternalWorkflowExecution => "RequestCancelExternalWorkflowExecution",
-            DecisionType::ScheduleActivityTask => "ScheduleActivityTask",
-            DecisionType::ScheduleLambdaFunction => "ScheduleLambdaFunction",
-            DecisionType::SignalExternalWorkflowExecution => "SignalExternalWorkflowExecution",
-            DecisionType::StartChildWorkflowExecution => "StartChildWorkflowExecution",
-            DecisionType::StartTimer => "StartTimer",
-            DecisionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CancelTimer",
-            "CancelWorkflowExecution",
-            "CompleteWorkflowExecution",
-            "ContinueAsNewWorkflowExecution",
-            "FailWorkflowExecution",
-            "RecordMarker",
-            "RequestCancelActivityTask",
-            "RequestCancelExternalWorkflowExecution",
-            "ScheduleActivityTask",
-            "ScheduleLambdaFunction",
-            "SignalExternalWorkflowExecution",
-            "StartChildWorkflowExecution",
-            "StartTimer",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DecisionType::CancelTimer => "CancelTimer",
+    DecisionType::CancelWorkflowExecution => "CancelWorkflowExecution",
+    DecisionType::CompleteWorkflowExecution => "CompleteWorkflowExecution",
+    DecisionType::ContinueAsNewWorkflowExecution => "ContinueAsNewWorkflowExecution",
+    DecisionType::FailWorkflowExecution => "FailWorkflowExecution",
+    DecisionType::RecordMarker => "RecordMarker",
+    DecisionType::RequestCancelActivityTask => "RequestCancelActivityTask",
+    DecisionType::RequestCancelExternalWorkflowExecution => "RequestCancelExternalWorkflowExecution",
+    DecisionType::ScheduleActivityTask => "ScheduleActivityTask",
+    DecisionType::ScheduleLambdaFunction => "ScheduleLambdaFunction",
+    DecisionType::SignalExternalWorkflowExecution => "SignalExternalWorkflowExecution",
+    DecisionType::StartChildWorkflowExecution => "StartChildWorkflowExecution",
+    DecisionType::StartTimer => "StartTimer",
+    DecisionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CancelTimer", "CancelWorkflowExecution", "CompleteWorkflowExecution", "ContinueAsNewWorkflowExecution", "FailWorkflowExecution", "RecordMarker", "RequestCancelActivityTask", "RequestCancelExternalWorkflowExecution", "ScheduleActivityTask", "ScheduleLambdaFunction", "SignalExternalWorkflowExecution", "StartChildWorkflowExecution", "StartTimer"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DecisionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DecisionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DecisionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DecisionType::CancelTimer => write!(f, "CancelTimer"),
-            DecisionType::CancelWorkflowExecution => write!(f, "CancelWorkflowExecution"),
-            DecisionType::CompleteWorkflowExecution => write!(f, "CompleteWorkflowExecution"),
-            DecisionType::ContinueAsNewWorkflowExecution => write!(f, "ContinueAsNewWorkflowExecution"),
-            DecisionType::FailWorkflowExecution => write!(f, "FailWorkflowExecution"),
-            DecisionType::RecordMarker => write!(f, "RecordMarker"),
-            DecisionType::RequestCancelActivityTask => write!(f, "RequestCancelActivityTask"),
-            DecisionType::RequestCancelExternalWorkflowExecution => write!(f, "RequestCancelExternalWorkflowExecution"),
-            DecisionType::ScheduleActivityTask => write!(f, "ScheduleActivityTask"),
-            DecisionType::ScheduleLambdaFunction => write!(f, "ScheduleLambdaFunction"),
-            DecisionType::SignalExternalWorkflowExecution => write!(f, "SignalExternalWorkflowExecution"),
-            DecisionType::StartChildWorkflowExecution => write!(f, "StartChildWorkflowExecution"),
-            DecisionType::StartTimer => write!(f, "StartTimer"),
-            DecisionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DecisionType::CancelTimer => write!(f, "CancelTimer"),
+DecisionType::CancelWorkflowExecution => write!(f, "CancelWorkflowExecution"),
+DecisionType::CompleteWorkflowExecution => write!(f, "CompleteWorkflowExecution"),
+DecisionType::ContinueAsNewWorkflowExecution => write!(f, "ContinueAsNewWorkflowExecution"),
+DecisionType::FailWorkflowExecution => write!(f, "FailWorkflowExecution"),
+DecisionType::RecordMarker => write!(f, "RecordMarker"),
+DecisionType::RequestCancelActivityTask => write!(f, "RequestCancelActivityTask"),
+DecisionType::RequestCancelExternalWorkflowExecution => write!(f, "RequestCancelExternalWorkflowExecution"),
+DecisionType::ScheduleActivityTask => write!(f, "ScheduleActivityTask"),
+DecisionType::ScheduleLambdaFunction => write!(f, "ScheduleLambdaFunction"),
+DecisionType::SignalExternalWorkflowExecution => write!(f, "SignalExternalWorkflowExecution"),
+DecisionType::StartChildWorkflowExecution => write!(f, "StartChildWorkflowExecution"),
+DecisionType::StartTimer => write!(f, "StartTimer"),
+DecisionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

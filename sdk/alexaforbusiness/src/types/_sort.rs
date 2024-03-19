@@ -3,20 +3,19 @@
 /// <p>An object representing a sort criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>The sort key of a sort object.</p>
     pub key: ::std::string::String,
     /// <p>The sort value of a sort object.</p>
     pub value: crate::types::SortValue,
 }
-impl Sort {
+impl  Sort  {
     /// <p>The sort key of a sort object.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The sort value of a sort object.</p>
-    pub fn value(&self) -> &crate::types::SortValue {
+    pub fn value(&self) -> & crate::types::SortValue {
         &self.value
     }
 }
@@ -43,8 +42,7 @@ impl SortBuilder {
     }
     /// <p>The sort key of a sort object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The sort key of a sort object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl SortBuilder {
     }
     /// <p>The sort value of a sort object.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::SortValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The sort value of a sort object.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::SortValue> {
@@ -70,16 +67,20 @@ impl SortBuilder {
     /// - [`key`](crate::types::builders::SortBuilder::key)
     /// - [`value`](crate::types::builders::SortBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Sort, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Sort {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Sort")
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Sort",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Sort {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Sort")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Sort")
+                    )?
+                ,
+            }
+        )
     }
 }
+

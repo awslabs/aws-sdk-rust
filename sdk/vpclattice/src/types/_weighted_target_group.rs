@@ -3,17 +3,16 @@
 /// <p>Describes the weight of a target group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeightedTargetGroup {
+pub struct WeightedTargetGroup  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_identifier: ::std::string::String,
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub weight: ::std::option::Option<i32>,
 }
-impl WeightedTargetGroup {
+impl  WeightedTargetGroup  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.target_group_identifier.deref()
+    pub fn target_group_identifier(&self) -> & str {
+        use std::ops::Deref; self.target_group_identifier.deref()
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub fn weight(&self) -> ::std::option::Option<i32> {
@@ -43,8 +42,7 @@ impl WeightedTargetGroupBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_identifier = input;
-        self
+        self.target_group_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl WeightedTargetGroupBuilder {
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -68,14 +65,17 @@ impl WeightedTargetGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_group_identifier`](crate::types::builders::WeightedTargetGroupBuilder::target_group_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::WeightedTargetGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WeightedTargetGroup {
-            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_group_identifier",
-                    "target_group_identifier was not specified but it is required when building WeightedTargetGroup",
-                )
-            })?,
-            weight: self.weight,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WeightedTargetGroup {
+                target_group_identifier: self.target_group_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_group_identifier", "target_group_identifier was not specified but it is required when building WeightedTargetGroup")
+                    )?
+                ,
+                weight: self.weight
+                ,
+            }
+        )
     }
 }
+

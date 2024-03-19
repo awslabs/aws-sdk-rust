@@ -3,7 +3,7 @@
 /// <p>Specifies a rolling deployment strategy for updating a SageMaker endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RollingUpdatePolicy {
+pub struct RollingUpdatePolicy  {
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
     pub maximum_batch_size: ::std::option::Option<crate::types::CapacitySize>,
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
@@ -13,9 +13,9 @@ pub struct RollingUpdatePolicy {
     /// <p>Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback.</p>
     pub rollback_maximum_batch_size: ::std::option::Option<crate::types::CapacitySize>,
 }
-impl RollingUpdatePolicy {
+impl  RollingUpdatePolicy  {
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
-    pub fn maximum_batch_size(&self) -> ::std::option::Option<&crate::types::CapacitySize> {
+    pub fn maximum_batch_size(&self) -> ::std::option::Option<& crate::types::CapacitySize> {
         self.maximum_batch_size.as_ref()
     }
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
@@ -27,7 +27,7 @@ impl RollingUpdatePolicy {
         self.maximum_execution_timeout_in_seconds
     }
     /// <p>Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback.</p>
-    pub fn rollback_maximum_batch_size(&self) -> ::std::option::Option<&crate::types::CapacitySize> {
+    pub fn rollback_maximum_batch_size(&self) -> ::std::option::Option<& crate::types::CapacitySize> {
         self.rollback_maximum_batch_size.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl RollingUpdatePolicyBuilder {
     }
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
     pub fn set_maximum_batch_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
-        self.maximum_batch_size = input;
-        self
+        self.maximum_batch_size = input; self
     }
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
     pub fn get_maximum_batch_size(&self) -> &::std::option::Option<crate::types::CapacitySize> {
@@ -71,8 +70,7 @@ impl RollingUpdatePolicyBuilder {
     }
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
     pub fn set_wait_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.wait_interval_in_seconds = input;
-        self
+        self.wait_interval_in_seconds = input; self
     }
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
     pub fn get_wait_interval_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl RollingUpdatePolicyBuilder {
     }
     /// <p>The time limit for the total deployment. Exceeding this limit causes a timeout.</p>
     pub fn set_maximum_execution_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_execution_timeout_in_seconds = input;
-        self
+        self.maximum_execution_timeout_in_seconds = input; self
     }
     /// <p>The time limit for the total deployment. Exceeding this limit causes a timeout.</p>
     pub fn get_maximum_execution_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -99,8 +96,7 @@ impl RollingUpdatePolicyBuilder {
     }
     /// <p>Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback.</p>
     pub fn set_rollback_maximum_batch_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
-        self.rollback_maximum_batch_size = input;
-        self
+        self.rollback_maximum_batch_size = input; self
     }
     /// <p>Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback.</p>
     pub fn get_rollback_maximum_batch_size(&self) -> &::std::option::Option<crate::types::CapacitySize> {
@@ -109,10 +105,15 @@ impl RollingUpdatePolicyBuilder {
     /// Consumes the builder and constructs a [`RollingUpdatePolicy`](crate::types::RollingUpdatePolicy).
     pub fn build(self) -> crate::types::RollingUpdatePolicy {
         crate::types::RollingUpdatePolicy {
-            maximum_batch_size: self.maximum_batch_size,
-            wait_interval_in_seconds: self.wait_interval_in_seconds,
-            maximum_execution_timeout_in_seconds: self.maximum_execution_timeout_in_seconds,
-            rollback_maximum_batch_size: self.rollback_maximum_batch_size,
+            maximum_batch_size: self.maximum_batch_size
+            ,
+            wait_interval_in_seconds: self.wait_interval_in_seconds
+            ,
+            maximum_execution_timeout_in_seconds: self.maximum_execution_timeout_in_seconds
+            ,
+            rollback_maximum_batch_size: self.rollback_maximum_batch_size
+            ,
         }
     }
 }
+

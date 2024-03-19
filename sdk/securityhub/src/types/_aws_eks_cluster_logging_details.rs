@@ -3,16 +3,17 @@
 /// <p>The logging configuration for an Amazon EKS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEksClusterLoggingDetails {
+pub struct AwsEksClusterLoggingDetails  {
     /// <p>Cluster logging configurations.</p>
-    pub cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
+    pub cluster_logging: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }
-impl AwsEksClusterLoggingDetails {
+impl  AwsEksClusterLoggingDetails  {
     /// <p>Cluster logging configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_logging.is_none()`.
-    pub fn cluster_logging(&self) -> &[crate::types::AwsEksClusterLoggingClusterLoggingDetails] {
-        self.cluster_logging.as_deref().unwrap_or_default()
+    pub fn cluster_logging(&self) -> & [crate::types::AwsEksClusterLoggingClusterLoggingDetails] {
+        self.cluster_logging.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEksClusterLoggingDetails {
@@ -26,7 +27,7 @@ impl AwsEksClusterLoggingDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingDetailsBuilder {
-    pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
+    pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }
 impl AwsEksClusterLoggingDetailsBuilder {
     /// Appends an item to `cluster_logging`.
@@ -36,26 +37,24 @@ impl AwsEksClusterLoggingDetailsBuilder {
     /// <p>Cluster logging configurations.</p>
     pub fn cluster_logging(mut self, input: crate::types::AwsEksClusterLoggingClusterLoggingDetails) -> Self {
         let mut v = self.cluster_logging.unwrap_or_default();
-        v.push(input);
-        self.cluster_logging = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cluster_logging = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Cluster logging configurations.</p>
-    pub fn set_cluster_logging(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
-    ) -> Self {
-        self.cluster_logging = input;
-        self
+    pub fn set_cluster_logging(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>) -> Self {
+        self.cluster_logging = input; self
     }
     /// <p>Cluster logging configurations.</p>
-    pub fn get_cluster_logging(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>> {
+    pub fn get_cluster_logging(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEksClusterLoggingClusterLoggingDetails>> {
         &self.cluster_logging
     }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingDetails`](crate::types::AwsEksClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingDetails {
         crate::types::AwsEksClusterLoggingDetails {
-            cluster_logging: self.cluster_logging,
+            cluster_logging: self.cluster_logging
+            ,
         }
     }
 }
+

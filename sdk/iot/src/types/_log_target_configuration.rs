@@ -3,19 +3,19 @@
 /// <p>The target configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogTargetConfiguration {
+pub struct LogTargetConfiguration  {
     /// <p>A log target</p>
     pub log_target: ::std::option::Option<crate::types::LogTarget>,
     /// <p>The logging level.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
-impl LogTargetConfiguration {
+impl  LogTargetConfiguration  {
     /// <p>A log target</p>
-    pub fn log_target(&self) -> ::std::option::Option<&crate::types::LogTarget> {
+    pub fn log_target(&self) -> ::std::option::Option<& crate::types::LogTarget> {
         self.log_target.as_ref()
     }
     /// <p>The logging level.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LogTargetConfigurationBuilder {
     }
     /// <p>A log target</p>
     pub fn set_log_target(mut self, input: ::std::option::Option<crate::types::LogTarget>) -> Self {
-        self.log_target = input;
-        self
+        self.log_target = input; self
     }
     /// <p>A log target</p>
     pub fn get_log_target(&self) -> &::std::option::Option<crate::types::LogTarget> {
@@ -55,8 +54,7 @@ impl LogTargetConfigurationBuilder {
     }
     /// <p>The logging level.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The logging level.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -65,8 +63,11 @@ impl LogTargetConfigurationBuilder {
     /// Consumes the builder and constructs a [`LogTargetConfiguration`](crate::types::LogTargetConfiguration).
     pub fn build(self) -> crate::types::LogTargetConfiguration {
         crate::types::LogTargetConfiguration {
-            log_target: self.log_target,
-            log_level: self.log_level,
+            log_target: self.log_target
+            ,
+            log_level: self.log_level
+            ,
         }
     }
 }
+

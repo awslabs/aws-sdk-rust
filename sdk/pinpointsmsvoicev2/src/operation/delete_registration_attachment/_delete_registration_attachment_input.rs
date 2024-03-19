@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegistrationAttachmentInput {
+pub struct DeleteRegistrationAttachmentInput  {
     /// <p>The unique identifier for the registration attachment.</p>
     pub registration_attachment_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRegistrationAttachmentInput {
+impl  DeleteRegistrationAttachmentInput  {
     /// <p>The unique identifier for the registration attachment.</p>
-    pub fn registration_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_attachment_id(&self) -> ::std::option::Option<& str> {
         self.registration_attachment_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteRegistrationAttachmentInputBuilder {
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn set_registration_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_attachment_id = input;
-        self
+        self.registration_attachment_id = input; self
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn get_registration_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_attachment_id
     }
     /// Consumes the builder and constructs a [`DeleteRegistrationAttachmentInput`](crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentInput {
-            registration_attachment_id: self.registration_attachment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentInput {
+                registration_attachment_id: self.registration_attachment_id
+                ,
+            }
+        )
     }
 }
+

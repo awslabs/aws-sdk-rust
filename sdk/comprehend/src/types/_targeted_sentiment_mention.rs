@@ -4,7 +4,7 @@
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetedSentimentMention {
+pub struct TargetedSentimentMention  {
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     pub score: ::std::option::Option<f32>,
     /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
@@ -20,7 +20,7 @@ pub struct TargetedSentimentMention {
     /// <p>The offset into the document text where the mention ends.</p>
     pub end_offset: ::std::option::Option<i32>,
 }
-impl TargetedSentimentMention {
+impl  TargetedSentimentMention  {
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
@@ -30,15 +30,15 @@ impl TargetedSentimentMention {
         self.group_score
     }
     /// <p>The text in the document that identifies the entity.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetedSentimentEntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TargetedSentimentEntityType> {
         self.r#type.as_ref()
     }
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
-    pub fn mention_sentiment(&self) -> ::std::option::Option<&crate::types::MentionSentiment> {
+    pub fn mention_sentiment(&self) -> ::std::option::Option<& crate::types::MentionSentiment> {
         self.mention_sentiment.as_ref()
     }
     /// <p>The offset into the document text where the mention begins.</p>
@@ -77,8 +77,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>Model confidence that the entity is relevant. Value range is zero to one, where one is highest confidence.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -91,8 +90,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
     pub fn set_group_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.group_score = input;
-        self
+        self.group_score = input; self
     }
     /// <p>The confidence that all the entities mentioned in the group relate to the same entity.</p>
     pub fn get_group_score(&self) -> &::std::option::Option<f32> {
@@ -105,8 +103,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>The text in the document that identifies the entity.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text in the document that identifies the entity.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetedSentimentEntityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity types</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetedSentimentEntityType> {
@@ -133,8 +129,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
     pub fn set_mention_sentiment(mut self, input: ::std::option::Option<crate::types::MentionSentiment>) -> Self {
-        self.mention_sentiment = input;
-        self
+        self.mention_sentiment = input; self
     }
     /// <p>Contains the sentiment and sentiment score for the mention.</p>
     pub fn get_mention_sentiment(&self) -> &::std::option::Option<crate::types::MentionSentiment> {
@@ -147,8 +142,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>The offset into the document text where the mention begins.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The offset into the document text where the mention begins.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -161,8 +155,7 @@ impl TargetedSentimentMentionBuilder {
     }
     /// <p>The offset into the document text where the mention ends.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The offset into the document text where the mention ends.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -171,13 +164,21 @@ impl TargetedSentimentMentionBuilder {
     /// Consumes the builder and constructs a [`TargetedSentimentMention`](crate::types::TargetedSentimentMention).
     pub fn build(self) -> crate::types::TargetedSentimentMention {
         crate::types::TargetedSentimentMention {
-            score: self.score,
-            group_score: self.group_score,
-            text: self.text,
-            r#type: self.r#type,
-            mention_sentiment: self.mention_sentiment,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+            score: self.score
+            ,
+            group_score: self.group_score
+            ,
+            text: self.text
+            ,
+            r#type: self.r#type
+            ,
+            mention_sentiment: self.mention_sentiment
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEvents`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_name(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_application_name):<br>required: **false**<br><p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p><br>
     ///   - [`version_label(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::version_label) / [`set_version_label(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_version_label):<br>required: **false**<br><p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p><br>
     ///   - [`template_name(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_template_name):<br>required: **false**<br><p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p><br>
@@ -16,11 +16,12 @@ impl super::Client {
     ///   - [`end_time(DateTime)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_end_time):<br>required: **false**<br><p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_max_records):<br>required: **false**<br><p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token. If specified, the events return the next batch of results.</p><br>
-    /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
+                            /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
     ///   - [`events(Option<Vec::<EventDescription>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of <code>EventDescription</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::next_token): <p>If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
+                            /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
     pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

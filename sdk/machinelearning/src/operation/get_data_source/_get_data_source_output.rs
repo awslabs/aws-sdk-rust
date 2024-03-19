@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceOutput {
+pub struct GetDataSourceOutput  {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
@@ -59,29 +59,29 @@ pub struct GetDataSourceOutput {
     pub data_source_schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDataSourceOutput {
+impl  GetDataSourceOutput  {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn data_location_s3(&self) -> ::std::option::Option<&str> {
+    pub fn data_location_s3(&self) -> ::std::option::Option<& str> {
         self.data_location_s3.as_deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
-    pub fn data_rearrangement(&self) -> ::std::option::Option<&str> {
+    pub fn data_rearrangement(&self) -> ::std::option::Option<& str> {
         self.data_rearrangement.as_deref()
     }
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(&self) -> ::std::option::Option<&str> {
+    pub fn created_by_iam_user(&self) -> ::std::option::Option<& str> {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The total size of observations in the data files.</p>
@@ -93,7 +93,7 @@ impl GetDataSourceOutput {
         self.number_of_files
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
@@ -109,27 +109,27 @@ impl GetDataSourceOutput {
     /// <li>
     /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EntityStatus> {
         self.status.as_ref()
     }
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
-    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<& str> {
         self.log_uri.as_deref()
     }
     /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
-    pub fn redshift_metadata(&self) -> ::std::option::Option<&crate::types::RedshiftMetadata> {
+    pub fn redshift_metadata(&self) -> ::std::option::Option<& crate::types::RedshiftMetadata> {
         self.redshift_metadata.as_ref()
     }
     /// <p>The datasource details that are specific to Amazon RDS.</p>
-    pub fn rds_metadata(&self) -> ::std::option::Option<&crate::types::RdsMetadata> {
+    pub fn rds_metadata(&self) -> ::std::option::Option<& crate::types::RdsMetadata> {
         self.rds_metadata.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
@@ -141,24 +141,24 @@ impl GetDataSourceOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn finished_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    pub fn data_source_schema(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_schema(&self) -> ::std::option::Option<& str> {
         self.data_source_schema.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
     pub fn builder() -> crate::operation::get_data_source::builders::GetDataSourceOutputBuilder {
@@ -200,8 +200,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +213,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn set_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_location_s3 = input;
-        self
+        self.data_location_s3 = input; self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn get_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +226,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
     pub fn set_data_rearrangement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_rearrangement = input;
-        self
+        self.data_rearrangement = input; self
     }
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
     pub fn get_data_rearrangement(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +239,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn set_created_by_iam_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by_iam_user = input;
-        self
+        self.created_by_iam_user = input; self
     }
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn get_created_by_iam_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +252,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -270,8 +265,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -284,8 +278,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The total size of observations in the data files.</p>
     pub fn set_data_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.data_size_in_bytes = input;
-        self
+        self.data_size_in_bytes = input; self
     }
     /// <p>The total size of observations in the data files.</p>
     pub fn get_data_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -298,8 +291,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
     pub fn set_number_of_files(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_files = input;
-        self
+        self.number_of_files = input; self
     }
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
     pub fn get_number_of_files(&self) -> &::std::option::Option<i64> {
@@ -312,8 +304,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +341,7 @@ impl GetDataSourceOutputBuilder {
     /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -376,8 +366,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -390,8 +379,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -404,8 +392,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
     pub fn set_redshift_metadata(mut self, input: ::std::option::Option<crate::types::RedshiftMetadata>) -> Self {
-        self.redshift_metadata = input;
-        self
+        self.redshift_metadata = input; self
     }
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
     pub fn get_redshift_metadata(&self) -> &::std::option::Option<crate::types::RedshiftMetadata> {
@@ -418,8 +405,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The datasource details that are specific to Amazon RDS.</p>
     pub fn set_rds_metadata(mut self, input: ::std::option::Option<crate::types::RdsMetadata>) -> Self {
-        self.rds_metadata = input;
-        self
+        self.rds_metadata = input; self
     }
     /// <p>The datasource details that are specific to Amazon RDS.</p>
     pub fn get_rds_metadata(&self) -> &::std::option::Option<crate::types::RdsMetadata> {
@@ -432,8 +418,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -446,8 +431,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.compute_statistics = input;
-        self
+        self.compute_statistics = input; self
     }
     /// <p>The parameter is <code>true</code> if statistics need to be generated from the observation data.</p>
     pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
@@ -460,8 +444,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
     pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compute_time = input;
-        self
+        self.compute_time = input; self
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
     pub fn get_compute_time(&self) -> &::std::option::Option<i64> {
@@ -474,8 +457,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.finished_at = input;
-        self
+        self.finished_at = input; self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     pub fn get_finished_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -488,8 +470,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -504,8 +485,7 @@ impl GetDataSourceOutputBuilder {
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_data_source_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_schema = input;
-        self
+        self.data_source_schema = input; self
     }
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
@@ -513,38 +493,60 @@ impl GetDataSourceOutputBuilder {
         &self.data_source_schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
     pub fn build(self) -> crate::operation::get_data_source::GetDataSourceOutput {
         crate::operation::get_data_source::GetDataSourceOutput {
-            data_source_id: self.data_source_id,
-            data_location_s3: self.data_location_s3,
-            data_rearrangement: self.data_rearrangement,
-            created_by_iam_user: self.created_by_iam_user,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            data_size_in_bytes: self.data_size_in_bytes,
-            number_of_files: self.number_of_files,
-            name: self.name,
-            status: self.status,
-            log_uri: self.log_uri,
-            message: self.message,
-            redshift_metadata: self.redshift_metadata,
-            rds_metadata: self.rds_metadata,
-            role_arn: self.role_arn,
-            compute_statistics: self.compute_statistics.unwrap_or_default(),
-            compute_time: self.compute_time,
-            finished_at: self.finished_at,
-            started_at: self.started_at,
-            data_source_schema: self.data_source_schema,
+            data_source_id: self.data_source_id
+            ,
+            data_location_s3: self.data_location_s3
+            ,
+            data_rearrangement: self.data_rearrangement
+            ,
+            created_by_iam_user: self.created_by_iam_user
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            data_size_in_bytes: self.data_size_in_bytes
+            ,
+            number_of_files: self.number_of_files
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            log_uri: self.log_uri
+            ,
+            message: self.message
+            ,
+            redshift_metadata: self.redshift_metadata
+            ,
+            rds_metadata: self.rds_metadata
+            ,
+            role_arn: self.role_arn
+            ,
+            compute_statistics: self.compute_statistics
+                .unwrap_or_default()
+            ,
+            compute_time: self.compute_time
+            ,
+            finished_at: self.finished_at
+            ,
+            started_at: self.started_at
+            ,
+            data_source_schema: self.data_source_schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

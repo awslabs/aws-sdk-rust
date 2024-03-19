@@ -3,7 +3,7 @@
 /// <p>This structure assigns a feature variation to one user session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationRequest {
+pub struct EvaluationRequest  {
     /// <p>The name of the feature being evaluated.</p>
     pub feature: ::std::string::String,
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
@@ -11,19 +11,17 @@ pub struct EvaluationRequest {
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationRequest {
+impl  EvaluationRequest  {
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> & str {
+        use std::ops::Deref; self.feature.deref()
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
-    pub fn evaluation_context(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_context(&self) -> ::std::option::Option<& str> {
         self.evaluation_context.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl EvaluationRequestBuilder {
     }
     /// <p>The name of the feature being evaluated.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>The name of the feature being evaluated.</p>
     pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl EvaluationRequestBuilder {
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl EvaluationRequestBuilder {
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_context = input;
-        self
+        self.evaluation_context = input; self
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl EvaluationRequestBuilder {
     /// - [`feature`](crate::types::builders::EvaluationRequestBuilder::feature)
     /// - [`entity_id`](crate::types::builders::EvaluationRequestBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationRequest {
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building EvaluationRequest",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EvaluationRequest",
-                )
-            })?,
-            evaluation_context: self.evaluation_context,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationRequest {
+                feature: self.feature
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("feature", "feature was not specified but it is required when building EvaluationRequest")
+                    )?
+                ,
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building EvaluationRequest")
+                    )?
+                ,
+                evaluation_context: self.evaluation_context
+                ,
+            }
+        )
     }
 }
+

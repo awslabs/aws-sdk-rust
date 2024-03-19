@@ -3,7 +3,7 @@
 /// <p>Input for Delete Workload Share</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkloadShareInput {
+pub struct DeleteWorkloadShareInput  {
     /// <p>The ID associated with the share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -14,20 +14,20 @@ pub struct DeleteWorkloadShareInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkloadShareInput {
+impl  DeleteWorkloadShareInput  {
     /// <p>The ID associated with the share.</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeleteWorkloadShareInputBuilder {
     }
     /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID associated with the share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DeleteWorkloadShareInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl DeleteWorkloadShareInputBuilder {
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
@@ -102,14 +99,17 @@ impl DeleteWorkloadShareInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteWorkloadShareInput`](crate::operation::delete_workload_share::DeleteWorkloadShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_workload_share::DeleteWorkloadShareInput {
-            share_id: self.share_id,
-            workload_id: self.workload_id,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workload_share::DeleteWorkloadShareInput {
+                share_id: self.share_id
+                ,
+                workload_id: self.workload_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

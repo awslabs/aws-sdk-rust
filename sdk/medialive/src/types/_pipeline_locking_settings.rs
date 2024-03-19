@@ -3,7 +3,8 @@
 /// Pipeline Locking Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineLockingSettings {}
+pub struct PipelineLockingSettings  {
+}
 impl PipelineLockingSettings {
     /// Creates a new builder-style object to manufacture [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
     pub fn builder() -> crate::types::builders::PipelineLockingSettingsBuilder {
@@ -14,10 +15,13 @@ impl PipelineLockingSettings {
 /// A builder for [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct PipelineLockingSettingsBuilder {}
+pub struct PipelineLockingSettingsBuilder {
+}
 impl PipelineLockingSettingsBuilder {
     /// Consumes the builder and constructs a [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
     pub fn build(self) -> crate::types::PipelineLockingSettings {
-        crate::types::PipelineLockingSettings {}
+        crate::types::PipelineLockingSettings {
+        }
     }
 }
+

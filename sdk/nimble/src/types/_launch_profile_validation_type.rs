@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchprofilevalidationtype = unimplemented!();
 /// match launchprofilevalidationtype {
@@ -32,16 +32,14 @@
 /// Specifically, when `launchprofilevalidationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchProfileValidationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LaunchProfileValidationType {
     #[allow(missing_docs)] // documentation missing in model
     ValidateActiveDirectoryStudioComponent,
@@ -53,72 +51,68 @@ pub enum LaunchProfileValidationType {
     ValidateSubnetAssociation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LaunchProfileValidationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent,
-            "VALIDATE_NETWORK_ACL_ASSOCIATION" => LaunchProfileValidationType::ValidateNetworkAclAssociation,
-            "VALIDATE_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationType::ValidateSecurityGroupAssociation,
-            "VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
-            other => LaunchProfileValidationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent,
+"VALIDATE_NETWORK_ACL_ASSOCIATION" => LaunchProfileValidationType::ValidateNetworkAclAssociation,
+"VALIDATE_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationType::ValidateSecurityGroupAssociation,
+"VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
+other => LaunchProfileValidationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LaunchProfileValidationType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LaunchProfileValidationType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LaunchProfileValidationType::from(s))
+                    }
+                }
 impl LaunchProfileValidationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
-            LaunchProfileValidationType::ValidateNetworkAclAssociation => "VALIDATE_NETWORK_ACL_ASSOCIATION",
-            LaunchProfileValidationType::ValidateSecurityGroupAssociation => "VALIDATE_SECURITY_GROUP_ASSOCIATION",
-            LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
-            LaunchProfileValidationType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
-            "VALIDATE_NETWORK_ACL_ASSOCIATION",
-            "VALIDATE_SECURITY_GROUP_ASSOCIATION",
-            "VALIDATE_SUBNET_ASSOCIATION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
+    LaunchProfileValidationType::ValidateNetworkAclAssociation => "VALIDATE_NETWORK_ACL_ASSOCIATION",
+    LaunchProfileValidationType::ValidateSecurityGroupAssociation => "VALIDATE_SECURITY_GROUP_ASSOCIATION",
+    LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
+    LaunchProfileValidationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT", "VALIDATE_NETWORK_ACL_ASSOCIATION", "VALIDATE_SECURITY_GROUP_ASSOCIATION", "VALIDATE_SUBNET_ASSOCIATION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LaunchProfileValidationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LaunchProfileValidationType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LaunchProfileValidationType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => write!(f, "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT"),
-            LaunchProfileValidationType::ValidateNetworkAclAssociation => write!(f, "VALIDATE_NETWORK_ACL_ASSOCIATION"),
-            LaunchProfileValidationType::ValidateSecurityGroupAssociation => write!(f, "VALIDATE_SECURITY_GROUP_ASSOCIATION"),
-            LaunchProfileValidationType::ValidateSubnetAssociation => write!(f, "VALIDATE_SUBNET_ASSOCIATION"),
-            LaunchProfileValidationType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => write!(f, "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT"),
+LaunchProfileValidationType::ValidateNetworkAclAssociation => write!(f, "VALIDATE_NETWORK_ACL_ASSOCIATION"),
+LaunchProfileValidationType::ValidateSecurityGroupAssociation => write!(f, "VALIDATE_SECURITY_GROUP_ASSOCIATION"),
+LaunchProfileValidationType::ValidateSubnetAssociation => write!(f, "VALIDATE_SUBNET_ASSOCIATION"),
+LaunchProfileValidationType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateIdentityProviderConfigOutput {
+pub struct DisassociateIdentityProviderConfigOutput  {
     /// <p>An object representing an asynchronous update.</p>
     pub update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,
 }
-impl DisassociateIdentityProviderConfigOutput {
+impl  DisassociateIdentityProviderConfigOutput  {
     /// <p>An object representing an asynchronous update.</p>
-    pub fn update(&self) -> ::std::option::Option<&crate::types::Update> {
+    pub fn update(&self) -> ::std::option::Option<& crate::types::Update> {
         self.update.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateIdentityProviderConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateIdentityProviderConfigOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
     pub fn builder() -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateIdentityProviderConfigOutputBuilder {
     }
     /// <p>An object representing an asynchronous update.</p>
     pub fn set_update(mut self, input: ::std::option::Option<crate::types::Update>) -> Self {
-        self.update = input;
-        self
+        self.update = input; self
     }
     /// <p>An object representing an asynchronous update.</p>
     pub fn get_update(&self) -> &::std::option::Option<crate::types::Update> {
         &self.update
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
     pub fn build(self) -> crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput {
         crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput {
-            update: self.update,
+            update: self.update
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

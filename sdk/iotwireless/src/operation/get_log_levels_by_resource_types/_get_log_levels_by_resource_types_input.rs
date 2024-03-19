@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLogLevelsByResourceTypesInput {}
+pub struct GetLogLevelsByResourceTypesInput  {
+}
 impl GetLogLevelsByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesInput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput).
     pub fn builder() -> crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder {
@@ -13,15 +14,15 @@ impl GetLogLevelsByResourceTypesInput {
 /// A builder for [`GetLogLevelsByResourceTypesInput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetLogLevelsByResourceTypesInputBuilder {}
+pub struct GetLogLevelsByResourceTypesInputBuilder {
+}
 impl GetLogLevelsByResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesInput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput {
+            }
+        )
     }
 }
+

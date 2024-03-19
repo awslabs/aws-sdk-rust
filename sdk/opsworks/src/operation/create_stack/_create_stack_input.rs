@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStackInput {
+pub struct CreateStackInput  {
     /// <p>The stack name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p><note>
@@ -27,7 +27,7 @@ pub struct CreateStackInput {
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>,
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -118,15 +118,15 @@ pub struct CreateStackInput {
     /// </note>
     pub agent_version: ::std::option::Option<::std::string::String>,
 }
-impl CreateStackInput {
+impl  CreateStackInput  {
     /// <p>The stack name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p><note>
     /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
@@ -145,19 +145,19 @@ impl CreateStackInput {
     /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p></li>
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
@@ -176,7 +176,7 @@ impl CreateStackInput {
     /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p></li>
     /// </ul>
     /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    pub fn default_os(&self) -> ::std::option::Option<&str> {
+    pub fn default_os(&self) -> ::std::option::Option<& str> {
         self.default_os.as_deref()
     }
     /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
@@ -205,29 +205,29 @@ impl CreateStackInput {
     /// <p><code>Wild_Cats</code></p></li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn hostname_theme(&self) -> ::std::option::Option<&str> {
+    pub fn hostname_theme(&self) -> ::std::option::Option<& str> {
         self.hostname_theme.as_deref()
     }
     /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
-    pub fn default_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn default_availability_zone(&self) -> ::std::option::Option<& str> {
         self.default_availability_zone.as_deref()
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
-    pub fn default_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_subnet_id(&self) -> ::std::option::Option<& str> {
         self.default_subnet_id.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn custom_json(&self) -> ::std::option::Option<&str> {
+    pub fn custom_json(&self) -> ::std::option::Option<& str> {
         self.custom_json.as_deref()
     }
     /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
-    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<& crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn chef_configuration(&self) -> ::std::option::Option<&crate::types::ChefConfiguration> {
+    pub fn chef_configuration(&self) -> ::std::option::Option<& crate::types::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
@@ -247,15 +247,15 @@ impl CreateStackInput {
         self.use_opsworks_security_groups
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-    pub fn custom_cookbooks_source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn custom_cookbooks_source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.custom_cookbooks_source.as_ref()
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
-    pub fn default_ssh_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_ssh_key_name(&self) -> ::std::option::Option<& str> {
         self.default_ssh_key_name.as_deref()
     }
     /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn default_root_device_type(&self) -> ::std::option::Option<&crate::types::RootDeviceType> {
+    pub fn default_root_device_type(&self) -> ::std::option::Option<& crate::types::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -268,7 +268,7 @@ impl CreateStackInput {
     /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p><note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
@@ -286,7 +286,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_os: ::std::option::Option<::std::string::String>,
@@ -312,8 +312,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The stack name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The stack name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -331,8 +330,7 @@ impl CreateStackInputBuilder {
     /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p><note>
     /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
@@ -377,8 +375,7 @@ impl CreateStackInputBuilder {
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
     /// <ul>
@@ -406,20 +403,16 @@ impl CreateStackInputBuilder {
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     pub fn attributes(mut self, k: crate::types::StackAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -430,8 +423,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -445,8 +437,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_default_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_instance_profile_arn = input;
-        self
+        self.default_instance_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_default_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -489,8 +480,7 @@ impl CreateStackInputBuilder {
     /// </ul>
     /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn set_default_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_os = input;
-        self
+        self.default_os = input; self
     }
     /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
     /// <ul>
@@ -568,8 +558,7 @@ impl CreateStackInputBuilder {
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn set_hostname_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname_theme = input;
-        self
+        self.hostname_theme = input; self
     }
     /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
@@ -607,8 +596,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
     pub fn set_default_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_availability_zone = input;
-        self
+        self.default_availability_zone = input; self
     }
     /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
     pub fn get_default_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -621,8 +609,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
     pub fn set_default_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_subnet_id = input;
-        self
+        self.default_subnet_id = input; self
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
     pub fn get_default_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -639,8 +626,7 @@ impl CreateStackInputBuilder {
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_json = input;
-        self
+        self.custom_json = input; self
     }
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
@@ -655,8 +641,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
-        self.configuration_manager = input;
-        self
+        self.configuration_manager = input; self
     }
     /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
@@ -669,8 +654,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_chef_configuration(mut self, input: ::std::option::Option<crate::types::ChefConfiguration>) -> Self {
-        self.chef_configuration = input;
-        self
+        self.chef_configuration = input; self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn get_chef_configuration(&self) -> &::std::option::Option<crate::types::ChefConfiguration> {
@@ -683,8 +667,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub fn set_use_custom_cookbooks(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_custom_cookbooks = input;
-        self
+        self.use_custom_cookbooks = input; self
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub fn get_use_custom_cookbooks(&self) -> &::std::option::Option<bool> {
@@ -713,8 +696,7 @@ impl CreateStackInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_opsworks_security_groups = input;
-        self
+        self.use_opsworks_security_groups = input; self
     }
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings:</p>
@@ -735,8 +717,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn set_custom_cookbooks_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.custom_cookbooks_source = input;
-        self
+        self.custom_cookbooks_source = input; self
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn get_custom_cookbooks_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -749,8 +730,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
     pub fn set_default_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_ssh_key_name = input;
-        self
+        self.default_ssh_key_name = input; self
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
     pub fn get_default_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -763,8 +743,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn set_default_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
-        self.default_root_device_type = input;
-        self
+        self.default_root_device_type = input; self
     }
     /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn get_default_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
@@ -795,8 +774,7 @@ impl CreateStackInputBuilder {
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -813,26 +791,48 @@ impl CreateStackInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
-            name: self.name,
-            region: self.region,
-            vpc_id: self.vpc_id,
-            attributes: self.attributes,
-            service_role_arn: self.service_role_arn,
-            default_instance_profile_arn: self.default_instance_profile_arn,
-            default_os: self.default_os,
-            hostname_theme: self.hostname_theme,
-            default_availability_zone: self.default_availability_zone,
-            default_subnet_id: self.default_subnet_id,
-            custom_json: self.custom_json,
-            configuration_manager: self.configuration_manager,
-            chef_configuration: self.chef_configuration,
-            use_custom_cookbooks: self.use_custom_cookbooks,
-            use_opsworks_security_groups: self.use_opsworks_security_groups,
-            custom_cookbooks_source: self.custom_cookbooks_source,
-            default_ssh_key_name: self.default_ssh_key_name,
-            default_root_device_type: self.default_root_device_type,
-            agent_version: self.agent_version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_stack::CreateStackInput {
+                name: self.name
+                ,
+                region: self.region
+                ,
+                vpc_id: self.vpc_id
+                ,
+                attributes: self.attributes
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                default_instance_profile_arn: self.default_instance_profile_arn
+                ,
+                default_os: self.default_os
+                ,
+                hostname_theme: self.hostname_theme
+                ,
+                default_availability_zone: self.default_availability_zone
+                ,
+                default_subnet_id: self.default_subnet_id
+                ,
+                custom_json: self.custom_json
+                ,
+                configuration_manager: self.configuration_manager
+                ,
+                chef_configuration: self.chef_configuration
+                ,
+                use_custom_cookbooks: self.use_custom_cookbooks
+                ,
+                use_opsworks_security_groups: self.use_opsworks_security_groups
+                ,
+                custom_cookbooks_source: self.custom_cookbooks_source
+                ,
+                default_ssh_key_name: self.default_ssh_key_name
+                ,
+                default_root_device_type: self.default_root_device_type
+                ,
+                agent_version: self.agent_version
+                ,
+            }
+        )
     }
 }
+

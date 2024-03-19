@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegisterAccountStatusInput {}
+pub struct GetRegisterAccountStatusInput  {
+}
 impl GetRegisterAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
     pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder {
@@ -13,15 +14,15 @@ impl GetRegisterAccountStatusInput {
 /// A builder for [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetRegisterAccountStatusInputBuilder {}
+pub struct GetRegisterAccountStatusInputBuilder {
+}
 impl GetRegisterAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_register_account_status::GetRegisterAccountStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_register_account_status::GetRegisterAccountStatusInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_register_account_status::GetRegisterAccountStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_register_account_status::GetRegisterAccountStatusInput {
+            }
+        )
     }
 }
+

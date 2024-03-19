@@ -3,19 +3,19 @@
 /// <p>Object containing details about applications as defined in Application Discovery Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedApplication {
+pub struct AssociatedApplication  {
     /// <p>Name of the application as defined in Application Discovery Service.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>ID of the application as defined in Application Discovery Service.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl AssociatedApplication {
+impl  AssociatedApplication  {
     /// <p>Name of the application as defined in Application Discovery Service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>ID of the application as defined in Application Discovery Service.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociatedApplicationBuilder {
     }
     /// <p>Name of the application as defined in Application Discovery Service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the application as defined in Application Discovery Service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssociatedApplicationBuilder {
     }
     /// <p>ID of the application as defined in Application Discovery Service.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the application as defined in Application Discovery Service.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssociatedApplicationBuilder {
     /// Consumes the builder and constructs a [`AssociatedApplication`](crate::types::AssociatedApplication).
     pub fn build(self) -> crate::types::AssociatedApplication {
         crate::types::AssociatedApplication {
-            name: self.name,
-            id: self.id,
+            name: self.name
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

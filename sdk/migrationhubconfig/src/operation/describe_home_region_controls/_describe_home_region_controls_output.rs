@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHomeRegionControlsOutput {
+pub struct DescribeHomeRegionControlsOutput  {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
+    pub home_region_controls: ::std::option::Option<::std::vec::Vec::<crate::types::HomeRegionControl>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeHomeRegionControlsOutput {
+impl  DescribeHomeRegionControlsOutput  {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_region_controls.is_none()`.
-    pub fn home_region_controls(&self) -> &[crate::types::HomeRegionControl] {
-        self.home_region_controls.as_deref().unwrap_or_default()
+    pub fn home_region_controls(&self) -> & [crate::types::HomeRegionControl] {
+        self.home_region_controls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeHomeRegionControlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeHomeRegionControlsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
     pub fn builder() -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeHomeRegionControlsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsOutputBuilder {
-    pub(crate) home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
+    pub(crate) home_region_controls: ::std::option::Option<::std::vec::Vec::<crate::types::HomeRegionControl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeHomeRegionControlsOutputBuilder {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
     pub fn home_region_controls(mut self, input: crate::types::HomeRegionControl) -> Self {
         let mut v = self.home_region_controls.unwrap_or_default();
-        v.push(input);
-        self.home_region_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.home_region_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn set_home_region_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>) -> Self {
-        self.home_region_controls = input;
-        self
+    pub fn set_home_region_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HomeRegionControl>>) -> Self {
+        self.home_region_controls = input; self
     }
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn get_home_region_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>> {
+    pub fn get_home_region_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HomeRegionControl>> {
         &self.home_region_controls
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -69,28 +69,30 @@ impl DescribeHomeRegionControlsOutputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
     pub fn build(self) -> crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput {
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput {
-            home_region_controls: self.home_region_controls,
-            next_token: self.next_token,
+            home_region_controls: self.home_region_controls
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

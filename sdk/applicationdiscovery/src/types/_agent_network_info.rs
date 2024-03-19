@@ -3,23 +3,23 @@
 /// <p>Network details about the host where the agent/collector resides.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AgentNetworkInfo {
+pub struct AgentNetworkInfo  {
     /// <p>The IP address for the host where the agent/collector resides.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address for the host where the agent/collector resides.</p>
     pub mac_address: ::std::option::Option<::std::string::String>,
 }
-impl AgentNetworkInfo {
+impl  AgentNetworkInfo  {
     /// <p>The IP address for the host where the agent/collector resides.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The MAC address for the host where the agent/collector resides.</p>
-    pub fn mac_address(&self) -> ::std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<& str> {
         self.mac_address.as_deref()
     }
 }
-impl ::std::fmt::Debug for AgentNetworkInfo {
+impl  ::std::fmt::Debug for AgentNetworkInfo  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AgentNetworkInfo");
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl AgentNetworkInfoBuilder {
     }
     /// <p>The IP address for the host where the agent/collector resides.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address for the host where the agent/collector resides.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AgentNetworkInfoBuilder {
     }
     /// <p>The MAC address for the host where the agent/collector resides.</p>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>The MAC address for the host where the agent/collector resides.</p>
     pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl AgentNetworkInfoBuilder {
     /// Consumes the builder and constructs a [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
     pub fn build(self) -> crate::types::AgentNetworkInfo {
         crate::types::AgentNetworkInfo {
-            ip_address: self.ip_address,
-            mac_address: self.mac_address,
+            ip_address: self.ip_address
+            ,
+            mac_address: self.mac_address
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for AgentNetworkInfoBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIngestionInput {
+pub struct CreateIngestionInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
@@ -43,11 +43,11 @@ pub struct CreateIngestionInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateIngestionInput {
+impl  CreateIngestionInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn app_bundle_identifier(&self) -> ::std::option::Option<& str> {
         self.app_bundle_identifier.as_deref()
     }
     /// <p>The name of the application.</p>
@@ -78,28 +78,29 @@ impl CreateIngestionInput {
     /// <li>
     /// <p><code>CISCO</code></p></li>
     /// </ul>
-    pub fn app(&self) -> ::std::option::Option<&str> {
+    pub fn app(&self) -> ::std::option::Option<& str> {
         self.app.as_deref()
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_id(&self) -> ::std::option::Option<& str> {
         self.tenant_id.as_deref()
     }
     /// <p>The ingestion type.</p>
-    pub fn ingestion_type(&self) -> ::std::option::Option<&crate::types::IngestionType> {
+    pub fn ingestion_type(&self) -> ::std::option::Option<& crate::types::IngestionType> {
         self.ingestion_type.as_ref()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateIngestionInput {
@@ -118,7 +119,7 @@ pub struct CreateIngestionInputBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_type: ::std::option::Option<crate::types::IngestionType>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateIngestionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
@@ -129,8 +130,7 @@ impl CreateIngestionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_identifier = input;
-        self
+        self.app_bundle_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +198,7 @@ impl CreateIngestionInputBuilder {
     /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
@@ -240,8 +239,7 @@ impl CreateIngestionInputBuilder {
     }
     /// <p>The ID of the application tenant.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
     }
     /// <p>The ID of the application tenant.</p>
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +253,7 @@ impl CreateIngestionInputBuilder {
     }
     /// <p>The ingestion type.</p>
     pub fn set_ingestion_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
-        self.ingestion_type = input;
-        self
+        self.ingestion_type = input; self
     }
     /// <p>The ingestion type.</p>
     pub fn get_ingestion_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
@@ -273,8 +270,7 @@ impl CreateIngestionInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -289,30 +285,36 @@ impl CreateIngestionInputBuilder {
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
-            app_bundle_identifier: self.app_bundle_identifier,
-            app: self.app,
-            tenant_id: self.tenant_id,
-            ingestion_type: self.ingestion_type,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_ingestion::CreateIngestionInput {
+                app_bundle_identifier: self.app_bundle_identifier
+                ,
+                app: self.app
+                ,
+                tenant_id: self.tenant_id
+                ,
+                ingestion_type: self.ingestion_type
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

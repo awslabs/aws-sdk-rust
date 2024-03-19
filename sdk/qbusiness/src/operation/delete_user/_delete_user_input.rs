@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The identifier of the application from which the user is being deleted.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The user email being deleted.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>The identifier of the application from which the user is being deleted.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The user email being deleted.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The identifier of the application from which the user is being deleted.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application from which the user is being deleted.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The user email being deleted.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user email being deleted.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            application_id: self.application_id,
-            user_id: self.user_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

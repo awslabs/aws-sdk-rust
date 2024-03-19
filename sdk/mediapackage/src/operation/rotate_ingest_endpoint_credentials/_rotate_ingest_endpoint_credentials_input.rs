@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotateIngestEndpointCredentialsInput {
+pub struct RotateIngestEndpointCredentialsInput  {
     /// The ID of the channel the IngestEndpoint is on.
     pub id: ::std::option::Option<::std::string::String>,
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub ingest_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl RotateIngestEndpointCredentialsInput {
+impl  RotateIngestEndpointCredentialsInput  {
     /// The ID of the channel the IngestEndpoint is on.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn ingest_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingest_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.ingest_endpoint_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RotateIngestEndpointCredentialsInputBuilder {
     }
     /// The ID of the channel the IngestEndpoint is on.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the channel the IngestEndpoint is on.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl RotateIngestEndpointCredentialsInputBuilder {
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub fn set_ingest_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingest_endpoint_id = input;
-        self
+        self.ingest_endpoint_id = input; self
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub fn get_ingest_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingest_endpoint_id
     }
     /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput {
-                id: self.id,
-                ingest_endpoint_id: self.ingest_endpoint_id,
-            },
+                id: self.id
+                ,
+                ingest_endpoint_id: self.ingest_endpoint_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackupInput {
+pub struct CreateBackupInput  {
     /// <p>The name of the server that you want to back up.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined description of the backup.</p>
@@ -20,15 +20,15 @@ pub struct CreateBackupInput {
     /// <li>
     /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateBackupInput {
+impl  CreateBackupInput  {
     /// <p>The name of the server that you want to back up.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>A user-defined description of the backup.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
@@ -44,10 +44,11 @@ impl CreateBackupInput {
     /// <li>
     /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateBackupInput {
@@ -63,7 +64,7 @@ impl CreateBackupInput {
 pub struct CreateBackupInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateBackupInputBuilder {
     /// <p>The name of the server that you want to back up.</p>
@@ -74,8 +75,7 @@ impl CreateBackupInputBuilder {
     }
     /// <p>The name of the server that you want to back up.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server that you want to back up.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +88,7 @@ impl CreateBackupInputBuilder {
     }
     /// <p>A user-defined description of the backup.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-defined description of the backup.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,9 +113,9 @@ impl CreateBackupInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
@@ -131,9 +130,8 @@ impl CreateBackupInputBuilder {
     /// <li>
     /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
@@ -148,17 +146,21 @@ impl CreateBackupInputBuilder {
     /// <li>
     /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_backup::CreateBackupInput {
-            server_name: self.server_name,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_backup::CreateBackupInput {
+                server_name: self.server_name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

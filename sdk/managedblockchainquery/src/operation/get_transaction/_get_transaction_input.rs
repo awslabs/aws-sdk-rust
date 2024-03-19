@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransactionInput {
+pub struct GetTransactionInput  {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction occurred.</p>
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
 }
-impl GetTransactionInput {
+impl  GetTransactionInput  {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
-    pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_hash(&self) -> ::std::option::Option<& str> {
         self.transaction_hash.as_deref()
     }
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
+    pub fn network(&self) -> ::std::option::Option<& crate::types::QueryNetwork> {
         self.network.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTransactionInputBuilder {
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_hash = input;
-        self
+        self.transaction_hash = input; self
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetTransactionInputBuilder {
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
         &self.network
     }
     /// Consumes the builder and constructs a [`GetTransactionInput`](crate::operation::get_transaction::GetTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_transaction::GetTransactionInput {
-            transaction_hash: self.transaction_hash,
-            network: self.network,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transaction::GetTransactionInput {
+                transaction_hash: self.transaction_hash
+                ,
+                network: self.network
+                ,
+            }
+        )
     }
 }
+

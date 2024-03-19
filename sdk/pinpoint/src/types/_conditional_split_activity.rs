@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionalSplitActivity {
+pub struct ConditionalSplitActivity  {
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
     pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
@@ -15,21 +15,21 @@ pub struct ConditionalSplitActivity {
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub true_activity: ::std::option::Option<::std::string::String>,
 }
-impl ConditionalSplitActivity {
+impl  ConditionalSplitActivity  {
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
-    pub fn evaluation_wait_time(&self) -> ::std::option::Option<&crate::types::WaitTime> {
+    pub fn evaluation_wait_time(&self) -> ::std::option::Option<& crate::types::WaitTime> {
         self.evaluation_wait_time.as_ref()
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
-    pub fn false_activity(&self) -> ::std::option::Option<&str> {
+    pub fn false_activity(&self) -> ::std::option::Option<& str> {
         self.false_activity.as_deref()
     }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
-    pub fn true_activity(&self) -> ::std::option::Option<&str> {
+    pub fn true_activity(&self) -> ::std::option::Option<& str> {
         self.true_activity.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl ConditionalSplitActivityBuilder {
     }
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
@@ -71,8 +70,7 @@ impl ConditionalSplitActivityBuilder {
     }
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub fn set_evaluation_wait_time(mut self, input: ::std::option::Option<crate::types::WaitTime>) -> Self {
-        self.evaluation_wait_time = input;
-        self
+        self.evaluation_wait_time = input; self
     }
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub fn get_evaluation_wait_time(&self) -> &::std::option::Option<crate::types::WaitTime> {
@@ -85,8 +83,7 @@ impl ConditionalSplitActivityBuilder {
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
     pub fn set_false_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.false_activity = input;
-        self
+        self.false_activity = input; self
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
     pub fn get_false_activity(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl ConditionalSplitActivityBuilder {
     }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub fn set_true_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.true_activity = input;
-        self
+        self.true_activity = input; self
     }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub fn get_true_activity(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,10 +105,15 @@ impl ConditionalSplitActivityBuilder {
     /// Consumes the builder and constructs a [`ConditionalSplitActivity`](crate::types::ConditionalSplitActivity).
     pub fn build(self) -> crate::types::ConditionalSplitActivity {
         crate::types::ConditionalSplitActivity {
-            condition: self.condition,
-            evaluation_wait_time: self.evaluation_wait_time,
-            false_activity: self.false_activity,
-            true_activity: self.true_activity,
+            condition: self.condition
+            ,
+            evaluation_wait_time: self.evaluation_wait_time
+            ,
+            false_activity: self.false_activity
+            ,
+            true_activity: self.true_activity
+            ,
         }
     }
 }
+

@@ -31,7 +31,7 @@
 /// </ol>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckCustomConfig {
+pub struct HealthCheckCustomConfig  {
     /// <important>
     /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
     /// </important>
@@ -40,7 +40,7 @@ pub struct HealthCheckCustomConfig {
     #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub failure_threshold: ::std::option::Option<i32>,
 }
-impl HealthCheckCustomConfig {
+impl  HealthCheckCustomConfig  {
     /// <important>
     /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
     /// </important>
@@ -82,8 +82,7 @@ impl HealthCheckCustomConfigBuilder {
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
     #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_threshold = input;
-        self
+        self.failure_threshold = input; self
     }
     /// <important>
     /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
@@ -97,7 +96,9 @@ impl HealthCheckCustomConfigBuilder {
     /// Consumes the builder and constructs a [`HealthCheckCustomConfig`](crate::types::HealthCheckCustomConfig).
     pub fn build(self) -> crate::types::HealthCheckCustomConfig {
         crate::types::HealthCheckCustomConfig {
-            failure_threshold: self.failure_threshold,
+            failure_threshold: self.failure_threshold
+            ,
         }
     }
 }
+

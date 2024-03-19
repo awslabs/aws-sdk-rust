@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFolderInput {
+pub struct CreateFolderInput  {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
@@ -16,49 +16,51 @@ pub struct CreateFolderInput {
     pub parent_folder_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     /// <p>Tags for the folder.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
     pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
-impl CreateFolderInput {
+impl  CreateFolderInput  {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The name of the folder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
-    pub fn folder_type(&self) -> ::std::option::Option<&crate::types::FolderType> {
+    pub fn folder_type(&self) -> ::std::option::Option<& crate::types::FolderType> {
         self.folder_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    pub fn parent_folder_arn(&self) -> ::std::option::Option<&str> {
+    pub fn parent_folder_arn(&self) -> ::std::option::Option<& str> {
         self.parent_folder_arn.as_deref()
     }
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags for the folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
-    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+    pub fn sharing_model(&self) -> ::std::option::Option<& crate::types::SharingModel> {
         self.sharing_model.as_ref()
     }
 }
@@ -78,8 +80,8 @@ pub struct CreateFolderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) folder_type: ::std::option::Option<crate::types::FolderType>,
     pub(crate) parent_folder_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl CreateFolderInputBuilder {
@@ -91,8 +93,7 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +107,7 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The name of the folder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the folder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub fn set_folder_type(mut self, input: ::std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input;
-        self
+        self.folder_type = input; self
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub fn get_folder_type(&self) -> &::std::option::Option<crate::types::FolderType> {
@@ -150,8 +148,7 @@ impl CreateFolderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn set_parent_folder_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_folder_arn = input;
-        self
+        self.parent_folder_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p><code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
@@ -166,19 +163,18 @@ impl CreateFolderInputBuilder {
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// Appends an item to `tags`.
@@ -188,17 +184,16 @@ impl CreateFolderInputBuilder {
     /// <p>Tags for the folder.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags for the folder.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the folder.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
@@ -208,26 +203,34 @@ impl CreateFolderInputBuilder {
     }
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
     pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
-        self.sharing_model = input;
-        self
+        self.sharing_model = input; self
     }
     /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
     pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
         &self.sharing_model
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_folder::CreateFolderInput {
-            aws_account_id: self.aws_account_id,
-            folder_id: self.folder_id,
-            name: self.name,
-            folder_type: self.folder_type,
-            parent_folder_arn: self.parent_folder_arn,
-            permissions: self.permissions,
-            tags: self.tags,
-            sharing_model: self.sharing_model,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_folder::CreateFolderInput {
+                aws_account_id: self.aws_account_id
+                ,
+                folder_id: self.folder_id
+                ,
+                name: self.name
+                ,
+                folder_type: self.folder_type
+                ,
+                parent_folder_arn: self.parent_folder_arn
+                ,
+                permissions: self.permissions
+                ,
+                tags: self.tags
+                ,
+                sharing_model: self.sharing_model
+                ,
+            }
+        )
     }
 }
+

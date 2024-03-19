@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ac3codingmode = unimplemented!();
 /// match ac3codingmode {
@@ -32,16 +32,14 @@
 /// Specifically, when `ac3codingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Ac3CodingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Ac3 Coding Mode
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Ac3CodingMode {
     #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
@@ -53,67 +51,68 @@ pub enum Ac3CodingMode {
     CodingMode32Lfe,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Ac3CodingMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CODING_MODE_1_0" => Ac3CodingMode::CodingMode10,
-            "CODING_MODE_1_1" => Ac3CodingMode::CodingMode11,
-            "CODING_MODE_2_0" => Ac3CodingMode::CodingMode20,
-            "CODING_MODE_3_2_LFE" => Ac3CodingMode::CodingMode32Lfe,
-            other => Ac3CodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CODING_MODE_1_0" => Ac3CodingMode::CodingMode10,
+"CODING_MODE_1_1" => Ac3CodingMode::CodingMode11,
+"CODING_MODE_2_0" => Ac3CodingMode::CodingMode20,
+"CODING_MODE_3_2_LFE" => Ac3CodingMode::CodingMode32Lfe,
+other => Ac3CodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Ac3CodingMode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Ac3CodingMode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Ac3CodingMode::from(s))
+                    }
+                }
 impl Ac3CodingMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Ac3CodingMode::CodingMode10 => "CODING_MODE_1_0",
-            Ac3CodingMode::CodingMode11 => "CODING_MODE_1_1",
-            Ac3CodingMode::CodingMode20 => "CODING_MODE_2_0",
-            Ac3CodingMode::CodingMode32Lfe => "CODING_MODE_3_2_LFE",
-            Ac3CodingMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CODING_MODE_1_0", "CODING_MODE_1_1", "CODING_MODE_2_0", "CODING_MODE_3_2_LFE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Ac3CodingMode::CodingMode10 => "CODING_MODE_1_0",
+    Ac3CodingMode::CodingMode11 => "CODING_MODE_1_1",
+    Ac3CodingMode::CodingMode20 => "CODING_MODE_2_0",
+    Ac3CodingMode::CodingMode32Lfe => "CODING_MODE_3_2_LFE",
+    Ac3CodingMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CODING_MODE_1_0", "CODING_MODE_1_1", "CODING_MODE_2_0", "CODING_MODE_3_2_LFE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Ac3CodingMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Ac3CodingMode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Ac3CodingMode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Ac3CodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
-            Ac3CodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
-            Ac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
-            Ac3CodingMode::CodingMode32Lfe => write!(f, "CODING_MODE_3_2_LFE"),
-            Ac3CodingMode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Ac3CodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
+Ac3CodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
+Ac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
+Ac3CodingMode::CodingMode32Lfe => write!(f, "CODING_MODE_3_2_LFE"),
+Ac3CodingMode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

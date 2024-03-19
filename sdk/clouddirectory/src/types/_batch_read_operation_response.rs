@@ -3,19 +3,19 @@
 /// <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchReadOperationResponse {
+pub struct BatchReadOperationResponse  {
     /// <p>Identifies which operation in a batch has succeeded.</p>
     pub successful_response: ::std::option::Option<crate::types::BatchReadSuccessfulResponse>,
     /// <p>Identifies which operation in a batch has failed.</p>
     pub exception_response: ::std::option::Option<crate::types::BatchReadException>,
 }
-impl BatchReadOperationResponse {
+impl  BatchReadOperationResponse  {
     /// <p>Identifies which operation in a batch has succeeded.</p>
-    pub fn successful_response(&self) -> ::std::option::Option<&crate::types::BatchReadSuccessfulResponse> {
+    pub fn successful_response(&self) -> ::std::option::Option<& crate::types::BatchReadSuccessfulResponse> {
         self.successful_response.as_ref()
     }
     /// <p>Identifies which operation in a batch has failed.</p>
-    pub fn exception_response(&self) -> ::std::option::Option<&crate::types::BatchReadException> {
+    pub fn exception_response(&self) -> ::std::option::Option<& crate::types::BatchReadException> {
         self.exception_response.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchReadOperationResponseBuilder {
     }
     /// <p>Identifies which operation in a batch has succeeded.</p>
     pub fn set_successful_response(mut self, input: ::std::option::Option<crate::types::BatchReadSuccessfulResponse>) -> Self {
-        self.successful_response = input;
-        self
+        self.successful_response = input; self
     }
     /// <p>Identifies which operation in a batch has succeeded.</p>
     pub fn get_successful_response(&self) -> &::std::option::Option<crate::types::BatchReadSuccessfulResponse> {
@@ -55,8 +54,7 @@ impl BatchReadOperationResponseBuilder {
     }
     /// <p>Identifies which operation in a batch has failed.</p>
     pub fn set_exception_response(mut self, input: ::std::option::Option<crate::types::BatchReadException>) -> Self {
-        self.exception_response = input;
-        self
+        self.exception_response = input; self
     }
     /// <p>Identifies which operation in a batch has failed.</p>
     pub fn get_exception_response(&self) -> &::std::option::Option<crate::types::BatchReadException> {
@@ -65,8 +63,11 @@ impl BatchReadOperationResponseBuilder {
     /// Consumes the builder and constructs a [`BatchReadOperationResponse`](crate::types::BatchReadOperationResponse).
     pub fn build(self) -> crate::types::BatchReadOperationResponse {
         crate::types::BatchReadOperationResponse {
-            successful_response: self.successful_response,
-            exception_response: self.exception_response,
+            successful_response: self.successful_response
+            ,
+            exception_response: self.exception_response
+            ,
         }
     }
 }
+

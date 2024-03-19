@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCapacityProvidersOutput {
+pub struct DescribeCapacityProvidersOutput  {
     /// <p>The list of capacity providers.</p>
-    pub capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
+    pub capacity_providers: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProvider>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeCapacityProvidersOutput {
+impl  DescribeCapacityProvidersOutput  {
     /// <p>The list of capacity providers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
-    pub fn capacity_providers(&self) -> &[crate::types::CapacityProvider] {
-        self.capacity_providers.as_deref().unwrap_or_default()
+    pub fn capacity_providers(&self) -> & [crate::types::CapacityProvider] {
+        self.capacity_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCapacityProvidersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCapacityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
     pub fn builder() -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersOutputBuilder {
@@ -45,8 +47,8 @@ impl DescribeCapacityProvidersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersOutputBuilder {
-    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProvider>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl DescribeCapacityProvidersOutputBuilder {
     /// <p>The list of capacity providers.</p>
     pub fn capacity_providers(mut self, input: crate::types::CapacityProvider) -> Self {
         let mut v = self.capacity_providers.unwrap_or_default();
-        v.push(input);
-        self.capacity_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of capacity providers.</p>
-    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>) -> Self {
-        self.capacity_providers = input;
-        self
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProvider>>) -> Self {
+        self.capacity_providers = input; self
     }
     /// <p>The list of capacity providers.</p>
-    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProvider>> {
         &self.capacity_providers
     }
     /// Appends an item to `failures`.
@@ -78,17 +79,16 @@ impl DescribeCapacityProvidersOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -98,29 +98,32 @@ impl DescribeCapacityProvidersOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
     pub fn build(self) -> crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput {
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput {
-            capacity_providers: self.capacity_providers,
-            failures: self.failures,
-            next_token: self.next_token,
+            capacity_providers: self.capacity_providers
+            ,
+            failures: self.failures
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

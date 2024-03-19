@@ -5,54 +5,50 @@ pub use crate::operation::update_dashboard_permissions::_update_dashboard_permis
 
 impl UpdateDashboardPermissionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_dashboard_permissions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_dashboard_permissions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDashboardPermissions`.
-///
+/// 
 /// <p>Updates read and write permissions on a dashboard.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder,
+                    inner: crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
-    > for UpdateDashboardPermissionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
-            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
+                    crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
+                > for UpdateDashboardPermissionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
+                        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDashboardPermissionsFluentBuilder {
     /// Creates a new `UpdateDashboardPermissions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateDashboardPermissionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_dashboard_permissions::UpdateDashboardPermissions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
-        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_dashboard_permissions::UpdateDashboardPermissions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_dashboard_permissions::UpdateDashboardPermissions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput, crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -146,12 +133,12 @@ impl UpdateDashboardPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions that you want to grant on this resource.</p>
-    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
     /// <p>The permissions that you want to grant on this resource.</p>
-    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
     /// Appends an item to `RevokePermissions`.
@@ -164,12 +151,12 @@ impl UpdateDashboardPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions that you want to revoke from this resource.</p>
-    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
     /// <p>The permissions that you want to revoke from this resource.</p>
-    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
     /// Appends an item to `GrantLinkPermissions`.
@@ -182,12 +169,12 @@ impl UpdateDashboardPermissionsFluentBuilder {
         self
     }
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    pub fn set_grant_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_grant_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_link_permissions(input);
         self
     }
     /// <p>Grants link permissions to all users in a defined namespace.</p>
-    pub fn get_grant_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         self.inner.get_grant_link_permissions()
     }
     /// Appends an item to `RevokeLinkPermissions`.
@@ -200,12 +187,13 @@ impl UpdateDashboardPermissionsFluentBuilder {
         self
     }
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    pub fn set_revoke_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_revoke_link_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_link_permissions(input);
         self
     }
     /// <p>Revokes link permissions from all users in a defined namespace.</p>
-    pub fn get_revoke_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         self.inner.get_revoke_link_permissions()
     }
 }
+

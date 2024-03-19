@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredTableAnalysisRuleInput {
+pub struct UpdateConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
@@ -10,17 +10,17 @@ pub struct UpdateConfiguredTableAnalysisRuleInput {
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
     pub analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
 }
-impl UpdateConfiguredTableAnalysisRuleInput {
+impl  UpdateConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> ::std::option::Option<& crate::types::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
-    pub fn analysis_rule_policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
+    pub fn analysis_rule_policy(&self) -> ::std::option::Option<& crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.analysis_rule_policy.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
     }
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_identifier = input;
-        self
+        self.configured_table_identifier = input; self
     }
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
     }
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     pub fn set_analysis_rule_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
-        self.analysis_rule_type = input;
-        self
+        self.analysis_rule_type = input; self
     }
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
@@ -78,26 +76,24 @@ impl UpdateConfiguredTableAnalysisRuleInputBuilder {
     }
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
     pub fn set_analysis_rule_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>) -> Self {
-        self.analysis_rule_policy = input;
-        self
+        self.analysis_rule_policy = input; self
     }
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
     pub fn get_analysis_rule_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         &self.analysis_rule_policy
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAnalysisRuleInput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleInput {
-                configured_table_identifier: self.configured_table_identifier,
-                analysis_rule_type: self.analysis_rule_type,
-                analysis_rule_policy: self.analysis_rule_policy,
-            },
+                configured_table_identifier: self.configured_table_identifier
+                ,
+                analysis_rule_type: self.analysis_rule_type
+                ,
+                analysis_rule_policy: self.analysis_rule_policy
+                ,
+            }
         )
     }
 }
+

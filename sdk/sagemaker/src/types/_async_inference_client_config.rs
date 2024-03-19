@@ -3,11 +3,11 @@
 /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AsyncInferenceClientConfig {
+pub struct AsyncInferenceClientConfig  {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub max_concurrent_invocations_per_instance: ::std::option::Option<i32>,
 }
-impl AsyncInferenceClientConfig {
+impl  AsyncInferenceClientConfig  {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn max_concurrent_invocations_per_instance(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_invocations_per_instance
@@ -34,8 +34,7 @@ impl AsyncInferenceClientConfigBuilder {
     }
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn set_max_concurrent_invocations_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrent_invocations_per_instance = input;
-        self
+        self.max_concurrent_invocations_per_instance = input; self
     }
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn get_max_concurrent_invocations_per_instance(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl AsyncInferenceClientConfigBuilder {
     /// Consumes the builder and constructs a [`AsyncInferenceClientConfig`](crate::types::AsyncInferenceClientConfig).
     pub fn build(self) -> crate::types::AsyncInferenceClientConfig {
         crate::types::AsyncInferenceClientConfig {
-            max_concurrent_invocations_per_instance: self.max_concurrent_invocations_per_instance,
+            max_concurrent_invocations_per_instance: self.max_concurrent_invocations_per_instance
+            ,
         }
     }
 }
+

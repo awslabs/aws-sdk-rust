@@ -5,54 +5,50 @@ pub use crate::operation::monitor_contact::_monitor_contact_input::MonitorContac
 
 impl MonitorContactInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::monitor_contact::MonitorContactOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::monitor_contact::MonitorContactError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.monitor_contact();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::monitor_contact::MonitorContactOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::monitor_contact::MonitorContactError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.monitor_contact();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `MonitorContact`.
-///
+/// 
 /// <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i> will be set to silent monitoring mode on the contact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MonitorContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::monitor_contact::builders::MonitorContactInputBuilder,
+                    inner: crate::operation::monitor_contact::builders::MonitorContactInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::monitor_contact::MonitorContactOutput,
-        crate::operation::monitor_contact::MonitorContactError,
-    > for MonitorContactFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::monitor_contact::MonitorContactOutput,
-            crate::operation::monitor_contact::MonitorContactError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::monitor_contact::MonitorContactOutput,
+                    crate::operation::monitor_contact::MonitorContactError,
+                > for MonitorContactFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::monitor_contact::MonitorContactOutput,
+                        crate::operation::monitor_contact::MonitorContactError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl MonitorContactFluentBuilder {
     /// Creates a new `MonitorContact`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl MonitorContactFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::monitor_contact::MonitorContactOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::monitor_contact::MonitorContactError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::monitor_contact::MonitorContact::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::monitor_contact::MonitorContact::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::monitor_contact::MonitorContactOutput,
-        crate::operation::monitor_contact::MonitorContactError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::monitor_contact::MonitorContactOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::monitor_contact::MonitorContactError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::monitor_contact::MonitorContact::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::monitor_contact::MonitorContact::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::monitor_contact::MonitorContactOutput, crate::operation::monitor_contact::MonitorContactError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -160,12 +147,12 @@ impl MonitorContactFluentBuilder {
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
+    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>>) -> Self {
         self.inner = self.inner.set_allowed_monitor_capabilities(input);
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
-    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
+    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MonitorCapability>> {
         self.inner.get_allowed_monitor_capabilities()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -183,3 +170,4 @@ impl MonitorContactFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

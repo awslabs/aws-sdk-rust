@@ -9,259 +9,192 @@ impl PostCommentForPullRequest {
         Self
     }
     pub(crate) async fn orchestrate(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-    ) -> ::std::result::Result<
-        crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>()
-                    .expect("correct error type")
-            })
-        };
-        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            .await
-            .map_err(map_err)?;
-        let output = context.finalize().map_err(map_err)?;
-        ::std::result::Result::Ok(
-            output
-                .downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput>()
-                .expect("correct output type"),
-        )
-    }
-
-    pub(crate) async fn orchestrate_with_stop_point(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
-    ) -> ::std::result::Result<
-        ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "codecommit",
-            "PostCommentForPullRequest",
-            input,
-            runtime_plugins,
-            stop_point,
-        )
-        .await
-    }
-
-    pub(crate) fn operation_runtime_plugins(
-        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        client_config: &crate::config::Config,
-        config_override: ::std::option::Option<crate::config::Builder>,
-    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
-        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins
-            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
-                |token_provider, input| {
-                    let input: &mut crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput =
-                        input.downcast_mut().expect("correct type");
-                    if input.client_request_token.is_none() {
-                        input.client_request_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
+                    ) -> ::std::result::Result<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>().expect("correct error type")
+                            })
+                        };
+                        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+                            .await
+                            .map_err(map_err)?;
+                        let output = context.finalize().map_err(map_err)?;
+                        ::std::result::Result::Ok(output.downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput>().expect("correct output type"))
                     }
-                },
-            ))
-            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-                ::aws_runtime::auth::sigv4::SCHEME_ID,
-            ]));
-        if let ::std::option::Option::Some(config_override) = config_override {
-            for plugin in config_override.runtime_plugins.iter().cloned() {
-                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
-            }
-            runtime_plugins = runtime_plugins.with_operation_plugin(crate::config::ConfigOverrideRuntimePlugin::new(
-                config_override,
-                client_config.config.clone(),
-                &client_config.runtime_components,
-            ));
-        }
-        runtime_plugins
-    }
+    
+                    pub(crate) async fn orchestrate_with_stop_point(
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
+                        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
+                    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext, ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+                        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
+                            "codecommit",
+                            "PostCommentForPullRequest",
+                            input,
+                            runtime_plugins,
+                            stop_point
+                        ).await
+                    }
+    
+                    pub(crate) fn operation_runtime_plugins(
+                        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        client_config: &crate::config::Config,
+                        config_override: ::std::option::Option<crate::config::Builder>,
+                    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
+                        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
+                        runtime_plugins = runtime_plugins
+                                        .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(|token_provider, input| {
+                                    let input: &mut crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput = input.downcast_mut().expect("correct type");
+                                    if input.client_request_token.is_none() {
+                                        input.client_request_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                                    }
+                                }))
+    .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
+                        if let ::std::option::Option::Some(config_override) = config_override {
+                            for plugin in config_override.runtime_plugins.iter().cloned() {
+                                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
+                            }
+                            runtime_plugins = runtime_plugins.with_operation_plugin(
+                                crate::config::ConfigOverrideRuntimePlugin::new(config_override, client_config.config.clone(), &client_config.runtime_components)
+                            );
+                        }
+                        runtime_plugins
+                    }
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PostCommentForPullRequest {
-    fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-        let mut cfg = ::aws_smithy_types::config_bag::Layer::new("PostCommentForPullRequest");
+                fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                    let mut cfg = ::aws_smithy_types::config_bag::Layer::new("PostCommentForPullRequest");
 
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
-            PostCommentForPullRequestRequestSerializer,
-        ));
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
-            PostCommentForPullRequestResponseDeserializer,
-        ));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(PostCommentForPullRequestRequestSerializer));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(PostCommentForPullRequestResponseDeserializer));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
-        ));
+                    
+                    cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new()));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
-            "PostCommentForPullRequest",
-            "codecommit",
-        ));
-        let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
+                    cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+                            "PostCommentForPullRequest",
+                            "codecommit",
+                        ));
+let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
+                            signing_options.double_uri_encode = true;
+                            signing_options.content_sha256_header = false;
+                            signing_options.normalize_uri_path = true;
+                            signing_options.payload_override = None;
 
-        cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
-            signing_options,
-            ..::std::default::Default::default()
-        });
+                            cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
+                                signing_options,
+                                ..::std::default::Default::default()
+                            });
 
-        ::std::option::Option::Some(cfg.freeze())
-    }
+                    ::std::option::Option::Some(cfg.freeze())
+                }
 
-    fn runtime_components(
-        &self,
-        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PostCommentForPullRequest")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
-            .with_interceptor(PostCommentForPullRequestEndpointParamsInterceptor)
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
-            >::new());
+                fn runtime_components(&self, _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+                    #[allow(unused_mut)]
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PostCommentForPullRequest")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::RequestAndResponseBody))
+.with_interceptor(PostCommentForPullRequestEndpointParamsInterceptor)
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>::new());
 
-        ::std::borrow::Cow::Owned(rcb)
-    }
-}
-
-#[derive(Debug)]
-struct PostCommentForPullRequestResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PostCommentForPullRequestResponseDeserializer {
-    fn deserialize_nonstreaming(
-        &self,
-        response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().bytes().expect("body loaded");
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_response(status, headers, body)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
-    }
-}
-#[derive(Debug)]
-struct PostCommentForPullRequestRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PostCommentForPullRequestRequestSerializer {
-    #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
-    fn serialize_input(
-        &self,
-        input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
-        _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = input
-            .downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput>()
-            .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            fn uri_base(
-                _input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
+                    ::std::borrow::Cow::Owned(rcb)
+                }
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
+
+            
+#[derive(Debug)]
+            struct PostCommentForPullRequestResponseDeserializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PostCommentForPullRequestResponseDeserializer {
+                
+
+                fn deserialize_nonstreaming(&self, response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
+                    let (success, status) = (response.status().is_success(), response.status().as_u16());
+            let headers = response.headers();
+            let body = response.body().bytes().expect("body loaded");
+            #[allow(unused_mut)]
+            let mut force_error = false;
+            ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+            let parse_result = if !success && status != 200 || force_error {
+                crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_error(status, headers, body)
+            } else {
+                crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_response(status, headers, body)
+            };
+            crate::protocol_serde::type_erase_result(parse_result)
+                }
+            }
+#[derive(Debug)]
+            struct PostCommentForPullRequestRequestSerializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PostCommentForPullRequestRequestSerializer {
+                #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
+                fn serialize_input(&self, input: ::aws_smithy_runtime_api::client::interceptors::context::Input, _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let input = input.downcast::<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput>().expect("correct type");
+                    let _header_serialization_settings = _cfg.load::<crate::serialization_settings::HeaderSerializationSettings>().cloned().unwrap_or_default();
+                    let mut request_builder = {
+                        fn uri_base(_input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    use ::std::fmt::Write as _;
+    ::std::write!(output, "/").expect("formatting should succeed");
+    ::std::result::Result::Ok(())
+}
+#[allow(clippy::unnecessary_wraps)]
+fn update_http_builder(
                 input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-                builder: ::http::request::Builder,
+                builder: ::http::request::Builder
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
+    let mut uri = ::std::string::String::new();
+    uri_base(input, &mut uri)?;
+    ::std::result::Result::Ok(builder.method("POST").uri(uri))
+}
+let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
+builder = _header_serialization_settings.set_default_header(
+                        builder,
+                        ::http::header::HeaderName::from_static("x-amz-target"),
+                        "CodeCommit_20150413.PostCommentForPullRequest"
+                    );
+builder
+                    };
+                    let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_post_comment_for_pull_request::ser_post_comment_for_pull_request_input(&input)?);
+                    if let Some(content_length) = body.content_length() {
+                                let content_length = content_length.to_string();
+                                request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+                            }
+                    ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+                }
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
-            builder = _header_serialization_settings.set_default_header(
-                builder,
-                ::http::header::HeaderName::from_static("x-amz-target"),
-                "CodeCommit_20150413.PostCommentForPullRequest",
-            );
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_post_comment_for_pull_request::ser_post_comment_for_pull_request_input(&input)?,
-        );
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
-        }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
-    }
-}
 #[derive(Debug)]
-struct PostCommentForPullRequestEndpointParamsInterceptor;
+            struct PostCommentForPullRequestEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PostCommentForPullRequestEndpointParamsInterceptor {
-    fn name(&self) -> &'static str {
-        "PostCommentForPullRequestEndpointParamsInterceptor"
-    }
+            impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PostCommentForPullRequestEndpointParamsInterceptor {
+                fn name(&self) -> &'static str {
+                    "PostCommentForPullRequestEndpointParamsInterceptor"
+                }
 
-    fn read_before_execution(
-        &self,
-        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
-            '_,
-            ::aws_smithy_runtime_api::client::interceptors::context::Input,
-            ::aws_smithy_runtime_api::client::interceptors::context::Output,
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-        >,
-        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        let _input = context
-            .input()
-            .downcast_ref::<PostCommentForPullRequestInput>()
-            .ok_or("failed to downcast to PostCommentForPullRequestInput")?;
+                fn read_before_execution(
+                    &self,
+                    context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_, ::aws_smithy_runtime_api::client::interceptors::context::Input, ::aws_smithy_runtime_api::client::interceptors::context::Output, ::aws_smithy_runtime_api::client::interceptors::context::Error>,
+                    cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+                ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let _input = context.input()
+                        .downcast_ref::<PostCommentForPullRequestInput>()
+                        .ok_or("failed to downcast to PostCommentForPullRequestInput")?;
 
-        let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
-            .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
-            .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
-            })?;
-        cfg.interceptor_state()
-            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
-        ::std::result::Result::Ok(())
-    }
-}
+                    
+
+                    let params = crate::config::endpoint::Params::builder()
+                        .set_region(cfg.load::<::aws_types::region::Region>().map(|r|r.as_ref().to_owned()))
+.set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
+.set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
+.set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+                        .build()
+                        .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err))?;
+                    cfg.interceptor_state().store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
+                    ::std::result::Result::Ok(())
+                }
+            }
 
 /// Error type for the `PostCommentForPullRequestError` operation.
 #[non_exhaustive]
@@ -324,36 +257,28 @@ pub enum PostCommentForPullRequestError {
     /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
     RepositoryNotAssociatedWithPullRequestException(crate::types::error::RepositoryNotAssociatedWithPullRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-PostCommentForPullRequestError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl PostCommentForPullRequestError {
     /// Creates the `PostCommentForPullRequestError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `PostCommentForPullRequestError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `PostCommentForPullRequestError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BeforeCommitIdAndAfterCommitIdAreSameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -498,73 +423,183 @@ impl PostCommentForPullRequestError {
 impl ::std::error::Error for PostCommentForPullRequestError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ClientRequestTokenRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommentContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommentContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommitDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommitIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
-            Self::IdempotencyParameterMismatchException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidClientRequestTokenException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidCommitIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidFileLocationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidFilePositionException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidPathException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidPullRequestIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRelativeFileVersionEnumException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRepositoryNameException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PathDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PathRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ClientRequestTokenRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::CommentContentRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::CommentContentSizeLimitExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::CommitDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::CommitIdRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::IdempotencyParameterMismatchException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidClientRequestTokenException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidFileLocationException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidFilePositionException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidRelativeFileVersionEnumException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PathDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for PostCommentForPullRequestError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => _inner.fmt(f),
-            Self::ClientRequestTokenRequiredException(_inner) => _inner.fmt(f),
-            Self::CommentContentRequiredException(_inner) => _inner.fmt(f),
-            Self::CommentContentSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::CommitDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::CommitIdRequiredException(_inner) => _inner.fmt(f),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
-            Self::IdempotencyParameterMismatchException(_inner) => _inner.fmt(f),
-            Self::InvalidClientRequestTokenException(_inner) => _inner.fmt(f),
-            Self::InvalidCommitIdException(_inner) => _inner.fmt(f),
-            Self::InvalidFileLocationException(_inner) => _inner.fmt(f),
-            Self::InvalidFilePositionException(_inner) => _inner.fmt(f),
-            Self::InvalidPathException(_inner) => _inner.fmt(f),
-            Self::InvalidPullRequestIdException(_inner) => _inner.fmt(f),
-            Self::InvalidRelativeFileVersionEnumException(_inner) => _inner.fmt(f),
-            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
-            Self::PathDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::PathRequiredException(_inner) => _inner.fmt(f),
-            Self::PullRequestDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::PullRequestIdRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => _inner.fmt(f),
+            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ClientRequestTokenRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::CommentContentRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::CommentContentSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::CommitDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::CommitIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::IdempotencyParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidClientRequestTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidFileLocationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidFilePositionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPathException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidRelativeFileVersionEnumException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PathDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PathRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -580,53 +615,106 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PostCommentForPullRequestEr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PostCommentForPullRequestError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ClientRequestTokenRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::CommentContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::CommentContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::CommitDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::CommitIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::IdempotencyParameterMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidClientRequestTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidCommitIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidFileLocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidFilePositionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidPathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidPullRequestIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRelativeFileVersionEnumException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PathDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PathRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ClientRequestTokenRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::CommentContentRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::CommentContentSizeLimitExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::CommitDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::CommitIdRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::IdempotencyParameterMismatchException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidClientRequestTokenException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidFileLocationException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidFilePositionException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidRelativeFileVersionEnumException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PathDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for PostCommentForPullRequestError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_request_output::PostCommentForPullRequestOutput;
 
@@ -638,3 +726,4 @@ mod _post_comment_for_pull_request_output;
 
 /// Builders
 pub mod builders;
+

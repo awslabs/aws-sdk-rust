@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactChannelInput {
+pub struct GetContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
 }
-impl GetContactChannelInput {
+impl  GetContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-    pub fn contact_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_id(&self) -> ::std::option::Option<& str> {
         self.contact_channel_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetContactChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_id = input;
-        self
+        self.contact_channel_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_channel_id
     }
     /// Consumes the builder and constructs a [`GetContactChannelInput`](crate::operation::get_contact_channel::GetContactChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact_channel::GetContactChannelInput {
-            contact_channel_id: self.contact_channel_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_channel::GetContactChannelInput {
+                contact_channel_id: self.contact_channel_id
+                ,
+            }
+        )
     }
 }
+

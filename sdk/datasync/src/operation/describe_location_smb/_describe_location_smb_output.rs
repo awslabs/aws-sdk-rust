@@ -3,13 +3,13 @@
 /// <p>DescribeLocationSmbResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationSmbOutput {
+pub struct DescribeLocationSmbOutput  {
     /// <p>The ARN of the SMB location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the SMB location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
@@ -20,43 +20,44 @@ pub struct DescribeLocationSmbOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeLocationSmbOutput {
+impl  DescribeLocationSmbOutput  {
     /// <p>The ARN of the SMB location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URI of the SMB location.</p>
-    pub fn location_uri(&self) -> ::std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
-    pub fn user(&self) -> ::std::option::Option<&str> {
+    pub fn user(&self) -> ::std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The protocol that DataSync use to access your SMB file.</p>
-    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<& crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLocationSmbOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput).
     pub fn builder() -> crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder {
@@ -70,7 +71,7 @@ impl DescribeLocationSmbOutput {
 pub struct DescribeLocationSmbOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
@@ -85,8 +86,7 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The ARN of the SMB location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The ARN of the SMB location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The URI of the SMB location.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>The URI of the SMB location.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +112,16 @@ impl DescribeLocationSmbOutputBuilder {
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
@@ -133,8 +131,7 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
-        self.mount_options = input;
-        self
+        self.mount_options = input; self
     }
     /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
@@ -175,33 +170,40 @@ impl DescribeLocationSmbOutputBuilder {
     }
     /// <p>The time that the SMB location was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the SMB location was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput).
     pub fn build(self) -> crate::operation::describe_location_smb::DescribeLocationSmbOutput {
         crate::operation::describe_location_smb::DescribeLocationSmbOutput {
-            location_arn: self.location_arn,
-            location_uri: self.location_uri,
-            agent_arns: self.agent_arns,
-            user: self.user,
-            domain: self.domain,
-            mount_options: self.mount_options,
-            creation_time: self.creation_time,
+            location_arn: self.location_arn
+            ,
+            location_uri: self.location_uri
+            ,
+            agent_arns: self.agent_arns
+            ,
+            user: self.user
+            ,
+            domain: self.domain
+            ,
+            mount_options: self.mount_options
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

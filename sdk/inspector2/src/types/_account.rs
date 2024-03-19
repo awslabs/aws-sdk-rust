@@ -3,7 +3,7 @@
 /// <p>An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Account {
+pub struct Account  {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: ::std::string::String,
     /// <p>The status of Amazon Inspector for the account.</p>
@@ -11,18 +11,17 @@ pub struct Account {
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
 }
-impl Account {
+impl  Account  {
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
-    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl AccountBuilder {
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl AccountBuilder {
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -80,8 +77,7 @@ impl AccountBuilder {
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.resource_status = input;
-        self
+        self.resource_status = input; self
     }
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
     pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -92,20 +88,22 @@ impl AccountBuilder {
     /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
     /// - [`status`](crate::types::builders::AccountBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Account {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building Account",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Account",
-                )
-            })?,
-            resource_status: self.resource_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Account {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building Account")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Account")
+                    )?
+                ,
+                resource_status: self.resource_status
+                ,
+            }
+        )
     }
 }
+

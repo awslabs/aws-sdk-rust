@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipelines`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListPipelines</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPipelines</code> operations, which returns results in the next page.</p><br>
-    /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
+                            /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`pipelines(Option<Vec::<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipelines): <p>A list of all existing Data Prepper pipelines.</p>
-    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
+                            /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
     pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

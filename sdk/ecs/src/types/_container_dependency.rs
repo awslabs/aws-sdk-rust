@@ -13,7 +13,7 @@
 /// <p>For more information about how to create a container dependency, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container dependency</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerDependency {
+pub struct ContainerDependency  {
     /// <p>The name of a container.</p>
     pub container_name: ::std::string::String,
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
@@ -29,11 +29,10 @@ pub struct ContainerDependency {
     /// </ul>
     pub condition: crate::types::ContainerCondition,
 }
-impl ContainerDependency {
+impl  ContainerDependency  {
     /// <p>The name of a container.</p>
-    pub fn container_name(&self) -> &str {
-        use std::ops::Deref;
-        self.container_name.deref()
+    pub fn container_name(&self) -> & str {
+        use std::ops::Deref; self.container_name.deref()
     }
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
     /// <ul>
@@ -46,7 +45,7 @@ impl ContainerDependency {
     /// <li>
     /// <p><code>HEALTHY</code> - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.</p></li>
     /// </ul>
-    pub fn condition(&self) -> &crate::types::ContainerCondition {
+    pub fn condition(&self) -> & crate::types::ContainerCondition {
         &self.condition
     }
 }
@@ -73,8 +72,7 @@ impl ContainerDependencyBuilder {
     }
     /// <p>The name of a container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of a container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl ContainerDependencyBuilder {
     /// <p><code>HEALTHY</code> - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::ContainerCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
     /// <ul>
@@ -130,19 +127,20 @@ impl ContainerDependencyBuilder {
     /// - [`container_name`](crate::types::builders::ContainerDependencyBuilder::container_name)
     /// - [`condition`](crate::types::builders::ContainerDependencyBuilder::condition)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerDependency, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContainerDependency {
-            container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_name",
-                    "container_name was not specified but it is required when building ContainerDependency",
-                )
-            })?,
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building ContainerDependency",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContainerDependency {
+                container_name: self.container_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_name", "container_name was not specified but it is required when building ContainerDependency")
+                    )?
+                ,
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building ContainerDependency")
+                    )?
+                ,
+            }
+        )
     }
 }
+

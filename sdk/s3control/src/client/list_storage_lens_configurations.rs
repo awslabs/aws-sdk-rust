@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStorageLensConfigurations`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::set_account_id):<br>required: **true**<br><p>The account ID of the requester.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to request the next page of results.</p><br>
-    /// - On success, responds with [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput::next_token): <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     ///   - [`storage_lens_configuration_list(Option<Vec::<ListStorageLensConfigurationEntry>>)`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput::storage_lens_configuration_list): <p>A list of S3 Storage Lens configurations.</p>
-    /// - On failure, responds with [`SdkError<ListStorageLensConfigurationsError>`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError)
-    pub fn list_storage_lens_configurations(
-        &self,
-    ) -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder {
-        crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListStorageLensConfigurationsError>`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError)
+    pub fn list_storage_lens_configurations(&self) -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder {
+                                crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredTableAssociationInput {
+pub struct UpdateConfiguredTableAssociationInput  {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
     pub configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
@@ -12,21 +12,21 @@ pub struct UpdateConfiguredTableAssociationInput {
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfiguredTableAssociationInput {
+impl  UpdateConfiguredTableAssociationInput  {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn configured_table_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_table_association_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_table_association_identifier.as_deref()
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A new description for the configured table association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     }
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
     pub fn set_configured_table_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_association_identifier = input;
-        self
+        self.configured_table_association_identifier = input; self
     }
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
     pub fn get_configured_table_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     }
     /// <p>A new description for the configured table association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the configured table association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput {
-                configured_table_association_identifier: self.configured_table_association_identifier,
-                membership_identifier: self.membership_identifier,
-                description: self.description,
-                role_arn: self.role_arn,
-            },
+                configured_table_association_identifier: self.configured_table_association_identifier
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+            }
         )
     }
 }
+

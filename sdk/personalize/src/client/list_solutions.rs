@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSolutions`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::set_dataset_group_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the dataset group.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of solutions to return.</p><br>
-    /// - On success, responds with [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput) with field(s):
+                            /// - On success, responds with [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput) with field(s):
     ///   - [`solutions(Option<Vec::<SolutionSummary>>)`](crate::operation::list_solutions::ListSolutionsOutput::solutions): <p>A list of the current solutions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_solutions::ListSolutionsOutput::next_token): <p>A token for getting the next set of solutions (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListSolutionsError>`](crate::operation::list_solutions::ListSolutionsError)
+                            /// - On failure, responds with [`SdkError<ListSolutionsError>`](crate::operation::list_solutions::ListSolutionsError)
     pub fn list_solutions(&self) -> crate::operation::list_solutions::builders::ListSolutionsFluentBuilder {
-        crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

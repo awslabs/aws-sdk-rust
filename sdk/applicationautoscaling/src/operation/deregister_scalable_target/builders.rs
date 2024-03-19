@@ -5,56 +5,52 @@ pub use crate::operation::deregister_scalable_target::_deregister_scalable_targe
 
 impl DeregisterScalableTargetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.deregister_scalable_target();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.deregister_scalable_target();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeregisterScalableTarget`.
-///
+/// 
 /// <p>Deregisters an Application Auto Scaling scalable target when you have finished using it. To see which resources have been registered, use <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html">DescribeScalableTargets</a>.</p><note>
 /// <p>Deregistering a scalable target deletes the scaling policies and the scheduled actions that are associated with it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterScalableTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder,
+                    inner: crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-    > for DeregisterScalableTargetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
+                    crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
+                > for DeregisterScalableTargetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
+                        crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeregisterScalableTargetFluentBuilder {
     /// Creates a new `DeregisterScalableTarget`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DeregisterScalableTargetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::deregister_scalable_target::DeregisterScalableTarget::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::deregister_scalable_target::DeregisterScalableTarget::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::deregister_scalable_target::DeregisterScalableTarget::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::deregister_scalable_target::DeregisterScalableTarget::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput, crate::operation::deregister_scalable_target::DeregisterScalableTargetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.inner = self.inner.service_namespace(input);
@@ -405,3 +392,4 @@ impl DeregisterScalableTargetFluentBuilder {
         self.inner.get_scalable_dimension()
     }
 }
+

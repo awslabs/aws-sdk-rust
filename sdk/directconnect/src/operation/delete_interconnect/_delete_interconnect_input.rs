@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInterconnectInput {
+pub struct DeleteInterconnectInput  {
     /// <p>The ID of the interconnect.</p>
     pub interconnect_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInterconnectInput {
+impl  DeleteInterconnectInput  {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(&self) -> ::std::option::Option<&str> {
+    pub fn interconnect_id(&self) -> ::std::option::Option<& str> {
         self.interconnect_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteInterconnectInputBuilder {
     }
     /// <p>The ID of the interconnect.</p>
     pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interconnect_id = input;
-        self
+        self.interconnect_id = input; self
     }
     /// <p>The ID of the interconnect.</p>
     pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.interconnect_id
     }
     /// Consumes the builder and constructs a [`DeleteInterconnectInput`](crate::operation::delete_interconnect::DeleteInterconnectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_interconnect::DeleteInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_interconnect::DeleteInterconnectInput {
-            interconnect_id: self.interconnect_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_interconnect::DeleteInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_interconnect::DeleteInterconnectInput {
+                interconnect_id: self.interconnect_id
+                ,
+            }
+        )
     }
 }
+

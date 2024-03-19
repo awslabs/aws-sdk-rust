@@ -3,7 +3,7 @@
 /// <p>The statistics of a mitigation action task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectMitigationActionsTaskStatistics {
+pub struct DetectMitigationActionsTaskStatistics  {
     /// <p>The actions that were performed.</p>
     pub actions_executed: ::std::option::Option<i64>,
     /// <p>The actions that were skipped.</p>
@@ -11,7 +11,7 @@ pub struct DetectMitigationActionsTaskStatistics {
     /// <p>The actions that failed.</p>
     pub actions_failed: ::std::option::Option<i64>,
 }
-impl DetectMitigationActionsTaskStatistics {
+impl  DetectMitigationActionsTaskStatistics  {
     /// <p>The actions that were performed.</p>
     pub fn actions_executed(&self) -> ::std::option::Option<i64> {
         self.actions_executed
@@ -48,8 +48,7 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p>The actions that were performed.</p>
     pub fn set_actions_executed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.actions_executed = input;
-        self
+        self.actions_executed = input; self
     }
     /// <p>The actions that were performed.</p>
     pub fn get_actions_executed(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p>The actions that were skipped.</p>
     pub fn set_actions_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.actions_skipped = input;
-        self
+        self.actions_skipped = input; self
     }
     /// <p>The actions that were skipped.</p>
     pub fn get_actions_skipped(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p>The actions that failed.</p>
     pub fn set_actions_failed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.actions_failed = input;
-        self
+        self.actions_failed = input; self
     }
     /// <p>The actions that failed.</p>
     pub fn get_actions_failed(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskStatistics`](crate::types::DetectMitigationActionsTaskStatistics).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskStatistics {
         crate::types::DetectMitigationActionsTaskStatistics {
-            actions_executed: self.actions_executed,
-            actions_skipped: self.actions_skipped,
-            actions_failed: self.actions_failed,
+            actions_executed: self.actions_executed
+            ,
+            actions_skipped: self.actions_skipped
+            ,
+            actions_failed: self.actions_failed
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReEncryptOutput {
+pub struct ReEncryptOutput  {
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
@@ -15,33 +15,33 @@ pub struct ReEncryptOutput {
     pub destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     _request_id: Option<String>,
 }
-impl ReEncryptOutput {
+impl  ReEncryptOutput  {
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn ciphertext_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn ciphertext_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
-    pub fn source_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_key_id(&self) -> ::std::option::Option<& str> {
         self.source_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    pub fn source_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn source_encryption_algorithm(&self) -> ::std::option::Option<& crate::types::EncryptionAlgorithmSpec> {
         self.source_encryption_algorithm.as_ref()
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    pub fn destination_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn destination_encryption_algorithm(&self) -> ::std::option::Option<& crate::types::EncryptionAlgorithmSpec> {
         self.destination_encryption_algorithm.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ReEncryptOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ReEncryptOutput {
     /// Creates a new builder-style object to manufacture [`ReEncryptOutput`](crate::operation::re_encrypt::ReEncryptOutput).
     pub fn builder() -> crate::operation::re_encrypt::builders::ReEncryptOutputBuilder {
@@ -68,8 +68,7 @@ impl ReEncryptOutputBuilder {
     }
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.ciphertext_blob = input;
-        self
+        self.ciphertext_blob = input; self
     }
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -82,8 +81,7 @@ impl ReEncryptOutputBuilder {
     }
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
     pub fn set_source_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_key_id = input;
-        self
+        self.source_key_id = input; self
     }
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
     pub fn get_source_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl ReEncryptOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl ReEncryptOutputBuilder {
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
     pub fn set_source_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
-        self.source_encryption_algorithm = input;
-        self
+        self.source_encryption_algorithm = input; self
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
     pub fn get_source_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
@@ -124,31 +120,36 @@ impl ReEncryptOutputBuilder {
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     pub fn set_destination_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
-        self.destination_encryption_algorithm = input;
-        self
+        self.destination_encryption_algorithm = input; self
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     pub fn get_destination_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.destination_encryption_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ReEncryptOutput`](crate::operation::re_encrypt::ReEncryptOutput).
     pub fn build(self) -> crate::operation::re_encrypt::ReEncryptOutput {
         crate::operation::re_encrypt::ReEncryptOutput {
-            ciphertext_blob: self.ciphertext_blob,
-            source_key_id: self.source_key_id,
-            key_id: self.key_id,
-            source_encryption_algorithm: self.source_encryption_algorithm,
-            destination_encryption_algorithm: self.destination_encryption_algorithm,
+            ciphertext_blob: self.ciphertext_blob
+            ,
+            source_key_id: self.source_key_id
+            ,
+            key_id: self.key_id
+            ,
+            source_encryption_algorithm: self.source_encryption_algorithm
+            ,
+            destination_encryption_algorithm: self.destination_encryption_algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

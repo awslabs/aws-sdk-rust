@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCasesInput {
+pub struct DescribeCasesInput  {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub case_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub case_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub display_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
@@ -22,23 +22,24 @@ pub struct DescribeCasesInput {
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub include_communications: ::std::option::Option<bool>,
 }
-impl DescribeCasesInput {
+impl  DescribeCasesInput  {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.case_id_list.is_none()`.
-    pub fn case_id_list(&self) -> &[::std::string::String] {
-        self.case_id_list.as_deref().unwrap_or_default()
+    pub fn case_id_list(&self) -> & [::std::string::String] {
+        self.case_id_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
-    pub fn display_id(&self) -> ::std::option::Option<&str> {
+    pub fn display_id(&self) -> ::std::option::Option<& str> {
         self.display_id.as_deref()
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn after_time(&self) -> ::std::option::Option<&str> {
+    pub fn after_time(&self) -> ::std::option::Option<& str> {
         self.after_time.as_deref()
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn before_time(&self) -> ::std::option::Option<&str> {
+    pub fn before_time(&self) -> ::std::option::Option<& str> {
         self.before_time.as_deref()
     }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
@@ -46,7 +47,7 @@ impl DescribeCasesInput {
         self.include_resolved_cases
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return before paginating.</p>
@@ -54,7 +55,7 @@ impl DescribeCasesInput {
         self.max_results
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
@@ -73,7 +74,7 @@ impl DescribeCasesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCasesInputBuilder {
-    pub(crate) case_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) case_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) display_id: ::std::option::Option<::std::string::String>,
     pub(crate) after_time: ::std::option::Option<::std::string::String>,
     pub(crate) before_time: ::std::option::Option<::std::string::String>,
@@ -91,17 +92,16 @@ impl DescribeCasesInputBuilder {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
     pub fn case_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.case_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.case_id_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.case_id_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn set_case_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.case_id_list = input;
-        self
+    pub fn set_case_id_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.case_id_list = input; self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn get_case_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_case_id_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.case_id_list
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
@@ -111,8 +111,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub fn set_display_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_id = input;
-        self
+        self.display_id = input; self
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub fn get_display_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn set_after_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_time = input;
-        self
+        self.after_time = input; self
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.before_time = input;
-        self
+        self.before_time = input; self
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub fn set_include_resolved_cases(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_resolved_cases = input;
-        self
+        self.include_resolved_cases = input; self
     }
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub fn get_include_resolved_cases(&self) -> &::std::option::Option<bool> {
@@ -167,8 +163,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A resumption point for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -195,8 +189,7 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,27 +202,36 @@ impl DescribeCasesInputBuilder {
     }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub fn set_include_communications(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_communications = input;
-        self
+        self.include_communications = input; self
     }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub fn get_include_communications(&self) -> &::std::option::Option<bool> {
         &self.include_communications
     }
     /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_cases::DescribeCasesInput {
-            case_id_list: self.case_id_list,
-            display_id: self.display_id,
-            after_time: self.after_time,
-            before_time: self.before_time,
-            include_resolved_cases: self.include_resolved_cases,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            language: self.language,
-            include_communications: self.include_communications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cases::DescribeCasesInput {
+                case_id_list: self.case_id_list
+                ,
+                display_id: self.display_id
+                ,
+                after_time: self.after_time
+                ,
+                before_time: self.before_time
+                ,
+                include_resolved_cases: self.include_resolved_cases
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                language: self.language
+                ,
+                include_communications: self.include_communications
+                ,
+            }
+        )
     }
 }
+

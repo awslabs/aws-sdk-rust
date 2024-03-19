@@ -5,54 +5,50 @@ pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_input::Updat
 
 impl UpdateDevEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_dev_endpoint();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_dev_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDevEndpoint`.
-///
+/// 
 /// <p>Updates a specified development endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDevEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder,
+                    inner: crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        crate::operation::update_dev_endpoint::UpdateDevEndpointError,
-    > for UpdateDevEndpointFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
+                    crate::operation::update_dev_endpoint::UpdateDevEndpointError,
+                > for UpdateDevEndpointFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
+                        crate::operation::update_dev_endpoint::UpdateDevEndpointError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDevEndpointFluentBuilder {
     /// Creates a new `UpdateDevEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateDevEndpointFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_dev_endpoint::UpdateDevEndpoint::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_dev_endpoint::UpdateDevEndpoint::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        crate::operation::update_dev_endpoint::UpdateDevEndpointError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dev_endpoint::UpdateDevEndpointError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_dev_endpoint::UpdateDevEndpoint::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_dev_endpoint::UpdateDevEndpoint::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_dev_endpoint::UpdateDevEndpointOutput, crate::operation::update_dev_endpoint::UpdateDevEndpointError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
@@ -146,12 +133,12 @@ impl UpdateDevEndpointFluentBuilder {
         self
     }
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    pub fn set_add_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_add_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_public_keys(input);
         self
     }
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    pub fn get_add_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_public_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_add_public_keys()
     }
     /// Appends an item to `DeletePublicKeys`.
@@ -164,12 +151,12 @@ impl UpdateDevEndpointFluentBuilder {
         self
     }
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    pub fn set_delete_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_delete_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_delete_public_keys(input);
         self
     }
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    pub fn get_delete_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delete_public_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_delete_public_keys()
     }
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
@@ -210,12 +197,12 @@ impl UpdateDevEndpointFluentBuilder {
         self
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn set_delete_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_delete_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_delete_arguments(input);
         self
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn get_delete_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delete_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_delete_arguments()
     }
     /// Adds a key-value pair to `AddArguments`.
@@ -240,10 +227,7 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn set_add_arguments(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_arguments(input);
         self
     }
@@ -254,7 +238,8 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn get_add_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_add_arguments(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_add_arguments()
     }
 }
+

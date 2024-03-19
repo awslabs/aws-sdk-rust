@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSettingsInput {
+pub struct GetSettingsInput  {
     /// <p>The list of setting attribute enum values.</p>
     pub attribute: ::std::option::Option<crate::types::SettingAttribute>,
 }
-impl GetSettingsInput {
+impl  GetSettingsInput  {
     /// <p>The list of setting attribute enum values.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::SettingAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::SettingAttribute> {
         self.attribute.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl GetSettingsInputBuilder {
     }
     /// <p>The list of setting attribute enum values.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SettingAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The list of setting attribute enum values.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SettingAttribute> {
@@ -43,6 +42,12 @@ impl GetSettingsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSettingsInput`](crate::operation::get_settings::GetSettingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_settings::GetSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_settings::GetSettingsInput { attribute: self.attribute })
+        ::std::result::Result::Ok(
+            crate::operation::get_settings::GetSettingsInput {
+                attribute: self.attribute
+                ,
+            }
+        )
     }
 }
+

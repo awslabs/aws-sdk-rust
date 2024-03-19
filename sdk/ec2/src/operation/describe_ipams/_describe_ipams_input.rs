@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpamsInput {
+pub struct DescribeIpamsInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of results to return in the request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the IPAMs you want information on.</p>
-    pub ipam_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipam_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeIpamsInput {
+impl  DescribeIpamsInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The IDs of the IPAMs you want information on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_ids.is_none()`.
-    pub fn ipam_ids(&self) -> &[::std::string::String] {
-        self.ipam_ids.as_deref().unwrap_or_default()
+    pub fn ipam_ids(&self) -> & [::std::string::String] {
+        self.ipam_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeIpamsInput {
@@ -52,10 +54,10 @@ impl DescribeIpamsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) ipam_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipam_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeIpamsInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -65,8 +67,7 @@ impl DescribeIpamsInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -79,17 +80,16 @@ impl DescribeIpamsInputBuilder {
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in the request.</p>
@@ -99,8 +99,7 @@ impl DescribeIpamsInputBuilder {
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -113,8 +112,7 @@ impl DescribeIpamsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,29 +125,34 @@ impl DescribeIpamsInputBuilder {
     /// <p>The IDs of the IPAMs you want information on.</p>
     pub fn ipam_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipam_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ipam_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ipam_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the IPAMs you want information on.</p>
-    pub fn set_ipam_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipam_ids = input;
-        self
+    pub fn set_ipam_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ipam_ids = input; self
     }
     /// <p>The IDs of the IPAMs you want information on.</p>
-    pub fn get_ipam_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ipam_ids
     }
     /// Consumes the builder and constructs a [`DescribeIpamsInput`](crate::operation::describe_ipams::DescribeIpamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ipams::DescribeIpamsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_ipams::DescribeIpamsInput {
-            dry_run: self.dry_run,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            ipam_ids: self.ipam_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ipams::DescribeIpamsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ipams::DescribeIpamsInput {
+                dry_run: self.dry_run
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                ipam_ids: self.ipam_ids
+                ,
+            }
+        )
     }
 }
+

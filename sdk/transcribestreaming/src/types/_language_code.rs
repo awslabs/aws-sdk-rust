@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let languagecode = unimplemented!();
 /// match languagecode {
@@ -42,16 +42,14 @@
 /// Specifically, when `languagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -83,99 +81,98 @@ pub enum LanguageCode {
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => LanguageCode::DeDe,
-            "en-AU" => LanguageCode::EnAu,
-            "en-GB" => LanguageCode::EnGb,
-            "en-US" => LanguageCode::EnUs,
-            "es-US" => LanguageCode::EsUs,
-            "fr-CA" => LanguageCode::FrCa,
-            "fr-FR" => LanguageCode::FrFr,
-            "hi-IN" => LanguageCode::HiIn,
-            "it-IT" => LanguageCode::ItIt,
-            "ja-JP" => LanguageCode::JaJp,
-            "ko-KR" => LanguageCode::KoKr,
-            "pt-BR" => LanguageCode::PtBr,
-            "th-TH" => LanguageCode::ThTh,
-            "zh-CN" => LanguageCode::ZhCn,
-            other => LanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "de-DE" => LanguageCode::DeDe,
+"en-AU" => LanguageCode::EnAu,
+"en-GB" => LanguageCode::EnGb,
+"en-US" => LanguageCode::EnUs,
+"es-US" => LanguageCode::EsUs,
+"fr-CA" => LanguageCode::FrCa,
+"fr-FR" => LanguageCode::FrFr,
+"hi-IN" => LanguageCode::HiIn,
+"it-IT" => LanguageCode::ItIt,
+"ja-JP" => LanguageCode::JaJp,
+"ko-KR" => LanguageCode::KoKr,
+"pt-BR" => LanguageCode::PtBr,
+"th-TH" => LanguageCode::ThTh,
+"zh-CN" => LanguageCode::ZhCn,
+other => LanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LanguageCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LanguageCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LanguageCode::from(s))
+                    }
+                }
 impl LanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LanguageCode::DeDe => "de-DE",
-            LanguageCode::EnAu => "en-AU",
-            LanguageCode::EnGb => "en-GB",
-            LanguageCode::EnUs => "en-US",
-            LanguageCode::EsUs => "es-US",
-            LanguageCode::FrCa => "fr-CA",
-            LanguageCode::FrFr => "fr-FR",
-            LanguageCode::HiIn => "hi-IN",
-            LanguageCode::ItIt => "it-IT",
-            LanguageCode::JaJp => "ja-JP",
-            LanguageCode::KoKr => "ko-KR",
-            LanguageCode::PtBr => "pt-BR",
-            LanguageCode::ThTh => "th-TH",
-            LanguageCode::ZhCn => "zh-CN",
-            LanguageCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LanguageCode::DeDe => "de-DE",
+    LanguageCode::EnAu => "en-AU",
+    LanguageCode::EnGb => "en-GB",
+    LanguageCode::EnUs => "en-US",
+    LanguageCode::EsUs => "es-US",
+    LanguageCode::FrCa => "fr-CA",
+    LanguageCode::FrFr => "fr-FR",
+    LanguageCode::HiIn => "hi-IN",
+    LanguageCode::ItIt => "it-IT",
+    LanguageCode::JaJp => "ja-JP",
+    LanguageCode::KoKr => "ko-KR",
+    LanguageCode::PtBr => "pt-BR",
+    LanguageCode::ThTh => "th-TH",
+    LanguageCode::ZhCn => "zh-CN",
+    LanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LanguageCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LanguageCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LanguageCode::DeDe => write!(f, "de-DE"),
-            LanguageCode::EnAu => write!(f, "en-AU"),
-            LanguageCode::EnGb => write!(f, "en-GB"),
-            LanguageCode::EnUs => write!(f, "en-US"),
-            LanguageCode::EsUs => write!(f, "es-US"),
-            LanguageCode::FrCa => write!(f, "fr-CA"),
-            LanguageCode::FrFr => write!(f, "fr-FR"),
-            LanguageCode::HiIn => write!(f, "hi-IN"),
-            LanguageCode::ItIt => write!(f, "it-IT"),
-            LanguageCode::JaJp => write!(f, "ja-JP"),
-            LanguageCode::KoKr => write!(f, "ko-KR"),
-            LanguageCode::PtBr => write!(f, "pt-BR"),
-            LanguageCode::ThTh => write!(f, "th-TH"),
-            LanguageCode::ZhCn => write!(f, "zh-CN"),
-            LanguageCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LanguageCode::DeDe => write!(f, "de-DE"),
+LanguageCode::EnAu => write!(f, "en-AU"),
+LanguageCode::EnGb => write!(f, "en-GB"),
+LanguageCode::EnUs => write!(f, "en-US"),
+LanguageCode::EsUs => write!(f, "es-US"),
+LanguageCode::FrCa => write!(f, "fr-CA"),
+LanguageCode::FrFr => write!(f, "fr-FR"),
+LanguageCode::HiIn => write!(f, "hi-IN"),
+LanguageCode::ItIt => write!(f, "it-IT"),
+LanguageCode::JaJp => write!(f, "ja-JP"),
+LanguageCode::KoKr => write!(f, "ko-KR"),
+LanguageCode::PtBr => write!(f, "pt-BR"),
+LanguageCode::ThTh => write!(f, "th-TH"),
+LanguageCode::ZhCn => write!(f, "zh-CN"),
+LanguageCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFieldLevelEncryptionProfileInput {
+pub struct GetFieldLevelEncryptionProfileInput  {
     /// <p>Get the ID for the field-level encryption profile information.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetFieldLevelEncryptionProfileInput {
+impl  GetFieldLevelEncryptionProfileInput  {
     /// <p>Get the ID for the field-level encryption profile information.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFieldLevelEncryptionProfileInputBuilder {
     }
     /// <p>Get the ID for the field-level encryption profile information.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Get the ID for the field-level encryption profile information.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionProfileInput`](crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

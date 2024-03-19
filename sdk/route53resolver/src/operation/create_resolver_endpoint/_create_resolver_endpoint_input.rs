@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResolverEndpointInput {
+pub struct CreateResolverEndpointInput  {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify the applicable value:</p>
     /// <ul>
     /// <li>
@@ -20,13 +20,13 @@ pub struct CreateResolverEndpointInput {
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
     /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
     /// </note>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressRequest>>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
@@ -56,22 +56,23 @@ pub struct CreateResolverEndpointInput {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
 }
-impl CreateResolverEndpointInput {
+impl  CreateResolverEndpointInput  {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
@@ -80,33 +81,35 @@ impl CreateResolverEndpointInput {
     /// <li>
     /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
     /// </ul>
-    pub fn direction(&self) -> ::std::option::Option<&crate::types::ResolverEndpointDirection> {
+    pub fn direction(&self) -> ::std::option::Option<& crate::types::ResolverEndpointDirection> {
         self.direction.as_ref()
     }
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
     /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[crate::types::IpAddressRequest] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [crate::types::IpAddressRequest] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
-    pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_instance_type(&self) -> ::std::option::Option<& str> {
         self.preferred_instance_type.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
-    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
+    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<& crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
@@ -136,10 +139,11 @@ impl CreateResolverEndpointInput {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[crate::types::Protocol] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [crate::types::Protocol] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResolverEndpointInput {
@@ -155,14 +159,14 @@ impl CreateResolverEndpointInput {
 pub struct CreateResolverEndpointInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressRequest>>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
 }
 impl CreateResolverEndpointInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -173,8 +177,7 @@ impl CreateResolverEndpointInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +190,7 @@ impl CreateResolverEndpointInputBuilder {
     }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,17 +203,16 @@ impl CreateResolverEndpointInputBuilder {
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specify the applicable value:</p>
@@ -234,8 +235,7 @@ impl CreateResolverEndpointInputBuilder {
     /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
-        self.direction = input;
-        self
+        self.direction = input; self
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
@@ -256,21 +256,20 @@ impl CreateResolverEndpointInputBuilder {
     /// </note>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressRequest) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
     /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
     /// </note>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressRequest>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
     /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
     /// </note>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpAddressRequest>> {
         &self.ip_addresses
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
@@ -280,8 +279,7 @@ impl CreateResolverEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +292,7 @@ impl CreateResolverEndpointInputBuilder {
     }
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_instance_type = input;
-        self
+        self.preferred_instance_type = input; self
     }
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,17 +305,16 @@ impl CreateResolverEndpointInputBuilder {
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
@@ -328,8 +324,7 @@ impl CreateResolverEndpointInputBuilder {
     }
     /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
-        self.resolver_endpoint_type = input;
-        self
+        self.resolver_endpoint_type = input; self
     }
     /// <p>For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses.</p>
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
@@ -368,9 +363,9 @@ impl CreateResolverEndpointInputBuilder {
     /// </ul>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -399,9 +394,8 @@ impl CreateResolverEndpointInputBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -430,27 +424,35 @@ impl CreateResolverEndpointInputBuilder {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Protocol>> {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`CreateResolverEndpointInput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resolver_endpoint::CreateResolverEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_resolver_endpoint::CreateResolverEndpointInput {
-            creator_request_id: self.creator_request_id,
-            name: self.name,
-            security_group_ids: self.security_group_ids,
-            direction: self.direction,
-            ip_addresses: self.ip_addresses,
-            outpost_arn: self.outpost_arn,
-            preferred_instance_type: self.preferred_instance_type,
-            tags: self.tags,
-            resolver_endpoint_type: self.resolver_endpoint_type,
-            protocols: self.protocols,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resolver_endpoint::CreateResolverEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointInput {
+                creator_request_id: self.creator_request_id
+                ,
+                name: self.name
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                direction: self.direction
+                ,
+                ip_addresses: self.ip_addresses
+                ,
+                outpost_arn: self.outpost_arn
+                ,
+                preferred_instance_type: self.preferred_instance_type
+                ,
+                tags: self.tags
+                ,
+                resolver_endpoint_type: self.resolver_endpoint_type
+                ,
+                protocols: self.protocols
+                ,
+            }
+        )
     }
 }
+

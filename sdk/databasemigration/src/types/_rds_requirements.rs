@@ -3,7 +3,7 @@
 /// <p>Provides information that describes the requirements to the target engine on Amazon RDS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsRequirements {
+pub struct RdsRequirements  {
     /// <p>The required target Amazon RDS engine edition.</p>
     pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
@@ -19,9 +19,9 @@ pub struct RdsRequirements {
     /// <p>The required target Amazon RDS engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
-impl RdsRequirements {
+impl  RdsRequirements  {
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn engine_edition(&self) -> ::std::option::Option<&str> {
+    pub fn engine_edition(&self) -> ::std::option::Option<& str> {
         self.engine_edition.as_deref()
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
@@ -41,11 +41,11 @@ impl RdsRequirements {
         self.storage_iops
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    pub fn deployment_option(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_option(&self) -> ::std::option::Option<& str> {
         self.deployment_option.as_deref()
     }
     /// <p>The required target Amazon RDS engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required target Amazon RDS engine edition.</p>
     pub fn set_engine_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_edition = input;
-        self
+        self.engine_edition = input; self
     }
     /// <p>The required target Amazon RDS engine edition.</p>
     pub fn get_engine_edition(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
     pub fn set_instance_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.instance_vcpu = input;
-        self
+        self.instance_vcpu = input; self
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
     pub fn get_instance_vcpu(&self) -> &::std::option::Option<f64> {
@@ -104,8 +102,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
     pub fn set_instance_memory(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.instance_memory = input;
-        self
+        self.instance_memory = input; self
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
     pub fn get_instance_memory(&self) -> &::std::option::Option<f64> {
@@ -118,8 +115,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required Amazon RDS DB instance storage size.</p>
     pub fn set_storage_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_size = input;
-        self
+        self.storage_size = input; self
     }
     /// <p>The required Amazon RDS DB instance storage size.</p>
     pub fn get_storage_size(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
     pub fn set_storage_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_iops = input;
-        self
+        self.storage_iops = input; self
     }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
     pub fn get_storage_iops(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     pub fn set_deployment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_option = input;
-        self
+        self.deployment_option = input; self
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     pub fn get_deployment_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl RdsRequirementsBuilder {
     }
     /// <p>The required target Amazon RDS engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The required target Amazon RDS engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl RdsRequirementsBuilder {
     /// Consumes the builder and constructs a [`RdsRequirements`](crate::types::RdsRequirements).
     pub fn build(self) -> crate::types::RdsRequirements {
         crate::types::RdsRequirements {
-            engine_edition: self.engine_edition,
-            instance_vcpu: self.instance_vcpu,
-            instance_memory: self.instance_memory,
-            storage_size: self.storage_size,
-            storage_iops: self.storage_iops,
-            deployment_option: self.deployment_option,
-            engine_version: self.engine_version,
+            engine_edition: self.engine_edition
+            ,
+            instance_vcpu: self.instance_vcpu
+            ,
+            instance_memory: self.instance_memory
+            ,
+            storage_size: self.storage_size
+            ,
+            storage_iops: self.storage_iops
+            ,
+            deployment_option: self.deployment_option
+            ,
+            engine_version: self.engine_version
+            ,
         }
     }
 }
+

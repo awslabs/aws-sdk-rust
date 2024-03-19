@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFrameworkOutput {
+pub struct UpdateFrameworkOutput  {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub framework_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -11,25 +11,25 @@ pub struct UpdateFrameworkOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateFrameworkOutput {
+impl  UpdateFrameworkOutput  {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(&self) -> ::std::option::Option<&str> {
+    pub fn framework_arn(&self) -> ::std::option::Option<& str> {
         self.framework_arn.as_deref()
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFrameworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFrameworkOutput`](crate::operation::update_framework::UpdateFrameworkOutput).
     pub fn builder() -> crate::operation::update_framework::builders::UpdateFrameworkOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateFrameworkOutputBuilder {
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_name = input;
-        self
+        self.framework_name = input; self
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl UpdateFrameworkOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_arn = input;
-        self
+        self.framework_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_framework_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl UpdateFrameworkOutputBuilder {
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFrameworkOutput`](crate::operation::update_framework::UpdateFrameworkOutput).
     pub fn build(self) -> crate::operation::update_framework::UpdateFrameworkOutput {
         crate::operation::update_framework::UpdateFrameworkOutput {
-            framework_name: self.framework_name,
-            framework_arn: self.framework_arn,
-            creation_time: self.creation_time,
+            framework_name: self.framework_name
+            ,
+            framework_arn: self.framework_arn
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

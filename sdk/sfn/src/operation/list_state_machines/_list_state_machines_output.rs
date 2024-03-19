@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStateMachinesOutput {
+pub struct ListStateMachinesOutput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub state_machines: ::std::vec::Vec<crate::types::StateMachineListItem>,
+    pub state_machines: ::std::vec::Vec::<crate::types::StateMachineListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStateMachinesOutput {
+impl  ListStateMachinesOutput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state_machines(&self) -> &[crate::types::StateMachineListItem] {
-        use std::ops::Deref;
-        self.state_machines.deref()
+    pub fn state_machines(&self) -> & [crate::types::StateMachineListItem] {
+        use std::ops::Deref; self.state_machines.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStateMachinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStateMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListStateMachinesOutput`](crate::operation::list_state_machines::ListStateMachinesOutput).
     pub fn builder() -> crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStateMachinesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachinesOutputBuilder {
-    pub(crate) state_machines: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>,
+    pub(crate) state_machines: ::std::option::Option<::std::vec::Vec::<crate::types::StateMachineListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,17 +46,16 @@ impl ListStateMachinesOutputBuilder {
     ///
     pub fn state_machines(mut self, input: crate::types::StateMachineListItem) -> Self {
         let mut v = self.state_machines.unwrap_or_default();
-        v.push(input);
-        self.state_machines = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.state_machines = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_state_machines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>) -> Self {
-        self.state_machines = input;
-        self
+    pub fn set_state_machines(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StateMachineListItem>>) -> Self {
+        self.state_machines = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_state_machines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>> {
+    pub fn get_state_machines(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StateMachineListItem>> {
         &self.state_machines
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -67,37 +65,37 @@ impl ListStateMachinesOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStateMachinesOutput`](crate::operation::list_state_machines::ListStateMachinesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machines`](crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder::state_machines)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_state_machines::ListStateMachinesOutput {
-            state_machines: self.state_machines.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machines",
-                    "state_machines was not specified but it is required when building ListStateMachinesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_state_machines::ListStateMachinesOutput {
+                state_machines: self.state_machines
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machines", "state_machines was not specified but it is required when building ListStateMachinesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

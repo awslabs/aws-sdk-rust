@@ -3,7 +3,7 @@
 /// <p>The Amazon Simple Storage (Amazon S3) location and security configuration for <code>OfflineStore</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3StorageConfig {
+pub struct S3StorageConfig  {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -17,10 +17,10 @@ pub struct S3StorageConfig {
     /// <p>The S3 path where offline records are written.</p>
     pub resolved_output_s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl S3StorageConfig {
+impl  S3StorageConfig  {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
@@ -29,11 +29,11 @@ impl S3StorageConfig {
     /// <li>
     /// <p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The S3 path where offline records are written.</p>
-    pub fn resolved_output_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_output_s3_uri(&self) -> ::std::option::Option<& str> {
         self.resolved_output_s3_uri.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl S3StorageConfigBuilder {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
@@ -88,8 +87,7 @@ impl S3StorageConfigBuilder {
     /// <p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
@@ -107,8 +105,7 @@ impl S3StorageConfigBuilder {
     }
     /// <p>The S3 path where offline records are written.</p>
     pub fn set_resolved_output_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_output_s3_uri = input;
-        self
+        self.resolved_output_s3_uri = input; self
     }
     /// <p>The S3 path where offline records are written.</p>
     pub fn get_resolved_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,9 +114,13 @@ impl S3StorageConfigBuilder {
     /// Consumes the builder and constructs a [`S3StorageConfig`](crate::types::S3StorageConfig).
     pub fn build(self) -> crate::types::S3StorageConfig {
         crate::types::S3StorageConfig {
-            s3_uri: self.s3_uri,
-            kms_key_id: self.kms_key_id,
-            resolved_output_s3_uri: self.resolved_output_s3_uri,
+            s3_uri: self.s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            resolved_output_s3_uri: self.resolved_output_s3_uri
+            ,
         }
     }
 }
+

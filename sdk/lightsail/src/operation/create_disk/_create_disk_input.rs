@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDiskInput {
+pub struct CreateDiskInput  {
     /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
@@ -12,18 +12,18 @@ pub struct CreateDiskInput {
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
+    pub add_ons: ::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>>,
 }
-impl CreateDiskInput {
+impl  CreateDiskInput  {
     /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
-    pub fn disk_name(&self) -> ::std::option::Option<&str> {
+    pub fn disk_name(&self) -> ::std::option::Option<& str> {
         self.disk_name.as_deref()
     }
     /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The size of the disk in GB (<code>32</code>).</p>
@@ -32,16 +32,18 @@ impl CreateDiskInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ons.is_none()`.
-    pub fn add_ons(&self) -> &[crate::types::AddOnRequest] {
-        self.add_ons.as_deref().unwrap_or_default()
+    pub fn add_ons(&self) -> & [crate::types::AddOnRequest] {
+        self.add_ons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDiskInput {
@@ -58,8 +60,8 @@ pub struct CreateDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) size_in_gb: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) add_ons: ::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>>,
 }
 impl CreateDiskInputBuilder {
     /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
@@ -70,8 +72,7 @@ impl CreateDiskInputBuilder {
     }
     /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk_name = input;
-        self
+        self.disk_name = input; self
     }
     /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl CreateDiskInputBuilder {
     /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
@@ -103,8 +103,7 @@ impl CreateDiskInputBuilder {
     }
     /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_gb = input;
-        self
+        self.size_in_gb = input; self
     }
     /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -118,19 +117,18 @@ impl CreateDiskInputBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `add_ons`.
@@ -140,27 +138,34 @@ impl CreateDiskInputBuilder {
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
     pub fn add_ons(mut self, input: crate::types::AddOnRequest) -> Self {
         let mut v = self.add_ons.unwrap_or_default();
-        v.push(input);
-        self.add_ons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_ons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
-        self.add_ons = input;
-        self
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>>) -> Self {
+        self.add_ons = input; self
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>> {
         &self.add_ons
     }
     /// Consumes the builder and constructs a [`CreateDiskInput`](crate::operation::create_disk::CreateDiskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_disk::CreateDiskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_disk::CreateDiskInput {
-            disk_name: self.disk_name,
-            availability_zone: self.availability_zone,
-            size_in_gb: self.size_in_gb,
-            tags: self.tags,
-            add_ons: self.add_ons,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_disk::CreateDiskInput {
+                disk_name: self.disk_name
+                ,
+                availability_zone: self.availability_zone
+                ,
+                size_in_gb: self.size_in_gb
+                ,
+                tags: self.tags
+                ,
+                add_ons: self.add_ons
+                ,
+            }
+        )
     }
 }
+

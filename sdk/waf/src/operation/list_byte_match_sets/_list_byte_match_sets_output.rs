@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListByteMatchSetsOutput {
+pub struct ListByteMatchSetsOutput  {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub byte_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,
+    pub byte_match_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetSummary>>,
     _request_id: Option<String>,
 }
-impl ListByteMatchSetsOutput {
+impl  ListByteMatchSetsOutput  {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.byte_match_sets.is_none()`.
-    pub fn byte_match_sets(&self) -> &[crate::types::ByteMatchSetSummary] {
-        self.byte_match_sets.as_deref().unwrap_or_default()
+    pub fn byte_match_sets(&self) -> & [crate::types::ByteMatchSetSummary] {
+        self.byte_match_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListByteMatchSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListByteMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListByteMatchSetsOutput`](crate::operation::list_byte_match_sets::ListByteMatchSetsOutput).
     pub fn builder() -> crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListByteMatchSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListByteMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) byte_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,
+    pub(crate) byte_match_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListByteMatchSetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListByteMatchSetsOutputBuilder {
     }
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListByteMatchSetsOutputBuilder {
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
     pub fn byte_match_sets(mut self, input: crate::types::ByteMatchSetSummary) -> Self {
         let mut v = self.byte_match_sets.unwrap_or_default();
-        v.push(input);
-        self.byte_match_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.byte_match_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn set_byte_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>) -> Self {
-        self.byte_match_sets = input;
-        self
+    pub fn set_byte_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetSummary>>) -> Self {
+        self.byte_match_sets = input; self
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn get_byte_match_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>> {
+    pub fn get_byte_match_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ByteMatchSetSummary>> {
         &self.byte_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListByteMatchSetsOutput`](crate::operation::list_byte_match_sets::ListByteMatchSetsOutput).
     pub fn build(self) -> crate::operation::list_byte_match_sets::ListByteMatchSetsOutput {
         crate::operation::list_byte_match_sets::ListByteMatchSetsOutput {
-            next_marker: self.next_marker,
-            byte_match_sets: self.byte_match_sets,
+            next_marker: self.next_marker
+            ,
+            byte_match_sets: self.byte_match_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

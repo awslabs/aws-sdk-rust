@@ -3,7 +3,7 @@
 /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Backup {
+pub struct Backup  {
     /// <p>The ID of the backup.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the backup.</p>
@@ -37,7 +37,7 @@ pub struct Backup {
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with a particular file system.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
     pub file_system: ::std::option::Option<crate::types::FileSystem>,
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
@@ -53,9 +53,9 @@ pub struct Backup {
     /// <p>Describes an Amazon FSx volume.</p>
     pub volume: ::std::option::Option<crate::types::Volume>,
 }
-impl Backup {
+impl  Backup  {
     /// <p>The ID of the backup.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The lifecycle status of the backup.</p>
@@ -75,15 +75,15 @@ impl Backup {
     /// <li>
     /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
     /// </ul>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::BackupLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::BackupLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
-    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::BackupFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<& crate::types::BackupFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The type of the file-system backup.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BackupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::BackupType> {
         self.r#type.as_ref()
     }
     /// <p>Displays the current percent of progress of an asynchronous task.</p>
@@ -91,49 +91,50 @@ impl Backup {
         self.progress_percent
     }
     /// <p>The time when a particular backup was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags associated with a particular file system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
-    pub fn file_system(&self) -> ::std::option::Option<&crate::types::FileSystem> {
+    pub fn file_system(&self) -> ::std::option::Option<& crate::types::FileSystem> {
         self.file_system.as_ref()
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
-    pub fn directory_information(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryBackupAttributes> {
+    pub fn directory_information(&self) -> ::std::option::Option<& crate::types::ActiveDirectoryBackupAttributes> {
         self.directory_information.as_ref()
     }
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    pub fn source_backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_backup_id(&self) -> ::std::option::Option<& str> {
         self.source_backup_id.as_deref()
     }
     /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
-    pub fn source_backup_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_backup_region(&self) -> ::std::option::Option<& str> {
         self.source_backup_region.as_deref()
     }
     /// <p>Specifies the resource type that's backed up.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Describes an Amazon FSx volume.</p>
-    pub fn volume(&self) -> ::std::option::Option<&crate::types::Volume> {
+    pub fn volume(&self) -> ::std::option::Option<& crate::types::Volume> {
         self.volume.as_ref()
     }
 }
@@ -156,7 +157,7 @@ pub struct BackupBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     pub(crate) directory_information: ::std::option::Option<crate::types::ActiveDirectoryBackupAttributes>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
@@ -174,8 +175,7 @@ impl BackupBuilder {
     }
     /// <p>The ID of the backup.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The ID of the backup.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +221,7 @@ impl BackupBuilder {
     /// <p><code>FAILED</code> - Amazon FSx couldn't finish the backup.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::BackupLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
@@ -251,8 +250,7 @@ impl BackupBuilder {
     }
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
     pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::BackupFailureDetails>) -> Self {
-        self.failure_details = input;
-        self
+        self.failure_details = input; self
     }
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
     pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::BackupFailureDetails> {
@@ -266,8 +264,7 @@ impl BackupBuilder {
     }
     /// <p>The type of the file-system backup.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BackupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the file-system backup.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BackupType> {
@@ -280,8 +277,7 @@ impl BackupBuilder {
     }
     /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.progress_percent = input;
-        self
+        self.progress_percent = input; self
     }
     /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
@@ -295,8 +291,7 @@ impl BackupBuilder {
     }
     /// <p>The time when a particular backup was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when a particular backup was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -309,8 +304,7 @@ impl BackupBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +317,7 @@ impl BackupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -337,17 +330,16 @@ impl BackupBuilder {
     /// <p>The tags associated with a particular file system.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with a particular file system.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with a particular file system.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
@@ -358,8 +350,7 @@ impl BackupBuilder {
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
     pub fn set_file_system(mut self, input: ::std::option::Option<crate::types::FileSystem>) -> Self {
-        self.file_system = input;
-        self
+        self.file_system = input; self
     }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
     pub fn get_file_system(&self) -> &::std::option::Option<crate::types::FileSystem> {
@@ -372,8 +363,7 @@ impl BackupBuilder {
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
     pub fn set_directory_information(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryBackupAttributes>) -> Self {
-        self.directory_information = input;
-        self
+        self.directory_information = input; self
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
     pub fn get_directory_information(&self) -> &::std::option::Option<crate::types::ActiveDirectoryBackupAttributes> {
@@ -386,8 +376,7 @@ impl BackupBuilder {
     }
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +389,7 @@ impl BackupBuilder {
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn set_source_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_backup_id = input;
-        self
+        self.source_backup_id = input; self
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -414,8 +402,7 @@ impl BackupBuilder {
     }
     /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
     pub fn set_source_backup_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_backup_region = input;
-        self
+        self.source_backup_region = input; self
     }
     /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
     pub fn get_source_backup_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -428,8 +415,7 @@ impl BackupBuilder {
     }
     /// <p>Specifies the resource type that's backed up.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Specifies the resource type that's backed up.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -442,8 +428,7 @@ impl BackupBuilder {
     }
     /// <p>Describes an Amazon FSx volume.</p>
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::Volume>) -> Self {
-        self.volume = input;
-        self
+        self.volume = input; self
     }
     /// <p>Describes an Amazon FSx volume.</p>
     pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
@@ -452,22 +437,39 @@ impl BackupBuilder {
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {
         crate::types::Backup {
-            backup_id: self.backup_id,
-            lifecycle: self.lifecycle,
-            failure_details: self.failure_details,
-            r#type: self.r#type,
-            progress_percent: self.progress_percent,
-            creation_time: self.creation_time,
-            kms_key_id: self.kms_key_id,
-            resource_arn: self.resource_arn,
-            tags: self.tags,
-            file_system: self.file_system,
-            directory_information: self.directory_information,
-            owner_id: self.owner_id,
-            source_backup_id: self.source_backup_id,
-            source_backup_region: self.source_backup_region,
-            resource_type: self.resource_type,
-            volume: self.volume,
+            backup_id: self.backup_id
+            ,
+            lifecycle: self.lifecycle
+            ,
+            failure_details: self.failure_details
+            ,
+            r#type: self.r#type
+            ,
+            progress_percent: self.progress_percent
+            ,
+            creation_time: self.creation_time
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            tags: self.tags
+            ,
+            file_system: self.file_system
+            ,
+            directory_information: self.directory_information
+            ,
+            owner_id: self.owner_id
+            ,
+            source_backup_id: self.source_backup_id
+            ,
+            source_backup_region: self.source_backup_region
+            ,
+            resource_type: self.resource_type
+            ,
+            volume: self.volume
+            ,
         }
     }
 }
+

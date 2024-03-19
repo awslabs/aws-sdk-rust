@@ -3,39 +3,41 @@
 /// <p>The Identity and Access Management (IAM) action definition details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamActionDefinition {
+pub struct IamActionDefinition  {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached.</p>
     pub policy_arn: ::std::string::String,
     /// <p>A list of roles to be attached. There must be at least one role.</p>
-    pub roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of groups to be attached. There must be at least one group.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of users to be attached. There must be at least one user.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub users: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl IamActionDefinition {
+impl  IamActionDefinition  {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached.</p>
-    pub fn policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_arn.deref()
+    pub fn policy_arn(&self) -> & str {
+        use std::ops::Deref; self.policy_arn.deref()
     }
     /// <p>A list of roles to be attached. There must be at least one role.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
-    pub fn roles(&self) -> &[::std::string::String] {
-        self.roles.as_deref().unwrap_or_default()
+    pub fn roles(&self) -> & [::std::string::String] {
+        self.roles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of groups to be attached. There must be at least one group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of users to be attached. There must be at least one user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
-    pub fn users(&self) -> &[::std::string::String] {
-        self.users.as_deref().unwrap_or_default()
+    pub fn users(&self) -> & [::std::string::String] {
+        self.users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IamActionDefinition {
@@ -50,9 +52,9 @@ impl IamActionDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamActionDefinitionBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl IamActionDefinitionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached.</p>
@@ -63,8 +65,7 @@ impl IamActionDefinitionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +78,16 @@ impl IamActionDefinitionBuilder {
     /// <p>A list of roles to be attached. There must be at least one role.</p>
     pub fn roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input.into());
-        self.roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of roles to be attached. There must be at least one role.</p>
-    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.roles = input; self
     }
     /// <p>A list of roles to be attached. There must be at least one role.</p>
-    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.roles
     }
     /// Appends an item to `groups`.
@@ -97,17 +97,16 @@ impl IamActionDefinitionBuilder {
     /// <p>A list of groups to be attached. There must be at least one group.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of groups to be attached. There must be at least one group.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>A list of groups to be attached. There must be at least one group.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// Appends an item to `users`.
@@ -117,33 +116,37 @@ impl IamActionDefinitionBuilder {
     /// <p>A list of users to be attached. There must be at least one user.</p>
     pub fn users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input.into());
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of users to be attached. There must be at least one user.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.users = input; self
     }
     /// <p>A list of users to be attached. There must be at least one user.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.users
     }
     /// Consumes the builder and constructs a [`IamActionDefinition`](crate::types::IamActionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_arn`](crate::types::builders::IamActionDefinitionBuilder::policy_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IamActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IamActionDefinition {
-            policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_arn",
-                    "policy_arn was not specified but it is required when building IamActionDefinition",
-                )
-            })?,
-            roles: self.roles,
-            groups: self.groups,
-            users: self.users,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IamActionDefinition {
+                policy_arn: self.policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_arn", "policy_arn was not specified but it is required when building IamActionDefinition")
+                    )?
+                ,
+                roles: self.roles
+                ,
+                groups: self.groups
+                ,
+                users: self.users
+                ,
+            }
+        )
     }
 }
+

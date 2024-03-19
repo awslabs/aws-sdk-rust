@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGameSessionInput {
+pub struct CreateGameSessionInput  {
     /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
@@ -12,7 +12,7 @@ pub struct CreateGameSessionInput {
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p>
-    pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
+    pub game_properties: ::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>>,
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
@@ -34,13 +34,13 @@ pub struct CreateGameSessionInput {
     /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl CreateGameSessionInput {
+impl  CreateGameSessionInput  {
     /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -48,25 +48,26 @@ impl CreateGameSessionInput {
         self.maximum_player_session_count
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
-    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
-        self.game_properties.as_deref().unwrap_or_default()
+    pub fn game_properties(&self) -> & [crate::types::GameProperty] {
+        self.game_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
-    pub fn creator_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_id(&self) -> ::std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
-    pub fn game_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn game_session_id(&self) -> ::std::option::Option<& str> {
         self.game_session_id.as_deref()
     }
     /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
@@ -76,15 +77,15 @@ impl CreateGameSessionInput {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(&self) -> ::std::option::Option<&str> {
+    pub fn game_session_data(&self) -> ::std::option::Option<& str> {
         self.game_session_data.as_deref()
     }
     /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -103,7 +104,7 @@ pub struct CreateGameSessionInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_player_session_count: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
+    pub(crate) game_properties: ::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>>,
     pub(crate) creator_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
@@ -118,8 +119,7 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +132,7 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +146,7 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn set_maximum_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_player_session_count = input;
-        self
+        self.maximum_player_session_count = input; self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
@@ -161,8 +159,7 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,17 +172,16 @@ impl CreateGameSessionInputBuilder {
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p>
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
-        v.push(input);
-        self.game_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.game_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p>
-    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
-        self.game_properties = input;
-        self
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>>) -> Self {
+        self.game_properties = input; self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p>
-    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>> {
         &self.game_properties
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
@@ -201,8 +197,7 @@ impl CreateGameSessionInputBuilder {
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_id = input;
-        self
+        self.creator_id = input; self
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
@@ -220,8 +215,7 @@ impl CreateGameSessionInputBuilder {
     /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_session_id = input;
-        self
+        self.game_session_id = input; self
     }
     /// <p><i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i></p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
@@ -247,8 +241,7 @@ impl CreateGameSessionInputBuilder {
     /// </fleet>
     /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
@@ -267,8 +260,7 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn set_game_session_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_session_data = input;
-        self
+        self.game_session_data = input; self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,28 +273,38 @@ impl CreateGameSessionInputBuilder {
     }
     /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`CreateGameSessionInput`](crate::operation::create_game_session::CreateGameSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_game_session::CreateGameSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_game_session::CreateGameSessionInput {
-            fleet_id: self.fleet_id,
-            alias_id: self.alias_id,
-            maximum_player_session_count: self.maximum_player_session_count,
-            name: self.name,
-            game_properties: self.game_properties,
-            creator_id: self.creator_id,
-            game_session_id: self.game_session_id,
-            idempotency_token: self.idempotency_token,
-            game_session_data: self.game_session_data,
-            location: self.location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_game_session::CreateGameSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_game_session::CreateGameSessionInput {
+                fleet_id: self.fleet_id
+                ,
+                alias_id: self.alias_id
+                ,
+                maximum_player_session_count: self.maximum_player_session_count
+                ,
+                name: self.name
+                ,
+                game_properties: self.game_properties
+                ,
+                creator_id: self.creator_id
+                ,
+                game_session_id: self.game_session_id
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                game_session_data: self.game_session_data
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

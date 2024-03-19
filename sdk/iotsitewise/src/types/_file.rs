@@ -3,7 +3,7 @@
 /// <p>The file in Amazon S3 where your data is saved.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct File {
+pub struct File  {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     pub bucket: ::std::string::String,
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
@@ -11,19 +11,17 @@ pub struct File {
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl File {
+impl  File  {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl FileBuilder {
     }
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FileBuilder {
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl FileBuilder {
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +87,22 @@ impl FileBuilder {
     /// - [`bucket`](crate::types::builders::FileBuilder::bucket)
     /// - [`key`](crate::types::builders::FileBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::File, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::File {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building File",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building File")
-            })?,
-            version_id: self.version_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::File {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building File")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building File")
+                    )?
+                ,
+                version_id: self.version_id
+                ,
+            }
+        )
     }
 }
+

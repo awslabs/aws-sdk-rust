@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateInput {
+pub struct CreateTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the template. The template name must be unique.</p>
@@ -12,27 +12,27 @@ pub struct CreateTemplateInput {
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Metadata assigned to a template consisting of a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateTemplateInput {
+impl  CreateTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>Name of the template. The template name must be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::TemplateDefinition> {
         self.definition.as_ref()
     }
     /// <p>Idempotency token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Metadata assigned to a template consisting of a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::TemplateDefinition>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
@@ -62,8 +62,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>Name of the template. The template name must be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the template. The template name must be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateDefinition> {
@@ -106,8 +103,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>Idempotency token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,29 +116,34 @@ impl CreateTemplateInputBuilder {
     /// <p>Metadata assigned to a template consisting of a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata assigned to a template consisting of a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata assigned to a template consisting of a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
-            connector_arn: self.connector_arn,
-            name: self.name,
-            definition: self.definition,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_template::CreateTemplateInput {
+                connector_arn: self.connector_arn
+                ,
+                name: self.name
+                ,
+                definition: self.definition
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

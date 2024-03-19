@@ -3,36 +3,37 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTableStatisticsOutput {
+pub struct DescribeTableStatisticsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The table statistics.</p>
-    pub table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub table_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTableStatisticsOutput {
+impl  DescribeTableStatisticsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The table statistics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_statistics.is_none()`.
-    pub fn table_statistics(&self) -> &[crate::types::TableStatistics] {
-        self.table_statistics.as_deref().unwrap_or_default()
+    pub fn table_statistics(&self) -> & [crate::types::TableStatistics] {
+        self.table_statistics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTableStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTableStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput).
     pub fn builder() -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsOutputBuilder {
@@ -45,7 +46,7 @@ impl DescribeTableStatisticsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsOutputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub(crate) table_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl DescribeTableStatisticsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeTableStatisticsOutputBuilder {
     /// <p>The table statistics.</p>
     pub fn table_statistics(mut self, input: crate::types::TableStatistics) -> Self {
         let mut v = self.table_statistics.unwrap_or_default();
-        v.push(input);
-        self.table_statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The table statistics.</p>
-    pub fn set_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>) -> Self {
-        self.table_statistics = input;
-        self
+    pub fn set_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>) -> Self {
+        self.table_statistics = input; self
     }
     /// <p>The table statistics.</p>
-    pub fn get_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
+    pub fn get_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>> {
         &self.table_statistics
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -91,29 +90,32 @@ impl DescribeTableStatisticsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput).
     pub fn build(self) -> crate::operation::describe_table_statistics::DescribeTableStatisticsOutput {
         crate::operation::describe_table_statistics::DescribeTableStatisticsOutput {
-            replication_task_arn: self.replication_task_arn,
-            table_statistics: self.table_statistics,
-            marker: self.marker,
+            replication_task_arn: self.replication_task_arn
+            ,
+            table_statistics: self.table_statistics
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

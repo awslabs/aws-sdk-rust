@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteTableInput {
+pub struct BatchDeleteTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the table to delete.</p>
-    pub tables_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tables_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchDeleteTableInput {
+impl  BatchDeleteTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A list of the table to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables_to_delete.is_none()`.
-    pub fn tables_to_delete(&self) -> &[::std::string::String] {
-        self.tables_to_delete.as_deref().unwrap_or_default()
+    pub fn tables_to_delete(&self) -> & [::std::string::String] {
+        self.tables_to_delete.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl BatchDeleteTableInput {
 pub struct BatchDeleteTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tables_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tables_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteTableInputBuilder {
@@ -56,8 +57,7 @@ impl BatchDeleteTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BatchDeleteTableInputBuilder {
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl BatchDeleteTableInputBuilder {
     /// <p>A list of the table to delete.</p>
     pub fn tables_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tables_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.tables_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tables_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the table to delete.</p>
-    pub fn set_tables_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tables_to_delete = input;
-        self
+    pub fn set_tables_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tables_to_delete = input; self
     }
     /// <p>A list of the table to delete.</p>
-    pub fn get_tables_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tables_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tables_to_delete
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
@@ -105,22 +103,26 @@ impl BatchDeleteTableInputBuilder {
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_delete_table::BatchDeleteTableInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            tables_to_delete: self.tables_to_delete,
-            transaction_id: self.transaction_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_table::BatchDeleteTableInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                tables_to_delete: self.tables_to_delete
+                ,
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

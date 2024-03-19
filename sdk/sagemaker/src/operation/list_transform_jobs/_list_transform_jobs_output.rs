@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransformJobsOutput {
+pub struct ListTransformJobsOutput  {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub transform_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
+    pub transform_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TransformJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTransformJobsOutput {
+impl  ListTransformJobsOutput  {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transform_job_summaries.is_none()`.
-    pub fn transform_job_summaries(&self) -> &[crate::types::TransformJobSummary] {
-        self.transform_job_summaries.as_deref().unwrap_or_default()
+    pub fn transform_job_summaries(&self) -> & [crate::types::TransformJobSummary] {
+        self.transform_job_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTransformJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTransformJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTransformJobsOutput`](crate::operation::list_transform_jobs::ListTransformJobsOutput).
     pub fn builder() -> crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTransformJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransformJobsOutputBuilder {
-    pub(crate) transform_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
+    pub(crate) transform_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TransformJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTransformJobsOutputBuilder {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
     pub fn transform_job_summaries(mut self, input: crate::types::TransformJobSummary) -> Self {
         let mut v = self.transform_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.transform_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transform_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn set_transform_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>) -> Self {
-        self.transform_job_summaries = input;
-        self
+    pub fn set_transform_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransformJobSummary>>) -> Self {
+        self.transform_job_summaries = input; self
     }
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn get_transform_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>> {
+    pub fn get_transform_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransformJobSummary>> {
         &self.transform_job_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
@@ -69,28 +69,30 @@ impl ListTransformJobsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTransformJobsOutput`](crate::operation::list_transform_jobs::ListTransformJobsOutput).
     pub fn build(self) -> crate::operation::list_transform_jobs::ListTransformJobsOutput {
         crate::operation::list_transform_jobs::ListTransformJobsOutput {
-            transform_job_summaries: self.transform_job_summaries,
-            next_token: self.next_token,
+            transform_job_summaries: self.transform_job_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

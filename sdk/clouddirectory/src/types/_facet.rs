@@ -3,7 +3,7 @@
 /// <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <code>Rule</code>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Facet {
+pub struct Facet  {
     /// <p>The name of the <code>Facet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
@@ -11,17 +11,17 @@ pub struct Facet {
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub facet_style: ::std::option::Option<crate::types::FacetStyle>,
 }
-impl Facet {
+impl  Facet  {
     /// <p>The name of the <code>Facet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    pub fn object_type(&self) -> ::std::option::Option<&crate::types::ObjectType> {
+    pub fn object_type(&self) -> ::std::option::Option<& crate::types::ObjectType> {
         self.object_type.as_ref()
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn facet_style(&self) -> ::std::option::Option<&crate::types::FacetStyle> {
+    pub fn facet_style(&self) -> ::std::option::Option<& crate::types::FacetStyle> {
         self.facet_style.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FacetBuilder {
     }
     /// <p>The name of the <code>Facet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>Facet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FacetBuilder {
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
-        self.object_type = input;
-        self
+        self.object_type = input; self
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
@@ -76,8 +74,7 @@ impl FacetBuilder {
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
-        self.facet_style = input;
-        self
+        self.facet_style = input; self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
@@ -86,9 +83,13 @@ impl FacetBuilder {
     /// Consumes the builder and constructs a [`Facet`](crate::types::Facet).
     pub fn build(self) -> crate::types::Facet {
         crate::types::Facet {
-            name: self.name,
-            object_type: self.object_type,
-            facet_style: self.facet_style,
+            name: self.name
+            ,
+            object_type: self.object_type
+            ,
+            facet_style: self.facet_style
+            ,
         }
     }
 }
+

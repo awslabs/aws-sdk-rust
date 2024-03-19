@@ -3,7 +3,7 @@
 /// <p>Contains information on unusual and impossible travel in an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImpossibleTravelDetail {
+pub struct ImpossibleTravelDetail  {
     /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub starting_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>IP address where the resource was last used in the impossible travel.</p>
@@ -15,21 +15,21 @@ pub struct ImpossibleTravelDetail {
     /// <p>Returns the time difference between the first and last timestamp the resource was used.</p>
     pub hourly_time_delta: ::std::option::Option<i32>,
 }
-impl ImpossibleTravelDetail {
+impl  ImpossibleTravelDetail  {
     /// <p>IP address where the resource was first used in the impossible travel.</p>
-    pub fn starting_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn starting_ip_address(&self) -> ::std::option::Option<& str> {
         self.starting_ip_address.as_deref()
     }
     /// <p>IP address where the resource was last used in the impossible travel.</p>
-    pub fn ending_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ending_ip_address(&self) -> ::std::option::Option<& str> {
         self.ending_ip_address.as_deref()
     }
     /// <p>Location where the resource was first used in the impossible travel.</p>
-    pub fn starting_location(&self) -> ::std::option::Option<&str> {
+    pub fn starting_location(&self) -> ::std::option::Option<& str> {
         self.starting_location.as_deref()
     }
     /// <p>Location where the resource was last used in the impossible travel.</p>
-    pub fn ending_location(&self) -> ::std::option::Option<&str> {
+    pub fn ending_location(&self) -> ::std::option::Option<& str> {
         self.ending_location.as_deref()
     }
     /// <p>Returns the time difference between the first and last timestamp the resource was used.</p>
@@ -62,8 +62,7 @@ impl ImpossibleTravelDetailBuilder {
     }
     /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn set_starting_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_ip_address = input;
-        self
+        self.starting_ip_address = input; self
     }
     /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn get_starting_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ImpossibleTravelDetailBuilder {
     }
     /// <p>IP address where the resource was last used in the impossible travel.</p>
     pub fn set_ending_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ending_ip_address = input;
-        self
+        self.ending_ip_address = input; self
     }
     /// <p>IP address where the resource was last used in the impossible travel.</p>
     pub fn get_ending_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ImpossibleTravelDetailBuilder {
     }
     /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn set_starting_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_location = input;
-        self
+        self.starting_location = input; self
     }
     /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn get_starting_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ImpossibleTravelDetailBuilder {
     }
     /// <p>Location where the resource was last used in the impossible travel.</p>
     pub fn set_ending_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ending_location = input;
-        self
+        self.ending_location = input; self
     }
     /// <p>Location where the resource was last used in the impossible travel.</p>
     pub fn get_ending_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl ImpossibleTravelDetailBuilder {
     }
     /// <p>Returns the time difference between the first and last timestamp the resource was used.</p>
     pub fn set_hourly_time_delta(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hourly_time_delta = input;
-        self
+        self.hourly_time_delta = input; self
     }
     /// <p>Returns the time difference between the first and last timestamp the resource was used.</p>
     pub fn get_hourly_time_delta(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl ImpossibleTravelDetailBuilder {
     /// Consumes the builder and constructs a [`ImpossibleTravelDetail`](crate::types::ImpossibleTravelDetail).
     pub fn build(self) -> crate::types::ImpossibleTravelDetail {
         crate::types::ImpossibleTravelDetail {
-            starting_ip_address: self.starting_ip_address,
-            ending_ip_address: self.ending_ip_address,
-            starting_location: self.starting_location,
-            ending_location: self.ending_location,
-            hourly_time_delta: self.hourly_time_delta,
+            starting_ip_address: self.starting_ip_address
+            ,
+            ending_ip_address: self.ending_ip_address
+            ,
+            starting_location: self.starting_location
+            ,
+            ending_location: self.ending_location
+            ,
+            hourly_time_delta: self.hourly_time_delta
+            ,
         }
     }
 }
+

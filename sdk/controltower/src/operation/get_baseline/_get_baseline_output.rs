@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBaselineOutput {
+pub struct GetBaselineOutput  {
     /// <p>The baseline ARN.</p>
     pub arn: ::std::string::String,
     /// <p>A user-friendly name for the baseline.</p>
@@ -11,27 +11,25 @@ pub struct GetBaselineOutput {
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBaselineOutput {
+impl  GetBaselineOutput  {
     /// <p>The baseline ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A user-friendly name for the baseline.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the baseline.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetBaselineOutput`](crate::operation::get_baseline::GetBaselineOutput).
     pub fn builder() -> crate::operation::get_baseline::builders::GetBaselineOutputBuilder {
@@ -57,8 +55,7 @@ impl GetBaselineOutputBuilder {
     }
     /// <p>The baseline ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The baseline ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl GetBaselineOutputBuilder {
     }
     /// <p>A user-friendly name for the baseline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A user-friendly name for the baseline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,42 +82,43 @@ impl GetBaselineOutputBuilder {
     }
     /// <p>A description of the baseline.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the baseline.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBaselineOutput`](crate::operation::get_baseline::GetBaselineOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::get_baseline::builders::GetBaselineOutputBuilder::arn)
     /// - [`name`](crate::operation::get_baseline::builders::GetBaselineOutputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_baseline::GetBaselineOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_baseline::GetBaselineOutput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetBaselineOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetBaselineOutput",
-                )
-            })?,
-            description: self.description,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_baseline::GetBaselineOutput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetBaselineOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetBaselineOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the SAML application configured for the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamlOptionsOutput {
+pub struct SamlOptionsOutput  {
     /// <p>True if SAML is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Describes the SAML Identity Provider's information.</p>
@@ -15,21 +15,21 @@ pub struct SamlOptionsOutput {
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub session_timeout_minutes: ::std::option::Option<i32>,
 }
-impl SamlOptionsOutput {
+impl  SamlOptionsOutput  {
     /// <p>True if SAML is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Describes the SAML Identity Provider's information.</p>
-    pub fn idp(&self) -> ::std::option::Option<&crate::types::SamlIdp> {
+    pub fn idp(&self) -> ::std::option::Option<& crate::types::SamlIdp> {
         self.idp.as_ref()
     }
     /// <p>The key used for matching the SAML Subject attribute.</p>
-    pub fn subject_key(&self) -> ::std::option::Option<&str> {
+    pub fn subject_key(&self) -> ::std::option::Option<& str> {
         self.subject_key.as_deref()
     }
     /// <p>The key used for matching the SAML Roles attribute.</p>
-    pub fn roles_key(&self) -> ::std::option::Option<&str> {
+    pub fn roles_key(&self) -> ::std::option::Option<& str> {
         self.roles_key.as_deref()
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
@@ -62,8 +62,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>True if SAML is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True if SAML is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>Describes the SAML Identity Provider's information.</p>
     pub fn set_idp(mut self, input: ::std::option::Option<crate::types::SamlIdp>) -> Self {
-        self.idp = input;
-        self
+        self.idp = input; self
     }
     /// <p>Describes the SAML Identity Provider's information.</p>
     pub fn get_idp(&self) -> &::std::option::Option<crate::types::SamlIdp> {
@@ -90,8 +88,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The key used for matching the SAML Subject attribute.</p>
     pub fn set_subject_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_key = input;
-        self
+        self.subject_key = input; self
     }
     /// <p>The key used for matching the SAML Subject attribute.</p>
     pub fn get_subject_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The key used for matching the SAML Roles attribute.</p>
     pub fn set_roles_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.roles_key = input;
-        self
+        self.roles_key = input; self
     }
     /// <p>The key used for matching the SAML Roles attribute.</p>
     pub fn get_roles_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn set_session_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout_minutes = input;
-        self
+        self.session_timeout_minutes = input; self
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn get_session_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl SamlOptionsOutputBuilder {
     /// Consumes the builder and constructs a [`SamlOptionsOutput`](crate::types::SamlOptionsOutput).
     pub fn build(self) -> crate::types::SamlOptionsOutput {
         crate::types::SamlOptionsOutput {
-            enabled: self.enabled,
-            idp: self.idp,
-            subject_key: self.subject_key,
-            roles_key: self.roles_key,
-            session_timeout_minutes: self.session_timeout_minutes,
+            enabled: self.enabled
+            ,
+            idp: self.idp
+            ,
+            subject_key: self.subject_key
+            ,
+            roles_key: self.roles_key
+            ,
+            session_timeout_minutes: self.session_timeout_minutes
+            ,
         }
     }
 }
+

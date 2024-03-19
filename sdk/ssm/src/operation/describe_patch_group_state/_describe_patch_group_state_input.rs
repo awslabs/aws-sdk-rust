@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePatchGroupStateInput {
+pub struct DescribePatchGroupStateInput  {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
-impl DescribePatchGroupStateInput {
+impl  DescribePatchGroupStateInput  {
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
-    pub fn patch_group(&self) -> ::std::option::Option<&str> {
+    pub fn patch_group(&self) -> ::std::option::Option<& str> {
         self.patch_group.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribePatchGroupStateInputBuilder {
     }
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
     pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.patch_group
     }
     /// Consumes the builder and constructs a [`DescribePatchGroupStateInput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_patch_group_state::DescribePatchGroupStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_patch_group_state::DescribePatchGroupStateInput {
-            patch_group: self.patch_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_patch_group_state::DescribePatchGroupStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_patch_group_state::DescribePatchGroupStateInput {
+                patch_group: self.patch_group
+                ,
+            }
+        )
     }
 }
+

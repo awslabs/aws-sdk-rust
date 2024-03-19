@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcAttributeInput {
+pub struct DescribeVpcAttributeInput  {
     /// <p>The VPC attribute.</p>
     pub attribute: ::std::option::Option<crate::types::VpcAttributeName>,
     /// <p>The ID of the VPC.</p>
@@ -10,13 +10,13 @@ pub struct DescribeVpcAttributeInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DescribeVpcAttributeInput {
+impl  DescribeVpcAttributeInput  {
     /// <p>The VPC attribute.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::VpcAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::VpcAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl DescribeVpcAttributeInputBuilder {
     }
     /// <p>The VPC attribute.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::VpcAttributeName>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The VPC attribute.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::VpcAttributeName> {
@@ -63,8 +62,7 @@ impl DescribeVpcAttributeInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DescribeVpcAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
-            attribute: self.attribute,
-            vpc_id: self.vpc_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
+                attribute: self.attribute
+                ,
+                vpc_id: self.vpc_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

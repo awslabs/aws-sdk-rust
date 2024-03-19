@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfiguredAudienceModelInput {
+pub struct CreateConfiguredAudienceModelInput  {
     /// <p>The name of the configured audience model.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the audience model to use for the configured audience model.</p>
@@ -12,7 +12,7 @@ pub struct CreateConfiguredAudienceModelInput {
     /// <p>The description of the configured audience model.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether audience metrics are shared.</p>
-    pub shared_audience_metrics: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>,
+    pub shared_audience_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>,
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub min_matching_seed_size: ::std::option::Option<i32>,
     /// <p>Configure the list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
@@ -35,40 +35,41 @@ pub struct CreateConfiguredAudienceModelInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
     /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub child_resource_tag_on_create_policy: ::std::option::Option<crate::types::TagOnCreatePolicy>,
 }
-impl CreateConfiguredAudienceModelInput {
+impl  CreateConfiguredAudienceModelInput  {
     /// <p>The name of the configured audience model.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model to use for the configured audience model.</p>
-    pub fn audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.audience_model_arn.as_deref()
     }
     /// <p>Configure the Amazon S3 location and IAM Role for audiences created using this configured audience model. Each audience will have a unique location. The IAM Role must have <code>s3:PutObject</code> permission on the destination Amazon S3 location. If the destination is protected with Amazon S3 KMS-SSE, then the Role must also have the required KMS permissions.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ConfiguredAudienceModelOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::ConfiguredAudienceModelOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The description of the configured audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether audience metrics are shared.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_audience_metrics.is_none()`.
-    pub fn shared_audience_metrics(&self) -> &[crate::types::SharedAudienceMetrics] {
-        self.shared_audience_metrics.as_deref().unwrap_or_default()
+    pub fn shared_audience_metrics(&self) -> & [crate::types::SharedAudienceMetrics] {
+        self.shared_audience_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn min_matching_seed_size(&self) -> ::std::option::Option<i32> {
         self.min_matching_seed_size
     }
     /// <p>Configure the list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
-    pub fn audience_size_config(&self) -> ::std::option::Option<&crate::types::AudienceSizeConfig> {
+    pub fn audience_size_config(&self) -> ::std::option::Option<& crate::types::AudienceSizeConfig> {
         self.audience_size_config.as_ref()
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -89,12 +90,12 @@ impl CreateConfiguredAudienceModelInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
     /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
-    pub fn child_resource_tag_on_create_policy(&self) -> ::std::option::Option<&crate::types::TagOnCreatePolicy> {
+    pub fn child_resource_tag_on_create_policy(&self) -> ::std::option::Option<& crate::types::TagOnCreatePolicy> {
         self.child_resource_tag_on_create_policy.as_ref()
     }
 }
@@ -113,10 +114,10 @@ pub struct CreateConfiguredAudienceModelInputBuilder {
     pub(crate) audience_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>,
+    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>,
     pub(crate) min_matching_seed_size: ::std::option::Option<i32>,
     pub(crate) audience_size_config: ::std::option::Option<crate::types::AudienceSizeConfig>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) child_resource_tag_on_create_policy: ::std::option::Option<crate::types::TagOnCreatePolicy>,
 }
 impl CreateConfiguredAudienceModelInputBuilder {
@@ -128,8 +129,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The name of the configured audience model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured audience model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model to use for the configured audience model.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model to use for the configured audience model.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +157,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>Configure the Amazon S3 location and IAM Role for audiences created using this configured audience model. Each audience will have a unique location. The IAM Role must have <code>s3:PutObject</code> permission on the destination Amazon S3 location. If the destination is protected with Amazon S3 KMS-SSE, then the Role must also have the required KMS permissions.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Configure the Amazon S3 location and IAM Role for audiences created using this configured audience model. Each audience will have a unique location. The IAM Role must have <code>s3:PutObject</code> permission on the destination Amazon S3 location. If the destination is protected with Amazon S3 KMS-SSE, then the Role must also have the required KMS permissions.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig> {
@@ -172,8 +170,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The description of the configured audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configured audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,17 +183,16 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <p>Whether audience metrics are shared.</p>
     pub fn shared_audience_metrics(mut self, input: crate::types::SharedAudienceMetrics) -> Self {
         let mut v = self.shared_audience_metrics.unwrap_or_default();
-        v.push(input);
-        self.shared_audience_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shared_audience_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Whether audience metrics are shared.</p>
-    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>) -> Self {
-        self.shared_audience_metrics = input;
-        self
+    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>) -> Self {
+        self.shared_audience_metrics = input; self
     }
     /// <p>Whether audience metrics are shared.</p>
-    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>> {
+    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>> {
         &self.shared_audience_metrics
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
@@ -206,8 +202,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn set_min_matching_seed_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_matching_seed_size = input;
-        self
+        self.min_matching_seed_size = input; self
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn get_min_matching_seed_size(&self) -> &::std::option::Option<i32> {
@@ -220,8 +215,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     }
     /// <p>Configure the list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn set_audience_size_config(mut self, input: ::std::option::Option<crate::types::AudienceSizeConfig>) -> Self {
-        self.audience_size_config = input;
-        self
+        self.audience_size_config = input; self
     }
     /// <p>Configure the list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn get_audience_size_config(&self) -> &::std::option::Option<crate::types::AudienceSizeConfig> {
@@ -251,9 +245,9 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -273,9 +267,8 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -295,7 +288,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
@@ -307,8 +300,7 @@ impl CreateConfiguredAudienceModelInputBuilder {
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
     /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub fn set_child_resource_tag_on_create_policy(mut self, input: ::std::option::Option<crate::types::TagOnCreatePolicy>) -> Self {
-        self.child_resource_tag_on_create_policy = input;
-        self
+        self.child_resource_tag_on_create_policy = input; self
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
     /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
@@ -316,22 +308,29 @@ impl CreateConfiguredAudienceModelInputBuilder {
         &self.child_resource_tag_on_create_policy
     }
     /// Consumes the builder and constructs a [`CreateConfiguredAudienceModelInput`](crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelInput {
-            name: self.name,
-            audience_model_arn: self.audience_model_arn,
-            output_config: self.output_config,
-            description: self.description,
-            shared_audience_metrics: self.shared_audience_metrics,
-            min_matching_seed_size: self.min_matching_seed_size,
-            audience_size_config: self.audience_size_config,
-            tags: self.tags,
-            child_resource_tag_on_create_policy: self.child_resource_tag_on_create_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelInput {
+                name: self.name
+                ,
+                audience_model_arn: self.audience_model_arn
+                ,
+                output_config: self.output_config
+                ,
+                description: self.description
+                ,
+                shared_audience_metrics: self.shared_audience_metrics
+                ,
+                min_matching_seed_size: self.min_matching_seed_size
+                ,
+                audience_size_config: self.audience_size_config
+                ,
+                tags: self.tags
+                ,
+                child_resource_tag_on_create_policy: self.child_resource_tag_on_create_policy
+                ,
+            }
+        )
     }
 }
+

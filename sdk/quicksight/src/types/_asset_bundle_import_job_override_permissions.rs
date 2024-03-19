@@ -3,48 +3,53 @@
 /// <p>A structure that contains the override permission configurations that modify the permissions for specified resources before the resource is imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobOverridePermissions {
+pub struct AssetBundleImportJobOverridePermissions  {
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>,
     /// <p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverridePermissions>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverridePermissions>>,
     /// <p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverridePermissions>>,
+    pub themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverridePermissions>>,
     /// <p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
+    pub analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
+    pub dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
 }
-impl AssetBundleImportJobOverridePermissions {
+impl  AssetBundleImportJobOverridePermissions  {
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::AssetBundleImportJobDataSourceOverridePermissions] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::AssetBundleImportJobDataSourceOverridePermissions] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
-    pub fn data_sets(&self) -> &[crate::types::AssetBundleImportJobDataSetOverridePermissions] {
-        self.data_sets.as_deref().unwrap_or_default()
+    pub fn data_sets(&self) -> & [crate::types::AssetBundleImportJobDataSetOverridePermissions] {
+        self.data_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
-    pub fn themes(&self) -> &[crate::types::AssetBundleImportJobThemeOverridePermissions] {
-        self.themes.as_deref().unwrap_or_default()
+    pub fn themes(&self) -> & [crate::types::AssetBundleImportJobThemeOverridePermissions] {
+        self.themes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
-    pub fn analyses(&self) -> &[crate::types::AssetBundleImportJobAnalysisOverridePermissions] {
-        self.analyses.as_deref().unwrap_or_default()
+    pub fn analyses(&self) -> & [crate::types::AssetBundleImportJobAnalysisOverridePermissions] {
+        self.analyses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
-    pub fn dashboards(&self) -> &[crate::types::AssetBundleImportJobDashboardOverridePermissions] {
-        self.dashboards.as_deref().unwrap_or_default()
+    pub fn dashboards(&self) -> & [crate::types::AssetBundleImportJobDashboardOverridePermissions] {
+        self.dashboards.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssetBundleImportJobOverridePermissions {
@@ -58,11 +63,11 @@ impl AssetBundleImportJobOverridePermissions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobOverridePermissionsBuilder {
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>,
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverridePermissions>>,
-    pub(crate) themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverridePermissions>>,
-    pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
-    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverridePermissions>>,
+    pub(crate) themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverridePermissions>>,
+    pub(crate) analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
+    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
 }
 impl AssetBundleImportJobOverridePermissionsBuilder {
     /// Appends an item to `data_sources`.
@@ -72,20 +77,16 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sources(mut self, input: crate::types::AssetBundleImportJobDataSourceOverridePermissions) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverridePermissions>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverridePermissions>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverridePermissions>> {
         &self.data_sources
     }
     /// Appends an item to `data_sets`.
@@ -95,20 +96,16 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     /// <p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sets(mut self, input: crate::types::AssetBundleImportJobDataSetOverridePermissions) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverridePermissions>>,
-    ) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverridePermissions>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverridePermissions>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverridePermissions>> {
         &self.data_sets
     }
     /// Appends an item to `themes`.
@@ -118,17 +115,16 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     /// <p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
     pub fn themes(mut self, input: crate::types::AssetBundleImportJobThemeOverridePermissions) -> Self {
         let mut v = self.themes.unwrap_or_default();
-        v.push(input);
-        self.themes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.themes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverridePermissions>>) -> Self {
-        self.themes = input;
-        self
+    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverridePermissions>>) -> Self {
+        self.themes = input; self
     }
     /// <p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverridePermissions>> {
+    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverridePermissions>> {
         &self.themes
     }
     /// Appends an item to `analyses`.
@@ -138,20 +134,16 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     /// <p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
     pub fn analyses(mut self, input: crate::types::AssetBundleImportJobAnalysisOverridePermissions) -> Self {
         let mut v = self.analyses.unwrap_or_default();
-        v.push(input);
-        self.analyses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analyses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_analyses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
-    ) -> Self {
-        self.analyses = input;
-        self
+    pub fn set_analyses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>) -> Self {
+        self.analyses = input; self
     }
     /// <p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>> {
+    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverridePermissions>> {
         &self.analyses
     }
     /// Appends an item to `dashboards`.
@@ -161,30 +153,32 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
     pub fn dashboards(mut self, input: crate::types::AssetBundleImportJobDashboardOverridePermissions) -> Self {
         let mut v = self.dashboards.unwrap_or_default();
-        v.push(input);
-        self.dashboards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dashboards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_dashboards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
-    ) -> Self {
-        self.dashboards = input;
-        self
+    pub fn set_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverridePermissions>>) -> Self {
+        self.dashboards = input; self
     }
     /// <p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>> {
+    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverridePermissions>> {
         &self.dashboards
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverridePermissions`](crate::types::AssetBundleImportJobOverridePermissions).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverridePermissions {
         crate::types::AssetBundleImportJobOverridePermissions {
-            data_sources: self.data_sources,
-            data_sets: self.data_sets,
-            themes: self.themes,
-            analyses: self.analyses,
-            dashboards: self.dashboards,
+            data_sources: self.data_sources
+            ,
+            data_sets: self.data_sets
+            ,
+            themes: self.themes
+            ,
+            analyses: self.analyses
+            ,
+            dashboards: self.dashboards
+            ,
         }
     }
 }
+

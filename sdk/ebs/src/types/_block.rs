@@ -3,19 +3,19 @@
 /// <p>A block of data in an Amazon Elastic Block Store snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Block {
+pub struct Block  {
     /// <p>The block index.</p>
     pub block_index: ::std::option::Option<i32>,
     /// <p>The block token for the block index.</p>
     pub block_token: ::std::option::Option<::std::string::String>,
 }
-impl Block {
+impl  Block  {
     /// <p>The block index.</p>
     pub fn block_index(&self) -> ::std::option::Option<i32> {
         self.block_index
     }
     /// <p>The block token for the block index.</p>
-    pub fn block_token(&self) -> ::std::option::Option<&str> {
+    pub fn block_token(&self) -> ::std::option::Option<& str> {
         self.block_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BlockBuilder {
     }
     /// <p>The block index.</p>
     pub fn set_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_index = input;
-        self
+        self.block_index = input; self
     }
     /// <p>The block index.</p>
     pub fn get_block_index(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl BlockBuilder {
     }
     /// <p>The block token for the block index.</p>
     pub fn set_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.block_token = input;
-        self
+        self.block_token = input; self
     }
     /// <p>The block token for the block index.</p>
     pub fn get_block_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BlockBuilder {
     /// Consumes the builder and constructs a [`Block`](crate::types::Block).
     pub fn build(self) -> crate::types::Block {
         crate::types::Block {
-            block_index: self.block_index,
-            block_token: self.block_token,
+            block_index: self.block_index
+            ,
+            block_token: self.block_token
+            ,
         }
     }
 }
+

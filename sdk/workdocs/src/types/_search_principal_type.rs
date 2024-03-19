@@ -3,23 +3,23 @@
 /// <p>Filter based on UserIds or GroupIds.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchPrincipalType {
+pub struct SearchPrincipalType  {
     /// <p>UserIds or GroupIds.</p>
     pub id: ::std::string::String,
     /// <p>The Role of a User or Group.</p>
-    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>,
+    pub roles: ::std::option::Option<::std::vec::Vec::<crate::types::PrincipalRoleType>>,
 }
-impl SearchPrincipalType {
+impl  SearchPrincipalType  {
     /// <p>UserIds or GroupIds.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Role of a User or Group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
-    pub fn roles(&self) -> &[crate::types::PrincipalRoleType] {
-        self.roles.as_deref().unwrap_or_default()
+    pub fn roles(&self) -> & [crate::types::PrincipalRoleType] {
+        self.roles.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchPrincipalType {
@@ -34,7 +34,7 @@ impl SearchPrincipalType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPrincipalTypeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec::<crate::types::PrincipalRoleType>>,
 }
 impl SearchPrincipalTypeBuilder {
     /// <p>UserIds or GroupIds.</p>
@@ -45,8 +45,7 @@ impl SearchPrincipalTypeBuilder {
     }
     /// <p>UserIds or GroupIds.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>UserIds or GroupIds.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl SearchPrincipalTypeBuilder {
     /// <p>The Role of a User or Group.</p>
     pub fn roles(mut self, input: crate::types::PrincipalRoleType) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Role of a User or Group.</p>
-    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PrincipalRoleType>>) -> Self {
+        self.roles = input; self
     }
     /// <p>The Role of a User or Group.</p>
-    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PrincipalRoleType>> {
         &self.roles
     }
     /// Consumes the builder and constructs a [`SearchPrincipalType`](crate::types::SearchPrincipalType).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SearchPrincipalTypeBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchPrincipalType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchPrincipalType {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building SearchPrincipalType",
-                )
-            })?,
-            roles: self.roles,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchPrincipalType {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building SearchPrincipalType")
+                    )?
+                ,
+                roles: self.roles
+                ,
+            }
+        )
     }
 }
+

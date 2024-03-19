@@ -3,22 +3,20 @@
 /// <p>Describes an action to write a message to a Salesforce IoT Cloud Input Stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceAction {
+pub struct SalesforceAction  {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub token: ::std::string::String,
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub url: ::std::string::String,
 }
-impl SalesforceAction {
+impl  SalesforceAction  {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn token(&self) -> &str {
-        use std::ops::Deref;
-        self.token.deref()
+    pub fn token(&self) -> & str {
+        use std::ops::Deref; self.token.deref()
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn url(&self) -> &str {
-        use std::ops::Deref;
-        self.url.deref()
+    pub fn url(&self) -> & str {
+        use std::ops::Deref; self.url.deref()
     }
 }
 impl SalesforceAction {
@@ -44,8 +42,7 @@ impl SalesforceActionBuilder {
     }
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SalesforceActionBuilder {
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SalesforceActionBuilder {
     /// - [`token`](crate::types::builders::SalesforceActionBuilder::token)
     /// - [`url`](crate::types::builders::SalesforceActionBuilder::url)
     pub fn build(self) -> ::std::result::Result<crate::types::SalesforceAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SalesforceAction {
-            token: self.token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token",
-                    "token was not specified but it is required when building SalesforceAction",
-                )
-            })?,
-            url: self.url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url",
-                    "url was not specified but it is required when building SalesforceAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SalesforceAction {
+                token: self.token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token", "token was not specified but it is required when building SalesforceAction")
+                    )?
+                ,
+                url: self.url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url", "url was not specified but it is required when building SalesforceAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The Lake Formation scope.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LakeFormationQuery {
+pub struct LakeFormationQuery  {
     /// <p>Determines whether the query scope is enabled or disabled.</p>
     pub authorization: ::std::option::Option<crate::types::ServiceAuthorization>,
 }
-impl LakeFormationQuery {
+impl  LakeFormationQuery  {
     /// <p>Determines whether the query scope is enabled or disabled.</p>
-    pub fn authorization(&self) -> ::std::option::Option<&crate::types::ServiceAuthorization> {
+    pub fn authorization(&self) -> ::std::option::Option<& crate::types::ServiceAuthorization> {
         self.authorization.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl LakeFormationQueryBuilder {
     }
     /// <p>Determines whether the query scope is enabled or disabled.</p>
     pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::ServiceAuthorization>) -> Self {
-        self.authorization = input;
-        self
+        self.authorization = input; self
     }
     /// <p>Determines whether the query scope is enabled or disabled.</p>
     pub fn get_authorization(&self) -> &::std::option::Option<crate::types::ServiceAuthorization> {
@@ -45,7 +44,9 @@ impl LakeFormationQueryBuilder {
     /// Consumes the builder and constructs a [`LakeFormationQuery`](crate::types::LakeFormationQuery).
     pub fn build(self) -> crate::types::LakeFormationQuery {
         crate::types::LakeFormationQuery {
-            authorization: self.authorization,
+            authorization: self.authorization
+            ,
         }
     }
 }
+

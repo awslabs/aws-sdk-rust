@@ -5,54 +5,50 @@ pub use crate::operation::start_automation_execution::_start_automation_executio
 
 impl StartAutomationExecutionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_automation_execution::StartAutomationExecutionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_automation_execution();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_automation_execution::StartAutomationExecutionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_automation_execution();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartAutomationExecution`.
-///
+/// 
 /// <p>Initiates execution of an Automation runbook.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAutomationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_automation_execution::builders::StartAutomationExecutionInputBuilder,
+                    inner: crate::operation::start_automation_execution::builders::StartAutomationExecutionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        crate::operation::start_automation_execution::StartAutomationExecutionError,
-    > for StartAutomationExecutionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-            crate::operation::start_automation_execution::StartAutomationExecutionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_automation_execution::StartAutomationExecutionOutput,
+                    crate::operation::start_automation_execution::StartAutomationExecutionError,
+                > for StartAutomationExecutionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
+                        crate::operation::start_automation_execution::StartAutomationExecutionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartAutomationExecutionFluentBuilder {
     /// Creates a new `StartAutomationExecution`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl StartAutomationExecutionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_automation_execution::StartAutomationExecutionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_automation_execution::StartAutomationExecution::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_automation_execution::StartAutomationExecution::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        crate::operation::start_automation_execution::StartAutomationExecutionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_automation_execution::StartAutomationExecutionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_automation_execution::StartAutomationExecutionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_automation_execution::StartAutomationExecution::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_automation_execution::StartAutomationExecution::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_automation_execution::StartAutomationExecutionOutput, crate::operation::start_automation_execution::StartAutomationExecutionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_name(input.into());
@@ -141,22 +128,17 @@ impl StartAutomationExecutionFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_parameters()
     }
     /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
@@ -211,12 +193,12 @@ impl StartAutomationExecutionFluentBuilder {
         self
     }
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         self.inner.get_targets()
     }
     /// Appends an item to `TargetMaps`.
@@ -224,22 +206,17 @@ impl StartAutomationExecutionFluentBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.target_maps(input);
         self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn set_target_maps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
-    ) -> Self {
+    pub fn set_target_maps(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>) -> Self {
         self.inner = self.inner.set_target_maps(input);
         self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn get_target_maps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
+    pub fn get_target_maps(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>> {
         self.inner.get_target_maps()
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
@@ -283,12 +260,12 @@ impl StartAutomationExecutionFluentBuilder {
         self
     }
     /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>) -> Self {
         self.inner = self.inner.set_target_locations(input);
         self
     }
     /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>> {
         self.inner.get_target_locations()
     }
     /// Appends an item to `Tags`.
@@ -317,7 +294,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -330,7 +307,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
@@ -348,3 +325,4 @@ impl StartAutomationExecutionFluentBuilder {
         self.inner.get_alarm_configuration()
     }
 }
+

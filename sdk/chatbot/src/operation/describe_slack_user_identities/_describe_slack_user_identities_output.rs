@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSlackUserIdentitiesOutput {
+pub struct DescribeSlackUserIdentitiesOutput  {
     /// A list of Slack User Identities.
-    pub slack_user_identities: ::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>>,
+    pub slack_user_identities: ::std::option::Option<::std::vec::Vec::<crate::types::SlackUserIdentity>>,
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSlackUserIdentitiesOutput {
+impl  DescribeSlackUserIdentitiesOutput  {
     /// A list of Slack User Identities.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slack_user_identities.is_none()`.
-    pub fn slack_user_identities(&self) -> &[crate::types::SlackUserIdentity] {
-        self.slack_user_identities.as_deref().unwrap_or_default()
+    pub fn slack_user_identities(&self) -> & [crate::types::SlackUserIdentity] {
+        self.slack_user_identities.as_deref()
+        .unwrap_or_default()
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSlackUserIdentitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSlackUserIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlackUserIdentitiesOutput`](crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput).
     pub fn builder() -> crate::operation::describe_slack_user_identities::builders::DescribeSlackUserIdentitiesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeSlackUserIdentitiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSlackUserIdentitiesOutputBuilder {
-    pub(crate) slack_user_identities: ::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>>,
+    pub(crate) slack_user_identities: ::std::option::Option<::std::vec::Vec::<crate::types::SlackUserIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeSlackUserIdentitiesOutputBuilder {
     /// A list of Slack User Identities.
     pub fn slack_user_identities(mut self, input: crate::types::SlackUserIdentity) -> Self {
         let mut v = self.slack_user_identities.unwrap_or_default();
-        v.push(input);
-        self.slack_user_identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slack_user_identities = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Slack User Identities.
-    pub fn set_slack_user_identities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>>) -> Self {
-        self.slack_user_identities = input;
-        self
+    pub fn set_slack_user_identities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlackUserIdentity>>) -> Self {
+        self.slack_user_identities = input; self
     }
     /// A list of Slack User Identities.
-    pub fn get_slack_user_identities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>> {
+    pub fn get_slack_user_identities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlackUserIdentity>> {
         &self.slack_user_identities
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
@@ -69,28 +69,30 @@ impl DescribeSlackUserIdentitiesOutputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSlackUserIdentitiesOutput`](crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput).
     pub fn build(self) -> crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput {
         crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput {
-            slack_user_identities: self.slack_user_identities,
-            next_token: self.next_token,
+            slack_user_identities: self.slack_user_identities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>A subset of the attributes that describe a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogGroupSummary {
+pub struct LogGroupSummary  {
     /// <p>The type of log.</p>
     pub log_type: ::std::string::String,
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::string::String,
 }
-impl LogGroupSummary {
+impl  LogGroupSummary  {
     /// <p>The type of log.</p>
-    pub fn log_type(&self) -> &str {
-        use std::ops::Deref;
-        self.log_type.deref()
+    pub fn log_type(&self) -> & str {
+        use std::ops::Deref; self.log_type.deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.log_group_name.deref()
+    pub fn log_group_name(&self) -> & str {
+        use std::ops::Deref; self.log_group_name.deref()
     }
 }
 impl LogGroupSummary {
@@ -44,8 +42,7 @@ impl LogGroupSummaryBuilder {
     }
     /// <p>The type of log.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>The type of log.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl LogGroupSummaryBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl LogGroupSummaryBuilder {
     /// - [`log_type`](crate::types::builders::LogGroupSummaryBuilder::log_type)
     /// - [`log_group_name`](crate::types::builders::LogGroupSummaryBuilder::log_group_name)
     pub fn build(self) -> ::std::result::Result<crate::types::LogGroupSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogGroupSummary {
-            log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_type",
-                    "log_type was not specified but it is required when building LogGroupSummary",
-                )
-            })?,
-            log_group_name: self.log_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_group_name",
-                    "log_group_name was not specified but it is required when building LogGroupSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogGroupSummary {
+                log_type: self.log_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_type", "log_type was not specified but it is required when building LogGroupSummary")
+                    )?
+                ,
+                log_group_name: self.log_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_group_name", "log_group_name was not specified but it is required when building LogGroupSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -5,117 +5,97 @@ pub use crate::operation::create_direct_connect_gateway_association_proposal::_c
 
 impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_direct_connect_gateway_association_proposal();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_direct_connect_gateway_association_proposal();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDirectConnectGatewayAssociationProposal`.
-///
+/// 
 /// <p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p>
 /// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalInputBuilder,
+                    inner: crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
-    > for CreateDirectConnectGatewayAssociationProposalFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
-            crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
+                    crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
+                > for CreateDirectConnectGatewayAssociationProposalFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
+                        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
     /// Creates a new `CreateDirectConnectGatewayAssociationProposal`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the CreateDirectConnectGatewayAssociationProposal as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposal::operation_runtime_plugins(
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposal::operation_runtime_plugins(
                             self.handle.runtime_plugins.clone(),
                             &self.handle.conf,
                             self.config_override,
                         );
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposal::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput,
-        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                        crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposal::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput, crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_id(input.into());
@@ -168,15 +148,12 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
         self
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
+    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>) -> Self {
         self.inner = self.inner.set_add_allowed_prefixes_to_direct_connect_gateway(input);
         self
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>> {
         self.inner.get_add_allowed_prefixes_to_direct_connect_gateway()
     }
     /// Appends an item to `removeAllowedPrefixesToDirectConnectGateway`.
@@ -189,15 +166,13 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
         self
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn set_remove_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
+    pub fn set_remove_allowed_prefixes_to_direct_connect_gateway(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>) -> Self {
         self.inner = self.inner.set_remove_allowed_prefixes_to_direct_connect_gateway(input);
         self
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>> {
         self.inner.get_remove_allowed_prefixes_to_direct_connect_gateway()
     }
 }
+

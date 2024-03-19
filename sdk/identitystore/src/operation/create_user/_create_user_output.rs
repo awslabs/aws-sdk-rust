@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>The identifier of the newly created user in the identity store.</p>
     pub user_id: ::std::string::String,
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateUserOutput {
+impl  CreateUserOutput  {
     /// <p>The identifier of the newly created user in the identity store.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> & str {
+        use std::ops::Deref; self.identity_store_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput).
     pub fn builder() -> crate::operation::create_user::builders::CreateUserOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateUserOutputBuilder {
     }
     /// <p>The identifier of the newly created user in the identity store.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the newly created user in the identity store.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,41 +62,41 @@ impl CreateUserOutputBuilder {
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::operation::create_user::builders::CreateUserOutputBuilder::user_id)
     /// - [`identity_store_id`](crate::operation::create_user::builders::CreateUserOutputBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserOutput {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building CreateUserOutput",
-                )
-            })?,
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building CreateUserOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserOutput {
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building CreateUserOutput")
+                    )?
+                ,
+                identity_store_id: self.identity_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identity_store_id", "identity_store_id was not specified but it is required when building CreateUserOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

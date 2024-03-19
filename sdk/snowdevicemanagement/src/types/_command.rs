@@ -22,11 +22,7 @@ impl Command {
     /// Tries to convert the enum instance into [`Reboot`](crate::types::Command::Reboot), extracting the inner [`Reboot`](crate::types::Reboot).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reboot(&self) -> ::std::result::Result<&crate::types::Reboot, &Self> {
-        if let Command::Reboot(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Command::Reboot(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Reboot`](crate::types::Command::Reboot).
     pub fn is_reboot(&self) -> bool {
@@ -35,11 +31,7 @@ impl Command {
     /// Tries to convert the enum instance into [`Unlock`](crate::types::Command::Unlock), extracting the inner [`Unlock`](crate::types::Unlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unlock(&self) -> ::std::result::Result<&crate::types::Unlock, &Self> {
-        if let Command::Unlock(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Command::Unlock(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Unlock`](crate::types::Command::Unlock).
     pub fn is_unlock(&self) -> bool {
@@ -50,3 +42,4 @@ impl Command {
         matches!(self, Self::Unknown)
     }
 }
+

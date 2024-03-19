@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApprovalRuleTemplateInput {
+pub struct CreateApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p><note>
@@ -26,9 +26,9 @@ pub struct CreateApprovalRuleTemplateInput {
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
     pub approval_rule_template_description: ::std::option::Option<::std::string::String>,
 }
-impl CreateApprovalRuleTemplateInput {
+impl  CreateApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
-    pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p><note>
@@ -48,11 +48,11 @@ impl CreateApprovalRuleTemplateInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_template_content(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_content(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_content.as_deref()
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
-    pub fn approval_rule_template_description(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_description(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_description.as_deref()
     }
 }
@@ -80,8 +80,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
     }
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_name = input;
-        self
+        self.approval_rule_template_name = input; self
     }
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn set_approval_rule_template_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_content = input;
-        self
+        self.approval_rule_template_content = input; self
     }
     /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p><note>
     /// <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>
@@ -157,24 +155,24 @@ impl CreateApprovalRuleTemplateInputBuilder {
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
     pub fn set_approval_rule_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_description = input;
-        self
+        self.approval_rule_template_description = input; self
     }
     /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
     pub fn get_approval_rule_template_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_rule_template_description
     }
     /// Consumes the builder and constructs a [`CreateApprovalRuleTemplateInput`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput {
-            approval_rule_template_name: self.approval_rule_template_name,
-            approval_rule_template_content: self.approval_rule_template_content,
-            approval_rule_template_description: self.approval_rule_template_description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput {
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+                approval_rule_template_content: self.approval_rule_template_content
+                ,
+                approval_rule_template_description: self.approval_rule_template_description
+                ,
+            }
+        )
     }
 }
+

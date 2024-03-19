@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messageusefulnessreason = unimplemented!();
 /// match messageusefulnessreason {
@@ -40,16 +40,14 @@
 /// Specifically, when `messageusefulnessreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageUsefulnessReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MessageUsefulnessReason {
     #[allow(missing_docs)] // documentation missing in model
     Complete,
@@ -77,104 +75,92 @@ pub enum MessageUsefulnessReason {
     RelevantSources,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MessageUsefulnessReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETE" => MessageUsefulnessReason::Complete,
-            "FACTUALLY_CORRECT" => MessageUsefulnessReason::FactuallyCorrect,
-            "HARMFUL_OR_UNSAFE" => MessageUsefulnessReason::HarmfulOrUnsafe,
-            "HELPFUL" => MessageUsefulnessReason::Helpful,
-            "INCORRECT_OR_MISSING_SOURCES" => MessageUsefulnessReason::IncorrectOrMissingSources,
-            "NOT_BASED_ON_DOCUMENTS" => MessageUsefulnessReason::NotBasedOnDocuments,
-            "NOT_COMPLETE" => MessageUsefulnessReason::NotComplete,
-            "NOT_CONCISE" => MessageUsefulnessReason::NotConcise,
-            "NOT_FACTUALLY_CORRECT" => MessageUsefulnessReason::NotFactuallyCorrect,
-            "NOT_HELPFUL" => MessageUsefulnessReason::NotHelpful,
-            "OTHER" => MessageUsefulnessReason::Other,
-            "RELEVANT_SOURCES" => MessageUsefulnessReason::RelevantSources,
-            other => MessageUsefulnessReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMPLETE" => MessageUsefulnessReason::Complete,
+"FACTUALLY_CORRECT" => MessageUsefulnessReason::FactuallyCorrect,
+"HARMFUL_OR_UNSAFE" => MessageUsefulnessReason::HarmfulOrUnsafe,
+"HELPFUL" => MessageUsefulnessReason::Helpful,
+"INCORRECT_OR_MISSING_SOURCES" => MessageUsefulnessReason::IncorrectOrMissingSources,
+"NOT_BASED_ON_DOCUMENTS" => MessageUsefulnessReason::NotBasedOnDocuments,
+"NOT_COMPLETE" => MessageUsefulnessReason::NotComplete,
+"NOT_CONCISE" => MessageUsefulnessReason::NotConcise,
+"NOT_FACTUALLY_CORRECT" => MessageUsefulnessReason::NotFactuallyCorrect,
+"NOT_HELPFUL" => MessageUsefulnessReason::NotHelpful,
+"OTHER" => MessageUsefulnessReason::Other,
+"RELEVANT_SOURCES" => MessageUsefulnessReason::RelevantSources,
+other => MessageUsefulnessReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MessageUsefulnessReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MessageUsefulnessReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MessageUsefulnessReason::from(s))
+                    }
+                }
 impl MessageUsefulnessReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MessageUsefulnessReason::Complete => "COMPLETE",
-            MessageUsefulnessReason::FactuallyCorrect => "FACTUALLY_CORRECT",
-            MessageUsefulnessReason::HarmfulOrUnsafe => "HARMFUL_OR_UNSAFE",
-            MessageUsefulnessReason::Helpful => "HELPFUL",
-            MessageUsefulnessReason::IncorrectOrMissingSources => "INCORRECT_OR_MISSING_SOURCES",
-            MessageUsefulnessReason::NotBasedOnDocuments => "NOT_BASED_ON_DOCUMENTS",
-            MessageUsefulnessReason::NotComplete => "NOT_COMPLETE",
-            MessageUsefulnessReason::NotConcise => "NOT_CONCISE",
-            MessageUsefulnessReason::NotFactuallyCorrect => "NOT_FACTUALLY_CORRECT",
-            MessageUsefulnessReason::NotHelpful => "NOT_HELPFUL",
-            MessageUsefulnessReason::Other => "OTHER",
-            MessageUsefulnessReason::RelevantSources => "RELEVANT_SOURCES",
-            MessageUsefulnessReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETE",
-            "FACTUALLY_CORRECT",
-            "HARMFUL_OR_UNSAFE",
-            "HELPFUL",
-            "INCORRECT_OR_MISSING_SOURCES",
-            "NOT_BASED_ON_DOCUMENTS",
-            "NOT_COMPLETE",
-            "NOT_CONCISE",
-            "NOT_FACTUALLY_CORRECT",
-            "NOT_HELPFUL",
-            "OTHER",
-            "RELEVANT_SOURCES",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MessageUsefulnessReason::Complete => "COMPLETE",
+    MessageUsefulnessReason::FactuallyCorrect => "FACTUALLY_CORRECT",
+    MessageUsefulnessReason::HarmfulOrUnsafe => "HARMFUL_OR_UNSAFE",
+    MessageUsefulnessReason::Helpful => "HELPFUL",
+    MessageUsefulnessReason::IncorrectOrMissingSources => "INCORRECT_OR_MISSING_SOURCES",
+    MessageUsefulnessReason::NotBasedOnDocuments => "NOT_BASED_ON_DOCUMENTS",
+    MessageUsefulnessReason::NotComplete => "NOT_COMPLETE",
+    MessageUsefulnessReason::NotConcise => "NOT_CONCISE",
+    MessageUsefulnessReason::NotFactuallyCorrect => "NOT_FACTUALLY_CORRECT",
+    MessageUsefulnessReason::NotHelpful => "NOT_HELPFUL",
+    MessageUsefulnessReason::Other => "OTHER",
+    MessageUsefulnessReason::RelevantSources => "RELEVANT_SOURCES",
+    MessageUsefulnessReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETE", "FACTUALLY_CORRECT", "HARMFUL_OR_UNSAFE", "HELPFUL", "INCORRECT_OR_MISSING_SOURCES", "NOT_BASED_ON_DOCUMENTS", "NOT_COMPLETE", "NOT_CONCISE", "NOT_FACTUALLY_CORRECT", "NOT_HELPFUL", "OTHER", "RELEVANT_SOURCES"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MessageUsefulnessReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MessageUsefulnessReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MessageUsefulnessReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MessageUsefulnessReason::Complete => write!(f, "COMPLETE"),
-            MessageUsefulnessReason::FactuallyCorrect => write!(f, "FACTUALLY_CORRECT"),
-            MessageUsefulnessReason::HarmfulOrUnsafe => write!(f, "HARMFUL_OR_UNSAFE"),
-            MessageUsefulnessReason::Helpful => write!(f, "HELPFUL"),
-            MessageUsefulnessReason::IncorrectOrMissingSources => write!(f, "INCORRECT_OR_MISSING_SOURCES"),
-            MessageUsefulnessReason::NotBasedOnDocuments => write!(f, "NOT_BASED_ON_DOCUMENTS"),
-            MessageUsefulnessReason::NotComplete => write!(f, "NOT_COMPLETE"),
-            MessageUsefulnessReason::NotConcise => write!(f, "NOT_CONCISE"),
-            MessageUsefulnessReason::NotFactuallyCorrect => write!(f, "NOT_FACTUALLY_CORRECT"),
-            MessageUsefulnessReason::NotHelpful => write!(f, "NOT_HELPFUL"),
-            MessageUsefulnessReason::Other => write!(f, "OTHER"),
-            MessageUsefulnessReason::RelevantSources => write!(f, "RELEVANT_SOURCES"),
-            MessageUsefulnessReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MessageUsefulnessReason::Complete => write!(f, "COMPLETE"),
+MessageUsefulnessReason::FactuallyCorrect => write!(f, "FACTUALLY_CORRECT"),
+MessageUsefulnessReason::HarmfulOrUnsafe => write!(f, "HARMFUL_OR_UNSAFE"),
+MessageUsefulnessReason::Helpful => write!(f, "HELPFUL"),
+MessageUsefulnessReason::IncorrectOrMissingSources => write!(f, "INCORRECT_OR_MISSING_SOURCES"),
+MessageUsefulnessReason::NotBasedOnDocuments => write!(f, "NOT_BASED_ON_DOCUMENTS"),
+MessageUsefulnessReason::NotComplete => write!(f, "NOT_COMPLETE"),
+MessageUsefulnessReason::NotConcise => write!(f, "NOT_CONCISE"),
+MessageUsefulnessReason::NotFactuallyCorrect => write!(f, "NOT_FACTUALLY_CORRECT"),
+MessageUsefulnessReason::NotHelpful => write!(f, "NOT_HELPFUL"),
+MessageUsefulnessReason::Other => write!(f, "OTHER"),
+MessageUsefulnessReason::RelevantSources => write!(f, "RELEVANT_SOURCES"),
+MessageUsefulnessReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

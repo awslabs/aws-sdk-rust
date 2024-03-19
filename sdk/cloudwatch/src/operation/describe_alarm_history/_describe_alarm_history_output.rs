@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmHistoryOutput {
+pub struct DescribeAlarmHistoryOutput  {
     /// <p>The alarm histories, in JSON format.</p>
-    pub alarm_history_items: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
+    pub alarm_history_items: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmHistoryItem>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAlarmHistoryOutput {
+impl  DescribeAlarmHistoryOutput  {
     /// <p>The alarm histories, in JSON format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_history_items.is_none()`.
-    pub fn alarm_history_items(&self) -> &[crate::types::AlarmHistoryItem] {
-        self.alarm_history_items.as_deref().unwrap_or_default()
+    pub fn alarm_history_items(&self) -> & [crate::types::AlarmHistoryItem] {
+        self.alarm_history_items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAlarmHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAlarmHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput).
     pub fn builder() -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAlarmHistoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryOutputBuilder {
-    pub(crate) alarm_history_items: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
+    pub(crate) alarm_history_items: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmHistoryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAlarmHistoryOutputBuilder {
     /// <p>The alarm histories, in JSON format.</p>
     pub fn alarm_history_items(mut self, input: crate::types::AlarmHistoryItem) -> Self {
         let mut v = self.alarm_history_items.unwrap_or_default();
-        v.push(input);
-        self.alarm_history_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarm_history_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn set_alarm_history_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>) -> Self {
-        self.alarm_history_items = input;
-        self
+    pub fn set_alarm_history_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmHistoryItem>>) -> Self {
+        self.alarm_history_items = input; self
     }
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn get_alarm_history_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>> {
+    pub fn get_alarm_history_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmHistoryItem>> {
         &self.alarm_history_items
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
@@ -69,28 +69,30 @@ impl DescribeAlarmHistoryOutputBuilder {
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput).
     pub fn build(self) -> crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput {
         crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput {
-            alarm_history_items: self.alarm_history_items,
-            next_token: self.next_token,
+            alarm_history_items: self.alarm_history_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

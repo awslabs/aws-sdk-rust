@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceTemplateVersionsInput {
+pub struct ListServiceTemplateVersionsInput  {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
@@ -13,9 +13,9 @@ pub struct ListServiceTemplateVersionsInput {
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: ::std::option::Option<::std::string::String>,
 }
-impl ListServiceTemplateVersionsInput {
+impl  ListServiceTemplateVersionsInput  {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
@@ -23,12 +23,12 @@ impl ListServiceTemplateVersionsInput {
         self.max_results
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_version(&self) -> ::std::option::Option<& str> {
         self.major_version.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ListServiceTemplateVersionsInputBuilder {
     }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListServiceTemplateVersionsInputBuilder {
     }
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl ListServiceTemplateVersionsInputBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the service template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl ListServiceTemplateVersionsInputBuilder {
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
@@ -110,17 +106,19 @@ impl ListServiceTemplateVersionsInputBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`ListServiceTemplateVersionsInput`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            template_name: self.template_name,
-            major_version: self.major_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_template_versions::ListServiceTemplateVersionsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+            }
+        )
     }
 }
+

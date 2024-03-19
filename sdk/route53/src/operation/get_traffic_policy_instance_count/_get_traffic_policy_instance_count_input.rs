@@ -3,7 +3,8 @@
 /// <p>Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrafficPolicyInstanceCountInput {}
+pub struct GetTrafficPolicyInstanceCountInput  {
+}
 impl GetTrafficPolicyInstanceCountInput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountInput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput).
     pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountInputBuilder {
@@ -14,15 +15,15 @@ impl GetTrafficPolicyInstanceCountInput {
 /// A builder for [`GetTrafficPolicyInstanceCountInput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetTrafficPolicyInstanceCountInputBuilder {}
+pub struct GetTrafficPolicyInstanceCountInputBuilder {
+}
 impl GetTrafficPolicyInstanceCountInputBuilder {
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountInput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput {
+            }
+        )
     }
 }
+

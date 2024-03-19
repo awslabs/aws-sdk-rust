@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationSetsInput {
+pub struct ListConfigurationSetsInput  {
     /// A token returned from a previous call to the API that indicates the position in the list of results.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Used to specify the number of items that should be returned in the response.
     pub page_size: ::std::option::Option<::std::string::String>,
 }
-impl ListConfigurationSetsInput {
+impl  ListConfigurationSetsInput  {
     /// A token returned from a previous call to the API that indicates the position in the list of results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Used to specify the number of items that should be returned in the response.
-    pub fn page_size(&self) -> ::std::option::Option<&str> {
+    pub fn page_size(&self) -> ::std::option::Option<& str> {
         self.page_size.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListConfigurationSetsInputBuilder {
     }
     /// A token returned from a previous call to the API that indicates the position in the list of results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// A token returned from a previous call to the API that indicates the position in the list of results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl ListConfigurationSetsInputBuilder {
     }
     /// Used to specify the number of items that should be returned in the response.
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// Used to specify the number of items that should be returned in the response.
     pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::operation::list_configuration_sets::ListConfigurationSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_configuration_sets::ListConfigurationSetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_configuration_sets::ListConfigurationSetsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configuration_sets::ListConfigurationSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_configuration_sets::ListConfigurationSetsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>A notification from the client that it is disconnecting from Amazon Lex V2. Sending a <code>DisconnectionEvent</code> event is optional, but can help identify a conversation in logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectionEvent {
+pub struct DisconnectionEvent  {
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl DisconnectionEvent {
+impl  DisconnectionEvent  {
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -41,8 +41,7 @@ impl DisconnectionEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DisconnectionEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl DisconnectionEventBuilder {
     /// Consumes the builder and constructs a [`DisconnectionEvent`](crate::types::DisconnectionEvent).
     pub fn build(self) -> crate::types::DisconnectionEvent {
         crate::types::DisconnectionEvent {
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
+            event_id: self.event_id
+            ,
+            client_timestamp_millis: self.client_timestamp_millis
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

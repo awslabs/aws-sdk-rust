@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyServerlessCacheSnapshotInput {
+pub struct CopyServerlessCacheSnapshotInput  {
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
     pub source_serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
@@ -10,26 +10,27 @@ pub struct CopyServerlessCacheSnapshotInput {
     /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CopyServerlessCacheSnapshotInput {
+impl  CopyServerlessCacheSnapshotInput  {
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
-    pub fn source_serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.source_serverless_cache_snapshot_name.as_deref()
     }
     /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
-    pub fn target_serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.target_serverless_cache_snapshot_name.as_deref()
     }
     /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CopyServerlessCacheSnapshotInput {
@@ -46,7 +47,7 @@ pub struct CopyServerlessCacheSnapshotInputBuilder {
     pub(crate) source_serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CopyServerlessCacheSnapshotInputBuilder {
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
@@ -57,8 +58,7 @@ impl CopyServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
     pub fn set_source_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_serverless_cache_snapshot_name = input;
-        self
+        self.source_serverless_cache_snapshot_name = input; self
     }
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
     pub fn get_source_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CopyServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
     pub fn set_target_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_serverless_cache_snapshot_name = input;
-        self
+        self.target_serverless_cache_snapshot_name = input; self
     }
     /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
     pub fn get_target_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CopyServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,31 +98,32 @@ impl CopyServerlessCacheSnapshotInputBuilder {
     /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyServerlessCacheSnapshotInput`](crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotInput {
-            source_serverless_cache_snapshot_name: self.source_serverless_cache_snapshot_name,
-            target_serverless_cache_snapshot_name: self.target_serverless_cache_snapshot_name,
-            kms_key_id: self.kms_key_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotInput {
+                source_serverless_cache_snapshot_name: self.source_serverless_cache_snapshot_name
+                ,
+                target_serverless_cache_snapshot_name: self.target_serverless_cache_snapshot_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

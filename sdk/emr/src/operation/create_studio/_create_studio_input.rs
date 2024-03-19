@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStudioInput {
+pub struct CreateStudioInput  {
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A detailed description of the Amazon EMR Studio.</p>
@@ -12,7 +12,7 @@ pub struct CreateStudioInput {
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
@@ -28,7 +28,7 @@ pub struct CreateStudioInput {
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
     pub idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub trusted_identity_propagation_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
@@ -38,77 +38,79 @@ pub struct CreateStudioInput {
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateStudioInput {
+impl  CreateStudioInput  {
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
+    pub fn auth_mode(&self) -> ::std::option::Option<& crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-    pub fn service_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
-    pub fn user_role(&self) -> ::std::option::Option<&str> {
+    pub fn user_role(&self) -> ::std::option::Option<& str> {
         self.user_role.as_deref()
     }
     /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    pub fn workspace_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_security_group_id(&self) -> ::std::option::Option<& str> {
         self.workspace_security_group_id.as_deref()
     }
     /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    pub fn engine_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn engine_security_group_id(&self) -> ::std::option::Option<& str> {
         self.engine_security_group_id.as_deref()
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    pub fn default_s3_location(&self) -> ::std::option::Option<&str> {
+    pub fn default_s3_location(&self) -> ::std::option::Option<& str> {
         self.default_s3_location.as_deref()
     }
     /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
-    pub fn idp_auth_url(&self) -> ::std::option::Option<&str> {
+    pub fn idp_auth_url(&self) -> ::std::option::Option<& str> {
         self.idp_auth_url.as_deref()
     }
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
-    pub fn idp_relay_state_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn idp_relay_state_parameter_name(&self) -> ::std::option::Option<& str> {
         self.idp_relay_state_parameter_name.as_deref()
     }
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn trusted_identity_propagation_enabled(&self) -> ::std::option::Option<bool> {
         self.trusted_identity_propagation_enabled
     }
     /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
-    pub fn idc_user_assignment(&self) -> ::std::option::Option<&crate::types::IdcUserAssignment> {
+    pub fn idc_user_assignment(&self) -> ::std::option::Option<& crate::types::IdcUserAssignment> {
         self.idc_user_assignment.as_ref()
     }
     /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
-    pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn idc_instance_arn(&self) -> ::std::option::Option<& str> {
         self.idc_instance_arn.as_deref()
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
 }
@@ -127,7 +129,7 @@ pub struct CreateStudioInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) auth_mode: ::std::option::Option<crate::types::AuthMode>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) user_role: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_security_group_id: ::std::option::Option<::std::string::String>,
@@ -135,7 +137,7 @@ pub struct CreateStudioInputBuilder {
     pub(crate) default_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) idp_auth_url: ::std::option::Option<::std::string::String>,
     pub(crate) idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) trusted_identity_propagation_enabled: ::std::option::Option<bool>,
     pub(crate) idc_user_assignment: ::std::option::Option<crate::types::IdcUserAssignment>,
     pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
@@ -150,8 +152,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +165,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>A detailed description of the Amazon EMR Studio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A detailed description of the Amazon EMR Studio.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +179,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
-        self.auth_mode = input;
-        self
+        self.auth_mode = input; self
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn get_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
@@ -194,8 +193,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,17 +206,16 @@ impl CreateStudioInputBuilder {
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
@@ -229,8 +226,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +239,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
     pub fn set_user_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
     pub fn get_user_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +253,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn set_workspace_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_security_group_id = input;
-        self
+        self.workspace_security_group_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn get_workspace_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +267,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn set_engine_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_security_group_id = input;
-        self
+        self.engine_security_group_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn get_engine_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +281,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
     pub fn set_default_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_s3_location = input;
-        self
+        self.default_s3_location = input; self
     }
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
     pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +294,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
     pub fn set_idp_auth_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idp_auth_url = input;
-        self
+        self.idp_auth_url = input; self
     }
     /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
     pub fn get_idp_auth_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +307,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
     pub fn set_idp_relay_state_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idp_relay_state_parameter_name = input;
-        self
+        self.idp_relay_state_parameter_name = input; self
     }
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
     pub fn get_idp_relay_state_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,17 +320,16 @@ impl CreateStudioInputBuilder {
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
@@ -350,8 +339,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn set_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.trusted_identity_propagation_enabled = input;
-        self
+        self.trusted_identity_propagation_enabled = input; self
     }
     /// <p>A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>.</p>
     pub fn get_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
@@ -364,8 +352,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn set_idc_user_assignment(mut self, input: ::std::option::Option<crate::types::IdcUserAssignment>) -> Self {
-        self.idc_user_assignment = input;
-        self
+        self.idc_user_assignment = input; self
     }
     /// <p>Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio.</p>
     pub fn get_idc_user_assignment(&self) -> &::std::option::Option<crate::types::IdcUserAssignment> {
@@ -378,8 +365,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idc_instance_arn = input;
-        self
+        self.idc_instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance to create the Studio application.</p>
     pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,35 +378,52 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }
     /// Consumes the builder and constructs a [`CreateStudioInput`](crate::operation::create_studio::CreateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_studio::CreateStudioInput {
-            name: self.name,
-            description: self.description,
-            auth_mode: self.auth_mode,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            service_role: self.service_role,
-            user_role: self.user_role,
-            workspace_security_group_id: self.workspace_security_group_id,
-            engine_security_group_id: self.engine_security_group_id,
-            default_s3_location: self.default_s3_location,
-            idp_auth_url: self.idp_auth_url,
-            idp_relay_state_parameter_name: self.idp_relay_state_parameter_name,
-            tags: self.tags,
-            trusted_identity_propagation_enabled: self.trusted_identity_propagation_enabled,
-            idc_user_assignment: self.idc_user_assignment,
-            idc_instance_arn: self.idc_instance_arn,
-            encryption_key_arn: self.encryption_key_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_studio::CreateStudioInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                auth_mode: self.auth_mode
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                service_role: self.service_role
+                ,
+                user_role: self.user_role
+                ,
+                workspace_security_group_id: self.workspace_security_group_id
+                ,
+                engine_security_group_id: self.engine_security_group_id
+                ,
+                default_s3_location: self.default_s3_location
+                ,
+                idp_auth_url: self.idp_auth_url
+                ,
+                idp_relay_state_parameter_name: self.idp_relay_state_parameter_name
+                ,
+                tags: self.tags
+                ,
+                trusted_identity_propagation_enabled: self.trusted_identity_propagation_enabled
+                ,
+                idc_user_assignment: self.idc_user_assignment
+                ,
+                idc_instance_arn: self.idc_instance_arn
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+            }
+        )
     }
 }
+

@@ -4,21 +4,20 @@
 /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyContentSecurityPolicy {
+pub struct ResponseHeadersPolicyContentSecurityPolicy  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub r#override: bool,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     pub content_security_policy: ::std::string::String,
 }
-impl ResponseHeadersPolicyContentSecurityPolicy {
+impl  ResponseHeadersPolicyContentSecurityPolicy  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    pub fn content_security_policy(&self) -> &str {
-        use std::ops::Deref;
-        self.content_security_policy.deref()
+    pub fn content_security_policy(&self) -> & str {
+        use std::ops::Deref; self.content_security_policy.deref()
     }
 }
 impl ResponseHeadersPolicyContentSecurityPolicy {
@@ -44,8 +43,7 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<bool> {
@@ -59,8 +57,7 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     pub fn set_content_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_security_policy = input;
-        self
+        self.content_security_policy = input; self
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     pub fn get_content_security_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +67,21 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::r#override)
     /// - [`content_security_policy`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::content_security_policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentSecurityPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyContentSecurityPolicy {
-            r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#override",
-                    "r#override was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
-                )
-            })?,
-            content_security_policy: self.content_security_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_security_policy",
-                    "content_security_policy was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentSecurityPolicy, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyContentSecurityPolicy {
+                r#override: self.r#override
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#override", "r#override was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy")
+                    )?
+                ,
+                content_security_policy: self.content_security_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_security_policy", "content_security_policy was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A resource disassociation result for a percentage custom line item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateResourceResponseElement {
+pub struct DisassociateResourceResponseElement  {
     /// <p>The resource ARN that was disassociated from the custom line item.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An <code>AssociateResourceError</code> that's shown if the resource disassociation fails.</p>
     pub error: ::std::option::Option<crate::types::AssociateResourceError>,
 }
-impl DisassociateResourceResponseElement {
+impl  DisassociateResourceResponseElement  {
     /// <p>The resource ARN that was disassociated from the custom line item.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An <code>AssociateResourceError</code> that's shown if the resource disassociation fails.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::AssociateResourceError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::AssociateResourceError> {
         self.error.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateResourceResponseElementBuilder {
     }
     /// <p>The resource ARN that was disassociated from the custom line item.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The resource ARN that was disassociated from the custom line item.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DisassociateResourceResponseElementBuilder {
     }
     /// <p>An <code>AssociateResourceError</code> that's shown if the resource disassociation fails.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::AssociateResourceError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An <code>AssociateResourceError</code> that's shown if the resource disassociation fails.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::AssociateResourceError> {
@@ -65,8 +63,11 @@ impl DisassociateResourceResponseElementBuilder {
     /// Consumes the builder and constructs a [`DisassociateResourceResponseElement`](crate::types::DisassociateResourceResponseElement).
     pub fn build(self) -> crate::types::DisassociateResourceResponseElement {
         crate::types::DisassociateResourceResponseElement {
-            arn: self.arn,
-            error: self.error,
+            arn: self.arn
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

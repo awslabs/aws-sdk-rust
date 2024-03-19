@@ -3,7 +3,7 @@
 /// <p>The output configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeOutputConfig {
+pub struct EdgeOutputConfig  {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
@@ -29,17 +29,17 @@ pub struct EdgeOutputConfig {
     /// </ul>
     pub preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
-impl EdgeOutputConfig {
+impl  EdgeOutputConfig  {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    pub fn s3_output_location(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_location(&self) -> ::std::option::Option<& str> {
         self.s3_output_location.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn preset_deployment_type(&self) -> ::std::option::Option<&crate::types::EdgePresetDeploymentType> {
+    pub fn preset_deployment_type(&self) -> ::std::option::Option<& crate::types::EdgePresetDeploymentType> {
         self.preset_deployment_type.as_ref()
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -59,7 +59,7 @@ impl EdgeOutputConfig {
     /// <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p>
     /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
     /// </ul>
-    pub fn preset_deployment_config(&self) -> ::std::option::Option<&str> {
+    pub fn preset_deployment_config(&self) -> ::std::option::Option<& str> {
         self.preset_deployment_config.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     pub fn set_s3_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_location = input;
-        self
+        self.s3_output_location = input; self
     }
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     pub fn get_s3_output_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl EdgeOutputConfigBuilder {
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub fn set_preset_deployment_type(mut self, input: ::std::option::Option<crate::types::EdgePresetDeploymentType>) -> Self {
-        self.preset_deployment_type = input;
-        self
+        self.preset_deployment_type = input; self
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub fn get_preset_deployment_type(&self) -> &::std::option::Option<crate::types::EdgePresetDeploymentType> {
@@ -162,8 +159,7 @@ impl EdgeOutputConfigBuilder {
     /// <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p></li>
     /// </ul>
     pub fn set_preset_deployment_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preset_deployment_config = input;
-        self
+        self.preset_deployment_config = input; self
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
@@ -188,10 +184,15 @@ impl EdgeOutputConfigBuilder {
     /// Consumes the builder and constructs a [`EdgeOutputConfig`](crate::types::EdgeOutputConfig).
     pub fn build(self) -> crate::types::EdgeOutputConfig {
         crate::types::EdgeOutputConfig {
-            s3_output_location: self.s3_output_location,
-            kms_key_id: self.kms_key_id,
-            preset_deployment_type: self.preset_deployment_type,
-            preset_deployment_config: self.preset_deployment_config,
+            s3_output_location: self.s3_output_location
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            preset_deployment_type: self.preset_deployment_type
+            ,
+            preset_deployment_config: self.preset_deployment_config
+            ,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The bot member that processes the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecognizedBotMember {
+pub struct RecognizedBotMember  {
     /// <p>The identifier of the bot member that processes the request.</p>
     pub bot_id: ::std::string::String,
     /// <p>The name of the bot member that processes the request.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
 }
-impl RecognizedBotMember {
+impl  RecognizedBotMember  {
     /// <p>The identifier of the bot member that processes the request.</p>
-    pub fn bot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_id.deref()
+    pub fn bot_id(&self) -> & str {
+        use std::ops::Deref; self.bot_id.deref()
     }
     /// <p>The name of the bot member that processes the request.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl RecognizedBotMemberBuilder {
     }
     /// <p>The identifier of the bot member that processes the request.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot member that processes the request.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl RecognizedBotMemberBuilder {
     }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl RecognizedBotMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::RecognizedBotMemberBuilder::bot_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RecognizedBotMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecognizedBotMember {
-            bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_id",
-                    "bot_id was not specified but it is required when building RecognizedBotMember",
-                )
-            })?,
-            bot_name: self.bot_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecognizedBotMember {
+                bot_id: self.bot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "bot_id was not specified but it is required when building RecognizedBotMember")
+                    )?
+                ,
+                bot_name: self.bot_name
+                ,
+            }
+        )
     }
 }
+

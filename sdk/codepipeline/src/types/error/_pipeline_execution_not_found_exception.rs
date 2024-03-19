@@ -3,22 +3,20 @@
 /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineExecutionNotFoundException {
+pub struct PipelineExecutionNotFoundException  {
     /// <p>The message provided to the user in the event of an exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PipelineExecutionNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for PipelineExecutionNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "PipelineExecutionNotFoundException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::PipelineExecuti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PipelineExecutionNotFoundException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl PipelineExecutionNotFoundException {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionNotFoundException`](crate::types::error::PipelineExecutionNotFoundException).
@@ -59,29 +55,30 @@ impl PipelineExecutionNotFoundExceptionBuilder {
     }
     /// <p>The message provided to the user in the event of an exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message provided to the user in the event of an exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`PipelineExecutionNotFoundException`](crate::types::error::PipelineExecutionNotFoundException).
     pub fn build(self) -> crate::types::error::PipelineExecutionNotFoundException {
         crate::types::error::PipelineExecutionNotFoundException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

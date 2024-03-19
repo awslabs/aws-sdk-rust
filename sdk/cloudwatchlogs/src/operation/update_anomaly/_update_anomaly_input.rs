@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnomalyInput {
+pub struct UpdateAnomalyInput  {
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
     pub anomaly_id: ::std::option::Option<::std::string::String>,
     /// <p>If you are suppressing or unsuppressing an pattern, specify its unique ID here. You can find pattern IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
@@ -14,25 +14,25 @@ pub struct UpdateAnomalyInput {
     /// <p>If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.</p>
     pub suppression_period: ::std::option::Option<crate::types::SuppressionPeriod>,
 }
-impl UpdateAnomalyInput {
+impl  UpdateAnomalyInput  {
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
-    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_id.as_deref()
     }
     /// <p>If you are suppressing or unsuppressing an pattern, specify its unique ID here. You can find pattern IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
-    pub fn pattern_id(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_id(&self) -> ::std::option::Option<& str> {
         self.pattern_id.as_deref()
     }
     /// <p>The ARN of the anomaly detector that this operation is to act on.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>Use this to specify whether the suppression to be temporary or infinite. If you specify <code>LIMITED</code>, you must also specify a <code>suppressionPeriod</code>. If you specify <code>INFINITE</code>, any value for <code>suppressionPeriod</code> is ignored.</p>
-    pub fn suppression_type(&self) -> ::std::option::Option<&crate::types::SuppressionType> {
+    pub fn suppression_type(&self) -> ::std::option::Option<& crate::types::SuppressionType> {
         self.suppression_type.as_ref()
     }
     /// <p>If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.</p>
-    pub fn suppression_period(&self) -> ::std::option::Option<&crate::types::SuppressionPeriod> {
+    pub fn suppression_period(&self) -> ::std::option::Option<& crate::types::SuppressionPeriod> {
         self.suppression_period.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl UpdateAnomalyInputBuilder {
     }
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_id = input;
-        self
+        self.anomaly_id = input; self
     }
     /// <p>If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateAnomalyInputBuilder {
     }
     /// <p>If you are suppressing or unsuppressing an pattern, specify its unique ID here. You can find pattern IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
     pub fn set_pattern_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_id = input;
-        self
+        self.pattern_id = input; self
     }
     /// <p>If you are suppressing or unsuppressing an pattern, specify its unique ID here. You can find pattern IDs by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAnomalies.html">ListAnomalies</a> operation.</p>
     pub fn get_pattern_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpdateAnomalyInputBuilder {
     }
     /// <p>The ARN of the anomaly detector that this operation is to act on.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the anomaly detector that this operation is to act on.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UpdateAnomalyInputBuilder {
     }
     /// <p>Use this to specify whether the suppression to be temporary or infinite. If you specify <code>LIMITED</code>, you must also specify a <code>suppressionPeriod</code>. If you specify <code>INFINITE</code>, any value for <code>suppressionPeriod</code> is ignored.</p>
     pub fn set_suppression_type(mut self, input: ::std::option::Option<crate::types::SuppressionType>) -> Self {
-        self.suppression_type = input;
-        self
+        self.suppression_type = input; self
     }
     /// <p>Use this to specify whether the suppression to be temporary or infinite. If you specify <code>LIMITED</code>, you must also specify a <code>suppressionPeriod</code>. If you specify <code>INFINITE</code>, any value for <code>suppressionPeriod</code> is ignored.</p>
     pub fn get_suppression_type(&self) -> &::std::option::Option<crate::types::SuppressionType> {
@@ -118,23 +114,28 @@ impl UpdateAnomalyInputBuilder {
     }
     /// <p>If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.</p>
     pub fn set_suppression_period(mut self, input: ::std::option::Option<crate::types::SuppressionPeriod>) -> Self {
-        self.suppression_period = input;
-        self
+        self.suppression_period = input; self
     }
     /// <p>If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.</p>
     pub fn get_suppression_period(&self) -> &::std::option::Option<crate::types::SuppressionPeriod> {
         &self.suppression_period
     }
     /// Consumes the builder and constructs a [`UpdateAnomalyInput`](crate::operation::update_anomaly::UpdateAnomalyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly::UpdateAnomalyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_anomaly::UpdateAnomalyInput {
-            anomaly_id: self.anomaly_id,
-            pattern_id: self.pattern_id,
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            suppression_type: self.suppression_type,
-            suppression_period: self.suppression_period,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_anomaly::UpdateAnomalyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_anomaly::UpdateAnomalyInput {
+                anomaly_id: self.anomaly_id
+                ,
+                pattern_id: self.pattern_id
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                suppression_type: self.suppression_type
+                ,
+                suppression_period: self.suppression_period
+                ,
+            }
+        )
     }
 }
+

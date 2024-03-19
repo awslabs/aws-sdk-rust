@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQueueOutput {
+pub struct CreateQueueOutput  {
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateQueueOutput {
+impl  CreateQueueOutput  {
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    pub fn queue_arn(&self) -> ::std::option::Option<&str> {
+    pub fn queue_arn(&self) -> ::std::option::Option<& str> {
         self.queue_arn.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<& str> {
         self.queue_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateQueueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateQueueOutput {
     /// Creates a new builder-style object to manufacture [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput).
     pub fn builder() -> crate::operation::create_queue::builders::CreateQueueOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateQueueOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn set_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_arn = input;
-        self
+        self.queue_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn get_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateQueueOutputBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput).
     pub fn build(self) -> crate::operation::create_queue::CreateQueueOutput {
         crate::operation::create_queue::CreateQueueOutput {
-            queue_arn: self.queue_arn,
-            queue_id: self.queue_id,
+            queue_arn: self.queue_arn
+            ,
+            queue_id: self.queue_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

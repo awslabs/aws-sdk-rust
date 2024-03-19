@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestSetInput {
+pub struct DescribeTestSetInput  {
     /// <p>The test set Id for the test set request.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTestSetInput {
+impl  DescribeTestSetInput  {
     /// <p>The test set Id for the test set request.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeTestSetInputBuilder {
     }
     /// <p>The test set Id for the test set request.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set request.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_set_id
     }
     /// Consumes the builder and constructs a [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_test_set::DescribeTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_test_set::DescribeTestSetInput {
-            test_set_id: self.test_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_set::DescribeTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_test_set::DescribeTestSetInput {
+                test_set_id: self.test_set_id
+                ,
+            }
+        )
     }
 }
+

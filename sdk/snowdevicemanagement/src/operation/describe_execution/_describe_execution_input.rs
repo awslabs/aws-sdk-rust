@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExecutionInput {
+pub struct DescribeExecutionInput  {
     /// <p>The ID of the task that the action is describing.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed device.</p>
     pub managed_device_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExecutionInput {
+impl  DescribeExecutionInput  {
     /// <p>The ID of the task that the action is describing.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> ::std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>The ID of the task that the action is describing.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the task that the action is describing.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>The ID of the managed device.</p>
     pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_device_id = input;
-        self
+        self.managed_device_id = input; self
     }
     /// <p>The ID of the managed device.</p>
     pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
-            task_id: self.task_id,
-            managed_device_id: self.managed_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_execution::DescribeExecutionInput {
+                task_id: self.task_id
+                ,
+                managed_device_id: self.managed_device_id
+                ,
+            }
+        )
     }
 }
+

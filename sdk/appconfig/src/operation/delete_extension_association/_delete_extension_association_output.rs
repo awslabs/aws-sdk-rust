@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExtensionAssociationOutput {
+pub struct DeleteExtensionAssociationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteExtensionAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExtensionAssociationOutput`](crate::operation::delete_extension_association::DeleteExtensionAssociationOutput).
     pub fn builder() -> crate::operation::delete_extension_association::builders::DeleteExtensionAssociationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteExtensionAssociationOutputBuilder {
 }
 impl DeleteExtensionAssociationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteExtensionAssociationOutput`](crate::operation::delete_extension_association::DeleteExtensionAssociationOutput).
     pub fn build(self) -> crate::operation::delete_extension_association::DeleteExtensionAssociationOutput {
         crate::operation::delete_extension_association::DeleteExtensionAssociationOutput {
@@ -40,3 +40,4 @@ impl DeleteExtensionAssociationOutputBuilder {
         }
     }
 }
+

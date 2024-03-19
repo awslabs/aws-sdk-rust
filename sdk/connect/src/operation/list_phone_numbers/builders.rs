@@ -5,23 +5,20 @@ pub use crate::operation::list_phone_numbers::_list_phone_numbers_input::ListPho
 
 impl ListPhoneNumbersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_phone_numbers::ListPhoneNumbersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_phone_numbers();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_phone_numbers::ListPhoneNumbersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_phone_numbers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListPhoneNumbers`.
-///
+/// 
 /// <p>Provides information about the phone numbers for the specified Amazon Connect instance.</p>
 /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
 /// <ul>
@@ -34,33 +31,32 @@ impl ListPhoneNumbersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder,
+                    inner: crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
-        crate::operation::list_phone_numbers::ListPhoneNumbersError,
-    > for ListPhoneNumbersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
-            crate::operation::list_phone_numbers::ListPhoneNumbersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
+                    crate::operation::list_phone_numbers::ListPhoneNumbersError,
+                > for ListPhoneNumbersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
+                        crate::operation::list_phone_numbers::ListPhoneNumbersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListPhoneNumbersFluentBuilder {
     /// Creates a new `ListPhoneNumbers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,59 +65,50 @@ impl ListPhoneNumbersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_phone_numbers::ListPhoneNumbersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_phone_numbers::ListPhoneNumbers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_phone_numbers::ListPhoneNumbers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
-        crate::operation::list_phone_numbers::ListPhoneNumbersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_phone_numbers::ListPhoneNumbersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phone_numbers::ListPhoneNumbersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_phone_numbers::ListPhoneNumbers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_phone_numbers::ListPhoneNumbers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_phone_numbers::ListPhoneNumbersOutput, crate::operation::list_phone_numbers::ListPhoneNumbersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator {
-        crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator {
+                                crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -150,14 +137,14 @@ impl ListPhoneNumbersFluentBuilder {
     /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
-    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
+    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>>) -> Self {
         self.inner = self.inner.set_phone_number_types(input);
         self
     }
     /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
-    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>> {
         self.inner.get_phone_number_types()
     }
     /// Appends an item to `PhoneNumberCountryCodes`.
@@ -170,12 +157,12 @@ impl ListPhoneNumbersFluentBuilder {
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
+    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>>) -> Self {
         self.inner = self.inner.set_phone_number_country_codes(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>> {
         self.inner.get_phone_number_country_codes()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -207,3 +194,4 @@ impl ListPhoneNumbersFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

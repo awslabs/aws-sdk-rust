@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>DescribeRuleGroupsNamespace</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRuleGroupsNamespaceInput {
+pub struct DescribeRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule groups namespace that you want information for.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRuleGroupsNamespaceInput {
+impl  DescribeRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace containing the rule groups namespace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The name of the rule groups namespace that you want information for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The name of the rule groups namespace that you want information for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule groups namespace that you want information for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

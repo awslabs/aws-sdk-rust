@@ -3,11 +3,11 @@
 /// Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackSourceSettings {
+pub struct TrackSourceSettings  {
     /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
     pub track_number: ::std::option::Option<i32>,
 }
-impl TrackSourceSettings {
+impl  TrackSourceSettings  {
     /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
     pub fn track_number(&self) -> ::std::option::Option<i32> {
         self.track_number
@@ -34,8 +34,7 @@ impl TrackSourceSettingsBuilder {
     }
     /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
     pub fn set_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.track_number = input;
-        self
+        self.track_number = input; self
     }
     /// Use this setting to select a single captions track from a source. Track numbers correspond to the order in the captions source file. For IMF sources, track numbering is based on the order that the captions appear in the CPL. For example, use 1 to select the captions asset that is listed first in the CPL. To include more than one captions track in your job outputs, create multiple input captions selectors. Specify one track per selector.
     pub fn get_track_number(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl TrackSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`TrackSourceSettings`](crate::types::TrackSourceSettings).
     pub fn build(self) -> crate::types::TrackSourceSettings {
         crate::types::TrackSourceSettings {
-            track_number: self.track_number,
+            track_number: self.track_number
+            ,
         }
     }
 }
+

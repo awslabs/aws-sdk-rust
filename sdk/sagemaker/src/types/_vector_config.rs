@@ -3,11 +3,11 @@
 /// <p>Configuration for your vector collection type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorConfig {
+pub struct VectorConfig  {
     /// <p>The number of elements in your vector.</p>
     pub dimension: ::std::option::Option<i32>,
 }
-impl VectorConfig {
+impl  VectorConfig  {
     /// <p>The number of elements in your vector.</p>
     pub fn dimension(&self) -> ::std::option::Option<i32> {
         self.dimension
@@ -35,8 +35,7 @@ impl VectorConfigBuilder {
     }
     /// <p>The number of elements in your vector.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The number of elements in your vector.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<i32> {
@@ -44,6 +43,10 @@ impl VectorConfigBuilder {
     }
     /// Consumes the builder and constructs a [`VectorConfig`](crate::types::VectorConfig).
     pub fn build(self) -> crate::types::VectorConfig {
-        crate::types::VectorConfig { dimension: self.dimension }
+        crate::types::VectorConfig {
+            dimension: self.dimension
+            ,
+        }
     }
 }
+

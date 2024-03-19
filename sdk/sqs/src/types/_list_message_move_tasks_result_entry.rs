@@ -3,7 +3,7 @@
 /// <p>Contains the details of a message movement task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMessageMoveTasksResultEntry {
+pub struct ListMessageMoveTasksResultEntry  {
     /// <p>An identifier associated with a message movement task. When this field is returned in the response of the <code>ListMessageMoveTasks</code> action, it is only populated for tasks that are in RUNNING status.</p>
     pub task_handle: ::std::option::Option<::std::string::String>,
     /// <p>The status of the message movement task. Possible values are: RUNNING, COMPLETED, CANCELLING, CANCELLED, and FAILED.</p>
@@ -23,21 +23,21 @@ pub struct ListMessageMoveTasksResultEntry {
     /// <p>The timestamp of starting the message movement task.</p>
     pub started_timestamp: i64,
 }
-impl ListMessageMoveTasksResultEntry {
+impl  ListMessageMoveTasksResultEntry  {
     /// <p>An identifier associated with a message movement task. When this field is returned in the response of the <code>ListMessageMoveTasks</code> action, it is only populated for tasks that are in RUNNING status.</p>
-    pub fn task_handle(&self) -> ::std::option::Option<&str> {
+    pub fn task_handle(&self) -> ::std::option::Option<& str> {
         self.task_handle.as_deref()
     }
     /// <p>The status of the message movement task. Possible values are: RUNNING, COMPLETED, CANCELLING, CANCELLED, and FAILED.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The ARN of the queue that contains the messages to be moved to another queue.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
@@ -53,7 +53,7 @@ impl ListMessageMoveTasksResultEntry {
         self.approximate_number_of_messages_to_move
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The timestamp of starting the message movement task.</p>
@@ -90,8 +90,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>An identifier associated with a message movement task. When this field is returned in the response of the <code>ListMessageMoveTasks</code> action, it is only populated for tasks that are in RUNNING status.</p>
     pub fn set_task_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_handle = input;
-        self
+        self.task_handle = input; self
     }
     /// <p>An identifier associated with a message movement task. When this field is returned in the response of the <code>ListMessageMoveTasks</code> action, it is only populated for tasks that are in RUNNING status.</p>
     pub fn get_task_handle(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The status of the message movement task. Possible values are: RUNNING, COMPLETED, CANCELLING, CANCELLED, and FAILED.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the message movement task. Possible values are: RUNNING, COMPLETED, CANCELLING, CANCELLED, and FAILED.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The ARN of the queue that contains the messages to be moved to another queue.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the queue that contains the messages to be moved to another queue.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
     pub fn set_max_number_of_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_number_of_messages_per_second = input;
-        self
+        self.max_number_of_messages_per_second = input; self
     }
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
     pub fn get_max_number_of_messages_per_second(&self) -> &::std::option::Option<i32> {
@@ -160,8 +155,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The approximate number of messages already moved to the destination queue.</p>
     pub fn set_approximate_number_of_messages_moved(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_number_of_messages_moved = input;
-        self
+        self.approximate_number_of_messages_moved = input; self
     }
     /// <p>The approximate number of messages already moved to the destination queue.</p>
     pub fn get_approximate_number_of_messages_moved(&self) -> &::std::option::Option<i64> {
@@ -174,8 +168,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
     pub fn set_approximate_number_of_messages_to_move(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_number_of_messages_to_move = input;
-        self
+        self.approximate_number_of_messages_to_move = input; self
     }
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
     pub fn get_approximate_number_of_messages_to_move(&self) -> &::std::option::Option<i64> {
@@ -188,8 +181,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
     }
     /// <p>The timestamp of starting the message movement task.</p>
     pub fn set_started_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_timestamp = input;
-        self
+        self.started_timestamp = input; self
     }
     /// <p>The timestamp of starting the message movement task.</p>
     pub fn get_started_timestamp(&self) -> &::std::option::Option<i64> {
@@ -212,15 +203,27 @@ impl ListMessageMoveTasksResultEntryBuilder {
     /// Consumes the builder and constructs a [`ListMessageMoveTasksResultEntry`](crate::types::ListMessageMoveTasksResultEntry).
     pub fn build(self) -> crate::types::ListMessageMoveTasksResultEntry {
         crate::types::ListMessageMoveTasksResultEntry {
-            task_handle: self.task_handle,
-            status: self.status,
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
-            max_number_of_messages_per_second: self.max_number_of_messages_per_second,
-            approximate_number_of_messages_moved: self.approximate_number_of_messages_moved.unwrap_or_default(),
-            approximate_number_of_messages_to_move: self.approximate_number_of_messages_to_move,
-            failure_reason: self.failure_reason,
-            started_timestamp: self.started_timestamp.unwrap_or_default(),
+            task_handle: self.task_handle
+            ,
+            status: self.status
+            ,
+            source_arn: self.source_arn
+            ,
+            destination_arn: self.destination_arn
+            ,
+            max_number_of_messages_per_second: self.max_number_of_messages_per_second
+            ,
+            approximate_number_of_messages_moved: self.approximate_number_of_messages_moved
+                .unwrap_or_default()
+            ,
+            approximate_number_of_messages_to_move: self.approximate_number_of_messages_to_move
+            ,
+            failure_reason: self.failure_reason
+            ,
+            started_timestamp: self.started_timestamp
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

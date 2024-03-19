@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SoaRecord {
+pub struct SoaRecord  {
     /// <p>Primary name server specified in the SOA record.</p>
     pub primary_name_server: ::std::option::Option<::std::string::String>,
     /// <p>Administrative contact email from the SOA record.</p>
@@ -11,13 +11,13 @@ pub struct SoaRecord {
     /// <p>Serial number from the SOA record.</p>
     pub serial_number: i64,
 }
-impl SoaRecord {
+impl  SoaRecord  {
     /// <p>Primary name server specified in the SOA record.</p>
-    pub fn primary_name_server(&self) -> ::std::option::Option<&str> {
+    pub fn primary_name_server(&self) -> ::std::option::Option<& str> {
         self.primary_name_server.as_deref()
     }
     /// <p>Administrative contact email from the SOA record.</p>
-    pub fn admin_email(&self) -> ::std::option::Option<&str> {
+    pub fn admin_email(&self) -> ::std::option::Option<& str> {
         self.admin_email.as_deref()
     }
     /// <p>Serial number from the SOA record.</p>
@@ -48,8 +48,7 @@ impl SoaRecordBuilder {
     }
     /// <p>Primary name server specified in the SOA record.</p>
     pub fn set_primary_name_server(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_name_server = input;
-        self
+        self.primary_name_server = input; self
     }
     /// <p>Primary name server specified in the SOA record.</p>
     pub fn get_primary_name_server(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SoaRecordBuilder {
     }
     /// <p>Administrative contact email from the SOA record.</p>
     pub fn set_admin_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_email = input;
-        self
+        self.admin_email = input; self
     }
     /// <p>Administrative contact email from the SOA record.</p>
     pub fn get_admin_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SoaRecordBuilder {
     }
     /// <p>Serial number from the SOA record.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>Serial number from the SOA record.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,14 @@ impl SoaRecordBuilder {
     /// Consumes the builder and constructs a [`SoaRecord`](crate::types::SoaRecord).
     pub fn build(self) -> crate::types::SoaRecord {
         crate::types::SoaRecord {
-            primary_name_server: self.primary_name_server,
-            admin_email: self.admin_email,
-            serial_number: self.serial_number.unwrap_or_default(),
+            primary_name_server: self.primary_name_server
+            ,
+            admin_email: self.admin_email
+            ,
+            serial_number: self.serial_number
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

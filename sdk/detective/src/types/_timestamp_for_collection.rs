@@ -3,13 +3,13 @@
 /// <p>Details on when data collection began for a source package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestampForCollection {
+pub struct TimestampForCollection  {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TimestampForCollection {
+impl  TimestampForCollection  {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TimestampForCollectionBuilder {
     }
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -43,6 +42,10 @@ impl TimestampForCollectionBuilder {
     }
     /// Consumes the builder and constructs a [`TimestampForCollection`](crate::types::TimestampForCollection).
     pub fn build(self) -> crate::types::TimestampForCollection {
-        crate::types::TimestampForCollection { timestamp: self.timestamp }
+        crate::types::TimestampForCollection {
+            timestamp: self.timestamp
+            ,
+        }
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReplicationSetOutput {
+pub struct CreateReplicationSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateReplicationSetOutput {
+impl  CreateReplicationSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateReplicationSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateReplicationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput).
     pub fn builder() -> crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateReplicationSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_replication_set::CreateReplicationSetOutput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateReplicationSetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_replication_set::CreateReplicationSetOutput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateReplicationSetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

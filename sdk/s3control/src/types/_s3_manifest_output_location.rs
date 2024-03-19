@@ -3,7 +3,7 @@
 /// <p>Location details for where the generated manifest should be written.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ManifestOutputLocation {
+pub struct S3ManifestOutputLocation  {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     pub expected_manifest_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The bucket ARN the generated manifest should be written to.</p><note>
@@ -17,28 +17,27 @@ pub struct S3ManifestOutputLocation {
     /// <p>The format of the generated manifest.</p>
     pub manifest_format: crate::types::GeneratedManifestFormat,
 }
-impl S3ManifestOutputLocation {
+impl  S3ManifestOutputLocation  {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-    pub fn expected_manifest_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_manifest_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_manifest_bucket_owner.as_deref()
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
     /// </note>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
-    pub fn manifest_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn manifest_prefix(&self) -> ::std::option::Option<& str> {
         self.manifest_prefix.as_deref()
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-    pub fn manifest_encryption(&self) -> ::std::option::Option<&crate::types::GeneratedManifestEncryption> {
+    pub fn manifest_encryption(&self) -> ::std::option::Option<& crate::types::GeneratedManifestEncryption> {
         self.manifest_encryption.as_ref()
     }
     /// <p>The format of the generated manifest.</p>
-    pub fn manifest_format(&self) -> &crate::types::GeneratedManifestFormat {
+    pub fn manifest_format(&self) -> & crate::types::GeneratedManifestFormat {
         &self.manifest_format
     }
 }
@@ -67,8 +66,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     pub fn set_expected_manifest_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_manifest_bucket_owner = input;
-        self
+        self.expected_manifest_bucket_owner = input; self
     }
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     pub fn get_expected_manifest_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl S3ManifestOutputLocationBuilder {
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
     /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
@@ -102,8 +99,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
     pub fn set_manifest_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_prefix = input;
-        self
+        self.manifest_prefix = input; self
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
     pub fn get_manifest_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +112,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
     pub fn set_manifest_encryption(mut self, input: ::std::option::Option<crate::types::GeneratedManifestEncryption>) -> Self {
-        self.manifest_encryption = input;
-        self
+        self.manifest_encryption = input; self
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
     pub fn get_manifest_encryption(&self) -> &::std::option::Option<crate::types::GeneratedManifestEncryption> {
@@ -131,8 +126,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>The format of the generated manifest.</p>
     pub fn set_manifest_format(mut self, input: ::std::option::Option<crate::types::GeneratedManifestFormat>) -> Self {
-        self.manifest_format = input;
-        self
+        self.manifest_format = input; self
     }
     /// <p>The format of the generated manifest.</p>
     pub fn get_manifest_format(&self) -> &::std::option::Option<crate::types::GeneratedManifestFormat> {
@@ -143,22 +137,26 @@ impl S3ManifestOutputLocationBuilder {
     /// - [`bucket`](crate::types::builders::S3ManifestOutputLocationBuilder::bucket)
     /// - [`manifest_format`](crate::types::builders::S3ManifestOutputLocationBuilder::manifest_format)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ManifestOutputLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ManifestOutputLocation {
-            expected_manifest_bucket_owner: self.expected_manifest_bucket_owner,
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3ManifestOutputLocation",
-                )
-            })?,
-            manifest_prefix: self.manifest_prefix,
-            manifest_encryption: self.manifest_encryption,
-            manifest_format: self.manifest_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest_format",
-                    "manifest_format was not specified but it is required when building S3ManifestOutputLocation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ManifestOutputLocation {
+                expected_manifest_bucket_owner: self.expected_manifest_bucket_owner
+                ,
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3ManifestOutputLocation")
+                    )?
+                ,
+                manifest_prefix: self.manifest_prefix
+                ,
+                manifest_encryption: self.manifest_encryption
+                ,
+                manifest_format: self.manifest_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest_format", "manifest_format was not specified but it is required when building S3ManifestOutputLocation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

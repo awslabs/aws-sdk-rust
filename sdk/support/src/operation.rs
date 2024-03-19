@@ -48,3 +48,4 @@ pub mod refresh_trusted_advisor_check;
 
 /// Types for the `ResolveCase` operation.
 pub mod resolve_case;
+

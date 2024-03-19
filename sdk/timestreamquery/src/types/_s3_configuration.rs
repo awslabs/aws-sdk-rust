@@ -3,7 +3,7 @@
 /// <p>Details on S3 location for error reports that result from running a query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p>Name of the S3 bucket under which error reports will be created.</p>
     pub bucket_name: ::std::string::String,
     /// <p>Prefix for the error report key. Timestream by default adds the following prefix to the error report path.</p>
@@ -11,18 +11,17 @@ pub struct S3Configuration {
     /// <p>Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default.</p>
     pub encryption_option: ::std::option::Option<crate::types::S3EncryptionOption>,
 }
-impl S3Configuration {
+impl  S3Configuration  {
     /// <p>Name of the S3 bucket under which error reports will be created.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>Prefix for the error report key. Timestream by default adds the following prefix to the error report path.</p>
-    pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn object_key_prefix(&self) -> ::std::option::Option<& str> {
         self.object_key_prefix.as_deref()
     }
     /// <p>Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default.</p>
-    pub fn encryption_option(&self) -> ::std::option::Option<&crate::types::S3EncryptionOption> {
+    pub fn encryption_option(&self) -> ::std::option::Option<& crate::types::S3EncryptionOption> {
         self.encryption_option.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>Name of the S3 bucket under which error reports will be created.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Name of the S3 bucket under which error reports will be created.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>Prefix for the error report key. Timestream by default adds the following prefix to the error report path.</p>
     pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key_prefix = input;
-        self
+        self.object_key_prefix = input; self
     }
     /// <p>Prefix for the error report key. Timestream by default adds the following prefix to the error report path.</p>
     pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default.</p>
     pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::S3EncryptionOption>) -> Self {
-        self.encryption_option = input;
-        self
+        self.encryption_option = input; self
     }
     /// <p>Encryption at rest options for the error reports. If no encryption option is specified, Timestream will choose SSE_S3 as default.</p>
     pub fn get_encryption_option(&self) -> &::std::option::Option<crate::types::S3EncryptionOption> {
@@ -89,15 +85,19 @@ impl S3ConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3ConfigurationBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Configuration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Configuration",
-                )
-            })?,
-            object_key_prefix: self.object_key_prefix,
-            encryption_option: self.encryption_option,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Configuration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+                object_key_prefix: self.object_key_prefix
+                ,
+                encryption_option: self.encryption_option
+                ,
+            }
+        )
     }
 }
+

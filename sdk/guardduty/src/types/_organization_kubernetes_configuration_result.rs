@@ -3,13 +3,13 @@
 /// <p>The current configuration of all Kubernetes data sources for the organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationKubernetesConfigurationResult {
+pub struct OrganizationKubernetesConfigurationResult  {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     pub audit_logs: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
 }
-impl OrganizationKubernetesConfigurationResult {
+impl  OrganizationKubernetesConfigurationResult  {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
-    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::OrganizationKubernetesAuditLogsConfigurationResult> {
+    pub fn audit_logs(&self) -> ::std::option::Option<& crate::types::OrganizationKubernetesAuditLogsConfigurationResult> {
         self.audit_logs.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl OrganizationKubernetesConfigurationResultBuilder {
     }
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>) -> Self {
-        self.audit_logs = input;
-        self
+        self.audit_logs = input; self
     }
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult> {
@@ -44,6 +43,10 @@ impl OrganizationKubernetesConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`OrganizationKubernetesConfigurationResult`](crate::types::OrganizationKubernetesConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationKubernetesConfigurationResult {
-        crate::types::OrganizationKubernetesConfigurationResult { audit_logs: self.audit_logs }
+        crate::types::OrganizationKubernetesConfigurationResult {
+            audit_logs: self.audit_logs
+            ,
+        }
     }
 }
+

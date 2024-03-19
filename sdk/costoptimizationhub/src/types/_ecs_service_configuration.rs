@@ -3,13 +3,13 @@
 /// <p>The ECS service configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsServiceConfiguration {
+pub struct EcsServiceConfiguration  {
     /// <p>Details about the compute configuration.</p>
     pub compute: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
-impl EcsServiceConfiguration {
+impl  EcsServiceConfiguration  {
     /// <p>Details about the compute configuration.</p>
-    pub fn compute(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+    pub fn compute(&self) -> ::std::option::Option<& crate::types::ComputeConfiguration> {
         self.compute.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EcsServiceConfigurationBuilder {
     }
     /// <p>Details about the compute configuration.</p>
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
-        self.compute = input;
-        self
+        self.compute = input; self
     }
     /// <p>Details about the compute configuration.</p>
     pub fn get_compute(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
@@ -43,6 +42,10 @@ impl EcsServiceConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`EcsServiceConfiguration`](crate::types::EcsServiceConfiguration).
     pub fn build(self) -> crate::types::EcsServiceConfiguration {
-        crate::types::EcsServiceConfiguration { compute: self.compute }
+        crate::types::EcsServiceConfiguration {
+            compute: self.compute
+            ,
+        }
     }
 }
+

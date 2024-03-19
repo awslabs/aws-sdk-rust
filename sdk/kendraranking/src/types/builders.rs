@@ -8,3 +8,4 @@ pub use crate::types::_rescore_result_item::RescoreResultItemBuilder;
 pub use crate::types::_document::DocumentBuilder;
 
 pub use crate::types::_rescore_execution_plan_summary::RescoreExecutionPlanSummaryBuilder;
+

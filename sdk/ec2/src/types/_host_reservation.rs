@@ -3,7 +3,7 @@
 /// <p>Details about the Dedicated Host Reservation and associated Dedicated Hosts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HostReservation {
+pub struct HostReservation  {
     /// <p>The number of Dedicated Hosts the reservation is associated with.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
@@ -13,7 +13,7 @@ pub struct HostReservation {
     /// <p>The date and time that the reservation ends.</p>
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub host_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
     pub host_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The hourly price of the reservation.</p>
@@ -31,15 +31,15 @@ pub struct HostReservation {
     /// <p>The upfront price of the reservation.</p>
     pub upfront_price: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl HostReservation {
+impl  HostReservation  {
     /// <p>The number of Dedicated Hosts the reservation is associated with.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> ::std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
     /// <p>The length of the reservation's term, specified in seconds. Can be <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
@@ -47,52 +47,54 @@ impl HostReservation {
         self.duration
     }
     /// <p>The date and time that the reservation ends.</p>
-    pub fn end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_set.is_none()`.
-    pub fn host_id_set(&self) -> &[::std::string::String] {
-        self.host_id_set.as_deref().unwrap_or_default()
+    pub fn host_id_set(&self) -> & [::std::string::String] {
+        self.host_id_set.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
-    pub fn host_reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_reservation_id(&self) -> ::std::option::Option<& str> {
         self.host_reservation_id.as_deref()
     }
     /// <p>The hourly price of the reservation.</p>
-    pub fn hourly_price(&self) -> ::std::option::Option<&str> {
+    pub fn hourly_price(&self) -> ::std::option::Option<& str> {
         self.hourly_price.as_deref()
     }
     /// <p>The instance family of the Dedicated Host Reservation. The instance family on the Dedicated Host must be the same in order for it to benefit from the reservation.</p>
-    pub fn instance_family(&self) -> ::std::option::Option<&str> {
+    pub fn instance_family(&self) -> ::std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The ID of the reservation. This remains the same regardless of which Dedicated Hosts are associated with it.</p>
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The payment option selected for this reservation.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The date and time that the reservation started.</p>
-    pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p>The state of the reservation.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ReservationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ReservationState> {
         self.state.as_ref()
     }
     /// <p>The upfront price of the reservation.</p>
-    pub fn upfront_price(&self) -> ::std::option::Option<&str> {
+    pub fn upfront_price(&self) -> ::std::option::Option<& str> {
         self.upfront_price.as_deref()
     }
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HostReservation {
@@ -110,7 +112,7 @@ pub struct HostReservationBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) host_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) hourly_price: ::std::option::Option<::std::string::String>,
     pub(crate) instance_family: ::std::option::Option<::std::string::String>,
@@ -119,7 +121,7 @@ pub struct HostReservationBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::ReservationState>,
     pub(crate) upfront_price: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl HostReservationBuilder {
     /// <p>The number of Dedicated Hosts the reservation is associated with.</p>
@@ -129,8 +131,7 @@ impl HostReservationBuilder {
     }
     /// <p>The number of Dedicated Hosts the reservation is associated with.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of Dedicated Hosts the reservation is associated with.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -143,8 +144,7 @@ impl HostReservationBuilder {
     }
     /// <p>The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
@@ -157,8 +157,7 @@ impl HostReservationBuilder {
     }
     /// <p>The length of the reservation's term, specified in seconds. Can be <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The length of the reservation's term, specified in seconds. Can be <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -171,8 +170,7 @@ impl HostReservationBuilder {
     }
     /// <p>The date and time that the reservation ends.</p>
     pub fn set_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The date and time that the reservation ends.</p>
     pub fn get_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,17 +183,16 @@ impl HostReservationBuilder {
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
     pub fn host_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_id_set.unwrap_or_default();
-        v.push(input.into());
-        self.host_id_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.host_id_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.host_id_set = input;
-        self
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.host_id_set = input; self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.host_id_set
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
@@ -205,8 +202,7 @@ impl HostReservationBuilder {
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
     pub fn set_host_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_reservation_id = input;
-        self
+        self.host_reservation_id = input; self
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
     pub fn get_host_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +215,7 @@ impl HostReservationBuilder {
     }
     /// <p>The hourly price of the reservation.</p>
     pub fn set_hourly_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hourly_price = input;
-        self
+        self.hourly_price = input; self
     }
     /// <p>The hourly price of the reservation.</p>
     pub fn get_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +228,7 @@ impl HostReservationBuilder {
     }
     /// <p>The instance family of the Dedicated Host Reservation. The instance family on the Dedicated Host must be the same in order for it to benefit from the reservation.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The instance family of the Dedicated Host Reservation. The instance family on the Dedicated Host must be the same in order for it to benefit from the reservation.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +241,7 @@ impl HostReservationBuilder {
     }
     /// <p>The ID of the reservation. This remains the same regardless of which Dedicated Hosts are associated with it.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// <p>The ID of the reservation. This remains the same regardless of which Dedicated Hosts are associated with it.</p>
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +254,7 @@ impl HostReservationBuilder {
     }
     /// <p>The payment option selected for this reservation.</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The payment option selected for this reservation.</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
@@ -275,8 +267,7 @@ impl HostReservationBuilder {
     }
     /// <p>The date and time that the reservation started.</p>
     pub fn set_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The date and time that the reservation started.</p>
     pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -289,8 +280,7 @@ impl HostReservationBuilder {
     }
     /// <p>The state of the reservation.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the reservation.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ReservationState> {
@@ -303,8 +293,7 @@ impl HostReservationBuilder {
     }
     /// <p>The upfront price of the reservation.</p>
     pub fn set_upfront_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upfront_price = input;
-        self
+        self.upfront_price = input; self
     }
     /// <p>The upfront price of the reservation.</p>
     pub fn get_upfront_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -317,36 +306,50 @@ impl HostReservationBuilder {
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`HostReservation`](crate::types::HostReservation).
     pub fn build(self) -> crate::types::HostReservation {
         crate::types::HostReservation {
-            count: self.count,
-            currency_code: self.currency_code,
-            duration: self.duration,
-            end: self.end,
-            host_id_set: self.host_id_set,
-            host_reservation_id: self.host_reservation_id,
-            hourly_price: self.hourly_price,
-            instance_family: self.instance_family,
-            offering_id: self.offering_id,
-            payment_option: self.payment_option,
-            start: self.start,
-            state: self.state,
-            upfront_price: self.upfront_price,
-            tags: self.tags,
+            count: self.count
+            ,
+            currency_code: self.currency_code
+            ,
+            duration: self.duration
+            ,
+            end: self.end
+            ,
+            host_id_set: self.host_id_set
+            ,
+            host_reservation_id: self.host_reservation_id
+            ,
+            hourly_price: self.hourly_price
+            ,
+            instance_family: self.instance_family
+            ,
+            offering_id: self.offering_id
+            ,
+            payment_option: self.payment_option
+            ,
+            start: self.start
+            ,
+            state: self.state
+            ,
+            upfront_price: self.upfront_price
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

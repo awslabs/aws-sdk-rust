@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComplianceSummaryByConfigRuleInput {}
+pub struct GetComplianceSummaryByConfigRuleInput  {
+}
 impl GetComplianceSummaryByConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryByConfigRuleInput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput).
     pub fn builder() -> crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleInputBuilder {
@@ -13,15 +14,15 @@ impl GetComplianceSummaryByConfigRuleInput {
 /// A builder for [`GetComplianceSummaryByConfigRuleInput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetComplianceSummaryByConfigRuleInputBuilder {}
+pub struct GetComplianceSummaryByConfigRuleInputBuilder {
+}
 impl GetComplianceSummaryByConfigRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceSummaryByConfigRuleInput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput {
+            }
+        )
     }
 }
+

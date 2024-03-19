@@ -3,13 +3,13 @@
 /// <p>Describes whether any Kubernetes logs will be enabled as a data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesConfigurationResult {
+pub struct KubernetesConfigurationResult  {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
     pub audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult>,
 }
-impl KubernetesConfigurationResult {
+impl  KubernetesConfigurationResult  {
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::KubernetesAuditLogsConfigurationResult> {
+    pub fn audit_logs(&self) -> ::std::option::Option<& crate::types::KubernetesAuditLogsConfigurationResult> {
         self.audit_logs.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl KubernetesConfigurationResultBuilder {
     }
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
     pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult>) -> Self {
-        self.audit_logs = input;
-        self
+        self.audit_logs = input; self
     }
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
     pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult> {
@@ -44,6 +43,10 @@ impl KubernetesConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesConfigurationResult`](crate::types::KubernetesConfigurationResult).
     pub fn build(self) -> crate::types::KubernetesConfigurationResult {
-        crate::types::KubernetesConfigurationResult { audit_logs: self.audit_logs }
+        crate::types::KubernetesConfigurationResult {
+            audit_logs: self.audit_logs
+            ,
+        }
     }
 }
+

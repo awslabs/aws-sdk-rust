@@ -3,22 +3,22 @@
 /// <p>The output from the TransferCertificate operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransferCertificateOutput {
+pub struct TransferCertificateOutput  {
     /// <p>The ARN of the certificate.</p>
     pub transferred_certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl TransferCertificateOutput {
+impl  TransferCertificateOutput  {
     /// <p>The ARN of the certificate.</p>
-    pub fn transferred_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transferred_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.transferred_certificate_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TransferCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TransferCertificateOutput {
     /// Creates a new builder-style object to manufacture [`TransferCertificateOutput`](crate::operation::transfer_certificate::TransferCertificateOutput).
     pub fn builder() -> crate::operation::transfer_certificate::builders::TransferCertificateOutputBuilder {
@@ -41,27 +41,28 @@ impl TransferCertificateOutputBuilder {
     }
     /// <p>The ARN of the certificate.</p>
     pub fn set_transferred_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transferred_certificate_arn = input;
-        self
+        self.transferred_certificate_arn = input; self
     }
     /// <p>The ARN of the certificate.</p>
     pub fn get_transferred_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transferred_certificate_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TransferCertificateOutput`](crate::operation::transfer_certificate::TransferCertificateOutput).
     pub fn build(self) -> crate::operation::transfer_certificate::TransferCertificateOutput {
         crate::operation::transfer_certificate::TransferCertificateOutput {
-            transferred_certificate_arn: self.transferred_certificate_arn,
+            transferred_certificate_arn: self.transferred_certificate_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

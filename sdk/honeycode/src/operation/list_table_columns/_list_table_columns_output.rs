@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTableColumnsOutput {
+pub struct ListTableColumnsOutput  {
     /// <p>The list of columns in the table.</p>
-    pub table_columns: ::std::vec::Vec<crate::types::TableColumn>,
+    pub table_columns: ::std::vec::Vec::<crate::types::TableColumn>,
     /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub workbook_cursor: i64,
     _request_id: Option<String>,
 }
-impl ListTableColumnsOutput {
+impl  ListTableColumnsOutput  {
     /// <p>The list of columns in the table.</p>
-    pub fn table_columns(&self) -> &[crate::types::TableColumn] {
-        use std::ops::Deref;
-        self.table_columns.deref()
+    pub fn table_columns(&self) -> & [crate::types::TableColumn] {
+        use std::ops::Deref; self.table_columns.deref()
     }
     /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
@@ -27,10 +26,10 @@ impl ListTableColumnsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListTableColumnsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTableColumnsOutput {
     /// Creates a new builder-style object to manufacture [`ListTableColumnsOutput`](crate::operation::list_table_columns::ListTableColumnsOutput).
     pub fn builder() -> crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder {
@@ -42,7 +41,7 @@ impl ListTableColumnsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableColumnsOutputBuilder {
-    pub(crate) table_columns: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>,
+    pub(crate) table_columns: ::std::option::Option<::std::vec::Vec::<crate::types::TableColumn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -55,17 +54,16 @@ impl ListTableColumnsOutputBuilder {
     /// <p>The list of columns in the table.</p>
     pub fn table_columns(mut self, input: crate::types::TableColumn) -> Self {
         let mut v = self.table_columns.unwrap_or_default();
-        v.push(input);
-        self.table_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of columns in the table.</p>
-    pub fn set_table_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>) -> Self {
-        self.table_columns = input;
-        self
+    pub fn set_table_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableColumn>>) -> Self {
+        self.table_columns = input; self
     }
     /// <p>The list of columns in the table.</p>
-    pub fn get_table_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableColumn>> {
+    pub fn get_table_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableColumn>> {
         &self.table_columns
     }
     /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
@@ -75,8 +73,7 @@ impl ListTableColumnsOutputBuilder {
     }
     /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,38 +86,40 @@ impl ListTableColumnsOutputBuilder {
     }
     /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn set_workbook_cursor(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.workbook_cursor = input;
-        self
+        self.workbook_cursor = input; self
     }
     /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
         &self.workbook_cursor
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTableColumnsOutput`](crate::operation::list_table_columns::ListTableColumnsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`table_columns`](crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder::table_columns)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_table_columns::ListTableColumnsOutput {
-            table_columns: self.table_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_columns",
-                    "table_columns was not specified but it is required when building ListTableColumnsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_table_columns::ListTableColumnsOutput {
+                table_columns: self.table_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_columns", "table_columns was not specified but it is required when building ListTableColumnsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

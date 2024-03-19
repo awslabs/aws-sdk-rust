@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProfiles`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of profiles to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p><br>
     ///   - [`profile_type(ProfileType)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::profile_type) / [`set_profile_type(Option<ProfileType>)`](crate::operation::list_profiles::builders::ListProfilesFluentBuilder::set_profile_type):<br>required: **false**<br><p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p><br>
-    /// - On success, responds with [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiles::ListProfilesOutput::next_token): <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     ///   - [`profiles(Vec::<ListedProfile>)`](crate::operation::list_profiles::ListProfilesOutput::profiles): <p>Returns an array, where each item contains the details of a profile.</p>
-    /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
+                            /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
     pub fn list_profiles(&self) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
-        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

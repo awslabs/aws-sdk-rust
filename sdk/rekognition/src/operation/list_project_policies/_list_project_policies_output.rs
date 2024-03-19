@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProjectPoliciesOutput {
+pub struct ListProjectPoliciesOutput  {
     /// <p>A list of project policies attached to the project.</p>
-    pub project_policies: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
+    pub project_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectPolicy>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListProjectPoliciesOutput {
+impl  ListProjectPoliciesOutput  {
     /// <p>A list of project policies attached to the project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_policies.is_none()`.
-    pub fn project_policies(&self) -> &[crate::types::ProjectPolicy] {
-        self.project_policies.as_deref().unwrap_or_default()
+    pub fn project_policies(&self) -> & [crate::types::ProjectPolicy] {
+        self.project_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProjectPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProjectPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectPoliciesOutput`](crate::operation::list_project_policies::ListProjectPoliciesOutput).
     pub fn builder() -> crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListProjectPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectPoliciesOutputBuilder {
-    pub(crate) project_policies: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
+    pub(crate) project_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListProjectPoliciesOutputBuilder {
     /// <p>A list of project policies attached to the project.</p>
     pub fn project_policies(mut self, input: crate::types::ProjectPolicy) -> Self {
         let mut v = self.project_policies.unwrap_or_default();
-        v.push(input);
-        self.project_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.project_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of project policies attached to the project.</p>
-    pub fn set_project_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>) -> Self {
-        self.project_policies = input;
-        self
+    pub fn set_project_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectPolicy>>) -> Self {
+        self.project_policies = input; self
     }
     /// <p>A list of project policies attached to the project.</p>
-    pub fn get_project_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>> {
+    pub fn get_project_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectPolicy>> {
         &self.project_policies
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
@@ -69,28 +69,30 @@ impl ListProjectPoliciesOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProjectPoliciesOutput`](crate::operation::list_project_policies::ListProjectPoliciesOutput).
     pub fn build(self) -> crate::operation::list_project_policies::ListProjectPoliciesOutput {
         crate::operation::list_project_policies::ListProjectPoliciesOutput {
-            project_policies: self.project_policies,
-            next_token: self.next_token,
+            project_policies: self.project_policies
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

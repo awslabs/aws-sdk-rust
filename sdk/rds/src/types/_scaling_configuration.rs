@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingConfiguration {
+pub struct ScalingConfiguration  {
     /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
@@ -33,7 +33,7 @@ pub struct ScalingConfiguration {
     /// <p>Specify a value between 60 and 600 seconds.</p>
     pub seconds_before_timeout: ::std::option::Option<i32>,
 }
-impl ScalingConfiguration {
+impl  ScalingConfiguration  {
     /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
@@ -65,7 +65,7 @@ impl ScalingConfiguration {
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn timeout_action(&self) -> ::std::option::Option<&str> {
+    pub fn timeout_action(&self) -> ::std::option::Option<& str> {
         self.timeout_action.as_deref()
     }
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
@@ -106,8 +106,7 @@ impl ScalingConfigurationBuilder {
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
     /// <p>The minimum capacity must be less than or equal to the maximum capacity.</p>
     pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_capacity = input;
-        self
+        self.min_capacity = input; self
     }
     /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
@@ -129,8 +128,7 @@ impl ScalingConfigurationBuilder {
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
     /// <p>The maximum capacity must be greater than or equal to the minimum capacity.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
@@ -150,8 +148,7 @@ impl ScalingConfigurationBuilder {
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn set_auto_pause(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_pause = input;
-        self
+        self.auto_pause = input; self
     }
     /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p><note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
@@ -168,8 +165,7 @@ impl ScalingConfigurationBuilder {
     /// <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
     /// <p>Specify a value between 300 and 86,400 seconds.</p>
     pub fn set_seconds_until_auto_pause(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds_until_auto_pause = input;
-        self
+        self.seconds_until_auto_pause = input; self
     }
     /// <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
     /// <p>Specify a value between 300 and 86,400 seconds.</p>
@@ -193,8 +189,7 @@ impl ScalingConfigurationBuilder {
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timeout_action = input;
-        self
+        self.timeout_action = input; self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
@@ -214,8 +209,7 @@ impl ScalingConfigurationBuilder {
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 60 and 600 seconds.</p>
     pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds_before_timeout = input;
-        self
+        self.seconds_before_timeout = input; self
     }
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 60 and 600 seconds.</p>
@@ -225,12 +219,19 @@ impl ScalingConfigurationBuilder {
     /// Consumes the builder and constructs a [`ScalingConfiguration`](crate::types::ScalingConfiguration).
     pub fn build(self) -> crate::types::ScalingConfiguration {
         crate::types::ScalingConfiguration {
-            min_capacity: self.min_capacity,
-            max_capacity: self.max_capacity,
-            auto_pause: self.auto_pause,
-            seconds_until_auto_pause: self.seconds_until_auto_pause,
-            timeout_action: self.timeout_action,
-            seconds_before_timeout: self.seconds_before_timeout,
+            min_capacity: self.min_capacity
+            ,
+            max_capacity: self.max_capacity
+            ,
+            auto_pause: self.auto_pause
+            ,
+            seconds_until_auto_pause: self.seconds_until_auto_pause
+            ,
+            timeout_action: self.timeout_action
+            ,
+            seconds_before_timeout: self.seconds_before_timeout
+            ,
         }
     }
 }
+

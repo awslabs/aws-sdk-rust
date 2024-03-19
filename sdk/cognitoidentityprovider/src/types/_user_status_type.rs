@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let userstatustype = unimplemented!();
 /// match userstatustype {
@@ -35,16 +35,14 @@
 /// Specifically, when `userstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `UserStatusType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UserStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Archived,
@@ -62,84 +60,77 @@ pub enum UserStatusType {
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UserStatusType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARCHIVED" => UserStatusType::Archived,
-            "COMPROMISED" => UserStatusType::Compromised,
-            "CONFIRMED" => UserStatusType::Confirmed,
-            "FORCE_CHANGE_PASSWORD" => UserStatusType::ForceChangePassword,
-            "RESET_REQUIRED" => UserStatusType::ResetRequired,
-            "UNCONFIRMED" => UserStatusType::Unconfirmed,
-            "UNKNOWN" => UserStatusType::UnknownValue,
-            other => UserStatusType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ARCHIVED" => UserStatusType::Archived,
+"COMPROMISED" => UserStatusType::Compromised,
+"CONFIRMED" => UserStatusType::Confirmed,
+"FORCE_CHANGE_PASSWORD" => UserStatusType::ForceChangePassword,
+"RESET_REQUIRED" => UserStatusType::ResetRequired,
+"UNCONFIRMED" => UserStatusType::Unconfirmed,
+"UNKNOWN" => UserStatusType::UnknownValue,
+other => UserStatusType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UserStatusType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UserStatusType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UserStatusType::from(s))
+                    }
+                }
 impl UserStatusType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UserStatusType::Archived => "ARCHIVED",
-            UserStatusType::Compromised => "COMPROMISED",
-            UserStatusType::Confirmed => "CONFIRMED",
-            UserStatusType::ForceChangePassword => "FORCE_CHANGE_PASSWORD",
-            UserStatusType::ResetRequired => "RESET_REQUIRED",
-            UserStatusType::Unconfirmed => "UNCONFIRMED",
-            UserStatusType::UnknownValue => "UNKNOWN",
-            UserStatusType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARCHIVED",
-            "COMPROMISED",
-            "CONFIRMED",
-            "FORCE_CHANGE_PASSWORD",
-            "RESET_REQUIRED",
-            "UNCONFIRMED",
-            "UNKNOWN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UserStatusType::Archived => "ARCHIVED",
+    UserStatusType::Compromised => "COMPROMISED",
+    UserStatusType::Confirmed => "CONFIRMED",
+    UserStatusType::ForceChangePassword => "FORCE_CHANGE_PASSWORD",
+    UserStatusType::ResetRequired => "RESET_REQUIRED",
+    UserStatusType::Unconfirmed => "UNCONFIRMED",
+    UserStatusType::UnknownValue => "UNKNOWN",
+    UserStatusType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARCHIVED", "COMPROMISED", "CONFIRMED", "FORCE_CHANGE_PASSWORD", "RESET_REQUIRED", "UNCONFIRMED", "UNKNOWN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UserStatusType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UserStatusType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UserStatusType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UserStatusType::Archived => write!(f, "ARCHIVED"),
-            UserStatusType::Compromised => write!(f, "COMPROMISED"),
-            UserStatusType::Confirmed => write!(f, "CONFIRMED"),
-            UserStatusType::ForceChangePassword => write!(f, "FORCE_CHANGE_PASSWORD"),
-            UserStatusType::ResetRequired => write!(f, "RESET_REQUIRED"),
-            UserStatusType::Unconfirmed => write!(f, "UNCONFIRMED"),
-            UserStatusType::UnknownValue => write!(f, "UNKNOWN"),
-            UserStatusType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UserStatusType::Archived => write!(f, "ARCHIVED"),
+UserStatusType::Compromised => write!(f, "COMPROMISED"),
+UserStatusType::Confirmed => write!(f, "CONFIRMED"),
+UserStatusType::ForceChangePassword => write!(f, "FORCE_CHANGE_PASSWORD"),
+UserStatusType::ResetRequired => write!(f, "RESET_REQUIRED"),
+UserStatusType::Unconfirmed => write!(f, "UNCONFIRMED"),
+UserStatusType::UnknownValue => write!(f, "UNKNOWN"),
+UserStatusType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

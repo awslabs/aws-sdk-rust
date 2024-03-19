@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateProfileInput {
+pub struct CreateProfileInput  {
     /// <p>Specifies the name of the profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the email address associated with this customer profile.</p>
@@ -16,41 +16,42 @@ pub struct CreateProfileInput {
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateProfileInput {
+impl  CreateProfileInput  {
     /// <p>Specifies the name of the profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Specifies the phone number associated with the profile.</p>
-    pub fn phone(&self) -> ::std::option::Option<&str> {
+    pub fn phone(&self) -> ::std::option::Option<& str> {
         self.phone.as_deref()
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
-    pub fn business_name(&self) -> ::std::option::Option<&str> {
+    pub fn business_name(&self) -> ::std::option::Option<& str> {
         self.business_name.as_deref()
     }
     /// <p>Specifies whether or not logging is enabled for this profile.</p>
-    pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
+    pub fn logging(&self) -> ::std::option::Option<& crate::types::Logging> {
         self.logging.as_ref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateProfileInput {
+impl  ::std::fmt::Debug for CreateProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProfileInput");
         formatter.field("name", &self.name);
@@ -80,7 +81,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) business_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateProfileInputBuilder {
     /// <p>Specifies the name of the profile.</p>
@@ -91,8 +92,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Specifies the name of the profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Specifies the email address associated with this customer profile.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Specifies the phone number associated with the profile.</p>
     pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone = input;
-        self
+        self.phone = input; self
     }
     /// <p>Specifies the phone number associated with the profile.</p>
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
     pub fn set_business_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.business_name = input;
-        self
+        self.business_name = input; self
     }
     /// <p>Specifies the name for the business associated with this profile.</p>
     pub fn get_business_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Specifies whether or not logging is enabled for this profile.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>Specifies whether or not logging is enabled for this profile.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
@@ -164,8 +160,7 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,32 +173,38 @@ impl CreateProfileInputBuilder {
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
-            name: self.name,
-            email: self.email,
-            phone: self.phone,
-            business_name: self.business_name,
-            logging: self.logging,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_profile::CreateProfileInput {
+                name: self.name
+                ,
+                email: self.email
+                ,
+                phone: self.phone
+                ,
+                business_name: self.business_name
+                ,
+                logging: self.logging
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateProfileInputBuilder {
@@ -219,3 +220,4 @@ impl ::std::fmt::Debug for CreateProfileInputBuilder {
         formatter.finish()
     }
 }
+

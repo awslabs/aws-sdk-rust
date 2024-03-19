@@ -2,35 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpcAttachmentInput {
+pub struct UpdateVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub add_subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub remove_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Additional options for updating the VPC attachment.</p>
     pub options: ::std::option::Option<crate::types::VpcOptions>,
 }
-impl UpdateVpcAttachmentInput {
+impl  UpdateVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_arns.is_none()`.
-    pub fn add_subnet_arns(&self) -> &[::std::string::String] {
-        self.add_subnet_arns.as_deref().unwrap_or_default()
+    pub fn add_subnet_arns(&self) -> & [::std::string::String] {
+        self.add_subnet_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_arns.is_none()`.
-    pub fn remove_subnet_arns(&self) -> &[::std::string::String] {
-        self.remove_subnet_arns.as_deref().unwrap_or_default()
+    pub fn remove_subnet_arns(&self) -> & [::std::string::String] {
+        self.remove_subnet_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Additional options for updating the VPC attachment.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.options.as_ref()
     }
 }
@@ -46,8 +48,8 @@ impl UpdateVpcAttachmentInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) remove_subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl UpdateVpcAttachmentInputBuilder {
@@ -59,8 +61,7 @@ impl UpdateVpcAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +74,16 @@ impl UpdateVpcAttachmentInputBuilder {
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
     pub fn add_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnet_arns.unwrap_or_default();
-        v.push(input.into());
-        self.add_subnet_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.add_subnet_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.add_subnet_arns = input;
-        self
+    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.add_subnet_arns = input; self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.add_subnet_arns
     }
     /// Appends an item to `remove_subnet_arns`.
@@ -93,17 +93,16 @@ impl UpdateVpcAttachmentInputBuilder {
     /// <p>Removes a subnet ARN from the attachment.</p>
     pub fn remove_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnet_arns.unwrap_or_default();
-        v.push(input.into());
-        self.remove_subnet_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_subnet_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_subnet_arns = input;
-        self
+    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_subnet_arns = input; self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_subnet_arns
     }
     /// <p>Additional options for updating the VPC attachment.</p>
@@ -113,23 +112,26 @@ impl UpdateVpcAttachmentInputBuilder {
     }
     /// <p>Additional options for updating the VPC attachment.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Additional options for updating the VPC attachment.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         &self.options
     }
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
-            attachment_id: self.attachment_id,
-            add_subnet_arns: self.add_subnet_arns,
-            remove_subnet_arns: self.remove_subnet_arns,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
+                attachment_id: self.attachment_id
+                ,
+                add_subnet_arns: self.add_subnet_arns
+                ,
+                remove_subnet_arns: self.remove_subnet_arns
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

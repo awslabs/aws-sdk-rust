@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterSlackWorkspaceForOrganizationInput {
+pub struct RegisterSlackWorkspaceForOrganizationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
     pub team_id: ::std::option::Option<::std::string::String>,
 }
-impl RegisterSlackWorkspaceForOrganizationInput {
+impl  RegisterSlackWorkspaceForOrganizationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RegisterSlackWorkspaceForOrganizationInputBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput { team_id: self.team_id },
+            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput {
+                team_id: self.team_id
+                ,
+            }
         )
     }
 }
+

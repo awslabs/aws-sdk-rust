@@ -3,15 +3,15 @@
 /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlexibleTimeWindow {
+pub struct FlexibleTimeWindow  {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     pub mode: crate::types::FlexibleTimeWindowMode,
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub maximum_window_in_minutes: ::std::option::Option<i32>,
 }
-impl FlexibleTimeWindow {
+impl  FlexibleTimeWindow  {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn mode(&self) -> &crate::types::FlexibleTimeWindowMode {
+    pub fn mode(&self) -> & crate::types::FlexibleTimeWindowMode {
         &self.mode
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
@@ -42,8 +42,7 @@ impl FlexibleTimeWindowBuilder {
     }
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::FlexibleTimeWindowMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::FlexibleTimeWindowMode> {
@@ -56,8 +55,7 @@ impl FlexibleTimeWindowBuilder {
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn set_maximum_window_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_window_in_minutes = input;
-        self
+        self.maximum_window_in_minutes = input; self
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn get_maximum_window_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -67,14 +65,17 @@ impl FlexibleTimeWindowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::FlexibleTimeWindowBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::FlexibleTimeWindow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FlexibleTimeWindow {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building FlexibleTimeWindow",
-                )
-            })?,
-            maximum_window_in_minutes: self.maximum_window_in_minutes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FlexibleTimeWindow {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building FlexibleTimeWindow")
+                    )?
+                ,
+                maximum_window_in_minutes: self.maximum_window_in_minutes
+                ,
+            }
+        )
     }
 }
+

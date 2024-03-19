@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLogPatternInput {
+pub struct DescribeLogPatternInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log pattern set.</p>
@@ -12,21 +12,21 @@ pub struct DescribeLogPatternInput {
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLogPatternInput {
+impl  DescribeLogPatternInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn pattern_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_set_name(&self) -> ::std::option::Option<& str> {
         self.pattern_set_name.as_deref()
     }
     /// <p>The name of the log pattern.</p>
-    pub fn pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_name(&self) -> ::std::option::Option<& str> {
         self.pattern_name.as_deref()
     }
     /// <p>The AWS account ID for the resource group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeLogPatternInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeLogPatternInputBuilder {
     }
     /// <p>The name of the log pattern set.</p>
     pub fn set_pattern_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_set_name = input;
-        self
+        self.pattern_set_name = input; self
     }
     /// <p>The name of the log pattern set.</p>
     pub fn get_pattern_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DescribeLogPatternInputBuilder {
     }
     /// <p>The name of the log pattern.</p>
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_name = input;
-        self
+        self.pattern_name = input; self
     }
     /// <p>The name of the log pattern.</p>
     pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl DescribeLogPatternInputBuilder {
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeLogPatternInput`](crate::operation::describe_log_pattern::DescribeLogPatternInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_log_pattern::DescribeLogPatternInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_log_pattern::DescribeLogPatternInput {
-            resource_group_name: self.resource_group_name,
-            pattern_set_name: self.pattern_set_name,
-            pattern_name: self.pattern_name,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_log_pattern::DescribeLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_log_pattern::DescribeLogPatternInput {
+                resource_group_name: self.resource_group_name
+                ,
+                pattern_set_name: self.pattern_set_name
+                ,
+                pattern_name: self.pattern_name
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

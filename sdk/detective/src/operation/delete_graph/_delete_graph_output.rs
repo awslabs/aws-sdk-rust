@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGraphOutput {
+pub struct DeleteGraphOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteGraphOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteGraphOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGraphOutput`](crate::operation::delete_graph::DeleteGraphOutput).
     pub fn builder() -> crate::operation::delete_graph::builders::DeleteGraphOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteGraphOutputBuilder {
 }
 impl DeleteGraphOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteGraphOutput`](crate::operation::delete_graph::DeleteGraphOutput).
     pub fn build(self) -> crate::operation::delete_graph::DeleteGraphOutput {
         crate::operation::delete_graph::DeleteGraphOutput {
@@ -40,3 +40,4 @@ impl DeleteGraphOutputBuilder {
         }
     }
 }
+

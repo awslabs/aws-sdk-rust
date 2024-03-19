@@ -5,24 +5,25 @@
 /// <p>Specifying <code>Invert</code> as the <code>Name</code> works as a "not equal to" filter. For example, specify <code>Invert</code> as the <code>Name</code> and specify <code>Chrome</code> as the value to return all events except events from user sessions with the Chrome browser.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryFilter {
+pub struct QueryFilter  {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl QueryFilter {
+impl  QueryFilter  {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl QueryFilter {
@@ -37,7 +38,7 @@ impl QueryFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl QueryFilterBuilder {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
@@ -49,8 +50,7 @@ impl QueryFilterBuilder {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify.</p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code></p>
@@ -64,24 +64,26 @@ impl QueryFilterBuilder {
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`QueryFilter`](crate::types::QueryFilter).
     pub fn build(self) -> crate::types::QueryFilter {
         crate::types::QueryFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

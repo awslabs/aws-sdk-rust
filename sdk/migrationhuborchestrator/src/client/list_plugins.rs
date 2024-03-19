@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPlugins`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of plugins that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
-    /// - On success, responds with [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput) with field(s):
+                            /// - On success, responds with [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_plugins::ListPluginsOutput::next_token): <p>The pagination token.</p>
     ///   - [`plugins(Option<Vec::<PluginSummary>>)`](crate::operation::list_plugins::ListPluginsOutput::plugins): <p>Migration Hub Orchestrator plugins.</p>
-    /// - On failure, responds with [`SdkError<ListPluginsError>`](crate::operation::list_plugins::ListPluginsError)
+                            /// - On failure, responds with [`SdkError<ListPluginsError>`](crate::operation::list_plugins::ListPluginsError)
     pub fn list_plugins(&self) -> crate::operation::list_plugins::builders::ListPluginsFluentBuilder {
-        crate::operation::list_plugins::builders::ListPluginsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_plugins::builders::ListPluginsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

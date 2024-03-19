@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCanaryRuns`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the canary that you want to see runs for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p><br>
-    /// - On success, responds with [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput) with field(s):
+                            /// - On success, responds with [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput) with field(s):
     ///   - [`canary_runs(Option<Vec::<CanaryRun>>)`](crate::operation::get_canary_runs::GetCanaryRunsOutput::canary_runs): <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_canary_runs::GetCanaryRunsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<GetCanaryRunsError>`](crate::operation::get_canary_runs::GetCanaryRunsError)
+                            /// - On failure, responds with [`SdkError<GetCanaryRunsError>`](crate::operation::get_canary_runs::GetCanaryRunsError)
     pub fn get_canary_runs(&self) -> crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder {
-        crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Updates the feature group online store configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnlineStoreConfigUpdate {
+pub struct OnlineStoreConfigUpdate  {
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
 }
-impl OnlineStoreConfigUpdate {
+impl  OnlineStoreConfigUpdate  {
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    pub fn ttl_duration(&self) -> ::std::option::Option<&crate::types::TtlDuration> {
+    pub fn ttl_duration(&self) -> ::std::option::Option<& crate::types::TtlDuration> {
         self.ttl_duration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OnlineStoreConfigUpdateBuilder {
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn set_ttl_duration(mut self, input: ::std::option::Option<crate::types::TtlDuration>) -> Self {
-        self.ttl_duration = input;
-        self
+        self.ttl_duration = input; self
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
@@ -44,7 +43,9 @@ impl OnlineStoreConfigUpdateBuilder {
     /// Consumes the builder and constructs a [`OnlineStoreConfigUpdate`](crate::types::OnlineStoreConfigUpdate).
     pub fn build(self) -> crate::types::OnlineStoreConfigUpdate {
         crate::types::OnlineStoreConfigUpdate {
-            ttl_duration: self.ttl_duration,
+            ttl_duration: self.ttl_duration
+            ,
         }
     }
 }
+

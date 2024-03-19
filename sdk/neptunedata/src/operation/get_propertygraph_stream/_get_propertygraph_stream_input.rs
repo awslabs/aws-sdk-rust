@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPropertygraphStreamInput {
+pub struct GetPropertygraphStreamInput  {
     /// <p>Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can't be modified and that takes precedence over the number of records specified in the <code>limit</code> parameter. The response does include a threshold-breaching record if the 10 MB limit was reached.</p>
     /// <p>The range for <code>limit</code> is 1 to 100,000, with a default of 10.</p>
     pub limit: ::std::option::Option<i64>,
@@ -25,7 +25,7 @@ pub struct GetPropertygraphStreamInput {
     /// <p>If set to TRUE, Neptune compresses the response using gzip encoding.</p>
     pub encoding: ::std::option::Option<crate::types::Encoding>,
 }
-impl GetPropertygraphStreamInput {
+impl  GetPropertygraphStreamInput  {
     /// <p>Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can't be modified and that takes precedence over the number of records specified in the <code>limit</code> parameter. The response does include a threshold-breaching record if the 10 MB limit was reached.</p>
     /// <p>The range for <code>limit</code> is 1 to 100,000, with a default of 10.</p>
     pub fn limit(&self) -> ::std::option::Option<i64> {
@@ -42,7 +42,7 @@ impl GetPropertygraphStreamInput {
     /// <li>
     /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
-    pub fn iterator_type(&self) -> ::std::option::Option<&crate::types::IteratorType> {
+    pub fn iterator_type(&self) -> ::std::option::Option<& crate::types::IteratorType> {
         self.iterator_type.as_ref()
     }
     /// <p>The commit number of the starting record to read from the change-log stream. This parameter is required when <code>iteratorType</code> is<code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>, and ignored when <code>iteratorType</code> is <code>TRIM_HORIZON</code> or <code>LATEST</code>.</p>
@@ -54,7 +54,7 @@ impl GetPropertygraphStreamInput {
         self.op_num
     }
     /// <p>If set to TRUE, Neptune compresses the response using gzip encoding.</p>
-    pub fn encoding(&self) -> ::std::option::Option<&crate::types::Encoding> {
+    pub fn encoding(&self) -> ::std::option::Option<& crate::types::Encoding> {
         self.encoding.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl GetPropertygraphStreamInputBuilder {
     /// <p>Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can't be modified and that takes precedence over the number of records specified in the <code>limit</code> parameter. The response does include a threshold-breaching record if the 10 MB limit was reached.</p>
     /// <p>The range for <code>limit</code> is 1 to 100,000, with a default of 10.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Specifies the maximum number of records to return. There is also a size limit of 10 MB on the response that can't be modified and that takes precedence over the number of records specified in the <code>limit</code> parameter. The response does include a threshold-breaching record if the 10 MB limit was reached.</p>
     /// <p>The range for <code>limit</code> is 1 to 100,000, with a default of 10.</p>
@@ -120,8 +119,7 @@ impl GetPropertygraphStreamInputBuilder {
     /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn set_iterator_type(mut self, input: ::std::option::Option<crate::types::IteratorType>) -> Self {
-        self.iterator_type = input;
-        self
+        self.iterator_type = input; self
     }
     /// <p>Can be one of:</p>
     /// <ul>
@@ -144,8 +142,7 @@ impl GetPropertygraphStreamInputBuilder {
     }
     /// <p>The commit number of the starting record to read from the change-log stream. This parameter is required when <code>iteratorType</code> is<code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>, and ignored when <code>iteratorType</code> is <code>TRIM_HORIZON</code> or <code>LATEST</code>.</p>
     pub fn set_commit_num(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.commit_num = input;
-        self
+        self.commit_num = input; self
     }
     /// <p>The commit number of the starting record to read from the change-log stream. This parameter is required when <code>iteratorType</code> is<code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>, and ignored when <code>iteratorType</code> is <code>TRIM_HORIZON</code> or <code>LATEST</code>.</p>
     pub fn get_commit_num(&self) -> &::std::option::Option<i64> {
@@ -158,8 +155,7 @@ impl GetPropertygraphStreamInputBuilder {
     }
     /// <p>The operation sequence number within the specified commit to start reading from in the change-log stream data. The default is <code>1</code>.</p>
     pub fn set_op_num(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.op_num = input;
-        self
+        self.op_num = input; self
     }
     /// <p>The operation sequence number within the specified commit to start reading from in the change-log stream data. The default is <code>1</code>.</p>
     pub fn get_op_num(&self) -> &::std::option::Option<i64> {
@@ -172,26 +168,28 @@ impl GetPropertygraphStreamInputBuilder {
     }
     /// <p>If set to TRUE, Neptune compresses the response using gzip encoding.</p>
     pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::Encoding>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>If set to TRUE, Neptune compresses the response using gzip encoding.</p>
     pub fn get_encoding(&self) -> &::std::option::Option<crate::types::Encoding> {
         &self.encoding
     }
     /// Consumes the builder and constructs a [`GetPropertygraphStreamInput`](crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput {
-            limit: self.limit,
-            iterator_type: self.iterator_type,
-            commit_num: self.commit_num,
-            op_num: self.op_num,
-            encoding: self.encoding,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput {
+                limit: self.limit
+                ,
+                iterator_type: self.iterator_type
+                ,
+                commit_num: self.commit_num
+                ,
+                op_num: self.op_num
+                ,
+                encoding: self.encoding
+                ,
+            }
+        )
     }
 }
+

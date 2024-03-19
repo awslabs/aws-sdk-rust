@@ -4,7 +4,7 @@
 /// <p>This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateTrustInput {
+pub struct CreateTrustInput  {
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
@@ -16,43 +16,44 @@ pub struct CreateTrustInput {
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
-impl CreateTrustInput {
+impl  CreateTrustInput  {
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    pub fn remote_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> ::std::option::Option<& str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    pub fn trust_password(&self) -> ::std::option::Option<&str> {
+    pub fn trust_password(&self) -> ::std::option::Option<& str> {
         self.trust_password.as_deref()
     }
     /// <p>The direction of the trust relationship.</p>
-    pub fn trust_direction(&self) -> ::std::option::Option<&crate::types::TrustDirection> {
+    pub fn trust_direction(&self) -> ::std::option::Option<& crate::types::TrustDirection> {
         self.trust_direction.as_ref()
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    pub fn trust_type(&self) -> ::std::option::Option<&crate::types::TrustType> {
+    pub fn trust_type(&self) -> ::std::option::Option<& crate::types::TrustType> {
         self.trust_type.as_ref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_forwarder_ip_addrs.is_none()`.
-    pub fn conditional_forwarder_ip_addrs(&self) -> &[::std::string::String] {
-        self.conditional_forwarder_ip_addrs.as_deref().unwrap_or_default()
+    pub fn conditional_forwarder_ip_addrs(&self) -> & [::std::string::String] {
+        self.conditional_forwarder_ip_addrs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
-    pub fn selective_auth(&self) -> ::std::option::Option<&crate::types::SelectiveAuth> {
+    pub fn selective_auth(&self) -> ::std::option::Option<& crate::types::SelectiveAuth> {
         self.selective_auth.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateTrustInput {
+impl  ::std::fmt::Debug for CreateTrustInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrustInput");
         formatter.field("directory_id", &self.directory_id);
@@ -81,7 +82,7 @@ pub struct CreateTrustInputBuilder {
     pub(crate) trust_password: ::std::option::Option<::std::string::String>,
     pub(crate) trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     pub(crate) trust_type: ::std::option::Option<crate::types::TrustType>,
-    pub(crate) conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl CreateTrustInputBuilder {
@@ -93,8 +94,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_domain_name = input;
-        self
+        self.remote_domain_name = input; self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn set_trust_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_password = input;
-        self
+        self.trust_password = input; self
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn get_trust_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>The direction of the trust relationship.</p>
     pub fn set_trust_direction(mut self, input: ::std::option::Option<crate::types::TrustDirection>) -> Self {
-        self.trust_direction = input;
-        self
+        self.trust_direction = input; self
     }
     /// <p>The direction of the trust relationship.</p>
     pub fn get_trust_direction(&self) -> &::std::option::Option<crate::types::TrustDirection> {
@@ -152,8 +149,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub fn set_trust_type(mut self, input: ::std::option::Option<crate::types::TrustType>) -> Self {
-        self.trust_type = input;
-        self
+        self.trust_type = input; self
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub fn get_trust_type(&self) -> &::std::option::Option<crate::types::TrustType> {
@@ -166,17 +162,16 @@ impl CreateTrustInputBuilder {
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub fn conditional_forwarder_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.conditional_forwarder_ip_addrs.unwrap_or_default();
-        v.push(input.into());
-        self.conditional_forwarder_ip_addrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.conditional_forwarder_ip_addrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn set_conditional_forwarder_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.conditional_forwarder_ip_addrs = input;
-        self
+    pub fn set_conditional_forwarder_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.conditional_forwarder_ip_addrs = input; self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.conditional_forwarder_ip_addrs
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
@@ -186,8 +181,7 @@ impl CreateTrustInputBuilder {
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
-        self.selective_auth = input;
-        self
+        self.selective_auth = input; self
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn get_selective_auth(&self) -> &::std::option::Option<crate::types::SelectiveAuth> {
@@ -195,15 +189,24 @@ impl CreateTrustInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTrustInput`](crate::operation::create_trust::CreateTrustInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_trust::CreateTrustInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trust::CreateTrustInput {
-            directory_id: self.directory_id,
-            remote_domain_name: self.remote_domain_name,
-            trust_password: self.trust_password,
-            trust_direction: self.trust_direction,
-            trust_type: self.trust_type,
-            conditional_forwarder_ip_addrs: self.conditional_forwarder_ip_addrs,
-            selective_auth: self.selective_auth,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_trust::CreateTrustInput {
+                directory_id: self.directory_id
+                ,
+                remote_domain_name: self.remote_domain_name
+                ,
+                trust_password: self.trust_password
+                ,
+                trust_direction: self.trust_direction
+                ,
+                trust_type: self.trust_type
+                ,
+                conditional_forwarder_ip_addrs: self.conditional_forwarder_ip_addrs
+                ,
+                selective_auth: self.selective_auth
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateTrustInputBuilder {
@@ -219,3 +222,4 @@ impl ::std::fmt::Debug for CreateTrustInputBuilder {
         formatter.finish()
     }
 }
+

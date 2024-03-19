@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDiscovererInput {
+pub struct StopDiscovererInput  {
     /// <p>The ID of the discoverer.</p>
     pub discoverer_id: ::std::option::Option<::std::string::String>,
 }
-impl StopDiscovererInput {
+impl  StopDiscovererInput  {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> ::std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopDiscovererInputBuilder {
     }
     /// <p>The ID of the discoverer.</p>
     pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discoverer_id = input;
-        self
+        self.discoverer_id = input; self
     }
     /// <p>The ID of the discoverer.</p>
     pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.discoverer_id
     }
     /// Consumes the builder and constructs a [`StopDiscovererInput`](crate::operation::stop_discoverer::StopDiscovererInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_discoverer::StopDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_discoverer::StopDiscovererInput {
-            discoverer_id: self.discoverer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_discoverer::StopDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_discoverer::StopDiscovererInput {
+                discoverer_id: self.discoverer_id
+                ,
+            }
+        )
     }
 }
+

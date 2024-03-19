@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFpgaImageOutput {
+pub struct CreateFpgaImageOutput  {
     /// <p>The FPGA image identifier (AFI ID).</p>
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The global FPGA image identifier (AGFI ID).</p>
     pub fpga_image_global_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateFpgaImageOutput {
+impl  CreateFpgaImageOutput  {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_id.as_deref()
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn fpga_image_global_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_global_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_global_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFpgaImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFpgaImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateFpgaImageOutput`](crate::operation::create_fpga_image::CreateFpgaImageOutput).
     pub fn builder() -> crate::operation::create_fpga_image::builders::CreateFpgaImageOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateFpgaImageOutputBuilder {
     }
     /// <p>The FPGA image identifier (AFI ID).</p>
     pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fpga_image_id = input;
-        self
+        self.fpga_image_id = input; self
     }
     /// <p>The FPGA image identifier (AFI ID).</p>
     pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateFpgaImageOutputBuilder {
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
     pub fn set_fpga_image_global_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fpga_image_global_id = input;
-        self
+        self.fpga_image_global_id = input; self
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
     pub fn get_fpga_image_global_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fpga_image_global_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFpgaImageOutput`](crate::operation::create_fpga_image::CreateFpgaImageOutput).
     pub fn build(self) -> crate::operation::create_fpga_image::CreateFpgaImageOutput {
         crate::operation::create_fpga_image::CreateFpgaImageOutput {
-            fpga_image_id: self.fpga_image_id,
-            fpga_image_global_id: self.fpga_image_global_id,
+            fpga_image_id: self.fpga_image_id
+            ,
+            fpga_image_global_id: self.fpga_image_global_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies weight and capacity values for a production variant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DesiredWeightAndCapacity {
+pub struct DesiredWeightAndCapacity  {
     /// <p>The name of the variant to update.</p>
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The variant's weight.</p>
@@ -13,9 +13,9 @@ pub struct DesiredWeightAndCapacity {
     /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
     pub serverless_update_config: ::std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>,
 }
-impl DesiredWeightAndCapacity {
+impl  DesiredWeightAndCapacity  {
     /// <p>The name of the variant to update.</p>
-    pub fn variant_name(&self) -> ::std::option::Option<&str> {
+    pub fn variant_name(&self) -> ::std::option::Option<& str> {
         self.variant_name.as_deref()
     }
     /// <p>The variant's weight.</p>
@@ -27,7 +27,7 @@ impl DesiredWeightAndCapacity {
         self.desired_instance_count
     }
     /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
-    pub fn serverless_update_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessUpdateConfig> {
+    pub fn serverless_update_config(&self) -> ::std::option::Option<& crate::types::ProductionVariantServerlessUpdateConfig> {
         self.serverless_update_config.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl DesiredWeightAndCapacityBuilder {
     }
     /// <p>The name of the variant to update.</p>
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variant_name = input;
-        self
+        self.variant_name = input; self
     }
     /// <p>The name of the variant to update.</p>
     pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DesiredWeightAndCapacityBuilder {
     }
     /// <p>The variant's weight.</p>
     pub fn set_desired_weight(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.desired_weight = input;
-        self
+        self.desired_weight = input; self
     }
     /// <p>The variant's weight.</p>
     pub fn get_desired_weight(&self) -> &::std::option::Option<f32> {
@@ -84,8 +82,7 @@ impl DesiredWeightAndCapacityBuilder {
     }
     /// <p>The variant's capacity.</p>
     pub fn set_desired_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_instance_count = input;
-        self
+        self.desired_instance_count = input; self
     }
     /// <p>The variant's capacity.</p>
     pub fn get_desired_instance_count(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl DesiredWeightAndCapacityBuilder {
     }
     /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
     pub fn set_serverless_update_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>) -> Self {
-        self.serverless_update_config = input;
-        self
+        self.serverless_update_config = input; self
     }
     /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
     pub fn get_serverless_update_config(&self) -> &::std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig> {
@@ -108,10 +104,15 @@ impl DesiredWeightAndCapacityBuilder {
     /// Consumes the builder and constructs a [`DesiredWeightAndCapacity`](crate::types::DesiredWeightAndCapacity).
     pub fn build(self) -> crate::types::DesiredWeightAndCapacity {
         crate::types::DesiredWeightAndCapacity {
-            variant_name: self.variant_name,
-            desired_weight: self.desired_weight,
-            desired_instance_count: self.desired_instance_count,
-            serverless_update_config: self.serverless_update_config,
+            variant_name: self.variant_name
+            ,
+            desired_weight: self.desired_weight
+            ,
+            desired_instance_count: self.desired_instance_count
+            ,
+            serverless_update_config: self.serverless_update_config
+            ,
         }
     }
 }
+

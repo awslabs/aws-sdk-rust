@@ -3,7 +3,7 @@
 /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisScheme {
+pub struct AnalysisScheme  {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub analysis_scheme_name: ::std::string::String,
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
@@ -11,18 +11,17 @@ pub struct AnalysisScheme {
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub analysis_options: ::std::option::Option<crate::types::AnalysisOptions>,
 }
-impl AnalysisScheme {
+impl  AnalysisScheme  {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn analysis_scheme_name(&self) -> &str {
-        use std::ops::Deref;
-        self.analysis_scheme_name.deref()
+    pub fn analysis_scheme_name(&self) -> & str {
+        use std::ops::Deref; self.analysis_scheme_name.deref()
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-    pub fn analysis_scheme_language(&self) -> &crate::types::AnalysisSchemeLanguage {
+    pub fn analysis_scheme_language(&self) -> & crate::types::AnalysisSchemeLanguage {
         &self.analysis_scheme_language
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
-    pub fn analysis_options(&self) -> ::std::option::Option<&crate::types::AnalysisOptions> {
+    pub fn analysis_options(&self) -> ::std::option::Option<& crate::types::AnalysisOptions> {
         self.analysis_options.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl AnalysisSchemeBuilder {
     }
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn set_analysis_scheme_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_scheme_name = input;
-        self
+        self.analysis_scheme_name = input; self
     }
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn get_analysis_scheme_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl AnalysisSchemeBuilder {
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn set_analysis_scheme_language(mut self, input: ::std::option::Option<crate::types::AnalysisSchemeLanguage>) -> Self {
-        self.analysis_scheme_language = input;
-        self
+        self.analysis_scheme_language = input; self
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn get_analysis_scheme_language(&self) -> &::std::option::Option<crate::types::AnalysisSchemeLanguage> {
@@ -79,8 +76,7 @@ impl AnalysisSchemeBuilder {
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn set_analysis_options(mut self, input: ::std::option::Option<crate::types::AnalysisOptions>) -> Self {
-        self.analysis_options = input;
-        self
+        self.analysis_options = input; self
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn get_analysis_options(&self) -> &::std::option::Option<crate::types::AnalysisOptions> {
@@ -91,20 +87,22 @@ impl AnalysisSchemeBuilder {
     /// - [`analysis_scheme_name`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_name)
     /// - [`analysis_scheme_language`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_language)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalysisScheme, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalysisScheme {
-            analysis_scheme_name: self.analysis_scheme_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_scheme_name",
-                    "analysis_scheme_name was not specified but it is required when building AnalysisScheme",
-                )
-            })?,
-            analysis_scheme_language: self.analysis_scheme_language.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_scheme_language",
-                    "analysis_scheme_language was not specified but it is required when building AnalysisScheme",
-                )
-            })?,
-            analysis_options: self.analysis_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalysisScheme {
+                analysis_scheme_name: self.analysis_scheme_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_scheme_name", "analysis_scheme_name was not specified but it is required when building AnalysisScheme")
+                    )?
+                ,
+                analysis_scheme_language: self.analysis_scheme_language
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_scheme_language", "analysis_scheme_language was not specified but it is required when building AnalysisScheme")
+                    )?
+                ,
+                analysis_options: self.analysis_options
+                ,
+            }
+        )
     }
 }
+

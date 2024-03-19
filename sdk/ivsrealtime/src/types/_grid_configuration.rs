@@ -3,7 +3,7 @@
 /// <p>Configuration information specific to Grid layout, for server-side composition. See "Layouts" in <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/server-side-composition.html">Server-Side Composition</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GridConfiguration {
+pub struct GridConfiguration  {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub featured_participant_attribute: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
@@ -15,9 +15,9 @@ pub struct GridConfiguration {
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.</p>
     pub grid_gap: i32,
 }
-impl GridConfiguration {
+impl  GridConfiguration  {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
-    pub fn featured_participant_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn featured_participant_attribute(&self) -> ::std::option::Option<& str> {
         self.featured_participant_attribute.as_deref()
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
@@ -25,11 +25,11 @@ impl GridConfiguration {
         self.omit_stopped_video
     }
     /// <p>Sets the non-featured participant display mode. Default: <code>VIDEO</code>.</p>
-    pub fn video_aspect_ratio(&self) -> ::std::option::Option<&crate::types::VideoAspectRatio> {
+    pub fn video_aspect_ratio(&self) -> ::std::option::Option<& crate::types::VideoAspectRatio> {
         self.video_aspect_ratio.as_ref()
     }
     /// <p>Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured participants.</p>
-    pub fn video_fill_mode(&self) -> ::std::option::Option<&crate::types::VideoFillMode> {
+    pub fn video_fill_mode(&self) -> ::std::option::Option<& crate::types::VideoFillMode> {
         self.video_fill_mode.as_ref()
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.</p>
@@ -62,8 +62,7 @@ impl GridConfigurationBuilder {
     }
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub fn set_featured_participant_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.featured_participant_attribute = input;
-        self
+        self.featured_participant_attribute = input; self
     }
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot.</p>
     pub fn get_featured_participant_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GridConfigurationBuilder {
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
     pub fn set_omit_stopped_video(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.omit_stopped_video = input;
-        self
+        self.omit_stopped_video = input; self
     }
     /// <p>Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.</p>
     pub fn get_omit_stopped_video(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl GridConfigurationBuilder {
     }
     /// <p>Sets the non-featured participant display mode. Default: <code>VIDEO</code>.</p>
     pub fn set_video_aspect_ratio(mut self, input: ::std::option::Option<crate::types::VideoAspectRatio>) -> Self {
-        self.video_aspect_ratio = input;
-        self
+        self.video_aspect_ratio = input; self
     }
     /// <p>Sets the non-featured participant display mode. Default: <code>VIDEO</code>.</p>
     pub fn get_video_aspect_ratio(&self) -> &::std::option::Option<crate::types::VideoAspectRatio> {
@@ -104,8 +101,7 @@ impl GridConfigurationBuilder {
     }
     /// <p>Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured participants.</p>
     pub fn set_video_fill_mode(mut self, input: ::std::option::Option<crate::types::VideoFillMode>) -> Self {
-        self.video_fill_mode = input;
-        self
+        self.video_fill_mode = input; self
     }
     /// <p>Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured participants.</p>
     pub fn get_video_fill_mode(&self) -> &::std::option::Option<crate::types::VideoFillMode> {
@@ -118,8 +114,7 @@ impl GridConfigurationBuilder {
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.</p>
     pub fn set_grid_gap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.grid_gap = input;
-        self
+        self.grid_gap = input; self
     }
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.</p>
     pub fn get_grid_gap(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,19 @@ impl GridConfigurationBuilder {
     /// Consumes the builder and constructs a [`GridConfiguration`](crate::types::GridConfiguration).
     pub fn build(self) -> crate::types::GridConfiguration {
         crate::types::GridConfiguration {
-            featured_participant_attribute: self.featured_participant_attribute,
-            omit_stopped_video: self.omit_stopped_video.unwrap_or_default(),
-            video_aspect_ratio: self.video_aspect_ratio,
-            video_fill_mode: self.video_fill_mode,
-            grid_gap: self.grid_gap.unwrap_or_default(),
+            featured_participant_attribute: self.featured_participant_attribute
+            ,
+            omit_stopped_video: self.omit_stopped_video
+                .unwrap_or_default()
+            ,
+            video_aspect_ratio: self.video_aspect_ratio
+            ,
+            video_fill_mode: self.video_fill_mode
+            ,
+            grid_gap: self.grid_gap
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

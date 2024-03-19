@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WriteRecordsInput {
+pub struct WriteRecordsInput  {
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
@@ -10,26 +10,27 @@ pub struct WriteRecordsInput {
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names.</p>
     pub common_attributes: ::std::option::Option<crate::types::Record>,
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
-impl WriteRecordsInput {
+impl  WriteRecordsInput  {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the Timestream table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names.</p>
-    pub fn common_attributes(&self) -> ::std::option::Option<&crate::types::Record> {
+    pub fn common_attributes(&self) -> ::std::option::Option<& crate::types::Record> {
         self.common_attributes.as_ref()
     }
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::Record] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::Record] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl WriteRecordsInput {
@@ -46,7 +47,7 @@ pub struct WriteRecordsInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) common_attributes: ::std::option::Option<crate::types::Record>,
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
 impl WriteRecordsInputBuilder {
     /// <p>The name of the Timestream database.</p>
@@ -57,8 +58,7 @@ impl WriteRecordsInputBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl WriteRecordsInputBuilder {
     }
     /// <p>The name of the Timestream table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Timestream table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl WriteRecordsInputBuilder {
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names.</p>
     pub fn set_common_attributes(mut self, input: ::std::option::Option<crate::types::Record>) -> Self {
-        self.common_attributes = input;
-        self
+        self.common_attributes = input; self
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names.</p>
     pub fn get_common_attributes(&self) -> &::std::option::Option<crate::types::Record> {
@@ -100,28 +98,32 @@ impl WriteRecordsInputBuilder {
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>) -> Self {
+        self.records = input; self
     }
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Record>> {
         &self.records
     }
     /// Consumes the builder and constructs a [`WriteRecordsInput`](crate::operation::write_records::WriteRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::write_records::WriteRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::write_records::WriteRecordsInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            common_attributes: self.common_attributes,
-            records: self.records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::write_records::WriteRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::write_records::WriteRecordsInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                common_attributes: self.common_attributes
+                ,
+                records: self.records
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLicenseConversionTaskForResourceInput {
+pub struct CreateLicenseConversionTaskForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
@@ -10,17 +10,17 @@ pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
     pub destination_license_context: ::std::option::Option<crate::types::LicenseConversionContext>,
 }
-impl CreateLicenseConversionTaskForResourceInput {
+impl  CreateLicenseConversionTaskForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
-    pub fn source_license_context(&self) -> ::std::option::Option<&crate::types::LicenseConversionContext> {
+    pub fn source_license_context(&self) -> ::std::option::Option<& crate::types::LicenseConversionContext> {
         self.source_license_context.as_ref()
     }
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
-    pub fn destination_license_context(&self) -> ::std::option::Option<&crate::types::LicenseConversionContext> {
+    pub fn destination_license_context(&self) -> ::std::option::Option<& crate::types::LicenseConversionContext> {
         self.destination_license_context.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateLicenseConversionTaskForResourceInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateLicenseConversionTaskForResourceInputBuilder {
     }
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
     pub fn set_source_license_context(mut self, input: ::std::option::Option<crate::types::LicenseConversionContext>) -> Self {
-        self.source_license_context = input;
-        self
+        self.source_license_context = input; self
     }
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
     pub fn get_source_license_context(&self) -> &::std::option::Option<crate::types::LicenseConversionContext> {
@@ -78,26 +76,24 @@ impl CreateLicenseConversionTaskForResourceInputBuilder {
     }
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
     pub fn set_destination_license_context(mut self, input: ::std::option::Option<crate::types::LicenseConversionContext>) -> Self {
-        self.destination_license_context = input;
-        self
+        self.destination_license_context = input; self
     }
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
     pub fn get_destination_license_context(&self) -> &::std::option::Option<crate::types::LicenseConversionContext> {
         &self.destination_license_context
     }
     /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceInput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput {
-                resource_arn: self.resource_arn,
-                source_license_context: self.source_license_context,
-                destination_license_context: self.destination_license_context,
-            },
+                resource_arn: self.resource_arn
+                ,
+                source_license_context: self.source_license_context
+                ,
+                destination_license_context: self.destination_license_context
+                ,
+            }
         )
     }
 }
+

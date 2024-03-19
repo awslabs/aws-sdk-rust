@@ -3,19 +3,19 @@
 /// <p>The output resolution (in target georeferenced units) of the result of the operation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDefined {
+pub struct UserDefined  {
     /// <p>The value for output resolution of the result.</p>
     pub value: f32,
     /// <p>The units for output resolution of the result.</p>
     pub unit: crate::types::Unit,
 }
-impl UserDefined {
+impl  UserDefined  {
     /// <p>The value for output resolution of the result.</p>
     pub fn value(&self) -> f32 {
         self.value
     }
     /// <p>The units for output resolution of the result.</p>
-    pub fn unit(&self) -> &crate::types::Unit {
+    pub fn unit(&self) -> & crate::types::Unit {
         &self.unit
     }
 }
@@ -42,8 +42,7 @@ impl UserDefinedBuilder {
     }
     /// <p>The value for output resolution of the result.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for output resolution of the result.</p>
     pub fn get_value(&self) -> &::std::option::Option<f32> {
@@ -57,8 +56,7 @@ impl UserDefinedBuilder {
     }
     /// <p>The units for output resolution of the result.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The units for output resolution of the result.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
@@ -69,19 +67,20 @@ impl UserDefinedBuilder {
     /// - [`value`](crate::types::builders::UserDefinedBuilder::value)
     /// - [`unit`](crate::types::builders::UserDefinedBuilder::unit)
     pub fn build(self) -> ::std::result::Result<crate::types::UserDefined, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserDefined {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building UserDefined",
-                )
-            })?,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building UserDefined",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserDefined {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building UserDefined")
+                    )?
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building UserDefined")
+                    )?
+                ,
+            }
+        )
     }
 }
+

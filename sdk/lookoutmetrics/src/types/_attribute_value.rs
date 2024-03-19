@@ -3,7 +3,7 @@
 /// <p>An attribute value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>A string.</p>
     pub s: ::std::option::Option<::std::string::String>,
     /// <p>A number.</p>
@@ -11,42 +11,45 @@ pub struct AttributeValue {
     /// <p>A binary value.</p>
     pub b: ::std::option::Option<::std::string::String>,
     /// <p>A list of strings.</p>
-    pub ss: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ss: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of numbers.</p>
-    pub ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of binary values.</p>
-    pub bs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AttributeValue {
+impl  AttributeValue  {
     /// <p>A string.</p>
-    pub fn s(&self) -> ::std::option::Option<&str> {
+    pub fn s(&self) -> ::std::option::Option<& str> {
         self.s.as_deref()
     }
     /// <p>A number.</p>
-    pub fn n(&self) -> ::std::option::Option<&str> {
+    pub fn n(&self) -> ::std::option::Option<& str> {
         self.n.as_deref()
     }
     /// <p>A binary value.</p>
-    pub fn b(&self) -> ::std::option::Option<&str> {
+    pub fn b(&self) -> ::std::option::Option<& str> {
         self.b.as_deref()
     }
     /// <p>A list of strings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ss.is_none()`.
-    pub fn ss(&self) -> &[::std::string::String] {
-        self.ss.as_deref().unwrap_or_default()
+    pub fn ss(&self) -> & [::std::string::String] {
+        self.ss.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of numbers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ns.is_none()`.
-    pub fn ns(&self) -> &[::std::string::String] {
-        self.ns.as_deref().unwrap_or_default()
+    pub fn ns(&self) -> & [::std::string::String] {
+        self.ns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of binary values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bs.is_none()`.
-    pub fn bs(&self) -> &[::std::string::String] {
-        self.bs.as_deref().unwrap_or_default()
+    pub fn bs(&self) -> & [::std::string::String] {
+        self.bs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AttributeValue {
@@ -63,9 +66,9 @@ pub struct AttributeValueBuilder {
     pub(crate) s: ::std::option::Option<::std::string::String>,
     pub(crate) n: ::std::option::Option<::std::string::String>,
     pub(crate) b: ::std::option::Option<::std::string::String>,
-    pub(crate) ss: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) bs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ss: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) bs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AttributeValueBuilder {
     /// <p>A string.</p>
@@ -75,8 +78,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A string.</p>
     pub fn set_s(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s = input;
-        self
+        self.s = input; self
     }
     /// <p>A string.</p>
     pub fn get_s(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +91,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A number.</p>
     pub fn set_n(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.n = input;
-        self
+        self.n = input; self
     }
     /// <p>A number.</p>
     pub fn get_n(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +104,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A binary value.</p>
     pub fn set_b(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.b = input;
-        self
+        self.b = input; self
     }
     /// <p>A binary value.</p>
     pub fn get_b(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,17 +117,16 @@ impl AttributeValueBuilder {
     /// <p>A list of strings.</p>
     pub fn ss(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ss.unwrap_or_default();
-        v.push(input.into());
-        self.ss = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ss = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings.</p>
-    pub fn set_ss(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ss = input;
-        self
+    pub fn set_ss(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ss = input; self
     }
     /// <p>A list of strings.</p>
-    pub fn get_ss(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ss(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ss
     }
     /// Appends an item to `ns`.
@@ -137,17 +136,16 @@ impl AttributeValueBuilder {
     /// <p>A list of numbers.</p>
     pub fn ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ns.unwrap_or_default();
-        v.push(input.into());
-        self.ns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of numbers.</p>
-    pub fn set_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ns = input;
-        self
+    pub fn set_ns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ns = input; self
     }
     /// <p>A list of numbers.</p>
-    pub fn get_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ns
     }
     /// Appends an item to `bs`.
@@ -157,28 +155,34 @@ impl AttributeValueBuilder {
     /// <p>A list of binary values.</p>
     pub fn bs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bs.unwrap_or_default();
-        v.push(input.into());
-        self.bs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of binary values.</p>
-    pub fn set_bs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bs = input;
-        self
+    pub fn set_bs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bs = input; self
     }
     /// <p>A list of binary values.</p>
-    pub fn get_bs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bs
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
         crate::types::AttributeValue {
-            s: self.s,
-            n: self.n,
-            b: self.b,
-            ss: self.ss,
-            ns: self.ns,
-            bs: self.bs,
+            s: self.s
+            ,
+            n: self.n
+            ,
+            b: self.b
+            ,
+            ss: self.ss
+            ,
+            ns: self.ns
+            ,
+            bs: self.bs
+            ,
         }
     }
 }
+

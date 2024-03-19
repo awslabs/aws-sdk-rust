@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateChannelMembershipOutput {
+pub struct BatchCreateChannelMembershipOutput  {
     /// <p>The list of channel memberships in the response.</p>
     pub batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchCreateChannelMembershipError>>,
     _request_id: Option<String>,
 }
-impl BatchCreateChannelMembershipOutput {
+impl  BatchCreateChannelMembershipOutput  {
     /// <p>The list of channel memberships in the response.</p>
-    pub fn batch_channel_memberships(&self) -> ::std::option::Option<&crate::types::BatchChannelMemberships> {
+    pub fn batch_channel_memberships(&self) -> ::std::option::Option<& crate::types::BatchChannelMemberships> {
         self.batch_channel_memberships.as_ref()
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::BatchCreateChannelMembershipError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::BatchCreateChannelMembershipError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchCreateChannelMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchCreateChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
     pub fn builder() -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipOutputBuilder {
@@ -38,7 +39,7 @@ impl BatchCreateChannelMembershipOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipOutputBuilder {
     pub(crate) batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchCreateChannelMembershipError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateChannelMembershipOutputBuilder {
@@ -49,8 +50,7 @@ impl BatchCreateChannelMembershipOutputBuilder {
     }
     /// <p>The list of channel memberships in the response.</p>
     pub fn set_batch_channel_memberships(mut self, input: ::std::option::Option<crate::types::BatchChannelMemberships>) -> Self {
-        self.batch_channel_memberships = input;
-        self
+        self.batch_channel_memberships = input; self
     }
     /// <p>The list of channel memberships in the response.</p>
     pub fn get_batch_channel_memberships(&self) -> &::std::option::Option<crate::types::BatchChannelMemberships> {
@@ -63,34 +63,36 @@ impl BatchCreateChannelMembershipOutputBuilder {
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     pub fn errors(mut self, input: crate::types::BatchCreateChannelMembershipError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchCreateChannelMembershipError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchCreateChannelMembershipError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
     pub fn build(self) -> crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput {
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput {
-            batch_channel_memberships: self.batch_channel_memberships,
-            errors: self.errors,
+            batch_channel_memberships: self.batch_channel_memberships
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

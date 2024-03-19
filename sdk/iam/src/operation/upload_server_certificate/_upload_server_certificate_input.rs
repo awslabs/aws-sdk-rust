@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UploadServerCertificateInput {
+pub struct UploadServerCertificateInput  {
     /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p><note>
     /// <p>If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).</p>
@@ -47,19 +47,19 @@ pub struct UploadServerCertificateInput {
     /// <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UploadServerCertificateInput {
+impl  UploadServerCertificateInput  {
     /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p><note>
     /// <p>If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).</p>
     /// </note>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_name(&self) -> ::std::option::Option<& str> {
         self.server_certificate_name.as_deref()
     }
     /// <p>The contents of the public key certificate in PEM-encoded format.</p>
@@ -72,7 +72,7 @@ impl UploadServerCertificateInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn certificate_body(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_body(&self) -> ::std::option::Option<& str> {
         self.certificate_body.as_deref()
     }
     /// <p>The contents of the private key in PEM-encoded format.</p>
@@ -85,7 +85,7 @@ impl UploadServerCertificateInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.</p>
@@ -98,19 +98,20 @@ impl UploadServerCertificateInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UploadServerCertificateInput {
+impl  ::std::fmt::Debug for UploadServerCertificateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadServerCertificateInput");
         formatter.field("path", &self.path);
@@ -138,7 +139,7 @@ pub struct UploadServerCertificateInputBuilder {
     pub(crate) certificate_body: ::std::option::Option<::std::string::String>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UploadServerCertificateInputBuilder {
     /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -154,8 +155,7 @@ impl UploadServerCertificateInputBuilder {
     /// <p>If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).</p>
     /// </note>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p><note>
@@ -174,8 +174,7 @@ impl UploadServerCertificateInputBuilder {
     /// <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_name = input;
-        self
+        self.server_certificate_name = input; self
     }
     /// <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -208,8 +207,7 @@ impl UploadServerCertificateInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_body = input;
-        self
+        self.certificate_body = input; self
     }
     /// <p>The contents of the public key certificate in PEM-encoded format.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -250,8 +248,7 @@ impl UploadServerCertificateInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <p>The contents of the private key in PEM-encoded format.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -291,8 +288,7 @@ impl UploadServerCertificateInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -316,38 +312,40 @@ impl UploadServerCertificateInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p><note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UploadServerCertificateInput`](crate::operation::upload_server_certificate::UploadServerCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_server_certificate::UploadServerCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::upload_server_certificate::UploadServerCertificateInput {
-            path: self.path,
-            server_certificate_name: self.server_certificate_name,
-            certificate_body: self.certificate_body,
-            private_key: self.private_key,
-            certificate_chain: self.certificate_chain,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_server_certificate::UploadServerCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_server_certificate::UploadServerCertificateInput {
+                path: self.path
+                ,
+                server_certificate_name: self.server_certificate_name
+                ,
+                certificate_body: self.certificate_body
+                ,
+                private_key: self.private_key
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UploadServerCertificateInputBuilder {
@@ -362,3 +360,4 @@ impl ::std::fmt::Debug for UploadServerCertificateInputBuilder {
         formatter.finish()
     }
 }
+

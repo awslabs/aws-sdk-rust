@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScramSecrets`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_cluster_arn):<br>required: **true**<br><p>The arn of the cluster.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maxResults of the query.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken of the query.</p><br>
-    /// - On success, responds with [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput) with field(s):
+                            /// - On success, responds with [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::next_token): <p>Paginated results marker.</p>
     ///   - [`secret_arn_list(Option<Vec::<String>>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::secret_arn_list): <p>The list of scram secrets associated with the cluster.</p>
-    /// - On failure, responds with [`SdkError<ListScramSecretsError>`](crate::operation::list_scram_secrets::ListScramSecretsError)
+                            /// - On failure, responds with [`SdkError<ListScramSecretsError>`](crate::operation::list_scram_secrets::ListScramSecretsError)
     pub fn list_scram_secrets(&self) -> crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder {
-        crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

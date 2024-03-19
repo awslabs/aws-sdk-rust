@@ -3,7 +3,7 @@
 /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ReferenceDataSourceUpdate {
+pub struct S3ReferenceDataSourceUpdate  {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub bucket_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>Object key name.</p>
@@ -11,17 +11,17 @@ pub struct S3ReferenceDataSourceUpdate {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub reference_role_arn_update: ::std::option::Option<::std::string::String>,
 }
-impl S3ReferenceDataSourceUpdate {
+impl  S3ReferenceDataSourceUpdate  {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn_update(&self) -> ::std::option::Option<& str> {
         self.bucket_arn_update.as_deref()
     }
     /// <p>Object key name.</p>
-    pub fn file_key_update(&self) -> ::std::option::Option<&str> {
+    pub fn file_key_update(&self) -> ::std::option::Option<& str> {
         self.file_key_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
-    pub fn reference_role_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn reference_role_arn_update(&self) -> ::std::option::Option<& str> {
         self.reference_role_arn_update.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl S3ReferenceDataSourceUpdateBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn_update = input;
-        self
+        self.bucket_arn_update = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl S3ReferenceDataSourceUpdateBuilder {
     }
     /// <p>Object key name.</p>
     pub fn set_file_key_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key_update = input;
-        self
+        self.file_key_update = input; self
     }
     /// <p>Object key name.</p>
     pub fn get_file_key_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl S3ReferenceDataSourceUpdateBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub fn set_reference_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_role_arn_update = input;
-        self
+        self.reference_role_arn_update = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub fn get_reference_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl S3ReferenceDataSourceUpdateBuilder {
     /// Consumes the builder and constructs a [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
     pub fn build(self) -> crate::types::S3ReferenceDataSourceUpdate {
         crate::types::S3ReferenceDataSourceUpdate {
-            bucket_arn_update: self.bucket_arn_update,
-            file_key_update: self.file_key_update,
-            reference_role_arn_update: self.reference_role_arn_update,
+            bucket_arn_update: self.bucket_arn_update
+            ,
+            file_key_update: self.file_key_update
+            ,
+            reference_role_arn_update: self.reference_role_arn_update
+            ,
         }
     }
 }
+

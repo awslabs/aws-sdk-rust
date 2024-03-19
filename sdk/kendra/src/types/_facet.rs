@@ -5,28 +5,29 @@
 /// <p>You can display up to 10 facet values per facet for a query. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Facet {
+pub struct Facet  {
     /// <p>The unique key for the document attribute.</p>
     pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    pub facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
+    pub facets: ::std::option::Option<::std::vec::Vec::<crate::types::Facet>>,
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub max_results: i32,
 }
-impl Facet {
+impl  Facet  {
     /// <p>The unique key for the document attribute.</p>
-    pub fn document_attribute_key(&self) -> ::std::option::Option<&str> {
+    pub fn document_attribute_key(&self) -> ::std::option::Option<& str> {
         self.document_attribute_key.as_deref()
     }
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facets.is_none()`.
-    pub fn facets(&self) -> &[crate::types::Facet] {
-        self.facets.as_deref().unwrap_or_default()
+    pub fn facets(&self) -> & [crate::types::Facet] {
+        self.facets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub fn max_results(&self) -> i32 {
@@ -45,7 +46,7 @@ impl Facet {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FacetBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
-    pub(crate) facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
+    pub(crate) facets: ::std::option::Option<::std::vec::Vec::<crate::types::Facet>>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl FacetBuilder {
@@ -56,8 +57,7 @@ impl FacetBuilder {
     }
     /// <p>The unique key for the document attribute.</p>
     pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_attribute_key = input;
-        self
+        self.document_attribute_key = input; self
     }
     /// <p>The unique key for the document attribute.</p>
     pub fn get_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,21 +72,20 @@ impl FacetBuilder {
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub fn facets(mut self, input: crate::types::Facet) -> Self {
         let mut v = self.facets.unwrap_or_default();
-        v.push(input);
-        self.facets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.facets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    pub fn set_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>) -> Self {
-        self.facets = input;
-        self
+    pub fn set_facets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Facet>>) -> Self {
+        self.facets = input; self
     }
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    pub fn get_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Facet>> {
+    pub fn get_facets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Facet>> {
         &self.facets
     }
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
@@ -96,8 +95,7 @@ impl FacetBuilder {
     }
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,9 +104,14 @@ impl FacetBuilder {
     /// Consumes the builder and constructs a [`Facet`](crate::types::Facet).
     pub fn build(self) -> crate::types::Facet {
         crate::types::Facet {
-            document_attribute_key: self.document_attribute_key,
-            facets: self.facets,
-            max_results: self.max_results.unwrap_or_default(),
+            document_attribute_key: self.document_attribute_key
+            ,
+            facets: self.facets
+            ,
+            max_results: self.max_results
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

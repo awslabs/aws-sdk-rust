@@ -3,7 +3,7 @@
 /// <p>The rules to redirect the request if the condition in <code>Condition</code> is met.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect  {
     /// <p>The host name to use in the redirect request.</p>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP redirect code to use in the response.</p>
@@ -17,27 +17,27 @@ pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
     pub replace_key_with: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+impl  AwsS3BucketWebsiteConfigurationRoutingRuleRedirect  {
     /// <p>The host name to use in the redirect request.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The HTTP redirect code to use in the response.</p>
-    pub fn http_redirect_code(&self) -> ::std::option::Option<&str> {
+    pub fn http_redirect_code(&self) -> ::std::option::Option<& str> {
         self.http_redirect_code.as_deref()
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
-    pub fn replace_key_prefix_with(&self) -> ::std::option::Option<&str> {
+    pub fn replace_key_prefix_with(&self) -> ::std::option::Option<& str> {
         self.replace_key_prefix_with.as_deref()
     }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
-    pub fn replace_key_with(&self) -> ::std::option::Option<&str> {
+    pub fn replace_key_with(&self) -> ::std::option::Option<& str> {
         self.replace_key_with.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     }
     /// <p>The host name to use in the redirect request.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The host name to use in the redirect request.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     }
     /// <p>The HTTP redirect code to use in the response.</p>
     pub fn set_http_redirect_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_redirect_code = input;
-        self
+        self.http_redirect_code = input; self
     }
     /// <p>The HTTP redirect code to use in the response.</p>
     pub fn get_http_redirect_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
     pub fn set_replace_key_prefix_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replace_key_prefix_with = input;
-        self
+        self.replace_key_prefix_with = input; self
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
@@ -127,8 +123,7 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
     pub fn set_replace_key_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replace_key_with = input;
-        self
+        self.replace_key_with = input; self
     }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
@@ -138,11 +133,17 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
         crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
-            hostname: self.hostname,
-            http_redirect_code: self.http_redirect_code,
-            protocol: self.protocol,
-            replace_key_prefix_with: self.replace_key_prefix_with,
-            replace_key_with: self.replace_key_with,
+            hostname: self.hostname
+            ,
+            http_redirect_code: self.http_redirect_code
+            ,
+            protocol: self.protocol
+            ,
+            replace_key_prefix_with: self.replace_key_prefix_with
+            ,
+            replace_key_with: self.replace_key_with
+            ,
         }
     }
 }
+

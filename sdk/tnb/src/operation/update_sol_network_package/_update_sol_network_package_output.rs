@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSolNetworkPackageOutput {
+pub struct UpdateSolNetworkPackageOutput  {
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub nsd_operational_state: crate::types::NsdOperationalState,
     _request_id: Option<String>,
 }
-impl UpdateSolNetworkPackageOutput {
+impl  UpdateSolNetworkPackageOutput  {
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(&self) -> &crate::types::NsdOperationalState {
+    pub fn nsd_operational_state(&self) -> & crate::types::NsdOperationalState {
         &self.nsd_operational_state
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSolNetworkPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSolNetworkPackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput).
     pub fn builder() -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder {
@@ -41,39 +41,35 @@ impl UpdateSolNetworkPackageOutputBuilder {
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
-        self.nsd_operational_state = input;
-        self
+        self.nsd_operational_state = input; self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
         &self.nsd_operational_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`nsd_operational_state`](crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageOutputBuilder::nsd_operational_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput {
-            nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_operational_state",
-                    "nsd_operational_state was not specified but it is required when building UpdateSolNetworkPackageOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput {
+                nsd_operational_state: self.nsd_operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_operational_state", "nsd_operational_state was not specified but it is required when building UpdateSolNetworkPackageOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

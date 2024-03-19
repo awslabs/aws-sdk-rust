@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceRequestsOutput {
+pub struct ListResourceRequestsOutput  {
     /// <p>The requests that match the specified filter criteria.</p>
-    pub resource_request_status_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
+    pub resource_request_status_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProgressEvent>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListResourceRequestsOutput {
+impl  ListResourceRequestsOutput  {
     /// <p>The requests that match the specified filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_request_status_summaries.is_none()`.
-    pub fn resource_request_status_summaries(&self) -> &[crate::types::ProgressEvent] {
-        self.resource_request_status_summaries.as_deref().unwrap_or_default()
+    pub fn resource_request_status_summaries(&self) -> & [crate::types::ProgressEvent] {
+        self.resource_request_status_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResourceRequestsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResourceRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::operation::list_resource_requests::ListResourceRequestsOutput).
     pub fn builder() -> crate::operation::list_resource_requests::builders::ListResourceRequestsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListResourceRequestsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceRequestsOutputBuilder {
-    pub(crate) resource_request_status_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
+    pub(crate) resource_request_status_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProgressEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListResourceRequestsOutputBuilder {
     /// <p>The requests that match the specified filter criteria.</p>
     pub fn resource_request_status_summaries(mut self, input: crate::types::ProgressEvent) -> Self {
         let mut v = self.resource_request_status_summaries.unwrap_or_default();
-        v.push(input);
-        self.resource_request_status_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_request_status_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requests that match the specified filter criteria.</p>
-    pub fn set_resource_request_status_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>) -> Self {
-        self.resource_request_status_summaries = input;
-        self
+    pub fn set_resource_request_status_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProgressEvent>>) -> Self {
+        self.resource_request_status_summaries = input; self
     }
     /// <p>The requests that match the specified filter criteria.</p>
-    pub fn get_resource_request_status_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>> {
+    pub fn get_resource_request_status_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProgressEvent>> {
         &self.resource_request_status_summaries
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
@@ -69,28 +69,30 @@ impl ListResourceRequestsOutputBuilder {
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResourceRequestsOutput`](crate::operation::list_resource_requests::ListResourceRequestsOutput).
     pub fn build(self) -> crate::operation::list_resource_requests::ListResourceRequestsOutput {
         crate::operation::list_resource_requests::ListResourceRequestsOutput {
-            resource_request_status_summaries: self.resource_request_status_summaries,
-            next_token: self.next_token,
+            resource_request_status_summaries: self.resource_request_status_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

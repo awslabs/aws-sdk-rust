@@ -3,7 +3,7 @@
 /// <p>Describes the recipient type and ID, if available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SharePrincipal {
+pub struct SharePrincipal  {
     /// <p>The ID of the recipient.</p>
     pub id: ::std::string::String,
     /// <p>The type of the recipient.</p>
@@ -11,18 +11,17 @@ pub struct SharePrincipal {
     /// <p>The role of the recipient.</p>
     pub role: crate::types::RoleType,
 }
-impl SharePrincipal {
+impl  SharePrincipal  {
     /// <p>The ID of the recipient.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of the recipient.</p>
-    pub fn r#type(&self) -> &crate::types::PrincipalType {
+    pub fn r#type(&self) -> & crate::types::PrincipalType {
         &self.r#type
     }
     /// <p>The role of the recipient.</p>
-    pub fn role(&self) -> &crate::types::RoleType {
+    pub fn role(&self) -> & crate::types::RoleType {
         &self.role
     }
 }
@@ -50,8 +49,7 @@ impl SharePrincipalBuilder {
     }
     /// <p>The ID of the recipient.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the recipient.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl SharePrincipalBuilder {
     }
     /// <p>The type of the recipient.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the recipient.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
@@ -80,8 +77,7 @@ impl SharePrincipalBuilder {
     }
     /// <p>The role of the recipient.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the recipient.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::RoleType> {
@@ -93,25 +89,25 @@ impl SharePrincipalBuilder {
     /// - [`r#type`](crate::types::builders::SharePrincipalBuilder::r#type)
     /// - [`role`](crate::types::builders::SharePrincipalBuilder::role)
     pub fn build(self) -> ::std::result::Result<crate::types::SharePrincipal, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SharePrincipal {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building SharePrincipal",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SharePrincipal",
-                )
-            })?,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building SharePrincipal",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SharePrincipal {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building SharePrincipal")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SharePrincipal")
+                    )?
+                ,
+                role: self.role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role", "role was not specified but it is required when building SharePrincipal")
+                    )?
+                ,
+            }
+        )
     }
 }
+

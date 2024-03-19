@@ -3,7 +3,7 @@
 /// <p>The metadata of a framework, such as the name, ID, or description.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FrameworkMetadata {
+pub struct FrameworkMetadata  {
     /// <p>The name of the framework.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the framework.</p>
@@ -13,25 +13,25 @@ pub struct FrameworkMetadata {
     /// <p>The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
 }
-impl FrameworkMetadata {
+impl  FrameworkMetadata  {
     /// <p>The name of the framework.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the framework.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The logo that's associated with the framework.</p>
-    pub fn logo(&self) -> ::std::option::Option<&str> {
+    pub fn logo(&self) -> ::std::option::Option<& str> {
         self.logo.as_deref()
     }
     /// <p>The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
 }
-impl ::std::fmt::Debug for FrameworkMetadata {
+impl  ::std::fmt::Debug for FrameworkMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FrameworkMetadata");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl FrameworkMetadataBuilder {
     }
     /// <p>The name of the framework.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the framework.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl FrameworkMetadataBuilder {
     }
     /// <p>The description of the framework.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the framework.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl FrameworkMetadataBuilder {
     }
     /// <p>The logo that's associated with the framework.</p>
     pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logo = input;
-        self
+        self.logo = input; self
     }
     /// <p>The logo that's associated with the framework.</p>
     pub fn get_logo(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl FrameworkMetadataBuilder {
     }
     /// <p>The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl FrameworkMetadataBuilder {
     /// Consumes the builder and constructs a [`FrameworkMetadata`](crate::types::FrameworkMetadata).
     pub fn build(self) -> crate::types::FrameworkMetadata {
         crate::types::FrameworkMetadata {
-            name: self.name,
-            description: self.description,
-            logo: self.logo,
-            compliance_type: self.compliance_type,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            logo: self.logo
+            ,
+            compliance_type: self.compliance_type
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for FrameworkMetadataBuilder {
         formatter.finish()
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::update_regex_pattern_set::_update_regex_pattern_set_in
 
 impl UpdateRegexPatternSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_regex_pattern_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_regex_pattern_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRegexPatternSet`.
-///
+/// 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
 /// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
@@ -57,33 +54,32 @@ impl UpdateRegexPatternSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRegexPatternSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder,
+                    inner: crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-    > for UpdateRegexPatternSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
+                    crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+                > for UpdateRegexPatternSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
+                        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRegexPatternSetFluentBuilder {
     /// Creates a new `UpdateRegexPatternSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -92,53 +88,44 @@ impl UpdateRegexPatternSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_regex_pattern_set::UpdateRegexPatternSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_regex_pattern_set::UpdateRegexPatternSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_regex_pattern_set::UpdateRegexPatternSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput, crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex_pattern_set_id(input.into());
@@ -163,12 +150,12 @@ impl UpdateRegexPatternSetFluentBuilder {
         self
     }
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>>) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetUpdate>> {
         self.inner.get_updates()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -186,3 +173,4 @@ impl UpdateRegexPatternSetFluentBuilder {
         self.inner.get_change_token()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFiltersInput {
+pub struct ListFiltersInput  {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
@@ -10,9 +10,9 @@ pub struct ListFiltersInput {
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListFiltersInput {
+impl  ListFiltersInput  {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
@@ -20,7 +20,7 @@ impl ListFiltersInput {
         self.max_results
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListFiltersInputBuilder {
     }
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListFiltersInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ListFiltersInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl ListFiltersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersInput {
-            detector_id: self.detector_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_filters::ListFiltersInput {
+                detector_id: self.detector_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

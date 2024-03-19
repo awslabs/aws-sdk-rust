@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAssessmentFrameworkShareInput {
+pub struct StartAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the custom framework to be shared.</p>
     pub framework_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account of the recipient.</p>
@@ -12,21 +12,21 @@ pub struct StartAssessmentFrameworkShareInput {
     /// <p>An optional comment from the sender about the share request.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl StartAssessmentFrameworkShareInput {
+impl  StartAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the custom framework to be shared.</p>
-    pub fn framework_id(&self) -> ::std::option::Option<&str> {
+    pub fn framework_id(&self) -> ::std::option::Option<& str> {
         self.framework_id.as_deref()
     }
     /// <p>The Amazon Web Services account of the recipient.</p>
-    pub fn destination_account(&self) -> ::std::option::Option<&str> {
+    pub fn destination_account(&self) -> ::std::option::Option<& str> {
         self.destination_account.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recipient.</p>
-    pub fn destination_region(&self) -> ::std::option::Option<&str> {
+    pub fn destination_region(&self) -> ::std::option::Option<& str> {
         self.destination_region.as_deref()
     }
     /// <p>An optional comment from the sender about the share request.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
     }
     /// <p>The unique identifier for the custom framework to be shared.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_id = input;
-        self
+        self.framework_id = input; self
     }
     /// <p>The unique identifier for the custom framework to be shared.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
     }
     /// <p>The Amazon Web Services account of the recipient.</p>
     pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_account = input;
-        self
+        self.destination_account = input; self
     }
     /// <p>The Amazon Web Services account of the recipient.</p>
     pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
     }
     /// <p>The Amazon Web Services Region of the recipient.</p>
     pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_region = input;
-        self
+        self.destination_region = input; self
     }
     /// <p>The Amazon Web Services Region of the recipient.</p>
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl StartAssessmentFrameworkShareInputBuilder {
     }
     /// <p>An optional comment from the sender about the share request.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>An optional comment from the sender about the share request.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
     /// Consumes the builder and constructs a [`StartAssessmentFrameworkShareInput`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput {
-            framework_id: self.framework_id,
-            destination_account: self.destination_account,
-            destination_region: self.destination_region,
-            comment: self.comment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput {
+                framework_id: self.framework_id
+                ,
+                destination_account: self.destination_account
+                ,
+                destination_region: self.destination_region
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

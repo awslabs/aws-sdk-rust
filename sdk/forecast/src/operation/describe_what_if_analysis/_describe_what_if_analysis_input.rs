@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWhatIfAnalysisInput {
+pub struct DescribeWhatIfAnalysisInput  {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWhatIfAnalysisInput {
+impl  DescribeWhatIfAnalysisInput  {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
-    pub fn what_if_analysis_arn(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_analysis_arn(&self) -> ::std::option::Option<& str> {
         self.what_if_analysis_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeWhatIfAnalysisInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_analysis_arn = input;
-        self
+        self.what_if_analysis_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.what_if_analysis_arn
     }
     /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
-            what_if_analysis_arn: self.what_if_analysis_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
+                what_if_analysis_arn: self.what_if_analysis_arn
+                ,
+            }
+        )
     }
 }
+

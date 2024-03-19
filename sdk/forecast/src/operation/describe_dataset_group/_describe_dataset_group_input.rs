@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetGroupInput {
+pub struct DescribeDatasetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDatasetGroupInput {
+impl  DescribeDatasetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeDatasetGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_group_arn
     }
     /// Consumes the builder and constructs a [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
-            dataset_group_arn: self.dataset_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
+                dataset_group_arn: self.dataset_group_arn
+                ,
+            }
+        )
     }
 }
+

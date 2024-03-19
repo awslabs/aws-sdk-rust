@@ -3,19 +3,19 @@
 /// <p>The identifier of the data source Amazon Q will generate responses from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EligibleDataSource {
+pub struct EligibleDataSource  {
     /// <p>The identifier of the index the data source is attached to.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl EligibleDataSource {
+impl  EligibleDataSource  {
     /// <p>The identifier of the index the data source is attached to.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EligibleDataSourceBuilder {
     }
     /// <p>The identifier of the index the data source is attached to.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index the data source is attached to.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EligibleDataSourceBuilder {
     }
     /// <p>The identifier of the data source.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EligibleDataSourceBuilder {
     /// Consumes the builder and constructs a [`EligibleDataSource`](crate::types::EligibleDataSource).
     pub fn build(self) -> crate::types::EligibleDataSource {
         crate::types::EligibleDataSource {
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
+            index_id: self.index_id
+            ,
+            data_source_id: self.data_source_id
+            ,
         }
     }
 }
+

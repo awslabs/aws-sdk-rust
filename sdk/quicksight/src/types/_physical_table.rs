@@ -24,11 +24,7 @@ impl PhysicalTable {
     /// Tries to convert the enum instance into [`CustomSql`](crate::types::PhysicalTable::CustomSql), extracting the inner [`CustomSql`](crate::types::CustomSql).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_sql(&self) -> ::std::result::Result<&crate::types::CustomSql, &Self> {
-        if let PhysicalTable::CustomSql(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PhysicalTable::CustomSql(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CustomSql`](crate::types::PhysicalTable::CustomSql).
     pub fn is_custom_sql(&self) -> bool {
@@ -37,11 +33,7 @@ impl PhysicalTable {
     /// Tries to convert the enum instance into [`RelationalTable`](crate::types::PhysicalTable::RelationalTable), extracting the inner [`RelationalTable`](crate::types::RelationalTable).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_relational_table(&self) -> ::std::result::Result<&crate::types::RelationalTable, &Self> {
-        if let PhysicalTable::RelationalTable(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PhysicalTable::RelationalTable(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RelationalTable`](crate::types::PhysicalTable::RelationalTable).
     pub fn is_relational_table(&self) -> bool {
@@ -50,11 +42,7 @@ impl PhysicalTable {
     /// Tries to convert the enum instance into [`S3Source`](crate::types::PhysicalTable::S3Source), extracting the inner [`S3Source`](crate::types::S3Source).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_source(&self) -> ::std::result::Result<&crate::types::S3Source, &Self> {
-        if let PhysicalTable::S3Source(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PhysicalTable::S3Source(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3Source`](crate::types::PhysicalTable::S3Source).
     pub fn is_s3_source(&self) -> bool {
@@ -65,3 +53,4 @@ impl PhysicalTable {
         matches!(self, Self::Unknown)
     }
 }
+

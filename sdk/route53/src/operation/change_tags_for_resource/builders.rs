@@ -5,55 +5,51 @@ pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_in
 
 impl ChangeTagsForResourceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.change_tags_for_resource();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.change_tags_for_resource();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ChangeTagsForResource`.
-///
+/// 
 /// <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p>
 /// <p>For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder,
+                    inner: crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-    > for ChangeTagsForResourceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
+                    crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
+                > for ChangeTagsForResourceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
+                        crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ChangeTagsForResourceFluentBuilder {
     /// Creates a new `ChangeTagsForResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ChangeTagsForResourceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::change_tags_for_resource::ChangeTagsForResource::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::change_tags_for_resource::ChangeTagsForResource::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::change_tags_for_resource::ChangeTagsForResourceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::change_tags_for_resource::ChangeTagsForResource::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::change_tags_for_resource::ChangeTagsForResource::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput, crate::operation::change_tags_for_resource::ChangeTagsForResourceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The type of the resource.</p>
     /// <ul>
     /// <li>
@@ -167,13 +154,13 @@ impl ChangeTagsForResourceFluentBuilder {
     }
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_add_tags(input);
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_add_tags()
     }
     /// Appends an item to `RemoveTagKeys`.
@@ -186,12 +173,13 @@ impl ChangeTagsForResourceFluentBuilder {
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn set_remove_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_remove_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_tag_keys(input);
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn get_remove_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_remove_tag_keys()
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>Details about the source of the anomalous operational data that triggered the anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalySourceDetails {
+pub struct AnomalySourceDetails  {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior.</p>
-    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchMetricsDetail>>,
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+    pub performance_insights_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::PerformanceInsightsMetricsDetail>>,
 }
-impl AnomalySourceDetails {
+impl  AnomalySourceDetails  {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_metrics.is_none()`.
-    pub fn cloud_watch_metrics(&self) -> &[crate::types::CloudWatchMetricsDetail] {
-        self.cloud_watch_metrics.as_deref().unwrap_or_default()
+    pub fn cloud_watch_metrics(&self) -> & [crate::types::CloudWatchMetricsDetail] {
+        self.cloud_watch_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.performance_insights_metrics.is_none()`.
-    pub fn performance_insights_metrics(&self) -> &[crate::types::PerformanceInsightsMetricsDetail] {
-        self.performance_insights_metrics.as_deref().unwrap_or_default()
+    pub fn performance_insights_metrics(&self) -> & [crate::types::PerformanceInsightsMetricsDetail] {
+        self.performance_insights_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnomalySourceDetails {
@@ -34,8 +36,8 @@ impl AnomalySourceDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalySourceDetailsBuilder {
-    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
-    pub(crate) performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchMetricsDetail>>,
+    pub(crate) performance_insights_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetailsBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -45,17 +47,16 @@ impl AnomalySourceDetailsBuilder {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior.</p>
     pub fn cloud_watch_metrics(mut self, input: crate::types::CloudWatchMetricsDetail) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cloud_watch_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior.</p>
-    pub fn set_cloud_watch_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>) -> Self {
-        self.cloud_watch_metrics = input;
-        self
+    pub fn set_cloud_watch_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchMetricsDetail>>) -> Self {
+        self.cloud_watch_metrics = input; self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior.</p>
-    pub fn get_cloud_watch_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>> {
+    pub fn get_cloud_watch_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchMetricsDetail>> {
         &self.cloud_watch_metrics
     }
     /// Appends an item to `performance_insights_metrics`.
@@ -65,27 +66,26 @@ impl AnomalySourceDetailsBuilder {
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     pub fn performance_insights_metrics(mut self, input: crate::types::PerformanceInsightsMetricsDetail) -> Self {
         let mut v = self.performance_insights_metrics.unwrap_or_default();
-        v.push(input);
-        self.performance_insights_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.performance_insights_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn set_performance_insights_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
-    ) -> Self {
-        self.performance_insights_metrics = input;
-        self
+    pub fn set_performance_insights_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PerformanceInsightsMetricsDetail>>) -> Self {
+        self.performance_insights_metrics = input; self
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn get_performance_insights_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>> {
+    pub fn get_performance_insights_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PerformanceInsightsMetricsDetail>> {
         &self.performance_insights_metrics
     }
     /// Consumes the builder and constructs a [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).
     pub fn build(self) -> crate::types::AnomalySourceDetails {
         crate::types::AnomalySourceDetails {
-            cloud_watch_metrics: self.cloud_watch_metrics,
-            performance_insights_metrics: self.performance_insights_metrics,
+            cloud_watch_metrics: self.cloud_watch_metrics
+            ,
+            performance_insights_metrics: self.performance_insights_metrics
+            ,
         }
     }
 }
+

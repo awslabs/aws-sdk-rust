@@ -3,7 +3,7 @@
 /// <p>Describes a token.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TokenData {
+pub struct TokenData  {
     /// <p>Token ID.</p>
     pub token_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
@@ -13,43 +13,45 @@ pub struct TokenData {
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>Data specified by the caller.</p>
-    pub token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub token_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl TokenData {
+impl  TokenData  {
     /// <p>Token ID.</p>
-    pub fn token_id(&self) -> ::std::option::Option<&str> {
+    pub fn token_id(&self) -> ::std::option::Option<& str> {
         self.token_id.as_deref()
     }
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
-    pub fn token_type(&self) -> ::std::option::Option<&str> {
+    pub fn token_type(&self) -> ::std::option::Option<& str> {
         self.token_type.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&str> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>Data specified by the caller.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_properties.is_none()`.
-    pub fn token_properties(&self) -> &[::std::string::String] {
-        self.token_properties.as_deref().unwrap_or_default()
+    pub fn token_properties(&self) -> & [::std::string::String] {
+        self.token_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
-    pub fn role_arns(&self) -> &[::std::string::String] {
-        self.role_arns.as_deref().unwrap_or_default()
+    pub fn role_arns(&self) -> & [::std::string::String] {
+        self.role_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -68,8 +70,8 @@ pub struct TokenDataBuilder {
     pub(crate) token_type: ::std::option::Option<::std::string::String>,
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_time: ::std::option::Option<::std::string::String>,
-    pub(crate) token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) token_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl TokenDataBuilder {
@@ -80,8 +82,7 @@ impl TokenDataBuilder {
     }
     /// <p>Token ID.</p>
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_id = input;
-        self
+        self.token_id = input; self
     }
     /// <p>Token ID.</p>
     pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl TokenDataBuilder {
     }
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
     pub fn set_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_type = input;
-        self
+        self.token_type = input; self
     }
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
     pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl TokenDataBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl TokenDataBuilder {
     }
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +134,16 @@ impl TokenDataBuilder {
     /// <p>Data specified by the caller.</p>
     pub fn token_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_properties.unwrap_or_default();
-        v.push(input.into());
-        self.token_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.token_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Data specified by the caller.</p>
-    pub fn set_token_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.token_properties = input;
-        self
+    pub fn set_token_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.token_properties = input; self
     }
     /// <p>Data specified by the caller.</p>
-    pub fn get_token_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.token_properties
     }
     /// Appends an item to `role_arns`.
@@ -156,17 +153,16 @@ impl TokenDataBuilder {
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
     pub fn role_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.role_arns.unwrap_or_default();
-        v.push(input.into());
-        self.role_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.role_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.role_arns = input;
-        self
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.role_arns = input; self
     }
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.role_arns
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
@@ -176,8 +172,7 @@ impl TokenDataBuilder {
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,13 +181,21 @@ impl TokenDataBuilder {
     /// Consumes the builder and constructs a [`TokenData`](crate::types::TokenData).
     pub fn build(self) -> crate::types::TokenData {
         crate::types::TokenData {
-            token_id: self.token_id,
-            token_type: self.token_type,
-            license_arn: self.license_arn,
-            expiration_time: self.expiration_time,
-            token_properties: self.token_properties,
-            role_arns: self.role_arns,
-            status: self.status,
+            token_id: self.token_id
+            ,
+            token_type: self.token_type
+            ,
+            license_arn: self.license_arn
+            ,
+            expiration_time: self.expiration_time
+            ,
+            token_properties: self.token_properties
+            ,
+            role_arns: self.role_arns
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

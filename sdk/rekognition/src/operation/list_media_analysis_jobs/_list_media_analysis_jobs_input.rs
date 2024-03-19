@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMediaAnalysisJobsInput {
+pub struct ListMediaAnalysisJobsInput  {
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code> error occurs. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMediaAnalysisJobsInput {
+impl  ListMediaAnalysisJobsInput  {
     /// <p>Pagination token, if the previous response was incomplete.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code> error occurs. The default value is 100.</p>
@@ -40,8 +40,7 @@ impl ListMediaAnalysisJobsInputBuilder {
     }
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl ListMediaAnalysisJobsInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code> error occurs. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code> error occurs. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMediaAnalysisJobsInput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

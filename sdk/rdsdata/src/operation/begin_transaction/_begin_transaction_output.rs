@@ -3,22 +3,22 @@
 /// <p>The response elements represent the output of a request to start a SQL transaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BeginTransactionOutput {
+pub struct BeginTransactionOutput  {
     /// <p>The transaction ID of the transaction started by the call.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl BeginTransactionOutput {
+impl  BeginTransactionOutput  {
     /// <p>The transaction ID of the transaction started by the call.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BeginTransactionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BeginTransactionOutput {
     /// Creates a new builder-style object to manufacture [`BeginTransactionOutput`](crate::operation::begin_transaction::BeginTransactionOutput).
     pub fn builder() -> crate::operation::begin_transaction::builders::BeginTransactionOutputBuilder {
@@ -41,27 +41,28 @@ impl BeginTransactionOutputBuilder {
     }
     /// <p>The transaction ID of the transaction started by the call.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction ID of the transaction started by the call.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BeginTransactionOutput`](crate::operation::begin_transaction::BeginTransactionOutput).
     pub fn build(self) -> crate::operation::begin_transaction::BeginTransactionOutput {
         crate::operation::begin_transaction::BeginTransactionOutput {
-            transaction_id: self.transaction_id,
+            transaction_id: self.transaction_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

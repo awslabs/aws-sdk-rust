@@ -3,7 +3,7 @@
 /// <p>The summary of the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The ID of the template.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
@@ -13,21 +13,21 @@ pub struct TemplateSummary {
     /// <p>The description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl TemplateSummary {
+impl  TemplateSummary  {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The description of the template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl TemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {
         crate::types::TemplateSummary {
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

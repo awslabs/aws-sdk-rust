@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLinks`](crate::operation::list_links::builders::ListLinksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_links::builders::ListLinksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_links::builders::ListLinksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_links::builders::ListLinksFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits the number of returned links to the specified number.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_links::builders::ListLinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_links::builders::ListLinksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. You received this token from a previous call.</p><br>
-    /// - On success, responds with [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput) with field(s):
+                            /// - On success, responds with [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput) with field(s):
     ///   - [`items(Vec::<ListLinksItem>)`](crate::operation::list_links::ListLinksOutput::items): <p>An array of structures that contain the information about the returned links.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_links::ListLinksOutput::next_token): <p>The token to use when requesting the next set of links.</p>
-    /// - On failure, responds with [`SdkError<ListLinksError>`](crate::operation::list_links::ListLinksError)
+                            /// - On failure, responds with [`SdkError<ListLinksError>`](crate::operation::list_links::ListLinksError)
     pub fn list_links(&self) -> crate::operation::list_links::builders::ListLinksFluentBuilder {
-        crate::operation::list_links::builders::ListLinksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_links::builders::ListLinksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

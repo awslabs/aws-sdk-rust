@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxEnvironmentOutput {
+pub struct CreateKxEnvironmentOutput  {
     /// <p>The name of the kdb environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the kdb environment.</p>
@@ -19,41 +19,41 @@ pub struct CreateKxEnvironmentOutput {
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateKxEnvironmentOutput {
+impl  CreateKxEnvironmentOutput  {
     /// <p>The name of the kdb environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the kdb environment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A description for the kdb environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN identifier of the environment.</p>
-    pub fn environment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn environment_arn(&self) -> ::std::option::Option<& str> {
         self.environment_arn.as_deref()
     }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKxEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKxEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateKxEnvironmentOutput`](crate::operation::create_kx_environment::CreateKxEnvironmentOutput).
     pub fn builder() -> crate::operation::create_kx_environment::builders::CreateKxEnvironmentOutputBuilder {
@@ -82,8 +82,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>The name of the kdb environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the kdb environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>The status of the kdb environment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the kdb environment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
@@ -110,8 +108,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>A description for the kdb environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the kdb environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>The ARN identifier of the environment.</p>
     pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_arn = input;
-        self
+        self.environment_arn = input; self
     }
     /// <p>The ARN identifier of the environment.</p>
     pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,33 +160,40 @@ impl CreateKxEnvironmentOutputBuilder {
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKxEnvironmentOutput`](crate::operation::create_kx_environment::CreateKxEnvironmentOutput).
     pub fn build(self) -> crate::operation::create_kx_environment::CreateKxEnvironmentOutput {
         crate::operation::create_kx_environment::CreateKxEnvironmentOutput {
-            name: self.name,
-            status: self.status,
-            environment_id: self.environment_id,
-            description: self.description,
-            environment_arn: self.environment_arn,
-            kms_key_id: self.kms_key_id,
-            creation_timestamp: self.creation_timestamp,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            environment_id: self.environment_id
+            ,
+            description: self.description
+            ,
+            environment_arn: self.environment_arn
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

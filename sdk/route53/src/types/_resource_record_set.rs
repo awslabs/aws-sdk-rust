@@ -3,7 +3,7 @@
 /// <p>Information about the resource record set to create or delete.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceRecordSet {
+pub struct ResourceRecordSet  {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
     /// <p><b>ChangeResourceRecordSets Only</b></p>
     /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
@@ -141,7 +141,7 @@ pub struct ResourceRecordSet {
     /// <p>Information about the resource records to act upon.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub resource_records: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
+    pub resource_records: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRecord>>,
     /// <p><i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
     /// <ul>
@@ -226,7 +226,7 @@ pub struct ResourceRecordSet {
     /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
     pub geo_proximity_location: ::std::option::Option<crate::types::GeoProximityLocation>,
 }
-impl ResourceRecordSet {
+impl  ResourceRecordSet  {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
     /// <p><b>ChangeResourceRecordSets Only</b></p>
     /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
@@ -242,9 +242,8 @@ impl ResourceRecordSet {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
@@ -272,12 +271,12 @@ impl ResourceRecordSet {
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::RrType {
+    pub fn r#type(&self) -> & crate::types::RrType {
         &self.r#type
     }
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn set_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn set_identifier(&self) -> ::std::option::Option<& str> {
         self.set_identifier.as_deref()
     }
     /// <p><i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
@@ -310,7 +309,7 @@ impl ResourceRecordSet {
     /// <li>
     /// <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p></li>
     /// </ul>
-    pub fn region(&self) -> ::std::option::Option<&crate::types::ResourceRecordSetRegion> {
+    pub fn region(&self) -> ::std::option::Option<& crate::types::ResourceRecordSetRegion> {
         self.region.as_ref()
     }
     /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
@@ -320,7 +319,7 @@ impl ResourceRecordSet {
     /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
     /// </important>
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
-    pub fn geo_location(&self) -> ::std::option::Option<&crate::types::GeoLocation> {
+    pub fn geo_location(&self) -> ::std::option::Option<& crate::types::GeoLocation> {
         self.geo_location.as_ref()
     }
     /// <p><i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
@@ -344,7 +343,7 @@ impl ResourceRecordSet {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a></p></li>
     /// </ul>
-    pub fn failover(&self) -> ::std::option::Option<&crate::types::ResourceRecordSetFailover> {
+    pub fn failover(&self) -> ::std::option::Option<& crate::types::ResourceRecordSetFailover> {
         self.failover.as_ref()
     }
     /// <p><i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
@@ -383,10 +382,11 @@ impl ResourceRecordSet {
     /// <p>Information about the resource records to act upon.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_records.is_none()`.
-    pub fn resource_records(&self) -> &[crate::types::ResourceRecord] {
-        self.resource_records.as_deref().unwrap_or_default()
+    pub fn resource_records(&self) -> & [crate::types::ResourceRecord] {
+        self.resource_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p><i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
@@ -396,7 +396,7 @@ impl ResourceRecordSet {
     /// <li>
     /// <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn alias_target(&self) -> ::std::option::Option<&crate::types::AliasTarget> {
+    pub fn alias_target(&self) -> ::std::option::Option<& crate::types::AliasTarget> {
         self.alias_target.as_ref()
     }
     /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
@@ -463,22 +463,22 @@ impl ResourceRecordSet {
     /// <p>Associate that health check with the resource record set.</p></li>
     /// </ul>
     /// </important>
-    pub fn health_check_id(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_id(&self) -> ::std::option::Option<& str> {
         self.health_check_id.as_deref()
     }
     /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p><important>
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.</p>
     /// </important>
-    pub fn traffic_policy_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_policy_instance_id(&self) -> ::std::option::Option<& str> {
         self.traffic_policy_instance_id.as_deref()
     }
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-    pub fn cidr_routing_config(&self) -> ::std::option::Option<&crate::types::CidrRoutingConfig> {
+    pub fn cidr_routing_config(&self) -> ::std::option::Option<& crate::types::CidrRoutingConfig> {
         self.cidr_routing_config.as_ref()
     }
     /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
-    pub fn geo_proximity_location(&self) -> ::std::option::Option<&crate::types::GeoProximityLocation> {
+    pub fn geo_proximity_location(&self) -> ::std::option::Option<& crate::types::GeoProximityLocation> {
         self.geo_proximity_location.as_ref()
     }
 }
@@ -502,7 +502,7 @@ pub struct ResourceRecordSetBuilder {
     pub(crate) failover: ::std::option::Option<crate::types::ResourceRecordSetFailover>,
     pub(crate) multi_value_answer: ::std::option::Option<bool>,
     pub(crate) ttl: ::std::option::Option<i64>,
-    pub(crate) resource_records: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
+    pub(crate) resource_records: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRecord>>,
     pub(crate) alias_target: ::std::option::Option<crate::types::AliasTarget>,
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_id: ::std::option::Option<::std::string::String>,
@@ -546,8 +546,7 @@ impl ResourceRecordSetBuilder {
     /// </important></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
     /// <p><b>ChangeResourceRecordSets Only</b></p>
@@ -625,8 +624,7 @@ impl ResourceRecordSetBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
@@ -666,8 +664,7 @@ impl ResourceRecordSetBuilder {
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.set_identifier = input;
-        self
+        self.set_identifier = input; self
     }
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -707,8 +704,7 @@ impl ResourceRecordSetBuilder {
     /// <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p></li>
     /// </ul>
     pub fn set_weight(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p><i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
     /// <ul>
@@ -758,8 +754,7 @@ impl ResourceRecordSetBuilder {
     /// <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p></li>
     /// </ul>
     pub fn set_region(mut self, input: ::std::option::Option<crate::types::ResourceRecordSetRegion>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p><i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
     /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
@@ -796,8 +791,7 @@ impl ResourceRecordSetBuilder {
     /// </important>
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
     pub fn set_geo_location(mut self, input: ::std::option::Option<crate::types::GeoLocation>) -> Self {
-        self.geo_location = input;
-        self
+        self.geo_location = input; self
     }
     /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
@@ -856,8 +850,7 @@ impl ResourceRecordSetBuilder {
     /// <p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a></p></li>
     /// </ul>
     pub fn set_failover(mut self, input: ::std::option::Option<crate::types::ResourceRecordSetFailover>) -> Self {
-        self.failover = input;
-        self
+        self.failover = input; self
     }
     /// <p><i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
     /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
@@ -920,8 +913,7 @@ impl ResourceRecordSetBuilder {
     /// </ul>
     /// <p>You can't create multivalue answer alias records.</p>
     pub fn set_multi_value_answer(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_value_answer = input;
-        self
+        self.multi_value_answer = input; self
     }
     /// <p><i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
     /// <ul>
@@ -969,8 +961,7 @@ impl ResourceRecordSetBuilder {
     /// <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p></li>
     /// </ul>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
     /// <ul>
@@ -995,21 +986,20 @@ impl ResourceRecordSetBuilder {
     /// </note>
     pub fn resource_records(mut self, input: crate::types::ResourceRecord) -> Self {
         let mut v = self.resource_records.unwrap_or_default();
-        v.push(input);
-        self.resource_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resource records to act upon.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub fn set_resource_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>) -> Self {
-        self.resource_records = input;
-        self
+    pub fn set_resource_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRecord>>) -> Self {
+        self.resource_records = input; self
     }
     /// <p>Information about the resource records to act upon.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub fn get_resource_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>> {
+    pub fn get_resource_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceRecord>> {
         &self.resource_records
     }
     /// <p><i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
@@ -1033,8 +1023,7 @@ impl ResourceRecordSetBuilder {
     /// <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p></li>
     /// </ul>
     pub fn set_alias_target(mut self, input: ::std::option::Option<crate::types::AliasTarget>) -> Self {
-        self.alias_target = input;
-        self
+        self.alias_target = input; self
     }
     /// <p><i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
     /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
@@ -1180,8 +1169,7 @@ impl ResourceRecordSetBuilder {
     /// </ul>
     /// </important>
     pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check_id = input;
-        self
+        self.health_check_id = input; self
     }
     /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
     /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
@@ -1261,8 +1249,7 @@ impl ResourceRecordSetBuilder {
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.</p>
     /// </important>
     pub fn set_traffic_policy_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_policy_instance_id = input;
-        self
+        self.traffic_policy_instance_id = input; self
     }
     /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p><important>
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.</p>
@@ -1279,8 +1266,7 @@ impl ResourceRecordSetBuilder {
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
     pub fn set_cidr_routing_config(mut self, input: ::std::option::Option<crate::types::CidrRoutingConfig>) -> Self {
-        self.cidr_routing_config = input;
-        self
+        self.cidr_routing_config = input; self
     }
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
@@ -1294,8 +1280,7 @@ impl ResourceRecordSetBuilder {
     }
     /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
     pub fn set_geo_proximity_location(mut self, input: ::std::option::Option<crate::types::GeoProximityLocation>) -> Self {
-        self.geo_proximity_location = input;
-        self
+        self.geo_proximity_location = input; self
     }
     /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
     pub fn get_geo_proximity_location(&self) -> &::std::option::Option<crate::types::GeoProximityLocation> {
@@ -1306,32 +1291,46 @@ impl ResourceRecordSetBuilder {
     /// - [`name`](crate::types::builders::ResourceRecordSetBuilder::name)
     /// - [`r#type`](crate::types::builders::ResourceRecordSetBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceRecordSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceRecordSet {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ResourceRecordSet",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResourceRecordSet",
-                )
-            })?,
-            set_identifier: self.set_identifier,
-            weight: self.weight,
-            region: self.region,
-            geo_location: self.geo_location,
-            failover: self.failover,
-            multi_value_answer: self.multi_value_answer,
-            ttl: self.ttl,
-            resource_records: self.resource_records,
-            alias_target: self.alias_target,
-            health_check_id: self.health_check_id,
-            traffic_policy_instance_id: self.traffic_policy_instance_id,
-            cidr_routing_config: self.cidr_routing_config,
-            geo_proximity_location: self.geo_proximity_location,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceRecordSet {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ResourceRecordSet")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResourceRecordSet")
+                    )?
+                ,
+                set_identifier: self.set_identifier
+                ,
+                weight: self.weight
+                ,
+                region: self.region
+                ,
+                geo_location: self.geo_location
+                ,
+                failover: self.failover
+                ,
+                multi_value_answer: self.multi_value_answer
+                ,
+                ttl: self.ttl
+                ,
+                resource_records: self.resource_records
+                ,
+                alias_target: self.alias_target
+                ,
+                health_check_id: self.health_check_id
+                ,
+                traffic_policy_instance_id: self.traffic_policy_instance_id
+                ,
+                cidr_routing_config: self.cidr_routing_config
+                ,
+                geo_proximity_location: self.geo_proximity_location
+                ,
+            }
+        )
     }
 }
+

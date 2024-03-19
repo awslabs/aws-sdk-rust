@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsConfigurationType {
+pub struct AnalyticsConfigurationType  {
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
@@ -17,21 +17,21 @@ pub struct AnalyticsConfigurationType {
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub user_data_shared: bool,
 }
-impl AnalyticsConfigurationType {
+impl  AnalyticsConfigurationType  {
     /// <p>The application ID for an Amazon Pinpoint application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The external ID.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
@@ -64,8 +64,7 @@ impl AnalyticsConfigurationTypeBuilder {
     }
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl AnalyticsConfigurationTypeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl AnalyticsConfigurationTypeBuilder {
     }
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl AnalyticsConfigurationTypeBuilder {
     }
     /// <p>The external ID.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl AnalyticsConfigurationTypeBuilder {
     }
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub fn set_user_data_shared(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_data_shared = input;
-        self
+        self.user_data_shared = input; self
     }
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub fn get_user_data_shared(&self) -> &::std::option::Option<bool> {
@@ -130,11 +125,18 @@ impl AnalyticsConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`AnalyticsConfigurationType`](crate::types::AnalyticsConfigurationType).
     pub fn build(self) -> crate::types::AnalyticsConfigurationType {
         crate::types::AnalyticsConfigurationType {
-            application_id: self.application_id,
-            application_arn: self.application_arn,
-            role_arn: self.role_arn,
-            external_id: self.external_id,
-            user_data_shared: self.user_data_shared.unwrap_or_default(),
+            application_id: self.application_id
+            ,
+            application_arn: self.application_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            external_id: self.external_id
+            ,
+            user_data_shared: self.user_data_shared
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

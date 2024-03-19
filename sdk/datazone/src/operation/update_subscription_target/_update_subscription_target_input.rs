@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateSubscriptionTargetInput {
+pub struct UpdateSubscriptionTargetInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment in which a subscription target is to be updated.</p>
@@ -12,61 +12,64 @@ pub struct UpdateSubscriptionTargetInput {
     /// <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub applicable_asset_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
+    pub subscription_target_config: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>,
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub manage_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub provider: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSubscriptionTargetInput {
+impl  UpdateSubscriptionTargetInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the environment in which a subscription target is to be updated.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>Identifier of the subscription target that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_principals.is_none()`.
-    pub fn authorized_principals(&self) -> &[::std::string::String] {
-        self.authorized_principals.as_deref().unwrap_or_default()
+    pub fn authorized_principals(&self) -> & [::std::string::String] {
+        self.authorized_principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applicable_asset_types.is_none()`.
-    pub fn applicable_asset_types(&self) -> &[::std::string::String] {
-        self.applicable_asset_types.as_deref().unwrap_or_default()
+    pub fn applicable_asset_types(&self) -> & [::std::string::String] {
+        self.applicable_asset_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_target_config.is_none()`.
-    pub fn subscription_target_config(&self) -> &[crate::types::SubscriptionTargetForm] {
-        self.subscription_target_config.as_deref().unwrap_or_default()
+    pub fn subscription_target_config(&self) -> & [crate::types::SubscriptionTargetForm] {
+        self.subscription_target_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn manage_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn manage_access_role(&self) -> ::std::option::Option<& str> {
         self.manage_access_role.as_deref()
     }
     /// <p>The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateSubscriptionTargetInput {
+impl  ::std::fmt::Debug for UpdateSubscriptionTargetInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubscriptionTargetInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -96,9 +99,9 @@ pub struct UpdateSubscriptionTargetInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
+    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>,
     pub(crate) manage_access_role: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
 }
@@ -111,8 +114,7 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +128,7 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>The identifier of the environment in which a subscription target is to be updated.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The identifier of the environment in which a subscription target is to be updated.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +142,7 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>Identifier of the subscription target that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Identifier of the subscription target that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +155,7 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +168,16 @@ impl UpdateSubscriptionTargetInputBuilder {
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn authorized_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_principals.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_principals = input;
-        self
+    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_principals = input; self
     }
     /// <p>The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_principals
     }
     /// Appends an item to `applicable_asset_types`.
@@ -189,17 +187,16 @@ impl UpdateSubscriptionTargetInputBuilder {
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn applicable_asset_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.applicable_asset_types.unwrap_or_default();
-        v.push(input.into());
-        self.applicable_asset_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.applicable_asset_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.applicable_asset_types = input;
-        self
+    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.applicable_asset_types = input; self
     }
     /// <p>The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.applicable_asset_types
     }
     /// Appends an item to `subscription_target_config`.
@@ -209,17 +206,16 @@ impl UpdateSubscriptionTargetInputBuilder {
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn subscription_target_config(mut self, input: crate::types::SubscriptionTargetForm) -> Self {
         let mut v = self.subscription_target_config.unwrap_or_default();
-        v.push(input);
-        self.subscription_target_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscription_target_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>) -> Self {
-        self.subscription_target_config = input;
-        self
+    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>) -> Self {
+        self.subscription_target_config = input; self
     }
     /// <p>The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
-    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>> {
+    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>> {
         &self.subscription_target_config
     }
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
@@ -229,8 +225,7 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn set_manage_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manage_access_role = input;
-        self
+        self.manage_access_role = input; self
     }
     /// <p>The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn get_manage_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,31 +238,36 @@ impl UpdateSubscriptionTargetInputBuilder {
     }
     /// <p>The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionTargetInput`](crate::operation::update_subscription_target::UpdateSubscriptionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscription_target::UpdateSubscriptionTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_subscription_target::UpdateSubscriptionTargetInput {
-            domain_identifier: self.domain_identifier,
-            environment_identifier: self.environment_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            authorized_principals: self.authorized_principals,
-            applicable_asset_types: self.applicable_asset_types,
-            subscription_target_config: self.subscription_target_config,
-            manage_access_role: self.manage_access_role,
-            provider: self.provider,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscription_target::UpdateSubscriptionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscription_target::UpdateSubscriptionTargetInput {
+                domain_identifier: self.domain_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                authorized_principals: self.authorized_principals
+                ,
+                applicable_asset_types: self.applicable_asset_types
+                ,
+                subscription_target_config: self.subscription_target_config
+                ,
+                manage_access_role: self.manage_access_role
+                ,
+                provider: self.provider
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateSubscriptionTargetInputBuilder {
@@ -285,3 +285,4 @@ impl ::std::fmt::Debug for UpdateSubscriptionTargetInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelImportTaskInput {
+pub struct CancelImportTaskInput  {
     /// <p>The reason for canceling the task.</p>
     pub cancel_reason: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -10,9 +10,9 @@ pub struct CancelImportTaskInput {
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
     pub import_task_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelImportTaskInput {
+impl  CancelImportTaskInput  {
     /// <p>The reason for canceling the task.</p>
-    pub fn cancel_reason(&self) -> ::std::option::Option<&str> {
+    pub fn cancel_reason(&self) -> ::std::option::Option<& str> {
         self.cancel_reason.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20,7 +20,7 @@ impl CancelImportTaskInput {
         self.dry_run
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
-    pub fn import_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_task_id(&self) -> ::std::option::Option<& str> {
         self.import_task_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl CancelImportTaskInputBuilder {
     }
     /// <p>The reason for canceling the task.</p>
     pub fn set_cancel_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cancel_reason = input;
-        self
+        self.cancel_reason = input; self
     }
     /// <p>The reason for canceling the task.</p>
     pub fn get_cancel_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl CancelImportTaskInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -75,21 +73,24 @@ impl CancelImportTaskInputBuilder {
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
     pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_task_id = input;
-        self
+        self.import_task_id = input; self
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
     pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_task_id
     }
     /// Consumes the builder and constructs a [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_import_task::CancelImportTaskInput {
-            cancel_reason: self.cancel_reason,
-            dry_run: self.dry_run,
-            import_task_id: self.import_task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_import_task::CancelImportTaskInput {
+                cancel_reason: self.cancel_reason
+                ,
+                dry_run: self.dry_run
+                ,
+                import_task_id: self.import_task_id
+                ,
+            }
+        )
     }
 }
+

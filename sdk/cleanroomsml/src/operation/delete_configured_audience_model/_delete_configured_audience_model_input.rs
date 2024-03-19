@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfiguredAudienceModelInput {
+pub struct DeleteConfiguredAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to delete.</p>
     pub configured_audience_model_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfiguredAudienceModelInput {
+impl  DeleteConfiguredAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to delete.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteConfiguredAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to delete.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you want to delete.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_audience_model_arn
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredAudienceModelInput`](crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput {
-            configured_audience_model_arn: self.configured_audience_model_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput {
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+            }
+        )
     }
 }
+

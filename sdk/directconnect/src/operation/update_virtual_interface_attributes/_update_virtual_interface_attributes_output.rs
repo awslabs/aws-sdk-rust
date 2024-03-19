@@ -3,7 +3,7 @@
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVirtualInterfaceAttributesOutput {
+pub struct UpdateVirtualInterfaceAttributesOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface.</p>
@@ -64,9 +64,9 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub route_filter_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub route_filter_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub bgp_peers: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>,
+    pub bgp_peers: ::std::option::Option<::std::vec::Vec::<crate::types::BgpPeer>>,
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
@@ -74,34 +74,34 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub site_link_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl UpdateVirtualInterfaceAttributesOutput {
+impl  UpdateVirtualInterfaceAttributesOutput  {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
-    pub fn virtual_interface_type(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_type(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_type.as_deref()
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
-    pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -118,19 +118,19 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.amazon_side_asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> ::std::option::Option<&str> {
+    pub fn auth_key(&self) -> ::std::option::Option<& str> {
         self.auth_key.as_deref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> ::std::option::Option<&str> {
+    pub fn amazon_address(&self) -> ::std::option::Option<& str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> ::std::option::Option<&str> {
+    pub fn customer_address(&self) -> ::std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> ::std::option::Option<&crate::types::AddressFamily> {
+    pub fn address_family(&self) -> ::std::option::Option<& crate::types::AddressFamily> {
         self.address_family.as_ref()
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -154,11 +154,11 @@ impl UpdateVirtualInterfaceAttributesOutput {
     /// <li>
     /// <p><code>unknown</code>: The state of the virtual interface is not available.</p></li>
     /// </ul>
-    pub fn virtual_interface_state(&self) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> ::std::option::Option<& crate::types::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> ::std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> ::std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
@@ -170,42 +170,45 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.jumbo_frame_capable
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_filter_prefixes.is_none()`.
-    pub fn route_filter_prefixes(&self) -> &[crate::types::RouteFilterPrefix] {
-        self.route_filter_prefixes.as_deref().unwrap_or_default()
+    pub fn route_filter_prefixes(&self) -> & [crate::types::RouteFilterPrefix] {
+        self.route_filter_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
-    pub fn bgp_peers(&self) -> &[crate::types::BgpPeer] {
-        self.bgp_peers.as_deref().unwrap_or_default()
+    pub fn bgp_peers(&self) -> & [crate::types::BgpPeer] {
+        self.bgp_peers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> ::std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> ::std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn site_link_enabled(&self) -> ::std::option::Option<bool> {
@@ -213,10 +216,10 @@ impl UpdateVirtualInterfaceAttributesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVirtualInterfaceAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVirtualInterfaceAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput).
     pub fn builder() -> crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesOutputBuilder {
@@ -247,12 +250,12 @@ pub struct UpdateVirtualInterfaceAttributesOutputBuilder {
     pub(crate) jumbo_frame_capable: ::std::option::Option<bool>,
     pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) route_filter_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>,
+    pub(crate) route_filter_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
+    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec::<crate::types::BgpPeer>>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) aws_device_v2: ::std::option::Option<::std::string::String>,
     pub(crate) aws_logical_device_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) site_link_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -264,8 +267,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +280,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -292,8 +293,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The location of the connection.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the connection.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +306,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -320,8 +319,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
     pub fn set_virtual_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_type = input;
-        self
+        self.virtual_interface_type = input; self
     }
     /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
     pub fn get_virtual_interface_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -334,8 +332,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_name = input;
-        self
+        self.virtual_interface_name = input; self
     }
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
     pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,8 +345,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the VLAN.</p>
     pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vlan = input;
-        self
+        self.vlan = input; self
     }
     /// <p>The ID of the VLAN.</p>
     pub fn get_vlan(&self) -> &::std::option::Option<i32> {
@@ -364,8 +360,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     /// <p>The valid values are 1-2147483647.</p>
@@ -379,8 +374,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.amazon_side_asn = input;
-        self
+        self.amazon_side_asn = input; self
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
@@ -393,8 +387,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_key = input;
-        self
+        self.auth_key = input; self
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn get_auth_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -407,8 +400,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
     pub fn set_amazon_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amazon_address = input;
-        self
+        self.amazon_address = input; self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
     pub fn get_amazon_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -421,8 +413,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_address = input;
-        self
+        self.customer_address = input; self
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -435,8 +426,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
-        self.address_family = input;
-        self
+        self.address_family = input; self
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
@@ -489,8 +479,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     /// <p><code>unknown</code>: The state of the virtual interface is not available.</p></li>
     /// </ul>
     pub fn set_virtual_interface_state(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceState>) -> Self {
-        self.virtual_interface_state = input;
-        self
+        self.virtual_interface_state = input; self
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -523,8 +512,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The customer router configuration.</p>
     pub fn set_customer_router_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_router_config = input;
-        self
+        self.customer_router_config = input; self
     }
     /// <p>The customer router configuration.</p>
     pub fn get_customer_router_config(&self) -> &::std::option::Option<::std::string::String> {
@@ -537,8 +525,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mtu = input;
-        self
+        self.mtu = input; self
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn get_mtu(&self) -> &::std::option::Option<i32> {
@@ -551,8 +538,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.jumbo_frame_capable = input;
-        self
+        self.jumbo_frame_capable = input; self
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
@@ -565,8 +551,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_gateway_id = input;
-        self
+        self.virtual_gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -579,8 +564,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -593,17 +577,16 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
     pub fn route_filter_prefixes(mut self, input: crate::types::RouteFilterPrefix) -> Self {
         let mut v = self.route_filter_prefixes.unwrap_or_default();
-        v.push(input);
-        self.route_filter_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.route_filter_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn set_route_filter_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>) -> Self {
-        self.route_filter_prefixes = input;
-        self
+    pub fn set_route_filter_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>) -> Self {
+        self.route_filter_prefixes = input; self
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn get_route_filter_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+    pub fn get_route_filter_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>> {
         &self.route_filter_prefixes
     }
     /// Appends an item to `bgp_peers`.
@@ -613,17 +596,16 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub fn bgp_peers(mut self, input: crate::types::BgpPeer) -> Self {
         let mut v = self.bgp_peers.unwrap_or_default();
-        v.push(input);
-        self.bgp_peers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bgp_peers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>>) -> Self {
-        self.bgp_peers = input;
-        self
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BgpPeer>>) -> Self {
+        self.bgp_peers = input; self
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BgpPeer>> {
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BgpPeer>> {
         &self.bgp_peers
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
@@ -633,8 +615,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -647,8 +628,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_device_v2 = input;
-        self
+        self.aws_device_v2 = input; self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
@@ -661,8 +641,7 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_logical_device_id = input;
-        self
+        self.aws_logical_device_id = input; self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -675,17 +654,16 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     /// <p>The tags associated with the virtual interface.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
@@ -695,52 +673,80 @@ impl UpdateVirtualInterfaceAttributesOutputBuilder {
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn set_site_link_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.site_link_enabled = input;
-        self
+        self.site_link_enabled = input; self
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn get_site_link_enabled(&self) -> &::std::option::Option<bool> {
         &self.site_link_enabled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput).
     pub fn build(self) -> crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput {
         crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput {
-            owner_account: self.owner_account,
-            virtual_interface_id: self.virtual_interface_id,
-            location: self.location,
-            connection_id: self.connection_id,
-            virtual_interface_type: self.virtual_interface_type,
-            virtual_interface_name: self.virtual_interface_name,
-            vlan: self.vlan.unwrap_or_default(),
-            asn: self.asn.unwrap_or_default(),
-            amazon_side_asn: self.amazon_side_asn,
-            auth_key: self.auth_key,
-            amazon_address: self.amazon_address,
-            customer_address: self.customer_address,
-            address_family: self.address_family,
-            virtual_interface_state: self.virtual_interface_state,
-            customer_router_config: self.customer_router_config,
-            mtu: self.mtu,
-            jumbo_frame_capable: self.jumbo_frame_capable,
-            virtual_gateway_id: self.virtual_gateway_id,
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-            route_filter_prefixes: self.route_filter_prefixes,
-            bgp_peers: self.bgp_peers,
-            region: self.region,
-            aws_device_v2: self.aws_device_v2,
-            aws_logical_device_id: self.aws_logical_device_id,
-            tags: self.tags,
-            site_link_enabled: self.site_link_enabled,
+            owner_account: self.owner_account
+            ,
+            virtual_interface_id: self.virtual_interface_id
+            ,
+            location: self.location
+            ,
+            connection_id: self.connection_id
+            ,
+            virtual_interface_type: self.virtual_interface_type
+            ,
+            virtual_interface_name: self.virtual_interface_name
+            ,
+            vlan: self.vlan
+                .unwrap_or_default()
+            ,
+            asn: self.asn
+                .unwrap_or_default()
+            ,
+            amazon_side_asn: self.amazon_side_asn
+            ,
+            auth_key: self.auth_key
+            ,
+            amazon_address: self.amazon_address
+            ,
+            customer_address: self.customer_address
+            ,
+            address_family: self.address_family
+            ,
+            virtual_interface_state: self.virtual_interface_state
+            ,
+            customer_router_config: self.customer_router_config
+            ,
+            mtu: self.mtu
+            ,
+            jumbo_frame_capable: self.jumbo_frame_capable
+            ,
+            virtual_gateway_id: self.virtual_gateway_id
+            ,
+            direct_connect_gateway_id: self.direct_connect_gateway_id
+            ,
+            route_filter_prefixes: self.route_filter_prefixes
+            ,
+            bgp_peers: self.bgp_peers
+            ,
+            region: self.region
+            ,
+            aws_device_v2: self.aws_device_v2
+            ,
+            aws_logical_device_id: self.aws_logical_device_id
+            ,
+            tags: self.tags
+            ,
+            site_link_enabled: self.site_link_enabled
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProductViewOutput {
+pub struct DescribeProductViewOutput  {
     /// <p>Summary information about the product.</p>
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub provisioning_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifact>>,
     _request_id: Option<String>,
 }
-impl DescribeProductViewOutput {
+impl  DescribeProductViewOutput  {
     /// <p>Summary information about the product.</p>
-    pub fn product_view_summary(&self) -> ::std::option::Option<&crate::types::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> ::std::option::Option<& crate::types::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifacts.is_none()`.
-    pub fn provisioning_artifacts(&self) -> &[crate::types::ProvisioningArtifact] {
-        self.provisioning_artifacts.as_deref().unwrap_or_default()
+    pub fn provisioning_artifacts(&self) -> & [crate::types::ProvisioningArtifact] {
+        self.provisioning_artifacts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProductViewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProductViewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput).
     pub fn builder() -> crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeProductViewOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductViewOutputBuilder {
     pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
-    pub(crate) provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub(crate) provisioning_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifact>>,
     _request_id: Option<String>,
 }
 impl DescribeProductViewOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeProductViewOutputBuilder {
     }
     /// <p>Summary information about the product.</p>
     pub fn set_product_view_summary(mut self, input: ::std::option::Option<crate::types::ProductViewSummary>) -> Self {
-        self.product_view_summary = input;
-        self
+        self.product_view_summary = input; self
     }
     /// <p>Summary information about the product.</p>
     pub fn get_product_view_summary(&self) -> &::std::option::Option<crate::types::ProductViewSummary> {
@@ -63,34 +63,36 @@ impl DescribeProductViewOutputBuilder {
     /// <p>Information about the provisioning artifacts for the product.</p>
     pub fn provisioning_artifacts(mut self, input: crate::types::ProvisioningArtifact) -> Self {
         let mut v = self.provisioning_artifacts.unwrap_or_default();
-        v.push(input);
-        self.provisioning_artifacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_artifacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn set_provisioning_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>) -> Self {
-        self.provisioning_artifacts = input;
-        self
+    pub fn set_provisioning_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifact>>) -> Self {
+        self.provisioning_artifacts = input; self
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn get_provisioning_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>> {
+    pub fn get_provisioning_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifact>> {
         &self.provisioning_artifacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput).
     pub fn build(self) -> crate::operation::describe_product_view::DescribeProductViewOutput {
         crate::operation::describe_product_view::DescribeProductViewOutput {
-            product_view_summary: self.product_view_summary,
-            provisioning_artifacts: self.provisioning_artifacts,
+            product_view_summary: self.product_view_summary
+            ,
+            provisioning_artifacts: self.provisioning_artifacts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

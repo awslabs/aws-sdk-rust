@@ -3,7 +3,7 @@
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculateRouteCarModeOptions {
+pub struct CalculateRouteCarModeOptions  {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
     /// <p>Valid Values: <code>false</code> | <code>true</code></p>
@@ -13,7 +13,7 @@ pub struct CalculateRouteCarModeOptions {
     /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub avoid_tolls: ::std::option::Option<bool>,
 }
-impl CalculateRouteCarModeOptions {
+impl  CalculateRouteCarModeOptions  {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
     /// <p>Valid Values: <code>false</code> | <code>true</code></p>
@@ -53,8 +53,7 @@ impl CalculateRouteCarModeOptionsBuilder {
     /// <p>Default Value: <code>false</code></p>
     /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn set_avoid_ferries(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.avoid_ferries = input;
-        self
+        self.avoid_ferries = input; self
     }
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
@@ -73,8 +72,7 @@ impl CalculateRouteCarModeOptionsBuilder {
     /// <p>Default Value: <code>false</code></p>
     /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn set_avoid_tolls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.avoid_tolls = input;
-        self
+        self.avoid_tolls = input; self
     }
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
@@ -85,8 +83,11 @@ impl CalculateRouteCarModeOptionsBuilder {
     /// Consumes the builder and constructs a [`CalculateRouteCarModeOptions`](crate::types::CalculateRouteCarModeOptions).
     pub fn build(self) -> crate::types::CalculateRouteCarModeOptions {
         crate::types::CalculateRouteCarModeOptions {
-            avoid_ferries: self.avoid_ferries,
-            avoid_tolls: self.avoid_tolls,
+            avoid_ferries: self.avoid_ferries
+            ,
+            avoid_tolls: self.avoid_tolls
+            ,
         }
     }
 }
+

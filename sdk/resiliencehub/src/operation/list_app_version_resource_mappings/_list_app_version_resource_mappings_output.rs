@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppVersionResourceMappingsOutput {
+pub struct ListAppVersionResourceMappingsOutput  {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub resource_mappings: ::std::vec::Vec<crate::types::ResourceMapping>,
+    pub resource_mappings: ::std::vec::Vec::<crate::types::ResourceMapping>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppVersionResourceMappingsOutput {
+impl  ListAppVersionResourceMappingsOutput  {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn resource_mappings(&self) -> &[crate::types::ResourceMapping] {
-        use std::ops::Deref;
-        self.resource_mappings.deref()
+    pub fn resource_mappings(&self) -> & [crate::types::ResourceMapping] {
+        use std::ops::Deref; self.resource_mappings.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppVersionResourceMappingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
     pub fn builder() -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAppVersionResourceMappingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionResourceMappingsOutputBuilder {
-    pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
+    pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAppVersionResourceMappingsOutputBuilder {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     pub fn resource_mappings(mut self, input: crate::types::ResourceMapping) -> Self {
         let mut v = self.resource_mappings.unwrap_or_default();
-        v.push(input);
-        self.resource_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>) -> Self {
-        self.resource_mappings = input;
-        self
+    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapping>>) -> Self {
+        self.resource_mappings = input; self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapping>> {
         &self.resource_mappings
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
@@ -68,42 +66,37 @@ impl ListAppVersionResourceMappingsOutputBuilder {
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_mappings`](crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsOutputBuilder::resource_mappings)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput {
-                resource_mappings: self.resource_mappings.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "resource_mappings",
-                        "resource_mappings was not specified but it is required when building ListAppVersionResourceMappingsOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                resource_mappings: self.resource_mappings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_mappings", "resource_mappings was not specified but it is required when building ListAppVersionResourceMappingsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

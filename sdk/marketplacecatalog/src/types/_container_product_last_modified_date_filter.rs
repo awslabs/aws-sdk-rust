@@ -3,13 +3,13 @@
 /// <p>Object that allows filtering based on the last modified date of container products.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerProductLastModifiedDateFilter {
+pub struct ContainerProductLastModifiedDateFilter  {
     /// <p>Dates between which the container product was last modified.</p>
     pub date_range: ::std::option::Option<crate::types::ContainerProductLastModifiedDateFilterDateRange>,
 }
-impl ContainerProductLastModifiedDateFilter {
+impl  ContainerProductLastModifiedDateFilter  {
     /// <p>Dates between which the container product was last modified.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::ContainerProductLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::ContainerProductLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ContainerProductLastModifiedDateFilterBuilder {
     }
     /// <p>Dates between which the container product was last modified.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::ContainerProductLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Dates between which the container product was last modified.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::ContainerProductLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl ContainerProductLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ContainerProductLastModifiedDateFilter`](crate::types::ContainerProductLastModifiedDateFilter).
     pub fn build(self) -> crate::types::ContainerProductLastModifiedDateFilter {
-        crate::types::ContainerProductLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::ContainerProductLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

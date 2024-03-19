@@ -3,13 +3,13 @@
 /// <p>Entity that comprises information of count and percentage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountPercent {
+pub struct CountPercent  {
     /// <p>Indicates the count of occurences of the given statistic.</p>
     pub count: i32,
     /// <p>Indicates the percentage of occurances of the given statistic.</p>
     pub percentage: f32,
 }
-impl CountPercent {
+impl  CountPercent  {
     /// <p>Indicates the count of occurences of the given statistic.</p>
     pub fn count(&self) -> i32 {
         self.count
@@ -42,8 +42,7 @@ impl CountPercentBuilder {
     }
     /// <p>Indicates the count of occurences of the given statistic.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Indicates the count of occurences of the given statistic.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl CountPercentBuilder {
     }
     /// <p>Indicates the percentage of occurances of the given statistic.</p>
     pub fn set_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.percentage = input;
-        self
+        self.percentage = input; self
     }
     /// <p>Indicates the percentage of occurances of the given statistic.</p>
     pub fn get_percentage(&self) -> &::std::option::Option<f32> {
@@ -68,14 +66,18 @@ impl CountPercentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`count`](crate::types::builders::CountPercentBuilder::count)
     pub fn build(self) -> ::std::result::Result<crate::types::CountPercent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CountPercent {
-            count: self.count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "count",
-                    "count was not specified but it is required when building CountPercent",
-                )
-            })?,
-            percentage: self.percentage.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::CountPercent {
+                count: self.count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("count", "count was not specified but it is required when building CountPercent")
+                    )?
+                ,
+                percentage: self.percentage
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

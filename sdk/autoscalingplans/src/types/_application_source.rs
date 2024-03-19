@@ -3,22 +3,23 @@
 /// <p>Represents an application source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSource {
+pub struct ApplicationSource  {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
     pub cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags (up to 50).</p>
-    pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
 }
-impl ApplicationSource {
+impl  ApplicationSource  {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
-    pub fn cloud_formation_stack_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_formation_stack_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_formation_stack_arn.as_deref()
     }
     /// <p>A set of tags (up to 50).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
-    pub fn tag_filters(&self) -> &[crate::types::TagFilter] {
-        self.tag_filters.as_deref().unwrap_or_default()
+    pub fn tag_filters(&self) -> & [crate::types::TagFilter] {
+        self.tag_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ApplicationSource {
@@ -33,7 +34,7 @@ impl ApplicationSource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSourceBuilder {
     pub(crate) cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
 }
 impl ApplicationSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
@@ -43,8 +44,7 @@ impl ApplicationSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
     pub fn set_cloud_formation_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_formation_stack_arn = input;
-        self
+        self.cloud_formation_stack_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
     pub fn get_cloud_formation_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ApplicationSourceBuilder {
     /// <p>A set of tags (up to 50).</p>
     pub fn tag_filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.tag_filters.unwrap_or_default();
-        v.push(input);
-        self.tag_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
-        self.tag_filters = input;
-        self
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>) -> Self {
+        self.tag_filters = input; self
     }
     /// <p>A set of tags (up to 50).</p>
-    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>> {
         &self.tag_filters
     }
     /// Consumes the builder and constructs a [`ApplicationSource`](crate::types::ApplicationSource).
     pub fn build(self) -> crate::types::ApplicationSource {
         crate::types::ApplicationSource {
-            cloud_formation_stack_arn: self.cloud_formation_stack_arn,
-            tag_filters: self.tag_filters,
+            cloud_formation_stack_arn: self.cloud_formation_stack_arn
+            ,
+            tag_filters: self.tag_filters
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides test case scenario.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestCaseScenario {
+pub struct TestCaseScenario  {
     /// <p>Provides test case scenario ID.</p>
     pub test_case_scenario_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case scenario type. Type is one of the following:</p>
@@ -39,9 +39,9 @@ pub struct TestCaseScenario {
     /// <p>Provides test case scenario system messages if any.</p>
     pub system_message: ::std::option::Option<::std::string::String>,
 }
-impl TestCaseScenario {
+impl  TestCaseScenario  {
     /// <p>Provides test case scenario ID.</p>
-    pub fn test_case_scenario_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_case_scenario_id(&self) -> ::std::option::Option<& str> {
         self.test_case_scenario_id.as_deref()
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
@@ -51,7 +51,7 @@ impl TestCaseScenario {
     /// <li>
     /// <p>Basic</p></li>
     /// </ul>
-    pub fn test_case_scenario_type(&self) -> ::std::option::Option<&crate::types::TestCaseScenarioType> {
+    pub fn test_case_scenario_type(&self) -> ::std::option::Option<& crate::types::TestCaseScenarioType> {
         self.test_case_scenario_type.as_ref()
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
@@ -73,15 +73,15 @@ impl TestCaseScenario {
     /// <li>
     /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TestCaseScenarioStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TestCaseScenarioStatus> {
         self.status.as_ref()
     }
     /// <p>Provides test case scenario failure result.</p>
-    pub fn failure(&self) -> ::std::option::Option<&str> {
+    pub fn failure(&self) -> ::std::option::Option<& str> {
         self.failure.as_deref()
     }
     /// <p>Provides test case scenario system messages if any.</p>
-    pub fn system_message(&self) -> ::std::option::Option<&str> {
+    pub fn system_message(&self) -> ::std::option::Option<& str> {
         self.system_message.as_deref()
     }
 }
@@ -110,8 +110,7 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario ID.</p>
     pub fn set_test_case_scenario_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_case_scenario_id = input;
-        self
+        self.test_case_scenario_id = input; self
     }
     /// <p>Provides test case scenario ID.</p>
     pub fn get_test_case_scenario_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl TestCaseScenarioBuilder {
     /// <p>Basic</p></li>
     /// </ul>
     pub fn set_test_case_scenario_type(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioType>) -> Self {
-        self.test_case_scenario_type = input;
-        self
+        self.test_case_scenario_type = input; self
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
@@ -192,8 +190,7 @@ impl TestCaseScenarioBuilder {
     /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
@@ -224,8 +221,7 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario failure result.</p>
     pub fn set_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure = input;
-        self
+        self.failure = input; self
     }
     /// <p>Provides test case scenario failure result.</p>
     pub fn get_failure(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +234,7 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario system messages if any.</p>
     pub fn set_system_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message = input;
-        self
+        self.system_message = input; self
     }
     /// <p>Provides test case scenario system messages if any.</p>
     pub fn get_system_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,11 +243,17 @@ impl TestCaseScenarioBuilder {
     /// Consumes the builder and constructs a [`TestCaseScenario`](crate::types::TestCaseScenario).
     pub fn build(self) -> crate::types::TestCaseScenario {
         crate::types::TestCaseScenario {
-            test_case_scenario_id: self.test_case_scenario_id,
-            test_case_scenario_type: self.test_case_scenario_type,
-            status: self.status,
-            failure: self.failure,
-            system_message: self.system_message,
+            test_case_scenario_id: self.test_case_scenario_id
+            ,
+            test_case_scenario_type: self.test_case_scenario_type
+            ,
+            status: self.status
+            ,
+            failure: self.failure
+            ,
+            system_message: self.system_message
+            ,
         }
     }
 }
+

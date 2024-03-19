@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionAliasInput {
+pub struct DeleteConnectionAliasInput  {
     /// <p>The identifier of the connection alias to delete.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectionAliasInput {
+impl  DeleteConnectionAliasInput  {
     /// <p>The identifier of the connection alias to delete.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteConnectionAliasInputBuilder {
     }
     /// <p>The identifier of the connection alias to delete.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>The identifier of the connection alias to delete.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_connection_alias::DeleteConnectionAliasInput { alias_id: self.alias_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connection_alias::DeleteConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connection_alias::DeleteConnectionAliasInput {
+                alias_id: self.alias_id
+                ,
+            }
+        )
     }
 }
+

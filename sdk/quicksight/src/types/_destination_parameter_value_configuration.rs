@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationParameterValueConfiguration {
+pub struct DestinationParameterValueConfiguration  {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     pub custom_values_configuration: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     /// <p>The configuration that selects all options.</p>
@@ -16,25 +16,25 @@ pub struct DestinationParameterValueConfiguration {
     /// <p>A column of a data set.</p>
     pub source_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
-impl DestinationParameterValueConfiguration {
+impl  DestinationParameterValueConfiguration  {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    pub fn custom_values_configuration(&self) -> ::std::option::Option<&crate::types::CustomValuesConfiguration> {
+    pub fn custom_values_configuration(&self) -> ::std::option::Option<& crate::types::CustomValuesConfiguration> {
         self.custom_values_configuration.as_ref()
     }
     /// <p>The configuration that selects all options.</p>
-    pub fn select_all_value_options(&self) -> ::std::option::Option<&crate::types::SelectAllValueOptions> {
+    pub fn select_all_value_options(&self) -> ::std::option::Option<& crate::types::SelectAllValueOptions> {
         self.select_all_value_options.as_ref()
     }
     /// <p>The source parameter name of the destination parameter.</p>
-    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_parameter_name(&self) -> ::std::option::Option<& str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The source field ID of the destination parameter.</p>
-    pub fn source_field(&self) -> ::std::option::Option<&str> {
+    pub fn source_field(&self) -> ::std::option::Option<& str> {
         self.source_field.as_deref()
     }
     /// <p>A column of a data set.</p>
-    pub fn source_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn source_column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.source_column.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl DestinationParameterValueConfigurationBuilder {
     }
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     pub fn set_custom_values_configuration(mut self, input: ::std::option::Option<crate::types::CustomValuesConfiguration>) -> Self {
-        self.custom_values_configuration = input;
-        self
+        self.custom_values_configuration = input; self
     }
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     pub fn get_custom_values_configuration(&self) -> &::std::option::Option<crate::types::CustomValuesConfiguration> {
@@ -77,8 +76,7 @@ impl DestinationParameterValueConfigurationBuilder {
     }
     /// <p>The configuration that selects all options.</p>
     pub fn set_select_all_value_options(mut self, input: ::std::option::Option<crate::types::SelectAllValueOptions>) -> Self {
-        self.select_all_value_options = input;
-        self
+        self.select_all_value_options = input; self
     }
     /// <p>The configuration that selects all options.</p>
     pub fn get_select_all_value_options(&self) -> &::std::option::Option<crate::types::SelectAllValueOptions> {
@@ -91,8 +89,7 @@ impl DestinationParameterValueConfigurationBuilder {
     }
     /// <p>The source parameter name of the destination parameter.</p>
     pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_parameter_name = input;
-        self
+        self.source_parameter_name = input; self
     }
     /// <p>The source parameter name of the destination parameter.</p>
     pub fn get_source_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl DestinationParameterValueConfigurationBuilder {
     }
     /// <p>The source field ID of the destination parameter.</p>
     pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_field = input;
-        self
+        self.source_field = input; self
     }
     /// <p>The source field ID of the destination parameter.</p>
     pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl DestinationParameterValueConfigurationBuilder {
     }
     /// <p>A column of a data set.</p>
     pub fn set_source_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.source_column = input;
-        self
+        self.source_column = input; self
     }
     /// <p>A column of a data set.</p>
     pub fn get_source_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -129,11 +124,17 @@ impl DestinationParameterValueConfigurationBuilder {
     /// Consumes the builder and constructs a [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
     pub fn build(self) -> crate::types::DestinationParameterValueConfiguration {
         crate::types::DestinationParameterValueConfiguration {
-            custom_values_configuration: self.custom_values_configuration,
-            select_all_value_options: self.select_all_value_options,
-            source_parameter_name: self.source_parameter_name,
-            source_field: self.source_field,
-            source_column: self.source_column,
+            custom_values_configuration: self.custom_values_configuration
+            ,
+            select_all_value_options: self.select_all_value_options
+            ,
+            source_parameter_name: self.source_parameter_name
+            ,
+            source_field: self.source_field
+            ,
+            source_column: self.source_column
+            ,
         }
     }
 }
+

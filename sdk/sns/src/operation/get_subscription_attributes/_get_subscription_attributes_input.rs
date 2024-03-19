@@ -3,13 +3,13 @@
 /// <p>Input for GetSubscriptionAttributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubscriptionAttributesInput {
+pub struct GetSubscriptionAttributesInput  {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSubscriptionAttributesInput {
+impl  GetSubscriptionAttributesInput  {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    pub fn subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> ::std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl GetSubscriptionAttributesInputBuilder {
     }
     /// <p>The ARN of the subscription whose properties you want to get.</p>
     pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_arn = input;
-        self
+        self.subscription_arn = input; self
     }
     /// <p>The ARN of the subscription whose properties you want to get.</p>
     pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_arn
     }
     /// Consumes the builder and constructs a [`GetSubscriptionAttributesInput`](crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput {
-            subscription_arn: self.subscription_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput {
+                subscription_arn: self.subscription_arn
+                ,
+            }
+        )
     }
 }
+

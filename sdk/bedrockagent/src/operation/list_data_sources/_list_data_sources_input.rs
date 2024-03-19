@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourcesInput {
+pub struct ListDataSourcesInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Max Results.
@@ -10,9 +10,9 @@ pub struct ListDataSourcesInput {
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDataSourcesInput {
+impl  ListDataSourcesInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Max Results.
@@ -20,7 +20,7 @@ impl ListDataSourcesInput {
         self.max_results
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListDataSourcesInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListDataSourcesInputBuilder {
     }
     /// Max Results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Max Results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListDataSourcesInputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
-            knowledge_base_id: self.knowledge_base_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_sources::ListDataSourcesInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

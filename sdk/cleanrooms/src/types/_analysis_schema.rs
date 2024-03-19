@@ -3,16 +3,17 @@
 /// <p>A relation within an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisSchema {
+pub struct AnalysisSchema  {
     /// <p>The tables referenced in the analysis schema.</p>
-    pub referenced_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub referenced_tables: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AnalysisSchema {
+impl  AnalysisSchema  {
     /// <p>The tables referenced in the analysis schema.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.referenced_tables.is_none()`.
-    pub fn referenced_tables(&self) -> &[::std::string::String] {
-        self.referenced_tables.as_deref().unwrap_or_default()
+    pub fn referenced_tables(&self) -> & [::std::string::String] {
+        self.referenced_tables.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnalysisSchema {
@@ -26,7 +27,7 @@ impl AnalysisSchema {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisSchemaBuilder {
-    pub(crate) referenced_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) referenced_tables: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AnalysisSchemaBuilder {
     /// Appends an item to `referenced_tables`.
@@ -36,23 +37,24 @@ impl AnalysisSchemaBuilder {
     /// <p>The tables referenced in the analysis schema.</p>
     pub fn referenced_tables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.referenced_tables.unwrap_or_default();
-        v.push(input.into());
-        self.referenced_tables = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.referenced_tables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tables referenced in the analysis schema.</p>
-    pub fn set_referenced_tables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.referenced_tables = input;
-        self
+    pub fn set_referenced_tables(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.referenced_tables = input; self
     }
     /// <p>The tables referenced in the analysis schema.</p>
-    pub fn get_referenced_tables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_referenced_tables(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.referenced_tables
     }
     /// Consumes the builder and constructs a [`AnalysisSchema`](crate::types::AnalysisSchema).
     pub fn build(self) -> crate::types::AnalysisSchema {
         crate::types::AnalysisSchema {
-            referenced_tables: self.referenced_tables,
+            referenced_tables: self.referenced_tables
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>This data type contains information about the progress event of an operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProgressEvent {
+pub struct ProgressEvent  {
     /// <p>The Progress event details.</p>
     pub details: ::std::option::Option<crate::types::Progress>,
 }
-impl ProgressEvent {
+impl  ProgressEvent  {
     /// <p>The Progress event details.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::Progress> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::Progress> {
         self.details.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ProgressEventBuilder {
     }
     /// <p>The Progress event details.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::Progress>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>The Progress event details.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::Progress> {
@@ -43,6 +42,10 @@ impl ProgressEventBuilder {
     }
     /// Consumes the builder and constructs a [`ProgressEvent`](crate::types::ProgressEvent).
     pub fn build(self) -> crate::types::ProgressEvent {
-        crate::types::ProgressEvent { details: self.details }
+        crate::types::ProgressEvent {
+            details: self.details
+            ,
+        }
     }
 }
+

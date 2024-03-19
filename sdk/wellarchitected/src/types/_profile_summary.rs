@@ -3,7 +3,7 @@
 /// <p>Summary of a profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileSummary {
+pub struct ProfileSummary  {
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile version.</p>
@@ -19,33 +19,33 @@ pub struct ProfileSummary {
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ProfileSummary {
+impl  ProfileSummary  {
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
     /// <p>The profile name.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The profile description.</p>
-    pub fn profile_description(&self) -> ::std::option::Option<&str> {
+    pub fn profile_description(&self) -> ::std::option::Option<& str> {
         self.profile_description.as_deref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The profile version.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>The profile version.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The profile name.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The profile name.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The profile description.</p>
     pub fn set_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_description = input;
-        self
+        self.profile_description = input; self
     }
     /// <p>The profile description.</p>
     pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl ProfileSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl ProfileSummaryBuilder {
     /// Consumes the builder and constructs a [`ProfileSummary`](crate::types::ProfileSummary).
     pub fn build(self) -> crate::types::ProfileSummary {
         crate::types::ProfileSummary {
-            profile_arn: self.profile_arn,
-            profile_version: self.profile_version,
-            profile_name: self.profile_name,
-            profile_description: self.profile_description,
-            owner: self.owner,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            profile_arn: self.profile_arn
+            ,
+            profile_version: self.profile_version
+            ,
+            profile_name: self.profile_name
+            ,
+            profile_description: self.profile_description
+            ,
+            owner: self.owner
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterTransitGatewayInput {
+pub struct RegisterTransitGatewayInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterTransitGatewayInput {
+impl  RegisterTransitGatewayInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RegisterTransitGatewayInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl RegisterTransitGatewayInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_arn = input;
-        self
+        self.transit_gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_arn
     }
     /// Consumes the builder and constructs a [`RegisterTransitGatewayInput`](crate::operation::register_transit_gateway::RegisterTransitGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_transit_gateway::RegisterTransitGatewayInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_transit_gateway::RegisterTransitGatewayInput {
-            global_network_id: self.global_network_id,
-            transit_gateway_arn: self.transit_gateway_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_transit_gateway::RegisterTransitGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_transit_gateway::RegisterTransitGatewayInput {
+                global_network_id: self.global_network_id
+                ,
+                transit_gateway_arn: self.transit_gateway_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detailed information about an AWS Mobile Hub project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectDetails {
+pub struct ProjectDetails  {
     /// <p>Name of the project.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Unique project identifier.</p>
@@ -19,42 +19,43 @@ pub struct ProjectDetails {
     /// <p>Website URL for this project in the AWS Mobile Hub console.</p>
     pub console_url: ::std::option::Option<::std::string::String>,
     /// <p>List of AWS resources associated with a project.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
-impl ProjectDetails {
+impl  ProjectDetails  {
     /// <p>Name of the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Unique project identifier.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>Default region to use for AWS resource creation in the AWS Mobile Hub project.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Synchronization state for a project.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ProjectState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ProjectState> {
         self.state.as_ref()
     }
     /// <p>Date the project was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Date of the last modification of the project.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Website URL for this project in the AWS Mobile Hub console.</p>
-    pub fn console_url(&self) -> ::std::option::Option<&str> {
+    pub fn console_url(&self) -> ::std::option::Option<& str> {
         self.console_url.as_deref()
     }
     /// <p>List of AWS resources associated with a project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProjectDetails {
@@ -75,7 +76,7 @@ pub struct ProjectDetailsBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) console_url: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
 impl ProjectDetailsBuilder {
     /// <p>Name of the project.</p>
@@ -85,8 +86,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Name of the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Default region to use for AWS resource creation in the AWS Mobile Hub project.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Default region to use for AWS resource creation in the AWS Mobile Hub project.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Synchronization state for a project.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ProjectState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Synchronization state for a project.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ProjectState> {
@@ -141,8 +138,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Date the project was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>Date the project was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +151,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Date of the last modification of the project.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>Date of the last modification of the project.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +164,7 @@ impl ProjectDetailsBuilder {
     }
     /// <p>Website URL for this project in the AWS Mobile Hub console.</p>
     pub fn set_console_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.console_url = input;
-        self
+        self.console_url = input; self
     }
     /// <p>Website URL for this project in the AWS Mobile Hub console.</p>
     pub fn get_console_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,30 +177,38 @@ impl ProjectDetailsBuilder {
     /// <p>List of AWS resources associated with a project.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of AWS resources associated with a project.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>List of AWS resources associated with a project.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`ProjectDetails`](crate::types::ProjectDetails).
     pub fn build(self) -> crate::types::ProjectDetails {
         crate::types::ProjectDetails {
-            name: self.name,
-            project_id: self.project_id,
-            region: self.region,
-            state: self.state,
-            created_date: self.created_date,
-            last_updated_date: self.last_updated_date,
-            console_url: self.console_url,
-            resources: self.resources,
+            name: self.name
+            ,
+            project_id: self.project_id
+            ,
+            region: self.region
+            ,
+            state: self.state
+            ,
+            created_date: self.created_date
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            console_url: self.console_url
+            ,
+            resources: self.resources
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStackInstancesForProvisionedProductInput {
+pub struct ListStackInstancesForProvisionedProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct ListStackInstancesForProvisionedProductInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListStackInstancesForProvisionedProductInput {
+impl  ListStackInstancesForProvisionedProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,15 +26,15 @@ impl ListStackInstancesForProvisionedProductInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_product_id(&self) -> ::std::option::Option<& str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -44,8 +44,7 @@ impl ListStackInstancesForProvisionedProductInput {
 }
 impl ListStackInstancesForProvisionedProductInput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder {
         crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder::default()
     }
 }
@@ -79,8 +78,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -100,8 +98,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_product_id = input;
-        self
+        self.provisioned_product_id = input; self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,27 +124,26 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput {
-                accept_language: self.accept_language,
-                provisioned_product_id: self.provisioned_product_id,
-                page_token: self.page_token,
-                page_size: self.page_size,
-            },
+                accept_language: self.accept_language
+                ,
+                provisioned_product_id: self.provisioned_product_id
+                ,
+                page_token: self.page_token
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

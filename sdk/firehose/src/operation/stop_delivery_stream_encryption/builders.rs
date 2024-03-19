@@ -5,23 +5,20 @@ pub use crate::operation::stop_delivery_stream_encryption::_stop_delivery_stream
 
 impl StopDeliveryStreamEncryptionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.stop_delivery_stream_encryption();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.stop_delivery_stream_encryption();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StopDeliveryStreamEncryption`.
-///
+/// 
 /// <p>Disables server-side encryption (SSE) for the delivery stream.</p>
 /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Firehose first sets the encryption status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the response elements <code>PutRecordOutput$Encrypted</code> and <code>PutRecordBatchOutput$Encrypted</code>, respectively.</p>
 /// <p>To check the encryption state of a delivery stream, use <code>DescribeDeliveryStream</code>.</p>
@@ -30,33 +27,32 @@ impl StopDeliveryStreamEncryptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder,
+                    inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-    > for StopDeliveryStreamEncryptionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
+                    crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
+                > for StopDeliveryStreamEncryptionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
+                        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StopDeliveryStreamEncryptionFluentBuilder {
     /// Creates a new `StopDeliveryStreamEncryption`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput, crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
@@ -127,3 +114,4 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
         self.inner.get_delivery_stream_name()
     }
 }
+

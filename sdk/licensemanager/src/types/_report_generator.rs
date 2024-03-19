@@ -3,11 +3,11 @@
 /// <p>Describe the details of a report generator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportGenerator {
+pub struct ReportGenerator  {
     /// <p>Name of the report generator.</p>
     pub report_generator_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of reports that are generated.</p>
-    pub report_type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
+    pub report_type: ::std::option::Option<::std::vec::Vec::<crate::types::ReportType>>,
     /// <p>License configuration type for this generator.</p>
     pub report_context: ::std::option::Option<crate::types::ReportContext>,
     /// <p>Details about how frequently reports are generated.</p>
@@ -29,64 +29,66 @@ pub struct ReportGenerator {
     /// <p>Time the report was created.</p>
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the report generator.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ReportGenerator {
+impl  ReportGenerator  {
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_generator_name(&self) -> ::std::option::Option<& str> {
         self.report_generator_name.as_deref()
     }
     /// <p>Type of reports that are generated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_type.is_none()`.
-    pub fn report_type(&self) -> &[crate::types::ReportType] {
-        self.report_type.as_deref().unwrap_or_default()
+    pub fn report_type(&self) -> & [crate::types::ReportType] {
+        self.report_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>License configuration type for this generator.</p>
-    pub fn report_context(&self) -> ::std::option::Option<&crate::types::ReportContext> {
+    pub fn report_context(&self) -> ::std::option::Option<& crate::types::ReportContext> {
         self.report_context.as_ref()
     }
     /// <p>Details about how frequently reports are generated.</p>
-    pub fn report_frequency(&self) -> ::std::option::Option<&crate::types::ReportFrequency> {
+    pub fn report_frequency(&self) -> ::std::option::Option<& crate::types::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> ::std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
     /// <p>Status of the last report generation attempt.</p>
-    pub fn last_run_status(&self) -> ::std::option::Option<&str> {
+    pub fn last_run_status(&self) -> ::std::option::Option<& str> {
         self.last_run_status.as_deref()
     }
     /// <p>Failure message for the last report generation attempt.</p>
-    pub fn last_run_failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn last_run_failure_reason(&self) -> ::std::option::Option<& str> {
         self.last_run_failure_reason.as_deref()
     }
     /// <p>Time the last report was generated at.</p>
-    pub fn last_report_generation_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_report_generation_time(&self) -> ::std::option::Option<& str> {
         self.last_report_generation_time.as_deref()
     }
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
-    pub fn report_creator_account(&self) -> ::std::option::Option<&str> {
+    pub fn report_creator_account(&self) -> ::std::option::Option<& str> {
         self.report_creator_account.as_deref()
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
     /// <p>Time the report was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&str> {
+    pub fn create_time(&self) -> ::std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>Tags associated with the report generator.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReportGenerator {
@@ -101,7 +103,7 @@ impl ReportGenerator {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportGeneratorBuilder {
     pub(crate) report_generator_name: ::std::option::Option<::std::string::String>,
-    pub(crate) report_type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
+    pub(crate) report_type: ::std::option::Option<::std::vec::Vec::<crate::types::ReportType>>,
     pub(crate) report_context: ::std::option::Option<crate::types::ReportContext>,
     pub(crate) report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     pub(crate) license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
@@ -112,7 +114,7 @@ pub struct ReportGeneratorBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) create_time: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ReportGeneratorBuilder {
     /// <p>Name of the report generator.</p>
@@ -122,8 +124,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Name of the report generator.</p>
     pub fn set_report_generator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_generator_name = input;
-        self
+        self.report_generator_name = input; self
     }
     /// <p>Name of the report generator.</p>
     pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +137,16 @@ impl ReportGeneratorBuilder {
     /// <p>Type of reports that are generated.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         let mut v = self.report_type.unwrap_or_default();
-        v.push(input);
-        self.report_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.report_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Type of reports that are generated.</p>
-    pub fn set_report_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>) -> Self {
-        self.report_type = input;
-        self
+    pub fn set_report_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReportType>>) -> Self {
+        self.report_type = input; self
     }
     /// <p>Type of reports that are generated.</p>
-    pub fn get_report_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
+    pub fn get_report_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReportType>> {
         &self.report_type
     }
     /// <p>License configuration type for this generator.</p>
@@ -156,8 +156,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>License configuration type for this generator.</p>
     pub fn set_report_context(mut self, input: ::std::option::Option<crate::types::ReportContext>) -> Self {
-        self.report_context = input;
-        self
+        self.report_context = input; self
     }
     /// <p>License configuration type for this generator.</p>
     pub fn get_report_context(&self) -> &::std::option::Option<crate::types::ReportContext> {
@@ -170,8 +169,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Details about how frequently reports are generated.</p>
     pub fn set_report_frequency(mut self, input: ::std::option::Option<crate::types::ReportFrequency>) -> Self {
-        self.report_frequency = input;
-        self
+        self.report_frequency = input; self
     }
     /// <p>Details about how frequently reports are generated.</p>
     pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
@@ -184,8 +182,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_manager_report_generator_arn = input;
-        self
+        self.license_manager_report_generator_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +195,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Status of the last report generation attempt.</p>
     pub fn set_last_run_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_run_status = input;
-        self
+        self.last_run_status = input; self
     }
     /// <p>Status of the last report generation attempt.</p>
     pub fn get_last_run_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +208,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Failure message for the last report generation attempt.</p>
     pub fn set_last_run_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_run_failure_reason = input;
-        self
+        self.last_run_failure_reason = input; self
     }
     /// <p>Failure message for the last report generation attempt.</p>
     pub fn get_last_run_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +221,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Time the last report was generated at.</p>
     pub fn set_last_report_generation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_report_generation_time = input;
-        self
+        self.last_report_generation_time = input; self
     }
     /// <p>Time the last report was generated at.</p>
     pub fn get_last_report_generation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +234,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
     pub fn set_report_creator_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_creator_account = input;
-        self
+        self.report_creator_account = input; self
     }
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
     pub fn get_report_creator_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +247,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Description of the report generator.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the report generator.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +260,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -282,8 +273,7 @@ impl ReportGeneratorBuilder {
     }
     /// <p>Time the report was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>Time the report was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -296,35 +286,48 @@ impl ReportGeneratorBuilder {
     /// <p>Tags associated with the report generator.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags associated with the report generator.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the report generator.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ReportGenerator`](crate::types::ReportGenerator).
     pub fn build(self) -> crate::types::ReportGenerator {
         crate::types::ReportGenerator {
-            report_generator_name: self.report_generator_name,
-            report_type: self.report_type,
-            report_context: self.report_context,
-            report_frequency: self.report_frequency,
-            license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-            last_run_status: self.last_run_status,
-            last_run_failure_reason: self.last_run_failure_reason,
-            last_report_generation_time: self.last_report_generation_time,
-            report_creator_account: self.report_creator_account,
-            description: self.description,
-            s3_location: self.s3_location,
-            create_time: self.create_time,
-            tags: self.tags,
+            report_generator_name: self.report_generator_name
+            ,
+            report_type: self.report_type
+            ,
+            report_context: self.report_context
+            ,
+            report_frequency: self.report_frequency
+            ,
+            license_manager_report_generator_arn: self.license_manager_report_generator_arn
+            ,
+            last_run_status: self.last_run_status
+            ,
+            last_run_failure_reason: self.last_run_failure_reason
+            ,
+            last_report_generation_time: self.last_report_generation_time
+            ,
+            report_creator_account: self.report_creator_account
+            ,
+            description: self.description
+            ,
+            s3_location: self.s3_location
+            ,
+            create_time: self.create_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

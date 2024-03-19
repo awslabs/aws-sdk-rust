@@ -3,7 +3,7 @@
 /// <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Artifact {
+pub struct Artifact  {
     /// <p>The artifact's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's name.</p>
@@ -74,13 +74,13 @@ pub struct Artifact {
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl Artifact {
+impl  Artifact  {
     /// <p>The artifact's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The artifact's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The artifact's type.</p>
@@ -143,15 +143,15 @@ impl Artifact {
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ArtifactType> {
         self.r#type.as_ref()
     }
     /// <p>The artifact's file extension.</p>
-    pub fn extension(&self) -> ::std::option::Option<&str> {
+    pub fn extension(&self) -> ::std::option::Option<& str> {
         self.extension.as_deref()
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -180,8 +180,7 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The artifact's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +193,7 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The artifact's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +324,7 @@ impl ArtifactBuilder {
     /// <p>TESTSPEC_OUTPUT</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
@@ -399,8 +396,7 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's file extension.</p>
     pub fn set_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension = input;
-        self
+        self.extension = input; self
     }
     /// <p>The artifact's file extension.</p>
     pub fn get_extension(&self) -> &::std::option::Option<::std::string::String> {
@@ -413,8 +409,7 @@ impl ArtifactBuilder {
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -423,11 +418,17 @@ impl ArtifactBuilder {
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {
         crate::types::Artifact {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            extension: self.extension,
-            url: self.url,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            extension: self.extension
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

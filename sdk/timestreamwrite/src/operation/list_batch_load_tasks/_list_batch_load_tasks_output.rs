@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBatchLoadTasksOutput {
+pub struct ListBatchLoadTasksOutput  {
     /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of batch load task details.</p>
-    pub batch_load_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
+    pub batch_load_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BatchLoadTask>>,
     _request_id: Option<String>,
 }
-impl ListBatchLoadTasksOutput {
+impl  ListBatchLoadTasksOutput  {
     /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of batch load task details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_load_tasks.is_none()`.
-    pub fn batch_load_tasks(&self) -> &[crate::types::BatchLoadTask] {
-        self.batch_load_tasks.as_deref().unwrap_or_default()
+    pub fn batch_load_tasks(&self) -> & [crate::types::BatchLoadTask] {
+        self.batch_load_tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBatchLoadTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBatchLoadTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput).
     pub fn builder() -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksOutputBuilder {
@@ -38,7 +39,7 @@ impl ListBatchLoadTasksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchLoadTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) batch_load_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
+    pub(crate) batch_load_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BatchLoadTask>>,
     _request_id: Option<String>,
 }
 impl ListBatchLoadTasksOutputBuilder {
@@ -49,8 +50,7 @@ impl ListBatchLoadTasksOutputBuilder {
     }
     /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListBatchLoadTasksOutputBuilder {
     /// <p>A list of batch load task details.</p>
     pub fn batch_load_tasks(mut self, input: crate::types::BatchLoadTask) -> Self {
         let mut v = self.batch_load_tasks.unwrap_or_default();
-        v.push(input);
-        self.batch_load_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.batch_load_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of batch load task details.</p>
-    pub fn set_batch_load_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>) -> Self {
-        self.batch_load_tasks = input;
-        self
+    pub fn set_batch_load_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchLoadTask>>) -> Self {
+        self.batch_load_tasks = input; self
     }
     /// <p>A list of batch load task details.</p>
-    pub fn get_batch_load_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>> {
+    pub fn get_batch_load_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchLoadTask>> {
         &self.batch_load_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput).
     pub fn build(self) -> crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput {
         crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput {
-            next_token: self.next_token,
-            batch_load_tasks: self.batch_load_tasks,
+            next_token: self.next_token
+            ,
+            batch_load_tasks: self.batch_load_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

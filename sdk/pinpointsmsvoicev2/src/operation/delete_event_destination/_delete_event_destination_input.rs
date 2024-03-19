@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventDestinationInput {
+pub struct DeleteEventDestinationInput  {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event destination to delete.</p>
     pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEventDestinationInput {
+impl  DeleteEventDestinationInput  {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteEventDestinationInputBuilder {
     }
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteEventDestinationInputBuilder {
     }
     /// <p>The name of the event destination to delete.</p>
     pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_destination_name = input;
-        self
+        self.event_destination_name = input; self
     }
     /// <p>The name of the event destination to delete.</p>
     pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event_destination::DeleteEventDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_event_destination::DeleteEventDestinationInput {
-            configuration_set_name: self.configuration_set_name,
-            event_destination_name: self.event_destination_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event_destination::DeleteEventDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_event_destination::DeleteEventDestinationInput {
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+            }
+        )
     }
 }
+

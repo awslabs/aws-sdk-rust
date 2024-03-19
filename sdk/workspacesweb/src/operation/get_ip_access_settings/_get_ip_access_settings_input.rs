@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIpAccessSettingsInput {
+pub struct GetIpAccessSettingsInput  {
     /// <p>The ARN of the IP access settings.</p>
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetIpAccessSettingsInput {
+impl  GetIpAccessSettingsInput  {
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<& str> {
         self.ip_access_settings_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetIpAccessSettingsInputBuilder {
     }
     /// <p>The ARN of the IP access settings.</p>
     pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_access_settings_arn = input;
-        self
+        self.ip_access_settings_arn = input; self
     }
     /// <p>The ARN of the IP access settings.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_access_settings_arn
     }
     /// Consumes the builder and constructs a [`GetIpAccessSettingsInput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_ip_access_settings::GetIpAccessSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_ip_access_settings::GetIpAccessSettingsInput {
-            ip_access_settings_arn: self.ip_access_settings_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_access_settings::GetIpAccessSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsInput {
+                ip_access_settings_arn: self.ip_access_settings_arn
+                ,
+            }
+        )
     }
 }
+

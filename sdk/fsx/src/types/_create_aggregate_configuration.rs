@@ -3,18 +3,19 @@
 /// <p>Used to specify the configuration options for an FSx for ONTAP volume's storage aggregate or aggregates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAggregateConfiguration {
+pub struct CreateAggregateConfiguration  {
     /// <p>Used to specify the names of aggregates on which the volume will be created.</p>
-    pub aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aggregates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume.</p>
     pub constituents_per_aggregate: ::std::option::Option<i32>,
 }
-impl CreateAggregateConfiguration {
+impl  CreateAggregateConfiguration  {
     /// <p>Used to specify the names of aggregates on which the volume will be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregates.is_none()`.
-    pub fn aggregates(&self) -> &[::std::string::String] {
-        self.aggregates.as_deref().unwrap_or_default()
+    pub fn aggregates(&self) -> & [::std::string::String] {
+        self.aggregates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume.</p>
     pub fn constituents_per_aggregate(&self) -> ::std::option::Option<i32> {
@@ -32,7 +33,7 @@ impl CreateAggregateConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAggregateConfigurationBuilder {
-    pub(crate) aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aggregates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) constituents_per_aggregate: ::std::option::Option<i32>,
 }
 impl CreateAggregateConfigurationBuilder {
@@ -43,17 +44,16 @@ impl CreateAggregateConfigurationBuilder {
     /// <p>Used to specify the names of aggregates on which the volume will be created.</p>
     pub fn aggregates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aggregates.unwrap_or_default();
-        v.push(input.into());
-        self.aggregates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aggregates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Used to specify the names of aggregates on which the volume will be created.</p>
-    pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aggregates = input;
-        self
+    pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aggregates = input; self
     }
     /// <p>Used to specify the names of aggregates on which the volume will be created.</p>
-    pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aggregates
     }
     /// <p>Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume.</p>
@@ -63,8 +63,7 @@ impl CreateAggregateConfigurationBuilder {
     }
     /// <p>Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume.</p>
     pub fn set_constituents_per_aggregate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.constituents_per_aggregate = input;
-        self
+        self.constituents_per_aggregate = input; self
     }
     /// <p>Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume.</p>
     pub fn get_constituents_per_aggregate(&self) -> &::std::option::Option<i32> {
@@ -73,8 +72,11 @@ impl CreateAggregateConfigurationBuilder {
     /// Consumes the builder and constructs a [`CreateAggregateConfiguration`](crate::types::CreateAggregateConfiguration).
     pub fn build(self) -> crate::types::CreateAggregateConfiguration {
         crate::types::CreateAggregateConfiguration {
-            aggregates: self.aggregates,
-            constituents_per_aggregate: self.constituents_per_aggregate,
+            aggregates: self.aggregates
+            ,
+            constituents_per_aggregate: self.constituents_per_aggregate
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceServerOutput {
+pub struct DescribeResourceServerOutput  {
     /// <p>The resource server.</p>
     pub resource_server: ::std::option::Option<crate::types::ResourceServerType>,
     _request_id: Option<String>,
 }
-impl DescribeResourceServerOutput {
+impl  DescribeResourceServerOutput  {
     /// <p>The resource server.</p>
-    pub fn resource_server(&self) -> ::std::option::Option<&crate::types::ResourceServerType> {
+    pub fn resource_server(&self) -> ::std::option::Option<& crate::types::ResourceServerType> {
         self.resource_server.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourceServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceServerOutput`](crate::operation::describe_resource_server::DescribeResourceServerOutput).
     pub fn builder() -> crate::operation::describe_resource_server::builders::DescribeResourceServerOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeResourceServerOutputBuilder {
     }
     /// <p>The resource server.</p>
     pub fn set_resource_server(mut self, input: ::std::option::Option<crate::types::ResourceServerType>) -> Self {
-        self.resource_server = input;
-        self
+        self.resource_server = input; self
     }
     /// <p>The resource server.</p>
     pub fn get_resource_server(&self) -> &::std::option::Option<crate::types::ResourceServerType> {
         &self.resource_server
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResourceServerOutput`](crate::operation::describe_resource_server::DescribeResourceServerOutput).
     pub fn build(self) -> crate::operation::describe_resource_server::DescribeResourceServerOutput {
         crate::operation::describe_resource_server::DescribeResourceServerOutput {
-            resource_server: self.resource_server,
+            resource_server: self.resource_server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

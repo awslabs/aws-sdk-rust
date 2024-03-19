@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApprovalRuleTemplateDescriptionOutput {
+pub struct UpdateApprovalRuleTemplateDescriptionOutput  {
     /// <p>The structure and content of the updated approval rule template.</p>
     pub approval_rule_template: ::std::option::Option<crate::types::ApprovalRuleTemplate>,
     _request_id: Option<String>,
 }
-impl UpdateApprovalRuleTemplateDescriptionOutput {
+impl  UpdateApprovalRuleTemplateDescriptionOutput  {
     /// <p>The structure and content of the updated approval rule template.</p>
-    pub fn approval_rule_template(&self) -> ::std::option::Option<&crate::types::ApprovalRuleTemplate> {
+    pub fn approval_rule_template(&self) -> ::std::option::Option<& crate::types::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateApprovalRuleTemplateDescriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateApprovalRuleTemplateDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput).
     pub fn builder() -> crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateApprovalRuleTemplateDescriptionOutputBuilder {
     }
     /// <p>The structure and content of the updated approval rule template.</p>
     pub fn set_approval_rule_template(mut self, input: ::std::option::Option<crate::types::ApprovalRuleTemplate>) -> Self {
-        self.approval_rule_template = input;
-        self
+        self.approval_rule_template = input; self
     }
     /// <p>The structure and content of the updated approval rule template.</p>
     pub fn get_approval_rule_template(&self) -> &::std::option::Option<crate::types::ApprovalRuleTemplate> {
         &self.approval_rule_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput).
     pub fn build(self) -> crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput {
         crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput {
-            approval_rule_template: self.approval_rule_template,
+            approval_rule_template: self.approval_rule_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

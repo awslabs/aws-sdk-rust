@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFacetAttributesInput {
+pub struct ListFacetAttributesInput  {
     /// <p>The ARN of the schema where the facet resides.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet whose attributes will be retrieved.</p>
@@ -12,17 +12,17 @@ pub struct ListFacetAttributesInput {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListFacetAttributesInput {
+impl  ListFacetAttributesInput  {
     /// <p>The ARN of the schema where the facet resides.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet whose attributes will be retrieved.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -55,8 +55,7 @@ impl ListFacetAttributesInputBuilder {
     }
     /// <p>The ARN of the schema where the facet resides.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN of the schema where the facet resides.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListFacetAttributesInputBuilder {
     }
     /// <p>The name of the facet whose attributes will be retrieved.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the facet whose attributes will be retrieved.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListFacetAttributesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl ListFacetAttributesInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFacetAttributesInput`](crate::operation::list_facet_attributes::ListFacetAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_facet_attributes::ListFacetAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_facet_attributes::ListFacetAttributesInput {
-            schema_arn: self.schema_arn,
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_facet_attributes::ListFacetAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_facet_attributes::ListFacetAttributesInput {
+                schema_arn: self.schema_arn
+                ,
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

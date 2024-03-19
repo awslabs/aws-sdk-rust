@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOrganizationConformancePackInput {
+pub struct DeleteOrganizationConformancePackInput  {
     /// <p>The name of organization conformance pack that you want to delete.</p>
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteOrganizationConformancePackInput {
+impl  DeleteOrganizationConformancePackInput  {
     /// <p>The name of organization conformance pack that you want to delete.</p>
-    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.organization_conformance_pack_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteOrganizationConformancePackInputBuilder {
     }
     /// <p>The name of organization conformance pack that you want to delete.</p>
     pub fn set_organization_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_conformance_pack_name = input;
-        self
+        self.organization_conformance_pack_name = input; self
     }
     /// <p>The name of organization conformance pack that you want to delete.</p>
     pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_conformance_pack_name
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationConformancePackInput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput {
-                organization_conformance_pack_name: self.organization_conformance_pack_name,
-            },
+                organization_conformance_pack_name: self.organization_conformance_pack_name
+                ,
+            }
         )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about the capabilities enabled for participants of the contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedCapabilities {
+pub struct AllowedCapabilities  {
     /// <p>Information about the customer's video sharing capabilities.</p>
     pub customer: ::std::option::Option<crate::types::ParticipantCapabilities>,
     /// <p>Information about the agent's video sharing capabilities.</p>
     pub agent: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
-impl AllowedCapabilities {
+impl  AllowedCapabilities  {
     /// <p>Information about the customer's video sharing capabilities.</p>
-    pub fn customer(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
+    pub fn customer(&self) -> ::std::option::Option<& crate::types::ParticipantCapabilities> {
         self.customer.as_ref()
     }
     /// <p>Information about the agent's video sharing capabilities.</p>
-    pub fn agent(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
+    pub fn agent(&self) -> ::std::option::Option<& crate::types::ParticipantCapabilities> {
         self.agent.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AllowedCapabilitiesBuilder {
     }
     /// <p>Information about the customer's video sharing capabilities.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
-        self.customer = input;
-        self
+        self.customer = input; self
     }
     /// <p>Information about the customer's video sharing capabilities.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
@@ -55,8 +54,7 @@ impl AllowedCapabilitiesBuilder {
     }
     /// <p>Information about the agent's video sharing capabilities.</p>
     pub fn set_agent(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
-        self.agent = input;
-        self
+        self.agent = input; self
     }
     /// <p>Information about the agent's video sharing capabilities.</p>
     pub fn get_agent(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
@@ -65,8 +63,11 @@ impl AllowedCapabilitiesBuilder {
     /// Consumes the builder and constructs a [`AllowedCapabilities`](crate::types::AllowedCapabilities).
     pub fn build(self) -> crate::types::AllowedCapabilities {
         crate::types::AllowedCapabilities {
-            customer: self.customer,
-            agent: self.agent,
+            customer: self.customer
+            ,
+            agent: self.agent
+            ,
         }
     }
 }
+

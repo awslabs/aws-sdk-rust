@@ -3,45 +3,46 @@
 /// <p>Define and configure the output AMIs of the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmiDistributionConfiguration {
+pub struct AmiDistributionConfiguration  {
     /// <p>The name of the output AMI.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    pub target_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub ami_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
     pub launch_permission: ::std::option::Option<crate::types::LaunchPermissionConfiguration>,
 }
-impl AmiDistributionConfiguration {
+impl  AmiDistributionConfiguration  {
     /// <p>The name of the output AMI.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_account_ids.is_none()`.
-    pub fn target_account_ids(&self) -> &[::std::string::String] {
-        self.target_account_ids.as_deref().unwrap_or_default()
+    pub fn target_account_ids(&self) -> & [::std::string::String] {
+        self.target_account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    pub fn ami_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn ami_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.ami_tags.as_ref()
     }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
-    pub fn launch_permission(&self) -> ::std::option::Option<&crate::types::LaunchPermissionConfiguration> {
+    pub fn launch_permission(&self) -> ::std::option::Option<& crate::types::LaunchPermissionConfiguration> {
         self.launch_permission.as_ref()
     }
 }
@@ -58,8 +59,8 @@ impl AmiDistributionConfiguration {
 pub struct AmiDistributionConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) target_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) target_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ami_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_permission: ::std::option::Option<crate::types::LaunchPermissionConfiguration>,
 }
@@ -71,8 +72,7 @@ impl AmiDistributionConfigurationBuilder {
     }
     /// <p>The name of the output AMI.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the output AMI.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl AmiDistributionConfigurationBuilder {
     }
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,17 +98,16 @@ impl AmiDistributionConfigurationBuilder {
     /// <p>The ID of an account to which you want to distribute an image.</p>
     pub fn target_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.target_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    pub fn set_target_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_account_ids = input;
-        self
+    pub fn set_target_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_account_ids = input; self
     }
     /// <p>The ID of an account to which you want to distribute an image.</p>
-    pub fn get_target_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_account_ids
     }
     /// Adds a key-value pair to `ami_tags`.
@@ -119,17 +117,16 @@ impl AmiDistributionConfigurationBuilder {
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
     pub fn ami_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.ami_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.ami_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.ami_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    pub fn set_ami_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.ami_tags = input;
-        self
+    pub fn set_ami_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.ami_tags = input; self
     }
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
-    pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.ami_tags
     }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
@@ -139,8 +136,7 @@ impl AmiDistributionConfigurationBuilder {
     }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl AmiDistributionConfigurationBuilder {
     }
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
     pub fn set_launch_permission(mut self, input: ::std::option::Option<crate::types::LaunchPermissionConfiguration>) -> Self {
-        self.launch_permission = input;
-        self
+        self.launch_permission = input; self
     }
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
     pub fn get_launch_permission(&self) -> &::std::option::Option<crate::types::LaunchPermissionConfiguration> {
@@ -163,12 +158,19 @@ impl AmiDistributionConfigurationBuilder {
     /// Consumes the builder and constructs a [`AmiDistributionConfiguration`](crate::types::AmiDistributionConfiguration).
     pub fn build(self) -> crate::types::AmiDistributionConfiguration {
         crate::types::AmiDistributionConfiguration {
-            name: self.name,
-            description: self.description,
-            target_account_ids: self.target_account_ids,
-            ami_tags: self.ami_tags,
-            kms_key_id: self.kms_key_id,
-            launch_permission: self.launch_permission,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            target_account_ids: self.target_account_ids
+            ,
+            ami_tags: self.ami_tags
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            launch_permission: self.launch_permission
+            ,
         }
     }
 }
+

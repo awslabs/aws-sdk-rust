@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReleaseLabelInput {
+pub struct DescribeReleaseLabelInput  {
     /// <p>The target release label to be described.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
@@ -10,13 +10,13 @@ pub struct DescribeReleaseLabelInput {
     /// <p>Reserved for future use. Currently set to null.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeReleaseLabelInput {
+impl  DescribeReleaseLabelInput  {
     /// <p>The target release label to be described.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
+    pub fn release_label(&self) -> ::std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Reserved for future use. Currently set to null.</p>
@@ -47,8 +47,7 @@ impl DescribeReleaseLabelInputBuilder {
     }
     /// <p>The target release label to be described.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The target release label to be described.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DescribeReleaseLabelInputBuilder {
     }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl DescribeReleaseLabelInputBuilder {
     }
     /// <p>Reserved for future use. Currently set to null.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Reserved for future use. Currently set to null.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeReleaseLabelInput`](crate::operation::describe_release_label::DescribeReleaseLabelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_release_label::DescribeReleaseLabelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_release_label::DescribeReleaseLabelInput {
-            release_label: self.release_label,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_release_label::DescribeReleaseLabelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_release_label::DescribeReleaseLabelInput {
+                release_label: self.release_label
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

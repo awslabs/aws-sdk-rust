@@ -2,43 +2,45 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExportTasksInput {
+pub struct DescribeExportTasksInput  {
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub export_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ExportFilter>>,
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExportTasksInput {
+impl  DescribeExportTasksInput  {
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_ids.is_none()`.
-    pub fn export_ids(&self) -> &[::std::string::String] {
-        self.export_ids.as_deref().unwrap_or_default()
+    pub fn export_ids(&self) -> & [::std::string::String] {
+        self.export_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ExportFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ExportFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -53,8 +55,8 @@ impl DescribeExportTasksInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportTasksInputBuilder {
-    pub(crate) export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
+    pub(crate) export_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ExportFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -66,17 +68,16 @@ impl DescribeExportTasksInputBuilder {
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
     pub fn export_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.export_ids.unwrap_or_default();
-        v.push(input.into());
-        self.export_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.export_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.export_ids = input;
-        self
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.export_ids = input; self
     }
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn get_export_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.export_ids
     }
     /// Appends an item to `filters`.
@@ -90,25 +91,24 @@ impl DescribeExportTasksInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExportFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>AgentId</code> - ID of the agent whose collected data will be exported</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExportFilter>> {
         &self.filters
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
@@ -118,8 +118,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -132,23 +131,26 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
-            export_ids: self.export_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_export_tasks::DescribeExportTasksInput {
+                export_ids: self.export_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Specifies whether to get notified for alarm state changes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcknowledgeFlow {
+pub struct AcknowledgeFlow  {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub enabled: bool,
 }
-impl AcknowledgeFlow {
+impl  AcknowledgeFlow  {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -35,8 +35,7 @@ impl AcknowledgeFlowBuilder {
     }
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl AcknowledgeFlowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::AcknowledgeFlowBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::AcknowledgeFlow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AcknowledgeFlow {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building AcknowledgeFlow",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AcknowledgeFlow {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building AcknowledgeFlow")
+                    )?
+                ,
+            }
+        )
     }
 }
+

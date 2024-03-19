@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
+pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput  {
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -11,27 +11,25 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     pub global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,
 }
-impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
+impl  IncreaseNodeGroupsInGlobalReplicationGroupOutput  {
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
     /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
     /// </ul>
-    pub fn global_replication_group(&self) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> ::std::option::Option<& crate::types::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
-        crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
+        crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder::default()
     }
 }
 
@@ -58,8 +56,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
     /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p></li>
     /// </ul>
     pub fn set_global_replication_group(mut self, input: ::std::option::Option<crate::types::GlobalReplicationGroup>) -> Self {
-        self.global_replication_group = input;
-        self
+        self.global_replication_group = input; self
     }
     /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
@@ -70,19 +67,21 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
         &self.global_replication_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
     pub fn build(self) -> crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput {
         crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-            global_replication_group: self.global_replication_group,
+            global_replication_group: self.global_replication_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

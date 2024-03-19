@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQuickResponseOutput {
+pub struct CreateQuickResponseOutput  {
     /// <p>The quick response.</p>
     pub quick_response: ::std::option::Option<crate::types::QuickResponseData>,
     _request_id: Option<String>,
 }
-impl CreateQuickResponseOutput {
+impl  CreateQuickResponseOutput  {
     /// <p>The quick response.</p>
-    pub fn quick_response(&self) -> ::std::option::Option<&crate::types::QuickResponseData> {
+    pub fn quick_response(&self) -> ::std::option::Option<& crate::types::QuickResponseData> {
         self.quick_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateQuickResponseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateQuickResponseOutput {
     /// Creates a new builder-style object to manufacture [`CreateQuickResponseOutput`](crate::operation::create_quick_response::CreateQuickResponseOutput).
     pub fn builder() -> crate::operation::create_quick_response::builders::CreateQuickResponseOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateQuickResponseOutputBuilder {
     }
     /// <p>The quick response.</p>
     pub fn set_quick_response(mut self, input: ::std::option::Option<crate::types::QuickResponseData>) -> Self {
-        self.quick_response = input;
-        self
+        self.quick_response = input; self
     }
     /// <p>The quick response.</p>
     pub fn get_quick_response(&self) -> &::std::option::Option<crate::types::QuickResponseData> {
         &self.quick_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateQuickResponseOutput`](crate::operation::create_quick_response::CreateQuickResponseOutput).
     pub fn build(self) -> crate::operation::create_quick_response::CreateQuickResponseOutput {
         crate::operation::create_quick_response::CreateQuickResponseOutput {
-            quick_response: self.quick_response,
+            quick_response: self.quick_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

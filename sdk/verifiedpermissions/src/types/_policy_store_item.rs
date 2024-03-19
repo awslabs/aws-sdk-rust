@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStores.html">ListPolicyStores</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PolicyStoreItem {
+pub struct PolicyStoreItem  {
     /// <p>The unique identifier of the policy store.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
@@ -16,31 +16,29 @@ pub struct PolicyStoreItem {
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PolicyStoreItem {
+impl  PolicyStoreItem  {
     /// <p>The unique identifier of the policy store.</p>
-    pub fn policy_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_store_id.deref()
+    pub fn policy_store_id(&self) -> & str {
+        use std::ops::Deref; self.policy_store_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The date and time the policy was created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date and time the policy store was most recently updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for PolicyStoreItem {
+impl  ::std::fmt::Debug for PolicyStoreItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyStoreItem");
         formatter.field("policy_store_id", &self.policy_store_id);
@@ -77,8 +75,7 @@ impl PolicyStoreItemBuilder {
     }
     /// <p>The unique identifier of the policy store.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The unique identifier of the policy store.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl PolicyStoreItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy store.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl PolicyStoreItemBuilder {
     }
     /// <p>The date and time the policy was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time the policy was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -121,8 +116,7 @@ impl PolicyStoreItemBuilder {
     }
     /// <p>The date and time the policy store was most recently updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date and time the policy store was most recently updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,8 +129,7 @@ impl PolicyStoreItemBuilder {
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,28 +141,29 @@ impl PolicyStoreItemBuilder {
     /// - [`arn`](crate::types::builders::PolicyStoreItemBuilder::arn)
     /// - [`created_date`](crate::types::builders::PolicyStoreItemBuilder::created_date)
     pub fn build(self) -> ::std::result::Result<crate::types::PolicyStoreItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PolicyStoreItem {
-            policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_store_id",
-                    "policy_store_id was not specified but it is required when building PolicyStoreItem",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building PolicyStoreItem",
-                )
-            })?,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building PolicyStoreItem",
-                )
-            })?,
-            last_updated_date: self.last_updated_date,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PolicyStoreItem {
+                policy_store_id: self.policy_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_store_id", "policy_store_id was not specified but it is required when building PolicyStoreItem")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building PolicyStoreItem")
+                    )?
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building PolicyStoreItem")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PolicyStoreItemBuilder {
@@ -183,3 +177,4 @@ impl ::std::fmt::Debug for PolicyStoreItemBuilder {
         formatter.finish()
     }
 }
+

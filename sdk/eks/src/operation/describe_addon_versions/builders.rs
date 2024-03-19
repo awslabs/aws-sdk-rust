@@ -5,55 +5,51 @@ pub use crate::operation::describe_addon_versions::_describe_addon_versions_inpu
 
 impl DescribeAddonVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_addon_versions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_addon_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAddonVersions`.
-///
+/// 
 /// <p>Describes the versions for an add-on.</p>
 /// <p>Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder,
+                    inner: crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-    > for DescribeAddonVersionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
+                    crate::operation::describe_addon_versions::DescribeAddonVersionsError,
+                > for DescribeAddonVersionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
+                        crate::operation::describe_addon_versions::DescribeAddonVersionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAddonVersionsFluentBuilder {
     /// Creates a new `DescribeAddonVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeAddonVersionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_addon_versions::DescribeAddonVersions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_addon_versions::DescribeAddonVersions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_addon_versions::DescribeAddonVersionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_addon_versions::DescribeAddonVersionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_addon_versions::DescribeAddonVersions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_addon_versions::DescribeAddonVersions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_addon_versions::DescribeAddonVersionsOutput, crate::operation::describe_addon_versions::DescribeAddonVersionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
-        crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
+                                crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
     pub fn kubernetes_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kubernetes_version(input.into());
@@ -187,12 +174,12 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_types()
     }
     /// Appends an item to `publishers`.
@@ -205,12 +192,12 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn set_publishers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_publishers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_publishers(input);
         self
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn get_publishers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_publishers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_publishers()
     }
     /// Appends an item to `owners`.
@@ -223,12 +210,13 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owners(input);
         self
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_owners()
     }
 }
+

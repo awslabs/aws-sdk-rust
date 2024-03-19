@@ -3,22 +3,20 @@
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompatibleEnvironmentTemplateInput {
+pub struct CompatibleEnvironmentTemplateInput  {
     /// <p>The compatible environment template name.</p>
     pub template_name: ::std::string::String,
     /// <p>The major version of the compatible environment template.</p>
     pub major_version: ::std::string::String,
 }
-impl CompatibleEnvironmentTemplateInput {
+impl  CompatibleEnvironmentTemplateInput  {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.major_version.deref()
+    pub fn major_version(&self) -> & str {
+        use std::ops::Deref; self.major_version.deref()
     }
 }
 impl CompatibleEnvironmentTemplateInput {
@@ -44,8 +42,7 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     }
     /// <p>The compatible environment template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The compatible environment template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     }
     /// <p>The major version of the compatible environment template.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The major version of the compatible environment template.</p>
     pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     /// - [`template_name`](crate::types::builders::CompatibleEnvironmentTemplateInputBuilder::template_name)
     /// - [`major_version`](crate::types::builders::CompatibleEnvironmentTemplateInputBuilder::major_version)
     pub fn build(self) -> ::std::result::Result<crate::types::CompatibleEnvironmentTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompatibleEnvironmentTemplateInput {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building CompatibleEnvironmentTemplateInput",
-                )
-            })?,
-            major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "major_version",
-                    "major_version was not specified but it is required when building CompatibleEnvironmentTemplateInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompatibleEnvironmentTemplateInput {
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building CompatibleEnvironmentTemplateInput")
+                    )?
+                ,
+                major_version: self.major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("major_version", "major_version was not specified but it is required when building CompatibleEnvironmentTemplateInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceMetadataOutput {
+pub struct GetResourceMetadataOutput  {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
+    pub features: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FeatureMetadata>>,
     _request_id: Option<String>,
 }
-impl GetResourceMetadataOutput {
+impl  GetResourceMetadataOutput  {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>> {
+    pub fn features(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::FeatureMetadata>> {
         self.features.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourceMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResourceMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::operation::get_resource_metadata::GetResourceMetadataOutput).
     pub fn builder() -> crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder {
@@ -36,7 +36,7 @@ impl GetResourceMetadataOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceMetadataOutputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FeatureMetadata>>,
     _request_id: Option<String>,
 }
 impl GetResourceMetadataOutputBuilder {
@@ -47,8 +47,7 @@ impl GetResourceMetadataOutputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,37 +60,36 @@ impl GetResourceMetadataOutputBuilder {
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
     pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FeatureMetadata) -> Self {
         let mut hash_map = self.features.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.features = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.features = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
-    ) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FeatureMetadata>>) -> Self {
+        self.features = input; self
     }
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FeatureMetadata>> {
         &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResourceMetadataOutput`](crate::operation::get_resource_metadata::GetResourceMetadataOutput).
     pub fn build(self) -> crate::operation::get_resource_metadata::GetResourceMetadataOutput {
         crate::operation::get_resource_metadata::GetResourceMetadataOutput {
-            identifier: self.identifier,
-            features: self.features,
+            identifier: self.identifier
+            ,
+            features: self.features
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

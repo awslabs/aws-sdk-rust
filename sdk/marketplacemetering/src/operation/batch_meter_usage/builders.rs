@@ -5,23 +5,20 @@ pub use crate::operation::batch_meter_usage::_batch_meter_usage_input::BatchMete
 
 impl BatchMeterUsageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_meter_usage();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_meter_usage::BatchMeterUsageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_meter_usage();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchMeterUsage`.
-///
+/// 
 /// <p><code>BatchMeterUsage</code> is called from a SaaS application listed on AWS Marketplace to post metering records for a set of customers.</p>
 /// <p>For identical requests, the API is idempotent; requests can be retried with the same records or a subset of the input records.</p>
 /// <p>Every request to <code>BatchMeterUsage</code> is for one product. If you need to meter usage for multiple products, you must make multiple calls to <code>BatchMeterUsage</code>.</p>
@@ -35,33 +32,32 @@ impl BatchMeterUsageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchMeterUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder,
+                    inner: crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        crate::operation::batch_meter_usage::BatchMeterUsageError,
-    > for BatchMeterUsageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_meter_usage::BatchMeterUsageOutput,
+                    crate::operation::batch_meter_usage::BatchMeterUsageError,
+                > for BatchMeterUsageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
+                        crate::operation::batch_meter_usage::BatchMeterUsageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchMeterUsageFluentBuilder {
     /// Creates a new `BatchMeterUsage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl BatchMeterUsageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_meter_usage::BatchMeterUsage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_meter_usage::BatchMeterUsage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
-        crate::operation::batch_meter_usage::BatchMeterUsageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_meter_usage::BatchMeterUsage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_meter_usage::BatchMeterUsage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_meter_usage::BatchMeterUsageOutput, crate::operation::batch_meter_usage::BatchMeterUsageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `UsageRecords`.
     ///
     /// To override the contents of this collection use [`set_usage_records`](Self::set_usage_records).
@@ -127,12 +114,12 @@ impl BatchMeterUsageFluentBuilder {
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn set_usage_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>) -> Self {
+    pub fn set_usage_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageRecord>>) -> Self {
         self.inner = self.inner.set_usage_records(input);
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+    pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageRecord>> {
         self.inner.get_usage_records()
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
@@ -150,3 +137,4 @@ impl BatchMeterUsageFluentBuilder {
         self.inner.get_product_code()
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Media {
+pub struct Media  {
     /// <p>The Amazon S3 location of the media file you want to transcribe. For example:</p>
     /// <ul>
     /// <li>
@@ -26,7 +26,7 @@ pub struct Media {
     /// </important>
     pub redacted_media_file_uri: ::std::option::Option<::std::string::String>,
 }
-impl Media {
+impl  Media  {
     /// <p>The Amazon S3 location of the media file you want to transcribe. For example:</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ impl Media {
     /// <p><code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code></p></li>
     /// </ul>
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p>
-    pub fn media_file_uri(&self) -> ::std::option::Option<&str> {
+    pub fn media_file_uri(&self) -> ::std::option::Option<& str> {
         self.media_file_uri.as_deref()
     }
     /// <p>The Amazon S3 location of the media file you want to redact. For example:</p>
@@ -48,7 +48,7 @@ impl Media {
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p><important>
     /// <p><code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
     /// </important>
-    pub fn redacted_media_file_uri(&self) -> ::std::option::Option<&str> {
+    pub fn redacted_media_file_uri(&self) -> ::std::option::Option<& str> {
         self.redacted_media_file_uri.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl MediaBuilder {
     /// </ul>
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p>
     pub fn set_media_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_file_uri = input;
-        self
+        self.media_file_uri = input; self
     }
     /// <p>The Amazon S3 location of the media file you want to transcribe. For example:</p>
     /// <ul>
@@ -127,8 +126,7 @@ impl MediaBuilder {
     /// <p><code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
     /// </important>
     pub fn set_redacted_media_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redacted_media_file_uri = input;
-        self
+        self.redacted_media_file_uri = input; self
     }
     /// <p>The Amazon S3 location of the media file you want to redact. For example:</p>
     /// <ul>
@@ -146,8 +144,11 @@ impl MediaBuilder {
     /// Consumes the builder and constructs a [`Media`](crate::types::Media).
     pub fn build(self) -> crate::types::Media {
         crate::types::Media {
-            media_file_uri: self.media_file_uri,
-            redacted_media_file_uri: self.redacted_media_file_uri,
+            media_file_uri: self.media_file_uri
+            ,
+            redacted_media_file_uri: self.redacted_media_file_uri
+            ,
         }
     }
 }
+

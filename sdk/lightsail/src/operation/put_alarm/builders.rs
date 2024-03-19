@@ -5,23 +5,20 @@ pub use crate::operation::put_alarm::_put_alarm_input::PutAlarmInputBuilder;
 
 impl PutAlarmInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_alarm::PutAlarmOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_alarm::PutAlarmError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_alarm();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_alarm::PutAlarmOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_alarm::PutAlarmError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_alarm();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutAlarm`.
-///
+/// 
 /// <p>Creates or updates an alarm, and associates it with the specified metric.</p>
 /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 /// <p>When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
@@ -29,27 +26,32 @@ impl PutAlarmInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAlarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_alarm::builders::PutAlarmInputBuilder,
+                    inner: crate::operation::put_alarm::builders::PutAlarmInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
-impl crate::client::customize::internal::CustomizableSend<crate::operation::put_alarm::PutAlarmOutput, crate::operation::put_alarm::PutAlarmError>
-    for PutAlarmFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::operation::put_alarm::PutAlarmOutput, crate::operation::put_alarm::PutAlarmError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+impl
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_alarm::PutAlarmOutput,
+                    crate::operation::put_alarm::PutAlarmError,
+                > for PutAlarmFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_alarm::PutAlarmOutput,
+                        crate::operation::put_alarm::PutAlarmError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutAlarmFluentBuilder {
     /// Creates a new `PutAlarm`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -58,50 +60,44 @@ impl PutAlarmFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_alarm::PutAlarmOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_alarm::PutAlarmError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_alarm::PutAlarm::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_alarm::PutAlarm::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_alarm::PutAlarmOutput, crate::operation::put_alarm::PutAlarmError, Self>
-    {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_alarm::PutAlarmError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_alarm::PutAlarm::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_alarm::PutAlarm::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_alarm::PutAlarmOutput, crate::operation::put_alarm::PutAlarmError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
@@ -311,7 +307,7 @@ impl PutAlarmFluentBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
+    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>) -> Self {
         self.inner = self.inner.set_contact_protocols(input);
         self
     }
@@ -319,7 +315,7 @@ impl PutAlarmFluentBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>> {
         self.inner.get_contact_protocols()
     }
     /// Appends an item to `notificationTriggers`.
@@ -366,7 +362,7 @@ impl PutAlarmFluentBuilder {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>) -> Self {
+    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>>) -> Self {
         self.inner = self.inner.set_notification_triggers(input);
         self
     }
@@ -388,7 +384,7 @@ impl PutAlarmFluentBuilder {
     /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
+    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmState>> {
         self.inner.get_notification_triggers()
     }
     /// <p>Indicates whether the alarm is enabled.</p>
@@ -409,3 +405,4 @@ impl PutAlarmFluentBuilder {
         self.inner.get_notification_enabled()
     }
 }
+

@@ -3,19 +3,19 @@
 /// Configuration parameters used to update the Channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// A short text description of the Channel.
     pub description: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel to update.
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateChannelInput {
+impl  UpdateChannelInput  {
     /// A short text description of the Channel.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ID of the Channel to update.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateChannelInputBuilder {
     }
     /// A short text description of the Channel.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A short text description of the Channel.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateChannelInputBuilder {
     }
     /// The ID of the Channel to update.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the Channel to update.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            description: self.description,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                description: self.description
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

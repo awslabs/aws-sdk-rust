@@ -3,7 +3,7 @@
 /// <p>A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrawlsFilter {
+pub struct CrawlsFilter  {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ pub struct CrawlsFilter {
     /// <p>The value provided for comparison on the crawl field.</p>
     pub field_value: ::std::option::Option<::std::string::String>,
 }
-impl CrawlsFilter {
+impl  CrawlsFilter  {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
     /// <li>
@@ -47,7 +47,7 @@ impl CrawlsFilter {
     /// <li>
     /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
-    pub fn field_name(&self) -> ::std::option::Option<&crate::types::FieldName> {
+    pub fn field_name(&self) -> ::std::option::Option<& crate::types::FieldName> {
         self.field_name.as_ref()
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
@@ -65,11 +65,11 @@ impl CrawlsFilter {
     /// <li>
     /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
-    pub fn filter_operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
+    pub fn filter_operator(&self) -> ::std::option::Option<& crate::types::FilterOperator> {
         self.filter_operator.as_ref()
     }
     /// <p>The value provided for comparison on the crawl field.</p>
-    pub fn field_value(&self) -> ::std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<& str> {
         self.field_value.as_deref()
     }
 }
@@ -116,8 +116,7 @@ impl CrawlsFilterBuilder {
     /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub fn set_field_name(mut self, input: ::std::option::Option<crate::types::FieldName>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
@@ -168,8 +167,7 @@ impl CrawlsFilterBuilder {
     /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub fn set_filter_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
-        self.filter_operator = input;
-        self
+        self.filter_operator = input; self
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
@@ -196,8 +194,7 @@ impl CrawlsFilterBuilder {
     }
     /// <p>The value provided for comparison on the crawl field.</p>
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_value = input;
-        self
+        self.field_value = input; self
     }
     /// <p>The value provided for comparison on the crawl field.</p>
     pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,9 +203,13 @@ impl CrawlsFilterBuilder {
     /// Consumes the builder and constructs a [`CrawlsFilter`](crate::types::CrawlsFilter).
     pub fn build(self) -> crate::types::CrawlsFilter {
         crate::types::CrawlsFilter {
-            field_name: self.field_name,
-            filter_operator: self.filter_operator,
-            field_value: self.field_value,
+            field_name: self.field_name
+            ,
+            filter_operator: self.filter_operator
+            ,
+            field_value: self.field_value
+            ,
         }
     }
 }
+

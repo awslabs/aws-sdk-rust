@@ -3,16 +3,17 @@
 /// <p>An object that contains the details for the Amazon ECS resources of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsPropertiesDetail {
+pub struct EcsPropertiesDetail  {
     /// <p>The properties for the Amazon ECS task definition of a job.</p>
-    pub task_properties: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskDetails>>,
+    pub task_properties: ::std::option::Option<::std::vec::Vec::<crate::types::EcsTaskDetails>>,
 }
-impl EcsPropertiesDetail {
+impl  EcsPropertiesDetail  {
     /// <p>The properties for the Amazon ECS task definition of a job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_properties.is_none()`.
-    pub fn task_properties(&self) -> &[crate::types::EcsTaskDetails] {
-        self.task_properties.as_deref().unwrap_or_default()
+    pub fn task_properties(&self) -> & [crate::types::EcsTaskDetails] {
+        self.task_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsPropertiesDetail {
@@ -26,7 +27,7 @@ impl EcsPropertiesDetail {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsPropertiesDetailBuilder {
-    pub(crate) task_properties: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskDetails>>,
+    pub(crate) task_properties: ::std::option::Option<::std::vec::Vec::<crate::types::EcsTaskDetails>>,
 }
 impl EcsPropertiesDetailBuilder {
     /// Appends an item to `task_properties`.
@@ -36,23 +37,24 @@ impl EcsPropertiesDetailBuilder {
     /// <p>The properties for the Amazon ECS task definition of a job.</p>
     pub fn task_properties(mut self, input: crate::types::EcsTaskDetails) -> Self {
         let mut v = self.task_properties.unwrap_or_default();
-        v.push(input);
-        self.task_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties for the Amazon ECS task definition of a job.</p>
-    pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskDetails>>) -> Self {
-        self.task_properties = input;
-        self
+    pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EcsTaskDetails>>) -> Self {
+        self.task_properties = input; self
     }
     /// <p>The properties for the Amazon ECS task definition of a job.</p>
-    pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsTaskDetails>> {
+    pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EcsTaskDetails>> {
         &self.task_properties
     }
     /// Consumes the builder and constructs a [`EcsPropertiesDetail`](crate::types::EcsPropertiesDetail).
     pub fn build(self) -> crate::types::EcsPropertiesDetail {
         crate::types::EcsPropertiesDetail {
-            task_properties: self.task_properties,
+            task_properties: self.task_properties
+            ,
         }
     }
 }
+

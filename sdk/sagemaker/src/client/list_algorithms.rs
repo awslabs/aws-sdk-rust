@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAlgorithms`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only algorithms created after the specified time (timestamp).</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only algorithms created before the specified time (timestamp).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of algorithms to return in the response.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p><br>
     ///   - [`sort_by(AlgorithmSortBy)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::sort_by) / [`set_sort_by(Option<AlgorithmSortBy>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for the results. The default is <code>Ascending</code>.</p><br>
-    /// - On success, responds with [`ListAlgorithmsOutput`](crate::operation::list_algorithms::ListAlgorithmsOutput) with field(s):
+                            /// - On success, responds with [`ListAlgorithmsOutput`](crate::operation::list_algorithms::ListAlgorithmsOutput) with field(s):
     ///   - [`algorithm_summary_list(Option<Vec::<AlgorithmSummary>>)`](crate::operation::list_algorithms::ListAlgorithmsOutput::algorithm_summary_list): <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_algorithms::ListAlgorithmsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListAlgorithmsError>`](crate::operation::list_algorithms::ListAlgorithmsError)
+                            /// - On failure, responds with [`SdkError<ListAlgorithmsError>`](crate::operation::list_algorithms::ListAlgorithmsError)
     pub fn list_algorithms(&self) -> crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder {
-        crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

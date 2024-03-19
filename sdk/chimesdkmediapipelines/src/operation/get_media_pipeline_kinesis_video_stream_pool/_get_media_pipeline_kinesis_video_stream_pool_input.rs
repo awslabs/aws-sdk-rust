@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMediaPipelineKinesisVideoStreamPoolInput {
+pub struct GetMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the video stream pool.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetMediaPipelineKinesisVideoStreamPoolInput {
+impl  GetMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the video stream pool.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetMediaPipelineKinesisVideoStreamPoolInputBuilder {
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput {
-                identifier: self.identifier,
-            },
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

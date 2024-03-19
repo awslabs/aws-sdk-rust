@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRuntimeManagementConfigInput {
+pub struct PutRuntimeManagementConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -32,7 +32,7 @@ pub struct PutRuntimeManagementConfigInput {
     /// </note>
     pub runtime_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutRuntimeManagementConfigInput {
+impl  PutRuntimeManagementConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -44,11 +44,11 @@ impl PutRuntimeManagementConfigInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
     /// <p>Specify the runtime update mode.</p>
@@ -60,13 +60,13 @@ impl PutRuntimeManagementConfigInput {
     /// <li>
     /// <p><b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p></li>
     /// </ul>
-    pub fn update_runtime_on(&self) -> ::std::option::Option<&crate::types::UpdateRuntimeOn> {
+    pub fn update_runtime_on(&self) -> ::std::option::Option<& crate::types::UpdateRuntimeOn> {
         self.update_runtime_on.as_ref()
     }
     /// <p>The ARN of the runtime version you want the function to use.</p><note>
     /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
     /// </note>
-    pub fn runtime_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn runtime_version_arn(&self) -> ::std::option::Option<& str> {
         self.runtime_version_arn.as_deref()
     }
 }
@@ -115,8 +115,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -139,8 +138,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     }
     /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +168,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     /// <p><b>Manual</b> - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback">Roll back a runtime version</a>.</p></li>
     /// </ul>
     pub fn set_update_runtime_on(mut self, input: ::std::option::Option<crate::types::UpdateRuntimeOn>) -> Self {
-        self.update_runtime_on = input;
-        self
+        self.update_runtime_on = input; self
     }
     /// <p>Specify the runtime update mode.</p>
     /// <ul>
@@ -196,8 +193,7 @@ impl PutRuntimeManagementConfigInputBuilder {
     /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
     /// </note>
     pub fn set_runtime_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_version_arn = input;
-        self
+        self.runtime_version_arn = input; self
     }
     /// <p>The ARN of the runtime version you want the function to use.</p><note>
     /// <p>This is only required if you're using the <b>Manual</b> runtime update mode.</p>
@@ -206,17 +202,19 @@ impl PutRuntimeManagementConfigInputBuilder {
         &self.runtime_version_arn
     }
     /// Consumes the builder and constructs a [`PutRuntimeManagementConfigInput`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput {
-            function_name: self.function_name,
-            qualifier: self.qualifier,
-            update_runtime_on: self.update_runtime_on,
-            runtime_version_arn: self.runtime_version_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput {
+                function_name: self.function_name
+                ,
+                qualifier: self.qualifier
+                ,
+                update_runtime_on: self.update_runtime_on
+                ,
+                runtime_version_arn: self.runtime_version_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogEventsOutput {
+pub struct GetRelationalDatabaseLogEventsOutput  {
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub resource_log_events: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
+    pub resource_log_events: ::std::option::Option<::std::vec::Vec::<crate::types::LogEvent>>,
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub next_backward_token: ::std::option::Option<::std::string::String>,
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub next_forward_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRelationalDatabaseLogEventsOutput {
+impl  GetRelationalDatabaseLogEventsOutput  {
     /// <p>An object describing the result of your get relational database log events request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_log_events.is_none()`.
-    pub fn resource_log_events(&self) -> &[crate::types::LogEvent] {
-        self.resource_log_events.as_deref().unwrap_or_default()
+    pub fn resource_log_events(&self) -> & [crate::types::LogEvent] {
+        self.resource_log_events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
-    pub fn next_backward_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_backward_token(&self) -> ::std::option::Option<& str> {
         self.next_backward_token.as_deref()
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
-    pub fn next_forward_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_forward_token(&self) -> ::std::option::Option<& str> {
         self.next_forward_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRelationalDatabaseLogEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRelationalDatabaseLogEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
     pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsOutputBuilder {
@@ -43,7 +44,7 @@ impl GetRelationalDatabaseLogEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsOutputBuilder {
-    pub(crate) resource_log_events: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
+    pub(crate) resource_log_events: ::std::option::Option<::std::vec::Vec::<crate::types::LogEvent>>,
     pub(crate) next_backward_token: ::std::option::Option<::std::string::String>,
     pub(crate) next_forward_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
     /// <p>An object describing the result of your get relational database log events request.</p>
     pub fn resource_log_events(mut self, input: crate::types::LogEvent) -> Self {
         let mut v = self.resource_log_events.unwrap_or_default();
-        v.push(input);
-        self.resource_log_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_log_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn set_resource_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>) -> Self {
-        self.resource_log_events = input;
-        self
+    pub fn set_resource_log_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogEvent>>) -> Self {
+        self.resource_log_events = input; self
     }
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn get_resource_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEvent>> {
+    pub fn get_resource_log_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogEvent>> {
         &self.resource_log_events
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
@@ -76,8 +76,7 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub fn set_next_backward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_backward_token = input;
-        self
+        self.next_backward_token = input; self
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub fn get_next_backward_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl GetRelationalDatabaseLogEventsOutputBuilder {
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub fn set_next_forward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_forward_token = input;
-        self
+        self.next_forward_token = input; self
     }
     /// <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
     pub fn get_next_forward_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_forward_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
     pub fn build(self) -> crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput {
         crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput {
-            resource_log_events: self.resource_log_events,
-            next_backward_token: self.next_backward_token,
-            next_forward_token: self.next_forward_token,
+            resource_log_events: self.resource_log_events
+            ,
+            next_backward_token: self.next_backward_token
+            ,
+            next_forward_token: self.next_forward_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>CreateDirectory</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDirectoryInput {
+pub struct CreateDirectoryInput  {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
@@ -35,15 +35,15 @@ pub struct CreateDirectoryInput {
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDirectoryInput {
+impl  CreateDirectoryInput  {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
-    pub fn short_name(&self) -> ::std::option::Option<&str> {
+    pub fn short_name(&self) -> ::std::option::Option<& str> {
         self.short_name.as_deref()
     }
     /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
@@ -65,29 +65,30 @@ impl CreateDirectoryInput {
     /// <p>Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p></li>
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>A description for the directory.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The size of the directory.</p>
-    pub fn size(&self) -> ::std::option::Option<&crate::types::DirectorySize> {
+    pub fn size(&self) -> ::std::option::Option<& crate::types::DirectorySize> {
         self.size.as_ref()
     }
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
-    pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettings> {
+    pub fn vpc_settings(&self) -> ::std::option::Option<& crate::types::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateDirectoryInput {
+impl  ::std::fmt::Debug for CreateDirectoryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectoryInput");
         formatter.field("name", &self.name);
@@ -117,7 +118,7 @@ pub struct CreateDirectoryInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<crate::types::DirectorySize>,
     pub(crate) vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDirectoryInputBuilder {
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
@@ -128,8 +129,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +142,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
     pub fn set_short_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_name = input;
-        self
+        self.short_name = input; self
     }
     /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
     pub fn get_short_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +192,7 @@ impl CreateDirectoryInputBuilder {
     /// </ul>
     /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
@@ -225,8 +223,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>A description for the directory.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the directory.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +237,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>The size of the directory.</p>
     pub fn set_size(mut self, input: ::std::option::Option<crate::types::DirectorySize>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the directory.</p>
     pub fn get_size(&self) -> &::std::option::Option<crate::types::DirectorySize> {
@@ -254,8 +250,7 @@ impl CreateDirectoryInputBuilder {
     }
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
-        self.vpc_settings = input;
-        self
+        self.vpc_settings = input; self
     }
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
@@ -268,32 +263,38 @@ impl CreateDirectoryInputBuilder {
     /// <p>The tags to be assigned to the Simple AD directory.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryInput {
-            name: self.name,
-            short_name: self.short_name,
-            password: self.password,
-            description: self.description,
-            size: self.size,
-            vpc_settings: self.vpc_settings,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_directory::CreateDirectoryInput {
+                name: self.name
+                ,
+                short_name: self.short_name
+                ,
+                password: self.password
+                ,
+                description: self.description
+                ,
+                size: self.size
+                ,
+                vpc_settings: self.vpc_settings
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateDirectoryInputBuilder {
@@ -309,3 +310,4 @@ impl ::std::fmt::Debug for CreateDirectoryInputBuilder {
         formatter.finish()
     }
 }
+

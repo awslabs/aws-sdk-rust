@@ -4,7 +4,7 @@
 /// <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsServiceProjectedMetric {
+pub struct EcsServiceProjectedMetric  {
     /// <p>The name of the projected metric.</p>
     /// <p>The following metrics are available:</p>
     /// <ul>
@@ -15,13 +15,13 @@ pub struct EcsServiceProjectedMetric {
     /// </ul>
     pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p>The timestamps of the projected metric.</p>
-    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>The upper bound values for the projected metric.</p>
-    pub upper_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub upper_bound_values: ::std::option::Option<::std::vec::Vec::<f64>>,
     /// <p>The lower bound values for the projected metric.</p>
-    pub lower_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub lower_bound_values: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
-impl EcsServiceProjectedMetric {
+impl  EcsServiceProjectedMetric  {
     /// <p>The name of the projected metric.</p>
     /// <p>The following metrics are available:</p>
     /// <ul>
@@ -30,26 +30,29 @@ impl EcsServiceProjectedMetric {
     /// <li>
     /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::EcsServiceMetricName> {
         self.name.as_ref()
     }
     /// <p>The timestamps of the projected metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
-    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
-        self.timestamps.as_deref().unwrap_or_default()
+    pub fn timestamps(&self) -> & [::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The upper bound values for the projected metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upper_bound_values.is_none()`.
-    pub fn upper_bound_values(&self) -> &[f64] {
-        self.upper_bound_values.as_deref().unwrap_or_default()
+    pub fn upper_bound_values(&self) -> & [f64] {
+        self.upper_bound_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The lower bound values for the projected metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lower_bound_values.is_none()`.
-    pub fn lower_bound_values(&self) -> &[f64] {
-        self.lower_bound_values.as_deref().unwrap_or_default()
+    pub fn lower_bound_values(&self) -> & [f64] {
+        self.lower_bound_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsServiceProjectedMetric {
@@ -64,9 +67,9 @@ impl EcsServiceProjectedMetric {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsServiceProjectedMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceMetricName>,
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    pub(crate) upper_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) lower_bound_values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
+    pub(crate) upper_bound_values: ::std::option::Option<::std::vec::Vec::<f64>>,
+    pub(crate) lower_bound_values: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
 impl EcsServiceProjectedMetricBuilder {
     /// <p>The name of the projected metric.</p>
@@ -90,8 +93,7 @@ impl EcsServiceProjectedMetricBuilder {
     /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EcsServiceMetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the projected metric.</p>
     /// <p>The following metrics are available:</p>
@@ -111,17 +113,16 @@ impl EcsServiceProjectedMetricBuilder {
     /// <p>The timestamps of the projected metric.</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The timestamps of the projected metric.</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>The timestamps of the projected metric.</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `upper_bound_values`.
@@ -131,17 +132,16 @@ impl EcsServiceProjectedMetricBuilder {
     /// <p>The upper bound values for the projected metric.</p>
     pub fn upper_bound_values(mut self, input: f64) -> Self {
         let mut v = self.upper_bound_values.unwrap_or_default();
-        v.push(input);
-        self.upper_bound_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.upper_bound_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The upper bound values for the projected metric.</p>
-    pub fn set_upper_bound_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.upper_bound_values = input;
-        self
+    pub fn set_upper_bound_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.upper_bound_values = input; self
     }
     /// <p>The upper bound values for the projected metric.</p>
-    pub fn get_upper_bound_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_upper_bound_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.upper_bound_values
     }
     /// Appends an item to `lower_bound_values`.
@@ -151,26 +151,30 @@ impl EcsServiceProjectedMetricBuilder {
     /// <p>The lower bound values for the projected metric.</p>
     pub fn lower_bound_values(mut self, input: f64) -> Self {
         let mut v = self.lower_bound_values.unwrap_or_default();
-        v.push(input);
-        self.lower_bound_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lower_bound_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The lower bound values for the projected metric.</p>
-    pub fn set_lower_bound_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.lower_bound_values = input;
-        self
+    pub fn set_lower_bound_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.lower_bound_values = input; self
     }
     /// <p>The lower bound values for the projected metric.</p>
-    pub fn get_lower_bound_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_lower_bound_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.lower_bound_values
     }
     /// Consumes the builder and constructs a [`EcsServiceProjectedMetric`](crate::types::EcsServiceProjectedMetric).
     pub fn build(self) -> crate::types::EcsServiceProjectedMetric {
         crate::types::EcsServiceProjectedMetric {
-            name: self.name,
-            timestamps: self.timestamps,
-            upper_bound_values: self.upper_bound_values,
-            lower_bound_values: self.lower_bound_values,
+            name: self.name
+            ,
+            timestamps: self.timestamps
+            ,
+            upper_bound_values: self.upper_bound_values
+            ,
+            lower_bound_values: self.lower_bound_values
+            ,
         }
     }
 }
+

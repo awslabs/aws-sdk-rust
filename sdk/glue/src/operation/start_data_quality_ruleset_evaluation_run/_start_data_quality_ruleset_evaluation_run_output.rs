@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDataQualityRulesetEvaluationRunOutput {
+pub struct StartDataQualityRulesetEvaluationRunOutput  {
     /// <p>The unique run identifier associated with this run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartDataQualityRulesetEvaluationRunOutput {
+impl  StartDataQualityRulesetEvaluationRunOutput  {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDataQualityRulesetEvaluationRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDataQualityRulesetEvaluationRunOutput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput).
     pub fn builder() -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunOutputBuilder {
@@ -40,27 +40,28 @@ impl StartDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput).
     pub fn build(self) -> crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput {
         crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput {
-            run_id: self.run_id,
+            run_id: self.run_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The payload for DeleteStatistics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStatisticsValueMap {
+pub struct DeleteStatisticsValueMap  {
     /// <p>The current status of the statistics.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub statistics_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStatisticsValueMap {
+impl  DeleteStatisticsValueMap  {
     /// <p>The current status of the statistics.</p>
     pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
     }
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
-    pub fn statistics_id(&self) -> ::std::option::Option<&str> {
+    pub fn statistics_id(&self) -> ::std::option::Option<& str> {
         self.statistics_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteStatisticsValueMapBuilder {
     }
     /// <p>The current status of the statistics.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>The current status of the statistics.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl DeleteStatisticsValueMapBuilder {
     }
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub fn set_statistics_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistics_id = input;
-        self
+        self.statistics_id = input; self
     }
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub fn get_statistics_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DeleteStatisticsValueMapBuilder {
     /// Consumes the builder and constructs a [`DeleteStatisticsValueMap`](crate::types::DeleteStatisticsValueMap).
     pub fn build(self) -> crate::types::DeleteStatisticsValueMap {
         crate::types::DeleteStatisticsValueMap {
-            active: self.active,
-            statistics_id: self.statistics_id,
+            active: self.active
+            ,
+            statistics_id: self.statistics_id
+            ,
         }
     }
 }
+

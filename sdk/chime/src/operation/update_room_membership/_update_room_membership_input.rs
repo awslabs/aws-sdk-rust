@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoomMembershipInput {
+pub struct UpdateRoomMembershipInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The room ID.</p>
@@ -12,21 +12,21 @@ pub struct UpdateRoomMembershipInput {
     /// <p>The role of the member.</p>
     pub role: ::std::option::Option<crate::types::RoomMembershipRole>,
 }
-impl UpdateRoomMembershipInput {
+impl  UpdateRoomMembershipInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> ::std::option::Option<&str> {
+    pub fn room_id(&self) -> ::std::option::Option<& str> {
         self.room_id.as_deref()
     }
     /// <p>The member ID.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The role of the member.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::RoomMembershipRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::RoomMembershipRole> {
         self.role.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateRoomMembershipInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateRoomMembershipInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_id = input;
-        self
+        self.room_id = input; self
     }
     /// <p>The room ID.</p>
     pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateRoomMembershipInputBuilder {
     }
     /// <p>The member ID.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The member ID.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl UpdateRoomMembershipInputBuilder {
     }
     /// <p>The role of the member.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the member.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
         &self.role
     }
     /// Consumes the builder and constructs a [`UpdateRoomMembershipInput`](crate::operation::update_room_membership::UpdateRoomMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_room_membership::UpdateRoomMembershipInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_room_membership::UpdateRoomMembershipInput {
-            account_id: self.account_id,
-            room_id: self.room_id,
-            member_id: self.member_id,
-            role: self.role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_room_membership::UpdateRoomMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_room_membership::UpdateRoomMembershipInput {
+                account_id: self.account_id
+                ,
+                room_id: self.room_id
+                ,
+                member_id: self.member_id
+                ,
+                role: self.role
+                ,
+            }
+        )
     }
 }
+

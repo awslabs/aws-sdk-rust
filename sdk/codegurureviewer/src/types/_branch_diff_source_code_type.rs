@@ -3,22 +3,20 @@
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BranchDiffSourceCodeType {
+pub struct BranchDiffSourceCodeType  {
     /// <p>The source branch for a diff in an associated repository.</p>
     pub source_branch_name: ::std::string::String,
     /// <p>The destination branch for a diff in an associated repository.</p>
     pub destination_branch_name: ::std::string::String,
 }
-impl BranchDiffSourceCodeType {
+impl  BranchDiffSourceCodeType  {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_branch_name.deref()
+    pub fn source_branch_name(&self) -> & str {
+        use std::ops::Deref; self.source_branch_name.deref()
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_branch_name.deref()
+    pub fn destination_branch_name(&self) -> & str {
+        use std::ops::Deref; self.destination_branch_name.deref()
     }
 }
 impl BranchDiffSourceCodeType {
@@ -44,8 +42,7 @@ impl BranchDiffSourceCodeTypeBuilder {
     }
     /// <p>The source branch for a diff in an associated repository.</p>
     pub fn set_source_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_branch_name = input;
-        self
+        self.source_branch_name = input; self
     }
     /// <p>The source branch for a diff in an associated repository.</p>
     pub fn get_source_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl BranchDiffSourceCodeTypeBuilder {
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
     pub fn set_destination_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_branch_name = input;
-        self
+        self.destination_branch_name = input; self
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
     pub fn get_destination_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl BranchDiffSourceCodeTypeBuilder {
     /// - [`source_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::source_branch_name)
     /// - [`destination_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::destination_branch_name)
     pub fn build(self) -> ::std::result::Result<crate::types::BranchDiffSourceCodeType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BranchDiffSourceCodeType {
-            source_branch_name: self.source_branch_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_branch_name",
-                    "source_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
-                )
-            })?,
-            destination_branch_name: self.destination_branch_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_branch_name",
-                    "destination_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BranchDiffSourceCodeType {
+                source_branch_name: self.source_branch_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_branch_name", "source_branch_name was not specified but it is required when building BranchDiffSourceCodeType")
+                    )?
+                ,
+                destination_branch_name: self.destination_branch_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_branch_name", "destination_branch_name was not specified but it is required when building BranchDiffSourceCodeType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

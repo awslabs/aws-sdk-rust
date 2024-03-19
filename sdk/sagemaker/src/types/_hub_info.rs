@@ -3,7 +3,7 @@
 /// <p>Information about a hub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HubInfo {
+pub struct HubInfo  {
     /// <p>The name of the hub.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
@@ -13,7 +13,7 @@ pub struct HubInfo {
     /// <p>A description of the hub.</p>
     pub hub_description: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub.</p>
-    pub hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hub_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the hub.</p>
     pub hub_status: ::std::option::Option<crate::types::HubStatus>,
     /// <p>The date and time that the hub was created.</p>
@@ -21,39 +21,40 @@ pub struct HubInfo {
     /// <p>The date and time that the hub was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl HubInfo {
+impl  HubInfo  {
     /// <p>The name of the hub.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
-    pub fn hub_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_arn(&self) -> ::std::option::Option<& str> {
         self.hub_arn.as_deref()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_display_name(&self) -> ::std::option::Option<& str> {
         self.hub_display_name.as_deref()
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(&self) -> ::std::option::Option<&str> {
+    pub fn hub_description(&self) -> ::std::option::Option<& str> {
         self.hub_description.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_search_keywords.is_none()`.
-    pub fn hub_search_keywords(&self) -> &[::std::string::String] {
-        self.hub_search_keywords.as_deref().unwrap_or_default()
+    pub fn hub_search_keywords(&self) -> & [::std::string::String] {
+        self.hub_search_keywords.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the hub.</p>
-    pub fn hub_status(&self) -> ::std::option::Option<&crate::types::HubStatus> {
+    pub fn hub_status(&self) -> ::std::option::Option<& crate::types::HubStatus> {
         self.hub_status.as_ref()
     }
     /// <p>The date and time that the hub was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the hub was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -72,7 +73,7 @@ pub struct HubInfoBuilder {
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hub_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_description: ::std::option::Option<::std::string::String>,
-    pub(crate) hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hub_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) hub_status: ::std::option::Option<crate::types::HubStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -86,8 +87,7 @@ impl HubInfoBuilder {
     }
     /// <p>The name of the hub.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The name of the hub.</p>
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +101,7 @@ impl HubInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
     pub fn set_hub_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_arn = input;
-        self
+        self.hub_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
     pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +114,7 @@ impl HubInfoBuilder {
     }
     /// <p>The display name of the hub.</p>
     pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_display_name = input;
-        self
+        self.hub_display_name = input; self
     }
     /// <p>The display name of the hub.</p>
     pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +127,7 @@ impl HubInfoBuilder {
     }
     /// <p>A description of the hub.</p>
     pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_description = input;
-        self
+        self.hub_description = input; self
     }
     /// <p>A description of the hub.</p>
     pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,17 +140,16 @@ impl HubInfoBuilder {
     /// <p>The searchable keywords for the hub.</p>
     pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
-        v.push(input.into());
-        self.hub_search_keywords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hub_search_keywords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hub_search_keywords = input;
-        self
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hub_search_keywords = input; self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hub_search_keywords
     }
     /// <p>The status of the hub.</p>
@@ -164,8 +160,7 @@ impl HubInfoBuilder {
     }
     /// <p>The status of the hub.</p>
     pub fn set_hub_status(mut self, input: ::std::option::Option<crate::types::HubStatus>) -> Self {
-        self.hub_status = input;
-        self
+        self.hub_status = input; self
     }
     /// <p>The status of the hub.</p>
     pub fn get_hub_status(&self) -> &::std::option::Option<crate::types::HubStatus> {
@@ -179,8 +174,7 @@ impl HubInfoBuilder {
     }
     /// <p>The date and time that the hub was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the hub was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +188,7 @@ impl HubInfoBuilder {
     }
     /// <p>The date and time that the hub was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time that the hub was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,14 +197,23 @@ impl HubInfoBuilder {
     /// Consumes the builder and constructs a [`HubInfo`](crate::types::HubInfo).
     pub fn build(self) -> crate::types::HubInfo {
         crate::types::HubInfo {
-            hub_name: self.hub_name,
-            hub_arn: self.hub_arn,
-            hub_display_name: self.hub_display_name,
-            hub_description: self.hub_description,
-            hub_search_keywords: self.hub_search_keywords,
-            hub_status: self.hub_status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            hub_name: self.hub_name
+            ,
+            hub_arn: self.hub_arn
+            ,
+            hub_display_name: self.hub_display_name
+            ,
+            hub_description: self.hub_description
+            ,
+            hub_search_keywords: self.hub_search_keywords
+            ,
+            hub_status: self.hub_status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

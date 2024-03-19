@@ -3,15 +3,14 @@
 /// <p>Contains the text for the generated policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneratedPolicy {
+pub struct GeneratedPolicy  {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub policy: ::std::string::String,
 }
-impl GeneratedPolicy {
+impl  GeneratedPolicy  {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
 }
 impl GeneratedPolicy {
@@ -36,8 +35,7 @@ impl GeneratedPolicyBuilder {
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GeneratedPolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::types::builders::GeneratedPolicyBuilder::policy)
     pub fn build(self) -> ::std::result::Result<crate::types::GeneratedPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeneratedPolicy {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building GeneratedPolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeneratedPolicy {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building GeneratedPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectVersionsInput {
+pub struct DescribeProjectVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub version_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub version_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeProjectVersionsInput {
+impl  DescribeProjectVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_names.is_none()`.
-    pub fn version_names(&self) -> &[::std::string::String] {
-        self.version_names.as_deref().unwrap_or_default()
+    pub fn version_names(&self) -> & [::std::string::String] {
+        self.version_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
@@ -44,7 +45,7 @@ impl DescribeProjectVersionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) version_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) version_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl DescribeProjectVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeProjectVersionsInputBuilder {
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
     pub fn version_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_names.unwrap_or_default();
-        v.push(input.into());
-        self.version_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.version_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn set_version_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.version_names = input;
-        self
+    pub fn set_version_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.version_names = input; self
     }
     /// <p>A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn get_version_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.version_names
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
@@ -91,8 +90,7 @@ impl DescribeProjectVersionsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl DescribeProjectVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeProjectVersionsInput`](crate::operation::describe_project_versions::DescribeProjectVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_project_versions::DescribeProjectVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_project_versions::DescribeProjectVersionsInput {
-            project_arn: self.project_arn,
-            version_names: self.version_names,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_project_versions::DescribeProjectVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_project_versions::DescribeProjectVersionsInput {
+                project_arn: self.project_arn
+                ,
+                version_names: self.version_names
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

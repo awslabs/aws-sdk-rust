@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRulesInput {
+pub struct ListRulesInput  {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
@@ -10,31 +10,32 @@ pub struct ListRulesInput {
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub lock_state: ::std::option::Option<crate::types::LockState>,
 }
-impl ListRulesInput {
+impl  ListRulesInput  {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::ResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
-    pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
+    pub fn lock_state(&self) -> ::std::option::Option<& crate::types::LockState> {
         self.lock_state.as_ref()
     }
 }
@@ -52,7 +53,7 @@ pub struct ListRulesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
     pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
 }
 impl ListRulesInputBuilder {
@@ -63,8 +64,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,8 +77,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -106,17 +104,16 @@ impl ListRulesInputBuilder {
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
@@ -126,8 +123,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
-        self.lock_state = input;
-        self
+        self.lock_state = input; self
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
@@ -135,12 +131,20 @@ impl ListRulesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            resource_type: self.resource_type,
-            resource_tags: self.resource_tags,
-            lock_state: self.lock_state,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_rules::ListRulesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_tags: self.resource_tags
+                ,
+                lock_state: self.lock_state
+                ,
+            }
+        )
     }
 }
+

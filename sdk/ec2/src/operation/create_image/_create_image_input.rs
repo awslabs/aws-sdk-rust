@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImageInput {
+pub struct CreateImageInput  {
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct CreateImageInput {
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     /// <p>A description for the new image.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,9 +41,9 @@ pub struct CreateImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl CreateImageInput {
+impl  CreateImageInput  {
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
     /// <ul>
@@ -54,13 +54,14 @@ impl CreateImageInput {
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description for the new image.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -68,12 +69,12 @@ impl CreateImageInput {
         self.dry_run
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
@@ -96,10 +97,11 @@ impl CreateImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateImageInput {
@@ -113,13 +115,13 @@ impl CreateImageInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageInputBuilder {
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) no_reboot: ::std::option::Option<bool>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl CreateImageInputBuilder {
     /// Appends an item to `block_device_mappings`.
@@ -138,9 +140,9 @@ impl CreateImageInputBuilder {
     /// </ul>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
@@ -152,9 +154,8 @@ impl CreateImageInputBuilder {
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
@@ -166,7 +167,7 @@ impl CreateImageInputBuilder {
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>A description for the new image.</p>
@@ -176,8 +177,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>A description for the new image.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the new image.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +190,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -205,8 +204,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +220,7 @@ impl CreateImageInputBuilder {
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
@@ -251,8 +248,7 @@ impl CreateImageInputBuilder {
     /// </ul>
     /// <p>Default: <code>false</code></p>
     pub fn set_no_reboot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_reboot = input;
-        self
+        self.no_reboot = input; self
     }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
@@ -280,9 +276,9 @@ impl CreateImageInputBuilder {
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
@@ -293,9 +289,8 @@ impl CreateImageInputBuilder {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
@@ -306,19 +301,29 @@ impl CreateImageInputBuilder {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
-            block_device_mappings: self.block_device_mappings,
-            description: self.description,
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            name: self.name,
-            no_reboot: self.no_reboot,
-            tag_specifications: self.tag_specifications,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_image::CreateImageInput {
+                block_device_mappings: self.block_device_mappings
+                ,
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                no_reboot: self.no_reboot
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

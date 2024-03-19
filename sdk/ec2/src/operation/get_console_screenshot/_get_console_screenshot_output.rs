@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConsoleScreenshotOutput {
+pub struct GetConsoleScreenshotOutput  {
     /// <p>The data that comprises the image.</p>
     pub image_data: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetConsoleScreenshotOutput {
+impl  GetConsoleScreenshotOutput  {
     /// <p>The data that comprises the image.</p>
-    pub fn image_data(&self) -> ::std::option::Option<&str> {
+    pub fn image_data(&self) -> ::std::option::Option<& str> {
         self.image_data.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConsoleScreenshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConsoleScreenshotOutput {
     /// Creates a new builder-style object to manufacture [`GetConsoleScreenshotOutput`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput).
     pub fn builder() -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder {
@@ -47,8 +47,7 @@ impl GetConsoleScreenshotOutputBuilder {
     }
     /// <p>The data that comprises the image.</p>
     pub fn set_image_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_data = input;
-        self
+        self.image_data = input; self
     }
     /// <p>The data that comprises the image.</p>
     pub fn get_image_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetConsoleScreenshotOutputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConsoleScreenshotOutput`](crate::operation::get_console_screenshot::GetConsoleScreenshotOutput).
     pub fn build(self) -> crate::operation::get_console_screenshot::GetConsoleScreenshotOutput {
         crate::operation::get_console_screenshot::GetConsoleScreenshotOutput {
-            image_data: self.image_data,
-            instance_id: self.instance_id,
+            image_data: self.image_data
+            ,
+            instance_id: self.instance_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

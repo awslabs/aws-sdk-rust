@@ -3,9 +3,9 @@
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbv2LoadBalancerDetails {
+pub struct AwsElbv2LoadBalancerDetails  {
     /// <p>The Availability Zones for the load balancer.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     pub canonical_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the load balancer was created.</p>
@@ -18,7 +18,7 @@ pub struct AwsElbv2LoadBalancerDetails {
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses.</p>
     pub scheme: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The state of the load balancer.</p>
     pub state: ::std::option::Option<crate::types::LoadBalancerState>,
     /// <p>The type of load balancer.</p>
@@ -26,59 +26,62 @@ pub struct AwsElbv2LoadBalancerDetails {
     /// <p>The ID of the VPC for the load balancer.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the load balancer.</p>
-    pub load_balancer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>>,
+    pub load_balancer_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsElbv2LoadBalancerAttribute>>,
 }
-impl AwsElbv2LoadBalancerDetails {
+impl  AwsElbv2LoadBalancerDetails  {
     /// <p>The Availability Zones for the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
-    pub fn canonical_hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn canonical_hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.canonical_hosted_zone_id.as_deref()
     }
     /// <p>Indicates when the load balancer was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The public DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& str> {
         self.ip_address_type.as_deref()
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses.</p>
-    pub fn scheme(&self) -> ::std::option::Option<&str> {
+    pub fn scheme(&self) -> ::std::option::Option<& str> {
         self.scheme.as_deref()
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the load balancer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LoadBalancerState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LoadBalancerState> {
         self.state.as_ref()
     }
     /// <p>The type of load balancer.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Attributes of the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_attributes.is_none()`.
-    pub fn load_balancer_attributes(&self) -> &[crate::types::AwsElbv2LoadBalancerAttribute] {
-        self.load_balancer_attributes.as_deref().unwrap_or_default()
+    pub fn load_balancer_attributes(&self) -> & [crate::types::AwsElbv2LoadBalancerAttribute] {
+        self.load_balancer_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsElbv2LoadBalancerDetails {
@@ -92,17 +95,17 @@ impl AwsElbv2LoadBalancerDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbv2LoadBalancerDetailsBuilder {
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     pub(crate) canonical_hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) scheme: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::LoadBalancerState>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) load_balancer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>>,
+    pub(crate) load_balancer_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsElbv2LoadBalancerAttribute>>,
 }
 impl AwsElbv2LoadBalancerDetailsBuilder {
     /// Appends an item to `availability_zones`.
@@ -112,17 +115,16 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     /// <p>The Availability Zones for the load balancer.</p>
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input);
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
@@ -132,8 +134,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     pub fn set_canonical_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.canonical_hosted_zone_id = input;
-        self
+        self.canonical_hosted_zone_id = input; self
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     pub fn get_canonical_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +149,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     /// <p>Indicates when the load balancer was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>Indicates when the load balancer was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -163,8 +163,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The public DNS name of the load balancer.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The public DNS name of the load balancer.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +176,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +189,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses.</p>
     pub fn set_scheme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheme = input;
-        self
+        self.scheme = input; self
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses.</p>
     pub fn get_scheme(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +202,16 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     /// <p>The IDs of the security groups for the load balancer.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The state of the load balancer.</p>
@@ -225,8 +221,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The state of the load balancer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LoadBalancerState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the load balancer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LoadBalancerState> {
@@ -239,8 +234,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The type of load balancer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of load balancer.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +247,7 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     }
     /// <p>The ID of the VPC for the load balancer.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC for the load balancer.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,36 +260,44 @@ impl AwsElbv2LoadBalancerDetailsBuilder {
     /// <p>Attributes of the load balancer.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::AwsElbv2LoadBalancerAttribute) -> Self {
         let mut v = self.load_balancer_attributes.unwrap_or_default();
-        v.push(input);
-        self.load_balancer_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.load_balancer_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Attributes of the load balancer.</p>
-    pub fn set_load_balancer_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>>,
-    ) -> Self {
-        self.load_balancer_attributes = input;
-        self
+    pub fn set_load_balancer_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsElbv2LoadBalancerAttribute>>) -> Self {
+        self.load_balancer_attributes = input; self
     }
     /// <p>Attributes of the load balancer.</p>
-    pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>> {
+    pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsElbv2LoadBalancerAttribute>> {
         &self.load_balancer_attributes
     }
     /// Consumes the builder and constructs a [`AwsElbv2LoadBalancerDetails`](crate::types::AwsElbv2LoadBalancerDetails).
     pub fn build(self) -> crate::types::AwsElbv2LoadBalancerDetails {
         crate::types::AwsElbv2LoadBalancerDetails {
-            availability_zones: self.availability_zones,
-            canonical_hosted_zone_id: self.canonical_hosted_zone_id,
-            created_time: self.created_time,
-            dns_name: self.dns_name,
-            ip_address_type: self.ip_address_type,
-            scheme: self.scheme,
-            security_groups: self.security_groups,
-            state: self.state,
-            r#type: self.r#type,
-            vpc_id: self.vpc_id,
-            load_balancer_attributes: self.load_balancer_attributes,
+            availability_zones: self.availability_zones
+            ,
+            canonical_hosted_zone_id: self.canonical_hosted_zone_id
+            ,
+            created_time: self.created_time
+            ,
+            dns_name: self.dns_name
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            scheme: self.scheme
+            ,
+            security_groups: self.security_groups
+            ,
+            state: self.state
+            ,
+            r#type: self.r#type
+            ,
+            vpc_id: self.vpc_id
+            ,
+            load_balancer_attributes: self.load_balancer_attributes
+            ,
         }
     }
 }
+

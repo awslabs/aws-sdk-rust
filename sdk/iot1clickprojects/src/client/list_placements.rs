@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPlacements`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`project_name(impl Into<String>)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::set_project_name):<br>required: **true**<br><p>The project containing the placements to be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_placements::builders::ListPlacementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p><br>
-    /// - On success, responds with [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput) with field(s):
+                            /// - On success, responds with [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput) with field(s):
     ///   - [`placements(Vec::<PlacementSummary>)`](crate::operation::list_placements::ListPlacementsOutput::placements): <p>An object listing the requested placements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_placements::ListPlacementsOutput::next_token): <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    /// - On failure, responds with [`SdkError<ListPlacementsError>`](crate::operation::list_placements::ListPlacementsError)
+                            /// - On failure, responds with [`SdkError<ListPlacementsError>`](crate::operation::list_placements::ListPlacementsError)
     pub fn list_placements(&self) -> crate::operation::list_placements::builders::ListPlacementsFluentBuilder {
-        crate::operation::list_placements::builders::ListPlacementsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_placements::builders::ListPlacementsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

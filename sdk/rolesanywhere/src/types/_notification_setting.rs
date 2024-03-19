@@ -3,7 +3,7 @@
 /// <p>Customizable notification settings that will be applied to notification events. IAM Roles Anywhere consumes these settings while notifying across multiple channels - CloudWatch metrics, EventBridge, and Health Dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationSetting {
+pub struct NotificationSetting  {
     /// <p>Indicates whether the notification setting is enabled.</p>
     pub enabled: bool,
     /// <p>The event to which this notification setting is applied.</p>
@@ -15,13 +15,13 @@ pub struct NotificationSetting {
     /// </note>
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
 }
-impl NotificationSetting {
+impl  NotificationSetting  {
     /// <p>Indicates whether the notification setting is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The event to which this notification setting is applied.</p>
-    pub fn event(&self) -> &crate::types::NotificationEvent {
+    pub fn event(&self) -> & crate::types::NotificationEvent {
         &self.event
     }
     /// <p>The number of days before a notification event. This value is required for a notification setting that is enabled.</p>
@@ -31,7 +31,7 @@ impl NotificationSetting {
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.channel.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl NotificationSettingBuilder {
     }
     /// <p>Indicates whether the notification setting is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the notification setting is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -75,8 +74,7 @@ impl NotificationSettingBuilder {
     }
     /// <p>The event to which this notification setting is applied.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::NotificationEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The event to which this notification setting is applied.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::NotificationEvent> {
@@ -89,8 +87,7 @@ impl NotificationSettingBuilder {
     }
     /// <p>The number of days before a notification event. This value is required for a notification setting that is enabled.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The number of days before a notification event. This value is required for a notification setting that is enabled.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl NotificationSettingBuilder {
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p><note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
@@ -121,21 +117,24 @@ impl NotificationSettingBuilder {
     /// - [`enabled`](crate::types::builders::NotificationSettingBuilder::enabled)
     /// - [`event`](crate::types::builders::NotificationSettingBuilder::event)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationSetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationSetting {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building NotificationSetting",
-                )
-            })?,
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building NotificationSetting",
-                )
-            })?,
-            threshold: self.threshold,
-            channel: self.channel,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationSetting {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building NotificationSetting")
+                    )?
+                ,
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building NotificationSetting")
+                    )?
+                ,
+                threshold: self.threshold
+                ,
+                channel: self.channel
+                ,
+            }
+        )
     }
 }
+

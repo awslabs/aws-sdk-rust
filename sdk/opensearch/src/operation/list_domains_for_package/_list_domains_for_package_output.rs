@@ -3,30 +3,31 @@
 /// <p>Container for the response parameters to the <code>ListDomainsForPackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainsForPackageOutput {
+pub struct ListDomainsForPackageOutput  {
     /// <p>Information about all domains associated with a package.</p>
-    pub domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub domain_package_details_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainPackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDomainsForPackageOutput {
+impl  ListDomainsForPackageOutput  {
     /// <p>Information about all domains associated with a package.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_package_details_list.is_none()`.
-    pub fn domain_package_details_list(&self) -> &[crate::types::DomainPackageDetails] {
-        self.domain_package_details_list.as_deref().unwrap_or_default()
+    pub fn domain_package_details_list(&self) -> & [crate::types::DomainPackageDetails] {
+        self.domain_package_details_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDomainsForPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDomainsForPackageOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput).
     pub fn builder() -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageOutputBuilder {
@@ -38,7 +39,7 @@ impl ListDomainsForPackageOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsForPackageOutputBuilder {
-    pub(crate) domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub(crate) domain_package_details_list: ::std::option::Option<::std::vec::Vec::<crate::types::DomainPackageDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListDomainsForPackageOutputBuilder {
     /// <p>Information about all domains associated with a package.</p>
     pub fn domain_package_details_list(mut self, input: crate::types::DomainPackageDetails) -> Self {
         let mut v = self.domain_package_details_list.unwrap_or_default();
-        v.push(input);
-        self.domain_package_details_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_package_details_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about all domains associated with a package.</p>
-    pub fn set_domain_package_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>) -> Self {
-        self.domain_package_details_list = input;
-        self
+    pub fn set_domain_package_details_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainPackageDetails>>) -> Self {
+        self.domain_package_details_list = input; self
     }
     /// <p>Information about all domains associated with a package.</p>
-    pub fn get_domain_package_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>> {
+    pub fn get_domain_package_details_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainPackageDetails>> {
         &self.domain_package_details_list
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
@@ -70,28 +70,30 @@ impl ListDomainsForPackageOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDomainsForPackageOutput`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput).
     pub fn build(self) -> crate::operation::list_domains_for_package::ListDomainsForPackageOutput {
         crate::operation::list_domains_for_package::ListDomainsForPackageOutput {
-            domain_package_details_list: self.domain_package_details_list,
-            next_token: self.next_token,
+            domain_package_details_list: self.domain_package_details_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

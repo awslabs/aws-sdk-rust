@@ -3,15 +3,14 @@
 /// <p>The details of the search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchInItem {
+pub struct SearchInItem  {
     /// <p>The search attribute.</p>
     pub attribute: ::std::string::String,
 }
-impl SearchInItem {
+impl  SearchInItem  {
     /// <p>The search attribute.</p>
-    pub fn attribute(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute.deref()
+    pub fn attribute(&self) -> & str {
+        use std::ops::Deref; self.attribute.deref()
     }
 }
 impl SearchInItem {
@@ -36,8 +35,7 @@ impl SearchInItemBuilder {
     }
     /// <p>The search attribute.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The search attribute.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SearchInItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::SearchInItemBuilder::attribute)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchInItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchInItem {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building SearchInItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchInItem {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building SearchInItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

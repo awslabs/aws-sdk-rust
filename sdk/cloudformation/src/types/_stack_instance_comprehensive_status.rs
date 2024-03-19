@@ -3,7 +3,7 @@
 /// <p>The detailed status of the stack instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackInstanceComprehensiveStatus {
+pub struct StackInstanceComprehensiveStatus  {
     /// <ul>
     /// <li>
     /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
@@ -24,7 +24,7 @@ pub struct StackInstanceComprehensiveStatus {
     /// </ul>
     pub detailed_status: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
 }
-impl StackInstanceComprehensiveStatus {
+impl  StackInstanceComprehensiveStatus  {
     /// <ul>
     /// <li>
     /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
@@ -43,7 +43,7 @@ impl StackInstanceComprehensiveStatus {
     /// <li>
     /// <p><code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p></li>
     /// </ul>
-    pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::StackInstanceDetailedStatus> {
+    pub fn detailed_status(&self) -> ::std::option::Option<& crate::types::StackInstanceDetailedStatus> {
         self.detailed_status.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// <p><code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p></li>
     /// </ul>
     pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::StackInstanceDetailedStatus>) -> Self {
-        self.detailed_status = input;
-        self
+        self.detailed_status = input; self
     }
     /// <ul>
     /// <li>
@@ -129,7 +128,9 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// Consumes the builder and constructs a [`StackInstanceComprehensiveStatus`](crate::types::StackInstanceComprehensiveStatus).
     pub fn build(self) -> crate::types::StackInstanceComprehensiveStatus {
         crate::types::StackInstanceComprehensiveStatus {
-            detailed_status: self.detailed_status,
+            detailed_status: self.detailed_status
+            ,
         }
     }
 }
+

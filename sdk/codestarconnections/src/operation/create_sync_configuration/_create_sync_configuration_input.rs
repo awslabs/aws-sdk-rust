@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSyncConfigurationInput {
+pub struct CreateSyncConfigurationInput  {
     /// <p>The branch in the repository from which changes will be synced.</p>
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.</p>
@@ -20,37 +20,37 @@ pub struct CreateSyncConfigurationInput {
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
-impl CreateSyncConfigurationInput {
+impl  CreateSyncConfigurationInput  {
     /// <p>The branch in the repository from which changes will be synced.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.</p>
-    pub fn config_file(&self) -> ::std::option::Option<&str> {
+    pub fn config_file(&self) -> ::std::option::Option<& str> {
         self.config_file.as_deref()
     }
     /// <p>The ID of the repository link created for the connection. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services resource (for example, a CloudFormation stack in the case of CFN_STACK_SYNC) that will be synchronized from the linked repository.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The ARN of the IAM role that grants permission for Amazon Web Services to use Git sync to update a given Amazon Web Services resource on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The type of sync configuration.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
-    pub fn publish_deployment_status(&self) -> ::std::option::Option<&crate::types::PublishDeploymentStatus> {
+    pub fn publish_deployment_status(&self) -> ::std::option::Option<& crate::types::PublishDeploymentStatus> {
         self.publish_deployment_status.as_ref()
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
-    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
+    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<& crate::types::TriggerResourceUpdateOn> {
         self.trigger_resource_update_on.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The branch in the repository from which changes will be synced.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch in the repository from which changes will be synced.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.</p>
     pub fn set_config_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_file = input;
-        self
+        self.config_file = input; self
     }
     /// <p>The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.</p>
     pub fn get_config_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The ID of the repository link created for the connection. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link created for the connection. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +125,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The name of the Amazon Web Services resource (for example, a CloudFormation stack in the case of CFN_STACK_SYNC) that will be synchronized from the linked repository.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the Amazon Web Services resource (for example, a CloudFormation stack in the case of CFN_STACK_SYNC) that will be synchronized from the linked repository.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The ARN of the IAM role that grants permission for Amazon Web Services to use Git sync to update a given Amazon Web Services resource on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants permission for Amazon Web Services to use Git sync to update a given Amazon Web Services resource on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>The type of sync configuration.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The type of sync configuration.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
@@ -172,8 +166,7 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
-        self.publish_deployment_status = input;
-        self
+        self.publish_deployment_status = input; self
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
@@ -186,29 +179,34 @@ impl CreateSyncConfigurationInputBuilder {
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
-        self.trigger_resource_update_on = input;
-        self
+        self.trigger_resource_update_on = input; self
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
         &self.trigger_resource_update_on
     }
     /// Consumes the builder and constructs a [`CreateSyncConfigurationInput`](crate::operation::create_sync_configuration::CreateSyncConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sync_configuration::CreateSyncConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_sync_configuration::CreateSyncConfigurationInput {
-            branch: self.branch,
-            config_file: self.config_file,
-            repository_link_id: self.repository_link_id,
-            resource_name: self.resource_name,
-            role_arn: self.role_arn,
-            sync_type: self.sync_type,
-            publish_deployment_status: self.publish_deployment_status,
-            trigger_resource_update_on: self.trigger_resource_update_on,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sync_configuration::CreateSyncConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_sync_configuration::CreateSyncConfigurationInput {
+                branch: self.branch
+                ,
+                config_file: self.config_file
+                ,
+                repository_link_id: self.repository_link_id
+                ,
+                resource_name: self.resource_name
+                ,
+                role_arn: self.role_arn
+                ,
+                sync_type: self.sync_type
+                ,
+                publish_deployment_status: self.publish_deployment_status
+                ,
+                trigger_resource_update_on: self.trigger_resource_update_on
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserFeedback {
+pub struct UserFeedback  {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub r#type: crate::types::FeedbackType,
 }
-impl UserFeedback {
+impl  UserFeedback  {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn r#type(&self) -> &crate::types::FeedbackType {
+    pub fn r#type(&self) -> & crate::types::FeedbackType {
         &self.r#type
     }
 }
@@ -35,8 +35,7 @@ impl UserFeedbackBuilder {
     }
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FeedbackType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FeedbackType> {
@@ -46,13 +45,15 @@ impl UserFeedbackBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::UserFeedbackBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::UserFeedback, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserFeedback {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building UserFeedback",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserFeedback {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building UserFeedback")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartNetworkResourceUpdateOutput {
+pub struct StartNetworkResourceUpdateOutput  {
     /// <p>The network resource.</p>
     pub network_resource: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
 }
-impl StartNetworkResourceUpdateOutput {
+impl  StartNetworkResourceUpdateOutput  {
     /// <p>The network resource.</p>
-    pub fn network_resource(&self) -> ::std::option::Option<&crate::types::NetworkResource> {
+    pub fn network_resource(&self) -> ::std::option::Option<& crate::types::NetworkResource> {
         self.network_resource.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartNetworkResourceUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartNetworkResourceUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
     pub fn builder() -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateOutputBuilder {
@@ -40,27 +40,28 @@ impl StartNetworkResourceUpdateOutputBuilder {
     }
     /// <p>The network resource.</p>
     pub fn set_network_resource(mut self, input: ::std::option::Option<crate::types::NetworkResource>) -> Self {
-        self.network_resource = input;
-        self
+        self.network_resource = input; self
     }
     /// <p>The network resource.</p>
     pub fn get_network_resource(&self) -> &::std::option::Option<crate::types::NetworkResource> {
         &self.network_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
     pub fn build(self) -> crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput {
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput {
-            network_resource: self.network_resource,
+            network_resource: self.network_resource
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

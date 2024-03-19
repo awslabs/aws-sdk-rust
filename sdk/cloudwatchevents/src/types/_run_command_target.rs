@@ -3,22 +3,20 @@
 /// <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunCommandTarget {
+pub struct RunCommandTarget  {
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     pub key: ::std::string::String,
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl RunCommandTarget {
+impl  RunCommandTarget  {
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl RunCommandTarget {
@@ -33,7 +31,7 @@ impl RunCommandTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunCommandTargetBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RunCommandTargetBuilder {
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
@@ -44,8 +42,7 @@ impl RunCommandTargetBuilder {
     }
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl RunCommandTargetBuilder {
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`RunCommandTarget`](crate::types::RunCommandTarget).
@@ -76,19 +72,20 @@ impl RunCommandTargetBuilder {
     /// - [`key`](crate::types::builders::RunCommandTargetBuilder::key)
     /// - [`values`](crate::types::builders::RunCommandTargetBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::RunCommandTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RunCommandTarget {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building RunCommandTarget",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building RunCommandTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RunCommandTarget {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building RunCommandTarget")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building RunCommandTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

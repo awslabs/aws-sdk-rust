@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"AllQueryArguments": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllQueryArguments {}
+pub struct AllQueryArguments  {
+}
 impl AllQueryArguments {
     /// Creates a new builder-style object to manufacture [`AllQueryArguments`](crate::types::AllQueryArguments).
     pub fn builder() -> crate::types::builders::AllQueryArgumentsBuilder {
@@ -16,10 +17,13 @@ impl AllQueryArguments {
 /// A builder for [`AllQueryArguments`](crate::types::AllQueryArguments).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AllQueryArgumentsBuilder {}
+pub struct AllQueryArgumentsBuilder {
+}
 impl AllQueryArgumentsBuilder {
     /// Consumes the builder and constructs a [`AllQueryArguments`](crate::types::AllQueryArguments).
     pub fn build(self) -> crate::types::AllQueryArguments {
-        crate::types::AllQueryArguments {}
+        crate::types::AllQueryArguments {
+        }
     }
 }
+

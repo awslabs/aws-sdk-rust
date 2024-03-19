@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateContactChannelInput {
+pub struct ActivateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub activation_code: ::std::option::Option<::std::string::String>,
 }
-impl ActivateContactChannelInput {
+impl  ActivateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_id(&self) -> ::std::option::Option<& str> {
         self.contact_channel_id.as_deref()
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    pub fn activation_code(&self) -> ::std::option::Option<&str> {
+    pub fn activation_code(&self) -> ::std::option::Option<& str> {
         self.activation_code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActivateContactChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_id = input;
-        self
+        self.contact_channel_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ActivateContactChannelInputBuilder {
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn set_activation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activation_code = input;
-        self
+        self.activation_code = input; self
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn get_activation_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.activation_code
     }
     /// Consumes the builder and constructs a [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_contact_channel::ActivateContactChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::activate_contact_channel::ActivateContactChannelInput {
-            contact_channel_id: self.contact_channel_id,
-            activation_code: self.activation_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_contact_channel::ActivateContactChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_contact_channel::ActivateContactChannelInput {
+                contact_channel_id: self.contact_channel_id
+                ,
+                activation_code: self.activation_code
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupsForCapacityReservationInput {
+pub struct GetGroupsForCapacityReservationInput  {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -12,13 +12,13 @@ pub struct GetGroupsForCapacityReservationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl GetGroupsForCapacityReservationInput {
+impl  GetGroupsForCapacityReservationInput  {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
-    pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -55,8 +55,7 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_id = input;
-        self
+        self.capacity_reservation_id = input; self
     }
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,27 +94,26 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetGroupsForCapacityReservationInput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput {
-                capacity_reservation_id: self.capacity_reservation_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
+                capacity_reservation_id: self.capacity_reservation_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVpcConnections`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput) with field(s):
+                            /// - On success, responds with [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput) with field(s):
     ///   - [`vpc_connections(Option<Vec::<VpcConnection>>)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::vpc_connections): <p>List of VPC connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::next_token): <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListVpcConnectionsError>`](crate::operation::list_vpc_connections::ListVpcConnectionsError)
+                            /// - On failure, responds with [`SdkError<ListVpcConnectionsError>`](crate::operation::list_vpc_connections::ListVpcConnectionsError)
     pub fn list_vpc_connections(&self) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder {
-        crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

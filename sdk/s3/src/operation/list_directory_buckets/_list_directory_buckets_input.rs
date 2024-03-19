@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDirectoryBucketsInput {
+pub struct ListDirectoryBucketsInput  {
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
     pub max_directory_buckets: ::std::option::Option<i32>,
 }
-impl ListDirectoryBucketsInput {
+impl  ListDirectoryBucketsInput  {
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
@@ -40,8 +40,7 @@ impl ListDirectoryBucketsInputBuilder {
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl ListDirectoryBucketsInputBuilder {
     }
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
     pub fn set_max_directory_buckets(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_directory_buckets = input;
-        self
+        self.max_directory_buckets = input; self
     }
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
     pub fn get_max_directory_buckets(&self) -> &::std::option::Option<i32> {
         &self.max_directory_buckets
     }
     /// Consumes the builder and constructs a [`ListDirectoryBucketsInput`](crate::operation::list_directory_buckets::ListDirectoryBucketsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_directory_buckets::ListDirectoryBucketsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_directory_buckets::ListDirectoryBucketsInput {
-            continuation_token: self.continuation_token,
-            max_directory_buckets: self.max_directory_buckets,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_directory_buckets::ListDirectoryBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_directory_buckets::ListDirectoryBucketsInput {
+                continuation_token: self.continuation_token
+                ,
+                max_directory_buckets: self.max_directory_buckets
+                ,
+            }
+        )
     }
 }
+

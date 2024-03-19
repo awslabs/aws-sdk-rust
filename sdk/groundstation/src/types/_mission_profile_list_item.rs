@@ -3,7 +3,7 @@
 /// <p>Item in a list of mission profiles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MissionProfileListItem {
+pub struct MissionProfileListItem  {
     /// <p>UUID of a mission profile.</p>
     pub mission_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a mission profile.</p>
@@ -13,21 +13,21 @@ pub struct MissionProfileListItem {
     /// <p>Name of a mission profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl MissionProfileListItem {
+impl  MissionProfileListItem  {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> ::std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn mission_profile_arn(&self) -> ::std::option::Option<& str> {
         self.mission_profile_arn.as_deref()
     }
     /// <p>Region of a mission profile.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Name of a mission profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl MissionProfileListItemBuilder {
     }
     /// <p>UUID of a mission profile.</p>
     pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mission_profile_id = input;
-        self
+        self.mission_profile_id = input; self
     }
     /// <p>UUID of a mission profile.</p>
     pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MissionProfileListItemBuilder {
     }
     /// <p>ARN of a mission profile.</p>
     pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mission_profile_arn = input;
-        self
+        self.mission_profile_arn = input; self
     }
     /// <p>ARN of a mission profile.</p>
     pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl MissionProfileListItemBuilder {
     }
     /// <p>Region of a mission profile.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Region of a mission profile.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MissionProfileListItemBuilder {
     }
     /// <p>Name of a mission profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of a mission profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl MissionProfileListItemBuilder {
     /// Consumes the builder and constructs a [`MissionProfileListItem`](crate::types::MissionProfileListItem).
     pub fn build(self) -> crate::types::MissionProfileListItem {
         crate::types::MissionProfileListItem {
-            mission_profile_id: self.mission_profile_id,
-            mission_profile_arn: self.mission_profile_arn,
-            region: self.region,
-            name: self.name,
+            mission_profile_id: self.mission_profile_id
+            ,
+            mission_profile_arn: self.mission_profile_arn
+            ,
+            region: self.region
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

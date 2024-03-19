@@ -3,17 +3,17 @@
 /// <p>Payload content included in the response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PayloadPart {
+pub struct PayloadPart  {
     /// <p>Base64-encoded bytes of payload data.</p>
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl PayloadPart {
+impl  PayloadPart  {
     /// <p>Base64-encoded bytes of payload data.</p>
-    pub fn bytes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
 }
-impl ::std::fmt::Debug for PayloadPart {
+impl  ::std::fmt::Debug for PayloadPart  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PayloadPart");
         formatter.field("bytes", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl PayloadPartBuilder {
     }
     /// <p>Base64-encoded bytes of payload data.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>Base64-encoded bytes of payload data.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -50,7 +49,10 @@ impl PayloadPartBuilder {
     }
     /// Consumes the builder and constructs a [`PayloadPart`](crate::types::PayloadPart).
     pub fn build(self) -> crate::types::PayloadPart {
-        crate::types::PayloadPart { bytes: self.bytes }
+        crate::types::PayloadPart {
+            bytes: self.bytes
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for PayloadPartBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for PayloadPartBuilder {
         formatter.finish()
     }
 }
+

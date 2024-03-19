@@ -3,15 +3,14 @@
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>DeleteMessageBatch</code>.</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMessageBatchResultEntry {
+pub struct DeleteMessageBatchResultEntry  {
     /// <p>Represents a successfully deleted message.</p>
     pub id: ::std::string::String,
 }
-impl DeleteMessageBatchResultEntry {
+impl  DeleteMessageBatchResultEntry  {
     /// <p>Represents a successfully deleted message.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl DeleteMessageBatchResultEntry {
@@ -36,8 +35,7 @@ impl DeleteMessageBatchResultEntryBuilder {
     }
     /// <p>Represents a successfully deleted message.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Represents a successfully deleted message.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteMessageBatchResultEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DeleteMessageBatchResultEntryBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteMessageBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteMessageBatchResultEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DeleteMessageBatchResultEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteMessageBatchResultEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DeleteMessageBatchResultEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

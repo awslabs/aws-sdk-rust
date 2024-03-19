@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueuesInput {
+pub struct ListQueuesInput  {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_name_prefix: ::std::option::Option<::std::string::String>,
@@ -12,14 +12,14 @@ pub struct ListQueuesInput {
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListQueuesInput {
+impl  ListQueuesInput  {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn queue_name_prefix(&self) -> ::std::option::Option<& str> {
         self.queue_name_prefix.as_deref()
     }
     /// <p>Pagination token to request the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
@@ -52,8 +52,7 @@ impl ListQueuesInputBuilder {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_name_prefix = input;
-        self
+        self.queue_name_prefix = input; self
     }
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -67,8 +66,7 @@ impl ListQueuesInputBuilder {
     }
     /// <p>Pagination token to request the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token to request the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl ListQueuesInputBuilder {
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -90,10 +87,16 @@ impl ListQueuesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
-            queue_name_prefix: self.queue_name_prefix,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_queues::ListQueuesInput {
+                queue_name_prefix: self.queue_name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

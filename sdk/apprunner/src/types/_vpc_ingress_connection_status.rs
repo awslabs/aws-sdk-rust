@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpcingressconnectionstatus = unimplemented!();
 /// match vpcingressconnectionstatus {
@@ -36,16 +36,14 @@
 /// Specifically, when `vpcingressconnectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcIngressConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VpcIngressConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -65,88 +63,80 @@ pub enum VpcIngressConnectionStatus {
     PendingUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VpcIngressConnectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => VpcIngressConnectionStatus::Available,
-            "DELETED" => VpcIngressConnectionStatus::Deleted,
-            "FAILED_CREATION" => VpcIngressConnectionStatus::FailedCreation,
-            "FAILED_DELETION" => VpcIngressConnectionStatus::FailedDeletion,
-            "FAILED_UPDATE" => VpcIngressConnectionStatus::FailedUpdate,
-            "PENDING_CREATION" => VpcIngressConnectionStatus::PendingCreation,
-            "PENDING_DELETION" => VpcIngressConnectionStatus::PendingDeletion,
-            "PENDING_UPDATE" => VpcIngressConnectionStatus::PendingUpdate,
-            other => VpcIngressConnectionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AVAILABLE" => VpcIngressConnectionStatus::Available,
+"DELETED" => VpcIngressConnectionStatus::Deleted,
+"FAILED_CREATION" => VpcIngressConnectionStatus::FailedCreation,
+"FAILED_DELETION" => VpcIngressConnectionStatus::FailedDeletion,
+"FAILED_UPDATE" => VpcIngressConnectionStatus::FailedUpdate,
+"PENDING_CREATION" => VpcIngressConnectionStatus::PendingCreation,
+"PENDING_DELETION" => VpcIngressConnectionStatus::PendingDeletion,
+"PENDING_UPDATE" => VpcIngressConnectionStatus::PendingUpdate,
+other => VpcIngressConnectionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VpcIngressConnectionStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VpcIngressConnectionStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VpcIngressConnectionStatus::from(s))
+                    }
+                }
 impl VpcIngressConnectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcIngressConnectionStatus::Available => "AVAILABLE",
-            VpcIngressConnectionStatus::Deleted => "DELETED",
-            VpcIngressConnectionStatus::FailedCreation => "FAILED_CREATION",
-            VpcIngressConnectionStatus::FailedDeletion => "FAILED_DELETION",
-            VpcIngressConnectionStatus::FailedUpdate => "FAILED_UPDATE",
-            VpcIngressConnectionStatus::PendingCreation => "PENDING_CREATION",
-            VpcIngressConnectionStatus::PendingDeletion => "PENDING_DELETION",
-            VpcIngressConnectionStatus::PendingUpdate => "PENDING_UPDATE",
-            VpcIngressConnectionStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "DELETED",
-            "FAILED_CREATION",
-            "FAILED_DELETION",
-            "FAILED_UPDATE",
-            "PENDING_CREATION",
-            "PENDING_DELETION",
-            "PENDING_UPDATE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcIngressConnectionStatus::Available => "AVAILABLE",
+    VpcIngressConnectionStatus::Deleted => "DELETED",
+    VpcIngressConnectionStatus::FailedCreation => "FAILED_CREATION",
+    VpcIngressConnectionStatus::FailedDeletion => "FAILED_DELETION",
+    VpcIngressConnectionStatus::FailedUpdate => "FAILED_UPDATE",
+    VpcIngressConnectionStatus::PendingCreation => "PENDING_CREATION",
+    VpcIngressConnectionStatus::PendingDeletion => "PENDING_DELETION",
+    VpcIngressConnectionStatus::PendingUpdate => "PENDING_UPDATE",
+    VpcIngressConnectionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "DELETED", "FAILED_CREATION", "FAILED_DELETION", "FAILED_UPDATE", "PENDING_CREATION", "PENDING_DELETION", "PENDING_UPDATE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VpcIngressConnectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VpcIngressConnectionStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VpcIngressConnectionStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VpcIngressConnectionStatus::Available => write!(f, "AVAILABLE"),
-            VpcIngressConnectionStatus::Deleted => write!(f, "DELETED"),
-            VpcIngressConnectionStatus::FailedCreation => write!(f, "FAILED_CREATION"),
-            VpcIngressConnectionStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
-            VpcIngressConnectionStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
-            VpcIngressConnectionStatus::PendingCreation => write!(f, "PENDING_CREATION"),
-            VpcIngressConnectionStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
-            VpcIngressConnectionStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
-            VpcIngressConnectionStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VpcIngressConnectionStatus::Available => write!(f, "AVAILABLE"),
+VpcIngressConnectionStatus::Deleted => write!(f, "DELETED"),
+VpcIngressConnectionStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+VpcIngressConnectionStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
+VpcIngressConnectionStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
+VpcIngressConnectionStatus::PendingCreation => write!(f, "PENDING_CREATION"),
+VpcIngressConnectionStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+VpcIngressConnectionStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
+VpcIngressConnectionStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

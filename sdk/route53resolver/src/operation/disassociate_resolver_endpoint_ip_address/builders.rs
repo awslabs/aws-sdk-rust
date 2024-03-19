@@ -5,113 +5,97 @@ pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassocia
 
 impl DisassociateResolverEndpointIpAddressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disassociate_resolver_endpoint_ip_address();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disassociate_resolver_endpoint_ip_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisassociateResolverEndpointIpAddress`.
-///
+/// 
 /// <p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address, submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.</p>
 /// <p>To add an IP address to an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder,
+                    inner: crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
-    > for DisassociateResolverEndpointIpAddressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
-            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
+                    crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
+                > for DisassociateResolverEndpointIpAddressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
+                        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisassociateResolverEndpointIpAddressFluentBuilder {
     /// Creates a new `DisassociateResolverEndpointIpAddress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DisassociateResolverEndpointIpAddress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddress::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
-        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput, crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
@@ -141,3 +125,4 @@ impl DisassociateResolverEndpointIpAddressFluentBuilder {
         self.inner.get_ip_address()
     }
 }
+

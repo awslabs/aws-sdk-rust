@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDistributionConfigurationInput {
+pub struct GetDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetDistributionConfigurationInput {
+impl  GetDistributionConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.distribution_configuration_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetDistributionConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_configuration_arn = input;
-        self
+        self.distribution_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_distribution_configuration::GetDistributionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_distribution_configuration::GetDistributionConfigurationInput {
-            distribution_configuration_arn: self.distribution_configuration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_distribution_configuration::GetDistributionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationInput {
+                distribution_configuration_arn: self.distribution_configuration_arn
+                ,
+            }
+        )
     }
 }
+

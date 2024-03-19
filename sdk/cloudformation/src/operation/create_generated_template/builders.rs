@@ -5,54 +5,50 @@ pub use crate::operation::create_generated_template::_create_generated_template_
 
 impl CreateGeneratedTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_generated_template::CreateGeneratedTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_generated_template();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_generated_template::CreateGeneratedTemplateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_generated_template();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateGeneratedTemplate`.
-///
+/// 
 /// <p>Creates a template from existing resources that are not already managed with CloudFormation. You can check the status of the template generation using the <code>DescribeGeneratedTemplate</code> API action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGeneratedTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_generated_template::builders::CreateGeneratedTemplateInputBuilder,
+                    inner: crate::operation::create_generated_template::builders::CreateGeneratedTemplateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
-        crate::operation::create_generated_template::CreateGeneratedTemplateError,
-    > for CreateGeneratedTemplateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
-            crate::operation::create_generated_template::CreateGeneratedTemplateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
+                    crate::operation::create_generated_template::CreateGeneratedTemplateError,
+                > for CreateGeneratedTemplateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
+                        crate::operation::create_generated_template::CreateGeneratedTemplateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateGeneratedTemplateFluentBuilder {
     /// Creates a new `CreateGeneratedTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateGeneratedTemplateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_generated_template::CreateGeneratedTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_generated_template::CreateGeneratedTemplate::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_generated_template::CreateGeneratedTemplate::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_generated_template::CreateGeneratedTemplateOutput,
-        crate::operation::create_generated_template::CreateGeneratedTemplateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_generated_template::CreateGeneratedTemplateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_generated_template::CreateGeneratedTemplateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_generated_template::CreateGeneratedTemplate::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_generated_template::CreateGeneratedTemplate::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_generated_template::CreateGeneratedTemplateOutput, crate::operation::create_generated_template::CreateGeneratedTemplateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `Resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -120,13 +107,13 @@ impl CreateGeneratedTemplateFluentBuilder {
     }
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
     /// <p>An optional list of resources to be included in the generated template.</p>
     /// <p>If no resources are specified,the template will be created without any resources. Resources can be added to the template using the <code>UpdateGeneratedTemplate</code> API action.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>> {
         self.inner.get_resources()
     }
     /// <p>The name assigned to the generated template.</p>
@@ -172,3 +159,4 @@ impl CreateGeneratedTemplateFluentBuilder {
         self.inner.get_template_configuration()
     }
 }
+

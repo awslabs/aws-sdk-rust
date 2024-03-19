@@ -3,21 +3,22 @@
 /// <p>Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomaticTapeCreationPolicyInfo {
+pub struct AutomaticTapeCreationPolicyInfo  {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl AutomaticTapeCreationPolicyInfo {
+impl  AutomaticTapeCreationPolicyInfo  {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automatic_tape_creation_rules.is_none()`.
-    pub fn automatic_tape_creation_rules(&self) -> &[crate::types::AutomaticTapeCreationRule] {
-        self.automatic_tape_creation_rules.as_deref().unwrap_or_default()
+    pub fn automatic_tape_creation_rules(&self) -> & [crate::types::AutomaticTapeCreationRule] {
+        self.automatic_tape_creation_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl AutomaticTapeCreationPolicyInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomaticTapeCreationPolicyInfoBuilder {
-    pub(crate) automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub(crate) automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomaticTapeCreationRule>>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticTapeCreationPolicyInfoBuilder {
@@ -43,20 +44,16 @@ impl AutomaticTapeCreationPolicyInfoBuilder {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
     pub fn automatic_tape_creation_rules(mut self, input: crate::types::AutomaticTapeCreationRule) -> Self {
         let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
-        v.push(input);
-        self.automatic_tape_creation_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.automatic_tape_creation_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn set_automatic_tape_creation_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
-    ) -> Self {
-        self.automatic_tape_creation_rules = input;
-        self
+    pub fn set_automatic_tape_creation_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutomaticTapeCreationRule>>) -> Self {
+        self.automatic_tape_creation_rules = input; self
     }
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn get_automatic_tape_creation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
+    pub fn get_automatic_tape_creation_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutomaticTapeCreationRule>> {
         &self.automatic_tape_creation_rules
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -66,8 +63,7 @@ impl AutomaticTapeCreationPolicyInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,11 @@ impl AutomaticTapeCreationPolicyInfoBuilder {
     /// Consumes the builder and constructs a [`AutomaticTapeCreationPolicyInfo`](crate::types::AutomaticTapeCreationPolicyInfo).
     pub fn build(self) -> crate::types::AutomaticTapeCreationPolicyInfo {
         crate::types::AutomaticTapeCreationPolicyInfo {
-            automatic_tape_creation_rules: self.automatic_tape_creation_rules,
-            gateway_arn: self.gateway_arn,
+            automatic_tape_creation_rules: self.automatic_tape_creation_rules
+            ,
+            gateway_arn: self.gateway_arn
+            ,
         }
     }
 }
+

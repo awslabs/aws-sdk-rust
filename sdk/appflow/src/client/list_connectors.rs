@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConnectors`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the next page of data.</p><br>
-    /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
+                            /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
     ///   - [`connectors(Option<Vec::<ConnectorDetail>>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>Contains information about the connectors supported by Amazon AppFlow.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
-    /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
+                            /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
     pub fn list_connectors(&self) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
-        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the ARN of the analyzed resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzedResourceSummary {
+pub struct AnalyzedResourceSummary  {
     /// <p>The ARN of the analyzed resource.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
@@ -11,19 +11,17 @@ pub struct AnalyzedResourceSummary {
     /// <p>The type of resource that was analyzed.</p>
     pub resource_type: crate::types::ResourceType,
 }
-impl AnalyzedResourceSummary {
+impl  AnalyzedResourceSummary  {
     /// <p>The ARN of the analyzed resource.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_owner_account.deref()
+    pub fn resource_owner_account(&self) -> & str {
+        use std::ops::Deref; self.resource_owner_account.deref()
     }
     /// <p>The type of resource that was analyzed.</p>
-    pub fn resource_type(&self) -> &crate::types::ResourceType {
+    pub fn resource_type(&self) -> & crate::types::ResourceType {
         &self.resource_type
     }
 }
@@ -51,8 +49,7 @@ impl AnalyzedResourceSummaryBuilder {
     }
     /// <p>The ARN of the analyzed resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the analyzed resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AnalyzedResourceSummaryBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_account = input;
-        self
+        self.resource_owner_account = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl AnalyzedResourceSummaryBuilder {
     }
     /// <p>The type of resource that was analyzed.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource that was analyzed.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -94,25 +89,25 @@ impl AnalyzedResourceSummaryBuilder {
     /// - [`resource_owner_account`](crate::types::builders::AnalyzedResourceSummaryBuilder::resource_owner_account)
     /// - [`resource_type`](crate::types::builders::AnalyzedResourceSummaryBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyzedResourceSummary {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building AnalyzedResourceSummary",
-                )
-            })?,
-            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_owner_account",
-                    "resource_owner_account was not specified but it is required when building AnalyzedResourceSummary",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building AnalyzedResourceSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyzedResourceSummary {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building AnalyzedResourceSummary")
+                    )?
+                ,
+                resource_owner_account: self.resource_owner_account
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_owner_account", "resource_owner_account was not specified but it is required when building AnalyzedResourceSummary")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building AnalyzedResourceSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

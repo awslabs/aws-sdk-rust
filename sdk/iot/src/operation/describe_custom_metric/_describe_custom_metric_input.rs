@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomMetricInput {
+pub struct DescribeCustomMetricInput  {
     /// <p>The name of the custom metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCustomMetricInput {
+impl  DescribeCustomMetricInput  {
     /// <p>The name of the custom metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeCustomMetricInputBuilder {
     }
     /// <p>The name of the custom metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the custom metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }
     /// Consumes the builder and constructs a [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_custom_metric::DescribeCustomMetricInput {
-            metric_name: self.metric_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_custom_metric::DescribeCustomMetricInput {
+                metric_name: self.metric_name
+                ,
+            }
+        )
     }
 }
+

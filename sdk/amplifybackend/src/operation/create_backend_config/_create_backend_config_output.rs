@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackendConfigOutput {
+pub struct CreateBackendConfigOutput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
@@ -13,29 +13,29 @@ pub struct CreateBackendConfigOutput {
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateBackendConfigOutput {
+impl  CreateBackendConfigOutput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBackendConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput).
     pub fn builder() -> crate::operation::create_backend_config::builders::CreateBackendConfigOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateBackendConfigOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateBackendConfigOutputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateBackendConfigOutputBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID for the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateBackendConfigOutputBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput).
     pub fn build(self) -> crate::operation::create_backend_config::CreateBackendConfigOutput {
         crate::operation::create_backend_config::CreateBackendConfigOutput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            job_id: self.job_id,
-            status: self.status,
+            app_id: self.app_id
+            ,
+            backend_environment_name: self.backend_environment_name
+            ,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

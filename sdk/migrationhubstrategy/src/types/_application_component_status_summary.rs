@@ -3,15 +3,15 @@
 /// <p>Summary of the analysis status of the application component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationComponentStatusSummary {
+pub struct ApplicationComponentStatusSummary  {
     /// <p>The status of database analysis.</p>
     pub src_code_or_db_analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
     pub count: ::std::option::Option<i32>,
 }
-impl ApplicationComponentStatusSummary {
+impl  ApplicationComponentStatusSummary  {
     /// <p>The status of database analysis.</p>
-    pub fn src_code_or_db_analysis_status(&self) -> ::std::option::Option<&crate::types::SrcCodeOrDbAnalysisStatus> {
+    pub fn src_code_or_db_analysis_status(&self) -> ::std::option::Option<& crate::types::SrcCodeOrDbAnalysisStatus> {
         self.src_code_or_db_analysis_status.as_ref()
     }
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
@@ -41,8 +41,7 @@ impl ApplicationComponentStatusSummaryBuilder {
     }
     /// <p>The status of database analysis.</p>
     pub fn set_src_code_or_db_analysis_status(mut self, input: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>) -> Self {
-        self.src_code_or_db_analysis_status = input;
-        self
+        self.src_code_or_db_analysis_status = input; self
     }
     /// <p>The status of database analysis.</p>
     pub fn get_src_code_or_db_analysis_status(&self) -> &::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus> {
@@ -55,8 +54,7 @@ impl ApplicationComponentStatusSummaryBuilder {
     }
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ApplicationComponentStatusSummaryBuilder {
     /// Consumes the builder and constructs a [`ApplicationComponentStatusSummary`](crate::types::ApplicationComponentStatusSummary).
     pub fn build(self) -> crate::types::ApplicationComponentStatusSummary {
         crate::types::ApplicationComponentStatusSummary {
-            src_code_or_db_analysis_status: self.src_code_or_db_analysis_status,
-            count: self.count,
+            src_code_or_db_analysis_status: self.src_code_or_db_analysis_status
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTransactions`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p><br>
     ///   - [`status_filter(TransactionStatusFilter)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::status_filter) / [`set_status_filter(Option<TransactionStatusFilter>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_status_filter):<br>required: **false**<br><p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of transactions to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token if this is not the first call to retrieve transactions.</p><br>
-    /// - On success, responds with [`ListTransactionsOutput`](crate::operation::list_transactions::ListTransactionsOutput) with field(s):
+                            /// - On success, responds with [`ListTransactionsOutput`](crate::operation::list_transactions::ListTransactionsOutput) with field(s):
     ///   - [`transactions(Option<Vec::<TransactionDescription>>)`](crate::operation::list_transactions::ListTransactionsOutput::transactions): <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transactions::ListTransactionsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
-    /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
+                            /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
     pub fn list_transactions(&self) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
-        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

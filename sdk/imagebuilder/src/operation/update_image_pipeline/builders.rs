@@ -5,56 +5,52 @@ pub use crate::operation::update_image_pipeline::_update_image_pipeline_input::U
 
 impl UpdateImagePipelineInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_image_pipeline::UpdateImagePipelineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_image_pipeline();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_image_pipeline::UpdateImagePipelineError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_image_pipeline();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateImagePipeline`.
-///
+/// 
 /// <p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.</p><note>
 /// <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImagePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder,
+                    inner: crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
-        crate::operation::update_image_pipeline::UpdateImagePipelineError,
-    > for UpdateImagePipelineFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
-            crate::operation::update_image_pipeline::UpdateImagePipelineError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
+                    crate::operation::update_image_pipeline::UpdateImagePipelineError,
+                > for UpdateImagePipelineFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
+                        crate::operation::update_image_pipeline::UpdateImagePipelineError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateImagePipelineFluentBuilder {
     /// Creates a new `UpdateImagePipeline`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateImagePipelineFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_image_pipeline::UpdateImagePipelineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_image_pipeline::UpdateImagePipeline::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_image_pipeline::UpdateImagePipeline::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
-        crate::operation::update_image_pipeline::UpdateImagePipelineError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_pipeline::UpdateImagePipelineError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_image_pipeline::UpdateImagePipeline::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_image_pipeline::UpdateImagePipeline::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_image_pipeline::UpdateImagePipelineOutput, crate::operation::update_image_pipeline::UpdateImagePipelineError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());
@@ -288,12 +275,12 @@ impl UpdateImagePipelineFluentBuilder {
         self
     }
     /// <p>Contains the workflows to run for the pipeline.</p>
-    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowConfiguration>>) -> Self {
         self.inner = self.inner.set_workflows(input);
         self
     }
     /// <p>Contains the workflows to run for the pipeline.</p>
-    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowConfiguration>> {
         self.inner.get_workflows()
     }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
@@ -311,3 +298,4 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner.get_execution_role()
     }
 }
+

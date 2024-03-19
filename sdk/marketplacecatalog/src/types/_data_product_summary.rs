@@ -3,19 +3,19 @@
 /// <p>Object that contains summarized information about a data product.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProductSummary {
+pub struct DataProductSummary  {
     /// <p>The title of the data product.</p>
     pub product_title: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle of the data product.</p>
     pub visibility: ::std::option::Option<crate::types::DataProductVisibilityString>,
 }
-impl DataProductSummary {
+impl  DataProductSummary  {
     /// <p>The title of the data product.</p>
-    pub fn product_title(&self) -> ::std::option::Option<&str> {
+    pub fn product_title(&self) -> ::std::option::Option<& str> {
         self.product_title.as_deref()
     }
     /// <p>The lifecycle of the data product.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::DataProductVisibilityString> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::DataProductVisibilityString> {
         self.visibility.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p>The title of the data product.</p>
     pub fn set_product_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_title = input;
-        self
+        self.product_title = input; self
     }
     /// <p>The title of the data product.</p>
     pub fn get_product_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p>The lifecycle of the data product.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::DataProductVisibilityString>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The lifecycle of the data product.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::DataProductVisibilityString> {
@@ -65,8 +63,11 @@ impl DataProductSummaryBuilder {
     /// Consumes the builder and constructs a [`DataProductSummary`](crate::types::DataProductSummary).
     pub fn build(self) -> crate::types::DataProductSummary {
         crate::types::DataProductSummary {
-            product_title: self.product_title,
-            visibility: self.visibility,
+            product_title: self.product_title
+            ,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

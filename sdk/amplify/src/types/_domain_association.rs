@@ -3,7 +3,7 @@
 /// <p>Describes the association between a custom domain and an Amplify app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainAssociation {
+pub struct DomainAssociation  {
     /// <p>The Amazon Resource Name (ARN) for the domain association.</p>
     pub domain_association_arn: ::std::string::String,
     /// <p>The name of the domain.</p>
@@ -11,7 +11,7 @@ pub struct DomainAssociation {
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub enable_auto_sub_domain: bool,
     /// <p>Sets branch patterns for automatic subdomain creation.</p>
-    pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the domain association.</p>
@@ -67,38 +67,37 @@ pub struct DomainAssociation {
     /// <p>The DNS record for certificate verification.</p>
     pub certificate_verification_dns_record: ::std::option::Option<::std::string::String>,
     /// <p>The subdomains for the domain association.</p>
-    pub sub_domains: ::std::vec::Vec<crate::types::SubDomain>,
+    pub sub_domains: ::std::vec::Vec::<crate::types::SubDomain>,
     /// <p>Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the default certificate that Amplify provisions for you.</p>
     /// <p>If you are updating your domain to use a different certificate, <code>certificate</code> points to the new certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code> points to the current active certificate.</p>
     pub certificate: ::std::option::Option<crate::types::Certificate>,
 }
-impl DomainAssociation {
+impl  DomainAssociation  {
     /// <p>The Amazon Resource Name (ARN) for the domain association.</p>
-    pub fn domain_association_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_association_arn.deref()
+    pub fn domain_association_arn(&self) -> & str {
+        use std::ops::Deref; self.domain_association_arn.deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub fn enable_auto_sub_domain(&self) -> bool {
         self.enable_auto_sub_domain
     }
     /// <p>Sets branch patterns for automatic subdomain creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_sub_domain_creation_patterns.is_none()`.
-    pub fn auto_sub_domain_creation_patterns(&self) -> &[::std::string::String] {
-        self.auto_sub_domain_creation_patterns.as_deref().unwrap_or_default()
+    pub fn auto_sub_domain_creation_patterns(&self) -> & [::std::string::String] {
+        self.auto_sub_domain_creation_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
-    pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<& str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
     /// <p>The current status of the domain association.</p>
-    pub fn domain_status(&self) -> &crate::types::DomainStatus {
+    pub fn domain_status(&self) -> & crate::types::DomainStatus {
         &self.domain_status
     }
     /// <p>The status of the domain update operation that is currently in progress. The following list describes the valid update states.</p>
@@ -146,26 +145,24 @@ impl DomainAssociation {
     /// <p>The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll back to.</p>
     /// </dd>
     /// </dl>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::UpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>Additional information that describes why the domain association is in the current state.</p>
-    pub fn status_reason(&self) -> &str {
-        use std::ops::Deref;
-        self.status_reason.deref()
+    pub fn status_reason(&self) -> & str {
+        use std::ops::Deref; self.status_reason.deref()
     }
     /// <p>The DNS record for certificate verification.</p>
-    pub fn certificate_verification_dns_record(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_verification_dns_record(&self) -> ::std::option::Option<& str> {
         self.certificate_verification_dns_record.as_deref()
     }
     /// <p>The subdomains for the domain association.</p>
-    pub fn sub_domains(&self) -> &[crate::types::SubDomain] {
-        use std::ops::Deref;
-        self.sub_domains.deref()
+    pub fn sub_domains(&self) -> & [crate::types::SubDomain] {
+        use std::ops::Deref; self.sub_domains.deref()
     }
     /// <p>Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the default certificate that Amplify provisions for you.</p>
     /// <p>If you are updating your domain to use a different certificate, <code>certificate</code> points to the new certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code> points to the current active certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&crate::types::Certificate> {
+    pub fn certificate(&self) -> ::std::option::Option<& crate::types::Certificate> {
         self.certificate.as_ref()
     }
 }
@@ -183,13 +180,13 @@ pub struct DomainAssociationBuilder {
     pub(crate) domain_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_auto_sub_domain: ::std::option::Option<bool>,
-    pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) update_status: ::std::option::Option<crate::types::UpdateStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_verification_dns_record: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_domains: ::std::option::Option<::std::vec::Vec<crate::types::SubDomain>>,
+    pub(crate) sub_domains: ::std::option::Option<::std::vec::Vec::<crate::types::SubDomain>>,
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
 }
 impl DomainAssociationBuilder {
@@ -201,8 +198,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the domain association.</p>
     pub fn set_domain_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_association_arn = input;
-        self
+        self.domain_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the domain association.</p>
     pub fn get_domain_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +212,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +226,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub fn set_enable_auto_sub_domain(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_auto_sub_domain = input;
-        self
+        self.enable_auto_sub_domain = input; self
     }
     /// <p>Enables the automated creation of subdomains for branches.</p>
     pub fn get_enable_auto_sub_domain(&self) -> &::std::option::Option<bool> {
@@ -245,17 +239,16 @@ impl DomainAssociationBuilder {
     /// <p>Sets branch patterns for automatic subdomain creation.</p>
     pub fn auto_sub_domain_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sets branch patterns for automatic subdomain creation.</p>
-    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.auto_sub_domain_creation_patterns = input;
-        self
+    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.auto_sub_domain_creation_patterns = input; self
     }
     /// <p>Sets branch patterns for automatic subdomain creation.</p>
-    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.auto_sub_domain_creation_patterns
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
@@ -265,8 +258,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub fn set_auto_sub_domain_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_sub_domain_iam_role = input;
-        self
+        self.auto_sub_domain_iam_role = input; self
     }
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +272,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>The current status of the domain association.</p>
     pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.domain_status = input;
-        self
+        self.domain_status = input; self
     }
     /// <p>The current status of the domain association.</p>
     pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
@@ -382,8 +373,7 @@ impl DomainAssociationBuilder {
     /// </dd>
     /// </dl>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The status of the domain update operation that is currently in progress. The following list describes the valid update states.</p>
     /// <dl>
@@ -441,8 +431,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>Additional information that describes why the domain association is in the current state.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Additional information that describes why the domain association is in the current state.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -455,8 +444,7 @@ impl DomainAssociationBuilder {
     }
     /// <p>The DNS record for certificate verification.</p>
     pub fn set_certificate_verification_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_verification_dns_record = input;
-        self
+        self.certificate_verification_dns_record = input; self
     }
     /// <p>The DNS record for certificate verification.</p>
     pub fn get_certificate_verification_dns_record(&self) -> &::std::option::Option<::std::string::String> {
@@ -469,17 +457,16 @@ impl DomainAssociationBuilder {
     /// <p>The subdomains for the domain association.</p>
     pub fn sub_domains(mut self, input: crate::types::SubDomain) -> Self {
         let mut v = self.sub_domains.unwrap_or_default();
-        v.push(input);
-        self.sub_domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subdomains for the domain association.</p>
-    pub fn set_sub_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomain>>) -> Self {
-        self.sub_domains = input;
-        self
+    pub fn set_sub_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubDomain>>) -> Self {
+        self.sub_domains = input; self
     }
     /// <p>The subdomains for the domain association.</p>
-    pub fn get_sub_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomain>> {
+    pub fn get_sub_domains(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubDomain>> {
         &self.sub_domains
     }
     /// <p>Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the default certificate that Amplify provisions for you.</p>
@@ -491,8 +478,7 @@ impl DomainAssociationBuilder {
     /// <p>Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the default certificate that Amplify provisions for you.</p>
     /// <p>If you are updating your domain to use a different certificate, <code>certificate</code> points to the new certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code> points to the current active certificate.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the default certificate that Amplify provisions for you.</p>
     /// <p>If you are updating your domain to use a different certificate, <code>certificate</code> points to the new certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code> points to the current active certificate.</p>
@@ -508,48 +494,50 @@ impl DomainAssociationBuilder {
     /// - [`status_reason`](crate::types::builders::DomainAssociationBuilder::status_reason)
     /// - [`sub_domains`](crate::types::builders::DomainAssociationBuilder::sub_domains)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainAssociation {
-            domain_association_arn: self.domain_association_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_association_arn",
-                    "domain_association_arn was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            enable_auto_sub_domain: self.enable_auto_sub_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_auto_sub_domain",
-                    "enable_auto_sub_domain was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
-            auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
-            domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_status",
-                    "domain_status was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            update_status: self.update_status,
-            status_reason: self.status_reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_reason",
-                    "status_reason was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            certificate_verification_dns_record: self.certificate_verification_dns_record,
-            sub_domains: self.sub_domains.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sub_domains",
-                    "sub_domains was not specified but it is required when building DomainAssociation",
-                )
-            })?,
-            certificate: self.certificate,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainAssociation {
+                domain_association_arn: self.domain_association_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_association_arn", "domain_association_arn was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                enable_auto_sub_domain: self.enable_auto_sub_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_auto_sub_domain", "enable_auto_sub_domain was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns
+                ,
+                auto_sub_domain_iam_role: self.auto_sub_domain_iam_role
+                ,
+                domain_status: self.domain_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_status", "domain_status was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                update_status: self.update_status
+                ,
+                status_reason: self.status_reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_reason", "status_reason was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                certificate_verification_dns_record: self.certificate_verification_dns_record
+                ,
+                sub_domains: self.sub_domains
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sub_domains", "sub_domains was not specified but it is required when building DomainAssociation")
+                    )?
+                ,
+                certificate: self.certificate
+                ,
+            }
+        )
     }
 }
+

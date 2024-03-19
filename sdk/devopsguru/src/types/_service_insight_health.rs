@@ -3,13 +3,13 @@
 /// <p>Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceInsightHealth {
+pub struct ServiceInsightHealth  {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub open_proactive_insights: i32,
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub open_reactive_insights: i32,
 }
-impl ServiceInsightHealth {
+impl  ServiceInsightHealth  {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub fn open_proactive_insights(&self) -> i32 {
         self.open_proactive_insights
@@ -41,8 +41,7 @@ impl ServiceInsightHealthBuilder {
     }
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_proactive_insights = input;
-        self
+        self.open_proactive_insights = input; self
     }
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub fn get_open_proactive_insights(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ServiceInsightHealthBuilder {
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.open_reactive_insights = input;
-        self
+        self.open_reactive_insights = input; self
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub fn get_open_reactive_insights(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl ServiceInsightHealthBuilder {
     /// Consumes the builder and constructs a [`ServiceInsightHealth`](crate::types::ServiceInsightHealth).
     pub fn build(self) -> crate::types::ServiceInsightHealth {
         crate::types::ServiceInsightHealth {
-            open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
-            open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
+            open_proactive_insights: self.open_proactive_insights
+                .unwrap_or_default()
+            ,
+            open_reactive_insights: self.open_reactive_insights
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

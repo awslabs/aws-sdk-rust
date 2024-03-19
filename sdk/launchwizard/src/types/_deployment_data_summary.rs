@@ -3,7 +3,7 @@
 /// <p>A summary of the deployment data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentDataSummary {
+pub struct DeploymentDataSummary  {
     /// <p>The name of the deployment</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment.</p>
@@ -17,29 +17,29 @@ pub struct DeploymentDataSummary {
     /// <p>The time the deployment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeploymentDataSummary {
+impl  DeploymentDataSummary  {
     /// <p>The name of the deployment</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the deployment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The name of the workload deployment pattern.</p>
-    pub fn pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_name(&self) -> ::std::option::Option<& str> {
         self.pattern_name.as_deref()
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The time the deployment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The name of the deployment</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the deployment</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The ID of the deployment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the deployment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The name of the workload deployment pattern.</p>
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_name = input;
-        self
+        self.pattern_name = input; self
     }
     /// <p>The name of the workload deployment pattern.</p>
     pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -139,8 +134,7 @@ impl DeploymentDataSummaryBuilder {
     }
     /// <p>The time the deployment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time the deployment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl DeploymentDataSummaryBuilder {
     /// Consumes the builder and constructs a [`DeploymentDataSummary`](crate::types::DeploymentDataSummary).
     pub fn build(self) -> crate::types::DeploymentDataSummary {
         crate::types::DeploymentDataSummary {
-            name: self.name,
-            id: self.id,
-            workload_name: self.workload_name,
-            pattern_name: self.pattern_name,
-            status: self.status,
-            created_at: self.created_at,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            workload_name: self.workload_name
+            ,
+            pattern_name: self.pattern_name
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

@@ -28,28 +28,29 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByoipCidr {
+pub struct ByoipCidr  {
     /// <p>The address range, in CIDR notation.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidrEvent>>,
 }
-impl ByoipCidr {
+impl  ByoipCidr  {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The state of the address pool.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ByoipCidrState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::ByoipCidrEvent] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::ByoipCidrEvent] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ByoipCidr {
@@ -65,7 +66,7 @@ impl ByoipCidr {
 pub struct ByoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidrEvent>>,
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
@@ -75,8 +76,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>The state of the address pool.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the address pool.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
@@ -103,25 +102,28 @@ impl ByoipCidrBuilder {
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     pub fn events(mut self, input: crate::types::ByoipCidrEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidrEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ByoipCidrEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
-            cidr: self.cidr,
-            state: self.state,
-            events: self.events,
+            cidr: self.cidr
+            ,
+            state: self.state
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

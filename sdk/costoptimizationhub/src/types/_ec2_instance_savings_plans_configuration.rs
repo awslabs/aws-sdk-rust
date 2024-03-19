@@ -3,7 +3,7 @@
 /// <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2InstanceSavingsPlansConfiguration {
+pub struct Ec2InstanceSavingsPlansConfiguration  {
     /// <p>The account scope that you want your recommendations for.</p>
     pub account_scope: ::std::option::Option<::std::string::String>,
     /// <p>The Savings Plans recommendation term in years.</p>
@@ -17,29 +17,29 @@ pub struct Ec2InstanceSavingsPlansConfiguration {
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub savings_plans_region: ::std::option::Option<::std::string::String>,
 }
-impl Ec2InstanceSavingsPlansConfiguration {
+impl  Ec2InstanceSavingsPlansConfiguration  {
     /// <p>The account scope that you want your recommendations for.</p>
-    pub fn account_scope(&self) -> ::std::option::Option<&str> {
+    pub fn account_scope(&self) -> ::std::option::Option<& str> {
         self.account_scope.as_deref()
     }
     /// <p>The Savings Plans recommendation term in years.</p>
-    pub fn term(&self) -> ::std::option::Option<&str> {
+    pub fn term(&self) -> ::std::option::Option<& str> {
         self.term.as_deref()
     }
     /// <p>The payment option for the commitment.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&str> {
+    pub fn payment_option(&self) -> ::std::option::Option<& str> {
         self.payment_option.as_deref()
     }
     /// <p>The hourly commitment for the Savings Plans type.</p>
-    pub fn hourly_commitment(&self) -> ::std::option::Option<&str> {
+    pub fn hourly_commitment(&self) -> ::std::option::Option<& str> {
         self.hourly_commitment.as_deref()
     }
     /// <p>The instance family of the recommended Savings Plan.</p>
-    pub fn instance_family(&self) -> ::std::option::Option<&str> {
+    pub fn instance_family(&self) -> ::std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
-    pub fn savings_plans_region(&self) -> ::std::option::Option<&str> {
+    pub fn savings_plans_region(&self) -> ::std::option::Option<& str> {
         self.savings_plans_region.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The account scope that you want your recommendations for.</p>
     pub fn set_account_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_scope = input;
-        self
+        self.account_scope = input; self
     }
     /// <p>The account scope that you want your recommendations for.</p>
     pub fn get_account_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The Savings Plans recommendation term in years.</p>
     pub fn set_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>The Savings Plans recommendation term in years.</p>
     pub fn get_term(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The payment option for the commitment.</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The payment option for the commitment.</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The hourly commitment for the Savings Plans type.</p>
     pub fn set_hourly_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hourly_commitment = input;
-        self
+        self.hourly_commitment = input; self
     }
     /// <p>The hourly commitment for the Savings Plans type.</p>
     pub fn get_hourly_commitment(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The instance family of the recommended Savings Plan.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The instance family of the recommended Savings Plan.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub fn set_savings_plans_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.savings_plans_region = input;
-        self
+        self.savings_plans_region = input; self
     }
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub fn get_savings_plans_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     /// Consumes the builder and constructs a [`Ec2InstanceSavingsPlansConfiguration`](crate::types::Ec2InstanceSavingsPlansConfiguration).
     pub fn build(self) -> crate::types::Ec2InstanceSavingsPlansConfiguration {
         crate::types::Ec2InstanceSavingsPlansConfiguration {
-            account_scope: self.account_scope,
-            term: self.term,
-            payment_option: self.payment_option,
-            hourly_commitment: self.hourly_commitment,
-            instance_family: self.instance_family,
-            savings_plans_region: self.savings_plans_region,
+            account_scope: self.account_scope
+            ,
+            term: self.term
+            ,
+            payment_option: self.payment_option
+            ,
+            hourly_commitment: self.hourly_commitment
+            ,
+            instance_family: self.instance_family
+            ,
+            savings_plans_region: self.savings_plans_region
+            ,
         }
     }
 }
+

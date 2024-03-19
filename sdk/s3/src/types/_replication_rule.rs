@@ -3,7 +3,7 @@
 /// <p>Specifies which Amazon S3 objects to replicate and where to store the replicas.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationRule {
+pub struct ReplicationRule  {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority.</p>
@@ -30,9 +30,9 @@ pub struct ReplicationRule {
     /// </note>
     pub delete_marker_replication: ::std::option::Option<crate::types::DeleteMarkerReplication>,
 }
-impl ReplicationRule {
+impl  ReplicationRule  {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority.</p>
@@ -44,34 +44,34 @@ impl ReplicationRule {
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ReplicationRuleFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ReplicationRuleFilter> {
         self.filter.as_ref()
     }
     /// <p>Specifies whether the rule is enabled.</p>
-    pub fn status(&self) -> &crate::types::ReplicationRuleStatus {
+    pub fn status(&self) -> & crate::types::ReplicationRuleStatus {
         &self.status
     }
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
-    pub fn source_selection_criteria(&self) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
+    pub fn source_selection_criteria(&self) -> ::std::option::Option<& crate::types::SourceSelectionCriteria> {
         self.source_selection_criteria.as_ref()
     }
     /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn existing_object_replication(&self) -> ::std::option::Option<&crate::types::ExistingObjectReplication> {
+    pub fn existing_object_replication(&self) -> ::std::option::Option<& crate::types::ExistingObjectReplication> {
         self.existing_object_replication.as_ref()
     }
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>.</p><note>
     /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
-    pub fn delete_marker_replication(&self) -> ::std::option::Option<&crate::types::DeleteMarkerReplication> {
+    pub fn delete_marker_replication(&self) -> ::std::option::Option<& crate::types::DeleteMarkerReplication> {
         self.delete_marker_replication.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ReplicationRuleBuilder {
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -141,8 +139,7 @@ impl ReplicationRuleBuilder {
     /// </important>
     #[deprecated]
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -158,8 +155,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReplicationRuleFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReplicationRuleFilter> {
@@ -173,8 +169,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>Specifies whether the rule is enabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationRuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether the rule is enabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationRuleStatus> {
@@ -187,8 +182,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub fn set_source_selection_criteria(mut self, input: ::std::option::Option<crate::types::SourceSelectionCriteria>) -> Self {
-        self.source_selection_criteria = input;
-        self
+        self.source_selection_criteria = input; self
     }
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub fn get_source_selection_criteria(&self) -> &::std::option::Option<crate::types::SourceSelectionCriteria> {
@@ -201,8 +195,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_existing_object_replication(mut self, input: ::std::option::Option<crate::types::ExistingObjectReplication>) -> Self {
-        self.existing_object_replication = input;
-        self
+        self.existing_object_replication = input; self
     }
     /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_existing_object_replication(&self) -> &::std::option::Option<crate::types::ExistingObjectReplication> {
@@ -216,8 +209,7 @@ impl ReplicationRuleBuilder {
     }
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -236,8 +228,7 @@ impl ReplicationRuleBuilder {
     /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
     pub fn set_delete_marker_replication(mut self, input: ::std::option::Option<crate::types::DeleteMarkerReplication>) -> Self {
-        self.delete_marker_replication = input;
-        self
+        self.delete_marker_replication = input; self
     }
     /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>.</p><note>
@@ -250,21 +241,31 @@ impl ReplicationRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ReplicationRuleBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationRule {
-            id: self.id,
-            priority: self.priority,
-            prefix: self.prefix,
-            filter: self.filter,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ReplicationRule",
-                )
-            })?,
-            source_selection_criteria: self.source_selection_criteria,
-            existing_object_replication: self.existing_object_replication,
-            destination: self.destination,
-            delete_marker_replication: self.delete_marker_replication,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationRule {
+                id: self.id
+                ,
+                priority: self.priority
+                ,
+                prefix: self.prefix
+                ,
+                filter: self.filter
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ReplicationRule")
+                    )?
+                ,
+                source_selection_criteria: self.source_selection_criteria
+                ,
+                existing_object_replication: self.existing_object_replication
+                ,
+                destination: self.destination
+                ,
+                delete_marker_replication: self.delete_marker_replication
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventActionInput {
+pub struct CreateEventActionInput  {
     /// <p>What occurs after a certain event.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>What occurs to start an action.</p>
     pub event: ::std::option::Option<crate::types::Event>,
 }
-impl CreateEventActionInput {
+impl  CreateEventActionInput  {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>What occurs to start an action.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::Event> {
         self.event.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateEventActionInputBuilder {
     }
     /// <p>What occurs after a certain event.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>What occurs after a certain event.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
@@ -56,20 +55,22 @@ impl CreateEventActionInputBuilder {
     }
     /// <p>What occurs to start an action.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>What occurs to start an action.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
         &self.event
     }
     /// Consumes the builder and constructs a [`CreateEventActionInput`](crate::operation::create_event_action::CreateEventActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_event_action::CreateEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_event_action::CreateEventActionInput {
-            action: self.action,
-            event: self.event,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_event_action::CreateEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_event_action::CreateEventActionInput {
+                action: self.action
+                ,
+                event: self.event
+                ,
+            }
+        )
     }
 }
+

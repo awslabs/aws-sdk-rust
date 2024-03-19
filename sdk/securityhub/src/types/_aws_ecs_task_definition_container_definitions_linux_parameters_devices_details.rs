@@ -3,28 +3,29 @@
 /// <p>A host device to expose to the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails  {
     /// <p>The path inside the container at which to expose the host device.</p>
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The path for the device on the host container instance.</p>
     pub host_path: ::std::option::Option<::std::string::String>,
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails  {
     /// <p>The path inside the container at which to expose the host device.</p>
-    pub fn container_path(&self) -> ::std::option::Option<&str> {
+    pub fn container_path(&self) -> ::std::option::Option<& str> {
         self.container_path.as_deref()
     }
     /// <p>The path for the device on the host container instance.</p>
-    pub fn host_path(&self) -> ::std::option::Option<&str> {
+    pub fn host_path(&self) -> ::std::option::Option<& str> {
         self.host_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[::std::string::String] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [::std::string::String] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
@@ -40,7 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) host_path: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder {
     /// <p>The path inside the container at which to expose the host device.</p>
@@ -50,8 +51,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
     }
     /// <p>The path for the device on the host container instance.</p>
     pub fn set_host_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_path = input;
-        self
+        self.host_path = input; self
     }
     /// <p>The path for the device on the host container instance.</p>
     pub fn get_host_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input.into());
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
-            container_path: self.container_path,
-            host_path: self.host_path,
-            permissions: self.permissions,
+            container_path: self.container_path
+            ,
+            host_path: self.host_path
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

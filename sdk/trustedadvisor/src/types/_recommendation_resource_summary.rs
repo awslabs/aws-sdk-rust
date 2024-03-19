@@ -3,7 +3,7 @@
 /// <p>Summary of a Recommendation Resource</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationResourceSummary {
+pub struct RecommendationResourceSummary  {
     /// <p>The ID of the Recommendation Resource</p>
     pub id: ::std::string::String,
     /// <p>The ARN of the Recommendation Resource</p>
@@ -15,49 +15,44 @@ pub struct RecommendationResourceSummary {
     /// <p>The current status of the Recommendation Resource</p>
     pub status: crate::types::ResourceStatus,
     /// <p>Metadata associated with the Recommendation Resource</p>
-    pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub metadata: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>When the Recommendation Resource was last updated</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The Recommendation ARN</p>
     pub recommendation_arn: ::std::string::String,
 }
-impl RecommendationResourceSummary {
+impl  RecommendationResourceSummary  {
     /// <p>The ID of the Recommendation Resource</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ARN of the Recommendation Resource</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The AWS resource identifier</p>
-    pub fn aws_resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_resource_id.deref()
+    pub fn aws_resource_id(&self) -> & str {
+        use std::ops::Deref; self.aws_resource_id.deref()
     }
     /// <p>The AWS Region code that the Recommendation Resource is in</p>
-    pub fn region_code(&self) -> &str {
-        use std::ops::Deref;
-        self.region_code.deref()
+    pub fn region_code(&self) -> & str {
+        use std::ops::Deref; self.region_code.deref()
     }
     /// <p>The current status of the Recommendation Resource</p>
-    pub fn status(&self) -> &crate::types::ResourceStatus {
+    pub fn status(&self) -> & crate::types::ResourceStatus {
         &self.status
     }
     /// <p>Metadata associated with the Recommendation Resource</p>
-    pub fn metadata(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn metadata(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.metadata
     }
     /// <p>When the Recommendation Resource was last updated</p>
-    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
     /// <p>The Recommendation ARN</p>
-    pub fn recommendation_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.recommendation_arn.deref()
+    pub fn recommendation_arn(&self) -> & str {
+        use std::ops::Deref; self.recommendation_arn.deref()
     }
 }
 impl RecommendationResourceSummary {
@@ -76,7 +71,7 @@ pub struct RecommendationResourceSummaryBuilder {
     pub(crate) aws_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) recommendation_arn: ::std::option::Option<::std::string::String>,
 }
@@ -89,8 +84,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The ID of the Recommendation Resource</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the Recommendation Resource</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The ARN of the Recommendation Resource</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the Recommendation Resource</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +112,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The AWS resource identifier</p>
     pub fn set_aws_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_resource_id = input;
-        self
+        self.aws_resource_id = input; self
     }
     /// <p>The AWS resource identifier</p>
     pub fn get_aws_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +126,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The AWS Region code that the Recommendation Resource is in</p>
     pub fn set_region_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_code = input;
-        self
+        self.region_code = input; self
     }
     /// <p>The AWS Region code that the Recommendation Resource is in</p>
     pub fn get_region_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +140,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The current status of the Recommendation Resource</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the Recommendation Resource</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -163,17 +153,16 @@ impl RecommendationResourceSummaryBuilder {
     /// <p>Metadata associated with the Recommendation Resource</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata associated with the Recommendation Resource</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>Metadata associated with the Recommendation Resource</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>When the Recommendation Resource was last updated</p>
@@ -184,8 +173,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>When the Recommendation Resource was last updated</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>When the Recommendation Resource was last updated</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -199,8 +187,7 @@ impl RecommendationResourceSummaryBuilder {
     }
     /// <p>The Recommendation ARN</p>
     pub fn set_recommendation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_arn = input;
-        self
+        self.recommendation_arn = input; self
     }
     /// <p>The Recommendation ARN</p>
     pub fn get_recommendation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,55 +204,50 @@ impl RecommendationResourceSummaryBuilder {
     /// - [`last_updated_at`](crate::types::builders::RecommendationResourceSummaryBuilder::last_updated_at)
     /// - [`recommendation_arn`](crate::types::builders::RecommendationResourceSummaryBuilder::recommendation_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationResourceSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            aws_resource_id: self.aws_resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_resource_id",
-                    "aws_resource_id was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            region_code: self.region_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region_code",
-                    "region_code was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata",
-                    "metadata was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_at",
-                    "last_updated_at was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-            recommendation_arn: self.recommendation_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recommendation_arn",
-                    "recommendation_arn was not specified but it is required when building RecommendationResourceSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecommendationResourceSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                aws_resource_id: self.aws_resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_resource_id", "aws_resource_id was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                region_code: self.region_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region_code", "region_code was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                metadata: self.metadata
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata", "metadata was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                last_updated_at: self.last_updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_at", "last_updated_at was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+                recommendation_arn: self.recommendation_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recommendation_arn", "recommendation_arn was not specified but it is required when building RecommendationResourceSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

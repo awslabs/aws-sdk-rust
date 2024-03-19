@@ -5,54 +5,50 @@ pub use crate::operation::get_conformance_pack_compliance_summary::_get_conforma
 
 impl GetConformancePackComplianceSummaryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_conformance_pack_compliance_summary();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_conformance_pack_compliance_summary();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetConformancePackComplianceSummary`.
-///
+/// 
 /// <p>Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules in that conformance pack.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConformancePackComplianceSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder,
+                    inner: crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
-    > for GetConformancePackComplianceSummaryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
-            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
+                    crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
+                > for GetConformancePackComplianceSummaryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
+                        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetConformancePackComplianceSummaryFluentBuilder {
     /// Creates a new `GetConformancePackComplianceSummary`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,65 +57,50 @@ impl GetConformancePackComplianceSummaryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummary::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummary::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput,
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummary::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummary::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput, crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator {
-        crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator {
+                                crate::operation::get_conformance_pack_compliance_summary::paginator::GetConformancePackComplianceSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConformancePackNames`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
@@ -130,12 +111,12 @@ impl GetConformancePackComplianceSummaryFluentBuilder {
         self
     }
     /// <p>Names of conformance packs.</p>
-    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_conformance_pack_names(input);
         self
     }
     /// <p>Names of conformance packs.</p>
-    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_conformance_pack_names()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -167,3 +148,4 @@ impl GetConformancePackComplianceSummaryFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

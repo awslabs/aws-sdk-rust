@@ -3,7 +3,7 @@
 /// <p>The side border options for a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableSideBorderOptions {
+pub struct TableSideBorderOptions  {
     /// <p>The table border options of the inner vertical border.</p>
     pub inner_vertical: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the inner horizontal border.</p>
@@ -17,29 +17,29 @@ pub struct TableSideBorderOptions {
     /// <p>The table border options of the bottom border.</p>
     pub bottom: ::std::option::Option<crate::types::TableBorderOptions>,
 }
-impl TableSideBorderOptions {
+impl  TableSideBorderOptions  {
     /// <p>The table border options of the inner vertical border.</p>
-    pub fn inner_vertical(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn inner_vertical(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.inner_vertical.as_ref()
     }
     /// <p>The table border options of the inner horizontal border.</p>
-    pub fn inner_horizontal(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn inner_horizontal(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.inner_horizontal.as_ref()
     }
     /// <p>The table border options of the left border.</p>
-    pub fn left(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn left(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.left.as_ref()
     }
     /// <p>The table border options of the right border.</p>
-    pub fn right(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn right(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.right.as_ref()
     }
     /// <p>The table border options of the top border.</p>
-    pub fn top(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn top(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.top.as_ref()
     }
     /// <p>The table border options of the bottom border.</p>
-    pub fn bottom(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn bottom(&self) -> ::std::option::Option<& crate::types::TableBorderOptions> {
         self.bottom.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the inner vertical border.</p>
     pub fn set_inner_vertical(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.inner_vertical = input;
-        self
+        self.inner_vertical = input; self
     }
     /// <p>The table border options of the inner vertical border.</p>
     pub fn get_inner_vertical(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -83,8 +82,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the inner horizontal border.</p>
     pub fn set_inner_horizontal(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.inner_horizontal = input;
-        self
+        self.inner_horizontal = input; self
     }
     /// <p>The table border options of the inner horizontal border.</p>
     pub fn get_inner_horizontal(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -97,8 +95,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the left border.</p>
     pub fn set_left(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.left = input;
-        self
+        self.left = input; self
     }
     /// <p>The table border options of the left border.</p>
     pub fn get_left(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -111,8 +108,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the right border.</p>
     pub fn set_right(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.right = input;
-        self
+        self.right = input; self
     }
     /// <p>The table border options of the right border.</p>
     pub fn get_right(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -125,8 +121,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the top border.</p>
     pub fn set_top(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.top = input;
-        self
+        self.top = input; self
     }
     /// <p>The table border options of the top border.</p>
     pub fn get_top(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -139,8 +134,7 @@ impl TableSideBorderOptionsBuilder {
     }
     /// <p>The table border options of the bottom border.</p>
     pub fn set_bottom(mut self, input: ::std::option::Option<crate::types::TableBorderOptions>) -> Self {
-        self.bottom = input;
-        self
+        self.bottom = input; self
     }
     /// <p>The table border options of the bottom border.</p>
     pub fn get_bottom(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
@@ -149,12 +143,19 @@ impl TableSideBorderOptionsBuilder {
     /// Consumes the builder and constructs a [`TableSideBorderOptions`](crate::types::TableSideBorderOptions).
     pub fn build(self) -> crate::types::TableSideBorderOptions {
         crate::types::TableSideBorderOptions {
-            inner_vertical: self.inner_vertical,
-            inner_horizontal: self.inner_horizontal,
-            left: self.left,
-            right: self.right,
-            top: self.top,
-            bottom: self.bottom,
+            inner_vertical: self.inner_vertical
+            ,
+            inner_horizontal: self.inner_horizontal
+            ,
+            left: self.left
+            ,
+            right: self.right
+            ,
+            top: self.top
+            ,
+            bottom: self.bottom
+            ,
         }
     }
 }
+

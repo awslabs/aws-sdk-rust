@@ -3,7 +3,7 @@
 /// <p>Sends the forgot device request, as an administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminForgetDeviceInput {
+pub struct AdminForgetDeviceInput  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
@@ -11,21 +11,21 @@ pub struct AdminForgetDeviceInput {
     /// <p>The device key.</p>
     pub device_key: ::std::option::Option<::std::string::String>,
 }
-impl AdminForgetDeviceInput {
+impl  AdminForgetDeviceInput  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> ::std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<& str> {
         self.device_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for AdminForgetDeviceInput {
+impl  ::std::fmt::Debug for AdminForgetDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminForgetDeviceInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -58,8 +58,7 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,22 +86,24 @@ impl AdminForgetDeviceInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
     }
     /// <p>The device key.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_key
     }
     /// Consumes the builder and constructs a [`AdminForgetDeviceInput`](crate::operation::admin_forget_device::AdminForgetDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::admin_forget_device::AdminForgetDeviceInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            device_key: self.device_key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_forget_device::AdminForgetDeviceInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                device_key: self.device_key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminForgetDeviceInputBuilder {
@@ -115,3 +115,4 @@ impl ::std::fmt::Debug for AdminForgetDeviceInputBuilder {
         formatter.finish()
     }
 }
+

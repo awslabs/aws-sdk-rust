@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmModelInput {
+pub struct DescribeAlarmModelInput  {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlarmModelInput {
+impl  DescribeAlarmModelInput  {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> ::std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAlarmModelInputBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>The name of the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DescribeAlarmModelInputBuilder {
     }
     /// <p>The version of the alarm model.</p>
     pub fn set_alarm_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_version = input;
-        self
+        self.alarm_model_version = input; self
     }
     /// <p>The version of the alarm model.</p>
     pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.alarm_model_version
     }
     /// Consumes the builder and constructs a [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_alarm_model::DescribeAlarmModelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_alarm_model::DescribeAlarmModelInput {
-            alarm_model_name: self.alarm_model_name,
-            alarm_model_version: self.alarm_model_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alarm_model::DescribeAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_alarm_model::DescribeAlarmModelInput {
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_version: self.alarm_model_version
+                ,
+            }
+        )
     }
 }
+

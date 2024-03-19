@@ -3,7 +3,7 @@
 /// <p>Provides a breakdown of the number of objects labeled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelCounters {
+pub struct LabelCounters  {
     /// <p>The total number of objects labeled.</p>
     pub total_labeled: ::std::option::Option<i32>,
     /// <p>The total number of objects labeled by a human worker.</p>
@@ -15,7 +15,7 @@ pub struct LabelCounters {
     /// <p>The total number of objects not yet labeled.</p>
     pub unlabeled: ::std::option::Option<i32>,
 }
-impl LabelCounters {
+impl  LabelCounters  {
     /// <p>The total number of objects labeled.</p>
     pub fn total_labeled(&self) -> ::std::option::Option<i32> {
         self.total_labeled
@@ -62,8 +62,7 @@ impl LabelCountersBuilder {
     }
     /// <p>The total number of objects labeled.</p>
     pub fn set_total_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_labeled = input;
-        self
+        self.total_labeled = input; self
     }
     /// <p>The total number of objects labeled.</p>
     pub fn get_total_labeled(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl LabelCountersBuilder {
     }
     /// <p>The total number of objects labeled by a human worker.</p>
     pub fn set_human_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.human_labeled = input;
-        self
+        self.human_labeled = input; self
     }
     /// <p>The total number of objects labeled by a human worker.</p>
     pub fn get_human_labeled(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl LabelCountersBuilder {
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
     pub fn set_machine_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.machine_labeled = input;
-        self
+        self.machine_labeled = input; self
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
     pub fn get_machine_labeled(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl LabelCountersBuilder {
     }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
     pub fn set_failed_non_retryable_error(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_non_retryable_error = input;
-        self
+        self.failed_non_retryable_error = input; self
     }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
     pub fn get_failed_non_retryable_error(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl LabelCountersBuilder {
     }
     /// <p>The total number of objects not yet labeled.</p>
     pub fn set_unlabeled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unlabeled = input;
-        self
+        self.unlabeled = input; self
     }
     /// <p>The total number of objects not yet labeled.</p>
     pub fn get_unlabeled(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl LabelCountersBuilder {
     /// Consumes the builder and constructs a [`LabelCounters`](crate::types::LabelCounters).
     pub fn build(self) -> crate::types::LabelCounters {
         crate::types::LabelCounters {
-            total_labeled: self.total_labeled,
-            human_labeled: self.human_labeled,
-            machine_labeled: self.machine_labeled,
-            failed_non_retryable_error: self.failed_non_retryable_error,
-            unlabeled: self.unlabeled,
+            total_labeled: self.total_labeled
+            ,
+            human_labeled: self.human_labeled
+            ,
+            machine_labeled: self.machine_labeled
+            ,
+            failed_non_retryable_error: self.failed_non_retryable_error
+            ,
+            unlabeled: self.unlabeled
+            ,
         }
     }
 }
+

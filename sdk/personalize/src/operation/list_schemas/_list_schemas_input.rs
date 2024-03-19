@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchemasInput {
+pub struct ListSchemasInput  {
     /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of schemas to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSchemasInput {
+impl  ListSchemasInput  {
     /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of schemas to return.</p>
@@ -40,8 +40,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>The maximum number of schemas to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of schemas to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,9 +61,14 @@ impl ListSchemasInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_schemas::ListSchemasInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

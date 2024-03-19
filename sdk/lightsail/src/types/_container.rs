@@ -3,37 +3,38 @@
 /// <p>Describes the settings of a container that will be launched, or that is launched, to an Amazon Lightsail container service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Container {
+pub struct Container  {
     /// <p>The name of the image used for the container.</p>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, if your container service name is <code>container-service-1</code>, the container image label is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container image, specify <code>latest</code> instead of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use the highest numbered version of the registered container image.</p>
     /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The launch command for the container.</p>
-    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The environment variables of the container.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The open firewall ports of the container.</p>
-    pub ports: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
+    pub ports: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ContainerServiceProtocol>>,
 }
-impl Container {
+impl  Container  {
     /// <p>The name of the image used for the container.</p>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, if your container service name is <code>container-service-1</code>, the container image label is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container image, specify <code>latest</code> instead of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use the highest numbered version of the registered container image.</p>
     /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The launch command for the container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
-    pub fn command(&self) -> &[::std::string::String] {
-        self.command.as_deref().unwrap_or_default()
+    pub fn command(&self) -> & [::std::string::String] {
+        self.command.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The environment variables of the container.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>The open firewall ports of the container.</p>
-    pub fn ports(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>> {
+    pub fn ports(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ContainerServiceProtocol>> {
         self.ports.as_ref()
     }
 }
@@ -49,9 +50,9 @@ impl Container {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
-    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) ports: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) ports: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ContainerServiceProtocol>>,
 }
 impl ContainerBuilder {
     /// <p>The name of the image used for the container.</p>
@@ -65,8 +66,7 @@ impl ContainerBuilder {
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, if your container service name is <code>container-service-1</code>, the container image label is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container image, specify <code>latest</code> instead of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use the highest numbered version of the registered container image.</p>
     /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The name of the image used for the container.</p>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, if your container service name is <code>container-service-1</code>, the container image label is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container image, specify <code>latest</code> instead of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use the highest numbered version of the registered container image.</p>
@@ -81,17 +81,16 @@ impl ContainerBuilder {
     /// <p>The launch command for the container.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
-        v.push(input.into());
-        self.command = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.command = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch command for the container.</p>
-    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.command = input;
-        self
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.command = input; self
     }
     /// <p>The launch command for the container.</p>
-    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.command
     }
     /// Adds a key-value pair to `environment`.
@@ -101,20 +100,16 @@ impl ContainerBuilder {
     /// <p>The environment variables of the container.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables of the container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables of the container.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Adds a key-value pair to `ports`.
@@ -124,29 +119,30 @@ impl ContainerBuilder {
     /// <p>The open firewall ports of the container.</p>
     pub fn ports(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContainerServiceProtocol) -> Self {
         let mut hash_map = self.ports.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.ports = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.ports = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The open firewall ports of the container.</p>
-    pub fn set_ports(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
-    ) -> Self {
-        self.ports = input;
-        self
+    pub fn set_ports(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ContainerServiceProtocol>>) -> Self {
+        self.ports = input; self
     }
     /// <p>The open firewall ports of the container.</p>
-    pub fn get_ports(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>> {
+    pub fn get_ports(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ContainerServiceProtocol>> {
         &self.ports
     }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
-            image: self.image,
-            command: self.command,
-            environment: self.environment,
-            ports: self.ports,
+            image: self.image
+            ,
+            command: self.command
+            ,
+            environment: self.environment
+            ,
+            ports: self.ports
+            ,
         }
     }
 }
+

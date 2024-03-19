@@ -3,7 +3,7 @@
 /// An Amazon Connect campaign summary.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignSummary {
+pub struct CampaignSummary  {
     /// Identifier representing a Campaign
     pub id: ::std::string::String,
     /// The resource name of an Amazon Connect campaign.
@@ -13,26 +13,22 @@ pub struct CampaignSummary {
     /// Amazon Connect Instance Id
     pub connect_instance_id: ::std::string::String,
 }
-impl CampaignSummary {
+impl  CampaignSummary  {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// The resource name of an Amazon Connect campaign.
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.connect_instance_id.deref()
+    pub fn connect_instance_id(&self) -> & str {
+        use std::ops::Deref; self.connect_instance_id.deref()
     }
 }
 impl CampaignSummary {
@@ -60,8 +56,7 @@ impl CampaignSummaryBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Identifier representing a Campaign
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl CampaignSummaryBuilder {
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl CampaignSummaryBuilder {
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl CampaignSummaryBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_instance_id = input;
-        self
+        self.connect_instance_id = input; self
     }
     /// Amazon Connect Instance Id
     pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl CampaignSummaryBuilder {
     /// - [`name`](crate::types::builders::CampaignSummaryBuilder::name)
     /// - [`connect_instance_id`](crate::types::builders::CampaignSummaryBuilder::connect_instance_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CampaignSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connect_instance_id",
-                    "connect_instance_id was not specified but it is required when building CampaignSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CampaignSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+                connect_instance_id: self.connect_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connect_instance_id", "connect_instance_id was not specified but it is required when building CampaignSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

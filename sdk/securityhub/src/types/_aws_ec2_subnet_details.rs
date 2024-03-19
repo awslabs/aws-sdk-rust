@@ -3,7 +3,7 @@
 /// <p>Contains information about a subnet in Amazon EC2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2SubnetDetails {
+pub struct AwsEc2SubnetDetails  {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
     pub assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     /// <p>The Availability Zone for the subnet.</p>
@@ -29,19 +29,19 @@ pub struct AwsEc2SubnetDetails {
     /// <p>The identifier of the VPC that contains the subnet.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>,
 }
-impl AwsEc2SubnetDetails {
+impl  AwsEc2SubnetDetails  {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
     pub fn assign_ipv6_address_on_creation(&self) -> ::std::option::Option<bool> {
         self.assign_ipv6_address_on_creation
     }
     /// <p>The Availability Zone for the subnet.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The identifier of the Availability Zone for the subnet.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
@@ -49,7 +49,7 @@ impl AwsEc2SubnetDetails {
         self.available_ip_address_count
     }
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
-    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_block(&self) -> ::std::option::Option<& str> {
         self.cidr_block.as_deref()
     }
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
@@ -61,30 +61,31 @@ impl AwsEc2SubnetDetails {
         self.map_public_ip_on_launch
     }
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The ARN of the subnet.</p>
-    pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_arn(&self) -> ::std::option::Option<& str> {
         self.subnet_arn.as_deref()
     }
     /// <p>The identifier of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The identifier of the VPC that contains the subnet.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_block_association_set.is_none()`.
-    pub fn ipv6_cidr_block_association_set(&self) -> &[crate::types::Ipv6CidrBlockAssociation] {
-        self.ipv6_cidr_block_association_set.as_deref().unwrap_or_default()
+    pub fn ipv6_cidr_block_association_set(&self) -> & [crate::types::Ipv6CidrBlockAssociation] {
+        self.ipv6_cidr_block_association_set.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEc2SubnetDetails {
@@ -110,7 +111,7 @@ pub struct AwsEc2SubnetDetailsBuilder {
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>,
 }
 impl AwsEc2SubnetDetailsBuilder {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
@@ -120,8 +121,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
     pub fn set_assign_ipv6_address_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.assign_ipv6_address_on_creation = input;
-        self
+        self.assign_ipv6_address_on_creation = input; self
     }
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
     pub fn get_assign_ipv6_address_on_creation(&self) -> &::std::option::Option<bool> {
@@ -134,8 +134,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The Availability Zone for the subnet.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone for the subnet.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The identifier of the Availability Zone for the subnet.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the Availability Zone for the subnet.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
     pub fn set_available_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.available_ip_address_count = input;
-        self
+        self.available_ip_address_count = input; self
     }
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
     pub fn get_available_ip_address_count(&self) -> &::std::option::Option<i32> {
@@ -176,8 +173,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
     pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_block = input;
-        self
+        self.cidr_block = input; self
     }
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
     pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
     pub fn set_default_for_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_for_az = input;
-        self
+        self.default_for_az = input; self
     }
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
     pub fn get_default_for_az(&self) -> &::std::option::Option<bool> {
@@ -204,8 +199,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>Whether instances in this subnet receive a public IP address.</p>
     pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.map_public_ip_on_launch = input;
-        self
+        self.map_public_ip_on_launch = input; self
     }
     /// <p>Whether instances in this subnet receive a public IP address.</p>
     pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<bool> {
@@ -218,8 +212,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +238,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The ARN of the subnet.</p>
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_arn = input;
-        self
+        self.subnet_arn = input; self
     }
     /// <p>The ARN of the subnet.</p>
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +251,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The identifier of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The identifier of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +264,7 @@ impl AwsEc2SubnetDetailsBuilder {
     }
     /// <p>The identifier of the VPC that contains the subnet.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The identifier of the VPC that contains the subnet.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,38 +277,48 @@ impl AwsEc2SubnetDetailsBuilder {
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
     pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::Ipv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
-        v.push(input);
-        self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub fn set_ipv6_cidr_block_association_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
-    ) -> Self {
-        self.ipv6_cidr_block_association_set = input;
-        self
+    pub fn set_ipv6_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>) -> Self {
+        self.ipv6_cidr_block_association_set = input; self
     }
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// Consumes the builder and constructs a [`AwsEc2SubnetDetails`](crate::types::AwsEc2SubnetDetails).
     pub fn build(self) -> crate::types::AwsEc2SubnetDetails {
         crate::types::AwsEc2SubnetDetails {
-            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,
-            availability_zone: self.availability_zone,
-            availability_zone_id: self.availability_zone_id,
-            available_ip_address_count: self.available_ip_address_count,
-            cidr_block: self.cidr_block,
-            default_for_az: self.default_for_az,
-            map_public_ip_on_launch: self.map_public_ip_on_launch,
-            owner_id: self.owner_id,
-            state: self.state,
-            subnet_arn: self.subnet_arn,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
-            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
+            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation
+            ,
+            availability_zone: self.availability_zone
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            available_ip_address_count: self.available_ip_address_count
+            ,
+            cidr_block: self.cidr_block
+            ,
+            default_for_az: self.default_for_az
+            ,
+            map_public_ip_on_launch: self.map_public_ip_on_launch
+            ,
+            owner_id: self.owner_id
+            ,
+            state: self.state
+            ,
+            subnet_arn: self.subnet_arn
+            ,
+            subnet_id: self.subnet_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set
+            ,
         }
     }
 }
+

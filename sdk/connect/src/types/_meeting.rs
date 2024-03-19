@@ -3,7 +3,7 @@
 /// <p>A meeting created using the Amazon Chime SDK.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Meeting {
+pub struct Meeting  {
     /// <p>The Amazon Web Services Region in which you create the meeting.</p>
     pub media_region: ::std::option::Option<::std::string::String>,
     /// <p>The media placement for the meeting.</p>
@@ -13,21 +13,21 @@ pub struct Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
 }
-impl Meeting {
+impl  Meeting  {
     /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub fn media_region(&self) -> ::std::option::Option<&str> {
+    pub fn media_region(&self) -> ::std::option::Option<& str> {
         self.media_region.as_deref()
     }
     /// <p>The media placement for the meeting.</p>
-    pub fn media_placement(&self) -> ::std::option::Option<&crate::types::MediaPlacement> {
+    pub fn media_placement(&self) -> ::std::option::Option<& crate::types::MediaPlacement> {
         self.media_placement.as_ref()
     }
     /// <p>The configuration settings of the features available to a meeting.</p>
-    pub fn meeting_features(&self) -> ::std::option::Option<&crate::types::MeetingFeaturesConfiguration> {
+    pub fn meeting_features(&self) -> ::std::option::Option<& crate::types::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl MeetingBuilder {
     }
     /// <p>The Amazon Web Services Region in which you create the meeting.</p>
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_region = input;
-        self
+        self.media_region = input; self
     }
     /// <p>The Amazon Web Services Region in which you create the meeting.</p>
     pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MeetingBuilder {
     }
     /// <p>The media placement for the meeting.</p>
     pub fn set_media_placement(mut self, input: ::std::option::Option<crate::types::MediaPlacement>) -> Self {
-        self.media_placement = input;
-        self
+        self.media_placement = input; self
     }
     /// <p>The media placement for the meeting.</p>
     pub fn get_media_placement(&self) -> &::std::option::Option<crate::types::MediaPlacement> {
@@ -83,8 +81,7 @@ impl MeetingBuilder {
     }
     /// <p>The configuration settings of the features available to a meeting.</p>
     pub fn set_meeting_features(mut self, input: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>) -> Self {
-        self.meeting_features = input;
-        self
+        self.meeting_features = input; self
     }
     /// <p>The configuration settings of the features available to a meeting.</p>
     pub fn get_meeting_features(&self) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
@@ -97,8 +94,7 @@ impl MeetingBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl MeetingBuilder {
     /// Consumes the builder and constructs a [`Meeting`](crate::types::Meeting).
     pub fn build(self) -> crate::types::Meeting {
         crate::types::Meeting {
-            media_region: self.media_region,
-            media_placement: self.media_placement,
-            meeting_features: self.meeting_features,
-            meeting_id: self.meeting_id,
+            media_region: self.media_region
+            ,
+            media_placement: self.media_placement
+            ,
+            meeting_features: self.meeting_features
+            ,
+            meeting_id: self.meeting_id
+            ,
         }
     }
 }
+

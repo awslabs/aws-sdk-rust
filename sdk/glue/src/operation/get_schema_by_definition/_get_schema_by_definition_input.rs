@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaByDefinitionInput {
+pub struct GetSchemaByDefinitionInput  {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct GetSchemaByDefinitionInput {
     /// <p>The definition of the schema for which schema details are required.</p>
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
-impl GetSchemaByDefinitionInput {
+impl  GetSchemaByDefinitionInput  {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
     /// <li>
@@ -22,11 +22,11 @@ impl GetSchemaByDefinitionInput {
     /// <li>
     /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
     /// </ul>
-    pub fn schema_id(&self) -> ::std::option::Option<&crate::types::SchemaId> {
+    pub fn schema_id(&self) -> ::std::option::Option<& crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn schema_definition(&self) -> ::std::option::Option<&str> {
+    pub fn schema_definition(&self) -> ::std::option::Option<& str> {
         self.schema_definition.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl GetSchemaByDefinitionInputBuilder {
     /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p></li>
     /// </ul>
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
     }
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
@@ -86,21 +85,22 @@ impl GetSchemaByDefinitionInputBuilder {
     }
     /// <p>The definition of the schema for which schema details are required.</p>
     pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_definition = input;
-        self
+        self.schema_definition = input; self
     }
     /// <p>The definition of the schema for which schema details are required.</p>
     pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_definition
     }
     /// Consumes the builder and constructs a [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput {
-            schema_id: self.schema_id,
-            schema_definition: self.schema_definition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput {
+                schema_id: self.schema_id
+                ,
+                schema_definition: self.schema_definition
+                ,
+            }
+        )
     }
 }
+

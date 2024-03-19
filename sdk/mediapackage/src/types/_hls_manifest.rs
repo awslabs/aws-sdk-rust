@@ -3,7 +3,7 @@
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsManifest {
+pub struct HlsManifest  {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     pub ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
@@ -21,17 +21,17 @@ pub struct HlsManifest {
     /// The URL of the packaged OriginEndpoint for consumption.
     pub url: ::std::option::Option<::std::string::String>,
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
+    pub ad_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
 }
-impl HlsManifest {
+impl  HlsManifest  {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
-    pub fn ad_markers(&self) -> ::std::option::Option<&crate::types::AdMarkers> {
+    pub fn ad_markers(&self) -> ::std::option::Option<& crate::types::AdMarkers> {
         self.ad_markers.as_ref()
     }
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// When enabled, an I-Frame only stream will be included in the output.
@@ -39,11 +39,11 @@ impl HlsManifest {
         self.include_iframe_only_stream
     }
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
+    pub fn manifest_name(&self) -> ::std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
-    pub fn playlist_type(&self) -> ::std::option::Option<&crate::types::PlaylistType> {
+    pub fn playlist_type(&self) -> ::std::option::Option<& crate::types::PlaylistType> {
         self.playlist_type.as_ref()
     }
     /// Time window (in seconds) contained in each parent manifest.
@@ -55,17 +55,18 @@ impl HlsManifest {
         self.program_date_time_interval_seconds
     }
     /// The URL of the packaged OriginEndpoint for consumption.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_triggers.is_none()`.
-    pub fn ad_triggers(&self) -> &[crate::types::AdTriggersElement] {
-        self.ad_triggers.as_deref().unwrap_or_default()
+    pub fn ad_triggers(&self) -> & [crate::types::AdTriggersElement] {
+        self.ad_triggers.as_deref()
+        .unwrap_or_default()
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
+    pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<& crate::types::AdsOnDeliveryRestrictions> {
         self.ads_on_delivery_restrictions.as_ref()
     }
 }
@@ -88,7 +89,7 @@ pub struct HlsManifestBuilder {
     pub(crate) playlist_window_seconds: ::std::option::Option<i32>,
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
-    pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
+    pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::AdTriggersElement>>,
     pub(crate) ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
 }
 impl HlsManifestBuilder {
@@ -99,8 +100,7 @@ impl HlsManifestBuilder {
     }
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     pub fn set_ad_markers(mut self, input: ::std::option::Option<crate::types::AdMarkers>) -> Self {
-        self.ad_markers = input;
-        self
+        self.ad_markers = input; self
     }
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
     pub fn get_ad_markers(&self) -> &::std::option::Option<crate::types::AdMarkers> {
@@ -114,8 +114,7 @@ impl HlsManifestBuilder {
     }
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl HlsManifestBuilder {
     }
     /// When enabled, an I-Frame only stream will be included in the output.
     pub fn set_include_iframe_only_stream(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_iframe_only_stream = input;
-        self
+        self.include_iframe_only_stream = input; self
     }
     /// When enabled, an I-Frame only stream will be included in the output.
     pub fn get_include_iframe_only_stream(&self) -> &::std::option::Option<bool> {
@@ -142,8 +140,7 @@ impl HlsManifestBuilder {
     }
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
     pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_name = input;
-        self
+        self.manifest_name = input; self
     }
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
     pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl HlsManifestBuilder {
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
     pub fn set_playlist_type(mut self, input: ::std::option::Option<crate::types::PlaylistType>) -> Self {
-        self.playlist_type = input;
-        self
+        self.playlist_type = input; self
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
     pub fn get_playlist_type(&self) -> &::std::option::Option<crate::types::PlaylistType> {
@@ -170,8 +166,7 @@ impl HlsManifestBuilder {
     }
     /// Time window (in seconds) contained in each parent manifest.
     pub fn set_playlist_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.playlist_window_seconds = input;
-        self
+        self.playlist_window_seconds = input; self
     }
     /// Time window (in seconds) contained in each parent manifest.
     pub fn get_playlist_window_seconds(&self) -> &::std::option::Option<i32> {
@@ -184,8 +179,7 @@ impl HlsManifestBuilder {
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn set_program_date_time_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_date_time_interval_seconds = input;
-        self
+        self.program_date_time_interval_seconds = input; self
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
@@ -198,8 +192,7 @@ impl HlsManifestBuilder {
     }
     /// The URL of the packaged OriginEndpoint for consumption.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// The URL of the packaged OriginEndpoint for consumption.
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,17 +205,16 @@ impl HlsManifestBuilder {
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
     pub fn ad_triggers(mut self, input: crate::types::AdTriggersElement) -> Self {
         let mut v = self.ad_triggers.unwrap_or_default();
-        v.push(input);
-        self.ad_triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ad_triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn set_ad_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>) -> Self {
-        self.ad_triggers = input;
-        self
+    pub fn set_ad_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdTriggersElement>>) -> Self {
+        self.ad_triggers = input; self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn get_ad_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
+    pub fn get_ad_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdTriggersElement>> {
         &self.ad_triggers
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
@@ -232,8 +224,7 @@ impl HlsManifestBuilder {
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn set_ads_on_delivery_restrictions(mut self, input: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>) -> Self {
-        self.ads_on_delivery_restrictions = input;
-        self
+        self.ads_on_delivery_restrictions = input; self
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn get_ads_on_delivery_restrictions(&self) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
@@ -242,16 +233,27 @@ impl HlsManifestBuilder {
     /// Consumes the builder and constructs a [`HlsManifest`](crate::types::HlsManifest).
     pub fn build(self) -> crate::types::HlsManifest {
         crate::types::HlsManifest {
-            ad_markers: self.ad_markers,
-            id: self.id,
-            include_iframe_only_stream: self.include_iframe_only_stream,
-            manifest_name: self.manifest_name,
-            playlist_type: self.playlist_type,
-            playlist_window_seconds: self.playlist_window_seconds,
-            program_date_time_interval_seconds: self.program_date_time_interval_seconds,
-            url: self.url,
-            ad_triggers: self.ad_triggers,
-            ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
+            ad_markers: self.ad_markers
+            ,
+            id: self.id
+            ,
+            include_iframe_only_stream: self.include_iframe_only_stream
+            ,
+            manifest_name: self.manifest_name
+            ,
+            playlist_type: self.playlist_type
+            ,
+            playlist_window_seconds: self.playlist_window_seconds
+            ,
+            program_date_time_interval_seconds: self.program_date_time_interval_seconds
+            ,
+            url: self.url
+            ,
+            ad_triggers: self.ad_triggers
+            ,
+            ads_on_delivery_restrictions: self.ads_on_delivery_restrictions
+            ,
         }
     }
 }
+

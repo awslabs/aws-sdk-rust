@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubscriptionOutput {
+pub struct GetSubscriptionOutput  {
     /// <p>The type of the billing plan for the space.</p>
     pub subscription_type: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub aws_account_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSubscriptionOutput {
+impl  GetSubscriptionOutput  {
     /// <p>The type of the billing plan for the space.</p>
-    pub fn subscription_type(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_type(&self) -> ::std::option::Option<& str> {
         self.subscription_type.as_deref()
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    pub fn aws_account_name(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_name(&self) -> ::std::option::Option<& str> {
         self.aws_account_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
     pub fn builder() -> crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder {
@@ -47,8 +47,7 @@ impl GetSubscriptionOutputBuilder {
     }
     /// <p>The type of the billing plan for the space.</p>
     pub fn set_subscription_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_type = input;
-        self
+        self.subscription_type = input; self
     }
     /// <p>The type of the billing plan for the space.</p>
     pub fn get_subscription_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetSubscriptionOutputBuilder {
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub fn set_aws_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_name = input;
-        self
+        self.aws_account_name = input; self
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
     pub fn build(self) -> crate::operation::get_subscription::GetSubscriptionOutput {
         crate::operation::get_subscription::GetSubscriptionOutput {
-            subscription_type: self.subscription_type,
-            aws_account_name: self.aws_account_name,
+            subscription_type: self.subscription_type
+            ,
+            aws_account_name: self.aws_account_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

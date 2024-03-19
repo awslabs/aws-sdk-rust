@@ -3,20 +3,19 @@
 /// <p>The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceTag {
+pub struct ResourceTag  {
     /// <p>The resource tag key.</p>
     pub key: ::std::string::String,
     /// <p>The resource tag value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ResourceTag {
+impl  ResourceTag  {
     /// <p>The resource tag key.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The resource tag value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The resource tag key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The resource tag key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The resource tag value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The resource tag value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ResourceTagBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::ResourceTagBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceTag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ResourceTag",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceTag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ResourceTag")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

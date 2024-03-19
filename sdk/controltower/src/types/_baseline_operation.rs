@@ -3,7 +3,7 @@
 /// <p>An object of shape <code>BaselineOperation</code>, returning details about the specified <code>Baseline</code> operation ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BaselineOperation {
+pub struct BaselineOperation  {
     /// <p>The identifier of the specified operation.</p>
     pub operation_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>ENABLE_BASELINE</code>, <code>DISABLE_BASELINE</code>, <code>UPDATE_ENABLED_BASELINE</code>, or <code>RESET_ENABLED_BASELINE</code>.</p>
@@ -17,29 +17,29 @@ pub struct BaselineOperation {
     /// <p>A status message that gives more information about the operation's status, if applicable.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl BaselineOperation {
+impl  BaselineOperation  {
     /// <p>The identifier of the specified operation.</p>
-    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn operation_identifier(&self) -> ::std::option::Option<& str> {
         self.operation_identifier.as_deref()
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>ENABLE_BASELINE</code>, <code>DISABLE_BASELINE</code>, <code>UPDATE_ENABLED_BASELINE</code>, or <code>RESET_ENABLED_BASELINE</code>.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::BaselineOperationType> {
+    pub fn operation_type(&self) -> ::std::option::Option<& crate::types::BaselineOperationType> {
         self.operation_type.as_ref()
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>IN_PROGRESS</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BaselineOperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BaselineOperationStatus> {
         self.status.as_ref()
     }
     /// <p>The start time of the operation, in ISO 8601 format.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the operation (if applicable), in ISO 8601 format.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A status message that gives more information about the operation's status, if applicable.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>The identifier of the specified operation.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>The identifier of the specified operation.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>ENABLE_BASELINE</code>, <code>DISABLE_BASELINE</code>, <code>UPDATE_ENABLED_BASELINE</code>, or <code>RESET_ENABLED_BASELINE</code>.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::BaselineOperationType>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>ENABLE_BASELINE</code>, <code>DISABLE_BASELINE</code>, <code>UPDATE_ENABLED_BASELINE</code>, or <code>RESET_ENABLED_BASELINE</code>.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::BaselineOperationType> {
@@ -97,8 +95,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>IN_PROGRESS</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BaselineOperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An enumerated type (<code>enum</code>) with possible values of <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>IN_PROGRESS</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BaselineOperationStatus> {
@@ -111,8 +108,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>The start time of the operation, in ISO 8601 format.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the operation, in ISO 8601 format.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>The end time of the operation (if applicable), in ISO 8601 format.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the operation (if applicable), in ISO 8601 format.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl BaselineOperationBuilder {
     }
     /// <p>A status message that gives more information about the operation's status, if applicable.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A status message that gives more information about the operation's status, if applicable.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl BaselineOperationBuilder {
     /// Consumes the builder and constructs a [`BaselineOperation`](crate::types::BaselineOperation).
     pub fn build(self) -> crate::types::BaselineOperation {
         crate::types::BaselineOperation {
-            operation_identifier: self.operation_identifier,
-            operation_type: self.operation_type,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            status_message: self.status_message,
+            operation_identifier: self.operation_identifier
+            ,
+            operation_type: self.operation_type
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

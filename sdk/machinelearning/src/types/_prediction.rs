@@ -13,19 +13,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Prediction {
+pub struct Prediction  {
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
     pub predicted_label: ::std::option::Option<::std::string::String>,
     /// <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
     pub predicted_value: ::std::option::Option<f32>,
     /// <p>Provides the raw classification score corresponding to each label.</p>
-    pub predicted_scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
+    pub predicted_scores: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>>,
     /// <p>Provides any additional details regarding the prediction.</p>
-    pub details: ::std::option::Option<::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>>,
+    pub details: ::std::option::Option<::std::collections::HashMap::<crate::types::DetailsAttributes, ::std::string::String>>,
 }
-impl Prediction {
+impl  Prediction  {
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
-    pub fn predicted_label(&self) -> ::std::option::Option<&str> {
+    pub fn predicted_label(&self) -> ::std::option::Option<& str> {
         self.predicted_label.as_deref()
     }
     /// <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
@@ -33,11 +33,11 @@ impl Prediction {
         self.predicted_value
     }
     /// <p>Provides the raw classification score corresponding to each label.</p>
-    pub fn predicted_scores(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f32>> {
+    pub fn predicted_scores(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, f32>> {
         self.predicted_scores.as_ref()
     }
     /// <p>Provides any additional details regarding the prediction.</p>
-    pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>> {
+    pub fn details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DetailsAttributes, ::std::string::String>> {
         self.details.as_ref()
     }
 }
@@ -54,8 +54,8 @@ impl Prediction {
 pub struct PredictionBuilder {
     pub(crate) predicted_label: ::std::option::Option<::std::string::String>,
     pub(crate) predicted_value: ::std::option::Option<f32>,
-    pub(crate) predicted_scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
-    pub(crate) details: ::std::option::Option<::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>>,
+    pub(crate) predicted_scores: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>>,
+    pub(crate) details: ::std::option::Option<::std::collections::HashMap::<crate::types::DetailsAttributes, ::std::string::String>>,
 }
 impl PredictionBuilder {
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
@@ -65,8 +65,7 @@ impl PredictionBuilder {
     }
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
     pub fn set_predicted_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.predicted_label = input;
-        self
+        self.predicted_label = input; self
     }
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
     pub fn get_predicted_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl PredictionBuilder {
     }
     /// <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
     pub fn set_predicted_value(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.predicted_value = input;
-        self
+        self.predicted_value = input; self
     }
     /// <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
     pub fn get_predicted_value(&self) -> &::std::option::Option<f32> {
@@ -93,17 +91,16 @@ impl PredictionBuilder {
     /// <p>Provides the raw classification score corresponding to each label.</p>
     pub fn predicted_scores(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f32) -> Self {
         let mut hash_map = self.predicted_scores.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.predicted_scores = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.predicted_scores = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Provides the raw classification score corresponding to each label.</p>
-    pub fn set_predicted_scores(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>) -> Self {
-        self.predicted_scores = input;
-        self
+    pub fn set_predicted_scores(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>>) -> Self {
+        self.predicted_scores = input; self
     }
     /// <p>Provides the raw classification score corresponding to each label.</p>
-    pub fn get_predicted_scores(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f32>> {
+    pub fn get_predicted_scores(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, f32>> {
         &self.predicted_scores
     }
     /// Adds a key-value pair to `details`.
@@ -113,29 +110,30 @@ impl PredictionBuilder {
     /// <p>Provides any additional details regarding the prediction.</p>
     pub fn details(mut self, k: crate::types::DetailsAttributes, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Provides any additional details regarding the prediction.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DetailsAttributes, ::std::string::String>>) -> Self {
+        self.details = input; self
     }
     /// <p>Provides any additional details regarding the prediction.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DetailsAttributes, ::std::string::String>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`Prediction`](crate::types::Prediction).
     pub fn build(self) -> crate::types::Prediction {
         crate::types::Prediction {
-            predicted_label: self.predicted_label,
-            predicted_value: self.predicted_value,
-            predicted_scores: self.predicted_scores,
-            details: self.details,
+            predicted_label: self.predicted_label
+            ,
+            predicted_value: self.predicted_value
+            ,
+            predicted_scores: self.predicted_scores
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

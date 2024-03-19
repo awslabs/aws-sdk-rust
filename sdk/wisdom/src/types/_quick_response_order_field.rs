@@ -30,20 +30,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickResponseOrderField {
+pub struct QuickResponseOrderField  {
     /// <p>The name of the attribute to order the quick response query results by.</p>
     pub name: ::std::string::String,
     /// <p>The order at which the quick responses are sorted by.</p>
     pub order: ::std::option::Option<crate::types::Order>,
 }
-impl QuickResponseOrderField {
+impl  QuickResponseOrderField  {
     /// <p>The name of the attribute to order the quick response query results by.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The order at which the quick responses are sorted by.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
 }
@@ -70,8 +69,7 @@ impl QuickResponseOrderFieldBuilder {
     }
     /// <p>The name of the attribute to order the quick response query results by.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute to order the quick response query results by.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl QuickResponseOrderFieldBuilder {
     }
     /// <p>The order at which the quick responses are sorted by.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order at which the quick responses are sorted by.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
@@ -95,14 +92,17 @@ impl QuickResponseOrderFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::QuickResponseOrderFieldBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::QuickResponseOrderField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QuickResponseOrderField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building QuickResponseOrderField",
-                )
-            })?,
-            order: self.order,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QuickResponseOrderField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building QuickResponseOrderField")
+                    )?
+                ,
+                order: self.order
+                ,
+            }
+        )
     }
 }
+

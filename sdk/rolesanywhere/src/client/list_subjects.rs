@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSubjects`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of resources in the paginated list.</p><br>
-    /// - On success, responds with [`ListSubjectsOutput`](crate::operation::list_subjects::ListSubjectsOutput) with field(s):
+                            /// - On success, responds with [`ListSubjectsOutput`](crate::operation::list_subjects::ListSubjectsOutput) with field(s):
     ///   - [`subjects(Option<Vec::<SubjectSummary>>)`](crate::operation::list_subjects::ListSubjectsOutput::subjects): <p>A list of subjects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subjects::ListSubjectsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    /// - On failure, responds with [`SdkError<ListSubjectsError>`](crate::operation::list_subjects::ListSubjectsError)
+                            /// - On failure, responds with [`SdkError<ListSubjectsError>`](crate::operation::list_subjects::ListSubjectsError)
     pub fn list_subjects(&self) -> crate::operation::list_subjects::builders::ListSubjectsFluentBuilder {
-        crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

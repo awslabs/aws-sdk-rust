@@ -7,30 +7,28 @@
 /// <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlInjectionMatchSet {
+pub struct SqlInjectionMatchSet  {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: ::std::string::String,
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub sql_injection_match_tuples: ::std::vec::Vec<crate::types::SqlInjectionMatchTuple>,
+    pub sql_injection_match_tuples: ::std::vec::Vec::<crate::types::SqlInjectionMatchTuple>,
 }
-impl SqlInjectionMatchSet {
+impl  SqlInjectionMatchSet  {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sql_injection_match_set_id.deref()
+    pub fn sql_injection_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.sql_injection_match_set_id.deref()
     }
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn sql_injection_match_tuples(&self) -> &[crate::types::SqlInjectionMatchTuple] {
-        use std::ops::Deref;
-        self.sql_injection_match_tuples.deref()
+    pub fn sql_injection_match_tuples(&self) -> & [crate::types::SqlInjectionMatchTuple] {
+        use std::ops::Deref; self.sql_injection_match_tuples.deref()
     }
 }
 impl SqlInjectionMatchSet {
@@ -46,7 +44,7 @@ impl SqlInjectionMatchSet {
 pub struct SqlInjectionMatchSetBuilder {
     pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) sql_injection_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
+    pub(crate) sql_injection_match_tuples: ::std::option::Option<::std::vec::Vec::<crate::types::SqlInjectionMatchTuple>>,
 }
 impl SqlInjectionMatchSetBuilder {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
@@ -59,8 +57,7 @@ impl SqlInjectionMatchSetBuilder {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_injection_match_set_id = input;
-        self
+        self.sql_injection_match_set_id = input; self
     }
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p><code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
@@ -74,8 +71,7 @@ impl SqlInjectionMatchSetBuilder {
     }
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +84,16 @@ impl SqlInjectionMatchSetBuilder {
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
     pub fn sql_injection_match_tuples(mut self, input: crate::types::SqlInjectionMatchTuple) -> Self {
         let mut v = self.sql_injection_match_tuples.unwrap_or_default();
-        v.push(input);
-        self.sql_injection_match_tuples = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sql_injection_match_tuples = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn set_sql_injection_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>) -> Self {
-        self.sql_injection_match_tuples = input;
-        self
+    pub fn set_sql_injection_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SqlInjectionMatchTuple>>) -> Self {
+        self.sql_injection_match_tuples = input; self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn get_sql_injection_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>> {
+    pub fn get_sql_injection_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SqlInjectionMatchTuple>> {
         &self.sql_injection_match_tuples
     }
     /// Consumes the builder and constructs a [`SqlInjectionMatchSet`](crate::types::SqlInjectionMatchSet).
@@ -106,20 +101,22 @@ impl SqlInjectionMatchSetBuilder {
     /// - [`sql_injection_match_set_id`](crate::types::builders::SqlInjectionMatchSetBuilder::sql_injection_match_set_id)
     /// - [`sql_injection_match_tuples`](crate::types::builders::SqlInjectionMatchSetBuilder::sql_injection_match_tuples)
     pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SqlInjectionMatchSet {
-            sql_injection_match_set_id: self.sql_injection_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_injection_match_set_id",
-                    "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSet",
-                )
-            })?,
-            name: self.name,
-            sql_injection_match_tuples: self.sql_injection_match_tuples.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_injection_match_tuples",
-                    "sql_injection_match_tuples was not specified but it is required when building SqlInjectionMatchSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SqlInjectionMatchSet {
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_injection_match_set_id", "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSet")
+                    )?
+                ,
+                name: self.name
+                ,
+                sql_injection_match_tuples: self.sql_injection_match_tuples
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_injection_match_tuples", "sql_injection_match_tuples was not specified but it is required when building SqlInjectionMatchSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

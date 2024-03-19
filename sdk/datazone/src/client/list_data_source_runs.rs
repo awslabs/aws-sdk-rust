@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSourceRuns`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which to invoke the <code>ListDataSourceRuns</code> action.</p><br>
     ///   - [`data_source_identifier(impl Into<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::data_source_identifier) / [`set_data_source_identifier(Option<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::set_data_source_identifier):<br>required: **true**<br><p>The identifier of the data source.</p><br>
     ///   - [`status(DataSourceRunStatus)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::status) / [`set_status(Option<DataSourceRunStatus>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the data source.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of runs is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of runs, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSourceRuns</code> to list the next set of runs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of runs to return in a single call to <code>ListDataSourceRuns</code>. When the number of runs to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDataSourceRuns</code> to list the next set of runs.</p><br>
-    /// - On success, responds with [`ListDataSourceRunsOutput`](crate::operation::list_data_source_runs::ListDataSourceRunsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourceRunsOutput`](crate::operation::list_data_source_runs::ListDataSourceRunsOutput) with field(s):
     ///   - [`items(Vec::<DataSourceRunSummary>)`](crate::operation::list_data_source_runs::ListDataSourceRunsOutput::items): <p>The results of the <code>ListDataSourceRuns</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_source_runs::ListDataSourceRunsOutput::next_token): <p>When the number of runs is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of runs, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSourceRuns</code> to list the next set of runs.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourceRunsError>`](crate::operation::list_data_source_runs::ListDataSourceRunsError)
+                            /// - On failure, responds with [`SdkError<ListDataSourceRunsError>`](crate::operation::list_data_source_runs::ListDataSourceRunsError)
     pub fn list_data_source_runs(&self) -> crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder {
-        crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_source_runs::builders::ListDataSourceRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

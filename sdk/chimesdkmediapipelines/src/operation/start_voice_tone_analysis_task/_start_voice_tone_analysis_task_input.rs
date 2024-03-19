@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartVoiceToneAnalysisTaskInput {
+pub struct StartVoiceToneAnalysisTaskInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
@@ -12,33 +12,30 @@ pub struct StartVoiceToneAnalysisTaskInput {
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl StartVoiceToneAnalysisTaskInput {
+impl  StartVoiceToneAnalysisTaskInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The language code.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::VoiceAnalyticsLanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::VoiceAnalyticsLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The task configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn kinesis_video_stream_source_task_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamSourceTaskConfiguration> {
+    pub fn kinesis_video_stream_source_task_configuration(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamSourceTaskConfiguration> {
         self.kinesis_video_stream_source_task_configuration.as_ref()
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartVoiceToneAnalysisTaskInput {
+impl  ::std::fmt::Debug for StartVoiceToneAnalysisTaskInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartVoiceToneAnalysisTaskInput");
         formatter.field("identifier", &self.identifier);
         formatter.field("language_code", &self.language_code);
-        formatter.field(
-            "kinesis_video_stream_source_task_configuration",
-            &self.kinesis_video_stream_source_task_configuration,
-        );
+        formatter.field("kinesis_video_stream_source_task_configuration", &self.kinesis_video_stream_source_task_configuration);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -68,8 +65,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +79,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
     }
     /// <p>The language code.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VoiceAnalyticsLanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VoiceAnalyticsLanguageCode> {
@@ -96,17 +91,11 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self
     }
     /// <p>The task configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn set_kinesis_video_stream_source_task_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration>,
-    ) -> Self {
-        self.kinesis_video_stream_source_task_configuration = input;
-        self
+    pub fn set_kinesis_video_stream_source_task_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration>) -> Self {
+        self.kinesis_video_stream_source_task_configuration = input; self
     }
     /// <p>The task configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn get_kinesis_video_stream_source_task_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration> {
+    pub fn get_kinesis_video_stream_source_task_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration> {
         &self.kinesis_video_stream_source_task_configuration
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
@@ -116,26 +105,26 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput {
-            identifier: self.identifier,
-            language_code: self.language_code,
-            kinesis_video_stream_source_task_configuration: self.kinesis_video_stream_source_task_configuration,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput {
+                identifier: self.identifier
+                ,
+                language_code: self.language_code
+                ,
+                kinesis_video_stream_source_task_configuration: self.kinesis_video_stream_source_task_configuration
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartVoiceToneAnalysisTaskInputBuilder {
@@ -143,11 +132,9 @@ impl ::std::fmt::Debug for StartVoiceToneAnalysisTaskInputBuilder {
         let mut formatter = f.debug_struct("StartVoiceToneAnalysisTaskInputBuilder");
         formatter.field("identifier", &self.identifier);
         formatter.field("language_code", &self.language_code);
-        formatter.field(
-            "kinesis_video_stream_source_task_configuration",
-            &self.kinesis_video_stream_source_task_configuration,
-        );
+        formatter.field("kinesis_video_stream_source_task_configuration", &self.kinesis_video_stream_source_task_configuration);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
+

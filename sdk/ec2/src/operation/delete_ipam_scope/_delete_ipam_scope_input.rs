@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIpamScopeInput {
+pub struct DeleteIpamScopeInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the scope to delete.</p>
     pub ipam_scope_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIpamScopeInput {
+impl  DeleteIpamScopeInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the scope to delete.</p>
-    pub fn ipam_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_scope_id(&self) -> ::std::option::Option<& str> {
         self.ipam_scope_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteIpamScopeInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,20 +54,22 @@ impl DeleteIpamScopeInputBuilder {
     }
     /// <p>The ID of the scope to delete.</p>
     pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_scope_id = input;
-        self
+        self.ipam_scope_id = input; self
     }
     /// <p>The ID of the scope to delete.</p>
     pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_scope_id
     }
     /// Consumes the builder and constructs a [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
-            dry_run: self.dry_run,
-            ipam_scope_id: self.ipam_scope_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
+                dry_run: self.dry_run
+                ,
+                ipam_scope_id: self.ipam_scope_id
+                ,
+            }
+        )
     }
 }
+

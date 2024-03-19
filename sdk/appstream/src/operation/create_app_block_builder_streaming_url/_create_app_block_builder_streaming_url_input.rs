@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppBlockBuilderStreamingUrlInput {
+pub struct CreateAppBlockBuilderStreamingUrlInput  {
     /// <p>The name of the app block builder.</p>
     pub app_block_builder_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub validity: ::std::option::Option<i64>,
 }
-impl CreateAppBlockBuilderStreamingUrlInput {
+impl  CreateAppBlockBuilderStreamingUrlInput  {
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_block_builder_name(&self) -> ::std::option::Option<& str> {
         self.app_block_builder_name.as_deref()
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
@@ -41,8 +41,7 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     }
     /// <p>The name of the app block builder.</p>
     pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_block_builder_name = input;
-        self
+        self.app_block_builder_name = input; self
     }
     /// <p>The name of the app block builder.</p>
     pub fn get_app_block_builder_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.validity = input;
-        self
+        self.validity = input; self
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn get_validity(&self) -> &::std::option::Option<i64> {
         &self.validity
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput {
-                app_block_builder_name: self.app_block_builder_name,
-                validity: self.validity,
-            },
+                app_block_builder_name: self.app_block_builder_name
+                ,
+                validity: self.validity
+                ,
+            }
         )
     }
 }
+

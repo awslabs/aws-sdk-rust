@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSourceCredentialsOutput {
+pub struct ListSourceCredentialsOutput  {
     /// <p>A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials.</p>
-    pub source_credentials_infos: ::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>>,
+    pub source_credentials_infos: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCredentialsInfo>>,
     _request_id: Option<String>,
 }
-impl ListSourceCredentialsOutput {
+impl  ListSourceCredentialsOutput  {
     /// <p>A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_credentials_infos.is_none()`.
-    pub fn source_credentials_infos(&self) -> &[crate::types::SourceCredentialsInfo] {
-        self.source_credentials_infos.as_deref().unwrap_or_default()
+    pub fn source_credentials_infos(&self) -> & [crate::types::SourceCredentialsInfo] {
+        self.source_credentials_infos.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSourceCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSourceCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceCredentialsOutput`](crate::operation::list_source_credentials::ListSourceCredentialsOutput).
     pub fn builder() -> crate::operation::list_source_credentials::builders::ListSourceCredentialsOutputBuilder {
@@ -31,7 +32,7 @@ impl ListSourceCredentialsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceCredentialsOutputBuilder {
-    pub(crate) source_credentials_infos: ::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>>,
+    pub(crate) source_credentials_infos: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCredentialsInfo>>,
     _request_id: Option<String>,
 }
 impl ListSourceCredentialsOutputBuilder {
@@ -42,33 +43,34 @@ impl ListSourceCredentialsOutputBuilder {
     /// <p>A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials.</p>
     pub fn source_credentials_infos(mut self, input: crate::types::SourceCredentialsInfo) -> Self {
         let mut v = self.source_credentials_infos.unwrap_or_default();
-        v.push(input);
-        self.source_credentials_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_credentials_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials.</p>
-    pub fn set_source_credentials_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>>) -> Self {
-        self.source_credentials_infos = input;
-        self
+    pub fn set_source_credentials_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCredentialsInfo>>) -> Self {
+        self.source_credentials_infos = input; self
     }
     /// <p>A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials.</p>
-    pub fn get_source_credentials_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>> {
+    pub fn get_source_credentials_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceCredentialsInfo>> {
         &self.source_credentials_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSourceCredentialsOutput`](crate::operation::list_source_credentials::ListSourceCredentialsOutput).
     pub fn build(self) -> crate::operation::list_source_credentials::ListSourceCredentialsOutput {
         crate::operation::list_source_credentials::ListSourceCredentialsOutput {
-            source_credentials_infos: self.source_credentials_infos,
+            source_credentials_infos: self.source_credentials_infos
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

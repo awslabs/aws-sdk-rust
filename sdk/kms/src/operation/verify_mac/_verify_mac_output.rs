@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyMacOutput {
+pub struct VerifyMacOutput  {
     /// <p>The HMAC KMS key used in the verification.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
@@ -12,9 +12,9 @@ pub struct VerifyMacOutput {
     pub mac_algorithm: ::std::option::Option<crate::types::MacAlgorithmSpec>,
     _request_id: Option<String>,
 }
-impl VerifyMacOutput {
+impl  VerifyMacOutput  {
     /// <p>The HMAC KMS key used in the verification.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
@@ -23,15 +23,15 @@ impl VerifyMacOutput {
         self.mac_valid
     }
     /// <p>The MAC algorithm used in the verification.</p>
-    pub fn mac_algorithm(&self) -> ::std::option::Option<&crate::types::MacAlgorithmSpec> {
+    pub fn mac_algorithm(&self) -> ::std::option::Option<& crate::types::MacAlgorithmSpec> {
         self.mac_algorithm.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for VerifyMacOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl VerifyMacOutput {
     /// Creates a new builder-style object to manufacture [`VerifyMacOutput`](crate::operation::verify_mac::VerifyMacOutput).
     pub fn builder() -> crate::operation::verify_mac::builders::VerifyMacOutputBuilder {
@@ -56,8 +56,7 @@ impl VerifyMacOutputBuilder {
     }
     /// <p>The HMAC KMS key used in the verification.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The HMAC KMS key used in the verification.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl VerifyMacOutputBuilder {
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
     /// <p>If the HMAC is not verified, the <code>VerifyMac</code> operation fails with a <code>KMSInvalidMacException</code> exception. This exception indicates that one or more of the inputs changed since the HMAC was computed.</p>
     pub fn set_mac_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mac_valid = input;
-        self
+        self.mac_valid = input; self
     }
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
     /// <p>If the HMAC is not verified, the <code>VerifyMac</code> operation fails with a <code>KMSInvalidMacException</code> exception. This exception indicates that one or more of the inputs changed since the HMAC was computed.</p>
@@ -87,29 +85,33 @@ impl VerifyMacOutputBuilder {
     }
     /// <p>The MAC algorithm used in the verification.</p>
     pub fn set_mac_algorithm(mut self, input: ::std::option::Option<crate::types::MacAlgorithmSpec>) -> Self {
-        self.mac_algorithm = input;
-        self
+        self.mac_algorithm = input; self
     }
     /// <p>The MAC algorithm used in the verification.</p>
     pub fn get_mac_algorithm(&self) -> &::std::option::Option<crate::types::MacAlgorithmSpec> {
         &self.mac_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`VerifyMacOutput`](crate::operation::verify_mac::VerifyMacOutput).
     pub fn build(self) -> crate::operation::verify_mac::VerifyMacOutput {
         crate::operation::verify_mac::VerifyMacOutput {
-            key_id: self.key_id,
-            mac_valid: self.mac_valid.unwrap_or_default(),
-            mac_algorithm: self.mac_algorithm,
+            key_id: self.key_id
+            ,
+            mac_valid: self.mac_valid
+                .unwrap_or_default()
+            ,
+            mac_algorithm: self.mac_algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

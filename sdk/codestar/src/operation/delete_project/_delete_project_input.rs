@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
@@ -10,13 +10,13 @@ pub struct DeleteProjectInput {
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub delete_stack: ::std::option::Option<bool>,
 }
-impl DeleteProjectInput {
+impl  DeleteProjectInput  {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
@@ -48,8 +48,7 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn set_delete_stack(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_stack = input;
-        self
+        self.delete_stack = input; self
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn get_delete_stack(&self) -> &::std::option::Option<bool> {
         &self.delete_stack
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
-            id: self.id,
-            client_request_token: self.client_request_token,
-            delete_stack: self.delete_stack,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                id: self.id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                delete_stack: self.delete_stack
+                ,
+            }
+        )
     }
 }
+

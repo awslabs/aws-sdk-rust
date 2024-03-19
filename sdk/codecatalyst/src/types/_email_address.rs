@@ -3,15 +3,15 @@
 /// <p>Information about an email address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailAddress {
+pub struct EmailAddress  {
     /// <p>The email address.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>Whether the email address has been verified.</p>
     pub verified: ::std::option::Option<bool>,
 }
-impl EmailAddress {
+impl  EmailAddress  {
     /// <p>The email address.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Whether the email address has been verified.</p>
@@ -41,8 +41,7 @@ impl EmailAddressBuilder {
     }
     /// <p>The email address.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EmailAddressBuilder {
     }
     /// <p>Whether the email address has been verified.</p>
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verified = input;
-        self
+        self.verified = input; self
     }
     /// <p>Whether the email address has been verified.</p>
     pub fn get_verified(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl EmailAddressBuilder {
     /// Consumes the builder and constructs a [`EmailAddress`](crate::types::EmailAddress).
     pub fn build(self) -> crate::types::EmailAddress {
         crate::types::EmailAddress {
-            email: self.email,
-            verified: self.verified,
+            email: self.email
+            ,
+            verified: self.verified
+            ,
         }
     }
 }
+

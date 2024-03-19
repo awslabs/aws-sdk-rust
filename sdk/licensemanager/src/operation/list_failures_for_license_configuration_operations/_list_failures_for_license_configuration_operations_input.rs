@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFailuresForLicenseConfigurationOperationsInput {
+pub struct ListFailuresForLicenseConfigurationOperationsInput  {
     /// <p>Amazon Resource Name of the license configuration.</p>
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10,9 +10,9 @@ pub struct ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListFailuresForLicenseConfigurationOperationsInput {
+impl  ListFailuresForLicenseConfigurationOperationsInput  {
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -20,15 +20,13 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder {
         crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder::default()
     }
 }
@@ -50,8 +48,7 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     }
     /// <p>Amazon Resource Name of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>Amazon Resource Name of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +61,7 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -78,26 +74,24 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput {
-                license_configuration_arn: self.license_configuration_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                license_configuration_arn: self.license_configuration_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

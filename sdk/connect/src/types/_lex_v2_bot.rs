@@ -3,13 +3,13 @@
 /// <p>Configuration information of an Amazon Lex V2 bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LexV2Bot {
+pub struct LexV2Bot  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     pub alias_arn: ::std::option::Option<::std::string::String>,
 }
-impl LexV2Bot {
+impl  LexV2Bot  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
-    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alias_arn(&self) -> ::std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LexV2BotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_arn = input;
-        self
+        self.alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl LexV2BotBuilder {
     }
     /// Consumes the builder and constructs a [`LexV2Bot`](crate::types::LexV2Bot).
     pub fn build(self) -> crate::types::LexV2Bot {
-        crate::types::LexV2Bot { alias_arn: self.alias_arn }
+        crate::types::LexV2Bot {
+            alias_arn: self.alias_arn
+            ,
+        }
     }
 }
+

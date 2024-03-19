@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metricname = unimplemented!();
 /// match metricname {
@@ -53,16 +53,14 @@
 /// Specifically, when `metricname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     BurstCapacityPercentage,
@@ -116,156 +114,131 @@ pub enum MetricName {
     UnhealthyHostCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "BurstCapacityPercentage" => MetricName::BurstCapacityPercentage,
-            "BurstCapacityTime" => MetricName::BurstCapacityTime,
-            "CPUUtilization" => MetricName::CpuUtilization,
-            "ClientTLSNegotiationErrorCount" => MetricName::ClientTlsNegotiationErrorCount,
-            "DatabaseConnections" => MetricName::DatabaseConnections,
-            "DiskQueueDepth" => MetricName::DiskQueueDepth,
-            "FreeStorageSpace" => MetricName::FreeStorageSpace,
-            "HTTPCode_Instance_2XX_Count" => MetricName::HttpCodeInstance2XxCount,
-            "HTTPCode_Instance_3XX_Count" => MetricName::HttpCodeInstance3XxCount,
-            "HTTPCode_Instance_4XX_Count" => MetricName::HttpCodeInstance4XxCount,
-            "HTTPCode_Instance_5XX_Count" => MetricName::HttpCodeInstance5XxCount,
-            "HTTPCode_LB_4XX_Count" => MetricName::HttpCodeLb4XxCount,
-            "HTTPCode_LB_5XX_Count" => MetricName::HttpCodeLb5XxCount,
-            "HealthyHostCount" => MetricName::HealthyHostCount,
-            "InstanceResponseTime" => MetricName::InstanceResponseTime,
-            "NetworkIn" => MetricName::NetworkIn,
-            "NetworkOut" => MetricName::NetworkOut,
-            "NetworkReceiveThroughput" => MetricName::NetworkReceiveThroughput,
-            "NetworkTransmitThroughput" => MetricName::NetworkTransmitThroughput,
-            "RejectedConnectionCount" => MetricName::RejectedConnectionCount,
-            "RequestCount" => MetricName::RequestCount,
-            "StatusCheckFailed" => MetricName::StatusCheckFailed,
-            "StatusCheckFailed_Instance" => MetricName::StatusCheckFailedInstance,
-            "StatusCheckFailed_System" => MetricName::StatusCheckFailedSystem,
-            "UnhealthyHostCount" => MetricName::UnhealthyHostCount,
-            other => MetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BurstCapacityPercentage" => MetricName::BurstCapacityPercentage,
+"BurstCapacityTime" => MetricName::BurstCapacityTime,
+"CPUUtilization" => MetricName::CpuUtilization,
+"ClientTLSNegotiationErrorCount" => MetricName::ClientTlsNegotiationErrorCount,
+"DatabaseConnections" => MetricName::DatabaseConnections,
+"DiskQueueDepth" => MetricName::DiskQueueDepth,
+"FreeStorageSpace" => MetricName::FreeStorageSpace,
+"HTTPCode_Instance_2XX_Count" => MetricName::HttpCodeInstance2XxCount,
+"HTTPCode_Instance_3XX_Count" => MetricName::HttpCodeInstance3XxCount,
+"HTTPCode_Instance_4XX_Count" => MetricName::HttpCodeInstance4XxCount,
+"HTTPCode_Instance_5XX_Count" => MetricName::HttpCodeInstance5XxCount,
+"HTTPCode_LB_4XX_Count" => MetricName::HttpCodeLb4XxCount,
+"HTTPCode_LB_5XX_Count" => MetricName::HttpCodeLb5XxCount,
+"HealthyHostCount" => MetricName::HealthyHostCount,
+"InstanceResponseTime" => MetricName::InstanceResponseTime,
+"NetworkIn" => MetricName::NetworkIn,
+"NetworkOut" => MetricName::NetworkOut,
+"NetworkReceiveThroughput" => MetricName::NetworkReceiveThroughput,
+"NetworkTransmitThroughput" => MetricName::NetworkTransmitThroughput,
+"RejectedConnectionCount" => MetricName::RejectedConnectionCount,
+"RequestCount" => MetricName::RequestCount,
+"StatusCheckFailed" => MetricName::StatusCheckFailed,
+"StatusCheckFailed_Instance" => MetricName::StatusCheckFailedInstance,
+"StatusCheckFailed_System" => MetricName::StatusCheckFailedSystem,
+"UnhealthyHostCount" => MetricName::UnhealthyHostCount,
+other => MetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MetricName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MetricName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MetricName::from(s))
+                    }
+                }
 impl MetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricName::BurstCapacityPercentage => "BurstCapacityPercentage",
-            MetricName::BurstCapacityTime => "BurstCapacityTime",
-            MetricName::CpuUtilization => "CPUUtilization",
-            MetricName::ClientTlsNegotiationErrorCount => "ClientTLSNegotiationErrorCount",
-            MetricName::DatabaseConnections => "DatabaseConnections",
-            MetricName::DiskQueueDepth => "DiskQueueDepth",
-            MetricName::FreeStorageSpace => "FreeStorageSpace",
-            MetricName::HttpCodeInstance2XxCount => "HTTPCode_Instance_2XX_Count",
-            MetricName::HttpCodeInstance3XxCount => "HTTPCode_Instance_3XX_Count",
-            MetricName::HttpCodeInstance4XxCount => "HTTPCode_Instance_4XX_Count",
-            MetricName::HttpCodeInstance5XxCount => "HTTPCode_Instance_5XX_Count",
-            MetricName::HttpCodeLb4XxCount => "HTTPCode_LB_4XX_Count",
-            MetricName::HttpCodeLb5XxCount => "HTTPCode_LB_5XX_Count",
-            MetricName::HealthyHostCount => "HealthyHostCount",
-            MetricName::InstanceResponseTime => "InstanceResponseTime",
-            MetricName::NetworkIn => "NetworkIn",
-            MetricName::NetworkOut => "NetworkOut",
-            MetricName::NetworkReceiveThroughput => "NetworkReceiveThroughput",
-            MetricName::NetworkTransmitThroughput => "NetworkTransmitThroughput",
-            MetricName::RejectedConnectionCount => "RejectedConnectionCount",
-            MetricName::RequestCount => "RequestCount",
-            MetricName::StatusCheckFailed => "StatusCheckFailed",
-            MetricName::StatusCheckFailedInstance => "StatusCheckFailed_Instance",
-            MetricName::StatusCheckFailedSystem => "StatusCheckFailed_System",
-            MetricName::UnhealthyHostCount => "UnhealthyHostCount",
-            MetricName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BurstCapacityPercentage",
-            "BurstCapacityTime",
-            "CPUUtilization",
-            "ClientTLSNegotiationErrorCount",
-            "DatabaseConnections",
-            "DiskQueueDepth",
-            "FreeStorageSpace",
-            "HTTPCode_Instance_2XX_Count",
-            "HTTPCode_Instance_3XX_Count",
-            "HTTPCode_Instance_4XX_Count",
-            "HTTPCode_Instance_5XX_Count",
-            "HTTPCode_LB_4XX_Count",
-            "HTTPCode_LB_5XX_Count",
-            "HealthyHostCount",
-            "InstanceResponseTime",
-            "NetworkIn",
-            "NetworkOut",
-            "NetworkReceiveThroughput",
-            "NetworkTransmitThroughput",
-            "RejectedConnectionCount",
-            "RequestCount",
-            "StatusCheckFailed",
-            "StatusCheckFailed_Instance",
-            "StatusCheckFailed_System",
-            "UnhealthyHostCount",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricName::BurstCapacityPercentage => "BurstCapacityPercentage",
+    MetricName::BurstCapacityTime => "BurstCapacityTime",
+    MetricName::CpuUtilization => "CPUUtilization",
+    MetricName::ClientTlsNegotiationErrorCount => "ClientTLSNegotiationErrorCount",
+    MetricName::DatabaseConnections => "DatabaseConnections",
+    MetricName::DiskQueueDepth => "DiskQueueDepth",
+    MetricName::FreeStorageSpace => "FreeStorageSpace",
+    MetricName::HttpCodeInstance2XxCount => "HTTPCode_Instance_2XX_Count",
+    MetricName::HttpCodeInstance3XxCount => "HTTPCode_Instance_3XX_Count",
+    MetricName::HttpCodeInstance4XxCount => "HTTPCode_Instance_4XX_Count",
+    MetricName::HttpCodeInstance5XxCount => "HTTPCode_Instance_5XX_Count",
+    MetricName::HttpCodeLb4XxCount => "HTTPCode_LB_4XX_Count",
+    MetricName::HttpCodeLb5XxCount => "HTTPCode_LB_5XX_Count",
+    MetricName::HealthyHostCount => "HealthyHostCount",
+    MetricName::InstanceResponseTime => "InstanceResponseTime",
+    MetricName::NetworkIn => "NetworkIn",
+    MetricName::NetworkOut => "NetworkOut",
+    MetricName::NetworkReceiveThroughput => "NetworkReceiveThroughput",
+    MetricName::NetworkTransmitThroughput => "NetworkTransmitThroughput",
+    MetricName::RejectedConnectionCount => "RejectedConnectionCount",
+    MetricName::RequestCount => "RequestCount",
+    MetricName::StatusCheckFailed => "StatusCheckFailed",
+    MetricName::StatusCheckFailedInstance => "StatusCheckFailed_Instance",
+    MetricName::StatusCheckFailedSystem => "StatusCheckFailed_System",
+    MetricName::UnhealthyHostCount => "UnhealthyHostCount",
+    MetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BurstCapacityPercentage", "BurstCapacityTime", "CPUUtilization", "ClientTLSNegotiationErrorCount", "DatabaseConnections", "DiskQueueDepth", "FreeStorageSpace", "HTTPCode_Instance_2XX_Count", "HTTPCode_Instance_3XX_Count", "HTTPCode_Instance_4XX_Count", "HTTPCode_Instance_5XX_Count", "HTTPCode_LB_4XX_Count", "HTTPCode_LB_5XX_Count", "HealthyHostCount", "InstanceResponseTime", "NetworkIn", "NetworkOut", "NetworkReceiveThroughput", "NetworkTransmitThroughput", "RejectedConnectionCount", "RequestCount", "StatusCheckFailed", "StatusCheckFailed_Instance", "StatusCheckFailed_System", "UnhealthyHostCount"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MetricName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MetricName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MetricName::BurstCapacityPercentage => write!(f, "BurstCapacityPercentage"),
-            MetricName::BurstCapacityTime => write!(f, "BurstCapacityTime"),
-            MetricName::CpuUtilization => write!(f, "CPUUtilization"),
-            MetricName::ClientTlsNegotiationErrorCount => write!(f, "ClientTLSNegotiationErrorCount"),
-            MetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
-            MetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
-            MetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
-            MetricName::HttpCodeInstance2XxCount => write!(f, "HTTPCode_Instance_2XX_Count"),
-            MetricName::HttpCodeInstance3XxCount => write!(f, "HTTPCode_Instance_3XX_Count"),
-            MetricName::HttpCodeInstance4XxCount => write!(f, "HTTPCode_Instance_4XX_Count"),
-            MetricName::HttpCodeInstance5XxCount => write!(f, "HTTPCode_Instance_5XX_Count"),
-            MetricName::HttpCodeLb4XxCount => write!(f, "HTTPCode_LB_4XX_Count"),
-            MetricName::HttpCodeLb5XxCount => write!(f, "HTTPCode_LB_5XX_Count"),
-            MetricName::HealthyHostCount => write!(f, "HealthyHostCount"),
-            MetricName::InstanceResponseTime => write!(f, "InstanceResponseTime"),
-            MetricName::NetworkIn => write!(f, "NetworkIn"),
-            MetricName::NetworkOut => write!(f, "NetworkOut"),
-            MetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
-            MetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
-            MetricName::RejectedConnectionCount => write!(f, "RejectedConnectionCount"),
-            MetricName::RequestCount => write!(f, "RequestCount"),
-            MetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
-            MetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
-            MetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
-            MetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MetricName::BurstCapacityPercentage => write!(f, "BurstCapacityPercentage"),
+MetricName::BurstCapacityTime => write!(f, "BurstCapacityTime"),
+MetricName::CpuUtilization => write!(f, "CPUUtilization"),
+MetricName::ClientTlsNegotiationErrorCount => write!(f, "ClientTLSNegotiationErrorCount"),
+MetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
+MetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
+MetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
+MetricName::HttpCodeInstance2XxCount => write!(f, "HTTPCode_Instance_2XX_Count"),
+MetricName::HttpCodeInstance3XxCount => write!(f, "HTTPCode_Instance_3XX_Count"),
+MetricName::HttpCodeInstance4XxCount => write!(f, "HTTPCode_Instance_4XX_Count"),
+MetricName::HttpCodeInstance5XxCount => write!(f, "HTTPCode_Instance_5XX_Count"),
+MetricName::HttpCodeLb4XxCount => write!(f, "HTTPCode_LB_4XX_Count"),
+MetricName::HttpCodeLb5XxCount => write!(f, "HTTPCode_LB_5XX_Count"),
+MetricName::HealthyHostCount => write!(f, "HealthyHostCount"),
+MetricName::InstanceResponseTime => write!(f, "InstanceResponseTime"),
+MetricName::NetworkIn => write!(f, "NetworkIn"),
+MetricName::NetworkOut => write!(f, "NetworkOut"),
+MetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
+MetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
+MetricName::RejectedConnectionCount => write!(f, "RejectedConnectionCount"),
+MetricName::RequestCount => write!(f, "RequestCount"),
+MetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
+MetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
+MetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
+MetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
+MetricName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

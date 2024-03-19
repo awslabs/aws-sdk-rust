@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDataSourceInput {
+pub struct CreateDataSourceInput  {
     /// <p>The name of the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the data source.</p>
@@ -26,49 +26,49 @@ pub struct CreateDataSourceInput {
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub publish_on_import: ::std::option::Option<bool>,
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
-    pub asset_forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub asset_forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateDataSourceInput {
+impl  CreateDataSourceInput  {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the data source.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain where the data source is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone project in which you want to add this data source.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The type of the data source.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationInput> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfigurationInput> {
         self.configuration.as_ref()
     }
     /// <p>Specifies whether the business name generation is to be enabled for this data source.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationConfiguration> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::RecommendationConfiguration> {
         self.recommendation.as_ref()
     }
     /// <p>Specifies whether the data source is enabled.</p>
-    pub fn enable_setting(&self) -> ::std::option::Option<&crate::types::EnableSetting> {
+    pub fn enable_setting(&self) -> ::std::option::Option<& crate::types::EnableSetting> {
         self.enable_setting.as_ref()
     }
     /// <p>The schedule of the data source runs.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::ScheduleConfiguration> {
         self.schedule.as_ref()
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
@@ -76,17 +76,18 @@ impl CreateDataSourceInput {
         self.publish_on_import
     }
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_input.is_none()`.
-    pub fn asset_forms_input(&self) -> &[crate::types::FormInput] {
-        self.asset_forms_input.as_deref().unwrap_or_default()
+    pub fn asset_forms_input(&self) -> & [crate::types::FormInput] {
+        self.asset_forms_input.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateDataSourceInput {
+impl  ::std::fmt::Debug for CreateDataSourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -127,7 +128,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
     pub(crate) schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) publish_on_import: ::std::option::Option<bool>,
-    pub(crate) asset_forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub(crate) asset_forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDataSourceInputBuilder {
@@ -139,8 +140,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +153,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +167,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain where the data source is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain where the data source is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +181,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone project in which you want to add this data source.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone project in which you want to add this data source.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +195,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +209,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The type of the data source.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the data source.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +222,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurationInput>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationInput> {
@@ -241,8 +235,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>Specifies whether the business name generation is to be enabled for this data source.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RecommendationConfiguration>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>Specifies whether the business name generation is to be enabled for this data source.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationConfiguration> {
@@ -255,8 +248,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>Specifies whether the data source is enabled.</p>
     pub fn set_enable_setting(mut self, input: ::std::option::Option<crate::types::EnableSetting>) -> Self {
-        self.enable_setting = input;
-        self
+        self.enable_setting = input; self
     }
     /// <p>Specifies whether the data source is enabled.</p>
     pub fn get_enable_setting(&self) -> &::std::option::Option<crate::types::EnableSetting> {
@@ -269,8 +261,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The schedule of the data source runs.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule of the data source runs.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
@@ -283,8 +274,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub fn set_publish_on_import(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish_on_import = input;
-        self
+        self.publish_on_import = input; self
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub fn get_publish_on_import(&self) -> &::std::option::Option<bool> {
@@ -297,17 +287,16 @@ impl CreateDataSourceInputBuilder {
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
     pub fn asset_forms_input(mut self, input: crate::types::FormInput) -> Self {
         let mut v = self.asset_forms_input.unwrap_or_default();
-        v.push(input);
-        self.asset_forms_input = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_forms_input = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
-    pub fn set_asset_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>) -> Self {
-        self.asset_forms_input = input;
-        self
+    pub fn set_asset_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>) -> Self {
+        self.asset_forms_input = input; self
     }
     /// <p>The metadata forms that are to be attached to the assets that this data source works with.</p>
-    pub fn get_asset_forms_input(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
+    pub fn get_asset_forms_input(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FormInput>> {
         &self.asset_forms_input
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
@@ -317,32 +306,44 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_data_source::CreateDataSourceInput {
-            name: self.name,
-            description: self.description,
-            domain_identifier: self.domain_identifier,
-            project_identifier: self.project_identifier,
-            environment_identifier: self.environment_identifier,
-            r#type: self.r#type,
-            configuration: self.configuration,
-            recommendation: self.recommendation,
-            enable_setting: self.enable_setting,
-            schedule: self.schedule,
-            publish_on_import: self.publish_on_import,
-            asset_forms_input: self.asset_forms_input,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_source::CreateDataSourceInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                domain_identifier: self.domain_identifier
+                ,
+                project_identifier: self.project_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                r#type: self.r#type
+                ,
+                configuration: self.configuration
+                ,
+                recommendation: self.recommendation
+                ,
+                enable_setting: self.enable_setting
+                ,
+                schedule: self.schedule
+                ,
+                publish_on_import: self.publish_on_import
+                ,
+                asset_forms_input: self.asset_forms_input
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateDataSourceInputBuilder {
@@ -364,3 +365,4 @@ impl ::std::fmt::Debug for CreateDataSourceInputBuilder {
         formatter.finish()
     }
 }
+

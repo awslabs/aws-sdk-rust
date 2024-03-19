@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAlerts`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_anomaly_detector_arn):<br>required: **false**<br><p>The ARN of the alert's detector.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_alerts::builders::ListAlertsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that will be displayed by the request.</p><br>
-    /// - On success, responds with [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput) with field(s):
+                            /// - On success, responds with [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput) with field(s):
     ///   - [`alert_summary_list(Option<Vec::<AlertSummary>>)`](crate::operation::list_alerts::ListAlertsOutput::alert_summary_list): <p>Contains information about an alert.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alerts::ListAlertsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::operation::list_alerts::ListAlertsError)
+                            /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::operation::list_alerts::ListAlertsError)
     pub fn list_alerts(&self) -> crate::operation::list_alerts::builders::ListAlertsFluentBuilder {
-        crate::operation::list_alerts::builders::ListAlertsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_alerts::builders::ListAlertsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

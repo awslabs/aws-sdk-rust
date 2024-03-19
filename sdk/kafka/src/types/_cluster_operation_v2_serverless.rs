@@ -3,13 +3,13 @@
 /// <p>Returns information about a serverless cluster operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterOperationV2Serverless {
+pub struct ClusterOperationV2Serverless  {
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfoServerless>,
 }
-impl ClusterOperationV2Serverless {
+impl  ClusterOperationV2Serverless  {
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
-    pub fn vpc_connection_info(&self) -> ::std::option::Option<&crate::types::VpcConnectionInfoServerless> {
+    pub fn vpc_connection_info(&self) -> ::std::option::Option<& crate::types::VpcConnectionInfoServerless> {
         self.vpc_connection_info.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ClusterOperationV2ServerlessBuilder {
     }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn set_vpc_connection_info(mut self, input: ::std::option::Option<crate::types::VpcConnectionInfoServerless>) -> Self {
-        self.vpc_connection_info = input;
-        self
+        self.vpc_connection_info = input; self
     }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn get_vpc_connection_info(&self) -> &::std::option::Option<crate::types::VpcConnectionInfoServerless> {
@@ -44,7 +43,9 @@ impl ClusterOperationV2ServerlessBuilder {
     /// Consumes the builder and constructs a [`ClusterOperationV2Serverless`](crate::types::ClusterOperationV2Serverless).
     pub fn build(self) -> crate::types::ClusterOperationV2Serverless {
         crate::types::ClusterOperationV2Serverless {
-            vpc_connection_info: self.vpc_connection_info,
+            vpc_connection_info: self.vpc_connection_info
+            ,
         }
     }
 }
+

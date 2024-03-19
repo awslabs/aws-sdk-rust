@@ -3,31 +3,31 @@
 /// <p>An output event that Amazon Q returns to an user who wants to perform a plugin action during a non-streaming chat conversation. It contains information about the selected action with a list of possible user input fields, some pre-populated by Amazon Q.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionReview {
+pub struct ActionReview  {
     /// <p>The identifier of the plugin associated with the action review.</p>
     pub plugin_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of plugin.</p>
     pub plugin_type: ::std::option::Option<crate::types::PluginType>,
     /// <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
-    pub payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionReviewPayloadField>>,
+    pub payload: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionReviewPayloadField>>,
     /// <p>A string used to retain information about the hierarchical contexts within an action review payload.</p>
     pub payload_field_name_separator: ::std::option::Option<::std::string::String>,
 }
-impl ActionReview {
+impl  ActionReview  {
     /// <p>The identifier of the plugin associated with the action review.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The type of plugin.</p>
-    pub fn plugin_type(&self) -> ::std::option::Option<&crate::types::PluginType> {
+    pub fn plugin_type(&self) -> ::std::option::Option<& crate::types::PluginType> {
         self.plugin_type.as_ref()
     }
     /// <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ActionReviewPayloadField>> {
+    pub fn payload(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ActionReviewPayloadField>> {
         self.payload.as_ref()
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action review payload.</p>
-    pub fn payload_field_name_separator(&self) -> ::std::option::Option<&str> {
+    pub fn payload_field_name_separator(&self) -> ::std::option::Option<& str> {
         self.payload_field_name_separator.as_deref()
     }
 }
@@ -44,7 +44,7 @@ impl ActionReview {
 pub struct ActionReviewBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
     pub(crate) plugin_type: ::std::option::Option<crate::types::PluginType>,
-    pub(crate) payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionReviewPayloadField>>,
+    pub(crate) payload: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionReviewPayloadField>>,
     pub(crate) payload_field_name_separator: ::std::option::Option<::std::string::String>,
 }
 impl ActionReviewBuilder {
@@ -55,8 +55,7 @@ impl ActionReviewBuilder {
     }
     /// <p>The identifier of the plugin associated with the action review.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin associated with the action review.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ActionReviewBuilder {
     }
     /// <p>The type of plugin.</p>
     pub fn set_plugin_type(mut self, input: ::std::option::Option<crate::types::PluginType>) -> Self {
-        self.plugin_type = input;
-        self
+        self.plugin_type = input; self
     }
     /// <p>The type of plugin.</p>
     pub fn get_plugin_type(&self) -> &::std::option::Option<crate::types::PluginType> {
@@ -83,20 +81,16 @@ impl ActionReviewBuilder {
     /// <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
     pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ActionReviewPayloadField) -> Self {
         let mut hash_map = self.payload.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.payload = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.payload = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionReviewPayloadField>>,
-    ) -> Self {
-        self.payload = input;
-        self
+    pub fn set_payload(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionReviewPayloadField>>) -> Self {
+        self.payload = input; self
     }
     /// <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
-    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionReviewPayloadField>> {
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionReviewPayloadField>> {
         &self.payload
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action review payload.</p>
@@ -106,8 +100,7 @@ impl ActionReviewBuilder {
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action review payload.</p>
     pub fn set_payload_field_name_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_field_name_separator = input;
-        self
+        self.payload_field_name_separator = input; self
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action review payload.</p>
     pub fn get_payload_field_name_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,10 +109,15 @@ impl ActionReviewBuilder {
     /// Consumes the builder and constructs a [`ActionReview`](crate::types::ActionReview).
     pub fn build(self) -> crate::types::ActionReview {
         crate::types::ActionReview {
-            plugin_id: self.plugin_id,
-            plugin_type: self.plugin_type,
-            payload: self.payload,
-            payload_field_name_separator: self.payload_field_name_separator,
+            plugin_id: self.plugin_id
+            ,
+            plugin_type: self.plugin_type
+            ,
+            payload: self.payload
+            ,
+            payload_field_name_separator: self.payload_field_name_separator
+            ,
         }
     }
 }
+

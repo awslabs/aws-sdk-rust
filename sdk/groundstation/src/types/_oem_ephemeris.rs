@@ -3,19 +3,19 @@
 /// <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OemEphemeris {
+pub struct OemEphemeris  {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub oem_data: ::std::option::Option<::std::string::String>,
 }
-impl OemEphemeris {
+impl  OemEphemeris  {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.s3_object.as_ref()
     }
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub fn oem_data(&self) -> ::std::option::Option<&str> {
+    pub fn oem_data(&self) -> ::std::option::Option<& str> {
         self.oem_data.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OemEphemerisBuilder {
     }
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -55,8 +54,7 @@ impl OemEphemerisBuilder {
     }
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub fn set_oem_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.oem_data = input;
-        self
+        self.oem_data = input; self
     }
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub fn get_oem_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OemEphemerisBuilder {
     /// Consumes the builder and constructs a [`OemEphemeris`](crate::types::OemEphemeris).
     pub fn build(self) -> crate::types::OemEphemeris {
         crate::types::OemEphemeris {
-            s3_object: self.s3_object,
-            oem_data: self.oem_data,
+            s3_object: self.s3_object
+            ,
+            oem_data: self.oem_data
+            ,
         }
     }
 }
+

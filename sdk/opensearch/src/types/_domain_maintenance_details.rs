@@ -3,7 +3,7 @@
 /// <p>Container for the domain maintenance details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainMaintenanceDetails {
+pub struct DomainMaintenanceDetails  {
     /// <p>The ID of the requested action.</p>
     pub maintenance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
@@ -21,37 +21,37 @@ pub struct DomainMaintenanceDetails {
     /// <p>The time at which the action was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DomainMaintenanceDetails {
+impl  DomainMaintenanceDetails  {
     /// <p>The ID of the requested action.</p>
-    pub fn maintenance_id(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_id(&self) -> ::std::option::Option<& str> {
         self.maintenance_id.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::MaintenanceType> {
         self.action.as_ref()
     }
     /// <p>The ID of the data node.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MaintenanceStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the action.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The time at which the action was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the action was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The ID of the requested action.</p>
     pub fn set_maintenance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_id = input;
-        self
+        self.maintenance_id = input; self
     }
     /// <p>The ID of the requested action.</p>
     pub fn get_maintenance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::MaintenanceType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The name of the action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
@@ -125,8 +122,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
@@ -153,8 +148,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The status message for the action.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for the action.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The time at which the action was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the action was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl DomainMaintenanceDetailsBuilder {
     }
     /// <p>The time at which the action was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the action was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,23 @@ impl DomainMaintenanceDetailsBuilder {
     /// Consumes the builder and constructs a [`DomainMaintenanceDetails`](crate::types::DomainMaintenanceDetails).
     pub fn build(self) -> crate::types::DomainMaintenanceDetails {
         crate::types::DomainMaintenanceDetails {
-            maintenance_id: self.maintenance_id,
-            domain_name: self.domain_name,
-            action: self.action,
-            node_id: self.node_id,
-            status: self.status,
-            status_message: self.status_message,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            maintenance_id: self.maintenance_id
+            ,
+            domain_name: self.domain_name
+            ,
+            action: self.action
+            ,
+            node_id: self.node_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

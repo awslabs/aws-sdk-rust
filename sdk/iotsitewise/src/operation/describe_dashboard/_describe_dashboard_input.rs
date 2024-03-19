@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardInput {
+pub struct DescribeDashboardInput  {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDashboardInput {
+impl  DescribeDashboardInput  {
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeDashboardInputBuilder {
     }
     /// <p>The ID of the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID of the dashboard.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_id
     }
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardInput {
-            dashboard_id: self.dashboard_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dashboard::DescribeDashboardInput {
+                dashboard_id: self.dashboard_id
+                ,
+            }
+        )
     }
 }
+

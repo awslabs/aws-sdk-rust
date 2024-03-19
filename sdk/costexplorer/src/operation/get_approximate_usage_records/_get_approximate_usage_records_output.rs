@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApproximateUsageRecordsOutput {
+pub struct GetApproximateUsageRecordsOutput  {
     /// <p>The service metadata for the service or services in the response.</p>
-    pub services: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub services: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>,
     /// <p>The total number of usage records for all services in the services list.</p>
     pub total_records: i64,
     /// <p>The lookback period that's used for the estimation.</p>
     pub lookback_period: ::std::option::Option<crate::types::DateInterval>,
     _request_id: Option<String>,
 }
-impl GetApproximateUsageRecordsOutput {
+impl  GetApproximateUsageRecordsOutput  {
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn services(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn services(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, i64>> {
         self.services.as_ref()
     }
     /// <p>The total number of usage records for all services in the services list.</p>
@@ -21,15 +21,15 @@ impl GetApproximateUsageRecordsOutput {
         self.total_records
     }
     /// <p>The lookback period that's used for the estimation.</p>
-    pub fn lookback_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn lookback_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.lookback_period.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApproximateUsageRecordsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApproximateUsageRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetApproximateUsageRecordsOutput`](crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput).
     pub fn builder() -> crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsOutputBuilder {
@@ -41,7 +41,7 @@ impl GetApproximateUsageRecordsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApproximateUsageRecordsOutputBuilder {
-    pub(crate) services: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) services: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>,
     pub(crate) total_records: ::std::option::Option<i64>,
     pub(crate) lookback_period: ::std::option::Option<crate::types::DateInterval>,
     _request_id: Option<String>,
@@ -54,17 +54,16 @@ impl GetApproximateUsageRecordsOutputBuilder {
     /// <p>The service metadata for the service or services in the response.</p>
     pub fn services(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.services.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.services = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.services = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>) -> Self {
+        self.services = input; self
     }
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>> {
         &self.services
     }
     /// <p>The total number of usage records for all services in the services list.</p>
@@ -74,8 +73,7 @@ impl GetApproximateUsageRecordsOutputBuilder {
     }
     /// <p>The total number of usage records for all services in the services list.</p>
     pub fn set_total_records(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_records = input;
-        self
+        self.total_records = input; self
     }
     /// <p>The total number of usage records for all services in the services list.</p>
     pub fn get_total_records(&self) -> &::std::option::Option<i64> {
@@ -88,29 +86,33 @@ impl GetApproximateUsageRecordsOutputBuilder {
     }
     /// <p>The lookback period that's used for the estimation.</p>
     pub fn set_lookback_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.lookback_period = input;
-        self
+        self.lookback_period = input; self
     }
     /// <p>The lookback period that's used for the estimation.</p>
     pub fn get_lookback_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         &self.lookback_period
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApproximateUsageRecordsOutput`](crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput).
     pub fn build(self) -> crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput {
         crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput {
-            services: self.services,
-            total_records: self.total_records.unwrap_or_default(),
-            lookback_period: self.lookback_period,
+            services: self.services
+            ,
+            total_records: self.total_records
+                .unwrap_or_default()
+            ,
+            lookback_period: self.lookback_period
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

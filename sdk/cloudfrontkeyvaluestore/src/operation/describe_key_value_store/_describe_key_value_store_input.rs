@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeKeyValueStoreInput {
+pub struct DescribeKeyValueStoreInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeKeyValueStoreInput {
+impl  DescribeKeyValueStoreInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kvs_arn(&self) -> ::std::option::Option<& str> {
         self.kvs_arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeKeyValueStoreInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kvs_arn = input;
-        self
+        self.kvs_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kvs_arn
     }
     /// Consumes the builder and constructs a [`DescribeKeyValueStoreInput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_key_value_store::DescribeKeyValueStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_key_value_store::DescribeKeyValueStoreInput { kvs_arn: self.kvs_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key_value_store::DescribeKeyValueStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreInput {
+                kvs_arn: self.kvs_arn
+                ,
+            }
+        )
     }
 }
+

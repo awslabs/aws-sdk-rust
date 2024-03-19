@@ -3,13 +3,13 @@
 /// <p>Settings that take effect while the model container starts up.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentStartupParameters {
+pub struct InferenceComponentStartupParameters  {
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this inference component.</p>
     pub model_data_download_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The timeout value, in seconds, for your inference container to pass health check by Amazon S3 Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     pub container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,
 }
-impl InferenceComponentStartupParameters {
+impl  InferenceComponentStartupParameters  {
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this inference component.</p>
     pub fn model_data_download_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.model_data_download_timeout_in_seconds
@@ -41,8 +41,7 @@ impl InferenceComponentStartupParametersBuilder {
     }
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this inference component.</p>
     pub fn set_model_data_download_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_data_download_timeout_in_seconds = input;
-        self
+        self.model_data_download_timeout_in_seconds = input; self
     }
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this inference component.</p>
     pub fn get_model_data_download_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl InferenceComponentStartupParametersBuilder {
     }
     /// <p>The timeout value, in seconds, for your inference container to pass health check by Amazon S3 Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     pub fn set_container_startup_health_check_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.container_startup_health_check_timeout_in_seconds = input;
-        self
+        self.container_startup_health_check_timeout_in_seconds = input; self
     }
     /// <p>The timeout value, in seconds, for your inference container to pass health check by Amazon S3 Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     pub fn get_container_startup_health_check_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl InferenceComponentStartupParametersBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentStartupParameters`](crate::types::InferenceComponentStartupParameters).
     pub fn build(self) -> crate::types::InferenceComponentStartupParameters {
         crate::types::InferenceComponentStartupParameters {
-            model_data_download_timeout_in_seconds: self.model_data_download_timeout_in_seconds,
-            container_startup_health_check_timeout_in_seconds: self.container_startup_health_check_timeout_in_seconds,
+            model_data_download_timeout_in_seconds: self.model_data_download_timeout_in_seconds
+            ,
+            container_startup_health_check_timeout_in_seconds: self.container_startup_health_check_timeout_in_seconds
+            ,
         }
     }
 }
+

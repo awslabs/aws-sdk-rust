@@ -3,24 +3,26 @@
 /// <p>Information about the destination of the next component in the network path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkPathComponentDetails {
+pub struct NetworkPathComponentDetails  {
     /// <p>The IP addresses of the destination.</p>
-    pub address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub address: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of port ranges for the destination.</p>
-    pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
-impl NetworkPathComponentDetails {
+impl  NetworkPathComponentDetails  {
     /// <p>The IP addresses of the destination.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address.is_none()`.
-    pub fn address(&self) -> &[::std::string::String] {
-        self.address.as_deref().unwrap_or_default()
+    pub fn address(&self) -> & [::std::string::String] {
+        self.address.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of port ranges for the destination.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
-    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
-        self.port_ranges.as_deref().unwrap_or_default()
+    pub fn port_ranges(&self) -> & [crate::types::PortRange] {
+        self.port_ranges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NetworkPathComponentDetails {
@@ -34,8 +36,8 @@ impl NetworkPathComponentDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkPathComponentDetailsBuilder {
-    pub(crate) address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) address: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
 impl NetworkPathComponentDetailsBuilder {
     /// Appends an item to `address`.
@@ -45,17 +47,16 @@ impl NetworkPathComponentDetailsBuilder {
     /// <p>The IP addresses of the destination.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.address.unwrap_or_default();
-        v.push(input.into());
-        self.address = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.address = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP addresses of the destination.</p>
-    pub fn set_address(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.address = input;
-        self
+    pub fn set_address(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.address = input; self
     }
     /// <p>The IP addresses of the destination.</p>
-    pub fn get_address(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_address(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.address
     }
     /// Appends an item to `port_ranges`.
@@ -65,24 +66,26 @@ impl NetworkPathComponentDetailsBuilder {
     /// <p>A list of port ranges for the destination.</p>
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
-        v.push(input);
-        self.port_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of port ranges for the destination.</p>
-    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.port_ranges = input;
-        self
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.port_ranges = input; self
     }
     /// <p>A list of port ranges for the destination.</p>
-    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.port_ranges
     }
     /// Consumes the builder and constructs a [`NetworkPathComponentDetails`](crate::types::NetworkPathComponentDetails).
     pub fn build(self) -> crate::types::NetworkPathComponentDetails {
         crate::types::NetworkPathComponentDetails {
-            address: self.address,
-            port_ranges: self.port_ranges,
+            address: self.address
+            ,
+            port_ranges: self.port_ranges
+            ,
         }
     }
 }
+

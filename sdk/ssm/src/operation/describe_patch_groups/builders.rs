@@ -5,54 +5,50 @@ pub use crate::operation::describe_patch_groups::_describe_patch_groups_input::D
 
 impl DescribePatchGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_patch_groups();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_patch_groups::DescribePatchGroupsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_patch_groups();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribePatchGroups`.
-///
+/// 
 /// <p>Lists all patch groups that have been registered with patch baselines.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePatchGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder,
+                    inner: crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        crate::operation::describe_patch_groups::DescribePatchGroupsError,
-    > for DescribePatchGroupsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
+                    crate::operation::describe_patch_groups::DescribePatchGroupsError,
+                > for DescribePatchGroupsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
+                        crate::operation::describe_patch_groups::DescribePatchGroupsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribePatchGroupsFluentBuilder {
     /// Creates a new `DescribePatchGroups`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribePatchGroupsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_patch_groups::DescribePatchGroupsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_patch_groups::DescribePatchGroups::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_patch_groups::DescribePatchGroups::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
-        crate::operation::describe_patch_groups::DescribePatchGroupsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_patch_groups::DescribePatchGroupsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_patch_groups::DescribePatchGroupsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_patch_groups::DescribePatchGroups::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_patch_groups::DescribePatchGroups::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_patch_groups::DescribePatchGroupsOutput, crate::operation::describe_patch_groups::DescribePatchGroupsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
-        crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
+                                crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,7 +143,7 @@ impl DescribePatchGroupsFluentBuilder {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -170,7 +157,7 @@ impl DescribePatchGroupsFluentBuilder {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -188,3 +175,4 @@ impl DescribePatchGroupsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

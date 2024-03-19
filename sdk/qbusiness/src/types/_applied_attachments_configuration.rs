@@ -3,13 +3,13 @@
 /// <p>Configuration information about the file upload during chat feature for your application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppliedAttachmentsConfiguration {
+pub struct AppliedAttachmentsConfiguration  {
     /// <p>Information about whether file upload during chat functionality is activated for your application.</p>
     pub attachments_control_mode: ::std::option::Option<crate::types::AttachmentsControlMode>,
 }
-impl AppliedAttachmentsConfiguration {
+impl  AppliedAttachmentsConfiguration  {
     /// <p>Information about whether file upload during chat functionality is activated for your application.</p>
-    pub fn attachments_control_mode(&self) -> ::std::option::Option<&crate::types::AttachmentsControlMode> {
+    pub fn attachments_control_mode(&self) -> ::std::option::Option<& crate::types::AttachmentsControlMode> {
         self.attachments_control_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AppliedAttachmentsConfigurationBuilder {
     }
     /// <p>Information about whether file upload during chat functionality is activated for your application.</p>
     pub fn set_attachments_control_mode(mut self, input: ::std::option::Option<crate::types::AttachmentsControlMode>) -> Self {
-        self.attachments_control_mode = input;
-        self
+        self.attachments_control_mode = input; self
     }
     /// <p>Information about whether file upload during chat functionality is activated for your application.</p>
     pub fn get_attachments_control_mode(&self) -> &::std::option::Option<crate::types::AttachmentsControlMode> {
@@ -44,7 +43,9 @@ impl AppliedAttachmentsConfigurationBuilder {
     /// Consumes the builder and constructs a [`AppliedAttachmentsConfiguration`](crate::types::AppliedAttachmentsConfiguration).
     pub fn build(self) -> crate::types::AppliedAttachmentsConfiguration {
         crate::types::AppliedAttachmentsConfiguration {
-            attachments_control_mode: self.attachments_control_mode,
+            attachments_control_mode: self.attachments_control_mode
+            ,
         }
     }
 }
+

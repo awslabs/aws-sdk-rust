@@ -5,22 +5,21 @@
 /// <p>You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical <code>AND</code>. You can model logical <code>OR</code> combinations by creating multiple prefetch schedules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailMatchingCriteria {
+pub struct AvailMatchingCriteria  {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
     pub dynamic_variable: ::std::string::String,
     /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
     pub operator: crate::types::Operator,
 }
-impl AvailMatchingCriteria {
+impl  AvailMatchingCriteria  {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
-    pub fn dynamic_variable(&self) -> &str {
-        use std::ops::Deref;
-        self.dynamic_variable.deref()
+    pub fn dynamic_variable(&self) -> & str {
+        use std::ops::Deref; self.dynamic_variable.deref()
     }
     /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
-    pub fn operator(&self) -> &crate::types::Operator {
+    pub fn operator(&self) -> & crate::types::Operator {
         &self.operator
     }
 }
@@ -49,8 +48,7 @@ impl AvailMatchingCriteriaBuilder {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
     pub fn set_dynamic_variable(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dynamic_variable = input;
-        self
+        self.dynamic_variable = input; self
     }
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
@@ -65,8 +63,7 @@ impl AvailMatchingCriteriaBuilder {
     }
     /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
@@ -77,19 +74,20 @@ impl AvailMatchingCriteriaBuilder {
     /// - [`dynamic_variable`](crate::types::builders::AvailMatchingCriteriaBuilder::dynamic_variable)
     /// - [`operator`](crate::types::builders::AvailMatchingCriteriaBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::AvailMatchingCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AvailMatchingCriteria {
-            dynamic_variable: self.dynamic_variable.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dynamic_variable",
-                    "dynamic_variable was not specified but it is required when building AvailMatchingCriteria",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building AvailMatchingCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AvailMatchingCriteria {
+                dynamic_variable: self.dynamic_variable
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dynamic_variable", "dynamic_variable was not specified but it is required when building AvailMatchingCriteria")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building AvailMatchingCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

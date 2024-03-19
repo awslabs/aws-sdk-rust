@@ -3,7 +3,7 @@
 /// <p>Summary information for users or groups in your IAM Identity Center identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PersonasSummary {
+pub struct PersonasSummary  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
@@ -13,21 +13,21 @@ pub struct PersonasSummary {
     /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PersonasSummary {
+impl  PersonasSummary  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::Persona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::Persona> {
         self.persona.as_ref()
     }
     /// <p>The Unix timestamp when the summary information was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the summary information was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PersonasSummaryBuilder {
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PersonasSummaryBuilder {
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::Persona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn get_persona(&self) -> &::std::option::Option<crate::types::Persona> {
@@ -83,8 +81,7 @@ impl PersonasSummaryBuilder {
     }
     /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the summary information was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl PersonasSummaryBuilder {
     }
     /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the summary information was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl PersonasSummaryBuilder {
     /// Consumes the builder and constructs a [`PersonasSummary`](crate::types::PersonasSummary).
     pub fn build(self) -> crate::types::PersonasSummary {
         crate::types::PersonasSummary {
-            entity_id: self.entity_id,
-            persona: self.persona,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            entity_id: self.entity_id
+            ,
+            persona: self.persona
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

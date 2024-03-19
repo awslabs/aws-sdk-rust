@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeLogConfigsOutput {
+pub struct ListRealtimeLogConfigsOutput  {
     /// <p>A list of real-time log configurations.</p>
     pub realtime_log_configs: ::std::option::Option<crate::types::RealtimeLogConfigs>,
     _request_id: Option<String>,
 }
-impl ListRealtimeLogConfigsOutput {
+impl  ListRealtimeLogConfigsOutput  {
     /// <p>A list of real-time log configurations.</p>
-    pub fn realtime_log_configs(&self) -> ::std::option::Option<&crate::types::RealtimeLogConfigs> {
+    pub fn realtime_log_configs(&self) -> ::std::option::Option<& crate::types::RealtimeLogConfigs> {
         self.realtime_log_configs.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRealtimeLogConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRealtimeLogConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
     pub fn builder() -> crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsOutputBuilder {
@@ -40,27 +40,28 @@ impl ListRealtimeLogConfigsOutputBuilder {
     }
     /// <p>A list of real-time log configurations.</p>
     pub fn set_realtime_log_configs(mut self, input: ::std::option::Option<crate::types::RealtimeLogConfigs>) -> Self {
-        self.realtime_log_configs = input;
-        self
+        self.realtime_log_configs = input; self
     }
     /// <p>A list of real-time log configurations.</p>
     pub fn get_realtime_log_configs(&self) -> &::std::option::Option<crate::types::RealtimeLogConfigs> {
         &self.realtime_log_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
     pub fn build(self) -> crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput {
         crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput {
-            realtime_log_configs: self.realtime_log_configs,
+            realtime_log_configs: self.realtime_log_configs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

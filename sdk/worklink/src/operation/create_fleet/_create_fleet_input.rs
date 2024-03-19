@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetInput {
+pub struct CreateFleetInput  {
     /// <p>A unique name for the fleet.</p>
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The fleet name to display.</p>
@@ -10,15 +10,15 @@ pub struct CreateFleetInput {
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: ::std::option::Option<bool>,
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateFleetInput {
+impl  CreateFleetInput  {
     /// <p>A unique name for the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The fleet name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
@@ -26,7 +26,7 @@ impl CreateFleetInput {
         self.optimize_for_end_user_location
     }
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) optimize_for_end_user_location: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateFleetInputBuilder {
     /// <p>A unique name for the fleet.</p>
@@ -55,8 +55,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>A unique name for the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>A unique name for the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The fleet name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The fleet name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn set_optimize_for_end_user_location(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.optimize_for_end_user_location = input;
-        self
+        self.optimize_for_end_user_location = input; self
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn get_optimize_for_end_user_location(&self) -> &::std::option::Option<bool> {
@@ -97,26 +94,32 @@ impl CreateFleetInputBuilder {
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
-            fleet_name: self.fleet_name,
-            display_name: self.display_name,
-            optimize_for_end_user_location: self.optimize_for_end_user_location,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_fleet::CreateFleetInput {
+                fleet_name: self.fleet_name
+                ,
+                display_name: self.display_name
+                ,
+                optimize_for_end_user_location: self.optimize_for_end_user_location
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

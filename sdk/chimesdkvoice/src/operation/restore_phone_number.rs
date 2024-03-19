@@ -9,253 +9,190 @@ impl RestorePhoneNumber {
         Self
     }
     pub(crate) async fn orchestrate(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::restore_phone_number::RestorePhoneNumberInput,
-    ) -> ::std::result::Result<
-        crate::operation::restore_phone_number::RestorePhoneNumberOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::restore_phone_number::RestorePhoneNumberError>()
-                    .expect("correct error type")
-            })
-        };
-        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            .await
-            .map_err(map_err)?;
-        let output = context.finalize().map_err(map_err)?;
-        ::std::result::Result::Ok(
-            output
-                .downcast::<crate::operation::restore_phone_number::RestorePhoneNumberOutput>()
-                .expect("correct output type"),
-        )
-    }
-
-    pub(crate) async fn orchestrate_with_stop_point(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::restore_phone_number::RestorePhoneNumberInput,
-        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
-    ) -> ::std::result::Result<
-        ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("chimesdkvoice", "RestorePhoneNumber", input, runtime_plugins, stop_point)
-            .await
-    }
-
-    pub(crate) fn operation_runtime_plugins(
-        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        client_config: &crate::config::Config,
-        config_override: ::std::option::Option<crate::config::Builder>,
-    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
-        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
-        if let ::std::option::Option::Some(config_override) = config_override {
-            for plugin in config_override.runtime_plugins.iter().cloned() {
-                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
-            }
-            runtime_plugins = runtime_plugins.with_operation_plugin(crate::config::ConfigOverrideRuntimePlugin::new(
-                config_override,
-                client_config.config.clone(),
-                &client_config.runtime_components,
-            ));
-        }
-        runtime_plugins
-    }
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::restore_phone_number::RestorePhoneNumberInput,
+                    ) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::restore_phone_number::RestorePhoneNumberError>().expect("correct error type")
+                            })
+                        };
+                        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+                            .await
+                            .map_err(map_err)?;
+                        let output = context.finalize().map_err(map_err)?;
+                        ::std::result::Result::Ok(output.downcast::<crate::operation::restore_phone_number::RestorePhoneNumberOutput>().expect("correct output type"))
+                    }
+    
+                    pub(crate) async fn orchestrate_with_stop_point(
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::restore_phone_number::RestorePhoneNumberInput,
+                        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
+                    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext, ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+                        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
+                            "chimesdkvoice",
+                            "RestorePhoneNumber",
+                            input,
+                            runtime_plugins,
+                            stop_point
+                        ).await
+                    }
+    
+                    pub(crate) fn operation_runtime_plugins(
+                        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        client_config: &crate::config::Config,
+                        config_override: ::std::option::Option<crate::config::Builder>,
+                    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
+                        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
+                        runtime_plugins = runtime_plugins
+                                        .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
+                        if let ::std::option::Option::Some(config_override) = config_override {
+                            for plugin in config_override.runtime_plugins.iter().cloned() {
+                                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
+                            }
+                            runtime_plugins = runtime_plugins.with_operation_plugin(
+                                crate::config::ConfigOverrideRuntimePlugin::new(config_override, client_config.config.clone(), &client_config.runtime_components)
+                            );
+                        }
+                        runtime_plugins
+                    }
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RestorePhoneNumber {
-    fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-        let mut cfg = ::aws_smithy_types::config_bag::Layer::new("RestorePhoneNumber");
+                fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                    let mut cfg = ::aws_smithy_types::config_bag::Layer::new("RestorePhoneNumber");
 
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
-            RestorePhoneNumberRequestSerializer,
-        ));
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
-            RestorePhoneNumberResponseDeserializer,
-        ));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(RestorePhoneNumberRequestSerializer));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(RestorePhoneNumberResponseDeserializer));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
-        ));
+                    
+                    cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new()));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
-            "RestorePhoneNumber",
-            "chimesdkvoice",
-        ));
-        let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
+                    cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
+cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+                            "RestorePhoneNumber",
+                            "chimesdkvoice",
+                        ));
+let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
+                            signing_options.double_uri_encode = true;
+                            signing_options.content_sha256_header = false;
+                            signing_options.normalize_uri_path = true;
+                            signing_options.payload_override = None;
 
-        cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
-            signing_options,
-            ..::std::default::Default::default()
-        });
+                            cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
+                                signing_options,
+                                ..::std::default::Default::default()
+                            });
 
-        ::std::option::Option::Some(cfg.freeze())
-    }
-
-    fn runtime_components(
-        &self,
-        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RestorePhoneNumber")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
-            .with_interceptor(RestorePhoneNumberEndpointParamsInterceptor)
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::restore_phone_number::RestorePhoneNumberError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::restore_phone_number::RestorePhoneNumberError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::restore_phone_number::RestorePhoneNumberError,
-            >::new());
-
-        ::std::borrow::Cow::Owned(rcb)
-    }
-}
-
-#[derive(Debug)]
-struct RestorePhoneNumberResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestorePhoneNumberResponseDeserializer {
-    fn deserialize_nonstreaming(
-        &self,
-        response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().bytes().expect("body loaded");
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_restore_phone_number::de_restore_phone_number_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_restore_phone_number::de_restore_phone_number_http_response(status, headers, body)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
-    }
-}
-#[derive(Debug)]
-struct RestorePhoneNumberRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestorePhoneNumberRequestSerializer {
-    #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
-    fn serialize_input(
-        &self,
-        input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
-        _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = input
-            .downcast::<crate::operation::restore_phone_number::RestorePhoneNumberInput>()
-            .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            fn uri_base(
-                _input: &crate::operation::restore_phone_number::RestorePhoneNumberInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                let input_1 = &_input.phone_number_id;
-                let input_1 = input_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number_id", "cannot be empty or unset"))?;
-                let phone_number_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if phone_number_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "phone_number_id",
-                        "cannot be empty or unset",
-                    ));
+                    ::std::option::Option::Some(cfg.freeze())
                 }
-                ::std::write!(output, "/phone-numbers/{PhoneNumberId}", PhoneNumberId = phone_number_id).expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::restore_phone_number::RestorePhoneNumberInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                query.push_kv("operation", "restore");
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::restore_phone_number::RestorePhoneNumberInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
-    }
-}
+                fn runtime_components(&self, _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+                    #[allow(unused_mut)]
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RestorePhoneNumber")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::RequestAndResponseBody))
+.with_interceptor(RestorePhoneNumberEndpointParamsInterceptor)
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::restore_phone_number::RestorePhoneNumberError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::restore_phone_number::RestorePhoneNumberError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::restore_phone_number::RestorePhoneNumberError>::new());
+
+                    ::std::borrow::Cow::Owned(rcb)
+                }
+            }
+
+            
 #[derive(Debug)]
-struct RestorePhoneNumberEndpointParamsInterceptor;
+            struct RestorePhoneNumberResponseDeserializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestorePhoneNumberResponseDeserializer {
+                
 
-impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestorePhoneNumberEndpointParamsInterceptor {
-    fn name(&self) -> &'static str {
-        "RestorePhoneNumberEndpointParamsInterceptor"
-    }
-
-    fn read_before_execution(
-        &self,
-        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
-            '_,
-            ::aws_smithy_runtime_api::client::interceptors::context::Input,
-            ::aws_smithy_runtime_api::client::interceptors::context::Output,
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-        >,
-        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        let _input = context
-            .input()
-            .downcast_ref::<RestorePhoneNumberInput>()
-            .ok_or("failed to downcast to RestorePhoneNumberInput")?;
-
-        let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
-            .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
-            .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
-            })?;
-        cfg.interceptor_state()
-            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
-        ::std::result::Result::Ok(())
-    }
+                fn deserialize_nonstreaming(&self, response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
+                    let (success, status) = (response.status().is_success(), response.status().as_u16());
+            let headers = response.headers();
+            let body = response.body().bytes().expect("body loaded");
+            #[allow(unused_mut)]
+            let mut force_error = false;
+            ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+            let parse_result = if !success && status != 200 || force_error {
+                crate::protocol_serde::shape_restore_phone_number::de_restore_phone_number_http_error(status, headers, body)
+            } else {
+                crate::protocol_serde::shape_restore_phone_number::de_restore_phone_number_http_response(status, headers, body)
+            };
+            crate::protocol_serde::type_erase_result(parse_result)
+                }
+            }
+#[derive(Debug)]
+            struct RestorePhoneNumberRequestSerializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestorePhoneNumberRequestSerializer {
+                #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
+                fn serialize_input(&self, input: ::aws_smithy_runtime_api::client::interceptors::context::Input, _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let input = input.downcast::<crate::operation::restore_phone_number::RestorePhoneNumberInput>().expect("correct type");
+                    let _header_serialization_settings = _cfg.load::<crate::serialization_settings::HeaderSerializationSettings>().cloned().unwrap_or_default();
+                    let mut request_builder = {
+                        fn uri_base(_input: &crate::operation::restore_phone_number::RestorePhoneNumberInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    use ::std::fmt::Write as _;
+    let input_1 = &_input.phone_number_id;
+    let input_1 = input_1.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number_id", "cannot be empty or unset"))?;
+    let phone_number_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+    if phone_number_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("phone_number_id", "cannot be empty or unset"))
+                }
+    ::std::write!(output, "/phone-numbers/{PhoneNumberId}", PhoneNumberId = phone_number_id).expect("formatting should succeed");
+    ::std::result::Result::Ok(())
 }
+fn uri_query(_input: &crate::operation::restore_phone_number::RestorePhoneNumberInput, mut output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    let mut query = ::aws_smithy_http::query::Writer::new(output);
+    query.push_kv("operation", "restore");
+    ::std::result::Result::Ok(())
+}
+#[allow(clippy::unnecessary_wraps)]
+fn update_http_builder(
+                input: &crate::operation::restore_phone_number::RestorePhoneNumberInput,
+                builder: ::http::request::Builder
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    let mut uri = ::std::string::String::new();
+    uri_base(input, &mut uri)?;
+    uri_query(input, &mut uri)?;
+    ::std::result::Result::Ok(builder.method("POST").uri(uri))
+}
+let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+builder
+                    };
+                    let body = ::aws_smithy_types::body::SdkBody::from("");
+                    
+                    ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+                }
+            }
+#[derive(Debug)]
+            struct RestorePhoneNumberEndpointParamsInterceptor;
+
+            impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestorePhoneNumberEndpointParamsInterceptor {
+                fn name(&self) -> &'static str {
+                    "RestorePhoneNumberEndpointParamsInterceptor"
+                }
+
+                fn read_before_execution(
+                    &self,
+                    context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_, ::aws_smithy_runtime_api::client::interceptors::context::Input, ::aws_smithy_runtime_api::client::interceptors::context::Output, ::aws_smithy_runtime_api::client::interceptors::context::Error>,
+                    cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+                ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let _input = context.input()
+                        .downcast_ref::<RestorePhoneNumberInput>()
+                        .ok_or("failed to downcast to RestorePhoneNumberInput")?;
+
+                    
+
+                    let params = crate::config::endpoint::Params::builder()
+                        .set_region(cfg.load::<::aws_types::region::Region>().map(|r|r.as_ref().to_owned()))
+.set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
+.set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
+.set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+                        .build()
+                        .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err))?;
+                    cfg.interceptor_state().store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
+                    ::std::result::Result::Ok(())
+                }
+            }
 
 /// Error type for the `RestorePhoneNumberError` operation.
 #[non_exhaustive]
@@ -278,36 +215,28 @@ pub enum RestorePhoneNumberError {
     /// <p>The client isn't authorized to request a resource.</p>
     UnauthorizedClientException(crate::types::error::UnauthorizedClientException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-RestorePhoneNumberError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl RestorePhoneNumberError {
     /// Creates the `RestorePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `RestorePhoneNumberError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `RestorePhoneNumberError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -357,35 +286,69 @@ impl RestorePhoneNumberError {
 impl ::std::error::Error for RestorePhoneNumberError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
-            Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ThrottledClientException(_inner) => ::std::option::Option::Some(_inner),
-            Self::UnauthorizedClientException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::BadRequestException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ForbiddenException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::NotFoundException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ResourceLimitExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ServiceUnavailableException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ThrottledClientException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::UnauthorizedClientException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for RestorePhoneNumberError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::BadRequestException(_inner) => _inner.fmt(f),
-            Self::ForbiddenException(_inner) => _inner.fmt(f),
-            Self::NotFoundException(_inner) => _inner.fmt(f),
-            Self::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            Self::ServiceFailureException(_inner) => _inner.fmt(f),
-            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            Self::ThrottledClientException(_inner) => _inner.fmt(f),
-            Self::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            Self::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -401,34 +364,49 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for RestorePhoneNumberError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestorePhoneNumberError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottledClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnauthorizedClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::BadRequestException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ForbiddenException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NotFoundException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResourceLimitExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ServiceUnavailableException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ThrottledClientException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::UnauthorizedClientException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for RestorePhoneNumberError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::restore_phone_number::RestorePhoneNumberError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 pub use crate::operation::restore_phone_number::_restore_phone_number_output::RestorePhoneNumberOutput;
 
@@ -440,3 +418,4 @@ mod _restore_phone_number_output;
 
 /// Builders
 pub mod builders;
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutPropertyValuesInput {
+pub struct BatchPutPropertyValuesInput  {
     /// <p>The ID of the workspace that contains the properties to set.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyValueEntry>>,
 }
-impl BatchPutPropertyValuesInput {
+impl  BatchPutPropertyValuesInput  {
     /// <p>The ID of the workspace that contains the properties to set.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::PropertyValueEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::PropertyValueEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutPropertyValuesInput {
@@ -32,7 +33,7 @@ impl BatchPutPropertyValuesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyValueEntry>>,
 }
 impl BatchPutPropertyValuesInputBuilder {
     /// <p>The ID of the workspace that contains the properties to set.</p>
@@ -43,8 +44,7 @@ impl BatchPutPropertyValuesInputBuilder {
     }
     /// <p>The ID of the workspace that contains the properties to set.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the properties to set.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchPutPropertyValuesInputBuilder {
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
     pub fn entries(mut self, input: crate::types::PropertyValueEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyValueEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PropertyValueEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyValuesInput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_property_values::BatchPutPropertyValuesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_put_property_values::BatchPutPropertyValuesInput {
-            workspace_id: self.workspace_id,
-            entries: self.entries,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_property_values::BatchPutPropertyValuesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_property_values::BatchPutPropertyValuesInput {
+                workspace_id: self.workspace_id
+                ,
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

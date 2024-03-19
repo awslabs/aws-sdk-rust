@@ -3,7 +3,7 @@
 /// <p>Details about the PagerDuty configuration for a response plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PagerDutyConfiguration {
+pub struct PagerDutyConfiguration  {
     /// <p>The name of the PagerDuty configuration.</p>
     pub name: ::std::string::String,
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
@@ -11,19 +11,17 @@ pub struct PagerDutyConfiguration {
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     pub pager_duty_incident_configuration: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
 }
-impl PagerDutyConfiguration {
+impl  PagerDutyConfiguration  {
     /// <p>The name of the PagerDuty configuration.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_id.deref()
+    pub fn secret_id(&self) -> & str {
+        use std::ops::Deref; self.secret_id.deref()
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn pager_duty_incident_configuration(&self) -> ::std::option::Option<&crate::types::PagerDutyIncidentConfiguration> {
+    pub fn pager_duty_incident_configuration(&self) -> ::std::option::Option<& crate::types::PagerDutyIncidentConfiguration> {
         self.pager_duty_incident_configuration.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl PagerDutyConfigurationBuilder {
     }
     /// <p>The name of the PagerDuty configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the PagerDuty configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl PagerDutyConfigurationBuilder {
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl PagerDutyConfigurationBuilder {
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     pub fn set_pager_duty_incident_configuration(mut self, input: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>) -> Self {
-        self.pager_duty_incident_configuration = input;
-        self
+        self.pager_duty_incident_configuration = input; self
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     pub fn get_pager_duty_incident_configuration(&self) -> &::std::option::Option<crate::types::PagerDutyIncidentConfiguration> {
@@ -93,20 +88,22 @@ impl PagerDutyConfigurationBuilder {
     /// - [`name`](crate::types::builders::PagerDutyConfigurationBuilder::name)
     /// - [`secret_id`](crate::types::builders::PagerDutyConfigurationBuilder::secret_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PagerDutyConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PagerDutyConfiguration",
-                )
-            })?,
-            secret_id: self.secret_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_id",
-                    "secret_id was not specified but it is required when building PagerDutyConfiguration",
-                )
-            })?,
-            pager_duty_incident_configuration: self.pager_duty_incident_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PagerDutyConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PagerDutyConfiguration")
+                    )?
+                ,
+                secret_id: self.secret_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_id", "secret_id was not specified but it is required when building PagerDutyConfiguration")
+                    )?
+                ,
+                pager_duty_incident_configuration: self.pager_duty_incident_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,39 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComplianceItemsInput {
+pub struct ListComplianceItemsInput  {
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>,
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListComplianceItemsInput {
+impl  ListComplianceItemsInput  {
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ComplianceStringFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ComplianceStringFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -53,9 +56,9 @@ impl ListComplianceItemsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceItemsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -67,17 +70,16 @@ impl ListComplianceItemsInputBuilder {
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::ComplianceStringFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComplianceStringFilter>> {
         &self.filters
     }
     /// Appends an item to `resource_ids`.
@@ -87,17 +89,16 @@ impl ListComplianceItemsInputBuilder {
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// Appends an item to `resource_types`.
@@ -107,17 +108,16 @@ impl ListComplianceItemsInputBuilder {
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -127,8 +127,7 @@ impl ListComplianceItemsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,24 +140,28 @@ impl ListComplianceItemsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComplianceItemsInput`](crate::operation::list_compliance_items::ListComplianceItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_compliance_items::ListComplianceItemsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_compliance_items::ListComplianceItemsInput {
-            filters: self.filters,
-            resource_ids: self.resource_ids,
-            resource_types: self.resource_types,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_compliance_items::ListComplianceItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_compliance_items::ListComplianceItemsInput {
+                filters: self.filters
+                ,
+                resource_ids: self.resource_ids
+                ,
+                resource_types: self.resource_types
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

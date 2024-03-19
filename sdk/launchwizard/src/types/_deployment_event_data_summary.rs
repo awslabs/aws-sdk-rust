@@ -3,7 +3,7 @@
 /// <p>A summary of the deployment event data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentEventDataSummary {
+pub struct DeploymentEventDataSummary  {
     /// <p>The name of the deployment event.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the deployment event.</p>
@@ -15,25 +15,25 @@ pub struct DeploymentEventDataSummary {
     /// <p>The timestamp of the deployment event.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeploymentEventDataSummary {
+impl  DeploymentEventDataSummary  {
     /// <p>The name of the deployment event.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the deployment event.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the deployment event.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EventStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EventStatus> {
         self.status.as_ref()
     }
     /// <p>The reason of the deployment event status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The timestamp of the deployment event.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DeploymentEventDataSummaryBuilder {
     }
     /// <p>The name of the deployment event.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the deployment event.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DeploymentEventDataSummaryBuilder {
     }
     /// <p>The description of the deployment event.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the deployment event.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DeploymentEventDataSummaryBuilder {
     }
     /// <p>The status of the deployment event.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment event.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EventStatus> {
@@ -104,8 +101,7 @@ impl DeploymentEventDataSummaryBuilder {
     }
     /// <p>The reason of the deployment event status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason of the deployment event status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl DeploymentEventDataSummaryBuilder {
     }
     /// <p>The timestamp of the deployment event.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the deployment event.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl DeploymentEventDataSummaryBuilder {
     /// Consumes the builder and constructs a [`DeploymentEventDataSummary`](crate::types::DeploymentEventDataSummary).
     pub fn build(self) -> crate::types::DeploymentEventDataSummary {
         crate::types::DeploymentEventDataSummary {
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            status_reason: self.status_reason,
-            timestamp: self.timestamp,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

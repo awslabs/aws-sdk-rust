@@ -3,7 +3,7 @@
 /// <p>Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModerationLabel {
+pub struct ModerationLabel  {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
     pub confidence: ::std::option::Option<f32>,
@@ -14,18 +14,18 @@ pub struct ModerationLabel {
     /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
     pub taxonomy_level: ::std::option::Option<i32>,
 }
-impl ModerationLabel {
+impl  ModerationLabel  {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
     pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>The label name for the type of unsafe content detected in the image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
-    pub fn parent_name(&self) -> ::std::option::Option<&str> {
+    pub fn parent_name(&self) -> ::std::option::Option<& str> {
         self.parent_name.as_deref()
     }
     /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
@@ -59,8 +59,7 @@ impl ModerationLabelBuilder {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
     /// <p>If you don't specify the <code>MinConfidence</code> parameter in the call to <code>DetectModerationLabels</code>, the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
@@ -74,8 +73,7 @@ impl ModerationLabelBuilder {
     }
     /// <p>The label name for the type of unsafe content detected in the image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The label name for the type of unsafe content detected in the image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl ModerationLabelBuilder {
     }
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
     pub fn set_parent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_name = input;
-        self
+        self.parent_name = input; self
     }
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
     pub fn get_parent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +99,7 @@ impl ModerationLabelBuilder {
     }
     /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
     pub fn set_taxonomy_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.taxonomy_level = input;
-        self
+        self.taxonomy_level = input; self
     }
     /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
     pub fn get_taxonomy_level(&self) -> &::std::option::Option<i32> {
@@ -112,10 +108,15 @@ impl ModerationLabelBuilder {
     /// Consumes the builder and constructs a [`ModerationLabel`](crate::types::ModerationLabel).
     pub fn build(self) -> crate::types::ModerationLabel {
         crate::types::ModerationLabel {
-            confidence: self.confidence,
-            name: self.name,
-            parent_name: self.parent_name,
-            taxonomy_level: self.taxonomy_level,
+            confidence: self.confidence
+            ,
+            name: self.name
+            ,
+            parent_name: self.parent_name
+            ,
+            taxonomy_level: self.taxonomy_level
+            ,
         }
     }
 }
+

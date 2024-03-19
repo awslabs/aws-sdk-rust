@@ -3,28 +3,26 @@
 /// <p>The supported properties for a PO type data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PoAttributes {
+pub struct PoAttributes  {
     /// <p>The format of the data set records.</p>
     pub format: ::std::string::String,
     /// <p>The character set encoding of the data set.</p>
     pub encoding: ::std::option::Option<::std::string::String>,
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub member_file_extensions: ::std::vec::Vec<::std::string::String>,
+    pub member_file_extensions: ::std::vec::Vec::<::std::string::String>,
 }
-impl PoAttributes {
+impl  PoAttributes  {
     /// <p>The format of the data set records.</p>
-    pub fn format(&self) -> &str {
-        use std::ops::Deref;
-        self.format.deref()
+    pub fn format(&self) -> & str {
+        use std::ops::Deref; self.format.deref()
     }
     /// <p>The character set encoding of the data set.</p>
-    pub fn encoding(&self) -> ::std::option::Option<&str> {
+    pub fn encoding(&self) -> ::std::option::Option<& str> {
         self.encoding.as_deref()
     }
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn member_file_extensions(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.member_file_extensions.deref()
+    pub fn member_file_extensions(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.member_file_extensions.deref()
     }
 }
 impl PoAttributes {
@@ -40,7 +38,7 @@ impl PoAttributes {
 pub struct PoAttributesBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<::std::string::String>,
-    pub(crate) member_file_extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) member_file_extensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PoAttributesBuilder {
     /// <p>The format of the data set records.</p>
@@ -51,8 +49,7 @@ impl PoAttributesBuilder {
     }
     /// <p>The format of the data set records.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the data set records.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl PoAttributesBuilder {
     }
     /// <p>The character set encoding of the data set.</p>
     pub fn set_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>The character set encoding of the data set.</p>
     pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,17 +75,16 @@ impl PoAttributesBuilder {
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
     pub fn member_file_extensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.member_file_extensions.unwrap_or_default();
-        v.push(input.into());
-        self.member_file_extensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.member_file_extensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn set_member_file_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.member_file_extensions = input;
-        self
+    pub fn set_member_file_extensions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.member_file_extensions = input; self
     }
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn get_member_file_extensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_file_extensions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.member_file_extensions
     }
     /// Consumes the builder and constructs a [`PoAttributes`](crate::types::PoAttributes).
@@ -97,20 +92,22 @@ impl PoAttributesBuilder {
     /// - [`format`](crate::types::builders::PoAttributesBuilder::format)
     /// - [`member_file_extensions`](crate::types::builders::PoAttributesBuilder::member_file_extensions)
     pub fn build(self) -> ::std::result::Result<crate::types::PoAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PoAttributes {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building PoAttributes",
-                )
-            })?,
-            encoding: self.encoding,
-            member_file_extensions: self.member_file_extensions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_file_extensions",
-                    "member_file_extensions was not specified but it is required when building PoAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PoAttributes {
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building PoAttributes")
+                    )?
+                ,
+                encoding: self.encoding
+                ,
+                member_file_extensions: self.member_file_extensions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_file_extensions", "member_file_extensions was not specified but it is required when building PoAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

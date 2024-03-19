@@ -3,7 +3,7 @@
 /// <p>Returns details about the commands that were run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetupExecutionDetails {
+pub struct SetupExecutionDetails  {
     /// <p>The command that was executed.</p>
     pub command: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the request was run.</p>
@@ -19,33 +19,33 @@ pub struct SetupExecutionDetails {
     /// <p>The current version of the script..</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl SetupExecutionDetails {
+impl  SetupExecutionDetails  {
     /// <p>The command that was executed.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>The timestamp for when the request was run.</p>
-    pub fn date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_time.as_ref()
     }
     /// <p>The name of the target resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the <code>SetupInstanceHttps</code> request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SetupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SetupStatus> {
         self.status.as_ref()
     }
     /// <p>The text written by the command to stderr.</p>
-    pub fn standard_error(&self) -> ::std::option::Option<&str> {
+    pub fn standard_error(&self) -> ::std::option::Option<& str> {
         self.standard_error.as_deref()
     }
     /// <p>The text written by the command to stdout.</p>
-    pub fn standard_output(&self) -> ::std::option::Option<&str> {
+    pub fn standard_output(&self) -> ::std::option::Option<& str> {
         self.standard_output.as_deref()
     }
     /// <p>The current version of the script..</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The command that was executed.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The command that was executed.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The timestamp for when the request was run.</p>
     pub fn set_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_time = input;
-        self
+        self.date_time = input; self
     }
     /// <p>The timestamp for when the request was run.</p>
     pub fn get_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +102,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The name of the target resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the target resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The status of the <code>SetupInstanceHttps</code> request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SetupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the <code>SetupInstanceHttps</code> request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SetupStatus> {
@@ -132,8 +128,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The text written by the command to stderr.</p>
     pub fn set_standard_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standard_error = input;
-        self
+        self.standard_error = input; self
     }
     /// <p>The text written by the command to stderr.</p>
     pub fn get_standard_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The text written by the command to stdout.</p>
     pub fn set_standard_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standard_output = input;
-        self
+        self.standard_output = input; self
     }
     /// <p>The text written by the command to stdout.</p>
     pub fn get_standard_output(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl SetupExecutionDetailsBuilder {
     }
     /// <p>The current version of the script..</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The current version of the script..</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl SetupExecutionDetailsBuilder {
     /// Consumes the builder and constructs a [`SetupExecutionDetails`](crate::types::SetupExecutionDetails).
     pub fn build(self) -> crate::types::SetupExecutionDetails {
         crate::types::SetupExecutionDetails {
-            command: self.command,
-            date_time: self.date_time,
-            name: self.name,
-            status: self.status,
-            standard_error: self.standard_error,
-            standard_output: self.standard_output,
-            version: self.version,
+            command: self.command
+            ,
+            date_time: self.date_time
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            standard_error: self.standard_error
+            ,
+            standard_output: self.standard_output
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An access point used to access a bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPoint {
+pub struct AccessPoint  {
     /// <p>The name of this access point.</p>
     pub name: ::std::string::String,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
@@ -21,37 +21,35 @@ pub struct AccessPoint {
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
-impl AccessPoint {
+impl  AccessPoint  {
     /// <p>The name of this access point.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
-    pub fn network_origin(&self) -> &crate::types::NetworkOrigin {
+    pub fn network_origin(&self) -> & crate::types::NetworkOrigin {
         &self.network_origin
     }
     /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The name of the bucket associated with this access point.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The ARN for the access point.</p>
-    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The name or alias of the access point.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_account_id(&self) -> ::std::option::Option<& str> {
         self.bucket_account_id.as_deref()
     }
 }
@@ -83,8 +81,7 @@ impl AccessPointBuilder {
     }
     /// <p>The name of this access point.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this access point.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl AccessPointBuilder {
     }
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     pub fn set_network_origin(mut self, input: ::std::option::Option<crate::types::NetworkOrigin>) -> Self {
-        self.network_origin = input;
-        self
+        self.network_origin = input; self
     }
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     pub fn get_network_origin(&self) -> &::std::option::Option<crate::types::NetworkOrigin> {
@@ -116,8 +112,7 @@ impl AccessPointBuilder {
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
@@ -133,8 +128,7 @@ impl AccessPointBuilder {
     }
     /// <p>The name of the bucket associated with this access point.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket associated with this access point.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +141,7 @@ impl AccessPointBuilder {
     }
     /// <p>The ARN for the access point.</p>
     pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_point_arn = input;
-        self
+        self.access_point_arn = input; self
     }
     /// <p>The ARN for the access point.</p>
     pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +154,7 @@ impl AccessPointBuilder {
     }
     /// <p>The name or alias of the access point.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The name or alias of the access point.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +167,7 @@ impl AccessPointBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_account_id = input;
-        self
+        self.bucket_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,29 +179,33 @@ impl AccessPointBuilder {
     /// - [`network_origin`](crate::types::builders::AccessPointBuilder::network_origin)
     /// - [`bucket`](crate::types::builders::AccessPointBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessPoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessPoint {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AccessPoint",
-                )
-            })?,
-            network_origin: self.network_origin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_origin",
-                    "network_origin was not specified but it is required when building AccessPoint",
-                )
-            })?,
-            vpc_configuration: self.vpc_configuration,
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building AccessPoint",
-                )
-            })?,
-            access_point_arn: self.access_point_arn,
-            alias: self.alias,
-            bucket_account_id: self.bucket_account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessPoint {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AccessPoint")
+                    )?
+                ,
+                network_origin: self.network_origin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_origin", "network_origin was not specified but it is required when building AccessPoint")
+                    )?
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building AccessPoint")
+                    )?
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                alias: self.alias
+                ,
+                bucket_account_id: self.bucket_account_id
+                ,
+            }
+        )
     }
 }
+

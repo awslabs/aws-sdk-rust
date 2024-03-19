@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrderInput {
+pub struct GetOrderInput  {
     /// <p>The ID of the order.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
 }
-impl GetOrderInput {
+impl  GetOrderInput  {
     /// <p>The ID of the order.</p>
-    pub fn order_id(&self) -> ::std::option::Option<&str> {
+    pub fn order_id(&self) -> ::std::option::Option<& str> {
         self.order_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetOrderInputBuilder {
     }
     /// <p>The ID of the order.</p>
     pub fn set_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.order_id = input;
-        self
+        self.order_id = input; self
     }
     /// <p>The ID of the order.</p>
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetOrderInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_order::GetOrderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_order::GetOrderInput { order_id: self.order_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_order::GetOrderInput {
+                order_id: self.order_id
+                ,
+            }
+        )
     }
 }
+

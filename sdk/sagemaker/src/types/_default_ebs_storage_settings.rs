@@ -3,13 +3,13 @@
 /// <p>A collection of default EBS storage settings that applies to private spaces created within a domain or user profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultEbsStorageSettings {
+pub struct DefaultEbsStorageSettings  {
     /// <p>The default size of the EBS storage volume for a private space.</p>
     pub default_ebs_volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>The maximum size of the EBS storage volume for a private space.</p>
     pub maximum_ebs_volume_size_in_gb: ::std::option::Option<i32>,
 }
-impl DefaultEbsStorageSettings {
+impl  DefaultEbsStorageSettings  {
     /// <p>The default size of the EBS storage volume for a private space.</p>
     pub fn default_ebs_volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.default_ebs_volume_size_in_gb
@@ -42,8 +42,7 @@ impl DefaultEbsStorageSettingsBuilder {
     }
     /// <p>The default size of the EBS storage volume for a private space.</p>
     pub fn set_default_ebs_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_ebs_volume_size_in_gb = input;
-        self
+        self.default_ebs_volume_size_in_gb = input; self
     }
     /// <p>The default size of the EBS storage volume for a private space.</p>
     pub fn get_default_ebs_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl DefaultEbsStorageSettingsBuilder {
     }
     /// <p>The maximum size of the EBS storage volume for a private space.</p>
     pub fn set_maximum_ebs_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_ebs_volume_size_in_gb = input;
-        self
+        self.maximum_ebs_volume_size_in_gb = input; self
     }
     /// <p>The maximum size of the EBS storage volume for a private space.</p>
     pub fn get_maximum_ebs_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,11 @@ impl DefaultEbsStorageSettingsBuilder {
     /// Consumes the builder and constructs a [`DefaultEbsStorageSettings`](crate::types::DefaultEbsStorageSettings).
     pub fn build(self) -> crate::types::DefaultEbsStorageSettings {
         crate::types::DefaultEbsStorageSettings {
-            default_ebs_volume_size_in_gb: self.default_ebs_volume_size_in_gb,
-            maximum_ebs_volume_size_in_gb: self.maximum_ebs_volume_size_in_gb,
+            default_ebs_volume_size_in_gb: self.default_ebs_volume_size_in_gb
+            ,
+            maximum_ebs_volume_size_in_gb: self.maximum_ebs_volume_size_in_gb
+            ,
         }
     }
 }
+

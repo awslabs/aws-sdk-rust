@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSourceServerActionsInput {
+pub struct ListSourceServerActionsInput  {
     /// <p>Source server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
@@ -14,13 +14,13 @@ pub struct ListSourceServerActionsInput {
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListSourceServerActionsInput {
+impl  ListSourceServerActionsInput  {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::SourceServerActionsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::SourceServerActionsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
@@ -28,11 +28,11 @@ impl ListSourceServerActionsInput {
         self.max_results
     }
     /// <p>Next token to use when listing source server post migration custom actions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListSourceServerActionsInputBuilder {
     }
     /// <p>Source server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Source server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListSourceServerActionsInputBuilder {
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
@@ -90,8 +88,7 @@ impl ListSourceServerActionsInputBuilder {
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl ListSourceServerActionsInputBuilder {
     }
     /// <p>Next token to use when listing source server post migration custom actions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token to use when listing source server post migration custom actions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,26 +114,28 @@ impl ListSourceServerActionsInputBuilder {
     }
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID to return when listing source server post migration custom actions.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListSourceServerActionsInput`](crate::operation::list_source_server_actions::ListSourceServerActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_source_server_actions::ListSourceServerActionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_source_server_actions::ListSourceServerActionsInput {
-            source_server_id: self.source_server_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_source_server_actions::ListSourceServerActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_source_server_actions::ListSourceServerActionsInput {
+                source_server_id: self.source_server_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

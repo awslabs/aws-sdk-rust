@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let r53hostedzonedeletionstatecode = unimplemented!();
 /// match r53hostedzonedeletionstatecode {
@@ -32,16 +32,14 @@
 /// Specifically, when `r53hostedzonedeletionstatecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `R53HostedZoneDeletionStateCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum R53HostedZoneDeletionStateCode {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -53,67 +51,68 @@ pub enum R53HostedZoneDeletionStateCode {
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for R53HostedZoneDeletionStateCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => R53HostedZoneDeletionStateCode::Failed,
-            "PENDING" => R53HostedZoneDeletionStateCode::Pending,
-            "STARTED" => R53HostedZoneDeletionStateCode::Started,
-            "SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
-            other => R53HostedZoneDeletionStateCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FAILED" => R53HostedZoneDeletionStateCode::Failed,
+"PENDING" => R53HostedZoneDeletionStateCode::Pending,
+"STARTED" => R53HostedZoneDeletionStateCode::Started,
+"SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
+other => R53HostedZoneDeletionStateCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for R53HostedZoneDeletionStateCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(R53HostedZoneDeletionStateCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(R53HostedZoneDeletionStateCode::from(s))
+                    }
+                }
 impl R53HostedZoneDeletionStateCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            R53HostedZoneDeletionStateCode::Failed => "FAILED",
-            R53HostedZoneDeletionStateCode::Pending => "PENDING",
-            R53HostedZoneDeletionStateCode::Started => "STARTED",
-            R53HostedZoneDeletionStateCode::Succeeded => "SUCCEEDED",
-            R53HostedZoneDeletionStateCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    R53HostedZoneDeletionStateCode::Failed => "FAILED",
+    R53HostedZoneDeletionStateCode::Pending => "PENDING",
+    R53HostedZoneDeletionStateCode::Started => "STARTED",
+    R53HostedZoneDeletionStateCode::Succeeded => "SUCCEEDED",
+    R53HostedZoneDeletionStateCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for R53HostedZoneDeletionStateCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl R53HostedZoneDeletionStateCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for R53HostedZoneDeletionStateCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            R53HostedZoneDeletionStateCode::Failed => write!(f, "FAILED"),
-            R53HostedZoneDeletionStateCode::Pending => write!(f, "PENDING"),
-            R53HostedZoneDeletionStateCode::Started => write!(f, "STARTED"),
-            R53HostedZoneDeletionStateCode::Succeeded => write!(f, "SUCCEEDED"),
-            R53HostedZoneDeletionStateCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                R53HostedZoneDeletionStateCode::Failed => write!(f, "FAILED"),
+R53HostedZoneDeletionStateCode::Pending => write!(f, "PENDING"),
+R53HostedZoneDeletionStateCode::Started => write!(f, "STARTED"),
+R53HostedZoneDeletionStateCode::Succeeded => write!(f, "SUCCEEDED"),
+R53HostedZoneDeletionStateCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

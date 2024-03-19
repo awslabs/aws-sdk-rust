@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddLfTagsToResourceOutput {
+pub struct AddLfTagsToResourceOutput  {
     /// <p>A list of failures to tag the resource.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagError>>,
     _request_id: Option<String>,
 }
-impl AddLfTagsToResourceOutput {
+impl  AddLfTagsToResourceOutput  {
     /// <p>A list of failures to tag the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::LfTagError] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::LfTagError] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AddLfTagsToResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddLfTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput).
     pub fn builder() -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceOutputBuilder {
@@ -31,7 +32,7 @@ impl AddLfTagsToResourceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddLfTagsToResourceOutputBuilder {
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagError>>,
     _request_id: Option<String>,
 }
 impl AddLfTagsToResourceOutputBuilder {
@@ -42,33 +43,34 @@ impl AddLfTagsToResourceOutputBuilder {
     /// <p>A list of failures to tag the resource.</p>
     pub fn failures(mut self, input: crate::types::LfTagError) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of failures to tag the resource.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagError>>) -> Self {
+        self.failures = input; self
     }
     /// <p>A list of failures to tag the resource.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagError>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagError>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput).
     pub fn build(self) -> crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput {
         crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput {
-            failures: self.failures,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

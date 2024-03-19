@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventConfigurationsInput {}
+pub struct DescribeEventConfigurationsInput  {
+}
 impl DescribeEventConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
     pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeEventConfigurationsInput {
 /// A builder for [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeEventConfigurationsInputBuilder {}
+pub struct DescribeEventConfigurationsInputBuilder {
+}
 impl DescribeEventConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_configurations::DescribeEventConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_event_configurations::DescribeEventConfigurationsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_configurations::DescribeEventConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_event_configurations::DescribeEventConfigurationsInput {
+            }
+        )
     }
 }
+

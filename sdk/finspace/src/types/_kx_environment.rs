@@ -3,7 +3,7 @@
 /// <p>The details of a kdb environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxEnvironment {
+pub struct KxEnvironment  {
     /// <p>The name of the kdb environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
@@ -49,27 +49,27 @@ pub struct KxEnvironment {
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>,
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the kdb environment was modified in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
-impl KxEnvironment {
+impl  KxEnvironment  {
     /// <p>The name of the kdb environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The unique identifier of the AWS account in which you create the kdb environment.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The status of the environment creation.</p>
@@ -93,63 +93,65 @@ impl KxEnvironment {
     /// <li>
     /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The status of the network configuration.</p>
-    pub fn tgw_status(&self) -> ::std::option::Option<&crate::types::TgwStatus> {
+    pub fn tgw_status(&self) -> ::std::option::Option<& crate::types::TgwStatus> {
         self.tgw_status.as_ref()
     }
     /// <p>The status of DNS configuration.</p>
-    pub fn dns_status(&self) -> ::std::option::Option<&crate::types::DnsStatus> {
+    pub fn dns_status(&self) -> ::std::option::Option<& crate::types::DnsStatus> {
         self.dns_status.as_ref()
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A description of the kdb environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your kdb environment.</p>
-    pub fn environment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn environment_arn(&self) -> ::std::option::Option<& str> {
         self.environment_arn.as_deref()
     }
     /// <p>The unique identifier of the KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
-    pub fn dedicated_service_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn dedicated_service_account_id(&self) -> ::std::option::Option<& str> {
         self.dedicated_service_account_id.as_deref()
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfiguration> {
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<& crate::types::TransitGatewayConfiguration> {
         self.transit_gateway_configuration.as_ref()
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_dns_configuration.is_none()`.
-    pub fn custom_dns_configuration(&self) -> &[crate::types::CustomDnsServer] {
-        self.custom_dns_configuration.as_deref().unwrap_or_default()
+    pub fn custom_dns_configuration(&self) -> & [crate::types::CustomDnsServer] {
+        self.custom_dns_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The timestamp at which the kdb environment was modified in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_timestamp.as_ref()
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
-    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
-        self.availability_zone_ids.as_deref().unwrap_or_default()
+    pub fn availability_zone_ids(&self) -> & [::std::string::String] {
+        self.availability_zone_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
@@ -176,10 +178,10 @@ pub struct KxEnvironmentBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_service_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
-    pub(crate) custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub(crate) custom_dns_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl KxEnvironmentBuilder {
@@ -190,8 +192,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The name of the kdb environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the kdb environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +205,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +218,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The unique identifier of the AWS account in which you create the kdb environment.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The unique identifier of the AWS account in which you create the kdb environment.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +271,7 @@ impl KxEnvironmentBuilder {
     /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the environment creation.</p>
     /// <ul>
@@ -306,8 +304,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The status of the network configuration.</p>
     pub fn set_tgw_status(mut self, input: ::std::option::Option<crate::types::TgwStatus>) -> Self {
-        self.tgw_status = input;
-        self
+        self.tgw_status = input; self
     }
     /// <p>The status of the network configuration.</p>
     pub fn get_tgw_status(&self) -> &::std::option::Option<crate::types::TgwStatus> {
@@ -320,8 +317,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The status of DNS configuration.</p>
     pub fn set_dns_status(mut self, input: ::std::option::Option<crate::types::DnsStatus>) -> Self {
-        self.dns_status = input;
-        self
+        self.dns_status = input; self
     }
     /// <p>The status of DNS configuration.</p>
     pub fn get_dns_status(&self) -> &::std::option::Option<crate::types::DnsStatus> {
@@ -334,8 +330,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,8 +343,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>A description of the kdb environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the kdb environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -362,8 +356,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your kdb environment.</p>
     pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_arn = input;
-        self
+        self.environment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of your kdb environment.</p>
     pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -376,8 +369,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The unique identifier of the KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The unique identifier of the KMS key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -390,8 +382,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
     pub fn set_dedicated_service_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dedicated_service_account_id = input;
-        self
+        self.dedicated_service_account_id = input; self
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
     pub fn get_dedicated_service_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -404,8 +395,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn set_transit_gateway_configuration(mut self, input: ::std::option::Option<crate::types::TransitGatewayConfiguration>) -> Self {
-        self.transit_gateway_configuration = input;
-        self
+        self.transit_gateway_configuration = input; self
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
@@ -418,17 +408,16 @@ impl KxEnvironmentBuilder {
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
     pub fn custom_dns_configuration(mut self, input: crate::types::CustomDnsServer) -> Self {
         let mut v = self.custom_dns_configuration.unwrap_or_default();
-        v.push(input);
-        self.custom_dns_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_dns_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>) -> Self {
-        self.custom_dns_configuration = input;
-        self
+    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>>) -> Self {
+        self.custom_dns_configuration = input; self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomDnsServer>> {
         &self.custom_dns_configuration
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -438,8 +427,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -452,8 +440,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The timestamp at which the kdb environment was modified in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_timestamp = input;
-        self
+        self.update_timestamp = input; self
     }
     /// <p>The timestamp at which the kdb environment was modified in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -466,17 +453,16 @@ impl KxEnvironmentBuilder {
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
     pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zone_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zone_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zone_ids = input;
-        self
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input; self
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zone_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
@@ -486,8 +472,7 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority:</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -496,23 +481,41 @@ impl KxEnvironmentBuilder {
     /// Consumes the builder and constructs a [`KxEnvironment`](crate::types::KxEnvironment).
     pub fn build(self) -> crate::types::KxEnvironment {
         crate::types::KxEnvironment {
-            name: self.name,
-            environment_id: self.environment_id,
-            aws_account_id: self.aws_account_id,
-            status: self.status,
-            tgw_status: self.tgw_status,
-            dns_status: self.dns_status,
-            error_message: self.error_message,
-            description: self.description,
-            environment_arn: self.environment_arn,
-            kms_key_id: self.kms_key_id,
-            dedicated_service_account_id: self.dedicated_service_account_id,
-            transit_gateway_configuration: self.transit_gateway_configuration,
-            custom_dns_configuration: self.custom_dns_configuration,
-            creation_timestamp: self.creation_timestamp,
-            update_timestamp: self.update_timestamp,
-            availability_zone_ids: self.availability_zone_ids,
-            certificate_authority_arn: self.certificate_authority_arn,
+            name: self.name
+            ,
+            environment_id: self.environment_id
+            ,
+            aws_account_id: self.aws_account_id
+            ,
+            status: self.status
+            ,
+            tgw_status: self.tgw_status
+            ,
+            dns_status: self.dns_status
+            ,
+            error_message: self.error_message
+            ,
+            description: self.description
+            ,
+            environment_arn: self.environment_arn
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            dedicated_service_account_id: self.dedicated_service_account_id
+            ,
+            transit_gateway_configuration: self.transit_gateway_configuration
+            ,
+            custom_dns_configuration: self.custom_dns_configuration
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            update_timestamp: self.update_timestamp
+            ,
+            availability_zone_ids: self.availability_zone_ids
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
         }
     }
 }
+

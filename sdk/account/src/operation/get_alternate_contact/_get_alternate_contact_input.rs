@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAlternateContactInput {
+pub struct GetAlternateContactInput  {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
     pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -13,9 +13,9 @@ pub struct GetAlternateContactInput {
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAlternateContactInput {
+impl  GetAlternateContactInput  {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
+    pub fn alternate_contact_type(&self) -> ::std::option::Option<& crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -24,7 +24,7 @@ impl GetAlternateContactInput {
     /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl GetAlternateContactInputBuilder {
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
     pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
-        self.alternate_contact_type = input;
-        self
+        self.alternate_contact_type = input; self
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
     pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
@@ -75,8 +74,7 @@ impl GetAlternateContactInputBuilder {
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -88,13 +86,15 @@ impl GetAlternateContactInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_alternate_contact::GetAlternateContactInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_alternate_contact::GetAlternateContactInput {
-            alternate_contact_type: self.alternate_contact_type,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_alternate_contact::GetAlternateContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_alternate_contact::GetAlternateContactInput {
+                alternate_contact_type: self.alternate_contact_type
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

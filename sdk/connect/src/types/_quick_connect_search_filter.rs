@@ -3,7 +3,7 @@
 /// <p>Filters to be applied to search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickConnectSearchFilter {
+pub struct QuickConnectSearchFilter  {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct QuickConnectSearchFilter {
     /// </ul>
     pub tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }
-impl QuickConnectSearchFilter {
+impl  QuickConnectSearchFilter  {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl QuickConnectSearchFilter {
     /// <li>
     /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
     /// </ul>
-    pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::ControlPlaneTagFilter> {
+    pub fn tag_filter(&self) -> ::std::option::Option<& crate::types::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl QuickConnectSearchFilterBuilder {
     /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
     /// </ul>
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::ControlPlaneTagFilter>) -> Self {
-        self.tag_filter = input;
-        self
+        self.tag_filter = input; self
     }
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
     /// <ul>
@@ -73,6 +72,10 @@ impl QuickConnectSearchFilterBuilder {
     }
     /// Consumes the builder and constructs a [`QuickConnectSearchFilter`](crate::types::QuickConnectSearchFilter).
     pub fn build(self) -> crate::types::QuickConnectSearchFilter {
-        crate::types::QuickConnectSearchFilter { tag_filter: self.tag_filter }
+        crate::types::QuickConnectSearchFilter {
+            tag_filter: self.tag_filter
+            ,
+        }
     }
 }
+

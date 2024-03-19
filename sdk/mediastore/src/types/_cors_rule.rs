@@ -3,42 +3,41 @@
 /// <p>A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CorsRule {
+pub struct CorsRule  {
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
-    pub allowed_origins: ::std::vec::Vec<::std::string::String>,
+    pub allowed_origins: ::std::vec::Vec::<::std::string::String>,
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
-    pub allowed_methods: ::std::option::Option<::std::vec::Vec<crate::types::MethodName>>,
+    pub allowed_methods: ::std::option::Option<::std::vec::Vec::<crate::types::MethodName>>,
     /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
     /// <p>This element can contain only one wildcard character (*).</p>
-    pub allowed_headers: ::std::vec::Vec<::std::string::String>,
+    pub allowed_headers: ::std::vec::Vec::<::std::string::String>,
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
     /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
     pub max_age_seconds: i32,
     /// <p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>This element is optional for each rule.</p>
-    pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub expose_headers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CorsRule {
+impl  CorsRule  {
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
-    pub fn allowed_origins(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_origins.deref()
+    pub fn allowed_origins(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_origins.deref()
     }
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_methods.is_none()`.
-    pub fn allowed_methods(&self) -> &[crate::types::MethodName] {
-        self.allowed_methods.as_deref().unwrap_or_default()
+    pub fn allowed_methods(&self) -> & [crate::types::MethodName] {
+        self.allowed_methods.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
     /// <p>This element can contain only one wildcard character (*).</p>
-    pub fn allowed_headers(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_headers.deref()
+    pub fn allowed_headers(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_headers.deref()
     }
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
     /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
@@ -47,10 +46,11 @@ impl CorsRule {
     }
     /// <p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>This element is optional for each rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expose_headers.is_none()`.
-    pub fn expose_headers(&self) -> &[::std::string::String] {
-        self.expose_headers.as_deref().unwrap_or_default()
+    pub fn expose_headers(&self) -> & [::std::string::String] {
+        self.expose_headers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CorsRule {
@@ -64,11 +64,11 @@ impl CorsRule {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorsRuleBuilder {
-    pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_methods: ::std::option::Option<::std::vec::Vec<crate::types::MethodName>>,
-    pub(crate) allowed_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) allowed_methods: ::std::option::Option<::std::vec::Vec::<crate::types::MethodName>>,
+    pub(crate) allowed_headers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_age_seconds: ::std::option::Option<i32>,
-    pub(crate) expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) expose_headers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CorsRuleBuilder {
     /// Appends an item to `allowed_origins`.
@@ -79,19 +79,18 @@ impl CorsRuleBuilder {
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
     pub fn allowed_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_origins.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_origins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_origins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
-    pub fn set_allowed_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_origins = input;
-        self
+    pub fn set_allowed_origins(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_origins = input; self
     }
     /// <p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>
-    pub fn get_allowed_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_origins(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_origins
     }
     /// Appends an item to `allowed_methods`.
@@ -102,19 +101,18 @@ impl CorsRuleBuilder {
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
     pub fn allowed_methods(mut self, input: crate::types::MethodName) -> Self {
         let mut v = self.allowed_methods.unwrap_or_default();
-        v.push(input);
-        self.allowed_methods = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_methods = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
-    pub fn set_allowed_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MethodName>>) -> Self {
-        self.allowed_methods = input;
-        self
+    pub fn set_allowed_methods(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MethodName>>) -> Self {
+        self.allowed_methods = input; self
     }
     /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
     /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
-    pub fn get_allowed_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MethodName>> {
+    pub fn get_allowed_methods(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MethodName>> {
         &self.allowed_methods
     }
     /// Appends an item to `allowed_headers`.
@@ -125,19 +123,18 @@ impl CorsRuleBuilder {
     /// <p>This element can contain only one wildcard character (*).</p>
     pub fn allowed_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_headers.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
     /// <p>This element can contain only one wildcard character (*).</p>
-    pub fn set_allowed_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_headers = input;
-        self
+    pub fn set_allowed_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_headers = input; self
     }
     /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back.</p>
     /// <p>This element can contain only one wildcard character (*).</p>
-    pub fn get_allowed_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_headers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_headers
     }
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
@@ -149,8 +146,7 @@ impl CorsRuleBuilder {
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
     /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
     pub fn set_max_age_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_age_seconds = input;
-        self
+        self.max_age_seconds = input; self
     }
     /// <p>The time in seconds that your browser caches the preflight response for the specified resource.</p>
     /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
@@ -165,19 +161,18 @@ impl CorsRuleBuilder {
     /// <p>This element is optional for each rule.</p>
     pub fn expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
-        v.push(input.into());
-        self.expose_headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.expose_headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>This element is optional for each rule.</p>
-    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.expose_headers = input;
-        self
+    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.expose_headers = input; self
     }
     /// <p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     /// <p>This element is optional for each rule.</p>
-    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.expose_headers
     }
     /// Consumes the builder and constructs a [`CorsRule`](crate::types::CorsRule).
@@ -185,22 +180,27 @@ impl CorsRuleBuilder {
     /// - [`allowed_origins`](crate::types::builders::CorsRuleBuilder::allowed_origins)
     /// - [`allowed_headers`](crate::types::builders::CorsRuleBuilder::allowed_headers)
     pub fn build(self) -> ::std::result::Result<crate::types::CorsRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CorsRule {
-            allowed_origins: self.allowed_origins.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_origins",
-                    "allowed_origins was not specified but it is required when building CorsRule",
-                )
-            })?,
-            allowed_methods: self.allowed_methods,
-            allowed_headers: self.allowed_headers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_headers",
-                    "allowed_headers was not specified but it is required when building CorsRule",
-                )
-            })?,
-            max_age_seconds: self.max_age_seconds.unwrap_or_default(),
-            expose_headers: self.expose_headers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CorsRule {
+                allowed_origins: self.allowed_origins
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_origins", "allowed_origins was not specified but it is required when building CorsRule")
+                    )?
+                ,
+                allowed_methods: self.allowed_methods
+                ,
+                allowed_headers: self.allowed_headers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_headers", "allowed_headers was not specified but it is required when building CorsRule")
+                    )?
+                ,
+                max_age_seconds: self.max_age_seconds
+                    .unwrap_or_default()
+                ,
+                expose_headers: self.expose_headers
+                ,
+            }
+        )
     }
 }
+

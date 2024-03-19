@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInternetGatewaysOutput {
+pub struct DescribeInternetGatewaysOutput  {
     /// <p>Information about one or more internet gateways.</p>
-    pub internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>,
+    pub internet_gateways: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGateway>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInternetGatewaysOutput {
+impl  DescribeInternetGatewaysOutput  {
     /// <p>Information about one or more internet gateways.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.internet_gateways.is_none()`.
-    pub fn internet_gateways(&self) -> &[crate::types::InternetGateway] {
-        self.internet_gateways.as_deref().unwrap_or_default()
+    pub fn internet_gateways(&self) -> & [crate::types::InternetGateway] {
+        self.internet_gateways.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInternetGatewaysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInternetGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInternetGatewaysOutput`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput).
     pub fn builder() -> crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeInternetGatewaysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysOutputBuilder {
-    pub(crate) internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>,
+    pub(crate) internet_gateways: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeInternetGatewaysOutputBuilder {
     /// <p>Information about one or more internet gateways.</p>
     pub fn internet_gateways(mut self, input: crate::types::InternetGateway) -> Self {
         let mut v = self.internet_gateways.unwrap_or_default();
-        v.push(input);
-        self.internet_gateways = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.internet_gateways = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about one or more internet gateways.</p>
-    pub fn set_internet_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>) -> Self {
-        self.internet_gateways = input;
-        self
+    pub fn set_internet_gateways(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGateway>>) -> Self {
+        self.internet_gateways = input; self
     }
     /// <p>Information about one or more internet gateways.</p>
-    pub fn get_internet_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>> {
+    pub fn get_internet_gateways(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InternetGateway>> {
         &self.internet_gateways
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeInternetGatewaysOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInternetGatewaysOutput`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput).
     pub fn build(self) -> crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput {
         crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput {
-            internet_gateways: self.internet_gateways,
-            next_token: self.next_token,
+            internet_gateways: self.internet_gateways
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

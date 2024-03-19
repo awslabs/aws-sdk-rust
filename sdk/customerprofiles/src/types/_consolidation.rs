@@ -3,15 +3,14 @@
 /// <p>The matching criteria to be used during the auto-merging process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Consolidation {
+pub struct Consolidation  {
     /// <p>A list of matching criteria.</p>
-    pub matching_attributes_list: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub matching_attributes_list: ::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>,
 }
-impl Consolidation {
+impl  Consolidation  {
     /// <p>A list of matching criteria.</p>
-    pub fn matching_attributes_list(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.matching_attributes_list.deref()
+    pub fn matching_attributes_list(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        use std::ops::Deref; self.matching_attributes_list.deref()
     }
 }
 impl Consolidation {
@@ -25,7 +24,7 @@ impl Consolidation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConsolidationBuilder {
-    pub(crate) matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) matching_attributes_list: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
 }
 impl ConsolidationBuilder {
     /// Appends an item to `matching_attributes_list`.
@@ -33,32 +32,33 @@ impl ConsolidationBuilder {
     /// To override the contents of this collection use [`set_matching_attributes_list`](Self::set_matching_attributes_list).
     ///
     /// <p>A list of matching criteria.</p>
-    pub fn matching_attributes_list(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn matching_attributes_list(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.matching_attributes_list.unwrap_or_default();
-        v.push(input);
-        self.matching_attributes_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matching_attributes_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of matching criteria.</p>
-    pub fn set_matching_attributes_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.matching_attributes_list = input;
-        self
+    pub fn set_matching_attributes_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.matching_attributes_list = input; self
     }
     /// <p>A list of matching criteria.</p>
-    pub fn get_matching_attributes_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_matching_attributes_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.matching_attributes_list
     }
     /// Consumes the builder and constructs a [`Consolidation`](crate::types::Consolidation).
     /// This method will fail if any of the following fields are not set:
     /// - [`matching_attributes_list`](crate::types::builders::ConsolidationBuilder::matching_attributes_list)
     pub fn build(self) -> ::std::result::Result<crate::types::Consolidation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Consolidation {
-            matching_attributes_list: self.matching_attributes_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "matching_attributes_list",
-                    "matching_attributes_list was not specified but it is required when building Consolidation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Consolidation {
+                matching_attributes_list: self.matching_attributes_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("matching_attributes_list", "matching_attributes_list was not specified but it is required when building Consolidation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

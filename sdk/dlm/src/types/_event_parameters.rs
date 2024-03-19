@@ -3,29 +3,30 @@
 /// <p><b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventParameters {
+pub struct EventParameters  {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     pub event_type: ::std::option::Option<crate::types::EventTypeValues>,
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub snapshot_owner: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_owner: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
     pub description_regex: ::std::option::Option<::std::string::String>,
 }
-impl EventParameters {
+impl  EventParameters  {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventTypeValues> {
+    pub fn event_type(&self) -> ::std::option::Option<& crate::types::EventTypeValues> {
         self.event_type.as_ref()
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_owner.is_none()`.
-    pub fn snapshot_owner(&self) -> &[::std::string::String] {
-        self.snapshot_owner.as_deref().unwrap_or_default()
+    pub fn snapshot_owner(&self) -> & [::std::string::String] {
+        self.snapshot_owner.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
-    pub fn description_regex(&self) -> ::std::option::Option<&str> {
+    pub fn description_regex(&self) -> ::std::option::Option<& str> {
         self.description_regex.as_deref()
     }
 }
@@ -41,7 +42,7 @@ impl EventParameters {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventParametersBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::EventTypeValues>,
-    pub(crate) snapshot_owner: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshot_owner: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description_regex: ::std::option::Option<::std::string::String>,
 }
 impl EventParametersBuilder {
@@ -53,8 +54,7 @@ impl EventParametersBuilder {
     }
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventTypeValues>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventTypeValues> {
@@ -67,17 +67,16 @@ impl EventParametersBuilder {
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
     pub fn snapshot_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_owner.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_owner = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_owner = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn set_snapshot_owner(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_owner = input;
-        self
+    pub fn set_snapshot_owner(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_owner = input; self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn get_snapshot_owner(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_owner(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_owner
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
@@ -90,8 +89,7 @@ impl EventParametersBuilder {
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
     pub fn set_description_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description_regex = input;
-        self
+        self.description_regex = input; self
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
@@ -101,9 +99,13 @@ impl EventParametersBuilder {
     /// Consumes the builder and constructs a [`EventParameters`](crate::types::EventParameters).
     pub fn build(self) -> crate::types::EventParameters {
         crate::types::EventParameters {
-            event_type: self.event_type,
-            snapshot_owner: self.snapshot_owner,
-            description_regex: self.description_regex,
+            event_type: self.event_type
+            ,
+            snapshot_owner: self.snapshot_owner
+            ,
+            description_regex: self.description_regex
+            ,
         }
     }
 }
+

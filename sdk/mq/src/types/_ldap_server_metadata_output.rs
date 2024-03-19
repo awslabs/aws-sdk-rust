@@ -3,9 +3,9 @@
 /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LdapServerMetadataOutput {
+pub struct LdapServerMetadataOutput  {
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    pub hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hosts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub role_base: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
@@ -25,23 +25,24 @@ pub struct LdapServerMetadataOutput {
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub user_search_subtree: ::std::option::Option<bool>,
 }
-impl LdapServerMetadataOutput {
+impl  LdapServerMetadataOutput  {
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
-    pub fn hosts(&self) -> &[::std::string::String] {
-        self.hosts.as_deref().unwrap_or_default()
+    pub fn hosts(&self) -> & [::std::string::String] {
+        self.hosts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn role_base(&self) -> ::std::option::Option<&str> {
+    pub fn role_base(&self) -> ::std::option::Option<& str> {
         self.role_base.as_deref()
     }
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    pub fn role_search_matching(&self) -> ::std::option::Option<&str> {
+    pub fn role_search_matching(&self) -> ::std::option::Option<& str> {
         self.role_search_matching.as_deref()
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
@@ -49,19 +50,19 @@ impl LdapServerMetadataOutput {
         self.role_search_subtree
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn service_account_username(&self) -> ::std::option::Option<&str> {
+    pub fn service_account_username(&self) -> ::std::option::Option<& str> {
         self.service_account_username.as_deref()
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_base(&self) -> ::std::option::Option<&str> {
+    pub fn user_base(&self) -> ::std::option::Option<& str> {
         self.user_base.as_deref()
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    pub fn user_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_role_name(&self) -> ::std::option::Option<& str> {
         self.user_role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_search_matching(&self) -> ::std::option::Option<&str> {
+    pub fn user_search_matching(&self) -> ::std::option::Option<& str> {
         self.user_search_matching.as_deref()
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
@@ -80,7 +81,7 @@ impl LdapServerMetadataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LdapServerMetadataOutputBuilder {
-    pub(crate) hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hosts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role_base: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_search_matching: ::std::option::Option<::std::string::String>,
@@ -99,17 +100,16 @@ impl LdapServerMetadataOutputBuilder {
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
     pub fn hosts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hosts.unwrap_or_default();
-        v.push(input.into());
-        self.hosts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hosts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hosts = input;
-        self
+    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hosts = input; self
     }
     /// <p>Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional failover server.</p>
-    pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hosts
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
@@ -120,8 +120,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn set_role_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_base = input;
-        self
+        self.role_base = input; self
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn get_role_base(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
     pub fn set_role_search_matching(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_search_matching = input;
-        self
+        self.role_search_matching = input; self
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
     pub fn get_role_search_matching(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +160,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
     pub fn set_role_search_subtree(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.role_search_subtree = input;
-        self
+        self.role_search_subtree = input; self
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
     pub fn get_role_search_subtree(&self) -> &::std::option::Option<bool> {
@@ -178,8 +174,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub fn set_service_account_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account_username = input;
-        self
+        self.service_account_username = input; self
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub fn get_service_account_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +188,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn set_user_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_base = input;
-        self
+        self.user_base = input; self
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn get_user_base(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +201,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
     pub fn set_user_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_role_name = input;
-        self
+        self.user_role_name = input; self
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
     pub fn get_user_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +215,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn set_user_search_matching(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_search_matching = input;
-        self
+        self.user_search_matching = input; self
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn get_user_search_matching(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +228,7 @@ impl LdapServerMetadataOutputBuilder {
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub fn set_user_search_subtree(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_search_subtree = input;
-        self
+        self.user_search_subtree = input; self
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub fn get_user_search_subtree(&self) -> &::std::option::Option<bool> {
@@ -246,16 +237,27 @@ impl LdapServerMetadataOutputBuilder {
     /// Consumes the builder and constructs a [`LdapServerMetadataOutput`](crate::types::LdapServerMetadataOutput).
     pub fn build(self) -> crate::types::LdapServerMetadataOutput {
         crate::types::LdapServerMetadataOutput {
-            hosts: self.hosts,
-            role_base: self.role_base,
-            role_name: self.role_name,
-            role_search_matching: self.role_search_matching,
-            role_search_subtree: self.role_search_subtree,
-            service_account_username: self.service_account_username,
-            user_base: self.user_base,
-            user_role_name: self.user_role_name,
-            user_search_matching: self.user_search_matching,
-            user_search_subtree: self.user_search_subtree,
+            hosts: self.hosts
+            ,
+            role_base: self.role_base
+            ,
+            role_name: self.role_name
+            ,
+            role_search_matching: self.role_search_matching
+            ,
+            role_search_subtree: self.role_search_subtree
+            ,
+            service_account_username: self.service_account_username
+            ,
+            user_base: self.user_base
+            ,
+            user_role_name: self.user_role_name
+            ,
+            user_search_matching: self.user_search_matching
+            ,
+            user_search_subtree: self.user_search_subtree
+            ,
         }
     }
 }
+

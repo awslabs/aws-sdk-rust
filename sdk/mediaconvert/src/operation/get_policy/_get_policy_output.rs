@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
-impl GetPolicyOutput {
+impl  GetPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::Policy> {
         self.policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn builder() -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPolicyOutputBuilder {
     }
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn build(self) -> crate::operation::get_policy::GetPolicyOutput {
         crate::operation::get_policy::GetPolicyOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

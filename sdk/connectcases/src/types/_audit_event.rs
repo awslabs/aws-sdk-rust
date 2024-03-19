@@ -3,7 +3,7 @@
 /// <p>Represents the content of a particular audit event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditEvent {
+pub struct AuditEvent  {
     /// <p>Unique identifier of a case audit history event.</p>
     pub event_id: ::std::string::String,
     /// <p>The Type of an audit history event.</p>
@@ -13,35 +13,33 @@ pub struct AuditEvent {
     /// <p>Time at which an Audit History event took place.</p>
     pub performed_time: ::aws_smithy_types::DateTime,
     /// <p>A list of Case Audit History event fields.</p>
-    pub fields: ::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>,
+    pub fields: ::std::vec::Vec::<::std::option::Option<crate::types::AuditEventField>>,
     /// <p>Information of the user which performed the audit.</p>
     pub performed_by: ::std::option::Option<crate::types::AuditEventPerformedBy>,
 }
-impl AuditEvent {
+impl  AuditEvent  {
     /// <p>Unique identifier of a case audit history event.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> & str {
+        use std::ops::Deref; self.event_id.deref()
     }
     /// <p>The Type of an audit history event.</p>
-    pub fn r#type(&self) -> &crate::types::AuditEventType {
+    pub fn r#type(&self) -> & crate::types::AuditEventType {
         &self.r#type
     }
     /// <p>The Type of the related item.</p>
-    pub fn related_item_type(&self) -> ::std::option::Option<&crate::types::RelatedItemType> {
+    pub fn related_item_type(&self) -> ::std::option::Option<& crate::types::RelatedItemType> {
         self.related_item_type.as_ref()
     }
     /// <p>Time at which an Audit History event took place.</p>
-    pub fn performed_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn performed_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.performed_time
     }
     /// <p>A list of Case Audit History event fields.</p>
-    pub fn fields(&self) -> &[::std::option::Option<crate::types::AuditEventField>] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [::std::option::Option<crate::types::AuditEventField>] {
+        use std::ops::Deref; self.fields.deref()
     }
     /// <p>Information of the user which performed the audit.</p>
-    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::AuditEventPerformedBy> {
+    pub fn performed_by(&self) -> ::std::option::Option<& crate::types::AuditEventPerformedBy> {
         self.performed_by.as_ref()
     }
 }
@@ -60,7 +58,7 @@ pub struct AuditEventBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AuditEventType>,
     pub(crate) related_item_type: ::std::option::Option<crate::types::RelatedItemType>,
     pub(crate) performed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEventField>>>,
     pub(crate) performed_by: ::std::option::Option<crate::types::AuditEventPerformedBy>,
 }
 impl AuditEventBuilder {
@@ -72,8 +70,7 @@ impl AuditEventBuilder {
     }
     /// <p>Unique identifier of a case audit history event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>Unique identifier of a case audit history event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl AuditEventBuilder {
     }
     /// <p>The Type of an audit history event.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuditEventType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The Type of an audit history event.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuditEventType> {
@@ -101,8 +97,7 @@ impl AuditEventBuilder {
     }
     /// <p>The Type of the related item.</p>
     pub fn set_related_item_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
-        self.related_item_type = input;
-        self
+        self.related_item_type = input; self
     }
     /// <p>The Type of the related item.</p>
     pub fn get_related_item_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
@@ -116,8 +111,7 @@ impl AuditEventBuilder {
     }
     /// <p>Time at which an Audit History event took place.</p>
     pub fn set_performed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.performed_time = input;
-        self
+        self.performed_time = input; self
     }
     /// <p>Time at which an Audit History event took place.</p>
     pub fn get_performed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,17 +124,16 @@ impl AuditEventBuilder {
     /// <p>A list of Case Audit History event fields.</p>
     pub fn fields(mut self, input: ::std::option::Option<crate::types::AuditEventField>) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Case Audit History event fields.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEventField>>>) -> Self {
+        self.fields = input; self
     }
     /// <p>A list of Case Audit History event fields.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEventField>>> {
         &self.fields
     }
     /// <p>Information of the user which performed the audit.</p>
@@ -150,8 +143,7 @@ impl AuditEventBuilder {
     }
     /// <p>Information of the user which performed the audit.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::AuditEventPerformedBy>) -> Self {
-        self.performed_by = input;
-        self
+        self.performed_by = input; self
     }
     /// <p>Information of the user which performed the audit.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::AuditEventPerformedBy> {
@@ -164,33 +156,34 @@ impl AuditEventBuilder {
     /// - [`performed_time`](crate::types::builders::AuditEventBuilder::performed_time)
     /// - [`fields`](crate::types::builders::AuditEventBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuditEvent {
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            related_item_type: self.related_item_type,
-            performed_time: self.performed_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "performed_time",
-                    "performed_time was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building AuditEvent",
-                )
-            })?,
-            performed_by: self.performed_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuditEvent {
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                related_item_type: self.related_item_type
+                ,
+                performed_time: self.performed_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("performed_time", "performed_time was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building AuditEvent")
+                    )?
+                ,
+                performed_by: self.performed_by
+                ,
+            }
+        )
     }
 }
+

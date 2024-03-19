@@ -3,9 +3,9 @@
 /// <p>Contains the parameters for DescribeNetworkInterfacePermissions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNetworkInterfacePermissionsInput {
+pub struct DescribeNetworkInterfacePermissionsInput  {
     /// <p>The network interface permission IDs.</p>
-    pub network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_interface_permission_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li>
@@ -19,18 +19,19 @@ pub struct DescribeNetworkInterfacePermissionsInput {
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeNetworkInterfacePermissionsInput {
+impl  DescribeNetworkInterfacePermissionsInput  {
     /// <p>The network interface permission IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_permission_ids.is_none()`.
-    pub fn network_interface_permission_ids(&self) -> &[::std::string::String] {
-        self.network_interface_permission_ids.as_deref().unwrap_or_default()
+    pub fn network_interface_permission_ids(&self) -> & [::std::string::String] {
+        self.network_interface_permission_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -45,13 +46,14 @@ impl DescribeNetworkInterfacePermissionsInput {
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -70,8 +72,8 @@ impl DescribeNetworkInterfacePermissionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsInputBuilder {
-    pub(crate) network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) network_interface_permission_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -83,17 +85,16 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <p>The network interface permission IDs.</p>
     pub fn network_interface_permission_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_permission_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_interface_permission_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.network_interface_permission_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn set_network_interface_permission_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.network_interface_permission_ids = input;
-        self
+    pub fn set_network_interface_permission_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.network_interface_permission_ids = input; self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn get_network_interface_permission_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_permission_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.network_interface_permission_ids
     }
     /// Appends an item to `filters`.
@@ -115,9 +116,9 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -132,9 +133,8 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -149,7 +149,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -159,8 +159,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,27 +172,26 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput {
-                network_interface_permission_ids: self.network_interface_permission_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                network_interface_permission_ids: self.network_interface_permission_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

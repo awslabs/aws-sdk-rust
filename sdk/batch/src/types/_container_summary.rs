@@ -3,19 +3,19 @@
 /// <p>An object that represents summary details of a container within a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerSummary {
+pub struct ContainerSummary  {
     /// <p>The exit code to return upon completion.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl ContainerSummary {
+impl  ContainerSummary  {
     /// <p>The exit code to return upon completion.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ContainerSummaryBuilder {
     }
     /// <p>The exit code to return upon completion.</p>
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.exit_code = input;
-        self
+        self.exit_code = input; self
     }
     /// <p>The exit code to return upon completion.</p>
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ContainerSummaryBuilder {
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ContainerSummaryBuilder {
     /// Consumes the builder and constructs a [`ContainerSummary`](crate::types::ContainerSummary).
     pub fn build(self) -> crate::types::ContainerSummary {
         crate::types::ContainerSummary {
-            exit_code: self.exit_code,
-            reason: self.reason,
+            exit_code: self.exit_code
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancer {
+pub struct LoadBalancer  {
     /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -17,7 +17,7 @@ pub struct LoadBalancer {
     /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The DNS name of your Lightsail load balancer.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of your load balancer. Valid values are below.</p>
@@ -26,17 +26,17 @@ pub struct LoadBalancer {
     /// <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just <code>HTTP</code>.</p>
     pub protocol: ::std::option::Option<crate::types::LoadBalancerProtocol>,
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
-    pub public_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub public_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The port where the load balancer will direct traffic to your Lightsail instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
     pub instance_port: ::std::option::Option<i32>,
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
-    pub instance_health_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthSummary>>,
+    pub instance_health_summary: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthSummary>>,
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
-    pub tls_certificate_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateSummary>>,
+    pub tls_certificate_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateSummary>>,
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
-    pub configuration_options: ::std::option::Option<::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
+    pub configuration_options: ::std::option::Option<::std::collections::HashMap::<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
     /// <p>The IP address type of the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -45,58 +45,60 @@ pub struct LoadBalancer {
     /// <p>The name of the TLS security policy for the load balancer.</p>
     pub tls_policy_name: ::std::option::Option<::std::string::String>,
 }
-impl LoadBalancer {
+impl  LoadBalancer  {
     /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The date when your load balancer was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The resource type (<code>LoadBalancer</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The DNS name of your Lightsail load balancer.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>The status of your load balancer. Valid values are below.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LoadBalancerState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LoadBalancerState> {
         self.state.as_ref()
     }
     /// <p>The protocol you have enabled for your load balancer. Valid values are below.</p>
     /// <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just <code>HTTP</code>.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::LoadBalancerProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::LoadBalancerProtocol> {
         self.protocol.as_ref()
     }
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ports.is_none()`.
-    pub fn public_ports(&self) -> &[i32] {
-        self.public_ports.as_deref().unwrap_or_default()
+    pub fn public_ports(&self) -> & [i32] {
+        self.public_ports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
-    pub fn health_check_path(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_path(&self) -> ::std::option::Option<& str> {
         self.health_check_path.as_deref()
     }
     /// <p>The port where the load balancer will direct traffic to your Lightsail instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
@@ -104,26 +106,26 @@ impl LoadBalancer {
         self.instance_port
     }
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_health_summary.is_none()`.
-    pub fn instance_health_summary(&self) -> &[crate::types::InstanceHealthSummary] {
-        self.instance_health_summary.as_deref().unwrap_or_default()
+    pub fn instance_health_summary(&self) -> & [crate::types::InstanceHealthSummary] {
+        self.instance_health_summary.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_certificate_summaries.is_none()`.
-    pub fn tls_certificate_summaries(&self) -> &[crate::types::LoadBalancerTlsCertificateSummary] {
-        self.tls_certificate_summaries.as_deref().unwrap_or_default()
+    pub fn tls_certificate_summaries(&self) -> & [crate::types::LoadBalancerTlsCertificateSummary] {
+        self.tls_certificate_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
-    pub fn configuration_options(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>> {
+    pub fn configuration_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::LoadBalancerAttributeName, ::std::string::String>> {
         self.configuration_options.as_ref()
     }
     /// <p>The IP address type of the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
@@ -131,7 +133,7 @@ impl LoadBalancer {
         self.https_redirection_enabled
     }
     /// <p>The name of the TLS security policy for the load balancer.</p>
-    pub fn tls_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn tls_policy_name(&self) -> ::std::option::Option<& str> {
         self.tls_policy_name.as_deref()
     }
 }
@@ -152,17 +154,16 @@ pub struct LoadBalancerBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::LoadBalancerState>,
     pub(crate) protocol: ::std::option::Option<crate::types::LoadBalancerProtocol>,
-    pub(crate) public_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) public_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) health_check_path: ::std::option::Option<::std::string::String>,
     pub(crate) instance_port: ::std::option::Option<i32>,
-    pub(crate) instance_health_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthSummary>>,
-    pub(crate) tls_certificate_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateSummary>>,
-    pub(crate) configuration_options:
-        ::std::option::Option<::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
+    pub(crate) instance_health_summary: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthSummary>>,
+    pub(crate) tls_certificate_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateSummary>>,
+    pub(crate) configuration_options: ::std::option::Option<::std::collections::HashMap::<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) https_redirection_enabled: ::std::option::Option<bool>,
     pub(crate) tls_policy_name: ::std::option::Option<::std::string::String>,
@@ -175,8 +176,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +189,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +202,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +215,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The date when your load balancer was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date when your load balancer was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,8 +228,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -245,8 +241,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -259,17 +254,16 @@ impl LoadBalancerBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The DNS name of your Lightsail load balancer.</p>
@@ -279,8 +273,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The DNS name of your Lightsail load balancer.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS name of your Lightsail load balancer.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +286,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The status of your load balancer. Valid values are below.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LoadBalancerState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of your load balancer. Valid values are below.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LoadBalancerState> {
@@ -309,8 +301,7 @@ impl LoadBalancerBuilder {
     /// <p>The protocol you have enabled for your load balancer. Valid values are below.</p>
     /// <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just <code>HTTP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::LoadBalancerProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol you have enabled for your load balancer. Valid values are below.</p>
     /// <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just <code>HTTP</code>.</p>
@@ -324,17 +315,16 @@ impl LoadBalancerBuilder {
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
     pub fn public_ports(mut self, input: i32) -> Self {
         let mut v = self.public_ports.unwrap_or_default();
-        v.push(input);
-        self.public_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.public_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
-    pub fn set_public_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.public_ports = input;
-        self
+    pub fn set_public_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.public_ports = input; self
     }
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
-    pub fn get_public_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_public_ports(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.public_ports
     }
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
@@ -344,8 +334,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
     pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check_path = input;
-        self
+        self.health_check_path = input; self
     }
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +347,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The port where the load balancer will direct traffic to your Lightsail instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
     }
     /// <p>The port where the load balancer will direct traffic to your Lightsail instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
@@ -372,17 +360,16 @@ impl LoadBalancerBuilder {
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
     pub fn instance_health_summary(mut self, input: crate::types::InstanceHealthSummary) -> Self {
         let mut v = self.instance_health_summary.unwrap_or_default();
-        v.push(input);
-        self.instance_health_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_health_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
-    pub fn set_instance_health_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthSummary>>) -> Self {
-        self.instance_health_summary = input;
-        self
+    pub fn set_instance_health_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthSummary>>) -> Self {
+        self.instance_health_summary = input; self
     }
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
-    pub fn get_instance_health_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthSummary>> {
+    pub fn get_instance_health_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthSummary>> {
         &self.instance_health_summary
     }
     /// Appends an item to `tls_certificate_summaries`.
@@ -392,20 +379,16 @@ impl LoadBalancerBuilder {
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
     pub fn tls_certificate_summaries(mut self, input: crate::types::LoadBalancerTlsCertificateSummary) -> Self {
         let mut v = self.tls_certificate_summaries.unwrap_or_default();
-        v.push(input);
-        self.tls_certificate_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tls_certificate_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
-    pub fn set_tls_certificate_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateSummary>>,
-    ) -> Self {
-        self.tls_certificate_summaries = input;
-        self
+    pub fn set_tls_certificate_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateSummary>>) -> Self {
+        self.tls_certificate_summaries = input; self
     }
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
-    pub fn get_tls_certificate_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateSummary>> {
+    pub fn get_tls_certificate_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateSummary>> {
         &self.tls_certificate_summaries
     }
     /// Adds a key-value pair to `configuration_options`.
@@ -415,22 +398,16 @@ impl LoadBalancerBuilder {
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
     pub fn configuration_options(mut self, k: crate::types::LoadBalancerAttributeName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration_options.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.configuration_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.configuration_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
-    pub fn set_configuration_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>>,
-    ) -> Self {
-        self.configuration_options = input;
-        self
+    pub fn set_configuration_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LoadBalancerAttributeName, ::std::string::String>>) -> Self {
+        self.configuration_options = input; self
     }
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
-    pub fn get_configuration_options(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LoadBalancerAttributeName, ::std::string::String>> {
+    pub fn get_configuration_options(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LoadBalancerAttributeName, ::std::string::String>> {
         &self.configuration_options
     }
     /// <p>The IP address type of the load balancer.</p>
@@ -442,8 +419,7 @@ impl LoadBalancerBuilder {
     /// <p>The IP address type of the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type of the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -457,8 +433,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
     pub fn set_https_redirection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.https_redirection_enabled = input;
-        self
+        self.https_redirection_enabled = input; self
     }
     /// <p>A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.</p>
     pub fn get_https_redirection_enabled(&self) -> &::std::option::Option<bool> {
@@ -471,8 +446,7 @@ impl LoadBalancerBuilder {
     }
     /// <p>The name of the TLS security policy for the load balancer.</p>
     pub fn set_tls_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tls_policy_name = input;
-        self
+        self.tls_policy_name = input; self
     }
     /// <p>The name of the TLS security policy for the load balancer.</p>
     pub fn get_tls_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -481,25 +455,45 @@ impl LoadBalancerBuilder {
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
         crate::types::LoadBalancer {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            dns_name: self.dns_name,
-            state: self.state,
-            protocol: self.protocol,
-            public_ports: self.public_ports,
-            health_check_path: self.health_check_path,
-            instance_port: self.instance_port,
-            instance_health_summary: self.instance_health_summary,
-            tls_certificate_summaries: self.tls_certificate_summaries,
-            configuration_options: self.configuration_options,
-            ip_address_type: self.ip_address_type,
-            https_redirection_enabled: self.https_redirection_enabled,
-            tls_policy_name: self.tls_policy_name,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            dns_name: self.dns_name
+            ,
+            state: self.state
+            ,
+            protocol: self.protocol
+            ,
+            public_ports: self.public_ports
+            ,
+            health_check_path: self.health_check_path
+            ,
+            instance_port: self.instance_port
+            ,
+            instance_health_summary: self.instance_health_summary
+            ,
+            tls_certificate_summaries: self.tls_certificate_summaries
+            ,
+            configuration_options: self.configuration_options
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            https_redirection_enabled: self.https_redirection_enabled
+            ,
+            tls_policy_name: self.tls_policy_name
+            ,
         }
     }
 }
+

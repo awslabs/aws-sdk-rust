@@ -3,24 +3,26 @@
 /// <p>The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. You can choose to specify which events or message types to receive notifications for. You can also choose to specify which severity levels to receive notifications for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationFilterConfig {
+pub struct NotificationFilterConfig  {
     /// <p>The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>.</p>
-    pub severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
+    pub severities: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSeverity>>,
     /// <p>The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created.</p>
-    pub message_types: ::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>>,
+    pub message_types: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationMessageType>>,
 }
-impl NotificationFilterConfig {
+impl  NotificationFilterConfig  {
     /// <p>The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severities.is_none()`.
-    pub fn severities(&self) -> &[crate::types::InsightSeverity] {
-        self.severities.as_deref().unwrap_or_default()
+    pub fn severities(&self) -> & [crate::types::InsightSeverity] {
+        self.severities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.message_types.is_none()`.
-    pub fn message_types(&self) -> &[crate::types::NotificationMessageType] {
-        self.message_types.as_deref().unwrap_or_default()
+    pub fn message_types(&self) -> & [crate::types::NotificationMessageType] {
+        self.message_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NotificationFilterConfig {
@@ -34,8 +36,8 @@ impl NotificationFilterConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationFilterConfigBuilder {
-    pub(crate) severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
-    pub(crate) message_types: ::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>>,
+    pub(crate) severities: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSeverity>>,
+    pub(crate) message_types: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationMessageType>>,
 }
 impl NotificationFilterConfigBuilder {
     /// Appends an item to `severities`.
@@ -45,17 +47,16 @@ impl NotificationFilterConfigBuilder {
     /// <p>The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>.</p>
     pub fn severities(mut self, input: crate::types::InsightSeverity) -> Self {
         let mut v = self.severities.unwrap_or_default();
-        v.push(input);
-        self.severities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.severities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>.</p>
-    pub fn set_severities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>) -> Self {
-        self.severities = input;
-        self
+    pub fn set_severities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSeverity>>) -> Self {
+        self.severities = input; self
     }
     /// <p>The severity levels that you want to receive notifications for. For example, you can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code> severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a>.</p>
-    pub fn get_severities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>> {
+    pub fn get_severities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightSeverity>> {
         &self.severities
     }
     /// Appends an item to `message_types`.
@@ -65,24 +66,26 @@ impl NotificationFilterConfigBuilder {
     /// <p>The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created.</p>
     pub fn message_types(mut self, input: crate::types::NotificationMessageType) -> Self {
         let mut v = self.message_types.unwrap_or_default();
-        v.push(input);
-        self.message_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.message_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created.</p>
-    pub fn set_message_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>>) -> Self {
-        self.message_types = input;
-        self
+    pub fn set_message_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationMessageType>>) -> Self {
+        self.message_types = input; self
     }
     /// <p>The events that you want to receive notifications for. For example, you can choose to receive notifications only when the severity level is upgraded or a new insight is created.</p>
-    pub fn get_message_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>> {
+    pub fn get_message_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationMessageType>> {
         &self.message_types
     }
     /// Consumes the builder and constructs a [`NotificationFilterConfig`](crate::types::NotificationFilterConfig).
     pub fn build(self) -> crate::types::NotificationFilterConfig {
         crate::types::NotificationFilterConfig {
-            severities: self.severities,
-            message_types: self.message_types,
+            severities: self.severities
+            ,
+            message_types: self.message_types
+            ,
         }
     }
 }
+

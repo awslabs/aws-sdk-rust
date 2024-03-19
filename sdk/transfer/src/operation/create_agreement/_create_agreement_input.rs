@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAgreementInput {
+pub struct CreateAgreementInput  {
     /// <p>A name or short description to identify the agreement.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
@@ -24,28 +24,28 @@ pub struct CreateAgreementInput {
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAgreementInput {
+impl  CreateAgreementInput  {
     /// <p>A name or short description to identify the agreement.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_profile_id(&self) -> ::std::option::Option<& str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn partner_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_profile_id(&self) -> ::std::option::Option<& str> {
         self.partner_profile_id.as_deref()
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
-    pub fn base_directory(&self) -> ::std::option::Option<&str> {
+    pub fn base_directory(&self) -> ::std::option::Option<& str> {
         self.base_directory.as_deref()
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
@@ -54,18 +54,19 @@ impl CreateAgreementInput {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
-    pub fn access_role(&self) -> ::std::option::Option<&str> {
+    pub fn access_role(&self) -> ::std::option::Option<& str> {
         self.access_role.as_deref()
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatusType> {
         self.status.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAgreementInput {
@@ -86,7 +87,7 @@ pub struct CreateAgreementInputBuilder {
     pub(crate) base_directory: ::std::option::Option<::std::string::String>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AgreementStatusType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAgreementInputBuilder {
     /// <p>A name or short description to identify the agreement.</p>
@@ -96,8 +97,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A name or short description to identify the agreement.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A name or short description to identify the agreement.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +111,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_profile_id = input;
-        self
+        self.local_profile_id = input; self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
     pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_profile_id = input;
-        self
+        self.partner_profile_id = input; self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
     pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +155,7 @@ impl CreateAgreementInputBuilder {
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_directory = input;
-        self
+        self.base_directory = input; self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
@@ -184,8 +180,7 @@ impl CreateAgreementInputBuilder {
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
     /// <p><b>For AS2 connectors</b></p>
@@ -203,8 +198,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatusType> {
@@ -217,32 +211,40 @@ impl CreateAgreementInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAgreementInput`](crate::operation::create_agreement::CreateAgreementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_agreement::CreateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_agreement::CreateAgreementInput {
-            description: self.description,
-            server_id: self.server_id,
-            local_profile_id: self.local_profile_id,
-            partner_profile_id: self.partner_profile_id,
-            base_directory: self.base_directory,
-            access_role: self.access_role,
-            status: self.status,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_agreement::CreateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_agreement::CreateAgreementInput {
+                description: self.description
+                ,
+                server_id: self.server_id
+                ,
+                local_profile_id: self.local_profile_id
+                ,
+                partner_profile_id: self.partner_profile_id
+                ,
+                base_directory: self.base_directory
+                ,
+                access_role: self.access_role
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

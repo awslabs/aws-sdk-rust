@@ -2,39 +2,41 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDocumentsInput {
+pub struct ListDocumentsInput  {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub document_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>,
+    pub document_filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentFilter>>,
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p><note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code></p>
     /// </note>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentKeyValuesFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDocumentsInput {
+impl  ListDocumentsInput  {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_filter_list.is_none()`.
-    pub fn document_filter_list(&self) -> &[crate::types::DocumentFilter] {
-        self.document_filter_list.as_deref().unwrap_or_default()
+    pub fn document_filter_list(&self) -> & [crate::types::DocumentFilter] {
+        self.document_filter_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p><note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code></p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::DocumentKeyValuesFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::DocumentKeyValuesFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +51,8 @@ impl ListDocumentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentsInputBuilder {
-    pub(crate) document_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>,
+    pub(crate) document_filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentKeyValuesFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -62,17 +64,16 @@ impl ListDocumentsInputBuilder {
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
     pub fn document_filter_list(mut self, input: crate::types::DocumentFilter) -> Self {
         let mut v = self.document_filter_list.unwrap_or_default();
-        v.push(input);
-        self.document_filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub fn set_document_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>>) -> Self {
-        self.document_filter_list = input;
-        self
+    pub fn set_document_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentFilter>>) -> Self {
+        self.document_filter_list = input; self
     }
     /// <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
-    pub fn get_document_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentFilter>> {
+    pub fn get_document_filter_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentFilter>> {
         &self.document_filter_list
     }
     /// Appends an item to `filters`.
@@ -84,21 +85,20 @@ impl ListDocumentsInputBuilder {
     /// </note>
     pub fn filters(mut self, input: crate::types::DocumentKeyValuesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p><note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code></p>
     /// </note>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentKeyValuesFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p><note>
     /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code></p>
     /// </note>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentKeyValuesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentKeyValuesFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -108,8 +108,7 @@ impl ListDocumentsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -122,22 +121,26 @@ impl ListDocumentsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDocumentsInput`](crate::operation::list_documents::ListDocumentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_documents::ListDocumentsInput {
-            document_filter_list: self.document_filter_list,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_documents::ListDocumentsInput {
+                document_filter_list: self.document_filter_list
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

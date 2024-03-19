@@ -3,7 +3,7 @@
 /// <p>This contains metadata about a restore testing plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTestingPlanForGet {
+pub struct RestoreTestingPlanForGet  {
     /// <p>The date and time that a restore testing plan was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
@@ -27,45 +27,42 @@ pub struct RestoreTestingPlanForGet {
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
     pub start_window_hours: i32,
 }
-impl RestoreTestingPlanForGet {
+impl  RestoreTestingPlanForGet  {
     /// <p>The date and time that a restore testing plan was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The last time a restore test was run with the specified restore testing plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_execution_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_execution_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_execution_time.as_ref()
     }
     /// <p>The date and time that the restore testing plan was updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The specified criteria to assign a set of resources, such as recovery point types or backup vaults.</p>
-    pub fn recovery_point_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingRecoveryPointSelection> {
+    pub fn recovery_point_selection(&self) -> ::std::option::Option<& crate::types::RestoreTestingRecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
-    pub fn restore_testing_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_arn.deref()
+    pub fn restore_testing_plan_arn(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_arn.deref()
     }
     /// <p>This is the restore testing plan name.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
-    pub fn schedule_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_expression.deref()
+    pub fn schedule_expression(&self) -> & str {
+        use std::ops::Deref; self.schedule_expression.deref()
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
-    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<& str> {
         self.schedule_expression_timezone.as_deref()
     }
     /// <p>Defaults to 24 hours.</p>
@@ -105,8 +102,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>The date and time that a restore testing plan was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a restore testing plan was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -121,8 +117,7 @@ impl RestoreTestingPlanForGetBuilder {
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -136,8 +131,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>The last time a restore test was run with the specified restore testing plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_last_execution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_execution_time = input;
-        self
+        self.last_execution_time = input; self
     }
     /// <p>The last time a restore test was run with the specified restore testing plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_last_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +144,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>The date and time that the restore testing plan was updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The date and time that the restore testing plan was updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +158,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>The specified criteria to assign a set of resources, such as recovery point types or backup vaults.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>) -> Self {
-        self.recovery_point_selection = input;
-        self
+        self.recovery_point_selection = input; self
     }
     /// <p>The specified criteria to assign a set of resources, such as recovery point types or backup vaults.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection> {
@@ -180,8 +172,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_arn = input;
-        self
+        self.restore_testing_plan_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +186,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>This is the restore testing plan name.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>This is the restore testing plan name.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +200,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +213,7 @@ impl RestoreTestingPlanForGetBuilder {
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression_timezone = input;
-        self
+        self.schedule_expression_timezone = input; self
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +228,7 @@ impl RestoreTestingPlanForGetBuilder {
     /// <p>Defaults to 24 hours.</p>
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
     pub fn set_start_window_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_window_hours = input;
-        self
+        self.start_window_hours = input; self
     }
     /// <p>Defaults to 24 hours.</p>
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
@@ -255,37 +242,43 @@ impl RestoreTestingPlanForGetBuilder {
     /// - [`restore_testing_plan_name`](crate::types::builders::RestoreTestingPlanForGetBuilder::restore_testing_plan_name)
     /// - [`schedule_expression`](crate::types::builders::RestoreTestingPlanForGetBuilder::schedule_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::RestoreTestingPlanForGet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RestoreTestingPlanForGet {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building RestoreTestingPlanForGet",
-                )
-            })?,
-            creator_request_id: self.creator_request_id,
-            last_execution_time: self.last_execution_time,
-            last_update_time: self.last_update_time,
-            recovery_point_selection: self.recovery_point_selection,
-            restore_testing_plan_arn: self.restore_testing_plan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_arn",
-                    "restore_testing_plan_arn was not specified but it is required when building RestoreTestingPlanForGet",
-                )
-            })?,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building RestoreTestingPlanForGet",
-                )
-            })?,
-            schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_expression",
-                    "schedule_expression was not specified but it is required when building RestoreTestingPlanForGet",
-                )
-            })?,
-            schedule_expression_timezone: self.schedule_expression_timezone,
-            start_window_hours: self.start_window_hours.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RestoreTestingPlanForGet {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building RestoreTestingPlanForGet")
+                    )?
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                last_execution_time: self.last_execution_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                recovery_point_selection: self.recovery_point_selection
+                ,
+                restore_testing_plan_arn: self.restore_testing_plan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_arn", "restore_testing_plan_arn was not specified but it is required when building RestoreTestingPlanForGet")
+                    )?
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building RestoreTestingPlanForGet")
+                    )?
+                ,
+                schedule_expression: self.schedule_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_expression", "schedule_expression was not specified but it is required when building RestoreTestingPlanForGet")
+                    )?
+                ,
+                schedule_expression_timezone: self.schedule_expression_timezone
+                ,
+                start_window_hours: self.start_window_hours
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

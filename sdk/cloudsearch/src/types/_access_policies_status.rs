@@ -3,20 +3,19 @@
 /// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPoliciesStatus {
+pub struct AccessPoliciesStatus  {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     pub options: ::std::string::String,
     /// <p>The status of domain configuration option.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl AccessPoliciesStatus {
+impl  AccessPoliciesStatus  {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    pub fn options(&self) -> &str {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & str {
+        use std::ops::Deref; self.options.deref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
     pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -69,14 +66,17 @@ impl AccessPoliciesStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::AccessPoliciesStatusBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessPoliciesStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessPoliciesStatus {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building AccessPoliciesStatus",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessPoliciesStatus {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building AccessPoliciesStatus")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

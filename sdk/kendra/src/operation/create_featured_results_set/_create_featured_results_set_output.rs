@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFeaturedResultsSetOutput {
+pub struct CreateFeaturedResultsSetOutput  {
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
     pub featured_results_set: ::std::option::Option<crate::types::FeaturedResultsSet>,
     _request_id: Option<String>,
 }
-impl CreateFeaturedResultsSetOutput {
+impl  CreateFeaturedResultsSetOutput  {
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
-    pub fn featured_results_set(&self) -> ::std::option::Option<&crate::types::FeaturedResultsSet> {
+    pub fn featured_results_set(&self) -> ::std::option::Option<& crate::types::FeaturedResultsSet> {
         self.featured_results_set.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFeaturedResultsSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFeaturedResultsSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateFeaturedResultsSetOutput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput).
     pub fn builder() -> crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateFeaturedResultsSetOutputBuilder {
     }
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
     pub fn set_featured_results_set(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSet>) -> Self {
-        self.featured_results_set = input;
-        self
+        self.featured_results_set = input; self
     }
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
     pub fn get_featured_results_set(&self) -> &::std::option::Option<crate::types::FeaturedResultsSet> {
         &self.featured_results_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFeaturedResultsSetOutput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput).
     pub fn build(self) -> crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput {
         crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput {
-            featured_results_set: self.featured_results_set,
+            featured_results_set: self.featured_results_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

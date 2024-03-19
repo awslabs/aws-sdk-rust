@@ -3,22 +3,23 @@
 /// <p>An edge structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeStructure {
+pub struct EdgeStructure  {
     /// <p>The number of edges that have this specific structure.</p>
     pub count: ::std::option::Option<i64>,
     /// <p>A list of edge properties present in this specific structure.</p>
-    pub edge_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub edge_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EdgeStructure {
+impl  EdgeStructure  {
     /// <p>The number of edges that have this specific structure.</p>
     pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>A list of edge properties present in this specific structure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_properties.is_none()`.
-    pub fn edge_properties(&self) -> &[::std::string::String] {
-        self.edge_properties.as_deref().unwrap_or_default()
+    pub fn edge_properties(&self) -> & [::std::string::String] {
+        self.edge_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EdgeStructure {
@@ -33,7 +34,7 @@ impl EdgeStructure {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeStructureBuilder {
     pub(crate) count: ::std::option::Option<i64>,
-    pub(crate) edge_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) edge_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EdgeStructureBuilder {
     /// <p>The number of edges that have this specific structure.</p>
@@ -43,8 +44,7 @@ impl EdgeStructureBuilder {
     }
     /// <p>The number of edges that have this specific structure.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of edges that have this specific structure.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -57,24 +57,26 @@ impl EdgeStructureBuilder {
     /// <p>A list of edge properties present in this specific structure.</p>
     pub fn edge_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_properties.unwrap_or_default();
-        v.push(input.into());
-        self.edge_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.edge_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of edge properties present in this specific structure.</p>
-    pub fn set_edge_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.edge_properties = input;
-        self
+    pub fn set_edge_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.edge_properties = input; self
     }
     /// <p>A list of edge properties present in this specific structure.</p>
-    pub fn get_edge_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_edge_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.edge_properties
     }
     /// Consumes the builder and constructs a [`EdgeStructure`](crate::types::EdgeStructure).
     pub fn build(self) -> crate::types::EdgeStructure {
         crate::types::EdgeStructure {
-            count: self.count,
-            edge_properties: self.edge_properties,
+            count: self.count
+            ,
+            edge_properties: self.edge_properties
+            ,
         }
     }
 }
+

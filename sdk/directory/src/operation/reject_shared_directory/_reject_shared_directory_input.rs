@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectSharedDirectoryInput {
+pub struct RejectSharedDirectoryInput  {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub shared_directory_id: ::std::option::Option<::std::string::String>,
 }
-impl RejectSharedDirectoryInput {
+impl  RejectSharedDirectoryInput  {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    pub fn shared_directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn shared_directory_id(&self) -> ::std::option::Option<& str> {
         self.shared_directory_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl RejectSharedDirectoryInputBuilder {
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub fn set_shared_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_directory_id = input;
-        self
+        self.shared_directory_id = input; self
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub fn get_shared_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_directory_id
     }
     /// Consumes the builder and constructs a [`RejectSharedDirectoryInput`](crate::operation::reject_shared_directory::RejectSharedDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reject_shared_directory::RejectSharedDirectoryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reject_shared_directory::RejectSharedDirectoryInput {
-            shared_directory_id: self.shared_directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_shared_directory::RejectSharedDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_shared_directory::RejectSharedDirectoryInput {
+                shared_directory_id: self.shared_directory_id
+                ,
+            }
+        )
     }
 }
+

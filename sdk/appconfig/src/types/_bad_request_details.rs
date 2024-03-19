@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum BadRequestDetails {
     /// <p>Detailed information about the bad request exception error when creating a hosted configuration version.</p>
-    InvalidConfiguration(::std::vec::Vec<crate::types::InvalidConfigurationDetail>),
+    InvalidConfiguration(::std::vec::Vec::<crate::types::InvalidConfigurationDetail>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -20,12 +20,8 @@ impl BadRequestDetails {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`InvalidConfiguration`](crate::types::BadRequestDetails::InvalidConfiguration), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_invalid_configuration(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::InvalidConfigurationDetail>, &Self> {
-        if let BadRequestDetails::InvalidConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_invalid_configuration(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::InvalidConfigurationDetail>, &Self> {
+        if let BadRequestDetails::InvalidConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InvalidConfiguration`](crate::types::BadRequestDetails::InvalidConfiguration).
     pub fn is_invalid_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl BadRequestDetails {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbpV10X {
+pub struct AbpV10X  {
     /// <p>The DevAddr value.</p>
     pub dev_addr: ::std::option::Option<::std::string::String>,
     /// <p>Session keys for ABP v1.0.x</p>
@@ -11,13 +11,13 @@ pub struct AbpV10X {
     /// <p>The FCnt init value.</p>
     pub f_cnt_start: ::std::option::Option<i32>,
 }
-impl AbpV10X {
+impl  AbpV10X  {
     /// <p>The DevAddr value.</p>
-    pub fn dev_addr(&self) -> ::std::option::Option<&str> {
+    pub fn dev_addr(&self) -> ::std::option::Option<& str> {
         self.dev_addr.as_deref()
     }
     /// <p>Session keys for ABP v1.0.x</p>
-    pub fn session_keys(&self) -> ::std::option::Option<&crate::types::SessionKeysAbpV10X> {
+    pub fn session_keys(&self) -> ::std::option::Option<& crate::types::SessionKeysAbpV10X> {
         self.session_keys.as_ref()
     }
     /// <p>The FCnt init value.</p>
@@ -48,8 +48,7 @@ impl AbpV10XBuilder {
     }
     /// <p>The DevAddr value.</p>
     pub fn set_dev_addr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dev_addr = input;
-        self
+        self.dev_addr = input; self
     }
     /// <p>The DevAddr value.</p>
     pub fn get_dev_addr(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AbpV10XBuilder {
     }
     /// <p>Session keys for ABP v1.0.x</p>
     pub fn set_session_keys(mut self, input: ::std::option::Option<crate::types::SessionKeysAbpV10X>) -> Self {
-        self.session_keys = input;
-        self
+        self.session_keys = input; self
     }
     /// <p>Session keys for ABP v1.0.x</p>
     pub fn get_session_keys(&self) -> &::std::option::Option<crate::types::SessionKeysAbpV10X> {
@@ -76,8 +74,7 @@ impl AbpV10XBuilder {
     }
     /// <p>The FCnt init value.</p>
     pub fn set_f_cnt_start(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.f_cnt_start = input;
-        self
+        self.f_cnt_start = input; self
     }
     /// <p>The FCnt init value.</p>
     pub fn get_f_cnt_start(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl AbpV10XBuilder {
     /// Consumes the builder and constructs a [`AbpV10X`](crate::types::AbpV10X).
     pub fn build(self) -> crate::types::AbpV10X {
         crate::types::AbpV10X {
-            dev_addr: self.dev_addr,
-            session_keys: self.session_keys,
-            f_cnt_start: self.f_cnt_start,
+            dev_addr: self.dev_addr
+            ,
+            session_keys: self.session_keys
+            ,
+            f_cnt_start: self.f_cnt_start
+            ,
         }
     }
 }
+

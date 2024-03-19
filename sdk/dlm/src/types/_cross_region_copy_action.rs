@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrossRegionCopyAction {
+pub struct CrossRegionCopyAction  {
     /// <p>The target Region.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings for the copied snapshot.</p>
@@ -13,17 +13,17 @@ pub struct CrossRegionCopyAction {
     /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
     pub retain_rule: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
 }
-impl CrossRegionCopyAction {
+impl  CrossRegionCopyAction  {
     /// <p>The target Region.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The encryption settings for the copied snapshot.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
-    pub fn retain_rule(&self) -> ::std::option::Option<&crate::types::CrossRegionCopyRetainRule> {
+    pub fn retain_rule(&self) -> ::std::option::Option<& crate::types::CrossRegionCopyRetainRule> {
         self.retain_rule.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl CrossRegionCopyActionBuilder {
     }
     /// <p>The target Region.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target Region.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl CrossRegionCopyActionBuilder {
     }
     /// <p>The encryption settings for the copied snapshot.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The encryption settings for the copied snapshot.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -80,8 +78,7 @@ impl CrossRegionCopyActionBuilder {
     }
     /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
     pub fn set_retain_rule(mut self, input: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>) -> Self {
-        self.retain_rule = input;
-        self
+        self.retain_rule = input; self
     }
     /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
     pub fn get_retain_rule(&self) -> &::std::option::Option<crate::types::CrossRegionCopyRetainRule> {
@@ -90,9 +87,13 @@ impl CrossRegionCopyActionBuilder {
     /// Consumes the builder and constructs a [`CrossRegionCopyAction`](crate::types::CrossRegionCopyAction).
     pub fn build(self) -> crate::types::CrossRegionCopyAction {
         crate::types::CrossRegionCopyAction {
-            target: self.target,
-            encryption_configuration: self.encryption_configuration,
-            retain_rule: self.retain_rule,
+            target: self.target
+            ,
+            encryption_configuration: self.encryption_configuration
+            ,
+            retain_rule: self.retain_rule
+            ,
         }
     }
 }
+

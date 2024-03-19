@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCommandInvocationsOutput {
+pub struct ListCommandInvocationsOutput  {
     /// <p>(Optional) A list of all invocations.</p>
-    pub command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
+    pub command_invocations: ::std::option::Option<::std::vec::Vec::<crate::types::CommandInvocation>>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCommandInvocationsOutput {
+impl  ListCommandInvocationsOutput  {
     /// <p>(Optional) A list of all invocations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_invocations.is_none()`.
-    pub fn command_invocations(&self) -> &[crate::types::CommandInvocation] {
-        self.command_invocations.as_deref().unwrap_or_default()
+    pub fn command_invocations(&self) -> & [crate::types::CommandInvocation] {
+        self.command_invocations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCommandInvocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCommandInvocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput).
     pub fn builder() -> crate::operation::list_command_invocations::builders::ListCommandInvocationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCommandInvocationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandInvocationsOutputBuilder {
-    pub(crate) command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
+    pub(crate) command_invocations: ::std::option::Option<::std::vec::Vec::<crate::types::CommandInvocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCommandInvocationsOutputBuilder {
     /// <p>(Optional) A list of all invocations.</p>
     pub fn command_invocations(mut self, input: crate::types::CommandInvocation) -> Self {
         let mut v = self.command_invocations.unwrap_or_default();
-        v.push(input);
-        self.command_invocations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.command_invocations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Optional) A list of all invocations.</p>
-    pub fn set_command_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>) -> Self {
-        self.command_invocations = input;
-        self
+    pub fn set_command_invocations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CommandInvocation>>) -> Self {
+        self.command_invocations = input; self
     }
     /// <p>(Optional) A list of all invocations.</p>
-    pub fn get_command_invocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>> {
+    pub fn get_command_invocations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CommandInvocation>> {
         &self.command_invocations
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -69,28 +69,30 @@ impl ListCommandInvocationsOutputBuilder {
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput).
     pub fn build(self) -> crate::operation::list_command_invocations::ListCommandInvocationsOutput {
         crate::operation::list_command_invocations::ListCommandInvocationsOutput {
-            command_invocations: self.command_invocations,
-            next_token: self.next_token,
+            command_invocations: self.command_invocations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

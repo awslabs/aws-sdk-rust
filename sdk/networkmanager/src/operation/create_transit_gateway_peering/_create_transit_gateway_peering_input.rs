@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayPeeringInput {
+pub struct CreateTransitGatewayPeeringInput  {
     /// <p>The ID of a core network.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway for the peering request.</p>
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateTransitGatewayPeeringInput {
+impl  CreateTransitGatewayPeeringInput  {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
-    pub fn transit_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_arn.as_deref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateTransitGatewayPeeringInput {
 pub struct CreateTransitGatewayPeeringInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTransitGatewayPeeringInputBuilder {
@@ -57,8 +58,7 @@ impl CreateTransitGatewayPeeringInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateTransitGatewayPeeringInputBuilder {
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
     pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_arn = input;
-        self
+        self.transit_gateway_arn = input; self
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
     pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl CreateTransitGatewayPeeringInputBuilder {
     /// <p>The list of key-value tags associated with the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The client token associated with the request.</p>
@@ -106,25 +104,26 @@ impl CreateTransitGatewayPeeringInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token associated with the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringInput`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput {
-            core_network_id: self.core_network_id,
-            transit_gateway_arn: self.transit_gateway_arn,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput {
+                core_network_id: self.core_network_id
+                ,
+                transit_gateway_arn: self.transit_gateway_arn
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

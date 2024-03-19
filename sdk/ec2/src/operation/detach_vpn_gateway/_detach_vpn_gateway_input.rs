@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DetachVpnGateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachVpnGatewayInput {
+pub struct DetachVpnGatewayInput  {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway.</p>
@@ -11,13 +11,13 @@ pub struct DetachVpnGatewayInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DetachVpnGatewayInput {
+impl  DetachVpnGatewayInput  {
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn vpn_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_gateway_id(&self) -> ::std::option::Option<& str> {
         self.vpn_gateway_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -49,8 +49,7 @@ impl DetachVpnGatewayInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DetachVpnGatewayInputBuilder {
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_gateway_id = input;
-        self
+        self.vpn_gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl DetachVpnGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DetachVpnGatewayInput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_vpn_gateway::DetachVpnGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_vpn_gateway::DetachVpnGatewayInput {
-            vpc_id: self.vpc_id,
-            vpn_gateway_id: self.vpn_gateway_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_vpn_gateway::DetachVpnGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_vpn_gateway::DetachVpnGatewayInput {
+                vpc_id: self.vpc_id
+                ,
+                vpn_gateway_id: self.vpn_gateway_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

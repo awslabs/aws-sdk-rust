@@ -4,40 +4,44 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomParameterValues {
+pub struct CustomParameterValues  {
     /// <p>A list of string-type parameter values.</p>
-    pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub string_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of integer-type parameter values.</p>
-    pub integer_values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub integer_values: ::std::option::Option<::std::vec::Vec::<i64>>,
     /// <p>A list of decimal-type parameter values.</p>
-    pub decimal_values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub decimal_values: ::std::option::Option<::std::vec::Vec::<f64>>,
     /// <p>A list of datetime-type parameter values.</p>
-    pub date_time_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub date_time_values: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
 }
-impl CustomParameterValues {
+impl  CustomParameterValues  {
     /// <p>A list of string-type parameter values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
-    pub fn string_values(&self) -> &[::std::string::String] {
-        self.string_values.as_deref().unwrap_or_default()
+    pub fn string_values(&self) -> & [::std::string::String] {
+        self.string_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of integer-type parameter values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_values.is_none()`.
-    pub fn integer_values(&self) -> &[i64] {
-        self.integer_values.as_deref().unwrap_or_default()
+    pub fn integer_values(&self) -> & [i64] {
+        self.integer_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of decimal-type parameter values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.decimal_values.is_none()`.
-    pub fn decimal_values(&self) -> &[f64] {
-        self.decimal_values.as_deref().unwrap_or_default()
+    pub fn decimal_values(&self) -> & [f64] {
+        self.decimal_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of datetime-type parameter values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.date_time_values.is_none()`.
-    pub fn date_time_values(&self) -> &[::aws_smithy_types::DateTime] {
-        self.date_time_values.as_deref().unwrap_or_default()
+    pub fn date_time_values(&self) -> & [::aws_smithy_types::DateTime] {
+        self.date_time_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomParameterValues {
@@ -51,10 +55,10 @@ impl CustomParameterValues {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomParameterValuesBuilder {
-    pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) integer_values: ::std::option::Option<::std::vec::Vec<i64>>,
-    pub(crate) decimal_values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) date_time_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) string_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) integer_values: ::std::option::Option<::std::vec::Vec::<i64>>,
+    pub(crate) decimal_values: ::std::option::Option<::std::vec::Vec::<f64>>,
+    pub(crate) date_time_values: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
 }
 impl CustomParameterValuesBuilder {
     /// Appends an item to `string_values`.
@@ -64,17 +68,16 @@ impl CustomParameterValuesBuilder {
     /// <p>A list of string-type parameter values.</p>
     pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
-        v.push(input.into());
-        self.string_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.string_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of string-type parameter values.</p>
-    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.string_values = input;
-        self
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.string_values = input; self
     }
     /// <p>A list of string-type parameter values.</p>
-    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.string_values
     }
     /// Appends an item to `integer_values`.
@@ -84,17 +87,16 @@ impl CustomParameterValuesBuilder {
     /// <p>A list of integer-type parameter values.</p>
     pub fn integer_values(mut self, input: i64) -> Self {
         let mut v = self.integer_values.unwrap_or_default();
-        v.push(input);
-        self.integer_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integer_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of integer-type parameter values.</p>
-    pub fn set_integer_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.integer_values = input;
-        self
+    pub fn set_integer_values(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.integer_values = input; self
     }
     /// <p>A list of integer-type parameter values.</p>
-    pub fn get_integer_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_integer_values(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.integer_values
     }
     /// Appends an item to `decimal_values`.
@@ -104,17 +106,16 @@ impl CustomParameterValuesBuilder {
     /// <p>A list of decimal-type parameter values.</p>
     pub fn decimal_values(mut self, input: f64) -> Self {
         let mut v = self.decimal_values.unwrap_or_default();
-        v.push(input);
-        self.decimal_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.decimal_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of decimal-type parameter values.</p>
-    pub fn set_decimal_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.decimal_values = input;
-        self
+    pub fn set_decimal_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.decimal_values = input; self
     }
     /// <p>A list of decimal-type parameter values.</p>
-    pub fn get_decimal_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_decimal_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.decimal_values
     }
     /// Appends an item to `date_time_values`.
@@ -124,26 +125,30 @@ impl CustomParameterValuesBuilder {
     /// <p>A list of datetime-type parameter values.</p>
     pub fn date_time_values(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.date_time_values.unwrap_or_default();
-        v.push(input);
-        self.date_time_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.date_time_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of datetime-type parameter values.</p>
-    pub fn set_date_time_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.date_time_values = input;
-        self
+    pub fn set_date_time_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.date_time_values = input; self
     }
     /// <p>A list of datetime-type parameter values.</p>
-    pub fn get_date_time_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_date_time_values(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.date_time_values
     }
     /// Consumes the builder and constructs a [`CustomParameterValues`](crate::types::CustomParameterValues).
     pub fn build(self) -> crate::types::CustomParameterValues {
         crate::types::CustomParameterValues {
-            string_values: self.string_values,
-            integer_values: self.integer_values,
-            decimal_values: self.decimal_values,
-            date_time_values: self.date_time_values,
+            string_values: self.string_values
+            ,
+            integer_values: self.integer_values
+            ,
+            decimal_values: self.decimal_values
+            ,
+            date_time_values: self.date_time_values
+            ,
         }
     }
 }
+

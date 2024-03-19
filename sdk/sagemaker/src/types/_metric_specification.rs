@@ -22,11 +22,7 @@ impl MetricSpecification {
     /// Tries to convert the enum instance into [`Customized`](crate::types::MetricSpecification::Customized), extracting the inner [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customized(&self) -> ::std::result::Result<&crate::types::CustomizedMetricSpecification, &Self> {
-        if let MetricSpecification::Customized(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MetricSpecification::Customized(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Customized`](crate::types::MetricSpecification::Customized).
     pub fn is_customized(&self) -> bool {
@@ -35,11 +31,7 @@ impl MetricSpecification {
     /// Tries to convert the enum instance into [`Predefined`](crate::types::MetricSpecification::Predefined), extracting the inner [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_predefined(&self) -> ::std::result::Result<&crate::types::PredefinedMetricSpecification, &Self> {
-        if let MetricSpecification::Predefined(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MetricSpecification::Predefined(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Predefined`](crate::types::MetricSpecification::Predefined).
     pub fn is_predefined(&self) -> bool {
@@ -50,3 +42,4 @@ impl MetricSpecification {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopStreamingSessionOutput {
+pub struct StopStreamingSessionOutput  {
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
 }
-impl StopStreamingSessionOutput {
+impl  StopStreamingSessionOutput  {
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
-    pub fn session(&self) -> ::std::option::Option<&crate::types::StreamingSession> {
+    pub fn session(&self) -> ::std::option::Option<& crate::types::StreamingSession> {
         self.session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopStreamingSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopStreamingSessionOutput {
     /// Creates a new builder-style object to manufacture [`StopStreamingSessionOutput`](crate::operation::stop_streaming_session::StopStreamingSessionOutput).
     pub fn builder() -> crate::operation::stop_streaming_session::builders::StopStreamingSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl StopStreamingSessionOutputBuilder {
     }
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn set_session(mut self, input: ::std::option::Option<crate::types::StreamingSession>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn get_session(&self) -> &::std::option::Option<crate::types::StreamingSession> {
         &self.session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopStreamingSessionOutput`](crate::operation::stop_streaming_session::StopStreamingSessionOutput).
     pub fn build(self) -> crate::operation::stop_streaming_session::StopStreamingSessionOutput {
         crate::operation::stop_streaming_session::StopStreamingSessionOutput {
-            session: self.session,
+            session: self.session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

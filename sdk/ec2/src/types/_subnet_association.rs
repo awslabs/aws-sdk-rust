@@ -3,19 +3,19 @@
 /// <p>Describes the subnet association with the transit gateway multicast domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubnetAssociation {
+pub struct SubnetAssociation  {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the subnet association.</p>
     pub state: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
 }
-impl SubnetAssociation {
+impl  SubnetAssociation  {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The state of the subnet association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulitcastDomainAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayMulitcastDomainAssociationState> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SubnetAssociationBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SubnetAssociationBuilder {
     }
     /// <p>The state of the subnet association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the subnet association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState> {
@@ -65,8 +63,11 @@ impl SubnetAssociationBuilder {
     /// Consumes the builder and constructs a [`SubnetAssociation`](crate::types::SubnetAssociation).
     pub fn build(self) -> crate::types::SubnetAssociation {
         crate::types::SubnetAssociation {
-            subnet_id: self.subnet_id,
-            state: self.state,
+            subnet_id: self.subnet_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

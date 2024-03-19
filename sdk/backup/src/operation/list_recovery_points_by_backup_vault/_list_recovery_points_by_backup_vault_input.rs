@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecoveryPointsByBackupVaultInput {
+pub struct ListRecoveryPointsByBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
@@ -60,19 +60,19 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
     pub by_parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListRecoveryPointsByBackupVaultInput {
+impl  ListRecoveryPointsByBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>This parameter will sort the list of recovery points by account ID.</p>
-    pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_account_id(&self) -> ::std::option::Option<& str> {
         self.backup_vault_account_id.as_deref()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -80,7 +80,7 @@ impl ListRecoveryPointsByBackupVaultInput {
         self.max_results
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_arn(&self) -> ::std::option::Option<& str> {
         self.by_resource_arn.as_deref()
     }
     /// <p>Returns only recovery points that match the specified resource type(s):</p>
@@ -118,23 +118,23 @@ impl ListRecoveryPointsByBackupVaultInput {
     /// <li>
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
-    pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_type(&self) -> ::std::option::Option<& str> {
         self.by_resource_type.as_deref()
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
-    pub fn by_backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.by_backup_plan_id.as_deref()
     }
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-    pub fn by_created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-    pub fn by_created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
-    pub fn by_parent_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_parent_recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.by_parent_recovery_point_arn.as_deref()
     }
 }
@@ -173,8 +173,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
@@ -189,8 +188,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>This parameter will sort the list of recovery points by account ID.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_account_id = input;
-        self
+        self.backup_vault_account_id = input; self
     }
     /// <p>This parameter will sort the list of recovery points by account ID.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +201,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +214,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -231,8 +227,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_arn = input;
-        self
+        self.by_resource_arn = input; self
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +308,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_type = input;
-        self
+        self.by_resource_type = input; self
     }
     /// <p>Returns only recovery points that match the specified resource type(s):</p>
     /// <ul>
@@ -361,8 +355,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
     pub fn set_by_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_backup_plan_id = input;
-        self
+        self.by_backup_plan_id = input; self
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
     pub fn get_by_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +368,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
     pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_before = input;
-        self
+        self.by_created_before = input; self
     }
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
     pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -389,8 +381,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
     pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_after = input;
-        self
+        self.by_created_after = input; self
     }
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
     pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -403,33 +394,38 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
     pub fn set_by_parent_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_parent_recovery_point_arn = input;
-        self
+        self.by_parent_recovery_point_arn = input; self
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
     pub fn get_by_parent_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_parent_recovery_point_arn
     }
     /// Consumes the builder and constructs a [`ListRecoveryPointsByBackupVaultInput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput {
-                backup_vault_name: self.backup_vault_name,
-                backup_vault_account_id: self.backup_vault_account_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                by_resource_arn: self.by_resource_arn,
-                by_resource_type: self.by_resource_type,
-                by_backup_plan_id: self.by_backup_plan_id,
-                by_created_before: self.by_created_before,
-                by_created_after: self.by_created_after,
-                by_parent_recovery_point_arn: self.by_parent_recovery_point_arn,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+                backup_vault_account_id: self.backup_vault_account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_resource_arn: self.by_resource_arn
+                ,
+                by_resource_type: self.by_resource_type
+                ,
+                by_backup_plan_id: self.by_backup_plan_id
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_parent_recovery_point_arn: self.by_parent_recovery_point_arn
+                ,
+            }
         )
     }
 }
+

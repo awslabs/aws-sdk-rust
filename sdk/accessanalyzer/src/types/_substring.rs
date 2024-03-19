@@ -3,13 +3,13 @@
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Substring {
+pub struct Substring  {
     /// <p>The start index of the substring, starting from 0.</p>
     pub start: i32,
     /// <p>The length of the substring.</p>
     pub length: i32,
 }
-impl Substring {
+impl  Substring  {
     /// <p>The start index of the substring, starting from 0.</p>
     pub fn start(&self) -> i32 {
         self.start
@@ -42,8 +42,7 @@ impl SubstringBuilder {
     }
     /// <p>The start index of the substring, starting from 0.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The start index of the substring, starting from 0.</p>
     pub fn get_start(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl SubstringBuilder {
     }
     /// <p>The length of the substring.</p>
     pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// <p>The length of the substring.</p>
     pub fn get_length(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl SubstringBuilder {
     /// - [`start`](crate::types::builders::SubstringBuilder::start)
     /// - [`length`](crate::types::builders::SubstringBuilder::length)
     pub fn build(self) -> ::std::result::Result<crate::types::Substring, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Substring {
-            start: self.start.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start",
-                    "start was not specified but it is required when building Substring",
-                )
-            })?,
-            length: self.length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "length",
-                    "length was not specified but it is required when building Substring",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Substring {
+                start: self.start
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start", "start was not specified but it is required when building Substring")
+                    )?
+                ,
+                length: self.length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("length", "length was not specified but it is required when building Substring")
+                    )?
+                ,
+            }
+        )
     }
 }
+

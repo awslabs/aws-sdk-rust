@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRumMetricDefinitionsInput {
+pub struct BatchGetRumMetricDefinitionsInput  {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
@@ -16,18 +16,18 @@ pub struct BatchGetRumMetricDefinitionsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetRumMetricDefinitionsInput {
+impl  BatchGetRumMetricDefinitionsInput  {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_monitor_name(&self) -> ::std::option::Option<& str> {
         self.app_monitor_name.as_deref()
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::MetricDestination> {
         self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
@@ -36,7 +36,7 @@ impl BatchGetRumMetricDefinitionsInput {
         self.max_results
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
     pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_monitor_name = input;
-        self
+        self.app_monitor_name = input; self
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
     pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
@@ -97,8 +95,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
@@ -114,8 +111,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -129,26 +125,28 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsInput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
-            app_monitor_name: self.app_monitor_name,
-            destination: self.destination,
-            destination_arn: self.destination_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
+                app_monitor_name: self.app_monitor_name
+                ,
+                destination: self.destination
+                ,
+                destination_arn: self.destination_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

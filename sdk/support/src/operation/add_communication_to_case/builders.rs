@@ -5,23 +5,20 @@ pub use crate::operation::add_communication_to_case::_add_communication_to_case_
 
 impl AddCommunicationToCaseInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_communication_to_case();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_communication_to_case();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddCommunicationToCase`.
-///
+/// 
 /// <p>Adds additional customer communication to an Amazon Web Services Support case. Use the <code>caseId</code> parameter to identify the case to which to add communication. You can list a set of email addresses to copy on the communication by using the <code>ccEmailAddresses</code> parameter. The <code>communicationBody</code> value contains the text of the communication.</p><note>
 /// <ul>
 /// <li>
@@ -33,33 +30,32 @@ impl AddCommunicationToCaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder,
+                    inner: crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-    > for AddCommunicationToCaseFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
+                    crate::operation::add_communication_to_case::AddCommunicationToCaseError,
+                > for AddCommunicationToCaseFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
+                        crate::operation::add_communication_to_case::AddCommunicationToCaseError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddCommunicationToCaseFluentBuilder {
     /// Creates a new `AddCommunicationToCase`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -68,53 +64,44 @@ impl AddCommunicationToCaseFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_communication_to_case::AddCommunicationToCase::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_communication_to_case::AddCommunicationToCase::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_communication_to_case::AddCommunicationToCaseOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_communication_to_case::AddCommunicationToCaseError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_communication_to_case::AddCommunicationToCase::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_communication_to_case::AddCommunicationToCase::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_communication_to_case::AddCommunicationToCaseOutput, crate::operation::add_communication_to_case::AddCommunicationToCaseError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
@@ -153,12 +140,12 @@ impl AddCommunicationToCaseFluentBuilder {
         self
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cc_email_addresses(input);
         self
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_cc_email_addresses()
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
@@ -176,3 +163,4 @@ impl AddCommunicationToCaseFluentBuilder {
         self.inner.get_attachment_set_id()
     }
 }
+

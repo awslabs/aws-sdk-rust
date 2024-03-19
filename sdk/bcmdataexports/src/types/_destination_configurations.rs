@@ -3,13 +3,13 @@
 /// <p>The destinations used for data exports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationConfigurations {
+pub struct DestinationConfigurations  {
     /// <p>An object that describes the destination of the data exports file.</p>
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
-impl DestinationConfigurations {
+impl  DestinationConfigurations  {
     /// <p>An object that describes the destination of the data exports file.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DestinationConfigurationsBuilder {
     }
     /// <p>An object that describes the destination of the data exports file.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>An object that describes the destination of the data exports file.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
@@ -45,7 +44,9 @@ impl DestinationConfigurationsBuilder {
     /// Consumes the builder and constructs a [`DestinationConfigurations`](crate::types::DestinationConfigurations).
     pub fn build(self) -> crate::types::DestinationConfigurations {
         crate::types::DestinationConfigurations {
-            s3_destination: self.s3_destination,
+            s3_destination: self.s3_destination
+            ,
         }
     }
 }
+

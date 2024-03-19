@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentStatusInput {
+pub struct GetDeploymentStatusInput  {
     /// The ID of the deployment.
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDeploymentStatusInput {
+impl  GetDeploymentStatusInput  {
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDeploymentStatusInputBuilder {
     }
     /// The ID of the deployment.
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// The ID of the deployment.
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetDeploymentStatusInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentStatusInput`](crate::operation::get_deployment_status::GetDeploymentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_status::GetDeploymentStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_deployment_status::GetDeploymentStatusInput {
-            deployment_id: self.deployment_id,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment_status::GetDeploymentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment_status::GetDeploymentStatusInput {
+                deployment_id: self.deployment_id
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the conditions that will keep an agreement created from this offer valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidityTerm {
+pub struct ValidityTerm  {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
@@ -13,21 +13,21 @@ pub struct ValidityTerm {
     /// <p>Defines the date when the agreement ends. The agreement ends at 23:59:59.999 UTC on the date provided. If <code>AgreementEndDate</code> isn’t provided, the agreement end date is determined by the validity of individual terms.</p>
     pub agreement_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ValidityTerm {
+impl  ValidityTerm  {
     /// <p>Category of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
-    pub fn agreement_duration(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_duration(&self) -> ::std::option::Option<& str> {
         self.agreement_duration.as_deref()
     }
     /// <p>Defines the date when agreement starts. The agreement starts at 00:00:00.000 UTC on the date provided. If <code>AgreementStartDate</code> isn’t provided, the agreement start date is determined based on agreement signature time.</p>
-    pub fn agreement_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn agreement_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.agreement_start_date.as_ref()
     }
     /// <p>Defines the date when the agreement ends. The agreement ends at 23:59:59.999 UTC on the date provided. If <code>AgreementEndDate</code> isn’t provided, the agreement end date is determined by the validity of individual terms.</p>
-    pub fn agreement_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn agreement_end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.agreement_end_date.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ValidityTermBuilder {
     }
     /// <p>Category of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ValidityTermBuilder {
     }
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
     pub fn set_agreement_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_duration = input;
-        self
+        self.agreement_duration = input; self
     }
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
     pub fn get_agreement_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ValidityTermBuilder {
     }
     /// <p>Defines the date when agreement starts. The agreement starts at 00:00:00.000 UTC on the date provided. If <code>AgreementStartDate</code> isn’t provided, the agreement start date is determined based on agreement signature time.</p>
     pub fn set_agreement_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.agreement_start_date = input;
-        self
+        self.agreement_start_date = input; self
     }
     /// <p>Defines the date when agreement starts. The agreement starts at 00:00:00.000 UTC on the date provided. If <code>AgreementStartDate</code> isn’t provided, the agreement start date is determined based on agreement signature time.</p>
     pub fn get_agreement_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl ValidityTermBuilder {
     }
     /// <p>Defines the date when the agreement ends. The agreement ends at 23:59:59.999 UTC on the date provided. If <code>AgreementEndDate</code> isn’t provided, the agreement end date is determined by the validity of individual terms.</p>
     pub fn set_agreement_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.agreement_end_date = input;
-        self
+        self.agreement_end_date = input; self
     }
     /// <p>Defines the date when the agreement ends. The agreement ends at 23:59:59.999 UTC on the date provided. If <code>AgreementEndDate</code> isn’t provided, the agreement end date is determined by the validity of individual terms.</p>
     pub fn get_agreement_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ValidityTermBuilder {
     /// Consumes the builder and constructs a [`ValidityTerm`](crate::types::ValidityTerm).
     pub fn build(self) -> crate::types::ValidityTerm {
         crate::types::ValidityTerm {
-            r#type: self.r#type,
-            agreement_duration: self.agreement_duration,
-            agreement_start_date: self.agreement_start_date,
-            agreement_end_date: self.agreement_end_date,
+            r#type: self.r#type
+            ,
+            agreement_duration: self.agreement_duration
+            ,
+            agreement_start_date: self.agreement_start_date
+            ,
+            agreement_end_date: self.agreement_end_date
+            ,
         }
     }
 }
+

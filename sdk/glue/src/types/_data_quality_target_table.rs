@@ -3,7 +3,7 @@
 /// <p>An object representing an Glue table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityTargetTable {
+pub struct DataQualityTargetTable  {
     /// <p>The name of the Glue table.</p>
     pub table_name: ::std::string::String,
     /// <p>The name of the database where the Glue table exists.</p>
@@ -11,19 +11,17 @@ pub struct DataQualityTargetTable {
     /// <p>The catalog id where the Glue table exists.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
-impl DataQualityTargetTable {
+impl  DataQualityTargetTable  {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The catalog id where the Glue table exists.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The name of the Glue table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Glue table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The catalog id where the Glue table exists.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The catalog id where the Glue table exists.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl DataQualityTargetTableBuilder {
     /// - [`table_name`](crate::types::builders::DataQualityTargetTableBuilder::table_name)
     /// - [`database_name`](crate::types::builders::DataQualityTargetTableBuilder::database_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DataQualityTargetTable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataQualityTargetTable {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DataQualityTargetTable",
-                )
-            })?,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building DataQualityTargetTable",
-                )
-            })?,
-            catalog_id: self.catalog_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataQualityTargetTable {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DataQualityTargetTable")
+                    )?
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building DataQualityTargetTable")
+                    )?
+                ,
+                catalog_id: self.catalog_id
+                ,
+            }
+        )
     }
 }
+

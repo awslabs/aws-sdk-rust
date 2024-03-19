@@ -3,7 +3,7 @@
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAttachObject {
+pub struct BatchAttachObject  {
     /// <p>The parent object reference.</p>
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The child object reference that is to be attached to the object.</p>
@@ -11,19 +11,18 @@ pub struct BatchAttachObject {
     /// <p>The name of the link.</p>
     pub link_name: ::std::string::String,
 }
-impl BatchAttachObject {
+impl  BatchAttachObject  {
     /// <p>The parent object reference.</p>
-    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The child object reference that is to be attached to the object.</p>
-    pub fn child_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn child_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.child_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> &str {
-        use std::ops::Deref;
-        self.link_name.deref()
+    pub fn link_name(&self) -> & str {
+        use std::ops::Deref; self.link_name.deref()
     }
 }
 impl BatchAttachObject {
@@ -50,8 +49,7 @@ impl BatchAttachObjectBuilder {
     }
     /// <p>The parent object reference.</p>
     pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.parent_reference = input;
-        self
+        self.parent_reference = input; self
     }
     /// <p>The parent object reference.</p>
     pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -65,8 +63,7 @@ impl BatchAttachObjectBuilder {
     }
     /// <p>The child object reference that is to be attached to the object.</p>
     pub fn set_child_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.child_reference = input;
-        self
+        self.child_reference = input; self
     }
     /// <p>The child object reference that is to be attached to the object.</p>
     pub fn get_child_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -80,8 +77,7 @@ impl BatchAttachObjectBuilder {
     }
     /// <p>The name of the link.</p>
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
     }
     /// <p>The name of the link.</p>
     pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,15 +87,19 @@ impl BatchAttachObjectBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`link_name`](crate::types::builders::BatchAttachObjectBuilder::link_name)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchAttachObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchAttachObject {
-            parent_reference: self.parent_reference,
-            child_reference: self.child_reference,
-            link_name: self.link_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "link_name",
-                    "link_name was not specified but it is required when building BatchAttachObject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchAttachObject {
+                parent_reference: self.parent_reference
+                ,
+                child_reference: self.child_reference
+                ,
+                link_name: self.link_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("link_name", "link_name was not specified but it is required when building BatchAttachObject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

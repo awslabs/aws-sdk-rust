@@ -3,21 +3,22 @@
 /// <p>Configuration options to be applied to the identity pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PushSync {
+pub struct PushSync  {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl PushSync {
+impl  PushSync  {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_arns.is_none()`.
-    pub fn application_arns(&self) -> &[::std::string::String] {
-        self.application_arns.as_deref().unwrap_or_default()
+    pub fn application_arns(&self) -> & [::std::string::String] {
+        self.application_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl PushSync {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PushSyncBuilder {
-    pub(crate) application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PushSyncBuilder {
@@ -43,17 +44,16 @@ impl PushSyncBuilder {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
     pub fn application_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_arns.unwrap_or_default();
-        v.push(input.into());
-        self.application_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn set_application_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_arns = input;
-        self
+    pub fn set_application_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_arns = input; self
     }
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn get_application_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_arns
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
@@ -63,8 +63,7 @@ impl PushSyncBuilder {
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl PushSyncBuilder {
     /// Consumes the builder and constructs a [`PushSync`](crate::types::PushSync).
     pub fn build(self) -> crate::types::PushSync {
         crate::types::PushSync {
-            application_arns: self.application_arns,
-            role_arn: self.role_arn,
+            application_arns: self.application_arns
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutResourcePolicyOutput {
+impl  PutResourcePolicyOutput  {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
-    pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> ::std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutResourcePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
     pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl PutResourcePolicyOutputBuilder {
     }
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision_id = input;
-        self
+        self.policy_revision_id = input; self
     }
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
     pub fn build(self) -> crate::operation::put_resource_policy::PutResourcePolicyOutput {
         crate::operation::put_resource_policy::PutResourcePolicyOutput {
-            policy_revision_id: self.policy_revision_id,
+            policy_revision_id: self.policy_revision_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

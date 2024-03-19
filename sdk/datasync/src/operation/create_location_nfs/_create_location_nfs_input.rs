@@ -3,7 +3,7 @@
 /// <p>CreateLocationNfsRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLocationNfsInput {
+pub struct CreateLocationNfsInput  {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
@@ -15,32 +15,33 @@ pub struct CreateLocationNfsInput {
     /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
-impl CreateLocationNfsInput {
+impl  CreateLocationNfsInput  {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
-    pub fn server_hostname(&self) -> ::std::option::Option<&str> {
+    pub fn server_hostname(&self) -> ::std::option::Option<& str> {
         self.server_hostname.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
-    pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
+    pub fn on_prem_config(&self) -> ::std::option::Option<& crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
     /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
-    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::NfsMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<& crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagListEntry] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagListEntry] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateLocationNfsInput {
@@ -58,7 +59,7 @@ pub struct CreateLocationNfsInputBuilder {
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     pub(crate) mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
 impl CreateLocationNfsInputBuilder {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
@@ -71,8 +72,7 @@ impl CreateLocationNfsInputBuilder {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
@@ -87,8 +87,7 @@ impl CreateLocationNfsInputBuilder {
     }
     /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_hostname = input;
-        self
+        self.server_hostname = input; self
     }
     /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl CreateLocationNfsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
-        self.on_prem_config = input;
-        self
+        self.on_prem_config = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
@@ -119,8 +117,7 @@ impl CreateLocationNfsInputBuilder {
     }
     /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
-        self.mount_options = input;
-        self
+        self.mount_options = input; self
     }
     /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
@@ -133,29 +130,34 @@ impl CreateLocationNfsInputBuilder {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_location_nfs::CreateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_location_nfs::CreateLocationNfsInput {
-            subdirectory: self.subdirectory,
-            server_hostname: self.server_hostname,
-            on_prem_config: self.on_prem_config,
-            mount_options: self.mount_options,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_location_nfs::CreateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_location_nfs::CreateLocationNfsInput {
+                subdirectory: self.subdirectory
+                ,
+                server_hostname: self.server_hostname
+                ,
+                on_prem_config: self.on_prem_config
+                ,
+                mount_options: self.mount_options
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

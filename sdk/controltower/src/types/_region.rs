@@ -4,13 +4,13 @@
 /// <p>The expected Regions are based on the Regions that are governed by the landing zone. In certain cases, a control is not actually enabled in the Region as expected, such as during drift, or <a href="https://docs.aws.amazon.com/controltower/latest/userguide/region-how.html#mixed-governance">mixed governance</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Region {
+pub struct Region  {
     /// <p>The Amazon Web Services Region name.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl Region {
+impl  Region  {
     /// <p>The Amazon Web Services Region name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl RegionBuilder {
     }
     /// <p>The Amazon Web Services Region name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Web Services Region name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl RegionBuilder {
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {
-        crate::types::Region { name: self.name }
+        crate::types::Region {
+            name: self.name
+            ,
+        }
     }
 }
+

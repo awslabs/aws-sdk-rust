@@ -3,7 +3,7 @@
 /// <p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <code>WorkGroup$Configuration</code>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkGroup {
+pub struct WorkGroup  {
     /// <p>The workgroup name.</p>
     pub name: ::std::string::String,
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
@@ -17,30 +17,29 @@ pub struct WorkGroup {
     /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
     pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
-impl WorkGroup {
+impl  WorkGroup  {
     /// <p>The workgroup name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkGroupState> {
         self.state.as_ref()
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::WorkGroupConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The workgroup description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time the workgroup was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
-    pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_center_application_arn(&self) -> ::std::option::Option<& str> {
         self.identity_center_application_arn.as_deref()
     }
 }
@@ -71,8 +70,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The workgroup name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The workgroup name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkGroupState> {
@@ -99,8 +96,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
@@ -113,8 +109,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The workgroup description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The workgroup description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +122,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The date and time the workgroup was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time the workgroup was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +135,7 @@ impl WorkGroupBuilder {
     }
     /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
     pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_center_application_arn = input;
-        self
+        self.identity_center_application_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
     pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,18 +145,25 @@ impl WorkGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WorkGroupBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building WorkGroup",
-                )
-            })?,
-            state: self.state,
-            configuration: self.configuration,
-            description: self.description,
-            creation_time: self.creation_time,
-            identity_center_application_arn: self.identity_center_application_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building WorkGroup")
+                    )?
+                ,
+                state: self.state
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                identity_center_application_arn: self.identity_center_application_arn
+                ,
+            }
+        )
     }
 }
+

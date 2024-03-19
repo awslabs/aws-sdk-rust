@@ -28,11 +28,7 @@ impl ImportKeyMaterial {
     /// Tries to convert the enum instance into [`KeyCryptogram`](crate::types::ImportKeyMaterial::KeyCryptogram), extracting the inner [`ImportKeyCryptogram`](crate::types::ImportKeyCryptogram).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_key_cryptogram(&self) -> ::std::result::Result<&crate::types::ImportKeyCryptogram, &Self> {
-        if let ImportKeyMaterial::KeyCryptogram(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportKeyMaterial::KeyCryptogram(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`KeyCryptogram`](crate::types::ImportKeyMaterial::KeyCryptogram).
     pub fn is_key_cryptogram(&self) -> bool {
@@ -41,11 +37,7 @@ impl ImportKeyMaterial {
     /// Tries to convert the enum instance into [`RootCertificatePublicKey`](crate::types::ImportKeyMaterial::RootCertificatePublicKey), extracting the inner [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_root_certificate_public_key(&self) -> ::std::result::Result<&crate::types::RootCertificatePublicKey, &Self> {
-        if let ImportKeyMaterial::RootCertificatePublicKey(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportKeyMaterial::RootCertificatePublicKey(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RootCertificatePublicKey`](crate::types::ImportKeyMaterial::RootCertificatePublicKey).
     pub fn is_root_certificate_public_key(&self) -> bool {
@@ -54,11 +46,7 @@ impl ImportKeyMaterial {
     /// Tries to convert the enum instance into [`Tr31KeyBlock`](crate::types::ImportKeyMaterial::Tr31KeyBlock), extracting the inner [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tr31_key_block(&self) -> ::std::result::Result<&crate::types::ImportTr31KeyBlock, &Self> {
-        if let ImportKeyMaterial::Tr31KeyBlock(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportKeyMaterial::Tr31KeyBlock(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tr31KeyBlock`](crate::types::ImportKeyMaterial::Tr31KeyBlock).
     pub fn is_tr31_key_block(&self) -> bool {
@@ -67,11 +55,7 @@ impl ImportKeyMaterial {
     /// Tries to convert the enum instance into [`Tr34KeyBlock`](crate::types::ImportKeyMaterial::Tr34KeyBlock), extracting the inner [`ImportTr34KeyBlock`](crate::types::ImportTr34KeyBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tr34_key_block(&self) -> ::std::result::Result<&crate::types::ImportTr34KeyBlock, &Self> {
-        if let ImportKeyMaterial::Tr34KeyBlock(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportKeyMaterial::Tr34KeyBlock(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tr34KeyBlock`](crate::types::ImportKeyMaterial::Tr34KeyBlock).
     pub fn is_tr34_key_block(&self) -> bool {
@@ -80,11 +64,7 @@ impl ImportKeyMaterial {
     /// Tries to convert the enum instance into [`TrustedCertificatePublicKey`](crate::types::ImportKeyMaterial::TrustedCertificatePublicKey), extracting the inner [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_trusted_certificate_public_key(&self) -> ::std::result::Result<&crate::types::TrustedCertificatePublicKey, &Self> {
-        if let ImportKeyMaterial::TrustedCertificatePublicKey(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ImportKeyMaterial::TrustedCertificatePublicKey(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TrustedCertificatePublicKey`](crate::types::ImportKeyMaterial::TrustedCertificatePublicKey).
     pub fn is_trusted_certificate_public_key(&self) -> bool {
@@ -95,3 +75,4 @@ impl ImportKeyMaterial {
         matches!(self, Self::Unknown)
     }
 }
+

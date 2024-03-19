@@ -3,7 +3,8 @@
 /// <p>The connector metadata specific to Infor Nexus.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InforNexusMetadata {}
+pub struct InforNexusMetadata  {
+}
 impl InforNexusMetadata {
     /// Creates a new builder-style object to manufacture [`InforNexusMetadata`](crate::types::InforNexusMetadata).
     pub fn builder() -> crate::types::builders::InforNexusMetadataBuilder {
@@ -14,10 +15,13 @@ impl InforNexusMetadata {
 /// A builder for [`InforNexusMetadata`](crate::types::InforNexusMetadata).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct InforNexusMetadataBuilder {}
+pub struct InforNexusMetadataBuilder {
+}
 impl InforNexusMetadataBuilder {
     /// Consumes the builder and constructs a [`InforNexusMetadata`](crate::types::InforNexusMetadata).
     pub fn build(self) -> crate::types::InforNexusMetadata {
-        crate::types::InforNexusMetadata {}
+        crate::types::InforNexusMetadata {
+        }
     }
 }
+

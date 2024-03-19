@@ -3,21 +3,21 @@
 /// <p>Information about the location of application artifacts stored in GitHub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitHubLocation {
+pub struct GitHubLocation  {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
     /// <p>Specified as account/repository.</p>
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
-impl GitHubLocation {
+impl  GitHubLocation  {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
     /// <p>Specified as account/repository.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<& str> {
         self.commit_id.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl GitHubLocationBuilder {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
     /// <p>Specified as account/repository.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.</p>
     /// <p>Specified as account/repository.</p>
@@ -60,8 +59,7 @@ impl GitHubLocationBuilder {
     }
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,11 @@ impl GitHubLocationBuilder {
     /// Consumes the builder and constructs a [`GitHubLocation`](crate::types::GitHubLocation).
     pub fn build(self) -> crate::types::GitHubLocation {
         crate::types::GitHubLocation {
-            repository: self.repository,
-            commit_id: self.commit_id,
+            repository: self.repository
+            ,
+            commit_id: self.commit_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePlaceIndexOutput {
+pub struct DescribePlaceIndexOutput  {
     /// <p>The name of the place index resource being described.</p>
     pub index_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
@@ -34,40 +34,37 @@ pub struct DescribePlaceIndexOutput {
     /// <p>The specified data storage option for requesting Places.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Tags associated with place index resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribePlaceIndexOutput {
+impl  DescribePlaceIndexOutput  {
     /// <p>The name of the place index resource being described.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
     /// <li>
     /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
-    pub fn index_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.index_arn.deref()
+    pub fn index_arn(&self) -> & str {
+        use std::ops::Deref; self.index_arn.deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
@@ -80,24 +77,23 @@ impl DescribePlaceIndexOutput {
     /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source.deref()
+    pub fn data_source(&self) -> & str {
+        use std::ops::Deref; self.data_source.deref()
     }
     /// <p>The specified data storage option for requesting Places.</p>
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p>Tags associated with place index resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePlaceIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlaceIndexOutput`](crate::operation::describe_place_index::DescribePlaceIndexOutput).
     pub fn builder() -> crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder {
@@ -117,7 +113,7 @@ pub struct DescribePlaceIndexOutputBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePlaceIndexOutputBuilder {
@@ -129,8 +125,7 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The name of the place index resource being described.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the place index resource being described.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl DescribePlaceIndexOutputBuilder {
     /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_arn = input;
-        self
+        self.index_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
@@ -172,8 +166,7 @@ impl DescribePlaceIndexOutputBuilder {
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -188,8 +181,7 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +195,7 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +209,7 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +241,7 @@ impl DescribePlaceIndexOutputBuilder {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
@@ -275,8 +264,7 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The specified data storage option for requesting Places.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// <p>The specified data storage option for requesting Places.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -289,28 +277,27 @@ impl DescribePlaceIndexOutputBuilder {
     /// <p>Tags associated with place index resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with place index resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with place index resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePlaceIndexOutput`](crate::operation::describe_place_index::DescribePlaceIndexOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder::index_name)
@@ -319,51 +306,48 @@ impl DescribePlaceIndexOutputBuilder {
     /// - [`create_time`](crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder::create_time)
     /// - [`update_time`](crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder::update_time)
     /// - [`data_source`](crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder::data_source)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_place_index::DescribePlaceIndexOutput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            index_arn: self.index_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_arn",
-                    "index_arn was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            pricing_plan: self.pricing_plan,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source",
-                    "data_source was not specified but it is required when building DescribePlaceIndexOutput",
-                )
-            })?,
-            data_source_configuration: self.data_source_configuration,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_place_index::DescribePlaceIndexOutput {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                index_arn: self.index_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_arn", "index_arn was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                data_source: self.data_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source", "data_source was not specified but it is required when building DescribePlaceIndexOutput")
+                    )?
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

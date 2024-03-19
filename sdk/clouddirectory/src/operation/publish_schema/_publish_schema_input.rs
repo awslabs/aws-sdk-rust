@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishSchemaInput {
+pub struct PublishSchemaInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     pub development_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
@@ -12,21 +12,21 @@ pub struct PublishSchemaInput {
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl PublishSchemaInput {
+impl  PublishSchemaInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
-    pub fn development_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn development_schema_arn(&self) -> ::std::option::Option<& str> {
         self.development_schema_arn.as_deref()
     }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-    pub fn minor_version(&self) -> ::std::option::Option<&str> {
+    pub fn minor_version(&self) -> ::std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PublishSchemaInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     pub fn set_development_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.development_schema_arn = input;
-        self
+        self.development_schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     pub fn get_development_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PublishSchemaInputBuilder {
     }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PublishSchemaInputBuilder {
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
     pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
     pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl PublishSchemaInputBuilder {
     }
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::publish_schema::PublishSchemaInput {
-            development_schema_arn: self.development_schema_arn,
-            version: self.version,
-            minor_version: self.minor_version,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::publish_schema::PublishSchemaInput {
+                development_schema_arn: self.development_schema_arn
+                ,
+                version: self.version
+                ,
+                minor_version: self.minor_version
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

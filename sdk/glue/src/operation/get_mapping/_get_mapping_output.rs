@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMappingOutput {
+pub struct GetMappingOutput  {
     /// <p>A list of mappings to the specified targets.</p>
-    pub mapping: ::std::vec::Vec<crate::types::MappingEntry>,
+    pub mapping: ::std::vec::Vec::<crate::types::MappingEntry>,
     _request_id: Option<String>,
 }
-impl GetMappingOutput {
+impl  GetMappingOutput  {
     /// <p>A list of mappings to the specified targets.</p>
-    pub fn mapping(&self) -> &[crate::types::MappingEntry] {
-        use std::ops::Deref;
-        self.mapping.deref()
+    pub fn mapping(&self) -> & [crate::types::MappingEntry] {
+        use std::ops::Deref; self.mapping.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMappingOutput {
     /// Creates a new builder-style object to manufacture [`GetMappingOutput`](crate::operation::get_mapping::GetMappingOutput).
     pub fn builder() -> crate::operation::get_mapping::builders::GetMappingOutputBuilder {
@@ -30,7 +29,7 @@ impl GetMappingOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMappingOutputBuilder {
-    pub(crate) mapping: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
+    pub(crate) mapping: ::std::option::Option<::std::vec::Vec::<crate::types::MappingEntry>>,
     _request_id: Option<String>,
 }
 impl GetMappingOutputBuilder {
@@ -41,40 +40,41 @@ impl GetMappingOutputBuilder {
     /// <p>A list of mappings to the specified targets.</p>
     pub fn mapping(mut self, input: crate::types::MappingEntry) -> Self {
         let mut v = self.mapping.unwrap_or_default();
-        v.push(input);
-        self.mapping = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapping = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of mappings to the specified targets.</p>
-    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>) -> Self {
-        self.mapping = input;
-        self
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MappingEntry>>) -> Self {
+        self.mapping = input; self
     }
     /// <p>A list of mappings to the specified targets.</p>
-    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MappingEntry>> {
         &self.mapping
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMappingOutput`](crate::operation::get_mapping::GetMappingOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`mapping`](crate::operation::get_mapping::builders::GetMappingOutputBuilder::mapping)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mapping::GetMappingOutput {
-            mapping: self.mapping.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mapping",
-                    "mapping was not specified but it is required when building GetMappingOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_mapping::GetMappingOutput {
+                mapping: self.mapping
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mapping", "mapping was not specified but it is required when building GetMappingOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

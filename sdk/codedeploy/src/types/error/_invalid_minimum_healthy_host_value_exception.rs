@@ -3,22 +3,20 @@
 /// <p>The minimum healthy instance value was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidMinimumHealthyHostValueException {
+pub struct InvalidMinimumHealthyHostValueException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidMinimumHealthyHostValueException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidMinimumHealthyHostValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidMinimumHealthyHostValueException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidMinimumH
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidMinimumHealthyHostValueException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidMinimumHealthyHostValueException {
     /// Creates a new builder-style object to manufacture [`InvalidMinimumHealthyHostValueException`](crate::types::error::InvalidMinimumHealthyHostValueException).
@@ -59,29 +55,30 @@ impl InvalidMinimumHealthyHostValueExceptionBuilder {
     }
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidMinimumHealthyHostValueException`](crate::types::error::InvalidMinimumHealthyHostValueException).
     pub fn build(self) -> crate::types::error::InvalidMinimumHealthyHostValueException {
         crate::types::error::InvalidMinimumHealthyHostValueException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

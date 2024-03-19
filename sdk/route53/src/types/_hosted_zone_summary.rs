@@ -3,7 +3,7 @@
 /// <p>In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HostedZoneSummary {
+pub struct HostedZoneSummary  {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
     pub hosted_zone_id: ::std::string::String,
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
@@ -11,19 +11,17 @@ pub struct HostedZoneSummary {
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
     pub owner: ::std::option::Option<crate::types::HostedZoneOwner>,
 }
-impl HostedZoneSummary {
+impl  HostedZoneSummary  {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
-    pub fn hosted_zone_id(&self) -> &str {
-        use std::ops::Deref;
-        self.hosted_zone_id.deref()
+    pub fn hosted_zone_id(&self) -> & str {
+        use std::ops::Deref; self.hosted_zone_id.deref()
     }
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::HostedZoneOwner> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::HostedZoneOwner> {
         self.owner.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl HostedZoneSummaryBuilder {
     }
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl HostedZoneSummaryBuilder {
     }
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl HostedZoneSummaryBuilder {
     }
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::HostedZoneOwner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::HostedZoneOwner> {
@@ -93,20 +88,22 @@ impl HostedZoneSummaryBuilder {
     /// - [`hosted_zone_id`](crate::types::builders::HostedZoneSummaryBuilder::hosted_zone_id)
     /// - [`name`](crate::types::builders::HostedZoneSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HostedZoneSummary {
-            hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hosted_zone_id",
-                    "hosted_zone_id was not specified but it is required when building HostedZoneSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building HostedZoneSummary",
-                )
-            })?,
-            owner: self.owner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HostedZoneSummary {
+                hosted_zone_id: self.hosted_zone_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hosted_zone_id", "hosted_zone_id was not specified but it is required when building HostedZoneSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building HostedZoneSummary")
+                    )?
+                ,
+                owner: self.owner
+                ,
+            }
+        )
     }
 }
+

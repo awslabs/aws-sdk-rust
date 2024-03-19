@@ -3,15 +3,14 @@
 /// <p>The source template of the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSourceTemplate {
+pub struct TemplateSourceTemplate  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: ::std::string::String,
 }
-impl TemplateSourceTemplate {
+impl  TemplateSourceTemplate  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl TemplateSourceTemplate {
@@ -36,8 +35,7 @@ impl TemplateSourceTemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TemplateSourceTemplateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::TemplateSourceTemplateBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateSourceTemplate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TemplateSourceTemplate {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building TemplateSourceTemplate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TemplateSourceTemplate {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building TemplateSourceTemplate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The description of the worker configuration revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct WorkerConfigurationRevisionDescription {
+pub struct WorkerConfigurationRevisionDescription  {
     /// <p>The time that the worker configuration was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration revision.</p>
@@ -13,17 +13,17 @@ pub struct WorkerConfigurationRevisionDescription {
     /// <p>The description of a revision of the worker configuration.</p>
     pub revision: i64,
 }
-impl WorkerConfigurationRevisionDescription {
+impl  WorkerConfigurationRevisionDescription  {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the worker configuration revision.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> ::std::option::Option<&str> {
+    pub fn properties_file_content(&self) -> ::std::option::Option<& str> {
         self.properties_file_content.as_deref()
     }
     /// <p>The description of a revision of the worker configuration.</p>
@@ -31,7 +31,7 @@ impl WorkerConfigurationRevisionDescription {
         self.revision
     }
 }
-impl ::std::fmt::Debug for WorkerConfigurationRevisionDescription {
+impl  ::std::fmt::Debug for WorkerConfigurationRevisionDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescription");
         formatter.field("creation_time", &self.creation_time);
@@ -65,8 +65,7 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
     }
     /// <p>The time that the worker configuration was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the worker configuration was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +78,7 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
     }
     /// <p>The description of the worker configuration revision.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the worker configuration revision.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
     pub fn set_properties_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties_file_content = input;
-        self
+        self.properties_file_content = input; self
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
     pub fn get_properties_file_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
     }
     /// <p>The description of a revision of the worker configuration.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The description of a revision of the worker configuration.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i64> {
@@ -117,10 +113,15 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
     /// Consumes the builder and constructs a [`WorkerConfigurationRevisionDescription`](crate::types::WorkerConfigurationRevisionDescription).
     pub fn build(self) -> crate::types::WorkerConfigurationRevisionDescription {
         crate::types::WorkerConfigurationRevisionDescription {
-            creation_time: self.creation_time,
-            description: self.description,
-            properties_file_content: self.properties_file_content,
-            revision: self.revision.unwrap_or_default(),
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            properties_file_content: self.properties_file_content
+            ,
+            revision: self.revision
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -134,3 +135,4 @@ impl ::std::fmt::Debug for WorkerConfigurationRevisionDescriptionBuilder {
         formatter.finish()
     }
 }
+

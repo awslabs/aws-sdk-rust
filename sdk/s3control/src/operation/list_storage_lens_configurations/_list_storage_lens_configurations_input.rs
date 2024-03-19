@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStorageLensConfigurationsInput {
+pub struct ListStorageLensConfigurationsInput  {
     /// <p>The account ID of the requester.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListStorageLensConfigurationsInput {
+impl  ListStorageLensConfigurationsInput  {
     /// <p>The account ID of the requester.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A pagination token to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListStorageLensConfigurationsInputBuilder {
     }
     /// <p>The account ID of the requester.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the requester.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ListStorageLensConfigurationsInputBuilder {
     }
     /// <p>A pagination token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationsInput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput {
-            account_id: self.account_id,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsInput {
+                account_id: self.account_id
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -4,19 +4,19 @@
 /// <p>You can assign up to 30 dimensions to a metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimension {
+pub struct Dimension  {
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not supported as part of dimension names.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Dimension {
+impl  Dimension  {
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not supported as part of dimension names.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DimensionBuilder {
     }
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not supported as part of dimension names.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not supported as part of dimension names.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +57,7 @@ impl DimensionBuilder {
     }
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,11 @@ impl DimensionBuilder {
     /// Consumes the builder and constructs a [`Dimension`](crate::types::Dimension).
     pub fn build(self) -> crate::types::Dimension {
         crate::types::Dimension {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

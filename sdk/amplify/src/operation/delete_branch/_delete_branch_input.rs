@@ -3,19 +3,19 @@
 /// <p>The request structure for the delete branch request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBranchInput {
+pub struct DeleteBranchInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBranchInput {
+impl  DeleteBranchInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the branch.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteBranchInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteBranchInputBuilder {
     }
     /// <p>The name of the branch.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_branch::DeleteBranchInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_branch::DeleteBranchInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
+

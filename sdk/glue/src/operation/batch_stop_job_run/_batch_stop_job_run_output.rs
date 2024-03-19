@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStopJobRunOutput {
+pub struct BatchStopJobRunOutput  {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
+    pub successful_submissions: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunError>>,
     _request_id: Option<String>,
 }
-impl BatchStopJobRunOutput {
+impl  BatchStopJobRunOutput  {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_submissions.is_none()`.
-    pub fn successful_submissions(&self) -> &[crate::types::BatchStopJobRunSuccessfulSubmission] {
-        self.successful_submissions.as_deref().unwrap_or_default()
+    pub fn successful_submissions(&self) -> & [crate::types::BatchStopJobRunSuccessfulSubmission] {
+        self.successful_submissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::BatchStopJobRunError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::BatchStopJobRunError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchStopJobRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchStopJobRunOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput).
     pub fn builder() -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchStopJobRunOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopJobRunOutputBuilder {
-    pub(crate) successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
+    pub(crate) successful_submissions: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunSuccessfulSubmission>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunError>>,
     _request_id: Option<String>,
 }
 impl BatchStopJobRunOutputBuilder {
@@ -51,20 +53,16 @@ impl BatchStopJobRunOutputBuilder {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     pub fn successful_submissions(mut self, input: crate::types::BatchStopJobRunSuccessfulSubmission) -> Self {
         let mut v = self.successful_submissions.unwrap_or_default();
-        v.push(input);
-        self.successful_submissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful_submissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn set_successful_submissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
-    ) -> Self {
-        self.successful_submissions = input;
-        self
+    pub fn set_successful_submissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunSuccessfulSubmission>>) -> Self {
+        self.successful_submissions = input; self
     }
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn get_successful_submissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>> {
+    pub fn get_successful_submissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunSuccessfulSubmission>> {
         &self.successful_submissions
     }
     /// Appends an item to `errors`.
@@ -74,34 +72,36 @@ impl BatchStopJobRunOutputBuilder {
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     pub fn errors(mut self, input: crate::types::BatchStopJobRunError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchStopJobRunError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput).
     pub fn build(self) -> crate::operation::batch_stop_job_run::BatchStopJobRunOutput {
         crate::operation::batch_stop_job_run::BatchStopJobRunOutput {
-            successful_submissions: self.successful_submissions,
-            errors: self.errors,
+            successful_submissions: self.successful_submissions
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAppInstanceBotInput {
+pub struct CreateAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's name.</p>
@@ -12,39 +12,40 @@ pub struct CreateAppInstanceBotInput {
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
     pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
-impl CreateAppInstanceBotInput {
+impl  CreateAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::Configuration> {
         self.configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateAppInstanceBotInput {
+impl  ::std::fmt::Debug for CreateAppInstanceBotInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceBotInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -71,7 +72,7 @@ pub struct CreateAppInstanceBotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) configuration: ::std::option::Option<crate::types::Configuration>,
 }
 impl CreateAppInstanceBotInputBuilder {
@@ -83,8 +84,7 @@ impl CreateAppInstanceBotInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +97,7 @@ impl CreateAppInstanceBotInputBuilder {
     }
     /// <p>The user's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The user's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl CreateAppInstanceBotInputBuilder {
     }
     /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl CreateAppInstanceBotInputBuilder {
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,17 +137,16 @@ impl CreateAppInstanceBotInputBuilder {
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
@@ -161,26 +157,30 @@ impl CreateAppInstanceBotInputBuilder {
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceBotInput`](crate::operation::create_app_instance_bot::CreateAppInstanceBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_app_instance_bot::CreateAppInstanceBotInput {
-            app_instance_arn: self.app_instance_arn,
-            name: self.name,
-            metadata: self.metadata,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotInput {
+                app_instance_arn: self.app_instance_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceBotInputBuilder {
@@ -195,3 +195,4 @@ impl ::std::fmt::Debug for CreateAppInstanceBotInputBuilder {
         formatter.finish()
     }
 }
+

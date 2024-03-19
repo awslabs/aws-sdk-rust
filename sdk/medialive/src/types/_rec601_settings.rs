@@ -3,7 +3,8 @@
 /// Rec601 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rec601Settings {}
+pub struct Rec601Settings  {
+}
 impl Rec601Settings {
     /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::types::Rec601Settings).
     pub fn builder() -> crate::types::builders::Rec601SettingsBuilder {
@@ -14,10 +15,13 @@ impl Rec601Settings {
 /// A builder for [`Rec601Settings`](crate::types::Rec601Settings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct Rec601SettingsBuilder {}
+pub struct Rec601SettingsBuilder {
+}
 impl Rec601SettingsBuilder {
     /// Consumes the builder and constructs a [`Rec601Settings`](crate::types::Rec601Settings).
     pub fn build(self) -> crate::types::Rec601Settings {
-        crate::types::Rec601Settings {}
+        crate::types::Rec601Settings {
+        }
     }
 }
+

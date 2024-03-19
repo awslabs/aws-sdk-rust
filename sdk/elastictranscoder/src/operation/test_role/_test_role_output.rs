@@ -4,30 +4,31 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRoleOutput {
+pub struct TestRoleOutput  {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     pub success: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl TestRoleOutput {
+impl  TestRoleOutput  {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn success(&self) -> ::std::option::Option<&str> {
+    pub fn success(&self) -> ::std::option::Option<& str> {
         self.success.as_deref()
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[::std::string::String] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [::std::string::String] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TestRoleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestRoleOutput {
     /// Creates a new builder-style object to manufacture [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
     pub fn builder() -> crate::operation::test_role::builders::TestRoleOutputBuilder {
@@ -40,7 +41,7 @@ impl TestRoleOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRoleOutputBuilder {
     pub(crate) success: ::std::option::Option<::std::string::String>,
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestRoleOutputBuilder {
@@ -51,8 +52,7 @@ impl TestRoleOutputBuilder {
     }
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     pub fn set_success(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     pub fn get_success(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,34 +65,36 @@ impl TestRoleOutputBuilder {
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     pub fn messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input.into());
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.messages = input; self
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
     pub fn build(self) -> crate::operation::test_role::TestRoleOutput {
         crate::operation::test_role::TestRoleOutput {
-            success: self.success,
-            messages: self.messages,
+            success: self.success
+            ,
+            messages: self.messages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

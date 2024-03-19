@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppInstanceAdminOutput {
+pub struct DeleteAppInstanceAdminOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteAppInstanceAdminOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
     pub fn builder() -> crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteAppInstanceAdminOutputBuilder {
 }
 impl DeleteAppInstanceAdminOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
     pub fn build(self) -> crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput {
         crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput {
@@ -40,3 +40,4 @@ impl DeleteAppInstanceAdminOutputBuilder {
         }
     }
 }
+

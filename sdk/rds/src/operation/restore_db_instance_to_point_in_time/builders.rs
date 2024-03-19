@@ -5,23 +5,20 @@ pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_inst
 
 impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_db_instance_to_point_in_time();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_db_instance_to_point_in_time();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreDBInstanceToPointInTime`.
-///
+/// 
 /// <p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code> property.</p>
 /// <p>The target database is created with most of the original configuration, but in a system-selected Availability Zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p><note>
 /// <p>This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
@@ -29,33 +26,32 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBInstanceToPointInTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeInputBuilder,
+                    inner: crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
-    > for RestoreDBInstanceToPointInTimeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
-            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
+                    crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
+                > for RestoreDBInstanceToPointInTimeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
+                        crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// Creates a new `RestoreDBInstanceToPointInTime`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTime::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTime::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
-        crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTime::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTime::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput, crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the source DB instance from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -710,12 +697,12 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The storage type to associate with the DB instance.</p>
@@ -799,13 +786,13 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>The Active Directory directory ID to restore the DB instance in. Create the domain before running this command. Currently, you can create only the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
@@ -969,7 +956,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
-    pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domain_dns_ips(input);
         self
     }
@@ -980,7 +967,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
-    pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_domain_dns_ips()
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
@@ -1015,13 +1002,13 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// Appends an item to `ProcessorFeatures`.
@@ -1036,13 +1023,13 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>) -> Self {
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>>) -> Self {
         self.inner = self.inner.set_processor_features(input);
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>> {
         self.inner.get_processor_features()
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
@@ -1384,3 +1371,4 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
         self.inner.get_dedicated_log_volume()
     }
 }
+

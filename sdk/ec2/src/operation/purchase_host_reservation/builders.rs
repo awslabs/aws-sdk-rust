@@ -5,54 +5,50 @@ pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_
 
 impl PurchaseHostReservationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.purchase_host_reservation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.purchase_host_reservation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PurchaseHostReservation`.
-///
+/// 
 /// <p>Purchase a reservation with configurations that match those of your Dedicated Host. You must have active Dedicated Hosts in your account before you purchase a reservation. This action results in the specified reservation being purchased and charged to your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseHostReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
+                    inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-    > for PurchaseHostReservationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+                    crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+                > for PurchaseHostReservationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+                        crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PurchaseHostReservationFluentBuilder {
     /// Creates a new `PurchaseHostReservation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PurchaseHostReservationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::purchase_host_reservation::PurchaseHostReservation::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::purchase_host_reservation::PurchaseHostReservation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
-        crate::operation::purchase_host_reservation::PurchaseHostReservationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::purchase_host_reservation::PurchaseHostReservationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::purchase_host_reservation::PurchaseHostReservation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::purchase_host_reservation::PurchaseHostReservation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::purchase_host_reservation::PurchaseHostReservationOutput, crate::operation::purchase_host_reservation::PurchaseHostReservationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -146,12 +133,12 @@ impl PurchaseHostReservationFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_id_set(input);
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_host_id_set()
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
@@ -192,12 +179,13 @@ impl PurchaseHostReservationFluentBuilder {
         self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }
+

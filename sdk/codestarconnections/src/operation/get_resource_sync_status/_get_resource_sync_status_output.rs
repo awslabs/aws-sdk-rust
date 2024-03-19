@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceSyncStatusOutput {
+pub struct GetResourceSyncStatusOutput  {
     /// <p>The desired state of the Amazon Web Services resource for the sync status with the Git repository.</p>
     pub desired_state: ::std::option::Option<crate::types::Revision>,
     /// <p>The latest successful sync for the sync status with the Git repository.</p>
@@ -11,25 +11,25 @@ pub struct GetResourceSyncStatusOutput {
     pub latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     _request_id: Option<String>,
 }
-impl GetResourceSyncStatusOutput {
+impl  GetResourceSyncStatusOutput  {
     /// <p>The desired state of the Amazon Web Services resource for the sync status with the Git repository.</p>
-    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::Revision> {
+    pub fn desired_state(&self) -> ::std::option::Option<& crate::types::Revision> {
         self.desired_state.as_ref()
     }
     /// <p>The latest successful sync for the sync status with the Git repository.</p>
-    pub fn latest_successful_sync(&self) -> ::std::option::Option<&crate::types::ResourceSyncAttempt> {
+    pub fn latest_successful_sync(&self) -> ::std::option::Option<& crate::types::ResourceSyncAttempt> {
         self.latest_successful_sync.as_ref()
     }
     /// <p>The latest sync for the sync status with the Git repository, whether successful or not.</p>
-    pub fn latest_sync(&self) -> ::std::option::Option<&crate::types::ResourceSyncAttempt> {
+    pub fn latest_sync(&self) -> ::std::option::Option<& crate::types::ResourceSyncAttempt> {
         self.latest_sync.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourceSyncStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResourceSyncStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceSyncStatusOutput`](crate::operation::get_resource_sync_status::GetResourceSyncStatusOutput).
     pub fn builder() -> crate::operation::get_resource_sync_status::builders::GetResourceSyncStatusOutputBuilder {
@@ -54,8 +54,7 @@ impl GetResourceSyncStatusOutputBuilder {
     }
     /// <p>The desired state of the Amazon Web Services resource for the sync status with the Git repository.</p>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
-        self.desired_state = input;
-        self
+        self.desired_state = input; self
     }
     /// <p>The desired state of the Amazon Web Services resource for the sync status with the Git repository.</p>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::Revision> {
@@ -68,8 +67,7 @@ impl GetResourceSyncStatusOutputBuilder {
     }
     /// <p>The latest successful sync for the sync status with the Git repository.</p>
     pub fn set_latest_successful_sync(mut self, input: ::std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
-        self.latest_successful_sync = input;
-        self
+        self.latest_successful_sync = input; self
     }
     /// <p>The latest successful sync for the sync status with the Git repository.</p>
     pub fn get_latest_successful_sync(&self) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
@@ -83,29 +81,32 @@ impl GetResourceSyncStatusOutputBuilder {
     }
     /// <p>The latest sync for the sync status with the Git repository, whether successful or not.</p>
     pub fn set_latest_sync(mut self, input: ::std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
-        self.latest_sync = input;
-        self
+        self.latest_sync = input; self
     }
     /// <p>The latest sync for the sync status with the Git repository, whether successful or not.</p>
     pub fn get_latest_sync(&self) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
         &self.latest_sync
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResourceSyncStatusOutput`](crate::operation::get_resource_sync_status::GetResourceSyncStatusOutput).
     pub fn build(self) -> crate::operation::get_resource_sync_status::GetResourceSyncStatusOutput {
         crate::operation::get_resource_sync_status::GetResourceSyncStatusOutput {
-            desired_state: self.desired_state,
-            latest_successful_sync: self.latest_successful_sync,
-            latest_sync: self.latest_sync,
+            desired_state: self.desired_state
+            ,
+            latest_successful_sync: self.latest_successful_sync
+            ,
+            latest_sync: self.latest_sync
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

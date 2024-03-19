@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRelationalDatabaseParametersInput {
+pub struct UpdateRelationalDatabaseParametersInput  {
     /// <p>The name of your database for which to update parameters.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The database parameters to update.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseParameter>>,
 }
-impl UpdateRelationalDatabaseParametersInput {
+impl  UpdateRelationalDatabaseParametersInput  {
     /// <p>The name of your database for which to update parameters.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The database parameters to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::RelationalDatabaseParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::RelationalDatabaseParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRelationalDatabaseParametersInput {
@@ -32,7 +33,7 @@ impl UpdateRelationalDatabaseParametersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseParametersInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseParameter>>,
 }
 impl UpdateRelationalDatabaseParametersInputBuilder {
     /// <p>The name of your database for which to update parameters.</p>
@@ -43,8 +44,7 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
     }
     /// <p>The name of your database for which to update parameters.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database for which to update parameters.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
     /// <p>The database parameters to update.</p>
     pub fn parameters(mut self, input: crate::types::RelationalDatabaseParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The database parameters to update.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The database parameters to update.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput {
-                relational_database_name: self.relational_database_name,
-                parameters: self.parameters,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                parameters: self.parameters
+                ,
+            }
         )
     }
 }
+

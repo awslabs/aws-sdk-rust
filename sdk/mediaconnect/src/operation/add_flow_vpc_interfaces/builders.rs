@@ -5,54 +5,50 @@ pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_inpu
 
 impl AddFlowVpcInterfacesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_flow_vpc_interfaces();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_flow_vpc_interfaces();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddFlowVpcInterfaces`.
-///
+/// 
 /// Adds VPC interfaces to flow
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder,
+                    inner: crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-    > for AddFlowVpcInterfacesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
+                    crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
+                > for AddFlowVpcInterfacesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
+                        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddFlowVpcInterfacesFluentBuilder {
     /// Creates a new `AddFlowVpcInterfaces`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl AddFlowVpcInterfacesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput, crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// The flow that you want to mutate.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -132,12 +119,13 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateComponentVersionInput {
+pub struct CreateComponentVersionInput  {
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub inline_recipe: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -10,27 +10,27 @@ pub struct CreateComponentVersionInput {
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionRecipeSource>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateComponentVersionInput {
+impl  CreateComponentVersionInput  {
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-    pub fn inline_recipe(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn inline_recipe(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.inline_recipe.as_ref()
     }
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
-    pub fn lambda_function(&self) -> ::std::option::Option<&crate::types::LambdaFunctionRecipeSource> {
+    pub fn lambda_function(&self) -> ::std::option::Option<& crate::types::LambdaFunctionRecipeSource> {
         self.lambda_function.as_ref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -47,7 +47,7 @@ impl CreateComponentVersionInput {
 pub struct CreateComponentVersionInputBuilder {
     pub(crate) inline_recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) lambda_function: ::std::option::Option<crate::types::LambdaFunctionRecipeSource>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateComponentVersionInputBuilder {
@@ -60,8 +60,7 @@ impl CreateComponentVersionInputBuilder {
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub fn set_inline_recipe(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.inline_recipe = input;
-        self
+        self.inline_recipe = input; self
     }
     /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
@@ -77,8 +76,7 @@ impl CreateComponentVersionInputBuilder {
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
     pub fn set_lambda_function(mut self, input: ::std::option::Option<crate::types::LambdaFunctionRecipeSource>) -> Self {
-        self.lambda_function = input;
-        self
+        self.lambda_function = input; self
     }
     /// <p>The parameters to create a component from a Lambda function.</p>
     /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
@@ -92,17 +90,16 @@ impl CreateComponentVersionInputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
@@ -112,25 +109,26 @@ impl CreateComponentVersionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateComponentVersionInput`](crate::operation::create_component_version::CreateComponentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_component_version::CreateComponentVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_component_version::CreateComponentVersionInput {
-            inline_recipe: self.inline_recipe,
-            lambda_function: self.lambda_function,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_component_version::CreateComponentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_component_version::CreateComponentVersionInput {
+                inline_recipe: self.inline_recipe
+                ,
+                lambda_function: self.lambda_function
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

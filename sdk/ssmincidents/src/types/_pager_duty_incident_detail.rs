@@ -3,7 +3,7 @@
 /// <p>Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PagerDutyIncidentDetail {
+pub struct PagerDutyIncidentDetail  {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
     pub id: ::std::string::String,
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
@@ -11,18 +11,17 @@ pub struct PagerDutyIncidentDetail {
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
-impl PagerDutyIncidentDetail {
+impl  PagerDutyIncidentDetail  {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     pub fn auto_resolve(&self) -> ::std::option::Option<bool> {
         self.auto_resolve
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl PagerDutyIncidentDetailBuilder {
     }
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl PagerDutyIncidentDetailBuilder {
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     pub fn set_auto_resolve(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_resolve = input;
-        self
+        self.auto_resolve = input; self
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     pub fn get_auto_resolve(&self) -> &::std::option::Option<bool> {
@@ -78,8 +75,7 @@ impl PagerDutyIncidentDetailBuilder {
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl PagerDutyIncidentDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PagerDutyIncidentDetailBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyIncidentDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PagerDutyIncidentDetail {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PagerDutyIncidentDetail",
-                )
-            })?,
-            auto_resolve: self.auto_resolve,
-            secret_id: self.secret_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PagerDutyIncidentDetail {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PagerDutyIncidentDetail")
+                    )?
+                ,
+                auto_resolve: self.auto_resolve
+                ,
+                secret_id: self.secret_id
+                ,
+            }
+        )
     }
 }
+

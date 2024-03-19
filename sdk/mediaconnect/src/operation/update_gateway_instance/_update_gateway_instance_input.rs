@@ -3,19 +3,19 @@
 /// A request to update gateway instance state.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayInstanceInput {
+pub struct UpdateGatewayInstanceInput  {
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
     pub bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGatewayInstanceInput {
+impl  UpdateGatewayInstanceInput  {
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    pub fn bridge_placement(&self) -> ::std::option::Option<&crate::types::BridgePlacement> {
+    pub fn bridge_placement(&self) -> ::std::option::Option<& crate::types::BridgePlacement> {
         self.bridge_placement.as_ref()
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
-    pub fn gateway_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_instance_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_instance_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateGatewayInstanceInputBuilder {
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
     pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
-        self.bridge_placement = input;
-        self
+        self.bridge_placement = input; self
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
     pub fn get_bridge_placement(&self) -> &::std::option::Option<crate::types::BridgePlacement> {
@@ -56,21 +55,22 @@ impl UpdateGatewayInstanceInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_instance_arn = input;
-        self
+        self.gateway_instance_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_instance_arn
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInstanceInput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_gateway_instance::UpdateGatewayInstanceInput {
-            bridge_placement: self.bridge_placement,
-            gateway_instance_arn: self.gateway_instance_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway_instance::UpdateGatewayInstanceInput {
+                bridge_placement: self.bridge_placement
+                ,
+                gateway_instance_arn: self.gateway_instance_arn
+                ,
+            }
+        )
     }
 }
+

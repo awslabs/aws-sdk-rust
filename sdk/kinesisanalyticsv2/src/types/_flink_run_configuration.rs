@@ -3,13 +3,13 @@
 /// <p>Describes the starting parameters for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlinkRunConfiguration {
+pub struct FlinkRunConfiguration  {
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p><note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
     /// </note>
     pub allow_non_restored_state: ::std::option::Option<bool>,
 }
-impl FlinkRunConfiguration {
+impl  FlinkRunConfiguration  {
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p><note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
     /// </note>
@@ -42,8 +42,7 @@ impl FlinkRunConfigurationBuilder {
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
     /// </note>
     pub fn set_allow_non_restored_state(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_non_restored_state = input;
-        self
+        self.allow_non_restored_state = input; self
     }
     /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"> Allowing Non-Restored State</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p><note>
     /// <p>This value defaults to <code>false</code>. If you update your application without specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it was previously set to <code>true</code>.</p>
@@ -54,7 +53,9 @@ impl FlinkRunConfigurationBuilder {
     /// Consumes the builder and constructs a [`FlinkRunConfiguration`](crate::types::FlinkRunConfiguration).
     pub fn build(self) -> crate::types::FlinkRunConfiguration {
         crate::types::FlinkRunConfiguration {
-            allow_non_restored_state: self.allow_non_restored_state,
+            allow_non_restored_state: self.allow_non_restored_state
+            ,
         }
     }
 }
+

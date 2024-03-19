@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInboundDmarcSettingsInput {
+pub struct DescribeInboundDmarcSettingsInput  {
     /// <p>Lists the ID of the given organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInboundDmarcSettingsInput {
+impl  DescribeInboundDmarcSettingsInput  {
     /// <p>Lists the ID of the given organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeInboundDmarcSettingsInputBuilder {
     }
     /// <p>Lists the ID of the given organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>Lists the ID of the given organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DescribeInboundDmarcSettingsInput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput {
-            organization_id: self.organization_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput {
+                organization_id: self.organization_id
+                ,
+            }
+        )
     }
 }
+

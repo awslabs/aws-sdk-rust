@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExtensionAssociationInput {
+pub struct DeleteExtensionAssociationInput  {
     /// <p>The ID of the extension association to delete.</p>
     pub extension_association_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExtensionAssociationInput {
+impl  DeleteExtensionAssociationInput  {
     /// <p>The ID of the extension association to delete.</p>
-    pub fn extension_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn extension_association_id(&self) -> ::std::option::Option<& str> {
         self.extension_association_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteExtensionAssociationInputBuilder {
     }
     /// <p>The ID of the extension association to delete.</p>
     pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_association_id = input;
-        self
+        self.extension_association_id = input; self
     }
     /// <p>The ID of the extension association to delete.</p>
     pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.extension_association_id
     }
     /// Consumes the builder and constructs a [`DeleteExtensionAssociationInput`](crate::operation::delete_extension_association::DeleteExtensionAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_extension_association::DeleteExtensionAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_extension_association::DeleteExtensionAssociationInput {
-            extension_association_id: self.extension_association_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_extension_association::DeleteExtensionAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_extension_association::DeleteExtensionAssociationInput {
+                extension_association_id: self.extension_association_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateNodeOutput {
+pub struct AssociateNodeOutput  {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.</p>
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AssociateNodeOutput {
+impl  AssociateNodeOutput  {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.</p>
-    pub fn node_association_status_token(&self) -> ::std::option::Option<&str> {
+    pub fn node_association_status_token(&self) -> ::std::option::Option<& str> {
         self.node_association_status_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateNodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateNodeOutput {
     /// Creates a new builder-style object to manufacture [`AssociateNodeOutput`](crate::operation::associate_node::AssociateNodeOutput).
     pub fn builder() -> crate::operation::associate_node::builders::AssociateNodeOutputBuilder {
@@ -40,27 +40,28 @@ impl AssociateNodeOutputBuilder {
     }
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.</p>
     pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_association_status_token = input;
-        self
+        self.node_association_status_token = input; self
     }
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.</p>
     pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_association_status_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateNodeOutput`](crate::operation::associate_node::AssociateNodeOutput).
     pub fn build(self) -> crate::operation::associate_node::AssociateNodeOutput {
         crate::operation::associate_node::AssociateNodeOutput {
-            node_association_status_token: self.node_association_status_token,
+            node_association_status_token: self.node_association_status_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

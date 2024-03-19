@@ -3,13 +3,13 @@
 /// DeleteCampaignRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectInstanceConfigInput {
+pub struct DeleteConnectInstanceConfigInput  {
     /// Amazon Connect Instance Id
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectInstanceConfigInput {
+impl  DeleteConnectInstanceConfigInput  {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteConnectInstanceConfigInputBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_instance_id = input;
-        self
+        self.connect_instance_id = input; self
     }
     /// Amazon Connect Instance Id
     pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput {
-            connect_instance_id: self.connect_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput {
+                connect_instance_id: self.connect_instance_id
+                ,
+            }
+        )
     }
 }
+

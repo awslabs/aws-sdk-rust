@@ -3,7 +3,7 @@
 /// <p>Contains a portal summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortalSummary {
+pub struct PortalSummary  {
     /// <p>The ID of the portal.</p>
     pub id: ::std::string::String,
     /// <p>The name of the portal.</p>
@@ -21,40 +21,37 @@ pub struct PortalSummary {
     /// <p>Contains information about the current status of a portal.</p>
     pub status: ::std::option::Option<crate::types::PortalStatus>,
 }
-impl PortalSummary {
+impl  PortalSummary  {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the portal.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The portal's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn start_url(&self) -> &str {
-        use std::ops::Deref;
-        self.start_url.deref()
+    pub fn start_url(&self) -> & str {
+        use std::ops::Deref; self.start_url.deref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Contains information about the current status of a portal.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PortalStatus> {
         self.status.as_ref()
     }
 }
@@ -87,8 +84,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ID of the portal.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the portal.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The name of the portal.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the portal.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +111,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The portal's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The portal's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_url = input;
-        self
+        self.start_url = input; self
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +138,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +151,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input;
-        self
+        self.last_update_date = input; self
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +164,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +178,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>Contains information about the current status of a portal.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Contains information about the current status of a portal.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
@@ -201,30 +190,35 @@ impl PortalSummaryBuilder {
     /// - [`name`](crate::types::builders::PortalSummaryBuilder::name)
     /// - [`start_url`](crate::types::builders::PortalSummaryBuilder::start_url)
     pub fn build(self) -> ::std::result::Result<crate::types::PortalSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortalSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PortalSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PortalSummary",
-                )
-            })?,
-            description: self.description,
-            start_url: self.start_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_url",
-                    "start_url was not specified but it is required when building PortalSummary",
-                )
-            })?,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
-            role_arn: self.role_arn,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortalSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PortalSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PortalSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                start_url: self.start_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_url", "start_url was not specified but it is required when building PortalSummary")
+                    )?
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

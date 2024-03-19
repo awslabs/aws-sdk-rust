@@ -3,19 +3,19 @@
 /// <p>The visual display options for a data zoom scroll bar.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScrollBarOptions {
+pub struct ScrollBarOptions  {
     /// <p>The visibility of the data zoom scroll bar.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility range for the data zoom scroll bar.</p>
     pub visible_range: ::std::option::Option<crate::types::VisibleRangeOptions>,
 }
-impl ScrollBarOptions {
+impl  ScrollBarOptions  {
     /// <p>The visibility of the data zoom scroll bar.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The visibility range for the data zoom scroll bar.</p>
-    pub fn visible_range(&self) -> ::std::option::Option<&crate::types::VisibleRangeOptions> {
+    pub fn visible_range(&self) -> ::std::option::Option<& crate::types::VisibleRangeOptions> {
         self.visible_range.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ScrollBarOptionsBuilder {
     }
     /// <p>The visibility of the data zoom scroll bar.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the data zoom scroll bar.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -55,8 +54,7 @@ impl ScrollBarOptionsBuilder {
     }
     /// <p>The visibility range for the data zoom scroll bar.</p>
     pub fn set_visible_range(mut self, input: ::std::option::Option<crate::types::VisibleRangeOptions>) -> Self {
-        self.visible_range = input;
-        self
+        self.visible_range = input; self
     }
     /// <p>The visibility range for the data zoom scroll bar.</p>
     pub fn get_visible_range(&self) -> &::std::option::Option<crate::types::VisibleRangeOptions> {
@@ -65,8 +63,11 @@ impl ScrollBarOptionsBuilder {
     /// Consumes the builder and constructs a [`ScrollBarOptions`](crate::types::ScrollBarOptions).
     pub fn build(self) -> crate::types::ScrollBarOptions {
         crate::types::ScrollBarOptions {
-            visibility: self.visibility,
-            visible_range: self.visible_range,
+            visibility: self.visibility
+            ,
+            visible_range: self.visible_range
+            ,
         }
     }
 }
+

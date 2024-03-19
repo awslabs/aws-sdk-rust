@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLogPatternSets`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::set_resource_group_name):<br>required: **true**<br><p>The name of the resource group.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
-    /// - On success, responds with [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput) with field(s):
+                            /// - On success, responds with [`ListLogPatternSetsOutput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput) with field(s):
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::resource_group_name): <p>The name of the resource group.</p>
     ///   - [`account_id(Option<String>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::account_id): <p>The AWS account ID for the resource group owner.</p>
     ///   - [`log_pattern_sets(Option<Vec::<String>>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::log_pattern_sets): <p>The list of log pattern sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListLogPatternSetsError>`](crate::operation::list_log_pattern_sets::ListLogPatternSetsError)
+                            /// - On failure, responds with [`SdkError<ListLogPatternSetsError>`](crate::operation::list_log_pattern_sets::ListLogPatternSetsError)
     pub fn list_log_pattern_sets(&self) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder {
-        crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

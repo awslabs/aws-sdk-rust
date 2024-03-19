@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLogAnomalyDetectorInput {
+pub struct CreateLogAnomalyDetectorInput  {
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    pub log_group_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_group_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A name for this anomaly detector.</p>
     pub detector_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how often the anomaly detector is to run and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then 15 minutes might be a good setting for <code>evaluationFrequency</code> .</p>
@@ -18,30 +18,31 @@ pub struct CreateLogAnomalyDetectorInput {
     pub anomaly_visibility_time: ::std::option::Option<i64>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateLogAnomalyDetectorInput {
+impl  CreateLogAnomalyDetectorInput  {
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_arn_list.is_none()`.
-    pub fn log_group_arn_list(&self) -> &[::std::string::String] {
-        self.log_group_arn_list.as_deref().unwrap_or_default()
+    pub fn log_group_arn_list(&self) -> & [::std::string::String] {
+        self.log_group_arn_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A name for this anomaly detector.</p>
-    pub fn detector_name(&self) -> ::std::option::Option<&str> {
+    pub fn detector_name(&self) -> ::std::option::Option<& str> {
         self.detector_name.as_deref()
     }
     /// <p>Specifies how often the anomaly detector is to run and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then 15 minutes might be a good setting for <code>evaluationFrequency</code> .</p>
-    pub fn evaluation_frequency(&self) -> ::std::option::Option<&crate::types::EvaluationFrequency> {
+    pub fn evaluation_frequency(&self) -> ::std::option::Option<& crate::types::EvaluationFrequency> {
         self.evaluation_frequency.as_ref()
     }
     /// <p>You can use this parameter to limit the anomaly detection model to examine only log events that match the pattern you specify here. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>Optionally assigns a KMS key to secure this anomaly detector and its findings. If a key is assigned, the anomalies found and the model used by this detector are encrypted at rest with the key. If a key is assigned to an anomaly detector, a user must have permissions for both this key and for the anomaly detector to retrieve information about the anomalies that it finds.</p>
     /// <p>For more information about using a KMS key and to see the required IAM policy, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html">Use a KMS key with an anomaly detector</a>.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The number of days to have visibility on an anomaly. After this time period has elapsed for an anomaly, it will be automatically baselined and the anomaly detector will treat new occurrences of a similar anomaly as normal. Therefore, if you do not correct the cause of an anomaly during the time period specified in <code>anomalyVisibilityTime</code>, it will be considered normal going forward and will not be detected as an anomaly.</p>
@@ -50,7 +51,7 @@ impl CreateLogAnomalyDetectorInput {
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,13 +66,13 @@ impl CreateLogAnomalyDetectorInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLogAnomalyDetectorInputBuilder {
-    pub(crate) log_group_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_group_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) detector_name: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_frequency: ::std::option::Option<crate::types::EvaluationFrequency>,
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_visibility_time: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateLogAnomalyDetectorInputBuilder {
     /// Appends an item to `log_group_arn_list`.
@@ -81,17 +82,16 @@ impl CreateLogAnomalyDetectorInputBuilder {
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
     pub fn log_group_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.log_group_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_group_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    pub fn set_log_group_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_group_arn_list = input;
-        self
+    pub fn set_log_group_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_group_arn_list = input; self
     }
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    pub fn get_log_group_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_group_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_group_arn_list
     }
     /// <p>A name for this anomaly detector.</p>
@@ -101,8 +101,7 @@ impl CreateLogAnomalyDetectorInputBuilder {
     }
     /// <p>A name for this anomaly detector.</p>
     pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_name = input;
-        self
+        self.detector_name = input; self
     }
     /// <p>A name for this anomaly detector.</p>
     pub fn get_detector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +114,7 @@ impl CreateLogAnomalyDetectorInputBuilder {
     }
     /// <p>Specifies how often the anomaly detector is to run and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then 15 minutes might be a good setting for <code>evaluationFrequency</code> .</p>
     pub fn set_evaluation_frequency(mut self, input: ::std::option::Option<crate::types::EvaluationFrequency>) -> Self {
-        self.evaluation_frequency = input;
-        self
+        self.evaluation_frequency = input; self
     }
     /// <p>Specifies how often the anomaly detector is to run and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then 15 minutes might be a good setting for <code>evaluationFrequency</code> .</p>
     pub fn get_evaluation_frequency(&self) -> &::std::option::Option<crate::types::EvaluationFrequency> {
@@ -129,8 +127,7 @@ impl CreateLogAnomalyDetectorInputBuilder {
     }
     /// <p>You can use this parameter to limit the anomaly detection model to examine only log events that match the pattern you specify here. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>You can use this parameter to limit the anomaly detection model to examine only log events that match the pattern you specify here. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl CreateLogAnomalyDetectorInputBuilder {
     /// <p>Optionally assigns a KMS key to secure this anomaly detector and its findings. If a key is assigned, the anomalies found and the model used by this detector are encrypted at rest with the key. If a key is assigned to an anomaly detector, a user must have permissions for both this key and for the anomaly detector to retrieve information about the anomalies that it finds.</p>
     /// <p>For more information about using a KMS key and to see the required IAM policy, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html">Use a KMS key with an anomaly detector</a>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Optionally assigns a KMS key to secure this anomaly detector and its findings. If a key is assigned, the anomalies found and the model used by this detector are encrypted at rest with the key. If a key is assigned to an anomaly detector, a user must have permissions for both this key and for the anomaly detector to retrieve information about the anomalies that it finds.</p>
     /// <p>For more information about using a KMS key and to see the required IAM policy, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html">Use a KMS key with an anomaly detector</a>.</p>
@@ -160,8 +156,7 @@ impl CreateLogAnomalyDetectorInputBuilder {
     }
     /// <p>The number of days to have visibility on an anomaly. After this time period has elapsed for an anomaly, it will be automatically baselined and the anomaly detector will treat new occurrences of a similar anomaly as normal. Therefore, if you do not correct the cause of an anomaly during the time period specified in <code>anomalyVisibilityTime</code>, it will be considered normal going forward and will not be detected as an anomaly.</p>
     pub fn set_anomaly_visibility_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.anomaly_visibility_time = input;
-        self
+        self.anomaly_visibility_time = input; self
     }
     /// <p>The number of days to have visibility on an anomaly. After this time period has elapsed for an anomaly, it will be automatically baselined and the anomaly detector will treat new occurrences of a similar anomaly as normal. Therefore, if you do not correct the cause of an anomaly during the time period specified in <code>anomalyVisibilityTime</code>, it will be considered normal going forward and will not be detected as an anomaly.</p>
     pub fn get_anomaly_visibility_time(&self) -> &::std::option::Option<i64> {
@@ -175,36 +170,40 @@ impl CreateLogAnomalyDetectorInputBuilder {
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLogAnomalyDetectorInput`](crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorInput {
-            log_group_arn_list: self.log_group_arn_list,
-            detector_name: self.detector_name,
-            evaluation_frequency: self.evaluation_frequency,
-            filter_pattern: self.filter_pattern,
-            kms_key_id: self.kms_key_id,
-            anomaly_visibility_time: self.anomaly_visibility_time,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorInput {
+                log_group_arn_list: self.log_group_arn_list
+                ,
+                detector_name: self.detector_name
+                ,
+                evaluation_frequency: self.evaluation_frequency
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                anomaly_visibility_time: self.anomaly_visibility_time
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

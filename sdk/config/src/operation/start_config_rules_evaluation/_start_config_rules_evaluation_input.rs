@@ -3,16 +3,17 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartConfigRulesEvaluationInput {
+pub struct StartConfigRulesEvaluationInput  {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StartConfigRulesEvaluationInput {
+impl  StartConfigRulesEvaluationInput  {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
-    pub fn config_rule_names(&self) -> &[::std::string::String] {
-        self.config_rule_names.as_deref().unwrap_or_default()
+    pub fn config_rule_names(&self) -> & [::std::string::String] {
+        self.config_rule_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartConfigRulesEvaluationInput {
@@ -26,7 +27,7 @@ impl StartConfigRulesEvaluationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationInputBuilder {
-    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StartConfigRulesEvaluationInputBuilder {
     /// Appends an item to `config_rule_names`.
@@ -36,28 +37,26 @@ impl StartConfigRulesEvaluationInputBuilder {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.config_rule_names
     }
     /// Consumes the builder and constructs a [`StartConfigRulesEvaluationInput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput {
-            config_rule_names: self.config_rule_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput {
+                config_rule_names: self.config_rule_names
+                ,
+            }
+        )
     }
 }
+

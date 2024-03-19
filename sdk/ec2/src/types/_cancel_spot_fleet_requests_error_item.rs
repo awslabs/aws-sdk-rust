@@ -3,19 +3,19 @@
 /// <p>Describes a Spot Fleet request that was not successfully canceled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSpotFleetRequestsErrorItem {
+pub struct CancelSpotFleetRequestsErrorItem  {
     /// <p>The error.</p>
     pub error: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelSpotFleetRequestsErrorItem {
+impl  CancelSpotFleetRequestsErrorItem  {
     /// <p>The error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::CancelSpotFleetRequestsError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::CancelSpotFleetRequestsError> {
         self.error.as_ref()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<& str> {
         self.spot_fleet_request_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelSpotFleetRequestsErrorItemBuilder {
     }
     /// <p>The error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::CancelSpotFleetRequestsError> {
@@ -55,8 +54,7 @@ impl CancelSpotFleetRequestsErrorItemBuilder {
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_fleet_request_id = input;
-        self
+        self.spot_fleet_request_id = input; self
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CancelSpotFleetRequestsErrorItemBuilder {
     /// Consumes the builder and constructs a [`CancelSpotFleetRequestsErrorItem`](crate::types::CancelSpotFleetRequestsErrorItem).
     pub fn build(self) -> crate::types::CancelSpotFleetRequestsErrorItem {
         crate::types::CancelSpotFleetRequestsErrorItem {
-            error: self.error,
-            spot_fleet_request_id: self.spot_fleet_request_id,
+            error: self.error
+            ,
+            spot_fleet_request_id: self.spot_fleet_request_id
+            ,
         }
     }
 }
+

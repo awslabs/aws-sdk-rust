@@ -3,15 +3,15 @@
 /// <p>Describes an IPv6 address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceIpv6Address {
+pub struct InstanceIpv6Address  {
     /// <p>The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub is_primary_ipv6: ::std::option::Option<bool>,
 }
-impl InstanceIpv6Address {
+impl  InstanceIpv6Address  {
     /// <p>The IPv6 address.</p>
-    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
@@ -41,8 +41,7 @@ impl InstanceIpv6AddressBuilder {
     }
     /// <p>The IPv6 address.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// <p>The IPv6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl InstanceIpv6AddressBuilder {
     }
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub fn set_is_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_primary_ipv6 = input;
-        self
+        self.is_primary_ipv6 = input; self
     }
     /// <p>Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub fn get_is_primary_ipv6(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl InstanceIpv6AddressBuilder {
     /// Consumes the builder and constructs a [`InstanceIpv6Address`](crate::types::InstanceIpv6Address).
     pub fn build(self) -> crate::types::InstanceIpv6Address {
         crate::types::InstanceIpv6Address {
-            ipv6_address: self.ipv6_address,
-            is_primary_ipv6: self.is_primary_ipv6,
+            ipv6_address: self.ipv6_address
+            ,
+            is_primary_ipv6: self.is_primary_ipv6
+            ,
         }
     }
 }
+

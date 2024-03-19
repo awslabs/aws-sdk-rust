@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStudioSessionMappingOutput {
+pub struct CreateStudioSessionMappingOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateStudioSessionMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateStudioSessionMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
     pub fn builder() -> crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingOutputBuilder {
@@ -25,14 +25,14 @@ pub struct CreateStudioSessionMappingOutputBuilder {
 }
 impl CreateStudioSessionMappingOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
     pub fn build(self) -> crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput {
         crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput {
@@ -40,3 +40,4 @@ impl CreateStudioSessionMappingOutputBuilder {
         }
     }
 }
+

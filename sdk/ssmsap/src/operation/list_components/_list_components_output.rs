@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentsOutput {
+pub struct ListComponentsOutput  {
     /// <p>List of components registered with AWS System Manager for SAP.</p>
-    pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub components: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListComponentsOutput {
+impl  ListComponentsOutput  {
     /// <p>List of components registered with AWS System Manager for SAP.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
-    pub fn components(&self) -> &[crate::types::ComponentSummary] {
-        self.components.as_deref().unwrap_or_default()
+    pub fn components(&self) -> & [crate::types::ComponentSummary] {
+        self.components.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn builder() -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListComponentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
-    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListComponentsOutputBuilder {
     /// <p>List of components registered with AWS System Manager for SAP.</p>
     pub fn components(mut self, input: crate::types::ComponentSummary) -> Self {
         let mut v = self.components.unwrap_or_default();
-        v.push(input);
-        self.components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of components registered with AWS System Manager for SAP.</p>
-    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>>) -> Self {
+        self.components = input; self
     }
     /// <p>List of components registered with AWS System Manager for SAP.</p>
-    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>> {
         &self.components
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl ListComponentsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn build(self) -> crate::operation::list_components::ListComponentsOutput {
         crate::operation::list_components::ListComponentsOutput {
-            components: self.components,
-            next_token: self.next_token,
+            components: self.components
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCaseEventConfigurationOutput {
+pub struct GetCaseEventConfigurationOutput  {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
     _request_id: Option<String>,
 }
-impl GetCaseEventConfigurationOutput {
+impl  GetCaseEventConfigurationOutput  {
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn event_bridge(&self) -> ::std::option::Option<&crate::types::EventBridgeConfiguration> {
+    pub fn event_bridge(&self) -> ::std::option::Option<& crate::types::EventBridgeConfiguration> {
         self.event_bridge.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCaseEventConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
     pub fn builder() -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCaseEventConfigurationOutputBuilder {
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn set_event_bridge(mut self, input: ::std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
-        self.event_bridge = input;
-        self
+        self.event_bridge = input; self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn get_event_bridge(&self) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
         &self.event_bridge
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
     pub fn build(self) -> crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput {
         crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput {
-            event_bridge: self.event_bridge,
+            event_bridge: self.event_bridge
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

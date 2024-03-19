@@ -2,22 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIAMPolicyAssignmentsForUser`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the assignments.</p><br>
     ///   - [`user_name(impl Into<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::set_user_name):<br>required: **true**<br><p>The name of the user.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace of the assignment.</p><br>
-    /// - On success, responds with [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput) with field(s):
+                            /// - On success, responds with [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput) with field(s):
     ///   - [`active_assignments(Option<Vec::<ActiveIamPolicyAssignment>>)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::active_assignments): <p>The active assignments for this user.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListIAMPolicyAssignmentsForUserError>`](crate::operation::list_iam_policy_assignments_for_user::ListIAMPolicyAssignmentsForUserError)
-    pub fn list_iam_policy_assignments_for_user(
-        &self,
-    ) -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder {
-        crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListIAMPolicyAssignmentsForUserError>`](crate::operation::list_iam_policy_assignments_for_user::ListIAMPolicyAssignmentsForUserError)
+    pub fn list_iam_policy_assignments_for_user(&self) -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder {
+                                crate::operation::list_iam_policy_assignments_for_user::builders::ListIAMPolicyAssignmentsForUserFluentBuilder::new(self.handle.clone())
+                            }
 }
+

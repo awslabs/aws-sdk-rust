@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupPolicyInput {
+pub struct GetGroupPolicyInput  {
     /// <p>The name of the group the policy is associated with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub group_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetGroupPolicyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl GetGroupPolicyInput {
+impl  GetGroupPolicyInput  {
     /// <p>The name of the group the policy is associated with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The name of the policy document to get.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetGroupPolicyInputBuilder {
     /// <p>The name of the group the policy is associated with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group the policy is associated with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -65,8 +64,7 @@ impl GetGroupPolicyInputBuilder {
     /// <p>The name of the policy document to get.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy document to get.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -74,12 +72,15 @@ impl GetGroupPolicyInputBuilder {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`GetGroupPolicyInput`](crate::operation::get_group_policy::GetGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_group_policy::GetGroupPolicyInput {
-            group_name: self.group_name,
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_group_policy::GetGroupPolicyInput {
+                group_name: self.group_name
+                ,
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

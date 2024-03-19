@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubscriptionInput {
+pub struct GetSubscriptionInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subscription.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetSubscriptionInput {
+impl  GetSubscriptionInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the subscription.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSubscriptionInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetSubscriptionInputBuilder {
     }
     /// <p>The ID of the subscription.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the subscription.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetSubscriptionInput`](crate::operation::get_subscription::GetSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_subscription::GetSubscriptionInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subscription::GetSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_subscription::GetSubscriptionInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

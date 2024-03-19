@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEnvironmentManagedActionHistory`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::set_environment_id):<br>required: **false**<br><p>The environment ID of the target environment.</p><br>
     ///   - [`environment_name(impl Into<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::set_environment_name):<br>required: **false**<br><p>The name of the target environment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token returned by a previous request.</p><br>
     ///   - [`max_items(i32)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of items to return for a single request.</p><br>
-    /// - On success, responds with [`DescribeEnvironmentManagedActionHistoryOutput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput) with field(s):
+                            /// - On success, responds with [`DescribeEnvironmentManagedActionHistoryOutput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput) with field(s):
     ///   - [`managed_action_history_items(Option<Vec::<ManagedActionHistoryItem>>)`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput::managed_action_history_items): <p>A list of completed and failed managed actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput::next_token): <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionHistoryError>`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryError)
-    pub fn describe_environment_managed_action_history(
-        &self,
-    ) -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder {
-        crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionHistoryError>`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryError)
+    pub fn describe_environment_managed_action_history(&self) -> crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder {
+                                crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

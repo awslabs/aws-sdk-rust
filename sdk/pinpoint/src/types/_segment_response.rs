@@ -3,7 +3,7 @@
 /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentResponse {
+pub struct SegmentResponse  {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
@@ -31,45 +31,45 @@ pub struct SegmentResponse {
     /// </ul>
     pub segment_type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The version number of the segment.</p>
     pub version: ::std::option::Option<i32>,
 }
-impl SegmentResponse {
+impl  SegmentResponse  {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the segment was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The dimension settings for the segment.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::SegmentDimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<& crate::types::SegmentDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The unique identifier for the segment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The settings for the import job that's associated with the segment.</p>
-    pub fn import_definition(&self) -> ::std::option::Option<&crate::types::SegmentImportResource> {
+    pub fn import_definition(&self) -> ::std::option::Option<& crate::types::SegmentImportResource> {
         self.import_definition.as_ref()
     }
     /// <p>The date and time when the segment was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The name of the segment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
-    pub fn segment_groups(&self) -> ::std::option::Option<&crate::types::SegmentGroupList> {
+    pub fn segment_groups(&self) -> ::std::option::Option<& crate::types::SegmentGroupList> {
         self.segment_groups.as_ref()
     }
     /// <p>The segment type. Valid values are:</p>
@@ -79,11 +79,11 @@ impl SegmentResponse {
     /// <li>
     /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
-    pub fn segment_type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
+    pub fn segment_type(&self) -> ::std::option::Option<& crate::types::SegmentType> {
         self.segment_type.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The version number of the segment.</p>
@@ -112,7 +112,7 @@ pub struct SegmentResponseBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
     pub(crate) segment_type: ::std::option::Option<crate::types::SegmentType>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<i32>,
 }
 impl SegmentResponseBuilder {
@@ -124,8 +124,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The unique identifier for the application that the segment is associated with.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application that the segment is associated with.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +152,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The date and time when the segment was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time when the segment was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +165,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The dimension settings for the segment.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::SegmentDimensions>) -> Self {
-        self.dimensions = input;
-        self
+        self.dimensions = input; self
     }
     /// <p>The dimension settings for the segment.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::SegmentDimensions> {
@@ -183,8 +179,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +192,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The settings for the import job that's associated with the segment.</p>
     pub fn set_import_definition(mut self, input: ::std::option::Option<crate::types::SegmentImportResource>) -> Self {
-        self.import_definition = input;
-        self
+        self.import_definition = input; self
     }
     /// <p>The settings for the import job that's associated with the segment.</p>
     pub fn get_import_definition(&self) -> &::std::option::Option<crate::types::SegmentImportResource> {
@@ -211,8 +205,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The date and time when the segment was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time when the segment was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +218,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The name of the segment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the segment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +231,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
     pub fn set_segment_groups(mut self, input: ::std::option::Option<crate::types::SegmentGroupList>) -> Self {
-        self.segment_groups = input;
-        self
+        self.segment_groups = input; self
     }
     /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
     pub fn get_segment_groups(&self) -> &::std::option::Option<crate::types::SegmentGroupList> {
@@ -266,8 +257,7 @@ impl SegmentResponseBuilder {
     /// <p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
     pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
-        self.segment_type = input;
-        self
+        self.segment_type = input; self
     }
     /// <p>The segment type. Valid values are:</p>
     /// <ul>
@@ -286,17 +276,16 @@ impl SegmentResponseBuilder {
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The version number of the segment.</p>
@@ -306,8 +295,7 @@ impl SegmentResponseBuilder {
     }
     /// <p>The version number of the segment.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the segment.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -316,18 +304,31 @@ impl SegmentResponseBuilder {
     /// Consumes the builder and constructs a [`SegmentResponse`](crate::types::SegmentResponse).
     pub fn build(self) -> crate::types::SegmentResponse {
         crate::types::SegmentResponse {
-            application_id: self.application_id,
-            arn: self.arn,
-            creation_date: self.creation_date,
-            dimensions: self.dimensions,
-            id: self.id,
-            import_definition: self.import_definition,
-            last_modified_date: self.last_modified_date,
-            name: self.name,
-            segment_groups: self.segment_groups,
-            segment_type: self.segment_type,
-            tags: self.tags,
-            version: self.version,
+            application_id: self.application_id
+            ,
+            arn: self.arn
+            ,
+            creation_date: self.creation_date
+            ,
+            dimensions: self.dimensions
+            ,
+            id: self.id
+            ,
+            import_definition: self.import_definition
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            name: self.name
+            ,
+            segment_groups: self.segment_groups
+            ,
+            segment_type: self.segment_type
+            ,
+            tags: self.tags
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

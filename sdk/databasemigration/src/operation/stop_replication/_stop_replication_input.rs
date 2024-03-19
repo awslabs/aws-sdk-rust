@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopReplicationInput {
+pub struct StopReplicationInput  {
     /// <p>The Amazon Resource Name of the replication to stop.</p>
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
 }
-impl StopReplicationInput {
+impl  StopReplicationInput  {
     /// <p>The Amazon Resource Name of the replication to stop.</p>
-    pub fn replication_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_config_arn(&self) -> ::std::option::Option<& str> {
         self.replication_config_arn.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl StopReplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name of the replication to stop.</p>
     pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_config_arn = input;
-        self
+        self.replication_config_arn = input; self
     }
     /// <p>The Amazon Resource Name of the replication to stop.</p>
     pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_config_arn
     }
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_replication::StopReplicationInput {
-            replication_config_arn: self.replication_config_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_replication::StopReplicationInput {
+                replication_config_arn: self.replication_config_arn
+                ,
+            }
+        )
     }
 }
+

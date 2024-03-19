@@ -3,7 +3,7 @@
 /// <p>The summary of a gateway group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayGroupSummary {
+pub struct GatewayGroupSummary  {
     /// <p>The ARN of the gateway group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway group.</p>
@@ -11,17 +11,17 @@ pub struct GatewayGroupSummary {
     /// <p>The description of the gateway group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl GatewayGroupSummary {
+impl  GatewayGroupSummary  {
     /// <p>The ARN of the gateway group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GatewayGroupSummaryBuilder {
     }
     /// <p>The ARN of the gateway group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the gateway group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GatewayGroupSummaryBuilder {
     }
     /// <p>The name of the gateway group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the gateway group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GatewayGroupSummaryBuilder {
     }
     /// <p>The description of the gateway group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the gateway group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl GatewayGroupSummaryBuilder {
     /// Consumes the builder and constructs a [`GatewayGroupSummary`](crate::types::GatewayGroupSummary).
     pub fn build(self) -> crate::types::GatewayGroupSummary {
         crate::types::GatewayGroupSummary {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

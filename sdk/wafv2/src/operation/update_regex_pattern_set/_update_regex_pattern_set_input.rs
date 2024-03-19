@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRegexPatternSetInput {
+pub struct UpdateRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -19,13 +19,13 @@ pub struct UpdateRegexPatternSetInput {
     /// <p>A description of the set that helps with identification.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
+    pub regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub lock_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRegexPatternSetInput {
+impl  UpdateRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -36,25 +36,26 @@ impl UpdateRegexPatternSetInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regular_expression_list.is_none()`.
-    pub fn regular_expression_list(&self) -> &[crate::types::Regex] {
-        self.regular_expression_list.as_deref().unwrap_or_default()
+    pub fn regular_expression_list(&self) -> & [crate::types::Regex] {
+        self.regular_expression_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
@@ -73,7 +74,7 @@ pub struct UpdateRegexPatternSetInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
+    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRegexPatternSetInputBuilder {
@@ -85,8 +86,7 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl UpdateRegexPatternSetInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -136,8 +135,7 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,17 +161,16 @@ impl UpdateRegexPatternSetInputBuilder {
     /// <p></p>
     pub fn regular_expression_list(mut self, input: crate::types::Regex) -> Self {
         let mut v = self.regular_expression_list.unwrap_or_default();
-        v.push(input);
-        self.regular_expression_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regular_expression_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
-        self.regular_expression_list = input;
-        self
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>) -> Self {
+        self.regular_expression_list = input; self
     }
     /// <p></p>
-    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
@@ -185,25 +181,30 @@ impl UpdateRegexPatternSetInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.lock_token
     }
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
-            name: self.name,
-            scope: self.scope,
-            id: self.id,
-            description: self.description,
-            regular_expression_list: self.regular_expression_list,
-            lock_token: self.lock_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                regular_expression_list: self.regular_expression_list
+                ,
+                lock_token: self.lock_token
+                ,
+            }
+        )
     }
 }
+

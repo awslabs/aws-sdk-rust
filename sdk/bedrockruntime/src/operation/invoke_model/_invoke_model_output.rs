@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeModelOutput {
+pub struct InvokeModelOutput  {
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub body: ::aws_smithy_types::Blob,
     /// <p>The MIME type of the inference result.</p>
     pub content_type: ::std::string::String,
     _request_id: Option<String>,
 }
-impl InvokeModelOutput {
+impl  InvokeModelOutput  {
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub fn body(&self) -> &::aws_smithy_types::Blob {
+    pub fn body(&self) -> & ::aws_smithy_types::Blob {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
 }
-impl ::std::fmt::Debug for InvokeModelOutput {
+impl  ::std::fmt::Debug for InvokeModelOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeModelOutput");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -30,10 +29,10 @@ impl ::std::fmt::Debug for InvokeModelOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InvokeModelOutput {
     /// Creates a new builder-style object to manufacture [`InvokeModelOutput`](crate::operation::invoke_model::InvokeModelOutput).
     pub fn builder() -> crate::operation::invoke_model::builders::InvokeModelOutputBuilder {
@@ -58,8 +57,7 @@ impl InvokeModelOutputBuilder {
     }
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -73,42 +71,41 @@ impl InvokeModelOutputBuilder {
     }
     /// <p>The MIME type of the inference result.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The MIME type of the inference result.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InvokeModelOutput`](crate::operation::invoke_model::InvokeModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`body`](crate::operation::invoke_model::builders::InvokeModelOutputBuilder::body)
     /// - [`content_type`](crate::operation::invoke_model::builders::InvokeModelOutputBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelOutput {
-            body: self.body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "body",
-                    "body was not specified but it is required when building InvokeModelOutput",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building InvokeModelOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::invoke_model::InvokeModelOutput {
+                body: self.body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("body", "body was not specified but it is required when building InvokeModelOutput")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building InvokeModelOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeModelOutputBuilder {
@@ -120,3 +117,4 @@ impl ::std::fmt::Debug for InvokeModelOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>The number of entities in an account that are impacted by a specific event aggregated by the entity status codes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountEntityAggregate {
+pub struct AccountEntityAggregate  {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of entities that match the filter criteria for the specified events.</p>
     pub count: i32,
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
+    pub statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
 }
-impl AccountEntityAggregate {
+impl  AccountEntityAggregate  {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The number of entities that match the filter criteria for the specified events.</p>
@@ -21,7 +21,7 @@ impl AccountEntityAggregate {
         self.count
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn statuses(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         self.statuses.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl AccountEntityAggregate {
 pub struct AccountEntityAggregateBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
-    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
+    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
 }
 impl AccountEntityAggregateBuilder {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
@@ -48,8 +48,7 @@ impl AccountEntityAggregateBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AccountEntityAggregateBuilder {
     }
     /// <p>The number of entities that match the filter criteria for the specified events.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of entities that match the filter criteria for the specified events.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -76,25 +74,29 @@ impl AccountEntityAggregateBuilder {
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
     pub fn statuses(mut self, k: crate::types::EntityStatusCode, v: i32) -> Self {
         let mut hash_map = self.statuses.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.statuses = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.statuses = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>) -> Self {
+        self.statuses = input; self
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         &self.statuses
     }
     /// Consumes the builder and constructs a [`AccountEntityAggregate`](crate::types::AccountEntityAggregate).
     pub fn build(self) -> crate::types::AccountEntityAggregate {
         crate::types::AccountEntityAggregate {
-            account_id: self.account_id,
-            count: self.count.unwrap_or_default(),
-            statuses: self.statuses,
+            account_id: self.account_id
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            statuses: self.statuses
+            ,
         }
     }
 }
+

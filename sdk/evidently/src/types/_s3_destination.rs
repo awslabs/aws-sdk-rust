@@ -3,19 +3,19 @@
 /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Destination {
+pub struct S3Destination  {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Destination {
+impl  S3Destination  {
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3DestinationBuilder {
     }
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket in which Evidently stores evaluation events.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3DestinationBuilder {
     }
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The bucket prefix in which Evidently stores evaluation events.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3DestinationBuilder {
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {
         crate::types::S3Destination {
-            bucket: self.bucket,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

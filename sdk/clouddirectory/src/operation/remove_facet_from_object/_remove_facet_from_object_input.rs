@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFacetFromObjectInput {
+pub struct RemoveFacetFromObjectInput  {
     /// <p>The ARN of the directory in which the object resides.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
@@ -10,17 +10,17 @@ pub struct RemoveFacetFromObjectInput {
     /// <p>A reference to the object to remove the facet from.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
-impl RemoveFacetFromObjectInput {
+impl  RemoveFacetFromObjectInput  {
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> ::std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> ::std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>A reference to the object to remove the facet from.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveFacetFromObjectInputBuilder {
     }
     /// <p>The ARN of the directory in which the object resides.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory in which the object resides.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RemoveFacetFromObjectInputBuilder {
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
-        self.schema_facet = input;
-        self
+        self.schema_facet = input; self
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
@@ -78,22 +76,24 @@ impl RemoveFacetFromObjectInputBuilder {
     }
     /// <p>A reference to the object to remove the facet from.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>A reference to the object to remove the facet from.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
         &self.object_reference
     }
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
-            directory_arn: self.directory_arn,
-            schema_facet: self.schema_facet,
-            object_reference: self.object_reference,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
+                directory_arn: self.directory_arn
+                ,
+                schema_facet: self.schema_facet
+                ,
+                object_reference: self.object_reference
+                ,
+            }
+        )
     }
 }
+

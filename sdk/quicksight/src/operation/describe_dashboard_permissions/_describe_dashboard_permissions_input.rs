@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardPermissionsInput {
+pub struct DescribeDashboardPermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDashboardPermissionsInput {
+impl  DescribeDashboardPermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeDashboardPermissionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeDashboardPermissionsInputBuilder {
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_id
     }
     /// Consumes the builder and constructs a [`DescribeDashboardPermissionsInput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput {
-            aws_account_id: self.aws_account_id,
-            dashboard_id: self.dashboard_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput {
+                aws_account_id: self.aws_account_id
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+            }
+        )
     }
 }
+

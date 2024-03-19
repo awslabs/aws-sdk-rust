@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlowSourceMetadataInput {
+pub struct DescribeFlowSourceMetadataInput  {
     /// The Amazon Resource Name (ARN) of the flow.
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFlowSourceMetadataInput {
+impl  DescribeFlowSourceMetadataInput  {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeFlowSourceMetadataInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`DescribeFlowSourceMetadataInput`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataInput { flow_arn: self.flow_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataInput {
+                flow_arn: self.flow_arn
+                ,
+            }
+        )
     }
 }
+

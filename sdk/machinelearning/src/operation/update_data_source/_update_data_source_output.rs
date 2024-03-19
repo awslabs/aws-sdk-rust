@@ -4,22 +4,22 @@
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourceOutput {
+pub struct UpdateDataSourceOutput  {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateDataSourceOutput {
+impl  UpdateDataSourceOutput  {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
     pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder {
@@ -42,27 +42,28 @@ impl UpdateDataSourceOutputBuilder {
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
     pub fn build(self) -> crate::operation::update_data_source::UpdateDataSourceOutput {
         crate::operation::update_data_source::UpdateDataSourceOutput {
-            data_source_id: self.data_source_id,
+            data_source_id: self.data_source_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

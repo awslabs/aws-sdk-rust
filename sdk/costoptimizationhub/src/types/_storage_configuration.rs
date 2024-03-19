@@ -3,15 +3,15 @@
 /// <p>The storage configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageConfiguration {
+pub struct StorageConfiguration  {
     /// <p>The storage type.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The storage volume.</p>
     pub size_in_gb: ::std::option::Option<f64>,
 }
-impl StorageConfiguration {
+impl  StorageConfiguration  {
     /// <p>The storage type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The storage volume.</p>
@@ -41,8 +41,7 @@ impl StorageConfigurationBuilder {
     }
     /// <p>The storage type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The storage type.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StorageConfigurationBuilder {
     }
     /// <p>The storage volume.</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.size_in_gb = input;
-        self
+        self.size_in_gb = input; self
     }
     /// <p>The storage volume.</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl StorageConfigurationBuilder {
     /// Consumes the builder and constructs a [`StorageConfiguration`](crate::types::StorageConfiguration).
     pub fn build(self) -> crate::types::StorageConfiguration {
         crate::types::StorageConfiguration {
-            r#type: self.r#type,
-            size_in_gb: self.size_in_gb,
+            r#type: self.r#type
+            ,
+            size_in_gb: self.size_in_gb
+            ,
         }
     }
 }
+

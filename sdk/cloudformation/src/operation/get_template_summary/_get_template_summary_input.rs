@@ -3,7 +3,7 @@
 /// <p>The input for the <code>GetTemplateSummary</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateSummaryInput {
+pub struct GetTemplateSummaryInput  {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub template_body: ::std::option::Option<::std::string::String>,
@@ -29,25 +29,25 @@ pub struct GetTemplateSummaryInput {
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
     pub template_summary_config: ::std::option::Option<crate::types::TemplateSummaryConfig>,
 }
-impl GetTemplateSummaryInput {
+impl  GetTemplateSummaryInput  {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
     /// <p>The name or the stack ID that's associated with the stack, which aren't always interchangeable. For running stacks, you can specify either the stack's name or its unique stack ID. For deleted stack, you must specify the unique stack ID.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> ::std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -59,11 +59,11 @@ impl GetTemplateSummaryInput {
     /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
+    pub fn call_as(&self) -> ::std::option::Option<& crate::types::CallAs> {
         self.call_as.as_ref()
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn template_summary_config(&self) -> ::std::option::Option<&crate::types::TemplateSummaryConfig> {
+    pub fn template_summary_config(&self) -> ::std::option::Option<& crate::types::TemplateSummaryConfig> {
         self.template_summary_config.as_ref()
     }
 }
@@ -95,8 +95,7 @@ impl GetTemplateSummaryInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
@@ -112,8 +111,7 @@ impl GetTemplateSummaryInputBuilder {
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
@@ -129,8 +127,7 @@ impl GetTemplateSummaryInputBuilder {
     /// <p>The name or the stack ID that's associated with the stack, which aren't always interchangeable. For running stacks, you can specify either the stack's name or its unique stack ID. For deleted stack, you must specify the unique stack ID.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or the stack ID that's associated with the stack, which aren't always interchangeable. For running stacks, you can specify either the stack's name or its unique stack ID. For deleted stack, you must specify the unique stack ID.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
@@ -146,8 +143,7 @@ impl GetTemplateSummaryInputBuilder {
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_name = input;
-        self
+        self.stack_set_name = input; self
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
@@ -177,8 +173,7 @@ impl GetTemplateSummaryInputBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
-        self.call_as = input;
-        self
+        self.call_as = input; self
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -199,25 +194,30 @@ impl GetTemplateSummaryInputBuilder {
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
     pub fn set_template_summary_config(mut self, input: ::std::option::Option<crate::types::TemplateSummaryConfig>) -> Self {
-        self.template_summary_config = input;
-        self
+        self.template_summary_config = input; self
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
     pub fn get_template_summary_config(&self) -> &::std::option::Option<crate::types::TemplateSummaryConfig> {
         &self.template_summary_config
     }
     /// Consumes the builder and constructs a [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_template_summary::GetTemplateSummaryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_template_summary::GetTemplateSummaryInput {
-            template_body: self.template_body,
-            template_url: self.template_url,
-            stack_name: self.stack_name,
-            stack_set_name: self.stack_set_name,
-            call_as: self.call_as,
-            template_summary_config: self.template_summary_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template_summary::GetTemplateSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_template_summary::GetTemplateSummaryInput {
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+                stack_name: self.stack_name
+                ,
+                stack_set_name: self.stack_set_name
+                ,
+                call_as: self.call_as
+                ,
+                template_summary_config: self.template_summary_config
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListChannelModeratorsInput {
+pub struct ListChannelModeratorsInput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
@@ -12,9 +12,9 @@ pub struct ListChannelModeratorsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl ListChannelModeratorsInput {
+impl  ListChannelModeratorsInput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The maximum number of moderators that you want returned.</p>
@@ -22,15 +22,15 @@ impl ListChannelModeratorsInput {
         self.max_results
     }
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListChannelModeratorsInput {
+impl  ::std::fmt::Debug for ListChannelModeratorsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelModeratorsInput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -65,8 +65,7 @@ impl ListChannelModeratorsInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl ListChannelModeratorsInputBuilder {
     }
     /// <p>The maximum number of moderators that you want returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of moderators that you want returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -93,8 +91,7 @@ impl ListChannelModeratorsInputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,24 +104,26 @@ impl ListChannelModeratorsInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelModeratorsInput`](crate::operation::list_channel_moderators::ListChannelModeratorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_channel_moderators::ListChannelModeratorsInput {
-            channel_arn: self.channel_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_channel_moderators::ListChannelModeratorsInput {
+                channel_arn: self.channel_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListChannelModeratorsInputBuilder {
@@ -137,3 +136,4 @@ impl ::std::fmt::Debug for ListChannelModeratorsInputBuilder {
         formatter.finish()
     }
 }
+

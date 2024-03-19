@@ -3,13 +3,13 @@
 /// <p>Metadata for a register model job step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterModelStepMetadata {
+pub struct RegisterModelStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterModelStepMetadata {
+impl  RegisterModelStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RegisterModelStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl RegisterModelStepMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`RegisterModelStepMetadata`](crate::types::RegisterModelStepMetadata).
     pub fn build(self) -> crate::types::RegisterModelStepMetadata {
-        crate::types::RegisterModelStepMetadata { arn: self.arn }
+        crate::types::RegisterModelStepMetadata {
+            arn: self.arn
+            ,
+        }
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>Model artifacts are outputs that result from training a model. They typically consist of trained parameters, a model definition that describes how to compute inferences, and other metadata. A SageMaker container stores your trained model artifacts in the <code>/opt/ml/model</code> directory. After training has completed, by default, these artifacts are uploaded to your Amazon S3 bucket as compressed files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelArtifacts {
+pub struct ModelArtifacts  {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
     pub s3_model_artifacts: ::std::option::Option<::std::string::String>,
 }
-impl ModelArtifacts {
+impl  ModelArtifacts  {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-    pub fn s3_model_artifacts(&self) -> ::std::option::Option<&str> {
+    pub fn s3_model_artifacts(&self) -> ::std::option::Option<& str> {
         self.s3_model_artifacts.as_deref()
     }
 }
@@ -36,8 +36,7 @@ impl ModelArtifactsBuilder {
     }
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
     pub fn set_s3_model_artifacts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_model_artifacts = input;
-        self
+        self.s3_model_artifacts = input; self
     }
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
     pub fn get_s3_model_artifacts(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,7 +45,9 @@ impl ModelArtifactsBuilder {
     /// Consumes the builder and constructs a [`ModelArtifacts`](crate::types::ModelArtifacts).
     pub fn build(self) -> crate::types::ModelArtifacts {
         crate::types::ModelArtifacts {
-            s3_model_artifacts: self.s3_model_artifacts,
+            s3_model_artifacts: self.s3_model_artifacts
+            ,
         }
     }
 }
+

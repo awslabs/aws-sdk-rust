@@ -5,23 +5,20 @@ pub use crate::operation::invoke_endpoint_with_response_stream::_invoke_endpoint
 
 impl InvokeEndpointWithResponseStreamInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.invoke_endpoint_with_response_stream();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.invoke_endpoint_with_response_stream();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `InvokeEndpointWithResponseStream`.
-///
+/// 
 /// <p>Invokes a model at the specified endpoint to return the inference response as a stream. The inference stream provides the response payload incrementally as a series of parts. Before you can get an inference stream, you must have access to a model that's deployed using Amazon SageMaker hosting services, and the container for that model must support inference streaming.</p>
 /// <p>For more information that can help you use this API, see the following sections in the <i>Amazon SageMaker Developer Guide</i>:</p>
 /// <ul>
@@ -36,33 +33,32 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeEndpointWithResponseStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::invoke_endpoint_with_response_stream::builders::InvokeEndpointWithResponseStreamInputBuilder,
+                    inner: crate::operation::invoke_endpoint_with_response_stream::builders::InvokeEndpointWithResponseStreamInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-    > for InvokeEndpointWithResponseStreamFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
+                    crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
+                > for InvokeEndpointWithResponseStreamFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
+                        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl InvokeEndpointWithResponseStreamFluentBuilder {
     /// Creates a new `InvokeEndpointWithResponseStream`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl InvokeEndpointWithResponseStreamFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStream::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStream::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStream::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStream::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput, crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
@@ -257,3 +244,4 @@ impl InvokeEndpointWithResponseStreamFluentBuilder {
         self.inner.get_inference_component_name()
     }
 }
+

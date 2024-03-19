@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnomalyGroupSummariesOutput {
+pub struct ListAnomalyGroupSummariesOutput  {
     /// <p>A list of anomaly group summaries.</p>
-    pub anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
+    pub anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyGroupSummary>>,
     /// <p>Aggregated details about the anomaly groups.</p>
     pub anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAnomalyGroupSummariesOutput {
+impl  ListAnomalyGroupSummariesOutput  {
     /// <p>A list of anomaly group summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_group_summary_list.is_none()`.
-    pub fn anomaly_group_summary_list(&self) -> &[crate::types::AnomalyGroupSummary] {
-        self.anomaly_group_summary_list.as_deref().unwrap_or_default()
+    pub fn anomaly_group_summary_list(&self) -> & [crate::types::AnomalyGroupSummary] {
+        self.anomaly_group_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Aggregated details about the anomaly groups.</p>
-    pub fn anomaly_group_statistics(&self) -> ::std::option::Option<&crate::types::AnomalyGroupStatistics> {
+    pub fn anomaly_group_statistics(&self) -> ::std::option::Option<& crate::types::AnomalyGroupStatistics> {
         self.anomaly_group_statistics.as_ref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAnomalyGroupSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAnomalyGroupSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
     pub fn builder() -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesOutputBuilder {
@@ -43,7 +44,7 @@ impl ListAnomalyGroupSummariesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesOutputBuilder {
-    pub(crate) anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
+    pub(crate) anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyGroupSummary>>,
     pub(crate) anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl ListAnomalyGroupSummariesOutputBuilder {
     /// <p>A list of anomaly group summaries.</p>
     pub fn anomaly_group_summary_list(mut self, input: crate::types::AnomalyGroupSummary) -> Self {
         let mut v = self.anomaly_group_summary_list.unwrap_or_default();
-        v.push(input);
-        self.anomaly_group_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anomaly_group_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of anomaly group summaries.</p>
-    pub fn set_anomaly_group_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>) -> Self {
-        self.anomaly_group_summary_list = input;
-        self
+    pub fn set_anomaly_group_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyGroupSummary>>) -> Self {
+        self.anomaly_group_summary_list = input; self
     }
     /// <p>A list of anomaly group summaries.</p>
-    pub fn get_anomaly_group_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>> {
+    pub fn get_anomaly_group_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnomalyGroupSummary>> {
         &self.anomaly_group_summary_list
     }
     /// <p>Aggregated details about the anomaly groups.</p>
@@ -76,8 +76,7 @@ impl ListAnomalyGroupSummariesOutputBuilder {
     }
     /// <p>Aggregated details about the anomaly groups.</p>
     pub fn set_anomaly_group_statistics(mut self, input: ::std::option::Option<crate::types::AnomalyGroupStatistics>) -> Self {
-        self.anomaly_group_statistics = input;
-        self
+        self.anomaly_group_statistics = input; self
     }
     /// <p>Aggregated details about the anomaly groups.</p>
     pub fn get_anomaly_group_statistics(&self) -> &::std::option::Option<crate::types::AnomalyGroupStatistics> {
@@ -90,29 +89,32 @@ impl ListAnomalyGroupSummariesOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
     pub fn build(self) -> crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput {
         crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput {
-            anomaly_group_summary_list: self.anomaly_group_summary_list,
-            anomaly_group_statistics: self.anomaly_group_statistics,
-            next_token: self.next_token,
+            anomaly_group_summary_list: self.anomaly_group_summary_list
+            ,
+            anomaly_group_statistics: self.anomaly_group_statistics
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DecryptDataOutput {
+pub struct DecryptDataOutput  {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
     pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
@@ -12,25 +12,22 @@ pub struct DecryptDataOutput {
     pub plain_text: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DecryptDataOutput {
+impl  DecryptDataOutput  {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
-    pub fn key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.key_check_value.deref()
+    pub fn key_check_value(&self) -> & str {
+        use std::ops::Deref; self.key_check_value.deref()
     }
     /// <p>The decrypted plaintext data in hexBinary format.</p>
-    pub fn plain_text(&self) -> &str {
-        use std::ops::Deref;
-        self.plain_text.deref()
+    pub fn plain_text(&self) -> & str {
+        use std::ops::Deref; self.plain_text.deref()
     }
 }
-impl ::std::fmt::Debug for DecryptDataOutput {
+impl  ::std::fmt::Debug for DecryptDataOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DecryptDataOutput");
         formatter.field("key_arn", &self.key_arn);
@@ -41,10 +38,10 @@ impl ::std::fmt::Debug for DecryptDataOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DecryptDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DecryptDataOutput {
     /// Creates a new builder-style object to manufacture [`DecryptDataOutput`](crate::operation::decrypt_data::DecryptDataOutput).
     pub fn builder() -> crate::operation::decrypt_data::builders::DecryptDataOutputBuilder {
@@ -70,8 +67,7 @@ impl DecryptDataOutputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl DecryptDataOutputBuilder {
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_check_value = input;
-        self
+        self.key_check_value = input; self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
@@ -103,49 +98,47 @@ impl DecryptDataOutputBuilder {
     }
     /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plain_text = input;
-        self
+        self.plain_text = input; self
     }
     /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.plain_text
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DecryptDataOutput`](crate::operation::decrypt_data::DecryptDataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::key_arn)
     /// - [`key_check_value`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::key_check_value)
     /// - [`plain_text`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::plain_text)
     pub fn build(self) -> ::std::result::Result<crate::operation::decrypt_data::DecryptDataOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::decrypt_data::DecryptDataOutput {
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building DecryptDataOutput",
-                )
-            })?,
-            key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value",
-                    "key_check_value was not specified but it is required when building DecryptDataOutput",
-                )
-            })?,
-            plain_text: self.plain_text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "plain_text",
-                    "plain_text was not specified but it is required when building DecryptDataOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::decrypt_data::DecryptDataOutput {
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building DecryptDataOutput")
+                    )?
+                ,
+                key_check_value: self.key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value", "key_check_value was not specified but it is required when building DecryptDataOutput")
+                    )?
+                ,
+                plain_text: self.plain_text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("plain_text", "plain_text was not specified but it is required when building DecryptDataOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DecryptDataOutputBuilder {
@@ -158,3 +151,4 @@ impl ::std::fmt::Debug for DecryptDataOutputBuilder {
         formatter.finish()
     }
 }
+

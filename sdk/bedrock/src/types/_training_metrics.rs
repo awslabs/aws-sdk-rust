@@ -3,11 +3,11 @@
 /// <p>Metrics associated with the custom job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingMetrics {
+pub struct TrainingMetrics  {
     /// <p>Loss metric associated with the custom job.</p>
     pub training_loss: ::std::option::Option<f32>,
 }
-impl TrainingMetrics {
+impl  TrainingMetrics  {
     /// <p>Loss metric associated with the custom job.</p>
     pub fn training_loss(&self) -> ::std::option::Option<f32> {
         self.training_loss
@@ -34,8 +34,7 @@ impl TrainingMetricsBuilder {
     }
     /// <p>Loss metric associated with the custom job.</p>
     pub fn set_training_loss(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.training_loss = input;
-        self
+        self.training_loss = input; self
     }
     /// <p>Loss metric associated with the custom job.</p>
     pub fn get_training_loss(&self) -> &::std::option::Option<f32> {
@@ -44,7 +43,9 @@ impl TrainingMetricsBuilder {
     /// Consumes the builder and constructs a [`TrainingMetrics`](crate::types::TrainingMetrics).
     pub fn build(self) -> crate::types::TrainingMetrics {
         crate::types::TrainingMetrics {
-            training_loss: self.training_loss,
+            training_loss: self.training_loss
+            ,
         }
     }
 }
+

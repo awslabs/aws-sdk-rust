@@ -130,3 +130,4 @@ pub fn de_latency(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     }
     Ok(builder.build())
 }
+

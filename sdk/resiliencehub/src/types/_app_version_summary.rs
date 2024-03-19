@@ -3,7 +3,7 @@
 /// <p>Version of an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppVersionSummary {
+pub struct AppVersionSummary  {
     /// <p>Version of an application.</p>
     pub app_version: ::std::string::String,
     /// <p>Identifier of the application version.</p>
@@ -13,22 +13,21 @@ pub struct AppVersionSummary {
     /// <p>Name of the application version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
 }
-impl AppVersionSummary {
+impl  AppVersionSummary  {
     /// <p>Version of an application.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>Identifier of the application version.</p>
     pub fn identifier(&self) -> ::std::option::Option<i64> {
         self.identifier
     }
     /// <p>Creation time of the application version.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Name of the application version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl AppVersionSummaryBuilder {
     }
     /// <p>Version of an application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Version of an application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl AppVersionSummaryBuilder {
     }
     /// <p>Identifier of the application version.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Identifier of the application version.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<i64> {
@@ -85,8 +82,7 @@ impl AppVersionSummaryBuilder {
     }
     /// <p>Creation time of the application version.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Creation time of the application version.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +95,7 @@ impl AppVersionSummaryBuilder {
     }
     /// <p>Name of the application version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>Name of the application version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl AppVersionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`app_version`](crate::types::builders::AppVersionSummaryBuilder::app_version)
     pub fn build(self) -> ::std::result::Result<crate::types::AppVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppVersionSummary {
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building AppVersionSummary",
-                )
-            })?,
-            identifier: self.identifier,
-            creation_time: self.creation_time,
-            version_name: self.version_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppVersionSummary {
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building AppVersionSummary")
+                    )?
+                ,
+                identifier: self.identifier
+                ,
+                creation_time: self.creation_time
+                ,
+                version_name: self.version_name
+                ,
+            }
+        )
     }
 }
+

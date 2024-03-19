@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssistantAssociationInput {
+pub struct DeleteAssistantAssociationInput  {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAssistantAssociationInput {
+impl  DeleteAssistantAssociationInput  {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_association_id(&self) -> ::std::option::Option<& str> {
         self.assistant_association_id.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAssistantAssociationInputBuilder {
     }
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_association_id = input;
-        self
+        self.assistant_association_id = input; self
     }
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAssistantAssociationInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assistant_association::DeleteAssistantAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_assistant_association::DeleteAssistantAssociationInput {
-            assistant_association_id: self.assistant_association_id,
-            assistant_id: self.assistant_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_assistant_association::DeleteAssistantAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_assistant_association::DeleteAssistantAssociationInput {
+                assistant_association_id: self.assistant_association_id
+                ,
+                assistant_id: self.assistant_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSbomExportInput {
+pub struct CancelSbomExportInput  {
     /// <p>The report ID of the SBOM export to cancel.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelSbomExportInput {
+impl  CancelSbomExportInput  {
     /// <p>The report ID of the SBOM export to cancel.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl CancelSbomExportInputBuilder {
     }
     /// <p>The report ID of the SBOM export to cancel.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The report ID of the SBOM export to cancel.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     /// Consumes the builder and constructs a [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_sbom_export::CancelSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_sbom_export::CancelSbomExportInput { report_id: self.report_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_sbom_export::CancelSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_sbom_export::CancelSbomExportInput {
+                report_id: self.report_id
+                ,
+            }
+        )
     }
 }
+

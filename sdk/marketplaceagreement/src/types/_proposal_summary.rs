@@ -3,21 +3,22 @@
 /// <p>A summary of the proposal received from the proposer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProposalSummary {
+pub struct ProposalSummary  {
     /// <p>The list of resources involved in the agreement.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
     pub offer_id: ::std::option::Option<::std::string::String>,
 }
-impl ProposalSummary {
+impl  ProposalSummary  {
     /// <p>The list of resources involved in the agreement.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
-    pub fn offer_id(&self) -> ::std::option::Option<&str> {
+    pub fn offer_id(&self) -> ::std::option::Option<& str> {
         self.offer_id.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl ProposalSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProposalSummaryBuilder {
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     pub(crate) offer_id: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummaryBuilder {
@@ -43,17 +44,16 @@ impl ProposalSummaryBuilder {
     /// <p>The list of resources involved in the agreement.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resources involved in the agreement.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The list of resources involved in the agreement.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
@@ -63,8 +63,7 @@ impl ProposalSummaryBuilder {
     }
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
     pub fn set_offer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offer_id = input;
-        self
+        self.offer_id = input; self
     }
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
     pub fn get_offer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl ProposalSummaryBuilder {
     /// Consumes the builder and constructs a [`ProposalSummary`](crate::types::ProposalSummary).
     pub fn build(self) -> crate::types::ProposalSummary {
         crate::types::ProposalSummary {
-            resources: self.resources,
-            offer_id: self.offer_id,
+            resources: self.resources
+            ,
+            offer_id: self.offer_id
+            ,
         }
     }
 }
+

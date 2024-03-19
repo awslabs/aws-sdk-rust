@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateDetectorInput {
+pub struct BatchUpdateDetectorInput  {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
+    pub detectors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateDetectorRequest>>,
 }
-impl BatchUpdateDetectorInput {
+impl  BatchUpdateDetectorInput  {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detectors.is_none()`.
-    pub fn detectors(&self) -> &[crate::types::UpdateDetectorRequest] {
-        self.detectors.as_deref().unwrap_or_default()
+    pub fn detectors(&self) -> & [crate::types::UpdateDetectorRequest] {
+        self.detectors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdateDetectorInput {
@@ -25,7 +26,7 @@ impl BatchUpdateDetectorInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorInputBuilder {
-    pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
+    pub(crate) detectors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateDetectorRequest>>,
 }
 impl BatchUpdateDetectorInputBuilder {
     /// Appends an item to `detectors`.
@@ -35,24 +36,26 @@ impl BatchUpdateDetectorInputBuilder {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
     pub fn detectors(mut self, input: crate::types::UpdateDetectorRequest) -> Self {
         let mut v = self.detectors.unwrap_or_default();
-        v.push(input);
-        self.detectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.detectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>) -> Self {
-        self.detectors = input;
-        self
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateDetectorRequest>>) -> Self {
+        self.detectors = input; self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateDetectorRequest>> {
         &self.detectors
     }
     /// Consumes the builder and constructs a [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_update_detector::BatchUpdateDetectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_update_detector::BatchUpdateDetectorInput { detectors: self.detectors })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_detector::BatchUpdateDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_detector::BatchUpdateDetectorInput {
+                detectors: self.detectors
+                ,
+            }
+        )
     }
 }
+

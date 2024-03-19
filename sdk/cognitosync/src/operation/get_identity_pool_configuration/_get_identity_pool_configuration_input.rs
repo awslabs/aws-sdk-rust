@@ -3,13 +3,13 @@
 /// <p>The input for the GetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityPoolConfigurationInput {
+pub struct GetIdentityPoolConfigurationInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIdentityPoolConfigurationInput {
+impl  GetIdentityPoolConfigurationInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl GetIdentityPoolConfigurationInputBuilder {
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`GetIdentityPoolConfigurationInput`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput {
-            identity_pool_id: self.identity_pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+            }
+        )
     }
 }
+

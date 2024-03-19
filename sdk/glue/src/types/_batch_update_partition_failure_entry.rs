@@ -3,21 +3,22 @@
 /// <p>Contains information about a batch update partition error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdatePartitionFailureEntry {
+pub struct BatchUpdatePartitionFailureEntry  {
     /// <p>A list of values defining the partitions.</p>
-    pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub partition_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The details about the batch update partition error.</p>
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
-impl BatchUpdatePartitionFailureEntry {
+impl  BatchUpdatePartitionFailureEntry  {
     /// <p>A list of values defining the partitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_value_list.is_none()`.
-    pub fn partition_value_list(&self) -> &[::std::string::String] {
-        self.partition_value_list.as_deref().unwrap_or_default()
+    pub fn partition_value_list(&self) -> & [::std::string::String] {
+        self.partition_value_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details about the batch update partition error.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl BatchUpdatePartitionFailureEntry {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionFailureEntryBuilder {
-    pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchUpdatePartitionFailureEntryBuilder {
@@ -43,17 +44,16 @@ impl BatchUpdatePartitionFailureEntryBuilder {
     /// <p>A list of values defining the partitions.</p>
     pub fn partition_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
-        v.push(input.into());
-        self.partition_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values defining the partitions.</p>
-    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.partition_value_list = input;
-        self
+    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.partition_value_list = input; self
     }
     /// <p>A list of values defining the partitions.</p>
-    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.partition_value_list
     }
     /// <p>The details about the batch update partition error.</p>
@@ -63,8 +63,7 @@ impl BatchUpdatePartitionFailureEntryBuilder {
     }
     /// <p>The details about the batch update partition error.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error_detail = input;
-        self
+        self.error_detail = input; self
     }
     /// <p>The details about the batch update partition error.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -73,8 +72,11 @@ impl BatchUpdatePartitionFailureEntryBuilder {
     /// Consumes the builder and constructs a [`BatchUpdatePartitionFailureEntry`](crate::types::BatchUpdatePartitionFailureEntry).
     pub fn build(self) -> crate::types::BatchUpdatePartitionFailureEntry {
         crate::types::BatchUpdatePartitionFailureEntry {
-            partition_value_list: self.partition_value_list,
-            error_detail: self.error_detail,
+            partition_value_list: self.partition_value_list
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

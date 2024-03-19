@@ -3,15 +3,14 @@
 /// <p>Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3MonitoringConfiguration {
+pub struct S3MonitoringConfiguration  {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub log_uri: ::std::string::String,
 }
-impl S3MonitoringConfiguration {
+impl  S3MonitoringConfiguration  {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.log_uri.deref()
+    pub fn log_uri(&self) -> & str {
+        use std::ops::Deref; self.log_uri.deref()
     }
 }
 impl S3MonitoringConfiguration {
@@ -36,8 +35,7 @@ impl S3MonitoringConfigurationBuilder {
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl S3MonitoringConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_uri`](crate::types::builders::S3MonitoringConfigurationBuilder::log_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::S3MonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3MonitoringConfiguration {
-            log_uri: self.log_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_uri",
-                    "log_uri was not specified but it is required when building S3MonitoringConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3MonitoringConfiguration {
+                log_uri: self.log_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_uri", "log_uri was not specified but it is required when building S3MonitoringConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceInput {
+pub struct GetInstanceInput  {
     /// <p>The ID of the service that the instance is associated with.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you want to get information about.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceInput {
+impl  GetInstanceInput  {
     /// <p>The ID of the service that the instance is associated with.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the instance that you want to get information about.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetInstanceInputBuilder {
     }
     /// <p>The ID of the service that the instance is associated with.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the service that the instance is associated with.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetInstanceInputBuilder {
     }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetInstanceInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_instance::GetInstanceInput {
-            service_id: self.service_id,
-            instance_id: self.instance_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_instance::GetInstanceInput {
+                service_id: self.service_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopBuildBatchInput {
+pub struct StopBuildBatchInput  {
     /// <p>The identifier of the batch build to stop.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl StopBuildBatchInput {
+impl  StopBuildBatchInput  {
     /// <p>The identifier of the batch build to stop.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl StopBuildBatchInputBuilder {
     }
     /// <p>The identifier of the batch build to stop.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the batch build to stop.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`StopBuildBatchInput`](crate::operation::stop_build_batch::StopBuildBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_build_batch::StopBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_build_batch::StopBuildBatchInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_build_batch::StopBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_build_batch::StopBuildBatchInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

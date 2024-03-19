@@ -4,7 +4,7 @@
 /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterServiceConnectDefaultsRequest {
+pub struct ClusterServiceConnectDefaultsRequest  {
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
     /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
     /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
@@ -12,15 +12,14 @@ pub struct ClusterServiceConnectDefaultsRequest {
     /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
     pub namespace: ::std::string::String,
 }
-impl ClusterServiceConnectDefaultsRequest {
+impl  ClusterServiceConnectDefaultsRequest  {
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
     /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
     /// <p>If you enter a new name, a Cloud Map namespace will be created. Amazon ECS creates a Cloud Map namespace with the "API calls" method of instance discovery only. This instance discovery method is the "HTTP" namespace type in the Command Line Interface. Other types of instance discovery aren't used by Service Connect.</p>
     /// <p>If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
     /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    pub fn namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.namespace.deref()
+    pub fn namespace(&self) -> & str {
+        use std::ops::Deref; self.namespace.deref()
     }
 }
 impl ClusterServiceConnectDefaultsRequest {
@@ -53,8 +52,7 @@ impl ClusterServiceConnectDefaultsRequestBuilder {
     /// <p>If you update the cluster with an empty string <code>""</code> for the namespace name, the cluster configuration for Service Connect is removed. Note that the namespace will remain in Cloud Map and must be deleted separately.</p>
     /// <p>For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or slash (/).</p>
     /// <p>If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is supported. The namespace must be in this account and this Amazon Web Services Region.</p>
@@ -67,16 +65,16 @@ impl ClusterServiceConnectDefaultsRequestBuilder {
     /// Consumes the builder and constructs a [`ClusterServiceConnectDefaultsRequest`](crate::types::ClusterServiceConnectDefaultsRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::ClusterServiceConnectDefaultsRequestBuilder::namespace)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ClusterServiceConnectDefaultsRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ClusterServiceConnectDefaultsRequest {
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building ClusterServiceConnectDefaultsRequest",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterServiceConnectDefaultsRequest, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ClusterServiceConnectDefaultsRequest {
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building ClusterServiceConnectDefaultsRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigRuleInput {
+pub struct DeleteConfigRuleInput  {
     /// <p>The name of the Config rule that you want to delete.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigRuleInput {
+impl  DeleteConfigRuleInput  {
     /// <p>The name of the Config rule that you want to delete.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteConfigRuleInputBuilder {
     }
     /// <p>The name of the Config rule that you want to delete.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule that you want to delete.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_rule_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_config_rule::DeleteConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_config_rule::DeleteConfigRuleInput {
-            config_rule_name: self.config_rule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_config_rule::DeleteConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_config_rule::DeleteConfigRuleInput {
+                config_rule_name: self.config_rule_name
+                ,
+            }
+        )
     }
 }
+

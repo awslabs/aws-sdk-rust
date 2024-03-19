@@ -2,44 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppVersionAppComponentsOutput {
+pub struct ListAppVersionAppComponentsOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>Resilience Hub application version.</p>
     pub app_version: ::std::string::String,
     /// <p>Defines an Application Component.</p>
-    pub app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
+    pub app_components: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppVersionAppComponentsOutput {
+impl  ListAppVersionAppComponentsOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>Resilience Hub application version.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>Defines an Application Component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_components.is_none()`.
-    pub fn app_components(&self) -> &[crate::types::AppComponent] {
-        self.app_components.as_deref().unwrap_or_default()
+    pub fn app_components(&self) -> & [crate::types::AppComponent] {
+        self.app_components.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppVersionAppComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppVersionAppComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
     pub fn builder() -> crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder {
@@ -53,7 +52,7 @@ impl ListAppVersionAppComponentsOutput {
 pub struct ListAppVersionAppComponentsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
-    pub(crate) app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
+    pub(crate) app_components: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,8 +65,7 @@ impl ListAppVersionAppComponentsOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl ListAppVersionAppComponentsOutputBuilder {
     }
     /// <p>Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Resilience Hub application version.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +92,16 @@ impl ListAppVersionAppComponentsOutputBuilder {
     /// <p>Defines an Application Component.</p>
     pub fn app_components(mut self, input: crate::types::AppComponent) -> Self {
         let mut v = self.app_components.unwrap_or_default();
-        v.push(input);
-        self.app_components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines an Application Component.</p>
-    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>) -> Self {
-        self.app_components = input;
-        self
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>>) -> Self {
+        self.app_components = input; self
     }
     /// <p>Defines an Application Component.</p>
-    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponent>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppComponent>> {
         &self.app_components
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
@@ -115,48 +111,45 @@ impl ListAppVersionAppComponentsOutputBuilder {
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder::app_arn)
     /// - [`app_version`](crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsOutputBuilder::app_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building ListAppVersionAppComponentsOutput",
-                )
-            })?,
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building ListAppVersionAppComponentsOutput",
-                )
-            })?,
-            app_components: self.app_components,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput {
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building ListAppVersionAppComponentsOutput")
+                    )?
+                ,
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building ListAppVersionAppComponentsOutput")
+                    )?
+                ,
+                app_components: self.app_components
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

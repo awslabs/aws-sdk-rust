@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomRoutingAcceleratorInput {
+pub struct CreateCustomRoutingAcceleratorInput  {
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
@@ -12,7 +12,7 @@ pub struct CreateCustomRoutingAcceleratorInput {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: ::std::option::Option<bool>,
@@ -20,15 +20,15 @@ pub struct CreateCustomRoutingAcceleratorInput {
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateCustomRoutingAcceleratorInput {
+impl  CreateCustomRoutingAcceleratorInput  {
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
@@ -36,10 +36,11 @@ impl CreateCustomRoutingAcceleratorInput {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[::std::string::String] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [::std::string::String] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -47,15 +48,16 @@ impl CreateCustomRoutingAcceleratorInput {
         self.enabled
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCustomRoutingAcceleratorInput {
@@ -71,10 +73,10 @@ impl CreateCustomRoutingAcceleratorInput {
 pub struct CreateCustomRoutingAcceleratorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateCustomRoutingAcceleratorInputBuilder {
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
@@ -85,8 +87,7 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +100,7 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
@@ -117,25 +117,24 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
     /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.</p>
     /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ip_addresses
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
@@ -147,8 +146,7 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -163,8 +161,7 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,35 +175,38 @@ impl CreateCustomRoutingAcceleratorInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCustomRoutingAcceleratorInput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput {
-            name: self.name,
-            ip_address_type: self.ip_address_type,
-            ip_addresses: self.ip_addresses,
-            enabled: self.enabled,
-            idempotency_token: self.idempotency_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput {
+                name: self.name
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                ip_addresses: self.ip_addresses
+                ,
+                enabled: self.enabled
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

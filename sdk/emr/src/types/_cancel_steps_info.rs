@@ -3,7 +3,7 @@
 /// <p>Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelStepsInfo {
+pub struct CancelStepsInfo  {
     /// <p>The encrypted StepId of a step.</p>
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
@@ -11,17 +11,17 @@ pub struct CancelStepsInfo {
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl CancelStepsInfo {
+impl  CancelStepsInfo  {
     /// <p>The encrypted StepId of a step.</p>
-    pub fn step_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_id(&self) -> ::std::option::Option<& str> {
         self.step_id.as_deref()
     }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CancelStepsRequestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CancelStepsRequestStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CancelStepsInfoBuilder {
     }
     /// <p>The encrypted StepId of a step.</p>
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_id = input;
-        self
+        self.step_id = input; self
     }
     /// <p>The encrypted StepId of a step.</p>
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CancelStepsInfoBuilder {
     }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CancelStepsRequestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CancelStepsRequestStatus> {
@@ -76,8 +74,7 @@ impl CancelStepsInfoBuilder {
     }
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl CancelStepsInfoBuilder {
     /// Consumes the builder and constructs a [`CancelStepsInfo`](crate::types::CancelStepsInfo).
     pub fn build(self) -> crate::types::CancelStepsInfo {
         crate::types::CancelStepsInfo {
-            step_id: self.step_id,
-            status: self.status,
-            reason: self.reason,
+            step_id: self.step_id
+            ,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

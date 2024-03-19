@@ -3,15 +3,15 @@
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveTrustedSigners {
+pub struct ActiveTrustedSigners  {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub enabled: bool,
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub quantity: i32,
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Signer>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::Signer>>,
 }
-impl ActiveTrustedSigners {
+impl  ActiveTrustedSigners  {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -21,10 +21,11 @@ impl ActiveTrustedSigners {
         self.quantity
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::Signer] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::Signer] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ActiveTrustedSigners {
@@ -40,7 +41,7 @@ impl ActiveTrustedSigners {
 pub struct ActiveTrustedSignersBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Signer>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::Signer>>,
 }
 impl ActiveTrustedSignersBuilder {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
@@ -51,8 +52,7 @@ impl ActiveTrustedSignersBuilder {
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -66,8 +66,7 @@ impl ActiveTrustedSignersBuilder {
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -80,17 +79,16 @@ impl ActiveTrustedSignersBuilder {
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub fn items(mut self, input: crate::types::Signer) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Signer>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Signer>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Signer>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Signer>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ActiveTrustedSigners`](crate::types::ActiveTrustedSigners).
@@ -98,20 +96,22 @@ impl ActiveTrustedSignersBuilder {
     /// - [`enabled`](crate::types::builders::ActiveTrustedSignersBuilder::enabled)
     /// - [`quantity`](crate::types::builders::ActiveTrustedSignersBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::ActiveTrustedSigners, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActiveTrustedSigners {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building ActiveTrustedSigners",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ActiveTrustedSigners",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActiveTrustedSigners {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building ActiveTrustedSigners")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ActiveTrustedSigners")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

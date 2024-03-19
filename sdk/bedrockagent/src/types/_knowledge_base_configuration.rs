@@ -3,19 +3,19 @@
 /// Configures a bedrock knowledge base.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseConfiguration {
+pub struct KnowledgeBaseConfiguration  {
     /// The type of a knowledge base.
     pub r#type: crate::types::KnowledgeBaseType,
     /// Configurations for a vector knowledge base.
     pub vector_knowledge_base_configuration: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>,
 }
-impl KnowledgeBaseConfiguration {
+impl  KnowledgeBaseConfiguration  {
     /// The type of a knowledge base.
-    pub fn r#type(&self) -> &crate::types::KnowledgeBaseType {
+    pub fn r#type(&self) -> & crate::types::KnowledgeBaseType {
         &self.r#type
     }
     /// Configurations for a vector knowledge base.
-    pub fn vector_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::VectorKnowledgeBaseConfiguration> {
+    pub fn vector_knowledge_base_configuration(&self) -> ::std::option::Option<& crate::types::VectorKnowledgeBaseConfiguration> {
         self.vector_knowledge_base_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl KnowledgeBaseConfigurationBuilder {
     }
     /// The type of a knowledge base.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// The type of a knowledge base.
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
@@ -56,8 +55,7 @@ impl KnowledgeBaseConfigurationBuilder {
     }
     /// Configurations for a vector knowledge base.
     pub fn set_vector_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>) -> Self {
-        self.vector_knowledge_base_configuration = input;
-        self
+        self.vector_knowledge_base_configuration = input; self
     }
     /// Configurations for a vector knowledge base.
     pub fn get_vector_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration> {
@@ -67,14 +65,17 @@ impl KnowledgeBaseConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::KnowledgeBaseConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBaseConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building KnowledgeBaseConfiguration",
-                )
-            })?,
-            vector_knowledge_base_configuration: self.vector_knowledge_base_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KnowledgeBaseConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building KnowledgeBaseConfiguration")
+                    )?
+                ,
+                vector_knowledge_base_configuration: self.vector_knowledge_base_configuration
+                ,
+            }
+        )
     }
 }
+

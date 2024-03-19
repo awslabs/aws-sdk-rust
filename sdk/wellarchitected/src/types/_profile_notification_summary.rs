@@ -3,7 +3,7 @@
 /// <p>The profile notification summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileNotificationSummary {
+pub struct ProfileNotificationSummary  {
     /// <p>The current profile version.</p>
     pub current_profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The latest profile version.</p>
@@ -20,34 +20,34 @@ pub struct ProfileNotificationSummary {
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
 }
-impl ProfileNotificationSummary {
+impl  ProfileNotificationSummary  {
     /// <p>The current profile version.</p>
-    pub fn current_profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_profile_version(&self) -> ::std::option::Option<& str> {
         self.current_profile_version.as_deref()
     }
     /// <p>The latest profile version.</p>
-    pub fn latest_profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_profile_version(&self) -> ::std::option::Option<& str> {
         self.latest_profile_version.as_deref()
     }
     /// <p>Type of notification.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProfileNotificationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProfileNotificationType> {
         self.r#type.as_ref()
     }
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile name.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The current profile version.</p>
     pub fn set_current_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_profile_version = input;
-        self
+        self.current_profile_version = input; self
     }
     /// <p>The current profile version.</p>
     pub fn get_current_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The latest profile version.</p>
     pub fn set_latest_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_profile_version = input;
-        self
+        self.latest_profile_version = input; self
     }
     /// <p>The latest profile version.</p>
     pub fn get_latest_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>Type of notification.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProfileNotificationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of notification.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProfileNotificationType> {
@@ -120,8 +117,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The profile name.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The profile name.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +143,7 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +158,7 @@ impl ProfileNotificationSummaryBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -175,13 +168,21 @@ impl ProfileNotificationSummaryBuilder {
     /// Consumes the builder and constructs a [`ProfileNotificationSummary`](crate::types::ProfileNotificationSummary).
     pub fn build(self) -> crate::types::ProfileNotificationSummary {
         crate::types::ProfileNotificationSummary {
-            current_profile_version: self.current_profile_version,
-            latest_profile_version: self.latest_profile_version,
-            r#type: self.r#type,
-            profile_arn: self.profile_arn,
-            profile_name: self.profile_name,
-            workload_id: self.workload_id,
-            workload_name: self.workload_name,
+            current_profile_version: self.current_profile_version
+            ,
+            latest_profile_version: self.latest_profile_version
+            ,
+            r#type: self.r#type
+            ,
+            profile_arn: self.profile_arn
+            ,
+            profile_name: self.profile_name
+            ,
+            workload_id: self.workload_id
+            ,
+            workload_name: self.workload_name
+            ,
         }
     }
 }
+

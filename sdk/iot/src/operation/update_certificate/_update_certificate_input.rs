@@ -3,7 +3,7 @@
 /// <p>The input for the UpdateCertificate operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCertificateInput {
+pub struct UpdateCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The new status.</p>
@@ -11,15 +11,15 @@ pub struct UpdateCertificateInput {
     /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: ::std::option::Option<crate::types::CertificateStatus>,
 }
-impl UpdateCertificateInput {
+impl  UpdateCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The new status.</p>
     /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    pub fn new_status(&self) -> ::std::option::Option<&crate::types::CertificateStatus> {
+    pub fn new_status(&self) -> ::std::option::Option<& crate::types::CertificateStatus> {
         self.new_status.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl UpdateCertificateInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl UpdateCertificateInputBuilder {
     /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
-        self.new_status = input;
-        self
+        self.new_status = input; self
     }
     /// <p>The new status.</p>
     /// <p><b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
@@ -75,12 +73,15 @@ impl UpdateCertificateInputBuilder {
         &self.new_status
     }
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateInput {
-            certificate_id: self.certificate_id,
-            new_status: self.new_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_certificate::UpdateCertificateInput {
+                certificate_id: self.certificate_id
+                ,
+                new_status: self.new_status
+                ,
+            }
+        )
     }
 }
+

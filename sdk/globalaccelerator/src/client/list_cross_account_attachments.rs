@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCrossAccountAttachments`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of cross-account attachment objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCrossAccountAttachmentsOutput`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput) with field(s):
+                            /// - On success, responds with [`ListCrossAccountAttachmentsOutput`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput) with field(s):
     ///   - [`cross_account_attachments(Option<Vec::<Attachment>>)`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput::cross_account_attachments): <p>Information about the cross-account attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCrossAccountAttachmentsError>`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError)
-    pub fn list_cross_account_attachments(
-        &self,
-    ) -> crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder {
-        crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCrossAccountAttachmentsError>`](crate::operation::list_cross_account_attachments::ListCrossAccountAttachmentsError)
+    pub fn list_cross_account_attachments(&self) -> crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder {
+                                crate::operation::list_cross_account_attachments::builders::ListCrossAccountAttachmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

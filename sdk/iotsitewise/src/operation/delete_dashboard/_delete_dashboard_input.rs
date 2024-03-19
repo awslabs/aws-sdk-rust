@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDashboardInput {
+pub struct DeleteDashboardInput  {
     /// <p>The ID of the dashboard to delete.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDashboardInput {
+impl  DeleteDashboardInput  {
     /// <p>The ID of the dashboard to delete.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteDashboardInputBuilder {
     }
     /// <p>The ID of the dashboard to delete.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID of the dashboard to delete.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteDashboardInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
-            dashboard_id: self.dashboard_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dashboard::DeleteDashboardInput {
+                dashboard_id: self.dashboard_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

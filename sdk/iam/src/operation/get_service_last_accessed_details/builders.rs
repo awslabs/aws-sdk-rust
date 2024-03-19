@@ -5,23 +5,20 @@ pub use crate::operation::get_service_last_accessed_details::_get_service_last_a
 
 impl GetServiceLastAccessedDetailsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_service_last_accessed_details();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_service_last_accessed_details();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetServiceLastAccessedDetails`.
-///
+/// 
 /// <p>Retrieves a service last accessed report that was created using the <code>GenerateServiceLastAccessedDetails</code> operation. You can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetails</code> to retrieve the status of your report job. When the report is complete, you can retrieve the generated report. The report includes a list of Amazon Web Services services that the resource (user, group, role, or managed policy) can access.</p><note>
 /// <p>Service last accessed data does not use other policy types when determining whether a resource could access a service. These other policy types include resource-based policies, access control lists, Organizations policies, IAM permissions boundaries, and STS assume role policies. It only applies permissions policy logic. For more about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies</a> in the <i>IAM User Guide</i>.</p>
 /// </note>
@@ -43,33 +40,32 @@ impl GetServiceLastAccessedDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder,
+                    inner: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-    > for GetServiceLastAccessedDetailsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+                    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
+                > for GetServiceLastAccessedDetailsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+                        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetServiceLastAccessedDetailsFluentBuilder {
     /// Creates a new `GetServiceLastAccessedDetails`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
-        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetails::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput, crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code> operation. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -171,3 +158,4 @@ impl GetServiceLastAccessedDetailsFluentBuilder {
         self.inner.get_marker()
     }
 }
+

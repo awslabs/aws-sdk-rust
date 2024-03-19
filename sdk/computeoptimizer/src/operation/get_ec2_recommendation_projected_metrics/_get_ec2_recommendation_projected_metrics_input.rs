@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEc2RecommendationProjectedMetricsInput {
+pub struct GetEc2RecommendationProjectedMetricsInput  {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistic of the projected metrics.</p>
@@ -16,13 +16,13 @@ pub struct GetEc2RecommendationProjectedMetricsInput {
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
-impl GetEc2RecommendationProjectedMetricsInput {
+impl  GetEc2RecommendationProjectedMetricsInput  {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The statistic of the projected metrics.</p>
-    pub fn stat(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
+    pub fn stat(&self) -> ::std::option::Option<& crate::types::MetricStatistic> {
         self.stat.as_ref()
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
@@ -30,15 +30,15 @@ impl GetEc2RecommendationProjectedMetricsInput {
         self.period
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
-    pub fn recommendation_preferences(&self) -> ::std::option::Option<&crate::types::RecommendationPreferences> {
+    pub fn recommendation_preferences(&self) -> ::std::option::Option<& crate::types::RecommendationPreferences> {
         self.recommendation_preferences.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The statistic of the projected metrics.</p>
     pub fn set_stat(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
-        self.stat = input;
-        self
+        self.stat = input; self
     }
     /// <p>The statistic of the projected metrics.</p>
     pub fn get_stat(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
@@ -99,8 +97,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -114,8 +111,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +125,7 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,29 +138,30 @@ impl GetEc2RecommendationProjectedMetricsInputBuilder {
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
     pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
-        self.recommendation_preferences = input;
-        self
+        self.recommendation_preferences = input; self
     }
     /// <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
     pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         &self.recommendation_preferences
     }
     /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsInput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput {
-                instance_arn: self.instance_arn,
-                stat: self.stat,
-                period: self.period,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                recommendation_preferences: self.recommendation_preferences,
-            },
+                instance_arn: self.instance_arn
+                ,
+                stat: self.stat
+                ,
+                period: self.period
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                recommendation_preferences: self.recommendation_preferences
+                ,
+            }
         )
     }
 }
+

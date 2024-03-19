@@ -3,7 +3,7 @@
 /// <p>Information and credentials that you can use to remotely connect to an instance in an EC2 managed fleet. This data type is returned in response to a call to <code>GetInstanceAccess</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InstanceAccess {
+pub struct InstanceAccess  {
     /// <p>A unique identifier for the fleet containing the instance to be accessed.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the instance to be accessed.</p>
@@ -15,29 +15,29 @@ pub struct InstanceAccess {
     /// <p>Security credentials that are required to access the instance.</p>
     pub credentials: ::std::option::Option<crate::types::InstanceCredentials>,
 }
-impl InstanceAccess {
+impl  InstanceAccess  {
     /// <p>A unique identifier for the fleet containing the instance to be accessed.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for the instance to be accessed.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>IP address assigned to the instance.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>Operating system that is running on the instance.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>Security credentials that are required to access the instance.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::InstanceCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::InstanceCredentials> {
         self.credentials.as_ref()
     }
 }
-impl ::std::fmt::Debug for InstanceAccess {
+impl  ::std::fmt::Debug for InstanceAccess  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceAccess");
         formatter.field("fleet_id", &self.fleet_id);
@@ -73,8 +73,7 @@ impl InstanceAccessBuilder {
     }
     /// <p>A unique identifier for the fleet containing the instance to be accessed.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet containing the instance to be accessed.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl InstanceAccessBuilder {
     }
     /// <p>A unique identifier for the instance to be accessed.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>A unique identifier for the instance to be accessed.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl InstanceAccessBuilder {
     }
     /// <p>IP address assigned to the instance.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IP address assigned to the instance.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl InstanceAccessBuilder {
     }
     /// <p>Operating system that is running on the instance.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>Operating system that is running on the instance.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -129,8 +125,7 @@ impl InstanceAccessBuilder {
     }
     /// <p>Security credentials that are required to access the instance.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::InstanceCredentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>Security credentials that are required to access the instance.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::InstanceCredentials> {
@@ -139,11 +134,16 @@ impl InstanceAccessBuilder {
     /// Consumes the builder and constructs a [`InstanceAccess`](crate::types::InstanceAccess).
     pub fn build(self) -> crate::types::InstanceAccess {
         crate::types::InstanceAccess {
-            fleet_id: self.fleet_id,
-            instance_id: self.instance_id,
-            ip_address: self.ip_address,
-            operating_system: self.operating_system,
-            credentials: self.credentials,
+            fleet_id: self.fleet_id
+            ,
+            instance_id: self.instance_id
+            ,
+            ip_address: self.ip_address
+            ,
+            operating_system: self.operating_system
+            ,
+            credentials: self.credentials
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for InstanceAccessBuilder {
         formatter.finish()
     }
 }
+

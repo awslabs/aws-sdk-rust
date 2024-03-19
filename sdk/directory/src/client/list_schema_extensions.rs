@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemaExtensions`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory from which to retrieve the schema extension information.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
-    /// - On success, responds with [`ListSchemaExtensionsOutput`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput) with field(s):
+                            /// - On success, responds with [`ListSchemaExtensionsOutput`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput) with field(s):
     ///   - [`schema_extensions_info(Option<Vec::<SchemaExtensionInfo>>)`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput::schema_extensions_info): <p>Information about the schema extensions applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListSchemaExtensionsError>`](crate::operation::list_schema_extensions::ListSchemaExtensionsError)
+                            /// - On failure, responds with [`SdkError<ListSchemaExtensionsError>`](crate::operation::list_schema_extensions::ListSchemaExtensionsError)
     pub fn list_schema_extensions(&self) -> crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder {
-        crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrafficDistributionGroupUsers`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`traffic_distribution_group_id(impl Into<String>)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::traffic_distribution_group_id) / [`set_traffic_distribution_group_id(Option<String>)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::set_traffic_distribution_group_id):<br>required: **true**<br><p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListTrafficDistributionGroupUsersOutput`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput) with field(s):
+                            /// - On success, responds with [`ListTrafficDistributionGroupUsersOutput`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`traffic_distribution_group_user_summary_list(Option<Vec::<TrafficDistributionGroupUserSummary>>)`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput::traffic_distribution_group_user_summary_list): <p>A list of traffic distribution group users.</p>
-    /// - On failure, responds with [`SdkError<ListTrafficDistributionGroupUsersError>`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError)
-    pub fn list_traffic_distribution_group_users(
-        &self,
-    ) -> crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder {
-        crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTrafficDistributionGroupUsersError>`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError)
+    pub fn list_traffic_distribution_group_users(&self) -> crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder {
+                                crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

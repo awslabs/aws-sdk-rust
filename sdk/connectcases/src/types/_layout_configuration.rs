@@ -3,13 +3,13 @@
 /// <p>Object to store configuration of layouts associated to the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayoutConfiguration {
+pub struct LayoutConfiguration  {
     /// <p>Unique identifier of a layout.</p>
     pub default_layout: ::std::option::Option<::std::string::String>,
 }
-impl LayoutConfiguration {
+impl  LayoutConfiguration  {
     /// <p>Unique identifier of a layout.</p>
-    pub fn default_layout(&self) -> ::std::option::Option<&str> {
+    pub fn default_layout(&self) -> ::std::option::Option<& str> {
         self.default_layout.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>Unique identifier of a layout.</p>
     pub fn set_default_layout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_layout = input;
-        self
+        self.default_layout = input; self
     }
     /// <p>Unique identifier of a layout.</p>
     pub fn get_default_layout(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl LayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`LayoutConfiguration`](crate::types::LayoutConfiguration).
     pub fn build(self) -> crate::types::LayoutConfiguration {
         crate::types::LayoutConfiguration {
-            default_layout: self.default_layout,
+            default_layout: self.default_layout
+            ,
         }
     }
 }
+

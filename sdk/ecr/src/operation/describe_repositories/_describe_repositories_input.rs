@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRepositoriesInput {
+pub struct DescribeRepositoriesInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -14,21 +14,22 @@ pub struct DescribeRepositoriesInput {
     /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeRepositoriesInput {
+impl  DescribeRepositoriesInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
-    pub fn repository_names(&self) -> &[::std::string::String] {
-        self.repository_names.as_deref().unwrap_or_default()
+    pub fn repository_names(&self) -> & [::std::string::String] {
+        self.repository_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
@@ -48,7 +49,7 @@ impl DescribeRepositoriesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRepositoriesInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -60,8 +61,7 @@ impl DescribeRepositoriesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +74,16 @@ impl DescribeRepositoriesInputBuilder {
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
-        v.push(input.into());
-        self.repository_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.repository_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.repository_names = input;
-        self
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.repository_names = input; self
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.repository_names
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p><note>
@@ -98,8 +97,7 @@ impl DescribeRepositoriesInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -114,23 +112,26 @@ impl DescribeRepositoriesInputBuilder {
     }
     /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRepositoriesInput`](crate::operation::describe_repositories::DescribeRepositoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_repositories::DescribeRepositoriesInput {
-            registry_id: self.registry_id,
-            repository_names: self.repository_names,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_repositories::DescribeRepositoriesInput {
+                registry_id: self.registry_id
+                ,
+                repository_names: self.repository_names
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOfferingsOutput {
+pub struct ListOfferingsOutput  {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
+    pub offerings: ::std::option::Option<::std::vec::Vec::<crate::types::Offering>>,
     _request_id: Option<String>,
 }
-impl ListOfferingsOutput {
+impl  ListOfferingsOutput  {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offerings.is_none()`.
-    pub fn offerings(&self) -> &[crate::types::Offering] {
-        self.offerings.as_deref().unwrap_or_default()
+    pub fn offerings(&self) -> & [crate::types::Offering] {
+        self.offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput).
     pub fn builder() -> crate::operation::list_offerings::builders::ListOfferingsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
+    pub(crate) offerings: ::std::option::Option<::std::vec::Vec::<crate::types::Offering>>,
     _request_id: Option<String>,
 }
 impl ListOfferingsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListOfferingsOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListOfferingsOutputBuilder {
     /// A list of offerings that are available to this account in the current AWS Region.
     pub fn offerings(mut self, input: crate::types::Offering) -> Self {
         let mut v = self.offerings.unwrap_or_default();
-        v.push(input);
-        self.offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub fn set_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>) -> Self {
-        self.offerings = input;
-        self
+    pub fn set_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Offering>>) -> Self {
+        self.offerings = input; self
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub fn get_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Offering>> {
+    pub fn get_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Offering>> {
         &self.offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput).
     pub fn build(self) -> crate::operation::list_offerings::ListOfferingsOutput {
         crate::operation::list_offerings::ListOfferingsOutput {
-            next_token: self.next_token,
-            offerings: self.offerings,
+            next_token: self.next_token
+            ,
+            offerings: self.offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

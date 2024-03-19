@@ -3,11 +3,11 @@
 /// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Phase2DhGroupNumbersRequestListValue {
+pub struct Phase2DhGroupNumbersRequestListValue  {
     /// <p>The Diffie-Hellmann group number.</p>
     pub value: ::std::option::Option<i32>,
 }
-impl Phase2DhGroupNumbersRequestListValue {
+impl  Phase2DhGroupNumbersRequestListValue  {
     /// <p>The Diffie-Hellmann group number.</p>
     pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
@@ -34,8 +34,7 @@ impl Phase2DhGroupNumbersRequestListValueBuilder {
     }
     /// <p>The Diffie-Hellmann group number.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The Diffie-Hellmann group number.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl Phase2DhGroupNumbersRequestListValueBuilder {
     }
     /// Consumes the builder and constructs a [`Phase2DhGroupNumbersRequestListValue`](crate::types::Phase2DhGroupNumbersRequestListValue).
     pub fn build(self) -> crate::types::Phase2DhGroupNumbersRequestListValue {
-        crate::types::Phase2DhGroupNumbersRequestListValue { value: self.value }
+        crate::types::Phase2DhGroupNumbersRequestListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourcesInput {
+pub struct ListDataSourcesInput  {
     /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index used with one or more data source connectors.</p>
@@ -12,17 +12,17 @@ pub struct ListDataSourcesInput {
     /// <p>The maximum number of data source connectors to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDataSourcesInput {
+impl  ListDataSourcesInput  {
     /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index used with one or more data source connectors.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of data source connectors to return.</p>
@@ -55,8 +55,7 @@ impl ListDataSourcesInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListDataSourcesInputBuilder {
     }
     /// <p>The identifier of the index used with one or more data source connectors.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index used with one or more data source connectors.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListDataSourcesInputBuilder {
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl ListDataSourcesInputBuilder {
     }
     /// <p>The maximum number of data source connectors to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of data source connectors to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_sources::ListDataSourcesInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

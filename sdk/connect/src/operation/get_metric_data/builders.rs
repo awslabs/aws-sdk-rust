@@ -5,23 +5,20 @@ pub use crate::operation::get_metric_data::_get_metric_data_input::GetMetricData
 
 impl GetMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_data::GetMetricDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_metric_data::GetMetricDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_metric_data();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_metric_data::GetMetricDataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_metric_data::GetMetricDataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_metric_data();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetMetricData`.
-///
+/// 
 /// <p>Gets historical metric data from the specified Amazon Connect instance.</p>
 /// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
 /// <p>We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a> API. It provides more flexibility, features, and the ability to query longer time ranges than <code>GetMetricData</code>. Use it to retrieve historical agent and contact metrics for the last 3 months, at varying intervals. You can also use it to build custom dashboards to measure historical queue and agent performance. For example, you can track the number of incoming contacts for the last 7 days, with data split by day, to see how contact volume changed per day of the week.</p>
@@ -29,33 +26,32 @@ impl GetMetricDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_metric_data::builders::GetMetricDataInputBuilder,
+                    inner: crate::operation::get_metric_data::builders::GetMetricDataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_metric_data::GetMetricDataOutput,
-        crate::operation::get_metric_data::GetMetricDataError,
-    > for GetMetricDataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_metric_data::GetMetricDataOutput,
-            crate::operation::get_metric_data::GetMetricDataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_metric_data::GetMetricDataOutput,
+                    crate::operation::get_metric_data::GetMetricDataError,
+                > for GetMetricDataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_metric_data::GetMetricDataOutput,
+                        crate::operation::get_metric_data::GetMetricDataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetMetricDataFluentBuilder {
     /// Creates a new `GetMetricData`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,59 +60,50 @@ impl GetMetricDataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_data::GetMetricDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_metric_data::GetMetricDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_metric_data::GetMetricData::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_metric_data::GetMetricData::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_metric_data::GetMetricDataOutput,
-        crate::operation::get_metric_data::GetMetricDataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_metric_data::GetMetricDataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metric_data::GetMetricDataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_metric_data::GetMetricData::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_metric_data::GetMetricData::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_metric_data::GetMetricDataOutput, crate::operation::get_metric_data::GetMetricDataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data::paginator::GetMetricDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
-        crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data::paginator::GetMetricDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
+                                crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -202,14 +189,14 @@ impl GetMetricDataFluentBuilder {
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Grouping>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
+    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Grouping>> {
         self.inner.get_groupings()
     }
     /// Appends an item to `HistoricalMetrics`.
@@ -584,7 +571,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
+    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>>) -> Self {
         self.inner = self.inner.set_historical_metrics(input);
         self
     }
@@ -770,7 +757,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
+    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>> {
         self.inner.get_historical_metrics()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -802,3 +789,4 @@ impl GetMetricDataFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

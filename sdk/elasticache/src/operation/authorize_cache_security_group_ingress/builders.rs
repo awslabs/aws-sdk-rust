@@ -5,56 +5,52 @@ pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cac
 
 impl AuthorizeCacheSecurityGroupIngressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.authorize_cache_security_group_ingress();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.authorize_cache_security_group_ingress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AuthorizeCacheSecurityGroupIngress`.
-///
+/// 
 /// <p>Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p><note>
 /// <p>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeCacheSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder,
+                    inner: crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
-    > for AuthorizeCacheSecurityGroupIngressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
+                    crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
+                > for AuthorizeCacheSecurityGroupIngressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
+                        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AuthorizeCacheSecurityGroupIngressFluentBuilder {
     /// Creates a new `AuthorizeCacheSecurityGroupIngress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl AuthorizeCacheSecurityGroupIngressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput, crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The cache security group that allows network ingress.</p>
     pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());
@@ -153,3 +140,4 @@ impl AuthorizeCacheSecurityGroupIngressFluentBuilder {
         self.inner.get_ec2_security_group_owner_id()
     }
 }
+

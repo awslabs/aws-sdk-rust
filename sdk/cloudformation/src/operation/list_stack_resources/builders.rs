@@ -5,55 +5,51 @@ pub use crate::operation::list_stack_resources::_list_stack_resources_input::Lis
 
 impl ListStackResourcesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_resources::ListStackResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_stack_resources();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_stack_resources::ListStackResourcesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_stack_resources::ListStackResourcesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_stack_resources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListStackResources`.
-///
+/// 
 /// <p>Returns descriptions of all resources of the specified stack.</p>
 /// <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder,
+                    inner: crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_stack_resources::ListStackResourcesOutput,
-        crate::operation::list_stack_resources::ListStackResourcesError,
-    > for ListStackResourcesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_stack_resources::ListStackResourcesOutput,
-            crate::operation::list_stack_resources::ListStackResourcesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_stack_resources::ListStackResourcesOutput,
+                    crate::operation::list_stack_resources::ListStackResourcesError,
+                > for ListStackResourcesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_stack_resources::ListStackResourcesOutput,
+                        crate::operation::list_stack_resources::ListStackResourcesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListStackResourcesFluentBuilder {
     /// Creates a new `ListStackResources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl ListStackResourcesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_resources::ListStackResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_stack_resources::ListStackResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_stack_resources::ListStackResources::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_stack_resources::ListStackResources::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_stack_resources::ListStackResourcesOutput,
-        crate::operation::list_stack_resources::ListStackResourcesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_stack_resources::ListStackResourcesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_resources::ListStackResourcesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_stack_resources::ListStackResources::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_stack_resources::ListStackResources::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_stack_resources::ListStackResourcesOutput, crate::operation::list_stack_resources::ListStackResourcesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
-        crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
+                                crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -165,3 +152,4 @@ impl ListStackResourcesFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

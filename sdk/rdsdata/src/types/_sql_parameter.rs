@@ -3,7 +3,7 @@
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqlParameter {
+pub struct SqlParameter  {
     /// <p>The name of the parameter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
@@ -25,13 +25,13 @@ pub struct SqlParameter {
     /// </ul>
     pub type_hint: ::std::option::Option<crate::types::TypeHint>,
 }
-impl SqlParameter {
+impl  SqlParameter  {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::Field> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::Field> {
         self.value.as_ref()
     }
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
@@ -49,7 +49,7 @@ impl SqlParameter {
     /// <li>
     /// <p><code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database.</p></li>
     /// </ul>
-    pub fn type_hint(&self) -> ::std::option::Option<&crate::types::TypeHint> {
+    pub fn type_hint(&self) -> ::std::option::Option<& crate::types::TypeHint> {
         self.type_hint.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl SqlParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl SqlParameterBuilder {
     }
     /// <p>The value of the parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::Field>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::Field> {
@@ -132,8 +130,7 @@ impl SqlParameterBuilder {
     /// <p><code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database.</p></li>
     /// </ul>
     pub fn set_type_hint(mut self, input: ::std::option::Option<crate::types::TypeHint>) -> Self {
-        self.type_hint = input;
-        self
+        self.type_hint = input; self
     }
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
     /// <ul>
@@ -156,9 +153,13 @@ impl SqlParameterBuilder {
     /// Consumes the builder and constructs a [`SqlParameter`](crate::types::SqlParameter).
     pub fn build(self) -> crate::types::SqlParameter {
         crate::types::SqlParameter {
-            name: self.name,
-            value: self.value,
-            type_hint: self.type_hint,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            type_hint: self.type_hint
+            ,
         }
     }
 }
+

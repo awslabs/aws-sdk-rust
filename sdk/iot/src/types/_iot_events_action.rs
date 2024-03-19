@@ -3,7 +3,7 @@
 /// <p>Sends an input to an IoT Events detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotEventsAction {
+pub struct IotEventsAction  {
     /// <p>The name of the IoT Events input.</p>
     pub input_name: ::std::string::String,
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
@@ -17,16 +17,15 @@ pub struct IotEventsAction {
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub role_arn: ::std::string::String,
 }
-impl IotEventsAction {
+impl  IotEventsAction  {
     /// <p>The name of the IoT Events input.</p>
-    pub fn input_name(&self) -> &str {
-        use std::ops::Deref;
-        self.input_name.deref()
+    pub fn input_name(&self) -> & str {
+        use std::ops::Deref; self.input_name.deref()
     }
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
@@ -36,9 +35,8 @@ impl IotEventsAction {
         self.batch_mode
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl IotEventsAction {
@@ -66,8 +64,7 @@ impl IotEventsActionBuilder {
     }
     /// <p>The name of the IoT Events input.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The name of the IoT Events input.</p>
     pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +81,7 @@ impl IotEventsActionBuilder {
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
@@ -104,8 +100,7 @@ impl IotEventsActionBuilder {
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.batch_mode = input;
-        self
+        self.batch_mode = input; self
     }
     /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.</p>
@@ -121,8 +116,7 @@ impl IotEventsActionBuilder {
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,21 +127,24 @@ impl IotEventsActionBuilder {
     /// - [`input_name`](crate::types::builders::IotEventsActionBuilder::input_name)
     /// - [`role_arn`](crate::types::builders::IotEventsActionBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IotEventsAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotEventsAction {
-            input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_name",
-                    "input_name was not specified but it is required when building IotEventsAction",
-                )
-            })?,
-            message_id: self.message_id,
-            batch_mode: self.batch_mode,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building IotEventsAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IotEventsAction {
+                input_name: self.input_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_name", "input_name was not specified but it is required when building IotEventsAction")
+                    )?
+                ,
+                message_id: self.message_id
+                ,
+                batch_mode: self.batch_mode
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building IotEventsAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

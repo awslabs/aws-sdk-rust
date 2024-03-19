@@ -3,19 +3,19 @@
 /// <p>Request to delete a Resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceInput {
+pub struct DeleteResourceInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Resource resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourceInput {
+impl  DeleteResourceInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the Resource resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteResourceInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteResourceInputBuilder {
     }
     /// <p>The identifier of the Resource resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the Resource resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_resource::DeleteResourceInput {
-            rest_api_id: self.rest_api_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource::DeleteResourceInput {
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents the input of a get repository triggers operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryTriggersInput {
+pub struct GetRepositoryTriggersInput  {
     /// <p>The name of the repository for which the trigger is configured.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRepositoryTriggersInput {
+impl  GetRepositoryTriggersInput  {
     /// <p>The name of the repository for which the trigger is configured.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetRepositoryTriggersInputBuilder {
     }
     /// <p>The name of the repository for which the trigger is configured.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository for which the trigger is configured.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
     /// Consumes the builder and constructs a [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_repository_triggers::GetRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_repository_triggers::GetRepositoryTriggersInput {
-            repository_name: self.repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_repository_triggers::GetRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_repository_triggers::GetRepositoryTriggersInput {
+                repository_name: self.repository_name
+                ,
+            }
+        )
     }
 }
+

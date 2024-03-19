@@ -3,20 +3,19 @@
 /// <p>Details related to problems with AWS TNB resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProblemDetails {
+pub struct ProblemDetails  {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     pub detail: ::std::string::String,
     /// <p>A human-readable title of the problem type.</p>
     pub title: ::std::option::Option<::std::string::String>,
 }
-impl ProblemDetails {
+impl  ProblemDetails  {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn detail(&self) -> &str {
-        use std::ops::Deref;
-        self.detail.deref()
+    pub fn detail(&self) -> & str {
+        use std::ops::Deref; self.detail.deref()
     }
     /// <p>A human-readable title of the problem type.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ProblemDetailsBuilder {
     }
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
     }
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ProblemDetailsBuilder {
     }
     /// <p>A human-readable title of the problem type.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>A human-readable title of the problem type.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ProblemDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`detail`](crate::types::builders::ProblemDetailsBuilder::detail)
     pub fn build(self) -> ::std::result::Result<crate::types::ProblemDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProblemDetails {
-            detail: self.detail.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "detail",
-                    "detail was not specified but it is required when building ProblemDetails",
-                )
-            })?,
-            title: self.title,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProblemDetails {
+                detail: self.detail
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("detail", "detail was not specified but it is required when building ProblemDetails")
+                    )?
+                ,
+                title: self.title
+                ,
+            }
+        )
     }
 }
+

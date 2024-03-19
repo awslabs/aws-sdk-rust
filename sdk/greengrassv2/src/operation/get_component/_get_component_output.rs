@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComponentOutput {
+pub struct GetComponentOutput  {
     /// <p>The format of the recipe.</p>
     pub recipe_output_format: crate::types::RecipeOutputFormat,
     /// <p>The recipe of the component version.</p>
     pub recipe: ::aws_smithy_types::Blob,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetComponentOutput {
+impl  GetComponentOutput  {
     /// <p>The format of the recipe.</p>
-    pub fn recipe_output_format(&self) -> &crate::types::RecipeOutputFormat {
+    pub fn recipe_output_format(&self) -> & crate::types::RecipeOutputFormat {
         &self.recipe_output_format
     }
     /// <p>The recipe of the component version.</p>
-    pub fn recipe(&self) -> &::aws_smithy_types::Blob {
+    pub fn recipe(&self) -> & ::aws_smithy_types::Blob {
         &self.recipe
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetComponentOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput).
     pub fn builder() -> crate::operation::get_component::builders::GetComponentOutputBuilder {
@@ -43,7 +43,7 @@ impl GetComponentOutput {
 pub struct GetComponentOutputBuilder {
     pub(crate) recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
     pub(crate) recipe: ::std::option::Option<::aws_smithy_types::Blob>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetComponentOutputBuilder {
@@ -55,8 +55,7 @@ impl GetComponentOutputBuilder {
     }
     /// <p>The format of the recipe.</p>
     pub fn set_recipe_output_format(mut self, input: ::std::option::Option<crate::types::RecipeOutputFormat>) -> Self {
-        self.recipe_output_format = input;
-        self
+        self.recipe_output_format = input; self
     }
     /// <p>The format of the recipe.</p>
     pub fn get_recipe_output_format(&self) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
@@ -70,8 +69,7 @@ impl GetComponentOutputBuilder {
     }
     /// <p>The recipe of the component version.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.recipe = input;
-        self
+        self.recipe = input; self
     }
     /// <p>The recipe of the component version.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -84,50 +82,49 @@ impl GetComponentOutputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`recipe_output_format`](crate::operation::get_component::builders::GetComponentOutputBuilder::recipe_output_format)
     /// - [`recipe`](crate::operation::get_component::builders::GetComponentOutputBuilder::recipe)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_component::GetComponentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_component::GetComponentOutput {
-            recipe_output_format: self.recipe_output_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recipe_output_format",
-                    "recipe_output_format was not specified but it is required when building GetComponentOutput",
-                )
-            })?,
-            recipe: self.recipe.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recipe",
-                    "recipe was not specified but it is required when building GetComponentOutput",
-                )
-            })?,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_component::GetComponentOutput {
+                recipe_output_format: self.recipe_output_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recipe_output_format", "recipe_output_format was not specified but it is required when building GetComponentOutput")
+                    )?
+                ,
+                recipe: self.recipe
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recipe", "recipe was not specified but it is required when building GetComponentOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

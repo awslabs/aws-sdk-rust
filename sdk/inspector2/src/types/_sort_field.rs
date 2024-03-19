@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortfield = unimplemented!();
 /// match sortfield {
@@ -45,16 +45,14 @@
 /// Specifically, when `sortfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SortField {
     #[allow(missing_docs)] // documentation missing in model
     AwsAccountId,
@@ -92,124 +90,107 @@ pub enum SortField {
     VulnerabilitySource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SortField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_ACCOUNT_ID" => SortField::AwsAccountId,
-            "COMPONENT_TYPE" => SortField::ComponentType,
-            "ECR_IMAGE_PUSHED_AT" => SortField::EcrImagePushedAt,
-            "ECR_IMAGE_REGISTRY" => SortField::EcrImageRegistry,
-            "ECR_IMAGE_REPOSITORY_NAME" => SortField::EcrImageRepositoryName,
-            "EPSS_SCORE" => SortField::EpssScore,
-            "FINDING_STATUS" => SortField::FindingStatus,
-            "FINDING_TYPE" => SortField::FindingType,
-            "FIRST_OBSERVED_AT" => SortField::FirstObservedAt,
-            "INSPECTOR_SCORE" => SortField::InspectorScore,
-            "LAST_OBSERVED_AT" => SortField::LastObservedAt,
-            "NETWORK_PROTOCOL" => SortField::NetworkProtocol,
-            "RESOURCE_TYPE" => SortField::ResourceType,
-            "SEVERITY" => SortField::Severity,
-            "VENDOR_SEVERITY" => SortField::VendorSeverity,
-            "VULNERABILITY_ID" => SortField::VulnerabilityId,
-            "VULNERABILITY_SOURCE" => SortField::VulnerabilitySource,
-            other => SortField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AWS_ACCOUNT_ID" => SortField::AwsAccountId,
+"COMPONENT_TYPE" => SortField::ComponentType,
+"ECR_IMAGE_PUSHED_AT" => SortField::EcrImagePushedAt,
+"ECR_IMAGE_REGISTRY" => SortField::EcrImageRegistry,
+"ECR_IMAGE_REPOSITORY_NAME" => SortField::EcrImageRepositoryName,
+"EPSS_SCORE" => SortField::EpssScore,
+"FINDING_STATUS" => SortField::FindingStatus,
+"FINDING_TYPE" => SortField::FindingType,
+"FIRST_OBSERVED_AT" => SortField::FirstObservedAt,
+"INSPECTOR_SCORE" => SortField::InspectorScore,
+"LAST_OBSERVED_AT" => SortField::LastObservedAt,
+"NETWORK_PROTOCOL" => SortField::NetworkProtocol,
+"RESOURCE_TYPE" => SortField::ResourceType,
+"SEVERITY" => SortField::Severity,
+"VENDOR_SEVERITY" => SortField::VendorSeverity,
+"VULNERABILITY_ID" => SortField::VulnerabilityId,
+"VULNERABILITY_SOURCE" => SortField::VulnerabilitySource,
+other => SortField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SortField {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SortField::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SortField::from(s))
+                    }
+                }
 impl SortField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortField::AwsAccountId => "AWS_ACCOUNT_ID",
-            SortField::ComponentType => "COMPONENT_TYPE",
-            SortField::EcrImagePushedAt => "ECR_IMAGE_PUSHED_AT",
-            SortField::EcrImageRegistry => "ECR_IMAGE_REGISTRY",
-            SortField::EcrImageRepositoryName => "ECR_IMAGE_REPOSITORY_NAME",
-            SortField::EpssScore => "EPSS_SCORE",
-            SortField::FindingStatus => "FINDING_STATUS",
-            SortField::FindingType => "FINDING_TYPE",
-            SortField::FirstObservedAt => "FIRST_OBSERVED_AT",
-            SortField::InspectorScore => "INSPECTOR_SCORE",
-            SortField::LastObservedAt => "LAST_OBSERVED_AT",
-            SortField::NetworkProtocol => "NETWORK_PROTOCOL",
-            SortField::ResourceType => "RESOURCE_TYPE",
-            SortField::Severity => "SEVERITY",
-            SortField::VendorSeverity => "VENDOR_SEVERITY",
-            SortField::VulnerabilityId => "VULNERABILITY_ID",
-            SortField::VulnerabilitySource => "VULNERABILITY_SOURCE",
-            SortField::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_ACCOUNT_ID",
-            "COMPONENT_TYPE",
-            "ECR_IMAGE_PUSHED_AT",
-            "ECR_IMAGE_REGISTRY",
-            "ECR_IMAGE_REPOSITORY_NAME",
-            "EPSS_SCORE",
-            "FINDING_STATUS",
-            "FINDING_TYPE",
-            "FIRST_OBSERVED_AT",
-            "INSPECTOR_SCORE",
-            "LAST_OBSERVED_AT",
-            "NETWORK_PROTOCOL",
-            "RESOURCE_TYPE",
-            "SEVERITY",
-            "VENDOR_SEVERITY",
-            "VULNERABILITY_ID",
-            "VULNERABILITY_SOURCE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortField::AwsAccountId => "AWS_ACCOUNT_ID",
+    SortField::ComponentType => "COMPONENT_TYPE",
+    SortField::EcrImagePushedAt => "ECR_IMAGE_PUSHED_AT",
+    SortField::EcrImageRegistry => "ECR_IMAGE_REGISTRY",
+    SortField::EcrImageRepositoryName => "ECR_IMAGE_REPOSITORY_NAME",
+    SortField::EpssScore => "EPSS_SCORE",
+    SortField::FindingStatus => "FINDING_STATUS",
+    SortField::FindingType => "FINDING_TYPE",
+    SortField::FirstObservedAt => "FIRST_OBSERVED_AT",
+    SortField::InspectorScore => "INSPECTOR_SCORE",
+    SortField::LastObservedAt => "LAST_OBSERVED_AT",
+    SortField::NetworkProtocol => "NETWORK_PROTOCOL",
+    SortField::ResourceType => "RESOURCE_TYPE",
+    SortField::Severity => "SEVERITY",
+    SortField::VendorSeverity => "VENDOR_SEVERITY",
+    SortField::VulnerabilityId => "VULNERABILITY_ID",
+    SortField::VulnerabilitySource => "VULNERABILITY_SOURCE",
+    SortField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS_ACCOUNT_ID", "COMPONENT_TYPE", "ECR_IMAGE_PUSHED_AT", "ECR_IMAGE_REGISTRY", "ECR_IMAGE_REPOSITORY_NAME", "EPSS_SCORE", "FINDING_STATUS", "FINDING_TYPE", "FIRST_OBSERVED_AT", "INSPECTOR_SCORE", "LAST_OBSERVED_AT", "NETWORK_PROTOCOL", "RESOURCE_TYPE", "SEVERITY", "VENDOR_SEVERITY", "VULNERABILITY_ID", "VULNERABILITY_SOURCE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SortField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SortField {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SortField {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SortField::AwsAccountId => write!(f, "AWS_ACCOUNT_ID"),
-            SortField::ComponentType => write!(f, "COMPONENT_TYPE"),
-            SortField::EcrImagePushedAt => write!(f, "ECR_IMAGE_PUSHED_AT"),
-            SortField::EcrImageRegistry => write!(f, "ECR_IMAGE_REGISTRY"),
-            SortField::EcrImageRepositoryName => write!(f, "ECR_IMAGE_REPOSITORY_NAME"),
-            SortField::EpssScore => write!(f, "EPSS_SCORE"),
-            SortField::FindingStatus => write!(f, "FINDING_STATUS"),
-            SortField::FindingType => write!(f, "FINDING_TYPE"),
-            SortField::FirstObservedAt => write!(f, "FIRST_OBSERVED_AT"),
-            SortField::InspectorScore => write!(f, "INSPECTOR_SCORE"),
-            SortField::LastObservedAt => write!(f, "LAST_OBSERVED_AT"),
-            SortField::NetworkProtocol => write!(f, "NETWORK_PROTOCOL"),
-            SortField::ResourceType => write!(f, "RESOURCE_TYPE"),
-            SortField::Severity => write!(f, "SEVERITY"),
-            SortField::VendorSeverity => write!(f, "VENDOR_SEVERITY"),
-            SortField::VulnerabilityId => write!(f, "VULNERABILITY_ID"),
-            SortField::VulnerabilitySource => write!(f, "VULNERABILITY_SOURCE"),
-            SortField::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SortField::AwsAccountId => write!(f, "AWS_ACCOUNT_ID"),
+SortField::ComponentType => write!(f, "COMPONENT_TYPE"),
+SortField::EcrImagePushedAt => write!(f, "ECR_IMAGE_PUSHED_AT"),
+SortField::EcrImageRegistry => write!(f, "ECR_IMAGE_REGISTRY"),
+SortField::EcrImageRepositoryName => write!(f, "ECR_IMAGE_REPOSITORY_NAME"),
+SortField::EpssScore => write!(f, "EPSS_SCORE"),
+SortField::FindingStatus => write!(f, "FINDING_STATUS"),
+SortField::FindingType => write!(f, "FINDING_TYPE"),
+SortField::FirstObservedAt => write!(f, "FIRST_OBSERVED_AT"),
+SortField::InspectorScore => write!(f, "INSPECTOR_SCORE"),
+SortField::LastObservedAt => write!(f, "LAST_OBSERVED_AT"),
+SortField::NetworkProtocol => write!(f, "NETWORK_PROTOCOL"),
+SortField::ResourceType => write!(f, "RESOURCE_TYPE"),
+SortField::Severity => write!(f, "SEVERITY"),
+SortField::VendorSeverity => write!(f, "VENDOR_SEVERITY"),
+SortField::VulnerabilityId => write!(f, "VULNERABILITY_ID"),
+SortField::VulnerabilitySource => write!(f, "VULNERABILITY_SOURCE"),
+SortField::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

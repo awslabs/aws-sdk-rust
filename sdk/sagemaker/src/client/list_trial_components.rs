@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrialComponents`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`experiment_name(impl Into<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::experiment_name) / [`set_experiment_name(Option<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_experiment_name):<br>required: **false**<br><p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p><br>
     ///   - [`trial_name(impl Into<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::trial_name) / [`set_trial_name(Option<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_trial_name):<br>required: **false**<br><p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p><br>
     ///   - [`source_arn(impl Into<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_source_arn):<br>required: **false**<br><p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of components to return in the response. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p><br>
-    /// - On success, responds with [`ListTrialComponentsOutput`](crate::operation::list_trial_components::ListTrialComponentsOutput) with field(s):
+                            /// - On success, responds with [`ListTrialComponentsOutput`](crate::operation::list_trial_components::ListTrialComponentsOutput) with field(s):
     ///   - [`trial_component_summaries(Option<Vec::<TrialComponentSummary>>)`](crate::operation::list_trial_components::ListTrialComponentsOutput::trial_component_summaries): <p>A list of the summaries of your trial components.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trial_components::ListTrialComponentsOutput::next_token): <p>A token for getting the next set of components, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListTrialComponentsError>`](crate::operation::list_trial_components::ListTrialComponentsError)
+                            /// - On failure, responds with [`SdkError<ListTrialComponentsError>`](crate::operation::list_trial_components::ListTrialComponentsError)
     pub fn list_trial_components(&self) -> crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder {
-        crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_trial_components::builders::ListTrialComponentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imagebuilderstate = unimplemented!();
 /// match imagebuilderstate {
@@ -39,16 +39,14 @@
 /// Specifically, when `imagebuilderstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageBuilderState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ImageBuilderState {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -74,100 +72,89 @@ pub enum ImageBuilderState {
     UpdatingAgent,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ImageBuilderState {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETING" => ImageBuilderState::Deleting,
-            "FAILED" => ImageBuilderState::Failed,
-            "PENDING" => ImageBuilderState::Pending,
-            "PENDING_QUALIFICATION" => ImageBuilderState::PendingQualification,
-            "REBOOTING" => ImageBuilderState::Rebooting,
-            "RUNNING" => ImageBuilderState::Running,
-            "SNAPSHOTTING" => ImageBuilderState::Snapshotting,
-            "STOPPED" => ImageBuilderState::Stopped,
-            "STOPPING" => ImageBuilderState::Stopping,
-            "UPDATING" => ImageBuilderState::Updating,
-            "UPDATING_AGENT" => ImageBuilderState::UpdatingAgent,
-            other => ImageBuilderState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DELETING" => ImageBuilderState::Deleting,
+"FAILED" => ImageBuilderState::Failed,
+"PENDING" => ImageBuilderState::Pending,
+"PENDING_QUALIFICATION" => ImageBuilderState::PendingQualification,
+"REBOOTING" => ImageBuilderState::Rebooting,
+"RUNNING" => ImageBuilderState::Running,
+"SNAPSHOTTING" => ImageBuilderState::Snapshotting,
+"STOPPED" => ImageBuilderState::Stopped,
+"STOPPING" => ImageBuilderState::Stopping,
+"UPDATING" => ImageBuilderState::Updating,
+"UPDATING_AGENT" => ImageBuilderState::UpdatingAgent,
+other => ImageBuilderState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ImageBuilderState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ImageBuilderState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ImageBuilderState::from(s))
+                    }
+                }
 impl ImageBuilderState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImageBuilderState::Deleting => "DELETING",
-            ImageBuilderState::Failed => "FAILED",
-            ImageBuilderState::Pending => "PENDING",
-            ImageBuilderState::PendingQualification => "PENDING_QUALIFICATION",
-            ImageBuilderState::Rebooting => "REBOOTING",
-            ImageBuilderState::Running => "RUNNING",
-            ImageBuilderState::Snapshotting => "SNAPSHOTTING",
-            ImageBuilderState::Stopped => "STOPPED",
-            ImageBuilderState::Stopping => "STOPPING",
-            ImageBuilderState::Updating => "UPDATING",
-            ImageBuilderState::UpdatingAgent => "UPDATING_AGENT",
-            ImageBuilderState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETING",
-            "FAILED",
-            "PENDING",
-            "PENDING_QUALIFICATION",
-            "REBOOTING",
-            "RUNNING",
-            "SNAPSHOTTING",
-            "STOPPED",
-            "STOPPING",
-            "UPDATING",
-            "UPDATING_AGENT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImageBuilderState::Deleting => "DELETING",
+    ImageBuilderState::Failed => "FAILED",
+    ImageBuilderState::Pending => "PENDING",
+    ImageBuilderState::PendingQualification => "PENDING_QUALIFICATION",
+    ImageBuilderState::Rebooting => "REBOOTING",
+    ImageBuilderState::Running => "RUNNING",
+    ImageBuilderState::Snapshotting => "SNAPSHOTTING",
+    ImageBuilderState::Stopped => "STOPPED",
+    ImageBuilderState::Stopping => "STOPPING",
+    ImageBuilderState::Updating => "UPDATING",
+    ImageBuilderState::UpdatingAgent => "UPDATING_AGENT",
+    ImageBuilderState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETING", "FAILED", "PENDING", "PENDING_QUALIFICATION", "REBOOTING", "RUNNING", "SNAPSHOTTING", "STOPPED", "STOPPING", "UPDATING", "UPDATING_AGENT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ImageBuilderState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ImageBuilderState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ImageBuilderState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ImageBuilderState::Deleting => write!(f, "DELETING"),
-            ImageBuilderState::Failed => write!(f, "FAILED"),
-            ImageBuilderState::Pending => write!(f, "PENDING"),
-            ImageBuilderState::PendingQualification => write!(f, "PENDING_QUALIFICATION"),
-            ImageBuilderState::Rebooting => write!(f, "REBOOTING"),
-            ImageBuilderState::Running => write!(f, "RUNNING"),
-            ImageBuilderState::Snapshotting => write!(f, "SNAPSHOTTING"),
-            ImageBuilderState::Stopped => write!(f, "STOPPED"),
-            ImageBuilderState::Stopping => write!(f, "STOPPING"),
-            ImageBuilderState::Updating => write!(f, "UPDATING"),
-            ImageBuilderState::UpdatingAgent => write!(f, "UPDATING_AGENT"),
-            ImageBuilderState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ImageBuilderState::Deleting => write!(f, "DELETING"),
+ImageBuilderState::Failed => write!(f, "FAILED"),
+ImageBuilderState::Pending => write!(f, "PENDING"),
+ImageBuilderState::PendingQualification => write!(f, "PENDING_QUALIFICATION"),
+ImageBuilderState::Rebooting => write!(f, "REBOOTING"),
+ImageBuilderState::Running => write!(f, "RUNNING"),
+ImageBuilderState::Snapshotting => write!(f, "SNAPSHOTTING"),
+ImageBuilderState::Stopped => write!(f, "STOPPED"),
+ImageBuilderState::Stopping => write!(f, "STOPPING"),
+ImageBuilderState::Updating => write!(f, "UPDATING"),
+ImageBuilderState::UpdatingAgent => write!(f, "UPDATING_AGENT"),
+ImageBuilderState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

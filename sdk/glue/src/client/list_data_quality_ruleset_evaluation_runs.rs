@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataQualityRulesetEvaluationRuns`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(DataQualityRulesetEvaluationRunFilter)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::filter) / [`set_filter(Option<DataQualityRulesetEvaluationRunFilter>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter criteria.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A paginated token to offset the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`ListDataQualityRulesetEvaluationRunsOutput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput) with field(s):
+                            /// - On success, responds with [`ListDataQualityRulesetEvaluationRunsOutput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput) with field(s):
     ///   - [`runs(Option<Vec::<DataQualityRulesetEvaluationRunDescription>>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput::runs): <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListDataQualityRulesetEvaluationRunsError>`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsError)
-    pub fn list_data_quality_ruleset_evaluation_runs(
-        &self,
-    ) -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder {
-        crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListDataQualityRulesetEvaluationRunsError>`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsError)
+    pub fn list_data_quality_ruleset_evaluation_runs(&self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder {
+                                crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

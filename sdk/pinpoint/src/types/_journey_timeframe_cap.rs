@@ -3,13 +3,13 @@
 /// <p>The number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyTimeframeCap {
+pub struct JourneyTimeframeCap  {
     /// <p>The maximum number of messages that all journeys can send to an endpoint during the specified timeframe. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub cap: ::std::option::Option<i32>,
     /// <p>The length of the timeframe in days. The maximum value is 30. If set to 0, this limit will not apply.</p>
     pub days: ::std::option::Option<i32>,
 }
-impl JourneyTimeframeCap {
+impl  JourneyTimeframeCap  {
     /// <p>The maximum number of messages that all journeys can send to an endpoint during the specified timeframe. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn cap(&self) -> ::std::option::Option<i32> {
         self.cap
@@ -41,8 +41,7 @@ impl JourneyTimeframeCapBuilder {
     }
     /// <p>The maximum number of messages that all journeys can send to an endpoint during the specified timeframe. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn set_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cap = input;
-        self
+        self.cap = input; self
     }
     /// <p>The maximum number of messages that all journeys can send to an endpoint during the specified timeframe. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn get_cap(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl JourneyTimeframeCapBuilder {
     }
     /// <p>The length of the timeframe in days. The maximum value is 30. If set to 0, this limit will not apply.</p>
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>The length of the timeframe in days. The maximum value is 30. If set to 0, this limit will not apply.</p>
     pub fn get_days(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl JourneyTimeframeCapBuilder {
     /// Consumes the builder and constructs a [`JourneyTimeframeCap`](crate::types::JourneyTimeframeCap).
     pub fn build(self) -> crate::types::JourneyTimeframeCap {
         crate::types::JourneyTimeframeCap {
-            cap: self.cap,
-            days: self.days,
+            cap: self.cap
+            ,
+            days: self.days
+            ,
         }
     }
 }
+

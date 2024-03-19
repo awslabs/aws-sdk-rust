@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourceDataSyncInput {
+pub struct UpdateResourceDataSyncInput  {
     /// <p>The name of the resource data sync you want to update.</p>
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
@@ -10,17 +10,17 @@ pub struct UpdateResourceDataSyncInput {
     /// <p>Specify information about the data sources to synchronize.</p>
     pub sync_source: ::std::option::Option<crate::types::ResourceDataSyncSource>,
 }
-impl UpdateResourceDataSyncInput {
+impl  UpdateResourceDataSyncInput  {
     /// <p>The name of the resource data sync you want to update.</p>
-    pub fn sync_name(&self) -> ::std::option::Option<&str> {
+    pub fn sync_name(&self) -> ::std::option::Option<& str> {
         self.sync_name.as_deref()
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&str> {
+    pub fn sync_type(&self) -> ::std::option::Option<& str> {
         self.sync_type.as_deref()
     }
     /// <p>Specify information about the data sources to synchronize.</p>
-    pub fn sync_source(&self) -> ::std::option::Option<&crate::types::ResourceDataSyncSource> {
+    pub fn sync_source(&self) -> ::std::option::Option<& crate::types::ResourceDataSyncSource> {
         self.sync_source.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateResourceDataSyncInputBuilder {
     }
     /// <p>The name of the resource data sync you want to update.</p>
     pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_name = input;
-        self
+        self.sync_name = input; self
     }
     /// <p>The name of the resource data sync you want to update.</p>
     pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateResourceDataSyncInputBuilder {
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateResourceDataSyncInputBuilder {
     }
     /// <p>Specify information about the data sources to synchronize.</p>
     pub fn set_sync_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncSource>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// <p>Specify information about the data sources to synchronize.</p>
     pub fn get_sync_source(&self) -> &::std::option::Option<crate::types::ResourceDataSyncSource> {
         &self.sync_source
     }
     /// Consumes the builder and constructs a [`UpdateResourceDataSyncInput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput {
-            sync_name: self.sync_name,
-            sync_type: self.sync_type,
-            sync_source: self.sync_source,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput {
+                sync_name: self.sync_name
+                ,
+                sync_type: self.sync_type
+                ,
+                sync_source: self.sync_source
+                ,
+            }
+        )
     }
 }
+

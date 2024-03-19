@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMetadataTransferJobOutput {
+pub struct CreateMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::string::String,
     /// <p>The metadata transfer job ARN.</p>
@@ -13,31 +13,29 @@ pub struct CreateMetadataTransferJobOutput {
     pub status: ::std::option::Option<crate::types::MetadataTransferJobStatus>,
     _request_id: Option<String>,
 }
-impl CreateMetadataTransferJobOutput {
+impl  CreateMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_transfer_job_id.deref()
+    pub fn metadata_transfer_job_id(&self) -> & str {
+        use std::ops::Deref; self.metadata_transfer_job_id.deref()
     }
     /// <p>The metadata transfer job ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The The metadata transfer job creation DateTime property.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The metadata transfer job response status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMetadataTransferJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMetadataTransferJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateMetadataTransferJobOutput`](crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput).
     pub fn builder() -> crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder {
@@ -64,8 +62,7 @@ impl CreateMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl CreateMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl CreateMetadataTransferJobOutputBuilder {
     }
     /// <p>The The metadata transfer job creation DateTime property.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The The metadata transfer job creation DateTime property.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -109,54 +104,49 @@ impl CreateMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job response status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The metadata transfer job response status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MetadataTransferJobStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMetadataTransferJobOutput`](crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_transfer_job_id`](crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder::metadata_transfer_job_id)
     /// - [`arn`](crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder::arn)
     /// - [`creation_date_time`](crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder::creation_date_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_transfer_job_id",
-                    "metadata_transfer_job_id was not specified but it is required when building CreateMetadataTransferJobOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateMetadataTransferJobOutput",
-                )
-            })?,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building CreateMetadataTransferJobOutput",
-                )
-            })?,
-            status: self.status,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobOutput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_transfer_job_id", "metadata_transfer_job_id was not specified but it is required when building CreateMetadataTransferJobOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateMetadataTransferJobOutput")
+                    )?
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building CreateMetadataTransferJobOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

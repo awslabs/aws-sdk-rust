@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteSpeakerInput {
+pub struct DeleteSpeakerInput  {
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the speaker you want to delete.</p>
     pub speaker_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSpeakerInput {
+impl  DeleteSpeakerInput  {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the speaker you want to delete.</p>
-    pub fn speaker_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_id(&self) -> ::std::option::Option<& str> {
         self.speaker_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DeleteSpeakerInput {
+impl  ::std::fmt::Debug for DeleteSpeakerInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSpeakerInput");
         formatter.field("domain_id", &self.domain_id);
@@ -49,8 +49,7 @@ impl DeleteSpeakerInputBuilder {
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,21 +63,22 @@ impl DeleteSpeakerInputBuilder {
     }
     /// <p>The identifier of the speaker you want to delete.</p>
     pub fn set_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.speaker_id = input;
-        self
+        self.speaker_id = input; self
     }
     /// <p>The identifier of the speaker you want to delete.</p>
     pub fn get_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.speaker_id
     }
     /// Consumes the builder and constructs a [`DeleteSpeakerInput`](crate::operation::delete_speaker::DeleteSpeakerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_speaker::DeleteSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_speaker::DeleteSpeakerInput {
-            domain_id: self.domain_id,
-            speaker_id: self.speaker_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_speaker::DeleteSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_speaker::DeleteSpeakerInput {
+                domain_id: self.domain_id
+                ,
+                speaker_id: self.speaker_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteSpeakerInputBuilder {
@@ -89,3 +89,4 @@ impl ::std::fmt::Debug for DeleteSpeakerInputBuilder {
         formatter.finish()
     }
 }
+

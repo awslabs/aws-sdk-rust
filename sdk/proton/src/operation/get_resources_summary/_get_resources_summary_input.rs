@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcesSummaryInput {}
+pub struct GetResourcesSummaryInput  {
+}
 impl GetResourcesSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetResourcesSummaryInput`](crate::operation::get_resources_summary::GetResourcesSummaryInput).
     pub fn builder() -> crate::operation::get_resources_summary::builders::GetResourcesSummaryInputBuilder {
@@ -13,13 +14,15 @@ impl GetResourcesSummaryInput {
 /// A builder for [`GetResourcesSummaryInput`](crate::operation::get_resources_summary::GetResourcesSummaryInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetResourcesSummaryInputBuilder {}
+pub struct GetResourcesSummaryInputBuilder {
+}
 impl GetResourcesSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcesSummaryInput`](crate::operation::get_resources_summary::GetResourcesSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resources_summary::GetResourcesSummaryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resources_summary::GetResourcesSummaryInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resources_summary::GetResourcesSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resources_summary::GetResourcesSummaryInput {
+            }
+        )
     }
 }
+

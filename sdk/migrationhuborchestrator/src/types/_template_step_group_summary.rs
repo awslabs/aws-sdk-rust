@@ -3,36 +3,38 @@
 /// <p>The summary of the step group in the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateStepGroupSummary {
+pub struct TemplateStepGroupSummary  {
     /// <p>The ID of the step group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The previous step group.</p>
-    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The next step group.</p>
-    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TemplateStepGroupSummary {
+impl  TemplateStepGroupSummary  {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The previous step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
-    pub fn previous(&self) -> &[::std::string::String] {
-        self.previous.as_deref().unwrap_or_default()
+    pub fn previous(&self) -> & [::std::string::String] {
+        self.previous.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next step group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
-    pub fn next(&self) -> &[::std::string::String] {
-        self.next.as_deref().unwrap_or_default()
+    pub fn next(&self) -> & [::std::string::String] {
+        self.next.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TemplateStepGroupSummary {
@@ -48,8 +50,8 @@ impl TemplateStepGroupSummary {
 pub struct TemplateStepGroupSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TemplateStepGroupSummaryBuilder {
     /// <p>The ID of the step group.</p>
@@ -59,8 +61,7 @@ impl TemplateStepGroupSummaryBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +74,7 @@ impl TemplateStepGroupSummaryBuilder {
     }
     /// <p>The name of the step group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +87,16 @@ impl TemplateStepGroupSummaryBuilder {
     /// <p>The previous step group.</p>
     pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-        v.push(input.into());
-        self.previous = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.previous = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.previous = input;
-        self
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.previous = input; self
     }
     /// <p>The previous step group.</p>
-    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.previous
     }
     /// Appends an item to `next`.
@@ -107,26 +106,30 @@ impl TemplateStepGroupSummaryBuilder {
     /// <p>The next step group.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-        v.push(input.into());
-        self.next = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.next = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.next = input;
-        self
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.next = input; self
     }
     /// <p>The next step group.</p>
-    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.next
     }
     /// Consumes the builder and constructs a [`TemplateStepGroupSummary`](crate::types::TemplateStepGroupSummary).
     pub fn build(self) -> crate::types::TemplateStepGroupSummary {
         crate::types::TemplateStepGroupSummary {
-            id: self.id,
-            name: self.name,
-            previous: self.previous,
-            next: self.next,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            previous: self.previous
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A complex type containing information about a request for a list of the tags that are associated with an individual resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The type of the resource.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct ListTagsForResourceInput {
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsForResourceInput {
+impl  ListTagsForResourceInput  {
     /// <p>The type of the resource.</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl ListTagsForResourceInput {
     /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TagResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TagResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ListTagsForResourceInputBuilder {
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource.</p>
     /// <ul>
@@ -87,21 +86,22 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_resource::ListTagsForResourceInput {
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

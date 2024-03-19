@@ -3,16 +3,17 @@
 /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnExitLifecycle {
+pub struct OnExitLifecycle  {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
 }
-impl OnExitLifecycle {
+impl  OnExitLifecycle  {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::Event] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::Event] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OnExitLifecycle {
@@ -26,7 +27,7 @@ impl OnExitLifecycle {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnExitLifecycleBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
 }
 impl OnExitLifecycleBuilder {
     /// Appends an item to `events`.
@@ -36,21 +37,24 @@ impl OnExitLifecycleBuilder {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>) -> Self {
+        self.events = input; self
     }
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Event>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`OnExitLifecycle`](crate::types::OnExitLifecycle).
     pub fn build(self) -> crate::types::OnExitLifecycle {
-        crate::types::OnExitLifecycle { events: self.events }
+        crate::types::OnExitLifecycle {
+            events: self.events
+            ,
+        }
     }
 }
+

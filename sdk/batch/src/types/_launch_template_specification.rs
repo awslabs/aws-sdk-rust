@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateSpecification {
+pub struct LaunchTemplateSpecification  {
     /// <p>The ID of the launch template.</p>
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
@@ -18,13 +18,13 @@ pub struct LaunchTemplateSpecification {
     /// <p>Default: <code>$Default</code>.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl LaunchTemplateSpecification {
+impl  LaunchTemplateSpecification  {
     /// <p>The ID of the launch template.</p>
-    pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
-    pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> ::std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
@@ -32,7 +32,7 @@ impl LaunchTemplateSpecification {
     /// <p>If the AMI ID that's used in a compute environment is from the launch template, the AMI isn't changed when the compute environment is updated. It's only changed if the <code>updateToLatestImageVersion</code> parameter for the compute environment is set to <code>true</code>. During an infrastructure update, if either <code>$Latest</code> or <code>$Default</code> is specified, Batch re-evaluates the launch template version, and it might use a different version of the launch template. This is the case even if the launch template isn't specified in the update. When updating a compute environment, changing the launch template requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <p>Default: <code>$Default</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl LaunchTemplateSpecificationBuilder {
     }
     /// <p>The ID of the launch template.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_id = input;
-        self
+        self.launch_template_id = input; self
     }
     /// <p>The ID of the launch template.</p>
     pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl LaunchTemplateSpecificationBuilder {
     }
     /// <p>The name of the launch template.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_name = input;
-        self
+        self.launch_template_name = input; self
     }
     /// <p>The name of the launch template.</p>
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl LaunchTemplateSpecificationBuilder {
     /// </important>
     /// <p>Default: <code>$Default</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
     /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is <code>$Default</code>, the default version of the launch template is used.</p><important>
@@ -109,9 +106,13 @@ impl LaunchTemplateSpecificationBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {
         crate::types::LaunchTemplateSpecification {
-            launch_template_id: self.launch_template_id,
-            launch_template_name: self.launch_template_name,
-            version: self.version,
+            launch_template_id: self.launch_template_id
+            ,
+            launch_template_name: self.launch_template_name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

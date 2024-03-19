@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedPoliciesInPermissionSetOutput {
+pub struct ListManagedPoliciesInPermissionSetOutput  {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
-    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AttachedManagedPolicy>>,
+    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec::<crate::types::AttachedManagedPolicy>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListManagedPoliciesInPermissionSetOutput {
+impl  ListManagedPoliciesInPermissionSetOutput  {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
-    pub fn attached_managed_policies(&self) -> &[crate::types::AttachedManagedPolicy] {
-        self.attached_managed_policies.as_deref().unwrap_or_default()
+    pub fn attached_managed_policies(&self) -> & [crate::types::AttachedManagedPolicy] {
+        self.attached_managed_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListManagedPoliciesInPermissionSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListManagedPoliciesInPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetOutput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput).
     pub fn builder() -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetOutputBuilder {
@@ -37,7 +38,7 @@ impl ListManagedPoliciesInPermissionSetOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedPoliciesInPermissionSetOutputBuilder {
-    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AttachedManagedPolicy>>,
+    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec::<crate::types::AttachedManagedPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListManagedPoliciesInPermissionSetOutputBuilder {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
     pub fn attached_managed_policies(mut self, input: crate::types::AttachedManagedPolicy) -> Self {
         let mut v = self.attached_managed_policies.unwrap_or_default();
-        v.push(input);
-        self.attached_managed_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attached_managed_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
-    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachedManagedPolicy>>) -> Self {
-        self.attached_managed_policies = input;
-        self
+    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttachedManagedPolicy>>) -> Self {
+        self.attached_managed_policies = input; self
     }
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
-    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachedManagedPolicy>> {
+    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttachedManagedPolicy>> {
         &self.attached_managed_policies
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -69,28 +69,30 @@ impl ListManagedPoliciesInPermissionSetOutputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListManagedPoliciesInPermissionSetOutput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput).
     pub fn build(self) -> crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput {
         crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput {
-            attached_managed_policies: self.attached_managed_policies,
-            next_token: self.next_token,
+            attached_managed_policies: self.attached_managed_policies
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

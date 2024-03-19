@@ -5,23 +5,20 @@ pub use crate::operation::register_stream_consumer::_register_stream_consumer_in
 
 impl RegisterStreamConsumerInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.register_stream_consumer();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.register_stream_consumer();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RegisterStreamConsumer`.
-///
+/// 
 /// <p>Registers a consumer with a Kinesis data stream. When you use this operation, the consumer you register can then call <code>SubscribeToShard</code> to receive data from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for every shard you subscribe to. This rate is unaffected by the total number of consumers that read from the same stream.</p>
 /// <p>You can register up to 20 consumers per stream. A given consumer can only be registered with one stream at a time.</p>
 /// <p>For an example of how to use this operations, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out Using the Kinesis Data Streams API</a>.</p>
@@ -29,33 +26,32 @@ impl RegisterStreamConsumerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterStreamConsumerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder,
+                    inner: crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-    > for RegisterStreamConsumerFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
+                    crate::operation::register_stream_consumer::RegisterStreamConsumerError,
+                > for RegisterStreamConsumerFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
+                        crate::operation::register_stream_consumer::RegisterStreamConsumerError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RegisterStreamConsumerFluentBuilder {
     /// Creates a new `RegisterStreamConsumer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl RegisterStreamConsumerFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::register_stream_consumer::RegisterStreamConsumer::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::register_stream_consumer::RegisterStreamConsumer::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::register_stream_consumer::RegisterStreamConsumerOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_stream_consumer::RegisterStreamConsumerError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::register_stream_consumer::RegisterStreamConsumer::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::register_stream_consumer::RegisterStreamConsumer::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::register_stream_consumer::RegisterStreamConsumerOutput, crate::operation::register_stream_consumer::RegisterStreamConsumerError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -140,3 +127,4 @@ impl RegisterStreamConsumerFluentBuilder {
         self.inner.get_consumer_name()
     }
 }
+

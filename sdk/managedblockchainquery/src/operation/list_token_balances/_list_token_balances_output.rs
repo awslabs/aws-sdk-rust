@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTokenBalancesOutput {
+pub struct ListTokenBalancesOutput  {
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub token_balances: ::std::vec::Vec<crate::types::TokenBalance>,
+    pub token_balances: ::std::vec::Vec::<crate::types::TokenBalance>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTokenBalancesOutput {
+impl  ListTokenBalancesOutput  {
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub fn token_balances(&self) -> &[crate::types::TokenBalance] {
-        use std::ops::Deref;
-        self.token_balances.deref()
+    pub fn token_balances(&self) -> & [crate::types::TokenBalance] {
+        use std::ops::Deref; self.token_balances.deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTokenBalancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTokenBalancesOutput {
     /// Creates a new builder-style object to manufacture [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput).
     pub fn builder() -> crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListTokenBalancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTokenBalancesOutputBuilder {
-    pub(crate) token_balances: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>,
+    pub(crate) token_balances: ::std::option::Option<::std::vec::Vec::<crate::types::TokenBalance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListTokenBalancesOutputBuilder {
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
     pub fn token_balances(mut self, input: crate::types::TokenBalance) -> Self {
         let mut v = self.token_balances.unwrap_or_default();
-        v.push(input);
-        self.token_balances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.token_balances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub fn set_token_balances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>) -> Self {
-        self.token_balances = input;
-        self
+    pub fn set_token_balances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TokenBalance>>) -> Self {
+        self.token_balances = input; self
     }
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub fn get_token_balances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>> {
+    pub fn get_token_balances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TokenBalance>> {
         &self.token_balances
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -68,37 +66,37 @@ impl ListTokenBalancesOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`token_balances`](crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder::token_balances)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_token_balances::ListTokenBalancesOutput {
-            token_balances: self.token_balances.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token_balances",
-                    "token_balances was not specified but it is required when building ListTokenBalancesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_token_balances::ListTokenBalancesOutput {
+                token_balances: self.token_balances
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token_balances", "token_balances was not specified but it is required when building ListTokenBalancesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

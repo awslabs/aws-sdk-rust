@@ -3,13 +3,13 @@
 /// <p>Filtering information for the notifications. The filtering is based on Amazon S3 key names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketNotificationConfigurationFilter {
+pub struct AwsS3BucketNotificationConfigurationFilter  {
     /// <p>Details for an Amazon S3 filter.</p>
     pub s3_key_filter: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
 }
-impl AwsS3BucketNotificationConfigurationFilter {
+impl  AwsS3BucketNotificationConfigurationFilter  {
     /// <p>Details for an Amazon S3 filter.</p>
-    pub fn s3_key_filter(&self) -> ::std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
+    pub fn s3_key_filter(&self) -> ::std::option::Option<& crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
         self.s3_key_filter.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsS3BucketNotificationConfigurationFilterBuilder {
     }
     /// <p>Details for an Amazon S3 filter.</p>
     pub fn set_s3_key_filter(mut self, input: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>) -> Self {
-        self.s3_key_filter = input;
-        self
+        self.s3_key_filter = input; self
     }
     /// <p>Details for an Amazon S3 filter.</p>
     pub fn get_s3_key_filter(&self) -> &::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
@@ -44,7 +43,9 @@ impl AwsS3BucketNotificationConfigurationFilterBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationFilter`](crate::types::AwsS3BucketNotificationConfigurationFilter).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationFilter {
         crate::types::AwsS3BucketNotificationConfigurationFilter {
-            s3_key_filter: self.s3_key_filter,
+            s3_key_filter: self.s3_key_filter
+            ,
         }
     }
 }
+

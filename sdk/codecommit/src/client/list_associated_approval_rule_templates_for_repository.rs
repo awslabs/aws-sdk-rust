@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssociatedApprovalRuleTemplatesForRepository`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository for which you want to list all associated approval rule templates.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
-    /// - On success, responds with [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput) with field(s):
+                            /// - On success, responds with [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput) with field(s):
     ///   - [`approval_rule_template_names(Option<Vec::<String>>)`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput::approval_rule_template_names): <p>The names of all approval rule templates associated with the repository.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    /// - On failure, responds with [`SdkError<ListAssociatedApprovalRuleTemplatesForRepositoryError>`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError)
-    pub fn list_associated_approval_rule_templates_for_repository(&self) -> crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder{
-        crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAssociatedApprovalRuleTemplatesForRepositoryError>`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError)
+    pub fn list_associated_approval_rule_templates_for_repository(&self) -> crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder {
+                                crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

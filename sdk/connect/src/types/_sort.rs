@@ -3,19 +3,19 @@
 /// <p>A structure that defineds the field name to sort by and a sort order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>The name of the field on which to sort.</p>
     pub field_name: crate::types::SortableFieldName,
     /// <p>An ascending or descending sort.</p>
     pub order: crate::types::SortOrder,
 }
-impl Sort {
+impl  Sort  {
     /// <p>The name of the field on which to sort.</p>
-    pub fn field_name(&self) -> &crate::types::SortableFieldName {
+    pub fn field_name(&self) -> & crate::types::SortableFieldName {
         &self.field_name
     }
     /// <p>An ascending or descending sort.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl SortBuilder {
     }
     /// <p>The name of the field on which to sort.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<crate::types::SortableFieldName>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>The name of the field on which to sort.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<crate::types::SortableFieldName> {
@@ -57,8 +56,7 @@ impl SortBuilder {
     }
     /// <p>An ascending or descending sort.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>An ascending or descending sort.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl SortBuilder {
     /// - [`field_name`](crate::types::builders::SortBuilder::field_name)
     /// - [`order`](crate::types::builders::SortBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::Sort, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Sort {
-            field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_name",
-                    "field_name was not specified but it is required when building Sort",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building Sort",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Sort {
+                field_name: self.field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_name", "field_name was not specified but it is required when building Sort")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building Sort")
+                    )?
+                ,
+            }
+        )
     }
 }
+

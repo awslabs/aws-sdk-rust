@@ -5,55 +5,51 @@ pub use crate::operation::get_contact_methods::_get_contact_methods_input::GetCo
 
 impl GetContactMethodsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact_methods::GetContactMethodsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_contact_methods();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_contact_methods::GetContactMethodsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_contact_methods::GetContactMethodsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_contact_methods();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetContactMethods`.
-///
+/// 
 /// <p>Returns information about the configured contact methods. Specify a protocol in your request to return information about a specific contact method.</p>
 /// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContactMethodsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_contact_methods::builders::GetContactMethodsInputBuilder,
+                    inner: crate::operation::get_contact_methods::builders::GetContactMethodsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_contact_methods::GetContactMethodsOutput,
-        crate::operation::get_contact_methods::GetContactMethodsError,
-    > for GetContactMethodsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_contact_methods::GetContactMethodsOutput,
-            crate::operation::get_contact_methods::GetContactMethodsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_contact_methods::GetContactMethodsOutput,
+                    crate::operation::get_contact_methods::GetContactMethodsError,
+                > for GetContactMethodsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_contact_methods::GetContactMethodsOutput,
+                        crate::operation::get_contact_methods::GetContactMethodsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetContactMethodsFluentBuilder {
     /// Creates a new `GetContactMethods`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetContactMethodsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact_methods::GetContactMethodsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_contact_methods::GetContactMethods::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_contact_methods::GetContactMethods::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_contact_methods::GetContactMethodsOutput,
-        crate::operation::get_contact_methods::GetContactMethodsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_contact_methods::GetContactMethodsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_contact_methods::GetContactMethods::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_contact_methods::GetContactMethods::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_contact_methods::GetContactMethodsOutput, crate::operation::get_contact_methods::GetContactMethodsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -121,13 +108,14 @@ impl GetContactMethodsFluentBuilder {
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>> {
         self.inner.get_protocols()
     }
 }
+

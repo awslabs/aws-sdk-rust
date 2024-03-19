@@ -3,11 +3,11 @@
 /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSnapshotConfigurationDescription {
+pub struct ApplicationSnapshotConfigurationDescription  {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub snapshots_enabled: bool,
 }
-impl ApplicationSnapshotConfigurationDescription {
+impl  ApplicationSnapshotConfigurationDescription  {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn snapshots_enabled(&self) -> bool {
         self.snapshots_enabled
@@ -35,8 +35,7 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
     }
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn set_snapshots_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.snapshots_enabled = input;
-        self
+        self.snapshots_enabled = input; self
     }
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn get_snapshots_enabled(&self) -> &::std::option::Option<bool> {
@@ -45,16 +44,16 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationDescription`](crate::types::ApplicationSnapshotConfigurationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshots_enabled`](crate::types::builders::ApplicationSnapshotConfigurationDescriptionBuilder::snapshots_enabled)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSnapshotConfigurationDescription {
-            snapshots_enabled: self.snapshots_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshots_enabled",
-                    "snapshots_enabled was not specified but it is required when building ApplicationSnapshotConfigurationDescription",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSnapshotConfigurationDescription {
+                snapshots_enabled: self.snapshots_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshots_enabled", "snapshots_enabled was not specified but it is required when building ApplicationSnapshotConfigurationDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

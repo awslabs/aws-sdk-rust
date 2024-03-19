@@ -3,7 +3,7 @@
 /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateConfiguration {
+pub struct CertificateConfiguration  {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct CertificateConfiguration {
     /// </ul>
     pub certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
-impl CertificateConfiguration {
+impl  CertificateConfiguration  {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -23,7 +23,7 @@ impl CertificateConfiguration {
     /// <li>
     /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
-    pub fn certificate_type(&self) -> ::std::option::Option<&crate::types::CertificateType> {
+    pub fn certificate_type(&self) -> ::std::option::Option<& crate::types::CertificateType> {
         self.certificate_type.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl CertificateConfigurationBuilder {
     /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     pub fn set_certificate_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
-        self.certificate_type = input;
-        self
+        self.certificate_type = input; self
     }
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet.</p>
     /// <p>Valid values include:</p>
@@ -80,7 +79,9 @@ impl CertificateConfigurationBuilder {
     /// Consumes the builder and constructs a [`CertificateConfiguration`](crate::types::CertificateConfiguration).
     pub fn build(self) -> crate::types::CertificateConfiguration {
         crate::types::CertificateConfiguration {
-            certificate_type: self.certificate_type,
+            certificate_type: self.certificate_type
+            ,
         }
     }
 }
+

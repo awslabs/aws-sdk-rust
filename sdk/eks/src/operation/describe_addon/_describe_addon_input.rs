@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddonInput {
+pub struct DescribeAddonInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAddonInput {
+impl  DescribeAddonInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAddonInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeAddonInputBuilder {
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
     /// Consumes the builder and constructs a [`DescribeAddonInput`](crate::operation::describe_addon::DescribeAddonInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_addon::DescribeAddonInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_addon::DescribeAddonInput {
-            cluster_name: self.cluster_name,
-            addon_name: self.addon_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_addon::DescribeAddonInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_addon::DescribeAddonInput {
+                cluster_name: self.cluster_name
+                ,
+                addon_name: self.addon_name
+                ,
+            }
+        )
     }
 }
+

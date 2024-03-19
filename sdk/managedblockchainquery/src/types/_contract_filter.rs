@@ -3,7 +3,7 @@
 /// <p>The contract or wallet address by which to filter the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContractFilter {
+pub struct ContractFilter  {
     /// <p>The blockchain network of the contract.</p>
     pub network: crate::types::QueryNetwork,
     /// <p>The container for the token standard.</p>
@@ -11,19 +11,18 @@ pub struct ContractFilter {
     /// <p>The network address of the deployer.</p>
     pub deployer_address: ::std::string::String,
 }
-impl ContractFilter {
+impl  ContractFilter  {
     /// <p>The blockchain network of the contract.</p>
-    pub fn network(&self) -> &crate::types::QueryNetwork {
+    pub fn network(&self) -> & crate::types::QueryNetwork {
         &self.network
     }
     /// <p>The container for the token standard.</p>
-    pub fn token_standard(&self) -> &crate::types::QueryTokenStandard {
+    pub fn token_standard(&self) -> & crate::types::QueryTokenStandard {
         &self.token_standard
     }
     /// <p>The network address of the deployer.</p>
-    pub fn deployer_address(&self) -> &str {
-        use std::ops::Deref;
-        self.deployer_address.deref()
+    pub fn deployer_address(&self) -> & str {
+        use std::ops::Deref; self.deployer_address.deref()
     }
 }
 impl ContractFilter {
@@ -50,8 +49,7 @@ impl ContractFilterBuilder {
     }
     /// <p>The blockchain network of the contract.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network of the contract.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
@@ -65,8 +63,7 @@ impl ContractFilterBuilder {
     }
     /// <p>The container for the token standard.</p>
     pub fn set_token_standard(mut self, input: ::std::option::Option<crate::types::QueryTokenStandard>) -> Self {
-        self.token_standard = input;
-        self
+        self.token_standard = input; self
     }
     /// <p>The container for the token standard.</p>
     pub fn get_token_standard(&self) -> &::std::option::Option<crate::types::QueryTokenStandard> {
@@ -80,8 +77,7 @@ impl ContractFilterBuilder {
     }
     /// <p>The network address of the deployer.</p>
     pub fn set_deployer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployer_address = input;
-        self
+        self.deployer_address = input; self
     }
     /// <p>The network address of the deployer.</p>
     pub fn get_deployer_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl ContractFilterBuilder {
     /// - [`token_standard`](crate::types::builders::ContractFilterBuilder::token_standard)
     /// - [`deployer_address`](crate::types::builders::ContractFilterBuilder::deployer_address)
     pub fn build(self) -> ::std::result::Result<crate::types::ContractFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContractFilter {
-            network: self.network.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network",
-                    "network was not specified but it is required when building ContractFilter",
-                )
-            })?,
-            token_standard: self.token_standard.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token_standard",
-                    "token_standard was not specified but it is required when building ContractFilter",
-                )
-            })?,
-            deployer_address: self.deployer_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployer_address",
-                    "deployer_address was not specified but it is required when building ContractFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContractFilter {
+                network: self.network
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network", "network was not specified but it is required when building ContractFilter")
+                    )?
+                ,
+                token_standard: self.token_standard
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token_standard", "token_standard was not specified but it is required when building ContractFilter")
+                    )?
+                ,
+                deployer_address: self.deployer_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployer_address", "deployer_address was not specified but it is required when building ContractFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

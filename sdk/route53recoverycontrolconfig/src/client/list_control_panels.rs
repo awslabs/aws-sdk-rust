@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListControlPanels`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::set_cluster_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of a cluster.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListControlPanelsOutput`](crate::operation::list_control_panels::ListControlPanelsOutput) with field(s):
+                            /// - On success, responds with [`ListControlPanelsOutput`](crate::operation::list_control_panels::ListControlPanelsOutput) with field(s):
     ///   - [`control_panels(Option<Vec::<ControlPanel>>)`](crate::operation::list_control_panels::ListControlPanelsOutput::control_panels): <p>The result of a successful ListControlPanel request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_control_panels::ListControlPanelsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListControlPanelsError>`](crate::operation::list_control_panels::ListControlPanelsError)
+                            /// - On failure, responds with [`SdkError<ListControlPanelsError>`](crate::operation::list_control_panels::ListControlPanelsError)
     pub fn list_control_panels(&self) -> crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder {
-        crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_control_panels::builders::ListControlPanelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -11,13 +11,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcrRepositoryConfiguration {
+pub struct EcrRepositoryConfiguration  {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub repository_policy: ::std::option::Option<::std::string::String>,
 }
-impl EcrRepositoryConfiguration {
+impl  EcrRepositoryConfiguration  {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn repository_policy(&self) -> ::std::option::Option<&str> {
+    pub fn repository_policy(&self) -> ::std::option::Option<& str> {
         self.repository_policy.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EcrRepositoryConfigurationBuilder {
     }
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub fn set_repository_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_policy = input;
-        self
+        self.repository_policy = input; self
     }
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub fn get_repository_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -52,7 +51,9 @@ impl EcrRepositoryConfigurationBuilder {
     /// Consumes the builder and constructs a [`EcrRepositoryConfiguration`](crate::types::EcrRepositoryConfiguration).
     pub fn build(self) -> crate::types::EcrRepositoryConfiguration {
         crate::types::EcrRepositoryConfiguration {
-            repository_policy: self.repository_policy,
+            repository_policy: self.repository_policy
+            ,
         }
     }
 }
+

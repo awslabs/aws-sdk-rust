@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIndexingConfigurationOutput {
+pub struct GetIndexingConfigurationOutput  {
     /// <p>Thing indexing configuration.</p>
     pub thing_indexing_configuration: ::std::option::Option<crate::types::ThingIndexingConfiguration>,
     /// <p>The index configuration.</p>
     pub thing_group_indexing_configuration: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>,
     _request_id: Option<String>,
 }
-impl GetIndexingConfigurationOutput {
+impl  GetIndexingConfigurationOutput  {
     /// <p>Thing indexing configuration.</p>
-    pub fn thing_indexing_configuration(&self) -> ::std::option::Option<&crate::types::ThingIndexingConfiguration> {
+    pub fn thing_indexing_configuration(&self) -> ::std::option::Option<& crate::types::ThingIndexingConfiguration> {
         self.thing_indexing_configuration.as_ref()
     }
     /// <p>The index configuration.</p>
-    pub fn thing_group_indexing_configuration(&self) -> ::std::option::Option<&crate::types::ThingGroupIndexingConfiguration> {
+    pub fn thing_group_indexing_configuration(&self) -> ::std::option::Option<& crate::types::ThingGroupIndexingConfiguration> {
         self.thing_group_indexing_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIndexingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIndexingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetIndexingConfigurationOutput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput).
     pub fn builder() -> crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationOutputBuilder {
@@ -47,8 +47,7 @@ impl GetIndexingConfigurationOutputBuilder {
     }
     /// <p>Thing indexing configuration.</p>
     pub fn set_thing_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingIndexingConfiguration>) -> Self {
-        self.thing_indexing_configuration = input;
-        self
+        self.thing_indexing_configuration = input; self
     }
     /// <p>Thing indexing configuration.</p>
     pub fn get_thing_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
@@ -61,28 +60,30 @@ impl GetIndexingConfigurationOutputBuilder {
     }
     /// <p>The index configuration.</p>
     pub fn set_thing_group_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>) -> Self {
-        self.thing_group_indexing_configuration = input;
-        self
+        self.thing_group_indexing_configuration = input; self
     }
     /// <p>The index configuration.</p>
     pub fn get_thing_group_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
         &self.thing_group_indexing_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIndexingConfigurationOutput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput).
     pub fn build(self) -> crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput {
         crate::operation::get_indexing_configuration::GetIndexingConfigurationOutput {
-            thing_indexing_configuration: self.thing_indexing_configuration,
-            thing_group_indexing_configuration: self.thing_group_indexing_configuration,
+            thing_indexing_configuration: self.thing_indexing_configuration
+            ,
+            thing_group_indexing_configuration: self.thing_group_indexing_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeactivateTypeInput {
+pub struct DeactivateTypeInput  {
     /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -13,20 +13,20 @@ pub struct DeactivateTypeInput {
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeactivateTypeInput {
+impl  DeactivateTypeInput  {
     /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThirdPartyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThirdPartyType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeactivateTypeInputBuilder {
     /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -72,8 +71,7 @@ impl DeactivateTypeInputBuilder {
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -89,8 +87,7 @@ impl DeactivateTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
@@ -98,13 +95,17 @@ impl DeactivateTypeInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeactivateTypeInput`](crate::operation::deactivate_type::DeactivateTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deactivate_type::DeactivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deactivate_type::DeactivateTypeInput {
-            type_name: self.type_name,
-            r#type: self.r#type,
-            arn: self.arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deactivate_type::DeactivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deactivate_type::DeactivateTypeInput {
+                type_name: self.type_name
+                ,
+                r#type: self.r#type
+                ,
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

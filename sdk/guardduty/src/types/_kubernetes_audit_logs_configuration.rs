@@ -3,11 +3,11 @@
 /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesAuditLogsConfiguration {
+pub struct KubernetesAuditLogsConfiguration  {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub enable: ::std::option::Option<bool>,
 }
-impl KubernetesAuditLogsConfiguration {
+impl  KubernetesAuditLogsConfiguration  {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
@@ -35,8 +35,7 @@ impl KubernetesAuditLogsConfigurationBuilder {
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
@@ -44,6 +43,10 @@ impl KubernetesAuditLogsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesAuditLogsConfiguration`](crate::types::KubernetesAuditLogsConfiguration).
     pub fn build(self) -> crate::types::KubernetesAuditLogsConfiguration {
-        crate::types::KubernetesAuditLogsConfiguration { enable: self.enable }
+        crate::types::KubernetesAuditLogsConfiguration {
+            enable: self.enable
+            ,
+        }
     }
 }
+

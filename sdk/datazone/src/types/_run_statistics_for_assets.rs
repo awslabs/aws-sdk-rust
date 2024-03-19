@@ -3,7 +3,7 @@
 /// <p>The asset statistics from the data source run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunStatisticsForAssets {
+pub struct RunStatisticsForAssets  {
     /// <p>The <code>added</code> statistic for the data source run.</p>
     pub added: ::std::option::Option<i32>,
     /// <p>The <code>updated</code> statistic for the data source run.</p>
@@ -15,7 +15,7 @@ pub struct RunStatisticsForAssets {
     /// <p>The <code>failed</code> statistic for the data source run.</p>
     pub failed: ::std::option::Option<i32>,
 }
-impl RunStatisticsForAssets {
+impl  RunStatisticsForAssets  {
     /// <p>The <code>added</code> statistic for the data source run.</p>
     pub fn added(&self) -> ::std::option::Option<i32> {
         self.added
@@ -62,8 +62,7 @@ impl RunStatisticsForAssetsBuilder {
     }
     /// <p>The <code>added</code> statistic for the data source run.</p>
     pub fn set_added(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.added = input;
-        self
+        self.added = input; self
     }
     /// <p>The <code>added</code> statistic for the data source run.</p>
     pub fn get_added(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl RunStatisticsForAssetsBuilder {
     }
     /// <p>The <code>updated</code> statistic for the data source run.</p>
     pub fn set_updated(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.updated = input;
-        self
+        self.updated = input; self
     }
     /// <p>The <code>updated</code> statistic for the data source run.</p>
     pub fn get_updated(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl RunStatisticsForAssetsBuilder {
     }
     /// <p>The <code>unchanged</code> statistic for the data source run.</p>
     pub fn set_unchanged(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unchanged = input;
-        self
+        self.unchanged = input; self
     }
     /// <p>The <code>unchanged</code> statistic for the data source run.</p>
     pub fn get_unchanged(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl RunStatisticsForAssetsBuilder {
     }
     /// <p>The <code>skipped</code> statistic for the data source run.</p>
     pub fn set_skipped(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.skipped = input;
-        self
+        self.skipped = input; self
     }
     /// <p>The <code>skipped</code> statistic for the data source run.</p>
     pub fn get_skipped(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl RunStatisticsForAssetsBuilder {
     }
     /// <p>The <code>failed</code> statistic for the data source run.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The <code>failed</code> statistic for the data source run.</p>
     pub fn get_failed(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl RunStatisticsForAssetsBuilder {
     /// Consumes the builder and constructs a [`RunStatisticsForAssets`](crate::types::RunStatisticsForAssets).
     pub fn build(self) -> crate::types::RunStatisticsForAssets {
         crate::types::RunStatisticsForAssets {
-            added: self.added,
-            updated: self.updated,
-            unchanged: self.unchanged,
-            skipped: self.skipped,
-            failed: self.failed,
+            added: self.added
+            ,
+            updated: self.updated
+            ,
+            unchanged: self.unchanged
+            ,
+            skipped: self.skipped
+            ,
+            failed: self.failed
+            ,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListParallelData`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that specifies the next page of results to return in a paginated response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of parallel data resources returned for each request.</p><br>
-    /// - On success, responds with [`ListParallelDataOutput`](crate::operation::list_parallel_data::ListParallelDataOutput) with field(s):
+                            /// - On success, responds with [`ListParallelDataOutput`](crate::operation::list_parallel_data::ListParallelDataOutput) with field(s):
     ///   - [`parallel_data_properties_list(Option<Vec::<ParallelDataProperties>>)`](crate::operation::list_parallel_data::ListParallelDataOutput::parallel_data_properties_list): <p>The properties of the parallel data resources returned by this request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_parallel_data::ListParallelDataOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListParallelDataError>`](crate::operation::list_parallel_data::ListParallelDataError)
+                            /// - On failure, responds with [`SdkError<ListParallelDataError>`](crate::operation::list_parallel_data::ListParallelDataError)
     pub fn list_parallel_data(&self) -> crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder {
-        crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::new(self.handle.clone())
+                            }
 }
+

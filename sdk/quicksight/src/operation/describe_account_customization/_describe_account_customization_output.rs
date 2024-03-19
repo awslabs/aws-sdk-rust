@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountCustomizationOutput {
+pub struct DescribeAccountCustomizationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
@@ -17,25 +17,25 @@ pub struct DescribeAccountCustomizationOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeAccountCustomizationOutput {
+impl  DescribeAccountCustomizationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon QuickSight namespace that you're describing.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region.</p>
-    pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
+    pub fn account_customization(&self) -> ::std::option::Option<& crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -44,10 +44,10 @@ impl DescribeAccountCustomizationOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountCustomizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountCustomizationOutput`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput).
     pub fn builder() -> crate::operation::describe_account_customization::builders::DescribeAccountCustomizationOutputBuilder {
@@ -75,8 +75,7 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The Amazon QuickSight namespace that you're describing.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The Amazon QuickSight namespace that you're describing.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
-        self.account_customization = input;
-        self
+        self.account_customization = input; self
     }
     /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
@@ -131,8 +127,7 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,39 @@ impl DescribeAccountCustomizationOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountCustomizationOutput`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput).
     pub fn build(self) -> crate::operation::describe_account_customization::DescribeAccountCustomizationOutput {
         crate::operation::describe_account_customization::DescribeAccountCustomizationOutput {
-            arn: self.arn,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-            account_customization: self.account_customization,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            aws_account_id: self.aws_account_id
+            ,
+            namespace: self.namespace
+            ,
+            account_customization: self.account_customization
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

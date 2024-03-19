@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnalyzableServers`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort(SortOrder)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::sort) / [`set_sort(Option<SortOrder>)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::set_sort):<br>required: **false**<br>Specifies whether to sort by ascending (ASC) or descending (DESC) order.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::set_next_token):<br>required: **false**<br>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set maxResults to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.<br>
     ///   - [`max_results(i32)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of items to include in the response. The maximum value is 100.<br>
-    /// - On success, responds with [`ListAnalyzableServersOutput`](crate::operation::list_analyzable_servers::ListAnalyzableServersOutput) with field(s):
+                            /// - On success, responds with [`ListAnalyzableServersOutput`](crate::operation::list_analyzable_servers::ListAnalyzableServersOutput) with field(s):
     ///   - [`analyzable_servers(Option<Vec::<AnalyzableServerSummary>>)`](crate::operation::list_analyzable_servers::ListAnalyzableServersOutput::analyzable_servers): The list of analyzable servers with summary information about each server.
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzable_servers::ListAnalyzableServersOutput::next_token): The token you use to retrieve the next set of results, or null if there are no more results.
-    /// - On failure, responds with [`SdkError<ListAnalyzableServersError>`](crate::operation::list_analyzable_servers::ListAnalyzableServersError)
+                            /// - On failure, responds with [`SdkError<ListAnalyzableServersError>`](crate::operation::list_analyzable_servers::ListAnalyzableServersError)
     pub fn list_analyzable_servers(&self) -> crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder {
-        crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_analyzable_servers::builders::ListAnalyzableServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

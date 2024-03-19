@@ -3,21 +3,19 @@
 /// <p>Thrown if there are parallel requests to modify a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConcurrentModificationException {
+pub struct ConcurrentModificationException  {
     /// <p>The message returned by a ConcurrentModicationException.</p>
     pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConcurrentModificationException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -31,9 +29,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConcurrentModif
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::types::error::ConcurrentModificationException).
@@ -58,38 +54,37 @@ impl ConcurrentModificationExceptionBuilder {
     }
     /// <p>The message returned by a ConcurrentModicationException.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message returned by a ConcurrentModicationException.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::types::error::ConcurrentModificationException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ConcurrentModificationExceptionBuilder::message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::error::ConcurrentModificationException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ConcurrentModificationException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ConcurrentModificationException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConcurrentModificationException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::error::ConcurrentModificationException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ConcurrentModificationException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

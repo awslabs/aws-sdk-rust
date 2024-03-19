@@ -3,7 +3,7 @@
 /// <p>The configuration of the origin endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginEndpointListConfiguration {
+pub struct OriginEndpointListConfiguration  {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub arn: ::std::string::String,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -21,58 +21,56 @@ pub struct OriginEndpointListConfiguration {
     /// <p>The date and time the origin endpoint was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::ListHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::ListLowLatencyHlsManifestConfiguration>>,
 }
-impl OriginEndpointListConfiguration {
+impl  OriginEndpointListConfiguration  {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_group_name.deref()
+    pub fn channel_group_name(&self) -> & str {
+        use std::ops::Deref; self.channel_group_name.deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> & str {
+        use std::ops::Deref; self.channel_name.deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(&self) -> &str {
-        use std::ops::Deref;
-        self.origin_endpoint_name.deref()
+    pub fn origin_endpoint_name(&self) -> & str {
+        use std::ops::Deref; self.origin_endpoint_name.deref()
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
-    pub fn container_type(&self) -> &crate::types::ContainerType {
+    pub fn container_type(&self) -> & crate::types::ContainerType {
         &self.container_type
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time the origin endpoint was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time the origin endpoint was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
-    pub fn hls_manifests(&self) -> &[crate::types::ListHlsManifestConfiguration] {
-        self.hls_manifests.as_deref().unwrap_or_default()
+    pub fn hls_manifests(&self) -> & [crate::types::ListHlsManifestConfiguration] {
+        self.hls_manifests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.low_latency_hls_manifests.is_none()`.
-    pub fn low_latency_hls_manifests(&self) -> &[crate::types::ListLowLatencyHlsManifestConfiguration] {
-        self.low_latency_hls_manifests.as_deref().unwrap_or_default()
+    pub fn low_latency_hls_manifests(&self) -> & [crate::types::ListLowLatencyHlsManifestConfiguration] {
+        self.low_latency_hls_manifests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OriginEndpointListConfiguration {
@@ -94,8 +92,8 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::ListHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec::<crate::types::ListLowLatencyHlsManifestConfiguration>>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -106,8 +104,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +146,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_name = input;
-        self
+        self.origin_endpoint_name = input; self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
     pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
-        self.container_type = input;
-        self
+        self.container_type = input; self
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file.</p>
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
@@ -180,8 +173,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +186,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The date and time the origin endpoint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time the origin endpoint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +199,7 @@ impl OriginEndpointListConfigurationBuilder {
     }
     /// <p>The date and time the origin endpoint was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The date and time the origin endpoint was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,17 +212,16 @@ impl OriginEndpointListConfigurationBuilder {
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     pub fn hls_manifests(mut self, input: crate::types::ListHlsManifestConfiguration) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>) -> Self {
-        self.hls_manifests = input;
-        self
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListHlsManifestConfiguration>>) -> Self {
+        self.hls_manifests = input; self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -242,20 +231,16 @@ impl OriginEndpointListConfigurationBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn low_latency_hls_manifests(mut self, input: crate::types::ListLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
-        v.push(input);
-        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.low_latency_hls_manifests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn set_low_latency_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
-    ) -> Self {
-        self.low_latency_hls_manifests = input;
-        self
+    pub fn set_low_latency_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListLowLatencyHlsManifestConfiguration>>) -> Self {
+        self.low_latency_hls_manifests = input; self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>> {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
@@ -266,42 +251,45 @@ impl OriginEndpointListConfigurationBuilder {
     /// - [`origin_endpoint_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::origin_endpoint_name)
     /// - [`container_type`](crate::types::builders::OriginEndpointListConfigurationBuilder::container_type)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginEndpointListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginEndpointListConfiguration {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building OriginEndpointListConfiguration",
-                )
-            })?,
-            channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_group_name",
-                    "channel_group_name was not specified but it is required when building OriginEndpointListConfiguration",
-                )
-            })?,
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building OriginEndpointListConfiguration",
-                )
-            })?,
-            origin_endpoint_name: self.origin_endpoint_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin_endpoint_name",
-                    "origin_endpoint_name was not specified but it is required when building OriginEndpointListConfiguration",
-                )
-            })?,
-            container_type: self.container_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_type",
-                    "container_type was not specified but it is required when building OriginEndpointListConfiguration",
-                )
-            })?,
-            description: self.description,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-            hls_manifests: self.hls_manifests,
-            low_latency_hls_manifests: self.low_latency_hls_manifests,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginEndpointListConfiguration {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building OriginEndpointListConfiguration")
+                    )?
+                ,
+                channel_group_name: self.channel_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_group_name", "channel_group_name was not specified but it is required when building OriginEndpointListConfiguration")
+                    )?
+                ,
+                channel_name: self.channel_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_name", "channel_name was not specified but it is required when building OriginEndpointListConfiguration")
+                    )?
+                ,
+                origin_endpoint_name: self.origin_endpoint_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin_endpoint_name", "origin_endpoint_name was not specified but it is required when building OriginEndpointListConfiguration")
+                    )?
+                ,
+                container_type: self.container_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_type", "container_type was not specified but it is required when building OriginEndpointListConfiguration")
+                    )?
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                hls_manifests: self.hls_manifests
+                ,
+                low_latency_hls_manifests: self.low_latency_hls_manifests
+                ,
+            }
+        )
     }
 }
+

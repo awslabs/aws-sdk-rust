@@ -3,7 +3,7 @@
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApnsMessage {
+pub struct ApnsMessage  {
     /// <p>The type of push notification to send. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -42,14 +42,14 @@ pub struct ApnsMessage {
     /// <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
     pub collapse_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The URL of an image or video to display in the push notification.</p>
     pub media_url: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
     pub preferred_authentication_method: ::std::option::Option<::std::string::String>,
-    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
+    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt; 
     /// <li>
-    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt;
+    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt; 
     /// <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p>
     /// <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
     pub priority: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ pub struct ApnsMessage {
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
     pub thread_id: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
@@ -77,7 +77,7 @@ pub struct ApnsMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl ApnsMessage {
+impl  ApnsMessage  {
     /// <p>The type of push notification to send. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -95,7 +95,7 @@ impl ApnsMessage {
     /// </ul>
     /// <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p>
     /// <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
-    pub fn apns_push_type(&self) -> ::std::option::Option<&str> {
+    pub fn apns_push_type(&self) -> ::std::option::Option<& str> {
         self.apns_push_type.as_deref()
     }
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
@@ -107,7 +107,7 @@ impl ApnsMessage {
     /// <li>
     /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
@@ -115,42 +115,42 @@ impl ApnsMessage {
         self.badge
     }
     /// <p>The body of the notification message.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The key that indicates the notification type for the push notification. This key is a value that's defined by the identifier property of one of your app's registered categories.</p>
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single push notification instead of delivering each message individually. This value can't exceed 64 bytes.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
-    pub fn collapse_id(&self) -> ::std::option::Option<&str> {
+    pub fn collapse_id(&self) -> ::std::option::Option<& str> {
         self.collapse_id.as_deref()
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn data(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.data.as_ref()
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
-    pub fn media_url(&self) -> ::std::option::Option<&str> {
+    pub fn media_url(&self) -> ::std::option::Option<& str> {
         self.media_url.as_deref()
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
-    pub fn preferred_authentication_method(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_authentication_method(&self) -> ::std::option::Option<& str> {
         self.preferred_authentication_method.as_deref()
     }
-    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
+    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt; 
     /// <li>
-    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt;
+    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt; 
     /// <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p>
     /// <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
-    pub fn priority(&self) -> ::std::option::Option<&str> {
+    pub fn priority(&self) -> ::std::option::Option<& str> {
         self.priority.as_deref()
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p><note>
     /// <p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. The value of the content-available key has to be an integer, and can only be 0 or 1. If you're sending a standard notification, set the value of content-available to 0. If you're sending a silent (background) notification, set the value of content-available to 1. Additionally, silent notification payloads can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p>
     /// </note>
-    pub fn raw_content(&self) -> ::std::option::Option<&str> {
+    pub fn raw_content(&self) -> ::std::option::Option<& str> {
         self.raw_content.as_deref()
     }
     /// <p>Specifies whether the notification is a silent push notification. A silent (or background) push notification isn't displayed on recipients' devices. You can use silent push notifications to make small updates to your app, or to display messages in an in-app message center.</p>
@@ -162,17 +162,15 @@ impl ApnsMessage {
         self.silent_push
     }
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
-    pub fn sound(&self) -> ::std::option::Option<&str> {
+    pub fn sound(&self) -> ::std::option::Option<& str> {
         self.sound.as_deref()
     }
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub fn substitutions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn substitutions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
-    pub fn thread_id(&self) -> ::std::option::Option<&str> {
+    pub fn thread_id(&self) -> ::std::option::Option<& str> {
         self.thread_id.as_deref()
     }
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
@@ -181,11 +179,11 @@ impl ApnsMessage {
         self.time_to_live
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -206,14 +204,14 @@ pub struct ApnsMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) collapse_id: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) media_url: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_authentication_method: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<::std::string::String>,
     pub(crate) raw_content: ::std::option::Option<::std::string::String>,
     pub(crate) silent_push: ::std::option::Option<bool>,
     pub(crate) sound: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) thread_id: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live: ::std::option::Option<i32>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -259,8 +257,7 @@ impl ApnsMessageBuilder {
     /// <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p>
     /// <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
     pub fn set_apns_push_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.apns_push_type = input;
-        self
+        self.apns_push_type = input; self
     }
     /// <p>The type of push notification to send. Valid values are:</p>
     /// <ul>
@@ -305,8 +302,7 @@ impl ApnsMessageBuilder {
     /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
     /// <ul>
@@ -327,8 +323,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
     pub fn set_badge(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.badge = input;
-        self
+        self.badge = input; self
     }
     /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
     pub fn get_badge(&self) -> &::std::option::Option<i32> {
@@ -341,8 +336,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The body of the notification message.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the notification message.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -355,8 +349,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The key that indicates the notification type for the push notification. This key is a value that's defined by the identifier property of one of your app's registered categories.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The key that indicates the notification type for the push notification. This key is a value that's defined by the identifier property of one of your app's registered categories.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +364,7 @@ impl ApnsMessageBuilder {
     /// <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single push notification instead of delivering each message individually. This value can't exceed 64 bytes.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
     pub fn set_collapse_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collapse_id = input;
-        self
+        self.collapse_id = input; self
     }
     /// <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single push notification instead of delivering each message individually. This value can't exceed 64 bytes.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
@@ -386,17 +378,16 @@ impl ApnsMessageBuilder {
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
     pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.data = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.data = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.data = input; self
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.data
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
@@ -406,8 +397,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
     pub fn set_media_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_url = input;
-        self
+        self.media_url = input; self
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
     pub fn get_media_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -420,34 +410,32 @@ impl ApnsMessageBuilder {
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
     pub fn set_preferred_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_authentication_method = input;
-        self
+        self.preferred_authentication_method = input; self
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
     pub fn get_preferred_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_authentication_method
     }
-    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
+    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt; 
     /// <li>
-    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt;
+    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt; 
     /// <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p>
     /// <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
     pub fn priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.priority = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
+    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt; 
     /// <li>
-    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt;
+    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt; 
     /// <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p>
     /// <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
-    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
+    /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt; 
     /// <li>
-    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt;
+    /// <p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para&gt; 
     /// <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p>
     /// <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
     pub fn get_priority(&self) -> &::std::option::Option<::std::string::String> {
@@ -464,8 +452,7 @@ impl ApnsMessageBuilder {
     /// <p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. The value of the content-available key has to be an integer, and can only be 0 or 1. If you're sending a standard notification, set the value of content-available to 0. If you're sending a silent (background) notification, set the value of content-available to 1. Additionally, silent notification payloads can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p>
     /// </note>
     pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_content = input;
-        self
+        self.raw_content = input; self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p><note>
     /// <p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. The value of the content-available key has to be an integer, and can only be 0 or 1. If you're sending a standard notification, set the value of content-available to 0. If you're sending a silent (background) notification, set the value of content-available to 1. Additionally, silent notification payloads can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p>
@@ -488,8 +475,7 @@ impl ApnsMessageBuilder {
     /// <p>Apple has indicated that they will throttle "excessive" background notifications based on current traffic volumes. To prevent your notifications being throttled, Apple recommends that you send no more than 3 silent push notifications to each recipient per hour.</p>
     /// </note>
     pub fn set_silent_push(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.silent_push = input;
-        self
+        self.silent_push = input; self
     }
     /// <p>Specifies whether the notification is a silent push notification. A silent (or background) push notification isn't displayed on recipients' devices. You can use silent push notifications to make small updates to your app, or to display messages in an in-app message center.</p>
     /// <p>Amazon Pinpoint uses this property to determine the correct value for the apns-push-type request header when it sends the notification message to APNs. If you specify a value of true for this property, Amazon Pinpoint sets the value for the apns-push-type header field to background.</p><note>
@@ -506,8 +492,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
     pub fn set_sound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sound = input;
-        self
+        self.sound = input; self
     }
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
     pub fn get_sound(&self) -> &::std::option::Option<::std::string::String> {
@@ -518,24 +503,18 @@ impl ApnsMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.substitutions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.substitutions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub fn set_substitutions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.substitutions = input;
-        self
+    pub fn set_substitutions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.substitutions = input; self
     }
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub fn get_substitutions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_substitutions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
@@ -545,8 +524,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
     pub fn set_thread_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thread_id = input;
-        self
+        self.thread_id = input; self
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
     pub fn get_thread_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -561,8 +539,7 @@ impl ApnsMessageBuilder {
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.time_to_live = input;
-        self
+        self.time_to_live = input; self
     }
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
@@ -576,8 +553,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -590,8 +566,7 @@ impl ApnsMessageBuilder {
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -600,24 +575,43 @@ impl ApnsMessageBuilder {
     /// Consumes the builder and constructs a [`ApnsMessage`](crate::types::ApnsMessage).
     pub fn build(self) -> crate::types::ApnsMessage {
         crate::types::ApnsMessage {
-            apns_push_type: self.apns_push_type,
-            action: self.action,
-            badge: self.badge,
-            body: self.body,
-            category: self.category,
-            collapse_id: self.collapse_id,
-            data: self.data,
-            media_url: self.media_url,
-            preferred_authentication_method: self.preferred_authentication_method,
-            priority: self.priority,
-            raw_content: self.raw_content,
-            silent_push: self.silent_push,
-            sound: self.sound,
-            substitutions: self.substitutions,
-            thread_id: self.thread_id,
-            time_to_live: self.time_to_live,
-            title: self.title,
-            url: self.url,
+            apns_push_type: self.apns_push_type
+            ,
+            action: self.action
+            ,
+            badge: self.badge
+            ,
+            body: self.body
+            ,
+            category: self.category
+            ,
+            collapse_id: self.collapse_id
+            ,
+            data: self.data
+            ,
+            media_url: self.media_url
+            ,
+            preferred_authentication_method: self.preferred_authentication_method
+            ,
+            priority: self.priority
+            ,
+            raw_content: self.raw_content
+            ,
+            silent_push: self.silent_push
+            ,
+            sound: self.sound
+            ,
+            substitutions: self.substitutions
+            ,
+            thread_id: self.thread_id
+            ,
+            time_to_live: self.time_to_live
+            ,
+            title: self.title
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

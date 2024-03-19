@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmInput {
+pub struct DescribeAlarmInput  {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlarmInput {
+impl  DescribeAlarmInput  {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAlarmInputBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>The name of the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeAlarmInputBuilder {
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_value
     }
     /// Consumes the builder and constructs a [`DescribeAlarmInput`](crate::operation::describe_alarm::DescribeAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_alarm::DescribeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_alarm::DescribeAlarmInput {
-            alarm_model_name: self.alarm_model_name,
-            key_value: self.key_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alarm::DescribeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_alarm::DescribeAlarmInput {
+                alarm_model_name: self.alarm_model_name
+                ,
+                key_value: self.key_value
+                ,
+            }
+        )
     }
 }
+

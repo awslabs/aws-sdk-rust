@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableResourceDimensionsInput {
+pub struct ListAvailableResourceDimensionsInput  {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAvailableResourceDimensionsInput {
+impl  ListAvailableResourceDimensionsInput  {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[::std::string::String] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [::std::string::String] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -51,7 +52,7 @@ impl ListAvailableResourceDimensionsInput {
 pub struct ListAvailableResourceDimensionsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +65,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -79,8 +79,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +92,16 @@ impl ListAvailableResourceDimensionsInputBuilder {
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
     pub fn metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input.into());
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.metrics
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
@@ -113,8 +111,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -127,28 +124,28 @@ impl ListAvailableResourceDimensionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                metrics: self.metrics,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                service_type: self.service_type
+                ,
+                identifier: self.identifier
+                ,
+                metrics: self.metrics
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

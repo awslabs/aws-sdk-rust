@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTypeRegistrationsInput {
+pub struct ListTypeRegistrationsInput  {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
@@ -20,25 +20,25 @@ pub struct ListTypeRegistrationsInput {
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTypeRegistrationsInput {
+impl  ListTypeRegistrationsInput  {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn type_arn(&self) -> ::std::option::Option<& str> {
         self.type_arn.as_deref()
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn registration_status_filter(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn registration_status_filter(&self) -> ::std::option::Option<& crate::types::RegistrationStatus> {
         self.registration_status_filter.as_ref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -46,7 +46,7 @@ impl ListTypeRegistrationsInput {
         self.max_results
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl ListTypeRegistrationsInputBuilder {
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -95,8 +94,7 @@ impl ListTypeRegistrationsInputBuilder {
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -112,8 +110,7 @@ impl ListTypeRegistrationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_arn = input;
-        self
+        self.type_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -129,8 +126,7 @@ impl ListTypeRegistrationsInputBuilder {
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
     pub fn set_registration_status_filter(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.registration_status_filter = input;
-        self
+        self.registration_status_filter = input; self
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
@@ -144,8 +140,7 @@ impl ListTypeRegistrationsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -158,25 +153,30 @@ impl ListTypeRegistrationsInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTypeRegistrationsInput`](crate::operation::list_type_registrations::ListTypeRegistrationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_type_registrations::ListTypeRegistrationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_type_registrations::ListTypeRegistrationsInput {
-            r#type: self.r#type,
-            type_name: self.type_name,
-            type_arn: self.type_arn,
-            registration_status_filter: self.registration_status_filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_type_registrations::ListTypeRegistrationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_type_registrations::ListTypeRegistrationsInput {
+                r#type: self.r#type
+                ,
+                type_name: self.type_name
+                ,
+                type_arn: self.type_arn
+                ,
+                registration_status_filter: self.registration_status_filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

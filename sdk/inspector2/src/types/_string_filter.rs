@@ -3,21 +3,20 @@
 /// <p>An object that describes the details of a string filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringFilter {
+pub struct StringFilter  {
     /// <p>The operator to use when comparing values in the filter.</p>
     pub comparison: crate::types::StringComparison,
     /// <p>The value to filter on.</p>
     pub value: ::std::string::String,
 }
-impl StringFilter {
+impl  StringFilter  {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> &crate::types::StringComparison {
+    pub fn comparison(&self) -> & crate::types::StringComparison {
         &self.comparison
     }
     /// <p>The value to filter on.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl StringFilter {
@@ -43,8 +42,7 @@ impl StringFilterBuilder {
     }
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::StringComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::StringComparison> {
@@ -58,8 +56,7 @@ impl StringFilterBuilder {
     }
     /// <p>The value to filter on.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value to filter on.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl StringFilterBuilder {
     /// - [`comparison`](crate::types::builders::StringFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::StringFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::StringFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StringFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building StringFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building StringFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StringFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building StringFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building StringFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

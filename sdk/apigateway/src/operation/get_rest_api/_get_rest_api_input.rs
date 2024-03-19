@@ -3,13 +3,13 @@
 /// <p>The GET request to list an existing RestApi defined for your collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRestApiInput {
+pub struct GetRestApiInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRestApiInput {
+impl  GetRestApiInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl GetRestApiInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,8 +43,12 @@ impl GetRestApiInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRestApiInput`](crate::operation::get_rest_api::GetRestApiInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_rest_api::GetRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rest_api::GetRestApiInput {
-            rest_api_id: self.rest_api_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_rest_api::GetRestApiInput {
+                rest_api_id: self.rest_api_id
+                ,
+            }
+        )
     }
 }
+

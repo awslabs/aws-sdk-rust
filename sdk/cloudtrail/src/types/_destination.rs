@@ -3,21 +3,20 @@
 /// <p>Contains information about the destination receiving events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
     pub r#type: crate::types::DestinationType,
     /// <p>For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
     pub location: ::std::string::String,
 }
-impl Destination {
+impl  Destination  {
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
-    pub fn r#type(&self) -> &crate::types::DestinationType {
+    pub fn r#type(&self) -> & crate::types::DestinationType {
         &self.r#type
     }
     /// <p>For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl Destination {
@@ -43,8 +42,7 @@ impl DestinationBuilder {
     }
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -58,8 +56,7 @@ impl DestinationBuilder {
     }
     /// <p>For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl DestinationBuilder {
     /// - [`r#type`](crate::types::builders::DestinationBuilder::r#type)
     /// - [`location`](crate::types::builders::DestinationBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Destination {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Destination",
-                )
-            })?,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building Destination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Destination {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Destination")
+                    )?
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building Destination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

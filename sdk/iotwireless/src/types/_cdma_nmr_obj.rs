@@ -3,7 +3,7 @@
 /// <p>CDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CdmaNmrObj {
+pub struct CdmaNmrObj  {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub pn_offset: i32,
     /// <p>CDMA channel information.</p>
@@ -13,7 +13,7 @@ pub struct CdmaNmrObj {
     /// <p>CDMA base station ID (BSID).</p>
     pub base_station_id: ::std::option::Option<i32>,
 }
-impl CdmaNmrObj {
+impl  CdmaNmrObj  {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn pn_offset(&self) -> i32 {
         self.pn_offset
@@ -56,8 +56,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn set_pn_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pn_offset = input;
-        self
+        self.pn_offset = input; self
     }
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn get_pn_offset(&self) -> &::std::option::Option<i32> {
@@ -71,8 +70,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>CDMA channel information.</p>
     pub fn set_cdma_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cdma_channel = input;
-        self
+        self.cdma_channel = input; self
     }
     /// <p>CDMA channel information.</p>
     pub fn get_cdma_channel(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn set_pilot_power(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pilot_power = input;
-        self
+        self.pilot_power = input; self
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn get_pilot_power(&self) -> &::std::option::Option<i32> {
@@ -99,8 +96,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn set_base_station_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.base_station_id = input;
-        self
+        self.base_station_id = input; self
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn get_base_station_id(&self) -> &::std::option::Option<i32> {
@@ -111,21 +107,24 @@ impl CdmaNmrObjBuilder {
     /// - [`pn_offset`](crate::types::builders::CdmaNmrObjBuilder::pn_offset)
     /// - [`cdma_channel`](crate::types::builders::CdmaNmrObjBuilder::cdma_channel)
     pub fn build(self) -> ::std::result::Result<crate::types::CdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CdmaNmrObj {
-            pn_offset: self.pn_offset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pn_offset",
-                    "pn_offset was not specified but it is required when building CdmaNmrObj",
-                )
-            })?,
-            cdma_channel: self.cdma_channel.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cdma_channel",
-                    "cdma_channel was not specified but it is required when building CdmaNmrObj",
-                )
-            })?,
-            pilot_power: self.pilot_power,
-            base_station_id: self.base_station_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CdmaNmrObj {
+                pn_offset: self.pn_offset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pn_offset", "pn_offset was not specified but it is required when building CdmaNmrObj")
+                    )?
+                ,
+                cdma_channel: self.cdma_channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cdma_channel", "cdma_channel was not specified but it is required when building CdmaNmrObj")
+                    )?
+                ,
+                pilot_power: self.pilot_power
+                ,
+                base_station_id: self.base_station_id
+                ,
+            }
+        )
     }
 }
+

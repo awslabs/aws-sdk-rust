@@ -3,13 +3,13 @@
 /// <p>Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteFilterPrefix {
+pub struct RouteFilterPrefix  {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
-impl RouteFilterPrefix {
+impl  RouteFilterPrefix  {
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RouteFilterPrefixBuilder {
     }
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl RouteFilterPrefixBuilder {
     }
     /// Consumes the builder and constructs a [`RouteFilterPrefix`](crate::types::RouteFilterPrefix).
     pub fn build(self) -> crate::types::RouteFilterPrefix {
-        crate::types::RouteFilterPrefix { cidr: self.cidr }
+        crate::types::RouteFilterPrefix {
+            cidr: self.cidr
+            ,
+        }
     }
 }
+

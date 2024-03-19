@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BarChartFieldWells {
+pub struct BarChartFieldWells  {
     /// <p>The aggregated field wells of a bar chart.</p>
     pub bar_chart_aggregated_field_wells: ::std::option::Option<crate::types::BarChartAggregatedFieldWells>,
 }
-impl BarChartFieldWells {
+impl  BarChartFieldWells  {
     /// <p>The aggregated field wells of a bar chart.</p>
-    pub fn bar_chart_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::BarChartAggregatedFieldWells> {
+    pub fn bar_chart_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::BarChartAggregatedFieldWells> {
         self.bar_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl BarChartFieldWellsBuilder {
     }
     /// <p>The aggregated field wells of a bar chart.</p>
     pub fn set_bar_chart_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::BarChartAggregatedFieldWells>) -> Self {
-        self.bar_chart_aggregated_field_wells = input;
-        self
+        self.bar_chart_aggregated_field_wells = input; self
     }
     /// <p>The aggregated field wells of a bar chart.</p>
     pub fn get_bar_chart_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::BarChartAggregatedFieldWells> {
@@ -45,7 +44,9 @@ impl BarChartFieldWellsBuilder {
     /// Consumes the builder and constructs a [`BarChartFieldWells`](crate::types::BarChartFieldWells).
     pub fn build(self) -> crate::types::BarChartFieldWells {
         crate::types::BarChartFieldWells {
-            bar_chart_aggregated_field_wells: self.bar_chart_aggregated_field_wells,
+            bar_chart_aggregated_field_wells: self.bar_chart_aggregated_field_wells
+            ,
         }
     }
 }
+

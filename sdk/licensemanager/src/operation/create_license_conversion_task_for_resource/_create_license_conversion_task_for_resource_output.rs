@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLicenseConversionTaskForResourceOutput {
+pub struct CreateLicenseConversionTaskForResourceOutput  {
     /// <p>The ID of the created license type conversion task.</p>
     pub license_conversion_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLicenseConversionTaskForResourceOutput {
+impl  CreateLicenseConversionTaskForResourceOutput  {
     /// <p>The ID of the created license type conversion task.</p>
-    pub fn license_conversion_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> ::std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLicenseConversionTaskForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLicenseConversionTaskForResourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
     pub fn builder() -> crate::operation::create_license_conversion_task_for_resource::builders::CreateLicenseConversionTaskForResourceOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateLicenseConversionTaskForResourceOutputBuilder {
     }
     /// <p>The ID of the created license type conversion task.</p>
     pub fn set_license_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_conversion_task_id = input;
-        self
+        self.license_conversion_task_id = input; self
     }
     /// <p>The ID of the created license type conversion task.</p>
     pub fn get_license_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_conversion_task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
     pub fn build(self) -> crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput {
         crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput {
-            license_conversion_task_id: self.license_conversion_task_id,
+            license_conversion_task_id: self.license_conversion_task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

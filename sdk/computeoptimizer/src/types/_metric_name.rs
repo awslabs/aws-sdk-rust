@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metricname = unimplemented!();
 /// match metricname {
@@ -44,16 +44,14 @@
 /// Specifically, when `metricname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     Cpu,
@@ -89,120 +87,104 @@ pub enum MetricName {
     NetworkPacketsOutPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cpu" => MetricName::Cpu,
-            "DISK_READ_BYTES_PER_SECOND" => MetricName::DiskReadBytesPerSecond,
-            "DISK_READ_OPS_PER_SECOND" => MetricName::DiskReadOpsPerSecond,
-            "DISK_WRITE_BYTES_PER_SECOND" => MetricName::DiskWriteBytesPerSecond,
-            "DISK_WRITE_OPS_PER_SECOND" => MetricName::DiskWriteOpsPerSecond,
-            "EBS_READ_BYTES_PER_SECOND" => MetricName::EbsReadBytesPerSecond,
-            "EBS_READ_OPS_PER_SECOND" => MetricName::EbsReadOpsPerSecond,
-            "EBS_WRITE_BYTES_PER_SECOND" => MetricName::EbsWriteBytesPerSecond,
-            "EBS_WRITE_OPS_PER_SECOND" => MetricName::EbsWriteOpsPerSecond,
-            "GPU_MEMORY_PERCENTAGE" => MetricName::GpuMemoryPercentage,
-            "GPU_PERCENTAGE" => MetricName::GpuPercentage,
-            "Memory" => MetricName::Memory,
-            "NETWORK_IN_BYTES_PER_SECOND" => MetricName::NetworkInBytesPerSecond,
-            "NETWORK_OUT_BYTES_PER_SECOND" => MetricName::NetworkOutBytesPerSecond,
-            "NETWORK_PACKETS_IN_PER_SECOND" => MetricName::NetworkPacketsInPerSecond,
-            "NETWORK_PACKETS_OUT_PER_SECOND" => MetricName::NetworkPacketsOutPerSecond,
-            other => MetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Cpu" => MetricName::Cpu,
+"DISK_READ_BYTES_PER_SECOND" => MetricName::DiskReadBytesPerSecond,
+"DISK_READ_OPS_PER_SECOND" => MetricName::DiskReadOpsPerSecond,
+"DISK_WRITE_BYTES_PER_SECOND" => MetricName::DiskWriteBytesPerSecond,
+"DISK_WRITE_OPS_PER_SECOND" => MetricName::DiskWriteOpsPerSecond,
+"EBS_READ_BYTES_PER_SECOND" => MetricName::EbsReadBytesPerSecond,
+"EBS_READ_OPS_PER_SECOND" => MetricName::EbsReadOpsPerSecond,
+"EBS_WRITE_BYTES_PER_SECOND" => MetricName::EbsWriteBytesPerSecond,
+"EBS_WRITE_OPS_PER_SECOND" => MetricName::EbsWriteOpsPerSecond,
+"GPU_MEMORY_PERCENTAGE" => MetricName::GpuMemoryPercentage,
+"GPU_PERCENTAGE" => MetricName::GpuPercentage,
+"Memory" => MetricName::Memory,
+"NETWORK_IN_BYTES_PER_SECOND" => MetricName::NetworkInBytesPerSecond,
+"NETWORK_OUT_BYTES_PER_SECOND" => MetricName::NetworkOutBytesPerSecond,
+"NETWORK_PACKETS_IN_PER_SECOND" => MetricName::NetworkPacketsInPerSecond,
+"NETWORK_PACKETS_OUT_PER_SECOND" => MetricName::NetworkPacketsOutPerSecond,
+other => MetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MetricName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MetricName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MetricName::from(s))
+                    }
+                }
 impl MetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricName::Cpu => "Cpu",
-            MetricName::DiskReadBytesPerSecond => "DISK_READ_BYTES_PER_SECOND",
-            MetricName::DiskReadOpsPerSecond => "DISK_READ_OPS_PER_SECOND",
-            MetricName::DiskWriteBytesPerSecond => "DISK_WRITE_BYTES_PER_SECOND",
-            MetricName::DiskWriteOpsPerSecond => "DISK_WRITE_OPS_PER_SECOND",
-            MetricName::EbsReadBytesPerSecond => "EBS_READ_BYTES_PER_SECOND",
-            MetricName::EbsReadOpsPerSecond => "EBS_READ_OPS_PER_SECOND",
-            MetricName::EbsWriteBytesPerSecond => "EBS_WRITE_BYTES_PER_SECOND",
-            MetricName::EbsWriteOpsPerSecond => "EBS_WRITE_OPS_PER_SECOND",
-            MetricName::GpuMemoryPercentage => "GPU_MEMORY_PERCENTAGE",
-            MetricName::GpuPercentage => "GPU_PERCENTAGE",
-            MetricName::Memory => "Memory",
-            MetricName::NetworkInBytesPerSecond => "NETWORK_IN_BYTES_PER_SECOND",
-            MetricName::NetworkOutBytesPerSecond => "NETWORK_OUT_BYTES_PER_SECOND",
-            MetricName::NetworkPacketsInPerSecond => "NETWORK_PACKETS_IN_PER_SECOND",
-            MetricName::NetworkPacketsOutPerSecond => "NETWORK_PACKETS_OUT_PER_SECOND",
-            MetricName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cpu",
-            "DISK_READ_BYTES_PER_SECOND",
-            "DISK_READ_OPS_PER_SECOND",
-            "DISK_WRITE_BYTES_PER_SECOND",
-            "DISK_WRITE_OPS_PER_SECOND",
-            "EBS_READ_BYTES_PER_SECOND",
-            "EBS_READ_OPS_PER_SECOND",
-            "EBS_WRITE_BYTES_PER_SECOND",
-            "EBS_WRITE_OPS_PER_SECOND",
-            "GPU_MEMORY_PERCENTAGE",
-            "GPU_PERCENTAGE",
-            "Memory",
-            "NETWORK_IN_BYTES_PER_SECOND",
-            "NETWORK_OUT_BYTES_PER_SECOND",
-            "NETWORK_PACKETS_IN_PER_SECOND",
-            "NETWORK_PACKETS_OUT_PER_SECOND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricName::Cpu => "Cpu",
+    MetricName::DiskReadBytesPerSecond => "DISK_READ_BYTES_PER_SECOND",
+    MetricName::DiskReadOpsPerSecond => "DISK_READ_OPS_PER_SECOND",
+    MetricName::DiskWriteBytesPerSecond => "DISK_WRITE_BYTES_PER_SECOND",
+    MetricName::DiskWriteOpsPerSecond => "DISK_WRITE_OPS_PER_SECOND",
+    MetricName::EbsReadBytesPerSecond => "EBS_READ_BYTES_PER_SECOND",
+    MetricName::EbsReadOpsPerSecond => "EBS_READ_OPS_PER_SECOND",
+    MetricName::EbsWriteBytesPerSecond => "EBS_WRITE_BYTES_PER_SECOND",
+    MetricName::EbsWriteOpsPerSecond => "EBS_WRITE_OPS_PER_SECOND",
+    MetricName::GpuMemoryPercentage => "GPU_MEMORY_PERCENTAGE",
+    MetricName::GpuPercentage => "GPU_PERCENTAGE",
+    MetricName::Memory => "Memory",
+    MetricName::NetworkInBytesPerSecond => "NETWORK_IN_BYTES_PER_SECOND",
+    MetricName::NetworkOutBytesPerSecond => "NETWORK_OUT_BYTES_PER_SECOND",
+    MetricName::NetworkPacketsInPerSecond => "NETWORK_PACKETS_IN_PER_SECOND",
+    MetricName::NetworkPacketsOutPerSecond => "NETWORK_PACKETS_OUT_PER_SECOND",
+    MetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cpu", "DISK_READ_BYTES_PER_SECOND", "DISK_READ_OPS_PER_SECOND", "DISK_WRITE_BYTES_PER_SECOND", "DISK_WRITE_OPS_PER_SECOND", "EBS_READ_BYTES_PER_SECOND", "EBS_READ_OPS_PER_SECOND", "EBS_WRITE_BYTES_PER_SECOND", "EBS_WRITE_OPS_PER_SECOND", "GPU_MEMORY_PERCENTAGE", "GPU_PERCENTAGE", "Memory", "NETWORK_IN_BYTES_PER_SECOND", "NETWORK_OUT_BYTES_PER_SECOND", "NETWORK_PACKETS_IN_PER_SECOND", "NETWORK_PACKETS_OUT_PER_SECOND"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MetricName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MetricName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MetricName::Cpu => write!(f, "Cpu"),
-            MetricName::DiskReadBytesPerSecond => write!(f, "DISK_READ_BYTES_PER_SECOND"),
-            MetricName::DiskReadOpsPerSecond => write!(f, "DISK_READ_OPS_PER_SECOND"),
-            MetricName::DiskWriteBytesPerSecond => write!(f, "DISK_WRITE_BYTES_PER_SECOND"),
-            MetricName::DiskWriteOpsPerSecond => write!(f, "DISK_WRITE_OPS_PER_SECOND"),
-            MetricName::EbsReadBytesPerSecond => write!(f, "EBS_READ_BYTES_PER_SECOND"),
-            MetricName::EbsReadOpsPerSecond => write!(f, "EBS_READ_OPS_PER_SECOND"),
-            MetricName::EbsWriteBytesPerSecond => write!(f, "EBS_WRITE_BYTES_PER_SECOND"),
-            MetricName::EbsWriteOpsPerSecond => write!(f, "EBS_WRITE_OPS_PER_SECOND"),
-            MetricName::GpuMemoryPercentage => write!(f, "GPU_MEMORY_PERCENTAGE"),
-            MetricName::GpuPercentage => write!(f, "GPU_PERCENTAGE"),
-            MetricName::Memory => write!(f, "Memory"),
-            MetricName::NetworkInBytesPerSecond => write!(f, "NETWORK_IN_BYTES_PER_SECOND"),
-            MetricName::NetworkOutBytesPerSecond => write!(f, "NETWORK_OUT_BYTES_PER_SECOND"),
-            MetricName::NetworkPacketsInPerSecond => write!(f, "NETWORK_PACKETS_IN_PER_SECOND"),
-            MetricName::NetworkPacketsOutPerSecond => write!(f, "NETWORK_PACKETS_OUT_PER_SECOND"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MetricName::Cpu => write!(f, "Cpu"),
+MetricName::DiskReadBytesPerSecond => write!(f, "DISK_READ_BYTES_PER_SECOND"),
+MetricName::DiskReadOpsPerSecond => write!(f, "DISK_READ_OPS_PER_SECOND"),
+MetricName::DiskWriteBytesPerSecond => write!(f, "DISK_WRITE_BYTES_PER_SECOND"),
+MetricName::DiskWriteOpsPerSecond => write!(f, "DISK_WRITE_OPS_PER_SECOND"),
+MetricName::EbsReadBytesPerSecond => write!(f, "EBS_READ_BYTES_PER_SECOND"),
+MetricName::EbsReadOpsPerSecond => write!(f, "EBS_READ_OPS_PER_SECOND"),
+MetricName::EbsWriteBytesPerSecond => write!(f, "EBS_WRITE_BYTES_PER_SECOND"),
+MetricName::EbsWriteOpsPerSecond => write!(f, "EBS_WRITE_OPS_PER_SECOND"),
+MetricName::GpuMemoryPercentage => write!(f, "GPU_MEMORY_PERCENTAGE"),
+MetricName::GpuPercentage => write!(f, "GPU_PERCENTAGE"),
+MetricName::Memory => write!(f, "Memory"),
+MetricName::NetworkInBytesPerSecond => write!(f, "NETWORK_IN_BYTES_PER_SECOND"),
+MetricName::NetworkOutBytesPerSecond => write!(f, "NETWORK_OUT_BYTES_PER_SECOND"),
+MetricName::NetworkPacketsInPerSecond => write!(f, "NETWORK_PACKETS_IN_PER_SECOND"),
+MetricName::NetworkPacketsOutPerSecond => write!(f, "NETWORK_PACKETS_OUT_PER_SECOND"),
+MetricName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentInput {
+pub struct DeleteEnvironmentInput  {
     /// <p>The ID of the environment.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEnvironmentInput {
+impl  DeleteEnvironmentInput  {
     /// <p>The ID of the environment.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteEnvironmentInputBuilder {
     }
     /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput {
-            environment_identifier: self.environment_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_environment::DeleteEnvironmentInput {
+                environment_identifier: self.environment_identifier
+                ,
+            }
+        )
     }
 }
+

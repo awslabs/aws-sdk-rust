@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFeatureInput {
+pub struct CreateFeatureInput  {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name for the new feature.</p>
@@ -12,7 +12,7 @@ pub struct CreateFeatureInput {
     /// <p>An optional description of the feature.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub variations: ::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>>,
+    pub variations: ::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>>,
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
@@ -22,38 +22,39 @@ pub struct CreateFeatureInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub entity_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub entity_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateFeatureInput {
+impl  CreateFeatureInput  {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name for the new feature.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
-    pub fn evaluation_strategy(&self) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
+    pub fn evaluation_strategy(&self) -> ::std::option::Option<& crate::types::FeatureEvaluationStrategy> {
         self.evaluation_strategy.as_ref()
     }
     /// <p>An optional description of the feature.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variations.is_none()`.
-    pub fn variations(&self) -> &[crate::types::VariationConfig] {
-        self.variations.as_deref().unwrap_or_default()
+    pub fn variations(&self) -> & [crate::types::VariationConfig] {
+        self.variations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-    pub fn default_variation(&self) -> ::std::option::Option<&str> {
+    pub fn default_variation(&self) -> ::std::option::Option<& str> {
         self.default_variation.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
@@ -61,12 +62,12 @@ impl CreateFeatureInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn entity_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn entity_overrides(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.entity_overrides.as_ref()
     }
 }
@@ -85,10 +86,10 @@ pub struct CreateFeatureInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) variations: ::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>>,
+    pub(crate) variations: ::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>>,
     pub(crate) default_variation: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) entity_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) entity_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateFeatureInputBuilder {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
@@ -99,8 +100,7 @@ impl CreateFeatureInputBuilder {
     }
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl CreateFeatureInputBuilder {
     }
     /// <p>The name for the new feature.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the new feature.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl CreateFeatureInputBuilder {
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn set_evaluation_strategy(mut self, input: ::std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
-        self.evaluation_strategy = input;
-        self
+        self.evaluation_strategy = input; self
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn get_evaluation_strategy(&self) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
@@ -142,8 +140,7 @@ impl CreateFeatureInputBuilder {
     }
     /// <p>An optional description of the feature.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the feature.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,17 +153,16 @@ impl CreateFeatureInputBuilder {
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
     pub fn variations(mut self, input: crate::types::VariationConfig) -> Self {
         let mut v = self.variations.unwrap_or_default();
-        v.push(input);
-        self.variations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>>) -> Self {
-        self.variations = input;
-        self
+    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>>) -> Self {
+        self.variations = input; self
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>> {
+    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>> {
         &self.variations
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
@@ -180,8 +176,7 @@ impl CreateFeatureInputBuilder {
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub fn set_default_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_variation = input;
-        self
+        self.default_variation = input; self
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
@@ -200,25 +195,24 @@ impl CreateFeatureInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `entity_overrides`.
@@ -227,43 +221,44 @@ impl CreateFeatureInputBuilder {
     ///
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn entity_overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.entity_overrides.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.entity_overrides = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.entity_overrides = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn set_entity_overrides(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.entity_overrides = input;
-        self
+    pub fn set_entity_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.entity_overrides = input; self
     }
     /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`CreateFeatureInput`](crate::operation::create_feature::CreateFeatureInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_feature::CreateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_feature::CreateFeatureInput {
-            project: self.project,
-            name: self.name,
-            evaluation_strategy: self.evaluation_strategy,
-            description: self.description,
-            variations: self.variations,
-            default_variation: self.default_variation,
-            tags: self.tags,
-            entity_overrides: self.entity_overrides,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_feature::CreateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_feature::CreateFeatureInput {
+                project: self.project
+                ,
+                name: self.name
+                ,
+                evaluation_strategy: self.evaluation_strategy
+                ,
+                description: self.description
+                ,
+                variations: self.variations
+                ,
+                default_variation: self.default_variation
+                ,
+                tags: self.tags
+                ,
+                entity_overrides: self.entity_overrides
+                ,
+            }
+        )
     }
 }
+

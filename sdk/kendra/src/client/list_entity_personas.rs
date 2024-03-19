@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEntityPersonas`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of your Amazon Kendra experience.</p><br>
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for your Amazon Kendra experience.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned users or groups.</p><br>
-    /// - On success, responds with [`ListEntityPersonasOutput`](crate::operation::list_entity_personas::ListEntityPersonasOutput) with field(s):
+                            /// - On success, responds with [`ListEntityPersonasOutput`](crate::operation::list_entity_personas::ListEntityPersonasOutput) with field(s):
     ///   - [`summary_items(Option<Vec::<PersonasSummary>>)`](crate::operation::list_entity_personas::ListEntityPersonasOutput::summary_items): <p>An array of summary information for one or more users or groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entity_personas::ListEntityPersonasOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
-    /// - On failure, responds with [`SdkError<ListEntityPersonasError>`](crate::operation::list_entity_personas::ListEntityPersonasError)
+                            /// - On failure, responds with [`SdkError<ListEntityPersonasError>`](crate::operation::list_entity_personas::ListEntityPersonasError)
     pub fn list_entity_personas(&self) -> crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder {
-        crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The S3 location of the output reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BusinessReportS3Location {
+pub struct BusinessReportS3Location  {
     /// <p>The path of the business report.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket name of the output reports.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
-impl BusinessReportS3Location {
+impl  BusinessReportS3Location  {
     /// <p>The path of the business report.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The S3 bucket name of the output reports.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BusinessReportS3LocationBuilder {
     }
     /// <p>The path of the business report.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the business report.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BusinessReportS3LocationBuilder {
     }
     /// <p>The S3 bucket name of the output reports.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The S3 bucket name of the output reports.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BusinessReportS3LocationBuilder {
     /// Consumes the builder and constructs a [`BusinessReportS3Location`](crate::types::BusinessReportS3Location).
     pub fn build(self) -> crate::types::BusinessReportS3Location {
         crate::types::BusinessReportS3Location {
-            path: self.path,
-            bucket_name: self.bucket_name,
+            path: self.path
+            ,
+            bucket_name: self.bucket_name
+            ,
         }
     }
 }
+

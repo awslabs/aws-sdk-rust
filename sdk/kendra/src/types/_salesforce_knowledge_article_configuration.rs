@@ -3,32 +3,29 @@
 /// <p>Provides the configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceKnowledgeArticleConfiguration {
+pub struct SalesforceKnowledgeArticleConfiguration  {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
-    pub included_states: ::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>,
+    pub included_states: ::std::vec::Vec::<crate::types::SalesforceKnowledgeArticleState>,
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
     pub standard_knowledge_article_type_configuration: ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
-    pub custom_knowledge_article_type_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
+    pub custom_knowledge_article_type_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
 }
-impl SalesforceKnowledgeArticleConfiguration {
+impl  SalesforceKnowledgeArticleConfiguration  {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
-    pub fn included_states(&self) -> &[crate::types::SalesforceKnowledgeArticleState] {
-        use std::ops::Deref;
-        self.included_states.deref()
+    pub fn included_states(&self) -> & [crate::types::SalesforceKnowledgeArticleState] {
+        use std::ops::Deref; self.included_states.deref()
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
-    pub fn standard_knowledge_article_type_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration> {
+    pub fn standard_knowledge_article_type_configuration(&self) -> ::std::option::Option<& crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration> {
         self.standard_knowledge_article_type_configuration.as_ref()
     }
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_knowledge_article_type_configurations.is_none()`.
-    pub fn custom_knowledge_article_type_configurations(&self) -> &[crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration] {
-        self.custom_knowledge_article_type_configurations.as_deref().unwrap_or_default()
+    pub fn custom_knowledge_article_type_configurations(&self) -> & [crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration] {
+        self.custom_knowledge_article_type_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SalesforceKnowledgeArticleConfiguration {
@@ -42,11 +39,9 @@ impl SalesforceKnowledgeArticleConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceKnowledgeArticleConfigurationBuilder {
-    pub(crate) included_states: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
-    pub(crate) standard_knowledge_article_type_configuration:
-        ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
-    pub(crate) custom_knowledge_article_type_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
+    pub(crate) included_states: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceKnowledgeArticleState>>,
+    pub(crate) standard_knowledge_article_type_configuration: ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
+    pub(crate) custom_knowledge_article_type_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
 }
 impl SalesforceKnowledgeArticleConfigurationBuilder {
     /// Appends an item to `included_states`.
@@ -56,17 +51,16 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
     pub fn included_states(mut self, input: crate::types::SalesforceKnowledgeArticleState) -> Self {
         let mut v = self.included_states.unwrap_or_default();
-        v.push(input);
-        self.included_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.included_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
-    pub fn set_included_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>) -> Self {
-        self.included_states = input;
-        self
+    pub fn set_included_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceKnowledgeArticleState>>) -> Self {
+        self.included_states = input; self
     }
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
-    pub fn get_included_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>> {
+    pub fn get_included_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SalesforceKnowledgeArticleState>> {
         &self.included_states
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
@@ -75,17 +69,11 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
         self
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
-    pub fn set_standard_knowledge_article_type_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
-    ) -> Self {
-        self.standard_knowledge_article_type_configuration = input;
-        self
+    pub fn set_standard_knowledge_article_type_configuration(mut self, input: ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>) -> Self {
+        self.standard_knowledge_article_type_configuration = input; self
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
-    pub fn get_standard_knowledge_article_type_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration> {
+    pub fn get_standard_knowledge_article_type_configuration(&self) -> &::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration> {
         &self.standard_knowledge_article_type_configuration
     }
     /// Appends an item to `custom_knowledge_article_type_configurations`.
@@ -95,39 +83,35 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
     pub fn custom_knowledge_article_type_configurations(mut self, input: crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration) -> Self {
         let mut v = self.custom_knowledge_article_type_configurations.unwrap_or_default();
-        v.push(input);
-        self.custom_knowledge_article_type_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_knowledge_article_type_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
-    pub fn set_custom_knowledge_article_type_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>,
-    ) -> Self {
-        self.custom_knowledge_article_type_configurations = input;
-        self
+    pub fn set_custom_knowledge_article_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>>) -> Self {
+        self.custom_knowledge_article_type_configurations = input; self
     }
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
-    pub fn get_custom_knowledge_article_type_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>> {
+    pub fn get_custom_knowledge_article_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>> {
         &self.custom_knowledge_article_type_configurations
     }
     /// Consumes the builder and constructs a [`SalesforceKnowledgeArticleConfiguration`](crate::types::SalesforceKnowledgeArticleConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`included_states`](crate::types::builders::SalesforceKnowledgeArticleConfigurationBuilder::included_states)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::SalesforceKnowledgeArticleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SalesforceKnowledgeArticleConfiguration {
-            included_states: self.included_states.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "included_states",
-                    "included_states was not specified but it is required when building SalesforceKnowledgeArticleConfiguration",
-                )
-            })?,
-            standard_knowledge_article_type_configuration: self.standard_knowledge_article_type_configuration,
-            custom_knowledge_article_type_configurations: self.custom_knowledge_article_type_configurations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceKnowledgeArticleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::SalesforceKnowledgeArticleConfiguration {
+                included_states: self.included_states
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("included_states", "included_states was not specified but it is required when building SalesforceKnowledgeArticleConfiguration")
+                    )?
+                ,
+                standard_knowledge_article_type_configuration: self.standard_knowledge_article_type_configuration
+                ,
+                custom_knowledge_article_type_configurations: self.custom_knowledge_article_type_configurations
+                ,
+            }
+        )
     }
 }
+

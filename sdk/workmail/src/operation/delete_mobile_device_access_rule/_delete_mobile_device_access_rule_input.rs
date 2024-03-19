@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMobileDeviceAccessRuleInput {
+pub struct DeleteMobileDeviceAccessRuleInput  {
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the rule to be deleted.</p>
     pub mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMobileDeviceAccessRuleInput {
+impl  DeleteMobileDeviceAccessRuleInput  {
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn mobile_device_access_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn mobile_device_access_rule_id(&self) -> ::std::option::Option<& str> {
         self.mobile_device_access_rule_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
     }
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
     }
     /// <p>The identifier of the rule to be deleted.</p>
     pub fn set_mobile_device_access_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mobile_device_access_rule_id = input;
-        self
+        self.mobile_device_access_rule_id = input; self
     }
     /// <p>The identifier of the rule to be deleted.</p>
     pub fn get_mobile_device_access_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.mobile_device_access_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessRuleInput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
-            organization_id: self.organization_id,
-            mobile_device_access_rule_id: self.mobile_device_access_rule_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
+                organization_id: self.organization_id
+                ,
+                mobile_device_access_rule_id: self.mobile_device_access_rule_id
+                ,
+            }
+        )
     }
 }
+

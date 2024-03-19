@@ -3,7 +3,7 @@
 /// <p>A summary of the import job that includes details of the requested job's configuration and its current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobSummary {
+pub struct AssetBundleImportJobSummary  {
     /// <p>The current status of the import job.</p>
     pub job_status: ::std::option::Option<crate::types::AssetBundleImportJobStatus>,
     /// <p>The ARN of the import job.</p>
@@ -15,25 +15,25 @@ pub struct AssetBundleImportJobSummary {
     /// <p>The failure action for the import job.</p>
     pub failure_action: ::std::option::Option<crate::types::AssetBundleImportFailureAction>,
 }
-impl AssetBundleImportJobSummary {
+impl  AssetBundleImportJobSummary  {
     /// <p>The current status of the import job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::AssetBundleImportJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The ARN of the import job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time that the import job was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn asset_bundle_import_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_bundle_import_job_id(&self) -> ::std::option::Option<& str> {
         self.asset_bundle_import_job_id.as_deref()
     }
     /// <p>The failure action for the import job.</p>
-    pub fn failure_action(&self) -> ::std::option::Option<&crate::types::AssetBundleImportFailureAction> {
+    pub fn failure_action(&self) -> ::std::option::Option<& crate::types::AssetBundleImportFailureAction> {
         self.failure_action.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AssetBundleImportJobSummaryBuilder {
     }
     /// <p>The current status of the import job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The current status of the import job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobStatus> {
@@ -76,8 +75,7 @@ impl AssetBundleImportJobSummaryBuilder {
     }
     /// <p>The ARN of the import job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the import job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AssetBundleImportJobSummaryBuilder {
     }
     /// <p>The time that the import job was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the import job was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl AssetBundleImportJobSummaryBuilder {
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn set_asset_bundle_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_bundle_import_job_id = input;
-        self
+        self.asset_bundle_import_job_id = input; self
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn get_asset_bundle_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl AssetBundleImportJobSummaryBuilder {
     }
     /// <p>The failure action for the import job.</p>
     pub fn set_failure_action(mut self, input: ::std::option::Option<crate::types::AssetBundleImportFailureAction>) -> Self {
-        self.failure_action = input;
-        self
+        self.failure_action = input; self
     }
     /// <p>The failure action for the import job.</p>
     pub fn get_failure_action(&self) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
@@ -128,11 +123,17 @@ impl AssetBundleImportJobSummaryBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobSummary`](crate::types::AssetBundleImportJobSummary).
     pub fn build(self) -> crate::types::AssetBundleImportJobSummary {
         crate::types::AssetBundleImportJobSummary {
-            job_status: self.job_status,
-            arn: self.arn,
-            created_time: self.created_time,
-            asset_bundle_import_job_id: self.asset_bundle_import_job_id,
-            failure_action: self.failure_action,
+            job_status: self.job_status
+            ,
+            arn: self.arn
+            ,
+            created_time: self.created_time
+            ,
+            asset_bundle_import_job_id: self.asset_bundle_import_job_id
+            ,
+            failure_action: self.failure_action
+            ,
         }
     }
 }
+

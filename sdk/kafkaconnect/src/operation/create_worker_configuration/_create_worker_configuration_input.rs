@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateWorkerConfigurationInput {
+pub struct CreateWorkerConfigurationInput  {
     /// <p>A summary description of the worker configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the worker configuration.</p>
@@ -10,27 +10,27 @@ pub struct CreateWorkerConfigurationInput {
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub properties_file_content: ::std::option::Option<::std::string::String>,
     /// <p>The tags you want to attach to the worker configuration.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateWorkerConfigurationInput {
+impl  CreateWorkerConfigurationInput  {
     /// <p>A summary description of the worker configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the worker configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> ::std::option::Option<&str> {
+    pub fn properties_file_content(&self) -> ::std::option::Option<& str> {
         self.properties_file_content.as_deref()
     }
     /// <p>The tags you want to attach to the worker configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateWorkerConfigurationInput {
+impl  ::std::fmt::Debug for CreateWorkerConfigurationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInput");
         formatter.field("description", &self.description);
@@ -54,7 +54,7 @@ pub struct CreateWorkerConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) properties_file_content: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkerConfigurationInputBuilder {
     /// <p>A summary description of the worker configuration.</p>
@@ -64,8 +64,7 @@ impl CreateWorkerConfigurationInputBuilder {
     }
     /// <p>A summary description of the worker configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A summary description of the worker configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl CreateWorkerConfigurationInputBuilder {
     }
     /// <p>The name of the worker configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the worker configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl CreateWorkerConfigurationInputBuilder {
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub fn set_properties_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties_file_content = input;
-        self
+        self.properties_file_content = input; self
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub fn get_properties_file_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,32 +105,32 @@ impl CreateWorkerConfigurationInputBuilder {
     /// <p>The tags you want to attach to the worker configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags you want to attach to the worker configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags you want to attach to the worker configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_worker_configuration::CreateWorkerConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
-            description: self.description,
-            name: self.name,
-            properties_file_content: self.properties_file_content,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_worker_configuration::CreateWorkerConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                properties_file_content: self.properties_file_content
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
@@ -146,3 +143,4 @@ impl ::std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

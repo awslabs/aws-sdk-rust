@@ -16,7 +16,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorsListItem {
+pub struct ErrorsListItem  {
     /// <p>Page number where the error occurred.</p>
     pub page: ::std::option::Option<i32>,
     /// <p>Error code for the cause of the error.</p>
@@ -24,17 +24,17 @@ pub struct ErrorsListItem {
     /// <p>Text message explaining the reason for the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorsListItem {
+impl  ErrorsListItem  {
     /// <p>Page number where the error occurred.</p>
     pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p>Error code for the cause of the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::PageBasedErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::PageBasedErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ErrorsListItemBuilder {
     }
     /// <p>Page number where the error occurred.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>Page number where the error occurred.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -75,8 +74,7 @@ impl ErrorsListItemBuilder {
     }
     /// <p>Error code for the cause of the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::PageBasedErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Error code for the cause of the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::PageBasedErrorCode> {
@@ -89,8 +87,7 @@ impl ErrorsListItemBuilder {
     }
     /// <p>Text message explaining the reason for the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Text message explaining the reason for the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,9 +96,13 @@ impl ErrorsListItemBuilder {
     /// Consumes the builder and constructs a [`ErrorsListItem`](crate::types::ErrorsListItem).
     pub fn build(self) -> crate::types::ErrorsListItem {
         crate::types::ErrorsListItem {
-            page: self.page,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            page: self.page
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

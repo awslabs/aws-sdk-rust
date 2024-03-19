@@ -5,54 +5,50 @@ pub use crate::operation::send_pipeline_execution_step_failure::_send_pipeline_e
 
 impl SendPipelineExecutionStepFailureInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.send_pipeline_execution_step_failure();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.send_pipeline_execution_step_failure();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SendPipelineExecutionStepFailure`.
-///
+/// 
 /// <p>Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder,
+                    inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-    > for SendPipelineExecutionStepFailureFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+                    crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
+                > for SendPipelineExecutionStepFailureFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+                        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SendPipelineExecutionStepFailureFluentBuilder {
     /// Creates a new `SendPipelineExecutionStepFailure`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput, crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     pub fn callback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.callback_token(input.into());
@@ -151,3 +138,4 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

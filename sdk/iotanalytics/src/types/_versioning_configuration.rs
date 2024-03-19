@@ -3,13 +3,13 @@
 /// <p>Information about the versioning of dataset contents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersioningConfiguration {
+pub struct VersioningConfiguration  {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub unlimited: bool,
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub max_versions: ::std::option::Option<i32>,
 }
-impl VersioningConfiguration {
+impl  VersioningConfiguration  {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub fn unlimited(&self) -> bool {
         self.unlimited
@@ -41,8 +41,7 @@ impl VersioningConfigurationBuilder {
     }
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unlimited = input;
-        self
+        self.unlimited = input; self
     }
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub fn get_unlimited(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl VersioningConfigurationBuilder {
     }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn set_max_versions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_versions = input;
-        self
+        self.max_versions = input; self
     }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn get_max_versions(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl VersioningConfigurationBuilder {
     /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::types::VersioningConfiguration).
     pub fn build(self) -> crate::types::VersioningConfiguration {
         crate::types::VersioningConfiguration {
-            unlimited: self.unlimited.unwrap_or_default(),
-            max_versions: self.max_versions,
+            unlimited: self.unlimited
+                .unwrap_or_default()
+            ,
+            max_versions: self.max_versions
+            ,
         }
     }
 }
+

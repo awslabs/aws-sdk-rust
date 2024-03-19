@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContainerServiceInput {
+pub struct DeleteContainerServiceInput  {
     /// <p>The name of the container service to delete.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContainerServiceInput {
+impl  DeleteContainerServiceInput  {
     /// <p>The name of the container service to delete.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteContainerServiceInputBuilder {
     }
     /// <p>The name of the container service to delete.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the container service to delete.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`DeleteContainerServiceInput`](crate::operation::delete_container_service::DeleteContainerServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_container_service::DeleteContainerServiceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_container_service::DeleteContainerServiceInput {
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_container_service::DeleteContainerServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_container_service::DeleteContainerServiceInput {
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Defines where the training dataset is located, what type of data it contains, and how to access the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// <p>What type of information is found in the dataset.</p>
     pub r#type: crate::types::DatasetType,
     /// <p>A DatasetInputConfig object that defines the data source and schema mapping.</p>
     pub input_config: ::std::option::Option<crate::types::DatasetInputConfig>,
 }
-impl Dataset {
+impl  Dataset  {
     /// <p>What type of information is found in the dataset.</p>
-    pub fn r#type(&self) -> &crate::types::DatasetType {
+    pub fn r#type(&self) -> & crate::types::DatasetType {
         &self.r#type
     }
     /// <p>A DatasetInputConfig object that defines the data source and schema mapping.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::DatasetInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::DatasetInputConfig> {
         self.input_config.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DatasetBuilder {
     }
     /// <p>What type of information is found in the dataset.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>What type of information is found in the dataset.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
@@ -57,8 +56,7 @@ impl DatasetBuilder {
     }
     /// <p>A DatasetInputConfig object that defines the data source and schema mapping.</p>
     pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::DatasetInputConfig>) -> Self {
-        self.input_config = input;
-        self
+        self.input_config = input; self
     }
     /// <p>A DatasetInputConfig object that defines the data source and schema mapping.</p>
     pub fn get_input_config(&self) -> &::std::option::Option<crate::types::DatasetInputConfig> {
@@ -68,14 +66,17 @@ impl DatasetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DatasetBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Dataset, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Dataset {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Dataset",
-                )
-            })?,
-            input_config: self.input_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Dataset {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Dataset")
+                    )?
+                ,
+                input_config: self.input_config
+                ,
+            }
+        )
     }
 }
+

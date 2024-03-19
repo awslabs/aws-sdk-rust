@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterWebhookWithThirdPartyInput {
+pub struct DeregisterWebhookWithThirdPartyInput  {
     /// <p>The name of the webhook you want to deregister.</p>
     pub webhook_name: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterWebhookWithThirdPartyInput {
+impl  DeregisterWebhookWithThirdPartyInput  {
     /// <p>The name of the webhook you want to deregister.</p>
-    pub fn webhook_name(&self) -> ::std::option::Option<&str> {
+    pub fn webhook_name(&self) -> ::std::option::Option<& str> {
         self.webhook_name.as_deref()
     }
 }
@@ -33,24 +33,20 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
     }
     /// <p>The name of the webhook you want to deregister.</p>
     pub fn set_webhook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.webhook_name = input;
-        self
+        self.webhook_name = input; self
     }
     /// <p>The name of the webhook you want to deregister.</p>
     pub fn get_webhook_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.webhook_name
     }
     /// Consumes the builder and constructs a [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput {
-                webhook_name: self.webhook_name,
-            },
+                webhook_name: self.webhook_name
+                ,
+            }
         )
     }
 }
+

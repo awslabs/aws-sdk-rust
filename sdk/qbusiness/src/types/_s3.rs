@@ -3,22 +3,20 @@
 /// <p>Information required for Amazon Q to find a specific file in an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3 {
+pub struct S3  {
     /// <p>The name of the S3 bucket that contains the file.</p>
     pub bucket: ::std::string::String,
     /// <p>The name of the file.</p>
     pub key: ::std::string::String,
 }
-impl S3 {
+impl  S3  {
     /// <p>The name of the S3 bucket that contains the file.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The name of the file.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
 }
 impl S3 {
@@ -44,8 +42,7 @@ impl S3Builder {
     }
     /// <p>The name of the S3 bucket that contains the file.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the S3 bucket that contains the file.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3Builder {
     }
     /// <p>The name of the file.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the file.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,16 +67,20 @@ impl S3Builder {
     /// - [`bucket`](crate::types::builders::S3Builder::bucket)
     /// - [`key`](crate::types::builders::S3Builder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3 {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3")
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3 {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3")
+                    )?
+                ,
+            }
+        )
     }
 }
+

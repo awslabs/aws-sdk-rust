@@ -3,46 +3,43 @@
 /// <p>An object representing a policy to constrain playback by country and/or origin sites.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlaybackRestrictionPolicy {
+pub struct PlaybackRestrictionPolicy  {
     /// <p>Playback-restriction-policy ARN</p>
     pub arn: ::std::string::String,
     /// <p>A list of country codes that control geoblocking restriction. Allowed values are the officially assigned <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> codes. Default: All countries (an empty array).</p>
-    pub allowed_countries: ::std::vec::Vec<::std::string::String>,
+    pub allowed_countries: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>. Default: All origins (an empty array).</p>
-    pub allowed_origins: ::std::vec::Vec<::std::string::String>,
+    pub allowed_origins: ::std::vec::Vec::<::std::string::String>,
     /// <p>Whether channel playback is constrained by origin site. Default: <code>false</code>.</p>
     pub enable_strict_origin_enforcement: ::std::option::Option<bool>,
     /// <p>Playback-restriction-policy name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PlaybackRestrictionPolicy {
+impl  PlaybackRestrictionPolicy  {
     /// <p>Playback-restriction-policy ARN</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A list of country codes that control geoblocking restriction. Allowed values are the officially assigned <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> codes. Default: All countries (an empty array).</p>
-    pub fn allowed_countries(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_countries.deref()
+    pub fn allowed_countries(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_countries.deref()
     }
     /// <p>A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>. Default: All origins (an empty array).</p>
-    pub fn allowed_origins(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_origins.deref()
+    pub fn allowed_origins(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_origins.deref()
     }
     /// <p>Whether channel playback is constrained by origin site. Default: <code>false</code>.</p>
     pub fn enable_strict_origin_enforcement(&self) -> ::std::option::Option<bool> {
         self.enable_strict_origin_enforcement
     }
     /// <p>Playback-restriction-policy name. The value does not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -58,11 +55,11 @@ impl PlaybackRestrictionPolicy {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlaybackRestrictionPolicyBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_countries: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enable_strict_origin_enforcement: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PlaybackRestrictionPolicyBuilder {
     /// <p>Playback-restriction-policy ARN</p>
@@ -73,8 +70,7 @@ impl PlaybackRestrictionPolicyBuilder {
     }
     /// <p>Playback-restriction-policy ARN</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Playback-restriction-policy ARN</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +83,16 @@ impl PlaybackRestrictionPolicyBuilder {
     /// <p>A list of country codes that control geoblocking restriction. Allowed values are the officially assigned <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> codes. Default: All countries (an empty array).</p>
     pub fn allowed_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_countries.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_countries = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_countries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of country codes that control geoblocking restriction. Allowed values are the officially assigned <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> codes. Default: All countries (an empty array).</p>
-    pub fn set_allowed_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_countries = input;
-        self
+    pub fn set_allowed_countries(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_countries = input; self
     }
     /// <p>A list of country codes that control geoblocking restriction. Allowed values are the officially assigned <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> codes. Default: All countries (an empty array).</p>
-    pub fn get_allowed_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_countries(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_countries
     }
     /// Appends an item to `allowed_origins`.
@@ -107,17 +102,16 @@ impl PlaybackRestrictionPolicyBuilder {
     /// <p>A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>. Default: All origins (an empty array).</p>
     pub fn allowed_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_origins.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_origins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_origins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>. Default: All origins (an empty array).</p>
-    pub fn set_allowed_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_origins = input;
-        self
+    pub fn set_allowed_origins(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_origins = input; self
     }
     /// <p>A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>. Default: All origins (an empty array).</p>
-    pub fn get_allowed_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_origins(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_origins
     }
     /// <p>Whether channel playback is constrained by origin site. Default: <code>false</code>.</p>
@@ -127,8 +121,7 @@ impl PlaybackRestrictionPolicyBuilder {
     }
     /// <p>Whether channel playback is constrained by origin site. Default: <code>false</code>.</p>
     pub fn set_enable_strict_origin_enforcement(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_strict_origin_enforcement = input;
-        self
+        self.enable_strict_origin_enforcement = input; self
     }
     /// <p>Whether channel playback is constrained by origin site. Default: <code>false</code>.</p>
     pub fn get_enable_strict_origin_enforcement(&self) -> &::std::option::Option<bool> {
@@ -141,8 +134,7 @@ impl PlaybackRestrictionPolicyBuilder {
     }
     /// <p>Playback-restriction-policy name. The value does not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Playback-restriction-policy name. The value does not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,17 +147,16 @@ impl PlaybackRestrictionPolicyBuilder {
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PlaybackRestrictionPolicy`](crate::types::PlaybackRestrictionPolicy).
@@ -174,28 +165,31 @@ impl PlaybackRestrictionPolicyBuilder {
     /// - [`allowed_countries`](crate::types::builders::PlaybackRestrictionPolicyBuilder::allowed_countries)
     /// - [`allowed_origins`](crate::types::builders::PlaybackRestrictionPolicyBuilder::allowed_origins)
     pub fn build(self) -> ::std::result::Result<crate::types::PlaybackRestrictionPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PlaybackRestrictionPolicy {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building PlaybackRestrictionPolicy",
-                )
-            })?,
-            allowed_countries: self.allowed_countries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_countries",
-                    "allowed_countries was not specified but it is required when building PlaybackRestrictionPolicy",
-                )
-            })?,
-            allowed_origins: self.allowed_origins.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_origins",
-                    "allowed_origins was not specified but it is required when building PlaybackRestrictionPolicy",
-                )
-            })?,
-            enable_strict_origin_enforcement: self.enable_strict_origin_enforcement,
-            name: self.name,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PlaybackRestrictionPolicy {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building PlaybackRestrictionPolicy")
+                    )?
+                ,
+                allowed_countries: self.allowed_countries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_countries", "allowed_countries was not specified but it is required when building PlaybackRestrictionPolicy")
+                    )?
+                ,
+                allowed_origins: self.allowed_origins
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_origins", "allowed_origins was not specified but it is required when building PlaybackRestrictionPolicy")
+                    )?
+                ,
+                enable_strict_origin_enforcement: self.enable_strict_origin_enforcement
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

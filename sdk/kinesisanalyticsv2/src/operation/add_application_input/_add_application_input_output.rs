@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationInputOutput {
+pub struct AddApplicationInputOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version.</p>
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes the application input configuration.</p>
-    pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
+    pub input_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::InputDescription>>,
     _request_id: Option<String>,
 }
-impl AddApplicationInputOutput {
+impl  AddApplicationInputOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Provides the current application version.</p>
@@ -21,17 +21,18 @@ impl AddApplicationInputOutput {
         self.application_version_id
     }
     /// <p>Describes the application input configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_descriptions.is_none()`.
-    pub fn input_descriptions(&self) -> &[crate::types::InputDescription] {
-        self.input_descriptions.as_deref().unwrap_or_default()
+    pub fn input_descriptions(&self) -> & [crate::types::InputDescription] {
+        self.input_descriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AddApplicationInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddApplicationInputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
     pub fn builder() -> crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder {
@@ -45,7 +46,7 @@ impl AddApplicationInputOutput {
 pub struct AddApplicationInputOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
+    pub(crate) input_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::InputDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationInputOutputBuilder {
@@ -56,8 +57,7 @@ impl AddApplicationInputOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl AddApplicationInputOutputBuilder {
     }
     /// <p>Provides the current application version.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>Provides the current application version.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -84,35 +83,38 @@ impl AddApplicationInputOutputBuilder {
     /// <p>Describes the application input configuration.</p>
     pub fn input_descriptions(mut self, input: crate::types::InputDescription) -> Self {
         let mut v = self.input_descriptions.unwrap_or_default();
-        v.push(input);
-        self.input_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the application input configuration.</p>
-    pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>) -> Self {
-        self.input_descriptions = input;
-        self
+    pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDescription>>) -> Self {
+        self.input_descriptions = input; self
     }
     /// <p>Describes the application input configuration.</p>
-    pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
+    pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDescription>> {
         &self.input_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
     pub fn build(self) -> crate::operation::add_application_input::AddApplicationInputOutput {
         crate::operation::add_application_input::AddApplicationInputOutput {
-            application_arn: self.application_arn,
-            application_version_id: self.application_version_id,
-            input_descriptions: self.input_descriptions,
+            application_arn: self.application_arn
+            ,
+            application_version_id: self.application_version_id
+            ,
+            input_descriptions: self.input_descriptions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

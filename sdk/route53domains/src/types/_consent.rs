@@ -3,21 +3,20 @@
 /// <p>Customer's consent for the owner change request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Consent {
+pub struct Consent  {
     /// <p>Maximum amount the customer agreed to accept.</p>
     pub max_price: f64,
     /// <p>Currency for the <code>MaxPrice</code>.</p>
     pub currency: ::std::string::String,
 }
-impl Consent {
+impl  Consent  {
     /// <p>Maximum amount the customer agreed to accept.</p>
     pub fn max_price(&self) -> f64 {
         self.max_price
     }
     /// <p>Currency for the <code>MaxPrice</code>.</p>
-    pub fn currency(&self) -> &str {
-        use std::ops::Deref;
-        self.currency.deref()
+    pub fn currency(&self) -> & str {
+        use std::ops::Deref; self.currency.deref()
     }
 }
 impl Consent {
@@ -43,8 +42,7 @@ impl ConsentBuilder {
     }
     /// <p>Maximum amount the customer agreed to accept.</p>
     pub fn set_max_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_price = input;
-        self
+        self.max_price = input; self
     }
     /// <p>Maximum amount the customer agreed to accept.</p>
     pub fn get_max_price(&self) -> &::std::option::Option<f64> {
@@ -58,8 +56,7 @@ impl ConsentBuilder {
     }
     /// <p>Currency for the <code>MaxPrice</code>.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>Currency for the <code>MaxPrice</code>.</p>
     pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,14 +66,18 @@ impl ConsentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`currency`](crate::types::builders::ConsentBuilder::currency)
     pub fn build(self) -> ::std::result::Result<crate::types::Consent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Consent {
-            max_price: self.max_price.unwrap_or_default(),
-            currency: self.currency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "currency",
-                    "currency was not specified but it is required when building Consent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Consent {
+                max_price: self.max_price
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("currency", "currency was not specified but it is required when building Consent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

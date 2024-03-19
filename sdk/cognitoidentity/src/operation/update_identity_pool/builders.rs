@@ -5,55 +5,51 @@ pub use crate::operation::update_identity_pool::_update_identity_pool_input::Upd
 
 impl UpdateIdentityPoolInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_identity_pool::UpdateIdentityPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_identity_pool();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_identity_pool::UpdateIdentityPoolError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_identity_pool();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateIdentityPool`.
-///
+/// 
 /// <p>Updates an identity pool.</p>
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder,
+                    inner: crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-        crate::operation::update_identity_pool::UpdateIdentityPoolError,
-    > for UpdateIdentityPoolFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-            crate::operation::update_identity_pool::UpdateIdentityPoolError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
+                    crate::operation::update_identity_pool::UpdateIdentityPoolError,
+                > for UpdateIdentityPoolFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
+                        crate::operation::update_identity_pool::UpdateIdentityPoolError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateIdentityPoolFluentBuilder {
     /// Creates a new `UpdateIdentityPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateIdentityPoolFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_identity_pool::UpdateIdentityPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_identity_pool::UpdateIdentityPool::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_identity_pool::UpdateIdentityPool::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-        crate::operation::update_identity_pool::UpdateIdentityPoolError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_identity_pool::UpdateIdentityPoolError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_identity_pool::UpdateIdentityPool::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_identity_pool::UpdateIdentityPool::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_identity_pool::UpdateIdentityPoolOutput, crate::operation::update_identity_pool::UpdateIdentityPoolError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -170,24 +157,17 @@ impl UpdateIdentityPoolFluentBuilder {
     /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
     ///
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn supported_login_providers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_login_providers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.supported_login_providers(k.into(), v.into());
         self
     }
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn set_supported_login_providers(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_login_providers(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_login_providers(input);
         self
     }
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn get_supported_login_providers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_supported_login_providers(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_supported_login_providers()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
@@ -214,12 +194,12 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn set_open_id_connect_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_open_id_connect_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_arns(input);
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_open_id_connect_provider_arns()
     }
     /// Appends an item to `CognitoIdentityProviders`.
@@ -232,12 +212,12 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn set_cognito_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>>) -> Self {
+    pub fn set_cognito_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CognitoIdentityProvider>>) -> Self {
         self.inner = self.inner.set_cognito_identity_providers(input);
         self
     }
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn get_cognito_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
+    pub fn get_cognito_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CognitoIdentityProvider>> {
         self.inner.get_cognito_identity_providers()
     }
     /// Appends an item to `SamlProviderARNs`.
@@ -250,12 +230,12 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn set_saml_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_saml_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_saml_provider_arns(input);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_saml_provider_arns()
     }
     /// Adds a key-value pair to `IdentityPoolTags`.
@@ -263,24 +243,18 @@ impl UpdateIdentityPoolFluentBuilder {
     /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
     ///
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn identity_pool_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_tags(k.into(), v.into());
         self
     }
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn set_identity_pool_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_identity_pool_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_identity_pool_tags(input);
         self
     }
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn get_identity_pool_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_identity_pool_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_identity_pool_tags()
     }
 }
+

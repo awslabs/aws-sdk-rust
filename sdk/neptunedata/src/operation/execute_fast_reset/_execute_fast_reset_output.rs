@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteFastResetOutput {
+pub struct ExecuteFastResetOutput  {
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
     pub status: ::std::string::String,
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
     pub payload: ::std::option::Option<crate::types::FastResetToken>,
     _request_id: Option<String>,
 }
-impl ExecuteFastResetOutput {
+impl  ExecuteFastResetOutput  {
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::FastResetToken> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::FastResetToken> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteFastResetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteFastResetOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteFastResetOutput`](crate::operation::execute_fast_reset::ExecuteFastResetOutput).
     pub fn builder() -> crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder {
@@ -49,8 +48,7 @@ impl ExecuteFastResetOutputBuilder {
     }
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The <code>status</code> is only returned for the <code>performDatabaseReset</code> action, and indicates whether or not the fast reset rquest is accepted.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +61,37 @@ impl ExecuteFastResetOutputBuilder {
     }
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::FastResetToken>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code> action, and contains the unique token to use with the <code>performDatabaseReset</code> action to make the reset occur.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::FastResetToken> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteFastResetOutput`](crate::operation::execute_fast_reset::ExecuteFastResetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_fast_reset::ExecuteFastResetOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_fast_reset::ExecuteFastResetOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExecuteFastResetOutput",
-                )
-            })?,
-            payload: self.payload,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_fast_reset::ExecuteFastResetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_fast_reset::ExecuteFastResetOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExecuteFastResetOutput")
+                    )?
+                ,
+                payload: self.payload
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

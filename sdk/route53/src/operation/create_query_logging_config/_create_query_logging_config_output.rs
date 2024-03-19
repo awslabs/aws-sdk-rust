@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQueryLoggingConfigOutput {
+pub struct CreateQueryLoggingConfigOutput  {
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
     pub query_logging_config: ::std::option::Option<crate::types::QueryLoggingConfig>,
     /// <p>The unique URL representing the new query logging configuration.</p>
     pub location: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateQueryLoggingConfigOutput {
+impl  CreateQueryLoggingConfigOutput  {
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
-    pub fn query_logging_config(&self) -> ::std::option::Option<&crate::types::QueryLoggingConfig> {
+    pub fn query_logging_config(&self) -> ::std::option::Option<& crate::types::QueryLoggingConfig> {
         self.query_logging_config.as_ref()
     }
     /// <p>The unique URL representing the new query logging configuration.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateQueryLoggingConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateQueryLoggingConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigOutput`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput).
     pub fn builder() -> crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigOutputBuilder {
@@ -49,8 +48,7 @@ impl CreateQueryLoggingConfigOutputBuilder {
     }
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
     pub fn set_query_logging_config(mut self, input: ::std::option::Option<crate::types::QueryLoggingConfig>) -> Self {
-        self.query_logging_config = input;
-        self
+        self.query_logging_config = input; self
     }
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
     pub fn get_query_logging_config(&self) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
@@ -64,40 +62,37 @@ impl CreateQueryLoggingConfigOutputBuilder {
     }
     /// <p>The unique URL representing the new query logging configuration.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The unique URL representing the new query logging configuration.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateQueryLoggingConfigOutput`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigOutputBuilder::location)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
-            query_logging_config: self.query_logging_config,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building CreateQueryLoggingConfigOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
+                query_logging_config: self.query_logging_config
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building CreateQueryLoggingConfigOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

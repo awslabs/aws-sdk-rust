@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjects`](crate::operation::list_objects::builders::ListObjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`storage_job_id(impl Into<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::storage_job_id) / [`set_storage_job_id(Option<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_storage_job_id):<br>required: **true**<br>Storage job id<br>
     ///   - [`starting_object_name(impl Into<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::starting_object_name) / [`set_starting_object_name(Option<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_starting_object_name):<br>required: **false**<br>Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL<br>
     ///   - [`starting_object_prefix(impl Into<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::starting_object_prefix) / [`set_starting_object_prefix(Option<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_starting_object_prefix):<br>required: **false**<br>Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL<br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_next_token):<br>required: **false**<br>Pagination token<br>
     ///   - [`created_before(DateTime)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::created_before) / [`set_created_before(Option<DateTime>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_created_before):<br>required: **false**<br>(Optional) Created before filter<br>
     ///   - [`created_after(DateTime)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_objects::builders::ListObjectsFluentBuilder::set_created_after):<br>required: **false**<br>(Optional) Created after filter<br>
-    /// - On success, responds with [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput) with field(s):
+                            /// - On success, responds with [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput) with field(s):
     ///   - [`object_list(Vec::<BackupObject>)`](crate::operation::list_objects::ListObjectsOutput::object_list): Object list
     ///   - [`next_token(Option<String>)`](crate::operation::list_objects::ListObjectsOutput::next_token): Pagination token
-    /// - On failure, responds with [`SdkError<ListObjectsError>`](crate::operation::list_objects::ListObjectsError)
+                            /// - On failure, responds with [`SdkError<ListObjectsError>`](crate::operation::list_objects::ListObjectsError)
     pub fn list_objects(&self) -> crate::operation::list_objects::builders::ListObjectsFluentBuilder {
-        crate::operation::list_objects::builders::ListObjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_objects::builders::ListObjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

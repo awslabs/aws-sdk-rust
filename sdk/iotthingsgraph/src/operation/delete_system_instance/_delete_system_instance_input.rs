@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSystemInstanceInput {
+pub struct DeleteSystemInstanceInput  {
     /// <p>The ID of the system instance to be deleted.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSystemInstanceInput {
+impl  DeleteSystemInstanceInput  {
     /// <p>The ID of the system instance to be deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -33,18 +33,20 @@ impl DeleteSystemInstanceInputBuilder {
     }
     /// <p>The ID of the system instance to be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the system instance to be deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_system_instance::DeleteSystemInstanceInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_system_instance::DeleteSystemInstanceInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

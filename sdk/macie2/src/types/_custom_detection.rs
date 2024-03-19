@@ -3,7 +3,7 @@
 /// <p>Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data that it detected for the finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomDetection {
+pub struct CustomDetection  {
     /// <p>The unique identifier for the custom data identifier.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
@@ -13,9 +13,9 @@ pub struct CustomDetection {
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub occurrences: ::std::option::Option<crate::types::Occurrences>,
 }
-impl CustomDetection {
+impl  CustomDetection  {
     /// <p>The unique identifier for the custom data identifier.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
@@ -23,11 +23,11 @@ impl CustomDetection {
         self.count
     }
     /// <p>The name of the custom data identifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn occurrences(&self) -> ::std::option::Option<&crate::types::Occurrences> {
+    pub fn occurrences(&self) -> ::std::option::Option<& crate::types::Occurrences> {
         self.occurrences.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CustomDetectionBuilder {
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique identifier for the custom data identifier.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CustomDetectionBuilder {
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl CustomDetectionBuilder {
     }
     /// <p>The name of the custom data identifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom data identifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CustomDetectionBuilder {
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub fn set_occurrences(mut self, input: ::std::option::Option<crate::types::Occurrences>) -> Self {
-        self.occurrences = input;
-        self
+        self.occurrences = input; self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub fn get_occurrences(&self) -> &::std::option::Option<crate::types::Occurrences> {
@@ -107,10 +103,15 @@ impl CustomDetectionBuilder {
     /// Consumes the builder and constructs a [`CustomDetection`](crate::types::CustomDetection).
     pub fn build(self) -> crate::types::CustomDetection {
         crate::types::CustomDetection {
-            arn: self.arn,
-            count: self.count,
-            name: self.name,
-            occurrences: self.occurrences,
+            arn: self.arn
+            ,
+            count: self.count
+            ,
+            name: self.name
+            ,
+            occurrences: self.occurrences
+            ,
         }
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>Details of a glossary term attached to the inventory asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetailedGlossaryTerm {
+pub struct DetailedGlossaryTerm  {
     /// <p>The name of a glossary term attached to the inventory asset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The shoft description of a glossary term attached to the inventory asset.</p>
     pub short_description: ::std::option::Option<::std::string::String>,
 }
-impl DetailedGlossaryTerm {
+impl  DetailedGlossaryTerm  {
     /// <p>The name of a glossary term attached to the inventory asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The shoft description of a glossary term attached to the inventory asset.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
 }
-impl ::std::fmt::Debug for DetailedGlossaryTerm {
+impl  ::std::fmt::Debug for DetailedGlossaryTerm  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetailedGlossaryTerm");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl DetailedGlossaryTermBuilder {
     }
     /// <p>The name of a glossary term attached to the inventory asset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a glossary term attached to the inventory asset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DetailedGlossaryTermBuilder {
     }
     /// <p>The shoft description of a glossary term attached to the inventory asset.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>The shoft description of a glossary term attached to the inventory asset.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl DetailedGlossaryTermBuilder {
     /// Consumes the builder and constructs a [`DetailedGlossaryTerm`](crate::types::DetailedGlossaryTerm).
     pub fn build(self) -> crate::types::DetailedGlossaryTerm {
         crate::types::DetailedGlossaryTerm {
-            name: self.name,
-            short_description: self.short_description,
+            name: self.name
+            ,
+            short_description: self.short_description
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for DetailedGlossaryTermBuilder {
         formatter.finish()
     }
 }
+

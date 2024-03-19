@@ -4,16 +4,17 @@
 /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkArtifactMeta {
+pub struct NetworkArtifactMeta  {
     /// <p>Lists network package overrides.</p>
-    pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
+    pub overrides: ::std::option::Option<::std::vec::Vec::<crate::types::ToscaOverride>>,
 }
-impl NetworkArtifactMeta {
+impl  NetworkArtifactMeta  {
     /// <p>Lists network package overrides.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
-    pub fn overrides(&self) -> &[crate::types::ToscaOverride] {
-        self.overrides.as_deref().unwrap_or_default()
+    pub fn overrides(&self) -> & [crate::types::ToscaOverride] {
+        self.overrides.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NetworkArtifactMeta {
@@ -27,7 +28,7 @@ impl NetworkArtifactMeta {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkArtifactMetaBuilder {
-    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec::<crate::types::ToscaOverride>>,
 }
 impl NetworkArtifactMetaBuilder {
     /// Appends an item to `overrides`.
@@ -37,21 +38,24 @@ impl NetworkArtifactMetaBuilder {
     /// <p>Lists network package overrides.</p>
     pub fn overrides(mut self, input: crate::types::ToscaOverride) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-        v.push(input);
-        self.overrides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.overrides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists network package overrides.</p>
-    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ToscaOverride>>) -> Self {
+        self.overrides = input; self
     }
     /// <p>Lists network package overrides.</p>
-    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ToscaOverride>> {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`NetworkArtifactMeta`](crate::types::NetworkArtifactMeta).
     pub fn build(self) -> crate::types::NetworkArtifactMeta {
-        crate::types::NetworkArtifactMeta { overrides: self.overrides }
+        crate::types::NetworkArtifactMeta {
+            overrides: self.overrides
+            ,
+        }
     }
 }
+

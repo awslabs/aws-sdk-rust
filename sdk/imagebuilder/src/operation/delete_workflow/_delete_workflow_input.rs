@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkflowInput {
+pub struct DeleteWorkflowInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource to delete.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkflowInput {
+impl  DeleteWorkflowInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource to delete.</p>
-    pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.workflow_build_version_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteWorkflowInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource to delete.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_build_version_arn = input;
-        self
+        self.workflow_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource to delete.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_workflow::DeleteWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_workflow::DeleteWorkflowInput {
-            workflow_build_version_arn: self.workflow_build_version_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workflow::DeleteWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workflow::DeleteWorkflowInput {
+                workflow_build_version_arn: self.workflow_build_version_arn
+                ,
+            }
+        )
     }
 }
+

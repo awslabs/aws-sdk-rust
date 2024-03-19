@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnlabelParameterVersionInput {
+pub struct UnlabelParameterVersionInput  {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
@@ -10,13 +10,13 @@ pub struct UnlabelParameterVersionInput {
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub parameter_version: ::std::option::Option<i64>,
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UnlabelParameterVersionInput {
+impl  UnlabelParameterVersionInput  {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
@@ -24,10 +24,11 @@ impl UnlabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UnlabelParameterVersionInput {
@@ -43,7 +44,7 @@ impl UnlabelParameterVersionInput {
 pub struct UnlabelParameterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_version: ::std::option::Option<i64>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UnlabelParameterVersionInputBuilder {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
@@ -58,8 +59,7 @@ impl UnlabelParameterVersionInputBuilder {
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
@@ -75,8 +75,7 @@ impl UnlabelParameterVersionInputBuilder {
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.parameter_version = input;
-        self
+        self.parameter_version = input; self
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
@@ -89,30 +88,30 @@ impl UnlabelParameterVersionInputBuilder {
     /// <p>One or more labels to delete from the specified parameter version.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// Consumes the builder and constructs a [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
-            name: self.name,
-            parameter_version: self.parameter_version,
-            labels: self.labels,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
+                name: self.name
+                ,
+                parameter_version: self.parameter_version
+                ,
+                labels: self.labels
+                ,
+            }
+        )
     }
 }
+

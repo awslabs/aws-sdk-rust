@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplySchemaInput {
+pub struct ApplySchemaInput  {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     pub published_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
 }
-impl ApplySchemaInput {
+impl  ApplySchemaInput  {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
-    pub fn published_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn published_schema_arn(&self) -> ::std::option::Option<& str> {
         self.published_schema_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ApplySchemaInputBuilder {
     }
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.published_schema_arn = input;
-        self
+        self.published_schema_arn = input; self
     }
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ApplySchemaInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl ApplySchemaInputBuilder {
     }
     /// Consumes the builder and constructs a [`ApplySchemaInput`](crate::operation::apply_schema::ApplySchemaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::apply_schema::ApplySchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::apply_schema::ApplySchemaInput {
-            published_schema_arn: self.published_schema_arn,
-            directory_arn: self.directory_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::apply_schema::ApplySchemaInput {
+                published_schema_arn: self.published_schema_arn
+                ,
+                directory_arn: self.directory_arn
+                ,
+            }
+        )
     }
 }
+

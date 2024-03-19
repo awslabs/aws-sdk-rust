@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegionsInput {
+pub struct DescribeRegionsInput  {
     /// <p>The identifier of the directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
@@ -10,17 +10,17 @@ pub struct DescribeRegionsInput {
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRegionsInput {
+impl  DescribeRegionsInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeRegionsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeRegionsInputBuilder {
     }
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DescribeRegionsInputBuilder {
     }
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <code>DescribeRegions</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_regions::DescribeRegionsInput {
-            directory_id: self.directory_id,
-            region_name: self.region_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_regions::DescribeRegionsInput {
+                directory_id: self.directory_id
+                ,
+                region_name: self.region_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

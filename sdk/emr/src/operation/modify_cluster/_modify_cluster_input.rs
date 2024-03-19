@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterInput {
+pub struct ModifyClusterInput  {
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub step_concurrency_level: ::std::option::Option<i32>,
 }
-impl ModifyClusterInput {
+impl  ModifyClusterInput  {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
@@ -41,8 +41,7 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl ModifyClusterInputBuilder {
     }
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub fn set_step_concurrency_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.step_concurrency_level = input;
-        self
+        self.step_concurrency_level = input; self
     }
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub fn get_step_concurrency_level(&self) -> &::std::option::Option<i32> {
         &self.step_concurrency_level
     }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
-            cluster_id: self.cluster_id,
-            step_concurrency_level: self.step_concurrency_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster::ModifyClusterInput {
+                cluster_id: self.cluster_id
+                ,
+                step_concurrency_level: self.step_concurrency_level
+                ,
+            }
+        )
     }
 }
+

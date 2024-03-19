@@ -3,7 +3,7 @@
 /// <p>A physical table type for relational data sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalTable {
+pub struct RelationalTable  {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub data_source_arn: ::std::string::String,
     /// <p>The catalog associated with a table.</p>
@@ -13,31 +13,28 @@ pub struct RelationalTable {
     /// <p>The name of the relational table.</p>
     pub name: ::std::string::String,
     /// <p>The column schema of the table.</p>
-    pub input_columns: ::std::vec::Vec<crate::types::InputColumn>,
+    pub input_columns: ::std::vec::Vec::<crate::types::InputColumn>,
 }
-impl RelationalTable {
+impl  RelationalTable  {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    pub fn data_source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_arn.deref()
+    pub fn data_source_arn(&self) -> & str {
+        use std::ops::Deref; self.data_source_arn.deref()
     }
     /// <p>The catalog associated with a table.</p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>The schema name. This name applies to certain relational database engines.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The name of the relational table.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The column schema of the table.</p>
-    pub fn input_columns(&self) -> &[crate::types::InputColumn] {
-        use std::ops::Deref;
-        self.input_columns.deref()
+    pub fn input_columns(&self) -> & [crate::types::InputColumn] {
+        use std::ops::Deref; self.input_columns.deref()
     }
 }
 impl RelationalTable {
@@ -55,7 +52,7 @@ pub struct RelationalTableBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) input_columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
+    pub(crate) input_columns: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>,
 }
 impl RelationalTableBuilder {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
@@ -66,8 +63,7 @@ impl RelationalTableBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl RelationalTableBuilder {
     }
     /// <p>The catalog associated with a table.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The catalog associated with a table.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +89,7 @@ impl RelationalTableBuilder {
     }
     /// <p>The schema name. This name applies to certain relational database engines.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema name. This name applies to certain relational database engines.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +103,7 @@ impl RelationalTableBuilder {
     }
     /// <p>The name of the relational table.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the relational table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,17 +116,16 @@ impl RelationalTableBuilder {
     /// <p>The column schema of the table.</p>
     pub fn input_columns(mut self, input: crate::types::InputColumn) -> Self {
         let mut v = self.input_columns.unwrap_or_default();
-        v.push(input);
-        self.input_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column schema of the table.</p>
-    pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
-        self.input_columns = input;
-        self
+    pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>) -> Self {
+        self.input_columns = input; self
     }
     /// <p>The column schema of the table.</p>
-    pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+    pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>> {
         &self.input_columns
     }
     /// Consumes the builder and constructs a [`RelationalTable`](crate::types::RelationalTable).
@@ -142,27 +134,29 @@ impl RelationalTableBuilder {
     /// - [`name`](crate::types::builders::RelationalTableBuilder::name)
     /// - [`input_columns`](crate::types::builders::RelationalTableBuilder::input_columns)
     pub fn build(self) -> ::std::result::Result<crate::types::RelationalTable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelationalTable {
-            data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_arn",
-                    "data_source_arn was not specified but it is required when building RelationalTable",
-                )
-            })?,
-            catalog: self.catalog,
-            schema: self.schema,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RelationalTable",
-                )
-            })?,
-            input_columns: self.input_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_columns",
-                    "input_columns was not specified but it is required when building RelationalTable",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelationalTable {
+                data_source_arn: self.data_source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_arn", "data_source_arn was not specified but it is required when building RelationalTable")
+                    )?
+                ,
+                catalog: self.catalog
+                ,
+                schema: self.schema
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RelationalTable")
+                    )?
+                ,
+                input_columns: self.input_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_columns", "input_columns was not specified but it is required when building RelationalTable")
+                    )?
+                ,
+            }
+        )
     }
 }
+

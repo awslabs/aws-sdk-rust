@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIndicesOutput {
+pub struct ListIndicesOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of information on the items in one or more indexes.</p>
-    pub indices: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
+    pub indices: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>,
     _request_id: Option<String>,
 }
-impl ListIndicesOutput {
+impl  ListIndicesOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of information on the items in one or more indexes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indices.is_none()`.
-    pub fn indices(&self) -> &[crate::types::Index] {
-        self.indices.as_deref().unwrap_or_default()
+    pub fn indices(&self) -> & [crate::types::Index] {
+        self.indices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIndicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIndicesOutput {
     /// Creates a new builder-style object to manufacture [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput).
     pub fn builder() -> crate::operation::list_indices::builders::ListIndicesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListIndicesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndicesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) indices: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
+    pub(crate) indices: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>,
     _request_id: Option<String>,
 }
 impl ListIndicesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListIndicesOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListIndicesOutputBuilder {
     /// <p>An array of information on the items in one or more indexes.</p>
     pub fn indices(mut self, input: crate::types::Index) -> Self {
         let mut v = self.indices.unwrap_or_default();
-        v.push(input);
-        self.indices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.indices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of information on the items in one or more indexes.</p>
-    pub fn set_indices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Index>>) -> Self {
-        self.indices = input;
-        self
+    pub fn set_indices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>) -> Self {
+        self.indices = input; self
     }
     /// <p>An array of information on the items in one or more indexes.</p>
-    pub fn get_indices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Index>> {
+    pub fn get_indices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Index>> {
         &self.indices
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput).
     pub fn build(self) -> crate::operation::list_indices::ListIndicesOutput {
         crate::operation::list_indices::ListIndicesOutput {
-            next_token: self.next_token,
-            indices: self.indices,
+            next_token: self.next_token
+            ,
+            indices: self.indices
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

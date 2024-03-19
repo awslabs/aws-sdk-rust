@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkloadOutput {
+pub struct UpdateWorkloadOutput  {
     /// <p>The ID of the workload.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub workload_configuration: ::std::option::Option<crate::types::WorkloadConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateWorkloadOutput {
+impl  UpdateWorkloadOutput  {
     /// <p>The ID of the workload.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
-    pub fn workload_configuration(&self) -> ::std::option::Option<&crate::types::WorkloadConfiguration> {
+    pub fn workload_configuration(&self) -> ::std::option::Option<& crate::types::WorkloadConfiguration> {
         self.workload_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateWorkloadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateWorkloadOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadOutput`](crate::operation::update_workload::UpdateWorkloadOutput).
     pub fn builder() -> crate::operation::update_workload::builders::UpdateWorkloadOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateWorkloadOutputBuilder {
     }
     /// <p>The ID of the workload.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID of the workload.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl UpdateWorkloadOutputBuilder {
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub fn set_workload_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadConfiguration>) -> Self {
-        self.workload_configuration = input;
-        self
+        self.workload_configuration = input; self
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
     pub fn get_workload_configuration(&self) -> &::std::option::Option<crate::types::WorkloadConfiguration> {
         &self.workload_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateWorkloadOutput`](crate::operation::update_workload::UpdateWorkloadOutput).
     pub fn build(self) -> crate::operation::update_workload::UpdateWorkloadOutput {
         crate::operation::update_workload::UpdateWorkloadOutput {
-            workload_id: self.workload_id,
-            workload_configuration: self.workload_configuration,
+            workload_id: self.workload_id
+            ,
+            workload_configuration: self.workload_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

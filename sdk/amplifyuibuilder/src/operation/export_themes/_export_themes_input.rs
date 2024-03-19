@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportThemesInput {
+pub struct ExportThemesInput  {
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
@@ -10,17 +10,17 @@ pub struct ExportThemesInput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ExportThemesInput {
+impl  ExportThemesInput  {
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ExportThemesInputBuilder {
     }
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ExportThemesInputBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl ExportThemesInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExportThemesInput`](crate::operation::export_themes::ExportThemesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::export_themes::ExportThemesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::export_themes::ExportThemesInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_themes::ExportThemesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_themes::ExportThemesInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

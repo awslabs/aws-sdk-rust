@@ -3,15 +3,14 @@
 /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignInConfig {
+pub struct SignInConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub distributions: ::std::vec::Vec<crate::types::SignInDistribution>,
+    pub distributions: ::std::vec::Vec::<crate::types::SignInDistribution>,
 }
-impl SignInConfig {
+impl  SignInConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> &[crate::types::SignInDistribution] {
-        use std::ops::Deref;
-        self.distributions.deref()
+    pub fn distributions(&self) -> & [crate::types::SignInDistribution] {
+        use std::ops::Deref; self.distributions.deref()
     }
 }
 impl SignInConfig {
@@ -25,7 +24,7 @@ impl SignInConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignInConfigBuilder {
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::SignInDistribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::SignInDistribution>>,
 }
 impl SignInConfigBuilder {
     /// Appends an item to `distributions`.
@@ -35,30 +34,31 @@ impl SignInConfigBuilder {
     /// <p>Information about traffic distributions.</p>
     pub fn distributions(mut self, input: crate::types::SignInDistribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignInDistribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SignInDistribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignInDistribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SignInDistribution>> {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`SignInConfig`](crate::types::SignInConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`distributions`](crate::types::builders::SignInConfigBuilder::distributions)
     pub fn build(self) -> ::std::result::Result<crate::types::SignInConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SignInConfig {
-            distributions: self.distributions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "distributions",
-                    "distributions was not specified but it is required when building SignInConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SignInConfig {
+                distributions: self.distributions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("distributions", "distributions was not specified but it is required when building SignInConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

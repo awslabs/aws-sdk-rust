@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePromptOutput {
+pub struct DescribePromptOutput  {
     /// <p>Information about the prompt.</p>
     pub prompt: ::std::option::Option<crate::types::Prompt>,
     _request_id: Option<String>,
 }
-impl DescribePromptOutput {
+impl  DescribePromptOutput  {
     /// <p>Information about the prompt.</p>
-    pub fn prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
+    pub fn prompt(&self) -> ::std::option::Option<& crate::types::Prompt> {
         self.prompt.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePromptOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePromptOutput {
     /// Creates a new builder-style object to manufacture [`DescribePromptOutput`](crate::operation::describe_prompt::DescribePromptOutput).
     pub fn builder() -> crate::operation::describe_prompt::builders::DescribePromptOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribePromptOutputBuilder {
     }
     /// <p>Information about the prompt.</p>
     pub fn set_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
-        self.prompt = input;
-        self
+        self.prompt = input; self
     }
     /// <p>Information about the prompt.</p>
     pub fn get_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.prompt
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePromptOutput`](crate::operation::describe_prompt::DescribePromptOutput).
     pub fn build(self) -> crate::operation::describe_prompt::DescribePromptOutput {
         crate::operation::describe_prompt::DescribePromptOutput {
-            prompt: self.prompt,
+            prompt: self.prompt
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

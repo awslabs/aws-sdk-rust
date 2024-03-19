@@ -5,23 +5,20 @@ pub use crate::operation::update_realtime_log_config::_update_realtime_log_confi
 
 impl UpdateRealtimeLogConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_realtime_log_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_realtime_log_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRealtimeLogConfig`.
-///
+/// 
 /// <p>Updates a real-time log configuration.</p>
 /// <p>When you update a real-time log configuration, all the parameters are updated with the values provided in the request. You cannot update some parameters independent of others. To update a real-time log configuration:</p>
 /// <ol>
@@ -36,33 +33,32 @@ impl UpdateRealtimeLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRealtimeLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder,
+                    inner: crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-    > for UpdateRealtimeLogConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
+                    crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
+                > for UpdateRealtimeLogConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
+                        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRealtimeLogConfigFluentBuilder {
     /// Creates a new `UpdateRealtimeLogConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput,
-        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput, crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `EndPoints`.
     ///
     /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
@@ -128,12 +115,12 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>) -> Self {
+    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>>) -> Self {
         self.inner = self.inner.set_end_points(input);
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>> {
         self.inner.get_end_points()
     }
     /// Appends an item to `Fields`.
@@ -148,13 +135,13 @@ impl UpdateRealtimeLogConfigFluentBuilder {
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_fields()
     }
     /// <p>The name for this real-time log configuration.</p>
@@ -200,3 +187,4 @@ impl UpdateRealtimeLogConfigFluentBuilder {
         self.inner.get_sampling_rate()
     }
 }
+

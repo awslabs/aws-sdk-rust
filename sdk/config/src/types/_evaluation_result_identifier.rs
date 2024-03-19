@@ -3,7 +3,7 @@
 /// <p>Uniquely identifies an evaluation result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationResultIdentifier {
+pub struct EvaluationResultIdentifier  {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     pub evaluation_result_qualifier: ::std::option::Option<crate::types::EvaluationResultQualifier>,
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
@@ -11,17 +11,17 @@ pub struct EvaluationResultIdentifier {
     /// <p>A Unique ID for an evaluation result.</p>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationResultIdentifier {
+impl  EvaluationResultIdentifier  {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
-    pub fn evaluation_result_qualifier(&self) -> ::std::option::Option<&crate::types::EvaluationResultQualifier> {
+    pub fn evaluation_result_qualifier(&self) -> ::std::option::Option<& crate::types::EvaluationResultQualifier> {
         self.evaluation_result_qualifier.as_ref()
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
-    pub fn ordering_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ordering_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
     /// <p>A Unique ID for an evaluation result.</p>
-    pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_evaluation_id(&self) -> ::std::option::Option<& str> {
         self.resource_evaluation_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl EvaluationResultIdentifierBuilder {
     }
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     pub fn set_evaluation_result_qualifier(mut self, input: ::std::option::Option<crate::types::EvaluationResultQualifier>) -> Self {
-        self.evaluation_result_qualifier = input;
-        self
+        self.evaluation_result_qualifier = input; self
     }
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     pub fn get_evaluation_result_qualifier(&self) -> &::std::option::Option<crate::types::EvaluationResultQualifier> {
@@ -62,8 +61,7 @@ impl EvaluationResultIdentifierBuilder {
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     pub fn set_ordering_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ordering_timestamp = input;
-        self
+        self.ordering_timestamp = input; self
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl EvaluationResultIdentifierBuilder {
     }
     /// <p>A Unique ID for an evaluation result.</p>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_evaluation_id = input;
-        self
+        self.resource_evaluation_id = input; self
     }
     /// <p>A Unique ID for an evaluation result.</p>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl EvaluationResultIdentifierBuilder {
     /// Consumes the builder and constructs a [`EvaluationResultIdentifier`](crate::types::EvaluationResultIdentifier).
     pub fn build(self) -> crate::types::EvaluationResultIdentifier {
         crate::types::EvaluationResultIdentifier {
-            evaluation_result_qualifier: self.evaluation_result_qualifier,
-            ordering_timestamp: self.ordering_timestamp,
-            resource_evaluation_id: self.resource_evaluation_id,
+            evaluation_result_qualifier: self.evaluation_result_qualifier
+            ,
+            ordering_timestamp: self.ordering_timestamp
+            ,
+            resource_evaluation_id: self.resource_evaluation_id
+            ,
         }
     }
 }
+

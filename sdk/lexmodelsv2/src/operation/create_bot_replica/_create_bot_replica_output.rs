@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBotReplicaOutput {
+pub struct CreateBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The region of the replicated bot generated.</p>
@@ -15,33 +15,33 @@ pub struct CreateBotReplicaOutput {
     pub bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
     _request_id: Option<String>,
 }
-impl CreateBotReplicaOutput {
+impl  CreateBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot generated.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The region of the replicated bot generated.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The source region for the source bot used for the replicated bot generated.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_region(&self) -> ::std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The creation date and time of the replicated bot generated.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The operational status of the replicated bot generated.</p>
-    pub fn bot_replica_status(&self) -> ::std::option::Option<&crate::types::BotReplicaStatus> {
+    pub fn bot_replica_status(&self) -> ::std::option::Option<& crate::types::BotReplicaStatus> {
         self.bot_replica_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBotReplicaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBotReplicaOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotReplicaOutput`](crate::operation::create_bot_replica::CreateBotReplicaOutput).
     pub fn builder() -> crate::operation::create_bot_replica::builders::CreateBotReplicaOutputBuilder {
@@ -68,8 +68,7 @@ impl CreateBotReplicaOutputBuilder {
     }
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique bot ID of the replicated bot generated.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl CreateBotReplicaOutputBuilder {
     }
     /// <p>The region of the replicated bot generated.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The region of the replicated bot generated.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl CreateBotReplicaOutputBuilder {
     }
     /// <p>The source region for the source bot used for the replicated bot generated.</p>
     pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The source region for the source bot used for the replicated bot generated.</p>
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl CreateBotReplicaOutputBuilder {
     }
     /// <p>The creation date and time of the replicated bot generated.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time of the replicated bot generated.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,31 +120,36 @@ impl CreateBotReplicaOutputBuilder {
     }
     /// <p>The operational status of the replicated bot generated.</p>
     pub fn set_bot_replica_status(mut self, input: ::std::option::Option<crate::types::BotReplicaStatus>) -> Self {
-        self.bot_replica_status = input;
-        self
+        self.bot_replica_status = input; self
     }
     /// <p>The operational status of the replicated bot generated.</p>
     pub fn get_bot_replica_status(&self) -> &::std::option::Option<crate::types::BotReplicaStatus> {
         &self.bot_replica_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBotReplicaOutput`](crate::operation::create_bot_replica::CreateBotReplicaOutput).
     pub fn build(self) -> crate::operation::create_bot_replica::CreateBotReplicaOutput {
         crate::operation::create_bot_replica::CreateBotReplicaOutput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-            source_region: self.source_region,
-            creation_date_time: self.creation_date_time,
-            bot_replica_status: self.bot_replica_status,
+            bot_id: self.bot_id
+            ,
+            replica_region: self.replica_region
+            ,
+            source_region: self.source_region
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            bot_replica_status: self.bot_replica_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

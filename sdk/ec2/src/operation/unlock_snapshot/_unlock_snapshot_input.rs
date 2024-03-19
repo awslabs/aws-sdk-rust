@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnlockSnapshotInput {
+pub struct UnlockSnapshotInput  {
     /// <p>The ID of the snapshot to unlock.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl UnlockSnapshotInput {
+impl  UnlockSnapshotInput  {
     /// <p>The ID of the snapshot to unlock.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl UnlockSnapshotInputBuilder {
     }
     /// <p>The ID of the snapshot to unlock.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot to unlock.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl UnlockSnapshotInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`UnlockSnapshotInput`](crate::operation::unlock_snapshot::UnlockSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unlock_snapshot::UnlockSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unlock_snapshot::UnlockSnapshotInput {
-            snapshot_id: self.snapshot_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unlock_snapshot::UnlockSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unlock_snapshot::UnlockSnapshotInput {
+                snapshot_id: self.snapshot_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

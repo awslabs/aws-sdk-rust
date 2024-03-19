@@ -3,13 +3,13 @@
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProblemDetail {
+pub struct ProblemDetail  {
     /// <p>The problem detail's message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ProblemDetail {
+impl  ProblemDetail  {
     /// <p>The problem detail's message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ProblemDetailBuilder {
     }
     /// <p>The problem detail's message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The problem detail's message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ProblemDetailBuilder {
     }
     /// Consumes the builder and constructs a [`ProblemDetail`](crate::types::ProblemDetail).
     pub fn build(self) -> crate::types::ProblemDetail {
-        crate::types::ProblemDetail { message: self.message }
+        crate::types::ProblemDetail {
+            message: self.message
+            ,
+        }
     }
 }
+

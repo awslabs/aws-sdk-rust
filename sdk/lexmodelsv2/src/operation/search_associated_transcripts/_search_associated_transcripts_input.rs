@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchAssociatedTranscriptsInput {
+pub struct SearchAssociatedTranscriptsInput  {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
@@ -14,38 +14,39 @@ pub struct SearchAssociatedTranscriptsInput {
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub search_order: ::std::option::Option<crate::types::SearchOrder>,
     /// <p>A list of filter objects.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedTranscriptFilter>>,
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub next_index: ::std::option::Option<i32>,
 }
-impl SearchAssociatedTranscriptsInput {
+impl  SearchAssociatedTranscriptsInput  {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> ::std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
-    pub fn search_order(&self) -> ::std::option::Option<&crate::types::SearchOrder> {
+    pub fn search_order(&self) -> ::std::option::Option<& crate::types::SearchOrder> {
         self.search_order.as_ref()
     }
     /// <p>A list of filter objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::AssociatedTranscriptFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::AssociatedTranscriptFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -72,7 +73,7 @@ pub struct SearchAssociatedTranscriptsInputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_order: ::std::option::Option<crate::types::SearchOrder>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedTranscriptFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_index: ::std::option::Option<i32>,
 }
@@ -85,8 +86,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +114,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +128,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_recommendation_id = input;
-        self
+        self.bot_recommendation_id = input; self
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +141,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub fn set_search_order(mut self, input: ::std::option::Option<crate::types::SearchOrder>) -> Self {
-        self.search_order = input;
-        self
+        self.search_order = input; self
     }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub fn get_search_order(&self) -> &::std::option::Option<crate::types::SearchOrder> {
@@ -158,17 +154,16 @@ impl SearchAssociatedTranscriptsInputBuilder {
     /// <p>A list of filter objects.</p>
     pub fn filters(mut self, input: crate::types::AssociatedTranscriptFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedTranscriptFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of filter objects.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociatedTranscriptFilter>> {
         &self.filters
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -178,8 +173,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -192,29 +186,34 @@ impl SearchAssociatedTranscriptsInputBuilder {
     }
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub fn set_next_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.next_index = input;
-        self
+        self.next_index = input; self
     }
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub fn get_next_index(&self) -> &::std::option::Option<i32> {
         &self.next_index
     }
     /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsInput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_recommendation_id: self.bot_recommendation_id,
-            search_order: self.search_order,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_index: self.next_index,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+                search_order: self.search_order
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_index: self.next_index
+                ,
+            }
+        )
     }
 }
+

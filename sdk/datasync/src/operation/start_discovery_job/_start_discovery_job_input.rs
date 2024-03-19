@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDiscoveryJobInput {
+pub struct StartDiscoveryJobInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
@@ -12,11 +12,11 @@ pub struct StartDiscoveryJobInput {
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
-impl StartDiscoveryJobInput {
+impl  StartDiscoveryJobInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
     /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
@@ -26,14 +26,15 @@ impl StartDiscoveryJobInput {
         self.collection_duration_minutes
     }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagListEntry] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagListEntry] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartDiscoveryJobInput {
@@ -50,7 +51,7 @@ pub struct StartDiscoveryJobInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collection_duration_minutes: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
 impl StartDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
@@ -61,8 +62,7 @@ impl StartDiscoveryJobInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
     pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_system_arn = input;
-        self
+        self.storage_system_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +80,7 @@ impl StartDiscoveryJobInputBuilder {
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.collection_duration_minutes = input;
-        self
+        self.collection_duration_minutes = input; self
     }
     /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
@@ -97,8 +96,7 @@ impl StartDiscoveryJobInputBuilder {
     }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,28 +109,32 @@ impl StartDiscoveryJobInputBuilder {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_discovery_job::StartDiscoveryJobInput {
-            storage_system_arn: self.storage_system_arn,
-            collection_duration_minutes: self.collection_duration_minutes,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_discovery_job::StartDiscoveryJobInput {
+                storage_system_arn: self.storage_system_arn
+                ,
+                collection_duration_minutes: self.collection_duration_minutes
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

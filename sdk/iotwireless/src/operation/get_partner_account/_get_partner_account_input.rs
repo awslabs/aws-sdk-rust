@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPartnerAccountInput {
+pub struct GetPartnerAccountInput  {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     pub partner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The partner type.</p>
     pub partner_type: ::std::option::Option<crate::types::PartnerType>,
 }
-impl GetPartnerAccountInput {
+impl  GetPartnerAccountInput  {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn partner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_account_id(&self) -> ::std::option::Option<& str> {
         self.partner_account_id.as_deref()
     }
     /// <p>The partner type.</p>
-    pub fn partner_type(&self) -> ::std::option::Option<&crate::types::PartnerType> {
+    pub fn partner_type(&self) -> ::std::option::Option<& crate::types::PartnerType> {
         self.partner_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetPartnerAccountInputBuilder {
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_account_id = input;
-        self
+        self.partner_account_id = input; self
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
     pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetPartnerAccountInputBuilder {
     }
     /// <p>The partner type.</p>
     pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
-        self.partner_type = input;
-        self
+        self.partner_type = input; self
     }
     /// <p>The partner type.</p>
     pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
         &self.partner_type
     }
     /// Consumes the builder and constructs a [`GetPartnerAccountInput`](crate::operation::get_partner_account::GetPartnerAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_partner_account::GetPartnerAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_partner_account::GetPartnerAccountInput {
-            partner_account_id: self.partner_account_id,
-            partner_type: self.partner_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_partner_account::GetPartnerAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_partner_account::GetPartnerAccountInput {
+                partner_account_id: self.partner_account_id
+                ,
+                partner_type: self.partner_type
+                ,
+            }
+        )
     }
 }
+

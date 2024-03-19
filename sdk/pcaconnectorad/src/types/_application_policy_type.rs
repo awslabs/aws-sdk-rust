@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationpolicytype = unimplemented!();
 /// match applicationpolicytype {
@@ -95,16 +95,14 @@
 /// Specifically, when `applicationpolicytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationPolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ApplicationPolicyType {
     #[allow(missing_docs)] // documentation missing in model
     AllApplicationPolicies,
@@ -242,324 +240,257 @@ pub enum ApplicationPolicyType {
     WindowsUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ApplicationPolicyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL_APPLICATION_POLICIES" => ApplicationPolicyType::AllApplicationPolicies,
-            "ANY_PURPOSE" => ApplicationPolicyType::AnyPurpose,
-            "ATTESTATION_IDENTITY_KEY_CERTIFICATE" => ApplicationPolicyType::AttestationIdentityKeyCertificate,
-            "CERTIFICATE_REQUEST_AGENT" => ApplicationPolicyType::CertificateRequestAgent,
-            "CLIENT_AUTHENTICATION" => ApplicationPolicyType::ClientAuthentication,
-            "CODE_SIGNING" => ApplicationPolicyType::CodeSigning,
-            "CTL_USAGE" => ApplicationPolicyType::CtlUsage,
-            "DIGITAL_RIGHTS" => ApplicationPolicyType::DigitalRights,
-            "DIRECTORY_SERVICE_EMAIL_REPLICATION" => ApplicationPolicyType::DirectoryServiceEmailReplication,
-            "DISALLOWED_LIST" => ApplicationPolicyType::DisallowedList,
-            "DNS_SERVER_TRUST" => ApplicationPolicyType::DnsServerTrust,
-            "DOCUMENT_ENCRYPTION" => ApplicationPolicyType::DocumentEncryption,
-            "DOCUMENT_SIGNING" => ApplicationPolicyType::DocumentSigning,
-            "DYNAMIC_CODE_GENERATOR" => ApplicationPolicyType::DynamicCodeGenerator,
-            "EARLY_LAUNCH_ANTIMALWARE_DRIVER" => ApplicationPolicyType::EarlyLaunchAntimalwareDriver,
-            "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification,
-            "ENCLAVE" => ApplicationPolicyType::Enclave,
-            "ENCRYPTING_FILE_SYSTEM" => ApplicationPolicyType::EncryptingFileSystem,
-            "ENDORSEMENT_KEY_CERTIFICATE" => ApplicationPolicyType::EndorsementKeyCertificate,
-            "FILE_RECOVERY" => ApplicationPolicyType::FileRecovery,
-            "HAL_EXTENSION" => ApplicationPolicyType::HalExtension,
-            "IP_SECURITY_END_SYSTEM" => ApplicationPolicyType::IpSecurityEndSystem,
-            "IP_SECURITY_IKE_INTERMEDIATE" => ApplicationPolicyType::IpSecurityIkeIntermediate,
-            "IP_SECURITY_TUNNEL_TERMINATION" => ApplicationPolicyType::IpSecurityTunnelTermination,
-            "IP_SECURITY_USER" => ApplicationPolicyType::IpSecurityUser,
-            "ISOLATED_USER_MODE" => ApplicationPolicyType::IsolatedUserMode,
-            "KDC_AUTHENTICATION" => ApplicationPolicyType::KdcAuthentication,
-            "KERNEL_MODE_CODE_SIGNING" => ApplicationPolicyType::KernelModeCodeSigning,
-            "KEY_PACK_LICENSES" => ApplicationPolicyType::KeyPackLicenses,
-            "KEY_RECOVERY" => ApplicationPolicyType::KeyRecovery,
-            "KEY_RECOVERY_AGENT" => ApplicationPolicyType::KeyRecoveryAgent,
-            "LICENSE_SERVER_VERIFICATION" => ApplicationPolicyType::LicenseServerVerification,
-            "LIFETIME_SIGNING" => ApplicationPolicyType::LifetimeSigning,
-            "MICROSOFT_PUBLISHER" => ApplicationPolicyType::MicrosoftPublisher,
-            "MICROSOFT_TIME_STAMPING" => ApplicationPolicyType::MicrosoftTimeStamping,
-            "MICROSOFT_TRUST_LIST_SIGNING" => ApplicationPolicyType::MicrosoftTrustListSigning,
-            "OCSP_SIGNING" => ApplicationPolicyType::OcspSigning,
-            "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::OemWindowsSystemComponentVerification,
-            "PLATFORM_CERTIFICATE" => ApplicationPolicyType::PlatformCertificate,
-            "PREVIEW_BUILD_SIGNING" => ApplicationPolicyType::PreviewBuildSigning,
-            "PRIVATE_KEY_ARCHIVAL" => ApplicationPolicyType::PrivateKeyArchival,
-            "PROTECTED_PROCESS_LIGHT_VERIFICATION" => ApplicationPolicyType::ProtectedProcessLightVerification,
-            "PROTECTED_PROCESS_VERIFICATION" => ApplicationPolicyType::ProtectedProcessVerification,
-            "QUALIFIED_SUBORDINATION" => ApplicationPolicyType::QualifiedSubordination,
-            "REVOKED_LIST_SIGNER" => ApplicationPolicyType::RevokedListSigner,
-            "ROOT_LIST_SIGNER" => ApplicationPolicyType::RootListSigner,
-            "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION" => ApplicationPolicyType::RootProgramAutoUpdateCaRevocation,
-            "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION" => ApplicationPolicyType::RootProgramAutoUpdateEndRevocation,
-            "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL" => ApplicationPolicyType::RootProgramNoOscpFailoverToCrl,
-            "SECURE_EMAIL" => ApplicationPolicyType::SecureEmail,
-            "SERVER_AUTHENTICATION" => ApplicationPolicyType::ServerAuthentication,
-            "SMART_CARD_LOGIN" => ApplicationPolicyType::SmartCardLogin,
-            "SPC_ENCRYPTED_DIGEST_RETRY_COUNT" => ApplicationPolicyType::SpcEncryptedDigestRetryCount,
-            "SPC_RELAXED_PE_MARKER_CHECK" => ApplicationPolicyType::SpcRelaxedPeMarkerCheck,
-            "TIME_STAMPING" => ApplicationPolicyType::TimeStamping,
-            "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverAttestedVerification,
-            "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverExtendedVerification,
-            "WINDOWS_HARDWARE_DRIVER_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverVerification,
-            "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION" => ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption,
-            "WINDOWS_KITS_COMPONENT" => ApplicationPolicyType::WindowsKitsComponent,
-            "WINDOWS_RT_VERIFICATION" => ApplicationPolicyType::WindowsRtVerification,
-            "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION" => ApplicationPolicyType::WindowsSoftwareExtensionVerification,
-            "WINDOWS_STORE" => ApplicationPolicyType::WindowsStore,
-            "WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::WindowsSystemComponentVerification,
-            "WINDOWS_TCB_COMPONENT" => ApplicationPolicyType::WindowsTcbComponent,
-            "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT" => ApplicationPolicyType::WindowsThirdPartyApplicationComponent,
-            "WINDOWS_UPDATE" => ApplicationPolicyType::WindowsUpdate,
-            other => ApplicationPolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ALL_APPLICATION_POLICIES" => ApplicationPolicyType::AllApplicationPolicies,
+"ANY_PURPOSE" => ApplicationPolicyType::AnyPurpose,
+"ATTESTATION_IDENTITY_KEY_CERTIFICATE" => ApplicationPolicyType::AttestationIdentityKeyCertificate,
+"CERTIFICATE_REQUEST_AGENT" => ApplicationPolicyType::CertificateRequestAgent,
+"CLIENT_AUTHENTICATION" => ApplicationPolicyType::ClientAuthentication,
+"CODE_SIGNING" => ApplicationPolicyType::CodeSigning,
+"CTL_USAGE" => ApplicationPolicyType::CtlUsage,
+"DIGITAL_RIGHTS" => ApplicationPolicyType::DigitalRights,
+"DIRECTORY_SERVICE_EMAIL_REPLICATION" => ApplicationPolicyType::DirectoryServiceEmailReplication,
+"DISALLOWED_LIST" => ApplicationPolicyType::DisallowedList,
+"DNS_SERVER_TRUST" => ApplicationPolicyType::DnsServerTrust,
+"DOCUMENT_ENCRYPTION" => ApplicationPolicyType::DocumentEncryption,
+"DOCUMENT_SIGNING" => ApplicationPolicyType::DocumentSigning,
+"DYNAMIC_CODE_GENERATOR" => ApplicationPolicyType::DynamicCodeGenerator,
+"EARLY_LAUNCH_ANTIMALWARE_DRIVER" => ApplicationPolicyType::EarlyLaunchAntimalwareDriver,
+"EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification,
+"ENCLAVE" => ApplicationPolicyType::Enclave,
+"ENCRYPTING_FILE_SYSTEM" => ApplicationPolicyType::EncryptingFileSystem,
+"ENDORSEMENT_KEY_CERTIFICATE" => ApplicationPolicyType::EndorsementKeyCertificate,
+"FILE_RECOVERY" => ApplicationPolicyType::FileRecovery,
+"HAL_EXTENSION" => ApplicationPolicyType::HalExtension,
+"IP_SECURITY_END_SYSTEM" => ApplicationPolicyType::IpSecurityEndSystem,
+"IP_SECURITY_IKE_INTERMEDIATE" => ApplicationPolicyType::IpSecurityIkeIntermediate,
+"IP_SECURITY_TUNNEL_TERMINATION" => ApplicationPolicyType::IpSecurityTunnelTermination,
+"IP_SECURITY_USER" => ApplicationPolicyType::IpSecurityUser,
+"ISOLATED_USER_MODE" => ApplicationPolicyType::IsolatedUserMode,
+"KDC_AUTHENTICATION" => ApplicationPolicyType::KdcAuthentication,
+"KERNEL_MODE_CODE_SIGNING" => ApplicationPolicyType::KernelModeCodeSigning,
+"KEY_PACK_LICENSES" => ApplicationPolicyType::KeyPackLicenses,
+"KEY_RECOVERY" => ApplicationPolicyType::KeyRecovery,
+"KEY_RECOVERY_AGENT" => ApplicationPolicyType::KeyRecoveryAgent,
+"LICENSE_SERVER_VERIFICATION" => ApplicationPolicyType::LicenseServerVerification,
+"LIFETIME_SIGNING" => ApplicationPolicyType::LifetimeSigning,
+"MICROSOFT_PUBLISHER" => ApplicationPolicyType::MicrosoftPublisher,
+"MICROSOFT_TIME_STAMPING" => ApplicationPolicyType::MicrosoftTimeStamping,
+"MICROSOFT_TRUST_LIST_SIGNING" => ApplicationPolicyType::MicrosoftTrustListSigning,
+"OCSP_SIGNING" => ApplicationPolicyType::OcspSigning,
+"OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::OemWindowsSystemComponentVerification,
+"PLATFORM_CERTIFICATE" => ApplicationPolicyType::PlatformCertificate,
+"PREVIEW_BUILD_SIGNING" => ApplicationPolicyType::PreviewBuildSigning,
+"PRIVATE_KEY_ARCHIVAL" => ApplicationPolicyType::PrivateKeyArchival,
+"PROTECTED_PROCESS_LIGHT_VERIFICATION" => ApplicationPolicyType::ProtectedProcessLightVerification,
+"PROTECTED_PROCESS_VERIFICATION" => ApplicationPolicyType::ProtectedProcessVerification,
+"QUALIFIED_SUBORDINATION" => ApplicationPolicyType::QualifiedSubordination,
+"REVOKED_LIST_SIGNER" => ApplicationPolicyType::RevokedListSigner,
+"ROOT_LIST_SIGNER" => ApplicationPolicyType::RootListSigner,
+"ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION" => ApplicationPolicyType::RootProgramAutoUpdateCaRevocation,
+"ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION" => ApplicationPolicyType::RootProgramAutoUpdateEndRevocation,
+"ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL" => ApplicationPolicyType::RootProgramNoOscpFailoverToCrl,
+"SECURE_EMAIL" => ApplicationPolicyType::SecureEmail,
+"SERVER_AUTHENTICATION" => ApplicationPolicyType::ServerAuthentication,
+"SMART_CARD_LOGIN" => ApplicationPolicyType::SmartCardLogin,
+"SPC_ENCRYPTED_DIGEST_RETRY_COUNT" => ApplicationPolicyType::SpcEncryptedDigestRetryCount,
+"SPC_RELAXED_PE_MARKER_CHECK" => ApplicationPolicyType::SpcRelaxedPeMarkerCheck,
+"TIME_STAMPING" => ApplicationPolicyType::TimeStamping,
+"WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverAttestedVerification,
+"WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverExtendedVerification,
+"WINDOWS_HARDWARE_DRIVER_VERIFICATION" => ApplicationPolicyType::WindowsHardwareDriverVerification,
+"WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION" => ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption,
+"WINDOWS_KITS_COMPONENT" => ApplicationPolicyType::WindowsKitsComponent,
+"WINDOWS_RT_VERIFICATION" => ApplicationPolicyType::WindowsRtVerification,
+"WINDOWS_SOFTWARE_EXTENSION_VERIFICATION" => ApplicationPolicyType::WindowsSoftwareExtensionVerification,
+"WINDOWS_STORE" => ApplicationPolicyType::WindowsStore,
+"WINDOWS_SYSTEM_COMPONENT_VERIFICATION" => ApplicationPolicyType::WindowsSystemComponentVerification,
+"WINDOWS_TCB_COMPONENT" => ApplicationPolicyType::WindowsTcbComponent,
+"WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT" => ApplicationPolicyType::WindowsThirdPartyApplicationComponent,
+"WINDOWS_UPDATE" => ApplicationPolicyType::WindowsUpdate,
+other => ApplicationPolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ApplicationPolicyType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ApplicationPolicyType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ApplicationPolicyType::from(s))
+                    }
+                }
 impl ApplicationPolicyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApplicationPolicyType::AllApplicationPolicies => "ALL_APPLICATION_POLICIES",
-            ApplicationPolicyType::AnyPurpose => "ANY_PURPOSE",
-            ApplicationPolicyType::AttestationIdentityKeyCertificate => "ATTESTATION_IDENTITY_KEY_CERTIFICATE",
-            ApplicationPolicyType::CertificateRequestAgent => "CERTIFICATE_REQUEST_AGENT",
-            ApplicationPolicyType::ClientAuthentication => "CLIENT_AUTHENTICATION",
-            ApplicationPolicyType::CodeSigning => "CODE_SIGNING",
-            ApplicationPolicyType::CtlUsage => "CTL_USAGE",
-            ApplicationPolicyType::DigitalRights => "DIGITAL_RIGHTS",
-            ApplicationPolicyType::DirectoryServiceEmailReplication => "DIRECTORY_SERVICE_EMAIL_REPLICATION",
-            ApplicationPolicyType::DisallowedList => "DISALLOWED_LIST",
-            ApplicationPolicyType::DnsServerTrust => "DNS_SERVER_TRUST",
-            ApplicationPolicyType::DocumentEncryption => "DOCUMENT_ENCRYPTION",
-            ApplicationPolicyType::DocumentSigning => "DOCUMENT_SIGNING",
-            ApplicationPolicyType::DynamicCodeGenerator => "DYNAMIC_CODE_GENERATOR",
-            ApplicationPolicyType::EarlyLaunchAntimalwareDriver => "EARLY_LAUNCH_ANTIMALWARE_DRIVER",
-            ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification => "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            ApplicationPolicyType::Enclave => "ENCLAVE",
-            ApplicationPolicyType::EncryptingFileSystem => "ENCRYPTING_FILE_SYSTEM",
-            ApplicationPolicyType::EndorsementKeyCertificate => "ENDORSEMENT_KEY_CERTIFICATE",
-            ApplicationPolicyType::FileRecovery => "FILE_RECOVERY",
-            ApplicationPolicyType::HalExtension => "HAL_EXTENSION",
-            ApplicationPolicyType::IpSecurityEndSystem => "IP_SECURITY_END_SYSTEM",
-            ApplicationPolicyType::IpSecurityIkeIntermediate => "IP_SECURITY_IKE_INTERMEDIATE",
-            ApplicationPolicyType::IpSecurityTunnelTermination => "IP_SECURITY_TUNNEL_TERMINATION",
-            ApplicationPolicyType::IpSecurityUser => "IP_SECURITY_USER",
-            ApplicationPolicyType::IsolatedUserMode => "ISOLATED_USER_MODE",
-            ApplicationPolicyType::KdcAuthentication => "KDC_AUTHENTICATION",
-            ApplicationPolicyType::KernelModeCodeSigning => "KERNEL_MODE_CODE_SIGNING",
-            ApplicationPolicyType::KeyPackLicenses => "KEY_PACK_LICENSES",
-            ApplicationPolicyType::KeyRecovery => "KEY_RECOVERY",
-            ApplicationPolicyType::KeyRecoveryAgent => "KEY_RECOVERY_AGENT",
-            ApplicationPolicyType::LicenseServerVerification => "LICENSE_SERVER_VERIFICATION",
-            ApplicationPolicyType::LifetimeSigning => "LIFETIME_SIGNING",
-            ApplicationPolicyType::MicrosoftPublisher => "MICROSOFT_PUBLISHER",
-            ApplicationPolicyType::MicrosoftTimeStamping => "MICROSOFT_TIME_STAMPING",
-            ApplicationPolicyType::MicrosoftTrustListSigning => "MICROSOFT_TRUST_LIST_SIGNING",
-            ApplicationPolicyType::OcspSigning => "OCSP_SIGNING",
-            ApplicationPolicyType::OemWindowsSystemComponentVerification => "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            ApplicationPolicyType::PlatformCertificate => "PLATFORM_CERTIFICATE",
-            ApplicationPolicyType::PreviewBuildSigning => "PREVIEW_BUILD_SIGNING",
-            ApplicationPolicyType::PrivateKeyArchival => "PRIVATE_KEY_ARCHIVAL",
-            ApplicationPolicyType::ProtectedProcessLightVerification => "PROTECTED_PROCESS_LIGHT_VERIFICATION",
-            ApplicationPolicyType::ProtectedProcessVerification => "PROTECTED_PROCESS_VERIFICATION",
-            ApplicationPolicyType::QualifiedSubordination => "QUALIFIED_SUBORDINATION",
-            ApplicationPolicyType::RevokedListSigner => "REVOKED_LIST_SIGNER",
-            ApplicationPolicyType::RootListSigner => "ROOT_LIST_SIGNER",
-            ApplicationPolicyType::RootProgramAutoUpdateCaRevocation => "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION",
-            ApplicationPolicyType::RootProgramAutoUpdateEndRevocation => "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION",
-            ApplicationPolicyType::RootProgramNoOscpFailoverToCrl => "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL",
-            ApplicationPolicyType::SecureEmail => "SECURE_EMAIL",
-            ApplicationPolicyType::ServerAuthentication => "SERVER_AUTHENTICATION",
-            ApplicationPolicyType::SmartCardLogin => "SMART_CARD_LOGIN",
-            ApplicationPolicyType::SpcEncryptedDigestRetryCount => "SPC_ENCRYPTED_DIGEST_RETRY_COUNT",
-            ApplicationPolicyType::SpcRelaxedPeMarkerCheck => "SPC_RELAXED_PE_MARKER_CHECK",
-            ApplicationPolicyType::TimeStamping => "TIME_STAMPING",
-            ApplicationPolicyType::WindowsHardwareDriverAttestedVerification => "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION",
-            ApplicationPolicyType::WindowsHardwareDriverExtendedVerification => "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION",
-            ApplicationPolicyType::WindowsHardwareDriverVerification => "WINDOWS_HARDWARE_DRIVER_VERIFICATION",
-            ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption => "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION",
-            ApplicationPolicyType::WindowsKitsComponent => "WINDOWS_KITS_COMPONENT",
-            ApplicationPolicyType::WindowsRtVerification => "WINDOWS_RT_VERIFICATION",
-            ApplicationPolicyType::WindowsSoftwareExtensionVerification => "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION",
-            ApplicationPolicyType::WindowsStore => "WINDOWS_STORE",
-            ApplicationPolicyType::WindowsSystemComponentVerification => "WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            ApplicationPolicyType::WindowsTcbComponent => "WINDOWS_TCB_COMPONENT",
-            ApplicationPolicyType::WindowsThirdPartyApplicationComponent => "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT",
-            ApplicationPolicyType::WindowsUpdate => "WINDOWS_UPDATE",
-            ApplicationPolicyType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL_APPLICATION_POLICIES",
-            "ANY_PURPOSE",
-            "ATTESTATION_IDENTITY_KEY_CERTIFICATE",
-            "CERTIFICATE_REQUEST_AGENT",
-            "CLIENT_AUTHENTICATION",
-            "CODE_SIGNING",
-            "CTL_USAGE",
-            "DIGITAL_RIGHTS",
-            "DIRECTORY_SERVICE_EMAIL_REPLICATION",
-            "DISALLOWED_LIST",
-            "DNS_SERVER_TRUST",
-            "DOCUMENT_ENCRYPTION",
-            "DOCUMENT_SIGNING",
-            "DYNAMIC_CODE_GENERATOR",
-            "EARLY_LAUNCH_ANTIMALWARE_DRIVER",
-            "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            "ENCLAVE",
-            "ENCRYPTING_FILE_SYSTEM",
-            "ENDORSEMENT_KEY_CERTIFICATE",
-            "FILE_RECOVERY",
-            "HAL_EXTENSION",
-            "IP_SECURITY_END_SYSTEM",
-            "IP_SECURITY_IKE_INTERMEDIATE",
-            "IP_SECURITY_TUNNEL_TERMINATION",
-            "IP_SECURITY_USER",
-            "ISOLATED_USER_MODE",
-            "KDC_AUTHENTICATION",
-            "KERNEL_MODE_CODE_SIGNING",
-            "KEY_PACK_LICENSES",
-            "KEY_RECOVERY",
-            "KEY_RECOVERY_AGENT",
-            "LICENSE_SERVER_VERIFICATION",
-            "LIFETIME_SIGNING",
-            "MICROSOFT_PUBLISHER",
-            "MICROSOFT_TIME_STAMPING",
-            "MICROSOFT_TRUST_LIST_SIGNING",
-            "OCSP_SIGNING",
-            "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            "PLATFORM_CERTIFICATE",
-            "PREVIEW_BUILD_SIGNING",
-            "PRIVATE_KEY_ARCHIVAL",
-            "PROTECTED_PROCESS_LIGHT_VERIFICATION",
-            "PROTECTED_PROCESS_VERIFICATION",
-            "QUALIFIED_SUBORDINATION",
-            "REVOKED_LIST_SIGNER",
-            "ROOT_LIST_SIGNER",
-            "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION",
-            "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION",
-            "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL",
-            "SECURE_EMAIL",
-            "SERVER_AUTHENTICATION",
-            "SMART_CARD_LOGIN",
-            "SPC_ENCRYPTED_DIGEST_RETRY_COUNT",
-            "SPC_RELAXED_PE_MARKER_CHECK",
-            "TIME_STAMPING",
-            "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION",
-            "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION",
-            "WINDOWS_HARDWARE_DRIVER_VERIFICATION",
-            "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION",
-            "WINDOWS_KITS_COMPONENT",
-            "WINDOWS_RT_VERIFICATION",
-            "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION",
-            "WINDOWS_STORE",
-            "WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
-            "WINDOWS_TCB_COMPONENT",
-            "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT",
-            "WINDOWS_UPDATE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApplicationPolicyType::AllApplicationPolicies => "ALL_APPLICATION_POLICIES",
+    ApplicationPolicyType::AnyPurpose => "ANY_PURPOSE",
+    ApplicationPolicyType::AttestationIdentityKeyCertificate => "ATTESTATION_IDENTITY_KEY_CERTIFICATE",
+    ApplicationPolicyType::CertificateRequestAgent => "CERTIFICATE_REQUEST_AGENT",
+    ApplicationPolicyType::ClientAuthentication => "CLIENT_AUTHENTICATION",
+    ApplicationPolicyType::CodeSigning => "CODE_SIGNING",
+    ApplicationPolicyType::CtlUsage => "CTL_USAGE",
+    ApplicationPolicyType::DigitalRights => "DIGITAL_RIGHTS",
+    ApplicationPolicyType::DirectoryServiceEmailReplication => "DIRECTORY_SERVICE_EMAIL_REPLICATION",
+    ApplicationPolicyType::DisallowedList => "DISALLOWED_LIST",
+    ApplicationPolicyType::DnsServerTrust => "DNS_SERVER_TRUST",
+    ApplicationPolicyType::DocumentEncryption => "DOCUMENT_ENCRYPTION",
+    ApplicationPolicyType::DocumentSigning => "DOCUMENT_SIGNING",
+    ApplicationPolicyType::DynamicCodeGenerator => "DYNAMIC_CODE_GENERATOR",
+    ApplicationPolicyType::EarlyLaunchAntimalwareDriver => "EARLY_LAUNCH_ANTIMALWARE_DRIVER",
+    ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification => "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
+    ApplicationPolicyType::Enclave => "ENCLAVE",
+    ApplicationPolicyType::EncryptingFileSystem => "ENCRYPTING_FILE_SYSTEM",
+    ApplicationPolicyType::EndorsementKeyCertificate => "ENDORSEMENT_KEY_CERTIFICATE",
+    ApplicationPolicyType::FileRecovery => "FILE_RECOVERY",
+    ApplicationPolicyType::HalExtension => "HAL_EXTENSION",
+    ApplicationPolicyType::IpSecurityEndSystem => "IP_SECURITY_END_SYSTEM",
+    ApplicationPolicyType::IpSecurityIkeIntermediate => "IP_SECURITY_IKE_INTERMEDIATE",
+    ApplicationPolicyType::IpSecurityTunnelTermination => "IP_SECURITY_TUNNEL_TERMINATION",
+    ApplicationPolicyType::IpSecurityUser => "IP_SECURITY_USER",
+    ApplicationPolicyType::IsolatedUserMode => "ISOLATED_USER_MODE",
+    ApplicationPolicyType::KdcAuthentication => "KDC_AUTHENTICATION",
+    ApplicationPolicyType::KernelModeCodeSigning => "KERNEL_MODE_CODE_SIGNING",
+    ApplicationPolicyType::KeyPackLicenses => "KEY_PACK_LICENSES",
+    ApplicationPolicyType::KeyRecovery => "KEY_RECOVERY",
+    ApplicationPolicyType::KeyRecoveryAgent => "KEY_RECOVERY_AGENT",
+    ApplicationPolicyType::LicenseServerVerification => "LICENSE_SERVER_VERIFICATION",
+    ApplicationPolicyType::LifetimeSigning => "LIFETIME_SIGNING",
+    ApplicationPolicyType::MicrosoftPublisher => "MICROSOFT_PUBLISHER",
+    ApplicationPolicyType::MicrosoftTimeStamping => "MICROSOFT_TIME_STAMPING",
+    ApplicationPolicyType::MicrosoftTrustListSigning => "MICROSOFT_TRUST_LIST_SIGNING",
+    ApplicationPolicyType::OcspSigning => "OCSP_SIGNING",
+    ApplicationPolicyType::OemWindowsSystemComponentVerification => "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
+    ApplicationPolicyType::PlatformCertificate => "PLATFORM_CERTIFICATE",
+    ApplicationPolicyType::PreviewBuildSigning => "PREVIEW_BUILD_SIGNING",
+    ApplicationPolicyType::PrivateKeyArchival => "PRIVATE_KEY_ARCHIVAL",
+    ApplicationPolicyType::ProtectedProcessLightVerification => "PROTECTED_PROCESS_LIGHT_VERIFICATION",
+    ApplicationPolicyType::ProtectedProcessVerification => "PROTECTED_PROCESS_VERIFICATION",
+    ApplicationPolicyType::QualifiedSubordination => "QUALIFIED_SUBORDINATION",
+    ApplicationPolicyType::RevokedListSigner => "REVOKED_LIST_SIGNER",
+    ApplicationPolicyType::RootListSigner => "ROOT_LIST_SIGNER",
+    ApplicationPolicyType::RootProgramAutoUpdateCaRevocation => "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION",
+    ApplicationPolicyType::RootProgramAutoUpdateEndRevocation => "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION",
+    ApplicationPolicyType::RootProgramNoOscpFailoverToCrl => "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL",
+    ApplicationPolicyType::SecureEmail => "SECURE_EMAIL",
+    ApplicationPolicyType::ServerAuthentication => "SERVER_AUTHENTICATION",
+    ApplicationPolicyType::SmartCardLogin => "SMART_CARD_LOGIN",
+    ApplicationPolicyType::SpcEncryptedDigestRetryCount => "SPC_ENCRYPTED_DIGEST_RETRY_COUNT",
+    ApplicationPolicyType::SpcRelaxedPeMarkerCheck => "SPC_RELAXED_PE_MARKER_CHECK",
+    ApplicationPolicyType::TimeStamping => "TIME_STAMPING",
+    ApplicationPolicyType::WindowsHardwareDriverAttestedVerification => "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION",
+    ApplicationPolicyType::WindowsHardwareDriverExtendedVerification => "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION",
+    ApplicationPolicyType::WindowsHardwareDriverVerification => "WINDOWS_HARDWARE_DRIVER_VERIFICATION",
+    ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption => "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION",
+    ApplicationPolicyType::WindowsKitsComponent => "WINDOWS_KITS_COMPONENT",
+    ApplicationPolicyType::WindowsRtVerification => "WINDOWS_RT_VERIFICATION",
+    ApplicationPolicyType::WindowsSoftwareExtensionVerification => "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION",
+    ApplicationPolicyType::WindowsStore => "WINDOWS_STORE",
+    ApplicationPolicyType::WindowsSystemComponentVerification => "WINDOWS_SYSTEM_COMPONENT_VERIFICATION",
+    ApplicationPolicyType::WindowsTcbComponent => "WINDOWS_TCB_COMPONENT",
+    ApplicationPolicyType::WindowsThirdPartyApplicationComponent => "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT",
+    ApplicationPolicyType::WindowsUpdate => "WINDOWS_UPDATE",
+    ApplicationPolicyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL_APPLICATION_POLICIES", "ANY_PURPOSE", "ATTESTATION_IDENTITY_KEY_CERTIFICATE", "CERTIFICATE_REQUEST_AGENT", "CLIENT_AUTHENTICATION", "CODE_SIGNING", "CTL_USAGE", "DIGITAL_RIGHTS", "DIRECTORY_SERVICE_EMAIL_REPLICATION", "DISALLOWED_LIST", "DNS_SERVER_TRUST", "DOCUMENT_ENCRYPTION", "DOCUMENT_SIGNING", "DYNAMIC_CODE_GENERATOR", "EARLY_LAUNCH_ANTIMALWARE_DRIVER", "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION", "ENCLAVE", "ENCRYPTING_FILE_SYSTEM", "ENDORSEMENT_KEY_CERTIFICATE", "FILE_RECOVERY", "HAL_EXTENSION", "IP_SECURITY_END_SYSTEM", "IP_SECURITY_IKE_INTERMEDIATE", "IP_SECURITY_TUNNEL_TERMINATION", "IP_SECURITY_USER", "ISOLATED_USER_MODE", "KDC_AUTHENTICATION", "KERNEL_MODE_CODE_SIGNING", "KEY_PACK_LICENSES", "KEY_RECOVERY", "KEY_RECOVERY_AGENT", "LICENSE_SERVER_VERIFICATION", "LIFETIME_SIGNING", "MICROSOFT_PUBLISHER", "MICROSOFT_TIME_STAMPING", "MICROSOFT_TRUST_LIST_SIGNING", "OCSP_SIGNING", "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION", "PLATFORM_CERTIFICATE", "PREVIEW_BUILD_SIGNING", "PRIVATE_KEY_ARCHIVAL", "PROTECTED_PROCESS_LIGHT_VERIFICATION", "PROTECTED_PROCESS_VERIFICATION", "QUALIFIED_SUBORDINATION", "REVOKED_LIST_SIGNER", "ROOT_LIST_SIGNER", "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION", "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION", "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL", "SECURE_EMAIL", "SERVER_AUTHENTICATION", "SMART_CARD_LOGIN", "SPC_ENCRYPTED_DIGEST_RETRY_COUNT", "SPC_RELAXED_PE_MARKER_CHECK", "TIME_STAMPING", "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION", "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION", "WINDOWS_HARDWARE_DRIVER_VERIFICATION", "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION", "WINDOWS_KITS_COMPONENT", "WINDOWS_RT_VERIFICATION", "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION", "WINDOWS_STORE", "WINDOWS_SYSTEM_COMPONENT_VERIFICATION", "WINDOWS_TCB_COMPONENT", "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT", "WINDOWS_UPDATE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ApplicationPolicyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ApplicationPolicyType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ApplicationPolicyType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ApplicationPolicyType::AllApplicationPolicies => write!(f, "ALL_APPLICATION_POLICIES"),
-            ApplicationPolicyType::AnyPurpose => write!(f, "ANY_PURPOSE"),
-            ApplicationPolicyType::AttestationIdentityKeyCertificate => write!(f, "ATTESTATION_IDENTITY_KEY_CERTIFICATE"),
-            ApplicationPolicyType::CertificateRequestAgent => write!(f, "CERTIFICATE_REQUEST_AGENT"),
-            ApplicationPolicyType::ClientAuthentication => write!(f, "CLIENT_AUTHENTICATION"),
-            ApplicationPolicyType::CodeSigning => write!(f, "CODE_SIGNING"),
-            ApplicationPolicyType::CtlUsage => write!(f, "CTL_USAGE"),
-            ApplicationPolicyType::DigitalRights => write!(f, "DIGITAL_RIGHTS"),
-            ApplicationPolicyType::DirectoryServiceEmailReplication => write!(f, "DIRECTORY_SERVICE_EMAIL_REPLICATION"),
-            ApplicationPolicyType::DisallowedList => write!(f, "DISALLOWED_LIST"),
-            ApplicationPolicyType::DnsServerTrust => write!(f, "DNS_SERVER_TRUST"),
-            ApplicationPolicyType::DocumentEncryption => write!(f, "DOCUMENT_ENCRYPTION"),
-            ApplicationPolicyType::DocumentSigning => write!(f, "DOCUMENT_SIGNING"),
-            ApplicationPolicyType::DynamicCodeGenerator => write!(f, "DYNAMIC_CODE_GENERATOR"),
-            ApplicationPolicyType::EarlyLaunchAntimalwareDriver => write!(f, "EARLY_LAUNCH_ANTIMALWARE_DRIVER"),
-            ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification => write!(f, "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
-            ApplicationPolicyType::Enclave => write!(f, "ENCLAVE"),
-            ApplicationPolicyType::EncryptingFileSystem => write!(f, "ENCRYPTING_FILE_SYSTEM"),
-            ApplicationPolicyType::EndorsementKeyCertificate => write!(f, "ENDORSEMENT_KEY_CERTIFICATE"),
-            ApplicationPolicyType::FileRecovery => write!(f, "FILE_RECOVERY"),
-            ApplicationPolicyType::HalExtension => write!(f, "HAL_EXTENSION"),
-            ApplicationPolicyType::IpSecurityEndSystem => write!(f, "IP_SECURITY_END_SYSTEM"),
-            ApplicationPolicyType::IpSecurityIkeIntermediate => write!(f, "IP_SECURITY_IKE_INTERMEDIATE"),
-            ApplicationPolicyType::IpSecurityTunnelTermination => write!(f, "IP_SECURITY_TUNNEL_TERMINATION"),
-            ApplicationPolicyType::IpSecurityUser => write!(f, "IP_SECURITY_USER"),
-            ApplicationPolicyType::IsolatedUserMode => write!(f, "ISOLATED_USER_MODE"),
-            ApplicationPolicyType::KdcAuthentication => write!(f, "KDC_AUTHENTICATION"),
-            ApplicationPolicyType::KernelModeCodeSigning => write!(f, "KERNEL_MODE_CODE_SIGNING"),
-            ApplicationPolicyType::KeyPackLicenses => write!(f, "KEY_PACK_LICENSES"),
-            ApplicationPolicyType::KeyRecovery => write!(f, "KEY_RECOVERY"),
-            ApplicationPolicyType::KeyRecoveryAgent => write!(f, "KEY_RECOVERY_AGENT"),
-            ApplicationPolicyType::LicenseServerVerification => write!(f, "LICENSE_SERVER_VERIFICATION"),
-            ApplicationPolicyType::LifetimeSigning => write!(f, "LIFETIME_SIGNING"),
-            ApplicationPolicyType::MicrosoftPublisher => write!(f, "MICROSOFT_PUBLISHER"),
-            ApplicationPolicyType::MicrosoftTimeStamping => write!(f, "MICROSOFT_TIME_STAMPING"),
-            ApplicationPolicyType::MicrosoftTrustListSigning => write!(f, "MICROSOFT_TRUST_LIST_SIGNING"),
-            ApplicationPolicyType::OcspSigning => write!(f, "OCSP_SIGNING"),
-            ApplicationPolicyType::OemWindowsSystemComponentVerification => write!(f, "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
-            ApplicationPolicyType::PlatformCertificate => write!(f, "PLATFORM_CERTIFICATE"),
-            ApplicationPolicyType::PreviewBuildSigning => write!(f, "PREVIEW_BUILD_SIGNING"),
-            ApplicationPolicyType::PrivateKeyArchival => write!(f, "PRIVATE_KEY_ARCHIVAL"),
-            ApplicationPolicyType::ProtectedProcessLightVerification => write!(f, "PROTECTED_PROCESS_LIGHT_VERIFICATION"),
-            ApplicationPolicyType::ProtectedProcessVerification => write!(f, "PROTECTED_PROCESS_VERIFICATION"),
-            ApplicationPolicyType::QualifiedSubordination => write!(f, "QUALIFIED_SUBORDINATION"),
-            ApplicationPolicyType::RevokedListSigner => write!(f, "REVOKED_LIST_SIGNER"),
-            ApplicationPolicyType::RootListSigner => write!(f, "ROOT_LIST_SIGNER"),
-            ApplicationPolicyType::RootProgramAutoUpdateCaRevocation => write!(f, "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION"),
-            ApplicationPolicyType::RootProgramAutoUpdateEndRevocation => write!(f, "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION"),
-            ApplicationPolicyType::RootProgramNoOscpFailoverToCrl => write!(f, "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL"),
-            ApplicationPolicyType::SecureEmail => write!(f, "SECURE_EMAIL"),
-            ApplicationPolicyType::ServerAuthentication => write!(f, "SERVER_AUTHENTICATION"),
-            ApplicationPolicyType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
-            ApplicationPolicyType::SpcEncryptedDigestRetryCount => write!(f, "SPC_ENCRYPTED_DIGEST_RETRY_COUNT"),
-            ApplicationPolicyType::SpcRelaxedPeMarkerCheck => write!(f, "SPC_RELAXED_PE_MARKER_CHECK"),
-            ApplicationPolicyType::TimeStamping => write!(f, "TIME_STAMPING"),
-            ApplicationPolicyType::WindowsHardwareDriverAttestedVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION"),
-            ApplicationPolicyType::WindowsHardwareDriverExtendedVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION"),
-            ApplicationPolicyType::WindowsHardwareDriverVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_VERIFICATION"),
-            ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption => write!(f, "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION"),
-            ApplicationPolicyType::WindowsKitsComponent => write!(f, "WINDOWS_KITS_COMPONENT"),
-            ApplicationPolicyType::WindowsRtVerification => write!(f, "WINDOWS_RT_VERIFICATION"),
-            ApplicationPolicyType::WindowsSoftwareExtensionVerification => write!(f, "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION"),
-            ApplicationPolicyType::WindowsStore => write!(f, "WINDOWS_STORE"),
-            ApplicationPolicyType::WindowsSystemComponentVerification => write!(f, "WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
-            ApplicationPolicyType::WindowsTcbComponent => write!(f, "WINDOWS_TCB_COMPONENT"),
-            ApplicationPolicyType::WindowsThirdPartyApplicationComponent => write!(f, "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT"),
-            ApplicationPolicyType::WindowsUpdate => write!(f, "WINDOWS_UPDATE"),
-            ApplicationPolicyType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ApplicationPolicyType::AllApplicationPolicies => write!(f, "ALL_APPLICATION_POLICIES"),
+ApplicationPolicyType::AnyPurpose => write!(f, "ANY_PURPOSE"),
+ApplicationPolicyType::AttestationIdentityKeyCertificate => write!(f, "ATTESTATION_IDENTITY_KEY_CERTIFICATE"),
+ApplicationPolicyType::CertificateRequestAgent => write!(f, "CERTIFICATE_REQUEST_AGENT"),
+ApplicationPolicyType::ClientAuthentication => write!(f, "CLIENT_AUTHENTICATION"),
+ApplicationPolicyType::CodeSigning => write!(f, "CODE_SIGNING"),
+ApplicationPolicyType::CtlUsage => write!(f, "CTL_USAGE"),
+ApplicationPolicyType::DigitalRights => write!(f, "DIGITAL_RIGHTS"),
+ApplicationPolicyType::DirectoryServiceEmailReplication => write!(f, "DIRECTORY_SERVICE_EMAIL_REPLICATION"),
+ApplicationPolicyType::DisallowedList => write!(f, "DISALLOWED_LIST"),
+ApplicationPolicyType::DnsServerTrust => write!(f, "DNS_SERVER_TRUST"),
+ApplicationPolicyType::DocumentEncryption => write!(f, "DOCUMENT_ENCRYPTION"),
+ApplicationPolicyType::DocumentSigning => write!(f, "DOCUMENT_SIGNING"),
+ApplicationPolicyType::DynamicCodeGenerator => write!(f, "DYNAMIC_CODE_GENERATOR"),
+ApplicationPolicyType::EarlyLaunchAntimalwareDriver => write!(f, "EARLY_LAUNCH_ANTIMALWARE_DRIVER"),
+ApplicationPolicyType::EmbeddedWindowsSystemComponentVerification => write!(f, "EMBEDDED_WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
+ApplicationPolicyType::Enclave => write!(f, "ENCLAVE"),
+ApplicationPolicyType::EncryptingFileSystem => write!(f, "ENCRYPTING_FILE_SYSTEM"),
+ApplicationPolicyType::EndorsementKeyCertificate => write!(f, "ENDORSEMENT_KEY_CERTIFICATE"),
+ApplicationPolicyType::FileRecovery => write!(f, "FILE_RECOVERY"),
+ApplicationPolicyType::HalExtension => write!(f, "HAL_EXTENSION"),
+ApplicationPolicyType::IpSecurityEndSystem => write!(f, "IP_SECURITY_END_SYSTEM"),
+ApplicationPolicyType::IpSecurityIkeIntermediate => write!(f, "IP_SECURITY_IKE_INTERMEDIATE"),
+ApplicationPolicyType::IpSecurityTunnelTermination => write!(f, "IP_SECURITY_TUNNEL_TERMINATION"),
+ApplicationPolicyType::IpSecurityUser => write!(f, "IP_SECURITY_USER"),
+ApplicationPolicyType::IsolatedUserMode => write!(f, "ISOLATED_USER_MODE"),
+ApplicationPolicyType::KdcAuthentication => write!(f, "KDC_AUTHENTICATION"),
+ApplicationPolicyType::KernelModeCodeSigning => write!(f, "KERNEL_MODE_CODE_SIGNING"),
+ApplicationPolicyType::KeyPackLicenses => write!(f, "KEY_PACK_LICENSES"),
+ApplicationPolicyType::KeyRecovery => write!(f, "KEY_RECOVERY"),
+ApplicationPolicyType::KeyRecoveryAgent => write!(f, "KEY_RECOVERY_AGENT"),
+ApplicationPolicyType::LicenseServerVerification => write!(f, "LICENSE_SERVER_VERIFICATION"),
+ApplicationPolicyType::LifetimeSigning => write!(f, "LIFETIME_SIGNING"),
+ApplicationPolicyType::MicrosoftPublisher => write!(f, "MICROSOFT_PUBLISHER"),
+ApplicationPolicyType::MicrosoftTimeStamping => write!(f, "MICROSOFT_TIME_STAMPING"),
+ApplicationPolicyType::MicrosoftTrustListSigning => write!(f, "MICROSOFT_TRUST_LIST_SIGNING"),
+ApplicationPolicyType::OcspSigning => write!(f, "OCSP_SIGNING"),
+ApplicationPolicyType::OemWindowsSystemComponentVerification => write!(f, "OEM_WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
+ApplicationPolicyType::PlatformCertificate => write!(f, "PLATFORM_CERTIFICATE"),
+ApplicationPolicyType::PreviewBuildSigning => write!(f, "PREVIEW_BUILD_SIGNING"),
+ApplicationPolicyType::PrivateKeyArchival => write!(f, "PRIVATE_KEY_ARCHIVAL"),
+ApplicationPolicyType::ProtectedProcessLightVerification => write!(f, "PROTECTED_PROCESS_LIGHT_VERIFICATION"),
+ApplicationPolicyType::ProtectedProcessVerification => write!(f, "PROTECTED_PROCESS_VERIFICATION"),
+ApplicationPolicyType::QualifiedSubordination => write!(f, "QUALIFIED_SUBORDINATION"),
+ApplicationPolicyType::RevokedListSigner => write!(f, "REVOKED_LIST_SIGNER"),
+ApplicationPolicyType::RootListSigner => write!(f, "ROOT_LIST_SIGNER"),
+ApplicationPolicyType::RootProgramAutoUpdateCaRevocation => write!(f, "ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION"),
+ApplicationPolicyType::RootProgramAutoUpdateEndRevocation => write!(f, "ROOT_PROGRAM_AUTO_UPDATE_END_REVOCATION"),
+ApplicationPolicyType::RootProgramNoOscpFailoverToCrl => write!(f, "ROOT_PROGRAM_NO_OSCP_FAILOVER_TO_CRL"),
+ApplicationPolicyType::SecureEmail => write!(f, "SECURE_EMAIL"),
+ApplicationPolicyType::ServerAuthentication => write!(f, "SERVER_AUTHENTICATION"),
+ApplicationPolicyType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
+ApplicationPolicyType::SpcEncryptedDigestRetryCount => write!(f, "SPC_ENCRYPTED_DIGEST_RETRY_COUNT"),
+ApplicationPolicyType::SpcRelaxedPeMarkerCheck => write!(f, "SPC_RELAXED_PE_MARKER_CHECK"),
+ApplicationPolicyType::TimeStamping => write!(f, "TIME_STAMPING"),
+ApplicationPolicyType::WindowsHardwareDriverAttestedVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_ATTESTED_VERIFICATION"),
+ApplicationPolicyType::WindowsHardwareDriverExtendedVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_EXTENDED_VERIFICATION"),
+ApplicationPolicyType::WindowsHardwareDriverVerification => write!(f, "WINDOWS_HARDWARE_DRIVER_VERIFICATION"),
+ApplicationPolicyType::WindowsHelloRecoveryKeyEncryption => write!(f, "WINDOWS_HELLO_RECOVERY_KEY_ENCRYPTION"),
+ApplicationPolicyType::WindowsKitsComponent => write!(f, "WINDOWS_KITS_COMPONENT"),
+ApplicationPolicyType::WindowsRtVerification => write!(f, "WINDOWS_RT_VERIFICATION"),
+ApplicationPolicyType::WindowsSoftwareExtensionVerification => write!(f, "WINDOWS_SOFTWARE_EXTENSION_VERIFICATION"),
+ApplicationPolicyType::WindowsStore => write!(f, "WINDOWS_STORE"),
+ApplicationPolicyType::WindowsSystemComponentVerification => write!(f, "WINDOWS_SYSTEM_COMPONENT_VERIFICATION"),
+ApplicationPolicyType::WindowsTcbComponent => write!(f, "WINDOWS_TCB_COMPONENT"),
+ApplicationPolicyType::WindowsThirdPartyApplicationComponent => write!(f, "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT"),
+ApplicationPolicyType::WindowsUpdate => write!(f, "WINDOWS_UPDATE"),
+ApplicationPolicyType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

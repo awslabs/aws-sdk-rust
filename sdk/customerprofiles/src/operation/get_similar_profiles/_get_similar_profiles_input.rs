@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSimilarProfilesInput {
+pub struct GetSimilarProfilesInput  {
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
@@ -16,9 +16,9 @@ pub struct GetSimilarProfilesInput {
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
     pub search_value: ::std::option::Option<::std::string::String>,
 }
-impl GetSimilarProfilesInput {
+impl  GetSimilarProfilesInput  {
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -26,19 +26,19 @@ impl GetSimilarProfilesInput {
         self.max_results
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
-    pub fn match_type(&self) -> ::std::option::Option<&crate::types::MatchType> {
+    pub fn match_type(&self) -> ::std::option::Option<& crate::types::MatchType> {
         self.match_type.as_ref()
     }
     /// <p>The string indicating the search key to be used.</p>
-    pub fn search_key(&self) -> ::std::option::Option<&str> {
+    pub fn search_key(&self) -> ::std::option::Option<& str> {
         self.search_key.as_deref()
     }
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
-    pub fn search_value(&self) -> ::std::option::Option<&str> {
+    pub fn search_value(&self) -> ::std::option::Option<& str> {
         self.search_value.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,8 +95,7 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::MatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MatchType> {
@@ -127,8 +123,7 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>The string indicating the search key to be used.</p>
     pub fn set_search_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_key = input;
-        self
+        self.search_key = input; self
     }
     /// <p>The string indicating the search key to be used.</p>
     pub fn get_search_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,25 +137,30 @@ impl GetSimilarProfilesInputBuilder {
     }
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
     pub fn set_search_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_value = input;
-        self
+        self.search_value = input; self
     }
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
     pub fn get_search_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.search_value
     }
     /// Consumes the builder and constructs a [`GetSimilarProfilesInput`](crate::operation::get_similar_profiles::GetSimilarProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_similar_profiles::GetSimilarProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_similar_profiles::GetSimilarProfilesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            domain_name: self.domain_name,
-            match_type: self.match_type,
-            search_key: self.search_key,
-            search_value: self.search_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_similar_profiles::GetSimilarProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_similar_profiles::GetSimilarProfilesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                domain_name: self.domain_name
+                ,
+                match_type: self.match_type
+                ,
+                search_key: self.search_key
+                ,
+                search_value: self.search_value
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUnfilteredTableMetadataInput {
+pub struct GetUnfilteredTableMetadataInput  {
     /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The catalog ID where the table resides.</p>
@@ -14,53 +14,55 @@ pub struct GetUnfilteredTableMetadataInput {
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types.</p>
-    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>>,
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
     pub supported_dialect: ::std::option::Option<crate::types::SupportedDialect>,
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
     pub query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
-impl GetUnfilteredTableMetadataInput {
+impl  GetUnfilteredTableMetadataInput  {
     /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The catalog ID where the table resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+    pub fn audit_context(&self) -> ::std::option::Option<& crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
     /// <p>(Required) A list of supported permission types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
-    pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
-        self.supported_permission_types.as_deref().unwrap_or_default()
+    pub fn supported_permission_types(&self) -> & [crate::types::PermissionType] {
+        self.supported_permission_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
-    pub fn supported_dialect(&self) -> ::std::option::Option<&crate::types::SupportedDialect> {
+    pub fn supported_dialect(&self) -> ::std::option::Option<& crate::types::SupportedDialect> {
         self.supported_dialect.as_ref()
     }
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::Permission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::Permission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
-    pub fn query_session_context(&self) -> ::std::option::Option<&crate::types::QuerySessionContext> {
+    pub fn query_session_context(&self) -> ::std::option::Option<& crate::types::QuerySessionContext> {
         self.query_session_context.as_ref()
     }
 }
@@ -80,9 +82,9 @@ pub struct GetUnfilteredTableMetadataInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>>,
     pub(crate) supported_dialect: ::std::option::Option<crate::types::SupportedDialect>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     pub(crate) query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl GetUnfilteredTableMetadataInputBuilder {
@@ -93,8 +95,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
-        self.audit_context = input;
-        self
+        self.audit_context = input; self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
@@ -166,17 +163,16 @@ impl GetUnfilteredTableMetadataInputBuilder {
     /// <p>(Required) A list of supported permission types.</p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.supported_permission_types.unwrap_or_default();
-        v.push(input);
-        self.supported_permission_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_permission_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Required) A list of supported permission types.</p>
-    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
-        self.supported_permission_types = input;
-        self
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>>) -> Self {
+        self.supported_permission_types = input; self
     }
     /// <p>(Required) A list of supported permission types.</p>
-    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
@@ -186,8 +182,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
     pub fn set_supported_dialect(mut self, input: ::std::option::Option<crate::types::SupportedDialect>) -> Self {
-        self.supported_dialect = input;
-        self
+        self.supported_dialect = input; self
     }
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
     pub fn get_supported_dialect(&self) -> &::std::option::Option<crate::types::SupportedDialect> {
@@ -200,17 +195,16 @@ impl GetUnfilteredTableMetadataInputBuilder {
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
@@ -220,30 +214,36 @@ impl GetUnfilteredTableMetadataInputBuilder {
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
     pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
-        self.query_session_context = input;
-        self
+        self.query_session_context = input; self
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
     pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
         &self.query_session_context
     }
     /// Consumes the builder and constructs a [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
-            region: self.region,
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            name: self.name,
-            audit_context: self.audit_context,
-            supported_permission_types: self.supported_permission_types,
-            supported_dialect: self.supported_dialect,
-            permissions: self.permissions,
-            query_session_context: self.query_session_context,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
+                region: self.region
+                ,
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                name: self.name
+                ,
+                audit_context: self.audit_context
+                ,
+                supported_permission_types: self.supported_permission_types
+                ,
+                supported_dialect: self.supported_dialect
+                ,
+                permissions: self.permissions
+                ,
+                query_session_context: self.query_session_context
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A request to move a dedicated IP address to a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDedicatedIpInPoolInput {
+pub struct PutDedicatedIpInPoolInput  {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub destination_pool_name: ::std::option::Option<::std::string::String>,
 }
-impl PutDedicatedIpInPoolInput {
+impl  PutDedicatedIpInPoolInput  {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn destination_pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_pool_name(&self) -> ::std::option::Option<& str> {
         self.destination_pool_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl PutDedicatedIpInPoolInputBuilder {
     }
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl PutDedicatedIpInPoolInputBuilder {
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn set_destination_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_pool_name = input;
-        self
+        self.destination_pool_name = input; self
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn get_destination_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_pool_name
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput {
-            ip: self.ip,
-            destination_pool_name: self.destination_pool_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput {
+                ip: self.ip
+                ,
+                destination_pool_name: self.destination_pool_name
+                ,
+            }
+        )
     }
 }
+

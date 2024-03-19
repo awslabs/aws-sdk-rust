@@ -237,3 +237,4 @@ pub mod update_repository_encryption_key;
 
 /// Types for the `UpdateRepositoryName` operation.
 pub mod update_repository_name;
+

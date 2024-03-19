@@ -3,7 +3,7 @@
 /// <p>Structure for the Dataview destination type parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataViewDestinationTypeParams {
+pub struct DataViewDestinationTypeParams  {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
     /// <li>
@@ -23,9 +23,9 @@ pub struct DataViewDestinationTypeParams {
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
     /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
-    pub s3_destination_export_file_format_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub s3_destination_export_file_format_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DataViewDestinationTypeParams {
+impl  DataViewDestinationTypeParams  {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
     /// <li>
@@ -33,9 +33,8 @@ impl DataViewDestinationTypeParams {
     /// <li>
     /// <p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
-    pub fn destination_type(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_type.deref()
+    pub fn destination_type(&self) -> & str {
+        use std::ops::Deref; self.destination_type.deref()
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
@@ -44,15 +43,13 @@ impl DataViewDestinationTypeParams {
     /// <li>
     /// <p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
-    pub fn s3_destination_export_file_format(&self) -> ::std::option::Option<&crate::types::ExportFileFormat> {
+    pub fn s3_destination_export_file_format(&self) -> ::std::option::Option<& crate::types::ExportFileFormat> {
         self.s3_destination_export_file_format.as_ref()
     }
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
     /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
-    pub fn s3_destination_export_file_format_options(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn s3_destination_export_file_format_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.s3_destination_export_file_format_options.as_ref()
     }
 }
@@ -69,8 +66,7 @@ impl DataViewDestinationTypeParams {
 pub struct DataViewDestinationTypeParamsBuilder {
     pub(crate) destination_type: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination_export_file_format: ::std::option::Option<crate::types::ExportFileFormat>,
-    pub(crate) s3_destination_export_file_format_options:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) s3_destination_export_file_format_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DataViewDestinationTypeParamsBuilder {
     /// <p>Destination type for a Dataview.</p>
@@ -93,8 +89,7 @@ impl DataViewDestinationTypeParamsBuilder {
     /// <p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     pub fn set_destination_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
@@ -125,8 +120,7 @@ impl DataViewDestinationTypeParamsBuilder {
     /// <p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub fn set_s3_destination_export_file_format(mut self, input: ::std::option::Option<crate::types::ExportFileFormat>) -> Self {
-        self.s3_destination_export_file_format = input;
-        self
+        self.s3_destination_export_file_format = input; self
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
@@ -145,47 +139,41 @@ impl DataViewDestinationTypeParamsBuilder {
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
     /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
-    pub fn s3_destination_export_file_format_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_destination_export_file_format_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.s3_destination_export_file_format_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.s3_destination_export_file_format_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.s3_destination_export_file_format_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
     /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
-    pub fn set_s3_destination_export_file_format_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.s3_destination_export_file_format_options = input;
-        self
+    pub fn set_s3_destination_export_file_format_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.s3_destination_export_file_format_options = input; self
     }
     /// <p>Format Options for S3 Destination type.</p>
     /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
     /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
-    pub fn get_s3_destination_export_file_format_options(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_s3_destination_export_file_format_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.s3_destination_export_file_format_options
     }
     /// Consumes the builder and constructs a [`DataViewDestinationTypeParams`](crate::types::DataViewDestinationTypeParams).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_type`](crate::types::builders::DataViewDestinationTypeParamsBuilder::destination_type)
     pub fn build(self) -> ::std::result::Result<crate::types::DataViewDestinationTypeParams, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataViewDestinationTypeParams {
-            destination_type: self.destination_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_type",
-                    "destination_type was not specified but it is required when building DataViewDestinationTypeParams",
-                )
-            })?,
-            s3_destination_export_file_format: self.s3_destination_export_file_format,
-            s3_destination_export_file_format_options: self.s3_destination_export_file_format_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataViewDestinationTypeParams {
+                destination_type: self.destination_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_type", "destination_type was not specified but it is required when building DataViewDestinationTypeParams")
+                    )?
+                ,
+                s3_destination_export_file_format: self.s3_destination_export_file_format
+                ,
+                s3_destination_export_file_format_options: self.s3_destination_export_file_format_options
+                ,
+            }
+        )
     }
 }
+

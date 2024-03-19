@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateLicenseOutput {
+pub struct DisassociateLicenseOutput  {
     /// <p>A structure containing information about the workspace.</p>
     pub workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
 }
-impl DisassociateLicenseOutput {
+impl  DisassociateLicenseOutput  {
     /// <p>A structure containing information about the workspace.</p>
-    pub fn workspace(&self) -> ::std::option::Option<&crate::types::WorkspaceDescription> {
+    pub fn workspace(&self) -> ::std::option::Option<& crate::types::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateLicenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput).
     pub fn builder() -> crate::operation::disassociate_license::builders::DisassociateLicenseOutputBuilder {
@@ -41,27 +41,28 @@ impl DisassociateLicenseOutputBuilder {
     }
     /// <p>A structure containing information about the workspace.</p>
     pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
-        self.workspace = input;
-        self
+        self.workspace = input; self
     }
     /// <p>A structure containing information about the workspace.</p>
     pub fn get_workspace(&self) -> &::std::option::Option<crate::types::WorkspaceDescription> {
         &self.workspace
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput).
     pub fn build(self) -> crate::operation::disassociate_license::DisassociateLicenseOutput {
         crate::operation::disassociate_license::DisassociateLicenseOutput {
-            workspace: self.workspace,
+            workspace: self.workspace
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

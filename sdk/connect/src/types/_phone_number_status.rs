@@ -11,19 +11,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberStatus {
+pub struct PhoneNumberStatus  {
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
     /// <p>The status message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl PhoneNumberStatus {
+impl  PhoneNumberStatus  {
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PhoneNumberWorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PhoneNumberWorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl PhoneNumberStatusBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberWorkflowStatus> {
@@ -63,8 +62,7 @@ impl PhoneNumberStatusBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,11 @@ impl PhoneNumberStatusBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberStatus`](crate::types::PhoneNumberStatus).
     pub fn build(self) -> crate::types::PhoneNumberStatus {
         crate::types::PhoneNumberStatus {
-            status: self.status,
-            message: self.message,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

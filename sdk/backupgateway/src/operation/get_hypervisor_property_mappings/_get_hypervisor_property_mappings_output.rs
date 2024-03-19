@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHypervisorPropertyMappingsOutput {
+pub struct GetHypervisorPropertyMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
+    pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetHypervisorPropertyMappingsOutput {
+impl  GetHypervisorPropertyMappingsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_to_aws_tag_mappings.is_none()`.
-    pub fn vmware_to_aws_tag_mappings(&self) -> &[crate::types::VmwareToAwsTagMapping] {
-        self.vmware_to_aws_tag_mappings.as_deref().unwrap_or_default()
+    pub fn vmware_to_aws_tag_mappings(&self) -> & [crate::types::VmwareToAwsTagMapping] {
+        self.vmware_to_aws_tag_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetHypervisorPropertyMappingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHypervisorPropertyMappingsOutput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
     pub fn builder() -> crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsOutputBuilder {
@@ -44,7 +45,7 @@ impl GetHypervisorPropertyMappingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHypervisorPropertyMappingsOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
+    pub(crate) vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareToAwsTagMapping>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
     pub fn vmware_to_aws_tag_mappings(mut self, input: crate::types::VmwareToAwsTagMapping) -> Self {
         let mut v = self.vmware_to_aws_tag_mappings.unwrap_or_default();
-        v.push(input);
-        self.vmware_to_aws_tag_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vmware_to_aws_tag_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>) -> Self {
-        self.vmware_to_aws_tag_mappings = input;
-        self
+    pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VmwareToAwsTagMapping>>) -> Self {
+        self.vmware_to_aws_tag_mappings = input; self
     }
     /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
+    pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VmwareToAwsTagMapping>> {
         &self.vmware_to_aws_tag_mappings
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
@@ -90,29 +89,32 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
     pub fn build(self) -> crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput {
         crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput {
-            hypervisor_arn: self.hypervisor_arn,
-            vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,
-            iam_role_arn: self.iam_role_arn,
+            hypervisor_arn: self.hypervisor_arn
+            ,
+            vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

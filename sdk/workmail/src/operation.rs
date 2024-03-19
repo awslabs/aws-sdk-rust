@@ -252,3 +252,4 @@ pub mod update_resource;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
+

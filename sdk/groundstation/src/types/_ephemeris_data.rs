@@ -22,11 +22,7 @@ impl EphemerisData {
     /// Tries to convert the enum instance into [`Oem`](crate::types::EphemerisData::Oem), extracting the inner [`OemEphemeris`](crate::types::OemEphemeris).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oem(&self) -> ::std::result::Result<&crate::types::OemEphemeris, &Self> {
-        if let EphemerisData::Oem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EphemerisData::Oem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Oem`](crate::types::EphemerisData::Oem).
     pub fn is_oem(&self) -> bool {
@@ -35,11 +31,7 @@ impl EphemerisData {
     /// Tries to convert the enum instance into [`Tle`](crate::types::EphemerisData::Tle), extracting the inner [`TleEphemeris`](crate::types::TleEphemeris).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tle(&self) -> ::std::result::Result<&crate::types::TleEphemeris, &Self> {
-        if let EphemerisData::Tle(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EphemerisData::Tle(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tle`](crate::types::EphemerisData::Tle).
     pub fn is_tle(&self) -> bool {
@@ -50,3 +42,4 @@ impl EphemerisData {
         matches!(self, Self::Unknown)
     }
 }
+

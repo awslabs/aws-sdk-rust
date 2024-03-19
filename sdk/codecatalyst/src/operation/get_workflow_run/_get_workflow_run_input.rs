@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowRunInput {
+pub struct GetWorkflowRunInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run. To retrieve a list of workflow run IDs, use <code>ListWorkflowRuns</code>.</p>
@@ -10,17 +10,17 @@ pub struct GetWorkflowRunInput {
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowRunInput {
+impl  GetWorkflowRunInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The ID of the workflow run. To retrieve a list of workflow run IDs, use <code>ListWorkflowRuns</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetWorkflowRunInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetWorkflowRunInputBuilder {
     }
     /// <p>The ID of the workflow run. To retrieve a list of workflow run IDs, use <code>ListWorkflowRuns</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the workflow run. To retrieve a list of workflow run IDs, use <code>ListWorkflowRuns</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetWorkflowRunInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunInput`](crate::operation::get_workflow_run::GetWorkflowRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_run::GetWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow_run::GetWorkflowRunInput {
-            space_name: self.space_name,
-            id: self.id,
-            project_name: self.project_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_run::GetWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_run::GetWorkflowRunInput {
+                space_name: self.space_name
+                ,
+                id: self.id
+                ,
+                project_name: self.project_name
+                ,
+            }
+        )
     }
 }
+

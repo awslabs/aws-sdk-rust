@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
@@ -57,16 +57,14 @@
 /// Specifically, when `datasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AdobeAnalytics,
@@ -128,172 +126,143 @@ pub enum DataSourceType {
     Twitter,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DataSourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADOBE_ANALYTICS" => DataSourceType::AdobeAnalytics,
-            "AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
-            "AMAZON_OPENSEARCH" => DataSourceType::AmazonOpensearch,
-            "ATHENA" => DataSourceType::Athena,
-            "AURORA" => DataSourceType::Aurora,
-            "AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
-            "AWS_IOT_ANALYTICS" => DataSourceType::AwsIotAnalytics,
-            "BIGQUERY" => DataSourceType::Bigquery,
-            "DATABRICKS" => DataSourceType::Databricks,
-            "EXASOL" => DataSourceType::Exasol,
-            "GITHUB" => DataSourceType::Github,
-            "JIRA" => DataSourceType::Jira,
-            "MARIADB" => DataSourceType::Mariadb,
-            "MYSQL" => DataSourceType::Mysql,
-            "ORACLE" => DataSourceType::Oracle,
-            "POSTGRESQL" => DataSourceType::Postgresql,
-            "PRESTO" => DataSourceType::Presto,
-            "REDSHIFT" => DataSourceType::Redshift,
-            "S3" => DataSourceType::S3,
-            "SALESFORCE" => DataSourceType::Salesforce,
-            "SERVICENOW" => DataSourceType::Servicenow,
-            "SNOWFLAKE" => DataSourceType::Snowflake,
-            "SPARK" => DataSourceType::Spark,
-            "SQLSERVER" => DataSourceType::Sqlserver,
-            "STARBURST" => DataSourceType::Starburst,
-            "TERADATA" => DataSourceType::Teradata,
-            "TIMESTREAM" => DataSourceType::Timestream,
-            "TRINO" => DataSourceType::Trino,
-            "TWITTER" => DataSourceType::Twitter,
-            other => DataSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADOBE_ANALYTICS" => DataSourceType::AdobeAnalytics,
+"AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
+"AMAZON_OPENSEARCH" => DataSourceType::AmazonOpensearch,
+"ATHENA" => DataSourceType::Athena,
+"AURORA" => DataSourceType::Aurora,
+"AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
+"AWS_IOT_ANALYTICS" => DataSourceType::AwsIotAnalytics,
+"BIGQUERY" => DataSourceType::Bigquery,
+"DATABRICKS" => DataSourceType::Databricks,
+"EXASOL" => DataSourceType::Exasol,
+"GITHUB" => DataSourceType::Github,
+"JIRA" => DataSourceType::Jira,
+"MARIADB" => DataSourceType::Mariadb,
+"MYSQL" => DataSourceType::Mysql,
+"ORACLE" => DataSourceType::Oracle,
+"POSTGRESQL" => DataSourceType::Postgresql,
+"PRESTO" => DataSourceType::Presto,
+"REDSHIFT" => DataSourceType::Redshift,
+"S3" => DataSourceType::S3,
+"SALESFORCE" => DataSourceType::Salesforce,
+"SERVICENOW" => DataSourceType::Servicenow,
+"SNOWFLAKE" => DataSourceType::Snowflake,
+"SPARK" => DataSourceType::Spark,
+"SQLSERVER" => DataSourceType::Sqlserver,
+"STARBURST" => DataSourceType::Starburst,
+"TERADATA" => DataSourceType::Teradata,
+"TIMESTREAM" => DataSourceType::Timestream,
+"TRINO" => DataSourceType::Trino,
+"TWITTER" => DataSourceType::Twitter,
+other => DataSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DataSourceType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DataSourceType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DataSourceType::from(s))
+                    }
+                }
 impl DataSourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataSourceType::AdobeAnalytics => "ADOBE_ANALYTICS",
-            DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
-            DataSourceType::AmazonOpensearch => "AMAZON_OPENSEARCH",
-            DataSourceType::Athena => "ATHENA",
-            DataSourceType::Aurora => "AURORA",
-            DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
-            DataSourceType::AwsIotAnalytics => "AWS_IOT_ANALYTICS",
-            DataSourceType::Bigquery => "BIGQUERY",
-            DataSourceType::Databricks => "DATABRICKS",
-            DataSourceType::Exasol => "EXASOL",
-            DataSourceType::Github => "GITHUB",
-            DataSourceType::Jira => "JIRA",
-            DataSourceType::Mariadb => "MARIADB",
-            DataSourceType::Mysql => "MYSQL",
-            DataSourceType::Oracle => "ORACLE",
-            DataSourceType::Postgresql => "POSTGRESQL",
-            DataSourceType::Presto => "PRESTO",
-            DataSourceType::Redshift => "REDSHIFT",
-            DataSourceType::S3 => "S3",
-            DataSourceType::Salesforce => "SALESFORCE",
-            DataSourceType::Servicenow => "SERVICENOW",
-            DataSourceType::Snowflake => "SNOWFLAKE",
-            DataSourceType::Spark => "SPARK",
-            DataSourceType::Sqlserver => "SQLSERVER",
-            DataSourceType::Starburst => "STARBURST",
-            DataSourceType::Teradata => "TERADATA",
-            DataSourceType::Timestream => "TIMESTREAM",
-            DataSourceType::Trino => "TRINO",
-            DataSourceType::Twitter => "TWITTER",
-            DataSourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADOBE_ANALYTICS",
-            "AMAZON_ELASTICSEARCH",
-            "AMAZON_OPENSEARCH",
-            "ATHENA",
-            "AURORA",
-            "AURORA_POSTGRESQL",
-            "AWS_IOT_ANALYTICS",
-            "BIGQUERY",
-            "DATABRICKS",
-            "EXASOL",
-            "GITHUB",
-            "JIRA",
-            "MARIADB",
-            "MYSQL",
-            "ORACLE",
-            "POSTGRESQL",
-            "PRESTO",
-            "REDSHIFT",
-            "S3",
-            "SALESFORCE",
-            "SERVICENOW",
-            "SNOWFLAKE",
-            "SPARK",
-            "SQLSERVER",
-            "STARBURST",
-            "TERADATA",
-            "TIMESTREAM",
-            "TRINO",
-            "TWITTER",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataSourceType::AdobeAnalytics => "ADOBE_ANALYTICS",
+    DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
+    DataSourceType::AmazonOpensearch => "AMAZON_OPENSEARCH",
+    DataSourceType::Athena => "ATHENA",
+    DataSourceType::Aurora => "AURORA",
+    DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
+    DataSourceType::AwsIotAnalytics => "AWS_IOT_ANALYTICS",
+    DataSourceType::Bigquery => "BIGQUERY",
+    DataSourceType::Databricks => "DATABRICKS",
+    DataSourceType::Exasol => "EXASOL",
+    DataSourceType::Github => "GITHUB",
+    DataSourceType::Jira => "JIRA",
+    DataSourceType::Mariadb => "MARIADB",
+    DataSourceType::Mysql => "MYSQL",
+    DataSourceType::Oracle => "ORACLE",
+    DataSourceType::Postgresql => "POSTGRESQL",
+    DataSourceType::Presto => "PRESTO",
+    DataSourceType::Redshift => "REDSHIFT",
+    DataSourceType::S3 => "S3",
+    DataSourceType::Salesforce => "SALESFORCE",
+    DataSourceType::Servicenow => "SERVICENOW",
+    DataSourceType::Snowflake => "SNOWFLAKE",
+    DataSourceType::Spark => "SPARK",
+    DataSourceType::Sqlserver => "SQLSERVER",
+    DataSourceType::Starburst => "STARBURST",
+    DataSourceType::Teradata => "TERADATA",
+    DataSourceType::Timestream => "TIMESTREAM",
+    DataSourceType::Trino => "TRINO",
+    DataSourceType::Twitter => "TWITTER",
+    DataSourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADOBE_ANALYTICS", "AMAZON_ELASTICSEARCH", "AMAZON_OPENSEARCH", "ATHENA", "AURORA", "AURORA_POSTGRESQL", "AWS_IOT_ANALYTICS", "BIGQUERY", "DATABRICKS", "EXASOL", "GITHUB", "JIRA", "MARIADB", "MYSQL", "ORACLE", "POSTGRESQL", "PRESTO", "REDSHIFT", "S3", "SALESFORCE", "SERVICENOW", "SNOWFLAKE", "SPARK", "SQLSERVER", "STARBURST", "TERADATA", "TIMESTREAM", "TRINO", "TWITTER"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DataSourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DataSourceType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DataSourceType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DataSourceType::AdobeAnalytics => write!(f, "ADOBE_ANALYTICS"),
-            DataSourceType::AmazonElasticsearch => write!(f, "AMAZON_ELASTICSEARCH"),
-            DataSourceType::AmazonOpensearch => write!(f, "AMAZON_OPENSEARCH"),
-            DataSourceType::Athena => write!(f, "ATHENA"),
-            DataSourceType::Aurora => write!(f, "AURORA"),
-            DataSourceType::AuroraPostgresql => write!(f, "AURORA_POSTGRESQL"),
-            DataSourceType::AwsIotAnalytics => write!(f, "AWS_IOT_ANALYTICS"),
-            DataSourceType::Bigquery => write!(f, "BIGQUERY"),
-            DataSourceType::Databricks => write!(f, "DATABRICKS"),
-            DataSourceType::Exasol => write!(f, "EXASOL"),
-            DataSourceType::Github => write!(f, "GITHUB"),
-            DataSourceType::Jira => write!(f, "JIRA"),
-            DataSourceType::Mariadb => write!(f, "MARIADB"),
-            DataSourceType::Mysql => write!(f, "MYSQL"),
-            DataSourceType::Oracle => write!(f, "ORACLE"),
-            DataSourceType::Postgresql => write!(f, "POSTGRESQL"),
-            DataSourceType::Presto => write!(f, "PRESTO"),
-            DataSourceType::Redshift => write!(f, "REDSHIFT"),
-            DataSourceType::S3 => write!(f, "S3"),
-            DataSourceType::Salesforce => write!(f, "SALESFORCE"),
-            DataSourceType::Servicenow => write!(f, "SERVICENOW"),
-            DataSourceType::Snowflake => write!(f, "SNOWFLAKE"),
-            DataSourceType::Spark => write!(f, "SPARK"),
-            DataSourceType::Sqlserver => write!(f, "SQLSERVER"),
-            DataSourceType::Starburst => write!(f, "STARBURST"),
-            DataSourceType::Teradata => write!(f, "TERADATA"),
-            DataSourceType::Timestream => write!(f, "TIMESTREAM"),
-            DataSourceType::Trino => write!(f, "TRINO"),
-            DataSourceType::Twitter => write!(f, "TWITTER"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DataSourceType::AdobeAnalytics => write!(f, "ADOBE_ANALYTICS"),
+DataSourceType::AmazonElasticsearch => write!(f, "AMAZON_ELASTICSEARCH"),
+DataSourceType::AmazonOpensearch => write!(f, "AMAZON_OPENSEARCH"),
+DataSourceType::Athena => write!(f, "ATHENA"),
+DataSourceType::Aurora => write!(f, "AURORA"),
+DataSourceType::AuroraPostgresql => write!(f, "AURORA_POSTGRESQL"),
+DataSourceType::AwsIotAnalytics => write!(f, "AWS_IOT_ANALYTICS"),
+DataSourceType::Bigquery => write!(f, "BIGQUERY"),
+DataSourceType::Databricks => write!(f, "DATABRICKS"),
+DataSourceType::Exasol => write!(f, "EXASOL"),
+DataSourceType::Github => write!(f, "GITHUB"),
+DataSourceType::Jira => write!(f, "JIRA"),
+DataSourceType::Mariadb => write!(f, "MARIADB"),
+DataSourceType::Mysql => write!(f, "MYSQL"),
+DataSourceType::Oracle => write!(f, "ORACLE"),
+DataSourceType::Postgresql => write!(f, "POSTGRESQL"),
+DataSourceType::Presto => write!(f, "PRESTO"),
+DataSourceType::Redshift => write!(f, "REDSHIFT"),
+DataSourceType::S3 => write!(f, "S3"),
+DataSourceType::Salesforce => write!(f, "SALESFORCE"),
+DataSourceType::Servicenow => write!(f, "SERVICENOW"),
+DataSourceType::Snowflake => write!(f, "SNOWFLAKE"),
+DataSourceType::Spark => write!(f, "SPARK"),
+DataSourceType::Sqlserver => write!(f, "SQLSERVER"),
+DataSourceType::Starburst => write!(f, "STARBURST"),
+DataSourceType::Teradata => write!(f, "TERADATA"),
+DataSourceType::Timestream => write!(f, "TIMESTREAM"),
+DataSourceType::Trino => write!(f, "TRINO"),
+DataSourceType::Twitter => write!(f, "TWITTER"),
+DataSourceType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

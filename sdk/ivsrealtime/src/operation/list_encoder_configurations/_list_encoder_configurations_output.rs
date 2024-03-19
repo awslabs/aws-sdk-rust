@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEncoderConfigurationsOutput {
+pub struct ListEncoderConfigurationsOutput  {
     /// <p>List of the matching EncoderConfigurations (summary information only).</p>
-    pub encoder_configurations: ::std::vec::Vec<crate::types::EncoderConfigurationSummary>,
+    pub encoder_configurations: ::std::vec::Vec::<crate::types::EncoderConfigurationSummary>,
     /// <p>If there are more encoder configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListEncoderConfigurationsOutput {
+impl  ListEncoderConfigurationsOutput  {
     /// <p>List of the matching EncoderConfigurations (summary information only).</p>
-    pub fn encoder_configurations(&self) -> &[crate::types::EncoderConfigurationSummary] {
-        use std::ops::Deref;
-        self.encoder_configurations.deref()
+    pub fn encoder_configurations(&self) -> & [crate::types::EncoderConfigurationSummary] {
+        use std::ops::Deref; self.encoder_configurations.deref()
     }
     /// <p>If there are more encoder configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEncoderConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEncoderConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEncoderConfigurationsOutput`](crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput).
     pub fn builder() -> crate::operation::list_encoder_configurations::builders::ListEncoderConfigurationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListEncoderConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEncoderConfigurationsOutputBuilder {
-    pub(crate) encoder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EncoderConfigurationSummary>>,
+    pub(crate) encoder_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::EncoderConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListEncoderConfigurationsOutputBuilder {
     /// <p>List of the matching EncoderConfigurations (summary information only).</p>
     pub fn encoder_configurations(mut self, input: crate::types::EncoderConfigurationSummary) -> Self {
         let mut v = self.encoder_configurations.unwrap_or_default();
-        v.push(input);
-        self.encoder_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.encoder_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching EncoderConfigurations (summary information only).</p>
-    pub fn set_encoder_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncoderConfigurationSummary>>) -> Self {
-        self.encoder_configurations = input;
-        self
+    pub fn set_encoder_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EncoderConfigurationSummary>>) -> Self {
+        self.encoder_configurations = input; self
     }
     /// <p>List of the matching EncoderConfigurations (summary information only).</p>
-    pub fn get_encoder_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncoderConfigurationSummary>> {
+    pub fn get_encoder_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EncoderConfigurationSummary>> {
         &self.encoder_configurations
     }
     /// <p>If there are more encoder configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,40 +66,37 @@ impl ListEncoderConfigurationsOutputBuilder {
     }
     /// <p>If there are more encoder configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more encoder configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEncoderConfigurationsOutput`](crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`encoder_configurations`](crate::operation::list_encoder_configurations::builders::ListEncoderConfigurationsOutputBuilder::encoder_configurations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput {
-            encoder_configurations: self.encoder_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encoder_configurations",
-                    "encoder_configurations was not specified but it is required when building ListEncoderConfigurationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_encoder_configurations::ListEncoderConfigurationsOutput {
+                encoder_configurations: self.encoder_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encoder_configurations", "encoder_configurations was not specified but it is required when building ListEncoderConfigurationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

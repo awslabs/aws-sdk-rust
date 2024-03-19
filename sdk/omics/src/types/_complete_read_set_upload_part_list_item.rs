@@ -3,7 +3,7 @@
 /// <p>Part of the response to the CompleteReadSetUpload API, including metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteReadSetUploadPartListItem {
+pub struct CompleteReadSetUploadPartListItem  {
     /// <p>A number identifying the part in a read set upload.</p>
     pub part_number: i32,
     /// <p>The source file of the part being uploaded.</p>
@@ -11,19 +11,18 @@ pub struct CompleteReadSetUploadPartListItem {
     /// <p>A unique identifier used to confirm that parts are being added to the correct upload.</p>
     pub checksum: ::std::string::String,
 }
-impl CompleteReadSetUploadPartListItem {
+impl  CompleteReadSetUploadPartListItem  {
     /// <p>A number identifying the part in a read set upload.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
     /// <p>The source file of the part being uploaded.</p>
-    pub fn part_source(&self) -> &crate::types::ReadSetPartSource {
+    pub fn part_source(&self) -> & crate::types::ReadSetPartSource {
         &self.part_source
     }
     /// <p>A unique identifier used to confirm that parts are being added to the correct upload.</p>
-    pub fn checksum(&self) -> &str {
-        use std::ops::Deref;
-        self.checksum.deref()
+    pub fn checksum(&self) -> & str {
+        use std::ops::Deref; self.checksum.deref()
     }
 }
 impl CompleteReadSetUploadPartListItem {
@@ -50,8 +49,7 @@ impl CompleteReadSetUploadPartListItemBuilder {
     }
     /// <p>A number identifying the part in a read set upload.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.part_number = input;
-        self
+        self.part_number = input; self
     }
     /// <p>A number identifying the part in a read set upload.</p>
     pub fn get_part_number(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,7 @@ impl CompleteReadSetUploadPartListItemBuilder {
     }
     /// <p>The source file of the part being uploaded.</p>
     pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
-        self.part_source = input;
-        self
+        self.part_source = input; self
     }
     /// <p>The source file of the part being uploaded.</p>
     pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
@@ -80,8 +77,7 @@ impl CompleteReadSetUploadPartListItemBuilder {
     }
     /// <p>A unique identifier used to confirm that parts are being added to the correct upload.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>A unique identifier used to confirm that parts are being added to the correct upload.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl CompleteReadSetUploadPartListItemBuilder {
     /// - [`part_source`](crate::types::builders::CompleteReadSetUploadPartListItemBuilder::part_source)
     /// - [`checksum`](crate::types::builders::CompleteReadSetUploadPartListItemBuilder::checksum)
     pub fn build(self) -> ::std::result::Result<crate::types::CompleteReadSetUploadPartListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompleteReadSetUploadPartListItem {
-            part_number: self.part_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "part_number",
-                    "part_number was not specified but it is required when building CompleteReadSetUploadPartListItem",
-                )
-            })?,
-            part_source: self.part_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "part_source",
-                    "part_source was not specified but it is required when building CompleteReadSetUploadPartListItem",
-                )
-            })?,
-            checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum",
-                    "checksum was not specified but it is required when building CompleteReadSetUploadPartListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompleteReadSetUploadPartListItem {
+                part_number: self.part_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("part_number", "part_number was not specified but it is required when building CompleteReadSetUploadPartListItem")
+                    )?
+                ,
+                part_source: self.part_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("part_source", "part_source was not specified but it is required when building CompleteReadSetUploadPartListItem")
+                    )?
+                ,
+                checksum: self.checksum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum", "checksum was not specified but it is required when building CompleteReadSetUploadPartListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The start CIS session message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCisSessionMessage {
+pub struct StartCisSessionMessage  {
     /// <p>The unique token that identifies the CIS session.</p>
     pub session_token: ::std::string::String,
 }
-impl StartCisSessionMessage {
+impl  StartCisSessionMessage  {
     /// <p>The unique token that identifies the CIS session.</p>
-    pub fn session_token(&self) -> &str {
-        use std::ops::Deref;
-        self.session_token.deref()
+    pub fn session_token(&self) -> & str {
+        use std::ops::Deref; self.session_token.deref()
     }
 }
 impl StartCisSessionMessage {
@@ -36,8 +35,7 @@ impl StartCisSessionMessageBuilder {
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl StartCisSessionMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`session_token`](crate::types::builders::StartCisSessionMessageBuilder::session_token)
     pub fn build(self) -> ::std::result::Result<crate::types::StartCisSessionMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartCisSessionMessage {
-            session_token: self.session_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_token",
-                    "session_token was not specified but it is required when building StartCisSessionMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StartCisSessionMessage {
+                session_token: self.session_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_token", "session_token was not specified but it is required when building StartCisSessionMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

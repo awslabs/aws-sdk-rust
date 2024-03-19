@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSamplingRuleInput {
+pub struct UpdateSamplingRuleInput  {
     /// <p>The rule and fields to change.</p>
     pub sampling_rule_update: ::std::option::Option<crate::types::SamplingRuleUpdate>,
 }
-impl UpdateSamplingRuleInput {
+impl  UpdateSamplingRuleInput  {
     /// <p>The rule and fields to change.</p>
-    pub fn sampling_rule_update(&self) -> ::std::option::Option<&crate::types::SamplingRuleUpdate> {
+    pub fn sampling_rule_update(&self) -> ::std::option::Option<& crate::types::SamplingRuleUpdate> {
         self.sampling_rule_update.as_ref()
     }
 }
@@ -34,20 +34,20 @@ impl UpdateSamplingRuleInputBuilder {
     }
     /// <p>The rule and fields to change.</p>
     pub fn set_sampling_rule_update(mut self, input: ::std::option::Option<crate::types::SamplingRuleUpdate>) -> Self {
-        self.sampling_rule_update = input;
-        self
+        self.sampling_rule_update = input; self
     }
     /// <p>The rule and fields to change.</p>
     pub fn get_sampling_rule_update(&self) -> &::std::option::Option<crate::types::SamplingRuleUpdate> {
         &self.sampling_rule_update
     }
     /// Consumes the builder and constructs a [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_sampling_rule::UpdateSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_sampling_rule::UpdateSamplingRuleInput {
-            sampling_rule_update: self.sampling_rule_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sampling_rule::UpdateSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sampling_rule::UpdateSamplingRuleInput {
+                sampling_rule_update: self.sampling_rule_update
+                ,
+            }
+        )
     }
 }
+

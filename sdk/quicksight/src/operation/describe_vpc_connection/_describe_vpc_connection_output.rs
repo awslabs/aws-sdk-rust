@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcConnectionOutput {
+pub struct DescribeVpcConnectionOutput  {
     /// <p>A response object that provides information for the specified VPC connection.</p>
     pub vpc_connection: ::std::option::Option<crate::types::VpcConnection>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct DescribeVpcConnectionOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeVpcConnectionOutput {
+impl  DescribeVpcConnectionOutput  {
     /// <p>A response object that provides information for the specified VPC connection.</p>
-    pub fn vpc_connection(&self) -> ::std::option::Option<&crate::types::VpcConnection> {
+    pub fn vpc_connection(&self) -> ::std::option::Option<& crate::types::VpcConnection> {
         self.vpc_connection.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl DescribeVpcConnectionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVpcConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcConnectionOutput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput).
     pub fn builder() -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeVpcConnectionOutputBuilder {
     }
     /// <p>A response object that provides information for the specified VPC connection.</p>
     pub fn set_vpc_connection(mut self, input: ::std::option::Option<crate::types::VpcConnection>) -> Self {
-        self.vpc_connection = input;
-        self
+        self.vpc_connection = input; self
     }
     /// <p>A response object that provides information for the specified VPC connection.</p>
     pub fn get_vpc_connection(&self) -> &::std::option::Option<crate::types::VpcConnection> {
@@ -68,8 +67,7 @@ impl DescribeVpcConnectionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl DescribeVpcConnectionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVpcConnectionOutput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput).
     pub fn build(self) -> crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput {
         crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput {
-            vpc_connection: self.vpc_connection,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            vpc_connection: self.vpc_connection
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

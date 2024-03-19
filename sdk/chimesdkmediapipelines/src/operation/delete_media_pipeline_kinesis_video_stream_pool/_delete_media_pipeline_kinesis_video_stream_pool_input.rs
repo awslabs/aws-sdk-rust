@@ -2,20 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMediaPipelineKinesisVideoStreamPoolInput {
+pub struct DeleteMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the pool being deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMediaPipelineKinesisVideoStreamPoolInput {
+impl  DeleteMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the pool being deleted.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 impl DeleteMediaPipelineKinesisVideoStreamPoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput).
-    pub fn builder(
-    ) -> crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
+    pub fn builder() -> crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
         crate::operation::delete_media_pipeline_kinesis_video_stream_pool::builders::DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder::default()
     }
 }
@@ -35,24 +34,20 @@ impl DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
     }
     /// <p>The ID of the pool being deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the pool being deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput {
-                identifier: self.identifier,
-            },
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

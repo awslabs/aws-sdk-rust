@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSupportedInstanceTypesInput {
+pub struct ListSupportedInstanceTypesInput  {
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListSupportedInstanceTypesInput {
+impl  ListSupportedInstanceTypesInput  {
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
+    pub fn release_label(&self) -> ::std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListSupportedInstanceTypesInputBuilder {
     }
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ListSupportedInstanceTypesInputBuilder {
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListSupportedInstanceTypesInput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput {
-            release_label: self.release_label,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput {
+                release_label: self.release_label
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

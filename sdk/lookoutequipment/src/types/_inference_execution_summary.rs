@@ -3,7 +3,7 @@
 /// <p>Contains information about the specific inference execution, including input and output data configuration, inference scheduling information, status, and so on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceExecutionSummary {
+pub struct InferenceExecutionSummary  {
     /// <p>The name of the machine learning model being used for the inference execution.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.</p>
@@ -33,53 +33,53 @@ pub struct InferenceExecutionSummary {
     /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
     pub model_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl InferenceExecutionSummary {
+impl  InferenceExecutionSummary  {
     /// <p>The name of the machine learning model being used for the inference execution.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the inference scheduler being used for the inference execution.</p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution.</p>
-    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution.</p>
-    pub fn scheduled_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scheduled_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began.</p>
-    pub fn data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.</p>
-    pub fn data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
-    pub fn data_input_configuration(&self) -> ::std::option::Option<&crate::types::InferenceInputConfiguration> {
+    pub fn data_input_configuration(&self) -> ::std::option::Option<& crate::types::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p>Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location.</p>
-    pub fn data_output_configuration(&self) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(&self) -> ::std::option::Option<& crate::types::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p>The S3 object that the inference execution results were uploaded to.</p>
-    pub fn customer_result_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn customer_result_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.customer_result_object.as_ref()
     }
     /// <p>Indicates the status of the inference execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InferenceExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason for failure when an inference execution has failed.</p>
-    pub fn failed_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failed_reason(&self) -> ::std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
     /// <p>The model version used for the inference execution.</p>
@@ -87,7 +87,7 @@ impl InferenceExecutionSummary {
         self.model_version
     }
     /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
-    pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_arn(&self) -> ::std::option::Option<& str> {
         self.model_version_arn.as_deref()
     }
 }
@@ -125,8 +125,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The name of the machine learning model being used for the inference execution.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the machine learning model being used for the inference execution.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The name of the inference scheduler being used for the inference execution.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_name = input;
-        self
+        self.inference_scheduler_name = input; self
     }
     /// <p>The name of the inference scheduler being used for the inference execution.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution.</p>
     pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_arn = input;
-        self
+        self.inference_scheduler_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution.</p>
     pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution.</p>
     pub fn set_scheduled_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scheduled_start_time = input;
-        self
+        self.scheduled_start_time = input; self
     }
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution.</p>
     pub fn get_scheduled_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +190,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began.</p>
     pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_start_time = input;
-        self
+        self.data_start_time = input; self
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution began.</p>
     pub fn get_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,8 +203,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.</p>
     pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_end_time = input;
-        self
+        self.data_end_time = input; self
     }
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.</p>
     pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +216,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
-        self.data_input_configuration = input;
-        self
+        self.data_input_configuration = input; self
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location.</p>
     pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
@@ -237,8 +229,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location.</p>
     pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
-        self.data_output_configuration = input;
-        self
+        self.data_output_configuration = input; self
     }
     /// <p>Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location.</p>
     pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
@@ -251,8 +242,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn set_customer_result_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.customer_result_object = input;
-        self
+        self.customer_result_object = input; self
     }
     /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn get_customer_result_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -265,8 +255,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Indicates the status of the inference execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of the inference execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExecutionStatus> {
@@ -279,8 +268,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>Specifies the reason for failure when an inference execution has failed.</p>
     pub fn set_failed_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failed_reason = input;
-        self
+        self.failed_reason = input; self
     }
     /// <p>Specifies the reason for failure when an inference execution has failed.</p>
     pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +281,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The model version used for the inference execution.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The model version used for the inference execution.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
@@ -307,8 +294,7 @@ impl InferenceExecutionSummaryBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
     pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_arn = input;
-        self
+        self.model_version_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
     pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -317,20 +303,35 @@ impl InferenceExecutionSummaryBuilder {
     /// Consumes the builder and constructs a [`InferenceExecutionSummary`](crate::types::InferenceExecutionSummary).
     pub fn build(self) -> crate::types::InferenceExecutionSummary {
         crate::types::InferenceExecutionSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            inference_scheduler_name: self.inference_scheduler_name,
-            inference_scheduler_arn: self.inference_scheduler_arn,
-            scheduled_start_time: self.scheduled_start_time,
-            data_start_time: self.data_start_time,
-            data_end_time: self.data_end_time,
-            data_input_configuration: self.data_input_configuration,
-            data_output_configuration: self.data_output_configuration,
-            customer_result_object: self.customer_result_object,
-            status: self.status,
-            failed_reason: self.failed_reason,
-            model_version: self.model_version,
-            model_version_arn: self.model_version_arn,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            inference_scheduler_name: self.inference_scheduler_name
+            ,
+            inference_scheduler_arn: self.inference_scheduler_arn
+            ,
+            scheduled_start_time: self.scheduled_start_time
+            ,
+            data_start_time: self.data_start_time
+            ,
+            data_end_time: self.data_end_time
+            ,
+            data_input_configuration: self.data_input_configuration
+            ,
+            data_output_configuration: self.data_output_configuration
+            ,
+            customer_result_object: self.customer_result_object
+            ,
+            status: self.status
+            ,
+            failed_reason: self.failed_reason
+            ,
+            model_version: self.model_version
+            ,
+            model_version_arn: self.model_version_arn
+            ,
         }
     }
 }
+

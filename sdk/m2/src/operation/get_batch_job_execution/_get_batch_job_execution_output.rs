@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBatchJobExecutionOutput {
+pub struct GetBatchJobExecutionOutput  {
     /// <p>The unique identifier for this batch job execution.</p>
     pub execution_id: ::std::string::String,
     /// <p>The identifier of the application.</p>
@@ -29,63 +29,61 @@ pub struct GetBatchJobExecutionOutput {
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
     _request_id: Option<String>,
 }
-impl GetBatchJobExecutionOutput {
+impl  GetBatchJobExecutionOutput  {
     /// <p>The unique identifier for this batch job execution.</p>
-    pub fn execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_id.deref()
+    pub fn execution_id(&self) -> & str {
+        use std::ops::Deref; self.execution_id.deref()
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The unique identifier for this batch job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of this batch job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The user for the job.</p>
-    pub fn job_user(&self) -> ::std::option::Option<&str> {
+    pub fn job_user(&self) -> ::std::option::Option<& str> {
         self.job_user.as_deref()
     }
     /// <p>The type of job.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::BatchJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::BatchJobType> {
         self.job_type.as_ref()
     }
     /// <p>The status of the batch job execution.</p>
-    pub fn status(&self) -> &crate::types::BatchJobExecutionStatus {
+    pub fn status(&self) -> & crate::types::BatchJobExecutionStatus {
         &self.status
     }
     /// <p>The timestamp when the batch job execution started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The timestamp when the batch job execution ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
-    pub fn return_code(&self) -> ::std::option::Option<&str> {
+    pub fn return_code(&self) -> ::std::option::Option<& str> {
         self.return_code.as_deref()
     }
     /// <p>The unique identifier of this batch job.</p>
-    pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
+    pub fn batch_job_identifier(&self) -> ::std::option::Option<& crate::types::BatchJobIdentifier> {
         self.batch_job_identifier.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBatchJobExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBatchJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchJobExecutionOutput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput).
     pub fn builder() -> crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder {
@@ -120,8 +118,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The unique identifier for this batch job execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The unique identifier for this batch job execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +145,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The unique identifier for this batch job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique identifier for this batch job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +158,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The name of this batch job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of this batch job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +171,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The user for the job.</p>
     pub fn set_job_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_user = input;
-        self
+        self.job_user = input; self
     }
     /// <p>The user for the job.</p>
     pub fn get_job_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +184,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The type of job.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::BatchJobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The type of job.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::BatchJobType> {
@@ -206,8 +198,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The status of the batch job execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the batch job execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchJobExecutionStatus> {
@@ -221,8 +212,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The timestamp when the batch job execution started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp when the batch job execution started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -235,8 +225,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The timestamp when the batch job execution ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp when the batch job execution ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -249,8 +238,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the reported status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +251,7 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn set_return_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.return_code = input;
-        self
+        self.return_code = input; self
     }
     /// <p>The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.</p>
     pub fn get_return_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,66 +264,69 @@ impl GetBatchJobExecutionOutputBuilder {
     }
     /// <p>The unique identifier of this batch job.</p>
     pub fn set_batch_job_identifier(mut self, input: ::std::option::Option<crate::types::BatchJobIdentifier>) -> Self {
-        self.batch_job_identifier = input;
-        self
+        self.batch_job_identifier = input; self
     }
     /// <p>The unique identifier of this batch job.</p>
     pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         &self.batch_job_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBatchJobExecutionOutput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_id`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::execution_id)
     /// - [`application_id`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::application_id)
     /// - [`status`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::status)
     /// - [`start_time`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::start_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput {
-            execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_id",
-                    "execution_id was not specified but it is required when building GetBatchJobExecutionOutput",
-                )
-            })?,
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetBatchJobExecutionOutput",
-                )
-            })?,
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_user: self.job_user,
-            job_type: self.job_type,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetBatchJobExecutionOutput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building GetBatchJobExecutionOutput",
-                )
-            })?,
-            end_time: self.end_time,
-            status_reason: self.status_reason,
-            return_code: self.return_code,
-            batch_job_identifier: self.batch_job_identifier,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput {
+                execution_id: self.execution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_id", "execution_id was not specified but it is required when building GetBatchJobExecutionOutput")
+                    )?
+                ,
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building GetBatchJobExecutionOutput")
+                    )?
+                ,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_user: self.job_user
+                ,
+                job_type: self.job_type
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetBatchJobExecutionOutput")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building GetBatchJobExecutionOutput")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                status_reason: self.status_reason
+                ,
+                return_code: self.return_code
+                ,
+                batch_job_identifier: self.batch_job_identifier
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

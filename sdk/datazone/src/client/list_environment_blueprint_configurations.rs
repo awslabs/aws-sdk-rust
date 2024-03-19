@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironmentBlueprintConfigurations`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of blueprint configurations to return in a single call to <code>ListEnvironmentBlueprintConfigurations</code>. When the number of configurations to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentBlueprintConfigurations</code> to list the next set of configurations.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of blueprint configurations is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of configurations, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprintConfigurations</code> to list the next set of configurations.</p><br>
-    /// - On success, responds with [`ListEnvironmentBlueprintConfigurationsOutput`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentBlueprintConfigurationsOutput`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput) with field(s):
     ///   - [`items(Option<Vec::<EnvironmentBlueprintConfigurationItem>>)`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput::items): <p>The results of the <code>ListEnvironmentBlueprintConfigurations</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput::next_token): <p>When the number of blueprint configurations is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of configurations, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprintConfigurations</code> to list the next set of configurations.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentBlueprintConfigurationsError>`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsError)
-    pub fn list_environment_blueprint_configurations(
-        &self,
-    ) -> crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder {
-        crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListEnvironmentBlueprintConfigurationsError>`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsError)
+    pub fn list_environment_blueprint_configurations(&self) -> crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder {
+                                crate::operation::list_environment_blueprint_configurations::builders::ListEnvironmentBlueprintConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LatestInPipelineExecutionFilter {
+pub struct LatestInPipelineExecutionFilter  {
     /// <p>The execution ID for the latest execution in the pipeline.</p>
     pub pipeline_execution_id: ::std::string::String,
     /// <p>The start time to filter on for the latest execution in the pipeline. Valid options:</p>
@@ -17,11 +17,10 @@ pub struct LatestInPipelineExecutionFilter {
     /// </ul>
     pub start_time_range: crate::types::StartTimeRange,
 }
-impl LatestInPipelineExecutionFilter {
+impl  LatestInPipelineExecutionFilter  {
     /// <p>The execution ID for the latest execution in the pipeline.</p>
-    pub fn pipeline_execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pipeline_execution_id.deref()
+    pub fn pipeline_execution_id(&self) -> & str {
+        use std::ops::Deref; self.pipeline_execution_id.deref()
     }
     /// <p>The start time to filter on for the latest execution in the pipeline. Valid options:</p>
     /// <ul>
@@ -30,7 +29,7 @@ impl LatestInPipelineExecutionFilter {
     /// <li>
     /// <p>Latest</p></li>
     /// </ul>
-    pub fn start_time_range(&self) -> &crate::types::StartTimeRange {
+    pub fn start_time_range(&self) -> & crate::types::StartTimeRange {
         &self.start_time_range
     }
 }
@@ -57,8 +56,7 @@ impl LatestInPipelineExecutionFilterBuilder {
     }
     /// <p>The execution ID for the latest execution in the pipeline.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The execution ID for the latest execution in the pipeline.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl LatestInPipelineExecutionFilterBuilder {
     /// <p>Latest</p></li>
     /// </ul>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
-        self.start_time_range = input;
-        self
+        self.start_time_range = input; self
     }
     /// <p>The start time to filter on for the latest execution in the pipeline. Valid options:</p>
     /// <ul>
@@ -102,19 +99,20 @@ impl LatestInPipelineExecutionFilterBuilder {
     /// - [`pipeline_execution_id`](crate::types::builders::LatestInPipelineExecutionFilterBuilder::pipeline_execution_id)
     /// - [`start_time_range`](crate::types::builders::LatestInPipelineExecutionFilterBuilder::start_time_range)
     pub fn build(self) -> ::std::result::Result<crate::types::LatestInPipelineExecutionFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LatestInPipelineExecutionFilter {
-            pipeline_execution_id: self.pipeline_execution_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pipeline_execution_id",
-                    "pipeline_execution_id was not specified but it is required when building LatestInPipelineExecutionFilter",
-                )
-            })?,
-            start_time_range: self.start_time_range.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time_range",
-                    "start_time_range was not specified but it is required when building LatestInPipelineExecutionFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LatestInPipelineExecutionFilter {
+                pipeline_execution_id: self.pipeline_execution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pipeline_execution_id", "pipeline_execution_id was not specified but it is required when building LatestInPipelineExecutionFilter")
+                    )?
+                ,
+                start_time_range: self.start_time_range
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time_range", "start_time_range was not specified but it is required when building LatestInPipelineExecutionFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

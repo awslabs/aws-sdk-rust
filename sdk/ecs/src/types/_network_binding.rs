@@ -3,7 +3,7 @@
 /// <p>Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <code>DescribeTasks</code> API responses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkBinding {
+pub struct NetworkBinding  {
     /// <p>The IP address that the container is bound to on the container instance.</p>
     pub bind_ip: ::std::option::Option<::std::string::String>,
     /// <p>The port number on the container that's used with the network binding.</p>
@@ -51,9 +51,9 @@ pub struct NetworkBinding {
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
     pub host_port_range: ::std::option::Option<::std::string::String>,
 }
-impl NetworkBinding {
+impl  NetworkBinding  {
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    pub fn bind_ip(&self) -> ::std::option::Option<&str> {
+    pub fn bind_ip(&self) -> ::std::option::Option<& str> {
         self.bind_ip.as_deref()
     }
     /// <p>The port number on the container that's used with the network binding.</p>
@@ -65,7 +65,7 @@ impl NetworkBinding {
         self.host_port
     }
     /// <p>The protocol used for the network binding.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::TransportProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::TransportProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
@@ -103,11 +103,11 @@ impl NetworkBinding {
     /// <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
-    pub fn container_port_range(&self) -> ::std::option::Option<&str> {
+    pub fn container_port_range(&self) -> ::std::option::Option<& str> {
         self.container_port_range.as_deref()
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
-    pub fn host_port_range(&self) -> ::std::option::Option<&str> {
+    pub fn host_port_range(&self) -> ::std::option::Option<& str> {
         self.host_port_range.as_deref()
     }
 }
@@ -137,8 +137,7 @@ impl NetworkBindingBuilder {
     }
     /// <p>The IP address that the container is bound to on the container instance.</p>
     pub fn set_bind_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bind_ip = input;
-        self
+        self.bind_ip = input; self
     }
     /// <p>The IP address that the container is bound to on the container instance.</p>
     pub fn get_bind_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +150,7 @@ impl NetworkBindingBuilder {
     }
     /// <p>The port number on the container that's used with the network binding.</p>
     pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.container_port = input;
-        self
+        self.container_port = input; self
     }
     /// <p>The port number on the container that's used with the network binding.</p>
     pub fn get_container_port(&self) -> &::std::option::Option<i32> {
@@ -165,8 +163,7 @@ impl NetworkBindingBuilder {
     }
     /// <p>The port number on the host that's used with the network binding.</p>
     pub fn set_host_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.host_port = input;
-        self
+        self.host_port = input; self
     }
     /// <p>The port number on the host that's used with the network binding.</p>
     pub fn get_host_port(&self) -> &::std::option::Option<i32> {
@@ -179,8 +176,7 @@ impl NetworkBindingBuilder {
     }
     /// <p>The protocol used for the network binding.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TransportProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used for the network binding.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TransportProtocol> {
@@ -261,8 +257,7 @@ impl NetworkBindingBuilder {
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
     pub fn set_container_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_port_range = input;
-        self
+        self.container_port_range = input; self
     }
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
@@ -309,8 +304,7 @@ impl NetworkBindingBuilder {
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
     pub fn set_host_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_port_range = input;
-        self
+        self.host_port_range = input; self
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
     pub fn get_host_port_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,12 +313,19 @@ impl NetworkBindingBuilder {
     /// Consumes the builder and constructs a [`NetworkBinding`](crate::types::NetworkBinding).
     pub fn build(self) -> crate::types::NetworkBinding {
         crate::types::NetworkBinding {
-            bind_ip: self.bind_ip,
-            container_port: self.container_port,
-            host_port: self.host_port,
-            protocol: self.protocol,
-            container_port_range: self.container_port_range,
-            host_port_range: self.host_port_range,
+            bind_ip: self.bind_ip
+            ,
+            container_port: self.container_port
+            ,
+            host_port: self.host_port
+            ,
+            protocol: self.protocol
+            ,
+            container_port_range: self.container_port_range
+            ,
+            host_port_range: self.host_port_range
+            ,
         }
     }
 }
+

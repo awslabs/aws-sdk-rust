@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct PutChunkInput {
+pub struct PutChunkInput  {
     /// Backup job Id for the in-progress backup.
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// Upload Id for the in-progress upload.
@@ -18,13 +18,13 @@ pub struct PutChunkInput {
     /// Checksum algorithm
     pub checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
 }
-impl PutChunkInput {
+impl  PutChunkInput  {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// Upload Id for the in-progress upload.
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// Describes this chunk's position relative to the other chunks
@@ -32,7 +32,7 @@ impl PutChunkInput {
         self.chunk_index
     }
     /// Data to be uploaded
-    pub fn data(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn data(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.data
     }
     /// Data length
@@ -40,11 +40,11 @@ impl PutChunkInput {
         self.length
     }
     /// Data checksum
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<& crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl PutChunkInputBuilder {
     }
     /// Backup job Id for the in-progress backup.
     pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_job_id = input;
-        self
+        self.backup_job_id = input; self
     }
     /// Backup job Id for the in-progress backup.
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl PutChunkInputBuilder {
     }
     /// Upload Id for the in-progress upload.
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// Upload Id for the in-progress upload.
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl PutChunkInputBuilder {
     }
     /// Describes this chunk's position relative to the other chunks
     pub fn set_chunk_index(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.chunk_index = input;
-        self
+        self.chunk_index = input; self
     }
     /// Describes this chunk's position relative to the other chunks
     pub fn get_chunk_index(&self) -> &::std::option::Option<i64> {
@@ -121,8 +118,7 @@ impl PutChunkInputBuilder {
     }
     /// Data to be uploaded
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// Data to be uploaded
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -136,8 +132,7 @@ impl PutChunkInputBuilder {
     }
     /// Data length
     pub fn set_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// Data length
     pub fn get_length(&self) -> &::std::option::Option<i64> {
@@ -151,8 +146,7 @@ impl PutChunkInputBuilder {
     }
     /// Data checksum
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// Data checksum
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl PutChunkInputBuilder {
     }
     /// Checksum algorithm
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input;
-        self
+        self.checksum_algorithm = input; self
     }
     /// Checksum algorithm
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
@@ -175,14 +168,25 @@ impl PutChunkInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutChunkInput`](crate::operation::put_chunk::PutChunkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkInput {
-            backup_job_id: self.backup_job_id,
-            upload_id: self.upload_id,
-            chunk_index: self.chunk_index,
-            data: self.data.unwrap_or_default(),
-            length: self.length,
-            checksum: self.checksum,
-            checksum_algorithm: self.checksum_algorithm,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_chunk::PutChunkInput {
+                backup_job_id: self.backup_job_id
+                ,
+                upload_id: self.upload_id
+                ,
+                chunk_index: self.chunk_index
+                ,
+                data: self.data
+                    .unwrap_or_default()
+                ,
+                length: self.length
+                ,
+                checksum: self.checksum
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
+            }
+        )
     }
 }
+

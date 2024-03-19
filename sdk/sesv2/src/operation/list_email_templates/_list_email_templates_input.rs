@@ -3,16 +3,16 @@
 /// <p>Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web Services Region. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEmailTemplatesInput {
+pub struct ListEmailTemplatesInput  {
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListEmailTemplatesInput {
+impl  ListEmailTemplatesInput  {
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -43,8 +43,7 @@ impl ListEmailTemplatesInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl ListEmailTemplatesInputBuilder {
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
@@ -68,13 +66,15 @@ impl ListEmailTemplatesInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListEmailTemplatesInput`](crate::operation::list_email_templates::ListEmailTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_email_templates::ListEmailTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_email_templates::ListEmailTemplatesInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_email_templates::ListEmailTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_email_templates::ListEmailTemplatesInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

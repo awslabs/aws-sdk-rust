@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePackageVersionOutput {
+pub struct CreatePackageVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated software package.</p>
@@ -12,44 +12,44 @@ pub struct CreatePackageVersionOutput {
     /// <p>The package version description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>Error reason for a package version failure during creation or update.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePackageVersionOutput {
+impl  CreatePackageVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    pub fn package_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_version_arn(&self) -> ::std::option::Option<& str> {
         self.package_version_arn.as_deref()
     }
     /// <p>The name of the associated software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The name of the new package version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The package version description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<& str> {
         self.error_reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreatePackageVersionOutput {
+impl  ::std::fmt::Debug for CreatePackageVersionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageVersionOutput");
         formatter.field("package_version_arn", &self.package_version_arn);
@@ -64,10 +64,10 @@ impl ::std::fmt::Debug for CreatePackageVersionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePackageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageVersionOutput`](crate::operation::create_package_version::CreatePackageVersionOutput).
     pub fn builder() -> crate::operation::create_package_version::builders::CreatePackageVersionOutputBuilder {
@@ -83,7 +83,7 @@ pub struct CreatePackageVersionOutputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
     pub(crate) error_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -96,8 +96,7 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub fn set_package_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version_arn = input;
-        self
+        self.package_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub fn get_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>The name of the associated software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the associated software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>The name of the new package version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name of the new package version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>The package version description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package version description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,17 +148,16 @@ impl CreatePackageVersionOutputBuilder {
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -172,8 +167,7 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -186,32 +180,38 @@ impl CreatePackageVersionOutputBuilder {
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>Error reason for a package version failure during creation or update.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePackageVersionOutput`](crate::operation::create_package_version::CreatePackageVersionOutput).
     pub fn build(self) -> crate::operation::create_package_version::CreatePackageVersionOutput {
         crate::operation::create_package_version::CreatePackageVersionOutput {
-            package_version_arn: self.package_version_arn,
-            package_name: self.package_name,
-            version_name: self.version_name,
-            description: self.description,
-            attributes: self.attributes,
-            status: self.status,
-            error_reason: self.error_reason,
+            package_version_arn: self.package_version_arn
+            ,
+            package_name: self.package_name
+            ,
+            version_name: self.version_name
+            ,
+            description: self.description
+            ,
+            attributes: self.attributes
+            ,
+            status: self.status
+            ,
+            error_reason: self.error_reason
+            ,
             _request_id: self._request_id,
         }
     }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for CreatePackageVersionOutputBuilder {
         formatter.finish()
     }
 }
+

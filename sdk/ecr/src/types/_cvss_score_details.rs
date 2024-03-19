@@ -3,9 +3,9 @@
 /// <p>Information about the CVSS score.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CvssScoreDetails {
+pub struct CvssScoreDetails  {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
+    pub adjustments: ::std::option::Option<::std::vec::Vec::<crate::types::CvssScoreAdjustment>>,
     /// <p>The CVSS score.</p>
     pub score: f64,
     /// <p>The source for the CVSS score.</p>
@@ -15,27 +15,28 @@ pub struct CvssScoreDetails {
     /// <p>The CVSS version used in scoring.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl CvssScoreDetails {
+impl  CvssScoreDetails  {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustments.is_none()`.
-    pub fn adjustments(&self) -> &[crate::types::CvssScoreAdjustment] {
-        self.adjustments.as_deref().unwrap_or_default()
+    pub fn adjustments(&self) -> & [crate::types::CvssScoreAdjustment] {
+        self.adjustments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The CVSS score.</p>
     pub fn score(&self) -> f64 {
         self.score
     }
     /// <p>The source for the CVSS score.</p>
-    pub fn score_source(&self) -> ::std::option::Option<&str> {
+    pub fn score_source(&self) -> ::std::option::Option<& str> {
         self.score_source.as_deref()
     }
     /// <p>The vector for the CVSS score.</p>
-    pub fn scoring_vector(&self) -> ::std::option::Option<&str> {
+    pub fn scoring_vector(&self) -> ::std::option::Option<& str> {
         self.scoring_vector.as_deref()
     }
     /// <p>The CVSS version used in scoring.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -50,7 +51,7 @@ impl CvssScoreDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CvssScoreDetailsBuilder {
-    pub(crate) adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
+    pub(crate) adjustments: ::std::option::Option<::std::vec::Vec::<crate::types::CvssScoreAdjustment>>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) score_source: ::std::option::Option<::std::string::String>,
     pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,
@@ -64,17 +65,16 @@ impl CvssScoreDetailsBuilder {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
     pub fn adjustments(mut self, input: crate::types::CvssScoreAdjustment) -> Self {
         let mut v = self.adjustments.unwrap_or_default();
-        v.push(input);
-        self.adjustments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.adjustments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub fn set_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>) -> Self {
-        self.adjustments = input;
-        self
+    pub fn set_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CvssScoreAdjustment>>) -> Self {
+        self.adjustments = input; self
     }
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub fn get_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
+    pub fn get_adjustments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CvssScoreAdjustment>> {
         &self.adjustments
     }
     /// <p>The CVSS score.</p>
@@ -84,8 +84,7 @@ impl CvssScoreDetailsBuilder {
     }
     /// <p>The CVSS score.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The CVSS score.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -98,8 +97,7 @@ impl CvssScoreDetailsBuilder {
     }
     /// <p>The source for the CVSS score.</p>
     pub fn set_score_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.score_source = input;
-        self
+        self.score_source = input; self
     }
     /// <p>The source for the CVSS score.</p>
     pub fn get_score_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl CvssScoreDetailsBuilder {
     }
     /// <p>The vector for the CVSS score.</p>
     pub fn set_scoring_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scoring_vector = input;
-        self
+        self.scoring_vector = input; self
     }
     /// <p>The vector for the CVSS score.</p>
     pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +123,7 @@ impl CvssScoreDetailsBuilder {
     }
     /// <p>The CVSS version used in scoring.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The CVSS version used in scoring.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,11 +132,18 @@ impl CvssScoreDetailsBuilder {
     /// Consumes the builder and constructs a [`CvssScoreDetails`](crate::types::CvssScoreDetails).
     pub fn build(self) -> crate::types::CvssScoreDetails {
         crate::types::CvssScoreDetails {
-            adjustments: self.adjustments,
-            score: self.score.unwrap_or_default(),
-            score_source: self.score_source,
-            scoring_vector: self.scoring_vector,
-            version: self.version,
+            adjustments: self.adjustments
+            ,
+            score: self.score
+                .unwrap_or_default()
+            ,
+            score_source: self.score_source
+            ,
+            scoring_vector: self.scoring_vector
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

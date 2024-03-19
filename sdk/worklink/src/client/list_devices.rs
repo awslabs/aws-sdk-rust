@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDevices`](crate::operation::list_devices::builders::ListDevicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
+                            /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec::<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>Information about the devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
+                            /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
-        crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

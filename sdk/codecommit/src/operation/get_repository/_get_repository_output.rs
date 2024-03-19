@@ -3,22 +3,22 @@
 /// <p>Represents the output of a get repository operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryOutput {
+pub struct GetRepositoryOutput  {
     /// <p>Information about the repository.</p>
     pub repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
 }
-impl GetRepositoryOutput {
+impl  GetRepositoryOutput  {
     /// <p>Information about the repository.</p>
-    pub fn repository_metadata(&self) -> ::std::option::Option<&crate::types::RepositoryMetadata> {
+    pub fn repository_metadata(&self) -> ::std::option::Option<& crate::types::RepositoryMetadata> {
         self.repository_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
     pub fn builder() -> crate::operation::get_repository::builders::GetRepositoryOutputBuilder {
@@ -41,27 +41,28 @@ impl GetRepositoryOutputBuilder {
     }
     /// <p>Information about the repository.</p>
     pub fn set_repository_metadata(mut self, input: ::std::option::Option<crate::types::RepositoryMetadata>) -> Self {
-        self.repository_metadata = input;
-        self
+        self.repository_metadata = input; self
     }
     /// <p>Information about the repository.</p>
     pub fn get_repository_metadata(&self) -> &::std::option::Option<crate::types::RepositoryMetadata> {
         &self.repository_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
     pub fn build(self) -> crate::operation::get_repository::GetRepositoryOutput {
         crate::operation::get_repository::GetRepositoryOutput {
-            repository_metadata: self.repository_metadata,
+            repository_metadata: self.repository_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

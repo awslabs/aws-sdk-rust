@@ -3,7 +3,7 @@
 /// <p>The options for customizing a security control parameter that is a double.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DoubleConfigurationOptions {
+pub struct DoubleConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a double.</p>
     pub default_value: ::std::option::Option<f64>,
     /// <p>The minimum valid value for a control parameter that is a double.</p>
@@ -11,7 +11,7 @@ pub struct DoubleConfigurationOptions {
     /// <p>The maximum valid value for a control parameter that is a double.</p>
     pub max: ::std::option::Option<f64>,
 }
-impl DoubleConfigurationOptions {
+impl  DoubleConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a double.</p>
     pub fn default_value(&self) -> ::std::option::Option<f64> {
         self.default_value
@@ -48,8 +48,7 @@ impl DoubleConfigurationOptionsBuilder {
     }
     /// <p>The Security Hub default value for a control parameter that is a double.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is a double.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl DoubleConfigurationOptionsBuilder {
     }
     /// <p>The minimum valid value for a control parameter that is a double.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum valid value for a control parameter that is a double.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl DoubleConfigurationOptionsBuilder {
     }
     /// <p>The maximum valid value for a control parameter that is a double.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum valid value for a control parameter that is a double.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,13 @@ impl DoubleConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`DoubleConfigurationOptions`](crate::types::DoubleConfigurationOptions).
     pub fn build(self) -> crate::types::DoubleConfigurationOptions {
         crate::types::DoubleConfigurationOptions {
-            default_value: self.default_value,
-            min: self.min,
-            max: self.max,
+            default_value: self.default_value
+            ,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html">Network Firewall example architectures with routing</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFirewallPolicy {
+pub struct NetworkFirewallPolicy  {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
     pub firewall_deployment_model: ::std::option::Option<crate::types::FirewallDeploymentModel>,
 }
-impl NetworkFirewallPolicy {
+impl  NetworkFirewallPolicy  {
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
-    pub fn firewall_deployment_model(&self) -> ::std::option::Option<&crate::types::FirewallDeploymentModel> {
+    pub fn firewall_deployment_model(&self) -> ::std::option::Option<& crate::types::FirewallDeploymentModel> {
         self.firewall_deployment_model.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl NetworkFirewallPolicyBuilder {
     }
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
     pub fn set_firewall_deployment_model(mut self, input: ::std::option::Option<crate::types::FirewallDeploymentModel>) -> Self {
-        self.firewall_deployment_model = input;
-        self
+        self.firewall_deployment_model = input; self
     }
     /// <p>Defines the deployment model to use for the firewall policy. To use a distributed model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a> to <code>NULL</code>.</p>
     pub fn get_firewall_deployment_model(&self) -> &::std::option::Option<crate::types::FirewallDeploymentModel> {
@@ -44,7 +43,9 @@ impl NetworkFirewallPolicyBuilder {
     /// Consumes the builder and constructs a [`NetworkFirewallPolicy`](crate::types::NetworkFirewallPolicy).
     pub fn build(self) -> crate::types::NetworkFirewallPolicy {
         crate::types::NetworkFirewallPolicy {
-            firewall_deployment_model: self.firewall_deployment_model,
+            firewall_deployment_model: self.firewall_deployment_model
+            ,
         }
     }
 }
+

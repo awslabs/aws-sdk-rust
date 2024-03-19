@@ -3,13 +3,13 @@
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayRouteStatus {
+pub struct GatewayRouteStatus  {
     /// <p>The current status for the gateway route.</p>
     pub status: crate::types::GatewayRouteStatusCode,
 }
-impl GatewayRouteStatus {
+impl  GatewayRouteStatus  {
     /// <p>The current status for the gateway route.</p>
-    pub fn status(&self) -> &crate::types::GatewayRouteStatusCode {
+    pub fn status(&self) -> & crate::types::GatewayRouteStatusCode {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl GatewayRouteStatusBuilder {
     }
     /// <p>The current status for the gateway route.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GatewayRouteStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status for the gateway route.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GatewayRouteStatusCode> {
@@ -46,13 +45,15 @@ impl GatewayRouteStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::GatewayRouteStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GatewayRouteStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GatewayRouteStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GatewayRouteStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GatewayRouteStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

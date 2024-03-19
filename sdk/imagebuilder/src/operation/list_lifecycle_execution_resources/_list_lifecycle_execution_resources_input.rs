@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLifecycleExecutionResourcesInput {
+pub struct ListLifecycleExecutionResourcesInput  {
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
@@ -13,14 +13,14 @@ pub struct ListLifecycleExecutionResourcesInput {
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLifecycleExecutionResourcesInput {
+impl  ListLifecycleExecutionResourcesInput  {
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
-    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<& str> {
         self.lifecycle_execution_id.as_deref()
     }
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
     /// <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p>
-    pub fn parent_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_resource_id(&self) -> ::std::option::Option<& str> {
         self.parent_resource_id.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -28,7 +28,7 @@ impl ListLifecycleExecutionResourcesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     }
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_execution_id = input;
-        self
+        self.lifecycle_execution_id = input; self
     }
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
     /// <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p>
     pub fn set_parent_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_resource_id = input;
-        self
+        self.parent_resource_id = input; self
     }
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
     /// <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p>
@@ -88,8 +86,7 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -102,27 +99,26 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLifecycleExecutionResourcesInput`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesInput {
-                lifecycle_execution_id: self.lifecycle_execution_id,
-                parent_resource_id: self.parent_resource_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                lifecycle_execution_id: self.lifecycle_execution_id
+                ,
+                parent_resource_id: self.parent_resource_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

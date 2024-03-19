@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddTrustStoreRevocationsOutput {
+pub struct AddTrustStoreRevocationsOutput  {
     /// <p>Information about the revocation file added to the trust store.</p>
-    pub trust_store_revocations: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreRevocation>>,
+    pub trust_store_revocations: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreRevocation>>,
     _request_id: Option<String>,
 }
-impl AddTrustStoreRevocationsOutput {
+impl  AddTrustStoreRevocationsOutput  {
     /// <p>Information about the revocation file added to the trust store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_store_revocations.is_none()`.
-    pub fn trust_store_revocations(&self) -> &[crate::types::TrustStoreRevocation] {
-        self.trust_store_revocations.as_deref().unwrap_or_default()
+    pub fn trust_store_revocations(&self) -> & [crate::types::TrustStoreRevocation] {
+        self.trust_store_revocations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AddTrustStoreRevocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddTrustStoreRevocationsOutput {
     /// Creates a new builder-style object to manufacture [`AddTrustStoreRevocationsOutput`](crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsOutput).
     pub fn builder() -> crate::operation::add_trust_store_revocations::builders::AddTrustStoreRevocationsOutputBuilder {
@@ -31,7 +32,7 @@ impl AddTrustStoreRevocationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTrustStoreRevocationsOutputBuilder {
-    pub(crate) trust_store_revocations: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreRevocation>>,
+    pub(crate) trust_store_revocations: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreRevocation>>,
     _request_id: Option<String>,
 }
 impl AddTrustStoreRevocationsOutputBuilder {
@@ -42,33 +43,34 @@ impl AddTrustStoreRevocationsOutputBuilder {
     /// <p>Information about the revocation file added to the trust store.</p>
     pub fn trust_store_revocations(mut self, input: crate::types::TrustStoreRevocation) -> Self {
         let mut v = self.trust_store_revocations.unwrap_or_default();
-        v.push(input);
-        self.trust_store_revocations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trust_store_revocations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the revocation file added to the trust store.</p>
-    pub fn set_trust_store_revocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreRevocation>>) -> Self {
-        self.trust_store_revocations = input;
-        self
+    pub fn set_trust_store_revocations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreRevocation>>) -> Self {
+        self.trust_store_revocations = input; self
     }
     /// <p>Information about the revocation file added to the trust store.</p>
-    pub fn get_trust_store_revocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStoreRevocation>> {
+    pub fn get_trust_store_revocations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreRevocation>> {
         &self.trust_store_revocations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddTrustStoreRevocationsOutput`](crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsOutput).
     pub fn build(self) -> crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsOutput {
         crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsOutput {
-            trust_store_revocations: self.trust_store_revocations,
+            trust_store_revocations: self.trust_store_revocations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -186,3 +186,4 @@ pub mod update_privacy_budget_template;
 
 /// Types for the `UpdateProtectedQuery` operation.
 pub mod update_protected_query;
+

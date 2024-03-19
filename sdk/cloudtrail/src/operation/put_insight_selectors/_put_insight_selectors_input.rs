@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutInsightSelectorsInput {
+pub struct PutInsightSelectorsInput  {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub trail_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub insight_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>,
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
@@ -17,28 +17,29 @@ pub struct PutInsightSelectorsInput {
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub insights_destination: ::std::option::Option<::std::string::String>,
 }
-impl PutInsightSelectorsInput {
+impl  PutInsightSelectorsInput  {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
-    pub fn trail_name(&self) -> ::std::option::Option<&str> {
+    pub fn trail_name(&self) -> ::std::option::Option<& str> {
         self.trail_name.as_deref()
     }
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
-    pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
-        self.insight_selectors.as_deref().unwrap_or_default()
+    pub fn insight_selectors(&self) -> & [crate::types::InsightSelector] {
+        self.insight_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
-    pub fn insights_destination(&self) -> ::std::option::Option<&str> {
+    pub fn insights_destination(&self) -> ::std::option::Option<& str> {
         self.insights_destination.as_deref()
     }
 }
@@ -54,7 +55,7 @@ impl PutInsightSelectorsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
-    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>,
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) insights_destination: ::std::option::Option<::std::string::String>,
 }
@@ -68,8 +69,7 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trail_name = input;
-        self
+        self.trail_name = input; self
     }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
@@ -85,21 +85,20 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
-        v.push(input);
-        self.insight_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insight_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
-        self.insight_selectors = input;
-        self
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>) -> Self {
+        self.insight_selectors = input; self
     }
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>> {
         &self.insight_selectors
     }
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
@@ -111,8 +110,7 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
@@ -128,8 +126,7 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
     pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insights_destination = input;
-        self
+        self.insights_destination = input; self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     /// <p>You cannot use this parameter with the <code>TrailName</code> parameter.</p>
@@ -137,15 +134,19 @@ impl PutInsightSelectorsInputBuilder {
         &self.insights_destination
     }
     /// Consumes the builder and constructs a [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_insight_selectors::PutInsightSelectorsInput {
-            trail_name: self.trail_name,
-            insight_selectors: self.insight_selectors,
-            event_data_store: self.event_data_store,
-            insights_destination: self.insights_destination,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_insight_selectors::PutInsightSelectorsInput {
+                trail_name: self.trail_name
+                ,
+                insight_selectors: self.insight_selectors
+                ,
+                event_data_store: self.event_data_store
+                ,
+                insights_destination: self.insights_destination
+                ,
+            }
+        )
     }
 }
+

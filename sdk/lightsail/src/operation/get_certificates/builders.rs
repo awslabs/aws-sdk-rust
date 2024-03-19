@@ -5,56 +5,52 @@ pub use crate::operation::get_certificates::_get_certificates_input::GetCertific
 
 impl GetCertificatesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_certificates::GetCertificatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_certificates();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_certificates::GetCertificatesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_certificates::GetCertificatesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_certificates();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetCertificates`.
-///
+/// 
 /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p><note>
 /// <p>To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_certificates::builders::GetCertificatesInputBuilder,
+                    inner: crate::operation::get_certificates::builders::GetCertificatesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_certificates::GetCertificatesOutput,
-        crate::operation::get_certificates::GetCertificatesError,
-    > for GetCertificatesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_certificates::GetCertificatesOutput,
-            crate::operation::get_certificates::GetCertificatesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_certificates::GetCertificatesOutput,
+                    crate::operation::get_certificates::GetCertificatesError,
+                > for GetCertificatesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_certificates::GetCertificatesOutput,
+                        crate::operation::get_certificates::GetCertificatesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetCertificatesFluentBuilder {
     /// Creates a new `GetCertificates`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl GetCertificatesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_certificates::GetCertificatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_certificates::GetCertificates::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_certificates::GetCertificates::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_certificates::GetCertificatesOutput,
-        crate::operation::get_certificates::GetCertificatesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_certificates::GetCertificatesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_certificates::GetCertificatesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_certificates::GetCertificates::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_certificates::GetCertificates::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_certificates::GetCertificatesOutput, crate::operation::get_certificates::GetCertificatesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `certificateStatuses`.
     ///
     /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
@@ -124,14 +111,14 @@ impl GetCertificatesFluentBuilder {
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>) -> Self {
+    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>>) -> Self {
         self.inner = self.inner.set_certificate_statuses(input);
         self
     }
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>> {
         self.inner.get_certificate_statuses()
     }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
@@ -186,3 +173,4 @@ impl GetCertificatesFluentBuilder {
         self.inner.get_page_token()
     }
 }
+

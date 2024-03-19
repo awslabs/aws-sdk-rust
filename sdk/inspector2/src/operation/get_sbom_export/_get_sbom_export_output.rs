@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSbomExportOutput {
+pub struct GetSbomExportOutput  {
     /// <p>The report ID of the software bill of materials (SBOM) report.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the software bill of materials (SBOM) report.</p>
@@ -19,41 +19,41 @@ pub struct GetSbomExportOutput {
     pub filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
     _request_id: Option<String>,
 }
-impl GetSbomExportOutput {
+impl  GetSbomExportOutput  {
     /// <p>The report ID of the software bill of materials (SBOM) report.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>The format of the software bill of materials (SBOM) report.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::SbomReportFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::SbomReportFormat> {
         self.format.as_ref()
     }
     /// <p>The status of the software bill of materials (SBOM) report.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExternalReportStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExternalReportStatus> {
         self.status.as_ref()
     }
     /// <p>An error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ReportingErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ReportingErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>An error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.s3_destination.as_ref()
     }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::ResourceFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::ResourceFilterCriteria> {
         self.filter_criteria.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSbomExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSbomExportOutput {
     /// Creates a new builder-style object to manufacture [`GetSbomExportOutput`](crate::operation::get_sbom_export::GetSbomExportOutput).
     pub fn builder() -> crate::operation::get_sbom_export::builders::GetSbomExportOutputBuilder {
@@ -82,8 +82,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>The report ID of the software bill of materials (SBOM) report.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The report ID of the software bill of materials (SBOM) report.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>The format of the software bill of materials (SBOM) report.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::SbomReportFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the software bill of materials (SBOM) report.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::SbomReportFormat> {
@@ -110,8 +108,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>The status of the software bill of materials (SBOM) report.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExternalReportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the software bill of materials (SBOM) report.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExternalReportStatus> {
@@ -124,8 +121,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>An error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ReportingErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ReportingErrorCode> {
@@ -138,8 +134,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>An error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -166,33 +160,40 @@ impl GetSbomExportOutputBuilder {
     }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ResourceFilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
         &self.filter_criteria
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSbomExportOutput`](crate::operation::get_sbom_export::GetSbomExportOutput).
     pub fn build(self) -> crate::operation::get_sbom_export::GetSbomExportOutput {
         crate::operation::get_sbom_export::GetSbomExportOutput {
-            report_id: self.report_id,
-            format: self.format,
-            status: self.status,
-            error_code: self.error_code,
-            error_message: self.error_message,
-            s3_destination: self.s3_destination,
-            filter_criteria: self.filter_criteria,
+            report_id: self.report_id
+            ,
+            format: self.format
+            ,
+            status: self.status
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
+            s3_destination: self.s3_destination
+            ,
+            filter_criteria: self.filter_criteria
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

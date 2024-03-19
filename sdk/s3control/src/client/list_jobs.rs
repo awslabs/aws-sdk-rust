@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobs`](crate::operation::list_jobs::builders::ListJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p><br>
     ///   - [`job_statuses(JobStatus)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::job_statuses) / [`set_job_statuses(Option<Vec::<JobStatus>>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_job_statuses):<br>required: **false**<br><p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_jobs::builders::ListJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
+                            /// - On success, responds with [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_jobs::ListJobsOutput::next_token): <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
     ///   - [`jobs(Option<Vec::<JobListDescriptor>>)`](crate::operation::list_jobs::ListJobsOutput::jobs): <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::operation::list_jobs::ListJobsError)
+                            /// - On failure, responds with [`SdkError<ListJobsError>`](crate::operation::list_jobs::ListJobsError)
     pub fn list_jobs(&self) -> crate::operation::list_jobs::builders::ListJobsFluentBuilder {
-        crate::operation::list_jobs::builders::ListJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_jobs::builders::ListJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

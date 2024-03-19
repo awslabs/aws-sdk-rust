@@ -5,54 +5,50 @@ pub use crate::operation::cancel_world_export_job::_cancel_world_export_job_inpu
 
 impl CancelWorldExportJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.cancel_world_export_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.cancel_world_export_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CancelWorldExportJob`.
-///
+/// 
 /// <p>Cancels the specified export job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelWorldExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::cancel_world_export_job::builders::CancelWorldExportJobInputBuilder,
+                    inner: crate::operation::cancel_world_export_job::builders::CancelWorldExportJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
-        crate::operation::cancel_world_export_job::CancelWorldExportJobError,
-    > for CancelWorldExportJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
-            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
+                    crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+                > for CancelWorldExportJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
+                        crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CancelWorldExportJobFluentBuilder {
     /// Creates a new `CancelWorldExportJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CancelWorldExportJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::cancel_world_export_job::CancelWorldExportJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::cancel_world_export_job::CancelWorldExportJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
-        crate::operation::cancel_world_export_job::CancelWorldExportJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_world_export_job::CancelWorldExportJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_world_export_job::CancelWorldExportJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::cancel_world_export_job::CancelWorldExportJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::cancel_world_export_job::CancelWorldExportJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::cancel_world_export_job::CancelWorldExportJobOutput, crate::operation::cancel_world_export_job::CancelWorldExportJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job(input.into());
@@ -123,3 +110,4 @@ impl CancelWorldExportJobFluentBuilder {
         self.inner.get_job()
     }
 }
+

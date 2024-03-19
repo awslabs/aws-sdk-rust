@@ -5,23 +5,20 @@ pub use crate::operation::get_compliance_summary::_get_compliance_summary_input:
 
 impl GetComplianceSummaryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_summary::GetComplianceSummaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_compliance_summary();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_compliance_summary::GetComplianceSummaryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_compliance_summary();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetComplianceSummary`.
-///
+/// 
 /// <p>Returns a table that shows counts of resources that are noncompliant with their tag policies.</p>
 /// <p>For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <i>Organizations User Guide.</i></p>
 /// <p>You can call this operation only from the organization's management account and from the us-east-1 Region.</p>
@@ -29,33 +26,32 @@ impl GetComplianceSummaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder,
+                    inner: crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
-        crate::operation::get_compliance_summary::GetComplianceSummaryError,
-    > for GetComplianceSummaryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
-            crate::operation::get_compliance_summary::GetComplianceSummaryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
+                    crate::operation::get_compliance_summary::GetComplianceSummaryError,
+                > for GetComplianceSummaryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
+                        crate::operation::get_compliance_summary::GetComplianceSummaryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetComplianceSummaryFluentBuilder {
     /// Creates a new `GetComplianceSummary`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,59 +60,50 @@ impl GetComplianceSummaryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_summary::GetComplianceSummaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_compliance_summary::GetComplianceSummary::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_compliance_summary::GetComplianceSummary::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
-        crate::operation::get_compliance_summary::GetComplianceSummaryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_compliance_summary::GetComplianceSummaryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_compliance_summary::GetComplianceSummaryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_compliance_summary::GetComplianceSummary::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_compliance_summary::GetComplianceSummary::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_compliance_summary::GetComplianceSummaryOutput, crate::operation::get_compliance_summary::GetComplianceSummaryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator {
-        crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator {
+                                crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TargetIdFilters`.
     ///
     /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).
@@ -127,12 +114,12 @@ impl GetComplianceSummaryFluentBuilder {
         self
     }
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn set_target_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_target_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_id_filters(input);
         self
     }
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn get_target_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_id_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_target_id_filters()
     }
     /// Appends an item to `RegionFilters`.
@@ -145,12 +132,12 @@ impl GetComplianceSummaryFluentBuilder {
         self
     }
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn set_region_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_region_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_region_filters(input);
         self
     }
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn get_region_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_region_filters()
     }
     /// Appends an item to `ResourceTypeFilters`.
@@ -183,7 +170,7 @@ impl GetComplianceSummaryFluentBuilder {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p></li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
-    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_type_filters(input);
         self
     }
@@ -198,7 +185,7 @@ impl GetComplianceSummaryFluentBuilder {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p></li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.</p>
-    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_type_filters()
     }
     /// Appends an item to `TagKeyFilters`.
@@ -211,12 +198,12 @@ impl GetComplianceSummaryFluentBuilder {
         self
     }
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn set_tag_key_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_tag_key_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_key_filters(input);
         self
     }
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn get_tag_key_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_tag_key_filters()
     }
     /// Appends an item to `GroupBy`.
@@ -229,12 +216,12 @@ impl GetComplianceSummaryFluentBuilder {
         self
     }
     /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
-    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>>) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupByAttribute>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
     /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
-    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByAttribute>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupByAttribute>> {
         self.inner.get_group_by()
     }
     /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
@@ -266,3 +253,4 @@ impl GetComplianceSummaryFluentBuilder {
         self.inner.get_pagination_token()
     }
 }
+

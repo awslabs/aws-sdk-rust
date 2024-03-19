@@ -5,23 +5,20 @@ pub use crate::operation::shutdown_gateway::_shutdown_gateway_input::ShutdownGat
 
 impl ShutdownGatewayInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.shutdown_gateway();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::shutdown_gateway::ShutdownGatewayError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.shutdown_gateway();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ShutdownGateway`.
-///
+/// 
 /// <p>Shuts down a Tape Gateway or Volume Gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p><note>
 /// <p>This API action cannot be used to shut down S3 File Gateway or FSx File Gateway.</p>
 /// </note>
@@ -35,33 +32,32 @@ impl ShutdownGatewayInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ShutdownGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder,
+                    inner: crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        crate::operation::shutdown_gateway::ShutdownGatewayError,
-    > for ShutdownGatewayFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::shutdown_gateway::ShutdownGatewayOutput,
+                    crate::operation::shutdown_gateway::ShutdownGatewayError,
+                > for ShutdownGatewayFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
+                        crate::operation::shutdown_gateway::ShutdownGatewayError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ShutdownGatewayFluentBuilder {
     /// Creates a new `ShutdownGateway`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl ShutdownGatewayFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::shutdown_gateway::ShutdownGateway::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::shutdown_gateway::ShutdownGateway::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        crate::operation::shutdown_gateway::ShutdownGatewayError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::shutdown_gateway::ShutdownGatewayOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::shutdown_gateway::ShutdownGateway::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::shutdown_gateway::ShutdownGateway::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::shutdown_gateway::ShutdownGatewayOutput, crate::operation::shutdown_gateway::ShutdownGatewayError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -132,3 +119,4 @@ impl ShutdownGatewayFluentBuilder {
         self.inner.get_gateway_arn()
     }
 }
+

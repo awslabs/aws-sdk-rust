@@ -13,19 +13,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointState {
+pub struct EndpointState  {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
     pub status: crate::types::EndpointStatus,
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub status_reason: ::std::option::Option<crate::types::EndpointStatusReason>,
 }
-impl EndpointState {
+impl  EndpointState  {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn status(&self) -> &crate::types::EndpointStatus {
+    pub fn status(&self) -> & crate::types::EndpointStatus {
         &self.status
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::EndpointStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::EndpointStatusReason> {
         self.status_reason.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl EndpointStateBuilder {
     }
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
@@ -66,8 +65,7 @@ impl EndpointStateBuilder {
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::EndpointStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::EndpointStatusReason> {
@@ -77,14 +75,17 @@ impl EndpointStateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::EndpointStateBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::EndpointState, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EndpointState {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EndpointState",
-                )
-            })?,
-            status_reason: self.status_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EndpointState {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EndpointState")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+            }
+        )
     }
 }
+

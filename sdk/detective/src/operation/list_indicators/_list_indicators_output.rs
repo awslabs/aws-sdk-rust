@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIndicatorsOutput {
+pub struct ListIndicatorsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
@@ -11,35 +11,36 @@ pub struct ListIndicatorsOutput {
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists the indicators of compromise.</p>
-    pub indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    pub indicators: ::std::option::Option<::std::vec::Vec::<crate::types::Indicator>>,
     _request_id: Option<String>,
 }
-impl ListIndicatorsOutput {
+impl  ListIndicatorsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The investigation ID of the investigation report.</p>
-    pub fn investigation_id(&self) -> ::std::option::Option<&str> {
+    pub fn investigation_id(&self) -> ::std::option::Option<& str> {
         self.investigation_id.as_deref()
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists the indicators of compromise.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indicators.is_none()`.
-    pub fn indicators(&self) -> &[crate::types::Indicator] {
-        self.indicators.as_deref().unwrap_or_default()
+    pub fn indicators(&self) -> & [crate::types::Indicator] {
+        self.indicators.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIndicatorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIndicatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListIndicatorsOutput`](crate::operation::list_indicators::ListIndicatorsOutput).
     pub fn builder() -> crate::operation::list_indicators::builders::ListIndicatorsOutputBuilder {
@@ -54,7 +55,7 @@ pub struct ListIndicatorsOutputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) investigation_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    pub(crate) indicators: ::std::option::Option<::std::vec::Vec::<crate::types::Indicator>>,
     _request_id: Option<String>,
 }
 impl ListIndicatorsOutputBuilder {
@@ -65,8 +66,7 @@ impl ListIndicatorsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl ListIndicatorsOutputBuilder {
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn set_investigation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.investigation_id = input;
-        self
+        self.investigation_id = input; self
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ListIndicatorsOutputBuilder {
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
@@ -110,36 +108,40 @@ impl ListIndicatorsOutputBuilder {
     /// <p>Lists the indicators of compromise.</p>
     pub fn indicators(mut self, input: crate::types::Indicator) -> Self {
         let mut v = self.indicators.unwrap_or_default();
-        v.push(input);
-        self.indicators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.indicators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the indicators of compromise.</p>
-    pub fn set_indicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>) -> Self {
-        self.indicators = input;
-        self
+    pub fn set_indicators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Indicator>>) -> Self {
+        self.indicators = input; self
     }
     /// <p>Lists the indicators of compromise.</p>
-    pub fn get_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Indicator>> {
+    pub fn get_indicators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Indicator>> {
         &self.indicators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIndicatorsOutput`](crate::operation::list_indicators::ListIndicatorsOutput).
     pub fn build(self) -> crate::operation::list_indicators::ListIndicatorsOutput {
         crate::operation::list_indicators::ListIndicatorsOutput {
-            graph_arn: self.graph_arn,
-            investigation_id: self.investigation_id,
-            next_token: self.next_token,
-            indicators: self.indicators,
+            graph_arn: self.graph_arn
+            ,
+            investigation_id: self.investigation_id
+            ,
+            next_token: self.next_token
+            ,
+            indicators: self.indicators
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

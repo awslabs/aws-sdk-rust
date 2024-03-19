@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTargetGroupInput {
+pub struct GetTargetGroupInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetTargetGroupInput {
+impl  GetTargetGroupInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_identifier(&self) -> ::std::option::Option<& str> {
         self.target_group_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetTargetGroupInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_identifier = input;
-        self
+        self.target_group_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_identifier
     }
     /// Consumes the builder and constructs a [`GetTargetGroupInput`](crate::operation::get_target_group::GetTargetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_target_group::GetTargetGroupInput {
-            target_group_identifier: self.target_group_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_target_group::GetTargetGroupInput {
+                target_group_identifier: self.target_group_identifier
+                ,
+            }
+        )
     }
 }
+

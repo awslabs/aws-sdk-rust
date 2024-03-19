@@ -3,11 +3,11 @@
 /// <p>Detailed information about the StackSet operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSetOperationStatusDetails {
+pub struct StackSetOperationStatusDetails  {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub failed_stack_instances_count: ::std::option::Option<i32>,
 }
-impl StackSetOperationStatusDetails {
+impl  StackSetOperationStatusDetails  {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn failed_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.failed_stack_instances_count
@@ -34,8 +34,7 @@ impl StackSetOperationStatusDetailsBuilder {
     }
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn set_failed_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_stack_instances_count = input;
-        self
+        self.failed_stack_instances_count = input; self
     }
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn get_failed_stack_instances_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl StackSetOperationStatusDetailsBuilder {
     /// Consumes the builder and constructs a [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
     pub fn build(self) -> crate::types::StackSetOperationStatusDetails {
         crate::types::StackSetOperationStatusDetails {
-            failed_stack_instances_count: self.failed_stack_instances_count,
+            failed_stack_instances_count: self.failed_stack_instances_count
+            ,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetAdvisorLsaAnalysisOutput {
+pub struct DescribeFleetAdvisorLsaAnalysisOutput  {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub analysis: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
+    pub analysis: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAdvisorLsaAnalysisResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFleetAdvisorLsaAnalysisOutput {
+impl  DescribeFleetAdvisorLsaAnalysisOutput  {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis.is_none()`.
-    pub fn analysis(&self) -> &[crate::types::FleetAdvisorLsaAnalysisResponse] {
-        self.analysis.as_deref().unwrap_or_default()
+    pub fn analysis(&self) -> & [crate::types::FleetAdvisorLsaAnalysisResponse] {
+        self.analysis.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFleetAdvisorLsaAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput).
     pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeFleetAdvisorLsaAnalysisOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorLsaAnalysisOutputBuilder {
-    pub(crate) analysis: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>,
+    pub(crate) analysis: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAdvisorLsaAnalysisResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeFleetAdvisorLsaAnalysisOutputBuilder {
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
     pub fn analysis(mut self, input: crate::types::FleetAdvisorLsaAnalysisResponse) -> Self {
         let mut v = self.analysis.unwrap_or_default();
-        v.push(input);
-        self.analysis = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn set_analysis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>>) -> Self {
-        self.analysis = input;
-        self
+    pub fn set_analysis(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAdvisorLsaAnalysisResponse>>) -> Self {
+        self.analysis = input; self
     }
     /// <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    pub fn get_analysis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorLsaAnalysisResponse>> {
+    pub fn get_analysis(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FleetAdvisorLsaAnalysisResponse>> {
         &self.analysis
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -69,28 +69,30 @@ impl DescribeFleetAdvisorLsaAnalysisOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput).
     pub fn build(self) -> crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput {
         crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisOutput {
-            analysis: self.analysis,
-            next_token: self.next_token,
+            analysis: self.analysis
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

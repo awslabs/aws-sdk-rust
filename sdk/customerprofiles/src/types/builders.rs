@@ -132,3 +132,4 @@ pub use crate::types::_integration_config::IntegrationConfigBuilder;
 pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;
 
 pub use crate::types::_batch::BatchBuilder;
+

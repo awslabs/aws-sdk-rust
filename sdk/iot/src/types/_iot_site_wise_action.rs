@@ -3,22 +3,20 @@
 /// <p>Describes an action to send data from an MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotSiteWiseAction {
+pub struct IotSiteWiseAction  {
     /// <p>A list of asset property value entries.</p>
-    pub put_asset_property_value_entries: ::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>,
+    pub put_asset_property_value_entries: ::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>,
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub role_arn: ::std::string::String,
 }
-impl IotSiteWiseAction {
+impl  IotSiteWiseAction  {
     /// <p>A list of asset property value entries.</p>
-    pub fn put_asset_property_value_entries(&self) -> &[crate::types::PutAssetPropertyValueEntry] {
-        use std::ops::Deref;
-        self.put_asset_property_value_entries.deref()
+    pub fn put_asset_property_value_entries(&self) -> & [crate::types::PutAssetPropertyValueEntry] {
+        use std::ops::Deref; self.put_asset_property_value_entries.deref()
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl IotSiteWiseAction {
@@ -32,7 +30,7 @@ impl IotSiteWiseAction {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseActionBuilder {
-    pub(crate) put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub(crate) put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseActionBuilder {
@@ -43,20 +41,16 @@ impl IotSiteWiseActionBuilder {
     /// <p>A list of asset property value entries.</p>
     pub fn put_asset_property_value_entries(mut self, input: crate::types::PutAssetPropertyValueEntry) -> Self {
         let mut v = self.put_asset_property_value_entries.unwrap_or_default();
-        v.push(input);
-        self.put_asset_property_value_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.put_asset_property_value_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of asset property value entries.</p>
-    pub fn set_put_asset_property_value_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
-    ) -> Self {
-        self.put_asset_property_value_entries = input;
-        self
+    pub fn set_put_asset_property_value_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>) -> Self {
+        self.put_asset_property_value_entries = input; self
     }
     /// <p>A list of asset property value entries.</p>
-    pub fn get_put_asset_property_value_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_put_asset_property_value_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>> {
         &self.put_asset_property_value_entries
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
@@ -67,8 +61,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,19 +72,20 @@ impl IotSiteWiseActionBuilder {
     /// - [`put_asset_property_value_entries`](crate::types::builders::IotSiteWiseActionBuilder::put_asset_property_value_entries)
     /// - [`role_arn`](crate::types::builders::IotSiteWiseActionBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IotSiteWiseAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotSiteWiseAction {
-            put_asset_property_value_entries: self.put_asset_property_value_entries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "put_asset_property_value_entries",
-                    "put_asset_property_value_entries was not specified but it is required when building IotSiteWiseAction",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building IotSiteWiseAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IotSiteWiseAction {
+                put_asset_property_value_entries: self.put_asset_property_value_entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("put_asset_property_value_entries", "put_asset_property_value_entries was not specified but it is required when building IotSiteWiseAction")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building IotSiteWiseAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

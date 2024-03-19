@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExtensionInput {
+pub struct DeleteExtensionInput  {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
     pub version_number: ::std::option::Option<i32>,
 }
-impl DeleteExtensionInput {
+impl  DeleteExtensionInput  {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    pub fn extension_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> ::std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
@@ -41,8 +41,7 @@ impl DeleteExtensionInputBuilder {
     }
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
     pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_identifier = input;
-        self
+        self.extension_identifier = input; self
     }
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
     pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteExtensionInputBuilder {
     }
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i32> {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_extension::DeleteExtensionInput {
-            extension_identifier: self.extension_identifier,
-            version_number: self.version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_extension::DeleteExtensionInput {
+                extension_identifier: self.extension_identifier
+                ,
+                version_number: self.version_number
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A list of documents that could not be removed from an Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedDocument {
+pub struct FailedDocument  {
     /// <p>The identifier of the document that couldn't be removed from the Amazon Q index.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
@@ -11,17 +11,17 @@ pub struct FailedDocument {
     /// <p>The identifier of the Amazon Q data source connector that contains the failed document.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl FailedDocument {
+impl  FailedDocument  {
     /// <p>The identifier of the document that couldn't be removed from the Amazon Q index.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>The identifier of the Amazon Q data source connector that contains the failed document.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailedDocumentBuilder {
     }
     /// <p>The identifier of the document that couldn't be removed from the Amazon Q index.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the document that couldn't be removed from the Amazon Q index.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FailedDocumentBuilder {
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -76,8 +74,7 @@ impl FailedDocumentBuilder {
     }
     /// <p>The identifier of the Amazon Q data source connector that contains the failed document.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the Amazon Q data source connector that contains the failed document.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FailedDocumentBuilder {
     /// Consumes the builder and constructs a [`FailedDocument`](crate::types::FailedDocument).
     pub fn build(self) -> crate::types::FailedDocument {
         crate::types::FailedDocument {
-            id: self.id,
-            error: self.error,
-            data_source_id: self.data_source_id,
+            id: self.id
+            ,
+            error: self.error
+            ,
+            data_source_id: self.data_source_id
+            ,
         }
     }
 }
+

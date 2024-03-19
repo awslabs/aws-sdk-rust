@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcestatus = unimplemented!();
 /// match resourcestatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `resourcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
@@ -62,84 +60,77 @@ pub enum ResourceStatus {
     UpdateSuccessful,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ResourceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATION_FAILED" => ResourceStatus::CreationFailed,
-            "CREATION_IN_PROGRESS" => ResourceStatus::CreationInProgress,
-            "CREATION_SUCCESSFUL" => ResourceStatus::CreationSuccessful,
-            "DELETED" => ResourceStatus::Deleted,
-            "UPDATE_FAILED" => ResourceStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => ResourceStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => ResourceStatus::UpdateSuccessful,
-            other => ResourceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATION_FAILED" => ResourceStatus::CreationFailed,
+"CREATION_IN_PROGRESS" => ResourceStatus::CreationInProgress,
+"CREATION_SUCCESSFUL" => ResourceStatus::CreationSuccessful,
+"DELETED" => ResourceStatus::Deleted,
+"UPDATE_FAILED" => ResourceStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => ResourceStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => ResourceStatus::UpdateSuccessful,
+other => ResourceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ResourceStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ResourceStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ResourceStatus::from(s))
+                    }
+                }
 impl ResourceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceStatus::CreationFailed => "CREATION_FAILED",
-            ResourceStatus::CreationInProgress => "CREATION_IN_PROGRESS",
-            ResourceStatus::CreationSuccessful => "CREATION_SUCCESSFUL",
-            ResourceStatus::Deleted => "DELETED",
-            ResourceStatus::UpdateFailed => "UPDATE_FAILED",
-            ResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ResourceStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            ResourceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATION_FAILED",
-            "CREATION_IN_PROGRESS",
-            "CREATION_SUCCESSFUL",
-            "DELETED",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_SUCCESSFUL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceStatus::CreationFailed => "CREATION_FAILED",
+    ResourceStatus::CreationInProgress => "CREATION_IN_PROGRESS",
+    ResourceStatus::CreationSuccessful => "CREATION_SUCCESSFUL",
+    ResourceStatus::Deleted => "DELETED",
+    ResourceStatus::UpdateFailed => "UPDATE_FAILED",
+    ResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    ResourceStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    ResourceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATION_FAILED", "CREATION_IN_PROGRESS", "CREATION_SUCCESSFUL", "DELETED", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ResourceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ResourceStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ResourceStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ResourceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
-            ResourceStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
-            ResourceStatus::CreationSuccessful => write!(f, "CREATION_SUCCESSFUL"),
-            ResourceStatus::Deleted => write!(f, "DELETED"),
-            ResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            ResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ResourceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+ResourceStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+ResourceStatus::CreationSuccessful => write!(f, "CREATION_SUCCESSFUL"),
+ResourceStatus::Deleted => write!(f, "DELETED"),
+ResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+ResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+ResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+ResourceStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

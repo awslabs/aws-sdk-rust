@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionStatusOutput {
+pub struct GetConnectionStatusOutput  {
     /// <p>The ID of the managed node to check connection status.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The status of the connection to the managed node.</p>
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }
-impl GetConnectionStatusOutput {
+impl  GetConnectionStatusOutput  {
     /// <p>The ID of the managed node to check connection status.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The status of the connection to the managed node.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ConnectionStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConnectionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput).
     pub fn builder() -> crate::operation::get_connection_status::builders::GetConnectionStatusOutputBuilder {
@@ -47,8 +47,7 @@ impl GetConnectionStatusOutputBuilder {
     }
     /// <p>The ID of the managed node to check connection status.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The ID of the managed node to check connection status.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetConnectionStatusOutputBuilder {
     }
     /// <p>The status of the connection to the managed node.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the connection to the managed node.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput).
     pub fn build(self) -> crate::operation::get_connection_status::GetConnectionStatusOutput {
         crate::operation::get_connection_status::GetConnectionStatusOutput {
-            target: self.target,
-            status: self.status,
+            target: self.target
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

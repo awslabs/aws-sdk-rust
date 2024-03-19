@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetShareInput {
+pub struct GetShareInput  {
     /// <p>The generated ID for a share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
 }
-impl GetShareInput {
+impl  GetShareInput  {
     /// <p>The generated ID for a share.</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetShareInputBuilder {
     }
     /// <p>The generated ID for a share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The generated ID for a share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetShareInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetShareInput`](crate::operation::get_share::GetShareInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_share::GetShareInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_share::GetShareInput { share_id: self.share_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_share::GetShareInput {
+                share_id: self.share_id
+                ,
+            }
+        )
     }
 }
+

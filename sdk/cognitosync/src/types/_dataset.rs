@@ -3,7 +3,7 @@
 /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
@@ -19,25 +19,25 @@ pub struct Dataset {
     /// Number of records in this dataset.
     pub num_records: ::std::option::Option<i64>,
 }
-impl Dataset {
+impl  Dataset  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// Date on which the dataset was created.
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// Date when the dataset was last modified.
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// The device that made the last change to this dataset.
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// Total size in bytes of the records in this dataset.
@@ -76,8 +76,7 @@ impl DatasetBuilder {
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DatasetBuilder {
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl DatasetBuilder {
     }
     /// Date on which the dataset was created.
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// Date on which the dataset was created.
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl DatasetBuilder {
     }
     /// Date when the dataset was last modified.
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// Date when the dataset was last modified.
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl DatasetBuilder {
     }
     /// The device that made the last change to this dataset.
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// The device that made the last change to this dataset.
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl DatasetBuilder {
     }
     /// Total size in bytes of the records in this dataset.
     pub fn set_data_storage(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.data_storage = input;
-        self
+        self.data_storage = input; self
     }
     /// Total size in bytes of the records in this dataset.
     pub fn get_data_storage(&self) -> &::std::option::Option<i64> {
@@ -160,8 +154,7 @@ impl DatasetBuilder {
     }
     /// Number of records in this dataset.
     pub fn set_num_records(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_records = input;
-        self
+        self.num_records = input; self
     }
     /// Number of records in this dataset.
     pub fn get_num_records(&self) -> &::std::option::Option<i64> {
@@ -170,13 +163,21 @@ impl DatasetBuilder {
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
-            identity_id: self.identity_id,
-            dataset_name: self.dataset_name,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
-            last_modified_by: self.last_modified_by,
-            data_storage: self.data_storage,
-            num_records: self.num_records,
+            identity_id: self.identity_id
+            ,
+            dataset_name: self.dataset_name
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            data_storage: self.data_storage
+            ,
+            num_records: self.num_records
+            ,
         }
     }
 }
+

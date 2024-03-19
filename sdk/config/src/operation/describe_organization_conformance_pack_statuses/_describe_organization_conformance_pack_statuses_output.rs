@@ -2,36 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConformancePackStatusesOutput {
+pub struct DescribeOrganizationConformancePackStatusesOutput  {
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects.</p>
-    pub organization_conformance_pack_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackStatus>>,
+    pub organization_conformance_pack_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationConformancePackStatus>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeOrganizationConformancePackStatusesOutput {
+impl  DescribeOrganizationConformancePackStatusesOutput  {
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_statuses.is_none()`.
-    pub fn organization_conformance_pack_statuses(&self) -> &[crate::types::OrganizationConformancePackStatus] {
-        self.organization_conformance_pack_statuses.as_deref().unwrap_or_default()
+    pub fn organization_conformance_pack_statuses(&self) -> & [crate::types::OrganizationConformancePackStatus] {
+        self.organization_conformance_pack_statuses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeOrganizationConformancePackStatusesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeOrganizationConformancePackStatusesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePackStatusesOutput`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesOutputBuilder {
-        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesOutputBuilder {
+        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesOutputBuilder::default()
     }
 }
 
@@ -39,7 +38,7 @@ impl DescribeOrganizationConformancePackStatusesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePackStatusesOutputBuilder {
-    pub(crate) organization_conformance_pack_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackStatus>>,
+    pub(crate) organization_conformance_pack_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationConformancePackStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +50,16 @@ impl DescribeOrganizationConformancePackStatusesOutputBuilder {
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects.</p>
     pub fn organization_conformance_pack_statuses(mut self, input: crate::types::OrganizationConformancePackStatus) -> Self {
         let mut v = self.organization_conformance_pack_statuses.unwrap_or_default();
-        v.push(input);
-        self.organization_conformance_pack_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.organization_conformance_pack_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects.</p>
-    pub fn set_organization_conformance_pack_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackStatus>>,
-    ) -> Self {
-        self.organization_conformance_pack_statuses = input;
-        self
+    pub fn set_organization_conformance_pack_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationConformancePackStatus>>) -> Self {
+        self.organization_conformance_pack_statuses = input; self
     }
     /// <p>A list of <code>OrganizationConformancePackStatus</code> objects.</p>
-    pub fn get_organization_conformance_pack_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackStatus>> {
+    pub fn get_organization_conformance_pack_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrganizationConformancePackStatus>> {
         &self.organization_conformance_pack_statuses
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -76,28 +69,30 @@ impl DescribeOrganizationConformancePackStatusesOutputBuilder {
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConformancePackStatusesOutput`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput).
     pub fn build(self) -> crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput {
         crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput {
-            organization_conformance_pack_statuses: self.organization_conformance_pack_statuses,
-            next_token: self.next_token,
+            organization_conformance_pack_statuses: self.organization_conformance_pack_statuses
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

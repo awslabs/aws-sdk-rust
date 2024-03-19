@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountConfigurationInput {
+pub struct PutAccountConfigurationInput  {
     /// <p>Specifies expiration events associated with an account.</p>
     pub expiry_events: ::std::option::Option<crate::types::ExpiryEventsConfiguration>,
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl PutAccountConfigurationInput {
+impl  PutAccountConfigurationInput  {
     /// <p>Specifies expiration events associated with an account.</p>
-    pub fn expiry_events(&self) -> ::std::option::Option<&crate::types::ExpiryEventsConfiguration> {
+    pub fn expiry_events(&self) -> ::std::option::Option<& crate::types::ExpiryEventsConfiguration> {
         self.expiry_events.as_ref()
     }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl PutAccountConfigurationInputBuilder {
     }
     /// <p>Specifies expiration events associated with an account.</p>
     pub fn set_expiry_events(mut self, input: ::std::option::Option<crate::types::ExpiryEventsConfiguration>) -> Self {
-        self.expiry_events = input;
-        self
+        self.expiry_events = input; self
     }
     /// <p>Specifies expiration events associated with an account.</p>
     pub fn get_expiry_events(&self) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
@@ -55,23 +54,22 @@ impl PutAccountConfigurationInputBuilder {
     }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`PutAccountConfigurationInput`](crate::operation::put_account_configuration::PutAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_account_configuration::PutAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_account_configuration::PutAccountConfigurationInput {
-            expiry_events: self.expiry_events,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_configuration::PutAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_account_configuration::PutAccountConfigurationInput {
+                expiry_events: self.expiry_events
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Describes the updated maintenance configuration for the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationMaintenanceConfigurationUpdate {
+pub struct ApplicationMaintenanceConfigurationUpdate  {
     /// <p>The updated start time for the maintenance window.</p>
     pub application_maintenance_window_start_time_update: ::std::string::String,
 }
-impl ApplicationMaintenanceConfigurationUpdate {
+impl  ApplicationMaintenanceConfigurationUpdate  {
     /// <p>The updated start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time_update(&self) -> &str {
-        use std::ops::Deref;
-        self.application_maintenance_window_start_time_update.deref()
+    pub fn application_maintenance_window_start_time_update(&self) -> & str {
+        use std::ops::Deref; self.application_maintenance_window_start_time_update.deref()
     }
 }
 impl ApplicationMaintenanceConfigurationUpdate {
@@ -36,8 +35,7 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
     }
     /// <p>The updated start time for the maintenance window.</p>
     pub fn set_application_maintenance_window_start_time_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_maintenance_window_start_time_update = input;
-        self
+        self.application_maintenance_window_start_time_update = input; self
     }
     /// <p>The updated start time for the maintenance window.</p>
     pub fn get_application_maintenance_window_start_time_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,9 +44,7 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationUpdate`](crate::types::ApplicationMaintenanceConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_maintenance_window_start_time_update`](crate::types::builders::ApplicationMaintenanceConfigurationUpdateBuilder::application_maintenance_window_start_time_update)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::types::ApplicationMaintenanceConfigurationUpdate {
                 application_maintenance_window_start_time_update: self.application_maintenance_window_start_time_update
@@ -60,3 +56,4 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
         )
     }
 }
+

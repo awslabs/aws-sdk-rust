@@ -3,7 +3,7 @@
 /// <p>A <code>TimeRangeFilter</code> filters values that are between two specified values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeRangeFilter {
+pub struct TimeRangeFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
@@ -31,14 +31,13 @@ pub struct TimeRangeFilter {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
-impl TimeRangeFilter {
+impl  TimeRangeFilter  {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.filter_id.deref()
+    pub fn filter_id(&self) -> & str {
+        use std::ops::Deref; self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
@@ -50,11 +49,11 @@ impl TimeRangeFilter {
         self.include_maximum
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn range_minimum_value(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
+    pub fn range_minimum_value(&self) -> ::std::option::Option<& crate::types::TimeRangeFilterValue> {
         self.range_minimum_value.as_ref()
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn range_maximum_value(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
+    pub fn range_maximum_value(&self) -> ::std::option::Option<& crate::types::TimeRangeFilterValue> {
         self.range_maximum_value.as_ref()
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
@@ -66,15 +65,15 @@ impl TimeRangeFilter {
     /// <li>
     /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
-    pub fn null_option(&self) -> &crate::types::FilterNullOption {
+    pub fn null_option(&self) -> & crate::types::FilterNullOption {
         &self.null_option
     }
     /// <p>The exclude period of the time range filter.</p>
-    pub fn exclude_period_configuration(&self) -> ::std::option::Option<&crate::types::ExcludePeriodConfiguration> {
+    pub fn exclude_period_configuration(&self) -> ::std::option::Option<& crate::types::ExcludePeriodConfiguration> {
         self.exclude_period_configuration.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> ::std::option::Option<& crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
 }
@@ -108,8 +107,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn set_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_id = input;
-        self
+        self.filter_id = input; self
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -137,8 +134,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
     pub fn set_include_minimum(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_minimum = input;
-        self
+        self.include_minimum = input; self
     }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
     pub fn get_include_minimum(&self) -> &::std::option::Option<bool> {
@@ -151,8 +147,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
     pub fn set_include_maximum(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_maximum = input;
-        self
+        self.include_maximum = input; self
     }
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
     pub fn get_include_maximum(&self) -> &::std::option::Option<bool> {
@@ -165,8 +160,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn set_range_minimum_value(mut self, input: ::std::option::Option<crate::types::TimeRangeFilterValue>) -> Self {
-        self.range_minimum_value = input;
-        self
+        self.range_minimum_value = input; self
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn get_range_minimum_value(&self) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
@@ -179,8 +173,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn set_range_maximum_value(mut self, input: ::std::option::Option<crate::types::TimeRangeFilterValue>) -> Self {
-        self.range_maximum_value = input;
-        self
+        self.range_maximum_value = input; self
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn get_range_maximum_value(&self) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
@@ -210,8 +203,7 @@ impl TimeRangeFilterBuilder {
     /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
-        self.null_option = input;
-        self
+        self.null_option = input; self
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -232,8 +224,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The exclude period of the time range filter.</p>
     pub fn set_exclude_period_configuration(mut self, input: ::std::option::Option<crate::types::ExcludePeriodConfiguration>) -> Self {
-        self.exclude_period_configuration = input;
-        self
+        self.exclude_period_configuration = input; self
     }
     /// <p>The exclude period of the time range filter.</p>
     pub fn get_exclude_period_configuration(&self) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
@@ -246,8 +237,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.time_granularity = input;
-        self
+        self.time_granularity = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
@@ -258,26 +248,34 @@ impl TimeRangeFilterBuilder {
     /// - [`filter_id`](crate::types::builders::TimeRangeFilterBuilder::filter_id)
     /// - [`null_option`](crate::types::builders::TimeRangeFilterBuilder::null_option)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeRangeFilter {
-            filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_id",
-                    "filter_id was not specified but it is required when building TimeRangeFilter",
-                )
-            })?,
-            column: self.column,
-            include_minimum: self.include_minimum,
-            include_maximum: self.include_maximum,
-            range_minimum_value: self.range_minimum_value,
-            range_maximum_value: self.range_maximum_value,
-            null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "null_option",
-                    "null_option was not specified but it is required when building TimeRangeFilter",
-                )
-            })?,
-            exclude_period_configuration: self.exclude_period_configuration,
-            time_granularity: self.time_granularity,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeRangeFilter {
+                filter_id: self.filter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_id", "filter_id was not specified but it is required when building TimeRangeFilter")
+                    )?
+                ,
+                column: self.column
+                ,
+                include_minimum: self.include_minimum
+                ,
+                include_maximum: self.include_maximum
+                ,
+                range_minimum_value: self.range_minimum_value
+                ,
+                range_maximum_value: self.range_maximum_value
+                ,
+                null_option: self.null_option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("null_option", "null_option was not specified but it is required when building TimeRangeFilter")
+                    )?
+                ,
+                exclude_period_configuration: self.exclude_period_configuration
+                ,
+                time_granularity: self.time_granularity
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationJobInput {
+pub struct DeleteReplicationJobInput  {
     /// <p>The ID of the replication job.</p>
     pub replication_job_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationJobInput {
+impl  DeleteReplicationJobInput  {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> ::std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteReplicationJobInputBuilder {
     }
     /// <p>The ID of the replication job.</p>
     pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_job_id = input;
-        self
+        self.replication_job_id = input; self
     }
     /// <p>The ID of the replication job.</p>
     pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_job_id
     }
     /// Consumes the builder and constructs a [`DeleteReplicationJobInput`](crate::operation::delete_replication_job::DeleteReplicationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_replication_job::DeleteReplicationJobInput {
-            replication_job_id: self.replication_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_replication_job::DeleteReplicationJobInput {
+                replication_job_id: self.replication_job_id
+                ,
+            }
+        )
     }
 }
+

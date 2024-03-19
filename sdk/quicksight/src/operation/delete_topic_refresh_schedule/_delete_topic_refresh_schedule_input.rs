@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTopicRefreshScheduleInput {
+pub struct DeleteTopicRefreshScheduleInput  {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -10,17 +10,17 @@ pub struct DeleteTopicRefreshScheduleInput {
     /// <p>The ID of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTopicRefreshScheduleInput {
+impl  DeleteTopicRefreshScheduleInput  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The ID of the dataset.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteTopicRefreshScheduleInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
     }
     /// Consumes the builder and constructs a [`DeleteTopicRefreshScheduleInput`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput {
-            aws_account_id: self.aws_account_id,
-            topic_id: self.topic_id,
-            dataset_id: self.dataset_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput {
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                dataset_id: self.dataset_id
+                ,
+            }
+        )
     }
 }
+

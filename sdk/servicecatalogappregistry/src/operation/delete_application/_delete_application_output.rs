@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationOutput {
+pub struct DeleteApplicationOutput  {
     /// <p>Information about the deleted application.</p>
     pub application: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,
 }
-impl DeleteApplicationOutput {
+impl  DeleteApplicationOutput  {
     /// <p>Information about the deleted application.</p>
-    pub fn application(&self) -> ::std::option::Option<&crate::types::ApplicationSummary> {
+    pub fn application(&self) -> ::std::option::Option<& crate::types::ApplicationSummary> {
         self.application.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
     pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>Information about the deleted application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<crate::types::ApplicationSummary>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>Information about the deleted application.</p>
     pub fn get_application(&self) -> &::std::option::Option<crate::types::ApplicationSummary> {
         &self.application
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
     pub fn build(self) -> crate::operation::delete_application::DeleteApplicationOutput {
         crate::operation::delete_application::DeleteApplicationOutput {
-            application: self.application,
+            application: self.application
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

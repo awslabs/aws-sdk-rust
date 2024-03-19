@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAppInstanceBotInput {
+pub struct UpdateAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     pub app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
@@ -12,25 +12,25 @@ pub struct UpdateAppInstanceBotInput {
     /// <p>The configuration for the bot update.</p>
     pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
-impl UpdateAppInstanceBotInput {
+impl  UpdateAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_bot_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_bot_arn.as_deref()
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The configuration for the bot update.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::Configuration> {
         self.configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAppInstanceBotInput {
+impl  ::std::fmt::Debug for UpdateAppInstanceBotInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceBotInput");
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
@@ -65,8 +65,7 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     pub fn set_app_instance_bot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_bot_arn = input;
-        self
+        self.app_instance_bot_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,24 +106,26 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The configuration for the bot update.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration for the bot update.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
-            app_instance_bot_arn: self.app_instance_bot_arn,
-            name: self.name,
-            metadata: self.metadata,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
+                app_instance_bot_arn: self.app_instance_bot_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceBotInputBuilder {
@@ -139,3 +138,4 @@ impl ::std::fmt::Debug for UpdateAppInstanceBotInputBuilder {
         formatter.finish()
     }
 }
+

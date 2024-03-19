@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableProfileOutput {
+pub struct EnableProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
     pub profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,
 }
-impl EnableProfileOutput {
+impl  EnableProfileOutput  {
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::ProfileDetail> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::ProfileDetail> {
         self.profile.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableProfileOutput {
     /// Creates a new builder-style object to manufacture [`EnableProfileOutput`](crate::operation::enable_profile::EnableProfileOutput).
     pub fn builder() -> crate::operation::enable_profile::builders::EnableProfileOutputBuilder {
@@ -40,27 +40,28 @@ impl EnableProfileOutputBuilder {
     }
     /// <p>The state of the profile after a read or write operation.</p>
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::ProfileDetail>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
     }
     /// <p>The state of the profile after a read or write operation.</p>
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::ProfileDetail> {
         &self.profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableProfileOutput`](crate::operation::enable_profile::EnableProfileOutput).
     pub fn build(self) -> crate::operation::enable_profile::EnableProfileOutput {
         crate::operation::enable_profile::EnableProfileOutput {
-            profile: self.profile,
+            profile: self.profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainInfo {
+pub struct DomainInfo  {
     /// <p>Specifies the <code>DomainName</code>.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>EngineType</code> of the domain.</p>
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
-impl DomainInfo {
+impl  DomainInfo  {
     /// <p>Specifies the <code>DomainName</code>.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Specifies the <code>EngineType</code> of the domain.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl DomainInfoBuilder {
     }
     /// <p>Specifies the <code>DomainName</code>.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Specifies the <code>DomainName</code>.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl DomainInfoBuilder {
     }
     /// <p>Specifies the <code>EngineType</code> of the domain.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>Specifies the <code>EngineType</code> of the domain.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -64,8 +62,11 @@ impl DomainInfoBuilder {
     /// Consumes the builder and constructs a [`DomainInfo`](crate::types::DomainInfo).
     pub fn build(self) -> crate::types::DomainInfo {
         crate::types::DomainInfo {
-            domain_name: self.domain_name,
-            engine_type: self.engine_type,
+            domain_name: self.domain_name
+            ,
+            engine_type: self.engine_type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the raw data of the message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RawMessage {
+pub struct RawMessage  {
     /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
     /// <p>The To:, CC:, and BCC: headers in the raw message can contain a group list.</p>
     /// <p>If you are using <code>SendRawEmail</code> with sending authorization, you can include X-headers in the raw message to specify the "Source," "From," and "Return-Path" addresses. For more information, see the documentation for <code>SendRawEmail</code>.</p><important>
@@ -12,14 +12,14 @@ pub struct RawMessage {
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
     pub data: ::aws_smithy_types::Blob,
 }
-impl RawMessage {
+impl  RawMessage  {
     /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
     /// <p>The To:, CC:, and BCC: headers in the raw message can contain a group list.</p>
     /// <p>If you are using <code>SendRawEmail</code> with sending authorization, you can include X-headers in the raw message to specify the "Source," "From," and "Return-Path" addresses. For more information, see the documentation for <code>SendRawEmail</code>.</p><important>
     /// <p>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</p>
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
 }
@@ -55,8 +55,7 @@ impl RawMessageBuilder {
     /// </important>
     /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
     /// <p>The To:, CC:, and BCC: headers in the raw message can contain a group list.</p>
@@ -71,13 +70,15 @@ impl RawMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::RawMessageBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RawMessage {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building RawMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RawMessage {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building RawMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

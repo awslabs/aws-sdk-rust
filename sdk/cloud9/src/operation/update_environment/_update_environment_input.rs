@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The ID of the environment to change settings.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A replacement name for the environment.</p>
@@ -20,17 +20,17 @@ pub struct UpdateEnvironmentInput {
     /// </note>
     pub managed_credentials_action: ::std::option::Option<crate::types::ManagedCredentialsAction>,
 }
-impl UpdateEnvironmentInput {
+impl  UpdateEnvironmentInput  {
     /// <p>The ID of the environment to change settings.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A replacement name for the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Any new or replacement description for the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
@@ -42,11 +42,11 @@ impl UpdateEnvironmentInput {
     /// </ul><note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn managed_credentials_action(&self) -> ::std::option::Option<&crate::types::ManagedCredentialsAction> {
+    pub fn managed_credentials_action(&self) -> ::std::option::Option<& crate::types::ManagedCredentialsAction> {
         self.managed_credentials_action.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateEnvironmentInput {
+impl  ::std::fmt::Debug for UpdateEnvironmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
         formatter.field("environment_id", &self.environment_id);
@@ -81,8 +81,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The ID of the environment to change settings.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment to change settings.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>A replacement name for the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A replacement name for the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Any new or replacement description for the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Any new or replacement description for the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
     pub fn set_managed_credentials_action(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsAction>) -> Self {
-        self.managed_credentials_action = input;
-        self
+        self.managed_credentials_action = input; self
     }
     /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
     /// <ul>
@@ -155,15 +151,19 @@ impl UpdateEnvironmentInputBuilder {
         &self.managed_credentials_action
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            environment_id: self.environment_id,
-            name: self.name,
-            description: self.description,
-            managed_credentials_action: self.managed_credentials_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentInput {
+                environment_id: self.environment_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                managed_credentials_action: self.managed_credentials_action
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
@@ -176,3 +176,4 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.finish()
     }
 }
+

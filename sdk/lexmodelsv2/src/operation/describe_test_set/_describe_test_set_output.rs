@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestSetOutput {
+pub struct DescribeTestSetOutput  {
     /// <p>The test set Id for the test set response.</p>
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set name of the test set.</p>
@@ -25,29 +25,29 @@ pub struct DescribeTestSetOutput {
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeTestSetOutput {
+impl  DescribeTestSetOutput  {
     /// <p>The test set Id for the test set response.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The test set name of the test set.</p>
-    pub fn test_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_name(&self) -> ::std::option::Option<& str> {
         self.test_set_name.as_deref()
     }
     /// <p>The description of the test set.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the test set is audio or text data.</p>
-    pub fn modality(&self) -> ::std::option::Option<&crate::types::TestSetModality> {
+    pub fn modality(&self) -> ::std::option::Option<& crate::types::TestSetModality> {
         self.modality.as_ref()
     }
     /// <p>The status of the test set.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TestSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TestSetStatus> {
         self.status.as_ref()
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The total number of agent and user turn in the test set.</p>
@@ -55,23 +55,23 @@ impl DescribeTestSetOutput {
         self.num_turns
     }
     /// <p>The Amazon S3 storage location for the test set data.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::TestSetStorageLocation> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::TestSetStorageLocation> {
         self.storage_location.as_ref()
     }
     /// <p>The creation date and time for the test set data.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time for the last update of the test set data.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTestSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTestSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestSetOutput`](crate::operation::describe_test_set::DescribeTestSetOutput).
     pub fn builder() -> crate::operation::describe_test_set::builders::DescribeTestSetOutputBuilder {
@@ -103,8 +103,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The test set Id for the test set response.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set response.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The test set name of the test set.</p>
     pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_name = input;
-        self
+        self.test_set_name = input; self
     }
     /// <p>The test set name of the test set.</p>
     pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The description of the test set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the test set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>Indicates whether the test set is audio or text data.</p>
     pub fn set_modality(mut self, input: ::std::option::Option<crate::types::TestSetModality>) -> Self {
-        self.modality = input;
-        self
+        self.modality = input; self
     }
     /// <p>Indicates whether the test set is audio or text data.</p>
     pub fn get_modality(&self) -> &::std::option::Option<crate::types::TestSetModality> {
@@ -159,8 +155,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The status of the test set.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the test set.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TestSetStatus> {
@@ -173,8 +168,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +181,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The total number of agent and user turn in the test set.</p>
     pub fn set_num_turns(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_turns = input;
-        self
+        self.num_turns = input; self
     }
     /// <p>The total number of agent and user turn in the test set.</p>
     pub fn get_num_turns(&self) -> &::std::option::Option<i32> {
@@ -201,8 +194,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The Amazon S3 storage location for the test set data.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>The Amazon S3 storage location for the test set data.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
@@ -215,8 +207,7 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The creation date and time for the test set data.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time for the test set data.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -229,36 +220,46 @@ impl DescribeTestSetOutputBuilder {
     }
     /// <p>The date and time for the last update of the test set data.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time for the last update of the test set data.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTestSetOutput`](crate::operation::describe_test_set::DescribeTestSetOutput).
     pub fn build(self) -> crate::operation::describe_test_set::DescribeTestSetOutput {
         crate::operation::describe_test_set::DescribeTestSetOutput {
-            test_set_id: self.test_set_id,
-            test_set_name: self.test_set_name,
-            description: self.description,
-            modality: self.modality,
-            status: self.status,
-            role_arn: self.role_arn,
-            num_turns: self.num_turns,
-            storage_location: self.storage_location,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            test_set_id: self.test_set_id
+            ,
+            test_set_name: self.test_set_name
+            ,
+            description: self.description
+            ,
+            modality: self.modality
+            ,
+            status: self.status
+            ,
+            role_arn: self.role_arn
+            ,
+            num_turns: self.num_turns
+            ,
+            storage_location: self.storage_location
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

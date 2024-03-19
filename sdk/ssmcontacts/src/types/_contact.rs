@@ -3,7 +3,7 @@
 /// <p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub contact_arn: ::std::string::String,
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
@@ -13,23 +13,21 @@ pub struct Contact {
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub r#type: crate::types::ContactType,
 }
-impl Contact {
+impl  Contact  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
-    pub fn alias(&self) -> &str {
-        use std::ops::Deref;
-        self.alias.deref()
+    pub fn alias(&self) -> & str {
+        use std::ops::Deref; self.alias.deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> &crate::types::ContactType {
+    pub fn r#type(&self) -> & crate::types::ContactType {
         &self.r#type
     }
 }
@@ -58,8 +56,7 @@ impl ContactBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl ContactBuilder {
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl ContactBuilder {
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl ContactBuilder {
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
@@ -115,26 +109,27 @@ impl ContactBuilder {
     /// - [`alias`](crate::types::builders::ContactBuilder::alias)
     /// - [`r#type`](crate::types::builders::ContactBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Contact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Contact {
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building Contact",
-                )
-            })?,
-            alias: self.alias.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alias",
-                    "alias was not specified but it is required when building Contact",
-                )
-            })?,
-            display_name: self.display_name,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Contact",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Contact {
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building Contact")
+                    )?
+                ,
+                alias: self.alias
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alias", "alias was not specified but it is required when building Contact")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Contact")
+                    )?
+                ,
+            }
+        )
     }
 }
+

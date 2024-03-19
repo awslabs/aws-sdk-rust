@@ -3,30 +3,31 @@
 /// Response to ListChangesetsResponse. This returns a list of dataset changesets that match the query criteria.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChangesetsOutput {
+pub struct ListChangesetsOutput  {
     /// <p>List of Changesets found.</p>
-    pub changesets: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>,
+    pub changesets: ::std::option::Option<::std::vec::Vec::<crate::types::ChangesetSummary>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListChangesetsOutput {
+impl  ListChangesetsOutput  {
     /// <p>List of Changesets found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changesets.is_none()`.
-    pub fn changesets(&self) -> &[crate::types::ChangesetSummary] {
-        self.changesets.as_deref().unwrap_or_default()
+    pub fn changesets(&self) -> & [crate::types::ChangesetSummary] {
+        self.changesets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListChangesetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChangesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListChangesetsOutput`](crate::operation::list_changesets::ListChangesetsOutput).
     pub fn builder() -> crate::operation::list_changesets::builders::ListChangesetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListChangesetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangesetsOutputBuilder {
-    pub(crate) changesets: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>,
+    pub(crate) changesets: ::std::option::Option<::std::vec::Vec::<crate::types::ChangesetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListChangesetsOutputBuilder {
     /// <p>List of Changesets found.</p>
     pub fn changesets(mut self, input: crate::types::ChangesetSummary) -> Self {
         let mut v = self.changesets.unwrap_or_default();
-        v.push(input);
-        self.changesets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.changesets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Changesets found.</p>
-    pub fn set_changesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>) -> Self {
-        self.changesets = input;
-        self
+    pub fn set_changesets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChangesetSummary>>) -> Self {
+        self.changesets = input; self
     }
     /// <p>List of Changesets found.</p>
-    pub fn get_changesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>> {
+    pub fn get_changesets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChangesetSummary>> {
         &self.changesets
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -70,28 +70,30 @@ impl ListChangesetsOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChangesetsOutput`](crate::operation::list_changesets::ListChangesetsOutput).
     pub fn build(self) -> crate::operation::list_changesets::ListChangesetsOutput {
         crate::operation::list_changesets::ListChangesetsOutput {
-            changesets: self.changesets,
-            next_token: self.next_token,
+            changesets: self.changesets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

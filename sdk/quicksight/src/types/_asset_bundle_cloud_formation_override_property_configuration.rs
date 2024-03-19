@@ -3,70 +3,77 @@
 /// <p>An optional collection of CloudFormation property configurations that control how the export job is generated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleCloudFormationOverridePropertyConfiguration {
+pub struct AssetBundleCloudFormationOverridePropertyConfiguration  {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
     pub resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>,
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
+    pub vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
+    pub refresh_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemeOverrideProperties>>,
+    pub themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobThemeOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
+    pub analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
+    pub dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
 }
-impl AssetBundleCloudFormationOverridePropertyConfiguration {
+impl  AssetBundleCloudFormationOverridePropertyConfiguration  {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
-    pub fn resource_id_override_configuration(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobResourceIdOverrideConfiguration> {
+    pub fn resource_id_override_configuration(&self) -> ::std::option::Option<& crate::types::AssetBundleExportJobResourceIdOverrideConfiguration> {
         self.resource_id_override_configuration.as_ref()
     }
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connections.is_none()`.
-    pub fn vpc_connections(&self) -> &[crate::types::AssetBundleExportJobVpcConnectionOverrideProperties] {
-        self.vpc_connections.as_deref().unwrap_or_default()
+    pub fn vpc_connections(&self) -> & [crate::types::AssetBundleExportJobVpcConnectionOverrideProperties] {
+        self.vpc_connections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.refresh_schedules.is_none()`.
-    pub fn refresh_schedules(&self) -> &[crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties] {
-        self.refresh_schedules.as_deref().unwrap_or_default()
+    pub fn refresh_schedules(&self) -> & [crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties] {
+        self.refresh_schedules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::AssetBundleExportJobDataSourceOverrideProperties] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::AssetBundleExportJobDataSourceOverrideProperties] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
-    pub fn data_sets(&self) -> &[crate::types::AssetBundleExportJobDataSetOverrideProperties] {
-        self.data_sets.as_deref().unwrap_or_default()
+    pub fn data_sets(&self) -> & [crate::types::AssetBundleExportJobDataSetOverrideProperties] {
+        self.data_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
-    pub fn themes(&self) -> &[crate::types::AssetBundleExportJobThemeOverrideProperties] {
-        self.themes.as_deref().unwrap_or_default()
+    pub fn themes(&self) -> & [crate::types::AssetBundleExportJobThemeOverrideProperties] {
+        self.themes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
-    pub fn analyses(&self) -> &[crate::types::AssetBundleExportJobAnalysisOverrideProperties] {
-        self.analyses.as_deref().unwrap_or_default()
+    pub fn analyses(&self) -> & [crate::types::AssetBundleExportJobAnalysisOverrideProperties] {
+        self.analyses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
-    pub fn dashboards(&self) -> &[crate::types::AssetBundleExportJobDashboardOverrideProperties] {
-        self.dashboards.as_deref().unwrap_or_default()
+    pub fn dashboards(&self) -> & [crate::types::AssetBundleExportJobDashboardOverrideProperties] {
+        self.dashboards.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssetBundleCloudFormationOverridePropertyConfiguration {
@@ -81,13 +88,13 @@ impl AssetBundleCloudFormationOverridePropertyConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     pub(crate) resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>,
-    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
-    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
-    pub(crate) themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemeOverrideProperties>>,
-    pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
-    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
+    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
+    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
+    pub(crate) themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobThemeOverrideProperties>>,
+    pub(crate) analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
+    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
 }
 impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
@@ -96,17 +103,11 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
         self
     }
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
-    pub fn set_resource_id_override_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>,
-    ) -> Self {
-        self.resource_id_override_configuration = input;
-        self
+    pub fn set_resource_id_override_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>) -> Self {
+        self.resource_id_override_configuration = input; self
     }
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
-    pub fn get_resource_id_override_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration> {
+    pub fn get_resource_id_override_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration> {
         &self.resource_id_override_configuration
     }
     /// Appends an item to `vpc_connections`.
@@ -116,20 +117,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn vpc_connections(mut self, input: crate::types::AssetBundleExportJobVpcConnectionOverrideProperties) -> Self {
         let mut v = self.vpc_connections.unwrap_or_default();
-        v.push(input);
-        self.vpc_connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_vpc_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,
-    ) -> Self {
-        self.vpc_connections = input;
-        self
+    pub fn set_vpc_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>) -> Self {
+        self.vpc_connections = input; self
     }
     /// <p>An optional list of structures that control how <code>VPCConnection</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>> {
+    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>> {
         &self.vpc_connections
     }
     /// Appends an item to `refresh_schedules`.
@@ -139,22 +136,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn refresh_schedules(mut self, input: crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties) -> Self {
         let mut v = self.refresh_schedules.unwrap_or_default();
-        v.push(input);
-        self.refresh_schedules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.refresh_schedules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_refresh_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>,
-    ) -> Self {
-        self.refresh_schedules = input;
-        self
+    pub fn set_refresh_schedules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>>) -> Self {
+        self.refresh_schedules = input; self
     }
     /// <p>An optional list of structures that control how <code>RefreshSchedule</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_refresh_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>> {
+    pub fn get_refresh_schedules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>> {
         &self.refresh_schedules
     }
     /// Appends an item to `data_sources`.
@@ -164,20 +155,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn data_sources(mut self, input: crate::types::AssetBundleExportJobDataSourceOverrideProperties) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSourceOverrideProperties>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>An optional list of structures that control how <code>DataSource</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourceOverrideProperties>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSourceOverrideProperties>> {
         &self.data_sources
     }
     /// Appends an item to `data_sets`.
@@ -187,20 +174,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn data_sets(mut self, input: crate::types::AssetBundleExportJobDataSetOverrideProperties) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_data_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetOverrideProperties>>,
-    ) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSetOverrideProperties>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>An optional list of structures that control how <code>DataSet</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetOverrideProperties>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDataSetOverrideProperties>> {
         &self.data_sets
     }
     /// Appends an item to `themes`.
@@ -210,17 +193,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn themes(mut self, input: crate::types::AssetBundleExportJobThemeOverrideProperties) -> Self {
         let mut v = self.themes.unwrap_or_default();
-        v.push(input);
-        self.themes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.themes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemeOverrideProperties>>) -> Self {
-        self.themes = input;
-        self
+    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobThemeOverrideProperties>>) -> Self {
+        self.themes = input; self
     }
     /// <p>An optional list of structures that control how <code>Theme</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobThemeOverrideProperties>> {
+    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobThemeOverrideProperties>> {
         &self.themes
     }
     /// Appends an item to `analyses`.
@@ -230,20 +212,16 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn analyses(mut self, input: crate::types::AssetBundleExportJobAnalysisOverrideProperties) -> Self {
         let mut v = self.analyses.unwrap_or_default();
-        v.push(input);
-        self.analyses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analyses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_analyses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
-    ) -> Self {
-        self.analyses = input;
-        self
+    pub fn set_analyses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>) -> Self {
+        self.analyses = input; self
     }
     /// <p>An optional list of structures that control how <code>Analysis</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>> {
+    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobAnalysisOverrideProperties>> {
         &self.analyses
     }
     /// Appends an item to `dashboards`.
@@ -253,33 +231,38 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
     pub fn dashboards(mut self, input: crate::types::AssetBundleExportJobDashboardOverrideProperties) -> Self {
         let mut v = self.dashboards.unwrap_or_default();
-        v.push(input);
-        self.dashboards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dashboards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn set_dashboards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
-    ) -> Self {
-        self.dashboards = input;
-        self
+    pub fn set_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardOverrideProperties>>) -> Self {
+        self.dashboards = input; self
     }
     /// <p>An optional list of structures that control how <code>Dashboard</code> resources are parameterized in the returned CloudFormation template.</p>
-    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>> {
+    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleExportJobDashboardOverrideProperties>> {
         &self.dashboards
     }
     /// Consumes the builder and constructs a [`AssetBundleCloudFormationOverridePropertyConfiguration`](crate::types::AssetBundleCloudFormationOverridePropertyConfiguration).
     pub fn build(self) -> crate::types::AssetBundleCloudFormationOverridePropertyConfiguration {
         crate::types::AssetBundleCloudFormationOverridePropertyConfiguration {
-            resource_id_override_configuration: self.resource_id_override_configuration,
-            vpc_connections: self.vpc_connections,
-            refresh_schedules: self.refresh_schedules,
-            data_sources: self.data_sources,
-            data_sets: self.data_sets,
-            themes: self.themes,
-            analyses: self.analyses,
-            dashboards: self.dashboards,
+            resource_id_override_configuration: self.resource_id_override_configuration
+            ,
+            vpc_connections: self.vpc_connections
+            ,
+            refresh_schedules: self.refresh_schedules
+            ,
+            data_sources: self.data_sources
+            ,
+            data_sets: self.data_sets
+            ,
+            themes: self.themes
+            ,
+            analyses: self.analyses
+            ,
+            dashboards: self.dashboards
+            ,
         }
     }
 }
+

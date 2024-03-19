@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstancesHealthStatusInput {
+pub struct GetInstancesHealthStatusInput  {
     /// <p>The ID of the service that the instance is associated with.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
     /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
-    pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetInstancesHealthStatusInput {
+impl  GetInstancesHealthStatusInput  {
     /// <p>The ID of the service that the instance is associated with.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
     /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[::std::string::String] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [::std::string::String] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -36,7 +37,7 @@ impl GetInstancesHealthStatusInput {
     }
     /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -52,7 +53,7 @@ impl GetInstancesHealthStatusInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstancesHealthStatusInputBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -65,8 +66,7 @@ impl GetInstancesHealthStatusInputBuilder {
     }
     /// <p>The ID of the service that the instance is associated with.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the service that the instance is associated with.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,23 +82,22 @@ impl GetInstancesHealthStatusInputBuilder {
     /// </note>
     pub fn instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input.into());
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
     /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instances = input; self
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
     /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instances
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
@@ -108,8 +107,7 @@ impl GetInstancesHealthStatusInputBuilder {
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -124,8 +122,7 @@ impl GetInstancesHealthStatusInputBuilder {
     /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -133,17 +130,19 @@ impl GetInstancesHealthStatusInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetInstancesHealthStatusInput`](crate::operation::get_instances_health_status::GetInstancesHealthStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instances_health_status::GetInstancesHealthStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_instances_health_status::GetInstancesHealthStatusInput {
-            service_id: self.service_id,
-            instances: self.instances,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instances_health_status::GetInstancesHealthStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_instances_health_status::GetInstancesHealthStatusInput {
+                service_id: self.service_id
+                ,
+                instances: self.instances
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

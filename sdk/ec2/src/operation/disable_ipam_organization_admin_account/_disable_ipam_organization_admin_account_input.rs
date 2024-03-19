@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableIpamOrganizationAdminAccountInput {
+pub struct DisableIpamOrganizationAdminAccountInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DisableIpamOrganizationAdminAccountInput {
+impl  DisableIpamOrganizationAdminAccountInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,25 +54,22 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
     pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delegated_admin_account_id = input;
-        self
+        self.delegated_admin_account_id = input; self
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
     pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegated_admin_account_id
     }
     /// Consumes the builder and constructs a [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput {
-                dry_run: self.dry_run,
-                delegated_admin_account_id: self.delegated_admin_account_id,
-            },
+                dry_run: self.dry_run
+                ,
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
+            }
         )
     }
 }
+

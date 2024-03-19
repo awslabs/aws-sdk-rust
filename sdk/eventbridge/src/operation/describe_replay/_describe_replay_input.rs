@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplayInput {
+pub struct DescribeReplayInput  {
     /// <p>The name of the replay to retrieve.</p>
     pub replay_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReplayInput {
+impl  DescribeReplayInput  {
     /// <p>The name of the replay to retrieve.</p>
-    pub fn replay_name(&self) -> ::std::option::Option<&str> {
+    pub fn replay_name(&self) -> ::std::option::Option<& str> {
         self.replay_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeReplayInputBuilder {
     }
     /// <p>The name of the replay to retrieve.</p>
     pub fn set_replay_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replay_name = input;
-        self
+        self.replay_name = input; self
     }
     /// <p>The name of the replay to retrieve.</p>
     pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.replay_name
     }
     /// Consumes the builder and constructs a [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_replay::DescribeReplayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_replay::DescribeReplayInput {
-            replay_name: self.replay_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replay::DescribeReplayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_replay::DescribeReplayInput {
+                replay_name: self.replay_name
+                ,
+            }
+        )
     }
 }
+

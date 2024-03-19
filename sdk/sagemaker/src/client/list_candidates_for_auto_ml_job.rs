@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCandidatesForAutoMLJob`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`auto_ml_job_name(impl Into<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_auto_ml_job_name):<br>required: **true**<br><p>List the candidates created for the job by providing the job's name.</p><br>
     ///   - [`status_equals(CandidateStatus)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::status_equals) / [`set_status_equals(Option<CandidateStatus>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_status_equals):<br>required: **false**<br><p>List the candidates for the job and filter by status.</p><br>
     ///   - [`candidate_name_equals(impl Into<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::candidate_name_equals) / [`set_candidate_name_equals(Option<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_candidate_name_equals):<br>required: **false**<br><p>List the candidates for the job and filter by candidate name.</p><br>
@@ -11,13 +11,12 @@ impl super::Client {
     ///   - [`sort_by(CandidateSortBy)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::sort_by) / [`set_sort_by(Option<CandidateSortBy>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results. The default is <code>Descending</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_max_results):<br>required: **false**<br><p>List the job's candidates up to a specified limit.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
-    /// - On success, responds with [`ListCandidatesForAutoMlJobOutput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput) with field(s):
+                            /// - On success, responds with [`ListCandidatesForAutoMlJobOutput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput) with field(s):
     ///   - [`candidates(Option<Vec::<AutoMlCandidate>>)`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput::candidates): <p>Summaries about the <code>AutoMLCandidates</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListCandidatesForAutoMLJobError>`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError)
-    pub fn list_candidates_for_auto_ml_job(
-        &self,
-    ) -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder {
-        crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCandidatesForAutoMLJobError>`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError)
+    pub fn list_candidates_for_auto_ml_job(&self) -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder {
+                                crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMLJobFluentBuilder::new(self.handle.clone())
+                            }
 }
+

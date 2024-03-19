@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateLocationSmbInput {
+pub struct UpdateLocationSmbInput  {
     /// <p>Specifies the ARN of the SMB location that you want to update.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
@@ -19,48 +19,49 @@ pub struct UpdateLocationSmbInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
 }
-impl UpdateLocationSmbInput {
+impl  UpdateLocationSmbInput  {
     /// <p>Specifies the ARN of the SMB location that you want to update.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    pub fn user(&self) -> ::std::option::Option<&str> {
+    pub fn user(&self) -> ::std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<& crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateLocationSmbInput {
+impl  ::std::fmt::Debug for UpdateLocationSmbInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationSmbInput");
         formatter.field("location_arn", &self.location_arn);
@@ -89,7 +90,7 @@ pub struct UpdateLocationSmbInputBuilder {
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
 }
 impl UpdateLocationSmbInputBuilder {
@@ -101,8 +102,7 @@ impl UpdateLocationSmbInputBuilder {
     }
     /// <p>Specifies the ARN of the SMB location that you want to update.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the ARN of the SMB location that you want to update.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +117,7 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
@@ -134,8 +133,7 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
@@ -153,8 +151,7 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
@@ -171,8 +168,7 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
@@ -186,17 +182,16 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
@@ -206,26 +201,32 @@ impl UpdateLocationSmbInputBuilder {
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
-        self.mount_options = input;
-        self
+        self.mount_options = input; self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
         &self.mount_options
     }
     /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_location_smb::UpdateLocationSmbInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_location_smb::UpdateLocationSmbInput {
-            location_arn: self.location_arn,
-            subdirectory: self.subdirectory,
-            user: self.user,
-            domain: self.domain,
-            password: self.password,
-            agent_arns: self.agent_arns,
-            mount_options: self.mount_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_location_smb::UpdateLocationSmbInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_location_smb::UpdateLocationSmbInput {
+                location_arn: self.location_arn
+                ,
+                subdirectory: self.subdirectory
+                ,
+                user: self.user
+                ,
+                domain: self.domain
+                ,
+                password: self.password
+                ,
+                agent_arns: self.agent_arns
+                ,
+                mount_options: self.mount_options
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateLocationSmbInputBuilder {
@@ -241,3 +242,4 @@ impl ::std::fmt::Debug for UpdateLocationSmbInputBuilder {
         formatter.finish()
     }
 }
+

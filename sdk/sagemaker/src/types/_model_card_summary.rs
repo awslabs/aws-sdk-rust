@@ -3,7 +3,7 @@
 /// <p>A summary of the model card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelCardSummary {
+pub struct ModelCardSummary  {
     /// <p>The name of the model card.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
@@ -25,13 +25,13 @@ pub struct ModelCardSummary {
     /// <p>The date and time that the model card was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ModelCardSummary {
+impl  ModelCardSummary  {
     /// <p>The name of the model card.</p>
-    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> ::std::option::Option<& str> {
         self.model_card_arn.as_deref()
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
@@ -45,15 +45,15 @@ impl ModelCardSummary {
     /// <li>
     /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
-    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>The date and time that the model card was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the model card was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ModelCardSummaryBuilder {
     }
     /// <p>The name of the model card.</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>The name of the model card.</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ModelCardSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_arn = input;
-        self
+        self.model_card_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl ModelCardSummaryBuilder {
     /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input;
-        self
+        self.model_card_status = input; self
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -158,8 +155,7 @@ impl ModelCardSummaryBuilder {
     }
     /// <p>The date and time that the model card was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the model card was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +168,7 @@ impl ModelCardSummaryBuilder {
     }
     /// <p>The date and time that the model card was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time that the model card was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,11 +177,17 @@ impl ModelCardSummaryBuilder {
     /// Consumes the builder and constructs a [`ModelCardSummary`](crate::types::ModelCardSummary).
     pub fn build(self) -> crate::types::ModelCardSummary {
         crate::types::ModelCardSummary {
-            model_card_name: self.model_card_name,
-            model_card_arn: self.model_card_arn,
-            model_card_status: self.model_card_status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            model_card_name: self.model_card_name
+            ,
+            model_card_arn: self.model_card_arn
+            ,
+            model_card_status: self.model_card_status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

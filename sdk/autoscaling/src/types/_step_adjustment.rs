@@ -22,7 +22,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StepAdjustment {
+pub struct StepAdjustment  {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     pub metric_interval_lower_bound: ::std::option::Option<f64>,
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
@@ -31,7 +31,7 @@ pub struct StepAdjustment {
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub scaling_adjustment: ::std::option::Option<i32>,
 }
-impl StepAdjustment {
+impl  StepAdjustment  {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     pub fn metric_interval_lower_bound(&self) -> ::std::option::Option<f64> {
         self.metric_interval_lower_bound
@@ -69,8 +69,7 @@ impl StepAdjustmentBuilder {
     }
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     pub fn set_metric_interval_lower_bound(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.metric_interval_lower_bound = input;
-        self
+        self.metric_interval_lower_bound = input; self
     }
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     pub fn get_metric_interval_lower_bound(&self) -> &::std::option::Option<f64> {
@@ -85,8 +84,7 @@ impl StepAdjustmentBuilder {
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
     pub fn set_metric_interval_upper_bound(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.metric_interval_upper_bound = input;
-        self
+        self.metric_interval_upper_bound = input; self
     }
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
@@ -101,8 +99,7 @@ impl StepAdjustmentBuilder {
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scaling_adjustment = input;
-        self
+        self.scaling_adjustment = input; self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
@@ -111,9 +108,13 @@ impl StepAdjustmentBuilder {
     /// Consumes the builder and constructs a [`StepAdjustment`](crate::types::StepAdjustment).
     pub fn build(self) -> crate::types::StepAdjustment {
         crate::types::StepAdjustment {
-            metric_interval_lower_bound: self.metric_interval_lower_bound,
-            metric_interval_upper_bound: self.metric_interval_upper_bound,
-            scaling_adjustment: self.scaling_adjustment,
+            metric_interval_lower_bound: self.metric_interval_lower_bound
+            ,
+            metric_interval_upper_bound: self.metric_interval_upper_bound
+            ,
+            scaling_adjustment: self.scaling_adjustment
+            ,
         }
     }
 }
+

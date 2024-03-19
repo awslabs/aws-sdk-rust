@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterDeviceInput {
+pub struct DeregisterDeviceInput  {
     /// <p>The ID of the device to deregister.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The desired new status for the device.</p>
@@ -12,19 +12,19 @@ pub struct DeregisterDeviceInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterDeviceInput {
+impl  DeregisterDeviceInput  {
     /// <p>The ID of the device to deregister.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The desired new status for the device.</p>
-    pub fn target_device_status(&self) -> ::std::option::Option<&crate::types::TargetDeviceStatus> {
+    pub fn target_device_status(&self) -> ::std::option::Option<& crate::types::TargetDeviceStatus> {
         self.target_device_status.as_ref()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl DeregisterDeviceInputBuilder {
     }
     /// <p>The ID of the device to deregister.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the device to deregister.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl DeregisterDeviceInputBuilder {
     }
     /// <p>The desired new status for the device.</p>
     pub fn set_target_device_status(mut self, input: ::std::option::Option<crate::types::TargetDeviceStatus>) -> Self {
-        self.target_device_status = input;
-        self
+        self.target_device_status = input; self
     }
     /// <p>The desired new status for the device.</p>
     pub fn get_target_device_status(&self) -> &::std::option::Option<crate::types::TargetDeviceStatus> {
@@ -84,8 +82,7 @@ impl DeregisterDeviceInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -94,13 +91,17 @@ impl DeregisterDeviceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeregisterDeviceInput`](crate::operation::deregister_device::DeregisterDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_device::DeregisterDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_device::DeregisterDeviceInput {
-            id: self.id,
-            target_device_status: self.target_device_status,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_device::DeregisterDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_device::DeregisterDeviceInput {
+                id: self.id
+                ,
+                target_device_status: self.target_device_status
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

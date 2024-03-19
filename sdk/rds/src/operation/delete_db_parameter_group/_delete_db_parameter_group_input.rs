@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbParameterGroupInput {
+pub struct DeleteDbParameterGroupInput  {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct DeleteDbParameterGroupInput {
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbParameterGroupInput {
+impl  DeleteDbParameterGroupInput  {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -27,7 +27,7 @@ impl DeleteDbParameterGroupInput {
     /// <li>
     /// <p>Can't be associated with any DB instances</p></li>
     /// </ul>
-    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl DeleteDbParameterGroupInputBuilder {
     /// <p>Can't be associated with any DB instances</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_name = input;
-        self
+        self.db_parameter_group_name = input; self
     }
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -88,14 +87,13 @@ impl DeleteDbParameterGroupInputBuilder {
         &self.db_parameter_group_name
     }
     /// Consumes the builder and constructs a [`DeleteDbParameterGroupInput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput {
-            db_parameter_group_name: self.db_parameter_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_parameter_group::DeleteDbParameterGroupInput {
+                db_parameter_group_name: self.db_parameter_group_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSlotTypeInput {
+pub struct PutSlotTypeInput  {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
@@ -12,7 +12,7 @@ pub struct PutSlotTypeInput {
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    pub enumeration_values: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
+    pub enumeration_values: ::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
@@ -32,31 +32,32 @@ pub struct PutSlotTypeInput {
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
+    pub slot_type_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>>,
 }
-impl PutSlotTypeInput {
+impl  PutSlotTypeInput  {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the slot type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enumeration_values.is_none()`.
-    pub fn enumeration_values(&self) -> &[crate::types::EnumerationValue] {
-        self.enumeration_values.as_deref().unwrap_or_default()
+    pub fn enumeration_values(&self) -> & [crate::types::EnumerationValue] {
+        self.enumeration_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
@@ -67,7 +68,7 @@ impl PutSlotTypeInput {
     /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn value_selection_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionStrategy> {
+    pub fn value_selection_strategy(&self) -> ::std::option::Option<& crate::types::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
@@ -76,14 +77,15 @@ impl PutSlotTypeInput {
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn parent_slot_type_signature(&self) -> ::std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> ::std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_configurations.is_none()`.
-    pub fn slot_type_configurations(&self) -> &[crate::types::SlotTypeConfiguration] {
-        self.slot_type_configurations.as_deref().unwrap_or_default()
+    pub fn slot_type_configurations(&self) -> & [crate::types::SlotTypeConfiguration] {
+        self.slot_type_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutSlotTypeInput {
@@ -99,12 +101,12 @@ impl PutSlotTypeInput {
 pub struct PutSlotTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) enumeration_values: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
+    pub(crate) enumeration_values: ::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) value_selection_strategy: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
     pub(crate) create_version: ::std::option::Option<bool>,
     pub(crate) parent_slot_type_signature: ::std::option::Option<::std::string::String>,
-    pub(crate) slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
+    pub(crate) slot_type_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>>,
 }
 impl PutSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
@@ -119,8 +121,7 @@ impl PutSlotTypeInputBuilder {
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
@@ -135,8 +136,7 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>A description of the slot type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the slot type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,21 +151,20 @@ impl PutSlotTypeInputBuilder {
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
     pub fn enumeration_values(mut self, input: crate::types::EnumerationValue) -> Self {
         let mut v = self.enumeration_values.unwrap_or_default();
-        v.push(input);
-        self.enumeration_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.enumeration_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>) -> Self {
-        self.enumeration_values = input;
-        self
+    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>>) -> Self {
+        self.enumeration_values = input; self
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
+    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>> {
         &self.enumeration_values
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -179,8 +178,7 @@ impl PutSlotTypeInputBuilder {
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -209,8 +207,7 @@ impl PutSlotTypeInputBuilder {
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_value_selection_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>) -> Self {
-        self.value_selection_strategy = input;
-        self
+        self.value_selection_strategy = input; self
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -230,8 +227,7 @@ impl PutSlotTypeInputBuilder {
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_version = input;
-        self
+        self.create_version = input; self
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub fn get_create_version(&self) -> &::std::option::Option<bool> {
@@ -246,8 +242,7 @@ impl PutSlotTypeInputBuilder {
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
     pub fn set_parent_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_slot_type_signature = input;
-        self
+        self.parent_slot_type_signature = input; self
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
@@ -261,30 +256,40 @@ impl PutSlotTypeInputBuilder {
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
     pub fn slot_type_configurations(mut self, input: crate::types::SlotTypeConfiguration) -> Self {
         let mut v = self.slot_type_configurations.unwrap_or_default();
-        v.push(input);
-        self.slot_type_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slot_type_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>) -> Self {
-        self.slot_type_configurations = input;
-        self
+    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>>) -> Self {
+        self.slot_type_configurations = input; self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
+    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>> {
         &self.slot_type_configurations
     }
     /// Consumes the builder and constructs a [`PutSlotTypeInput`](crate::operation::put_slot_type::PutSlotTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_slot_type::PutSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_slot_type::PutSlotTypeInput {
-            name: self.name,
-            description: self.description,
-            enumeration_values: self.enumeration_values,
-            checksum: self.checksum,
-            value_selection_strategy: self.value_selection_strategy,
-            create_version: self.create_version,
-            parent_slot_type_signature: self.parent_slot_type_signature,
-            slot_type_configurations: self.slot_type_configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_slot_type::PutSlotTypeInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                enumeration_values: self.enumeration_values
+                ,
+                checksum: self.checksum
+                ,
+                value_selection_strategy: self.value_selection_strategy
+                ,
+                create_version: self.create_version
+                ,
+                parent_slot_type_signature: self.parent_slot_type_signature
+                ,
+                slot_type_configurations: self.slot_type_configurations
+                ,
+            }
+        )
     }
 }
+

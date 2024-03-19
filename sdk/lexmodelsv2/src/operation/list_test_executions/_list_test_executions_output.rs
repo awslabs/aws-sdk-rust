@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestExecutionsOutput {
+pub struct ListTestExecutionsOutput  {
     /// <p>The list of test executions.</p>
-    pub test_executions: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
+    pub test_executions: ::std::option::Option<::std::vec::Vec::<crate::types::TestExecutionSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTestExecutionsOutput {
+impl  ListTestExecutionsOutput  {
     /// <p>The list of test executions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_executions.is_none()`.
-    pub fn test_executions(&self) -> &[crate::types::TestExecutionSummary] {
-        self.test_executions.as_deref().unwrap_or_default()
+    pub fn test_executions(&self) -> & [crate::types::TestExecutionSummary] {
+        self.test_executions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTestExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTestExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput).
     pub fn builder() -> crate::operation::list_test_executions::builders::ListTestExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTestExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestExecutionsOutputBuilder {
-    pub(crate) test_executions: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
+    pub(crate) test_executions: ::std::option::Option<::std::vec::Vec::<crate::types::TestExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTestExecutionsOutputBuilder {
     /// <p>The list of test executions.</p>
     pub fn test_executions(mut self, input: crate::types::TestExecutionSummary) -> Self {
         let mut v = self.test_executions.unwrap_or_default();
-        v.push(input);
-        self.test_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.test_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of test executions.</p>
-    pub fn set_test_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>) -> Self {
-        self.test_executions = input;
-        self
+    pub fn set_test_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TestExecutionSummary>>) -> Self {
+        self.test_executions = input; self
     }
     /// <p>The list of test executions.</p>
-    pub fn get_test_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>> {
+    pub fn get_test_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TestExecutionSummary>> {
         &self.test_executions
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListTestExecutionsOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput).
     pub fn build(self) -> crate::operation::list_test_executions::ListTestExecutionsOutput {
         crate::operation::list_test_executions::ListTestExecutionsOutput {
-            test_executions: self.test_executions,
-            next_token: self.next_token,
+            test_executions: self.test_executions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

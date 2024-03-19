@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportClientBrandingOutput {
+pub struct ImportClientBrandingOutput  {
     /// <p>The branding information configured for Windows devices.</p>
     pub device_type_windows: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     /// <p>The branding information configured for macOS devices.</p>
@@ -17,37 +17,37 @@ pub struct ImportClientBrandingOutput {
     pub device_type_web: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     _request_id: Option<String>,
 }
-impl ImportClientBrandingOutput {
+impl  ImportClientBrandingOutput  {
     /// <p>The branding information configured for Windows devices.</p>
-    pub fn device_type_windows(&self) -> ::std::option::Option<&crate::types::DefaultClientBrandingAttributes> {
+    pub fn device_type_windows(&self) -> ::std::option::Option<& crate::types::DefaultClientBrandingAttributes> {
         self.device_type_windows.as_ref()
     }
     /// <p>The branding information configured for macOS devices.</p>
-    pub fn device_type_osx(&self) -> ::std::option::Option<&crate::types::DefaultClientBrandingAttributes> {
+    pub fn device_type_osx(&self) -> ::std::option::Option<& crate::types::DefaultClientBrandingAttributes> {
         self.device_type_osx.as_ref()
     }
     /// <p>The branding information configured for Android devices.</p>
-    pub fn device_type_android(&self) -> ::std::option::Option<&crate::types::DefaultClientBrandingAttributes> {
+    pub fn device_type_android(&self) -> ::std::option::Option<& crate::types::DefaultClientBrandingAttributes> {
         self.device_type_android.as_ref()
     }
     /// <p>The branding information configured for iOS devices.</p>
-    pub fn device_type_ios(&self) -> ::std::option::Option<&crate::types::IosClientBrandingAttributes> {
+    pub fn device_type_ios(&self) -> ::std::option::Option<& crate::types::IosClientBrandingAttributes> {
         self.device_type_ios.as_ref()
     }
     /// <p>The branding information configured for Linux devices.</p>
-    pub fn device_type_linux(&self) -> ::std::option::Option<&crate::types::DefaultClientBrandingAttributes> {
+    pub fn device_type_linux(&self) -> ::std::option::Option<& crate::types::DefaultClientBrandingAttributes> {
         self.device_type_linux.as_ref()
     }
     /// <p>The branding information configured for web access.</p>
-    pub fn device_type_web(&self) -> ::std::option::Option<&crate::types::DefaultClientBrandingAttributes> {
+    pub fn device_type_web(&self) -> ::std::option::Option<& crate::types::DefaultClientBrandingAttributes> {
         self.device_type_web.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportClientBrandingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportClientBrandingOutput {
     /// Creates a new builder-style object to manufacture [`ImportClientBrandingOutput`](crate::operation::import_client_branding::ImportClientBrandingOutput).
     pub fn builder() -> crate::operation::import_client_branding::builders::ImportClientBrandingOutputBuilder {
@@ -75,8 +75,7 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for Windows devices.</p>
     pub fn set_device_type_windows(mut self, input: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>) -> Self {
-        self.device_type_windows = input;
-        self
+        self.device_type_windows = input; self
     }
     /// <p>The branding information configured for Windows devices.</p>
     pub fn get_device_type_windows(&self) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
@@ -89,8 +88,7 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for macOS devices.</p>
     pub fn set_device_type_osx(mut self, input: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>) -> Self {
-        self.device_type_osx = input;
-        self
+        self.device_type_osx = input; self
     }
     /// <p>The branding information configured for macOS devices.</p>
     pub fn get_device_type_osx(&self) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
@@ -103,8 +101,7 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for Android devices.</p>
     pub fn set_device_type_android(mut self, input: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>) -> Self {
-        self.device_type_android = input;
-        self
+        self.device_type_android = input; self
     }
     /// <p>The branding information configured for Android devices.</p>
     pub fn get_device_type_android(&self) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
@@ -117,8 +114,7 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for iOS devices.</p>
     pub fn set_device_type_ios(mut self, input: ::std::option::Option<crate::types::IosClientBrandingAttributes>) -> Self {
-        self.device_type_ios = input;
-        self
+        self.device_type_ios = input; self
     }
     /// <p>The branding information configured for iOS devices.</p>
     pub fn get_device_type_ios(&self) -> &::std::option::Option<crate::types::IosClientBrandingAttributes> {
@@ -131,8 +127,7 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for Linux devices.</p>
     pub fn set_device_type_linux(mut self, input: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>) -> Self {
-        self.device_type_linux = input;
-        self
+        self.device_type_linux = input; self
     }
     /// <p>The branding information configured for Linux devices.</p>
     pub fn get_device_type_linux(&self) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
@@ -145,32 +140,38 @@ impl ImportClientBrandingOutputBuilder {
     }
     /// <p>The branding information configured for web access.</p>
     pub fn set_device_type_web(mut self, input: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>) -> Self {
-        self.device_type_web = input;
-        self
+        self.device_type_web = input; self
     }
     /// <p>The branding information configured for web access.</p>
     pub fn get_device_type_web(&self) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
         &self.device_type_web
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportClientBrandingOutput`](crate::operation::import_client_branding::ImportClientBrandingOutput).
     pub fn build(self) -> crate::operation::import_client_branding::ImportClientBrandingOutput {
         crate::operation::import_client_branding::ImportClientBrandingOutput {
-            device_type_windows: self.device_type_windows,
-            device_type_osx: self.device_type_osx,
-            device_type_android: self.device_type_android,
-            device_type_ios: self.device_type_ios,
-            device_type_linux: self.device_type_linux,
-            device_type_web: self.device_type_web,
+            device_type_windows: self.device_type_windows
+            ,
+            device_type_osx: self.device_type_osx
+            ,
+            device_type_android: self.device_type_android
+            ,
+            device_type_ios: self.device_type_ios
+            ,
+            device_type_linux: self.device_type_linux
+            ,
+            device_type_web: self.device_type_web
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

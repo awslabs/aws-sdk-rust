@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkteamsInput {
+pub struct ListWorkteamsInput  {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -14,21 +14,21 @@ pub struct ListWorkteamsInput {
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListWorkteamsInput {
+impl  ListWorkteamsInput  {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListWorkteamsSortByOptions> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListWorkteamsSortByOptions> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
@@ -61,8 +61,7 @@ impl ListWorkteamsInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListWorkteamsSortByOptions> {
@@ -75,8 +74,7 @@ impl ListWorkteamsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -89,8 +87,7 @@ impl ListWorkteamsInputBuilder {
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl ListWorkteamsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,23 +113,28 @@ impl ListWorkteamsInputBuilder {
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkteamsInput`](crate::operation::list_workteams::ListWorkteamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workteams::ListWorkteamsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workteams::ListWorkteamsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            name_contains: self.name_contains,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workteams::ListWorkteamsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workteams::ListWorkteamsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                name_contains: self.name_contains
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

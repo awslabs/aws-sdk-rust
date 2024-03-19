@@ -3,7 +3,7 @@
 /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicKeyConfig {
+pub struct PublicKeyConfig  {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
     pub caller_reference: ::std::string::String,
     /// <p>A name to help identify the public key.</p>
@@ -13,24 +13,21 @@ pub struct PublicKeyConfig {
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl PublicKeyConfig {
+impl  PublicKeyConfig  {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
-    pub fn caller_reference(&self) -> &str {
-        use std::ops::Deref;
-        self.caller_reference.deref()
+    pub fn caller_reference(&self) -> & str {
+        use std::ops::Deref; self.caller_reference.deref()
     }
     /// <p>A name to help identify the public key.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    pub fn encoded_key(&self) -> &str {
-        use std::ops::Deref;
-        self.encoded_key.deref()
+    pub fn encoded_key(&self) -> & str {
+        use std::ops::Deref; self.encoded_key.deref()
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -59,8 +56,7 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>A name to help identify the public key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name to help identify the public key.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn set_encoded_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoded_key = input;
-        self
+        self.encoded_key = input; self
     }
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub fn get_encoded_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl PublicKeyConfigBuilder {
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,26 +109,27 @@ impl PublicKeyConfigBuilder {
     /// - [`name`](crate::types::builders::PublicKeyConfigBuilder::name)
     /// - [`encoded_key`](crate::types::builders::PublicKeyConfigBuilder::encoded_key)
     pub fn build(self) -> ::std::result::Result<crate::types::PublicKeyConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PublicKeyConfig {
-            caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "caller_reference",
-                    "caller_reference was not specified but it is required when building PublicKeyConfig",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PublicKeyConfig",
-                )
-            })?,
-            encoded_key: self.encoded_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encoded_key",
-                    "encoded_key was not specified but it is required when building PublicKeyConfig",
-                )
-            })?,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PublicKeyConfig {
+                caller_reference: self.caller_reference
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("caller_reference", "caller_reference was not specified but it is required when building PublicKeyConfig")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PublicKeyConfig")
+                    )?
+                ,
+                encoded_key: self.encoded_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encoded_key", "encoded_key was not specified but it is required when building PublicKeyConfig")
+                    )?
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
+pub struct DescribeDirectConnectGatewayAssociationProposalsInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the proposal.</p>
@@ -15,17 +15,17 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDirectConnectGatewayAssociationProposalsInput {
+impl  DescribeDirectConnectGatewayAssociationProposalsInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The ID of the proposal.</p>
-    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn associated_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn associated_gateway_id(&self) -> ::std::option::Option<& str> {
         self.associated_gateway_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -34,15 +34,13 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeDirectConnectGatewayAssociationProposalsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
         crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder::default()
     }
 }
@@ -65,8 +63,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     }
     /// <p>The ID of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// <p>The ID of the proposal.</p>
     pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     }
     /// <p>The ID of the associated gateway.</p>
     pub fn set_associated_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_gateway_id = input;
-        self
+        self.associated_gateway_id = input; self
     }
     /// <p>The ID of the associated gateway.</p>
     pub fn get_associated_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +104,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -124,28 +118,28 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-                proposal_id: self.proposal_id,
-                associated_gateway_id: self.associated_gateway_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+                proposal_id: self.proposal_id
+                ,
+                associated_gateway_id: self.associated_gateway_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

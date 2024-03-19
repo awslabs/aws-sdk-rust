@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSpaceInput {
+pub struct GetSpaceInput  {
     /// <p>The ID of the private re:Post.</p>
     pub space_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSpaceInput {
+impl  GetSpaceInput  {
     /// <p>The ID of the private re:Post.</p>
-    pub fn space_id(&self) -> ::std::option::Option<&str> {
+    pub fn space_id(&self) -> ::std::option::Option<& str> {
         self.space_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetSpaceInputBuilder {
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetSpaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_space::GetSpaceInput { space_id: self.space_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_space::GetSpaceInput {
+                space_id: self.space_id
+                ,
+            }
+        )
     }
 }
+

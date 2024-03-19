@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoadBalancerTlsPoliciesOutput {
+pub struct GetLoadBalancerTlsPoliciesOutput  {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    pub tls_policies: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsPolicy>>,
+    pub tls_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsPolicy>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetLoadBalancerTlsPoliciesOutput {
+impl  GetLoadBalancerTlsPoliciesOutput  {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_policies.is_none()`.
-    pub fn tls_policies(&self) -> &[crate::types::LoadBalancerTlsPolicy] {
-        self.tls_policies.as_deref().unwrap_or_default()
+    pub fn tls_policies(&self) -> & [crate::types::LoadBalancerTlsPolicy] {
+        self.tls_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLoadBalancerTlsPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLoadBalancerTlsPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesOutput`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput).
     pub fn builder() -> crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesOutputBuilder {
@@ -41,7 +42,7 @@ impl GetLoadBalancerTlsPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsPoliciesOutputBuilder {
-    pub(crate) tls_policies: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsPolicy>>,
+    pub(crate) tls_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsPolicy>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetLoadBalancerTlsPoliciesOutputBuilder {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
     pub fn tls_policies(mut self, input: crate::types::LoadBalancerTlsPolicy) -> Self {
         let mut v = self.tls_policies.unwrap_or_default();
-        v.push(input);
-        self.tls_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tls_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    pub fn set_tls_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsPolicy>>) -> Self {
-        self.tls_policies = input;
-        self
+    pub fn set_tls_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsPolicy>>) -> Self {
+        self.tls_policies = input; self
     }
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    pub fn get_tls_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsPolicy>> {
+    pub fn get_tls_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsPolicy>> {
         &self.tls_policies
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetLoadBalancerTlsPoliciesOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetLoadBalancerTlsPolicies</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetLoadBalancerTlsPoliciesOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLoadBalancerTlsPoliciesOutput`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput).
     pub fn build(self) -> crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput {
         crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput {
-            tls_policies: self.tls_policies,
-            next_page_token: self.next_page_token,
+            tls_policies: self.tls_policies
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

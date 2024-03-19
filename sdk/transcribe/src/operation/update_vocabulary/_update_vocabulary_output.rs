@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVocabularyOutput {
+pub struct UpdateVocabularyOutput  {
     /// <p>The name of the updated custom vocabulary.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code you selected for your custom vocabulary.</p>
@@ -14,30 +14,30 @@ pub struct UpdateVocabularyOutput {
     pub vocabulary_state: ::std::option::Option<crate::types::VocabularyState>,
     _request_id: Option<String>,
 }
-impl UpdateVocabularyOutput {
+impl  UpdateVocabularyOutput  {
     /// <p>The name of the updated custom vocabulary.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The date and time the specified custom vocabulary was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
-    pub fn vocabulary_state(&self) -> ::std::option::Option<&crate::types::VocabularyState> {
+    pub fn vocabulary_state(&self) -> ::std::option::Option<& crate::types::VocabularyState> {
         self.vocabulary_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyOutput`](crate::operation::update_vocabulary::UpdateVocabularyOutput).
     pub fn builder() -> crate::operation::update_vocabulary::builders::UpdateVocabularyOutputBuilder {
@@ -63,8 +63,7 @@ impl UpdateVocabularyOutputBuilder {
     }
     /// <p>The name of the updated custom vocabulary.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the updated custom vocabulary.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateVocabularyOutputBuilder {
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -93,8 +91,7 @@ impl UpdateVocabularyOutputBuilder {
     /// <p>The date and time the specified custom vocabulary was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time the specified custom vocabulary was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -108,30 +105,34 @@ impl UpdateVocabularyOutputBuilder {
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn set_vocabulary_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
-        self.vocabulary_state = input;
-        self
+        self.vocabulary_state = input; self
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn get_vocabulary_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
         &self.vocabulary_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVocabularyOutput`](crate::operation::update_vocabulary::UpdateVocabularyOutput).
     pub fn build(self) -> crate::operation::update_vocabulary::UpdateVocabularyOutput {
         crate::operation::update_vocabulary::UpdateVocabularyOutput {
-            vocabulary_name: self.vocabulary_name,
-            language_code: self.language_code,
-            last_modified_time: self.last_modified_time,
-            vocabulary_state: self.vocabulary_state,
+            vocabulary_name: self.vocabulary_name
+            ,
+            language_code: self.language_code
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            vocabulary_state: self.vocabulary_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

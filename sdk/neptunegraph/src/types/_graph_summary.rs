@@ -3,7 +3,7 @@
 /// <p>Summary details about a graph.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GraphSummary {
+pub struct GraphSummary  {
     /// <p>The unique identifier of the graph.</p>
     pub id: ::std::string::String,
     /// <p>The name of the graph.</p>
@@ -25,24 +25,21 @@ pub struct GraphSummary {
     /// <p>If <code>true</code>, deletion protection is enabled for the graph.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
-impl GraphSummary {
+impl  GraphSummary  {
     /// <p>The unique identifier of the graph.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the graph.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ARN associated with the graph.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The status of the graph.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GraphStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GraphStatus> {
         self.status.as_ref()
     }
     /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
@@ -54,7 +51,7 @@ impl GraphSummary {
         self.public_connectivity
     }
     /// <p>The graph endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The number of replicas for the graph.</p>
@@ -62,7 +59,7 @@ impl GraphSummary {
         self.replica_count
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt graph data.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>If <code>true</code>, deletion protection is enabled for the graph.</p>
@@ -101,8 +98,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The unique identifier of the graph.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the graph.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +112,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The name of the graph.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the graph.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +126,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The ARN associated with the graph.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN associated with the graph.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +139,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The status of the graph.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GraphStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the graph.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GraphStatus> {
@@ -159,8 +152,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_memory = input;
-        self
+        self.provisioned_memory = input; self
     }
     /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
@@ -173,8 +165,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_connectivity = input;
-        self
+        self.public_connectivity = input; self
     }
     /// <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
@@ -187,8 +178,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The graph endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The graph endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +191,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The number of replicas for the graph.</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replica_count = input;
-        self
+        self.replica_count = input; self
     }
     /// <p>The number of replicas for the graph.</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
@@ -215,8 +204,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt graph data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt graph data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +217,7 @@ impl GraphSummaryBuilder {
     }
     /// <p>If <code>true</code>, deletion protection is enabled for the graph.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>If <code>true</code>, deletion protection is enabled for the graph.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -242,32 +229,39 @@ impl GraphSummaryBuilder {
     /// - [`name`](crate::types::builders::GraphSummaryBuilder::name)
     /// - [`arn`](crate::types::builders::GraphSummaryBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::GraphSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GraphSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GraphSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GraphSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GraphSummary",
-                )
-            })?,
-            status: self.status,
-            provisioned_memory: self.provisioned_memory,
-            public_connectivity: self.public_connectivity,
-            endpoint: self.endpoint,
-            replica_count: self.replica_count,
-            kms_key_identifier: self.kms_key_identifier,
-            deletion_protection: self.deletion_protection,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GraphSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GraphSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GraphSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GraphSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                provisioned_memory: self.provisioned_memory
+                ,
+                public_connectivity: self.public_connectivity
+                ,
+                endpoint: self.endpoint
+                ,
+                replica_count: self.replica_count
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information on the records ingested by this request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordsIngested {
+pub struct RecordsIngested  {
     /// <p>Total count of successfully ingested records.</p>
     pub total: i32,
     /// <p>Count of records ingested into the memory store.</p>
@@ -11,7 +11,7 @@ pub struct RecordsIngested {
     /// <p>Count of records ingested into the magnetic store.</p>
     pub magnetic_store: i32,
 }
-impl RecordsIngested {
+impl  RecordsIngested  {
     /// <p>Total count of successfully ingested records.</p>
     pub fn total(&self) -> i32 {
         self.total
@@ -48,8 +48,7 @@ impl RecordsIngestedBuilder {
     }
     /// <p>Total count of successfully ingested records.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>Total count of successfully ingested records.</p>
     pub fn get_total(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl RecordsIngestedBuilder {
     }
     /// <p>Count of records ingested into the memory store.</p>
     pub fn set_memory_store(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_store = input;
-        self
+        self.memory_store = input; self
     }
     /// <p>Count of records ingested into the memory store.</p>
     pub fn get_memory_store(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl RecordsIngestedBuilder {
     }
     /// <p>Count of records ingested into the magnetic store.</p>
     pub fn set_magnetic_store(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.magnetic_store = input;
-        self
+        self.magnetic_store = input; self
     }
     /// <p>Count of records ingested into the magnetic store.</p>
     pub fn get_magnetic_store(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,16 @@ impl RecordsIngestedBuilder {
     /// Consumes the builder and constructs a [`RecordsIngested`](crate::types::RecordsIngested).
     pub fn build(self) -> crate::types::RecordsIngested {
         crate::types::RecordsIngested {
-            total: self.total.unwrap_or_default(),
-            memory_store: self.memory_store.unwrap_or_default(),
-            magnetic_store: self.magnetic_store.unwrap_or_default(),
+            total: self.total
+                .unwrap_or_default()
+            ,
+            memory_store: self.memory_store
+                .unwrap_or_default()
+            ,
+            magnetic_store: self.magnetic_store
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

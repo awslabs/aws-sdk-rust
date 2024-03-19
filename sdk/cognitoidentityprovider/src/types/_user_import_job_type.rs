@@ -3,7 +3,7 @@
 /// <p>The user import job type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserImportJobType {
+pub struct UserImportJobType  {
     /// <p>The job name for the user import job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job ID for the user import job.</p>
@@ -49,33 +49,33 @@ pub struct UserImportJobType {
     /// <p>The message returned when the user import job is completed.</p>
     pub completion_message: ::std::option::Option<::std::string::String>,
 }
-impl UserImportJobType {
+impl  UserImportJobType  {
     /// <p>The job name for the user import job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job ID for the user import job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
-    pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
+    pub fn pre_signed_url(&self) -> ::std::option::Option<& str> {
         self.pre_signed_url.as_deref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the user import job was started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date when the user import job was completed.</p>
-    pub fn completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The status of the user import job. One of the following:</p>
@@ -97,11 +97,11 @@ impl UserImportJobType {
     /// <li>
     /// <p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UserImportJobStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UserImportJobStatusType> {
         self.status.as_ref()
     }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>The number of users that were successfully imported.</p>
@@ -117,7 +117,7 @@ impl UserImportJobType {
         self.failed_users
     }
     /// <p>The message returned when the user import job is completed.</p>
-    pub fn completion_message(&self) -> ::std::option::Option<&str> {
+    pub fn completion_message(&self) -> ::std::option::Option<& str> {
         self.completion_message.as_deref()
     }
 }
@@ -154,8 +154,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The job name for the user import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The job name for the user import job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +167,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The job ID for the user import job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job ID for the user import job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +180,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +193,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
     pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_signed_url = input;
-        self
+        self.pre_signed_url = input; self
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +206,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -224,8 +219,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The date when the user import job was started.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date when the user import job was started.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -238,8 +232,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The date when the user import job was completed.</p>
     pub fn set_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_date = input;
-        self
+        self.completion_date = input; self
     }
     /// <p>The date when the user import job was completed.</p>
     pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -288,8 +281,7 @@ impl UserImportJobTypeBuilder {
     /// <p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserImportJobStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
@@ -320,8 +312,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = input;
-        self
+        self.cloud_watch_logs_role_arn = input; self
     }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -334,8 +325,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The number of users that were successfully imported.</p>
     pub fn set_imported_users(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.imported_users = input;
-        self
+        self.imported_users = input; self
     }
     /// <p>The number of users that were successfully imported.</p>
     pub fn get_imported_users(&self) -> &::std::option::Option<i64> {
@@ -348,8 +338,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The number of users that were skipped.</p>
     pub fn set_skipped_users(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.skipped_users = input;
-        self
+        self.skipped_users = input; self
     }
     /// <p>The number of users that were skipped.</p>
     pub fn get_skipped_users(&self) -> &::std::option::Option<i64> {
@@ -362,8 +351,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The number of users that couldn't be imported.</p>
     pub fn set_failed_users(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.failed_users = input;
-        self
+        self.failed_users = input; self
     }
     /// <p>The number of users that couldn't be imported.</p>
     pub fn get_failed_users(&self) -> &::std::option::Option<i64> {
@@ -376,8 +364,7 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The message returned when the user import job is completed.</p>
     pub fn set_completion_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.completion_message = input;
-        self
+        self.completion_message = input; self
     }
     /// <p>The message returned when the user import job is completed.</p>
     pub fn get_completion_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -386,19 +373,36 @@ impl UserImportJobTypeBuilder {
     /// Consumes the builder and constructs a [`UserImportJobType`](crate::types::UserImportJobType).
     pub fn build(self) -> crate::types::UserImportJobType {
         crate::types::UserImportJobType {
-            job_name: self.job_name,
-            job_id: self.job_id,
-            user_pool_id: self.user_pool_id,
-            pre_signed_url: self.pre_signed_url,
-            creation_date: self.creation_date,
-            start_date: self.start_date,
-            completion_date: self.completion_date,
-            status: self.status,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-            imported_users: self.imported_users.unwrap_or_default(),
-            skipped_users: self.skipped_users.unwrap_or_default(),
-            failed_users: self.failed_users.unwrap_or_default(),
-            completion_message: self.completion_message,
+            job_name: self.job_name
+            ,
+            job_id: self.job_id
+            ,
+            user_pool_id: self.user_pool_id
+            ,
+            pre_signed_url: self.pre_signed_url
+            ,
+            creation_date: self.creation_date
+            ,
+            start_date: self.start_date
+            ,
+            completion_date: self.completion_date
+            ,
+            status: self.status
+            ,
+            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+            ,
+            imported_users: self.imported_users
+                .unwrap_or_default()
+            ,
+            skipped_users: self.skipped_users
+                .unwrap_or_default()
+            ,
+            failed_users: self.failed_users
+                .unwrap_or_default()
+            ,
+            completion_message: self.completion_message
+            ,
         }
     }
 }
+

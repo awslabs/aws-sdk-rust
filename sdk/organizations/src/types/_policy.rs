@@ -3,19 +3,19 @@
 /// <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>A structure that contains additional details about the policy.</p>
     pub policy_summary: ::std::option::Option<crate::types::PolicySummary>,
     /// <p>The text content of the policy.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl Policy {
+impl  Policy  {
     /// <p>A structure that contains additional details about the policy.</p>
-    pub fn policy_summary(&self) -> ::std::option::Option<&crate::types::PolicySummary> {
+    pub fn policy_summary(&self) -> ::std::option::Option<& crate::types::PolicySummary> {
         self.policy_summary.as_ref()
     }
     /// <p>The text content of the policy.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PolicyBuilder {
     }
     /// <p>A structure that contains additional details about the policy.</p>
     pub fn set_policy_summary(mut self, input: ::std::option::Option<crate::types::PolicySummary>) -> Self {
-        self.policy_summary = input;
-        self
+        self.policy_summary = input; self
     }
     /// <p>A structure that contains additional details about the policy.</p>
     pub fn get_policy_summary(&self) -> &::std::option::Option<crate::types::PolicySummary> {
@@ -55,8 +54,7 @@ impl PolicyBuilder {
     }
     /// <p>The text content of the policy.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The text content of the policy.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PolicyBuilder {
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {
         crate::types::Policy {
-            policy_summary: self.policy_summary,
-            content: self.content,
+            policy_summary: self.policy_summary
+            ,
+            content: self.content
+            ,
         }
     }
 }
+

@@ -120,3 +120,4 @@ pub fn de_object(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

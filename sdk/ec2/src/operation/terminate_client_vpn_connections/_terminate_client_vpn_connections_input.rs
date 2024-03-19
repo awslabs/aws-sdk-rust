@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateClientVpnConnectionsInput {
+pub struct TerminateClientVpnConnectionsInput  {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client connection to be terminated.</p>
@@ -12,17 +12,17 @@ pub struct TerminateClientVpnConnectionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl TerminateClientVpnConnectionsInput {
+impl  TerminateClientVpnConnectionsInput  {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The ID of the client connection to be terminated.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -55,8 +55,7 @@ impl TerminateClientVpnConnectionsInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TerminateClientVpnConnectionsInputBuilder {
     }
     /// <p>The ID of the client connection to be terminated.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the client connection to be terminated.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TerminateClientVpnConnectionsInputBuilder {
     }
     /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl TerminateClientVpnConnectionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`TerminateClientVpnConnectionsInput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            connection_id: self.connection_id,
-            username: self.username,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput {
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                connection_id: self.connection_id
+                ,
+                username: self.username
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

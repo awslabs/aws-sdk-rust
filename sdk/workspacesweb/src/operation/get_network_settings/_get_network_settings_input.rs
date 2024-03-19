@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkSettingsInput {
+pub struct GetNetworkSettingsInput  {
     /// <p>The ARN of the network settings.</p>
     pub network_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkSettingsInput {
+impl  GetNetworkSettingsInput  {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_settings_arn(&self) -> ::std::option::Option<& str> {
         self.network_settings_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetNetworkSettingsInputBuilder {
     }
     /// <p>The ARN of the network settings.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_settings_arn
     }
     /// Consumes the builder and constructs a [`GetNetworkSettingsInput`](crate::operation::get_network_settings::GetNetworkSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_network_settings::GetNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_network_settings::GetNetworkSettingsInput {
-            network_settings_arn: self.network_settings_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_settings::GetNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_network_settings::GetNetworkSettingsInput {
+                network_settings_arn: self.network_settings_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyOutput {
+pub struct DeleteLifecyclePolicyOutput  {
     /// <p>The ARN of the lifecycle policy that was deleted.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteLifecyclePolicyOutput {
+impl  DeleteLifecyclePolicyOutput  {
     /// <p>The ARN of the lifecycle policy that was deleted.</p>
-    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteLifecyclePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput).
     pub fn builder() -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteLifecyclePolicyOutputBuilder {
     }
     /// <p>The ARN of the lifecycle policy that was deleted.</p>
     pub fn set_lifecycle_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_arn = input;
-        self
+        self.lifecycle_policy_arn = input; self
     }
     /// <p>The ARN of the lifecycle policy that was deleted.</p>
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyOutput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput).
     pub fn build(self) -> crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput {
         crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput {
-            lifecycle_policy_arn: self.lifecycle_policy_arn,
+            lifecycle_policy_arn: self.lifecycle_policy_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

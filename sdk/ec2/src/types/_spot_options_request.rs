@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of Spot Instances in an EC2 Fleet request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotOptionsRequest {
+pub struct SpotOptionsRequest  {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
     /// <dt>
@@ -58,7 +58,7 @@ pub struct SpotOptionsRequest {
     /// </note>
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
-impl SpotOptionsRequest {
+impl  SpotOptionsRequest  {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
     /// <dt>
@@ -87,16 +87,16 @@ impl SpotOptionsRequest {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowest-price</code></p>
-    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::SpotAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<& crate::types::SpotAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn maintenance_strategies(&self) -> ::std::option::Option<&crate::types::FleetSpotMaintenanceStrategiesRequest> {
+    pub fn maintenance_strategies(&self) -> ::std::option::Option<& crate::types::FleetSpotMaintenanceStrategiesRequest> {
         self.maintenance_strategies.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code></p>
-    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::SpotInstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<& crate::types::SpotInstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when Spot <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -125,7 +125,7 @@ impl SpotOptionsRequest {
     /// </important> <note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
-    pub fn max_total_price(&self) -> ::std::option::Option<&str> {
+    pub fn max_total_price(&self) -> ::std::option::Option<& str> {
         self.max_total_price.as_deref()
     }
 }
@@ -211,8 +211,7 @@ impl SpotOptionsRequestBuilder {
     /// </dl>
     /// <p>Default: <code>lowest-price</code></p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::SpotAllocationStrategy>) -> Self {
-        self.allocation_strategy = input;
-        self
+        self.allocation_strategy = input; self
     }
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
@@ -252,8 +251,7 @@ impl SpotOptionsRequestBuilder {
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
     pub fn set_maintenance_strategies(mut self, input: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategiesRequest>) -> Self {
-        self.maintenance_strategies = input;
-        self
+        self.maintenance_strategies = input; self
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
     pub fn get_maintenance_strategies(&self) -> &::std::option::Option<crate::types::FleetSpotMaintenanceStrategiesRequest> {
@@ -268,8 +266,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code></p>
     pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::SpotInstanceInterruptionBehavior>) -> Self {
-        self.instance_interruption_behavior = input;
-        self
+        self.instance_interruption_behavior = input; self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     /// <p>Default: <code>terminate</code></p>
@@ -285,8 +282,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when Spot <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that EC2 Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
     pub fn set_instance_pools_to_use_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_pools_to_use_count = input;
-        self
+        self.instance_pools_to_use_count = input; self
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Supported only when Spot <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that EC2 Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
@@ -302,8 +298,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_single_instance_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.single_instance_type = input;
-        self
+        self.single_instance_type = input; self
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -319,8 +314,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>Indicates that the fleet launches all Spot Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_single_availability_zone(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.single_availability_zone = input;
-        self
+        self.single_availability_zone = input; self
     }
     /// <p>Indicates that the fleet launches all Spot Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -338,8 +332,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn set_min_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_target_capacity = input;
-        self
+        self.min_target_capacity = input; self
     }
     /// <p>The minimum target capacity for Spot Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -362,8 +355,7 @@ impl SpotOptionsRequestBuilder {
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
     pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_total_price = input;
-        self
+        self.max_total_price = input; self
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -376,14 +368,23 @@ impl SpotOptionsRequestBuilder {
     /// Consumes the builder and constructs a [`SpotOptionsRequest`](crate::types::SpotOptionsRequest).
     pub fn build(self) -> crate::types::SpotOptionsRequest {
         crate::types::SpotOptionsRequest {
-            allocation_strategy: self.allocation_strategy,
-            maintenance_strategies: self.maintenance_strategies,
-            instance_interruption_behavior: self.instance_interruption_behavior,
-            instance_pools_to_use_count: self.instance_pools_to_use_count,
-            single_instance_type: self.single_instance_type,
-            single_availability_zone: self.single_availability_zone,
-            min_target_capacity: self.min_target_capacity,
-            max_total_price: self.max_total_price,
+            allocation_strategy: self.allocation_strategy
+            ,
+            maintenance_strategies: self.maintenance_strategies
+            ,
+            instance_interruption_behavior: self.instance_interruption_behavior
+            ,
+            instance_pools_to_use_count: self.instance_pools_to_use_count
+            ,
+            single_instance_type: self.single_instance_type
+            ,
+            single_availability_zone: self.single_availability_zone
+            ,
+            min_target_capacity: self.min_target_capacity
+            ,
+            max_total_price: self.max_total_price
+            ,
         }
     }
 }
+

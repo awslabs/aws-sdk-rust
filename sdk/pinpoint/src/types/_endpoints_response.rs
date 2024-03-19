@@ -3,16 +3,17 @@
 /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointsResponse {
+pub struct EndpointsResponse  {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointResponse>>,
 }
-impl EndpointsResponse {
+impl  EndpointsResponse  {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item.is_none()`.
-    pub fn item(&self) -> &[crate::types::EndpointResponse] {
-        self.item.as_deref().unwrap_or_default()
+    pub fn item(&self) -> & [crate::types::EndpointResponse] {
+        self.item.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EndpointsResponse {
@@ -26,7 +27,7 @@ impl EndpointsResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointsResponseBuilder {
-    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointResponse>>,
 }
 impl EndpointsResponseBuilder {
     /// Appends an item to `item`.
@@ -36,21 +37,24 @@ impl EndpointsResponseBuilder {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     pub fn item(mut self, input: crate::types::EndpointResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
-        v.push(input);
-        self.item = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.item = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointResponse>>) -> Self {
+        self.item = input; self
     }
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointResponse>> {
         &self.item
     }
     /// Consumes the builder and constructs a [`EndpointsResponse`](crate::types::EndpointsResponse).
     pub fn build(self) -> crate::types::EndpointsResponse {
-        crate::types::EndpointsResponse { item: self.item }
+        crate::types::EndpointsResponse {
+            item: self.item
+            ,
+        }
     }
 }
+

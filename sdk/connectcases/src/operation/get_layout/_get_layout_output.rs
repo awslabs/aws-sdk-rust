@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLayoutOutput {
+pub struct GetLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
     pub layout_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
@@ -12,39 +12,36 @@ pub struct GetLayoutOutput {
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub content: ::std::option::Option<crate::types::LayoutContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
-impl GetLayoutOutput {
+impl  GetLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_id.deref()
+    pub fn layout_id(&self) -> & str {
+        use std::ops::Deref; self.layout_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
-    pub fn layout_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_arn.deref()
+    pub fn layout_arn(&self) -> & str {
+        use std::ops::Deref; self.layout_arn.deref()
     }
     /// <p>The name of the layout. It must be unique.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::LayoutContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::LayoutContent> {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLayoutOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLayoutOutput {
     /// Creates a new builder-style object to manufacture [`GetLayoutOutput`](crate::operation::get_layout::GetLayoutOutput).
     pub fn builder() -> crate::operation::get_layout::builders::GetLayoutOutputBuilder {
@@ -60,7 +57,7 @@ pub struct GetLayoutOutputBuilder {
     pub(crate) layout_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::LayoutContent>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetLayoutOutputBuilder {
@@ -72,8 +69,7 @@ impl GetLayoutOutputBuilder {
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_id = input;
-        self
+        self.layout_id = input; self
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl GetLayoutOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn set_layout_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_arn = input;
-        self
+        self.layout_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl GetLayoutOutputBuilder {
     }
     /// <p>The name of the layout. It must be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the layout. It must be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl GetLayoutOutputBuilder {
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
@@ -131,61 +124,57 @@ impl GetLayoutOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLayoutOutput`](crate::operation::get_layout::GetLayoutOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`layout_id`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::layout_id)
     /// - [`layout_arn`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::layout_arn)
     /// - [`name`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutOutput {
-            layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_id",
-                    "layout_id was not specified but it is required when building GetLayoutOutput",
-                )
-            })?,
-            layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_arn",
-                    "layout_arn was not specified but it is required when building GetLayoutOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetLayoutOutput",
-                )
-            })?,
-            content: self.content,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_layout::GetLayoutOutput {
+                layout_id: self.layout_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_id", "layout_id was not specified but it is required when building GetLayoutOutput")
+                    )?
+                ,
+                layout_arn: self.layout_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_arn", "layout_arn was not specified but it is required when building GetLayoutOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetLayoutOutput")
+                    )?
+                ,
+                content: self.content
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

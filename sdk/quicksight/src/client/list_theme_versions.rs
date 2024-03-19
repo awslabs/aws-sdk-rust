@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThemeVersions`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p><br>
     ///   - [`theme_id(impl Into<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::theme_id) / [`set_theme_id(Option<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::set_theme_id):<br>required: **true**<br><p>The ID for the theme.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListThemeVersionsOutput`](crate::operation::list_theme_versions::ListThemeVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListThemeVersionsOutput`](crate::operation::list_theme_versions::ListThemeVersionsOutput) with field(s):
     ///   - [`theme_version_summary_list(Option<Vec::<ThemeVersionSummary>>)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::theme_version_summary_list): <p>A structure containing a list of all the versions of the specified theme.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_theme_versions::ListThemeVersionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListThemeVersionsError>`](crate::operation::list_theme_versions::ListThemeVersionsError)
+                            /// - On failure, responds with [`SdkError<ListThemeVersionsError>`](crate::operation::list_theme_versions::ListThemeVersionsError)
     pub fn list_theme_versions(&self) -> crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder {
-        crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_theme_versions::builders::ListThemeVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

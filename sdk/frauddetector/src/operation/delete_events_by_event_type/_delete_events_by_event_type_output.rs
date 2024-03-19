@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventsByEventTypeOutput {
+pub struct DeleteEventsByEventTypeOutput  {
     /// <p>Name of event type for which to delete the events.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the delete request.</p>
     pub events_deletion_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteEventsByEventTypeOutput {
+impl  DeleteEventsByEventTypeOutput  {
     /// <p>Name of event type for which to delete the events.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The status of the delete request.</p>
-    pub fn events_deletion_status(&self) -> ::std::option::Option<&str> {
+    pub fn events_deletion_status(&self) -> ::std::option::Option<& str> {
         self.events_deletion_status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteEventsByEventTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteEventsByEventTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput).
     pub fn builder() -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteEventsByEventTypeOutputBuilder {
     }
     /// <p>Name of event type for which to delete the events.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>Name of event type for which to delete the events.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteEventsByEventTypeOutputBuilder {
     }
     /// <p>The status of the delete request.</p>
     pub fn set_events_deletion_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.events_deletion_status = input;
-        self
+        self.events_deletion_status = input; self
     }
     /// <p>The status of the delete request.</p>
     pub fn get_events_deletion_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.events_deletion_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput).
     pub fn build(self) -> crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput {
         crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput {
-            event_type_name: self.event_type_name,
-            events_deletion_status: self.events_deletion_status,
+            event_type_name: self.event_type_name
+            ,
+            events_deletion_status: self.events_deletion_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

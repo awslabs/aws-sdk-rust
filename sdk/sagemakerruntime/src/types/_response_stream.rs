@@ -21,11 +21,7 @@ impl ResponseStream {
     /// Tries to convert the enum instance into [`PayloadPart`](crate::types::ResponseStream::PayloadPart), extracting the inner [`PayloadPart`](crate::types::PayloadPart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_payload_part(&self) -> ::std::result::Result<&crate::types::PayloadPart, &Self> {
-        if let ResponseStream::PayloadPart(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResponseStream::PayloadPart(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PayloadPart`](crate::types::ResponseStream::PayloadPart).
     pub fn is_payload_part(&self) -> bool {
@@ -36,3 +32,4 @@ impl ResponseStream {
         matches!(self, Self::Unknown)
     }
 }
+

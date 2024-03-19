@@ -4,7 +4,7 @@
 /// <p>This data type is used in the <code>RequestInspectionACFP</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberField {
+pub struct PhoneNumberField  {
     /// <p>The name of a single primary phone number field.</p>
     /// <p>How you specify the phone number fields depends on the request inspection payload type.</p>
     /// <ul>
@@ -17,7 +17,7 @@ pub struct PhoneNumberField {
     /// </ul>
     pub identifier: ::std::string::String,
 }
-impl PhoneNumberField {
+impl  PhoneNumberField  {
     /// <p>The name of a single primary phone number field.</p>
     /// <p>How you specify the phone number fields depends on the request inspection payload type.</p>
     /// <ul>
@@ -28,9 +28,8 @@ impl PhoneNumberField {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
 }
 impl PhoneNumberField {
@@ -73,8 +72,7 @@ impl PhoneNumberFieldBuilder {
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The name of a single primary phone number field.</p>
     /// <p>How you specify the phone number fields depends on the request inspection payload type.</p>
@@ -93,13 +91,15 @@ impl PhoneNumberFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::PhoneNumberFieldBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PhoneNumberField {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building PhoneNumberField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PhoneNumberField {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building PhoneNumberField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

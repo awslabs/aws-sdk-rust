@@ -3,7 +3,7 @@
 /// <p>The summary of attributes associated with an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The ID of the application.</p>
     pub id: ::std::string::String,
     /// <p>The name of the application.</p>
@@ -25,49 +25,45 @@ pub struct ApplicationSummary {
     /// <p>The CPU architecture of an application.</p>
     pub architecture: ::std::option::Option<crate::types::Architecture>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The ID of the application.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn release_label(&self) -> &str {
-        use std::ops::Deref;
-        self.release_label.deref()
+    pub fn release_label(&self) -> & str {
+        use std::ops::Deref; self.release_label.deref()
     }
     /// <p>The type of application, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The state of the application.</p>
-    pub fn state(&self) -> &crate::types::ApplicationState {
+    pub fn state(&self) -> & crate::types::ApplicationState {
         &self.state
     }
     /// <p>The state details of the application.</p>
-    pub fn state_details(&self) -> ::std::option::Option<&str> {
+    pub fn state_details(&self) -> ::std::option::Option<& str> {
         self.state_details.as_deref()
     }
     /// <p>The date and time when the application was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time when the application was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.architecture.as_ref()
     }
 }
@@ -102,8 +98,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +111,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +153,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The type of application, such as Spark or Hive.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of application, such as Spark or Hive.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +167,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The state of the application.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the application.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
@@ -190,8 +180,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The state details of the application.</p>
     pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_details = input;
-        self
+        self.state_details = input; self
     }
     /// <p>The state details of the application.</p>
     pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +194,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The date and time when the application was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the application was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +208,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The date and time when the application was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time when the application was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -234,8 +221,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
@@ -251,52 +237,51 @@ impl ApplicationSummaryBuilder {
     /// - [`created_at`](crate::types::builders::ApplicationSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            name: self.name,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "release_label",
-                    "release_label was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            state_details: self.state_details,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            architecture: self.architecture,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                release_label: self.release_label
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("release_label", "release_label was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                state_details: self.state_details
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                architecture: self.architecture
+                ,
+            }
+        )
     }
 }
+

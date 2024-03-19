@@ -3,7 +3,7 @@
 /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvConfiguration {
+pub struct CsvConfiguration  {
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
     pub column_separator: ::std::option::Option<::std::string::String>,
     /// <p>Escape character can be one of</p>
@@ -15,21 +15,21 @@ pub struct CsvConfiguration {
     /// <p>Specifies to trim leading and trailing white space.</p>
     pub trim_white_space: ::std::option::Option<bool>,
 }
-impl CsvConfiguration {
+impl  CsvConfiguration  {
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
-    pub fn column_separator(&self) -> ::std::option::Option<&str> {
+    pub fn column_separator(&self) -> ::std::option::Option<& str> {
         self.column_separator.as_deref()
     }
     /// <p>Escape character can be one of</p>
-    pub fn escape_char(&self) -> ::std::option::Option<&str> {
+    pub fn escape_char(&self) -> ::std::option::Option<& str> {
         self.escape_char.as_deref()
     }
     /// <p>Can be single quote (') or double quote (").</p>
-    pub fn quote_char(&self) -> ::std::option::Option<&str> {
+    pub fn quote_char(&self) -> ::std::option::Option<& str> {
         self.quote_char.as_deref()
     }
     /// <p>Can be blank space (' ').</p>
-    pub fn null_value(&self) -> ::std::option::Option<&str> {
+    pub fn null_value(&self) -> ::std::option::Option<& str> {
         self.null_value.as_deref()
     }
     /// <p>Specifies to trim leading and trailing white space.</p>
@@ -62,8 +62,7 @@ impl CsvConfigurationBuilder {
     }
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
     pub fn set_column_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_separator = input;
-        self
+        self.column_separator = input; self
     }
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' ').</p>
     pub fn get_column_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CsvConfigurationBuilder {
     }
     /// <p>Escape character can be one of</p>
     pub fn set_escape_char(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.escape_char = input;
-        self
+        self.escape_char = input; self
     }
     /// <p>Escape character can be one of</p>
     pub fn get_escape_char(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CsvConfigurationBuilder {
     }
     /// <p>Can be single quote (') or double quote (").</p>
     pub fn set_quote_char(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quote_char = input;
-        self
+        self.quote_char = input; self
     }
     /// <p>Can be single quote (') or double quote (").</p>
     pub fn get_quote_char(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl CsvConfigurationBuilder {
     }
     /// <p>Can be blank space (' ').</p>
     pub fn set_null_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.null_value = input;
-        self
+        self.null_value = input; self
     }
     /// <p>Can be blank space (' ').</p>
     pub fn get_null_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl CsvConfigurationBuilder {
     }
     /// <p>Specifies to trim leading and trailing white space.</p>
     pub fn set_trim_white_space(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.trim_white_space = input;
-        self
+        self.trim_white_space = input; self
     }
     /// <p>Specifies to trim leading and trailing white space.</p>
     pub fn get_trim_white_space(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl CsvConfigurationBuilder {
     /// Consumes the builder and constructs a [`CsvConfiguration`](crate::types::CsvConfiguration).
     pub fn build(self) -> crate::types::CsvConfiguration {
         crate::types::CsvConfiguration {
-            column_separator: self.column_separator,
-            escape_char: self.escape_char,
-            quote_char: self.quote_char,
-            null_value: self.null_value,
-            trim_white_space: self.trim_white_space,
+            column_separator: self.column_separator
+            ,
+            escape_char: self.escape_char
+            ,
+            quote_char: self.quote_char
+            ,
+            null_value: self.null_value
+            ,
+            trim_white_space: self.trim_white_space
+            ,
         }
     }
 }
+

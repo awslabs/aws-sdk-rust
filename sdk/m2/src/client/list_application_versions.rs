@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplicationVersions`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of application versions to return.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
-    /// - On success, responds with [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput) with field(s):
     ///   - [`application_versions(Vec::<ApplicationVersionSummary>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::application_versions): <p>The list of application versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::operation::list_application_versions::ListApplicationVersionsError)
+                            /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::operation::list_application_versions::ListApplicationVersionsError)
     pub fn list_application_versions(&self) -> crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder {
-        crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

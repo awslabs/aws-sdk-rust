@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelCustomizationJobsOutput {
+pub struct ListModelCustomizationJobsOutput  {
     /// <p>Page continuation token to use in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Job summaries.</p>
-    pub model_customization_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>>,
+    pub model_customization_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomizationJobSummary>>,
     _request_id: Option<String>,
 }
-impl ListModelCustomizationJobsOutput {
+impl  ListModelCustomizationJobsOutput  {
     /// <p>Page continuation token to use in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Job summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_customization_job_summaries.is_none()`.
-    pub fn model_customization_job_summaries(&self) -> &[crate::types::ModelCustomizationJobSummary] {
-        self.model_customization_job_summaries.as_deref().unwrap_or_default()
+    pub fn model_customization_job_summaries(&self) -> & [crate::types::ModelCustomizationJobSummary] {
+        self.model_customization_job_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListModelCustomizationJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListModelCustomizationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelCustomizationJobsOutput`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput).
     pub fn builder() -> crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListModelCustomizationJobsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelCustomizationJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) model_customization_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>>,
+    pub(crate) model_customization_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomizationJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListModelCustomizationJobsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListModelCustomizationJobsOutputBuilder {
     }
     /// <p>Page continuation token to use in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Page continuation token to use in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListModelCustomizationJobsOutputBuilder {
     /// <p>Job summaries.</p>
     pub fn model_customization_job_summaries(mut self, input: crate::types::ModelCustomizationJobSummary) -> Self {
         let mut v = self.model_customization_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.model_customization_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_customization_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Job summaries.</p>
-    pub fn set_model_customization_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>>,
-    ) -> Self {
-        self.model_customization_job_summaries = input;
-        self
+    pub fn set_model_customization_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomizationJobSummary>>) -> Self {
+        self.model_customization_job_summaries = input; self
     }
     /// <p>Job summaries.</p>
-    pub fn get_model_customization_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>> {
+    pub fn get_model_customization_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomizationJobSummary>> {
         &self.model_customization_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListModelCustomizationJobsOutput`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput).
     pub fn build(self) -> crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput {
         crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput {
-            next_token: self.next_token,
-            model_customization_job_summaries: self.model_customization_job_summaries,
+            next_token: self.next_token
+            ,
+            model_customization_job_summaries: self.model_customization_job_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

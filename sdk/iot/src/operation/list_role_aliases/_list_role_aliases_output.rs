@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoleAliasesOutput {
+pub struct ListRoleAliasesOutput  {
     /// <p>The role aliases.</p>
-    pub role_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub role_aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A marker used to get the next set of results.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRoleAliasesOutput {
+impl  ListRoleAliasesOutput  {
     /// <p>The role aliases.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_aliases.is_none()`.
-    pub fn role_aliases(&self) -> &[::std::string::String] {
-        self.role_aliases.as_deref().unwrap_or_default()
+    pub fn role_aliases(&self) -> & [::std::string::String] {
+        self.role_aliases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A marker used to get the next set of results.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRoleAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRoleAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
     pub fn builder() -> crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRoleAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoleAliasesOutputBuilder {
-    pub(crate) role_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) role_aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRoleAliasesOutputBuilder {
     /// <p>The role aliases.</p>
     pub fn role_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.role_aliases.unwrap_or_default();
-        v.push(input.into());
-        self.role_aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.role_aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The role aliases.</p>
-    pub fn set_role_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.role_aliases = input;
-        self
+    pub fn set_role_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.role_aliases = input; self
     }
     /// <p>The role aliases.</p>
-    pub fn get_role_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_role_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.role_aliases
     }
     /// <p>A marker used to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListRoleAliasesOutputBuilder {
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
     pub fn build(self) -> crate::operation::list_role_aliases::ListRoleAliasesOutput {
         crate::operation::list_role_aliases::ListRoleAliasesOutput {
-            role_aliases: self.role_aliases,
-            next_marker: self.next_marker,
+            role_aliases: self.role_aliases
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

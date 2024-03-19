@@ -3,26 +3,25 @@
 /// <p>Determines the color scale that is applied to the visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColorScale {
+pub struct ColorScale  {
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub colors: ::std::vec::Vec<crate::types::DataColor>,
+    pub colors: ::std::vec::Vec::<crate::types::DataColor>,
     /// <p>Determines the color fill type.</p>
     pub color_fill_type: crate::types::ColorFillType,
     /// <p>Determines the color that is applied to null values.</p>
     pub null_value_color: ::std::option::Option<crate::types::DataColor>,
 }
-impl ColorScale {
+impl  ColorScale  {
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub fn colors(&self) -> &[crate::types::DataColor] {
-        use std::ops::Deref;
-        self.colors.deref()
+    pub fn colors(&self) -> & [crate::types::DataColor] {
+        use std::ops::Deref; self.colors.deref()
     }
     /// <p>Determines the color fill type.</p>
-    pub fn color_fill_type(&self) -> &crate::types::ColorFillType {
+    pub fn color_fill_type(&self) -> & crate::types::ColorFillType {
         &self.color_fill_type
     }
     /// <p>Determines the color that is applied to null values.</p>
-    pub fn null_value_color(&self) -> ::std::option::Option<&crate::types::DataColor> {
+    pub fn null_value_color(&self) -> ::std::option::Option<& crate::types::DataColor> {
         self.null_value_color.as_ref()
     }
 }
@@ -37,7 +36,7 @@ impl ColorScale {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColorScaleBuilder {
-    pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
+    pub(crate) colors: ::std::option::Option<::std::vec::Vec::<crate::types::DataColor>>,
     pub(crate) color_fill_type: ::std::option::Option<crate::types::ColorFillType>,
     pub(crate) null_value_color: ::std::option::Option<crate::types::DataColor>,
 }
@@ -49,17 +48,16 @@ impl ColorScaleBuilder {
     /// <p>Determines the list of colors that are applied to the visual.</p>
     pub fn colors(mut self, input: crate::types::DataColor) -> Self {
         let mut v = self.colors.unwrap_or_default();
-        v.push(input);
-        self.colors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.colors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>) -> Self {
-        self.colors = input;
-        self
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataColor>>) -> Self {
+        self.colors = input; self
     }
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataColor>> {
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataColor>> {
         &self.colors
     }
     /// <p>Determines the color fill type.</p>
@@ -70,8 +68,7 @@ impl ColorScaleBuilder {
     }
     /// <p>Determines the color fill type.</p>
     pub fn set_color_fill_type(mut self, input: ::std::option::Option<crate::types::ColorFillType>) -> Self {
-        self.color_fill_type = input;
-        self
+        self.color_fill_type = input; self
     }
     /// <p>Determines the color fill type.</p>
     pub fn get_color_fill_type(&self) -> &::std::option::Option<crate::types::ColorFillType> {
@@ -84,8 +81,7 @@ impl ColorScaleBuilder {
     }
     /// <p>Determines the color that is applied to null values.</p>
     pub fn set_null_value_color(mut self, input: ::std::option::Option<crate::types::DataColor>) -> Self {
-        self.null_value_color = input;
-        self
+        self.null_value_color = input; self
     }
     /// <p>Determines the color that is applied to null values.</p>
     pub fn get_null_value_color(&self) -> &::std::option::Option<crate::types::DataColor> {
@@ -96,20 +92,22 @@ impl ColorScaleBuilder {
     /// - [`colors`](crate::types::builders::ColorScaleBuilder::colors)
     /// - [`color_fill_type`](crate::types::builders::ColorScaleBuilder::color_fill_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColorScale, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColorScale {
-            colors: self.colors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "colors",
-                    "colors was not specified but it is required when building ColorScale",
-                )
-            })?,
-            color_fill_type: self.color_fill_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "color_fill_type",
-                    "color_fill_type was not specified but it is required when building ColorScale",
-                )
-            })?,
-            null_value_color: self.null_value_color,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColorScale {
+                colors: self.colors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("colors", "colors was not specified but it is required when building ColorScale")
+                    )?
+                ,
+                color_fill_type: self.color_fill_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("color_fill_type", "color_fill_type was not specified but it is required when building ColorScale")
+                    )?
+                ,
+                null_value_color: self.null_value_color
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let audionormalizationalgorithm = unimplemented!();
 /// match audionormalizationalgorithm {
@@ -32,16 +32,14 @@
 /// Specifically, when `audionormalizationalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioNormalizationAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AudioNormalizationAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     ItuBs17701,
@@ -53,67 +51,68 @@ pub enum AudioNormalizationAlgorithm {
     ItuBs17704,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AudioNormalizationAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "ITU_BS_1770_1" => AudioNormalizationAlgorithm::ItuBs17701,
-            "ITU_BS_1770_2" => AudioNormalizationAlgorithm::ItuBs17702,
-            "ITU_BS_1770_3" => AudioNormalizationAlgorithm::ItuBs17703,
-            "ITU_BS_1770_4" => AudioNormalizationAlgorithm::ItuBs17704,
-            other => AudioNormalizationAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ITU_BS_1770_1" => AudioNormalizationAlgorithm::ItuBs17701,
+"ITU_BS_1770_2" => AudioNormalizationAlgorithm::ItuBs17702,
+"ITU_BS_1770_3" => AudioNormalizationAlgorithm::ItuBs17703,
+"ITU_BS_1770_4" => AudioNormalizationAlgorithm::ItuBs17704,
+other => AudioNormalizationAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AudioNormalizationAlgorithm {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AudioNormalizationAlgorithm::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AudioNormalizationAlgorithm::from(s))
+                    }
+                }
 impl AudioNormalizationAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AudioNormalizationAlgorithm::ItuBs17701 => "ITU_BS_1770_1",
-            AudioNormalizationAlgorithm::ItuBs17702 => "ITU_BS_1770_2",
-            AudioNormalizationAlgorithm::ItuBs17703 => "ITU_BS_1770_3",
-            AudioNormalizationAlgorithm::ItuBs17704 => "ITU_BS_1770_4",
-            AudioNormalizationAlgorithm::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AudioNormalizationAlgorithm::ItuBs17701 => "ITU_BS_1770_1",
+    AudioNormalizationAlgorithm::ItuBs17702 => "ITU_BS_1770_2",
+    AudioNormalizationAlgorithm::ItuBs17703 => "ITU_BS_1770_3",
+    AudioNormalizationAlgorithm::ItuBs17704 => "ITU_BS_1770_4",
+    AudioNormalizationAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AudioNormalizationAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AudioNormalizationAlgorithm {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AudioNormalizationAlgorithm {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AudioNormalizationAlgorithm::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
-            AudioNormalizationAlgorithm::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
-            AudioNormalizationAlgorithm::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
-            AudioNormalizationAlgorithm::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
-            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AudioNormalizationAlgorithm::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
+AudioNormalizationAlgorithm::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
+AudioNormalizationAlgorithm::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
+AudioNormalizationAlgorithm::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
+AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

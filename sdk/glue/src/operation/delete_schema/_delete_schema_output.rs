@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaOutput {
+pub struct DeleteSchemaOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema being deleted.</p>
@@ -11,25 +11,25 @@ pub struct DeleteSchemaOutput {
     pub status: ::std::option::Option<crate::types::SchemaStatus>,
     _request_id: Option<String>,
 }
-impl DeleteSchemaOutput {
+impl  DeleteSchemaOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema being deleted.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The status of the schema.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SchemaStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput).
     pub fn builder() -> crate::operation::delete_schema::builders::DeleteSchemaOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteSchemaOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteSchemaOutputBuilder {
     }
     /// <p>The name of the schema being deleted.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema being deleted.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteSchemaOutputBuilder {
     }
     /// <p>The status of the schema.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the schema.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput).
     pub fn build(self) -> crate::operation::delete_schema::DeleteSchemaOutput {
         crate::operation::delete_schema::DeleteSchemaOutput {
-            schema_arn: self.schema_arn,
-            schema_name: self.schema_name,
-            status: self.status,
+            schema_arn: self.schema_arn
+            ,
+            schema_name: self.schema_name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

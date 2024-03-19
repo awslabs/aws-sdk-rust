@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthorizationTokenInput {}
+pub struct GetAuthorizationTokenInput  {
+}
 impl GetAuthorizationTokenInput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
     pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
@@ -13,13 +14,15 @@ impl GetAuthorizationTokenInput {
 /// A builder for [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetAuthorizationTokenInputBuilder {}
+pub struct GetAuthorizationTokenInputBuilder {
+}
 impl GetAuthorizationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_authorization_token::GetAuthorizationTokenInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_authorization_token::GetAuthorizationTokenInput {
+            }
+        )
     }
 }
+

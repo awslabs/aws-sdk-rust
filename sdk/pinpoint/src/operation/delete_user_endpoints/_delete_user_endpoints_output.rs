@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserEndpointsOutput {
+pub struct DeleteUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     pub endpoints_response: ::std::option::Option<crate::types::EndpointsResponse>,
     _request_id: Option<String>,
 }
-impl DeleteUserEndpointsOutput {
+impl  DeleteUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn endpoints_response(&self) -> ::std::option::Option<&crate::types::EndpointsResponse> {
+    pub fn endpoints_response(&self) -> ::std::option::Option<& crate::types::EndpointsResponse> {
         self.endpoints_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteUserEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput).
     pub fn builder() -> crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteUserEndpointsOutputBuilder {
     }
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     pub fn set_endpoints_response(mut self, input: ::std::option::Option<crate::types::EndpointsResponse>) -> Self {
-        self.endpoints_response = input;
-        self
+        self.endpoints_response = input; self
     }
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     pub fn get_endpoints_response(&self) -> &::std::option::Option<crate::types::EndpointsResponse> {
         &self.endpoints_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput).
     pub fn build(self) -> crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput {
         crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput {
-            endpoints_response: self.endpoints_response,
+            endpoints_response: self.endpoints_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

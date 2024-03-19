@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGraphSnapshotOutput {
+pub struct GetGraphSnapshotOutput  {
     /// <p>The unique identifier of the graph snapshot.</p>
     pub id: ::std::string::String,
     /// <p>The snapshot name. For example: <code>my-snapshot-1</code>.</p>
@@ -20,45 +20,42 @@ pub struct GetGraphSnapshotOutput {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetGraphSnapshotOutput {
+impl  GetGraphSnapshotOutput  {
     /// <p>The unique identifier of the graph snapshot.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The snapshot name. For example: <code>my-snapshot-1</code>.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ARN of the graph snapshot.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The graph identifier for the graph for which a snapshot is to be created.</p>
-    pub fn source_graph_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_graph_id(&self) -> ::std::option::Option<& str> {
         self.source_graph_id.as_deref()
     }
     /// <p>The time when the snapshot was created.</p>
-    pub fn snapshot_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
     /// <p>The status of the graph snapshot.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SnapshotStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SnapshotStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt the snapshot.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGraphSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGraphSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetGraphSnapshotOutput`](crate::operation::get_graph_snapshot::GetGraphSnapshotOutput).
     pub fn builder() -> crate::operation::get_graph_snapshot::builders::GetGraphSnapshotOutputBuilder {
@@ -88,8 +85,7 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The unique identifier of the graph snapshot.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the graph snapshot.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl GetGraphSnapshotOutputBuilder {
     /// <p>The snapshot name. For example: <code>my-snapshot-1</code>.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The snapshot name. For example: <code>my-snapshot-1</code>.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
@@ -121,8 +116,7 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The ARN of the graph snapshot.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the graph snapshot.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +129,7 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The graph identifier for the graph for which a snapshot is to be created.</p>
     pub fn set_source_graph_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_graph_id = input;
-        self
+        self.source_graph_id = input; self
     }
     /// <p>The graph identifier for the graph for which a snapshot is to be created.</p>
     pub fn get_source_graph_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +142,7 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The time when the snapshot was created.</p>
     pub fn set_snapshot_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_create_time = input;
-        self
+        self.snapshot_create_time = input; self
     }
     /// <p>The time when the snapshot was created.</p>
     pub fn get_snapshot_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -163,8 +155,7 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The status of the graph snapshot.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SnapshotStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the graph snapshot.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SnapshotStatus> {
@@ -177,54 +168,55 @@ impl GetGraphSnapshotOutputBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt the snapshot.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The ID of the KMS key used to encrypt and decrypt the snapshot.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGraphSnapshotOutput`](crate::operation::get_graph_snapshot::GetGraphSnapshotOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_graph_snapshot::builders::GetGraphSnapshotOutputBuilder::id)
     /// - [`name`](crate::operation::get_graph_snapshot::builders::GetGraphSnapshotOutputBuilder::name)
     /// - [`arn`](crate::operation::get_graph_snapshot::builders::GetGraphSnapshotOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_graph_snapshot::GetGraphSnapshotOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_graph_snapshot::GetGraphSnapshotOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetGraphSnapshotOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetGraphSnapshotOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetGraphSnapshotOutput",
-                )
-            })?,
-            source_graph_id: self.source_graph_id,
-            snapshot_create_time: self.snapshot_create_time,
-            status: self.status,
-            kms_key_identifier: self.kms_key_identifier,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_graph_snapshot::GetGraphSnapshotOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_graph_snapshot::GetGraphSnapshotOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetGraphSnapshotOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetGraphSnapshotOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetGraphSnapshotOutput")
+                    )?
+                ,
+                source_graph_id: self.source_graph_id
+                ,
+                snapshot_create_time: self.snapshot_create_time
+                ,
+                status: self.status
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

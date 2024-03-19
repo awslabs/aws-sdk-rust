@@ -18,10 +18,21 @@ use std::marker::PhantomData;
 // input to a request. Resource IDs returned in responses may or may not include a prefix.
 /// Strip the resource type prefix from resource ID return
 fn trim_resource_id(resource_id: &mut Option<String>) {
-    const PREFIXES: &[&str] = &["/hostedzone/", "hostedzone/", "/change/", "change/", "/delegationset/", "delegationset/"];
+    const PREFIXES: &[&str] = &[
+        "/hostedzone/",
+        "hostedzone/",
+        "/change/",
+        "change/",
+        "/delegationset/",
+        "delegationset/",
+    ];
 
     for prefix in PREFIXES {
-        if let Some(id) = resource_id.as_deref().unwrap_or_default().strip_prefix(prefix) {
+        if let Some(id) = resource_id
+            .as_deref()
+            .unwrap_or_default()
+            .strip_prefix(prefix)
+        {
             *resource_id = Some(id.to_string());
             return;
         }
@@ -93,7 +104,10 @@ mod test {
             resource: Some("Z0441723226OZ66S5ZCNZ".to_string()),
         };
         trim_resource_id(&mut operation.resource);
-        assert_eq!(&operation.resource.unwrap_or_default(), "Z0441723226OZ66S5ZCNZ");
+        assert_eq!(
+            &operation.resource.unwrap_or_default(),
+            "Z0441723226OZ66S5ZCNZ"
+        );
     }
 
     #[test]
@@ -106,7 +120,10 @@ mod test {
             change_id: Some("/change/Z0441723226OZ66S5ZCNZ".to_string()),
         };
         trim_resource_id(&mut operation.change_id);
-        assert_eq!(&operation.change_id.unwrap_or_default(), "Z0441723226OZ66S5ZCNZ");
+        assert_eq!(
+            &operation.change_id.unwrap_or_default(),
+            "Z0441723226OZ66S5ZCNZ"
+        );
     }
 
     #[test]
@@ -119,6 +136,10 @@ mod test {
             hosted_zone: Some("hostedzone/Z0441723226OZ66S5ZCNZ".to_string()),
         };
         trim_resource_id(&mut operation.hosted_zone);
-        assert_eq!(&operation.hosted_zone.unwrap_or_default(), "Z0441723226OZ66S5ZCNZ");
+        assert_eq!(
+            &operation.hosted_zone.unwrap_or_default(),
+            "Z0441723226OZ66S5ZCNZ"
+        );
     }
 }
+

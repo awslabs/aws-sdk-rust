@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePrivateVirtualInterfaceInput {
+pub struct CreatePrivateVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the private virtual interface.</p>
     pub new_private_virtual_interface: ::std::option::Option<crate::types::NewPrivateVirtualInterface>,
 }
-impl CreatePrivateVirtualInterfaceInput {
+impl  CreatePrivateVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>Information about the private virtual interface.</p>
-    pub fn new_private_virtual_interface(&self) -> ::std::option::Option<&crate::types::NewPrivateVirtualInterface> {
+    pub fn new_private_virtual_interface(&self) -> ::std::option::Option<& crate::types::NewPrivateVirtualInterface> {
         self.new_private_virtual_interface.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreatePrivateVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreatePrivateVirtualInterfaceInputBuilder {
     }
     /// <p>Information about the private virtual interface.</p>
     pub fn set_new_private_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewPrivateVirtualInterface>) -> Self {
-        self.new_private_virtual_interface = input;
-        self
+        self.new_private_virtual_interface = input; self
     }
     /// <p>Information about the private virtual interface.</p>
     pub fn get_new_private_virtual_interface(&self) -> &::std::option::Option<crate::types::NewPrivateVirtualInterface> {
         &self.new_private_virtual_interface
     }
     /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceInput`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput {
-            connection_id: self.connection_id,
-            new_private_virtual_interface: self.new_private_virtual_interface,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput {
+                connection_id: self.connection_id
+                ,
+                new_private_virtual_interface: self.new_private_virtual_interface
+                ,
+            }
+        )
     }
 }
+

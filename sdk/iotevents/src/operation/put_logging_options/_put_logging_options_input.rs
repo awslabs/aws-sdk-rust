@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLoggingOptionsInput {
+pub struct PutLoggingOptionsInput  {
     /// <p>The new values of the AWS IoT Events logging options.</p>
     pub logging_options: ::std::option::Option<crate::types::LoggingOptions>,
 }
-impl PutLoggingOptionsInput {
+impl  PutLoggingOptionsInput  {
     /// <p>The new values of the AWS IoT Events logging options.</p>
-    pub fn logging_options(&self) -> ::std::option::Option<&crate::types::LoggingOptions> {
+    pub fn logging_options(&self) -> ::std::option::Option<& crate::types::LoggingOptions> {
         self.logging_options.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl PutLoggingOptionsInputBuilder {
     }
     /// <p>The new values of the AWS IoT Events logging options.</p>
     pub fn set_logging_options(mut self, input: ::std::option::Option<crate::types::LoggingOptions>) -> Self {
-        self.logging_options = input;
-        self
+        self.logging_options = input; self
     }
     /// <p>The new values of the AWS IoT Events logging options.</p>
     pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
         &self.logging_options
     }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_logging_options::PutLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_logging_options::PutLoggingOptionsInput {
-            logging_options: self.logging_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_logging_options::PutLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_logging_options::PutLoggingOptionsInput {
+                logging_options: self.logging_options
+                ,
+            }
+        )
     }
 }
+

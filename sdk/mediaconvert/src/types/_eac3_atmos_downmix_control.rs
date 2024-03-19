@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eac3atmosdownmixcontrol = unimplemented!();
 /// match eac3atmosdownmixcontrol {
@@ -30,16 +30,14 @@
 /// Specifically, when `eac3atmosdownmixcontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3AtmosDownmixControl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Eac3AtmosDownmixControl {
     #[allow(missing_docs)] // documentation missing in model
     InitializeFromSource,
@@ -47,61 +45,62 @@ pub enum Eac3AtmosDownmixControl {
     Specified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Eac3AtmosDownmixControl {
-    fn from(s: &str) -> Self {
-        match s {
-            "INITIALIZE_FROM_SOURCE" => Eac3AtmosDownmixControl::InitializeFromSource,
-            "SPECIFIED" => Eac3AtmosDownmixControl::Specified,
-            other => Eac3AtmosDownmixControl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "INITIALIZE_FROM_SOURCE" => Eac3AtmosDownmixControl::InitializeFromSource,
+"SPECIFIED" => Eac3AtmosDownmixControl::Specified,
+other => Eac3AtmosDownmixControl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Eac3AtmosDownmixControl {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Eac3AtmosDownmixControl::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Eac3AtmosDownmixControl::from(s))
+                    }
+                }
 impl Eac3AtmosDownmixControl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Eac3AtmosDownmixControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
-            Eac3AtmosDownmixControl::Specified => "SPECIFIED",
-            Eac3AtmosDownmixControl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Eac3AtmosDownmixControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
+    Eac3AtmosDownmixControl::Specified => "SPECIFIED",
+    Eac3AtmosDownmixControl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Eac3AtmosDownmixControl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Eac3AtmosDownmixControl {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Eac3AtmosDownmixControl {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Eac3AtmosDownmixControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
-            Eac3AtmosDownmixControl::Specified => write!(f, "SPECIFIED"),
-            Eac3AtmosDownmixControl::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Eac3AtmosDownmixControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+Eac3AtmosDownmixControl::Specified => write!(f, "SPECIFIED"),
+Eac3AtmosDownmixControl::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

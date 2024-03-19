@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let adtriggerselement = unimplemented!();
 /// match adtriggerselement {
@@ -36,16 +36,14 @@
 /// Specifically, when `adtriggerselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdTriggersElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AdTriggersElement {
     #[allow(missing_docs)] // documentation missing in model
     Break,
@@ -65,88 +63,80 @@ pub enum AdTriggersElement {
     SpliceInsert,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AdTriggersElement {
-    fn from(s: &str) -> Self {
-        match s {
-            "BREAK" => AdTriggersElement::Break,
-            "DISTRIBUTOR_ADVERTISEMENT" => AdTriggersElement::DistributorAdvertisement,
-            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorOverlayPlacementOpportunity,
-            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorPlacementOpportunity,
-            "PROVIDER_ADVERTISEMENT" => AdTriggersElement::ProviderAdvertisement,
-            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderOverlayPlacementOpportunity,
-            "PROVIDER_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderPlacementOpportunity,
-            "SPLICE_INSERT" => AdTriggersElement::SpliceInsert,
-            other => AdTriggersElement::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BREAK" => AdTriggersElement::Break,
+"DISTRIBUTOR_ADVERTISEMENT" => AdTriggersElement::DistributorAdvertisement,
+"DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorOverlayPlacementOpportunity,
+"DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorPlacementOpportunity,
+"PROVIDER_ADVERTISEMENT" => AdTriggersElement::ProviderAdvertisement,
+"PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderOverlayPlacementOpportunity,
+"PROVIDER_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderPlacementOpportunity,
+"SPLICE_INSERT" => AdTriggersElement::SpliceInsert,
+other => AdTriggersElement::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AdTriggersElement {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AdTriggersElement::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AdTriggersElement::from(s))
+                    }
+                }
 impl AdTriggersElement {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdTriggersElement::Break => "BREAK",
-            AdTriggersElement::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
-            AdTriggersElement::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
-            AdTriggersElement::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
-            AdTriggersElement::SpliceInsert => "SPLICE_INSERT",
-            AdTriggersElement::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BREAK",
-            "DISTRIBUTOR_ADVERTISEMENT",
-            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
-            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
-            "PROVIDER_ADVERTISEMENT",
-            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
-            "PROVIDER_PLACEMENT_OPPORTUNITY",
-            "SPLICE_INSERT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdTriggersElement::Break => "BREAK",
+    AdTriggersElement::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
+    AdTriggersElement::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
+    AdTriggersElement::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
+    AdTriggersElement::SpliceInsert => "SPLICE_INSERT",
+    AdTriggersElement::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BREAK", "DISTRIBUTOR_ADVERTISEMENT", "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY", "DISTRIBUTOR_PLACEMENT_OPPORTUNITY", "PROVIDER_ADVERTISEMENT", "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY", "PROVIDER_PLACEMENT_OPPORTUNITY", "SPLICE_INSERT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AdTriggersElement {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AdTriggersElement {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AdTriggersElement {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AdTriggersElement::Break => write!(f, "BREAK"),
-            AdTriggersElement::DistributorAdvertisement => write!(f, "DISTRIBUTOR_ADVERTISEMENT"),
-            AdTriggersElement::DistributorOverlayPlacementOpportunity => write!(f, "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"),
-            AdTriggersElement::DistributorPlacementOpportunity => write!(f, "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"),
-            AdTriggersElement::ProviderAdvertisement => write!(f, "PROVIDER_ADVERTISEMENT"),
-            AdTriggersElement::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
-            AdTriggersElement::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
-            AdTriggersElement::SpliceInsert => write!(f, "SPLICE_INSERT"),
-            AdTriggersElement::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AdTriggersElement::Break => write!(f, "BREAK"),
+AdTriggersElement::DistributorAdvertisement => write!(f, "DISTRIBUTOR_ADVERTISEMENT"),
+AdTriggersElement::DistributorOverlayPlacementOpportunity => write!(f, "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"),
+AdTriggersElement::DistributorPlacementOpportunity => write!(f, "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"),
+AdTriggersElement::ProviderAdvertisement => write!(f, "PROVIDER_ADVERTISEMENT"),
+AdTriggersElement::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
+AdTriggersElement::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
+AdTriggersElement::SpliceInsert => write!(f, "SPLICE_INSERT"),
+AdTriggersElement::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -34,36 +34,28 @@ pub enum ResponseStreamError {
     /// <p>The request took too long to process. Processing time exceeded the model timeout length.</p>
     ModelTimeoutException(crate::types::error::ModelTimeoutException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-ResponseStreamError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl ResponseStreamError {
     /// Creates the `ResponseStreamError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `ResponseStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `ResponseStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -98,29 +90,51 @@ impl ResponseStreamError {
 impl ::std::error::Error for ResponseStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ModelStreamErrorException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ModelTimeoutException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::InternalServerException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ModelStreamErrorException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ModelTimeoutException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for ResponseStreamError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::ModelStreamErrorException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::ModelTimeoutException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ModelStreamErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ModelTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -136,31 +150,40 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ResponseStreamError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResponseStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ModelStreamErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ModelTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::InternalServerException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ModelStreamErrorException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ModelTimeoutException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ResponseStreamError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::types::error::ResponseStreamError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 mod _access_denied_exception;
 
@@ -184,3 +207,4 @@ mod _validation_exception;
 
 /// Builders
 pub mod builders;
+

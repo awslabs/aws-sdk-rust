@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartWorkflowRunInput {
+pub struct StartWorkflowRunInput  {
     /// <p>The name of the workflow to start.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartWorkflowRunInput {
+impl  StartWorkflowRunInput  {
     /// <p>The name of the workflow to start.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn run_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.run_properties.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl StartWorkflowRunInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkflowRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartWorkflowRunInputBuilder {
     /// <p>The name of the workflow to start.</p>
@@ -41,8 +41,7 @@ impl StartWorkflowRunInputBuilder {
     }
     /// <p>The name of the workflow to start.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow to start.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -53,35 +52,30 @@ impl StartWorkflowRunInputBuilder {
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
     ///
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn run_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn run_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.run_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.run_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.run_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn set_run_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.run_properties = input;
-        self
+    pub fn set_run_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.run_properties = input; self
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.run_properties
     }
     /// Consumes the builder and constructs a [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_workflow_run::StartWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_workflow_run::StartWorkflowRunInput {
-            name: self.name,
-            run_properties: self.run_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_workflow_run::StartWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_workflow_run::StartWorkflowRunInput {
+                name: self.name
+                ,
+                run_properties: self.run_properties
+                ,
+            }
+        )
     }
 }
+

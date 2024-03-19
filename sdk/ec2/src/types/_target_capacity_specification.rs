@@ -4,7 +4,7 @@
 /// <p>You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html">OnDemandOptions</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetCapacitySpecification {
+pub struct TargetCapacitySpecification  {
     /// <p>The number of units to request, filled the default target capacity type.</p>
     pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
@@ -16,7 +16,7 @@ pub struct TargetCapacitySpecification {
     /// <p>The unit for the target capacity.</p>
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
 }
-impl TargetCapacitySpecification {
+impl  TargetCapacitySpecification  {
     /// <p>The number of units to request, filled the default target capacity type.</p>
     pub fn total_target_capacity(&self) -> ::std::option::Option<i32> {
         self.total_target_capacity
@@ -30,11 +30,11 @@ impl TargetCapacitySpecification {
         self.spot_target_capacity
     }
     /// <p>The default target capacity type.</p>
-    pub fn default_target_capacity_type(&self) -> ::std::option::Option<&crate::types::DefaultTargetCapacityType> {
+    pub fn default_target_capacity_type(&self) -> ::std::option::Option<& crate::types::DefaultTargetCapacityType> {
         self.default_target_capacity_type.as_ref()
     }
     /// <p>The unit for the target capacity.</p>
-    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
+    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<& crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl TargetCapacitySpecificationBuilder {
     }
     /// <p>The number of units to request, filled the default target capacity type.</p>
     pub fn set_total_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_target_capacity = input;
-        self
+        self.total_target_capacity = input; self
     }
     /// <p>The number of units to request, filled the default target capacity type.</p>
     pub fn get_total_target_capacity(&self) -> &::std::option::Option<i32> {
@@ -77,8 +76,7 @@ impl TargetCapacitySpecificationBuilder {
     }
     /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
     pub fn set_on_demand_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_target_capacity = input;
-        self
+        self.on_demand_target_capacity = input; self
     }
     /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
     pub fn get_on_demand_target_capacity(&self) -> &::std::option::Option<i32> {
@@ -91,8 +89,7 @@ impl TargetCapacitySpecificationBuilder {
     }
     /// <p>The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot specify a target capacity for Spot units.</p>
     pub fn set_spot_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.spot_target_capacity = input;
-        self
+        self.spot_target_capacity = input; self
     }
     /// <p>The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot specify a target capacity for Spot units.</p>
     pub fn get_spot_target_capacity(&self) -> &::std::option::Option<i32> {
@@ -105,8 +102,7 @@ impl TargetCapacitySpecificationBuilder {
     }
     /// <p>The default target capacity type.</p>
     pub fn set_default_target_capacity_type(mut self, input: ::std::option::Option<crate::types::DefaultTargetCapacityType>) -> Self {
-        self.default_target_capacity_type = input;
-        self
+        self.default_target_capacity_type = input; self
     }
     /// <p>The default target capacity type.</p>
     pub fn get_default_target_capacity_type(&self) -> &::std::option::Option<crate::types::DefaultTargetCapacityType> {
@@ -119,8 +115,7 @@ impl TargetCapacitySpecificationBuilder {
     }
     /// <p>The unit for the target capacity.</p>
     pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
-        self.target_capacity_unit_type = input;
-        self
+        self.target_capacity_unit_type = input; self
     }
     /// <p>The unit for the target capacity.</p>
     pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
@@ -129,11 +124,17 @@ impl TargetCapacitySpecificationBuilder {
     /// Consumes the builder and constructs a [`TargetCapacitySpecification`](crate::types::TargetCapacitySpecification).
     pub fn build(self) -> crate::types::TargetCapacitySpecification {
         crate::types::TargetCapacitySpecification {
-            total_target_capacity: self.total_target_capacity,
-            on_demand_target_capacity: self.on_demand_target_capacity,
-            spot_target_capacity: self.spot_target_capacity,
-            default_target_capacity_type: self.default_target_capacity_type,
-            target_capacity_unit_type: self.target_capacity_unit_type,
+            total_target_capacity: self.total_target_capacity
+            ,
+            on_demand_target_capacity: self.on_demand_target_capacity
+            ,
+            spot_target_capacity: self.spot_target_capacity
+            ,
+            default_target_capacity_type: self.default_target_capacity_type
+            ,
+            target_capacity_unit_type: self.target_capacity_unit_type
+            ,
         }
     }
 }
+

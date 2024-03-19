@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAffectedAccountsForOrganizationOutput {
+pub struct DescribeAffectedAccountsForOrganizationOutput  {
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub affected_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li>
@@ -19,12 +19,13 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAffectedAccountsForOrganizationOutput {
+impl  DescribeAffectedAccountsForOrganizationOutput  {
     /// <p>A JSON set of elements of the affected accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.affected_accounts.is_none()`.
-    pub fn affected_accounts(&self) -> &[::std::string::String] {
-        self.affected_accounts.as_deref().unwrap_or_default()
+    pub fn affected_accounts(&self) -> & [::std::string::String] {
+        self.affected_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
@@ -35,23 +36,22 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p></li>
     /// </ul>
-    pub fn event_scope_code(&self) -> ::std::option::Option<&crate::types::EventScopeCode> {
+    pub fn event_scope_code(&self) -> ::std::option::Option<& crate::types::EventScopeCode> {
         self.event_scope_code.as_ref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAffectedAccountsForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder {
         crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder::default()
     }
 }
@@ -60,7 +60,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationOutputBuilder {
-    pub(crate) affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) affected_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) event_scope_code: ::std::option::Option<crate::types::EventScopeCode>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -73,17 +73,16 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub fn affected_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.affected_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.affected_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.affected_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn set_affected_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.affected_accounts = input;
-        self
+    pub fn set_affected_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.affected_accounts = input; self
     }
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn get_affected_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_affected_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.affected_accounts
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
@@ -109,8 +108,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p></li>
     /// </ul>
     pub fn set_event_scope_code(mut self, input: ::std::option::Option<crate::types::EventScopeCode>) -> Self {
-        self.event_scope_code = input;
-        self
+        self.event_scope_code = input; self
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
@@ -131,29 +129,32 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
     pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
         crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
-            affected_accounts: self.affected_accounts,
-            event_scope_code: self.event_scope_code,
-            next_token: self.next_token,
+            affected_accounts: self.affected_accounts
+            ,
+            event_scope_code: self.event_scope_code
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

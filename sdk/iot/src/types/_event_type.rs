@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -39,16 +39,14 @@
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     CaCertificate,
@@ -74,100 +72,89 @@ pub enum EventType {
     ThingTypeAssociation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CA_CERTIFICATE" => EventType::CaCertificate,
-            "CERTIFICATE" => EventType::Certificate,
-            "JOB" => EventType::Job,
-            "JOB_EXECUTION" => EventType::JobExecution,
-            "POLICY" => EventType::Policy,
-            "THING" => EventType::Thing,
-            "THING_GROUP" => EventType::ThingGroup,
-            "THING_GROUP_HIERARCHY" => EventType::ThingGroupHierarchy,
-            "THING_GROUP_MEMBERSHIP" => EventType::ThingGroupMembership,
-            "THING_TYPE" => EventType::ThingType,
-            "THING_TYPE_ASSOCIATION" => EventType::ThingTypeAssociation,
-            other => EventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CA_CERTIFICATE" => EventType::CaCertificate,
+"CERTIFICATE" => EventType::Certificate,
+"JOB" => EventType::Job,
+"JOB_EXECUTION" => EventType::JobExecution,
+"POLICY" => EventType::Policy,
+"THING" => EventType::Thing,
+"THING_GROUP" => EventType::ThingGroup,
+"THING_GROUP_HIERARCHY" => EventType::ThingGroupHierarchy,
+"THING_GROUP_MEMBERSHIP" => EventType::ThingGroupMembership,
+"THING_TYPE" => EventType::ThingType,
+"THING_TYPE_ASSOCIATION" => EventType::ThingTypeAssociation,
+other => EventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EventType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EventType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EventType::from(s))
+                    }
+                }
 impl EventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventType::CaCertificate => "CA_CERTIFICATE",
-            EventType::Certificate => "CERTIFICATE",
-            EventType::Job => "JOB",
-            EventType::JobExecution => "JOB_EXECUTION",
-            EventType::Policy => "POLICY",
-            EventType::Thing => "THING",
-            EventType::ThingGroup => "THING_GROUP",
-            EventType::ThingGroupHierarchy => "THING_GROUP_HIERARCHY",
-            EventType::ThingGroupMembership => "THING_GROUP_MEMBERSHIP",
-            EventType::ThingType => "THING_TYPE",
-            EventType::ThingTypeAssociation => "THING_TYPE_ASSOCIATION",
-            EventType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CA_CERTIFICATE",
-            "CERTIFICATE",
-            "JOB",
-            "JOB_EXECUTION",
-            "POLICY",
-            "THING",
-            "THING_GROUP",
-            "THING_GROUP_HIERARCHY",
-            "THING_GROUP_MEMBERSHIP",
-            "THING_TYPE",
-            "THING_TYPE_ASSOCIATION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventType::CaCertificate => "CA_CERTIFICATE",
+    EventType::Certificate => "CERTIFICATE",
+    EventType::Job => "JOB",
+    EventType::JobExecution => "JOB_EXECUTION",
+    EventType::Policy => "POLICY",
+    EventType::Thing => "THING",
+    EventType::ThingGroup => "THING_GROUP",
+    EventType::ThingGroupHierarchy => "THING_GROUP_HIERARCHY",
+    EventType::ThingGroupMembership => "THING_GROUP_MEMBERSHIP",
+    EventType::ThingType => "THING_TYPE",
+    EventType::ThingTypeAssociation => "THING_TYPE_ASSOCIATION",
+    EventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CA_CERTIFICATE", "CERTIFICATE", "JOB", "JOB_EXECUTION", "POLICY", "THING", "THING_GROUP", "THING_GROUP_HIERARCHY", "THING_GROUP_MEMBERSHIP", "THING_TYPE", "THING_TYPE_ASSOCIATION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EventType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EventType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EventType::CaCertificate => write!(f, "CA_CERTIFICATE"),
-            EventType::Certificate => write!(f, "CERTIFICATE"),
-            EventType::Job => write!(f, "JOB"),
-            EventType::JobExecution => write!(f, "JOB_EXECUTION"),
-            EventType::Policy => write!(f, "POLICY"),
-            EventType::Thing => write!(f, "THING"),
-            EventType::ThingGroup => write!(f, "THING_GROUP"),
-            EventType::ThingGroupHierarchy => write!(f, "THING_GROUP_HIERARCHY"),
-            EventType::ThingGroupMembership => write!(f, "THING_GROUP_MEMBERSHIP"),
-            EventType::ThingType => write!(f, "THING_TYPE"),
-            EventType::ThingTypeAssociation => write!(f, "THING_TYPE_ASSOCIATION"),
-            EventType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EventType::CaCertificate => write!(f, "CA_CERTIFICATE"),
+EventType::Certificate => write!(f, "CERTIFICATE"),
+EventType::Job => write!(f, "JOB"),
+EventType::JobExecution => write!(f, "JOB_EXECUTION"),
+EventType::Policy => write!(f, "POLICY"),
+EventType::Thing => write!(f, "THING"),
+EventType::ThingGroup => write!(f, "THING_GROUP"),
+EventType::ThingGroupHierarchy => write!(f, "THING_GROUP_HIERARCHY"),
+EventType::ThingGroupMembership => write!(f, "THING_GROUP_MEMBERSHIP"),
+EventType::ThingType => write!(f, "THING_TYPE"),
+EventType::ThingTypeAssociation => write!(f, "THING_TYPE_ASSOCIATION"),
+EventType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

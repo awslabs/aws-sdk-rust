@@ -3,7 +3,7 @@
 /// <p>The summary of an ML Detect behavior model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BehaviorModelTrainingSummary {
+pub struct BehaviorModelTrainingSummary  {
     /// <p>The name of the security profile.</p>
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the behavior.</p>
@@ -17,21 +17,21 @@ pub struct BehaviorModelTrainingSummary {
     /// <p>The date the model was last refreshed.</p>
     pub last_model_refresh_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BehaviorModelTrainingSummary {
+impl  BehaviorModelTrainingSummary  {
     /// <p>The name of the security profile.</p>
-    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The name of the behavior.</p>
-    pub fn behavior_name(&self) -> ::std::option::Option<&str> {
+    pub fn behavior_name(&self) -> ::std::option::Option<& str> {
         self.behavior_name.as_deref()
     }
     /// <p>The date a training model started collecting data.</p>
-    pub fn training_data_collection_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_collection_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_collection_start_date.as_ref()
     }
     /// <p>The status of the behavior model.</p>
-    pub fn model_status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+    pub fn model_status(&self) -> ::std::option::Option<& crate::types::ModelStatus> {
         self.model_status.as_ref()
     }
     /// <p>The percentage of datapoints collected.</p>
@@ -39,7 +39,7 @@ impl BehaviorModelTrainingSummary {
         self.datapoints_collection_percentage
     }
     /// <p>The date the model was last refreshed.</p>
-    pub fn last_model_refresh_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_model_refresh_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_model_refresh_date.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The name of the security profile.</p>
     pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_name = input;
-        self
+        self.security_profile_name = input; self
     }
     /// <p>The name of the security profile.</p>
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The name of the behavior.</p>
     pub fn set_behavior_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.behavior_name = input;
-        self
+        self.behavior_name = input; self
     }
     /// <p>The name of the behavior.</p>
     pub fn get_behavior_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The date a training model started collecting data.</p>
     pub fn set_training_data_collection_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_collection_start_date = input;
-        self
+        self.training_data_collection_start_date = input; self
     }
     /// <p>The date a training model started collecting data.</p>
     pub fn get_training_data_collection_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The status of the behavior model.</p>
     pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.model_status = input;
-        self
+        self.model_status = input; self
     }
     /// <p>The status of the behavior model.</p>
     pub fn get_model_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
@@ -125,8 +121,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The percentage of datapoints collected.</p>
     pub fn set_datapoints_collection_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.datapoints_collection_percentage = input;
-        self
+        self.datapoints_collection_percentage = input; self
     }
     /// <p>The percentage of datapoints collected.</p>
     pub fn get_datapoints_collection_percentage(&self) -> &::std::option::Option<f64> {
@@ -139,8 +134,7 @@ impl BehaviorModelTrainingSummaryBuilder {
     }
     /// <p>The date the model was last refreshed.</p>
     pub fn set_last_model_refresh_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_model_refresh_date = input;
-        self
+        self.last_model_refresh_date = input; self
     }
     /// <p>The date the model was last refreshed.</p>
     pub fn get_last_model_refresh_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl BehaviorModelTrainingSummaryBuilder {
     /// Consumes the builder and constructs a [`BehaviorModelTrainingSummary`](crate::types::BehaviorModelTrainingSummary).
     pub fn build(self) -> crate::types::BehaviorModelTrainingSummary {
         crate::types::BehaviorModelTrainingSummary {
-            security_profile_name: self.security_profile_name,
-            behavior_name: self.behavior_name,
-            training_data_collection_start_date: self.training_data_collection_start_date,
-            model_status: self.model_status,
-            datapoints_collection_percentage: self.datapoints_collection_percentage,
-            last_model_refresh_date: self.last_model_refresh_date,
+            security_profile_name: self.security_profile_name
+            ,
+            behavior_name: self.behavior_name
+            ,
+            training_data_collection_start_date: self.training_data_collection_start_date
+            ,
+            model_status: self.model_status
+            ,
+            datapoints_collection_percentage: self.datapoints_collection_percentage
+            ,
+            last_model_refresh_date: self.last_model_refresh_date
+            ,
         }
     }
 }
+

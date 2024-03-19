@@ -3,7 +3,7 @@
 /// <p>Result message containing all of the configuration settings for a specified solution stack or configuration template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationSettingsInput {
+pub struct DescribeConfigurationSettingsInput  {
     /// <p>The application for the environment or configuration template.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template to describe.</p>
@@ -13,19 +13,19 @@ pub struct DescribeConfigurationSettingsInput {
     /// <p>Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConfigurationSettingsInput {
+impl  DescribeConfigurationSettingsInput  {
     /// <p>The application for the environment or configuration template.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p>Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The name of the environment to describe.</p>
     /// <p>Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl DescribeConfigurationSettingsInputBuilder {
     }
     /// <p>The application for the environment or configuration template.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The application for the environment or configuration template.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeConfigurationSettingsInputBuilder {
     /// <p>The name of the configuration template to describe.</p>
     /// <p>Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p>Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.</p>
@@ -86,8 +84,7 @@ impl DescribeConfigurationSettingsInputBuilder {
     /// <p>The name of the environment to describe.</p>
     /// <p>Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment to describe.</p>
     /// <p>Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
@@ -95,16 +92,17 @@ impl DescribeConfigurationSettingsInputBuilder {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSettingsInput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput {
-            application_name: self.application_name,
-            template_name: self.template_name,
-            environment_name: self.environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput {
+                application_name: self.application_name
+                ,
+                template_name: self.template_name
+                ,
+                environment_name: self.environment_name
+                ,
+            }
+        )
     }
 }
+

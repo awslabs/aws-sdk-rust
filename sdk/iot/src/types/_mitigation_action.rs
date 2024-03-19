@@ -3,7 +3,7 @@
 /// <p>Describes which changes should be applied as part of a mitigation action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MitigationAction {
+pub struct MitigationAction  {
     /// <p>A user-friendly name for the mitigation action.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the mitigation action.</p>
@@ -13,21 +13,21 @@ pub struct MitigationAction {
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
 }
-impl MitigationAction {
+impl  MitigationAction  {
     /// <p>A user-friendly name for the mitigation action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the mitigation action.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    pub fn action_params(&self) -> ::std::option::Option<&crate::types::MitigationActionParams> {
+    pub fn action_params(&self) -> ::std::option::Option<& crate::types::MitigationActionParams> {
         self.action_params.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MitigationActionBuilder {
     }
     /// <p>A user-friendly name for the mitigation action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A user-friendly name for the mitigation action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MitigationActionBuilder {
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl MitigationActionBuilder {
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MitigationActionBuilder {
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
-        self.action_params = input;
-        self
+        self.action_params = input; self
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
     pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
@@ -107,10 +103,15 @@ impl MitigationActionBuilder {
     /// Consumes the builder and constructs a [`MitigationAction`](crate::types::MitigationAction).
     pub fn build(self) -> crate::types::MitigationAction {
         crate::types::MitigationAction {
-            name: self.name,
-            id: self.id,
-            role_arn: self.role_arn,
-            action_params: self.action_params,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            role_arn: self.role_arn
+            ,
+            action_params: self.action_params
+            ,
         }
     }
 }
+

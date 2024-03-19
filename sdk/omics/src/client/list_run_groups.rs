@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRunGroups`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::set_name):<br>required: **false**<br><p>The run groups' name.</p><br>
     ///   - [`starting_token(impl Into<String>)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::starting_token) / [`set_starting_token(Option<String>)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::set_starting_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of run groups to return in one page of results.</p><br>
-    /// - On success, responds with [`ListRunGroupsOutput`](crate::operation::list_run_groups::ListRunGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListRunGroupsOutput`](crate::operation::list_run_groups::ListRunGroupsOutput) with field(s):
     ///   - [`items(Option<Vec::<RunGroupListItem>>)`](crate::operation::list_run_groups::ListRunGroupsOutput::items): <p>A list of groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_run_groups::ListRunGroupsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListRunGroupsError>`](crate::operation::list_run_groups::ListRunGroupsError)
+                            /// - On failure, responds with [`SdkError<ListRunGroupsError>`](crate::operation::list_run_groups::ListRunGroupsError)
     pub fn list_run_groups(&self) -> crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder {
-        crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

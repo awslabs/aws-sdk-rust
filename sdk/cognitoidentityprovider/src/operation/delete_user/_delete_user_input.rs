@@ -3,17 +3,17 @@
 /// <p>Represents the request to delete a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for DeleteUserInput {
+impl  ::std::fmt::Debug for DeleteUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -42,8 +42,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -51,9 +50,12 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            access_token: self.access_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                access_token: self.access_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteUserInputBuilder {
@@ -63,3 +65,4 @@ impl ::std::fmt::Debug for DeleteUserInputBuilder {
         formatter.finish()
     }
 }
+

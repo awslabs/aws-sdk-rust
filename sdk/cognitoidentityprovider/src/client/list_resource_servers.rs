@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceServers`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resource servers to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token.</p><br>
-    /// - On success, responds with [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput) with field(s):
+                            /// - On success, responds with [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput) with field(s):
     ///   - [`resource_servers(Vec::<ResourceServerType>)`](crate::operation::list_resource_servers::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_servers::ListResourceServersOutput::next_token): <p>A pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListResourceServersError>`](crate::operation::list_resource_servers::ListResourceServersError)
+                            /// - On failure, responds with [`SdkError<ListResourceServersError>`](crate::operation::list_resource_servers::ListResourceServersError)
     pub fn list_resource_servers(&self) -> crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder {
-        crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPullRequestsInput {
+pub struct ListPullRequestsInput  {
     /// <p>The name of the repository for which you want to list pull requests.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
@@ -14,21 +14,21 @@ pub struct ListPullRequestsInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListPullRequestsInput {
+impl  ListPullRequestsInput  {
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
-    pub fn author_arn(&self) -> ::std::option::Option<&str> {
+    pub fn author_arn(&self) -> ::std::option::Option<& str> {
         self.author_arn.as_deref()
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn pull_request_status(&self) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> ::std::option::Option<& crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -62,8 +62,7 @@ impl ListPullRequestsInputBuilder {
     }
     /// <p>The name of the repository for which you want to list pull requests.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository for which you want to list pull requests.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListPullRequestsInputBuilder {
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
     pub fn set_author_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author_arn = input;
-        self
+        self.author_arn = input; self
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
     pub fn get_author_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ListPullRequestsInputBuilder {
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
     pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
-        self.pull_request_status = input;
-        self
+        self.pull_request_status = input; self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
     pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
@@ -104,8 +101,7 @@ impl ListPullRequestsInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,23 +114,28 @@ impl ListPullRequestsInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_pull_requests::ListPullRequestsInput {
-            repository_name: self.repository_name,
-            author_arn: self.author_arn,
-            pull_request_status: self.pull_request_status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pull_requests::ListPullRequestsInput {
+                repository_name: self.repository_name
+                ,
+                author_arn: self.author_arn
+                ,
+                pull_request_status: self.pull_request_status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStudioSessionMappings`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`studio_id(impl Into<String>)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::set_studio_id):<br>required: **false**<br><p>The ID of the Amazon EMR Studio.</p><br>
     ///   - [`identity_type(IdentityType)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::set_identity_type):<br>required: **false**<br><p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that indicates the set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput) with field(s):
+                            /// - On success, responds with [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput) with field(s):
     ///   - [`session_mappings(Option<Vec::<SessionMappingSummary>>)`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput::session_mappings): <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListStudioSessionMappingsError>`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError)
+                            /// - On failure, responds with [`SdkError<ListStudioSessionMappingsError>`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError)
     pub fn list_studio_session_mappings(&self) -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder {
-        crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

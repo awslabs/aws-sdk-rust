@@ -3,7 +3,7 @@
 /// <p>Defines a Neptune ML resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MlResourceDefinition {
+pub struct MlResourceDefinition  {
     /// <p>The resource name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The resource ARN.</p>
@@ -17,29 +17,29 @@ pub struct MlResourceDefinition {
     /// <p>The CloudWatch log URL for the resource.</p>
     pub cloudwatch_log_url: ::std::option::Option<::std::string::String>,
 }
-impl MlResourceDefinition {
+impl  MlResourceDefinition  {
     /// <p>The resource name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The resource ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The resource status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
+    pub fn output_location(&self) -> ::std::option::Option<& str> {
         self.output_location.as_deref()
     }
     /// <p>The failure reason, in case of a failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The CloudWatch log URL for the resource.</p>
-    pub fn cloudwatch_log_url(&self) -> ::std::option::Option<&str> {
+    pub fn cloudwatch_log_url(&self) -> ::std::option::Option<& str> {
         self.cloudwatch_log_url.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The resource ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The resource ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The resource status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The resource status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The output location.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The output location.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The failure reason, in case of a failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The failure reason, in case of a failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl MlResourceDefinitionBuilder {
     }
     /// <p>The CloudWatch log URL for the resource.</p>
     pub fn set_cloudwatch_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloudwatch_log_url = input;
-        self
+        self.cloudwatch_log_url = input; self
     }
     /// <p>The CloudWatch log URL for the resource.</p>
     pub fn get_cloudwatch_log_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl MlResourceDefinitionBuilder {
     /// Consumes the builder and constructs a [`MlResourceDefinition`](crate::types::MlResourceDefinition).
     pub fn build(self) -> crate::types::MlResourceDefinition {
         crate::types::MlResourceDefinition {
-            name: self.name,
-            arn: self.arn,
-            status: self.status,
-            output_location: self.output_location,
-            failure_reason: self.failure_reason,
-            cloudwatch_log_url: self.cloudwatch_log_url,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            output_location: self.output_location
+            ,
+            failure_reason: self.failure_reason
+            ,
+            cloudwatch_log_url: self.cloudwatch_log_url
+            ,
         }
     }
 }
+

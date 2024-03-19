@@ -3,22 +3,23 @@
 /// <p>A subject structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectStructure {
+pub struct SubjectStructure  {
     /// <p>Number of occurrences of this specific structure.</p>
     pub count: ::std::option::Option<i64>,
     /// <p>A list of predicates present in this specific structure.</p>
-    pub predicates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub predicates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SubjectStructure {
+impl  SubjectStructure  {
     /// <p>Number of occurrences of this specific structure.</p>
     pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>A list of predicates present in this specific structure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicates.is_none()`.
-    pub fn predicates(&self) -> &[::std::string::String] {
-        self.predicates.as_deref().unwrap_or_default()
+    pub fn predicates(&self) -> & [::std::string::String] {
+        self.predicates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubjectStructure {
@@ -33,7 +34,7 @@ impl SubjectStructure {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectStructureBuilder {
     pub(crate) count: ::std::option::Option<i64>,
-    pub(crate) predicates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) predicates: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SubjectStructureBuilder {
     /// <p>Number of occurrences of this specific structure.</p>
@@ -43,8 +44,7 @@ impl SubjectStructureBuilder {
     }
     /// <p>Number of occurrences of this specific structure.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Number of occurrences of this specific structure.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -57,24 +57,26 @@ impl SubjectStructureBuilder {
     /// <p>A list of predicates present in this specific structure.</p>
     pub fn predicates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.predicates.unwrap_or_default();
-        v.push(input.into());
-        self.predicates = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.predicates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of predicates present in this specific structure.</p>
-    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.predicates = input;
-        self
+    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.predicates = input; self
     }
     /// <p>A list of predicates present in this specific structure.</p>
-    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.predicates
     }
     /// Consumes the builder and constructs a [`SubjectStructure`](crate::types::SubjectStructure).
     pub fn build(self) -> crate::types::SubjectStructure {
         crate::types::SubjectStructure {
-            count: self.count,
-            predicates: self.predicates,
+            count: self.count
+            ,
+            predicates: self.predicates
+            ,
         }
     }
 }
+

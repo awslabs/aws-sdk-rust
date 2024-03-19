@@ -3,18 +3,17 @@
 /// <p>The parameters for using a Kinesis stream as a target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PipeTargetKinesisStreamParameters {
+pub struct PipeTargetKinesisStreamParameters  {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub partition_key: ::std::string::String,
 }
-impl PipeTargetKinesisStreamParameters {
+impl  PipeTargetKinesisStreamParameters  {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(&self) -> &str {
-        use std::ops::Deref;
-        self.partition_key.deref()
+    pub fn partition_key(&self) -> & str {
+        use std::ops::Deref; self.partition_key.deref()
     }
 }
-impl ::std::fmt::Debug for PipeTargetKinesisStreamParameters {
+impl  ::std::fmt::Debug for PipeTargetKinesisStreamParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetKinesisStreamParameters");
         formatter.field("partition_key", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl PipeTargetKinesisStreamParametersBuilder {
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition_key = input;
-        self
+        self.partition_key = input; self
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub fn get_partition_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl PipeTargetKinesisStreamParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`partition_key`](crate::types::builders::PipeTargetKinesisStreamParametersBuilder::partition_key)
     pub fn build(self) -> ::std::result::Result<crate::types::PipeTargetKinesisStreamParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipeTargetKinesisStreamParameters {
-            partition_key: self.partition_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partition_key",
-                    "partition_key was not specified but it is required when building PipeTargetKinesisStreamParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipeTargetKinesisStreamParameters {
+                partition_key: self.partition_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partition_key", "partition_key was not specified but it is required when building PipeTargetKinesisStreamParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PipeTargetKinesisStreamParametersBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for PipeTargetKinesisStreamParametersBuilder {
         formatter.finish()
     }
 }
+

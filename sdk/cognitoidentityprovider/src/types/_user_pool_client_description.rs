@@ -3,7 +3,7 @@
 /// <p>The description of the user pool client.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserPoolClientDescription {
+pub struct UserPoolClientDescription  {
     /// <p>The ID of the client associated with the user pool.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
@@ -11,21 +11,21 @@ pub struct UserPoolClientDescription {
     /// <p>The client name from the user pool client description.</p>
     pub client_name: ::std::option::Option<::std::string::String>,
 }
-impl UserPoolClientDescription {
+impl  UserPoolClientDescription  {
     /// <p>The ID of the client associated with the user pool.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The client name from the user pool client description.</p>
-    pub fn client_name(&self) -> ::std::option::Option<&str> {
+    pub fn client_name(&self) -> ::std::option::Option<& str> {
         self.client_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserPoolClientDescription {
+impl  ::std::fmt::Debug for UserPoolClientDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserPoolClientDescription");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl UserPoolClientDescriptionBuilder {
     }
     /// <p>The ID of the client associated with the user pool.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The ID of the client associated with the user pool.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UserPoolClientDescriptionBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UserPoolClientDescriptionBuilder {
     }
     /// <p>The client name from the user pool client description.</p>
     pub fn set_client_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_name = input;
-        self
+        self.client_name = input; self
     }
     /// <p>The client name from the user pool client description.</p>
     pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl UserPoolClientDescriptionBuilder {
     /// Consumes the builder and constructs a [`UserPoolClientDescription`](crate::types::UserPoolClientDescription).
     pub fn build(self) -> crate::types::UserPoolClientDescription {
         crate::types::UserPoolClientDescription {
-            client_id: self.client_id,
-            user_pool_id: self.user_pool_id,
-            client_name: self.client_name,
+            client_id: self.client_id
+            ,
+            user_pool_id: self.user_pool_id
+            ,
+            client_name: self.client_name
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for UserPoolClientDescriptionBuilder {
         formatter.finish()
     }
 }
+

@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePhoneNumberOrderInput {
+pub struct CreatePhoneNumberOrderInput  {
     /// <p>The phone number product type.</p>
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the name assigned to one or more phone numbers.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl CreatePhoneNumberOrderInput {
+impl  CreatePhoneNumberOrderInput  {
     /// <p>The phone number product type.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
-    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
-        self.e164_phone_numbers.as_deref().unwrap_or_default()
+    pub fn e164_phone_numbers(&self) -> & [::std::string::String] {
+        self.e164_phone_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the name assigned to one or more phone numbers.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreatePhoneNumberOrderInput {
+impl  ::std::fmt::Debug for CreatePhoneNumberOrderInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePhoneNumberOrderInput");
         formatter.field("product_type", &self.product_type);
@@ -47,7 +48,7 @@ impl CreatePhoneNumberOrderInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreatePhoneNumberOrderInputBuilder {
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
-    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePhoneNumberOrderInputBuilder {
@@ -59,8 +60,7 @@ impl CreatePhoneNumberOrderInputBuilder {
     }
     /// <p>The phone number product type.</p>
     pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
-        self.product_type = input;
-        self
+        self.product_type = input; self
     }
     /// <p>The phone number product type.</p>
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
@@ -73,17 +73,16 @@ impl CreatePhoneNumberOrderInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.e164_phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.e164_phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.e164_phone_numbers = input;
-        self
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.e164_phone_numbers = input; self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.e164_phone_numbers
     }
     /// <p>Specifies the name assigned to one or more phone numbers.</p>
@@ -93,25 +92,24 @@ impl CreatePhoneNumberOrderInputBuilder {
     }
     /// <p>Specifies the name assigned to one or more phone numbers.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name assigned to one or more phone numbers.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreatePhoneNumberOrderInput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput {
-            product_type: self.product_type,
-            e164_phone_numbers: self.e164_phone_numbers,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput {
+                product_type: self.product_type
+                ,
+                e164_phone_numbers: self.e164_phone_numbers
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreatePhoneNumberOrderInputBuilder {
@@ -123,3 +121,4 @@ impl ::std::fmt::Debug for CreatePhoneNumberOrderInputBuilder {
         formatter.finish()
     }
 }
+

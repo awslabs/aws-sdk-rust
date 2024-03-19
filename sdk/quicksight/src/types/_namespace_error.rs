@@ -3,19 +3,19 @@
 /// <p>Errors that occur during namespace creation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NamespaceError {
+pub struct NamespaceError  {
     /// <p>The error type.</p>
     pub r#type: ::std::option::Option<crate::types::NamespaceErrorType>,
     /// <p>The message for the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl NamespaceError {
+impl  NamespaceError  {
     /// <p>The error type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NamespaceErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::NamespaceErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message for the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NamespaceErrorBuilder {
     }
     /// <p>The error type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NamespaceErrorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The error type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NamespaceErrorType> {
@@ -55,8 +54,7 @@ impl NamespaceErrorBuilder {
     }
     /// <p>The message for the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message for the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NamespaceErrorBuilder {
     /// Consumes the builder and constructs a [`NamespaceError`](crate::types::NamespaceError).
     pub fn build(self) -> crate::types::NamespaceError {
         crate::types::NamespaceError {
-            r#type: self.r#type,
-            message: self.message,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

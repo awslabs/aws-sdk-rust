@@ -5,23 +5,20 @@ pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_input:
 
 impl AddAttachmentsToSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_attachments_to_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_attachments_to_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddAttachmentsToSet`.
-///
+/// 
 /// <p>Adds one or more attachments to an attachment set.</p>
 /// <p>An attachment set is a temporary container for attachments that you add to a case or case communication. The set is available for 1 hour after it's created. The <code>expiryTime</code> returned in the response is when the set expires.</p><note>
 /// <ul>
@@ -34,33 +31,32 @@ impl AddAttachmentsToSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddAttachmentsToSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder,
+                    inner: crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-    > for AddAttachmentsToSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
+                    crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
+                > for AddAttachmentsToSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
+                        crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddAttachmentsToSetFluentBuilder {
     /// Creates a new `AddAttachmentsToSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl AddAttachmentsToSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_attachments_to_set::AddAttachmentsToSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_attachments_to_set::AddAttachmentsToSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
-        crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_attachments_to_set::AddAttachmentsToSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_attachments_to_set::AddAttachmentsToSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput, crate::operation::add_attachments_to_set::AddAttachmentsToSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
     pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_set_id(input.into());
@@ -142,13 +129,14 @@ impl AddAttachmentsToSetFluentBuilder {
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attachment>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attachment>> {
         self.inner.get_attachments()
     }
 }
+

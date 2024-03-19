@@ -2,48 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRightsizingRecommendationOutput {
+pub struct GetRightsizingRecommendationOutput  {
     /// <p>Information regarding this specific recommendation set.</p>
     pub metadata: ::std::option::Option<crate::types::RightsizingRecommendationMetadata>,
     /// <p>Summary of this recommendation set.</p>
     pub summary: ::std::option::Option<crate::types::RightsizingRecommendationSummary>,
     /// <p>Recommendations to rightsize resources.</p>
-    pub rightsizing_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>>,
+    pub rightsizing_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
     pub configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
     _request_id: Option<String>,
 }
-impl GetRightsizingRecommendationOutput {
+impl  GetRightsizingRecommendationOutput  {
     /// <p>Information regarding this specific recommendation set.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::RightsizingRecommendationMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::RightsizingRecommendationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Summary of this recommendation set.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::RightsizingRecommendationSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::RightsizingRecommendationSummary> {
         self.summary.as_ref()
     }
     /// <p>Recommendations to rightsize resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rightsizing_recommendations.is_none()`.
-    pub fn rightsizing_recommendations(&self) -> &[crate::types::RightsizingRecommendation] {
-        self.rightsizing_recommendations.as_deref().unwrap_or_default()
+    pub fn rightsizing_recommendations(&self) -> & [crate::types::RightsizingRecommendation] {
+        self.rightsizing_recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RightsizingRecommendationConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RightsizingRecommendationConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRightsizingRecommendationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRightsizingRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationOutput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput).
     pub fn builder() -> crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationOutputBuilder {
@@ -57,7 +58,7 @@ impl GetRightsizingRecommendationOutput {
 pub struct GetRightsizingRecommendationOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::RightsizingRecommendationMetadata>,
     pub(crate) summary: ::std::option::Option<crate::types::RightsizingRecommendationSummary>,
-    pub(crate) rightsizing_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>>,
+    pub(crate) rightsizing_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::RightsizingRecommendation>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
     _request_id: Option<String>,
@@ -70,8 +71,7 @@ impl GetRightsizingRecommendationOutputBuilder {
     }
     /// <p>Information regarding this specific recommendation set.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Information regarding this specific recommendation set.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationMetadata> {
@@ -84,8 +84,7 @@ impl GetRightsizingRecommendationOutputBuilder {
     }
     /// <p>Summary of this recommendation set.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>Summary of this recommendation set.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationSummary> {
@@ -98,17 +97,16 @@ impl GetRightsizingRecommendationOutputBuilder {
     /// <p>Recommendations to rightsize resources.</p>
     pub fn rightsizing_recommendations(mut self, input: crate::types::RightsizingRecommendation) -> Self {
         let mut v = self.rightsizing_recommendations.unwrap_or_default();
-        v.push(input);
-        self.rightsizing_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rightsizing_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Recommendations to rightsize resources.</p>
-    pub fn set_rightsizing_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>>) -> Self {
-        self.rightsizing_recommendations = input;
-        self
+    pub fn set_rightsizing_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RightsizingRecommendation>>) -> Self {
+        self.rightsizing_recommendations = input; self
     }
     /// <p>Recommendations to rightsize resources.</p>
-    pub fn get_rightsizing_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>> {
+    pub fn get_rightsizing_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RightsizingRecommendation>> {
         &self.rightsizing_recommendations
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -118,8 +116,7 @@ impl GetRightsizingRecommendationOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,31 +129,36 @@ impl GetRightsizingRecommendationOutputBuilder {
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRightsizingRecommendationOutput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput).
     pub fn build(self) -> crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput {
         crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput {
-            metadata: self.metadata,
-            summary: self.summary,
-            rightsizing_recommendations: self.rightsizing_recommendations,
-            next_page_token: self.next_page_token,
-            configuration: self.configuration,
+            metadata: self.metadata
+            ,
+            summary: self.summary
+            ,
+            rightsizing_recommendations: self.rightsizing_recommendations
+            ,
+            next_page_token: self.next_page_token
+            ,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

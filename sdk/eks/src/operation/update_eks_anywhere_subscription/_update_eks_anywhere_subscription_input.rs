@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEksAnywhereSubscriptionInput {
+pub struct UpdateEksAnywhereSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean indicating whether or not to automatically renew the subscription.</p>
@@ -10,9 +10,9 @@ pub struct UpdateEksAnywhereSubscriptionInput {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEksAnywhereSubscriptionInput {
+impl  UpdateEksAnywhereSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A boolean indicating whether or not to automatically renew the subscription.</p>
@@ -20,7 +20,7 @@ impl UpdateEksAnywhereSubscriptionInput {
         self.auto_renew
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>The ID of the subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the subscription.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>A boolean indicating whether or not to automatically renew the subscription.</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>A boolean indicating whether or not to automatically renew the subscription.</p>
     pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
@@ -77,24 +75,24 @@ impl UpdateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateEksAnywhereSubscriptionInput`](crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionInput {
-            id: self.id,
-            auto_renew: self.auto_renew,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionInput {
+                id: self.id
+                ,
+                auto_renew: self.auto_renew
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

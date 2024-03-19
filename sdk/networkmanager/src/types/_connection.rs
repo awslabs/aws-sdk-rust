@@ -3,7 +3,7 @@
 /// <p>Describes a connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Connection {
+pub struct Connection  {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
@@ -25,54 +25,55 @@ pub struct Connection {
     /// <p>The state of the connection.</p>
     pub state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The tags for the connection.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Connection {
+impl  Connection  {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the first device in the connection.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn connected_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn connected_device_id(&self) -> ::std::option::Option<& str> {
         self.connected_device_id.as_deref()
     }
     /// <p>The ID of the link for the first device in the connection.</p>
-    pub fn link_id(&self) -> ::std::option::Option<&str> {
+    pub fn link_id(&self) -> ::std::option::Option<& str> {
         self.link_id.as_deref()
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn connected_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn connected_link_id(&self) -> ::std::option::Option<& str> {
         self.connected_link_id.as_deref()
     }
     /// <p>The description of the connection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the connection was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the connection.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ConnectionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ConnectionState> {
         self.state.as_ref()
     }
     /// <p>The tags for the connection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Connection {
@@ -96,7 +97,7 @@ pub struct ConnectionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::ConnectionState>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ConnectionBuilder {
     /// <p>The ID of the connection.</p>
@@ -106,8 +107,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl ConnectionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the first device in the connection.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The ID of the first device in the connection.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +159,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the second device in the connection.</p>
     pub fn set_connected_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connected_device_id = input;
-        self
+        self.connected_device_id = input; self
     }
     /// <p>The ID of the second device in the connection.</p>
     pub fn get_connected_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_id = input;
-        self
+        self.link_id = input; self
     }
     /// <p>The ID of the link for the first device in the connection.</p>
     pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +185,7 @@ impl ConnectionBuilder {
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connected_link_id = input;
-        self
+        self.connected_link_id = input; self
     }
     /// <p>The ID of the link for the second device in the connection.</p>
     pub fn get_connected_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +198,7 @@ impl ConnectionBuilder {
     }
     /// <p>The description of the connection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the connection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +211,7 @@ impl ConnectionBuilder {
     }
     /// <p>The date and time that the connection was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the connection was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -232,8 +224,7 @@ impl ConnectionBuilder {
     }
     /// <p>The state of the connection.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the connection.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
@@ -246,33 +237,44 @@ impl ConnectionBuilder {
     /// <p>The tags for the connection.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the connection.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the connection.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
-            connection_id: self.connection_id,
-            connection_arn: self.connection_arn,
-            global_network_id: self.global_network_id,
-            device_id: self.device_id,
-            connected_device_id: self.connected_device_id,
-            link_id: self.link_id,
-            connected_link_id: self.connected_link_id,
-            description: self.description,
-            created_at: self.created_at,
-            state: self.state,
-            tags: self.tags,
+            connection_id: self.connection_id
+            ,
+            connection_arn: self.connection_arn
+            ,
+            global_network_id: self.global_network_id
+            ,
+            device_id: self.device_id
+            ,
+            connected_device_id: self.connected_device_id
+            ,
+            link_id: self.link_id
+            ,
+            connected_link_id: self.connected_link_id
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

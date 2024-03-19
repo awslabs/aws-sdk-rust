@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSuiteDefinitionInput {
+pub struct UpdateSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to be updated.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
 }
-impl UpdateSuiteDefinitionInput {
+impl  UpdateSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to be updated.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn suite_definition_configuration(&self) -> ::std::option::Option<&crate::types::SuiteDefinitionConfiguration> {
+    pub fn suite_definition_configuration(&self) -> ::std::option::Option<& crate::types::SuiteDefinitionConfiguration> {
         self.suite_definition_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateSuiteDefinitionInputBuilder {
     }
     /// <p>Suite definition ID of the test suite to be updated.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the test suite to be updated.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateSuiteDefinitionInputBuilder {
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub fn set_suite_definition_configuration(mut self, input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>) -> Self {
-        self.suite_definition_configuration = input;
-        self
+        self.suite_definition_configuration = input; self
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub fn get_suite_definition_configuration(&self) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
         &self.suite_definition_configuration
     }
     /// Consumes the builder and constructs a [`UpdateSuiteDefinitionInput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_suite_definition::UpdateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_suite_definition::UpdateSuiteDefinitionInput {
-            suite_definition_id: self.suite_definition_id,
-            suite_definition_configuration: self.suite_definition_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_suite_definition::UpdateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_suite_definition::UpdateSuiteDefinitionInput {
+                suite_definition_id: self.suite_definition_id
+                ,
+                suite_definition_configuration: self.suite_definition_configuration
+                ,
+            }
+        )
     }
 }
+

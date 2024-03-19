@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSpaceInput {
+pub struct DescribeSpaceInput  {
     /// <p>The ID of the associated domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSpaceInput {
+impl  DescribeSpaceInput  {
     /// <p>The ID of the associated domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeSpaceInputBuilder {
     }
     /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeSpaceInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`DescribeSpaceInput`](crate::operation::describe_space::DescribeSpaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_space::DescribeSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_space::DescribeSpaceInput {
-            domain_id: self.domain_id,
-            space_name: self.space_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_space::DescribeSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_space::DescribeSpaceInput {
+                domain_id: self.domain_id
+                ,
+                space_name: self.space_name
+                ,
+            }
+        )
     }
 }
+

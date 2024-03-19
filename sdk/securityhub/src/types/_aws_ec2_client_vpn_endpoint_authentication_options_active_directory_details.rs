@@ -3,13 +3,13 @@
 /// <p>Provides details about an Active Directory that’s used to authenticate an Client VPN endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails {
+pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails  {
     /// <p>The ID of the Active Directory used for authentication.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails {
+impl  AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails  {
     /// <p>The ID of the Active Directory used for authentication.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsBuilder {
     }
     /// <p>The ID of the Active Directory used for authentication.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The ID of the Active Directory used for authentication.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails`](crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails {
         crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails {
-            directory_id: self.directory_id,
+            directory_id: self.directory_id
+            ,
         }
     }
 }
+

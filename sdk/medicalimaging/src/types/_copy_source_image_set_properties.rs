@@ -3,7 +3,7 @@
 /// <p>Copy source image set properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopySourceImageSetProperties {
+pub struct CopySourceImageSetProperties  {
     /// <p>The image set identifier for the copied source image set.</p>
     pub image_set_id: ::std::string::String,
     /// <p>The latest version identifier for the copied source image set.</p>
@@ -19,35 +19,33 @@ pub struct CopySourceImageSetProperties {
     /// <p>The Amazon Resource Name (ARN) assigned to the source image set.</p>
     pub image_set_arn: ::std::option::Option<::std::string::String>,
 }
-impl CopySourceImageSetProperties {
+impl  CopySourceImageSetProperties  {
     /// <p>The image set identifier for the copied source image set.</p>
-    pub fn image_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.image_set_id.deref()
+    pub fn image_set_id(&self) -> & str {
+        use std::ops::Deref; self.image_set_id.deref()
     }
     /// <p>The latest version identifier for the copied source image set.</p>
-    pub fn latest_version_id(&self) -> &str {
-        use std::ops::Deref;
-        self.latest_version_id.deref()
+    pub fn latest_version_id(&self) -> & str {
+        use std::ops::Deref; self.latest_version_id.deref()
     }
     /// <p>The image set state of the copied source image set.</p>
-    pub fn image_set_state(&self) -> ::std::option::Option<&crate::types::ImageSetState> {
+    pub fn image_set_state(&self) -> ::std::option::Option<& crate::types::ImageSetState> {
         self.image_set_state.as_ref()
     }
     /// <p>The workflow status of the copied source image set.</p>
-    pub fn image_set_workflow_status(&self) -> ::std::option::Option<&crate::types::ImageSetWorkflowStatus> {
+    pub fn image_set_workflow_status(&self) -> ::std::option::Option<& crate::types::ImageSetWorkflowStatus> {
         self.image_set_workflow_status.as_ref()
     }
     /// <p>The timestamp when the source image set properties were created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the source image set properties were updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the source image set.</p>
-    pub fn image_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_set_arn(&self) -> ::std::option::Option<& str> {
         self.image_set_arn.as_deref()
     }
 }
@@ -79,8 +77,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The image set identifier for the copied source image set.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier for the copied source image set.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The latest version identifier for the copied source image set.</p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version_id = input;
-        self
+        self.latest_version_id = input; self
     }
     /// <p>The latest version identifier for the copied source image set.</p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The image set state of the copied source image set.</p>
     pub fn set_image_set_state(mut self, input: ::std::option::Option<crate::types::ImageSetState>) -> Self {
-        self.image_set_state = input;
-        self
+        self.image_set_state = input; self
     }
     /// <p>The image set state of the copied source image set.</p>
     pub fn get_image_set_state(&self) -> &::std::option::Option<crate::types::ImageSetState> {
@@ -122,8 +117,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The workflow status of the copied source image set.</p>
     pub fn set_image_set_workflow_status(mut self, input: ::std::option::Option<crate::types::ImageSetWorkflowStatus>) -> Self {
-        self.image_set_workflow_status = input;
-        self
+        self.image_set_workflow_status = input; self
     }
     /// <p>The workflow status of the copied source image set.</p>
     pub fn get_image_set_workflow_status(&self) -> &::std::option::Option<crate::types::ImageSetWorkflowStatus> {
@@ -136,8 +130,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The timestamp when the source image set properties were created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the source image set properties were created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +143,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The timestamp when the source image set properties were updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp when the source image set properties were updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -164,8 +156,7 @@ impl CopySourceImageSetPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the source image set.</p>
     pub fn set_image_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_arn = input;
-        self
+        self.image_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the source image set.</p>
     pub fn get_image_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,24 +167,30 @@ impl CopySourceImageSetPropertiesBuilder {
     /// - [`image_set_id`](crate::types::builders::CopySourceImageSetPropertiesBuilder::image_set_id)
     /// - [`latest_version_id`](crate::types::builders::CopySourceImageSetPropertiesBuilder::latest_version_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CopySourceImageSetProperties {
-            image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_set_id",
-                    "image_set_id was not specified but it is required when building CopySourceImageSetProperties",
-                )
-            })?,
-            latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "latest_version_id",
-                    "latest_version_id was not specified but it is required when building CopySourceImageSetProperties",
-                )
-            })?,
-            image_set_state: self.image_set_state,
-            image_set_workflow_status: self.image_set_workflow_status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            image_set_arn: self.image_set_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CopySourceImageSetProperties {
+                image_set_id: self.image_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_set_id", "image_set_id was not specified but it is required when building CopySourceImageSetProperties")
+                    )?
+                ,
+                latest_version_id: self.latest_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("latest_version_id", "latest_version_id was not specified but it is required when building CopySourceImageSetProperties")
+                    )?
+                ,
+                image_set_state: self.image_set_state
+                ,
+                image_set_workflow_status: self.image_set_workflow_status
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                image_set_arn: self.image_set_arn
+                ,
+            }
+        )
     }
 }
+

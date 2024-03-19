@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCertificateProviderInput {
+pub struct DeleteCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
     pub certificate_provider_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCertificateProviderInput {
+impl  DeleteCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
-    pub fn certificate_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_name(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCertificateProviderInputBuilder {
     }
     /// <p>The name of the certificate provider.</p>
     pub fn set_certificate_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_name = input;
-        self
+        self.certificate_provider_name = input; self
     }
     /// <p>The name of the certificate provider.</p>
     pub fn get_certificate_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_provider_name
     }
     /// Consumes the builder and constructs a [`DeleteCertificateProviderInput`](crate::operation::delete_certificate_provider::DeleteCertificateProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_certificate_provider::DeleteCertificateProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_certificate_provider::DeleteCertificateProviderInput {
-            certificate_provider_name: self.certificate_provider_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_certificate_provider::DeleteCertificateProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_certificate_provider::DeleteCertificateProviderInput {
+                certificate_provider_name: self.certificate_provider_name
+                ,
+            }
+        )
     }
 }
+

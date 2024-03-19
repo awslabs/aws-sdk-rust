@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigInput {
+pub struct UpdateConfigInput  {
     /// <p>UUID of a <code>Config</code>.</p>
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
@@ -13,21 +13,21 @@ pub struct UpdateConfigInput {
     /// <p>Parameters of a <code>Config</code>.</p>
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
 }
-impl UpdateConfigInput {
+impl  UpdateConfigInput  {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<& crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn config_data(&self) -> ::std::option::Option<&crate::types::ConfigTypeData> {
+    pub fn config_data(&self) -> ::std::option::Option<& crate::types::ConfigTypeData> {
         self.config_data.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
-        self.config_type = input;
-        self
+        self.config_type = input; self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
@@ -101,22 +98,26 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn set_config_data(mut self, input: ::std::option::Option<crate::types::ConfigTypeData>) -> Self {
-        self.config_data = input;
-        self
+        self.config_data = input; self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn get_config_data(&self) -> &::std::option::Option<crate::types::ConfigTypeData> {
         &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_config::UpdateConfigInput {
-            config_id: self.config_id,
-            name: self.name,
-            config_type: self.config_type,
-            config_data: self.config_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_config::UpdateConfigInput {
+                config_id: self.config_id
+                ,
+                name: self.name
+                ,
+                config_type: self.config_type
+                ,
+                config_data: self.config_data
+                ,
+            }
+        )
     }
 }
+

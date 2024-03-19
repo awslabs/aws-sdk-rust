@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelQualityJobDefinitions`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`endpoint_name(impl Into<String>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_endpoint_name):<br>required: **false**<br><p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p><br>
     ///   - [`sort_by(MonitoringJobDefinitionSortKey)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::sort_by) / [`set_sort_by(Option<MonitoringJobDefinitionSortKey>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only model quality monitoring job definitions created before the specified time.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only model quality monitoring job definitions created after the specified time.</p><br>
-    /// - On success, responds with [`ListModelQualityJobDefinitionsOutput`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput) with field(s):
+                            /// - On success, responds with [`ListModelQualityJobDefinitionsOutput`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec::<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput::job_definition_summaries): <p>A list of summaries of model quality monitoring job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model quality monitoring job definitions, use it in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListModelQualityJobDefinitionsError>`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsError)
-    pub fn list_model_quality_job_definitions(
-        &self,
-    ) -> crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder {
-        crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListModelQualityJobDefinitionsError>`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsError)
+    pub fn list_model_quality_job_definitions(&self) -> crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder {
+                                crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

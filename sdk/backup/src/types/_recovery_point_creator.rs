@@ -3,7 +3,7 @@
 /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryPointCreator {
+pub struct RecoveryPointCreator  {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
@@ -13,21 +13,21 @@ pub struct RecoveryPointCreator {
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub backup_rule_id: ::std::option::Option<::std::string::String>,
 }
-impl RecoveryPointCreator {
+impl  RecoveryPointCreator  {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn backup_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_arn(&self) -> ::std::option::Option<& str> {
         self.backup_plan_arn.as_deref()
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
-    pub fn backup_plan_version(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_version(&self) -> ::std::option::Option<& str> {
         self.backup_plan_version.as_deref()
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
-    pub fn backup_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_rule_id(&self) -> ::std::option::Option<& str> {
         self.backup_rule_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RecoveryPointCreatorBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RecoveryPointCreatorBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_arn = input;
-        self
+        self.backup_plan_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RecoveryPointCreatorBuilder {
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn set_backup_plan_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_version = input;
-        self
+        self.backup_plan_version = input; self
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn get_backup_plan_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RecoveryPointCreatorBuilder {
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub fn set_backup_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_rule_id = input;
-        self
+        self.backup_rule_id = input; self
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub fn get_backup_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl RecoveryPointCreatorBuilder {
     /// Consumes the builder and constructs a [`RecoveryPointCreator`](crate::types::RecoveryPointCreator).
     pub fn build(self) -> crate::types::RecoveryPointCreator {
         crate::types::RecoveryPointCreator {
-            backup_plan_id: self.backup_plan_id,
-            backup_plan_arn: self.backup_plan_arn,
-            backup_plan_version: self.backup_plan_version,
-            backup_rule_id: self.backup_rule_id,
+            backup_plan_id: self.backup_plan_id
+            ,
+            backup_plan_arn: self.backup_plan_arn
+            ,
+            backup_plan_version: self.backup_plan_version
+            ,
+            backup_rule_id: self.backup_rule_id
+            ,
         }
     }
 }
+

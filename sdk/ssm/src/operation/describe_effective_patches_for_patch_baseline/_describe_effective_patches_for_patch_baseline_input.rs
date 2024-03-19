@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEffectivePatchesForPatchBaselineInput {
+pub struct DescribeEffectivePatchesForPatchBaselineInput  {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
@@ -10,9 +10,9 @@ pub struct DescribeEffectivePatchesForPatchBaselineInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEffectivePatchesForPatchBaselineInput {
+impl  DescribeEffectivePatchesForPatchBaselineInput  {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -20,14 +20,13 @@ impl DescribeEffectivePatchesForPatchBaselineInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeEffectivePatchesForPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePatchesForPatchBaselineInput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput).
-    pub fn builder() -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder {
         crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +61,7 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,26 +74,24 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePatchesForPatchBaselineInput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput {
-                baseline_id: self.baseline_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                baseline_id: self.baseline_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActivitiesOutput {
+pub struct DescribeActivitiesOutput  {
     /// <p>The list of activities for the specified user and time period.</p>
-    pub user_activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
+    pub user_activities: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>,
     /// <p>The marker for the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeActivitiesOutput {
+impl  DescribeActivitiesOutput  {
     /// <p>The list of activities for the specified user and time period.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_activities.is_none()`.
-    pub fn user_activities(&self) -> &[crate::types::Activity] {
-        self.user_activities.as_deref().unwrap_or_default()
+    pub fn user_activities(&self) -> & [crate::types::Activity] {
+        self.user_activities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeActivitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput).
     pub fn builder() -> crate::operation::describe_activities::builders::DescribeActivitiesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeActivitiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivitiesOutputBuilder {
-    pub(crate) user_activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
+    pub(crate) user_activities: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeActivitiesOutputBuilder {
     /// <p>The list of activities for the specified user and time period.</p>
     pub fn user_activities(mut self, input: crate::types::Activity) -> Self {
         let mut v = self.user_activities.unwrap_or_default();
-        v.push(input);
-        self.user_activities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_activities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn set_user_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
-        self.user_activities = input;
-        self
+    pub fn set_user_activities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Activity>>) -> Self {
+        self.user_activities = input; self
     }
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn get_user_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+    pub fn get_user_activities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Activity>> {
         &self.user_activities
     }
     /// <p>The marker for the next set of results.</p>
@@ -69,28 +69,30 @@ impl DescribeActivitiesOutputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput).
     pub fn build(self) -> crate::operation::describe_activities::DescribeActivitiesOutput {
         crate::operation::describe_activities::DescribeActivitiesOutput {
-            user_activities: self.user_activities,
-            marker: self.marker,
+            user_activities: self.user_activities
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

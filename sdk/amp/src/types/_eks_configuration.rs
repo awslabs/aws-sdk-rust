@@ -3,30 +3,29 @@
 /// <p>The <code>EksConfiguration</code> structure describes the connection to the Amazon EKS cluster from which a scraper collects metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksConfiguration {
+pub struct EksConfiguration  {
     /// <p>ARN of the Amazon EKS cluster.</p>
     pub cluster_arn: ::std::string::String,
     /// <p>A list of the security group IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl EksConfiguration {
+impl  EksConfiguration  {
     /// <p>ARN of the Amazon EKS cluster.</p>
-    pub fn cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_arn.deref()
+    pub fn cluster_arn(&self) -> & str {
+        use std::ops::Deref; self.cluster_arn.deref()
     }
     /// <p>A list of the security group IDs for the Amazon EKS cluster VPC configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
 }
 impl EksConfiguration {
@@ -41,8 +40,8 @@ impl EksConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksConfigurationBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EksConfigurationBuilder {
     /// <p>ARN of the Amazon EKS cluster.</p>
@@ -53,8 +52,7 @@ impl EksConfigurationBuilder {
     }
     /// <p>ARN of the Amazon EKS cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>ARN of the Amazon EKS cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +65,16 @@ impl EksConfigurationBuilder {
     /// <p>A list of the security group IDs for the Amazon EKS cluster VPC configuration.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the security group IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of the security group IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -87,17 +84,16 @@ impl EksConfigurationBuilder {
     /// <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`EksConfiguration`](crate::types::EksConfiguration).
@@ -105,20 +101,22 @@ impl EksConfigurationBuilder {
     /// - [`cluster_arn`](crate::types::builders::EksConfigurationBuilder::cluster_arn)
     /// - [`subnet_ids`](crate::types::builders::EksConfigurationBuilder::subnet_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::EksConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EksConfiguration {
-            cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cluster_arn",
-                    "cluster_arn was not specified but it is required when building EksConfiguration",
-                )
-            })?,
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building EksConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EksConfiguration {
+                cluster_arn: self.cluster_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cluster_arn", "cluster_arn was not specified but it is required when building EksConfiguration")
+                    )?
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building EksConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

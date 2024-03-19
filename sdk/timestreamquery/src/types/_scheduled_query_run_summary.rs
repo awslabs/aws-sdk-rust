@@ -3,7 +3,7 @@
 /// <p>Run summary for the scheduled query</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledQueryRunSummary {
+pub struct ScheduledQueryRunSummary  {
     /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The actual time when the query was run.</p>
@@ -17,29 +17,29 @@ pub struct ScheduledQueryRunSummary {
     /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl ScheduledQueryRunSummary {
+impl  ScheduledQueryRunSummary  {
     /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
-    pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn invocation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
     /// <p>The actual time when the query was run.</p>
-    pub fn trigger_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn trigger_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.trigger_time.as_ref()
     }
     /// <p>The status of a scheduled query run.</p>
-    pub fn run_status(&self) -> ::std::option::Option<&crate::types::ScheduledQueryRunStatus> {
+    pub fn run_status(&self) -> ::std::option::Option<& crate::types::ScheduledQueryRunStatus> {
         self.run_status.as_ref()
     }
     /// <p>Runtime statistics for a scheduled run.</p>
-    pub fn execution_stats(&self) -> ::std::option::Option<&crate::types::ExecutionStats> {
+    pub fn execution_stats(&self) -> ::std::option::Option<& crate::types::ExecutionStats> {
         self.execution_stats.as_ref()
     }
     /// <p>S3 location for error report.</p>
-    pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
+    pub fn error_report_location(&self) -> ::std::option::Option<& crate::types::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
     /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
     pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.invocation_time = input;
-        self
+        self.invocation_time = input; self
     }
     /// <p>InvocationTime for this run. This is the time at which the query is scheduled to run. Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.</p>
     pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +82,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>The actual time when the query was run.</p>
     pub fn set_trigger_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.trigger_time = input;
-        self
+        self.trigger_time = input; self
     }
     /// <p>The actual time when the query was run.</p>
     pub fn get_trigger_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +95,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>The status of a scheduled query run.</p>
     pub fn set_run_status(mut self, input: ::std::option::Option<crate::types::ScheduledQueryRunStatus>) -> Self {
-        self.run_status = input;
-        self
+        self.run_status = input; self
     }
     /// <p>The status of a scheduled query run.</p>
     pub fn get_run_status(&self) -> &::std::option::Option<crate::types::ScheduledQueryRunStatus> {
@@ -111,8 +108,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>Runtime statistics for a scheduled run.</p>
     pub fn set_execution_stats(mut self, input: ::std::option::Option<crate::types::ExecutionStats>) -> Self {
-        self.execution_stats = input;
-        self
+        self.execution_stats = input; self
     }
     /// <p>Runtime statistics for a scheduled run.</p>
     pub fn get_execution_stats(&self) -> &::std::option::Option<crate::types::ExecutionStats> {
@@ -125,8 +121,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>S3 location for error report.</p>
     pub fn set_error_report_location(mut self, input: ::std::option::Option<crate::types::ErrorReportLocation>) -> Self {
-        self.error_report_location = input;
-        self
+        self.error_report_location = input; self
     }
     /// <p>S3 location for error report.</p>
     pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
@@ -139,8 +134,7 @@ impl ScheduledQueryRunSummaryBuilder {
     }
     /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>Error message for the scheduled query in case of failure. You might have to look at the error report to get more detailed error reasons.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl ScheduledQueryRunSummaryBuilder {
     /// Consumes the builder and constructs a [`ScheduledQueryRunSummary`](crate::types::ScheduledQueryRunSummary).
     pub fn build(self) -> crate::types::ScheduledQueryRunSummary {
         crate::types::ScheduledQueryRunSummary {
-            invocation_time: self.invocation_time,
-            trigger_time: self.trigger_time,
-            run_status: self.run_status,
-            execution_stats: self.execution_stats,
-            error_report_location: self.error_report_location,
-            failure_reason: self.failure_reason,
+            invocation_time: self.invocation_time
+            ,
+            trigger_time: self.trigger_time
+            ,
+            run_status: self.run_status
+            ,
+            execution_stats: self.execution_stats
+            ,
+            error_report_location: self.error_report_location
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

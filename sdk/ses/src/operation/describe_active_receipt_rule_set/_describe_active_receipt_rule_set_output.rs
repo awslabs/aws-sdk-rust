@@ -3,30 +3,31 @@
 /// <p>Represents the metadata and receipt rules for the receipt rule set that is currently active.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActiveReceiptRuleSetOutput {
+pub struct DescribeActiveReceiptRuleSetOutput  {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     /// <p>The receipt rules that belong to the active rule set.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptRule>>,
     _request_id: Option<String>,
 }
-impl DescribeActiveReceiptRuleSetOutput {
+impl  DescribeActiveReceiptRuleSetOutput  {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ReceiptRuleSetMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ReceiptRuleSetMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::ReceiptRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::ReceiptRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeActiveReceiptRuleSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeActiveReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
     pub fn builder() -> crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeActiveReceiptRuleSetOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptRule>>,
     _request_id: Option<String>,
 }
 impl DescribeActiveReceiptRuleSetOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ReceiptRuleSetMetadata> {
@@ -64,34 +64,36 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
     /// <p>The receipt rules that belong to the active rule set.</p>
     pub fn rules(mut self, input: crate::types::ReceiptRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReceiptRule>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
     pub fn build(self) -> crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput {
         crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput {
-            metadata: self.metadata,
-            rules: self.rules,
+            metadata: self.metadata
+            ,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

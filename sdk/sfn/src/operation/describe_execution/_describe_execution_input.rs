@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExecutionInput {
+pub struct DescribeExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     pub execution_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExecutionInput {
+impl  DescribeExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_arn(&self) -> ::std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
-            execution_arn: self.execution_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_execution::DescribeExecutionInput {
+                execution_arn: self.execution_arn
+                ,
+            }
+        )
     }
 }
+

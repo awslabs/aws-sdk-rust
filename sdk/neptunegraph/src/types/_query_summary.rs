@@ -3,7 +3,7 @@
 /// <p>Details of the query listed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuerySummary {
+pub struct QuerySummary  {
     /// <p>A string representation of the id of the query.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The actual query text. The <code>queryString</code> may be truncated if the actual query string is too long.</p>
@@ -15,13 +15,13 @@ pub struct QuerySummary {
     /// <p>State of the query.</p>
     pub state: ::std::option::Option<crate::types::QueryState>,
 }
-impl QuerySummary {
+impl  QuerySummary  {
     /// <p>A string representation of the id of the query.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The actual query text. The <code>queryString</code> may be truncated if the actual query string is too long.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The amount of time, in milliseconds, the query has waited in the queue before being picked up by a worker thread.</p>
@@ -33,7 +33,7 @@ impl QuerySummary {
         self.elapsed
     }
     /// <p>State of the query.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::QueryState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::QueryState> {
         self.state.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl QuerySummaryBuilder {
     }
     /// <p>A string representation of the id of the query.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A string representation of the id of the query.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl QuerySummaryBuilder {
     }
     /// <p>The actual query text. The <code>queryString</code> may be truncated if the actual query string is too long.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The actual query text. The <code>queryString</code> may be truncated if the actual query string is too long.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl QuerySummaryBuilder {
     }
     /// <p>The amount of time, in milliseconds, the query has waited in the queue before being picked up by a worker thread.</p>
     pub fn set_waited(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.waited = input;
-        self
+        self.waited = input; self
     }
     /// <p>The amount of time, in milliseconds, the query has waited in the queue before being picked up by a worker thread.</p>
     pub fn get_waited(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl QuerySummaryBuilder {
     }
     /// <p>The running time of the query, in milliseconds.</p>
     pub fn set_elapsed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.elapsed = input;
-        self
+        self.elapsed = input; self
     }
     /// <p>The running time of the query, in milliseconds.</p>
     pub fn get_elapsed(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl QuerySummaryBuilder {
     }
     /// <p>State of the query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::QueryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::QueryState> {
@@ -128,11 +123,17 @@ impl QuerySummaryBuilder {
     /// Consumes the builder and constructs a [`QuerySummary`](crate::types::QuerySummary).
     pub fn build(self) -> crate::types::QuerySummary {
         crate::types::QuerySummary {
-            id: self.id,
-            query_string: self.query_string,
-            waited: self.waited,
-            elapsed: self.elapsed,
-            state: self.state,
+            id: self.id
+            ,
+            query_string: self.query_string
+            ,
+            waited: self.waited
+            ,
+            elapsed: self.elapsed
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

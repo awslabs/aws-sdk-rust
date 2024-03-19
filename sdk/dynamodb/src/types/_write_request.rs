@@ -3,19 +3,19 @@
 /// <p>Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you need to provide two separate <code>WriteRequest</code> objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WriteRequest {
+pub struct WriteRequest  {
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     pub put_request: ::std::option::Option<crate::types::PutRequest>,
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub delete_request: ::std::option::Option<crate::types::DeleteRequest>,
 }
-impl WriteRequest {
+impl  WriteRequest  {
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    pub fn put_request(&self) -> ::std::option::Option<&crate::types::PutRequest> {
+    pub fn put_request(&self) -> ::std::option::Option<& crate::types::PutRequest> {
         self.put_request.as_ref()
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    pub fn delete_request(&self) -> ::std::option::Option<&crate::types::DeleteRequest> {
+    pub fn delete_request(&self) -> ::std::option::Option<& crate::types::DeleteRequest> {
         self.delete_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl WriteRequestBuilder {
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     pub fn set_put_request(mut self, input: ::std::option::Option<crate::types::PutRequest>) -> Self {
-        self.put_request = input;
-        self
+        self.put_request = input; self
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
     pub fn get_put_request(&self) -> &::std::option::Option<crate::types::PutRequest> {
@@ -55,8 +54,7 @@ impl WriteRequestBuilder {
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub fn set_delete_request(mut self, input: ::std::option::Option<crate::types::DeleteRequest>) -> Self {
-        self.delete_request = input;
-        self
+        self.delete_request = input; self
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
     pub fn get_delete_request(&self) -> &::std::option::Option<crate::types::DeleteRequest> {
@@ -65,8 +63,11 @@ impl WriteRequestBuilder {
     /// Consumes the builder and constructs a [`WriteRequest`](crate::types::WriteRequest).
     pub fn build(self) -> crate::types::WriteRequest {
         crate::types::WriteRequest {
-            put_request: self.put_request,
-            delete_request: self.delete_request,
+            put_request: self.put_request
+            ,
+            delete_request: self.delete_request
+            ,
         }
     }
 }
+

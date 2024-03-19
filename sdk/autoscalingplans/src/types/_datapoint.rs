@@ -3,15 +3,15 @@
 /// <p>Represents a single value in the forecast data used for predictive scaling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datapoint {
+pub struct Datapoint  {
     /// <p>The time stamp for the data point in UTC format.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The value of the data point.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl Datapoint {
+impl  Datapoint  {
     /// <p>The time stamp for the data point in UTC format.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The value of the data point.</p>
@@ -41,8 +41,7 @@ impl DatapointBuilder {
     }
     /// <p>The time stamp for the data point in UTC format.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time stamp for the data point in UTC format.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl DatapointBuilder {
     }
     /// <p>The value of the data point.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the data point.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl DatapointBuilder {
     /// Consumes the builder and constructs a [`Datapoint`](crate::types::Datapoint).
     pub fn build(self) -> crate::types::Datapoint {
         crate::types::Datapoint {
-            timestamp: self.timestamp,
-            value: self.value,
+            timestamp: self.timestamp
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

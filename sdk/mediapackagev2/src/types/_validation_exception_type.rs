@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptiontype = unimplemented!();
 /// match validationexceptiontype {
@@ -65,16 +65,14 @@
 /// Specifically, when `validationexceptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     CencIvIncompatible,
@@ -152,210 +150,167 @@ pub enum ValidationExceptionType {
     UrlUserInfo,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ValidationExceptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
-            "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
-            "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
-            "ENCRYPTION_CONTRACT_SHARED" => ValidationExceptionType::EncryptionContractShared,
-            "ENCRYPTION_CONTRACT_UNENCRYPTED" => ValidationExceptionType::EncryptionContractUnencrypted,
-            "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE" => {
-                ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible
-            }
-            "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
-            "END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
-            "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
-            "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
-            "INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
-            "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
-            "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
-            "INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
-            "MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
-            "MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
-            "MEMBER_INVALID" => ValidationExceptionType::MemberInvalid,
-            "MEMBER_INVALID_ENUM_VALUE" => ValidationExceptionType::MemberInvalidEnumValue,
-            "MEMBER_MAX_LENGTH" => ValidationExceptionType::MemberMaxLength,
-            "MEMBER_MAX_VALUE" => ValidationExceptionType::MemberMaxValue,
-            "MEMBER_MIN_LENGTH" => ValidationExceptionType::MemberMinLength,
-            "MEMBER_MIN_VALUE" => ValidationExceptionType::MemberMinValue,
-            "MEMBER_MISSING" => ValidationExceptionType::MemberMissing,
-            "NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
-            "NUM_MANIFESTS_LOW" => ValidationExceptionType::NumManifestsLow,
-            "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
-            "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
-            "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
-            "URL_INVALID" => ValidationExceptionType::UrlInvalid,
-            "URL_LINK_LOCAL_ADDRESS" => ValidationExceptionType::UrlLinkLocalAddress,
-            "URL_LOCAL_ADDRESS" => ValidationExceptionType::UrlLocalAddress,
-            "URL_LOOPBACK_ADDRESS" => ValidationExceptionType::UrlLoopbackAddress,
-            "URL_MULTICAST_ADDRESS" => ValidationExceptionType::UrlMulticastAddress,
-            "URL_PORT" => ValidationExceptionType::UrlPort,
-            "URL_SCHEME" => ValidationExceptionType::UrlScheme,
-            "URL_UNKNOWN_HOST" => ValidationExceptionType::UrlUnknownHost,
-            "URL_USER_INFO" => ValidationExceptionType::UrlUserInfo,
-            other => ValidationExceptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
+"CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
+"DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
+"ENCRYPTION_CONTRACT_SHARED" => ValidationExceptionType::EncryptionContractShared,
+"ENCRYPTION_CONTRACT_UNENCRYPTED" => ValidationExceptionType::EncryptionContractUnencrypted,
+"ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE" => ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible,
+"ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
+"END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
+"INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
+"INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
+"INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
+"INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
+"INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
+"INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
+"MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
+"MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
+"MEMBER_INVALID" => ValidationExceptionType::MemberInvalid,
+"MEMBER_INVALID_ENUM_VALUE" => ValidationExceptionType::MemberInvalidEnumValue,
+"MEMBER_MAX_LENGTH" => ValidationExceptionType::MemberMaxLength,
+"MEMBER_MAX_VALUE" => ValidationExceptionType::MemberMaxValue,
+"MEMBER_MIN_LENGTH" => ValidationExceptionType::MemberMinLength,
+"MEMBER_MIN_VALUE" => ValidationExceptionType::MemberMinValue,
+"MEMBER_MISSING" => ValidationExceptionType::MemberMissing,
+"NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
+"NUM_MANIFESTS_LOW" => ValidationExceptionType::NumManifestsLow,
+"ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
+"ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
+"ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
+"URL_INVALID" => ValidationExceptionType::UrlInvalid,
+"URL_LINK_LOCAL_ADDRESS" => ValidationExceptionType::UrlLinkLocalAddress,
+"URL_LOCAL_ADDRESS" => ValidationExceptionType::UrlLocalAddress,
+"URL_LOOPBACK_ADDRESS" => ValidationExceptionType::UrlLoopbackAddress,
+"URL_MULTICAST_ADDRESS" => ValidationExceptionType::UrlMulticastAddress,
+"URL_PORT" => ValidationExceptionType::UrlPort,
+"URL_SCHEME" => ValidationExceptionType::UrlScheme,
+"URL_UNKNOWN_HOST" => ValidationExceptionType::UrlUnknownHost,
+"URL_USER_INFO" => ValidationExceptionType::UrlUserInfo,
+other => ValidationExceptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ValidationExceptionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ValidationExceptionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ValidationExceptionType::from(s))
+                    }
+                }
 impl ValidationExceptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
-            ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
-            ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
-            ValidationExceptionType::EncryptionContractShared => "ENCRYPTION_CONTRACT_SHARED",
-            ValidationExceptionType::EncryptionContractUnencrypted => "ENCRYPTION_CONTRACT_UNENCRYPTED",
-            ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
-                "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE"
-            }
-            ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
-            ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
-            ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
-            ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
-            ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
-            ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
-            ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
-            ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
-            ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
-            ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
-            ValidationExceptionType::MemberInvalid => "MEMBER_INVALID",
-            ValidationExceptionType::MemberInvalidEnumValue => "MEMBER_INVALID_ENUM_VALUE",
-            ValidationExceptionType::MemberMaxLength => "MEMBER_MAX_LENGTH",
-            ValidationExceptionType::MemberMaxValue => "MEMBER_MAX_VALUE",
-            ValidationExceptionType::MemberMinLength => "MEMBER_MIN_LENGTH",
-            ValidationExceptionType::MemberMinValue => "MEMBER_MIN_VALUE",
-            ValidationExceptionType::MemberMissing => "MEMBER_MISSING",
-            ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
-            ValidationExceptionType::NumManifestsLow => "NUM_MANIFESTS_LOW",
-            ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
-            ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
-            ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
-            ValidationExceptionType::UrlInvalid => "URL_INVALID",
-            ValidationExceptionType::UrlLinkLocalAddress => "URL_LINK_LOCAL_ADDRESS",
-            ValidationExceptionType::UrlLocalAddress => "URL_LOCAL_ADDRESS",
-            ValidationExceptionType::UrlLoopbackAddress => "URL_LOOPBACK_ADDRESS",
-            ValidationExceptionType::UrlMulticastAddress => "URL_MULTICAST_ADDRESS",
-            ValidationExceptionType::UrlPort => "URL_PORT",
-            ValidationExceptionType::UrlScheme => "URL_SCHEME",
-            ValidationExceptionType::UrlUnknownHost => "URL_UNKNOWN_HOST",
-            ValidationExceptionType::UrlUserInfo => "URL_USER_INFO",
-            ValidationExceptionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CENC_IV_INCOMPATIBLE",
-            "CONTAINER_TYPE_IMMUTABLE",
-            "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
-            "ENCRYPTION_CONTRACT_SHARED",
-            "ENCRYPTION_CONTRACT_UNENCRYPTED",
-            "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
-            "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
-            "END_TIME_EARLIER_THAN_START_TIME",
-            "INVALID_MANIFEST_FILTER",
-            "INVALID_PAGINATION_MAX_RESULTS",
-            "INVALID_PAGINATION_TOKEN",
-            "INVALID_POLICY",
-            "INVALID_ROLE_ARN",
-            "INVALID_TIME_DELAY_SECONDS",
-            "MANIFEST_NAME_COLLISION",
-            "MEMBER_DOES_NOT_MATCH_PATTERN",
-            "MEMBER_INVALID",
-            "MEMBER_INVALID_ENUM_VALUE",
-            "MEMBER_MAX_LENGTH",
-            "MEMBER_MAX_VALUE",
-            "MEMBER_MIN_LENGTH",
-            "MEMBER_MIN_VALUE",
-            "MEMBER_MISSING",
-            "NUM_MANIFESTS_HIGH",
-            "NUM_MANIFESTS_LOW",
-            "ROLE_ARN_INVALID_FORMAT",
-            "ROLE_ARN_LENGTH_OUT_OF_RANGE",
-            "ROLE_ARN_NOT_ASSUMABLE",
-            "URL_INVALID",
-            "URL_LINK_LOCAL_ADDRESS",
-            "URL_LOCAL_ADDRESS",
-            "URL_LOOPBACK_ADDRESS",
-            "URL_MULTICAST_ADDRESS",
-            "URL_PORT",
-            "URL_SCHEME",
-            "URL_UNKNOWN_HOST",
-            "URL_USER_INFO",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
+    ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
+    ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
+    ValidationExceptionType::EncryptionContractShared => "ENCRYPTION_CONTRACT_SHARED",
+    ValidationExceptionType::EncryptionContractUnencrypted => "ENCRYPTION_CONTRACT_UNENCRYPTED",
+    ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
+    ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
+    ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
+    ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
+    ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
+    ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
+    ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
+    ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
+    ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
+    ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
+    ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
+    ValidationExceptionType::MemberInvalid => "MEMBER_INVALID",
+    ValidationExceptionType::MemberInvalidEnumValue => "MEMBER_INVALID_ENUM_VALUE",
+    ValidationExceptionType::MemberMaxLength => "MEMBER_MAX_LENGTH",
+    ValidationExceptionType::MemberMaxValue => "MEMBER_MAX_VALUE",
+    ValidationExceptionType::MemberMinLength => "MEMBER_MIN_LENGTH",
+    ValidationExceptionType::MemberMinValue => "MEMBER_MIN_VALUE",
+    ValidationExceptionType::MemberMissing => "MEMBER_MISSING",
+    ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
+    ValidationExceptionType::NumManifestsLow => "NUM_MANIFESTS_LOW",
+    ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
+    ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
+    ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
+    ValidationExceptionType::UrlInvalid => "URL_INVALID",
+    ValidationExceptionType::UrlLinkLocalAddress => "URL_LINK_LOCAL_ADDRESS",
+    ValidationExceptionType::UrlLocalAddress => "URL_LOCAL_ADDRESS",
+    ValidationExceptionType::UrlLoopbackAddress => "URL_LOOPBACK_ADDRESS",
+    ValidationExceptionType::UrlMulticastAddress => "URL_MULTICAST_ADDRESS",
+    ValidationExceptionType::UrlPort => "URL_PORT",
+    ValidationExceptionType::UrlScheme => "URL_SCHEME",
+    ValidationExceptionType::UrlUnknownHost => "URL_UNKNOWN_HOST",
+    ValidationExceptionType::UrlUserInfo => "URL_USER_INFO",
+    ValidationExceptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CENC_IV_INCOMPATIBLE", "CONTAINER_TYPE_IMMUTABLE", "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE", "ENCRYPTION_CONTRACT_SHARED", "ENCRYPTION_CONTRACT_UNENCRYPTED", "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE", "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH", "END_TIME_EARLIER_THAN_START_TIME", "INVALID_MANIFEST_FILTER", "INVALID_PAGINATION_MAX_RESULTS", "INVALID_PAGINATION_TOKEN", "INVALID_POLICY", "INVALID_ROLE_ARN", "INVALID_TIME_DELAY_SECONDS", "MANIFEST_NAME_COLLISION", "MEMBER_DOES_NOT_MATCH_PATTERN", "MEMBER_INVALID", "MEMBER_INVALID_ENUM_VALUE", "MEMBER_MAX_LENGTH", "MEMBER_MAX_VALUE", "MEMBER_MIN_LENGTH", "MEMBER_MIN_VALUE", "MEMBER_MISSING", "NUM_MANIFESTS_HIGH", "NUM_MANIFESTS_LOW", "ROLE_ARN_INVALID_FORMAT", "ROLE_ARN_LENGTH_OUT_OF_RANGE", "ROLE_ARN_NOT_ASSUMABLE", "URL_INVALID", "URL_LINK_LOCAL_ADDRESS", "URL_LOCAL_ADDRESS", "URL_LOOPBACK_ADDRESS", "URL_MULTICAST_ADDRESS", "URL_PORT", "URL_SCHEME", "URL_UNKNOWN_HOST", "URL_USER_INFO"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ValidationExceptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-impl ValidationExceptionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
-impl ::std::fmt::Display for ValidationExceptionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
-            ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
-            ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
-            ValidationExceptionType::EncryptionContractShared => write!(f, "ENCRYPTION_CONTRACT_SHARED"),
-            ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
-            ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
-                write!(f, "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE")
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
             }
-            ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
-            ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
-            ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
-            ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),
-            ValidationExceptionType::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
-            ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
-            ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
-            ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
-            ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
-            ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
-            ValidationExceptionType::MemberInvalid => write!(f, "MEMBER_INVALID"),
-            ValidationExceptionType::MemberInvalidEnumValue => write!(f, "MEMBER_INVALID_ENUM_VALUE"),
-            ValidationExceptionType::MemberMaxLength => write!(f, "MEMBER_MAX_LENGTH"),
-            ValidationExceptionType::MemberMaxValue => write!(f, "MEMBER_MAX_VALUE"),
-            ValidationExceptionType::MemberMinLength => write!(f, "MEMBER_MIN_LENGTH"),
-            ValidationExceptionType::MemberMinValue => write!(f, "MEMBER_MIN_VALUE"),
-            ValidationExceptionType::MemberMissing => write!(f, "MEMBER_MISSING"),
-            ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
-            ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
-            ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
-            ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
-            ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
-            ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),
-            ValidationExceptionType::UrlLinkLocalAddress => write!(f, "URL_LINK_LOCAL_ADDRESS"),
-            ValidationExceptionType::UrlLocalAddress => write!(f, "URL_LOCAL_ADDRESS"),
-            ValidationExceptionType::UrlLoopbackAddress => write!(f, "URL_LOOPBACK_ADDRESS"),
-            ValidationExceptionType::UrlMulticastAddress => write!(f, "URL_MULTICAST_ADDRESS"),
-            ValidationExceptionType::UrlPort => write!(f, "URL_PORT"),
-            ValidationExceptionType::UrlScheme => write!(f, "URL_SCHEME"),
-            ValidationExceptionType::UrlUnknownHost => write!(f, "URL_UNKNOWN_HOST"),
-            ValidationExceptionType::UrlUserInfo => write!(f, "URL_USER_INFO"),
-            ValidationExceptionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+impl ValidationExceptionType {
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
+impl ::std::fmt::Display for ValidationExceptionType {
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
+ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
+ValidationExceptionType::EncryptionContractShared => write!(f, "ENCRYPTION_CONTRACT_SHARED"),
+ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
+ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => write!(f, "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE"),
+ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
+ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
+ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
+ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),
+ValidationExceptionType::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
+ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
+ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
+ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
+ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
+ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
+ValidationExceptionType::MemberInvalid => write!(f, "MEMBER_INVALID"),
+ValidationExceptionType::MemberInvalidEnumValue => write!(f, "MEMBER_INVALID_ENUM_VALUE"),
+ValidationExceptionType::MemberMaxLength => write!(f, "MEMBER_MAX_LENGTH"),
+ValidationExceptionType::MemberMaxValue => write!(f, "MEMBER_MAX_VALUE"),
+ValidationExceptionType::MemberMinLength => write!(f, "MEMBER_MIN_LENGTH"),
+ValidationExceptionType::MemberMinValue => write!(f, "MEMBER_MIN_VALUE"),
+ValidationExceptionType::MemberMissing => write!(f, "MEMBER_MISSING"),
+ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
+ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
+ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
+ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
+ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),
+ValidationExceptionType::UrlLinkLocalAddress => write!(f, "URL_LINK_LOCAL_ADDRESS"),
+ValidationExceptionType::UrlLocalAddress => write!(f, "URL_LOCAL_ADDRESS"),
+ValidationExceptionType::UrlLoopbackAddress => write!(f, "URL_LOOPBACK_ADDRESS"),
+ValidationExceptionType::UrlMulticastAddress => write!(f, "URL_MULTICAST_ADDRESS"),
+ValidationExceptionType::UrlPort => write!(f, "URL_PORT"),
+ValidationExceptionType::UrlScheme => write!(f, "URL_SCHEME"),
+ValidationExceptionType::UrlUnknownHost => write!(f, "URL_UNKNOWN_HOST"),
+ValidationExceptionType::UrlUserInfo => write!(f, "URL_USER_INFO"),
+ValidationExceptionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

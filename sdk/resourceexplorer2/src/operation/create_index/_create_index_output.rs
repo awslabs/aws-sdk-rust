@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIndexOutput {
+pub struct CreateIndexOutput  {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p><note>
@@ -13,27 +13,27 @@ pub struct CreateIndexOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateIndexOutput {
+impl  CreateIndexOutput  {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p><note>
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
     /// </note>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and timestamp when the index was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput).
     pub fn builder() -> crate::operation::create_index::builders::CreateIndexOutputBuilder {
@@ -58,8 +58,7 @@ impl CreateIndexOutputBuilder {
     }
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateIndexOutputBuilder {
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
     /// </note>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p><note>
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
@@ -92,29 +90,32 @@ impl CreateIndexOutputBuilder {
     }
     /// <p>The date and timestamp when the index was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and timestamp when the index was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput).
     pub fn build(self) -> crate::operation::create_index::CreateIndexOutput {
         crate::operation::create_index::CreateIndexOutput {
-            arn: self.arn,
-            state: self.state,
-            created_at: self.created_at,
+            arn: self.arn
+            ,
+            state: self.state
+            ,
+            created_at: self.created_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

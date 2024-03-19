@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apicachetype = unimplemented!();
 /// match apicachetype {
@@ -43,16 +43,14 @@
 /// Specifically, when `apicachetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiCacheType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ApiCacheType {
     #[allow(missing_docs)] // documentation missing in model
     Large,
@@ -86,116 +84,101 @@ pub enum ApiCacheType {
     Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ApiCacheType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LARGE" => ApiCacheType::Large,
-            "LARGE_12X" => ApiCacheType::Large12X,
-            "LARGE_2X" => ApiCacheType::Large2X,
-            "LARGE_4X" => ApiCacheType::Large4X,
-            "LARGE_8X" => ApiCacheType::Large8X,
-            "MEDIUM" => ApiCacheType::Medium,
-            "R4_2XLARGE" => ApiCacheType::R42Xlarge,
-            "R4_4XLARGE" => ApiCacheType::R44Xlarge,
-            "R4_8XLARGE" => ApiCacheType::R48Xlarge,
-            "R4_LARGE" => ApiCacheType::R4Large,
-            "R4_XLARGE" => ApiCacheType::R4Xlarge,
-            "SMALL" => ApiCacheType::Small,
-            "T2_MEDIUM" => ApiCacheType::T2Medium,
-            "T2_SMALL" => ApiCacheType::T2Small,
-            "XLARGE" => ApiCacheType::Xlarge,
-            other => ApiCacheType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "LARGE" => ApiCacheType::Large,
+"LARGE_12X" => ApiCacheType::Large12X,
+"LARGE_2X" => ApiCacheType::Large2X,
+"LARGE_4X" => ApiCacheType::Large4X,
+"LARGE_8X" => ApiCacheType::Large8X,
+"MEDIUM" => ApiCacheType::Medium,
+"R4_2XLARGE" => ApiCacheType::R42Xlarge,
+"R4_4XLARGE" => ApiCacheType::R44Xlarge,
+"R4_8XLARGE" => ApiCacheType::R48Xlarge,
+"R4_LARGE" => ApiCacheType::R4Large,
+"R4_XLARGE" => ApiCacheType::R4Xlarge,
+"SMALL" => ApiCacheType::Small,
+"T2_MEDIUM" => ApiCacheType::T2Medium,
+"T2_SMALL" => ApiCacheType::T2Small,
+"XLARGE" => ApiCacheType::Xlarge,
+other => ApiCacheType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ApiCacheType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ApiCacheType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ApiCacheType::from(s))
+                    }
+                }
 impl ApiCacheType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ApiCacheType::Large => "LARGE",
-            ApiCacheType::Large12X => "LARGE_12X",
-            ApiCacheType::Large2X => "LARGE_2X",
-            ApiCacheType::Large4X => "LARGE_4X",
-            ApiCacheType::Large8X => "LARGE_8X",
-            ApiCacheType::Medium => "MEDIUM",
-            ApiCacheType::R42Xlarge => "R4_2XLARGE",
-            ApiCacheType::R44Xlarge => "R4_4XLARGE",
-            ApiCacheType::R48Xlarge => "R4_8XLARGE",
-            ApiCacheType::R4Large => "R4_LARGE",
-            ApiCacheType::R4Xlarge => "R4_XLARGE",
-            ApiCacheType::Small => "SMALL",
-            ApiCacheType::T2Medium => "T2_MEDIUM",
-            ApiCacheType::T2Small => "T2_SMALL",
-            ApiCacheType::Xlarge => "XLARGE",
-            ApiCacheType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LARGE",
-            "LARGE_12X",
-            "LARGE_2X",
-            "LARGE_4X",
-            "LARGE_8X",
-            "MEDIUM",
-            "R4_2XLARGE",
-            "R4_4XLARGE",
-            "R4_8XLARGE",
-            "R4_LARGE",
-            "R4_XLARGE",
-            "SMALL",
-            "T2_MEDIUM",
-            "T2_SMALL",
-            "XLARGE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ApiCacheType::Large => "LARGE",
+    ApiCacheType::Large12X => "LARGE_12X",
+    ApiCacheType::Large2X => "LARGE_2X",
+    ApiCacheType::Large4X => "LARGE_4X",
+    ApiCacheType::Large8X => "LARGE_8X",
+    ApiCacheType::Medium => "MEDIUM",
+    ApiCacheType::R42Xlarge => "R4_2XLARGE",
+    ApiCacheType::R44Xlarge => "R4_4XLARGE",
+    ApiCacheType::R48Xlarge => "R4_8XLARGE",
+    ApiCacheType::R4Large => "R4_LARGE",
+    ApiCacheType::R4Xlarge => "R4_XLARGE",
+    ApiCacheType::Small => "SMALL",
+    ApiCacheType::T2Medium => "T2_MEDIUM",
+    ApiCacheType::T2Small => "T2_SMALL",
+    ApiCacheType::Xlarge => "XLARGE",
+    ApiCacheType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LARGE", "LARGE_12X", "LARGE_2X", "LARGE_4X", "LARGE_8X", "MEDIUM", "R4_2XLARGE", "R4_4XLARGE", "R4_8XLARGE", "R4_LARGE", "R4_XLARGE", "SMALL", "T2_MEDIUM", "T2_SMALL", "XLARGE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ApiCacheType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ApiCacheType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ApiCacheType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ApiCacheType::Large => write!(f, "LARGE"),
-            ApiCacheType::Large12X => write!(f, "LARGE_12X"),
-            ApiCacheType::Large2X => write!(f, "LARGE_2X"),
-            ApiCacheType::Large4X => write!(f, "LARGE_4X"),
-            ApiCacheType::Large8X => write!(f, "LARGE_8X"),
-            ApiCacheType::Medium => write!(f, "MEDIUM"),
-            ApiCacheType::R42Xlarge => write!(f, "R4_2XLARGE"),
-            ApiCacheType::R44Xlarge => write!(f, "R4_4XLARGE"),
-            ApiCacheType::R48Xlarge => write!(f, "R4_8XLARGE"),
-            ApiCacheType::R4Large => write!(f, "R4_LARGE"),
-            ApiCacheType::R4Xlarge => write!(f, "R4_XLARGE"),
-            ApiCacheType::Small => write!(f, "SMALL"),
-            ApiCacheType::T2Medium => write!(f, "T2_MEDIUM"),
-            ApiCacheType::T2Small => write!(f, "T2_SMALL"),
-            ApiCacheType::Xlarge => write!(f, "XLARGE"),
-            ApiCacheType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ApiCacheType::Large => write!(f, "LARGE"),
+ApiCacheType::Large12X => write!(f, "LARGE_12X"),
+ApiCacheType::Large2X => write!(f, "LARGE_2X"),
+ApiCacheType::Large4X => write!(f, "LARGE_4X"),
+ApiCacheType::Large8X => write!(f, "LARGE_8X"),
+ApiCacheType::Medium => write!(f, "MEDIUM"),
+ApiCacheType::R42Xlarge => write!(f, "R4_2XLARGE"),
+ApiCacheType::R44Xlarge => write!(f, "R4_4XLARGE"),
+ApiCacheType::R48Xlarge => write!(f, "R4_8XLARGE"),
+ApiCacheType::R4Large => write!(f, "R4_LARGE"),
+ApiCacheType::R4Xlarge => write!(f, "R4_XLARGE"),
+ApiCacheType::Small => write!(f, "SMALL"),
+ApiCacheType::T2Medium => write!(f, "T2_MEDIUM"),
+ApiCacheType::T2Small => write!(f, "T2_SMALL"),
+ApiCacheType::Xlarge => write!(f, "XLARGE"),
+ApiCacheType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

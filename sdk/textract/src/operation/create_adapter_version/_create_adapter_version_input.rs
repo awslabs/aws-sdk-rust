@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAdapterVersionInput {
+pub struct CreateAdapterVersionInput  {
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
@@ -17,34 +17,34 @@ pub struct CreateAdapterVersionInput {
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>A set of tags (key-value pairs) that you want to attach to the adapter version.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAdapterVersionInput {
+impl  CreateAdapterVersionInput  {
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.</p>
-    pub fn dataset_config(&self) -> ::std::option::Option<&crate::types::AdapterVersionDatasetConfig> {
+    pub fn dataset_config(&self) -> ::std::option::Option<& crate::types::AdapterVersionDatasetConfig> {
         self.dataset_config.as_ref()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt your documents.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
     /// <p><code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
     /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a></p>
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the adapter version.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -64,7 +64,7 @@ pub struct CreateAdapterVersionInputBuilder {
     pub(crate) dataset_config: ::std::option::Option<crate::types::AdapterVersionDatasetConfig>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAdapterVersionInputBuilder {
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
@@ -75,8 +75,7 @@ impl CreateAdapterVersionInputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter that will receive a new version.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateAdapterVersionInputBuilder {
     }
     /// <p>Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl CreateAdapterVersionInputBuilder {
     }
     /// <p>Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.</p>
     pub fn set_dataset_config(mut self, input: ::std::option::Option<crate::types::AdapterVersionDatasetConfig>) -> Self {
-        self.dataset_config = input;
-        self
+        self.dataset_config = input; self
     }
     /// <p>Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.</p>
     pub fn get_dataset_config(&self) -> &::std::option::Option<crate::types::AdapterVersionDatasetConfig> {
@@ -118,8 +115,7 @@ impl CreateAdapterVersionInputBuilder {
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt your documents.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt your documents.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl CreateAdapterVersionInputBuilder {
     /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a></p>
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
     /// <p><code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
@@ -156,31 +151,36 @@ impl CreateAdapterVersionInputBuilder {
     /// <p>A set of tags (key-value pairs) that you want to attach to the adapter version.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the adapter version.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the adapter version.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAdapterVersionInput`](crate::operation::create_adapter_version::CreateAdapterVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_adapter_version::CreateAdapterVersionInput {
-            adapter_id: self.adapter_id,
-            client_request_token: self.client_request_token,
-            dataset_config: self.dataset_config,
-            kms_key_id: self.kms_key_id,
-            output_config: self.output_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_adapter_version::CreateAdapterVersionInput {
+                adapter_id: self.adapter_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                dataset_config: self.dataset_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                output_config: self.output_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

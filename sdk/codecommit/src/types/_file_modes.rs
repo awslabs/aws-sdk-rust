@@ -3,7 +3,7 @@
 /// <p>Information about file modes in a merge or pull request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileModes {
+pub struct FileModes  {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     pub source: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
@@ -11,17 +11,17 @@ pub struct FileModes {
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
     pub base: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
-impl FileModes {
+impl  FileModes  {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.destination.as_ref()
     }
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
-    pub fn base(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn base(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.base.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FileModesBuilder {
     }
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -62,8 +61,7 @@ impl FileModesBuilder {
     }
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -76,8 +74,7 @@ impl FileModesBuilder {
     }
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
     pub fn set_base(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
     pub fn get_base(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -86,9 +83,13 @@ impl FileModesBuilder {
     /// Consumes the builder and constructs a [`FileModes`](crate::types::FileModes).
     pub fn build(self) -> crate::types::FileModes {
         crate::types::FileModes {
-            source: self.source,
-            destination: self.destination,
-            base: self.base,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            base: self.base
+            ,
         }
     }
 }
+

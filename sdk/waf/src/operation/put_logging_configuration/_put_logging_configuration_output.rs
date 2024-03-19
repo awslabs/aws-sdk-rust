@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLoggingConfigurationOutput {
+pub struct PutLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }
-impl PutLoggingConfigurationOutput {
+impl  PutLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutLoggingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationOutput`](crate::operation::put_logging_configuration::PutLoggingConfigurationOutput).
     pub fn builder() -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl PutLoggingConfigurationOutputBuilder {
     }
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutLoggingConfigurationOutput`](crate::operation::put_logging_configuration::PutLoggingConfigurationOutput).
     pub fn build(self) -> crate::operation::put_logging_configuration::PutLoggingConfigurationOutput {
         crate::operation::put_logging_configuration::PutLoggingConfigurationOutput {
-            logging_configuration: self.logging_configuration,
+            logging_configuration: self.logging_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

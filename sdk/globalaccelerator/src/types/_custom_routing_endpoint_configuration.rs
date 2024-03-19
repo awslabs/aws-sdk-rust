@@ -3,19 +3,19 @@
 /// <p>The list of endpoint objects. For custom routing, this is a list of virtual private cloud (VPC) subnet IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomRoutingEndpointConfiguration {
+pub struct CustomRoutingEndpointConfiguration  {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
 }
-impl CustomRoutingEndpointConfiguration {
+impl  CustomRoutingEndpointConfiguration  {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
-    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> ::std::option::Option<& str> {
         self.attachment_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CustomRoutingEndpointConfigurationBuilder {
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CustomRoutingEndpointConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub fn set_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_arn = input;
-        self
+        self.attachment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CustomRoutingEndpointConfigurationBuilder {
     /// Consumes the builder and constructs a [`CustomRoutingEndpointConfiguration`](crate::types::CustomRoutingEndpointConfiguration).
     pub fn build(self) -> crate::types::CustomRoutingEndpointConfiguration {
         crate::types::CustomRoutingEndpointConfiguration {
-            endpoint_id: self.endpoint_id,
-            attachment_arn: self.attachment_arn,
+            endpoint_id: self.endpoint_id
+            ,
+            attachment_arn: self.attachment_arn
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_
 
 impl PutMobileDeviceAccessOverrideInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_mobile_device_access_override();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_mobile_device_access_override();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutMobileDeviceAccessOverride`.
-///
+/// 
 /// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder,
+                    inner: crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-    > for PutMobileDeviceAccessOverrideFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
+                    crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+                > for PutMobileDeviceAccessOverrideFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
+                        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutMobileDeviceAccessOverrideFluentBuilder {
     /// Creates a new `PutMobileDeviceAccessOverride`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput, crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -203,3 +190,4 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self.inner.get_description()
     }
 }
+

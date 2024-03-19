@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetAdvisorDatabasesInput {
+pub struct DescribeFleetAdvisorDatabasesInput  {
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
     /// <li>
@@ -19,13 +19,13 @@ pub struct DescribeFleetAdvisorDatabasesInput {
     /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFleetAdvisorDatabasesInput {
+impl  DescribeFleetAdvisorDatabasesInput  {
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
     /// <li>
@@ -42,17 +42,18 @@ impl DescribeFleetAdvisorDatabasesInput {
     /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -67,7 +68,7 @@ impl DescribeFleetAdvisorDatabasesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorDatabasesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -94,9 +95,9 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
@@ -114,9 +115,8 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
@@ -134,7 +134,7 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
@@ -144,8 +144,7 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -158,24 +157,24 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesInput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput {
-            filters: self.filters,
-            max_records: self.max_records,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesInput {
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

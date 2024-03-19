@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelMemberships`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The maximum number of channel memberships that you want returned.</p><br>
     ///   - [`r#type(ChannelMembershipType)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::type) / [`set_type(Option<ChannelMembershipType>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_type):<br>required: **false**<br><p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of channel memberships that you want returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested channel memberships are returned.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`channel_memberships(Option<Vec::<ChannelMembershipSummary>>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::operation::list_channel_memberships::ListChannelMembershipsError)
+                            /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::operation::list_channel_memberships::ListChannelMembershipsError)
     #[deprecated(note = "Replaced by ListChannelMemberships in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_memberships(&self) -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder {
-        crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_memberships::builders::ListChannelMembershipsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

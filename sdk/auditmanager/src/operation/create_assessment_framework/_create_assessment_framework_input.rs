@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAssessmentFrameworkInput {
+pub struct CreateAssessmentFrameworkInput  {
     /// <p>The name of the new custom framework.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the new custom framework.</p>
@@ -10,35 +10,36 @@ pub struct CreateAssessmentFrameworkInput {
     /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The control sets that are associated with the framework.</p>
-    pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>,
+    pub control_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControlSet>>,
     /// <p>The tags that are associated with the framework.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAssessmentFrameworkInput {
+impl  CreateAssessmentFrameworkInput  {
     /// <p>The name of the new custom framework.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description for the new custom framework.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
     /// <p>The control sets that are associated with the framework.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
-    pub fn control_sets(&self) -> &[crate::types::CreateAssessmentFrameworkControlSet] {
-        self.control_sets.as_deref().unwrap_or_default()
+    pub fn control_sets(&self) -> & [crate::types::CreateAssessmentFrameworkControlSet] {
+        self.control_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags that are associated with the framework.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateAssessmentFrameworkInput {
+impl  ::std::fmt::Debug for CreateAssessmentFrameworkInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentFrameworkInput");
         formatter.field("name", &self.name);
@@ -63,8 +64,8 @@ pub struct CreateAssessmentFrameworkInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) control_sets: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) control_sets: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControlSet>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssessmentFrameworkInputBuilder {
     /// <p>The name of the new custom framework.</p>
@@ -75,8 +76,7 @@ impl CreateAssessmentFrameworkInputBuilder {
     }
     /// <p>The name of the new custom framework.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new custom framework.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl CreateAssessmentFrameworkInputBuilder {
     }
     /// <p>An optional description for the new custom framework.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description for the new custom framework.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl CreateAssessmentFrameworkInputBuilder {
     }
     /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,17 +115,16 @@ impl CreateAssessmentFrameworkInputBuilder {
     /// <p>The control sets that are associated with the framework.</p>
     pub fn control_sets(mut self, input: crate::types::CreateAssessmentFrameworkControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
-        v.push(input);
-        self.control_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.control_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The control sets that are associated with the framework.</p>
-    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
-        self.control_sets = input;
-        self
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
+        self.control_sets = input; self
     }
     /// <p>The control sets that are associated with the framework.</p>
-    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControlSet>> {
         &self.control_sets
     }
     /// Adds a key-value pair to `tags`.
@@ -137,33 +134,34 @@ impl CreateAssessmentFrameworkInputBuilder {
     /// <p>The tags that are associated with the framework.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are associated with the framework.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are associated with the framework.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkInput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput {
-            name: self.name,
-            description: self.description,
-            compliance_type: self.compliance_type,
-            control_sets: self.control_sets,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                compliance_type: self.compliance_type
+                ,
+                control_sets: self.control_sets
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAssessmentFrameworkInputBuilder {
@@ -177,3 +175,4 @@ impl ::std::fmt::Debug for CreateAssessmentFrameworkInputBuilder {
         formatter.finish()
     }
 }
+

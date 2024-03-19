@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnshareDirectoryOutput {
+pub struct UnshareDirectoryOutput  {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub shared_directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UnshareDirectoryOutput {
+impl  UnshareDirectoryOutput  {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
-    pub fn shared_directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn shared_directory_id(&self) -> ::std::option::Option<& str> {
         self.shared_directory_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UnshareDirectoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UnshareDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`UnshareDirectoryOutput`](crate::operation::unshare_directory::UnshareDirectoryOutput).
     pub fn builder() -> crate::operation::unshare_directory::builders::UnshareDirectoryOutputBuilder {
@@ -40,27 +40,28 @@ impl UnshareDirectoryOutputBuilder {
     }
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn set_shared_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_directory_id = input;
-        self
+        self.shared_directory_id = input; self
     }
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub fn get_shared_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_directory_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UnshareDirectoryOutput`](crate::operation::unshare_directory::UnshareDirectoryOutput).
     pub fn build(self) -> crate::operation::unshare_directory::UnshareDirectoryOutput {
         crate::operation::unshare_directory::UnshareDirectoryOutput {
-            shared_directory_id: self.shared_directory_id,
+            shared_directory_id: self.shared_directory_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

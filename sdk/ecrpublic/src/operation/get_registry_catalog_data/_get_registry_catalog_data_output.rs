@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegistryCatalogDataOutput {
+pub struct GetRegistryCatalogDataOutput  {
     /// <p>The catalog metadata for the public registry.</p>
     pub registry_catalog_data: ::std::option::Option<crate::types::RegistryCatalogData>,
     _request_id: Option<String>,
 }
-impl GetRegistryCatalogDataOutput {
+impl  GetRegistryCatalogDataOutput  {
     /// <p>The catalog metadata for the public registry.</p>
-    pub fn registry_catalog_data(&self) -> ::std::option::Option<&crate::types::RegistryCatalogData> {
+    pub fn registry_catalog_data(&self) -> ::std::option::Option<& crate::types::RegistryCatalogData> {
         self.registry_catalog_data.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRegistryCatalogDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRegistryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput).
     pub fn builder() -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataOutputBuilder {
@@ -41,27 +41,28 @@ impl GetRegistryCatalogDataOutputBuilder {
     }
     /// <p>The catalog metadata for the public registry.</p>
     pub fn set_registry_catalog_data(mut self, input: ::std::option::Option<crate::types::RegistryCatalogData>) -> Self {
-        self.registry_catalog_data = input;
-        self
+        self.registry_catalog_data = input; self
     }
     /// <p>The catalog metadata for the public registry.</p>
     pub fn get_registry_catalog_data(&self) -> &::std::option::Option<crate::types::RegistryCatalogData> {
         &self.registry_catalog_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput).
     pub fn build(self) -> crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput {
         crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput {
-            registry_catalog_data: self.registry_catalog_data,
+            registry_catalog_data: self.registry_catalog_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

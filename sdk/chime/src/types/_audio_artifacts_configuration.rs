@@ -3,13 +3,13 @@
 /// <p>The audio artifact configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioArtifactsConfiguration {
+pub struct AudioArtifactsConfiguration  {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub mux_type: crate::types::AudioMuxType,
 }
-impl AudioArtifactsConfiguration {
+impl  AudioArtifactsConfiguration  {
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub fn mux_type(&self) -> &crate::types::AudioMuxType {
+    pub fn mux_type(&self) -> & crate::types::AudioMuxType {
         &self.mux_type
     }
 }
@@ -35,8 +35,7 @@ impl AudioArtifactsConfigurationBuilder {
     }
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::AudioMuxType>) -> Self {
-        self.mux_type = input;
-        self
+        self.mux_type = input; self
     }
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::AudioMuxType> {
@@ -46,13 +45,15 @@ impl AudioArtifactsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mux_type`](crate::types::builders::AudioArtifactsConfigurationBuilder::mux_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AudioArtifactsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudioArtifactsConfiguration {
-            mux_type: self.mux_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mux_type",
-                    "mux_type was not specified but it is required when building AudioArtifactsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudioArtifactsConfiguration {
+                mux_type: self.mux_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mux_type", "mux_type was not specified but it is required when building AudioArtifactsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Describes the documents submitted with a dataset for an entity recognizer model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetEntityRecognizerDocuments {
+pub struct DatasetEntityRecognizerDocuments  {
     /// <p>Specifies the Amazon S3 location where the documents for the dataset are located.</p>
     pub s3_uri: ::std::string::String,
     /// <p>Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
 }
-impl DatasetEntityRecognizerDocuments {
+impl  DatasetEntityRecognizerDocuments  {
     /// <p>Specifies the Amazon S3 location where the documents for the dataset are located.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
-    pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
+    pub fn input_format(&self) -> ::std::option::Option<& crate::types::InputFormat> {
         self.input_format.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl DatasetEntityRecognizerDocumentsBuilder {
     }
     /// <p>Specifies the Amazon S3 location where the documents for the dataset are located.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Specifies the Amazon S3 location where the documents for the dataset are located.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DatasetEntityRecognizerDocumentsBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
-        self.input_format = input;
-        self
+        self.input_format = input; self
     }
     /// <p>Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
@@ -68,14 +65,17 @@ impl DatasetEntityRecognizerDocumentsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::DatasetEntityRecognizerDocumentsBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetEntityRecognizerDocuments, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetEntityRecognizerDocuments {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building DatasetEntityRecognizerDocuments",
-                )
-            })?,
-            input_format: self.input_format,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatasetEntityRecognizerDocuments {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building DatasetEntityRecognizerDocuments")
+                    )?
+                ,
+                input_format: self.input_format
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The ID for the provisioned product resources that are part of a resource group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineWorkflowResourceIdentifier {
+pub struct EngineWorkflowResourceIdentifier  {
     /// <p>The unique key-value pair for a tag that identifies provisioned product resources.</p>
     pub unique_tag: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
 }
-impl EngineWorkflowResourceIdentifier {
+impl  EngineWorkflowResourceIdentifier  {
     /// <p>The unique key-value pair for a tag that identifies provisioned product resources.</p>
-    pub fn unique_tag(&self) -> ::std::option::Option<&crate::types::UniqueTagResourceIdentifier> {
+    pub fn unique_tag(&self) -> ::std::option::Option<& crate::types::UniqueTagResourceIdentifier> {
         self.unique_tag.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EngineWorkflowResourceIdentifierBuilder {
     }
     /// <p>The unique key-value pair for a tag that identifies provisioned product resources.</p>
     pub fn set_unique_tag(mut self, input: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>) -> Self {
-        self.unique_tag = input;
-        self
+        self.unique_tag = input; self
     }
     /// <p>The unique key-value pair for a tag that identifies provisioned product resources.</p>
     pub fn get_unique_tag(&self) -> &::std::option::Option<crate::types::UniqueTagResourceIdentifier> {
@@ -43,6 +42,10 @@ impl EngineWorkflowResourceIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`EngineWorkflowResourceIdentifier`](crate::types::EngineWorkflowResourceIdentifier).
     pub fn build(self) -> crate::types::EngineWorkflowResourceIdentifier {
-        crate::types::EngineWorkflowResourceIdentifier { unique_tag: self.unique_tag }
+        crate::types::EngineWorkflowResourceIdentifier {
+            unique_tag: self.unique_tag
+            ,
+        }
     }
 }
+

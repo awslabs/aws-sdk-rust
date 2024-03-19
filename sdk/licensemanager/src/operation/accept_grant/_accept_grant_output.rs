@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptGrantOutput {
+pub struct AcceptGrantOutput  {
     /// <p>Grant ARN.</p>
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant status.</p>
@@ -11,25 +11,25 @@ pub struct AcceptGrantOutput {
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AcceptGrantOutput {
+impl  AcceptGrantOutput  {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GrantStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptGrantOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptGrantOutput {
     /// Creates a new builder-style object to manufacture [`AcceptGrantOutput`](crate::operation::accept_grant::AcceptGrantOutput).
     pub fn builder() -> crate::operation::accept_grant::builders::AcceptGrantOutputBuilder {
@@ -54,8 +54,7 @@ impl AcceptGrantOutputBuilder {
     }
     /// <p>Grant ARN.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
     }
     /// <p>Grant ARN.</p>
     pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl AcceptGrantOutputBuilder {
     }
     /// <p>Grant status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Grant status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GrantStatus> {
@@ -82,29 +80,32 @@ impl AcceptGrantOutputBuilder {
     }
     /// <p>Grant version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Grant version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptGrantOutput`](crate::operation::accept_grant::AcceptGrantOutput).
     pub fn build(self) -> crate::operation::accept_grant::AcceptGrantOutput {
         crate::operation::accept_grant::AcceptGrantOutput {
-            grant_arn: self.grant_arn,
-            status: self.status,
-            version: self.version,
+            grant_arn: self.grant_arn
+            ,
+            status: self.status
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

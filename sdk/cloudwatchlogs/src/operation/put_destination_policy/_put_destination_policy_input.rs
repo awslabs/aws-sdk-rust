@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDestinationPolicyInput {
+pub struct PutDestinationPolicyInput  {
     /// <p>A name for an existing destination.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
@@ -11,13 +11,13 @@ pub struct PutDestinationPolicyInput {
     /// <p>If you omit this parameter, the default of <code>false</code> is used.</p>
     pub force_update: ::std::option::Option<bool>,
 }
-impl PutDestinationPolicyInput {
+impl  PutDestinationPolicyInput  {
     /// <p>A name for an existing destination.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
-    pub fn access_policy(&self) -> ::std::option::Option<&str> {
+    pub fn access_policy(&self) -> ::std::option::Option<& str> {
         self.access_policy.as_deref()
     }
     /// <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a></p>
@@ -50,8 +50,7 @@ impl PutDestinationPolicyInputBuilder {
     }
     /// <p>A name for an existing destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>A name for an existing destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl PutDestinationPolicyInputBuilder {
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
     pub fn set_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy = input;
-        self
+        self.access_policy = input; self
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
     pub fn get_access_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl PutDestinationPolicyInputBuilder {
     /// <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a></p>
     /// <p>If you omit this parameter, the default of <code>false</code> is used.</p>
     pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_update = input;
-        self
+        self.force_update = input; self
     }
     /// <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a></p>
     /// <p>If you omit this parameter, the default of <code>false</code> is used.</p>
@@ -90,14 +87,17 @@ impl PutDestinationPolicyInputBuilder {
         &self.force_update
     }
     /// Consumes the builder and constructs a [`PutDestinationPolicyInput`](crate::operation::put_destination_policy::PutDestinationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_destination_policy::PutDestinationPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_destination_policy::PutDestinationPolicyInput {
-            destination_name: self.destination_name,
-            access_policy: self.access_policy,
-            force_update: self.force_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_destination_policy::PutDestinationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_destination_policy::PutDestinationPolicyInput {
+                destination_name: self.destination_name
+                ,
+                access_policy: self.access_policy
+                ,
+                force_update: self.force_update
+                ,
+            }
+        )
     }
 }
+

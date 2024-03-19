@@ -3,14 +3,14 @@
 /// <p>Contains the count of tasks in a task list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountPendingDecisionTasksOutput {
+pub struct CountPendingDecisionTasksOutput  {
     /// <p>The number of tasks in the task list.</p>
     pub count: i32,
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub truncated: bool,
     _request_id: Option<String>,
 }
-impl CountPendingDecisionTasksOutput {
+impl  CountPendingDecisionTasksOutput  {
     /// <p>The number of tasks in the task list.</p>
     pub fn count(&self) -> i32 {
         self.count
@@ -21,10 +21,10 @@ impl CountPendingDecisionTasksOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CountPendingDecisionTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CountPendingDecisionTasksOutput {
     /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput).
     pub fn builder() -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksOutputBuilder {
@@ -49,8 +49,7 @@ impl CountPendingDecisionTasksOutputBuilder {
     }
     /// <p>The number of tasks in the task list.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of tasks in the task list.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -63,28 +62,32 @@ impl CountPendingDecisionTasksOutputBuilder {
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn get_truncated(&self) -> &::std::option::Option<bool> {
         &self.truncated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput).
     pub fn build(self) -> crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput {
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput {
-            count: self.count.unwrap_or_default(),
-            truncated: self.truncated.unwrap_or_default(),
+            count: self.count
+                .unwrap_or_default()
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

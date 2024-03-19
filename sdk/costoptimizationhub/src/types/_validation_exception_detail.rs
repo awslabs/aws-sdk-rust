@@ -3,22 +3,20 @@
 /// <p>The input failed to meet the constraints specified by the Amazon Web Services service in a specified field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationExceptionDetail {
+pub struct ValidationExceptionDetail  {
     /// <p>The field name where the invalid entry was detected.</p>
     pub field_name: ::std::string::String,
     /// <p>A message with the reason for the validation exception error.</p>
     pub message: ::std::string::String,
 }
-impl ValidationExceptionDetail {
+impl  ValidationExceptionDetail  {
     /// <p>The field name where the invalid entry was detected.</p>
-    pub fn field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.field_name.deref()
+    pub fn field_name(&self) -> & str {
+        use std::ops::Deref; self.field_name.deref()
     }
     /// <p>A message with the reason for the validation exception error.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ValidationExceptionDetail {
@@ -44,8 +42,7 @@ impl ValidationExceptionDetailBuilder {
     }
     /// <p>The field name where the invalid entry was detected.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>The field name where the invalid entry was detected.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ValidationExceptionDetailBuilder {
     }
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ValidationExceptionDetailBuilder {
     /// - [`field_name`](crate::types::builders::ValidationExceptionDetailBuilder::field_name)
     /// - [`message`](crate::types::builders::ValidationExceptionDetailBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationExceptionDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationExceptionDetail {
-            field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_name",
-                    "field_name was not specified but it is required when building ValidationExceptionDetail",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ValidationExceptionDetail",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationExceptionDetail {
+                field_name: self.field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_name", "field_name was not specified but it is required when building ValidationExceptionDetail")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ValidationExceptionDetail")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactMethodsInput {
+pub struct GetContactMethodsInput  {
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>,
 }
-impl GetContactMethodsInput {
+impl  GetContactMethodsInput  {
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[crate::types::ContactProtocol] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [crate::types::ContactProtocol] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetContactMethodsInput {
@@ -27,7 +28,7 @@ impl GetContactMethodsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactMethodsInputBuilder {
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>,
 }
 impl GetContactMethodsInputBuilder {
     /// Appends an item to `protocols`.
@@ -38,25 +39,28 @@ impl GetContactMethodsInputBuilder {
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
     pub fn protocols(mut self, input: crate::types::ContactProtocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactProtocol>> {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`GetContactMethodsInput`](crate::operation::get_contact_methods::GetContactMethodsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_contact_methods::GetContactMethodsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact_methods::GetContactMethodsInput { protocols: self.protocols })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_methods::GetContactMethodsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_methods::GetContactMethodsInput {
+                protocols: self.protocols
+                ,
+            }
+        )
     }
 }
+

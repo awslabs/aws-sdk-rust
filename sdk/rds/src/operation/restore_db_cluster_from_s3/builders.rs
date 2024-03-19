@@ -5,23 +5,20 @@ pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s
 
 impl RestoreDbClusterFromS3InputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_db_cluster_from_s3();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_db_cluster_from_s3();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreDBClusterFromS3`.
-///
+/// 
 /// <p>Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"> Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromS3</code> operation has completed and the DB cluster is available.</p>
 /// </note>
@@ -31,33 +28,32 @@ impl RestoreDbClusterFromS3InputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBClusterFromS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3InputBuilder,
+                    inner: crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3InputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
-    > for RestoreDBClusterFromS3FluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
+                    crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
+                > for RestoreDBClusterFromS3FluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
+                        crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreDBClusterFromS3FluentBuilder {
     /// Creates a new `RestoreDBClusterFromS3`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl RestoreDBClusterFromS3FluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output, crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -123,12 +110,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// <p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
@@ -274,12 +261,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -541,12 +528,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specifies whether the restored DB cluster is encrypted.</p>
@@ -733,7 +720,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
@@ -741,7 +728,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p><b>Aurora MySQL</b></p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
@@ -943,3 +930,4 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner.get_storage_type()
     }
 }
+

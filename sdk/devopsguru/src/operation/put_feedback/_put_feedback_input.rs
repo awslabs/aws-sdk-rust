@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFeedbackInput {
+pub struct PutFeedbackInput  {
     /// <p>The feedback from customers is about the recommendations in this insight.</p>
     pub insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
 }
-impl PutFeedbackInput {
+impl  PutFeedbackInput  {
     /// <p>The feedback from customers is about the recommendations in this insight.</p>
-    pub fn insight_feedback(&self) -> ::std::option::Option<&crate::types::InsightFeedback> {
+    pub fn insight_feedback(&self) -> ::std::option::Option<& crate::types::InsightFeedback> {
         self.insight_feedback.as_ref()
     }
 }
@@ -33,8 +33,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The feedback from customers is about the recommendations in this insight.</p>
     pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
-        self.insight_feedback = input;
-        self
+        self.insight_feedback = input; self
     }
     /// <p>The feedback from customers is about the recommendations in this insight.</p>
     pub fn get_insight_feedback(&self) -> &::std::option::Option<crate::types::InsightFeedback> {
@@ -42,8 +41,12 @@ impl PutFeedbackInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
-            insight_feedback: self.insight_feedback,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_feedback::PutFeedbackInput {
+                insight_feedback: self.insight_feedback
+                ,
+            }
+        )
     }
 }
+

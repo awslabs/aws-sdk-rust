@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourcesByExternalIdInput {
+pub struct DeleteResourcesByExternalIdInput  {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourcesByExternalIdInput {
+impl  DeleteResourcesByExternalIdInput  {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl DeleteResourcesByExternalIdInputBuilder {
     }
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput {
-            external_id: self.external_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput {
+                external_id: self.external_id
+                ,
+            }
+        )
     }
 }
+

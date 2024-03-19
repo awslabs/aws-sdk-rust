@@ -3,7 +3,7 @@
 /// <p>Describes the GraphQL configuration for an API for a code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GraphQlRenderConfig {
+pub struct GraphQlRenderConfig  {
     /// <p>The path to the GraphQL types file, relative to the component output directory.</p>
     pub types_file_path: ::std::string::String,
     /// <p>The path to the GraphQL queries file, relative to the component output directory.</p>
@@ -15,31 +15,26 @@ pub struct GraphQlRenderConfig {
     /// <p>The path to the GraphQL fragments file, relative to the component output directory.</p>
     pub fragments_file_path: ::std::string::String,
 }
-impl GraphQlRenderConfig {
+impl  GraphQlRenderConfig  {
     /// <p>The path to the GraphQL types file, relative to the component output directory.</p>
-    pub fn types_file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.types_file_path.deref()
+    pub fn types_file_path(&self) -> & str {
+        use std::ops::Deref; self.types_file_path.deref()
     }
     /// <p>The path to the GraphQL queries file, relative to the component output directory.</p>
-    pub fn queries_file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.queries_file_path.deref()
+    pub fn queries_file_path(&self) -> & str {
+        use std::ops::Deref; self.queries_file_path.deref()
     }
     /// <p>The path to the GraphQL mutations file, relative to the component output directory.</p>
-    pub fn mutations_file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.mutations_file_path.deref()
+    pub fn mutations_file_path(&self) -> & str {
+        use std::ops::Deref; self.mutations_file_path.deref()
     }
     /// <p>The path to the GraphQL subscriptions file, relative to the component output directory.</p>
-    pub fn subscriptions_file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.subscriptions_file_path.deref()
+    pub fn subscriptions_file_path(&self) -> & str {
+        use std::ops::Deref; self.subscriptions_file_path.deref()
     }
     /// <p>The path to the GraphQL fragments file, relative to the component output directory.</p>
-    pub fn fragments_file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.fragments_file_path.deref()
+    pub fn fragments_file_path(&self) -> & str {
+        use std::ops::Deref; self.fragments_file_path.deref()
     }
 }
 impl GraphQlRenderConfig {
@@ -68,8 +63,7 @@ impl GraphQlRenderConfigBuilder {
     }
     /// <p>The path to the GraphQL types file, relative to the component output directory.</p>
     pub fn set_types_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.types_file_path = input;
-        self
+        self.types_file_path = input; self
     }
     /// <p>The path to the GraphQL types file, relative to the component output directory.</p>
     pub fn get_types_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +77,7 @@ impl GraphQlRenderConfigBuilder {
     }
     /// <p>The path to the GraphQL queries file, relative to the component output directory.</p>
     pub fn set_queries_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queries_file_path = input;
-        self
+        self.queries_file_path = input; self
     }
     /// <p>The path to the GraphQL queries file, relative to the component output directory.</p>
     pub fn get_queries_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +91,7 @@ impl GraphQlRenderConfigBuilder {
     }
     /// <p>The path to the GraphQL mutations file, relative to the component output directory.</p>
     pub fn set_mutations_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mutations_file_path = input;
-        self
+        self.mutations_file_path = input; self
     }
     /// <p>The path to the GraphQL mutations file, relative to the component output directory.</p>
     pub fn get_mutations_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +105,7 @@ impl GraphQlRenderConfigBuilder {
     }
     /// <p>The path to the GraphQL subscriptions file, relative to the component output directory.</p>
     pub fn set_subscriptions_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriptions_file_path = input;
-        self
+        self.subscriptions_file_path = input; self
     }
     /// <p>The path to the GraphQL subscriptions file, relative to the component output directory.</p>
     pub fn get_subscriptions_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl GraphQlRenderConfigBuilder {
     }
     /// <p>The path to the GraphQL fragments file, relative to the component output directory.</p>
     pub fn set_fragments_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fragments_file_path = input;
-        self
+        self.fragments_file_path = input; self
     }
     /// <p>The path to the GraphQL fragments file, relative to the component output directory.</p>
     pub fn get_fragments_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,37 +133,35 @@ impl GraphQlRenderConfigBuilder {
     /// - [`subscriptions_file_path`](crate::types::builders::GraphQlRenderConfigBuilder::subscriptions_file_path)
     /// - [`fragments_file_path`](crate::types::builders::GraphQlRenderConfigBuilder::fragments_file_path)
     pub fn build(self) -> ::std::result::Result<crate::types::GraphQlRenderConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GraphQlRenderConfig {
-            types_file_path: self.types_file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "types_file_path",
-                    "types_file_path was not specified but it is required when building GraphQlRenderConfig",
-                )
-            })?,
-            queries_file_path: self.queries_file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queries_file_path",
-                    "queries_file_path was not specified but it is required when building GraphQlRenderConfig",
-                )
-            })?,
-            mutations_file_path: self.mutations_file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mutations_file_path",
-                    "mutations_file_path was not specified but it is required when building GraphQlRenderConfig",
-                )
-            })?,
-            subscriptions_file_path: self.subscriptions_file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscriptions_file_path",
-                    "subscriptions_file_path was not specified but it is required when building GraphQlRenderConfig",
-                )
-            })?,
-            fragments_file_path: self.fragments_file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fragments_file_path",
-                    "fragments_file_path was not specified but it is required when building GraphQlRenderConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GraphQlRenderConfig {
+                types_file_path: self.types_file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("types_file_path", "types_file_path was not specified but it is required when building GraphQlRenderConfig")
+                    )?
+                ,
+                queries_file_path: self.queries_file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queries_file_path", "queries_file_path was not specified but it is required when building GraphQlRenderConfig")
+                    )?
+                ,
+                mutations_file_path: self.mutations_file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mutations_file_path", "mutations_file_path was not specified but it is required when building GraphQlRenderConfig")
+                    )?
+                ,
+                subscriptions_file_path: self.subscriptions_file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscriptions_file_path", "subscriptions_file_path was not specified but it is required when building GraphQlRenderConfig")
+                    )?
+                ,
+                fragments_file_path: self.fragments_file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fragments_file_path", "fragments_file_path was not specified but it is required when building GraphQlRenderConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

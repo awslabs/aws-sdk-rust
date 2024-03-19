@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageScanFindingAggregationsInput {
+pub struct ListImageScanFindingAggregationsInput  {
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListImageScanFindingAggregationsInput {
+impl  ListImageScanFindingAggregationsInput  {
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Filter> {
         self.filter.as_ref()
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListImageScanFindingAggregationsInputBuilder {
     }
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
@@ -54,25 +53,22 @@ impl ListImageScanFindingAggregationsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImageScanFindingAggregationsInput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-            },
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

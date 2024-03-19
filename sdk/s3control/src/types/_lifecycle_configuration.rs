@@ -3,16 +3,17 @@
 /// <p>The container for the Outposts bucket lifecycle configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleConfiguration {
+pub struct LifecycleConfiguration  {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>,
 }
-impl LifecycleConfiguration {
+impl  LifecycleConfiguration  {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::LifecycleRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::LifecycleRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LifecycleConfiguration {
@@ -26,7 +27,7 @@ impl LifecycleConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleConfigurationBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>,
 }
 impl LifecycleConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -36,21 +37,24 @@ impl LifecycleConfigurationBuilder {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
     pub fn rules(mut self, input: crate::types::LifecycleRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>A lifecycle rule for individual objects in an Outposts bucket.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecycleRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`LifecycleConfiguration`](crate::types::LifecycleConfiguration).
     pub fn build(self) -> crate::types::LifecycleConfiguration {
-        crate::types::LifecycleConfiguration { rules: self.rules }
+        crate::types::LifecycleConfiguration {
+            rules: self.rules
+            ,
+        }
     }
 }
+

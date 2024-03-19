@@ -3,7 +3,7 @@
 /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetentionPeriod {
+pub struct RetentionPeriod  {
     /// <p>The number of days that your data is kept.</p><note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
@@ -13,7 +13,7 @@ pub struct RetentionPeriod {
     /// </note>
     pub unlimited: ::std::option::Option<bool>,
 }
-impl RetentionPeriod {
+impl  RetentionPeriod  {
     /// <p>The number of days that your data is kept.</p><note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
@@ -53,8 +53,7 @@ impl RetentionPeriodBuilder {
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
     pub fn set_number_of_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_days = input;
-        self
+        self.number_of_days = input; self
     }
     /// <p>The number of days that your data is kept.</p><note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
@@ -73,8 +72,7 @@ impl RetentionPeriodBuilder {
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
     pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unlimited = input;
-        self
+        self.unlimited = input; self
     }
     /// <p>If true, your data is kept indefinitely.</p><note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
@@ -85,8 +83,11 @@ impl RetentionPeriodBuilder {
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {
         crate::types::RetentionPeriod {
-            number_of_days: self.number_of_days,
-            unlimited: self.unlimited,
+            number_of_days: self.number_of_days
+            ,
+            unlimited: self.unlimited
+            ,
         }
     }
 }
+

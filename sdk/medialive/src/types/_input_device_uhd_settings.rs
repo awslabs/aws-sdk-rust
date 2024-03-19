@@ -3,7 +3,7 @@
 /// Settings that describe the active source from the input device, and the video characteristics of that source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDeviceUhdSettings {
+pub struct InputDeviceUhdSettings  {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     pub active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
     /// The source at the input device that is currently active. You can specify this source.
@@ -27,19 +27,19 @@ pub struct InputDeviceUhdSettings {
     /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
     pub mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>,
     /// An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow.
-    pub audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceUhdAudioChannelPairConfig>>,
+    pub audio_channel_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceUhdAudioChannelPairConfig>>,
 }
-impl InputDeviceUhdSettings {
+impl  InputDeviceUhdSettings  {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-    pub fn active_input(&self) -> ::std::option::Option<&crate::types::InputDeviceActiveInput> {
+    pub fn active_input(&self) -> ::std::option::Option<& crate::types::InputDeviceActiveInput> {
         self.active_input.as_ref()
     }
     /// The source at the input device that is currently active. You can specify this source.
-    pub fn configured_input(&self) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
+    pub fn configured_input(&self) -> ::std::option::Option<& crate::types::InputDeviceConfiguredInput> {
         self.configured_input.as_ref()
     }
     /// The state of the input device.
-    pub fn device_state(&self) -> ::std::option::Option<&crate::types::InputDeviceState> {
+    pub fn device_state(&self) -> ::std::option::Option<& crate::types::InputDeviceState> {
         self.device_state.as_ref()
     }
     /// The frame rate of the video source.
@@ -55,7 +55,7 @@ impl InputDeviceUhdSettings {
         self.max_bitrate
     }
     /// The scan type of the video source.
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::InputDeviceScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::InputDeviceScanType> {
         self.scan_type.as_ref()
     }
     /// The width of the video source, in pixels.
@@ -67,18 +67,19 @@ impl InputDeviceUhdSettings {
         self.latency_ms
     }
     /// The codec for the video that the device produces.
-    pub fn codec(&self) -> ::std::option::Option<&crate::types::InputDeviceCodec> {
+    pub fn codec(&self) -> ::std::option::Option<& crate::types::InputDeviceCodec> {
         self.codec.as_ref()
     }
     /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
-    pub fn mediaconnect_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceMediaConnectSettings> {
+    pub fn mediaconnect_settings(&self) -> ::std::option::Option<& crate::types::InputDeviceMediaConnectSettings> {
         self.mediaconnect_settings.as_ref()
     }
     /// An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_channel_pairs.is_none()`.
-    pub fn audio_channel_pairs(&self) -> &[crate::types::InputDeviceUhdAudioChannelPairConfig] {
-        self.audio_channel_pairs.as_deref().unwrap_or_default()
+    pub fn audio_channel_pairs(&self) -> & [crate::types::InputDeviceUhdAudioChannelPairConfig] {
+        self.audio_channel_pairs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InputDeviceUhdSettings {
@@ -103,7 +104,7 @@ pub struct InputDeviceUhdSettingsBuilder {
     pub(crate) latency_ms: ::std::option::Option<i32>,
     pub(crate) codec: ::std::option::Option<crate::types::InputDeviceCodec>,
     pub(crate) mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>,
-    pub(crate) audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceUhdAudioChannelPairConfig>>,
+    pub(crate) audio_channel_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceUhdAudioChannelPairConfig>>,
 }
 impl InputDeviceUhdSettingsBuilder {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -113,8 +114,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     pub fn set_active_input(mut self, input: ::std::option::Option<crate::types::InputDeviceActiveInput>) -> Self {
-        self.active_input = input;
-        self
+        self.active_input = input; self
     }
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
     pub fn get_active_input(&self) -> &::std::option::Option<crate::types::InputDeviceActiveInput> {
@@ -127,8 +127,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The source at the input device that is currently active. You can specify this source.
     pub fn set_configured_input(mut self, input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>) -> Self {
-        self.configured_input = input;
-        self
+        self.configured_input = input; self
     }
     /// The source at the input device that is currently active. You can specify this source.
     pub fn get_configured_input(&self) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
@@ -141,8 +140,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The state of the input device.
     pub fn set_device_state(mut self, input: ::std::option::Option<crate::types::InputDeviceState>) -> Self {
-        self.device_state = input;
-        self
+        self.device_state = input; self
     }
     /// The state of the input device.
     pub fn get_device_state(&self) -> &::std::option::Option<crate::types::InputDeviceState> {
@@ -155,8 +153,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The frame rate of the video source.
     pub fn set_framerate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.framerate = input;
-        self
+        self.framerate = input; self
     }
     /// The frame rate of the video source.
     pub fn get_framerate(&self) -> &::std::option::Option<f64> {
@@ -169,8 +166,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The height of the video source, in pixels.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// The height of the video source, in pixels.
     pub fn get_height(&self) -> &::std::option::Option<i32> {
@@ -183,8 +179,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -197,8 +192,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The scan type of the video source.
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::InputDeviceScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// The scan type of the video source.
     pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::InputDeviceScanType> {
@@ -211,8 +205,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The width of the video source, in pixels.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// The width of the video source, in pixels.
     pub fn get_width(&self) -> &::std::option::Option<i32> {
@@ -225,8 +218,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub fn set_latency_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.latency_ms = input;
-        self
+        self.latency_ms = input; self
     }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
@@ -239,8 +231,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// The codec for the video that the device produces.
     pub fn set_codec(mut self, input: ::std::option::Option<crate::types::InputDeviceCodec>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// The codec for the video that the device produces.
     pub fn get_codec(&self) -> &::std::option::Option<crate::types::InputDeviceCodec> {
@@ -253,8 +244,7 @@ impl InputDeviceUhdSettingsBuilder {
     }
     /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
     pub fn set_mediaconnect_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>) -> Self {
-        self.mediaconnect_settings = input;
-        self
+        self.mediaconnect_settings = input; self
     }
     /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
     pub fn get_mediaconnect_settings(&self) -> &::std::option::Option<crate::types::InputDeviceMediaConnectSettings> {
@@ -267,37 +257,46 @@ impl InputDeviceUhdSettingsBuilder {
     /// An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow.
     pub fn audio_channel_pairs(mut self, input: crate::types::InputDeviceUhdAudioChannelPairConfig) -> Self {
         let mut v = self.audio_channel_pairs.unwrap_or_default();
-        v.push(input);
-        self.audio_channel_pairs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audio_channel_pairs = ::std::option::Option::Some(v);
+                        self
     }
     /// An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow.
-    pub fn set_audio_channel_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceUhdAudioChannelPairConfig>>,
-    ) -> Self {
-        self.audio_channel_pairs = input;
-        self
+    pub fn set_audio_channel_pairs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceUhdAudioChannelPairConfig>>) -> Self {
+        self.audio_channel_pairs = input; self
     }
     /// An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow.
-    pub fn get_audio_channel_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceUhdAudioChannelPairConfig>> {
+    pub fn get_audio_channel_pairs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceUhdAudioChannelPairConfig>> {
         &self.audio_channel_pairs
     }
     /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
     pub fn build(self) -> crate::types::InputDeviceUhdSettings {
         crate::types::InputDeviceUhdSettings {
-            active_input: self.active_input,
-            configured_input: self.configured_input,
-            device_state: self.device_state,
-            framerate: self.framerate,
-            height: self.height,
-            max_bitrate: self.max_bitrate,
-            scan_type: self.scan_type,
-            width: self.width,
-            latency_ms: self.latency_ms,
-            codec: self.codec,
-            mediaconnect_settings: self.mediaconnect_settings,
-            audio_channel_pairs: self.audio_channel_pairs,
+            active_input: self.active_input
+            ,
+            configured_input: self.configured_input
+            ,
+            device_state: self.device_state
+            ,
+            framerate: self.framerate
+            ,
+            height: self.height
+            ,
+            max_bitrate: self.max_bitrate
+            ,
+            scan_type: self.scan_type
+            ,
+            width: self.width
+            ,
+            latency_ms: self.latency_ms
+            ,
+            codec: self.codec
+            ,
+            mediaconnect_settings: self.mediaconnect_settings
+            ,
+            audio_channel_pairs: self.audio_channel_pairs
+            ,
         }
     }
 }
+

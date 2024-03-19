@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMatchingWorkflows`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput) with field(s):
+                            /// - On success, responds with [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput) with field(s):
     ///   - [`workflow_summaries(Option<Vec::<MatchingWorkflowSummary>>)`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput::workflow_summaries): <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListMatchingWorkflowsError>`](crate::operation::list_matching_workflows::ListMatchingWorkflowsError)
+                            /// - On failure, responds with [`SdkError<ListMatchingWorkflowsError>`](crate::operation::list_matching_workflows::ListMatchingWorkflowsError)
     pub fn list_matching_workflows(&self) -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder {
-        crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

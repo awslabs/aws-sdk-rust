@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentBlueprintsInput {
+pub struct ListEnvironmentBlueprintsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of blueprints to return in a single call to <code>ListEnvironmentBlueprints</code>. When the number of blueprints to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentBlueprints</code> to list the next set of blueprints.</p>
@@ -14,9 +14,9 @@ pub struct ListEnvironmentBlueprintsInput {
     /// <p>Specifies whether the environment blueprint is managed by Amazon DataZone.</p>
     pub managed: ::std::option::Option<bool>,
 }
-impl ListEnvironmentBlueprintsInput {
+impl  ListEnvironmentBlueprintsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The maximum number of blueprints to return in a single call to <code>ListEnvironmentBlueprints</code>. When the number of blueprints to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentBlueprints</code> to list the next set of blueprints.</p>
@@ -24,11 +24,11 @@ impl ListEnvironmentBlueprintsInput {
         self.max_results
     }
     /// <p>When the number of blueprints in the environment is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of blueprints in the environment, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of blueprints.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the Amazon DataZone environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether the environment blueprint is managed by Amazon DataZone.</p>
@@ -62,8 +62,7 @@ impl ListEnvironmentBlueprintsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListEnvironmentBlueprintsInputBuilder {
     }
     /// <p>The maximum number of blueprints to return in a single call to <code>ListEnvironmentBlueprints</code>. When the number of blueprints to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentBlueprints</code> to list the next set of blueprints.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of blueprints to return in a single call to <code>ListEnvironmentBlueprints</code>. When the number of blueprints to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentBlueprints</code> to list the next set of blueprints.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl ListEnvironmentBlueprintsInputBuilder {
     }
     /// <p>When the number of blueprints in the environment is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of blueprints in the environment, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of blueprints.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of blueprints in the environment is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of blueprints in the environment, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of blueprints.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ListEnvironmentBlueprintsInputBuilder {
     }
     /// <p>The name of the Amazon DataZone environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon DataZone environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,26 +114,28 @@ impl ListEnvironmentBlueprintsInputBuilder {
     }
     /// <p>Specifies whether the environment blueprint is managed by Amazon DataZone.</p>
     pub fn set_managed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.managed = input;
-        self
+        self.managed = input; self
     }
     /// <p>Specifies whether the environment blueprint is managed by Amazon DataZone.</p>
     pub fn get_managed(&self) -> &::std::option::Option<bool> {
         &self.managed
     }
     /// Consumes the builder and constructs a [`ListEnvironmentBlueprintsInput`](crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput {
-            domain_identifier: self.domain_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            name: self.name,
-            managed: self.managed,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput {
+                domain_identifier: self.domain_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                name: self.name
+                ,
+                managed: self.managed
+                ,
+            }
+        )
     }
 }
+

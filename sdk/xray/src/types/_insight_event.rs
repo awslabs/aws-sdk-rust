@@ -3,7 +3,7 @@
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightEvent {
+pub struct InsightEvent  {
     /// <p>A brief description of the event.</p>
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
@@ -13,30 +13,31 @@ pub struct InsightEvent {
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub root_cause_service_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
+    pub top_anomalous_services: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalousService>>,
 }
-impl InsightEvent {
+impl  InsightEvent  {
     /// <p>A brief description of the event.</p>
-    pub fn summary(&self) -> ::std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn client_request_impact_statistics(&self) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
+    pub fn client_request_impact_statistics(&self) -> ::std::option::Option<& crate::types::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn root_cause_service_request_impact_statistics(&self) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
+    pub fn root_cause_service_request_impact_statistics(&self) -> ::std::option::Option<& crate::types::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_anomalous_services.is_none()`.
-    pub fn top_anomalous_services(&self) -> &[crate::types::AnomalousService] {
-        self.top_anomalous_services.as_deref().unwrap_or_default()
+    pub fn top_anomalous_services(&self) -> & [crate::types::AnomalousService] {
+        self.top_anomalous_services.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InsightEvent {
@@ -54,7 +55,7 @@ pub struct InsightEventBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) client_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     pub(crate) root_cause_service_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
-    pub(crate) top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
+    pub(crate) top_anomalous_services: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalousService>>,
 }
 impl InsightEventBuilder {
     /// <p>A brief description of the event.</p>
@@ -64,8 +65,7 @@ impl InsightEventBuilder {
     }
     /// <p>A brief description of the event.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>A brief description of the event.</p>
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl InsightEventBuilder {
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,8 +91,7 @@ impl InsightEventBuilder {
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_client_request_impact_statistics(mut self, input: ::std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
-        self.client_request_impact_statistics = input;
-        self
+        self.client_request_impact_statistics = input; self
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn get_client_request_impact_statistics(&self) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
@@ -106,8 +104,7 @@ impl InsightEventBuilder {
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_root_cause_service_request_impact_statistics(mut self, input: ::std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
-        self.root_cause_service_request_impact_statistics = input;
-        self
+        self.root_cause_service_request_impact_statistics = input; self
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn get_root_cause_service_request_impact_statistics(&self) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
@@ -120,27 +117,32 @@ impl InsightEventBuilder {
     /// <p>The service during the event that is most impacted by the incident.</p>
     pub fn top_anomalous_services(mut self, input: crate::types::AnomalousService) -> Self {
         let mut v = self.top_anomalous_services.unwrap_or_default();
-        v.push(input);
-        self.top_anomalous_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.top_anomalous_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub fn set_top_anomalous_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>) -> Self {
-        self.top_anomalous_services = input;
-        self
+    pub fn set_top_anomalous_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalousService>>) -> Self {
+        self.top_anomalous_services = input; self
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub fn get_top_anomalous_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>> {
+    pub fn get_top_anomalous_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnomalousService>> {
         &self.top_anomalous_services
     }
     /// Consumes the builder and constructs a [`InsightEvent`](crate::types::InsightEvent).
     pub fn build(self) -> crate::types::InsightEvent {
         crate::types::InsightEvent {
-            summary: self.summary,
-            event_time: self.event_time,
-            client_request_impact_statistics: self.client_request_impact_statistics,
-            root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics,
-            top_anomalous_services: self.top_anomalous_services,
+            summary: self.summary
+            ,
+            event_time: self.event_time
+            ,
+            client_request_impact_statistics: self.client_request_impact_statistics
+            ,
+            root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics
+            ,
+            top_anomalous_services: self.top_anomalous_services
+            ,
         }
     }
 }
+

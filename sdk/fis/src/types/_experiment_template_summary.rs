@@ -3,7 +3,7 @@
 /// <p>Provides a summary of an experiment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateSummary {
+pub struct ExperimentTemplateSummary  {
     /// <p>The ID of the experiment template.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
@@ -15,31 +15,31 @@ pub struct ExperimentTemplateSummary {
     /// <p>The time that the experiment template was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ExperimentTemplateSummary {
+impl  ExperimentTemplateSummary  {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the experiment template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time that the experiment template was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the experiment template was last updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The tags for the experiment template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,7 +59,7 @@ pub struct ExperimentTemplateSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ExperimentTemplateSummaryBuilder {
     /// <p>The ID of the experiment template.</p>
@@ -69,8 +69,7 @@ impl ExperimentTemplateSummaryBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the experiment template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ExperimentTemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ExperimentTemplateSummaryBuilder {
     }
     /// <p>The description of the experiment template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the experiment template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ExperimentTemplateSummaryBuilder {
     }
     /// <p>The time that the experiment template was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the experiment template was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl ExperimentTemplateSummaryBuilder {
     }
     /// <p>The time that the experiment template was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The time that the experiment template was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,28 +134,34 @@ impl ExperimentTemplateSummaryBuilder {
     /// <p>The tags for the experiment template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the experiment template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the experiment template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateSummary`](crate::types::ExperimentTemplateSummary).
     pub fn build(self) -> crate::types::ExperimentTemplateSummary {
         crate::types::ExperimentTemplateSummary {
-            id: self.id,
-            arn: self.arn,
-            description: self.description,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

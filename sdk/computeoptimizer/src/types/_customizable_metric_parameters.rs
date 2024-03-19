@@ -3,19 +3,19 @@
 /// <p>Defines the various metric parameters that can be customized, such as threshold and headroom.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizableMetricParameters {
+pub struct CustomizableMetricParameters  {
     /// <p>The threshold value used for the specified metric parameter.</p>
     pub threshold: ::std::option::Option<crate::types::CustomizableMetricThreshold>,
     /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
     pub headroom: ::std::option::Option<crate::types::CustomizableMetricHeadroom>,
 }
-impl CustomizableMetricParameters {
+impl  CustomizableMetricParameters  {
     /// <p>The threshold value used for the specified metric parameter.</p>
-    pub fn threshold(&self) -> ::std::option::Option<&crate::types::CustomizableMetricThreshold> {
+    pub fn threshold(&self) -> ::std::option::Option<& crate::types::CustomizableMetricThreshold> {
         self.threshold.as_ref()
     }
     /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
-    pub fn headroom(&self) -> ::std::option::Option<&crate::types::CustomizableMetricHeadroom> {
+    pub fn headroom(&self) -> ::std::option::Option<& crate::types::CustomizableMetricHeadroom> {
         self.headroom.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CustomizableMetricParametersBuilder {
     }
     /// <p>The threshold value used for the specified metric parameter.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::CustomizableMetricThreshold>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The threshold value used for the specified metric parameter.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<crate::types::CustomizableMetricThreshold> {
@@ -55,8 +54,7 @@ impl CustomizableMetricParametersBuilder {
     }
     /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
     pub fn set_headroom(mut self, input: ::std::option::Option<crate::types::CustomizableMetricHeadroom>) -> Self {
-        self.headroom = input;
-        self
+        self.headroom = input; self
     }
     /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
     pub fn get_headroom(&self) -> &::std::option::Option<crate::types::CustomizableMetricHeadroom> {
@@ -65,8 +63,11 @@ impl CustomizableMetricParametersBuilder {
     /// Consumes the builder and constructs a [`CustomizableMetricParameters`](crate::types::CustomizableMetricParameters).
     pub fn build(self) -> crate::types::CustomizableMetricParameters {
         crate::types::CustomizableMetricParameters {
-            threshold: self.threshold,
-            headroom: self.headroom,
+            threshold: self.threshold
+            ,
+            headroom: self.headroom
+            ,
         }
     }
 }
+

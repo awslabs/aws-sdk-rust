@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIpSetInput {
+pub struct CreateIpSetInput  {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
@@ -17,24 +17,24 @@ pub struct CreateIpSetInput {
     /// <p>The idempotency token for the create request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to a new IP set resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateIpSetInput {
+impl  CreateIpSetInput  {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The format of the file that contains the IPSet.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::IpSetFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::IpSetFormat> {
         self.format.as_ref()
     }
     /// <p>The URI of the file that contains the IPSet.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
@@ -42,11 +42,11 @@ impl CreateIpSetInput {
         self.activate
     }
     /// <p>The idempotency token for the create request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags to be added to a new IP set resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -67,7 +67,7 @@ pub struct CreateIpSetInputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) activate: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateIpSetInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
@@ -78,8 +78,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl CreateIpSetInputBuilder {
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
@@ -111,8 +109,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::IpSetFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
@@ -126,8 +123,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The URI of the file that contains the IPSet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The URI of the file that contains the IPSet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +137,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub fn set_activate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.activate = input;
-        self
+        self.activate = input; self
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub fn get_activate(&self) -> &::std::option::Option<bool> {
@@ -155,8 +150,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The idempotency token for the create request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token for the create request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,29 +163,38 @@ impl CreateIpSetInputBuilder {
     /// <p>The tags to be added to a new IP set resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be added to a new IP set resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be added to a new IP set resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
-            detector_id: self.detector_id,
-            name: self.name,
-            format: self.format,
-            location: self.location,
-            activate: self.activate,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_ip_set::CreateIpSetInput {
+                detector_id: self.detector_id
+                ,
+                name: self.name
+                ,
+                format: self.format
+                ,
+                location: self.location
+                ,
+                activate: self.activate
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

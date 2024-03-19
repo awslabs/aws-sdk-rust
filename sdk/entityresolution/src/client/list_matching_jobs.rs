@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMatchingJobs`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workflow_name(impl Into<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow to be retrieved.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListMatchingJobsOutput`](crate::operation::list_matching_jobs::ListMatchingJobsOutput) with field(s):
+                            /// - On success, responds with [`ListMatchingJobsOutput`](crate::operation::list_matching_jobs::ListMatchingJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec::<JobSummary>>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::jobs): <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListMatchingJobsError>`](crate::operation::list_matching_jobs::ListMatchingJobsError)
+                            /// - On failure, responds with [`SdkError<ListMatchingJobsError>`](crate::operation::list_matching_jobs::ListMatchingJobsError)
     pub fn list_matching_jobs(&self) -> crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder {
-        crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

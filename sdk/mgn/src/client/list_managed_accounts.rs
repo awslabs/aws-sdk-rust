@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedAccounts`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>List managed accounts request max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>List managed accounts request next token.</p><br>
-    /// - On success, responds with [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput) with field(s):
+                            /// - On success, responds with [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput) with field(s):
     ///   - [`items(Vec::<ManagedAccount>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::items): <p>List managed accounts response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_accounts::ListManagedAccountsOutput::next_token): <p>List managed accounts response next token.</p>
-    /// - On failure, responds with [`SdkError<ListManagedAccountsError>`](crate::operation::list_managed_accounts::ListManagedAccountsError)
+                            /// - On failure, responds with [`SdkError<ListManagedAccountsError>`](crate::operation::list_managed_accounts::ListManagedAccountsError)
     pub fn list_managed_accounts(&self) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder {
-        crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_managed_accounts::builders::ListManagedAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

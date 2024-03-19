@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbProxyOutput {
+pub struct CreateDbProxyOutput  {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
     pub db_proxy: ::std::option::Option<crate::types::DbProxy>,
     _request_id: Option<String>,
 }
-impl CreateDbProxyOutput {
+impl  CreateDbProxyOutput  {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
-    pub fn db_proxy(&self) -> ::std::option::Option<&crate::types::DbProxy> {
+    pub fn db_proxy(&self) -> ::std::option::Option<& crate::types::DbProxy> {
         self.db_proxy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbProxyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbProxyOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbProxyOutput`](crate::operation::create_db_proxy::CreateDbProxyOutput).
     pub fn builder() -> crate::operation::create_db_proxy::builders::CreateDbProxyOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateDbProxyOutputBuilder {
     }
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
     pub fn set_db_proxy(mut self, input: ::std::option::Option<crate::types::DbProxy>) -> Self {
-        self.db_proxy = input;
-        self
+        self.db_proxy = input; self
     }
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
     pub fn get_db_proxy(&self) -> &::std::option::Option<crate::types::DbProxy> {
         &self.db_proxy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbProxyOutput`](crate::operation::create_db_proxy::CreateDbProxyOutput).
     pub fn build(self) -> crate::operation::create_db_proxy::CreateDbProxyOutput {
         crate::operation::create_db_proxy::CreateDbProxyOutput {
-            db_proxy: self.db_proxy,
+            db_proxy: self.db_proxy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

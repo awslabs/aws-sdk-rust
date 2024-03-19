@@ -3,11 +3,11 @@
 /// <p>The possible Amazon Web Services Free Tier configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFreeTierConfig {
+pub struct UpdateFreeTierConfig  {
     /// <p>Activate or deactivate application of Amazon Web Services Free Tier.</p>
     pub activated: bool,
 }
-impl UpdateFreeTierConfig {
+impl  UpdateFreeTierConfig  {
     /// <p>Activate or deactivate application of Amazon Web Services Free Tier.</p>
     pub fn activated(&self) -> bool {
         self.activated
@@ -35,8 +35,7 @@ impl UpdateFreeTierConfigBuilder {
     }
     /// <p>Activate or deactivate application of Amazon Web Services Free Tier.</p>
     pub fn set_activated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.activated = input;
-        self
+        self.activated = input; self
     }
     /// <p>Activate or deactivate application of Amazon Web Services Free Tier.</p>
     pub fn get_activated(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl UpdateFreeTierConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`activated`](crate::types::builders::UpdateFreeTierConfigBuilder::activated)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateFreeTierConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateFreeTierConfig {
-            activated: self.activated.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activated",
-                    "activated was not specified but it is required when building UpdateFreeTierConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateFreeTierConfig {
+                activated: self.activated
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activated", "activated was not specified but it is required when building UpdateFreeTierConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

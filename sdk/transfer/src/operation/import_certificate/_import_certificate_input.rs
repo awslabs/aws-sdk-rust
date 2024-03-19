@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImportCertificateInput {
+pub struct ImportCertificateInput  {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <ul>
@@ -28,11 +28,11 @@ pub struct ImportCertificateInput {
     /// <p>A short description that helps identify the certificate.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportCertificateInput {
+impl  ImportCertificateInput  {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
+    pub fn usage(&self) -> ::std::option::Option<& crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
     /// <ul>
@@ -41,11 +41,11 @@ impl ImportCertificateInput {
     /// <li>
     /// <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p></li>
     /// </ul>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <ul>
@@ -54,29 +54,30 @@ impl ImportCertificateInput {
     /// <li>
     /// <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code></p></li>
     /// </ul>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<& str> {
         self.private_key.as_deref()
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn active_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn active_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.active_date.as_ref()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn inactive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn inactive_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.inactive_date.as_ref()
     }
     /// <p>A short description that helps identify the certificate.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ImportCertificateInput {
+impl  ::std::fmt::Debug for ImportCertificateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateInput");
         formatter.field("usage", &self.usage);
@@ -108,7 +109,7 @@ pub struct ImportCertificateInputBuilder {
     pub(crate) active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportCertificateInputBuilder {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
@@ -119,8 +120,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
-        self.usage = input;
-        self
+        self.usage = input; self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
@@ -144,8 +144,7 @@ impl ImportCertificateInputBuilder {
     /// <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p></li>
     /// </ul>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <ul>
     /// <li>
@@ -163,8 +162,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +185,7 @@ impl ImportCertificateInputBuilder {
     /// <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code></p></li>
     /// </ul>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <ul>
     /// <li>
@@ -206,8 +203,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.active_date = input;
-        self
+        self.active_date = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +216,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inactive_date = input;
-        self
+        self.inactive_date = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -234,8 +229,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>A short description that helps identify the certificate.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A short description that helps identify the certificate.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,33 +242,40 @@ impl ImportCertificateInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
-            usage: self.usage,
-            certificate: self.certificate,
-            certificate_chain: self.certificate_chain,
-            private_key: self.private_key,
-            active_date: self.active_date,
-            inactive_date: self.inactive_date,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_certificate::ImportCertificateInput {
+                usage: self.usage
+                ,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                private_key: self.private_key
+                ,
+                active_date: self.active_date
+                ,
+                inactive_date: self.inactive_date
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInputBuilder {
@@ -291,3 +292,4 @@ impl ::std::fmt::Debug for ImportCertificateInputBuilder {
         formatter.finish()
     }
 }
+

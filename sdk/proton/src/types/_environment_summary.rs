@@ -3,7 +3,7 @@
 /// <p>Summary data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EnvironmentSummary {
+pub struct EnvironmentSummary  {
     /// <p>The name of the environment.</p>
     pub name: ::std::string::String,
     /// <p>The description of the environment.</p>
@@ -43,88 +43,83 @@ pub struct EnvironmentSummary {
     /// <p>The ID of the last successful deployment of this environment.</p>
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl EnvironmentSummary {
+impl  EnvironmentSummary  {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time when the environment was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_deployment_attempted_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_deployment_attempted_at
     }
     /// <p>The time when the environment was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_deployment_succeeded_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_deployment_succeeded_at
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The major version of the environment template.</p>
-    pub fn template_major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_major_version.deref()
+    pub fn template_major_version(&self) -> & str {
+        use std::ops::Deref; self.template_major_version.deref()
     }
     /// <p>The minor version of the environment template.</p>
-    pub fn template_minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_minor_version.deref()
+    pub fn template_minor_version(&self) -> & str {
+        use std::ops::Deref; self.template_minor_version.deref()
     }
     /// <p>The environment deployment status.</p>
-    pub fn deployment_status(&self) -> &crate::types::DeploymentStatus {
+    pub fn deployment_status(&self) -> & crate::types::DeploymentStatus {
         &self.deployment_status
     }
     /// <p>An environment deployment status message.</p>
-    pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> ::std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
-    pub fn proton_service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn proton_service_role_arn(&self) -> ::std::option::Option<& str> {
         self.proton_service_role_arn.as_deref()
     }
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
-    pub fn environment_account_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_account_connection_id(&self) -> ::std::option::Option<& str> {
         self.environment_account_connection_id.as_deref()
     }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
-    pub fn environment_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> ::std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> ::std::option::Option<&crate::types::Provisioning> {
+    pub fn provisioning(&self) -> ::std::option::Option<& crate::types::Provisioning> {
         self.provisioning.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> ::std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
     /// <p>The ID of the last attempted deployment of this environment.</p>
-    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_attempted_deployment_id.as_deref()
     }
     /// <p>The ID of the last successful deployment of this environment.</p>
-    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_succeeded_deployment_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for EnvironmentSummary {
+impl  ::std::fmt::Debug for EnvironmentSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentSummary");
         formatter.field("name", &self.name);
@@ -187,8 +182,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +195,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The description of the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The time when the environment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the environment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,8 +223,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
     pub fn set_last_deployment_attempted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_attempted_at = input;
-        self
+        self.last_deployment_attempted_at = input; self
     }
     /// <p>The time when a deployment of the environment was last attempted.</p>
     pub fn get_last_deployment_attempted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -246,8 +237,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The time when the environment was last deployed successfully.</p>
     pub fn set_last_deployment_succeeded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_succeeded_at = input;
-        self
+        self.last_deployment_succeeded_at = input; self
     }
     /// <p>The time when the environment was last deployed successfully.</p>
     pub fn get_last_deployment_succeeded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -261,8 +251,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +265,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The name of the environment template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the environment template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +279,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The major version of the environment template.</p>
     pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_major_version = input;
-        self
+        self.template_major_version = input; self
     }
     /// <p>The major version of the environment template.</p>
     pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +293,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The minor version of the environment template.</p>
     pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_minor_version = input;
-        self
+        self.template_minor_version = input; self
     }
     /// <p>The minor version of the environment template.</p>
     pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +307,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The environment deployment status.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The environment deployment status.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -335,8 +320,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>An environment deployment status message.</p>
     pub fn set_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_status_message = input;
-        self
+        self.deployment_status_message = input; self
     }
     /// <p>An environment deployment status message.</p>
     pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +333,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     pub fn set_proton_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proton_service_role_arn = input;
-        self
+        self.proton_service_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     pub fn get_proton_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +346,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
     pub fn set_environment_account_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_account_connection_id = input;
-        self
+        self.environment_account_connection_id = input; self
     }
     /// <p>The ID of the environment account connection that the environment is associated with.</p>
     pub fn get_environment_account_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -377,8 +359,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
     pub fn set_environment_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_account_id = input;
-        self
+        self.environment_account_id = input; self
     }
     /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
     pub fn get_environment_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -391,8 +372,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn set_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
-        self.provisioning = input;
-        self
+        self.provisioning = input; self
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
@@ -409,8 +389,7 @@ impl EnvironmentSummaryBuilder {
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_component_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_role_arn = input;
-        self
+        self.component_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated with the environment.</p>
@@ -425,8 +404,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the last attempted deployment of this environment.</p>
     pub fn set_last_attempted_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_attempted_deployment_id = input;
-        self
+        self.last_attempted_deployment_id = input; self
     }
     /// <p>The ID of the last attempted deployment of this environment.</p>
     pub fn get_last_attempted_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -439,8 +417,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The ID of the last successful deployment of this environment.</p>
     pub fn set_last_succeeded_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_succeeded_deployment_id = input;
-        self
+        self.last_succeeded_deployment_id = input; self
     }
     /// <p>The ID of the last successful deployment of this environment.</p>
     pub fn get_last_succeeded_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -458,71 +435,73 @@ impl EnvironmentSummaryBuilder {
     /// - [`template_minor_version`](crate::types::builders::EnvironmentSummaryBuilder::template_minor_version)
     /// - [`deployment_status`](crate::types::builders::EnvironmentSummaryBuilder::deployment_status)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            description: self.description,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            last_deployment_attempted_at: self.last_deployment_attempted_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_deployment_attempted_at",
-                    "last_deployment_attempted_at was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_deployment_succeeded_at",
-                    "last_deployment_succeeded_at was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_major_version",
-                    "template_major_version was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_minor_version",
-                    "template_minor_version was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_status",
-                    "deployment_status was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            deployment_status_message: self.deployment_status_message,
-            proton_service_role_arn: self.proton_service_role_arn,
-            environment_account_connection_id: self.environment_account_connection_id,
-            environment_account_id: self.environment_account_id,
-            provisioning: self.provisioning,
-            component_role_arn: self.component_role_arn,
-            last_attempted_deployment_id: self.last_attempted_deployment_id,
-            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_deployment_attempted_at", "last_deployment_attempted_at was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_deployment_succeeded_at", "last_deployment_succeeded_at was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                template_major_version: self.template_major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_major_version", "template_major_version was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                template_minor_version: self.template_minor_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_minor_version", "template_minor_version was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                deployment_status: self.deployment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_status", "deployment_status was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                proton_service_role_arn: self.proton_service_role_arn
+                ,
+                environment_account_connection_id: self.environment_account_connection_id
+                ,
+                environment_account_id: self.environment_account_id
+                ,
+                provisioning: self.provisioning
+                ,
+                component_role_arn: self.component_role_arn
+                ,
+                last_attempted_deployment_id: self.last_attempted_deployment_id
+                ,
+                last_succeeded_deployment_id: self.last_succeeded_deployment_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
@@ -549,3 +528,4 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.finish()
     }
 }
+

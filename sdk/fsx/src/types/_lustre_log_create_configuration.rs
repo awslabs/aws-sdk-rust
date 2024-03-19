@@ -4,7 +4,7 @@
 /// <p>Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LustreLogCreateConfiguration {
+pub struct LustreLogCreateConfiguration  {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
     /// <li>
@@ -33,7 +33,7 @@ pub struct LustreLogCreateConfiguration {
     /// </ul>
     pub destination: ::std::option::Option<::std::string::String>,
 }
-impl LustreLogCreateConfiguration {
+impl  LustreLogCreateConfiguration  {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl LustreLogCreateConfiguration {
     /// <li>
     /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
-    pub fn level(&self) -> ::std::option::Option<&crate::types::LustreAccessAuditLogLevel> {
+    pub fn level(&self) -> ::std::option::Option<& crate::types::LustreAccessAuditLogLevel> {
         self.level.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
@@ -62,7 +62,7 @@ impl LustreLogCreateConfiguration {
     /// <li>
     /// <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
@@ -109,8 +109,7 @@ impl LustreLogCreateConfigurationBuilder {
     /// <p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
@@ -159,8 +158,7 @@ impl LustreLogCreateConfigurationBuilder {
     /// <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
@@ -182,8 +180,11 @@ impl LustreLogCreateConfigurationBuilder {
     /// Consumes the builder and constructs a [`LustreLogCreateConfiguration`](crate::types::LustreLogCreateConfiguration).
     pub fn build(self) -> crate::types::LustreLogCreateConfiguration {
         crate::types::LustreLogCreateConfiguration {
-            level: self.level,
-            destination: self.destination,
+            level: self.level
+            ,
+            destination: self.destination
+            ,
         }
     }
 }
+

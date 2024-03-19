@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMapOutput {
+pub struct CreateMapOutput  {
     /// <p>The name of the map resource.</p>
     pub map_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
@@ -15,31 +15,29 @@ pub struct CreateMapOutput {
     pub create_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl CreateMapOutput {
+impl  CreateMapOutput  {
     /// <p>The name of the map resource.</p>
-    pub fn map_name(&self) -> &str {
-        use std::ops::Deref;
-        self.map_name.deref()
+    pub fn map_name(&self) -> & str {
+        use std::ops::Deref; self.map_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li>
     /// <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
-    pub fn map_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.map_arn.deref()
+    pub fn map_arn(&self) -> & str {
+        use std::ops::Deref; self.map_arn.deref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMapOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMapOutput {
     /// Creates a new builder-style object to manufacture [`CreateMapOutput`](crate::operation::create_map::CreateMapOutput).
     pub fn builder() -> crate::operation::create_map::builders::CreateMapOutputBuilder {
@@ -65,8 +63,7 @@ impl CreateMapOutputBuilder {
     }
     /// <p>The name of the map resource.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The name of the map resource.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +85,7 @@ impl CreateMapOutputBuilder {
     /// <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code></p></li>
     /// </ul>
     pub fn set_map_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_arn = input;
-        self
+        self.map_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
@@ -107,48 +103,47 @@ impl CreateMapOutputBuilder {
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMapOutput`](crate::operation::create_map::CreateMapOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`map_name`](crate::operation::create_map::builders::CreateMapOutputBuilder::map_name)
     /// - [`map_arn`](crate::operation::create_map::builders::CreateMapOutputBuilder::map_arn)
     /// - [`create_time`](crate::operation::create_map::builders::CreateMapOutputBuilder::create_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_map::CreateMapOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_map::CreateMapOutput {
-            map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "map_name",
-                    "map_name was not specified but it is required when building CreateMapOutput",
-                )
-            })?,
-            map_arn: self.map_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "map_arn",
-                    "map_arn was not specified but it is required when building CreateMapOutput",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building CreateMapOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_map::CreateMapOutput {
+                map_name: self.map_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("map_name", "map_name was not specified but it is required when building CreateMapOutput")
+                    )?
+                ,
+                map_arn: self.map_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("map_arn", "map_arn was not specified but it is required when building CreateMapOutput")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building CreateMapOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

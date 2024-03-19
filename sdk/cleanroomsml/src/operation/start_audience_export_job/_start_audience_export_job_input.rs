@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAudienceExportJobInput {
+pub struct StartAudienceExportJobInput  {
     /// <p>The name of the audience export job.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you want to export.</p>
@@ -12,21 +12,21 @@ pub struct StartAudienceExportJobInput {
     /// <p>The description of the audience export job.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StartAudienceExportJobInput {
+impl  StartAudienceExportJobInput  {
     /// <p>The name of the audience export job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you want to export.</p>
-    pub fn audience_generation_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audience_generation_job_arn(&self) -> ::std::option::Option<& str> {
         self.audience_generation_job_arn.as_deref()
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
-    pub fn audience_size(&self) -> ::std::option::Option<&crate::types::AudienceSize> {
+    pub fn audience_size(&self) -> ::std::option::Option<& crate::types::AudienceSize> {
         self.audience_size.as_ref()
     }
     /// <p>The description of the audience export job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartAudienceExportJobInputBuilder {
     }
     /// <p>The name of the audience export job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience export job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartAudienceExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you want to export.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you want to export.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartAudienceExportJobInputBuilder {
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn set_audience_size(mut self, input: ::std::option::Option<crate::types::AudienceSize>) -> Self {
-        self.audience_size = input;
-        self
+        self.audience_size = input; self
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn get_audience_size(&self) -> &::std::option::Option<crate::types::AudienceSize> {
@@ -99,25 +96,26 @@ impl StartAudienceExportJobInputBuilder {
     }
     /// <p>The description of the audience export job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience export job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`StartAudienceExportJobInput`](crate::operation::start_audience_export_job::StartAudienceExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_audience_export_job::StartAudienceExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_audience_export_job::StartAudienceExportJobInput {
-            name: self.name,
-            audience_generation_job_arn: self.audience_generation_job_arn,
-            audience_size: self.audience_size,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_audience_export_job::StartAudienceExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_audience_export_job::StartAudienceExportJobInput {
+                name: self.name
+                ,
+                audience_generation_job_arn: self.audience_generation_job_arn
+                ,
+                audience_size: self.audience_size
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

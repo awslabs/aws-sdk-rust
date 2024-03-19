@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAwsDefaultServiceQuotaOutput {
+pub struct GetAwsDefaultServiceQuotaOutput  {
     /// <p>Information about the quota.</p>
     pub quota: ::std::option::Option<crate::types::ServiceQuota>,
     _request_id: Option<String>,
 }
-impl GetAwsDefaultServiceQuotaOutput {
+impl  GetAwsDefaultServiceQuotaOutput  {
     /// <p>Information about the quota.</p>
-    pub fn quota(&self) -> ::std::option::Option<&crate::types::ServiceQuota> {
+    pub fn quota(&self) -> ::std::option::Option<& crate::types::ServiceQuota> {
         self.quota.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAwsDefaultServiceQuotaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAwsDefaultServiceQuotaOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput).
     pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAwsDefaultServiceQuotaOutputBuilder {
     }
     /// <p>Information about the quota.</p>
     pub fn set_quota(mut self, input: ::std::option::Option<crate::types::ServiceQuota>) -> Self {
-        self.quota = input;
-        self
+        self.quota = input; self
     }
     /// <p>Information about the quota.</p>
     pub fn get_quota(&self) -> &::std::option::Option<crate::types::ServiceQuota> {
         &self.quota
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput).
     pub fn build(self) -> crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput {
         crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput {
-            quota: self.quota,
+            quota: self.quota
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

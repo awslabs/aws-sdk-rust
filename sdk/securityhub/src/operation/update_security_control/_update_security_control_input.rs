@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecurityControlInput {
+pub struct UpdateSecurityControlInput  {
     /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies which security control parameters to update.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConfiguration>>,
     /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
     pub last_update_reason: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSecurityControlInput {
+impl  UpdateSecurityControlInput  {
     /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
-    pub fn security_control_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_control_id(&self) -> ::std::option::Option<& str> {
         self.security_control_id.as_deref()
     }
     /// <p>An object that specifies which security control parameters to update.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ParameterConfiguration>> {
         self.parameters.as_ref()
     }
     /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
-    pub fn last_update_reason(&self) -> ::std::option::Option<&str> {
+    pub fn last_update_reason(&self) -> ::std::option::Option<& str> {
         self.last_update_reason.as_deref()
     }
 }
@@ -36,7 +36,7 @@ impl UpdateSecurityControlInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityControlInputBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConfiguration>>,
     pub(crate) last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityControlInputBuilder {
@@ -48,8 +48,7 @@ impl UpdateSecurityControlInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_control_id = input;
-        self
+        self.security_control_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the control to update.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,20 +61,16 @@ impl UpdateSecurityControlInputBuilder {
     /// <p>An object that specifies which security control parameters to update.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConfiguration) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that specifies which security control parameters to update.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConfiguration>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An object that specifies which security control parameters to update.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConfiguration>> {
         &self.parameters
     }
     /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
@@ -85,22 +80,24 @@ impl UpdateSecurityControlInputBuilder {
     }
     /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
     pub fn set_last_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_update_reason = input;
-        self
+        self.last_update_reason = input; self
     }
     /// <p>The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
     pub fn get_last_update_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_update_reason
     }
     /// Consumes the builder and constructs a [`UpdateSecurityControlInput`](crate::operation::update_security_control::UpdateSecurityControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_security_control::UpdateSecurityControlInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_security_control::UpdateSecurityControlInput {
-            security_control_id: self.security_control_id,
-            parameters: self.parameters,
-            last_update_reason: self.last_update_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_security_control::UpdateSecurityControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_security_control::UpdateSecurityControlInput {
+                security_control_id: self.security_control_id
+                ,
+                parameters: self.parameters
+                ,
+                last_update_reason: self.last_update_reason
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to display.</p>
@@ -15,33 +15,33 @@ pub struct DescribeDomainOutput {
     pub acm_certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDomainOutput {
+impl  DescribeDomainOutput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The time that the domain was added.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The current state for the domain.</p>
-    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
+    pub fn domain_status(&self) -> ::std::option::Option<& crate::types::DomainStatus> {
         self.domain_status.as_ref()
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn acm_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.acm_certificate_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn builder() -> crate::operation::describe_domain::builders::DescribeDomainOutputBuilder {
@@ -68,8 +68,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The time that the domain was added.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the domain was added.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +107,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The current state for the domain.</p>
     pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.domain_status = input;
-        self
+        self.domain_status = input; self
     }
     /// <p>The current state for the domain.</p>
     pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
@@ -124,31 +120,36 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn set_acm_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.acm_certificate_arn = input;
-        self
+        self.acm_certificate_arn = input; self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn get_acm_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.acm_certificate_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn build(self) -> crate::operation::describe_domain::DescribeDomainOutput {
         crate::operation::describe_domain::DescribeDomainOutput {
-            domain_name: self.domain_name,
-            display_name: self.display_name,
-            created_time: self.created_time,
-            domain_status: self.domain_status,
-            acm_certificate_arn: self.acm_certificate_arn,
+            domain_name: self.domain_name
+            ,
+            display_name: self.display_name
+            ,
+            created_time: self.created_time
+            ,
+            domain_status: self.domain_status
+            ,
+            acm_certificate_arn: self.acm_certificate_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

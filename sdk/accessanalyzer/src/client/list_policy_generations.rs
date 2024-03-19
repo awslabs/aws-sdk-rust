@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicyGenerations`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`principal_arn(impl Into<String>)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::principal_arn) / [`set_principal_arn(Option<String>)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::set_principal_arn):<br>required: **false**<br><p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
-    /// - On success, responds with [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput) with field(s):
+                            /// - On success, responds with [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput) with field(s):
     ///   - [`policy_generations(Vec::<PolicyGeneration>)`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput::policy_generations): <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListPolicyGenerationsError>`](crate::operation::list_policy_generations::ListPolicyGenerationsError)
+                            /// - On failure, responds with [`SdkError<ListPolicyGenerationsError>`](crate::operation::list_policy_generations::ListPolicyGenerationsError)
     pub fn list_policy_generations(&self) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder {
-        crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

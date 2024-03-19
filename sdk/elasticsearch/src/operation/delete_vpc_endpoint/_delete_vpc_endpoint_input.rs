@@ -3,13 +3,13 @@
 /// <p>Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcEndpointInput {
+pub struct DeleteVpcEndpointInput  {
     /// <p>The unique identifier of the endpoint to be deleted.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVpcEndpointInput {
+impl  DeleteVpcEndpointInput  {
     /// <p>The unique identifier of the endpoint to be deleted.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteVpcEndpointInputBuilder {
     }
     /// <p>The unique identifier of the endpoint to be deleted.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The unique identifier of the endpoint to be deleted.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+            }
+        )
     }
 }
+

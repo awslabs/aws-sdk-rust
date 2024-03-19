@@ -5,54 +5,50 @@ pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_
 
 impl ListDistributionsByWebAclIdInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_distributions_by_web_acl_id();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_distributions_by_web_acl_id();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListDistributionsByWebACLId`.
-///
+/// 
 /// <p>List the distributions that are associated with a specified WAF web ACL.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDistributionsByWebACLIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder,
+                    inner: crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-    > for ListDistributionsByWebACLIdFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+                    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
+                > for ListDistributionsByWebACLIdFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+                        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListDistributionsByWebACLIdFluentBuilder {
     /// Creates a new `ListDistributionsByWebACLId`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ListDistributionsByWebACLIdFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLId::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLId::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
-        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLId::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLId::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput, crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -151,3 +138,4 @@ impl ListDistributionsByWebACLIdFluentBuilder {
         self.inner.get_web_acl_id()
     }
 }
+

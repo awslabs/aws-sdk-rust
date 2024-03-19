@@ -3,13 +3,13 @@
 /// <p>Array of the number of characters extracted from each page.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtractedCharactersListItem {
+pub struct ExtractedCharactersListItem  {
     /// <p>Page number.</p>
     pub page: ::std::option::Option<i32>,
     /// <p>Number of characters extracted from each page.</p>
     pub count: ::std::option::Option<i32>,
 }
-impl ExtractedCharactersListItem {
+impl  ExtractedCharactersListItem  {
     /// <p>Page number.</p>
     pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
@@ -41,8 +41,7 @@ impl ExtractedCharactersListItemBuilder {
     }
     /// <p>Page number.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>Page number.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ExtractedCharactersListItemBuilder {
     }
     /// <p>Number of characters extracted from each page.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Number of characters extracted from each page.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ExtractedCharactersListItemBuilder {
     /// Consumes the builder and constructs a [`ExtractedCharactersListItem`](crate::types::ExtractedCharactersListItem).
     pub fn build(self) -> crate::types::ExtractedCharactersListItem {
         crate::types::ExtractedCharactersListItem {
-            page: self.page,
-            count: self.count,
+            page: self.page
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

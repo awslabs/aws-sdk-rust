@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactPolicyInput {
+pub struct GetContactPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetContactPolicyInput {
+impl  GetContactPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetContactPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }
     /// Consumes the builder and constructs a [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_contact_policy::GetContactPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact_policy::GetContactPolicyInput {
-            contact_arn: self.contact_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_policy::GetContactPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_policy::GetContactPolicyInput {
+                contact_arn: self.contact_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRenderTemplateOutput {
+pub struct TestRenderTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub rendered_template: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl TestRenderTemplateOutput {
+impl  TestRenderTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
-    pub fn rendered_template(&self) -> ::std::option::Option<&str> {
+    pub fn rendered_template(&self) -> ::std::option::Option<& str> {
         self.rendered_template.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TestRenderTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestRenderTemplateOutput {
     /// Creates a new builder-style object to manufacture [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput).
     pub fn builder() -> crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl TestRenderTemplateOutputBuilder {
     }
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub fn set_rendered_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendered_template = input;
-        self
+        self.rendered_template = input; self
     }
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub fn get_rendered_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.rendered_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput).
     pub fn build(self) -> crate::operation::test_render_template::TestRenderTemplateOutput {
         crate::operation::test_render_template::TestRenderTemplateOutput {
-            rendered_template: self.rendered_template,
+            rendered_template: self.rendered_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

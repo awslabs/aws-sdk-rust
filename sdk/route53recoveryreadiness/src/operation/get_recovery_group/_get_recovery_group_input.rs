@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryGroupInput {
+pub struct GetRecoveryGroupInput  {
     /// <p>The name of a recovery group.</p>
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRecoveryGroupInput {
+impl  GetRecoveryGroupInput  {
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> ::std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRecoveryGroupInputBuilder {
     }
     /// <p>The name of a recovery group.</p>
     pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_group_name = input;
-        self
+        self.recovery_group_name = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_group_name
     }
     /// Consumes the builder and constructs a [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_recovery_group::GetRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_recovery_group::GetRecoveryGroupInput {
-            recovery_group_name: self.recovery_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recovery_group::GetRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recovery_group::GetRecoveryGroupInput {
+                recovery_group_name: self.recovery_group_name
+                ,
+            }
+        )
     }
 }
+

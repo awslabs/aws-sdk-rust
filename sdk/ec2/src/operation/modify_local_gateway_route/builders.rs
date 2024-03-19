@@ -5,54 +5,50 @@ pub use crate::operation::modify_local_gateway_route::_modify_local_gateway_rout
 
 impl ModifyLocalGatewayRouteInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_local_gateway_route();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_local_gateway_route();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyLocalGatewayRoute`.
-///
+/// 
 /// <p>Modifies the specified local gateway route.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyLocalGatewayRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder,
+                    inner: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-    > for ModifyLocalGatewayRouteFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
+                    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
+                > for ModifyLocalGatewayRouteFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
+                        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyLocalGatewayRouteFluentBuilder {
     /// Creates a new `ModifyLocalGatewayRoute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput, crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
@@ -193,3 +180,4 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self.inner.get_destination_prefix_list_id()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The Liquid template for the worker user interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UiTemplate {
+pub struct UiTemplate  {
     /// <p>The content of the Liquid template for the worker user interface.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl UiTemplate {
+impl  UiTemplate  {
     /// <p>The content of the Liquid template for the worker user interface.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl UiTemplateBuilder {
     }
     /// <p>The content of the Liquid template for the worker user interface.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the Liquid template for the worker user interface.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl UiTemplateBuilder {
     }
     /// Consumes the builder and constructs a [`UiTemplate`](crate::types::UiTemplate).
     pub fn build(self) -> crate::types::UiTemplate {
-        crate::types::UiTemplate { content: self.content }
+        crate::types::UiTemplate {
+            content: self.content
+            ,
+        }
     }
 }
+

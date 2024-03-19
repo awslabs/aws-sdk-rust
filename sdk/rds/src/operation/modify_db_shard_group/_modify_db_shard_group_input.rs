@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbShardGroupInput {
+pub struct ModifyDbShardGroupInput  {
     /// <p>The name of the DB shard group to modify.</p>
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub max_acu: ::std::option::Option<f64>,
 }
-impl ModifyDbShardGroupInput {
+impl  ModifyDbShardGroupInput  {
     /// <p>The name of the DB shard group to modify.</p>
-    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_identifier.as_deref()
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
@@ -41,8 +41,7 @@ impl ModifyDbShardGroupInputBuilder {
     }
     /// <p>The name of the DB shard group to modify.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_identifier = input;
-        self
+        self.db_shard_group_identifier = input; self
     }
     /// <p>The name of the DB shard group to modify.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl ModifyDbShardGroupInputBuilder {
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn set_max_acu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_acu = input;
-        self
+        self.max_acu = input; self
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
         &self.max_acu
     }
     /// Consumes the builder and constructs a [`ModifyDbShardGroupInput`](crate::operation::modify_db_shard_group::ModifyDbShardGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_db_shard_group::ModifyDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_db_shard_group::ModifyDbShardGroupInput {
-            db_shard_group_identifier: self.db_shard_group_identifier,
-            max_acu: self.max_acu,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_shard_group::ModifyDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_shard_group::ModifyDbShardGroupInput {
+                db_shard_group_identifier: self.db_shard_group_identifier
+                ,
+                max_acu: self.max_acu
+                ,
+            }
+        )
     }
 }
+

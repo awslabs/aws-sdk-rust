@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAppliedSchemaVersionOutput {
+pub struct GetAppliedSchemaVersionOutput  {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     pub applied_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAppliedSchemaVersionOutput {
+impl  GetAppliedSchemaVersionOutput  {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
-    pub fn applied_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn applied_schema_arn(&self) -> ::std::option::Option<& str> {
         self.applied_schema_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAppliedSchemaVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAppliedSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
     pub fn builder() -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAppliedSchemaVersionOutputBuilder {
     }
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     pub fn set_applied_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.applied_schema_arn = input;
-        self
+        self.applied_schema_arn = input; self
     }
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     pub fn get_applied_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.applied_schema_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
     pub fn build(self) -> crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput {
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput {
-            applied_schema_arn: self.applied_schema_arn,
+            applied_schema_arn: self.applied_schema_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

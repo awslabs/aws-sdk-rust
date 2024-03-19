@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIpamPoolOutput {
+pub struct CreateIpamPoolOutput  {
     /// <p>Information about the IPAM pool created.</p>
     pub ipam_pool: ::std::option::Option<crate::types::IpamPool>,
     _request_id: Option<String>,
 }
-impl CreateIpamPoolOutput {
+impl  CreateIpamPoolOutput  {
     /// <p>Information about the IPAM pool created.</p>
-    pub fn ipam_pool(&self) -> ::std::option::Option<&crate::types::IpamPool> {
+    pub fn ipam_pool(&self) -> ::std::option::Option<& crate::types::IpamPool> {
         self.ipam_pool.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateIpamPoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateIpamPoolOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpamPoolOutput`](crate::operation::create_ipam_pool::CreateIpamPoolOutput).
     pub fn builder() -> crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateIpamPoolOutputBuilder {
     }
     /// <p>Information about the IPAM pool created.</p>
     pub fn set_ipam_pool(mut self, input: ::std::option::Option<crate::types::IpamPool>) -> Self {
-        self.ipam_pool = input;
-        self
+        self.ipam_pool = input; self
     }
     /// <p>Information about the IPAM pool created.</p>
     pub fn get_ipam_pool(&self) -> &::std::option::Option<crate::types::IpamPool> {
         &self.ipam_pool
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateIpamPoolOutput`](crate::operation::create_ipam_pool::CreateIpamPoolOutput).
     pub fn build(self) -> crate::operation::create_ipam_pool::CreateIpamPoolOutput {
         crate::operation::create_ipam_pool::CreateIpamPoolOutput {
-            ipam_pool: self.ipam_pool,
+            ipam_pool: self.ipam_pool
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

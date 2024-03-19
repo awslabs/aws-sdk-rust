@@ -3,7 +3,7 @@
 /// <p>The options for customizing a security control parameter that is an integer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerConfigurationOptions {
+pub struct IntegerConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is an integer.</p>
     pub default_value: ::std::option::Option<i32>,
     /// <p>The minimum valid value for a control parameter that is an integer.</p>
@@ -11,7 +11,7 @@ pub struct IntegerConfigurationOptions {
     /// <p>The maximum valid value for a control parameter that is an integer.</p>
     pub max: ::std::option::Option<i32>,
 }
-impl IntegerConfigurationOptions {
+impl  IntegerConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is an integer.</p>
     pub fn default_value(&self) -> ::std::option::Option<i32> {
         self.default_value
@@ -48,8 +48,7 @@ impl IntegerConfigurationOptionsBuilder {
     }
     /// <p>The Security Hub default value for a control parameter that is an integer.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is an integer.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl IntegerConfigurationOptionsBuilder {
     }
     /// <p>The minimum valid value for a control parameter that is an integer.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum valid value for a control parameter that is an integer.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl IntegerConfigurationOptionsBuilder {
     }
     /// <p>The maximum valid value for a control parameter that is an integer.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum valid value for a control parameter that is an integer.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl IntegerConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`IntegerConfigurationOptions`](crate::types::IntegerConfigurationOptions).
     pub fn build(self) -> crate::types::IntegerConfigurationOptions {
         crate::types::IntegerConfigurationOptions {
-            default_value: self.default_value,
-            min: self.min,
-            max: self.max,
+            default_value: self.default_value
+            ,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

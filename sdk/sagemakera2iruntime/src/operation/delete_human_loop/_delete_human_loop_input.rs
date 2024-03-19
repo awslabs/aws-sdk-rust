@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHumanLoopInput {
+pub struct DeleteHumanLoopInput  {
     /// <p>The name of the human loop that you want to delete.</p>
     pub human_loop_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHumanLoopInput {
+impl  DeleteHumanLoopInput  {
     /// <p>The name of the human loop that you want to delete.</p>
-    pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> ::std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteHumanLoopInputBuilder {
     }
     /// <p>The name of the human loop that you want to delete.</p>
     pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_loop_name = input;
-        self
+        self.human_loop_name = input; self
     }
     /// <p>The name of the human loop that you want to delete.</p>
     pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_loop_name
     }
     /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::operation::delete_human_loop::DeleteHumanLoopInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_human_loop::DeleteHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_human_loop::DeleteHumanLoopInput {
-            human_loop_name: self.human_loop_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_human_loop::DeleteHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_human_loop::DeleteHumanLoopInput {
+                human_loop_name: self.human_loop_name
+                ,
+            }
+        )
     }
 }
+

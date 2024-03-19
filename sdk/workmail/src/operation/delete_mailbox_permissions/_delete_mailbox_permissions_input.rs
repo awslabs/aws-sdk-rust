@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMailboxPermissionsInput {
+pub struct DeleteMailboxPermissionsInput  {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the entity that owns the mailbox.</p>
@@ -28,9 +28,9 @@ pub struct DeleteMailboxPermissionsInput {
     /// </ul>
     pub grantee_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMailboxPermissionsInput {
+impl  DeleteMailboxPermissionsInput  {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the entity that owns the mailbox.</p>
@@ -43,7 +43,7 @@ impl DeleteMailboxPermissionsInput {
     /// <li>
     /// <p>Entity name: entity</p></li>
     /// </ul>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The identifier of the entity for which to delete granted permissions.</p>
@@ -56,7 +56,7 @@ impl DeleteMailboxPermissionsInput {
     /// <li>
     /// <p>Grantee name: grantee</p></li>
     /// </ul>
-    pub fn grantee_id(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_id(&self) -> ::std::option::Option<& str> {
         self.grantee_id.as_deref()
     }
 }
@@ -84,8 +84,7 @@ impl DeleteMailboxPermissionsInputBuilder {
     }
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DeleteMailboxPermissionsInputBuilder {
     /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of the entity that owns the mailbox.</p>
     /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
@@ -159,8 +157,7 @@ impl DeleteMailboxPermissionsInputBuilder {
     /// <p>Grantee name: grantee</p></li>
     /// </ul>
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grantee_id = input;
-        self
+        self.grantee_id = input; self
     }
     /// <p>The identifier of the entity for which to delete granted permissions.</p>
     /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
@@ -176,16 +173,17 @@ impl DeleteMailboxPermissionsInputBuilder {
         &self.grantee_id
     }
     /// Consumes the builder and constructs a [`DeleteMailboxPermissionsInput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
-            organization_id: self.organization_id,
-            entity_id: self.entity_id,
-            grantee_id: self.grantee_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
+                organization_id: self.organization_id
+                ,
+                entity_id: self.entity_id
+                ,
+                grantee_id: self.grantee_id
+                ,
+            }
+        )
     }
 }
+

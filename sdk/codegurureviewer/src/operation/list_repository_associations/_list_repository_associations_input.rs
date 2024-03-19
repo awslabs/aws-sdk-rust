@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositoryAssociationsInput {
+pub struct ListRepositoryAssociationsInput  {
     /// <p>List of provider types to use as a filter.</p>
-    pub provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
+    pub provider_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>,
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
@@ -27,11 +27,11 @@ pub struct ListRepositoryAssociationsInput {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>>,
     /// <p>List of repository names to use as a filter.</p>
-    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub owners: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
@@ -39,12 +39,13 @@ pub struct ListRepositoryAssociationsInput {
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRepositoryAssociationsInput {
+impl  ListRepositoryAssociationsInput  {
     /// <p>List of provider types to use as a filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_types.is_none()`.
-    pub fn provider_types(&self) -> &[crate::types::ProviderType] {
-        self.provider_types.as_deref().unwrap_or_default()
+    pub fn provider_types(&self) -> & [crate::types::ProviderType] {
+        self.provider_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
@@ -68,22 +69,25 @@ impl ListRepositoryAssociationsInput {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::RepositoryAssociationState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::RepositoryAssociationState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of repository names to use as a filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
-    pub fn names(&self) -> &[::std::string::String] {
-        self.names.as_deref().unwrap_or_default()
+    pub fn names(&self) -> & [::std::string::String] {
+        self.names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
-    pub fn owners(&self) -> &[::std::string::String] {
-        self.owners.as_deref().unwrap_or_default()
+    pub fn owners(&self) -> & [::std::string::String] {
+        self.owners.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -92,7 +96,7 @@ impl ListRepositoryAssociationsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -107,10 +111,10 @@ impl ListRepositoryAssociationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoryAssociationsInputBuilder {
-    pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
-    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) provider_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) owners: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -122,17 +126,16 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <p>List of provider types to use as a filter.</p>
     pub fn provider_types(mut self, input: crate::types::ProviderType) -> Self {
         let mut v = self.provider_types.unwrap_or_default();
-        v.push(input);
-        self.provider_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provider_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
-        self.provider_types = input;
-        self
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>) -> Self {
+        self.provider_types = input; self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>> {
         &self.provider_types
     }
     /// Appends an item to `states`.
@@ -163,9 +166,9 @@ impl ListRepositoryAssociationsInputBuilder {
     /// </ul>
     pub fn states(mut self, input: crate::types::RepositoryAssociationState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
@@ -189,9 +192,8 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>>) -> Self {
+        self.states = input; self
     }
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
@@ -215,7 +217,7 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>> {
         &self.states
     }
     /// Appends an item to `names`.
@@ -225,17 +227,16 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <p>List of repository names to use as a filter.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.names
     }
     /// Appends an item to `owners`.
@@ -245,17 +246,16 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
     pub fn owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owners.unwrap_or_default();
-        v.push(input.into());
-        self.owners = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.owners = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owners = input;
-        self
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.owners = input; self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.owners
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -265,8 +265,7 @@ impl ListRepositoryAssociationsInputBuilder {
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -283,8 +282,7 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -293,19 +291,23 @@ impl ListRepositoryAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRepositoryAssociationsInput`](crate::operation::list_repository_associations::ListRepositoryAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repository_associations::ListRepositoryAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_repository_associations::ListRepositoryAssociationsInput {
-            provider_types: self.provider_types,
-            states: self.states,
-            names: self.names,
-            owners: self.owners,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repository_associations::ListRepositoryAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_repository_associations::ListRepositoryAssociationsInput {
+                provider_types: self.provider_types
+                ,
+                states: self.states
+                ,
+                names: self.names
+                ,
+                owners: self.owners
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

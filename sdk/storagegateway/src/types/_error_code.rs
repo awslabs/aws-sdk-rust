@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -90,16 +90,14 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ActivationKeyExpired,
@@ -227,304 +225,242 @@ pub enum ErrorCode {
     VolumeNotReady,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ActivationKeyExpired" => ErrorCode::ActivationKeyExpired,
-            "ActivationKeyInvalid" => ErrorCode::ActivationKeyInvalid,
-            "ActivationKeyNotFound" => ErrorCode::ActivationKeyNotFound,
-            "AuthenticationFailure" => ErrorCode::AuthenticationFailure,
-            "BandwidthThrottleScheduleNotFound" => ErrorCode::BandwidthThrottleScheduleNotFound,
-            "Blocked" => ErrorCode::Blocked,
-            "CannotExportSnapshot" => ErrorCode::CannotExportSnapshot,
-            "ChapCredentialNotFound" => ErrorCode::ChapCredentialNotFound,
-            "DiskAlreadyAllocated" => ErrorCode::DiskAlreadyAllocated,
-            "DiskDoesNotExist" => ErrorCode::DiskDoesNotExist,
-            "DiskSizeGreaterThanVolumeMaxSize" => ErrorCode::DiskSizeGreaterThanVolumeMaxSize,
-            "DiskSizeLessThanVolumeSize" => ErrorCode::DiskSizeLessThanVolumeSize,
-            "DiskSizeNotGigAligned" => ErrorCode::DiskSizeNotGigAligned,
-            "DuplicateCertificateInfo" => ErrorCode::DuplicateCertificateInfo,
-            "DuplicateSchedule" => ErrorCode::DuplicateSchedule,
-            "EndpointNotFound" => ErrorCode::EndpointNotFound,
-            "GatewayInternalError" => ErrorCode::GatewayInternalError,
-            "GatewayNotConnected" => ErrorCode::GatewayNotConnected,
-            "GatewayNotFound" => ErrorCode::GatewayNotFound,
-            "GatewayProxyNetworkConnectionBusy" => ErrorCode::GatewayProxyNetworkConnectionBusy,
-            "IAMNotSupported" => ErrorCode::IamNotSupported,
-            "InitiatorInvalid" => ErrorCode::InitiatorInvalid,
-            "InitiatorNotFound" => ErrorCode::InitiatorNotFound,
-            "InternalError" => ErrorCode::InternalError,
-            "InvalidEndpoint" => ErrorCode::InvalidEndpoint,
-            "InvalidGateway" => ErrorCode::InvalidGateway,
-            "InvalidParameters" => ErrorCode::InvalidParameters,
-            "InvalidSchedule" => ErrorCode::InvalidSchedule,
-            "JoinDomainInProgress" => ErrorCode::JoinDomainInProgress,
-            "LocalStorageLimitExceeded" => ErrorCode::LocalStorageLimitExceeded,
-            "LunAlreadyAllocated " => ErrorCode::LunAlreadyAllocated,
-            "LunInvalid" => ErrorCode::LunInvalid,
-            "MaximumContentLengthExceeded" => ErrorCode::MaximumContentLengthExceeded,
-            "MaximumTapeCartridgeCountExceeded" => ErrorCode::MaximumTapeCartridgeCountExceeded,
-            "MaximumVolumeCountExceeded" => ErrorCode::MaximumVolumeCountExceeded,
-            "NetworkConfigurationChanged" => ErrorCode::NetworkConfigurationChanged,
-            "NoDisksAvailable" => ErrorCode::NoDisksAvailable,
-            "NotImplemented" => ErrorCode::NotImplemented,
-            "NotSupported" => ErrorCode::NotSupported,
-            "OperationAborted" => ErrorCode::OperationAborted,
-            "OutdatedGateway" => ErrorCode::OutdatedGateway,
-            "ParametersNotImplemented" => ErrorCode::ParametersNotImplemented,
-            "RegionInvalid" => ErrorCode::RegionInvalid,
-            "RequestTimeout" => ErrorCode::RequestTimeout,
-            "ServiceUnavailable" => ErrorCode::ServiceUnavailable,
-            "SnapshotDeleted" => ErrorCode::SnapshotDeleted,
-            "SnapshotIdInvalid" => ErrorCode::SnapshotIdInvalid,
-            "SnapshotInProgress" => ErrorCode::SnapshotInProgress,
-            "SnapshotNotFound" => ErrorCode::SnapshotNotFound,
-            "SnapshotScheduleNotFound" => ErrorCode::SnapshotScheduleNotFound,
-            "StagingAreaFull" => ErrorCode::StagingAreaFull,
-            "StorageFailure" => ErrorCode::StorageFailure,
-            "TapeCartridgeNotFound" => ErrorCode::TapeCartridgeNotFound,
-            "TargetAlreadyExists" => ErrorCode::TargetAlreadyExists,
-            "TargetInvalid" => ErrorCode::TargetInvalid,
-            "TargetNotFound" => ErrorCode::TargetNotFound,
-            "UnauthorizedOperation" => ErrorCode::UnauthorizedOperation,
-            "VolumeAlreadyExists" => ErrorCode::VolumeAlreadyExists,
-            "VolumeIdInvalid" => ErrorCode::VolumeIdInvalid,
-            "VolumeInUse" => ErrorCode::VolumeInUse,
-            "VolumeNotFound" => ErrorCode::VolumeNotFound,
-            "VolumeNotReady" => ErrorCode::VolumeNotReady,
-            other => ErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ActivationKeyExpired" => ErrorCode::ActivationKeyExpired,
+"ActivationKeyInvalid" => ErrorCode::ActivationKeyInvalid,
+"ActivationKeyNotFound" => ErrorCode::ActivationKeyNotFound,
+"AuthenticationFailure" => ErrorCode::AuthenticationFailure,
+"BandwidthThrottleScheduleNotFound" => ErrorCode::BandwidthThrottleScheduleNotFound,
+"Blocked" => ErrorCode::Blocked,
+"CannotExportSnapshot" => ErrorCode::CannotExportSnapshot,
+"ChapCredentialNotFound" => ErrorCode::ChapCredentialNotFound,
+"DiskAlreadyAllocated" => ErrorCode::DiskAlreadyAllocated,
+"DiskDoesNotExist" => ErrorCode::DiskDoesNotExist,
+"DiskSizeGreaterThanVolumeMaxSize" => ErrorCode::DiskSizeGreaterThanVolumeMaxSize,
+"DiskSizeLessThanVolumeSize" => ErrorCode::DiskSizeLessThanVolumeSize,
+"DiskSizeNotGigAligned" => ErrorCode::DiskSizeNotGigAligned,
+"DuplicateCertificateInfo" => ErrorCode::DuplicateCertificateInfo,
+"DuplicateSchedule" => ErrorCode::DuplicateSchedule,
+"EndpointNotFound" => ErrorCode::EndpointNotFound,
+"GatewayInternalError" => ErrorCode::GatewayInternalError,
+"GatewayNotConnected" => ErrorCode::GatewayNotConnected,
+"GatewayNotFound" => ErrorCode::GatewayNotFound,
+"GatewayProxyNetworkConnectionBusy" => ErrorCode::GatewayProxyNetworkConnectionBusy,
+"IAMNotSupported" => ErrorCode::IamNotSupported,
+"InitiatorInvalid" => ErrorCode::InitiatorInvalid,
+"InitiatorNotFound" => ErrorCode::InitiatorNotFound,
+"InternalError" => ErrorCode::InternalError,
+"InvalidEndpoint" => ErrorCode::InvalidEndpoint,
+"InvalidGateway" => ErrorCode::InvalidGateway,
+"InvalidParameters" => ErrorCode::InvalidParameters,
+"InvalidSchedule" => ErrorCode::InvalidSchedule,
+"JoinDomainInProgress" => ErrorCode::JoinDomainInProgress,
+"LocalStorageLimitExceeded" => ErrorCode::LocalStorageLimitExceeded,
+"LunAlreadyAllocated " => ErrorCode::LunAlreadyAllocated,
+"LunInvalid" => ErrorCode::LunInvalid,
+"MaximumContentLengthExceeded" => ErrorCode::MaximumContentLengthExceeded,
+"MaximumTapeCartridgeCountExceeded" => ErrorCode::MaximumTapeCartridgeCountExceeded,
+"MaximumVolumeCountExceeded" => ErrorCode::MaximumVolumeCountExceeded,
+"NetworkConfigurationChanged" => ErrorCode::NetworkConfigurationChanged,
+"NoDisksAvailable" => ErrorCode::NoDisksAvailable,
+"NotImplemented" => ErrorCode::NotImplemented,
+"NotSupported" => ErrorCode::NotSupported,
+"OperationAborted" => ErrorCode::OperationAborted,
+"OutdatedGateway" => ErrorCode::OutdatedGateway,
+"ParametersNotImplemented" => ErrorCode::ParametersNotImplemented,
+"RegionInvalid" => ErrorCode::RegionInvalid,
+"RequestTimeout" => ErrorCode::RequestTimeout,
+"ServiceUnavailable" => ErrorCode::ServiceUnavailable,
+"SnapshotDeleted" => ErrorCode::SnapshotDeleted,
+"SnapshotIdInvalid" => ErrorCode::SnapshotIdInvalid,
+"SnapshotInProgress" => ErrorCode::SnapshotInProgress,
+"SnapshotNotFound" => ErrorCode::SnapshotNotFound,
+"SnapshotScheduleNotFound" => ErrorCode::SnapshotScheduleNotFound,
+"StagingAreaFull" => ErrorCode::StagingAreaFull,
+"StorageFailure" => ErrorCode::StorageFailure,
+"TapeCartridgeNotFound" => ErrorCode::TapeCartridgeNotFound,
+"TargetAlreadyExists" => ErrorCode::TargetAlreadyExists,
+"TargetInvalid" => ErrorCode::TargetInvalid,
+"TargetNotFound" => ErrorCode::TargetNotFound,
+"UnauthorizedOperation" => ErrorCode::UnauthorizedOperation,
+"VolumeAlreadyExists" => ErrorCode::VolumeAlreadyExists,
+"VolumeIdInvalid" => ErrorCode::VolumeIdInvalid,
+"VolumeInUse" => ErrorCode::VolumeInUse,
+"VolumeNotFound" => ErrorCode::VolumeNotFound,
+"VolumeNotReady" => ErrorCode::VolumeNotReady,
+other => ErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ErrorCode::from(s))
+                    }
+                }
 impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::ActivationKeyExpired => "ActivationKeyExpired",
-            ErrorCode::ActivationKeyInvalid => "ActivationKeyInvalid",
-            ErrorCode::ActivationKeyNotFound => "ActivationKeyNotFound",
-            ErrorCode::AuthenticationFailure => "AuthenticationFailure",
-            ErrorCode::BandwidthThrottleScheduleNotFound => "BandwidthThrottleScheduleNotFound",
-            ErrorCode::Blocked => "Blocked",
-            ErrorCode::CannotExportSnapshot => "CannotExportSnapshot",
-            ErrorCode::ChapCredentialNotFound => "ChapCredentialNotFound",
-            ErrorCode::DiskAlreadyAllocated => "DiskAlreadyAllocated",
-            ErrorCode::DiskDoesNotExist => "DiskDoesNotExist",
-            ErrorCode::DiskSizeGreaterThanVolumeMaxSize => "DiskSizeGreaterThanVolumeMaxSize",
-            ErrorCode::DiskSizeLessThanVolumeSize => "DiskSizeLessThanVolumeSize",
-            ErrorCode::DiskSizeNotGigAligned => "DiskSizeNotGigAligned",
-            ErrorCode::DuplicateCertificateInfo => "DuplicateCertificateInfo",
-            ErrorCode::DuplicateSchedule => "DuplicateSchedule",
-            ErrorCode::EndpointNotFound => "EndpointNotFound",
-            ErrorCode::GatewayInternalError => "GatewayInternalError",
-            ErrorCode::GatewayNotConnected => "GatewayNotConnected",
-            ErrorCode::GatewayNotFound => "GatewayNotFound",
-            ErrorCode::GatewayProxyNetworkConnectionBusy => "GatewayProxyNetworkConnectionBusy",
-            ErrorCode::IamNotSupported => "IAMNotSupported",
-            ErrorCode::InitiatorInvalid => "InitiatorInvalid",
-            ErrorCode::InitiatorNotFound => "InitiatorNotFound",
-            ErrorCode::InternalError => "InternalError",
-            ErrorCode::InvalidEndpoint => "InvalidEndpoint",
-            ErrorCode::InvalidGateway => "InvalidGateway",
-            ErrorCode::InvalidParameters => "InvalidParameters",
-            ErrorCode::InvalidSchedule => "InvalidSchedule",
-            ErrorCode::JoinDomainInProgress => "JoinDomainInProgress",
-            ErrorCode::LocalStorageLimitExceeded => "LocalStorageLimitExceeded",
-            ErrorCode::LunAlreadyAllocated => "LunAlreadyAllocated ",
-            ErrorCode::LunInvalid => "LunInvalid",
-            ErrorCode::MaximumContentLengthExceeded => "MaximumContentLengthExceeded",
-            ErrorCode::MaximumTapeCartridgeCountExceeded => "MaximumTapeCartridgeCountExceeded",
-            ErrorCode::MaximumVolumeCountExceeded => "MaximumVolumeCountExceeded",
-            ErrorCode::NetworkConfigurationChanged => "NetworkConfigurationChanged",
-            ErrorCode::NoDisksAvailable => "NoDisksAvailable",
-            ErrorCode::NotImplemented => "NotImplemented",
-            ErrorCode::NotSupported => "NotSupported",
-            ErrorCode::OperationAborted => "OperationAborted",
-            ErrorCode::OutdatedGateway => "OutdatedGateway",
-            ErrorCode::ParametersNotImplemented => "ParametersNotImplemented",
-            ErrorCode::RegionInvalid => "RegionInvalid",
-            ErrorCode::RequestTimeout => "RequestTimeout",
-            ErrorCode::ServiceUnavailable => "ServiceUnavailable",
-            ErrorCode::SnapshotDeleted => "SnapshotDeleted",
-            ErrorCode::SnapshotIdInvalid => "SnapshotIdInvalid",
-            ErrorCode::SnapshotInProgress => "SnapshotInProgress",
-            ErrorCode::SnapshotNotFound => "SnapshotNotFound",
-            ErrorCode::SnapshotScheduleNotFound => "SnapshotScheduleNotFound",
-            ErrorCode::StagingAreaFull => "StagingAreaFull",
-            ErrorCode::StorageFailure => "StorageFailure",
-            ErrorCode::TapeCartridgeNotFound => "TapeCartridgeNotFound",
-            ErrorCode::TargetAlreadyExists => "TargetAlreadyExists",
-            ErrorCode::TargetInvalid => "TargetInvalid",
-            ErrorCode::TargetNotFound => "TargetNotFound",
-            ErrorCode::UnauthorizedOperation => "UnauthorizedOperation",
-            ErrorCode::VolumeAlreadyExists => "VolumeAlreadyExists",
-            ErrorCode::VolumeIdInvalid => "VolumeIdInvalid",
-            ErrorCode::VolumeInUse => "VolumeInUse",
-            ErrorCode::VolumeNotFound => "VolumeNotFound",
-            ErrorCode::VolumeNotReady => "VolumeNotReady",
-            ErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ActivationKeyExpired",
-            "ActivationKeyInvalid",
-            "ActivationKeyNotFound",
-            "AuthenticationFailure",
-            "BandwidthThrottleScheduleNotFound",
-            "Blocked",
-            "CannotExportSnapshot",
-            "ChapCredentialNotFound",
-            "DiskAlreadyAllocated",
-            "DiskDoesNotExist",
-            "DiskSizeGreaterThanVolumeMaxSize",
-            "DiskSizeLessThanVolumeSize",
-            "DiskSizeNotGigAligned",
-            "DuplicateCertificateInfo",
-            "DuplicateSchedule",
-            "EndpointNotFound",
-            "GatewayInternalError",
-            "GatewayNotConnected",
-            "GatewayNotFound",
-            "GatewayProxyNetworkConnectionBusy",
-            "IAMNotSupported",
-            "InitiatorInvalid",
-            "InitiatorNotFound",
-            "InternalError",
-            "InvalidEndpoint",
-            "InvalidGateway",
-            "InvalidParameters",
-            "InvalidSchedule",
-            "JoinDomainInProgress",
-            "LocalStorageLimitExceeded",
-            "LunAlreadyAllocated ",
-            "LunInvalid",
-            "MaximumContentLengthExceeded",
-            "MaximumTapeCartridgeCountExceeded",
-            "MaximumVolumeCountExceeded",
-            "NetworkConfigurationChanged",
-            "NoDisksAvailable",
-            "NotImplemented",
-            "NotSupported",
-            "OperationAborted",
-            "OutdatedGateway",
-            "ParametersNotImplemented",
-            "RegionInvalid",
-            "RequestTimeout",
-            "ServiceUnavailable",
-            "SnapshotDeleted",
-            "SnapshotIdInvalid",
-            "SnapshotInProgress",
-            "SnapshotNotFound",
-            "SnapshotScheduleNotFound",
-            "StagingAreaFull",
-            "StorageFailure",
-            "TapeCartridgeNotFound",
-            "TargetAlreadyExists",
-            "TargetInvalid",
-            "TargetNotFound",
-            "UnauthorizedOperation",
-            "VolumeAlreadyExists",
-            "VolumeIdInvalid",
-            "VolumeInUse",
-            "VolumeNotFound",
-            "VolumeNotReady",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::ActivationKeyExpired => "ActivationKeyExpired",
+    ErrorCode::ActivationKeyInvalid => "ActivationKeyInvalid",
+    ErrorCode::ActivationKeyNotFound => "ActivationKeyNotFound",
+    ErrorCode::AuthenticationFailure => "AuthenticationFailure",
+    ErrorCode::BandwidthThrottleScheduleNotFound => "BandwidthThrottleScheduleNotFound",
+    ErrorCode::Blocked => "Blocked",
+    ErrorCode::CannotExportSnapshot => "CannotExportSnapshot",
+    ErrorCode::ChapCredentialNotFound => "ChapCredentialNotFound",
+    ErrorCode::DiskAlreadyAllocated => "DiskAlreadyAllocated",
+    ErrorCode::DiskDoesNotExist => "DiskDoesNotExist",
+    ErrorCode::DiskSizeGreaterThanVolumeMaxSize => "DiskSizeGreaterThanVolumeMaxSize",
+    ErrorCode::DiskSizeLessThanVolumeSize => "DiskSizeLessThanVolumeSize",
+    ErrorCode::DiskSizeNotGigAligned => "DiskSizeNotGigAligned",
+    ErrorCode::DuplicateCertificateInfo => "DuplicateCertificateInfo",
+    ErrorCode::DuplicateSchedule => "DuplicateSchedule",
+    ErrorCode::EndpointNotFound => "EndpointNotFound",
+    ErrorCode::GatewayInternalError => "GatewayInternalError",
+    ErrorCode::GatewayNotConnected => "GatewayNotConnected",
+    ErrorCode::GatewayNotFound => "GatewayNotFound",
+    ErrorCode::GatewayProxyNetworkConnectionBusy => "GatewayProxyNetworkConnectionBusy",
+    ErrorCode::IamNotSupported => "IAMNotSupported",
+    ErrorCode::InitiatorInvalid => "InitiatorInvalid",
+    ErrorCode::InitiatorNotFound => "InitiatorNotFound",
+    ErrorCode::InternalError => "InternalError",
+    ErrorCode::InvalidEndpoint => "InvalidEndpoint",
+    ErrorCode::InvalidGateway => "InvalidGateway",
+    ErrorCode::InvalidParameters => "InvalidParameters",
+    ErrorCode::InvalidSchedule => "InvalidSchedule",
+    ErrorCode::JoinDomainInProgress => "JoinDomainInProgress",
+    ErrorCode::LocalStorageLimitExceeded => "LocalStorageLimitExceeded",
+    ErrorCode::LunAlreadyAllocated => "LunAlreadyAllocated ",
+    ErrorCode::LunInvalid => "LunInvalid",
+    ErrorCode::MaximumContentLengthExceeded => "MaximumContentLengthExceeded",
+    ErrorCode::MaximumTapeCartridgeCountExceeded => "MaximumTapeCartridgeCountExceeded",
+    ErrorCode::MaximumVolumeCountExceeded => "MaximumVolumeCountExceeded",
+    ErrorCode::NetworkConfigurationChanged => "NetworkConfigurationChanged",
+    ErrorCode::NoDisksAvailable => "NoDisksAvailable",
+    ErrorCode::NotImplemented => "NotImplemented",
+    ErrorCode::NotSupported => "NotSupported",
+    ErrorCode::OperationAborted => "OperationAborted",
+    ErrorCode::OutdatedGateway => "OutdatedGateway",
+    ErrorCode::ParametersNotImplemented => "ParametersNotImplemented",
+    ErrorCode::RegionInvalid => "RegionInvalid",
+    ErrorCode::RequestTimeout => "RequestTimeout",
+    ErrorCode::ServiceUnavailable => "ServiceUnavailable",
+    ErrorCode::SnapshotDeleted => "SnapshotDeleted",
+    ErrorCode::SnapshotIdInvalid => "SnapshotIdInvalid",
+    ErrorCode::SnapshotInProgress => "SnapshotInProgress",
+    ErrorCode::SnapshotNotFound => "SnapshotNotFound",
+    ErrorCode::SnapshotScheduleNotFound => "SnapshotScheduleNotFound",
+    ErrorCode::StagingAreaFull => "StagingAreaFull",
+    ErrorCode::StorageFailure => "StorageFailure",
+    ErrorCode::TapeCartridgeNotFound => "TapeCartridgeNotFound",
+    ErrorCode::TargetAlreadyExists => "TargetAlreadyExists",
+    ErrorCode::TargetInvalid => "TargetInvalid",
+    ErrorCode::TargetNotFound => "TargetNotFound",
+    ErrorCode::UnauthorizedOperation => "UnauthorizedOperation",
+    ErrorCode::VolumeAlreadyExists => "VolumeAlreadyExists",
+    ErrorCode::VolumeIdInvalid => "VolumeIdInvalid",
+    ErrorCode::VolumeInUse => "VolumeInUse",
+    ErrorCode::VolumeNotFound => "VolumeNotFound",
+    ErrorCode::VolumeNotReady => "VolumeNotReady",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ActivationKeyExpired", "ActivationKeyInvalid", "ActivationKeyNotFound", "AuthenticationFailure", "BandwidthThrottleScheduleNotFound", "Blocked", "CannotExportSnapshot", "ChapCredentialNotFound", "DiskAlreadyAllocated", "DiskDoesNotExist", "DiskSizeGreaterThanVolumeMaxSize", "DiskSizeLessThanVolumeSize", "DiskSizeNotGigAligned", "DuplicateCertificateInfo", "DuplicateSchedule", "EndpointNotFound", "GatewayInternalError", "GatewayNotConnected", "GatewayNotFound", "GatewayProxyNetworkConnectionBusy", "IAMNotSupported", "InitiatorInvalid", "InitiatorNotFound", "InternalError", "InvalidEndpoint", "InvalidGateway", "InvalidParameters", "InvalidSchedule", "JoinDomainInProgress", "LocalStorageLimitExceeded", "LunAlreadyAllocated ", "LunInvalid", "MaximumContentLengthExceeded", "MaximumTapeCartridgeCountExceeded", "MaximumVolumeCountExceeded", "NetworkConfigurationChanged", "NoDisksAvailable", "NotImplemented", "NotSupported", "OperationAborted", "OutdatedGateway", "ParametersNotImplemented", "RegionInvalid", "RequestTimeout", "ServiceUnavailable", "SnapshotDeleted", "SnapshotIdInvalid", "SnapshotInProgress", "SnapshotNotFound", "SnapshotScheduleNotFound", "StagingAreaFull", "StorageFailure", "TapeCartridgeNotFound", "TargetAlreadyExists", "TargetInvalid", "TargetNotFound", "UnauthorizedOperation", "VolumeAlreadyExists", "VolumeIdInvalid", "VolumeInUse", "VolumeNotFound", "VolumeNotReady"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ErrorCode::ActivationKeyExpired => write!(f, "ActivationKeyExpired"),
-            ErrorCode::ActivationKeyInvalid => write!(f, "ActivationKeyInvalid"),
-            ErrorCode::ActivationKeyNotFound => write!(f, "ActivationKeyNotFound"),
-            ErrorCode::AuthenticationFailure => write!(f, "AuthenticationFailure"),
-            ErrorCode::BandwidthThrottleScheduleNotFound => write!(f, "BandwidthThrottleScheduleNotFound"),
-            ErrorCode::Blocked => write!(f, "Blocked"),
-            ErrorCode::CannotExportSnapshot => write!(f, "CannotExportSnapshot"),
-            ErrorCode::ChapCredentialNotFound => write!(f, "ChapCredentialNotFound"),
-            ErrorCode::DiskAlreadyAllocated => write!(f, "DiskAlreadyAllocated"),
-            ErrorCode::DiskDoesNotExist => write!(f, "DiskDoesNotExist"),
-            ErrorCode::DiskSizeGreaterThanVolumeMaxSize => write!(f, "DiskSizeGreaterThanVolumeMaxSize"),
-            ErrorCode::DiskSizeLessThanVolumeSize => write!(f, "DiskSizeLessThanVolumeSize"),
-            ErrorCode::DiskSizeNotGigAligned => write!(f, "DiskSizeNotGigAligned"),
-            ErrorCode::DuplicateCertificateInfo => write!(f, "DuplicateCertificateInfo"),
-            ErrorCode::DuplicateSchedule => write!(f, "DuplicateSchedule"),
-            ErrorCode::EndpointNotFound => write!(f, "EndpointNotFound"),
-            ErrorCode::GatewayInternalError => write!(f, "GatewayInternalError"),
-            ErrorCode::GatewayNotConnected => write!(f, "GatewayNotConnected"),
-            ErrorCode::GatewayNotFound => write!(f, "GatewayNotFound"),
-            ErrorCode::GatewayProxyNetworkConnectionBusy => write!(f, "GatewayProxyNetworkConnectionBusy"),
-            ErrorCode::IamNotSupported => write!(f, "IAMNotSupported"),
-            ErrorCode::InitiatorInvalid => write!(f, "InitiatorInvalid"),
-            ErrorCode::InitiatorNotFound => write!(f, "InitiatorNotFound"),
-            ErrorCode::InternalError => write!(f, "InternalError"),
-            ErrorCode::InvalidEndpoint => write!(f, "InvalidEndpoint"),
-            ErrorCode::InvalidGateway => write!(f, "InvalidGateway"),
-            ErrorCode::InvalidParameters => write!(f, "InvalidParameters"),
-            ErrorCode::InvalidSchedule => write!(f, "InvalidSchedule"),
-            ErrorCode::JoinDomainInProgress => write!(f, "JoinDomainInProgress"),
-            ErrorCode::LocalStorageLimitExceeded => write!(f, "LocalStorageLimitExceeded"),
-            ErrorCode::LunAlreadyAllocated => write!(f, "LunAlreadyAllocated "),
-            ErrorCode::LunInvalid => write!(f, "LunInvalid"),
-            ErrorCode::MaximumContentLengthExceeded => write!(f, "MaximumContentLengthExceeded"),
-            ErrorCode::MaximumTapeCartridgeCountExceeded => write!(f, "MaximumTapeCartridgeCountExceeded"),
-            ErrorCode::MaximumVolumeCountExceeded => write!(f, "MaximumVolumeCountExceeded"),
-            ErrorCode::NetworkConfigurationChanged => write!(f, "NetworkConfigurationChanged"),
-            ErrorCode::NoDisksAvailable => write!(f, "NoDisksAvailable"),
-            ErrorCode::NotImplemented => write!(f, "NotImplemented"),
-            ErrorCode::NotSupported => write!(f, "NotSupported"),
-            ErrorCode::OperationAborted => write!(f, "OperationAborted"),
-            ErrorCode::OutdatedGateway => write!(f, "OutdatedGateway"),
-            ErrorCode::ParametersNotImplemented => write!(f, "ParametersNotImplemented"),
-            ErrorCode::RegionInvalid => write!(f, "RegionInvalid"),
-            ErrorCode::RequestTimeout => write!(f, "RequestTimeout"),
-            ErrorCode::ServiceUnavailable => write!(f, "ServiceUnavailable"),
-            ErrorCode::SnapshotDeleted => write!(f, "SnapshotDeleted"),
-            ErrorCode::SnapshotIdInvalid => write!(f, "SnapshotIdInvalid"),
-            ErrorCode::SnapshotInProgress => write!(f, "SnapshotInProgress"),
-            ErrorCode::SnapshotNotFound => write!(f, "SnapshotNotFound"),
-            ErrorCode::SnapshotScheduleNotFound => write!(f, "SnapshotScheduleNotFound"),
-            ErrorCode::StagingAreaFull => write!(f, "StagingAreaFull"),
-            ErrorCode::StorageFailure => write!(f, "StorageFailure"),
-            ErrorCode::TapeCartridgeNotFound => write!(f, "TapeCartridgeNotFound"),
-            ErrorCode::TargetAlreadyExists => write!(f, "TargetAlreadyExists"),
-            ErrorCode::TargetInvalid => write!(f, "TargetInvalid"),
-            ErrorCode::TargetNotFound => write!(f, "TargetNotFound"),
-            ErrorCode::UnauthorizedOperation => write!(f, "UnauthorizedOperation"),
-            ErrorCode::VolumeAlreadyExists => write!(f, "VolumeAlreadyExists"),
-            ErrorCode::VolumeIdInvalid => write!(f, "VolumeIdInvalid"),
-            ErrorCode::VolumeInUse => write!(f, "VolumeInUse"),
-            ErrorCode::VolumeNotFound => write!(f, "VolumeNotFound"),
-            ErrorCode::VolumeNotReady => write!(f, "VolumeNotReady"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ErrorCode::ActivationKeyExpired => write!(f, "ActivationKeyExpired"),
+ErrorCode::ActivationKeyInvalid => write!(f, "ActivationKeyInvalid"),
+ErrorCode::ActivationKeyNotFound => write!(f, "ActivationKeyNotFound"),
+ErrorCode::AuthenticationFailure => write!(f, "AuthenticationFailure"),
+ErrorCode::BandwidthThrottleScheduleNotFound => write!(f, "BandwidthThrottleScheduleNotFound"),
+ErrorCode::Blocked => write!(f, "Blocked"),
+ErrorCode::CannotExportSnapshot => write!(f, "CannotExportSnapshot"),
+ErrorCode::ChapCredentialNotFound => write!(f, "ChapCredentialNotFound"),
+ErrorCode::DiskAlreadyAllocated => write!(f, "DiskAlreadyAllocated"),
+ErrorCode::DiskDoesNotExist => write!(f, "DiskDoesNotExist"),
+ErrorCode::DiskSizeGreaterThanVolumeMaxSize => write!(f, "DiskSizeGreaterThanVolumeMaxSize"),
+ErrorCode::DiskSizeLessThanVolumeSize => write!(f, "DiskSizeLessThanVolumeSize"),
+ErrorCode::DiskSizeNotGigAligned => write!(f, "DiskSizeNotGigAligned"),
+ErrorCode::DuplicateCertificateInfo => write!(f, "DuplicateCertificateInfo"),
+ErrorCode::DuplicateSchedule => write!(f, "DuplicateSchedule"),
+ErrorCode::EndpointNotFound => write!(f, "EndpointNotFound"),
+ErrorCode::GatewayInternalError => write!(f, "GatewayInternalError"),
+ErrorCode::GatewayNotConnected => write!(f, "GatewayNotConnected"),
+ErrorCode::GatewayNotFound => write!(f, "GatewayNotFound"),
+ErrorCode::GatewayProxyNetworkConnectionBusy => write!(f, "GatewayProxyNetworkConnectionBusy"),
+ErrorCode::IamNotSupported => write!(f, "IAMNotSupported"),
+ErrorCode::InitiatorInvalid => write!(f, "InitiatorInvalid"),
+ErrorCode::InitiatorNotFound => write!(f, "InitiatorNotFound"),
+ErrorCode::InternalError => write!(f, "InternalError"),
+ErrorCode::InvalidEndpoint => write!(f, "InvalidEndpoint"),
+ErrorCode::InvalidGateway => write!(f, "InvalidGateway"),
+ErrorCode::InvalidParameters => write!(f, "InvalidParameters"),
+ErrorCode::InvalidSchedule => write!(f, "InvalidSchedule"),
+ErrorCode::JoinDomainInProgress => write!(f, "JoinDomainInProgress"),
+ErrorCode::LocalStorageLimitExceeded => write!(f, "LocalStorageLimitExceeded"),
+ErrorCode::LunAlreadyAllocated => write!(f, "LunAlreadyAllocated "),
+ErrorCode::LunInvalid => write!(f, "LunInvalid"),
+ErrorCode::MaximumContentLengthExceeded => write!(f, "MaximumContentLengthExceeded"),
+ErrorCode::MaximumTapeCartridgeCountExceeded => write!(f, "MaximumTapeCartridgeCountExceeded"),
+ErrorCode::MaximumVolumeCountExceeded => write!(f, "MaximumVolumeCountExceeded"),
+ErrorCode::NetworkConfigurationChanged => write!(f, "NetworkConfigurationChanged"),
+ErrorCode::NoDisksAvailable => write!(f, "NoDisksAvailable"),
+ErrorCode::NotImplemented => write!(f, "NotImplemented"),
+ErrorCode::NotSupported => write!(f, "NotSupported"),
+ErrorCode::OperationAborted => write!(f, "OperationAborted"),
+ErrorCode::OutdatedGateway => write!(f, "OutdatedGateway"),
+ErrorCode::ParametersNotImplemented => write!(f, "ParametersNotImplemented"),
+ErrorCode::RegionInvalid => write!(f, "RegionInvalid"),
+ErrorCode::RequestTimeout => write!(f, "RequestTimeout"),
+ErrorCode::ServiceUnavailable => write!(f, "ServiceUnavailable"),
+ErrorCode::SnapshotDeleted => write!(f, "SnapshotDeleted"),
+ErrorCode::SnapshotIdInvalid => write!(f, "SnapshotIdInvalid"),
+ErrorCode::SnapshotInProgress => write!(f, "SnapshotInProgress"),
+ErrorCode::SnapshotNotFound => write!(f, "SnapshotNotFound"),
+ErrorCode::SnapshotScheduleNotFound => write!(f, "SnapshotScheduleNotFound"),
+ErrorCode::StagingAreaFull => write!(f, "StagingAreaFull"),
+ErrorCode::StorageFailure => write!(f, "StorageFailure"),
+ErrorCode::TapeCartridgeNotFound => write!(f, "TapeCartridgeNotFound"),
+ErrorCode::TargetAlreadyExists => write!(f, "TargetAlreadyExists"),
+ErrorCode::TargetInvalid => write!(f, "TargetInvalid"),
+ErrorCode::TargetNotFound => write!(f, "TargetNotFound"),
+ErrorCode::UnauthorizedOperation => write!(f, "UnauthorizedOperation"),
+ErrorCode::VolumeAlreadyExists => write!(f, "VolumeAlreadyExists"),
+ErrorCode::VolumeIdInvalid => write!(f, "VolumeIdInvalid"),
+ErrorCode::VolumeInUse => write!(f, "VolumeInUse"),
+ErrorCode::VolumeNotFound => write!(f, "VolumeNotFound"),
+ErrorCode::VolumeNotReady => write!(f, "VolumeNotReady"),
+ErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

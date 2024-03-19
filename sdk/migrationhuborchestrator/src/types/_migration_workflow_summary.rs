@@ -3,7 +3,7 @@
 /// <p>The summary of a migration workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MigrationWorkflowSummary {
+pub struct MigrationWorkflowSummary  {
     /// <p>The ID of the migration workflow.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
@@ -25,37 +25,37 @@ pub struct MigrationWorkflowSummary {
     /// <p>All the steps in a migration workflow.</p>
     pub total_steps: ::std::option::Option<i32>,
 }
-impl MigrationWorkflowSummary {
+impl  MigrationWorkflowSummary  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn ads_application_configuration_name(&self) -> ::std::option::Option<& str> {
         self.ads_application_configuration_name.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the migration workflow ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The steps completed in the migration workflow.</p>
@@ -97,8 +97,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The name of the migration workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the migration workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
     pub fn set_ads_application_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ads_application_configuration_name = input;
-        self
+        self.ads_application_configuration_name = input; self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
     pub fn get_ads_application_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The status of the migration workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
@@ -167,8 +162,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +175,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The time at which the migration workflow ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the migration workflow ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +188,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The steps completed in the migration workflow.</p>
     pub fn set_completed_steps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.completed_steps = input;
-        self
+        self.completed_steps = input; self
     }
     /// <p>The steps completed in the migration workflow.</p>
     pub fn get_completed_steps(&self) -> &::std::option::Option<i32> {
@@ -223,8 +214,7 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>All the steps in a migration workflow.</p>
     pub fn set_total_steps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_steps = input;
-        self
+        self.total_steps = input; self
     }
     /// <p>All the steps in a migration workflow.</p>
     pub fn get_total_steps(&self) -> &::std::option::Option<i32> {
@@ -233,16 +223,27 @@ impl MigrationWorkflowSummaryBuilder {
     /// Consumes the builder and constructs a [`MigrationWorkflowSummary`](crate::types::MigrationWorkflowSummary).
     pub fn build(self) -> crate::types::MigrationWorkflowSummary {
         crate::types::MigrationWorkflowSummary {
-            id: self.id,
-            name: self.name,
-            template_id: self.template_id,
-            ads_application_configuration_name: self.ads_application_configuration_name,
-            status: self.status,
-            creation_time: self.creation_time,
-            end_time: self.end_time,
-            status_message: self.status_message,
-            completed_steps: self.completed_steps,
-            total_steps: self.total_steps,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            template_id: self.template_id
+            ,
+            ads_application_configuration_name: self.ads_application_configuration_name
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            end_time: self.end_time
+            ,
+            status_message: self.status_message
+            ,
+            completed_steps: self.completed_steps
+            ,
+            total_steps: self.total_steps
+            ,
         }
     }
 }
+

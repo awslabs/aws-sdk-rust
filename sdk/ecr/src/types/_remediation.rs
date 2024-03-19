@@ -3,13 +3,13 @@
 /// <p>Information on how to remediate a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Remediation {
+pub struct Remediation  {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub recommendation: ::std::option::Option<crate::types::Recommendation>,
 }
-impl Remediation {
+impl  Remediation  {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::Recommendation> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::Recommendation> {
         self.recommendation.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RemediationBuilder {
     }
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::Recommendation>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::Recommendation> {
@@ -44,7 +43,9 @@ impl RemediationBuilder {
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).
     pub fn build(self) -> crate::types::Remediation {
         crate::types::Remediation {
-            recommendation: self.recommendation,
+            recommendation: self.recommendation
+            ,
         }
     }
 }
+

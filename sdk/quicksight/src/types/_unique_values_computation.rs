@@ -3,7 +3,7 @@
 /// <p>The unique values computation configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UniqueValuesComputation {
+pub struct UniqueValuesComputation  {
     /// <p>The ID for a computation.</p>
     pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
@@ -11,18 +11,17 @@ pub struct UniqueValuesComputation {
     /// <p>The category field that is used in a computation.</p>
     pub category: ::std::option::Option<crate::types::DimensionField>,
 }
-impl UniqueValuesComputation {
+impl  UniqueValuesComputation  {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.computation_id.deref()
+    pub fn computation_id(&self) -> & str {
+        use std::ops::Deref; self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The category field that is used in a computation.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::DimensionField> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::DimensionField> {
         self.category.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl UniqueValuesComputationBuilder {
     }
     /// <p>The ID for a computation.</p>
     pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.computation_id = input;
-        self
+        self.computation_id = input; self
     }
     /// <p>The ID for a computation.</p>
     pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl UniqueValuesComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a computation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl UniqueValuesComputationBuilder {
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::DimensionField> {
@@ -89,15 +85,19 @@ impl UniqueValuesComputationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::UniqueValuesComputationBuilder::computation_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UniqueValuesComputation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UniqueValuesComputation {
-            computation_id: self.computation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "computation_id",
-                    "computation_id was not specified but it is required when building UniqueValuesComputation",
-                )
-            })?,
-            name: self.name,
-            category: self.category,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UniqueValuesComputation {
+                computation_id: self.computation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("computation_id", "computation_id was not specified but it is required when building UniqueValuesComputation")
+                    )?
+                ,
+                name: self.name
+                ,
+                category: self.category
+                ,
+            }
+        )
     }
 }
+

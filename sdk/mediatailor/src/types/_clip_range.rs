@@ -3,13 +3,13 @@
 /// <p>Clip range configuration for the VOD source associated with the program.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClipRange {
+pub struct ClipRange  {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub end_offset_millis: i64,
     /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
     pub start_offset_millis: ::std::option::Option<i64>,
 }
-impl ClipRange {
+impl  ClipRange  {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub fn end_offset_millis(&self) -> i64 {
         self.end_offset_millis
@@ -41,8 +41,7 @@ impl ClipRangeBuilder {
     }
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_offset_millis = input;
-        self
+        self.end_offset_millis = input; self
     }
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl ClipRangeBuilder {
     }
     /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
     pub fn set_start_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_offset_millis = input;
-        self
+        self.start_offset_millis = input; self
     }
     /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
     pub fn get_start_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl ClipRangeBuilder {
     /// Consumes the builder and constructs a [`ClipRange`](crate::types::ClipRange).
     pub fn build(self) -> crate::types::ClipRange {
         crate::types::ClipRange {
-            end_offset_millis: self.end_offset_millis.unwrap_or_default(),
-            start_offset_millis: self.start_offset_millis,
+            end_offset_millis: self.end_offset_millis
+                .unwrap_or_default()
+            ,
+            start_offset_millis: self.start_offset_millis
+            ,
         }
     }
 }
+

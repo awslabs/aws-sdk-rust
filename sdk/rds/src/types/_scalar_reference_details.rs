@@ -3,11 +3,11 @@
 /// <p>The metric reference details when the reference is a scalar.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalarReferenceDetails {
+pub struct ScalarReferenceDetails  {
     /// <p>The value of a scalar reference.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl ScalarReferenceDetails {
+impl  ScalarReferenceDetails  {
     /// <p>The value of a scalar reference.</p>
     pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
@@ -34,8 +34,7 @@ impl ScalarReferenceDetailsBuilder {
     }
     /// <p>The value of a scalar reference.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a scalar reference.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -43,6 +42,10 @@ impl ScalarReferenceDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`ScalarReferenceDetails`](crate::types::ScalarReferenceDetails).
     pub fn build(self) -> crate::types::ScalarReferenceDetails {
-        crate::types::ScalarReferenceDetails { value: self.value }
+        crate::types::ScalarReferenceDetails {
+            value: self.value
+            ,
+        }
     }
 }
+

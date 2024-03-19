@@ -4,21 +4,21 @@
 /// <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopAction {
+pub struct StopAction  {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
     pub scope: crate::types::StopScope,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
-impl StopAction {
+impl  StopAction  {
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
-    pub fn scope(&self) -> &crate::types::StopScope {
+    pub fn scope(&self) -> & crate::types::StopScope {
         &self.scope
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl StopActionBuilder {
     }
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::StopScope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::StopScope> {
@@ -61,8 +60,7 @@ impl StopActionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.</p>
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
@@ -73,14 +71,17 @@ impl StopActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`scope`](crate::types::builders::StopActionBuilder::scope)
     pub fn build(self) -> ::std::result::Result<crate::types::StopAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StopAction {
-            scope: self.scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scope",
-                    "scope was not specified but it is required when building StopAction",
-                )
-            })?,
-            topic_arn: self.topic_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StopAction {
+                scope: self.scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scope", "scope was not specified but it is required when building StopAction")
+                    )?
+                ,
+                topic_arn: self.topic_arn
+                ,
+            }
+        )
     }
 }
+

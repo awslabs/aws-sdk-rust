@@ -3,7 +3,7 @@
 /// <p>Configuration for Dataset Definition inputs. The Dataset Definition input must specify exactly one of either <code>AthenaDatasetDefinition</code> or <code>RedshiftDatasetDefinition</code> types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetDefinition {
+pub struct DatasetDefinition  {
     /// <p>Configuration for Athena Dataset Definition input.</p>
     pub athena_dataset_definition: ::std::option::Option<crate::types::AthenaDatasetDefinition>,
     /// <p>Configuration for Redshift Dataset Definition input.</p>
@@ -15,25 +15,25 @@ pub struct DatasetDefinition {
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
     pub input_mode: ::std::option::Option<crate::types::InputMode>,
 }
-impl DatasetDefinition {
+impl  DatasetDefinition  {
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    pub fn athena_dataset_definition(&self) -> ::std::option::Option<&crate::types::AthenaDatasetDefinition> {
+    pub fn athena_dataset_definition(&self) -> ::std::option::Option<& crate::types::AthenaDatasetDefinition> {
         self.athena_dataset_definition.as_ref()
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    pub fn redshift_dataset_definition(&self) -> ::std::option::Option<&crate::types::RedshiftDatasetDefinition> {
+    pub fn redshift_dataset_definition(&self) -> ::std::option::Option<& crate::types::RedshiftDatasetDefinition> {
         self.redshift_dataset_definition.as_ref()
     }
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
-    pub fn data_distribution_type(&self) -> ::std::option::Option<&crate::types::DataDistributionType> {
+    pub fn data_distribution_type(&self) -> ::std::option::Option<& crate::types::DataDistributionType> {
         self.data_distribution_type.as_ref()
     }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    pub fn input_mode(&self) -> ::std::option::Option<&crate::types::InputMode> {
+    pub fn input_mode(&self) -> ::std::option::Option<& crate::types::InputMode> {
         self.input_mode.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DatasetDefinitionBuilder {
     }
     /// <p>Configuration for Athena Dataset Definition input.</p>
     pub fn set_athena_dataset_definition(mut self, input: ::std::option::Option<crate::types::AthenaDatasetDefinition>) -> Self {
-        self.athena_dataset_definition = input;
-        self
+        self.athena_dataset_definition = input; self
     }
     /// <p>Configuration for Athena Dataset Definition input.</p>
     pub fn get_athena_dataset_definition(&self) -> &::std::option::Option<crate::types::AthenaDatasetDefinition> {
@@ -76,8 +75,7 @@ impl DatasetDefinitionBuilder {
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
     pub fn set_redshift_dataset_definition(mut self, input: ::std::option::Option<crate::types::RedshiftDatasetDefinition>) -> Self {
-        self.redshift_dataset_definition = input;
-        self
+        self.redshift_dataset_definition = input; self
     }
     /// <p>Configuration for Redshift Dataset Definition input.</p>
     pub fn get_redshift_dataset_definition(&self) -> &::std::option::Option<crate::types::RedshiftDatasetDefinition> {
@@ -90,8 +88,7 @@ impl DatasetDefinitionBuilder {
     }
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
     }
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DatasetDefinitionBuilder {
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
     pub fn set_data_distribution_type(mut self, input: ::std::option::Option<crate::types::DataDistributionType>) -> Self {
-        self.data_distribution_type = input;
-        self
+        self.data_distribution_type = input; self
     }
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
     pub fn get_data_distribution_type(&self) -> &::std::option::Option<crate::types::DataDistributionType> {
@@ -118,8 +114,7 @@ impl DatasetDefinitionBuilder {
     }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
     pub fn set_input_mode(mut self, input: ::std::option::Option<crate::types::InputMode>) -> Self {
-        self.input_mode = input;
-        self
+        self.input_mode = input; self
     }
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
     pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::InputMode> {
@@ -128,11 +123,17 @@ impl DatasetDefinitionBuilder {
     /// Consumes the builder and constructs a [`DatasetDefinition`](crate::types::DatasetDefinition).
     pub fn build(self) -> crate::types::DatasetDefinition {
         crate::types::DatasetDefinition {
-            athena_dataset_definition: self.athena_dataset_definition,
-            redshift_dataset_definition: self.redshift_dataset_definition,
-            local_path: self.local_path,
-            data_distribution_type: self.data_distribution_type,
-            input_mode: self.input_mode,
+            athena_dataset_definition: self.athena_dataset_definition
+            ,
+            redshift_dataset_definition: self.redshift_dataset_definition
+            ,
+            local_path: self.local_path
+            ,
+            data_distribution_type: self.data_distribution_type
+            ,
+            input_mode: self.input_mode
+            ,
         }
     }
 }
+

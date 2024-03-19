@@ -3,7 +3,7 @@
 /// <p>An object that represents a route returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteData {
+pub struct RouteData  {
     /// <p>The name of the service mesh that the route resides in.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The virtual router that the route is associated with.</p>
@@ -17,32 +17,29 @@ pub struct RouteData {
     /// <p>The status of the route.</p>
     pub status: ::std::option::Option<crate::types::RouteStatus>,
 }
-impl RouteData {
+impl  RouteData  {
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> & str {
+        use std::ops::Deref; self.mesh_name.deref()
     }
     /// <p>The virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_router_name.deref()
+    pub fn virtual_router_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_router_name.deref()
     }
     /// <p>The name of the route.</p>
-    pub fn route_name(&self) -> &str {
-        use std::ops::Deref;
-        self.route_name.deref()
+    pub fn route_name(&self) -> & str {
+        use std::ops::Deref; self.route_name.deref()
     }
     /// <p>The specifications of the route.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::RouteSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::RouteSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the route.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the route.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RouteStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RouteStatus> {
         self.status.as_ref()
     }
 }
@@ -73,8 +70,7 @@ impl RouteDataBuilder {
     }
     /// <p>The name of the service mesh that the route resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh that the route resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl RouteDataBuilder {
     }
     /// <p>The virtual router that the route is associated with.</p>
     pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_router_name = input;
-        self
+        self.virtual_router_name = input; self
     }
     /// <p>The virtual router that the route is associated with.</p>
     pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl RouteDataBuilder {
     }
     /// <p>The name of the route.</p>
     pub fn set_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_name = input;
-        self
+        self.route_name = input; self
     }
     /// <p>The name of the route.</p>
     pub fn get_route_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl RouteDataBuilder {
     }
     /// <p>The specifications of the route.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::RouteSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The specifications of the route.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::RouteSpec> {
@@ -133,8 +126,7 @@ impl RouteDataBuilder {
     }
     /// <p>The associated metadata for the route.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The associated metadata for the route.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
@@ -148,8 +140,7 @@ impl RouteDataBuilder {
     }
     /// <p>The status of the route.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RouteStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the route.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RouteStatus> {
@@ -161,28 +152,31 @@ impl RouteDataBuilder {
     /// - [`virtual_router_name`](crate::types::builders::RouteDataBuilder::virtual_router_name)
     /// - [`route_name`](crate::types::builders::RouteDataBuilder::route_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RouteData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RouteData {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building RouteData",
-                )
-            })?,
-            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_router_name",
-                    "virtual_router_name was not specified but it is required when building RouteData",
-                )
-            })?,
-            route_name: self.route_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "route_name",
-                    "route_name was not specified but it is required when building RouteData",
-                )
-            })?,
-            spec: self.spec,
-            metadata: self.metadata,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RouteData {
+                mesh_name: self.mesh_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_name", "mesh_name was not specified but it is required when building RouteData")
+                    )?
+                ,
+                virtual_router_name: self.virtual_router_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_router_name", "virtual_router_name was not specified but it is required when building RouteData")
+                    )?
+                ,
+                route_name: self.route_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("route_name", "route_name was not specified but it is required when building RouteData")
+                    )?
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

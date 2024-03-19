@@ -3,19 +3,19 @@
 /// <p>The request body for CreateBackendConfig.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackendConfigInput {
+pub struct CreateBackendConfigInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The app ID for the backend manager.</p>
     pub backend_manager_app_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateBackendConfigInput {
+impl  CreateBackendConfigInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(&self) -> ::std::option::Option<&str> {
+    pub fn backend_manager_app_id(&self) -> ::std::option::Option<& str> {
         self.backend_manager_app_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateBackendConfigInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl CreateBackendConfigInputBuilder {
     }
     /// <p>The app ID for the backend manager.</p>
     pub fn set_backend_manager_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_manager_app_id = input;
-        self
+        self.backend_manager_app_id = input; self
     }
     /// <p>The app ID for the backend manager.</p>
     pub fn get_backend_manager_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_manager_app_id
     }
     /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_backend_config::CreateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_backend_config::CreateBackendConfigInput {
-            app_id: self.app_id,
-            backend_manager_app_id: self.backend_manager_app_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backend_config::CreateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_backend_config::CreateBackendConfigInput {
+                app_id: self.app_id
+                ,
+                backend_manager_app_id: self.backend_manager_app_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a list repositories operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositoriesInput {
+pub struct ListRepositoriesInput  {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The criteria used to sort the results of a list repositories operation.</p>
@@ -11,17 +11,17 @@ pub struct ListRepositoriesInput {
     /// <p>The order in which to sort the results of a list repositories operation.</p>
     pub order: ::std::option::Option<crate::types::OrderEnum>,
 }
-impl ListRepositoriesInput {
+impl  ListRepositoriesInput  {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria used to sort the results of a list repositories operation.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortByEnum> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortByEnum> {
         self.sort_by.as_ref()
     }
     /// <p>The order in which to sort the results of a list repositories operation.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::OrderEnum> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::OrderEnum> {
         self.order.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>The criteria used to sort the results of a list repositories operation.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortByEnum>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The criteria used to sort the results of a list repositories operation.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortByEnum> {
@@ -76,21 +74,24 @@ impl ListRepositoriesInputBuilder {
     }
     /// <p>The order in which to sort the results of a list repositories operation.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderEnum>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order in which to sort the results of a list repositories operation.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::OrderEnum> {
         &self.order
     }
     /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesInput {
-            next_token: self.next_token,
-            sort_by: self.sort_by,
-            order: self.order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_repositories::ListRepositoriesInput {
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                order: self.order
+                ,
+            }
+        )
     }
 }
+

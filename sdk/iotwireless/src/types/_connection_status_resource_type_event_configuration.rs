@@ -3,13 +3,13 @@
 /// <p>Connection status resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionStatusResourceTypeEventConfiguration {
+pub struct ConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
 }
-impl ConnectionStatusResourceTypeEventConfiguration {
+impl  ConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ConnectionStatusResourceTypeEventConfigurationBuilder {
     }
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>Connection status resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration> {
@@ -43,6 +42,10 @@ impl ConnectionStatusResourceTypeEventConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ConnectionStatusResourceTypeEventConfiguration`](crate::types::ConnectionStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::ConnectionStatusResourceTypeEventConfiguration {
-        crate::types::ConnectionStatusResourceTypeEventConfiguration { lo_ra_wan: self.lo_ra_wan }
+        crate::types::ConnectionStatusResourceTypeEventConfiguration {
+            lo_ra_wan: self.lo_ra_wan
+            ,
+        }
     }
 }
+

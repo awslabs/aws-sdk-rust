@@ -3,7 +3,7 @@
 /// <p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeDeployment {
+pub struct EdgeDeployment  {
     /// <p>The name and unique ID of the deployment.</p>
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the deployment.</p>
@@ -11,26 +11,27 @@ pub struct EdgeDeployment {
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
     pub failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
     /// <p>Returns a list of Definition objects.</p>
-    pub definitions: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>,
+    pub definitions: ::std::option::Option<::std::vec::Vec::<crate::types::Definition>>,
 }
-impl EdgeDeployment {
+impl  EdgeDeployment  {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_name(&self) -> ::std::option::Option<& str> {
         self.deployment_name.as_deref()
     }
     /// <p>The type of the deployment.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.r#type.as_ref()
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    pub fn failure_handling_policy(&self) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> ::std::option::Option<& crate::types::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
     /// <p>Returns a list of Definition objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.definitions.is_none()`.
-    pub fn definitions(&self) -> &[crate::types::Definition] {
-        self.definitions.as_deref().unwrap_or_default()
+    pub fn definitions(&self) -> & [crate::types::Definition] {
+        self.definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EdgeDeployment {
@@ -47,7 +48,7 @@ pub struct EdgeDeploymentBuilder {
     pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
-    pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>,
+    pub(crate) definitions: ::std::option::Option<::std::vec::Vec::<crate::types::Definition>>,
 }
 impl EdgeDeploymentBuilder {
     /// <p>The name and unique ID of the deployment.</p>
@@ -57,8 +58,7 @@ impl EdgeDeploymentBuilder {
     }
     /// <p>The name and unique ID of the deployment.</p>
     pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_name = input;
-        self
+        self.deployment_name = input; self
     }
     /// <p>The name and unique ID of the deployment.</p>
     pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl EdgeDeploymentBuilder {
     }
     /// <p>The type of the deployment.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the deployment.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -85,8 +84,7 @@ impl EdgeDeploymentBuilder {
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
     pub fn set_failure_handling_policy(mut self, input: ::std::option::Option<crate::types::FailureHandlingPolicy>) -> Self {
-        self.failure_handling_policy = input;
-        self
+        self.failure_handling_policy = input; self
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
     pub fn get_failure_handling_policy(&self) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
@@ -99,26 +97,30 @@ impl EdgeDeploymentBuilder {
     /// <p>Returns a list of Definition objects.</p>
     pub fn definitions(mut self, input: crate::types::Definition) -> Self {
         let mut v = self.definitions.unwrap_or_default();
-        v.push(input);
-        self.definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of Definition objects.</p>
-    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>) -> Self {
-        self.definitions = input;
-        self
+    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Definition>>) -> Self {
+        self.definitions = input; self
     }
     /// <p>Returns a list of Definition objects.</p>
-    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Definition>> {
+    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Definition>> {
         &self.definitions
     }
     /// Consumes the builder and constructs a [`EdgeDeployment`](crate::types::EdgeDeployment).
     pub fn build(self) -> crate::types::EdgeDeployment {
         crate::types::EdgeDeployment {
-            deployment_name: self.deployment_name,
-            r#type: self.r#type,
-            failure_handling_policy: self.failure_handling_policy,
-            definitions: self.definitions,
+            deployment_name: self.deployment_name
+            ,
+            r#type: self.r#type
+            ,
+            failure_handling_policy: self.failure_handling_policy
+            ,
+            definitions: self.definitions
+            ,
         }
     }
 }
+

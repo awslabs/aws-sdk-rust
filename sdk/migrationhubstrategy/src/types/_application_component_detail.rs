@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about an application component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationComponentDetail {
+pub struct ApplicationComponentDetail  {
     /// <p>The ID of the application component.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of application component.</p>
@@ -15,11 +15,11 @@ pub struct ApplicationComponentDetail {
     /// <p>A detailed description of the analysis status and any failure message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A list of anti-pattern severity summaries.</p>
-    pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternSeveritySummary>>,
     /// <p>Configuration details for the database associated with the application component.</p>
     pub database_config_detail: ::std::option::Option<crate::types::DatabaseConfigDetail>,
     /// <p>Details about the source code repository associated with the application component.</p>
-    pub source_code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
+    pub source_code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCodeRepository>>,
     /// <p>The type of application component.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The application component subtype.</p>
@@ -49,83 +49,85 @@ pub struct ApplicationComponentDetail {
     /// <p>The error in the analysis of the source code or database.</p>
     pub app_unit_error: ::std::option::Option<crate::types::AppUnitError>,
     /// <p>A list of the analysis results.</p>
-    pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
+    pub result_list: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>,
 }
-impl ApplicationComponentDetail {
+impl  ApplicationComponentDetail  {
     /// <p>The ID of the application component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of application component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The top recommendation set for the application component.</p>
-    pub fn recommendation_set(&self) -> ::std::option::Option<&crate::types::RecommendationSet> {
+    pub fn recommendation_set(&self) -> ::std::option::Option<& crate::types::RecommendationSet> {
         self.recommendation_set.as_ref()
     }
     /// <p>The status of analysis, if the application component has source code or an associated database.</p>
-    pub fn analysis_status(&self) -> ::std::option::Option<&crate::types::SrcCodeOrDbAnalysisStatus> {
+    pub fn analysis_status(&self) -> ::std::option::Option<& crate::types::SrcCodeOrDbAnalysisStatus> {
         self.analysis_status.as_ref()
     }
     /// <p>A detailed description of the analysis status and any failure message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A list of anti-pattern severity summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_antipattern_severity_summary.is_none()`.
-    pub fn list_antipattern_severity_summary(&self) -> &[crate::types::AntipatternSeveritySummary] {
-        self.list_antipattern_severity_summary.as_deref().unwrap_or_default()
+    pub fn list_antipattern_severity_summary(&self) -> & [crate::types::AntipatternSeveritySummary] {
+        self.list_antipattern_severity_summary.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration details for the database associated with the application component.</p>
-    pub fn database_config_detail(&self) -> ::std::option::Option<&crate::types::DatabaseConfigDetail> {
+    pub fn database_config_detail(&self) -> ::std::option::Option<& crate::types::DatabaseConfigDetail> {
         self.database_config_detail.as_ref()
     }
     /// <p>Details about the source code repository associated with the application component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code_repositories.is_none()`.
-    pub fn source_code_repositories(&self) -> &[crate::types::SourceCodeRepository] {
-        self.source_code_repositories.as_deref().unwrap_or_default()
+    pub fn source_code_repositories(&self) -> & [crate::types::SourceCodeRepository] {
+        self.source_code_repositories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of application component.</p>
-    pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> ::std::option::Option<& crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The application component subtype.</p>
-    pub fn resource_sub_type(&self) -> ::std::option::Option<&crate::types::ResourceSubType> {
+    pub fn resource_sub_type(&self) -> ::std::option::Option<& crate::types::ResourceSubType> {
         self.resource_sub_type.as_ref()
     }
     /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
-    pub fn inclusion_status(&self) -> ::std::option::Option<&crate::types::InclusionStatus> {
+    pub fn inclusion_status(&self) -> ::std::option::Option<& crate::types::InclusionStatus> {
         self.inclusion_status.as_ref()
     }
     /// <p>The S3 bucket name and the Amazon S3 key name for the anti-pattern report.</p>
-    pub fn antipattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn antipattern_report_s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.antipattern_report_s3_object.as_ref()
     }
     /// <p>The status of the anti-pattern report generation.</p>
-    pub fn antipattern_report_status(&self) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
+    pub fn antipattern_report_status(&self) -> ::std::option::Option<& crate::types::AntipatternReportStatus> {
         self.antipattern_report_status.as_ref()
     }
     /// <p>The status message for the anti-pattern.</p>
-    pub fn antipattern_report_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn antipattern_report_status_message(&self) -> ::std::option::Option<& str> {
         self.antipattern_report_status_message.as_deref()
     }
     /// <p>OS version.</p>
-    pub fn os_version(&self) -> ::std::option::Option<&str> {
+    pub fn os_version(&self) -> ::std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>OS driver.</p>
-    pub fn os_driver(&self) -> ::std::option::Option<&str> {
+    pub fn os_driver(&self) -> ::std::option::Option<& str> {
         self.os_driver.as_deref()
     }
     /// <p>The timestamp of when the application component was assessed.</p>
-    pub fn last_analyzed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_analyzed_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
     }
     /// <p>The ID of the server that the application component is running on.</p>
-    pub fn associated_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn associated_server_id(&self) -> ::std::option::Option<& str> {
         self.associated_server_id.as_deref()
     }
     /// <p>Set to true if the application component is running on multiple servers.</p>
@@ -133,22 +135,23 @@ impl ApplicationComponentDetail {
         self.more_server_association_exists
     }
     /// <p>The status of the application unit.</p>
-    pub fn runtime_status(&self) -> ::std::option::Option<&crate::types::RuntimeAnalysisStatus> {
+    pub fn runtime_status(&self) -> ::std::option::Option<& crate::types::RuntimeAnalysisStatus> {
         self.runtime_status.as_ref()
     }
     /// <p>The status message for the application unit.</p>
-    pub fn runtime_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn runtime_status_message(&self) -> ::std::option::Option<& str> {
         self.runtime_status_message.as_deref()
     }
     /// <p>The error in the analysis of the source code or database.</p>
-    pub fn app_unit_error(&self) -> ::std::option::Option<&crate::types::AppUnitError> {
+    pub fn app_unit_error(&self) -> ::std::option::Option<& crate::types::AppUnitError> {
         self.app_unit_error.as_ref()
     }
     /// <p>A list of the analysis results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_list.is_none()`.
-    pub fn result_list(&self) -> &[crate::types::Result] {
-        self.result_list.as_deref().unwrap_or_default()
+    pub fn result_list(&self) -> & [crate::types::Result] {
+        self.result_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ApplicationComponentDetail {
@@ -167,9 +170,9 @@ pub struct ApplicationComponentDetailBuilder {
     pub(crate) recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub(crate) list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternSeveritySummary>>,
     pub(crate) database_config_detail: ::std::option::Option<crate::types::DatabaseConfigDetail>,
-    pub(crate) source_code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
+    pub(crate) source_code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCodeRepository>>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) resource_sub_type: ::std::option::Option<crate::types::ResourceSubType>,
     pub(crate) inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
@@ -184,7 +187,7 @@ pub struct ApplicationComponentDetailBuilder {
     pub(crate) runtime_status: ::std::option::Option<crate::types::RuntimeAnalysisStatus>,
     pub(crate) runtime_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) app_unit_error: ::std::option::Option<crate::types::AppUnitError>,
-    pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
+    pub(crate) result_list: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>,
 }
 impl ApplicationComponentDetailBuilder {
     /// <p>The ID of the application component.</p>
@@ -194,8 +197,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The ID of the application component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the application component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +210,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The name of application component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of application component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +223,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The top recommendation set for the application component.</p>
     pub fn set_recommendation_set(mut self, input: ::std::option::Option<crate::types::RecommendationSet>) -> Self {
-        self.recommendation_set = input;
-        self
+        self.recommendation_set = input; self
     }
     /// <p>The top recommendation set for the application component.</p>
     pub fn get_recommendation_set(&self) -> &::std::option::Option<crate::types::RecommendationSet> {
@@ -236,8 +236,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The status of analysis, if the application component has source code or an associated database.</p>
     pub fn set_analysis_status(mut self, input: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>) -> Self {
-        self.analysis_status = input;
-        self
+        self.analysis_status = input; self
     }
     /// <p>The status of analysis, if the application component has source code or an associated database.</p>
     pub fn get_analysis_status(&self) -> &::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus> {
@@ -250,8 +249,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>A detailed description of the analysis status and any failure message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A detailed description of the analysis status and any failure message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,20 +262,16 @@ impl ApplicationComponentDetailBuilder {
     /// <p>A list of anti-pattern severity summaries.</p>
     pub fn list_antipattern_severity_summary(mut self, input: crate::types::AntipatternSeveritySummary) -> Self {
         let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
-        v.push(input);
-        self.list_antipattern_severity_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.list_antipattern_severity_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of anti-pattern severity summaries.</p>
-    pub fn set_list_antipattern_severity_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
-    ) -> Self {
-        self.list_antipattern_severity_summary = input;
-        self
+    pub fn set_list_antipattern_severity_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternSeveritySummary>>) -> Self {
+        self.list_antipattern_severity_summary = input; self
     }
     /// <p>A list of anti-pattern severity summaries.</p>
-    pub fn get_list_antipattern_severity_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
+    pub fn get_list_antipattern_severity_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AntipatternSeveritySummary>> {
         &self.list_antipattern_severity_summary
     }
     /// <p>Configuration details for the database associated with the application component.</p>
@@ -287,8 +281,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>Configuration details for the database associated with the application component.</p>
     pub fn set_database_config_detail(mut self, input: ::std::option::Option<crate::types::DatabaseConfigDetail>) -> Self {
-        self.database_config_detail = input;
-        self
+        self.database_config_detail = input; self
     }
     /// <p>Configuration details for the database associated with the application component.</p>
     pub fn get_database_config_detail(&self) -> &::std::option::Option<crate::types::DatabaseConfigDetail> {
@@ -301,17 +294,16 @@ impl ApplicationComponentDetailBuilder {
     /// <p>Details about the source code repository associated with the application component.</p>
     pub fn source_code_repositories(mut self, input: crate::types::SourceCodeRepository) -> Self {
         let mut v = self.source_code_repositories.unwrap_or_default();
-        v.push(input);
-        self.source_code_repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_code_repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the source code repository associated with the application component.</p>
-    pub fn set_source_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>) -> Self {
-        self.source_code_repositories = input;
-        self
+    pub fn set_source_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceCodeRepository>>) -> Self {
+        self.source_code_repositories = input; self
     }
     /// <p>Details about the source code repository associated with the application component.</p>
-    pub fn get_source_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>> {
+    pub fn get_source_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceCodeRepository>> {
         &self.source_code_repositories
     }
     /// <p>The type of application component.</p>
@@ -321,8 +313,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The type of application component.</p>
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input;
-        self
+        self.app_type = input; self
     }
     /// <p>The type of application component.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
@@ -335,8 +326,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The application component subtype.</p>
     pub fn set_resource_sub_type(mut self, input: ::std::option::Option<crate::types::ResourceSubType>) -> Self {
-        self.resource_sub_type = input;
-        self
+        self.resource_sub_type = input; self
     }
     /// <p>The application component subtype.</p>
     pub fn get_resource_sub_type(&self) -> &::std::option::Option<crate::types::ResourceSubType> {
@@ -349,8 +339,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn set_inclusion_status(mut self, input: ::std::option::Option<crate::types::InclusionStatus>) -> Self {
-        self.inclusion_status = input;
-        self
+        self.inclusion_status = input; self
     }
     /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
@@ -363,8 +352,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The S3 bucket name and the Amazon S3 key name for the anti-pattern report.</p>
     pub fn set_antipattern_report_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.antipattern_report_s3_object = input;
-        self
+        self.antipattern_report_s3_object = input; self
     }
     /// <p>The S3 bucket name and the Amazon S3 key name for the anti-pattern report.</p>
     pub fn get_antipattern_report_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -377,8 +365,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The status of the anti-pattern report generation.</p>
     pub fn set_antipattern_report_status(mut self, input: ::std::option::Option<crate::types::AntipatternReportStatus>) -> Self {
-        self.antipattern_report_status = input;
-        self
+        self.antipattern_report_status = input; self
     }
     /// <p>The status of the anti-pattern report generation.</p>
     pub fn get_antipattern_report_status(&self) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
@@ -391,8 +378,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The status message for the anti-pattern.</p>
     pub fn set_antipattern_report_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.antipattern_report_status_message = input;
-        self
+        self.antipattern_report_status_message = input; self
     }
     /// <p>The status message for the anti-pattern.</p>
     pub fn get_antipattern_report_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -405,8 +391,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>OS version.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_version = input;
-        self
+        self.os_version = input; self
     }
     /// <p>OS version.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -419,8 +404,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>OS driver.</p>
     pub fn set_os_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_driver = input;
-        self
+        self.os_driver = input; self
     }
     /// <p>OS driver.</p>
     pub fn get_os_driver(&self) -> &::std::option::Option<::std::string::String> {
@@ -433,8 +417,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The timestamp of when the application component was assessed.</p>
     pub fn set_last_analyzed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_analyzed_timestamp = input;
-        self
+        self.last_analyzed_timestamp = input; self
     }
     /// <p>The timestamp of when the application component was assessed.</p>
     pub fn get_last_analyzed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -447,8 +430,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The ID of the server that the application component is running on.</p>
     pub fn set_associated_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_server_id = input;
-        self
+        self.associated_server_id = input; self
     }
     /// <p>The ID of the server that the application component is running on.</p>
     pub fn get_associated_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -461,8 +443,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>Set to true if the application component is running on multiple servers.</p>
     pub fn set_more_server_association_exists(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.more_server_association_exists = input;
-        self
+        self.more_server_association_exists = input; self
     }
     /// <p>Set to true if the application component is running on multiple servers.</p>
     pub fn get_more_server_association_exists(&self) -> &::std::option::Option<bool> {
@@ -475,8 +456,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The status of the application unit.</p>
     pub fn set_runtime_status(mut self, input: ::std::option::Option<crate::types::RuntimeAnalysisStatus>) -> Self {
-        self.runtime_status = input;
-        self
+        self.runtime_status = input; self
     }
     /// <p>The status of the application unit.</p>
     pub fn get_runtime_status(&self) -> &::std::option::Option<crate::types::RuntimeAnalysisStatus> {
@@ -489,8 +469,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The status message for the application unit.</p>
     pub fn set_runtime_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_status_message = input;
-        self
+        self.runtime_status_message = input; self
     }
     /// <p>The status message for the application unit.</p>
     pub fn get_runtime_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -503,8 +482,7 @@ impl ApplicationComponentDetailBuilder {
     }
     /// <p>The error in the analysis of the source code or database.</p>
     pub fn set_app_unit_error(mut self, input: ::std::option::Option<crate::types::AppUnitError>) -> Self {
-        self.app_unit_error = input;
-        self
+        self.app_unit_error = input; self
     }
     /// <p>The error in the analysis of the source code or database.</p>
     pub fn get_app_unit_error(&self) -> &::std::option::Option<crate::types::AppUnitError> {
@@ -517,45 +495,68 @@ impl ApplicationComponentDetailBuilder {
     /// <p>A list of the analysis results.</p>
     pub fn result_list(mut self, input: crate::types::Result) -> Self {
         let mut v = self.result_list.unwrap_or_default();
-        v.push(input);
-        self.result_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the analysis results.</p>
-    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>) -> Self {
-        self.result_list = input;
-        self
+    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>) -> Self {
+        self.result_list = input; self
     }
     /// <p>A list of the analysis results.</p>
-    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Result>> {
         &self.result_list
     }
     /// Consumes the builder and constructs a [`ApplicationComponentDetail`](crate::types::ApplicationComponentDetail).
     pub fn build(self) -> crate::types::ApplicationComponentDetail {
         crate::types::ApplicationComponentDetail {
-            id: self.id,
-            name: self.name,
-            recommendation_set: self.recommendation_set,
-            analysis_status: self.analysis_status,
-            status_message: self.status_message,
-            list_antipattern_severity_summary: self.list_antipattern_severity_summary,
-            database_config_detail: self.database_config_detail,
-            source_code_repositories: self.source_code_repositories,
-            app_type: self.app_type,
-            resource_sub_type: self.resource_sub_type,
-            inclusion_status: self.inclusion_status,
-            antipattern_report_s3_object: self.antipattern_report_s3_object,
-            antipattern_report_status: self.antipattern_report_status,
-            antipattern_report_status_message: self.antipattern_report_status_message,
-            os_version: self.os_version,
-            os_driver: self.os_driver,
-            last_analyzed_timestamp: self.last_analyzed_timestamp,
-            associated_server_id: self.associated_server_id,
-            more_server_association_exists: self.more_server_association_exists,
-            runtime_status: self.runtime_status,
-            runtime_status_message: self.runtime_status_message,
-            app_unit_error: self.app_unit_error,
-            result_list: self.result_list,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            recommendation_set: self.recommendation_set
+            ,
+            analysis_status: self.analysis_status
+            ,
+            status_message: self.status_message
+            ,
+            list_antipattern_severity_summary: self.list_antipattern_severity_summary
+            ,
+            database_config_detail: self.database_config_detail
+            ,
+            source_code_repositories: self.source_code_repositories
+            ,
+            app_type: self.app_type
+            ,
+            resource_sub_type: self.resource_sub_type
+            ,
+            inclusion_status: self.inclusion_status
+            ,
+            antipattern_report_s3_object: self.antipattern_report_s3_object
+            ,
+            antipattern_report_status: self.antipattern_report_status
+            ,
+            antipattern_report_status_message: self.antipattern_report_status_message
+            ,
+            os_version: self.os_version
+            ,
+            os_driver: self.os_driver
+            ,
+            last_analyzed_timestamp: self.last_analyzed_timestamp
+            ,
+            associated_server_id: self.associated_server_id
+            ,
+            more_server_association_exists: self.more_server_association_exists
+            ,
+            runtime_status: self.runtime_status
+            ,
+            runtime_status_message: self.runtime_status_message
+            ,
+            app_unit_error: self.app_unit_error
+            ,
+            result_list: self.result_list
+            ,
         }
     }
 }
+

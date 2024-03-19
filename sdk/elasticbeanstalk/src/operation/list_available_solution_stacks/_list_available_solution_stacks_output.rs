@@ -3,32 +3,34 @@
 /// <p>A list of available AWS Elastic Beanstalk solution stacks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableSolutionStacksOutput {
+pub struct ListAvailableSolutionStacksOutput  {
     /// <p>A list of available solution stacks.</p>
-    pub solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub solution_stacks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
-    pub solution_stack_details: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
+    pub solution_stack_details: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }
-impl ListAvailableSolutionStacksOutput {
+impl  ListAvailableSolutionStacksOutput  {
     /// <p>A list of available solution stacks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solution_stacks.is_none()`.
-    pub fn solution_stacks(&self) -> &[::std::string::String] {
-        self.solution_stacks.as_deref().unwrap_or_default()
+    pub fn solution_stacks(&self) -> & [::std::string::String] {
+        self.solution_stacks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solution_stack_details.is_none()`.
-    pub fn solution_stack_details(&self) -> &[crate::types::SolutionStackDescription] {
-        self.solution_stack_details.as_deref().unwrap_or_default()
+    pub fn solution_stack_details(&self) -> & [crate::types::SolutionStackDescription] {
+        self.solution_stack_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAvailableSolutionStacksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAvailableSolutionStacksOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableSolutionStacksOutput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput).
     pub fn builder() -> crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksOutputBuilder {
@@ -40,8 +42,8 @@ impl ListAvailableSolutionStacksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksOutputBuilder {
-    pub(crate) solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) solution_stack_details: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
+    pub(crate) solution_stacks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) solution_stack_details: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }
 impl ListAvailableSolutionStacksOutputBuilder {
@@ -52,17 +54,16 @@ impl ListAvailableSolutionStacksOutputBuilder {
     /// <p>A list of available solution stacks.</p>
     pub fn solution_stacks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.solution_stacks.unwrap_or_default();
-        v.push(input.into());
-        self.solution_stacks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.solution_stacks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of available solution stacks.</p>
-    pub fn set_solution_stacks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.solution_stacks = input;
-        self
+    pub fn set_solution_stacks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.solution_stacks = input; self
     }
     /// <p>A list of available solution stacks.</p>
-    pub fn get_solution_stacks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_solution_stacks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.solution_stacks
     }
     /// Appends an item to `solution_stack_details`.
@@ -72,34 +73,36 @@ impl ListAvailableSolutionStacksOutputBuilder {
     /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
     pub fn solution_stack_details(mut self, input: crate::types::SolutionStackDescription) -> Self {
         let mut v = self.solution_stack_details.unwrap_or_default();
-        v.push(input);
-        self.solution_stack_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.solution_stack_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
-    pub fn set_solution_stack_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>) -> Self {
-        self.solution_stack_details = input;
-        self
+    pub fn set_solution_stack_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionStackDescription>>) -> Self {
+        self.solution_stack_details = input; self
     }
     /// <p>A list of available solution stacks and their <code>SolutionStackDescription</code>.</p>
-    pub fn get_solution_stack_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>> {
+    pub fn get_solution_stack_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SolutionStackDescription>> {
         &self.solution_stack_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAvailableSolutionStacksOutput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput).
     pub fn build(self) -> crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput {
         crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput {
-            solution_stacks: self.solution_stacks,
-            solution_stack_details: self.solution_stack_details,
+            solution_stacks: self.solution_stacks
+            ,
+            solution_stack_details: self.solution_stack_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

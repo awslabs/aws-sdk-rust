@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomRoutingPortMappings`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::set_accelerator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p><br>
     ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::set_endpoint_group_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of destination port mappings that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput) with field(s):
     ///   - [`port_mappings(Option<Vec::<PortMapping>>)`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput::port_mappings): <p>The port mappings for a custom routing accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsError>`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError)
-    pub fn list_custom_routing_port_mappings(
-        &self,
-    ) -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder {
-        crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsError>`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError)
+    pub fn list_custom_routing_port_mappings(&self) -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder {
+                                crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrustStoreOutput {
+pub struct CreateTrustStoreOutput  {
     /// <p>The ARN of the trust store.</p>
     pub trust_store_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateTrustStoreOutput {
+impl  CreateTrustStoreOutput  {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.trust_store_arn.deref()
+    pub fn trust_store_arn(&self) -> & str {
+        use std::ops::Deref; self.trust_store_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrustStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
     pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateTrustStoreOutputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_store_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`trust_store_arn`](crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder::trust_store_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trust_store::CreateTrustStoreOutput {
-            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trust_store_arn",
-                    "trust_store_arn was not specified but it is required when building CreateTrustStoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_trust_store::CreateTrustStoreOutput {
+                trust_store_arn: self.trust_store_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trust_store_arn", "trust_store_arn was not specified but it is required when building CreateTrustStoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

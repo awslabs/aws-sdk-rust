@@ -3,7 +3,7 @@
 /// <p>Metadata about an Amazon Web Services Payment Cryptography key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Key {
+pub struct Key  {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub key_arn: ::std::string::String,
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
@@ -32,24 +32,22 @@ pub struct Key {
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
     pub delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Key {
+impl  Key  {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
+    pub fn key_attributes(&self) -> ::std::option::Option<& crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
-    pub fn key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.key_check_value.deref()
+    pub fn key_check_value(&self) -> & str {
+        use std::ops::Deref; self.key_check_value.deref()
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(&self) -> &crate::types::KeyCheckValueAlgorithm {
+    pub fn key_check_value_algorithm(&self) -> & crate::types::KeyCheckValueAlgorithm {
         &self.key_check_value_algorithm
     }
     /// <p>Specifies whether the key is enabled.</p>
@@ -61,31 +59,31 @@ impl Key {
         self.exportable
     }
     /// <p>The state of key that is being created or deleted.</p>
-    pub fn key_state(&self) -> &crate::types::KeyState {
+    pub fn key_state(&self) -> & crate::types::KeyState {
         &self.key_state
     }
     /// <p>The source of the key material. For keys created within Amazon Web Services Payment Cryptography, the value is <code>AWS_PAYMENT_CRYPTOGRAPHY</code>. For keys imported into Amazon Web Services Payment Cryptography, the value is <code>EXTERNAL</code>.</p>
-    pub fn key_origin(&self) -> &crate::types::KeyOrigin {
+    pub fn key_origin(&self) -> & crate::types::KeyOrigin {
         &self.key_origin
     }
     /// <p>The date and time when the key was created.</p>
-    pub fn create_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_timestamp
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will start using the key material for cryptographic operations.</p>
-    pub fn usage_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn usage_start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.usage_start_timestamp.as_ref()
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will stop using the key material for cryptographic operations.</p>
-    pub fn usage_stop_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn usage_stop_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.usage_stop_timestamp.as_ref()
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-    pub fn delete_pending_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_pending_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_pending_timestamp.as_ref()
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
-    pub fn delete_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_timestamp.as_ref()
     }
 }
@@ -123,8 +121,7 @@ impl KeyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl KeyBuilder {
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
-        self.key_attributes = input;
-        self
+        self.key_attributes = input; self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
@@ -153,8 +149,7 @@ impl KeyBuilder {
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_check_value = input;
-        self
+        self.key_check_value = input; self
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl KeyBuilder {
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
-        self.key_check_value_algorithm = input;
-        self
+        self.key_check_value_algorithm = input; self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
@@ -186,8 +180,7 @@ impl KeyBuilder {
     }
     /// <p>Specifies whether the key is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the key is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -201,8 +194,7 @@ impl KeyBuilder {
     }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn set_exportable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable = input;
-        self
+        self.exportable = input; self
     }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn get_exportable(&self) -> &::std::option::Option<bool> {
@@ -216,8 +208,7 @@ impl KeyBuilder {
     }
     /// <p>The state of key that is being created or deleted.</p>
     pub fn set_key_state(mut self, input: ::std::option::Option<crate::types::KeyState>) -> Self {
-        self.key_state = input;
-        self
+        self.key_state = input; self
     }
     /// <p>The state of key that is being created or deleted.</p>
     pub fn get_key_state(&self) -> &::std::option::Option<crate::types::KeyState> {
@@ -231,8 +222,7 @@ impl KeyBuilder {
     }
     /// <p>The source of the key material. For keys created within Amazon Web Services Payment Cryptography, the value is <code>AWS_PAYMENT_CRYPTOGRAPHY</code>. For keys imported into Amazon Web Services Payment Cryptography, the value is <code>EXTERNAL</code>.</p>
     pub fn set_key_origin(mut self, input: ::std::option::Option<crate::types::KeyOrigin>) -> Self {
-        self.key_origin = input;
-        self
+        self.key_origin = input; self
     }
     /// <p>The source of the key material. For keys created within Amazon Web Services Payment Cryptography, the value is <code>AWS_PAYMENT_CRYPTOGRAPHY</code>. For keys imported into Amazon Web Services Payment Cryptography, the value is <code>EXTERNAL</code>.</p>
     pub fn get_key_origin(&self) -> &::std::option::Option<crate::types::KeyOrigin> {
@@ -246,8 +236,7 @@ impl KeyBuilder {
     }
     /// <p>The date and time when the key was created.</p>
     pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_timestamp = input;
-        self
+        self.create_timestamp = input; self
     }
     /// <p>The date and time when the key was created.</p>
     pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -260,8 +249,7 @@ impl KeyBuilder {
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will start using the key material for cryptographic operations.</p>
     pub fn set_usage_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.usage_start_timestamp = input;
-        self
+        self.usage_start_timestamp = input; self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will start using the key material for cryptographic operations.</p>
     pub fn get_usage_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -274,8 +262,7 @@ impl KeyBuilder {
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will stop using the key material for cryptographic operations.</p>
     pub fn set_usage_stop_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.usage_stop_timestamp = input;
-        self
+        self.usage_stop_timestamp = input; self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will stop using the key material for cryptographic operations.</p>
     pub fn get_usage_stop_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -288,8 +275,7 @@ impl KeyBuilder {
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
     pub fn set_delete_pending_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_pending_timestamp = input;
-        self
+        self.delete_pending_timestamp = input; self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
     pub fn get_delete_pending_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -302,8 +288,7 @@ impl KeyBuilder {
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
     pub fn set_delete_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_timestamp = input;
-        self
+        self.delete_timestamp = input; self
     }
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
     pub fn get_delete_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -320,60 +305,60 @@ impl KeyBuilder {
     /// - [`key_origin`](crate::types::builders::KeyBuilder::key_origin)
     /// - [`create_timestamp`](crate::types::builders::KeyBuilder::create_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::Key, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Key {
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building Key",
-                )
-            })?,
-            key_attributes: self.key_attributes,
-            key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value",
-                    "key_check_value was not specified but it is required when building Key",
-                )
-            })?,
-            key_check_value_algorithm: self.key_check_value_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value_algorithm",
-                    "key_check_value_algorithm was not specified but it is required when building Key",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building Key",
-                )
-            })?,
-            exportable: self.exportable.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exportable",
-                    "exportable was not specified but it is required when building Key",
-                )
-            })?,
-            key_state: self.key_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_state",
-                    "key_state was not specified but it is required when building Key",
-                )
-            })?,
-            key_origin: self.key_origin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_origin",
-                    "key_origin was not specified but it is required when building Key",
-                )
-            })?,
-            create_timestamp: self.create_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_timestamp",
-                    "create_timestamp was not specified but it is required when building Key",
-                )
-            })?,
-            usage_start_timestamp: self.usage_start_timestamp,
-            usage_stop_timestamp: self.usage_stop_timestamp,
-            delete_pending_timestamp: self.delete_pending_timestamp,
-            delete_timestamp: self.delete_timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Key {
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building Key")
+                    )?
+                ,
+                key_attributes: self.key_attributes
+                ,
+                key_check_value: self.key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value", "key_check_value was not specified but it is required when building Key")
+                    )?
+                ,
+                key_check_value_algorithm: self.key_check_value_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value_algorithm", "key_check_value_algorithm was not specified but it is required when building Key")
+                    )?
+                ,
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building Key")
+                    )?
+                ,
+                exportable: self.exportable
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exportable", "exportable was not specified but it is required when building Key")
+                    )?
+                ,
+                key_state: self.key_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_state", "key_state was not specified but it is required when building Key")
+                    )?
+                ,
+                key_origin: self.key_origin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_origin", "key_origin was not specified but it is required when building Key")
+                    )?
+                ,
+                create_timestamp: self.create_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_timestamp", "create_timestamp was not specified but it is required when building Key")
+                    )?
+                ,
+                usage_start_timestamp: self.usage_start_timestamp
+                ,
+                usage_stop_timestamp: self.usage_stop_timestamp
+                ,
+                delete_pending_timestamp: self.delete_pending_timestamp
+                ,
+                delete_timestamp: self.delete_timestamp
+                ,
+            }
+        )
     }
 }
+

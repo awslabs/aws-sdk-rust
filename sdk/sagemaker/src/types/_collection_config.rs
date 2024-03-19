@@ -25,11 +25,7 @@ impl CollectionConfig {
     /// Tries to convert the enum instance into [`VectorConfig`](crate::types::CollectionConfig::VectorConfig), extracting the inner [`VectorConfig`](crate::types::VectorConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vector_config(&self) -> ::std::result::Result<&crate::types::VectorConfig, &Self> {
-        if let CollectionConfig::VectorConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CollectionConfig::VectorConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VectorConfig`](crate::types::CollectionConfig::VectorConfig).
     pub fn is_vector_config(&self) -> bool {
@@ -40,3 +36,4 @@ impl CollectionConfig {
         matches!(self, Self::Unknown)
     }
 }
+

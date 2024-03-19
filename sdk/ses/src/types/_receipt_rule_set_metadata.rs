@@ -5,7 +5,7 @@
 /// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html#receiving-email-concepts-rules">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReceiptRuleSetMetadata {
+pub struct ReceiptRuleSetMetadata  {
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct ReceiptRuleSetMetadata {
     /// <p>The date and time the receipt rule set was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ReceiptRuleSetMetadata {
+impl  ReceiptRuleSetMetadata  {
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -29,11 +29,11 @@ impl ReceiptRuleSetMetadata {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time the receipt rule set was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ReceiptRuleSetMetadataBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the receipt rule set. The name must meet the following requirements:</p>
     /// <ul>
@@ -97,8 +96,7 @@ impl ReceiptRuleSetMetadataBuilder {
     }
     /// <p>The date and time the receipt rule set was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The date and time the receipt rule set was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,8 +105,11 @@ impl ReceiptRuleSetMetadataBuilder {
     /// Consumes the builder and constructs a [`ReceiptRuleSetMetadata`](crate::types::ReceiptRuleSetMetadata).
     pub fn build(self) -> crate::types::ReceiptRuleSetMetadata {
         crate::types::ReceiptRuleSetMetadata {
-            name: self.name,
-            created_timestamp: self.created_timestamp,
+            name: self.name
+            ,
+            created_timestamp: self.created_timestamp
+            ,
         }
     }
 }
+

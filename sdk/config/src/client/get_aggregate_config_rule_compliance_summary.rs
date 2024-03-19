@@ -2,23 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetAggregateConfigRuleComplianceSummary`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::set_configuration_aggregator_name):<br>required: **true**<br><p>The name of the configuration aggregator.</p><br>
     ///   - [`filters(ConfigRuleComplianceSummaryFilters)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::filters) / [`set_filters(Option<ConfigRuleComplianceSummaryFilters>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::set_filters):<br>required: **false**<br><p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p><br>
     ///   - [`group_by_key(ConfigRuleComplianceSummaryGroupKey)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::group_by_key) / [`set_group_by_key(Option<ConfigRuleComplianceSummaryGroupKey>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::set_group_by_key):<br>required: **false**<br><p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput) with field(s):
+                            /// - On success, responds with [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput) with field(s):
     ///   - [`group_by_key(Option<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput::group_by_key): <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
     ///   - [`aggregate_compliance_counts(Option<Vec::<AggregateComplianceCount>>)`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput::aggregate_compliance_counts): <p>Returns a list of AggregateComplianceCounts object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<GetAggregateConfigRuleComplianceSummaryError>`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError)
-    pub fn get_aggregate_config_rule_compliance_summary(
-        &self,
-    ) -> crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder {
-        crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<GetAggregateConfigRuleComplianceSummaryError>`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError)
+    pub fn get_aggregate_config_rule_compliance_summary(&self) -> crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder {
+                                crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

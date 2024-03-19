@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopJobRunOutput {
+pub struct StopJobRunOutput  {
     /// <p>The ID of the job run that you stopped.</p>
     pub run_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StopJobRunOutput {
+impl  StopJobRunOutput  {
     /// <p>The ID of the job run that you stopped.</p>
-    pub fn run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.run_id.deref()
+    pub fn run_id(&self) -> & str {
+        use std::ops::Deref; self.run_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopJobRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopJobRunOutput {
     /// Creates a new builder-style object to manufacture [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput).
     pub fn builder() -> crate::operation::stop_job_run::builders::StopJobRunOutputBuilder {
@@ -42,34 +41,35 @@ impl StopJobRunOutputBuilder {
     }
     /// <p>The ID of the job run that you stopped.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The ID of the job run that you stopped.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_id`](crate::operation::stop_job_run::builders::StopJobRunOutputBuilder::run_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_job_run::StopJobRunOutput {
-            run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_id",
-                    "run_id was not specified but it is required when building StopJobRunOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::stop_job_run::StopJobRunOutput {
+                run_id: self.run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_id", "run_id was not specified but it is required when building StopJobRunOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

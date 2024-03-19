@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectlambdatransformationconfigurationaction = unimplemented!();
 /// match objectlambdatransformationconfigurationaction {
@@ -32,16 +32,14 @@
 /// Specifically, when `objectlambdatransformationconfigurationaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectLambdaTransformationConfigurationAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ObjectLambdaTransformationConfigurationAction {
     #[allow(missing_docs)] // documentation missing in model
     GetObject,
@@ -53,69 +51,68 @@ pub enum ObjectLambdaTransformationConfigurationAction {
     ListObjectsV2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ObjectLambdaTransformationConfigurationAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "GetObject" => ObjectLambdaTransformationConfigurationAction::GetObject,
-            "HeadObject" => ObjectLambdaTransformationConfigurationAction::HeadObject,
-            "ListObjects" => ObjectLambdaTransformationConfigurationAction::ListObjects,
-            "ListObjectsV2" => ObjectLambdaTransformationConfigurationAction::ListObjectsV2,
-            other => {
-                ObjectLambdaTransformationConfigurationAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "GetObject" => ObjectLambdaTransformationConfigurationAction::GetObject,
+"HeadObject" => ObjectLambdaTransformationConfigurationAction::HeadObject,
+"ListObjects" => ObjectLambdaTransformationConfigurationAction::ListObjects,
+"ListObjectsV2" => ObjectLambdaTransformationConfigurationAction::ListObjectsV2,
+other => ObjectLambdaTransformationConfigurationAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ObjectLambdaTransformationConfigurationAction {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ObjectLambdaTransformationConfigurationAction::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ObjectLambdaTransformationConfigurationAction::from(s))
+                    }
+                }
 impl ObjectLambdaTransformationConfigurationAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectLambdaTransformationConfigurationAction::GetObject => "GetObject",
-            ObjectLambdaTransformationConfigurationAction::HeadObject => "HeadObject",
-            ObjectLambdaTransformationConfigurationAction::ListObjects => "ListObjects",
-            ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => "ListObjectsV2",
-            ObjectLambdaTransformationConfigurationAction::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["GetObject", "HeadObject", "ListObjects", "ListObjectsV2"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectLambdaTransformationConfigurationAction::GetObject => "GetObject",
+    ObjectLambdaTransformationConfigurationAction::HeadObject => "HeadObject",
+    ObjectLambdaTransformationConfigurationAction::ListObjects => "ListObjects",
+    ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => "ListObjectsV2",
+    ObjectLambdaTransformationConfigurationAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GetObject", "HeadObject", "ListObjects", "ListObjectsV2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ObjectLambdaTransformationConfigurationAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ObjectLambdaTransformationConfigurationAction {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ObjectLambdaTransformationConfigurationAction {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ObjectLambdaTransformationConfigurationAction::GetObject => write!(f, "GetObject"),
-            ObjectLambdaTransformationConfigurationAction::HeadObject => write!(f, "HeadObject"),
-            ObjectLambdaTransformationConfigurationAction::ListObjects => write!(f, "ListObjects"),
-            ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => write!(f, "ListObjectsV2"),
-            ObjectLambdaTransformationConfigurationAction::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ObjectLambdaTransformationConfigurationAction::GetObject => write!(f, "GetObject"),
+ObjectLambdaTransformationConfigurationAction::HeadObject => write!(f, "HeadObject"),
+ObjectLambdaTransformationConfigurationAction::ListObjects => write!(f, "ListObjects"),
+ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => write!(f, "ListObjectsV2"),
+ObjectLambdaTransformationConfigurationAction::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

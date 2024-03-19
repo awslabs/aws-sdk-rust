@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDataCollectionByAgentIdsInput {
+pub struct StartDataCollectionByAgentIdsInput  {
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StartDataCollectionByAgentIdsInput {
+impl  StartDataCollectionByAgentIdsInput  {
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
-    pub fn agent_ids(&self) -> &[::std::string::String] {
-        self.agent_ids.as_deref().unwrap_or_default()
+    pub fn agent_ids(&self) -> & [::std::string::String] {
+        self.agent_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartDataCollectionByAgentIdsInput {
@@ -25,7 +26,7 @@ impl StartDataCollectionByAgentIdsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsInputBuilder {
-    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StartDataCollectionByAgentIdsInputBuilder {
     /// Appends an item to `agent_ids`.
@@ -35,28 +36,26 @@ impl StartDataCollectionByAgentIdsInputBuilder {
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
-        v.push(input.into());
-        self.agent_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_ids = input;
-        self
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_ids = input; self
     }
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_ids
     }
     /// Consumes the builder and constructs a [`StartDataCollectionByAgentIdsInput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput {
-            agent_ids: self.agent_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput {
+                agent_ids: self.agent_ids
+                ,
+            }
+        )
     }
 }
+

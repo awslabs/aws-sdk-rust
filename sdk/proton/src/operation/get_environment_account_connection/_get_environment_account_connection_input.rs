@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnvironmentAccountConnectionInput {
+pub struct GetEnvironmentAccountConnectionInput  {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetEnvironmentAccountConnectionInput {
+impl  GetEnvironmentAccountConnectionInput  {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetEnvironmentAccountConnectionInputBuilder {
     }
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

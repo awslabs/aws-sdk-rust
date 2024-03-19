@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAwsDefaultServiceQuotasOutput {
+pub struct ListAwsDefaultServiceQuotasOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quotas.</p>
-    pub quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
+    pub quotas: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceQuota>>,
     _request_id: Option<String>,
 }
-impl ListAwsDefaultServiceQuotasOutput {
+impl  ListAwsDefaultServiceQuotasOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quotas.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quotas.is_none()`.
-    pub fn quotas(&self) -> &[crate::types::ServiceQuota] {
-        self.quotas.as_deref().unwrap_or_default()
+    pub fn quotas(&self) -> & [crate::types::ServiceQuota] {
+        self.quotas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAwsDefaultServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasOutput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput).
     pub fn builder() -> crate::operation::list_aws_default_service_quotas::builders::ListAwsDefaultServiceQuotasOutputBuilder {
@@ -38,7 +39,7 @@ impl ListAwsDefaultServiceQuotasOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
+    pub(crate) quotas: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceQuota>>,
     _request_id: Option<String>,
 }
 impl ListAwsDefaultServiceQuotasOutputBuilder {
@@ -49,8 +50,7 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
     /// <p>Information about the quotas.</p>
     pub fn quotas(mut self, input: crate::types::ServiceQuota) -> Self {
         let mut v = self.quotas.unwrap_or_default();
-        v.push(input);
-        self.quotas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.quotas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the quotas.</p>
-    pub fn set_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>) -> Self {
-        self.quotas = input;
-        self
+    pub fn set_quotas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceQuota>>) -> Self {
+        self.quotas = input; self
     }
     /// <p>Information about the quotas.</p>
-    pub fn get_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
+    pub fn get_quotas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceQuota>> {
         &self.quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAwsDefaultServiceQuotasOutput`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput).
     pub fn build(self) -> crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput {
         crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput {
-            next_token: self.next_token,
-            quotas: self.quotas,
+            next_token: self.next_token
+            ,
+            quotas: self.quotas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

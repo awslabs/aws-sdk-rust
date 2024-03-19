@@ -3,7 +3,7 @@
 /// <p>Describes an identity provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityProviderSummary {
+pub struct IdentityProviderSummary  {
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
@@ -15,27 +15,25 @@ pub struct IdentityProviderSummary {
     /// <p>The failure message associated with an identity provider.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
-impl IdentityProviderSummary {
+impl  IdentityProviderSummary  {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::Settings> {
         self.settings.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> & str {
+        use std::ops::Deref; self.product.deref()
     }
     /// <p>The status of an identity provider.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The failure message associated with an identity provider.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
@@ -65,8 +63,7 @@ impl IdentityProviderSummaryBuilder {
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input;
-        self
+        self.identity_provider = input; self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
@@ -80,8 +77,7 @@ impl IdentityProviderSummaryBuilder {
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
@@ -95,8 +91,7 @@ impl IdentityProviderSummaryBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl IdentityProviderSummaryBuilder {
     }
     /// <p>The status of an identity provider.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an identity provider.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl IdentityProviderSummaryBuilder {
     }
     /// <p>The failure message associated with an identity provider.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message associated with an identity provider.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,22 +129,26 @@ impl IdentityProviderSummaryBuilder {
     /// - [`product`](crate::types::builders::IdentityProviderSummaryBuilder::product)
     /// - [`status`](crate::types::builders::IdentityProviderSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IdentityProviderSummary {
-            identity_provider: self.identity_provider,
-            settings: self.settings,
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building IdentityProviderSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building IdentityProviderSummary",
-                )
-            })?,
-            failure_message: self.failure_message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IdentityProviderSummary {
+                identity_provider: self.identity_provider
+                ,
+                settings: self.settings
+                ,
+                product: self.product
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("product", "product was not specified but it is required when building IdentityProviderSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building IdentityProviderSummary")
+                    )?
+                ,
+                failure_message: self.failure_message
+                ,
+            }
+        )
     }
 }
+

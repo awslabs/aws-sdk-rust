@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStudioMemberInput {
+pub struct GetStudioMemberInput  {
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStudioMemberInput {
+impl  GetStudioMemberInput  {
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetStudioMemberInputBuilder {
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetStudioMemberInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStudioMemberInput`](crate::operation::get_studio_member::GetStudioMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_studio_member::GetStudioMemberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_studio_member::GetStudioMemberInput {
-            principal_id: self.principal_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_studio_member::GetStudioMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_studio_member::GetStudioMemberInput {
+                principal_id: self.principal_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

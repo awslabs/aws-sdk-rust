@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDeploymentParameterInput {
+pub struct PutDeploymentParameterInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The product for which AWS Marketplace will save secrets for the buyer’s account.</p>
@@ -12,39 +12,39 @@ pub struct PutDeploymentParameterInput {
     /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
     pub deployment_parameter: ::std::option::Option<crate::types::DeploymentParameterInput>,
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The date when deployment parameters expire and are scheduled for deletion.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl PutDeploymentParameterInput {
+impl  PutDeploymentParameterInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>The product for which AWS Marketplace will save secrets for the buyer’s account.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The unique identifier of the agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
-    pub fn deployment_parameter(&self) -> ::std::option::Option<&crate::types::DeploymentParameterInput> {
+    pub fn deployment_parameter(&self) -> ::std::option::Option<& crate::types::DeploymentParameterInput> {
         self.deployment_parameter.as_ref()
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date when deployment parameters expire and are scheduled for deletion.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -63,7 +63,7 @@ pub struct PutDeploymentParameterInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_parameter: ::std::option::Option<crate::types::DeploymentParameterInput>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -76,8 +76,7 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The product for which AWS Marketplace will save secrets for the buyer’s account.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product for which AWS Marketplace will save secrets for the buyer’s account.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
     pub fn set_deployment_parameter(mut self, input: ::std::option::Option<crate::types::DeploymentParameterInput>) -> Self {
-        self.deployment_parameter = input;
-        self
+        self.deployment_parameter = input; self
     }
     /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
     pub fn get_deployment_parameter(&self) -> &::std::option::Option<crate::types::DeploymentParameterInput> {
@@ -135,17 +131,16 @@ impl PutDeploymentParameterInputBuilder {
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The date when deployment parameters expire and are scheduled for deletion.</p>
@@ -155,8 +150,7 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The date when deployment parameters expire and are scheduled for deletion.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The date when deployment parameters expire and are scheduled for deletion.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,28 +163,32 @@ impl PutDeploymentParameterInputBuilder {
     }
     /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token for deployment parameters. A unique identifier for the new version.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PutDeploymentParameterInput`](crate::operation::put_deployment_parameter::PutDeploymentParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_deployment_parameter::PutDeploymentParameterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_deployment_parameter::PutDeploymentParameterInput {
-            catalog: self.catalog,
-            product_id: self.product_id,
-            agreement_id: self.agreement_id,
-            deployment_parameter: self.deployment_parameter,
-            tags: self.tags,
-            expiration_date: self.expiration_date,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_deployment_parameter::PutDeploymentParameterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_deployment_parameter::PutDeploymentParameterInput {
+                catalog: self.catalog
+                ,
+                product_id: self.product_id
+                ,
+                agreement_id: self.agreement_id
+                ,
+                deployment_parameter: self.deployment_parameter
+                ,
+                tags: self.tags
+                ,
+                expiration_date: self.expiration_date
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

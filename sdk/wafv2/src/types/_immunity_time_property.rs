@@ -3,12 +3,12 @@
 /// <p>Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code> or challenge response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImmunityTimeProperty {
+pub struct ImmunityTimeProperty  {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300.</p>
     /// <p>For the Challenge action, the minimum setting is 300.</p>
     pub immunity_time: i64,
 }
-impl ImmunityTimeProperty {
+impl  ImmunityTimeProperty  {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300.</p>
     /// <p>For the Challenge action, the minimum setting is 300.</p>
     pub fn immunity_time(&self) -> i64 {
@@ -39,8 +39,7 @@ impl ImmunityTimePropertyBuilder {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300.</p>
     /// <p>For the Challenge action, the minimum setting is 300.</p>
     pub fn set_immunity_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.immunity_time = input;
-        self
+        self.immunity_time = input; self
     }
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300.</p>
     /// <p>For the Challenge action, the minimum setting is 300.</p>
@@ -51,13 +50,15 @@ impl ImmunityTimePropertyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`immunity_time`](crate::types::builders::ImmunityTimePropertyBuilder::immunity_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ImmunityTimeProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImmunityTimeProperty {
-            immunity_time: self.immunity_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "immunity_time",
-                    "immunity_time was not specified but it is required when building ImmunityTimeProperty",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImmunityTimeProperty {
+                immunity_time: self.immunity_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("immunity_time", "immunity_time was not specified but it is required when building ImmunityTimeProperty")
+                    )?
+                ,
+            }
+        )
     }
 }
+

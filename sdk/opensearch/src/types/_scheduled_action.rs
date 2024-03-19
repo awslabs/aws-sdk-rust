@@ -3,7 +3,7 @@
 /// <p>Information about a scheduled configuration change for an OpenSearch Service domain. This actions can be a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledAction {
+pub struct ScheduledAction  {
     /// <p>The unique identifier of the scheduled action.</p>
     pub id: ::std::string::String,
     /// <p>The type of action that will be taken on the domain.</p>
@@ -23,18 +23,17 @@ pub struct ScheduledAction {
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub cancellable: ::std::option::Option<bool>,
 }
-impl ScheduledAction {
+impl  ScheduledAction  {
     /// <p>The unique identifier of the scheduled action.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of action that will be taken on the domain.</p>
-    pub fn r#type(&self) -> &crate::types::ActionType {
+    pub fn r#type(&self) -> & crate::types::ActionType {
         &self.r#type
     }
     /// <p>The severity of the action.</p>
-    pub fn severity(&self) -> &crate::types::ActionSeverity {
+    pub fn severity(&self) -> & crate::types::ActionSeverity {
         &self.severity
     }
     /// <p>The time when the change is scheduled to happen.</p>
@@ -42,15 +41,15 @@ impl ScheduledAction {
         self.scheduled_time
     }
     /// <p>A description of the action to be taken.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
-    pub fn scheduled_by(&self) -> ::std::option::Option<&crate::types::ScheduledBy> {
+    pub fn scheduled_by(&self) -> ::std::option::Option<& crate::types::ScheduledBy> {
         self.scheduled_by.as_ref()
     }
     /// <p>The current status of the scheduled action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>Whether the action is required or optional.</p>
@@ -92,8 +91,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The unique identifier of the scheduled action.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the scheduled action.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The type of action that will be taken on the domain.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of action that will be taken on the domain.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -122,8 +119,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The severity of the action.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ActionSeverity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the action.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::ActionSeverity> {
@@ -137,8 +133,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The time when the change is scheduled to happen.</p>
     pub fn set_scheduled_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_time = input;
-        self
+        self.scheduled_time = input; self
     }
     /// <p>The time when the change is scheduled to happen.</p>
     pub fn get_scheduled_time(&self) -> &::std::option::Option<i64> {
@@ -151,8 +146,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>A description of the action to be taken.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the action to be taken.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +159,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
     pub fn set_scheduled_by(mut self, input: ::std::option::Option<crate::types::ScheduledBy>) -> Self {
-        self.scheduled_by = input;
-        self
+        self.scheduled_by = input; self
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
     pub fn get_scheduled_by(&self) -> &::std::option::Option<crate::types::ScheduledBy> {
@@ -179,8 +172,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The current status of the scheduled action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the scheduled action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
@@ -193,8 +185,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>Whether the action is required or optional.</p>
     pub fn set_mandatory(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mandatory = input;
-        self
+        self.mandatory = input; self
     }
     /// <p>Whether the action is required or optional.</p>
     pub fn get_mandatory(&self) -> &::std::option::Option<bool> {
@@ -207,8 +198,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cancellable = input;
-        self
+        self.cancellable = input; self
     }
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
@@ -221,36 +211,40 @@ impl ScheduledActionBuilder {
     /// - [`severity`](crate::types::builders::ScheduledActionBuilder::severity)
     /// - [`scheduled_time`](crate::types::builders::ScheduledActionBuilder::scheduled_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduledAction {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "severity",
-                    "severity was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            scheduled_time: self.scheduled_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scheduled_time",
-                    "scheduled_time was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            description: self.description,
-            scheduled_by: self.scheduled_by,
-            status: self.status,
-            mandatory: self.mandatory,
-            cancellable: self.cancellable,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduledAction {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                severity: self.severity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("severity", "severity was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                scheduled_time: self.scheduled_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scheduled_time", "scheduled_time was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                description: self.description
+                ,
+                scheduled_by: self.scheduled_by
+                ,
+                status: self.status
+                ,
+                mandatory: self.mandatory
+                ,
+                cancellable: self.cancellable
+                ,
+            }
+        )
     }
 }
+

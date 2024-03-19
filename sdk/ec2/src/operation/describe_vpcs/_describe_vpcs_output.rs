@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcsOutput {
+pub struct DescribeVpcsOutput  {
     /// <p>Information about one or more VPCs.</p>
-    pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
+    pub vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::Vpc>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeVpcsOutput {
+impl  DescribeVpcsOutput  {
     /// <p>Information about one or more VPCs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
-    pub fn vpcs(&self) -> &[crate::types::Vpc] {
-        self.vpcs.as_deref().unwrap_or_default()
+    pub fn vpcs(&self) -> & [crate::types::Vpc] {
+        self.vpcs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVpcsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVpcsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcsOutput`](crate::operation::describe_vpcs::DescribeVpcsOutput).
     pub fn builder() -> crate::operation::describe_vpcs::builders::DescribeVpcsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeVpcsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcsOutputBuilder {
-    pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
+    pub(crate) vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::Vpc>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeVpcsOutputBuilder {
     /// <p>Information about one or more VPCs.</p>
     pub fn vpcs(mut self, input: crate::types::Vpc) -> Self {
         let mut v = self.vpcs.unwrap_or_default();
-        v.push(input);
-        self.vpcs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpcs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about one or more VPCs.</p>
-    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>) -> Self {
-        self.vpcs = input;
-        self
+    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Vpc>>) -> Self {
+        self.vpcs = input; self
     }
     /// <p>Information about one or more VPCs.</p>
-    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
+    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Vpc>> {
         &self.vpcs
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeVpcsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVpcsOutput`](crate::operation::describe_vpcs::DescribeVpcsOutput).
     pub fn build(self) -> crate::operation::describe_vpcs::DescribeVpcsOutput {
         crate::operation::describe_vpcs::DescribeVpcsOutput {
-            vpcs: self.vpcs,
-            next_token: self.next_token,
+            vpcs: self.vpcs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

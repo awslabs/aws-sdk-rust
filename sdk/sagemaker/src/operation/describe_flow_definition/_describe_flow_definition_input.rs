@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlowDefinitionInput {
+pub struct DescribeFlowDefinitionInput  {
     /// <p>The name of the flow definition.</p>
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFlowDefinitionInput {
+impl  DescribeFlowDefinitionInput  {
     /// <p>The name of the flow definition.</p>
-    pub fn flow_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_definition_name(&self) -> ::std::option::Option<& str> {
         self.flow_definition_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeFlowDefinitionInputBuilder {
     }
     /// <p>The name of the flow definition.</p>
     pub fn set_flow_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_definition_name = input;
-        self
+        self.flow_definition_name = input; self
     }
     /// <p>The name of the flow definition.</p>
     pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_definition_name
     }
     /// Consumes the builder and constructs a [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flow_definition::DescribeFlowDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_flow_definition::DescribeFlowDefinitionInput {
-            flow_definition_name: self.flow_definition_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow_definition::DescribeFlowDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_flow_definition::DescribeFlowDefinitionInput {
+                flow_definition_name: self.flow_definition_name
+                ,
+            }
+        )
     }
 }
+

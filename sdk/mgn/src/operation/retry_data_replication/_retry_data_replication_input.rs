@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryDataReplicationInput {
+pub struct RetryDataReplicationInput  {
     /// <p>Retry data replication for Source Server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Retry data replication for Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl RetryDataReplicationInput {
+impl  RetryDataReplicationInput  {
     /// <p>Retry data replication for Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Retry data replication for Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RetryDataReplicationInputBuilder {
     }
     /// <p>Retry data replication for Source Server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Retry data replication for Source Server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl RetryDataReplicationInputBuilder {
     }
     /// <p>Retry data replication for Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Retry data replication for Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retry_data_replication::RetryDataReplicationInput {
-            source_server_id: self.source_server_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retry_data_replication::RetryDataReplicationInput {
+                source_server_id: self.source_server_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

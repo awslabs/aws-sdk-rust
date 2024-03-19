@@ -3,13 +3,13 @@
 /// <p>Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Measurement {
+pub struct Measurement  {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     pub processing_config: ::std::option::Option<crate::types::MeasurementProcessingConfig>,
 }
-impl Measurement {
+impl  Measurement  {
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
-    pub fn processing_config(&self) -> ::std::option::Option<&crate::types::MeasurementProcessingConfig> {
+    pub fn processing_config(&self) -> ::std::option::Option<& crate::types::MeasurementProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MeasurementBuilder {
     }
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     pub fn set_processing_config(mut self, input: ::std::option::Option<crate::types::MeasurementProcessingConfig>) -> Self {
-        self.processing_config = input;
-        self
+        self.processing_config = input; self
     }
     /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     pub fn get_processing_config(&self) -> &::std::option::Option<crate::types::MeasurementProcessingConfig> {
@@ -44,7 +43,9 @@ impl MeasurementBuilder {
     /// Consumes the builder and constructs a [`Measurement`](crate::types::Measurement).
     pub fn build(self) -> crate::types::Measurement {
         crate::types::Measurement {
-            processing_config: self.processing_config,
+            processing_config: self.processing_config
+            ,
         }
     }
 }
+

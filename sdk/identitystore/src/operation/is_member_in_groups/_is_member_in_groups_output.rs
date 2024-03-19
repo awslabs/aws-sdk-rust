@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IsMemberInGroupsOutput {
+pub struct IsMemberInGroupsOutput  {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub results: ::std::vec::Vec<crate::types::GroupMembershipExistenceResult>,
+    pub results: ::std::vec::Vec::<crate::types::GroupMembershipExistenceResult>,
     _request_id: Option<String>,
 }
-impl IsMemberInGroupsOutput {
+impl  IsMemberInGroupsOutput  {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn results(&self) -> &[crate::types::GroupMembershipExistenceResult] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::GroupMembershipExistenceResult] {
+        use std::ops::Deref; self.results.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for IsMemberInGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl IsMemberInGroupsOutput {
     /// Creates a new builder-style object to manufacture [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
     pub fn builder() -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder {
@@ -30,7 +29,7 @@ impl IsMemberInGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,
 }
 impl IsMemberInGroupsOutputBuilder {
@@ -41,42 +40,41 @@ impl IsMemberInGroupsOutputBuilder {
     /// <p>A list containing the results of membership existence checks.</p>
     pub fn results(mut self, input: crate::types::GroupMembershipExistenceResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupMembershipExistenceResult>>) -> Self {
+        self.results = input; self
     }
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupMembershipExistenceResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building IsMemberInGroupsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building IsMemberInGroupsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

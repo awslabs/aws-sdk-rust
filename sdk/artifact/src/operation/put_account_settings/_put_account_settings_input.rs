@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountSettingsInput {
+pub struct PutAccountSettingsInput  {
     /// <p>Desired notification subscription status.</p>
     pub notification_subscription_status: ::std::option::Option<crate::types::NotificationSubscriptionStatus>,
 }
-impl PutAccountSettingsInput {
+impl  PutAccountSettingsInput  {
     /// <p>Desired notification subscription status.</p>
-    pub fn notification_subscription_status(&self) -> ::std::option::Option<&crate::types::NotificationSubscriptionStatus> {
+    pub fn notification_subscription_status(&self) -> ::std::option::Option<& crate::types::NotificationSubscriptionStatus> {
         self.notification_subscription_status.as_ref()
     }
 }
@@ -33,20 +33,20 @@ impl PutAccountSettingsInputBuilder {
     }
     /// <p>Desired notification subscription status.</p>
     pub fn set_notification_subscription_status(mut self, input: ::std::option::Option<crate::types::NotificationSubscriptionStatus>) -> Self {
-        self.notification_subscription_status = input;
-        self
+        self.notification_subscription_status = input; self
     }
     /// <p>Desired notification subscription status.</p>
     pub fn get_notification_subscription_status(&self) -> &::std::option::Option<crate::types::NotificationSubscriptionStatus> {
         &self.notification_subscription_status
     }
     /// Consumes the builder and constructs a [`PutAccountSettingsInput`](crate::operation::put_account_settings::PutAccountSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_account_settings::PutAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_account_settings::PutAccountSettingsInput {
-            notification_subscription_status: self.notification_subscription_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_settings::PutAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_account_settings::PutAccountSettingsInput {
+                notification_subscription_status: self.notification_subscription_status
+                ,
+            }
+        )
     }
 }
+

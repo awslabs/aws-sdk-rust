@@ -5,23 +5,20 @@ pub use crate::operation::search_place_index_for_text::_search_place_index_for_t
 
 impl SearchPlaceIndexForTextInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.search_place_index_for_text();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.search_place_index_for_text();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SearchPlaceIndexForText`.
-///
+/// 
 /// <p>Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest.</p>
 /// <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p><note>
 /// <p>You can search for places near a given position using <code>BiasPosition</code>, or filter results within a bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.</p>
@@ -30,33 +27,32 @@ impl SearchPlaceIndexForTextInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder,
+                    inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-    > for SearchPlaceIndexForTextFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
+                    crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
+                > for SearchPlaceIndexForTextFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
+                        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SearchPlaceIndexForTextFluentBuilder {
     /// Creates a new `SearchPlaceIndexForText`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl SearchPlaceIndexForTextFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::search_place_index_for_text::SearchPlaceIndexForText::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForText::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::search_place_index_for_text::SearchPlaceIndexForText::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::search_place_index_for_text::SearchPlaceIndexForText::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput, crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_name(input.into());
@@ -158,7 +145,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
-    pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
+    pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
         self.inner = self.inner.set_bias_position(input);
         self
     }
@@ -167,7 +154,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p><note>
     /// <p><code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
-    pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         self.inner.get_bias_position()
     }
     /// Appends an item to `FilterBBox`.
@@ -188,7 +175,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
-    pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
+    pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
         self.inner = self.inner.set_filter_b_box(input);
         self
     }
@@ -197,7 +184,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p><note>
     /// <p><code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.</p>
     /// </note>
-    pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         self.inner.get_filter_b_box()
     }
     /// Appends an item to `FilterCountries`.
@@ -218,7 +205,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <li>
     /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p></li>
     /// </ul>
-    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_countries(input);
         self
     }
@@ -227,7 +214,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <li>
     /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p></li>
     /// </ul>
-    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_filter_countries()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
@@ -285,13 +272,13 @@ impl SearchPlaceIndexForTextFluentBuilder {
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_categories(input);
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_filter_categories()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
@@ -309,3 +296,4 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self.inner.get_key()
     }
 }
+

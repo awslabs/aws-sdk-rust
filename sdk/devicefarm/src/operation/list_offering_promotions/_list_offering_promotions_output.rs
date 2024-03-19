@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOfferingPromotionsOutput {
+pub struct ListOfferingPromotionsOutput  {
     /// <p>Information about the offering promotions.</p>
-    pub offering_promotions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
+    pub offering_promotions: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingPromotion>>,
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOfferingPromotionsOutput {
+impl  ListOfferingPromotionsOutput  {
     /// <p>Information about the offering promotions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_promotions.is_none()`.
-    pub fn offering_promotions(&self) -> &[crate::types::OfferingPromotion] {
-        self.offering_promotions.as_deref().unwrap_or_default()
+    pub fn offering_promotions(&self) -> & [crate::types::OfferingPromotion] {
+        self.offering_promotions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOfferingPromotionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOfferingPromotionsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingPromotionsOutput`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput).
     pub fn builder() -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOfferingPromotionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingPromotionsOutputBuilder {
-    pub(crate) offering_promotions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
+    pub(crate) offering_promotions: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingPromotion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOfferingPromotionsOutputBuilder {
     /// <p>Information about the offering promotions.</p>
     pub fn offering_promotions(mut self, input: crate::types::OfferingPromotion) -> Self {
         let mut v = self.offering_promotions.unwrap_or_default();
-        v.push(input);
-        self.offering_promotions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.offering_promotions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the offering promotions.</p>
-    pub fn set_offering_promotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>) -> Self {
-        self.offering_promotions = input;
-        self
+    pub fn set_offering_promotions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OfferingPromotion>>) -> Self {
+        self.offering_promotions = input; self
     }
     /// <p>Information about the offering promotions.</p>
-    pub fn get_offering_promotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>> {
+    pub fn get_offering_promotions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OfferingPromotion>> {
         &self.offering_promotions
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListOfferingPromotionsOutputBuilder {
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOfferingPromotionsOutput`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput).
     pub fn build(self) -> crate::operation::list_offering_promotions::ListOfferingPromotionsOutput {
         crate::operation::list_offering_promotions::ListOfferingPromotionsOutput {
-            offering_promotions: self.offering_promotions,
-            next_token: self.next_token,
+            offering_promotions: self.offering_promotions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

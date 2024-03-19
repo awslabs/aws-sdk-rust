@@ -5,56 +5,52 @@ pub use crate::operation::describe_query_suggestions_config::_describe_query_sug
 
 impl DescribeQuerySuggestionsConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_query_suggestions_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_query_suggestions_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeQuerySuggestionsConfig`.
-///
+/// 
 /// <p>Gets information on the settings of query suggestions for an index.</p>
 /// <p>This is used to check the current settings applied to query suggestions.</p>
 /// <p><code>DescribeQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder,
+                    inner: crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
-    > for DescribeQuerySuggestionsConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
-            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
+                    crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
+                > for DescribeQuerySuggestionsConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
+                        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeQuerySuggestionsConfigFluentBuilder {
     /// Creates a new `DescribeQuerySuggestionsConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DescribeQuerySuggestionsConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput, crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -125,3 +112,4 @@ impl DescribeQuerySuggestionsConfigFluentBuilder {
         self.inner.get_index_id()
     }
 }
+

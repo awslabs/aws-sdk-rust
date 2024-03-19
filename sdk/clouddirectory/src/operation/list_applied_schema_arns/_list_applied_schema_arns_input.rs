@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppliedSchemaArnsInput {
+pub struct ListAppliedSchemaArnsInput  {
     /// <p>The ARN of the directory you are listing.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
@@ -12,17 +12,17 @@ pub struct ListAppliedSchemaArnsInput {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAppliedSchemaArnsInput {
+impl  ListAppliedSchemaArnsInput  {
     /// <p>The ARN of the directory you are listing.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -55,8 +55,7 @@ impl ListAppliedSchemaArnsInputBuilder {
     }
     /// <p>The ARN of the directory you are listing.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory you are listing.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListAppliedSchemaArnsInputBuilder {
     }
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListAppliedSchemaArnsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl ListAppliedSchemaArnsInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppliedSchemaArnsInput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput {
-            directory_arn: self.directory_arn,
-            schema_arn: self.schema_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput {
+                directory_arn: self.directory_arn
+                ,
+                schema_arn: self.schema_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

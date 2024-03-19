@@ -3,19 +3,19 @@
 /// <p>Determines the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpirationSettings {
+pub struct ExpirationSettings  {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
     pub expiration_days: i32,
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
     pub expiration_criterion: crate::types::ExpirationCriterion,
 }
-impl ExpirationSettings {
+impl  ExpirationSettings  {
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
     pub fn expiration_days(&self) -> i32 {
         self.expiration_days
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub fn expiration_criterion(&self) -> &crate::types::ExpirationCriterion {
+    pub fn expiration_criterion(&self) -> & crate::types::ExpirationCriterion {
         &self.expiration_criterion
     }
 }
@@ -42,8 +42,7 @@ impl ExpirationSettingsBuilder {
     }
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
     pub fn set_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expiration_days = input;
-        self
+        self.expiration_days = input; self
     }
     /// <p>The period in days after which an <code>AppInstanceUser</code> will be automatically deleted.</p>
     pub fn get_expiration_days(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl ExpirationSettingsBuilder {
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
     pub fn set_expiration_criterion(mut self, input: ::std::option::Option<crate::types::ExpirationCriterion>) -> Self {
-        self.expiration_criterion = input;
-        self
+        self.expiration_criterion = input; self
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
     pub fn get_expiration_criterion(&self) -> &::std::option::Option<crate::types::ExpirationCriterion> {
@@ -69,19 +67,20 @@ impl ExpirationSettingsBuilder {
     /// - [`expiration_days`](crate::types::builders::ExpirationSettingsBuilder::expiration_days)
     /// - [`expiration_criterion`](crate::types::builders::ExpirationSettingsBuilder::expiration_criterion)
     pub fn build(self) -> ::std::result::Result<crate::types::ExpirationSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExpirationSettings {
-            expiration_days: self.expiration_days.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiration_days",
-                    "expiration_days was not specified but it is required when building ExpirationSettings",
-                )
-            })?,
-            expiration_criterion: self.expiration_criterion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiration_criterion",
-                    "expiration_criterion was not specified but it is required when building ExpirationSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExpirationSettings {
+                expiration_days: self.expiration_days
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiration_days", "expiration_days was not specified but it is required when building ExpirationSettings")
+                    )?
+                ,
+                expiration_criterion: self.expiration_criterion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiration_criterion", "expiration_criterion was not specified but it is required when building ExpirationSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

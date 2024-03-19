@@ -3,7 +3,7 @@
 /// <p>Information about a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The s3 bucket name.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The s3 object key.</p>
@@ -13,21 +13,21 @@ pub struct Source {
     /// <p>The taget processor architecture for the application.</p>
     pub architecture: ::std::option::Option<crate::types::Architecture>,
 }
-impl Source {
+impl  Source  {
     /// <p>The s3 bucket name.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The s3 object key.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
-    pub fn etag(&self) -> ::std::option::Option<&str> {
+    pub fn etag(&self) -> ::std::option::Option<& str> {
         self.etag.as_deref()
     }
     /// <p>The taget processor architecture for the application.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.architecture.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SourceBuilder {
     }
     /// <p>The s3 bucket name.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The s3 bucket name.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SourceBuilder {
     }
     /// <p>The s3 object key.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The s3 object key.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SourceBuilder {
     }
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.etag = input;
-        self
+        self.etag = input; self
     }
     /// <p>A hash of the object specified by <code>s3Bucket</code> and <code>s3Key</code>.</p>
     pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl SourceBuilder {
     }
     /// <p>The taget processor architecture for the application.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The taget processor architecture for the application.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
@@ -107,10 +103,15 @@ impl SourceBuilder {
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            etag: self.etag,
-            architecture: self.architecture,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
+            etag: self.etag
+            ,
+            architecture: self.architecture
+            ,
         }
     }
 }
+

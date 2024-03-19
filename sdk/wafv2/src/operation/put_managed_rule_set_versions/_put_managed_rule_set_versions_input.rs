@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutManagedRuleSetVersionsInput {
+pub struct PutManagedRuleSetVersionsInput  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,12 +22,12 @@ pub struct PutManagedRuleSetVersionsInput {
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
     pub recommended_version: ::std::option::Option<::std::string::String>,
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub versions_to_publish: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
+    pub versions_to_publish: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>>,
 }
-impl PutManagedRuleSetVersionsInput {
+impl  PutManagedRuleSetVersionsInput  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -38,23 +38,23 @@ impl PutManagedRuleSetVersionsInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
-    pub fn recommended_version(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_version(&self) -> ::std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub fn versions_to_publish(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
+    pub fn versions_to_publish(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>> {
         self.versions_to_publish.as_ref()
     }
 }
@@ -74,7 +74,7 @@ pub struct PutManagedRuleSetVersionsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
     pub(crate) recommended_version: ::std::option::Option<::std::string::String>,
-    pub(crate) versions_to_publish: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
+    pub(crate) versions_to_publish: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>>,
 }
 impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -87,8 +87,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
@@ -117,8 +116,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -139,8 +137,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +164,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
     pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_version = input;
-        self
+        self.recommended_version = input; self
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings.</p>
     pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,38 +177,36 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
     pub fn versions_to_publish(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VersionToPublish) -> Self {
         let mut hash_map = self.versions_to_publish.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.versions_to_publish = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.versions_to_publish = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub fn set_versions_to_publish(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
-    ) -> Self {
-        self.versions_to_publish = input;
-        self
+    pub fn set_versions_to_publish(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>>) -> Self {
+        self.versions_to_publish = input; self
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers.</p>
-    pub fn get_versions_to_publish(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
+    pub fn get_versions_to_publish(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VersionToPublish>> {
         &self.versions_to_publish
     }
     /// Consumes the builder and constructs a [`PutManagedRuleSetVersionsInput`](crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput {
-            name: self.name,
-            scope: self.scope,
-            id: self.id,
-            lock_token: self.lock_token,
-            recommended_version: self.recommended_version,
-            versions_to_publish: self.versions_to_publish,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                id: self.id
+                ,
+                lock_token: self.lock_token
+                ,
+                recommended_version: self.recommended_version
+                ,
+                versions_to_publish: self.versions_to_publish
+                ,
+            }
+        )
     }
 }
+

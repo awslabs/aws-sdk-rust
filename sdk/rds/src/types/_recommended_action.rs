@@ -3,7 +3,7 @@
 /// <p>The recommended actions to apply to resolve the issues associated with your DB instances, DB clusters, and DB parameter groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendedAction {
+pub struct RecommendedAction  {
     /// <p>The unique identifier of the recommended action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>A short description to summarize the action. The description might contain markdown.</p>
@@ -13,7 +13,7 @@ pub struct RecommendedAction {
     /// <p>An API operation for the action.</p>
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the API operation.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionParameter>>,
     /// <p>The methods to apply the recommended action.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -24,7 +24,7 @@ pub struct RecommendedAction {
     /// <li>
     /// <p><code>next-maintainance-window</code> - The action is applied during the next scheduled maintainance.</p></li>
     /// </ul>
-    pub apply_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub apply_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the action.</p>
     /// <ul>
     /// <li>
@@ -40,30 +40,31 @@ pub struct RecommendedAction {
     /// <p>The details of the issue.</p>
     pub issue_details: ::std::option::Option<crate::types::IssueDetails>,
     /// <p>The supporting attributes to explain the recommended action.</p>
-    pub context_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ContextAttribute>>,
+    pub context_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::ContextAttribute>>,
 }
-impl RecommendedAction {
+impl  RecommendedAction  {
     /// <p>The unique identifier of the recommended action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>A short description to summarize the action. The description might contain markdown.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A detailed description of the action. The description might contain markdown.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An API operation for the action.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The parameters for the API operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::RecommendedActionParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::RecommendedActionParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The methods to apply the recommended action.</p>
     /// <p>Valid values:</p>
@@ -75,10 +76,11 @@ impl RecommendedAction {
     /// <li>
     /// <p><code>next-maintainance-window</code> - The action is applied during the next scheduled maintainance.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.apply_modes.is_none()`.
-    pub fn apply_modes(&self) -> &[::std::string::String] {
-        self.apply_modes.as_deref().unwrap_or_default()
+    pub fn apply_modes(&self) -> & [::std::string::String] {
+        self.apply_modes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the action.</p>
     /// <ul>
@@ -91,18 +93,19 @@ impl RecommendedAction {
     /// <li>
     /// <p><code>resolved</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The details of the issue.</p>
-    pub fn issue_details(&self) -> ::std::option::Option<&crate::types::IssueDetails> {
+    pub fn issue_details(&self) -> ::std::option::Option<& crate::types::IssueDetails> {
         self.issue_details.as_ref()
     }
     /// <p>The supporting attributes to explain the recommended action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_attributes.is_none()`.
-    pub fn context_attributes(&self) -> &[crate::types::ContextAttribute] {
-        self.context_attributes.as_deref().unwrap_or_default()
+    pub fn context_attributes(&self) -> & [crate::types::ContextAttribute] {
+        self.context_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendedAction {
@@ -120,11 +123,11 @@ pub struct RecommendedActionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionParameter>>,
-    pub(crate) apply_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionParameter>>,
+    pub(crate) apply_modes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) issue_details: ::std::option::Option<crate::types::IssueDetails>,
-    pub(crate) context_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ContextAttribute>>,
+    pub(crate) context_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::ContextAttribute>>,
 }
 impl RecommendedActionBuilder {
     /// <p>The unique identifier of the recommended action.</p>
@@ -134,8 +137,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The unique identifier of the recommended action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The unique identifier of the recommended action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +150,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>A short description to summarize the action. The description might contain markdown.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>A short description to summarize the action. The description might contain markdown.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +163,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>A detailed description of the action. The description might contain markdown.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A detailed description of the action. The description might contain markdown.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +176,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>An API operation for the action.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>An API operation for the action.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,17 +189,16 @@ impl RecommendedActionBuilder {
     /// <p>The parameters for the API operation.</p>
     pub fn parameters(mut self, input: crate::types::RecommendedActionParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters for the API operation.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters for the API operation.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendedActionParameter>> {
         &self.parameters
     }
     /// Appends an item to `apply_modes`.
@@ -219,9 +217,9 @@ impl RecommendedActionBuilder {
     /// </ul>
     pub fn apply_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.apply_modes.unwrap_or_default();
-        v.push(input.into());
-        self.apply_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.apply_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The methods to apply the recommended action.</p>
     /// <p>Valid values:</p>
@@ -233,9 +231,8 @@ impl RecommendedActionBuilder {
     /// <li>
     /// <p><code>next-maintainance-window</code> - The action is applied during the next scheduled maintainance.</p></li>
     /// </ul>
-    pub fn set_apply_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.apply_modes = input;
-        self
+    pub fn set_apply_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.apply_modes = input; self
     }
     /// <p>The methods to apply the recommended action.</p>
     /// <p>Valid values:</p>
@@ -247,7 +244,7 @@ impl RecommendedActionBuilder {
     /// <li>
     /// <p><code>next-maintainance-window</code> - The action is applied during the next scheduled maintainance.</p></li>
     /// </ul>
-    pub fn get_apply_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_apply_modes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.apply_modes
     }
     /// <p>The status of the action.</p>
@@ -277,8 +274,7 @@ impl RecommendedActionBuilder {
     /// <p><code>resolved</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the action.</p>
     /// <ul>
@@ -301,8 +297,7 @@ impl RecommendedActionBuilder {
     }
     /// <p>The details of the issue.</p>
     pub fn set_issue_details(mut self, input: ::std::option::Option<crate::types::IssueDetails>) -> Self {
-        self.issue_details = input;
-        self
+        self.issue_details = input; self
     }
     /// <p>The details of the issue.</p>
     pub fn get_issue_details(&self) -> &::std::option::Option<crate::types::IssueDetails> {
@@ -315,31 +310,40 @@ impl RecommendedActionBuilder {
     /// <p>The supporting attributes to explain the recommended action.</p>
     pub fn context_attributes(mut self, input: crate::types::ContextAttribute) -> Self {
         let mut v = self.context_attributes.unwrap_or_default();
-        v.push(input);
-        self.context_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.context_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supporting attributes to explain the recommended action.</p>
-    pub fn set_context_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContextAttribute>>) -> Self {
-        self.context_attributes = input;
-        self
+    pub fn set_context_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContextAttribute>>) -> Self {
+        self.context_attributes = input; self
     }
     /// <p>The supporting attributes to explain the recommended action.</p>
-    pub fn get_context_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextAttribute>> {
+    pub fn get_context_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContextAttribute>> {
         &self.context_attributes
     }
     /// Consumes the builder and constructs a [`RecommendedAction`](crate::types::RecommendedAction).
     pub fn build(self) -> crate::types::RecommendedAction {
         crate::types::RecommendedAction {
-            action_id: self.action_id,
-            title: self.title,
-            description: self.description,
-            operation: self.operation,
-            parameters: self.parameters,
-            apply_modes: self.apply_modes,
-            status: self.status,
-            issue_details: self.issue_details,
-            context_attributes: self.context_attributes,
+            action_id: self.action_id
+            ,
+            title: self.title
+            ,
+            description: self.description
+            ,
+            operation: self.operation
+            ,
+            parameters: self.parameters
+            ,
+            apply_modes: self.apply_modes
+            ,
+            status: self.status
+            ,
+            issue_details: self.issue_details
+            ,
+            context_attributes: self.context_attributes
+            ,
         }
     }
 }
+

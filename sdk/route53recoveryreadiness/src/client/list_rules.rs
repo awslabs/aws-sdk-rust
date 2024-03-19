@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRules`](crate::operation::list_rules::builders::ListRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rules::builders::ListRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     ///   - [`resource_type(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_resource_type):<br>required: **false**<br><p>The resource type that a readiness rule applies to.</p><br>
-    /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
+                            /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`rules(Option<Vec::<ListRulesOutput>>)`](crate::operation::list_rules::ListRulesOutput::rules): <p>A list of readiness rules for a specific resource type.</p>
-    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
+                            /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {
-        crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

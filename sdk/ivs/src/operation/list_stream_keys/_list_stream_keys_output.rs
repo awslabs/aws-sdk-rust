@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamKeysOutput {
+pub struct ListStreamKeysOutput  {
     /// <p>List of stream keys.</p>
-    pub stream_keys: ::std::vec::Vec<crate::types::StreamKeySummary>,
+    pub stream_keys: ::std::vec::Vec::<crate::types::StreamKeySummary>,
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStreamKeysOutput {
+impl  ListStreamKeysOutput  {
     /// <p>List of stream keys.</p>
-    pub fn stream_keys(&self) -> &[crate::types::StreamKeySummary] {
-        use std::ops::Deref;
-        self.stream_keys.deref()
+    pub fn stream_keys(&self) -> & [crate::types::StreamKeySummary] {
+        use std::ops::Deref; self.stream_keys.deref()
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStreamKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStreamKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput).
     pub fn builder() -> crate::operation::list_stream_keys::builders::ListStreamKeysOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStreamKeysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamKeysOutputBuilder {
-    pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>,
+    pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec::<crate::types::StreamKeySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListStreamKeysOutputBuilder {
     /// <p>List of stream keys.</p>
     pub fn stream_keys(mut self, input: crate::types::StreamKeySummary) -> Self {
         let mut v = self.stream_keys.unwrap_or_default();
-        v.push(input);
-        self.stream_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stream_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of stream keys.</p>
-    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>) -> Self {
-        self.stream_keys = input;
-        self
+    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamKeySummary>>) -> Self {
+        self.stream_keys = input; self
     }
     /// <p>List of stream keys.</p>
-    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>> {
+    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamKeySummary>> {
         &self.stream_keys
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,37 +66,37 @@ impl ListStreamKeysOutputBuilder {
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_keys`](crate::operation::list_stream_keys::builders::ListStreamKeysOutputBuilder::stream_keys)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysOutput {
-            stream_keys: self.stream_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_keys",
-                    "stream_keys was not specified but it is required when building ListStreamKeysOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_stream_keys::ListStreamKeysOutput {
+                stream_keys: self.stream_keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_keys", "stream_keys was not specified but it is required when building ListStreamKeysOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

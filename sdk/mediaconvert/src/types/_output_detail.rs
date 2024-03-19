@@ -3,19 +3,19 @@
 /// Details regarding output
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputDetail {
+pub struct OutputDetail  {
     /// Duration in milliseconds
     pub duration_in_ms: ::std::option::Option<i32>,
     /// Contains details about the output's video stream
     pub video_details: ::std::option::Option<crate::types::VideoDetail>,
 }
-impl OutputDetail {
+impl  OutputDetail  {
     /// Duration in milliseconds
     pub fn duration_in_ms(&self) -> ::std::option::Option<i32> {
         self.duration_in_ms
     }
     /// Contains details about the output's video stream
-    pub fn video_details(&self) -> ::std::option::Option<&crate::types::VideoDetail> {
+    pub fn video_details(&self) -> ::std::option::Option<& crate::types::VideoDetail> {
         self.video_details.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OutputDetailBuilder {
     }
     /// Duration in milliseconds
     pub fn set_duration_in_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_ms = input;
-        self
+        self.duration_in_ms = input; self
     }
     /// Duration in milliseconds
     pub fn get_duration_in_ms(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl OutputDetailBuilder {
     }
     /// Contains details about the output's video stream
     pub fn set_video_details(mut self, input: ::std::option::Option<crate::types::VideoDetail>) -> Self {
-        self.video_details = input;
-        self
+        self.video_details = input; self
     }
     /// Contains details about the output's video stream
     pub fn get_video_details(&self) -> &::std::option::Option<crate::types::VideoDetail> {
@@ -65,8 +63,11 @@ impl OutputDetailBuilder {
     /// Consumes the builder and constructs a [`OutputDetail`](crate::types::OutputDetail).
     pub fn build(self) -> crate::types::OutputDetail {
         crate::types::OutputDetail {
-            duration_in_ms: self.duration_in_ms,
-            video_details: self.video_details,
+            duration_in_ms: self.duration_in_ms
+            ,
+            video_details: self.video_details
+            ,
         }
     }
 }
+

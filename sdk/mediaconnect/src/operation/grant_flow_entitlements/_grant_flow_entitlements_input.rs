@@ -3,21 +3,22 @@
 /// A request to grant entitlements on a flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrantFlowEntitlementsInput {
+pub struct GrantFlowEntitlementsInput  {
     /// The list of entitlements that you want to grant.
-    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
+    pub entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>>,
     /// The flow that you want to grant entitlements on.
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
-impl GrantFlowEntitlementsInput {
+impl  GrantFlowEntitlementsInput  {
     /// The list of entitlements that you want to grant.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
-    pub fn entitlements(&self) -> &[crate::types::GrantEntitlementRequest] {
-        self.entitlements.as_deref().unwrap_or_default()
+    pub fn entitlements(&self) -> & [crate::types::GrantEntitlementRequest] {
+        self.entitlements.as_deref()
+        .unwrap_or_default()
     }
     /// The flow that you want to grant entitlements on.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl GrantFlowEntitlementsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsInputBuilder {
-    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrantFlowEntitlementsInputBuilder {
@@ -43,17 +44,16 @@ impl GrantFlowEntitlementsInputBuilder {
     /// The list of entitlements that you want to grant.
     pub fn entitlements(mut self, input: crate::types::GrantEntitlementRequest) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of entitlements that you want to grant.
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>>) -> Self {
+        self.entitlements = input; self
     }
     /// The list of entitlements that you want to grant.
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GrantEntitlementRequest>> {
         &self.entitlements
     }
     /// The flow that you want to grant entitlements on.
@@ -64,21 +64,22 @@ impl GrantFlowEntitlementsInputBuilder {
     }
     /// The flow that you want to grant entitlements on.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The flow that you want to grant entitlements on.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`GrantFlowEntitlementsInput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput {
-            entitlements: self.entitlements,
-            flow_arn: self.flow_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput {
+                entitlements: self.entitlements
+                ,
+                flow_arn: self.flow_arn
+                ,
+            }
+        )
     }
 }
+

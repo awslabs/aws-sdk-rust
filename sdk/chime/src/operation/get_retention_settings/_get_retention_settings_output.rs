@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRetentionSettingsOutput {
+pub struct GetRetentionSettingsOutput  {
     /// <p>The retention settings.</p>
     pub retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetRetentionSettingsOutput {
+impl  GetRetentionSettingsOutput  {
     /// <p>The retention settings.</p>
-    pub fn retention_settings(&self) -> ::std::option::Option<&crate::types::RetentionSettings> {
+    pub fn retention_settings(&self) -> ::std::option::Option<& crate::types::RetentionSettings> {
         self.retention_settings.as_ref()
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub fn initiate_deletion_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn initiate_deletion_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRetentionSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRetentionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetRetentionSettingsOutput`](crate::operation::get_retention_settings::GetRetentionSettingsOutput).
     pub fn builder() -> crate::operation::get_retention_settings::builders::GetRetentionSettingsOutputBuilder {
@@ -47,8 +47,7 @@ impl GetRetentionSettingsOutputBuilder {
     }
     /// <p>The retention settings.</p>
     pub fn set_retention_settings(mut self, input: ::std::option::Option<crate::types::RetentionSettings>) -> Self {
-        self.retention_settings = input;
-        self
+        self.retention_settings = input; self
     }
     /// <p>The retention settings.</p>
     pub fn get_retention_settings(&self) -> &::std::option::Option<crate::types::RetentionSettings> {
@@ -61,28 +60,30 @@ impl GetRetentionSettingsOutputBuilder {
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub fn set_initiate_deletion_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.initiate_deletion_timestamp = input;
-        self
+        self.initiate_deletion_timestamp = input; self
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub fn get_initiate_deletion_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.initiate_deletion_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRetentionSettingsOutput`](crate::operation::get_retention_settings::GetRetentionSettingsOutput).
     pub fn build(self) -> crate::operation::get_retention_settings::GetRetentionSettingsOutput {
         crate::operation::get_retention_settings::GetRetentionSettingsOutput {
-            retention_settings: self.retention_settings,
-            initiate_deletion_timestamp: self.initiate_deletion_timestamp,
+            retention_settings: self.retention_settings
+            ,
+            initiate_deletion_timestamp: self.initiate_deletion_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

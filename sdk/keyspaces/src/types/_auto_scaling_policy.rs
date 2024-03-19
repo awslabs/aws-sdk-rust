@@ -3,13 +3,13 @@
 /// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingPolicy {
+pub struct AutoScalingPolicy  {
     /// <p>Auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. A <code>double</code> between 20 and 90.</p>
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
 }
-impl AutoScalingPolicy {
+impl  AutoScalingPolicy  {
     /// <p>Auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. A <code>double</code> between 20 and 90.</p>
-    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
+    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<& crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl AutoScalingPolicyBuilder {
         self
     }
     /// <p>Auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. A <code>double</code> between 20 and 90.</p>
-    pub fn set_target_tracking_scaling_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
-    ) -> Self {
-        self.target_tracking_scaling_policy_configuration = input;
-        self
+    pub fn set_target_tracking_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>) -> Self {
+        self.target_tracking_scaling_policy_configuration = input; self
     }
     /// <p>Auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. A <code>double</code> between 20 and 90.</p>
     pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
@@ -47,7 +43,9 @@ impl AutoScalingPolicyBuilder {
     /// Consumes the builder and constructs a [`AutoScalingPolicy`](crate::types::AutoScalingPolicy).
     pub fn build(self) -> crate::types::AutoScalingPolicy {
         crate::types::AutoScalingPolicy {
-            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
+            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration
+            ,
         }
     }
 }
+

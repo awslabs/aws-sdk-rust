@@ -3,7 +3,7 @@
 /// <p>Dashboard summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DashboardSummary {
+pub struct DashboardSummary  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Dashboard ID.</p>
@@ -19,25 +19,25 @@ pub struct DashboardSummary {
     /// <p>The last time that this dashboard was published.</p>
     pub last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DashboardSummary {
+impl  DashboardSummary  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Dashboard ID.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>A display name for the dashboard.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time that this dashboard was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The last time that this dashboard was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Published version number.</p>
@@ -45,7 +45,7 @@ impl DashboardSummary {
         self.published_version_number
     }
     /// <p>The last time that this dashboard was published.</p>
-    pub fn last_published_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_published_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_published_time.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>Dashboard ID.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>Dashboard ID.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>A display name for the dashboard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the dashboard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>Published version number.</p>
     pub fn set_published_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.published_version_number = input;
-        self
+        self.published_version_number = input; self
     }
     /// <p>Published version number.</p>
     pub fn get_published_version_number(&self) -> &::std::option::Option<i64> {
@@ -160,8 +154,7 @@ impl DashboardSummaryBuilder {
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn set_last_published_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_published_time = input;
-        self
+        self.last_published_time = input; self
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn get_last_published_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl DashboardSummaryBuilder {
     /// Consumes the builder and constructs a [`DashboardSummary`](crate::types::DashboardSummary).
     pub fn build(self) -> crate::types::DashboardSummary {
         crate::types::DashboardSummary {
-            arn: self.arn,
-            dashboard_id: self.dashboard_id,
-            name: self.name,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            published_version_number: self.published_version_number,
-            last_published_time: self.last_published_time,
+            arn: self.arn
+            ,
+            dashboard_id: self.dashboard_id
+            ,
+            name: self.name
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            published_version_number: self.published_version_number
+            ,
+            last_published_time: self.last_published_time
+            ,
         }
     }
 }
+

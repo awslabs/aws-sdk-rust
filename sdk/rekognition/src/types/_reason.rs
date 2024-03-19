@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reason = unimplemented!();
 /// match reason {
@@ -35,16 +35,14 @@
 /// Specifically, when `reason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Reason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Reason {
     #[allow(missing_docs)] // documentation missing in model
     ExceedsMaxFaces,
@@ -62,84 +60,77 @@ pub enum Reason {
     SmallBoundingBox,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Reason {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXCEEDS_MAX_FACES" => Reason::ExceedsMaxFaces,
-            "EXTREME_POSE" => Reason::ExtremePose,
-            "LOW_BRIGHTNESS" => Reason::LowBrightness,
-            "LOW_CONFIDENCE" => Reason::LowConfidence,
-            "LOW_FACE_QUALITY" => Reason::LowFaceQuality,
-            "LOW_SHARPNESS" => Reason::LowSharpness,
-            "SMALL_BOUNDING_BOX" => Reason::SmallBoundingBox,
-            other => Reason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EXCEEDS_MAX_FACES" => Reason::ExceedsMaxFaces,
+"EXTREME_POSE" => Reason::ExtremePose,
+"LOW_BRIGHTNESS" => Reason::LowBrightness,
+"LOW_CONFIDENCE" => Reason::LowConfidence,
+"LOW_FACE_QUALITY" => Reason::LowFaceQuality,
+"LOW_SHARPNESS" => Reason::LowSharpness,
+"SMALL_BOUNDING_BOX" => Reason::SmallBoundingBox,
+other => Reason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Reason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Reason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Reason::from(s))
+                    }
+                }
 impl Reason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Reason::ExceedsMaxFaces => "EXCEEDS_MAX_FACES",
-            Reason::ExtremePose => "EXTREME_POSE",
-            Reason::LowBrightness => "LOW_BRIGHTNESS",
-            Reason::LowConfidence => "LOW_CONFIDENCE",
-            Reason::LowFaceQuality => "LOW_FACE_QUALITY",
-            Reason::LowSharpness => "LOW_SHARPNESS",
-            Reason::SmallBoundingBox => "SMALL_BOUNDING_BOX",
-            Reason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXCEEDS_MAX_FACES",
-            "EXTREME_POSE",
-            "LOW_BRIGHTNESS",
-            "LOW_CONFIDENCE",
-            "LOW_FACE_QUALITY",
-            "LOW_SHARPNESS",
-            "SMALL_BOUNDING_BOX",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Reason::ExceedsMaxFaces => "EXCEEDS_MAX_FACES",
+    Reason::ExtremePose => "EXTREME_POSE",
+    Reason::LowBrightness => "LOW_BRIGHTNESS",
+    Reason::LowConfidence => "LOW_CONFIDENCE",
+    Reason::LowFaceQuality => "LOW_FACE_QUALITY",
+    Reason::LowSharpness => "LOW_SHARPNESS",
+    Reason::SmallBoundingBox => "SMALL_BOUNDING_BOX",
+    Reason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXCEEDS_MAX_FACES", "EXTREME_POSE", "LOW_BRIGHTNESS", "LOW_CONFIDENCE", "LOW_FACE_QUALITY", "LOW_SHARPNESS", "SMALL_BOUNDING_BOX"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Reason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Reason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Reason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Reason::ExceedsMaxFaces => write!(f, "EXCEEDS_MAX_FACES"),
-            Reason::ExtremePose => write!(f, "EXTREME_POSE"),
-            Reason::LowBrightness => write!(f, "LOW_BRIGHTNESS"),
-            Reason::LowConfidence => write!(f, "LOW_CONFIDENCE"),
-            Reason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
-            Reason::LowSharpness => write!(f, "LOW_SHARPNESS"),
-            Reason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
-            Reason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Reason::ExceedsMaxFaces => write!(f, "EXCEEDS_MAX_FACES"),
+Reason::ExtremePose => write!(f, "EXTREME_POSE"),
+Reason::LowBrightness => write!(f, "LOW_BRIGHTNESS"),
+Reason::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+Reason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
+Reason::LowSharpness => write!(f, "LOW_SHARPNESS"),
+Reason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
+Reason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

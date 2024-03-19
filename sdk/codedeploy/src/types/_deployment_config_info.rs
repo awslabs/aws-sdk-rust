@@ -3,7 +3,7 @@
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentConfigInfo {
+pub struct DeploymentConfigInfo  {
     /// <p>The deployment configuration ID.</p>
     pub deployment_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment configuration name.</p>
@@ -19,33 +19,33 @@ pub struct DeploymentConfigInfo {
     /// <p>Information about a zonal configuration.</p>
     pub zonal_config: ::std::option::Option<crate::types::ZonalConfig>,
 }
-impl DeploymentConfigInfo {
+impl  DeploymentConfigInfo  {
     /// <p>The deployment configuration ID.</p>
-    pub fn deployment_config_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_config_id(&self) -> ::std::option::Option<& str> {
         self.deployment_config_id.as_deref()
     }
     /// <p>The deployment configuration name.</p>
-    pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_config_name(&self) -> ::std::option::Option<& str> {
         self.deployment_config_name.as_deref()
     }
     /// <p>Information about the number or percentage of minimum healthy instances.</p>
-    pub fn minimum_healthy_hosts(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHosts> {
+    pub fn minimum_healthy_hosts(&self) -> ::std::option::Option<& crate::types::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
     /// <p>The time at which the deployment configuration was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> ::std::option::Option<& crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
-    pub fn traffic_routing_config(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
+    pub fn traffic_routing_config(&self) -> ::std::option::Option<& crate::types::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
     }
     /// <p>Information about a zonal configuration.</p>
-    pub fn zonal_config(&self) -> ::std::option::Option<&crate::types::ZonalConfig> {
+    pub fn zonal_config(&self) -> ::std::option::Option<& crate::types::ZonalConfig> {
         self.zonal_config.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>The deployment configuration ID.</p>
     pub fn set_deployment_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_config_id = input;
-        self
+        self.deployment_config_id = input; self
     }
     /// <p>The deployment configuration ID.</p>
     pub fn get_deployment_config_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>The deployment configuration name.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_config_name = input;
-        self
+        self.deployment_config_name = input; self
     }
     /// <p>The deployment configuration name.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn set_minimum_healthy_hosts(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHosts>) -> Self {
-        self.minimum_healthy_hosts = input;
-        self
+        self.minimum_healthy_hosts = input; self
     }
     /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn get_minimum_healthy_hosts(&self) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
@@ -118,8 +115,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>The time at which the deployment configuration was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the deployment configuration was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
-        self.compute_platform = input;
-        self
+        self.compute_platform = input; self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
@@ -146,8 +141,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub fn set_traffic_routing_config(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfig>) -> Self {
-        self.traffic_routing_config = input;
-        self
+        self.traffic_routing_config = input; self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub fn get_traffic_routing_config(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
@@ -160,8 +154,7 @@ impl DeploymentConfigInfoBuilder {
     }
     /// <p>Information about a zonal configuration.</p>
     pub fn set_zonal_config(mut self, input: ::std::option::Option<crate::types::ZonalConfig>) -> Self {
-        self.zonal_config = input;
-        self
+        self.zonal_config = input; self
     }
     /// <p>Information about a zonal configuration.</p>
     pub fn get_zonal_config(&self) -> &::std::option::Option<crate::types::ZonalConfig> {
@@ -170,13 +163,21 @@ impl DeploymentConfigInfoBuilder {
     /// Consumes the builder and constructs a [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).
     pub fn build(self) -> crate::types::DeploymentConfigInfo {
         crate::types::DeploymentConfigInfo {
-            deployment_config_id: self.deployment_config_id,
-            deployment_config_name: self.deployment_config_name,
-            minimum_healthy_hosts: self.minimum_healthy_hosts,
-            create_time: self.create_time,
-            compute_platform: self.compute_platform,
-            traffic_routing_config: self.traffic_routing_config,
-            zonal_config: self.zonal_config,
+            deployment_config_id: self.deployment_config_id
+            ,
+            deployment_config_name: self.deployment_config_name
+            ,
+            minimum_healthy_hosts: self.minimum_healthy_hosts
+            ,
+            create_time: self.create_time
+            ,
+            compute_platform: self.compute_platform
+            ,
+            traffic_routing_config: self.traffic_routing_config
+            ,
+            zonal_config: self.zonal_config
+            ,
         }
     }
 }
+

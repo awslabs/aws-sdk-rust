@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceActionInput {
+pub struct DeleteServiceActionInput  {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
@@ -16,9 +16,9 @@ pub struct DeleteServiceActionInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServiceActionInput {
+impl  DeleteServiceActionInput  {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The language code.</p>
@@ -28,11 +28,11 @@ impl DeleteServiceActionInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl DeleteServiceActionInputBuilder {
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl DeleteServiceActionInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -106,22 +104,24 @@ impl DeleteServiceActionInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`DeleteServiceActionInput`](crate::operation::delete_service_action::DeleteServiceActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_service_action::DeleteServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_service_action::DeleteServiceActionInput {
-            id: self.id,
-            accept_language: self.accept_language,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_action::DeleteServiceActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service_action::DeleteServiceActionInput {
+                id: self.id
+                ,
+                accept_language: self.accept_language
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

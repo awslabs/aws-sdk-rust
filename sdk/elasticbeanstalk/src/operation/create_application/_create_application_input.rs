@@ -3,7 +3,7 @@
 /// <p>Request to create an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The name of the application. Must be unique within your account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Your description of the application.</p>
@@ -12,27 +12,28 @@ pub struct CreateApplicationInput {
     pub resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The name of the application. Must be unique within your account.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Your description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
-    pub fn resource_lifecycle_config(&self) -> ::std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn resource_lifecycle_config(&self) -> ::std::option::Option<& crate::types::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
     }
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateApplicationInput {
@@ -49,7 +50,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application. Must be unique within your account.</p>
@@ -60,8 +61,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the application. Must be unique within your account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application. Must be unique within your account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +74,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Your description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Your description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
     pub fn set_resource_lifecycle_config(mut self, input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>) -> Self {
-        self.resource_lifecycle_config = input;
-        self
+        self.resource_lifecycle_config = input; self
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
     pub fn get_resource_lifecycle_config(&self) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
@@ -103,30 +101,34 @@ impl CreateApplicationInputBuilder {
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            application_name: self.application_name,
-            description: self.description,
-            resource_lifecycle_config: self.resource_lifecycle_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                application_name: self.application_name
+                ,
+                description: self.description
+                ,
+                resource_lifecycle_config: self.resource_lifecycle_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The configuration containing information about the customer managed key used for encrypting customer data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerSideEncryptionConfiguration {
+pub struct ServerSideEncryptionConfiguration  {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys.</p>
     pub kms_key_id: ::std::string::String,
 }
-impl ServerSideEncryptionConfiguration {
+impl  ServerSideEncryptionConfiguration  {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys.</p>
-    pub fn kms_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_id.deref()
+    pub fn kms_key_id(&self) -> & str {
+        use std::ops::Deref; self.kms_key_id.deref()
     }
 }
 impl ServerSideEncryptionConfiguration {
@@ -36,8 +35,7 @@ impl ServerSideEncryptionConfigurationBuilder {
     }
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ServerSideEncryptionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_id`](crate::types::builders::ServerSideEncryptionConfigurationBuilder::kms_key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServerSideEncryptionConfiguration {
-            kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_id",
-                    "kms_key_id was not specified but it is required when building ServerSideEncryptionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServerSideEncryptionConfiguration {
+                kms_key_id: self.kms_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_id", "kms_key_id was not specified but it is required when building ServerSideEncryptionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

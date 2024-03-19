@@ -3,7 +3,7 @@
 /// <p>Describes a scheduled scaling action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledUpdateGroupAction {
+pub struct ScheduledUpdateGroupAction  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the scheduled action.</p>
@@ -28,34 +28,34 @@ pub struct ScheduledUpdateGroupAction {
     /// <p>The time zone for the cron expression.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
-impl ScheduledUpdateGroupAction {
+impl  ScheduledUpdateGroupAction  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_arn(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_arn.as_deref()
     }
     /// <p>This property is no longer used.</p>
-    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&str> {
+    pub fn recurrence(&self) -> ::std::option::Option<& str> {
         self.recurrence.as_deref()
     }
     /// <p>The minimum size of the Auto Scaling group.</p>
@@ -71,7 +71,7 @@ impl ScheduledUpdateGroupAction {
         self.desired_capacity
     }
     /// <p>The time zone for the cron expression.</p>
-    pub fn time_zone(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone(&self) -> ::std::option::Option<& str> {
         self.time_zone.as_deref()
     }
 }
@@ -106,8 +106,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn set_scheduled_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_arn = input;
-        self
+        self.scheduled_action_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn get_scheduled_action_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>This property is no longer used.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>This property is no longer used.</p>
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,8 +158,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -176,8 +171,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -192,8 +186,7 @@ impl ScheduledUpdateGroupActionBuilder {
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recurrence = input;
-        self
+        self.recurrence = input; self
     }
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
@@ -207,8 +200,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The minimum size of the Auto Scaling group.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
     }
     /// <p>The minimum size of the Auto Scaling group.</p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
@@ -221,8 +213,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The maximum size of the Auto Scaling group.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum size of the Auto Scaling group.</p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
@@ -235,8 +226,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
@@ -249,8 +239,7 @@ impl ScheduledUpdateGroupActionBuilder {
     }
     /// <p>The time zone for the cron expression.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// <p>The time zone for the cron expression.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,17 +248,29 @@ impl ScheduledUpdateGroupActionBuilder {
     /// Consumes the builder and constructs a [`ScheduledUpdateGroupAction`](crate::types::ScheduledUpdateGroupAction).
     pub fn build(self) -> crate::types::ScheduledUpdateGroupAction {
         crate::types::ScheduledUpdateGroupAction {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            scheduled_action_name: self.scheduled_action_name,
-            scheduled_action_arn: self.scheduled_action_arn,
-            time: self.time,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            recurrence: self.recurrence,
-            min_size: self.min_size,
-            max_size: self.max_size,
-            desired_capacity: self.desired_capacity,
-            time_zone: self.time_zone,
+            auto_scaling_group_name: self.auto_scaling_group_name
+            ,
+            scheduled_action_name: self.scheduled_action_name
+            ,
+            scheduled_action_arn: self.scheduled_action_arn
+            ,
+            time: self.time
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            recurrence: self.recurrence
+            ,
+            min_size: self.min_size
+            ,
+            max_size: self.max_size
+            ,
+            desired_capacity: self.desired_capacity
+            ,
+            time_zone: self.time_zone
+            ,
         }
     }
 }
+

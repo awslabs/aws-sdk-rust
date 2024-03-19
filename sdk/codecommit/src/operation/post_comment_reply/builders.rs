@@ -5,54 +5,50 @@ pub use crate::operation::post_comment_reply::_post_comment_reply_input::PostCom
 
 impl PostCommentReplyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::post_comment_reply::PostCommentReplyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.post_comment_reply();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::post_comment_reply::PostCommentReplyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::post_comment_reply::PostCommentReplyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.post_comment_reply();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PostCommentReply`.
-///
+/// 
 /// <p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PostCommentReplyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder,
+                    inner: crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::post_comment_reply::PostCommentReplyOutput,
-        crate::operation::post_comment_reply::PostCommentReplyError,
-    > for PostCommentReplyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::post_comment_reply::PostCommentReplyOutput,
-            crate::operation::post_comment_reply::PostCommentReplyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::post_comment_reply::PostCommentReplyOutput,
+                    crate::operation::post_comment_reply::PostCommentReplyError,
+                > for PostCommentReplyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::post_comment_reply::PostCommentReplyOutput,
+                        crate::operation::post_comment_reply::PostCommentReplyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PostCommentReplyFluentBuilder {
     /// Creates a new `PostCommentReply`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PostCommentReplyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::post_comment_reply::PostCommentReplyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::post_comment_reply::PostCommentReplyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::post_comment_reply::PostCommentReply::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::post_comment_reply::PostCommentReply::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::post_comment_reply::PostCommentReplyOutput,
-        crate::operation::post_comment_reply::PostCommentReplyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_comment_reply::PostCommentReplyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::post_comment_reply::PostCommentReply::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::post_comment_reply::PostCommentReply::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::post_comment_reply::PostCommentReplyOutput, crate::operation::post_comment_reply::PostCommentReplyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn in_reply_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.in_reply_to(input.into());
@@ -151,3 +138,4 @@ impl PostCommentReplyFluentBuilder {
         self.inner.get_content()
     }
 }
+

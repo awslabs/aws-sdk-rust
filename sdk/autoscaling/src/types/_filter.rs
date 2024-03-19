@@ -5,7 +5,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter.</p>
     /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
@@ -33,9 +33,9 @@ pub struct Filter {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The name of the filter.</p>
     /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
     /// <p><b>DescribeAutoScalingGroups</b></p>
@@ -60,15 +60,16 @@ impl Filter {
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Filter {
@@ -83,7 +84,7 @@ impl Filter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FilterBuilder {
     /// <p>The name of the filter.</p>
@@ -139,8 +140,7 @@ impl FilterBuilder {
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<code>DescribeAutoScalingGroups</code> or <code>DescribeTags</code>).</p>
@@ -177,26 +177,28 @@ impl FilterBuilder {
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

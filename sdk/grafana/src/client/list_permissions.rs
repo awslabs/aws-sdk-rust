@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPermissions`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p><br>
     ///   - [`user_type(UserType)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_user_type):<br>required: **false**<br><p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p><br>
     ///   - [`user_id(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_user_id):<br>required: **false**<br><p>(Optional) Limits the results to only the user that matches this ID.</p><br>
     ///   - [`group_id(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_group_id):<br>required: **false**<br><p>(Optional) Limits the results to only the group that matches this ID.</p><br>
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to list permissions for. This parameter is required.</p><br>
-    /// - On success, responds with [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput) with field(s):
+                            /// - On success, responds with [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     ///   - [`permissions(Vec::<PermissionEntry>)`](crate::operation::list_permissions::ListPermissionsOutput::permissions): <p>The permissions returned by the operation.</p>
-    /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
+                            /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
     pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
-        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

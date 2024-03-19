@@ -3,13 +3,13 @@
 /// <p>Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageClassAnalysis {
+pub struct StorageClassAnalysis  {
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     pub data_export: ::std::option::Option<crate::types::StorageClassAnalysisDataExport>,
 }
-impl StorageClassAnalysis {
+impl  StorageClassAnalysis  {
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
-    pub fn data_export(&self) -> ::std::option::Option<&crate::types::StorageClassAnalysisDataExport> {
+    pub fn data_export(&self) -> ::std::option::Option<& crate::types::StorageClassAnalysisDataExport> {
         self.data_export.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StorageClassAnalysisBuilder {
     }
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     pub fn set_data_export(mut self, input: ::std::option::Option<crate::types::StorageClassAnalysisDataExport>) -> Self {
-        self.data_export = input;
-        self
+        self.data_export = input; self
     }
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     pub fn get_data_export(&self) -> &::std::option::Option<crate::types::StorageClassAnalysisDataExport> {
@@ -44,7 +43,9 @@ impl StorageClassAnalysisBuilder {
     /// Consumes the builder and constructs a [`StorageClassAnalysis`](crate::types::StorageClassAnalysis).
     pub fn build(self) -> crate::types::StorageClassAnalysis {
         crate::types::StorageClassAnalysis {
-            data_export: self.data_export,
+            data_export: self.data_export
+            ,
         }
     }
 }
+

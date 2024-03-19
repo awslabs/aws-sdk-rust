@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTaskSetsOutput {
+pub struct DescribeTaskSetsOutput  {
     /// <p>The list of task sets described.</p>
-    pub task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
+    pub task_sets: ::std::option::Option<::std::vec::Vec::<crate::types::TaskSet>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl DescribeTaskSetsOutput {
+impl  DescribeTaskSetsOutput  {
     /// <p>The list of task sets described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_sets.is_none()`.
-    pub fn task_sets(&self) -> &[crate::types::TaskSet] {
-        self.task_sets.as_deref().unwrap_or_default()
+    pub fn task_sets(&self) -> & [crate::types::TaskSet] {
+        self.task_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTaskSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTaskSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskSetsOutput`](crate::operation::describe_task_sets::DescribeTaskSetsOutput).
     pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeTaskSetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskSetsOutputBuilder {
-    pub(crate) task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) task_sets: ::std::option::Option<::std::vec::Vec::<crate::types::TaskSet>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl DescribeTaskSetsOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeTaskSetsOutputBuilder {
     /// <p>The list of task sets described.</p>
     pub fn task_sets(mut self, input: crate::types::TaskSet) -> Self {
         let mut v = self.task_sets.unwrap_or_default();
-        v.push(input);
-        self.task_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of task sets described.</p>
-    pub fn set_task_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>) -> Self {
-        self.task_sets = input;
-        self
+    pub fn set_task_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskSet>>) -> Self {
+        self.task_sets = input; self
     }
     /// <p>The list of task sets described.</p>
-    pub fn get_task_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSet>> {
+    pub fn get_task_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskSet>> {
         &self.task_sets
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl DescribeTaskSetsOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTaskSetsOutput`](crate::operation::describe_task_sets::DescribeTaskSetsOutput).
     pub fn build(self) -> crate::operation::describe_task_sets::DescribeTaskSetsOutput {
         crate::operation::describe_task_sets::DescribeTaskSetsOutput {
-            task_sets: self.task_sets,
-            failures: self.failures,
+            task_sets: self.task_sets
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableControlInput {
+pub struct DisableControlInput  {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DisableControlInput {
+impl  DisableControlInput  {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn control_identifier(&self) -> ::std::option::Option<& str> {
         self.control_identifier.as_deref()
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisableControlInputBuilder {
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_identifier = input;
-        self
+        self.control_identifier = input; self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DisableControlInputBuilder {
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }
     /// Consumes the builder and constructs a [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_control::DisableControlInput {
-            control_identifier: self.control_identifier,
-            target_identifier: self.target_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_control::DisableControlInput {
+                control_identifier: self.control_identifier
+                ,
+                target_identifier: self.target_identifier
+                ,
+            }
+        )
     }
 }
+

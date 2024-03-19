@@ -3,7 +3,7 @@
 /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomContentConfiguration {
+pub struct CustomContentConfiguration  {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
     pub content_url: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
@@ -13,21 +13,21 @@ pub struct CustomContentConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl CustomContentConfiguration {
+impl  CustomContentConfiguration  {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
-    pub fn content_url(&self) -> ::std::option::Option<&str> {
+    pub fn content_url(&self) -> ::std::option::Option<& str> {
         self.content_url.as_deref()
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::CustomContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::CustomContentType> {
         self.content_type.as_ref()
     }
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
-    pub fn image_scaling(&self) -> ::std::option::Option<&crate::types::CustomContentImageScalingConfiguration> {
+    pub fn image_scaling(&self) -> ::std::option::Option<& crate::types::CustomContentImageScalingConfiguration> {
         self.image_scaling.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CustomContentConfigurationBuilder {
     }
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
     pub fn set_content_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_url = input;
-        self
+        self.content_url = input; self
     }
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
     pub fn get_content_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CustomContentConfigurationBuilder {
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CustomContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CustomContentType> {
@@ -83,8 +81,7 @@ impl CustomContentConfigurationBuilder {
     }
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
     pub fn set_image_scaling(mut self, input: ::std::option::Option<crate::types::CustomContentImageScalingConfiguration>) -> Self {
-        self.image_scaling = input;
-        self
+        self.image_scaling = input; self
     }
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
     pub fn get_image_scaling(&self) -> &::std::option::Option<crate::types::CustomContentImageScalingConfiguration> {
@@ -97,8 +94,7 @@ impl CustomContentConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -107,10 +103,15 @@ impl CustomContentConfigurationBuilder {
     /// Consumes the builder and constructs a [`CustomContentConfiguration`](crate::types::CustomContentConfiguration).
     pub fn build(self) -> crate::types::CustomContentConfiguration {
         crate::types::CustomContentConfiguration {
-            content_url: self.content_url,
-            content_type: self.content_type,
-            image_scaling: self.image_scaling,
-            interactions: self.interactions,
+            content_url: self.content_url
+            ,
+            content_type: self.content_type
+            ,
+            image_scaling: self.image_scaling
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

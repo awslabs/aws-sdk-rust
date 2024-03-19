@@ -3,24 +3,25 @@
 /// <p>The output for a <code>DescribeStackResources</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackResourcesOutput {
+pub struct DescribeStackResourcesOutput  {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub stack_resources: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
+    pub stack_resources: ::std::option::Option<::std::vec::Vec::<crate::types::StackResource>>,
     _request_id: Option<String>,
 }
-impl DescribeStackResourcesOutput {
+impl  DescribeStackResourcesOutput  {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_resources.is_none()`.
-    pub fn stack_resources(&self) -> &[crate::types::StackResource] {
-        self.stack_resources.as_deref().unwrap_or_default()
+    pub fn stack_resources(&self) -> & [crate::types::StackResource] {
+        self.stack_resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStackResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStackResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
     pub fn builder() -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeStackResourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourcesOutputBuilder {
-    pub(crate) stack_resources: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
+    pub(crate) stack_resources: ::std::option::Option<::std::vec::Vec::<crate::types::StackResource>>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourcesOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeStackResourcesOutputBuilder {
     /// <p>A list of <code>StackResource</code> structures.</p>
     pub fn stack_resources(mut self, input: crate::types::StackResource) -> Self {
         let mut v = self.stack_resources.unwrap_or_default();
-        v.push(input);
-        self.stack_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stack_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn set_stack_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>) -> Self {
-        self.stack_resources = input;
-        self
+    pub fn set_stack_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackResource>>) -> Self {
+        self.stack_resources = input; self
     }
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn get_stack_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResource>> {
+    pub fn get_stack_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackResource>> {
         &self.stack_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
     pub fn build(self) -> crate::operation::describe_stack_resources::DescribeStackResourcesOutput {
         crate::operation::describe_stack_resources::DescribeStackResourcesOutput {
-            stack_resources: self.stack_resources,
+            stack_resources: self.stack_resources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

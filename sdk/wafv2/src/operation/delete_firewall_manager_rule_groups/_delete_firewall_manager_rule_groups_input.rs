@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFirewallManagerRuleGroupsInput {
+pub struct DeleteFirewallManagerRuleGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub web_acl_lock_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFirewallManagerRuleGroupsInput {
+impl  DeleteFirewallManagerRuleGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-    pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_arn(&self) -> ::std::option::Option<& str> {
         self.web_acl_arn.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn web_acl_lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_lock_token(&self) -> ::std::option::Option<& str> {
         self.web_acl_lock_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_arn = input;
-        self
+        self.web_acl_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_web_acl_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_lock_token = input;
-        self
+        self.web_acl_lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_web_acl_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_acl_lock_token
     }
     /// Consumes the builder and constructs a [`DeleteFirewallManagerRuleGroupsInput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput {
-                web_acl_arn: self.web_acl_arn,
-                web_acl_lock_token: self.web_acl_lock_token,
-            },
+                web_acl_arn: self.web_acl_arn
+                ,
+                web_acl_lock_token: self.web_acl_lock_token
+                ,
+            }
         )
     }
 }
+

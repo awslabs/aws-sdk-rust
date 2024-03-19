@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdMappingJobInput {
+pub struct GetIdMappingJobInput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIdMappingJobInput {
+impl  GetIdMappingJobInput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetIdMappingJobInputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetIdMappingJobInputBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`GetIdMappingJobInput`](crate::operation::get_id_mapping_job::GetIdMappingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_id_mapping_job::GetIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_id_mapping_job::GetIdMappingJobInput {
-            workflow_name: self.workflow_name,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_id_mapping_job::GetIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_id_mapping_job::GetIdMappingJobInput {
+                workflow_name: self.workflow_name
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

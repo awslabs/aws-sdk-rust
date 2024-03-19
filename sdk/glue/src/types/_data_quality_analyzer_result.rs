@@ -3,7 +3,7 @@
 /// <p>Describes the result of the evaluation of a data quality analyzer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityAnalyzerResult {
+pub struct DataQualityAnalyzerResult  {
     /// <p>The name of the data quality analyzer.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data quality analyzer.</p>
@@ -11,23 +11,23 @@ pub struct DataQualityAnalyzerResult {
     /// <p>An evaluation message.</p>
     pub evaluation_message: ::std::option::Option<::std::string::String>,
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
-    pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
 }
-impl DataQualityAnalyzerResult {
+impl  DataQualityAnalyzerResult  {
     /// <p>The name of the data quality analyzer.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the data quality analyzer.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An evaluation message.</p>
-    pub fn evaluation_message(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_message(&self) -> ::std::option::Option<& str> {
         self.evaluation_message.as_deref()
     }
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
-    pub fn evaluated_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn evaluated_metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, f64>> {
         self.evaluated_metrics.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct DataQualityAnalyzerResultBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_message: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
 }
 impl DataQualityAnalyzerResultBuilder {
     /// <p>The name of the data quality analyzer.</p>
@@ -55,8 +55,7 @@ impl DataQualityAnalyzerResultBuilder {
     }
     /// <p>The name of the data quality analyzer.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data quality analyzer.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DataQualityAnalyzerResultBuilder {
     }
     /// <p>A description of the data quality analyzer.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data quality analyzer.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DataQualityAnalyzerResultBuilder {
     }
     /// <p>An evaluation message.</p>
     pub fn set_evaluation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_message = input;
-        self
+        self.evaluation_message = input; self
     }
     /// <p>An evaluation message.</p>
     pub fn get_evaluation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,26 +94,30 @@ impl DataQualityAnalyzerResultBuilder {
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
     pub fn evaluated_metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.evaluated_metrics.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.evaluated_metrics = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.evaluated_metrics = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
-    pub fn set_evaluated_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
-        self.evaluated_metrics = input;
-        self
+    pub fn set_evaluated_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>) -> Self {
+        self.evaluated_metrics = input; self
     }
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
-    pub fn get_evaluated_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_evaluated_metrics(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>> {
         &self.evaluated_metrics
     }
     /// Consumes the builder and constructs a [`DataQualityAnalyzerResult`](crate::types::DataQualityAnalyzerResult).
     pub fn build(self) -> crate::types::DataQualityAnalyzerResult {
         crate::types::DataQualityAnalyzerResult {
-            name: self.name,
-            description: self.description,
-            evaluation_message: self.evaluation_message,
-            evaluated_metrics: self.evaluated_metrics,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            evaluation_message: self.evaluation_message
+            ,
+            evaluated_metrics: self.evaluated_metrics
+            ,
         }
     }
 }
+

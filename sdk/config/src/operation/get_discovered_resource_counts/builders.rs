@@ -5,23 +5,20 @@ pub use crate::operation::get_discovered_resource_counts::_get_discovered_resour
 
 impl GetDiscoveredResourceCountsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_discovered_resource_counts();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_discovered_resource_counts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetDiscoveredResourceCounts`.
-///
+/// 
 /// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account.</p>
 /// <p class="title"><b>Example</b></p>
 /// <ol>
@@ -53,33 +50,32 @@ impl GetDiscoveredResourceCountsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDiscoveredResourceCountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder,
+                    inner: crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-    > for GetDiscoveredResourceCountsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
+                    crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+                > for GetDiscoveredResourceCountsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
+                        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetDiscoveredResourceCountsFluentBuilder {
     /// Creates a new `GetDiscoveredResourceCounts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -88,59 +84,50 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
-        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCounts::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput, crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator {
-        crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator {
+                                crate::operation::get_discovered_resource_counts::paginator::GetDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `resourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -157,7 +144,7 @@ impl GetDiscoveredResourceCountsFluentBuilder {
     /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p><note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
@@ -165,7 +152,7 @@ impl GetDiscoveredResourceCountsFluentBuilder {
     /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p><note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_types()
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -197,3 +184,4 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes the relationship between generic data models.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenGenericDataRelationshipType {
+pub struct CodegenGenericDataRelationshipType  {
     /// <p>The data relationship type.</p>
     pub r#type: crate::types::GenericDataRelationshipType,
     /// <p>The name of the related model in the data relationship.</p>
     pub related_model_name: ::std::string::String,
     /// <p>The related model fields in the data relationship.</p>
-    pub related_model_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub related_model_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
     pub can_unlink_associated_model: ::std::option::Option<bool>,
     /// <p>The name of the related join field in the data relationship.</p>
@@ -19,47 +19,48 @@ pub struct CodegenGenericDataRelationshipType {
     /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub belongs_to_field_on_related_model: ::std::option::Option<::std::string::String>,
     /// <p>The associated fields of the data relationship.</p>
-    pub associated_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
     pub is_has_many_index: ::std::option::Option<bool>,
 }
-impl CodegenGenericDataRelationshipType {
+impl  CodegenGenericDataRelationshipType  {
     /// <p>The data relationship type.</p>
-    pub fn r#type(&self) -> &crate::types::GenericDataRelationshipType {
+    pub fn r#type(&self) -> & crate::types::GenericDataRelationshipType {
         &self.r#type
     }
     /// <p>The name of the related model in the data relationship.</p>
-    pub fn related_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.related_model_name.deref()
+    pub fn related_model_name(&self) -> & str {
+        use std::ops::Deref; self.related_model_name.deref()
     }
     /// <p>The related model fields in the data relationship.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_model_fields.is_none()`.
-    pub fn related_model_fields(&self) -> &[::std::string::String] {
-        self.related_model_fields.as_deref().unwrap_or_default()
+    pub fn related_model_fields(&self) -> & [::std::string::String] {
+        self.related_model_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
     pub fn can_unlink_associated_model(&self) -> ::std::option::Option<bool> {
         self.can_unlink_associated_model
     }
     /// <p>The name of the related join field in the data relationship.</p>
-    pub fn related_join_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn related_join_field_name(&self) -> ::std::option::Option<& str> {
         self.related_join_field_name.as_deref()
     }
     /// <p>The name of the related join table in the data relationship.</p>
-    pub fn related_join_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn related_join_table_name(&self) -> ::std::option::Option<& str> {
         self.related_join_table_name.as_deref()
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
-    pub fn belongs_to_field_on_related_model(&self) -> ::std::option::Option<&str> {
+    pub fn belongs_to_field_on_related_model(&self) -> ::std::option::Option<& str> {
         self.belongs_to_field_on_related_model.as_deref()
     }
     /// <p>The associated fields of the data relationship.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_fields.is_none()`.
-    pub fn associated_fields(&self) -> &[::std::string::String] {
-        self.associated_fields.as_deref().unwrap_or_default()
+    pub fn associated_fields(&self) -> & [::std::string::String] {
+        self.associated_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
     pub fn is_has_many_index(&self) -> ::std::option::Option<bool> {
@@ -79,12 +80,12 @@ impl CodegenGenericDataRelationshipType {
 pub struct CodegenGenericDataRelationshipTypeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GenericDataRelationshipType>,
     pub(crate) related_model_name: ::std::option::Option<::std::string::String>,
-    pub(crate) related_model_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) related_model_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) can_unlink_associated_model: ::std::option::Option<bool>,
     pub(crate) related_join_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) related_join_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) belongs_to_field_on_related_model: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_has_many_index: ::std::option::Option<bool>,
 }
 impl CodegenGenericDataRelationshipTypeBuilder {
@@ -96,8 +97,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>The data relationship type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GenericDataRelationshipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data relationship type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GenericDataRelationshipType> {
@@ -111,8 +111,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>The name of the related model in the data relationship.</p>
     pub fn set_related_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_model_name = input;
-        self
+        self.related_model_name = input; self
     }
     /// <p>The name of the related model in the data relationship.</p>
     pub fn get_related_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,17 +124,16 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// <p>The related model fields in the data relationship.</p>
     pub fn related_model_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_model_fields.unwrap_or_default();
-        v.push(input.into());
-        self.related_model_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.related_model_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The related model fields in the data relationship.</p>
-    pub fn set_related_model_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.related_model_fields = input;
-        self
+    pub fn set_related_model_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.related_model_fields = input; self
     }
     /// <p>The related model fields in the data relationship.</p>
-    pub fn get_related_model_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_related_model_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.related_model_fields
     }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
@@ -145,8 +143,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
     pub fn set_can_unlink_associated_model(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_unlink_associated_model = input;
-        self
+        self.can_unlink_associated_model = input; self
     }
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
     pub fn get_can_unlink_associated_model(&self) -> &::std::option::Option<bool> {
@@ -159,8 +156,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>The name of the related join field in the data relationship.</p>
     pub fn set_related_join_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_join_field_name = input;
-        self
+        self.related_join_field_name = input; self
     }
     /// <p>The name of the related join field in the data relationship.</p>
     pub fn get_related_join_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +169,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>The name of the related join table in the data relationship.</p>
     pub fn set_related_join_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_join_table_name = input;
-        self
+        self.related_join_table_name = input; self
     }
     /// <p>The name of the related join table in the data relationship.</p>
     pub fn get_related_join_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +182,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn set_belongs_to_field_on_related_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.belongs_to_field_on_related_model = input;
-        self
+        self.belongs_to_field_on_related_model = input; self
     }
     /// <p>The value of the <code>belongsTo</code> field on the related data model.</p>
     pub fn get_belongs_to_field_on_related_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,17 +195,16 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// <p>The associated fields of the data relationship.</p>
     pub fn associated_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_fields.unwrap_or_default();
-        v.push(input.into());
-        self.associated_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The associated fields of the data relationship.</p>
-    pub fn set_associated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_fields = input;
-        self
+    pub fn set_associated_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_fields = input; self
     }
     /// <p>The associated fields of the data relationship.</p>
-    pub fn get_associated_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_fields
     }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
@@ -221,8 +214,7 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
     pub fn set_is_has_many_index(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_has_many_index = input;
-        self
+        self.is_has_many_index = input; self
     }
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
     pub fn get_is_has_many_index(&self) -> &::std::option::Option<bool> {
@@ -233,26 +225,34 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// - [`r#type`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::r#type)
     /// - [`related_model_name`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::related_model_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataRelationshipType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodegenGenericDataRelationshipType {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CodegenGenericDataRelationshipType",
-                )
-            })?,
-            related_model_name: self.related_model_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "related_model_name",
-                    "related_model_name was not specified but it is required when building CodegenGenericDataRelationshipType",
-                )
-            })?,
-            related_model_fields: self.related_model_fields,
-            can_unlink_associated_model: self.can_unlink_associated_model,
-            related_join_field_name: self.related_join_field_name,
-            related_join_table_name: self.related_join_table_name,
-            belongs_to_field_on_related_model: self.belongs_to_field_on_related_model,
-            associated_fields: self.associated_fields,
-            is_has_many_index: self.is_has_many_index,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodegenGenericDataRelationshipType {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CodegenGenericDataRelationshipType")
+                    )?
+                ,
+                related_model_name: self.related_model_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("related_model_name", "related_model_name was not specified but it is required when building CodegenGenericDataRelationshipType")
+                    )?
+                ,
+                related_model_fields: self.related_model_fields
+                ,
+                can_unlink_associated_model: self.can_unlink_associated_model
+                ,
+                related_join_field_name: self.related_join_field_name
+                ,
+                related_join_table_name: self.related_join_table_name
+                ,
+                belongs_to_field_on_related_model: self.belongs_to_field_on_related_model
+                ,
+                associated_fields: self.associated_fields
+                ,
+                is_has_many_index: self.is_has_many_index
+                ,
+            }
+        )
     }
 }
+

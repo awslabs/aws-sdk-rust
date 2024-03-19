@@ -3,7 +3,7 @@
 /// <p>A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateRumMetricDefinitionsError {
+pub struct BatchCreateRumMetricDefinitionsError  {
     /// <p>The metric definition that caused this error.</p>
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionRequest>,
     /// <p>The error code.</p>
@@ -11,20 +11,18 @@ pub struct BatchCreateRumMetricDefinitionsError {
     /// <p>The error message for this metric definition.</p>
     pub error_message: ::std::string::String,
 }
-impl BatchCreateRumMetricDefinitionsError {
+impl  BatchCreateRumMetricDefinitionsError  {
     /// <p>The metric definition that caused this error.</p>
-    pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinitionRequest> {
+    pub fn metric_definition(&self) -> ::std::option::Option<& crate::types::MetricDefinitionRequest> {
         self.metric_definition.as_ref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl BatchCreateRumMetricDefinitionsError {
@@ -51,8 +49,7 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
     }
     /// <p>The metric definition that caused this error.</p>
     pub fn set_metric_definition(mut self, input: ::std::option::Option<crate::types::MetricDefinitionRequest>) -> Self {
-        self.metric_definition = input;
-        self
+        self.metric_definition = input; self
     }
     /// <p>The metric definition that caused this error.</p>
     pub fn get_metric_definition(&self) -> &::std::option::Option<crate::types::MetricDefinitionRequest> {
@@ -66,8 +63,7 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
     }
     /// <p>The error message for this metric definition.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message for this metric definition.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,23 +87,23 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchCreateRumMetricDefinitionsError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchCreateRumMetricDefinitionsError {
-            metric_definition: self.metric_definition,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateRumMetricDefinitionsError, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchCreateRumMetricDefinitionsError {
+                metric_definition: self.metric_definition
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchCreateRumMetricDefinitionsError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchCreateRumMetricDefinitionsError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

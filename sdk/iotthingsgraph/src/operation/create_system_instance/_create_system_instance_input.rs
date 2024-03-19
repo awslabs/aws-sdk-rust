@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSystemInstanceInput {
+pub struct CreateSystemInstanceInput  {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A document that defines an entity.</p>
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
@@ -18,35 +18,36 @@ pub struct CreateSystemInstanceInput {
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub flow_actions_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateSystemInstanceInput {
+impl  CreateSystemInstanceInput  {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A document that defines an entity.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::DeploymentTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::DeploymentTarget> {
         self.target.as_ref()
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn greengrass_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn greengrass_group_name(&self) -> ::std::option::Option<& str> {
         self.greengrass_group_name.as_deref()
     }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    pub fn metrics_configuration(&self) -> ::std::option::Option<&crate::types::MetricsConfiguration> {
+    pub fn metrics_configuration(&self) -> ::std::option::Option<& crate::types::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-    pub fn flow_actions_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_actions_role_arn(&self) -> ::std::option::Option<& str> {
         self.flow_actions_role_arn.as_deref()
     }
 }
@@ -61,7 +62,7 @@ impl CreateSystemInstanceInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSystemInstanceInputBuilder {
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) target: ::std::option::Option<crate::types::DeploymentTarget>,
     pub(crate) greengrass_group_name: ::std::option::Option<::std::string::String>,
@@ -77,17 +78,16 @@ impl CreateSystemInstanceInputBuilder {
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A document that defines an entity.</p>
@@ -98,8 +98,7 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>A document that defines an entity.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>A document that defines an entity.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
@@ -113,8 +112,7 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::DeploymentTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::DeploymentTarget> {
@@ -127,8 +125,7 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn set_greengrass_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.greengrass_group_name = input;
-        self
+        self.greengrass_group_name = input; self
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn get_greengrass_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn set_metrics_configuration(mut self, input: ::std::option::Option<crate::types::MetricsConfiguration>) -> Self {
-        self.metrics_configuration = input;
-        self
+        self.metrics_configuration = input; self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn get_metrics_configuration(&self) -> &::std::option::Option<crate::types::MetricsConfiguration> {
@@ -169,26 +164,32 @@ impl CreateSystemInstanceInputBuilder {
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub fn set_flow_actions_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_actions_role_arn = input;
-        self
+        self.flow_actions_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub fn get_flow_actions_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_actions_role_arn
     }
     /// Consumes the builder and constructs a [`CreateSystemInstanceInput`](crate::operation::create_system_instance::CreateSystemInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_system_instance::CreateSystemInstanceInput {
-            tags: self.tags,
-            definition: self.definition,
-            target: self.target,
-            greengrass_group_name: self.greengrass_group_name,
-            s3_bucket_name: self.s3_bucket_name,
-            metrics_configuration: self.metrics_configuration,
-            flow_actions_role_arn: self.flow_actions_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_system_instance::CreateSystemInstanceInput {
+                tags: self.tags
+                ,
+                definition: self.definition
+                ,
+                target: self.target
+                ,
+                greengrass_group_name: self.greengrass_group_name
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                metrics_configuration: self.metrics_configuration
+                ,
+                flow_actions_role_arn: self.flow_actions_role_arn
+                ,
+            }
+        )
     }
 }
+

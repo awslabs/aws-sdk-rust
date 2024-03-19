@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTopicRuleDestinationInput {
+pub struct UpdateTopicRuleDestinationInput  {
     /// <p>The ARN of the topic rule destination.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
@@ -34,9 +34,9 @@ pub struct UpdateTopicRuleDestinationInput {
     /// </dl>
     pub status: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
 }
-impl UpdateTopicRuleDestinationInput {
+impl  UpdateTopicRuleDestinationInput  {
     /// <p>The ARN of the topic rule destination.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
@@ -66,7 +66,7 @@ impl UpdateTopicRuleDestinationInput {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TopicRuleDestinationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TopicRuleDestinationStatus> {
         self.status.as_ref()
     }
 }
@@ -93,8 +93,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
     }
     /// <p>The ARN of the topic rule destination.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the topic rule destination.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +159,7 @@ impl UpdateTopicRuleDestinationInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
@@ -194,15 +192,15 @@ impl UpdateTopicRuleDestinationInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateTopicRuleDestinationInput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput {
-            arn: self.arn,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput {
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

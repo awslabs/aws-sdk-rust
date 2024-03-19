@@ -3,13 +3,13 @@
 /// <p>The content range of the report.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BusinessReportContentRange {
+pub struct BusinessReportContentRange  {
     /// <p>The interval of the content range.</p>
     pub interval: crate::types::BusinessReportInterval,
 }
-impl BusinessReportContentRange {
+impl  BusinessReportContentRange  {
     /// <p>The interval of the content range.</p>
-    pub fn interval(&self) -> &crate::types::BusinessReportInterval {
+    pub fn interval(&self) -> & crate::types::BusinessReportInterval {
         &self.interval
     }
 }
@@ -35,8 +35,7 @@ impl BusinessReportContentRangeBuilder {
     }
     /// <p>The interval of the content range.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<crate::types::BusinessReportInterval>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The interval of the content range.</p>
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::BusinessReportInterval> {
@@ -46,13 +45,15 @@ impl BusinessReportContentRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`interval`](crate::types::builders::BusinessReportContentRangeBuilder::interval)
     pub fn build(self) -> ::std::result::Result<crate::types::BusinessReportContentRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BusinessReportContentRange {
-            interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interval",
-                    "interval was not specified but it is required when building BusinessReportContentRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BusinessReportContentRange {
+                interval: self.interval
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interval", "interval was not specified but it is required when building BusinessReportContentRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

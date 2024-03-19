@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationInstanceDetailsOutput {
+pub struct DescribeApplicationInstanceDetailsOutput  {
     /// <p>The application instance's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's description.</p>
@@ -21,45 +21,45 @@ pub struct DescribeApplicationInstanceDetailsOutput {
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeApplicationInstanceDetailsOutput {
+impl  DescribeApplicationInstanceDetailsOutput  {
     /// <p>The application instance's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The application instance's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The application instance's default runtime context device.</p>
-    pub fn default_runtime_context_device(&self) -> ::std::option::Option<&str> {
+    pub fn default_runtime_context_device(&self) -> ::std::option::Option<& str> {
         self.default_runtime_context_device.as_deref()
     }
     /// <p>The application instance's configuration manifest.</p>
-    pub fn manifest_payload(&self) -> ::std::option::Option<&crate::types::ManifestPayload> {
+    pub fn manifest_payload(&self) -> ::std::option::Option<& crate::types::ManifestPayload> {
         self.manifest_payload.as_ref()
     }
     /// <p>Parameter overrides for the configuration manifest.</p>
-    pub fn manifest_overrides_payload(&self) -> ::std::option::Option<&crate::types::ManifestOverridesPayload> {
+    pub fn manifest_overrides_payload(&self) -> ::std::option::Option<& crate::types::ManifestOverridesPayload> {
         self.manifest_overrides_payload.as_ref()
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
-    pub fn application_instance_id_to_replace(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id_to_replace(&self) -> ::std::option::Option<& str> {
         self.application_instance_id_to_replace.as_deref()
     }
     /// <p>When the application instance was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> ::std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeApplicationInstanceDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeApplicationInstanceDetailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInstanceDetailsOutput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput).
     pub fn builder() -> crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsOutputBuilder {
@@ -89,8 +89,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The application instance's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The application instance's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The application instance's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The application instance's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The application instance's default runtime context device.</p>
     pub fn set_default_runtime_context_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_runtime_context_device = input;
-        self
+        self.default_runtime_context_device = input; self
     }
     /// <p>The application instance's default runtime context device.</p>
     pub fn get_default_runtime_context_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The application instance's configuration manifest.</p>
     pub fn set_manifest_payload(mut self, input: ::std::option::Option<crate::types::ManifestPayload>) -> Self {
-        self.manifest_payload = input;
-        self
+        self.manifest_payload = input; self
     }
     /// <p>The application instance's configuration manifest.</p>
     pub fn get_manifest_payload(&self) -> &::std::option::Option<crate::types::ManifestPayload> {
@@ -145,8 +141,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>Parameter overrides for the configuration manifest.</p>
     pub fn set_manifest_overrides_payload(mut self, input: ::std::option::Option<crate::types::ManifestOverridesPayload>) -> Self {
-        self.manifest_overrides_payload = input;
-        self
+        self.manifest_overrides_payload = input; self
     }
     /// <p>Parameter overrides for the configuration manifest.</p>
     pub fn get_manifest_overrides_payload(&self) -> &::std::option::Option<crate::types::ManifestOverridesPayload> {
@@ -159,8 +154,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
     pub fn set_application_instance_id_to_replace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id_to_replace = input;
-        self
+        self.application_instance_id_to_replace = input; self
     }
     /// <p>The ID of the application instance that this instance replaced.</p>
     pub fn get_application_instance_id_to_replace(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>When the application instance was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>When the application instance was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,34 +180,42 @@ impl DescribeApplicationInstanceDetailsOutputBuilder {
     }
     /// <p>The application instance's ID.</p>
     pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id = input;
-        self
+        self.application_instance_id = input; self
     }
     /// <p>The application instance's ID.</p>
     pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_instance_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeApplicationInstanceDetailsOutput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput).
     pub fn build(self) -> crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput {
         crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput {
-            name: self.name,
-            description: self.description,
-            default_runtime_context_device: self.default_runtime_context_device,
-            manifest_payload: self.manifest_payload,
-            manifest_overrides_payload: self.manifest_overrides_payload,
-            application_instance_id_to_replace: self.application_instance_id_to_replace,
-            created_time: self.created_time,
-            application_instance_id: self.application_instance_id,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            default_runtime_context_device: self.default_runtime_context_device
+            ,
+            manifest_payload: self.manifest_payload
+            ,
+            manifest_overrides_payload: self.manifest_overrides_payload
+            ,
+            application_instance_id_to_replace: self.application_instance_id_to_replace
+            ,
+            created_time: self.created_time
+            ,
+            application_instance_id: self.application_instance_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

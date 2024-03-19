@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAttachedIndices`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory.</p><br>
     ///   - [`target_reference(ObjectReference)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::target_reference) / [`set_target_reference(Option<ObjectReference>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_target_reference):<br>required: **true**<br><p>A reference to the object that has indices attached.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::set_consistency_level):<br>required: **false**<br><p>The consistency level to use for this operation.</p><br>
-    /// - On success, responds with [`ListAttachedIndicesOutput`](crate::operation::list_attached_indices::ListAttachedIndicesOutput) with field(s):
+                            /// - On success, responds with [`ListAttachedIndicesOutput`](crate::operation::list_attached_indices::ListAttachedIndicesOutput) with field(s):
     ///   - [`index_attachments(Option<Vec::<IndexAttachment>>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::index_attachments): <p>The indices attached to the specified object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListAttachedIndicesError>`](crate::operation::list_attached_indices::ListAttachedIndicesError)
+                            /// - On failure, responds with [`SdkError<ListAttachedIndicesError>`](crate::operation::list_attached_indices::ListAttachedIndicesError)
     pub fn list_attached_indices(&self) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder {
-        crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

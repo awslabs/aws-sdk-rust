@@ -3,7 +3,7 @@
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientAuthentication {
+pub struct ClientAuthentication  {
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub sasl: ::std::option::Option<crate::types::Sasl>,
     /// <p>Details for ClientAuthentication using TLS.</p>
@@ -11,17 +11,17 @@ pub struct ClientAuthentication {
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub unauthenticated: ::std::option::Option<crate::types::Unauthenticated>,
 }
-impl ClientAuthentication {
+impl  ClientAuthentication  {
     /// <p>Details for ClientAuthentication using SASL.</p>
-    pub fn sasl(&self) -> ::std::option::Option<&crate::types::Sasl> {
+    pub fn sasl(&self) -> ::std::option::Option<& crate::types::Sasl> {
         self.sasl.as_ref()
     }
     /// <p>Details for ClientAuthentication using TLS.</p>
-    pub fn tls(&self) -> ::std::option::Option<&crate::types::Tls> {
+    pub fn tls(&self) -> ::std::option::Option<& crate::types::Tls> {
         self.tls.as_ref()
     }
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
-    pub fn unauthenticated(&self) -> ::std::option::Option<&crate::types::Unauthenticated> {
+    pub fn unauthenticated(&self) -> ::std::option::Option<& crate::types::Unauthenticated> {
         self.unauthenticated.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ClientAuthenticationBuilder {
     }
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn set_sasl(mut self, input: ::std::option::Option<crate::types::Sasl>) -> Self {
-        self.sasl = input;
-        self
+        self.sasl = input; self
     }
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn get_sasl(&self) -> &::std::option::Option<crate::types::Sasl> {
@@ -62,8 +61,7 @@ impl ClientAuthenticationBuilder {
     }
     /// <p>Details for ClientAuthentication using TLS.</p>
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::Tls>) -> Self {
-        self.tls = input;
-        self
+        self.tls = input; self
     }
     /// <p>Details for ClientAuthentication using TLS.</p>
     pub fn get_tls(&self) -> &::std::option::Option<crate::types::Tls> {
@@ -76,8 +74,7 @@ impl ClientAuthenticationBuilder {
     }
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub fn set_unauthenticated(mut self, input: ::std::option::Option<crate::types::Unauthenticated>) -> Self {
-        self.unauthenticated = input;
-        self
+        self.unauthenticated = input; self
     }
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub fn get_unauthenticated(&self) -> &::std::option::Option<crate::types::Unauthenticated> {
@@ -86,9 +83,13 @@ impl ClientAuthenticationBuilder {
     /// Consumes the builder and constructs a [`ClientAuthentication`](crate::types::ClientAuthentication).
     pub fn build(self) -> crate::types::ClientAuthentication {
         crate::types::ClientAuthentication {
-            sasl: self.sasl,
-            tls: self.tls,
-            unauthenticated: self.unauthenticated,
+            sasl: self.sasl
+            ,
+            tls: self.tls
+            ,
+            unauthenticated: self.unauthenticated
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object which details a discovered Linux subscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The name of the subscription.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
@@ -11,13 +11,13 @@ pub struct Subscription {
     /// <p>The total amount of running instances using this subscription.</p>
     pub instance_count: ::std::option::Option<i64>,
 }
-impl Subscription {
+impl  Subscription  {
     /// <p>The name of the subscription.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The total amount of running instances using this subscription.</p>
@@ -48,8 +48,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The name of the subscription.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the subscription.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The total amount of running instances using this subscription.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The total amount of running instances using this subscription.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl SubscriptionBuilder {
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {
         crate::types::Subscription {
-            name: self.name,
-            r#type: self.r#type,
-            instance_count: self.instance_count,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            instance_count: self.instance_count
+            ,
         }
     }
 }
+

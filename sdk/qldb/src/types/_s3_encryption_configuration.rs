@@ -3,7 +3,7 @@
 /// <p>The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3EncryptionConfiguration {
+pub struct S3EncryptionConfiguration  {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub object_encryption_type: crate::types::S3ObjectEncryptionType,
@@ -12,16 +12,16 @@ pub struct S3EncryptionConfiguration {
     /// <p><code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3EncryptionConfiguration {
+impl  S3EncryptionConfiguration  {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    pub fn object_encryption_type(&self) -> &crate::types::S3ObjectEncryptionType {
+    pub fn object_encryption_type(&self) -> & crate::types::S3ObjectEncryptionType {
         &self.object_encryption_type
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p><code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl S3EncryptionConfigurationBuilder {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub fn set_object_encryption_type(mut self, input: ::std::option::Option<crate::types::S3ObjectEncryptionType>) -> Self {
-        self.object_encryption_type = input;
-        self
+        self.object_encryption_type = input; self
     }
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
@@ -69,8 +68,7 @@ impl S3EncryptionConfigurationBuilder {
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p><code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
@@ -82,14 +80,17 @@ impl S3EncryptionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_encryption_type`](crate::types::builders::S3EncryptionConfigurationBuilder::object_encryption_type)
     pub fn build(self) -> ::std::result::Result<crate::types::S3EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3EncryptionConfiguration {
-            object_encryption_type: self.object_encryption_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_encryption_type",
-                    "object_encryption_type was not specified but it is required when building S3EncryptionConfiguration",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3EncryptionConfiguration {
+                object_encryption_type: self.object_encryption_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_encryption_type", "object_encryption_type was not specified but it is required when building S3EncryptionConfiguration")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

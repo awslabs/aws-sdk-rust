@@ -3,7 +3,7 @@
 /// <p>A schedule configures when and how often a pipeline will automatically create a new image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Schedule {
+pub struct Schedule  {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
@@ -12,18 +12,18 @@ pub struct Schedule {
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
     pub pipeline_execution_start_condition: ::std::option::Option<crate::types::PipelineExecutionStartCondition>,
 }
-impl Schedule {
+impl  Schedule  {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
-    pub fn pipeline_execution_start_condition(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStartCondition> {
+    pub fn pipeline_execution_start_condition(&self) -> ::std::option::Option<& crate::types::PipelineExecutionStartCondition> {
         self.pipeline_execution_start_condition.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl ScheduleBuilder {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
@@ -67,8 +66,7 @@ impl ScheduleBuilder {
     }
     /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl ScheduleBuilder {
     }
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
     pub fn set_pipeline_execution_start_condition(mut self, input: ::std::option::Option<crate::types::PipelineExecutionStartCondition>) -> Self {
-        self.pipeline_execution_start_condition = input;
-        self
+        self.pipeline_execution_start_condition = input; self
     }
     /// <p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the base image or components in your image recipe, EC2 Image Builder will build a new image only when there are new versions of the image or components in your recipe that match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time. For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.</p>
     pub fn get_pipeline_execution_start_condition(&self) -> &::std::option::Option<crate::types::PipelineExecutionStartCondition> {
@@ -91,9 +88,13 @@ impl ScheduleBuilder {
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     pub fn build(self) -> crate::types::Schedule {
         crate::types::Schedule {
-            schedule_expression: self.schedule_expression,
-            timezone: self.timezone,
-            pipeline_execution_start_condition: self.pipeline_execution_start_condition,
+            schedule_expression: self.schedule_expression
+            ,
+            timezone: self.timezone
+            ,
+            pipeline_execution_start_condition: self.pipeline_execution_start_condition
+            ,
         }
     }
 }
+

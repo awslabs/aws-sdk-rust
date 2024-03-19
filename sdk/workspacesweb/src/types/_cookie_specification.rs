@@ -3,7 +3,7 @@
 /// <p>Specifies a single cookie or set of cookies in an end user's browser.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CookieSpecification {
+pub struct CookieSpecification  {
     /// <p>The domain of the cookie.</p>
     pub domain: ::std::string::String,
     /// <p>The name of the cookie.</p>
@@ -11,18 +11,17 @@ pub struct CookieSpecification {
     /// <p>The path of the cookie.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl CookieSpecification {
+impl  CookieSpecification  {
     /// <p>The domain of the cookie.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> & str {
+        use std::ops::Deref; self.domain.deref()
     }
     /// <p>The name of the cookie.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path of the cookie.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl CookieSpecificationBuilder {
     }
     /// <p>The domain of the cookie.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain of the cookie.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl CookieSpecificationBuilder {
     }
     /// <p>The name of the cookie.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the cookie.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl CookieSpecificationBuilder {
     }
     /// <p>The path of the cookie.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the cookie.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl CookieSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain`](crate::types::builders::CookieSpecificationBuilder::domain)
     pub fn build(self) -> ::std::result::Result<crate::types::CookieSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CookieSpecification {
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building CookieSpecification",
-                )
-            })?,
-            name: self.name,
-            path: self.path,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CookieSpecification {
+                domain: self.domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "domain was not specified but it is required when building CookieSpecification")
+                    )?
+                ,
+                name: self.name
+                ,
+                path: self.path
+                ,
+            }
+        )
     }
 }
+

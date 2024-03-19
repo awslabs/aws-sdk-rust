@@ -3,22 +3,22 @@
 /// <p>A complex type that contains the response to a <code>GetHostedZoneCount</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostedZoneCountOutput {
+pub struct GetHostedZoneCountOutput  {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub hosted_zone_count: i64,
     _request_id: Option<String>,
 }
-impl GetHostedZoneCountOutput {
+impl  GetHostedZoneCountOutput  {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub fn hosted_zone_count(&self) -> i64 {
         self.hosted_zone_count
     }
 }
 impl ::aws_types::request_id::RequestId for GetHostedZoneCountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHostedZoneCountOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
     pub fn builder() -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
@@ -42,37 +42,35 @@ impl GetHostedZoneCountOutputBuilder {
     }
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub fn set_hosted_zone_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.hosted_zone_count = input;
-        self
+        self.hosted_zone_count = input; self
     }
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub fn get_hosted_zone_count(&self) -> &::std::option::Option<i64> {
         &self.hosted_zone_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`hosted_zone_count`](crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::hosted_zone_count)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
-            hosted_zone_count: self.hosted_zone_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hosted_zone_count",
-                    "hosted_zone_count was not specified but it is required when building GetHostedZoneCountOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
+                hosted_zone_count: self.hosted_zone_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hosted_zone_count", "hosted_zone_count was not specified but it is required when building GetHostedZoneCountOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

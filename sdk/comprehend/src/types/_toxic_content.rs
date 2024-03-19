@@ -3,15 +3,15 @@
 /// <p>Toxic content analysis result for one string. For more information about toxicity detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity detection</a> in the <i>Amazon Comprehend Developer Guide</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ToxicContent {
+pub struct ToxicContent  {
     /// <p>The name of the toxic content type.</p>
     pub name: ::std::option::Option<crate::types::ToxicContentType>,
     /// <p>Model confidence in the detected content type. Value range is zero to one, where one is highest confidence.</p>
     pub score: ::std::option::Option<f32>,
 }
-impl ToxicContent {
+impl  ToxicContent  {
     /// <p>The name of the toxic content type.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ToxicContentType> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::ToxicContentType> {
         self.name.as_ref()
     }
     /// <p>Model confidence in the detected content type. Value range is zero to one, where one is highest confidence.</p>
@@ -41,8 +41,7 @@ impl ToxicContentBuilder {
     }
     /// <p>The name of the toxic content type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ToxicContentType>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the toxic content type.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ToxicContentType> {
@@ -55,8 +54,7 @@ impl ToxicContentBuilder {
     }
     /// <p>Model confidence in the detected content type. Value range is zero to one, where one is highest confidence.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>Model confidence in the detected content type. Value range is zero to one, where one is highest confidence.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl ToxicContentBuilder {
     /// Consumes the builder and constructs a [`ToxicContent`](crate::types::ToxicContent).
     pub fn build(self) -> crate::types::ToxicContent {
         crate::types::ToxicContent {
-            name: self.name,
-            score: self.score,
+            name: self.name
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

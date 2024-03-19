@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketAclOutput {
+pub struct PutBucketAclOutput  {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl crate::s3_request_id::RequestIdExt for PutBucketAclOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for PutBucketAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutBucketAclOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketAclOutput`](crate::operation::put_bucket_acl::PutBucketAclOutput).
     pub fn builder() -> crate::operation::put_bucket_acl::builders::PutBucketAclOutputBuilder {
@@ -32,23 +32,23 @@ pub struct PutBucketAclOutputBuilder {
 }
 impl PutBucketAclOutputBuilder {
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutBucketAclOutput`](crate::operation::put_bucket_acl::PutBucketAclOutput).
     pub fn build(self) -> crate::operation::put_bucket_acl::PutBucketAclOutput {
         crate::operation::put_bucket_acl::PutBucketAclOutput {
@@ -57,3 +57,4 @@ impl PutBucketAclOutputBuilder {
         }
     }
 }
+

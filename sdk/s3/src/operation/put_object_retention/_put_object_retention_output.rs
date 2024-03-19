@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutObjectRetentionOutput {
+pub struct PutObjectRetentionOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -10,24 +10,24 @@ pub struct PutObjectRetentionOutput {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl PutObjectRetentionOutput {
+impl  PutObjectRetentionOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> ::std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for PutObjectRetentionOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for PutObjectRetentionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutObjectRetentionOutput {
     /// Creates a new builder-style object to manufacture [`PutObjectRetentionOutput`](crate::operation::put_object_retention::PutObjectRetentionOutput).
     pub fn builder() -> crate::operation::put_object_retention::builders::PutObjectRetentionOutputBuilder {
@@ -55,8 +55,7 @@ impl PutObjectRetentionOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
-        self.request_charged = input;
-        self
+        self.request_charged = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -65,29 +64,31 @@ impl PutObjectRetentionOutputBuilder {
         &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutObjectRetentionOutput`](crate::operation::put_object_retention::PutObjectRetentionOutput).
     pub fn build(self) -> crate::operation::put_object_retention::PutObjectRetentionOutput {
         crate::operation::put_object_retention::PutObjectRetentionOutput {
-            request_charged: self.request_charged,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

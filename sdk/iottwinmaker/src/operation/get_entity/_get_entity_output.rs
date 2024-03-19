@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEntityOutput {
+pub struct GetEntityOutput  {
     /// <p>The ID of the entity.</p>
     pub entity_id: ::std::string::String,
     /// <p>The name of the entity.</p>
@@ -16,7 +16,7 @@ pub struct GetEntityOutput {
     /// <p>The description of the entity.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
+    pub components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentResponse>>,
     /// <p>The ID of the parent entity for this entity.</p>
     pub parent_entity_id: ::std::string::String,
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
@@ -31,58 +31,53 @@ pub struct GetEntityOutput {
     pub are_all_components_returned: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl GetEntityOutput {
+impl  GetEntityOutput  {
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_name.deref()
+    pub fn entity_name(&self) -> & str {
+        use std::ops::Deref; self.entity_name.deref()
     }
     /// <p>The ARN of the entity.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The current status of the entity.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
     /// <p>The description of the entity.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>> {
+    pub fn components(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentResponse>> {
         self.components.as_ref()
     }
     /// <p>The ID of the parent entity for this entity.</p>
-    pub fn parent_entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.parent_entity_id.deref()
+    pub fn parent_entity_id(&self) -> & str {
+        use std::ops::Deref; self.parent_entity_id.deref()
     }
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     pub fn has_child_entities(&self) -> bool {
         self.has_child_entities
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    pub fn sync_source(&self) -> ::std::option::Option<&str> {
+    pub fn sync_source(&self) -> ::std::option::Option<& str> {
         self.sync_source.as_deref()
     }
     /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
@@ -91,10 +86,10 @@ impl GetEntityOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEntityOutput {
     /// Creates a new builder-style object to manufacture [`GetEntityOutput`](crate::operation::get_entity::GetEntityOutput).
     pub fn builder() -> crate::operation::get_entity::builders::GetEntityOutputBuilder {
@@ -112,7 +107,7 @@ pub struct GetEntityOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentResponse>>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) has_child_entities: ::std::option::Option<bool>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -130,8 +125,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +139,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +153,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The ARN of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +167,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The current status of the entity.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the entity.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -190,8 +181,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +194,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The description of the entity.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the entity.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,20 +207,16 @@ impl GetEntityOutputBuilder {
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentResponse) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.components = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.components = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
-    ) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentResponse>>) -> Self {
+        self.components = input; self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentResponse>> {
         &self.components
     }
     /// <p>The ID of the parent entity for this entity.</p>
@@ -242,8 +227,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The ID of the parent entity for this entity.</p>
     pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_entity_id = input;
-        self
+        self.parent_entity_id = input; self
     }
     /// <p>The ID of the parent entity for this entity.</p>
     pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +241,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     pub fn set_has_child_entities(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_child_entities = input;
-        self
+        self.has_child_entities = input; self
     }
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     pub fn get_has_child_entities(&self) -> &::std::option::Option<bool> {
@@ -272,8 +255,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -287,8 +269,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The date and time when the entity was last updated.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The date and time when the entity was last updated.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -301,8 +282,7 @@ impl GetEntityOutputBuilder {
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,22 +295,21 @@ impl GetEntityOutputBuilder {
     }
     /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
     pub fn set_are_all_components_returned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.are_all_components_returned = input;
-        self
+        self.are_all_components_returned = input; self
     }
     /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
     pub fn get_are_all_components_returned(&self) -> &::std::option::Option<bool> {
         &self.are_all_components_returned
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEntityOutput`](crate::operation::get_entity::GetEntityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_id`](crate::operation::get_entity::builders::GetEntityOutputBuilder::entity_id)
@@ -342,61 +321,61 @@ impl GetEntityOutputBuilder {
     /// - [`creation_date_time`](crate::operation::get_entity::builders::GetEntityOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_entity::builders::GetEntityOutputBuilder::update_date_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_entity::GetEntityOutput {
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_name",
-                    "entity_name was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            status: self.status,
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            description: self.description,
-            components: self.components,
-            parent_entity_id: self.parent_entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parent_entity_id",
-                    "parent_entity_id was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            has_child_entities: self.has_child_entities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "has_child_entities",
-                    "has_child_entities was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building GetEntityOutput",
-                )
-            })?,
-            sync_source: self.sync_source,
-            are_all_components_returned: self.are_all_components_returned,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_entity::GetEntityOutput {
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                entity_name: self.entity_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_name", "entity_name was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                components: self.components
+                ,
+                parent_entity_id: self.parent_entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parent_entity_id", "parent_entity_id was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                has_child_entities: self.has_child_entities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("has_child_entities", "has_child_entities was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building GetEntityOutput")
+                    )?
+                ,
+                sync_source: self.sync_source
+                ,
+                are_all_components_returned: self.are_all_components_returned
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

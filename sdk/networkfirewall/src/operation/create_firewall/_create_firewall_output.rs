@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFirewallOutput {
+pub struct CreateFirewallOutput  {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints.</p>
     pub firewall: ::std::option::Option<crate::types::Firewall>,
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub firewall_status: ::std::option::Option<crate::types::FirewallStatus>,
     _request_id: Option<String>,
 }
-impl CreateFirewallOutput {
+impl  CreateFirewallOutput  {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints.</p>
-    pub fn firewall(&self) -> ::std::option::Option<&crate::types::Firewall> {
+    pub fn firewall(&self) -> ::std::option::Option<& crate::types::Firewall> {
         self.firewall.as_ref()
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
-    pub fn firewall_status(&self) -> ::std::option::Option<&crate::types::FirewallStatus> {
+    pub fn firewall_status(&self) -> ::std::option::Option<& crate::types::FirewallStatus> {
         self.firewall_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFirewallOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFirewallOutput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallOutput`](crate::operation::create_firewall::CreateFirewallOutput).
     pub fn builder() -> crate::operation::create_firewall::builders::CreateFirewallOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateFirewallOutputBuilder {
     }
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints.</p>
     pub fn set_firewall(mut self, input: ::std::option::Option<crate::types::Firewall>) -> Self {
-        self.firewall = input;
-        self
+        self.firewall = input; self
     }
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints.</p>
     pub fn get_firewall(&self) -> &::std::option::Option<crate::types::Firewall> {
@@ -61,28 +60,30 @@ impl CreateFirewallOutputBuilder {
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn set_firewall_status(mut self, input: ::std::option::Option<crate::types::FirewallStatus>) -> Self {
-        self.firewall_status = input;
-        self
+        self.firewall_status = input; self
     }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn get_firewall_status(&self) -> &::std::option::Option<crate::types::FirewallStatus> {
         &self.firewall_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFirewallOutput`](crate::operation::create_firewall::CreateFirewallOutput).
     pub fn build(self) -> crate::operation::create_firewall::CreateFirewallOutput {
         crate::operation::create_firewall::CreateFirewallOutput {
-            firewall: self.firewall,
-            firewall_status: self.firewall_status,
+            firewall: self.firewall
+            ,
+            firewall_status: self.firewall_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachObjectInput {
+pub struct AttachObjectInput  {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parent object reference.</p>
@@ -12,21 +12,21 @@ pub struct AttachObjectInput {
     /// <p>The link name with which the child object is attached to the parent.</p>
     pub link_name: ::std::option::Option<::std::string::String>,
 }
-impl AttachObjectInput {
+impl  AttachObjectInput  {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The parent object reference.</p>
-    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The child object reference to be attached to the object.</p>
-    pub fn child_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn child_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.child_reference.as_ref()
     }
     /// <p>The link name with which the child object is attached to the parent.</p>
-    pub fn link_name(&self) -> ::std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AttachObjectInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AttachObjectInputBuilder {
     }
     /// <p>The parent object reference.</p>
     pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.parent_reference = input;
-        self
+        self.parent_reference = input; self
     }
     /// <p>The parent object reference.</p>
     pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -85,8 +83,7 @@ impl AttachObjectInputBuilder {
     }
     /// <p>The child object reference to be attached to the object.</p>
     pub fn set_child_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.child_reference = input;
-        self
+        self.child_reference = input; self
     }
     /// <p>The child object reference to be attached to the object.</p>
     pub fn get_child_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -100,22 +97,26 @@ impl AttachObjectInputBuilder {
     }
     /// <p>The link name with which the child object is attached to the parent.</p>
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
     }
     /// <p>The link name with which the child object is attached to the parent.</p>
     pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`AttachObjectInput`](crate::operation::attach_object::AttachObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::attach_object::AttachObjectInput {
-            directory_arn: self.directory_arn,
-            parent_reference: self.parent_reference,
-            child_reference: self.child_reference,
-            link_name: self.link_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_object::AttachObjectInput {
+                directory_arn: self.directory_arn
+                ,
+                parent_reference: self.parent_reference
+                ,
+                child_reference: self.child_reference
+                ,
+                link_name: self.link_name
+                ,
+            }
+        )
     }
 }
+

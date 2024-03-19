@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceProfiles`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
-    /// - On success, responds with [`ListServiceProfilesOutput`](crate::operation::list_service_profiles::ListServiceProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListServiceProfilesOutput`](crate::operation::list_service_profiles::ListServiceProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_profiles::ListServiceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`service_profile_list(Option<Vec::<ServiceProfile>>)`](crate::operation::list_service_profiles::ListServiceProfilesOutput::service_profile_list): <p>The list of service profiles.</p>
-    /// - On failure, responds with [`SdkError<ListServiceProfilesError>`](crate::operation::list_service_profiles::ListServiceProfilesError)
+                            /// - On failure, responds with [`SdkError<ListServiceProfilesError>`](crate::operation::list_service_profiles::ListServiceProfilesError)
     pub fn list_service_profiles(&self) -> crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder {
-        crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_service_profiles::builders::ListServiceProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListViewVersions`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p><br>
     ///   - [`view_id(impl Into<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::view_id) / [`set_view_id(Option<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::set_view_id):<br>required: **true**<br><p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
-    /// - On success, responds with [`ListViewVersionsOutput`](crate::operation::list_view_versions::ListViewVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListViewVersionsOutput`](crate::operation::list_view_versions::ListViewVersionsOutput) with field(s):
     ///   - [`view_version_summary_list(Option<Vec::<ViewVersionSummary>>)`](crate::operation::list_view_versions::ListViewVersionsOutput::view_version_summary_list): <p>A list of view version summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_view_versions::ListViewVersionsOutput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListViewVersionsError>`](crate::operation::list_view_versions::ListViewVersionsError)
+                            /// - On failure, responds with [`SdkError<ListViewVersionsError>`](crate::operation::list_view_versions::ListViewVersionsError)
     pub fn list_view_versions(&self) -> crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder {
-        crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_view_versions::builders::ListViewVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

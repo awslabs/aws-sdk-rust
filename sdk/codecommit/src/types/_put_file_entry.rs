@@ -3,7 +3,7 @@
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFileEntry {
+pub struct PutFileEntry  {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     pub file_path: ::std::string::String,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
@@ -13,22 +13,21 @@ pub struct PutFileEntry {
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub source_file: ::std::option::Option<crate::types::SourceFileSpecifier>,
 }
-impl PutFileEntry {
+impl  PutFileEntry  {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
     /// <p>The content of the file, if a source file is not specified.</p>
-    pub fn file_content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn file_content(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    pub fn source_file(&self) -> ::std::option::Option<&crate::types::SourceFileSpecifier> {
+    pub fn source_file(&self) -> ::std::option::Option<& crate::types::SourceFileSpecifier> {
         self.source_file.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input;
-        self
+        self.file_mode = input; self
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -85,8 +82,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The content of the file, if a source file is not specified.</p>
     pub fn set_file_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.file_content = input;
-        self
+        self.file_content = input; self
     }
     /// <p>The content of the file, if a source file is not specified.</p>
     pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -99,8 +95,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub fn set_source_file(mut self, input: ::std::option::Option<crate::types::SourceFileSpecifier>) -> Self {
-        self.source_file = input;
-        self
+        self.source_file = input; self
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub fn get_source_file(&self) -> &::std::option::Option<crate::types::SourceFileSpecifier> {
@@ -110,16 +105,21 @@ impl PutFileEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::PutFileEntryBuilder::file_path)
     pub fn build(self) -> ::std::result::Result<crate::types::PutFileEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutFileEntry {
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building PutFileEntry",
-                )
-            })?,
-            file_mode: self.file_mode,
-            file_content: self.file_content,
-            source_file: self.source_file,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PutFileEntry {
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building PutFileEntry")
+                    )?
+                ,
+                file_mode: self.file_mode
+                ,
+                file_content: self.file_content
+                ,
+                source_file: self.source_file
+                ,
+            }
+        )
     }
 }
+

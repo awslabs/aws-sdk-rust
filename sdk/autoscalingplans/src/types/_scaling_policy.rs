@@ -3,7 +3,7 @@
 /// <p>Represents a scaling policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingPolicy {
+pub struct ScalingPolicy  {
     /// <p>The name of the scaling policy.</p>
     pub policy_name: ::std::string::String,
     /// <p>The type of scaling policy.</p>
@@ -11,18 +11,17 @@ pub struct ScalingPolicy {
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     pub target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
 }
-impl ScalingPolicy {
+impl  ScalingPolicy  {
     /// <p>The name of the scaling policy.</p>
-    pub fn policy_name(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_name.deref()
+    pub fn policy_name(&self) -> & str {
+        use std::ops::Deref; self.policy_name.deref()
     }
     /// <p>The type of scaling policy.</p>
-    pub fn policy_type(&self) -> &crate::types::PolicyType {
+    pub fn policy_type(&self) -> & crate::types::PolicyType {
         &self.policy_type
     }
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
-    pub fn target_tracking_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingConfiguration> {
+    pub fn target_tracking_configuration(&self) -> ::std::option::Option<& crate::types::TargetTrackingConfiguration> {
         self.target_tracking_configuration.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The name of the scaling policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the scaling policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The type of scaling policy.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of scaling policy.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -79,8 +76,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     pub fn set_target_tracking_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingConfiguration>) -> Self {
-        self.target_tracking_configuration = input;
-        self
+        self.target_tracking_configuration = input; self
     }
     /// <p>The target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     pub fn get_target_tracking_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
@@ -91,20 +87,22 @@ impl ScalingPolicyBuilder {
     /// - [`policy_name`](crate::types::builders::ScalingPolicyBuilder::policy_name)
     /// - [`policy_type`](crate::types::builders::ScalingPolicyBuilder::policy_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ScalingPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScalingPolicy {
-            policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_name",
-                    "policy_name was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_type",
-                    "policy_type was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            target_tracking_configuration: self.target_tracking_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScalingPolicy {
+                policy_name: self.policy_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_name", "policy_name was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                policy_type: self.policy_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_type", "policy_type was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                target_tracking_configuration: self.target_tracking_configuration
+                ,
+            }
+        )
     }
 }
+

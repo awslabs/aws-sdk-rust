@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionOutput {
+pub struct DescribeConnectionOutput  {
     /// <p>The ARN of the connection retrieved.</p>
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection retrieved.</p>
@@ -27,57 +27,57 @@ pub struct DescribeConnectionOutput {
     pub last_authorized_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeConnectionOutput {
+impl  DescribeConnectionOutput  {
     /// <p>The ARN of the connection retrieved.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the connection retrieved.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the connection retrieved.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the connection retrieved.</p>
-    pub fn connection_state(&self) -> ::std::option::Option<&crate::types::ConnectionState> {
+    pub fn connection_state(&self) -> ::std::option::Option<& crate::types::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The reason that the connection is in the current connection state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The type of authorization specified for the connection.</p>
-    pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::ConnectionAuthorizationType> {
+    pub fn authorization_type(&self) -> ::std::option::Option<& crate::types::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The parameters to use for authorization for the connection.</p>
-    pub fn auth_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionAuthResponseParameters> {
+    pub fn auth_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionAuthResponseParameters> {
         self.auth_parameters.as_ref()
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn last_authorized_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_authorized_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionOutput`](crate::operation::describe_connection::DescribeConnectionOutput).
     pub fn builder() -> crate::operation::describe_connection::builders::DescribeConnectionOutputBuilder {
@@ -110,8 +110,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The ARN of the connection retrieved.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The ARN of the connection retrieved.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The name of the connection retrieved.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the connection retrieved.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The description for the connection retrieved.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the connection retrieved.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The state of the connection retrieved.</p>
     pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
-        self.connection_state = input;
-        self
+        self.connection_state = input; self
     }
     /// <p>The state of the connection retrieved.</p>
     pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
@@ -166,8 +162,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The reason that the connection is in the current connection state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason that the connection is in the current connection state.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +175,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The type of authorization specified for the connection.</p>
     pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
-        self.authorization_type = input;
-        self
+        self.authorization_type = input; self
     }
     /// <p>The type of authorization specified for the connection.</p>
     pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
@@ -194,8 +188,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +201,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>The parameters to use for authorization for the connection.</p>
     pub fn set_auth_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionAuthResponseParameters>) -> Self {
-        self.auth_parameters = input;
-        self
+        self.auth_parameters = input; self
     }
     /// <p>The parameters to use for authorization for the connection.</p>
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::ConnectionAuthResponseParameters> {
@@ -222,8 +214,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>A time stamp for the time that the connection was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +227,7 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,37 +240,48 @@ impl DescribeConnectionOutputBuilder {
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn set_last_authorized_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_authorized_time = input;
-        self
+        self.last_authorized_time = input; self
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub fn get_last_authorized_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_authorized_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConnectionOutput`](crate::operation::describe_connection::DescribeConnectionOutput).
     pub fn build(self) -> crate::operation::describe_connection::DescribeConnectionOutput {
         crate::operation::describe_connection::DescribeConnectionOutput {
-            connection_arn: self.connection_arn,
-            name: self.name,
-            description: self.description,
-            connection_state: self.connection_state,
-            state_reason: self.state_reason,
-            authorization_type: self.authorization_type,
-            secret_arn: self.secret_arn,
-            auth_parameters: self.auth_parameters,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            last_authorized_time: self.last_authorized_time,
+            connection_arn: self.connection_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            connection_state: self.connection_state
+            ,
+            state_reason: self.state_reason
+            ,
+            authorization_type: self.authorization_type
+            ,
+            secret_arn: self.secret_arn
+            ,
+            auth_parameters: self.auth_parameters
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_authorized_time: self.last_authorized_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

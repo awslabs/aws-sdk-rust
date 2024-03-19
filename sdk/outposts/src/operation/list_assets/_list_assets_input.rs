@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetsInput {
+pub struct ListAssetsInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub host_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub host_id_filter: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by state.</p>
-    pub status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
+    pub status_filter: ::std::option::Option<::std::vec::Vec::<crate::types::AssetState>>,
 }
-impl ListAssetsInput {
+impl  ListAssetsInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_identifier(&self) -> ::std::option::Option<& str> {
         self.outpost_identifier.as_deref()
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_filter.is_none()`.
-    pub fn host_id_filter(&self) -> &[::std::string::String] {
-        self.host_id_filter.as_deref().unwrap_or_default()
+    pub fn host_id_filter(&self) -> & [::std::string::String] {
+        self.host_id_filter.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters the results by state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_filter.is_none()`.
-    pub fn status_filter(&self) -> &[crate::types::AssetState] {
-        self.status_filter.as_deref().unwrap_or_default()
+    pub fn status_filter(&self) -> & [crate::types::AssetState] {
+        self.status_filter.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListAssetsInput {
@@ -52,10 +54,10 @@ impl ListAssetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetsInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) host_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) host_id_filter: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
+    pub(crate) status_filter: ::std::option::Option<::std::vec::Vec::<crate::types::AssetState>>,
 }
 impl ListAssetsInputBuilder {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
@@ -66,8 +68,7 @@ impl ListAssetsInputBuilder {
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_identifier = input;
-        self
+        self.outpost_identifier = input; self
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl ListAssetsInputBuilder {
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
     pub fn host_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_id_filter.unwrap_or_default();
-        v.push(input.into());
-        self.host_id_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.host_id_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn set_host_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.host_id_filter = input;
-        self
+    pub fn set_host_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.host_id_filter = input; self
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn get_host_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_filter(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.host_id_filter
     }
     /// <p>The maximum page size.</p>
@@ -100,8 +100,7 @@ impl ListAssetsInputBuilder {
     }
     /// <p>The maximum page size.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum page size.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -114,8 +113,7 @@ impl ListAssetsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,27 +126,34 @@ impl ListAssetsInputBuilder {
     /// <p>Filters the results by state.</p>
     pub fn status_filter(mut self, input: crate::types::AssetState) -> Self {
         let mut v = self.status_filter.unwrap_or_default();
-        v.push(input);
-        self.status_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by state.</p>
-    pub fn set_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>) -> Self {
-        self.status_filter = input;
-        self
+    pub fn set_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetState>>) -> Self {
+        self.status_filter = input; self
     }
     /// <p>Filters the results by state.</p>
-    pub fn get_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetState>> {
         &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_assets::ListAssetsInput {
-            outpost_identifier: self.outpost_identifier,
-            host_id_filter: self.host_id_filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            status_filter: self.status_filter,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_assets::ListAssetsInput {
+                outpost_identifier: self.outpost_identifier
+                ,
+                host_id_filter: self.host_id_filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                status_filter: self.status_filter
+                ,
+            }
+        )
     }
 }
+

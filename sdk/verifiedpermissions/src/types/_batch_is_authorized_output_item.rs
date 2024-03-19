@@ -3,34 +3,32 @@
 /// <p>The decision, based on policy evaluation, from an individual authorization request in a <code>BatchIsAuthorized</code> API request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchIsAuthorizedOutputItem {
+pub struct BatchIsAuthorizedOutputItem  {
     /// <p>The authorization request that initiated the decision.</p>
     pub request: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>,
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
     pub decision: crate::types::Decision,
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
-    pub determining_policies: ::std::vec::Vec<crate::types::DeterminingPolicyItem>,
+    pub determining_policies: ::std::vec::Vec::<crate::types::DeterminingPolicyItem>,
     /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
-    pub errors: ::std::vec::Vec<crate::types::EvaluationErrorItem>,
+    pub errors: ::std::vec::Vec::<crate::types::EvaluationErrorItem>,
 }
-impl BatchIsAuthorizedOutputItem {
+impl  BatchIsAuthorizedOutputItem  {
     /// <p>The authorization request that initiated the decision.</p>
-    pub fn request(&self) -> ::std::option::Option<&crate::types::BatchIsAuthorizedInputItem> {
+    pub fn request(&self) -> ::std::option::Option<& crate::types::BatchIsAuthorizedInputItem> {
         self.request.as_ref()
     }
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
-    pub fn decision(&self) -> &crate::types::Decision {
+    pub fn decision(&self) -> & crate::types::Decision {
         &self.decision
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
-    pub fn determining_policies(&self) -> &[crate::types::DeterminingPolicyItem] {
-        use std::ops::Deref;
-        self.determining_policies.deref()
+    pub fn determining_policies(&self) -> & [crate::types::DeterminingPolicyItem] {
+        use std::ops::Deref; self.determining_policies.deref()
     }
     /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
-    pub fn errors(&self) -> &[crate::types::EvaluationErrorItem] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::EvaluationErrorItem] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl BatchIsAuthorizedOutputItem {
@@ -46,8 +44,8 @@ impl BatchIsAuthorizedOutputItem {
 pub struct BatchIsAuthorizedOutputItemBuilder {
     pub(crate) request: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>,
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,
-    pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
+    pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec::<crate::types::DeterminingPolicyItem>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationErrorItem>>,
 }
 impl BatchIsAuthorizedOutputItemBuilder {
     /// <p>The authorization request that initiated the decision.</p>
@@ -58,8 +56,7 @@ impl BatchIsAuthorizedOutputItemBuilder {
     }
     /// <p>The authorization request that initiated the decision.</p>
     pub fn set_request(mut self, input: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>) -> Self {
-        self.request = input;
-        self
+        self.request = input; self
     }
     /// <p>The authorization request that initiated the decision.</p>
     pub fn get_request(&self) -> &::std::option::Option<crate::types::BatchIsAuthorizedInputItem> {
@@ -73,8 +70,7 @@ impl BatchIsAuthorizedOutputItemBuilder {
     }
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
     pub fn set_decision(mut self, input: ::std::option::Option<crate::types::Decision>) -> Self {
-        self.decision = input;
-        self
+        self.decision = input; self
     }
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
     pub fn get_decision(&self) -> &::std::option::Option<crate::types::Decision> {
@@ -87,17 +83,16 @@ impl BatchIsAuthorizedOutputItemBuilder {
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
     pub fn determining_policies(mut self, input: crate::types::DeterminingPolicyItem) -> Self {
         let mut v = self.determining_policies.unwrap_or_default();
-        v.push(input);
-        self.determining_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.determining_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
-    pub fn set_determining_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>) -> Self {
-        self.determining_policies = input;
-        self
+    pub fn set_determining_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeterminingPolicyItem>>) -> Self {
+        self.determining_policies = input; self
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
-    pub fn get_determining_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>> {
+    pub fn get_determining_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeterminingPolicyItem>> {
         &self.determining_policies
     }
     /// Appends an item to `errors`.
@@ -107,17 +102,16 @@ impl BatchIsAuthorizedOutputItemBuilder {
     /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
     pub fn errors(mut self, input: crate::types::EvaluationErrorItem) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationErrorItem>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationErrorItem>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchIsAuthorizedOutputItem`](crate::types::BatchIsAuthorizedOutputItem).
@@ -126,26 +120,27 @@ impl BatchIsAuthorizedOutputItemBuilder {
     /// - [`determining_policies`](crate::types::builders::BatchIsAuthorizedOutputItemBuilder::determining_policies)
     /// - [`errors`](crate::types::builders::BatchIsAuthorizedOutputItemBuilder::errors)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchIsAuthorizedOutputItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchIsAuthorizedOutputItem {
-            request: self.request,
-            decision: self.decision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "decision",
-                    "decision was not specified but it is required when building BatchIsAuthorizedOutputItem",
-                )
-            })?,
-            determining_policies: self.determining_policies.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "determining_policies",
-                    "determining_policies was not specified but it is required when building BatchIsAuthorizedOutputItem",
-                )
-            })?,
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchIsAuthorizedOutputItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchIsAuthorizedOutputItem {
+                request: self.request
+                ,
+                decision: self.decision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("decision", "decision was not specified but it is required when building BatchIsAuthorizedOutputItem")
+                    )?
+                ,
+                determining_policies: self.determining_policies
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("determining_policies", "determining_policies was not specified but it is required when building BatchIsAuthorizedOutputItem")
+                    )?
+                ,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchIsAuthorizedOutputItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

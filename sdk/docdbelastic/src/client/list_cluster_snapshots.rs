@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusterSnapshots`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::set_cluster_arn):<br>required: **false**<br><p>The ARN identifier of the elastic cluster.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p> <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elastic cluster snapshot results to receive in the response.</p><br>
     ///   - [`snapshot_type(impl Into<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::snapshot_type) / [`set_snapshot_type(Option<String>)`](crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::set_snapshot_type):<br>required: **false**<br><p>The type of cluster snapshots to be returned. You can specify one of the following values:</p> <ul>  <li>   <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>  <li>   <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li> </ul><br>
-    /// - On success, responds with [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput) with field(s):
+                            /// - On success, responds with [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput) with field(s):
     ///   - [`snapshots(Option<Vec::<ClusterSnapshotInList>>)`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput::snapshots): <p>A list of snapshots for a specified elastic cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput::next_token): <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p> <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
-    /// - On failure, responds with [`SdkError<ListClusterSnapshotsError>`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsError)
+                            /// - On failure, responds with [`SdkError<ListClusterSnapshotsError>`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsError)
     pub fn list_cluster_snapshots(&self) -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder {
-        crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

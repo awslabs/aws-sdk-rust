@@ -3,7 +3,7 @@
 /// <p>Represents a EULA resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Eula {
+pub struct Eula  {
     /// <p>The EULA content.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
@@ -15,25 +15,25 @@ pub struct Eula {
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Eula {
+impl  Eula  {
     /// <p>The EULA content.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_id(&self) -> ::std::option::Option<&str> {
+    pub fn eula_id(&self) -> ::std::option::Option<& str> {
         self.eula_id.as_deref()
     }
     /// <p>The name for the EULA.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EulaBuilder {
     }
     /// <p>The EULA content.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The EULA content.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EulaBuilder {
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl EulaBuilder {
     }
     /// <p>The EULA ID.</p>
     pub fn set_eula_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eula_id = input;
-        self
+        self.eula_id = input; self
     }
     /// <p>The EULA ID.</p>
     pub fn get_eula_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EulaBuilder {
     }
     /// <p>The name for the EULA.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the EULA.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl EulaBuilder {
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl EulaBuilder {
     /// Consumes the builder and constructs a [`Eula`](crate::types::Eula).
     pub fn build(self) -> crate::types::Eula {
         crate::types::Eula {
-            content: self.content,
-            created_at: self.created_at,
-            eula_id: self.eula_id,
-            name: self.name,
-            updated_at: self.updated_at,
+            content: self.content
+            ,
+            created_at: self.created_at
+            ,
+            eula_id: self.eula_id
+            ,
+            name: self.name
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

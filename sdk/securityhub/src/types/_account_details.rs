@@ -3,19 +3,19 @@
 /// <p>The details of an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountDetails {
+pub struct AccountDetails  {
     /// <p>The ID of an Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email of an Amazon Web Services account.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl AccountDetails {
+impl  AccountDetails  {
     /// <p>The ID of an Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The email of an Amazon Web Services account.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl AccountDetailsBuilder {
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of an Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl AccountDetailsBuilder {
     }
     /// <p>The email of an Amazon Web Services account.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of an Amazon Web Services account.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl AccountDetailsBuilder {
     /// Consumes the builder and constructs a [`AccountDetails`](crate::types::AccountDetails).
     pub fn build(self) -> crate::types::AccountDetails {
         crate::types::AccountDetails {
-            account_id: self.account_id,
-            email: self.email,
+            account_id: self.account_id
+            ,
+            email: self.email
+            ,
         }
     }
 }
+

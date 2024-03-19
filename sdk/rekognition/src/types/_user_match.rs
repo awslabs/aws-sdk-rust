@@ -3,19 +3,19 @@
 /// <p>Provides UserID metadata along with the confidence in the match of this UserID with the input face.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserMatch {
+pub struct UserMatch  {
     /// <p>Describes the UserID metadata.</p>
     pub similarity: ::std::option::Option<f32>,
     /// <p>Confidence in the match of this UserID with the input face.</p>
     pub user: ::std::option::Option<crate::types::MatchedUser>,
 }
-impl UserMatch {
+impl  UserMatch  {
     /// <p>Describes the UserID metadata.</p>
     pub fn similarity(&self) -> ::std::option::Option<f32> {
         self.similarity
     }
     /// <p>Confidence in the match of this UserID with the input face.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::MatchedUser> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::MatchedUser> {
         self.user.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UserMatchBuilder {
     }
     /// <p>Describes the UserID metadata.</p>
     pub fn set_similarity(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.similarity = input;
-        self
+        self.similarity = input; self
     }
     /// <p>Describes the UserID metadata.</p>
     pub fn get_similarity(&self) -> &::std::option::Option<f32> {
@@ -55,8 +54,7 @@ impl UserMatchBuilder {
     }
     /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::MatchedUser>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::MatchedUser> {
@@ -65,8 +63,11 @@ impl UserMatchBuilder {
     /// Consumes the builder and constructs a [`UserMatch`](crate::types::UserMatch).
     pub fn build(self) -> crate::types::UserMatch {
         crate::types::UserMatch {
-            similarity: self.similarity,
-            user: self.user,
+            similarity: self.similarity
+            ,
+            user: self.user
+            ,
         }
     }
 }
+

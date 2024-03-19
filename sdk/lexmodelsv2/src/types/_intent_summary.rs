@@ -3,7 +3,7 @@
 /// <p>Summary information about an intent returned by the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentSummary {
+pub struct IntentSummary  {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the intent.</p>
@@ -13,43 +13,45 @@ pub struct IntentSummary {
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
+    pub input_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>,
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
+    pub output_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>,
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IntentSummary {
+impl  IntentSummary  {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
-    pub fn intent_id(&self) -> ::std::option::Option<&str> {
+    pub fn intent_id(&self) -> ::std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
+    pub fn intent_name(&self) -> ::std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The description of the intent.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
-    pub fn parent_intent_signature(&self) -> ::std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> ::std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
-    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
-        self.input_contexts.as_deref().unwrap_or_default()
+    pub fn input_contexts(&self) -> & [crate::types::InputContext] {
+        self.input_contexts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
-    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
-        self.output_contexts.as_deref().unwrap_or_default()
+    pub fn output_contexts(&self) -> & [crate::types::OutputContext] {
+        self.output_contexts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -68,8 +70,8 @@ pub struct IntentSummaryBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parent_intent_signature: ::std::option::Option<::std::string::String>,
-    pub(crate) input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
-    pub(crate) output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
+    pub(crate) input_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>,
+    pub(crate) output_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IntentSummaryBuilder {
@@ -80,8 +82,7 @@ impl IntentSummaryBuilder {
     }
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl IntentSummaryBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The name of the intent.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl IntentSummaryBuilder {
     }
     /// <p>The description of the intent.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the intent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl IntentSummaryBuilder {
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
     pub fn set_parent_intent_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_intent_signature = input;
-        self
+        self.parent_intent_signature = input; self
     }
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
     pub fn get_parent_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +134,16 @@ impl IntentSummaryBuilder {
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         let mut v = self.input_contexts.unwrap_or_default();
-        v.push(input);
-        self.input_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
-        self.input_contexts = input;
-        self
+    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>) -> Self {
+        self.input_contexts = input; self
     }
     /// <p>The input contexts that must be active for this intent to be considered for recognition.</p>
-    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputContext>> {
         &self.input_contexts
     }
     /// Appends an item to `output_contexts`.
@@ -156,17 +153,16 @@ impl IntentSummaryBuilder {
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         let mut v = self.output_contexts.unwrap_or_default();
-        v.push(input);
-        self.output_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
-        self.output_contexts = input;
-        self
+    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>) -> Self {
+        self.output_contexts = input; self
     }
     /// <p>The output contexts that are activated when this intent is fulfilled.</p>
-    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>> {
         &self.output_contexts
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
@@ -176,8 +172,7 @@ impl IntentSummaryBuilder {
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -186,13 +181,21 @@ impl IntentSummaryBuilder {
     /// Consumes the builder and constructs a [`IntentSummary`](crate::types::IntentSummary).
     pub fn build(self) -> crate::types::IntentSummary {
         crate::types::IntentSummary {
-            intent_id: self.intent_id,
-            intent_name: self.intent_name,
-            description: self.description,
-            parent_intent_signature: self.parent_intent_signature,
-            input_contexts: self.input_contexts,
-            output_contexts: self.output_contexts,
-            last_updated_date_time: self.last_updated_date_time,
+            intent_id: self.intent_id
+            ,
+            intent_name: self.intent_name
+            ,
+            description: self.description
+            ,
+            parent_intent_signature: self.parent_intent_signature
+            ,
+            input_contexts: self.input_contexts
+            ,
+            output_contexts: self.output_contexts
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

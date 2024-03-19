@@ -3,15 +3,15 @@
 /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptChoice {
+pub struct AcceptChoice  {
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
     pub prediction_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
     pub prediction_choice: ::std::option::Option<i32>,
 }
-impl AcceptChoice {
+impl  AcceptChoice  {
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
-    pub fn prediction_target(&self) -> ::std::option::Option<&str> {
+    pub fn prediction_target(&self) -> ::std::option::Option<& str> {
         self.prediction_target.as_deref()
     }
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
@@ -41,8 +41,7 @@ impl AcceptChoiceBuilder {
     }
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
     pub fn set_prediction_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prediction_target = input;
-        self
+        self.prediction_target = input; self
     }
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
     pub fn get_prediction_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AcceptChoiceBuilder {
     }
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
     pub fn set_prediction_choice(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.prediction_choice = input;
-        self
+        self.prediction_choice = input; self
     }
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
     pub fn get_prediction_choice(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AcceptChoiceBuilder {
     /// Consumes the builder and constructs a [`AcceptChoice`](crate::types::AcceptChoice).
     pub fn build(self) -> crate::types::AcceptChoice {
         crate::types::AcceptChoice {
-            prediction_target: self.prediction_target,
-            prediction_choice: self.prediction_choice,
+            prediction_target: self.prediction_target
+            ,
+            prediction_choice: self.prediction_choice
+            ,
         }
     }
 }
+

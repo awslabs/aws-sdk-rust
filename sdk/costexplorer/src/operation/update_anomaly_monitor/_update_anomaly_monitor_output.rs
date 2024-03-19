@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnomalyMonitorOutput {
+pub struct UpdateAnomalyMonitorOutput  {
     /// <p>A cost anomaly monitor ARN.</p>
     pub monitor_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateAnomalyMonitorOutput {
+impl  UpdateAnomalyMonitorOutput  {
     /// <p>A cost anomaly monitor ARN.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAnomalyMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorOutput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput).
     pub fn builder() -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder {
@@ -42,37 +41,35 @@ impl UpdateAnomalyMonitorOutputBuilder {
     }
     /// <p>A cost anomaly monitor ARN.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>A cost anomaly monitor ARN.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAnomalyMonitorOutput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_arn`](crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder::monitor_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput {
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building UpdateAnomalyMonitorOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput {
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building UpdateAnomalyMonitorOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

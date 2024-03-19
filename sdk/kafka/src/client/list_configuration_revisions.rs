@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfigurationRevisions`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput) with field(s):
+                            /// - On success, responds with [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput::next_token): <p>Paginated results marker.</p>
     ///   - [`revisions(Option<Vec::<ConfigurationRevision>>)`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput::revisions): <p>List of ConfigurationRevision objects.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationRevisionsError>`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsError)
+                            /// - On failure, responds with [`SdkError<ListConfigurationRevisionsError>`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsError)
     pub fn list_configuration_revisions(&self) -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder {
-        crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

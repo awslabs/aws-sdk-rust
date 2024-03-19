@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppBlockBuilderInput {
+pub struct DeleteAppBlockBuilderInput  {
     /// <p>The name of the app block builder.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAppBlockBuilderInput {
+impl  DeleteAppBlockBuilderInput  {
     /// <p>The name of the app block builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteAppBlockBuilderInputBuilder {
     }
     /// <p>The name of the app block builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the app block builder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAppBlockBuilderInput`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

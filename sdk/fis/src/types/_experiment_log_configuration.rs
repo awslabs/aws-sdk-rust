@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentLogConfiguration {
+pub struct ExperimentLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
@@ -11,13 +11,13 @@ pub struct ExperimentLogConfiguration {
     /// <p>The schema version.</p>
     pub log_schema_version: ::std::option::Option<i32>,
 }
-impl ExperimentLogConfiguration {
+impl  ExperimentLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentCloudWatchLogsLogConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentCloudWatchLogsLogConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentS3LogConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentS3LogConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -47,12 +47,8 @@ impl ExperimentLogConfigurationBuilder {
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
-    ) -> Self {
-        self.cloud_watch_logs_configuration = input;
-        self
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>) -> Self {
+        self.cloud_watch_logs_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration> {
@@ -65,8 +61,7 @@ impl ExperimentLogConfigurationBuilder {
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentS3LogConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::ExperimentS3LogConfiguration> {
@@ -79,8 +74,7 @@ impl ExperimentLogConfigurationBuilder {
     }
     /// <p>The schema version.</p>
     pub fn set_log_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.log_schema_version = input;
-        self
+        self.log_schema_version = input; self
     }
     /// <p>The schema version.</p>
     pub fn get_log_schema_version(&self) -> &::std::option::Option<i32> {
@@ -89,9 +83,13 @@ impl ExperimentLogConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExperimentLogConfiguration`](crate::types::ExperimentLogConfiguration).
     pub fn build(self) -> crate::types::ExperimentLogConfiguration {
         crate::types::ExperimentLogConfiguration {
-            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-            s3_configuration: self.s3_configuration,
-            log_schema_version: self.log_schema_version,
+            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+            ,
+            s3_configuration: self.s3_configuration
+            ,
+            log_schema_version: self.log_schema_version
+            ,
         }
     }
 }
+

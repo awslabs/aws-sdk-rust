@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a gateway capability configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayCapabilitySummary {
+pub struct GatewayCapabilitySummary  {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub capability_namespace: ::std::string::String,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
@@ -17,11 +17,10 @@ pub struct GatewayCapabilitySummary {
     /// </ul>
     pub capability_sync_status: crate::types::CapabilitySyncStatus,
 }
-impl GatewayCapabilitySummary {
+impl  GatewayCapabilitySummary  {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.capability_namespace.deref()
+    pub fn capability_namespace(&self) -> & str {
+        use std::ops::Deref; self.capability_namespace.deref()
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -32,7 +31,7 @@ impl GatewayCapabilitySummary {
     /// <li>
     /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
-    pub fn capability_sync_status(&self) -> &crate::types::CapabilitySyncStatus {
+    pub fn capability_sync_status(&self) -> & crate::types::CapabilitySyncStatus {
         &self.capability_sync_status
     }
 }
@@ -59,8 +58,7 @@ impl GatewayCapabilitySummaryBuilder {
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_namespace = input;
-        self
+        self.capability_namespace = input; self
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl GatewayCapabilitySummaryBuilder {
     /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     pub fn set_capability_sync_status(mut self, input: ::std::option::Option<crate::types::CapabilitySyncStatus>) -> Self {
-        self.capability_sync_status = input;
-        self
+        self.capability_sync_status = input; self
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -110,19 +107,20 @@ impl GatewayCapabilitySummaryBuilder {
     /// - [`capability_namespace`](crate::types::builders::GatewayCapabilitySummaryBuilder::capability_namespace)
     /// - [`capability_sync_status`](crate::types::builders::GatewayCapabilitySummaryBuilder::capability_sync_status)
     pub fn build(self) -> ::std::result::Result<crate::types::GatewayCapabilitySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GatewayCapabilitySummary {
-            capability_namespace: self.capability_namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_namespace",
-                    "capability_namespace was not specified but it is required when building GatewayCapabilitySummary",
-                )
-            })?,
-            capability_sync_status: self.capability_sync_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_sync_status",
-                    "capability_sync_status was not specified but it is required when building GatewayCapabilitySummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GatewayCapabilitySummary {
+                capability_namespace: self.capability_namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_namespace", "capability_namespace was not specified but it is required when building GatewayCapabilitySummary")
+                    )?
+                ,
+                capability_sync_status: self.capability_sync_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_sync_status", "capability_sync_status was not specified but it is required when building GatewayCapabilitySummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

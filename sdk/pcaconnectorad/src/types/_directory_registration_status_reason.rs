@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directoryregistrationstatusreason = unimplemented!();
 /// match directoryregistrationstatusreason {
@@ -34,16 +34,14 @@
 /// Specifically, when `directoryregistrationstatusreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryRegistrationStatusReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DirectoryRegistrationStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     DirectoryAccessDenied,
@@ -59,80 +57,74 @@ pub enum DirectoryRegistrationStatusReason {
     InternalFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DirectoryRegistrationStatusReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "DIRECTORY_ACCESS_DENIED" => DirectoryRegistrationStatusReason::DirectoryAccessDenied,
-            "DIRECTORY_NOT_ACTIVE" => DirectoryRegistrationStatusReason::DirectoryNotActive,
-            "DIRECTORY_NOT_REACHABLE" => DirectoryRegistrationStatusReason::DirectoryNotReachable,
-            "DIRECTORY_RESOURCE_NOT_FOUND" => DirectoryRegistrationStatusReason::DirectoryResourceNotFound,
-            "DIRECTORY_TYPE_NOT_SUPPORTED" => DirectoryRegistrationStatusReason::DirectoryTypeNotSupported,
-            "INTERNAL_FAILURE" => DirectoryRegistrationStatusReason::InternalFailure,
-            other => DirectoryRegistrationStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DIRECTORY_ACCESS_DENIED" => DirectoryRegistrationStatusReason::DirectoryAccessDenied,
+"DIRECTORY_NOT_ACTIVE" => DirectoryRegistrationStatusReason::DirectoryNotActive,
+"DIRECTORY_NOT_REACHABLE" => DirectoryRegistrationStatusReason::DirectoryNotReachable,
+"DIRECTORY_RESOURCE_NOT_FOUND" => DirectoryRegistrationStatusReason::DirectoryResourceNotFound,
+"DIRECTORY_TYPE_NOT_SUPPORTED" => DirectoryRegistrationStatusReason::DirectoryTypeNotSupported,
+"INTERNAL_FAILURE" => DirectoryRegistrationStatusReason::InternalFailure,
+other => DirectoryRegistrationStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DirectoryRegistrationStatusReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DirectoryRegistrationStatusReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DirectoryRegistrationStatusReason::from(s))
+                    }
+                }
 impl DirectoryRegistrationStatusReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DirectoryRegistrationStatusReason::DirectoryAccessDenied => "DIRECTORY_ACCESS_DENIED",
-            DirectoryRegistrationStatusReason::DirectoryNotActive => "DIRECTORY_NOT_ACTIVE",
-            DirectoryRegistrationStatusReason::DirectoryNotReachable => "DIRECTORY_NOT_REACHABLE",
-            DirectoryRegistrationStatusReason::DirectoryResourceNotFound => "DIRECTORY_RESOURCE_NOT_FOUND",
-            DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => "DIRECTORY_TYPE_NOT_SUPPORTED",
-            DirectoryRegistrationStatusReason::InternalFailure => "INTERNAL_FAILURE",
-            DirectoryRegistrationStatusReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DIRECTORY_ACCESS_DENIED",
-            "DIRECTORY_NOT_ACTIVE",
-            "DIRECTORY_NOT_REACHABLE",
-            "DIRECTORY_RESOURCE_NOT_FOUND",
-            "DIRECTORY_TYPE_NOT_SUPPORTED",
-            "INTERNAL_FAILURE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DirectoryRegistrationStatusReason::DirectoryAccessDenied => "DIRECTORY_ACCESS_DENIED",
+    DirectoryRegistrationStatusReason::DirectoryNotActive => "DIRECTORY_NOT_ACTIVE",
+    DirectoryRegistrationStatusReason::DirectoryNotReachable => "DIRECTORY_NOT_REACHABLE",
+    DirectoryRegistrationStatusReason::DirectoryResourceNotFound => "DIRECTORY_RESOURCE_NOT_FOUND",
+    DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => "DIRECTORY_TYPE_NOT_SUPPORTED",
+    DirectoryRegistrationStatusReason::InternalFailure => "INTERNAL_FAILURE",
+    DirectoryRegistrationStatusReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DIRECTORY_ACCESS_DENIED", "DIRECTORY_NOT_ACTIVE", "DIRECTORY_NOT_REACHABLE", "DIRECTORY_RESOURCE_NOT_FOUND", "DIRECTORY_TYPE_NOT_SUPPORTED", "INTERNAL_FAILURE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DirectoryRegistrationStatusReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DirectoryRegistrationStatusReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DirectoryRegistrationStatusReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DirectoryRegistrationStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
-            DirectoryRegistrationStatusReason::DirectoryNotActive => write!(f, "DIRECTORY_NOT_ACTIVE"),
-            DirectoryRegistrationStatusReason::DirectoryNotReachable => write!(f, "DIRECTORY_NOT_REACHABLE"),
-            DirectoryRegistrationStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
-            DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => write!(f, "DIRECTORY_TYPE_NOT_SUPPORTED"),
-            DirectoryRegistrationStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            DirectoryRegistrationStatusReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DirectoryRegistrationStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
+DirectoryRegistrationStatusReason::DirectoryNotActive => write!(f, "DIRECTORY_NOT_ACTIVE"),
+DirectoryRegistrationStatusReason::DirectoryNotReachable => write!(f, "DIRECTORY_NOT_REACHABLE"),
+DirectoryRegistrationStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
+DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => write!(f, "DIRECTORY_TYPE_NOT_SUPPORTED"),
+DirectoryRegistrationStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+DirectoryRegistrationStatusReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

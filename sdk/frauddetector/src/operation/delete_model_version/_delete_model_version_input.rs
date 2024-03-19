@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelVersionInput {
+pub struct DeleteModelVersionInput  {
     /// <p>The model ID of the model version to delete.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type of the model version to delete.</p>
@@ -10,17 +10,17 @@ pub struct DeleteModelVersionInput {
     /// <p>The model version number of the model version to delete.</p>
     pub model_version_number: ::std::option::Option<::std::string::String>,
 }
-impl DeleteModelVersionInput {
+impl  DeleteModelVersionInput  {
     /// <p>The model ID of the model version to delete.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type of the model version to delete.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number of the model version to delete.</p>
-    pub fn model_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_number(&self) -> ::std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteModelVersionInputBuilder {
     }
     /// <p>The model ID of the model version to delete.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID of the model version to delete.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteModelVersionInputBuilder {
     }
     /// <p>The model type of the model version to delete.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type of the model version to delete.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -78,22 +76,24 @@ impl DeleteModelVersionInputBuilder {
     }
     /// <p>The model version number of the model version to delete.</p>
     pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_number = input;
-        self
+        self.model_version_number = input; self
     }
     /// <p>The model version number of the model version to delete.</p>
     pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_version_number
     }
     /// Consumes the builder and constructs a [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_model_version::DeleteModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_model_version::DeleteModelVersionInput {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            model_version_number: self.model_version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_version::DeleteModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_model_version::DeleteModelVersionInput {
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                model_version_number: self.model_version_number
+                ,
+            }
+        )
     }
 }
+

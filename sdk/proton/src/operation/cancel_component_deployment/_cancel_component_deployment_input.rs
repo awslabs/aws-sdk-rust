@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelComponentDeploymentInput {
+pub struct CancelComponentDeploymentInput  {
     /// <p>The name of the component with the deployment to cancel.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelComponentDeploymentInput {
+impl  CancelComponentDeploymentInput  {
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CancelComponentDeploymentInputBuilder {
     }
     /// <p>The name of the component with the deployment to cancel.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component with the deployment to cancel.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }
     /// Consumes the builder and constructs a [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_component_deployment::CancelComponentDeploymentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
-            component_name: self.component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_component_deployment::CancelComponentDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
+                component_name: self.component_name
+                ,
+            }
+        )
     }
 }
+

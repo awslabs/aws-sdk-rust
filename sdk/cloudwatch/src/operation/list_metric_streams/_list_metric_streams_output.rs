@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricStreamsOutput {
+pub struct ListMetricStreamsOutput  {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of metric stream information.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamEntry>>,
     _request_id: Option<String>,
 }
-impl ListMetricStreamsOutput {
+impl  ListMetricStreamsOutput  {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of metric stream information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::MetricStreamEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::MetricStreamEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMetricStreamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
     pub fn builder() -> crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListMetricStreamsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricStreamsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamEntry>>,
     _request_id: Option<String>,
 }
 impl ListMetricStreamsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListMetricStreamsOutputBuilder {
     }
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListMetricStreamsOutputBuilder {
     /// <p>The array of metric stream information.</p>
     pub fn entries(mut self, input: crate::types::MetricStreamEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of metric stream information.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The array of metric stream information.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamEntry>> {
         &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
     pub fn build(self) -> crate::operation::list_metric_streams::ListMetricStreamsOutput {
         crate::operation::list_metric_streams::ListMetricStreamsOutput {
-            next_token: self.next_token,
-            entries: self.entries,
+            next_token: self.next_token
+            ,
+            entries: self.entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

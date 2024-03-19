@@ -3,7 +3,7 @@
 /// <p>Summary of a review template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewTemplatePillarReviewSummary {
+pub struct ReviewTemplatePillarReviewSummary  {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: ::std::option::Option<::std::string::String>,
@@ -13,25 +13,25 @@ pub struct ReviewTemplatePillarReviewSummary {
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A count of how many questions are answered and unanswered in the requested pillar of the lens review.</p>
-    pub question_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>,
+    pub question_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>,
 }
-impl ReviewTemplatePillarReviewSummary {
+impl  ReviewTemplatePillarReviewSummary  {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The name of the pillar.</p>
-    pub fn pillar_name(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_name(&self) -> ::std::option::Option<& str> {
         self.pillar_name.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p>A count of how many questions are answered and unanswered in the requested pillar of the lens review.</p>
-    pub fn question_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Question, i32>> {
+    pub fn question_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Question, i32>> {
         self.question_counts.as_ref()
     }
 }
@@ -49,7 +49,7 @@ pub struct ReviewTemplatePillarReviewSummaryBuilder {
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_name: ::std::option::Option<::std::string::String>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
-    pub(crate) question_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>,
+    pub(crate) question_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>,
 }
 impl ReviewTemplatePillarReviewSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -61,8 +61,7 @@ impl ReviewTemplatePillarReviewSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -76,8 +75,7 @@ impl ReviewTemplatePillarReviewSummaryBuilder {
     }
     /// <p>The name of the pillar.</p>
     pub fn set_pillar_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_name = input;
-        self
+        self.pillar_name = input; self
     }
     /// <p>The name of the pillar.</p>
     pub fn get_pillar_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl ReviewTemplatePillarReviewSummaryBuilder {
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -107,26 +104,30 @@ impl ReviewTemplatePillarReviewSummaryBuilder {
     /// <p>A count of how many questions are answered and unanswered in the requested pillar of the lens review.</p>
     pub fn question_counts(mut self, k: crate::types::Question, v: i32) -> Self {
         let mut hash_map = self.question_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.question_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.question_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A count of how many questions are answered and unanswered in the requested pillar of the lens review.</p>
-    pub fn set_question_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>) -> Self {
-        self.question_counts = input;
-        self
+    pub fn set_question_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>) -> Self {
+        self.question_counts = input; self
     }
     /// <p>A count of how many questions are answered and unanswered in the requested pillar of the lens review.</p>
-    pub fn get_question_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>> {
+    pub fn get_question_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>> {
         &self.question_counts
     }
     /// Consumes the builder and constructs a [`ReviewTemplatePillarReviewSummary`](crate::types::ReviewTemplatePillarReviewSummary).
     pub fn build(self) -> crate::types::ReviewTemplatePillarReviewSummary {
         crate::types::ReviewTemplatePillarReviewSummary {
-            pillar_id: self.pillar_id,
-            pillar_name: self.pillar_name,
-            notes: self.notes,
-            question_counts: self.question_counts,
+            pillar_id: self.pillar_id
+            ,
+            pillar_name: self.pillar_name
+            ,
+            notes: self.notes
+            ,
+            question_counts: self.question_counts
+            ,
         }
     }
 }
+

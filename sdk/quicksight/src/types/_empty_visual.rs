@@ -4,30 +4,29 @@
 /// <p>Empty visuals are used in layouts but have not been configured to show any data. A new visual created in the Amazon QuickSight console is considered an <code>EmptyVisual</code> until a visual type is selected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmptyVisual {
+pub struct EmptyVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub visual_id: ::std::string::String,
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     pub data_set_identifier: ::std::string::String,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
 }
-impl EmptyVisual {
+impl  EmptyVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> &str {
-        use std::ops::Deref;
-        self.visual_id.deref()
+    pub fn visual_id(&self) -> & str {
+        use std::ops::Deref; self.visual_id.deref()
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn data_set_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_identifier.deref()
+    pub fn data_set_identifier(&self) -> & str {
+        use std::ops::Deref; self.data_set_identifier.deref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::VisualCustomAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EmptyVisual {
@@ -43,7 +42,7 @@ impl EmptyVisual {
 pub struct EmptyVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -54,8 +53,7 @@ impl EmptyVisualBuilder {
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visual_id = input;
-        self
+        self.visual_id = input; self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,7 @@ impl EmptyVisualBuilder {
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_identifier = input;
-        self
+        self.data_set_identifier = input; self
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,17 +80,16 @@ impl EmptyVisualBuilder {
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`EmptyVisual`](crate::types::EmptyVisual).
@@ -101,20 +97,22 @@ impl EmptyVisualBuilder {
     /// - [`visual_id`](crate::types::builders::EmptyVisualBuilder::visual_id)
     /// - [`data_set_identifier`](crate::types::builders::EmptyVisualBuilder::data_set_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::EmptyVisual, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EmptyVisual {
-            visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "visual_id",
-                    "visual_id was not specified but it is required when building EmptyVisual",
-                )
-            })?,
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building EmptyVisual",
-                )
-            })?,
-            actions: self.actions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EmptyVisual {
+                visual_id: self.visual_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("visual_id", "visual_id was not specified but it is required when building EmptyVisual")
+                    )?
+                ,
+                data_set_identifier: self.data_set_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_identifier", "data_set_identifier was not specified but it is required when building EmptyVisual")
+                    )?
+                ,
+                actions: self.actions
+                ,
+            }
+        )
     }
 }
+

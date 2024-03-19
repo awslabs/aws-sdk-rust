@@ -5,54 +5,50 @@ pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vp
 
 impl TerminateClientVpnConnectionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.terminate_client_vpn_connections();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.terminate_client_vpn_connections();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TerminateClientVpnConnections`.
-///
+/// 
 /// <p>Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client connection, or up to five connections established by a specific user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder,
+                    inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-    > for TerminateClientVpnConnectionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
+                    crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
+                > for TerminateClientVpnConnectionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
+                        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TerminateClientVpnConnectionsFluentBuilder {
     /// Creates a new `TerminateClientVpnConnections`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput, crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
@@ -165,3 +152,4 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

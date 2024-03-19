@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableSnapshotBlockPublicAccessOutput {
+pub struct DisableSnapshotBlockPublicAccessOutput  {
     /// <p>Returns <code>unblocked</code> if the request succeeds.</p>
     pub state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
     _request_id: Option<String>,
 }
-impl DisableSnapshotBlockPublicAccessOutput {
+impl  DisableSnapshotBlockPublicAccessOutput  {
     /// <p>Returns <code>unblocked</code> if the request succeeds.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableSnapshotBlockPublicAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisableSnapshotBlockPublicAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableSnapshotBlockPublicAccessOutput`](crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessOutput).
     pub fn builder() -> crate::operation::disable_snapshot_block_public_access::builders::DisableSnapshotBlockPublicAccessOutputBuilder {
@@ -40,27 +40,28 @@ impl DisableSnapshotBlockPublicAccessOutputBuilder {
     }
     /// <p>Returns <code>unblocked</code> if the request succeeds.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Returns <code>unblocked</code> if the request succeeds.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisableSnapshotBlockPublicAccessOutput`](crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessOutput).
     pub fn build(self) -> crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessOutput {
         crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessOutput {
-            state: self.state,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

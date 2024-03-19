@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatabaseInput {
+pub struct UpdateDatabaseInput  {
     /// <p>The name of the database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the data stored in the database. If the <code>KmsKeyId</code> currently registered with the database is the same as the <code>KmsKeyId</code> in the request, there will not be any update.</p>
@@ -19,9 +19,9 @@ pub struct UpdateDatabaseInput {
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDatabaseInput {
+impl  UpdateDatabaseInput  {
     /// <p>The name of the database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the data stored in the database. If the <code>KmsKeyId</code> currently registered with the database is the same as the <code>KmsKeyId</code> in the request, there will not be any update.</p>
@@ -36,7 +36,7 @@ impl UpdateDatabaseInput {
     /// <li>
     /// <p>Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl UpdateDatabaseInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdateDatabaseInputBuilder {
     /// <p>Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the data stored in the database. If the <code>KmsKeyId</code> currently registered with the database is the same as the <code>KmsKeyId</code> in the request, there will not be any update.</p>
     /// <p>You can specify the <code>KmsKeyId</code> using any of the following:</p>
@@ -119,12 +117,15 @@ impl UpdateDatabaseInputBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
-            database_name: self.database_name,
-            kms_key_id: self.kms_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_database::UpdateDatabaseInput {
+                database_name: self.database_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

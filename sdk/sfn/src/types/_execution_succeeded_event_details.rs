@@ -3,23 +3,23 @@
 /// <p>Contains details about the successful termination of the execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ExecutionSucceededEventDetails {
+pub struct ExecutionSucceededEventDetails  {
     /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
-impl ExecutionSucceededEventDetails {
+impl  ExecutionSucceededEventDetails  {
     /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(&self) -> ::std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn output_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn output_details(&self) -> ::std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
-impl ::std::fmt::Debug for ExecutionSucceededEventDetails {
+impl  ::std::fmt::Debug for ExecutionSucceededEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionSucceededEventDetails");
         formatter.field("output", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl ExecutionSucceededEventDetailsBuilder {
     }
     /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ExecutionSucceededEventDetailsBuilder {
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn set_output_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
-        self.output_details = input;
-        self
+        self.output_details = input; self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn get_output_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
@@ -73,8 +71,10 @@ impl ExecutionSucceededEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ExecutionSucceededEventDetails`](crate::types::ExecutionSucceededEventDetails).
     pub fn build(self) -> crate::types::ExecutionSucceededEventDetails {
         crate::types::ExecutionSucceededEventDetails {
-            output: self.output,
-            output_details: self.output_details,
+            output: self.output
+            ,
+            output_details: self.output_details
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for ExecutionSucceededEventDetailsBuilder {
         formatter.finish()
     }
 }
+

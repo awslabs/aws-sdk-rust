@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOriginEndpointInput {
+pub struct GetOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
@@ -10,17 +10,17 @@ pub struct GetOriginEndpointInput {
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
 }
-impl GetOriginEndpointInput {
+impl  GetOriginEndpointInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_group_name(&self) -> ::std::option::Option<& str> {
         self.channel_group_name.as_deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetOriginEndpointInputBuilder {
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_name = input;
-        self
+        self.origin_endpoint_name = input; self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_endpoint_name
     }
     /// Consumes the builder and constructs a [`GetOriginEndpointInput`](crate::operation::get_origin_endpoint::GetOriginEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_origin_endpoint::GetOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_origin_endpoint::GetOriginEndpointInput {
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            origin_endpoint_name: self.origin_endpoint_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_origin_endpoint::GetOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_origin_endpoint::GetOriginEndpointInput {
+                channel_group_name: self.channel_group_name
+                ,
+                channel_name: self.channel_name
+                ,
+                origin_endpoint_name: self.origin_endpoint_name
+                ,
+            }
+        )
     }
 }
+

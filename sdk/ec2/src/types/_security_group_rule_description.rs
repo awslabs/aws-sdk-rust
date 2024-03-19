@@ -4,19 +4,19 @@
 /// <p>You can use this when you want to update the security group rule description for either an inbound or outbound rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupRuleDescription {
+pub struct SecurityGroupRuleDescription  {
     /// <p>The ID of the security group rule.</p>
     pub security_group_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the security group rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl SecurityGroupRuleDescription {
+impl  SecurityGroupRuleDescription  {
     /// <p>The ID of the security group rule.</p>
-    pub fn security_group_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_rule_id(&self) -> ::std::option::Option<& str> {
         self.security_group_rule_id.as_deref()
     }
     /// <p>The description of the security group rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The ID of the security group rule.</p>
     pub fn set_security_group_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_rule_id = input;
-        self
+        self.security_group_rule_id = input; self
     }
     /// <p>The ID of the security group rule.</p>
     pub fn get_security_group_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SecurityGroupRuleDescriptionBuilder {
     }
     /// <p>The description of the security group rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the security group rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl SecurityGroupRuleDescriptionBuilder {
     /// Consumes the builder and constructs a [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
     pub fn build(self) -> crate::types::SecurityGroupRuleDescription {
         crate::types::SecurityGroupRuleDescription {
-            security_group_rule_id: self.security_group_rule_id,
-            description: self.description,
+            security_group_rule_id: self.security_group_rule_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

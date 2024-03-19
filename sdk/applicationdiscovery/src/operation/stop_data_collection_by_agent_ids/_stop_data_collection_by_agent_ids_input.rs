@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDataCollectionByAgentIdsInput {
+pub struct StopDataCollectionByAgentIdsInput  {
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StopDataCollectionByAgentIdsInput {
+impl  StopDataCollectionByAgentIdsInput  {
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
-    pub fn agent_ids(&self) -> &[::std::string::String] {
-        self.agent_ids.as_deref().unwrap_or_default()
+    pub fn agent_ids(&self) -> & [::std::string::String] {
+        self.agent_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StopDataCollectionByAgentIdsInput {
@@ -25,7 +26,7 @@ impl StopDataCollectionByAgentIdsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsInputBuilder {
-    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StopDataCollectionByAgentIdsInputBuilder {
     /// Appends an item to `agent_ids`.
@@ -35,28 +36,26 @@ impl StopDataCollectionByAgentIdsInputBuilder {
     /// <p>The IDs of the agents from which to stop collecting data.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
-        v.push(input.into());
-        self.agent_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_ids = input;
-        self
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_ids = input; self
     }
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_ids
     }
     /// Consumes the builder and constructs a [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput {
-            agent_ids: self.agent_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput {
+                agent_ids: self.agent_ids
+                ,
+            }
+        )
     }
 }
+

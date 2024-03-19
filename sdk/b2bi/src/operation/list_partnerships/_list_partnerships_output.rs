@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPartnershipsOutput {
+pub struct ListPartnershipsOutput  {
     /// <p>Specifies a list of your partnerships.</p>
-    pub partnerships: ::std::vec::Vec<crate::types::PartnershipSummary>,
+    pub partnerships: ::std::vec::Vec::<crate::types::PartnershipSummary>,
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPartnershipsOutput {
+impl  ListPartnershipsOutput  {
     /// <p>Specifies a list of your partnerships.</p>
-    pub fn partnerships(&self) -> &[crate::types::PartnershipSummary] {
-        use std::ops::Deref;
-        self.partnerships.deref()
+    pub fn partnerships(&self) -> & [crate::types::PartnershipSummary] {
+        use std::ops::Deref; self.partnerships.deref()
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPartnershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPartnershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnershipsOutput`](crate::operation::list_partnerships::ListPartnershipsOutput).
     pub fn builder() -> crate::operation::list_partnerships::builders::ListPartnershipsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListPartnershipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartnershipsOutputBuilder {
-    pub(crate) partnerships: ::std::option::Option<::std::vec::Vec<crate::types::PartnershipSummary>>,
+    pub(crate) partnerships: ::std::option::Option<::std::vec::Vec::<crate::types::PartnershipSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListPartnershipsOutputBuilder {
     /// <p>Specifies a list of your partnerships.</p>
     pub fn partnerships(mut self, input: crate::types::PartnershipSummary) -> Self {
         let mut v = self.partnerships.unwrap_or_default();
-        v.push(input);
-        self.partnerships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partnerships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of your partnerships.</p>
-    pub fn set_partnerships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartnershipSummary>>) -> Self {
-        self.partnerships = input;
-        self
+    pub fn set_partnerships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PartnershipSummary>>) -> Self {
+        self.partnerships = input; self
     }
     /// <p>Specifies a list of your partnerships.</p>
-    pub fn get_partnerships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartnershipSummary>> {
+    pub fn get_partnerships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PartnershipSummary>> {
         &self.partnerships
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
@@ -68,37 +66,37 @@ impl ListPartnershipsOutputBuilder {
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPartnershipsOutput`](crate::operation::list_partnerships::ListPartnershipsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`partnerships`](crate::operation::list_partnerships::builders::ListPartnershipsOutputBuilder::partnerships)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_partnerships::ListPartnershipsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_partnerships::ListPartnershipsOutput {
-            partnerships: self.partnerships.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partnerships",
-                    "partnerships was not specified but it is required when building ListPartnershipsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_partnerships::ListPartnershipsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_partnerships::ListPartnershipsOutput {
+                partnerships: self.partnerships
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partnerships", "partnerships was not specified but it is required when building ListPartnershipsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

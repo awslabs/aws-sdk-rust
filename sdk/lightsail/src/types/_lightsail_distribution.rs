@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Lightsail content delivery network (CDN) distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LightsailDistribution {
+pub struct LightsailDistribution  {
     /// <p>The name of the distribution.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
@@ -19,7 +19,7 @@ pub struct LightsailDistribution {
     /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The alternate domain names of the distribution.</p>
-    pub alternative_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alternative_domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the distribution.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the distribution is enabled.</p>
@@ -40,7 +40,7 @@ pub struct LightsailDistribution {
     /// <p>An object that describes the cache behavior settings of the distribution.</p>
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
     pub able_to_update_bundle: ::std::option::Option<bool>,
@@ -48,43 +48,44 @@ pub struct LightsailDistribution {
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl LightsailDistribution {
+impl  LightsailDistribution  {
     /// <p>The name of the distribution.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail distribution. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The alternate domain names of the distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternative_domain_names.is_none()`.
-    pub fn alternative_domain_names(&self) -> &[::std::string::String] {
-        self.alternative_domain_names.as_deref().unwrap_or_default()
+    pub fn alternative_domain_names(&self) -> & [::std::string::String] {
+        self.alternative_domain_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the distribution.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether the distribution is enabled.</p>
@@ -92,39 +93,40 @@ impl LightsailDistribution {
         self.is_enabled
     }
     /// <p>The domain name of the distribution.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The ID of the bundle currently applied to the distribution.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
-    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<& str> {
         self.certificate_name.as_deref()
     }
     /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::Origin> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::Origin> {
         self.origin.as_ref()
     }
     /// <p>The public DNS of the origin.</p>
-    pub fn origin_public_dns(&self) -> ::std::option::Option<&str> {
+    pub fn origin_public_dns(&self) -> ::std::option::Option<& str> {
         self.origin_public_dns.as_deref()
     }
     /// <p>An object that describes the default cache behavior of the distribution.</p>
-    pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
+    pub fn default_cache_behavior(&self) -> ::std::option::Option<& crate::types::CacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
     /// <p>An object that describes the cache behavior settings of the distribution.</p>
-    pub fn cache_behavior_settings(&self) -> ::std::option::Option<&crate::types::CacheSettings> {
+    pub fn cache_behavior_settings(&self) -> ::std::option::Option<& crate::types::CacheSettings> {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
-    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
-        self.cache_behaviors.as_deref().unwrap_or_default()
+    pub fn cache_behaviors(&self) -> & [crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
@@ -133,14 +135,15 @@ impl LightsailDistribution {
     }
     /// <p>The IP address type of the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LightsailDistribution {
@@ -160,7 +163,7 @@ pub struct LightsailDistributionBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) alternative_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alternative_domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -170,10 +173,10 @@ pub struct LightsailDistributionBuilder {
     pub(crate) origin_public_dns: ::std::option::Option<::std::string::String>,
     pub(crate) default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     pub(crate) cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
-    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     pub(crate) able_to_update_bundle: ::std::option::Option<bool>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl LightsailDistributionBuilder {
     /// <p>The name of the distribution.</p>
@@ -183,8 +186,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The name of the distribution.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the distribution.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +199,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +212,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail distribution. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail distribution. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +225,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The timestamp when the distribution was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the distribution was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -243,8 +242,7 @@ impl LightsailDistributionBuilder {
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
@@ -259,8 +257,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -273,17 +270,16 @@ impl LightsailDistributionBuilder {
     /// <p>The alternate domain names of the distribution.</p>
     pub fn alternative_domain_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alternative_domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.alternative_domain_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alternative_domain_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The alternate domain names of the distribution.</p>
-    pub fn set_alternative_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alternative_domain_names = input;
-        self
+    pub fn set_alternative_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alternative_domain_names = input; self
     }
     /// <p>The alternate domain names of the distribution.</p>
-    pub fn get_alternative_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alternative_domain_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alternative_domain_names
     }
     /// <p>The status of the distribution.</p>
@@ -293,8 +289,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The status of the distribution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the distribution.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +302,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>Indicates whether the distribution is enabled.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>Indicates whether the distribution is enabled.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
@@ -321,8 +315,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The domain name of the distribution.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the distribution.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +328,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The ID of the bundle currently applied to the distribution.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The ID of the bundle currently applied to the distribution.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +341,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
     pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_name = input;
-        self
+        self.certificate_name = input; self
     }
     /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -365,8 +356,7 @@ impl LightsailDistributionBuilder {
     /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::Origin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
@@ -380,8 +370,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>The public DNS of the origin.</p>
     pub fn set_origin_public_dns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_public_dns = input;
-        self
+        self.origin_public_dns = input; self
     }
     /// <p>The public DNS of the origin.</p>
     pub fn get_origin_public_dns(&self) -> &::std::option::Option<::std::string::String> {
@@ -394,8 +383,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>An object that describes the default cache behavior of the distribution.</p>
     pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
-        self.default_cache_behavior = input;
-        self
+        self.default_cache_behavior = input; self
     }
     /// <p>An object that describes the default cache behavior of the distribution.</p>
     pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
@@ -408,8 +396,7 @@ impl LightsailDistributionBuilder {
     }
     /// <p>An object that describes the cache behavior settings of the distribution.</p>
     pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
-        self.cache_behavior_settings = input;
-        self
+        self.cache_behavior_settings = input; self
     }
     /// <p>An object that describes the cache behavior settings of the distribution.</p>
     pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
@@ -422,17 +409,16 @@ impl LightsailDistributionBuilder {
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviorPerPath) -> Self {
         let mut v = self.cache_behaviors.unwrap_or_default();
-        v.push(input);
-        self.cache_behaviors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_behaviors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
-        self.cache_behaviors = input;
-        self
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>) -> Self {
+        self.cache_behaviors = input; self
     }
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>> {
         &self.cache_behaviors
     }
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
@@ -444,8 +430,7 @@ impl LightsailDistributionBuilder {
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
     pub fn set_able_to_update_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.able_to_update_bundle = input;
-        self
+        self.able_to_update_bundle = input; self
     }
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
@@ -461,8 +446,7 @@ impl LightsailDistributionBuilder {
     /// <p>The IP address type of the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type of the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -476,42 +460,62 @@ impl LightsailDistributionBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LightsailDistribution`](crate::types::LightsailDistribution).
     pub fn build(self) -> crate::types::LightsailDistribution {
         crate::types::LightsailDistribution {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            alternative_domain_names: self.alternative_domain_names,
-            status: self.status,
-            is_enabled: self.is_enabled,
-            domain_name: self.domain_name,
-            bundle_id: self.bundle_id,
-            certificate_name: self.certificate_name,
-            origin: self.origin,
-            origin_public_dns: self.origin_public_dns,
-            default_cache_behavior: self.default_cache_behavior,
-            cache_behavior_settings: self.cache_behavior_settings,
-            cache_behaviors: self.cache_behaviors,
-            able_to_update_bundle: self.able_to_update_bundle,
-            ip_address_type: self.ip_address_type,
-            tags: self.tags,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            alternative_domain_names: self.alternative_domain_names
+            ,
+            status: self.status
+            ,
+            is_enabled: self.is_enabled
+            ,
+            domain_name: self.domain_name
+            ,
+            bundle_id: self.bundle_id
+            ,
+            certificate_name: self.certificate_name
+            ,
+            origin: self.origin
+            ,
+            origin_public_dns: self.origin_public_dns
+            ,
+            default_cache_behavior: self.default_cache_behavior
+            ,
+            cache_behavior_settings: self.cache_behavior_settings
+            ,
+            cache_behaviors: self.cache_behaviors
+            ,
+            able_to_update_bundle: self.able_to_update_bundle
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

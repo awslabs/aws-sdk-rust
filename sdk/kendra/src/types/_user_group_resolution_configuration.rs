@@ -5,13 +5,13 @@
 /// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserGroupResolutionConfiguration {
+pub struct UserGroupResolutionConfiguration  {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub user_group_resolution_mode: crate::types::UserGroupResolutionMode,
 }
-impl UserGroupResolutionConfiguration {
+impl  UserGroupResolutionConfiguration  {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
-    pub fn user_group_resolution_mode(&self) -> &crate::types::UserGroupResolutionMode {
+    pub fn user_group_resolution_mode(&self) -> & crate::types::UserGroupResolutionMode {
         &self.user_group_resolution_mode
     }
 }
@@ -37,8 +37,7 @@ impl UserGroupResolutionConfigurationBuilder {
     }
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub fn set_user_group_resolution_mode(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionMode>) -> Self {
-        self.user_group_resolution_mode = input;
-        self
+        self.user_group_resolution_mode = input; self
     }
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub fn get_user_group_resolution_mode(&self) -> &::std::option::Option<crate::types::UserGroupResolutionMode> {
@@ -48,13 +47,15 @@ impl UserGroupResolutionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_group_resolution_mode`](crate::types::builders::UserGroupResolutionConfigurationBuilder::user_group_resolution_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::UserGroupResolutionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserGroupResolutionConfiguration {
-            user_group_resolution_mode: self.user_group_resolution_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_group_resolution_mode",
-                    "user_group_resolution_mode was not specified but it is required when building UserGroupResolutionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserGroupResolutionConfiguration {
+                user_group_resolution_mode: self.user_group_resolution_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_group_resolution_mode", "user_group_resolution_mode was not specified but it is required when building UserGroupResolutionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoverPollEndpointInput {
+pub struct DiscoverPollEndpointInput  {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub container_instance: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
 }
-impl DiscoverPollEndpointInput {
+impl  DiscoverPollEndpointInput  {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(&self) -> ::std::option::Option<&str> {
+    pub fn container_instance(&self) -> ::std::option::Option<& str> {
         self.container_instance.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DiscoverPollEndpointInputBuilder {
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_instance = input;
-        self
+        self.container_instance = input; self
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_container_instance(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl DiscoverPollEndpointInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }
     /// Consumes the builder and constructs a [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
-            container_instance: self.container_instance,
-            cluster: self.cluster,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
+                container_instance: self.container_instance
+                ,
+                cluster: self.cluster
+                ,
+            }
+        )
     }
 }
+

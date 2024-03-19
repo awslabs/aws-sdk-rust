@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomEntityTypeOutput {
+pub struct DeleteCustomEntityTypeOutput  {
     /// <p>The name of the custom pattern you deleted.</p>
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteCustomEntityTypeOutput {
+impl  DeleteCustomEntityTypeOutput  {
     /// <p>The name of the custom pattern you deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteCustomEntityTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteCustomEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput).
     pub fn builder() -> crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteCustomEntityTypeOutputBuilder {
     }
     /// <p>The name of the custom pattern you deleted.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom pattern you deleted.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput).
     pub fn build(self) -> crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput {
         crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput {
-            name: self.name,
+            name: self.name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

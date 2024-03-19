@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePredictorBacktestExportJobInput {
+pub struct DescribePredictorBacktestExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     pub predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribePredictorBacktestExportJobInput {
+impl  DescribePredictorBacktestExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn predictor_backtest_export_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn predictor_backtest_export_job_arn(&self) -> ::std::option::Option<& str> {
         self.predictor_backtest_export_job_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribePredictorBacktestExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     pub fn set_predictor_backtest_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.predictor_backtest_export_job_arn = input;
-        self
+        self.predictor_backtest_export_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
     pub fn get_predictor_backtest_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_backtest_export_job_arn
     }
     /// Consumes the builder and constructs a [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput {
-                predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn,
-            },
+                predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn
+                ,
+            }
         )
     }
 }
+

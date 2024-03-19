@@ -3,17 +3,16 @@
 /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaintenanceWindow {
+pub struct MaintenanceWindow  {
     /// <p>Displays the start time of the next maintenance window.</p>
     pub start_time: ::std::string::String,
     /// <p>Displays the duration of the next maintenance window.</p>
     pub duration_in_minutes: i32,
 }
-impl MaintenanceWindow {
+impl  MaintenanceWindow  {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn start_time(&self) -> &str {
-        use std::ops::Deref;
-        self.start_time.deref()
+    pub fn start_time(&self) -> & str {
+        use std::ops::Deref; self.start_time.deref()
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn duration_in_minutes(&self) -> i32 {
@@ -43,8 +42,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>Displays the start time of the next maintenance window.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Displays the start time of the next maintenance window.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl MaintenanceWindowBuilder {
     /// - [`start_time`](crate::types::builders::MaintenanceWindowBuilder::start_time)
     /// - [`duration_in_minutes`](crate::types::builders::MaintenanceWindowBuilder::duration_in_minutes)
     pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceWindow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MaintenanceWindow {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building MaintenanceWindow",
-                )
-            })?,
-            duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "duration_in_minutes",
-                    "duration_in_minutes was not specified but it is required when building MaintenanceWindow",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MaintenanceWindow {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building MaintenanceWindow")
+                    )?
+                ,
+                duration_in_minutes: self.duration_in_minutes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("duration_in_minutes", "duration_in_minutes was not specified but it is required when building MaintenanceWindow")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificatesInput {
+pub struct ListCertificatesInput  {
     /// <p>Filter the certificate list by status value.</p>
-    pub certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    pub certificate_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>>,
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub includes: ::std::option::Option<crate::types::Filters>,
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
@@ -16,19 +16,20 @@ pub struct ListCertificatesInput {
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListCertificatesInput {
+impl  ListCertificatesInput  {
     /// <p>Filter the certificate list by status value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_statuses.is_none()`.
-    pub fn certificate_statuses(&self) -> &[crate::types::CertificateStatus] {
-        self.certificate_statuses.as_deref().unwrap_or_default()
+    pub fn certificate_statuses(&self) -> & [crate::types::CertificateStatus] {
+        self.certificate_statuses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
-    pub fn includes(&self) -> ::std::option::Option<&crate::types::Filters> {
+    pub fn includes(&self) -> ::std::option::Option<& crate::types::Filters> {
         self.includes.as_ref()
     }
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
@@ -36,11 +37,11 @@ impl ListCertificatesInput {
         self.max_items
     }
     /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -55,7 +56,7 @@ impl ListCertificatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesInputBuilder {
-    pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>>,
     pub(crate) includes: ::std::option::Option<crate::types::Filters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -70,17 +71,16 @@ impl ListCertificatesInputBuilder {
     /// <p>Filter the certificate list by status value.</p>
     pub fn certificate_statuses(mut self, input: crate::types::CertificateStatus) -> Self {
         let mut v = self.certificate_statuses.unwrap_or_default();
-        v.push(input);
-        self.certificate_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificate_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter the certificate list by status value.</p>
-    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>) -> Self {
-        self.certificate_statuses = input;
-        self
+    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>>) -> Self {
+        self.certificate_statuses = input; self
     }
     /// <p>Filter the certificate list by status value.</p>
-    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateStatus>> {
         &self.certificate_statuses
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
@@ -90,8 +90,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
-        self.includes = input;
-        self
+        self.includes = input; self
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn get_includes(&self) -> &::std::option::Option<crate::types::Filters> {
@@ -104,8 +103,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -132,8 +129,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortBy> {
@@ -146,24 +142,30 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
-            certificate_statuses: self.certificate_statuses,
-            includes: self.includes,
-            next_token: self.next_token,
-            max_items: self.max_items,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_certificates::ListCertificatesInput {
+                certificate_statuses: self.certificate_statuses
+                ,
+                includes: self.includes
+                ,
+                next_token: self.next_token
+                ,
+                max_items: self.max_items
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

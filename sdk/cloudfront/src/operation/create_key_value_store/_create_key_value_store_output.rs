@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyValueStoreOutput {
+pub struct CreateKeyValueStoreOutput  {
     /// <p>The resulting Key Value Store.</p>
     pub key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
     /// <p>The ETag in the resulting Key Value Store.</p>
@@ -11,25 +11,25 @@ pub struct CreateKeyValueStoreOutput {
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateKeyValueStoreOutput {
+impl  CreateKeyValueStoreOutput  {
     /// <p>The resulting Key Value Store.</p>
-    pub fn key_value_store(&self) -> ::std::option::Option<&crate::types::KeyValueStore> {
+    pub fn key_value_store(&self) -> ::std::option::Option<& crate::types::KeyValueStore> {
         self.key_value_store.as_ref()
     }
     /// <p>The ETag in the resulting Key Value Store.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The location of the resulting Key Value Store.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKeyValueStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKeyValueStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyValueStoreOutput`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput).
     pub fn builder() -> crate::operation::create_key_value_store::builders::CreateKeyValueStoreOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateKeyValueStoreOutputBuilder {
     }
     /// <p>The resulting Key Value Store.</p>
     pub fn set_key_value_store(mut self, input: ::std::option::Option<crate::types::KeyValueStore>) -> Self {
-        self.key_value_store = input;
-        self
+        self.key_value_store = input; self
     }
     /// <p>The resulting Key Value Store.</p>
     pub fn get_key_value_store(&self) -> &::std::option::Option<crate::types::KeyValueStore> {
@@ -68,8 +67,7 @@ impl CreateKeyValueStoreOutputBuilder {
     }
     /// <p>The ETag in the resulting Key Value Store.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The ETag in the resulting Key Value Store.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateKeyValueStoreOutputBuilder {
     }
     /// <p>The location of the resulting Key Value Store.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the resulting Key Value Store.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKeyValueStoreOutput`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput).
     pub fn build(self) -> crate::operation::create_key_value_store::CreateKeyValueStoreOutput {
         crate::operation::create_key_value_store::CreateKeyValueStoreOutput {
-            key_value_store: self.key_value_store,
-            e_tag: self.e_tag,
-            location: self.location,
+            key_value_store: self.key_value_store
+            ,
+            e_tag: self.e_tag
+            ,
+            location: self.location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The topic of the notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Topic {
+pub struct Topic  {
     /// <p>The subject of the resource mentioned in a notification.</p>
     pub subject: ::std::string::String,
     /// <p>The details of the resource mentioned in a notification.</p>
@@ -11,18 +11,17 @@ pub struct Topic {
     /// <p>The role of the resource mentioned in a notification.</p>
     pub role: crate::types::NotificationRole,
 }
-impl Topic {
+impl  Topic  {
     /// <p>The subject of the resource mentioned in a notification.</p>
-    pub fn subject(&self) -> &str {
-        use std::ops::Deref;
-        self.subject.deref()
+    pub fn subject(&self) -> & str {
+        use std::ops::Deref; self.subject.deref()
     }
     /// <p>The details of the resource mentioned in a notification.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::NotificationResource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::NotificationResource> {
         self.resource.as_ref()
     }
     /// <p>The role of the resource mentioned in a notification.</p>
-    pub fn role(&self) -> &crate::types::NotificationRole {
+    pub fn role(&self) -> & crate::types::NotificationRole {
         &self.role
     }
 }
@@ -50,8 +49,7 @@ impl TopicBuilder {
     }
     /// <p>The subject of the resource mentioned in a notification.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject of the resource mentioned in a notification.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl TopicBuilder {
     }
     /// <p>The details of the resource mentioned in a notification.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::NotificationResource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The details of the resource mentioned in a notification.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::NotificationResource> {
@@ -80,8 +77,7 @@ impl TopicBuilder {
     }
     /// <p>The role of the resource mentioned in a notification.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::NotificationRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the resource mentioned in a notification.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::NotificationRole> {
@@ -92,20 +88,22 @@ impl TopicBuilder {
     /// - [`subject`](crate::types::builders::TopicBuilder::subject)
     /// - [`role`](crate::types::builders::TopicBuilder::role)
     pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Topic {
-            subject: self.subject.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subject",
-                    "subject was not specified but it is required when building Topic",
-                )
-            })?,
-            resource: self.resource,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building Topic",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Topic {
+                subject: self.subject
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subject", "subject was not specified but it is required when building Topic")
+                    )?
+                ,
+                resource: self.resource
+                ,
+                role: self.role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role", "role was not specified but it is required when building Topic")
+                    )?
+                ,
+            }
+        )
     }
 }
+

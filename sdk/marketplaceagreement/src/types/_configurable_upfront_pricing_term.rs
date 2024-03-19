@@ -3,33 +3,34 @@
 /// <p>Defines a prepaid payment model that allows buyers to configure the entitlements they want to purchase and the duration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurableUpfrontPricingTerm {
+pub struct ConfigurableUpfrontPricingTerm  {
     /// <p>Category of selector.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
-    pub rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableUpfrontRateCardItem>>,
+    pub rate_cards: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableUpfrontRateCardItem>>,
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub configuration: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>,
 }
-impl ConfigurableUpfrontPricingTerm {
+impl  ConfigurableUpfrontPricingTerm  {
     /// <p>Category of selector.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rate_cards.is_none()`.
-    pub fn rate_cards(&self) -> &[crate::types::ConfigurableUpfrontRateCardItem] {
-        self.rate_cards.as_deref().unwrap_or_default()
+    pub fn rate_cards(&self) -> & [crate::types::ConfigurableUpfrontRateCardItem] {
+        self.rate_cards.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurableUpfrontPricingTermConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ConfigurableUpfrontPricingTermConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -46,7 +47,7 @@ impl ConfigurableUpfrontPricingTerm {
 pub struct ConfigurableUpfrontPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
-    pub(crate) rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableUpfrontRateCardItem>>,
+    pub(crate) rate_cards: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableUpfrontRateCardItem>>,
     pub(crate) configuration: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>,
 }
 impl ConfigurableUpfrontPricingTermBuilder {
@@ -57,8 +58,7 @@ impl ConfigurableUpfrontPricingTermBuilder {
     }
     /// <p>Category of selector.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of selector.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ConfigurableUpfrontPricingTermBuilder {
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl ConfigurableUpfrontPricingTermBuilder {
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
     pub fn rate_cards(mut self, input: crate::types::ConfigurableUpfrontRateCardItem) -> Self {
         let mut v = self.rate_cards.unwrap_or_default();
-        v.push(input);
-        self.rate_cards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rate_cards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
-    pub fn set_rate_cards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableUpfrontRateCardItem>>) -> Self {
-        self.rate_cards = input;
-        self
+    pub fn set_rate_cards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableUpfrontRateCardItem>>) -> Self {
+        self.rate_cards = input; self
     }
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
-    pub fn get_rate_cards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurableUpfrontRateCardItem>> {
+    pub fn get_rate_cards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableUpfrontRateCardItem>> {
         &self.rate_cards
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
@@ -105,8 +103,7 @@ impl ConfigurableUpfrontPricingTermBuilder {
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration> {
@@ -115,10 +112,15 @@ impl ConfigurableUpfrontPricingTermBuilder {
     /// Consumes the builder and constructs a [`ConfigurableUpfrontPricingTerm`](crate::types::ConfigurableUpfrontPricingTerm).
     pub fn build(self) -> crate::types::ConfigurableUpfrontPricingTerm {
         crate::types::ConfigurableUpfrontPricingTerm {
-            r#type: self.r#type,
-            currency_code: self.currency_code,
-            rate_cards: self.rate_cards,
-            configuration: self.configuration,
+            r#type: self.r#type
+            ,
+            currency_code: self.currency_code
+            ,
+            rate_cards: self.rate_cards
+            ,
+            configuration: self.configuration
+            ,
         }
     }
 }
+

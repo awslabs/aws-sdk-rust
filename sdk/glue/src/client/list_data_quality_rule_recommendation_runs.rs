@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataQualityRuleRecommendationRuns`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(DataQualityRuleRecommendationRunFilter)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::filter) / [`set_filter(Option<DataQualityRuleRecommendationRunFilter>)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter criteria.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A paginated token to offset the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`ListDataQualityRuleRecommendationRunsOutput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput) with field(s):
+                            /// - On success, responds with [`ListDataQualityRuleRecommendationRunsOutput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput) with field(s):
     ///   - [`runs(Option<Vec::<DataQualityRuleRecommendationRunDescription>>)`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput::runs): <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListDataQualityRuleRecommendationRunsError>`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError)
-    pub fn list_data_quality_rule_recommendation_runs(
-        &self,
-    ) -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder {
-        crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListDataQualityRuleRecommendationRunsError>`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError)
+    pub fn list_data_quality_rule_recommendation_runs(&self) -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder {
+                                crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

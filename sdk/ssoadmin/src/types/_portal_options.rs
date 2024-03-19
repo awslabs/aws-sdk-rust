@@ -3,19 +3,19 @@
 /// <p>A structure that describes the options for the access portal associated with an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortalOptions {
+pub struct PortalOptions  {
     /// <p>A structure that describes the sign-in options for the access portal.</p>
     pub sign_in_options: ::std::option::Option<crate::types::SignInOptions>,
     /// <p>Indicates whether this application is visible in the access portal.</p>
     pub visibility: crate::types::ApplicationVisibility,
 }
-impl PortalOptions {
+impl  PortalOptions  {
     /// <p>A structure that describes the sign-in options for the access portal.</p>
-    pub fn sign_in_options(&self) -> ::std::option::Option<&crate::types::SignInOptions> {
+    pub fn sign_in_options(&self) -> ::std::option::Option<& crate::types::SignInOptions> {
         self.sign_in_options.as_ref()
     }
     /// <p>Indicates whether this application is visible in the access portal.</p>
-    pub fn visibility(&self) -> &crate::types::ApplicationVisibility {
+    pub fn visibility(&self) -> & crate::types::ApplicationVisibility {
         &self.visibility
     }
 }
@@ -41,8 +41,7 @@ impl PortalOptionsBuilder {
     }
     /// <p>A structure that describes the sign-in options for the access portal.</p>
     pub fn set_sign_in_options(mut self, input: ::std::option::Option<crate::types::SignInOptions>) -> Self {
-        self.sign_in_options = input;
-        self
+        self.sign_in_options = input; self
     }
     /// <p>A structure that describes the sign-in options for the access portal.</p>
     pub fn get_sign_in_options(&self) -> &::std::option::Option<crate::types::SignInOptions> {
@@ -55,8 +54,7 @@ impl PortalOptionsBuilder {
     }
     /// <p>Indicates whether this application is visible in the access portal.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::ApplicationVisibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Indicates whether this application is visible in the access portal.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::ApplicationVisibility> {
@@ -65,12 +63,12 @@ impl PortalOptionsBuilder {
     /// Consumes the builder and constructs a [`PortalOptions`](crate::types::PortalOptions).
     pub fn build(self) -> crate::types::PortalOptions {
         crate::types::PortalOptions {
-            sign_in_options: self.sign_in_options,
-            visibility: self.visibility.unwrap_or(
-                "ENABLED"
-                    .parse::<crate::types::ApplicationVisibility>()
-                    .expect("static value validated to member"),
-            ),
+            sign_in_options: self.sign_in_options
+            ,
+            visibility: self.visibility
+                .unwrap_or("ENABLED".parse::<crate::types::ApplicationVisibility>().expect("static value validated to member"))
+            ,
         }
     }
 }
+

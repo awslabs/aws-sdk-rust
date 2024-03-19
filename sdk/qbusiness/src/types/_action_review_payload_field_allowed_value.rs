@@ -3,19 +3,19 @@
 /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionReviewPayloadFieldAllowedValue {
+pub struct ActionReviewPayloadFieldAllowedValue  {
     /// <p>The field value.</p>
     pub value: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The name of the field.</p>
     pub display_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl ActionReviewPayloadFieldAllowedValue {
+impl  ActionReviewPayloadFieldAllowedValue  {
     /// <p>The field value.</p>
-    pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn value(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.value.as_ref()
     }
     /// <p>The name of the field.</p>
-    pub fn display_value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn display_value(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.display_value.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ActionReviewPayloadFieldAllowedValueBuilder {
     }
     /// <p>The field value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The field value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -55,8 +54,7 @@ impl ActionReviewPayloadFieldAllowedValueBuilder {
     }
     /// <p>The name of the field.</p>
     pub fn set_display_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.display_value = input;
-        self
+        self.display_value = input; self
     }
     /// <p>The name of the field.</p>
     pub fn get_display_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -65,8 +63,11 @@ impl ActionReviewPayloadFieldAllowedValueBuilder {
     /// Consumes the builder and constructs a [`ActionReviewPayloadFieldAllowedValue`](crate::types::ActionReviewPayloadFieldAllowedValue).
     pub fn build(self) -> crate::types::ActionReviewPayloadFieldAllowedValue {
         crate::types::ActionReviewPayloadFieldAllowedValue {
-            value: self.value,
-            display_value: self.display_value,
+            value: self.value
+            ,
+            display_value: self.display_value
+            ,
         }
     }
 }
+

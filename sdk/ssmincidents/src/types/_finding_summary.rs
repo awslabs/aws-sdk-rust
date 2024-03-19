@@ -3,20 +3,19 @@
 /// <p>Identifying information about the finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingSummary {
+pub struct FindingSummary  {
     /// <p>The ID of the finding.</p>
     pub id: ::std::string::String,
     /// <p>The timestamp for when the finding was last updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
-impl FindingSummary {
+impl  FindingSummary  {
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The timestamp for when the finding was last updated.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
 }
@@ -43,8 +42,7 @@ impl FindingSummaryBuilder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the finding.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl FindingSummaryBuilder {
     }
     /// <p>The timestamp for when the finding was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp for when the finding was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,19 +67,20 @@ impl FindingSummaryBuilder {
     /// - [`id`](crate::types::builders::FindingSummaryBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::FindingSummaryBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::FindingSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FindingSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FindingSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building FindingSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FindingSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FindingSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building FindingSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

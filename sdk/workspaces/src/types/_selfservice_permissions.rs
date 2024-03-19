@@ -3,7 +3,7 @@
 /// <p>Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelfservicePermissions {
+pub struct SelfservicePermissions  {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
     pub restart_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
@@ -15,25 +15,25 @@ pub struct SelfservicePermissions {
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub rebuild_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
 }
-impl SelfservicePermissions {
+impl  SelfservicePermissions  {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
-    pub fn restart_workspace(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn restart_workspace(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.restart_workspace.as_ref()
     }
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
-    pub fn increase_volume_size(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn increase_volume_size(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.increase_volume_size.as_ref()
     }
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
-    pub fn change_compute_type(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn change_compute_type(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.change_compute_type.as_ref()
     }
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
-    pub fn switch_running_mode(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn switch_running_mode(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.switch_running_mode.as_ref()
     }
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
-    pub fn rebuild_workspace(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+    pub fn rebuild_workspace(&self) -> ::std::option::Option<& crate::types::ReconnectEnum> {
         self.rebuild_workspace.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SelfservicePermissionsBuilder {
     }
     /// <p>Specifies whether users can restart their WorkSpace.</p>
     pub fn set_restart_workspace(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.restart_workspace = input;
-        self
+        self.restart_workspace = input; self
     }
     /// <p>Specifies whether users can restart their WorkSpace.</p>
     pub fn get_restart_workspace(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -76,8 +75,7 @@ impl SelfservicePermissionsBuilder {
     }
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
     pub fn set_increase_volume_size(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.increase_volume_size = input;
-        self
+        self.increase_volume_size = input; self
     }
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
     pub fn get_increase_volume_size(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -90,8 +88,7 @@ impl SelfservicePermissionsBuilder {
     }
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
     pub fn set_change_compute_type(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.change_compute_type = input;
-        self
+        self.change_compute_type = input; self
     }
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
     pub fn get_change_compute_type(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -104,8 +101,7 @@ impl SelfservicePermissionsBuilder {
     }
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
     pub fn set_switch_running_mode(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.switch_running_mode = input;
-        self
+        self.switch_running_mode = input; self
     }
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
     pub fn get_switch_running_mode(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -118,8 +114,7 @@ impl SelfservicePermissionsBuilder {
     }
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub fn set_rebuild_workspace(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
-        self.rebuild_workspace = input;
-        self
+        self.rebuild_workspace = input; self
     }
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub fn get_rebuild_workspace(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
@@ -128,11 +123,17 @@ impl SelfservicePermissionsBuilder {
     /// Consumes the builder and constructs a [`SelfservicePermissions`](crate::types::SelfservicePermissions).
     pub fn build(self) -> crate::types::SelfservicePermissions {
         crate::types::SelfservicePermissions {
-            restart_workspace: self.restart_workspace,
-            increase_volume_size: self.increase_volume_size,
-            change_compute_type: self.change_compute_type,
-            switch_running_mode: self.switch_running_mode,
-            rebuild_workspace: self.rebuild_workspace,
+            restart_workspace: self.restart_workspace
+            ,
+            increase_volume_size: self.increase_volume_size
+            ,
+            change_compute_type: self.change_compute_type
+            ,
+            switch_running_mode: self.switch_running_mode
+            ,
+            rebuild_workspace: self.rebuild_workspace
+            ,
         }
     }
 }
+

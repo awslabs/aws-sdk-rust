@@ -3,24 +3,25 @@
 /// <p>Represents the output of a <code>BatchGetDeployments</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentsOutput {
+pub struct BatchGetDeploymentsOutput  {
     /// <p>Information about the deployments.</p>
-    pub deployments_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
+    pub deployments_info: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentInfo>>,
     _request_id: Option<String>,
 }
-impl BatchGetDeploymentsOutput {
+impl  BatchGetDeploymentsOutput  {
     /// <p>Information about the deployments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments_info.is_none()`.
-    pub fn deployments_info(&self) -> &[crate::types::DeploymentInfo] {
-        self.deployments_info.as_deref().unwrap_or_default()
+    pub fn deployments_info(&self) -> & [crate::types::DeploymentInfo] {
+        self.deployments_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsOutput`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput).
     pub fn builder() -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder {
@@ -32,7 +33,7 @@ impl BatchGetDeploymentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsOutputBuilder {
-    pub(crate) deployments_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
+    pub(crate) deployments_info: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentsOutputBuilder {
@@ -43,33 +44,34 @@ impl BatchGetDeploymentsOutputBuilder {
     /// <p>Information about the deployments.</p>
     pub fn deployments_info(mut self, input: crate::types::DeploymentInfo) -> Self {
         let mut v = self.deployments_info.unwrap_or_default();
-        v.push(input);
-        self.deployments_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deployments_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the deployments.</p>
-    pub fn set_deployments_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>) -> Self {
-        self.deployments_info = input;
-        self
+    pub fn set_deployments_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentInfo>>) -> Self {
+        self.deployments_info = input; self
     }
     /// <p>Information about the deployments.</p>
-    pub fn get_deployments_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>> {
+    pub fn get_deployments_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentInfo>> {
         &self.deployments_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetDeploymentsOutput`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput).
     pub fn build(self) -> crate::operation::batch_get_deployments::BatchGetDeploymentsOutput {
         crate::operation::batch_get_deployments::BatchGetDeploymentsOutput {
-            deployments_info: self.deployments_info,
+            deployments_info: self.deployments_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

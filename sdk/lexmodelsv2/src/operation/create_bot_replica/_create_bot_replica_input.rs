@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBotReplicaInput {
+pub struct CreateBotReplicaInput  {
     /// <p>The request for the unique bot ID of the source bot to be replicated in the secondary region.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The request for the secondary region that will be used in the replication of the source bot.</p>
     pub replica_region: ::std::option::Option<::std::string::String>,
 }
-impl CreateBotReplicaInput {
+impl  CreateBotReplicaInput  {
     /// <p>The request for the unique bot ID of the source bot to be replicated in the secondary region.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The request for the secondary region that will be used in the replication of the source bot.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateBotReplicaInputBuilder {
     }
     /// <p>The request for the unique bot ID of the source bot to be replicated in the secondary region.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The request for the unique bot ID of the source bot to be replicated in the secondary region.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CreateBotReplicaInputBuilder {
     }
     /// <p>The request for the secondary region that will be used in the replication of the source bot.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The request for the secondary region that will be used in the replication of the source bot.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_region
     }
     /// Consumes the builder and constructs a [`CreateBotReplicaInput`](crate::operation::create_bot_replica::CreateBotReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_bot_replica::CreateBotReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_bot_replica::CreateBotReplicaInput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot_replica::CreateBotReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_bot_replica::CreateBotReplicaInput {
+                bot_id: self.bot_id
+                ,
+                replica_region: self.replica_region
+                ,
+            }
+        )
     }
 }
+

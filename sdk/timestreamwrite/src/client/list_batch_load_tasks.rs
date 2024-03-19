@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBatchLoadTasks`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.</p><br>
     ///   - [`task_status(BatchLoadStatus)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::task_status) / [`set_task_status(Option<BatchLoadStatus>)`](crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::set_task_status):<br>required: **false**<br><p>Status of the batch load task.</p><br>
-    /// - On success, responds with [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput) with field(s):
+                            /// - On success, responds with [`ListBatchLoadTasksOutput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::next_token): <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
     ///   - [`batch_load_tasks(Option<Vec::<BatchLoadTask>>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::batch_load_tasks): <p>A list of batch load task details.</p>
-    /// - On failure, responds with [`SdkError<ListBatchLoadTasksError>`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksError)
+                            /// - On failure, responds with [`SdkError<ListBatchLoadTasksError>`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksError)
     pub fn list_batch_load_tasks(&self) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder {
-        crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

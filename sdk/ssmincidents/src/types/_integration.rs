@@ -21,11 +21,7 @@ impl Integration {
     /// Tries to convert the enum instance into [`PagerDutyConfiguration`](crate::types::Integration::PagerDutyConfiguration), extracting the inner [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pager_duty_configuration(&self) -> ::std::result::Result<&crate::types::PagerDutyConfiguration, &Self> {
-        if let Integration::PagerDutyConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Integration::PagerDutyConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PagerDutyConfiguration`](crate::types::Integration::PagerDutyConfiguration).
     pub fn is_pager_duty_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl Integration {
         matches!(self, Self::Unknown)
     }
 }
+

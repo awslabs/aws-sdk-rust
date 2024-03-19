@@ -3,7 +3,7 @@
 /// <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrokerEbsVolumeInfo {
+pub struct BrokerEbsVolumeInfo  {
     /// <p>The ID of the broker to update.</p>
     pub kafka_broker_node_id: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume provisioned throughput information.</p>
@@ -11,13 +11,13 @@ pub struct BrokerEbsVolumeInfo {
     /// <p>Size of the EBS volume to update.</p>
     pub volume_size_gb: ::std::option::Option<i32>,
 }
-impl BrokerEbsVolumeInfo {
+impl  BrokerEbsVolumeInfo  {
     /// <p>The ID of the broker to update.</p>
-    pub fn kafka_broker_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn kafka_broker_node_id(&self) -> ::std::option::Option<& str> {
         self.kafka_broker_node_id.as_deref()
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<& crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>Size of the EBS volume to update.</p>
@@ -49,8 +49,7 @@ impl BrokerEbsVolumeInfoBuilder {
     }
     /// <p>The ID of the broker to update.</p>
     pub fn set_kafka_broker_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kafka_broker_node_id = input;
-        self
+        self.kafka_broker_node_id = input; self
     }
     /// <p>The ID of the broker to update.</p>
     pub fn get_kafka_broker_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl BrokerEbsVolumeInfoBuilder {
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
-        self.provisioned_throughput = input;
-        self
+        self.provisioned_throughput = input; self
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
@@ -77,8 +75,7 @@ impl BrokerEbsVolumeInfoBuilder {
     }
     /// <p>Size of the EBS volume to update.</p>
     pub fn set_volume_size_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_gb = input;
-        self
+        self.volume_size_gb = input; self
     }
     /// <p>Size of the EBS volume to update.</p>
     pub fn get_volume_size_gb(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,13 @@ impl BrokerEbsVolumeInfoBuilder {
     /// Consumes the builder and constructs a [`BrokerEbsVolumeInfo`](crate::types::BrokerEbsVolumeInfo).
     pub fn build(self) -> crate::types::BrokerEbsVolumeInfo {
         crate::types::BrokerEbsVolumeInfo {
-            kafka_broker_node_id: self.kafka_broker_node_id,
-            provisioned_throughput: self.provisioned_throughput,
-            volume_size_gb: self.volume_size_gb,
+            kafka_broker_node_id: self.kafka_broker_node_id
+            ,
+            provisioned_throughput: self.provisioned_throughput
+            ,
+            volume_size_gb: self.volume_size_gb
+            ,
         }
     }
 }
+

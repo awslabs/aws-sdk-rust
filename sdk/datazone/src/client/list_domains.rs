@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomains`](crate::operation::list_domains::builders::ListDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`status(DomainStatus)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::status) / [`set_status(Option<DomainStatus>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the data source.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of domains to return in a single call to <code>ListDomains</code>. When the number of domains to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p><br>
-    /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`items(Vec::<DomainSummary>)`](crate::operation::list_domains::ListDomainsOutput::items): <p>The results of the <code>ListDomains</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
+                            /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
     pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
-        crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectsInput {
+pub struct DescribeProjectsInput  {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub project_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub project_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<crate::types::CustomizationFeature>>,
 }
-impl DescribeProjectsInput {
+impl  DescribeProjectsInput  {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
@@ -22,16 +22,18 @@ impl DescribeProjectsInput {
         self.max_results
     }
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_names.is_none()`.
-    pub fn project_names(&self) -> &[::std::string::String] {
-        self.project_names.as_deref().unwrap_or_default()
+    pub fn project_names(&self) -> & [::std::string::String] {
+        self.project_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[crate::types::CustomizationFeature] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [crate::types::CustomizationFeature] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeProjectsInput {
@@ -47,8 +49,8 @@ impl DescribeProjectsInput {
 pub struct DescribeProjectsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) project_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>>,
+    pub(crate) project_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<crate::types::CustomizationFeature>>,
 }
 impl DescribeProjectsInputBuilder {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
@@ -58,8 +60,7 @@ impl DescribeProjectsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +73,7 @@ impl DescribeProjectsInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -86,17 +86,16 @@ impl DescribeProjectsInputBuilder {
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn project_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.project_names.unwrap_or_default();
-        v.push(input.into());
-        self.project_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.project_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn set_project_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.project_names = input;
-        self
+    pub fn set_project_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.project_names = input; self
     }
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.project_names
     }
     /// Appends an item to `features`.
@@ -106,28 +105,32 @@ impl DescribeProjectsInputBuilder {
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
     pub fn features(mut self, input: crate::types::CustomizationFeature) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomizationFeature>>) -> Self {
+        self.features = input; self
     }
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomizationFeature>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_projects::DescribeProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_projects::DescribeProjectsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            project_names: self.project_names,
-            features: self.features,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_projects::DescribeProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_projects::DescribeProjectsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                project_names: self.project_names
+                ,
+                features: self.features
+                ,
+            }
+        )
     }
 }
+

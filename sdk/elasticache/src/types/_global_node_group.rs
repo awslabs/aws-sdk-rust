@@ -3,19 +3,19 @@
 /// <p>Indicates the slot configuration and global identifier for a slice group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalNodeGroup {
+pub struct GlobalNodeGroup  {
     /// <p>The name of the global node group</p>
     pub global_node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The keyspace for this node group</p>
     pub slots: ::std::option::Option<::std::string::String>,
 }
-impl GlobalNodeGroup {
+impl  GlobalNodeGroup  {
     /// <p>The name of the global node group</p>
-    pub fn global_node_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_node_group_id(&self) -> ::std::option::Option<& str> {
         self.global_node_group_id.as_deref()
     }
     /// <p>The keyspace for this node group</p>
-    pub fn slots(&self) -> ::std::option::Option<&str> {
+    pub fn slots(&self) -> ::std::option::Option<& str> {
         self.slots.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GlobalNodeGroupBuilder {
     }
     /// <p>The name of the global node group</p>
     pub fn set_global_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_node_group_id = input;
-        self
+        self.global_node_group_id = input; self
     }
     /// <p>The name of the global node group</p>
     pub fn get_global_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GlobalNodeGroupBuilder {
     }
     /// <p>The keyspace for this node group</p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slots = input;
-        self
+        self.slots = input; self
     }
     /// <p>The keyspace for this node group</p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GlobalNodeGroupBuilder {
     /// Consumes the builder and constructs a [`GlobalNodeGroup`](crate::types::GlobalNodeGroup).
     pub fn build(self) -> crate::types::GlobalNodeGroup {
         crate::types::GlobalNodeGroup {
-            global_node_group_id: self.global_node_group_id,
-            slots: self.slots,
+            global_node_group_id: self.global_node_group_id
+            ,
+            slots: self.slots
+            ,
         }
     }
 }
+

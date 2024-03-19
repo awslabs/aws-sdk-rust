@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`Retrieve`](crate::operation::retrieve::builders::RetrieveFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::retrieve::builders::RetrieveFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The unique identifier of the knowledge base to query.</p><br>
     ///   - [`retrieval_query(KnowledgeBaseQuery)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::retrieval_query) / [`set_retrieval_query(Option<KnowledgeBaseQuery>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::set_retrieval_query):<br>required: **true**<br><p>The query to send the knowledge base.</p><br>
     ///   - [`retrieval_configuration(KnowledgeBaseRetrievalConfiguration)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::retrieval_configuration) / [`set_retrieval_configuration(Option<KnowledgeBaseRetrievalConfiguration>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::set_retrieval_configuration):<br>required: **false**<br><p>Contains details about how the results should be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::set_next_token):<br>required: **false**<br><p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p><br>
-    /// - On success, responds with [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput) with field(s):
+                            /// - On success, responds with [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput) with field(s):
     ///   - [`retrieval_results(Vec::<KnowledgeBaseRetrievalResult>)`](crate::operation::retrieve::RetrieveOutput::retrieval_results): <p>A list of results from querying the knowledge base.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::retrieve::RetrieveOutput::next_token): <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
-    /// - On failure, responds with [`SdkError<RetrieveError>`](crate::operation::retrieve::RetrieveError)
+                            /// - On failure, responds with [`SdkError<RetrieveError>`](crate::operation::retrieve::RetrieveError)
     pub fn retrieve(&self) -> crate::operation::retrieve::builders::RetrieveFluentBuilder {
-        crate::operation::retrieve::builders::RetrieveFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::retrieve::builders::RetrieveFluentBuilder::new(self.handle.clone())
+                            }
 }
+

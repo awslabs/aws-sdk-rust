@@ -3,19 +3,19 @@
 /// <p>A range of time that specifies when anomalous behavior in an anomaly or insight ended.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndTimeRange {
+pub struct EndTimeRange  {
     /// <p>The earliest end time in the time range.</p>
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest end time in the time range.</p>
     pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EndTimeRange {
+impl  EndTimeRange  {
     /// <p>The earliest end time in the time range.</p>
-    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
     /// <p>The latest end time in the time range.</p>
-    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EndTimeRangeBuilder {
     }
     /// <p>The earliest end time in the time range.</p>
     pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from_time = input;
-        self
+        self.from_time = input; self
     }
     /// <p>The earliest end time in the time range.</p>
     pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl EndTimeRangeBuilder {
     }
     /// <p>The latest end time in the time range.</p>
     pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to_time = input;
-        self
+        self.to_time = input; self
     }
     /// <p>The latest end time in the time range.</p>
     pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl EndTimeRangeBuilder {
     /// Consumes the builder and constructs a [`EndTimeRange`](crate::types::EndTimeRange).
     pub fn build(self) -> crate::types::EndTimeRange {
         crate::types::EndTimeRange {
-            from_time: self.from_time,
-            to_time: self.to_time,
+            from_time: self.from_time
+            ,
+            to_time: self.to_time
+            ,
         }
     }
 }
+

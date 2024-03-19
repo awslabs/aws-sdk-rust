@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaAsJsonOutput {
+pub struct GetSchemaAsJsonOutput  {
     /// <p>The name of the retrieved schema.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON representation of the schema document.</p>
     pub document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSchemaAsJsonOutput {
+impl  GetSchemaAsJsonOutput  {
     /// <p>The name of the retrieved schema.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The JSON representation of the schema document.</p>
-    pub fn document(&self) -> ::std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaAsJsonOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaAsJsonOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAsJsonOutput`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput).
     pub fn builder() -> crate::operation::get_schema_as_json::builders::GetSchemaAsJsonOutputBuilder {
@@ -47,8 +47,7 @@ impl GetSchemaAsJsonOutputBuilder {
     }
     /// <p>The name of the retrieved schema.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the retrieved schema.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetSchemaAsJsonOutputBuilder {
     }
     /// <p>The JSON representation of the schema document.</p>
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The JSON representation of the schema document.</p>
     pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaAsJsonOutput`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput).
     pub fn build(self) -> crate::operation::get_schema_as_json::GetSchemaAsJsonOutput {
         crate::operation::get_schema_as_json::GetSchemaAsJsonOutput {
-            name: self.name,
-            document: self.document,
+            name: self.name
+            ,
+            document: self.document
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

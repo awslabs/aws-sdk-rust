@@ -3,7 +3,7 @@
 /// <p>The variable.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Variable {
+pub struct Variable  {
     /// <p>The name of the variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
@@ -24,42 +24,42 @@ pub struct Variable {
     /// <p>The ARN of the variable.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Variable {
+impl  Variable  {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>The data source of the variable.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The default value of the variable.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The description of the variable.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The variable type of the variable.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code></p>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<& str> {
         self.variable_type.as_deref()
     }
     /// <p>The time when variable was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The time when the variable was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The ARN of the variable.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -92,8 +92,7 @@ impl VariableBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl VariableBuilder {
     }
     /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
@@ -120,8 +118,7 @@ impl VariableBuilder {
     }
     /// <p>The data source of the variable.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The data source of the variable.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -134,8 +131,7 @@ impl VariableBuilder {
     }
     /// <p>The default value of the variable.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value of the variable.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +144,7 @@ impl VariableBuilder {
     }
     /// <p>The description of the variable.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the variable.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +159,7 @@ impl VariableBuilder {
     /// <p>The variable type of the variable.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code></p>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p>The variable type of the variable.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code></p>
@@ -179,8 +173,7 @@ impl VariableBuilder {
     }
     /// <p>The time when variable was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time when variable was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +186,7 @@ impl VariableBuilder {
     }
     /// <p>The time when the variable was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time when the variable was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +199,7 @@ impl VariableBuilder {
     }
     /// <p>The ARN of the variable.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the variable.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,15 +208,25 @@ impl VariableBuilder {
     /// Consumes the builder and constructs a [`Variable`](crate::types::Variable).
     pub fn build(self) -> crate::types::Variable {
         crate::types::Variable {
-            name: self.name,
-            data_type: self.data_type,
-            data_source: self.data_source,
-            default_value: self.default_value,
-            description: self.description,
-            variable_type: self.variable_type,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
-            arn: self.arn,
+            name: self.name
+            ,
+            data_type: self.data_type
+            ,
+            data_source: self.data_source
+            ,
+            default_value: self.default_value
+            ,
+            description: self.description
+            ,
+            variable_type: self.variable_type
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

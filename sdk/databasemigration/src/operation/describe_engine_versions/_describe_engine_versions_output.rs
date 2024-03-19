@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEngineVersionsOutput {
+pub struct DescribeEngineVersionsOutput  {
     /// <p>Returned <code>EngineVersion</code> objects that describe the replication instance engine versions used in the project.</p>
-    pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
+    pub engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeEngineVersionsOutput {
+impl  DescribeEngineVersionsOutput  {
     /// <p>Returned <code>EngineVersion</code> objects that describe the replication instance engine versions used in the project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_versions.is_none()`.
-    pub fn engine_versions(&self) -> &[crate::types::EngineVersion] {
-        self.engine_versions.as_deref().unwrap_or_default()
+    pub fn engine_versions(&self) -> & [crate::types::EngineVersion] {
+        self.engine_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEngineVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
     pub fn builder() -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeEngineVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsOutputBuilder {
-    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
+    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeEngineVersionsOutputBuilder {
     /// <p>Returned <code>EngineVersion</code> objects that describe the replication instance engine versions used in the project.</p>
     pub fn engine_versions(mut self, input: crate::types::EngineVersion) -> Self {
         let mut v = self.engine_versions.unwrap_or_default();
-        v.push(input);
-        self.engine_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returned <code>EngineVersion</code> objects that describe the replication instance engine versions used in the project.</p>
-    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>) -> Self {
-        self.engine_versions = input;
-        self
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>>) -> Self {
+        self.engine_versions = input; self
     }
     /// <p>Returned <code>EngineVersion</code> objects that describe the replication instance engine versions used in the project.</p>
-    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineVersion>> {
         &self.engine_versions
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -69,28 +69,30 @@ impl DescribeEngineVersionsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
     pub fn build(self) -> crate::operation::describe_engine_versions::DescribeEngineVersionsOutput {
         crate::operation::describe_engine_versions::DescribeEngineVersionsOutput {
-            engine_versions: self.engine_versions,
-            marker: self.marker,
+            engine_versions: self.engine_versions
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

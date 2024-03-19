@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectSkillInput {
+pub struct RejectSkillInput  {
     /// <p>The unique identifier of the skill.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
-impl RejectSkillInput {
+impl  RejectSkillInput  {
     /// <p>The unique identifier of the skill.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RejectSkillInputBuilder {
     }
     /// <p>The unique identifier of the skill.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The unique identifier of the skill.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl RejectSkillInputBuilder {
     }
     /// Consumes the builder and constructs a [`RejectSkillInput`](crate::operation::reject_skill::RejectSkillInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::reject_skill::RejectSkillInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reject_skill::RejectSkillInput { skill_id: self.skill_id })
+        ::std::result::Result::Ok(
+            crate::operation::reject_skill::RejectSkillInput {
+                skill_id: self.skill_id
+                ,
+            }
+        )
     }
 }
+

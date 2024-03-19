@@ -3,26 +3,25 @@
 /// <p>Identifies a participant in a handshake.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct HandshakeParty {
+pub struct HandshakeParty  {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub id: ::std::string::String,
     /// <p>The type of party.</p>
     pub r#type: crate::types::HandshakePartyType,
 }
-impl HandshakeParty {
+impl  HandshakeParty  {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of party.</p>
-    pub fn r#type(&self) -> &crate::types::HandshakePartyType {
+    pub fn r#type(&self) -> & crate::types::HandshakePartyType {
         &self.r#type
     }
 }
-impl ::std::fmt::Debug for HandshakeParty {
+impl  ::std::fmt::Debug for HandshakeParty  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeParty");
         formatter.field("id", &"*** Sensitive Data Redacted ***");
@@ -55,8 +54,7 @@ impl HandshakePartyBuilder {
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier (ID) for the party.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
@@ -71,8 +69,7 @@ impl HandshakePartyBuilder {
     }
     /// <p>The type of party.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HandshakePartyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of party.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HandshakePartyType> {
@@ -83,20 +80,20 @@ impl HandshakePartyBuilder {
     /// - [`id`](crate::types::builders::HandshakePartyBuilder::id)
     /// - [`r#type`](crate::types::builders::HandshakePartyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::HandshakeParty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HandshakeParty {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building HandshakeParty",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building HandshakeParty",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HandshakeParty {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building HandshakeParty")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building HandshakeParty")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for HandshakePartyBuilder {
@@ -107,3 +104,4 @@ impl ::std::fmt::Debug for HandshakePartyBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The options that determine the presentation of the data labels.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunnelChartDataLabelOptions {
+pub struct FunnelChartDataLabelOptions  {
     /// <p>The visibility option that determines if data labels are displayed.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of the category labels within the data labels.</p>
@@ -20,34 +20,34 @@ pub struct FunnelChartDataLabelOptions {
     /// <p>Determines the style of the metric labels.</p>
     pub measure_data_label_style: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>,
 }
-impl FunnelChartDataLabelOptions {
+impl  FunnelChartDataLabelOptions  {
     /// <p>The visibility option that determines if data labels are displayed.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The visibility of the category labels within the data labels.</p>
-    pub fn category_label_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn category_label_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.category_label_visibility.as_ref()
     }
     /// <p>The visibility of the measure labels within the data labels.</p>
-    pub fn measure_label_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn measure_label_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.measure_label_visibility.as_ref()
     }
     /// <p>Determines the positioning of the data label relative to a section of the funnel.</p>
-    pub fn position(&self) -> ::std::option::Option<&crate::types::DataLabelPosition> {
+    pub fn position(&self) -> ::std::option::Option<& crate::types::DataLabelPosition> {
         self.position.as_ref()
     }
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
-    pub fn label_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn label_font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.label_font_configuration.as_ref()
     }
     /// <p>The color of the data label text.</p>
-    pub fn label_color(&self) -> ::std::option::Option<&str> {
+    pub fn label_color(&self) -> ::std::option::Option<& str> {
         self.label_color.as_deref()
     }
     /// <p>Determines the style of the metric labels.</p>
-    pub fn measure_data_label_style(&self) -> ::std::option::Option<&crate::types::FunnelChartMeasureDataLabelStyle> {
+    pub fn measure_data_label_style(&self) -> ::std::option::Option<& crate::types::FunnelChartMeasureDataLabelStyle> {
         self.measure_data_label_style.as_ref()
     }
 }
@@ -78,8 +78,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>The visibility option that determines if data labels are displayed.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility option that determines if data labels are displayed.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -92,8 +91,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>The visibility of the category labels within the data labels.</p>
     pub fn set_category_label_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.category_label_visibility = input;
-        self
+        self.category_label_visibility = input; self
     }
     /// <p>The visibility of the category labels within the data labels.</p>
     pub fn get_category_label_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -106,8 +104,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>The visibility of the measure labels within the data labels.</p>
     pub fn set_measure_label_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.measure_label_visibility = input;
-        self
+        self.measure_label_visibility = input; self
     }
     /// <p>The visibility of the measure labels within the data labels.</p>
     pub fn get_measure_label_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -120,8 +117,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>Determines the positioning of the data label relative to a section of the funnel.</p>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::DataLabelPosition>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>Determines the positioning of the data label relative to a section of the funnel.</p>
     pub fn get_position(&self) -> &::std::option::Option<crate::types::DataLabelPosition> {
@@ -136,8 +132,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
     pub fn set_label_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.label_font_configuration = input;
-        self
+        self.label_font_configuration = input; self
     }
     /// <p>The font configuration for the data labels.</p>
     /// <p>Only the <code>FontSize</code> attribute of the font configuration is used for data labels.</p>
@@ -151,8 +146,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>The color of the data label text.</p>
     pub fn set_label_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_color = input;
-        self
+        self.label_color = input; self
     }
     /// <p>The color of the data label text.</p>
     pub fn get_label_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +159,7 @@ impl FunnelChartDataLabelOptionsBuilder {
     }
     /// <p>Determines the style of the metric labels.</p>
     pub fn set_measure_data_label_style(mut self, input: ::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle>) -> Self {
-        self.measure_data_label_style = input;
-        self
+        self.measure_data_label_style = input; self
     }
     /// <p>Determines the style of the metric labels.</p>
     pub fn get_measure_data_label_style(&self) -> &::std::option::Option<crate::types::FunnelChartMeasureDataLabelStyle> {
@@ -175,13 +168,21 @@ impl FunnelChartDataLabelOptionsBuilder {
     /// Consumes the builder and constructs a [`FunnelChartDataLabelOptions`](crate::types::FunnelChartDataLabelOptions).
     pub fn build(self) -> crate::types::FunnelChartDataLabelOptions {
         crate::types::FunnelChartDataLabelOptions {
-            visibility: self.visibility,
-            category_label_visibility: self.category_label_visibility,
-            measure_label_visibility: self.measure_label_visibility,
-            position: self.position,
-            label_font_configuration: self.label_font_configuration,
-            label_color: self.label_color,
-            measure_data_label_style: self.measure_data_label_style,
+            visibility: self.visibility
+            ,
+            category_label_visibility: self.category_label_visibility
+            ,
+            measure_label_visibility: self.measure_label_visibility
+            ,
+            position: self.position
+            ,
+            label_font_configuration: self.label_font_configuration
+            ,
+            label_color: self.label_color
+            ,
+            measure_data_label_style: self.measure_data_label_style
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let serviceactionassociationerrorcode = unimplemented!();
 /// match serviceactionassociationerrorcode {
@@ -34,16 +34,14 @@
 /// Specifically, when `serviceactionassociationerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceActionAssociationErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ServiceActionAssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     DuplicateResourceException,
@@ -59,80 +57,74 @@ pub enum ServiceActionAssociationErrorCode {
     ThrottlingException,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ServiceActionAssociationErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "DUPLICATE_RESOURCE" => ServiceActionAssociationErrorCode::DuplicateResourceException,
-            "INTERNAL_FAILURE" => ServiceActionAssociationErrorCode::InternalFailure,
-            "INVALID_PARAMETER" => ServiceActionAssociationErrorCode::InvalidParameterException,
-            "LIMIT_EXCEEDED" => ServiceActionAssociationErrorCode::LimitExceededException,
-            "RESOURCE_NOT_FOUND" => ServiceActionAssociationErrorCode::ResourceNotFoundException,
-            "THROTTLING" => ServiceActionAssociationErrorCode::ThrottlingException,
-            other => ServiceActionAssociationErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DUPLICATE_RESOURCE" => ServiceActionAssociationErrorCode::DuplicateResourceException,
+"INTERNAL_FAILURE" => ServiceActionAssociationErrorCode::InternalFailure,
+"INVALID_PARAMETER" => ServiceActionAssociationErrorCode::InvalidParameterException,
+"LIMIT_EXCEEDED" => ServiceActionAssociationErrorCode::LimitExceededException,
+"RESOURCE_NOT_FOUND" => ServiceActionAssociationErrorCode::ResourceNotFoundException,
+"THROTTLING" => ServiceActionAssociationErrorCode::ThrottlingException,
+other => ServiceActionAssociationErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ServiceActionAssociationErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ServiceActionAssociationErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ServiceActionAssociationErrorCode::from(s))
+                    }
+                }
 impl ServiceActionAssociationErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceActionAssociationErrorCode::DuplicateResourceException => "DUPLICATE_RESOURCE",
-            ServiceActionAssociationErrorCode::InternalFailure => "INTERNAL_FAILURE",
-            ServiceActionAssociationErrorCode::InvalidParameterException => "INVALID_PARAMETER",
-            ServiceActionAssociationErrorCode::LimitExceededException => "LIMIT_EXCEEDED",
-            ServiceActionAssociationErrorCode::ResourceNotFoundException => "RESOURCE_NOT_FOUND",
-            ServiceActionAssociationErrorCode::ThrottlingException => "THROTTLING",
-            ServiceActionAssociationErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DUPLICATE_RESOURCE",
-            "INTERNAL_FAILURE",
-            "INVALID_PARAMETER",
-            "LIMIT_EXCEEDED",
-            "RESOURCE_NOT_FOUND",
-            "THROTTLING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceActionAssociationErrorCode::DuplicateResourceException => "DUPLICATE_RESOURCE",
+    ServiceActionAssociationErrorCode::InternalFailure => "INTERNAL_FAILURE",
+    ServiceActionAssociationErrorCode::InvalidParameterException => "INVALID_PARAMETER",
+    ServiceActionAssociationErrorCode::LimitExceededException => "LIMIT_EXCEEDED",
+    ServiceActionAssociationErrorCode::ResourceNotFoundException => "RESOURCE_NOT_FOUND",
+    ServiceActionAssociationErrorCode::ThrottlingException => "THROTTLING",
+    ServiceActionAssociationErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DUPLICATE_RESOURCE", "INTERNAL_FAILURE", "INVALID_PARAMETER", "LIMIT_EXCEEDED", "RESOURCE_NOT_FOUND", "THROTTLING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ServiceActionAssociationErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ServiceActionAssociationErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ServiceActionAssociationErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ServiceActionAssociationErrorCode::DuplicateResourceException => write!(f, "DUPLICATE_RESOURCE"),
-            ServiceActionAssociationErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            ServiceActionAssociationErrorCode::InvalidParameterException => write!(f, "INVALID_PARAMETER"),
-            ServiceActionAssociationErrorCode::LimitExceededException => write!(f, "LIMIT_EXCEEDED"),
-            ServiceActionAssociationErrorCode::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND"),
-            ServiceActionAssociationErrorCode::ThrottlingException => write!(f, "THROTTLING"),
-            ServiceActionAssociationErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ServiceActionAssociationErrorCode::DuplicateResourceException => write!(f, "DUPLICATE_RESOURCE"),
+ServiceActionAssociationErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+ServiceActionAssociationErrorCode::InvalidParameterException => write!(f, "INVALID_PARAMETER"),
+ServiceActionAssociationErrorCode::LimitExceededException => write!(f, "LIMIT_EXCEEDED"),
+ServiceActionAssociationErrorCode::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND"),
+ServiceActionAssociationErrorCode::ThrottlingException => write!(f, "THROTTLING"),
+ServiceActionAssociationErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

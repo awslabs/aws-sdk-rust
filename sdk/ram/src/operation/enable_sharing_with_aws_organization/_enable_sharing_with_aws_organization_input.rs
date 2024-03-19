@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableSharingWithAwsOrganizationInput {}
+pub struct EnableSharingWithAwsOrganizationInput  {
+}
 impl EnableSharingWithAwsOrganizationInput {
     /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationInput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput).
     pub fn builder() -> crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder {
@@ -13,15 +14,15 @@ impl EnableSharingWithAwsOrganizationInput {
 /// A builder for [`EnableSharingWithAwsOrganizationInput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EnableSharingWithAwsOrganizationInputBuilder {}
+pub struct EnableSharingWithAwsOrganizationInputBuilder {
+}
 impl EnableSharingWithAwsOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationInput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationInput {
+            }
+        )
     }
 }
+

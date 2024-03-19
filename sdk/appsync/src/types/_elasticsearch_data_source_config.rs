@@ -4,22 +4,20 @@
 /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>OpenSearchServiceDataSourceConfig</code> to specify an OpenSearch data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticsearchDataSourceConfig {
+pub struct ElasticsearchDataSourceConfig  {
     /// <p>The endpoint.</p>
     pub endpoint: ::std::string::String,
     /// <p>The Amazon Web Services Region.</p>
     pub aws_region: ::std::string::String,
 }
-impl ElasticsearchDataSourceConfig {
+impl  ElasticsearchDataSourceConfig  {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint.deref()
+    pub fn endpoint(&self) -> & str {
+        use std::ops::Deref; self.endpoint.deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_region.deref()
+    pub fn aws_region(&self) -> & str {
+        use std::ops::Deref; self.aws_region.deref()
     }
 }
 impl ElasticsearchDataSourceConfig {
@@ -45,8 +43,7 @@ impl ElasticsearchDataSourceConfigBuilder {
     }
     /// <p>The endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl ElasticsearchDataSourceConfigBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl ElasticsearchDataSourceConfigBuilder {
     /// - [`endpoint`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::endpoint)
     /// - [`aws_region`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::aws_region)
     pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ElasticsearchDataSourceConfig {
-            endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint",
-                    "endpoint was not specified but it is required when building ElasticsearchDataSourceConfig",
-                )
-            })?,
-            aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_region",
-                    "aws_region was not specified but it is required when building ElasticsearchDataSourceConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ElasticsearchDataSourceConfig {
+                endpoint: self.endpoint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint", "endpoint was not specified but it is required when building ElasticsearchDataSourceConfig")
+                    )?
+                ,
+                aws_region: self.aws_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_region", "aws_region was not specified but it is required when building ElasticsearchDataSourceConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

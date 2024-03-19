@@ -3,13 +3,13 @@
 /// <p>Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignCustomMessage {
+pub struct CampaignCustomMessage  {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl CampaignCustomMessage {
+impl  CampaignCustomMessage  {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CampaignCustomMessageBuilder {
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CampaignCustomMessageBuilder {
     }
     /// Consumes the builder and constructs a [`CampaignCustomMessage`](crate::types::CampaignCustomMessage).
     pub fn build(self) -> crate::types::CampaignCustomMessage {
-        crate::types::CampaignCustomMessage { data: self.data }
+        crate::types::CampaignCustomMessage {
+            data: self.data
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCalculatedAttributeDefinitionsInput {
+pub struct ListCalculatedAttributeDefinitionsInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
@@ -10,13 +10,13 @@ pub struct ListCalculatedAttributeDefinitionsInput {
     /// <p>The maximum number of calculated attribute definitions returned per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCalculatedAttributeDefinitionsInput {
+impl  ListCalculatedAttributeDefinitionsInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of calculated attribute definitions returned per page.</p>
@@ -48,8 +48,7 @@ impl ListCalculatedAttributeDefinitionsInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListCalculatedAttributeDefinitionsInputBuilder {
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListCalculatedAttributeDefinitionsInputBuilder {
     }
     /// <p>The maximum number of calculated attribute definitions returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of calculated attribute definitions returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCalculatedAttributeDefinitionsInput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                domain_name: self.domain_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

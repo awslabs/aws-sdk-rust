@@ -3,7 +3,7 @@
 /// Details of a single thumbnail
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Thumbnail {
+pub struct Thumbnail  {
     /// The binary data for the latest thumbnail.
     pub body: ::std::option::Option<::std::string::String>,
     /// The content type for the latest thumbnail.
@@ -13,21 +13,21 @@ pub struct Thumbnail {
     /// Time stamp for the latest thumbnail.
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Thumbnail {
+impl  Thumbnail  {
     /// The binary data for the latest thumbnail.
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// The content type for the latest thumbnail.
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// Thumbnail Type
-    pub fn thumbnail_type(&self) -> ::std::option::Option<&crate::types::ThumbnailType> {
+    pub fn thumbnail_type(&self) -> ::std::option::Option<& crate::types::ThumbnailType> {
         self.thumbnail_type.as_ref()
     }
     /// Time stamp for the latest thumbnail.
-    pub fn time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ThumbnailBuilder {
     }
     /// The binary data for the latest thumbnail.
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// The binary data for the latest thumbnail.
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ThumbnailBuilder {
     }
     /// The content type for the latest thumbnail.
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// The content type for the latest thumbnail.
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ThumbnailBuilder {
     }
     /// Thumbnail Type
     pub fn set_thumbnail_type(mut self, input: ::std::option::Option<crate::types::ThumbnailType>) -> Self {
-        self.thumbnail_type = input;
-        self
+        self.thumbnail_type = input; self
     }
     /// Thumbnail Type
     pub fn get_thumbnail_type(&self) -> &::std::option::Option<crate::types::ThumbnailType> {
@@ -97,8 +94,7 @@ impl ThumbnailBuilder {
     }
     /// Time stamp for the latest thumbnail.
     pub fn set_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_stamp = input;
-        self
+        self.time_stamp = input; self
     }
     /// Time stamp for the latest thumbnail.
     pub fn get_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ThumbnailBuilder {
     /// Consumes the builder and constructs a [`Thumbnail`](crate::types::Thumbnail).
     pub fn build(self) -> crate::types::Thumbnail {
         crate::types::Thumbnail {
-            body: self.body,
-            content_type: self.content_type,
-            thumbnail_type: self.thumbnail_type,
-            time_stamp: self.time_stamp,
+            body: self.body
+            ,
+            content_type: self.content_type
+            ,
+            thumbnail_type: self.thumbnail_type
+            ,
+            time_stamp: self.time_stamp
+            ,
         }
     }
 }
+

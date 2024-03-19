@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceAttributeOutput {
+pub struct ModifyInstanceAttributeOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyInstanceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceAttributeOutput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput).
     pub fn builder() -> crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeOutputBuilder {
@@ -25,14 +25,14 @@ pub struct ModifyInstanceAttributeOutputBuilder {
 }
 impl ModifyInstanceAttributeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyInstanceAttributeOutput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput).
     pub fn build(self) -> crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput {
         crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput {
@@ -40,3 +40,4 @@ impl ModifyInstanceAttributeOutputBuilder {
         }
     }
 }
+

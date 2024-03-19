@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails  {
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub max: ::std::option::Option<f64>,
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub min: ::std::option::Option<f64>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails  {
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
-            max: self.max,
-            min: self.min,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

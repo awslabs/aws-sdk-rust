@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>DescribeScraper</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScraperInput {
+pub struct DescribeScraperInput  {
     /// <p>The ID of the scraper to describe.</p>
     pub scraper_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeScraperInput {
+impl  DescribeScraperInput  {
     /// <p>The ID of the scraper to describe.</p>
-    pub fn scraper_id(&self) -> ::std::option::Option<&str> {
+    pub fn scraper_id(&self) -> ::std::option::Option<& str> {
         self.scraper_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeScraperInputBuilder {
     }
     /// <p>The ID of the scraper to describe.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scraper_id = input;
-        self
+        self.scraper_id = input; self
     }
     /// <p>The ID of the scraper to describe.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scraper_id
     }
     /// Consumes the builder and constructs a [`DescribeScraperInput`](crate::operation::describe_scraper::DescribeScraperInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_scraper::DescribeScraperInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_scraper::DescribeScraperInput { scraper_id: self.scraper_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scraper::DescribeScraperInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scraper::DescribeScraperInput {
+                scraper_id: self.scraper_id
+                ,
+            }
+        )
     }
 }
+

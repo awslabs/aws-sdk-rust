@@ -3,22 +3,23 @@
 /// <p>The total of usage for an account ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageTotal {
+pub struct UsageTotal  {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the total usage for an account.</p>
-    pub usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
+    pub usage: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>,
 }
-impl UsageTotal {
+impl  UsageTotal  {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object representing the total usage for an account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage.is_none()`.
-    pub fn usage(&self) -> &[crate::types::Usage] {
-        self.usage.as_deref().unwrap_or_default()
+    pub fn usage(&self) -> & [crate::types::Usage] {
+        self.usage.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UsageTotal {
@@ -33,7 +34,7 @@ impl UsageTotal {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageTotalBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
+    pub(crate) usage: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>,
 }
 impl UsageTotalBuilder {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
@@ -43,8 +44,7 @@ impl UsageTotalBuilder {
     }
     /// <p>The account ID of the account that usage data was retrieved for.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the account that usage data was retrieved for.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl UsageTotalBuilder {
     /// <p>An object representing the total usage for an account.</p>
     pub fn usage(mut self, input: crate::types::Usage) -> Self {
         let mut v = self.usage.unwrap_or_default();
-        v.push(input);
-        self.usage = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.usage = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object representing the total usage for an account.</p>
-    pub fn set_usage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>) -> Self {
-        self.usage = input;
-        self
+    pub fn set_usage(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Usage>>) -> Self {
+        self.usage = input; self
     }
     /// <p>An object representing the total usage for an account.</p>
-    pub fn get_usage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Usage>> {
+    pub fn get_usage(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Usage>> {
         &self.usage
     }
     /// Consumes the builder and constructs a [`UsageTotal`](crate::types::UsageTotal).
     pub fn build(self) -> crate::types::UsageTotal {
         crate::types::UsageTotal {
-            account_id: self.account_id,
-            usage: self.usage,
+            account_id: self.account_id
+            ,
+            usage: self.usage
+            ,
         }
     }
 }
+

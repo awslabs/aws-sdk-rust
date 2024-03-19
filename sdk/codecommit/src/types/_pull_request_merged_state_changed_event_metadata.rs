@@ -3,7 +3,7 @@
 /// <p>Returns information about the change in the merge state for a pull request event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PullRequestMergedStateChangedEventMetadata {
+pub struct PullRequestMergedStateChangedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch that the pull request is merged into.</p>
@@ -11,17 +11,17 @@ pub struct PullRequestMergedStateChangedEventMetadata {
     /// <p>Information about the merge state change event.</p>
     pub merge_metadata: ::std::option::Option<crate::types::MergeMetadata>,
 }
-impl PullRequestMergedStateChangedEventMetadata {
+impl  PullRequestMergedStateChangedEventMetadata  {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
-    pub fn destination_reference(&self) -> ::std::option::Option<&str> {
+    pub fn destination_reference(&self) -> ::std::option::Option<& str> {
         self.destination_reference.as_deref()
     }
     /// <p>Information about the merge state change event.</p>
-    pub fn merge_metadata(&self) -> ::std::option::Option<&crate::types::MergeMetadata> {
+    pub fn merge_metadata(&self) -> ::std::option::Option<& crate::types::MergeMetadata> {
         self.merge_metadata.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
     pub fn set_destination_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_reference = input;
-        self
+        self.destination_reference = input; self
     }
     /// <p>The name of the branch that the pull request is merged into.</p>
     pub fn get_destination_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
     }
     /// <p>Information about the merge state change event.</p>
     pub fn set_merge_metadata(mut self, input: ::std::option::Option<crate::types::MergeMetadata>) -> Self {
-        self.merge_metadata = input;
-        self
+        self.merge_metadata = input; self
     }
     /// <p>Information about the merge state change event.</p>
     pub fn get_merge_metadata(&self) -> &::std::option::Option<crate::types::MergeMetadata> {
@@ -86,9 +83,13 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
     /// Consumes the builder and constructs a [`PullRequestMergedStateChangedEventMetadata`](crate::types::PullRequestMergedStateChangedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestMergedStateChangedEventMetadata {
         crate::types::PullRequestMergedStateChangedEventMetadata {
-            repository_name: self.repository_name,
-            destination_reference: self.destination_reference,
-            merge_metadata: self.merge_metadata,
+            repository_name: self.repository_name
+            ,
+            destination_reference: self.destination_reference
+            ,
+            merge_metadata: self.merge_metadata
+            ,
         }
     }
 }
+

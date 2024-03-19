@@ -3,7 +3,7 @@
 /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductionVariantRoutingConfig {
+pub struct ProductionVariantRoutingConfig  {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct ProductionVariantRoutingConfig {
     /// </ul>
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
 }
-impl ProductionVariantRoutingConfig {
+impl  ProductionVariantRoutingConfig  {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl ProductionVariantRoutingConfig {
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
-    pub fn routing_strategy(&self) -> ::std::option::Option<&crate::types::RoutingStrategy> {
+    pub fn routing_strategy(&self) -> ::std::option::Option<& crate::types::RoutingStrategy> {
         self.routing_strategy.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ProductionVariantRoutingConfigBuilder {
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
-        self.routing_strategy = input;
-        self
+        self.routing_strategy = input; self
     }
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
@@ -75,7 +74,9 @@ impl ProductionVariantRoutingConfigBuilder {
     /// Consumes the builder and constructs a [`ProductionVariantRoutingConfig`](crate::types::ProductionVariantRoutingConfig).
     pub fn build(self) -> crate::types::ProductionVariantRoutingConfig {
         crate::types::ProductionVariantRoutingConfig {
-            routing_strategy: self.routing_strategy,
+            routing_strategy: self.routing_strategy
+            ,
         }
     }
 }
+

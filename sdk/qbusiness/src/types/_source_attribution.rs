@@ -3,7 +3,7 @@
 /// <p>The documents used to generate an Amazon Q web experience response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceAttribution {
+pub struct SourceAttribution  {
     /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The content extract from the document on which the generated response is based.</p>
@@ -15,19 +15,19 @@ pub struct SourceAttribution {
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A text extract from a source document that is used for source attribution.</p>
-    pub text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
+    pub text_message_segments: ::std::option::Option<::std::vec::Vec::<crate::types::TextSegment>>,
 }
-impl SourceAttribution {
+impl  SourceAttribution  {
     /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The content extract from the document on which the generated response is based.</p>
-    pub fn snippet(&self) -> ::std::option::Option<&str> {
+    pub fn snippet(&self) -> ::std::option::Option<& str> {
         self.snippet.as_deref()
     }
     /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The number attached to a citation in an Amazon Q generated response.</p>
@@ -35,14 +35,15 @@ impl SourceAttribution {
         self.citation_number
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A text extract from a source document that is used for source attribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_message_segments.is_none()`.
-    pub fn text_message_segments(&self) -> &[crate::types::TextSegment] {
-        self.text_message_segments.as_deref().unwrap_or_default()
+    pub fn text_message_segments(&self) -> & [crate::types::TextSegment] {
+        self.text_message_segments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SourceAttribution {
@@ -61,7 +62,7 @@ pub struct SourceAttributionBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) citation_number: ::std::option::Option<i32>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
+    pub(crate) text_message_segments: ::std::option::Option<::std::vec::Vec::<crate::types::TextSegment>>,
 }
 impl SourceAttributionBuilder {
     /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
@@ -71,8 +72,7 @@ impl SourceAttributionBuilder {
     }
     /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the document which is the source for the Amazon Q generated response.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl SourceAttributionBuilder {
     }
     /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn set_snippet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snippet = input;
-        self
+        self.snippet = input; self
     }
     /// <p>The content extract from the document on which the generated response is based.</p>
     pub fn get_snippet(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl SourceAttributionBuilder {
     }
     /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the document which is the source for the Amazon Q generated response.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl SourceAttributionBuilder {
     }
     /// <p>The number attached to a citation in an Amazon Q generated response.</p>
     pub fn set_citation_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.citation_number = input;
-        self
+        self.citation_number = input; self
     }
     /// <p>The number attached to a citation in an Amazon Q generated response.</p>
     pub fn get_citation_number(&self) -> &::std::option::Option<i32> {
@@ -127,8 +124,7 @@ impl SourceAttributionBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,28 +137,34 @@ impl SourceAttributionBuilder {
     /// <p>A text extract from a source document that is used for source attribution.</p>
     pub fn text_message_segments(mut self, input: crate::types::TextSegment) -> Self {
         let mut v = self.text_message_segments.unwrap_or_default();
-        v.push(input);
-        self.text_message_segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_message_segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A text extract from a source document that is used for source attribution.</p>
-    pub fn set_text_message_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>) -> Self {
-        self.text_message_segments = input;
-        self
+    pub fn set_text_message_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextSegment>>) -> Self {
+        self.text_message_segments = input; self
     }
     /// <p>A text extract from a source document that is used for source attribution.</p>
-    pub fn get_text_message_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextSegment>> {
+    pub fn get_text_message_segments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextSegment>> {
         &self.text_message_segments
     }
     /// Consumes the builder and constructs a [`SourceAttribution`](crate::types::SourceAttribution).
     pub fn build(self) -> crate::types::SourceAttribution {
         crate::types::SourceAttribution {
-            title: self.title,
-            snippet: self.snippet,
-            url: self.url,
-            citation_number: self.citation_number,
-            updated_at: self.updated_at,
-            text_message_segments: self.text_message_segments,
+            title: self.title
+            ,
+            snippet: self.snippet
+            ,
+            url: self.url
+            ,
+            citation_number: self.citation_number
+            ,
+            updated_at: self.updated_at
+            ,
+            text_message_segments: self.text_message_segments
+            ,
         }
     }
 }
+

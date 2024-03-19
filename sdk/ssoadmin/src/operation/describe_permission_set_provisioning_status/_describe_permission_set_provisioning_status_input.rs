@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePermissionSetProvisioningStatusInput {
+pub struct DescribePermissionSetProvisioningStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     pub provision_permission_set_request_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribePermissionSetProvisioningStatusInput {
+impl  DescribePermissionSetProvisioningStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-    pub fn provision_permission_set_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn provision_permission_set_request_id(&self) -> ::std::option::Option<& str> {
         self.provision_permission_set_request_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribePermissionSetProvisioningStatusInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DescribePermissionSetProvisioningStatusInputBuilder {
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     pub fn set_provision_permission_set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_permission_set_request_id = input;
-        self
+        self.provision_permission_set_request_id = input; self
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
     pub fn get_provision_permission_set_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provision_permission_set_request_id
     }
     /// Consumes the builder and constructs a [`DescribePermissionSetProvisioningStatusInput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput {
-                instance_arn: self.instance_arn,
-                provision_permission_set_request_id: self.provision_permission_set_request_id,
-            },
+                instance_arn: self.instance_arn
+                ,
+                provision_permission_set_request_id: self.provision_permission_set_request_id
+                ,
+            }
         )
     }
 }
+

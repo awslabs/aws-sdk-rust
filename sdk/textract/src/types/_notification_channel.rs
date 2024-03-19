@@ -3,22 +3,20 @@
 /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationChannel {
+pub struct NotificationChannel  {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
     pub sns_topic_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic.</p>
     pub role_arn: ::std::string::String,
 }
-impl NotificationChannel {
+impl  NotificationChannel  {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
-    pub fn sns_topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.sns_topic_arn.deref()
+    pub fn sns_topic_arn(&self) -> & str {
+        use std::ops::Deref; self.sns_topic_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl NotificationChannel {
@@ -44,8 +42,7 @@ impl NotificationChannelBuilder {
     }
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl NotificationChannelBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl NotificationChannelBuilder {
     /// - [`sns_topic_arn`](crate::types::builders::NotificationChannelBuilder::sns_topic_arn)
     /// - [`role_arn`](crate::types::builders::NotificationChannelBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationChannel, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationChannel {
-            sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sns_topic_arn",
-                    "sns_topic_arn was not specified but it is required when building NotificationChannel",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building NotificationChannel",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationChannel {
+                sns_topic_arn: self.sns_topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sns_topic_arn", "sns_topic_arn was not specified but it is required when building NotificationChannel")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building NotificationChannel")
+                    )?
+                ,
+            }
+        )
     }
 }
+

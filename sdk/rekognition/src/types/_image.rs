@@ -9,19 +9,19 @@
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB.</p>
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the image source.</p>
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
-impl Image {
+impl  Image  {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB.</p>
-    pub fn bytes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Identifies an S3 object as the image source.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ImageBuilder {
     }
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -61,8 +60,7 @@ impl ImageBuilder {
     }
     /// <p>Identifies an S3 object as the image source.</p>
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// <p>Identifies an S3 object as the image source.</p>
     pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -71,8 +69,11 @@ impl ImageBuilder {
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
-            bytes: self.bytes,
-            s3_object: self.s3_object,
+            bytes: self.bytes
+            ,
+            s3_object: self.s3_object
+            ,
         }
     }
 }
+

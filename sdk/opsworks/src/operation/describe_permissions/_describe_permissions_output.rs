@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribePermissions</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePermissionsOutput {
+pub struct DescribePermissionsOutput  {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
     /// <li>
@@ -13,10 +13,10 @@ pub struct DescribePermissionsOutput {
     /// <li>
     /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
     /// </ul>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     _request_id: Option<String>,
 }
-impl DescribePermissionsOutput {
+impl  DescribePermissionsOutput  {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
     /// <li>
@@ -26,17 +26,18 @@ impl DescribePermissionsOutput {
     /// <li>
     /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::Permission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::Permission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
     pub fn builder() -> crate::operation::describe_permissions::builders::DescribePermissionsOutputBuilder {
@@ -48,7 +49,7 @@ impl DescribePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePermissionsOutputBuilder {
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     _request_id: Option<String>,
 }
 impl DescribePermissionsOutputBuilder {
@@ -67,9 +68,9 @@ impl DescribePermissionsOutputBuilder {
     /// </ul>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
@@ -80,9 +81,8 @@ impl DescribePermissionsOutputBuilder {
     /// <li>
     /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
     /// </ul>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
@@ -93,23 +93,25 @@ impl DescribePermissionsOutputBuilder {
     /// <li>
     /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p></li>
     /// </ul>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         &self.permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
     pub fn build(self) -> crate::operation::describe_permissions::DescribePermissionsOutput {
         crate::operation::describe_permissions::DescribePermissionsOutput {
-            permissions: self.permissions,
+            permissions: self.permissions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

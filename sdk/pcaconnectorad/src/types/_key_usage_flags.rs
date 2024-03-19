@@ -3,7 +3,7 @@
 /// <p>The key usage flags represent the purpose (e.g., encipherment, signature) of the key contained in the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyUsageFlags {
+pub struct KeyUsageFlags  {
     /// <p>The digitalSignature is asserted when the subject public key is used for verifying digital signatures.</p>
     pub digital_signature: ::std::option::Option<bool>,
     /// <p>NonRepudiation is asserted when the subject public key is used to verify digital signatures.</p>
@@ -15,7 +15,7 @@ pub struct KeyUsageFlags {
     /// <p>KeyAgreement is asserted when the subject public key is used for key agreement.</p>
     pub key_agreement: ::std::option::Option<bool>,
 }
-impl KeyUsageFlags {
+impl  KeyUsageFlags  {
     /// <p>The digitalSignature is asserted when the subject public key is used for verifying digital signatures.</p>
     pub fn digital_signature(&self) -> ::std::option::Option<bool> {
         self.digital_signature
@@ -62,8 +62,7 @@ impl KeyUsageFlagsBuilder {
     }
     /// <p>The digitalSignature is asserted when the subject public key is used for verifying digital signatures.</p>
     pub fn set_digital_signature(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.digital_signature = input;
-        self
+        self.digital_signature = input; self
     }
     /// <p>The digitalSignature is asserted when the subject public key is used for verifying digital signatures.</p>
     pub fn get_digital_signature(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl KeyUsageFlagsBuilder {
     }
     /// <p>NonRepudiation is asserted when the subject public key is used to verify digital signatures.</p>
     pub fn set_non_repudiation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.non_repudiation = input;
-        self
+        self.non_repudiation = input; self
     }
     /// <p>NonRepudiation is asserted when the subject public key is used to verify digital signatures.</p>
     pub fn get_non_repudiation(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl KeyUsageFlagsBuilder {
     }
     /// <p>KeyEncipherment is asserted when the subject public key is used for enciphering private or secret keys, i.e., for key transport.</p>
     pub fn set_key_encipherment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key_encipherment = input;
-        self
+        self.key_encipherment = input; self
     }
     /// <p>KeyEncipherment is asserted when the subject public key is used for enciphering private or secret keys, i.e., for key transport.</p>
     pub fn get_key_encipherment(&self) -> &::std::option::Option<bool> {
@@ -104,8 +101,7 @@ impl KeyUsageFlagsBuilder {
     }
     /// <p>DataEncipherment is asserted when the subject public key is used for directly enciphering raw user data without the use of an intermediate symmetric cipher.</p>
     pub fn set_data_encipherment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_encipherment = input;
-        self
+        self.data_encipherment = input; self
     }
     /// <p>DataEncipherment is asserted when the subject public key is used for directly enciphering raw user data without the use of an intermediate symmetric cipher.</p>
     pub fn get_data_encipherment(&self) -> &::std::option::Option<bool> {
@@ -118,8 +114,7 @@ impl KeyUsageFlagsBuilder {
     }
     /// <p>KeyAgreement is asserted when the subject public key is used for key agreement.</p>
     pub fn set_key_agreement(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key_agreement = input;
-        self
+        self.key_agreement = input; self
     }
     /// <p>KeyAgreement is asserted when the subject public key is used for key agreement.</p>
     pub fn get_key_agreement(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl KeyUsageFlagsBuilder {
     /// Consumes the builder and constructs a [`KeyUsageFlags`](crate::types::KeyUsageFlags).
     pub fn build(self) -> crate::types::KeyUsageFlags {
         crate::types::KeyUsageFlags {
-            digital_signature: self.digital_signature,
-            non_repudiation: self.non_repudiation,
-            key_encipherment: self.key_encipherment,
-            data_encipherment: self.data_encipherment,
-            key_agreement: self.key_agreement,
+            digital_signature: self.digital_signature
+            ,
+            non_repudiation: self.non_repudiation
+            ,
+            key_encipherment: self.key_encipherment
+            ,
+            data_encipherment: self.data_encipherment
+            ,
+            key_agreement: self.key_agreement
+            ,
         }
     }
 }
+

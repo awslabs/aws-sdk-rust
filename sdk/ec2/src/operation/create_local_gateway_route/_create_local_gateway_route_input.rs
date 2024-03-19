@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLocalGatewayRouteInput {
+pub struct CreateLocalGatewayRouteInput  {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway route table.</p>
@@ -16,17 +16,17 @@ pub struct CreateLocalGatewayRouteInput {
     /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateLocalGatewayRouteInput {
+impl  CreateLocalGatewayRouteInput  {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> ::std::option::Option<& str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -34,11 +34,11 @@ impl CreateLocalGatewayRouteInput {
         self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+        self.local_gateway_route_table_id = input; self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>The ID of the virtual interface group.</p>
     pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_gateway_virtual_interface_group_id = input;
-        self
+        self.local_gateway_virtual_interface_group_id = input; self
     }
     /// <p>The ID of the virtual interface group.</p>
     pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,27 +134,30 @@ impl CreateLocalGatewayRouteInputBuilder {
     }
     /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+        self.destination_prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix_list_id
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteInput`](crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput {
-            destination_cidr_block: self.destination_cidr_block,
-            local_gateway_route_table_id: self.local_gateway_route_table_id,
-            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id,
-            dry_run: self.dry_run,
-            network_interface_id: self.network_interface_id,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_local_gateway_route::CreateLocalGatewayRouteInput {
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                local_gateway_route_table_id: self.local_gateway_route_table_id
+                ,
+                local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id
+                ,
+                dry_run: self.dry_run
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                destination_prefix_list_id: self.destination_prefix_list_id
+                ,
+            }
+        )
     }
 }
+

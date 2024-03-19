@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigureLogsForPlaybackConfigurationOutput {
+pub struct ConfigureLogsForPlaybackConfigurationOutput  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ConfigureLogsForPlaybackConfigurationOutput {
+impl  ConfigureLogsForPlaybackConfigurationOutput  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
     pub fn percent_enabled(&self) -> i32 {
         self.percent_enabled
     }
     /// <p>The name of the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn playback_configuration_name(&self) -> ::std::option::Option<& str> {
         self.playback_configuration_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfigureLogsForPlaybackConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ConfigureLogsForPlaybackConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
     pub fn builder() -> crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationOutputBuilder {
@@ -48,8 +48,7 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     }
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
     pub fn set_percent_enabled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent_enabled = input;
-        self
+        self.percent_enabled = input; self
     }
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
     pub fn get_percent_enabled(&self) -> &::std::option::Option<i32> {
@@ -62,28 +61,31 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     }
     /// <p>The name of the playback configuration.</p>
     pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.playback_configuration_name = input;
-        self
+        self.playback_configuration_name = input; self
     }
     /// <p>The name of the playback configuration.</p>
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
     pub fn build(self) -> crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput {
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput {
-            percent_enabled: self.percent_enabled.unwrap_or_default(),
-            playback_configuration_name: self.playback_configuration_name,
+            percent_enabled: self.percent_enabled
+                .unwrap_or_default()
+            ,
+            playback_configuration_name: self.playback_configuration_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

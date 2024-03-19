@@ -3,19 +3,19 @@
 /// <p>The request body for UpdateBackendConfig.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBackendConfigInput {
+pub struct UpdateBackendConfigInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub login_auth_config: ::std::option::Option<crate::types::LoginAuthConfigReqObj>,
 }
-impl UpdateBackendConfigInput {
+impl  UpdateBackendConfigInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-    pub fn login_auth_config(&self) -> ::std::option::Option<&crate::types::LoginAuthConfigReqObj> {
+    pub fn login_auth_config(&self) -> ::std::option::Option<& crate::types::LoginAuthConfigReqObj> {
         self.login_auth_config.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateBackendConfigInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateBackendConfigInputBuilder {
     }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub fn set_login_auth_config(mut self, input: ::std::option::Option<crate::types::LoginAuthConfigReqObj>) -> Self {
-        self.login_auth_config = input;
-        self
+        self.login_auth_config = input; self
     }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub fn get_login_auth_config(&self) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
         &self.login_auth_config
     }
     /// Consumes the builder and constructs a [`UpdateBackendConfigInput`](crate::operation::update_backend_config::UpdateBackendConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_backend_config::UpdateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_backend_config::UpdateBackendConfigInput {
-            app_id: self.app_id,
-            login_auth_config: self.login_auth_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_backend_config::UpdateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_backend_config::UpdateBackendConfigInput {
+                app_id: self.app_id
+                ,
+                login_auth_config: self.login_auth_config
+                ,
+            }
+        )
     }
 }
+

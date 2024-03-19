@@ -3,7 +3,7 @@
 /// Represents input for ListAnalyzableServers operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnalyzableServersInput {
+pub struct ListAnalyzableServersInput  {
     /// Specifies whether to sort by ascending (ASC) or descending (DESC) order.
     pub sort: ::std::option::Option<crate::types::SortOrder>,
     /// The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set maxResults to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
@@ -11,13 +11,13 @@ pub struct ListAnalyzableServersInput {
     /// The maximum number of items to include in the response. The maximum value is 100.
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAnalyzableServersInput {
+impl  ListAnalyzableServersInput  {
     /// Specifies whether to sort by ascending (ASC) or descending (DESC) order.
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort.as_ref()
     }
     /// The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set maxResults to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The maximum number of items to include in the response. The maximum value is 100.
@@ -48,8 +48,7 @@ impl ListAnalyzableServersInputBuilder {
     }
     /// Specifies whether to sort by ascending (ASC) or descending (DESC) order.
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// Specifies whether to sort by ascending (ASC) or descending (DESC) order.
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -62,8 +61,7 @@ impl ListAnalyzableServersInputBuilder {
     }
     /// The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set maxResults to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set maxResults to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListAnalyzableServersInputBuilder {
     }
     /// The maximum number of items to include in the response. The maximum value is 100.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of items to include in the response. The maximum value is 100.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAnalyzableServersInput`](crate::operation::list_analyzable_servers::ListAnalyzableServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_analyzable_servers::ListAnalyzableServersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_analyzable_servers::ListAnalyzableServersInput {
-            sort: self.sort,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_analyzable_servers::ListAnalyzableServersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_analyzable_servers::ListAnalyzableServersInput {
+                sort: self.sort
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

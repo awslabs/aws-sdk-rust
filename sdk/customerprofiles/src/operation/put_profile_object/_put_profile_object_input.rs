@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutProfileObjectInput {
+pub struct PutProfileObjectInput  {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A string that is serialized from a JSON object.</p>
@@ -10,21 +10,21 @@ pub struct PutProfileObjectInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl PutProfileObjectInput {
+impl  PutProfileObjectInput  {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>A string that is serialized from a JSON object.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<& str> {
         self.object.as_deref()
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for PutProfileObjectInput {
+impl  ::std::fmt::Debug for PutProfileObjectInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutProfileObjectInput");
         formatter.field("object_type_name", &self.object_type_name);
@@ -57,8 +57,7 @@ impl PutProfileObjectInputBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The name of the profile object type.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl PutProfileObjectInputBuilder {
     }
     /// <p>A string that is serialized from a JSON object.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>A string that is serialized from a JSON object.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,22 +85,24 @@ impl PutProfileObjectInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_profile_object::PutProfileObjectInput {
-            object_type_name: self.object_type_name,
-            object: self.object,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_profile_object::PutProfileObjectInput {
+                object_type_name: self.object_type_name
+                ,
+                object: self.object
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutProfileObjectInputBuilder {
@@ -114,3 +114,4 @@ impl ::std::fmt::Debug for PutProfileObjectInputBuilder {
         formatter.finish()
     }
 }
+

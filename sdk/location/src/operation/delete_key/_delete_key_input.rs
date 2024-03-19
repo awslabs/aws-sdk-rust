@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyInput {
+pub struct DeleteKeyInput  {
     /// <p>The name of the API key to delete.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
@@ -12,9 +12,9 @@ pub struct DeleteKeyInput {
     /// </note>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeleteKeyInput {
+impl  DeleteKeyInput  {
     /// <p>The name of the API key to delete.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
@@ -49,8 +49,7 @@ impl DeleteKeyInputBuilder {
     }
     /// <p>The name of the API key to delete.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the API key to delete.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DeleteKeyInputBuilder {
     /// <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p>
     /// </note>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
     /// <p>Valid values: <code>true</code>, or <code>false</code>.</p>
@@ -84,9 +82,14 @@ impl DeleteKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput {
-            key_name: self.key_name,
-            force_delete: self.force_delete,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_key::DeleteKeyInput {
+                key_name: self.key_name
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

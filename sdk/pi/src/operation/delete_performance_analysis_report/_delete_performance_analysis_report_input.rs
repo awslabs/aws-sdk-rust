@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePerformanceAnalysisReportInput {
+pub struct DeletePerformanceAnalysisReportInput  {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
@@ -11,18 +11,18 @@ pub struct DeletePerformanceAnalysisReportInput {
     /// <p>The unique identifier of the analysis report for deletion.</p>
     pub analysis_report_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePerformanceAnalysisReportInput {
+impl  DeletePerformanceAnalysisReportInput  {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The unique identifier of the analysis report for deletion.</p>
-    pub fn analysis_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_report_id(&self) -> ::std::option::Option<& str> {
         self.analysis_report_id.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl DeletePerformanceAnalysisReportInputBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -67,8 +66,7 @@ impl DeletePerformanceAnalysisReportInputBuilder {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
@@ -83,26 +81,24 @@ impl DeletePerformanceAnalysisReportInputBuilder {
     }
     /// <p>The unique identifier of the analysis report for deletion.</p>
     pub fn set_analysis_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_report_id = input;
-        self
+        self.analysis_report_id = input; self
     }
     /// <p>The unique identifier of the analysis report for deletion.</p>
     pub fn get_analysis_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_report_id
     }
     /// Consumes the builder and constructs a [`DeletePerformanceAnalysisReportInput`](crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                analysis_report_id: self.analysis_report_id,
-            },
+                service_type: self.service_type
+                ,
+                identifier: self.identifier
+                ,
+                analysis_report_id: self.analysis_report_id
+                ,
+            }
         )
     }
 }
+

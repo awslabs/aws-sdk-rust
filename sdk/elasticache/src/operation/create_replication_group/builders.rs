@@ -5,23 +5,20 @@ pub use crate::operation::create_replication_group::_create_replication_group_in
 
 impl CreateReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_replication_group::CreateReplicationGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_replication_group();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_replication_group::CreateReplicationGroupOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_replication_group::CreateReplicationGroupError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_replication_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateReplicationGroup`.
-///
+/// 
 /// <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group.</p>
 /// <p>This API can be used to create a standalone regional replication group or a secondary replication group associated with a Global datastore.</p>
 /// <p>A Redis (cluster mode disabled) replication group is a collection of nodes, where one of the nodes is a read/write primary and the others are read-only replicas. Writes to the primary are asynchronously propagated to the replicas.</p>
@@ -34,33 +31,32 @@ impl CreateReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_replication_group::builders::CreateReplicationGroupInputBuilder,
+                    inner: crate::operation::create_replication_group::builders::CreateReplicationGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        crate::operation::create_replication_group::CreateReplicationGroupError,
-    > for CreateReplicationGroupFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_replication_group::CreateReplicationGroupOutput,
-            crate::operation::create_replication_group::CreateReplicationGroupError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_replication_group::CreateReplicationGroupOutput,
+                    crate::operation::create_replication_group::CreateReplicationGroupError,
+                > for CreateReplicationGroupFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_replication_group::CreateReplicationGroupOutput,
+                        crate::operation::create_replication_group::CreateReplicationGroupError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateReplicationGroupFluentBuilder {
     /// Creates a new `CreateReplicationGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl CreateReplicationGroupFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_replication_group::CreateReplicationGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_replication_group::CreateReplicationGroup::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_replication_group::CreateReplicationGroup::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_replication_group::CreateReplicationGroupOutput,
-        crate::operation::create_replication_group::CreateReplicationGroupError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_replication_group::CreateReplicationGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_replication_group::CreateReplicationGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_replication_group::CreateReplicationGroup::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_replication_group::CreateReplicationGroup::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_replication_group::CreateReplicationGroupOutput, crate::operation::create_replication_group::CreateReplicationGroupError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -279,7 +266,7 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn set_preferred_cache_cluster_azs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_preferred_cache_cluster_azs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_preferred_cache_cluster_azs(input);
         self
     }
@@ -289,7 +276,7 @@ impl CreateReplicationGroupFluentBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn get_preferred_cache_cluster_azs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_cache_cluster_azs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_preferred_cache_cluster_azs()
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
@@ -335,13 +322,13 @@ impl CreateReplicationGroupFluentBuilder {
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn set_node_group_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>) -> Self {
+    pub fn set_node_group_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupConfiguration>>) -> Self {
         self.inner = self.inner.set_node_group_configuration(input);
         self
     }
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    pub fn get_node_group_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>> {
+    pub fn get_node_group_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupConfiguration>> {
         self.inner.get_node_group_configuration()
     }
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -625,12 +612,12 @@ impl CreateReplicationGroupFluentBuilder {
         self
     }
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_security_group_names(input);
         self
     }
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
     /// Appends an item to `SecurityGroupIds`.
@@ -645,13 +632,13 @@ impl CreateReplicationGroupFluentBuilder {
     }
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -664,12 +651,12 @@ impl CreateReplicationGroupFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Appends an item to `SnapshotArns`.
@@ -684,13 +671,13 @@ impl CreateReplicationGroupFluentBuilder {
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_snapshot_arns()
     }
     /// <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
@@ -992,12 +979,12 @@ impl CreateReplicationGroupFluentBuilder {
         self
     }
     /// <p>The user group to associate with the replication group.</p>
-    pub fn set_user_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_user_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_group_ids(input);
         self
     }
     /// <p>The user group to associate with the replication group.</p>
-    pub fn get_user_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_user_group_ids()
     }
     /// Appends an item to `LogDeliveryConfigurations`.
@@ -1010,15 +997,12 @@ impl CreateReplicationGroupFluentBuilder {
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn set_log_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_log_delivery_configurations(input);
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>> {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>> {
         self.inner.get_log_delivery_configurations()
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
@@ -1115,3 +1099,4 @@ impl CreateReplicationGroupFluentBuilder {
         self.inner.get_serverless_cache_snapshot_name()
     }
 }
+

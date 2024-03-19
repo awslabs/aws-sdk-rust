@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopySnapshotOutput {
+pub struct CopySnapshotOutput  {
     /// <p>The ID of the new snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags applied to the new snapshot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl CopySnapshotOutput {
+impl  CopySnapshotOutput  {
     /// <p>The ID of the new snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Any tags applied to the new snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CopySnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CopySnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput).
     pub fn builder() -> crate::operation::copy_snapshot::builders::CopySnapshotOutputBuilder {
@@ -38,7 +39,7 @@ impl CopySnapshotOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopySnapshotOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CopySnapshotOutputBuilder {
@@ -49,8 +50,7 @@ impl CopySnapshotOutputBuilder {
     }
     /// <p>The ID of the new snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the new snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl CopySnapshotOutputBuilder {
     /// <p>Any tags applied to the new snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags applied to the new snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags applied to the new snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput).
     pub fn build(self) -> crate::operation::copy_snapshot::CopySnapshotOutput {
         crate::operation::copy_snapshot::CopySnapshotOutput {
-            snapshot_id: self.snapshot_id,
-            tags: self.tags,
+            snapshot_id: self.snapshot_id
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

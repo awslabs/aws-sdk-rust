@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMembershipOutput {
+pub struct CreateMembershipOutput  {
     /// <p>The membership that was created.</p>
     pub membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
 }
-impl CreateMembershipOutput {
+impl  CreateMembershipOutput  {
     /// <p>The membership that was created.</p>
-    pub fn membership(&self) -> ::std::option::Option<&crate::types::Membership> {
+    pub fn membership(&self) -> ::std::option::Option<& crate::types::Membership> {
         self.membership.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput).
     pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateMembershipOutputBuilder {
     }
     /// <p>The membership that was created.</p>
     pub fn set_membership(mut self, input: ::std::option::Option<crate::types::Membership>) -> Self {
-        self.membership = input;
-        self
+        self.membership = input; self
     }
     /// <p>The membership that was created.</p>
     pub fn get_membership(&self) -> &::std::option::Option<crate::types::Membership> {
         &self.membership
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput).
     pub fn build(self) -> crate::operation::create_membership::CreateMembershipOutput {
         crate::operation::create_membership::CreateMembershipOutput {
-            membership: self.membership,
+            membership: self.membership
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

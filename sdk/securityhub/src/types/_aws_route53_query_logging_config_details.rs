@@ -3,13 +3,13 @@
 /// <p>Provides details about a specified Amazon Route&nbsp;53 configuration for DNS query logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRoute53QueryLoggingConfigDetails {
+pub struct AwsRoute53QueryLoggingConfigDetails  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<crate::types::CloudWatchLogsLogGroupArnConfigDetails>,
 }
-impl AwsRoute53QueryLoggingConfigDetails {
+impl  AwsRoute53QueryLoggingConfigDetails  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsLogGroupArnConfigDetails> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& crate::types::CloudWatchLogsLogGroupArnConfigDetails> {
         self.cloud_watch_logs_log_group_arn.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsRoute53QueryLoggingConfigDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsLogGroupArnConfigDetails>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<crate::types::CloudWatchLogsLogGroupArnConfigDetails> {
@@ -44,7 +43,9 @@ impl AwsRoute53QueryLoggingConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRoute53QueryLoggingConfigDetails`](crate::types::AwsRoute53QueryLoggingConfigDetails).
     pub fn build(self) -> crate::types::AwsRoute53QueryLoggingConfigDetails {
         crate::types::AwsRoute53QueryLoggingConfigDetails {
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
         }
     }
 }
+

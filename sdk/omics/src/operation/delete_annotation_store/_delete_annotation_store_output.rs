@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnnotationStoreOutput {
+pub struct DeleteAnnotationStoreOutput  {
     /// <p>The store's status.</p>
     pub status: crate::types::StoreStatus,
     _request_id: Option<String>,
 }
-impl DeleteAnnotationStoreOutput {
+impl  DeleteAnnotationStoreOutput  {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> &crate::types::StoreStatus {
+    pub fn status(&self) -> & crate::types::StoreStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAnnotationStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
     pub fn builder() -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder {
@@ -41,37 +41,35 @@ impl DeleteAnnotationStoreOutputBuilder {
     }
     /// <p>The store's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The store's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DeleteAnnotationStoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DeleteAnnotationStoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

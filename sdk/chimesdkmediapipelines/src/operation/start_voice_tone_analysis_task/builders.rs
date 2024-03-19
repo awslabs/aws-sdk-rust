@@ -5,56 +5,52 @@ pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_anal
 
 impl StartVoiceToneAnalysisTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_voice_tone_analysis_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_voice_tone_analysis_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartVoiceToneAnalysisTask`.
-///
+/// 
 /// <p>Starts a voice tone analysis task. For more information about voice tone analysis, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/voice-analytics.html">Using Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p><important>
 /// <p>Before starting any voice tone analysis tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartVoiceToneAnalysisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder,
+                    inner: crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-    > for StartVoiceToneAnalysisTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
+                    crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
+                > for StartVoiceToneAnalysisTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
+                        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartVoiceToneAnalysisTaskFluentBuilder {
     /// Creates a new `StartVoiceToneAnalysisTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput, crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -144,17 +131,12 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self
     }
     /// <p>The task configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn set_kinesis_video_stream_source_task_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration>,
-    ) -> Self {
+    pub fn set_kinesis_video_stream_source_task_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration>) -> Self {
         self.inner = self.inner.set_kinesis_video_stream_source_task_configuration(input);
         self
     }
     /// <p>The task configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    pub fn get_kinesis_video_stream_source_task_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration> {
+    pub fn get_kinesis_video_stream_source_task_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceTaskConfiguration> {
         self.inner.get_kinesis_video_stream_source_task_configuration()
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
@@ -172,3 +154,4 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

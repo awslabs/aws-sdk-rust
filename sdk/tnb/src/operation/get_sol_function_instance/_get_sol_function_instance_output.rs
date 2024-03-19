@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSolFunctionInstanceOutput {
+pub struct GetSolFunctionInstanceOutput  {
     /// <p>Network function instance ID.</p>
     pub id: ::std::string::String,
     /// <p>Network function instance ARN.</p>
@@ -28,67 +28,62 @@ pub struct GetSolFunctionInstanceOutput {
     /// <p>A network function instance is a function in a function package .</p>
     pub metadata: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetSolFunctionInstanceOutput {
+impl  GetSolFunctionInstanceOutput  {
     /// <p>Network function instance ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Network function instance ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ns_instance_id.deref()
+    pub fn ns_instance_id(&self) -> & str {
+        use std::ops::Deref; self.ns_instance_id.deref()
     }
     /// <p>Function package ID.</p>
-    pub fn vnf_pkg_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vnf_pkg_id.deref()
+    pub fn vnf_pkg_id(&self) -> & str {
+        use std::ops::Deref; self.vnf_pkg_id.deref()
     }
     /// <p>Function package descriptor ID.</p>
-    pub fn vnfd_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vnfd_id.deref()
+    pub fn vnfd_id(&self) -> & str {
+        use std::ops::Deref; self.vnfd_id.deref()
     }
     /// <p>Network function provider.</p>
-    pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_provider(&self) -> ::std::option::Option<& str> {
         self.vnf_provider.as_deref()
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_product_name(&self) -> ::std::option::Option<& str> {
         self.vnf_product_name.as_deref()
     }
     /// <p>Function package descriptor version.</p>
-    pub fn vnfd_version(&self) -> ::std::option::Option<&str> {
+    pub fn vnfd_version(&self) -> ::std::option::Option<& str> {
         self.vnfd_version.as_deref()
     }
     /// <p>Network function instantiation state.</p>
-    pub fn instantiation_state(&self) -> &crate::types::VnfInstantiationState {
+    pub fn instantiation_state(&self) -> & crate::types::VnfInstantiationState {
         &self.instantiation_state
     }
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn instantiated_vnf_info(&self) -> ::std::option::Option<&crate::types::GetSolVnfInfo> {
+    pub fn instantiated_vnf_info(&self) -> ::std::option::Option<& crate::types::GetSolVnfInfo> {
         self.instantiated_vnf_info.as_ref()
     }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::GetSolFunctionInstanceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::GetSolFunctionInstanceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetSolFunctionInstanceOutput {
+impl  ::std::fmt::Debug for GetSolFunctionInstanceOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolFunctionInstanceOutput");
         formatter.field("id", &self.id);
@@ -108,10 +103,10 @@ impl ::std::fmt::Debug for GetSolFunctionInstanceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSolFunctionInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSolFunctionInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput).
     pub fn builder() -> crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder {
@@ -134,7 +129,7 @@ pub struct GetSolFunctionInstanceOutputBuilder {
     pub(crate) instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
     pub(crate) instantiated_vnf_info: ::std::option::Option<crate::types::GetSolVnfInfo>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionInstanceOutputBuilder {
@@ -146,8 +141,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network function instance ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Network function instance ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +155,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network function instance ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Network function instance ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +169,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network instance ID.</p>
     pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// <p>Network instance ID.</p>
     pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +183,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Function package ID.</p>
     pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_pkg_id = input;
-        self
+        self.vnf_pkg_id = input; self
     }
     /// <p>Function package ID.</p>
     pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +197,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Function package descriptor ID.</p>
     pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_id = input;
-        self
+        self.vnfd_id = input; self
     }
     /// <p>Function package descriptor ID.</p>
     pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +210,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network function provider.</p>
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_provider = input;
-        self
+        self.vnf_provider = input; self
     }
     /// <p>Network function provider.</p>
     pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +223,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network function product name.</p>
     pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_product_name = input;
-        self
+        self.vnf_product_name = input; self
     }
     /// <p>Network function product name.</p>
     pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +236,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Function package descriptor version.</p>
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_version = input;
-        self
+        self.vnfd_version = input; self
     }
     /// <p>Function package descriptor version.</p>
     pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +250,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>Network function instantiation state.</p>
     pub fn set_instantiation_state(mut self, input: ::std::option::Option<crate::types::VnfInstantiationState>) -> Self {
-        self.instantiation_state = input;
-        self
+        self.instantiation_state = input; self
     }
     /// <p>Network function instantiation state.</p>
     pub fn get_instantiation_state(&self) -> &::std::option::Option<crate::types::VnfInstantiationState> {
@@ -279,8 +265,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
     pub fn set_instantiated_vnf_info(mut self, input: ::std::option::Option<crate::types::GetSolVnfInfo>) -> Self {
-        self.instantiated_vnf_info = input;
-        self
+        self.instantiated_vnf_info = input; self
     }
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
@@ -297,8 +282,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolFunctionInstanceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
@@ -312,28 +296,27 @@ impl GetSolFunctionInstanceOutputBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::id)
@@ -342,57 +325,54 @@ impl GetSolFunctionInstanceOutputBuilder {
     /// - [`vnf_pkg_id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::vnf_pkg_id)
     /// - [`vnfd_id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::vnfd_id)
     /// - [`instantiation_state`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::instantiation_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            ns_instance_id: self.ns_instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ns_instance_id",
-                    "ns_instance_id was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            vnf_pkg_id: self.vnf_pkg_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnf_pkg_id",
-                    "vnf_pkg_id was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            vnfd_id: self.vnfd_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vnfd_id",
-                    "vnfd_id was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            vnf_provider: self.vnf_provider,
-            vnf_product_name: self.vnf_product_name,
-            vnfd_version: self.vnfd_version,
-            instantiation_state: self.instantiation_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instantiation_state",
-                    "instantiation_state was not specified but it is required when building GetSolFunctionInstanceOutput",
-                )
-            })?,
-            instantiated_vnf_info: self.instantiated_vnf_info,
-            metadata: self.metadata,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                ns_instance_id: self.ns_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ns_instance_id", "ns_instance_id was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                vnf_pkg_id: self.vnf_pkg_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_pkg_id", "vnf_pkg_id was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                vnfd_id: self.vnfd_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vnfd_id", "vnfd_id was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                vnf_provider: self.vnf_provider
+                ,
+                vnf_product_name: self.vnf_product_name
+                ,
+                vnfd_version: self.vnfd_version
+                ,
+                instantiation_state: self.instantiation_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instantiation_state", "instantiation_state was not specified but it is required when building GetSolFunctionInstanceOutput")
+                    )?
+                ,
+                instantiated_vnf_info: self.instantiated_vnf_info
+                ,
+                metadata: self.metadata
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetSolFunctionInstanceOutputBuilder {
@@ -414,3 +394,4 @@ impl ::std::fmt::Debug for GetSolFunctionInstanceOutputBuilder {
         formatter.finish()
     }
 }
+

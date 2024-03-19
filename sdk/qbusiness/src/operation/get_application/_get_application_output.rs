@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The name of the Amazon Q application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q application.</p>
@@ -27,57 +27,57 @@ pub struct GetApplicationOutput {
     pub attachments_configuration: ::std::option::Option<crate::types::AppliedAttachmentsConfiguration>,
     _request_id: Option<String>,
 }
-impl GetApplicationOutput {
+impl  GetApplicationOutput  {
     /// <p>The name of the Amazon Q application.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The identifier of the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the Amazon Q application.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>A description for the Amazon Q application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>Settings for whether end users can upload files directly during chat.</p>
-    pub fn attachments_configuration(&self) -> ::std::option::Option<&crate::types::AppliedAttachmentsConfiguration> {
+    pub fn attachments_configuration(&self) -> ::std::option::Option<& crate::types::AppliedAttachmentsConfiguration> {
         self.attachments_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn builder() -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -110,8 +110,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The name of the Amazon Q application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the Amazon Q application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +162,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The status of the Amazon Q application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Amazon Q application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -180,8 +175,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +188,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -208,8 +201,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,8 +214,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +227,7 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -250,37 +240,48 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>Settings for whether end users can upload files directly during chat.</p>
     pub fn set_attachments_configuration(mut self, input: ::std::option::Option<crate::types::AppliedAttachmentsConfiguration>) -> Self {
-        self.attachments_configuration = input;
-        self
+        self.attachments_configuration = input; self
     }
     /// <p>Settings for whether end users can upload files directly during chat.</p>
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AppliedAttachmentsConfiguration> {
         &self.attachments_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn build(self) -> crate::operation::get_application::GetApplicationOutput {
         crate::operation::get_application::GetApplicationOutput {
-            display_name: self.display_name,
-            application_id: self.application_id,
-            application_arn: self.application_arn,
-            role_arn: self.role_arn,
-            status: self.status,
-            description: self.description,
-            encryption_configuration: self.encryption_configuration,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            error: self.error,
-            attachments_configuration: self.attachments_configuration,
+            display_name: self.display_name
+            ,
+            application_id: self.application_id
+            ,
+            application_arn: self.application_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            encryption_configuration: self.encryption_configuration
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            error: self.error
+            ,
+            attachments_configuration: self.attachments_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

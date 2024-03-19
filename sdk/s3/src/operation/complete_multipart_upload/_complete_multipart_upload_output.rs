@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CompleteMultipartUploadOutput {
+pub struct CompleteMultipartUploadOutput  {
     /// <p>The URI that identifies the newly created object.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p><note>
@@ -48,63 +48,63 @@ pub struct CompleteMultipartUploadOutput {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl CompleteMultipartUploadOutput {
+impl  CompleteMultipartUploadOutput  {
     /// <p>The URI that identifies the newly created object.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p><note>
     /// <p>Access points are not supported by directory buckets.</p>
     /// </note>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The object key of the newly created object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn expiration(&self) -> ::std::option::Option<&str> {
+    pub fn expiration(&self) -> ::std::option::Option<& str> {
         self.expiration.as_deref()
     }
     /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_crc32(&self) -> ::std::option::Option<& str> {
         self.checksum_crc32.as_deref()
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32_c(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_crc32_c(&self) -> ::std::option::Option<& str> {
         self.checksum_crc32_c.as_deref()
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha1(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_sha1(&self) -> ::std::option::Option<& str> {
         self.checksum_sha1.as_deref()
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_sha256(&self) -> ::std::option::Option<& str> {
         self.checksum_sha256.as_deref()
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
-    pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<& crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>If present, indicates the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssekms_key_id(&self) -> ::std::option::Option<& str> {
         self.ssekms_key_id.as_deref()
     }
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p><note>
@@ -116,11 +116,11 @@ impl CompleteMultipartUploadOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> ::std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
-impl ::std::fmt::Debug for CompleteMultipartUploadOutput {
+impl  ::std::fmt::Debug for CompleteMultipartUploadOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteMultipartUploadOutput");
         formatter.field("location", &self.location);
@@ -143,15 +143,15 @@ impl ::std::fmt::Debug for CompleteMultipartUploadOutput {
     }
 }
 impl crate::s3_request_id::RequestIdExt for CompleteMultipartUploadOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for CompleteMultipartUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CompleteMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
     pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder {
@@ -188,8 +188,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The URI that identifies the newly created object.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The URI that identifies the newly created object.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +205,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>Access points are not supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p><note>
     /// <p>Access points are not supported by directory buckets.</p>
@@ -222,8 +220,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The object key of the newly created object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The object key of the newly created object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +237,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -256,8 +252,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +265,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_crc32 = input;
-        self
+        self.checksum_crc32 = input; self
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +278,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32_c(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_crc32_c = input;
-        self
+        self.checksum_crc32_c = input; self
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
@@ -298,8 +291,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_sha1 = input;
-        self
+        self.checksum_sha1 = input; self
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,8 +304,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_sha256 = input;
-        self
+        self.checksum_sha256 = input; self
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +321,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.server_side_encryption = input;
-        self
+        self.server_side_encryption = input; self
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
@@ -350,8 +340,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -370,8 +359,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssekms_key_id = input;
-        self
+        self.ssekms_key_id = input; self
     }
     /// <p>If present, indicates the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -390,8 +378,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bucket_key_enabled = input;
-        self
+        self.bucket_key_enabled = input; self
     }
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -410,8 +397,7 @@ impl CompleteMultipartUploadOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
-        self.request_charged = input;
-        self
+        self.request_charged = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -420,40 +406,54 @@ impl CompleteMultipartUploadOutputBuilder {
         &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
     pub fn build(self) -> crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
         crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
-            location: self.location,
-            bucket: self.bucket,
-            key: self.key,
-            expiration: self.expiration,
-            e_tag: self.e_tag,
-            checksum_crc32: self.checksum_crc32,
-            checksum_crc32_c: self.checksum_crc32_c,
-            checksum_sha1: self.checksum_sha1,
-            checksum_sha256: self.checksum_sha256,
-            server_side_encryption: self.server_side_encryption,
-            version_id: self.version_id,
-            ssekms_key_id: self.ssekms_key_id,
-            bucket_key_enabled: self.bucket_key_enabled,
-            request_charged: self.request_charged,
+            location: self.location
+            ,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            expiration: self.expiration
+            ,
+            e_tag: self.e_tag
+            ,
+            checksum_crc32: self.checksum_crc32
+            ,
+            checksum_crc32_c: self.checksum_crc32_c
+            ,
+            checksum_sha1: self.checksum_sha1
+            ,
+            checksum_sha256: self.checksum_sha256
+            ,
+            server_side_encryption: self.server_side_encryption
+            ,
+            version_id: self.version_id
+            ,
+            ssekms_key_id: self.ssekms_key_id
+            ,
+            bucket_key_enabled: self.bucket_key_enabled
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -481,3 +481,4 @@ impl ::std::fmt::Debug for CompleteMultipartUploadOutputBuilder {
         formatter.finish()
     }
 }
+

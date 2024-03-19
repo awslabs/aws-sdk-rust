@@ -3,7 +3,7 @@
 /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskManagedEbsVolumeConfiguration {
+pub struct TaskManagedEbsVolumeConfiguration  {
     /// <p>Indicates whether the volume should be encrypted. If no value is specified, encryption is turned on by default. This parameter maps 1:1 with the <code>Encrypted</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption. When encryption is turned on and no Amazon Web Services Key Management Service key is specified, the default Amazon Web Services managed key for Amazon EBS volumes is used. This parameter maps 1:1 with the <code>KmsKeyId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p><important>
@@ -60,7 +60,7 @@ pub struct TaskManagedEbsVolumeConfiguration {
     /// </important>
     pub throughput: ::std::option::Option<i32>,
     /// <p>The tags to apply to the volume. Amazon ECS applies service-managed tags by default. This parameter maps 1:1 with the <code>TagSpecifications.N</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::EbsTagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::EbsTagSpecification>>,
     /// <p>The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your Amazon Web Services infrastructure. We recommend using the Amazon ECS-managed <code>AmazonECSInfrastructureRolePolicyForVolumes</code> IAM policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub role_arn: ::std::string::String,
     /// <p>The termination policy for the volume when the task exits. This provides a way to control whether Amazon ECS terminates the Amazon EBS volume when the task stops.</p>
@@ -69,7 +69,7 @@ pub struct TaskManagedEbsVolumeConfiguration {
     /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub filesystem_type: ::std::option::Option<crate::types::TaskFilesystemType>,
 }
-impl TaskManagedEbsVolumeConfiguration {
+impl  TaskManagedEbsVolumeConfiguration  {
     /// <p>Indicates whether the volume should be encrypted. If no value is specified, encryption is turned on by default. This parameter maps 1:1 with the <code>Encrypted</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
@@ -77,7 +77,7 @@ impl TaskManagedEbsVolumeConfiguration {
     /// <p>The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption. When encryption is turned on and no Amazon Web Services Key Management Service key is specified, the default Amazon Web Services managed key for Amazon EBS volumes is used. This parameter maps 1:1 with the <code>KmsKeyId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p><important>
     /// <p>Amazon Web Services authenticates the Amazon Web Services Key Management Service key asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid, the action can appear to complete, but eventually fails.</p>
     /// </important>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The volume type. This parameter maps 1:1 with the <code>VolumeType</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -96,7 +96,7 @@ impl TaskManagedEbsVolumeConfiguration {
     /// <p>The magnetic volume type is not supported on Fargate.</p>
     /// </note></li>
     /// </ul>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>The size of the volume in GiB. You must specify either a volume size or a snapshot ID. If you specify a snapshot ID, the snapshot size is used for the volume size by default. You can optionally specify a volume size greater than or equal to the snapshot size. This parameter maps 1:1 with the <code>Size</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -115,7 +115,7 @@ impl TaskManagedEbsVolumeConfiguration {
         self.size_in_gib
     }
     /// <p>The snapshot that Amazon ECS uses to create the volume. You must specify either a snapshot ID or a volume size. This parameter maps 1:1 with the <code>SnapshotId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
@@ -140,23 +140,23 @@ impl TaskManagedEbsVolumeConfiguration {
         self.throughput
     }
     /// <p>The tags to apply to the volume. Amazon ECS applies service-managed tags by default. This parameter maps 1:1 with the <code>TagSpecifications.N</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::EbsTagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::EbsTagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your Amazon Web Services infrastructure. We recommend using the Amazon ECS-managed <code>AmazonECSInfrastructureRolePolicyForVolumes</code> IAM policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The termination policy for the volume when the task exits. This provides a way to control whether Amazon ECS terminates the Amazon EBS volume when the task stops.</p>
-    pub fn termination_policy(&self) -> ::std::option::Option<&crate::types::TaskManagedEbsVolumeTerminationPolicy> {
+    pub fn termination_policy(&self) -> ::std::option::Option<& crate::types::TaskManagedEbsVolumeTerminationPolicy> {
         self.termination_policy.as_ref()
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
     /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
-    pub fn filesystem_type(&self) -> ::std::option::Option<&crate::types::TaskFilesystemType> {
+    pub fn filesystem_type(&self) -> ::std::option::Option<& crate::types::TaskFilesystemType> {
         self.filesystem_type.as_ref()
     }
 }
@@ -178,7 +178,7 @@ pub struct TaskManagedEbsVolumeConfigurationBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) throughput: ::std::option::Option<i32>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::EbsTagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::EbsTagSpecification>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) termination_policy: ::std::option::Option<crate::types::TaskManagedEbsVolumeTerminationPolicy>,
     pub(crate) filesystem_type: ::std::option::Option<crate::types::TaskFilesystemType>,
@@ -191,8 +191,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     }
     /// <p>Indicates whether the volume should be encrypted. If no value is specified, encryption is turned on by default. This parameter maps 1:1 with the <code>Encrypted</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the volume should be encrypted. If no value is specified, encryption is turned on by default. This parameter maps 1:1 with the <code>Encrypted</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -209,8 +208,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p>Amazon Web Services authenticates the Amazon Web Services Key Management Service key asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid, the action can appear to complete, but eventually fails.</p>
     /// </important>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) identifier of the Amazon Web Services Key Management Service key to use for Amazon EBS encryption. When encryption is turned on and no Amazon Web Services Key Management Service key is specified, the default Amazon Web Services managed key for Amazon EBS volumes is used. This parameter maps 1:1 with the <code>KmsKeyId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p><important>
     /// <p>Amazon Web Services authenticates the Amazon Web Services Key Management Service key asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid, the action can appear to complete, but eventually fails.</p>
@@ -255,8 +253,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type. This parameter maps 1:1 with the <code>VolumeType</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>The following are the supported volume types.</p>
@@ -306,8 +303,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p><code>standard</code>: 1-1,024</p></li>
     /// </ul>
     pub fn set_size_in_gib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_gib = input;
-        self
+        self.size_in_gib = input; self
     }
     /// <p>The size of the volume in GiB. You must specify either a volume size or a snapshot ID. If you specify a snapshot ID, the snapshot size is used for the volume size by default. You can optionally specify a volume size greater than or equal to the snapshot size. This parameter maps 1:1 with the <code>Size</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// <p>The following are the supported volume size values for each volume type.</p>
@@ -331,8 +327,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     }
     /// <p>The snapshot that Amazon ECS uses to create the volume. You must specify either a snapshot ID or a volume size. This parameter maps 1:1 with the <code>SnapshotId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The snapshot that Amazon ECS uses to create the volume. You must specify either a snapshot ID or a volume size. This parameter maps 1:1 with the <code>SnapshotId</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +362,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volume types. The default for <code>gp3</code> volumes is <code>3,000 IOPS</code>. This parameter is not supported for <code>st1</code>, <code>sc1</code>, or <code>standard</code> volume types.</p>
     /// <p>This parameter maps 1:1 with the <code>Iops</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type.</p>
@@ -396,8 +390,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p>This parameter is only supported for the <code>gp3</code> volume type.</p>
     /// </important>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s. This parameter maps 1:1 with the <code>Throughput</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p><important>
     /// <p>This parameter is only supported for the <code>gp3</code> volume type.</p>
@@ -412,17 +405,16 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p>The tags to apply to the volume. Amazon ECS applies service-managed tags by default. This parameter maps 1:1 with the <code>TagSpecifications.N</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn tag_specifications(mut self, input: crate::types::EbsTagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the volume. Amazon ECS applies service-managed tags by default. This parameter maps 1:1 with the <code>TagSpecifications.N</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsTagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EbsTagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the volume. Amazon ECS applies service-managed tags by default. This parameter maps 1:1 with the <code>TagSpecifications.N</code> parameter of the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume API</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsTagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EbsTagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your Amazon Web Services infrastructure. We recommend using the Amazon ECS-managed <code>AmazonECSInfrastructureRolePolicyForVolumes</code> IAM policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -433,8 +425,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     }
     /// <p>The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your Amazon Web Services infrastructure. We recommend using the Amazon ECS-managed <code>AmazonECSInfrastructureRolePolicyForVolumes</code> IAM policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your Amazon Web Services infrastructure. We recommend using the Amazon ECS-managed <code>AmazonECSInfrastructureRolePolicyForVolumes</code> IAM policy with this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -447,8 +438,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     }
     /// <p>The termination policy for the volume when the task exits. This provides a way to control whether Amazon ECS terminates the Amazon EBS volume when the task stops.</p>
     pub fn set_termination_policy(mut self, input: ::std::option::Option<crate::types::TaskManagedEbsVolumeTerminationPolicy>) -> Self {
-        self.termination_policy = input;
-        self
+        self.termination_policy = input; self
     }
     /// <p>The termination policy for the volume when the task exits. This provides a way to control whether Amazon ECS terminates the Amazon EBS volume when the task stops.</p>
     pub fn get_termination_policy(&self) -> &::std::option::Option<crate::types::TaskManagedEbsVolumeTerminationPolicy> {
@@ -463,8 +453,7 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
     /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub fn set_filesystem_type(mut self, input: ::std::option::Option<crate::types::TaskFilesystemType>) -> Self {
-        self.filesystem_type = input;
-        self
+        self.filesystem_type = input; self
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
     /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
@@ -475,23 +464,35 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::TaskManagedEbsVolumeConfigurationBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskManagedEbsVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskManagedEbsVolumeConfiguration {
-            encrypted: self.encrypted,
-            kms_key_id: self.kms_key_id,
-            volume_type: self.volume_type,
-            size_in_gib: self.size_in_gib,
-            snapshot_id: self.snapshot_id,
-            iops: self.iops,
-            throughput: self.throughput,
-            tag_specifications: self.tag_specifications,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building TaskManagedEbsVolumeConfiguration",
-                )
-            })?,
-            termination_policy: self.termination_policy,
-            filesystem_type: self.filesystem_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskManagedEbsVolumeConfiguration {
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                volume_type: self.volume_type
+                ,
+                size_in_gib: self.size_in_gib
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                iops: self.iops
+                ,
+                throughput: self.throughput
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building TaskManagedEbsVolumeConfiguration")
+                    )?
+                ,
+                termination_policy: self.termination_policy
+                ,
+                filesystem_type: self.filesystem_type
+                ,
+            }
+        )
     }
 }
+

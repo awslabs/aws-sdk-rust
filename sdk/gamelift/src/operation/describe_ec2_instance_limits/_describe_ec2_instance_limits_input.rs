@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEc2InstanceLimitsInput {
+pub struct DescribeEc2InstanceLimitsInput  {
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEc2InstanceLimitsInput {
+impl  DescribeEc2InstanceLimitsInput  {
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
-    pub fn ec2_instance_type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
+    pub fn ec2_instance_type(&self) -> ::std::option::Option<& crate::types::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribeEc2InstanceLimitsInputBuilder {
     }
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
-        self.ec2_instance_type = input;
-        self
+        self.ec2_instance_type = input; self
     }
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
@@ -54,23 +53,22 @@ impl DescribeEc2InstanceLimitsInputBuilder {
     }
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`DescribeEc2InstanceLimitsInput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput {
-            ec2_instance_type: self.ec2_instance_type,
-            location: self.location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput {
+                ec2_instance_type: self.ec2_instance_type
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

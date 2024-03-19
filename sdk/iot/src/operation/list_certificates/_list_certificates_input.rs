@@ -3,7 +3,7 @@
 /// <p>The input for the ListCertificates operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificatesInput {
+pub struct ListCertificatesInput  {
     /// <p>The result page size.</p>
     pub page_size: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
@@ -11,13 +11,13 @@ pub struct ListCertificatesInput {
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: ::std::option::Option<bool>,
 }
-impl ListCertificatesInput {
+impl  ListCertificatesInput  {
     /// <p>The result page size.</p>
     pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
@@ -48,8 +48,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
         &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
-            page_size: self.page_size,
-            marker: self.marker,
-            ascending_order: self.ascending_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_certificates::ListCertificatesInput {
+                page_size: self.page_size
+                ,
+                marker: self.marker
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

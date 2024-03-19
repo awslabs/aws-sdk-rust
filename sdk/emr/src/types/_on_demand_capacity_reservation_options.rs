@@ -3,7 +3,7 @@
 /// <p>Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnDemandCapacityReservationOptions {
+pub struct OnDemandCapacityReservationOptions  {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
@@ -19,11 +19,11 @@ pub struct OnDemandCapacityReservationOptions {
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
     pub capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl OnDemandCapacityReservationOptions {
+impl  OnDemandCapacityReservationOptions  {
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
-    pub fn usage_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationUsageStrategy> {
+    pub fn usage_strategy(&self) -> ::std::option::Option<& crate::types::OnDemandCapacityReservationUsageStrategy> {
         self.usage_strategy.as_ref()
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -33,11 +33,11 @@ impl OnDemandCapacityReservationOptions {
     /// <li>
     /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
-    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationPreference> {
+    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<& crate::types::OnDemandCapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    pub fn capacity_reservation_resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_resource_group_arn.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl OnDemandCapacityReservationOptionsBuilder {
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
     /// <p>If you do not specify a value, the fleet fulfills the On-Demand capacity according to the chosen On-Demand allocation strategy.</p>
     pub fn set_usage_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandCapacityReservationUsageStrategy>) -> Self {
-        self.usage_strategy = input;
-        self
+        self.usage_strategy = input; self
     }
     /// <p>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</p>
@@ -96,8 +95,7 @@ impl OnDemandCapacityReservationOptionsBuilder {
     /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<crate::types::OnDemandCapacityReservationPreference>) -> Self {
-        self.capacity_reservation_preference = input;
-        self
+        self.capacity_reservation_preference = input; self
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
@@ -116,8 +114,7 @@ impl OnDemandCapacityReservationOptionsBuilder {
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
     pub fn set_capacity_reservation_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_resource_group_arn = input;
-        self
+        self.capacity_reservation_resource_group_arn = input; self
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
     pub fn get_capacity_reservation_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,9 +123,13 @@ impl OnDemandCapacityReservationOptionsBuilder {
     /// Consumes the builder and constructs a [`OnDemandCapacityReservationOptions`](crate::types::OnDemandCapacityReservationOptions).
     pub fn build(self) -> crate::types::OnDemandCapacityReservationOptions {
         crate::types::OnDemandCapacityReservationOptions {
-            usage_strategy: self.usage_strategy,
-            capacity_reservation_preference: self.capacity_reservation_preference,
-            capacity_reservation_resource_group_arn: self.capacity_reservation_resource_group_arn,
+            usage_strategy: self.usage_strategy
+            ,
+            capacity_reservation_preference: self.capacity_reservation_preference
+            ,
+            capacity_reservation_resource_group_arn: self.capacity_reservation_resource_group_arn
+            ,
         }
     }
 }
+

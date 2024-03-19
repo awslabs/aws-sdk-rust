@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceNetworkServiceAssociationInput {
+pub struct CreateServiceNetworkServiceAssociationInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
@@ -10,23 +10,23 @@ pub struct CreateServiceNetworkServiceAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the association.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateServiceNetworkServiceAssociationInput {
+impl  CreateServiceNetworkServiceAssociationInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> ::std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
     /// <p>The tags for the association.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateServiceNetworkServiceAssociationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateServiceNetworkServiceAssociationInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -54,8 +54,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_identifier = input;
-        self
+        self.service_network_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,33 +95,32 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
     /// <p>The tags for the association.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the association.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the association.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkServiceAssociationInput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput {
-                client_token: self.client_token,
-                service_identifier: self.service_identifier,
-                service_network_identifier: self.service_network_identifier,
-                tags: self.tags,
-            },
+                client_token: self.client_token
+                ,
+                service_identifier: self.service_identifier
+                ,
+                service_network_identifier: self.service_network_identifier
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

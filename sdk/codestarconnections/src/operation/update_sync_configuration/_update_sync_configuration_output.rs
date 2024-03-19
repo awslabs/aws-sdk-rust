@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSyncConfigurationOutput {
+pub struct UpdateSyncConfigurationOutput  {
     /// <p>The information returned for the sync configuration to be updated.</p>
     pub sync_configuration: ::std::option::Option<crate::types::SyncConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateSyncConfigurationOutput {
+impl  UpdateSyncConfigurationOutput  {
     /// <p>The information returned for the sync configuration to be updated.</p>
-    pub fn sync_configuration(&self) -> ::std::option::Option<&crate::types::SyncConfiguration> {
+    pub fn sync_configuration(&self) -> ::std::option::Option<& crate::types::SyncConfiguration> {
         self.sync_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSyncConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSyncConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSyncConfigurationOutput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationOutput).
     pub fn builder() -> crate::operation::update_sync_configuration::builders::UpdateSyncConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateSyncConfigurationOutputBuilder {
     }
     /// <p>The information returned for the sync configuration to be updated.</p>
     pub fn set_sync_configuration(mut self, input: ::std::option::Option<crate::types::SyncConfiguration>) -> Self {
-        self.sync_configuration = input;
-        self
+        self.sync_configuration = input; self
     }
     /// <p>The information returned for the sync configuration to be updated.</p>
     pub fn get_sync_configuration(&self) -> &::std::option::Option<crate::types::SyncConfiguration> {
         &self.sync_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSyncConfigurationOutput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationOutput).
     pub fn build(self) -> crate::operation::update_sync_configuration::UpdateSyncConfigurationOutput {
         crate::operation::update_sync_configuration::UpdateSyncConfigurationOutput {
-            sync_configuration: self.sync_configuration,
+            sync_configuration: self.sync_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

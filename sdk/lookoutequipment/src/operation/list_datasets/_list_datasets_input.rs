@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDatasetsInput {
+pub struct ListDatasetsInput  {
     /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of datasets to list.</p>
@@ -10,9 +10,9 @@ pub struct ListDatasetsInput {
     /// <p>The beginning of the name of the datasets to be listed.</p>
     pub dataset_name_begins_with: ::std::option::Option<::std::string::String>,
 }
-impl ListDatasetsInput {
+impl  ListDatasetsInput  {
     /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of datasets to list.</p>
@@ -20,7 +20,7 @@ impl ListDatasetsInput {
         self.max_results
     }
     /// <p>The beginning of the name of the datasets to be listed.</p>
-    pub fn dataset_name_begins_with(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name_begins_with(&self) -> ::std::option::Option<& str> {
         self.dataset_name_begins_with.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListDatasetsInputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListDatasetsInputBuilder {
     }
     /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListDatasetsInputBuilder {
     }
     /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name_begins_with = input;
-        self
+        self.dataset_name_begins_with = input; self
     }
     /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name_begins_with
     }
     /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            dataset_name_begins_with: self.dataset_name_begins_with,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_datasets::ListDatasetsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                dataset_name_begins_with: self.dataset_name_begins_with
+                ,
+            }
+        )
     }
 }
+

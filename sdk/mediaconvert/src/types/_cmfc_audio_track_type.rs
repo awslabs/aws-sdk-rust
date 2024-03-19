@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cmfcaudiotracktype = unimplemented!();
 /// match cmfcaudiotracktype {
@@ -32,16 +32,14 @@
 /// Specifically, when `cmfcaudiotracktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmfcAudioTrackType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. Choose Audio-only variant stream (AUDIO_ONLY_VARIANT_STREAM) for any variant that you want to prohibit the client from playing with video. This causes MediaConvert to represent the variant as an EXT-X-STREAM-INF in the HLS manifest. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CmfcAudioTrackType {
     #[allow(missing_docs)] // documentation missing in model
     AlternateAudioAutoSelect,
@@ -53,72 +51,68 @@ pub enum CmfcAudioTrackType {
     AudioOnlyVariantStream,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CmfcAudioTrackType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALTERNATE_AUDIO_AUTO_SELECT" => CmfcAudioTrackType::AlternateAudioAutoSelect,
-            "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT" => CmfcAudioTrackType::AlternateAudioAutoSelectDefault,
-            "ALTERNATE_AUDIO_NOT_AUTO_SELECT" => CmfcAudioTrackType::AlternateAudioNotAutoSelect,
-            "AUDIO_ONLY_VARIANT_STREAM" => CmfcAudioTrackType::AudioOnlyVariantStream,
-            other => CmfcAudioTrackType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ALTERNATE_AUDIO_AUTO_SELECT" => CmfcAudioTrackType::AlternateAudioAutoSelect,
+"ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT" => CmfcAudioTrackType::AlternateAudioAutoSelectDefault,
+"ALTERNATE_AUDIO_NOT_AUTO_SELECT" => CmfcAudioTrackType::AlternateAudioNotAutoSelect,
+"AUDIO_ONLY_VARIANT_STREAM" => CmfcAudioTrackType::AudioOnlyVariantStream,
+other => CmfcAudioTrackType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CmfcAudioTrackType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CmfcAudioTrackType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CmfcAudioTrackType::from(s))
+                    }
+                }
 impl CmfcAudioTrackType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CmfcAudioTrackType::AlternateAudioAutoSelect => "ALTERNATE_AUDIO_AUTO_SELECT",
-            CmfcAudioTrackType::AlternateAudioAutoSelectDefault => "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT",
-            CmfcAudioTrackType::AlternateAudioNotAutoSelect => "ALTERNATE_AUDIO_NOT_AUTO_SELECT",
-            CmfcAudioTrackType::AudioOnlyVariantStream => "AUDIO_ONLY_VARIANT_STREAM",
-            CmfcAudioTrackType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALTERNATE_AUDIO_AUTO_SELECT",
-            "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT",
-            "ALTERNATE_AUDIO_NOT_AUTO_SELECT",
-            "AUDIO_ONLY_VARIANT_STREAM",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CmfcAudioTrackType::AlternateAudioAutoSelect => "ALTERNATE_AUDIO_AUTO_SELECT",
+    CmfcAudioTrackType::AlternateAudioAutoSelectDefault => "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT",
+    CmfcAudioTrackType::AlternateAudioNotAutoSelect => "ALTERNATE_AUDIO_NOT_AUTO_SELECT",
+    CmfcAudioTrackType::AudioOnlyVariantStream => "AUDIO_ONLY_VARIANT_STREAM",
+    CmfcAudioTrackType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALTERNATE_AUDIO_AUTO_SELECT", "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT", "ALTERNATE_AUDIO_NOT_AUTO_SELECT", "AUDIO_ONLY_VARIANT_STREAM"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CmfcAudioTrackType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CmfcAudioTrackType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CmfcAudioTrackType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CmfcAudioTrackType::AlternateAudioAutoSelect => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT"),
-            CmfcAudioTrackType::AlternateAudioAutoSelectDefault => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"),
-            CmfcAudioTrackType::AlternateAudioNotAutoSelect => write!(f, "ALTERNATE_AUDIO_NOT_AUTO_SELECT"),
-            CmfcAudioTrackType::AudioOnlyVariantStream => write!(f, "AUDIO_ONLY_VARIANT_STREAM"),
-            CmfcAudioTrackType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CmfcAudioTrackType::AlternateAudioAutoSelect => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT"),
+CmfcAudioTrackType::AlternateAudioAutoSelectDefault => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"),
+CmfcAudioTrackType::AlternateAudioNotAutoSelect => write!(f, "ALTERNATE_AUDIO_NOT_AUTO_SELECT"),
+CmfcAudioTrackType::AudioOnlyVariantStream => write!(f, "AUDIO_ONLY_VARIANT_STREAM"),
+CmfcAudioTrackType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

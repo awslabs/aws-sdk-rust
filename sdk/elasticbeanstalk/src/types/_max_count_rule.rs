@@ -3,7 +3,7 @@
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaxCountRule {
+pub struct MaxCountRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub enabled: bool,
     /// <p>Specify the maximum number of application versions to retain.</p>
@@ -11,7 +11,7 @@ pub struct MaxCountRule {
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub delete_source_from_s3: ::std::option::Option<bool>,
 }
-impl MaxCountRule {
+impl  MaxCountRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -49,8 +49,7 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn set_delete_source_from_s3(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_source_from_s3 = input;
-        self
+        self.delete_source_from_s3 = input; self
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn get_delete_source_from_s3(&self) -> &::std::option::Option<bool> {
@@ -88,15 +85,19 @@ impl MaxCountRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::MaxCountRuleBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::MaxCountRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MaxCountRule {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building MaxCountRule",
-                )
-            })?,
-            max_count: self.max_count,
-            delete_source_from_s3: self.delete_source_from_s3,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MaxCountRule {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building MaxCountRule")
+                    )?
+                ,
+                max_count: self.max_count
+                ,
+                delete_source_from_s3: self.delete_source_from_s3
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_inpu
 
 impl ListLifecyclePoliciesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_lifecycle_policies();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_lifecycle_policies();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListLifecyclePolicies`.
-///
+/// 
 /// <p>Returns a list of OpenSearch Serverless lifecycle policies. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing data lifecycle policies</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLifecyclePoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_lifecycle_policies::builders::ListLifecyclePoliciesInputBuilder,
+                    inner: crate::operation::list_lifecycle_policies::builders::ListLifecyclePoliciesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
-    > for ListLifecyclePoliciesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
-            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
+                    crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
+                > for ListLifecyclePoliciesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
+                        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListLifecyclePoliciesFluentBuilder {
     /// Creates a new `ListLifecyclePolicies`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListLifecyclePoliciesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_lifecycle_policies::ListLifecyclePolicies::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_lifecycle_policies::ListLifecyclePolicies::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput,
-        crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_lifecycle_policies::ListLifecyclePolicies::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_lifecycle_policies::ListLifecyclePolicies::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput, crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator {
-        crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator {
+                                crate::operation::list_lifecycle_policies::paginator::ListLifecyclePoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of lifecycle policy.</p>
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -138,12 +125,12 @@ impl ListLifecyclePoliciesFluentBuilder {
         self
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resources()
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
@@ -175,3 +162,4 @@ impl ListLifecyclePoliciesFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The number of entities that are affected by one or more events. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityAggregate {
+pub struct EntityAggregate  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
@@ -11,13 +11,13 @@ pub struct EntityAggregate {
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub count: i32,
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
+    pub statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
 }
-impl EntityAggregate {
+impl  EntityAggregate  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
@@ -25,7 +25,7 @@ impl EntityAggregate {
         self.count
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn statuses(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         self.statuses.as_ref()
     }
 }
@@ -42,7 +42,7 @@ impl EntityAggregate {
 pub struct EntityAggregateBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
-    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
+    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
 }
 impl EntityAggregateBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -56,8 +56,7 @@ impl EntityAggregateBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -72,8 +71,7 @@ impl EntityAggregateBuilder {
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -86,25 +84,29 @@ impl EntityAggregateBuilder {
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
     pub fn statuses(mut self, k: crate::types::EntityStatusCode, v: i32) -> Self {
         let mut hash_map = self.statuses.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.statuses = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.statuses = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>) -> Self {
+        self.statuses = input; self
     }
     /// <p>The number of affected entities aggregated by the entity status codes.</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         &self.statuses
     }
     /// Consumes the builder and constructs a [`EntityAggregate`](crate::types::EntityAggregate).
     pub fn build(self) -> crate::types::EntityAggregate {
         crate::types::EntityAggregate {
-            event_arn: self.event_arn,
-            count: self.count.unwrap_or_default(),
-            statuses: self.statuses,
+            event_arn: self.event_arn
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            statuses: self.statuses
+            ,
         }
     }
 }
+

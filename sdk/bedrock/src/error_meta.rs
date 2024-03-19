@@ -26,7 +26,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,155 +39,99 @@ impl ::std::fmt::Display for Error {
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::ConflictException(inner) => inner.meta(),
-            Self::InternalServerException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::ServiceQuotaExceededException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
-            Self::TooManyTagsException(inner) => inner.meta(),
-            Self::ValidationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_customization_job::CreateModelCustomizationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::ConflictException(inner) => inner.meta(),
+Self::InternalServerException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::ServiceQuotaExceededException(inner) => inner.meta(),
+Self::ThrottlingException(inner) => inner.meta(),
+Self::TooManyTagsException(inner) => inner.meta(),
+Self::ValidationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_customization_job::CreateModelCustomizationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_customization_job::CreateModelCustomizationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_model_customization_job::CreateModelCustomizationJobError> for Error {
     fn from(err: crate::operation::create_model_customization_job::CreateModelCustomizationJobError) -> Self {
         match err {
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_model_customization_job::CreateModelCustomizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError> for Error {
     fn from(err: crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError) -> Self {
         match err {
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_model::DeleteCustomModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_model::DeleteCustomModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_model::DeleteCustomModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -197,37 +141,23 @@ impl From<crate::operation::delete_custom_model::DeleteCustomModelError> for Err
             crate::operation::delete_custom_model::DeleteCustomModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_custom_model::DeleteCustomModelError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_custom_model::DeleteCustomModelError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_custom_model::DeleteCustomModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_custom_model::DeleteCustomModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_custom_model::DeleteCustomModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_custom_model::DeleteCustomModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_custom_model::DeleteCustomModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -241,67 +171,42 @@ impl From<crate::operation::delete_model_invocation_logging_configuration::Delet
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError> for Error {
     fn from(err: crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError) -> Self {
         match err {
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_model::GetCustomModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_model::GetCustomModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_model::GetCustomModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -317,17 +222,16 @@ impl From<crate::operation::get_custom_model::GetCustomModelError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_foundation_model::GetFoundationModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_foundation_model::GetFoundationModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_foundation_model::GetFoundationModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -336,152 +240,96 @@ impl From<crate::operation::get_foundation_model::GetFoundationModelError> for E
         match err {
             crate::operation::get_foundation_model::GetFoundationModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_foundation_model::GetFoundationModelError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_foundation_model::GetFoundationModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_foundation_model::GetFoundationModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_foundation_model::GetFoundationModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_foundation_model::GetFoundationModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_foundation_model::GetFoundationModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_customization_job::GetModelCustomizationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_customization_job::GetModelCustomizationJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_customization_job::GetModelCustomizationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_customization_job::GetModelCustomizationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_model_customization_job::GetModelCustomizationJobError> for Error {
     fn from(err: crate::operation::get_model_customization_job::GetModelCustomizationJobError) -> Self {
         match err {
-            crate::operation::get_model_customization_job::GetModelCustomizationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_model_customization_job::GetModelCustomizationJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_model_customization_job::GetModelCustomizationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_model_customization_job::GetModelCustomizationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_model_customization_job::GetModelCustomizationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_model_customization_job::GetModelCustomizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError> for Error {
     fn from(err: crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError) -> Self {
         match err {
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError> for Error {
     fn from(err: crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError) -> Self {
         match err {
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_models::ListCustomModelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_models::ListCustomModelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_models::ListCustomModelsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -496,17 +344,16 @@ impl From<crate::operation::list_custom_models::ListCustomModelsError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_foundation_models::ListFoundationModelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_foundation_models::ListFoundationModelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_foundation_models::ListFoundationModelsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -514,106 +361,71 @@ impl From<crate::operation::list_foundation_models::ListFoundationModelsError> f
     fn from(err: crate::operation::list_foundation_models::ListFoundationModelsError) -> Self {
         match err {
             crate::operation::list_foundation_models::ListFoundationModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_foundation_models::ListFoundationModelsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
+            crate::operation::list_foundation_models::ListFoundationModelsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_foundation_models::ListFoundationModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_foundation_models::ListFoundationModelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_foundation_models::ListFoundationModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError> for Error {
     fn from(err: crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError) -> Self {
         match err {
-            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError> for Error {
     fn from(err: crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError) -> Self {
         match err {
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -621,117 +433,74 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError> for Error {
     fn from(err: crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError) -> Self {
         match err {
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_model_customization_job::StopModelCustomizationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_model_customization_job::StopModelCustomizationJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_model_customization_job::StopModelCustomizationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_model_customization_job::StopModelCustomizationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_model_customization_job::StopModelCustomizationJobError> for Error {
     fn from(err: crate::operation::stop_model_customization_job::StopModelCustomizationJobError) -> Self {
         match err {
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_model_customization_job::StopModelCustomizationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -748,17 +517,16 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -774,49 +542,27 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError> for Error {
     fn from(err: crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError) -> Self {
         match err {
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -832,7 +578,7 @@ impl ::std::error::Error for Error {
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -851,3 +597,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

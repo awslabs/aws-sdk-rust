@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancersOutput {
+pub struct DescribeLoadBalancersOutput  {
     /// <p>Information about the load balancers.</p>
-    pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
+    pub load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLoadBalancersOutput {
+impl  DescribeLoadBalancersOutput  {
     /// <p>Information about the load balancers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
-    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
-        self.load_balancers.as_deref().unwrap_or_default()
+    pub fn load_balancers(&self) -> & [crate::types::LoadBalancer] {
+        self.load_balancers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLoadBalancersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
     pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeLoadBalancersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutputBuilder {
-    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
+    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeLoadBalancersOutputBuilder {
     /// <p>Information about the load balancers.</p>
     pub fn load_balancers(mut self, input: crate::types::LoadBalancer) -> Self {
         let mut v = self.load_balancers.unwrap_or_default();
-        v.push(input);
-        self.load_balancers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.load_balancers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
-        self.load_balancers = input;
-        self
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>) -> Self {
+        self.load_balancers = input; self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeLoadBalancersOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
     pub fn build(self) -> crate::operation::describe_load_balancers::DescribeLoadBalancersOutput {
         crate::operation::describe_load_balancers::DescribeLoadBalancersOutput {
-            load_balancers: self.load_balancers,
-            next_marker: self.next_marker,
+            load_balancers: self.load_balancers
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

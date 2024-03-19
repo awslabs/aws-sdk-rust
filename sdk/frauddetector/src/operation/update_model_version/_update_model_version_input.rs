@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelVersionInput {
+pub struct UpdateModelVersionInput  {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
@@ -14,34 +14,35 @@ pub struct UpdateModelVersionInput {
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateModelVersionInput {
+impl  UpdateModelVersionInput  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The major version number.</p>
-    pub fn major_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn major_version_number(&self) -> ::std::option::Option<& str> {
         self.major_version_number.as_deref()
     }
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    pub fn external_events_detail(&self) -> ::std::option::Option<&crate::types::ExternalEventsDetail> {
+    pub fn external_events_detail(&self) -> ::std::option::Option<& crate::types::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    pub fn ingested_events_detail(&self) -> ::std::option::Option<&crate::types::IngestedEventsDetail> {
+    pub fn ingested_events_detail(&self) -> ::std::option::Option<& crate::types::IngestedEventsDetail> {
         self.ingested_events_detail.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateModelVersionInput {
@@ -60,7 +61,7 @@ pub struct UpdateModelVersionInputBuilder {
     pub(crate) major_version_number: ::std::option::Option<::std::string::String>,
     pub(crate) external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     pub(crate) ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateModelVersionInputBuilder {
     /// <p>The model ID.</p>
@@ -71,8 +72,7 @@ impl UpdateModelVersionInputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl UpdateModelVersionInputBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -101,8 +100,7 @@ impl UpdateModelVersionInputBuilder {
     }
     /// <p>The major version number.</p>
     pub fn set_major_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version_number = input;
-        self
+        self.major_version_number = input; self
     }
     /// <p>The major version number.</p>
     pub fn get_major_version_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl UpdateModelVersionInputBuilder {
     }
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub fn set_external_events_detail(mut self, input: ::std::option::Option<crate::types::ExternalEventsDetail>) -> Self {
-        self.external_events_detail = input;
-        self
+        self.external_events_detail = input; self
     }
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub fn get_external_events_detail(&self) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
@@ -129,8 +126,7 @@ impl UpdateModelVersionInputBuilder {
     }
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn set_ingested_events_detail(mut self, input: ::std::option::Option<crate::types::IngestedEventsDetail>) -> Self {
-        self.ingested_events_detail = input;
-        self
+        self.ingested_events_detail = input; self
     }
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn get_ingested_events_detail(&self) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
@@ -143,31 +139,36 @@ impl UpdateModelVersionInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateModelVersionInput`](crate::operation::update_model_version::UpdateModelVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_model_version::UpdateModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_model_version::UpdateModelVersionInput {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            major_version_number: self.major_version_number,
-            external_events_detail: self.external_events_detail,
-            ingested_events_detail: self.ingested_events_detail,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model_version::UpdateModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_model_version::UpdateModelVersionInput {
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                major_version_number: self.major_version_number
+                ,
+                external_events_detail: self.external_events_detail
+                ,
+                ingested_events_detail: self.ingested_events_detail
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -22,11 +22,7 @@ impl CollectionScheme {
     /// Tries to convert the enum instance into [`ConditionBasedCollectionScheme`](crate::types::CollectionScheme::ConditionBasedCollectionScheme), extracting the inner [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_condition_based_collection_scheme(&self) -> ::std::result::Result<&crate::types::ConditionBasedCollectionScheme, &Self> {
-        if let CollectionScheme::ConditionBasedCollectionScheme(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CollectionScheme::ConditionBasedCollectionScheme(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConditionBasedCollectionScheme`](crate::types::CollectionScheme::ConditionBasedCollectionScheme).
     pub fn is_condition_based_collection_scheme(&self) -> bool {
@@ -35,11 +31,7 @@ impl CollectionScheme {
     /// Tries to convert the enum instance into [`TimeBasedCollectionScheme`](crate::types::CollectionScheme::TimeBasedCollectionScheme), extracting the inner [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_time_based_collection_scheme(&self) -> ::std::result::Result<&crate::types::TimeBasedCollectionScheme, &Self> {
-        if let CollectionScheme::TimeBasedCollectionScheme(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CollectionScheme::TimeBasedCollectionScheme(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TimeBasedCollectionScheme`](crate::types::CollectionScheme::TimeBasedCollectionScheme).
     pub fn is_time_based_collection_scheme(&self) -> bool {
@@ -50,3 +42,4 @@ impl CollectionScheme {
         matches!(self, Self::Unknown)
     }
 }
+

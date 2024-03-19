@@ -5,23 +5,20 @@ pub use crate::operation::label_parameter_version::_label_parameter_version_inpu
 
 impl LabelParameterVersionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.label_parameter_version();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::label_parameter_version::LabelParameterVersionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::label_parameter_version::LabelParameterVersionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.label_parameter_version();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `LabelParameterVersion`.
-///
+/// 
 /// <p>A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and increments the version number by one. A label can help you remember the purpose of a parameter when there are multiple versions.</p>
 /// <p>Parameter labels have the following requirements and restrictions.</p>
 /// <ul>
@@ -45,33 +42,32 @@ impl LabelParameterVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct LabelParameterVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder,
+                    inner: crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        crate::operation::label_parameter_version::LabelParameterVersionError,
-    > for LabelParameterVersionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::label_parameter_version::LabelParameterVersionOutput,
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::label_parameter_version::LabelParameterVersionOutput,
+                    crate::operation::label_parameter_version::LabelParameterVersionError,
+                > for LabelParameterVersionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::label_parameter_version::LabelParameterVersionOutput,
+                        crate::operation::label_parameter_version::LabelParameterVersionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl LabelParameterVersionFluentBuilder {
     /// Creates a new `LabelParameterVersion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -80,53 +76,44 @@ impl LabelParameterVersionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::label_parameter_version::LabelParameterVersionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::label_parameter_version::LabelParameterVersion::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::label_parameter_version::LabelParameterVersion::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::label_parameter_version::LabelParameterVersionOutput,
-        crate::operation::label_parameter_version::LabelParameterVersionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::label_parameter_version::LabelParameterVersionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::label_parameter_version::LabelParameterVersion::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::label_parameter_version::LabelParameterVersion::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::label_parameter_version::LabelParameterVersionOutput, crate::operation::label_parameter_version::LabelParameterVersionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The parameter name on which you want to attach one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
@@ -171,12 +158,13 @@ impl LabelParameterVersionFluentBuilder {
         self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_labels()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Specifies details about a scheduled Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTuneDetails {
+pub struct AutoTuneDetails  {
     /// <p>Container for details about a scheduled Auto-Tune action.</p>
     pub scheduled_auto_tune_details: ::std::option::Option<crate::types::ScheduledAutoTuneDetails>,
 }
-impl AutoTuneDetails {
+impl  AutoTuneDetails  {
     /// <p>Container for details about a scheduled Auto-Tune action.</p>
-    pub fn scheduled_auto_tune_details(&self) -> ::std::option::Option<&crate::types::ScheduledAutoTuneDetails> {
+    pub fn scheduled_auto_tune_details(&self) -> ::std::option::Option<& crate::types::ScheduledAutoTuneDetails> {
         self.scheduled_auto_tune_details.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AutoTuneDetailsBuilder {
     }
     /// <p>Container for details about a scheduled Auto-Tune action.</p>
     pub fn set_scheduled_auto_tune_details(mut self, input: ::std::option::Option<crate::types::ScheduledAutoTuneDetails>) -> Self {
-        self.scheduled_auto_tune_details = input;
-        self
+        self.scheduled_auto_tune_details = input; self
     }
     /// <p>Container for details about a scheduled Auto-Tune action.</p>
     pub fn get_scheduled_auto_tune_details(&self) -> &::std::option::Option<crate::types::ScheduledAutoTuneDetails> {
@@ -44,7 +43,9 @@ impl AutoTuneDetailsBuilder {
     /// Consumes the builder and constructs a [`AutoTuneDetails`](crate::types::AutoTuneDetails).
     pub fn build(self) -> crate::types::AutoTuneDetails {
         crate::types::AutoTuneDetails {
-            scheduled_auto_tune_details: self.scheduled_auto_tune_details,
+            scheduled_auto_tune_details: self.scheduled_auto_tune_details
+            ,
         }
     }
 }
+

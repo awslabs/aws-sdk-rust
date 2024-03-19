@@ -66,3 +66,4 @@ pub use crate::types::error::_user_error_exception::UserErrorExceptionBuilder;
 pub use crate::types::error::_topic_limit_exceeded_exception::TopicLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_opted_out_exception::OptedOutExceptionBuilder;
+

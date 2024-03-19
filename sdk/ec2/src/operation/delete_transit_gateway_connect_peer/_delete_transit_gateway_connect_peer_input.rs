@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTransitGatewayConnectPeerInput {
+pub struct DeleteTransitGatewayConnectPeerInput  {
     /// <p>The ID of the Connect peer.</p>
     pub transit_gateway_connect_peer_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteTransitGatewayConnectPeerInput {
+impl  DeleteTransitGatewayConnectPeerInput  {
     /// <p>The ID of the Connect peer.</p>
-    pub fn transit_gateway_connect_peer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_connect_peer_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_connect_peer_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl DeleteTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>The ID of the Connect peer.</p>
     pub fn set_transit_gateway_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_connect_peer_id = input;
-        self
+        self.transit_gateway_connect_peer_id = input; self
     }
     /// <p>The ID of the Connect peer.</p>
     pub fn get_transit_gateway_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl DeleteTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayConnectPeerInput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput {
-                transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

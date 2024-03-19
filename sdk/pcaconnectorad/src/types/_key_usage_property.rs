@@ -22,11 +22,7 @@ impl KeyUsageProperty {
     /// Tries to convert the enum instance into [`PropertyFlags`](crate::types::KeyUsageProperty::PropertyFlags), extracting the inner [`KeyUsagePropertyFlags`](crate::types::KeyUsagePropertyFlags).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_property_flags(&self) -> ::std::result::Result<&crate::types::KeyUsagePropertyFlags, &Self> {
-        if let KeyUsageProperty::PropertyFlags(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let KeyUsageProperty::PropertyFlags(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PropertyFlags`](crate::types::KeyUsageProperty::PropertyFlags).
     pub fn is_property_flags(&self) -> bool {
@@ -35,11 +31,7 @@ impl KeyUsageProperty {
     /// Tries to convert the enum instance into [`PropertyType`](crate::types::KeyUsageProperty::PropertyType), extracting the inner [`KeyUsagePropertyType`](crate::types::KeyUsagePropertyType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_property_type(&self) -> ::std::result::Result<&crate::types::KeyUsagePropertyType, &Self> {
-        if let KeyUsageProperty::PropertyType(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let KeyUsageProperty::PropertyType(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PropertyType`](crate::types::KeyUsageProperty::PropertyType).
     pub fn is_property_type(&self) -> bool {
@@ -50,3 +42,4 @@ impl KeyUsageProperty {
         matches!(self, Self::Unknown)
     }
 }
+

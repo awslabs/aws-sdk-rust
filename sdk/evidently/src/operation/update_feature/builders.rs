@@ -5,55 +5,51 @@ pub use crate::operation::update_feature::_update_feature_input::UpdateFeatureIn
 
 impl UpdateFeatureInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_feature::UpdateFeatureOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_feature::UpdateFeatureError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_feature();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_feature::UpdateFeatureOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_feature::UpdateFeatureError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_feature();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFeature`.
-///
+/// 
 /// <p>Updates an existing feature.</p>
 /// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_feature::builders::UpdateFeatureInputBuilder,
+                    inner: crate::operation::update_feature::builders::UpdateFeatureInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_feature::UpdateFeatureOutput,
-        crate::operation::update_feature::UpdateFeatureError,
-    > for UpdateFeatureFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_feature::UpdateFeatureOutput,
-            crate::operation::update_feature::UpdateFeatureError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_feature::UpdateFeatureOutput,
+                    crate::operation::update_feature::UpdateFeatureError,
+                > for UpdateFeatureFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_feature::UpdateFeatureOutput,
+                        crate::operation::update_feature::UpdateFeatureError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFeatureFluentBuilder {
     /// Creates a new `UpdateFeature`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateFeatureFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_feature::UpdateFeatureOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_feature::UpdateFeatureError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_feature::UpdateFeature::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_feature::UpdateFeature::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_feature::UpdateFeatureOutput,
-        crate::operation::update_feature::UpdateFeatureError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_feature::UpdateFeatureError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_feature::UpdateFeature::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_feature::UpdateFeature::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_feature::UpdateFeatureOutput, crate::operation::update_feature::UpdateFeatureError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -175,12 +162,12 @@ impl UpdateFeatureFluentBuilder {
         self
     }
     /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
-    pub fn set_add_or_update_variations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>>) -> Self {
+    pub fn set_add_or_update_variations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>>) -> Self {
         self.inner = self.inner.set_add_or_update_variations(input);
         self
     }
     /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
-    pub fn get_add_or_update_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>> {
+    pub fn get_add_or_update_variations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VariationConfig>> {
         self.inner.get_add_or_update_variations()
     }
     /// Appends an item to `removeVariations`.
@@ -195,13 +182,13 @@ impl UpdateFeatureFluentBuilder {
     }
     /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
-    pub fn set_remove_variations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_remove_variations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_variations(input);
         self
     }
     /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
     /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
-    pub fn get_remove_variations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_variations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_remove_variations()
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
@@ -224,26 +211,20 @@ impl UpdateFeatureFluentBuilder {
     ///
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn entity_overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_overrides(k.into(), v.into());
         self
     }
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn set_entity_overrides(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_entity_overrides(input);
         self
     }
     /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_entity_overrides()
     }
 }
+

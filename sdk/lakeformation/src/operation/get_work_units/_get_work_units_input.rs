@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkUnitsInput {
+pub struct GetWorkUnitsInput  {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
@@ -10,9 +10,9 @@ pub struct GetWorkUnitsInput {
     /// <p>The ID of the plan query operation.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkUnitsInput {
+impl  GetWorkUnitsInput  {
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
@@ -20,7 +20,7 @@ impl GetWorkUnitsInput {
         self.page_size
     }
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetWorkUnitsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetWorkUnitsInputBuilder {
     }
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl GetWorkUnitsInputBuilder {
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`GetWorkUnitsInput`](crate::operation::get_work_units::GetWorkUnitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_work_units::GetWorkUnitsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-            query_id: self.query_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_work_units::GetWorkUnitsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

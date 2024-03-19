@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTransitGatewayVpcAttachmentsOutput {
+pub struct DescribeTransitGatewayVpcAttachmentsOutput  {
     /// <p>Information about the VPC attachments.</p>
-    pub transit_gateway_vpc_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayVpcAttachment>>,
+    pub transit_gateway_vpc_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayVpcAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTransitGatewayVpcAttachmentsOutput {
+impl  DescribeTransitGatewayVpcAttachmentsOutput  {
     /// <p>Information about the VPC attachments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_vpc_attachments.is_none()`.
-    pub fn transit_gateway_vpc_attachments(&self) -> &[crate::types::TransitGatewayVpcAttachment] {
-        self.transit_gateway_vpc_attachments.as_deref().unwrap_or_default()
+    pub fn transit_gateway_vpc_attachments(&self) -> & [crate::types::TransitGatewayVpcAttachment] {
+        self.transit_gateway_vpc_attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTransitGatewayVpcAttachmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTransitGatewayVpcAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayVpcAttachmentsOutput`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput).
     pub fn builder() -> crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeTransitGatewayVpcAttachmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayVpcAttachmentsOutputBuilder {
-    pub(crate) transit_gateway_vpc_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayVpcAttachment>>,
+    pub(crate) transit_gateway_vpc_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayVpcAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl DescribeTransitGatewayVpcAttachmentsOutputBuilder {
     /// <p>Information about the VPC attachments.</p>
     pub fn transit_gateway_vpc_attachments(mut self, input: crate::types::TransitGatewayVpcAttachment) -> Self {
         let mut v = self.transit_gateway_vpc_attachments.unwrap_or_default();
-        v.push(input);
-        self.transit_gateway_vpc_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transit_gateway_vpc_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the VPC attachments.</p>
-    pub fn set_transit_gateway_vpc_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayVpcAttachment>>,
-    ) -> Self {
-        self.transit_gateway_vpc_attachments = input;
-        self
+    pub fn set_transit_gateway_vpc_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayVpcAttachment>>) -> Self {
+        self.transit_gateway_vpc_attachments = input; self
     }
     /// <p>Information about the VPC attachments.</p>
-    pub fn get_transit_gateway_vpc_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayVpcAttachment>> {
+    pub fn get_transit_gateway_vpc_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayVpcAttachment>> {
         &self.transit_gateway_vpc_attachments
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -72,28 +69,30 @@ impl DescribeTransitGatewayVpcAttachmentsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayVpcAttachmentsOutput`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput).
     pub fn build(self) -> crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput {
         crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput {
-            transit_gateway_vpc_attachments: self.transit_gateway_vpc_attachments,
-            next_token: self.next_token,
+            transit_gateway_vpc_attachments: self.transit_gateway_vpc_attachments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

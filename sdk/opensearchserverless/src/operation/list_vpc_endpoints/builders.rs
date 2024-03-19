@@ -5,54 +5,50 @@ pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_input::ListVpc
 
 impl ListVpcEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_vpc_endpoints();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_vpc_endpoints();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListVpcEndpoints`.
-///
+/// 
 /// <p>Returns the OpenSearch Serverless-managed interface VPC endpoints associated with the current account. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder,
+                    inner: crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
-    > for ListVpcEndpointsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+                    crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+                > for ListVpcEndpointsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+                        crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListVpcEndpointsFluentBuilder {
     /// Creates a new `ListVpcEndpoints`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListVpcEndpointsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_vpc_endpoints::ListVpcEndpoints::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_vpc_endpoints::ListVpcEndpoints::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_endpoints::ListVpcEndpointsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_vpc_endpoints::ListVpcEndpoints::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_vpc_endpoints::ListVpcEndpoints::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput, crate::operation::list_vpc_endpoints::ListVpcEndpointsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator {
-        crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator {
+                                crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
     pub fn vpc_endpoint_filters(mut self, input: crate::types::VpcEndpointFilters) -> Self {
         self.inner = self.inner.vpc_endpoint_filters(input);
@@ -157,3 +144,4 @@ impl ListVpcEndpointsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySnapshotTierInput {
+pub struct ModifySnapshotTierInput  {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
@@ -10,13 +10,13 @@ pub struct ModifySnapshotTierInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifySnapshotTierInput {
+impl  ModifySnapshotTierInput  {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-    pub fn storage_tier(&self) -> ::std::option::Option<&crate::types::TargetStorageTier> {
+    pub fn storage_tier(&self) -> ::std::option::Option<& crate::types::TargetStorageTier> {
         self.storage_tier.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl ModifySnapshotTierInputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ModifySnapshotTierInputBuilder {
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
     pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::TargetStorageTier>) -> Self {
-        self.storage_tier = input;
-        self
+        self.storage_tier = input; self
     }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
     pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::TargetStorageTier> {
@@ -76,22 +74,24 @@ impl ModifySnapshotTierInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
-            snapshot_id: self.snapshot_id,
-            storage_tier: self.storage_tier,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
+                snapshot_id: self.snapshot_id
+                ,
+                storage_tier: self.storage_tier
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

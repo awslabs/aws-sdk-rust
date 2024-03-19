@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRecoveryGroupInput {
+pub struct DeleteRecoveryGroupInput  {
     /// <p>The name of a recovery group.</p>
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRecoveryGroupInput {
+impl  DeleteRecoveryGroupInput  {
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> ::std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteRecoveryGroupInputBuilder {
     }
     /// <p>The name of a recovery group.</p>
     pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_group_name = input;
-        self
+        self.recovery_group_name = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_group_name
     }
     /// Consumes the builder and constructs a [`DeleteRecoveryGroupInput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_recovery_group::DeleteRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_recovery_group::DeleteRecoveryGroupInput {
-            recovery_group_name: self.recovery_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_recovery_group::DeleteRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_recovery_group::DeleteRecoveryGroupInput {
+                recovery_group_name: self.recovery_group_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Dataset reference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetReference {
+pub struct DataSetReference  {
     /// <p>Dataset placeholder.</p>
     pub data_set_placeholder: ::std::string::String,
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub data_set_arn: ::std::string::String,
 }
-impl DataSetReference {
+impl  DataSetReference  {
     /// <p>Dataset placeholder.</p>
-    pub fn data_set_placeholder(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_placeholder.deref()
+    pub fn data_set_placeholder(&self) -> & str {
+        use std::ops::Deref; self.data_set_placeholder.deref()
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
-    pub fn data_set_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_arn.deref()
+    pub fn data_set_arn(&self) -> & str {
+        use std::ops::Deref; self.data_set_arn.deref()
     }
 }
 impl DataSetReference {
@@ -44,8 +42,7 @@ impl DataSetReferenceBuilder {
     }
     /// <p>Dataset placeholder.</p>
     pub fn set_data_set_placeholder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_placeholder = input;
-        self
+        self.data_set_placeholder = input; self
     }
     /// <p>Dataset placeholder.</p>
     pub fn get_data_set_placeholder(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl DataSetReferenceBuilder {
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_arn = input;
-        self
+        self.data_set_arn = input; self
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl DataSetReferenceBuilder {
     /// - [`data_set_placeholder`](crate::types::builders::DataSetReferenceBuilder::data_set_placeholder)
     /// - [`data_set_arn`](crate::types::builders::DataSetReferenceBuilder::data_set_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSetReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSetReference {
-            data_set_placeholder: self.data_set_placeholder.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_placeholder",
-                    "data_set_placeholder was not specified but it is required when building DataSetReference",
-                )
-            })?,
-            data_set_arn: self.data_set_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_arn",
-                    "data_set_arn was not specified but it is required when building DataSetReference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSetReference {
+                data_set_placeholder: self.data_set_placeholder
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_placeholder", "data_set_placeholder was not specified but it is required when building DataSetReference")
+                    )?
+                ,
+                data_set_arn: self.data_set_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_arn", "data_set_arn was not specified but it is required when building DataSetReference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

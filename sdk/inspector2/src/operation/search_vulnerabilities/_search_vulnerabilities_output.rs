@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchVulnerabilitiesOutput {
+pub struct SearchVulnerabilitiesOutput  {
     /// <p>Details about the listed vulnerability.</p>
-    pub vulnerabilities: ::std::vec::Vec<crate::types::Vulnerability>,
+    pub vulnerabilities: ::std::vec::Vec::<crate::types::Vulnerability>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchVulnerabilitiesOutput {
+impl  SearchVulnerabilitiesOutput  {
     /// <p>Details about the listed vulnerability.</p>
-    pub fn vulnerabilities(&self) -> &[crate::types::Vulnerability] {
-        use std::ops::Deref;
-        self.vulnerabilities.deref()
+    pub fn vulnerabilities(&self) -> & [crate::types::Vulnerability] {
+        use std::ops::Deref; self.vulnerabilities.deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchVulnerabilitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchVulnerabilitiesOutput {
     /// Creates a new builder-style object to manufacture [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
     pub fn builder() -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder {
@@ -36,7 +35,7 @@ impl SearchVulnerabilitiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesOutputBuilder {
-    pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
+    pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Vulnerability>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl SearchVulnerabilitiesOutputBuilder {
     /// <p>Details about the listed vulnerability.</p>
     pub fn vulnerabilities(mut self, input: crate::types::Vulnerability) -> Self {
         let mut v = self.vulnerabilities.unwrap_or_default();
-        v.push(input);
-        self.vulnerabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vulnerabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the listed vulnerability.</p>
-    pub fn set_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>) -> Self {
-        self.vulnerabilities = input;
-        self
+    pub fn set_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Vulnerability>>) -> Self {
+        self.vulnerabilities = input; self
     }
     /// <p>Details about the listed vulnerability.</p>
-    pub fn get_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
+    pub fn get_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Vulnerability>> {
         &self.vulnerabilities
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
@@ -68,38 +66,37 @@ impl SearchVulnerabilitiesOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`vulnerabilities`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder::vulnerabilities)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
-            vulnerabilities: self.vulnerabilities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vulnerabilities",
-                    "vulnerabilities was not specified but it is required when building SearchVulnerabilitiesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
+                vulnerabilities: self.vulnerabilities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vulnerabilities", "vulnerabilities was not specified but it is required when building SearchVulnerabilitiesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonopensearchserviceDestinationUpdate {
+pub struct AmazonopensearchserviceDestinationUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.</p>
@@ -30,54 +30,54 @@ pub struct AmazonopensearchserviceDestinationUpdate {
     /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
-impl AmazonopensearchserviceDestinationUpdate {
+impl  AmazonopensearchserviceDestinationUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
+    pub fn domain_arn(&self) -> ::std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
-    pub fn cluster_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_endpoint(&self) -> ::std::option::Option<& str> {
         self.cluster_endpoint.as_deref()
     }
     /// <p>The Amazon OpenSearch Service index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Firehose returns an error during runtime.</p>
     /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to facilitate the expiration of old data.</p>
-    pub fn index_rotation_period(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceIndexRotationPeriod> {
+    pub fn index_rotation_period(&self) -> ::std::option::Option<& crate::types::AmazonopensearchserviceIndexRotationPeriod> {
         self.index_rotation_period.as_ref()
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
-    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<& crate::types::AmazonopensearchserviceBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<& crate::types::AmazonopensearchserviceRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
-    pub fn s3_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
+    pub fn s3_update(&self) -> ::std::option::Option<& crate::types::S3DestinationUpdate> {
         self.s3_update.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
-    pub fn document_id_options(&self) -> ::std::option::Option<&crate::types::DocumentIdOptions> {
+    pub fn document_id_options(&self) -> ::std::option::Option<& crate::types::DocumentIdOptions> {
         self.document_id_options.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.</p>
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.</p>
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
     pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_endpoint = input;
-        self
+        self.cluster_endpoint = input; self
     }
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field.</p>
     pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Firehose returns an error during runtime.</p>
     /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Firehose returns an error during runtime.</p>
     /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for TypeName.</p>
@@ -186,8 +181,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to facilitate the expiration of old data.</p>
     pub fn set_index_rotation_period(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>) -> Self {
-        self.index_rotation_period = input;
-        self
+        self.index_rotation_period = input; self
     }
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to facilitate the expiration of old data.</p>
     pub fn get_index_rotation_period(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
@@ -200,8 +194,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>) -> Self {
-        self.buffering_hints = input;
-        self
+        self.buffering_hints = input; self
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
@@ -214,8 +207,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>) -> Self {
-        self.retry_options = input;
-        self
+        self.retry_options = input; self
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
@@ -228,8 +220,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn set_s3_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
-        self.s3_update = input;
-        self
+        self.s3_update = input; self
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn get_s3_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
@@ -242,8 +233,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -256,8 +246,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -270,8 +259,7 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     }
     /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn set_document_id_options(mut self, input: ::std::option::Option<crate::types::DocumentIdOptions>) -> Self {
-        self.document_id_options = input;
-        self
+        self.document_id_options = input; self
     }
     /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn get_document_id_options(&self) -> &::std::option::Option<crate::types::DocumentIdOptions> {
@@ -280,18 +268,31 @@ impl AmazonopensearchserviceDestinationUpdateBuilder {
     /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationUpdate`](crate::types::AmazonopensearchserviceDestinationUpdate).
     pub fn build(self) -> crate::types::AmazonopensearchserviceDestinationUpdate {
         crate::types::AmazonopensearchserviceDestinationUpdate {
-            role_arn: self.role_arn,
-            domain_arn: self.domain_arn,
-            cluster_endpoint: self.cluster_endpoint,
-            index_name: self.index_name,
-            type_name: self.type_name,
-            index_rotation_period: self.index_rotation_period,
-            buffering_hints: self.buffering_hints,
-            retry_options: self.retry_options,
-            s3_update: self.s3_update,
-            processing_configuration: self.processing_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            document_id_options: self.document_id_options,
+            role_arn: self.role_arn
+            ,
+            domain_arn: self.domain_arn
+            ,
+            cluster_endpoint: self.cluster_endpoint
+            ,
+            index_name: self.index_name
+            ,
+            type_name: self.type_name
+            ,
+            index_rotation_period: self.index_rotation_period
+            ,
+            buffering_hints: self.buffering_hints
+            ,
+            retry_options: self.retry_options
+            ,
+            s3_update: self.s3_update
+            ,
+            processing_configuration: self.processing_configuration
+            ,
+            cloud_watch_logging_options: self.cloud_watch_logging_options
+            ,
+            document_id_options: self.document_id_options
+            ,
         }
     }
 }
+

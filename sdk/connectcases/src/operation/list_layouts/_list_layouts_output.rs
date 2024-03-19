@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLayoutsOutput {
+pub struct ListLayoutsOutput  {
     /// <p>The layouts for the domain.</p>
-    pub layouts: ::std::vec::Vec<crate::types::LayoutSummary>,
+    pub layouts: ::std::vec::Vec::<crate::types::LayoutSummary>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLayoutsOutput {
+impl  ListLayoutsOutput  {
     /// <p>The layouts for the domain.</p>
-    pub fn layouts(&self) -> &[crate::types::LayoutSummary] {
-        use std::ops::Deref;
-        self.layouts.deref()
+    pub fn layouts(&self) -> & [crate::types::LayoutSummary] {
+        use std::ops::Deref; self.layouts.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLayoutsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLayoutsOutput {
     /// Creates a new builder-style object to manufacture [`ListLayoutsOutput`](crate::operation::list_layouts::ListLayoutsOutput).
     pub fn builder() -> crate::operation::list_layouts::builders::ListLayoutsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListLayoutsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLayoutsOutputBuilder {
-    pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>,
+    pub(crate) layouts: ::std::option::Option<::std::vec::Vec::<crate::types::LayoutSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListLayoutsOutputBuilder {
     /// <p>The layouts for the domain.</p>
     pub fn layouts(mut self, input: crate::types::LayoutSummary) -> Self {
         let mut v = self.layouts.unwrap_or_default();
-        v.push(input);
-        self.layouts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.layouts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The layouts for the domain.</p>
-    pub fn set_layouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>) -> Self {
-        self.layouts = input;
-        self
+    pub fn set_layouts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LayoutSummary>>) -> Self {
+        self.layouts = input; self
     }
     /// <p>The layouts for the domain.</p>
-    pub fn get_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>> {
+    pub fn get_layouts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LayoutSummary>> {
         &self.layouts
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
@@ -68,35 +66,37 @@ impl ListLayoutsOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLayoutsOutput`](crate::operation::list_layouts::ListLayoutsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`layouts`](crate::operation::list_layouts::builders::ListLayoutsOutputBuilder::layouts)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_layouts::ListLayoutsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_layouts::ListLayoutsOutput {
-            layouts: self.layouts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layouts",
-                    "layouts was not specified but it is required when building ListLayoutsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_layouts::ListLayoutsOutput {
+                layouts: self.layouts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layouts", "layouts was not specified but it is required when building ListLayoutsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

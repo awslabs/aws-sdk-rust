@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessLogSubscriptionInput {
+pub struct UpdateAccessLogSubscriptionInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAccessLogSubscriptionInput {
+impl  UpdateAccessLogSubscriptionInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<& str> {
         self.access_log_subscription_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateAccessLogSubscriptionInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_log_subscription_identifier = input;
-        self
+        self.access_log_subscription_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateAccessLogSubscriptionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn
     }
     /// Consumes the builder and constructs a [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
-            access_log_subscription_identifier: self.access_log_subscription_identifier,
-            destination_arn: self.destination_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
+                access_log_subscription_identifier: self.access_log_subscription_identifier
+                ,
+                destination_arn: self.destination_arn
+                ,
+            }
+        )
     }
 }
+

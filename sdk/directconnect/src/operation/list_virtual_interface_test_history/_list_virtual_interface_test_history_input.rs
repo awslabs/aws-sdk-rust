@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVirtualInterfaceTestHistoryInput {
+pub struct ListVirtualInterfaceTestHistoryInput  {
     /// <p>The ID of the virtual interface failover test.</p>
     pub test_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface that was tested.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bgp_peers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -17,23 +17,24 @@ pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListVirtualInterfaceTestHistoryInput {
+impl  ListVirtualInterfaceTestHistoryInput  {
     /// <p>The ID of the virtual interface failover test.</p>
-    pub fn test_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_id(&self) -> ::std::option::Option<& str> {
         self.test_id.as_deref()
     }
     /// <p>The ID of the virtual interface that was tested.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
-    pub fn bgp_peers(&self) -> &[::std::string::String] {
-        self.bgp_peers.as_deref().unwrap_or_default()
+    pub fn bgp_peers(&self) -> & [::std::string::String] {
+        self.bgp_peers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the virtual interface failover test.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -42,7 +43,7 @@ impl ListVirtualInterfaceTestHistoryInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ impl ListVirtualInterfaceTestHistoryInput {
 pub struct ListVirtualInterfaceTestHistoryInputBuilder {
     pub(crate) test_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,8 +73,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     }
     /// <p>The ID of the virtual interface failover test.</p>
     pub fn set_test_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_id = input;
-        self
+        self.test_id = input; self
     }
     /// <p>The ID of the virtual interface failover test.</p>
     pub fn get_test_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     }
     /// <p>The ID of the virtual interface that was tested.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface that was tested.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +99,16 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
     pub fn bgp_peers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bgp_peers.unwrap_or_default();
-        v.push(input.into());
-        self.bgp_peers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bgp_peers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bgp_peers = input;
-        self
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bgp_peers = input; self
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bgp_peers
     }
     /// <p>The status of the virtual interface failover test.</p>
@@ -120,8 +118,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the virtual interface failover test.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -151,29 +147,30 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryInput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput {
-                test_id: self.test_id,
-                virtual_interface_id: self.virtual_interface_id,
-                bgp_peers: self.bgp_peers,
-                status: self.status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                test_id: self.test_id
+                ,
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

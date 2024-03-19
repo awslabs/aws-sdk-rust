@@ -3,7 +3,7 @@
 /// <p>Specifies all of the type-specific parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Definition {
+pub struct Definition  {
     /// <p>The Identity and Access Management (IAM) action definition details.</p>
     pub iam_action_definition: ::std::option::Option<crate::types::IamActionDefinition>,
     /// <p>The service control policies (SCPs) action definition details.</p>
@@ -11,17 +11,17 @@ pub struct Definition {
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details.</p>
     pub ssm_action_definition: ::std::option::Option<crate::types::SsmActionDefinition>,
 }
-impl Definition {
+impl  Definition  {
     /// <p>The Identity and Access Management (IAM) action definition details.</p>
-    pub fn iam_action_definition(&self) -> ::std::option::Option<&crate::types::IamActionDefinition> {
+    pub fn iam_action_definition(&self) -> ::std::option::Option<& crate::types::IamActionDefinition> {
         self.iam_action_definition.as_ref()
     }
     /// <p>The service control policies (SCPs) action definition details.</p>
-    pub fn scp_action_definition(&self) -> ::std::option::Option<&crate::types::ScpActionDefinition> {
+    pub fn scp_action_definition(&self) -> ::std::option::Option<& crate::types::ScpActionDefinition> {
         self.scp_action_definition.as_ref()
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details.</p>
-    pub fn ssm_action_definition(&self) -> ::std::option::Option<&crate::types::SsmActionDefinition> {
+    pub fn ssm_action_definition(&self) -> ::std::option::Option<& crate::types::SsmActionDefinition> {
         self.ssm_action_definition.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DefinitionBuilder {
     }
     /// <p>The Identity and Access Management (IAM) action definition details.</p>
     pub fn set_iam_action_definition(mut self, input: ::std::option::Option<crate::types::IamActionDefinition>) -> Self {
-        self.iam_action_definition = input;
-        self
+        self.iam_action_definition = input; self
     }
     /// <p>The Identity and Access Management (IAM) action definition details.</p>
     pub fn get_iam_action_definition(&self) -> &::std::option::Option<crate::types::IamActionDefinition> {
@@ -62,8 +61,7 @@ impl DefinitionBuilder {
     }
     /// <p>The service control policies (SCPs) action definition details.</p>
     pub fn set_scp_action_definition(mut self, input: ::std::option::Option<crate::types::ScpActionDefinition>) -> Self {
-        self.scp_action_definition = input;
-        self
+        self.scp_action_definition = input; self
     }
     /// <p>The service control policies (SCPs) action definition details.</p>
     pub fn get_scp_action_definition(&self) -> &::std::option::Option<crate::types::ScpActionDefinition> {
@@ -76,8 +74,7 @@ impl DefinitionBuilder {
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details.</p>
     pub fn set_ssm_action_definition(mut self, input: ::std::option::Option<crate::types::SsmActionDefinition>) -> Self {
-        self.ssm_action_definition = input;
-        self
+        self.ssm_action_definition = input; self
     }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details.</p>
     pub fn get_ssm_action_definition(&self) -> &::std::option::Option<crate::types::SsmActionDefinition> {
@@ -86,9 +83,13 @@ impl DefinitionBuilder {
     /// Consumes the builder and constructs a [`Definition`](crate::types::Definition).
     pub fn build(self) -> crate::types::Definition {
         crate::types::Definition {
-            iam_action_definition: self.iam_action_definition,
-            scp_action_definition: self.scp_action_definition,
-            ssm_action_definition: self.ssm_action_definition,
+            iam_action_definition: self.iam_action_definition
+            ,
+            scp_action_definition: self.scp_action_definition
+            ,
+            ssm_action_definition: self.ssm_action_definition
+            ,
         }
     }
 }
+

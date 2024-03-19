@@ -3,15 +3,15 @@
 /// <p>An ordered list of actions you can take to remediate a violation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemediationActionWithOrder {
+pub struct RemediationActionWithOrder  {
     /// <p>Information about an action you can take to remediate a violation.</p>
     pub remediation_action: ::std::option::Option<crate::types::RemediationAction>,
     /// <p>The order of the remediation actions in the list.</p>
     pub order: i32,
 }
-impl RemediationActionWithOrder {
+impl  RemediationActionWithOrder  {
     /// <p>Information about an action you can take to remediate a violation.</p>
-    pub fn remediation_action(&self) -> ::std::option::Option<&crate::types::RemediationAction> {
+    pub fn remediation_action(&self) -> ::std::option::Option<& crate::types::RemediationAction> {
         self.remediation_action.as_ref()
     }
     /// <p>The order of the remediation actions in the list.</p>
@@ -41,8 +41,7 @@ impl RemediationActionWithOrderBuilder {
     }
     /// <p>Information about an action you can take to remediate a violation.</p>
     pub fn set_remediation_action(mut self, input: ::std::option::Option<crate::types::RemediationAction>) -> Self {
-        self.remediation_action = input;
-        self
+        self.remediation_action = input; self
     }
     /// <p>Information about an action you can take to remediate a violation.</p>
     pub fn get_remediation_action(&self) -> &::std::option::Option<crate::types::RemediationAction> {
@@ -55,8 +54,7 @@ impl RemediationActionWithOrderBuilder {
     }
     /// <p>The order of the remediation actions in the list.</p>
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order of the remediation actions in the list.</p>
     pub fn get_order(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl RemediationActionWithOrderBuilder {
     /// Consumes the builder and constructs a [`RemediationActionWithOrder`](crate::types::RemediationActionWithOrder).
     pub fn build(self) -> crate::types::RemediationActionWithOrder {
         crate::types::RemediationActionWithOrder {
-            remediation_action: self.remediation_action,
-            order: self.order.unwrap_or_default(),
+            remediation_action: self.remediation_action
+            ,
+            order: self.order
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

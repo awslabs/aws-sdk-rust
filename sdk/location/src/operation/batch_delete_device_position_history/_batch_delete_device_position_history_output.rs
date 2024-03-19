@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryOutput {
+pub struct BatchDeleteDevicePositionHistoryOutput  {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchDeleteDevicePositionHistoryError>,
     _request_id: Option<String>,
 }
-impl BatchDeleteDevicePositionHistoryOutput {
+impl  BatchDeleteDevicePositionHistoryOutput  {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn errors(&self) -> &[crate::types::BatchDeleteDevicePositionHistoryError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchDeleteDevicePositionHistoryError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteDevicePositionHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
     pub fn builder() -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchDeleteDevicePositionHistoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteDevicePositionHistoryError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDevicePositionHistoryOutputBuilder {
@@ -41,47 +40,41 @@ impl BatchDeleteDevicePositionHistoryOutputBuilder {
     /// <p>Contains error details for each device history that failed to delete.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteDevicePositionHistoryError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteDevicePositionHistoryError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteDevicePositionHistoryError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
-                errors: self.errors.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "errors",
-                        "errors was not specified but it is required when building BatchDeleteDevicePositionHistoryOutput",
-                    )
-                })?,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDeleteDevicePositionHistoryOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

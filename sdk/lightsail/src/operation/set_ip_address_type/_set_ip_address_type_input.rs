@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIpAddressTypeInput {
+pub struct SetIpAddressTypeInput  {
     /// <p>The resource type.</p>
     /// <p>The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
@@ -14,21 +14,21 @@ pub struct SetIpAddressTypeInput {
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
-impl SetIpAddressTypeInput {
+impl  SetIpAddressTypeInput  {
     /// <p>The resource type.</p>
     /// <p>The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The IP address type to set for the specified resource.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SetIpAddressTypeInputBuilder {
     /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     /// <p>The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p><note>
@@ -80,8 +79,7 @@ impl SetIpAddressTypeInputBuilder {
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl SetIpAddressTypeInputBuilder {
     /// <p>The IP address type to set for the specified resource.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type to set for the specified resource.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -106,13 +103,17 @@ impl SetIpAddressTypeInputBuilder {
         &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_ip_address_type::SetIpAddressTypeInput {
-            resource_type: self.resource_type,
-            resource_name: self.resource_name,
-            ip_address_type: self.ip_address_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_ip_address_type::SetIpAddressTypeInput {
+                resource_type: self.resource_type
+                ,
+                resource_name: self.resource_name
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+            }
+        )
     }
 }
+

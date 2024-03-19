@@ -22,11 +22,7 @@ impl ListMetadataTransferJobsFilter {
     /// Tries to convert the enum instance into [`State`](crate::types::ListMetadataTransferJobsFilter::State), extracting the inner [`MetadataTransferJobState`](crate::types::MetadataTransferJobState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_state(&self) -> ::std::result::Result<&crate::types::MetadataTransferJobState, &Self> {
-        if let ListMetadataTransferJobsFilter::State(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListMetadataTransferJobsFilter::State(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`State`](crate::types::ListMetadataTransferJobsFilter::State).
     pub fn is_state(&self) -> bool {
@@ -35,11 +31,7 @@ impl ListMetadataTransferJobsFilter {
     /// Tries to convert the enum instance into [`WorkspaceId`](crate::types::ListMetadataTransferJobsFilter::WorkspaceId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_workspace_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListMetadataTransferJobsFilter::WorkspaceId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListMetadataTransferJobsFilter::WorkspaceId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`WorkspaceId`](crate::types::ListMetadataTransferJobsFilter::WorkspaceId).
     pub fn is_workspace_id(&self) -> bool {
@@ -50,3 +42,4 @@ impl ListMetadataTransferJobsFilter {
         matches!(self, Self::Unknown)
     }
 }
+

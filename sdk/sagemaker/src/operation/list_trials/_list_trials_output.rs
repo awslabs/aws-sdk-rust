@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrialsOutput {
+pub struct ListTrialsOutput  {
     /// <p>A list of the summaries of your trials.</p>
-    pub trial_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>,
+    pub trial_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TrialSummary>>,
     /// <p>A token for getting the next set of trials, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTrialsOutput {
+impl  ListTrialsOutput  {
     /// <p>A list of the summaries of your trials.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trial_summaries.is_none()`.
-    pub fn trial_summaries(&self) -> &[crate::types::TrialSummary] {
-        self.trial_summaries.as_deref().unwrap_or_default()
+    pub fn trial_summaries(&self) -> & [crate::types::TrialSummary] {
+        self.trial_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token for getting the next set of trials, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTrialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTrialsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrialsOutput`](crate::operation::list_trials::ListTrialsOutput).
     pub fn builder() -> crate::operation::list_trials::builders::ListTrialsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTrialsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrialsOutputBuilder {
-    pub(crate) trial_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>,
+    pub(crate) trial_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TrialSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTrialsOutputBuilder {
     /// <p>A list of the summaries of your trials.</p>
     pub fn trial_summaries(mut self, input: crate::types::TrialSummary) -> Self {
         let mut v = self.trial_summaries.unwrap_or_default();
-        v.push(input);
-        self.trial_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trial_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the summaries of your trials.</p>
-    pub fn set_trial_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>) -> Self {
-        self.trial_summaries = input;
-        self
+    pub fn set_trial_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrialSummary>>) -> Self {
+        self.trial_summaries = input; self
     }
     /// <p>A list of the summaries of your trials.</p>
-    pub fn get_trial_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>> {
+    pub fn get_trial_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrialSummary>> {
         &self.trial_summaries
     }
     /// <p>A token for getting the next set of trials, if there are any.</p>
@@ -69,28 +69,30 @@ impl ListTrialsOutputBuilder {
     }
     /// <p>A token for getting the next set of trials, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token for getting the next set of trials, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTrialsOutput`](crate::operation::list_trials::ListTrialsOutput).
     pub fn build(self) -> crate::operation::list_trials::ListTrialsOutput {
         crate::operation::list_trials::ListTrialsOutput {
-            trial_summaries: self.trial_summaries,
-            next_token: self.next_token,
+            trial_summaries: self.trial_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

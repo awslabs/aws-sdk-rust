@@ -3,17 +3,16 @@
 /// <p>The count of resources that are grouped by the group name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupedResourceCount {
+pub struct GroupedResourceCount  {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     pub group_name: ::std::string::String,
     /// <p>The number of resources in the group.</p>
     pub resource_count: i64,
 }
-impl GroupedResourceCount {
+impl  GroupedResourceCount  {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
-    pub fn group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.group_name.deref()
+    pub fn group_name(&self) -> & str {
+        use std::ops::Deref; self.group_name.deref()
     }
     /// <p>The number of resources in the group.</p>
     pub fn resource_count(&self) -> i64 {
@@ -43,8 +42,7 @@ impl GroupedResourceCountBuilder {
     }
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl GroupedResourceCountBuilder {
     }
     /// <p>The number of resources in the group.</p>
     pub fn set_resource_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.resource_count = input;
-        self
+        self.resource_count = input; self
     }
     /// <p>The number of resources in the group.</p>
     pub fn get_resource_count(&self) -> &::std::option::Option<i64> {
@@ -69,14 +66,18 @@ impl GroupedResourceCountBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group_name`](crate::types::builders::GroupedResourceCountBuilder::group_name)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupedResourceCount, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GroupedResourceCount {
-            group_name: self.group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_name",
-                    "group_name was not specified but it is required when building GroupedResourceCount",
-                )
-            })?,
-            resource_count: self.resource_count.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::GroupedResourceCount {
+                group_name: self.group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_name", "group_name was not specified but it is required when building GroupedResourceCount")
+                    )?
+                ,
+                resource_count: self.resource_count
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

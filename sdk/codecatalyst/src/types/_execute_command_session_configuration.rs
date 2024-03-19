@@ -3,23 +3,23 @@
 /// <p>Information about the commands that will be run on a Dev Environment when an SSH session begins.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteCommandSessionConfiguration {
+pub struct ExecuteCommandSessionConfiguration  {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     pub command: ::std::string::String,
     /// <p>An array of arguments containing arguments and members.</p>
-    pub arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ExecuteCommandSessionConfiguration {
+impl  ExecuteCommandSessionConfiguration  {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(&self) -> &str {
-        use std::ops::Deref;
-        self.command.deref()
+    pub fn command(&self) -> & str {
+        use std::ops::Deref; self.command.deref()
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arguments.is_none()`.
-    pub fn arguments(&self) -> &[::std::string::String] {
-        self.arguments.as_deref().unwrap_or_default()
+    pub fn arguments(&self) -> & [::std::string::String] {
+        self.arguments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExecuteCommandSessionConfiguration {
@@ -34,7 +34,7 @@ impl ExecuteCommandSessionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfigurationBuilder {
     pub(crate) command: ::std::option::Option<::std::string::String>,
-    pub(crate) arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ExecuteCommandSessionConfigurationBuilder {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
@@ -45,8 +45,7 @@ impl ExecuteCommandSessionConfigurationBuilder {
     }
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ExecuteCommandSessionConfigurationBuilder {
     /// <p>An array of arguments containing arguments and members.</p>
     pub fn arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arguments.unwrap_or_default();
-        v.push(input.into());
-        self.arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn set_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arguments = input;
-        self
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arguments = input; self
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn get_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arguments
     }
     /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`command`](crate::types::builders::ExecuteCommandSessionConfigurationBuilder::command)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecuteCommandSessionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExecuteCommandSessionConfiguration {
-            command: self.command.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "command",
-                    "command was not specified but it is required when building ExecuteCommandSessionConfiguration",
-                )
-            })?,
-            arguments: self.arguments,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExecuteCommandSessionConfiguration {
+                command: self.command
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("command", "command was not specified but it is required when building ExecuteCommandSessionConfiguration")
+                    )?
+                ,
+                arguments: self.arguments
+                ,
+            }
+        )
     }
 }
+

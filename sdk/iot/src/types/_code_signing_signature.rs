@@ -3,13 +3,13 @@
 /// <p>Describes the signature for a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeSigningSignature {
+pub struct CodeSigningSignature  {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     pub inline_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl CodeSigningSignature {
+impl  CodeSigningSignature  {
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
-    pub fn inline_document(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn inline_document(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.inline_document.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl CodeSigningSignatureBuilder {
     }
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     pub fn set_inline_document(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.inline_document = input;
-        self
+        self.inline_document = input; self
     }
     /// <p>A base64 encoded binary representation of the code signing signature.</p>
     pub fn get_inline_document(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -44,7 +43,9 @@ impl CodeSigningSignatureBuilder {
     /// Consumes the builder and constructs a [`CodeSigningSignature`](crate::types::CodeSigningSignature).
     pub fn build(self) -> crate::types::CodeSigningSignature {
         crate::types::CodeSigningSignature {
-            inline_document: self.inline_document,
+            inline_document: self.inline_document
+            ,
         }
     }
 }
+

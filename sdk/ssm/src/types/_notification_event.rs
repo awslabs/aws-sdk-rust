@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationevent = unimplemented!();
 /// match notificationevent {
@@ -34,16 +34,14 @@
 /// Specifically, when `notificationevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum NotificationEvent {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -59,73 +57,74 @@ pub enum NotificationEvent {
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for NotificationEvent {
-    fn from(s: &str) -> Self {
-        match s {
-            "All" => NotificationEvent::All,
-            "Cancelled" => NotificationEvent::Cancelled,
-            "Failed" => NotificationEvent::Failed,
-            "InProgress" => NotificationEvent::InProgress,
-            "Success" => NotificationEvent::Success,
-            "TimedOut" => NotificationEvent::TimedOut,
-            other => NotificationEvent::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "All" => NotificationEvent::All,
+"Cancelled" => NotificationEvent::Cancelled,
+"Failed" => NotificationEvent::Failed,
+"InProgress" => NotificationEvent::InProgress,
+"Success" => NotificationEvent::Success,
+"TimedOut" => NotificationEvent::TimedOut,
+other => NotificationEvent::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for NotificationEvent {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(NotificationEvent::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(NotificationEvent::from(s))
+                    }
+                }
 impl NotificationEvent {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NotificationEvent::All => "All",
-            NotificationEvent::Cancelled => "Cancelled",
-            NotificationEvent::Failed => "Failed",
-            NotificationEvent::InProgress => "InProgress",
-            NotificationEvent::Success => "Success",
-            NotificationEvent::TimedOut => "TimedOut",
-            NotificationEvent::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["All", "Cancelled", "Failed", "InProgress", "Success", "TimedOut"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NotificationEvent::All => "All",
+    NotificationEvent::Cancelled => "Cancelled",
+    NotificationEvent::Failed => "Failed",
+    NotificationEvent::InProgress => "InProgress",
+    NotificationEvent::Success => "Success",
+    NotificationEvent::TimedOut => "TimedOut",
+    NotificationEvent::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["All", "Cancelled", "Failed", "InProgress", "Success", "TimedOut"]
+                }
+            }
 impl ::std::convert::AsRef<str> for NotificationEvent {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl NotificationEvent {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for NotificationEvent {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            NotificationEvent::All => write!(f, "All"),
-            NotificationEvent::Cancelled => write!(f, "Cancelled"),
-            NotificationEvent::Failed => write!(f, "Failed"),
-            NotificationEvent::InProgress => write!(f, "InProgress"),
-            NotificationEvent::Success => write!(f, "Success"),
-            NotificationEvent::TimedOut => write!(f, "TimedOut"),
-            NotificationEvent::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                NotificationEvent::All => write!(f, "All"),
+NotificationEvent::Cancelled => write!(f, "Cancelled"),
+NotificationEvent::Failed => write!(f, "Failed"),
+NotificationEvent::InProgress => write!(f, "InProgress"),
+NotificationEvent::Success => write!(f, "Success"),
+NotificationEvent::TimedOut => write!(f, "TimedOut"),
+NotificationEvent::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

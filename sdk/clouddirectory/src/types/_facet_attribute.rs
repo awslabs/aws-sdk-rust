@@ -3,7 +3,7 @@
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FacetAttribute {
+pub struct FacetAttribute  {
     /// <p>The name of the facet attribute.</p>
     pub name: ::std::string::String,
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
@@ -13,22 +13,21 @@ pub struct FacetAttribute {
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
-impl FacetAttribute {
+impl  FacetAttribute  {
     /// <p>The name of the facet attribute.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn attribute_definition(&self) -> ::std::option::Option<&crate::types::FacetAttributeDefinition> {
+    pub fn attribute_definition(&self) -> ::std::option::Option<& crate::types::FacetAttributeDefinition> {
         self.attribute_definition.as_ref()
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn attribute_reference(&self) -> ::std::option::Option<&crate::types::FacetAttributeReference> {
+    pub fn attribute_reference(&self) -> ::std::option::Option<& crate::types::FacetAttributeReference> {
         self.attribute_reference.as_ref()
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
-    pub fn required_behavior(&self) -> ::std::option::Option<&crate::types::RequiredAttributeBehavior> {
+    pub fn required_behavior(&self) -> ::std::option::Option<& crate::types::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl FacetAttributeBuilder {
     }
     /// <p>The name of the facet attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the facet attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl FacetAttributeBuilder {
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_attribute_definition(mut self, input: ::std::option::Option<crate::types::FacetAttributeDefinition>) -> Self {
-        self.attribute_definition = input;
-        self
+        self.attribute_definition = input; self
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn get_attribute_definition(&self) -> &::std::option::Option<crate::types::FacetAttributeDefinition> {
@@ -85,8 +82,7 @@ impl FacetAttributeBuilder {
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_attribute_reference(mut self, input: ::std::option::Option<crate::types::FacetAttributeReference>) -> Self {
-        self.attribute_reference = input;
-        self
+        self.attribute_reference = input; self
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn get_attribute_reference(&self) -> &::std::option::Option<crate::types::FacetAttributeReference> {
@@ -99,8 +95,7 @@ impl FacetAttributeBuilder {
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn set_required_behavior(mut self, input: ::std::option::Option<crate::types::RequiredAttributeBehavior>) -> Self {
-        self.required_behavior = input;
-        self
+        self.required_behavior = input; self
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn get_required_behavior(&self) -> &::std::option::Option<crate::types::RequiredAttributeBehavior> {
@@ -110,16 +105,21 @@ impl FacetAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FacetAttributeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::FacetAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FacetAttribute {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FacetAttribute",
-                )
-            })?,
-            attribute_definition: self.attribute_definition,
-            attribute_reference: self.attribute_reference,
-            required_behavior: self.required_behavior,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FacetAttribute {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FacetAttribute")
+                    )?
+                ,
+                attribute_definition: self.attribute_definition
+                ,
+                attribute_reference: self.attribute_reference
+                ,
+                required_behavior: self.required_behavior
+                ,
+            }
+        )
     }
 }
+

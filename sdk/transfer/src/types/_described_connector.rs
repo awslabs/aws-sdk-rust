@@ -3,7 +3,7 @@
 /// <p>Describes the parameters for the connector, as identified by the <code>ConnectorId</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribedConnector {
+pub struct DescribedConnector  {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
     pub arn: ::std::string::String,
     /// <p>The unique identifier for the connector.</p>
@@ -22,28 +22,27 @@ pub struct DescribedConnector {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub logging_role: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
-    pub service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribedConnector {
+impl  DescribedConnector  {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn as2_config(&self) -> ::std::option::Option<&crate::types::As2ConnectorConfig> {
+    pub fn as2_config(&self) -> ::std::option::Option<& crate::types::As2ConnectorConfig> {
         self.as2_config.as_ref()
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
@@ -52,28 +51,30 @@ impl DescribedConnector {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
-    pub fn access_role(&self) -> ::std::option::Option<&str> {
+    pub fn access_role(&self) -> ::std::option::Option<& str> {
         self.access_role.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
-    pub fn logging_role(&self) -> ::std::option::Option<&str> {
+    pub fn logging_role(&self) -> ::std::option::Option<& str> {
         self.logging_role.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
+    pub fn sftp_config(&self) -> ::std::option::Option<& crate::types::SftpConnectorConfig> {
         self.sftp_config.as_ref()
     }
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_managed_egress_ip_addresses.is_none()`.
-    pub fn service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
-        self.service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
+    pub fn service_managed_egress_ip_addresses(&self) -> & [::std::string::String] {
+        self.service_managed_egress_ip_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribedConnector {
@@ -93,9 +94,9 @@ pub struct DescribedConnectorBuilder {
     pub(crate) as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    pub(crate) service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -106,8 +107,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>The unique identifier for the connector.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>The unique identifier for the connector.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
-        self.as2_config = input;
-        self
+        self.as2_config = input; self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn get_as2_config(&self) -> &::std::option::Option<crate::types::As2ConnectorConfig> {
@@ -172,8 +169,7 @@ impl DescribedConnectorBuilder {
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
     /// <p><b>For AS2 connectors</b></p>
@@ -191,8 +187,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_role = input;
-        self
+        self.logging_role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +200,16 @@ impl DescribedConnectorBuilder {
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
@@ -225,8 +219,7 @@ impl DescribedConnectorBuilder {
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
-        self.sftp_config = input;
-        self
+        self.sftp_config = input; self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
@@ -239,38 +232,47 @@ impl DescribedConnectorBuilder {
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
     pub fn service_managed_egress_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_managed_egress_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
-    pub fn set_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_managed_egress_ip_addresses = input;
-        self
+    pub fn set_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_managed_egress_ip_addresses = input; self
     }
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
-    pub fn get_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_managed_egress_ip_addresses
     }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedConnector, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedConnector {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedConnector",
-                )
-            })?,
-            connector_id: self.connector_id,
-            url: self.url,
-            as2_config: self.as2_config,
-            access_role: self.access_role,
-            logging_role: self.logging_role,
-            tags: self.tags,
-            sftp_config: self.sftp_config,
-            service_managed_egress_ip_addresses: self.service_managed_egress_ip_addresses,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedConnector {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedConnector")
+                    )?
+                ,
+                connector_id: self.connector_id
+                ,
+                url: self.url
+                ,
+                as2_config: self.as2_config
+                ,
+                access_role: self.access_role
+                ,
+                logging_role: self.logging_role
+                ,
+                tags: self.tags
+                ,
+                sftp_config: self.sftp_config
+                ,
+                service_managed_egress_ip_addresses: self.service_managed_egress_ip_addresses
+                ,
+            }
+        )
     }
 }
+

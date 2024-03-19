@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSourceRepositoryInput {
+pub struct CreateSourceRepositoryInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
@@ -12,21 +12,21 @@ pub struct CreateSourceRepositoryInput {
     /// <p>The description of the source repository.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateSourceRepositoryInput {
+impl  CreateSourceRepositoryInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the source repository. For more information about name requirements, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html">Quotas for source repositories</a>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the source repository.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateSourceRepositoryInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateSourceRepositoryInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateSourceRepositoryInputBuilder {
     }
     /// <p>The name of the source repository. For more information about name requirements, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html">Quotas for source repositories</a>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the source repository. For more information about name requirements, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html">Quotas for source repositories</a>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl CreateSourceRepositoryInputBuilder {
     }
     /// <p>The description of the source repository.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the source repository.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateSourceRepositoryInput`](crate::operation::create_source_repository::CreateSourceRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_source_repository::CreateSourceRepositoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_source_repository::CreateSourceRepositoryInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_source_repository::CreateSourceRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_source_repository::CreateSourceRepositoryInput {
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

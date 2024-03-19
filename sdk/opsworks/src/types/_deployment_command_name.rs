@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentcommandname = unimplemented!();
 /// match deploymentcommandname {
@@ -40,16 +40,14 @@
 /// Specifically, when `deploymentcommandname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentCommandName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeploymentCommandName {
     #[allow(missing_docs)] // documentation missing in model
     Configure,
@@ -77,104 +75,92 @@ pub enum DeploymentCommandName {
     UpdateDependencies,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeploymentCommandName {
-    fn from(s: &str) -> Self {
-        match s {
-            "configure" => DeploymentCommandName::Configure,
-            "deploy" => DeploymentCommandName::Deploy,
-            "execute_recipes" => DeploymentCommandName::ExecuteRecipes,
-            "install_dependencies" => DeploymentCommandName::InstallDependencies,
-            "restart" => DeploymentCommandName::Restart,
-            "rollback" => DeploymentCommandName::Rollback,
-            "setup" => DeploymentCommandName::Setup,
-            "start" => DeploymentCommandName::Start,
-            "stop" => DeploymentCommandName::Stop,
-            "undeploy" => DeploymentCommandName::Undeploy,
-            "update_custom_cookbooks" => DeploymentCommandName::UpdateCustomCookbooks,
-            "update_dependencies" => DeploymentCommandName::UpdateDependencies,
-            other => DeploymentCommandName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "configure" => DeploymentCommandName::Configure,
+"deploy" => DeploymentCommandName::Deploy,
+"execute_recipes" => DeploymentCommandName::ExecuteRecipes,
+"install_dependencies" => DeploymentCommandName::InstallDependencies,
+"restart" => DeploymentCommandName::Restart,
+"rollback" => DeploymentCommandName::Rollback,
+"setup" => DeploymentCommandName::Setup,
+"start" => DeploymentCommandName::Start,
+"stop" => DeploymentCommandName::Stop,
+"undeploy" => DeploymentCommandName::Undeploy,
+"update_custom_cookbooks" => DeploymentCommandName::UpdateCustomCookbooks,
+"update_dependencies" => DeploymentCommandName::UpdateDependencies,
+other => DeploymentCommandName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeploymentCommandName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeploymentCommandName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeploymentCommandName::from(s))
+                    }
+                }
 impl DeploymentCommandName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentCommandName::Configure => "configure",
-            DeploymentCommandName::Deploy => "deploy",
-            DeploymentCommandName::ExecuteRecipes => "execute_recipes",
-            DeploymentCommandName::InstallDependencies => "install_dependencies",
-            DeploymentCommandName::Restart => "restart",
-            DeploymentCommandName::Rollback => "rollback",
-            DeploymentCommandName::Setup => "setup",
-            DeploymentCommandName::Start => "start",
-            DeploymentCommandName::Stop => "stop",
-            DeploymentCommandName::Undeploy => "undeploy",
-            DeploymentCommandName::UpdateCustomCookbooks => "update_custom_cookbooks",
-            DeploymentCommandName::UpdateDependencies => "update_dependencies",
-            DeploymentCommandName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "configure",
-            "deploy",
-            "execute_recipes",
-            "install_dependencies",
-            "restart",
-            "rollback",
-            "setup",
-            "start",
-            "stop",
-            "undeploy",
-            "update_custom_cookbooks",
-            "update_dependencies",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentCommandName::Configure => "configure",
+    DeploymentCommandName::Deploy => "deploy",
+    DeploymentCommandName::ExecuteRecipes => "execute_recipes",
+    DeploymentCommandName::InstallDependencies => "install_dependencies",
+    DeploymentCommandName::Restart => "restart",
+    DeploymentCommandName::Rollback => "rollback",
+    DeploymentCommandName::Setup => "setup",
+    DeploymentCommandName::Start => "start",
+    DeploymentCommandName::Stop => "stop",
+    DeploymentCommandName::Undeploy => "undeploy",
+    DeploymentCommandName::UpdateCustomCookbooks => "update_custom_cookbooks",
+    DeploymentCommandName::UpdateDependencies => "update_dependencies",
+    DeploymentCommandName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["configure", "deploy", "execute_recipes", "install_dependencies", "restart", "rollback", "setup", "start", "stop", "undeploy", "update_custom_cookbooks", "update_dependencies"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeploymentCommandName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeploymentCommandName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeploymentCommandName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeploymentCommandName::Configure => write!(f, "configure"),
-            DeploymentCommandName::Deploy => write!(f, "deploy"),
-            DeploymentCommandName::ExecuteRecipes => write!(f, "execute_recipes"),
-            DeploymentCommandName::InstallDependencies => write!(f, "install_dependencies"),
-            DeploymentCommandName::Restart => write!(f, "restart"),
-            DeploymentCommandName::Rollback => write!(f, "rollback"),
-            DeploymentCommandName::Setup => write!(f, "setup"),
-            DeploymentCommandName::Start => write!(f, "start"),
-            DeploymentCommandName::Stop => write!(f, "stop"),
-            DeploymentCommandName::Undeploy => write!(f, "undeploy"),
-            DeploymentCommandName::UpdateCustomCookbooks => write!(f, "update_custom_cookbooks"),
-            DeploymentCommandName::UpdateDependencies => write!(f, "update_dependencies"),
-            DeploymentCommandName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeploymentCommandName::Configure => write!(f, "configure"),
+DeploymentCommandName::Deploy => write!(f, "deploy"),
+DeploymentCommandName::ExecuteRecipes => write!(f, "execute_recipes"),
+DeploymentCommandName::InstallDependencies => write!(f, "install_dependencies"),
+DeploymentCommandName::Restart => write!(f, "restart"),
+DeploymentCommandName::Rollback => write!(f, "rollback"),
+DeploymentCommandName::Setup => write!(f, "setup"),
+DeploymentCommandName::Start => write!(f, "start"),
+DeploymentCommandName::Stop => write!(f, "stop"),
+DeploymentCommandName::Undeploy => write!(f, "undeploy"),
+DeploymentCommandName::UpdateCustomCookbooks => write!(f, "update_custom_cookbooks"),
+DeploymentCommandName::UpdateDependencies => write!(f, "update_dependencies"),
+DeploymentCommandName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

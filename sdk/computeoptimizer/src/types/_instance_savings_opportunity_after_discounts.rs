@@ -4,19 +4,19 @@
 /// <p>Savings opportunity after discounts represents the estimated monthly savings you can achieve by implementing Compute Optimizer recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceSavingsOpportunityAfterDiscounts {
+pub struct InstanceSavingsOpportunityAfterDiscounts  {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost after applying the Savings Plans and Reserved Instances discounts. This saving can be achieved by adopting Compute Optimizer’s EC2 instance recommendations.</p>
     pub savings_opportunity_percentage: f64,
     /// <p>An object that describes the estimated monthly savings possible by adopting Compute Optimizer’s Amazon EC2 instance recommendations. This is based on pricing after applying the Savings Plans and Reserved Instances discounts.</p>
     pub estimated_monthly_savings: ::std::option::Option<crate::types::InstanceEstimatedMonthlySavings>,
 }
-impl InstanceSavingsOpportunityAfterDiscounts {
+impl  InstanceSavingsOpportunityAfterDiscounts  {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost after applying the Savings Plans and Reserved Instances discounts. This saving can be achieved by adopting Compute Optimizer’s EC2 instance recommendations.</p>
     pub fn savings_opportunity_percentage(&self) -> f64 {
         self.savings_opportunity_percentage
     }
     /// <p>An object that describes the estimated monthly savings possible by adopting Compute Optimizer’s Amazon EC2 instance recommendations. This is based on pricing after applying the Savings Plans and Reserved Instances discounts.</p>
-    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::InstanceEstimatedMonthlySavings> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<& crate::types::InstanceEstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl InstanceSavingsOpportunityAfterDiscountsBuilder {
     }
     /// <p>The estimated monthly savings possible as a percentage of monthly cost after applying the Savings Plans and Reserved Instances discounts. This saving can be achieved by adopting Compute Optimizer’s EC2 instance recommendations.</p>
     pub fn set_savings_opportunity_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.savings_opportunity_percentage = input;
-        self
+        self.savings_opportunity_percentage = input; self
     }
     /// <p>The estimated monthly savings possible as a percentage of monthly cost after applying the Savings Plans and Reserved Instances discounts. This saving can be achieved by adopting Compute Optimizer’s EC2 instance recommendations.</p>
     pub fn get_savings_opportunity_percentage(&self) -> &::std::option::Option<f64> {
@@ -56,8 +55,7 @@ impl InstanceSavingsOpportunityAfterDiscountsBuilder {
     }
     /// <p>An object that describes the estimated monthly savings possible by adopting Compute Optimizer’s Amazon EC2 instance recommendations. This is based on pricing after applying the Savings Plans and Reserved Instances discounts.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<crate::types::InstanceEstimatedMonthlySavings>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>An object that describes the estimated monthly savings possible by adopting Compute Optimizer’s Amazon EC2 instance recommendations. This is based on pricing after applying the Savings Plans and Reserved Instances discounts.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<crate::types::InstanceEstimatedMonthlySavings> {
@@ -66,8 +64,12 @@ impl InstanceSavingsOpportunityAfterDiscountsBuilder {
     /// Consumes the builder and constructs a [`InstanceSavingsOpportunityAfterDiscounts`](crate::types::InstanceSavingsOpportunityAfterDiscounts).
     pub fn build(self) -> crate::types::InstanceSavingsOpportunityAfterDiscounts {
         crate::types::InstanceSavingsOpportunityAfterDiscounts {
-            savings_opportunity_percentage: self.savings_opportunity_percentage.unwrap_or_default(),
-            estimated_monthly_savings: self.estimated_monthly_savings,
+            savings_opportunity_percentage: self.savings_opportunity_percentage
+                .unwrap_or_default()
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
         }
     }
 }
+

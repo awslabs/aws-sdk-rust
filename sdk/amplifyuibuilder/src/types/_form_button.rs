@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for a button UI element that is a part of a form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormButton {
+pub struct FormButton  {
     /// <p>Specifies whether the button is visible on the form.</p>
     pub excluded: ::std::option::Option<bool>,
     /// <p>Describes the button's properties.</p>
@@ -11,17 +11,17 @@ pub struct FormButton {
     /// <p>The position of the button.</p>
     pub position: ::std::option::Option<crate::types::FieldPosition>,
 }
-impl FormButton {
+impl  FormButton  {
     /// <p>Specifies whether the button is visible on the form.</p>
     pub fn excluded(&self) -> ::std::option::Option<bool> {
         self.excluded
     }
     /// <p>Describes the button's properties.</p>
-    pub fn children(&self) -> ::std::option::Option<&str> {
+    pub fn children(&self) -> ::std::option::Option<& str> {
         self.children.as_deref()
     }
     /// <p>The position of the button.</p>
-    pub fn position(&self) -> ::std::option::Option<&crate::types::FieldPosition> {
+    pub fn position(&self) -> ::std::option::Option<& crate::types::FieldPosition> {
         self.position.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FormButtonBuilder {
     }
     /// <p>Specifies whether the button is visible on the form.</p>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Specifies whether the button is visible on the form.</p>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl FormButtonBuilder {
     }
     /// <p>Describes the button's properties.</p>
     pub fn set_children(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.children = input;
-        self
+        self.children = input; self
     }
     /// <p>Describes the button's properties.</p>
     pub fn get_children(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FormButtonBuilder {
     }
     /// <p>The position of the button.</p>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::FieldPosition>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The position of the button.</p>
     pub fn get_position(&self) -> &::std::option::Option<crate::types::FieldPosition> {
@@ -86,9 +83,13 @@ impl FormButtonBuilder {
     /// Consumes the builder and constructs a [`FormButton`](crate::types::FormButton).
     pub fn build(self) -> crate::types::FormButton {
         crate::types::FormButton {
-            excluded: self.excluded,
-            children: self.children,
-            position: self.position,
+            excluded: self.excluded
+            ,
+            children: self.children
+            ,
+            position: self.position
+            ,
         }
     }
 }
+

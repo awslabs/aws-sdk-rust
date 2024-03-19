@@ -3,19 +3,19 @@
 /// <p>Represents the reason the scan was triggered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TriggerDetails {
+pub struct TriggerDetails  {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub guard_duty_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scan trigger.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl TriggerDetails {
+impl  TriggerDetails  {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
-    pub fn guard_duty_finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn guard_duty_finding_id(&self) -> ::std::option::Option<& str> {
         self.guard_duty_finding_id.as_deref()
     }
     /// <p>The description of the scan trigger.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TriggerDetailsBuilder {
     }
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub fn set_guard_duty_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.guard_duty_finding_id = input;
-        self
+        self.guard_duty_finding_id = input; self
     }
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     pub fn get_guard_duty_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TriggerDetailsBuilder {
     }
     /// <p>The description of the scan trigger.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the scan trigger.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TriggerDetailsBuilder {
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {
         crate::types::TriggerDetails {
-            guard_duty_finding_id: self.guard_duty_finding_id,
-            description: self.description,
+            guard_duty_finding_id: self.guard_duty_finding_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Transcript representation containing Id, Content and list of character intervals that are associated with analysis data. For example, this object within an issue detected would describe both content that contains identified issue and intervals where that content is taken from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisTranscriptItemWithContent {
+pub struct RealTimeContactAnalysisTranscriptItemWithContent  {
     /// <p>Part of the transcript content that contains identified issue. Can be redacted</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
@@ -11,18 +11,17 @@ pub struct RealTimeContactAnalysisTranscriptItemWithContent {
     /// <p>Begin and end offsets for a part of text.</p>
     pub character_offsets: ::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval>,
 }
-impl RealTimeContactAnalysisTranscriptItemWithContent {
+impl  RealTimeContactAnalysisTranscriptItemWithContent  {
     /// <p>Part of the transcript content that contains identified issue. Can be redacted</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Begin and end offsets for a part of text.</p>
-    pub fn character_offsets(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisCharacterInterval> {
+    pub fn character_offsets(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisCharacterInterval> {
         self.character_offsets.as_ref()
     }
 }
@@ -49,8 +48,7 @@ impl RealTimeContactAnalysisTranscriptItemWithContentBuilder {
     }
     /// <p>Part of the transcript content that contains identified issue. Can be redacted</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Part of the transcript content that contains identified issue. Can be redacted</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl RealTimeContactAnalysisTranscriptItemWithContentBuilder {
     }
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl RealTimeContactAnalysisTranscriptItemWithContentBuilder {
     }
     /// <p>Begin and end offsets for a part of text.</p>
     pub fn set_character_offsets(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval>) -> Self {
-        self.character_offsets = input;
-        self
+        self.character_offsets = input; self
     }
     /// <p>Begin and end offsets for a part of text.</p>
     pub fn get_character_offsets(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval> {
@@ -88,18 +84,20 @@ impl RealTimeContactAnalysisTranscriptItemWithContentBuilder {
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisTranscriptItemWithContent`](crate::types::RealTimeContactAnalysisTranscriptItemWithContent).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder::id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisTranscriptItemWithContent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisTranscriptItemWithContent {
-            content: self.content,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RealTimeContactAnalysisTranscriptItemWithContent",
-                )
-            })?,
-            character_offsets: self.character_offsets,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisTranscriptItemWithContent, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisTranscriptItemWithContent {
+                content: self.content
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RealTimeContactAnalysisTranscriptItemWithContent")
+                    )?
+                ,
+                character_offsets: self.character_offsets
+                ,
+            }
+        )
     }
 }
+

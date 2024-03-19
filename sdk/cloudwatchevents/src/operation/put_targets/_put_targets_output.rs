@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutTargetsOutput {
+pub struct PutTargetsOutput  {
     /// <p>The number of failed entries.</p>
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
-    pub failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
+    pub failed_entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutTargetsResultEntry>>,
     _request_id: Option<String>,
 }
-impl PutTargetsOutput {
+impl  PutTargetsOutput  {
     /// <p>The number of failed entries.</p>
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
     /// <p>The failed target entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_entries.is_none()`.
-    pub fn failed_entries(&self) -> &[crate::types::PutTargetsResultEntry] {
-        self.failed_entries.as_deref().unwrap_or_default()
+    pub fn failed_entries(&self) -> & [crate::types::PutTargetsResultEntry] {
+        self.failed_entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutTargetsOutput {
     /// Creates a new builder-style object to manufacture [`PutTargetsOutput`](crate::operation::put_targets::PutTargetsOutput).
     pub fn builder() -> crate::operation::put_targets::builders::PutTargetsOutputBuilder {
@@ -38,7 +39,7 @@ impl PutTargetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
+    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutTargetsOutputBuilder {
@@ -49,8 +50,7 @@ impl PutTargetsOutputBuilder {
     }
     /// <p>The number of failed entries.</p>
     pub fn set_failed_entry_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_entry_count = input;
-        self
+        self.failed_entry_count = input; self
     }
     /// <p>The number of failed entries.</p>
     pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
@@ -63,34 +63,37 @@ impl PutTargetsOutputBuilder {
     /// <p>The failed target entries.</p>
     pub fn failed_entries(mut self, input: crate::types::PutTargetsResultEntry) -> Self {
         let mut v = self.failed_entries.unwrap_or_default();
-        v.push(input);
-        self.failed_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The failed target entries.</p>
-    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>) -> Self {
-        self.failed_entries = input;
-        self
+    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutTargetsResultEntry>>) -> Self {
+        self.failed_entries = input; self
     }
     /// <p>The failed target entries.</p>
-    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>> {
+    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutTargetsResultEntry>> {
         &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutTargetsOutput`](crate::operation::put_targets::PutTargetsOutput).
     pub fn build(self) -> crate::operation::put_targets::PutTargetsOutput {
         crate::operation::put_targets::PutTargetsOutput {
-            failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-            failed_entries: self.failed_entries,
+            failed_entry_count: self.failed_entry_count
+                .unwrap_or_default()
+            ,
+            failed_entries: self.failed_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

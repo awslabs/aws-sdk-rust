@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterActivityTypeInput {
+pub struct RegisterActivityTypeInput  {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the activity type within the domain.</p>
@@ -33,54 +33,54 @@ pub struct RegisterActivityTypeInput {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_schedule_to_close_timeout: ::std::option::Option<::std::string::String>,
 }
-impl RegisterActivityTypeInput {
+impl  RegisterActivityTypeInput  {
     /// <p>The name of the domain in which this activity is to be registered.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the activity type within the domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the activity type.</p><note>
     /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>A textual description of the activity type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn default_task_start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.default_task_start_to_close_timeout.as_deref()
     }
     /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_heartbeat_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn default_task_heartbeat_timeout(&self) -> ::std::option::Option<& str> {
         self.default_task_heartbeat_timeout.as_deref()
     }
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
-    pub fn default_task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn default_task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.default_task_list.as_ref()
     }
     /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
-    pub fn default_task_priority(&self) -> ::std::option::Option<&str> {
+    pub fn default_task_priority(&self) -> ::std::option::Option<& str> {
         self.default_task_priority.as_deref()
     }
     /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn default_task_schedule_to_start_timeout(&self) -> ::std::option::Option<& str> {
         self.default_task_schedule_to_start_timeout.as_deref()
     }
     /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_schedule_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn default_task_schedule_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
@@ -115,8 +115,7 @@ impl RegisterActivityTypeInputBuilder {
     }
     /// <p>The name of the domain in which this activity is to be registered.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain in which this activity is to be registered.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>The name of the activity type within the domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the activity type within the domain.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -154,8 +152,7 @@ impl RegisterActivityTypeInputBuilder {
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the activity type.</p><note>
     /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
@@ -171,8 +168,7 @@ impl RegisterActivityTypeInputBuilder {
     }
     /// <p>A textual description of the activity type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A textual description of the activity type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +183,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_default_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_task_start_to_close_timeout = input;
-        self
+        self.default_task_start_to_close_timeout = input; self
     }
     /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -204,8 +199,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_default_task_heartbeat_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_task_heartbeat_timeout = input;
-        self
+        self.default_task_heartbeat_timeout = input; self
     }
     /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -219,8 +213,7 @@ impl RegisterActivityTypeInputBuilder {
     }
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     pub fn set_default_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.default_task_list = input;
-        self
+        self.default_task_list = input; self
     }
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     pub fn get_default_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
@@ -235,8 +228,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
     pub fn set_default_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_task_priority = input;
-        self
+        self.default_task_priority = input; self
     }
     /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
@@ -252,8 +244,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_default_task_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_task_schedule_to_start_timeout = input;
-        self
+        self.default_task_schedule_to_start_timeout = input; self
     }
     /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -269,8 +260,7 @@ impl RegisterActivityTypeInputBuilder {
     /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_default_task_schedule_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_task_schedule_to_close_timeout = input;
-        self
+        self.default_task_schedule_to_close_timeout = input; self
     }
     /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -278,21 +268,31 @@ impl RegisterActivityTypeInputBuilder {
         &self.default_task_schedule_to_close_timeout
     }
     /// Consumes the builder and constructs a [`RegisterActivityTypeInput`](crate::operation::register_activity_type::RegisterActivityTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_activity_type::RegisterActivityTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_activity_type::RegisterActivityTypeInput {
-            domain: self.domain,
-            name: self.name,
-            version: self.version,
-            description: self.description,
-            default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
-            default_task_heartbeat_timeout: self.default_task_heartbeat_timeout,
-            default_task_list: self.default_task_list,
-            default_task_priority: self.default_task_priority,
-            default_task_schedule_to_start_timeout: self.default_task_schedule_to_start_timeout,
-            default_task_schedule_to_close_timeout: self.default_task_schedule_to_close_timeout,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_activity_type::RegisterActivityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_activity_type::RegisterActivityTypeInput {
+                domain: self.domain
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                description: self.description
+                ,
+                default_task_start_to_close_timeout: self.default_task_start_to_close_timeout
+                ,
+                default_task_heartbeat_timeout: self.default_task_heartbeat_timeout
+                ,
+                default_task_list: self.default_task_list
+                ,
+                default_task_priority: self.default_task_priority
+                ,
+                default_task_schedule_to_start_timeout: self.default_task_schedule_to_start_timeout
+                ,
+                default_task_schedule_to_close_timeout: self.default_task_schedule_to_close_timeout
+                ,
+            }
+        )
     }
 }
+

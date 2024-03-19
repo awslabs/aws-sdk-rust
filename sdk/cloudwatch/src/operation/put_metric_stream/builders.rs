@@ -5,23 +5,20 @@ pub use crate::operation::put_metric_stream::_put_metric_stream_input::PutMetric
 
 impl PutMetricStreamInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_metric_stream::PutMetricStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_metric_stream::PutMetricStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_metric_stream();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_metric_stream::PutMetricStreamOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_metric_stream::PutMetricStreamError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_metric_stream();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutMetricStream`.
-///
+/// 
 /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party solutions.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html"> Using Metric Streams</a>.</p>
 /// <p>To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code> permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code> permission.</p>
@@ -40,33 +37,32 @@ impl PutMetricStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMetricStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_metric_stream::builders::PutMetricStreamInputBuilder,
+                    inner: crate::operation::put_metric_stream::builders::PutMetricStreamInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_metric_stream::PutMetricStreamOutput,
-        crate::operation::put_metric_stream::PutMetricStreamError,
-    > for PutMetricStreamFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_metric_stream::PutMetricStreamOutput,
-            crate::operation::put_metric_stream::PutMetricStreamError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_metric_stream::PutMetricStreamOutput,
+                    crate::operation::put_metric_stream::PutMetricStreamError,
+                > for PutMetricStreamFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_metric_stream::PutMetricStreamOutput,
+                        crate::operation::put_metric_stream::PutMetricStreamError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutMetricStreamFluentBuilder {
     /// Creates a new `PutMetricStream`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -75,53 +71,44 @@ impl PutMetricStreamFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metric_stream::PutMetricStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_metric_stream::PutMetricStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_metric_stream::PutMetricStream::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_metric_stream::PutMetricStream::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_metric_stream::PutMetricStreamOutput,
-        crate::operation::put_metric_stream::PutMetricStreamError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_metric_stream::PutMetricStreamOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_metric_stream::PutMetricStreamError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_metric_stream::PutMetricStream::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_metric_stream::PutMetricStream::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_metric_stream::PutMetricStreamOutput, crate::operation::put_metric_stream::PutMetricStreamError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
     /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
     /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
@@ -154,13 +141,13 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
+    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>) -> Self {
         self.inner = self.inner.set_include_filters(input);
         self
     }
     /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>> {
         self.inner.get_include_filters()
     }
     /// Appends an item to `ExcludeFilters`.
@@ -175,13 +162,13 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
+    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>) -> Self {
         self.inner = self.inner.set_exclude_filters(input);
         self
     }
     /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>> {
         self.inner.get_exclude_filters()
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
@@ -258,14 +245,14 @@ impl PutMetricStreamFluentBuilder {
     /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Appends an item to `StatisticsConfigurations`.
@@ -280,16 +267,13 @@ impl PutMetricStreamFluentBuilder {
     }
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn set_statistics_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
-    ) -> Self {
+    pub fn set_statistics_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>>) -> Self {
         self.inner = self.inner.set_statistics_configurations(input);
         self
     }
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn get_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>> {
+    pub fn get_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>> {
         self.inner.get_statistics_configurations()
     }
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
@@ -307,3 +291,4 @@ impl PutMetricStreamFluentBuilder {
         self.inner.get_include_linked_accounts_metrics()
     }
 }
+

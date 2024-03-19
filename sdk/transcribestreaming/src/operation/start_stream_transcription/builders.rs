@@ -5,23 +5,20 @@ pub use crate::operation::start_stream_transcription::_start_stream_transcriptio
 
 impl StartStreamTranscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_stream_transcription::StartStreamTranscriptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_stream_transcription();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_stream_transcription::StartStreamTranscriptionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_stream_transcription();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartStreamTranscription`.
-///
+/// 
 /// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p>
 /// <p>The following parameters are required:</p>
 /// <ul>
@@ -36,33 +33,32 @@ impl StartStreamTranscriptionInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct StartStreamTranscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_stream_transcription::builders::StartStreamTranscriptionInputBuilder,
+                    inner: crate::operation::start_stream_transcription::builders::StartStreamTranscriptionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        crate::operation::start_stream_transcription::StartStreamTranscriptionError,
-    > for StartStreamTranscriptionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-            crate::operation::start_stream_transcription::StartStreamTranscriptionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
+                    crate::operation::start_stream_transcription::StartStreamTranscriptionError,
+                > for StartStreamTranscriptionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
+                        crate::operation::start_stream_transcription::StartStreamTranscriptionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartStreamTranscriptionFluentBuilder {
     /// Creates a new `StartStreamTranscription`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl StartStreamTranscriptionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_stream_transcription::StartStreamTranscriptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_stream_transcription::StartStreamTranscription::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_stream_transcription::StartStreamTranscription::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
-        crate::operation::start_stream_transcription::StartStreamTranscriptionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_stream_transcription::StartStreamTranscriptionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_stream_transcription::StartStreamTranscription::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_stream_transcription::StartStreamTranscription::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_stream_transcription::StartStreamTranscriptionOutput, crate::operation::start_stream_transcription::StartStreamTranscriptionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
@@ -238,30 +225,19 @@ impl StartStreamTranscriptionFluentBuilder {
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn audio_stream(
-        mut self,
-        input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
-    ) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>) -> Self {
         self.inner = self.inner.audio_stream(input);
         self
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
-        >,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>) -> Self {
         self.inner = self.inner.set_audio_stream(input);
         self
     }
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>
-    {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>> {
         self.inner.get_audio_stream()
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
@@ -638,3 +614,4 @@ impl StartStreamTranscriptionFluentBuilder {
         self.inner.get_vocabulary_filter_names()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes the configuration of the tracing feature within an App Runner observability configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TraceConfiguration {
+pub struct TraceConfiguration  {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     pub vendor: crate::types::TracingVendor,
 }
-impl TraceConfiguration {
+impl  TraceConfiguration  {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
-    pub fn vendor(&self) -> &crate::types::TracingVendor {
+    pub fn vendor(&self) -> & crate::types::TracingVendor {
         &self.vendor
     }
 }
@@ -35,8 +35,7 @@ impl TraceConfigurationBuilder {
     }
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     pub fn set_vendor(mut self, input: ::std::option::Option<crate::types::TracingVendor>) -> Self {
-        self.vendor = input;
-        self
+        self.vendor = input; self
     }
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     pub fn get_vendor(&self) -> &::std::option::Option<crate::types::TracingVendor> {
@@ -46,13 +45,15 @@ impl TraceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vendor`](crate::types::builders::TraceConfigurationBuilder::vendor)
     pub fn build(self) -> ::std::result::Result<crate::types::TraceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TraceConfiguration {
-            vendor: self.vendor.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vendor",
-                    "vendor was not specified but it is required when building TraceConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TraceConfiguration {
+                vendor: self.vendor
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vendor", "vendor was not specified but it is required when building TraceConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

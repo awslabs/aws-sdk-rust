@@ -3,7 +3,7 @@
 /// <p>A conversation in an Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Conversation {
+pub struct Conversation  {
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the conversation.</p>
@@ -11,17 +11,17 @@ pub struct Conversation {
     /// <p>The start time of the conversation.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Conversation {
+impl  Conversation  {
     /// <p>The identifier of the Amazon Q conversation.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>The title of the conversation.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The start time of the conversation.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ConversationBuilder {
     }
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ConversationBuilder {
     }
     /// <p>The title of the conversation.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the conversation.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ConversationBuilder {
     }
     /// <p>The start time of the conversation.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the conversation.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl ConversationBuilder {
     /// Consumes the builder and constructs a [`Conversation`](crate::types::Conversation).
     pub fn build(self) -> crate::types::Conversation {
         crate::types::Conversation {
-            conversation_id: self.conversation_id,
-            title: self.title,
-            start_time: self.start_time,
+            conversation_id: self.conversation_id
+            ,
+            title: self.title
+            ,
+            start_time: self.start_time
+            ,
         }
     }
 }
+

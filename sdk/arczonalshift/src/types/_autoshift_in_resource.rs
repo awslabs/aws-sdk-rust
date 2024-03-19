@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoshiftInResource {
+pub struct AutoshiftInResource  {
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
@@ -14,20 +14,19 @@ pub struct AutoshiftInResource {
     /// <p>The time (UTC) when the autoshift started.</p>
     pub start_time: ::aws_smithy_types::DateTime,
 }
-impl AutoshiftInResource {
+impl  AutoshiftInResource  {
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn applied_status(&self) -> &crate::types::AutoshiftAppliedStatus {
+    pub fn applied_status(&self) -> & crate::types::AutoshiftAppliedStatus {
         &self.applied_status
     }
     /// <p>The Availability Zone that traffic is shifted away from for a resource, when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
-    pub fn away_from(&self) -> &str {
-        use std::ops::Deref;
-        self.away_from.deref()
+    pub fn away_from(&self) -> & str {
+        use std::ops::Deref; self.away_from.deref()
     }
     /// <p>The time (UTC) when the autoshift started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
 }
@@ -59,8 +58,7 @@ impl AutoshiftInResourceBuilder {
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn set_applied_status(mut self, input: ::std::option::Option<crate::types::AutoshiftAppliedStatus>) -> Self {
-        self.applied_status = input;
-        self
+        self.applied_status = input; self
     }
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
@@ -76,8 +74,7 @@ impl AutoshiftInResourceBuilder {
     }
     /// <p>The Availability Zone that traffic is shifted away from for a resource, when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.away_from = input;
-        self
+        self.away_from = input; self
     }
     /// <p>The Availability Zone that traffic is shifted away from for a resource, when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl AutoshiftInResourceBuilder {
     }
     /// <p>The time (UTC) when the autoshift started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time (UTC) when the autoshift started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,25 +100,25 @@ impl AutoshiftInResourceBuilder {
     /// - [`away_from`](crate::types::builders::AutoshiftInResourceBuilder::away_from)
     /// - [`start_time`](crate::types::builders::AutoshiftInResourceBuilder::start_time)
     pub fn build(self) -> ::std::result::Result<crate::types::AutoshiftInResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AutoshiftInResource {
-            applied_status: self.applied_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "applied_status",
-                    "applied_status was not specified but it is required when building AutoshiftInResource",
-                )
-            })?,
-            away_from: self.away_from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "away_from",
-                    "away_from was not specified but it is required when building AutoshiftInResource",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building AutoshiftInResource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AutoshiftInResource {
+                applied_status: self.applied_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("applied_status", "applied_status was not specified but it is required when building AutoshiftInResource")
+                    )?
+                ,
+                away_from: self.away_from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("away_from", "away_from was not specified but it is required when building AutoshiftInResource")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building AutoshiftInResource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

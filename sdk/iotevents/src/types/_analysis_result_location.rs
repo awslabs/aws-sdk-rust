@@ -3,13 +3,13 @@
 /// <p>Contains information that you can use to locate the field in your detector model that the analysis result references.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisResultLocation {
+pub struct AnalysisResultLocation  {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl AnalysisResultLocation {
+impl  AnalysisResultLocation  {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AnalysisResultLocationBuilder {
     }
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AnalysisResultLocationBuilder {
     }
     /// Consumes the builder and constructs a [`AnalysisResultLocation`](crate::types::AnalysisResultLocation).
     pub fn build(self) -> crate::types::AnalysisResultLocation {
-        crate::types::AnalysisResultLocation { path: self.path }
+        crate::types::AnalysisResultLocation {
+            path: self.path
+            ,
+        }
     }
 }
+

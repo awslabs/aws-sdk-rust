@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instanceonboardingjobfailurecode = unimplemented!();
 /// match instanceonboardingjobfailurecode {
@@ -34,16 +34,14 @@
 /// Specifically, when `instanceonboardingjobfailurecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceOnboardingJobFailureCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Enumeration of the possible failure codes for instance onboarding job
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InstanceOnboardingJobFailureCode {
     #[allow(missing_docs)] // documentation missing in model
     EventBridgeAccessDenied,
@@ -59,80 +57,74 @@ pub enum InstanceOnboardingJobFailureCode {
     KmsKeyNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InstanceOnboardingJobFailureCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "EVENT_BRIDGE_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::EventBridgeAccessDenied,
-            "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded,
-            "IAM_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::IamAccessDenied,
-            "INTERNAL_FAILURE" => InstanceOnboardingJobFailureCode::InternalFailure,
-            "KMS_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::KmsAccessDenied,
-            "KMS_KEY_NOT_FOUND" => InstanceOnboardingJobFailureCode::KmsKeyNotFound,
-            other => InstanceOnboardingJobFailureCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EVENT_BRIDGE_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::EventBridgeAccessDenied,
+"EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded,
+"IAM_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::IamAccessDenied,
+"INTERNAL_FAILURE" => InstanceOnboardingJobFailureCode::InternalFailure,
+"KMS_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::KmsAccessDenied,
+"KMS_KEY_NOT_FOUND" => InstanceOnboardingJobFailureCode::KmsKeyNotFound,
+other => InstanceOnboardingJobFailureCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InstanceOnboardingJobFailureCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InstanceOnboardingJobFailureCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InstanceOnboardingJobFailureCode::from(s))
+                    }
+                }
 impl InstanceOnboardingJobFailureCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => "EVENT_BRIDGE_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
-            InstanceOnboardingJobFailureCode::IamAccessDenied => "IAM_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::InternalFailure => "INTERNAL_FAILURE",
-            InstanceOnboardingJobFailureCode::KmsAccessDenied => "KMS_ACCESS_DENIED",
-            InstanceOnboardingJobFailureCode::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
-            InstanceOnboardingJobFailureCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EVENT_BRIDGE_ACCESS_DENIED",
-            "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
-            "IAM_ACCESS_DENIED",
-            "INTERNAL_FAILURE",
-            "KMS_ACCESS_DENIED",
-            "KMS_KEY_NOT_FOUND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => "EVENT_BRIDGE_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
+    InstanceOnboardingJobFailureCode::IamAccessDenied => "IAM_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::InternalFailure => "INTERNAL_FAILURE",
+    InstanceOnboardingJobFailureCode::KmsAccessDenied => "KMS_ACCESS_DENIED",
+    InstanceOnboardingJobFailureCode::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
+    InstanceOnboardingJobFailureCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EVENT_BRIDGE_ACCESS_DENIED", "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED", "IAM_ACCESS_DENIED", "INTERNAL_FAILURE", "KMS_ACCESS_DENIED", "KMS_KEY_NOT_FOUND"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InstanceOnboardingJobFailureCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InstanceOnboardingJobFailureCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InstanceOnboardingJobFailureCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => write!(f, "EVENT_BRIDGE_ACCESS_DENIED"),
-            InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => write!(f, "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED"),
-            InstanceOnboardingJobFailureCode::IamAccessDenied => write!(f, "IAM_ACCESS_DENIED"),
-            InstanceOnboardingJobFailureCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            InstanceOnboardingJobFailureCode::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
-            InstanceOnboardingJobFailureCode::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
-            InstanceOnboardingJobFailureCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => write!(f, "EVENT_BRIDGE_ACCESS_DENIED"),
+InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => write!(f, "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED"),
+InstanceOnboardingJobFailureCode::IamAccessDenied => write!(f, "IAM_ACCESS_DENIED"),
+InstanceOnboardingJobFailureCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+InstanceOnboardingJobFailureCode::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
+InstanceOnboardingJobFailureCode::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
+InstanceOnboardingJobFailureCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

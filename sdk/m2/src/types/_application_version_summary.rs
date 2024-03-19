@@ -3,7 +3,7 @@
 /// <p>Defines an application version summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationVersionSummary {
+pub struct ApplicationVersionSummary  {
     /// <p>The application version.</p>
     pub application_version: i32,
     /// <p>The status of the application.</p>
@@ -13,21 +13,21 @@ pub struct ApplicationVersionSummary {
     /// <p>The timestamp when the application version was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
 }
-impl ApplicationVersionSummary {
+impl  ApplicationVersionSummary  {
     /// <p>The application version.</p>
     pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> &crate::types::ApplicationVersionLifecycle {
+    pub fn status(&self) -> & crate::types::ApplicationVersionLifecycle {
         &self.status
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The timestamp when the application version was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
@@ -56,8 +56,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The application version.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The application version.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<i32> {
@@ -71,8 +70,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionLifecycle> {
@@ -85,8 +83,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the reported status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +97,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The timestamp when the application version was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the application version was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,26 +109,27 @@ impl ApplicationVersionSummaryBuilder {
     /// - [`status`](crate::types::builders::ApplicationVersionSummaryBuilder::status)
     /// - [`creation_time`](crate::types::builders::ApplicationVersionSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building ApplicationVersionSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ApplicationVersionSummary",
-                )
-            })?,
-            status_reason: self.status_reason,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ApplicationVersionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationVersionSummary {
+                application_version: self.application_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version", "application_version was not specified but it is required when building ApplicationVersionSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ApplicationVersionSummary")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ApplicationVersionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

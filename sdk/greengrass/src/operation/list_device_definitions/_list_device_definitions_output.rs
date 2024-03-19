@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeviceDefinitionsOutput {
+pub struct ListDeviceDefinitionsOutput  {
     /// Information about a definition.
-    pub definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
+    pub definitions: ::std::option::Option<::std::vec::Vec::<crate::types::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDeviceDefinitionsOutput {
+impl  ListDeviceDefinitionsOutput  {
     /// Information about a definition.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.definitions.is_none()`.
-    pub fn definitions(&self) -> &[crate::types::DefinitionInformation] {
-        self.definitions.as_deref().unwrap_or_default()
+    pub fn definitions(&self) -> & [crate::types::DefinitionInformation] {
+        self.definitions.as_deref()
+        .unwrap_or_default()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDeviceDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDeviceDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionsOutput`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput).
     pub fn builder() -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListDeviceDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionsOutputBuilder {
-    pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
+    pub(crate) definitions: ::std::option::Option<::std::vec::Vec::<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListDeviceDefinitionsOutputBuilder {
     /// Information about a definition.
     pub fn definitions(mut self, input: crate::types::DefinitionInformation) -> Self {
         let mut v = self.definitions.unwrap_or_default();
-        v.push(input);
-        self.definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// Information about a definition.
-    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>) -> Self {
-        self.definitions = input;
-        self
+    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DefinitionInformation>>) -> Self {
+        self.definitions = input; self
     }
     /// Information about a definition.
-    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>> {
+    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DefinitionInformation>> {
         &self.definitions
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -69,28 +69,30 @@ impl ListDeviceDefinitionsOutputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDeviceDefinitionsOutput`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput).
     pub fn build(self) -> crate::operation::list_device_definitions::ListDeviceDefinitionsOutput {
         crate::operation::list_device_definitions::ListDeviceDefinitionsOutput {
-            definitions: self.definitions,
-            next_token: self.next_token,
+            definitions: self.definitions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBulkDeploymentOutput {
+pub struct StartBulkDeploymentOutput  {
     /// The ARN of the bulk deployment.
     pub bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartBulkDeploymentOutput {
+impl  StartBulkDeploymentOutput  {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_arn(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_arn.as_deref()
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartBulkDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartBulkDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkDeploymentOutput`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput).
     pub fn builder() -> crate::operation::start_bulk_deployment::builders::StartBulkDeploymentOutputBuilder {
@@ -47,8 +47,7 @@ impl StartBulkDeploymentOutputBuilder {
     }
     /// The ARN of the bulk deployment.
     pub fn set_bulk_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bulk_deployment_arn = input;
-        self
+        self.bulk_deployment_arn = input; self
     }
     /// The ARN of the bulk deployment.
     pub fn get_bulk_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl StartBulkDeploymentOutputBuilder {
     }
     /// The ID of the bulk deployment.
     pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bulk_deployment_id = input;
-        self
+        self.bulk_deployment_id = input; self
     }
     /// The ID of the bulk deployment.
     pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bulk_deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartBulkDeploymentOutput`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput).
     pub fn build(self) -> crate::operation::start_bulk_deployment::StartBulkDeploymentOutput {
         crate::operation::start_bulk_deployment::StartBulkDeploymentOutput {
-            bulk_deployment_arn: self.bulk_deployment_arn,
-            bulk_deployment_id: self.bulk_deployment_id,
+            bulk_deployment_arn: self.bulk_deployment_arn
+            ,
+            bulk_deployment_id: self.bulk_deployment_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

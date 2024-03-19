@@ -3,7 +3,7 @@
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaSettingsDescription {
+pub struct ReplicaSettingsDescription  {
     /// <p>The Region name of the replica.</p>
     pub region_name: ::std::string::String,
     /// <p>The current state of the Region:</p>
@@ -29,15 +29,14 @@ pub struct ReplicaSettingsDescription {
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
     pub replica_provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>Replica global secondary index settings for the global table.</p>
-    pub replica_global_secondary_index_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
+    pub replica_global_secondary_index_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
     /// <p>Contains details of the table class.</p>
     pub replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
-impl ReplicaSettingsDescription {
+impl  ReplicaSettingsDescription  {
     /// <p>The Region name of the replica.</p>
-    pub fn region_name(&self) -> &str {
-        use std::ops::Deref;
-        self.region_name.deref()
+    pub fn region_name(&self) -> & str {
+        use std::ops::Deref; self.region_name.deref()
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
@@ -50,11 +49,11 @@ impl ReplicaSettingsDescription {
     /// <li>
     /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
-    pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
+    pub fn replica_status(&self) -> ::std::option::Option<& crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
     }
     /// <p>The read/write capacity mode of the replica.</p>
-    pub fn replica_billing_mode_summary(&self) -> ::std::option::Option<&crate::types::BillingModeSummary> {
+    pub fn replica_billing_mode_summary(&self) -> ::std::option::Option<& crate::types::BillingModeSummary> {
         self.replica_billing_mode_summary.as_ref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -62,7 +61,7 @@ impl ReplicaSettingsDescription {
         self.replica_provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
-    pub fn replica_provisioned_read_capacity_auto_scaling_settings(&self) -> ::std::option::Option<&crate::types::AutoScalingSettingsDescription> {
+    pub fn replica_provisioned_read_capacity_auto_scaling_settings(&self) -> ::std::option::Option<& crate::types::AutoScalingSettingsDescription> {
         self.replica_provisioned_read_capacity_auto_scaling_settings.as_ref()
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -70,17 +69,18 @@ impl ReplicaSettingsDescription {
         self.replica_provisioned_write_capacity_units
     }
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
-    pub fn replica_provisioned_write_capacity_auto_scaling_settings(&self) -> ::std::option::Option<&crate::types::AutoScalingSettingsDescription> {
+    pub fn replica_provisioned_write_capacity_auto_scaling_settings(&self) -> ::std::option::Option<& crate::types::AutoScalingSettingsDescription> {
         self.replica_provisioned_write_capacity_auto_scaling_settings.as_ref()
     }
     /// <p>Replica global secondary index settings for the global table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_global_secondary_index_settings.is_none()`.
-    pub fn replica_global_secondary_index_settings(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexSettingsDescription] {
-        self.replica_global_secondary_index_settings.as_deref().unwrap_or_default()
+    pub fn replica_global_secondary_index_settings(&self) -> & [crate::types::ReplicaGlobalSecondaryIndexSettingsDescription] {
+        self.replica_global_secondary_index_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains details of the table class.</p>
-    pub fn replica_table_class_summary(&self) -> ::std::option::Option<&crate::types::TableClassSummary> {
+    pub fn replica_table_class_summary(&self) -> ::std::option::Option<& crate::types::TableClassSummary> {
         self.replica_table_class_summary.as_ref()
     }
 }
@@ -102,8 +102,7 @@ pub struct ReplicaSettingsDescriptionBuilder {
     pub(crate) replica_provisioned_read_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     pub(crate) replica_provisioned_write_capacity_units: ::std::option::Option<i64>,
     pub(crate) replica_provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
-    pub(crate) replica_global_secondary_index_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
+    pub(crate) replica_global_secondary_index_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
     pub(crate) replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
 impl ReplicaSettingsDescriptionBuilder {
@@ -115,8 +114,7 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The Region name of the replica.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The Region name of the replica.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl ReplicaSettingsDescriptionBuilder {
     /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<crate::types::ReplicaStatus>) -> Self {
-        self.replica_status = input;
-        self
+        self.replica_status = input; self
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
@@ -173,8 +170,7 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The read/write capacity mode of the replica.</p>
     pub fn set_replica_billing_mode_summary(mut self, input: ::std::option::Option<crate::types::BillingModeSummary>) -> Self {
-        self.replica_billing_mode_summary = input;
-        self
+        self.replica_billing_mode_summary = input; self
     }
     /// <p>The read/write capacity mode of the replica.</p>
     pub fn get_replica_billing_mode_summary(&self) -> &::std::option::Option<crate::types::BillingModeSummary> {
@@ -187,8 +183,7 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_replica_provisioned_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.replica_provisioned_read_capacity_units = input;
-        self
+        self.replica_provisioned_read_capacity_units = input; self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn get_replica_provisioned_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -200,17 +195,11 @@ impl ReplicaSettingsDescriptionBuilder {
         self
     }
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
-    pub fn set_replica_provisioned_read_capacity_auto_scaling_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
-    ) -> Self {
-        self.replica_provisioned_read_capacity_auto_scaling_settings = input;
-        self
+    pub fn set_replica_provisioned_read_capacity_auto_scaling_settings(mut self, input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>) -> Self {
+        self.replica_provisioned_read_capacity_auto_scaling_settings = input; self
     }
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
-    pub fn get_replica_provisioned_read_capacity_auto_scaling_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
+    pub fn get_replica_provisioned_read_capacity_auto_scaling_settings(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
         &self.replica_provisioned_read_capacity_auto_scaling_settings
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -220,8 +209,7 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_replica_provisioned_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.replica_provisioned_write_capacity_units = input;
-        self
+        self.replica_provisioned_write_capacity_units = input; self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn get_replica_provisioned_write_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -233,17 +221,11 @@ impl ReplicaSettingsDescriptionBuilder {
         self
     }
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
-    pub fn set_replica_provisioned_write_capacity_auto_scaling_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
-    ) -> Self {
-        self.replica_provisioned_write_capacity_auto_scaling_settings = input;
-        self
+    pub fn set_replica_provisioned_write_capacity_auto_scaling_settings(mut self, input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>) -> Self {
+        self.replica_provisioned_write_capacity_auto_scaling_settings = input; self
     }
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
-    pub fn get_replica_provisioned_write_capacity_auto_scaling_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
+    pub fn get_replica_provisioned_write_capacity_auto_scaling_settings(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
         &self.replica_provisioned_write_capacity_auto_scaling_settings
     }
     /// Appends an item to `replica_global_secondary_index_settings`.
@@ -253,22 +235,16 @@ impl ReplicaSettingsDescriptionBuilder {
     /// <p>Replica global secondary index settings for the global table.</p>
     pub fn replica_global_secondary_index_settings(mut self, input: crate::types::ReplicaGlobalSecondaryIndexSettingsDescription) -> Self {
         let mut v = self.replica_global_secondary_index_settings.unwrap_or_default();
-        v.push(input);
-        self.replica_global_secondary_index_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_global_secondary_index_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Replica global secondary index settings for the global table.</p>
-    pub fn set_replica_global_secondary_index_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
-    ) -> Self {
-        self.replica_global_secondary_index_settings = input;
-        self
+    pub fn set_replica_global_secondary_index_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>) -> Self {
+        self.replica_global_secondary_index_settings = input; self
     }
     /// <p>Replica global secondary index settings for the global table.</p>
-    pub fn get_replica_global_secondary_index_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>> {
+    pub fn get_replica_global_secondary_index_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>> {
         &self.replica_global_secondary_index_settings
     }
     /// <p>Contains details of the table class.</p>
@@ -278,8 +254,7 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>Contains details of the table class.</p>
     pub fn set_replica_table_class_summary(mut self, input: ::std::option::Option<crate::types::TableClassSummary>) -> Self {
-        self.replica_table_class_summary = input;
-        self
+        self.replica_table_class_summary = input; self
     }
     /// <p>Contains details of the table class.</p>
     pub fn get_replica_table_class_summary(&self) -> &::std::option::Option<crate::types::TableClassSummary> {
@@ -289,21 +264,31 @@ impl ReplicaSettingsDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region_name`](crate::types::builders::ReplicaSettingsDescriptionBuilder::region_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicaSettingsDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicaSettingsDescription {
-            region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region_name",
-                    "region_name was not specified but it is required when building ReplicaSettingsDescription",
-                )
-            })?,
-            replica_status: self.replica_status,
-            replica_billing_mode_summary: self.replica_billing_mode_summary,
-            replica_provisioned_read_capacity_units: self.replica_provisioned_read_capacity_units,
-            replica_provisioned_read_capacity_auto_scaling_settings: self.replica_provisioned_read_capacity_auto_scaling_settings,
-            replica_provisioned_write_capacity_units: self.replica_provisioned_write_capacity_units,
-            replica_provisioned_write_capacity_auto_scaling_settings: self.replica_provisioned_write_capacity_auto_scaling_settings,
-            replica_global_secondary_index_settings: self.replica_global_secondary_index_settings,
-            replica_table_class_summary: self.replica_table_class_summary,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicaSettingsDescription {
+                region_name: self.region_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region_name", "region_name was not specified but it is required when building ReplicaSettingsDescription")
+                    )?
+                ,
+                replica_status: self.replica_status
+                ,
+                replica_billing_mode_summary: self.replica_billing_mode_summary
+                ,
+                replica_provisioned_read_capacity_units: self.replica_provisioned_read_capacity_units
+                ,
+                replica_provisioned_read_capacity_auto_scaling_settings: self.replica_provisioned_read_capacity_auto_scaling_settings
+                ,
+                replica_provisioned_write_capacity_units: self.replica_provisioned_write_capacity_units
+                ,
+                replica_provisioned_write_capacity_auto_scaling_settings: self.replica_provisioned_write_capacity_auto_scaling_settings
+                ,
+                replica_global_secondary_index_settings: self.replica_global_secondary_index_settings
+                ,
+                replica_table_class_summary: self.replica_table_class_summary
+                ,
+            }
+        )
     }
 }
+

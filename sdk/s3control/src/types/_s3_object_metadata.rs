@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ObjectMetadata {
+pub struct S3ObjectMetadata  {
     /// <p></p>
     pub cache_control: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -13,7 +13,7 @@ pub struct S3ObjectMetadata {
     /// <p></p>
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub content_length: ::std::option::Option<i64>,
@@ -32,25 +32,25 @@ pub struct S3ObjectMetadata {
     /// </note>
     pub sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
 }
-impl S3ObjectMetadata {
+impl  S3ObjectMetadata  {
     /// <p></p>
-    pub fn cache_control(&self) -> ::std::option::Option<&str> {
+    pub fn cache_control(&self) -> ::std::option::Option<& str> {
         self.cache_control.as_deref()
     }
     /// <p></p>
-    pub fn content_disposition(&self) -> ::std::option::Option<&str> {
+    pub fn content_disposition(&self) -> ::std::option::Option<& str> {
         self.content_disposition.as_deref()
     }
     /// <p></p>
-    pub fn content_encoding(&self) -> ::std::option::Option<&str> {
+    pub fn content_encoding(&self) -> ::std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
     /// <p></p>
-    pub fn content_language(&self) -> ::std::option::Option<&str> {
+    pub fn content_language(&self) -> ::std::option::Option<& str> {
         self.content_language.as_deref()
     }
     /// <p></p>
-    pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn user_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p><i>This member has been deprecated.</i></p>
@@ -60,15 +60,15 @@ impl S3ObjectMetadata {
     }
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
-    pub fn content_md5(&self) -> ::std::option::Option<&str> {
+    pub fn content_md5(&self) -> ::std::option::Option<& str> {
         self.content_md5.as_deref()
     }
     /// <p></p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p></p>
-    pub fn http_expires_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn http_expires_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.http_expires_date.as_ref()
     }
     /// <p><i>This member has been deprecated.</i></p>
@@ -79,7 +79,7 @@ impl S3ObjectMetadata {
     /// <p></p><note>
     /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
-    pub fn sse_algorithm(&self) -> ::std::option::Option<&crate::types::S3SseAlgorithm> {
+    pub fn sse_algorithm(&self) -> ::std::option::Option<& crate::types::S3SseAlgorithm> {
         self.sse_algorithm.as_ref()
     }
 }
@@ -98,7 +98,7 @@ pub struct S3ObjectMetadataBuilder {
     pub(crate) content_disposition: ::std::option::Option<::std::string::String>,
     pub(crate) content_encoding: ::std::option::Option<::std::string::String>,
     pub(crate) content_language: ::std::option::Option<::std::string::String>,
-    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) content_length: ::std::option::Option<i64>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -114,8 +114,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     /// <p></p>
     pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_disposition = input;
-        self
+        self.content_disposition = input; self
     }
     /// <p></p>
     pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_encoding = input;
-        self
+        self.content_encoding = input; self
     }
     /// <p></p>
     pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_language = input;
-        self
+        self.content_language = input; self
     }
     /// <p></p>
     pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,20 +166,16 @@ impl S3ObjectMetadataBuilder {
     /// <p></p>
     pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.user_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.user_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p></p>
-    pub fn set_user_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.user_metadata = input;
-        self
+    pub fn set_user_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.user_metadata = input; self
     }
     /// <p></p>
-    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
     /// <p><i>This member has been deprecated.</i></p>
@@ -195,8 +187,7 @@ impl S3ObjectMetadataBuilder {
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
     }
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
@@ -212,8 +203,7 @@ impl S3ObjectMetadataBuilder {
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_md5 = input;
-        self
+        self.content_md5 = input; self
     }
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
@@ -227,8 +217,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p></p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +230,7 @@ impl S3ObjectMetadataBuilder {
     }
     /// <p></p>
     pub fn set_http_expires_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.http_expires_date = input;
-        self
+        self.http_expires_date = input; self
     }
     /// <p></p>
     pub fn get_http_expires_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -257,8 +245,7 @@ impl S3ObjectMetadataBuilder {
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_requester_charged(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.requester_charged = input;
-        self
+        self.requester_charged = input; self
     }
     /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
@@ -276,8 +263,7 @@ impl S3ObjectMetadataBuilder {
     /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
     pub fn set_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
-        self.sse_algorithm = input;
-        self
+        self.sse_algorithm = input; self
     }
     /// <p></p><note>
     /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
@@ -288,17 +274,30 @@ impl S3ObjectMetadataBuilder {
     /// Consumes the builder and constructs a [`S3ObjectMetadata`](crate::types::S3ObjectMetadata).
     pub fn build(self) -> crate::types::S3ObjectMetadata {
         crate::types::S3ObjectMetadata {
-            cache_control: self.cache_control,
-            content_disposition: self.content_disposition,
-            content_encoding: self.content_encoding,
-            content_language: self.content_language,
-            user_metadata: self.user_metadata,
-            content_length: self.content_length,
-            content_md5: self.content_md5,
-            content_type: self.content_type,
-            http_expires_date: self.http_expires_date,
-            requester_charged: self.requester_charged.unwrap_or_default(),
-            sse_algorithm: self.sse_algorithm,
+            cache_control: self.cache_control
+            ,
+            content_disposition: self.content_disposition
+            ,
+            content_encoding: self.content_encoding
+            ,
+            content_language: self.content_language
+            ,
+            user_metadata: self.user_metadata
+            ,
+            content_length: self.content_length
+            ,
+            content_md5: self.content_md5
+            ,
+            content_type: self.content_type
+            ,
+            http_expires_date: self.http_expires_date
+            ,
+            requester_charged: self.requester_charged
+                .unwrap_or_default()
+            ,
+            sse_algorithm: self.sse_algorithm
+            ,
         }
     }
 }
+

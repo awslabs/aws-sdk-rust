@@ -5,56 +5,52 @@ pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_
 
 impl UpdateMatchmakingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_matchmaking_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_matchmaking_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateMatchmakingConfiguration`.
-///
+/// 
 /// <p>Updates settings for a FlexMatch matchmaking configuration. These changes affect all matches and game sessions that are created after the update. To update settings, specify the configuration name to be updated and provide the new settings.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationInputBuilder,
+                    inner: crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
-    > for UpdateMatchmakingConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
-            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
+                    crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+                > for UpdateMatchmakingConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
+                        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateMatchmakingConfigurationFluentBuilder {
     /// Creates a new `UpdateMatchmakingConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
-        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput, crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -154,7 +141,7 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
-    pub fn set_game_session_queue_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_game_session_queue_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_game_session_queue_arns(input);
         self
     }
@@ -162,7 +149,7 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
-    pub fn get_game_session_queue_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_game_session_queue_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_game_session_queue_arns()
     }
     /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
@@ -273,12 +260,12 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>>) -> Self {
         self.inner = self.inner.set_game_properties(input);
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>> {
         self.inner.get_game_properties()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the game session that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -342,3 +329,4 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
         self.inner.get_flex_match_mode()
     }
 }
+

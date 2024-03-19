@@ -3,7 +3,7 @@
 /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamlProperties {
+pub struct SamlProperties  {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ pub struct SamlProperties {
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
     pub relay_state_parameter_name: ::std::option::Option<::std::string::String>,
 }
-impl SamlProperties {
+impl  SamlProperties  {
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
     /// <li>
@@ -30,16 +30,16 @@ impl SamlProperties {
     /// <li>
     /// <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SamlStatusEnum> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SamlStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
-    pub fn user_access_url(&self) -> ::std::option::Option<&str> {
+    pub fn user_access_url(&self) -> ::std::option::Option<& str> {
         self.user_access_url.as_deref()
     }
     /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
-    pub fn relay_state_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn relay_state_parameter_name(&self) -> ::std::option::Option<& str> {
         self.relay_state_parameter_name.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl SamlPropertiesBuilder {
     /// <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SamlStatusEnum>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
     /// <ul>
@@ -104,8 +103,7 @@ impl SamlPropertiesBuilder {
     }
     /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
     pub fn set_user_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_access_url = input;
-        self
+        self.user_access_url = input; self
     }
     /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
     pub fn get_user_access_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl SamlPropertiesBuilder {
     /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
     pub fn set_relay_state_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relay_state_parameter_name = input;
-        self
+        self.relay_state_parameter_name = input; self
     }
     /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
     /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
@@ -131,9 +128,13 @@ impl SamlPropertiesBuilder {
     /// Consumes the builder and constructs a [`SamlProperties`](crate::types::SamlProperties).
     pub fn build(self) -> crate::types::SamlProperties {
         crate::types::SamlProperties {
-            status: self.status,
-            user_access_url: self.user_access_url,
-            relay_state_parameter_name: self.relay_state_parameter_name,
+            status: self.status
+            ,
+            user_access_url: self.user_access_url
+            ,
+            relay_state_parameter_name: self.relay_state_parameter_name
+            ,
         }
     }
 }
+

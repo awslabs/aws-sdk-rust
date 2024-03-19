@@ -3,7 +3,7 @@
 /// <p>Provides information about a targeted sentiment detection job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetedSentimentDetectionJobProperties {
+pub struct TargetedSentimentDetectionJobProperties  {
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
@@ -50,9 +50,9 @@ pub struct TargetedSentimentDetectionJobProperties {
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl TargetedSentimentDetectionJobProperties {
+impl  TargetedSentimentDetectionJobProperties  {
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
@@ -68,44 +68,44 @@ impl TargetedSentimentDetectionJobProperties {
     /// </partition></code></p>
     /// <p>The following is an example job ARN:</p>
     /// <p><code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The name that you assigned to the targeted sentiment detection job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>A description of the status of a job.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time that the targeted sentiment detection job ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Provides configuration parameters for the output of inference jobs.</p>
     /// <p></p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The language code of the input documents.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
@@ -115,11 +115,11 @@ impl TargetedSentimentDetectionJobProperties {
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -156,8 +156,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier assigned to the targeted sentiment detection job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +193,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     /// <p>The following is an example job ARN:</p>
     /// <p><code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p><code>arn:<partition>
@@ -220,8 +218,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The name that you assigned to the targeted sentiment detection job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name that you assigned to the targeted sentiment detection job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +231,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The current status of the targeted sentiment detection job. If the status is <code>FAILED</code>, the <code>Messages</code> field shows the reason for the failure.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -248,8 +244,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>A description of the status of a job.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the status of a job.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +257,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
     pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submit_time = input;
-        self
+        self.submit_time = input; self
     }
     /// <p>The time that the targeted sentiment detection job was submitted for processing.</p>
     pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -276,8 +270,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The time that the targeted sentiment detection job ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time that the targeted sentiment detection job ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -290,8 +283,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
@@ -306,8 +298,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     /// <p>Provides configuration parameters for the output of inference jobs.</p>
     /// <p></p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>Provides configuration parameters for the output of inference jobs.</p>
     /// <p></p>
@@ -321,8 +312,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The language code of the input documents.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code of the input documents.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -335,8 +325,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -361,8 +350,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -381,8 +369,7 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -391,19 +378,33 @@ impl TargetedSentimentDetectionJobPropertiesBuilder {
     /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobProperties`](crate::types::TargetedSentimentDetectionJobProperties).
     pub fn build(self) -> crate::types::TargetedSentimentDetectionJobProperties {
         crate::types::TargetedSentimentDetectionJobProperties {
-            job_id: self.job_id,
-            job_arn: self.job_arn,
-            job_name: self.job_name,
-            job_status: self.job_status,
-            message: self.message,
-            submit_time: self.submit_time,
-            end_time: self.end_time,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-            language_code: self.language_code,
-            data_access_role_arn: self.data_access_role_arn,
-            volume_kms_key_id: self.volume_kms_key_id,
-            vpc_config: self.vpc_config,
+            job_id: self.job_id
+            ,
+            job_arn: self.job_arn
+            ,
+            job_name: self.job_name
+            ,
+            job_status: self.job_status
+            ,
+            message: self.message
+            ,
+            submit_time: self.submit_time
+            ,
+            end_time: self.end_time
+            ,
+            input_data_config: self.input_data_config
+            ,
+            output_data_config: self.output_data_config
+            ,
+            language_code: self.language_code
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            volume_kms_key_id: self.volume_kms_key_id
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

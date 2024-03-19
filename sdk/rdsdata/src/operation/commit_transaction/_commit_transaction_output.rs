@@ -3,22 +3,22 @@
 /// <p>The response elements represent the output of a commit transaction request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitTransactionOutput {
+pub struct CommitTransactionOutput  {
     /// <p>The status of the commit operation.</p>
     pub transaction_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CommitTransactionOutput {
+impl  CommitTransactionOutput  {
     /// <p>The status of the commit operation.</p>
-    pub fn transaction_status(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_status(&self) -> ::std::option::Option<& str> {
         self.transaction_status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CommitTransactionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CommitTransactionOutput {
     /// Creates a new builder-style object to manufacture [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
     pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder {
@@ -41,27 +41,28 @@ impl CommitTransactionOutputBuilder {
     }
     /// <p>The status of the commit operation.</p>
     pub fn set_transaction_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_status = input;
-        self
+        self.transaction_status = input; self
     }
     /// <p>The status of the commit operation.</p>
     pub fn get_transaction_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
     pub fn build(self) -> crate::operation::commit_transaction::CommitTransactionOutput {
         crate::operation::commit_transaction::CommitTransactionOutput {
-            transaction_status: self.transaction_status,
+            transaction_status: self.transaction_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

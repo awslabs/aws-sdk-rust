@@ -3,7 +3,7 @@
 /// <p>Configures a hyperparameter tuning job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningJobConfig {
+pub struct HyperParameterTuningJobConfig  {
     /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
     pub strategy: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
     /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
@@ -35,25 +35,25 @@ pub struct HyperParameterTuningJobConfig {
     /// <p>A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter configuration between the two runs.</p>
     pub random_seed: ::std::option::Option<i32>,
 }
-impl HyperParameterTuningJobConfig {
+impl  HyperParameterTuningJobConfig  {
     /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
-    pub fn strategy(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStrategyType> {
+    pub fn strategy(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobStrategyType> {
         self.strategy.as_ref()
     }
     /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
-    pub fn strategy_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStrategyConfig> {
+    pub fn strategy_config(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobStrategyConfig> {
         self.strategy_config.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of training jobs launched by this tuning job.</p>
-    pub fn hyper_parameter_tuning_job_objective(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjective> {
+    pub fn hyper_parameter_tuning_job_objective(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobObjective> {
         self.hyper_parameter_tuning_job_objective.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that can be used for this hyperparameter tuning job.</p>
-    pub fn resource_limits(&self) -> ::std::option::Option<&crate::types::ResourceLimits> {
+    pub fn resource_limits(&self) -> ::std::option::Option<& crate::types::ResourceLimits> {
         self.resource_limits.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
-    pub fn parameter_ranges(&self) -> ::std::option::Option<&crate::types::ParameterRanges> {
+    pub fn parameter_ranges(&self) -> ::std::option::Option<& crate::types::ParameterRanges> {
         self.parameter_ranges.as_ref()
     }
     /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
@@ -71,11 +71,11 @@ impl HyperParameterTuningJobConfig {
     /// <p>SageMaker stops training jobs launched by the hyperparameter tuning job when they are unlikely to perform better than previously completed training jobs. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop Training Jobs Early</a>.</p>
     /// </dd>
     /// </dl>
-    pub fn training_job_early_stopping_type(&self) -> ::std::option::Option<&crate::types::TrainingJobEarlyStoppingType> {
+    pub fn training_job_early_stopping_type(&self) -> ::std::option::Option<& crate::types::TrainingJobEarlyStoppingType> {
         self.training_job_early_stopping_type.as_ref()
     }
     /// <p>The tuning job's completion criteria.</p>
-    pub fn tuning_job_completion_criteria(&self) -> ::std::option::Option<&crate::types::TuningJobCompletionCriteria> {
+    pub fn tuning_job_completion_criteria(&self) -> ::std::option::Option<& crate::types::TuningJobCompletionCriteria> {
         self.tuning_job_completion_criteria.as_ref()
     }
     /// <p>A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter configuration between the two runs.</p>
@@ -112,8 +112,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>) -> Self {
-        self.strategy = input;
-        self
+        self.strategy = input; self
     }
     /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStrategyType> {
@@ -126,8 +125,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
     pub fn set_strategy_config(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyConfig>) -> Self {
-        self.strategy_config = input;
-        self
+        self.strategy_config = input; self
     }
     /// <p>The configuration for the <code>Hyperband</code> optimization strategy. This parameter should be provided only if <code>Hyperband</code> is selected as the strategy for <code>HyperParameterTuningJobConfig</code>.</p>
     pub fn get_strategy_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStrategyConfig> {
@@ -140,8 +138,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of training jobs launched by this tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_objective(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobObjective>) -> Self {
-        self.hyper_parameter_tuning_job_objective = input;
-        self
+        self.hyper_parameter_tuning_job_objective = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of training jobs launched by this tuning job.</p>
     pub fn get_hyper_parameter_tuning_job_objective(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjective> {
@@ -155,8 +152,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that can be used for this hyperparameter tuning job.</p>
     pub fn set_resource_limits(mut self, input: ::std::option::Option<crate::types::ResourceLimits>) -> Self {
-        self.resource_limits = input;
-        self
+        self.resource_limits = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that can be used for this hyperparameter tuning job.</p>
     pub fn get_resource_limits(&self) -> &::std::option::Option<crate::types::ResourceLimits> {
@@ -169,8 +165,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn set_parameter_ranges(mut self, input: ::std::option::Option<crate::types::ParameterRanges>) -> Self {
-        self.parameter_ranges = input;
-        self
+        self.parameter_ranges = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over to find the optimal configuration for the highest model performance against your chosen objective metric.</p>
     pub fn get_parameter_ranges(&self) -> &::std::option::Option<crate::types::ParameterRanges> {
@@ -211,8 +206,7 @@ impl HyperParameterTuningJobConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_training_job_early_stopping_type(mut self, input: ::std::option::Option<crate::types::TrainingJobEarlyStoppingType>) -> Self {
-        self.training_job_early_stopping_type = input;
-        self
+        self.training_job_early_stopping_type = input; self
     }
     /// <p>Specifies whether to use early stopping for training jobs launched by the hyperparameter tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code> to use <code>Hyperband</code>. This parameter can take on one of the following values (the default value is <code>OFF</code>):</p>
     /// <dl>
@@ -239,8 +233,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>The tuning job's completion criteria.</p>
     pub fn set_tuning_job_completion_criteria(mut self, input: ::std::option::Option<crate::types::TuningJobCompletionCriteria>) -> Self {
-        self.tuning_job_completion_criteria = input;
-        self
+        self.tuning_job_completion_criteria = input; self
     }
     /// <p>The tuning job's completion criteria.</p>
     pub fn get_tuning_job_completion_criteria(&self) -> &::std::option::Option<crate::types::TuningJobCompletionCriteria> {
@@ -253,8 +246,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter configuration between the two runs.</p>
     pub fn set_random_seed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.random_seed = input;
-        self
+        self.random_seed = input; self
     }
     /// <p>A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter configuration between the two runs.</p>
     pub fn get_random_seed(&self) -> &::std::option::Option<i32> {
@@ -263,14 +255,23 @@ impl HyperParameterTuningJobConfigBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConfig {
         crate::types::HyperParameterTuningJobConfig {
-            strategy: self.strategy,
-            strategy_config: self.strategy_config,
-            hyper_parameter_tuning_job_objective: self.hyper_parameter_tuning_job_objective,
-            resource_limits: self.resource_limits,
-            parameter_ranges: self.parameter_ranges,
-            training_job_early_stopping_type: self.training_job_early_stopping_type,
-            tuning_job_completion_criteria: self.tuning_job_completion_criteria,
-            random_seed: self.random_seed,
+            strategy: self.strategy
+            ,
+            strategy_config: self.strategy_config
+            ,
+            hyper_parameter_tuning_job_objective: self.hyper_parameter_tuning_job_objective
+            ,
+            resource_limits: self.resource_limits
+            ,
+            parameter_ranges: self.parameter_ranges
+            ,
+            training_job_early_stopping_type: self.training_job_early_stopping_type
+            ,
+            tuning_job_completion_criteria: self.tuning_job_completion_criteria
+            ,
+            random_seed: self.random_seed
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcEndpointServiceConfigurationOutput {
+pub struct CreateVpcEndpointServiceConfigurationOutput  {
     /// <p>Information about the service configuration.</p>
     pub service_configuration: ::std::option::Option<crate::types::ServiceConfiguration>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateVpcEndpointServiceConfigurationOutput {
+impl  CreateVpcEndpointServiceConfigurationOutput  {
     /// <p>Information about the service configuration.</p>
-    pub fn service_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConfiguration> {
+    pub fn service_configuration(&self) -> ::std::option::Option<& crate::types::ServiceConfiguration> {
         self.service_configuration.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateVpcEndpointServiceConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateVpcEndpointServiceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointServiceConfigurationOutput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput).
     pub fn builder() -> crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateVpcEndpointServiceConfigurationOutputBuilder {
     }
     /// <p>Information about the service configuration.</p>
     pub fn set_service_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConfiguration>) -> Self {
-        self.service_configuration = input;
-        self
+        self.service_configuration = input; self
     }
     /// <p>Information about the service configuration.</p>
     pub fn get_service_configuration(&self) -> &::std::option::Option<crate::types::ServiceConfiguration> {
@@ -61,28 +60,30 @@ impl CreateVpcEndpointServiceConfigurationOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateVpcEndpointServiceConfigurationOutput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput).
     pub fn build(self) -> crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput {
         crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput {
-            service_configuration: self.service_configuration,
-            client_token: self.client_token,
+            service_configuration: self.service_configuration
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

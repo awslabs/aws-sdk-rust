@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateActionTargetInput {
+pub struct CreateActionTargetInput  {
     /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the custom action target.</p>
@@ -10,17 +10,17 @@ pub struct CreateActionTargetInput {
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl CreateActionTargetInput {
+impl  CreateActionTargetInput  {
     /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the custom action target.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateActionTargetInputBuilder {
     }
     /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateActionTargetInputBuilder {
     }
     /// <p>The description for the custom action target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the custom action target.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl CreateActionTargetInputBuilder {
     }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_action_target::CreateActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_action_target::CreateActionTargetInput {
-            name: self.name,
-            description: self.description,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_action_target::CreateActionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_action_target::CreateActionTargetInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

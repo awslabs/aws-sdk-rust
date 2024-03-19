@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContactLists`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`page_size(i32)`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::set_page_size):<br>required: **false**<br><p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::set_next_token):<br>required: **false**<br><p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p><br>
-    /// - On success, responds with [`ListContactListsOutput`](crate::operation::list_contact_lists::ListContactListsOutput) with field(s):
+                            /// - On success, responds with [`ListContactListsOutput`](crate::operation::list_contact_lists::ListContactListsOutput) with field(s):
     ///   - [`contact_lists(Option<Vec::<ContactList>>)`](crate::operation::list_contact_lists::ListContactListsOutput::contact_lists): <p>The available contact lists.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_lists::ListContactListsOutput::next_token): <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
-    /// - On failure, responds with [`SdkError<ListContactListsError>`](crate::operation::list_contact_lists::ListContactListsError)
+                            /// - On failure, responds with [`SdkError<ListContactListsError>`](crate::operation::list_contact_lists::ListContactListsError)
     pub fn list_contact_lists(&self) -> crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder {
-        crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

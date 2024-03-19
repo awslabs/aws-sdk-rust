@@ -3,20 +3,19 @@
 /// <p>An Amazon Web Services resource that is supported by Global Accelerator and can be added as an endpoint for an accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The endpoint ID for the endpoint (Amazon Web Services resource).</p>
     pub endpoint_id: ::std::string::String,
     /// <p>The Amazon Web Services Region where a resource is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The endpoint ID for the endpoint (Amazon Web Services resource).</p>
-    pub fn endpoint_id(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint_id.deref()
+    pub fn endpoint_id(&self) -> & str {
+        use std::ops::Deref; self.endpoint_id.deref()
     }
     /// <p>The Amazon Web Services Region where a resource is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ResourceBuilder {
     }
     /// <p>The endpoint ID for the endpoint (Amazon Web Services resource).</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The endpoint ID for the endpoint (Amazon Web Services resource).</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Web Services Region where a resource is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where a resource is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint_id`](crate::types::builders::ResourceBuilder::endpoint_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Resource {
-            endpoint_id: self.endpoint_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint_id",
-                    "endpoint_id was not specified but it is required when building Resource",
-                )
-            })?,
-            region: self.region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Resource {
+                endpoint_id: self.endpoint_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint_id", "endpoint_id was not specified but it is required when building Resource")
+                    )?
+                ,
+                region: self.region
+                ,
+            }
+        )
     }
 }
+

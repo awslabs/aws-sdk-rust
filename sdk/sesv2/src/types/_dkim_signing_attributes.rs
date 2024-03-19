@@ -3,7 +3,7 @@
 /// <p>An object that contains configuration for Bring Your Own DKIM (BYODKIM), or, for Easy DKIM</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DkimSigningAttributes {
+pub struct DkimSigningAttributes  {
     /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
     pub domain_signing_selector: ::std::option::Option<::std::string::String>,
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
@@ -12,22 +12,22 @@ pub struct DkimSigningAttributes {
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
 }
-impl DkimSigningAttributes {
+impl  DkimSigningAttributes  {
     /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
-    pub fn domain_signing_selector(&self) -> ::std::option::Option<&str> {
+    pub fn domain_signing_selector(&self) -> ::std::option::Option<& str> {
         self.domain_signing_selector.as_deref()
     }
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
-    pub fn domain_signing_private_key(&self) -> ::std::option::Option<&str> {
+    pub fn domain_signing_private_key(&self) -> ::std::option::Option<& str> {
         self.domain_signing_private_key.as_deref()
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    pub fn next_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
+    pub fn next_signing_key_length(&self) -> ::std::option::Option<& crate::types::DkimSigningKeyLength> {
         self.next_signing_key_length.as_ref()
     }
 }
-impl ::std::fmt::Debug for DkimSigningAttributes {
+impl  ::std::fmt::Debug for DkimSigningAttributes  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DkimSigningAttributes");
         formatter.field("domain_signing_selector", &self.domain_signing_selector);
@@ -59,8 +59,7 @@ impl DkimSigningAttributesBuilder {
     }
     /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
     pub fn set_domain_signing_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_signing_selector = input;
-        self
+        self.domain_signing_selector = input; self
     }
     /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
     pub fn get_domain_signing_selector(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DkimSigningAttributesBuilder {
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
     pub fn set_domain_signing_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_signing_private_key = input;
-        self
+        self.domain_signing_private_key = input; self
     }
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
@@ -90,8 +88,7 @@ impl DkimSigningAttributesBuilder {
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn set_next_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
-        self.next_signing_key_length = input;
-        self
+        self.next_signing_key_length = input; self
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn get_next_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
@@ -100,9 +97,12 @@ impl DkimSigningAttributesBuilder {
     /// Consumes the builder and constructs a [`DkimSigningAttributes`](crate::types::DkimSigningAttributes).
     pub fn build(self) -> crate::types::DkimSigningAttributes {
         crate::types::DkimSigningAttributes {
-            domain_signing_selector: self.domain_signing_selector,
-            domain_signing_private_key: self.domain_signing_private_key,
-            next_signing_key_length: self.next_signing_key_length,
+            domain_signing_selector: self.domain_signing_selector
+            ,
+            domain_signing_private_key: self.domain_signing_private_key
+            ,
+            next_signing_key_length: self.next_signing_key_length
+            ,
         }
     }
 }
@@ -115,3 +115,4 @@ impl ::std::fmt::Debug for DkimSigningAttributesBuilder {
         formatter.finish()
     }
 }
+

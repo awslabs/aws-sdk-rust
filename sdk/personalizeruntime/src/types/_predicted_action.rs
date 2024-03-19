@@ -4,15 +4,15 @@
 /// <p>The API returns a list of <code>PredictedAction</code>s.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictedAction {
+pub struct PredictedAction  {
     /// <p>The ID of the recommended action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The score of the recommended action. For information about action scores, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/how-action-recommendation-scoring-works.html">How action recommendation scoring works</a>.</p>
     pub score: ::std::option::Option<f64>,
 }
-impl PredictedAction {
+impl  PredictedAction  {
     /// <p>The ID of the recommended action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The score of the recommended action. For information about action scores, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/how-action-recommendation-scoring-works.html">How action recommendation scoring works</a>.</p>
@@ -42,8 +42,7 @@ impl PredictedActionBuilder {
     }
     /// <p>The ID of the recommended action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of the recommended action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl PredictedActionBuilder {
     }
     /// <p>The score of the recommended action. For information about action scores, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/how-action-recommendation-scoring-works.html">How action recommendation scoring works</a>.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The score of the recommended action. For information about action scores, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/how-action-recommendation-scoring-works.html">How action recommendation scoring works</a>.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl PredictedActionBuilder {
     /// Consumes the builder and constructs a [`PredictedAction`](crate::types::PredictedAction).
     pub fn build(self) -> crate::types::PredictedAction {
         crate::types::PredictedAction {
-            action_id: self.action_id,
-            score: self.score,
+            action_id: self.action_id
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

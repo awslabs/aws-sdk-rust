@@ -3,32 +3,31 @@
 /// <p>The resource does not exist.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityNotExistsException {
+pub struct EntityNotExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the non-existent resources.</p>
-    pub entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl EntityNotExistsException {
+impl  EntityNotExistsException  {
     /// <p>The IDs of the non-existent resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_ids.is_none()`.
-    pub fn entity_ids(&self) -> &[::std::string::String] {
-        self.entity_ids.as_deref().unwrap_or_default()
+    pub fn entity_ids(&self) -> & [::std::string::String] {
+        self.entity_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EntityNotExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for EntityNotExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "EntityNotExistsException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +42,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::EntityNotExists
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EntityNotExistsException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl EntityNotExistsException {
     /// Creates a new builder-style object to manufacture [`EntityNotExistsException`](crate::types::error::EntityNotExistsException).
@@ -59,7 +56,7 @@ impl EntityNotExistsException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityNotExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl EntityNotExistsExceptionBuilder {
@@ -70,8 +67,7 @@ impl EntityNotExistsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,36 +80,38 @@ impl EntityNotExistsExceptionBuilder {
     /// <p>The IDs of the non-existent resources.</p>
     pub fn entity_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_ids.unwrap_or_default();
-        v.push(input.into());
-        self.entity_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the non-existent resources.</p>
-    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_ids = input;
-        self
+    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_ids = input; self
     }
     /// <p>The IDs of the non-existent resources.</p>
-    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_ids
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`EntityNotExistsException`](crate::types::error::EntityNotExistsException).
     pub fn build(self) -> crate::types::error::EntityNotExistsException {
         crate::types::error::EntityNotExistsException {
-            message: self.message,
-            entity_ids: self.entity_ids,
+            message: self.message
+            ,
+            entity_ids: self.entity_ids
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Details of the party proposing the agreement terms,. This is commonly the seller for <code>PurchaseAgreement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Proposer {
+pub struct Proposer  {
     /// <p>The AWS account ID of the proposer.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl Proposer {
+impl  Proposer  {
     /// <p>The AWS account ID of the proposer.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ProposerBuilder {
     }
     /// <p>The AWS account ID of the proposer.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID of the proposer.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ProposerBuilder {
     }
     /// Consumes the builder and constructs a [`Proposer`](crate::types::Proposer).
     pub fn build(self) -> crate::types::Proposer {
-        crate::types::Proposer { account_id: self.account_id }
+        crate::types::Proposer {
+            account_id: self.account_id
+            ,
+        }
     }
 }
+

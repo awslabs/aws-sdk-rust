@@ -3,15 +3,14 @@
 /// <p>The S3 destination configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>The S3 destination configuration location.</p>
     pub location: ::std::string::String,
 }
-impl S3DestinationConfiguration {
+impl  S3DestinationConfiguration  {
     /// <p>The S3 destination configuration location.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl S3DestinationConfiguration {
@@ -36,8 +35,7 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>The S3 destination configuration location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The S3 destination configuration location.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl S3DestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::types::builders::S3DestinationConfigurationBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building S3DestinationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DestinationConfiguration {
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building S3DestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

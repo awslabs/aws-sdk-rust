@@ -3,22 +3,22 @@
 /// <p>A complex type that contains information about the health checks or hosted zones for which you want to list tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub resource_tag_set: ::std::option::Option<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }
-impl ListTagsForResourceOutput {
+impl  ListTagsForResourceOutput  {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
-    pub fn resource_tag_set(&self) -> ::std::option::Option<&crate::types::ResourceTagSet> {
+    pub fn resource_tag_set(&self) -> ::std::option::Option<& crate::types::ResourceTagSet> {
         self.resource_tag_set.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTagsForResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
@@ -42,27 +42,28 @@ impl ListTagsForResourceOutputBuilder {
     }
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub fn set_resource_tag_set(mut self, input: ::std::option::Option<crate::types::ResourceTagSet>) -> Self {
-        self.resource_tag_set = input;
-        self
+        self.resource_tag_set = input; self
     }
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub fn get_resource_tag_set(&self) -> &::std::option::Option<crate::types::ResourceTagSet> {
         &self.resource_tag_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
     pub fn build(self) -> crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput {
-            resource_tag_set: self.resource_tag_set,
+            resource_tag_set: self.resource_tag_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

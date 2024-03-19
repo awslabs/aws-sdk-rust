@@ -3,7 +3,7 @@
 /// <p>Represents the properties of the table being imported into.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTableDescription {
+pub struct ImportTableDescription  {
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub import_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the import.</p>
@@ -43,29 +43,29 @@ pub struct ImportTableDescription {
     /// <p>The error message corresponding to the failure that the import job ran into during execution.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
-impl ImportTableDescription {
+impl  ImportTableDescription  {
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
-    pub fn import_arn(&self) -> ::std::option::Option<&str> {
+    pub fn import_arn(&self) -> ::std::option::Option<& str> {
         self.import_arn.as_deref()
     }
     /// <p>The status of the import.</p>
-    pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> ::std::option::Option<& crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
-    pub fn table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn table_arn(&self) -> ::std::option::Option<& str> {
         self.table_arn.as_deref()
     }
     /// <p>The table id corresponding to the table created by import table process.</p>
-    pub fn table_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_id(&self) -> ::std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional).</p>
-    pub fn s3_bucket_source(&self) -> ::std::option::Option<&crate::types::S3BucketSource> {
+    pub fn s3_bucket_source(&self) -> ::std::option::Option<& crate::types::S3BucketSource> {
         self.s3_bucket_source.as_ref()
     }
     /// <p>The number of errors occurred on importing the source file into the target table.</p>
@@ -73,31 +73,31 @@ impl ImportTableDescription {
         self.error_count
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The format of the source data going into the target table.</p>
-    pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
+    pub fn input_format(&self) -> ::std::option::Option<& crate::types::InputFormat> {
         self.input_format.as_ref()
     }
     /// <p>The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
-    pub fn input_format_options(&self) -> ::std::option::Option<&crate::types::InputFormatOptions> {
+    pub fn input_format_options(&self) -> ::std::option::Option<& crate::types::InputFormatOptions> {
         self.input_format_options.as_ref()
     }
     /// <p>The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD.</p>
-    pub fn input_compression_type(&self) -> ::std::option::Option<&crate::types::InputCompressionType> {
+    pub fn input_compression_type(&self) -> ::std::option::Option<& crate::types::InputCompressionType> {
         self.input_compression_type.as_ref()
     }
     /// <p>The parameters for the new table that is being imported into.</p>
-    pub fn table_creation_parameters(&self) -> ::std::option::Option<&crate::types::TableCreationParameters> {
+    pub fn table_creation_parameters(&self) -> ::std::option::Option<& crate::types::TableCreationParameters> {
         self.table_creation_parameters.as_ref()
     }
     /// <p>The time when this import task started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time at which the creation of the table associated with this import task completed.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The total size of data processed from the source file, in Bytes.</p>
@@ -113,11 +113,11 @@ impl ImportTableDescription {
         self.imported_item_count
     }
     /// <p>The error code corresponding to the failure that the import job ran into during execution.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The error message corresponding to the failure that the import job ran into during execution.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
@@ -160,8 +160,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_arn = input;
-        self
+        self.import_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +173,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The status of the import.</p>
     pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.import_status = input;
-        self
+        self.import_status = input; self
     }
     /// <p>The status of the import.</p>
     pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
@@ -188,8 +186,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +199,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The table id corresponding to the table created by import table process.</p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_id = input;
-        self
+        self.table_id = input; self
     }
     /// <p>The table id corresponding to the table created by import table process.</p>
     pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +212,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token that was provided for the import task. Reusing the client token on retry makes a call to <code>ImportTable</code> idempotent.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +225,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional).</p>
     pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
-        self.s3_bucket_source = input;
-        self
+        self.s3_bucket_source = input; self
     }
     /// <p>Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional).</p>
     pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
@@ -244,8 +238,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The number of errors occurred on importing the source file into the target table.</p>
     pub fn set_error_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.error_count = input;
-        self
+        self.error_count = input; self
     }
     /// <p>The number of errors occurred on importing the source file into the target table.</p>
     pub fn get_error_count(&self) -> &::std::option::Option<i64> {
@@ -258,8 +251,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+        self.cloud_watch_log_group_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +264,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The format of the source data going into the target table.</p>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
-        self.input_format = input;
-        self
+        self.input_format = input; self
     }
     /// <p>The format of the source data going into the target table.</p>
     pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
@@ -286,8 +277,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
     pub fn set_input_format_options(mut self, input: ::std::option::Option<crate::types::InputFormatOptions>) -> Self {
-        self.input_format_options = input;
-        self
+        self.input_format_options = input; self
     }
     /// <p>The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
     pub fn get_input_format_options(&self) -> &::std::option::Option<crate::types::InputFormatOptions> {
@@ -300,8 +290,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD.</p>
     pub fn set_input_compression_type(mut self, input: ::std::option::Option<crate::types::InputCompressionType>) -> Self {
-        self.input_compression_type = input;
-        self
+        self.input_compression_type = input; self
     }
     /// <p>The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD.</p>
     pub fn get_input_compression_type(&self) -> &::std::option::Option<crate::types::InputCompressionType> {
@@ -314,8 +303,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The parameters for the new table that is being imported into.</p>
     pub fn set_table_creation_parameters(mut self, input: ::std::option::Option<crate::types::TableCreationParameters>) -> Self {
-        self.table_creation_parameters = input;
-        self
+        self.table_creation_parameters = input; self
     }
     /// <p>The parameters for the new table that is being imported into.</p>
     pub fn get_table_creation_parameters(&self) -> &::std::option::Option<crate::types::TableCreationParameters> {
@@ -328,8 +316,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The time when this import task started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when this import task started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -342,8 +329,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The time at which the creation of the table associated with this import task completed.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the creation of the table associated with this import task completed.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -356,8 +342,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The total size of data processed from the source file, in Bytes.</p>
     pub fn set_processed_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.processed_size_bytes = input;
-        self
+        self.processed_size_bytes = input; self
     }
     /// <p>The total size of data processed from the source file, in Bytes.</p>
     pub fn get_processed_size_bytes(&self) -> &::std::option::Option<i64> {
@@ -370,8 +355,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The total number of items processed from the source file.</p>
     pub fn set_processed_item_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.processed_item_count = input;
-        self
+        self.processed_item_count = input; self
     }
     /// <p>The total number of items processed from the source file.</p>
     pub fn get_processed_item_count(&self) -> &::std::option::Option<i64> {
@@ -384,8 +368,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The number of items successfully imported into the new table.</p>
     pub fn set_imported_item_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.imported_item_count = input;
-        self
+        self.imported_item_count = input; self
     }
     /// <p>The number of items successfully imported into the new table.</p>
     pub fn get_imported_item_count(&self) -> &::std::option::Option<i64> {
@@ -398,8 +381,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The error code corresponding to the failure that the import job ran into during execution.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The error code corresponding to the failure that the import job ran into during execution.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -412,8 +394,7 @@ impl ImportTableDescriptionBuilder {
     }
     /// <p>The error message corresponding to the failure that the import job ran into during execution.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The error message corresponding to the failure that the import job ran into during execution.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -422,25 +403,48 @@ impl ImportTableDescriptionBuilder {
     /// Consumes the builder and constructs a [`ImportTableDescription`](crate::types::ImportTableDescription).
     pub fn build(self) -> crate::types::ImportTableDescription {
         crate::types::ImportTableDescription {
-            import_arn: self.import_arn,
-            import_status: self.import_status,
-            table_arn: self.table_arn,
-            table_id: self.table_id,
-            client_token: self.client_token,
-            s3_bucket_source: self.s3_bucket_source,
-            error_count: self.error_count.unwrap_or_default(),
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            input_format: self.input_format,
-            input_format_options: self.input_format_options,
-            input_compression_type: self.input_compression_type,
-            table_creation_parameters: self.table_creation_parameters,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            processed_size_bytes: self.processed_size_bytes,
-            processed_item_count: self.processed_item_count.unwrap_or_default(),
-            imported_item_count: self.imported_item_count.unwrap_or_default(),
-            failure_code: self.failure_code,
-            failure_message: self.failure_message,
+            import_arn: self.import_arn
+            ,
+            import_status: self.import_status
+            ,
+            table_arn: self.table_arn
+            ,
+            table_id: self.table_id
+            ,
+            client_token: self.client_token
+            ,
+            s3_bucket_source: self.s3_bucket_source
+            ,
+            error_count: self.error_count
+                .unwrap_or_default()
+            ,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+            ,
+            input_format: self.input_format
+            ,
+            input_format_options: self.input_format_options
+            ,
+            input_compression_type: self.input_compression_type
+            ,
+            table_creation_parameters: self.table_creation_parameters
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            processed_size_bytes: self.processed_size_bytes
+            ,
+            processed_item_count: self.processed_item_count
+                .unwrap_or_default()
+            ,
+            imported_item_count: self.imported_item_count
+                .unwrap_or_default()
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_message: self.failure_message
+            ,
         }
     }
 }
+

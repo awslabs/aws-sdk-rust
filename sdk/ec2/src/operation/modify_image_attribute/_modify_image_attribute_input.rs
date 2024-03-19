@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ModifyImageAttribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyImageAttributeInput {
+pub struct ModifyImageAttributeInput  {
     /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub attribute: ::std::option::Option<::std::string::String>,
@@ -16,66 +16,69 @@ pub struct ModifyImageAttributeInput {
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>Not supported.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organization_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organizational_unit_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
 }
-impl ModifyImageAttributeInput {
+impl  ModifyImageAttributeInput  {
     /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
+    pub fn attribute(&self) -> ::std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>A new description for the AMI.</p>
-    pub fn description(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn description(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.description.as_ref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>A new launch permission for the AMI.</p>
-    pub fn launch_permission(&self) -> ::std::option::Option<&crate::types::LaunchPermissionModifications> {
+    pub fn launch_permission(&self) -> ::std::option::Option<& crate::types::LaunchPermissionModifications> {
         self.launch_permission.as_ref()
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
+    pub fn operation_type(&self) -> ::std::option::Option<& crate::types::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>Not supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[::std::string::String] {
-        self.product_codes.as_deref().unwrap_or_default()
+    pub fn product_codes(&self) -> & [::std::string::String] {
+        self.product_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
-    pub fn user_groups(&self) -> &[::std::string::String] {
-        self.user_groups.as_deref().unwrap_or_default()
+    pub fn user_groups(&self) -> & [::std::string::String] {
+        self.user_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
-    pub fn user_ids(&self) -> &[::std::string::String] {
-        self.user_ids.as_deref().unwrap_or_default()
+    pub fn user_ids(&self) -> & [::std::string::String] {
+        self.user_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -83,21 +86,23 @@ impl ModifyImageAttributeInput {
         self.dry_run
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_arns.is_none()`.
-    pub fn organization_arns(&self) -> &[::std::string::String] {
-        self.organization_arns.as_deref().unwrap_or_default()
+    pub fn organization_arns(&self) -> & [::std::string::String] {
+        self.organization_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_arns.is_none()`.
-    pub fn organizational_unit_arns(&self) -> &[::std::string::String] {
-        self.organizational_unit_arns.as_deref().unwrap_or_default()
+    pub fn organizational_unit_arns(&self) -> & [::std::string::String] {
+        self.organizational_unit_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
-    pub fn imds_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn imds_support(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.imds_support.as_ref()
     }
 }
@@ -117,13 +122,13 @@ pub struct ModifyImageAttributeInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_permission: ::std::option::Option<crate::types::LaunchPermissionModifications>,
     pub(crate) operation_type: ::std::option::Option<crate::types::OperationType>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organization_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) organizational_unit_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) imds_support: ::std::option::Option<crate::types::AttributeValue>,
 }
 impl ModifyImageAttributeInputBuilder {
@@ -136,8 +141,7 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The name of the attribute to modify.</p>
     /// <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code></p>
@@ -151,8 +155,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>A new description for the AMI.</p>
     pub fn set_description(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the AMI.</p>
     pub fn get_description(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -166,8 +169,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +182,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>A new launch permission for the AMI.</p>
     pub fn set_launch_permission(mut self, input: ::std::option::Option<crate::types::LaunchPermissionModifications>) -> Self {
-        self.launch_permission = input;
-        self
+        self.launch_permission = input; self
     }
     /// <p>A new launch permission for the AMI.</p>
     pub fn get_launch_permission(&self) -> &::std::option::Option<crate::types::LaunchPermissionModifications> {
@@ -194,8 +195,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>The operation type. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
@@ -208,17 +208,16 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>Not supported.</p>
     pub fn product_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-        v.push(input.into());
-        self.product_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.product_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Not supported.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.product_codes = input;
-        self
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.product_codes = input; self
     }
     /// <p>Not supported.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.product_codes
     }
     /// Appends an item to `user_groups`.
@@ -228,17 +227,16 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_groups.unwrap_or_default();
-        v.push(input.into());
-        self.user_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_groups = input;
-        self
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_groups = input; self
     }
     /// <p>The user groups. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_groups
     }
     /// Appends an item to `user_ids`.
@@ -248,17 +246,16 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// <p>The Amazon Web Services account IDs. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
@@ -268,8 +265,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +278,7 @@ impl ModifyImageAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -296,17 +291,16 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn organization_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_arns.unwrap_or_default();
-        v.push(input.into());
-        self.organization_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organization_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organization_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organization_arns = input;
-        self
+    pub fn set_organization_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organization_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn get_organization_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organization_arns
     }
     /// Appends an item to `organizational_unit_arns`.
@@ -316,17 +310,16 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
     pub fn organizational_unit_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_arns.unwrap_or_default();
-        v.push(input.into());
-        self.organizational_unit_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organizational_unit_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn set_organizational_unit_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organizational_unit_arns = input;
-        self
+    pub fn set_organizational_unit_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organizational_unit_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
-    pub fn get_organizational_unit_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organizational_unit_arns
     }
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
@@ -340,8 +333,7 @@ impl ModifyImageAttributeInputBuilder {
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
     /// </important>
     pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.imds_support = input;
-        self
+        self.imds_support = input; self
     }
     /// <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><important>
     /// <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>
@@ -350,24 +342,37 @@ impl ModifyImageAttributeInputBuilder {
         &self.imds_support
     }
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_image_attribute::ModifyImageAttributeInput {
-            attribute: self.attribute,
-            description: self.description,
-            image_id: self.image_id,
-            launch_permission: self.launch_permission,
-            operation_type: self.operation_type,
-            product_codes: self.product_codes,
-            user_groups: self.user_groups,
-            user_ids: self.user_ids,
-            value: self.value,
-            dry_run: self.dry_run,
-            organization_arns: self.organization_arns,
-            organizational_unit_arns: self.organizational_unit_arns,
-            imds_support: self.imds_support,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_image_attribute::ModifyImageAttributeInput {
+                attribute: self.attribute
+                ,
+                description: self.description
+                ,
+                image_id: self.image_id
+                ,
+                launch_permission: self.launch_permission
+                ,
+                operation_type: self.operation_type
+                ,
+                product_codes: self.product_codes
+                ,
+                user_groups: self.user_groups
+                ,
+                user_ids: self.user_ids
+                ,
+                value: self.value
+                ,
+                dry_run: self.dry_run
+                ,
+                organization_arns: self.organization_arns
+                ,
+                organizational_unit_arns: self.organizational_unit_arns
+                ,
+                imds_support: self.imds_support
+                ,
+            }
+        )
     }
 }
+

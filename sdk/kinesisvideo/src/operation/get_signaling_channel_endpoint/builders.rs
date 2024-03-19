@@ -5,56 +5,52 @@ pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel
 
 impl GetSignalingChannelEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_signaling_channel_endpoint();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_signaling_channel_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetSignalingChannelEndpoint`.
-///
+/// 
 /// <p>Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the <code>Protocols</code> and <code>Role</code> properties.</p>
 /// <p><code>Protocols</code> is used to determine the communication mechanism. For example, if you specify <code>WSS</code> as the protocol, this API produces a secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an HTTPS endpoint.</p>
 /// <p><code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating an endpoint that a client can use to communicate with any of the viewers on the channel. A <code>VIEWER</code> role results in this API generating an endpoint that a client can use to communicate only with a <code>MASTER</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
+                    inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-    > for GetSignalingChannelEndpointFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
+                    crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
+                > for GetSignalingChannelEndpointFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
+                        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetSignalingChannelEndpointFluentBuilder {
     /// Creates a new `GetSignalingChannelEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl GetSignalingChannelEndpointFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput, crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -130,10 +117,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn set_single_master_channel_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_channel_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_channel_endpoint_configuration(input);
         self
     }
@@ -142,3 +126,4 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self.inner.get_single_master_channel_endpoint_configuration()
     }
 }
+

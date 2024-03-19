@@ -4,7 +4,7 @@
 /// <p>To retrieve full information for a firewall rule group, call <code>GetFirewallRuleGroup</code> and <code>ListFirewallRules</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallRuleGroupMetadata {
+pub struct FirewallRuleGroupMetadata  {
     /// <p>The ID of the rule group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
@@ -18,29 +18,29 @@ pub struct FirewallRuleGroupMetadata {
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
 }
-impl FirewallRuleGroupMetadata {
+impl  FirewallRuleGroupMetadata  {
     /// <p>The ID of the rule group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn share_status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn share_status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.share_status.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>The ID of the rule group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the rule group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>The name of the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account, this is the account that has shared the rule group with you.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +135,7 @@ impl FirewallRuleGroupMetadataBuilder {
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.share_status = input;
-        self
+        self.share_status = input; self
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn get_share_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
@@ -150,12 +144,19 @@ impl FirewallRuleGroupMetadataBuilder {
     /// Consumes the builder and constructs a [`FirewallRuleGroupMetadata`](crate::types::FirewallRuleGroupMetadata).
     pub fn build(self) -> crate::types::FirewallRuleGroupMetadata {
         crate::types::FirewallRuleGroupMetadata {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            owner_id: self.owner_id,
-            creator_request_id: self.creator_request_id,
-            share_status: self.share_status,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            owner_id: self.owner_id
+            ,
+            creator_request_id: self.creator_request_id
+            ,
+            share_status: self.share_status
+            ,
         }
     }
 }
+

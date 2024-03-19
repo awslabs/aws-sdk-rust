@@ -64,3 +64,4 @@ pub mod builders;
 
 /// Error types that Amazon Recycle Bin can respond with.
 pub mod error;
+

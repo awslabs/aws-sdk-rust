@@ -3,20 +3,19 @@
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Issuer {
+pub struct Issuer  {
     /// <p>Issuer name.</p>
     pub name: ::std::string::String,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub sign_key: ::std::option::Option<::std::string::String>,
 }
-impl Issuer {
+impl  Issuer  {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> ::std::option::Option<&str> {
+    pub fn sign_key(&self) -> ::std::option::Option<& str> {
         self.sign_key.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl IssuerBuilder {
     }
     /// <p>Issuer name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Issuer name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl IssuerBuilder {
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn set_sign_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sign_key = input;
-        self
+        self.sign_key = input; self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn get_sign_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl IssuerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::IssuerBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Issuer, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Issuer {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Issuer",
-                )
-            })?,
-            sign_key: self.sign_key,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Issuer {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Issuer")
+                    )?
+                ,
+                sign_key: self.sign_key
+                ,
+            }
+        )
     }
 }
+

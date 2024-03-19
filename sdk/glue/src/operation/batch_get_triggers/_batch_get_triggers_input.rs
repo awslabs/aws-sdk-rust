@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTriggersInput {
+pub struct BatchGetTriggersInput  {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub trigger_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetTriggersInput {
+impl  BatchGetTriggersInput  {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_names.is_none()`.
-    pub fn trigger_names(&self) -> &[::std::string::String] {
-        self.trigger_names.as_deref().unwrap_or_default()
+    pub fn trigger_names(&self) -> & [::std::string::String] {
+        self.trigger_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetTriggersInput {
@@ -25,7 +26,7 @@ impl BatchGetTriggersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTriggersInputBuilder {
-    pub(crate) trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trigger_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetTriggersInputBuilder {
     /// Appends an item to `trigger_names`.
@@ -35,25 +36,26 @@ impl BatchGetTriggersInputBuilder {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
     pub fn trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trigger_names.unwrap_or_default();
-        v.push(input.into());
-        self.trigger_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.trigger_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.trigger_names = input;
-        self
+    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.trigger_names = input; self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.trigger_names
     }
     /// Consumes the builder and constructs a [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_triggers::BatchGetTriggersInput {
-            trigger_names: self.trigger_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_triggers::BatchGetTriggersInput {
+                trigger_names: self.trigger_names
+                ,
+            }
+        )
     }
 }
+

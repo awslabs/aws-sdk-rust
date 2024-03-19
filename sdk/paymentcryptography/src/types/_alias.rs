@@ -3,7 +3,7 @@
 /// <p>Contains information about an alias.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alias {
+pub struct Alias  {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
@@ -11,16 +11,15 @@ pub struct Alias {
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
-impl Alias {
+impl  Alias  {
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub fn alias_name(&self) -> &str {
-        use std::ops::Deref;
-        self.alias_name.deref()
+    pub fn alias_name(&self) -> & str {
+        use std::ops::Deref; self.alias_name.deref()
     }
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -51,8 +50,7 @@ impl AliasBuilder {
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -67,8 +65,7 @@ impl AliasBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The <code>KeyARN</code> of the key associated with the alias.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,14 +75,17 @@ impl AliasBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alias_name`](crate::types::builders::AliasBuilder::alias_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Alias, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Alias {
-            alias_name: self.alias_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alias_name",
-                    "alias_name was not specified but it is required when building Alias",
-                )
-            })?,
-            key_arn: self.key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Alias {
+                alias_name: self.alias_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alias_name", "alias_name was not specified but it is required when building Alias")
+                    )?
+                ,
+                key_arn: self.key_arn
+                ,
+            }
+        )
     }
 }
+

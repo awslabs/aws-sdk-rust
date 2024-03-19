@@ -3,7 +3,7 @@
 /// <p>GSM object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GsmObj {
+pub struct GsmObj  {
     /// <p>Mobile Country Code.</p>
     pub mcc: i32,
     /// <p>Mobile Network Code.</p>
@@ -19,9 +19,9 @@ pub struct GsmObj {
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub rx_level: ::std::option::Option<i32>,
     /// <p>GSM object for network measurement reports.</p>
-    pub gsm_nmr: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>,
+    pub gsm_nmr: ::std::option::Option<::std::vec::Vec::<crate::types::GsmNmrObj>>,
 }
-impl GsmObj {
+impl  GsmObj  {
     /// <p>Mobile Country Code.</p>
     pub fn mcc(&self) -> i32 {
         self.mcc
@@ -39,7 +39,7 @@ impl GsmObj {
         self.geran_cid
     }
     /// <p>GSM local identification (local ID) information.</p>
-    pub fn gsm_local_id(&self) -> ::std::option::Option<&crate::types::GsmLocalId> {
+    pub fn gsm_local_id(&self) -> ::std::option::Option<& crate::types::GsmLocalId> {
         self.gsm_local_id.as_ref()
     }
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
@@ -51,10 +51,11 @@ impl GsmObj {
         self.rx_level
     }
     /// <p>GSM object for network measurement reports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gsm_nmr.is_none()`.
-    pub fn gsm_nmr(&self) -> &[crate::types::GsmNmrObj] {
-        self.gsm_nmr.as_deref().unwrap_or_default()
+    pub fn gsm_nmr(&self) -> & [crate::types::GsmNmrObj] {
+        self.gsm_nmr.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GsmObj {
@@ -75,7 +76,7 @@ pub struct GsmObjBuilder {
     pub(crate) gsm_local_id: ::std::option::Option<crate::types::GsmLocalId>,
     pub(crate) gsm_timing_advance: ::std::option::Option<i32>,
     pub(crate) rx_level: ::std::option::Option<i32>,
-    pub(crate) gsm_nmr: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>,
+    pub(crate) gsm_nmr: ::std::option::Option<::std::vec::Vec::<crate::types::GsmNmrObj>>,
 }
 impl GsmObjBuilder {
     /// <p>Mobile Country Code.</p>
@@ -86,8 +87,7 @@ impl GsmObjBuilder {
     }
     /// <p>Mobile Country Code.</p>
     pub fn set_mcc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcc = input;
-        self
+        self.mcc = input; self
     }
     /// <p>Mobile Country Code.</p>
     pub fn get_mcc(&self) -> &::std::option::Option<i32> {
@@ -101,8 +101,7 @@ impl GsmObjBuilder {
     }
     /// <p>Mobile Network Code.</p>
     pub fn set_mnc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mnc = input;
-        self
+        self.mnc = input; self
     }
     /// <p>Mobile Network Code.</p>
     pub fn get_mnc(&self) -> &::std::option::Option<i32> {
@@ -116,8 +115,7 @@ impl GsmObjBuilder {
     }
     /// <p>Location area code.</p>
     pub fn set_lac(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lac = input;
-        self
+        self.lac = input; self
     }
     /// <p>Location area code.</p>
     pub fn get_lac(&self) -> &::std::option::Option<i32> {
@@ -131,8 +129,7 @@ impl GsmObjBuilder {
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
     pub fn set_geran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.geran_cid = input;
-        self
+        self.geran_cid = input; self
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
     pub fn get_geran_cid(&self) -> &::std::option::Option<i32> {
@@ -145,8 +142,7 @@ impl GsmObjBuilder {
     }
     /// <p>GSM local identification (local ID) information.</p>
     pub fn set_gsm_local_id(mut self, input: ::std::option::Option<crate::types::GsmLocalId>) -> Self {
-        self.gsm_local_id = input;
-        self
+        self.gsm_local_id = input; self
     }
     /// <p>GSM local identification (local ID) information.</p>
     pub fn get_gsm_local_id(&self) -> &::std::option::Option<crate::types::GsmLocalId> {
@@ -159,8 +155,7 @@ impl GsmObjBuilder {
     }
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
     pub fn set_gsm_timing_advance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gsm_timing_advance = input;
-        self
+        self.gsm_timing_advance = input; self
     }
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
     pub fn get_gsm_timing_advance(&self) -> &::std::option::Option<i32> {
@@ -173,8 +168,7 @@ impl GsmObjBuilder {
     }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub fn set_rx_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rx_level = input;
-        self
+        self.rx_level = input; self
     }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub fn get_rx_level(&self) -> &::std::option::Option<i32> {
@@ -187,17 +181,16 @@ impl GsmObjBuilder {
     /// <p>GSM object for network measurement reports.</p>
     pub fn gsm_nmr(mut self, input: crate::types::GsmNmrObj) -> Self {
         let mut v = self.gsm_nmr.unwrap_or_default();
-        v.push(input);
-        self.gsm_nmr = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.gsm_nmr = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>GSM object for network measurement reports.</p>
-    pub fn set_gsm_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>>) -> Self {
-        self.gsm_nmr = input;
-        self
+    pub fn set_gsm_nmr(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GsmNmrObj>>) -> Self {
+        self.gsm_nmr = input; self
     }
     /// <p>GSM object for network measurement reports.</p>
-    pub fn get_gsm_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GsmNmrObj>> {
+    pub fn get_gsm_nmr(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GsmNmrObj>> {
         &self.gsm_nmr
     }
     /// Consumes the builder and constructs a [`GsmObj`](crate::types::GsmObj).
@@ -207,35 +200,38 @@ impl GsmObjBuilder {
     /// - [`lac`](crate::types::builders::GsmObjBuilder::lac)
     /// - [`geran_cid`](crate::types::builders::GsmObjBuilder::geran_cid)
     pub fn build(self) -> ::std::result::Result<crate::types::GsmObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GsmObj {
-            mcc: self.mcc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mcc",
-                    "mcc was not specified but it is required when building GsmObj",
-                )
-            })?,
-            mnc: self.mnc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mnc",
-                    "mnc was not specified but it is required when building GsmObj",
-                )
-            })?,
-            lac: self.lac.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lac",
-                    "lac was not specified but it is required when building GsmObj",
-                )
-            })?,
-            geran_cid: self.geran_cid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "geran_cid",
-                    "geran_cid was not specified but it is required when building GsmObj",
-                )
-            })?,
-            gsm_local_id: self.gsm_local_id,
-            gsm_timing_advance: self.gsm_timing_advance,
-            rx_level: self.rx_level,
-            gsm_nmr: self.gsm_nmr,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GsmObj {
+                mcc: self.mcc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mcc", "mcc was not specified but it is required when building GsmObj")
+                    )?
+                ,
+                mnc: self.mnc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mnc", "mnc was not specified but it is required when building GsmObj")
+                    )?
+                ,
+                lac: self.lac
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lac", "lac was not specified but it is required when building GsmObj")
+                    )?
+                ,
+                geran_cid: self.geran_cid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("geran_cid", "geran_cid was not specified but it is required when building GsmObj")
+                    )?
+                ,
+                gsm_local_id: self.gsm_local_id
+                ,
+                gsm_timing_advance: self.gsm_timing_advance
+                ,
+                rx_level: self.rx_level
+                ,
+                gsm_nmr: self.gsm_nmr
+                ,
+            }
+        )
     }
 }
+

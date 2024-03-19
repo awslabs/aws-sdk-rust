@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplateActions`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::set_launch_configuration_template_id):<br>required: **true**<br><p>Launch configuration template ID.</p><br>
     ///   - [`filters(TemplateActionsRequestFilters)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::filters) / [`set_filters(Option<TemplateActionsRequestFilters>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters to apply when listing template post migration custom actions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum amount of items to return when listing template post migration custom actions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token to use when listing template post migration custom actions.</p><br>
-    /// - On success, responds with [`ListTemplateActionsOutput`](crate::operation::list_template_actions::ListTemplateActionsOutput) with field(s):
+                            /// - On success, responds with [`ListTemplateActionsOutput`](crate::operation::list_template_actions::ListTemplateActionsOutput) with field(s):
     ///   - [`items(Option<Vec::<TemplateActionDocument>>)`](crate::operation::list_template_actions::ListTemplateActionsOutput::items): <p>List of template post migration custom actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_actions::ListTemplateActionsOutput::next_token): <p>Next token returned when listing template post migration custom actions.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateActionsError>`](crate::operation::list_template_actions::ListTemplateActionsError)
+                            /// - On failure, responds with [`SdkError<ListTemplateActionsError>`](crate::operation::list_template_actions::ListTemplateActionsError)
     pub fn list_template_actions(&self) -> crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder {
-        crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

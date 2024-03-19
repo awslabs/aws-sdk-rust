@@ -3,15 +3,14 @@
 /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeCommitCodeDestination {
+pub struct CodeCommitCodeDestination  {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     pub name: ::std::string::String,
 }
-impl CodeCommitCodeDestination {
+impl  CodeCommitCodeDestination  {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl CodeCommitCodeDestination {
@@ -36,8 +35,7 @@ impl CodeCommitCodeDestinationBuilder {
     }
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CodeCommitCodeDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CodeCommitCodeDestinationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeCommitCodeDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeCommitCodeDestination {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CodeCommitCodeDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeCommitCodeDestination {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CodeCommitCodeDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

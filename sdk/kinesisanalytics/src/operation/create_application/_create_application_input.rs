@@ -3,7 +3,7 @@
 /// <p>TBD</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Summary description of the application.</p>
@@ -12,65 +12,69 @@ pub struct CreateApplicationInput {
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
     /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec::<crate::types::Input>>,
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
     /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
     /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
     /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
-    pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
+    pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>,
     /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.</p>
     /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
     /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams.</p>
     pub application_code: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Summary description of the application.</p>
-    pub fn application_description(&self) -> ::std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>Use this parameter to configure the application input.</p>
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
     /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
-    pub fn inputs(&self) -> &[crate::types::Input] {
-        self.inputs.as_deref().unwrap_or_default()
+    pub fn inputs(&self) -> & [crate::types::Input] {
+        self.inputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
     /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
     /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
     /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::Output] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::Output] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_options.is_none()`.
-    pub fn cloud_watch_logging_options(&self) -> &[crate::types::CloudWatchLoggingOption] {
-        self.cloud_watch_logging_options.as_deref().unwrap_or_default()
+    pub fn cloud_watch_logging_options(&self) -> & [crate::types::CloudWatchLoggingOption] {
+        self.cloud_watch_logging_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.</p>
     /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
     /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams.</p>
-    pub fn application_code(&self) -> ::std::option::Option<&str> {
+    pub fn application_code(&self) -> ::std::option::Option<& str> {
         self.application_code.as_deref()
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateApplicationInput {
@@ -86,11 +90,11 @@ impl CreateApplicationInput {
 pub struct CreateApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_description: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    pub(crate) cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<crate::types::Input>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>,
     pub(crate) application_code: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
@@ -101,8 +105,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +118,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Summary description of the application.</p>
     pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_description = input;
-        self
+        self.application_description = input; self
     }
     /// <p>Summary description of the application.</p>
     pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,23 +134,22 @@ impl CreateApplicationInputBuilder {
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
     pub fn inputs(mut self, input: crate::types::Input) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use this parameter to configure the application input.</p>
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
     /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Input>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>Use this parameter to configure the application input.</p>
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
     /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Input>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Input>> {
         &self.inputs
     }
     /// Appends an item to `outputs`.
@@ -161,23 +162,22 @@ impl CreateApplicationInputBuilder {
     /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
     /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
     /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
     /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
     /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
     /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
     /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Output>> {
         &self.outputs
     }
     /// Appends an item to `cloud_watch_logging_options`.
@@ -187,17 +187,16 @@ impl CreateApplicationInputBuilder {
     /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         let mut v = self.cloud_watch_logging_options.unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_logging_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cloud_watch_logging_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
-    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>) -> Self {
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
-    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>> {
         &self.cloud_watch_logging_options
     }
     /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.</p>
@@ -211,8 +210,7 @@ impl CreateApplicationInputBuilder {
     /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
     /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams.</p>
     pub fn set_application_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_code = input;
-        self
+        self.application_code = input; self
     }
     /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.</p>
     /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
@@ -227,31 +225,38 @@ impl CreateApplicationInputBuilder {
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            application_name: self.application_name,
-            application_description: self.application_description,
-            inputs: self.inputs,
-            outputs: self.outputs,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            application_code: self.application_code,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                application_name: self.application_name
+                ,
+                application_description: self.application_description
+                ,
+                inputs: self.inputs
+                ,
+                outputs: self.outputs
+                ,
+                cloud_watch_logging_options: self.cloud_watch_logging_options
+                ,
+                application_code: self.application_code
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelFlowOutput {
+pub struct DescribeChannelFlowOutput  {
     /// <p>The channel flow details.</p>
     pub channel_flow: ::std::option::Option<crate::types::ChannelFlow>,
     _request_id: Option<String>,
 }
-impl DescribeChannelFlowOutput {
+impl  DescribeChannelFlowOutput  {
     /// <p>The channel flow details.</p>
-    pub fn channel_flow(&self) -> ::std::option::Option<&crate::types::ChannelFlow> {
+    pub fn channel_flow(&self) -> ::std::option::Option<& crate::types::ChannelFlow> {
         self.channel_flow.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeChannelFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput).
     pub fn builder() -> crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeChannelFlowOutputBuilder {
     }
     /// <p>The channel flow details.</p>
     pub fn set_channel_flow(mut self, input: ::std::option::Option<crate::types::ChannelFlow>) -> Self {
-        self.channel_flow = input;
-        self
+        self.channel_flow = input; self
     }
     /// <p>The channel flow details.</p>
     pub fn get_channel_flow(&self) -> &::std::option::Option<crate::types::ChannelFlow> {
         &self.channel_flow
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput).
     pub fn build(self) -> crate::operation::describe_channel_flow::DescribeChannelFlowOutput {
         crate::operation::describe_channel_flow::DescribeChannelFlowOutput {
-            channel_flow: self.channel_flow,
+            channel_flow: self.channel_flow
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

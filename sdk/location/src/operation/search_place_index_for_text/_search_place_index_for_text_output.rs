@@ -2,31 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchPlaceIndexForTextOutput {
+pub struct SearchPlaceIndexForTextOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub results: ::std::vec::Vec<crate::types::SearchForTextResult>,
+    pub results: ::std::vec::Vec::<crate::types::SearchForTextResult>,
     _request_id: Option<String>,
 }
-impl SearchPlaceIndexForTextOutput {
+impl  SearchPlaceIndexForTextOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::SearchPlaceIndexForTextSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::SearchPlaceIndexForTextSummary> {
         self.summary.as_ref()
     }
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub fn results(&self) -> &[crate::types::SearchForTextResult] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::SearchForTextResult] {
+        use std::ops::Deref; self.results.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchPlaceIndexForTextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchPlaceIndexForTextOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextOutput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput).
     pub fn builder() -> crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextOutputBuilder {
@@ -39,7 +38,7 @@ impl SearchPlaceIndexForTextOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::SearchForTextResult>>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForTextOutputBuilder {
@@ -51,8 +50,7 @@ impl SearchPlaceIndexForTextOutputBuilder {
     }
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SearchPlaceIndexForTextSummary> {
@@ -66,48 +64,45 @@ impl SearchPlaceIndexForTextOutputBuilder {
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     pub fn results(mut self, input: crate::types::SearchForTextResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchForTextResult>>) -> Self {
+        self.results = input; self
     }
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest.</p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchForTextResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForTextOutput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput {
-            summary: self.summary,
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building SearchPlaceIndexForTextOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput {
+                summary: self.summary
+                ,
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building SearchPlaceIndexForTextOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

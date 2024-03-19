@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzeDocumentOutput {
+pub struct AnalyzeDocumentOutput  {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
+    pub blocks: ::std::option::Option<::std::vec::Vec::<crate::types::Block>>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     /// <p>The version of the model used to analyze the document.</p>
     pub analyze_document_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AnalyzeDocumentOutput {
+impl  AnalyzeDocumentOutput  {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
-    pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
-    pub fn blocks(&self) -> &[crate::types::Block] {
-        self.blocks.as_deref().unwrap_or_default()
+    pub fn blocks(&self) -> & [crate::types::Block] {
+        self.blocks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(&self) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {
+    pub fn human_loop_activation_output(&self) -> ::std::option::Option<& crate::types::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
     }
     /// <p>The version of the model used to analyze the document.</p>
-    pub fn analyze_document_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn analyze_document_model_version(&self) -> ::std::option::Option<& str> {
         self.analyze_document_model_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AnalyzeDocumentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AnalyzeDocumentOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::operation::analyze_document::AnalyzeDocumentOutput).
     pub fn builder() -> crate::operation::analyze_document::builders::AnalyzeDocumentOutputBuilder {
@@ -50,7 +51,7 @@ impl AnalyzeDocumentOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
+    pub(crate) blocks: ::std::option::Option<::std::vec::Vec::<crate::types::Block>>,
     pub(crate) human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     pub(crate) analyze_document_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,8 +64,7 @@ impl AnalyzeDocumentOutputBuilder {
     }
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
     pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.document_metadata = input;
-        self
+        self.document_metadata = input; self
     }
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
     pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
@@ -77,17 +77,16 @@ impl AnalyzeDocumentOutputBuilder {
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
     pub fn blocks(mut self, input: crate::types::Block) -> Self {
         let mut v = self.blocks.unwrap_or_default();
-        v.push(input);
-        self.blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
-        self.blocks = input;
-        self
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Block>>) -> Self {
+        self.blocks = input; self
     }
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {
+    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Block>> {
         &self.blocks
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
@@ -97,8 +96,7 @@ impl AnalyzeDocumentOutputBuilder {
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn set_human_loop_activation_output(mut self, input: ::std::option::Option<crate::types::HumanLoopActivationOutput>) -> Self {
-        self.human_loop_activation_output = input;
-        self
+        self.human_loop_activation_output = input; self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn get_human_loop_activation_output(&self) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
@@ -111,30 +109,34 @@ impl AnalyzeDocumentOutputBuilder {
     }
     /// <p>The version of the model used to analyze the document.</p>
     pub fn set_analyze_document_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyze_document_model_version = input;
-        self
+        self.analyze_document_model_version = input; self
     }
     /// <p>The version of the model used to analyze the document.</p>
     pub fn get_analyze_document_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_document_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AnalyzeDocumentOutput`](crate::operation::analyze_document::AnalyzeDocumentOutput).
     pub fn build(self) -> crate::operation::analyze_document::AnalyzeDocumentOutput {
         crate::operation::analyze_document::AnalyzeDocumentOutput {
-            document_metadata: self.document_metadata,
-            blocks: self.blocks,
-            human_loop_activation_output: self.human_loop_activation_output,
-            analyze_document_model_version: self.analyze_document_model_version,
+            document_metadata: self.document_metadata
+            ,
+            blocks: self.blocks
+            ,
+            human_loop_activation_output: self.human_loop_activation_output
+            ,
+            analyze_document_model_version: self.analyze_document_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

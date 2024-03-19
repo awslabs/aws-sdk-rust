@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutMessageInput {
+pub struct BatchPutMessageInput  {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
 }
-impl BatchPutMessageInput {
+impl  BatchPutMessageInput  {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[crate::types::Message] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [crate::types::Message] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutMessageInput {
@@ -25,7 +26,7 @@ impl BatchPutMessageInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMessageInputBuilder {
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
 }
 impl BatchPutMessageInputBuilder {
     /// Appends an item to `messages`.
@@ -35,23 +36,26 @@ impl BatchPutMessageInputBuilder {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input);
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>) -> Self {
+        self.messages = input; self
     }
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code></p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Message>> {
         &self.messages
     }
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput { messages: self.messages })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_message::BatchPutMessageInput {
+                messages: self.messages
+                ,
+            }
+        )
     }
 }
+

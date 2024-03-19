@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcEndpointsInput {
+pub struct DescribeVpcEndpointsInput  {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeVpcEndpointsInput {
+impl  DescribeVpcEndpointsInput  {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_ids.is_none()`.
-    pub fn vpc_endpoint_ids(&self) -> &[::std::string::String] {
-        self.vpc_endpoint_ids.as_deref().unwrap_or_default()
+    pub fn vpc_endpoint_ids(&self) -> & [::std::string::String] {
+        self.vpc_endpoint_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeVpcEndpointsInput {
@@ -25,7 +26,7 @@ impl DescribeVpcEndpointsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsInputBuilder {
-    pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeVpcEndpointsInputBuilder {
     /// Appends an item to `vpc_endpoint_ids`.
@@ -35,26 +36,26 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p>The unique identifiers of the endpoints to get information about.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_endpoint_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_endpoint_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_endpoint_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_endpoint_ids = input;
-        self
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_endpoint_ids = input; self
     }
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_endpoint_ids
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
-            vpc_endpoint_ids: self.vpc_endpoint_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
+                vpc_endpoint_ids: self.vpc_endpoint_ids
+                ,
+            }
+        )
     }
 }
+

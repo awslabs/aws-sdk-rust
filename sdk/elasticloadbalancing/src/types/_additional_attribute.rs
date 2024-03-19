@@ -3,7 +3,7 @@
 /// <p>Information about additional load balancer attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalAttribute {
+pub struct AdditionalAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
@@ -14,18 +14,18 @@ pub struct AdditionalAttribute {
     /// <p>This value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AdditionalAttribute {
+impl  AdditionalAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
     /// <li>
     /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>This value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl AdditionalAttributeBuilder {
     /// <p><code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
@@ -80,8 +79,7 @@ impl AdditionalAttributeBuilder {
     }
     /// <p>This value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>This value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,11 @@ impl AdditionalAttributeBuilder {
     /// Consumes the builder and constructs a [`AdditionalAttribute`](crate::types::AdditionalAttribute).
     pub fn build(self) -> crate::types::AdditionalAttribute {
         crate::types::AdditionalAttribute {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

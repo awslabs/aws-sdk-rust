@@ -3,7 +3,7 @@
 /// <p>Contains EBS volume details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeDetail {
+pub struct VolumeDetail  {
     /// <p>EBS volume Arn information.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The EBS volume type.</p>
@@ -19,17 +19,17 @@ pub struct VolumeDetail {
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl VolumeDetail {
+impl  VolumeDetail  {
     /// <p>EBS volume Arn information.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The EBS volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>The device name for the EBS volume.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>EBS volume size in GB.</p>
@@ -37,15 +37,15 @@ impl VolumeDetail {
         self.volume_size_in_gb
     }
     /// <p>EBS volume encryption type.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& str> {
         self.encryption_type.as_deref()
     }
     /// <p>Snapshot Arn of the EBS volume.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>EBS volume Arn information.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>EBS volume Arn information.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>The EBS volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The EBS volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>The device name for the EBS volume.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device name for the EBS volume.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>EBS volume size in GB.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>EBS volume size in GB.</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>EBS volume encryption type.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>EBS volume encryption type.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>Snapshot Arn of the EBS volume.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>Snapshot Arn of the EBS volume.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl VolumeDetailBuilder {
     }
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl VolumeDetailBuilder {
     /// Consumes the builder and constructs a [`VolumeDetail`](crate::types::VolumeDetail).
     pub fn build(self) -> crate::types::VolumeDetail {
         crate::types::VolumeDetail {
-            volume_arn: self.volume_arn,
-            volume_type: self.volume_type,
-            device_name: self.device_name,
-            volume_size_in_gb: self.volume_size_in_gb,
-            encryption_type: self.encryption_type,
-            snapshot_arn: self.snapshot_arn,
-            kms_key_arn: self.kms_key_arn,
+            volume_arn: self.volume_arn
+            ,
+            volume_type: self.volume_type
+            ,
+            device_name: self.device_name
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
+            encryption_type: self.encryption_type
+            ,
+            snapshot_arn: self.snapshot_arn
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

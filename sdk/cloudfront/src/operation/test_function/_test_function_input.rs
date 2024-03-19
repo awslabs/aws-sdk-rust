@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TestFunctionInput {
+pub struct TestFunctionInput  {
     /// <p>The name of the function that you are testing.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
@@ -12,25 +12,25 @@ pub struct TestFunctionInput {
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub event_object: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl TestFunctionInput {
+impl  TestFunctionInput  {
     /// <p>The name of the function that you are testing.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
     /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn event_object(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn event_object(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.event_object.as_ref()
     }
 }
-impl ::std::fmt::Debug for TestFunctionInput {
+impl  ::std::fmt::Debug for TestFunctionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestFunctionInput");
         formatter.field("name", &self.name);
@@ -65,8 +65,7 @@ impl TestFunctionInputBuilder {
     }
     /// <p>The name of the function that you are testing.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the function that you are testing.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl TestFunctionInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl TestFunctionInputBuilder {
     }
     /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
@@ -109,23 +106,26 @@ impl TestFunctionInputBuilder {
     }
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_event_object(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.event_object = input;
-        self
+        self.event_object = input; self
     }
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn get_event_object(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.event_object
     }
     /// Consumes the builder and constructs a [`TestFunctionInput`](crate::operation::test_function::TestFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_function::TestFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_function::TestFunctionInput {
-            name: self.name,
-            if_match: self.if_match,
-            stage: self.stage,
-            event_object: self.event_object,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_function::TestFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_function::TestFunctionInput {
+                name: self.name
+                ,
+                if_match: self.if_match
+                ,
+                stage: self.stage
+                ,
+                event_object: self.event_object
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TestFunctionInputBuilder {
@@ -138,3 +138,4 @@ impl ::std::fmt::Debug for TestFunctionInputBuilder {
         formatter.finish()
     }
 }
+

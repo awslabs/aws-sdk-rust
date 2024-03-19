@@ -3,7 +3,7 @@
 /// <p>Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelingJobAlgorithmsConfig {
+pub struct LabelingJobAlgorithmsConfig  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct LabelingJobAlgorithmsConfig {
     /// <p>Provides configuration information for a labeling job.</p>
     pub labeling_job_resource_config: ::std::option::Option<crate::types::LabelingJobResourceConfig>,
 }
-impl LabelingJobAlgorithmsConfig {
+impl  LabelingJobAlgorithmsConfig  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
     /// <li>
@@ -41,15 +41,15 @@ impl LabelingJobAlgorithmsConfig {
     /// <p><i>Semantic Segmentation</i></p>
     /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
-    pub fn labeling_job_algorithm_specification_arn(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_algorithm_specification_arn(&self) -> ::std::option::Option<& str> {
         self.labeling_job_algorithm_specification_arn.as_deref()
     }
     /// <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of the model here.</p>
-    pub fn initial_active_learning_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn initial_active_learning_model_arn(&self) -> ::std::option::Option<& str> {
         self.initial_active_learning_model_arn.as_deref()
     }
     /// <p>Provides configuration information for a labeling job.</p>
-    pub fn labeling_job_resource_config(&self) -> ::std::option::Option<&crate::types::LabelingJobResourceConfig> {
+    pub fn labeling_job_resource_config(&self) -> ::std::option::Option<& crate::types::LabelingJobResourceConfig> {
         self.labeling_job_resource_config.as_ref()
     }
 }
@@ -105,8 +105,7 @@ impl LabelingJobAlgorithmsConfigBuilder {
     /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     pub fn set_labeling_job_algorithm_specification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_algorithm_specification_arn = input;
-        self
+        self.labeling_job_algorithm_specification_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
@@ -133,8 +132,7 @@ impl LabelingJobAlgorithmsConfigBuilder {
     }
     /// <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of the model here.</p>
     pub fn set_initial_active_learning_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_active_learning_model_arn = input;
-        self
+        self.initial_active_learning_model_arn = input; self
     }
     /// <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of the model here.</p>
     pub fn get_initial_active_learning_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,7 @@ impl LabelingJobAlgorithmsConfigBuilder {
     }
     /// <p>Provides configuration information for a labeling job.</p>
     pub fn set_labeling_job_resource_config(mut self, input: ::std::option::Option<crate::types::LabelingJobResourceConfig>) -> Self {
-        self.labeling_job_resource_config = input;
-        self
+        self.labeling_job_resource_config = input; self
     }
     /// <p>Provides configuration information for a labeling job.</p>
     pub fn get_labeling_job_resource_config(&self) -> &::std::option::Option<crate::types::LabelingJobResourceConfig> {
@@ -157,9 +154,13 @@ impl LabelingJobAlgorithmsConfigBuilder {
     /// Consumes the builder and constructs a [`LabelingJobAlgorithmsConfig`](crate::types::LabelingJobAlgorithmsConfig).
     pub fn build(self) -> crate::types::LabelingJobAlgorithmsConfig {
         crate::types::LabelingJobAlgorithmsConfig {
-            labeling_job_algorithm_specification_arn: self.labeling_job_algorithm_specification_arn,
-            initial_active_learning_model_arn: self.initial_active_learning_model_arn,
-            labeling_job_resource_config: self.labeling_job_resource_config,
+            labeling_job_algorithm_specification_arn: self.labeling_job_algorithm_specification_arn
+            ,
+            initial_active_learning_model_arn: self.initial_active_learning_model_arn
+            ,
+            labeling_job_resource_config: self.labeling_job_resource_config
+            ,
         }
     }
 }
+

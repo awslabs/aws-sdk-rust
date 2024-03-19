@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowTasksInput {
+pub struct DescribeMaintenanceWindowTasksInput  {
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMaintenanceWindowTasksInput {
+impl  DescribeMaintenanceWindowTasksInput  {
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::MaintenanceWindowFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::MaintenanceWindowFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl DescribeMaintenanceWindowTasksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasksInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,8 +58,7 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
     }
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
     pub fn filters(mut self, input: crate::types::MaintenanceWindowFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -91,8 +90,7 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,25 +103,26 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTasksInput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput {
-            window_id: self.window_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput {
+                window_id: self.window_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

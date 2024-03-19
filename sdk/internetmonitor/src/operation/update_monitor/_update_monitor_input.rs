@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMonitorInput {
+pub struct UpdateMonitorInput  {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub resources_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub resources_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
@@ -27,32 +27,34 @@ pub struct UpdateMonitorInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
-impl UpdateMonitorInput {
+impl  UpdateMonitorInput  {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_add.is_none()`.
-    pub fn resources_to_add(&self) -> &[::std::string::String] {
-        self.resources_to_add.as_deref().unwrap_or_default()
+    pub fn resources_to_add(&self) -> & [::std::string::String] {
+        self.resources_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_remove.is_none()`.
-    pub fn resources_to_remove(&self) -> &[::std::string::String] {
-        self.resources_to_remove.as_deref().unwrap_or_default()
+    pub fn resources_to_remove(&self) -> & [::std::string::String] {
+        self.resources_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MonitorConfigState> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MonitorConfigState> {
         self.status.as_ref()
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
@@ -60,7 +62,7 @@ impl UpdateMonitorInput {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
+    pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<& crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
@@ -70,7 +72,7 @@ impl UpdateMonitorInput {
     }
     /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn health_events_config(&self) -> ::std::option::Option<&crate::types::HealthEventsConfig> {
+    pub fn health_events_config(&self) -> ::std::option::Option<& crate::types::HealthEventsConfig> {
         self.health_events_config.as_ref()
     }
 }
@@ -86,8 +88,8 @@ impl UpdateMonitorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resources_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resources_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resources_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::MonitorConfigState>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_city_networks_to_monitor: ::std::option::Option<i32>,
@@ -104,8 +106,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,23 +122,22 @@ impl UpdateMonitorInputBuilder {
     /// </note>
     pub fn resources_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.resources_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources_to_add = input;
-        self
+    pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources_to_add = input; self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources_to_add
     }
     /// Appends an item to `resources_to_remove`.
@@ -147,17 +147,16 @@ impl UpdateMonitorInputBuilder {
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
     pub fn resources_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.resources_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn set_resources_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources_to_remove = input;
-        self
+    pub fn set_resources_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources_to_remove = input; self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn get_resources_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources_to_remove
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
@@ -167,8 +166,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MonitorConfigState>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MonitorConfigState> {
@@ -181,8 +179,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +192,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_city_networks_to_monitor = input;
-        self
+        self.max_city_networks_to_monitor = input; self
     }
     /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
@@ -209,8 +205,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub fn set_internet_measurements_log_delivery(mut self, input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
-        self.internet_measurements_log_delivery = input;
-        self
+        self.internet_measurements_log_delivery = input; self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
@@ -225,8 +220,7 @@ impl UpdateMonitorInputBuilder {
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.traffic_percentage_to_monitor = input;
-        self
+        self.traffic_percentage_to_monitor = input; self
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -242,8 +236,7 @@ impl UpdateMonitorInputBuilder {
     /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
-        self.health_events_config = input;
-        self
+        self.health_events_config = input; self
     }
     /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -251,19 +244,29 @@ impl UpdateMonitorInputBuilder {
         &self.health_events_config
     }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
-            monitor_name: self.monitor_name,
-            resources_to_add: self.resources_to_add,
-            resources_to_remove: self.resources_to_remove,
-            status: self.status,
-            client_token: self.client_token,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor,
-            internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor,
-            health_events_config: self.health_events_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_monitor::UpdateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                resources_to_add: self.resources_to_add
+                ,
+                resources_to_remove: self.resources_to_remove
+                ,
+                status: self.status
+                ,
+                client_token: self.client_token
+                ,
+                max_city_networks_to_monitor: self.max_city_networks_to_monitor
+                ,
+                internet_measurements_log_delivery: self.internet_measurements_log_delivery
+                ,
+                traffic_percentage_to_monitor: self.traffic_percentage_to_monitor
+                ,
+                health_events_config: self.health_events_config
+                ,
+            }
+        )
     }
 }
+

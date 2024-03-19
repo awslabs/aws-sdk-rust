@@ -3,7 +3,7 @@
 /// <p>The input for the UpdateThing operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThingInput {
+pub struct UpdateThingInput  {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
@@ -18,20 +18,20 @@ pub struct UpdateThingInput {
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub remove_thing_type: ::std::option::Option<bool>,
 }
-impl UpdateThingInput {
+impl  UpdateThingInput  {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
-    pub fn attribute_payload(&self) -> ::std::option::Option<&crate::types::AttributePayload> {
+    pub fn attribute_payload(&self) -> ::std::option::Option<& crate::types::AttributePayload> {
         self.attribute_payload.as_ref()
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
@@ -71,8 +71,7 @@ impl UpdateThingInputBuilder {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
@@ -86,8 +85,7 @@ impl UpdateThingInputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The name of the thing type.</p>
     pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl UpdateThingInputBuilder {
     /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
-        self.attribute_payload = input;
-        self
+        self.attribute_payload = input; self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p><code>{\"attributes\":{\"name1\":\"value2\"}}</code></p>
@@ -120,8 +117,7 @@ impl UpdateThingInputBuilder {
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
@@ -134,8 +130,7 @@ impl UpdateThingInputBuilder {
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub fn set_remove_thing_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_thing_type = input;
-        self
+        self.remove_thing_type = input; self
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub fn get_remove_thing_type(&self) -> &::std::option::Option<bool> {
@@ -143,12 +138,20 @@ impl UpdateThingInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_thing::UpdateThingInput {
-            thing_name: self.thing_name,
-            thing_type_name: self.thing_type_name,
-            attribute_payload: self.attribute_payload,
-            expected_version: self.expected_version,
-            remove_thing_type: self.remove_thing_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_thing::UpdateThingInput {
+                thing_name: self.thing_name
+                ,
+                thing_type_name: self.thing_type_name
+                ,
+                attribute_payload: self.attribute_payload
+                ,
+                expected_version: self.expected_version
+                ,
+                remove_thing_type: self.remove_thing_type
+                ,
+            }
+        )
     }
 }
+

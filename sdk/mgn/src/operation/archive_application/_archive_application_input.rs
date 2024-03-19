@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArchiveApplicationInput {
+pub struct ArchiveApplicationInput  {
     /// <p>Application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ArchiveApplicationInput {
+impl  ArchiveApplicationInput  {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ArchiveApplicationInputBuilder {
     }
     /// <p>Application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl ArchiveApplicationInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ArchiveApplicationInput`](crate::operation::archive_application::ArchiveApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::archive_application::ArchiveApplicationInput {
-            application_id: self.application_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::archive_application::ArchiveApplicationInput {
+                application_id: self.application_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

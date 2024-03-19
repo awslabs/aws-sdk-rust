@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfigurationPolicyInput {
+pub struct GetConfigurationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetConfigurationPolicyInput {
+impl  GetConfigurationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetConfigurationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetConfigurationPolicyInput`](crate::operation::get_configuration_policy::GetConfigurationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration_policy::GetConfigurationPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_configuration_policy::GetConfigurationPolicyInput { identifier: self.identifier })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configuration_policy::GetConfigurationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_configuration_policy::GetConfigurationPolicyInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

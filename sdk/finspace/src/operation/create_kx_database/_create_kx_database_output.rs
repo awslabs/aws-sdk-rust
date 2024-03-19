@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxDatabaseOutput {
+pub struct CreateKxDatabaseOutput  {
     /// <p>The name of the kdb database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the database.</p>
@@ -17,37 +17,37 @@ pub struct CreateKxDatabaseOutput {
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateKxDatabaseOutput {
+impl  CreateKxDatabaseOutput  {
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The ARN identifier of the database.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<& str> {
         self.database_arn.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A description of the database.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKxDatabaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKxDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateKxDatabaseOutput`](crate::operation::create_kx_database::CreateKxDatabaseOutput).
     pub fn builder() -> crate::operation::create_kx_database::builders::CreateKxDatabaseOutputBuilder {
@@ -75,8 +75,7 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>The ARN identifier of the database.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The ARN identifier of the database.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>A description of the database.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the database.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,32 +140,38 @@ impl CreateKxDatabaseOutputBuilder {
     }
     /// <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKxDatabaseOutput`](crate::operation::create_kx_database::CreateKxDatabaseOutput).
     pub fn build(self) -> crate::operation::create_kx_database::CreateKxDatabaseOutput {
         crate::operation::create_kx_database::CreateKxDatabaseOutput {
-            database_name: self.database_name,
-            database_arn: self.database_arn,
-            environment_id: self.environment_id,
-            description: self.description,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
+            database_name: self.database_name
+            ,
+            database_arn: self.database_arn
+            ,
+            environment_id: self.environment_id
+            ,
+            description: self.description
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

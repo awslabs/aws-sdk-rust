@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeploymentStrategies`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
-    /// - On success, responds with [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput) with field(s):
+                            /// - On success, responds with [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput) with field(s):
     ///   - [`items(Option<Vec::<DeploymentStrategy>>)`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDeploymentStrategiesError>`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesError)
+                            /// - On failure, responds with [`SdkError<ListDeploymentStrategiesError>`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesError)
     pub fn list_deployment_strategies(&self) -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder {
-        crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Details about the status of a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusDetails {
+pub struct StatusDetails  {
     /// <p>The status code that was returned. The status code is intended for programmatic error handling. Clean Rooms ML will not change the status code for existing error conditions.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message that was returned. The message is intended for human consumption and can change at any time. Use the <code>statusCode</code> for programmatic error handling.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl StatusDetails {
+impl  StatusDetails  {
     /// <p>The status code that was returned. The status code is intended for programmatic error handling. Clean Rooms ML will not change the status code for existing error conditions.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>The error message that was returned. The message is intended for human consumption and can change at any time. Use the <code>statusCode</code> for programmatic error handling.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StatusDetailsBuilder {
     }
     /// <p>The status code that was returned. The status code is intended for programmatic error handling. Clean Rooms ML will not change the status code for existing error conditions.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code that was returned. The status code is intended for programmatic error handling. Clean Rooms ML will not change the status code for existing error conditions.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StatusDetailsBuilder {
     }
     /// <p>The error message that was returned. The message is intended for human consumption and can change at any time. Use the <code>statusCode</code> for programmatic error handling.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message that was returned. The message is intended for human consumption and can change at any time. Use the <code>statusCode</code> for programmatic error handling.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StatusDetailsBuilder {
     /// Consumes the builder and constructs a [`StatusDetails`](crate::types::StatusDetails).
     pub fn build(self) -> crate::types::StatusDetails {
         crate::types::StatusDetails {
-            status_code: self.status_code,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

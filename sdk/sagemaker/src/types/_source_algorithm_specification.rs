@@ -3,16 +3,17 @@
 /// <p>A list of algorithms that were used to create a model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceAlgorithmSpecification {
+pub struct SourceAlgorithmSpecification  {
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub source_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>>,
+    pub source_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::SourceAlgorithm>>,
 }
-impl SourceAlgorithmSpecification {
+impl  SourceAlgorithmSpecification  {
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_algorithms.is_none()`.
-    pub fn source_algorithms(&self) -> &[crate::types::SourceAlgorithm] {
-        self.source_algorithms.as_deref().unwrap_or_default()
+    pub fn source_algorithms(&self) -> & [crate::types::SourceAlgorithm] {
+        self.source_algorithms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SourceAlgorithmSpecification {
@@ -26,7 +27,7 @@ impl SourceAlgorithmSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceAlgorithmSpecificationBuilder {
-    pub(crate) source_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>>,
+    pub(crate) source_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::SourceAlgorithm>>,
 }
 impl SourceAlgorithmSpecificationBuilder {
     /// Appends an item to `source_algorithms`.
@@ -36,23 +37,24 @@ impl SourceAlgorithmSpecificationBuilder {
     /// <p>A list of the algorithms that were used to create a model package.</p>
     pub fn source_algorithms(mut self, input: crate::types::SourceAlgorithm) -> Self {
         let mut v = self.source_algorithms.unwrap_or_default();
-        v.push(input);
-        self.source_algorithms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_algorithms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub fn set_source_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>>) -> Self {
-        self.source_algorithms = input;
-        self
+    pub fn set_source_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceAlgorithm>>) -> Self {
+        self.source_algorithms = input; self
     }
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub fn get_source_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>> {
+    pub fn get_source_algorithms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceAlgorithm>> {
         &self.source_algorithms
     }
     /// Consumes the builder and constructs a [`SourceAlgorithmSpecification`](crate::types::SourceAlgorithmSpecification).
     pub fn build(self) -> crate::types::SourceAlgorithmSpecification {
         crate::types::SourceAlgorithmSpecification {
-            source_algorithms: self.source_algorithms,
+            source_algorithms: self.source_algorithms
+            ,
         }
     }
 }
+

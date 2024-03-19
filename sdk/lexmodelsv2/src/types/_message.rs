@@ -3,7 +3,7 @@
 /// <p>The object that provides message text and its type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>A message in plain text format.</p>
     pub plain_text_message: ::std::option::Option<crate::types::PlainTextMessage>,
     /// <p>A message in a custom format defined by the client application.</p>
@@ -13,21 +13,21 @@ pub struct Message {
     /// <p>A message that defines a response card that the client application can show to the user.</p>
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
-impl Message {
+impl  Message  {
     /// <p>A message in plain text format.</p>
-    pub fn plain_text_message(&self) -> ::std::option::Option<&crate::types::PlainTextMessage> {
+    pub fn plain_text_message(&self) -> ::std::option::Option<& crate::types::PlainTextMessage> {
         self.plain_text_message.as_ref()
     }
     /// <p>A message in a custom format defined by the client application.</p>
-    pub fn custom_payload(&self) -> ::std::option::Option<&crate::types::CustomPayload> {
+    pub fn custom_payload(&self) -> ::std::option::Option<& crate::types::CustomPayload> {
         self.custom_payload.as_ref()
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
-    pub fn ssml_message(&self) -> ::std::option::Option<&crate::types::SsmlMessage> {
+    pub fn ssml_message(&self) -> ::std::option::Option<& crate::types::SsmlMessage> {
         self.ssml_message.as_ref()
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
-    pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
+    pub fn image_response_card(&self) -> ::std::option::Option<& crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MessageBuilder {
     }
     /// <p>A message in plain text format.</p>
     pub fn set_plain_text_message(mut self, input: ::std::option::Option<crate::types::PlainTextMessage>) -> Self {
-        self.plain_text_message = input;
-        self
+        self.plain_text_message = input; self
     }
     /// <p>A message in plain text format.</p>
     pub fn get_plain_text_message(&self) -> &::std::option::Option<crate::types::PlainTextMessage> {
@@ -69,8 +68,7 @@ impl MessageBuilder {
     }
     /// <p>A message in a custom format defined by the client application.</p>
     pub fn set_custom_payload(mut self, input: ::std::option::Option<crate::types::CustomPayload>) -> Self {
-        self.custom_payload = input;
-        self
+        self.custom_payload = input; self
     }
     /// <p>A message in a custom format defined by the client application.</p>
     pub fn get_custom_payload(&self) -> &::std::option::Option<crate::types::CustomPayload> {
@@ -83,8 +81,7 @@ impl MessageBuilder {
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
     pub fn set_ssml_message(mut self, input: ::std::option::Option<crate::types::SsmlMessage>) -> Self {
-        self.ssml_message = input;
-        self
+        self.ssml_message = input; self
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
     pub fn get_ssml_message(&self) -> &::std::option::Option<crate::types::SsmlMessage> {
@@ -97,8 +94,7 @@ impl MessageBuilder {
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
     pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
-        self.image_response_card = input;
-        self
+        self.image_response_card = input; self
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
     pub fn get_image_response_card(&self) -> &::std::option::Option<crate::types::ImageResponseCard> {
@@ -107,10 +103,15 @@ impl MessageBuilder {
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
-            plain_text_message: self.plain_text_message,
-            custom_payload: self.custom_payload,
-            ssml_message: self.ssml_message,
-            image_response_card: self.image_response_card,
+            plain_text_message: self.plain_text_message
+            ,
+            custom_payload: self.custom_payload
+            ,
+            ssml_message: self.ssml_message
+            ,
+            image_response_card: self.image_response_card
+            ,
         }
     }
 }
+

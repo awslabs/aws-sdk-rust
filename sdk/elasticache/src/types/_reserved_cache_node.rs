@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedCacheNode {
+pub struct ReservedCacheNode  {
     /// <p>The unique identifier for the reservation.</p>
     pub reserved_cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The offering identifier.</p>
@@ -84,18 +84,18 @@ pub struct ReservedCacheNode {
     /// <p>The state of the reserved cache node.</p>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code></p>
     pub reservation_arn: ::std::option::Option<::std::string::String>,
 }
-impl ReservedCacheNode {
+impl  ReservedCacheNode  {
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_cache_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_cache_node_id(&self) -> ::std::option::Option<& str> {
         self.reserved_cache_node_id.as_deref()
     }
     /// <p>The offering identifier.</p>
-    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_cache_nodes_offering_id.as_deref()
     }
     /// <p>The cache node type for the reserved cache nodes.</p>
@@ -156,11 +156,11 @@ impl ReservedCacheNode {
     /// <li>
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
-    pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
+    pub fn cache_node_type(&self) -> ::std::option::Option<& str> {
         self.cache_node_type.as_deref()
     }
     /// <p>The time the reservation started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the reservation in seconds.</p>
@@ -180,26 +180,27 @@ impl ReservedCacheNode {
         self.cache_node_count
     }
     /// <p>The description of the reserved cache node.</p>
-    pub fn product_description(&self) -> ::std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The offering type of this reserved cache node.</p>
-    pub fn offering_type(&self) -> ::std::option::Option<&str> {
+    pub fn offering_type(&self) -> ::std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The state of the reserved cache node.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
-    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
-        self.recurring_charges.as_deref().unwrap_or_default()
+    pub fn recurring_charges(&self) -> & [crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code></p>
-    pub fn reservation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_arn(&self) -> ::std::option::Option<& str> {
         self.reservation_arn.as_deref()
     }
 }
@@ -225,7 +226,7 @@ pub struct ReservedCacheNodeBuilder {
     pub(crate) product_description: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
-    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
     pub(crate) reservation_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReservedCacheNodeBuilder {
@@ -236,8 +237,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The unique identifier for the reservation.</p>
     pub fn set_reserved_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_cache_node_id = input;
-        self
+        self.reserved_cache_node_id = input; self
     }
     /// <p>The unique identifier for the reservation.</p>
     pub fn get_reserved_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +250,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The offering identifier.</p>
     pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_cache_nodes_offering_id = input;
-        self
+        self.reserved_cache_nodes_offering_id = input; self
     }
     /// <p>The offering identifier.</p>
     pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -378,8 +377,7 @@ impl ReservedCacheNodeBuilder {
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_node_type = input;
-        self
+        self.cache_node_type = input; self
     }
     /// <p>The cache node type for the reserved cache nodes.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -449,8 +447,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The time the reservation started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time the reservation started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -463,8 +460,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -477,8 +473,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The fixed price charged for this reserved cache node.</p>
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
     }
     /// <p>The fixed price charged for this reserved cache node.</p>
     pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
@@ -491,8 +486,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The hourly price charged for this reserved cache node.</p>
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.usage_price = input;
-        self
+        self.usage_price = input; self
     }
     /// <p>The hourly price charged for this reserved cache node.</p>
     pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
@@ -505,8 +499,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The number of cache nodes that have been reserved.</p>
     pub fn set_cache_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cache_node_count = input;
-        self
+        self.cache_node_count = input; self
     }
     /// <p>The number of cache nodes that have been reserved.</p>
     pub fn get_cache_node_count(&self) -> &::std::option::Option<i32> {
@@ -519,8 +512,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The description of the reserved cache node.</p>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>The description of the reserved cache node.</p>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -533,8 +525,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The offering type of this reserved cache node.</p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The offering type of this reserved cache node.</p>
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -547,8 +538,7 @@ impl ReservedCacheNodeBuilder {
     }
     /// <p>The state of the reserved cache node.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the reserved cache node.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -561,17 +551,16 @@ impl ReservedCacheNodeBuilder {
     /// <p>The recurring price charged to run this reserved cache node.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-        v.push(input);
-        self.recurring_charges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recurring_charges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
-        self.recurring_charges = input;
-        self
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>) -> Self {
+        self.recurring_charges = input; self
     }
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
@@ -583,8 +572,7 @@ impl ReservedCacheNodeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code></p>
     pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_arn = input;
-        self
+        self.reservation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code></p>
@@ -594,19 +582,33 @@ impl ReservedCacheNodeBuilder {
     /// Consumes the builder and constructs a [`ReservedCacheNode`](crate::types::ReservedCacheNode).
     pub fn build(self) -> crate::types::ReservedCacheNode {
         crate::types::ReservedCacheNode {
-            reserved_cache_node_id: self.reserved_cache_node_id,
-            reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
-            cache_node_type: self.cache_node_type,
-            start_time: self.start_time,
-            duration: self.duration,
-            fixed_price: self.fixed_price,
-            usage_price: self.usage_price,
-            cache_node_count: self.cache_node_count,
-            product_description: self.product_description,
-            offering_type: self.offering_type,
-            state: self.state,
-            recurring_charges: self.recurring_charges,
-            reservation_arn: self.reservation_arn,
+            reserved_cache_node_id: self.reserved_cache_node_id
+            ,
+            reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id
+            ,
+            cache_node_type: self.cache_node_type
+            ,
+            start_time: self.start_time
+            ,
+            duration: self.duration
+            ,
+            fixed_price: self.fixed_price
+            ,
+            usage_price: self.usage_price
+            ,
+            cache_node_count: self.cache_node_count
+            ,
+            product_description: self.product_description
+            ,
+            offering_type: self.offering_type
+            ,
+            state: self.state
+            ,
+            recurring_charges: self.recurring_charges
+            ,
+            reservation_arn: self.reservation_arn
+            ,
         }
     }
 }
+

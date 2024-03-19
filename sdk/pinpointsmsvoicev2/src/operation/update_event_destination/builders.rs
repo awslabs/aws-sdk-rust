@@ -5,55 +5,51 @@ pub use crate::operation::update_event_destination::_update_event_destination_in
 
 impl UpdateEventDestinationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_event_destination();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_event_destination::UpdateEventDestinationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_event_destination::UpdateEventDestinationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_event_destination();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateEventDestination`.
-///
+/// 
 /// <p>Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Kinesis Data Firehose. You can also enable or disable the event destination.</p>
 /// <p>You may want to update an event destination to change its matching event types or updating the destination resource ARN. You can't change an event destination's type between CloudWatch Logs, Kinesis Data Firehose, and Amazon SNS.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder,
+                    inner: crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        crate::operation::update_event_destination::UpdateEventDestinationError,
-    > for UpdateEventDestinationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_event_destination::UpdateEventDestinationOutput,
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_event_destination::UpdateEventDestinationOutput,
+                    crate::operation::update_event_destination::UpdateEventDestinationError,
+                > for UpdateEventDestinationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_event_destination::UpdateEventDestinationOutput,
+                        crate::operation::update_event_destination::UpdateEventDestinationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateEventDestinationFluentBuilder {
     /// Creates a new `UpdateEventDestination`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateEventDestinationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_event_destination::UpdateEventDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_event_destination::UpdateEventDestination::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_event_destination::UpdateEventDestination::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_event_destination::UpdateEventDestinationOutput,
-        crate::operation::update_event_destination::UpdateEventDestinationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_event_destination::UpdateEventDestinationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_event_destination::UpdateEventDestinationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_event_destination::UpdateEventDestination::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_event_destination::UpdateEventDestination::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_event_destination::UpdateEventDestinationOutput, crate::operation::update_event_destination::UpdateEventDestinationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
@@ -165,14 +152,14 @@ impl UpdateEventDestinationFluentBuilder {
     /// <p>An array of event types that determine which events to log.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
-    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>) -> Self {
         self.inner = self.inner.set_matching_event_types(input);
         self
     }
     /// <p>An array of event types that determine which events to log.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
-    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventType>> {
         self.inner.get_matching_event_types()
     }
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
@@ -218,3 +205,4 @@ impl UpdateEventDestinationFluentBuilder {
         self.inner.get_sns_destination()
     }
 }
+

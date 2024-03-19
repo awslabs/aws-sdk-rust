@@ -4,7 +4,7 @@
 /// <p>This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsernameField {
+pub struct UsernameField  {
     /// <p>The name of the username field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -17,7 +17,7 @@ pub struct UsernameField {
     /// </ul>
     pub identifier: ::std::string::String,
 }
-impl UsernameField {
+impl  UsernameField  {
     /// <p>The name of the username field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -28,9 +28,8 @@ impl UsernameField {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
 }
 impl UsernameField {
@@ -73,8 +72,7 @@ impl UsernameFieldBuilder {
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The name of the username field.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -93,13 +91,15 @@ impl UsernameFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::UsernameFieldBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::UsernameField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UsernameField {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building UsernameField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UsernameField {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building UsernameField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

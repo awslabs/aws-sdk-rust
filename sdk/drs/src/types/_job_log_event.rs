@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joblogevent = unimplemented!();
 /// match joblogevent {
@@ -55,16 +55,14 @@
 /// Specifically, when `joblogevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobLogEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum JobLogEvent {
     #[allow(missing_docs)] // documentation missing in model
     CleanupEnd,
@@ -122,164 +120,137 @@ pub enum JobLogEvent {
     UsingPreviousSnapshotFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for JobLogEvent {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLEANUP_END" => JobLogEvent::CleanupEnd,
-            "CLEANUP_FAIL" => JobLogEvent::CleanupFail,
-            "CLEANUP_START" => JobLogEvent::CleanupStart,
-            "CONVERSION_END" => JobLogEvent::ConversionEnd,
-            "CONVERSION_FAIL" => JobLogEvent::ConversionFail,
-            "CONVERSION_START" => JobLogEvent::ConversionStart,
-            "DEPLOY_NETWORK_CONFIGURATION_END" => JobLogEvent::DeployNetworkConfigurationEnd,
-            "DEPLOY_NETWORK_CONFIGURATION_FAILED" => JobLogEvent::DeployNetworkConfigurationFailed,
-            "DEPLOY_NETWORK_CONFIGURATION_START" => JobLogEvent::DeployNetworkConfigurationStart,
-            "JOB_CANCEL" => JobLogEvent::JobCancel,
-            "JOB_END" => JobLogEvent::JobEnd,
-            "JOB_START" => JobLogEvent::JobStart,
-            "LAUNCH_FAILED" => JobLogEvent::LaunchFailed,
-            "LAUNCH_START" => JobLogEvent::LaunchStart,
-            "NETWORK_RECOVERY_FAIL" => JobLogEvent::NetworkRecoveryFail,
-            "SERVER_SKIPPED" => JobLogEvent::ServerSkipped,
-            "SNAPSHOT_END" => JobLogEvent::SnapshotEnd,
-            "SNAPSHOT_FAIL" => JobLogEvent::SnapshotFail,
-            "SNAPSHOT_START" => JobLogEvent::SnapshotStart,
-            "UPDATE_LAUNCH_TEMPLATE_END" => JobLogEvent::UpdateLaunchTemplateEnd,
-            "UPDATE_LAUNCH_TEMPLATE_FAILED" => JobLogEvent::UpdateLaunchTemplateFailed,
-            "UPDATE_LAUNCH_TEMPLATE_START" => JobLogEvent::UpdateLaunchTemplateStart,
-            "UPDATE_NETWORK_CONFIGURATION_END" => JobLogEvent::UpdateNetworkConfigurationEnd,
-            "UPDATE_NETWORK_CONFIGURATION_FAILED" => JobLogEvent::UpdateNetworkConfigurationFailed,
-            "UPDATE_NETWORK_CONFIGURATION_START" => JobLogEvent::UpdateNetworkConfigurationStart,
-            "USING_PREVIOUS_SNAPSHOT" => JobLogEvent::UsingPreviousSnapshot,
-            "USING_PREVIOUS_SNAPSHOT_FAILED" => JobLogEvent::UsingPreviousSnapshotFailed,
-            other => JobLogEvent::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CLEANUP_END" => JobLogEvent::CleanupEnd,
+"CLEANUP_FAIL" => JobLogEvent::CleanupFail,
+"CLEANUP_START" => JobLogEvent::CleanupStart,
+"CONVERSION_END" => JobLogEvent::ConversionEnd,
+"CONVERSION_FAIL" => JobLogEvent::ConversionFail,
+"CONVERSION_START" => JobLogEvent::ConversionStart,
+"DEPLOY_NETWORK_CONFIGURATION_END" => JobLogEvent::DeployNetworkConfigurationEnd,
+"DEPLOY_NETWORK_CONFIGURATION_FAILED" => JobLogEvent::DeployNetworkConfigurationFailed,
+"DEPLOY_NETWORK_CONFIGURATION_START" => JobLogEvent::DeployNetworkConfigurationStart,
+"JOB_CANCEL" => JobLogEvent::JobCancel,
+"JOB_END" => JobLogEvent::JobEnd,
+"JOB_START" => JobLogEvent::JobStart,
+"LAUNCH_FAILED" => JobLogEvent::LaunchFailed,
+"LAUNCH_START" => JobLogEvent::LaunchStart,
+"NETWORK_RECOVERY_FAIL" => JobLogEvent::NetworkRecoveryFail,
+"SERVER_SKIPPED" => JobLogEvent::ServerSkipped,
+"SNAPSHOT_END" => JobLogEvent::SnapshotEnd,
+"SNAPSHOT_FAIL" => JobLogEvent::SnapshotFail,
+"SNAPSHOT_START" => JobLogEvent::SnapshotStart,
+"UPDATE_LAUNCH_TEMPLATE_END" => JobLogEvent::UpdateLaunchTemplateEnd,
+"UPDATE_LAUNCH_TEMPLATE_FAILED" => JobLogEvent::UpdateLaunchTemplateFailed,
+"UPDATE_LAUNCH_TEMPLATE_START" => JobLogEvent::UpdateLaunchTemplateStart,
+"UPDATE_NETWORK_CONFIGURATION_END" => JobLogEvent::UpdateNetworkConfigurationEnd,
+"UPDATE_NETWORK_CONFIGURATION_FAILED" => JobLogEvent::UpdateNetworkConfigurationFailed,
+"UPDATE_NETWORK_CONFIGURATION_START" => JobLogEvent::UpdateNetworkConfigurationStart,
+"USING_PREVIOUS_SNAPSHOT" => JobLogEvent::UsingPreviousSnapshot,
+"USING_PREVIOUS_SNAPSHOT_FAILED" => JobLogEvent::UsingPreviousSnapshotFailed,
+other => JobLogEvent::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for JobLogEvent {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(JobLogEvent::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(JobLogEvent::from(s))
+                    }
+                }
 impl JobLogEvent {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobLogEvent::CleanupEnd => "CLEANUP_END",
-            JobLogEvent::CleanupFail => "CLEANUP_FAIL",
-            JobLogEvent::CleanupStart => "CLEANUP_START",
-            JobLogEvent::ConversionEnd => "CONVERSION_END",
-            JobLogEvent::ConversionFail => "CONVERSION_FAIL",
-            JobLogEvent::ConversionStart => "CONVERSION_START",
-            JobLogEvent::DeployNetworkConfigurationEnd => "DEPLOY_NETWORK_CONFIGURATION_END",
-            JobLogEvent::DeployNetworkConfigurationFailed => "DEPLOY_NETWORK_CONFIGURATION_FAILED",
-            JobLogEvent::DeployNetworkConfigurationStart => "DEPLOY_NETWORK_CONFIGURATION_START",
-            JobLogEvent::JobCancel => "JOB_CANCEL",
-            JobLogEvent::JobEnd => "JOB_END",
-            JobLogEvent::JobStart => "JOB_START",
-            JobLogEvent::LaunchFailed => "LAUNCH_FAILED",
-            JobLogEvent::LaunchStart => "LAUNCH_START",
-            JobLogEvent::NetworkRecoveryFail => "NETWORK_RECOVERY_FAIL",
-            JobLogEvent::ServerSkipped => "SERVER_SKIPPED",
-            JobLogEvent::SnapshotEnd => "SNAPSHOT_END",
-            JobLogEvent::SnapshotFail => "SNAPSHOT_FAIL",
-            JobLogEvent::SnapshotStart => "SNAPSHOT_START",
-            JobLogEvent::UpdateLaunchTemplateEnd => "UPDATE_LAUNCH_TEMPLATE_END",
-            JobLogEvent::UpdateLaunchTemplateFailed => "UPDATE_LAUNCH_TEMPLATE_FAILED",
-            JobLogEvent::UpdateLaunchTemplateStart => "UPDATE_LAUNCH_TEMPLATE_START",
-            JobLogEvent::UpdateNetworkConfigurationEnd => "UPDATE_NETWORK_CONFIGURATION_END",
-            JobLogEvent::UpdateNetworkConfigurationFailed => "UPDATE_NETWORK_CONFIGURATION_FAILED",
-            JobLogEvent::UpdateNetworkConfigurationStart => "UPDATE_NETWORK_CONFIGURATION_START",
-            JobLogEvent::UsingPreviousSnapshot => "USING_PREVIOUS_SNAPSHOT",
-            JobLogEvent::UsingPreviousSnapshotFailed => "USING_PREVIOUS_SNAPSHOT_FAILED",
-            JobLogEvent::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLEANUP_END",
-            "CLEANUP_FAIL",
-            "CLEANUP_START",
-            "CONVERSION_END",
-            "CONVERSION_FAIL",
-            "CONVERSION_START",
-            "DEPLOY_NETWORK_CONFIGURATION_END",
-            "DEPLOY_NETWORK_CONFIGURATION_FAILED",
-            "DEPLOY_NETWORK_CONFIGURATION_START",
-            "JOB_CANCEL",
-            "JOB_END",
-            "JOB_START",
-            "LAUNCH_FAILED",
-            "LAUNCH_START",
-            "NETWORK_RECOVERY_FAIL",
-            "SERVER_SKIPPED",
-            "SNAPSHOT_END",
-            "SNAPSHOT_FAIL",
-            "SNAPSHOT_START",
-            "UPDATE_LAUNCH_TEMPLATE_END",
-            "UPDATE_LAUNCH_TEMPLATE_FAILED",
-            "UPDATE_LAUNCH_TEMPLATE_START",
-            "UPDATE_NETWORK_CONFIGURATION_END",
-            "UPDATE_NETWORK_CONFIGURATION_FAILED",
-            "UPDATE_NETWORK_CONFIGURATION_START",
-            "USING_PREVIOUS_SNAPSHOT",
-            "USING_PREVIOUS_SNAPSHOT_FAILED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobLogEvent::CleanupEnd => "CLEANUP_END",
+    JobLogEvent::CleanupFail => "CLEANUP_FAIL",
+    JobLogEvent::CleanupStart => "CLEANUP_START",
+    JobLogEvent::ConversionEnd => "CONVERSION_END",
+    JobLogEvent::ConversionFail => "CONVERSION_FAIL",
+    JobLogEvent::ConversionStart => "CONVERSION_START",
+    JobLogEvent::DeployNetworkConfigurationEnd => "DEPLOY_NETWORK_CONFIGURATION_END",
+    JobLogEvent::DeployNetworkConfigurationFailed => "DEPLOY_NETWORK_CONFIGURATION_FAILED",
+    JobLogEvent::DeployNetworkConfigurationStart => "DEPLOY_NETWORK_CONFIGURATION_START",
+    JobLogEvent::JobCancel => "JOB_CANCEL",
+    JobLogEvent::JobEnd => "JOB_END",
+    JobLogEvent::JobStart => "JOB_START",
+    JobLogEvent::LaunchFailed => "LAUNCH_FAILED",
+    JobLogEvent::LaunchStart => "LAUNCH_START",
+    JobLogEvent::NetworkRecoveryFail => "NETWORK_RECOVERY_FAIL",
+    JobLogEvent::ServerSkipped => "SERVER_SKIPPED",
+    JobLogEvent::SnapshotEnd => "SNAPSHOT_END",
+    JobLogEvent::SnapshotFail => "SNAPSHOT_FAIL",
+    JobLogEvent::SnapshotStart => "SNAPSHOT_START",
+    JobLogEvent::UpdateLaunchTemplateEnd => "UPDATE_LAUNCH_TEMPLATE_END",
+    JobLogEvent::UpdateLaunchTemplateFailed => "UPDATE_LAUNCH_TEMPLATE_FAILED",
+    JobLogEvent::UpdateLaunchTemplateStart => "UPDATE_LAUNCH_TEMPLATE_START",
+    JobLogEvent::UpdateNetworkConfigurationEnd => "UPDATE_NETWORK_CONFIGURATION_END",
+    JobLogEvent::UpdateNetworkConfigurationFailed => "UPDATE_NETWORK_CONFIGURATION_FAILED",
+    JobLogEvent::UpdateNetworkConfigurationStart => "UPDATE_NETWORK_CONFIGURATION_START",
+    JobLogEvent::UsingPreviousSnapshot => "USING_PREVIOUS_SNAPSHOT",
+    JobLogEvent::UsingPreviousSnapshotFailed => "USING_PREVIOUS_SNAPSHOT_FAILED",
+    JobLogEvent::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLEANUP_END", "CLEANUP_FAIL", "CLEANUP_START", "CONVERSION_END", "CONVERSION_FAIL", "CONVERSION_START", "DEPLOY_NETWORK_CONFIGURATION_END", "DEPLOY_NETWORK_CONFIGURATION_FAILED", "DEPLOY_NETWORK_CONFIGURATION_START", "JOB_CANCEL", "JOB_END", "JOB_START", "LAUNCH_FAILED", "LAUNCH_START", "NETWORK_RECOVERY_FAIL", "SERVER_SKIPPED", "SNAPSHOT_END", "SNAPSHOT_FAIL", "SNAPSHOT_START", "UPDATE_LAUNCH_TEMPLATE_END", "UPDATE_LAUNCH_TEMPLATE_FAILED", "UPDATE_LAUNCH_TEMPLATE_START", "UPDATE_NETWORK_CONFIGURATION_END", "UPDATE_NETWORK_CONFIGURATION_FAILED", "UPDATE_NETWORK_CONFIGURATION_START", "USING_PREVIOUS_SNAPSHOT", "USING_PREVIOUS_SNAPSHOT_FAILED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for JobLogEvent {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl JobLogEvent {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for JobLogEvent {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            JobLogEvent::CleanupEnd => write!(f, "CLEANUP_END"),
-            JobLogEvent::CleanupFail => write!(f, "CLEANUP_FAIL"),
-            JobLogEvent::CleanupStart => write!(f, "CLEANUP_START"),
-            JobLogEvent::ConversionEnd => write!(f, "CONVERSION_END"),
-            JobLogEvent::ConversionFail => write!(f, "CONVERSION_FAIL"),
-            JobLogEvent::ConversionStart => write!(f, "CONVERSION_START"),
-            JobLogEvent::DeployNetworkConfigurationEnd => write!(f, "DEPLOY_NETWORK_CONFIGURATION_END"),
-            JobLogEvent::DeployNetworkConfigurationFailed => write!(f, "DEPLOY_NETWORK_CONFIGURATION_FAILED"),
-            JobLogEvent::DeployNetworkConfigurationStart => write!(f, "DEPLOY_NETWORK_CONFIGURATION_START"),
-            JobLogEvent::JobCancel => write!(f, "JOB_CANCEL"),
-            JobLogEvent::JobEnd => write!(f, "JOB_END"),
-            JobLogEvent::JobStart => write!(f, "JOB_START"),
-            JobLogEvent::LaunchFailed => write!(f, "LAUNCH_FAILED"),
-            JobLogEvent::LaunchStart => write!(f, "LAUNCH_START"),
-            JobLogEvent::NetworkRecoveryFail => write!(f, "NETWORK_RECOVERY_FAIL"),
-            JobLogEvent::ServerSkipped => write!(f, "SERVER_SKIPPED"),
-            JobLogEvent::SnapshotEnd => write!(f, "SNAPSHOT_END"),
-            JobLogEvent::SnapshotFail => write!(f, "SNAPSHOT_FAIL"),
-            JobLogEvent::SnapshotStart => write!(f, "SNAPSHOT_START"),
-            JobLogEvent::UpdateLaunchTemplateEnd => write!(f, "UPDATE_LAUNCH_TEMPLATE_END"),
-            JobLogEvent::UpdateLaunchTemplateFailed => write!(f, "UPDATE_LAUNCH_TEMPLATE_FAILED"),
-            JobLogEvent::UpdateLaunchTemplateStart => write!(f, "UPDATE_LAUNCH_TEMPLATE_START"),
-            JobLogEvent::UpdateNetworkConfigurationEnd => write!(f, "UPDATE_NETWORK_CONFIGURATION_END"),
-            JobLogEvent::UpdateNetworkConfigurationFailed => write!(f, "UPDATE_NETWORK_CONFIGURATION_FAILED"),
-            JobLogEvent::UpdateNetworkConfigurationStart => write!(f, "UPDATE_NETWORK_CONFIGURATION_START"),
-            JobLogEvent::UsingPreviousSnapshot => write!(f, "USING_PREVIOUS_SNAPSHOT"),
-            JobLogEvent::UsingPreviousSnapshotFailed => write!(f, "USING_PREVIOUS_SNAPSHOT_FAILED"),
-            JobLogEvent::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                JobLogEvent::CleanupEnd => write!(f, "CLEANUP_END"),
+JobLogEvent::CleanupFail => write!(f, "CLEANUP_FAIL"),
+JobLogEvent::CleanupStart => write!(f, "CLEANUP_START"),
+JobLogEvent::ConversionEnd => write!(f, "CONVERSION_END"),
+JobLogEvent::ConversionFail => write!(f, "CONVERSION_FAIL"),
+JobLogEvent::ConversionStart => write!(f, "CONVERSION_START"),
+JobLogEvent::DeployNetworkConfigurationEnd => write!(f, "DEPLOY_NETWORK_CONFIGURATION_END"),
+JobLogEvent::DeployNetworkConfigurationFailed => write!(f, "DEPLOY_NETWORK_CONFIGURATION_FAILED"),
+JobLogEvent::DeployNetworkConfigurationStart => write!(f, "DEPLOY_NETWORK_CONFIGURATION_START"),
+JobLogEvent::JobCancel => write!(f, "JOB_CANCEL"),
+JobLogEvent::JobEnd => write!(f, "JOB_END"),
+JobLogEvent::JobStart => write!(f, "JOB_START"),
+JobLogEvent::LaunchFailed => write!(f, "LAUNCH_FAILED"),
+JobLogEvent::LaunchStart => write!(f, "LAUNCH_START"),
+JobLogEvent::NetworkRecoveryFail => write!(f, "NETWORK_RECOVERY_FAIL"),
+JobLogEvent::ServerSkipped => write!(f, "SERVER_SKIPPED"),
+JobLogEvent::SnapshotEnd => write!(f, "SNAPSHOT_END"),
+JobLogEvent::SnapshotFail => write!(f, "SNAPSHOT_FAIL"),
+JobLogEvent::SnapshotStart => write!(f, "SNAPSHOT_START"),
+JobLogEvent::UpdateLaunchTemplateEnd => write!(f, "UPDATE_LAUNCH_TEMPLATE_END"),
+JobLogEvent::UpdateLaunchTemplateFailed => write!(f, "UPDATE_LAUNCH_TEMPLATE_FAILED"),
+JobLogEvent::UpdateLaunchTemplateStart => write!(f, "UPDATE_LAUNCH_TEMPLATE_START"),
+JobLogEvent::UpdateNetworkConfigurationEnd => write!(f, "UPDATE_NETWORK_CONFIGURATION_END"),
+JobLogEvent::UpdateNetworkConfigurationFailed => write!(f, "UPDATE_NETWORK_CONFIGURATION_FAILED"),
+JobLogEvent::UpdateNetworkConfigurationStart => write!(f, "UPDATE_NETWORK_CONFIGURATION_START"),
+JobLogEvent::UsingPreviousSnapshot => write!(f, "USING_PREVIOUS_SNAPSHOT"),
+JobLogEvent::UsingPreviousSnapshotFailed => write!(f, "USING_PREVIOUS_SNAPSHOT_FAILED"),
+JobLogEvent::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

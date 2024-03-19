@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTagsInput {
+pub struct DeleteTagsInput  {
     /// <p>One or more tags to delete.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the tagged ML object.</p>
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
-impl DeleteTagsInput {
+impl  DeleteTagsInput  {
     /// <p>One or more tags to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -37,7 +38,7 @@ impl DeleteTagsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTagsInputBuilder {
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
@@ -49,17 +50,16 @@ impl DeleteTagsInputBuilder {
     /// <p>One or more tags to delete.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags to delete.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>One or more tags to delete.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
@@ -70,8 +70,7 @@ impl DeleteTagsInputBuilder {
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl DeleteTagsInputBuilder {
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
@@ -94,10 +92,16 @@ impl DeleteTagsInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_tags::DeleteTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_tags::DeleteTagsInput {
-            tag_keys: self.tag_keys,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_tags::DeleteTagsInput {
+                tag_keys: self.tag_keys
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

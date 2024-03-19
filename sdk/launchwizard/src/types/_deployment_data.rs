@@ -3,7 +3,7 @@
 /// <p>The data associated with a deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeploymentData {
+pub struct DeploymentData  {
     /// <p>The name of the deployment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment.</p>
@@ -17,51 +17,51 @@ pub struct DeploymentData {
     /// <p>The time the deployment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The resource group of the deployment.</p>
     pub resource_group: ::std::option::Option<::std::string::String>,
     /// <p>The time the deployment was deleted.</p>
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeploymentData {
+impl  DeploymentData  {
     /// <p>The name of the deployment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the deployment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The pattern name of the deployment.</p>
-    pub fn pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn pattern_name(&self) -> ::std::option::Option<& str> {
         self.pattern_name.as_deref()
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The time the deployment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn specifications(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn specifications(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.specifications.as_ref()
     }
     /// <p>The resource group of the deployment.</p>
-    pub fn resource_group(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group(&self) -> ::std::option::Option<& str> {
         self.resource_group.as_deref()
     }
     /// <p>The time the deployment was deleted.</p>
-    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for DeploymentData {
+impl  ::std::fmt::Debug for DeploymentData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentData");
         formatter.field("name", &self.name);
@@ -93,7 +93,7 @@ pub struct DeploymentDataBuilder {
     pub(crate) pattern_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) resource_group: ::std::option::Option<::std::string::String>,
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -105,8 +105,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The name of the deployment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the deployment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The ID of the deployment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the deployment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The pattern name of the deployment.</p>
     pub fn set_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern_name = input;
-        self
+        self.pattern_name = input; self
     }
     /// <p>The pattern name of the deployment.</p>
     pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -175,8 +170,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The time the deployment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time the deployment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,26 +181,18 @@ impl DeploymentDataBuilder {
     /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
     ///
     /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn specifications(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn specifications(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.specifications.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.specifications = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.specifications = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn set_specifications(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.specifications = input;
-        self
+    pub fn set_specifications(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.specifications = input; self
     }
     /// <p>The specifications of the deployment. For more information on specifications for each deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn get_specifications(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_specifications(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.specifications
     }
     /// <p>The resource group of the deployment.</p>
@@ -216,8 +202,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The resource group of the deployment.</p>
     pub fn set_resource_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group = input;
-        self
+        self.resource_group = input; self
     }
     /// <p>The resource group of the deployment.</p>
     pub fn get_resource_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +215,7 @@ impl DeploymentDataBuilder {
     }
     /// <p>The time the deployment was deleted.</p>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_at = input;
-        self
+        self.deleted_at = input; self
     }
     /// <p>The time the deployment was deleted.</p>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -240,15 +224,24 @@ impl DeploymentDataBuilder {
     /// Consumes the builder and constructs a [`DeploymentData`](crate::types::DeploymentData).
     pub fn build(self) -> crate::types::DeploymentData {
         crate::types::DeploymentData {
-            name: self.name,
-            id: self.id,
-            workload_name: self.workload_name,
-            pattern_name: self.pattern_name,
-            status: self.status,
-            created_at: self.created_at,
-            specifications: self.specifications,
-            resource_group: self.resource_group,
-            deleted_at: self.deleted_at,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            workload_name: self.workload_name
+            ,
+            pattern_name: self.pattern_name
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            specifications: self.specifications
+            ,
+            resource_group: self.resource_group
+            ,
+            deleted_at: self.deleted_at
+            ,
         }
     }
 }
@@ -267,3 +260,4 @@ impl ::std::fmt::Debug for DeploymentDataBuilder {
         formatter.finish()
     }
 }
+

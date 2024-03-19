@@ -2,37 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePullRequestInput {
+pub struct CreatePullRequestInput  {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the pull request.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p><note>
     /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl CreatePullRequestInput {
+impl  CreatePullRequestInput  {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A description of the pull request.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p><note>
     /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -49,7 +50,7 @@ impl CreatePullRequestInput {
 pub struct CreatePullRequestInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePullRequestInputBuilder {
@@ -61,8 +62,7 @@ impl CreatePullRequestInputBuilder {
     }
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +75,7 @@ impl CreatePullRequestInputBuilder {
     }
     /// <p>A description of the pull request.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the pull request.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +88,16 @@ impl CreatePullRequestInputBuilder {
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p><note>
@@ -113,8 +111,7 @@ impl CreatePullRequestInputBuilder {
     /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p><note>
     /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
@@ -123,14 +120,19 @@ impl CreatePullRequestInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_pull_request::CreatePullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_pull_request::CreatePullRequestInput {
-            title: self.title,
-            description: self.description,
-            targets: self.targets,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pull_request::CreatePullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_pull_request::CreatePullRequestInput {
+                title: self.title
+                ,
+                description: self.description
+                ,
+                targets: self.targets
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegistrationOutput {
+pub struct CreateRegistrationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub registration_arn: ::std::string::String,
     /// <p>The unique identifier for the registration.</p>
@@ -32,28 +32,25 @@ pub struct CreateRegistrationOutput {
     /// <p>The current version number of the registration.</p>
     pub current_version_number: i64,
     /// <p>Metadata about a given registration which is specific to that registration type.</p>
-    pub additional_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An array of tags (key and value pairs) to associate with the registration.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The time when the registration was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl CreateRegistrationOutput {
+impl  CreateRegistrationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
-    pub fn registration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_arn.deref()
+    pub fn registration_arn(&self) -> & str {
+        use std::ops::Deref; self.registration_arn.deref()
     }
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_id.deref()
+    pub fn registration_id(&self) -> & str {
+        use std::ops::Deref; self.registration_id.deref()
     }
     /// <p>The type of registration form to create. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_type.deref()
+    pub fn registration_type(&self) -> & str {
+        use std::ops::Deref; self.registration_type.deref()
     }
     /// <p>The status of the registration.</p>
     /// <ul>
@@ -74,7 +71,7 @@ impl CreateRegistrationOutput {
     /// <li>
     /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
     /// </ul>
-    pub fn registration_status(&self) -> &crate::types::RegistrationStatus {
+    pub fn registration_status(&self) -> & crate::types::RegistrationStatus {
         &self.registration_status
     }
     /// <p>The current version number of the registration.</p>
@@ -82,25 +79,26 @@ impl CreateRegistrationOutput {
         self.current_version_number
     }
     /// <p>Metadata about a given registration which is specific to that registration type.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_attributes.as_ref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time when the registration was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRegistrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegistrationOutput`](crate::operation::create_registration::CreateRegistrationOutput).
     pub fn builder() -> crate::operation::create_registration::builders::CreateRegistrationOutputBuilder {
@@ -117,8 +115,8 @@ pub struct CreateRegistrationOutputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) current_version_number: ::std::option::Option<i64>,
-    pub(crate) additional_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -131,8 +129,7 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn set_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_arn = input;
-        self
+        self.registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn get_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The type of registration form to create. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_type = input;
-        self
+        self.registration_type = input; self
     }
     /// <p>The type of registration form to create. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +207,7 @@ impl CreateRegistrationOutputBuilder {
     /// <p><code>DELETED</code>: The registration has been deleted.</p></li>
     /// </ul>
     pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.registration_status = input;
-        self
+        self.registration_status = input; self
     }
     /// <p>The status of the registration.</p>
     /// <ul>
@@ -245,8 +239,7 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The current version number of the registration.</p>
     pub fn set_current_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_version_number = input;
-        self
+        self.current_version_number = input; self
     }
     /// <p>The current version number of the registration.</p>
     pub fn get_current_version_number(&self) -> &::std::option::Option<i64> {
@@ -257,26 +250,18 @@ impl CreateRegistrationOutputBuilder {
     /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
     ///
     /// <p>Metadata about a given registration which is specific to that registration type.</p>
-    pub fn additional_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata about a given registration which is specific to that registration type.</p>
-    pub fn set_additional_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_attributes = input;
-        self
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_attributes = input; self
     }
     /// <p>Metadata about a given registration which is specific to that registration type.</p>
-    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_attributes
     }
     /// Appends an item to `tags`.
@@ -286,17 +271,16 @@ impl CreateRegistrationOutputBuilder {
     /// <p>An array of tags (key and value pairs) to associate with the registration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The time when the registration was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -307,22 +291,21 @@ impl CreateRegistrationOutputBuilder {
     }
     /// <p>The time when the registration was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the registration was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRegistrationOutput`](crate::operation::create_registration::CreateRegistrationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_arn`](crate::operation::create_registration::builders::CreateRegistrationOutputBuilder::registration_arn)
@@ -331,50 +314,46 @@ impl CreateRegistrationOutputBuilder {
     /// - [`registration_status`](crate::operation::create_registration::builders::CreateRegistrationOutputBuilder::registration_status)
     /// - [`current_version_number`](crate::operation::create_registration::builders::CreateRegistrationOutputBuilder::current_version_number)
     /// - [`created_timestamp`](crate::operation::create_registration::builders::CreateRegistrationOutputBuilder::created_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_registration::CreateRegistrationOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_registration::CreateRegistrationOutput {
-            registration_arn: self.registration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_arn",
-                    "registration_arn was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            registration_id: self.registration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_id",
-                    "registration_id was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            registration_type: self.registration_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_type",
-                    "registration_type was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            registration_status: self.registration_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_status",
-                    "registration_status was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            current_version_number: self.current_version_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "current_version_number",
-                    "current_version_number was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            additional_attributes: self.additional_attributes,
-            tags: self.tags,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building CreateRegistrationOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_registration::CreateRegistrationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_registration::CreateRegistrationOutput {
+                registration_arn: self.registration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_arn", "registration_arn was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                registration_id: self.registration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_id", "registration_id was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                registration_type: self.registration_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_type", "registration_type was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                registration_status: self.registration_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_status", "registration_status was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                current_version_number: self.current_version_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("current_version_number", "current_version_number was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                additional_attributes: self.additional_attributes
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building CreateRegistrationOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

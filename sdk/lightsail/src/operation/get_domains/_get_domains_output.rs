@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainsOutput {
+pub struct GetDomainsOutput  {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    pub domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<crate::types::Domain>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDomainsOutput {
+impl  GetDomainsOutput  {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[crate::types::Domain] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [crate::types::Domain] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDomainsOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainsOutput`](crate::operation::get_domains::GetDomainsOutput).
     pub fn builder() -> crate::operation::get_domains::builders::GetDomainsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetDomainsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainsOutputBuilder {
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<crate::types::Domain>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetDomainsOutputBuilder {
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
     pub fn domains(mut self, input: crate::types::Domain) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input);
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Domain>>) -> Self {
+        self.domains = input; self
     }
     /// <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Domain>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Domain>> {
         &self.domains
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetDomainsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetDomainsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDomainsOutput`](crate::operation::get_domains::GetDomainsOutput).
     pub fn build(self) -> crate::operation::get_domains::GetDomainsOutput {
         crate::operation::get_domains::GetDomainsOutput {
-            domains: self.domains,
-            next_page_token: self.next_page_token,
+            domains: self.domains
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

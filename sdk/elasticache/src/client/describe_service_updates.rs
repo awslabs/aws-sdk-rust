@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeServiceUpdates`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_update_name(impl Into<String>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::service_update_name) / [`set_service_update_name(Option<String>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::set_service_update_name):<br>required: **false**<br><p>The unique ID of the service update</p><br>
     ///   - [`service_update_status(ServiceUpdateStatus)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::service_update_status) / [`set_service_update_status(Option<Vec::<ServiceUpdateStatus>>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::set_service_update_status):<br>required: **false**<br><p>The status of the service update</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput) with field(s):
+                            /// - On success, responds with [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`service_updates(Option<Vec::<ServiceUpdate>>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::service_updates): <p>A list of service updates</p>
-    /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::operation::describe_service_updates::DescribeServiceUpdatesError)
+                            /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::operation::describe_service_updates::DescribeServiceUpdatesError)
     pub fn describe_service_updates(&self) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder {
-        crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

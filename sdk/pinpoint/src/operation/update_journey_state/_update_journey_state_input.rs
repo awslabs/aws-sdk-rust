@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJourneyStateInput {
+pub struct UpdateJourneyStateInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the journey.</p>
@@ -10,17 +10,17 @@ pub struct UpdateJourneyStateInput {
     /// <p>Changes the status of a journey.</p>
     pub journey_state_request: ::std::option::Option<crate::types::JourneyStateRequest>,
 }
-impl UpdateJourneyStateInput {
+impl  UpdateJourneyStateInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the journey.</p>
-    pub fn journey_id(&self) -> ::std::option::Option<&str> {
+    pub fn journey_id(&self) -> ::std::option::Option<& str> {
         self.journey_id.as_deref()
     }
     /// <p>Changes the status of a journey.</p>
-    pub fn journey_state_request(&self) -> ::std::option::Option<&crate::types::JourneyStateRequest> {
+    pub fn journey_state_request(&self) -> ::std::option::Option<& crate::types::JourneyStateRequest> {
         self.journey_state_request.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateJourneyStateInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateJourneyStateInputBuilder {
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.journey_id = input;
-        self
+        self.journey_id = input; self
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdateJourneyStateInputBuilder {
     }
     /// <p>Changes the status of a journey.</p>
     pub fn set_journey_state_request(mut self, input: ::std::option::Option<crate::types::JourneyStateRequest>) -> Self {
-        self.journey_state_request = input;
-        self
+        self.journey_state_request = input; self
     }
     /// <p>Changes the status of a journey.</p>
     pub fn get_journey_state_request(&self) -> &::std::option::Option<crate::types::JourneyStateRequest> {
         &self.journey_state_request
     }
     /// Consumes the builder and constructs a [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_journey_state::UpdateJourneyStateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_journey_state::UpdateJourneyStateInput {
-            application_id: self.application_id,
-            journey_id: self.journey_id,
-            journey_state_request: self.journey_state_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_journey_state::UpdateJourneyStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_journey_state::UpdateJourneyStateInput {
+                application_id: self.application_id
+                ,
+                journey_id: self.journey_id
+                ,
+                journey_state_request: self.journey_state_request
+                ,
+            }
+        )
     }
 }
+

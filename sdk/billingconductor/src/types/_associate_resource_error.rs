@@ -3,19 +3,19 @@
 /// <p>A representation of a resource association error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateResourceError {
+pub struct AssociateResourceError  {
     /// <p>The reason why the resource association failed.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A static error code that's used to classify the type of failure.</p>
     pub reason: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
 }
-impl AssociateResourceError {
+impl  AssociateResourceError  {
     /// <p>The reason why the resource association failed.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>A static error code that's used to classify the type of failure.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::AssociateResourceErrorReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::AssociateResourceErrorReason> {
         self.reason.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateResourceErrorBuilder {
     }
     /// <p>The reason why the resource association failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The reason why the resource association failed.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssociateResourceErrorBuilder {
     }
     /// <p>A static error code that's used to classify the type of failure.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AssociateResourceErrorReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A static error code that's used to classify the type of failure.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::AssociateResourceErrorReason> {
@@ -65,8 +63,11 @@ impl AssociateResourceErrorBuilder {
     /// Consumes the builder and constructs a [`AssociateResourceError`](crate::types::AssociateResourceError).
     pub fn build(self) -> crate::types::AssociateResourceError {
         crate::types::AssociateResourceError {
-            message: self.message,
-            reason: self.reason,
+            message: self.message
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

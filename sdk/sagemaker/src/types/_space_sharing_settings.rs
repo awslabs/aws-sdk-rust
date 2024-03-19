@@ -3,13 +3,13 @@
 /// <p>A collection of space sharing settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceSharingSettings {
+pub struct SpaceSharingSettings  {
     /// <p>Specifies the sharing type of the space.</p>
     pub sharing_type: ::std::option::Option<crate::types::SharingType>,
 }
-impl SpaceSharingSettings {
+impl  SpaceSharingSettings  {
     /// <p>Specifies the sharing type of the space.</p>
-    pub fn sharing_type(&self) -> ::std::option::Option<&crate::types::SharingType> {
+    pub fn sharing_type(&self) -> ::std::option::Option<& crate::types::SharingType> {
         self.sharing_type.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl SpaceSharingSettingsBuilder {
     }
     /// <p>Specifies the sharing type of the space.</p>
     pub fn set_sharing_type(mut self, input: ::std::option::Option<crate::types::SharingType>) -> Self {
-        self.sharing_type = input;
-        self
+        self.sharing_type = input; self
     }
     /// <p>Specifies the sharing type of the space.</p>
     pub fn get_sharing_type(&self) -> &::std::option::Option<crate::types::SharingType> {
@@ -45,7 +44,9 @@ impl SpaceSharingSettingsBuilder {
     /// Consumes the builder and constructs a [`SpaceSharingSettings`](crate::types::SpaceSharingSettings).
     pub fn build(self) -> crate::types::SpaceSharingSettings {
         crate::types::SpaceSharingSettings {
-            sharing_type: self.sharing_type,
+            sharing_type: self.sharing_type
+            ,
         }
     }
 }
+

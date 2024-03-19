@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the project that will be displayed to users.</p>
@@ -10,17 +10,17 @@ pub struct CreateProjectInput {
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The friendly name of the project that will be displayed to users.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The friendly name of the project that will be displayed to users.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name of the project that will be displayed to users.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            space_name: self.space_name,
-            display_name: self.display_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                space_name: self.space_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

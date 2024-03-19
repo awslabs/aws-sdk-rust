@@ -5,56 +5,52 @@ pub use crate::operation::create_load_balancer_tls_certificate::_create_load_bal
 
 impl CreateLoadBalancerTlsCertificateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_load_balancer_tls_certificate();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_load_balancer_tls_certificate();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateLoadBalancerTlsCertificate`.
-///
+/// 
 /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
 /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder,
+                    inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-    > for CreateLoadBalancerTlsCertificateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+                    crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
+                > for CreateLoadBalancerTlsCertificateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateLoadBalancerTlsCertificateFluentBuilder {
     /// Creates a new `CreateLoadBalancerTlsCertificate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
-        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput, crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
@@ -165,12 +152,12 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
         self
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).</p>
-    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_alternative_names(input);
         self
     }
     /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).</p>
-    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_certificate_alternative_names()
     }
     /// Appends an item to `tags`.
@@ -185,13 +172,14 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

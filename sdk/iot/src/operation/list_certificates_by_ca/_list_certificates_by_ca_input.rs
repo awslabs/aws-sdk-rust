@@ -3,7 +3,7 @@
 /// <p>The input to the ListCertificatesByCA operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificatesByCaInput {
+pub struct ListCertificatesByCaInput  {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub ca_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
@@ -13,9 +13,9 @@ pub struct ListCertificatesByCaInput {
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: ::std::option::Option<bool>,
 }
-impl ListCertificatesByCaInput {
+impl  ListCertificatesByCaInput  {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
-    pub fn ca_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_id(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_id.as_deref()
     }
     /// <p>The result page size.</p>
@@ -23,7 +23,7 @@ impl ListCertificatesByCaInput {
         self.page_size
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
@@ -56,8 +56,7 @@ impl ListCertificatesByCaInputBuilder {
     }
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub fn set_ca_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_id = input;
-        self
+        self.ca_certificate_id = input; self
     }
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub fn get_ca_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListCertificatesByCaInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -84,8 +82,7 @@ impl ListCertificatesByCaInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl ListCertificatesByCaInputBuilder {
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
         &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
-            ca_certificate_id: self.ca_certificate_id,
-            page_size: self.page_size,
-            marker: self.marker,
-            ascending_order: self.ascending_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
+                ca_certificate_id: self.ca_certificate_id
+                ,
+                page_size: self.page_size
+                ,
+                marker: self.marker
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

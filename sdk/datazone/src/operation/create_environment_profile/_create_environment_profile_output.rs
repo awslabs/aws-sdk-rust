@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateEnvironmentProfileOutput {
+pub struct CreateEnvironmentProfileOutput  {
     /// <p>The ID of this Amazon DataZone environment profile.</p>
     pub id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
@@ -26,67 +26,63 @@ pub struct CreateEnvironmentProfileOutput {
     /// <p>The ID of the Amazon DataZone project in which this environment profile is created.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
     _request_id: Option<String>,
 }
-impl CreateEnvironmentProfileOutput {
+impl  CreateEnvironmentProfileOutput  {
     /// <p>The ID of this Amazon DataZone environment profile.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The Amazon Web Services account ID in which this Amazon DataZone environment profile is created.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services region in which this Amazon DataZone environment profile is created.</p>
-    pub fn aws_account_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_region(&self) -> ::std::option::Option<& str> {
         self.aws_account_region.as_deref()
     }
     /// <p>The Amazon DataZone user who created this environment profile.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>The timestamp of when this environment profile was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when this environment profile was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
-    pub fn environment_blueprint_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_blueprint_id.deref()
+    pub fn environment_blueprint_id(&self) -> & str {
+        use std::ops::Deref; self.environment_blueprint_id.deref()
     }
     /// <p>The ID of the Amazon DataZone project in which this environment profile is created.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::CustomParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateEnvironmentProfileOutput {
+impl  ::std::fmt::Debug for CreateEnvironmentProfileOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentProfileOutput");
         formatter.field("id", &self.id);
@@ -106,10 +102,10 @@ impl ::std::fmt::Debug for CreateEnvironmentProfileOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEnvironmentProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEnvironmentProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentProfileOutput`](crate::operation::create_environment_profile::CreateEnvironmentProfileOutput).
     pub fn builder() -> crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder {
@@ -132,7 +128,7 @@ pub struct CreateEnvironmentProfileOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) environment_blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
     _request_id: Option<String>,
 }
 impl CreateEnvironmentProfileOutputBuilder {
@@ -144,8 +140,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The ID of this Amazon DataZone environment profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of this Amazon DataZone environment profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID in which this Amazon DataZone environment profile is created.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID in which this Amazon DataZone environment profile is created.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +180,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The Amazon Web Services region in which this Amazon DataZone environment profile is created.</p>
     pub fn set_aws_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_region = input;
-        self
+        self.aws_account_region = input; self
     }
     /// <p>The Amazon Web Services region in which this Amazon DataZone environment profile is created.</p>
     pub fn get_aws_account_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The Amazon DataZone user who created this environment profile.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created this environment profile.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +207,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The timestamp of when this environment profile was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when this environment profile was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -230,8 +220,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The timestamp of when this environment profile was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when this environment profile was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -245,8 +234,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +247,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +261,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
     pub fn set_environment_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_id = input;
-        self
+        self.environment_blueprint_id = input; self
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
     pub fn get_environment_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +274,7 @@ impl CreateEnvironmentProfileOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone project in which this environment profile is created.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the Amazon DataZone project in which this environment profile is created.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,28 +287,27 @@ impl CreateEnvironmentProfileOutputBuilder {
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
     pub fn user_parameters(mut self, input: crate::types::CustomParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>> {
         &self.user_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEnvironmentProfileOutput`](crate::operation::create_environment_profile::CreateEnvironmentProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder::id)
@@ -331,52 +315,51 @@ impl CreateEnvironmentProfileOutputBuilder {
     /// - [`created_by`](crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder::created_by)
     /// - [`name`](crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder::name)
     /// - [`environment_blueprint_id`](crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder::environment_blueprint_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment_profile::CreateEnvironmentProfileOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_environment_profile::CreateEnvironmentProfileOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CreateEnvironmentProfileOutput",
-                )
-            })?,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateEnvironmentProfileOutput",
-                )
-            })?,
-            aws_account_id: self.aws_account_id,
-            aws_account_region: self.aws_account_region,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building CreateEnvironmentProfileOutput",
-                )
-            })?,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEnvironmentProfileOutput",
-                )
-            })?,
-            description: self.description,
-            environment_blueprint_id: self.environment_blueprint_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_blueprint_id",
-                    "environment_blueprint_id was not specified but it is required when building CreateEnvironmentProfileOutput",
-                )
-            })?,
-            project_id: self.project_id,
-            user_parameters: self.user_parameters,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_profile::CreateEnvironmentProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment_profile::CreateEnvironmentProfileOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CreateEnvironmentProfileOutput")
+                    )?
+                ,
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building CreateEnvironmentProfileOutput")
+                    )?
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                aws_account_region: self.aws_account_region
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building CreateEnvironmentProfileOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateEnvironmentProfileOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                environment_blueprint_id: self.environment_blueprint_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_blueprint_id", "environment_blueprint_id was not specified but it is required when building CreateEnvironmentProfileOutput")
+                    )?
+                ,
+                project_id: self.project_id
+                ,
+                user_parameters: self.user_parameters
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentProfileOutputBuilder {
@@ -398,3 +381,4 @@ impl ::std::fmt::Debug for CreateEnvironmentProfileOutputBuilder {
         formatter.finish()
     }
 }
+

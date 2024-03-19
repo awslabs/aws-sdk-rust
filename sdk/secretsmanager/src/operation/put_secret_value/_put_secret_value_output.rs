@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSecretValueOutput {
+pub struct PutSecretValueOutput  {
     /// <p>The ARN of the secret.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret.</p>
@@ -10,34 +10,35 @@ pub struct PutSecretValueOutput {
     /// <p>The unique identifier of the version of the secret.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl PutSecretValueOutput {
+impl  PutSecretValueOutput  {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the version of the secret.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
-    pub fn version_stages(&self) -> &[::std::string::String] {
-        self.version_stages.as_deref().unwrap_or_default()
+    pub fn version_stages(&self) -> & [::std::string::String] {
+        self.version_stages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutSecretValueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutSecretValueOutput {
     /// Creates a new builder-style object to manufacture [`PutSecretValueOutput`](crate::operation::put_secret_value::PutSecretValueOutput).
     pub fn builder() -> crate::operation::put_secret_value::builders::PutSecretValueOutputBuilder {
@@ -52,7 +53,7 @@ pub struct PutSecretValueOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
-    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutSecretValueOutputBuilder {
@@ -63,8 +64,7 @@ impl PutSecretValueOutputBuilder {
     }
     /// <p>The ARN of the secret.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the secret.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl PutSecretValueOutputBuilder {
     }
     /// <p>The name of the secret.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the secret.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl PutSecretValueOutputBuilder {
     }
     /// <p>The unique identifier of the version of the secret.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The unique identifier of the version of the secret.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,36 +103,40 @@ impl PutSecretValueOutputBuilder {
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
     pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
-        v.push(input.into());
-        self.version_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.version_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.version_stages = input;
-        self
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.version_stages = input; self
     }
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.version_stages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutSecretValueOutput`](crate::operation::put_secret_value::PutSecretValueOutput).
     pub fn build(self) -> crate::operation::put_secret_value::PutSecretValueOutput {
         crate::operation::put_secret_value::PutSecretValueOutput {
-            arn: self.arn,
-            name: self.name,
-            version_id: self.version_id,
-            version_stages: self.version_stages,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version_id: self.version_id
+            ,
+            version_stages: self.version_stages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

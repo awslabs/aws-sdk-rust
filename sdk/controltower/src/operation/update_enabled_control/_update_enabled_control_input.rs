@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnabledControlInput {
+pub struct UpdateEnabledControlInput  {
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>,
     /// <p>The ARN of the enabled control that will be updated.</p>
     pub enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEnabledControlInput {
+impl  UpdateEnabledControlInput  {
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::EnabledControlParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::EnabledControlParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the enabled control that will be updated.</p>
-    pub fn enabled_control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn enabled_control_identifier(&self) -> ::std::option::Option<& str> {
         self.enabled_control_identifier.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl UpdateEnabledControlInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnabledControlInputBuilder {
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>,
     pub(crate) enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEnabledControlInputBuilder {
@@ -42,17 +43,16 @@ impl UpdateEnabledControlInputBuilder {
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
     pub fn parameters(mut self, input: crate::types::EnabledControlParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>> {
         &self.parameters
     }
     /// <p>The ARN of the enabled control that will be updated.</p>
@@ -63,21 +63,22 @@ impl UpdateEnabledControlInputBuilder {
     }
     /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enabled_control_identifier = input;
-        self
+        self.enabled_control_identifier = input; self
     }
     /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_control_identifier
     }
     /// Consumes the builder and constructs a [`UpdateEnabledControlInput`](crate::operation::update_enabled_control::UpdateEnabledControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_enabled_control::UpdateEnabledControlInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_enabled_control::UpdateEnabledControlInput {
-            parameters: self.parameters,
-            enabled_control_identifier: self.enabled_control_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_enabled_control::UpdateEnabledControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_enabled_control::UpdateEnabledControlInput {
+                parameters: self.parameters
+                ,
+                enabled_control_identifier: self.enabled_control_identifier
+                ,
+            }
+        )
     }
 }
+

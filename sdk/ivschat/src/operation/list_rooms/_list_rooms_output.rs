@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoomsOutput {
+pub struct ListRoomsOutput  {
     /// <p>List of the matching rooms (summary information only).</p>
-    pub rooms: ::std::vec::Vec<crate::types::RoomSummary>,
+    pub rooms: ::std::vec::Vec::<crate::types::RoomSummary>,
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRoomsOutput {
+impl  ListRoomsOutput  {
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn rooms(&self) -> &[crate::types::RoomSummary] {
-        use std::ops::Deref;
-        self.rooms.deref()
+    pub fn rooms(&self) -> & [crate::types::RoomSummary] {
+        use std::ops::Deref; self.rooms.deref()
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRoomsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRoomsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     pub fn builder() -> crate::operation::list_rooms::builders::ListRoomsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListRoomsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomsOutputBuilder {
-    pub(crate) rooms: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>,
+    pub(crate) rooms: ::std::option::Option<::std::vec::Vec::<crate::types::RoomSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListRoomsOutputBuilder {
     /// <p>List of the matching rooms (summary information only).</p>
     pub fn rooms(mut self, input: crate::types::RoomSummary) -> Self {
         let mut v = self.rooms.unwrap_or_default();
-        v.push(input);
-        self.rooms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rooms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>) -> Self {
-        self.rooms = input;
-        self
+    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoomSummary>>) -> Self {
+        self.rooms = input; self
     }
     /// <p>List of the matching rooms (summary information only).</p>
-    pub fn get_rooms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>> {
+    pub fn get_rooms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoomSummary>> {
         &self.rooms
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,35 +66,37 @@ impl ListRoomsOutputBuilder {
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rooms`](crate::operation::list_rooms::builders::ListRoomsOutputBuilder::rooms)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsOutput {
-            rooms: self.rooms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rooms",
-                    "rooms was not specified but it is required when building ListRoomsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_rooms::ListRoomsOutput {
+                rooms: self.rooms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rooms", "rooms was not specified but it is required when building ListRoomsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

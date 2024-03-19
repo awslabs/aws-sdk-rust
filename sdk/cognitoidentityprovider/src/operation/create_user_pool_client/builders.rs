@@ -5,23 +5,20 @@ pub use crate::operation::create_user_pool_client::_create_user_pool_client_inpu
 
 impl CreateUserPoolClientInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_user_pool_client::CreateUserPoolClientError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_user_pool_client();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_user_pool_client::CreateUserPoolClientError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_user_pool_client();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateUserPoolClient`.
-///
+/// 
 /// <p>Creates the user pool client.</p>
 /// <p>When you create a new user pool client, token revocation is automatically activated. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><important>
 /// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
@@ -38,33 +35,32 @@ impl CreateUserPoolClientInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserPoolClientFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_user_pool_client::builders::CreateUserPoolClientInputBuilder,
+                    inner: crate::operation::create_user_pool_client::builders::CreateUserPoolClientInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        crate::operation::create_user_pool_client::CreateUserPoolClientError,
-    > for CreateUserPoolClientFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-            crate::operation::create_user_pool_client::CreateUserPoolClientError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
+                    crate::operation::create_user_pool_client::CreateUserPoolClientError,
+                > for CreateUserPoolClientFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
+                        crate::operation::create_user_pool_client::CreateUserPoolClientError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateUserPoolClientFluentBuilder {
     /// Creates a new `CreateUserPoolClient`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl CreateUserPoolClientFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_user_pool_client::CreateUserPoolClientError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_user_pool_client::CreateUserPoolClient::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_user_pool_client::CreateUserPoolClient::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
-        crate::operation::create_user_pool_client::CreateUserPoolClientError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_user_pool_client::CreateUserPoolClientOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_pool_client::CreateUserPoolClientError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_user_pool_client::CreateUserPoolClient::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_user_pool_client::CreateUserPoolClient::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_user_pool_client::CreateUserPoolClientOutput, crate::operation::create_user_pool_client::CreateUserPoolClientError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -257,13 +244,13 @@ impl CreateUserPoolClientFluentBuilder {
     }
     /// <p>The list of user attributes that you want your app client to have read-only access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
     /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
-    pub fn set_read_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_read_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_read_attributes(input);
         self
     }
     /// <p>The list of user attributes that you want your app client to have read-only access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
     /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
-    pub fn get_read_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_read_attributes()
     }
     /// Appends an item to `WriteAttributes`.
@@ -280,14 +267,14 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list. An example of this kind of activity is when you present your user with a form to update their profile information and they change their last name. Your app then makes an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.</p>
     /// <p>When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.</p>
     /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
-    pub fn set_write_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_write_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_write_attributes(input);
         self
     }
     /// <p>The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list. An example of this kind of activity is when you present your user with a form to update their profile information and they change their last name. Your app then makes an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.</p>
     /// <p>When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.</p>
     /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
-    pub fn get_write_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_write_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_write_attributes()
     }
     /// Appends an item to `ExplicitAuthFlows`.
@@ -332,7 +319,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn set_explicit_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>) -> Self {
+    pub fn set_explicit_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExplicitAuthFlowsType>>) -> Self {
         self.inner = self.inner.set_explicit_auth_flows(input);
         self
     }
@@ -353,7 +340,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
+    pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExplicitAuthFlowsType>> {
         self.inner.get_explicit_auth_flows()
     }
     /// Appends an item to `SupportedIdentityProviders`.
@@ -366,12 +353,12 @@ impl CreateUserPoolClientFluentBuilder {
         self
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    pub fn set_supported_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_supported_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_identity_providers(input);
         self
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    pub fn get_supported_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_supported_identity_providers()
     }
     /// Appends an item to `CallbackURLs`.
@@ -408,7 +395,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_callback_urls(input);
         self
     }
@@ -425,7 +412,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_callback_urls()
     }
     /// Appends an item to `LogoutURLs`.
@@ -438,12 +425,12 @@ impl CreateUserPoolClientFluentBuilder {
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn set_logout_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_logout_urls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_logout_urls(input);
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn get_logout_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logout_urls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_logout_urls()
     }
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -546,7 +533,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
     /// </dd>
     /// </dl>
-    pub fn set_allowed_o_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>) -> Self {
+    pub fn set_allowed_o_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OAuthFlowType>>) -> Self {
         self.inner = self.inner.set_allowed_o_auth_flows(input);
         self
     }
@@ -571,7 +558,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
     /// </dd>
     /// </dl>
-    pub fn get_allowed_o_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>> {
+    pub fn get_allowed_o_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OAuthFlowType>> {
         self.inner.get_allowed_o_auth_flows()
     }
     /// Appends an item to `AllowedOAuthScopes`.
@@ -584,12 +571,12 @@ impl CreateUserPoolClientFluentBuilder {
         self
     }
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn set_allowed_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_allowed_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_o_auth_scopes(input);
         self
     }
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_allowed_o_auth_scopes()
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
@@ -743,3 +730,4 @@ impl CreateUserPoolClientFluentBuilder {
         self.inner.get_auth_session_validity()
     }
 }
+

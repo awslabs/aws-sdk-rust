@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceLinkedRoleInput {
+pub struct DeleteServiceLinkedRoleInput  {
     /// <p>The name of the service-linked role to be deleted.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServiceLinkedRoleInput {
+impl  DeleteServiceLinkedRoleInput  {
     /// <p>The name of the service-linked role to be deleted.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteServiceLinkedRoleInputBuilder {
     }
     /// <p>The name of the service-linked role to be deleted.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the service-linked role to be deleted.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_name
     }
     /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput { role_name: self.role_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput {
+                role_name: self.role_name
+                ,
+            }
+        )
     }
 }
+

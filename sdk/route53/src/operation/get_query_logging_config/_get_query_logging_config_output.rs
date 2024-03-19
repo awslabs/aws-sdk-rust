@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryLoggingConfigOutput {
+pub struct GetQueryLoggingConfigOutput  {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     pub query_logging_config: ::std::option::Option<crate::types::QueryLoggingConfig>,
     _request_id: Option<String>,
 }
-impl GetQueryLoggingConfigOutput {
+impl  GetQueryLoggingConfigOutput  {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
-    pub fn query_logging_config(&self) -> ::std::option::Option<&crate::types::QueryLoggingConfig> {
+    pub fn query_logging_config(&self) -> ::std::option::Option<& crate::types::QueryLoggingConfig> {
         self.query_logging_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetQueryLoggingConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetQueryLoggingConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigOutput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput).
     pub fn builder() -> crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigOutputBuilder {
@@ -41,27 +41,28 @@ impl GetQueryLoggingConfigOutputBuilder {
     }
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     pub fn set_query_logging_config(mut self, input: ::std::option::Option<crate::types::QueryLoggingConfig>) -> Self {
-        self.query_logging_config = input;
-        self
+        self.query_logging_config = input; self
     }
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     pub fn get_query_logging_config(&self) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
         &self.query_logging_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetQueryLoggingConfigOutput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput).
     pub fn build(self) -> crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput {
         crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput {
-            query_logging_config: self.query_logging_config,
+            query_logging_config: self.query_logging_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOrgEc2DeepInspectionConfigurationOutput {
+pub struct UpdateOrgEc2DeepInspectionConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateOrgEc2DeepInspectionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateOrgEc2DeepInspectionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
-    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
         crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
 }
 impl UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
     pub fn build(self) -> crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput {
         crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput {
@@ -41,3 +40,4 @@ impl UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
         }
     }
 }
+

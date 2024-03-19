@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let auditcheckrunstatus = unimplemented!();
 /// match auditcheckrunstatus {
@@ -34,16 +34,14 @@
 /// Specifically, when `auditcheckrunstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuditCheckRunStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AuditCheckRunStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -59,80 +57,74 @@ pub enum AuditCheckRunStatus {
     WaitingForDataCollection,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AuditCheckRunStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => AuditCheckRunStatus::Canceled,
-            "COMPLETED_COMPLIANT" => AuditCheckRunStatus::CompletedCompliant,
-            "COMPLETED_NON_COMPLIANT" => AuditCheckRunStatus::CompletedNonCompliant,
-            "FAILED" => AuditCheckRunStatus::Failed,
-            "IN_PROGRESS" => AuditCheckRunStatus::InProgress,
-            "WAITING_FOR_DATA_COLLECTION" => AuditCheckRunStatus::WaitingForDataCollection,
-            other => AuditCheckRunStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CANCELED" => AuditCheckRunStatus::Canceled,
+"COMPLETED_COMPLIANT" => AuditCheckRunStatus::CompletedCompliant,
+"COMPLETED_NON_COMPLIANT" => AuditCheckRunStatus::CompletedNonCompliant,
+"FAILED" => AuditCheckRunStatus::Failed,
+"IN_PROGRESS" => AuditCheckRunStatus::InProgress,
+"WAITING_FOR_DATA_COLLECTION" => AuditCheckRunStatus::WaitingForDataCollection,
+other => AuditCheckRunStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AuditCheckRunStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AuditCheckRunStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AuditCheckRunStatus::from(s))
+                    }
+                }
 impl AuditCheckRunStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AuditCheckRunStatus::Canceled => "CANCELED",
-            AuditCheckRunStatus::CompletedCompliant => "COMPLETED_COMPLIANT",
-            AuditCheckRunStatus::CompletedNonCompliant => "COMPLETED_NON_COMPLIANT",
-            AuditCheckRunStatus::Failed => "FAILED",
-            AuditCheckRunStatus::InProgress => "IN_PROGRESS",
-            AuditCheckRunStatus::WaitingForDataCollection => "WAITING_FOR_DATA_COLLECTION",
-            AuditCheckRunStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "COMPLETED_COMPLIANT",
-            "COMPLETED_NON_COMPLIANT",
-            "FAILED",
-            "IN_PROGRESS",
-            "WAITING_FOR_DATA_COLLECTION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AuditCheckRunStatus::Canceled => "CANCELED",
+    AuditCheckRunStatus::CompletedCompliant => "COMPLETED_COMPLIANT",
+    AuditCheckRunStatus::CompletedNonCompliant => "COMPLETED_NON_COMPLIANT",
+    AuditCheckRunStatus::Failed => "FAILED",
+    AuditCheckRunStatus::InProgress => "IN_PROGRESS",
+    AuditCheckRunStatus::WaitingForDataCollection => "WAITING_FOR_DATA_COLLECTION",
+    AuditCheckRunStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", "FAILED", "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AuditCheckRunStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AuditCheckRunStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AuditCheckRunStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AuditCheckRunStatus::Canceled => write!(f, "CANCELED"),
-            AuditCheckRunStatus::CompletedCompliant => write!(f, "COMPLETED_COMPLIANT"),
-            AuditCheckRunStatus::CompletedNonCompliant => write!(f, "COMPLETED_NON_COMPLIANT"),
-            AuditCheckRunStatus::Failed => write!(f, "FAILED"),
-            AuditCheckRunStatus::InProgress => write!(f, "IN_PROGRESS"),
-            AuditCheckRunStatus::WaitingForDataCollection => write!(f, "WAITING_FOR_DATA_COLLECTION"),
-            AuditCheckRunStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AuditCheckRunStatus::Canceled => write!(f, "CANCELED"),
+AuditCheckRunStatus::CompletedCompliant => write!(f, "COMPLETED_COMPLIANT"),
+AuditCheckRunStatus::CompletedNonCompliant => write!(f, "COMPLETED_NON_COMPLIANT"),
+AuditCheckRunStatus::Failed => write!(f, "FAILED"),
+AuditCheckRunStatus::InProgress => write!(f, "IN_PROGRESS"),
+AuditCheckRunStatus::WaitingForDataCollection => write!(f, "WAITING_FOR_DATA_COLLECTION"),
+AuditCheckRunStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

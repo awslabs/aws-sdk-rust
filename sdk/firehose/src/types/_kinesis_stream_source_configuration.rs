@@ -3,22 +3,20 @@
 /// <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamSourceConfiguration {
+pub struct KinesisStreamSourceConfiguration  {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub kinesis_stream_arn: ::std::string::String,
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub role_arn: ::std::string::String,
 }
-impl KinesisStreamSourceConfiguration {
+impl  KinesisStreamSourceConfiguration  {
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
-    pub fn kinesis_stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kinesis_stream_arn.deref()
+    pub fn kinesis_stream_arn(&self) -> & str {
+        use std::ops::Deref; self.kinesis_stream_arn.deref()
     }
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl KinesisStreamSourceConfiguration {
@@ -44,8 +42,7 @@ impl KinesisStreamSourceConfigurationBuilder {
     }
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub fn set_kinesis_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kinesis_stream_arn = input;
-        self
+        self.kinesis_stream_arn = input; self
     }
     /// <p>The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl KinesisStreamSourceConfigurationBuilder {
     }
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl KinesisStreamSourceConfigurationBuilder {
     /// - [`kinesis_stream_arn`](crate::types::builders::KinesisStreamSourceConfigurationBuilder::kinesis_stream_arn)
     /// - [`role_arn`](crate::types::builders::KinesisStreamSourceConfigurationBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisStreamSourceConfiguration {
-            kinesis_stream_arn: self.kinesis_stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kinesis_stream_arn",
-                    "kinesis_stream_arn was not specified but it is required when building KinesisStreamSourceConfiguration",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building KinesisStreamSourceConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisStreamSourceConfiguration {
+                kinesis_stream_arn: self.kinesis_stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kinesis_stream_arn", "kinesis_stream_arn was not specified but it is required when building KinesisStreamSourceConfiguration")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building KinesisStreamSourceConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

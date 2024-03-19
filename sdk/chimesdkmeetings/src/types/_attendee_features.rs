@@ -5,11 +5,11 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttendeeFeatures {
+pub struct AttendeeFeatures  {
     /// <p>The maximum number of attendees allowed into the meeting.</p>
     pub max_count: ::std::option::Option<i32>,
 }
-impl AttendeeFeatures {
+impl  AttendeeFeatures  {
     /// <p>The maximum number of attendees allowed into the meeting.</p>
     pub fn max_count(&self) -> ::std::option::Option<i32> {
         self.max_count
@@ -36,8 +36,7 @@ impl AttendeeFeaturesBuilder {
     }
     /// <p>The maximum number of attendees allowed into the meeting.</p>
     pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>The maximum number of attendees allowed into the meeting.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<i32> {
@@ -45,6 +44,10 @@ impl AttendeeFeaturesBuilder {
     }
     /// Consumes the builder and constructs a [`AttendeeFeatures`](crate::types::AttendeeFeatures).
     pub fn build(self) -> crate::types::AttendeeFeatures {
-        crate::types::AttendeeFeatures { max_count: self.max_count }
+        crate::types::AttendeeFeatures {
+            max_count: self.max_count
+            ,
+        }
     }
 }
+

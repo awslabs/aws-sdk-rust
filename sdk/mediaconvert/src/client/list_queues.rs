@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListQueues`](crate::operation::list_queues::builders::ListQueuesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`list_by(QueueListBy)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::list_by) / [`set_list_by(Option<QueueListBy>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_list_by):<br>required: **false**<br>Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.<br>
     ///   - [`max_results(i32)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_max_results):<br>required: **false**<br>Optional. Number of queues, up to twenty, that will be returned at one time.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_next_token):<br>required: **false**<br>Use this string, provided with the response to a previous request, to request the next batch of queues.<br>
     ///   - [`order(Order)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_queues::builders::ListQueuesFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
-    /// - On success, responds with [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput) with field(s):
+                            /// - On success, responds with [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queues::ListQueuesOutput::next_token): Use this string to request the next batch of queues.
     ///   - [`queues(Option<Vec::<Queue>>)`](crate::operation::list_queues::ListQueuesOutput::queues): List of queues.
-    /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::operation::list_queues::ListQueuesError)
+                            /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::operation::list_queues::ListQueuesError)
     pub fn list_queues(&self) -> crate::operation::list_queues::builders::ListQueuesFluentBuilder {
-        crate::operation::list_queues::builders::ListQueuesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_queues::builders::ListQueuesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

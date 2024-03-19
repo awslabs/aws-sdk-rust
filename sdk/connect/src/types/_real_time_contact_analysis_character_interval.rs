@@ -3,13 +3,13 @@
 /// <p>Begin and end offsets for a part of text.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisCharacterInterval {
+pub struct RealTimeContactAnalysisCharacterInterval  {
     /// <p>The beginning of the character interval.</p>
     pub begin_offset_char: i32,
     /// <p>The end of the character interval.</p>
     pub end_offset_char: i32,
 }
-impl RealTimeContactAnalysisCharacterInterval {
+impl  RealTimeContactAnalysisCharacterInterval  {
     /// <p>The beginning of the character interval.</p>
     pub fn begin_offset_char(&self) -> i32 {
         self.begin_offset_char
@@ -42,8 +42,7 @@ impl RealTimeContactAnalysisCharacterIntervalBuilder {
     }
     /// <p>The beginning of the character interval.</p>
     pub fn set_begin_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset_char = input;
-        self
+        self.begin_offset_char = input; self
     }
     /// <p>The beginning of the character interval.</p>
     pub fn get_begin_offset_char(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl RealTimeContactAnalysisCharacterIntervalBuilder {
     }
     /// <p>The end of the character interval.</p>
     pub fn set_end_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset_char = input;
-        self
+        self.end_offset_char = input; self
     }
     /// <p>The end of the character interval.</p>
     pub fn get_end_offset_char(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,13 @@ impl RealTimeContactAnalysisCharacterIntervalBuilder {
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisCharacterInterval`](crate::types::RealTimeContactAnalysisCharacterInterval).
     pub fn build(self) -> crate::types::RealTimeContactAnalysisCharacterInterval {
         crate::types::RealTimeContactAnalysisCharacterInterval {
-            begin_offset_char: self.begin_offset_char.unwrap_or_default(),
-            end_offset_char: self.end_offset_char.unwrap_or_default(),
+            begin_offset_char: self.begin_offset_char
+                .unwrap_or_default()
+            ,
+            end_offset_char: self.end_offset_char
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

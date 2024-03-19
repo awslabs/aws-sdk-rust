@@ -3,7 +3,7 @@
 /// <p>The details of a group profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GroupProfileSummary {
+pub struct GroupProfileSummary  {
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a group profile.</p>
@@ -13,25 +13,25 @@ pub struct GroupProfileSummary {
     /// <p>The group name of a group profile.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
-impl GroupProfileSummary {
+impl  GroupProfileSummary  {
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The ID of a group profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of a group profile.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GroupProfileStatus> {
         self.status.as_ref()
     }
     /// <p>The group name of a group profile.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for GroupProfileSummary {
+impl  ::std::fmt::Debug for GroupProfileSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupProfileSummary");
         formatter.field("domain_id", &self.domain_id);
@@ -65,8 +65,7 @@ impl GroupProfileSummaryBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl GroupProfileSummaryBuilder {
     }
     /// <p>The ID of a group profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of a group profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl GroupProfileSummaryBuilder {
     }
     /// <p>The status of a group profile.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GroupProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a group profile.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupProfileStatus> {
@@ -107,8 +104,7 @@ impl GroupProfileSummaryBuilder {
     }
     /// <p>The group name of a group profile.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The group name of a group profile.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl GroupProfileSummaryBuilder {
     /// Consumes the builder and constructs a [`GroupProfileSummary`](crate::types::GroupProfileSummary).
     pub fn build(self) -> crate::types::GroupProfileSummary {
         crate::types::GroupProfileSummary {
-            domain_id: self.domain_id,
-            id: self.id,
-            status: self.status,
-            group_name: self.group_name,
+            domain_id: self.domain_id
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            group_name: self.group_name
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for GroupProfileSummaryBuilder {
         formatter.finish()
     }
 }
+

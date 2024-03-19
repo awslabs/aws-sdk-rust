@@ -5,23 +5,20 @@ pub use crate::operation::modify_replication_group::_modify_replication_group_in
 
 impl ModifyReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_replication_group::ModifyReplicationGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_replication_group();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_replication_group::ModifyReplicationGroupError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_replication_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyReplicationGroup`.
-///
+/// 
 /// <p>Modifies the settings for a replication group. This is limited to Redis 7 and newer.</p>
 /// <ul>
 /// <li>
@@ -34,33 +31,32 @@ impl ModifyReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_replication_group::builders::ModifyReplicationGroupInputBuilder,
+                    inner: crate::operation::modify_replication_group::builders::ModifyReplicationGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        crate::operation::modify_replication_group::ModifyReplicationGroupError,
-    > for ModifyReplicationGroupFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-            crate::operation::modify_replication_group::ModifyReplicationGroupError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
+                    crate::operation::modify_replication_group::ModifyReplicationGroupError,
+                > for ModifyReplicationGroupFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
+                        crate::operation::modify_replication_group::ModifyReplicationGroupError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyReplicationGroupFluentBuilder {
     /// Creates a new `ModifyReplicationGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl ModifyReplicationGroupFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_replication_group::ModifyReplicationGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_replication_group::ModifyReplicationGroup::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_replication_group::ModifyReplicationGroup::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        crate::operation::modify_replication_group::ModifyReplicationGroupError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_replication_group::ModifyReplicationGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_replication_group::ModifyReplicationGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_replication_group::ModifyReplicationGroup::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_replication_group::ModifyReplicationGroup::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_replication_group::ModifyReplicationGroupOutput, crate::operation::modify_replication_group::ModifyReplicationGroupError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the replication group to modify.</p>
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
@@ -234,14 +221,14 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
-    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_security_group_names(input);
         self
     }
     /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
-    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
     /// Appends an item to `SecurityGroupIds`.
@@ -256,13 +243,13 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
     /// <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
     /// <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -575,12 +562,12 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>The ID of the user group you are associating with the replication group.</p>
-    pub fn set_user_group_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_user_group_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_group_ids_to_add(input);
         self
     }
     /// <p>The ID of the user group you are associating with the replication group.</p>
-    pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_user_group_ids_to_add()
     }
     /// Appends an item to `UserGroupIdsToRemove`.
@@ -593,12 +580,12 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
-    pub fn set_user_group_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_user_group_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_group_ids_to_remove(input);
         self
     }
     /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
-    pub fn get_user_group_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_user_group_ids_to_remove()
     }
     /// <p>Removes the user group associated with this replication group.</p>
@@ -625,15 +612,12 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn set_log_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_log_delivery_configurations(input);
         self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>> {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>> {
         self.inner.get_log_delivery_configurations()
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
@@ -699,3 +683,4 @@ impl ModifyReplicationGroupFluentBuilder {
         self.inner.get_cluster_mode()
     }
 }
+

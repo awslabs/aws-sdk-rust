@@ -3,19 +3,19 @@
 /// <p>A best practice, or question choice, that has been identified as a risk in this question.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BestPractice {
+pub struct BestPractice  {
     /// <p>The ID of a choice.</p>
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a choice.</p>
     pub choice_title: ::std::option::Option<::std::string::String>,
 }
-impl BestPractice {
+impl  BestPractice  {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> ::std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<& str> {
         self.choice_id.as_deref()
     }
     /// <p>The title of a choice.</p>
-    pub fn choice_title(&self) -> ::std::option::Option<&str> {
+    pub fn choice_title(&self) -> ::std::option::Option<& str> {
         self.choice_title.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BestPracticeBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.choice_id = input;
-        self
+        self.choice_id = input; self
     }
     /// <p>The ID of a choice.</p>
     pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BestPracticeBuilder {
     }
     /// <p>The title of a choice.</p>
     pub fn set_choice_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.choice_title = input;
-        self
+        self.choice_title = input; self
     }
     /// <p>The title of a choice.</p>
     pub fn get_choice_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BestPracticeBuilder {
     /// Consumes the builder and constructs a [`BestPractice`](crate::types::BestPractice).
     pub fn build(self) -> crate::types::BestPractice {
         crate::types::BestPractice {
-            choice_id: self.choice_id,
-            choice_title: self.choice_title,
+            choice_id: self.choice_id
+            ,
+            choice_title: self.choice_title
+            ,
         }
     }
 }
+

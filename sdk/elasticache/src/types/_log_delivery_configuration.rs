@@ -3,7 +3,7 @@
 /// <p>Returns the destination, format and type of the logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogDeliveryConfiguration {
+pub struct LogDeliveryConfiguration  {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
@@ -17,29 +17,29 @@ pub struct LogDeliveryConfiguration {
     /// <p>Returns an error message for the log delivery configuration.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl LogDeliveryConfiguration {
+impl  LogDeliveryConfiguration  {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> ::std::option::Option<& crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn destination_details(&self) -> ::std::option::Option<&crate::types::DestinationDetails> {
+    pub fn destination_details(&self) -> ::std::option::Option<& crate::types::DestinationDetails> {
         self.destination_details.as_ref()
     }
     /// <p>Returns the log format, either JSON or TEXT.</p>
-    pub fn log_format(&self) -> ::std::option::Option<&crate::types::LogFormat> {
+    pub fn log_format(&self) -> ::std::option::Option<& crate::types::LogFormat> {
         self.log_format.as_ref()
     }
     /// <p>Returns the log delivery configuration status. Values are one of <code>enabling</code> | <code>disabling</code> | <code>modifying</code> | <code>active</code> | <code>error</code></p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LogDeliveryConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Returns an error message for the log delivery configuration.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -83,8 +82,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>Returns the destination type, either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code>.</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -97,8 +95,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
     pub fn set_destination_details(mut self, input: ::std::option::Option<crate::types::DestinationDetails>) -> Self {
-        self.destination_details = input;
-        self
+        self.destination_details = input; self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
     pub fn get_destination_details(&self) -> &::std::option::Option<crate::types::DestinationDetails> {
@@ -111,8 +108,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Returns the log format, either JSON or TEXT.</p>
     pub fn set_log_format(mut self, input: ::std::option::Option<crate::types::LogFormat>) -> Self {
-        self.log_format = input;
-        self
+        self.log_format = input; self
     }
     /// <p>Returns the log format, either JSON or TEXT.</p>
     pub fn get_log_format(&self) -> &::std::option::Option<crate::types::LogFormat> {
@@ -125,8 +121,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Returns the log delivery configuration status. Values are one of <code>enabling</code> | <code>disabling</code> | <code>modifying</code> | <code>active</code> | <code>error</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogDeliveryConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Returns the log delivery configuration status. Values are one of <code>enabling</code> | <code>disabling</code> | <code>modifying</code> | <code>active</code> | <code>error</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LogDeliveryConfigurationStatus> {
@@ -139,8 +134,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Returns an error message for the log delivery configuration.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Returns an error message for the log delivery configuration.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl LogDeliveryConfigurationBuilder {
     /// Consumes the builder and constructs a [`LogDeliveryConfiguration`](crate::types::LogDeliveryConfiguration).
     pub fn build(self) -> crate::types::LogDeliveryConfiguration {
         crate::types::LogDeliveryConfiguration {
-            log_type: self.log_type,
-            destination_type: self.destination_type,
-            destination_details: self.destination_details,
-            log_format: self.log_format,
-            status: self.status,
-            message: self.message,
+            log_type: self.log_type
+            ,
+            destination_type: self.destination_type
+            ,
+            destination_details: self.destination_details
+            ,
+            log_format: self.log_format
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

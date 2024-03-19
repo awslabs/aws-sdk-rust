@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemaVersions`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::set_limit):<br>required: **false**<br>(undocumented)<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p><br>
     ///   - [`registry_name(impl Into<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::set_registry_name):<br>required: **true**<br><p>The name of the registry.</p><br>
     ///   - [`schema_name(impl Into<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::schema_name) / [`set_schema_name(Option<String>)`](crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::set_schema_name):<br>required: **true**<br><p>The name of the schema.</p><br>
-    /// - On success, responds with [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schema_versions(Option<Vec::<SchemaVersionSummary>>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::schema_versions): <p>An array of schema version summaries.</p>
-    /// - On failure, responds with [`SdkError<ListSchemaVersionsError>`](crate::operation::list_schema_versions::ListSchemaVersionsError)
+                            /// - On failure, responds with [`SdkError<ListSchemaVersionsError>`](crate::operation::list_schema_versions::ListSchemaVersionsError)
     pub fn list_schema_versions(&self) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder {
-        crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

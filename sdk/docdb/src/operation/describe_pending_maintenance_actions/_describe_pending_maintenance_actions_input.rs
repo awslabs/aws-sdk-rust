@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>DescribePendingMaintenanceActions</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePendingMaintenanceActionsInput {
+pub struct DescribePendingMaintenanceActionsInput  {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
@@ -14,7 +14,7 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <li>
     /// <p><code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
@@ -22,9 +22,9 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribePendingMaintenanceActionsInput {
+impl  DescribePendingMaintenanceActionsInput  {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
@@ -35,13 +35,14 @@ impl DescribePendingMaintenanceActionsInput {
     /// <li>
     /// <p><code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
@@ -63,7 +64,7 @@ impl DescribePendingMaintenanceActionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -75,8 +76,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     }
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +96,9 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
@@ -108,9 +108,8 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     /// <li>
     /// <p><code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
@@ -120,7 +119,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     /// <li>
     /// <p><code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -130,8 +129,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -158,19 +155,19 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput {
-                resource_identifier: self.resource_identifier,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
+                resource_identifier: self.resource_identifier
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+            }
         )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::describe_applicable_individual_assessments::_describe_
 
 impl DescribeApplicableIndividualAssessmentsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_applicable_individual_assessments();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_applicable_individual_assessments();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeApplicableIndividualAssessments`.
-///
+/// 
 /// <p>Provides a list of individual assessments that you can specify for a new premigration assessment run, given one or more parameters.</p>
 /// <p>If you specify an existing migration task, this operation provides the default individual assessments you can specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which to base a premigration assessment run.</p>
 /// <p>To use these migration task modeling parameters, you must specify an existing replication instance, a source database engine, a target database engine, and a migration type. This combination of parameters potentially limits the default individual assessments available for an assessment run created for a corresponding migration task.</p>
@@ -29,103 +26,84 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder,
+                    inner: crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
-    > for DescribeApplicableIndividualAssessmentsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
-            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
+                    crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
+                > for DescribeApplicableIndividualAssessmentsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
+                        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeApplicableIndividualAssessmentsFluentBuilder {
     /// Creates a new `DescribeApplicableIndividualAssessments`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DescribeApplicableIndividualAssessments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
-        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput, crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator {
-        crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator {
+                                crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
@@ -225,3 +203,4 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner.get_marker()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMapTileInput {
+pub struct GetMapTileInput  {
     /// <p>The map resource to retrieve the map tiles from.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The zoom value for the map tile.</p>
@@ -14,29 +14,29 @@ pub struct GetMapTileInput {
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetMapTileInput {
+impl  GetMapTileInput  {
     /// <p>The map resource to retrieve the map tiles from.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>The zoom value for the map tile.</p>
-    pub fn z(&self) -> ::std::option::Option<&str> {
+    pub fn z(&self) -> ::std::option::Option<& str> {
         self.z.as_deref()
     }
     /// <p>The X axis value for the map tile.</p>
-    pub fn x(&self) -> ::std::option::Option<&str> {
+    pub fn x(&self) -> ::std::option::Option<& str> {
         self.x.as_deref()
     }
     /// <p>The Y axis value for the map tile.</p>
-    pub fn y(&self) -> ::std::option::Option<&str> {
+    pub fn y(&self) -> ::std::option::Option<& str> {
         self.y.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetMapTileInput {
+impl  ::std::fmt::Debug for GetMapTileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapTileInput");
         formatter.field("map_name", &self.map_name);
@@ -73,8 +73,7 @@ impl GetMapTileInputBuilder {
     }
     /// <p>The map resource to retrieve the map tiles from.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The map resource to retrieve the map tiles from.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl GetMapTileInputBuilder {
     }
     /// <p>The zoom value for the map tile.</p>
     pub fn set_z(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.z = input;
-        self
+        self.z = input; self
     }
     /// <p>The zoom value for the map tile.</p>
     pub fn get_z(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl GetMapTileInputBuilder {
     }
     /// <p>The X axis value for the map tile.</p>
     pub fn set_x(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x = input;
-        self
+        self.x = input; self
     }
     /// <p>The X axis value for the map tile.</p>
     pub fn get_x(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl GetMapTileInputBuilder {
     }
     /// <p>The Y axis value for the map tile.</p>
     pub fn set_y(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.y = input;
-        self
+        self.y = input; self
     }
     /// <p>The Y axis value for the map tile.</p>
     pub fn get_y(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl GetMapTileInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,13 +136,20 @@ impl GetMapTileInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_map_tile::GetMapTileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_map_tile::GetMapTileInput {
-            map_name: self.map_name,
-            z: self.z,
-            x: self.x,
-            y: self.y,
-            key: self.key,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_map_tile::GetMapTileInput {
+                map_name: self.map_name
+                ,
+                z: self.z
+                ,
+                x: self.x
+                ,
+                y: self.y
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetMapTileInputBuilder {
@@ -161,3 +163,4 @@ impl ::std::fmt::Debug for GetMapTileInputBuilder {
         formatter.finish()
     }
 }
+

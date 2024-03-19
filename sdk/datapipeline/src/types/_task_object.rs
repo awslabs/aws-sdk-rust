@@ -3,7 +3,7 @@
 /// <p>Contains information about a pipeline task that is assigned to a task runner.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskObject {
+pub struct TaskObject  {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline that provided the task.</p>
@@ -11,23 +11,23 @@ pub struct TaskObject {
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     pub attempt_id: ::std::option::Option<::std::string::String>,
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub objects: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
+    pub objects: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PipelineObject>>,
 }
-impl TaskObject {
+impl  TaskObject  {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the pipeline that provided the task.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
-    pub fn attempt_id(&self) -> ::std::option::Option<&str> {
+    pub fn attempt_id(&self) -> ::std::option::Option<& str> {
         self.attempt_id.as_deref()
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn objects(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>> {
+    pub fn objects(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PipelineObject>> {
         self.objects.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct TaskObjectBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) attempt_id: ::std::option::Option<::std::string::String>,
-    pub(crate) objects: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
+    pub(crate) objects: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PipelineObject>>,
 }
 impl TaskObjectBuilder {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
@@ -55,8 +55,7 @@ impl TaskObjectBuilder {
     }
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TaskObjectBuilder {
     }
     /// <p>The ID of the pipeline that provided the task.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline that provided the task.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TaskObjectBuilder {
     }
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     pub fn set_attempt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attempt_id = input;
-        self
+        self.attempt_id = input; self
     }
     /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
     pub fn get_attempt_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,29 +94,30 @@ impl TaskObjectBuilder {
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
     pub fn objects(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PipelineObject) -> Self {
         let mut hash_map = self.objects.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.objects = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.objects = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
-    ) -> Self {
-        self.objects = input;
-        self
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PipelineObject>>) -> Self {
+        self.objects = input; self
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn get_objects(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PipelineObject>> {
         &self.objects
     }
     /// Consumes the builder and constructs a [`TaskObject`](crate::types::TaskObject).
     pub fn build(self) -> crate::types::TaskObject {
         crate::types::TaskObject {
-            task_id: self.task_id,
-            pipeline_id: self.pipeline_id,
-            attempt_id: self.attempt_id,
-            objects: self.objects,
+            task_id: self.task_id
+            ,
+            pipeline_id: self.pipeline_id
+            ,
+            attempt_id: self.attempt_id
+            ,
+            objects: self.objects
+            ,
         }
     }
 }
+

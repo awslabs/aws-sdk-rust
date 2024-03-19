@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableVersionOutput {
+pub struct GetTableVersionOutput  {
     /// <p>The requested table version.</p>
     pub table_version: ::std::option::Option<crate::types::TableVersion>,
     _request_id: Option<String>,
 }
-impl GetTableVersionOutput {
+impl  GetTableVersionOutput  {
     /// <p>The requested table version.</p>
-    pub fn table_version(&self) -> ::std::option::Option<&crate::types::TableVersion> {
+    pub fn table_version(&self) -> ::std::option::Option<& crate::types::TableVersion> {
         self.table_version.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTableVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionOutput`](crate::operation::get_table_version::GetTableVersionOutput).
     pub fn builder() -> crate::operation::get_table_version::builders::GetTableVersionOutputBuilder {
@@ -40,27 +40,28 @@ impl GetTableVersionOutputBuilder {
     }
     /// <p>The requested table version.</p>
     pub fn set_table_version(mut self, input: ::std::option::Option<crate::types::TableVersion>) -> Self {
-        self.table_version = input;
-        self
+        self.table_version = input; self
     }
     /// <p>The requested table version.</p>
     pub fn get_table_version(&self) -> &::std::option::Option<crate::types::TableVersion> {
         &self.table_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTableVersionOutput`](crate::operation::get_table_version::GetTableVersionOutput).
     pub fn build(self) -> crate::operation::get_table_version::GetTableVersionOutput {
         crate::operation::get_table_version::GetTableVersionOutput {
-            table_version: self.table_version,
+            table_version: self.table_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

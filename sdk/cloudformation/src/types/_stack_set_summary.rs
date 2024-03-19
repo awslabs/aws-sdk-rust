@@ -3,7 +3,7 @@
 /// <p>The structures that contain summary information about the specified stack set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSetSummary {
+pub struct StackSetSummary  {
     /// <p>The name of the stack set.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack set.</p>
@@ -39,25 +39,25 @@ pub struct StackSetSummary {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
 }
-impl StackSetSummary {
+impl  StackSetSummary  {
     /// <p>The name of the stack set.</p>
-    pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> ::std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>The ID of the stack set.</p>
-    pub fn stack_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_id(&self) -> ::std::option::Option<& str> {
         self.stack_set_id.as_deref()
     }
     /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the stack set.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StackSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StackSetStatus> {
         self.status.as_ref()
     }
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
-    pub fn auto_deployment(&self) -> ::std::option::Option<&crate::types::AutoDeployment> {
+    pub fn auto_deployment(&self) -> ::std::option::Option<& crate::types::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
@@ -67,7 +67,7 @@ impl StackSetSummary {
     /// <li>
     /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
     /// </ul>
-    pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModels> {
+    pub fn permission_model(&self) -> ::std::option::Option<& crate::types::PermissionModels> {
         self.permission_model.as_ref()
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
@@ -81,15 +81,15 @@ impl StackSetSummary {
     /// <li>
     /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::StackDriftStatus> {
         self.drift_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
-    pub fn managed_execution(&self) -> ::std::option::Option<&crate::types::ManagedExecution> {
+    pub fn managed_execution(&self) -> ::std::option::Option<& crate::types::ManagedExecution> {
         self.managed_execution.as_ref()
     }
 }
@@ -122,8 +122,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>The name of the stack set.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_name = input;
-        self
+        self.stack_set_name = input; self
     }
     /// <p>The name of the stack set.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>The ID of the stack set.</p>
     pub fn set_stack_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_id = input;
-        self
+        self.stack_set_id = input; self
     }
     /// <p>The ID of the stack set.</p>
     pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +161,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>The status of the stack set.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the stack set.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
@@ -178,8 +174,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
-        self.auto_deployment = input;
-        self
+        self.auto_deployment = input; self
     }
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
@@ -204,8 +199,7 @@ impl StackSetSummaryBuilder {
     /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
     /// </ul>
     pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
-        self.permission_model = input;
-        self
+        self.permission_model = input; self
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
@@ -244,8 +238,7 @@ impl StackSetSummaryBuilder {
     /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
@@ -268,8 +261,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
     pub fn set_last_drift_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_drift_check_timestamp = input;
-        self
+        self.last_drift_check_timestamp = input; self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
     pub fn get_last_drift_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -282,8 +274,7 @@ impl StackSetSummaryBuilder {
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn set_managed_execution(mut self, input: ::std::option::Option<crate::types::ManagedExecution>) -> Self {
-        self.managed_execution = input;
-        self
+        self.managed_execution = input; self
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
@@ -292,15 +283,25 @@ impl StackSetSummaryBuilder {
     /// Consumes the builder and constructs a [`StackSetSummary`](crate::types::StackSetSummary).
     pub fn build(self) -> crate::types::StackSetSummary {
         crate::types::StackSetSummary {
-            stack_set_name: self.stack_set_name,
-            stack_set_id: self.stack_set_id,
-            description: self.description,
-            status: self.status,
-            auto_deployment: self.auto_deployment,
-            permission_model: self.permission_model,
-            drift_status: self.drift_status,
-            last_drift_check_timestamp: self.last_drift_check_timestamp,
-            managed_execution: self.managed_execution,
+            stack_set_name: self.stack_set_name
+            ,
+            stack_set_id: self.stack_set_id
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            auto_deployment: self.auto_deployment
+            ,
+            permission_model: self.permission_model
+            ,
+            drift_status: self.drift_status
+            ,
+            last_drift_check_timestamp: self.last_drift_check_timestamp
+            ,
+            managed_execution: self.managed_execution
+            ,
         }
     }
 }
+

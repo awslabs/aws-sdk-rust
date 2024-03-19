@@ -3,19 +3,19 @@
 /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipeTargetCloudWatchLogsParameters {
+pub struct PipeTargetCloudWatchLogsParameters  {
     /// <p>The name of the log stream.</p>
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub timestamp: ::std::option::Option<::std::string::String>,
 }
-impl PipeTargetCloudWatchLogsParameters {
+impl  PipeTargetCloudWatchLogsParameters  {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> ::std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<& str> {
         self.timestamp.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PipeTargetCloudWatchLogsParametersBuilder {
     }
     /// <p>The name of the log stream.</p>
     pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name = input;
-        self
+        self.log_stream_name = input; self
     }
     /// <p>The name of the log stream.</p>
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PipeTargetCloudWatchLogsParametersBuilder {
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PipeTargetCloudWatchLogsParametersBuilder {
     /// Consumes the builder and constructs a [`PipeTargetCloudWatchLogsParameters`](crate::types::PipeTargetCloudWatchLogsParameters).
     pub fn build(self) -> crate::types::PipeTargetCloudWatchLogsParameters {
         crate::types::PipeTargetCloudWatchLogsParameters {
-            log_stream_name: self.log_stream_name,
-            timestamp: self.timestamp,
+            log_stream_name: self.log_stream_name
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

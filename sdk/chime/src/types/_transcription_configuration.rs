@@ -3,19 +3,19 @@
 /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptionConfiguration {
+pub struct TranscriptionConfiguration  {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
     pub engine_transcribe_settings: ::std::option::Option<crate::types::EngineTranscribeSettings>,
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub engine_transcribe_medical_settings: ::std::option::Option<crate::types::EngineTranscribeMedicalSettings>,
 }
-impl TranscriptionConfiguration {
+impl  TranscriptionConfiguration  {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
-    pub fn engine_transcribe_settings(&self) -> ::std::option::Option<&crate::types::EngineTranscribeSettings> {
+    pub fn engine_transcribe_settings(&self) -> ::std::option::Option<& crate::types::EngineTranscribeSettings> {
         self.engine_transcribe_settings.as_ref()
     }
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
-    pub fn engine_transcribe_medical_settings(&self) -> ::std::option::Option<&crate::types::EngineTranscribeMedicalSettings> {
+    pub fn engine_transcribe_medical_settings(&self) -> ::std::option::Option<& crate::types::EngineTranscribeMedicalSettings> {
         self.engine_transcribe_medical_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TranscriptionConfigurationBuilder {
     }
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
     pub fn set_engine_transcribe_settings(mut self, input: ::std::option::Option<crate::types::EngineTranscribeSettings>) -> Self {
-        self.engine_transcribe_settings = input;
-        self
+        self.engine_transcribe_settings = input; self
     }
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
     pub fn get_engine_transcribe_settings(&self) -> &::std::option::Option<crate::types::EngineTranscribeSettings> {
@@ -55,8 +54,7 @@ impl TranscriptionConfigurationBuilder {
     }
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub fn set_engine_transcribe_medical_settings(mut self, input: ::std::option::Option<crate::types::EngineTranscribeMedicalSettings>) -> Self {
-        self.engine_transcribe_medical_settings = input;
-        self
+        self.engine_transcribe_medical_settings = input; self
     }
     /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub fn get_engine_transcribe_medical_settings(&self) -> &::std::option::Option<crate::types::EngineTranscribeMedicalSettings> {
@@ -65,8 +63,11 @@ impl TranscriptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`TranscriptionConfiguration`](crate::types::TranscriptionConfiguration).
     pub fn build(self) -> crate::types::TranscriptionConfiguration {
         crate::types::TranscriptionConfiguration {
-            engine_transcribe_settings: self.engine_transcribe_settings,
-            engine_transcribe_medical_settings: self.engine_transcribe_medical_settings,
+            engine_transcribe_settings: self.engine_transcribe_settings
+            ,
+            engine_transcribe_medical_settings: self.engine_transcribe_medical_settings
+            ,
         }
     }
 }
+

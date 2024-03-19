@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeyValueStoresInput {
+pub struct ListKeyValueStoresInput  {
     /// <p>The marker associated with the Key Value Stores list.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items in the Key Value Stores list.</p>
@@ -10,9 +10,9 @@ pub struct ListKeyValueStoresInput {
     /// <p>The status of the request for the Key Value Stores list.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl ListKeyValueStoresInput {
+impl  ListKeyValueStoresInput  {
     /// <p>The marker associated with the Key Value Stores list.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of items in the Key Value Stores list.</p>
@@ -20,7 +20,7 @@ impl ListKeyValueStoresInput {
         self.max_items
     }
     /// <p>The status of the request for the Key Value Stores list.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListKeyValueStoresInputBuilder {
     }
     /// <p>The marker associated with the Key Value Stores list.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker associated with the Key Value Stores list.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListKeyValueStoresInputBuilder {
     }
     /// <p>The maximum number of items in the Key Value Stores list.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of items in the Key Value Stores list.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListKeyValueStoresInputBuilder {
     }
     /// <p>The status of the request for the Key Value Stores list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the request for the Key Value Stores list.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListKeyValueStoresInput`](crate::operation::list_key_value_stores::ListKeyValueStoresInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_key_value_stores::ListKeyValueStoresInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_key_value_stores::ListKeyValueStoresInput {
-            marker: self.marker,
-            max_items: self.max_items,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_key_value_stores::ListKeyValueStoresInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_key_value_stores::ListKeyValueStoresInput {
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

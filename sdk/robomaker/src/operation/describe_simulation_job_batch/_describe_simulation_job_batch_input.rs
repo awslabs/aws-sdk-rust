@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationJobBatchInput {
+pub struct DescribeSimulationJobBatchInput  {
     /// <p>The id of the batch to describe.</p>
     pub batch: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSimulationJobBatchInput {
+impl  DescribeSimulationJobBatchInput  {
     /// <p>The id of the batch to describe.</p>
-    pub fn batch(&self) -> ::std::option::Option<&str> {
+    pub fn batch(&self) -> ::std::option::Option<& str> {
         self.batch.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeSimulationJobBatchInputBuilder {
     }
     /// <p>The id of the batch to describe.</p>
     pub fn set_batch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch = input;
-        self
+        self.batch = input; self
     }
     /// <p>The id of the batch to describe.</p>
     pub fn get_batch(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch
     }
     /// Consumes the builder and constructs a [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput { batch: self.batch })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput {
+                batch: self.batch
+                ,
+            }
+        )
     }
 }
+

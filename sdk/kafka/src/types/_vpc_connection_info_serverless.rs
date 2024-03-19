@@ -3,7 +3,7 @@
 /// Description of the VPC connection.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectionInfoServerless {
+pub struct VpcConnectionInfoServerless  {
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The owner of the VPC Connection.</p>
@@ -13,21 +13,21 @@ pub struct VpcConnectionInfoServerless {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
 }
-impl VpcConnectionInfoServerless {
+impl  VpcConnectionInfoServerless  {
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The owner of the VPC Connection.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Description of the requester that calls the API operation.</p>
-    pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
+    pub fn user_identity(&self) -> ::std::option::Option<& crate::types::UserIdentity> {
         self.user_identity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl VpcConnectionInfoServerlessBuilder {
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,8 +68,7 @@ impl VpcConnectionInfoServerlessBuilder {
     }
     /// <p>The owner of the VPC Connection.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the VPC Connection.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl VpcConnectionInfoServerlessBuilder {
     }
     /// <p>Description of the requester that calls the API operation.</p>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
-        self.user_identity = input;
-        self
+        self.user_identity = input; self
     }
     /// <p>Description of the requester that calls the API operation.</p>
     pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
@@ -97,8 +94,7 @@ impl VpcConnectionInfoServerlessBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connection_arn = input;
-        self
+        self.vpc_connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl VpcConnectionInfoServerlessBuilder {
     /// Consumes the builder and constructs a [`VpcConnectionInfoServerless`](crate::types::VpcConnectionInfoServerless).
     pub fn build(self) -> crate::types::VpcConnectionInfoServerless {
         crate::types::VpcConnectionInfoServerless {
-            creation_time: self.creation_time,
-            owner: self.owner,
-            user_identity: self.user_identity,
-            vpc_connection_arn: self.vpc_connection_arn,
+            creation_time: self.creation_time
+            ,
+            owner: self.owner
+            ,
+            user_identity: self.user_identity
+            ,
+            vpc_connection_arn: self.vpc_connection_arn
+            ,
         }
     }
 }
+

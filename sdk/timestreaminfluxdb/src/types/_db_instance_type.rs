@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dbinstancetype = unimplemented!();
 /// match dbinstancetype {
@@ -36,16 +36,14 @@
 /// Specifically, when `dbinstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DbInstanceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DbInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     DbInflux12Xlarge,
@@ -65,88 +63,80 @@ pub enum DbInstanceType {
     DbInfluxXlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DbInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "db.influx.12xlarge" => DbInstanceType::DbInflux12Xlarge,
-            "db.influx.16xlarge" => DbInstanceType::DbInflux16Xlarge,
-            "db.influx.2xlarge" => DbInstanceType::DbInflux2Xlarge,
-            "db.influx.4xlarge" => DbInstanceType::DbInflux4Xlarge,
-            "db.influx.8xlarge" => DbInstanceType::DbInflux8Xlarge,
-            "db.influx.large" => DbInstanceType::DbInfluxLarge,
-            "db.influx.medium" => DbInstanceType::DbInfluxMedium,
-            "db.influx.xlarge" => DbInstanceType::DbInfluxXlarge,
-            other => DbInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "db.influx.12xlarge" => DbInstanceType::DbInflux12Xlarge,
+"db.influx.16xlarge" => DbInstanceType::DbInflux16Xlarge,
+"db.influx.2xlarge" => DbInstanceType::DbInflux2Xlarge,
+"db.influx.4xlarge" => DbInstanceType::DbInflux4Xlarge,
+"db.influx.8xlarge" => DbInstanceType::DbInflux8Xlarge,
+"db.influx.large" => DbInstanceType::DbInfluxLarge,
+"db.influx.medium" => DbInstanceType::DbInfluxMedium,
+"db.influx.xlarge" => DbInstanceType::DbInfluxXlarge,
+other => DbInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DbInstanceType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DbInstanceType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DbInstanceType::from(s))
+                    }
+                }
 impl DbInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DbInstanceType::DbInflux12Xlarge => "db.influx.12xlarge",
-            DbInstanceType::DbInflux16Xlarge => "db.influx.16xlarge",
-            DbInstanceType::DbInflux2Xlarge => "db.influx.2xlarge",
-            DbInstanceType::DbInflux4Xlarge => "db.influx.4xlarge",
-            DbInstanceType::DbInflux8Xlarge => "db.influx.8xlarge",
-            DbInstanceType::DbInfluxLarge => "db.influx.large",
-            DbInstanceType::DbInfluxMedium => "db.influx.medium",
-            DbInstanceType::DbInfluxXlarge => "db.influx.xlarge",
-            DbInstanceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "db.influx.12xlarge",
-            "db.influx.16xlarge",
-            "db.influx.2xlarge",
-            "db.influx.4xlarge",
-            "db.influx.8xlarge",
-            "db.influx.large",
-            "db.influx.medium",
-            "db.influx.xlarge",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DbInstanceType::DbInflux12Xlarge => "db.influx.12xlarge",
+    DbInstanceType::DbInflux16Xlarge => "db.influx.16xlarge",
+    DbInstanceType::DbInflux2Xlarge => "db.influx.2xlarge",
+    DbInstanceType::DbInflux4Xlarge => "db.influx.4xlarge",
+    DbInstanceType::DbInflux8Xlarge => "db.influx.8xlarge",
+    DbInstanceType::DbInfluxLarge => "db.influx.large",
+    DbInstanceType::DbInfluxMedium => "db.influx.medium",
+    DbInstanceType::DbInfluxXlarge => "db.influx.xlarge",
+    DbInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["db.influx.12xlarge", "db.influx.16xlarge", "db.influx.2xlarge", "db.influx.4xlarge", "db.influx.8xlarge", "db.influx.large", "db.influx.medium", "db.influx.xlarge"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DbInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DbInstanceType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DbInstanceType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DbInstanceType::DbInflux12Xlarge => write!(f, "db.influx.12xlarge"),
-            DbInstanceType::DbInflux16Xlarge => write!(f, "db.influx.16xlarge"),
-            DbInstanceType::DbInflux2Xlarge => write!(f, "db.influx.2xlarge"),
-            DbInstanceType::DbInflux4Xlarge => write!(f, "db.influx.4xlarge"),
-            DbInstanceType::DbInflux8Xlarge => write!(f, "db.influx.8xlarge"),
-            DbInstanceType::DbInfluxLarge => write!(f, "db.influx.large"),
-            DbInstanceType::DbInfluxMedium => write!(f, "db.influx.medium"),
-            DbInstanceType::DbInfluxXlarge => write!(f, "db.influx.xlarge"),
-            DbInstanceType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DbInstanceType::DbInflux12Xlarge => write!(f, "db.influx.12xlarge"),
+DbInstanceType::DbInflux16Xlarge => write!(f, "db.influx.16xlarge"),
+DbInstanceType::DbInflux2Xlarge => write!(f, "db.influx.2xlarge"),
+DbInstanceType::DbInflux4Xlarge => write!(f, "db.influx.4xlarge"),
+DbInstanceType::DbInflux8Xlarge => write!(f, "db.influx.8xlarge"),
+DbInstanceType::DbInfluxLarge => write!(f, "db.influx.large"),
+DbInstanceType::DbInfluxMedium => write!(f, "db.influx.medium"),
+DbInstanceType::DbInfluxXlarge => write!(f, "db.influx.xlarge"),
+DbInstanceType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

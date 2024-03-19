@@ -3,24 +3,25 @@
 /// <p>Contains the response to a successful <code>GetContextKeysForPrincipalPolicy</code> or <code>GetContextKeysForCustomPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContextKeysForPrincipalPolicyOutput {
+pub struct GetContextKeysForPrincipalPolicyOutput  {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub context_key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub context_key_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetContextKeysForPrincipalPolicyOutput {
+impl  GetContextKeysForPrincipalPolicyOutput  {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_key_names.is_none()`.
-    pub fn context_key_names(&self) -> &[::std::string::String] {
-        self.context_key_names.as_deref().unwrap_or_default()
+    pub fn context_key_names(&self) -> & [::std::string::String] {
+        self.context_key_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContextKeysForPrincipalPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContextKeysForPrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContextKeysForPrincipalPolicyOutput`](crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput).
     pub fn builder() -> crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder {
@@ -32,7 +33,7 @@ impl GetContextKeysForPrincipalPolicyOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContextKeysForPrincipalPolicyOutputBuilder {
-    pub(crate) context_key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) context_key_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetContextKeysForPrincipalPolicyOutputBuilder {
@@ -43,33 +44,34 @@ impl GetContextKeysForPrincipalPolicyOutputBuilder {
     /// <p>The list of context keys that are referenced in the input policies.</p>
     pub fn context_key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.context_key_names.unwrap_or_default();
-        v.push(input.into());
-        self.context_key_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.context_key_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn set_context_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.context_key_names = input;
-        self
+    pub fn set_context_key_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.context_key_names = input; self
     }
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn get_context_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_key_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.context_key_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContextKeysForPrincipalPolicyOutput`](crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput).
     pub fn build(self) -> crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput {
         crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput {
-            context_key_names: self.context_key_names,
+            context_key_names: self.context_key_names
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

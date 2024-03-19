@@ -5,54 +5,50 @@ pub use crate::operation::batch_get_triggers::_batch_get_triggers_input::BatchGe
 
 impl BatchGetTriggersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_get_triggers();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_get_triggers::BatchGetTriggersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_get_triggers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchGetTriggers`.
-///
+/// 
 /// <p>Returns a list of resource metadata for a given list of trigger names. After calling the <code>ListTriggers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetTriggersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder,
+                    inner: crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        crate::operation::batch_get_triggers::BatchGetTriggersError,
-    > for BatchGetTriggersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_get_triggers::BatchGetTriggersOutput,
+                    crate::operation::batch_get_triggers::BatchGetTriggersError,
+                > for BatchGetTriggersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
+                        crate::operation::batch_get_triggers::BatchGetTriggersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchGetTriggersFluentBuilder {
     /// Creates a new `BatchGetTriggers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl BatchGetTriggersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_get_triggers::BatchGetTriggersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_get_triggers::BatchGetTriggers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_get_triggers::BatchGetTriggers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_get_triggers::BatchGetTriggersOutput,
-        crate::operation::batch_get_triggers::BatchGetTriggersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_triggers::BatchGetTriggersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_get_triggers::BatchGetTriggers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_get_triggers::BatchGetTriggers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_get_triggers::BatchGetTriggersOutput, crate::operation::batch_get_triggers::BatchGetTriggersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `TriggerNames`.
     ///
     /// To override the contents of this collection use [`set_trigger_names`](Self::set_trigger_names).
@@ -118,12 +105,13 @@ impl BatchGetTriggersFluentBuilder {
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trigger_names(input);
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_trigger_names()
     }
 }
+

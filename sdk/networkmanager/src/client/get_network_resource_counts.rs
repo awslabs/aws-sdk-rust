@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkResourceCounts`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`resource_type(impl Into<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::set_resource_type):<br>required: **false**<br><p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul>  <li>   <p><code>dxcon</code></p></li>  <li>   <p><code>dx-gateway</code></p></li>  <li>   <p><code>dx-vif</code></p></li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul>  <li>   <p><code>connection</code></p></li>  <li>   <p><code>device</code></p></li>  <li>   <p><code>link</code></p></li>  <li>   <p><code>site</code></p></li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul>  <li>   <p><code>customer-gateway</code></p></li>  <li>   <p><code>transit-gateway</code></p></li>  <li>   <p><code>transit-gateway-attachment</code></p></li>  <li>   <p><code>transit-gateway-connect-peer</code></p></li>  <li>   <p><code>transit-gateway-route-table</code></p></li>  <li>   <p><code>vpn-connection</code></p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput) with field(s):
+                            /// - On success, responds with [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput) with field(s):
     ///   - [`network_resource_counts(Option<Vec::<NetworkResourceCount>>)`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput::network_resource_counts): <p>The count of resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetNetworkResourceCountsError>`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsError)
+                            /// - On failure, responds with [`SdkError<GetNetworkResourceCountsError>`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsError)
     pub fn get_network_resource_counts(&self) -> crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder {
-        crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEffectivePatchesForPatchBaseline`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`baseline_id(impl Into<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::baseline_id) / [`set_baseline_id(Option<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::set_baseline_id):<br>required: **true**<br><p>The ID of the patch baseline to retrieve the effective patches for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of patches to return (per page).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput) with field(s):
+                            /// - On success, responds with [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput) with field(s):
     ///   - [`effective_patches(Option<Vec::<EffectivePatch>>)`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput::effective_patches): <p>An array of patches and patch status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeEffectivePatchesForPatchBaselineError>`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError)
-    pub fn describe_effective_patches_for_patch_baseline(
-        &self,
-    ) -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder {
-        crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeEffectivePatchesForPatchBaselineError>`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError)
+    pub fn describe_effective_patches_for_patch_baseline(&self) -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder {
+                                crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::new(self.handle.clone())
+                            }
 }
+

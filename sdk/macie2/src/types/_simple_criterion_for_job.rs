@@ -3,7 +3,7 @@
 /// <p>Specifies a property-based condition that determines whether an S3 bucket is included or excluded from a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleCriterionForJob {
+pub struct SimpleCriterionForJob  {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub comparator: ::std::option::Option<crate::types::JobComparator>,
     /// <p>The property to use in the condition.</p>
@@ -20,15 +20,15 @@ pub struct SimpleCriterionForJob {
     /// <p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SimpleCriterionForJob {
+impl  SimpleCriterionForJob  {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::JobComparator> {
         self.comparator.as_ref()
     }
     /// <p>The property to use in the condition.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::SimpleCriterionKeyForJob> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::SimpleCriterionKeyForJob> {
         self.key.as_ref()
     }
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
@@ -43,10 +43,11 @@ impl SimpleCriterionForJob {
     /// <p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SimpleCriterionForJob {
@@ -62,7 +63,7 @@ impl SimpleCriterionForJob {
 pub struct SimpleCriterionForJobBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SimpleCriterionForJobBuilder {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
@@ -72,8 +73,7 @@ impl SimpleCriterionForJobBuilder {
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
-        self.comparator = input;
-        self
+        self.comparator = input; self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
@@ -86,8 +86,7 @@ impl SimpleCriterionForJobBuilder {
     }
     /// <p>The property to use in the condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The property to use in the condition.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::SimpleCriterionKeyForJob> {
@@ -111,9 +110,9 @@ impl SimpleCriterionForJobBuilder {
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -127,9 +126,8 @@ impl SimpleCriterionForJobBuilder {
     /// <p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -143,15 +141,19 @@ impl SimpleCriterionForJobBuilder {
     /// <p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SimpleCriterionForJob`](crate::types::SimpleCriterionForJob).
     pub fn build(self) -> crate::types::SimpleCriterionForJob {
         crate::types::SimpleCriterionForJob {
-            comparator: self.comparator,
-            key: self.key,
-            values: self.values,
+            comparator: self.comparator
+            ,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

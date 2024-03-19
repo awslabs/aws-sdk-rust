@@ -3,7 +3,7 @@
 /// <p>Breakdown of detected information, seperated into the catagories Type, LabelDetection, and ValueDetection</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpenseField {
+pub struct ExpenseField  {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
     pub r#type: ::std::option::Option<crate::types::ExpenseType>,
     /// <p>The explicitly stated label of a detected element.</p>
@@ -15,19 +15,19 @@ pub struct ExpenseField {
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
     pub currency: ::std::option::Option<crate::types::ExpenseCurrency>,
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub group_properties: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
+    pub group_properties: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseGroupProperty>>,
 }
-impl ExpenseField {
+impl  ExpenseField  {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExpenseType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ExpenseType> {
         self.r#type.as_ref()
     }
     /// <p>The explicitly stated label of a detected element.</p>
-    pub fn label_detection(&self) -> ::std::option::Option<&crate::types::ExpenseDetection> {
+    pub fn label_detection(&self) -> ::std::option::Option<& crate::types::ExpenseDetection> {
         self.label_detection.as_ref()
     }
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
-    pub fn value_detection(&self) -> ::std::option::Option<&crate::types::ExpenseDetection> {
+    pub fn value_detection(&self) -> ::std::option::Option<& crate::types::ExpenseDetection> {
         self.value_detection.as_ref()
     }
     /// <p>The page number the value was detected on.</p>
@@ -35,14 +35,15 @@ impl ExpenseField {
         self.page_number
     }
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
-    pub fn currency(&self) -> ::std::option::Option<&crate::types::ExpenseCurrency> {
+    pub fn currency(&self) -> ::std::option::Option<& crate::types::ExpenseCurrency> {
         self.currency.as_ref()
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_properties.is_none()`.
-    pub fn group_properties(&self) -> &[crate::types::ExpenseGroupProperty] {
-        self.group_properties.as_deref().unwrap_or_default()
+    pub fn group_properties(&self) -> & [crate::types::ExpenseGroupProperty] {
+        self.group_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExpenseField {
@@ -61,7 +62,7 @@ pub struct ExpenseFieldBuilder {
     pub(crate) value_detection: ::std::option::Option<crate::types::ExpenseDetection>,
     pub(crate) page_number: ::std::option::Option<i32>,
     pub(crate) currency: ::std::option::Option<crate::types::ExpenseCurrency>,
-    pub(crate) group_properties: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
+    pub(crate) group_properties: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseGroupProperty>>,
 }
 impl ExpenseFieldBuilder {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
@@ -71,8 +72,7 @@ impl ExpenseFieldBuilder {
     }
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExpenseType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ExpenseType> {
@@ -85,8 +85,7 @@ impl ExpenseFieldBuilder {
     }
     /// <p>The explicitly stated label of a detected element.</p>
     pub fn set_label_detection(mut self, input: ::std::option::Option<crate::types::ExpenseDetection>) -> Self {
-        self.label_detection = input;
-        self
+        self.label_detection = input; self
     }
     /// <p>The explicitly stated label of a detected element.</p>
     pub fn get_label_detection(&self) -> &::std::option::Option<crate::types::ExpenseDetection> {
@@ -99,8 +98,7 @@ impl ExpenseFieldBuilder {
     }
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
     pub fn set_value_detection(mut self, input: ::std::option::Option<crate::types::ExpenseDetection>) -> Self {
-        self.value_detection = input;
-        self
+        self.value_detection = input; self
     }
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
     pub fn get_value_detection(&self) -> &::std::option::Option<crate::types::ExpenseDetection> {
@@ -113,8 +111,7 @@ impl ExpenseFieldBuilder {
     }
     /// <p>The page number the value was detected on.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// <p>The page number the value was detected on.</p>
     pub fn get_page_number(&self) -> &::std::option::Option<i32> {
@@ -127,8 +124,7 @@ impl ExpenseFieldBuilder {
     }
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<crate::types::ExpenseCurrency>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::ExpenseCurrency> {
@@ -141,28 +137,34 @@ impl ExpenseFieldBuilder {
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
     pub fn group_properties(mut self, input: crate::types::ExpenseGroupProperty) -> Self {
         let mut v = self.group_properties.unwrap_or_default();
-        v.push(input);
-        self.group_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub fn set_group_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>) -> Self {
-        self.group_properties = input;
-        self
+    pub fn set_group_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExpenseGroupProperty>>) -> Self {
+        self.group_properties = input; self
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub fn get_group_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>> {
+    pub fn get_group_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExpenseGroupProperty>> {
         &self.group_properties
     }
     /// Consumes the builder and constructs a [`ExpenseField`](crate::types::ExpenseField).
     pub fn build(self) -> crate::types::ExpenseField {
         crate::types::ExpenseField {
-            r#type: self.r#type,
-            label_detection: self.label_detection,
-            value_detection: self.value_detection,
-            page_number: self.page_number,
-            currency: self.currency,
-            group_properties: self.group_properties,
+            r#type: self.r#type
+            ,
+            label_detection: self.label_detection
+            ,
+            value_detection: self.value_detection
+            ,
+            page_number: self.page_number
+            ,
+            currency: self.currency
+            ,
+            group_properties: self.group_properties
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReferenceStores`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of stores to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ReferenceStoreFilter)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::filter) / [`set_filter(Option<ReferenceStoreFilter>)`](crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput) with field(s):
+                            /// - On success, responds with [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`reference_stores(Vec::<ReferenceStoreDetail>)`](crate::operation::list_reference_stores::ListReferenceStoresOutput::reference_stores): <p>A list of reference stores.</p>
-    /// - On failure, responds with [`SdkError<ListReferenceStoresError>`](crate::operation::list_reference_stores::ListReferenceStoresError)
+                            /// - On failure, responds with [`SdkError<ListReferenceStoresError>`](crate::operation::list_reference_stores::ListReferenceStoresError)
     pub fn list_reference_stores(&self) -> crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder {
-        crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_reference_stores::builders::ListReferenceStoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

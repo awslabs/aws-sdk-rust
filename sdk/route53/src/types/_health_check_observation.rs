@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckObservation {
+pub struct HealthCheckObservation  {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
     pub region: ::std::option::Option<crate::types::HealthCheckRegion>,
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
@@ -11,17 +11,17 @@ pub struct HealthCheckObservation {
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
     pub status_report: ::std::option::Option<crate::types::StatusReport>,
 }
-impl HealthCheckObservation {
+impl  HealthCheckObservation  {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-    pub fn region(&self) -> ::std::option::Option<&crate::types::HealthCheckRegion> {
+    pub fn region(&self) -> ::std::option::Option<& crate::types::HealthCheckRegion> {
         self.region.as_ref()
     }
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-    pub fn status_report(&self) -> ::std::option::Option<&crate::types::StatusReport> {
+    pub fn status_report(&self) -> ::std::option::Option<& crate::types::StatusReport> {
         self.status_report.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl HealthCheckObservationBuilder {
     }
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<crate::types::HealthCheckRegion>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
     pub fn get_region(&self) -> &::std::option::Option<crate::types::HealthCheckRegion> {
@@ -62,8 +61,7 @@ impl HealthCheckObservationBuilder {
     }
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl HealthCheckObservationBuilder {
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
     pub fn set_status_report(mut self, input: ::std::option::Option<crate::types::StatusReport>) -> Self {
-        self.status_report = input;
-        self
+        self.status_report = input; self
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
     pub fn get_status_report(&self) -> &::std::option::Option<crate::types::StatusReport> {
@@ -86,9 +83,13 @@ impl HealthCheckObservationBuilder {
     /// Consumes the builder and constructs a [`HealthCheckObservation`](crate::types::HealthCheckObservation).
     pub fn build(self) -> crate::types::HealthCheckObservation {
         crate::types::HealthCheckObservation {
-            region: self.region,
-            ip_address: self.ip_address,
-            status_report: self.status_report,
+            region: self.region
+            ,
+            ip_address: self.ip_address
+            ,
+            status_report: self.status_report
+            ,
         }
     }
 }
+

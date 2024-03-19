@@ -3,7 +3,7 @@
 /// Object
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupObject {
+pub struct BackupObject  {
     /// Object name
     pub name: ::std::string::String,
     /// Number of chunks in object
@@ -17,33 +17,30 @@ pub struct BackupObject {
     /// Object token
     pub object_token: ::std::string::String,
 }
-impl BackupObject {
+impl  BackupObject  {
     /// Object name
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// Number of chunks in object
     pub fn chunks_count(&self) -> ::std::option::Option<i64> {
         self.chunks_count
     }
     /// Metadata string associated with the Object
-    pub fn metadata_string(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_string(&self) -> ::std::option::Option<& str> {
         self.metadata_string.as_deref()
     }
     /// Object checksum
-    pub fn object_checksum(&self) -> &str {
-        use std::ops::Deref;
-        self.object_checksum.deref()
+    pub fn object_checksum(&self) -> & str {
+        use std::ops::Deref; self.object_checksum.deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> &crate::types::SummaryChecksumAlgorithm {
+    pub fn object_checksum_algorithm(&self) -> & crate::types::SummaryChecksumAlgorithm {
         &self.object_checksum_algorithm
     }
     /// Object token
-    pub fn object_token(&self) -> &str {
-        use std::ops::Deref;
-        self.object_token.deref()
+    pub fn object_token(&self) -> & str {
+        use std::ops::Deref; self.object_token.deref()
     }
 }
 impl BackupObject {
@@ -73,8 +70,7 @@ impl BackupObjectBuilder {
     }
     /// Object name
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Object name
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl BackupObjectBuilder {
     }
     /// Number of chunks in object
     pub fn set_chunks_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.chunks_count = input;
-        self
+        self.chunks_count = input; self
     }
     /// Number of chunks in object
     pub fn get_chunks_count(&self) -> &::std::option::Option<i64> {
@@ -101,8 +96,7 @@ impl BackupObjectBuilder {
     }
     /// Metadata string associated with the Object
     pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_string = input;
-        self
+        self.metadata_string = input; self
     }
     /// Metadata string associated with the Object
     pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +110,7 @@ impl BackupObjectBuilder {
     }
     /// Object checksum
     pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_checksum = input;
-        self
+        self.object_checksum = input; self
     }
     /// Object checksum
     pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +124,7 @@ impl BackupObjectBuilder {
     }
     /// Checksum algorithm
     pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
-        self.object_checksum_algorithm = input;
-        self
+        self.object_checksum_algorithm = input; self
     }
     /// Checksum algorithm
     pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
@@ -146,8 +138,7 @@ impl BackupObjectBuilder {
     }
     /// Object token
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_token = input;
-        self
+        self.object_token = input; self
     }
     /// Object token
     pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,33 +151,34 @@ impl BackupObjectBuilder {
     /// - [`object_checksum_algorithm`](crate::types::builders::BackupObjectBuilder::object_checksum_algorithm)
     /// - [`object_token`](crate::types::builders::BackupObjectBuilder::object_token)
     pub fn build(self) -> ::std::result::Result<crate::types::BackupObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BackupObject {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building BackupObject",
-                )
-            })?,
-            chunks_count: self.chunks_count,
-            metadata_string: self.metadata_string,
-            object_checksum: self.object_checksum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_checksum",
-                    "object_checksum was not specified but it is required when building BackupObject",
-                )
-            })?,
-            object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_checksum_algorithm",
-                    "object_checksum_algorithm was not specified but it is required when building BackupObject",
-                )
-            })?,
-            object_token: self.object_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_token",
-                    "object_token was not specified but it is required when building BackupObject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BackupObject {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building BackupObject")
+                    )?
+                ,
+                chunks_count: self.chunks_count
+                ,
+                metadata_string: self.metadata_string
+                ,
+                object_checksum: self.object_checksum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_checksum", "object_checksum was not specified but it is required when building BackupObject")
+                    )?
+                ,
+                object_checksum_algorithm: self.object_checksum_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_checksum_algorithm", "object_checksum_algorithm was not specified but it is required when building BackupObject")
+                    )?
+                ,
+                object_token: self.object_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_token", "object_token was not specified but it is required when building BackupObject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

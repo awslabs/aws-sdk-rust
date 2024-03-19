@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInterconnectInput {
+pub struct CreateInterconnectInput  {
     /// <p>The name of the interconnect.</p>
     pub interconnect_name: ::std::option::Option<::std::string::String>,
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
@@ -12,35 +12,36 @@ pub struct CreateInterconnectInput {
     /// <p>The ID of the LAG.</p>
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the interconnect.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateInterconnectInput {
+impl  CreateInterconnectInput  {
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(&self) -> ::std::option::Option<&str> {
+    pub fn interconnect_name(&self) -> ::std::option::Option<& str> {
         self.interconnect_name.as_deref()
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-    pub fn bandwidth(&self) -> ::std::option::Option<&str> {
+    pub fn bandwidth(&self) -> ::std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The location of the interconnect.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> ::std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The tags to associate with the interconnect.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct CreateInterconnectInputBuilder {
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateInterconnectInputBuilder {
@@ -71,8 +72,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The name of the interconnect.</p>
     pub fn set_interconnect_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interconnect_name = input;
-        self
+        self.interconnect_name = input; self
     }
     /// <p>The name of the interconnect.</p>
     pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The location of the interconnect.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the interconnect.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,17 +126,16 @@ impl CreateInterconnectInputBuilder {
     /// <p>The tags to associate with the interconnect.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
@@ -149,24 +145,30 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_interconnect::CreateInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_interconnect::CreateInterconnectInput {
-            interconnect_name: self.interconnect_name,
-            bandwidth: self.bandwidth,
-            location: self.location,
-            lag_id: self.lag_id,
-            tags: self.tags,
-            provider_name: self.provider_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_interconnect::CreateInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_interconnect::CreateInterconnectInput {
+                interconnect_name: self.interconnect_name
+                ,
+                bandwidth: self.bandwidth
+                ,
+                location: self.location
+                ,
+                lag_id: self.lag_id
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+            }
+        )
     }
 }
+

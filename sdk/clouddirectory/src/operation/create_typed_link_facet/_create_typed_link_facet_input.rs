@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTypedLinkFacetInput {
+pub struct CreateTypedLinkFacetInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub facet: ::std::option::Option<crate::types::TypedLinkFacet>,
 }
-impl CreateTypedLinkFacetInput {
+impl  CreateTypedLinkFacetInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
-    pub fn facet(&self) -> ::std::option::Option<&crate::types::TypedLinkFacet> {
+    pub fn facet(&self) -> ::std::option::Option<& crate::types::TypedLinkFacet> {
         self.facet.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateTypedLinkFacetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl CreateTypedLinkFacetInputBuilder {
     }
     /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn set_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkFacet>) -> Self {
-        self.facet = input;
-        self
+        self.facet = input; self
     }
     /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn get_facet(&self) -> &::std::option::Option<crate::types::TypedLinkFacet> {
         &self.facet
     }
     /// Consumes the builder and constructs a [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput {
-            schema_arn: self.schema_arn,
-            facet: self.facet,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput {
+                schema_arn: self.schema_arn
+                ,
+                facet: self.facet
+                ,
+            }
+        )
     }
 }
+

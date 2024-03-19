@@ -3,11 +3,11 @@
 /// <p>Indicates the completion progress for a batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobProgress {
+pub struct JobProgress  {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     pub percent_complete: ::std::option::Option<i32>,
 }
-impl JobProgress {
+impl  JobProgress  {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     pub fn percent_complete(&self) -> ::std::option::Option<i32> {
         self.percent_complete
@@ -34,8 +34,7 @@ impl JobProgressBuilder {
     }
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     pub fn set_percent_complete(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent_complete = input;
-        self
+        self.percent_complete = input; self
     }
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     pub fn get_percent_complete(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl JobProgressBuilder {
     /// Consumes the builder and constructs a [`JobProgress`](crate::types::JobProgress).
     pub fn build(self) -> crate::types::JobProgress {
         crate::types::JobProgress {
-            percent_complete: self.percent_complete,
+            percent_complete: self.percent_complete
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateComponentVersionOutput {
+pub struct CreateComponentVersionOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -15,35 +15,33 @@ pub struct CreateComponentVersionOutput {
     pub status: ::std::option::Option<crate::types::CloudComponentStatus>,
     _request_id: Option<String>,
 }
-impl CreateComponentVersionOutput {
+impl  CreateComponentVersionOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> &str {
-        use std::ops::Deref;
-        self.component_name.deref()
+    pub fn component_name(&self) -> & str {
+        use std::ops::Deref; self.component_name.deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> &str {
-        use std::ops::Deref;
-        self.component_version.deref()
+    pub fn component_version(&self) -> & str {
+        use std::ops::Deref; self.component_version.deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_timestamp
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CloudComponentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CloudComponentStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateComponentVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateComponentVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentVersionOutput`](crate::operation::create_component_version::CreateComponentVersionOutput).
     pub fn builder() -> crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder {
@@ -70,8 +68,7 @@ impl CreateComponentVersionOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl CreateComponentVersionOutputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +96,7 @@ impl CreateComponentVersionOutputBuilder {
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version = input;
-        self
+        self.component_version = input; self
     }
     /// <p>The version of the component.</p>
     pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +110,7 @@ impl CreateComponentVersionOutputBuilder {
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,55 +124,51 @@ impl CreateComponentVersionOutputBuilder {
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CloudComponentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CloudComponentStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateComponentVersionOutput`](crate::operation::create_component_version::CreateComponentVersionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`component_name`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::component_name)
     /// - [`component_version`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::component_version)
     /// - [`creation_timestamp`](crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::creation_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_component_version::CreateComponentVersionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_component_version::CreateComponentVersionOutput {
-            arn: self.arn,
-            component_name: self.component_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_name",
-                    "component_name was not specified but it is required when building CreateComponentVersionOutput",
-                )
-            })?,
-            component_version: self.component_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_version",
-                    "component_version was not specified but it is required when building CreateComponentVersionOutput",
-                )
-            })?,
-            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_timestamp",
-                    "creation_timestamp was not specified but it is required when building CreateComponentVersionOutput",
-                )
-            })?,
-            status: self.status,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_component_version::CreateComponentVersionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_component_version::CreateComponentVersionOutput {
+                arn: self.arn
+                ,
+                component_name: self.component_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_name", "component_name was not specified but it is required when building CreateComponentVersionOutput")
+                    )?
+                ,
+                component_version: self.component_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_version", "component_version was not specified but it is required when building CreateComponentVersionOutput")
+                    )?
+                ,
+                creation_timestamp: self.creation_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_timestamp", "creation_timestamp was not specified but it is required when building CreateComponentVersionOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

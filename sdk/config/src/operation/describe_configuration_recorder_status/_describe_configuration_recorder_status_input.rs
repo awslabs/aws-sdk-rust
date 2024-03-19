@@ -3,16 +3,17 @@
 /// <p>The input for the <code>DescribeConfigurationRecorderStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationRecorderStatusInput {
+pub struct DescribeConfigurationRecorderStatusInput  {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeConfigurationRecorderStatusInput {
+impl  DescribeConfigurationRecorderStatusInput  {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_recorder_names.is_none()`.
-    pub fn configuration_recorder_names(&self) -> &[::std::string::String] {
-        self.configuration_recorder_names.as_deref().unwrap_or_default()
+    pub fn configuration_recorder_names(&self) -> & [::std::string::String] {
+        self.configuration_recorder_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeConfigurationRecorderStatusInput {
@@ -26,7 +27,7 @@ impl DescribeConfigurationRecorderStatusInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusInputBuilder {
-    pub(crate) configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_recorder_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeConfigurationRecorderStatusInputBuilder {
     /// Appends an item to `configuration_recorder_names`.
@@ -36,30 +37,26 @@ impl DescribeConfigurationRecorderStatusInputBuilder {
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_recorder_names.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_recorder_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_recorder_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configuration_recorder_names = input;
-        self
+    pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configuration_recorder_names = input; self
     }
     /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
-    pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configuration_recorder_names
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRecorderStatusInput`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusInput {
-                configuration_recorder_names: self.configuration_recorder_names,
-            },
+                configuration_recorder_names: self.configuration_recorder_names
+                ,
+            }
         )
     }
 }
+

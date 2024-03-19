@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutVoiceConnectorLoggingConfigurationInput {
+pub struct PutVoiceConnectorLoggingConfigurationInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration details to add.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
 }
-impl PutVoiceConnectorLoggingConfigurationInput {
+impl  PutVoiceConnectorLoggingConfigurationInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The logging configuration details to add.</p>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
     }
     /// <p>The logging configuration details to add.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p>The logging configuration details to add.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorLoggingConfigurationInput`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput {
-                voice_connector_id: self.voice_connector_id,
-                logging_configuration: self.logging_configuration,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+            }
         )
     }
 }
+

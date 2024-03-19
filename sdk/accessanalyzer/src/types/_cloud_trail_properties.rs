@@ -3,26 +3,25 @@
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudTrailProperties {
+pub struct CloudTrailProperties  {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-    pub trail_properties: ::std::vec::Vec<crate::types::TrailProperties>,
+    pub trail_properties: ::std::vec::Vec::<crate::types::TrailProperties>,
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
-impl CloudTrailProperties {
+impl  CloudTrailProperties  {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-    pub fn trail_properties(&self) -> &[crate::types::TrailProperties] {
-        use std::ops::Deref;
-        self.trail_properties.deref()
+    pub fn trail_properties(&self) -> & [crate::types::TrailProperties] {
+        use std::ops::Deref; self.trail_properties.deref()
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
 }
@@ -37,7 +36,7 @@ impl CloudTrailProperties {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudTrailPropertiesBuilder {
-    pub(crate) trail_properties: ::std::option::Option<::std::vec::Vec<crate::types::TrailProperties>>,
+    pub(crate) trail_properties: ::std::option::Option<::std::vec::Vec::<crate::types::TrailProperties>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -49,17 +48,16 @@ impl CloudTrailPropertiesBuilder {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
     pub fn trail_properties(mut self, input: crate::types::TrailProperties) -> Self {
         let mut v = self.trail_properties.unwrap_or_default();
-        v.push(input);
-        self.trail_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trail_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-    pub fn set_trail_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrailProperties>>) -> Self {
-        self.trail_properties = input;
-        self
+    pub fn set_trail_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrailProperties>>) -> Self {
+        self.trail_properties = input; self
     }
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-    pub fn get_trail_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrailProperties>> {
+    pub fn get_trail_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrailProperties>> {
         &self.trail_properties
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
@@ -70,8 +68,7 @@ impl CloudTrailPropertiesBuilder {
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -85,8 +82,7 @@ impl CloudTrailPropertiesBuilder {
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -98,25 +94,25 @@ impl CloudTrailPropertiesBuilder {
     /// - [`start_time`](crate::types::builders::CloudTrailPropertiesBuilder::start_time)
     /// - [`end_time`](crate::types::builders::CloudTrailPropertiesBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudTrailProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudTrailProperties {
-            trail_properties: self.trail_properties.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trail_properties",
-                    "trail_properties was not specified but it is required when building CloudTrailProperties",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building CloudTrailProperties",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building CloudTrailProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudTrailProperties {
+                trail_properties: self.trail_properties
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trail_properties", "trail_properties was not specified but it is required when building CloudTrailProperties")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building CloudTrailProperties")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building CloudTrailProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

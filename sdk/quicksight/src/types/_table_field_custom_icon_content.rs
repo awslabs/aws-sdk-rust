@@ -3,13 +3,13 @@
 /// <p>The custom icon content for the table link content configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableFieldCustomIconContent {
+pub struct TableFieldCustomIconContent  {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     pub icon: ::std::option::Option<crate::types::TableFieldIconSetType>,
 }
-impl TableFieldCustomIconContent {
+impl  TableFieldCustomIconContent  {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
-    pub fn icon(&self) -> ::std::option::Option<&crate::types::TableFieldIconSetType> {
+    pub fn icon(&self) -> ::std::option::Option<& crate::types::TableFieldIconSetType> {
         self.icon.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TableFieldCustomIconContentBuilder {
     }
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     pub fn set_icon(mut self, input: ::std::option::Option<crate::types::TableFieldIconSetType>) -> Self {
-        self.icon = input;
-        self
+        self.icon = input; self
     }
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     pub fn get_icon(&self) -> &::std::option::Option<crate::types::TableFieldIconSetType> {
@@ -43,6 +42,10 @@ impl TableFieldCustomIconContentBuilder {
     }
     /// Consumes the builder and constructs a [`TableFieldCustomIconContent`](crate::types::TableFieldCustomIconContent).
     pub fn build(self) -> crate::types::TableFieldCustomIconContent {
-        crate::types::TableFieldCustomIconContent { icon: self.icon }
+        crate::types::TableFieldCustomIconContent {
+            icon: self.icon
+            ,
+        }
     }
 }
+

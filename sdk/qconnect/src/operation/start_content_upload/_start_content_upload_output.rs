@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartContentUploadOutput {
+pub struct StartContentUploadOutput  {
     /// <p>The identifier of the upload.</p>
     pub upload_id: ::std::string::String,
     /// <p>The URL of the upload.</p>
@@ -10,30 +10,28 @@ pub struct StartContentUploadOutput {
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub url_expiry: ::aws_smithy_types::DateTime,
     /// <p>The headers to include in the upload.</p>
-    pub headers_to_include: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub headers_to_include: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartContentUploadOutput {
+impl  StartContentUploadOutput  {
     /// <p>The identifier of the upload.</p>
-    pub fn upload_id(&self) -> &str {
-        use std::ops::Deref;
-        self.upload_id.deref()
+    pub fn upload_id(&self) -> & str {
+        use std::ops::Deref; self.upload_id.deref()
     }
     /// <p>The URL of the upload.</p>
-    pub fn url(&self) -> &str {
-        use std::ops::Deref;
-        self.url.deref()
+    pub fn url(&self) -> & str {
+        use std::ops::Deref; self.url.deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> &::aws_smithy_types::DateTime {
+    pub fn url_expiry(&self) -> & ::aws_smithy_types::DateTime {
         &self.url_expiry
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn headers_to_include(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn headers_to_include(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.headers_to_include
     }
 }
-impl ::std::fmt::Debug for StartContentUploadOutput {
+impl  ::std::fmt::Debug for StartContentUploadOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartContentUploadOutput");
         formatter.field("upload_id", &self.upload_id);
@@ -45,10 +43,10 @@ impl ::std::fmt::Debug for StartContentUploadOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartContentUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartContentUploadOutput {
     /// Creates a new builder-style object to manufacture [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput).
     pub fn builder() -> crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder {
@@ -63,7 +61,7 @@ pub struct StartContentUploadOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) headers_to_include: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContentUploadOutputBuilder {
@@ -75,8 +73,7 @@ impl StartContentUploadOutputBuilder {
     }
     /// <p>The identifier of the upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The identifier of the upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +87,7 @@ impl StartContentUploadOutputBuilder {
     }
     /// <p>The URL of the upload.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the upload.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl StartContentUploadOutputBuilder {
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub fn set_url_expiry(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.url_expiry = input;
-        self
+        self.url_expiry = input; self
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub fn get_url_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,74 +112,61 @@ impl StartContentUploadOutputBuilder {
     /// To override the contents of this collection use [`set_headers_to_include`](Self::set_headers_to_include).
     ///
     /// <p>The headers to include in the upload.</p>
-    pub fn headers_to_include(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn headers_to_include(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.headers_to_include.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.headers_to_include = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.headers_to_include = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn set_headers_to_include(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.headers_to_include = input;
-        self
+    pub fn set_headers_to_include(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.headers_to_include = input; self
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn get_headers_to_include(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_headers_to_include(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.headers_to_include
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`upload_id`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::upload_id)
     /// - [`url`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::url)
     /// - [`url_expiry`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::url_expiry)
     /// - [`headers_to_include`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::headers_to_include)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadOutput {
-            upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upload_id",
-                    "upload_id was not specified but it is required when building StartContentUploadOutput",
-                )
-            })?,
-            url: self.url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url",
-                    "url was not specified but it is required when building StartContentUploadOutput",
-                )
-            })?,
-            url_expiry: self.url_expiry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url_expiry",
-                    "url_expiry was not specified but it is required when building StartContentUploadOutput",
-                )
-            })?,
-            headers_to_include: self.headers_to_include.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "headers_to_include",
-                    "headers_to_include was not specified but it is required when building StartContentUploadOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_content_upload::StartContentUploadOutput {
+                upload_id: self.upload_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "upload_id was not specified but it is required when building StartContentUploadOutput")
+                    )?
+                ,
+                url: self.url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url", "url was not specified but it is required when building StartContentUploadOutput")
+                    )?
+                ,
+                url_expiry: self.url_expiry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url_expiry", "url_expiry was not specified but it is required when building StartContentUploadOutput")
+                    )?
+                ,
+                headers_to_include: self.headers_to_include
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("headers_to_include", "headers_to_include was not specified but it is required when building StartContentUploadOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartContentUploadOutputBuilder {
@@ -198,3 +180,4 @@ impl ::std::fmt::Debug for StartContentUploadOutputBuilder {
         formatter.finish()
     }
 }
+

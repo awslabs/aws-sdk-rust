@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIntegrationInput {
+pub struct GetIntegrationInput  {
     /// <p>The API identifier.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration ID.</p>
     pub integration_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIntegrationInput {
+impl  GetIntegrationInput  {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_id(&self) -> ::std::option::Option<& str> {
         self.integration_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetIntegrationInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API identifier.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetIntegrationInputBuilder {
     }
     /// <p>The integration ID.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_id = input;
-        self
+        self.integration_id = input; self
     }
     /// <p>The integration ID.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }
     /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::operation::get_integration::GetIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_integration::GetIntegrationInput {
-            api_id: self.api_id,
-            integration_id: self.integration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_integration::GetIntegrationInput {
+                api_id: self.api_id
+                ,
+                integration_id: self.integration_id
+                ,
+            }
+        )
     }
 }
+

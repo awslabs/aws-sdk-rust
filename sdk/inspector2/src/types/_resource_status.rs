@@ -3,7 +3,7 @@
 /// <p>Details the status of Amazon Inspector for each resource type Amazon Inspector scans.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceStatus {
+pub struct ResourceStatus  {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     pub ec2: crate::types::Status,
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
@@ -13,21 +13,21 @@ pub struct ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
     pub lambda_code: ::std::option::Option<crate::types::Status>,
 }
-impl ResourceStatus {
+impl  ResourceStatus  {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
-    pub fn ec2(&self) -> &crate::types::Status {
+    pub fn ec2(&self) -> & crate::types::Status {
         &self.ec2
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
-    pub fn ecr(&self) -> &crate::types::Status {
+    pub fn ecr(&self) -> & crate::types::Status {
         &self.ecr
     }
     /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::Status> {
         self.lambda.as_ref()
     }
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
-    pub fn lambda_code(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn lambda_code(&self) -> ::std::option::Option<& crate::types::Status> {
         self.lambda_code.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ResourceStatusBuilder {
     }
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     pub fn set_ec2(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.ec2 = input;
-        self
+        self.ec2 = input; self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     pub fn get_ec2(&self) -> &::std::option::Option<crate::types::Status> {
@@ -71,8 +70,7 @@ impl ResourceStatusBuilder {
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn set_ecr(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.ecr = input;
-        self
+        self.ecr = input; self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn get_ecr(&self) -> &::std::option::Option<crate::types::Status> {
@@ -85,8 +83,7 @@ impl ResourceStatusBuilder {
     }
     /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::Status> {
@@ -99,8 +96,7 @@ impl ResourceStatusBuilder {
     }
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
     pub fn set_lambda_code(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.lambda_code = input;
-        self
+        self.lambda_code = input; self
     }
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
     pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::Status> {
@@ -111,21 +107,24 @@ impl ResourceStatusBuilder {
     /// - [`ec2`](crate::types::builders::ResourceStatusBuilder::ec2)
     /// - [`ecr`](crate::types::builders::ResourceStatusBuilder::ecr)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceStatus {
-            ec2: self.ec2.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ec2",
-                    "ec2 was not specified but it is required when building ResourceStatus",
-                )
-            })?,
-            ecr: self.ecr.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ecr",
-                    "ecr was not specified but it is required when building ResourceStatus",
-                )
-            })?,
-            lambda: self.lambda,
-            lambda_code: self.lambda_code,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceStatus {
+                ec2: self.ec2
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ec2", "ec2 was not specified but it is required when building ResourceStatus")
+                    )?
+                ,
+                ecr: self.ecr
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ecr", "ecr was not specified but it is required when building ResourceStatus")
+                    )?
+                ,
+                lambda: self.lambda
+                ,
+                lambda_code: self.lambda_code
+                ,
+            }
+        )
     }
 }
+

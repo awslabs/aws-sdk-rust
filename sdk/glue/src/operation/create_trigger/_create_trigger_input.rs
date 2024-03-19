@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTriggerInput {
+pub struct CreateTriggerInput  {
     /// <p>The name of the trigger.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow associated with the trigger.</p>
@@ -16,47 +16,48 @@ pub struct CreateTriggerInput {
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>The actions initiated by this trigger when it fires.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     /// <p>A description of the new trigger.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub start_on_creation: ::std::option::Option<bool>,
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
-impl CreateTriggerInput {
+impl  CreateTriggerInput  {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>The type of the new trigger.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TriggerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TriggerType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
-    pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
+    pub fn predicate(&self) -> ::std::option::Option<& crate::types::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>The actions initiated by this trigger when it fires.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description of the new trigger.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
@@ -64,11 +65,11 @@ impl CreateTriggerInput {
         self.start_on_creation
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn event_batching_condition(&self) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
+    pub fn event_batching_condition(&self) -> ::std::option::Option<& crate::types::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
     }
 }
@@ -88,10 +89,10 @@ pub struct CreateTriggerInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TriggerType>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) start_on_creation: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl CreateTriggerInputBuilder {
@@ -103,8 +104,7 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>The name of the trigger.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trigger.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +117,7 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>The name of the workflow associated with the trigger.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow associated with the trigger.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>The type of the new trigger.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the new trigger.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
@@ -148,8 +146,7 @@ impl CreateTriggerInputBuilder {
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
@@ -165,8 +162,7 @@ impl CreateTriggerInputBuilder {
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
-        self.predicate = input;
-        self
+        self.predicate = input; self
     }
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
@@ -180,17 +176,16 @@ impl CreateTriggerInputBuilder {
     /// <p>The actions initiated by this trigger when it fires.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions initiated by this trigger when it fires.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions initiated by this trigger when it fires.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// <p>A description of the new trigger.</p>
@@ -200,8 +195,7 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>A description of the new trigger.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the new trigger.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +208,7 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub fn set_start_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.start_on_creation = input;
-        self
+        self.start_on_creation = input; self
     }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub fn get_start_on_creation(&self) -> &::std::option::Option<bool> {
@@ -228,17 +221,16 @@ impl CreateTriggerInputBuilder {
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
@@ -248,28 +240,38 @@ impl CreateTriggerInputBuilder {
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn set_event_batching_condition(mut self, input: ::std::option::Option<crate::types::EventBatchingCondition>) -> Self {
-        self.event_batching_condition = input;
-        self
+        self.event_batching_condition = input; self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn get_event_batching_condition(&self) -> &::std::option::Option<crate::types::EventBatchingCondition> {
         &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`CreateTriggerInput`](crate::operation::create_trigger::CreateTriggerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_trigger::CreateTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trigger::CreateTriggerInput {
-            name: self.name,
-            workflow_name: self.workflow_name,
-            r#type: self.r#type,
-            schedule: self.schedule,
-            predicate: self.predicate,
-            actions: self.actions,
-            description: self.description,
-            start_on_creation: self.start_on_creation,
-            tags: self.tags,
-            event_batching_condition: self.event_batching_condition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trigger::CreateTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_trigger::CreateTriggerInput {
+                name: self.name
+                ,
+                workflow_name: self.workflow_name
+                ,
+                r#type: self.r#type
+                ,
+                schedule: self.schedule
+                ,
+                predicate: self.predicate
+                ,
+                actions: self.actions
+                ,
+                description: self.description
+                ,
+                start_on_creation: self.start_on_creation
+                ,
+                tags: self.tags
+                ,
+                event_batching_condition: self.event_batching_condition
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,8 @@
 /// Teletext Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TeletextDestinationSettings {}
+pub struct TeletextDestinationSettings  {
+}
 impl TeletextDestinationSettings {
     /// Creates a new builder-style object to manufacture [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
     pub fn builder() -> crate::types::builders::TeletextDestinationSettingsBuilder {
@@ -14,10 +15,13 @@ impl TeletextDestinationSettings {
 /// A builder for [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct TeletextDestinationSettingsBuilder {}
+pub struct TeletextDestinationSettingsBuilder {
+}
 impl TeletextDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
     pub fn build(self) -> crate::types::TeletextDestinationSettings {
-        crate::types::TeletextDestinationSettings {}
+        crate::types::TeletextDestinationSettings {
+        }
     }
 }
+

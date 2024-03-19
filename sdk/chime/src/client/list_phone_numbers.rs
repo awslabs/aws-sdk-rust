@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPhoneNumbers`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`status(PhoneNumberStatus)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::status) / [`set_status(Option<PhoneNumberStatus>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_status):<br>required: **false**<br><p>The phone number status.</p><br>
     ///   - [`product_type(PhoneNumberProductType)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_product_type):<br>required: **false**<br><p>The phone number product type.</p><br>
     ///   - [`filter_name(PhoneNumberAssociationName)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::filter_name) / [`set_filter_name(Option<PhoneNumberAssociationName>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_filter_name):<br>required: **false**<br><p>The filter to use to limit the number of results.</p><br>
     ///   - [`filter_value(impl Into<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::filter_value) / [`set_filter_value(Option<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_filter_value):<br>required: **false**<br><p>The value to use for the filter.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput) with field(s):
+                            /// - On success, responds with [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput) with field(s):
     ///   - [`phone_numbers(Option<Vec::<PhoneNumber>>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::phone_numbers): <p>The phone number details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::operation::list_phone_numbers::ListPhoneNumbersError)
+                            /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::operation::list_phone_numbers::ListPhoneNumbersError)
     pub fn list_phone_numbers(&self) -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder {
-        crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConformancePackComplianceScoresOutput {
+pub struct ListConformancePackComplianceScoresOutput  {
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub conformance_pack_compliance_scores: ::std::vec::Vec<crate::types::ConformancePackComplianceScore>,
+    pub conformance_pack_compliance_scores: ::std::vec::Vec::<crate::types::ConformancePackComplianceScore>,
     _request_id: Option<String>,
 }
-impl ListConformancePackComplianceScoresOutput {
+impl  ListConformancePackComplianceScoresOutput  {
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub fn conformance_pack_compliance_scores(&self) -> &[crate::types::ConformancePackComplianceScore] {
-        use std::ops::Deref;
-        self.conformance_pack_compliance_scores.deref()
+    pub fn conformance_pack_compliance_scores(&self) -> & [crate::types::ConformancePackComplianceScore] {
+        use std::ops::Deref; self.conformance_pack_compliance_scores.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConformancePackComplianceScoresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConformancePackComplianceScoresOutput {
     /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresOutput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput).
     pub fn builder() -> crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder {
@@ -37,7 +36,7 @@ impl ListConformancePackComplianceScoresOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConformancePackComplianceScoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) conformance_pack_compliance_scores: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>>,
+    pub(crate) conformance_pack_compliance_scores: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackComplianceScore>>,
     _request_id: Option<String>,
 }
 impl ListConformancePackComplianceScoresOutputBuilder {
@@ -48,8 +47,7 @@ impl ListConformancePackComplianceScoresOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,40 +60,31 @@ impl ListConformancePackComplianceScoresOutputBuilder {
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
     pub fn conformance_pack_compliance_scores(mut self, input: crate::types::ConformancePackComplianceScore) -> Self {
         let mut v = self.conformance_pack_compliance_scores.unwrap_or_default();
-        v.push(input);
-        self.conformance_pack_compliance_scores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conformance_pack_compliance_scores = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub fn set_conformance_pack_compliance_scores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>>,
-    ) -> Self {
-        self.conformance_pack_compliance_scores = input;
-        self
+    pub fn set_conformance_pack_compliance_scores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackComplianceScore>>) -> Self {
+        self.conformance_pack_compliance_scores = input; self
     }
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub fn get_conformance_pack_compliance_scores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>> {
+    pub fn get_conformance_pack_compliance_scores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackComplianceScore>> {
         &self.conformance_pack_compliance_scores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConformancePackComplianceScoresOutput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`conformance_pack_compliance_scores`](crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder::conformance_pack_compliance_scores)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput {
                 next_token: self.next_token
@@ -110,3 +99,4 @@ impl ListConformancePackComplianceScoresOutputBuilder {
         )
     }
 }
+

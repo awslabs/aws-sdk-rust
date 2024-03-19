@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResourceDefinitionVersionInput {
+pub struct CreateResourceDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the resource definition.
     pub resource_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of resources.
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
-impl CreateResourceDefinitionVersionInput {
+impl  CreateResourceDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_definition_id(&self) -> ::std::option::Option<& str> {
         self.resource_definition_id.as_deref()
     }
     /// A list of resources.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResourceDefinitionVersionInput {
@@ -39,7 +40,7 @@ impl CreateResourceDefinitionVersionInput {
 pub struct CreateResourceDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
 impl CreateResourceDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -49,8 +50,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
     }
     /// The ID of the resource definition.
     pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_definition_id = input;
-        self
+        self.resource_definition_id = input; self
     }
     /// The ID of the resource definition.
     pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,32 +77,30 @@ impl CreateResourceDefinitionVersionInputBuilder {
     /// A list of resources.
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of resources.
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// A list of resources.
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token,
-                resource_definition_id: self.resource_definition_id,
-                resources: self.resources,
-            },
+                amzn_client_token: self.amzn_client_token
+                ,
+                resource_definition_id: self.resource_definition_id
+                ,
+                resources: self.resources
+                ,
+            }
         )
     }
 }
+

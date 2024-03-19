@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadSetExportJobOutput {
+pub struct GetReadSetExportJobOutput  {
     /// <p>The job's ID.</p>
     pub id: ::std::string::String,
     /// <p>The job's sequence store ID.</p>
@@ -18,53 +18,51 @@ pub struct GetReadSetExportJobOutput {
     /// <p>When the job completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's read sets.</p>
-    pub read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetDetail>>,
+    pub read_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ExportReadSetDetail>>,
     _request_id: Option<String>,
 }
-impl GetReadSetExportJobOutput {
+impl  GetReadSetExportJobOutput  {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sequence_store_id.deref()
+    pub fn sequence_store_id(&self) -> & str {
+        use std::ops::Deref; self.sequence_store_id.deref()
     }
     /// <p>The job's destination in Amazon S3.</p>
-    pub fn destination(&self) -> &str {
-        use std::ops::Deref;
-        self.destination.deref()
+    pub fn destination(&self) -> & str {
+        use std::ops::Deref; self.destination.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> &crate::types::ReadSetExportJobStatus {
+    pub fn status(&self) -> & crate::types::ReadSetExportJobStatus {
         &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The job's read sets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_sets.is_none()`.
-    pub fn read_sets(&self) -> &[crate::types::ExportReadSetDetail] {
-        self.read_sets.as_deref().unwrap_or_default()
+    pub fn read_sets(&self) -> & [crate::types::ExportReadSetDetail] {
+        self.read_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReadSetExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReadSetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetExportJobOutput`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput).
     pub fn builder() -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder {
@@ -83,7 +81,7 @@ pub struct GetReadSetExportJobOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetDetail>>,
+    pub(crate) read_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ExportReadSetDetail>>,
     _request_id: Option<String>,
 }
 impl GetReadSetExportJobOutputBuilder {
@@ -95,8 +93,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>The job's sequence store ID.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The job's sequence store ID.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>The job's destination in Amazon S3.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The job's destination in Amazon S3.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +135,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>The job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetExportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetExportJobStatus> {
@@ -154,8 +148,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>The job's status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The job's status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +162,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>When the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +175,7 @@ impl GetReadSetExportJobOutputBuilder {
     }
     /// <p>When the job completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>When the job completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,28 +188,27 @@ impl GetReadSetExportJobOutputBuilder {
     /// <p>The job's read sets.</p>
     pub fn read_sets(mut self, input: crate::types::ExportReadSetDetail) -> Self {
         let mut v = self.read_sets.unwrap_or_default();
-        v.push(input);
-        self.read_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.read_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The job's read sets.</p>
-    pub fn set_read_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetDetail>>) -> Self {
-        self.read_sets = input;
-        self
+    pub fn set_read_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExportReadSetDetail>>) -> Self {
+        self.read_sets = input; self
     }
     /// <p>The job's read sets.</p>
-    pub fn get_read_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportReadSetDetail>> {
+    pub fn get_read_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExportReadSetDetail>> {
         &self.read_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReadSetExportJobOutput`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder::id)
@@ -226,45 +216,43 @@ impl GetReadSetExportJobOutputBuilder {
     /// - [`destination`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder::destination)
     /// - [`status`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder::status)
     /// - [`creation_time`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_read_set_export_job::GetReadSetExportJobOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetReadSetExportJobOutput",
-                )
-            })?,
-            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sequence_store_id",
-                    "sequence_store_id was not specified but it is required when building GetReadSetExportJobOutput",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building GetReadSetExportJobOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetReadSetExportJobOutput",
-                )
-            })?,
-            status_message: self.status_message,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetReadSetExportJobOutput",
-                )
-            })?,
-            completion_time: self.completion_time,
-            read_sets: self.read_sets,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_read_set_export_job::GetReadSetExportJobOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetReadSetExportJobOutput")
+                    )?
+                ,
+                sequence_store_id: self.sequence_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sequence_store_id", "sequence_store_id was not specified but it is required when building GetReadSetExportJobOutput")
+                    )?
+                ,
+                destination: self.destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination", "destination was not specified but it is required when building GetReadSetExportJobOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetReadSetExportJobOutput")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetReadSetExportJobOutput")
+                    )?
+                ,
+                completion_time: self.completion_time
+                ,
+                read_sets: self.read_sets
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

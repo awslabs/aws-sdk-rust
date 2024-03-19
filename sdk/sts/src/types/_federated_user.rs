@@ -3,22 +3,20 @@
 /// <p>Identifiers for the federated user that is associated with the credentials.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FederatedUser {
+pub struct FederatedUser  {
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     pub federated_user_id: ::std::string::String,
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub arn: ::std::string::String,
 }
-impl FederatedUser {
+impl  FederatedUser  {
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
-    pub fn federated_user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.federated_user_id.deref()
+    pub fn federated_user_id(&self) -> & str {
+        use std::ops::Deref; self.federated_user_id.deref()
     }
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl FederatedUser {
@@ -44,8 +42,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     pub fn set_federated_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.federated_user_id = input;
-        self
+        self.federated_user_id = input; self
     }
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     pub fn get_federated_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FederatedUserBuilder {
     }
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FederatedUserBuilder {
     /// - [`federated_user_id`](crate::types::builders::FederatedUserBuilder::federated_user_id)
     /// - [`arn`](crate::types::builders::FederatedUserBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::FederatedUser, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FederatedUser {
-            federated_user_id: self.federated_user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "federated_user_id",
-                    "federated_user_id was not specified but it is required when building FederatedUser",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building FederatedUser",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FederatedUser {
+                federated_user_id: self.federated_user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("federated_user_id", "federated_user_id was not specified but it is required when building FederatedUser")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building FederatedUser")
+                    )?
+                ,
+            }
+        )
     }
 }
+

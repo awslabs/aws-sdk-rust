@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fuotadevicestatus = unimplemented!();
 /// match fuotadevicestatus {
@@ -39,16 +39,14 @@
 /// Specifically, when `fuotadevicestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FuotaDeviceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The status of a wireless device in a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     FragAlgoUnsupported,
@@ -74,100 +72,89 @@ pub enum FuotaDeviceStatus {
     WrongDescriptor,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FuotaDeviceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FragAlgo_unsupported" => FuotaDeviceStatus::FragAlgoUnsupported,
-            "FragIndex_unsupported" => FuotaDeviceStatus::FragIndexUnsupported,
-            "Initial" => FuotaDeviceStatus::Initial,
-            "MICError" => FuotaDeviceStatus::MicError,
-            "MemoryError" => FuotaDeviceStatus::MemoryError,
-            "MissingFrag" => FuotaDeviceStatus::MissingFrag,
-            "Not_enough_memory" => FuotaDeviceStatus::NotEnoughMemory,
-            "Package_Not_Supported" => FuotaDeviceStatus::PackageNotSupported,
-            "SessionCnt_replay" => FuotaDeviceStatus::SessionCntReplay,
-            "Successful" => FuotaDeviceStatus::Successful,
-            "Wrong_descriptor" => FuotaDeviceStatus::WrongDescriptor,
-            other => FuotaDeviceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FragAlgo_unsupported" => FuotaDeviceStatus::FragAlgoUnsupported,
+"FragIndex_unsupported" => FuotaDeviceStatus::FragIndexUnsupported,
+"Initial" => FuotaDeviceStatus::Initial,
+"MICError" => FuotaDeviceStatus::MicError,
+"MemoryError" => FuotaDeviceStatus::MemoryError,
+"MissingFrag" => FuotaDeviceStatus::MissingFrag,
+"Not_enough_memory" => FuotaDeviceStatus::NotEnoughMemory,
+"Package_Not_Supported" => FuotaDeviceStatus::PackageNotSupported,
+"SessionCnt_replay" => FuotaDeviceStatus::SessionCntReplay,
+"Successful" => FuotaDeviceStatus::Successful,
+"Wrong_descriptor" => FuotaDeviceStatus::WrongDescriptor,
+other => FuotaDeviceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FuotaDeviceStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FuotaDeviceStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FuotaDeviceStatus::from(s))
+                    }
+                }
 impl FuotaDeviceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FuotaDeviceStatus::FragAlgoUnsupported => "FragAlgo_unsupported",
-            FuotaDeviceStatus::FragIndexUnsupported => "FragIndex_unsupported",
-            FuotaDeviceStatus::Initial => "Initial",
-            FuotaDeviceStatus::MicError => "MICError",
-            FuotaDeviceStatus::MemoryError => "MemoryError",
-            FuotaDeviceStatus::MissingFrag => "MissingFrag",
-            FuotaDeviceStatus::NotEnoughMemory => "Not_enough_memory",
-            FuotaDeviceStatus::PackageNotSupported => "Package_Not_Supported",
-            FuotaDeviceStatus::SessionCntReplay => "SessionCnt_replay",
-            FuotaDeviceStatus::Successful => "Successful",
-            FuotaDeviceStatus::WrongDescriptor => "Wrong_descriptor",
-            FuotaDeviceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FragAlgo_unsupported",
-            "FragIndex_unsupported",
-            "Initial",
-            "MICError",
-            "MemoryError",
-            "MissingFrag",
-            "Not_enough_memory",
-            "Package_Not_Supported",
-            "SessionCnt_replay",
-            "Successful",
-            "Wrong_descriptor",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FuotaDeviceStatus::FragAlgoUnsupported => "FragAlgo_unsupported",
+    FuotaDeviceStatus::FragIndexUnsupported => "FragIndex_unsupported",
+    FuotaDeviceStatus::Initial => "Initial",
+    FuotaDeviceStatus::MicError => "MICError",
+    FuotaDeviceStatus::MemoryError => "MemoryError",
+    FuotaDeviceStatus::MissingFrag => "MissingFrag",
+    FuotaDeviceStatus::NotEnoughMemory => "Not_enough_memory",
+    FuotaDeviceStatus::PackageNotSupported => "Package_Not_Supported",
+    FuotaDeviceStatus::SessionCntReplay => "SessionCnt_replay",
+    FuotaDeviceStatus::Successful => "Successful",
+    FuotaDeviceStatus::WrongDescriptor => "Wrong_descriptor",
+    FuotaDeviceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FragAlgo_unsupported", "FragIndex_unsupported", "Initial", "MICError", "MemoryError", "MissingFrag", "Not_enough_memory", "Package_Not_Supported", "SessionCnt_replay", "Successful", "Wrong_descriptor"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FuotaDeviceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FuotaDeviceStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FuotaDeviceStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FuotaDeviceStatus::FragAlgoUnsupported => write!(f, "FragAlgo_unsupported"),
-            FuotaDeviceStatus::FragIndexUnsupported => write!(f, "FragIndex_unsupported"),
-            FuotaDeviceStatus::Initial => write!(f, "Initial"),
-            FuotaDeviceStatus::MicError => write!(f, "MICError"),
-            FuotaDeviceStatus::MemoryError => write!(f, "MemoryError"),
-            FuotaDeviceStatus::MissingFrag => write!(f, "MissingFrag"),
-            FuotaDeviceStatus::NotEnoughMemory => write!(f, "Not_enough_memory"),
-            FuotaDeviceStatus::PackageNotSupported => write!(f, "Package_Not_Supported"),
-            FuotaDeviceStatus::SessionCntReplay => write!(f, "SessionCnt_replay"),
-            FuotaDeviceStatus::Successful => write!(f, "Successful"),
-            FuotaDeviceStatus::WrongDescriptor => write!(f, "Wrong_descriptor"),
-            FuotaDeviceStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FuotaDeviceStatus::FragAlgoUnsupported => write!(f, "FragAlgo_unsupported"),
+FuotaDeviceStatus::FragIndexUnsupported => write!(f, "FragIndex_unsupported"),
+FuotaDeviceStatus::Initial => write!(f, "Initial"),
+FuotaDeviceStatus::MicError => write!(f, "MICError"),
+FuotaDeviceStatus::MemoryError => write!(f, "MemoryError"),
+FuotaDeviceStatus::MissingFrag => write!(f, "MissingFrag"),
+FuotaDeviceStatus::NotEnoughMemory => write!(f, "Not_enough_memory"),
+FuotaDeviceStatus::PackageNotSupported => write!(f, "Package_Not_Supported"),
+FuotaDeviceStatus::SessionCntReplay => write!(f, "SessionCnt_replay"),
+FuotaDeviceStatus::Successful => write!(f, "Successful"),
+FuotaDeviceStatus::WrongDescriptor => write!(f, "Wrong_descriptor"),
+FuotaDeviceStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

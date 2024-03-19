@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetQueueAttributesInput {
+pub struct SetQueueAttributesInput  {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
@@ -100,12 +100,12 @@ pub struct SetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>>,
 }
-impl SetQueueAttributesInput {
+impl  SetQueueAttributesInput  {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
     /// <p>A map of attributes to set.</p>
@@ -201,7 +201,7 @@ impl SetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -217,7 +217,7 @@ impl SetQueueAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetQueueAttributesInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>>,
 }
 impl SetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
@@ -230,8 +230,7 @@ impl SetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -337,9 +336,9 @@ impl SetQueueAttributesInputBuilder {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attributes(mut self, k: crate::types::QueueAttributeName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of attributes to set.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
@@ -434,12 +433,8 @@ impl SetQueueAttributesInputBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A map of attributes to set.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
@@ -534,17 +529,19 @@ impl SetQueueAttributesInputBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::QueueAttributeName, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SetQueueAttributesInput`](crate::operation::set_queue_attributes::SetQueueAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_queue_attributes::SetQueueAttributesInput {
-            queue_url: self.queue_url,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_queue_attributes::SetQueueAttributesInput {
+                queue_url: self.queue_url
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

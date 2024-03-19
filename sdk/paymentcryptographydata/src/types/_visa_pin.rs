@@ -3,11 +3,11 @@
 /// <p>Parameters that are required to generate or verify Visa PIN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisaPin {
+pub struct VisaPin  {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub pin_verification_key_index: i32,
 }
-impl VisaPin {
+impl  VisaPin  {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn pin_verification_key_index(&self) -> i32 {
         self.pin_verification_key_index
@@ -35,8 +35,7 @@ impl VisaPinBuilder {
     }
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn set_pin_verification_key_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pin_verification_key_index = input;
-        self
+        self.pin_verification_key_index = input; self
     }
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn get_pin_verification_key_index(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl VisaPinBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pin_verification_key_index`](crate::types::builders::VisaPinBuilder::pin_verification_key_index)
     pub fn build(self) -> ::std::result::Result<crate::types::VisaPin, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VisaPin {
-            pin_verification_key_index: self.pin_verification_key_index.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_verification_key_index",
-                    "pin_verification_key_index was not specified but it is required when building VisaPin",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VisaPin {
+                pin_verification_key_index: self.pin_verification_key_index
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_verification_key_index", "pin_verification_key_index was not specified but it is required when building VisaPin")
+                    )?
+                ,
+            }
+        )
     }
 }
+

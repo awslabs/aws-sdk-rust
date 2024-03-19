@@ -3,19 +3,19 @@
 /// <p>Information about the action that automatically creates the dataset's contents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetActionSummary {
+pub struct DatasetActionSummary  {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub action_type: ::std::option::Option<crate::types::DatasetActionType>,
 }
-impl DatasetActionSummary {
+impl  DatasetActionSummary  {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::DatasetActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::DatasetActionType> {
         self.action_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DatasetActionSummaryBuilder {
     }
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DatasetActionSummaryBuilder {
     }
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::DatasetActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::DatasetActionType> {
@@ -65,8 +63,11 @@ impl DatasetActionSummaryBuilder {
     /// Consumes the builder and constructs a [`DatasetActionSummary`](crate::types::DatasetActionSummary).
     pub fn build(self) -> crate::types::DatasetActionSummary {
         crate::types::DatasetActionSummary {
-            action_name: self.action_name,
-            action_type: self.action_type,
+            action_name: self.action_name
+            ,
+            action_type: self.action_type
+            ,
         }
     }
 }
+

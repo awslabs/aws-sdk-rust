@@ -3,13 +3,13 @@
 /// <p>Container for Payer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestPaymentConfiguration {
+pub struct RequestPaymentConfiguration  {
     /// <p>Specifies who pays for the download and request fees.</p>
     pub payer: crate::types::Payer,
 }
-impl RequestPaymentConfiguration {
+impl  RequestPaymentConfiguration  {
     /// <p>Specifies who pays for the download and request fees.</p>
-    pub fn payer(&self) -> &crate::types::Payer {
+    pub fn payer(&self) -> & crate::types::Payer {
         &self.payer
     }
 }
@@ -35,8 +35,7 @@ impl RequestPaymentConfigurationBuilder {
     }
     /// <p>Specifies who pays for the download and request fees.</p>
     pub fn set_payer(mut self, input: ::std::option::Option<crate::types::Payer>) -> Self {
-        self.payer = input;
-        self
+        self.payer = input; self
     }
     /// <p>Specifies who pays for the download and request fees.</p>
     pub fn get_payer(&self) -> &::std::option::Option<crate::types::Payer> {
@@ -46,13 +45,15 @@ impl RequestPaymentConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`payer`](crate::types::builders::RequestPaymentConfigurationBuilder::payer)
     pub fn build(self) -> ::std::result::Result<crate::types::RequestPaymentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RequestPaymentConfiguration {
-            payer: self.payer.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payer",
-                    "payer was not specified but it is required when building RequestPaymentConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RequestPaymentConfiguration {
+                payer: self.payer
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payer", "payer was not specified but it is required when building RequestPaymentConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

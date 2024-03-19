@@ -3,13 +3,13 @@
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoUsage {
+pub struct IoUsage  {
     /// <p>The number of read I/O requests that the command made.</p>
     pub read_ios: i64,
     /// <p>The number of write I/O requests that the command made.</p>
     pub write_ios: i64,
 }
-impl IoUsage {
+impl  IoUsage  {
     /// <p>The number of read I/O requests that the command made.</p>
     pub fn read_ios(&self) -> i64 {
         self.read_ios
@@ -41,8 +41,7 @@ impl IoUsageBuilder {
     }
     /// <p>The number of read I/O requests that the command made.</p>
     pub fn set_read_ios(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_ios = input;
-        self
+        self.read_ios = input; self
     }
     /// <p>The number of read I/O requests that the command made.</p>
     pub fn get_read_ios(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl IoUsageBuilder {
     }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn set_write_ios(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_ios = input;
-        self
+        self.write_ios = input; self
     }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn get_write_ios(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,13 @@ impl IoUsageBuilder {
     /// Consumes the builder and constructs a [`IoUsage`](crate::types::IoUsage).
     pub fn build(self) -> crate::types::IoUsage {
         crate::types::IoUsage {
-            read_ios: self.read_ios.unwrap_or_default(),
-            write_ios: self.write_ios.unwrap_or_default(),
+            read_ios: self.read_ios
+                .unwrap_or_default()
+            ,
+            write_ios: self.write_ios
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

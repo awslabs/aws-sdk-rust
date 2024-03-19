@@ -3,20 +3,19 @@
 /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceTag {
+pub struct ResourceTag  {
     /// <p>The tag key.</p>
     pub resource_tag_key: ::std::string::String,
     /// <p>The tag value.</p>
     pub resource_tag_value: ::std::option::Option<::std::string::String>,
 }
-impl ResourceTag {
+impl  ResourceTag  {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_tag_key.deref()
+    pub fn resource_tag_key(&self) -> & str {
+        use std::ops::Deref; self.resource_tag_key.deref()
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(&self) -> ::std::option::Option<&str> {
+    pub fn resource_tag_value(&self) -> ::std::option::Option<& str> {
         self.resource_tag_value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The tag key.</p>
     pub fn set_resource_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_tag_key = input;
-        self
+        self.resource_tag_key = input; self
     }
     /// <p>The tag key.</p>
     pub fn get_resource_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ResourceTagBuilder {
     }
     /// <p>The tag value.</p>
     pub fn set_resource_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_tag_value = input;
-        self
+        self.resource_tag_value = input; self
     }
     /// <p>The tag value.</p>
     pub fn get_resource_tag_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ResourceTagBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_tag_key`](crate::types::builders::ResourceTagBuilder::resource_tag_key)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceTag {
-            resource_tag_key: self.resource_tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_tag_key",
-                    "resource_tag_key was not specified but it is required when building ResourceTag",
-                )
-            })?,
-            resource_tag_value: self.resource_tag_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceTag {
+                resource_tag_key: self.resource_tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_tag_key", "resource_tag_key was not specified but it is required when building ResourceTag")
+                    )?
+                ,
+                resource_tag_value: self.resource_tag_value
+                ,
+            }
+        )
     }
 }
+

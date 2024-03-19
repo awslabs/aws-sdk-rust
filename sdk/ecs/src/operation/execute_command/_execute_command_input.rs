@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteCommandInput {
+pub struct ExecuteCommandInput  {
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
@@ -14,17 +14,17 @@ pub struct ExecuteCommandInput {
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     pub task: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteCommandInput {
+impl  ExecuteCommandInput  {
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
-    pub fn container(&self) -> ::std::option::Option<&str> {
+    pub fn container(&self) -> ::std::option::Option<& str> {
         self.container.as_deref()
     }
     /// <p>The command to run on the container.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
@@ -32,7 +32,7 @@ impl ExecuteCommandInput {
         self.interactive
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-    pub fn task(&self) -> ::std::option::Option<&str> {
+    pub fn task(&self) -> ::std::option::Option<& str> {
         self.task.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ExecuteCommandInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ExecuteCommandInputBuilder {
     }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
     }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
     pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ExecuteCommandInputBuilder {
     }
     /// <p>The command to run on the container.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The command to run on the container.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ExecuteCommandInputBuilder {
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
     pub fn set_interactive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.interactive = input;
-        self
+        self.interactive = input; self
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
     pub fn get_interactive(&self) -> &::std::option::Option<bool> {
@@ -120,23 +116,28 @@ impl ExecuteCommandInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
         &self.task
     }
     /// Consumes the builder and constructs a [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_command::ExecuteCommandInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_command::ExecuteCommandInput {
-            cluster: self.cluster,
-            container: self.container,
-            command: self.command,
-            interactive: self.interactive,
-            task: self.task,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_command::ExecuteCommandInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_command::ExecuteCommandInput {
+                cluster: self.cluster
+                ,
+                container: self.container
+                ,
+                command: self.command
+                ,
+                interactive: self.interactive
+                ,
+                task: self.task
+                ,
+            }
+        )
     }
 }
+

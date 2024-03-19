@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowInput {
+pub struct GetWorkflowInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow. To rerieve a list of workflow IDs, use <code>ListWorkflows</code>.</p>
@@ -10,17 +10,17 @@ pub struct GetWorkflowInput {
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowInput {
+impl  GetWorkflowInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The ID of the workflow. To rerieve a list of workflow IDs, use <code>ListWorkflows</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>The ID of the workflow. To rerieve a list of workflow IDs, use <code>ListWorkflows</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the workflow. To rerieve a list of workflow IDs, use <code>ListWorkflows</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl GetWorkflowInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
-            space_name: self.space_name,
-            id: self.id,
-            project_name: self.project_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow::GetWorkflowInput {
+                space_name: self.space_name
+                ,
+                id: self.id
+                ,
+                project_name: self.project_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceInput {
+pub struct DeleteServiceInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service to delete.</p>
@@ -10,13 +10,13 @@ pub struct DeleteServiceInput {
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeleteServiceInput {
+impl  DeleteServiceInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The name of the service to delete.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
@@ -47,8 +47,7 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>The name of the service to delete.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The name of the service to delete.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DeleteServiceInputBuilder {
     }
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            cluster: self.cluster,
-            service: self.service,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_service::DeleteServiceInput {
+                cluster: self.cluster
+                ,
+                service: self.service
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

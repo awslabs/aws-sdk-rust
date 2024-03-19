@@ -5,56 +5,52 @@ pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_clust
 
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_db_cluster_to_point_in_time();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_db_cluster_to_point_in_time();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
-///
+/// 
 /// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p><note>
 /// <p>This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBClusterToPointInTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder,
+                    inner: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-    > for RestoreDBClusterToPointInTimeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+                    crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
+                > for RestoreDBClusterToPointInTimeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+                        crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// Creates a new `RestoreDBClusterToPointInTime`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-        crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput, crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -352,12 +339,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self
     }
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -370,12 +357,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self
     }
     /// <p>The tags to be applied to the restored DB cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be applied to the restored DB cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
@@ -449,12 +436,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
@@ -538,3 +525,4 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self.inner.get_storage_type()
     }
 }
+

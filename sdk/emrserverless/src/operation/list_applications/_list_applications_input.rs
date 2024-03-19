@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsInput {
+pub struct ListApplicationsInput  {
     /// <p>The token for the next set of application results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of applications that can be listed.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>,
 }
-impl ListApplicationsInput {
+impl  ListApplicationsInput  {
     /// <p>The token for the next set of application results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of applications that can be listed.</p>
@@ -20,10 +20,11 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::ApplicationState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::ApplicationState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListApplicationsInput {
@@ -39,7 +40,7 @@ impl ListApplicationsInput {
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>,
 }
 impl ListApplicationsInputBuilder {
     /// <p>The token for the next set of application results.</p>
@@ -49,8 +50,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The token for the next set of application results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of application results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +63,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The maximum number of applications that can be listed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of applications that can be listed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,27 +76,30 @@ impl ListApplicationsInputBuilder {
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
     pub fn states(mut self, input: crate::types::ApplicationState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>) -> Self {
+        self.states = input; self
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>> {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            states: self.states,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applications::ListApplicationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                states: self.states
+                ,
+            }
+        )
     }
 }
+

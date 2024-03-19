@@ -3,7 +3,7 @@
 /// <p>Describes the current SSL/TLS certificate that is in use for the domain. If you are using <code>CreateDomainAssociation</code> to create a new domain association, <code>Certificate</code> describes the new certificate that you are creating.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Certificate {
+pub struct Certificate  {
     /// <p>The type of SSL/TLS certificate that you want to use.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i> .</p>
@@ -14,20 +14,20 @@ pub struct Certificate {
     /// <p>The DNS record for certificate verification.</p>
     pub certificate_verification_dns_record: ::std::option::Option<::std::string::String>,
 }
-impl Certificate {
+impl  Certificate  {
     /// <p>The type of SSL/TLS certificate that you want to use.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i> .</p>
-    pub fn r#type(&self) -> &crate::types::CertificateType {
+    pub fn r#type(&self) -> & crate::types::CertificateType {
         &self.r#type
     }
     /// <p>The Amazon resource name (ARN) for a custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
-    pub fn custom_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_certificate_arn.as_deref()
     }
     /// <p>The DNS record for certificate verification.</p>
-    pub fn certificate_verification_dns_record(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_verification_dns_record(&self) -> ::std::option::Option<& str> {
         self.certificate_verification_dns_record.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl CertificateBuilder {
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i> .</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of SSL/TLS certificate that you want to use.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
@@ -77,8 +76,7 @@ impl CertificateBuilder {
     /// <p>The Amazon resource name (ARN) for a custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
     pub fn set_custom_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_certificate_arn = input;
-        self
+        self.custom_certificate_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) for a custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
@@ -92,8 +90,7 @@ impl CertificateBuilder {
     }
     /// <p>The DNS record for certificate verification.</p>
     pub fn set_certificate_verification_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_verification_dns_record = input;
-        self
+        self.certificate_verification_dns_record = input; self
     }
     /// <p>The DNS record for certificate verification.</p>
     pub fn get_certificate_verification_dns_record(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,15 +100,19 @@ impl CertificateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::CertificateBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Certificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Certificate {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Certificate",
-                )
-            })?,
-            custom_certificate_arn: self.custom_certificate_arn,
-            certificate_verification_dns_record: self.certificate_verification_dns_record,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Certificate {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Certificate")
+                    )?
+                ,
+                custom_certificate_arn: self.custom_certificate_arn
+                ,
+                certificate_verification_dns_record: self.certificate_verification_dns_record
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateHealthCheckInput {
+pub struct DisassociateHealthCheckInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from.</p>
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub health_check_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateHealthCheckInput {
+impl  DisassociateHealthCheckInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from.</p>
-    pub fn protection_id(&self) -> ::std::option::Option<&str> {
+    pub fn protection_id(&self) -> ::std::option::Option<& str> {
         self.protection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
-    pub fn health_check_arn(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_arn(&self) -> ::std::option::Option<& str> {
         self.health_check_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateHealthCheckInputBuilder {
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from.</p>
     pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protection_id = input;
-        self
+        self.protection_id = input; self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from.</p>
     pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DisassociateHealthCheckInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub fn set_health_check_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check_arn = input;
-        self
+        self.health_check_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub fn get_health_check_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_arn
     }
     /// Consumes the builder and constructs a [`DisassociateHealthCheckInput`](crate::operation::disassociate_health_check::DisassociateHealthCheckInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_health_check::DisassociateHealthCheckInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_health_check::DisassociateHealthCheckInput {
-            protection_id: self.protection_id,
-            health_check_arn: self.health_check_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_health_check::DisassociateHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_health_check::DisassociateHealthCheckInput {
+                protection_id: self.protection_id
+                ,
+                health_check_arn: self.health_check_arn
+                ,
+            }
+        )
     }
 }
+

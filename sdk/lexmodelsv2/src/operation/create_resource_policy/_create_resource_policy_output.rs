@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResourcePolicyOutput {
+pub struct CreateResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateResourcePolicyOutput {
+impl  CreateResourcePolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateResourcePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourcePolicyOutput`](crate::operation::create_resource_policy::CreateResourcePolicyOutput).
     pub fn builder() -> crate::operation::create_resource_policy::builders::CreateResourcePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateResourcePolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateResourcePolicyOutputBuilder {
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateResourcePolicyOutput`](crate::operation::create_resource_policy::CreateResourcePolicyOutput).
     pub fn build(self) -> crate::operation::create_resource_policy::CreateResourcePolicyOutput {
         crate::operation::create_resource_policy::CreateResourcePolicyOutput {
-            resource_arn: self.resource_arn,
-            revision_id: self.revision_id,
+            resource_arn: self.resource_arn
+            ,
+            revision_id: self.revision_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

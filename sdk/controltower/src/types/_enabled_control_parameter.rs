@@ -3,20 +3,19 @@
 /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledControlParameter {
+pub struct EnabledControlParameter  {
     /// <p>The key of a key/value pair.</p>
     pub key: ::std::string::String,
     /// <p>The value of a key/value pair.</p>
     pub value: ::aws_smithy_types::Document,
 }
-impl EnabledControlParameter {
+impl  EnabledControlParameter  {
     /// <p>The key of a key/value pair.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value of a key/value pair.</p>
-    pub fn value(&self) -> &::aws_smithy_types::Document {
+    pub fn value(&self) -> & ::aws_smithy_types::Document {
         &self.value
     }
 }
@@ -43,8 +42,7 @@ impl EnabledControlParameterBuilder {
     }
     /// <p>The key of a key/value pair.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of a key/value pair.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl EnabledControlParameterBuilder {
     }
     /// <p>The value of a key/value pair.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a key/value pair.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -70,19 +67,20 @@ impl EnabledControlParameterBuilder {
     /// - [`key`](crate::types::builders::EnabledControlParameterBuilder::key)
     /// - [`value`](crate::types::builders::EnabledControlParameterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EnabledControlParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnabledControlParameter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building EnabledControlParameter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building EnabledControlParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnabledControlParameter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building EnabledControlParameter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building EnabledControlParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

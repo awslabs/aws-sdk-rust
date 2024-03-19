@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetPropertiesInput {
+pub struct ListAssetPropertiesInput  {
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -19,13 +19,13 @@ pub struct ListAssetPropertiesInput {
     /// <p>Default: <code>BASE</code></p>
     pub filter: ::std::option::Option<crate::types::ListAssetPropertiesFilter>,
 }
-impl ListAssetPropertiesInput {
+impl  ListAssetPropertiesInput  {
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
@@ -40,7 +40,7 @@ impl ListAssetPropertiesInput {
     /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ListAssetPropertiesFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ListAssetPropertiesFilter> {
         self.filter.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -125,8 +122,7 @@ impl ListAssetPropertiesInputBuilder {
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetPropertiesFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
@@ -140,15 +136,19 @@ impl ListAssetPropertiesInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListAssetPropertiesInput`](crate::operation::list_asset_properties::ListAssetPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_asset_properties::ListAssetPropertiesInput {
-            asset_id: self.asset_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filter: self.filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_asset_properties::ListAssetPropertiesInput {
+                asset_id: self.asset_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

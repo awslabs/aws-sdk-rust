@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateRecommendationLifecycleInput {
+pub struct UpdateRecommendationLifecycleInput  {
     /// <p>The new lifecycle stage</p>
     pub lifecycle_stage: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>,
     /// <p>Reason for the lifecycle stage change</p>
@@ -12,25 +12,25 @@ pub struct UpdateRecommendationLifecycleInput {
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRecommendationLifecycleInput {
+impl  UpdateRecommendationLifecycleInput  {
     /// <p>The new lifecycle stage</p>
-    pub fn lifecycle_stage(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationLifecycleStage> {
+    pub fn lifecycle_stage(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationLifecycleStage> {
         self.lifecycle_stage.as_ref()
     }
     /// <p>Reason for the lifecycle stage change</p>
-    pub fn update_reason(&self) -> ::std::option::Option<&str> {
+    pub fn update_reason(&self) -> ::std::option::Option<& str> {
         self.update_reason.as_deref()
     }
     /// <p>Reason code for the lifecycle state change</p>
-    pub fn update_reason_code(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationLifecycleStageReasonCode> {
+    pub fn update_reason_code(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationLifecycleStageReasonCode> {
         self.update_reason_code.as_ref()
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
-    pub fn recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.recommendation_identifier.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateRecommendationLifecycleInput {
+impl  ::std::fmt::Debug for UpdateRecommendationLifecycleInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecommendationLifecycleInput");
         formatter.field("lifecycle_stage", &self.lifecycle_stage);
@@ -65,8 +65,7 @@ impl UpdateRecommendationLifecycleInputBuilder {
     }
     /// <p>The new lifecycle stage</p>
     pub fn set_lifecycle_stage(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>) -> Self {
-        self.lifecycle_stage = input;
-        self
+        self.lifecycle_stage = input; self
     }
     /// <p>The new lifecycle stage</p>
     pub fn get_lifecycle_stage(&self) -> &::std::option::Option<crate::types::UpdateRecommendationLifecycleStage> {
@@ -79,8 +78,7 @@ impl UpdateRecommendationLifecycleInputBuilder {
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn set_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_reason = input;
-        self
+        self.update_reason = input; self
     }
     /// <p>Reason for the lifecycle stage change</p>
     pub fn get_update_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateRecommendationLifecycleInputBuilder {
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn set_update_reason_code(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode>) -> Self {
-        self.update_reason_code = input;
-        self
+        self.update_reason_code = input; self
     }
     /// <p>Reason code for the lifecycle state change</p>
     pub fn get_update_reason_code(&self) -> &::std::option::Option<crate::types::UpdateRecommendationLifecycleStageReasonCode> {
@@ -108,26 +105,26 @@ impl UpdateRecommendationLifecycleInputBuilder {
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub fn set_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_identifier = input;
-        self
+        self.recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier for AWS Trusted Advisor Priority recommendations</p>
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_identifier
     }
     /// Consumes the builder and constructs a [`UpdateRecommendationLifecycleInput`](crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput {
-            lifecycle_stage: self.lifecycle_stage,
-            update_reason: self.update_reason,
-            update_reason_code: self.update_reason_code,
-            recommendation_identifier: self.recommendation_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput {
+                lifecycle_stage: self.lifecycle_stage
+                ,
+                update_reason: self.update_reason
+                ,
+                update_reason_code: self.update_reason_code
+                ,
+                recommendation_identifier: self.recommendation_identifier
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateRecommendationLifecycleInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for UpdateRecommendationLifecycleInputBuilder {
         formatter.finish()
     }
 }
+

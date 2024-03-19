@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHumanTaskUiInput {
+pub struct DeleteHumanTaskUiInput  {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHumanTaskUiInput {
+impl  DeleteHumanTaskUiInput  {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    pub fn human_task_ui_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_name(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteHumanTaskUiInputBuilder {
     }
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_name = input;
-        self
+        self.human_task_ui_name = input; self
     }
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_task_ui_name
     }
     /// Consumes the builder and constructs a [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
-            human_task_ui_name: self.human_task_ui_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
+                human_task_ui_name: self.human_task_ui_name
+                ,
+            }
+        )
     }
 }
+

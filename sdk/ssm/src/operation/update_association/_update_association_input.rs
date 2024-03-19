@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAssociationInput {
+pub struct UpdateAssociationInput  {
     /// <p>The ID of the association you want to update.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The document version you want update for the association.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
@@ -24,7 +24,7 @@ pub struct UpdateAssociationInput {
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The targets of the association.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>The name of the association that you want to update.</p>
     pub association_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
@@ -48,9 +48,9 @@ pub struct UpdateAssociationInput {
     /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     pub apply_only_at_cron_interval: ::std::option::Option<bool>,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub calendar_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
-    pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub target_locations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
     /// </note>
@@ -65,32 +65,31 @@ pub struct UpdateAssociationInput {
     /// </ul>
     pub duration: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub target_maps:
-        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    pub target_maps: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
-impl UpdateAssociationInput {
+impl  UpdateAssociationInput  {
     /// <p>The ID of the association you want to update.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The document version you want update for the association.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The cron expression used to schedule the association that you want to update.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::InstanceAssociationOutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::InstanceAssociationOutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
@@ -100,45 +99,46 @@ impl UpdateAssociationInput {
     /// <p>For example:</p>
     /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The targets of the association.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the association that you want to update.</p>
-    pub fn association_name(&self) -> ::std::option::Option<&str> {
+    pub fn association_name(&self) -> ::std::option::Option<& str> {
         self.association_name.as_deref()
     }
     /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
-    pub fn association_version(&self) -> ::std::option::Option<&str> {
+    pub fn association_version(&self) -> ::std::option::Option<& str> {
         self.association_version.as_deref()
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn automation_target_parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn automation_target_parameter_name(&self) -> ::std::option::Option<& str> {
         self.automation_target_parameter_name.as_deref()
     }
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
-    pub fn max_errors(&self) -> ::std::option::Option<&str> {
+    pub fn max_errors(&self) -> ::std::option::Option<& str> {
         self.max_errors.as_deref()
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
-    pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> ::std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The severity level to assign to the association.</p>
-    pub fn compliance_severity(&self) -> ::std::option::Option<&crate::types::AssociationComplianceSeverity> {
+    pub fn compliance_severity(&self) -> ::std::option::Option<& crate::types::AssociationComplianceSeverity> {
         self.compliance_severity.as_ref()
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    pub fn sync_compliance(&self) -> ::std::option::Option<&crate::types::AssociationSyncCompliance> {
+    pub fn sync_compliance(&self) -> ::std::option::Option<& crate::types::AssociationSyncCompliance> {
         self.sync_compliance.as_ref()
     }
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
@@ -148,16 +148,18 @@ impl UpdateAssociationInput {
         self.apply_only_at_cron_interval
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
-    pub fn calendar_names(&self) -> &[::std::string::String] {
-        self.calendar_names.as_deref().unwrap_or_default()
+    pub fn calendar_names(&self) -> & [::std::string::String] {
+        self.calendar_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
-    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
-        self.target_locations.as_deref().unwrap_or_default()
+    pub fn target_locations(&self) -> & [crate::types::TargetLocation] {
+        self.target_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
@@ -177,17 +179,18 @@ impl UpdateAssociationInput {
         self.duration
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
-    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
-        self.target_maps.as_deref().unwrap_or_default()
+    pub fn target_maps(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>] {
+        self.target_maps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> ::std::option::Option<& crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAssociationInput {
+impl  ::std::fmt::Debug for UpdateAssociationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssociationInput");
         formatter.field("association_id", &self.association_id);
@@ -226,12 +229,12 @@ impl UpdateAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) association_name: ::std::option::Option<::std::string::String>,
     pub(crate) association_version: ::std::option::Option<::std::string::String>,
     pub(crate) automation_target_parameter_name: ::std::option::Option<::std::string::String>,
@@ -240,12 +243,11 @@ pub struct UpdateAssociationInputBuilder {
     pub(crate) compliance_severity: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
     pub(crate) sync_compliance: ::std::option::Option<crate::types::AssociationSyncCompliance>,
     pub(crate) apply_only_at_cron_interval: ::std::option::Option<bool>,
-    pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>,
     pub(crate) schedule_offset: ::std::option::Option<i32>,
     pub(crate) duration: ::std::option::Option<i32>,
-    pub(crate) target_maps:
-        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    pub(crate) target_maps: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl UpdateAssociationInputBuilder {
@@ -257,8 +259,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>The ID of the association you want to update.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association you want to update.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,24 +270,18 @@ impl UpdateAssociationInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// <p>The document version you want update for the association.</p><important>
@@ -300,8 +295,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The document version you want update for the association.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
@@ -316,8 +310,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>The cron expression used to schedule the association that you want to update.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>The cron expression used to schedule the association that you want to update.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +323,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::InstanceAssociationOutputLocation> {
@@ -356,8 +348,7 @@ impl UpdateAssociationInputBuilder {
     /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
@@ -376,17 +367,16 @@ impl UpdateAssociationInputBuilder {
     /// <p>The targets of the association.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets of the association.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets of the association.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>The name of the association that you want to update.</p>
@@ -396,8 +386,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>The name of the association that you want to update.</p>
     pub fn set_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_name = input;
-        self
+        self.association_name = input; self
     }
     /// <p>The name of the association that you want to update.</p>
     pub fn get_association_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -410,8 +399,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
     pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_version = input;
-        self
+        self.association_version = input; self
     }
     /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
     pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -424,8 +412,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub fn set_automation_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.automation_target_parameter_name = input;
-        self
+        self.automation_target_parameter_name = input; self
     }
     /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
     pub fn get_automation_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -440,8 +427,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_errors = input;
-        self
+        self.max_errors = input; self
     }
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
@@ -457,8 +443,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
@@ -472,8 +457,7 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>The severity level to assign to the association.</p>
     pub fn set_compliance_severity(mut self, input: ::std::option::Option<crate::types::AssociationComplianceSeverity>) -> Self {
-        self.compliance_severity = input;
-        self
+        self.compliance_severity = input; self
     }
     /// <p>The severity level to assign to the association.</p>
     pub fn get_compliance_severity(&self) -> &::std::option::Option<crate::types::AssociationComplianceSeverity> {
@@ -490,8 +474,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn set_sync_compliance(mut self, input: ::std::option::Option<crate::types::AssociationSyncCompliance>) -> Self {
-        self.sync_compliance = input;
-        self
+        self.sync_compliance = input; self
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
@@ -510,8 +493,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
     /// <p>You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
     pub fn set_apply_only_at_cron_interval(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_only_at_cron_interval = input;
-        self
+        self.apply_only_at_cron_interval = input; self
     }
     /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
     /// <p>If you chose this option when you created an association and later you edit that association or you make changes to the SSM document on which that association is based (by using the Documents page in the console), State Manager applies the association at the next specified cron interval. For example, if you chose the <code>Latest</code> version of an SSM document when you created an association and you edit the association by choosing a different document version on the Documents page, State Manager applies the association at the next specified cron interval if you previously selected this option. If this option wasn't selected, State Manager immediately runs the association.</p>
@@ -526,17 +508,16 @@ impl UpdateAssociationInputBuilder {
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
     pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calendar_names.unwrap_or_default();
-        v.push(input.into());
-        self.calendar_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.calendar_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.calendar_names = input;
-        self
+    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.calendar_names = input; self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.calendar_names
     }
     /// Appends an item to `target_locations`.
@@ -546,17 +527,16 @@ impl UpdateAssociationInputBuilder {
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         let mut v = self.target_locations.unwrap_or_default();
-        v.push(input);
-        self.target_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
-    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
-        self.target_locations = input;
-        self
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>>) -> Self {
+        self.target_locations = input; self
     }
     /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
-    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetLocation>> {
         &self.target_locations
     }
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
@@ -570,8 +550,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
     /// </note>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.schedule_offset = input;
-        self
+        self.schedule_offset = input; self
     }
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
@@ -600,8 +579,7 @@ impl UpdateAssociationInputBuilder {
     /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
     /// </ul>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
     /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
@@ -619,24 +597,18 @@ impl UpdateAssociationInputBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>) -> Self {
         let mut v = self.target_maps.unwrap_or_default();
-        v.push(input);
-        self.target_maps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_maps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn set_target_maps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
-    ) -> Self {
-        self.target_maps = input;
-        self
+    pub fn set_target_maps(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>>) -> Self {
+        self.target_maps = input; self
     }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn get_target_maps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
+    pub fn get_target_maps(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>> {
         &self.target_maps
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
@@ -646,40 +618,60 @@ impl UpdateAssociationInputBuilder {
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.alarm_configuration = input;
-        self
+        self.alarm_configuration = input; self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_association::UpdateAssociationInput {
-            association_id: self.association_id,
-            parameters: self.parameters,
-            document_version: self.document_version,
-            schedule_expression: self.schedule_expression,
-            output_location: self.output_location,
-            name: self.name,
-            targets: self.targets,
-            association_name: self.association_name,
-            association_version: self.association_version,
-            automation_target_parameter_name: self.automation_target_parameter_name,
-            max_errors: self.max_errors,
-            max_concurrency: self.max_concurrency,
-            compliance_severity: self.compliance_severity,
-            sync_compliance: self.sync_compliance,
-            apply_only_at_cron_interval: self.apply_only_at_cron_interval,
-            calendar_names: self.calendar_names,
-            target_locations: self.target_locations,
-            schedule_offset: self.schedule_offset,
-            duration: self.duration,
-            target_maps: self.target_maps,
-            alarm_configuration: self.alarm_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_association::UpdateAssociationInput {
+                association_id: self.association_id
+                ,
+                parameters: self.parameters
+                ,
+                document_version: self.document_version
+                ,
+                schedule_expression: self.schedule_expression
+                ,
+                output_location: self.output_location
+                ,
+                name: self.name
+                ,
+                targets: self.targets
+                ,
+                association_name: self.association_name
+                ,
+                association_version: self.association_version
+                ,
+                automation_target_parameter_name: self.automation_target_parameter_name
+                ,
+                max_errors: self.max_errors
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                compliance_severity: self.compliance_severity
+                ,
+                sync_compliance: self.sync_compliance
+                ,
+                apply_only_at_cron_interval: self.apply_only_at_cron_interval
+                ,
+                calendar_names: self.calendar_names
+                ,
+                target_locations: self.target_locations
+                ,
+                schedule_offset: self.schedule_offset
+                ,
+                duration: self.duration
+                ,
+                target_maps: self.target_maps
+                ,
+                alarm_configuration: self.alarm_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAssociationInputBuilder {
@@ -709,3 +701,4 @@ impl ::std::fmt::Debug for UpdateAssociationInputBuilder {
         formatter.finish()
     }
 }
+

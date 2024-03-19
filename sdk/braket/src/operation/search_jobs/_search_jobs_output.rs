@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchJobsOutput {
+pub struct SearchJobsOutput  {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub jobs: ::std::vec::Vec<crate::types::JobSummary>,
+    pub jobs: ::std::vec::Vec::<crate::types::JobSummary>,
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchJobsOutput {
+impl  SearchJobsOutput  {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn jobs(&self) -> &[crate::types::JobSummary] {
-        use std::ops::Deref;
-        self.jobs.deref()
+    pub fn jobs(&self) -> & [crate::types::JobSummary] {
+        use std::ops::Deref; self.jobs.deref()
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchJobsOutput {
     /// Creates a new builder-style object to manufacture [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
     pub fn builder() -> crate::operation::search_jobs::builders::SearchJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl SearchJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchJobsOutputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl SearchJobsOutputBuilder {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     pub fn jobs(mut self, input: crate::types::JobSummary) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobSummary>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobSummary>> {
         &self.jobs
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
@@ -68,35 +66,37 @@ impl SearchJobsOutputBuilder {
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`jobs`](crate::operation::search_jobs::builders::SearchJobsOutputBuilder::jobs)
     pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsOutput {
-            jobs: self.jobs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "jobs",
-                    "jobs was not specified but it is required when building SearchJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search_jobs::SearchJobsOutput {
+                jobs: self.jobs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("jobs", "jobs was not specified but it is required when building SearchJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

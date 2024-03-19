@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestGridSessionArtifactsInput {
+pub struct ListTestGridSessionArtifactsInput  {
     /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Limit results to a specified type of artifact.</p>
@@ -12,13 +12,13 @@ pub struct ListTestGridSessionArtifactsInput {
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTestGridSessionArtifactsInput {
+impl  ListTestGridSessionArtifactsInput  {
     /// <p>The ARN of a <code>TestGridSession</code>.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn session_arn(&self) -> ::std::option::Option<& str> {
         self.session_arn.as_deref()
     }
     /// <p>Limit results to a specified type of artifact.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestGridSessionArtifactCategory> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TestGridSessionArtifactCategory> {
         self.r#type.as_ref()
     }
     /// <p>The maximum number of results to be returned by a request.</p>
@@ -26,7 +26,7 @@ impl ListTestGridSessionArtifactsInput {
         self.max_result
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
     }
     /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
     }
     /// <p>The ARN of a <code>TestGridSession</code>.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
     }
     /// <p>Limit results to a specified type of artifact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Limit results to a specified type of artifact.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
@@ -83,8 +81,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
     }
     /// <p>The maximum number of results to be returned by a request.</p>
     pub fn set_max_result(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_result = input;
-        self
+        self.max_result = input; self
     }
     /// <p>The maximum number of results to be returned by a request.</p>
     pub fn get_max_result(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl ListTestGridSessionArtifactsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionArtifactsInput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
-            session_arn: self.session_arn,
-            r#type: self.r#type,
-            max_result: self.max_result,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
+                session_arn: self.session_arn
+                ,
+                r#type: self.r#type
+                ,
+                max_result: self.max_result
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

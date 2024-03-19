@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAddOnInput {
+pub struct EnableAddOnInput  {
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub add_on_request: ::std::option::Option<crate::types::AddOnRequest>,
 }
-impl EnableAddOnInput {
+impl  EnableAddOnInput  {
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
-    pub fn add_on_request(&self) -> ::std::option::Option<&crate::types::AddOnRequest> {
+    pub fn add_on_request(&self) -> ::std::option::Option<& crate::types::AddOnRequest> {
         self.add_on_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EnableAddOnInputBuilder {
     }
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the source resource for which to enable or modify the add-on.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl EnableAddOnInputBuilder {
     }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub fn set_add_on_request(mut self, input: ::std::option::Option<crate::types::AddOnRequest>) -> Self {
-        self.add_on_request = input;
-        self
+        self.add_on_request = input; self
     }
     /// <p>An array of strings representing the add-on to enable or modify.</p>
     pub fn get_add_on_request(&self) -> &::std::option::Option<crate::types::AddOnRequest> {
@@ -65,9 +63,14 @@ impl EnableAddOnInputBuilder {
     }
     /// Consumes the builder and constructs a [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_add_on::EnableAddOnInput {
-            resource_name: self.resource_name,
-            add_on_request: self.add_on_request,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::enable_add_on::EnableAddOnInput {
+                resource_name: self.resource_name
+                ,
+                add_on_request: self.add_on_request
+                ,
+            }
+        )
     }
 }
+

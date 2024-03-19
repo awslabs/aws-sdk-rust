@@ -3,33 +3,33 @@
 /// <p>The configuration for the URI path route type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UriPathRouteInput {
+pub struct UriPathRouteInput  {
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub source_path: ::std::string::String,
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.</p>
     pub activation_state: crate::types::RouteActivationState,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
-    pub methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
+    pub methods: ::std::option::Option<::std::vec::Vec::<crate::types::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub include_child_paths: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub append_source_path: ::std::option::Option<bool>,
 }
-impl UriPathRouteInput {
+impl  UriPathRouteInput  {
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
-    pub fn source_path(&self) -> &str {
-        use std::ops::Deref;
-        self.source_path.deref()
+    pub fn source_path(&self) -> & str {
+        use std::ops::Deref; self.source_path.deref()
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.</p>
-    pub fn activation_state(&self) -> &crate::types::RouteActivationState {
+    pub fn activation_state(&self) -> & crate::types::RouteActivationState {
         &self.activation_state
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.methods.is_none()`.
-    pub fn methods(&self) -> &[crate::types::HttpMethod] {
-        self.methods.as_deref().unwrap_or_default()
+    pub fn methods(&self) -> & [crate::types::HttpMethod] {
+        self.methods.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn include_child_paths(&self) -> ::std::option::Option<bool> {
@@ -53,7 +53,7 @@ impl UriPathRouteInput {
 pub struct UriPathRouteInputBuilder {
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
-    pub(crate) methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
+    pub(crate) methods: ::std::option::Option<::std::vec::Vec::<crate::types::HttpMethod>>,
     pub(crate) include_child_paths: ::std::option::Option<bool>,
     pub(crate) append_source_path: ::std::option::Option<bool>,
 }
@@ -66,8 +66,7 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
     }
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
     pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.</p>
     pub fn set_activation_state(mut self, input: ::std::option::Option<crate::types::RouteActivationState>) -> Self {
-        self.activation_state = input;
-        self
+        self.activation_state = input; self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created.</p>
     pub fn get_activation_state(&self) -> &::std::option::Option<crate::types::RouteActivationState> {
@@ -95,17 +93,16 @@ impl UriPathRouteInputBuilder {
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
     pub fn methods(mut self, input: crate::types::HttpMethod) -> Self {
         let mut v = self.methods.unwrap_or_default();
-        v.push(input);
-        self.methods = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.methods = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
-    pub fn set_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>) -> Self {
-        self.methods = input;
-        self
+    pub fn set_methods(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HttpMethod>>) -> Self {
+        self.methods = input; self
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service.</p>
-    pub fn get_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>> {
+    pub fn get_methods(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HttpMethod>> {
         &self.methods
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
@@ -115,8 +112,7 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn set_include_child_paths(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_child_paths = input;
-        self
+        self.include_child_paths = input; self
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn get_include_child_paths(&self) -> &::std::option::Option<bool> {
@@ -129,8 +125,7 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub fn set_append_source_path(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.append_source_path = input;
-        self
+        self.append_source_path = input; self
     }
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
     pub fn get_append_source_path(&self) -> &::std::option::Option<bool> {
@@ -141,22 +136,26 @@ impl UriPathRouteInputBuilder {
     /// - [`source_path`](crate::types::builders::UriPathRouteInputBuilder::source_path)
     /// - [`activation_state`](crate::types::builders::UriPathRouteInputBuilder::activation_state)
     pub fn build(self) -> ::std::result::Result<crate::types::UriPathRouteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UriPathRouteInput {
-            source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_path",
-                    "source_path was not specified but it is required when building UriPathRouteInput",
-                )
-            })?,
-            activation_state: self.activation_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activation_state",
-                    "activation_state was not specified but it is required when building UriPathRouteInput",
-                )
-            })?,
-            methods: self.methods,
-            include_child_paths: self.include_child_paths,
-            append_source_path: self.append_source_path,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UriPathRouteInput {
+                source_path: self.source_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_path", "source_path was not specified but it is required when building UriPathRouteInput")
+                    )?
+                ,
+                activation_state: self.activation_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activation_state", "activation_state was not specified but it is required when building UriPathRouteInput")
+                    )?
+                ,
+                methods: self.methods
+                ,
+                include_child_paths: self.include_child_paths
+                ,
+                append_source_path: self.append_source_path
+                ,
+            }
+        )
     }
 }
+

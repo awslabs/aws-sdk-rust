@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAssetRevisionInput {
+pub struct CreateAssetRevisionInput  {
     /// <p>Te revised name of the asset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the domain where the asset is being revised.</p>
@@ -14,57 +14,59 @@ pub struct CreateAssetRevisionInput {
     /// <p>The revised description of the asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
-    pub forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub prediction_configuration: ::std::option::Option<crate::types::PredictionConfiguration>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateAssetRevisionInput {
+impl  CreateAssetRevisionInput  {
     /// <p>Te revised name of the asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the domain where the asset is being revised.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the asset.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The revision type of the asset.</p>
-    pub fn type_revision(&self) -> ::std::option::Option<&str> {
+    pub fn type_revision(&self) -> ::std::option::Option<& str> {
         self.type_revision.as_deref()
     }
     /// <p>The revised description of the asset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forms_input.is_none()`.
-    pub fn forms_input(&self) -> &[crate::types::FormInput] {
-        self.forms_input.as_deref().unwrap_or_default()
+    pub fn forms_input(&self) -> & [crate::types::FormInput] {
+        self.forms_input.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
-    pub fn prediction_configuration(&self) -> ::std::option::Option<&crate::types::PredictionConfiguration> {
+    pub fn prediction_configuration(&self) -> ::std::option::Option<& crate::types::PredictionConfiguration> {
         self.prediction_configuration.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateAssetRevisionInput {
+impl  ::std::fmt::Debug for CreateAssetRevisionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssetRevisionInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -95,8 +97,8 @@ pub struct CreateAssetRevisionInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) type_revision: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     pub(crate) prediction_configuration: ::std::option::Option<crate::types::PredictionConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -109,8 +111,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>Te revised name of the asset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Te revised name of the asset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +125,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>The unique identifier of the domain where the asset is being revised.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The unique identifier of the domain where the asset is being revised.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +139,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>The identifier of the asset.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the asset.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +152,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>The revision type of the asset.</p>
     pub fn set_type_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_revision = input;
-        self
+        self.type_revision = input; self
     }
     /// <p>The revision type of the asset.</p>
     pub fn get_type_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +165,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>The revised description of the asset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The revised description of the asset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,17 +178,16 @@ impl CreateAssetRevisionInputBuilder {
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms to be attached to the asset as part of asset revision.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Appends an item to `forms_input`.
@@ -201,17 +197,16 @@ impl CreateAssetRevisionInputBuilder {
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
     pub fn forms_input(mut self, input: crate::types::FormInput) -> Self {
         let mut v = self.forms_input.unwrap_or_default();
-        v.push(input);
-        self.forms_input = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.forms_input = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
-    pub fn set_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>) -> Self {
-        self.forms_input = input;
-        self
+    pub fn set_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>) -> Self {
+        self.forms_input = input; self
     }
     /// <p>The metadata forms to be attached to the asset as part of asset revision.</p>
-    pub fn get_forms_input(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
+    pub fn get_forms_input(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FormInput>> {
         &self.forms_input
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
@@ -221,8 +216,7 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn set_prediction_configuration(mut self, input: ::std::option::Option<crate::types::PredictionConfiguration>) -> Self {
-        self.prediction_configuration = input;
-        self
+        self.prediction_configuration = input; self
     }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn get_prediction_configuration(&self) -> &::std::option::Option<crate::types::PredictionConfiguration> {
@@ -235,29 +229,36 @@ impl CreateAssetRevisionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAssetRevisionInput`](crate::operation::create_asset_revision::CreateAssetRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_asset_revision::CreateAssetRevisionInput {
-            name: self.name,
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            type_revision: self.type_revision,
-            description: self.description,
-            glossary_terms: self.glossary_terms,
-            forms_input: self.forms_input,
-            prediction_configuration: self.prediction_configuration,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_asset_revision::CreateAssetRevisionInput {
+                name: self.name
+                ,
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                type_revision: self.type_revision
+                ,
+                description: self.description
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+                forms_input: self.forms_input
+                ,
+                prediction_configuration: self.prediction_configuration
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAssetRevisionInputBuilder {
@@ -275,3 +276,4 @@ impl ::std::fmt::Debug for CreateAssetRevisionInputBuilder {
         formatter.finish()
     }
 }
+

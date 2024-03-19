@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReviewTemplateAnswerInput {
+pub struct GetReviewTemplateAnswerInput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -13,20 +13,20 @@ pub struct GetReviewTemplateAnswerInput {
     /// <p>The ID of the question.</p>
     pub question_id: ::std::option::Option<::std::string::String>,
 }
-impl GetReviewTemplateAnswerInput {
+impl  GetReviewTemplateAnswerInput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl GetReviewTemplateAnswerInputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetReviewTemplateAnswerInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -93,24 +91,24 @@ impl GetReviewTemplateAnswerInputBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.question_id
     }
     /// Consumes the builder and constructs a [`GetReviewTemplateAnswerInput`](crate::operation::get_review_template_answer::GetReviewTemplateAnswerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_review_template_answer::GetReviewTemplateAnswerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_review_template_answer::GetReviewTemplateAnswerInput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-            question_id: self.question_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_review_template_answer::GetReviewTemplateAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerInput {
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+                question_id: self.question_id
+                ,
+            }
+        )
     }
 }
+

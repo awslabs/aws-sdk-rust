@@ -3,19 +3,19 @@
 /// <p>The source entity of the template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSourceEntity {
+pub struct TemplateSourceEntity  {
     /// <p>The source analysis, if it is based on an analysis.</p>
     pub source_analysis: ::std::option::Option<crate::types::TemplateSourceAnalysis>,
     /// <p>The source template, if it is based on an template.</p>
     pub source_template: ::std::option::Option<crate::types::TemplateSourceTemplate>,
 }
-impl TemplateSourceEntity {
+impl  TemplateSourceEntity  {
     /// <p>The source analysis, if it is based on an analysis.</p>
-    pub fn source_analysis(&self) -> ::std::option::Option<&crate::types::TemplateSourceAnalysis> {
+    pub fn source_analysis(&self) -> ::std::option::Option<& crate::types::TemplateSourceAnalysis> {
         self.source_analysis.as_ref()
     }
     /// <p>The source template, if it is based on an template.</p>
-    pub fn source_template(&self) -> ::std::option::Option<&crate::types::TemplateSourceTemplate> {
+    pub fn source_template(&self) -> ::std::option::Option<& crate::types::TemplateSourceTemplate> {
         self.source_template.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TemplateSourceEntityBuilder {
     }
     /// <p>The source analysis, if it is based on an analysis.</p>
     pub fn set_source_analysis(mut self, input: ::std::option::Option<crate::types::TemplateSourceAnalysis>) -> Self {
-        self.source_analysis = input;
-        self
+        self.source_analysis = input; self
     }
     /// <p>The source analysis, if it is based on an analysis.</p>
     pub fn get_source_analysis(&self) -> &::std::option::Option<crate::types::TemplateSourceAnalysis> {
@@ -55,8 +54,7 @@ impl TemplateSourceEntityBuilder {
     }
     /// <p>The source template, if it is based on an template.</p>
     pub fn set_source_template(mut self, input: ::std::option::Option<crate::types::TemplateSourceTemplate>) -> Self {
-        self.source_template = input;
-        self
+        self.source_template = input; self
     }
     /// <p>The source template, if it is based on an template.</p>
     pub fn get_source_template(&self) -> &::std::option::Option<crate::types::TemplateSourceTemplate> {
@@ -65,8 +63,11 @@ impl TemplateSourceEntityBuilder {
     /// Consumes the builder and constructs a [`TemplateSourceEntity`](crate::types::TemplateSourceEntity).
     pub fn build(self) -> crate::types::TemplateSourceEntity {
         crate::types::TemplateSourceEntity {
-            source_analysis: self.source_analysis,
-            source_template: self.source_template,
+            source_analysis: self.source_analysis
+            ,
+            source_template: self.source_template
+            ,
         }
     }
 }
+

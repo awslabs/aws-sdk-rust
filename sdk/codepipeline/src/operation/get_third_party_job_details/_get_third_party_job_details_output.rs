@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>GetThirdPartyJobDetails</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetThirdPartyJobDetailsOutput {
+pub struct GetThirdPartyJobDetailsOutput  {
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,
 }
-impl GetThirdPartyJobDetailsOutput {
+impl  GetThirdPartyJobDetailsOutput  {
     /// <p>The details of the job, including any protected values defined for the job.</p>
-    pub fn job_details(&self) -> ::std::option::Option<&crate::types::ThirdPartyJobDetails> {
+    pub fn job_details(&self) -> ::std::option::Option<& crate::types::ThirdPartyJobDetails> {
         self.job_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetThirdPartyJobDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetThirdPartyJobDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
     pub fn builder() -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsOutputBuilder {
@@ -41,27 +41,28 @@ impl GetThirdPartyJobDetailsOutputBuilder {
     }
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::ThirdPartyJobDetails>) -> Self {
-        self.job_details = input;
-        self
+        self.job_details = input; self
     }
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn get_job_details(&self) -> &::std::option::Option<crate::types::ThirdPartyJobDetails> {
         &self.job_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
     pub fn build(self) -> crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput {
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput {
-            job_details: self.job_details,
+            job_details: self.job_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

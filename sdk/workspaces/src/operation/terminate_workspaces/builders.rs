@@ -5,23 +5,20 @@ pub use crate::operation::terminate_workspaces::_terminate_workspaces_input::Ter
 
 impl TerminateWorkspacesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.terminate_workspaces();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::terminate_workspaces::TerminateWorkspacesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.terminate_workspaces();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TerminateWorkspaces`.
-///
+/// 
 /// <p>Terminates the specified WorkSpaces.</p><important>
 /// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services Support before terminating the WorkSpace.</p>
 /// </important>
@@ -33,33 +30,32 @@ impl TerminateWorkspacesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder,
+                    inner: crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        crate::operation::terminate_workspaces::TerminateWorkspacesError,
-    > for TerminateWorkspacesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
+                    crate::operation::terminate_workspaces::TerminateWorkspacesError,
+                > for TerminateWorkspacesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
+                        crate::operation::terminate_workspaces::TerminateWorkspacesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TerminateWorkspacesFluentBuilder {
     /// Creates a new `TerminateWorkspaces`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -68,53 +64,44 @@ impl TerminateWorkspacesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_workspaces::TerminateWorkspacesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::terminate_workspaces::TerminateWorkspaces::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::terminate_workspaces::TerminateWorkspaces::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::terminate_workspaces::TerminateWorkspacesOutput,
-        crate::operation::terminate_workspaces::TerminateWorkspacesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_workspaces::TerminateWorkspacesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::terminate_workspaces::TerminateWorkspaces::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::terminate_workspaces::TerminateWorkspaces::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::terminate_workspaces::TerminateWorkspacesOutput, crate::operation::terminate_workspaces::TerminateWorkspacesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `TerminateWorkspaceRequests`.
     ///
     /// To override the contents of this collection use [`set_terminate_workspace_requests`](Self::set_terminate_workspace_requests).
@@ -125,12 +112,13 @@ impl TerminateWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>) -> Self {
+    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>>) -> Self {
         self.inner = self.inner.set_terminate_workspace_requests(input);
         self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
+    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>> {
         self.inner.get_terminate_workspace_requests()
     }
 }
+

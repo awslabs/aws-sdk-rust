@@ -3,35 +3,34 @@
 /// <p>Contains the response to a successful <code>ListInstanceProfiles</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstanceProfilesOutput {
+pub struct ListInstanceProfilesOutput  {
     /// <p>A list of instance profiles.</p>
-    pub instance_profiles: ::std::vec::Vec<crate::types::InstanceProfile>,
+    pub instance_profiles: ::std::vec::Vec::<crate::types::InstanceProfile>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInstanceProfilesOutput {
+impl  ListInstanceProfilesOutput  {
     /// <p>A list of instance profiles.</p>
-    pub fn instance_profiles(&self) -> &[crate::types::InstanceProfile] {
-        use std::ops::Deref;
-        self.instance_profiles.deref()
+    pub fn instance_profiles(&self) -> & [crate::types::InstanceProfile] {
+        use std::ops::Deref; self.instance_profiles.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInstanceProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInstanceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
     pub fn builder() -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder {
@@ -43,7 +42,7 @@ impl ListInstanceProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesOutputBuilder {
-    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +55,16 @@ impl ListInstanceProfilesOutputBuilder {
     /// <p>A list of instance profiles.</p>
     pub fn instance_profiles(mut self, input: crate::types::InstanceProfile) -> Self {
         let mut v = self.instance_profiles.unwrap_or_default();
-        v.push(input);
-        self.instance_profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of instance profiles.</p>
-    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>) -> Self {
-        self.instance_profiles = input;
-        self
+    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>>) -> Self {
+        self.instance_profiles = input; self
     }
     /// <p>A list of instance profiles.</p>
-    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
+    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>> {
         &self.instance_profiles
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -76,8 +74,7 @@ impl ListInstanceProfilesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -90,39 +87,40 @@ impl ListInstanceProfilesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_profiles`](crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder::instance_profiles)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_instance_profiles::ListInstanceProfilesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
-            instance_profiles: self.instance_profiles.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_profiles",
-                    "instance_profiles was not specified but it is required when building ListInstanceProfilesOutput",
-                )
-            })?,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_instance_profiles::ListInstanceProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
+                instance_profiles: self.instance_profiles
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_profiles", "instance_profiles was not specified but it is required when building ListInstanceProfilesOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

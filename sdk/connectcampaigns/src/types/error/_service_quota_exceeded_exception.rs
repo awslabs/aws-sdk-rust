@@ -3,29 +3,27 @@
 /// Request would cause a service quota to be exceeded.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// A header that defines the error encountered while processing the request.
     pub x_amz_error_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ServiceQuotaExceededException {
+impl  ServiceQuotaExceededException  {
     /// A header that defines the error encountered while processing the request.
-    pub fn x_amz_error_type(&self) -> ::std::option::Option<&str> {
+    pub fn x_amz_error_type(&self) -> ::std::option::Option<& str> {
         self.x_amz_error_type.as_deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -39,9 +37,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ServiceQuotaExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceQuotaExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
@@ -67,8 +63,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,39 +76,39 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// A header that defines the error encountered while processing the request.
     pub fn set_x_amz_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x_amz_error_type = input;
-        self
+        self.x_amz_error_type = input; self
     }
     /// A header that defines the error encountered while processing the request.
     pub fn get_x_amz_error_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_amz_error_type
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ServiceQuotaExceededException",
-                )
-            })?,
-            x_amz_error_type: self.x_amz_error_type,
-            meta: self.meta.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::error::ServiceQuotaExceededException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ServiceQuotaExceededException")
+                    )?
+                ,
+                x_amz_error_type: self.x_amz_error_type
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

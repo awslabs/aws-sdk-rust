@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogAnomalyDetectorsInput {
+pub struct ListLogAnomalyDetectorsInput  {
     /// <p>Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group.</p>
     pub filter_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
@@ -10,9 +10,9 @@ pub struct ListLogAnomalyDetectorsInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLogAnomalyDetectorsInput {
+impl  ListLogAnomalyDetectorsInput  {
     /// <p>Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group.</p>
-    pub fn filter_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn filter_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.filter_log_group_arn.as_deref()
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
@@ -20,7 +20,7 @@ impl ListLogAnomalyDetectorsInput {
         self.limit
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListLogAnomalyDetectorsInputBuilder {
     }
     /// <p>Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group.</p>
     pub fn set_filter_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_log_group_arn = input;
-        self
+        self.filter_log_group_arn = input; self
     }
     /// <p>Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group.</p>
     pub fn get_filter_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListLogAnomalyDetectorsInputBuilder {
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl ListLogAnomalyDetectorsInputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLogAnomalyDetectorsInput`](crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput {
-            filter_log_group_arn: self.filter_log_group_arn,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput {
+                filter_log_group_arn: self.filter_log_group_arn
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

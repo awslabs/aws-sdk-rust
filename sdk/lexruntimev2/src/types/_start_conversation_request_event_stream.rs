@@ -38,11 +38,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`AudioInputEvent`](crate::types::StartConversationRequestEventStream::AudioInputEvent), extracting the inner [`AudioInputEvent`](crate::types::AudioInputEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_input_event(&self) -> ::std::result::Result<&crate::types::AudioInputEvent, &Self> {
-        if let StartConversationRequestEventStream::AudioInputEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::AudioInputEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AudioInputEvent`](crate::types::StartConversationRequestEventStream::AudioInputEvent).
     pub fn is_audio_input_event(&self) -> bool {
@@ -51,11 +47,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::types::StartConversationRequestEventStream::ConfigurationEvent), extracting the inner [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_configuration_event(&self) -> ::std::result::Result<&crate::types::ConfigurationEvent, &Self> {
-        if let StartConversationRequestEventStream::ConfigurationEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::ConfigurationEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConfigurationEvent`](crate::types::StartConversationRequestEventStream::ConfigurationEvent).
     pub fn is_configuration_event(&self) -> bool {
@@ -64,11 +56,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`DisconnectionEvent`](crate::types::StartConversationRequestEventStream::DisconnectionEvent), extracting the inner [`DisconnectionEvent`](crate::types::DisconnectionEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_disconnection_event(&self) -> ::std::result::Result<&crate::types::DisconnectionEvent, &Self> {
-        if let StartConversationRequestEventStream::DisconnectionEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::DisconnectionEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DisconnectionEvent`](crate::types::StartConversationRequestEventStream::DisconnectionEvent).
     pub fn is_disconnection_event(&self) -> bool {
@@ -77,11 +65,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`DtmfInputEvent`](crate::types::StartConversationRequestEventStream::DtmfInputEvent), extracting the inner [`DtmfInputEvent`](crate::types::DtmfInputEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dtmf_input_event(&self) -> ::std::result::Result<&crate::types::DtmfInputEvent, &Self> {
-        if let StartConversationRequestEventStream::DtmfInputEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::DtmfInputEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DtmfInputEvent`](crate::types::StartConversationRequestEventStream::DtmfInputEvent).
     pub fn is_dtmf_input_event(&self) -> bool {
@@ -90,11 +74,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`PlaybackCompletionEvent`](crate::types::StartConversationRequestEventStream::PlaybackCompletionEvent), extracting the inner [`PlaybackCompletionEvent`](crate::types::PlaybackCompletionEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_playback_completion_event(&self) -> ::std::result::Result<&crate::types::PlaybackCompletionEvent, &Self> {
-        if let StartConversationRequestEventStream::PlaybackCompletionEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::PlaybackCompletionEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PlaybackCompletionEvent`](crate::types::StartConversationRequestEventStream::PlaybackCompletionEvent).
     pub fn is_playback_completion_event(&self) -> bool {
@@ -103,11 +83,7 @@ impl StartConversationRequestEventStream {
     /// Tries to convert the enum instance into [`TextInputEvent`](crate::types::StartConversationRequestEventStream::TextInputEvent), extracting the inner [`TextInputEvent`](crate::types::TextInputEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text_input_event(&self) -> ::std::result::Result<&crate::types::TextInputEvent, &Self> {
-        if let StartConversationRequestEventStream::TextInputEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationRequestEventStream::TextInputEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TextInputEvent`](crate::types::StartConversationRequestEventStream::TextInputEvent).
     pub fn is_text_input_event(&self) -> bool {
@@ -118,3 +94,4 @@ impl StartConversationRequestEventStream {
         matches!(self, Self::Unknown)
     }
 }
+

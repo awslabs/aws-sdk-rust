@@ -3,7 +3,7 @@
 /// <p>Describes the recommendation preferences to return in the response of a <code>GetAutoScalingGroupRecommendations</code>, <code>GetEC2InstanceRecommendations</code>, and <code>GetEC2RecommendationProjectedMetrics</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationPreferences {
+pub struct RecommendationPreferences  {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
@@ -14,9 +14,9 @@ pub struct RecommendationPreferences {
     /// <li>
     /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
-    pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
+    pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::CpuVendorArchitecture>>,
 }
-impl RecommendationPreferences {
+impl  RecommendationPreferences  {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
@@ -27,10 +27,11 @@ impl RecommendationPreferences {
     /// <li>
     /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_vendor_architectures.is_none()`.
-    pub fn cpu_vendor_architectures(&self) -> &[crate::types::CpuVendorArchitecture] {
-        self.cpu_vendor_architectures.as_deref().unwrap_or_default()
+    pub fn cpu_vendor_architectures(&self) -> & [crate::types::CpuVendorArchitecture] {
+        self.cpu_vendor_architectures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendationPreferences {
@@ -44,7 +45,7 @@ impl RecommendationPreferences {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationPreferencesBuilder {
-    pub(crate) cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
+    pub(crate) cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::CpuVendorArchitecture>>,
 }
 impl RecommendationPreferencesBuilder {
     /// Appends an item to `cpu_vendor_architectures`.
@@ -63,9 +64,9 @@ impl RecommendationPreferencesBuilder {
     /// </ul>
     pub fn cpu_vendor_architectures(mut self, input: crate::types::CpuVendorArchitecture) -> Self {
         let mut v = self.cpu_vendor_architectures.unwrap_or_default();
-        v.push(input);
-        self.cpu_vendor_architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cpu_vendor_architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
@@ -77,9 +78,8 @@ impl RecommendationPreferencesBuilder {
     /// <li>
     /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
-    pub fn set_cpu_vendor_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>) -> Self {
-        self.cpu_vendor_architectures = input;
-        self
+    pub fn set_cpu_vendor_architectures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CpuVendorArchitecture>>) -> Self {
+        self.cpu_vendor_architectures = input; self
     }
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
@@ -91,13 +91,15 @@ impl RecommendationPreferencesBuilder {
     /// <li>
     /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
-    pub fn get_cpu_vendor_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
+    pub fn get_cpu_vendor_architectures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CpuVendorArchitecture>> {
         &self.cpu_vendor_architectures
     }
     /// Consumes the builder and constructs a [`RecommendationPreferences`](crate::types::RecommendationPreferences).
     pub fn build(self) -> crate::types::RecommendationPreferences {
         crate::types::RecommendationPreferences {
-            cpu_vendor_architectures: self.cpu_vendor_architectures,
+            cpu_vendor_architectures: self.cpu_vendor_architectures
+            ,
         }
     }
 }
+

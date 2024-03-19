@@ -3,13 +3,13 @@
 /// <p>InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceCountLimits {
+pub struct InstanceCountLimits  {
     /// <p>Minimum number of Instances that can be instantiated for given InstanceType.</p>
     pub minimum_instance_count: i32,
     /// <p>Maximum number of Instances that can be instantiated for given InstanceType.</p>
     pub maximum_instance_count: i32,
 }
-impl InstanceCountLimits {
+impl  InstanceCountLimits  {
     /// <p>Minimum number of Instances that can be instantiated for given InstanceType.</p>
     pub fn minimum_instance_count(&self) -> i32 {
         self.minimum_instance_count
@@ -41,8 +41,7 @@ impl InstanceCountLimitsBuilder {
     }
     /// <p>Minimum number of Instances that can be instantiated for given InstanceType.</p>
     pub fn set_minimum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_instance_count = input;
-        self
+        self.minimum_instance_count = input; self
     }
     /// <p>Minimum number of Instances that can be instantiated for given InstanceType.</p>
     pub fn get_minimum_instance_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl InstanceCountLimitsBuilder {
     }
     /// <p>Maximum number of Instances that can be instantiated for given InstanceType.</p>
     pub fn set_maximum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_instance_count = input;
-        self
+        self.maximum_instance_count = input; self
     }
     /// <p>Maximum number of Instances that can be instantiated for given InstanceType.</p>
     pub fn get_maximum_instance_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl InstanceCountLimitsBuilder {
     /// Consumes the builder and constructs a [`InstanceCountLimits`](crate::types::InstanceCountLimits).
     pub fn build(self) -> crate::types::InstanceCountLimits {
         crate::types::InstanceCountLimits {
-            minimum_instance_count: self.minimum_instance_count.unwrap_or_default(),
-            maximum_instance_count: self.maximum_instance_count.unwrap_or_default(),
+            minimum_instance_count: self.minimum_instance_count
+                .unwrap_or_default()
+            ,
+            maximum_instance_count: self.maximum_instance_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

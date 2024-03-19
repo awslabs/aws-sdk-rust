@@ -3,15 +3,14 @@
 /// <p>Information about your VPC and security groups used with the connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcInformation {
+pub struct VpcInformation  {
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
+    pub security_group_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl VpcInformation {
+impl  VpcInformation  {
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.security_group_ids.deref()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.security_group_ids.deref()
     }
 }
 impl VpcInformation {
@@ -25,7 +24,7 @@ impl VpcInformation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInformationBuilder {
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl VpcInformationBuilder {
     /// Appends an item to `security_group_ids`.
@@ -35,30 +34,31 @@ impl VpcInformationBuilder {
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcInformation`](crate::types::VpcInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`security_group_ids`](crate::types::builders::VpcInformationBuilder::security_group_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcInformation {
-            security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "security_group_ids",
-                    "security_group_ids was not specified but it is required when building VpcInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcInformation {
+                security_group_ids: self.security_group_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("security_group_ids", "security_group_ids was not specified but it is required when building VpcInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

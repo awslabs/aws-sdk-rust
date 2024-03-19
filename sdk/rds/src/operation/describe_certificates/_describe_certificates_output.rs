@@ -3,36 +3,37 @@
 /// <p>Data returned by the <b>DescribeCertificates</b> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificatesOutput {
+pub struct DescribeCertificatesOutput  {
     /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
     pub default_certificate_for_new_launches: ::std::option::Option<::std::string::String>,
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeCertificatesOutput {
+impl  DescribeCertificatesOutput  {
     /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
-    pub fn default_certificate_for_new_launches(&self) -> ::std::option::Option<&str> {
+    pub fn default_certificate_for_new_launches(&self) -> ::std::option::Option<& str> {
         self.default_certificate_for_new_launches.as_deref()
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::Certificate] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::Certificate] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
     pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
@@ -45,7 +46,7 @@ impl DescribeCertificatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutputBuilder {
     pub(crate) default_certificate_for_new_launches: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl DescribeCertificatesOutputBuilder {
     }
     /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
     pub fn set_default_certificate_for_new_launches(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_certificate_for_new_launches = input;
-        self
+        self.default_certificate_for_new_launches = input; self
     }
     /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
     pub fn get_default_certificate_for_new_launches(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeCertificatesOutputBuilder {
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -91,29 +90,32 @@ impl DescribeCertificatesOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
     pub fn build(self) -> crate::operation::describe_certificates::DescribeCertificatesOutput {
         crate::operation::describe_certificates::DescribeCertificatesOutput {
-            default_certificate_for_new_launches: self.default_certificate_for_new_launches,
-            certificates: self.certificates,
-            marker: self.marker,
+            default_certificate_for_new_launches: self.default_certificate_for_new_launches
+            ,
+            certificates: self.certificates
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

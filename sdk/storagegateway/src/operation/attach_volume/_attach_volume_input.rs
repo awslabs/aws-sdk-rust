@@ -3,7 +3,7 @@
 /// <p>AttachVolumeInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachVolumeInput {
+pub struct AttachVolumeInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
@@ -17,27 +17,27 @@ pub struct AttachVolumeInput {
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
     pub disk_id: ::std::option::Option<::std::string::String>,
 }
-impl AttachVolumeInput {
+impl  AttachVolumeInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_name(&self) -> ::std::option::Option<& str> {
         self.target_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
-    pub fn disk_id(&self) -> ::std::option::Option<&str> {
+    pub fn disk_id(&self) -> ::std::option::Option<& str> {
         self.disk_id.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl AttachVolumeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AttachVolumeInputBuilder {
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
+        self.target_name = input; self
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
@@ -99,8 +97,7 @@ impl AttachVolumeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl AttachVolumeInputBuilder {
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
@@ -131,23 +127,28 @@ impl AttachVolumeInputBuilder {
     }
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
     pub fn set_disk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk_id = input;
-        self
+        self.disk_id = input; self
     }
     /// <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
     pub fn get_disk_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_id
     }
     /// Consumes the builder and constructs a [`AttachVolumeInput`](crate::operation::attach_volume::AttachVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::attach_volume::AttachVolumeInput {
-            gateway_arn: self.gateway_arn,
-            target_name: self.target_name,
-            volume_arn: self.volume_arn,
-            network_interface_id: self.network_interface_id,
-            disk_id: self.disk_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_volume::AttachVolumeInput {
+                gateway_arn: self.gateway_arn
+                ,
+                target_name: self.target_name
+                ,
+                volume_arn: self.volume_arn
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                disk_id: self.disk_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceStateInput {
+pub struct GetInstanceStateInput  {
     /// <p>The name of the instance to get state information about.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceStateInput {
+impl  GetInstanceStateInput  {
     /// <p>The name of the instance to get state information about.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetInstanceStateInputBuilder {
     }
     /// <p>The name of the instance to get state information about.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the instance to get state information about.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_instance_state::GetInstanceStateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_instance_state::GetInstanceStateInput {
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_state::GetInstanceStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_instance_state::GetInstanceStateInput {
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

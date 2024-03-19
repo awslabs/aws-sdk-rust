@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRestoreTestingSelectionOutput {
+pub struct UpdateRestoreTestingSelectionOutput  {
     /// <p>This is the time the resource testing selection was updated successfully.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Unique string that is the name of the restore testing plan.</p>
@@ -15,36 +15,33 @@ pub struct UpdateRestoreTestingSelectionOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdateRestoreTestingSelectionOutput {
+impl  UpdateRestoreTestingSelectionOutput  {
     /// <p>This is the time the resource testing selection was updated successfully.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
-    pub fn restore_testing_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_arn.deref()
+    pub fn restore_testing_plan_arn(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_arn.deref()
     }
     /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>This is the returned restore testing selection name.</p>
-    pub fn restore_testing_selection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_selection_name.deref()
+    pub fn restore_testing_selection_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_selection_name.deref()
     }
     /// <p>This is the time the update completed for the restore testing selection.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRestoreTestingSelectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRestoreTestingSelectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRestoreTestingSelectionOutput`](crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput).
     pub fn builder() -> crate::operation::update_restore_testing_selection::builders::UpdateRestoreTestingSelectionOutputBuilder {
@@ -72,8 +69,7 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the time the resource testing selection was updated successfully.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>This is the time the resource testing selection was updated successfully.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,8 +83,7 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_arn = input;
-        self
+        self.restore_testing_plan_arn = input; self
     }
     /// <p>Unique string that is the name of the restore testing plan.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the returned restore testing selection name.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>This is the returned restore testing selection name.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,22 +125,21 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     }
     /// <p>This is the time the update completed for the restore testing selection.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>This is the time the update completed for the restore testing selection.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRestoreTestingSelectionOutput`](crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::operation::update_restore_testing_selection::builders::UpdateRestoreTestingSelectionOutputBuilder::creation_time)
@@ -155,44 +147,37 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     /// - [`restore_testing_plan_name`](crate::operation::update_restore_testing_selection::builders::UpdateRestoreTestingSelectionOutputBuilder::restore_testing_plan_name)
     /// - [`restore_testing_selection_name`](crate::operation::update_restore_testing_selection::builders::UpdateRestoreTestingSelectionOutputBuilder::restore_testing_selection_name)
     /// - [`update_time`](crate::operation::update_restore_testing_selection::builders::UpdateRestoreTestingSelectionOutputBuilder::update_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building UpdateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_plan_arn: self.restore_testing_plan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_arn",
-                    "restore_testing_plan_arn was not specified but it is required when building UpdateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building UpdateRestoreTestingSelectionOutput",
-                )
-            })?,
-            restore_testing_selection_name: self.restore_testing_selection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_selection_name",
-                    "restore_testing_selection_name was not specified but it is required when building UpdateRestoreTestingSelectionOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building UpdateRestoreTestingSelectionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building UpdateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_plan_arn: self.restore_testing_plan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_arn", "restore_testing_plan_arn was not specified but it is required when building UpdateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building UpdateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_selection_name", "restore_testing_selection_name was not specified but it is required when building UpdateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building UpdateRestoreTestingSelectionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

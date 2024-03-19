@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveManagedScalingPolicyInput {
+pub struct RemoveManagedScalingPolicyInput  {
     /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveManagedScalingPolicyInput {
+impl  RemoveManagedScalingPolicyInput  {
     /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl RemoveManagedScalingPolicyInputBuilder {
     }
     /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
     /// Consumes the builder and constructs a [`RemoveManagedScalingPolicyInput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput { cluster_id: self.cluster_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput {
+                cluster_id: self.cluster_id
+                ,
+            }
+        )
     }
 }
+

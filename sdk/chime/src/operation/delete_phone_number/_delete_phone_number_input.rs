@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePhoneNumberInput {
+pub struct DeletePhoneNumberInput  {
     /// <p>The phone number ID.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePhoneNumberInput {
+impl  DeletePhoneNumberInput  {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeletePhoneNumberInputBuilder {
     }
     /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The phone number ID.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_id
     }
     /// Consumes the builder and constructs a [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_phone_number::DeletePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_phone_number::DeletePhoneNumberInput {
-            phone_number_id: self.phone_number_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_phone_number::DeletePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_phone_number::DeletePhoneNumberInput {
+                phone_number_id: self.phone_number_id
+                ,
+            }
+        )
     }
 }
+

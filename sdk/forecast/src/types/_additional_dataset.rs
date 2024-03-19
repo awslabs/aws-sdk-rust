@@ -7,7 +7,7 @@
 /// <p>Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalDataset {
+pub struct AdditionalDataset  {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub name: ::std::string::String,
     /// <p><b>Weather Index</b></p>
@@ -149,13 +149,12 @@ pub struct AdditionalDataset {
     /// <li>
     /// <p>"VE" - VENEZUELA</p></li>
     /// </ul>
-    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl AdditionalDataset {
+impl  AdditionalDataset  {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p><b>Weather Index</b></p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
@@ -296,9 +295,7 @@ impl AdditionalDataset {
     /// <li>
     /// <p>"VE" - VENEZUELA</p></li>
     /// </ul>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn configuration(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.configuration.as_ref()
     }
 }
@@ -314,7 +311,7 @@ impl AdditionalDataset {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalDatasetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl AdditionalDatasetBuilder {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
@@ -325,8 +322,7 @@ impl AdditionalDatasetBuilder {
     }
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -475,11 +471,11 @@ impl AdditionalDatasetBuilder {
     /// <li>
     /// <p>"VE" - VENEZUELA</p></li>
     /// </ul>
-    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.configuration = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.configuration = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p><b>Weather Index</b></p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
@@ -620,12 +616,8 @@ impl AdditionalDatasetBuilder {
     /// <li>
     /// <p>"VE" - VENEZUELA</p></li>
     /// </ul>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.configuration = input; self
     }
     /// <p><b>Weather Index</b></p>
     /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
@@ -766,23 +758,24 @@ impl AdditionalDatasetBuilder {
     /// <li>
     /// <p>"VE" - VENEZUELA</p></li>
     /// </ul>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`AdditionalDataset`](crate::types::AdditionalDataset).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AdditionalDatasetBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AdditionalDataset, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AdditionalDataset {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AdditionalDataset",
-                )
-            })?,
-            configuration: self.configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AdditionalDataset {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AdditionalDataset")
+                    )?
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

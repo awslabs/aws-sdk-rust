@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishLayerVersionOutput {
+pub struct PublishLayerVersionOutput  {
     /// <p>Details about the layer version.</p>
     pub content: ::std::option::Option<crate::types::LayerVersionContentOutput>,
     /// <p>The ARN of the layer.</p>
@@ -17,32 +17,32 @@ pub struct PublishLayerVersionOutput {
     pub version: i64,
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
+    pub compatible_runtimes: ::std::option::Option<::std::vec::Vec::<crate::types::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    pub compatible_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::Architecture>>,
     _request_id: Option<String>,
 }
-impl PublishLayerVersionOutput {
+impl  PublishLayerVersionOutput  {
     /// <p>Details about the layer version.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::LayerVersionContentOutput> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::LayerVersionContentOutput> {
         self.content.as_ref()
     }
     /// <p>The ARN of the layer.</p>
-    pub fn layer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn layer_arn(&self) -> ::std::option::Option<& str> {
         self.layer_arn.as_deref()
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn layer_version_arn(&self) -> ::std::option::Option<& str> {
         self.layer_version_arn.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The version number.</p>
@@ -51,27 +51,29 @@ impl PublishLayerVersionOutput {
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_runtimes.is_none()`.
-    pub fn compatible_runtimes(&self) -> &[crate::types::Runtime] {
-        self.compatible_runtimes.as_deref().unwrap_or_default()
+    pub fn compatible_runtimes(&self) -> & [crate::types::Runtime] {
+        self.compatible_runtimes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The layer's software license.</p>
-    pub fn license_info(&self) -> ::std::option::Option<&str> {
+    pub fn license_info(&self) -> ::std::option::Option<& str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_architectures.is_none()`.
-    pub fn compatible_architectures(&self) -> &[crate::types::Architecture] {
-        self.compatible_architectures.as_deref().unwrap_or_default()
+    pub fn compatible_architectures(&self) -> & [crate::types::Architecture] {
+        self.compatible_architectures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishLayerVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishLayerVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishLayerVersionOutput`](crate::operation::publish_layer_version::PublishLayerVersionOutput).
     pub fn builder() -> crate::operation::publish_layer_version::builders::PublishLayerVersionOutputBuilder {
@@ -89,9 +91,9 @@ pub struct PublishLayerVersionOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
-    pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
+    pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec::<crate::types::Runtime>>,
     pub(crate) license_info: ::std::option::Option<::std::string::String>,
-    pub(crate) compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
+    pub(crate) compatible_architectures: ::std::option::Option<::std::vec::Vec::<crate::types::Architecture>>,
     _request_id: Option<String>,
 }
 impl PublishLayerVersionOutputBuilder {
@@ -102,8 +104,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>Details about the layer version.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayerVersionContentOutput>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Details about the layer version.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayerVersionContentOutput> {
@@ -116,8 +117,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The ARN of the layer.</p>
     pub fn set_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_arn = input;
-        self
+        self.layer_arn = input; self
     }
     /// <p>The ARN of the layer.</p>
     pub fn get_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +130,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The ARN of the layer version.</p>
     pub fn set_layer_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_version_arn = input;
-        self
+        self.layer_version_arn = input; self
     }
     /// <p>The ARN of the layer version.</p>
     pub fn get_layer_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +143,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The description of the version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +156,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +169,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -187,19 +183,18 @@ impl PublishLayerVersionOutputBuilder {
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtimes(mut self, input: crate::types::Runtime) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
-        v.push(input);
-        self.compatible_runtimes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatible_runtimes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>) -> Self {
-        self.compatible_runtimes = input;
-        self
+    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Runtime>>) -> Self {
+        self.compatible_runtimes = input; self
     }
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runtime>> {
+    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Runtime>> {
         &self.compatible_runtimes
     }
     /// <p>The layer's software license.</p>
@@ -209,8 +204,7 @@ impl PublishLayerVersionOutputBuilder {
     }
     /// <p>The layer's software license.</p>
     pub fn set_license_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_info = input;
-        self
+        self.license_info = input; self
     }
     /// <p>The layer's software license.</p>
     pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,41 +217,51 @@ impl PublishLayerVersionOutputBuilder {
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(mut self, input: crate::types::Architecture) -> Self {
         let mut v = self.compatible_architectures.unwrap_or_default();
-        v.push(input);
-        self.compatible_architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatible_architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
-        self.compatible_architectures = input;
-        self
+    pub fn set_compatible_architectures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Architecture>>) -> Self {
+        self.compatible_architectures = input; self
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+    pub fn get_compatible_architectures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Architecture>> {
         &self.compatible_architectures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishLayerVersionOutput`](crate::operation::publish_layer_version::PublishLayerVersionOutput).
     pub fn build(self) -> crate::operation::publish_layer_version::PublishLayerVersionOutput {
         crate::operation::publish_layer_version::PublishLayerVersionOutput {
-            content: self.content,
-            layer_arn: self.layer_arn,
-            layer_version_arn: self.layer_version_arn,
-            description: self.description,
-            created_date: self.created_date,
-            version: self.version.unwrap_or_default(),
-            compatible_runtimes: self.compatible_runtimes,
-            license_info: self.license_info,
-            compatible_architectures: self.compatible_architectures,
+            content: self.content
+            ,
+            layer_arn: self.layer_arn
+            ,
+            layer_version_arn: self.layer_version_arn
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            compatible_runtimes: self.compatible_runtimes
+            ,
+            license_info: self.license_info
+            ,
+            compatible_architectures: self.compatible_architectures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

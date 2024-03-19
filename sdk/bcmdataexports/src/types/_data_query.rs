@@ -3,26 +3,19 @@
 /// <p>The SQL query of column selections and row filters from the data table you want.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQuery {
+pub struct DataQuery  {
     /// <p>The query statement.</p>
     pub query_statement: ::std::string::String,
     /// <p>The table configuration.</p>
-    pub table_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub table_configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
-impl DataQuery {
+impl  DataQuery  {
     /// <p>The query statement.</p>
-    pub fn query_statement(&self) -> &str {
-        use std::ops::Deref;
-        self.query_statement.deref()
+    pub fn query_statement(&self) -> & str {
+        use std::ops::Deref; self.query_statement.deref()
     }
     /// <p>The table configuration.</p>
-    pub fn table_configurations(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn table_configurations(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.table_configurations.as_ref()
     }
 }
@@ -38,9 +31,7 @@ impl DataQuery {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQueryBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
-    pub(crate) table_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) table_configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl DataQueryBuilder {
     /// <p>The query statement.</p>
@@ -51,8 +42,7 @@ impl DataQueryBuilder {
     }
     /// <p>The query statement.</p>
     pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_statement = input;
-        self
+        self.query_statement = input; self
     }
     /// <p>The query statement.</p>
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,46 +53,35 @@ impl DataQueryBuilder {
     /// To override the contents of this collection use [`set_table_configurations`](Self::set_table_configurations).
     ///
     /// <p>The table configuration.</p>
-    pub fn table_configurations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn table_configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.table_configurations.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.table_configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.table_configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The table configuration.</p>
-    pub fn set_table_configurations(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.table_configurations = input;
-        self
+    pub fn set_table_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.table_configurations = input; self
     }
     /// <p>The table configuration.</p>
-    pub fn get_table_configurations(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_table_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.table_configurations
     }
     /// Consumes the builder and constructs a [`DataQuery`](crate::types::DataQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_statement`](crate::types::builders::DataQueryBuilder::query_statement)
     pub fn build(self) -> ::std::result::Result<crate::types::DataQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataQuery {
-            query_statement: self.query_statement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_statement",
-                    "query_statement was not specified but it is required when building DataQuery",
-                )
-            })?,
-            table_configurations: self.table_configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataQuery {
+                query_statement: self.query_statement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_statement", "query_statement was not specified but it is required when building DataQuery")
+                    )?
+                ,
+                table_configurations: self.table_configurations
+                ,
+            }
+        )
     }
 }
+

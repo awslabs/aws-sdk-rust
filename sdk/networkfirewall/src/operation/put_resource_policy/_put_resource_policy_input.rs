@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform.</p>
@@ -25,9 +25,9 @@ pub struct PutResourcePolicyInput {
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutResourcePolicyInput {
+impl  PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform.</p>
@@ -48,7 +48,7 @@ impl PutResourcePolicyInput {
     /// <p>network-firewall:ListFirewallPolicies</p></li>
     /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl PutResourcePolicyInputBuilder {
     /// </ul>
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform.</p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
@@ -149,12 +147,15 @@ impl PutResourcePolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_policy::PutResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

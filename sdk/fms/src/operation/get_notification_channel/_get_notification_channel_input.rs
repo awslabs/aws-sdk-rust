@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNotificationChannelInput {}
+pub struct GetNotificationChannelInput  {
+}
 impl GetNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
     pub fn builder() -> crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder {
@@ -13,15 +14,15 @@ impl GetNotificationChannelInput {
 /// A builder for [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetNotificationChannelInputBuilder {}
+pub struct GetNotificationChannelInputBuilder {
+}
 impl GetNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_notification_channel::GetNotificationChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_notification_channel::GetNotificationChannelInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_notification_channel::GetNotificationChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_notification_channel::GetNotificationChannelInput {
+            }
+        )
     }
 }
+

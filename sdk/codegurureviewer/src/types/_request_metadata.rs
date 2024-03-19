@@ -3,7 +3,7 @@
 /// <p>Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestMetadata {
+pub struct RequestMetadata  {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
@@ -13,21 +13,21 @@ pub struct RequestMetadata {
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
     pub vendor_name: ::std::option::Option<crate::types::VendorName>,
 }
-impl RequestMetadata {
+impl  RequestMetadata  {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
-    pub fn requester(&self) -> ::std::option::Option<&str> {
+    pub fn requester(&self) -> ::std::option::Option<& str> {
         self.requester.as_deref()
     }
     /// <p>Information about the event associated with a code review.</p>
-    pub fn event_info(&self) -> ::std::option::Option<&crate::types::EventInfo> {
+    pub fn event_info(&self) -> ::std::option::Option<& crate::types::EventInfo> {
         self.event_info.as_ref()
     }
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
-    pub fn vendor_name(&self) -> ::std::option::Option<&crate::types::VendorName> {
+    pub fn vendor_name(&self) -> ::std::option::Option<& crate::types::VendorName> {
         self.vendor_name.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl RequestMetadataBuilder {
     }
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RequestMetadataBuilder {
     }
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
     pub fn set_requester(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester = input;
-        self
+        self.requester = input; self
     }
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
     pub fn get_requester(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RequestMetadataBuilder {
     }
     /// <p>Information about the event associated with a code review.</p>
     pub fn set_event_info(mut self, input: ::std::option::Option<crate::types::EventInfo>) -> Self {
-        self.event_info = input;
-        self
+        self.event_info = input; self
     }
     /// <p>Information about the event associated with a code review.</p>
     pub fn get_event_info(&self) -> &::std::option::Option<crate::types::EventInfo> {
@@ -97,8 +94,7 @@ impl RequestMetadataBuilder {
     }
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<crate::types::VendorName>) -> Self {
-        self.vendor_name = input;
-        self
+        self.vendor_name = input; self
     }
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
     pub fn get_vendor_name(&self) -> &::std::option::Option<crate::types::VendorName> {
@@ -107,10 +103,15 @@ impl RequestMetadataBuilder {
     /// Consumes the builder and constructs a [`RequestMetadata`](crate::types::RequestMetadata).
     pub fn build(self) -> crate::types::RequestMetadata {
         crate::types::RequestMetadata {
-            request_id: self.request_id,
-            requester: self.requester,
-            event_info: self.event_info,
-            vendor_name: self.vendor_name,
+            request_id: self.request_id
+            ,
+            requester: self.requester
+            ,
+            event_info: self.event_info
+            ,
+            vendor_name: self.vendor_name
+            ,
         }
     }
 }
+

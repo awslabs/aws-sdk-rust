@@ -3,11 +3,11 @@
 /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Spigot {
+pub struct Spigot  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub path: ::std::string::String,
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
@@ -15,21 +15,18 @@ pub struct Spigot {
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub prob: ::std::option::Option<f64>,
 }
-impl Spigot {
+impl  Spigot  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn topk(&self) -> ::std::option::Option<i32> {
@@ -52,7 +49,7 @@ impl Spigot {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpigotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) topk: ::std::option::Option<i32>,
     pub(crate) prob: ::std::option::Option<f64>,
@@ -66,8 +63,7 @@ impl SpigotBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +76,16 @@ impl SpigotBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
@@ -101,8 +96,7 @@ impl SpigotBuilder {
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +109,7 @@ impl SpigotBuilder {
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn set_topk(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.topk = input;
-        self
+        self.topk = input; self
     }
     /// <p>Specifies a number of records to write starting from the beginning of the dataset.</p>
     pub fn get_topk(&self) -> &::std::option::Option<i32> {
@@ -129,8 +122,7 @@ impl SpigotBuilder {
     }
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn set_prob(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.prob = input;
-        self
+        self.prob = input; self
     }
     /// <p>The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.</p>
     pub fn get_prob(&self) -> &::std::option::Option<f64> {
@@ -142,27 +134,29 @@ impl SpigotBuilder {
     /// - [`inputs`](crate::types::builders::SpigotBuilder::inputs)
     /// - [`path`](crate::types::builders::SpigotBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::Spigot, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Spigot {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Spigot",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building Spigot",
-                )
-            })?,
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building Spigot",
-                )
-            })?,
-            topk: self.topk,
-            prob: self.prob,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Spigot {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Spigot")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building Spigot")
+                    )?
+                ,
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building Spigot")
+                    )?
+                ,
+                topk: self.topk
+                ,
+                prob: self.prob
+                ,
+            }
+        )
     }
 }
+

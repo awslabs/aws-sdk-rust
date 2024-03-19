@@ -3,13 +3,13 @@
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayStatus {
+pub struct VirtualGatewayStatus  {
     /// <p>The current status.</p>
     pub status: crate::types::VirtualGatewayStatusCode,
 }
-impl VirtualGatewayStatus {
+impl  VirtualGatewayStatus  {
     /// <p>The current status.</p>
-    pub fn status(&self) -> &crate::types::VirtualGatewayStatusCode {
+    pub fn status(&self) -> & crate::types::VirtualGatewayStatusCode {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl VirtualGatewayStatusBuilder {
     }
     /// <p>The current status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualGatewayStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualGatewayStatusCode> {
@@ -46,13 +45,15 @@ impl VirtualGatewayStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::VirtualGatewayStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualGatewayStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building VirtualGatewayStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualGatewayStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building VirtualGatewayStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

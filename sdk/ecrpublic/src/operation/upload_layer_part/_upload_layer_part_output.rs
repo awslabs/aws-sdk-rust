@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadLayerPartOutput {
+pub struct UploadLayerPartOutput  {
     /// <p>The registry ID that's associated with the request.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name that's associated with the request.</p>
@@ -13,17 +13,17 @@ pub struct UploadLayerPartOutput {
     pub last_byte_received: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl UploadLayerPartOutput {
+impl  UploadLayerPartOutput  {
     /// <p>The registry ID that's associated with the request.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID that's associated with the request.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The integer value of the last byte that's received in the request.</p>
@@ -32,10 +32,10 @@ impl UploadLayerPartOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UploadLayerPartOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UploadLayerPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadLayerPartOutput`](crate::operation::upload_layer_part::UploadLayerPartOutput).
     pub fn builder() -> crate::operation::upload_layer_part::builders::UploadLayerPartOutputBuilder {
@@ -61,8 +61,7 @@ impl UploadLayerPartOutputBuilder {
     }
     /// <p>The registry ID that's associated with the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The registry ID that's associated with the request.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UploadLayerPartOutputBuilder {
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name that's associated with the request.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UploadLayerPartOutputBuilder {
     }
     /// <p>The upload ID that's associated with the request.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID that's associated with the request.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl UploadLayerPartOutputBuilder {
     }
     /// <p>The integer value of the last byte that's received in the request.</p>
     pub fn set_last_byte_received(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_byte_received = input;
-        self
+        self.last_byte_received = input; self
     }
     /// <p>The integer value of the last byte that's received in the request.</p>
     pub fn get_last_byte_received(&self) -> &::std::option::Option<i64> {
         &self.last_byte_received
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UploadLayerPartOutput`](crate::operation::upload_layer_part::UploadLayerPartOutput).
     pub fn build(self) -> crate::operation::upload_layer_part::UploadLayerPartOutput {
         crate::operation::upload_layer_part::UploadLayerPartOutput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            upload_id: self.upload_id,
-            last_byte_received: self.last_byte_received,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            upload_id: self.upload_id
+            ,
+            last_byte_received: self.last_byte_received
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

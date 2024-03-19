@@ -21,11 +21,7 @@ impl UserUnion {
     /// Tries to convert the enum instance into [`UserArn`](crate::types::UserUnion::UserArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let UserUnion::UserArn(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let UserUnion::UserArn(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UserArn`](crate::types::UserUnion::UserArn).
     pub fn is_user_arn(&self) -> bool {
@@ -36,3 +32,4 @@ impl UserUnion {
         matches!(self, Self::Unknown)
     }
 }
+

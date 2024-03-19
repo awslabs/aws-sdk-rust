@@ -19,19 +19,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LocationState {
+pub struct LocationState  {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The life-cycle status of a fleet location.</p>
     pub status: ::std::option::Option<crate::types::FleetStatus>,
 }
-impl LocationState {
+impl  LocationState  {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The life-cycle status of a fleet location.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FleetStatus> {
         self.status.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl LocationStateBuilder {
     }
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl LocationStateBuilder {
     }
     /// <p>The life-cycle status of a fleet location.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The life-cycle status of a fleet location.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
@@ -81,8 +79,11 @@ impl LocationStateBuilder {
     /// Consumes the builder and constructs a [`LocationState`](crate::types::LocationState).
     pub fn build(self) -> crate::types::LocationState {
         crate::types::LocationState {
-            location: self.location,
-            status: self.status,
+            location: self.location
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

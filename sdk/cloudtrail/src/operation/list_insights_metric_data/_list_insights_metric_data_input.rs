@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInsightsMetricDataInput {
+pub struct ListInsightsMetricDataInput  {
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
@@ -28,32 +28,32 @@ pub struct ListInsightsMetricDataInput {
     /// <p>Add this parameter to the request to continue retrieving results starting from the last evaluated point.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListInsightsMetricDataInput {
+impl  ListInsightsMetricDataInput  {
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
-    pub fn event_source(&self) -> ::std::option::Option<&str> {
+    pub fn event_source(&self) -> ::std::option::Option<& str> {
         self.event_source.as_deref()
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_name(&self) -> ::std::option::Option<& str> {
         self.event_name.as_deref()
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
-    pub fn insight_type(&self) -> ::std::option::Option<&crate::types::InsightType> {
+    pub fn insight_type(&self) -> ::std::option::Option<& crate::types::InsightType> {
         self.insight_type.as_ref()
     }
     /// <p>Conditionally required if the <code>InsightType</code> parameter is set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Specifies, in UTC, the start time for time-series data. The value specified is inclusive; results include data points with the specified time stamp.</p>
     /// <p>The default is 90 days before the time of request.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Specifies, in UTC, the end time for time-series data. The value specified is exclusive; results include data points up to the specified time stamp.</p>
     /// <p>The default is the time of request.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Granularity of data to retrieve, in seconds. Valid values are <code>60</code>, <code>300</code>, and <code>3600</code>. If you specify any other value, you will get an error. The default is 3600 seconds.</p>
@@ -61,7 +61,7 @@ impl ListInsightsMetricDataInput {
         self.period
     }
     /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::InsightsMetricDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::InsightsMetricDataType> {
         self.data_type.as_ref()
     }
     /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
@@ -70,7 +70,7 @@ impl ListInsightsMetricDataInput {
     }
     /// <p>Returned if all datapoints can't be returned in a single call. For example, due to reaching <code>MaxResults</code>.</p>
     /// <p>Add this parameter to the request to continue retrieving results starting from the last evaluated point.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -105,8 +105,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
     pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_name = input;
-        self
+        self.event_name = input; self
     }
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
     pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
     pub fn set_insight_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
-        self.insight_type = input;
-        self
+        self.insight_type = input; self
     }
     /// <p>The type of CloudTrail Insights event, which is either <code>ApiCallRateInsight</code> or <code>ApiErrorRateInsight</code>. The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume. The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes.</p>
     pub fn get_insight_type(&self) -> &::std::option::Option<crate::types::InsightType> {
@@ -151,8 +148,7 @@ impl ListInsightsMetricDataInputBuilder {
     /// <p>Conditionally required if the <code>InsightType</code> parameter is set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Conditionally required if the <code>InsightType</code> parameter is set to <code>ApiErrorRateInsight</code>.</p>
     /// <p>If returning metrics for the <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve data for. For example, <code>AccessDenied</code>.</p>
@@ -168,8 +164,7 @@ impl ListInsightsMetricDataInputBuilder {
     /// <p>Specifies, in UTC, the start time for time-series data. The value specified is inclusive; results include data points with the specified time stamp.</p>
     /// <p>The default is 90 days before the time of request.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Specifies, in UTC, the start time for time-series data. The value specified is inclusive; results include data points with the specified time stamp.</p>
     /// <p>The default is 90 days before the time of request.</p>
@@ -185,8 +180,7 @@ impl ListInsightsMetricDataInputBuilder {
     /// <p>Specifies, in UTC, the end time for time-series data. The value specified is exclusive; results include data points up to the specified time stamp.</p>
     /// <p>The default is the time of request.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>Specifies, in UTC, the end time for time-series data. The value specified is exclusive; results include data points up to the specified time stamp.</p>
     /// <p>The default is the time of request.</p>
@@ -200,8 +194,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>Granularity of data to retrieve, in seconds. Valid values are <code>60</code>, <code>300</code>, and <code>3600</code>. If you specify any other value, you will get an error. The default is 3600 seconds.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>Granularity of data to retrieve, in seconds. Valid values are <code>60</code>, <code>300</code>, and <code>3600</code>. If you specify any other value, you will get an error. The default is 3600 seconds.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -214,8 +207,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::InsightsMetricDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::InsightsMetricDataType> {
@@ -228,8 +220,7 @@ impl ListInsightsMetricDataInputBuilder {
     }
     /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -244,8 +235,7 @@ impl ListInsightsMetricDataInputBuilder {
     /// <p>Returned if all datapoints can't be returned in a single call. For example, due to reaching <code>MaxResults</code>.</p>
     /// <p>Add this parameter to the request to continue retrieving results starting from the last evaluated point.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returned if all datapoints can't be returned in a single call. For example, due to reaching <code>MaxResults</code>.</p>
     /// <p>Add this parameter to the request to continue retrieving results starting from the last evaluated point.</p>
@@ -253,23 +243,31 @@ impl ListInsightsMetricDataInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInsightsMetricDataInput`](crate::operation::list_insights_metric_data::ListInsightsMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_insights_metric_data::ListInsightsMetricDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_insights_metric_data::ListInsightsMetricDataInput {
-            event_source: self.event_source,
-            event_name: self.event_name,
-            insight_type: self.insight_type,
-            error_code: self.error_code,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            period: self.period,
-            data_type: self.data_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_insights_metric_data::ListInsightsMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_insights_metric_data::ListInsightsMetricDataInput {
+                event_source: self.event_source
+                ,
+                event_name: self.event_name
+                ,
+                insight_type: self.insight_type
+                ,
+                error_code: self.error_code
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                period: self.period
+                ,
+                data_type: self.data_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrossZoneLoadBalancing {
+pub struct CrossZoneLoadBalancing  {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     pub enabled: bool,
 }
-impl CrossZoneLoadBalancing {
+impl  CrossZoneLoadBalancing  {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -35,8 +35,7 @@ impl CrossZoneLoadBalancingBuilder {
     }
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,10 @@ impl CrossZoneLoadBalancingBuilder {
     /// Consumes the builder and constructs a [`CrossZoneLoadBalancing`](crate::types::CrossZoneLoadBalancing).
     pub fn build(self) -> crate::types::CrossZoneLoadBalancing {
         crate::types::CrossZoneLoadBalancing {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

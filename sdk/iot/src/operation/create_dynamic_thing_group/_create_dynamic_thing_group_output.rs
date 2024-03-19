@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDynamicThingGroupOutput {
+pub struct CreateDynamicThingGroupOutput  {
     /// <p>The dynamic thing group name.</p>
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group ARN.</p>
@@ -17,37 +17,37 @@ pub struct CreateDynamicThingGroupOutput {
     pub query_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDynamicThingGroupOutput {
+impl  CreateDynamicThingGroupOutput  {
     /// <p>The dynamic thing group name.</p>
-    pub fn thing_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> ::std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The dynamic thing group ARN.</p>
-    pub fn thing_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_arn(&self) -> ::std::option::Option<& str> {
         self.thing_group_arn.as_deref()
     }
     /// <p>The dynamic thing group ID.</p>
-    pub fn thing_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn thing_group_id(&self) -> ::std::option::Option<& str> {
         self.thing_group_id.as_deref()
     }
     /// <p>The dynamic thing group index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The dynamic thing group search query string.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The dynamic thing group query version.</p>
-    pub fn query_version(&self) -> ::std::option::Option<&str> {
+    pub fn query_version(&self) -> ::std::option::Option<& str> {
         self.query_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDynamicThingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDynamicThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
     pub fn builder() -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupOutputBuilder {
@@ -75,8 +75,7 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group name.</p>
     pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The dynamic thing group name.</p>
     pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group ARN.</p>
     pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_group_arn = input;
-        self
+        self.thing_group_arn = input; self
     }
     /// <p>The dynamic thing group ARN.</p>
     pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group ID.</p>
     pub fn set_thing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_group_id = input;
-        self
+        self.thing_group_id = input; self
     }
     /// <p>The dynamic thing group ID.</p>
     pub fn get_thing_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group index name.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The dynamic thing group index name.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group search query string.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The dynamic thing group search query string.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,38 @@ impl CreateDynamicThingGroupOutputBuilder {
     }
     /// <p>The dynamic thing group query version.</p>
     pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_version = input;
-        self
+        self.query_version = input; self
     }
     /// <p>The dynamic thing group query version.</p>
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
     pub fn build(self) -> crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput {
         crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput {
-            thing_group_name: self.thing_group_name,
-            thing_group_arn: self.thing_group_arn,
-            thing_group_id: self.thing_group_id,
-            index_name: self.index_name,
-            query_string: self.query_string,
-            query_version: self.query_version,
+            thing_group_name: self.thing_group_name
+            ,
+            thing_group_arn: self.thing_group_arn
+            ,
+            thing_group_id: self.thing_group_id
+            ,
+            index_name: self.index_name
+            ,
+            query_string: self.query_string
+            ,
+            query_version: self.query_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

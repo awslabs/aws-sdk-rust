@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCatalogItemsInput {
+pub struct ListCatalogItemsInput  {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the results by item class.</p>
-    pub item_class_filter: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>,
+    pub item_class_filter: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogItemClass>>,
     /// <p>Filters the results by storage option.</p>
-    pub supported_storage_filter: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
+    pub supported_storage_filter: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedStorageEnum>>,
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub ec2_family_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ec2_family_filter: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListCatalogItemsInput {
+impl  ListCatalogItemsInput  {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum page size.</p>
@@ -24,22 +24,25 @@ impl ListCatalogItemsInput {
         self.max_results
     }
     /// <p>Filters the results by item class.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item_class_filter.is_none()`.
-    pub fn item_class_filter(&self) -> &[crate::types::CatalogItemClass] {
-        self.item_class_filter.as_deref().unwrap_or_default()
+    pub fn item_class_filter(&self) -> & [crate::types::CatalogItemClass] {
+        self.item_class_filter.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the results by storage option.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_storage_filter.is_none()`.
-    pub fn supported_storage_filter(&self) -> &[crate::types::SupportedStorageEnum] {
-        self.supported_storage_filter.as_deref().unwrap_or_default()
+    pub fn supported_storage_filter(&self) -> & [crate::types::SupportedStorageEnum] {
+        self.supported_storage_filter.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_family_filter.is_none()`.
-    pub fn ec2_family_filter(&self) -> &[::std::string::String] {
-        self.ec2_family_filter.as_deref().unwrap_or_default()
+    pub fn ec2_family_filter(&self) -> & [::std::string::String] {
+        self.ec2_family_filter.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListCatalogItemsInput {
@@ -55,9 +58,9 @@ impl ListCatalogItemsInput {
 pub struct ListCatalogItemsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) item_class_filter: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>,
-    pub(crate) supported_storage_filter: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
-    pub(crate) ec2_family_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) item_class_filter: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogItemClass>>,
+    pub(crate) supported_storage_filter: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedStorageEnum>>,
+    pub(crate) ec2_family_filter: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListCatalogItemsInputBuilder {
     /// <p>The pagination token.</p>
@@ -67,8 +70,7 @@ impl ListCatalogItemsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +83,7 @@ impl ListCatalogItemsInputBuilder {
     }
     /// <p>The maximum page size.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum page size.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -95,17 +96,16 @@ impl ListCatalogItemsInputBuilder {
     /// <p>Filters the results by item class.</p>
     pub fn item_class_filter(mut self, input: crate::types::CatalogItemClass) -> Self {
         let mut v = self.item_class_filter.unwrap_or_default();
-        v.push(input);
-        self.item_class_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.item_class_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn set_item_class_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>) -> Self {
-        self.item_class_filter = input;
-        self
+    pub fn set_item_class_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogItemClass>>) -> Self {
+        self.item_class_filter = input; self
     }
     /// <p>Filters the results by item class.</p>
-    pub fn get_item_class_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
+    pub fn get_item_class_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CatalogItemClass>> {
         &self.item_class_filter
     }
     /// Appends an item to `supported_storage_filter`.
@@ -115,17 +115,16 @@ impl ListCatalogItemsInputBuilder {
     /// <p>Filters the results by storage option.</p>
     pub fn supported_storage_filter(mut self, input: crate::types::SupportedStorageEnum) -> Self {
         let mut v = self.supported_storage_filter.unwrap_or_default();
-        v.push(input);
-        self.supported_storage_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_storage_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn set_supported_storage_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>) -> Self {
-        self.supported_storage_filter = input;
-        self
+    pub fn set_supported_storage_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedStorageEnum>>) -> Self {
+        self.supported_storage_filter = input; self
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn get_supported_storage_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+    pub fn get_supported_storage_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedStorageEnum>> {
         &self.supported_storage_filter
     }
     /// Appends an item to `ec2_family_filter`.
@@ -135,29 +134,34 @@ impl ListCatalogItemsInputBuilder {
     /// <p>Filters the results by EC2 family (for example, M5).</p>
     pub fn ec2_family_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_family_filter.unwrap_or_default();
-        v.push(input.into());
-        self.ec2_family_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ec2_family_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn set_ec2_family_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ec2_family_filter = input;
-        self
+    pub fn set_ec2_family_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ec2_family_filter = input; self
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn get_ec2_family_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_family_filter(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ec2_family_filter
     }
     /// Consumes the builder and constructs a [`ListCatalogItemsInput`](crate::operation::list_catalog_items::ListCatalogItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_catalog_items::ListCatalogItemsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            item_class_filter: self.item_class_filter,
-            supported_storage_filter: self.supported_storage_filter,
-            ec2_family_filter: self.ec2_family_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_catalog_items::ListCatalogItemsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                item_class_filter: self.item_class_filter
+                ,
+                supported_storage_filter: self.supported_storage_filter
+                ,
+                ec2_family_filter: self.ec2_family_filter
+                ,
+            }
+        )
     }
 }
+

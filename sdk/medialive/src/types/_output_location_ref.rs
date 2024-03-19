@@ -3,13 +3,13 @@
 /// Reference to an OutputDestination ID defined in the channel
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputLocationRef {
+pub struct OutputLocationRef  {
     /// Placeholder documentation for __string
     pub destination_ref_id: ::std::option::Option<::std::string::String>,
 }
-impl OutputLocationRef {
+impl  OutputLocationRef  {
     /// Placeholder documentation for __string
-    pub fn destination_ref_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ref_id(&self) -> ::std::option::Option<& str> {
         self.destination_ref_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl OutputLocationRefBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_destination_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ref_id = input;
-        self
+        self.destination_ref_id = input; self
     }
     /// Placeholder documentation for __string
     pub fn get_destination_ref_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl OutputLocationRefBuilder {
     /// Consumes the builder and constructs a [`OutputLocationRef`](crate::types::OutputLocationRef).
     pub fn build(self) -> crate::types::OutputLocationRef {
         crate::types::OutputLocationRef {
-            destination_ref_id: self.destination_ref_id,
+            destination_ref_id: self.destination_ref_id
+            ,
         }
     }
 }
+

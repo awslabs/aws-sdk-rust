@@ -5,19 +5,19 @@
 /// <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyRole {
+pub struct PolicyRole  {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub role_id: ::std::option::Option<::std::string::String>,
 }
-impl PolicyRole {
+impl  PolicyRole  {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn role_id(&self) -> ::std::option::Option<&str> {
+    pub fn role_id(&self) -> ::std::option::Option<& str> {
         self.role_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PolicyRoleBuilder {
     }
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl PolicyRoleBuilder {
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_id = input;
-        self
+        self.role_id = input; self
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn get_role_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl PolicyRoleBuilder {
     /// Consumes the builder and constructs a [`PolicyRole`](crate::types::PolicyRole).
     pub fn build(self) -> crate::types::PolicyRole {
         crate::types::PolicyRole {
-            role_name: self.role_name,
-            role_id: self.role_id,
+            role_name: self.role_name
+            ,
+            role_id: self.role_id
+            ,
         }
     }
 }
+

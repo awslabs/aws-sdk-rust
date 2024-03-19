@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableControlOutput {
+pub struct EnableControlOutput  {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     pub operation_identifier: ::std::string::String,
     /// <p>The ARN of the <code>EnabledControl</code> resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl EnableControlOutput {
+impl  EnableControlOutput  {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> & str {
+        use std::ops::Deref; self.operation_identifier.deref()
     }
     /// <p>The ARN of the <code>EnabledControl</code> resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableControlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableControlOutput {
     /// Creates a new builder-style object to manufacture [`EnableControlOutput`](crate::operation::enable_control::EnableControlOutput).
     pub fn builder() -> crate::operation::enable_control::builders::EnableControlOutputBuilder {
@@ -49,8 +48,7 @@ impl EnableControlOutputBuilder {
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +61,37 @@ impl EnableControlOutputBuilder {
     }
     /// <p>The ARN of the <code>EnabledControl</code> resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the <code>EnabledControl</code> resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableControlOutput`](crate::operation::enable_control::EnableControlOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation_identifier`](crate::operation::enable_control::builders::EnableControlOutputBuilder::operation_identifier)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_control::EnableControlOutput {
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building EnableControlOutput",
-                )
-            })?,
-            arn: self.arn,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_control::EnableControlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_control::EnableControlOutput {
+                operation_identifier: self.operation_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_identifier", "operation_identifier was not specified but it is required when building EnableControlOutput")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

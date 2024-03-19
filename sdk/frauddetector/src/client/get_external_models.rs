@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetExternalModels`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_endpoint(impl Into<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::model_endpoint) / [`set_model_endpoint(Option<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::set_model_endpoint):<br>required: **false**<br><p>The Amazon SageMaker model endpoint.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
-    /// - On success, responds with [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput) with field(s):
+                            /// - On success, responds with [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput) with field(s):
     ///   - [`external_models(Option<Vec::<ExternalModel>>)`](crate::operation::get_external_models::GetExternalModelsOutput::external_models): <p>Gets the Amazon SageMaker models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_external_models::GetExternalModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
-    /// - On failure, responds with [`SdkError<GetExternalModelsError>`](crate::operation::get_external_models::GetExternalModelsError)
+                            /// - On failure, responds with [`SdkError<GetExternalModelsError>`](crate::operation::get_external_models::GetExternalModelsError)
     pub fn get_external_models(&self) -> crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder {
-        crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

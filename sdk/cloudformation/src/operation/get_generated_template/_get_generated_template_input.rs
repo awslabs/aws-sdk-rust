@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeneratedTemplateInput {
+pub struct GetGeneratedTemplateInput  {
     /// <p>The language to use to retrieve for the generated template. Supported values are:</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct GetGeneratedTemplateInput {
     /// <p>The name or Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
 }
-impl GetGeneratedTemplateInput {
+impl  GetGeneratedTemplateInput  {
     /// <p>The language to use to retrieve for the generated template. Supported values are:</p>
     /// <ul>
     /// <li>
@@ -22,11 +22,11 @@ impl GetGeneratedTemplateInput {
     /// <li>
     /// <p><code>YAML</code></p></li>
     /// </ul>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::TemplateFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::TemplateFormat> {
         self.format.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl GetGeneratedTemplateInputBuilder {
     /// <p><code>YAML</code></p></li>
     /// </ul>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::TemplateFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The language to use to retrieve for the generated template. Supported values are:</p>
     /// <ul>
@@ -85,21 +84,22 @@ impl GetGeneratedTemplateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_template_name
     }
     /// Consumes the builder and constructs a [`GetGeneratedTemplateInput`](crate::operation::get_generated_template::GetGeneratedTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_generated_template::GetGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_generated_template::GetGeneratedTemplateInput {
-            format: self.format,
-            generated_template_name: self.generated_template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_generated_template::GetGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_generated_template::GetGeneratedTemplateInput {
+                format: self.format
+                ,
+                generated_template_name: self.generated_template_name
+                ,
+            }
+        )
     }
 }
+

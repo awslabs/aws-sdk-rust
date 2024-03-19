@@ -3,7 +3,7 @@
 /// <p>Details about neighboring servers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeighborConnectionDetail {
+pub struct NeighborConnectionDetail  {
     /// <p>The ID of the server that opened the network connection.</p>
     pub source_server_id: ::std::string::String,
     /// <p>The ID of the server that accepted the network connection.</p>
@@ -15,23 +15,21 @@ pub struct NeighborConnectionDetail {
     /// <p>The number of open network connections with the neighboring server.</p>
     pub connections_count: i64,
 }
-impl NeighborConnectionDetail {
+impl  NeighborConnectionDetail  {
     /// <p>The ID of the server that opened the network connection.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> & str {
+        use std::ops::Deref; self.source_server_id.deref()
     }
     /// <p>The ID of the server that accepted the network connection.</p>
-    pub fn destination_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_server_id.deref()
+    pub fn destination_server_id(&self) -> & str {
+        use std::ops::Deref; self.destination_server_id.deref()
     }
     /// <p>The destination network port for the connection.</p>
     pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
     /// <p>The network protocol used for the connection.</p>
-    pub fn transport_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn transport_protocol(&self) -> ::std::option::Option<& str> {
         self.transport_protocol.as_deref()
     }
     /// <p>The number of open network connections with the neighboring server.</p>
@@ -65,8 +63,7 @@ impl NeighborConnectionDetailBuilder {
     }
     /// <p>The ID of the server that opened the network connection.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the server that opened the network connection.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl NeighborConnectionDetailBuilder {
     }
     /// <p>The ID of the server that accepted the network connection.</p>
     pub fn set_destination_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_server_id = input;
-        self
+        self.destination_server_id = input; self
     }
     /// <p>The ID of the server that accepted the network connection.</p>
     pub fn get_destination_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl NeighborConnectionDetailBuilder {
     }
     /// <p>The destination network port for the connection.</p>
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.destination_port = input;
-        self
+        self.destination_port = input; self
     }
     /// <p>The destination network port for the connection.</p>
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
@@ -108,8 +103,7 @@ impl NeighborConnectionDetailBuilder {
     }
     /// <p>The network protocol used for the connection.</p>
     pub fn set_transport_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transport_protocol = input;
-        self
+        self.transport_protocol = input; self
     }
     /// <p>The network protocol used for the connection.</p>
     pub fn get_transport_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl NeighborConnectionDetailBuilder {
     }
     /// <p>The number of open network connections with the neighboring server.</p>
     pub fn set_connections_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.connections_count = input;
-        self
+        self.connections_count = input; self
     }
     /// <p>The number of open network connections with the neighboring server.</p>
     pub fn get_connections_count(&self) -> &::std::option::Option<i64> {
@@ -135,22 +128,27 @@ impl NeighborConnectionDetailBuilder {
     /// - [`source_server_id`](crate::types::builders::NeighborConnectionDetailBuilder::source_server_id)
     /// - [`destination_server_id`](crate::types::builders::NeighborConnectionDetailBuilder::destination_server_id)
     pub fn build(self) -> ::std::result::Result<crate::types::NeighborConnectionDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NeighborConnectionDetail {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building NeighborConnectionDetail",
-                )
-            })?,
-            destination_server_id: self.destination_server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_server_id",
-                    "destination_server_id was not specified but it is required when building NeighborConnectionDetail",
-                )
-            })?,
-            destination_port: self.destination_port,
-            transport_protocol: self.transport_protocol,
-            connections_count: self.connections_count.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::NeighborConnectionDetail {
+                source_server_id: self.source_server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_server_id", "source_server_id was not specified but it is required when building NeighborConnectionDetail")
+                    )?
+                ,
+                destination_server_id: self.destination_server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_server_id", "destination_server_id was not specified but it is required when building NeighborConnectionDetail")
+                    )?
+                ,
+                destination_port: self.destination_port
+                ,
+                transport_protocol: self.transport_protocol
+                ,
+                connections_count: self.connections_count
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

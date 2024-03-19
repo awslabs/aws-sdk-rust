@@ -3,7 +3,7 @@
 /// <p>Contains configuration settings for a quick connect.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickConnectConfig {
+pub struct QuickConnectConfig  {
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_type: crate::types::QuickConnectType,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
@@ -13,21 +13,21 @@ pub struct QuickConnectConfig {
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
 }
-impl QuickConnectConfig {
+impl  QuickConnectConfig  {
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn quick_connect_type(&self) -> &crate::types::QuickConnectType {
+    pub fn quick_connect_type(&self) -> & crate::types::QuickConnectType {
         &self.quick_connect_type
     }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
-    pub fn user_config(&self) -> ::std::option::Option<&crate::types::UserQuickConnectConfig> {
+    pub fn user_config(&self) -> ::std::option::Option<& crate::types::UserQuickConnectConfig> {
         self.user_config.as_ref()
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
-    pub fn queue_config(&self) -> ::std::option::Option<&crate::types::QueueQuickConnectConfig> {
+    pub fn queue_config(&self) -> ::std::option::Option<& crate::types::QueueQuickConnectConfig> {
         self.queue_config.as_ref()
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
-    pub fn phone_config(&self) -> ::std::option::Option<&crate::types::PhoneNumberQuickConnectConfig> {
+    pub fn phone_config(&self) -> ::std::option::Option<& crate::types::PhoneNumberQuickConnectConfig> {
         self.phone_config.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl QuickConnectConfigBuilder {
     }
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn set_quick_connect_type(mut self, input: ::std::option::Option<crate::types::QuickConnectType>) -> Self {
-        self.quick_connect_type = input;
-        self
+        self.quick_connect_type = input; self
     }
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn get_quick_connect_type(&self) -> &::std::option::Option<crate::types::QuickConnectType> {
@@ -70,8 +69,7 @@ impl QuickConnectConfigBuilder {
     }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub fn set_user_config(mut self, input: ::std::option::Option<crate::types::UserQuickConnectConfig>) -> Self {
-        self.user_config = input;
-        self
+        self.user_config = input; self
     }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub fn get_user_config(&self) -> &::std::option::Option<crate::types::UserQuickConnectConfig> {
@@ -84,8 +82,7 @@ impl QuickConnectConfigBuilder {
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
     pub fn set_queue_config(mut self, input: ::std::option::Option<crate::types::QueueQuickConnectConfig>) -> Self {
-        self.queue_config = input;
-        self
+        self.queue_config = input; self
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
     pub fn get_queue_config(&self) -> &::std::option::Option<crate::types::QueueQuickConnectConfig> {
@@ -98,8 +95,7 @@ impl QuickConnectConfigBuilder {
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>) -> Self {
-        self.phone_config = input;
-        self
+        self.phone_config = input; self
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::PhoneNumberQuickConnectConfig> {
@@ -109,16 +105,21 @@ impl QuickConnectConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`quick_connect_type`](crate::types::builders::QuickConnectConfigBuilder::quick_connect_type)
     pub fn build(self) -> ::std::result::Result<crate::types::QuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QuickConnectConfig {
-            quick_connect_type: self.quick_connect_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quick_connect_type",
-                    "quick_connect_type was not specified but it is required when building QuickConnectConfig",
-                )
-            })?,
-            user_config: self.user_config,
-            queue_config: self.queue_config,
-            phone_config: self.phone_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QuickConnectConfig {
+                quick_connect_type: self.quick_connect_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quick_connect_type", "quick_connect_type was not specified but it is required when building QuickConnectConfig")
+                    )?
+                ,
+                user_config: self.user_config
+                ,
+                queue_config: self.queue_config
+                ,
+                phone_config: self.phone_config
+                ,
+            }
+        )
     }
 }
+

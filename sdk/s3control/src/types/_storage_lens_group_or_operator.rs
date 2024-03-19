@@ -3,43 +3,46 @@
 /// <p>A container element for specifying <code>Or</code> rule conditions. The rule conditions determine the subset of objects to which the <code>Or</code> rule applies. Objects can match any of the listed filter conditions, which are joined by the <code>Or</code> logical operator. Only one of each filter condition is allowed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensGroupOrOperator {
+pub struct StorageLensGroupOrOperator  {
     /// <p>Filters objects that match any of the specified prefixes.</p>
-    pub match_any_prefix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub match_any_prefix: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filters objects that match any of the specified suffixes.</p>
-    pub match_any_suffix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub match_any_suffix: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filters objects that match any of the specified S3 object tags.</p>
-    pub match_any_tag: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub match_any_tag: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     /// <p>Filters objects that match the specified object age range.</p>
     pub match_object_age: ::std::option::Option<crate::types::MatchObjectAge>,
     /// <p>Filters objects that match the specified object size range.</p>
     pub match_object_size: ::std::option::Option<crate::types::MatchObjectSize>,
 }
-impl StorageLensGroupOrOperator {
+impl  StorageLensGroupOrOperator  {
     /// <p>Filters objects that match any of the specified prefixes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_prefix.is_none()`.
-    pub fn match_any_prefix(&self) -> &[::std::string::String] {
-        self.match_any_prefix.as_deref().unwrap_or_default()
+    pub fn match_any_prefix(&self) -> & [::std::string::String] {
+        self.match_any_prefix.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters objects that match any of the specified suffixes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_suffix.is_none()`.
-    pub fn match_any_suffix(&self) -> &[::std::string::String] {
-        self.match_any_suffix.as_deref().unwrap_or_default()
+    pub fn match_any_suffix(&self) -> & [::std::string::String] {
+        self.match_any_suffix.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters objects that match any of the specified S3 object tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_tag.is_none()`.
-    pub fn match_any_tag(&self) -> &[crate::types::S3Tag] {
-        self.match_any_tag.as_deref().unwrap_or_default()
+    pub fn match_any_tag(&self) -> & [crate::types::S3Tag] {
+        self.match_any_tag.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters objects that match the specified object age range.</p>
-    pub fn match_object_age(&self) -> ::std::option::Option<&crate::types::MatchObjectAge> {
+    pub fn match_object_age(&self) -> ::std::option::Option<& crate::types::MatchObjectAge> {
         self.match_object_age.as_ref()
     }
     /// <p>Filters objects that match the specified object size range.</p>
-    pub fn match_object_size(&self) -> ::std::option::Option<&crate::types::MatchObjectSize> {
+    pub fn match_object_size(&self) -> ::std::option::Option<& crate::types::MatchObjectSize> {
         self.match_object_size.as_ref()
     }
 }
@@ -54,9 +57,9 @@ impl StorageLensGroupOrOperator {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageLensGroupOrOperatorBuilder {
-    pub(crate) match_any_prefix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_any_suffix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_any_tag: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) match_any_prefix: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_any_suffix: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_any_tag: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     pub(crate) match_object_age: ::std::option::Option<crate::types::MatchObjectAge>,
     pub(crate) match_object_size: ::std::option::Option<crate::types::MatchObjectSize>,
 }
@@ -68,17 +71,16 @@ impl StorageLensGroupOrOperatorBuilder {
     /// <p>Filters objects that match any of the specified prefixes.</p>
     pub fn match_any_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_any_prefix.unwrap_or_default();
-        v.push(input.into());
-        self.match_any_prefix = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.match_any_prefix = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters objects that match any of the specified prefixes.</p>
-    pub fn set_match_any_prefix(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.match_any_prefix = input;
-        self
+    pub fn set_match_any_prefix(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.match_any_prefix = input; self
     }
     /// <p>Filters objects that match any of the specified prefixes.</p>
-    pub fn get_match_any_prefix(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_match_any_prefix(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.match_any_prefix
     }
     /// Appends an item to `match_any_suffix`.
@@ -88,17 +90,16 @@ impl StorageLensGroupOrOperatorBuilder {
     /// <p>Filters objects that match any of the specified suffixes.</p>
     pub fn match_any_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_any_suffix.unwrap_or_default();
-        v.push(input.into());
-        self.match_any_suffix = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.match_any_suffix = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters objects that match any of the specified suffixes.</p>
-    pub fn set_match_any_suffix(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.match_any_suffix = input;
-        self
+    pub fn set_match_any_suffix(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.match_any_suffix = input; self
     }
     /// <p>Filters objects that match any of the specified suffixes.</p>
-    pub fn get_match_any_suffix(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_match_any_suffix(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.match_any_suffix
     }
     /// Appends an item to `match_any_tag`.
@@ -108,17 +109,16 @@ impl StorageLensGroupOrOperatorBuilder {
     /// <p>Filters objects that match any of the specified S3 object tags.</p>
     pub fn match_any_tag(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.match_any_tag.unwrap_or_default();
-        v.push(input);
-        self.match_any_tag = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_any_tag = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters objects that match any of the specified S3 object tags.</p>
-    pub fn set_match_any_tag(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.match_any_tag = input;
-        self
+    pub fn set_match_any_tag(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>) -> Self {
+        self.match_any_tag = input; self
     }
     /// <p>Filters objects that match any of the specified S3 object tags.</p>
-    pub fn get_match_any_tag(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+    pub fn get_match_any_tag(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>> {
         &self.match_any_tag
     }
     /// <p>Filters objects that match the specified object age range.</p>
@@ -128,8 +128,7 @@ impl StorageLensGroupOrOperatorBuilder {
     }
     /// <p>Filters objects that match the specified object age range.</p>
     pub fn set_match_object_age(mut self, input: ::std::option::Option<crate::types::MatchObjectAge>) -> Self {
-        self.match_object_age = input;
-        self
+        self.match_object_age = input; self
     }
     /// <p>Filters objects that match the specified object age range.</p>
     pub fn get_match_object_age(&self) -> &::std::option::Option<crate::types::MatchObjectAge> {
@@ -142,8 +141,7 @@ impl StorageLensGroupOrOperatorBuilder {
     }
     /// <p>Filters objects that match the specified object size range.</p>
     pub fn set_match_object_size(mut self, input: ::std::option::Option<crate::types::MatchObjectSize>) -> Self {
-        self.match_object_size = input;
-        self
+        self.match_object_size = input; self
     }
     /// <p>Filters objects that match the specified object size range.</p>
     pub fn get_match_object_size(&self) -> &::std::option::Option<crate::types::MatchObjectSize> {
@@ -152,11 +150,17 @@ impl StorageLensGroupOrOperatorBuilder {
     /// Consumes the builder and constructs a [`StorageLensGroupOrOperator`](crate::types::StorageLensGroupOrOperator).
     pub fn build(self) -> crate::types::StorageLensGroupOrOperator {
         crate::types::StorageLensGroupOrOperator {
-            match_any_prefix: self.match_any_prefix,
-            match_any_suffix: self.match_any_suffix,
-            match_any_tag: self.match_any_tag,
-            match_object_age: self.match_object_age,
-            match_object_size: self.match_object_size,
+            match_any_prefix: self.match_any_prefix
+            ,
+            match_any_suffix: self.match_any_suffix
+            ,
+            match_any_tag: self.match_any_tag
+            ,
+            match_object_age: self.match_object_age
+            ,
+            match_object_size: self.match_object_size
+            ,
         }
     }
 }
+

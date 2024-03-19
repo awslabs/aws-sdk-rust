@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcIngressConnectionInput {
+pub struct DescribeVpcIngressConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVpcIngressConnectionInput {
+impl  DescribeVpcIngressConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
-    pub fn vpc_ingress_connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_ingress_connection_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeVpcIngressConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
     pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_ingress_connection_arn = input;
-        self
+        self.vpc_ingress_connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
     pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_ingress_connection_arn
     }
     /// Consumes the builder and constructs a [`DescribeVpcIngressConnectionInput`](crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput {
-            vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput {
+                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn
+                ,
+            }
+        )
     }
 }
+

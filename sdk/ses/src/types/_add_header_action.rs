@@ -4,22 +4,20 @@
 /// <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddHeaderAction {
+pub struct AddHeaderAction  {
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
     pub header_name: ::std::string::String,
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
     pub header_value: ::std::string::String,
 }
-impl AddHeaderAction {
+impl  AddHeaderAction  {
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
-    pub fn header_name(&self) -> &str {
-        use std::ops::Deref;
-        self.header_name.deref()
+    pub fn header_name(&self) -> & str {
+        use std::ops::Deref; self.header_name.deref()
     }
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
-    pub fn header_value(&self) -> &str {
-        use std::ops::Deref;
-        self.header_value.deref()
+    pub fn header_value(&self) -> & str {
+        use std::ops::Deref; self.header_value.deref()
     }
 }
 impl AddHeaderAction {
@@ -45,8 +43,7 @@ impl AddHeaderActionBuilder {
     }
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
     pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header_name = input;
-        self
+        self.header_name = input; self
     }
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
     pub fn get_header_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl AddHeaderActionBuilder {
     }
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
     pub fn set_header_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header_value = input;
-        self
+        self.header_value = input; self
     }
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
     pub fn get_header_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl AddHeaderActionBuilder {
     /// - [`header_name`](crate::types::builders::AddHeaderActionBuilder::header_name)
     /// - [`header_value`](crate::types::builders::AddHeaderActionBuilder::header_value)
     pub fn build(self) -> ::std::result::Result<crate::types::AddHeaderAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AddHeaderAction {
-            header_name: self.header_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header_name",
-                    "header_name was not specified but it is required when building AddHeaderAction",
-                )
-            })?,
-            header_value: self.header_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header_value",
-                    "header_value was not specified but it is required when building AddHeaderAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AddHeaderAction {
+                header_name: self.header_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header_name", "header_name was not specified but it is required when building AddHeaderAction")
+                    )?
+                ,
+                header_value: self.header_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header_value", "header_value was not specified but it is required when building AddHeaderAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

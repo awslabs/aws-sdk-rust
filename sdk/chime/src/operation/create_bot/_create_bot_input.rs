@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBotInput {
+pub struct CreateBotInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot display name.</p>
@@ -10,21 +10,21 @@ pub struct CreateBotInput {
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub domain: ::std::option::Option<::std::string::String>,
 }
-impl CreateBotInput {
+impl  CreateBotInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The bot display name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateBotInput {
+impl  ::std::fmt::Debug for CreateBotInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBotInput");
         formatter.field("account_id", &self.account_id);
@@ -57,8 +57,7 @@ impl CreateBotInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl CreateBotInputBuilder {
     }
     /// <p>The bot display name.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The bot display name.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl CreateBotInputBuilder {
     }
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain of the Amazon Chime Enterprise account.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,11 +92,16 @@ impl CreateBotInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_bot::CreateBotInput {
-            account_id: self.account_id,
-            display_name: self.display_name,
-            domain: self.domain,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_bot::CreateBotInput {
+                account_id: self.account_id
+                ,
+                display_name: self.display_name
+                ,
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateBotInputBuilder {
@@ -111,3 +113,4 @@ impl ::std::fmt::Debug for CreateBotInputBuilder {
         formatter.finish()
     }
 }
+

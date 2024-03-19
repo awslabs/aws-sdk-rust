@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourceProfileDetectionsInput {
+pub struct UpdateResourceProfileDetectionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub suppress_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,
+    pub suppress_data_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressDataIdentifier>>,
 }
-impl UpdateResourceProfileDetectionsInput {
+impl  UpdateResourceProfileDetectionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppress_data_identifiers.is_none()`.
-    pub fn suppress_data_identifiers(&self) -> &[crate::types::SuppressDataIdentifier] {
-        self.suppress_data_identifiers.as_deref().unwrap_or_default()
+    pub fn suppress_data_identifiers(&self) -> & [crate::types::SuppressDataIdentifier] {
+        self.suppress_data_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateResourceProfileDetectionsInput {
@@ -32,7 +33,7 @@ impl UpdateResourceProfileDetectionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileDetectionsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) suppress_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,
+    pub(crate) suppress_data_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressDataIdentifier>>,
 }
 impl UpdateResourceProfileDetectionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
@@ -43,8 +44,7 @@ impl UpdateResourceProfileDetectionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl UpdateResourceProfileDetectionsInputBuilder {
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
     pub fn suppress_data_identifiers(mut self, input: crate::types::SuppressDataIdentifier) -> Self {
         let mut v = self.suppress_data_identifiers.unwrap_or_default();
-        v.push(input);
-        self.suppress_data_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suppress_data_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn set_suppress_data_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>) -> Self {
-        self.suppress_data_identifiers = input;
-        self
+    pub fn set_suppress_data_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressDataIdentifier>>) -> Self {
+        self.suppress_data_identifiers = input; self
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn get_suppress_data_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>> {
+    pub fn get_suppress_data_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuppressDataIdentifier>> {
         &self.suppress_data_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateResourceProfileDetectionsInput`](crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput {
-                resource_arn: self.resource_arn,
-                suppress_data_identifiers: self.suppress_data_identifiers,
-            },
+                resource_arn: self.resource_arn
+                ,
+                suppress_data_identifiers: self.suppress_data_identifiers
+                ,
+            }
         )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes an agent version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentVersion {
+pub struct AgentVersion  {
     /// <p>The agent version.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration manager.</p>
     pub configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
-impl AgentVersion {
+impl  AgentVersion  {
     /// <p>The agent version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<& crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AgentVersionBuilder {
     }
     /// <p>The agent version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The agent version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AgentVersionBuilder {
     }
     /// <p>The configuration manager.</p>
     pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
-        self.configuration_manager = input;
-        self
+        self.configuration_manager = input; self
     }
     /// <p>The configuration manager.</p>
     pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
@@ -65,8 +63,11 @@ impl AgentVersionBuilder {
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).
     pub fn build(self) -> crate::types::AgentVersion {
         crate::types::AgentVersion {
-            version: self.version,
-            configuration_manager: self.configuration_manager,
+            version: self.version
+            ,
+            configuration_manager: self.configuration_manager
+            ,
         }
     }
 }
+

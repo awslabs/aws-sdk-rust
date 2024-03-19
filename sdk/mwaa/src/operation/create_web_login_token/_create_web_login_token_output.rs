@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateWebLoginTokenOutput {
+pub struct CreateWebLoginTokenOutput  {
     /// <p>An Airflow web server login token.</p>
     pub web_token: ::std::option::Option<::std::string::String>,
     /// <p>The Airflow web server hostname for the environment.</p>
@@ -13,25 +13,25 @@ pub struct CreateWebLoginTokenOutput {
     pub airflow_identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateWebLoginTokenOutput {
+impl  CreateWebLoginTokenOutput  {
     /// <p>An Airflow web server login token.</p>
-    pub fn web_token(&self) -> ::std::option::Option<&str> {
+    pub fn web_token(&self) -> ::std::option::Option<& str> {
         self.web_token.as_deref()
     }
     /// <p>The Airflow web server hostname for the environment.</p>
-    pub fn web_server_hostname(&self) -> ::std::option::Option<&str> {
+    pub fn web_server_hostname(&self) -> ::std::option::Option<& str> {
         self.web_server_hostname.as_deref()
     }
     /// <p>The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated identity. For example, <code>assumed-role/Admin/your-name</code>.</p>
-    pub fn iam_identity(&self) -> ::std::option::Option<&str> {
+    pub fn iam_identity(&self) -> ::std::option::Option<& str> {
         self.iam_identity.as_deref()
     }
     /// <p>The user name of the Apache Airflow identity creating the web login token.</p>
-    pub fn airflow_identity(&self) -> ::std::option::Option<&str> {
+    pub fn airflow_identity(&self) -> ::std::option::Option<& str> {
         self.airflow_identity.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateWebLoginTokenOutput {
+impl  ::std::fmt::Debug for CreateWebLoginTokenOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebLoginTokenOutput");
         formatter.field("web_token", &"*** Sensitive Data Redacted ***");
@@ -43,10 +43,10 @@ impl ::std::fmt::Debug for CreateWebLoginTokenOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWebLoginTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWebLoginTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput).
     pub fn builder() -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder {
@@ -72,8 +72,7 @@ impl CreateWebLoginTokenOutputBuilder {
     }
     /// <p>An Airflow web server login token.</p>
     pub fn set_web_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_token = input;
-        self
+        self.web_token = input; self
     }
     /// <p>An Airflow web server login token.</p>
     pub fn get_web_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CreateWebLoginTokenOutputBuilder {
     }
     /// <p>The Airflow web server hostname for the environment.</p>
     pub fn set_web_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_server_hostname = input;
-        self
+        self.web_server_hostname = input; self
     }
     /// <p>The Airflow web server hostname for the environment.</p>
     pub fn get_web_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl CreateWebLoginTokenOutputBuilder {
     }
     /// <p>The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated identity. For example, <code>assumed-role/Admin/your-name</code>.</p>
     pub fn set_iam_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_identity = input;
-        self
+        self.iam_identity = input; self
     }
     /// <p>The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated identity. For example, <code>assumed-role/Admin/your-name</code>.</p>
     pub fn get_iam_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,29 +111,32 @@ impl CreateWebLoginTokenOutputBuilder {
     }
     /// <p>The user name of the Apache Airflow identity creating the web login token.</p>
     pub fn set_airflow_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.airflow_identity = input;
-        self
+        self.airflow_identity = input; self
     }
     /// <p>The user name of the Apache Airflow identity creating the web login token.</p>
     pub fn get_airflow_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.airflow_identity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput).
     pub fn build(self) -> crate::operation::create_web_login_token::CreateWebLoginTokenOutput {
         crate::operation::create_web_login_token::CreateWebLoginTokenOutput {
-            web_token: self.web_token,
-            web_server_hostname: self.web_server_hostname,
-            iam_identity: self.iam_identity,
-            airflow_identity: self.airflow_identity,
+            web_token: self.web_token
+            ,
+            web_server_hostname: self.web_server_hostname
+            ,
+            iam_identity: self.iam_identity
+            ,
+            airflow_identity: self.airflow_identity
+            ,
             _request_id: self._request_id,
         }
     }
@@ -152,3 +152,4 @@ impl ::std::fmt::Debug for CreateWebLoginTokenOutputBuilder {
         formatter.finish()
     }
 }
+

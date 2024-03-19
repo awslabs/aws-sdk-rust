@@ -3,13 +3,13 @@
 /// <p>A request to delete a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDedicatedIpPoolInput {
+pub struct DeleteDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDedicatedIpPoolInput {
+impl  DeleteDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<& str> {
         self.pool_name.as_deref()
     }
 }
@@ -35,18 +35,20 @@ impl DeleteDedicatedIpPoolInputBuilder {
     }
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_name
     }
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput { pool_name: self.pool_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput {
+                pool_name: self.pool_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A list of the part sizes of the multipart upload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartListElement {
+pub struct PartListElement  {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     pub range_in_bytes: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
 }
-impl PartListElement {
+impl  PartListElement  {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
-    pub fn range_in_bytes(&self) -> ::std::option::Option<&str> {
+    pub fn range_in_bytes(&self) -> ::std::option::Option<& str> {
         self.range_in_bytes.as_deref()
     }
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
-    pub fn sha256_tree_hash(&self) -> ::std::option::Option<&str> {
+    pub fn sha256_tree_hash(&self) -> ::std::option::Option<& str> {
         self.sha256_tree_hash.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PartListElementBuilder {
     }
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     pub fn set_range_in_bytes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_in_bytes = input;
-        self
+        self.range_in_bytes = input; self
     }
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     pub fn get_range_in_bytes(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PartListElementBuilder {
     }
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn set_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sha256_tree_hash = input;
-        self
+        self.sha256_tree_hash = input; self
     }
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn get_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PartListElementBuilder {
     /// Consumes the builder and constructs a [`PartListElement`](crate::types::PartListElement).
     pub fn build(self) -> crate::types::PartListElement {
         crate::types::PartListElement {
-            range_in_bytes: self.range_in_bytes,
-            sha256_tree_hash: self.sha256_tree_hash,
+            range_in_bytes: self.range_in_bytes
+            ,
+            sha256_tree_hash: self.sha256_tree_hash
+            ,
         }
     }
 }
+

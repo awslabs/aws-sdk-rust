@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBatchPredictionJobs`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::set_job_id):<br>required: **false**<br><p>The batch prediction job for which to get the details.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token from the previous request.</p><br>
-    /// - On success, responds with [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput) with field(s):
+                            /// - On success, responds with [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput) with field(s):
     ///   - [`batch_predictions(Option<Vec::<BatchPrediction>>)`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput::batch_predictions): <p>An array containing the details of each batch prediction job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput::next_token): <p>The next token for the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<GetBatchPredictionJobsError>`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError)
+                            /// - On failure, responds with [`SdkError<GetBatchPredictionJobsError>`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError)
     pub fn get_batch_prediction_jobs(&self) -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder {
-        crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

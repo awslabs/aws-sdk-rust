@@ -14,13 +14,13 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteWorkflowExecutionDecisionAttributes {
+pub struct CompleteWorkflowExecutionDecisionAttributes  {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     pub result: ::std::option::Option<::std::string::String>,
 }
-impl CompleteWorkflowExecutionDecisionAttributes {
+impl  CompleteWorkflowExecutionDecisionAttributes  {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl CompleteWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,6 +53,10 @@ impl CompleteWorkflowExecutionDecisionAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`CompleteWorkflowExecutionDecisionAttributes`](crate::types::CompleteWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::CompleteWorkflowExecutionDecisionAttributes {
-        crate::types::CompleteWorkflowExecutionDecisionAttributes { result: self.result }
+        crate::types::CompleteWorkflowExecutionDecisionAttributes {
+            result: self.result
+            ,
+        }
     }
 }
+

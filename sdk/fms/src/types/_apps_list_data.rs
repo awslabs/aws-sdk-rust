@@ -3,7 +3,7 @@
 /// <p>An Firewall Manager applications list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppsListData {
+pub struct AppsListData  {
     /// <p>The ID of the Firewall Manager applications list.</p>
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager applications list.</p>
@@ -15,41 +15,37 @@ pub struct AppsListData {
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of applications in the Firewall Manager applications list.</p>
-    pub apps_list: ::std::vec::Vec<crate::types::App>,
+    pub apps_list: ::std::vec::Vec::<crate::types::App>,
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
-    pub previous_apps_list: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>>,
+    pub previous_apps_list: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::App>>>,
 }
-impl AppsListData {
+impl  AppsListData  {
     /// <p>The ID of the Firewall Manager applications list.</p>
-    pub fn list_id(&self) -> ::std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<& str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the Firewall Manager applications list.</p>
-    pub fn list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.list_name.deref()
+    pub fn list_name(&self) -> & str {
+        use std::ops::Deref; self.list_name.deref()
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
-    pub fn list_update_token(&self) -> ::std::option::Option<&str> {
+    pub fn list_update_token(&self) -> ::std::option::Option<& str> {
         self.list_update_token.as_deref()
     }
     /// <p>The time that the Firewall Manager applications list was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An array of applications in the Firewall Manager applications list.</p>
-    pub fn apps_list(&self) -> &[crate::types::App] {
-        use std::ops::Deref;
-        self.apps_list.deref()
+    pub fn apps_list(&self) -> & [crate::types::App] {
+        use std::ops::Deref; self.apps_list.deref()
     }
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
-    pub fn previous_apps_list(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>> {
+    pub fn previous_apps_list(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::App>>> {
         self.previous_apps_list.as_ref()
     }
 }
@@ -69,8 +65,8 @@ pub struct AppsListDataBuilder {
     pub(crate) list_update_token: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) apps_list: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
-    pub(crate) previous_apps_list: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>>,
+    pub(crate) apps_list: ::std::option::Option<::std::vec::Vec::<crate::types::App>>,
+    pub(crate) previous_apps_list: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::App>>>,
 }
 impl AppsListDataBuilder {
     /// <p>The ID of the Firewall Manager applications list.</p>
@@ -80,8 +76,7 @@ impl AppsListDataBuilder {
     }
     /// <p>The ID of the Firewall Manager applications list.</p>
     pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_id = input;
-        self
+        self.list_id = input; self
     }
     /// <p>The ID of the Firewall Manager applications list.</p>
     pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl AppsListDataBuilder {
     }
     /// <p>The name of the Firewall Manager applications list.</p>
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_name = input;
-        self
+        self.list_name = input; self
     }
     /// <p>The name of the Firewall Manager applications list.</p>
     pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +103,7 @@ impl AppsListDataBuilder {
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn set_list_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.list_update_token = input;
-        self
+        self.list_update_token = input; self
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn get_list_update_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +116,7 @@ impl AppsListDataBuilder {
     }
     /// <p>The time that the Firewall Manager applications list was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time that the Firewall Manager applications list was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,8 +129,7 @@ impl AppsListDataBuilder {
     }
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -151,17 +142,16 @@ impl AppsListDataBuilder {
     /// <p>An array of applications in the Firewall Manager applications list.</p>
     pub fn apps_list(mut self, input: crate::types::App) -> Self {
         let mut v = self.apps_list.unwrap_or_default();
-        v.push(input);
-        self.apps_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.apps_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of applications in the Firewall Manager applications list.</p>
-    pub fn set_apps_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::App>>) -> Self {
-        self.apps_list = input;
-        self
+    pub fn set_apps_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::App>>) -> Self {
+        self.apps_list = input; self
     }
     /// <p>An array of applications in the Firewall Manager applications list.</p>
-    pub fn get_apps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::App>> {
+    pub fn get_apps_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::App>> {
         &self.apps_list
     }
     /// Adds a key-value pair to `previous_apps_list`.
@@ -169,24 +159,18 @@ impl AppsListDataBuilder {
     /// To override the contents of this collection use [`set_previous_apps_list`](Self::set_previous_apps_list).
     ///
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
-    pub fn previous_apps_list(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::App>) -> Self {
+    pub fn previous_apps_list(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::App>) -> Self {
         let mut hash_map = self.previous_apps_list.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.previous_apps_list = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.previous_apps_list = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
-    pub fn set_previous_apps_list(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>>,
-    ) -> Self {
-        self.previous_apps_list = input;
-        self
+    pub fn set_previous_apps_list(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::App>>>) -> Self {
+        self.previous_apps_list = input; self
     }
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
-    pub fn get_previous_apps_list(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::App>>> {
+    pub fn get_previous_apps_list(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::App>>> {
         &self.previous_apps_list
     }
     /// Consumes the builder and constructs a [`AppsListData`](crate::types::AppsListData).
@@ -194,24 +178,30 @@ impl AppsListDataBuilder {
     /// - [`list_name`](crate::types::builders::AppsListDataBuilder::list_name)
     /// - [`apps_list`](crate::types::builders::AppsListDataBuilder::apps_list)
     pub fn build(self) -> ::std::result::Result<crate::types::AppsListData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppsListData {
-            list_id: self.list_id,
-            list_name: self.list_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "list_name",
-                    "list_name was not specified but it is required when building AppsListData",
-                )
-            })?,
-            list_update_token: self.list_update_token,
-            create_time: self.create_time,
-            last_update_time: self.last_update_time,
-            apps_list: self.apps_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "apps_list",
-                    "apps_list was not specified but it is required when building AppsListData",
-                )
-            })?,
-            previous_apps_list: self.previous_apps_list,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppsListData {
+                list_id: self.list_id
+                ,
+                list_name: self.list_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("list_name", "list_name was not specified but it is required when building AppsListData")
+                    )?
+                ,
+                list_update_token: self.list_update_token
+                ,
+                create_time: self.create_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                apps_list: self.apps_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("apps_list", "apps_list was not specified but it is required when building AppsListData")
+                    )?
+                ,
+                previous_apps_list: self.previous_apps_list
+                ,
+            }
+        )
     }
 }
+

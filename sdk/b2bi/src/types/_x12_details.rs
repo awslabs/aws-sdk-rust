@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct X12Details {
+pub struct X12Details  {
     /// <p>Returns an enumerated type where each value identifies an X12 transaction set. Transaction sets are maintained by the X12 Accredited Standards Committee.</p>
     pub transaction_set: ::std::option::Option<crate::types::X12TransactionSet>,
     /// <p>Returns the version to use for the specified X12 transaction set. Supported versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
     pub version: ::std::option::Option<crate::types::X12Version>,
 }
-impl X12Details {
+impl  X12Details  {
     /// <p>Returns an enumerated type where each value identifies an X12 transaction set. Transaction sets are maintained by the X12 Accredited Standards Committee.</p>
-    pub fn transaction_set(&self) -> ::std::option::Option<&crate::types::X12TransactionSet> {
+    pub fn transaction_set(&self) -> ::std::option::Option<& crate::types::X12TransactionSet> {
         self.transaction_set.as_ref()
     }
     /// <p>Returns the version to use for the specified X12 transaction set. Supported versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::X12Version> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::X12Version> {
         self.version.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl X12DetailsBuilder {
     }
     /// <p>Returns an enumerated type where each value identifies an X12 transaction set. Transaction sets are maintained by the X12 Accredited Standards Committee.</p>
     pub fn set_transaction_set(mut self, input: ::std::option::Option<crate::types::X12TransactionSet>) -> Self {
-        self.transaction_set = input;
-        self
+        self.transaction_set = input; self
     }
     /// <p>Returns an enumerated type where each value identifies an X12 transaction set. Transaction sets are maintained by the X12 Accredited Standards Committee.</p>
     pub fn get_transaction_set(&self) -> &::std::option::Option<crate::types::X12TransactionSet> {
@@ -57,8 +56,7 @@ impl X12DetailsBuilder {
     }
     /// <p>Returns the version to use for the specified X12 transaction set. Supported versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::X12Version>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Returns the version to use for the specified X12 transaction set. Supported versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::X12Version> {
@@ -67,8 +65,11 @@ impl X12DetailsBuilder {
     /// Consumes the builder and constructs a [`X12Details`](crate::types::X12Details).
     pub fn build(self) -> crate::types::X12Details {
         crate::types::X12Details {
-            transaction_set: self.transaction_set,
-            version: self.version,
+            transaction_set: self.transaction_set
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

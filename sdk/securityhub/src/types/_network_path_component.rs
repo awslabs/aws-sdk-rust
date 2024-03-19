@@ -3,7 +3,7 @@
 /// <p>Information about a network path component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkPathComponent {
+pub struct NetworkPathComponent  {
     /// <p>The identifier of a component in the network path.</p>
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of component.</p>
@@ -13,21 +13,21 @@ pub struct NetworkPathComponent {
     /// <p>Information about the component that comes before the current node in the network path.</p>
     pub ingress: ::std::option::Option<crate::types::NetworkHeader>,
 }
-impl NetworkPathComponent {
+impl  NetworkPathComponent  {
     /// <p>The identifier of a component in the network path.</p>
-    pub fn component_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The type of component.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&str> {
+    pub fn component_type(&self) -> ::std::option::Option<& str> {
         self.component_type.as_deref()
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
-    pub fn egress(&self) -> ::std::option::Option<&crate::types::NetworkHeader> {
+    pub fn egress(&self) -> ::std::option::Option<& crate::types::NetworkHeader> {
         self.egress.as_ref()
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
-    pub fn ingress(&self) -> ::std::option::Option<&crate::types::NetworkHeader> {
+    pub fn ingress(&self) -> ::std::option::Option<& crate::types::NetworkHeader> {
         self.ingress.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl NetworkPathComponentBuilder {
     }
     /// <p>The identifier of a component in the network path.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// <p>The identifier of a component in the network path.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl NetworkPathComponentBuilder {
     }
     /// <p>The type of component.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>The type of component.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NetworkPathComponentBuilder {
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
     pub fn set_egress(mut self, input: ::std::option::Option<crate::types::NetworkHeader>) -> Self {
-        self.egress = input;
-        self
+        self.egress = input; self
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
     pub fn get_egress(&self) -> &::std::option::Option<crate::types::NetworkHeader> {
@@ -97,8 +94,7 @@ impl NetworkPathComponentBuilder {
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
     pub fn set_ingress(mut self, input: ::std::option::Option<crate::types::NetworkHeader>) -> Self {
-        self.ingress = input;
-        self
+        self.ingress = input; self
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
     pub fn get_ingress(&self) -> &::std::option::Option<crate::types::NetworkHeader> {
@@ -107,10 +103,15 @@ impl NetworkPathComponentBuilder {
     /// Consumes the builder and constructs a [`NetworkPathComponent`](crate::types::NetworkPathComponent).
     pub fn build(self) -> crate::types::NetworkPathComponent {
         crate::types::NetworkPathComponent {
-            component_id: self.component_id,
-            component_type: self.component_type,
-            egress: self.egress,
-            ingress: self.ingress,
+            component_id: self.component_id
+            ,
+            component_type: self.component_type
+            ,
+            egress: self.egress
+            ,
+            ingress: self.ingress
+            ,
         }
     }
 }
+

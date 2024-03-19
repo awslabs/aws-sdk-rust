@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbInstanceSummary {
+pub struct DbInstanceSummary  {
     /// <p>The service-generated unique identifier of the DB instance.</p>
     pub id: ::std::string::String,
     /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
@@ -23,36 +23,33 @@ pub struct DbInstanceSummary {
     /// <p>Single-Instance or with a MultiAZ Standby for High availability.</p>
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
 }
-impl DbInstanceSummary {
+impl  DbInstanceSummary  {
     /// <p>The service-generated unique identifier of the DB instance.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the DB instance.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The status of the DB instance.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
-    pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
+    pub fn db_instance_type(&self) -> ::std::option::Option<& crate::types::DbInstanceType> {
         self.db_instance_type.as_ref()
     }
     /// <p>The storage type for your DB instance.</p>
-    pub fn db_storage_type(&self) -> ::std::option::Option<&crate::types::DbStorageType> {
+    pub fn db_storage_type(&self) -> ::std::option::Option<& crate::types::DbStorageType> {
         self.db_storage_type.as_ref()
     }
     /// <p>The amount of storage to allocate for your DbStorageType in GiB (gibibytes).</p>
@@ -60,7 +57,7 @@ impl DbInstanceSummary {
         self.allocated_storage
     }
     /// <p>Single-Instance or with a MultiAZ Standby for High availability.</p>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
 }
@@ -94,8 +91,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The service-generated unique identifier of the DB instance.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The service-generated unique identifier of the DB instance.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +119,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the DB instance.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the DB instance.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +132,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The status of the DB instance.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the DB instance.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -152,8 +145,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +158,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
-        self.db_instance_type = input;
-        self
+        self.db_instance_type = input; self
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
@@ -180,8 +171,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The storage type for your DB instance.</p>
     pub fn set_db_storage_type(mut self, input: ::std::option::Option<crate::types::DbStorageType>) -> Self {
-        self.db_storage_type = input;
-        self
+        self.db_storage_type = input; self
     }
     /// <p>The storage type for your DB instance.</p>
     pub fn get_db_storage_type(&self) -> &::std::option::Option<crate::types::DbStorageType> {
@@ -194,8 +184,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>The amount of storage to allocate for your DbStorageType in GiB (gibibytes).</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The amount of storage to allocate for your DbStorageType in GiB (gibibytes).</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -208,8 +197,7 @@ impl DbInstanceSummaryBuilder {
     }
     /// <p>Single-Instance or with a MultiAZ Standby for High availability.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>Single-Instance or with a MultiAZ Standby for High availability.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -221,31 +209,37 @@ impl DbInstanceSummaryBuilder {
     /// - [`name`](crate::types::builders::DbInstanceSummaryBuilder::name)
     /// - [`arn`](crate::types::builders::DbInstanceSummaryBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DbInstanceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DbInstanceSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DbInstanceSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DbInstanceSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DbInstanceSummary",
-                )
-            })?,
-            status: self.status,
-            endpoint: self.endpoint,
-            db_instance_type: self.db_instance_type,
-            db_storage_type: self.db_storage_type,
-            allocated_storage: self.allocated_storage,
-            deployment_type: self.deployment_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DbInstanceSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DbInstanceSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DbInstanceSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DbInstanceSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                endpoint: self.endpoint
+                ,
+                db_instance_type: self.db_instance_type
+                ,
+                db_storage_type: self.db_storage_type
+                ,
+                allocated_storage: self.allocated_storage
+                ,
+                deployment_type: self.deployment_type
+                ,
+            }
+        )
     }
 }
+

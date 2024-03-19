@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPortalServiceProviderMetadataOutput {
+pub struct GetPortalServiceProviderMetadataOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The service provider SAML metadata.</p>
     pub service_provider_saml_metadata: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPortalServiceProviderMetadataOutput {
+impl  GetPortalServiceProviderMetadataOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The service provider SAML metadata.</p>
-    pub fn service_provider_saml_metadata(&self) -> ::std::option::Option<&str> {
+    pub fn service_provider_saml_metadata(&self) -> ::std::option::Option<& str> {
         self.service_provider_saml_metadata.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPortalServiceProviderMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPortalServiceProviderMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
     pub fn builder() -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder {
@@ -49,8 +48,7 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,42 +61,37 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
     }
     /// <p>The service provider SAML metadata.</p>
     pub fn set_service_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_provider_saml_metadata = input;
-        self
+        self.service_provider_saml_metadata = input; self
     }
     /// <p>The service provider SAML metadata.</p>
     pub fn get_service_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder::portal_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput {
-                portal_arn: self.portal_arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "portal_arn",
-                        "portal_arn was not specified but it is required when building GetPortalServiceProviderMetadataOutput",
-                    )
-                })?,
-                service_provider_saml_metadata: self.service_provider_saml_metadata,
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building GetPortalServiceProviderMetadataOutput")
+                    )?
+                ,
+                service_provider_saml_metadata: self.service_provider_saml_metadata
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

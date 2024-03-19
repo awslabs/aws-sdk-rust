@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppAssessmentOutput {
+pub struct DeleteAppAssessmentOutput  {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub assessment_arn: ::std::string::String,
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub assessment_status: crate::types::AssessmentStatus,
     _request_id: Option<String>,
 }
-impl DeleteAppAssessmentOutput {
+impl  DeleteAppAssessmentOutput  {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_arn.deref()
+    pub fn assessment_arn(&self) -> & str {
+        use std::ops::Deref; self.assessment_arn.deref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> &crate::types::AssessmentStatus {
+    pub fn assessment_status(&self) -> & crate::types::AssessmentStatus {
         &self.assessment_status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAppAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
     pub fn builder() -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder {
@@ -49,8 +48,7 @@ impl DeleteAppAssessmentOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_arn = input;
-        self
+        self.assessment_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,44 +62,41 @@ impl DeleteAppAssessmentOutputBuilder {
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn set_assessment_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
-        self.assessment_status = input;
-        self
+        self.assessment_status = input; self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn get_assessment_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
         &self.assessment_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`assessment_arn`](crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::assessment_arn)
     /// - [`assessment_status`](crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::assessment_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_app_assessment::DeleteAppAssessmentOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
-            assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_arn",
-                    "assessment_arn was not specified but it is required when building DeleteAppAssessmentOutput",
-                )
-            })?,
-            assessment_status: self.assessment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_status",
-                    "assessment_status was not specified but it is required when building DeleteAppAssessmentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_assessment::DeleteAppAssessmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
+                assessment_arn: self.assessment_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_arn", "assessment_arn was not specified but it is required when building DeleteAppAssessmentOutput")
+                    )?
+                ,
+                assessment_status: self.assessment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_status", "assessment_status was not specified but it is required when building DeleteAppAssessmentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

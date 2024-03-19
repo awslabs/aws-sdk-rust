@@ -3,7 +3,7 @@
 /// <p>An Amazon Redshift Advisor recommended action on the Amazon Redshift cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>A unique identifier of the Advisor recommendation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster for which the recommendation is returned.</p>
@@ -25,62 +25,64 @@ pub struct Recommendation {
     /// <p>The description of the recommendation.</p>
     pub recommendation_text: ::std::option::Option<::std::string::String>,
     /// <p>List of Amazon Redshift recommended actions.</p>
-    pub recommended_actions: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedAction>>,
+    pub recommended_actions: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedAction>>,
     /// <p>List of helpful links for more information about the Advisor recommendation.</p>
-    pub reference_links: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLink>>,
+    pub reference_links: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceLink>>,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>A unique identifier of the Advisor recommendation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique identifier of the cluster for which the recommendation is returned.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Redshift cluster namespace ARN for which the recommendations is returned.</p>
-    pub fn namespace_arn(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> ::std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The date and time (UTC) that the recommendation was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The type of Advisor recommendation.</p>
-    pub fn recommendation_type(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_type(&self) -> ::std::option::Option<& str> {
         self.recommendation_type.as_deref()
     }
     /// <p>The title of the recommendation.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the recommendation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The description of what was observed about your cluster.</p>
-    pub fn observation(&self) -> ::std::option::Option<&str> {
+    pub fn observation(&self) -> ::std::option::Option<& str> {
         self.observation.as_deref()
     }
     /// <p>The scale of the impact that the Advisor recommendation has to the performance and cost of the cluster.</p>
-    pub fn impact_ranking(&self) -> ::std::option::Option<&crate::types::ImpactRankingType> {
+    pub fn impact_ranking(&self) -> ::std::option::Option<& crate::types::ImpactRankingType> {
         self.impact_ranking.as_ref()
     }
     /// <p>The description of the recommendation.</p>
-    pub fn recommendation_text(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_text(&self) -> ::std::option::Option<& str> {
         self.recommendation_text.as_deref()
     }
     /// <p>List of Amazon Redshift recommended actions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_actions.is_none()`.
-    pub fn recommended_actions(&self) -> &[crate::types::RecommendedAction] {
-        self.recommended_actions.as_deref().unwrap_or_default()
+    pub fn recommended_actions(&self) -> & [crate::types::RecommendedAction] {
+        self.recommended_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of helpful links for more information about the Advisor recommendation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_links.is_none()`.
-    pub fn reference_links(&self) -> &[crate::types::ReferenceLink] {
-        self.reference_links.as_deref().unwrap_or_default()
+    pub fn reference_links(&self) -> & [crate::types::ReferenceLink] {
+        self.reference_links.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Recommendation {
@@ -104,8 +106,8 @@ pub struct RecommendationBuilder {
     pub(crate) observation: ::std::option::Option<::std::string::String>,
     pub(crate) impact_ranking: ::std::option::Option<crate::types::ImpactRankingType>,
     pub(crate) recommendation_text: ::std::option::Option<::std::string::String>,
-    pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedAction>>,
-    pub(crate) reference_links: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLink>>,
+    pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedAction>>,
+    pub(crate) reference_links: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceLink>>,
 }
 impl RecommendationBuilder {
     /// <p>A unique identifier of the Advisor recommendation.</p>
@@ -115,8 +117,7 @@ impl RecommendationBuilder {
     }
     /// <p>A unique identifier of the Advisor recommendation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier of the Advisor recommendation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +130,7 @@ impl RecommendationBuilder {
     }
     /// <p>The unique identifier of the cluster for which the recommendation is returned.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster for which the recommendation is returned.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl RecommendationBuilder {
     }
     /// <p>The Amazon Redshift cluster namespace ARN for which the recommendations is returned.</p>
     pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_arn = input;
-        self
+        self.namespace_arn = input; self
     }
     /// <p>The Amazon Redshift cluster namespace ARN for which the recommendations is returned.</p>
     pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +156,7 @@ impl RecommendationBuilder {
     }
     /// <p>The date and time (UTC) that the recommendation was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time (UTC) that the recommendation was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +169,7 @@ impl RecommendationBuilder {
     }
     /// <p>The type of Advisor recommendation.</p>
     pub fn set_recommendation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_type = input;
-        self
+        self.recommendation_type = input; self
     }
     /// <p>The type of Advisor recommendation.</p>
     pub fn get_recommendation_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +182,7 @@ impl RecommendationBuilder {
     }
     /// <p>The title of the recommendation.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the recommendation.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +195,7 @@ impl RecommendationBuilder {
     }
     /// <p>The description of the recommendation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the recommendation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +208,7 @@ impl RecommendationBuilder {
     }
     /// <p>The description of what was observed about your cluster.</p>
     pub fn set_observation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.observation = input;
-        self
+        self.observation = input; self
     }
     /// <p>The description of what was observed about your cluster.</p>
     pub fn get_observation(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +221,7 @@ impl RecommendationBuilder {
     }
     /// <p>The scale of the impact that the Advisor recommendation has to the performance and cost of the cluster.</p>
     pub fn set_impact_ranking(mut self, input: ::std::option::Option<crate::types::ImpactRankingType>) -> Self {
-        self.impact_ranking = input;
-        self
+        self.impact_ranking = input; self
     }
     /// <p>The scale of the impact that the Advisor recommendation has to the performance and cost of the cluster.</p>
     pub fn get_impact_ranking(&self) -> &::std::option::Option<crate::types::ImpactRankingType> {
@@ -241,8 +234,7 @@ impl RecommendationBuilder {
     }
     /// <p>The description of the recommendation.</p>
     pub fn set_recommendation_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_text = input;
-        self
+        self.recommendation_text = input; self
     }
     /// <p>The description of the recommendation.</p>
     pub fn get_recommendation_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,17 +247,16 @@ impl RecommendationBuilder {
     /// <p>List of Amazon Redshift recommended actions.</p>
     pub fn recommended_actions(mut self, input: crate::types::RecommendedAction) -> Self {
         let mut v = self.recommended_actions.unwrap_or_default();
-        v.push(input);
-        self.recommended_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommended_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Amazon Redshift recommended actions.</p>
-    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedAction>>) -> Self {
-        self.recommended_actions = input;
-        self
+    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendedAction>>) -> Self {
+        self.recommended_actions = input; self
     }
     /// <p>List of Amazon Redshift recommended actions.</p>
-    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedAction>> {
+    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendedAction>> {
         &self.recommended_actions
     }
     /// Appends an item to `reference_links`.
@@ -275,34 +266,46 @@ impl RecommendationBuilder {
     /// <p>List of helpful links for more information about the Advisor recommendation.</p>
     pub fn reference_links(mut self, input: crate::types::ReferenceLink) -> Self {
         let mut v = self.reference_links.unwrap_or_default();
-        v.push(input);
-        self.reference_links = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reference_links = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of helpful links for more information about the Advisor recommendation.</p>
-    pub fn set_reference_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLink>>) -> Self {
-        self.reference_links = input;
-        self
+    pub fn set_reference_links(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceLink>>) -> Self {
+        self.reference_links = input; self
     }
     /// <p>List of helpful links for more information about the Advisor recommendation.</p>
-    pub fn get_reference_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceLink>> {
+    pub fn get_reference_links(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReferenceLink>> {
         &self.reference_links
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            id: self.id,
-            cluster_identifier: self.cluster_identifier,
-            namespace_arn: self.namespace_arn,
-            created_at: self.created_at,
-            recommendation_type: self.recommendation_type,
-            title: self.title,
-            description: self.description,
-            observation: self.observation,
-            impact_ranking: self.impact_ranking,
-            recommendation_text: self.recommendation_text,
-            recommended_actions: self.recommended_actions,
-            reference_links: self.reference_links,
+            id: self.id
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
+            namespace_arn: self.namespace_arn
+            ,
+            created_at: self.created_at
+            ,
+            recommendation_type: self.recommendation_type
+            ,
+            title: self.title
+            ,
+            description: self.description
+            ,
+            observation: self.observation
+            ,
+            impact_ranking: self.impact_ranking
+            ,
+            recommendation_text: self.recommendation_text
+            ,
+            recommended_actions: self.recommended_actions
+            ,
+            reference_links: self.reference_links
+            ,
         }
     }
 }
+

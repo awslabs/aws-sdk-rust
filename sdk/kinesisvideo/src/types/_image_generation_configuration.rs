@@ -3,7 +3,7 @@
 /// <p>The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageGenerationConfiguration {
+pub struct ImageGenerationConfiguration  {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
     pub status: crate::types::ConfigurationStatus,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
@@ -15,23 +15,23 @@ pub struct ImageGenerationConfiguration {
     /// <p>The accepted image format.</p>
     pub format: crate::types::Format,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
+    pub format_config: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub width_pixels: ::std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub height_pixels: ::std::option::Option<i32>,
 }
-impl ImageGenerationConfiguration {
+impl  ImageGenerationConfiguration  {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-    pub fn status(&self) -> &crate::types::ConfigurationStatus {
+    pub fn status(&self) -> & crate::types::ConfigurationStatus {
         &self.status
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn image_selector_type(&self) -> &crate::types::ImageSelectorType {
+    pub fn image_selector_type(&self) -> & crate::types::ImageSelectorType {
         &self.image_selector_type
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
-    pub fn destination_config(&self) -> ::std::option::Option<&crate::types::ImageGenerationDestinationConfig> {
+    pub fn destination_config(&self) -> ::std::option::Option<& crate::types::ImageGenerationDestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available.</p>
@@ -39,11 +39,11 @@ impl ImageGenerationConfiguration {
         self.sampling_interval
     }
     /// <p>The accepted image format.</p>
-    pub fn format(&self) -> &crate::types::Format {
+    pub fn format(&self) -> & crate::types::Format {
         &self.format
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
+    pub fn format_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>> {
         self.format_config.as_ref()
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
@@ -71,7 +71,7 @@ pub struct ImageGenerationConfigurationBuilder {
     pub(crate) destination_config: ::std::option::Option<crate::types::ImageGenerationDestinationConfig>,
     pub(crate) sampling_interval: ::std::option::Option<i32>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
-    pub(crate) format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
+    pub(crate) format_config: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>,
     pub(crate) width_pixels: ::std::option::Option<i32>,
     pub(crate) height_pixels: ::std::option::Option<i32>,
 }
@@ -84,8 +84,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
@@ -99,8 +98,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
     pub fn set_image_selector_type(mut self, input: ::std::option::Option<crate::types::ImageSelectorType>) -> Self {
-        self.image_selector_type = input;
-        self
+        self.image_selector_type = input; self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
     pub fn get_image_selector_type(&self) -> &::std::option::Option<crate::types::ImageSelectorType> {
@@ -114,8 +112,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::ImageGenerationDestinationConfig>) -> Self {
-        self.destination_config = input;
-        self
+        self.destination_config = input; self
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::ImageGenerationDestinationConfig> {
@@ -129,8 +126,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available.</p>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sampling_interval = input;
-        self
+        self.sampling_interval = input; self
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available.</p>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
@@ -144,8 +140,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The accepted image format.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The accepted image format.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -158,20 +153,16 @@ impl ImageGenerationConfigurationBuilder {
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub fn format_config(mut self, k: crate::types::FormatConfigKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.format_config.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.format_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.format_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn set_format_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
-    ) -> Self {
-        self.format_config = input;
-        self
+    pub fn set_format_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>) -> Self {
+        self.format_config = input; self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
+    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>> {
         &self.format_config
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
@@ -181,8 +172,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn set_width_pixels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width_pixels = input;
-        self
+        self.width_pixels = input; self
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn get_width_pixels(&self) -> &::std::option::Option<i32> {
@@ -195,8 +185,7 @@ impl ImageGenerationConfigurationBuilder {
     }
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn set_height_pixels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height_pixels = input;
-        self
+        self.height_pixels = input; self
     }
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn get_height_pixels(&self) -> &::std::option::Option<i32> {
@@ -209,35 +198,38 @@ impl ImageGenerationConfigurationBuilder {
     /// - [`sampling_interval`](crate::types::builders::ImageGenerationConfigurationBuilder::sampling_interval)
     /// - [`format`](crate::types::builders::ImageGenerationConfigurationBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageGenerationConfiguration {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ImageGenerationConfiguration",
-                )
-            })?,
-            image_selector_type: self.image_selector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_selector_type",
-                    "image_selector_type was not specified but it is required when building ImageGenerationConfiguration",
-                )
-            })?,
-            destination_config: self.destination_config,
-            sampling_interval: self.sampling_interval.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sampling_interval",
-                    "sampling_interval was not specified but it is required when building ImageGenerationConfiguration",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building ImageGenerationConfiguration",
-                )
-            })?,
-            format_config: self.format_config,
-            width_pixels: self.width_pixels,
-            height_pixels: self.height_pixels,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageGenerationConfiguration {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ImageGenerationConfiguration")
+                    )?
+                ,
+                image_selector_type: self.image_selector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_selector_type", "image_selector_type was not specified but it is required when building ImageGenerationConfiguration")
+                    )?
+                ,
+                destination_config: self.destination_config
+                ,
+                sampling_interval: self.sampling_interval
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sampling_interval", "sampling_interval was not specified but it is required when building ImageGenerationConfiguration")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building ImageGenerationConfiguration")
+                    )?
+                ,
+                format_config: self.format_config
+                ,
+                width_pixels: self.width_pixels
+                ,
+                height_pixels: self.height_pixels
+                ,
+            }
+        )
     }
 }
+

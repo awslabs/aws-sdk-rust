@@ -3,11 +3,11 @@
 /// <p>ENA Express is compatible with both TCP and UDP transport protocols. When it's enabled, TCP traffic automatically uses it. However, some UDP-based applications are designed to handle network packets that are out of order, without a need for retransmission, such as live video broadcasting or other near-real-time applications. For UDP traffic, you can specify whether to use ENA Express, based on your application environment needs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachmentEnaSrdUdpSpecification {
+pub struct AttachmentEnaSrdUdpSpecification  {
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     pub ena_srd_udp_enabled: ::std::option::Option<bool>,
 }
-impl AttachmentEnaSrdUdpSpecification {
+impl  AttachmentEnaSrdUdpSpecification  {
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     pub fn ena_srd_udp_enabled(&self) -> ::std::option::Option<bool> {
         self.ena_srd_udp_enabled
@@ -34,8 +34,7 @@ impl AttachmentEnaSrdUdpSpecificationBuilder {
     }
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     pub fn set_ena_srd_udp_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_srd_udp_enabled = input;
-        self
+        self.ena_srd_udp_enabled = input; self
     }
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
     pub fn get_ena_srd_udp_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl AttachmentEnaSrdUdpSpecificationBuilder {
     /// Consumes the builder and constructs a [`AttachmentEnaSrdUdpSpecification`](crate::types::AttachmentEnaSrdUdpSpecification).
     pub fn build(self) -> crate::types::AttachmentEnaSrdUdpSpecification {
         crate::types::AttachmentEnaSrdUdpSpecification {
-            ena_srd_udp_enabled: self.ena_srd_udp_enabled,
+            ena_srd_udp_enabled: self.ena_srd_udp_enabled
+            ,
         }
     }
 }
+

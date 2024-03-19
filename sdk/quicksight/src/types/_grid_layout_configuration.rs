@@ -4,20 +4,19 @@
 /// <p>Visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GridLayoutConfiguration {
+pub struct GridLayoutConfiguration  {
     /// <p>The elements that are included in a grid layout.</p>
-    pub elements: ::std::vec::Vec<crate::types::GridLayoutElement>,
+    pub elements: ::std::vec::Vec::<crate::types::GridLayoutElement>,
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
-impl GridLayoutConfiguration {
+impl  GridLayoutConfiguration  {
     /// <p>The elements that are included in a grid layout.</p>
-    pub fn elements(&self) -> &[crate::types::GridLayoutElement] {
-        use std::ops::Deref;
-        self.elements.deref()
+    pub fn elements(&self) -> & [crate::types::GridLayoutElement] {
+        use std::ops::Deref; self.elements.deref()
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
-    pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::GridLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(&self) -> ::std::option::Option<& crate::types::GridLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -32,7 +31,7 @@ impl GridLayoutConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GridLayoutConfigurationBuilder {
-    pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec::<crate::types::GridLayoutElement>>,
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl GridLayoutConfigurationBuilder {
@@ -43,17 +42,16 @@ impl GridLayoutConfigurationBuilder {
     /// <p>The elements that are included in a grid layout.</p>
     pub fn elements(mut self, input: crate::types::GridLayoutElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input);
-        self.elements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The elements that are included in a grid layout.</p>
-    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GridLayoutElement>>) -> Self {
+        self.elements = input; self
     }
     /// <p>The elements that are included in a grid layout.</p>
-    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>> {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GridLayoutElement>> {
         &self.elements
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
@@ -63,8 +61,7 @@ impl GridLayoutConfigurationBuilder {
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn set_canvas_size_options(mut self, input: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>) -> Self {
-        self.canvas_size_options = input;
-        self
+        self.canvas_size_options = input; self
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::GridLayoutCanvasSizeOptions> {
@@ -74,14 +71,17 @@ impl GridLayoutConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`elements`](crate::types::builders::GridLayoutConfigurationBuilder::elements)
     pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GridLayoutConfiguration {
-            elements: self.elements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "elements",
-                    "elements was not specified but it is required when building GridLayoutConfiguration",
-                )
-            })?,
-            canvas_size_options: self.canvas_size_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GridLayoutConfiguration {
+                elements: self.elements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("elements", "elements was not specified but it is required when building GridLayoutConfiguration")
+                    )?
+                ,
+                canvas_size_options: self.canvas_size_options
+                ,
+            }
+        )
     }
 }
+

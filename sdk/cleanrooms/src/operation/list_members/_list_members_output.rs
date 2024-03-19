@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMembersOutput {
+pub struct ListMembersOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub member_summaries: ::std::vec::Vec<crate::types::MemberSummary>,
+    pub member_summaries: ::std::vec::Vec::<crate::types::MemberSummary>,
     _request_id: Option<String>,
 }
-impl ListMembersOutput {
+impl  ListMembersOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn member_summaries(&self) -> &[crate::types::MemberSummary] {
-        use std::ops::Deref;
-        self.member_summaries.deref()
+    pub fn member_summaries(&self) -> & [crate::types::MemberSummary] {
+        use std::ops::Deref; self.member_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
     pub fn builder() -> crate::operation::list_members::builders::ListMembersOutputBuilder {
@@ -37,7 +36,7 @@ impl ListMembersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) member_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
+    pub(crate) member_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MemberSummary>>,
     _request_id: Option<String>,
 }
 impl ListMembersOutputBuilder {
@@ -48,8 +47,7 @@ impl ListMembersOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,41 +60,43 @@ impl ListMembersOutputBuilder {
     /// <p>The list of members returned by the ListMembers operation.</p>
     pub fn member_summaries(mut self, input: crate::types::MemberSummary) -> Self {
         let mut v = self.member_summaries.unwrap_or_default();
-        v.push(input);
-        self.member_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn set_member_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>) -> Self {
-        self.member_summaries = input;
-        self
+    pub fn set_member_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberSummary>>) -> Self {
+        self.member_summaries = input; self
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn get_member_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
+    pub fn get_member_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberSummary>> {
         &self.member_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`member_summaries`](crate::operation::list_members::builders::ListMembersOutputBuilder::member_summaries)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_members::ListMembersOutput {
-            next_token: self.next_token,
-            member_summaries: self.member_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_summaries",
-                    "member_summaries was not specified but it is required when building ListMembersOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_members::ListMembersOutput {
+                next_token: self.next_token
+                ,
+                member_summaries: self.member_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_summaries", "member_summaries was not specified but it is required when building ListMembersOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

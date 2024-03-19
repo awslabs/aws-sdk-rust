@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelCardVersionsInput {
+pub struct ListModelCardVersionsInput  {
     /// <p>Only list model card versions that were created after the time specified.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list model card versions that were created before the time specified.</p>
@@ -20,13 +20,13 @@ pub struct ListModelCardVersionsInput {
     /// <p>Sort model card versions by ascending or descending order.</p>
     pub sort_order: ::std::option::Option<crate::types::ModelCardSortOrder>,
 }
-impl ListModelCardVersionsInput {
+impl  ListModelCardVersionsInput  {
     /// <p>Only list model card versions that were created after the time specified.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Only list model card versions that were created before the time specified.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The maximum number of model card versions to list.</p>
@@ -34,23 +34,23 @@ impl ListModelCardVersionsInput {
         self.max_results
     }
     /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
-    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>Only list model card versions with the specified approval status.</p>
-    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ModelCardVersionSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ModelCardVersionSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Sort model card versions by ascending or descending order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::ModelCardSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::ModelCardSortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>Only list model card versions that were created after the time specified.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Only list model card versions that were created after the time specified.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -96,8 +95,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>Only list model card versions that were created before the time specified.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Only list model card versions that were created before the time specified.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +108,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>The maximum number of model card versions to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of model card versions to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -125,8 +122,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>Only list model card versions with the specified approval status.</p>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input;
-        self
+        self.model_card_status = input; self
     }
     /// <p>Only list model card versions with the specified approval status.</p>
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
@@ -153,8 +148,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelCardVersionSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelCardVersionSortBy> {
@@ -181,27 +174,34 @@ impl ListModelCardVersionsInputBuilder {
     }
     /// <p>Sort model card versions by ascending or descending order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ModelCardSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Sort model card versions by ascending or descending order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ModelCardSortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_model_card_versions::ListModelCardVersionsInput {
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            max_results: self.max_results,
-            model_card_name: self.model_card_name,
-            model_card_status: self.model_card_status,
-            next_token: self.next_token,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_model_card_versions::ListModelCardVersionsInput {
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                max_results: self.max_results
+                ,
+                model_card_name: self.model_card_name
+                ,
+                model_card_status: self.model_card_status
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

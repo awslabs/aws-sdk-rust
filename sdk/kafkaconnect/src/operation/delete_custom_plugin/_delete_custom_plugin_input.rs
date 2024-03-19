@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomPluginInput {
+pub struct DeleteCustomPluginInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCustomPluginInput {
+impl  DeleteCustomPluginInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteCustomPluginInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
     pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_plugin_arn = input;
-        self
+        self.custom_plugin_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
     pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_plugin_arn
     }
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
-            custom_plugin_arn: self.custom_plugin_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
+                custom_plugin_arn: self.custom_plugin_arn
+                ,
+            }
+        )
     }
 }
+

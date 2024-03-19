@@ -3,7 +3,7 @@
 /// <p>The structure of the customer code available within the running cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeConfiguration {
+pub struct CodeConfiguration  {
     /// <p>A unique name for the S3 bucket.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
@@ -11,17 +11,17 @@ pub struct CodeConfiguration {
     /// <p>The version of an S3 object.</p>
     pub s3_object_version: ::std::option::Option<::std::string::String>,
 }
-impl CodeConfiguration {
+impl  CodeConfiguration  {
     /// <p>A unique name for the S3 bucket.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The version of an S3 object.</p>
-    pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> ::std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CodeConfigurationBuilder {
     }
     /// <p>A unique name for the S3 bucket.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>A unique name for the S3 bucket.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CodeConfigurationBuilder {
     }
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CodeConfigurationBuilder {
     }
     /// <p>The version of an S3 object.</p>
     pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_version = input;
-        self
+        self.s3_object_version = input; self
     }
     /// <p>The version of an S3 object.</p>
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl CodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`CodeConfiguration`](crate::types::CodeConfiguration).
     pub fn build(self) -> crate::types::CodeConfiguration {
         crate::types::CodeConfiguration {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_object_version: self.s3_object_version,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
+            s3_object_version: self.s3_object_version
+            ,
         }
     }
 }
+

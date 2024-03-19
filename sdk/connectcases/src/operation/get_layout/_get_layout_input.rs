@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLayoutInput {
+pub struct GetLayoutInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the layout.</p>
     pub layout_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLayoutInput {
+impl  GetLayoutInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> ::std::option::Option<&str> {
+    pub fn layout_id(&self) -> ::std::option::Option<& str> {
         self.layout_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetLayoutInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetLayoutInputBuilder {
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_id = input;
-        self
+        self.layout_id = input; self
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetLayoutInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutInput {
-            domain_id: self.domain_id,
-            layout_id: self.layout_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_layout::GetLayoutInput {
+                domain_id: self.domain_id
+                ,
+                layout_id: self.layout_id
+                ,
+            }
+        )
     }
 }
+

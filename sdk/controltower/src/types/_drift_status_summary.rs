@@ -4,7 +4,7 @@
 /// <p>Amazon Web Services Control Tower expects the enabled control configuration to include all supported and governed Regions. If the enabled control differs from the expected configuration, it is defined to be in a state of drift. You can repair this drift by resetting the enabled control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DriftStatusSummary {
+pub struct DriftStatusSummary  {
     /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct DriftStatusSummary {
     /// </ul>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
 }
-impl DriftStatusSummary {
+impl  DriftStatusSummary  {
     /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -32,7 +32,7 @@ impl DriftStatusSummary {
     /// <li>
     /// <p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::DriftStatus> {
         self.drift_status.as_ref()
     }
 }
@@ -79,8 +79,7 @@ impl DriftStatusSummaryBuilder {
     /// <p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::DriftStatus>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>The drift status of the enabled control.</p>
     /// <p>Valid values:</p>
@@ -100,7 +99,9 @@ impl DriftStatusSummaryBuilder {
     /// Consumes the builder and constructs a [`DriftStatusSummary`](crate::types::DriftStatusSummary).
     pub fn build(self) -> crate::types::DriftStatusSummary {
         crate::types::DriftStatusSummary {
-            drift_status: self.drift_status,
+            drift_status: self.drift_status
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that describes the details for a specified dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionKeyDetail {
+pub struct DimensionKeyDetail  {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct DimensionKeyDetail {
     /// </ul>
     pub status: ::std::option::Option<crate::types::DetailStatus>,
 }
-impl DimensionKeyDetail {
+impl  DimensionKeyDetail  {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
     /// <li>
@@ -39,7 +39,7 @@ impl DimensionKeyDetail {
     /// <li>
     /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
@@ -49,7 +49,7 @@ impl DimensionKeyDetail {
     /// <li>
     /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
     /// </ul>
-    pub fn dimension(&self) -> ::std::option::Option<&str> {
+    pub fn dimension(&self) -> ::std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
@@ -61,7 +61,7 @@ impl DimensionKeyDetail {
     /// <li>
     /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DetailStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DetailStatus> {
         self.status.as_ref()
     }
 }
@@ -100,8 +100,7 @@ impl DimensionKeyDetailBuilder {
     /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
@@ -132,8 +131,7 @@ impl DimensionKeyDetailBuilder {
     /// <p><code>db.sql.statement</code> (Amazon RDS and Aurora)</p></li>
     /// </ul>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
@@ -168,8 +166,7 @@ impl DimensionKeyDetailBuilder {
     /// <p><code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetailStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
@@ -186,9 +183,13 @@ impl DimensionKeyDetailBuilder {
     /// Consumes the builder and constructs a [`DimensionKeyDetail`](crate::types::DimensionKeyDetail).
     pub fn build(self) -> crate::types::DimensionKeyDetail {
         crate::types::DimensionKeyDetail {
-            value: self.value,
-            dimension: self.dimension,
-            status: self.status,
+            value: self.value
+            ,
+            dimension: self.dimension
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

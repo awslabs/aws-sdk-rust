@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsageTotalsOutput {
+pub struct ListUsageTotalsOutput  {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
+    pub totals: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>,
     _request_id: Option<String>,
 }
-impl ListUsageTotalsOutput {
+impl  ListUsageTotalsOutput  {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.totals.is_none()`.
-    pub fn totals(&self) -> &[crate::types::UsageTotal] {
-        self.totals.as_deref().unwrap_or_default()
+    pub fn totals(&self) -> & [crate::types::UsageTotal] {
+        self.totals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUsageTotalsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUsageTotalsOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput).
     pub fn builder() -> crate::operation::list_usage_totals::builders::ListUsageTotalsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListUsageTotalsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageTotalsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
+    pub(crate) totals: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>,
     _request_id: Option<String>,
 }
 impl ListUsageTotalsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListUsageTotalsOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListUsageTotalsOutputBuilder {
     /// <p>An object with details on the total usage for the requested account.</p>
     pub fn totals(mut self, input: crate::types::UsageTotal) -> Self {
         let mut v = self.totals.unwrap_or_default();
-        v.push(input);
-        self.totals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.totals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub fn set_totals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>) -> Self {
-        self.totals = input;
-        self
+    pub fn set_totals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>) -> Self {
+        self.totals = input; self
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub fn get_totals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
+    pub fn get_totals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>> {
         &self.totals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput).
     pub fn build(self) -> crate::operation::list_usage_totals::ListUsageTotalsOutput {
         crate::operation::list_usage_totals::ListUsageTotalsOutput {
-            next_token: self.next_token,
-            totals: self.totals,
+            next_token: self.next_token
+            ,
+            totals: self.totals
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMaintenanceWindowExecutionInput {
+pub struct GetMaintenanceWindowExecutionInput  {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMaintenanceWindowExecutionInput {
+impl  GetMaintenanceWindowExecutionInput  {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetMaintenanceWindowExecutionInputBuilder {
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_execution_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionInput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
-            window_execution_id: self.window_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
+                window_execution_id: self.window_execution_id
+                ,
+            }
+        )
     }
 }
+

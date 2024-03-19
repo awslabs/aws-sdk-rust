@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterTypeInput {
+pub struct RegisterTypeInput  {
     /// <p>The kind of extension.</p>
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension being registered.</p>
@@ -46,9 +46,9 @@ pub struct RegisterTypeInput {
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl RegisterTypeInput {
+impl  RegisterTypeInput  {
     /// <p>The kind of extension.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension being registered.</p>
@@ -77,28 +77,28 @@ impl RegisterTypeInput {
     /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p><note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
-    pub fn schema_handler_package(&self) -> ::std::option::Option<&str> {
+    pub fn schema_handler_package(&self) -> ::std::option::Option<& str> {
         self.schema_handler_package.as_deref()
     }
     /// <p>Specifies logging configuration information for an extension.</p>
-    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
+    pub fn logging_config(&self) -> ::std::option::Option<& crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
     /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information about adding trust relationships, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -128,8 +128,7 @@ impl RegisterTypeInputBuilder {
     }
     /// <p>The kind of extension.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The kind of extension.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
@@ -193,8 +192,7 @@ impl RegisterTypeInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
@@ -239,8 +237,7 @@ impl RegisterTypeInputBuilder {
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
     pub fn set_schema_handler_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_handler_package = input;
-        self
+        self.schema_handler_package = input; self
     }
     /// <p>A URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register.</p>
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p><note>
@@ -256,8 +253,7 @@ impl RegisterTypeInputBuilder {
     }
     /// <p>Specifies logging configuration information for an extension.</p>
     pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
-        self.logging_config = input;
-        self
+        self.logging_config = input; self
     }
     /// <p>Specifies logging configuration information for an extension.</p>
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
@@ -274,8 +270,7 @@ impl RegisterTypeInputBuilder {
     /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information about adding trust relationships, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
     /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information about adding trust relationships, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.</p>
@@ -290,24 +285,30 @@ impl RegisterTypeInputBuilder {
     }
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`RegisterTypeInput`](crate::operation::register_type::RegisterTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_type::RegisterTypeInput {
-            r#type: self.r#type,
-            type_name: self.type_name,
-            schema_handler_package: self.schema_handler_package,
-            logging_config: self.logging_config,
-            execution_role_arn: self.execution_role_arn,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_type::RegisterTypeInput {
+                r#type: self.r#type
+                ,
+                type_name: self.type_name
+                ,
+                schema_handler_package: self.schema_handler_package
+                ,
+                logging_config: self.logging_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

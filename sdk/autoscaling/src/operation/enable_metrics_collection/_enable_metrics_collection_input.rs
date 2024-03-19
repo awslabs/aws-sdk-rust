@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableMetricsCollectionInput {
+pub struct EnableMetricsCollectionInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the metrics to enable.</p>
@@ -51,13 +51,13 @@ pub struct EnableMetricsCollectionInput {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
     pub granularity: ::std::option::Option<::std::string::String>,
 }
-impl EnableMetricsCollectionInput {
+impl  EnableMetricsCollectionInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Identifies the metrics to enable.</p>
@@ -106,13 +106,14 @@ impl EnableMetricsCollectionInput {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[::std::string::String] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [::std::string::String] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&str> {
+    pub fn granularity(&self) -> ::std::option::Option<& str> {
         self.granularity.as_deref()
     }
 }
@@ -128,7 +129,7 @@ impl EnableMetricsCollectionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableMetricsCollectionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnableMetricsCollectionInputBuilder {
@@ -140,8 +141,7 @@ impl EnableMetricsCollectionInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,9 +199,9 @@ impl EnableMetricsCollectionInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input.into());
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies the metrics to enable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -249,9 +249,8 @@ impl EnableMetricsCollectionInputBuilder {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>Identifies the metrics to enable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -299,7 +298,7 @@ impl EnableMetricsCollectionInputBuilder {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.metrics
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
@@ -310,24 +309,24 @@ impl EnableMetricsCollectionInputBuilder {
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
     pub fn get_granularity(&self) -> &::std::option::Option<::std::string::String> {
         &self.granularity
     }
     /// Consumes the builder and constructs a [`EnableMetricsCollectionInput`](crate::operation::enable_metrics_collection::EnableMetricsCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_metrics_collection::EnableMetricsCollectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_metrics_collection::EnableMetricsCollectionInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            metrics: self.metrics,
-            granularity: self.granularity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_metrics_collection::EnableMetricsCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_metrics_collection::EnableMetricsCollectionInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                metrics: self.metrics
+                ,
+                granularity: self.granularity
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The request body for DeleteBackendAuth.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBackendAuthInput {
+pub struct DeleteBackendAuthInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
@@ -11,17 +11,17 @@ pub struct DeleteBackendAuthInput {
     /// <p>The name of this resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBackendAuthInput {
+impl  DeleteBackendAuthInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeleteBackendAuthInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DeleteBackendAuthInputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,21 +77,24 @@ impl DeleteBackendAuthInputBuilder {
     }
     /// <p>The name of this resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of this resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
     /// Consumes the builder and constructs a [`DeleteBackendAuthInput`](crate::operation::delete_backend_auth::DeleteBackendAuthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_backend_auth::DeleteBackendAuthInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            resource_name: self.resource_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_backend_auth::DeleteBackendAuthInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                resource_name: self.resource_name
+                ,
+            }
+        )
     }
 }
+

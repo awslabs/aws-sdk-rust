@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverEndpointIpAddressesInput {
+pub struct ListResolverEndpointIpAddressesInput  {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses.</p>
@@ -11,9 +11,9 @@ pub struct ListResolverEndpointIpAddressesInput {
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListResolverEndpointIpAddressesInput {
+impl  ListResolverEndpointIpAddressesInput  {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses.</p>
@@ -22,7 +22,7 @@ impl ListResolverEndpointIpAddressesInput {
     }
     /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ListResolverEndpointIpAddressesInputBuilder {
     }
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
     pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+        self.resolver_endpoint_id = input; self
     }
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
     pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl ListResolverEndpointIpAddressesInputBuilder {
     }
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -80,8 +78,7 @@ impl ListResolverEndpointIpAddressesInputBuilder {
     /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
@@ -89,18 +86,17 @@ impl ListResolverEndpointIpAddressesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesInput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                resolver_endpoint_id: self.resolver_endpoint_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

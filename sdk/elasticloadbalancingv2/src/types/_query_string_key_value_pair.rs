@@ -3,19 +3,19 @@
 /// <p>Information about a key/value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryStringKeyValuePair {
+pub struct QueryStringKeyValuePair  {
     /// <p>The key. You can omit the key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl QueryStringKeyValuePair {
+impl  QueryStringKeyValuePair  {
     /// <p>The key. You can omit the key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl QueryStringKeyValuePairBuilder {
     }
     /// <p>The key. You can omit the key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key. You can omit the key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl QueryStringKeyValuePairBuilder {
     }
     /// <p>The value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl QueryStringKeyValuePairBuilder {
     /// Consumes the builder and constructs a [`QueryStringKeyValuePair`](crate::types::QueryStringKeyValuePair).
     pub fn build(self) -> crate::types::QueryStringKeyValuePair {
         crate::types::QueryStringKeyValuePair {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

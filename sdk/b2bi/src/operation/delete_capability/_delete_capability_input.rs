@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCapabilityInput {
+pub struct DeleteCapabilityInput  {
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub capability_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCapabilityInput {
+impl  DeleteCapabilityInput  {
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
-    pub fn capability_id(&self) -> ::std::option::Option<&str> {
+    pub fn capability_id(&self) -> ::std::option::Option<& str> {
         self.capability_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteCapabilityInputBuilder {
     }
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub fn set_capability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_id = input;
-        self
+        self.capability_id = input; self
     }
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub fn get_capability_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capability_id
     }
     /// Consumes the builder and constructs a [`DeleteCapabilityInput`](crate::operation::delete_capability::DeleteCapabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_capability::DeleteCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_capability::DeleteCapabilityInput {
-            capability_id: self.capability_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_capability::DeleteCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_capability::DeleteCapabilityInput {
+                capability_id: self.capability_id
+                ,
+            }
+        )
     }
 }
+

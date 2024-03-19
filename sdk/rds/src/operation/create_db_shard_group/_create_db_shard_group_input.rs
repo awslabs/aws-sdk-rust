@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbShardGroupInput {
+pub struct CreateDbShardGroupInput  {
     /// <p>The name of the DB shard group.</p>
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
@@ -39,13 +39,13 @@ pub struct CreateDbShardGroupInput {
     /// </ul>
     pub publicly_accessible: ::std::option::Option<bool>,
 }
-impl CreateDbShardGroupInput {
+impl  CreateDbShardGroupInput  {
     /// <p>The name of the DB shard group.</p>
-    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_identifier.as_deref()
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
@@ -112,8 +112,7 @@ impl CreateDbShardGroupInputBuilder {
     }
     /// <p>The name of the DB shard group.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_identifier = input;
-        self
+        self.db_shard_group_identifier = input; self
     }
     /// <p>The name of the DB shard group.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl CreateDbShardGroupInputBuilder {
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl CreateDbShardGroupInputBuilder {
     /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
     /// </ul>
     pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.compute_redundancy = input;
-        self
+        self.compute_redundancy = input; self
     }
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
     /// <ul>
@@ -180,8 +177,7 @@ impl CreateDbShardGroupInputBuilder {
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn set_max_acu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_acu = input;
-        self
+        self.max_acu = input; self
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
@@ -228,8 +224,7 @@ impl CreateDbShardGroupInputBuilder {
     /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB shard group is public.</p></li>
     /// </ul>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies whether the DB shard group is publicly accessible.</p>
     /// <p>When the DB shard group is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB shard group's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB shard group's VPC. Access to the DB shard group is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB shard group doesn't permit it.</p>
@@ -253,16 +248,21 @@ impl CreateDbShardGroupInputBuilder {
         &self.publicly_accessible
     }
     /// Consumes the builder and constructs a [`CreateDbShardGroupInput`](crate::operation::create_db_shard_group::CreateDbShardGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_db_shard_group::CreateDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_db_shard_group::CreateDbShardGroupInput {
-            db_shard_group_identifier: self.db_shard_group_identifier,
-            db_cluster_identifier: self.db_cluster_identifier,
-            compute_redundancy: self.compute_redundancy,
-            max_acu: self.max_acu,
-            publicly_accessible: self.publicly_accessible,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_shard_group::CreateDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_shard_group::CreateDbShardGroupInput {
+                db_shard_group_identifier: self.db_shard_group_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                compute_redundancy: self.compute_redundancy
+                ,
+                max_acu: self.max_acu
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+            }
+        )
     }
 }
+

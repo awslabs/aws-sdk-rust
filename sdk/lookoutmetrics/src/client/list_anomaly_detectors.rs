@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnomalyDetectors`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p><br>
-    /// - On success, responds with [`ListAnomalyDetectorsOutput`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput) with field(s):
+                            /// - On success, responds with [`ListAnomalyDetectorsOutput`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput) with field(s):
     ///   - [`anomaly_detector_summary_list(Option<Vec::<AnomalyDetectorSummary>>)`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput::anomaly_detector_summary_list): <p>A list of anomaly detectors in the account in the current region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput::next_token): <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListAnomalyDetectorsError>`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError)
+                            /// - On failure, responds with [`SdkError<ListAnomalyDetectorsError>`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError)
     pub fn list_anomaly_detectors(&self) -> crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder {
-        crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

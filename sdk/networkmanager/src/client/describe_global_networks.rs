@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGlobalNetworks`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_ids(impl Into<String>)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::global_network_ids) / [`set_global_network_ids(Option<Vec::<String>>)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::set_global_network_ids):<br>required: **false**<br><p>The IDs of one or more global networks. The maximum is 10.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`DescribeGlobalNetworksOutput`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput) with field(s):
+                            /// - On success, responds with [`DescribeGlobalNetworksOutput`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput) with field(s):
     ///   - [`global_networks(Option<Vec::<GlobalNetwork>>)`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput::global_networks): <p>Information about the global networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeGlobalNetworksError>`](crate::operation::describe_global_networks::DescribeGlobalNetworksError)
+                            /// - On failure, responds with [`SdkError<DescribeGlobalNetworksError>`](crate::operation::describe_global_networks::DescribeGlobalNetworksError)
     pub fn describe_global_networks(&self) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder {
-        crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

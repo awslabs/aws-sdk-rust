@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppAssessments`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_arn(impl Into<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::app_arn) / [`set_app_arn(Option<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_app_arn):<br>required: **false**<br><p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
     ///   - [`assessment_name(impl Into<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::assessment_name) / [`set_assessment_name(Option<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_assessment_name):<br>required: **false**<br><p>The name for the assessment.</p><br>
     ///   - [`assessment_status(AssessmentStatus)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::assessment_status) / [`set_assessment_status(Option<Vec::<AssessmentStatus>>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_assessment_status):<br>required: **false**<br><p>The current status of the assessment for the resiliency policy.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`reverse_order(bool)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::reverse_order) / [`set_reverse_order(Option<bool>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_reverse_order):<br>required: **false**<br><p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListAppAssessmentsOutput`](crate::operation::list_app_assessments::ListAppAssessmentsOutput) with field(s):
+                            /// - On success, responds with [`ListAppAssessmentsOutput`](crate::operation::list_app_assessments::ListAppAssessmentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_assessments::ListAppAssessmentsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
     ///   - [`assessment_summaries(Vec::<AppAssessmentSummary>)`](crate::operation::list_app_assessments::ListAppAssessmentsOutput::assessment_summaries): <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-    /// - On failure, responds with [`SdkError<ListAppAssessmentsError>`](crate::operation::list_app_assessments::ListAppAssessmentsError)
+                            /// - On failure, responds with [`SdkError<ListAppAssessmentsError>`](crate::operation::list_app_assessments::ListAppAssessmentsError)
     pub fn list_app_assessments(&self) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder {
-        crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_app_assessments::builders::ListAppAssessmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

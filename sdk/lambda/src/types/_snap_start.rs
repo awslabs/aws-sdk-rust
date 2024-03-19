@@ -3,13 +3,13 @@
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda SnapStart</a> setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapStart {
+pub struct SnapStart  {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     pub apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
 }
-impl SnapStart {
+impl  SnapStart  {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
-    pub fn apply_on(&self) -> ::std::option::Option<&crate::types::SnapStartApplyOn> {
+    pub fn apply_on(&self) -> ::std::option::Option<& crate::types::SnapStartApplyOn> {
         self.apply_on.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SnapStartBuilder {
     }
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     pub fn set_apply_on(mut self, input: ::std::option::Option<crate::types::SnapStartApplyOn>) -> Self {
-        self.apply_on = input;
-        self
+        self.apply_on = input; self
     }
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     pub fn get_apply_on(&self) -> &::std::option::Option<crate::types::SnapStartApplyOn> {
@@ -43,6 +42,10 @@ impl SnapStartBuilder {
     }
     /// Consumes the builder and constructs a [`SnapStart`](crate::types::SnapStart).
     pub fn build(self) -> crate::types::SnapStart {
-        crate::types::SnapStart { apply_on: self.apply_on }
+        crate::types::SnapStart {
+            apply_on: self.apply_on
+            ,
+        }
     }
 }
+

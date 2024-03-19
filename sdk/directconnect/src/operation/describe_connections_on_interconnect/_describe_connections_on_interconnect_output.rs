@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionsOnInterconnectOutput {
+pub struct DescribeConnectionsOnInterconnectOutput  {
     /// <p>The connections.</p>
-    pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     _request_id: Option<String>,
 }
-impl DescribeConnectionsOnInterconnectOutput {
+impl  DescribeConnectionsOnInterconnectOutput  {
     /// <p>The connections.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
-    pub fn connections(&self) -> &[crate::types::Connection] {
-        self.connections.as_deref().unwrap_or_default()
+    pub fn connections(&self) -> & [crate::types::Connection] {
+        self.connections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectionsOnInterconnectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConnectionsOnInterconnectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput).
     pub fn builder() -> crate::operation::describe_connections_on_interconnect::builders::DescribeConnectionsOnInterconnectOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeConnectionsOnInterconnectOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectOutputBuilder {
-    pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub(crate) connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionsOnInterconnectOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeConnectionsOnInterconnectOutputBuilder {
     /// <p>The connections.</p>
     pub fn connections(mut self, input: crate::types::Connection) -> Self {
         let mut v = self.connections.unwrap_or_default();
-        v.push(input);
-        self.connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The connections.</p>
-    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
-        self.connections = input;
-        self
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>) -> Self {
+        self.connections = input; self
     }
     /// <p>The connections.</p>
-    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Connection>> {
         &self.connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectOutput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput).
     pub fn build(self) -> crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput {
         crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput {
-            connections: self.connections,
+            connections: self.connections
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

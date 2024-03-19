@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSecretInput {
+pub struct CreateSecretInput  {
     /// <p>The name of the new secret.</p>
     /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
     /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
@@ -43,17 +43,17 @@ pub struct CreateSecretInput {
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub add_replica_regions: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
 }
-impl CreateSecretInput {
+impl  CreateSecretInput  {
     /// <p>The name of the new secret.</p>
     /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
     /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates an initial version for the secret, and this parameter specifies the unique identifier for the new version.</p><note>
@@ -70,30 +70,30 @@ impl CreateSecretInput {
     /// <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p></li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The description of the secret.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
     /// <p>To use a KMS key in a different account, use the key ARN or the alias ARN.</p>
     /// <p>If you don't specify this value, then Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value.</p>
     /// <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
-    pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn secret_binary(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
-    pub fn secret_string(&self) -> ::std::option::Option<&str> {
+    pub fn secret_string(&self) -> ::std::option::Option<& str> {
         self.secret_string.as_deref()
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
@@ -102,23 +102,25 @@ impl CreateSecretInput {
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_replica_regions.is_none()`.
-    pub fn add_replica_regions(&self) -> &[crate::types::ReplicaRegionType] {
-        self.add_replica_regions.as_deref().unwrap_or_default()
+    pub fn add_replica_regions(&self) -> & [crate::types::ReplicaRegionType] {
+        self.add_replica_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn force_overwrite_replica_secret(&self) -> ::std::option::Option<bool> {
         self.force_overwrite_replica_secret
     }
 }
-impl ::std::fmt::Debug for CreateSecretInput {
+impl  ::std::fmt::Debug for CreateSecretInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecretInput");
         formatter.field("name", &self.name);
@@ -150,8 +152,8 @@ pub struct CreateSecretInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaRegionType>>,
     pub(crate) force_overwrite_replica_secret: ::std::option::Option<bool>,
 }
 impl CreateSecretInputBuilder {
@@ -167,8 +169,7 @@ impl CreateSecretInputBuilder {
     /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
     /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new secret.</p>
     /// <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>
@@ -209,8 +210,7 @@ impl CreateSecretInputBuilder {
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates an initial version for the secret, and this parameter specifies the unique identifier for the new version.</p><note>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request.</p>
@@ -236,8 +236,7 @@ impl CreateSecretInputBuilder {
     }
     /// <p>The description of the secret.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the secret.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +255,7 @@ impl CreateSecretInputBuilder {
     /// <p>If you don't specify this value, then Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value.</p>
     /// <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About aliases</a>.</p>
     /// <p>To use a KMS key in a different account, use the key ARN or the alias ARN.</p>
@@ -277,8 +275,7 @@ impl CreateSecretInputBuilder {
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.secret_binary = input;
-        self
+        self.secret_binary = input; self
     }
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
@@ -297,8 +294,7 @@ impl CreateSecretInputBuilder {
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_string = input;
-        self
+        self.secret_string = input; self
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
@@ -318,9 +314,9 @@ impl CreateSecretInputBuilder {
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
     /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
@@ -328,9 +324,8 @@ impl CreateSecretInputBuilder {
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>
     /// <p><code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code></p>
@@ -338,7 +333,7 @@ impl CreateSecretInputBuilder {
     /// <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>
     /// <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
     /// <p>For tag quotas and naming restrictions, see <a href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `add_replica_regions`.
@@ -348,17 +343,16 @@ impl CreateSecretInputBuilder {
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
     pub fn add_replica_regions(mut self, input: crate::types::ReplicaRegionType) -> Self {
         let mut v = self.add_replica_regions.unwrap_or_default();
-        v.push(input);
-        self.add_replica_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_replica_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub fn set_add_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>) -> Self {
-        self.add_replica_regions = input;
-        self
+    pub fn set_add_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaRegionType>>) -> Self {
+        self.add_replica_regions = input; self
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub fn get_add_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+    pub fn get_add_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaRegionType>> {
         &self.add_replica_regions
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
@@ -368,28 +362,36 @@ impl CreateSecretInputBuilder {
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn set_force_overwrite_replica_secret(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_overwrite_replica_secret = input;
-        self
+        self.force_overwrite_replica_secret = input; self
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub fn get_force_overwrite_replica_secret(&self) -> &::std::option::Option<bool> {
         &self.force_overwrite_replica_secret
     }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_secret::CreateSecretInput {
-            name: self.name,
-            client_request_token: self.client_request_token,
-            description: self.description,
-            kms_key_id: self.kms_key_id,
-            secret_binary: self.secret_binary,
-            secret_string: self.secret_string,
-            tags: self.tags,
-            add_replica_regions: self.add_replica_regions,
-            force_overwrite_replica_secret: self.force_overwrite_replica_secret,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_secret::CreateSecretInput {
+                name: self.name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                description: self.description
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                secret_binary: self.secret_binary
+                ,
+                secret_string: self.secret_string
+                ,
+                tags: self.tags
+                ,
+                add_replica_regions: self.add_replica_regions
+                ,
+                force_overwrite_replica_secret: self.force_overwrite_replica_secret
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSecretInputBuilder {
@@ -407,3 +409,4 @@ impl ::std::fmt::Debug for CreateSecretInputBuilder {
         formatter.finish()
     }
 }
+

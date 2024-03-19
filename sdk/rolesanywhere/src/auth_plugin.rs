@@ -19,7 +19,9 @@ pub(crate) struct DefaultAuthOptionsPlugin {
 impl DefaultAuthOptionsPlugin {
     pub(crate) fn new(auth_schemes: Vec<AuthSchemeId>) -> Self {
         let runtime_components = RuntimeComponentsBuilder::new("default_auth_options")
-            .with_auth_scheme_option_resolver(Some(StaticAuthSchemeOptionResolver::new(auth_schemes)));
+            .with_auth_scheme_option_resolver(Some(StaticAuthSchemeOptionResolver::new(
+                auth_schemes,
+            )));
         Self { runtime_components }
     }
 }
@@ -29,7 +31,11 @@ impl RuntimePlugin for DefaultAuthOptionsPlugin {
         Order::Defaults
     }
 
-    fn runtime_components(&self, _current_components: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
+    fn runtime_components(
+        &self,
+        _current_components: &RuntimeComponentsBuilder,
+    ) -> Cow<'_, RuntimeComponentsBuilder> {
         Cow::Borrowed(&self.runtime_components)
     }
 }
+

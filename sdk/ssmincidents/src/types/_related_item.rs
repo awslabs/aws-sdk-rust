@@ -3,7 +3,7 @@
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedItem {
+pub struct RelatedItem  {
     /// <p>Details about the related item.</p>
     pub identifier: ::std::option::Option<crate::types::ItemIdentifier>,
     /// <p>The title of the related item.</p>
@@ -13,19 +13,19 @@ pub struct RelatedItem {
     /// </important>
     pub generated_id: ::std::option::Option<::std::string::String>,
 }
-impl RelatedItem {
+impl  RelatedItem  {
     /// <p>Details about the related item.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&crate::types::ItemIdentifier> {
+    pub fn identifier(&self) -> ::std::option::Option<& crate::types::ItemIdentifier> {
         self.identifier.as_ref()
     }
     /// <p>The title of the related item.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
-    pub fn generated_id(&self) -> ::std::option::Option<&str> {
+    pub fn generated_id(&self) -> ::std::option::Option<& str> {
         self.generated_id.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl RelatedItemBuilder {
     }
     /// <p>Details about the related item.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::ItemIdentifier>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Details about the related item.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<crate::types::ItemIdentifier> {
@@ -67,8 +66,7 @@ impl RelatedItemBuilder {
     }
     /// <p>The title of the related item.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the related item.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl RelatedItemBuilder {
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
     pub fn set_generated_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_id = input;
-        self
+        self.generated_id = input; self
     }
     /// <p>A unique ID for a <code>RelatedItem</code>.</p><important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
@@ -97,9 +94,13 @@ impl RelatedItemBuilder {
     /// Consumes the builder and constructs a [`RelatedItem`](crate::types::RelatedItem).
     pub fn build(self) -> crate::types::RelatedItem {
         crate::types::RelatedItem {
-            identifier: self.identifier,
-            title: self.title,
-            generated_id: self.generated_id,
+            identifier: self.identifier
+            ,
+            title: self.title
+            ,
+            generated_id: self.generated_id
+            ,
         }
     }
 }
+

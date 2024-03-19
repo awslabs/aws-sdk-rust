@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePublishingDestinationInput {
+pub struct UpdatePublishingDestinationInput  {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the publishing destination to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdatePublishingDestinationInput {
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
 }
-impl UpdatePublishingDestinationInput {
+impl  UpdatePublishingDestinationInput  {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID of the publishing destination to update.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_id(&self) -> ::std::option::Option<& str> {
         self.destination_id.as_deref()
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<& crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdatePublishingDestinationInputBuilder {
     }
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdatePublishingDestinationInputBuilder {
     }
     /// <p>The ID of the publishing destination to update.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// <p>The ID of the publishing destination to update.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdatePublishingDestinationInputBuilder {
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
-        self.destination_properties = input;
-        self
+        self.destination_properties = input; self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
     /// Consumes the builder and constructs a [`UpdatePublishingDestinationInput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_publishing_destination::UpdatePublishingDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_publishing_destination::UpdatePublishingDestinationInput {
-            detector_id: self.detector_id,
-            destination_id: self.destination_id,
-            destination_properties: self.destination_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_publishing_destination::UpdatePublishingDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_publishing_destination::UpdatePublishingDestinationInput {
+                detector_id: self.detector_id
+                ,
+                destination_id: self.destination_id
+                ,
+                destination_properties: self.destination_properties
+                ,
+            }
+        )
     }
 }
+

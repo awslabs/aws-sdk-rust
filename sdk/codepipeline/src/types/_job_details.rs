@@ -3,7 +3,7 @@
 /// <p>Represents information about the details of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The unique system-generated ID of the job.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Represents other information about a job required for a job worker to complete the job.</p>
@@ -11,17 +11,17 @@ pub struct JobDetails {
     /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl JobDetails {
+impl  JobDetails  {
     /// <p>The unique system-generated ID of the job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Represents other information about a job required for a job worker to complete the job.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::JobData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::JobData> {
         self.data.as_ref()
     }
     /// <p>The Amazon Web Services account ID associated with the job.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The unique system-generated ID of the job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique system-generated ID of the job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl JobDetailsBuilder {
     }
     /// <p>Represents other information about a job required for a job worker to complete the job.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::JobData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Represents other information about a job required for a job worker to complete the job.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::JobData> {
@@ -76,8 +74,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the job.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl JobDetailsBuilder {
     /// Consumes the builder and constructs a [`JobDetails`](crate::types::JobDetails).
     pub fn build(self) -> crate::types::JobDetails {
         crate::types::JobDetails {
-            id: self.id,
-            data: self.data,
-            account_id: self.account_id,
+            id: self.id
+            ,
+            data: self.data
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

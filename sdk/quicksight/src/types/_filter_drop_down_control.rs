@@ -3,7 +3,7 @@
 /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterDropDownControl {
+pub struct FilterDropDownControl  {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
     pub filter_control_id: ::std::string::String,
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
@@ -25,24 +25,21 @@ pub struct FilterDropDownControl {
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
-impl FilterDropDownControl {
+impl  FilterDropDownControl  {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn filter_control_id(&self) -> &str {
-        use std::ops::Deref;
-        self.filter_control_id.deref()
+    pub fn filter_control_id(&self) -> & str {
+        use std::ops::Deref; self.filter_control_id.deref()
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn source_filter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_filter_id.deref()
+    pub fn source_filter_id(&self) -> & str {
+        use std::ops::Deref; self.source_filter_id.deref()
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
-    pub fn display_options(&self) -> ::std::option::Option<&crate::types::DropDownControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<& crate::types::DropDownControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
@@ -52,15 +49,15 @@ impl FilterDropDownControl {
     /// <li>
     /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlListType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SheetControlListType> {
         self.r#type.as_ref()
     }
     /// <p>A list of selectable values that are used in a control.</p>
-    pub fn selectable_values(&self) -> ::std::option::Option<&crate::types::FilterSelectableValues> {
+    pub fn selectable_values(&self) -> ::std::option::Option<& crate::types::FilterSelectableValues> {
         self.selectable_values.as_ref()
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
-    pub fn cascading_control_configuration(&self) -> ::std::option::Option<&crate::types::CascadingControlConfiguration> {
+    pub fn cascading_control_configuration(&self) -> ::std::option::Option<& crate::types::CascadingControlConfiguration> {
         self.cascading_control_configuration.as_ref()
     }
 }
@@ -92,8 +89,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
     pub fn set_filter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_control_id = input;
-        self
+        self.filter_control_id = input; self
     }
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
     pub fn get_filter_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +117,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
     pub fn set_source_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_filter_id = input;
-        self
+        self.source_filter_id = input; self
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
     pub fn get_source_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +130,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::DropDownControlDisplayOptions>) -> Self {
-        self.display_options = input;
-        self
+        self.display_options = input; self
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DropDownControlDisplayOptions> {
@@ -162,8 +155,7 @@ impl FilterDropDownControlBuilder {
     /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlListType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
@@ -182,8 +174,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn set_selectable_values(mut self, input: ::std::option::Option<crate::types::FilterSelectableValues>) -> Self {
-        self.selectable_values = input;
-        self
+        self.selectable_values = input; self
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn get_selectable_values(&self) -> &::std::option::Option<crate::types::FilterSelectableValues> {
@@ -196,8 +187,7 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn set_cascading_control_configuration(mut self, input: ::std::option::Option<crate::types::CascadingControlConfiguration>) -> Self {
-        self.cascading_control_configuration = input;
-        self
+        self.cascading_control_configuration = input; self
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn get_cascading_control_configuration(&self) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
@@ -209,29 +199,33 @@ impl FilterDropDownControlBuilder {
     /// - [`title`](crate::types::builders::FilterDropDownControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterDropDownControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterDropDownControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterDropDownControl {
-            filter_control_id: self.filter_control_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_control_id",
-                    "filter_control_id was not specified but it is required when building FilterDropDownControl",
-                )
-            })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterDropDownControl",
-                )
-            })?,
-            source_filter_id: self.source_filter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_filter_id",
-                    "source_filter_id was not specified but it is required when building FilterDropDownControl",
-                )
-            })?,
-            display_options: self.display_options,
-            r#type: self.r#type,
-            selectable_values: self.selectable_values,
-            cascading_control_configuration: self.cascading_control_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterDropDownControl {
+                filter_control_id: self.filter_control_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_control_id", "filter_control_id was not specified but it is required when building FilterDropDownControl")
+                    )?
+                ,
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building FilterDropDownControl")
+                    )?
+                ,
+                source_filter_id: self.source_filter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_filter_id", "source_filter_id was not specified but it is required when building FilterDropDownControl")
+                    )?
+                ,
+                display_options: self.display_options
+                ,
+                r#type: self.r#type
+                ,
+                selectable_values: self.selectable_values
+                ,
+                cascading_control_configuration: self.cascading_control_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Private key flags for v3 templates specify the client compatibility, if the private key can be exported, if user input is required when using a private key, and if an alternate signature algorithm should be used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateKeyFlagsV3 {
+pub struct PrivateKeyFlagsV3  {
     /// <p>Allows the private key to be exported.</p>
     pub exportable_key: ::std::option::Option<bool>,
     /// <p>Requirer user input when using the private key for enrollment.</p>
@@ -13,7 +13,7 @@ pub struct PrivateKeyFlagsV3 {
     /// <p>Defines the minimum client compatibility.</p>
     pub client_version: crate::types::ClientCompatibilityV3,
 }
-impl PrivateKeyFlagsV3 {
+impl  PrivateKeyFlagsV3  {
     /// <p>Allows the private key to be exported.</p>
     pub fn exportable_key(&self) -> ::std::option::Option<bool> {
         self.exportable_key
@@ -27,7 +27,7 @@ impl PrivateKeyFlagsV3 {
         self.require_alternate_signature_algorithm
     }
     /// <p>Defines the minimum client compatibility.</p>
-    pub fn client_version(&self) -> &crate::types::ClientCompatibilityV3 {
+    pub fn client_version(&self) -> & crate::types::ClientCompatibilityV3 {
         &self.client_version
     }
 }
@@ -55,8 +55,7 @@ impl PrivateKeyFlagsV3Builder {
     }
     /// <p>Allows the private key to be exported.</p>
     pub fn set_exportable_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable_key = input;
-        self
+        self.exportable_key = input; self
     }
     /// <p>Allows the private key to be exported.</p>
     pub fn get_exportable_key(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl PrivateKeyFlagsV3Builder {
     }
     /// <p>Requirer user input when using the private key for enrollment.</p>
     pub fn set_strong_key_protection_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.strong_key_protection_required = input;
-        self
+        self.strong_key_protection_required = input; self
     }
     /// <p>Requirer user input when using the private key for enrollment.</p>
     pub fn get_strong_key_protection_required(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl PrivateKeyFlagsV3Builder {
     }
     /// <p>Reguires the PKCS #1 v2.1 signature format for certificates. You should verify that your CA, objects, and applications can accept this signature format.</p>
     pub fn set_require_alternate_signature_algorithm(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_alternate_signature_algorithm = input;
-        self
+        self.require_alternate_signature_algorithm = input; self
     }
     /// <p>Reguires the PKCS #1 v2.1 signature format for certificates. You should verify that your CA, objects, and applications can accept this signature format.</p>
     pub fn get_require_alternate_signature_algorithm(&self) -> &::std::option::Option<bool> {
@@ -98,8 +95,7 @@ impl PrivateKeyFlagsV3Builder {
     }
     /// <p>Defines the minimum client compatibility.</p>
     pub fn set_client_version(mut self, input: ::std::option::Option<crate::types::ClientCompatibilityV3>) -> Self {
-        self.client_version = input;
-        self
+        self.client_version = input; self
     }
     /// <p>Defines the minimum client compatibility.</p>
     pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientCompatibilityV3> {
@@ -109,16 +105,21 @@ impl PrivateKeyFlagsV3Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV3Builder::client_version)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV3, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV3 {
-            exportable_key: self.exportable_key,
-            strong_key_protection_required: self.strong_key_protection_required,
-            require_alternate_signature_algorithm: self.require_alternate_signature_algorithm,
-            client_version: self.client_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_version",
-                    "client_version was not specified but it is required when building PrivateKeyFlagsV3",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivateKeyFlagsV3 {
+                exportable_key: self.exportable_key
+                ,
+                strong_key_protection_required: self.strong_key_protection_required
+                ,
+                require_alternate_signature_algorithm: self.require_alternate_signature_algorithm
+                ,
+                client_version: self.client_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_version", "client_version was not specified but it is required when building PrivateKeyFlagsV3")
+                    )?
+                ,
+            }
+        )
     }
 }
+

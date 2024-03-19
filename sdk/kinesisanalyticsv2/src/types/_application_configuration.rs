@@ -3,7 +3,7 @@
 /// <p>Specifies the creation parameters for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationConfiguration {
+pub struct ApplicationConfiguration  {
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
     pub sql_application_configuration: ::std::option::Option<crate::types::SqlApplicationConfiguration>,
     /// <p>The creation and update parameters for a Managed Service for Apache Flink application.</p>
@@ -15,39 +15,40 @@ pub struct ApplicationConfiguration {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration: ::std::option::Option<crate::types::ApplicationSnapshotConfiguration>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    pub vpc_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>>,
+    pub vpc_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::VpcConfiguration>>,
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
     pub zeppelin_application_configuration: ::std::option::Option<crate::types::ZeppelinApplicationConfiguration>,
 }
-impl ApplicationConfiguration {
+impl  ApplicationConfiguration  {
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
-    pub fn sql_application_configuration(&self) -> ::std::option::Option<&crate::types::SqlApplicationConfiguration> {
+    pub fn sql_application_configuration(&self) -> ::std::option::Option<& crate::types::SqlApplicationConfiguration> {
         self.sql_application_configuration.as_ref()
     }
     /// <p>The creation and update parameters for a Managed Service for Apache Flink application.</p>
-    pub fn flink_application_configuration(&self) -> ::std::option::Option<&crate::types::FlinkApplicationConfiguration> {
+    pub fn flink_application_configuration(&self) -> ::std::option::Option<& crate::types::FlinkApplicationConfiguration> {
         self.flink_application_configuration.as_ref()
     }
     /// <p>Describes execution properties for a Managed Service for Apache Flink application.</p>
-    pub fn environment_properties(&self) -> ::std::option::Option<&crate::types::EnvironmentProperties> {
+    pub fn environment_properties(&self) -> ::std::option::Option<& crate::types::EnvironmentProperties> {
         self.environment_properties.as_ref()
     }
     /// <p>The code location and type parameters for a Managed Service for Apache Flink application.</p>
-    pub fn application_code_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationCodeConfiguration> {
+    pub fn application_code_configuration(&self) -> ::std::option::Option<& crate::types::ApplicationCodeConfiguration> {
         self.application_code_configuration.as_ref()
     }
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
-    pub fn application_snapshot_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfiguration> {
+    pub fn application_snapshot_configuration(&self) -> ::std::option::Option<& crate::types::ApplicationSnapshotConfiguration> {
         self.application_snapshot_configuration.as_ref()
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_configurations.is_none()`.
-    pub fn vpc_configurations(&self) -> &[crate::types::VpcConfiguration] {
-        self.vpc_configurations.as_deref().unwrap_or_default()
+    pub fn vpc_configurations(&self) -> & [crate::types::VpcConfiguration] {
+        self.vpc_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn zeppelin_application_configuration(&self) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfiguration> {
+    pub fn zeppelin_application_configuration(&self) -> ::std::option::Option<& crate::types::ZeppelinApplicationConfiguration> {
         self.zeppelin_application_configuration.as_ref()
     }
 }
@@ -67,7 +68,7 @@ pub struct ApplicationConfigurationBuilder {
     pub(crate) environment_properties: ::std::option::Option<crate::types::EnvironmentProperties>,
     pub(crate) application_code_configuration: ::std::option::Option<crate::types::ApplicationCodeConfiguration>,
     pub(crate) application_snapshot_configuration: ::std::option::Option<crate::types::ApplicationSnapshotConfiguration>,
-    pub(crate) vpc_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>>,
+    pub(crate) vpc_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::VpcConfiguration>>,
     pub(crate) zeppelin_application_configuration: ::std::option::Option<crate::types::ZeppelinApplicationConfiguration>,
 }
 impl ApplicationConfigurationBuilder {
@@ -78,8 +79,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
     pub fn set_sql_application_configuration(mut self, input: ::std::option::Option<crate::types::SqlApplicationConfiguration>) -> Self {
-        self.sql_application_configuration = input;
-        self
+        self.sql_application_configuration = input; self
     }
     /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
     pub fn get_sql_application_configuration(&self) -> &::std::option::Option<crate::types::SqlApplicationConfiguration> {
@@ -92,8 +92,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>The creation and update parameters for a Managed Service for Apache Flink application.</p>
     pub fn set_flink_application_configuration(mut self, input: ::std::option::Option<crate::types::FlinkApplicationConfiguration>) -> Self {
-        self.flink_application_configuration = input;
-        self
+        self.flink_application_configuration = input; self
     }
     /// <p>The creation and update parameters for a Managed Service for Apache Flink application.</p>
     pub fn get_flink_application_configuration(&self) -> &::std::option::Option<crate::types::FlinkApplicationConfiguration> {
@@ -106,8 +105,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>Describes execution properties for a Managed Service for Apache Flink application.</p>
     pub fn set_environment_properties(mut self, input: ::std::option::Option<crate::types::EnvironmentProperties>) -> Self {
-        self.environment_properties = input;
-        self
+        self.environment_properties = input; self
     }
     /// <p>Describes execution properties for a Managed Service for Apache Flink application.</p>
     pub fn get_environment_properties(&self) -> &::std::option::Option<crate::types::EnvironmentProperties> {
@@ -120,8 +118,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>The code location and type parameters for a Managed Service for Apache Flink application.</p>
     pub fn set_application_code_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationCodeConfiguration>) -> Self {
-        self.application_code_configuration = input;
-        self
+        self.application_code_configuration = input; self
     }
     /// <p>The code location and type parameters for a Managed Service for Apache Flink application.</p>
     pub fn get_application_code_configuration(&self) -> &::std::option::Option<crate::types::ApplicationCodeConfiguration> {
@@ -134,8 +131,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn set_application_snapshot_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationSnapshotConfiguration>) -> Self {
-        self.application_snapshot_configuration = input;
-        self
+        self.application_snapshot_configuration = input; self
     }
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn get_application_snapshot_configuration(&self) -> &::std::option::Option<crate::types::ApplicationSnapshotConfiguration> {
@@ -148,17 +144,16 @@ impl ApplicationConfigurationBuilder {
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub fn vpc_configurations(mut self, input: crate::types::VpcConfiguration) -> Self {
         let mut v = self.vpc_configurations.unwrap_or_default();
-        v.push(input);
-        self.vpc_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    pub fn set_vpc_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>>) -> Self {
-        self.vpc_configurations = input;
-        self
+    pub fn set_vpc_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcConfiguration>>) -> Self {
+        self.vpc_configurations = input; self
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    pub fn get_vpc_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConfiguration>> {
+    pub fn get_vpc_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcConfiguration>> {
         &self.vpc_configurations
     }
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
@@ -168,8 +163,7 @@ impl ApplicationConfigurationBuilder {
     }
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
     pub fn set_zeppelin_application_configuration(mut self, input: ::std::option::Option<crate::types::ZeppelinApplicationConfiguration>) -> Self {
-        self.zeppelin_application_configuration = input;
-        self
+        self.zeppelin_application_configuration = input; self
     }
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_zeppelin_application_configuration(&self) -> &::std::option::Option<crate::types::ZeppelinApplicationConfiguration> {
@@ -178,13 +172,21 @@ impl ApplicationConfigurationBuilder {
     /// Consumes the builder and constructs a [`ApplicationConfiguration`](crate::types::ApplicationConfiguration).
     pub fn build(self) -> crate::types::ApplicationConfiguration {
         crate::types::ApplicationConfiguration {
-            sql_application_configuration: self.sql_application_configuration,
-            flink_application_configuration: self.flink_application_configuration,
-            environment_properties: self.environment_properties,
-            application_code_configuration: self.application_code_configuration,
-            application_snapshot_configuration: self.application_snapshot_configuration,
-            vpc_configurations: self.vpc_configurations,
-            zeppelin_application_configuration: self.zeppelin_application_configuration,
+            sql_application_configuration: self.sql_application_configuration
+            ,
+            flink_application_configuration: self.flink_application_configuration
+            ,
+            environment_properties: self.environment_properties
+            ,
+            application_code_configuration: self.application_code_configuration
+            ,
+            application_snapshot_configuration: self.application_snapshot_configuration
+            ,
+            vpc_configurations: self.vpc_configurations
+            ,
+            zeppelin_application_configuration: self.zeppelin_application_configuration
+            ,
         }
     }
 }
+

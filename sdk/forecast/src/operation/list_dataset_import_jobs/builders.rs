@@ -5,54 +5,50 @@ pub use crate::operation::list_dataset_import_jobs::_list_dataset_import_jobs_in
 
 impl ListDatasetImportJobsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_dataset_import_jobs();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_dataset_import_jobs();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListDatasetImportJobs`.
-///
+/// 
 /// <p>Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a> objects.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDatasetImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder,
+                    inner: crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-    > for ListDatasetImportJobsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
+                    crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
+                > for ListDatasetImportJobsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
+                        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListDatasetImportJobsFluentBuilder {
     /// Creates a new `ListDatasetImportJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListDatasetImportJobsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_dataset_import_jobs::ListDatasetImportJobs::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobs::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_dataset_import_jobs::ListDatasetImportJobs::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_dataset_import_jobs::ListDatasetImportJobs::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput, crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator {
-        crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator {
+                                crate::operation::list_dataset_import_jobs::paginator::ListDatasetImportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -174,7 +161,7 @@ impl ListDatasetImportJobsFluentBuilder {
     /// </ul>
     /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
     /// <p><code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -190,7 +177,8 @@ impl ListDatasetImportJobsFluentBuilder {
     /// </ul>
     /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
     /// <p><code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
 }
+

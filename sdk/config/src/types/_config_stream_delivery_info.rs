@@ -3,7 +3,7 @@
 /// <p>A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigStreamDeliveryInfo {
+pub struct ConfigStreamDeliveryInfo  {
     /// <p>Status of the last attempted delivery.</p>
     /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub last_status: ::std::option::Option<crate::types::DeliveryStatus>,
@@ -14,22 +14,22 @@ pub struct ConfigStreamDeliveryInfo {
     /// <p>The time from the last status change.</p>
     pub last_status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ConfigStreamDeliveryInfo {
+impl  ConfigStreamDeliveryInfo  {
     /// <p>Status of the last attempted delivery.</p>
     /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
-    pub fn last_status(&self) -> ::std::option::Option<&crate::types::DeliveryStatus> {
+    pub fn last_status(&self) -> ::std::option::Option<& crate::types::DeliveryStatus> {
         self.last_status.as_ref()
     }
     /// <p>The error code from the last attempted delivery.</p>
-    pub fn last_error_code(&self) -> ::std::option::Option<&str> {
+    pub fn last_error_code(&self) -> ::std::option::Option<& str> {
         self.last_error_code.as_deref()
     }
     /// <p>The error message from the last attempted delivery.</p>
-    pub fn last_error_message(&self) -> ::std::option::Option<&str> {
+    pub fn last_error_message(&self) -> ::std::option::Option<& str> {
         self.last_error_message.as_deref()
     }
     /// <p>The time from the last status change.</p>
-    pub fn last_status_change_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_status_change_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_status_change_time.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ConfigStreamDeliveryInfoBuilder {
     /// <p>Status of the last attempted delivery.</p>
     /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
     pub fn set_last_status(mut self, input: ::std::option::Option<crate::types::DeliveryStatus>) -> Self {
-        self.last_status = input;
-        self
+        self.last_status = input; self
     }
     /// <p>Status of the last attempted delivery.</p>
     /// <p><b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
@@ -74,8 +73,7 @@ impl ConfigStreamDeliveryInfoBuilder {
     }
     /// <p>The error code from the last attempted delivery.</p>
     pub fn set_last_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_error_code = input;
-        self
+        self.last_error_code = input; self
     }
     /// <p>The error code from the last attempted delivery.</p>
     pub fn get_last_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl ConfigStreamDeliveryInfoBuilder {
     }
     /// <p>The error message from the last attempted delivery.</p>
     pub fn set_last_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_error_message = input;
-        self
+        self.last_error_message = input; self
     }
     /// <p>The error message from the last attempted delivery.</p>
     pub fn get_last_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +99,7 @@ impl ConfigStreamDeliveryInfoBuilder {
     }
     /// <p>The time from the last status change.</p>
     pub fn set_last_status_change_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_status_change_time = input;
-        self
+        self.last_status_change_time = input; self
     }
     /// <p>The time from the last status change.</p>
     pub fn get_last_status_change_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -112,10 +108,15 @@ impl ConfigStreamDeliveryInfoBuilder {
     /// Consumes the builder and constructs a [`ConfigStreamDeliveryInfo`](crate::types::ConfigStreamDeliveryInfo).
     pub fn build(self) -> crate::types::ConfigStreamDeliveryInfo {
         crate::types::ConfigStreamDeliveryInfo {
-            last_status: self.last_status,
-            last_error_code: self.last_error_code,
-            last_error_message: self.last_error_message,
-            last_status_change_time: self.last_status_change_time,
+            last_status: self.last_status
+            ,
+            last_error_code: self.last_error_code
+            ,
+            last_error_message: self.last_error_message
+            ,
+            last_status_change_time: self.last_status_change_time
+            ,
         }
     }
 }
+

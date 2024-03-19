@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProtectedQueryInput {
+pub struct UpdateProtectedQueryInput  {
     /// <p>The identifier for a member of a protected query instance.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a protected query instance.</p>
@@ -10,17 +10,17 @@ pub struct UpdateProtectedQueryInput {
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
     pub target_status: ::std::option::Option<crate::types::TargetProtectedQueryStatus>,
 }
-impl UpdateProtectedQueryInput {
+impl  UpdateProtectedQueryInput  {
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn protected_query_identifier(&self) -> ::std::option::Option<& str> {
         self.protected_query_identifier.as_deref()
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub fn target_status(&self) -> ::std::option::Option<&crate::types::TargetProtectedQueryStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<& crate::types::TargetProtectedQueryStatus> {
         self.target_status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateProtectedQueryInputBuilder {
     }
     /// <p>The identifier for a member of a protected query instance.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a member of a protected query instance.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateProtectedQueryInputBuilder {
     }
     /// <p>The identifier for a protected query instance.</p>
     pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protected_query_identifier = input;
-        self
+        self.protected_query_identifier = input; self
     }
     /// <p>The identifier for a protected query instance.</p>
     pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdateProtectedQueryInputBuilder {
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
     pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::TargetProtectedQueryStatus>) -> Self {
-        self.target_status = input;
-        self
+        self.target_status = input; self
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
     pub fn get_target_status(&self) -> &::std::option::Option<crate::types::TargetProtectedQueryStatus> {
         &self.target_status
     }
     /// Consumes the builder and constructs a [`UpdateProtectedQueryInput`](crate::operation::update_protected_query::UpdateProtectedQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_protected_query::UpdateProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_protected_query::UpdateProtectedQueryInput {
-            membership_identifier: self.membership_identifier,
-            protected_query_identifier: self.protected_query_identifier,
-            target_status: self.target_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_protected_query::UpdateProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_protected_query::UpdateProtectedQueryInput {
+                membership_identifier: self.membership_identifier
+                ,
+                protected_query_identifier: self.protected_query_identifier
+                ,
+                target_status: self.target_status
+                ,
+            }
+        )
     }
 }
+

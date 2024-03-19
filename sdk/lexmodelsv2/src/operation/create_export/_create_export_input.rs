@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateExportInput {
+pub struct CreateExportInput  {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format of the bot or bot locale definition files.</p>
@@ -10,21 +10,21 @@ pub struct CreateExportInput {
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub file_password: ::std::option::Option<::std::string::String>,
 }
-impl CreateExportInput {
+impl  CreateExportInput  {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<& crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::ImportExportFileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn file_password(&self) -> ::std::option::Option<&str> {
+    pub fn file_password(&self) -> ::std::option::Option<& str> {
         self.file_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateExportInput {
+impl  ::std::fmt::Debug for CreateExportInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExportInput");
         formatter.field("resource_specification", &self.resource_specification);
@@ -57,8 +57,7 @@ impl CreateExportInputBuilder {
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
-        self.resource_specification = input;
-        self
+        self.resource_specification = input; self
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
@@ -72,8 +71,7 @@ impl CreateExportInputBuilder {
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
@@ -86,22 +84,24 @@ impl CreateExportInputBuilder {
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_password = input;
-        self
+        self.file_password = input; self
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_export::CreateExportInput {
-            resource_specification: self.resource_specification,
-            file_format: self.file_format,
-            file_password: self.file_password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_export::CreateExportInput {
+                resource_specification: self.resource_specification
+                ,
+                file_format: self.file_format
+                ,
+                file_password: self.file_password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateExportInputBuilder {
@@ -113,3 +113,4 @@ impl ::std::fmt::Debug for CreateExportInputBuilder {
         formatter.finish()
     }
 }
+

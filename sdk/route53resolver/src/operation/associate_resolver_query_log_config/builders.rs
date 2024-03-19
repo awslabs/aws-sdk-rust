@@ -5,23 +5,20 @@ pub use crate::operation::associate_resolver_query_log_config::_associate_resolv
 
 impl AssociateResolverQueryLogConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.associate_resolver_query_log_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.associate_resolver_query_log_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssociateResolverQueryLogConfig`.
-///
+/// 
 /// <p>Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code> request for each VPC.</p><note>
 /// <p>The VPCs that you associate with a query logging configuration must be in the same Region as the configuration.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl AssociateResolverQueryLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResolverQueryLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigInputBuilder,
+                    inner: crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
-    > for AssociateResolverQueryLogConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
-            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
+                    crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
+                > for AssociateResolverQueryLogConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
+                        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssociateResolverQueryLogConfigFluentBuilder {
     /// Creates a new `AssociateResolverQueryLogConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl AssociateResolverQueryLogConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput,
-        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput, crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
     pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_query_log_config_id(input.into());
@@ -146,3 +133,4 @@ impl AssociateResolverQueryLogConfigFluentBuilder {
         self.inner.get_resource_id()
     }
 }
+

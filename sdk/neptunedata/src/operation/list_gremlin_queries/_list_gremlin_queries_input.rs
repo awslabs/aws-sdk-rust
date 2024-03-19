@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGremlinQueriesInput {
+pub struct ListGremlinQueriesInput  {
     /// <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p>
     pub include_waiting: ::std::option::Option<bool>,
 }
-impl ListGremlinQueriesInput {
+impl  ListGremlinQueriesInput  {
     /// <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p>
     pub fn include_waiting(&self) -> ::std::option::Option<bool> {
         self.include_waiting
@@ -33,20 +33,20 @@ impl ListGremlinQueriesInputBuilder {
     }
     /// <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p>
     pub fn set_include_waiting(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_waiting = input;
-        self
+        self.include_waiting = input; self
     }
     /// <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p>
     pub fn get_include_waiting(&self) -> &::std::option::Option<bool> {
         &self.include_waiting
     }
     /// Consumes the builder and constructs a [`ListGremlinQueriesInput`](crate::operation::list_gremlin_queries::ListGremlinQueriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_gremlin_queries::ListGremlinQueriesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_gremlin_queries::ListGremlinQueriesInput {
-            include_waiting: self.include_waiting,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_gremlin_queries::ListGremlinQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_gremlin_queries::ListGremlinQueriesInput {
+                include_waiting: self.include_waiting
+                ,
+            }
+        )
     }
 }
+

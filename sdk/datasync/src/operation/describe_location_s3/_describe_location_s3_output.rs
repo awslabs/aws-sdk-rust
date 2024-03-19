@@ -3,7 +3,7 @@
 /// <p>DescribeLocationS3Response</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationS3Output {
+pub struct DescribeLocationS3Output  {
     /// <p>The ARN of the Amazon S3 location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon S3 location that was described.</p>
@@ -16,47 +16,48 @@ pub struct DescribeLocationS3Output {
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>The ARNs of the DataSync agents deployed on your Outpost when using working with Amazon S3 on Outposts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time that the Amazon S3 location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeLocationS3Output {
+impl  DescribeLocationS3Output  {
     /// <p>The ARN of the Amazon S3 location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the Amazon S3 location that was described.</p>
-    pub fn location_uri(&self) -> ::std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>When Amazon S3 is a destination location, this is the storage class that you chose for your objects.</p>
     /// <p>Some storage classes have behaviors that can affect your Amazon S3 storage costs. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 transfers</a>.</p>
-    pub fn s3_storage_class(&self) -> ::std::option::Option<&crate::types::S3StorageClass> {
+    pub fn s3_storage_class(&self) -> ::std::option::Option<& crate::types::S3StorageClass> {
         self.s3_storage_class.as_ref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that DataSync uses to access your S3 bucket.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Accessing S3 buckets</a>.</p>
-    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<& crate::types::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>The ARNs of the DataSync agents deployed on your Outpost when using working with Amazon S3 on Outposts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time that the Amazon S3 location was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLocationS3Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLocationS3Output {
     /// Creates a new builder-style object to manufacture [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output).
     pub fn builder() -> crate::operation::describe_location_s3::builders::DescribeLocationS3OutputBuilder {
@@ -72,7 +73,7 @@ pub struct DescribeLocationS3OutputBuilder {
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_storage_class: ::std::option::Option<crate::types::S3StorageClass>,
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -84,8 +85,7 @@ impl DescribeLocationS3OutputBuilder {
     }
     /// <p>The ARN of the Amazon S3 location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The ARN of the Amazon S3 location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl DescribeLocationS3OutputBuilder {
     }
     /// <p>The URL of the Amazon S3 location that was described.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>The URL of the Amazon S3 location that was described.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl DescribeLocationS3OutputBuilder {
     /// <p>When Amazon S3 is a destination location, this is the storage class that you chose for your objects.</p>
     /// <p>Some storage classes have behaviors that can affect your Amazon S3 storage costs. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 transfers</a>.</p>
     pub fn set_s3_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
-        self.s3_storage_class = input;
-        self
+        self.s3_storage_class = input; self
     }
     /// <p>When Amazon S3 is a destination location, this is the storage class that you chose for your objects.</p>
     /// <p>Some storage classes have behaviors that can affect your Amazon S3 storage costs. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 transfers</a>.</p>
@@ -131,8 +129,7 @@ impl DescribeLocationS3OutputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that DataSync uses to access your S3 bucket.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Accessing S3 buckets</a>.</p>
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
-        self.s3_config = input;
-        self
+        self.s3_config = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that DataSync uses to access your S3 bucket.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Accessing S3 buckets</a>.</p>
@@ -147,19 +144,18 @@ impl DescribeLocationS3OutputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the DataSync agents deployed on your Outpost when using working with Amazon S3 on Outposts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The ARNs of the DataSync agents deployed on your Outpost when using working with Amazon S3 on Outposts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// <p>The time that the Amazon S3 location was created.</p>
@@ -169,32 +165,38 @@ impl DescribeLocationS3OutputBuilder {
     }
     /// <p>The time that the Amazon S3 location was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the Amazon S3 location was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output).
     pub fn build(self) -> crate::operation::describe_location_s3::DescribeLocationS3Output {
         crate::operation::describe_location_s3::DescribeLocationS3Output {
-            location_arn: self.location_arn,
-            location_uri: self.location_uri,
-            s3_storage_class: self.s3_storage_class,
-            s3_config: self.s3_config,
-            agent_arns: self.agent_arns,
-            creation_time: self.creation_time,
+            location_arn: self.location_arn
+            ,
+            location_uri: self.location_uri
+            ,
+            s3_storage_class: self.s3_storage_class
+            ,
+            s3_config: self.s3_config
+            ,
+            agent_arns: self.agent_arns
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

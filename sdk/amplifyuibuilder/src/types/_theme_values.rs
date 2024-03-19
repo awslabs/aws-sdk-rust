@@ -3,19 +3,19 @@
 /// <p>A key-value pair that defines a property of a theme.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThemeValues {
+pub struct ThemeValues  {
     /// <p>The name of the property.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the property.</p>
     pub value: ::std::option::Option<crate::types::ThemeValue>,
 }
-impl ThemeValues {
+impl  ThemeValues  {
     /// <p>The name of the property.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::ThemeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::ThemeValue> {
         self.value.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ThemeValuesBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the property.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ThemeValuesBuilder {
     }
     /// <p>The value of the property.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::ThemeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the property.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::ThemeValue> {
@@ -65,8 +63,11 @@ impl ThemeValuesBuilder {
     /// Consumes the builder and constructs a [`ThemeValues`](crate::types::ThemeValues).
     pub fn build(self) -> crate::types::ThemeValues {
         crate::types::ThemeValues {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

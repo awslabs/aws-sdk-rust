@@ -3,28 +3,28 @@
 /// <p>The Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitiateMultipartUploadOutput {
+pub struct InitiateMultipartUploadOutput  {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl InitiateMultipartUploadOutput {
+impl  InitiateMultipartUploadOutput  {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InitiateMultipartUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InitiateMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
     pub fn builder() -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadOutputBuilder {
@@ -48,8 +48,7 @@ impl InitiateMultipartUploadOutputBuilder {
     }
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl InitiateMultipartUploadOutputBuilder {
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
     pub fn build(self) -> crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput {
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput {
-            location: self.location,
-            upload_id: self.upload_id,
+            location: self.location
+            ,
+            upload_id: self.upload_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

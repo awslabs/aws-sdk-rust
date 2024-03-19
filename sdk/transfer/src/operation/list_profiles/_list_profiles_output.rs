@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfilesOutput {
+pub struct ListProfilesOutput  {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub profiles: ::std::vec::Vec<crate::types::ListedProfile>,
+    pub profiles: ::std::vec::Vec::<crate::types::ListedProfile>,
     _request_id: Option<String>,
 }
-impl ListProfilesOutput {
+impl  ListProfilesOutput  {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn profiles(&self) -> &[crate::types::ListedProfile] {
-        use std::ops::Deref;
-        self.profiles.deref()
+    pub fn profiles(&self) -> & [crate::types::ListedProfile] {
+        use std::ops::Deref; self.profiles.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
     pub fn builder() -> crate::operation::list_profiles::builders::ListProfilesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListProfilesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec::<crate::types::ListedProfile>>,
     _request_id: Option<String>,
 }
 impl ListProfilesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListProfilesOutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListProfilesOutputBuilder {
     /// <p>Returns an array, where each item contains the details of a profile.</p>
     pub fn profiles(mut self, input: crate::types::ListedProfile) -> Self {
         let mut v = self.profiles.unwrap_or_default();
-        v.push(input);
-        self.profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>) -> Self {
-        self.profiles = input;
-        self
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedProfile>>) -> Self {
+        self.profiles = input; self
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedProfile>> {
         &self.profiles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profiles`](crate::operation::list_profiles::builders::ListProfilesOutputBuilder::profiles)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_profiles::ListProfilesOutput {
-            next_token: self.next_token,
-            profiles: self.profiles.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profiles",
-                    "profiles was not specified but it is required when building ListProfilesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_profiles::ListProfilesOutput {
+                next_token: self.next_token
+                ,
+                profiles: self.profiles
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profiles", "profiles was not specified but it is required when building ListProfilesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

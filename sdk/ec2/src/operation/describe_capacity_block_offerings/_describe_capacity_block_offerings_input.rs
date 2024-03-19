@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCapacityBlockOfferingsInput {
+pub struct DescribeCapacityBlockOfferingsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
@@ -20,13 +20,13 @@ pub struct DescribeCapacityBlockOfferingsInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeCapacityBlockOfferingsInput {
+impl  DescribeCapacityBlockOfferingsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The number of instances for which to reserve capacity.</p>
@@ -34,11 +34,11 @@ impl DescribeCapacityBlockOfferingsInput {
         self.instance_count
     }
     /// <p>The earliest start date for the Capacity Block offering.</p>
-    pub fn start_date_range(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date_range(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date_range.as_ref()
     }
     /// <p>The latest end date for the Capacity Block offering.</p>
-    pub fn end_date_range(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_range(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_range.as_ref()
     }
     /// <p>The number of hours for which to reserve Capacity Block.</p>
@@ -46,7 +46,7 @@ impl DescribeCapacityBlockOfferingsInput {
         self.capacity_duration_hours
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -82,8 +82,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -97,8 +96,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of instance for which the Capacity Block offering reserves capacity.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The number of instances for which to reserve capacity.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of instances for which to reserve capacity.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -126,8 +123,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The earliest start date for the Capacity Block offering.</p>
     pub fn set_start_date_range(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date_range = input;
-        self
+        self.start_date_range = input; self
     }
     /// <p>The earliest start date for the Capacity Block offering.</p>
     pub fn get_start_date_range(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +136,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The latest end date for the Capacity Block offering.</p>
     pub fn set_end_date_range(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_range = input;
-        self
+        self.end_date_range = input; self
     }
     /// <p>The latest end date for the Capacity Block offering.</p>
     pub fn get_end_date_range(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +150,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The number of hours for which to reserve Capacity Block.</p>
     pub fn set_capacity_duration_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity_duration_hours = input;
-        self
+        self.capacity_duration_hours = input; self
     }
     /// <p>The number of hours for which to reserve Capacity Block.</p>
     pub fn get_capacity_duration_hours(&self) -> &::std::option::Option<i32> {
@@ -169,8 +163,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,29 +176,34 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput {
-            dry_run: self.dry_run,
-            instance_type: self.instance_type,
-            instance_count: self.instance_count,
-            start_date_range: self.start_date_range,
-            end_date_range: self.end_date_range,
-            capacity_duration_hours: self.capacity_duration_hours,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput {
+                dry_run: self.dry_run
+                ,
+                instance_type: self.instance_type
+                ,
+                instance_count: self.instance_count
+                ,
+                start_date_range: self.start_date_range
+                ,
+                end_date_range: self.end_date_range
+                ,
+                capacity_duration_hours: self.capacity_duration_hours
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

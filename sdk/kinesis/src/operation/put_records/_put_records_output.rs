@@ -3,11 +3,11 @@
 /// <p><code>PutRecords</code> results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRecordsOutput {
+pub struct PutRecordsOutput  {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     pub failed_record_count: ::std::option::Option<i32>,
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub records: ::std::vec::Vec<crate::types::PutRecordsResultEntry>,
+    pub records: ::std::vec::Vec::<crate::types::PutRecordsResultEntry>,
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -18,15 +18,14 @@ pub struct PutRecordsOutput {
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
 }
-impl PutRecordsOutput {
+impl  PutRecordsOutput  {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     pub fn failed_record_count(&self) -> ::std::option::Option<i32> {
         self.failed_record_count
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn records(&self) -> &[crate::types::PutRecordsResultEntry] {
-        use std::ops::Deref;
-        self.records.deref()
+    pub fn records(&self) -> & [crate::types::PutRecordsResultEntry] {
+        use std::ops::Deref; self.records.deref()
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
@@ -35,15 +34,15 @@ impl PutRecordsOutput {
     /// <li>
     /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutRecordsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutRecordsOutput {
     /// Creates a new builder-style object to manufacture [`PutRecordsOutput`](crate::operation::put_records::PutRecordsOutput).
     pub fn builder() -> crate::operation::put_records::builders::PutRecordsOutputBuilder {
@@ -56,7 +55,7 @@ impl PutRecordsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordsOutputBuilder {
     pub(crate) failed_record_count: ::std::option::Option<i32>,
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsResultEntry>>,
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
 }
@@ -68,8 +67,7 @@ impl PutRecordsOutputBuilder {
     }
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     pub fn set_failed_record_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_record_count = input;
-        self
+        self.failed_record_count = input; self
     }
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     pub fn get_failed_record_count(&self) -> &::std::option::Option<i32> {
@@ -82,17 +80,16 @@ impl PutRecordsOutputBuilder {
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
     pub fn records(mut self, input: crate::types::PutRecordsResultEntry) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsResultEntry>>) -> Self {
+        self.records = input; self
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutRecordsResultEntry>> {
         &self.records
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
@@ -114,8 +111,7 @@ impl PutRecordsOutputBuilder {
     /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
@@ -128,28 +124,32 @@ impl PutRecordsOutputBuilder {
         &self.encryption_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutRecordsOutput`](crate::operation::put_records::PutRecordsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`records`](crate::operation::put_records::builders::PutRecordsOutputBuilder::records)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_records::PutRecordsOutput {
-            failed_record_count: self.failed_record_count,
-            records: self.records.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "records",
-                    "records was not specified but it is required when building PutRecordsOutput",
-                )
-            })?,
-            encryption_type: self.encryption_type,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_records::PutRecordsOutput {
+                failed_record_count: self.failed_record_count
+                ,
+                records: self.records
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("records", "records was not specified but it is required when building PutRecordsOutput")
+                    )?
+                ,
+                encryption_type: self.encryption_type
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

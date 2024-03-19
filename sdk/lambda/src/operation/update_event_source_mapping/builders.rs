@@ -5,23 +5,20 @@ pub use crate::operation::update_event_source_mapping::_update_event_source_mapp
 
 impl UpdateEventSourceMappingInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_event_source_mapping();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_event_source_mapping();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateEventSourceMapping`.
-///
+/// 
 /// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause invocation and resume later from the same location.</p>
 /// <p>For details about how to configure different event sources, see the following topics.</p>
 /// <ul>
@@ -73,33 +70,32 @@ impl UpdateEventSourceMappingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventSourceMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_event_source_mapping::builders::UpdateEventSourceMappingInputBuilder,
+                    inner: crate::operation::update_event_source_mapping::builders::UpdateEventSourceMappingInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
-    > for UpdateEventSourceMappingFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
+                    crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
+                > for UpdateEventSourceMappingFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
+                        crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateEventSourceMappingFluentBuilder {
     /// Creates a new `UpdateEventSourceMapping`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -108,53 +104,44 @@ impl UpdateEventSourceMappingFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_event_source_mapping::UpdateEventSourceMapping::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_event_source_mapping::UpdateEventSourceMapping::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
-        crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_event_source_mapping::UpdateEventSourceMappingError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_event_source_mapping::UpdateEventSourceMapping::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_event_source_mapping::UpdateEventSourceMapping::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput, crate::operation::update_event_source_mapping::UpdateEventSourceMappingError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the event source mapping.</p>
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uuid(input.into());
@@ -412,15 +399,12 @@ impl UpdateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn set_source_access_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>>,
-    ) -> Self {
+    pub fn set_source_access_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceAccessConfiguration>>) -> Self {
         self.inner = self.inner.set_source_access_configurations(input);
         self
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn get_source_access_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>> {
+    pub fn get_source_access_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceAccessConfiguration>> {
         self.inner.get_source_access_configurations()
     }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
@@ -447,12 +431,12 @@ impl UpdateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn set_function_response_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>) -> Self {
+    pub fn set_function_response_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionResponseType>>) -> Self {
         self.inner = self.inner.set_function_response_types(input);
         self
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn get_function_response_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>> {
+    pub fn get_function_response_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FunctionResponseType>> {
         self.inner.get_function_response_types()
     }
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
@@ -484,3 +468,4 @@ impl UpdateEventSourceMappingFluentBuilder {
         self.inner.get_document_db_event_source_config()
     }
 }
+

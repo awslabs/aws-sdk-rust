@@ -3,7 +3,7 @@
 /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details associated with an Amazon Chime Voice Connector's emergency calling configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DnisEmergencyCallingConfiguration {
+pub struct DnisEmergencyCallingConfiguration  {
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
     pub emergency_phone_number: ::std::string::String,
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
@@ -11,23 +11,21 @@ pub struct DnisEmergencyCallingConfiguration {
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     pub calling_country: ::std::string::String,
 }
-impl DnisEmergencyCallingConfiguration {
+impl  DnisEmergencyCallingConfiguration  {
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
-    pub fn emergency_phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.emergency_phone_number.deref()
+    pub fn emergency_phone_number(&self) -> & str {
+        use std::ops::Deref; self.emergency_phone_number.deref()
     }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
-    pub fn test_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn test_phone_number(&self) -> ::std::option::Option<& str> {
         self.test_phone_number.as_deref()
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn calling_country(&self) -> &str {
-        use std::ops::Deref;
-        self.calling_country.deref()
+    pub fn calling_country(&self) -> & str {
+        use std::ops::Deref; self.calling_country.deref()
     }
 }
-impl ::std::fmt::Debug for DnisEmergencyCallingConfiguration {
+impl  ::std::fmt::Debug for DnisEmergencyCallingConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DnisEmergencyCallingConfiguration");
         formatter.field("emergency_phone_number", &"*** Sensitive Data Redacted ***");
@@ -60,8 +58,7 @@ impl DnisEmergencyCallingConfigurationBuilder {
     }
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
     pub fn set_emergency_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.emergency_phone_number = input;
-        self
+        self.emergency_phone_number = input; self
     }
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
     pub fn get_emergency_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +71,7 @@ impl DnisEmergencyCallingConfigurationBuilder {
     }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
     pub fn set_test_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_phone_number = input;
-        self
+        self.test_phone_number = input; self
     }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
     pub fn get_test_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +85,7 @@ impl DnisEmergencyCallingConfigurationBuilder {
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     pub fn set_calling_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calling_country = input;
-        self
+        self.calling_country = input; self
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     pub fn get_calling_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,21 +96,22 @@ impl DnisEmergencyCallingConfigurationBuilder {
     /// - [`emergency_phone_number`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::emergency_phone_number)
     /// - [`calling_country`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::calling_country)
     pub fn build(self) -> ::std::result::Result<crate::types::DnisEmergencyCallingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DnisEmergencyCallingConfiguration {
-            emergency_phone_number: self.emergency_phone_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "emergency_phone_number",
-                    "emergency_phone_number was not specified but it is required when building DnisEmergencyCallingConfiguration",
-                )
-            })?,
-            test_phone_number: self.test_phone_number,
-            calling_country: self.calling_country.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "calling_country",
-                    "calling_country was not specified but it is required when building DnisEmergencyCallingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DnisEmergencyCallingConfiguration {
+                emergency_phone_number: self.emergency_phone_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("emergency_phone_number", "emergency_phone_number was not specified but it is required when building DnisEmergencyCallingConfiguration")
+                    )?
+                ,
+                test_phone_number: self.test_phone_number
+                ,
+                calling_country: self.calling_country
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("calling_country", "calling_country was not specified but it is required when building DnisEmergencyCallingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DnisEmergencyCallingConfigurationBuilder {
@@ -127,3 +123,4 @@ impl ::std::fmt::Debug for DnisEmergencyCallingConfigurationBuilder {
         formatter.finish()
     }
 }
+

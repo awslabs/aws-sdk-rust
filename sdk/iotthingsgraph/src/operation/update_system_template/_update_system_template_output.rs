@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSystemTemplateOutput {
+pub struct UpdateSystemTemplateOutput  {
     /// <p>An object containing summary information about the updated system.</p>
     pub summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,
 }
-impl UpdateSystemTemplateOutput {
+impl  UpdateSystemTemplateOutput  {
     /// <p>An object containing summary information about the updated system.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemTemplateSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::SystemTemplateSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSystemTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateOutput`](crate::operation::update_system_template::UpdateSystemTemplateOutput).
     pub fn builder() -> crate::operation::update_system_template::builders::UpdateSystemTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateSystemTemplateOutputBuilder {
     }
     /// <p>An object containing summary information about the updated system.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemTemplateSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>An object containing summary information about the updated system.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemTemplateSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSystemTemplateOutput`](crate::operation::update_system_template::UpdateSystemTemplateOutput).
     pub fn build(self) -> crate::operation::update_system_template::UpdateSystemTemplateOutput {
         crate::operation::update_system_template::UpdateSystemTemplateOutput {
-            summary: self.summary,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

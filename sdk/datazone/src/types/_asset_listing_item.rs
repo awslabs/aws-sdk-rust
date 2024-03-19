@@ -3,7 +3,7 @@
 /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssetListingItem {
+pub struct AssetListingItem  {
     /// <p>The identifier of the listing (asset published in Amazon DataZone catalog).</p>
     pub listing_id: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
@@ -25,69 +25,70 @@ pub struct AssetListingItem {
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub listing_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>Glossary terms attached to the inventory asset.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>,
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
     /// <p>The additional attributes of an asset published in an Amazon DataZone catalog.</p>
     pub additional_attributes: ::std::option::Option<crate::types::AssetListingItemAdditionalAttributes>,
 }
-impl AssetListingItem {
+impl  AssetListingItem  {
     /// <p>The identifier of the listing (asset published in Amazon DataZone catalog).</p>
-    pub fn listing_id(&self) -> ::std::option::Option<&str> {
+    pub fn listing_id(&self) -> ::std::option::Option<& str> {
         self.listing_id.as_deref()
     }
     /// <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
-    pub fn listing_revision(&self) -> ::std::option::Option<&str> {
+    pub fn listing_revision(&self) -> ::std::option::Option<& str> {
         self.listing_revision.as_deref()
     }
     /// <p>The name of the inventory asset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the inventory asset.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The revision of the inventory asset.</p>
-    pub fn entity_revision(&self) -> ::std::option::Option<&str> {
+    pub fn entity_revision(&self) -> ::std::option::Option<& str> {
         self.entity_revision.as_deref()
     }
     /// <p>The type of the inventory asset.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The description of an asset published in an Amazon DataZone catalog.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
-    pub fn listing_created_by(&self) -> ::std::option::Option<&str> {
+    pub fn listing_created_by(&self) -> ::std::option::Option<& str> {
         self.listing_created_by.as_deref()
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
-    pub fn listing_updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn listing_updated_by(&self) -> ::std::option::Option<& str> {
         self.listing_updated_by.as_deref()
     }
     /// <p>Glossary terms attached to the inventory asset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [crate::types::DetailedGlossaryTerm] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the project that owns the inventory asset.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_id(&self) -> ::std::option::Option<& str> {
         self.owning_project_id.as_deref()
     }
     /// <p>The additional attributes of an asset published in an Amazon DataZone catalog.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::AssetListingItemAdditionalAttributes> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<& crate::types::AssetListingItemAdditionalAttributes> {
         self.additional_attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for AssetListingItem {
+impl  ::std::fmt::Debug for AssetListingItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssetListingItem");
         formatter.field("listing_id", &self.listing_id);
@@ -127,7 +128,7 @@ pub struct AssetListingItemBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) listing_created_by: ::std::option::Option<::std::string::String>,
     pub(crate) listing_updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_attributes: ::std::option::Option<crate::types::AssetListingItemAdditionalAttributes>,
 }
@@ -139,8 +140,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The identifier of the listing (asset published in Amazon DataZone catalog).</p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_id = input;
-        self
+        self.listing_id = input; self
     }
     /// <p>The identifier of the listing (asset published in Amazon DataZone catalog).</p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +153,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_revision = input;
-        self
+        self.listing_revision = input; self
     }
     /// <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The name of the inventory asset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the inventory asset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +179,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The identifier of the inventory asset.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of the inventory asset.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +192,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The revision of the inventory asset.</p>
     pub fn set_entity_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_revision = input;
-        self
+        self.entity_revision = input; self
     }
     /// <p>The revision of the inventory asset.</p>
     pub fn get_entity_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +205,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The type of the inventory asset.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of the inventory asset.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +218,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The description of an asset published in an Amazon DataZone catalog.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of an asset published in an Amazon DataZone catalog.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +231,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when an asset published in an Amazon DataZone catalog was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +244,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
     pub fn set_listing_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_created_by = input;
-        self
+        self.listing_created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
     pub fn get_listing_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +257,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub fn set_listing_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_updated_by = input;
-        self
+        self.listing_updated_by = input; self
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub fn get_listing_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,17 +270,16 @@ impl AssetListingItemBuilder {
     /// <p>Glossary terms attached to the inventory asset.</p>
     pub fn glossary_terms(mut self, input: crate::types::DetailedGlossaryTerm) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input);
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Glossary terms attached to the inventory asset.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>Glossary terms attached to the inventory asset.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
     /// <p>The identifier of the project that owns the inventory asset.</p>
@@ -299,8 +289,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_id = input;
-        self
+        self.owning_project_id = input; self
     }
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +302,7 @@ impl AssetListingItemBuilder {
     }
     /// <p>The additional attributes of an asset published in an Amazon DataZone catalog.</p>
     pub fn set_additional_attributes(mut self, input: ::std::option::Option<crate::types::AssetListingItemAdditionalAttributes>) -> Self {
-        self.additional_attributes = input;
-        self
+        self.additional_attributes = input; self
     }
     /// <p>The additional attributes of an asset published in an Amazon DataZone catalog.</p>
     pub fn get_additional_attributes(&self) -> &::std::option::Option<crate::types::AssetListingItemAdditionalAttributes> {
@@ -323,19 +311,32 @@ impl AssetListingItemBuilder {
     /// Consumes the builder and constructs a [`AssetListingItem`](crate::types::AssetListingItem).
     pub fn build(self) -> crate::types::AssetListingItem {
         crate::types::AssetListingItem {
-            listing_id: self.listing_id,
-            listing_revision: self.listing_revision,
-            name: self.name,
-            entity_id: self.entity_id,
-            entity_revision: self.entity_revision,
-            entity_type: self.entity_type,
-            description: self.description,
-            created_at: self.created_at,
-            listing_created_by: self.listing_created_by,
-            listing_updated_by: self.listing_updated_by,
-            glossary_terms: self.glossary_terms,
-            owning_project_id: self.owning_project_id,
-            additional_attributes: self.additional_attributes,
+            listing_id: self.listing_id
+            ,
+            listing_revision: self.listing_revision
+            ,
+            name: self.name
+            ,
+            entity_id: self.entity_id
+            ,
+            entity_revision: self.entity_revision
+            ,
+            entity_type: self.entity_type
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            listing_created_by: self.listing_created_by
+            ,
+            listing_updated_by: self.listing_updated_by
+            ,
+            glossary_terms: self.glossary_terms
+            ,
+            owning_project_id: self.owning_project_id
+            ,
+            additional_attributes: self.additional_attributes
+            ,
         }
     }
 }
@@ -358,3 +359,4 @@ impl ::std::fmt::Debug for AssetListingItemBuilder {
         formatter.finish()
     }
 }
+

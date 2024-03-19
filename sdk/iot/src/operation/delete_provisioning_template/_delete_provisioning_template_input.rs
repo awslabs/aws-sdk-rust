@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProvisioningTemplateInput {
+pub struct DeleteProvisioningTemplateInput  {
     /// <p>The name of the fleet provision template to delete.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProvisioningTemplateInput {
+impl  DeleteProvisioningTemplateInput  {
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteProvisioningTemplateInputBuilder {
     }
     /// <p>The name of the fleet provision template to delete.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the fleet provision template to delete.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput {
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput {
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

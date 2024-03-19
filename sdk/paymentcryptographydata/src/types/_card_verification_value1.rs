@@ -3,22 +3,20 @@
 /// <p>Card data parameters that are required to verify CVV (Card Verification Value) for the payment card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CardVerificationValue1 {
+pub struct CardVerificationValue1  {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
     pub service_code: ::std::string::String,
 }
-impl CardVerificationValue1 {
+impl  CardVerificationValue1  {
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(&self) -> &str {
-        use std::ops::Deref;
-        self.card_expiry_date.deref()
+    pub fn card_expiry_date(&self) -> & str {
+        use std::ops::Deref; self.card_expiry_date.deref()
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    pub fn service_code(&self) -> &str {
-        use std::ops::Deref;
-        self.service_code.deref()
+    pub fn service_code(&self) -> & str {
+        use std::ops::Deref; self.service_code.deref()
     }
 }
 impl CardVerificationValue1 {
@@ -44,8 +42,7 @@ impl CardVerificationValue1Builder {
     }
     /// <p>The expiry date of a payment card.</p>
     pub fn set_card_expiry_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.card_expiry_date = input;
-        self
+        self.card_expiry_date = input; self
     }
     /// <p>The expiry date of a payment card.</p>
     pub fn get_card_expiry_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CardVerificationValue1Builder {
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CardVerificationValue1Builder {
     /// - [`card_expiry_date`](crate::types::builders::CardVerificationValue1Builder::card_expiry_date)
     /// - [`service_code`](crate::types::builders::CardVerificationValue1Builder::service_code)
     pub fn build(self) -> ::std::result::Result<crate::types::CardVerificationValue1, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CardVerificationValue1 {
-            card_expiry_date: self.card_expiry_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "card_expiry_date",
-                    "card_expiry_date was not specified but it is required when building CardVerificationValue1",
-                )
-            })?,
-            service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_code",
-                    "service_code was not specified but it is required when building CardVerificationValue1",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CardVerificationValue1 {
+                card_expiry_date: self.card_expiry_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("card_expiry_date", "card_expiry_date was not specified but it is required when building CardVerificationValue1")
+                    )?
+                ,
+                service_code: self.service_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_code", "service_code was not specified but it is required when building CardVerificationValue1")
+                    )?
+                ,
+            }
+        )
     }
 }
+

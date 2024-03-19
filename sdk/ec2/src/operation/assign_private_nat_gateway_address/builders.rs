@@ -5,54 +5,50 @@ pub use crate::operation::assign_private_nat_gateway_address::_assign_private_na
 
 impl AssignPrivateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.assign_private_nat_gateway_address();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.assign_private_nat_gateway_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssignPrivateNatGatewayAddress`.
-///
+/// 
 /// <p>Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder,
+                    inner: crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
-    > for AssignPrivateNatGatewayAddressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
+                    crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
+                > for AssignPrivateNatGatewayAddressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
+                        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssignPrivateNatGatewayAddressFluentBuilder {
     /// Creates a new `AssignPrivateNatGatewayAddress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput, crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
@@ -132,12 +119,12 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self
     }
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
@@ -169,3 +156,4 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

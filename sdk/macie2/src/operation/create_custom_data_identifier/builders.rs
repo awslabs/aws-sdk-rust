@@ -5,54 +5,50 @@ pub use crate::operation::create_custom_data_identifier::_create_custom_data_ide
 
 impl CreateCustomDataIdentifierInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_custom_data_identifier();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_custom_data_identifier();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCustomDataIdentifier`.
-///
+/// 
 /// <p>Creates and defines the criteria and other settings for a custom data identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomDataIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder,
+                    inner: crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
-    > for CreateCustomDataIdentifierFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
-            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
+                    crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
+                > for CreateCustomDataIdentifierFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
+                        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCustomDataIdentifierFluentBuilder {
     /// Creates a new `CreateCustomDataIdentifier`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateCustomDataIdentifierFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_custom_data_identifier::CreateCustomDataIdentifier::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifier::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
-        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_custom_data_identifier::CreateCustomDataIdentifier::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifier::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput, crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -149,12 +136,12 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ignore_words(input);
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_ignore_words()
     }
     /// Appends an item to `keywords`.
@@ -167,12 +154,12 @@ impl CreateCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_keywords()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
@@ -232,13 +219,13 @@ impl CreateCustomDataIdentifierFluentBuilder {
     }
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn set_severity_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>) -> Self {
+    pub fn set_severity_levels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SeverityLevel>>) -> Self {
         self.inner = self.inner.set_severity_levels(input);
         self
     }
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn get_severity_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
+    pub fn get_severity_levels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SeverityLevel>> {
         self.inner.get_severity_levels()
     }
     /// Adds a key-value pair to `tags`.
@@ -253,13 +240,14 @@ impl CreateCustomDataIdentifierFluentBuilder {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }
+

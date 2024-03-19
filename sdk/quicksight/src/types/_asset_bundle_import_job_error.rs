@@ -3,7 +3,7 @@
 /// <p>Describes an error that occurred within an Asset Bundle import execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobError {
+pub struct AssetBundleImportJobError  {
     /// <p>The ARN of the resource whose processing caused an error.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The specific error type or the error that occurred.</p>
@@ -11,17 +11,17 @@ pub struct AssetBundleImportJobError {
     /// <p>A description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportJobError {
+impl  AssetBundleImportJobError  {
     /// <p>The ARN of the resource whose processing caused an error.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The specific error type or the error that occurred.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A description of the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AssetBundleImportJobErrorBuilder {
     }
     /// <p>The ARN of the resource whose processing caused an error.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the resource whose processing caused an error.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AssetBundleImportJobErrorBuilder {
     }
     /// <p>The specific error type or the error that occurred.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The specific error type or the error that occurred.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AssetBundleImportJobErrorBuilder {
     }
     /// <p>A description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AssetBundleImportJobErrorBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobError`](crate::types::AssetBundleImportJobError).
     pub fn build(self) -> crate::types::AssetBundleImportJobError {
         crate::types::AssetBundleImportJobError {
-            arn: self.arn,
-            r#type: self.r#type,
-            message: self.message,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

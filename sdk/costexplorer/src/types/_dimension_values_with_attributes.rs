@@ -3,19 +3,19 @@
 /// <p>The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionValuesWithAttributes {
+pub struct DimensionValuesWithAttributes  {
     /// <p>The value of a dimension with a specific attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DimensionValuesWithAttributes {
+impl  DimensionValuesWithAttributes  {
     /// <p>The value of a dimension with a specific attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl DimensionValuesWithAttributes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionValuesWithAttributesBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DimensionValuesWithAttributesBuilder {
     /// <p>The value of a dimension with a specific attribute.</p>
@@ -41,8 +41,7 @@ impl DimensionValuesWithAttributesBuilder {
     }
     /// <p>The value of a dimension with a specific attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a dimension with a specific attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,24 +54,26 @@ impl DimensionValuesWithAttributesBuilder {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DimensionValuesWithAttributes`](crate::types::DimensionValuesWithAttributes).
     pub fn build(self) -> crate::types::DimensionValuesWithAttributes {
         crate::types::DimensionValuesWithAttributes {
-            value: self.value,
-            attributes: self.attributes,
+            value: self.value
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

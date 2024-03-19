@@ -3,7 +3,7 @@
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrackersResponseEntry {
+pub struct ListTrackersResponseEntry  {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: ::std::string::String,
     /// <p>The description for the tracker resource.</p>
@@ -19,33 +19,31 @@ pub struct ListTrackersResponseEntry {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ListTrackersResponseEntry {
+impl  ListTrackersResponseEntry  {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_name.deref()
+    pub fn tracker_name(&self) -> & str {
+        use std::ops::Deref; self.tracker_name.deref()
     }
     /// <p>The description for the tracker resource.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -76,8 +74,7 @@ impl ListTrackersResponseEntryBuilder {
     }
     /// <p>The name of the tracker resource.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The name of the tracker resource.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl ListTrackersResponseEntryBuilder {
     }
     /// <p>The description for the tracker resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the tracker resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl ListTrackersResponseEntryBuilder {
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -124,8 +119,7 @@ impl ListTrackersResponseEntryBuilder {
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
     pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan_data_source = input;
-        self
+        self.pricing_plan_data_source = input; self
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -140,8 +134,7 @@ impl ListTrackersResponseEntryBuilder {
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +148,7 @@ impl ListTrackersResponseEntryBuilder {
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,33 +161,34 @@ impl ListTrackersResponseEntryBuilder {
     /// - [`create_time`](crate::types::builders::ListTrackersResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListTrackersResponseEntryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ListTrackersResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListTrackersResponseEntry {
-            tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tracker_name",
-                    "tracker_name was not specified but it is required when building ListTrackersResponseEntry",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building ListTrackersResponseEntry",
-                )
-            })?,
-            pricing_plan: self.pricing_plan,
-            pricing_plan_data_source: self.pricing_plan_data_source,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ListTrackersResponseEntry",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ListTrackersResponseEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListTrackersResponseEntry {
+                tracker_name: self.tracker_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tracker_name", "tracker_name was not specified but it is required when building ListTrackersResponseEntry")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building ListTrackersResponseEntry")
+                    )?
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ListTrackersResponseEntry")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ListTrackersResponseEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

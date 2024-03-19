@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteFeaturedResultsSetOutput {
+pub struct BatchDeleteFeaturedResultsSetOutput  {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchDeleteFeaturedResultsSetError>,
     _request_id: Option<String>,
 }
-impl BatchDeleteFeaturedResultsSetOutput {
+impl  BatchDeleteFeaturedResultsSetOutput  {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn errors(&self) -> &[crate::types::BatchDeleteFeaturedResultsSetError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchDeleteFeaturedResultsSetError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteFeaturedResultsSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteFeaturedResultsSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
     pub fn builder() -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchDeleteFeaturedResultsSetOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteFeaturedResultsSetError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteFeaturedResultsSetOutputBuilder {
@@ -41,45 +40,41 @@ impl BatchDeleteFeaturedResultsSetOutputBuilder {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteFeaturedResultsSetError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteFeaturedResultsSetError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteFeaturedResultsSetError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchDeleteFeaturedResultsSetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDeleteFeaturedResultsSetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

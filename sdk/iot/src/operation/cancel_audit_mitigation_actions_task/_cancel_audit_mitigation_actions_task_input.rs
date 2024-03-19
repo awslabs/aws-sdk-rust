@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelAuditMitigationActionsTaskInput {
+pub struct CancelAuditMitigationActionsTaskInput  {
     /// <p>The unique identifier for the task that you want to cancel.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelAuditMitigationActionsTaskInput {
+impl  CancelAuditMitigationActionsTaskInput  {
     /// <p>The unique identifier for the task that you want to cancel.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CancelAuditMitigationActionsTaskInputBuilder {
     }
     /// <p>The unique identifier for the task that you want to cancel.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier for the task that you want to cancel.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelAuditMitigationActionsTaskInput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput { task_id: self.task_id },
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput {
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

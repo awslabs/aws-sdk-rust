@@ -3,7 +3,7 @@
 /// <p>Information about the queue for the specified quantum task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuantumTaskQueueInfo {
+pub struct QuantumTaskQueueInfo  {
     /// <p>The name of the queue.</p>
     pub queue: crate::types::QueueName,
     /// <p>Current position of the task in the quantum tasks queue.</p>
@@ -13,22 +13,21 @@ pub struct QuantumTaskQueueInfo {
     /// <p>Optional. Provides more information about the queue position. For example, if the task is complete and no longer in the queue, the message field contains that information.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl QuantumTaskQueueInfo {
+impl  QuantumTaskQueueInfo  {
     /// <p>The name of the queue.</p>
-    pub fn queue(&self) -> &crate::types::QueueName {
+    pub fn queue(&self) -> & crate::types::QueueName {
         &self.queue
     }
     /// <p>Current position of the task in the quantum tasks queue.</p>
-    pub fn position(&self) -> &str {
-        use std::ops::Deref;
-        self.position.deref()
+    pub fn position(&self) -> & str {
+        use std::ops::Deref; self.position.deref()
     }
     /// <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are processed before the tasks in a normal queue.</p>
-    pub fn queue_priority(&self) -> ::std::option::Option<&crate::types::QueuePriority> {
+    pub fn queue_priority(&self) -> ::std::option::Option<& crate::types::QueuePriority> {
         self.queue_priority.as_ref()
     }
     /// <p>Optional. Provides more information about the queue position. For example, if the task is complete and no longer in the queue, the message field contains that information.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl QuantumTaskQueueInfoBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueName>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
     }
     /// <p>The name of the queue.</p>
     pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueName> {
@@ -72,8 +70,7 @@ impl QuantumTaskQueueInfoBuilder {
     }
     /// <p>Current position of the task in the quantum tasks queue.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>Current position of the task in the quantum tasks queue.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl QuantumTaskQueueInfoBuilder {
     }
     /// <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub fn set_queue_priority(mut self, input: ::std::option::Option<crate::types::QueuePriority>) -> Self {
-        self.queue_priority = input;
-        self
+        self.queue_priority = input; self
     }
     /// <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub fn get_queue_priority(&self) -> &::std::option::Option<crate::types::QueuePriority> {
@@ -100,8 +96,7 @@ impl QuantumTaskQueueInfoBuilder {
     }
     /// <p>Optional. Provides more information about the queue position. For example, if the task is complete and no longer in the queue, the message field contains that information.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Optional. Provides more information about the queue position. For example, if the task is complete and no longer in the queue, the message field contains that information.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,21 +107,24 @@ impl QuantumTaskQueueInfoBuilder {
     /// - [`queue`](crate::types::builders::QuantumTaskQueueInfoBuilder::queue)
     /// - [`position`](crate::types::builders::QuantumTaskQueueInfoBuilder::position)
     pub fn build(self) -> ::std::result::Result<crate::types::QuantumTaskQueueInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QuantumTaskQueueInfo {
-            queue: self.queue.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue",
-                    "queue was not specified but it is required when building QuantumTaskQueueInfo",
-                )
-            })?,
-            position: self.position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "position",
-                    "position was not specified but it is required when building QuantumTaskQueueInfo",
-                )
-            })?,
-            queue_priority: self.queue_priority,
-            message: self.message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QuantumTaskQueueInfo {
+                queue: self.queue
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue", "queue was not specified but it is required when building QuantumTaskQueueInfo")
+                    )?
+                ,
+                position: self.position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("position", "position was not specified but it is required when building QuantumTaskQueueInfo")
+                    )?
+                ,
+                queue_priority: self.queue_priority
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

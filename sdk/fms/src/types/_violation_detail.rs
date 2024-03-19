@@ -3,7 +3,7 @@
 /// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViolationDetail {
+pub struct ViolationDetail  {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     pub policy_id: ::std::string::String,
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
@@ -13,46 +13,42 @@ pub struct ViolationDetail {
     /// <p>The resource type that the violation details were requested for.</p>
     pub resource_type: ::std::string::String,
     /// <p>List of violations for the requested resource.</p>
-    pub resource_violations: ::std::vec::Vec<crate::types::ResourceViolation>,
+    pub resource_violations: ::std::vec::Vec::<crate::types::ResourceViolation>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Brief description for the requested resource.</p>
     pub resource_description: ::std::option::Option<::std::string::String>,
 }
-impl ViolationDetail {
+impl  ViolationDetail  {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> & str {
+        use std::ops::Deref; self.policy_id.deref()
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub fn member_account(&self) -> &str {
-        use std::ops::Deref;
-        self.member_account.deref()
+    pub fn member_account(&self) -> & str {
+        use std::ops::Deref; self.member_account.deref()
     }
     /// <p>The resource ID that the violation details were requested for.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The resource type that the violation details were requested for.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn resource_violations(&self) -> &[crate::types::ResourceViolation] {
-        use std::ops::Deref;
-        self.resource_violations.deref()
+    pub fn resource_violations(&self) -> & [crate::types::ResourceViolation] {
+        use std::ops::Deref; self.resource_violations.deref()
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::Tag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::Tag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Brief description for the requested resource.</p>
-    pub fn resource_description(&self) -> ::std::option::Option<&str> {
+    pub fn resource_description(&self) -> ::std::option::Option<& str> {
         self.resource_description.as_deref()
     }
 }
@@ -71,8 +67,8 @@ pub struct ViolationDetailBuilder {
     pub(crate) member_account: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_violations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_violations: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceViolation>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) resource_description: ::std::option::Option<::std::string::String>,
 }
 impl ViolationDetailBuilder {
@@ -84,8 +80,7 @@ impl ViolationDetailBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl ViolationDetailBuilder {
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
     pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_account = input;
-        self
+        self.member_account = input; self
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
     pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl ViolationDetailBuilder {
     }
     /// <p>The resource ID that the violation details were requested for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID that the violation details were requested for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +122,7 @@ impl ViolationDetailBuilder {
     }
     /// <p>The resource type that the violation details were requested for.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type that the violation details were requested for.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,17 +135,16 @@ impl ViolationDetailBuilder {
     /// <p>List of violations for the requested resource.</p>
     pub fn resource_violations(mut self, input: crate::types::ResourceViolation) -> Self {
         let mut v = self.resource_violations.unwrap_or_default();
-        v.push(input);
-        self.resource_violations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_violations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn set_resource_violations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>) -> Self {
-        self.resource_violations = input;
-        self
+    pub fn set_resource_violations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceViolation>>) -> Self {
+        self.resource_violations = input; self
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn get_resource_violations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>> {
+    pub fn get_resource_violations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceViolation>> {
         &self.resource_violations
     }
     /// Appends an item to `resource_tags`.
@@ -163,17 +154,16 @@ impl ViolationDetailBuilder {
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
     pub fn resource_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.resource_tags
     }
     /// <p>Brief description for the requested resource.</p>
@@ -183,8 +173,7 @@ impl ViolationDetailBuilder {
     }
     /// <p>Brief description for the requested resource.</p>
     pub fn set_resource_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_description = input;
-        self
+        self.resource_description = input; self
     }
     /// <p>Brief description for the requested resource.</p>
     pub fn get_resource_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,39 +187,39 @@ impl ViolationDetailBuilder {
     /// - [`resource_type`](crate::types::builders::ViolationDetailBuilder::resource_type)
     /// - [`resource_violations`](crate::types::builders::ViolationDetailBuilder::resource_violations)
     pub fn build(self) -> ::std::result::Result<crate::types::ViolationDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ViolationDetail {
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building ViolationDetail",
-                )
-            })?,
-            member_account: self.member_account.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_account",
-                    "member_account was not specified but it is required when building ViolationDetail",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ViolationDetail",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building ViolationDetail",
-                )
-            })?,
-            resource_violations: self.resource_violations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_violations",
-                    "resource_violations was not specified but it is required when building ViolationDetail",
-                )
-            })?,
-            resource_tags: self.resource_tags,
-            resource_description: self.resource_description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ViolationDetail {
+                policy_id: self.policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_id", "policy_id was not specified but it is required when building ViolationDetail")
+                    )?
+                ,
+                member_account: self.member_account
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_account", "member_account was not specified but it is required when building ViolationDetail")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ViolationDetail")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building ViolationDetail")
+                    )?
+                ,
+                resource_violations: self.resource_violations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_violations", "resource_violations was not specified but it is required when building ViolationDetail")
+                    )?
+                ,
+                resource_tags: self.resource_tags
+                ,
+                resource_description: self.resource_description
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An error corresponding to the unsuccessful processing of a single metric data query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDataError {
+pub struct MetricDataError  {
     /// <p>The query identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The query error code. Can be one of:</p>
@@ -17,9 +17,9 @@ pub struct MetricDataError {
     /// <p>The error message associated with the current query error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl MetricDataError {
+impl  MetricDataError  {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The query error code. Can be one of:</p>
@@ -29,11 +29,11 @@ impl MetricDataError {
     /// <li>
     /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::QueryErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::QueryErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message associated with the current query error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl MetricDataErrorBuilder {
     }
     /// <p>The query identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The query identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl MetricDataErrorBuilder {
     /// <p><code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::QueryErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
@@ -106,8 +104,7 @@ impl MetricDataErrorBuilder {
     }
     /// <p>The error message associated with the current query error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message associated with the current query error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,9 +113,13 @@ impl MetricDataErrorBuilder {
     /// Consumes the builder and constructs a [`MetricDataError`](crate::types::MetricDataError).
     pub fn build(self) -> crate::types::MetricDataError {
         crate::types::MetricDataError {
-            id: self.id,
-            code: self.code,
-            message: self.message,
+            id: self.id
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

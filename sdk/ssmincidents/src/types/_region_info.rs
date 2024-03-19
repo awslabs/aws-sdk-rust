@@ -3,7 +3,7 @@
 /// <p>Information about a Amazon Web Services Region in your replication set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionInfo {
+pub struct RegionInfo  {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
@@ -13,21 +13,21 @@ pub struct RegionInfo {
     /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub status_update_date_time: ::aws_smithy_types::DateTime,
 }
-impl RegionInfo {
+impl  RegionInfo  {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
-    pub fn sse_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn sse_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.sse_kms_key_id.as_deref()
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-    pub fn status(&self) -> &crate::types::RegionStatus {
+    pub fn status(&self) -> & crate::types::RegionStatus {
         &self.status
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
-    pub fn status_update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn status_update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.status_update_date_time
     }
 }
@@ -55,8 +55,7 @@ impl RegionInfoBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     pub fn set_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_kms_key_id = input;
-        self
+        self.sse_kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     pub fn get_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl RegionInfoBuilder {
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegionStatus> {
@@ -84,8 +82,7 @@ impl RegionInfoBuilder {
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl RegionInfoBuilder {
     }
     /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub fn set_status_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_update_date_time = input;
-        self
+        self.status_update_date_time = input; self
     }
     /// <p>The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.</p>
     pub fn get_status_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,21 +107,24 @@ impl RegionInfoBuilder {
     /// - [`status`](crate::types::builders::RegionInfoBuilder::status)
     /// - [`status_update_date_time`](crate::types::builders::RegionInfoBuilder::status_update_date_time)
     pub fn build(self) -> ::std::result::Result<crate::types::RegionInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegionInfo {
-            sse_kms_key_id: self.sse_kms_key_id,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building RegionInfo",
-                )
-            })?,
-            status_message: self.status_message,
-            status_update_date_time: self.status_update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_update_date_time",
-                    "status_update_date_time was not specified but it is required when building RegionInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegionInfo {
+                sse_kms_key_id: self.sse_kms_key_id
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building RegionInfo")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                status_update_date_time: self.status_update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_update_date_time", "status_update_date_time was not specified but it is required when building RegionInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

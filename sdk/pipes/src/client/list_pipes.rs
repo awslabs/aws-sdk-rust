@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipes`](crate::operation::list_pipes::builders::ListPipesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name_prefix(impl Into<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::name_prefix) / [`set_name_prefix(Option<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_name_prefix):<br>required: **false**<br><p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p><br>
     ///   - [`desired_state(RequestedPipeState)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::desired_state) / [`set_desired_state(Option<RequestedPipeState>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_desired_state):<br>required: **false**<br><p>The state the pipe should be in.</p><br>
     ///   - [`current_state(PipeState)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::current_state) / [`set_current_state(Option<PipeState>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_current_state):<br>required: **false**<br><p>The state the pipe is in.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`target_prefix(impl Into<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::target_prefix) / [`set_target_prefix(Option<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_target_prefix):<br>required: **false**<br><p>The prefix matching the pipe target.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_pipes::builders::ListPipesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of pipes to include in the response.</p><br>
-    /// - On success, responds with [`ListPipesOutput`](crate::operation::list_pipes::ListPipesOutput) with field(s):
+                            /// - On success, responds with [`ListPipesOutput`](crate::operation::list_pipes::ListPipesOutput) with field(s):
     ///   - [`pipes(Option<Vec::<Pipe>>)`](crate::operation::list_pipes::ListPipesOutput::pipes): <p>The pipes returned by the call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipes::ListPipesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On failure, responds with [`SdkError<ListPipesError>`](crate::operation::list_pipes::ListPipesError)
+                            /// - On failure, responds with [`SdkError<ListPipesError>`](crate::operation::list_pipes::ListPipesError)
     pub fn list_pipes(&self) -> crate::operation::list_pipes::builders::ListPipesFluentBuilder {
-        crate::operation::list_pipes::builders::ListPipesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipes::builders::ListPipesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

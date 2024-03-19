@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowInput {
+pub struct GetWorkflowInput  {
     /// <p>The name of the workflow to retrieve.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub include_graph: ::std::option::Option<bool>,
 }
-impl GetWorkflowInput {
+impl  GetWorkflowInput  {
     /// <p>The name of the workflow to retrieve.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -41,8 +41,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>The name of the workflow to retrieve.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow to retrieve.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetWorkflowInputBuilder {
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_graph = input;
-        self
+        self.include_graph = input; self
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
@@ -64,9 +62,14 @@ impl GetWorkflowInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
-            name: self.name,
-            include_graph: self.include_graph,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow::GetWorkflowInput {
+                name: self.name
+                ,
+                include_graph: self.include_graph
+                ,
+            }
+        )
     }
 }
+

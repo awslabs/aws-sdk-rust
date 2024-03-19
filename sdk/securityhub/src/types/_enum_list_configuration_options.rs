@@ -3,30 +3,32 @@
 /// <p>The options for customizing a security control parameter that is a list of enums.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnumListConfigurationOptions {
+pub struct EnumListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
-    pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub default_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>The valid values for a control parameter that is a list of enums.</p>
-    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EnumListConfigurationOptions {
+impl  EnumListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
-    pub fn default_value(&self) -> &[::std::string::String] {
-        self.default_value.as_deref().unwrap_or_default()
+    pub fn default_value(&self) -> & [::std::string::String] {
+        self.default_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>The valid values for a control parameter that is a list of enums.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
-    pub fn allowed_values(&self) -> &[::std::string::String] {
-        self.allowed_values.as_deref().unwrap_or_default()
+    pub fn allowed_values(&self) -> & [::std::string::String] {
+        self.allowed_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnumListConfigurationOptions {
@@ -40,9 +42,9 @@ impl EnumListConfigurationOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnumListConfigurationOptionsBuilder {
-    pub(crate) default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_items: ::std::option::Option<i32>,
-    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EnumListConfigurationOptionsBuilder {
     /// Appends an item to `default_value`.
@@ -52,17 +54,16 @@ impl EnumListConfigurationOptionsBuilder {
     /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.default_value.unwrap_or_default();
-        v.push(input.into());
-        self.default_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.default_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
-    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.default_value = input;
-        self
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
-    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.default_value
     }
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
@@ -72,8 +73,7 @@ impl EnumListConfigurationOptionsBuilder {
     }
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -86,25 +86,28 @@ impl EnumListConfigurationOptionsBuilder {
     /// <p>The valid values for a control parameter that is a list of enums.</p>
     pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid values for a control parameter that is a list of enums.</p>
-    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>The valid values for a control parameter that is a list of enums.</p>
-    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_values
     }
     /// Consumes the builder and constructs a [`EnumListConfigurationOptions`](crate::types::EnumListConfigurationOptions).
     pub fn build(self) -> crate::types::EnumListConfigurationOptions {
         crate::types::EnumListConfigurationOptions {
-            default_value: self.default_value,
-            max_items: self.max_items,
-            allowed_values: self.allowed_values,
+            default_value: self.default_value
+            ,
+            max_items: self.max_items
+            ,
+            allowed_values: self.allowed_values
+            ,
         }
     }
 }
+

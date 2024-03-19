@@ -3,36 +3,37 @@
 /// <p>Represents the output of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetApplicationRevisionsOutput {
+pub struct BatchGetApplicationRevisionsOutput  {
     /// <p>The name of the application that corresponds to the revisions.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
+    pub revisions: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionInfo>>,
     _request_id: Option<String>,
 }
-impl BatchGetApplicationRevisionsOutput {
+impl  BatchGetApplicationRevisionsOutput  {
     /// <p>The name of the application that corresponds to the revisions.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revisions.is_none()`.
-    pub fn revisions(&self) -> &[crate::types::RevisionInfo] {
-        self.revisions.as_deref().unwrap_or_default()
+    pub fn revisions(&self) -> & [crate::types::RevisionInfo] {
+        self.revisions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetApplicationRevisionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetApplicationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationRevisionsOutput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput).
     pub fn builder() -> crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsOutputBuilder {
@@ -46,7 +47,7 @@ impl BatchGetApplicationRevisionsOutput {
 pub struct BatchGetApplicationRevisionsOutputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
+    pub(crate) revisions: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationRevisionsOutputBuilder {
@@ -57,8 +58,7 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     }
     /// <p>The name of the application that corresponds to the revisions.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application that corresponds to the revisions.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,35 +84,38 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     /// <p>Additional information about the revisions, including the type and location.</p>
     pub fn revisions(mut self, input: crate::types::RevisionInfo) -> Self {
         let mut v = self.revisions.unwrap_or_default();
-        v.push(input);
-        self.revisions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revisions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>) -> Self {
-        self.revisions = input;
-        self
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionInfo>>) -> Self {
+        self.revisions = input; self
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RevisionInfo>> {
         &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetApplicationRevisionsOutput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput).
     pub fn build(self) -> crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput {
         crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput {
-            application_name: self.application_name,
-            error_message: self.error_message,
-            revisions: self.revisions,
+            application_name: self.application_name
+            ,
+            error_message: self.error_message
+            ,
+            revisions: self.revisions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

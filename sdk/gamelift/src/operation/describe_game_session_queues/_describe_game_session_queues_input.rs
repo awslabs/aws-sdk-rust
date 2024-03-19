@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGameSessionQueuesInput {
+pub struct DescribeGameSessionQueuesInput  {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty.</p>
-    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGameSessionQueuesInput {
+impl  DescribeGameSessionQueuesInput  {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
-    pub fn names(&self) -> &[::std::string::String] {
-        self.names.as_deref().unwrap_or_default()
+    pub fn names(&self) -> & [::std::string::String] {
+        self.names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeGameSessionQueuesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesInputBuilder {
-    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeGameSessionQueuesInputBuilder {
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.names
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
@@ -69,8 +69,7 @@ impl DescribeGameSessionQueuesInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -83,24 +82,24 @@ impl DescribeGameSessionQueuesInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
-            names: self.names,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
+                names: self.names
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

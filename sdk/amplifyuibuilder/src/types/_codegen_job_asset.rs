@@ -3,13 +3,13 @@
 /// <p>Describes an asset for a code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenJobAsset {
+pub struct CodegenJobAsset  {
     /// <p>The URL to use to access the asset.</p>
     pub download_url: ::std::option::Option<::std::string::String>,
 }
-impl CodegenJobAsset {
+impl  CodegenJobAsset  {
     /// <p>The URL to use to access the asset.</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CodegenJobAssetBuilder {
     }
     /// <p>The URL to use to access the asset.</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>The URL to use to access the asset.</p>
     pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CodegenJobAssetBuilder {
     /// Consumes the builder and constructs a [`CodegenJobAsset`](crate::types::CodegenJobAsset).
     pub fn build(self) -> crate::types::CodegenJobAsset {
         crate::types::CodegenJobAsset {
-            download_url: self.download_url,
+            download_url: self.download_url
+            ,
         }
     }
 }
+

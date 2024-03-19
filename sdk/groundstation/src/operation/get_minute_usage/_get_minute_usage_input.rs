@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMinuteUsageInput {
+pub struct GetMinuteUsageInput  {
     /// <p>The month being requested, with a value of 1-12.</p>
     pub month: ::std::option::Option<i32>,
     /// <p>The year being requested, in the format of YYYY.</p>
     pub year: ::std::option::Option<i32>,
 }
-impl GetMinuteUsageInput {
+impl  GetMinuteUsageInput  {
     /// <p>The month being requested, with a value of 1-12.</p>
     pub fn month(&self) -> ::std::option::Option<i32> {
         self.month
@@ -42,8 +42,7 @@ impl GetMinuteUsageInputBuilder {
     }
     /// <p>The month being requested, with a value of 1-12.</p>
     pub fn set_month(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.month = input;
-        self
+        self.month = input; self
     }
     /// <p>The month being requested, with a value of 1-12.</p>
     pub fn get_month(&self) -> &::std::option::Option<i32> {
@@ -57,20 +56,22 @@ impl GetMinuteUsageInputBuilder {
     }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn set_year(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.year = input;
-        self
+        self.year = input; self
     }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn get_year(&self) -> &::std::option::Option<i32> {
         &self.year
     }
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_minute_usage::GetMinuteUsageInput {
-            month: self.month,
-            year: self.year,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_minute_usage::GetMinuteUsageInput {
+                month: self.month
+                ,
+                year: self.year
+                ,
+            }
+        )
     }
 }
+

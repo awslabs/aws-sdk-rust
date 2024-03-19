@@ -3,7 +3,7 @@
 /// <p>Represents a list type node of the complex data structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StructuredMessageListDefinition {
+pub struct StructuredMessageListDefinition  {
     /// <p>The name of the structured message list definition.</p>
     pub name: ::std::string::String,
     /// <p>The member type of the structured message list definition.</p>
@@ -13,18 +13,17 @@ pub struct StructuredMessageListDefinition {
     /// <p>The capacity of the structured message list definition when the list type is <code>FIXED_CAPACITY</code> or <code>DYNAMIC_BOUNDED_CAPACITY</code>.</p>
     pub capacity: i32,
 }
-impl StructuredMessageListDefinition {
+impl  StructuredMessageListDefinition  {
     /// <p>The name of the structured message list definition.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The member type of the structured message list definition.</p>
-    pub fn member_type(&self) -> ::std::option::Option<&crate::types::StructuredMessage> {
+    pub fn member_type(&self) -> ::std::option::Option<& crate::types::StructuredMessage> {
         self.member_type.as_ref()
     }
     /// <p>The type of list of the structured message list definition.</p>
-    pub fn list_type(&self) -> &crate::types::StructuredMessageListType {
+    pub fn list_type(&self) -> & crate::types::StructuredMessageListType {
         &self.list_type
     }
     /// <p>The capacity of the structured message list definition when the list type is <code>FIXED_CAPACITY</code> or <code>DYNAMIC_BOUNDED_CAPACITY</code>.</p>
@@ -57,8 +56,7 @@ impl StructuredMessageListDefinitionBuilder {
     }
     /// <p>The name of the structured message list definition.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the structured message list definition.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl StructuredMessageListDefinitionBuilder {
     }
     /// <p>The member type of the structured message list definition.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::StructuredMessage>) -> Self {
-        self.member_type = input;
-        self
+        self.member_type = input; self
     }
     /// <p>The member type of the structured message list definition.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::StructuredMessage> {
@@ -87,8 +84,7 @@ impl StructuredMessageListDefinitionBuilder {
     }
     /// <p>The type of list of the structured message list definition.</p>
     pub fn set_list_type(mut self, input: ::std::option::Option<crate::types::StructuredMessageListType>) -> Self {
-        self.list_type = input;
-        self
+        self.list_type = input; self
     }
     /// <p>The type of list of the structured message list definition.</p>
     pub fn get_list_type(&self) -> &::std::option::Option<crate::types::StructuredMessageListType> {
@@ -101,8 +97,7 @@ impl StructuredMessageListDefinitionBuilder {
     }
     /// <p>The capacity of the structured message list definition when the list type is <code>FIXED_CAPACITY</code> or <code>DYNAMIC_BOUNDED_CAPACITY</code>.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The capacity of the structured message list definition when the list type is <code>FIXED_CAPACITY</code> or <code>DYNAMIC_BOUNDED_CAPACITY</code>.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {
@@ -113,21 +108,25 @@ impl StructuredMessageListDefinitionBuilder {
     /// - [`name`](crate::types::builders::StructuredMessageListDefinitionBuilder::name)
     /// - [`list_type`](crate::types::builders::StructuredMessageListDefinitionBuilder::list_type)
     pub fn build(self) -> ::std::result::Result<crate::types::StructuredMessageListDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StructuredMessageListDefinition {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StructuredMessageListDefinition",
-                )
-            })?,
-            member_type: self.member_type,
-            list_type: self.list_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "list_type",
-                    "list_type was not specified but it is required when building StructuredMessageListDefinition",
-                )
-            })?,
-            capacity: self.capacity.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::StructuredMessageListDefinition {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building StructuredMessageListDefinition")
+                    )?
+                ,
+                member_type: self.member_type
+                ,
+                list_type: self.list_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("list_type", "list_type was not specified but it is required when building StructuredMessageListDefinition")
+                    )?
+                ,
+                capacity: self.capacity
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

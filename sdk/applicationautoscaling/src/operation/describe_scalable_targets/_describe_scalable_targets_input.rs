@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalableTargetsInput {
+pub struct DescribeScalableTargetsInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -44,7 +44,7 @@ pub struct DescribeScalableTargetsInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
     /// <ul>
     /// <li>
@@ -99,9 +99,9 @@ pub struct DescribeScalableTargetsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeScalableTargetsInput {
+impl  DescribeScalableTargetsInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -143,10 +143,11 @@ impl DescribeScalableTargetsInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
     /// <ul>
@@ -195,7 +196,7 @@ impl DescribeScalableTargetsInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
@@ -204,7 +205,7 @@ impl DescribeScalableTargetsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -220,7 +221,7 @@ impl DescribeScalableTargetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalableTargetsInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -234,8 +235,7 @@ impl DescribeScalableTargetsInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -286,9 +286,9 @@ impl DescribeScalableTargetsInputBuilder {
     /// </ul>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -329,9 +329,8 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -372,7 +371,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
@@ -474,8 +473,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
     /// <ul>
@@ -536,8 +534,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
     /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a <code>NextToken</code> value, if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
     /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a <code>NextToken</code> value, if applicable.</p>
@@ -551,26 +548,28 @@ impl DescribeScalableTargetsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeScalableTargetsInput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scalable_targets::DescribeScalableTargetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
-            service_namespace: self.service_namespace,
-            resource_ids: self.resource_ids,
-            scalable_dimension: self.scalable_dimension,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scalable_targets::DescribeScalableTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
+                service_namespace: self.service_namespace
+                ,
+                resource_ids: self.resource_ids
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

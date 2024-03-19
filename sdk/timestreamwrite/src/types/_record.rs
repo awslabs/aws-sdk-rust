@@ -4,9 +4,9 @@
 /// <p>Records have a <code>Version</code> field, which is a 64-bit <code>long</code> that you can use for updating data points. Writes of a duplicate record with the same dimension, timestamp, and measure name but different measure value will only succeed if the <code>Version</code> attribute of the record in the write request is higher than that of the existing record. Timestream defaults to a <code>Version</code> of <code>1</code> for records without the <code>Version</code> field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures.</p>
     pub measure_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the measure value for the time-series data point.</p>
@@ -23,33 +23,34 @@ pub struct Record {
     pub version: ::std::option::Option<i64>,
     /// <p>Contains the list of MeasureValue for time-series data points.</p>
     /// <p>This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly.</p>
-    pub measure_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>,
+    pub measure_values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureValue>>,
 }
-impl Record {
+impl  Record  {
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::Dimension] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::Dimension] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures.</p>
-    pub fn measure_name(&self) -> ::std::option::Option<&str> {
+    pub fn measure_name(&self) -> ::std::option::Option<& str> {
         self.measure_name.as_deref()
     }
     /// <p>Contains the measure value for the time-series data point.</p>
-    pub fn measure_value(&self) -> ::std::option::Option<&str> {
+    pub fn measure_value(&self) -> ::std::option::Option<& str> {
         self.measure_value.as_deref()
     }
     /// <p>Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
-    pub fn measure_value_type(&self) -> ::std::option::Option<&crate::types::MeasureValueType> {
+    pub fn measure_value_type(&self) -> ::std::option::Option<& crate::types::MeasureValueType> {
         self.measure_value_type.as_ref()
     }
     /// <p>Contains the time at which the measure value for the data point was collected. The time value plus the unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.</p>
-    pub fn time(&self) -> ::std::option::Option<&str> {
+    pub fn time(&self) -> ::std::option::Option<& str> {
         self.time.as_deref()
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
-    pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
+    pub fn time_unit(&self) -> ::std::option::Option<& crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
     /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
@@ -60,10 +61,11 @@ impl Record {
     }
     /// <p>Contains the list of MeasureValue for time-series data points.</p>
     /// <p>This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.measure_values.is_none()`.
-    pub fn measure_values(&self) -> &[crate::types::MeasureValue] {
-        self.measure_values.as_deref().unwrap_or_default()
+    pub fn measure_values(&self) -> & [crate::types::MeasureValue] {
+        self.measure_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Record {
@@ -77,14 +79,14 @@ impl Record {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     pub(crate) measure_name: ::std::option::Option<::std::string::String>,
     pub(crate) measure_value: ::std::option::Option<::std::string::String>,
     pub(crate) measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,
     pub(crate) time: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
     pub(crate) version: ::std::option::Option<i64>,
-    pub(crate) measure_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>,
+    pub(crate) measure_values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureValue>>,
 }
 impl RecordBuilder {
     /// Appends an item to `dimensions`.
@@ -94,17 +96,16 @@ impl RecordBuilder {
     /// <p>Contains the list of dimensions for time-series data points.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures.</p>
@@ -114,8 +115,7 @@ impl RecordBuilder {
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures.</p>
     pub fn set_measure_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.measure_name = input;
-        self
+        self.measure_name = input; self
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures.</p>
     pub fn get_measure_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +128,7 @@ impl RecordBuilder {
     }
     /// <p>Contains the measure value for the time-series data point.</p>
     pub fn set_measure_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.measure_value = input;
-        self
+        self.measure_value = input; self
     }
     /// <p>Contains the measure value for the time-series data point.</p>
     pub fn get_measure_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +141,7 @@ impl RecordBuilder {
     }
     /// <p>Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
     pub fn set_measure_value_type(mut self, input: ::std::option::Option<crate::types::MeasureValueType>) -> Self {
-        self.measure_value_type = input;
-        self
+        self.measure_value_type = input; self
     }
     /// <p>Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
     pub fn get_measure_value_type(&self) -> &::std::option::Option<crate::types::MeasureValueType> {
@@ -156,8 +154,7 @@ impl RecordBuilder {
     }
     /// <p>Contains the time at which the measure value for the data point was collected. The time value plus the unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>Contains the time at which the measure value for the data point was collected. The time value plus the unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.</p>
     pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +167,7 @@ impl RecordBuilder {
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub fn set_time_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
-        self.time_unit = input;
-        self
+        self.time_unit = input; self
     }
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
@@ -188,8 +184,7 @@ impl RecordBuilder {
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
@@ -205,32 +200,40 @@ impl RecordBuilder {
     /// <p>This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly.</p>
     pub fn measure_values(mut self, input: crate::types::MeasureValue) -> Self {
         let mut v = self.measure_values.unwrap_or_default();
-        v.push(input);
-        self.measure_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.measure_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the list of MeasureValue for time-series data points.</p>
     /// <p>This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly.</p>
-    pub fn set_measure_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>) -> Self {
-        self.measure_values = input;
-        self
+    pub fn set_measure_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureValue>>) -> Self {
+        self.measure_values = input; self
     }
     /// <p>Contains the list of MeasureValue for time-series data points.</p>
     /// <p>This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly.</p>
-    pub fn get_measure_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>> {
+    pub fn get_measure_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureValue>> {
         &self.measure_values
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {
-            dimensions: self.dimensions,
-            measure_name: self.measure_name,
-            measure_value: self.measure_value,
-            measure_value_type: self.measure_value_type,
-            time: self.time,
-            time_unit: self.time_unit,
-            version: self.version,
-            measure_values: self.measure_values,
+            dimensions: self.dimensions
+            ,
+            measure_name: self.measure_name
+            ,
+            measure_value: self.measure_value
+            ,
+            measure_value_type: self.measure_value_type
+            ,
+            time: self.time
+            ,
+            time_unit: self.time_unit
+            ,
+            version: self.version
+            ,
+            measure_values: self.measure_values
+            ,
         }
     }
 }
+

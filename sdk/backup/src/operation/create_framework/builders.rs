@@ -5,54 +5,50 @@ pub use crate::operation::create_framework::_create_framework_input::CreateFrame
 
 impl CreateFrameworkInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_framework::CreateFrameworkOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_framework();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_framework::CreateFrameworkOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_framework::CreateFrameworkError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_framework();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateFramework`.
-///
+/// 
 /// <p>Creates a framework with one or more controls. A framework is a collection of controls that you can use to evaluate your backup practices. By using pre-built customizable controls to define your policies, you can evaluate whether your backup practices comply with your policies and which resources are not yet in compliance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_framework::builders::CreateFrameworkInputBuilder,
+                    inner: crate::operation::create_framework::builders::CreateFrameworkInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_framework::CreateFrameworkOutput,
-        crate::operation::create_framework::CreateFrameworkError,
-    > for CreateFrameworkFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_framework::CreateFrameworkOutput,
-            crate::operation::create_framework::CreateFrameworkError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_framework::CreateFrameworkOutput,
+                    crate::operation::create_framework::CreateFrameworkError,
+                > for CreateFrameworkFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_framework::CreateFrameworkOutput,
+                        crate::operation::create_framework::CreateFrameworkError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateFrameworkFluentBuilder {
     /// Creates a new `CreateFramework`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateFrameworkFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_framework::CreateFrameworkOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_framework::CreateFramework::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_framework::CreateFramework::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_framework::CreateFrameworkOutput,
-        crate::operation::create_framework::CreateFrameworkError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_framework::CreateFrameworkOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_framework::CreateFrameworkError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_framework::CreateFramework::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_framework::CreateFramework::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_framework::CreateFrameworkOutput, crate::operation::create_framework::CreateFrameworkError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_name(input.into());
@@ -146,12 +133,12 @@ impl CreateFrameworkFluentBuilder {
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>>) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>> {
         self.inner.get_framework_controls()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -173,24 +160,18 @@ impl CreateFrameworkFluentBuilder {
     /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
     ///
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn framework_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_tags(k.into(), v.into());
         self
     }
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn set_framework_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_framework_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_framework_tags(input);
         self
     }
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn get_framework_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_framework_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_framework_tags()
     }
 }
+

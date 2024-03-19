@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingGroups`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`parent_group(impl Into<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::parent_group) / [`set_parent_group(Option<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::set_parent_group):<br>required: **false**<br><p>A filter that limits the results to those with the specified parent group.</p><br>
     ///   - [`name_prefix_filter(impl Into<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::name_prefix_filter) / [`set_name_prefix_filter(Option<String>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::set_name_prefix_filter):<br>required: **false**<br><p>A filter that limits the results to those with the specified name prefix.</p><br>
     ///   - [`recursive(bool)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::recursive) / [`set_recursive(Option<bool>)`](crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::set_recursive):<br>required: **false**<br><p>If true, return child groups as well.</p><br>
-    /// - On success, responds with [`ListThingGroupsOutput`](crate::operation::list_thing_groups::ListThingGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListThingGroupsOutput`](crate::operation::list_thing_groups::ListThingGroupsOutput) with field(s):
     ///   - [`thing_groups(Option<Vec::<GroupNameAndArn>>)`](crate::operation::list_thing_groups::ListThingGroupsOutput::thing_groups): <p>The thing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_groups::ListThingGroupsOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    /// - On failure, responds with [`SdkError<ListThingGroupsError>`](crate::operation::list_thing_groups::ListThingGroupsError)
+                            /// - On failure, responds with [`SdkError<ListThingGroupsError>`](crate::operation::list_thing_groups::ListThingGroupsError)
     pub fn list_thing_groups(&self) -> crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder {
-        crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_thing_groups::builders::ListThingGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

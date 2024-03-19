@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>The name of the first database to be created when the cluster is created.</p>
     /// <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide.</p>
     /// <p>Default: <code>dev</code></p>
@@ -79,10 +79,10 @@ pub struct CreateClusterInput {
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -156,7 +156,7 @@ pub struct CreateClusterInput {
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -167,7 +167,7 @@ pub struct CreateClusterInput {
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub iam_roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the snapshot schedule.</p>
@@ -191,7 +191,7 @@ pub struct CreateClusterInput {
     /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
     pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateClusterInput {
+impl  CreateClusterInput  {
     /// <p>The name of the first database to be created when the cluster is created.</p>
     /// <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide.</p>
     /// <p>Default: <code>dev</code></p>
@@ -204,7 +204,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
@@ -222,7 +222,7 @@ impl CreateClusterInput {
     /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
@@ -234,12 +234,12 @@ impl CreateClusterInput {
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
@@ -256,7 +256,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
@@ -274,33 +274,35 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
-    pub fn cluster_security_groups(&self) -> &[::std::string::String] {
-        self.cluster_security_groups.as_deref().unwrap_or_default()
+    pub fn cluster_security_groups(&self) -> & [::std::string::String] {
+        self.cluster_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
-    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p>
     /// <p>Example: <code>us-east-2d</code></p>
     /// <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
@@ -308,7 +310,7 @@ impl CreateClusterInput {
     /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The name of the parameter group to be associated with this cluster.</p>
@@ -322,7 +324,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_parameter_group_name.as_deref()
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
@@ -354,7 +356,7 @@ impl CreateClusterInput {
     /// <p>The version selected runs on all the nodes in the cluster.</p>
     /// <p>Constraints: Only version 1.0 is currently available.</p>
     /// <p>Example: <code>1.0</code></p>
-    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
@@ -381,26 +383,27 @@ impl CreateClusterInput {
         self.encrypted
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
-    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -410,22 +413,23 @@ impl CreateClusterInput {
         self.enhanced_vpc_routing
     }
     /// <p>Reserved.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&str> {
+    pub fn additional_info(&self) -> ::std::option::Option<& str> {
         self.additional_info.as_deref()
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
-    pub fn iam_roles(&self) -> &[::std::string::String] {
-        self.iam_roles.as_deref().unwrap_or_default()
+    pub fn iam_roles(&self) -> & [::std::string::String] {
+        self.iam_roles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
-    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
-    pub fn snapshot_schedule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_schedule_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_schedule_identifier.as_deref()
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
@@ -433,15 +437,15 @@ impl CreateClusterInput {
         self.availability_zone_relocation
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(&self) -> ::std::option::Option<&crate::types::AquaConfigurationStatus> {
+    pub fn aqua_configuration_status(&self) -> ::std::option::Option<& crate::types::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.</p>
-    pub fn default_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
-    pub fn load_sample_data(&self) -> ::std::option::Option<&str> {
+    pub fn load_sample_data(&self) -> ::std::option::Option<& str> {
         self.load_sample_data.as_deref()
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
@@ -449,11 +453,11 @@ impl CreateClusterInput {
         self.manage_master_password
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
-    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.master_password_secret_kms_key_id.as_deref()
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& str> {
         self.ip_address_type.as_deref()
     }
     /// <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).</p>
@@ -461,11 +465,11 @@ impl CreateClusterInput {
         self.multi_az
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
-    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<& str> {
         self.redshift_idc_application_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateClusterInput {
+impl  ::std::fmt::Debug for CreateClusterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
         formatter.field("db_name", &self.db_name);
@@ -527,8 +531,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
@@ -544,11 +548,11 @@ pub struct CreateClusterInputBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
     pub(crate) additional_info: ::std::option::Option<::std::string::String>,
-    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_relocation: ::std::option::Option<bool>,
@@ -591,8 +595,7 @@ impl CreateClusterInputBuilder {
     /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The name of the first database to be created when the cluster is created.</p>
     /// <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide.</p>
@@ -645,8 +648,7 @@ impl CreateClusterInputBuilder {
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
@@ -689,8 +691,7 @@ impl CreateClusterInputBuilder {
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
@@ -714,8 +715,7 @@ impl CreateClusterInputBuilder {
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
@@ -756,8 +756,7 @@ impl CreateClusterInputBuilder {
     /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -811,8 +810,7 @@ impl CreateClusterInputBuilder {
     /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
@@ -840,19 +838,18 @@ impl CreateClusterInputBuilder {
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.cluster_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cluster_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cluster_security_groups = input;
-        self
+    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cluster_security_groups = input; self
     }
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cluster_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -863,19 +860,18 @@ impl CreateClusterInputBuilder {
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
@@ -887,8 +883,7 @@ impl CreateClusterInputBuilder {
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_subnet_group_name = input;
-        self
+        self.cluster_subnet_group_name = input; self
     }
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
@@ -908,8 +903,7 @@ impl CreateClusterInputBuilder {
     /// <p>Example: <code>us-east-2d</code></p>
     /// <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p>
@@ -933,8 +927,7 @@ impl CreateClusterInputBuilder {
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
@@ -971,8 +964,7 @@ impl CreateClusterInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_parameter_group_name = input;
-        self
+        self.cluster_parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to be associated with this cluster.</p>
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
@@ -1001,8 +993,7 @@ impl CreateClusterInputBuilder {
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automated_snapshot_retention_period = input;
-        self
+        self.automated_snapshot_retention_period = input; self
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
@@ -1020,8 +1011,7 @@ impl CreateClusterInputBuilder {
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -1053,8 +1043,7 @@ impl CreateClusterInputBuilder {
     /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
@@ -1082,8 +1071,7 @@ impl CreateClusterInputBuilder {
     /// <p>Constraints: Only version 1.0 is currently available.</p>
     /// <p>Example: <code>1.0</code></p>
     pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_version = input;
-        self
+        self.cluster_version = input; self
     }
     /// <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p>
     /// <p>The version selected runs on all the nodes in the cluster.</p>
@@ -1103,8 +1091,7 @@ impl CreateClusterInputBuilder {
     /// <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p>
     /// <p>Default: <code>true</code></p>
     pub fn set_allow_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_version_upgrade = input;
-        self
+        self.allow_version_upgrade = input; self
     }
     /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>
     /// <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p>
@@ -1127,8 +1114,7 @@ impl CreateClusterInputBuilder {
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input;
-        self
+        self.number_of_nodes = input; self
     }
     /// <p>The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as <code>multi-node</code>.</p>
     /// <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -1145,8 +1131,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -1161,8 +1146,7 @@ impl CreateClusterInputBuilder {
     /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
     /// <p>Default: false</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
     /// <p>Default: false</p>
@@ -1176,8 +1160,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_client_certificate_identifier = input;
-        self
+        self.hsm_client_certificate_identifier = input; self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1190,8 +1173,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_configuration_identifier = input;
-        self
+        self.hsm_configuration_identifier = input; self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1206,8 +1188,7 @@ impl CreateClusterInputBuilder {
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// <p>The Elastic IP (EIP) address for the cluster.</p>
     /// <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -1221,17 +1202,16 @@ impl CreateClusterInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
@@ -1241,8 +1221,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1259,8 +1238,7 @@ impl CreateClusterInputBuilder {
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enhanced_vpc_routing = input;
-        self
+        self.enhanced_vpc_routing = input; self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
@@ -1275,8 +1253,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_info = input;
-        self
+        self.additional_info = input; self
     }
     /// <p>Reserved.</p>
     pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -1290,19 +1267,18 @@ impl CreateClusterInputBuilder {
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_roles.unwrap_or_default();
-        v.push(input.into());
-        self.iam_roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.iam_roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.iam_roles = input;
-        self
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.iam_roles = input; self
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.</p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.iam_roles
     }
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
@@ -1312,8 +1288,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_track_name = input;
-        self
+        self.maintenance_track_name = input; self
     }
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1326,8 +1301,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
     pub fn set_snapshot_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_schedule_identifier = input;
-        self
+        self.snapshot_schedule_identifier = input; self
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
     pub fn get_snapshot_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1340,8 +1314,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
     pub fn set_availability_zone_relocation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.availability_zone_relocation = input;
-        self
+        self.availability_zone_relocation = input; self
     }
     /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
     pub fn get_availability_zone_relocation(&self) -> &::std::option::Option<bool> {
@@ -1354,8 +1327,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn set_aqua_configuration_status(mut self, input: ::std::option::Option<crate::types::AquaConfigurationStatus>) -> Self {
-        self.aqua_configuration_status = input;
-        self
+        self.aqua_configuration_status = input; self
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn get_aqua_configuration_status(&self) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
@@ -1368,8 +1340,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.</p>
     pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_iam_role_arn = input;
-        self
+        self.default_iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.</p>
     pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1382,8 +1353,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     pub fn set_load_sample_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_sample_data = input;
-        self
+        self.load_sample_data = input; self
     }
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     pub fn get_load_sample_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -1396,8 +1366,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_master_password = input;
-        self
+        self.manage_master_password = input; self
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password.</p>
     pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
@@ -1410,8 +1379,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_password_secret_kms_key_id = input;
-        self
+        self.master_password_secret_kms_key_id = input; self
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1424,8 +1392,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -1438,8 +1405,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -1452,58 +1418,96 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
     pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_idc_application_arn = input;
-        self
+        self.redshift_idc_application_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
     pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.redshift_idc_application_arn
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            db_name: self.db_name,
-            cluster_identifier: self.cluster_identifier,
-            cluster_type: self.cluster_type,
-            node_type: self.node_type,
-            master_username: self.master_username,
-            master_user_password: self.master_user_password,
-            cluster_security_groups: self.cluster_security_groups,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            cluster_subnet_group_name: self.cluster_subnet_group_name,
-            availability_zone: self.availability_zone,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            cluster_parameter_group_name: self.cluster_parameter_group_name,
-            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            port: self.port,
-            cluster_version: self.cluster_version,
-            allow_version_upgrade: self.allow_version_upgrade,
-            number_of_nodes: self.number_of_nodes,
-            publicly_accessible: self.publicly_accessible,
-            encrypted: self.encrypted,
-            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-            hsm_configuration_identifier: self.hsm_configuration_identifier,
-            elastic_ip: self.elastic_ip,
-            tags: self.tags,
-            kms_key_id: self.kms_key_id,
-            enhanced_vpc_routing: self.enhanced_vpc_routing,
-            additional_info: self.additional_info,
-            iam_roles: self.iam_roles,
-            maintenance_track_name: self.maintenance_track_name,
-            snapshot_schedule_identifier: self.snapshot_schedule_identifier,
-            availability_zone_relocation: self.availability_zone_relocation,
-            aqua_configuration_status: self.aqua_configuration_status,
-            default_iam_role_arn: self.default_iam_role_arn,
-            load_sample_data: self.load_sample_data,
-            manage_master_password: self.manage_master_password,
-            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
-            ip_address_type: self.ip_address_type,
-            multi_az: self.multi_az,
-            redshift_idc_application_arn: self.redshift_idc_application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                db_name: self.db_name
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                cluster_type: self.cluster_type
+                ,
+                node_type: self.node_type
+                ,
+                master_username: self.master_username
+                ,
+                master_user_password: self.master_user_password
+                ,
+                cluster_security_groups: self.cluster_security_groups
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+                availability_zone: self.availability_zone
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                cluster_parameter_group_name: self.cluster_parameter_group_name
+                ,
+                automated_snapshot_retention_period: self.automated_snapshot_retention_period
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                port: self.port
+                ,
+                cluster_version: self.cluster_version
+                ,
+                allow_version_upgrade: self.allow_version_upgrade
+                ,
+                number_of_nodes: self.number_of_nodes
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                encrypted: self.encrypted
+                ,
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+                hsm_configuration_identifier: self.hsm_configuration_identifier
+                ,
+                elastic_ip: self.elastic_ip
+                ,
+                tags: self.tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                ,
+                additional_info: self.additional_info
+                ,
+                iam_roles: self.iam_roles
+                ,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                snapshot_schedule_identifier: self.snapshot_schedule_identifier
+                ,
+                availability_zone_relocation: self.availability_zone_relocation
+                ,
+                aqua_configuration_status: self.aqua_configuration_status
+                ,
+                default_iam_role_arn: self.default_iam_role_arn
+                ,
+                load_sample_data: self.load_sample_data
+                ,
+                manage_master_password: self.manage_master_password
+                ,
+                master_password_secret_kms_key_id: self.master_password_secret_kms_key_id
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                multi_az: self.multi_az
+                ,
+                redshift_idc_application_arn: self.redshift_idc_application_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateClusterInputBuilder {
@@ -1551,3 +1555,4 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.finish()
     }
 }
+

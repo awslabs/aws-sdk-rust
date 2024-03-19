@@ -3,27 +3,25 @@
 /// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectAttributesActivity {
+pub struct SelectAttributesActivity  {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     pub name: ::std::string::String,
     /// <p>A list of the attributes to select from the message.</p>
-    pub attributes: ::std::vec::Vec<::std::string::String>,
+    pub attributes: ::std::vec::Vec::<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
-impl SelectAttributesActivity {
+impl  SelectAttributesActivity  {
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn attributes(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.attributes.deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> ::std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -39,7 +37,7 @@ impl SelectAttributesActivity {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectAttributesActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next: ::std::option::Option<::std::string::String>,
 }
 impl SelectAttributesActivityBuilder {
@@ -51,8 +49,7 @@ impl SelectAttributesActivityBuilder {
     }
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>selectAttributes</code> activity.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl SelectAttributesActivityBuilder {
     /// <p>A list of the attributes to select from the message.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input.into());
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of the attributes to select from the message.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attributes
     }
     /// <p>The next activity in the pipeline.</p>
@@ -85,8 +81,7 @@ impl SelectAttributesActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,20 +92,22 @@ impl SelectAttributesActivityBuilder {
     /// - [`name`](crate::types::builders::SelectAttributesActivityBuilder::name)
     /// - [`attributes`](crate::types::builders::SelectAttributesActivityBuilder::attributes)
     pub fn build(self) -> ::std::result::Result<crate::types::SelectAttributesActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelectAttributesActivity {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SelectAttributesActivity",
-                )
-            })?,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building SelectAttributesActivity",
-                )
-            })?,
-            next: self.next,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SelectAttributesActivity {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SelectAttributesActivity")
+                    )?
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building SelectAttributesActivity")
+                    )?
+                ,
+                next: self.next
+                ,
+            }
+        )
     }
 }
+

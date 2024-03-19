@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImageAssociationsOutput {
+pub struct DescribeImageAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::ImageResourceAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec::<crate::types::ImageResourceAssociation>>,
     _request_id: Option<String>,
 }
-impl DescribeImageAssociationsOutput {
+impl  DescribeImageAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
-    pub fn associations(&self) -> &[crate::types::ImageResourceAssociation] {
-        self.associations.as_deref().unwrap_or_default()
+    pub fn associations(&self) -> & [crate::types::ImageResourceAssociation] {
+        self.associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeImageAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageAssociationsOutput`](crate::operation::describe_image_associations::DescribeImageAssociationsOutput).
     pub fn builder() -> crate::operation::describe_image_associations::builders::DescribeImageAssociationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeImageAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageAssociationsOutputBuilder {
-    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::ImageResourceAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec::<crate::types::ImageResourceAssociation>>,
     _request_id: Option<String>,
 }
 impl DescribeImageAssociationsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeImageAssociationsOutputBuilder {
     /// <p>List of information about the specified associations.</p>
     pub fn associations(mut self, input: crate::types::ImageResourceAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageResourceAssociation>>) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageResourceAssociation>>) -> Self {
+        self.associations = input; self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageResourceAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageResourceAssociation>> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeImageAssociationsOutput`](crate::operation::describe_image_associations::DescribeImageAssociationsOutput).
     pub fn build(self) -> crate::operation::describe_image_associations::DescribeImageAssociationsOutput {
         crate::operation::describe_image_associations::DescribeImageAssociationsOutput {
-            associations: self.associations,
+            associations: self.associations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

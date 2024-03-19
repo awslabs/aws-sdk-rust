@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePresignedNotebookInstanceUrlInput {
+pub struct CreatePresignedNotebookInstanceUrlInput  {
     /// <p>The name of the notebook instance.</p>
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub session_expiration_duration_in_seconds: ::std::option::Option<i32>,
 }
-impl CreatePresignedNotebookInstanceUrlInput {
+impl  CreatePresignedNotebookInstanceUrlInput  {
     /// <p>The name of the notebook instance.</p>
-    pub fn notebook_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_name.as_deref()
     }
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
@@ -41,8 +41,7 @@ impl CreatePresignedNotebookInstanceUrlInputBuilder {
     }
     /// <p>The name of the notebook instance.</p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_name = input;
-        self
+        self.notebook_instance_name = input; self
     }
     /// <p>The name of the notebook instance.</p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl CreatePresignedNotebookInstanceUrlInputBuilder {
     }
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_expiration_duration_in_seconds = input;
-        self
+        self.session_expiration_duration_in_seconds = input; self
     }
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_expiration_duration_in_seconds
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookInstanceUrlInput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput {
-                notebook_instance_name: self.notebook_instance_name,
-                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
-            },
+                notebook_instance_name: self.notebook_instance_name
+                ,
+                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds
+                ,
+            }
         )
     }
 }
+

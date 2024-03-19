@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTestSetGenerationOutput {
+pub struct StartTestSetGenerationOutput  {
     /// <p>The unique identifier of the test set generation to describe.</p>
     pub test_set_generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set generation.</p>
@@ -20,52 +20,52 @@ pub struct StartTestSetGenerationOutput {
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that was used for the test set that is being generated.</p>
-    pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub test_set_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl StartTestSetGenerationOutput {
+impl  StartTestSetGenerationOutput  {
     /// <p>The unique identifier of the test set generation to describe.</p>
-    pub fn test_set_generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_generation_id(&self) -> ::std::option::Option<& str> {
         self.test_set_generation_id.as_deref()
     }
     /// <p>The creation date and time for the test set generation.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The status for the test set generation.</p>
-    pub fn test_set_generation_status(&self) -> ::std::option::Option<&crate::types::TestSetGenerationStatus> {
+    pub fn test_set_generation_status(&self) -> ::std::option::Option<& crate::types::TestSetGenerationStatus> {
         self.test_set_generation_status.as_ref()
     }
     /// <p>The test set name used for the test set generation.</p>
-    pub fn test_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_name(&self) -> ::std::option::Option<& str> {
         self.test_set_name.as_deref()
     }
     /// <p>The description used for the test set generation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::TestSetStorageLocation> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::TestSetStorageLocation> {
         self.storage_location.as_ref()
     }
     /// <p>The data source for the test set generation.</p>
-    pub fn generation_data_source(&self) -> ::std::option::Option<&crate::types::TestSetGenerationDataSource> {
+    pub fn generation_data_source(&self) -> ::std::option::Option<& crate::types::TestSetGenerationDataSource> {
         self.generation_data_source.as_ref()
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of tags that was used for the test set that is being generated.</p>
-    pub fn test_set_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn test_set_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.test_set_tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartTestSetGenerationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartTestSetGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartTestSetGenerationOutput`](crate::operation::start_test_set_generation::StartTestSetGenerationOutput).
     pub fn builder() -> crate::operation::start_test_set_generation::builders::StartTestSetGenerationOutputBuilder {
@@ -85,7 +85,7 @@ pub struct StartTestSetGenerationOutputBuilder {
     pub(crate) storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     pub(crate) generation_data_source: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) test_set_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartTestSetGenerationOutputBuilder {
@@ -96,8 +96,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The unique identifier of the test set generation to describe.</p>
     pub fn set_test_set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_generation_id = input;
-        self
+        self.test_set_generation_id = input; self
     }
     /// <p>The unique identifier of the test set generation to describe.</p>
     pub fn get_test_set_generation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The creation date and time for the test set generation.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time for the test set generation.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +122,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The status for the test set generation.</p>
     pub fn set_test_set_generation_status(mut self, input: ::std::option::Option<crate::types::TestSetGenerationStatus>) -> Self {
-        self.test_set_generation_status = input;
-        self
+        self.test_set_generation_status = input; self
     }
     /// <p>The status for the test set generation.</p>
     pub fn get_test_set_generation_status(&self) -> &::std::option::Option<crate::types::TestSetGenerationStatus> {
@@ -138,8 +135,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The test set name used for the test set generation.</p>
     pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_name = input;
-        self
+        self.test_set_name = input; self
     }
     /// <p>The test set name used for the test set generation.</p>
     pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +148,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The description used for the test set generation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description used for the test set generation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
@@ -180,8 +174,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The data source for the test set generation.</p>
     pub fn set_generation_data_source(mut self, input: ::std::option::Option<crate::types::TestSetGenerationDataSource>) -> Self {
-        self.generation_data_source = input;
-        self
+        self.generation_data_source = input; self
     }
     /// <p>The data source for the test set generation.</p>
     pub fn get_generation_data_source(&self) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
@@ -194,8 +187,7 @@ impl StartTestSetGenerationOutputBuilder {
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,44 +200,50 @@ impl StartTestSetGenerationOutputBuilder {
     /// <p>A list of tags that was used for the test set that is being generated.</p>
     pub fn test_set_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.test_set_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.test_set_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.test_set_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags that was used for the test set that is being generated.</p>
-    pub fn set_test_set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.test_set_tags = input;
-        self
+    pub fn set_test_set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.test_set_tags = input; self
     }
     /// <p>A list of tags that was used for the test set that is being generated.</p>
-    pub fn get_test_set_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_test_set_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.test_set_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartTestSetGenerationOutput`](crate::operation::start_test_set_generation::StartTestSetGenerationOutput).
     pub fn build(self) -> crate::operation::start_test_set_generation::StartTestSetGenerationOutput {
         crate::operation::start_test_set_generation::StartTestSetGenerationOutput {
-            test_set_generation_id: self.test_set_generation_id,
-            creation_date_time: self.creation_date_time,
-            test_set_generation_status: self.test_set_generation_status,
-            test_set_name: self.test_set_name,
-            description: self.description,
-            storage_location: self.storage_location,
-            generation_data_source: self.generation_data_source,
-            role_arn: self.role_arn,
-            test_set_tags: self.test_set_tags,
+            test_set_generation_id: self.test_set_generation_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            test_set_generation_status: self.test_set_generation_status
+            ,
+            test_set_name: self.test_set_name
+            ,
+            description: self.description
+            ,
+            storage_location: self.storage_location
+            ,
+            generation_data_source: self.generation_data_source
+            ,
+            role_arn: self.role_arn
+            ,
+            test_set_tags: self.test_set_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

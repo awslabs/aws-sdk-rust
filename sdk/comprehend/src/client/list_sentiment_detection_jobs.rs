@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSentimentDetectionJobs`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(SentimentDetectionJobFilter)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::filter) / [`set_filter(Option<SentimentDetectionJobFilter>)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput) with field(s):
+                            /// - On success, responds with [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput) with field(s):
     ///   - [`sentiment_detection_job_properties_list(Option<Vec::<SentimentDetectionJobProperties>>)`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput::sentiment_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListSentimentDetectionJobsError>`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError)
-    pub fn list_sentiment_detection_jobs(
-        &self,
-    ) -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder {
-        crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSentimentDetectionJobsError>`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsError)
+    pub fn list_sentiment_detection_jobs(&self) -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder {
+                                crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

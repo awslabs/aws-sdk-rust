@@ -3,9 +3,9 @@
 /// A request to create a multiplex.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMultiplexInput {
+pub struct CreateMultiplexInput  {
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Configuration for a multiplex event.
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// Name of multiplex.
@@ -13,29 +13,30 @@ pub struct CreateMultiplexInput {
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateMultiplexInput {
+impl  CreateMultiplexInput  {
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> ::std::option::Option<& crate::types::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// Name of multiplex.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -50,11 +51,11 @@ impl CreateMultiplexInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMultiplexInputBuilder {
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateMultiplexInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -64,17 +65,16 @@ impl CreateMultiplexInputBuilder {
     /// A list of availability zones for the multiplex. You must specify exactly two.
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// Configuration for a multiplex event.
@@ -85,8 +85,7 @@ impl CreateMultiplexInputBuilder {
     }
     /// Configuration for a multiplex event.
     pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexSettings>) -> Self {
-        self.multiplex_settings = input;
-        self
+        self.multiplex_settings = input; self
     }
     /// Configuration for a multiplex event.
     pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexSettings> {
@@ -100,8 +99,7 @@ impl CreateMultiplexInputBuilder {
     }
     /// Name of multiplex.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name of multiplex.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateMultiplexInputBuilder {
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,29 +126,34 @@ impl CreateMultiplexInputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMultiplexInput`](crate::operation::create_multiplex::CreateMultiplexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_multiplex::CreateMultiplexInput {
-            availability_zones: self.availability_zones,
-            multiplex_settings: self.multiplex_settings,
-            name: self.name,
-            request_id: self.request_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_multiplex::CreateMultiplexInput {
+                availability_zones: self.availability_zones
+                ,
+                multiplex_settings: self.multiplex_settings
+                ,
+                name: self.name
+                ,
+                request_id: self.request_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

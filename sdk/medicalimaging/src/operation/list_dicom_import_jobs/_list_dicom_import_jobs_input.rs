@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDicomImportJobsInput {
+pub struct ListDicomImportJobsInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters for listing import jobs based on status.</p>
@@ -12,17 +12,17 @@ pub struct ListDicomImportJobsInput {
     /// <p>The max results count. The upper bound is determined by load testing.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDicomImportJobsInput {
+impl  ListDicomImportJobsInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The filters for listing import jobs based on status.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The pagination token used to request the list of import jobs on the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The max results count. The upper bound is determined by load testing.</p>
@@ -55,8 +55,7 @@ impl ListDicomImportJobsInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListDicomImportJobsInputBuilder {
     }
     /// <p>The filters for listing import jobs based on status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The filters for listing import jobs based on status.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -83,8 +81,7 @@ impl ListDicomImportJobsInputBuilder {
     }
     /// <p>The pagination token used to request the list of import jobs on the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to request the list of import jobs on the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl ListDicomImportJobsInputBuilder {
     }
     /// <p>The max results count. The upper bound is determined by load testing.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The max results count. The upper bound is determined by load testing.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDicomImportJobsInput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput {
-            datastore_id: self.datastore_id,
-            job_status: self.job_status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput {
+                datastore_id: self.datastore_id
+                ,
+                job_status: self.job_status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

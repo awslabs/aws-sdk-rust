@@ -42,7 +42,9 @@ pub fn parse_error_metadata(body: &[u8]) -> Result<ErrorMetadataBuilder, XmlDeco
 }
 
 #[allow(unused)]
-pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
+pub fn error_scope<'a, 'b>(
+    doc: &'a mut Document<'b>,
+) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
     let root = doc
         .next_start_element()
         .ok_or_else(|| XmlDecodeError::custom("no root found searching for an Error"))?;
@@ -120,3 +122,4 @@ mod test {
         assert_eq!(keys, vec!["Code", "Message", "AnotherSetting", "Ignore"])
     }
 }
+

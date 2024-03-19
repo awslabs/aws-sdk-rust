@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomerMetadataOutput {
+pub struct DescribeCustomerMetadataOutput  {
     /// <p>The list of customer agreements.</p>
-    pub agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
+    pub agreements: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerAgreement>>,
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
     /// <li>
@@ -17,12 +17,13 @@ pub struct DescribeCustomerMetadataOutput {
     pub nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,
     _request_id: Option<String>,
 }
-impl DescribeCustomerMetadataOutput {
+impl  DescribeCustomerMetadataOutput  {
     /// <p>The list of customer agreements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agreements.is_none()`.
-    pub fn agreements(&self) -> &[crate::types::CustomerAgreement] {
-        self.agreements.as_deref().unwrap_or_default()
+    pub fn agreements(&self) -> & [crate::types::CustomerAgreement] {
+        self.agreements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
@@ -33,15 +34,15 @@ impl DescribeCustomerMetadataOutput {
     /// <li>
     /// <p>nonPartner: The customer is not a partner.</p></li>
     /// </ul>
-    pub fn nni_partner_type(&self) -> ::std::option::Option<&crate::types::NniPartnerType> {
+    pub fn nni_partner_type(&self) -> ::std::option::Option<& crate::types::NniPartnerType> {
         self.nni_partner_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCustomerMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCustomerMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
     pub fn builder() -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder {
@@ -53,7 +54,7 @@ impl DescribeCustomerMetadataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataOutputBuilder {
-    pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
+    pub(crate) agreements: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerAgreement>>,
     pub(crate) nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,
     _request_id: Option<String>,
 }
@@ -65,17 +66,16 @@ impl DescribeCustomerMetadataOutputBuilder {
     /// <p>The list of customer agreements.</p>
     pub fn agreements(mut self, input: crate::types::CustomerAgreement) -> Self {
         let mut v = self.agreements.unwrap_or_default();
-        v.push(input);
-        self.agreements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.agreements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of customer agreements.</p>
-    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>) -> Self {
-        self.agreements = input;
-        self
+    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerAgreement>>) -> Self {
+        self.agreements = input; self
     }
     /// <p>The list of customer agreements.</p>
-    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>> {
+    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomerAgreement>> {
         &self.agreements
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
@@ -101,8 +101,7 @@ impl DescribeCustomerMetadataOutputBuilder {
     /// <p>nonPartner: The customer is not a partner.</p></li>
     /// </ul>
     pub fn set_nni_partner_type(mut self, input: ::std::option::Option<crate::types::NniPartnerType>) -> Self {
-        self.nni_partner_type = input;
-        self
+        self.nni_partner_type = input; self
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
@@ -117,20 +116,23 @@ impl DescribeCustomerMetadataOutputBuilder {
         &self.nni_partner_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
     pub fn build(self) -> crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
-            agreements: self.agreements,
-            nni_partner_type: self.nni_partner_type,
+            agreements: self.agreements
+            ,
+            nni_partner_type: self.nni_partner_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

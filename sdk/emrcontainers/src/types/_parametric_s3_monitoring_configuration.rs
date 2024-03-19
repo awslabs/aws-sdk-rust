@@ -3,13 +3,13 @@
 /// <p>Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParametricS3MonitoringConfiguration {
+pub struct ParametricS3MonitoringConfiguration  {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub log_uri: ::std::option::Option<::std::string::String>,
 }
-impl ParametricS3MonitoringConfiguration {
+impl  ParametricS3MonitoringConfiguration  {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<& str> {
         self.log_uri.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ParametricS3MonitoringConfigurationBuilder {
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ParametricS3MonitoringConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ParametricS3MonitoringConfiguration`](crate::types::ParametricS3MonitoringConfiguration).
     pub fn build(self) -> crate::types::ParametricS3MonitoringConfiguration {
-        crate::types::ParametricS3MonitoringConfiguration { log_uri: self.log_uri }
+        crate::types::ParametricS3MonitoringConfiguration {
+            log_uri: self.log_uri
+            ,
+        }
     }
 }
+

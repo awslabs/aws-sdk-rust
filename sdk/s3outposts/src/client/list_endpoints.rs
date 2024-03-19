@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of endpoints that will be returned in the response.</p><br>
-    /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
     ///   - [`endpoints(Option<Vec::<Endpoint>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
+                            /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
     pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

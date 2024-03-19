@@ -3,7 +3,7 @@
 /// <p>The information for an opted out number in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptedOutNumberInformation {
+pub struct OptedOutNumberInformation  {
     /// <p>The phone number that is opted out.</p>
     pub opted_out_number: ::std::string::String,
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -11,14 +11,13 @@ pub struct OptedOutNumberInformation {
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     pub end_user_opted_out: bool,
 }
-impl OptedOutNumberInformation {
+impl  OptedOutNumberInformation  {
     /// <p>The phone number that is opted out.</p>
-    pub fn opted_out_number(&self) -> &str {
-        use std::ops::Deref;
-        self.opted_out_number.deref()
+    pub fn opted_out_number(&self) -> & str {
+        use std::ops::Deref; self.opted_out_number.deref()
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn opted_out_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.opted_out_timestamp
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
@@ -50,8 +49,7 @@ impl OptedOutNumberInformationBuilder {
     }
     /// <p>The phone number that is opted out.</p>
     pub fn set_opted_out_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opted_out_number = input;
-        self
+        self.opted_out_number = input; self
     }
     /// <p>The phone number that is opted out.</p>
     pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl OptedOutNumberInformationBuilder {
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_opted_out_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.opted_out_timestamp = input;
-        self
+        self.opted_out_timestamp = input; self
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_opted_out_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -80,8 +77,7 @@ impl OptedOutNumberInformationBuilder {
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.end_user_opted_out = input;
-        self
+        self.end_user_opted_out = input; self
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     pub fn get_end_user_opted_out(&self) -> &::std::option::Option<bool> {
@@ -92,20 +88,23 @@ impl OptedOutNumberInformationBuilder {
     /// - [`opted_out_number`](crate::types::builders::OptedOutNumberInformationBuilder::opted_out_number)
     /// - [`opted_out_timestamp`](crate::types::builders::OptedOutNumberInformationBuilder::opted_out_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::OptedOutNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OptedOutNumberInformation {
-            opted_out_number: self.opted_out_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "opted_out_number",
-                    "opted_out_number was not specified but it is required when building OptedOutNumberInformation",
-                )
-            })?,
-            opted_out_timestamp: self.opted_out_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "opted_out_timestamp",
-                    "opted_out_timestamp was not specified but it is required when building OptedOutNumberInformation",
-                )
-            })?,
-            end_user_opted_out: self.end_user_opted_out.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::OptedOutNumberInformation {
+                opted_out_number: self.opted_out_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("opted_out_number", "opted_out_number was not specified but it is required when building OptedOutNumberInformation")
+                    )?
+                ,
+                opted_out_timestamp: self.opted_out_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("opted_out_timestamp", "opted_out_timestamp was not specified but it is required when building OptedOutNumberInformation")
+                    )?
+                ,
+                end_user_opted_out: self.end_user_opted_out
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

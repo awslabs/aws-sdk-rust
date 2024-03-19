@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPortfolioAccess`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p> <ul>  <li>   <p><code>jp</code> - Japanese</p></li>  <li>   <p><code>zh</code> - Chinese</p></li> </ul><br>
     ///   - [`portfolio_id(impl Into<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::set_portfolio_id):<br>required: **true**<br><p>The portfolio identifier.</p><br>
     ///   - [`organization_parent_id(impl Into<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::organization_parent_id) / [`set_organization_parent_id(Option<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::set_organization_parent_id):<br>required: **false**<br><p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p><br>
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::set_page_token):<br>required: **false**<br><p>The page token for the next set of results. To retrieve the first set of results, use null.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
-    /// - On success, responds with [`ListPortfolioAccessOutput`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput) with field(s):
+                            /// - On success, responds with [`ListPortfolioAccessOutput`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput) with field(s):
     ///   - [`account_ids(Option<Vec::<String>>)`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput::account_ids): <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListPortfolioAccessError>`](crate::operation::list_portfolio_access::ListPortfolioAccessError)
+                            /// - On failure, responds with [`SdkError<ListPortfolioAccessError>`](crate::operation::list_portfolio_access::ListPortfolioAccessError)
     pub fn list_portfolio_access(&self) -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder {
-        crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_portfolio_access::builders::ListPortfolioAccessFluentBuilder::new(self.handle.clone())
+                            }
 }
+

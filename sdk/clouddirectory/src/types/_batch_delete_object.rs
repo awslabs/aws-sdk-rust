@@ -3,13 +3,13 @@
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteObject {
+pub struct BatchDeleteObject  {
     /// <p>The reference that identifies the object.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
-impl BatchDeleteObject {
+impl  BatchDeleteObject  {
     /// <p>The reference that identifies the object.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl BatchDeleteObjectBuilder {
     }
     /// <p>The reference that identifies the object.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>The reference that identifies the object.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -45,7 +44,9 @@ impl BatchDeleteObjectBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteObject`](crate::types::BatchDeleteObject).
     pub fn build(self) -> crate::types::BatchDeleteObject {
         crate::types::BatchDeleteObject {
-            object_reference: self.object_reference,
+            object_reference: self.object_reference
+            ,
         }
     }
 }
+

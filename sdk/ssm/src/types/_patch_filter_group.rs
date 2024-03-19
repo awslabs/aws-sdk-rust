@@ -3,15 +3,14 @@
 /// <p>A set of patch filters, typically used for approval rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PatchFilterGroup {
+pub struct PatchFilterGroup  {
     /// <p>The set of patch filters that make up the group.</p>
-    pub patch_filters: ::std::vec::Vec<crate::types::PatchFilter>,
+    pub patch_filters: ::std::vec::Vec::<crate::types::PatchFilter>,
 }
-impl PatchFilterGroup {
+impl  PatchFilterGroup  {
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn patch_filters(&self) -> &[crate::types::PatchFilter] {
-        use std::ops::Deref;
-        self.patch_filters.deref()
+    pub fn patch_filters(&self) -> & [crate::types::PatchFilter] {
+        use std::ops::Deref; self.patch_filters.deref()
     }
 }
 impl PatchFilterGroup {
@@ -25,7 +24,7 @@ impl PatchFilterGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchFilterGroupBuilder {
-    pub(crate) patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
+    pub(crate) patch_filters: ::std::option::Option<::std::vec::Vec::<crate::types::PatchFilter>>,
 }
 impl PatchFilterGroupBuilder {
     /// Appends an item to `patch_filters`.
@@ -35,30 +34,31 @@ impl PatchFilterGroupBuilder {
     /// <p>The set of patch filters that make up the group.</p>
     pub fn patch_filters(mut self, input: crate::types::PatchFilter) -> Self {
         let mut v = self.patch_filters.unwrap_or_default();
-        v.push(input);
-        self.patch_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn set_patch_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>) -> Self {
-        self.patch_filters = input;
-        self
+    pub fn set_patch_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchFilter>>) -> Self {
+        self.patch_filters = input; self
     }
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn get_patch_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>> {
+    pub fn get_patch_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchFilter>> {
         &self.patch_filters
     }
     /// Consumes the builder and constructs a [`PatchFilterGroup`](crate::types::PatchFilterGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`patch_filters`](crate::types::builders::PatchFilterGroupBuilder::patch_filters)
     pub fn build(self) -> ::std::result::Result<crate::types::PatchFilterGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PatchFilterGroup {
-            patch_filters: self.patch_filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_filters",
-                    "patch_filters was not specified but it is required when building PatchFilterGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PatchFilterGroup {
+                patch_filters: self.patch_filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_filters", "patch_filters was not specified but it is required when building PatchFilterGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

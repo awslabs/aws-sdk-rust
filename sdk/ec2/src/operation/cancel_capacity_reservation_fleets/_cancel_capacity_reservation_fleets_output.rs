@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelCapacityReservationFleetsOutput {
+pub struct CancelCapacityReservationFleetsOutput  {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    pub successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>>,
+    pub successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservationFleetCancellationState>>,
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    pub failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>>,
+    pub failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCapacityReservationFleetCancellationResult>>,
     _request_id: Option<String>,
 }
-impl CancelCapacityReservationFleetsOutput {
+impl  CancelCapacityReservationFleetsOutput  {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_fleet_cancellations.is_none()`.
-    pub fn successful_fleet_cancellations(&self) -> &[crate::types::CapacityReservationFleetCancellationState] {
-        self.successful_fleet_cancellations.as_deref().unwrap_or_default()
+    pub fn successful_fleet_cancellations(&self) -> & [crate::types::CapacityReservationFleetCancellationState] {
+        self.successful_fleet_cancellations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_fleet_cancellations.is_none()`.
-    pub fn failed_fleet_cancellations(&self) -> &[crate::types::FailedCapacityReservationFleetCancellationResult] {
-        self.failed_fleet_cancellations.as_deref().unwrap_or_default()
+    pub fn failed_fleet_cancellations(&self) -> & [crate::types::FailedCapacityReservationFleetCancellationResult] {
+        self.failed_fleet_cancellations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelCapacityReservationFleetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelCapacityReservationFleetsOutput {
     /// Creates a new builder-style object to manufacture [`CancelCapacityReservationFleetsOutput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput).
     pub fn builder() -> crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsOutputBuilder {
@@ -39,8 +41,8 @@ impl CancelCapacityReservationFleetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFleetsOutputBuilder {
-    pub(crate) successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>>,
-    pub(crate) failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>>,
+    pub(crate) successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservationFleetCancellationState>>,
+    pub(crate) failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCapacityReservationFleetCancellationResult>>,
     _request_id: Option<String>,
 }
 impl CancelCapacityReservationFleetsOutputBuilder {
@@ -51,22 +53,16 @@ impl CancelCapacityReservationFleetsOutputBuilder {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
     pub fn successful_fleet_cancellations(mut self, input: crate::types::CapacityReservationFleetCancellationState) -> Self {
         let mut v = self.successful_fleet_cancellations.unwrap_or_default();
-        v.push(input);
-        self.successful_fleet_cancellations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful_fleet_cancellations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    pub fn set_successful_fleet_cancellations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>>,
-    ) -> Self {
-        self.successful_fleet_cancellations = input;
-        self
+    pub fn set_successful_fleet_cancellations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservationFleetCancellationState>>) -> Self {
+        self.successful_fleet_cancellations = input; self
     }
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    pub fn get_successful_fleet_cancellations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>> {
+    pub fn get_successful_fleet_cancellations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityReservationFleetCancellationState>> {
         &self.successful_fleet_cancellations
     }
     /// Appends an item to `failed_fleet_cancellations`.
@@ -76,39 +72,36 @@ impl CancelCapacityReservationFleetsOutputBuilder {
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
     pub fn failed_fleet_cancellations(mut self, input: crate::types::FailedCapacityReservationFleetCancellationResult) -> Self {
         let mut v = self.failed_fleet_cancellations.unwrap_or_default();
-        v.push(input);
-        self.failed_fleet_cancellations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_fleet_cancellations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    pub fn set_failed_fleet_cancellations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>>,
-    ) -> Self {
-        self.failed_fleet_cancellations = input;
-        self
+    pub fn set_failed_fleet_cancellations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCapacityReservationFleetCancellationResult>>) -> Self {
+        self.failed_fleet_cancellations = input; self
     }
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    pub fn get_failed_fleet_cancellations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>> {
+    pub fn get_failed_fleet_cancellations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedCapacityReservationFleetCancellationResult>> {
         &self.failed_fleet_cancellations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelCapacityReservationFleetsOutput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput).
     pub fn build(self) -> crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput {
         crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput {
-            successful_fleet_cancellations: self.successful_fleet_cancellations,
-            failed_fleet_cancellations: self.failed_fleet_cancellations,
+            successful_fleet_cancellations: self.successful_fleet_cancellations
+            ,
+            failed_fleet_cancellations: self.failed_fleet_cancellations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

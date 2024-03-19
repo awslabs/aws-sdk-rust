@@ -3,13 +3,13 @@
 /// <p>Contains details about why a contact was disconnected. Only Amazon Connect outbound campaigns can provide this field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectReason {
+pub struct DisconnectReason  {
     /// <p>A code that indicates how the contact was terminated.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectReason {
+impl  DisconnectReason  {
     /// <p>A code that indicates how the contact was terminated.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DisconnectReasonBuilder {
     }
     /// <p>A code that indicates how the contact was terminated.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A code that indicates how the contact was terminated.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DisconnectReasonBuilder {
     }
     /// Consumes the builder and constructs a [`DisconnectReason`](crate::types::DisconnectReason).
     pub fn build(self) -> crate::types::DisconnectReason {
-        crate::types::DisconnectReason { code: self.code }
+        crate::types::DisconnectReason {
+            code: self.code
+            ,
+        }
     }
 }
+

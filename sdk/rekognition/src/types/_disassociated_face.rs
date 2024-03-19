@@ -3,13 +3,13 @@
 /// <p>Provides face metadata for the faces that are disassociated from a specific UserID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatedFace {
+pub struct DisassociatedFace  {
     /// <p>Unique identifier assigned to the face.</p>
     pub face_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociatedFace {
+impl  DisassociatedFace  {
     /// <p>Unique identifier assigned to the face.</p>
-    pub fn face_id(&self) -> ::std::option::Option<&str> {
+    pub fn face_id(&self) -> ::std::option::Option<& str> {
         self.face_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DisassociatedFaceBuilder {
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_id = input;
-        self
+        self.face_id = input; self
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DisassociatedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`DisassociatedFace`](crate::types::DisassociatedFace).
     pub fn build(self) -> crate::types::DisassociatedFace {
-        crate::types::DisassociatedFace { face_id: self.face_id }
+        crate::types::DisassociatedFace {
+            face_id: self.face_id
+            ,
+        }
     }
 }
+

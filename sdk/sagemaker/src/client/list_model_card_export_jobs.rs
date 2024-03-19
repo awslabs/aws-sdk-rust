@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelCardExportJobs`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_card_name(impl Into<String>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::model_card_name) / [`set_model_card_name(Option<String>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_model_card_name):<br>required: **true**<br><p>List export jobs for the model card with the specified name.</p><br>
     ///   - [`model_card_version(i32)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::model_card_version) / [`set_model_card_version(Option<i32>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_model_card_version):<br>required: **false**<br><p>List export jobs for the model card with the specified version.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Only list model card export jobs that were created after the time specified.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`sort_order(ModelCardExportJobSortOrder)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::sort_order) / [`set_sort_order(Option<ModelCardExportJobSortOrder>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Sort model card export jobs by ascending or descending order.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of model card export jobs to list.</p><br>
-    /// - On success, responds with [`ListModelCardExportJobsOutput`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListModelCardExportJobsOutput`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput) with field(s):
     ///   - [`model_card_export_job_summaries(Option<Vec::<ModelCardExportJobSummary>>)`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput::model_card_export_job_summaries): <p>The summaries of the listed model card export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card export jobs, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListModelCardExportJobsError>`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError)
+                            /// - On failure, responds with [`SdkError<ListModelCardExportJobsError>`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError)
     pub fn list_model_card_export_jobs(&self) -> crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder {
-        crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

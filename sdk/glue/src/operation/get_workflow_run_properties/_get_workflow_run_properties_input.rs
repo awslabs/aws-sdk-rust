@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowRunPropertiesInput {
+pub struct GetWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowRunPropertiesInput {
+impl  GetWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetWorkflowRunPropertiesInputBuilder {
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
-            name: self.name,
-            run_id: self.run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

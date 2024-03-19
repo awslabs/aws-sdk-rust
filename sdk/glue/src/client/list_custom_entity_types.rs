@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomEntityTypes`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>A paginated token to offset the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::set_tags):<br>required: **false**<br><p>A list of key-value pair tags.</p><br>
-    /// - On success, responds with [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput) with field(s):
+                            /// - On success, responds with [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput) with field(s):
     ///   - [`custom_entity_types(Option<Vec::<CustomEntityType>>)`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput::next_token): <p>A pagination token, if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListCustomEntityTypesError>`](crate::operation::list_custom_entity_types::ListCustomEntityTypesError)
+                            /// - On failure, responds with [`SdkError<ListCustomEntityTypesError>`](crate::operation::list_custom_entity_types::ListCustomEntityTypesError)
     pub fn list_custom_entity_types(&self) -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder {
-        crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

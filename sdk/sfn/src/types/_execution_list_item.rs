@@ -3,7 +3,7 @@
 /// <p>Contains details about an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionListItem {
+pub struct ExecutionListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
@@ -46,16 +46,14 @@ pub struct ExecutionListItem {
     /// <p>The date the execution was last redriven.</p>
     pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ExecutionListItem {
+impl  ExecutionListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_arn.deref()
+    pub fn execution_arn(&self) -> & str {
+        use std::ops::Deref; self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    pub fn state_machine_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.state_machine_arn.deref()
+    pub fn state_machine_arn(&self) -> & str {
+        use std::ops::Deref; self.state_machine_arn.deref()
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -72,24 +70,23 @@ impl ExecutionListItem {
     /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> &crate::types::ExecutionStatus {
+    pub fn status(&self) -> & crate::types::ExecutionStatus {
         &self.status
     }
     /// <p>The date the execution started.</p>
-    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_date
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
@@ -99,12 +96,12 @@ impl ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
     /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
-    pub fn state_machine_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_version_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_alias_arn.as_deref()
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
@@ -112,7 +109,7 @@ impl ExecutionListItem {
         self.redrive_count
     }
     /// <p>The date the execution was last redriven.</p>
-    pub fn redrive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn redrive_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.redrive_date.as_ref()
     }
 }
@@ -149,8 +146,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +202,7 @@ impl ExecutionListItemBuilder {
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -236,8 +230,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The current status of the execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
@@ -251,8 +244,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The date the execution started.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date the execution started.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,8 +257,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input;
-        self
+        self.stop_date = input; self
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,8 +270,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +283,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -311,8 +300,7 @@ impl ExecutionListItemBuilder {
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
     /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
@@ -329,8 +317,7 @@ impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
@@ -344,8 +331,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redrive_count = input;
-        self
+        self.redrive_count = input; self
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
@@ -358,8 +344,7 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The date the execution was last redriven.</p>
     pub fn set_redrive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.redrive_date = input;
-        self
+        self.redrive_date = input; self
     }
     /// <p>The date the execution was last redriven.</p>
     pub fn get_redrive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -373,44 +358,49 @@ impl ExecutionListItemBuilder {
     /// - [`status`](crate::types::builders::ExecutionListItemBuilder::status)
     /// - [`start_date`](crate::types::builders::ExecutionListItemBuilder::start_date)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecutionListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExecutionListItem {
-            execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_arn",
-                    "execution_arn was not specified but it is required when building ExecutionListItem",
-                )
-            })?,
-            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_arn",
-                    "state_machine_arn was not specified but it is required when building ExecutionListItem",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ExecutionListItem",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExecutionListItem",
-                )
-            })?,
-            start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_date",
-                    "start_date was not specified but it is required when building ExecutionListItem",
-                )
-            })?,
-            stop_date: self.stop_date,
-            map_run_arn: self.map_run_arn,
-            item_count: self.item_count,
-            state_machine_version_arn: self.state_machine_version_arn,
-            state_machine_alias_arn: self.state_machine_alias_arn,
-            redrive_count: self.redrive_count,
-            redrive_date: self.redrive_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExecutionListItem {
+                execution_arn: self.execution_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_arn", "execution_arn was not specified but it is required when building ExecutionListItem")
+                    )?
+                ,
+                state_machine_arn: self.state_machine_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_arn", "state_machine_arn was not specified but it is required when building ExecutionListItem")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ExecutionListItem")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExecutionListItem")
+                    )?
+                ,
+                start_date: self.start_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_date", "start_date was not specified but it is required when building ExecutionListItem")
+                    )?
+                ,
+                stop_date: self.stop_date
+                ,
+                map_run_arn: self.map_run_arn
+                ,
+                item_count: self.item_count
+                ,
+                state_machine_version_arn: self.state_machine_version_arn
+                ,
+                state_machine_alias_arn: self.state_machine_alias_arn
+                ,
+                redrive_count: self.redrive_count
+                ,
+                redrive_date: self.redrive_date
+                ,
+            }
+        )
     }
 }
+

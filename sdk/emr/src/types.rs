@@ -584,3 +584,4 @@ pub mod builders;
 
 /// Error types that Amazon EMR can respond with.
 pub mod error;
+

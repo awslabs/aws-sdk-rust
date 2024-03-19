@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfiguredAudienceModelAssociationInput {
+pub struct CreateConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured audience model is associated to the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the configured audience model that you want to associate.</p>
@@ -13,21 +13,21 @@ pub struct CreateConfiguredAudienceModelAssociationInput {
     /// <p>Setting this to <code>TRUE</code> requires you to have permissions to create, update, and delete the resource policy for the <code>cleanrooms-ml</code> resource when you call the <code>DeleteConfiguredAudienceModelAssociation</code> resource. In addition, if you are the collaboration creator and specify <code>TRUE</code>, you must have the same permissions when you call the <code>DeleteMember</code> and <code>DeleteCollaboration</code> APIs.</p>
     pub manage_resource_policies: ::std::option::Option<bool>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A description of the configured audience model association.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateConfiguredAudienceModelAssociationInput {
+impl  CreateConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured audience model is associated to the collaboration that this membership belongs to. Accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A unique identifier for the configured audience model that you want to associate.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
     /// <p>The name of the configured audience model association.</p>
-    pub fn configured_audience_model_association_name(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_association_name(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_association_name.as_deref()
     }
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
@@ -36,18 +36,17 @@ impl CreateConfiguredAudienceModelAssociationInput {
         self.manage_resource_policies
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A description of the configured audience model association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl CreateConfiguredAudienceModelAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredAudienceModelAssociationInput`](crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput).
-    pub fn builder() -> crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationInputBuilder {
         crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationInputBuilder::default()
     }
 }
@@ -60,7 +59,7 @@ pub struct CreateConfiguredAudienceModelAssociationInputBuilder {
     pub(crate) configured_audience_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configured_audience_model_association_name: ::std::option::Option<::std::string::String>,
     pub(crate) manage_resource_policies: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl CreateConfiguredAudienceModelAssociationInputBuilder {
@@ -72,8 +71,7 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured audience model is associated to the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured audience model is associated to the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier for the configured audience model that you want to associate.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>A unique identifier for the configured audience model that you want to associate.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +99,7 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn set_configured_audience_model_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_association_name = input;
-        self
+        self.configured_audience_model_association_name = input; self
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn get_configured_audience_model_association_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
     /// <p>Setting this to <code>TRUE</code> requires you to have permissions to create, update, and delete the resource policy for the <code>cleanrooms-ml</code> resource when you call the <code>DeleteConfiguredAudienceModelAssociation</code> resource. In addition, if you are the collaboration creator and specify <code>TRUE</code>, you must have the same permissions when you call the <code>DeleteMember</code> and <code>DeleteCollaboration</code> APIs.</p>
     pub fn set_manage_resource_policies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_resource_policies = input;
-        self
+        self.manage_resource_policies = input; self
     }
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
     /// <p>Setting this to <code>TRUE</code> requires you to have permissions to create, update, and delete the resource policy for the <code>cleanrooms-ml</code> resource when you call the <code>DeleteConfiguredAudienceModelAssociation</code> resource. In addition, if you are the collaboration creator and specify <code>TRUE</code>, you must have the same permissions when you call the <code>DeleteMember</code> and <code>DeleteCollaboration</code> APIs.</p>
@@ -134,17 +129,16 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A description of the configured audience model association.</p>
@@ -154,29 +148,30 @@ impl CreateConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A description of the configured audience model association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the configured audience model association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateConfiguredAudienceModelAssociationInput`](crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput {
-                membership_identifier: self.membership_identifier,
-                configured_audience_model_arn: self.configured_audience_model_arn,
-                configured_audience_model_association_name: self.configured_audience_model_association_name,
-                manage_resource_policies: self.manage_resource_policies,
-                tags: self.tags,
-                description: self.description,
-            },
+                membership_identifier: self.membership_identifier
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+                configured_audience_model_association_name: self.configured_audience_model_association_name
+                ,
+                manage_resource_policies: self.manage_resource_policies
+                ,
+                tags: self.tags
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

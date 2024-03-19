@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDecoderManifestInput {
+pub struct CreateDecoderManifestInput  {
     /// <p>The unique name of the decoder manifest to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the decoder manifest.</p>
@@ -10,42 +10,45 @@ pub struct CreateDecoderManifestInput {
     /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about signal decoders.</p>
-    pub signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
+    pub signal_decoders: ::std::option::Option<::std::vec::Vec::<crate::types::SignalDecoder>>,
     /// <p>A list of information about available network interfaces.</p>
-    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>,
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDecoderManifestInput {
+impl  CreateDecoderManifestInput  {
     /// <p>The unique name of the decoder manifest to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the decoder manifest.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
-    pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> ::std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>A list of information about signal decoders.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders.is_none()`.
-    pub fn signal_decoders(&self) -> &[crate::types::SignalDecoder] {
-        self.signal_decoders.as_deref().unwrap_or_default()
+    pub fn signal_decoders(&self) -> & [crate::types::SignalDecoder] {
+        self.signal_decoders.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of information about available network interfaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
-    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
-        self.network_interfaces.as_deref().unwrap_or_default()
+    pub fn network_interfaces(&self) -> & [crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDecoderManifestInput {
@@ -62,9 +65,9 @@ pub struct CreateDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) signal_decoders: ::std::option::Option<::std::vec::Vec::<crate::types::SignalDecoder>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDecoderManifestInputBuilder {
     /// <p>The unique name of the decoder manifest to create.</p>
@@ -75,8 +78,7 @@ impl CreateDecoderManifestInputBuilder {
     }
     /// <p>The unique name of the decoder manifest to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name of the decoder manifest to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +91,7 @@ impl CreateDecoderManifestInputBuilder {
     }
     /// <p>A brief description of the decoder manifest.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the decoder manifest.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +105,7 @@ impl CreateDecoderManifestInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_manifest_arn = input;
-        self
+        self.model_manifest_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +118,16 @@ impl CreateDecoderManifestInputBuilder {
     /// <p>A list of information about signal decoders.</p>
     pub fn signal_decoders(mut self, input: crate::types::SignalDecoder) -> Self {
         let mut v = self.signal_decoders.unwrap_or_default();
-        v.push(input);
-        self.signal_decoders = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.signal_decoders = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about signal decoders.</p>
-    pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
-        self.signal_decoders = input;
-        self
+    pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SignalDecoder>>) -> Self {
+        self.signal_decoders = input; self
     }
     /// <p>A list of information about signal decoders.</p>
-    pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+    pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SignalDecoder>> {
         &self.signal_decoders
     }
     /// Appends an item to `network_interfaces`.
@@ -138,17 +137,16 @@ impl CreateDecoderManifestInputBuilder {
     /// <p>A list of information about available network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about available network interfaces.</p>
-    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>) -> Self {
+        self.network_interfaces = input; self
     }
     /// <p>A list of information about available network interfaces.</p>
-    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// Appends an item to `tags`.
@@ -158,31 +156,36 @@ impl CreateDecoderManifestInputBuilder {
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
-            name: self.name,
-            description: self.description,
-            model_manifest_arn: self.model_manifest_arn,
-            signal_decoders: self.signal_decoders,
-            network_interfaces: self.network_interfaces,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                signal_decoders: self.signal_decoders
+                ,
+                network_interfaces: self.network_interfaces
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

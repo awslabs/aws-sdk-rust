@@ -2,26 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceSpecificCredentialOutput {
+pub struct CreateServiceSpecificCredentialOutput  {
     /// <p>A structure that contains information about the newly created service-specific credential.</p><important>
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
     /// </important>
     pub service_specific_credential: ::std::option::Option<crate::types::ServiceSpecificCredential>,
     _request_id: Option<String>,
 }
-impl CreateServiceSpecificCredentialOutput {
+impl  CreateServiceSpecificCredentialOutput  {
     /// <p>A structure that contains information about the newly created service-specific credential.</p><important>
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
     /// </important>
-    pub fn service_specific_credential(&self) -> ::std::option::Option<&crate::types::ServiceSpecificCredential> {
+    pub fn service_specific_credential(&self) -> ::std::option::Option<& crate::types::ServiceSpecificCredential> {
         self.service_specific_credential.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceSpecificCredentialOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServiceSpecificCredentialOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSpecificCredentialOutput`](crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput).
     pub fn builder() -> crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialOutputBuilder {
@@ -48,8 +48,7 @@ impl CreateServiceSpecificCredentialOutputBuilder {
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
     /// </important>
     pub fn set_service_specific_credential(mut self, input: ::std::option::Option<crate::types::ServiceSpecificCredential>) -> Self {
-        self.service_specific_credential = input;
-        self
+        self.service_specific_credential = input; self
     }
     /// <p>A structure that contains information about the newly created service-specific credential.</p><important>
     /// <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>
@@ -58,19 +57,21 @@ impl CreateServiceSpecificCredentialOutputBuilder {
         &self.service_specific_credential
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServiceSpecificCredentialOutput`](crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput).
     pub fn build(self) -> crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput {
         crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput {
-            service_specific_credential: self.service_specific_credential,
+            service_specific_credential: self.service_specific_credential
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Provides the phrase that Amazon Lex should look for in the user's input to the bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuntimeHintValue {
+pub struct RuntimeHintValue  {
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
     pub phrase: ::std::string::String,
 }
-impl RuntimeHintValue {
+impl  RuntimeHintValue  {
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
-    pub fn phrase(&self) -> &str {
-        use std::ops::Deref;
-        self.phrase.deref()
+    pub fn phrase(&self) -> & str {
+        use std::ops::Deref; self.phrase.deref()
     }
 }
 impl RuntimeHintValue {
@@ -36,8 +35,7 @@ impl RuntimeHintValueBuilder {
     }
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
     pub fn set_phrase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phrase = input;
-        self
+        self.phrase = input; self
     }
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
     pub fn get_phrase(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RuntimeHintValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`phrase`](crate::types::builders::RuntimeHintValueBuilder::phrase)
     pub fn build(self) -> ::std::result::Result<crate::types::RuntimeHintValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuntimeHintValue {
-            phrase: self.phrase.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phrase",
-                    "phrase was not specified but it is required when building RuntimeHintValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuntimeHintValue {
+                phrase: self.phrase
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phrase", "phrase was not specified but it is required when building RuntimeHintValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

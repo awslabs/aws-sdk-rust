@@ -3,7 +3,7 @@
 /// <p>An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The type of attribute.</p>
     pub r#type: ::std::option::Option<crate::types::EntitySubType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
@@ -23,11 +23,11 @@ pub struct Attribute {
     /// <p>The category of attribute.</p>
     pub category: ::std::option::Option<crate::types::EntityType>,
     /// <p>Contextual information for this attribute.</p>
-    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>,
 }
-impl Attribute {
+impl  Attribute  {
     /// <p>The type of attribute.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntitySubType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EntitySubType> {
         self.r#type.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
@@ -39,7 +39,7 @@ impl Attribute {
         self.relationship_score
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.</p>
-    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<& crate::types::RelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
@@ -55,18 +55,19 @@ impl Attribute {
         self.end_offset
     }
     /// <p>The segment of input text extracted as this attribute.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The category of attribute.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.category.as_ref()
     }
     /// <p>Contextual information for this attribute.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
-    pub fn traits(&self) -> &[crate::types::Trait] {
-        self.traits.as_deref().unwrap_or_default()
+    pub fn traits(&self) -> & [crate::types::Trait] {
+        self.traits.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Attribute {
@@ -89,7 +90,7 @@ pub struct AttributeBuilder {
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::EntityType>,
-    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>,
 }
 impl AttributeBuilder {
     /// <p>The type of attribute.</p>
@@ -99,8 +100,7 @@ impl AttributeBuilder {
     }
     /// <p>The type of attribute.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntitySubType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of attribute.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EntitySubType> {
@@ -113,8 +113,7 @@ impl AttributeBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -127,8 +126,7 @@ impl AttributeBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.relationship_score = input;
-        self
+        self.relationship_score = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub fn get_relationship_score(&self) -> &::std::option::Option<f32> {
@@ -141,8 +139,7 @@ impl AttributeBuilder {
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.</p>
     pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
-        self.relationship_type = input;
-        self
+        self.relationship_type = input; self
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.</p>
     pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
@@ -155,8 +152,7 @@ impl AttributeBuilder {
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<i32> {
@@ -169,8 +165,7 @@ impl AttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -183,8 +178,7 @@ impl AttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -197,8 +191,7 @@ impl AttributeBuilder {
     }
     /// <p>The segment of input text extracted as this attribute.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The segment of input text extracted as this attribute.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +204,7 @@ impl AttributeBuilder {
     }
     /// <p>The category of attribute.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of attribute.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -225,32 +217,42 @@ impl AttributeBuilder {
     /// <p>Contextual information for this attribute.</p>
     pub fn traits(mut self, input: crate::types::Trait) -> Self {
         let mut v = self.traits.unwrap_or_default();
-        v.push(input);
-        self.traits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contextual information for this attribute.</p>
-    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>) -> Self {
-        self.traits = input;
-        self
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Trait>>) -> Self {
+        self.traits = input; self
     }
     /// <p>Contextual information for this attribute.</p>
-    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Trait>> {
         &self.traits
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {
-            r#type: self.r#type,
-            score: self.score,
-            relationship_score: self.relationship_score,
-            relationship_type: self.relationship_type,
-            id: self.id,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            text: self.text,
-            category: self.category,
-            traits: self.traits,
+            r#type: self.r#type
+            ,
+            score: self.score
+            ,
+            relationship_score: self.relationship_score
+            ,
+            relationship_type: self.relationship_type
+            ,
+            id: self.id
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            text: self.text
+            ,
+            category: self.category
+            ,
+            traits: self.traits
+            ,
         }
     }
 }
+

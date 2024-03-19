@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAdaptersInput {
+pub struct ListAdaptersInput  {
     /// <p>Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.</p>
     pub after_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.</p>
@@ -12,13 +12,13 @@ pub struct ListAdaptersInput {
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAdaptersInput {
+impl  ListAdaptersInput  {
     /// <p>Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.</p>
-    pub fn after_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn after_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.after_creation_time.as_ref()
     }
     /// <p>Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.</p>
-    pub fn before_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn before_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.before_creation_time.as_ref()
     }
     /// <p>The maximum number of results to return when listing adapters.</p>
@@ -26,7 +26,7 @@ impl ListAdaptersInput {
         self.max_results
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListAdaptersInputBuilder {
     }
     /// <p>Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.</p>
     pub fn set_after_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.after_creation_time = input;
-        self
+        self.after_creation_time = input; self
     }
     /// <p>Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.</p>
     pub fn get_after_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -68,8 +67,7 @@ impl ListAdaptersInputBuilder {
     }
     /// <p>Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.</p>
     pub fn set_before_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.before_creation_time = input;
-        self
+        self.before_creation_time = input; self
     }
     /// <p>Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.</p>
     pub fn get_before_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,8 +80,7 @@ impl ListAdaptersInputBuilder {
     }
     /// <p>The maximum number of results to return when listing adapters.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return when listing adapters.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,22 +93,26 @@ impl ListAdaptersInputBuilder {
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return when listing adapters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAdaptersInput`](crate::operation::list_adapters::ListAdaptersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_adapters::ListAdaptersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_adapters::ListAdaptersInput {
-            after_creation_time: self.after_creation_time,
-            before_creation_time: self.before_creation_time,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_adapters::ListAdaptersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_adapters::ListAdaptersInput {
+                after_creation_time: self.after_creation_time
+                ,
+                before_creation_time: self.before_creation_time
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

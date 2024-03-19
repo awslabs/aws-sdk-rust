@@ -3,21 +3,20 @@
 /// <p>Configuration information necessary for the configure audience model output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredAudienceModelOutputConfig {
+pub struct ConfiguredAudienceModelOutputConfig  {
     /// <p>Defines the Amazon S3 bucket where the configured audience is stored.</p>
     pub destination: ::std::option::Option<crate::types::AudienceDestination>,
     /// <p>The ARN of the IAM role that can write the Amazon S3 bucket.</p>
     pub role_arn: ::std::string::String,
 }
-impl ConfiguredAudienceModelOutputConfig {
+impl  ConfiguredAudienceModelOutputConfig  {
     /// <p>Defines the Amazon S3 bucket where the configured audience is stored.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::AudienceDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::AudienceDestination> {
         self.destination.as_ref()
     }
     /// <p>The ARN of the IAM role that can write the Amazon S3 bucket.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl ConfiguredAudienceModelOutputConfig {
@@ -43,8 +42,7 @@ impl ConfiguredAudienceModelOutputConfigBuilder {
     }
     /// <p>Defines the Amazon S3 bucket where the configured audience is stored.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::AudienceDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Defines the Amazon S3 bucket where the configured audience is stored.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::AudienceDestination> {
@@ -58,8 +56,7 @@ impl ConfiguredAudienceModelOutputConfigBuilder {
     }
     /// <p>The ARN of the IAM role that can write the Amazon S3 bucket.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that can write the Amazon S3 bucket.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,14 +66,17 @@ impl ConfiguredAudienceModelOutputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::ConfiguredAudienceModelOutputConfigBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredAudienceModelOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredAudienceModelOutputConfig {
-            destination: self.destination,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ConfiguredAudienceModelOutputConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredAudienceModelOutputConfig {
+                destination: self.destination
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ConfiguredAudienceModelOutputConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

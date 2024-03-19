@@ -3,7 +3,7 @@
 /// <p>Readiness rule information, including the resource type, rule ID, and rule description.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRulesOutput {
+pub struct ListRulesOutput  {
     /// <p>The resource type that the readiness rule applies to.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of a readiness rule.</p>
@@ -11,17 +11,17 @@ pub struct ListRulesOutput {
     /// <p>The ID for the readiness rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
-impl ListRulesOutput {
+impl  ListRulesOutput  {
     /// <p>The resource type that the readiness rule applies to.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The description of a readiness rule.</p>
-    pub fn rule_description(&self) -> ::std::option::Option<&str> {
+    pub fn rule_description(&self) -> ::std::option::Option<& str> {
         self.rule_description.as_deref()
     }
     /// <p>The ID for the readiness rule.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListRulesOutputBuilder {
     }
     /// <p>The resource type that the readiness rule applies to.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type that the readiness rule applies to.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl ListRulesOutputBuilder {
     }
     /// <p>The description of a readiness rule.</p>
     pub fn set_rule_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_description = input;
-        self
+        self.rule_description = input; self
     }
     /// <p>The description of a readiness rule.</p>
     pub fn get_rule_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ListRulesOutputBuilder {
     }
     /// <p>The ID for the readiness rule.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The ID for the readiness rule.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl ListRulesOutputBuilder {
     /// Consumes the builder and constructs a [`ListRulesOutput`](crate::types::ListRulesOutput).
     pub fn build(self) -> crate::types::ListRulesOutput {
         crate::types::ListRulesOutput {
-            resource_type: self.resource_type,
-            rule_description: self.rule_description,
-            rule_id: self.rule_id,
+            resource_type: self.resource_type
+            ,
+            rule_description: self.rule_description
+            ,
+            rule_id: self.rule_id
+            ,
         }
     }
 }
+

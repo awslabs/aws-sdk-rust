@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>GetOnPremisesInstance</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOnPremisesInstanceOutput {
+pub struct GetOnPremisesInstanceOutput  {
     /// <p>Information about the on-premises instance.</p>
     pub instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,
 }
-impl GetOnPremisesInstanceOutput {
+impl  GetOnPremisesInstanceOutput  {
     /// <p>Information about the on-premises instance.</p>
-    pub fn instance_info(&self) -> ::std::option::Option<&crate::types::InstanceInfo> {
+    pub fn instance_info(&self) -> ::std::option::Option<& crate::types::InstanceInfo> {
         self.instance_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOnPremisesInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
     pub fn builder() -> crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceOutputBuilder {
@@ -41,27 +41,28 @@ impl GetOnPremisesInstanceOutputBuilder {
     }
     /// <p>Information about the on-premises instance.</p>
     pub fn set_instance_info(mut self, input: ::std::option::Option<crate::types::InstanceInfo>) -> Self {
-        self.instance_info = input;
-        self
+        self.instance_info = input; self
     }
     /// <p>Information about the on-premises instance.</p>
     pub fn get_instance_info(&self) -> &::std::option::Option<crate::types::InstanceInfo> {
         &self.instance_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
     pub fn build(self) -> crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput {
         crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput {
-            instance_info: self.instance_info,
+            instance_info: self.instance_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

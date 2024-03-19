@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelExplainabilityJobDefinitionInput {
+pub struct DeleteModelExplainabilityJobDefinitionInput  {
     /// <p>The name of the model explainability job definition to delete.</p>
     pub job_definition_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteModelExplainabilityJobDefinitionInput {
+impl  DeleteModelExplainabilityJobDefinitionInput  {
     /// <p>The name of the model explainability job definition to delete.</p>
-    pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition_name(&self) -> ::std::option::Option<& str> {
         self.job_definition_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteModelExplainabilityJobDefinitionInputBuilder {
     }
     /// <p>The name of the model explainability job definition to delete.</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_definition_name = input;
-        self
+        self.job_definition_name = input; self
     }
     /// <p>The name of the model explainability job definition to delete.</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_definition_name
     }
     /// Consumes the builder and constructs a [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput {
-                job_definition_name: self.job_definition_name,
-            },
+                job_definition_name: self.job_definition_name
+                ,
+            }
         )
     }
 }
+

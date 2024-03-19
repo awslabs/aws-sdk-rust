@@ -3,7 +3,7 @@
 /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerSideEncryptionUpdateDetails {
+pub struct ServerSideEncryptionUpdateDetails  {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
     pub old_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
@@ -11,17 +11,17 @@ pub struct ServerSideEncryptionUpdateDetails {
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ServerSideEncryptionUpdateDetails {
+impl  ServerSideEncryptionUpdateDetails  {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-    pub fn old_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn old_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.old_kms_key_id.as_deref()
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
     }
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
     pub fn set_old_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.old_kms_key_id = input;
-        self
+        self.old_kms_key_id = input; self
     }
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
     pub fn get_old_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus> {
@@ -76,8 +74,7 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
     /// Consumes the builder and constructs a [`ServerSideEncryptionUpdateDetails`](crate::types::ServerSideEncryptionUpdateDetails).
     pub fn build(self) -> crate::types::ServerSideEncryptionUpdateDetails {
         crate::types::ServerSideEncryptionUpdateDetails {
-            old_kms_key_id: self.old_kms_key_id,
-            update_status: self.update_status,
-            message: self.message,
+            old_kms_key_id: self.old_kms_key_id
+            ,
+            update_status: self.update_status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Parameters for Amazon Aurora PostgreSQL-Compatible Edition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuroraPostgreSqlParameters {
+pub struct AuroraPostgreSqlParameters  {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     pub host: ::std::string::String,
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
@@ -11,20 +11,18 @@ pub struct AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub database: ::std::string::String,
 }
-impl AuroraPostgreSqlParameters {
+impl  AuroraPostgreSqlParameters  {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
 }
 impl AuroraPostgreSqlParameters {
@@ -51,8 +49,7 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -81,8 +77,7 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl AuroraPostgreSqlParametersBuilder {
     /// - [`port`](crate::types::builders::AuroraPostgreSqlParametersBuilder::port)
     /// - [`database`](crate::types::builders::AuroraPostgreSqlParametersBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::AuroraPostgreSqlParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuroraPostgreSqlParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building AuroraPostgreSqlParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building AuroraPostgreSqlParameters",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building AuroraPostgreSqlParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuroraPostgreSqlParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building AuroraPostgreSqlParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building AuroraPostgreSqlParameters")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building AuroraPostgreSqlParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

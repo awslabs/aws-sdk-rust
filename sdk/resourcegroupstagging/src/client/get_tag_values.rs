@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTagValues`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pagination_token(impl Into<String>)`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::pagination_token) / [`set_pagination_token(Option<String>)`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::set_pagination_token):<br>required: **false**<br><p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p><br>
     ///   - [`key(impl Into<String>)`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::key) / [`set_key(Option<String>)`](crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::set_key):<br>required: **true**<br><p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p><br>
-    /// - On success, responds with [`GetTagValuesOutput`](crate::operation::get_tag_values::GetTagValuesOutput) with field(s):
+                            /// - On success, responds with [`GetTagValuesOutput`](crate::operation::get_tag_values::GetTagValuesOutput) with field(s):
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_tag_values::GetTagValuesOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     ///   - [`tag_values(Option<Vec::<String>>)`](crate::operation::get_tag_values::GetTagValuesOutput::tag_values): <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
-    /// - On failure, responds with [`SdkError<GetTagValuesError>`](crate::operation::get_tag_values::GetTagValuesError)
+                            /// - On failure, responds with [`SdkError<GetTagValuesError>`](crate::operation::get_tag_values::GetTagValuesError)
     pub fn get_tag_values(&self) -> crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder {
-        crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_tag_values::builders::GetTagValuesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

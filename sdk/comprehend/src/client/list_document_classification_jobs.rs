@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDocumentClassificationJobs`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(DocumentClassificationJobFilter)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::filter) / [`set_filter(Option<DocumentClassificationJobFilter>)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput) with field(s):
     ///   - [`document_classification_job_properties_list(Option<Vec::<DocumentClassificationJobProperties>>)`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput::document_classification_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListDocumentClassificationJobsError>`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError)
-    pub fn list_document_classification_jobs(
-        &self,
-    ) -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder {
-        crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDocumentClassificationJobsError>`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError)
+    pub fn list_document_classification_jobs(&self) -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder {
+                                crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

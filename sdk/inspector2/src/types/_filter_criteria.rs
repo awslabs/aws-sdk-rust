@@ -3,344 +3,386 @@
 /// <p>Details on the criteria used to define the filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterCriteria {
+pub struct FilterCriteria  {
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    pub finding_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_arn: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    pub aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub aws_account_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the finding types used to filter findings.</p>
-    pub finding_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the severity used to filter findings.</p>
-    pub severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub severity: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub first_observed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub last_observed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub updated_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
     /// <p>Details on the finding status types used to filter findings.</p>
-    pub finding_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_status: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the finding title used to filter findings.</p>
-    pub title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub title: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The Amazon Inspector score to filter on.</p>
-    pub inspector_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub inspector_score: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>,
     /// <p>Details on the resource types used to filter findings.</p>
-    pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the resource IDs used to filter findings.</p>
-    pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the resource tags used to filter findings.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MapFilter>>,
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    pub ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ec2_instance_image_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    pub ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    pub ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    pub ecr_image_pushed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub ecr_image_pushed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    pub ecr_image_architecture: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ecr_image_architecture: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    pub ecr_image_registry: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ecr_image_registry: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    pub ecr_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ecr_image_repository_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ecr_image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    pub ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub ecr_image_hash: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the port ranges used to filter findings.</p>
-    pub port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
+    pub port_range: ::std::option::Option<::std::vec::Vec::<crate::types::PortRangeFilter>>,
     /// <p>Details on network protocol used to filter findings.</p>
-    pub network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub network_protocol: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the component IDs used to filter findings.</p>
-    pub component_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub component_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the component types used to filter findings.</p>
-    pub component_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub component_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    pub vulnerability_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub vulnerability_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    pub vulnerability_source: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub vulnerability_source: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the vendor severity used to filter findings.</p>
-    pub vendor_severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub vendor_severity: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    pub vulnerable_packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>>,
+    pub vulnerable_packages: ::std::option::Option<::std::vec::Vec::<crate::types::PackageFilter>>,
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    pub related_vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub related_vulnerabilities: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    pub fix_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub fix_available: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
-    pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub lambda_function_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub lambda_function_layers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub lambda_function_layers: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
-    pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
-    pub lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
-    pub lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
-    pub exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub exploit_available: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    pub code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
-    pub code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    pub code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The EPSS score used to filter findings.</p>
-    pub epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub epss_score: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>,
 }
-impl FilterCriteria {
+impl  FilterCriteria  {
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arn.is_none()`.
-    pub fn finding_arn(&self) -> &[crate::types::StringFilter] {
-        self.finding_arn.as_deref().unwrap_or_default()
+    pub fn finding_arn(&self) -> & [crate::types::StringFilter] {
+        self.finding_arn.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
-    pub fn aws_account_id(&self) -> &[crate::types::StringFilter] {
-        self.aws_account_id.as_deref().unwrap_or_default()
+    pub fn aws_account_id(&self) -> & [crate::types::StringFilter] {
+        self.aws_account_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the finding types used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_type.is_none()`.
-    pub fn finding_type(&self) -> &[crate::types::StringFilter] {
-        self.finding_type.as_deref().unwrap_or_default()
+    pub fn finding_type(&self) -> & [crate::types::StringFilter] {
+        self.finding_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the severity used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity.is_none()`.
-    pub fn severity(&self) -> &[crate::types::StringFilter] {
-        self.severity.as_deref().unwrap_or_default()
+    pub fn severity(&self) -> & [crate::types::StringFilter] {
+        self.severity.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_observed_at.is_none()`.
-    pub fn first_observed_at(&self) -> &[crate::types::DateFilter] {
-        self.first_observed_at.as_deref().unwrap_or_default()
+    pub fn first_observed_at(&self) -> & [crate::types::DateFilter] {
+        self.first_observed_at.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_observed_at.is_none()`.
-    pub fn last_observed_at(&self) -> &[crate::types::DateFilter] {
-        self.last_observed_at.as_deref().unwrap_or_default()
+    pub fn last_observed_at(&self) -> & [crate::types::DateFilter] {
+        self.last_observed_at.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
-    pub fn updated_at(&self) -> &[crate::types::DateFilter] {
-        self.updated_at.as_deref().unwrap_or_default()
+    pub fn updated_at(&self) -> & [crate::types::DateFilter] {
+        self.updated_at.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the finding status types used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_status.is_none()`.
-    pub fn finding_status(&self) -> &[crate::types::StringFilter] {
-        self.finding_status.as_deref().unwrap_or_default()
+    pub fn finding_status(&self) -> & [crate::types::StringFilter] {
+        self.finding_status.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the finding title used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.title.is_none()`.
-    pub fn title(&self) -> &[crate::types::StringFilter] {
-        self.title.as_deref().unwrap_or_default()
+    pub fn title(&self) -> & [crate::types::StringFilter] {
+        self.title.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Inspector score to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inspector_score.is_none()`.
-    pub fn inspector_score(&self) -> &[crate::types::NumberFilter] {
-        self.inspector_score.as_deref().unwrap_or_default()
+    pub fn inspector_score(&self) -> & [crate::types::NumberFilter] {
+        self.inspector_score.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the resource types used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
-    pub fn resource_type(&self) -> &[crate::types::StringFilter] {
-        self.resource_type.as_deref().unwrap_or_default()
+    pub fn resource_type(&self) -> & [crate::types::StringFilter] {
+        self.resource_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the resource IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
-    pub fn resource_id(&self) -> &[crate::types::StringFilter] {
-        self.resource_id.as_deref().unwrap_or_default()
+    pub fn resource_id(&self) -> & [crate::types::StringFilter] {
+        self.resource_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the resource tags used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::MapFilter] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::MapFilter] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_image_id.is_none()`.
-    pub fn ec2_instance_image_id(&self) -> &[crate::types::StringFilter] {
-        self.ec2_instance_image_id.as_deref().unwrap_or_default()
+    pub fn ec2_instance_image_id(&self) -> & [crate::types::StringFilter] {
+        self.ec2_instance_image_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_vpc_id.is_none()`.
-    pub fn ec2_instance_vpc_id(&self) -> &[crate::types::StringFilter] {
-        self.ec2_instance_vpc_id.as_deref().unwrap_or_default()
+    pub fn ec2_instance_vpc_id(&self) -> & [crate::types::StringFilter] {
+        self.ec2_instance_vpc_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_subnet_id.is_none()`.
-    pub fn ec2_instance_subnet_id(&self) -> &[crate::types::StringFilter] {
-        self.ec2_instance_subnet_id.as_deref().unwrap_or_default()
+    pub fn ec2_instance_subnet_id(&self) -> & [crate::types::StringFilter] {
+        self.ec2_instance_subnet_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_pushed_at.is_none()`.
-    pub fn ecr_image_pushed_at(&self) -> &[crate::types::DateFilter] {
-        self.ecr_image_pushed_at.as_deref().unwrap_or_default()
+    pub fn ecr_image_pushed_at(&self) -> & [crate::types::DateFilter] {
+        self.ecr_image_pushed_at.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_architecture.is_none()`.
-    pub fn ecr_image_architecture(&self) -> &[crate::types::StringFilter] {
-        self.ecr_image_architecture.as_deref().unwrap_or_default()
+    pub fn ecr_image_architecture(&self) -> & [crate::types::StringFilter] {
+        self.ecr_image_architecture.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_registry.is_none()`.
-    pub fn ecr_image_registry(&self) -> &[crate::types::StringFilter] {
-        self.ecr_image_registry.as_deref().unwrap_or_default()
+    pub fn ecr_image_registry(&self) -> & [crate::types::StringFilter] {
+        self.ecr_image_registry.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_repository_name.is_none()`.
-    pub fn ecr_image_repository_name(&self) -> &[crate::types::StringFilter] {
-        self.ecr_image_repository_name.as_deref().unwrap_or_default()
+    pub fn ecr_image_repository_name(&self) -> & [crate::types::StringFilter] {
+        self.ecr_image_repository_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_tags.is_none()`.
-    pub fn ecr_image_tags(&self) -> &[crate::types::StringFilter] {
-        self.ecr_image_tags.as_deref().unwrap_or_default()
+    pub fn ecr_image_tags(&self) -> & [crate::types::StringFilter] {
+        self.ecr_image_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_hash.is_none()`.
-    pub fn ecr_image_hash(&self) -> &[crate::types::StringFilter] {
-        self.ecr_image_hash.as_deref().unwrap_or_default()
+    pub fn ecr_image_hash(&self) -> & [crate::types::StringFilter] {
+        self.ecr_image_hash.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the port ranges used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_range.is_none()`.
-    pub fn port_range(&self) -> &[crate::types::PortRangeFilter] {
-        self.port_range.as_deref().unwrap_or_default()
+    pub fn port_range(&self) -> & [crate::types::PortRangeFilter] {
+        self.port_range.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on network protocol used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_protocol.is_none()`.
-    pub fn network_protocol(&self) -> &[crate::types::StringFilter] {
-        self.network_protocol.as_deref().unwrap_or_default()
+    pub fn network_protocol(&self) -> & [crate::types::StringFilter] {
+        self.network_protocol.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the component IDs used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_id.is_none()`.
-    pub fn component_id(&self) -> &[crate::types::StringFilter] {
-        self.component_id.as_deref().unwrap_or_default()
+    pub fn component_id(&self) -> & [crate::types::StringFilter] {
+        self.component_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the component types used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_type.is_none()`.
-    pub fn component_type(&self) -> &[crate::types::StringFilter] {
-        self.component_type.as_deref().unwrap_or_default()
+    pub fn component_type(&self) -> & [crate::types::StringFilter] {
+        self.component_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerability_id.is_none()`.
-    pub fn vulnerability_id(&self) -> &[crate::types::StringFilter] {
-        self.vulnerability_id.as_deref().unwrap_or_default()
+    pub fn vulnerability_id(&self) -> & [crate::types::StringFilter] {
+        self.vulnerability_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerability_source.is_none()`.
-    pub fn vulnerability_source(&self) -> &[crate::types::StringFilter] {
-        self.vulnerability_source.as_deref().unwrap_or_default()
+    pub fn vulnerability_source(&self) -> & [crate::types::StringFilter] {
+        self.vulnerability_source.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the vendor severity used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vendor_severity.is_none()`.
-    pub fn vendor_severity(&self) -> &[crate::types::StringFilter] {
-        self.vendor_severity.as_deref().unwrap_or_default()
+    pub fn vendor_severity(&self) -> & [crate::types::StringFilter] {
+        self.vendor_severity.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerable_packages.is_none()`.
-    pub fn vulnerable_packages(&self) -> &[crate::types::PackageFilter] {
-        self.vulnerable_packages.as_deref().unwrap_or_default()
+    pub fn vulnerable_packages(&self) -> & [crate::types::PackageFilter] {
+        self.vulnerable_packages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_vulnerabilities.is_none()`.
-    pub fn related_vulnerabilities(&self) -> &[crate::types::StringFilter] {
-        self.related_vulnerabilities.as_deref().unwrap_or_default()
+    pub fn related_vulnerabilities(&self) -> & [crate::types::StringFilter] {
+        self.related_vulnerabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fix_available.is_none()`.
-    pub fn fix_available(&self) -> &[crate::types::StringFilter] {
-        self.fix_available.as_deref().unwrap_or_default()
+    pub fn fix_available(&self) -> & [crate::types::StringFilter] {
+        self.fix_available.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
-    pub fn lambda_function_name(&self) -> &[crate::types::StringFilter] {
-        self.lambda_function_name.as_deref().unwrap_or_default()
+    pub fn lambda_function_name(&self) -> & [crate::types::StringFilter] {
+        self.lambda_function_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_layers.is_none()`.
-    pub fn lambda_function_layers(&self) -> &[crate::types::StringFilter] {
-        self.lambda_function_layers.as_deref().unwrap_or_default()
+    pub fn lambda_function_layers(&self) -> & [crate::types::StringFilter] {
+        self.lambda_function_layers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
-    pub fn lambda_function_runtime(&self) -> &[crate::types::StringFilter] {
-        self.lambda_function_runtime.as_deref().unwrap_or_default()
+    pub fn lambda_function_runtime(&self) -> & [crate::types::StringFilter] {
+        self.lambda_function_runtime.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_last_modified_at.is_none()`.
-    pub fn lambda_function_last_modified_at(&self) -> &[crate::types::DateFilter] {
-        self.lambda_function_last_modified_at.as_deref().unwrap_or_default()
+    pub fn lambda_function_last_modified_at(&self) -> & [crate::types::DateFilter] {
+        self.lambda_function_last_modified_at.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_execution_role_arn.is_none()`.
-    pub fn lambda_function_execution_role_arn(&self) -> &[crate::types::StringFilter] {
-        self.lambda_function_execution_role_arn.as_deref().unwrap_or_default()
+    pub fn lambda_function_execution_role_arn(&self) -> & [crate::types::StringFilter] {
+        self.lambda_function_execution_role_arn.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exploit_available.is_none()`.
-    pub fn exploit_available(&self) -> &[crate::types::StringFilter] {
-        self.exploit_available.as_deref().unwrap_or_default()
+    pub fn exploit_available(&self) -> & [crate::types::StringFilter] {
+        self.exploit_available.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_detector_name.is_none()`.
-    pub fn code_vulnerability_detector_name(&self) -> &[crate::types::StringFilter] {
-        self.code_vulnerability_detector_name.as_deref().unwrap_or_default()
+    pub fn code_vulnerability_detector_name(&self) -> & [crate::types::StringFilter] {
+        self.code_vulnerability_detector_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_detector_tags.is_none()`.
-    pub fn code_vulnerability_detector_tags(&self) -> &[crate::types::StringFilter] {
-        self.code_vulnerability_detector_tags.as_deref().unwrap_or_default()
+    pub fn code_vulnerability_detector_tags(&self) -> & [crate::types::StringFilter] {
+        self.code_vulnerability_detector_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_file_path.is_none()`.
-    pub fn code_vulnerability_file_path(&self) -> &[crate::types::StringFilter] {
-        self.code_vulnerability_file_path.as_deref().unwrap_or_default()
+    pub fn code_vulnerability_file_path(&self) -> & [crate::types::StringFilter] {
+        self.code_vulnerability_file_path.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The EPSS score used to filter findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.epss_score.is_none()`.
-    pub fn epss_score(&self) -> &[crate::types::NumberFilter] {
-        self.epss_score.as_deref().unwrap_or_default()
+    pub fn epss_score(&self) -> & [crate::types::NumberFilter] {
+        self.epss_score.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FilterCriteria {
@@ -354,48 +396,48 @@ impl FilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterCriteriaBuilder {
-    pub(crate) finding_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) finding_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) finding_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) inspector_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    pub(crate) ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ecr_image_pushed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) ecr_image_architecture: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ecr_image_registry: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ecr_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
-    pub(crate) network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) component_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) component_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) vulnerability_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) vulnerability_source: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) vendor_severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) vulnerable_packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>>,
-    pub(crate) related_vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) fix_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) lambda_function_layers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) finding_arn: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) finding_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) severity: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) first_observed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
+    pub(crate) last_observed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
+    pub(crate) updated_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
+    pub(crate) finding_status: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) title: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) inspector_score: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>,
+    pub(crate) resource_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) resource_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MapFilter>>,
+    pub(crate) ec2_instance_image_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ecr_image_pushed_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
+    pub(crate) ecr_image_architecture: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ecr_image_registry: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ecr_image_repository_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) ecr_image_hash: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) port_range: ::std::option::Option<::std::vec::Vec::<crate::types::PortRangeFilter>>,
+    pub(crate) network_protocol: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) component_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) component_type: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) vulnerability_id: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) vulnerability_source: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) vendor_severity: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) vulnerable_packages: ::std::option::Option<::std::vec::Vec::<crate::types::PackageFilter>>,
+    pub(crate) related_vulnerabilities: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) fix_available: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) lambda_function_layers: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>,
+    pub(crate) lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) exploit_available: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) epss_score: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>,
 }
 impl FilterCriteriaBuilder {
     /// Appends an item to `finding_arn`.
@@ -405,17 +447,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the finding ARNs used to filter findings.</p>
     pub fn finding_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.finding_arn.unwrap_or_default();
-        v.push(input);
-        self.finding_arn = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_arn = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.finding_arn = input;
-        self
+    pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.finding_arn = input; self
     }
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    pub fn get_finding_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_arn(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.finding_arn
     }
     /// Appends an item to `aws_account_id`.
@@ -425,17 +466,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
     pub fn aws_account_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.aws_account_id.unwrap_or_default();
-        v.push(input);
-        self.aws_account_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aws_account_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.aws_account_id = input;
-        self
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.aws_account_id = input; self
     }
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.aws_account_id
     }
     /// Appends an item to `finding_type`.
@@ -445,17 +485,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the finding types used to filter findings.</p>
     pub fn finding_type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.finding_type.unwrap_or_default();
-        v.push(input);
-        self.finding_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the finding types used to filter findings.</p>
-    pub fn set_finding_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.finding_type = input;
-        self
+    pub fn set_finding_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.finding_type = input; self
     }
     /// <p>Details on the finding types used to filter findings.</p>
-    pub fn get_finding_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.finding_type
     }
     /// Appends an item to `severity`.
@@ -465,17 +504,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the severity used to filter findings.</p>
     pub fn severity(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.severity.unwrap_or_default();
-        v.push(input);
-        self.severity = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.severity = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the severity used to filter findings.</p>
-    pub fn set_severity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.severity = input; self
     }
     /// <p>Details on the severity used to filter findings.</p>
-    pub fn get_severity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_severity(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.severity
     }
     /// Appends an item to `first_observed_at`.
@@ -485,17 +523,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
-        v.push(input);
-        self.first_observed_at = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.first_observed_at = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
-        self.first_observed_at = input;
-        self
+    pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>) -> Self {
+        self.first_observed_at = input; self
     }
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>> {
         &self.first_observed_at
     }
     /// Appends an item to `last_observed_at`.
@@ -505,17 +542,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
-        v.push(input);
-        self.last_observed_at = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.last_observed_at = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
-        self.last_observed_at = input;
-        self
+    pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>) -> Self {
+        self.last_observed_at = input; self
     }
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>> {
         &self.last_observed_at
     }
     /// Appends an item to `updated_at`.
@@ -525,17 +561,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
-        v.push(input);
-        self.updated_at = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updated_at = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>) -> Self {
+        self.updated_at = input; self
     }
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>> {
         &self.updated_at
     }
     /// Appends an item to `finding_status`.
@@ -545,17 +580,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the finding status types used to filter findings.</p>
     pub fn finding_status(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.finding_status.unwrap_or_default();
-        v.push(input);
-        self.finding_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the finding status types used to filter findings.</p>
-    pub fn set_finding_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.finding_status = input;
-        self
+    pub fn set_finding_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.finding_status = input; self
     }
     /// <p>Details on the finding status types used to filter findings.</p>
-    pub fn get_finding_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.finding_status
     }
     /// Appends an item to `title`.
@@ -565,17 +599,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the finding title used to filter findings.</p>
     pub fn title(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.title.unwrap_or_default();
-        v.push(input);
-        self.title = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.title = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the finding title used to filter findings.</p>
-    pub fn set_title(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.title = input;
-        self
+    pub fn set_title(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.title = input; self
     }
     /// <p>Details on the finding title used to filter findings.</p>
-    pub fn get_title(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_title(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.title
     }
     /// Appends an item to `inspector_score`.
@@ -585,17 +618,16 @@ impl FilterCriteriaBuilder {
     /// <p>The Amazon Inspector score to filter on.</p>
     pub fn inspector_score(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.inspector_score.unwrap_or_default();
-        v.push(input);
-        self.inspector_score = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inspector_score = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Inspector score to filter on.</p>
-    pub fn set_inspector_score(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
-        self.inspector_score = input;
-        self
+    pub fn set_inspector_score(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>) -> Self {
+        self.inspector_score = input; self
     }
     /// <p>The Amazon Inspector score to filter on.</p>
-    pub fn get_inspector_score(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_inspector_score(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>> {
         &self.inspector_score
     }
     /// Appends an item to `resource_type`.
@@ -605,17 +637,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the resource types used to filter findings.</p>
     pub fn resource_type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
-        v.push(input);
-        self.resource_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the resource types used to filter findings.</p>
-    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>Details on the resource types used to filter findings.</p>
-    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.resource_type
     }
     /// Appends an item to `resource_id`.
@@ -625,17 +656,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the resource IDs used to filter findings.</p>
     pub fn resource_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_id.unwrap_or_default();
-        v.push(input);
-        self.resource_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the resource IDs used to filter findings.</p>
-    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_id = input;
-        self
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.resource_id = input; self
     }
     /// <p>Details on the resource IDs used to filter findings.</p>
-    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.resource_id
     }
     /// Appends an item to `resource_tags`.
@@ -645,17 +675,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the resource tags used to filter findings.</p>
     pub fn resource_tags(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the resource tags used to filter findings.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MapFilter>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>Details on the resource tags used to filter findings.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MapFilter>> {
         &self.resource_tags
     }
     /// Appends an item to `ec2_instance_image_id`.
@@ -665,17 +694,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
     pub fn ec2_instance_image_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ec2_instance_image_id.unwrap_or_default();
-        v.push(input);
-        self.ec2_instance_image_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ec2_instance_image_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    pub fn set_ec2_instance_image_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ec2_instance_image_id = input;
-        self
+    pub fn set_ec2_instance_image_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ec2_instance_image_id = input; self
     }
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    pub fn get_ec2_instance_image_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ec2_instance_image_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ec2_instance_image_id
     }
     /// Appends an item to `ec2_instance_vpc_id`.
@@ -685,17 +713,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
     pub fn ec2_instance_vpc_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ec2_instance_vpc_id.unwrap_or_default();
-        v.push(input);
-        self.ec2_instance_vpc_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ec2_instance_vpc_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    pub fn set_ec2_instance_vpc_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ec2_instance_vpc_id = input;
-        self
+    pub fn set_ec2_instance_vpc_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ec2_instance_vpc_id = input; self
     }
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    pub fn get_ec2_instance_vpc_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ec2_instance_vpc_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ec2_instance_vpc_id
     }
     /// Appends an item to `ec2_instance_subnet_id`.
@@ -705,17 +732,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
     pub fn ec2_instance_subnet_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ec2_instance_subnet_id.unwrap_or_default();
-        v.push(input);
-        self.ec2_instance_subnet_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ec2_instance_subnet_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    pub fn set_ec2_instance_subnet_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ec2_instance_subnet_id = input;
-        self
+    pub fn set_ec2_instance_subnet_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ec2_instance_subnet_id = input; self
     }
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    pub fn get_ec2_instance_subnet_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ec2_instance_subnet_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ec2_instance_subnet_id
     }
     /// Appends an item to `ecr_image_pushed_at`.
@@ -725,17 +751,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
     pub fn ecr_image_pushed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.ecr_image_pushed_at.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_pushed_at = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_pushed_at = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    pub fn set_ecr_image_pushed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
-        self.ecr_image_pushed_at = input;
-        self
+    pub fn set_ecr_image_pushed_at(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>) -> Self {
+        self.ecr_image_pushed_at = input; self
     }
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    pub fn get_ecr_image_pushed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_ecr_image_pushed_at(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>> {
         &self.ecr_image_pushed_at
     }
     /// Appends an item to `ecr_image_architecture`.
@@ -745,17 +770,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
     pub fn ecr_image_architecture(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ecr_image_architecture.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_architecture = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_architecture = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    pub fn set_ecr_image_architecture(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ecr_image_architecture = input;
-        self
+    pub fn set_ecr_image_architecture(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ecr_image_architecture = input; self
     }
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    pub fn get_ecr_image_architecture(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ecr_image_architecture(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ecr_image_architecture
     }
     /// Appends an item to `ecr_image_registry`.
@@ -765,17 +789,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
     pub fn ecr_image_registry(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ecr_image_registry.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_registry = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_registry = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    pub fn set_ecr_image_registry(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ecr_image_registry = input;
-        self
+    pub fn set_ecr_image_registry(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ecr_image_registry = input; self
     }
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    pub fn get_ecr_image_registry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ecr_image_registry(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ecr_image_registry
     }
     /// Appends an item to `ecr_image_repository_name`.
@@ -785,17 +808,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
     pub fn ecr_image_repository_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ecr_image_repository_name.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_repository_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_repository_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    pub fn set_ecr_image_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ecr_image_repository_name = input;
-        self
+    pub fn set_ecr_image_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ecr_image_repository_name = input; self
     }
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    pub fn get_ecr_image_repository_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ecr_image_repository_name(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ecr_image_repository_name
     }
     /// Appends an item to `ecr_image_tags`.
@@ -805,17 +827,16 @@ impl FilterCriteriaBuilder {
     /// <p>The tags attached to the Amazon ECR container image.</p>
     pub fn ecr_image_tags(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ecr_image_tags.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    pub fn set_ecr_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ecr_image_tags = input;
-        self
+    pub fn set_ecr_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ecr_image_tags = input; self
     }
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    pub fn get_ecr_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ecr_image_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ecr_image_tags
     }
     /// Appends an item to `ecr_image_hash`.
@@ -825,17 +846,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
     pub fn ecr_image_hash(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.ecr_image_hash.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_hash = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_hash = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    pub fn set_ecr_image_hash(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.ecr_image_hash = input;
-        self
+    pub fn set_ecr_image_hash(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.ecr_image_hash = input; self
     }
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    pub fn get_ecr_image_hash(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_ecr_image_hash(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.ecr_image_hash
     }
     /// Appends an item to `port_range`.
@@ -845,17 +865,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the port ranges used to filter findings.</p>
     pub fn port_range(mut self, input: crate::types::PortRangeFilter) -> Self {
         let mut v = self.port_range.unwrap_or_default();
-        v.push(input);
-        self.port_range = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_range = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the port ranges used to filter findings.</p>
-    pub fn set_port_range(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>) -> Self {
-        self.port_range = input;
-        self
+    pub fn set_port_range(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRangeFilter>>) -> Self {
+        self.port_range = input; self
     }
     /// <p>Details on the port ranges used to filter findings.</p>
-    pub fn get_port_range(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>> {
+    pub fn get_port_range(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRangeFilter>> {
         &self.port_range
     }
     /// Appends an item to `network_protocol`.
@@ -865,17 +884,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on network protocol used to filter findings.</p>
     pub fn network_protocol(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.network_protocol.unwrap_or_default();
-        v.push(input);
-        self.network_protocol = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_protocol = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on network protocol used to filter findings.</p>
-    pub fn set_network_protocol(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.network_protocol = input;
-        self
+    pub fn set_network_protocol(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.network_protocol = input; self
     }
     /// <p>Details on network protocol used to filter findings.</p>
-    pub fn get_network_protocol(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_protocol(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.network_protocol
     }
     /// Appends an item to `component_id`.
@@ -885,17 +903,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the component IDs used to filter findings.</p>
     pub fn component_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.component_id.unwrap_or_default();
-        v.push(input);
-        self.component_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the component IDs used to filter findings.</p>
-    pub fn set_component_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.component_id = input;
-        self
+    pub fn set_component_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.component_id = input; self
     }
     /// <p>Details of the component IDs used to filter findings.</p>
-    pub fn get_component_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.component_id
     }
     /// Appends an item to `component_type`.
@@ -905,17 +922,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details of the component types used to filter findings.</p>
     pub fn component_type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.component_type.unwrap_or_default();
-        v.push(input);
-        self.component_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the component types used to filter findings.</p>
-    pub fn set_component_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.component_type = input;
-        self
+    pub fn set_component_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.component_type = input; self
     }
     /// <p>Details of the component types used to filter findings.</p>
-    pub fn get_component_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.component_type
     }
     /// Appends an item to `vulnerability_id`.
@@ -925,17 +941,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the vulnerability ID used to filter findings.</p>
     pub fn vulnerability_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vulnerability_id.unwrap_or_default();
-        v.push(input);
-        self.vulnerability_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vulnerability_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    pub fn set_vulnerability_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.vulnerability_id = input;
-        self
+    pub fn set_vulnerability_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.vulnerability_id = input; self
     }
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    pub fn get_vulnerability_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_vulnerability_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.vulnerability_id
     }
     /// Appends an item to `vulnerability_source`.
@@ -945,17 +960,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the vulnerability type used to filter findings.</p>
     pub fn vulnerability_source(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vulnerability_source.unwrap_or_default();
-        v.push(input);
-        self.vulnerability_source = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vulnerability_source = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    pub fn set_vulnerability_source(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.vulnerability_source = input;
-        self
+    pub fn set_vulnerability_source(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.vulnerability_source = input; self
     }
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    pub fn get_vulnerability_source(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_vulnerability_source(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.vulnerability_source
     }
     /// Appends an item to `vendor_severity`.
@@ -965,17 +979,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the vendor severity used to filter findings.</p>
     pub fn vendor_severity(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vendor_severity.unwrap_or_default();
-        v.push(input);
-        self.vendor_severity = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vendor_severity = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the vendor severity used to filter findings.</p>
-    pub fn set_vendor_severity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.vendor_severity = input;
-        self
+    pub fn set_vendor_severity(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.vendor_severity = input; self
     }
     /// <p>Details on the vendor severity used to filter findings.</p>
-    pub fn get_vendor_severity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_vendor_severity(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.vendor_severity
     }
     /// Appends an item to `vulnerable_packages`.
@@ -985,17 +998,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the vulnerable packages used to filter findings.</p>
     pub fn vulnerable_packages(mut self, input: crate::types::PackageFilter) -> Self {
         let mut v = self.vulnerable_packages.unwrap_or_default();
-        v.push(input);
-        self.vulnerable_packages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vulnerable_packages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    pub fn set_vulnerable_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>>) -> Self {
-        self.vulnerable_packages = input;
-        self
+    pub fn set_vulnerable_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PackageFilter>>) -> Self {
+        self.vulnerable_packages = input; self
     }
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    pub fn get_vulnerable_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>> {
+    pub fn get_vulnerable_packages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PackageFilter>> {
         &self.vulnerable_packages
     }
     /// Appends an item to `related_vulnerabilities`.
@@ -1005,17 +1017,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
     pub fn related_vulnerabilities(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.related_vulnerabilities.unwrap_or_default();
-        v.push(input);
-        self.related_vulnerabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.related_vulnerabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    pub fn set_related_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.related_vulnerabilities = input;
-        self
+    pub fn set_related_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.related_vulnerabilities = input; self
     }
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    pub fn get_related_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_related_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.related_vulnerabilities
     }
     /// Appends an item to `fix_available`.
@@ -1025,17 +1036,16 @@ impl FilterCriteriaBuilder {
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
     pub fn fix_available(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.fix_available.unwrap_or_default();
-        v.push(input);
-        self.fix_available = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fix_available = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    pub fn set_fix_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.fix_available = input;
-        self
+    pub fn set_fix_available(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.fix_available = input; self
     }
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    pub fn get_fix_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_fix_available(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.fix_available
     }
     /// Appends an item to `lambda_function_name`.
@@ -1045,17 +1055,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     pub fn lambda_function_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_name.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
-    pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.lambda_function_name = input;
-        self
+    pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.lambda_function_name = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
-    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.lambda_function_name
     }
     /// Appends an item to `lambda_function_layers`.
@@ -1065,17 +1074,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub fn lambda_function_layers(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_layers.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_layers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_layers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub fn set_lambda_function_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.lambda_function_layers = input;
-        self
+    pub fn set_lambda_function_layers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.lambda_function_layers = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub fn get_lambda_function_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_lambda_function_layers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.lambda_function_layers
     }
     /// Appends an item to `lambda_function_runtime`.
@@ -1085,17 +1093,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     pub fn lambda_function_runtime(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_runtime.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_runtime = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_runtime = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
-    pub fn set_lambda_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.lambda_function_runtime = input;
-        self
+    pub fn set_lambda_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.lambda_function_runtime = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
-    pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.lambda_function_runtime
     }
     /// Appends an item to `lambda_function_last_modified_at`.
@@ -1105,17 +1112,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn lambda_function_last_modified_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.lambda_function_last_modified_at.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_last_modified_at = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_last_modified_at = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
-    pub fn set_lambda_function_last_modified_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
-        self.lambda_function_last_modified_at = input;
-        self
+    pub fn set_lambda_function_last_modified_at(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>>) -> Self {
+        self.lambda_function_last_modified_at = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
-    pub fn get_lambda_function_last_modified_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_lambda_function_last_modified_at(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateFilter>> {
         &self.lambda_function_last_modified_at
     }
     /// Appends an item to `lambda_function_execution_role_arn`.
@@ -1125,17 +1131,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     pub fn lambda_function_execution_role_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_execution_role_arn.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_execution_role_arn = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_execution_role_arn = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
-    pub fn set_lambda_function_execution_role_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.lambda_function_execution_role_arn = input;
-        self
+    pub fn set_lambda_function_execution_role_arn(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.lambda_function_execution_role_arn = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
-    pub fn get_lambda_function_execution_role_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_lambda_function_execution_role_arn(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.lambda_function_execution_role_arn
     }
     /// Appends an item to `exploit_available`.
@@ -1145,17 +1150,16 @@ impl FilterCriteriaBuilder {
     /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     pub fn exploit_available(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.exploit_available.unwrap_or_default();
-        v.push(input);
-        self.exploit_available = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.exploit_available = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
-    pub fn set_exploit_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.exploit_available = input;
-        self
+    pub fn set_exploit_available(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.exploit_available = input; self
     }
     /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
-    pub fn get_exploit_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_exploit_available(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.exploit_available
     }
     /// Appends an item to `code_vulnerability_detector_name`.
@@ -1165,17 +1169,16 @@ impl FilterCriteriaBuilder {
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
     pub fn code_vulnerability_detector_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.code_vulnerability_detector_name.unwrap_or_default();
-        v.push(input);
-        self.code_vulnerability_detector_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_vulnerability_detector_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    pub fn set_code_vulnerability_detector_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.code_vulnerability_detector_name = input;
-        self
+    pub fn set_code_vulnerability_detector_name(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.code_vulnerability_detector_name = input; self
     }
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    pub fn get_code_vulnerability_detector_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_code_vulnerability_detector_name(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.code_vulnerability_detector_name
     }
     /// Appends an item to `code_vulnerability_detector_tags`.
@@ -1185,17 +1188,16 @@ impl FilterCriteriaBuilder {
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
     pub fn code_vulnerability_detector_tags(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.code_vulnerability_detector_tags.unwrap_or_default();
-        v.push(input);
-        self.code_vulnerability_detector_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_vulnerability_detector_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
-    pub fn set_code_vulnerability_detector_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.code_vulnerability_detector_tags = input;
-        self
+    pub fn set_code_vulnerability_detector_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.code_vulnerability_detector_tags = input; self
     }
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.</p>
-    pub fn get_code_vulnerability_detector_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_code_vulnerability_detector_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.code_vulnerability_detector_tags
     }
     /// Appends an item to `code_vulnerability_file_path`.
@@ -1205,17 +1207,16 @@ impl FilterCriteriaBuilder {
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
     pub fn code_vulnerability_file_path(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.code_vulnerability_file_path.unwrap_or_default();
-        v.push(input);
-        self.code_vulnerability_file_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_vulnerability_file_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    pub fn set_code_vulnerability_file_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.code_vulnerability_file_path = input;
-        self
+    pub fn set_code_vulnerability_file_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.code_vulnerability_file_path = input; self
     }
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    pub fn get_code_vulnerability_file_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_code_vulnerability_file_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.code_vulnerability_file_path
     }
     /// Appends an item to `epss_score`.
@@ -1225,64 +1226,106 @@ impl FilterCriteriaBuilder {
     /// <p>The EPSS score used to filter findings.</p>
     pub fn epss_score(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.epss_score.unwrap_or_default();
-        v.push(input);
-        self.epss_score = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.epss_score = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EPSS score used to filter findings.</p>
-    pub fn set_epss_score(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
-        self.epss_score = input;
-        self
+    pub fn set_epss_score(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>>) -> Self {
+        self.epss_score = input; self
     }
     /// <p>The EPSS score used to filter findings.</p>
-    pub fn get_epss_score(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_epss_score(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NumberFilter>> {
         &self.epss_score
     }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
-            finding_arn: self.finding_arn,
-            aws_account_id: self.aws_account_id,
-            finding_type: self.finding_type,
-            severity: self.severity,
-            first_observed_at: self.first_observed_at,
-            last_observed_at: self.last_observed_at,
-            updated_at: self.updated_at,
-            finding_status: self.finding_status,
-            title: self.title,
-            inspector_score: self.inspector_score,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            resource_tags: self.resource_tags,
-            ec2_instance_image_id: self.ec2_instance_image_id,
-            ec2_instance_vpc_id: self.ec2_instance_vpc_id,
-            ec2_instance_subnet_id: self.ec2_instance_subnet_id,
-            ecr_image_pushed_at: self.ecr_image_pushed_at,
-            ecr_image_architecture: self.ecr_image_architecture,
-            ecr_image_registry: self.ecr_image_registry,
-            ecr_image_repository_name: self.ecr_image_repository_name,
-            ecr_image_tags: self.ecr_image_tags,
-            ecr_image_hash: self.ecr_image_hash,
-            port_range: self.port_range,
-            network_protocol: self.network_protocol,
-            component_id: self.component_id,
-            component_type: self.component_type,
-            vulnerability_id: self.vulnerability_id,
-            vulnerability_source: self.vulnerability_source,
-            vendor_severity: self.vendor_severity,
-            vulnerable_packages: self.vulnerable_packages,
-            related_vulnerabilities: self.related_vulnerabilities,
-            fix_available: self.fix_available,
-            lambda_function_name: self.lambda_function_name,
-            lambda_function_layers: self.lambda_function_layers,
-            lambda_function_runtime: self.lambda_function_runtime,
-            lambda_function_last_modified_at: self.lambda_function_last_modified_at,
-            lambda_function_execution_role_arn: self.lambda_function_execution_role_arn,
-            exploit_available: self.exploit_available,
-            code_vulnerability_detector_name: self.code_vulnerability_detector_name,
-            code_vulnerability_detector_tags: self.code_vulnerability_detector_tags,
-            code_vulnerability_file_path: self.code_vulnerability_file_path,
-            epss_score: self.epss_score,
+            finding_arn: self.finding_arn
+            ,
+            aws_account_id: self.aws_account_id
+            ,
+            finding_type: self.finding_type
+            ,
+            severity: self.severity
+            ,
+            first_observed_at: self.first_observed_at
+            ,
+            last_observed_at: self.last_observed_at
+            ,
+            updated_at: self.updated_at
+            ,
+            finding_status: self.finding_status
+            ,
+            title: self.title
+            ,
+            inspector_score: self.inspector_score
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_tags: self.resource_tags
+            ,
+            ec2_instance_image_id: self.ec2_instance_image_id
+            ,
+            ec2_instance_vpc_id: self.ec2_instance_vpc_id
+            ,
+            ec2_instance_subnet_id: self.ec2_instance_subnet_id
+            ,
+            ecr_image_pushed_at: self.ecr_image_pushed_at
+            ,
+            ecr_image_architecture: self.ecr_image_architecture
+            ,
+            ecr_image_registry: self.ecr_image_registry
+            ,
+            ecr_image_repository_name: self.ecr_image_repository_name
+            ,
+            ecr_image_tags: self.ecr_image_tags
+            ,
+            ecr_image_hash: self.ecr_image_hash
+            ,
+            port_range: self.port_range
+            ,
+            network_protocol: self.network_protocol
+            ,
+            component_id: self.component_id
+            ,
+            component_type: self.component_type
+            ,
+            vulnerability_id: self.vulnerability_id
+            ,
+            vulnerability_source: self.vulnerability_source
+            ,
+            vendor_severity: self.vendor_severity
+            ,
+            vulnerable_packages: self.vulnerable_packages
+            ,
+            related_vulnerabilities: self.related_vulnerabilities
+            ,
+            fix_available: self.fix_available
+            ,
+            lambda_function_name: self.lambda_function_name
+            ,
+            lambda_function_layers: self.lambda_function_layers
+            ,
+            lambda_function_runtime: self.lambda_function_runtime
+            ,
+            lambda_function_last_modified_at: self.lambda_function_last_modified_at
+            ,
+            lambda_function_execution_role_arn: self.lambda_function_execution_role_arn
+            ,
+            exploit_available: self.exploit_available
+            ,
+            code_vulnerability_detector_name: self.code_vulnerability_detector_name
+            ,
+            code_vulnerability_detector_tags: self.code_vulnerability_detector_tags
+            ,
+            code_vulnerability_file_path: self.code_vulnerability_file_path
+            ,
+            epss_score: self.epss_score
+            ,
         }
     }
 }
+

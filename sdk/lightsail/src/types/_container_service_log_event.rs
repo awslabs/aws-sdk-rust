@@ -3,19 +3,19 @@
 /// <p>Describes the log events of a container of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceLogEvent {
+pub struct ContainerServiceLogEvent  {
     /// <p>The timestamp when the container service log event was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message of the container service log event.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ContainerServiceLogEvent {
+impl  ContainerServiceLogEvent  {
     /// <p>The timestamp when the container service log event was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the container service log event.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ContainerServiceLogEventBuilder {
     }
     /// <p>The timestamp when the container service log event was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the container service log event was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl ContainerServiceLogEventBuilder {
     }
     /// <p>The message of the container service log event.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message of the container service log event.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ContainerServiceLogEventBuilder {
     /// Consumes the builder and constructs a [`ContainerServiceLogEvent`](crate::types::ContainerServiceLogEvent).
     pub fn build(self) -> crate::types::ContainerServiceLogEvent {
         crate::types::ContainerServiceLogEvent {
-            created_at: self.created_at,
-            message: self.message,
+            created_at: self.created_at
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

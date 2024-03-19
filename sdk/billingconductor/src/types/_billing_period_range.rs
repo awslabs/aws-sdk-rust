@@ -3,22 +3,20 @@
 /// <p>A time range for which the margin summary is effective. The time range can be up to 12 months.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BillingPeriodRange {
+pub struct BillingPeriodRange  {
     /// <p>The inclusive start billing period that defines a billing period range for the margin summary.</p>
     pub inclusive_start_billing_period: ::std::string::String,
     /// <p>The exclusive end billing period that defines a billing period range for the margin summary. For example, if you choose a billing period that starts in October 2023 and ends in December 2023, the margin summary will only include data from October 2023 and November 2023.</p>
     pub exclusive_end_billing_period: ::std::string::String,
 }
-impl BillingPeriodRange {
+impl  BillingPeriodRange  {
     /// <p>The inclusive start billing period that defines a billing period range for the margin summary.</p>
-    pub fn inclusive_start_billing_period(&self) -> &str {
-        use std::ops::Deref;
-        self.inclusive_start_billing_period.deref()
+    pub fn inclusive_start_billing_period(&self) -> & str {
+        use std::ops::Deref; self.inclusive_start_billing_period.deref()
     }
     /// <p>The exclusive end billing period that defines a billing period range for the margin summary. For example, if you choose a billing period that starts in October 2023 and ends in December 2023, the margin summary will only include data from October 2023 and November 2023.</p>
-    pub fn exclusive_end_billing_period(&self) -> &str {
-        use std::ops::Deref;
-        self.exclusive_end_billing_period.deref()
+    pub fn exclusive_end_billing_period(&self) -> & str {
+        use std::ops::Deref; self.exclusive_end_billing_period.deref()
     }
 }
 impl BillingPeriodRange {
@@ -44,8 +42,7 @@ impl BillingPeriodRangeBuilder {
     }
     /// <p>The inclusive start billing period that defines a billing period range for the margin summary.</p>
     pub fn set_inclusive_start_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inclusive_start_billing_period = input;
-        self
+        self.inclusive_start_billing_period = input; self
     }
     /// <p>The inclusive start billing period that defines a billing period range for the margin summary.</p>
     pub fn get_inclusive_start_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl BillingPeriodRangeBuilder {
     }
     /// <p>The exclusive end billing period that defines a billing period range for the margin summary. For example, if you choose a billing period that starts in October 2023 and ends in December 2023, the margin summary will only include data from October 2023 and November 2023.</p>
     pub fn set_exclusive_end_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exclusive_end_billing_period = input;
-        self
+        self.exclusive_end_billing_period = input; self
     }
     /// <p>The exclusive end billing period that defines a billing period range for the margin summary. For example, if you choose a billing period that starts in October 2023 and ends in December 2023, the margin summary will only include data from October 2023 and November 2023.</p>
     pub fn get_exclusive_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl BillingPeriodRangeBuilder {
     /// - [`inclusive_start_billing_period`](crate::types::builders::BillingPeriodRangeBuilder::inclusive_start_billing_period)
     /// - [`exclusive_end_billing_period`](crate::types::builders::BillingPeriodRangeBuilder::exclusive_end_billing_period)
     pub fn build(self) -> ::std::result::Result<crate::types::BillingPeriodRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BillingPeriodRange {
-            inclusive_start_billing_period: self.inclusive_start_billing_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inclusive_start_billing_period",
-                    "inclusive_start_billing_period was not specified but it is required when building BillingPeriodRange",
-                )
-            })?,
-            exclusive_end_billing_period: self.exclusive_end_billing_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exclusive_end_billing_period",
-                    "exclusive_end_billing_period was not specified but it is required when building BillingPeriodRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BillingPeriodRange {
+                inclusive_start_billing_period: self.inclusive_start_billing_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inclusive_start_billing_period", "inclusive_start_billing_period was not specified but it is required when building BillingPeriodRange")
+                    )?
+                ,
+                exclusive_end_billing_period: self.exclusive_end_billing_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exclusive_end_billing_period", "exclusive_end_billing_period was not specified but it is required when building BillingPeriodRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

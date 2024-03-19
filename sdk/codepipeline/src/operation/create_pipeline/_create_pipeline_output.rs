@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>CreatePipeline</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePipelineOutput {
+pub struct CreatePipelineOutput  {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Specifies the tags applied to the pipeline.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl CreatePipelineOutput {
+impl  CreatePipelineOutput  {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
-    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> ::std::option::Option<& crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
     /// <p>Specifies the tags applied to the pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
     pub fn builder() -> crate::operation::create_pipeline::builders::CreatePipelineOutputBuilder {
@@ -39,7 +40,7 @@ impl CreatePipelineOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreatePipelineOutputBuilder {
@@ -50,8 +51,7 @@ impl CreatePipelineOutputBuilder {
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
-        self.pipeline = input;
-        self
+        self.pipeline = input; self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
@@ -64,34 +64,36 @@ impl CreatePipelineOutputBuilder {
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the tags applied to the pipeline.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the tags applied to the pipeline.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
     pub fn build(self) -> crate::operation::create_pipeline::CreatePipelineOutput {
         crate::operation::create_pipeline::CreatePipelineOutput {
-            pipeline: self.pipeline,
-            tags: self.tags,
+            pipeline: self.pipeline
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

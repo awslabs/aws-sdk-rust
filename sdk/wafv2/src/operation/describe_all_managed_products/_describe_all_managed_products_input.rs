@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAllManagedProductsInput {
+pub struct DescribeAllManagedProductsInput  {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct DescribeAllManagedProductsInput {
     /// </ul>
     pub scope: ::std::option::Option<crate::types::Scope>,
 }
-impl DescribeAllManagedProductsInput {
+impl  DescribeAllManagedProductsInput  {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
@@ -22,7 +22,7 @@ impl DescribeAllManagedProductsInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DescribeAllManagedProductsInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -77,12 +76,13 @@ impl DescribeAllManagedProductsInputBuilder {
         &self.scope
     }
     /// Consumes the builder and constructs a [`DescribeAllManagedProductsInput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput { scope: self.scope })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput {
+                scope: self.scope
+                ,
+            }
+        )
     }
 }
+

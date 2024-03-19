@@ -3,7 +3,7 @@
 /// <p>The single sign-on details of the user profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SsoUserProfileDetails {
+pub struct SsoUserProfileDetails  {
     /// <p>The username included in the single sign-on details of the user profile.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The first name included in the single sign-on details of the user profile.</p>
@@ -11,21 +11,21 @@ pub struct SsoUserProfileDetails {
     /// <p>The last name included in the single sign-on details of the user profile.</p>
     pub last_name: ::std::option::Option<::std::string::String>,
 }
-impl SsoUserProfileDetails {
+impl  SsoUserProfileDetails  {
     /// <p>The username included in the single sign-on details of the user profile.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The first name included in the single sign-on details of the user profile.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name included in the single sign-on details of the user profile.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for SsoUserProfileDetails {
+impl  ::std::fmt::Debug for SsoUserProfileDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SsoUserProfileDetails");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl SsoUserProfileDetailsBuilder {
     }
     /// <p>The username included in the single sign-on details of the user profile.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username included in the single sign-on details of the user profile.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl SsoUserProfileDetailsBuilder {
     }
     /// <p>The first name included in the single sign-on details of the user profile.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name included in the single sign-on details of the user profile.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl SsoUserProfileDetailsBuilder {
     }
     /// <p>The last name included in the single sign-on details of the user profile.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name included in the single sign-on details of the user profile.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl SsoUserProfileDetailsBuilder {
     /// Consumes the builder and constructs a [`SsoUserProfileDetails`](crate::types::SsoUserProfileDetails).
     pub fn build(self) -> crate::types::SsoUserProfileDetails {
         crate::types::SsoUserProfileDetails {
-            username: self.username,
-            first_name: self.first_name,
-            last_name: self.last_name,
+            username: self.username
+            ,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for SsoUserProfileDetailsBuilder {
         formatter.finish()
     }
 }
+

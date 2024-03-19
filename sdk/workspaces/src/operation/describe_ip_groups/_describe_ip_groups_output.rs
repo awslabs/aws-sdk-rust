@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpGroupsOutput {
+pub struct DescribeIpGroupsOutput  {
     /// <p>Information about the IP access control groups.</p>
-    pub result: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
+    pub result: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspacesIpGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeIpGroupsOutput {
+impl  DescribeIpGroupsOutput  {
     /// <p>Information about the IP access control groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result.is_none()`.
-    pub fn result(&self) -> &[crate::types::WorkspacesIpGroup] {
-        self.result.as_deref().unwrap_or_default()
+    pub fn result(&self) -> & [crate::types::WorkspacesIpGroup] {
+        self.result.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIpGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIpGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput).
     pub fn builder() -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeIpGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpGroupsOutputBuilder {
-    pub(crate) result: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
+    pub(crate) result: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspacesIpGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeIpGroupsOutputBuilder {
     /// <p>Information about the IP access control groups.</p>
     pub fn result(mut self, input: crate::types::WorkspacesIpGroup) -> Self {
         let mut v = self.result.unwrap_or_default();
-        v.push(input);
-        self.result = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IP access control groups.</p>
-    pub fn set_result(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>) -> Self {
-        self.result = input;
-        self
+    pub fn set_result(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspacesIpGroup>>) -> Self {
+        self.result = input; self
     }
     /// <p>Information about the IP access control groups.</p>
-    pub fn get_result(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>> {
+    pub fn get_result(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkspacesIpGroup>> {
         &self.result
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl DescribeIpGroupsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput).
     pub fn build(self) -> crate::operation::describe_ip_groups::DescribeIpGroupsOutput {
         crate::operation::describe_ip_groups::DescribeIpGroupsOutput {
-            result: self.result,
-            next_token: self.next_token,
+            result: self.result
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

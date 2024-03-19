@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAffectedEntitiesForOrganizationInput {
+pub struct DescribeAffectedEntitiesForOrganizationInput  {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
-    pub organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub organization_entity_filters: ::std::option::Option<::std::vec::Vec::<crate::types::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -13,22 +13,23 @@ pub struct DescribeAffectedEntitiesForOrganizationInput {
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
-    pub organization_entity_account_filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>>,
+    pub organization_entity_account_filters: ::std::option::Option<::std::vec::Vec::<crate::types::EntityAccountFilter>>,
 }
-impl DescribeAffectedEntitiesForOrganizationInput {
+impl  DescribeAffectedEntitiesForOrganizationInput  {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_filters.is_none()`.
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
-    pub fn organization_entity_filters(&self) -> &[crate::types::EventAccountFilter] {
-        self.organization_entity_filters.as_deref().unwrap_or_default()
+    pub fn organization_entity_filters(&self) -> & [crate::types::EventAccountFilter] {
+        self.organization_entity_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -36,10 +37,11 @@ impl DescribeAffectedEntitiesForOrganizationInput {
         self.max_results
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_account_filters.is_none()`.
-    pub fn organization_entity_account_filters(&self) -> &[crate::types::EntityAccountFilter] {
-        self.organization_entity_account_filters.as_deref().unwrap_or_default()
+    pub fn organization_entity_account_filters(&self) -> & [crate::types::EntityAccountFilter] {
+        self.organization_entity_account_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
@@ -53,11 +55,11 @@ impl DescribeAffectedEntitiesForOrganizationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesForOrganizationInputBuilder {
-    pub(crate) organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub(crate) organization_entity_filters: ::std::option::Option<::std::vec::Vec::<crate::types::EventAccountFilter>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) organization_entity_account_filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>>,
+    pub(crate) organization_entity_account_filters: ::std::option::Option<::std::vec::Vec::<crate::types::EntityAccountFilter>>,
 }
 impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     /// Appends an item to `organization_entity_filters`.
@@ -68,19 +70,18 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
     pub fn organization_entity_filters(mut self, input: crate::types::EventAccountFilter) -> Self {
         let mut v = self.organization_entity_filters.unwrap_or_default();
-        v.push(input);
-        self.organization_entity_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.organization_entity_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
-    pub fn set_organization_entity_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>) -> Self {
-        self.organization_entity_filters = input;
-        self
+    pub fn set_organization_entity_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventAccountFilter>>) -> Self {
+        self.organization_entity_filters = input; self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
-    pub fn get_organization_entity_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+    pub fn get_organization_entity_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventAccountFilter>> {
         &self.organization_entity_filters
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -90,8 +91,7 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +104,7 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -132,37 +130,34 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
     pub fn organization_entity_account_filters(mut self, input: crate::types::EntityAccountFilter) -> Self {
         let mut v = self.organization_entity_account_filters.unwrap_or_default();
-        v.push(input);
-        self.organization_entity_account_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.organization_entity_account_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
-    pub fn set_organization_entity_account_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>>,
-    ) -> Self {
-        self.organization_entity_account_filters = input;
-        self
+    pub fn set_organization_entity_account_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityAccountFilter>>) -> Self {
+        self.organization_entity_account_filters = input; self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
-    pub fn get_organization_entity_account_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>> {
+    pub fn get_organization_entity_account_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityAccountFilter>> {
         &self.organization_entity_account_filters
     }
     /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput {
-                organization_entity_filters: self.organization_entity_filters,
-                locale: self.locale,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                organization_entity_account_filters: self.organization_entity_account_filters,
-            },
+                organization_entity_filters: self.organization_entity_filters
+                ,
+                locale: self.locale
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                organization_entity_account_filters: self.organization_entity_account_filters
+                ,
+            }
         )
     }
 }
+

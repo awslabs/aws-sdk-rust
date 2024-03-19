@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBotOutput {
+pub struct GetBotOutput  {
     /// <p>The name of the bot.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
+    pub intents: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub enable_model_improvements: ::std::option::Option<bool>,
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
@@ -46,20 +46,21 @@ pub struct GetBotOutput {
     pub detect_sentiment: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl GetBotOutput {
+impl  GetBotOutput  {
     /// <p>The name of the bot.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
-    pub fn intents(&self) -> &[crate::types::Intent] {
-        self.intents.as_deref().unwrap_or_default()
+    pub fn intents(&self) -> & [crate::types::Intent] {
+        self.intents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub fn enable_model_improvements(&self) -> ::std::option::Option<bool> {
@@ -70,11 +71,11 @@ impl GetBotOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
-    pub fn clarification_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
+    pub fn clarification_prompt(&self) -> ::std::option::Option<& crate::types::Prompt> {
         self.clarification_prompt.as_ref()
     }
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
-    pub fn abort_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn abort_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.abort_statement.as_ref()
     }
     /// <p>The status of the bot.</p>
@@ -82,19 +83,19 @@ impl GetBotOutput {
     /// <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
     /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the bot was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
@@ -102,19 +103,19 @@ impl GetBotOutput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
-    pub fn voice_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_id(&self) -> ::std::option::Option<& str> {
         self.voice_id.as_deref()
     }
     /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The target locale for the bot.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
@@ -128,10 +129,10 @@ impl GetBotOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetBotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBotOutput {
     /// Creates a new builder-style object to manufacture [`GetBotOutput`](crate::operation::get_bot::GetBotOutput).
     pub fn builder() -> crate::operation::get_bot::builders::GetBotOutputBuilder {
@@ -145,7 +146,7 @@ impl GetBotOutput {
 pub struct GetBotOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
+    pub(crate) intents: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>,
     pub(crate) enable_model_improvements: ::std::option::Option<bool>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) clarification_prompt: ::std::option::Option<crate::types::Prompt>,
@@ -171,8 +172,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The name of the bot.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bot.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +185,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>A description of the bot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the bot.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,17 +198,16 @@ impl GetBotOutputBuilder {
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
     pub fn intents(mut self, input: crate::types::Intent) -> Self {
         let mut v = self.intents.unwrap_or_default();
-        v.push(input);
-        self.intents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.intents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
-        self.intents = input;
-        self
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>) -> Self {
+        self.intents = input; self
     }
     /// <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intent>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Intent>> {
         &self.intents
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
@@ -219,8 +217,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub fn set_enable_model_improvements(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_model_improvements = input;
-        self
+        self.enable_model_improvements = input; self
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub fn get_enable_model_improvements(&self) -> &::std::option::Option<bool> {
@@ -233,8 +230,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.nlu_intent_confidence_threshold = input;
-        self
+        self.nlu_intent_confidence_threshold = input; self
     }
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
     pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
@@ -247,8 +243,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
-        self.clarification_prompt = input;
-        self
+        self.clarification_prompt = input; self
     }
     /// <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn get_clarification_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
@@ -261,8 +256,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
     pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.abort_statement = input;
-        self
+        self.abort_statement = input; self
     }
     /// <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
     pub fn get_abort_statement(&self) -> &::std::option::Option<crate::types::Statement> {
@@ -283,8 +277,7 @@ impl GetBotOutputBuilder {
     /// <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>
     /// <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the bot.</p>
     /// <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>
@@ -301,8 +294,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +307,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -329,8 +320,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The date that the bot was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date that the bot was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -343,8 +333,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -357,8 +346,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_id = input;
-        self
+        self.voice_id = input; self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +359,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -385,8 +372,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,8 +385,7 @@ impl GetBotOutputBuilder {
     }
     /// <p>The target locale for the bot.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The target locale for the bot.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
@@ -415,8 +400,7 @@ impl GetBotOutputBuilder {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn set_child_directed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.child_directed = input;
-        self
+        self.child_directed = input; self
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
@@ -430,44 +414,62 @@ impl GetBotOutputBuilder {
     }
     /// <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
     pub fn set_detect_sentiment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_sentiment = input;
-        self
+        self.detect_sentiment = input; self
     }
     /// <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
     pub fn get_detect_sentiment(&self) -> &::std::option::Option<bool> {
         &self.detect_sentiment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBotOutput`](crate::operation::get_bot::GetBotOutput).
     pub fn build(self) -> crate::operation::get_bot::GetBotOutput {
         crate::operation::get_bot::GetBotOutput {
-            name: self.name,
-            description: self.description,
-            intents: self.intents,
-            enable_model_improvements: self.enable_model_improvements,
-            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-            clarification_prompt: self.clarification_prompt,
-            abort_statement: self.abort_statement,
-            status: self.status,
-            failure_reason: self.failure_reason,
-            last_updated_date: self.last_updated_date,
-            created_date: self.created_date,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            voice_id: self.voice_id,
-            checksum: self.checksum,
-            version: self.version,
-            locale: self.locale,
-            child_directed: self.child_directed,
-            detect_sentiment: self.detect_sentiment,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            intents: self.intents
+            ,
+            enable_model_improvements: self.enable_model_improvements
+            ,
+            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+            ,
+            clarification_prompt: self.clarification_prompt
+            ,
+            abort_statement: self.abort_statement
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            created_date: self.created_date
+            ,
+            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+            ,
+            voice_id: self.voice_id
+            ,
+            checksum: self.checksum
+            ,
+            version: self.version
+            ,
+            locale: self.locale
+            ,
+            child_directed: self.child_directed
+            ,
+            detect_sentiment: self.detect_sentiment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

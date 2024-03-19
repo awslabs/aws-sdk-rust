@@ -3,13 +3,13 @@
 /// <p>The recurrence of the reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BusinessReportRecurrence {
+pub struct BusinessReportRecurrence  {
     /// <p>The start date.</p>
     pub start_date: ::std::option::Option<::std::string::String>,
 }
-impl BusinessReportRecurrence {
+impl  BusinessReportRecurrence  {
     /// <p>The start date.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<& str> {
         self.start_date.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BusinessReportRecurrenceBuilder {
     }
     /// <p>The start date.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The start date.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl BusinessReportRecurrenceBuilder {
     }
     /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::types::BusinessReportRecurrence).
     pub fn build(self) -> crate::types::BusinessReportRecurrence {
-        crate::types::BusinessReportRecurrence { start_date: self.start_date }
+        crate::types::BusinessReportRecurrence {
+            start_date: self.start_date
+            ,
+        }
     }
 }
+

@@ -20,3 +20,4 @@ pub use crate::types::_graph_data_summary::GraphDataSummaryBuilder;
 pub use crate::types::_edge_structure::EdgeStructureBuilder;
 
 pub use crate::types::_node_structure::NodeStructureBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRightsizingRecommendationInput {
+pub struct GetRightsizingRecommendationInput  {
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
@@ -66,7 +66,7 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetRightsizingRecommendationInput {
+impl  GetRightsizingRecommendationInput  {
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
@@ -120,15 +120,15 @@ impl GetRightsizingRecommendationInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RightsizingRecommendationConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RightsizingRecommendationConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -136,7 +136,7 @@ impl GetRightsizingRecommendationInput {
         self.page_size
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
@@ -269,8 +269,7 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -335,8 +334,7 @@ impl GetRightsizingRecommendationInputBuilder {
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
@@ -350,8 +348,7 @@ impl GetRightsizingRecommendationInputBuilder {
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +361,7 @@ impl GetRightsizingRecommendationInputBuilder {
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -378,26 +374,28 @@ impl GetRightsizingRecommendationInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetRightsizingRecommendationInput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput {
-            filter: self.filter,
-            configuration: self.configuration,
-            service: self.service,
-            page_size: self.page_size,
-            next_page_token: self.next_page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput {
+                filter: self.filter
+                ,
+                configuration: self.configuration
+                ,
+                service: self.service
+                ,
+                page_size: self.page_size
+                ,
+                next_page_token: self.next_page_token
+                ,
+            }
+        )
     }
 }
+

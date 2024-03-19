@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a license for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseConfiguration {
+pub struct LicenseConfiguration  {
     /// <p>The current number of cores associated with the instance.</p>
     pub number_of_cores: i32,
     /// <p>The instance type used in the license.</p>
@@ -19,42 +19,43 @@ pub struct LicenseConfiguration {
     /// <p>The version of the license for the application that runs on the instance.</p>
     pub license_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
-    pub metrics_source: ::std::option::Option<::std::vec::Vec<crate::types::MetricSource>>,
+    pub metrics_source: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSource>>,
 }
-impl LicenseConfiguration {
+impl  LicenseConfiguration  {
     /// <p>The current number of cores associated with the instance.</p>
     pub fn number_of_cores(&self) -> i32 {
         self.number_of_cores
     }
     /// <p>The instance type used in the license.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The operating system of the instance.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system(&self) -> ::std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The edition of the license for the application that runs on the instance.</p>
-    pub fn license_edition(&self) -> ::std::option::Option<&crate::types::LicenseEdition> {
+    pub fn license_edition(&self) -> ::std::option::Option<& crate::types::LicenseEdition> {
         self.license_edition.as_ref()
     }
     /// <p>The name of the license for the application that runs on the instance.</p>
-    pub fn license_name(&self) -> ::std::option::Option<&crate::types::LicenseName> {
+    pub fn license_name(&self) -> ::std::option::Option<& crate::types::LicenseName> {
         self.license_name.as_ref()
     }
     /// <p>The license type associated with the instance.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&crate::types::LicenseModel> {
+    pub fn license_model(&self) -> ::std::option::Option<& crate::types::LicenseModel> {
         self.license_model.as_ref()
     }
     /// <p>The version of the license for the application that runs on the instance.</p>
-    pub fn license_version(&self) -> ::std::option::Option<&str> {
+    pub fn license_version(&self) -> ::std::option::Option<& str> {
         self.license_version.as_deref()
     }
     /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_source.is_none()`.
-    pub fn metrics_source(&self) -> &[crate::types::MetricSource] {
-        self.metrics_source.as_deref().unwrap_or_default()
+    pub fn metrics_source(&self) -> & [crate::types::MetricSource] {
+        self.metrics_source.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LicenseConfiguration {
@@ -75,7 +76,7 @@ pub struct LicenseConfigurationBuilder {
     pub(crate) license_name: ::std::option::Option<crate::types::LicenseName>,
     pub(crate) license_model: ::std::option::Option<crate::types::LicenseModel>,
     pub(crate) license_version: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics_source: ::std::option::Option<::std::vec::Vec<crate::types::MetricSource>>,
+    pub(crate) metrics_source: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSource>>,
 }
 impl LicenseConfigurationBuilder {
     /// <p>The current number of cores associated with the instance.</p>
@@ -85,8 +86,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The current number of cores associated with the instance.</p>
     pub fn set_number_of_cores(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_cores = input;
-        self
+        self.number_of_cores = input; self
     }
     /// <p>The current number of cores associated with the instance.</p>
     pub fn get_number_of_cores(&self) -> &::std::option::Option<i32> {
@@ -99,8 +99,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The instance type used in the license.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type used in the license.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The operating system of the instance.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The operating system of the instance.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The edition of the license for the application that runs on the instance.</p>
     pub fn set_license_edition(mut self, input: ::std::option::Option<crate::types::LicenseEdition>) -> Self {
-        self.license_edition = input;
-        self
+        self.license_edition = input; self
     }
     /// <p>The edition of the license for the application that runs on the instance.</p>
     pub fn get_license_edition(&self) -> &::std::option::Option<crate::types::LicenseEdition> {
@@ -141,8 +138,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The name of the license for the application that runs on the instance.</p>
     pub fn set_license_name(mut self, input: ::std::option::Option<crate::types::LicenseName>) -> Self {
-        self.license_name = input;
-        self
+        self.license_name = input; self
     }
     /// <p>The name of the license for the application that runs on the instance.</p>
     pub fn get_license_name(&self) -> &::std::option::Option<crate::types::LicenseName> {
@@ -155,8 +151,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The license type associated with the instance.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<crate::types::LicenseModel>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The license type associated with the instance.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
@@ -169,8 +164,7 @@ impl LicenseConfigurationBuilder {
     }
     /// <p>The version of the license for the application that runs on the instance.</p>
     pub fn set_license_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_version = input;
-        self
+        self.license_version = input; self
     }
     /// <p>The version of the license for the application that runs on the instance.</p>
     pub fn get_license_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,30 +177,39 @@ impl LicenseConfigurationBuilder {
     /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
     pub fn metrics_source(mut self, input: crate::types::MetricSource) -> Self {
         let mut v = self.metrics_source.unwrap_or_default();
-        v.push(input);
-        self.metrics_source = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics_source = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
-    pub fn set_metrics_source(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSource>>) -> Self {
-        self.metrics_source = input;
-        self
+    pub fn set_metrics_source(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSource>>) -> Self {
+        self.metrics_source = input; self
     }
     /// <p>The list of metric sources required to generate recommendations for commercial software licenses.</p>
-    pub fn get_metrics_source(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSource>> {
+    pub fn get_metrics_source(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricSource>> {
         &self.metrics_source
     }
     /// Consumes the builder and constructs a [`LicenseConfiguration`](crate::types::LicenseConfiguration).
     pub fn build(self) -> crate::types::LicenseConfiguration {
         crate::types::LicenseConfiguration {
-            number_of_cores: self.number_of_cores.unwrap_or_default(),
-            instance_type: self.instance_type,
-            operating_system: self.operating_system,
-            license_edition: self.license_edition,
-            license_name: self.license_name,
-            license_model: self.license_model,
-            license_version: self.license_version,
-            metrics_source: self.metrics_source,
+            number_of_cores: self.number_of_cores
+                .unwrap_or_default()
+            ,
+            instance_type: self.instance_type
+            ,
+            operating_system: self.operating_system
+            ,
+            license_edition: self.license_edition
+            ,
+            license_name: self.license_name
+            ,
+            license_model: self.license_model
+            ,
+            license_version: self.license_version
+            ,
+            metrics_source: self.metrics_source
+            ,
         }
     }
 }
+

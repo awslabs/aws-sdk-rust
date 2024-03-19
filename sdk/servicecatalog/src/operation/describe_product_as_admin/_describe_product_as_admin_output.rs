@@ -2,54 +2,58 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProductAsAdminOutput {
+pub struct DescribeProductAsAdminOutput  {
     /// <p>Information about the product view.</p>
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
+    pub provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifactSummary>>,
     /// <p>Information about the tags associated with the product.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
+    pub tag_options: ::std::option::Option<::std::vec::Vec::<crate::types::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
-    pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
+    pub budgets: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>,
     _request_id: Option<String>,
 }
-impl DescribeProductAsAdminOutput {
+impl  DescribeProductAsAdminOutput  {
     /// <p>Information about the product view.</p>
-    pub fn product_view_detail(&self) -> ::std::option::Option<&crate::types::ProductViewDetail> {
+    pub fn product_view_detail(&self) -> ::std::option::Option<& crate::types::ProductViewDetail> {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_summaries.is_none()`.
-    pub fn provisioning_artifact_summaries(&self) -> &[crate::types::ProvisioningArtifactSummary] {
-        self.provisioning_artifact_summaries.as_deref().unwrap_or_default()
+    pub fn provisioning_artifact_summaries(&self) -> & [crate::types::ProvisioningArtifactSummary] {
+        self.provisioning_artifact_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the tags associated with the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_options.is_none()`.
-    pub fn tag_options(&self) -> &[crate::types::TagOptionDetail] {
-        self.tag_options.as_deref().unwrap_or_default()
+    pub fn tag_options(&self) -> & [crate::types::TagOptionDetail] {
+        self.tag_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the associated budgets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
-    pub fn budgets(&self) -> &[crate::types::BudgetDetail] {
-        self.budgets.as_deref().unwrap_or_default()
+    pub fn budgets(&self) -> & [crate::types::BudgetDetail] {
+        self.budgets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProductAsAdminOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProductAsAdminOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
     pub fn builder() -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminOutputBuilder {
@@ -62,10 +66,10 @@ impl DescribeProductAsAdminOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductAsAdminOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
-    pub(crate) provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
-    pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
+    pub(crate) provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifactSummary>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) tag_options: ::std::option::Option<::std::vec::Vec::<crate::types::TagOptionDetail>>,
+    pub(crate) budgets: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeProductAsAdminOutputBuilder {
@@ -76,8 +80,7 @@ impl DescribeProductAsAdminOutputBuilder {
     }
     /// <p>Information about the product view.</p>
     pub fn set_product_view_detail(mut self, input: ::std::option::Option<crate::types::ProductViewDetail>) -> Self {
-        self.product_view_detail = input;
-        self
+        self.product_view_detail = input; self
     }
     /// <p>Information about the product view.</p>
     pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
@@ -90,20 +93,16 @@ impl DescribeProductAsAdminOutputBuilder {
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
     pub fn provisioning_artifact_summaries(mut self, input: crate::types::ProvisioningArtifactSummary) -> Self {
         let mut v = self.provisioning_artifact_summaries.unwrap_or_default();
-        v.push(input);
-        self.provisioning_artifact_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_artifact_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn set_provisioning_artifact_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,
-    ) -> Self {
-        self.provisioning_artifact_summaries = input;
-        self
+    pub fn set_provisioning_artifact_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifactSummary>>) -> Self {
+        self.provisioning_artifact_summaries = input; self
     }
     /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    pub fn get_provisioning_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>> {
+    pub fn get_provisioning_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningArtifactSummary>> {
         &self.provisioning_artifact_summaries
     }
     /// Appends an item to `tags`.
@@ -113,17 +112,16 @@ impl DescribeProductAsAdminOutputBuilder {
     /// <p>Information about the tags associated with the product.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `tag_options`.
@@ -133,17 +131,16 @@ impl DescribeProductAsAdminOutputBuilder {
     /// <p>Information about the TagOptions associated with the product.</p>
     pub fn tag_options(mut self, input: crate::types::TagOptionDetail) -> Self {
         let mut v = self.tag_options.unwrap_or_default();
-        v.push(input);
-        self.tag_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub fn set_tag_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>) -> Self {
-        self.tag_options = input;
-        self
+    pub fn set_tag_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagOptionDetail>>) -> Self {
+        self.tag_options = input; self
     }
     /// <p>Information about the TagOptions associated with the product.</p>
-    pub fn get_tag_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
+    pub fn get_tag_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagOptionDetail>> {
         &self.tag_options
     }
     /// Appends an item to `budgets`.
@@ -153,37 +150,42 @@ impl DescribeProductAsAdminOutputBuilder {
     /// <p>Information about the associated budgets.</p>
     pub fn budgets(mut self, input: crate::types::BudgetDetail) -> Self {
         let mut v = self.budgets.unwrap_or_default();
-        v.push(input);
-        self.budgets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.budgets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
-        self.budgets = input;
-        self
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>>) -> Self {
+        self.budgets = input; self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BudgetDetail>> {
         &self.budgets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
     pub fn build(self) -> crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput {
         crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput {
-            product_view_detail: self.product_view_detail,
-            provisioning_artifact_summaries: self.provisioning_artifact_summaries,
-            tags: self.tags,
-            tag_options: self.tag_options,
-            budgets: self.budgets,
+            product_view_detail: self.product_view_detail
+            ,
+            provisioning_artifact_summaries: self.provisioning_artifact_summaries
+            ,
+            tags: self.tags
+            ,
+            tag_options: self.tag_options
+            ,
+            budgets: self.budgets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

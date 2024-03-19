@@ -3,13 +3,13 @@
 /// <p>The execute command configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterConfiguration {
+pub struct ClusterConfiguration  {
     /// <p>The details of the execute command configuration.</p>
     pub execute_command_configuration: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
-impl ClusterConfiguration {
+impl  ClusterConfiguration  {
     /// <p>The details of the execute command configuration.</p>
-    pub fn execute_command_configuration(&self) -> ::std::option::Option<&crate::types::ExecuteCommandConfiguration> {
+    pub fn execute_command_configuration(&self) -> ::std::option::Option<& crate::types::ExecuteCommandConfiguration> {
         self.execute_command_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ClusterConfigurationBuilder {
     }
     /// <p>The details of the execute command configuration.</p>
     pub fn set_execute_command_configuration(mut self, input: ::std::option::Option<crate::types::ExecuteCommandConfiguration>) -> Self {
-        self.execute_command_configuration = input;
-        self
+        self.execute_command_configuration = input; self
     }
     /// <p>The details of the execute command configuration.</p>
     pub fn get_execute_command_configuration(&self) -> &::std::option::Option<crate::types::ExecuteCommandConfiguration> {
@@ -44,7 +43,9 @@ impl ClusterConfigurationBuilder {
     /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::types::ClusterConfiguration).
     pub fn build(self) -> crate::types::ClusterConfiguration {
         crate::types::ClusterConfiguration {
-            execute_command_configuration: self.execute_command_configuration,
+            execute_command_configuration: self.execute_command_configuration
+            ,
         }
     }
 }
+

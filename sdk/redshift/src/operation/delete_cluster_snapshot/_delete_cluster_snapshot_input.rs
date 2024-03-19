@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterSnapshotInput {
+pub struct DeleteClusterSnapshotInput  {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,15 @@ pub struct DeleteClusterSnapshotInput {
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterSnapshotInput {
+impl  DeleteClusterSnapshotInput  {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteClusterSnapshotInputBuilder {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
@@ -65,8 +64,7 @@ impl DeleteClusterSnapshotInputBuilder {
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_cluster_identifier = input;
-        self
+        self.snapshot_cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
@@ -74,13 +72,15 @@ impl DeleteClusterSnapshotInputBuilder {
         &self.snapshot_cluster_identifier
     }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-            snapshot_identifier: self.snapshot_identifier,
-            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_cluster_identifier: self.snapshot_cluster_identifier
+                ,
+            }
+        )
     }
 }
+

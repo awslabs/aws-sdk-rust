@@ -3,19 +3,19 @@
 /// <p>Includes information about tags you define to assign tagged resources to a backup plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionParameter {
+pub struct ConditionParameter  {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub condition_key: ::std::option::Option<::std::string::String>,
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub condition_value: ::std::option::Option<::std::string::String>,
 }
-impl ConditionParameter {
+impl  ConditionParameter  {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn condition_key(&self) -> ::std::option::Option<&str> {
+    pub fn condition_key(&self) -> ::std::option::Option<& str> {
         self.condition_key.as_deref()
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn condition_value(&self) -> ::std::option::Option<&str> {
+    pub fn condition_value(&self) -> ::std::option::Option<& str> {
         self.condition_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ConditionParameterBuilder {
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub fn set_condition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_key = input;
-        self
+        self.condition_key = input; self
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub fn get_condition_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ConditionParameterBuilder {
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn set_condition_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_value = input;
-        self
+        self.condition_value = input; self
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn get_condition_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ConditionParameterBuilder {
     /// Consumes the builder and constructs a [`ConditionParameter`](crate::types::ConditionParameter).
     pub fn build(self) -> crate::types::ConditionParameter {
         crate::types::ConditionParameter {
-            condition_key: self.condition_key,
-            condition_value: self.condition_value,
+            condition_key: self.condition_key
+            ,
+            condition_value: self.condition_value
+            ,
         }
     }
 }
+

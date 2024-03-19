@@ -3,7 +3,7 @@
 /// <p>The proposed access control configuration for an Amazon EBS volume snapshot. You can propose a configuration for a new Amazon EBS volume snapshot or an Amazon EBS volume snapshot that you own by specifying the user IDs, groups, and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html">ModifySnapshotAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsSnapshotConfiguration {
+pub struct EbsSnapshotConfiguration  {
     /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct EbsSnapshotConfiguration {
     /// <li>
     /// <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p></li>
     /// </ul>
-    pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct EbsSnapshotConfiguration {
     /// <li>
     /// <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p></li>
     /// </ul>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <ul>
     /// <li>
@@ -33,7 +33,7 @@ pub struct EbsSnapshotConfiguration {
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl EbsSnapshotConfiguration {
+impl  EbsSnapshotConfiguration  {
     /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
     /// <ul>
     /// <li>
@@ -43,10 +43,11 @@ impl EbsSnapshotConfiguration {
     /// <li>
     /// <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
-    pub fn user_ids(&self) -> &[::std::string::String] {
-        self.user_ids.as_deref().unwrap_or_default()
+    pub fn user_ids(&self) -> & [::std::string::String] {
+        self.user_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
     /// <ul>
@@ -57,10 +58,11 @@ impl EbsSnapshotConfiguration {
     /// <li>
     /// <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <ul>
@@ -69,7 +71,7 @@ impl EbsSnapshotConfiguration {
     /// <li>
     /// <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -84,8 +86,8 @@ impl EbsSnapshotConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsSnapshotConfigurationBuilder {
-    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsSnapshotConfigurationBuilder {
@@ -104,9 +106,9 @@ impl EbsSnapshotConfigurationBuilder {
     /// </ul>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
     /// <ul>
@@ -117,9 +119,8 @@ impl EbsSnapshotConfigurationBuilder {
     /// <li>
     /// <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p></li>
     /// </ul>
-    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
     /// <ul>
@@ -130,7 +131,7 @@ impl EbsSnapshotConfigurationBuilder {
     /// <li>
     /// <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p></li>
     /// </ul>
-    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids
     }
     /// Appends an item to `groups`.
@@ -148,9 +149,9 @@ impl EbsSnapshotConfigurationBuilder {
     /// </ul>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
     /// <ul>
@@ -161,9 +162,8 @@ impl EbsSnapshotConfigurationBuilder {
     /// <li>
     /// <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p></li>
     /// </ul>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
     /// <ul>
@@ -174,7 +174,7 @@ impl EbsSnapshotConfigurationBuilder {
     /// <li>
     /// <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p></li>
     /// </ul>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -196,8 +196,7 @@ impl EbsSnapshotConfigurationBuilder {
     /// <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <ul>
@@ -212,9 +211,13 @@ impl EbsSnapshotConfigurationBuilder {
     /// Consumes the builder and constructs a [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
     pub fn build(self) -> crate::types::EbsSnapshotConfiguration {
         crate::types::EbsSnapshotConfiguration {
-            user_ids: self.user_ids,
-            groups: self.groups,
-            kms_key_id: self.kms_key_id,
+            user_ids: self.user_ids
+            ,
+            groups: self.groups
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEnvironmentInput {
+pub struct CreateEnvironmentInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the environment.</p>
@@ -10,31 +10,32 @@ pub struct CreateEnvironmentInput {
     /// <p>A description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
+    pub monitors: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>,
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateEnvironmentInput {
+impl  CreateEnvironmentInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A name for the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
-    pub fn monitors(&self) -> &[crate::types::Monitor] {
-        self.monitors.as_deref().unwrap_or_default()
+    pub fn monitors(&self) -> & [crate::types::Monitor] {
+        self.monitors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,8 +53,8 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) monitors: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The application ID.</p>
@@ -64,8 +65,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>A name for the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>A description of the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +105,16 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
     pub fn monitors(mut self, input: crate::types::Monitor) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-        v.push(input);
-        self.monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
-        self.monitors = input;
-        self
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>) -> Self {
+        self.monitors = input; self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Monitor>> {
         &self.monitors
     }
     /// Adds a key-value pair to `tags`.
@@ -127,29 +124,34 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            application_id: self.application_id,
-            name: self.name,
-            description: self.description,
-            monitors: self.monitors,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment::CreateEnvironmentInput {
+                application_id: self.application_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                monitors: self.monitors
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

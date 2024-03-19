@@ -3,7 +3,7 @@
 /// <p>The dimension type field with numerical type columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumericalDimensionField {
+pub struct NumericalDimensionField  {
     /// <p>The custom field ID.</p>
     pub field_id: ::std::string::String,
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
@@ -13,22 +13,21 @@ pub struct NumericalDimensionField {
     /// <p>The format configuration of the field.</p>
     pub format_configuration: ::std::option::Option<crate::types::NumberFormatConfiguration>,
 }
-impl NumericalDimensionField {
+impl  NumericalDimensionField  {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::NumberFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<& crate::types::NumberFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The custom field ID.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -86,8 +83,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +96,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The format configuration of the field.</p>
     pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::NumberFormatConfiguration>) -> Self {
-        self.format_configuration = input;
-        self
+        self.format_configuration = input; self
     }
     /// <p>The format configuration of the field.</p>
     pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::NumberFormatConfiguration> {
@@ -111,16 +106,21 @@ impl NumericalDimensionFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::NumericalDimensionFieldBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::NumericalDimensionField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NumericalDimensionField {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building NumericalDimensionField",
-                )
-            })?,
-            column: self.column,
-            hierarchy_id: self.hierarchy_id,
-            format_configuration: self.format_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NumericalDimensionField {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building NumericalDimensionField")
+                    )?
+                ,
+                column: self.column
+                ,
+                hierarchy_id: self.hierarchy_id
+                ,
+                format_configuration: self.format_configuration
+                ,
+            }
+        )
     }
 }
+

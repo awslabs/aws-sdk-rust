@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncResourceOutput {
+pub struct SyncResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -11,25 +11,25 @@ pub struct SyncResourceOutput {
     pub action_taken: ::std::option::Option<crate::types::SyncAction>,
     _request_id: Option<String>,
 }
-impl SyncResourceOutput {
+impl  SyncResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
-    pub fn action_taken(&self) -> ::std::option::Option<&crate::types::SyncAction> {
+    pub fn action_taken(&self) -> ::std::option::Option<& crate::types::SyncAction> {
         self.action_taken.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SyncResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SyncResourceOutput {
     /// Creates a new builder-style object to manufacture [`SyncResourceOutput`](crate::operation::sync_resource::SyncResourceOutput).
     pub fn builder() -> crate::operation::sync_resource::builders::SyncResourceOutputBuilder {
@@ -54,8 +54,7 @@ impl SyncResourceOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl SyncResourceOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl SyncResourceOutputBuilder {
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
     pub fn set_action_taken(mut self, input: ::std::option::Option<crate::types::SyncAction>) -> Self {
-        self.action_taken = input;
-        self
+        self.action_taken = input; self
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
     pub fn get_action_taken(&self) -> &::std::option::Option<crate::types::SyncAction> {
         &self.action_taken
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SyncResourceOutput`](crate::operation::sync_resource::SyncResourceOutput).
     pub fn build(self) -> crate::operation::sync_resource::SyncResourceOutput {
         crate::operation::sync_resource::SyncResourceOutput {
-            application_arn: self.application_arn,
-            resource_arn: self.resource_arn,
-            action_taken: self.action_taken,
+            application_arn: self.application_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            action_taken: self.action_taken
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

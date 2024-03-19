@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnomalySubscriptionInput {
+pub struct DeleteAnomalySubscriptionInput  {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAnomalySubscriptionInput {
+impl  DeleteAnomalySubscriptionInput  {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
-    pub fn subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> ::std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteAnomalySubscriptionInputBuilder {
     }
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_arn = input;
-        self
+        self.subscription_arn = input; self
     }
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete.</p>
     pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_arn
     }
     /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionInput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput {
-            subscription_arn: self.subscription_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput {
+                subscription_arn: self.subscription_arn
+                ,
+            }
+        )
     }
 }
+

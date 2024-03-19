@@ -5,11 +5,11 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerCertificateConfiguration {
+pub struct ServerCertificateConfiguration  {
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
-    pub server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
+    pub server_certificates: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificate>>,
     /// <p>A list of scopes.</p>
-    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
+    pub scopes: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateScope>>,
     /// <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager (ACM) to use for outbound SSL/TLS inspection.</p>
     /// <p>The following limitations apply:</p>
     /// <ul>
@@ -24,18 +24,20 @@ pub struct ServerCertificateConfiguration {
     /// <p>When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also specify a <code>CertificateAuthorityArn</code> in <code>ServerCertificateConfiguration</code>.</p>
     pub check_certificate_revocation_status: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>,
 }
-impl ServerCertificateConfiguration {
+impl  ServerCertificateConfiguration  {
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_certificates.is_none()`.
-    pub fn server_certificates(&self) -> &[crate::types::ServerCertificate] {
-        self.server_certificates.as_deref().unwrap_or_default()
+    pub fn server_certificates(&self) -> & [crate::types::ServerCertificate] {
+        self.server_certificates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of scopes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
-    pub fn scopes(&self) -> &[crate::types::ServerCertificateScope] {
-        self.scopes.as_deref().unwrap_or_default()
+    pub fn scopes(&self) -> & [crate::types::ServerCertificateScope] {
+        self.scopes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager (ACM) to use for outbound SSL/TLS inspection.</p>
     /// <p>The following limitations apply:</p>
@@ -47,11 +49,11 @@ impl ServerCertificateConfiguration {
     /// </ul>
     /// <p>For more information about configuring certificates for outbound inspection, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
     /// <p>For information about working with certificates in ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also specify a <code>CertificateAuthorityArn</code> in <code>ServerCertificateConfiguration</code>.</p>
-    pub fn check_certificate_revocation_status(&self) -> ::std::option::Option<&crate::types::CheckCertificateRevocationStatusActions> {
+    pub fn check_certificate_revocation_status(&self) -> ::std::option::Option<& crate::types::CheckCertificateRevocationStatusActions> {
         self.check_certificate_revocation_status.as_ref()
     }
 }
@@ -66,8 +68,8 @@ impl ServerCertificateConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerCertificateConfigurationBuilder {
-    pub(crate) server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
-    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
+    pub(crate) server_certificates: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificate>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateScope>>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) check_certificate_revocation_status: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>,
 }
@@ -79,17 +81,16 @@ impl ServerCertificateConfigurationBuilder {
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
     pub fn server_certificates(mut self, input: crate::types::ServerCertificate) -> Self {
         let mut v = self.server_certificates.unwrap_or_default();
-        v.push(input);
-        self.server_certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
-    pub fn set_server_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>) -> Self {
-        self.server_certificates = input;
-        self
+    pub fn set_server_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificate>>) -> Self {
+        self.server_certificates = input; self
     }
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
-    pub fn get_server_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>> {
+    pub fn get_server_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificate>> {
         &self.server_certificates
     }
     /// Appends an item to `scopes`.
@@ -99,17 +100,16 @@ impl ServerCertificateConfigurationBuilder {
     /// <p>A list of scopes.</p>
     pub fn scopes(mut self, input: crate::types::ServerCertificateScope) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of scopes.</p>
-    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateScope>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>A list of scopes.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateScope>> {
         &self.scopes
     }
     /// <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager (ACM) to use for outbound SSL/TLS inspection.</p>
@@ -137,8 +137,7 @@ impl ServerCertificateConfigurationBuilder {
     /// <p>For more information about configuring certificates for outbound inspection, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using SSL/TLS certificates with certificates with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
     /// <p>For information about working with certificates in ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate within Certificate Manager (ACM) to use for outbound SSL/TLS inspection.</p>
     /// <p>The following limitations apply:</p>
@@ -159,12 +158,8 @@ impl ServerCertificateConfigurationBuilder {
         self
     }
     /// <p>When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also specify a <code>CertificateAuthorityArn</code> in <code>ServerCertificateConfiguration</code>.</p>
-    pub fn set_check_certificate_revocation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>,
-    ) -> Self {
-        self.check_certificate_revocation_status = input;
-        self
+    pub fn set_check_certificate_revocation_status(mut self, input: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>) -> Self {
+        self.check_certificate_revocation_status = input; self
     }
     /// <p>When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also specify a <code>CertificateAuthorityArn</code> in <code>ServerCertificateConfiguration</code>.</p>
     pub fn get_check_certificate_revocation_status(&self) -> &::std::option::Option<crate::types::CheckCertificateRevocationStatusActions> {
@@ -173,10 +168,15 @@ impl ServerCertificateConfigurationBuilder {
     /// Consumes the builder and constructs a [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
     pub fn build(self) -> crate::types::ServerCertificateConfiguration {
         crate::types::ServerCertificateConfiguration {
-            server_certificates: self.server_certificates,
-            scopes: self.scopes,
-            certificate_authority_arn: self.certificate_authority_arn,
-            check_certificate_revocation_status: self.check_certificate_revocation_status,
+            server_certificates: self.server_certificates
+            ,
+            scopes: self.scopes
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
+            check_certificate_revocation_status: self.check_certificate_revocation_status
+            ,
         }
     }
 }
+

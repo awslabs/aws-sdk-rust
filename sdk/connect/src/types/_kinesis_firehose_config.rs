@@ -3,15 +3,14 @@
 /// <p>Configuration information of a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseConfig {
+pub struct KinesisFirehoseConfig  {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub firehose_arn: ::std::string::String,
 }
-impl KinesisFirehoseConfig {
+impl  KinesisFirehoseConfig  {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub fn firehose_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.firehose_arn.deref()
+    pub fn firehose_arn(&self) -> & str {
+        use std::ops::Deref; self.firehose_arn.deref()
     }
 }
 impl KinesisFirehoseConfig {
@@ -36,8 +35,7 @@ impl KinesisFirehoseConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn set_firehose_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firehose_arn = input;
-        self
+        self.firehose_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn get_firehose_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KinesisFirehoseConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`firehose_arn`](crate::types::builders::KinesisFirehoseConfigBuilder::firehose_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisFirehoseConfig {
-            firehose_arn: self.firehose_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "firehose_arn",
-                    "firehose_arn was not specified but it is required when building KinesisFirehoseConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisFirehoseConfig {
+                firehose_arn: self.firehose_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("firehose_arn", "firehose_arn was not specified but it is required when building KinesisFirehoseConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProvisioningTemplateInput {
+pub struct CreateProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
@@ -20,21 +20,21 @@ pub struct CreateProvisioningTemplateInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
 }
-impl CreateProvisioningTemplateInput {
+impl  CreateProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The description of the provisioning template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
@@ -42,11 +42,11 @@ impl CreateProvisioningTemplateInput {
         self.enabled
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_role_arn(&self) -> ::std::option::Option<& str> {
         self.provisioning_role_arn.as_deref()
     }
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn pre_provisioning_hook(&self) -> ::std::option::Option<&crate::types::ProvisioningHook> {
+    pub fn pre_provisioning_hook(&self) -> ::std::option::Option<& crate::types::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
     /// <p>Metadata which can be used to manage the provisioning template.</p><note>
@@ -54,13 +54,14 @@ impl CreateProvisioningTemplateInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.r#type.as_ref()
     }
 }
@@ -81,7 +82,7 @@ pub struct CreateProvisioningTemplateInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) provisioning_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) r#type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl CreateProvisioningTemplateInputBuilder {
@@ -93,8 +94,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>The description of the provisioning template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the provisioning template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +134,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -151,8 +148,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_role_arn = input;
-        self
+        self.provisioning_role_arn = input; self
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn get_provisioning_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn set_pre_provisioning_hook(mut self, input: ::std::option::Option<crate::types::ProvisioningHook>) -> Self {
-        self.pre_provisioning_hook = input;
-        self
+        self.pre_provisioning_hook = input; self
     }
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
@@ -183,25 +178,24 @@ impl CreateProvisioningTemplateInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
@@ -211,29 +205,34 @@ impl CreateProvisioningTemplateInputBuilder {
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateInput`](crate::operation::create_provisioning_template::CreateProvisioningTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_provisioning_template::CreateProvisioningTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_provisioning_template::CreateProvisioningTemplateInput {
-            template_name: self.template_name,
-            description: self.description,
-            template_body: self.template_body,
-            enabled: self.enabled,
-            provisioning_role_arn: self.provisioning_role_arn,
-            pre_provisioning_hook: self.pre_provisioning_hook,
-            tags: self.tags,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_provisioning_template::CreateProvisioningTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_provisioning_template::CreateProvisioningTemplateInput {
+                template_name: self.template_name
+                ,
+                description: self.description
+                ,
+                template_body: self.template_body
+                ,
+                enabled: self.enabled
+                ,
+                provisioning_role_arn: self.provisioning_role_arn
+                ,
+                pre_provisioning_hook: self.pre_provisioning_hook
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

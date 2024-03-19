@@ -3,13 +3,13 @@
 /// <p>Contains the parameters for <code>DeleteJobQueue</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteJobQueueInput {
+pub struct DeleteJobQueueInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
     pub job_queue: ::std::option::Option<::std::string::String>,
 }
-impl DeleteJobQueueInput {
+impl  DeleteJobQueueInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
-    pub fn job_queue(&self) -> ::std::option::Option<&str> {
+    pub fn job_queue(&self) -> ::std::option::Option<& str> {
         self.job_queue.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DeleteJobQueueInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
     pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_queue = input;
-        self
+        self.job_queue = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_queue
     }
     /// Consumes the builder and constructs a [`DeleteJobQueueInput`](crate::operation::delete_job_queue::DeleteJobQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_job_queue::DeleteJobQueueInput { job_queue: self.job_queue })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_job_queue::DeleteJobQueueInput {
+                job_queue: self.job_queue
+                ,
+            }
+        )
     }
 }
+

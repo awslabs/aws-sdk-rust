@@ -6,7 +6,7 @@
 /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LanguageIdSettings {
+pub struct LanguageIdSettings  {
     /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
@@ -18,21 +18,21 @@ pub struct LanguageIdSettings {
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub language_model_name: ::std::option::Option<::std::string::String>,
 }
-impl LanguageIdSettings {
+impl  LanguageIdSettings  {
     /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
-    pub fn language_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn language_model_name(&self) -> ::std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl LanguageIdSettingsBuilder {
     /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to use when processing your transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -80,8 +79,7 @@ impl LanguageIdSettingsBuilder {
     /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>The name of the custom vocabulary filter you want to use when processing your transcription job. Custom vocabulary filter names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary filter must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary filter isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -98,8 +96,7 @@ impl LanguageIdSettingsBuilder {
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_model_name = input;
-        self
+        self.language_model_name = input; self
     }
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -109,9 +106,13 @@ impl LanguageIdSettingsBuilder {
     /// Consumes the builder and constructs a [`LanguageIdSettings`](crate::types::LanguageIdSettings).
     pub fn build(self) -> crate::types::LanguageIdSettings {
         crate::types::LanguageIdSettings {
-            vocabulary_name: self.vocabulary_name,
-            vocabulary_filter_name: self.vocabulary_filter_name,
-            language_model_name: self.language_model_name,
+            vocabulary_name: self.vocabulary_name
+            ,
+            vocabulary_filter_name: self.vocabulary_filter_name
+            ,
+            language_model_name: self.language_model_name
+            ,
         }
     }
 }
+

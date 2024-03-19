@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificateInput {
+pub struct DescribeCertificateInput  {
     /// <p>The identifier of the directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the certificate.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCertificateInput {
+impl  DescribeCertificateInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeCertificateInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeCertificateInputBuilder {
     }
     /// <p>The identifier of the certificate.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The identifier of the certificate.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_id
     }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
-            directory_id: self.directory_id,
-            certificate_id: self.certificate_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_certificate::DescribeCertificateInput {
+                directory_id: self.directory_id
+                ,
+                certificate_id: self.certificate_id
+                ,
+            }
+        )
     }
 }
+

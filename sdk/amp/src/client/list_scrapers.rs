@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScrapers`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(impl Into<String>, Vec::<String>)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::filters) / [`set_filters(Option<HashMap::<String, Vec::<String>>>)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::set_filters):<br>required: **false**<br><p>(Optional) A list of key-value pairs to filter the list of scrapers returned. Keys include <code>status</code>, <code>sourceArn</code>, <code>destinationArn</code>, and <code>alias</code>.</p> <p>Filters on the same key are <code>OR</code>'d together, and filters on different keys are <code>AND</code>'d together. For example, <code>status=ACTIVE&amp;status=CREATING&amp;alias=Test</code>, will return all scrapers that have the alias Test, and are either in status ACTIVE or CREATING.</p> <p>To find all active scrapers that are sending metrics to a specific Amazon Managed Service for Prometheus workspace, you would use the ARN of the workspace in a query:</p> <p><code>status=ACTIVE&amp;destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012</code></p> <p>If this is included, it filters the results to only the scrapers that match the filter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::set_max_results):<br>required: **false**<br><p>Optional) The maximum number of scrapers to return in one <code>ListScrapers</code> operation. The range is 1-1000.</p> <p>If you omit this parameter, the default of 100 is used.</p><br>
-    /// - On success, responds with [`ListScrapersOutput`](crate::operation::list_scrapers::ListScrapersOutput) with field(s):
+                            /// - On success, responds with [`ListScrapersOutput`](crate::operation::list_scrapers::ListScrapersOutput) with field(s):
     ///   - [`scrapers(Vec::<ScraperSummary>)`](crate::operation::list_scrapers::ListScrapersOutput::scrapers): <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scrapers::ListScrapersOutput::next_token): <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
-    /// - On failure, responds with [`SdkError<ListScrapersError>`](crate::operation::list_scrapers::ListScrapersError)
+                            /// - On failure, responds with [`SdkError<ListScrapersError>`](crate::operation::list_scrapers::ListScrapersError)
     pub fn list_scrapers(&self) -> crate::operation::list_scrapers::builders::ListScrapersFluentBuilder {
-        crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scrapers::builders::ListScrapersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

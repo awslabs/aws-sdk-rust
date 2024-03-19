@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventSourceOutput {
+pub struct DescribeEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SaaS partner that created the event source.</p>
@@ -17,37 +17,37 @@ pub struct DescribeEventSourceOutput {
     pub state: ::std::option::Option<crate::types::EventSourceState>,
     _request_id: Option<String>,
 }
-impl DescribeEventSourceOutput {
+impl  DescribeEventSourceOutput  {
     /// <p>The ARN of the partner event source.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the SaaS partner that created the event source.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the event source was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The name of the partner event source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EventSourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EventSourceState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput).
     pub fn builder() -> crate::operation::describe_event_source::builders::DescribeEventSourceOutputBuilder {
@@ -75,8 +75,7 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The ARN of the partner event source.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the partner event source.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The name of the SaaS partner that created the event source.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The name of the SaaS partner that created the event source.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The date and time that the event source was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the event source was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +114,7 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +127,7 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The name of the partner event source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the partner event source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,38 @@ impl DescribeEventSourceOutputBuilder {
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventSourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EventSourceState> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput).
     pub fn build(self) -> crate::operation::describe_event_source::DescribeEventSourceOutput {
         crate::operation::describe_event_source::DescribeEventSourceOutput {
-            arn: self.arn,
-            created_by: self.created_by,
-            creation_time: self.creation_time,
-            expiration_time: self.expiration_time,
-            name: self.name,
-            state: self.state,
+            arn: self.arn
+            ,
+            created_by: self.created_by
+            ,
+            creation_time: self.creation_time
+            ,
+            expiration_time: self.expiration_time
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Information about the automation configuration in single select questions. Automation options are evaluated in order, and the first matched option is applied. If no automation option matches, and there is a default option, then the default option is applied.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormSingleSelectQuestionAutomation {
+pub struct EvaluationFormSingleSelectQuestionAutomation  {
     /// <p>The automation options of the single select question.</p>
-    pub options: ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>,
+    pub options: ::std::vec::Vec::<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>,
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
     pub default_option_ref_id: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationFormSingleSelectQuestionAutomation {
+impl  EvaluationFormSingleSelectQuestionAutomation  {
     /// <p>The automation options of the single select question.</p>
-    pub fn options(&self) -> &[crate::types::EvaluationFormSingleSelectQuestionAutomationOption] {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & [crate::types::EvaluationFormSingleSelectQuestionAutomationOption] {
+        use std::ops::Deref; self.options.deref()
     }
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
-    pub fn default_option_ref_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_option_ref_id(&self) -> ::std::option::Option<& str> {
         self.default_option_ref_id.as_deref()
     }
 }
@@ -31,7 +30,7 @@ impl EvaluationFormSingleSelectQuestionAutomation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionAutomationBuilder {
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>,
     pub(crate) default_option_ref_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationFormSingleSelectQuestionAutomationBuilder {
@@ -42,20 +41,16 @@ impl EvaluationFormSingleSelectQuestionAutomationBuilder {
     /// <p>The automation options of the single select question.</p>
     pub fn options(mut self, input: crate::types::EvaluationFormSingleSelectQuestionAutomationOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The automation options of the single select question.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>The automation options of the single select question.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>> {
         &self.options
     }
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
@@ -65,8 +60,7 @@ impl EvaluationFormSingleSelectQuestionAutomationBuilder {
     }
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
     pub fn set_default_option_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_option_ref_id = input;
-        self
+        self.default_option_ref_id = input; self
     }
     /// <p>The identifier of the default answer option, when none of the automation options match the criteria.</p>
     pub fn get_default_option_ref_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +69,18 @@ impl EvaluationFormSingleSelectQuestionAutomationBuilder {
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionAutomation`](crate::types::EvaluationFormSingleSelectQuestionAutomation).
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::EvaluationFormSingleSelectQuestionAutomationBuilder::options)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionAutomation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationFormSingleSelectQuestionAutomation {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building EvaluationFormSingleSelectQuestionAutomation",
-                )
-            })?,
-            default_option_ref_id: self.default_option_ref_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionAutomation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::EvaluationFormSingleSelectQuestionAutomation {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building EvaluationFormSingleSelectQuestionAutomation")
+                    )?
+                ,
+                default_option_ref_id: self.default_option_ref_id
+                ,
+            }
+        )
     }
 }
+

@@ -26,11 +26,7 @@ impl SyncResourceFilter {
     /// Tries to convert the enum instance into [`ExternalId`](crate::types::SyncResourceFilter::ExternalId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_external_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SyncResourceFilter::ExternalId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SyncResourceFilter::ExternalId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ExternalId`](crate::types::SyncResourceFilter::ExternalId).
     pub fn is_external_id(&self) -> bool {
@@ -39,11 +35,7 @@ impl SyncResourceFilter {
     /// Tries to convert the enum instance into [`ResourceId`](crate::types::SyncResourceFilter::ResourceId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resource_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SyncResourceFilter::ResourceId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SyncResourceFilter::ResourceId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ResourceId`](crate::types::SyncResourceFilter::ResourceId).
     pub fn is_resource_id(&self) -> bool {
@@ -52,11 +44,7 @@ impl SyncResourceFilter {
     /// Tries to convert the enum instance into [`ResourceType`](crate::types::SyncResourceFilter::ResourceType), extracting the inner [`SyncResourceType`](crate::types::SyncResourceType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resource_type(&self) -> ::std::result::Result<&crate::types::SyncResourceType, &Self> {
-        if let SyncResourceFilter::ResourceType(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SyncResourceFilter::ResourceType(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ResourceType`](crate::types::SyncResourceFilter::ResourceType).
     pub fn is_resource_type(&self) -> bool {
@@ -65,11 +53,7 @@ impl SyncResourceFilter {
     /// Tries to convert the enum instance into [`State`](crate::types::SyncResourceFilter::State), extracting the inner [`SyncResourceState`](crate::types::SyncResourceState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_state(&self) -> ::std::result::Result<&crate::types::SyncResourceState, &Self> {
-        if let SyncResourceFilter::State(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SyncResourceFilter::State(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`State`](crate::types::SyncResourceFilter::State).
     pub fn is_state(&self) -> bool {
@@ -80,3 +64,4 @@ impl SyncResourceFilter {
         matches!(self, Self::Unknown)
     }
 }
+

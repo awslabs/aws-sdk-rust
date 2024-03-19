@@ -3,7 +3,7 @@
 /// <p>Summary information about a platform version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlatformSummary {
+pub struct PlatformSummary  {
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the person who created the platform version.</p>
@@ -17,9 +17,9 @@ pub struct PlatformSummary {
     /// <p>The version of the operating system used by the platform version.</p>
     pub operating_system_version: ::std::option::Option<::std::string::String>,
     /// <p>The tiers in which the platform version runs.</p>
-    pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_tier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The additions associated with the platform version.</p>
-    pub supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_addon_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
@@ -32,60 +32,62 @@ pub struct PlatformSummary {
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
-impl PlatformSummary {
+impl  PlatformSummary  {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    pub fn platform_owner(&self) -> ::std::option::Option<&str> {
+    pub fn platform_owner(&self) -> ::std::option::Option<& str> {
         self.platform_owner.as_deref()
     }
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
-    pub fn platform_status(&self) -> ::std::option::Option<&crate::types::PlatformStatus> {
+    pub fn platform_status(&self) -> ::std::option::Option<& crate::types::PlatformStatus> {
         self.platform_status.as_ref()
     }
     /// <p>The category of platform version.</p>
-    pub fn platform_category(&self) -> ::std::option::Option<&str> {
+    pub fn platform_category(&self) -> ::std::option::Option<& str> {
         self.platform_category.as_deref()
     }
     /// <p>The operating system used by the platform version.</p>
-    pub fn operating_system_name(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_name(&self) -> ::std::option::Option<& str> {
         self.operating_system_name.as_deref()
     }
     /// <p>The version of the operating system used by the platform version.</p>
-    pub fn operating_system_version(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> ::std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The tiers in which the platform version runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
-    pub fn supported_tier_list(&self) -> &[::std::string::String] {
-        self.supported_tier_list.as_deref().unwrap_or_default()
+    pub fn supported_tier_list(&self) -> & [::std::string::String] {
+        self.supported_tier_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The additions associated with the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_addon_list.is_none()`.
-    pub fn supported_addon_list(&self) -> &[::std::string::String] {
-        self.supported_addon_list.as_deref().unwrap_or_default()
+    pub fn supported_addon_list(&self) -> & [::std::string::String] {
+        self.supported_addon_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
-    pub fn platform_lifecycle_state(&self) -> ::std::option::Option<&str> {
+    pub fn platform_lifecycle_state(&self) -> ::std::option::Option<& str> {
         self.platform_lifecycle_state.as_deref()
     }
     /// <p>The version string of the platform version.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The platform branch to which the platform version belongs.</p>
-    pub fn platform_branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn platform_branch_name(&self) -> ::std::option::Option<& str> {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
-    pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<&str> {
+    pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<& str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
@@ -106,8 +108,8 @@ pub struct PlatformSummaryBuilder {
     pub(crate) platform_category: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system_name: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system_version: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supported_addon_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) platform_lifecycle_state: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform_branch_name: ::std::option::Option<::std::string::String>,
@@ -121,8 +123,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The ARN of the platform version.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the platform version.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +136,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub fn set_platform_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_owner = input;
-        self
+        self.platform_owner = input; self
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub fn get_platform_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +149,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
     pub fn set_platform_status(mut self, input: ::std::option::Option<crate::types::PlatformStatus>) -> Self {
-        self.platform_status = input;
-        self
+        self.platform_status = input; self
     }
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
     pub fn get_platform_status(&self) -> &::std::option::Option<crate::types::PlatformStatus> {
@@ -163,8 +162,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The category of platform version.</p>
     pub fn set_platform_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_category = input;
-        self
+        self.platform_category = input; self
     }
     /// <p>The category of platform version.</p>
     pub fn get_platform_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +175,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The operating system used by the platform version.</p>
     pub fn set_operating_system_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_name = input;
-        self
+        self.operating_system_name = input; self
     }
     /// <p>The operating system used by the platform version.</p>
     pub fn get_operating_system_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +188,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The version of the operating system used by the platform version.</p>
     pub fn set_operating_system_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_version = input;
-        self
+        self.operating_system_version = input; self
     }
     /// <p>The version of the operating system used by the platform version.</p>
     pub fn get_operating_system_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +201,16 @@ impl PlatformSummaryBuilder {
     /// <p>The tiers in which the platform version runs.</p>
     pub fn supported_tier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_tier_list.unwrap_or_default();
-        v.push(input.into());
-        self.supported_tier_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_tier_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tiers in which the platform version runs.</p>
-    pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_tier_list = input;
-        self
+    pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_tier_list = input; self
     }
     /// <p>The tiers in which the platform version runs.</p>
-    pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_tier_list
     }
     /// Appends an item to `supported_addon_list`.
@@ -225,17 +220,16 @@ impl PlatformSummaryBuilder {
     /// <p>The additions associated with the platform version.</p>
     pub fn supported_addon_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_addon_list.unwrap_or_default();
-        v.push(input.into());
-        self.supported_addon_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_addon_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The additions associated with the platform version.</p>
-    pub fn set_supported_addon_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_addon_list = input;
-        self
+    pub fn set_supported_addon_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_addon_list = input; self
     }
     /// <p>The additions associated with the platform version.</p>
-    pub fn get_supported_addon_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_addon_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_addon_list
     }
     /// <p>The state of the platform version in its lifecycle.</p>
@@ -249,8 +243,7 @@ impl PlatformSummaryBuilder {
     /// <p>Possible values: <code>recommended</code> | empty</p>
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
     pub fn set_platform_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_lifecycle_state = input;
-        self
+        self.platform_lifecycle_state = input; self
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
@@ -265,8 +258,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The version string of the platform version.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The version string of the platform version.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +271,7 @@ impl PlatformSummaryBuilder {
     }
     /// <p>The platform branch to which the platform version belongs.</p>
     pub fn set_platform_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_branch_name = input;
-        self
+        self.platform_branch_name = input; self
     }
     /// <p>The platform branch to which the platform version belongs.</p>
     pub fn get_platform_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,8 +286,7 @@ impl PlatformSummaryBuilder {
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
     pub fn set_platform_branch_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_branch_lifecycle_state = input;
-        self
+        self.platform_branch_lifecycle_state = input; self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code></p>
@@ -306,18 +296,31 @@ impl PlatformSummaryBuilder {
     /// Consumes the builder and constructs a [`PlatformSummary`](crate::types::PlatformSummary).
     pub fn build(self) -> crate::types::PlatformSummary {
         crate::types::PlatformSummary {
-            platform_arn: self.platform_arn,
-            platform_owner: self.platform_owner,
-            platform_status: self.platform_status,
-            platform_category: self.platform_category,
-            operating_system_name: self.operating_system_name,
-            operating_system_version: self.operating_system_version,
-            supported_tier_list: self.supported_tier_list,
-            supported_addon_list: self.supported_addon_list,
-            platform_lifecycle_state: self.platform_lifecycle_state,
-            platform_version: self.platform_version,
-            platform_branch_name: self.platform_branch_name,
-            platform_branch_lifecycle_state: self.platform_branch_lifecycle_state,
+            platform_arn: self.platform_arn
+            ,
+            platform_owner: self.platform_owner
+            ,
+            platform_status: self.platform_status
+            ,
+            platform_category: self.platform_category
+            ,
+            operating_system_name: self.operating_system_name
+            ,
+            operating_system_version: self.operating_system_version
+            ,
+            supported_tier_list: self.supported_tier_list
+            ,
+            supported_addon_list: self.supported_addon_list
+            ,
+            platform_lifecycle_state: self.platform_lifecycle_state
+            ,
+            platform_version: self.platform_version
+            ,
+            platform_branch_name: self.platform_branch_name
+            ,
+            platform_branch_lifecycle_state: self.platform_branch_lifecycle_state
+            ,
         }
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>A list of real-time log configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealtimeLogConfigs {
+pub struct RealtimeLogConfigs  {
     /// <p>The maximum number of real-time log configurations requested.</p>
     pub max_items: i32,
     /// <p>Contains the list of real-time log configurations.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeLogConfig>>,
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
     pub is_truncated: bool,
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
@@ -15,28 +15,28 @@ pub struct RealtimeLogConfigs {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
 }
-impl RealtimeLogConfigs {
+impl  RealtimeLogConfigs  {
     /// <p>The maximum number of real-time log configurations requested.</p>
     pub fn max_items(&self) -> i32 {
         self.max_items
     }
     /// <p>Contains the list of real-time log configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::RealtimeLogConfig] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::RealtimeLogConfig] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
-    pub fn marker(&self) -> &str {
-        use std::ops::Deref;
-        self.marker.deref()
+    pub fn marker(&self) -> & str {
+        use std::ops::Deref; self.marker.deref()
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
@@ -52,7 +52,7 @@ impl RealtimeLogConfigs {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealtimeLogConfigsBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeLogConfig>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -66,8 +66,7 @@ impl RealtimeLogConfigsBuilder {
     }
     /// <p>The maximum number of real-time log configurations requested.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of real-time log configurations requested.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -80,17 +79,16 @@ impl RealtimeLogConfigsBuilder {
     /// <p>Contains the list of real-time log configurations.</p>
     pub fn items(mut self, input: crate::types::RealtimeLogConfig) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the list of real-time log configurations.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeLogConfig>>) -> Self {
+        self.items = input; self
     }
     /// <p>Contains the list of real-time log configurations.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealtimeLogConfig>> {
         &self.items
     }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
@@ -101,8 +99,7 @@ impl RealtimeLogConfigsBuilder {
     }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -116,8 +113,7 @@ impl RealtimeLogConfigsBuilder {
     }
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>This parameter indicates where this list of real-time log configurations begins. This list includes real-time log configurations that occur after the marker.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +126,7 @@ impl RealtimeLogConfigsBuilder {
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing real-time log configurations where you left off.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,27 +138,29 @@ impl RealtimeLogConfigsBuilder {
     /// - [`is_truncated`](crate::types::builders::RealtimeLogConfigsBuilder::is_truncated)
     /// - [`marker`](crate::types::builders::RealtimeLogConfigsBuilder::marker)
     pub fn build(self) -> ::std::result::Result<crate::types::RealtimeLogConfigs, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealtimeLogConfigs {
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building RealtimeLogConfigs",
-                )
-            })?,
-            items: self.items,
-            is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_truncated",
-                    "is_truncated was not specified but it is required when building RealtimeLogConfigs",
-                )
-            })?,
-            marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "marker",
-                    "marker was not specified but it is required when building RealtimeLogConfigs",
-                )
-            })?,
-            next_marker: self.next_marker,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RealtimeLogConfigs {
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building RealtimeLogConfigs")
+                    )?
+                ,
+                items: self.items
+                ,
+                is_truncated: self.is_truncated
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_truncated", "is_truncated was not specified but it is required when building RealtimeLogConfigs")
+                    )?
+                ,
+                marker: self.marker
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("marker", "marker was not specified but it is required when building RealtimeLogConfigs")
+                    )?
+                ,
+                next_marker: self.next_marker
+                ,
+            }
+        )
     }
 }
+

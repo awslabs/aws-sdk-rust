@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentjoberrorcode = unimplemented!();
 /// match deploymentjoberrorcode {
@@ -52,16 +52,14 @@
 /// Specifically, when `deploymentjoberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentJobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeploymentJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     BadLambdaAssociated,
@@ -113,152 +111,128 @@ pub enum DeploymentJobErrorCode {
     RobotDeploymentNoResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeploymentJobErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BadLambdaAssociated" => DeploymentJobErrorCode::BadLambdaAssociated,
-            "BadPermissionError" => DeploymentJobErrorCode::BadPermissionError,
-            "DeploymentFleetDoesNotExist" => DeploymentJobErrorCode::DeploymentFleetDoesNotExist,
-            "DownloadConditionFailed" => DeploymentJobErrorCode::DownloadConditionFailed,
-            "EnvironmentSetupError" => DeploymentJobErrorCode::EnvironmentSetupError,
-            "EtagMismatch" => DeploymentJobErrorCode::EtagMismatch,
-            "ExtractingBundleFailure" => DeploymentJobErrorCode::ExtractingBundleFailure,
-            "FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
-            "FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
-            "GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
-            "GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
-            "InternalServerError" => DeploymentJobErrorCode::InternalServerError,
-            "InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
-            "LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
-            "MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
-            "MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
-            "MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
-            "PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
-            "PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
-            "ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
-            "RobotAgentConnectionTimeout" => DeploymentJobErrorCode::RobotAgentConnectionTimeout,
-            "RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
-            "RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
-            "RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
-            other => DeploymentJobErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BadLambdaAssociated" => DeploymentJobErrorCode::BadLambdaAssociated,
+"BadPermissionError" => DeploymentJobErrorCode::BadPermissionError,
+"DeploymentFleetDoesNotExist" => DeploymentJobErrorCode::DeploymentFleetDoesNotExist,
+"DownloadConditionFailed" => DeploymentJobErrorCode::DownloadConditionFailed,
+"EnvironmentSetupError" => DeploymentJobErrorCode::EnvironmentSetupError,
+"EtagMismatch" => DeploymentJobErrorCode::EtagMismatch,
+"ExtractingBundleFailure" => DeploymentJobErrorCode::ExtractingBundleFailure,
+"FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
+"FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
+"GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
+"GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
+"InternalServerError" => DeploymentJobErrorCode::InternalServerError,
+"InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
+"LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
+"MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
+"MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
+"MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
+"PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
+"PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
+"ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
+"RobotAgentConnectionTimeout" => DeploymentJobErrorCode::RobotAgentConnectionTimeout,
+"RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
+"RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
+"RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
+other => DeploymentJobErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeploymentJobErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeploymentJobErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeploymentJobErrorCode::from(s))
+                    }
+                }
 impl DeploymentJobErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeploymentJobErrorCode::BadLambdaAssociated => "BadLambdaAssociated",
-            DeploymentJobErrorCode::BadPermissionError => "BadPermissionError",
-            DeploymentJobErrorCode::DeploymentFleetDoesNotExist => "DeploymentFleetDoesNotExist",
-            DeploymentJobErrorCode::DownloadConditionFailed => "DownloadConditionFailed",
-            DeploymentJobErrorCode::EnvironmentSetupError => "EnvironmentSetupError",
-            DeploymentJobErrorCode::EtagMismatch => "EtagMismatch",
-            DeploymentJobErrorCode::ExtractingBundleFailure => "ExtractingBundleFailure",
-            DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
-            DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
-            DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
-            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
-            DeploymentJobErrorCode::InternalServerError => "InternalServerError",
-            DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
-            DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
-            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
-            DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
-            DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
-            DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
-            DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
-            DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",
-            DeploymentJobErrorCode::RobotAgentConnectionTimeout => "RobotAgentConnectionTimeout",
-            DeploymentJobErrorCode::RobotApplicationDoesNotExist => "RobotApplicationDoesNotExist",
-            DeploymentJobErrorCode::RobotDeploymentAborted => "RobotDeploymentAborted",
-            DeploymentJobErrorCode::RobotDeploymentNoResponse => "RobotDeploymentNoResponse",
-            DeploymentJobErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BadLambdaAssociated",
-            "BadPermissionError",
-            "DeploymentFleetDoesNotExist",
-            "DownloadConditionFailed",
-            "EnvironmentSetupError",
-            "EtagMismatch",
-            "ExtractingBundleFailure",
-            "FailureThresholdBreached",
-            "FleetDeploymentTimeout",
-            "GreengrassDeploymentFailed",
-            "GreengrassGroupVersionDoesNotExist",
-            "InternalServerError",
-            "InvalidGreengrassGroup",
-            "LambdaDeleted",
-            "MissingRobotApplicationArchitecture",
-            "MissingRobotArchitecture",
-            "MissingRobotDeploymentResource",
-            "PostLaunchFileFailure",
-            "PreLaunchFileFailure",
-            "ResourceNotFound",
-            "RobotAgentConnectionTimeout",
-            "RobotApplicationDoesNotExist",
-            "RobotDeploymentAborted",
-            "RobotDeploymentNoResponse",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeploymentJobErrorCode::BadLambdaAssociated => "BadLambdaAssociated",
+    DeploymentJobErrorCode::BadPermissionError => "BadPermissionError",
+    DeploymentJobErrorCode::DeploymentFleetDoesNotExist => "DeploymentFleetDoesNotExist",
+    DeploymentJobErrorCode::DownloadConditionFailed => "DownloadConditionFailed",
+    DeploymentJobErrorCode::EnvironmentSetupError => "EnvironmentSetupError",
+    DeploymentJobErrorCode::EtagMismatch => "EtagMismatch",
+    DeploymentJobErrorCode::ExtractingBundleFailure => "ExtractingBundleFailure",
+    DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
+    DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
+    DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
+    DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
+    DeploymentJobErrorCode::InternalServerError => "InternalServerError",
+    DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
+    DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
+    DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
+    DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
+    DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
+    DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
+    DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
+    DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",
+    DeploymentJobErrorCode::RobotAgentConnectionTimeout => "RobotAgentConnectionTimeout",
+    DeploymentJobErrorCode::RobotApplicationDoesNotExist => "RobotApplicationDoesNotExist",
+    DeploymentJobErrorCode::RobotDeploymentAborted => "RobotDeploymentAborted",
+    DeploymentJobErrorCode::RobotDeploymentNoResponse => "RobotDeploymentNoResponse",
+    DeploymentJobErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BadLambdaAssociated", "BadPermissionError", "DeploymentFleetDoesNotExist", "DownloadConditionFailed", "EnvironmentSetupError", "EtagMismatch", "ExtractingBundleFailure", "FailureThresholdBreached", "FleetDeploymentTimeout", "GreengrassDeploymentFailed", "GreengrassGroupVersionDoesNotExist", "InternalServerError", "InvalidGreengrassGroup", "LambdaDeleted", "MissingRobotApplicationArchitecture", "MissingRobotArchitecture", "MissingRobotDeploymentResource", "PostLaunchFileFailure", "PreLaunchFileFailure", "ResourceNotFound", "RobotAgentConnectionTimeout", "RobotApplicationDoesNotExist", "RobotDeploymentAborted", "RobotDeploymentNoResponse"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeploymentJobErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeploymentJobErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeploymentJobErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeploymentJobErrorCode::BadLambdaAssociated => write!(f, "BadLambdaAssociated"),
-            DeploymentJobErrorCode::BadPermissionError => write!(f, "BadPermissionError"),
-            DeploymentJobErrorCode::DeploymentFleetDoesNotExist => write!(f, "DeploymentFleetDoesNotExist"),
-            DeploymentJobErrorCode::DownloadConditionFailed => write!(f, "DownloadConditionFailed"),
-            DeploymentJobErrorCode::EnvironmentSetupError => write!(f, "EnvironmentSetupError"),
-            DeploymentJobErrorCode::EtagMismatch => write!(f, "EtagMismatch"),
-            DeploymentJobErrorCode::ExtractingBundleFailure => write!(f, "ExtractingBundleFailure"),
-            DeploymentJobErrorCode::FailureThresholdBreached => write!(f, "FailureThresholdBreached"),
-            DeploymentJobErrorCode::FleetDeploymentTimeout => write!(f, "FleetDeploymentTimeout"),
-            DeploymentJobErrorCode::GreengrassDeploymentFailed => write!(f, "GreengrassDeploymentFailed"),
-            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => write!(f, "GreengrassGroupVersionDoesNotExist"),
-            DeploymentJobErrorCode::InternalServerError => write!(f, "InternalServerError"),
-            DeploymentJobErrorCode::InvalidGreengrassGroup => write!(f, "InvalidGreengrassGroup"),
-            DeploymentJobErrorCode::LambdaDeleted => write!(f, "LambdaDeleted"),
-            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => write!(f, "MissingRobotApplicationArchitecture"),
-            DeploymentJobErrorCode::MissingRobotArchitecture => write!(f, "MissingRobotArchitecture"),
-            DeploymentJobErrorCode::MissingRobotDeploymentResource => write!(f, "MissingRobotDeploymentResource"),
-            DeploymentJobErrorCode::PostLaunchFileFailure => write!(f, "PostLaunchFileFailure"),
-            DeploymentJobErrorCode::PreLaunchFileFailure => write!(f, "PreLaunchFileFailure"),
-            DeploymentJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
-            DeploymentJobErrorCode::RobotAgentConnectionTimeout => write!(f, "RobotAgentConnectionTimeout"),
-            DeploymentJobErrorCode::RobotApplicationDoesNotExist => write!(f, "RobotApplicationDoesNotExist"),
-            DeploymentJobErrorCode::RobotDeploymentAborted => write!(f, "RobotDeploymentAborted"),
-            DeploymentJobErrorCode::RobotDeploymentNoResponse => write!(f, "RobotDeploymentNoResponse"),
-            DeploymentJobErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeploymentJobErrorCode::BadLambdaAssociated => write!(f, "BadLambdaAssociated"),
+DeploymentJobErrorCode::BadPermissionError => write!(f, "BadPermissionError"),
+DeploymentJobErrorCode::DeploymentFleetDoesNotExist => write!(f, "DeploymentFleetDoesNotExist"),
+DeploymentJobErrorCode::DownloadConditionFailed => write!(f, "DownloadConditionFailed"),
+DeploymentJobErrorCode::EnvironmentSetupError => write!(f, "EnvironmentSetupError"),
+DeploymentJobErrorCode::EtagMismatch => write!(f, "EtagMismatch"),
+DeploymentJobErrorCode::ExtractingBundleFailure => write!(f, "ExtractingBundleFailure"),
+DeploymentJobErrorCode::FailureThresholdBreached => write!(f, "FailureThresholdBreached"),
+DeploymentJobErrorCode::FleetDeploymentTimeout => write!(f, "FleetDeploymentTimeout"),
+DeploymentJobErrorCode::GreengrassDeploymentFailed => write!(f, "GreengrassDeploymentFailed"),
+DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => write!(f, "GreengrassGroupVersionDoesNotExist"),
+DeploymentJobErrorCode::InternalServerError => write!(f, "InternalServerError"),
+DeploymentJobErrorCode::InvalidGreengrassGroup => write!(f, "InvalidGreengrassGroup"),
+DeploymentJobErrorCode::LambdaDeleted => write!(f, "LambdaDeleted"),
+DeploymentJobErrorCode::MissingRobotApplicationArchitecture => write!(f, "MissingRobotApplicationArchitecture"),
+DeploymentJobErrorCode::MissingRobotArchitecture => write!(f, "MissingRobotArchitecture"),
+DeploymentJobErrorCode::MissingRobotDeploymentResource => write!(f, "MissingRobotDeploymentResource"),
+DeploymentJobErrorCode::PostLaunchFileFailure => write!(f, "PostLaunchFileFailure"),
+DeploymentJobErrorCode::PreLaunchFileFailure => write!(f, "PreLaunchFileFailure"),
+DeploymentJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+DeploymentJobErrorCode::RobotAgentConnectionTimeout => write!(f, "RobotAgentConnectionTimeout"),
+DeploymentJobErrorCode::RobotApplicationDoesNotExist => write!(f, "RobotApplicationDoesNotExist"),
+DeploymentJobErrorCode::RobotDeploymentAborted => write!(f, "RobotDeploymentAborted"),
+DeploymentJobErrorCode::RobotDeploymentNoResponse => write!(f, "RobotDeploymentNoResponse"),
+DeploymentJobErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

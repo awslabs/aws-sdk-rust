@@ -3,13 +3,13 @@
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DurationRange {
+pub struct DurationRange  {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub min_seconds: ::std::option::Option<i32>,
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub max_seconds: ::std::option::Option<i32>,
 }
-impl DurationRange {
+impl  DurationRange  {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub fn min_seconds(&self) -> ::std::option::Option<i32> {
         self.min_seconds
@@ -41,8 +41,7 @@ impl DurationRangeBuilder {
     }
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub fn set_min_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_seconds = input;
-        self
+        self.min_seconds = input; self
     }
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub fn get_min_seconds(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl DurationRangeBuilder {
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn set_max_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_seconds = input;
-        self
+        self.max_seconds = input; self
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn get_max_seconds(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl DurationRangeBuilder {
     /// Consumes the builder and constructs a [`DurationRange`](crate::types::DurationRange).
     pub fn build(self) -> crate::types::DurationRange {
         crate::types::DurationRange {
-            min_seconds: self.min_seconds,
-            max_seconds: self.max_seconds,
+            min_seconds: self.min_seconds
+            ,
+            max_seconds: self.max_seconds
+            ,
         }
     }
 }
+

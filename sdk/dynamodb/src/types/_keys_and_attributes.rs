@@ -4,11 +4,11 @@
 /// <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeysAndAttributes {
+pub struct KeysAndAttributes  {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub keys: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub keys: ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub consistent_read: ::std::option::Option<bool>,
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by commas.</p>
@@ -42,19 +42,19 @@ pub struct KeysAndAttributes {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl KeysAndAttributes {
+impl  KeysAndAttributes  {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub fn keys(&self) -> &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>] {
-        use std::ops::Deref;
-        self.keys.deref()
+    pub fn keys(&self) -> & [::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>] {
+        use std::ops::Deref; self.keys.deref()
     }
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
-    pub fn attributes_to_get(&self) -> &[::std::string::String] {
-        self.attributes_to_get.as_deref().unwrap_or_default()
+    pub fn attributes_to_get(&self) -> & [::std::string::String] {
+        self.attributes_to_get.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
@@ -63,7 +63,7 @@ impl KeysAndAttributes {
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn projection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn projection_expression(&self) -> ::std::option::Option<& str> {
         self.projection_expression.as_deref()
     }
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
@@ -93,7 +93,7 @@ impl KeysAndAttributes {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn expression_attribute_names(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn expression_attribute_names(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.expression_attribute_names.as_ref()
     }
 }
@@ -108,11 +108,11 @@ impl KeysAndAttributes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeysAndAttributesBuilder {
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
-    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) consistent_read: ::std::option::Option<bool>,
     pub(crate) projection_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) expression_attribute_names: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl KeysAndAttributesBuilder {
     /// Appends an item to `keys`.
@@ -120,24 +120,18 @@ impl KeysAndAttributesBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub fn keys(mut self, input: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>) -> Self {
+    pub fn keys(mut self, input: ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input);
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub fn get_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>> {
         &self.keys
     }
     /// Appends an item to `attributes_to_get`.
@@ -147,17 +141,16 @@ impl KeysAndAttributesBuilder {
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attributes_to_get(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes_to_get.unwrap_or_default();
-        v.push(input.into());
-        self.attributes_to_get = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes_to_get = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attributes_to_get = input;
-        self
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attributes_to_get = input; self
     }
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attributes_to_get
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
@@ -167,8 +160,7 @@ impl KeysAndAttributesBuilder {
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn set_consistent_read(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.consistent_read = input;
-        self
+        self.consistent_read = input; self
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn get_consistent_read(&self) -> &::std::option::Option<bool> {
@@ -185,8 +177,7 @@ impl KeysAndAttributesBuilder {
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_projection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.projection_expression = input;
-        self
+        self.projection_expression = input; self
     }
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
@@ -225,15 +216,11 @@ impl KeysAndAttributesBuilder {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn expression_attribute_names(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_attribute_names(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.expression_attribute_names.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.expression_attribute_names = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.expression_attribute_names = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -262,12 +249,8 @@ impl KeysAndAttributesBuilder {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_expression_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.expression_attribute_names = input;
-        self
+    pub fn set_expression_attribute_names(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.expression_attribute_names = input; self
     }
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -296,26 +279,30 @@ impl KeysAndAttributesBuilder {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_expression_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_expression_attribute_names(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.expression_attribute_names
     }
     /// Consumes the builder and constructs a [`KeysAndAttributes`](crate::types::KeysAndAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`keys`](crate::types::builders::KeysAndAttributesBuilder::keys)
     pub fn build(self) -> ::std::result::Result<crate::types::KeysAndAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeysAndAttributes {
-            keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keys",
-                    "keys was not specified but it is required when building KeysAndAttributes",
-                )
-            })?,
-            attributes_to_get: self.attributes_to_get,
-            consistent_read: self.consistent_read,
-            projection_expression: self.projection_expression,
-            expression_attribute_names: self.expression_attribute_names,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeysAndAttributes {
+                keys: self.keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keys", "keys was not specified but it is required when building KeysAndAttributes")
+                    )?
+                ,
+                attributes_to_get: self.attributes_to_get
+                ,
+                consistent_read: self.consistent_read
+                ,
+                projection_expression: self.projection_expression
+                ,
+                expression_attribute_names: self.expression_attribute_names
+                ,
+            }
+        )
     }
 }
+

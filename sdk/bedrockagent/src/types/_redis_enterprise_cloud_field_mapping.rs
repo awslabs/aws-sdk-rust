@@ -3,7 +3,7 @@
 /// A mapping of Bedrock Knowledge Base fields to Redis Cloud field names
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedisEnterpriseCloudFieldMapping {
+pub struct RedisEnterpriseCloudFieldMapping  {
     /// Name of the field
     pub vector_field: ::std::string::String,
     /// Name of the field
@@ -11,21 +11,18 @@ pub struct RedisEnterpriseCloudFieldMapping {
     /// Name of the field
     pub metadata_field: ::std::string::String,
 }
-impl RedisEnterpriseCloudFieldMapping {
+impl  RedisEnterpriseCloudFieldMapping  {
     /// Name of the field
-    pub fn vector_field(&self) -> &str {
-        use std::ops::Deref;
-        self.vector_field.deref()
+    pub fn vector_field(&self) -> & str {
+        use std::ops::Deref; self.vector_field.deref()
     }
     /// Name of the field
-    pub fn text_field(&self) -> &str {
-        use std::ops::Deref;
-        self.text_field.deref()
+    pub fn text_field(&self) -> & str {
+        use std::ops::Deref; self.text_field.deref()
     }
     /// Name of the field
-    pub fn metadata_field(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_field.deref()
+    pub fn metadata_field(&self) -> & str {
+        use std::ops::Deref; self.metadata_field.deref()
     }
 }
 impl RedisEnterpriseCloudFieldMapping {
@@ -52,8 +49,7 @@ impl RedisEnterpriseCloudFieldMappingBuilder {
     }
     /// Name of the field
     pub fn set_vector_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vector_field = input;
-        self
+        self.vector_field = input; self
     }
     /// Name of the field
     pub fn get_vector_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl RedisEnterpriseCloudFieldMappingBuilder {
     }
     /// Name of the field
     pub fn set_text_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_field = input;
-        self
+        self.text_field = input; self
     }
     /// Name of the field
     pub fn get_text_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl RedisEnterpriseCloudFieldMappingBuilder {
     }
     /// Name of the field
     pub fn set_metadata_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_field = input;
-        self
+        self.metadata_field = input; self
     }
     /// Name of the field
     pub fn get_metadata_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl RedisEnterpriseCloudFieldMappingBuilder {
     /// - [`text_field`](crate::types::builders::RedisEnterpriseCloudFieldMappingBuilder::text_field)
     /// - [`metadata_field`](crate::types::builders::RedisEnterpriseCloudFieldMappingBuilder::metadata_field)
     pub fn build(self) -> ::std::result::Result<crate::types::RedisEnterpriseCloudFieldMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedisEnterpriseCloudFieldMapping {
-            vector_field: self.vector_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vector_field",
-                    "vector_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping",
-                )
-            })?,
-            text_field: self.text_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_field",
-                    "text_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping",
-                )
-            })?,
-            metadata_field: self.metadata_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_field",
-                    "metadata_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedisEnterpriseCloudFieldMapping {
+                vector_field: self.vector_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vector_field", "vector_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping")
+                    )?
+                ,
+                text_field: self.text_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_field", "text_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping")
+                    )?
+                ,
+                metadata_field: self.metadata_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_field", "metadata_field was not specified but it is required when building RedisEnterpriseCloudFieldMapping")
+                    )?
+                ,
+            }
+        )
     }
 }
+

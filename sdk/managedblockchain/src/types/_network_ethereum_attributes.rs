@@ -3,7 +3,7 @@
 /// <p>Attributes of Ethereum for a network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkEthereumAttributes {
+pub struct NetworkEthereumAttributes  {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct NetworkEthereumAttributes {
     /// </ul>
     pub chain_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkEthereumAttributes {
+impl  NetworkEthereumAttributes  {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl NetworkEthereumAttributes {
     /// <li>
     /// <p>goerli = <code>5</code></p></li>
     /// </ul>
-    pub fn chain_id(&self) -> ::std::option::Option<&str> {
+    pub fn chain_id(&self) -> ::std::option::Option<& str> {
         self.chain_id.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl NetworkEthereumAttributesBuilder {
     /// <p>goerli = <code>5</code></p></li>
     /// </ul>
     pub fn set_chain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chain_id = input;
-        self
+        self.chain_id = input; self
     }
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
@@ -73,6 +72,10 @@ impl NetworkEthereumAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
     pub fn build(self) -> crate::types::NetworkEthereumAttributes {
-        crate::types::NetworkEthereumAttributes { chain_id: self.chain_id }
+        crate::types::NetworkEthereumAttributes {
+            chain_id: self.chain_id
+            ,
+        }
     }
 }
+

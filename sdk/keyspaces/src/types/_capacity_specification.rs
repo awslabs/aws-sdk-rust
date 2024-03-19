@@ -11,7 +11,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacitySpecification {
+pub struct CapacitySpecification  {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct CapacitySpecification {
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub write_capacity_units: ::std::option::Option<i64>,
 }
-impl CapacitySpecification {
+impl  CapacitySpecification  {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl CapacitySpecification {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn throughput_mode(&self) -> &crate::types::ThroughputMode {
+    pub fn throughput_mode(&self) -> & crate::types::ThroughputMode {
         &self.throughput_mode
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
@@ -89,8 +89,7 @@ impl CapacitySpecificationBuilder {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
-        self.throughput_mode = input;
-        self
+        self.throughput_mode = input; self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
@@ -111,8 +110,7 @@ impl CapacitySpecificationBuilder {
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -125,8 +123,7 @@ impl CapacitySpecificationBuilder {
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_capacity_units = input;
-        self
+        self.write_capacity_units = input; self
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn get_write_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -136,15 +133,19 @@ impl CapacitySpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`throughput_mode`](crate::types::builders::CapacitySpecificationBuilder::throughput_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::CapacitySpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CapacitySpecification {
-            throughput_mode: self.throughput_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "throughput_mode",
-                    "throughput_mode was not specified but it is required when building CapacitySpecification",
-                )
-            })?,
-            read_capacity_units: self.read_capacity_units,
-            write_capacity_units: self.write_capacity_units,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CapacitySpecification {
+                throughput_mode: self.throughput_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("throughput_mode", "throughput_mode was not specified but it is required when building CapacitySpecification")
+                    )?
+                ,
+                read_capacity_units: self.read_capacity_units
+                ,
+                write_capacity_units: self.write_capacity_units
+                ,
+            }
+        )
     }
 }
+

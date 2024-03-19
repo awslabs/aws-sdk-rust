@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceDataSyncInput {
+pub struct DeleteResourceDataSyncInput  {
     /// <p>The name of the configuration to delete.</p>
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the type of resource data sync to delete.</p>
     pub sync_type: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourceDataSyncInput {
+impl  DeleteResourceDataSyncInput  {
     /// <p>The name of the configuration to delete.</p>
-    pub fn sync_name(&self) -> ::std::option::Option<&str> {
+    pub fn sync_name(&self) -> ::std::option::Option<& str> {
         self.sync_name.as_deref()
     }
     /// <p>Specify the type of resource data sync to delete.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&str> {
+    pub fn sync_type(&self) -> ::std::option::Option<& str> {
         self.sync_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteResourceDataSyncInputBuilder {
     }
     /// <p>The name of the configuration to delete.</p>
     pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_name = input;
-        self
+        self.sync_name = input; self
     }
     /// <p>The name of the configuration to delete.</p>
     pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DeleteResourceDataSyncInputBuilder {
     }
     /// <p>Specify the type of resource data sync to delete.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>Specify the type of resource data sync to delete.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_type
     }
     /// Consumes the builder and constructs a [`DeleteResourceDataSyncInput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput {
-            sync_name: self.sync_name,
-            sync_type: self.sync_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput {
+                sync_name: self.sync_name
+                ,
+                sync_type: self.sync_type
+                ,
+            }
+        )
     }
 }
+

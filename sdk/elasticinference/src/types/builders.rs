@@ -12,3 +12,4 @@ pub use crate::types::_elastic_inference_accelerator_health::ElasticInferenceAcc
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_accelerator_type_offering::AcceleratorTypeOfferingBuilder;
+

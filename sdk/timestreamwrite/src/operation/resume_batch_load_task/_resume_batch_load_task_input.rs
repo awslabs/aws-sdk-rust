@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeBatchLoadTaskInput {
+pub struct ResumeBatchLoadTaskInput  {
     /// <p>The ID of the batch load task to resume.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl ResumeBatchLoadTaskInput {
+impl  ResumeBatchLoadTaskInput  {
     /// <p>The ID of the batch load task to resume.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl ResumeBatchLoadTaskInputBuilder {
     }
     /// <p>The ID of the batch load task to resume.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the batch load task to resume.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput { task_id: self.task_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput {
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

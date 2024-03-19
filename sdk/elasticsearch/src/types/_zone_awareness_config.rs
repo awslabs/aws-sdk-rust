@@ -3,11 +3,11 @@
 /// <p>Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZoneAwarenessConfig {
+pub struct ZoneAwarenessConfig  {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
     pub availability_zone_count: ::std::option::Option<i32>,
 }
-impl ZoneAwarenessConfig {
+impl  ZoneAwarenessConfig  {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
     pub fn availability_zone_count(&self) -> ::std::option::Option<i32> {
         self.availability_zone_count
@@ -34,8 +34,7 @@ impl ZoneAwarenessConfigBuilder {
     }
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
     pub fn set_availability_zone_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.availability_zone_count = input;
-        self
+        self.availability_zone_count = input; self
     }
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
     pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl ZoneAwarenessConfigBuilder {
     /// Consumes the builder and constructs a [`ZoneAwarenessConfig`](crate::types::ZoneAwarenessConfig).
     pub fn build(self) -> crate::types::ZoneAwarenessConfig {
         crate::types::ZoneAwarenessConfig {
-            availability_zone_count: self.availability_zone_count,
+            availability_zone_count: self.availability_zone_count
+            ,
         }
     }
 }
+

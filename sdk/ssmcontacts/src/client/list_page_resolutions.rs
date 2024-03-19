@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPageResolutions`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`page_id(impl Into<String>)`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::set_page_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p><br>
-    /// - On success, responds with [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput) with field(s):
+                            /// - On success, responds with [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_page_resolutions::ListPageResolutionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`page_resolutions(Vec::<ResolutionContact>)`](crate::operation::list_page_resolutions::ListPageResolutionsOutput::page_resolutions): <p>Information about the resolution for an engagement.</p>
-    /// - On failure, responds with [`SdkError<ListPageResolutionsError>`](crate::operation::list_page_resolutions::ListPageResolutionsError)
+                            /// - On failure, responds with [`SdkError<ListPageResolutionsError>`](crate::operation::list_page_resolutions::ListPageResolutionsError)
     pub fn list_page_resolutions(&self) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder {
-        crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

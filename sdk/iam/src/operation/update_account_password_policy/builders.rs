@@ -5,23 +5,20 @@ pub use crate::operation::update_account_password_policy::_update_account_passwo
 
 impl UpdateAccountPasswordPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_account_password_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_account_password_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateAccountPasswordPolicy`.
-///
+/// 
 /// <p>Updates the password policy settings for the Amazon Web Services account.</p><note>
 /// <p>This operation does not support partial updates. No parameters are required, but if you do not specify a parameter, that parameter's value reverts to its default value. See the <b>Request Parameters</b> section for each parameter's default value. Also note that some parameters do not allow the default parameter to be explicitly set. Instead, to invoke the default value, do not include that parameter when you invoke the operation.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl UpdateAccountPasswordPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountPasswordPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder,
+                    inner: crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-    > for UpdateAccountPasswordPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
+                    crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
+                > for UpdateAccountPasswordPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
+                        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateAccountPasswordPolicyFluentBuilder {
     /// Creates a new `UpdateAccountPasswordPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput, crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
     pub fn minimum_password_length(mut self, input: i32) -> Self {
@@ -274,3 +261,4 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
         self.inner.get_hard_expiry()
     }
 }
+

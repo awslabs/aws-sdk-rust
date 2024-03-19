@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlModelTransformJobOutput {
+pub struct GetMlModelTransformJobOutput  {
     /// <p>The status of the model-transform job.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the model-transform job to be retrieved.</p>
@@ -12,38 +12,39 @@ pub struct GetMlModelTransformJobOutput {
     /// <p>The remote model transform job.</p>
     pub remote_model_transform_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     /// <p>A list of the configuration information for the models being used.</p>
-    pub models: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>,
+    pub models: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>,
     _request_id: Option<String>,
 }
-impl GetMlModelTransformJobOutput {
+impl  GetMlModelTransformJobOutput  {
     /// <p>The status of the model-transform job.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The unique identifier of the model-transform job to be retrieved.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The base data processing job.</p>
-    pub fn base_processing_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn base_processing_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.base_processing_job.as_ref()
     }
     /// <p>The remote model transform job.</p>
-    pub fn remote_model_transform_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn remote_model_transform_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.remote_model_transform_job.as_ref()
     }
     /// <p>A list of the configuration information for the models being used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
-    pub fn models(&self) -> &[crate::types::MlConfigDefinition] {
-        self.models.as_deref().unwrap_or_default()
+    pub fn models(&self) -> & [crate::types::MlConfigDefinition] {
+        self.models.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMlModelTransformJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMlModelTransformJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMlModelTransformJobOutput`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput).
     pub fn builder() -> crate::operation::get_ml_model_transform_job::builders::GetMlModelTransformJobOutputBuilder {
@@ -59,7 +60,7 @@ pub struct GetMlModelTransformJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) base_processing_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     pub(crate) remote_model_transform_job: ::std::option::Option<crate::types::MlResourceDefinition>,
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>,
     _request_id: Option<String>,
 }
 impl GetMlModelTransformJobOutputBuilder {
@@ -70,8 +71,7 @@ impl GetMlModelTransformJobOutputBuilder {
     }
     /// <p>The status of the model-transform job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the model-transform job.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl GetMlModelTransformJobOutputBuilder {
     }
     /// <p>The unique identifier of the model-transform job to be retrieved.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the model-transform job to be retrieved.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl GetMlModelTransformJobOutputBuilder {
     }
     /// <p>The base data processing job.</p>
     pub fn set_base_processing_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.base_processing_job = input;
-        self
+        self.base_processing_job = input; self
     }
     /// <p>The base data processing job.</p>
     pub fn get_base_processing_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -112,8 +110,7 @@ impl GetMlModelTransformJobOutputBuilder {
     }
     /// <p>The remote model transform job.</p>
     pub fn set_remote_model_transform_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.remote_model_transform_job = input;
-        self
+        self.remote_model_transform_job = input; self
     }
     /// <p>The remote model transform job.</p>
     pub fn get_remote_model_transform_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -126,37 +123,42 @@ impl GetMlModelTransformJobOutputBuilder {
     /// <p>A list of the configuration information for the models being used.</p>
     pub fn models(mut self, input: crate::types::MlConfigDefinition) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the configuration information for the models being used.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>) -> Self {
+        self.models = input; self
     }
     /// <p>A list of the configuration information for the models being used.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>> {
         &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMlModelTransformJobOutput`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput).
     pub fn build(self) -> crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput {
         crate::operation::get_ml_model_transform_job::GetMlModelTransformJobOutput {
-            status: self.status,
-            id: self.id,
-            base_processing_job: self.base_processing_job,
-            remote_model_transform_job: self.remote_model_transform_job,
-            models: self.models,
+            status: self.status
+            ,
+            id: self.id
+            ,
+            base_processing_job: self.base_processing_job
+            ,
+            remote_model_transform_job: self.remote_model_transform_job
+            ,
+            models: self.models
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

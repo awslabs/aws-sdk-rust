@@ -3,19 +3,19 @@
 /// <p>Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeFrameworkAttributes {
+pub struct NodeFrameworkAttributes  {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
     pub ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,
 }
-impl NodeFrameworkAttributes {
+impl  NodeFrameworkAttributes  {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> ::std::option::Option<&crate::types::NodeFabricAttributes> {
+    pub fn fabric(&self) -> ::std::option::Option<& crate::types::NodeFabricAttributes> {
         self.fabric.as_ref()
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
-    pub fn ethereum(&self) -> ::std::option::Option<&crate::types::NodeEthereumAttributes> {
+    pub fn ethereum(&self) -> ::std::option::Option<& crate::types::NodeEthereumAttributes> {
         self.ethereum.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl NodeFrameworkAttributesBuilder {
     }
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::NodeFabricAttributes>) -> Self {
-        self.fabric = input;
-        self
+        self.fabric = input; self
     }
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NodeFabricAttributes> {
@@ -55,8 +54,7 @@ impl NodeFrameworkAttributesBuilder {
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
     pub fn set_ethereum(mut self, input: ::std::option::Option<crate::types::NodeEthereumAttributes>) -> Self {
-        self.ethereum = input;
-        self
+        self.ethereum = input; self
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.</p>
     pub fn get_ethereum(&self) -> &::std::option::Option<crate::types::NodeEthereumAttributes> {
@@ -65,8 +63,11 @@ impl NodeFrameworkAttributesBuilder {
     /// Consumes the builder and constructs a [`NodeFrameworkAttributes`](crate::types::NodeFrameworkAttributes).
     pub fn build(self) -> crate::types::NodeFrameworkAttributes {
         crate::types::NodeFrameworkAttributes {
-            fabric: self.fabric,
-            ethereum: self.ethereum,
+            fabric: self.fabric
+            ,
+            ethereum: self.ethereum
+            ,
         }
     }
 }
+

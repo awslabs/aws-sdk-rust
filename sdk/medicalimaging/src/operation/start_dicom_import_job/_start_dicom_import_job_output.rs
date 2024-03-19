@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDicomImportJobOutput {
+pub struct StartDicomImportJobOutput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::string::String,
     /// <p>The import job identifier.</p>
@@ -13,31 +13,29 @@ pub struct StartDicomImportJobOutput {
     pub submitted_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl StartDicomImportJobOutput {
+impl  StartDicomImportJobOutput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_id.deref()
+    pub fn datastore_id(&self) -> & str {
+        use std::ops::Deref; self.datastore_id.deref()
     }
     /// <p>The import job identifier.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The import job status.</p>
-    pub fn job_status(&self) -> &crate::types::JobStatus {
+    pub fn job_status(&self) -> & crate::types::JobStatus {
         &self.job_status
     }
     /// <p>The timestamp when the import job was submitted.</p>
-    pub fn submitted_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn submitted_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.submitted_at
     }
 }
 impl ::aws_types::request_id::RequestId for StartDicomImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDicomImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDicomImportJobOutput`](crate::operation::start_dicom_import_job::StartDicomImportJobOutput).
     pub fn builder() -> crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder {
@@ -64,8 +62,7 @@ impl StartDicomImportJobOutputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl StartDicomImportJobOutputBuilder {
     }
     /// <p>The import job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The import job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl StartDicomImportJobOutputBuilder {
     }
     /// <p>The import job status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The import job status.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -109,58 +104,53 @@ impl StartDicomImportJobOutputBuilder {
     }
     /// <p>The timestamp when the import job was submitted.</p>
     pub fn set_submitted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_at = input;
-        self
+        self.submitted_at = input; self
     }
     /// <p>The timestamp when the import job was submitted.</p>
     pub fn get_submitted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.submitted_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDicomImportJobOutput`](crate::operation::start_dicom_import_job::StartDicomImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::datastore_id)
     /// - [`job_id`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::job_id)
     /// - [`job_status`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::job_status)
     /// - [`submitted_at`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::submitted_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
-            datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_id",
-                    "datastore_id was not specified but it is required when building StartDicomImportJobOutput",
-                )
-            })?,
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building StartDicomImportJobOutput",
-                )
-            })?,
-            job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_status",
-                    "job_status was not specified but it is required when building StartDicomImportJobOutput",
-                )
-            })?,
-            submitted_at: self.submitted_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "submitted_at",
-                    "submitted_at was not specified but it is required when building StartDicomImportJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
+                datastore_id: self.datastore_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_id", "datastore_id was not specified but it is required when building StartDicomImportJobOutput")
+                    )?
+                ,
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building StartDicomImportJobOutput")
+                    )?
+                ,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building StartDicomImportJobOutput")
+                    )?
+                ,
+                submitted_at: self.submitted_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("submitted_at", "submitted_at was not specified but it is required when building StartDicomImportJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

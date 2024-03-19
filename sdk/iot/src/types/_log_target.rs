@@ -3,19 +3,19 @@
 /// <p>A log target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogTarget {
+pub struct LogTarget  {
     /// <p>The target type.</p>
     pub target_type: crate::types::LogTargetType,
     /// <p>The target name.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
 }
-impl LogTarget {
+impl  LogTarget  {
     /// <p>The target type.</p>
-    pub fn target_type(&self) -> &crate::types::LogTargetType {
+    pub fn target_type(&self) -> & crate::types::LogTargetType {
         &self.target_type
     }
     /// <p>The target name.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_name(&self) -> ::std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl LogTargetBuilder {
     }
     /// <p>The target type.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The target type.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
@@ -56,8 +55,7 @@ impl LogTargetBuilder {
     }
     /// <p>The target name.</p>
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
+        self.target_name = input; self
     }
     /// <p>The target name.</p>
     pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl LogTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_type`](crate::types::builders::LogTargetBuilder::target_type)
     pub fn build(self) -> ::std::result::Result<crate::types::LogTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogTarget {
-            target_type: self.target_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_type",
-                    "target_type was not specified but it is required when building LogTarget",
-                )
-            })?,
-            target_name: self.target_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogTarget {
+                target_type: self.target_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_type", "target_type was not specified but it is required when building LogTarget")
+                    )?
+                ,
+                target_name: self.target_name
+                ,
+            }
+        )
     }
 }
+

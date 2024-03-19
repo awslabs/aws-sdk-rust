@@ -3,22 +3,22 @@
 /// Update Action Group Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgentActionGroupOutput {
+pub struct UpdateAgentActionGroupOutput  {
     /// Contains the information of an Agent Action Group
     pub agent_action_group: ::std::option::Option<crate::types::AgentActionGroup>,
     _request_id: Option<String>,
 }
-impl UpdateAgentActionGroupOutput {
+impl  UpdateAgentActionGroupOutput  {
     /// Contains the information of an Agent Action Group
-    pub fn agent_action_group(&self) -> ::std::option::Option<&crate::types::AgentActionGroup> {
+    pub fn agent_action_group(&self) -> ::std::option::Option<& crate::types::AgentActionGroup> {
         self.agent_action_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAgentActionGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAgentActionGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentActionGroupOutput`](crate::operation::update_agent_action_group::UpdateAgentActionGroupOutput).
     pub fn builder() -> crate::operation::update_agent_action_group::builders::UpdateAgentActionGroupOutputBuilder {
@@ -42,27 +42,28 @@ impl UpdateAgentActionGroupOutputBuilder {
     }
     /// Contains the information of an Agent Action Group
     pub fn set_agent_action_group(mut self, input: ::std::option::Option<crate::types::AgentActionGroup>) -> Self {
-        self.agent_action_group = input;
-        self
+        self.agent_action_group = input; self
     }
     /// Contains the information of an Agent Action Group
     pub fn get_agent_action_group(&self) -> &::std::option::Option<crate::types::AgentActionGroup> {
         &self.agent_action_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAgentActionGroupOutput`](crate::operation::update_agent_action_group::UpdateAgentActionGroupOutput).
     pub fn build(self) -> crate::operation::update_agent_action_group::UpdateAgentActionGroupOutput {
         crate::operation::update_agent_action_group::UpdateAgentActionGroupOutput {
-            agent_action_group: self.agent_action_group,
+            agent_action_group: self.agent_action_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

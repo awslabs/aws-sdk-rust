@@ -5,54 +5,50 @@ pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_t
 
 impl StartSpeechSynthesisTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_speech_synthesis_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_speech_synthesis_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartSpeechSynthesisTask`.
-///
+/// 
 /// <p>Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket for the service to store the output of the synthesis task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code> object, which will include an identifier of this task as well as the current status. The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting the asynchronous synthesis task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder,
+                    inner: crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-    > for StartSpeechSynthesisTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
+                    crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
+                > for StartSpeechSynthesisTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
+                        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartSpeechSynthesisTaskFluentBuilder {
     /// Creates a new `StartSpeechSynthesisTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput, crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn engine(mut self, input: crate::types::Engine) -> Self {
         self.inner = self.inner.engine(input);
@@ -149,12 +136,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.</p>
-    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lexicon_names(input);
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.</p>
-    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_lexicon_names()
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
@@ -243,12 +230,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>) -> Self {
+    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SpeechMarkType>>) -> Self {
         self.inner = self.inner.set_speech_mark_types(input);
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SpeechMarkType>> {
         self.inner.get_speech_mark_types()
     }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.</p>
@@ -294,3 +281,4 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner.get_voice_id()
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>The response from Amazon Cognito to a request to reset a password.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ForgotPasswordOutput {
+pub struct ForgotPasswordOutput  {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }
-impl ForgotPasswordOutput {
+impl  ForgotPasswordOutput  {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
-    pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> ::std::option::Option<& crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ForgotPasswordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ForgotPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput).
     pub fn builder() -> crate::operation::forgot_password::builders::ForgotPasswordOutputBuilder {
@@ -41,27 +41,28 @@ impl ForgotPasswordOutputBuilder {
     }
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
-        self.code_delivery_details = input;
-        self
+        self.code_delivery_details = input; self
     }
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput).
     pub fn build(self) -> crate::operation::forgot_password::ForgotPasswordOutput {
         crate::operation::forgot_password::ForgotPasswordOutput {
-            code_delivery_details: self.code_delivery_details,
+            code_delivery_details: self.code_delivery_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

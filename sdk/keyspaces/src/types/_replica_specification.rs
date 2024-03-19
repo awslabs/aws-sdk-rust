@@ -12,7 +12,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaSpecification {
+pub struct ReplicaSpecification  {
     /// <p>The Amazon Web Services Region.</p>
     pub region: ::std::string::String,
     /// <p>The provisioned read capacity units for the multi-Region table in the specified Amazon Web Services Region.</p>
@@ -20,18 +20,17 @@ pub struct ReplicaSpecification {
     /// <p>The read capacity auto scaling settings for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub read_capacity_auto_scaling: ::std::option::Option<crate::types::AutoScalingSettings>,
 }
-impl ReplicaSpecification {
+impl  ReplicaSpecification  {
     /// <p>The Amazon Web Services Region.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The provisioned read capacity units for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.read_capacity_units
     }
     /// <p>The read capacity auto scaling settings for the multi-Region table in the specified Amazon Web Services Region.</p>
-    pub fn read_capacity_auto_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingSettings> {
+    pub fn read_capacity_auto_scaling(&self) -> ::std::option::Option<& crate::types::AutoScalingSettings> {
         self.read_capacity_auto_scaling.as_ref()
     }
 }
@@ -59,8 +58,7 @@ impl ReplicaSpecificationBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl ReplicaSpecificationBuilder {
     }
     /// <p>The provisioned read capacity units for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The provisioned read capacity units for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -87,8 +84,7 @@ impl ReplicaSpecificationBuilder {
     }
     /// <p>The read capacity auto scaling settings for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn set_read_capacity_auto_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingSettings>) -> Self {
-        self.read_capacity_auto_scaling = input;
-        self
+        self.read_capacity_auto_scaling = input; self
     }
     /// <p>The read capacity auto scaling settings for the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn get_read_capacity_auto_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingSettings> {
@@ -98,15 +94,19 @@ impl ReplicaSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::ReplicaSpecificationBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicaSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicaSpecification {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building ReplicaSpecification",
-                )
-            })?,
-            read_capacity_units: self.read_capacity_units,
-            read_capacity_auto_scaling: self.read_capacity_auto_scaling,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicaSpecification {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building ReplicaSpecification")
+                    )?
+                ,
+                read_capacity_units: self.read_capacity_units
+                ,
+                read_capacity_auto_scaling: self.read_capacity_auto_scaling
+                ,
+            }
+        )
     }
 }
+

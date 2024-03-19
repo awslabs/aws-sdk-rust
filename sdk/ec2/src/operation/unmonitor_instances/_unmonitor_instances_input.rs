@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnmonitorInstancesInput {
+pub struct UnmonitorInstancesInput  {
     /// <p>The IDs of the instances.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl UnmonitorInstancesInput {
+impl  UnmonitorInstancesInput  {
     /// <p>The IDs of the instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -31,7 +32,7 @@ impl UnmonitorInstancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnmonitorInstancesInputBuilder {
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl UnmonitorInstancesInputBuilder {
@@ -42,17 +43,16 @@ impl UnmonitorInstancesInputBuilder {
     /// <p>The IDs of the instances.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -62,20 +62,22 @@ impl UnmonitorInstancesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`UnmonitorInstancesInput`](crate::operation::unmonitor_instances::UnmonitorInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unmonitor_instances::UnmonitorInstancesInput {
-            instance_ids: self.instance_ids,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unmonitor_instances::UnmonitorInstancesInput {
+                instance_ids: self.instance_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

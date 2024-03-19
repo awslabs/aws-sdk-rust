@@ -3,28 +3,29 @@
 /// <p>Show Group Result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupResult {
+pub struct GroupResult  {
     /// <p>Group result ID.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Group Result Name.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tests under Group Result.</p>
-    pub tests: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
+    pub tests: ::std::option::Option<::std::vec::Vec::<crate::types::TestCaseRun>>,
 }
-impl GroupResult {
+impl  GroupResult  {
     /// <p>Group result ID.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>Group Result Name.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Tests under Group Result.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tests.is_none()`.
-    pub fn tests(&self) -> &[crate::types::TestCaseRun] {
-        self.tests.as_deref().unwrap_or_default()
+    pub fn tests(&self) -> & [crate::types::TestCaseRun] {
+        self.tests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GroupResult {
@@ -40,7 +41,7 @@ impl GroupResult {
 pub struct GroupResultBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tests: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
+    pub(crate) tests: ::std::option::Option<::std::vec::Vec::<crate::types::TestCaseRun>>,
 }
 impl GroupResultBuilder {
     /// <p>Group result ID.</p>
@@ -50,8 +51,7 @@ impl GroupResultBuilder {
     }
     /// <p>Group result ID.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>Group result ID.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl GroupResultBuilder {
     }
     /// <p>Group Result Name.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>Group Result Name.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl GroupResultBuilder {
     /// <p>Tests under Group Result.</p>
     pub fn tests(mut self, input: crate::types::TestCaseRun) -> Self {
         let mut v = self.tests.unwrap_or_default();
-        v.push(input);
-        self.tests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tests under Group Result.</p>
-    pub fn set_tests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>) -> Self {
-        self.tests = input;
-        self
+    pub fn set_tests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TestCaseRun>>) -> Self {
+        self.tests = input; self
     }
     /// <p>Tests under Group Result.</p>
-    pub fn get_tests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>> {
+    pub fn get_tests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TestCaseRun>> {
         &self.tests
     }
     /// Consumes the builder and constructs a [`GroupResult`](crate::types::GroupResult).
     pub fn build(self) -> crate::types::GroupResult {
         crate::types::GroupResult {
-            group_id: self.group_id,
-            group_name: self.group_name,
-            tests: self.tests,
+            group_id: self.group_id
+            ,
+            group_name: self.group_name
+            ,
+            tests: self.tests
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The RegisterDomain request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RegisterDomainInput {
+pub struct RegisterDomainInput  {
     /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -54,7 +54,7 @@ pub struct RegisterDomainInput {
     /// </note>
     pub privacy_protect_billing_contact: ::std::option::Option<bool>,
 }
-impl RegisterDomainInput {
+impl  RegisterDomainInput  {
     /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -68,11 +68,11 @@ impl RegisterDomainInput {
     /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p></li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(&self) -> ::std::option::Option<&str> {
+    pub fn idn_lang_code(&self) -> ::std::option::Option<& str> {
         self.idn_lang_code.as_deref()
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -86,15 +86,15 @@ impl RegisterDomainInput {
         self.auto_renew
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn admin_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn admin_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.admin_contact.as_ref()
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn registrant_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn registrant_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.registrant_contact.as_ref()
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn tech_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p><note>
@@ -119,7 +119,7 @@ impl RegisterDomainInput {
         self.privacy_protect_tech_contact
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn billing_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn billing_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.billing_contact.as_ref()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
@@ -129,7 +129,7 @@ impl RegisterDomainInput {
         self.privacy_protect_billing_contact
     }
 }
-impl ::std::fmt::Debug for RegisterDomainInput {
+impl  ::std::fmt::Debug for RegisterDomainInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterDomainInput");
         formatter.field("domain_name", &self.domain_name);
@@ -204,8 +204,7 @@ impl RegisterDomainInputBuilder {
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -230,8 +229,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idn_lang_code = input;
-        self
+        self.idn_lang_code = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_idn_lang_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +245,7 @@ impl RegisterDomainInputBuilder {
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_years = input;
-        self
+        self.duration_in_years = input; self
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
@@ -264,8 +261,7 @@ impl RegisterDomainInputBuilder {
     /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code></p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code></p>
@@ -280,8 +276,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.admin_contact = input;
-        self
+        self.admin_contact = input; self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -295,8 +290,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.registrant_contact = input;
-        self
+        self.registrant_contact = input; self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -310,8 +304,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.tech_contact = input;
-        self
+        self.tech_contact = input; self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -330,8 +323,7 @@ impl RegisterDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_admin_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_admin_contact = input;
-        self
+        self.privacy_protect_admin_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -353,8 +345,7 @@ impl RegisterDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_registrant_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_registrant_contact = input;
-        self
+        self.privacy_protect_registrant_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -376,8 +367,7 @@ impl RegisterDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_tech_contact = input;
-        self
+        self.privacy_protect_tech_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -393,8 +383,7 @@ impl RegisterDomainInputBuilder {
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.billing_contact = input;
-        self
+        self.billing_contact = input; self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -411,8 +400,7 @@ impl RegisterDomainInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_privacy_protect_billing_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_billing_contact = input;
-        self
+        self.privacy_protect_billing_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -421,23 +409,35 @@ impl RegisterDomainInputBuilder {
         &self.privacy_protect_billing_contact
     }
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
-            domain_name: self.domain_name,
-            idn_lang_code: self.idn_lang_code,
-            duration_in_years: self.duration_in_years,
-            auto_renew: self.auto_renew,
-            admin_contact: self.admin_contact,
-            registrant_contact: self.registrant_contact,
-            tech_contact: self.tech_contact,
-            privacy_protect_admin_contact: self.privacy_protect_admin_contact,
-            privacy_protect_registrant_contact: self.privacy_protect_registrant_contact,
-            privacy_protect_tech_contact: self.privacy_protect_tech_contact,
-            billing_contact: self.billing_contact,
-            privacy_protect_billing_contact: self.privacy_protect_billing_contact,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_domain::RegisterDomainInput {
+                domain_name: self.domain_name
+                ,
+                idn_lang_code: self.idn_lang_code
+                ,
+                duration_in_years: self.duration_in_years
+                ,
+                auto_renew: self.auto_renew
+                ,
+                admin_contact: self.admin_contact
+                ,
+                registrant_contact: self.registrant_contact
+                ,
+                tech_contact: self.tech_contact
+                ,
+                privacy_protect_admin_contact: self.privacy_protect_admin_contact
+                ,
+                privacy_protect_registrant_contact: self.privacy_protect_registrant_contact
+                ,
+                privacy_protect_tech_contact: self.privacy_protect_tech_contact
+                ,
+                billing_contact: self.billing_contact
+                ,
+                privacy_protect_billing_contact: self.privacy_protect_billing_contact
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RegisterDomainInputBuilder {
@@ -458,3 +458,4 @@ impl ::std::fmt::Debug for RegisterDomainInputBuilder {
         formatter.finish()
     }
 }
+

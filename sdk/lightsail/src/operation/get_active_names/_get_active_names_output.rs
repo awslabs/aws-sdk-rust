@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetActiveNamesOutput {
+pub struct GetActiveNamesOutput  {
     /// <p>The list of active names returned by the get active names request.</p>
-    pub active_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub active_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetActiveNamesOutput {
+impl  GetActiveNamesOutput  {
     /// <p>The list of active names returned by the get active names request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_names.is_none()`.
-    pub fn active_names(&self) -> &[::std::string::String] {
-        self.active_names.as_deref().unwrap_or_default()
+    pub fn active_names(&self) -> & [::std::string::String] {
+        self.active_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetActiveNamesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetActiveNamesOutput {
     /// Creates a new builder-style object to manufacture [`GetActiveNamesOutput`](crate::operation::get_active_names::GetActiveNamesOutput).
     pub fn builder() -> crate::operation::get_active_names::builders::GetActiveNamesOutputBuilder {
@@ -41,7 +42,7 @@ impl GetActiveNamesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActiveNamesOutputBuilder {
-    pub(crate) active_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) active_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetActiveNamesOutputBuilder {
     /// <p>The list of active names returned by the get active names request.</p>
     pub fn active_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.active_names.unwrap_or_default();
-        v.push(input.into());
-        self.active_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.active_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of active names returned by the get active names request.</p>
-    pub fn set_active_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.active_names = input;
-        self
+    pub fn set_active_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.active_names = input; self
     }
     /// <p>The list of active names returned by the get active names request.</p>
-    pub fn get_active_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_active_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.active_names
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetActiveNamesOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetActiveNamesOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetActiveNamesOutput`](crate::operation::get_active_names::GetActiveNamesOutput).
     pub fn build(self) -> crate::operation::get_active_names::GetActiveNamesOutput {
         crate::operation::get_active_names::GetActiveNamesOutput {
-            active_names: self.active_names,
-            next_page_token: self.next_page_token,
+            active_names: self.active_names
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

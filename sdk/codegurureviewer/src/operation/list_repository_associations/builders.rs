@@ -5,54 +5,50 @@ pub use crate::operation::list_repository_associations::_list_repository_associa
 
 impl ListRepositoryAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_repository_associations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_repository_associations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListRepositoryAssociations`.
-///
+/// 
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">RepositoryAssociationSummary</a> objects that contain summary information about a repository association. You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">ProviderType</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">Name</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">State</a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">Owner</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRepositoryAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder,
+                    inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-    > for ListRepositoryAssociationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
+                    crate::operation::list_repository_associations::ListRepositoryAssociationsError,
+                > for ListRepositoryAssociationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
+                        crate::operation::list_repository_associations::ListRepositoryAssociationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListRepositoryAssociationsFluentBuilder {
     /// Creates a new `ListRepositoryAssociations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListRepositoryAssociationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_repository_associations::ListRepositoryAssociations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_repository_associations::ListRepositoryAssociations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_repository_associations::ListRepositoryAssociationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_repository_associations::ListRepositoryAssociations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_repository_associations::ListRepositoryAssociations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_repository_associations::ListRepositoryAssociationsOutput, crate::operation::list_repository_associations::ListRepositoryAssociationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator {
-        crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator {
+                                crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ProviderTypes`.
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
@@ -124,12 +111,12 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>>) -> Self {
         self.inner = self.inner.set_provider_types(input);
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProviderType>> {
         self.inner.get_provider_types()
     }
     /// Appends an item to `States`.
@@ -184,7 +171,7 @@ impl ListRepositoryAssociationsFluentBuilder {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -210,7 +197,7 @@ impl ListRepositoryAssociationsFluentBuilder {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryAssociationState>> {
         self.inner.get_states()
     }
     /// Appends an item to `Names`.
@@ -223,12 +210,12 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_names()
     }
     /// Appends an item to `Owners`.
@@ -241,12 +228,12 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owners(input);
         self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.</p>
-    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_owners()
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -284,3 +271,4 @@ impl ListRepositoryAssociationsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

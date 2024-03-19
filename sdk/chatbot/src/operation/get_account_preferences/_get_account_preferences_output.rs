@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountPreferencesOutput {
+pub struct GetAccountPreferencesOutput  {
     /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
     pub account_preferences: ::std::option::Option<crate::types::AccountPreferences>,
     _request_id: Option<String>,
 }
-impl GetAccountPreferencesOutput {
+impl  GetAccountPreferencesOutput  {
     /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
-    pub fn account_preferences(&self) -> ::std::option::Option<&crate::types::AccountPreferences> {
+    pub fn account_preferences(&self) -> ::std::option::Option<& crate::types::AccountPreferences> {
         self.account_preferences.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccountPreferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccountPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountPreferencesOutput`](crate::operation::get_account_preferences::GetAccountPreferencesOutput).
     pub fn builder() -> crate::operation::get_account_preferences::builders::GetAccountPreferencesOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAccountPreferencesOutputBuilder {
     }
     /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
     pub fn set_account_preferences(mut self, input: ::std::option::Option<crate::types::AccountPreferences>) -> Self {
-        self.account_preferences = input;
-        self
+        self.account_preferences = input; self
     }
     /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
     pub fn get_account_preferences(&self) -> &::std::option::Option<crate::types::AccountPreferences> {
         &self.account_preferences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccountPreferencesOutput`](crate::operation::get_account_preferences::GetAccountPreferencesOutput).
     pub fn build(self) -> crate::operation::get_account_preferences::GetAccountPreferencesOutput {
         crate::operation::get_account_preferences::GetAccountPreferencesOutput {
-            account_preferences: self.account_preferences,
+            account_preferences: self.account_preferences
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

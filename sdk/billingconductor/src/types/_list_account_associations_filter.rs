@@ -6,7 +6,7 @@
 /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountAssociationsFilter {
+pub struct ListAccountAssociationsFilter  {
     /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p><code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
@@ -14,24 +14,25 @@ pub struct ListAccountAssociationsFilter {
     /// <p>The Amazon Web Services account ID to filter on.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListAccountAssociationsFilter {
+impl  ListAccountAssociationsFilter  {
     /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p><code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
-    pub fn association(&self) -> ::std::option::Option<&str> {
+    pub fn association(&self) -> ::std::option::Option<& str> {
         self.association.as_deref()
     }
     /// <p>The Amazon Web Services account ID to filter on.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListAccountAssociationsFilter {
@@ -47,7 +48,7 @@ impl ListAccountAssociationsFilter {
 pub struct ListAccountAssociationsFilterBuilder {
     pub(crate) association: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListAccountAssociationsFilterBuilder {
     /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
@@ -61,8 +62,7 @@ impl ListAccountAssociationsFilterBuilder {
     /// <p><code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p><code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
     pub fn set_association(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association = input;
-        self
+        self.association = input; self
     }
     /// <p><code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p><code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
@@ -77,8 +77,7 @@ impl ListAccountAssociationsFilterBuilder {
     }
     /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,25 +90,28 @@ impl ListAccountAssociationsFilterBuilder {
     /// <p>The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).
     pub fn build(self) -> crate::types::ListAccountAssociationsFilter {
         crate::types::ListAccountAssociationsFilter {
-            association: self.association,
-            account_id: self.account_id,
-            account_ids: self.account_ids,
+            association: self.association
+            ,
+            account_id: self.account_id
+            ,
+            account_ids: self.account_ids
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConfigureAccessPointInput {
+pub struct ConfigureAccessPointInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The position of the network resource.</p>
@@ -16,33 +16,33 @@ pub struct ConfigureAccessPointInput {
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
     pub cpi_secret_key: ::std::option::Option<::std::string::String>,
 }
-impl ConfigureAccessPointInput {
+impl  ConfigureAccessPointInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The position of the network resource.</p>
-    pub fn position(&self) -> ::std::option::Option<&crate::types::Position> {
+    pub fn position(&self) -> ::std::option::Option<& crate::types::Position> {
         self.position.as_ref()
     }
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
-    pub fn cpi_username(&self) -> ::std::option::Option<&str> {
+    pub fn cpi_username(&self) -> ::std::option::Option<& str> {
         self.cpi_username.as_deref()
     }
     /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
-    pub fn cpi_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn cpi_user_id(&self) -> ::std::option::Option<& str> {
         self.cpi_user_id.as_deref()
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
-    pub fn cpi_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn cpi_user_password(&self) -> ::std::option::Option<& str> {
         self.cpi_user_password.as_deref()
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
-    pub fn cpi_secret_key(&self) -> ::std::option::Option<&str> {
+    pub fn cpi_secret_key(&self) -> ::std::option::Option<& str> {
         self.cpi_secret_key.as_deref()
     }
 }
-impl ::std::fmt::Debug for ConfigureAccessPointInput {
+impl  ::std::fmt::Debug for ConfigureAccessPointInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigureAccessPointInput");
         formatter.field("access_point_arn", &self.access_point_arn);
@@ -81,8 +81,7 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_point_arn = input;
-        self
+        self.access_point_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>The position of the network resource.</p>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The position of the network resource.</p>
     pub fn get_position(&self) -> &::std::option::Option<crate::types::Position> {
@@ -109,8 +107,7 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
     pub fn set_cpi_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpi_username = input;
-        self
+        self.cpi_username = input; self
     }
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
     pub fn get_cpi_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
     pub fn set_cpi_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpi_user_id = input;
-        self
+        self.cpi_user_id = input; self
     }
     /// <p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource.</p>
     pub fn get_cpi_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
     pub fn set_cpi_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpi_user_password = input;
-        self
+        self.cpi_user_password = input; self
     }
     /// <p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>
     pub fn get_cpi_user_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,26 +146,30 @@ impl ConfigureAccessPointInputBuilder {
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
     pub fn set_cpi_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpi_secret_key = input;
-        self
+        self.cpi_secret_key = input; self
     }
     /// <p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.</p>
     pub fn get_cpi_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpi_secret_key
     }
     /// Consumes the builder and constructs a [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::configure_access_point::ConfigureAccessPointInput {
-            access_point_arn: self.access_point_arn,
-            position: self.position,
-            cpi_username: self.cpi_username,
-            cpi_user_id: self.cpi_user_id,
-            cpi_user_password: self.cpi_user_password,
-            cpi_secret_key: self.cpi_secret_key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::configure_access_point::ConfigureAccessPointInput {
+                access_point_arn: self.access_point_arn
+                ,
+                position: self.position
+                ,
+                cpi_username: self.cpi_username
+                ,
+                cpi_user_id: self.cpi_user_id
+                ,
+                cpi_user_password: self.cpi_user_password
+                ,
+                cpi_secret_key: self.cpi_secret_key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConfigureAccessPointInputBuilder {
@@ -185,3 +184,4 @@ impl ::std::fmt::Debug for ConfigureAccessPointInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIngestionJobsInput {
+pub struct ListIngestionJobsInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Identifier for a resource.
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// List of IngestionJobFilters
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobFilter>>,
     /// Sorts the response returned by ListIngestionJobs operation.
     pub sort_by: ::std::option::Option<crate::types::IngestionJobSortBy>,
     /// Max Results.
@@ -16,23 +16,24 @@ pub struct ListIngestionJobsInput {
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListIngestionJobsInput {
+impl  ListIngestionJobsInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// List of IngestionJobFilters
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::IngestionJobFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::IngestionJobFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// Sorts the response returned by ListIngestionJobs operation.
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::IngestionJobSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::IngestionJobSortBy> {
         self.sort_by.as_ref()
     }
     /// Max Results.
@@ -40,7 +41,7 @@ impl ListIngestionJobsInput {
         self.max_results
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,7 +58,7 @@ impl ListIngestionJobsInput {
 pub struct ListIngestionJobsInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobFilter>>,
     pub(crate) sort_by: ::std::option::Option<crate::types::IngestionJobSortBy>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -71,8 +72,7 @@ impl ListIngestionJobsInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl ListIngestionJobsInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +99,16 @@ impl ListIngestionJobsInputBuilder {
     /// List of IngestionJobFilters
     pub fn filters(mut self, input: crate::types::IngestionJobFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// List of IngestionJobFilters
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobFilter>>) -> Self {
+        self.filters = input; self
     }
     /// List of IngestionJobFilters
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobFilter>> {
         &self.filters
     }
     /// Sorts the response returned by ListIngestionJobs operation.
@@ -120,8 +118,7 @@ impl ListIngestionJobsInputBuilder {
     }
     /// Sorts the response returned by ListIngestionJobs operation.
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::IngestionJobSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// Sorts the response returned by ListIngestionJobs operation.
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::IngestionJobSortBy> {
@@ -134,8 +131,7 @@ impl ListIngestionJobsInputBuilder {
     }
     /// Max Results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Max Results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -148,24 +144,30 @@ impl ListIngestionJobsInputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIngestionJobsInput`](crate::operation::list_ingestion_jobs::ListIngestionJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_ingestion_jobs::ListIngestionJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_ingestion_jobs::ListIngestionJobsInput {
-            knowledge_base_id: self.knowledge_base_id,
-            data_source_id: self.data_source_id,
-            filters: self.filters,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ingestion_jobs::ListIngestionJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_ingestion_jobs::ListIngestionJobsInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                filters: self.filters
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

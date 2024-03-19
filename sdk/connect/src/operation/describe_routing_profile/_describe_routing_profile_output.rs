@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRoutingProfileOutput {
+pub struct DescribeRoutingProfileOutput  {
     /// <p>The routing profile.</p>
     pub routing_profile: ::std::option::Option<crate::types::RoutingProfile>,
     _request_id: Option<String>,
 }
-impl DescribeRoutingProfileOutput {
+impl  DescribeRoutingProfileOutput  {
     /// <p>The routing profile.</p>
-    pub fn routing_profile(&self) -> ::std::option::Option<&crate::types::RoutingProfile> {
+    pub fn routing_profile(&self) -> ::std::option::Option<& crate::types::RoutingProfile> {
         self.routing_profile.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRoutingProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRoutingProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRoutingProfileOutput`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput).
     pub fn builder() -> crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeRoutingProfileOutputBuilder {
     }
     /// <p>The routing profile.</p>
     pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfile>) -> Self {
-        self.routing_profile = input;
-        self
+        self.routing_profile = input; self
     }
     /// <p>The routing profile.</p>
     pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfile> {
         &self.routing_profile
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRoutingProfileOutput`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput).
     pub fn build(self) -> crate::operation::describe_routing_profile::DescribeRoutingProfileOutput {
         crate::operation::describe_routing_profile::DescribeRoutingProfileOutput {
-            routing_profile: self.routing_profile,
+            routing_profile: self.routing_profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

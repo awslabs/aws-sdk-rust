@@ -3,7 +3,7 @@
 /// <p>Data for a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserData {
+pub struct UserData  {
     /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user.</p>
     pub user: ::std::option::Option<crate::types::UserReference>,
     /// <p>Information about the routing profile that is assigned to the user.</p>
@@ -13,53 +13,54 @@ pub struct UserData {
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
     pub status: ::std::option::Option<crate::types::AgentStatusReference>,
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots.</p>
-    pub available_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
+    pub available_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent.</p>
-    pub max_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
+    pub max_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
     /// <p>A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots.</p>
-    pub active_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
+    pub active_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
     /// <p>A list of contact reference information.</p>
-    pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>>,
+    pub contacts: ::std::option::Option<::std::vec::Vec::<crate::types::AgentContactReference>>,
     /// <p>The Next status of the agent.</p>
     pub next_status: ::std::option::Option<::std::string::String>,
 }
-impl UserData {
+impl  UserData  {
     /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::UserReference> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::UserReference> {
         self.user.as_ref()
     }
     /// <p>Information about the routing profile that is assigned to the user.</p>
-    pub fn routing_profile(&self) -> ::std::option::Option<&crate::types::RoutingProfileReference> {
+    pub fn routing_profile(&self) -> ::std::option::Option<& crate::types::RoutingProfileReference> {
         self.routing_profile.as_ref()
     }
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
-    pub fn hierarchy_path(&self) -> ::std::option::Option<&crate::types::HierarchyPathReference> {
+    pub fn hierarchy_path(&self) -> ::std::option::Option<& crate::types::HierarchyPathReference> {
         self.hierarchy_path.as_ref()
     }
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatusReference> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgentStatusReference> {
         self.status.as_ref()
     }
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots.</p>
-    pub fn available_slots_by_channel(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn available_slots_by_channel(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Channel, i32>> {
         self.available_slots_by_channel.as_ref()
     }
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent.</p>
-    pub fn max_slots_by_channel(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn max_slots_by_channel(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Channel, i32>> {
         self.max_slots_by_channel.as_ref()
     }
     /// <p>A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots.</p>
-    pub fn active_slots_by_channel(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn active_slots_by_channel(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Channel, i32>> {
         self.active_slots_by_channel.as_ref()
     }
     /// <p>A list of contact reference information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
-    pub fn contacts(&self) -> &[crate::types::AgentContactReference] {
-        self.contacts.as_deref().unwrap_or_default()
+    pub fn contacts(&self) -> & [crate::types::AgentContactReference] {
+        self.contacts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Next status of the agent.</p>
-    pub fn next_status(&self) -> ::std::option::Option<&str> {
+    pub fn next_status(&self) -> ::std::option::Option<& str> {
         self.next_status.as_deref()
     }
 }
@@ -78,10 +79,10 @@ pub struct UserDataBuilder {
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
     pub(crate) hierarchy_path: ::std::option::Option<crate::types::HierarchyPathReference>,
     pub(crate) status: ::std::option::Option<crate::types::AgentStatusReference>,
-    pub(crate) available_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
-    pub(crate) max_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
-    pub(crate) active_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
-    pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>>,
+    pub(crate) available_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
+    pub(crate) max_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
+    pub(crate) active_slots_by_channel: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>,
+    pub(crate) contacts: ::std::option::Option<::std::vec::Vec::<crate::types::AgentContactReference>>,
     pub(crate) next_status: ::std::option::Option<::std::string::String>,
 }
 impl UserDataBuilder {
@@ -92,8 +93,7 @@ impl UserDataBuilder {
     }
     /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserReference>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserReference> {
@@ -106,8 +106,7 @@ impl UserDataBuilder {
     }
     /// <p>Information about the routing profile that is assigned to the user.</p>
     pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfileReference>) -> Self {
-        self.routing_profile = input;
-        self
+        self.routing_profile = input; self
     }
     /// <p>Information about the routing profile that is assigned to the user.</p>
     pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfileReference> {
@@ -120,8 +119,7 @@ impl UserDataBuilder {
     }
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
     pub fn set_hierarchy_path(mut self, input: ::std::option::Option<crate::types::HierarchyPathReference>) -> Self {
-        self.hierarchy_path = input;
-        self
+        self.hierarchy_path = input; self
     }
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
     pub fn get_hierarchy_path(&self) -> &::std::option::Option<crate::types::HierarchyPathReference> {
@@ -134,8 +132,7 @@ impl UserDataBuilder {
     }
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatusReference>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatusReference> {
@@ -148,17 +145,16 @@ impl UserDataBuilder {
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots.</p>
     pub fn available_slots_by_channel(mut self, k: crate::types::Channel, v: i32) -> Self {
         let mut hash_map = self.available_slots_by_channel.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.available_slots_by_channel = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.available_slots_by_channel = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots.</p>
-    pub fn set_available_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>) -> Self {
-        self.available_slots_by_channel = input;
-        self
+    pub fn set_available_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>) -> Self {
+        self.available_slots_by_channel = input; self
     }
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots.</p>
-    pub fn get_available_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn get_available_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>> {
         &self.available_slots_by_channel
     }
     /// Adds a key-value pair to `max_slots_by_channel`.
@@ -168,17 +164,16 @@ impl UserDataBuilder {
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent.</p>
     pub fn max_slots_by_channel(mut self, k: crate::types::Channel, v: i32) -> Self {
         let mut hash_map = self.max_slots_by_channel.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.max_slots_by_channel = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.max_slots_by_channel = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent.</p>
-    pub fn set_max_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>) -> Self {
-        self.max_slots_by_channel = input;
-        self
+    pub fn set_max_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>) -> Self {
+        self.max_slots_by_channel = input; self
     }
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent.</p>
-    pub fn get_max_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn get_max_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>> {
         &self.max_slots_by_channel
     }
     /// Adds a key-value pair to `active_slots_by_channel`.
@@ -188,17 +183,16 @@ impl UserDataBuilder {
     /// <p>A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots.</p>
     pub fn active_slots_by_channel(mut self, k: crate::types::Channel, v: i32) -> Self {
         let mut hash_map = self.active_slots_by_channel.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.active_slots_by_channel = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.active_slots_by_channel = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots.</p>
-    pub fn set_active_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>) -> Self {
-        self.active_slots_by_channel = input;
-        self
+    pub fn set_active_slots_by_channel(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>>) -> Self {
+        self.active_slots_by_channel = input; self
     }
     /// <p>A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots.</p>
-    pub fn get_active_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+    pub fn get_active_slots_by_channel(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Channel, i32>> {
         &self.active_slots_by_channel
     }
     /// Appends an item to `contacts`.
@@ -208,17 +202,16 @@ impl UserDataBuilder {
     /// <p>A list of contact reference information.</p>
     pub fn contacts(mut self, input: crate::types::AgentContactReference) -> Self {
         let mut v = self.contacts.unwrap_or_default();
-        v.push(input);
-        self.contacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of contact reference information.</p>
-    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>>) -> Self {
-        self.contacts = input;
-        self
+    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentContactReference>>) -> Self {
+        self.contacts = input; self
     }
     /// <p>A list of contact reference information.</p>
-    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>> {
+    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentContactReference>> {
         &self.contacts
     }
     /// <p>The Next status of the agent.</p>
@@ -228,8 +221,7 @@ impl UserDataBuilder {
     }
     /// <p>The Next status of the agent.</p>
     pub fn set_next_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_status = input;
-        self
+        self.next_status = input; self
     }
     /// <p>The Next status of the agent.</p>
     pub fn get_next_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,15 +230,25 @@ impl UserDataBuilder {
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {
         crate::types::UserData {
-            user: self.user,
-            routing_profile: self.routing_profile,
-            hierarchy_path: self.hierarchy_path,
-            status: self.status,
-            available_slots_by_channel: self.available_slots_by_channel,
-            max_slots_by_channel: self.max_slots_by_channel,
-            active_slots_by_channel: self.active_slots_by_channel,
-            contacts: self.contacts,
-            next_status: self.next_status,
+            user: self.user
+            ,
+            routing_profile: self.routing_profile
+            ,
+            hierarchy_path: self.hierarchy_path
+            ,
+            status: self.status
+            ,
+            available_slots_by_channel: self.available_slots_by_channel
+            ,
+            max_slots_by_channel: self.max_slots_by_channel
+            ,
+            active_slots_by_channel: self.active_slots_by_channel
+            ,
+            contacts: self.contacts
+            ,
+            next_status: self.next_status
+            ,
         }
     }
 }
+

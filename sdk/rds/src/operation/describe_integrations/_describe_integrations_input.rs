@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIntegrationsInput {
+pub struct DescribeIntegrationsInput  {
     /// <p>The unique identifier of the integration.</p>
     pub integration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more resources to return.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -14,16 +14,17 @@ pub struct DescribeIntegrationsInput {
     /// <p>An optional pagination token provided by a previous <code>DescribeIntegrations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIntegrationsInput {
+impl  DescribeIntegrationsInput  {
     /// <p>The unique identifier of the integration.</p>
-    pub fn integration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn integration_identifier(&self) -> ::std::option::Option<& str> {
         self.integration_identifier.as_deref()
     }
     /// <p>A filter that specifies one or more resources to return.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -32,7 +33,7 @@ impl DescribeIntegrationsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeIntegrations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -48,7 +49,7 @@ impl DescribeIntegrationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIntegrationsInputBuilder {
     pub(crate) integration_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -60,8 +61,7 @@ impl DescribeIntegrationsInputBuilder {
     }
     /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_identifier = input;
-        self
+        self.integration_identifier = input; self
     }
     /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +74,16 @@ impl DescribeIntegrationsInputBuilder {
     /// <p>A filter that specifies one or more resources to return.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more resources to return.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more resources to return.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -98,8 +97,7 @@ impl DescribeIntegrationsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -114,23 +112,26 @@ impl DescribeIntegrationsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeIntegrations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeIntegrations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeIntegrationsInput`](crate::operation::describe_integrations::DescribeIntegrationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_integrations::DescribeIntegrationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_integrations::DescribeIntegrationsInput {
-            integration_identifier: self.integration_identifier,
-            filters: self.filters,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_integrations::DescribeIntegrationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_integrations::DescribeIntegrationsInput {
+                integration_identifier: self.integration_identifier
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

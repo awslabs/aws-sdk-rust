@@ -3,16 +3,17 @@
 /// <p>Contains information about one or more alarm actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmEventActions {
+pub struct AlarmEventActions  {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub alarm_actions: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
+    pub alarm_actions: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmAction>>,
 }
-impl AlarmEventActions {
+impl  AlarmEventActions  {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
-    pub fn alarm_actions(&self) -> &[crate::types::AlarmAction] {
-        self.alarm_actions.as_deref().unwrap_or_default()
+    pub fn alarm_actions(&self) -> & [crate::types::AlarmAction] {
+        self.alarm_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AlarmEventActions {
@@ -26,7 +27,7 @@ impl AlarmEventActions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmEventActionsBuilder {
-    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
+    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmAction>>,
 }
 impl AlarmEventActionsBuilder {
     /// Appends an item to `alarm_actions`.
@@ -36,23 +37,24 @@ impl AlarmEventActionsBuilder {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
     pub fn alarm_actions(mut self, input: crate::types::AlarmAction) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
-        v.push(input);
-        self.alarm_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarm_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>) -> Self {
-        self.alarm_actions = input;
-        self
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmAction>>) -> Self {
+        self.alarm_actions = input; self
     }
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmAction>> {
         &self.alarm_actions
     }
     /// Consumes the builder and constructs a [`AlarmEventActions`](crate::types::AlarmEventActions).
     pub fn build(self) -> crate::types::AlarmEventActions {
         crate::types::AlarmEventActions {
-            alarm_actions: self.alarm_actions,
+            alarm_actions: self.alarm_actions
+            ,
         }
     }
 }
+

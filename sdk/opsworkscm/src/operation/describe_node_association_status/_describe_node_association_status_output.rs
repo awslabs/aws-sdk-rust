@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodeAssociationStatusOutput {
+pub struct DescribeNodeAssociationStatusOutput  {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
@@ -15,10 +15,10 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// </ul>
     pub node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
-    pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
     _request_id: Option<String>,
 }
-impl DescribeNodeAssociationStatusOutput {
+impl  DescribeNodeAssociationStatusOutput  {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
@@ -29,21 +29,22 @@ impl DescribeNodeAssociationStatusOutput {
     /// <li>
     /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
-    pub fn node_association_status(&self) -> ::std::option::Option<&crate::types::NodeAssociationStatus> {
+    pub fn node_association_status(&self) -> ::std::option::Option<& crate::types::NodeAssociationStatus> {
         self.node_association_status.as_ref()
     }
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
-    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
-        self.engine_attributes.as_deref().unwrap_or_default()
+    pub fn engine_attributes(&self) -> & [crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeNodeAssociationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeNodeAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNodeAssociationStatusOutput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput).
     pub fn builder() -> crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusOutputBuilder {
@@ -56,7 +57,7 @@ impl DescribeNodeAssociationStatusOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusOutputBuilder {
     pub(crate) node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
-    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
     _request_id: Option<String>,
 }
 impl DescribeNodeAssociationStatusOutputBuilder {
@@ -85,8 +86,7 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub fn set_node_association_status(mut self, input: ::std::option::Option<crate::types::NodeAssociationStatus>) -> Self {
-        self.node_association_status = input;
-        self
+        self.node_association_status = input; self
     }
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
@@ -108,34 +108,36 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
-        v.push(input);
-        self.engine_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
-    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
-        self.engine_attributes = input;
-        self
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>) -> Self {
+        self.engine_attributes = input; self
     }
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
-    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeNodeAssociationStatusOutput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput).
     pub fn build(self) -> crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput {
         crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput {
-            node_association_status: self.node_association_status,
-            engine_attributes: self.engine_attributes,
+            node_association_status: self.node_association_status
+            ,
+            engine_attributes: self.engine_attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

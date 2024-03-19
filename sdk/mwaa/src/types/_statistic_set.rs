@@ -4,7 +4,7 @@
 #[deprecated(note = "This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatisticSet {
+pub struct StatisticSet  {
     /// <p><b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub sample_count: ::std::option::Option<i32>,
     /// <p><b>Internal only</b>. The sum of values for the sample set.</p>
@@ -14,7 +14,7 @@ pub struct StatisticSet {
     /// <p><b>Internal only</b>. The maximum value of the sample set.</p>
     pub maximum: ::std::option::Option<f64>,
 }
-impl StatisticSet {
+impl  StatisticSet  {
     /// <p><b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub fn sample_count(&self) -> ::std::option::Option<i32> {
         self.sample_count
@@ -56,8 +56,7 @@ impl StatisticSetBuilder {
     }
     /// <p><b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub fn set_sample_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sample_count = input;
-        self
+        self.sample_count = input; self
     }
     /// <p><b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub fn get_sample_count(&self) -> &::std::option::Option<i32> {
@@ -70,8 +69,7 @@ impl StatisticSetBuilder {
     }
     /// <p><b>Internal only</b>. The sum of values for the sample set.</p>
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sum = input;
-        self
+        self.sum = input; self
     }
     /// <p><b>Internal only</b>. The sum of values for the sample set.</p>
     pub fn get_sum(&self) -> &::std::option::Option<f64> {
@@ -84,8 +82,7 @@ impl StatisticSetBuilder {
     }
     /// <p><b>Internal only</b>. The minimum value of the sample set.</p>
     pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
     }
     /// <p><b>Internal only</b>. The minimum value of the sample set.</p>
     pub fn get_minimum(&self) -> &::std::option::Option<f64> {
@@ -98,8 +95,7 @@ impl StatisticSetBuilder {
     }
     /// <p><b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p><b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<f64> {
@@ -108,10 +104,15 @@ impl StatisticSetBuilder {
     /// Consumes the builder and constructs a [`StatisticSet`](crate::types::StatisticSet).
     pub fn build(self) -> crate::types::StatisticSet {
         crate::types::StatisticSet {
-            sample_count: self.sample_count,
-            sum: self.sum,
-            minimum: self.minimum,
-            maximum: self.maximum,
+            sample_count: self.sample_count
+            ,
+            sum: self.sum
+            ,
+            minimum: self.minimum
+            ,
+            maximum: self.maximum
+            ,
         }
     }
 }
+

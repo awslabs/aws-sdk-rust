@@ -6,15 +6,14 @@
 /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleHeader {
+pub struct SingleHeader  {
     /// <p>The name of the query header to inspect.</p>
     pub name: ::std::string::String,
 }
-impl SingleHeader {
+impl  SingleHeader  {
     /// <p>The name of the query header to inspect.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl SingleHeader {
@@ -39,8 +38,7 @@ impl SingleHeaderBuilder {
     }
     /// <p>The name of the query header to inspect.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the query header to inspect.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,13 +48,15 @@ impl SingleHeaderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SingleHeaderBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SingleHeader, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SingleHeader {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SingleHeader",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SingleHeader {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SingleHeader")
+                    )?
+                ,
+            }
+        )
     }
 }
+

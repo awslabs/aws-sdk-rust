@@ -3,7 +3,7 @@
 /// <p>Replication Configuration replicated disk.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationConfigurationReplicatedDisk {
+pub struct ReplicationConfigurationReplicatedDisk  {
     /// <p>Replication Configuration replicated disk device name.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Replication Configuration replicated disk boot disk.</p>
@@ -15,9 +15,9 @@ pub struct ReplicationConfigurationReplicatedDisk {
     /// <p>Replication Configuration replicated disk throughput.</p>
     pub throughput: i64,
 }
-impl ReplicationConfigurationReplicatedDisk {
+impl  ReplicationConfigurationReplicatedDisk  {
     /// <p>Replication Configuration replicated disk device name.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Replication Configuration replicated disk boot disk.</p>
@@ -25,7 +25,7 @@ impl ReplicationConfigurationReplicatedDisk {
         self.is_boot_disk
     }
     /// <p>Replication Configuration replicated disk staging disk type.</p>
-    pub fn staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
+    pub fn staging_disk_type(&self) -> ::std::option::Option<& crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         self.staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration replicated disk IOPs.</p>
@@ -62,8 +62,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     }
     /// <p>Replication Configuration replicated disk device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>Replication Configuration replicated disk device name.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     }
     /// <p>Replication Configuration replicated disk boot disk.</p>
     pub fn set_is_boot_disk(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_boot_disk = input;
-        self
+        self.is_boot_disk = input; self
     }
     /// <p>Replication Configuration replicated disk boot disk.</p>
     pub fn get_is_boot_disk(&self) -> &::std::option::Option<bool> {
@@ -89,12 +87,8 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         self
     }
     /// <p>Replication Configuration replicated disk staging disk type.</p>
-    pub fn set_staging_disk_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
-    ) -> Self {
-        self.staging_disk_type = input;
-        self
+    pub fn set_staging_disk_type(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>) -> Self {
+        self.staging_disk_type = input; self
     }
     /// <p>Replication Configuration replicated disk staging disk type.</p>
     pub fn get_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
@@ -107,8 +101,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     }
     /// <p>Replication Configuration replicated disk IOPs.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>Replication Configuration replicated disk IOPs.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i64> {
@@ -121,8 +114,7 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     }
     /// <p>Replication Configuration replicated disk throughput.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>Replication Configuration replicated disk throughput.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i64> {
@@ -131,11 +123,19 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
     /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::types::ReplicationConfigurationReplicatedDisk).
     pub fn build(self) -> crate::types::ReplicationConfigurationReplicatedDisk {
         crate::types::ReplicationConfigurationReplicatedDisk {
-            device_name: self.device_name,
-            is_boot_disk: self.is_boot_disk,
-            staging_disk_type: self.staging_disk_type,
-            iops: self.iops.unwrap_or_default(),
-            throughput: self.throughput.unwrap_or_default(),
+            device_name: self.device_name
+            ,
+            is_boot_disk: self.is_boot_disk
+            ,
+            staging_disk_type: self.staging_disk_type
+            ,
+            iops: self.iops
+                .unwrap_or_default()
+            ,
+            throughput: self.throughput
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

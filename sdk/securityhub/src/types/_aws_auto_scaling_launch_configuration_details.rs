@@ -3,15 +3,15 @@
 /// <p>Details about a launch configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingLaunchConfigurationDetails {
+pub struct AwsAutoScalingLaunchConfigurationDetails  {
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Specifies the block devices for the instance.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
     pub classic_link_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    pub classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded text.</p>
@@ -44,30 +44,32 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>The metadata options for the instances.</p>
     pub metadata_options: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions>,
 }
-impl AwsAutoScalingLaunchConfigurationDetails {
+impl  AwsAutoScalingLaunchConfigurationDetails  {
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
     pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
     /// <p>Specifies the block devices for the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
-    pub fn classic_link_vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn classic_link_vpc_id(&self) -> ::std::option::Option<& str> {
         self.classic_link_vpc_id.as_deref()
     }
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classic_link_vpc_security_groups.is_none()`.
-    pub fn classic_link_vpc_security_groups(&self) -> &[::std::string::String] {
-        self.classic_link_vpc_security_groups.as_deref().unwrap_or_default()
+    pub fn classic_link_vpc_security_groups(&self) -> & [::std::string::String] {
+        self.classic_link_vpc_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
@@ -75,57 +77,58 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.ebs_optimized
     }
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
-    pub fn iam_instance_profile(&self) -> ::std::option::Option<&str> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<& str> {
         self.iam_instance_profile.as_deref()
     }
     /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2 instances.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>Indicates the type of monitoring for instances in the group.</p>
-    pub fn instance_monitoring(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails> {
+    pub fn instance_monitoring(&self) -> ::std::option::Option<& crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails> {
         self.instance_monitoring.as_ref()
     }
     /// <p>The instance type for the instances.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The identifier of the kernel associated with the AMI.</p>
-    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
+    pub fn kernel_id(&self) -> ::std::option::Option<& str> {
         self.kernel_id.as_deref()
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn launch_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_name(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_name.as_deref()
     }
     /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
-    pub fn placement_tenancy(&self) -> ::std::option::Option<&str> {
+    pub fn placement_tenancy(&self) -> ::std::option::Option<& str> {
         self.placement_tenancy.as_deref()
     }
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
-    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
+    pub fn ramdisk_id(&self) -> ::std::option::Option<& str> {
         self.ramdisk_id.as_deref()
     }
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
-    pub fn spot_price(&self) -> ::std::option::Option<&str> {
+    pub fn spot_price(&self) -> ::std::option::Option<& str> {
         self.spot_price.as_deref()
     }
     /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded text.</p>
-    pub fn user_data(&self) -> ::std::option::Option<&str> {
+    pub fn user_data(&self) -> ::std::option::Option<& str> {
         self.user_data.as_deref()
     }
     /// <p>The metadata options for the instances.</p>
-    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions> {
+    pub fn metadata_options(&self) -> ::std::option::Option<& crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions> {
         self.metadata_options.as_ref()
     }
 }
@@ -141,10 +144,9 @@ impl AwsAutoScalingLaunchConfigurationDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationDetailsBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
     pub(crate) classic_link_vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) iam_instance_profile: ::std::option::Option<::std::string::String>,
@@ -156,7 +158,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetailsBuilder {
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_tenancy: ::std::option::Option<::std::string::String>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_options: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions>,
@@ -169,8 +171,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.associate_public_ip_address = input;
-        self
+        self.associate_public_ip_address = input; self
     }
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
@@ -183,22 +184,16 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// <p>Specifies the block devices for the instance.</p>
     pub fn block_device_mappings(mut self, input: crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the block devices for the instance.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
-    ) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>Specifies the block devices for the instance.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>> {
         &self.block_device_mappings
     }
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
@@ -208,8 +203,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
     pub fn set_classic_link_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classic_link_vpc_id = input;
-        self
+        self.classic_link_vpc_id = input; self
     }
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
     pub fn get_classic_link_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,17 +216,16 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
     pub fn classic_link_vpc_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.classic_link_vpc_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.classic_link_vpc_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.classic_link_vpc_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    pub fn set_classic_link_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.classic_link_vpc_security_groups = input;
-        self
+    pub fn set_classic_link_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.classic_link_vpc_security_groups = input; self
     }
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
-    pub fn get_classic_link_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classic_link_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.classic_link_vpc_security_groups
     }
     /// <p>The creation date and time for the launch configuration.</p>
@@ -244,8 +237,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The creation date and time for the launch configuration.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -259,8 +251,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
@@ -273,8 +264,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
     pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_instance_profile = input;
-        self
+        self.iam_instance_profile = input; self
     }
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
     pub fn get_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +277,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2 instances.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2 instances.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,12 +289,8 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
         self
     }
     /// <p>Indicates the type of monitoring for instances in the group.</p>
-    pub fn set_instance_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails>,
-    ) -> Self {
-        self.instance_monitoring = input;
-        self
+    pub fn set_instance_monitoring(mut self, input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails>) -> Self {
+        self.instance_monitoring = input; self
     }
     /// <p>Indicates the type of monitoring for instances in the group.</p>
     pub fn get_instance_monitoring(&self) -> &::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails> {
@@ -318,8 +303,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The instance type for the instances.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for the instances.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +316,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The identifier of the kernel associated with the AMI.</p>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
+        self.kernel_id = input; self
     }
     /// <p>The identifier of the kernel associated with the AMI.</p>
     pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,8 +329,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The name of the key pair.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the key pair.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +342,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The name of the launch configuration.</p>
     pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_name = input;
-        self
+        self.launch_configuration_name = input; self
     }
     /// <p>The name of the launch configuration.</p>
     pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,8 +355,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
     pub fn set_placement_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_tenancy = input;
-        self
+        self.placement_tenancy = input; self
     }
     /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
     pub fn get_placement_tenancy(&self) -> &::std::option::Option<::std::string::String> {
@@ -388,8 +368,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ramdisk_id = input;
-        self
+        self.ramdisk_id = input; self
     }
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -402,17 +381,16 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
@@ -422,8 +400,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_price = input;
-        self
+        self.spot_price = input; self
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -436,8 +413,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded text.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_data = input;
-        self
+        self.user_data = input; self
     }
     /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded text.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -450,8 +426,7 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     }
     /// <p>The metadata options for the instances.</p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions>) -> Self {
-        self.metadata_options = input;
-        self
+        self.metadata_options = input; self
     }
     /// <p>The metadata options for the instances.</p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions> {
@@ -460,25 +435,45 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationDetails`](crate::types::AwsAutoScalingLaunchConfigurationDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationDetails {
         crate::types::AwsAutoScalingLaunchConfigurationDetails {
-            associate_public_ip_address: self.associate_public_ip_address,
-            block_device_mappings: self.block_device_mappings,
-            classic_link_vpc_id: self.classic_link_vpc_id,
-            classic_link_vpc_security_groups: self.classic_link_vpc_security_groups,
-            created_time: self.created_time,
-            ebs_optimized: self.ebs_optimized,
-            iam_instance_profile: self.iam_instance_profile,
-            image_id: self.image_id,
-            instance_monitoring: self.instance_monitoring,
-            instance_type: self.instance_type,
-            kernel_id: self.kernel_id,
-            key_name: self.key_name,
-            launch_configuration_name: self.launch_configuration_name,
-            placement_tenancy: self.placement_tenancy,
-            ramdisk_id: self.ramdisk_id,
-            security_groups: self.security_groups,
-            spot_price: self.spot_price,
-            user_data: self.user_data,
-            metadata_options: self.metadata_options,
+            associate_public_ip_address: self.associate_public_ip_address
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            classic_link_vpc_id: self.classic_link_vpc_id
+            ,
+            classic_link_vpc_security_groups: self.classic_link_vpc_security_groups
+            ,
+            created_time: self.created_time
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
+            iam_instance_profile: self.iam_instance_profile
+            ,
+            image_id: self.image_id
+            ,
+            instance_monitoring: self.instance_monitoring
+            ,
+            instance_type: self.instance_type
+            ,
+            kernel_id: self.kernel_id
+            ,
+            key_name: self.key_name
+            ,
+            launch_configuration_name: self.launch_configuration_name
+            ,
+            placement_tenancy: self.placement_tenancy
+            ,
+            ramdisk_id: self.ramdisk_id
+            ,
+            security_groups: self.security_groups
+            ,
+            spot_price: self.spot_price
+            ,
+            user_data: self.user_data
+            ,
+            metadata_options: self.metadata_options
+            ,
         }
     }
 }
+

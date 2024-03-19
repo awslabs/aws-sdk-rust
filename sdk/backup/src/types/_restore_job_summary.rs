@@ -4,7 +4,7 @@
 /// <p>The returned summary may contain the following: Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreJobSummary {
+pub struct RestoreJobSummary  {
     /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The account ID that owns the jobs within the summary.</p>
@@ -22,21 +22,21 @@ pub struct RestoreJobSummary {
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RestoreJobSummary {
+impl  RestoreJobSummary  {
     /// <p>The Amazon Web Services Regions within the job summary.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The account ID that owns the jobs within the summary.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>This value is job count for jobs with the specified state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RestoreJobState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RestoreJobState> {
         self.state.as_ref()
     }
     /// <p>This value is the job count for the specified resource type. The request <code>GetSupportedResourceTypes</code> returns strings for supported resource types.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The value as a number of jobs in a job summary.</p>
@@ -45,12 +45,12 @@ impl RestoreJobSummary {
     }
     /// <p>The value of time in number format of a job start time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The value of time in number format of a job end time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl RestoreJobSummaryBuilder {
     }
     /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl RestoreJobSummaryBuilder {
     }
     /// <p>The account ID that owns the jobs within the summary.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID that owns the jobs within the summary.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl RestoreJobSummaryBuilder {
     }
     /// <p>This value is job count for jobs with the specified state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RestoreJobState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>This value is job count for jobs with the specified state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RestoreJobState> {
@@ -123,8 +120,7 @@ impl RestoreJobSummaryBuilder {
     }
     /// <p>This value is the job count for the specified resource type. The request <code>GetSupportedResourceTypes</code> returns strings for supported resource types.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>This value is the job count for the specified resource type. The request <code>GetSupportedResourceTypes</code> returns strings for supported resource types.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl RestoreJobSummaryBuilder {
     }
     /// <p>The value as a number of jobs in a job summary.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The value as a number of jobs in a job summary.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -153,8 +148,7 @@ impl RestoreJobSummaryBuilder {
     /// <p>The value of time in number format of a job start time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The value of time in number format of a job start time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -170,8 +164,7 @@ impl RestoreJobSummaryBuilder {
     /// <p>The value of time in number format of a job end time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The value of time in number format of a job end time.</p>
     /// <p>This value is the time in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -181,13 +174,22 @@ impl RestoreJobSummaryBuilder {
     /// Consumes the builder and constructs a [`RestoreJobSummary`](crate::types::RestoreJobSummary).
     pub fn build(self) -> crate::types::RestoreJobSummary {
         crate::types::RestoreJobSummary {
-            region: self.region,
-            account_id: self.account_id,
-            state: self.state,
-            resource_type: self.resource_type,
-            count: self.count.unwrap_or_default(),
-            start_time: self.start_time,
-            end_time: self.end_time,
+            region: self.region
+            ,
+            account_id: self.account_id
+            ,
+            state: self.state
+            ,
+            resource_type: self.resource_type
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

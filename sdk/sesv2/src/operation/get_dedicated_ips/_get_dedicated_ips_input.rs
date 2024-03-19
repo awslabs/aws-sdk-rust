@@ -3,7 +3,7 @@
 /// <p>A request to obtain more information about dedicated IP pools.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDedicatedIpsInput {
+pub struct GetDedicatedIpsInput  {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
@@ -11,13 +11,13 @@ pub struct GetDedicatedIpsInput {
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl GetDedicatedIpsInput {
+impl  GetDedicatedIpsInput  {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -48,8 +48,7 @@ impl GetDedicatedIpsInputBuilder {
     }
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetDedicatedIpsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl GetDedicatedIpsInputBuilder {
     }
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`GetDedicatedIpsInput`](crate::operation::get_dedicated_ips::GetDedicatedIpsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_dedicated_ips::GetDedicatedIpsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_dedicated_ips::GetDedicatedIpsInput {
-            pool_name: self.pool_name,
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dedicated_ips::GetDedicatedIpsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dedicated_ips::GetDedicatedIpsInput {
+                pool_name: self.pool_name
+                ,
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

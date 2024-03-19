@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMembers`](crate::operation::list_members::builders::ListMembersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_members::builders::ListMembersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_members::builders::ListMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`only_associated(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::only_associated) / [`set_only_associated(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_only_associated):<br>required: **false**<br><p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p><br>
-    /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
+                            /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec::<Member>>)`](crate::operation::list_members::ListMembersOutput::members): <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
+                            /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
     pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
-        crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

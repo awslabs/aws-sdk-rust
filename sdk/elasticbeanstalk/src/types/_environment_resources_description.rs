@@ -3,13 +3,13 @@
 /// <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentResourcesDescription {
+pub struct EnvironmentResourcesDescription  {
     /// <p>Describes the LoadBalancer.</p>
     pub load_balancer: ::std::option::Option<crate::types::LoadBalancerDescription>,
 }
-impl EnvironmentResourcesDescription {
+impl  EnvironmentResourcesDescription  {
     /// <p>Describes the LoadBalancer.</p>
-    pub fn load_balancer(&self) -> ::std::option::Option<&crate::types::LoadBalancerDescription> {
+    pub fn load_balancer(&self) -> ::std::option::Option<& crate::types::LoadBalancerDescription> {
         self.load_balancer.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EnvironmentResourcesDescriptionBuilder {
     }
     /// <p>Describes the LoadBalancer.</p>
     pub fn set_load_balancer(mut self, input: ::std::option::Option<crate::types::LoadBalancerDescription>) -> Self {
-        self.load_balancer = input;
-        self
+        self.load_balancer = input; self
     }
     /// <p>Describes the LoadBalancer.</p>
     pub fn get_load_balancer(&self) -> &::std::option::Option<crate::types::LoadBalancerDescription> {
@@ -44,7 +43,9 @@ impl EnvironmentResourcesDescriptionBuilder {
     /// Consumes the builder and constructs a [`EnvironmentResourcesDescription`](crate::types::EnvironmentResourcesDescription).
     pub fn build(self) -> crate::types::EnvironmentResourcesDescription {
         crate::types::EnvironmentResourcesDescription {
-            load_balancer: self.load_balancer,
+            load_balancer: self.load_balancer
+            ,
         }
     }
 }
+

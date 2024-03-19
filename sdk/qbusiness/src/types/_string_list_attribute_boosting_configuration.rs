@@ -6,13 +6,13 @@
 /// <p>For more information on how boosting document attributes work in Amazon Q, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting using document attributes</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringListAttributeBoostingConfiguration {
+pub struct StringListAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub boosting_level: crate::types::DocumentAttributeBoostingLevel,
 }
-impl StringListAttributeBoostingConfiguration {
+impl  StringListAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
-    pub fn boosting_level(&self) -> &crate::types::DocumentAttributeBoostingLevel {
+    pub fn boosting_level(&self) -> & crate::types::DocumentAttributeBoostingLevel {
         &self.boosting_level
     }
 }
@@ -38,8 +38,7 @@ impl StringListAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn set_boosting_level(mut self, input: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>) -> Self {
-        self.boosting_level = input;
-        self
+        self.boosting_level = input; self
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn get_boosting_level(&self) -> &::std::option::Option<crate::types::DocumentAttributeBoostingLevel> {
@@ -48,16 +47,16 @@ impl StringListAttributeBoostingConfigurationBuilder {
     /// Consumes the builder and constructs a [`StringListAttributeBoostingConfiguration`](crate::types::StringListAttributeBoostingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`boosting_level`](crate::types::builders::StringListAttributeBoostingConfigurationBuilder::boosting_level)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StringListAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StringListAttributeBoostingConfiguration {
-            boosting_level: self.boosting_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "boosting_level",
-                    "boosting_level was not specified but it is required when building StringListAttributeBoostingConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::StringListAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::StringListAttributeBoostingConfiguration {
+                boosting_level: self.boosting_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("boosting_level", "boosting_level was not specified but it is required when building StringListAttributeBoostingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

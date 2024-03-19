@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIdMappingJobs`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workflow_name(impl Into<String>)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow to be retrieved.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListIdMappingJobsOutput`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsOutput) with field(s):
+                            /// - On success, responds with [`ListIdMappingJobsOutput`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec::<JobSummary>>)`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsOutput::jobs): <p>A list of <code>JobSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListIdMappingJobsError>`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsError)
+                            /// - On failure, responds with [`SdkError<ListIdMappingJobsError>`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsError)
     pub fn list_id_mapping_jobs(&self) -> crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder {
-        crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_id_mapping_jobs::builders::ListIdMappingJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

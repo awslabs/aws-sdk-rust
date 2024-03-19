@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollaborationPrivacyBudgetsOutput {
+pub struct ListCollaborationPrivacyBudgetsOutput  {
     /// <p>Summaries of the collaboration privacy budgets.</p>
-    pub collaboration_privacy_budget_summaries: ::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>,
+    pub collaboration_privacy_budget_summaries: ::std::vec::Vec::<crate::types::CollaborationPrivacyBudgetSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCollaborationPrivacyBudgetsOutput {
+impl  ListCollaborationPrivacyBudgetsOutput  {
     /// <p>Summaries of the collaboration privacy budgets.</p>
-    pub fn collaboration_privacy_budget_summaries(&self) -> &[crate::types::CollaborationPrivacyBudgetSummary] {
-        use std::ops::Deref;
-        self.collaboration_privacy_budget_summaries.deref()
+    pub fn collaboration_privacy_budget_summaries(&self) -> & [crate::types::CollaborationPrivacyBudgetSummary] {
+        use std::ops::Deref; self.collaboration_privacy_budget_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCollaborationPrivacyBudgetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCollaborationPrivacyBudgetsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationPrivacyBudgetsOutput`](crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput).
     pub fn builder() -> crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListCollaborationPrivacyBudgetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollaborationPrivacyBudgetsOutputBuilder {
-    pub(crate) collaboration_privacy_budget_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>>,
+    pub(crate) collaboration_privacy_budget_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationPrivacyBudgetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,22 +47,16 @@ impl ListCollaborationPrivacyBudgetsOutputBuilder {
     /// <p>Summaries of the collaboration privacy budgets.</p>
     pub fn collaboration_privacy_budget_summaries(mut self, input: crate::types::CollaborationPrivacyBudgetSummary) -> Self {
         let mut v = self.collaboration_privacy_budget_summaries.unwrap_or_default();
-        v.push(input);
-        self.collaboration_privacy_budget_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collaboration_privacy_budget_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries of the collaboration privacy budgets.</p>
-    pub fn set_collaboration_privacy_budget_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>>,
-    ) -> Self {
-        self.collaboration_privacy_budget_summaries = input;
-        self
+    pub fn set_collaboration_privacy_budget_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationPrivacyBudgetSummary>>) -> Self {
+        self.collaboration_privacy_budget_summaries = input; self
     }
     /// <p>Summaries of the collaboration privacy budgets.</p>
-    pub fn get_collaboration_privacy_budget_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>> {
+    pub fn get_collaboration_privacy_budget_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollaborationPrivacyBudgetSummary>> {
         &self.collaboration_privacy_budget_summaries
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -73,31 +66,25 @@ impl ListCollaborationPrivacyBudgetsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCollaborationPrivacyBudgetsOutput`](crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_privacy_budget_summaries`](crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder::collaboration_privacy_budget_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput {
                 collaboration_privacy_budget_summaries: self.collaboration_privacy_budget_summaries
@@ -112,3 +99,4 @@ impl ListCollaborationPrivacyBudgetsOutputBuilder {
         )
     }
 }
+

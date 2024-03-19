@@ -3,13 +3,13 @@
 /// <p>Contains details about the start of an activity during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityStartedEventDetails {
+pub struct ActivityStartedEventDetails  {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
     pub worker_name: ::std::option::Option<::std::string::String>,
 }
-impl ActivityStartedEventDetails {
+impl  ActivityStartedEventDetails  {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
-    pub fn worker_name(&self) -> ::std::option::Option<&str> {
+    pub fn worker_name(&self) -> ::std::option::Option<& str> {
         self.worker_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ActivityStartedEventDetailsBuilder {
     }
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
     pub fn set_worker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_name = input;
-        self
+        self.worker_name = input; self
     }
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
     pub fn get_worker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ActivityStartedEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ActivityStartedEventDetails`](crate::types::ActivityStartedEventDetails).
     pub fn build(self) -> crate::types::ActivityStartedEventDetails {
         crate::types::ActivityStartedEventDetails {
-            worker_name: self.worker_name,
+            worker_name: self.worker_name
+            ,
         }
     }
 }
+

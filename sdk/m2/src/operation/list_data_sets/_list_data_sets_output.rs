@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSetsOutput {
+pub struct ListDataSetsOutput  {
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub data_sets: ::std::vec::Vec<crate::types::DataSetSummary>,
+    pub data_sets: ::std::vec::Vec::<crate::types::DataSetSummary>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDataSetsOutput {
+impl  ListDataSetsOutput  {
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub fn data_sets(&self) -> &[crate::types::DataSetSummary] {
-        use std::ops::Deref;
-        self.data_sets.deref()
+    pub fn data_sets(&self) -> & [crate::types::DataSetSummary] {
+        use std::ops::Deref; self.data_sets.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput).
     pub fn builder() -> crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDataSetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetsOutputBuilder {
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDataSetsOutputBuilder {
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     pub fn data_sets(mut self, input: crate::types::DataSetSummary) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetSummary>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSetSummary>> {
         &self.data_sets
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -68,37 +66,37 @@ impl ListDataSetsOutputBuilder {
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_sets`](crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder::data_sets)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsOutput {
-            data_sets: self.data_sets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_sets",
-                    "data_sets was not specified but it is required when building ListDataSetsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_sets::ListDataSetsOutput {
+                data_sets: self.data_sets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_sets", "data_sets was not specified but it is required when building ListDataSetsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

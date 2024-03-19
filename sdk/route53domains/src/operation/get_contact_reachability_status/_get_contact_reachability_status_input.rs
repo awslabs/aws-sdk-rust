@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactReachabilityStatusInput {
+pub struct GetContactReachabilityStatusInput  {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl GetContactReachabilityStatusInput {
+impl  GetContactReachabilityStatusInput  {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl GetContactReachabilityStatusInputBuilder {
     }
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetContactReachabilityStatusInput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput {
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput {
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

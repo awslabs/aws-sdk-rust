@@ -3,22 +3,23 @@
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PathToObjectIdentifiers {
+pub struct PathToObjectIdentifiers  {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub object_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PathToObjectIdentifiers {
+impl  PathToObjectIdentifiers  {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_identifiers.is_none()`.
-    pub fn object_identifiers(&self) -> &[::std::string::String] {
-        self.object_identifiers.as_deref().unwrap_or_default()
+    pub fn object_identifiers(&self) -> & [::std::string::String] {
+        self.object_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PathToObjectIdentifiers {
@@ -33,7 +34,7 @@ impl PathToObjectIdentifiers {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathToObjectIdentifiersBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PathToObjectIdentifiersBuilder {
     /// <p>The path that is used to identify the object starting from directory root.</p>
@@ -43,8 +44,7 @@ impl PathToObjectIdentifiersBuilder {
     }
     /// <p>The path that is used to identify the object starting from directory root.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path that is used to identify the object starting from directory root.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl PathToObjectIdentifiersBuilder {
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
     pub fn object_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.object_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.object_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn set_object_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.object_identifiers = input;
-        self
+    pub fn set_object_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.object_identifiers = input; self
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn get_object_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.object_identifiers
     }
     /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::types::PathToObjectIdentifiers).
     pub fn build(self) -> crate::types::PathToObjectIdentifiers {
         crate::types::PathToObjectIdentifiers {
-            path: self.path,
-            object_identifiers: self.object_identifiers,
+            path: self.path
+            ,
+            object_identifiers: self.object_identifiers
+            ,
         }
     }
 }
+

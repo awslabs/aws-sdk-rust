@@ -3,7 +3,7 @@
 /// <p>Contains information about a user account for an Amazon Connect instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>The identifier of the user account.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
@@ -17,67 +17,68 @@ pub struct User {
     /// <p>The identifier of the user account in the directory used for identity management.</p>
     pub directory_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_profile_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the routing profile for the user.</p>
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
-impl User {
+impl  User  {
     /// <p>The identifier of the user account.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The user name assigned to the user account.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>Information about the user identity.</p>
-    pub fn identity_info(&self) -> ::std::option::Option<&crate::types::UserIdentityInfo> {
+    pub fn identity_info(&self) -> ::std::option::Option<& crate::types::UserIdentityInfo> {
         self.identity_info.as_ref()
     }
     /// <p>Information about the phone configuration for the user.</p>
-    pub fn phone_config(&self) -> ::std::option::Option<&crate::types::UserPhoneConfig> {
+    pub fn phone_config(&self) -> ::std::option::Option<& crate::types::UserPhoneConfig> {
         self.phone_config.as_ref()
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
-    pub fn directory_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_user_id(&self) -> ::std::option::Option<& str> {
         self.directory_user_id.as_deref()
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_ids.is_none()`.
-    pub fn security_profile_ids(&self) -> &[::std::string::String] {
-        self.security_profile_ids.as_deref().unwrap_or_default()
+    pub fn security_profile_ids(&self) -> & [::std::string::String] {
+        self.security_profile_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
-    pub fn hierarchy_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_group_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_group_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
@@ -98,10 +99,10 @@ pub struct UserBuilder {
     pub(crate) identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
     pub(crate) phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     pub(crate) directory_user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_profile_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
@@ -113,8 +114,7 @@ impl UserBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl UserBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl UserBuilder {
     }
     /// <p>The user name assigned to the user account.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name assigned to the user account.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl UserBuilder {
     }
     /// <p>Information about the user identity.</p>
     pub fn set_identity_info(mut self, input: ::std::option::Option<crate::types::UserIdentityInfo>) -> Self {
-        self.identity_info = input;
-        self
+        self.identity_info = input; self
     }
     /// <p>Information about the user identity.</p>
     pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
@@ -169,8 +166,7 @@ impl UserBuilder {
     }
     /// <p>Information about the phone configuration for the user.</p>
     pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::UserPhoneConfig>) -> Self {
-        self.phone_config = input;
-        self
+        self.phone_config = input; self
     }
     /// <p>Information about the phone configuration for the user.</p>
     pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
@@ -183,8 +179,7 @@ impl UserBuilder {
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
     pub fn set_directory_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_user_id = input;
-        self
+        self.directory_user_id = input; self
     }
     /// <p>The identifier of the user account in the directory used for identity management.</p>
     pub fn get_directory_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,17 +192,16 @@ impl UserBuilder {
     /// <p>The identifiers of the security profiles for the user.</p>
     pub fn security_profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_profile_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_profile_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_profile_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn set_security_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_profile_ids = input;
-        self
+    pub fn set_security_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_profile_ids = input; self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn get_security_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_profile_ids
     }
     /// <p>The identifier of the routing profile for the user.</p>
@@ -217,8 +211,7 @@ impl UserBuilder {
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_profile_id = input;
-        self
+        self.routing_profile_id = input; self
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +224,7 @@ impl UserBuilder {
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_group_id = input;
-        self
+        self.hierarchy_group_id = input; self
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,17 +237,16 @@ impl UserBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The timestamp when this resource was last modified.</p>
@@ -265,8 +256,7 @@ impl UserBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,8 +269,7 @@ impl UserBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -289,18 +278,31 @@ impl UserBuilder {
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            id: self.id,
-            arn: self.arn,
-            username: self.username,
-            identity_info: self.identity_info,
-            phone_config: self.phone_config,
-            directory_user_id: self.directory_user_id,
-            security_profile_ids: self.security_profile_ids,
-            routing_profile_id: self.routing_profile_id,
-            hierarchy_group_id: self.hierarchy_group_id,
-            tags: self.tags,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            username: self.username
+            ,
+            identity_info: self.identity_info
+            ,
+            phone_config: self.phone_config
+            ,
+            directory_user_id: self.directory_user_id
+            ,
+            security_profile_ids: self.security_profile_ids
+            ,
+            routing_profile_id: self.routing_profile_id
+            ,
+            hierarchy_group_id: self.hierarchy_group_id
+            ,
+            tags: self.tags
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
         }
     }
 }
+

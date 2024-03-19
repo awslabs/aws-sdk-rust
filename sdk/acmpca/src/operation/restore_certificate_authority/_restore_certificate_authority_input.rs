@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreCertificateAuthorityInput {
+pub struct RestoreCertificateAuthorityInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
-impl RestoreCertificateAuthorityInput {
+impl  RestoreCertificateAuthorityInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl RestoreCertificateAuthorityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
@@ -47,14 +46,13 @@ impl RestoreCertificateAuthorityInputBuilder {
         &self.certificate_authority_arn
     }
     /// Consumes the builder and constructs a [`RestoreCertificateAuthorityInput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput {
-            certificate_authority_arn: self.certificate_authority_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput {
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+            }
+        )
     }
 }
+

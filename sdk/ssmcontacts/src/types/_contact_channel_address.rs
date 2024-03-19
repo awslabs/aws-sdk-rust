@@ -3,7 +3,7 @@
 /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactChannelAddress {
+pub struct ContactChannelAddress  {
     /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct ContactChannelAddress {
     /// </ul>
     pub simple_address: ::std::option::Option<::std::string::String>,
 }
-impl ContactChannelAddress {
+impl  ContactChannelAddress  {
     /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl ContactChannelAddress {
     /// <li>
     /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
-    pub fn simple_address(&self) -> ::std::option::Option<&str> {
+    pub fn simple_address(&self) -> ::std::option::Option<& str> {
         self.simple_address.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ContactChannelAddressBuilder {
     /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub fn set_simple_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simple_address = input;
-        self
+        self.simple_address = input; self
     }
     /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -84,7 +83,9 @@ impl ContactChannelAddressBuilder {
     /// Consumes the builder and constructs a [`ContactChannelAddress`](crate::types::ContactChannelAddress).
     pub fn build(self) -> crate::types::ContactChannelAddress {
         crate::types::ContactChannelAddress {
-            simple_address: self.simple_address,
+            simple_address: self.simple_address
+            ,
         }
     }
 }
+

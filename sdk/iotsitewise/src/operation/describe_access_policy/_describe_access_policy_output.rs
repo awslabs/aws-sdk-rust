@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccessPolicyOutput {
+pub struct DescribeAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
@@ -20,44 +20,42 @@ pub struct DescribeAccessPolicyOutput {
     pub access_policy_last_update_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl DescribeAccessPolicyOutput {
+impl  DescribeAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_policy_id.deref()
+    pub fn access_policy_id(&self) -> & str {
+        use std::ops::Deref; self.access_policy_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
-    pub fn access_policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.access_policy_arn.deref()
+    pub fn access_policy_arn(&self) -> & str {
+        use std::ops::Deref; self.access_policy_arn.deref()
     }
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
-    pub fn access_policy_identity(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn access_policy_identity(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.access_policy_identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
-    pub fn access_policy_resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn access_policy_resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.access_policy_resource.as_ref()
     }
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn access_policy_permission(&self) -> &crate::types::Permission {
+    pub fn access_policy_permission(&self) -> & crate::types::Permission {
         &self.access_policy_permission
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn access_policy_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn access_policy_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.access_policy_creation_date
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn access_policy_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn access_policy_last_update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.access_policy_last_update_date
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPolicyOutput`](crate::operation::describe_access_policy::DescribeAccessPolicyOutput).
     pub fn builder() -> crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder {
@@ -87,8 +85,7 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The ID of the access policy.</p>
     pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy_id = input;
-        self
+        self.access_policy_id = input; self
     }
     /// <p>The ID of the access policy.</p>
     pub fn get_access_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DescribeAccessPolicyOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
     pub fn set_access_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy_arn = input;
-        self
+        self.access_policy_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
@@ -120,8 +116,7 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     pub fn set_access_policy_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.access_policy_identity = input;
-        self
+        self.access_policy_identity = input; self
     }
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
     pub fn get_access_policy_identity(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -135,8 +130,7 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     pub fn set_access_policy_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.access_policy_resource = input;
-        self
+        self.access_policy_resource = input; self
     }
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
     pub fn get_access_policy_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -150,8 +144,7 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn set_access_policy_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.access_policy_permission = input;
-        self
+        self.access_policy_permission = input; self
     }
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn get_access_policy_permission(&self) -> &::std::option::Option<crate::types::Permission> {
@@ -165,8 +158,7 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn set_access_policy_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.access_policy_creation_date = input;
-        self
+        self.access_policy_creation_date = input; self
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn get_access_policy_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,22 +172,21 @@ impl DescribeAccessPolicyOutputBuilder {
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn set_access_policy_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.access_policy_last_update_date = input;
-        self
+        self.access_policy_last_update_date = input; self
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn get_access_policy_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.access_policy_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccessPolicyOutput`](crate::operation::describe_access_policy::DescribeAccessPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_policy_id`](crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder::access_policy_id)
@@ -203,44 +194,41 @@ impl DescribeAccessPolicyOutputBuilder {
     /// - [`access_policy_permission`](crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder::access_policy_permission)
     /// - [`access_policy_creation_date`](crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder::access_policy_creation_date)
     /// - [`access_policy_last_update_date`](crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder::access_policy_last_update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_access_policy::DescribeAccessPolicyOutput {
-            access_policy_id: self.access_policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_id",
-                    "access_policy_id was not specified but it is required when building DescribeAccessPolicyOutput",
-                )
-            })?,
-            access_policy_arn: self.access_policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_arn",
-                    "access_policy_arn was not specified but it is required when building DescribeAccessPolicyOutput",
-                )
-            })?,
-            access_policy_identity: self.access_policy_identity,
-            access_policy_resource: self.access_policy_resource,
-            access_policy_permission: self.access_policy_permission.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_permission",
-                    "access_policy_permission was not specified but it is required when building DescribeAccessPolicyOutput",
-                )
-            })?,
-            access_policy_creation_date: self.access_policy_creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_creation_date",
-                    "access_policy_creation_date was not specified but it is required when building DescribeAccessPolicyOutput",
-                )
-            })?,
-            access_policy_last_update_date: self.access_policy_last_update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_last_update_date",
-                    "access_policy_last_update_date was not specified but it is required when building DescribeAccessPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_access_policy::DescribeAccessPolicyOutput {
+                access_policy_id: self.access_policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_id", "access_policy_id was not specified but it is required when building DescribeAccessPolicyOutput")
+                    )?
+                ,
+                access_policy_arn: self.access_policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_arn", "access_policy_arn was not specified but it is required when building DescribeAccessPolicyOutput")
+                    )?
+                ,
+                access_policy_identity: self.access_policy_identity
+                ,
+                access_policy_resource: self.access_policy_resource
+                ,
+                access_policy_permission: self.access_policy_permission
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_permission", "access_policy_permission was not specified but it is required when building DescribeAccessPolicyOutput")
+                    )?
+                ,
+                access_policy_creation_date: self.access_policy_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_creation_date", "access_policy_creation_date was not specified but it is required when building DescribeAccessPolicyOutput")
+                    )?
+                ,
+                access_policy_last_update_date: self.access_policy_last_update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_last_update_date", "access_policy_last_update_date was not specified but it is required when building DescribeAccessPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

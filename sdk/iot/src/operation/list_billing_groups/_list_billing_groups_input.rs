@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBillingGroupsInput {
+pub struct ListBillingGroupsInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
@@ -10,9 +10,9 @@ pub struct ListBillingGroupsInput {
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
     pub name_prefix_filter: ::std::option::Option<::std::string::String>,
 }
-impl ListBillingGroupsInput {
+impl  ListBillingGroupsInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per request.</p>
@@ -20,7 +20,7 @@ impl ListBillingGroupsInput {
         self.max_results
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
-    pub fn name_prefix_filter(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix_filter(&self) -> ::std::option::Option<& str> {
         self.name_prefix_filter.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListBillingGroupsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListBillingGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListBillingGroupsInputBuilder {
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
     pub fn set_name_prefix_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix_filter = input;
-        self
+        self.name_prefix_filter = input; self
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
     pub fn get_name_prefix_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_prefix_filter
     }
     /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_billing_groups::ListBillingGroupsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_prefix_filter: self.name_prefix_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_billing_groups::ListBillingGroupsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_prefix_filter: self.name_prefix_filter
+                ,
+            }
+        )
     }
 }
+

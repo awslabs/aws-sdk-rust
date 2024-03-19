@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceProfileOutput {
+pub struct GetServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
@@ -13,29 +13,29 @@ pub struct GetServiceProfileOutput {
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo>,
     _request_id: Option<String>,
 }
-impl GetServiceProfileOutput {
+impl  GetServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Information about the service profile.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanGetServiceProfileInfo> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanGetServiceProfileInfo> {
         self.lo_ra_wan.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::operation::get_service_profile::GetServiceProfileOutput).
     pub fn builder() -> crate::operation::get_service_profile::builders::GetServiceProfileOutputBuilder {
@@ -61,8 +61,7 @@ impl GetServiceProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetServiceProfileOutputBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetServiceProfileOutputBuilder {
     }
     /// <p>The ID of the service profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the service profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl GetServiceProfileOutputBuilder {
     }
     /// <p>Information about the service profile.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>Information about the service profile.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo> {
         &self.lo_ra_wan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceProfileOutput`](crate::operation::get_service_profile::GetServiceProfileOutput).
     pub fn build(self) -> crate::operation::get_service_profile::GetServiceProfileOutput {
         crate::operation::get_service_profile::GetServiceProfileOutput {
-            arn: self.arn,
-            name: self.name,
-            id: self.id,
-            lo_ra_wan: self.lo_ra_wan,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            lo_ra_wan: self.lo_ra_wan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

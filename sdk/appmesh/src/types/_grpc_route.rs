@@ -3,7 +3,7 @@
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrpcRoute {
+pub struct GrpcRoute  {
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub action: ::std::option::Option<crate::types::GrpcRouteAction>,
     /// <p>An object that represents the criteria for determining a request match.</p>
@@ -13,21 +13,21 @@ pub struct GrpcRoute {
     /// <p>An object that represents types of timeouts.</p>
     pub timeout: ::std::option::Option<crate::types::GrpcTimeout>,
 }
-impl GrpcRoute {
+impl  GrpcRoute  {
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::GrpcRouteAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::GrpcRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::GrpcRouteMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::GrpcRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::GrpcRetryPolicy> {
+    pub fn retry_policy(&self) -> ::std::option::Option<& crate::types::GrpcRetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>An object that represents types of timeouts.</p>
-    pub fn timeout(&self) -> ::std::option::Option<&crate::types::GrpcTimeout> {
+    pub fn timeout(&self) -> ::std::option::Option<& crate::types::GrpcTimeout> {
         self.timeout.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl GrpcRouteBuilder {
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::GrpcRouteAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GrpcRouteAction> {
@@ -71,8 +70,7 @@ impl GrpcRouteBuilder {
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcRouteMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn get_match(&self) -> &::std::option::Option<crate::types::GrpcRouteMatch> {
@@ -85,8 +83,7 @@ impl GrpcRouteBuilder {
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::GrpcRetryPolicy>) -> Self {
-        self.retry_policy = input;
-        self
+        self.retry_policy = input; self
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::GrpcRetryPolicy> {
@@ -99,8 +96,7 @@ impl GrpcRouteBuilder {
     }
     /// <p>An object that represents types of timeouts.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::GrpcTimeout>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>An object that represents types of timeouts.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::GrpcTimeout> {
@@ -109,10 +105,15 @@ impl GrpcRouteBuilder {
     /// Consumes the builder and constructs a [`GrpcRoute`](crate::types::GrpcRoute).
     pub fn build(self) -> crate::types::GrpcRoute {
         crate::types::GrpcRoute {
-            action: self.action,
-            r#match: self.r#match,
-            retry_policy: self.retry_policy,
-            timeout: self.timeout,
+            action: self.action
+            ,
+            r#match: self.r#match
+            ,
+            retry_policy: self.retry_policy
+            ,
+            timeout: self.timeout
+            ,
         }
     }
 }
+

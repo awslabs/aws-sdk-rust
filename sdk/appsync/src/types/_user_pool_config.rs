@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserPoolConfig {
+pub struct UserPoolConfig  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
@@ -13,23 +13,21 @@ pub struct UserPoolConfig {
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub app_id_client_regex: ::std::option::Option<::std::string::String>,
 }
-impl UserPoolConfig {
+impl  UserPoolConfig  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_pool_id.deref()
+    pub fn user_pool_id(&self) -> & str {
+        use std::ops::Deref; self.user_pool_id.deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_region.deref()
+    pub fn aws_region(&self) -> & str {
+        use std::ops::Deref; self.aws_region.deref()
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
-    pub fn default_action(&self) -> &crate::types::DefaultAction {
+    pub fn default_action(&self) -> & crate::types::DefaultAction {
         &self.default_action
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(&self) -> ::std::option::Option<&str> {
+    pub fn app_id_client_regex(&self) -> ::std::option::Option<& str> {
         self.app_id_client_regex.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl UserPoolConfigBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl UserPoolConfigBuilder {
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl UserPoolConfigBuilder {
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::DefaultAction>) -> Self {
-        self.default_action = input;
-        self
+        self.default_action = input; self
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<crate::types::DefaultAction> {
@@ -102,8 +97,7 @@ impl UserPoolConfigBuilder {
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn set_app_id_client_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id_client_regex = input;
-        self
+        self.app_id_client_regex = input; self
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn get_app_id_client_regex(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +109,27 @@ impl UserPoolConfigBuilder {
     /// - [`aws_region`](crate::types::builders::UserPoolConfigBuilder::aws_region)
     /// - [`default_action`](crate::types::builders::UserPoolConfigBuilder::default_action)
     pub fn build(self) -> ::std::result::Result<crate::types::UserPoolConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserPoolConfig {
-            user_pool_id: self.user_pool_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_pool_id",
-                    "user_pool_id was not specified but it is required when building UserPoolConfig",
-                )
-            })?,
-            aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_region",
-                    "aws_region was not specified but it is required when building UserPoolConfig",
-                )
-            })?,
-            default_action: self.default_action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_action",
-                    "default_action was not specified but it is required when building UserPoolConfig",
-                )
-            })?,
-            app_id_client_regex: self.app_id_client_regex,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserPoolConfig {
+                user_pool_id: self.user_pool_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_pool_id", "user_pool_id was not specified but it is required when building UserPoolConfig")
+                    )?
+                ,
+                aws_region: self.aws_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_region", "aws_region was not specified but it is required when building UserPoolConfig")
+                    )?
+                ,
+                default_action: self.default_action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_action", "default_action was not specified but it is required when building UserPoolConfig")
+                    )?
+                ,
+                app_id_client_regex: self.app_id_client_regex
+                ,
+            }
+        )
     }
 }
+

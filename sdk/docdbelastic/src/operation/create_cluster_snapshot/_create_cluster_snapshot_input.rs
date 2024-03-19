@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterSnapshotInput {
+pub struct CreateClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new elastic cluster snapshot.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateClusterSnapshotInput {
+impl  CreateClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the new elastic cluster snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl CreateClusterSnapshotInput {
 pub struct CreateClusterSnapshotInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateClusterSnapshotInputBuilder {
     /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
@@ -48,8 +48,7 @@ impl CreateClusterSnapshotInputBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateClusterSnapshotInputBuilder {
     }
     /// <p>The name of the new elastic cluster snapshot.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the new elastic cluster snapshot.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,28 +75,30 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
-            cluster_arn: self.cluster_arn,
-            snapshot_name: self.snapshot_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
+                cluster_arn: self.cluster_arn
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

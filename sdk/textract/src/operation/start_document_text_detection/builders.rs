@@ -5,23 +5,20 @@ pub use crate::operation::start_document_text_detection::_start_document_text_de
 
 impl StartDocumentTextDetectionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_document_text_detection();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_document_text_detection();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartDocumentTextDetection`.
-///
+/// 
 /// <p>Starts the asynchronous detection of text in a document. Amazon Textract can detect lines of text and the words that make up a line of text.</p>
 /// <p><code>StartDocumentTextDetection</code> can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use <code>DocumentLocation</code> to specify the bucket name and file name of the document.</p>
 /// <p><code>StartTextDetection</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When text detection is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the results of the text detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentTextDetection</code>, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.</p>
@@ -29,33 +26,32 @@ impl StartDocumentTextDetectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDocumentTextDetectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder,
+                    inner: crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-    > for StartDocumentTextDetectionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
+                    crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
+                > for StartDocumentTextDetectionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
+                        crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartDocumentTextDetectionFluentBuilder {
     /// Creates a new `StartDocumentTextDetection`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl StartDocumentTextDetectionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_document_text_detection::StartDocumentTextDetection::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_document_text_detection::StartDocumentTextDetection::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_document_text_detection::StartDocumentTextDetectionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_document_text_detection::StartDocumentTextDetection::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_document_text_detection::StartDocumentTextDetection::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput, crate::operation::start_document_text_detection::StartDocumentTextDetectionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The location of the document to be processed.</p>
     pub fn document_location(mut self, input: crate::types::DocumentLocation) -> Self {
         self.inner = self.inner.document_location(input);
@@ -196,3 +183,4 @@ impl StartDocumentTextDetectionFluentBuilder {
         self.inner.get_kms_key_id()
     }
 }
+

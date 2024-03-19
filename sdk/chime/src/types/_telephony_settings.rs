@@ -3,7 +3,7 @@
 /// <p>Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TelephonySettings {
+pub struct TelephonySettings  {
     /// <p>Allows or denies inbound calling.</p>
     pub inbound_calling: bool,
     /// <p>Allows or denies outbound calling.</p>
@@ -11,7 +11,7 @@ pub struct TelephonySettings {
     /// <p>Allows or denies SMS messaging.</p>
     pub sms: bool,
 }
-impl TelephonySettings {
+impl  TelephonySettings  {
     /// <p>Allows or denies inbound calling.</p>
     pub fn inbound_calling(&self) -> bool {
         self.inbound_calling
@@ -49,8 +49,7 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies inbound calling.</p>
     pub fn set_inbound_calling(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inbound_calling = input;
-        self
+        self.inbound_calling = input; self
     }
     /// <p>Allows or denies inbound calling.</p>
     pub fn get_inbound_calling(&self) -> &::std::option::Option<bool> {
@@ -64,8 +63,7 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies outbound calling.</p>
     pub fn set_outbound_calling(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.outbound_calling = input;
-        self
+        self.outbound_calling = input; self
     }
     /// <p>Allows or denies outbound calling.</p>
     pub fn get_outbound_calling(&self) -> &::std::option::Option<bool> {
@@ -79,8 +77,7 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies SMS messaging.</p>
     pub fn set_sms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sms = input;
-        self
+        self.sms = input; self
     }
     /// <p>Allows or denies SMS messaging.</p>
     pub fn get_sms(&self) -> &::std::option::Option<bool> {
@@ -92,25 +89,25 @@ impl TelephonySettingsBuilder {
     /// - [`outbound_calling`](crate::types::builders::TelephonySettingsBuilder::outbound_calling)
     /// - [`sms`](crate::types::builders::TelephonySettingsBuilder::sms)
     pub fn build(self) -> ::std::result::Result<crate::types::TelephonySettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TelephonySettings {
-            inbound_calling: self.inbound_calling.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inbound_calling",
-                    "inbound_calling was not specified but it is required when building TelephonySettings",
-                )
-            })?,
-            outbound_calling: self.outbound_calling.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "outbound_calling",
-                    "outbound_calling was not specified but it is required when building TelephonySettings",
-                )
-            })?,
-            sms: self.sms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sms",
-                    "sms was not specified but it is required when building TelephonySettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TelephonySettings {
+                inbound_calling: self.inbound_calling
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inbound_calling", "inbound_calling was not specified but it is required when building TelephonySettings")
+                    )?
+                ,
+                outbound_calling: self.outbound_calling
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("outbound_calling", "outbound_calling was not specified but it is required when building TelephonySettings")
+                    )?
+                ,
+                sms: self.sms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sms", "sms was not specified but it is required when building TelephonySettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

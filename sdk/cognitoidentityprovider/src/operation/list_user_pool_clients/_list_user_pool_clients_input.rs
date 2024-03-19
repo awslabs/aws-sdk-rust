@@ -3,7 +3,7 @@
 /// <p>Represents the request to list the user pool clients.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserPoolClientsInput {
+pub struct ListUserPoolClientsInput  {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
@@ -11,9 +11,9 @@ pub struct ListUserPoolClientsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListUserPoolClientsInput {
+impl  ListUserPoolClientsInput  {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
@@ -21,7 +21,7 @@ impl ListUserPoolClientsInput {
         self.max_results
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListUserPoolClientsInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListUserPoolClientsInputBuilder {
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,22 +75,24 @@ impl ListUserPoolClientsInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUserPoolClientsInput`](crate::operation::list_user_pool_clients::ListUserPoolClientsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_user_pool_clients::ListUserPoolClientsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_user_pool_clients::ListUserPoolClientsInput {
-            user_pool_id: self.user_pool_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_user_pool_clients::ListUserPoolClientsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_user_pool_clients::ListUserPoolClientsInput {
+                user_pool_id: self.user_pool_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

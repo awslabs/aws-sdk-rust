@@ -3,19 +3,19 @@
 /// <p>Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <code>SyncState</code> for a firewall.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerObjectStatus {
+pub struct PerObjectStatus  {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     pub sync_status: ::std::option::Option<crate::types::PerObjectSyncStatus>,
     /// <p>The current version of the object that is either in sync or pending synchronization.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
 }
-impl PerObjectStatus {
+impl  PerObjectStatus  {
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
-    pub fn sync_status(&self) -> ::std::option::Option<&crate::types::PerObjectSyncStatus> {
+    pub fn sync_status(&self) -> ::std::option::Option<& crate::types::PerObjectSyncStatus> {
         self.sync_status.as_ref()
     }
     /// <p>The current version of the object that is either in sync or pending synchronization.</p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
+    pub fn update_token(&self) -> ::std::option::Option<& str> {
         self.update_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PerObjectStatusBuilder {
     }
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     pub fn set_sync_status(mut self, input: ::std::option::Option<crate::types::PerObjectSyncStatus>) -> Self {
-        self.sync_status = input;
-        self
+        self.sync_status = input; self
     }
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
     pub fn get_sync_status(&self) -> &::std::option::Option<crate::types::PerObjectSyncStatus> {
@@ -55,8 +54,7 @@ impl PerObjectStatusBuilder {
     }
     /// <p>The current version of the object that is either in sync or pending synchronization.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>The current version of the object that is either in sync or pending synchronization.</p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PerObjectStatusBuilder {
     /// Consumes the builder and constructs a [`PerObjectStatus`](crate::types::PerObjectStatus).
     pub fn build(self) -> crate::types::PerObjectStatus {
         crate::types::PerObjectStatus {
-            sync_status: self.sync_status,
-            update_token: self.update_token,
+            sync_status: self.sync_status
+            ,
+            update_token: self.update_token
+            ,
         }
     }
 }
+

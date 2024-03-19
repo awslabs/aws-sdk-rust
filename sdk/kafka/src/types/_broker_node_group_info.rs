@@ -3,58 +3,61 @@
 /// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrokerNodeGroupInfo {
+pub struct BrokerNodeGroupInfo  {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
     pub broker_az_distribution: ::std::option::Option<crate::types::BrokerAzDistribution>,
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    pub client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub client_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub storage_info: ::std::option::Option<crate::types::StorageInfo>,
     /// <p>Information about the broker access configuration.</p>
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    pub zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BrokerNodeGroupInfo {
+impl  BrokerNodeGroupInfo  {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-    pub fn broker_az_distribution(&self) -> ::std::option::Option<&crate::types::BrokerAzDistribution> {
+    pub fn broker_az_distribution(&self) -> ::std::option::Option<& crate::types::BrokerAzDistribution> {
         self.broker_az_distribution.as_ref()
     }
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_subnets.is_none()`.
-    pub fn client_subnets(&self) -> &[::std::string::String] {
-        self.client_subnets.as_deref().unwrap_or_default()
+    pub fn client_subnets(&self) -> & [::std::string::String] {
+        self.client_subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-    pub fn storage_info(&self) -> ::std::option::Option<&crate::types::StorageInfo> {
+    pub fn storage_info(&self) -> ::std::option::Option<& crate::types::StorageInfo> {
         self.storage_info.as_ref()
     }
     /// <p>Information about the broker access configuration.</p>
-    pub fn connectivity_info(&self) -> ::std::option::Option<&crate::types::ConnectivityInfo> {
+    pub fn connectivity_info(&self) -> ::std::option::Option<& crate::types::ConnectivityInfo> {
         self.connectivity_info.as_ref()
     }
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_ids.is_none()`.
-    pub fn zone_ids(&self) -> &[::std::string::String] {
-        self.zone_ids.as_deref().unwrap_or_default()
+    pub fn zone_ids(&self) -> & [::std::string::String] {
+        self.zone_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BrokerNodeGroupInfo {
@@ -69,12 +72,12 @@ impl BrokerNodeGroupInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerNodeGroupInfoBuilder {
     pub(crate) broker_az_distribution: ::std::option::Option<crate::types::BrokerAzDistribution>,
-    pub(crate) client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) storage_info: ::std::option::Option<crate::types::StorageInfo>,
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
-    pub(crate) zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BrokerNodeGroupInfoBuilder {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
@@ -86,8 +89,7 @@ impl BrokerNodeGroupInfoBuilder {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
     pub fn set_broker_az_distribution(mut self, input: ::std::option::Option<crate::types::BrokerAzDistribution>) -> Self {
-        self.broker_az_distribution = input;
-        self
+        self.broker_az_distribution = input; self
     }
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
@@ -101,17 +103,16 @@ impl BrokerNodeGroupInfoBuilder {
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
     pub fn client_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_subnets.unwrap_or_default();
-        v.push(input.into());
-        self.client_subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    pub fn set_client_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_subnets = input;
-        self
+    pub fn set_client_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_subnets = input; self
     }
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't occupy the Availability Zone with ID use use1-az3.</p>
-    pub fn get_client_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_subnets
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
@@ -122,8 +123,7 @@ impl BrokerNodeGroupInfoBuilder {
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +136,16 @@ impl BrokerNodeGroupInfoBuilder {
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
@@ -156,8 +155,7 @@ impl BrokerNodeGroupInfoBuilder {
     }
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub fn set_storage_info(mut self, input: ::std::option::Option<crate::types::StorageInfo>) -> Self {
-        self.storage_info = input;
-        self
+        self.storage_info = input; self
     }
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub fn get_storage_info(&self) -> &::std::option::Option<crate::types::StorageInfo> {
@@ -170,8 +168,7 @@ impl BrokerNodeGroupInfoBuilder {
     }
     /// <p>Information about the broker access configuration.</p>
     pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
-        self.connectivity_info = input;
-        self
+        self.connectivity_info = input; self
     }
     /// <p>Information about the broker access configuration.</p>
     pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ConnectivityInfo> {
@@ -184,29 +181,36 @@ impl BrokerNodeGroupInfoBuilder {
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
     pub fn zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.zone_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.zone_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.zone_ids = input;
-        self
+    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.zone_ids = input; self
     }
     /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
-    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.zone_ids
     }
     /// Consumes the builder and constructs a [`BrokerNodeGroupInfo`](crate::types::BrokerNodeGroupInfo).
     pub fn build(self) -> crate::types::BrokerNodeGroupInfo {
         crate::types::BrokerNodeGroupInfo {
-            broker_az_distribution: self.broker_az_distribution,
-            client_subnets: self.client_subnets,
-            instance_type: self.instance_type,
-            security_groups: self.security_groups,
-            storage_info: self.storage_info,
-            connectivity_info: self.connectivity_info,
-            zone_ids: self.zone_ids,
+            broker_az_distribution: self.broker_az_distribution
+            ,
+            client_subnets: self.client_subnets
+            ,
+            instance_type: self.instance_type
+            ,
+            security_groups: self.security_groups
+            ,
+            storage_info: self.storage_info
+            ,
+            connectivity_info: self.connectivity_info
+            ,
+            zone_ids: self.zone_ids
+            ,
         }
     }
 }
+

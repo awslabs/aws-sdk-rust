@@ -3,21 +3,22 @@
 /// <p>A configuration specification to be used to override existing configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationOverrides {
+pub struct ConfigurationOverrides  {
     /// <p>The override configurations for the application.</p>
-    pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub application_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     /// <p>The override configurations for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
-impl ConfigurationOverrides {
+impl  ConfigurationOverrides  {
     /// <p>The override configurations for the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_configuration.is_none()`.
-    pub fn application_configuration(&self) -> &[crate::types::Configuration] {
-        self.application_configuration.as_deref().unwrap_or_default()
+    pub fn application_configuration(&self) -> & [crate::types::Configuration] {
+        self.application_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The override configurations for monitoring.</p>
-    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<& crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl ConfigurationOverrides {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationOverridesBuilder {
-    pub(crate) application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) application_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ConfigurationOverridesBuilder {
@@ -43,17 +44,16 @@ impl ConfigurationOverridesBuilder {
     /// <p>The override configurations for the application.</p>
     pub fn application_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.application_configuration.unwrap_or_default();
-        v.push(input);
-        self.application_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The override configurations for the application.</p>
-    pub fn set_application_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.application_configuration = input;
-        self
+    pub fn set_application_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
+        self.application_configuration = input; self
     }
     /// <p>The override configurations for the application.</p>
-    pub fn get_application_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_application_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         &self.application_configuration
     }
     /// <p>The override configurations for monitoring.</p>
@@ -63,8 +63,7 @@ impl ConfigurationOverridesBuilder {
     }
     /// <p>The override configurations for monitoring.</p>
     pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
-        self.monitoring_configuration = input;
-        self
+        self.monitoring_configuration = input; self
     }
     /// <p>The override configurations for monitoring.</p>
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
@@ -73,8 +72,11 @@ impl ConfigurationOverridesBuilder {
     /// Consumes the builder and constructs a [`ConfigurationOverrides`](crate::types::ConfigurationOverrides).
     pub fn build(self) -> crate::types::ConfigurationOverrides {
         crate::types::ConfigurationOverrides {
-            application_configuration: self.application_configuration,
-            monitoring_configuration: self.monitoring_configuration,
+            application_configuration: self.application_configuration
+            ,
+            monitoring_configuration: self.monitoring_configuration
+            ,
         }
     }
 }
+

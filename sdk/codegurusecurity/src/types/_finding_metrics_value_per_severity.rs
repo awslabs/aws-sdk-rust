@@ -3,7 +3,7 @@
 /// <p>The severity of the issue in the code that generated a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingMetricsValuePerSeverity {
+pub struct FindingMetricsValuePerSeverity  {
     /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
     pub info: ::std::option::Option<f64>,
     /// <p>The severity of the finding is low and does require action on its own.</p>
@@ -15,7 +15,7 @@ pub struct FindingMetricsValuePerSeverity {
     /// <p>The severity of the finding is critical and should be addressed immediately.</p>
     pub critical: ::std::option::Option<f64>,
 }
-impl FindingMetricsValuePerSeverity {
+impl  FindingMetricsValuePerSeverity  {
     /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
     pub fn info(&self) -> ::std::option::Option<f64> {
         self.info
@@ -62,8 +62,7 @@ impl FindingMetricsValuePerSeverityBuilder {
     }
     /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
     pub fn set_info(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.info = input;
-        self
+        self.info = input; self
     }
     /// <p>The finding is related to quality or readability improvements and not considered actionable.</p>
     pub fn get_info(&self) -> &::std::option::Option<f64> {
@@ -76,8 +75,7 @@ impl FindingMetricsValuePerSeverityBuilder {
     }
     /// <p>The severity of the finding is low and does require action on its own.</p>
     pub fn set_low(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.low = input;
-        self
+        self.low = input; self
     }
     /// <p>The severity of the finding is low and does require action on its own.</p>
     pub fn get_low(&self) -> &::std::option::Option<f64> {
@@ -90,8 +88,7 @@ impl FindingMetricsValuePerSeverityBuilder {
     }
     /// <p>The severity of the finding is medium and should be addressed as a mid-term priority.</p>
     pub fn set_medium(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.medium = input;
-        self
+        self.medium = input; self
     }
     /// <p>The severity of the finding is medium and should be addressed as a mid-term priority.</p>
     pub fn get_medium(&self) -> &::std::option::Option<f64> {
@@ -104,8 +101,7 @@ impl FindingMetricsValuePerSeverityBuilder {
     }
     /// <p>The severity of the finding is high and should be addressed as a near-term priority.</p>
     pub fn set_high(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.high = input;
-        self
+        self.high = input; self
     }
     /// <p>The severity of the finding is high and should be addressed as a near-term priority.</p>
     pub fn get_high(&self) -> &::std::option::Option<f64> {
@@ -118,8 +114,7 @@ impl FindingMetricsValuePerSeverityBuilder {
     }
     /// <p>The severity of the finding is critical and should be addressed immediately.</p>
     pub fn set_critical(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.critical = input;
-        self
+        self.critical = input; self
     }
     /// <p>The severity of the finding is critical and should be addressed immediately.</p>
     pub fn get_critical(&self) -> &::std::option::Option<f64> {
@@ -128,11 +123,17 @@ impl FindingMetricsValuePerSeverityBuilder {
     /// Consumes the builder and constructs a [`FindingMetricsValuePerSeverity`](crate::types::FindingMetricsValuePerSeverity).
     pub fn build(self) -> crate::types::FindingMetricsValuePerSeverity {
         crate::types::FindingMetricsValuePerSeverity {
-            info: self.info,
-            low: self.low,
-            medium: self.medium,
-            high: self.high,
-            critical: self.critical,
+            info: self.info
+            ,
+            low: self.low
+            ,
+            medium: self.medium
+            ,
+            high: self.high
+            ,
+            critical: self.critical
+            ,
         }
     }
 }
+

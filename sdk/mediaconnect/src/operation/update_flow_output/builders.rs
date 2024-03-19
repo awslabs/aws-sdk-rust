@@ -5,54 +5,50 @@ pub use crate::operation::update_flow_output::_update_flow_output_input::UpdateF
 
 impl UpdateFlowOutputInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_flow_output();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_flow_output::UpdateFlowOutputOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_flow_output::UpdateFlowOutputError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_flow_output();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFlowOutput`.
-///
+/// 
 /// Updates an existing flow output.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder,
+                    inner: crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        crate::operation::update_flow_output::UpdateFlowOutputError,
-    > for UpdateFlowOutputFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_flow_output::UpdateFlowOutputOutput,
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_flow_output::UpdateFlowOutputOutput,
+                    crate::operation::update_flow_output::UpdateFlowOutputError,
+                > for UpdateFlowOutputFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_flow_output::UpdateFlowOutputOutput,
+                        crate::operation::update_flow_output::UpdateFlowOutputError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFlowOutputFluentBuilder {
     /// Creates a new `UpdateFlowOutput`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateFlowOutputFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_flow_output::UpdateFlowOutput::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_flow_output::UpdateFlowOutput::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        crate::operation::update_flow_output::UpdateFlowOutputError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_flow_output::UpdateFlowOutputOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_flow_output::UpdateFlowOutput::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_flow_output::UpdateFlowOutput::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_flow_output::UpdateFlowOutputOutput, crate::operation::update_flow_output::UpdateFlowOutputError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `CidrAllowList`.
     ///
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
@@ -118,12 +105,12 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cidr_allow_list(input);
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_cidr_allow_list()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
@@ -206,17 +193,12 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn set_media_stream_output_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_media_stream_output_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_media_stream_output_configurations(input);
         self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn get_media_stream_output_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>> {
+    pub fn get_media_stream_output_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>> {
         self.inner.get_media_stream_output_configurations()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -360,3 +342,4 @@ impl UpdateFlowOutputFluentBuilder {
         self.inner.get_vpc_interface_attachment()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The data associated with a network profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkProfileData {
+pub struct NetworkProfileData  {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
@@ -19,33 +19,33 @@ pub struct NetworkProfileData {
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
-impl NetworkProfileData {
+impl  NetworkProfileData  {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> ::std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The SSID of the Wi-Fi network.</p>
-    pub fn ssid(&self) -> ::std::option::Option<&str> {
+    pub fn ssid(&self) -> ::std::option::Option<& str> {
         self.ssid.as_deref()
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn security_type(&self) -> ::std::option::Option<&crate::types::NetworkSecurityType> {
+    pub fn security_type(&self) -> ::std::option::Option<& crate::types::NetworkSecurityType> {
         self.security_type.as_ref()
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-    pub fn eap_method(&self) -> ::std::option::Option<&crate::types::NetworkEapMethod> {
+    pub fn eap_method(&self) -> ::std::option::Option<& crate::types::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_arn = input;
-        self
+        self.network_profile_arn = input; self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_name = input;
-        self
+        self.network_profile_name = input; self
     }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn get_network_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The SSID of the Wi-Fi network.</p>
     pub fn set_ssid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssid = input;
-        self
+        self.ssid = input; self
     }
     /// <p>The SSID of the Wi-Fi network.</p>
     pub fn get_ssid(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn set_security_type(mut self, input: ::std::option::Option<crate::types::NetworkSecurityType>) -> Self {
-        self.security_type = input;
-        self
+        self.security_type = input; self
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn get_security_type(&self) -> &::std::option::Option<crate::types::NetworkSecurityType> {
@@ -146,8 +141,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn set_eap_method(mut self, input: ::std::option::Option<crate::types::NetworkEapMethod>) -> Self {
-        self.eap_method = input;
-        self
+        self.eap_method = input; self
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn get_eap_method(&self) -> &::std::option::Option<crate::types::NetworkEapMethod> {
@@ -160,8 +154,7 @@ impl NetworkProfileDataBuilder {
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl NetworkProfileDataBuilder {
     /// Consumes the builder and constructs a [`NetworkProfileData`](crate::types::NetworkProfileData).
     pub fn build(self) -> crate::types::NetworkProfileData {
         crate::types::NetworkProfileData {
-            network_profile_arn: self.network_profile_arn,
-            network_profile_name: self.network_profile_name,
-            description: self.description,
-            ssid: self.ssid,
-            security_type: self.security_type,
-            eap_method: self.eap_method,
-            certificate_authority_arn: self.certificate_authority_arn,
+            network_profile_arn: self.network_profile_arn
+            ,
+            network_profile_name: self.network_profile_name
+            ,
+            description: self.description
+            ,
+            ssid: self.ssid
+            ,
+            security_type: self.security_type
+            ,
+            eap_method: self.eap_method
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
         }
     }
 }
+

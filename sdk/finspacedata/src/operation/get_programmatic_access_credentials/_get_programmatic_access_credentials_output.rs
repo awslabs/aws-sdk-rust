@@ -3,16 +3,16 @@
 /// Response for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetProgrammaticAccessCredentialsOutput {
+pub struct GetProgrammaticAccessCredentialsOutput  {
     /// <p>Returns the programmatic credentials.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub duration_in_minutes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl GetProgrammaticAccessCredentialsOutput {
+impl  GetProgrammaticAccessCredentialsOutput  {
     /// <p>Returns the programmatic credentials.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::Credentials> {
         self.credentials.as_ref()
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
@@ -20,7 +20,7 @@ impl GetProgrammaticAccessCredentialsOutput {
         self.duration_in_minutes
     }
 }
-impl ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutput {
+impl  ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
@@ -30,10 +30,10 @@ impl ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetProgrammaticAccessCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetProgrammaticAccessCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsOutput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput).
     pub fn builder() -> crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsOutputBuilder {
@@ -57,8 +57,7 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
     }
     /// <p>Returns the programmatic credentials.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>Returns the programmatic credentials.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
@@ -71,27 +70,28 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.duration_in_minutes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetProgrammaticAccessCredentialsOutput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput).
     pub fn build(self) -> crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput {
         crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput {
-            credentials: self.credentials,
-            duration_in_minutes: self.duration_in_minutes,
+            credentials: self.credentials
+            ,
+            duration_in_minutes: self.duration_in_minutes
+            ,
             _request_id: self._request_id,
         }
     }
@@ -105,3 +105,4 @@ impl ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutputBuilder {
         formatter.finish()
     }
 }
+

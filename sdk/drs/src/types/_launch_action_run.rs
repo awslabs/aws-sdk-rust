@@ -3,7 +3,7 @@
 /// <p>Launch action run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchActionRun {
+pub struct LaunchActionRun  {
     /// <p>Action.</p>
     pub action: ::std::option::Option<crate::types::LaunchAction>,
     /// <p>Run Id.</p>
@@ -13,21 +13,21 @@ pub struct LaunchActionRun {
     /// <p>Failure reason.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl LaunchActionRun {
+impl  LaunchActionRun  {
     /// <p>Action.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::LaunchAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::LaunchAction> {
         self.action.as_ref()
     }
     /// <p>Run Id.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>Run status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LaunchActionRunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LaunchActionRunStatus> {
         self.status.as_ref()
     }
     /// <p>Failure reason.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LaunchActionRunBuilder {
     }
     /// <p>Action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::LaunchAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::LaunchAction> {
@@ -69,8 +68,7 @@ impl LaunchActionRunBuilder {
     }
     /// <p>Run Id.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>Run Id.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LaunchActionRunBuilder {
     }
     /// <p>Run status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LaunchActionRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Run status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LaunchActionRunStatus> {
@@ -97,8 +94,7 @@ impl LaunchActionRunBuilder {
     }
     /// <p>Failure reason.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>Failure reason.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LaunchActionRunBuilder {
     /// Consumes the builder and constructs a [`LaunchActionRun`](crate::types::LaunchActionRun).
     pub fn build(self) -> crate::types::LaunchActionRun {
         crate::types::LaunchActionRun {
-            action: self.action,
-            run_id: self.run_id,
-            status: self.status,
-            failure_reason: self.failure_reason,
+            action: self.action
+            ,
+            run_id: self.run_id
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

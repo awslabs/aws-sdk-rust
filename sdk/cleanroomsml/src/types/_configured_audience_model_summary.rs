@@ -3,7 +3,7 @@
 /// <p>Information about the configured audience model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredAudienceModelSummary {
+pub struct ConfiguredAudienceModelSummary  {
     /// <p>The time at which the configured audience model was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the configured audience model was updated.</p>
@@ -21,40 +21,37 @@ pub struct ConfiguredAudienceModelSummary {
     /// <p>The status of the configured audience model.</p>
     pub status: crate::types::ConfiguredAudienceModelStatus,
 }
-impl ConfiguredAudienceModelSummary {
+impl  ConfiguredAudienceModelSummary  {
     /// <p>The time at which the configured audience model was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The name of the configured audience model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model that was used to create the configured audience model.</p>
-    pub fn audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_model_arn.deref()
+    pub fn audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_model_arn.deref()
     }
     /// <p>The output configuration of the configured audience model.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ConfiguredAudienceModelOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::ConfiguredAudienceModelOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The description of the configured audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The status of the configured audience model.</p>
-    pub fn status(&self) -> &crate::types::ConfiguredAudienceModelStatus {
+    pub fn status(&self) -> & crate::types::ConfiguredAudienceModelStatus {
         &self.status
     }
 }
@@ -87,8 +84,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The time at which the configured audience model was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the configured audience model was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -102,8 +98,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +112,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The name of the configured audience model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured audience model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model that was used to create the configured audience model.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model that was used to create the configured audience model.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +140,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The output configuration of the configured audience model.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The output configuration of the configured audience model.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig> {
@@ -161,8 +153,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The description of the configured audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configured audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +167,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that you are interested in.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +181,7 @@ impl ConfiguredAudienceModelSummaryBuilder {
     }
     /// <p>The status of the configured audience model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the configured audience model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelStatus> {
@@ -207,45 +196,44 @@ impl ConfiguredAudienceModelSummaryBuilder {
     /// - [`configured_audience_model_arn`](crate::types::builders::ConfiguredAudienceModelSummaryBuilder::configured_audience_model_arn)
     /// - [`status`](crate::types::builders::ConfiguredAudienceModelSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredAudienceModelSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredAudienceModelSummary {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-            audience_model_arn: self.audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_model_arn",
-                    "audience_model_arn was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-            output_config: self.output_config,
-            description: self.description,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ConfiguredAudienceModelSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredAudienceModelSummary {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+                audience_model_arn: self.audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_model_arn", "audience_model_arn was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+                output_config: self.output_config
+                ,
+                description: self.description
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ConfiguredAudienceModelSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

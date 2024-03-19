@@ -3,19 +3,19 @@
 /// <p>A two element dictionary with a <code>lastDelivery</code> and <code>lastStatus</code> key whose values describe the date and status of the last delivered report for a particular report definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportStatus {
+pub struct ReportStatus  {
     /// <p>A timestamp that gives the date of a report delivery.</p>
     pub last_delivery: ::std::option::Option<::std::string::String>,
     /// <p>An enum that gives the status of a report delivery.</p>
     pub last_status: ::std::option::Option<crate::types::LastStatus>,
 }
-impl ReportStatus {
+impl  ReportStatus  {
     /// <p>A timestamp that gives the date of a report delivery.</p>
-    pub fn last_delivery(&self) -> ::std::option::Option<&str> {
+    pub fn last_delivery(&self) -> ::std::option::Option<& str> {
         self.last_delivery.as_deref()
     }
     /// <p>An enum that gives the status of a report delivery.</p>
-    pub fn last_status(&self) -> ::std::option::Option<&crate::types::LastStatus> {
+    pub fn last_status(&self) -> ::std::option::Option<& crate::types::LastStatus> {
         self.last_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ReportStatusBuilder {
     }
     /// <p>A timestamp that gives the date of a report delivery.</p>
     pub fn set_last_delivery(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_delivery = input;
-        self
+        self.last_delivery = input; self
     }
     /// <p>A timestamp that gives the date of a report delivery.</p>
     pub fn get_last_delivery(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReportStatusBuilder {
     }
     /// <p>An enum that gives the status of a report delivery.</p>
     pub fn set_last_status(mut self, input: ::std::option::Option<crate::types::LastStatus>) -> Self {
-        self.last_status = input;
-        self
+        self.last_status = input; self
     }
     /// <p>An enum that gives the status of a report delivery.</p>
     pub fn get_last_status(&self) -> &::std::option::Option<crate::types::LastStatus> {
@@ -65,8 +63,11 @@ impl ReportStatusBuilder {
     /// Consumes the builder and constructs a [`ReportStatus`](crate::types::ReportStatus).
     pub fn build(self) -> crate::types::ReportStatus {
         crate::types::ReportStatus {
-            last_delivery: self.last_delivery,
-            last_status: self.last_status,
+            last_delivery: self.last_delivery
+            ,
+            last_status: self.last_status
+            ,
         }
     }
 }
+

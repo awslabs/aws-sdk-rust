@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTlsInspectionConfigurationsOutput {
+pub struct ListTlsInspectionConfigurationsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub tls_inspection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
+    pub tls_inspection_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TlsInspectionConfigurationMetadata>>,
     _request_id: Option<String>,
 }
-impl ListTlsInspectionConfigurationsOutput {
+impl  ListTlsInspectionConfigurationsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_inspection_configurations.is_none()`.
-    pub fn tls_inspection_configurations(&self) -> &[crate::types::TlsInspectionConfigurationMetadata] {
-        self.tls_inspection_configurations.as_deref().unwrap_or_default()
+    pub fn tls_inspection_configurations(&self) -> & [crate::types::TlsInspectionConfigurationMetadata] {
+        self.tls_inspection_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTlsInspectionConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTlsInspectionConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
     pub fn builder() -> crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListTlsInspectionConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTlsInspectionConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tls_inspection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
+    pub(crate) tls_inspection_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TlsInspectionConfigurationMetadata>>,
     _request_id: Option<String>,
 }
 impl ListTlsInspectionConfigurationsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
     pub fn tls_inspection_configurations(mut self, input: crate::types::TlsInspectionConfigurationMetadata) -> Self {
         let mut v = self.tls_inspection_configurations.unwrap_or_default();
-        v.push(input);
-        self.tls_inspection_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tls_inspection_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn set_tls_inspection_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
-    ) -> Self {
-        self.tls_inspection_configurations = input;
-        self
+    pub fn set_tls_inspection_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TlsInspectionConfigurationMetadata>>) -> Self {
+        self.tls_inspection_configurations = input; self
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn get_tls_inspection_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>> {
+    pub fn get_tls_inspection_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TlsInspectionConfigurationMetadata>> {
         &self.tls_inspection_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput {
         crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput {
-            next_token: self.next_token,
-            tls_inspection_configurations: self.tls_inspection_configurations,
+            next_token: self.next_token
+            ,
+            tls_inspection_configurations: self.tls_inspection_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

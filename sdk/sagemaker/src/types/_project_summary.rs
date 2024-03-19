@@ -3,7 +3,7 @@
 /// <p>Information about a project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The name of the project.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
@@ -17,29 +17,29 @@ pub struct ProjectSummary {
     /// <p>The status of the project.</p>
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
 }
-impl ProjectSummary {
+impl  ProjectSummary  {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(&self) -> ::std::option::Option<&str> {
+    pub fn project_description(&self) -> ::std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The time that the project was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of the project.</p>
-    pub fn project_status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
+    pub fn project_status(&self) -> ::std::option::Option<& crate::types::ProjectStatus> {
         self.project_status.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The description of the project.</p>
     pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_description = input;
-        self
+        self.project_description = input; self
     }
     /// <p>The description of the project.</p>
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The time that the project was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the project was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -144,8 +139,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The status of the project.</p>
     pub fn set_project_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
-        self.project_status = input;
-        self
+        self.project_status = input; self
     }
     /// <p>The status of the project.</p>
     pub fn get_project_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
@@ -154,12 +148,19 @@ impl ProjectSummaryBuilder {
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {
         crate::types::ProjectSummary {
-            project_name: self.project_name,
-            project_description: self.project_description,
-            project_arn: self.project_arn,
-            project_id: self.project_id,
-            creation_time: self.creation_time,
-            project_status: self.project_status,
+            project_name: self.project_name
+            ,
+            project_description: self.project_description
+            ,
+            project_arn: self.project_arn
+            ,
+            project_id: self.project_id
+            ,
+            creation_time: self.creation_time
+            ,
+            project_status: self.project_status
+            ,
         }
     }
 }
+

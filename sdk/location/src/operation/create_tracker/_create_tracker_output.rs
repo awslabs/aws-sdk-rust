@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrackerOutput {
+pub struct CreateTrackerOutput  {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
@@ -15,31 +15,29 @@ pub struct CreateTrackerOutput {
     pub create_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl CreateTrackerOutput {
+impl  CreateTrackerOutput  {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_name.deref()
+    pub fn tracker_name(&self) -> & str {
+        use std::ops::Deref; self.tracker_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li>
     /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
     /// </ul>
-    pub fn tracker_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_arn.deref()
+    pub fn tracker_arn(&self) -> & str {
+        use std::ops::Deref; self.tracker_arn.deref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrackerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrackerOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrackerOutput`](crate::operation::create_tracker::CreateTrackerOutput).
     pub fn builder() -> crate::operation::create_tracker::builders::CreateTrackerOutputBuilder {
@@ -65,8 +63,7 @@ impl CreateTrackerOutputBuilder {
     }
     /// <p>The name of the tracker resource.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The name of the tracker resource.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +85,7 @@ impl CreateTrackerOutputBuilder {
     /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code></p></li>
     /// </ul>
     pub fn set_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_arn = input;
-        self
+        self.tracker_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
@@ -107,50 +103,47 @@ impl CreateTrackerOutputBuilder {
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrackerOutput`](crate::operation::create_tracker::CreateTrackerOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`tracker_name`](crate::operation::create_tracker::builders::CreateTrackerOutputBuilder::tracker_name)
     /// - [`tracker_arn`](crate::operation::create_tracker::builders::CreateTrackerOutputBuilder::tracker_arn)
     /// - [`create_time`](crate::operation::create_tracker::builders::CreateTrackerOutputBuilder::create_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_tracker::CreateTrackerOutput {
-            tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tracker_name",
-                    "tracker_name was not specified but it is required when building CreateTrackerOutput",
-                )
-            })?,
-            tracker_arn: self.tracker_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tracker_arn",
-                    "tracker_arn was not specified but it is required when building CreateTrackerOutput",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building CreateTrackerOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_tracker::CreateTrackerOutput {
+                tracker_name: self.tracker_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tracker_name", "tracker_name was not specified but it is required when building CreateTrackerOutput")
+                    )?
+                ,
+                tracker_arn: self.tracker_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tracker_arn", "tracker_arn was not specified but it is required when building CreateTrackerOutput")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building CreateTrackerOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

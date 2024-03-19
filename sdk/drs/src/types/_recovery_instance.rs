@@ -3,7 +3,7 @@
 /// <p>A Recovery Instance is a replica of a Source Server running on EC2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RecoveryInstance {
+pub struct RecoveryInstance  {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
@@ -17,7 +17,7 @@ pub struct RecoveryInstance {
     /// <p>The ARN of the Recovery Instance.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An object representing failback related information of the Recovery Instance.</p>
     pub failback: ::std::option::Option<crate::types::RecoveryInstanceFailback>,
     /// <p>The Data Replication Info of the Recovery Instance.</p>
@@ -35,49 +35,49 @@ pub struct RecoveryInstance {
     /// <p>The version of the DRS agent installed on the recovery instance</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
 }
-impl RecoveryInstance {
+impl  RecoveryInstance  {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
-    pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
-    pub fn ec2_instance_state(&self) -> ::std::option::Option<&crate::types::Ec2InstanceState> {
+    pub fn ec2_instance_state(&self) -> ::std::option::Option<& crate::types::Ec2InstanceState> {
         self.ec2_instance_state.as_ref()
     }
     /// <p>The ID of the Job that created the Recovery Instance.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>The ARN of the Recovery Instance.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>An object representing failback related information of the Recovery Instance.</p>
-    pub fn failback(&self) -> ::std::option::Option<&crate::types::RecoveryInstanceFailback> {
+    pub fn failback(&self) -> ::std::option::Option<& crate::types::RecoveryInstanceFailback> {
         self.failback.as_ref()
     }
     /// <p>The Data Replication Info of the Recovery Instance.</p>
-    pub fn data_replication_info(&self) -> ::std::option::Option<&crate::types::RecoveryInstanceDataReplicationInfo> {
+    pub fn data_replication_info(&self) -> ::std::option::Option<& crate::types::RecoveryInstanceDataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Properties of the Recovery Instance machine.</p>
-    pub fn recovery_instance_properties(&self) -> ::std::option::Option<&crate::types::RecoveryInstanceProperties> {
+    pub fn recovery_instance_properties(&self) -> ::std::option::Option<& crate::types::RecoveryInstanceProperties> {
         self.recovery_instance_properties.as_ref()
     }
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
-    pub fn point_in_time_snapshot_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn point_in_time_snapshot_date_time(&self) -> ::std::option::Option<& str> {
         self.point_in_time_snapshot_date_time.as_deref()
     }
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
@@ -85,19 +85,19 @@ impl RecoveryInstance {
         self.is_drill
     }
     /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
-    pub fn origin_environment(&self) -> ::std::option::Option<&crate::types::OriginEnvironment> {
+    pub fn origin_environment(&self) -> ::std::option::Option<& crate::types::OriginEnvironment> {
         self.origin_environment.as_ref()
     }
     /// <p>AWS availability zone associated with the recovery instance.</p>
-    pub fn origin_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn origin_availability_zone(&self) -> ::std::option::Option<& str> {
         self.origin_availability_zone.as_deref()
     }
     /// <p>The version of the DRS agent installed on the recovery instance</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
-impl ::std::fmt::Debug for RecoveryInstance {
+impl  ::std::fmt::Debug for RecoveryInstance  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RecoveryInstance");
         formatter.field("ec2_instance_id", &self.ec2_instance_id);
@@ -135,7 +135,7 @@ pub struct RecoveryInstanceBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) failback: ::std::option::Option<crate::types::RecoveryInstanceFailback>,
     pub(crate) data_replication_info: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInfo>,
     pub(crate) recovery_instance_properties: ::std::option::Option<crate::types::RecoveryInstanceProperties>,
@@ -153,8 +153,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
     pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
     pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
     pub fn set_ec2_instance_state(mut self, input: ::std::option::Option<crate::types::Ec2InstanceState>) -> Self {
-        self.ec2_instance_state = input;
-        self
+        self.ec2_instance_state = input; self
     }
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
     pub fn get_ec2_instance_state(&self) -> &::std::option::Option<crate::types::Ec2InstanceState> {
@@ -181,8 +179,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The ID of the Job that created the Recovery Instance.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the Job that created the Recovery Instance.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +192,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The ID of the Recovery Instance.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The ID of the Recovery Instance.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +205,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +218,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The ARN of the Recovery Instance.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the Recovery Instance.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,17 +231,16 @@ impl RecoveryInstanceBuilder {
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>An object representing failback related information of the Recovery Instance.</p>
@@ -257,8 +250,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>An object representing failback related information of the Recovery Instance.</p>
     pub fn set_failback(mut self, input: ::std::option::Option<crate::types::RecoveryInstanceFailback>) -> Self {
-        self.failback = input;
-        self
+        self.failback = input; self
     }
     /// <p>An object representing failback related information of the Recovery Instance.</p>
     pub fn get_failback(&self) -> &::std::option::Option<crate::types::RecoveryInstanceFailback> {
@@ -271,8 +263,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The Data Replication Info of the Recovery Instance.</p>
     pub fn set_data_replication_info(mut self, input: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInfo>) -> Self {
-        self.data_replication_info = input;
-        self
+        self.data_replication_info = input; self
     }
     /// <p>The Data Replication Info of the Recovery Instance.</p>
     pub fn get_data_replication_info(&self) -> &::std::option::Option<crate::types::RecoveryInstanceDataReplicationInfo> {
@@ -285,8 +276,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>Properties of the Recovery Instance machine.</p>
     pub fn set_recovery_instance_properties(mut self, input: ::std::option::Option<crate::types::RecoveryInstanceProperties>) -> Self {
-        self.recovery_instance_properties = input;
-        self
+        self.recovery_instance_properties = input; self
     }
     /// <p>Properties of the Recovery Instance machine.</p>
     pub fn get_recovery_instance_properties(&self) -> &::std::option::Option<crate::types::RecoveryInstanceProperties> {
@@ -299,8 +289,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
     pub fn set_point_in_time_snapshot_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.point_in_time_snapshot_date_time = input;
-        self
+        self.point_in_time_snapshot_date_time = input; self
     }
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
     pub fn get_point_in_time_snapshot_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +302,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
     pub fn set_is_drill(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_drill = input;
-        self
+        self.is_drill = input; self
     }
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
     pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
@@ -327,8 +315,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn set_origin_environment(mut self, input: ::std::option::Option<crate::types::OriginEnvironment>) -> Self {
-        self.origin_environment = input;
-        self
+        self.origin_environment = input; self
     }
     /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn get_origin_environment(&self) -> &::std::option::Option<crate::types::OriginEnvironment> {
@@ -341,8 +328,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>AWS availability zone associated with the recovery instance.</p>
     pub fn set_origin_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_availability_zone = input;
-        self
+        self.origin_availability_zone = input; self
     }
     /// <p>AWS availability zone associated with the recovery instance.</p>
     pub fn get_origin_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -355,8 +341,7 @@ impl RecoveryInstanceBuilder {
     }
     /// <p>The version of the DRS agent installed on the recovery instance</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The version of the DRS agent installed on the recovery instance</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -365,21 +350,36 @@ impl RecoveryInstanceBuilder {
     /// Consumes the builder and constructs a [`RecoveryInstance`](crate::types::RecoveryInstance).
     pub fn build(self) -> crate::types::RecoveryInstance {
         crate::types::RecoveryInstance {
-            ec2_instance_id: self.ec2_instance_id,
-            ec2_instance_state: self.ec2_instance_state,
-            job_id: self.job_id,
-            recovery_instance_id: self.recovery_instance_id,
-            source_server_id: self.source_server_id,
-            arn: self.arn,
-            tags: self.tags,
-            failback: self.failback,
-            data_replication_info: self.data_replication_info,
-            recovery_instance_properties: self.recovery_instance_properties,
-            point_in_time_snapshot_date_time: self.point_in_time_snapshot_date_time,
-            is_drill: self.is_drill,
-            origin_environment: self.origin_environment,
-            origin_availability_zone: self.origin_availability_zone,
-            agent_version: self.agent_version,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            ec2_instance_state: self.ec2_instance_state
+            ,
+            job_id: self.job_id
+            ,
+            recovery_instance_id: self.recovery_instance_id
+            ,
+            source_server_id: self.source_server_id
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            failback: self.failback
+            ,
+            data_replication_info: self.data_replication_info
+            ,
+            recovery_instance_properties: self.recovery_instance_properties
+            ,
+            point_in_time_snapshot_date_time: self.point_in_time_snapshot_date_time
+            ,
+            is_drill: self.is_drill
+            ,
+            origin_environment: self.origin_environment
+            ,
+            origin_availability_zone: self.origin_availability_zone
+            ,
+            agent_version: self.agent_version
+            ,
         }
     }
 }
@@ -404,3 +404,4 @@ impl ::std::fmt::Debug for RecoveryInstanceBuilder {
         formatter.finish()
     }
 }
+

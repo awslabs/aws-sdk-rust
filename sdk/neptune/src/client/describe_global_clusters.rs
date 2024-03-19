@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGlobalClusters`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_cluster_identifier(impl Into<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_global_cluster_identifier):<br>required: **false**<br><p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB cluster identifier.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p> <p>Default: <code>100</code></p> <p>Constraints: Minimum 20, maximum 100.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_marker):<br>required: **false**<br><p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput) with field(s):
+                            /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::marker): <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
     ///   - [`global_clusters(Option<Vec::<GlobalCluster>>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::global_clusters): <p>The list of global clusters and instances returned by this request.</p>
-    /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::operation::describe_global_clusters::DescribeGlobalClustersError)
+                            /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::operation::describe_global_clusters::DescribeGlobalClustersError)
     pub fn describe_global_clusters(&self) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder {
-        crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

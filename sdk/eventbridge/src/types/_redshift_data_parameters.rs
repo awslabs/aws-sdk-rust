@@ -3,7 +3,7 @@
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RedshiftDataParameters {
+pub struct RedshiftDataParameters  {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
@@ -17,28 +17,27 @@ pub struct RedshiftDataParameters {
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub with_event: bool,
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sqls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RedshiftDataParameters {
+impl  RedshiftDataParameters  {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    pub fn secret_manager_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> ::std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn db_user(&self) -> ::std::option::Option<&str> {
+    pub fn db_user(&self) -> ::std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
+    pub fn sql(&self) -> ::std::option::Option<& str> {
         self.sql.as_deref()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(&self) -> ::std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
@@ -46,13 +45,14 @@ impl RedshiftDataParameters {
         self.with_event
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sqls.is_none()`.
-    pub fn sqls(&self) -> &[::std::string::String] {
-        self.sqls.as_deref().unwrap_or_default()
+    pub fn sqls(&self) -> & [::std::string::String] {
+        self.sqls.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for RedshiftDataParameters {
+impl  ::std::fmt::Debug for RedshiftDataParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDataParameters");
         formatter.field("secret_manager_arn", &self.secret_manager_arn);
@@ -82,7 +82,7 @@ pub struct RedshiftDataParametersBuilder {
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) with_event: ::std::option::Option<bool>,
-    pub(crate) sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sqls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RedshiftDataParametersBuilder {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
@@ -92,8 +92,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_manager_arn = input;
-        self
+        self.secret_manager_arn = input; self
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub fn get_secret_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +106,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>The SQL statement text to run.</p>
     pub fn set_sql(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql = input;
-        self
+        self.sql = input; self
     }
     /// <p>The SQL statement text to run.</p>
     pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +145,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_name = input;
-        self
+        self.statement_name = input; self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +158,7 @@ impl RedshiftDataParametersBuilder {
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn set_with_event(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.with_event = input;
-        self
+        self.with_event = input; self
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn get_with_event(&self) -> &::std::option::Option<bool> {
@@ -177,37 +171,44 @@ impl RedshiftDataParametersBuilder {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     pub fn sqls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sqls.unwrap_or_default();
-        v.push(input.into());
-        self.sqls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sqls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn set_sqls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sqls = input;
-        self
+    pub fn set_sqls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sqls = input; self
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn get_sqls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sqls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sqls
     }
     /// Consumes the builder and constructs a [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`database`](crate::types::builders::RedshiftDataParametersBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDataParameters {
-            secret_manager_arn: self.secret_manager_arn,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building RedshiftDataParameters",
-                )
-            })?,
-            db_user: self.db_user,
-            sql: self.sql,
-            statement_name: self.statement_name,
-            with_event: self.with_event.unwrap_or_default(),
-            sqls: self.sqls,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDataParameters {
+                secret_manager_arn: self.secret_manager_arn
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building RedshiftDataParameters")
+                    )?
+                ,
+                db_user: self.db_user
+                ,
+                sql: self.sql
+                ,
+                statement_name: self.statement_name
+                ,
+                with_event: self.with_event
+                    .unwrap_or_default()
+                ,
+                sqls: self.sqls
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RedshiftDataParametersBuilder {
@@ -223,3 +224,4 @@ impl ::std::fmt::Debug for RedshiftDataParametersBuilder {
         formatter.finish()
     }
 }
+

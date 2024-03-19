@@ -3,7 +3,7 @@
 /// <p>An individual Firewall Manager application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct App {
+pub struct App  {
     /// <p>The application's name.</p>
     pub app_name: ::std::string::String,
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
@@ -11,16 +11,14 @@ pub struct App {
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub port: i64,
 }
-impl App {
+impl  App  {
     /// <p>The application's name.</p>
-    pub fn app_name(&self) -> &str {
-        use std::ops::Deref;
-        self.app_name.deref()
+    pub fn app_name(&self) -> & str {
+        use std::ops::Deref; self.app_name.deref()
     }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
-    pub fn protocol(&self) -> &str {
-        use std::ops::Deref;
-        self.protocol.deref()
+    pub fn protocol(&self) -> & str {
+        use std::ops::Deref; self.protocol.deref()
     }
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub fn port(&self) -> i64 {
@@ -51,8 +49,7 @@ impl AppBuilder {
     }
     /// <p>The application's name.</p>
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_name = input;
-        self
+        self.app_name = input; self
     }
     /// <p>The application's name.</p>
     pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AppBuilder {
     }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl AppBuilder {
     }
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The application's port number, for example <code>80</code>.</p>
     pub fn get_port(&self) -> &::std::option::Option<i64> {
@@ -94,22 +89,25 @@ impl AppBuilder {
     /// - [`protocol`](crate::types::builders::AppBuilder::protocol)
     /// - [`port`](crate::types::builders::AppBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::App {
-            app_name: self.app_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_name",
-                    "app_name was not specified but it is required when building App",
-                )
-            })?,
-            protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol",
-                    "protocol was not specified but it is required when building App",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building App")
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::App {
+                app_name: self.app_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_name", "app_name was not specified but it is required when building App")
+                    )?
+                ,
+                protocol: self.protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol", "protocol was not specified but it is required when building App")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building App")
+                    )?
+                ,
+            }
+        )
     }
 }
+

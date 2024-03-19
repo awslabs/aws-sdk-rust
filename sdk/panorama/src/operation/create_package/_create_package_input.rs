@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackageInput {
+pub struct CreatePackageInput  {
     /// <p>A name for the package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the package.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePackageInput {
+impl  CreatePackageInput  {
     /// <p>A name for the package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Tags for the package.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl CreatePackageInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePackageInputBuilder {
     /// <p>A name for the package.</p>
@@ -41,8 +41,7 @@ impl CreatePackageInputBuilder {
     }
     /// <p>A name for the package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>A name for the package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,26 +54,28 @@ impl CreatePackageInputBuilder {
     /// <p>Tags for the package.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the package.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the package.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
-            package_name: self.package_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_package::CreatePackageInput {
+                package_name: self.package_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

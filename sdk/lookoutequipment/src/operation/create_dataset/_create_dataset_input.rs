@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p>The name of the dataset being created.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
@@ -12,30 +12,31 @@ pub struct CreateDatasetInput {
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Any tags associated with the ingested data described in the dataset.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDatasetInput {
+impl  CreateDatasetInput  {
     /// <p>The name of the dataset being created.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
-    pub fn dataset_schema(&self) -> ::std::option::Option<&crate::types::DatasetSchema> {
+    pub fn dataset_schema(&self) -> ::std::option::Option<& crate::types::DatasetSchema> {
         self.dataset_schema.as_ref()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment.</p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Any tags associated with the ingested data described in the dataset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDatasetInput {
@@ -53,7 +54,7 @@ pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_schema: ::std::option::Option<crate::types::DatasetSchema>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name of the dataset being created.</p>
@@ -64,8 +65,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name of the dataset being created.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset being created.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
     pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
-        self.dataset_schema = input;
-        self
+        self.dataset_schema = input; self
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
     pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
@@ -92,8 +91,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+        self.server_side_kms_key_id = input; self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl CreateDatasetInputBuilder {
     /// <p>Any tags associated with the ingested data described in the dataset.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags associated with the ingested data described in the dataset.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags associated with the ingested data described in the dataset.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
-            dataset_name: self.dataset_name,
-            dataset_schema: self.dataset_schema,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                dataset_name: self.dataset_name
+                ,
+                dataset_schema: self.dataset_schema
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -19,32 +19,31 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a> in the Amazon Timestream Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectedRecordsException {
+pub struct RejectedRecordsException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub rejected_records: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>,
+    pub rejected_records: ::std::option::Option<::std::vec::Vec::<crate::types::RejectedRecord>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl RejectedRecordsException {
+impl  RejectedRecordsException  {
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_records.is_none()`.
-    pub fn rejected_records(&self) -> &[crate::types::RejectedRecord] {
-        self.rejected_records.as_deref().unwrap_or_default()
+    pub fn rejected_records(&self) -> & [crate::types::RejectedRecord] {
+        self.rejected_records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RejectedRecordsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for RejectedRecordsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "RejectedRecordsException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -59,9 +58,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::RejectedRecords
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RejectedRecordsException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl RejectedRecordsException {
     /// Creates a new builder-style object to manufacture [`RejectedRecordsException`](crate::types::error::RejectedRecordsException).
@@ -75,7 +72,7 @@ impl RejectedRecordsException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectedRecordsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) rejected_records: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>,
+    pub(crate) rejected_records: ::std::option::Option<::std::vec::Vec::<crate::types::RejectedRecord>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl RejectedRecordsExceptionBuilder {
@@ -86,8 +83,7 @@ impl RejectedRecordsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,36 +96,38 @@ impl RejectedRecordsExceptionBuilder {
     /// <p></p>
     pub fn rejected_records(mut self, input: crate::types::RejectedRecord) -> Self {
         let mut v = self.rejected_records.unwrap_or_default();
-        v.push(input);
-        self.rejected_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rejected_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_rejected_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>) -> Self {
-        self.rejected_records = input;
-        self
+    pub fn set_rejected_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RejectedRecord>>) -> Self {
+        self.rejected_records = input; self
     }
     /// <p></p>
-    pub fn get_rejected_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>> {
+    pub fn get_rejected_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RejectedRecord>> {
         &self.rejected_records
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`RejectedRecordsException`](crate::types::error::RejectedRecordsException).
     pub fn build(self) -> crate::types::error::RejectedRecordsException {
         crate::types::error::RejectedRecordsException {
-            message: self.message,
-            rejected_records: self.rejected_records,
+            message: self.message
+            ,
+            rejected_records: self.rejected_records
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

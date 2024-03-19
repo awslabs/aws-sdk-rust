@@ -3,11 +3,11 @@
 /// <p>The details of the subscription target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SubscriptionTargetSummary {
+pub struct SubscriptionTargetSummary  {
     /// <p>The identifier of the subscription target.</p>
     pub id: ::std::string::String,
     /// <p>The authorized principals included in the subscription target.</p>
-    pub authorized_principals: ::std::vec::Vec<::std::string::String>,
+    pub authorized_principals: ::std::vec::Vec::<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which the subscription target exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The identifier of the project specified in the subscription target.</p>
@@ -29,87 +29,75 @@ pub struct SubscriptionTargetSummary {
     /// <p>The manage access role specified in the subscription target.</p>
     pub manage_access_role: ::std::string::String,
     /// <p>The asset types included in the subscription target.</p>
-    pub applicable_asset_types: ::std::vec::Vec<::std::string::String>,
+    pub applicable_asset_types: ::std::vec::Vec::<::std::string::String>,
     /// <p>The configuration of the subscription target.</p>
-    pub subscription_target_config: ::std::vec::Vec<crate::types::SubscriptionTargetForm>,
+    pub subscription_target_config: ::std::vec::Vec::<crate::types::SubscriptionTargetForm>,
     /// <p>The provider of the subscription target.</p>
     pub provider: ::std::string::String,
 }
-impl SubscriptionTargetSummary {
+impl  SubscriptionTargetSummary  {
     /// <p>The identifier of the subscription target.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The authorized principals included in the subscription target.</p>
-    pub fn authorized_principals(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.authorized_principals.deref()
+    pub fn authorized_principals(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.authorized_principals.deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription target exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The identifier of the project specified in the subscription target.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The identifier of the environment of the subscription target.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The name of the subscription target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the subscription target.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The Amazon DataZone user who created the subscription target.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>The Amazon DataZone user who updated the subscription target.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
     /// <p>The timestamp of when the subscription target was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the subscription target was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The manage access role specified in the subscription target.</p>
-    pub fn manage_access_role(&self) -> &str {
-        use std::ops::Deref;
-        self.manage_access_role.deref()
+    pub fn manage_access_role(&self) -> & str {
+        use std::ops::Deref; self.manage_access_role.deref()
     }
     /// <p>The asset types included in the subscription target.</p>
-    pub fn applicable_asset_types(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.applicable_asset_types.deref()
+    pub fn applicable_asset_types(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.applicable_asset_types.deref()
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn subscription_target_config(&self) -> &[crate::types::SubscriptionTargetForm] {
-        use std::ops::Deref;
-        self.subscription_target_config.deref()
+    pub fn subscription_target_config(&self) -> & [crate::types::SubscriptionTargetForm] {
+        use std::ops::Deref; self.subscription_target_config.deref()
     }
     /// <p>The provider of the subscription target.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
 }
-impl ::std::fmt::Debug for SubscriptionTargetSummary {
+impl  ::std::fmt::Debug for SubscriptionTargetSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SubscriptionTargetSummary");
         formatter.field("id", &self.id);
@@ -142,7 +130,7 @@ impl SubscriptionTargetSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SubscriptionTargetSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -153,8 +141,8 @@ pub struct SubscriptionTargetSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) manage_access_role: ::std::option::Option<::std::string::String>,
-    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
+    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
 }
 impl SubscriptionTargetSummaryBuilder {
@@ -166,8 +154,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The identifier of the subscription target.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the subscription target.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,17 +167,16 @@ impl SubscriptionTargetSummaryBuilder {
     /// <p>The authorized principals included in the subscription target.</p>
     pub fn authorized_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_principals.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authorized principals included in the subscription target.</p>
-    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_principals = input;
-        self
+    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_principals = input; self
     }
     /// <p>The authorized principals included in the subscription target.</p>
-    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_principals
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription target exists.</p>
@@ -201,8 +187,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription target exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription target exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +201,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The identifier of the project specified in the subscription target.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The identifier of the project specified in the subscription target.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +215,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The identifier of the environment of the subscription target.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The identifier of the environment of the subscription target.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +229,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The name of the subscription target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the subscription target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +243,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The type of the subscription target.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the subscription target.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +257,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The Amazon DataZone user who created the subscription target.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the subscription target.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -290,8 +270,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The Amazon DataZone user who updated the subscription target.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The Amazon DataZone user who updated the subscription target.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +284,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The timestamp of when the subscription target was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the subscription target was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -319,8 +297,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The timestamp of when the subscription target was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the subscription target was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -334,8 +311,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The manage access role specified in the subscription target.</p>
     pub fn set_manage_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manage_access_role = input;
-        self
+        self.manage_access_role = input; self
     }
     /// <p>The manage access role specified in the subscription target.</p>
     pub fn get_manage_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,17 +324,16 @@ impl SubscriptionTargetSummaryBuilder {
     /// <p>The asset types included in the subscription target.</p>
     pub fn applicable_asset_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.applicable_asset_types.unwrap_or_default();
-        v.push(input.into());
-        self.applicable_asset_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.applicable_asset_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset types included in the subscription target.</p>
-    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.applicable_asset_types = input;
-        self
+    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.applicable_asset_types = input; self
     }
     /// <p>The asset types included in the subscription target.</p>
-    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.applicable_asset_types
     }
     /// Appends an item to `subscription_target_config`.
@@ -368,17 +343,16 @@ impl SubscriptionTargetSummaryBuilder {
     /// <p>The configuration of the subscription target.</p>
     pub fn subscription_target_config(mut self, input: crate::types::SubscriptionTargetForm) -> Self {
         let mut v = self.subscription_target_config.unwrap_or_default();
-        v.push(input);
-        self.subscription_target_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscription_target_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>) -> Self {
-        self.subscription_target_config = input;
-        self
+    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>) -> Self {
+        self.subscription_target_config = input; self
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>> {
+    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>> {
         &self.subscription_target_config
     }
     /// <p>The provider of the subscription target.</p>
@@ -389,8 +363,7 @@ impl SubscriptionTargetSummaryBuilder {
     }
     /// <p>The provider of the subscription target.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the subscription target.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -412,88 +385,79 @@ impl SubscriptionTargetSummaryBuilder {
     /// - [`subscription_target_config`](crate::types::builders::SubscriptionTargetSummaryBuilder::subscription_target_config)
     /// - [`provider`](crate::types::builders::SubscriptionTargetSummaryBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionTargetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SubscriptionTargetSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            authorized_principals: self.authorized_principals.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "authorized_principals",
-                    "authorized_principals was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            updated_by: self.updated_by,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            updated_at: self.updated_at,
-            manage_access_role: self.manage_access_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manage_access_role",
-                    "manage_access_role was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            applicable_asset_types: self.applicable_asset_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "applicable_asset_types",
-                    "applicable_asset_types was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            subscription_target_config: self.subscription_target_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscription_target_config",
-                    "subscription_target_config was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building SubscriptionTargetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SubscriptionTargetSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                authorized_principals: self.authorized_principals
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("authorized_principals", "authorized_principals was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                updated_by: self.updated_by
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                ,
+                manage_access_role: self.manage_access_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manage_access_role", "manage_access_role was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                applicable_asset_types: self.applicable_asset_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("applicable_asset_types", "applicable_asset_types was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                subscription_target_config: self.subscription_target_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscription_target_config", "subscription_target_config was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building SubscriptionTargetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SubscriptionTargetSummaryBuilder {
@@ -517,3 +481,4 @@ impl ::std::fmt::Debug for SubscriptionTargetSummaryBuilder {
         formatter.finish()
     }
 }
+

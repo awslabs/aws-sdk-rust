@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAudienceModelInput {
+pub struct DeleteAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the audience model that you want to delete.</p>
     pub audience_model_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAudienceModelInput {
+impl  DeleteAudienceModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the audience model that you want to delete.</p>
-    pub fn audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.audience_model_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model that you want to delete.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model that you want to delete.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.audience_model_arn
     }
     /// Consumes the builder and constructs a [`DeleteAudienceModelInput`](crate::operation::delete_audience_model::DeleteAudienceModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_audience_model::DeleteAudienceModelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_audience_model::DeleteAudienceModelInput {
-            audience_model_arn: self.audience_model_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_audience_model::DeleteAudienceModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_audience_model::DeleteAudienceModelInput {
+                audience_model_arn: self.audience_model_arn
+                ,
+            }
+        )
     }
 }
+

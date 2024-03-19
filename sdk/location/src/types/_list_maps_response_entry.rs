@@ -3,7 +3,7 @@
 /// <p>Contains details of an existing map resource in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMapsResponseEntry {
+pub struct ListMapsResponseEntry  {
     /// <p>The name of the associated map resource.</p>
     pub map_name: ::std::string::String,
     /// <p>The description for the map resource.</p>
@@ -18,33 +18,30 @@ pub struct ListMapsResponseEntry {
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ListMapsResponseEntry {
+impl  ListMapsResponseEntry  {
     /// <p>The name of the associated map resource.</p>
-    pub fn map_name(&self) -> &str {
-        use std::ops::Deref;
-        self.map_name.deref()
+    pub fn map_name(&self) -> & str {
+        use std::ops::Deref; self.map_name.deref()
     }
     /// <p>The description for the map resource.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source.deref()
+    pub fn data_source(&self) -> & str {
+        use std::ops::Deref; self.data_source.deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -75,8 +72,7 @@ impl ListMapsResponseEntryBuilder {
     }
     /// <p>The name of the associated map resource.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The name of the associated map resource.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +86,7 @@ impl ListMapsResponseEntryBuilder {
     }
     /// <p>The description for the map resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the map resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +100,7 @@ impl ListMapsResponseEntryBuilder {
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +115,7 @@ impl ListMapsResponseEntryBuilder {
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -137,8 +130,7 @@ impl ListMapsResponseEntryBuilder {
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +144,7 @@ impl ListMapsResponseEntryBuilder {
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,38 +158,37 @@ impl ListMapsResponseEntryBuilder {
     /// - [`create_time`](crate::types::builders::ListMapsResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListMapsResponseEntryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ListMapsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListMapsResponseEntry {
-            map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "map_name",
-                    "map_name was not specified but it is required when building ListMapsResponseEntry",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building ListMapsResponseEntry",
-                )
-            })?,
-            data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source",
-                    "data_source was not specified but it is required when building ListMapsResponseEntry",
-                )
-            })?,
-            pricing_plan: self.pricing_plan,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ListMapsResponseEntry",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ListMapsResponseEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListMapsResponseEntry {
+                map_name: self.map_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("map_name", "map_name was not specified but it is required when building ListMapsResponseEntry")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building ListMapsResponseEntry")
+                    )?
+                ,
+                data_source: self.data_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source", "data_source was not specified but it is required when building ListMapsResponseEntry")
+                    )?
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ListMapsResponseEntry")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ListMapsResponseEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

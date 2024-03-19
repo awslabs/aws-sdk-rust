@@ -3,7 +3,7 @@
 /// <p>The structure for a permission group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PermissionGroup {
+pub struct PermissionGroup  {
     /// <p>The unique identifier for the permission group.</p>
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the permission group.</p>
@@ -29,7 +29,7 @@ pub struct PermissionGroup {
     /// <li>
     /// <p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
-    pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub application_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPermission>>,
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub create_time: i64,
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
@@ -45,17 +45,17 @@ pub struct PermissionGroup {
     /// </ul>
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
-impl PermissionGroup {
+impl  PermissionGroup  {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>The name of the permission group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description for the permission group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p><important>
@@ -77,10 +77,11 @@ impl PermissionGroup {
     /// <li>
     /// <p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
-    pub fn application_permissions(&self) -> &[crate::types::ApplicationPermission] {
-        self.application_permissions.as_deref().unwrap_or_default()
+    pub fn application_permissions(&self) -> & [crate::types::ApplicationPermission] {
+        self.application_permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn create_time(&self) -> i64 {
@@ -99,11 +100,11 @@ impl PermissionGroup {
     /// <li>
     /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
-    pub fn membership_status(&self) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
+    pub fn membership_status(&self) -> ::std::option::Option<& crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
     }
 }
-impl ::std::fmt::Debug for PermissionGroup {
+impl  ::std::fmt::Debug for PermissionGroup  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PermissionGroup");
         formatter.field("permission_group_id", &self.permission_group_id);
@@ -130,7 +131,7 @@ pub struct PermissionGroupBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPermission>>,
     pub(crate) create_time: ::std::option::Option<i64>,
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
@@ -143,8 +144,7 @@ impl PermissionGroupBuilder {
     }
     /// <p>The unique identifier for the permission group.</p>
     pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_group_id = input;
-        self
+        self.permission_group_id = input; self
     }
     /// <p>The unique identifier for the permission group.</p>
     pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +157,7 @@ impl PermissionGroupBuilder {
     }
     /// <p>The name of the permission group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the permission group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +170,7 @@ impl PermissionGroupBuilder {
     }
     /// <p>A brief description for the permission group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description for the permission group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,9 +201,9 @@ impl PermissionGroupBuilder {
     /// </ul>
     pub fn application_permissions(mut self, input: crate::types::ApplicationPermission) -> Self {
         let mut v = self.application_permissions.unwrap_or_default();
-        v.push(input);
-        self.application_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p><important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -226,9 +224,8 @@ impl PermissionGroupBuilder {
     /// <li>
     /// <p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
-    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
-        self.application_permissions = input;
-        self
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPermission>>) -> Self {
+        self.application_permissions = input; self
     }
     /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p><important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -249,7 +246,7 @@ impl PermissionGroupBuilder {
     /// <li>
     /// <p><code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p></li>
     /// </ul>
-    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPermission>> {
         &self.application_permissions
     }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
@@ -259,8 +256,7 @@ impl PermissionGroupBuilder {
     }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<i64> {
@@ -273,8 +269,7 @@ impl PermissionGroupBuilder {
     }
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
@@ -303,8 +298,7 @@ impl PermissionGroupBuilder {
     /// <p><code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p></li>
     /// </ul>
     pub fn set_membership_status(mut self, input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>) -> Self {
-        self.membership_status = input;
-        self
+        self.membership_status = input; self
     }
     /// <p>Indicates the status of the user within a permission group.</p>
     /// <ul>
@@ -321,13 +315,22 @@ impl PermissionGroupBuilder {
     /// Consumes the builder and constructs a [`PermissionGroup`](crate::types::PermissionGroup).
     pub fn build(self) -> crate::types::PermissionGroup {
         crate::types::PermissionGroup {
-            permission_group_id: self.permission_group_id,
-            name: self.name,
-            description: self.description,
-            application_permissions: self.application_permissions,
-            create_time: self.create_time.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
-            membership_status: self.membership_status,
+            permission_group_id: self.permission_group_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            application_permissions: self.application_permissions
+            ,
+            create_time: self.create_time
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
+            membership_status: self.membership_status
+            ,
         }
     }
 }
@@ -344,3 +347,4 @@ impl ::std::fmt::Debug for PermissionGroupBuilder {
         formatter.finish()
     }
 }
+

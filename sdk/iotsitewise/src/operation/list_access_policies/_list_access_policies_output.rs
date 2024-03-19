@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessPoliciesOutput {
+pub struct ListAccessPoliciesOutput  {
     /// <p>A list that summarizes each access policy.</p>
-    pub access_policy_summaries: ::std::vec::Vec<crate::types::AccessPolicySummary>,
+    pub access_policy_summaries: ::std::vec::Vec::<crate::types::AccessPolicySummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccessPoliciesOutput {
+impl  ListAccessPoliciesOutput  {
     /// <p>A list that summarizes each access policy.</p>
-    pub fn access_policy_summaries(&self) -> &[crate::types::AccessPolicySummary] {
-        use std::ops::Deref;
-        self.access_policy_summaries.deref()
+    pub fn access_policy_summaries(&self) -> & [crate::types::AccessPolicySummary] {
+        use std::ops::Deref; self.access_policy_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
     pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAccessPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesOutputBuilder {
-    pub(crate) access_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
+    pub(crate) access_policy_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAccessPoliciesOutputBuilder {
     /// <p>A list that summarizes each access policy.</p>
     pub fn access_policy_summaries(mut self, input: crate::types::AccessPolicySummary) -> Self {
         let mut v = self.access_policy_summaries.unwrap_or_default();
-        v.push(input);
-        self.access_policy_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_policy_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that summarizes each access policy.</p>
-    pub fn set_access_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>) -> Self {
-        self.access_policy_summaries = input;
-        self
+    pub fn set_access_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPolicySummary>>) -> Self {
+        self.access_policy_summaries = input; self
     }
     /// <p>A list that summarizes each access policy.</p>
-    pub fn get_access_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
+    pub fn get_access_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessPolicySummary>> {
         &self.access_policy_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -68,38 +66,37 @@ impl ListAccessPoliciesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_policy_summaries`](crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder::access_policy_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesOutput {
-            access_policy_summaries: self.access_policy_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_summaries",
-                    "access_policy_summaries was not specified but it is required when building ListAccessPoliciesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_policies::ListAccessPoliciesOutput {
+                access_policy_summaries: self.access_policy_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_summaries", "access_policy_summaries was not specified but it is required when building ListAccessPoliciesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

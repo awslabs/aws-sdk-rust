@@ -3,21 +3,20 @@
 /// <p>The output configuration details for a metric attribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricAttributionOutput {
+pub struct MetricAttributionOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub role_arn: ::std::string::String,
 }
-impl MetricAttributionOutput {
+impl  MetricAttributionOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> ::std::option::Option<& crate::types::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl MetricAttributionOutput {
@@ -42,8 +41,7 @@ impl MetricAttributionOutputBuilder {
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
-        self.s3_data_destination = input;
-        self
+        self.s3_data_destination = input; self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn get_s3_data_destination(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
@@ -57,8 +55,7 @@ impl MetricAttributionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl MetricAttributionOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::MetricAttributionOutputBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricAttributionOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricAttributionOutput {
-            s3_data_destination: self.s3_data_destination,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building MetricAttributionOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricAttributionOutput {
+                s3_data_destination: self.s3_data_destination
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building MetricAttributionOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,29 +3,26 @@
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectorStateDefinition {
+pub struct DetectorStateDefinition  {
     /// <p>The name of the new state of the detector (instance).</p>
     pub state_name: ::std::string::String,
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub variables: ::std::vec::Vec<crate::types::VariableDefinition>,
+    pub variables: ::std::vec::Vec::<crate::types::VariableDefinition>,
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub timers: ::std::vec::Vec<crate::types::TimerDefinition>,
+    pub timers: ::std::vec::Vec::<crate::types::TimerDefinition>,
 }
-impl DetectorStateDefinition {
+impl  DetectorStateDefinition  {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(&self) -> &str {
-        use std::ops::Deref;
-        self.state_name.deref()
+    pub fn state_name(&self) -> & str {
+        use std::ops::Deref; self.state_name.deref()
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn variables(&self) -> &[crate::types::VariableDefinition] {
-        use std::ops::Deref;
-        self.variables.deref()
+    pub fn variables(&self) -> & [crate::types::VariableDefinition] {
+        use std::ops::Deref; self.variables.deref()
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn timers(&self) -> &[crate::types::TimerDefinition] {
-        use std::ops::Deref;
-        self.timers.deref()
+    pub fn timers(&self) -> & [crate::types::TimerDefinition] {
+        use std::ops::Deref; self.timers.deref()
     }
 }
 impl DetectorStateDefinition {
@@ -40,8 +37,8 @@ impl DetectorStateDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorStateDefinitionBuilder {
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
-    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
-    pub(crate) timers: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec::<crate::types::VariableDefinition>>,
+    pub(crate) timers: ::std::option::Option<::std::vec::Vec::<crate::types::TimerDefinition>>,
 }
 impl DetectorStateDefinitionBuilder {
     /// <p>The name of the new state of the detector (instance).</p>
@@ -52,8 +49,7 @@ impl DetectorStateDefinitionBuilder {
     }
     /// <p>The name of the new state of the detector (instance).</p>
     pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_name = input;
-        self
+        self.state_name = input; self
     }
     /// <p>The name of the new state of the detector (instance).</p>
     pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +62,16 @@ impl DetectorStateDefinitionBuilder {
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     pub fn variables(mut self, input: crate::types::VariableDefinition) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VariableDefinition>>) -> Self {
+        self.variables = input; self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VariableDefinition>> {
         &self.variables
     }
     /// Appends an item to `timers`.
@@ -86,17 +81,16 @@ impl DetectorStateDefinitionBuilder {
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     pub fn timers(mut self, input: crate::types::TimerDefinition) -> Self {
         let mut v = self.timers.unwrap_or_default();
-        v.push(input);
-        self.timers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn set_timers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>) -> Self {
-        self.timers = input;
-        self
+    pub fn set_timers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimerDefinition>>) -> Self {
+        self.timers = input; self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn get_timers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>> {
+    pub fn get_timers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimerDefinition>> {
         &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
@@ -105,25 +99,25 @@ impl DetectorStateDefinitionBuilder {
     /// - [`variables`](crate::types::builders::DetectorStateDefinitionBuilder::variables)
     /// - [`timers`](crate::types::builders::DetectorStateDefinitionBuilder::timers)
     pub fn build(self) -> ::std::result::Result<crate::types::DetectorStateDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DetectorStateDefinition {
-            state_name: self.state_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_name",
-                    "state_name was not specified but it is required when building DetectorStateDefinition",
-                )
-            })?,
-            variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variables",
-                    "variables was not specified but it is required when building DetectorStateDefinition",
-                )
-            })?,
-            timers: self.timers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timers",
-                    "timers was not specified but it is required when building DetectorStateDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DetectorStateDefinition {
+                state_name: self.state_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_name", "state_name was not specified but it is required when building DetectorStateDefinition")
+                    )?
+                ,
+                variables: self.variables
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("variables", "variables was not specified but it is required when building DetectorStateDefinition")
+                    )?
+                ,
+                timers: self.timers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timers", "timers was not specified but it is required when building DetectorStateDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

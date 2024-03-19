@@ -21,11 +21,7 @@ impl DataSourceType {
     /// Tries to convert the enum instance into [`S3GlueDataCatalog`](crate::types::DataSourceType::S3GlueDataCatalog), extracting the inner [`S3GlueDataCatalog`](crate::types::S3GlueDataCatalog).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_glue_data_catalog(&self) -> ::std::result::Result<&crate::types::S3GlueDataCatalog, &Self> {
-        if let DataSourceType::S3GlueDataCatalog(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataSourceType::S3GlueDataCatalog(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3GlueDataCatalog`](crate::types::DataSourceType::S3GlueDataCatalog).
     pub fn is_s3_glue_data_catalog(&self) -> bool {
@@ -36,3 +32,4 @@ impl DataSourceType {
         matches!(self, Self::Unknown)
     }
 }
+

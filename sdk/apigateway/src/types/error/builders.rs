@@ -12,3 +12,4 @@ pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+

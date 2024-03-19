@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInferenceRecommendationsJobs`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only jobs created after the specified time (timestamp).</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only jobs created before the specified time (timestamp).</p><br>
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p><br>
@@ -16,13 +16,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of recommendations to return in the response.</p><br>
     ///   - [`model_name_equals(impl Into<String>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::model_name_equals) / [`set_model_name_equals(Option<String>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_model_name_equals):<br>required: **false**<br><p>A filter that returns only jobs that were created for this model.</p><br>
     ///   - [`model_package_version_arn_equals(impl Into<String>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::model_package_version_arn_equals) / [`set_model_package_version_arn_equals(Option<String>)`](crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::set_model_package_version_arn_equals):<br>required: **false**<br><p>A filter that returns only jobs that were created for this versioned model package.</p><br>
-    /// - On success, responds with [`ListInferenceRecommendationsJobsOutput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput) with field(s):
+                            /// - On success, responds with [`ListInferenceRecommendationsJobsOutput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput) with field(s):
     ///   - [`inference_recommendations_jobs(Option<Vec::<InferenceRecommendationsJob>>)`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput::inference_recommendations_jobs): <p>The recommendations created from the Amazon SageMaker Inference Recommender job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListInferenceRecommendationsJobsError>`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsError)
-    pub fn list_inference_recommendations_jobs(
-        &self,
-    ) -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder {
-        crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListInferenceRecommendationsJobsError>`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsError)
+    pub fn list_inference_recommendations_jobs(&self) -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder {
+                                crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

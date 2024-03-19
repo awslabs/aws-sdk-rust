@@ -3,7 +3,7 @@
 /// <p>An Amazon GameLift compute resource for hosting your game servers. A compute can be an EC2instance in a managed EC2 fleet or a registered compute in an Anywhere fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Compute {
+pub struct Compute  {
     /// <p>A unique identifier for the fleet that the compute belongs to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
@@ -29,57 +29,57 @@ pub struct Compute {
     /// <p>The Amazon GameLift SDK endpoint connection for a registered compute resource in an Anywhere fleet. The game servers on the compute use this endpoint to connect to the Amazon GameLift service.</p>
     pub game_lift_service_sdk_endpoint: ::std::option::Option<::std::string::String>,
 }
-impl Compute {
+impl  Compute  {
     /// <p>A unique identifier for the fleet that the compute belongs to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A descriptive label for the compute resource. For instances in a managed EC2 fleet, the compute name is an instance ID.</p>
-    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+    pub fn compute_name(&self) -> ::std::option::Option<& str> {
         self.compute_name.as_deref()
     }
     /// <p>The ARN that is assigned to a compute resource and uniquely identifies it. ARNs are unique across locations. Instances in managed EC2 fleets are not assigned a ComputeARN.</p>
-    pub fn compute_arn(&self) -> ::std::option::Option<&str> {
+    pub fn compute_arn(&self) -> ::std::option::Option<& str> {
         self.compute_arn.as_deref()
     }
     /// <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
-    pub fn compute_status(&self) -> ::std::option::Option<&crate::types::ComputeStatus> {
+    pub fn compute_status(&self) -> ::std::option::Option<& crate::types::ComputeStatus> {
         self.compute_status.as_ref()
     }
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The type of operating system on the compute resource.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon GameLift Anywhere fleet, this property is empty.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Ec2InstanceType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon GameLift SDK endpoint connection for a registered compute resource in an Anywhere fleet. The game servers on the compute use this endpoint to connect to the Amazon GameLift service.</p>
-    pub fn game_lift_service_sdk_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn game_lift_service_sdk_endpoint(&self) -> ::std::option::Option<& str> {
         self.game_lift_service_sdk_endpoint.as_deref()
     }
 }
-impl ::std::fmt::Debug for Compute {
+impl  ::std::fmt::Debug for Compute  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Compute");
         formatter.field("fleet_id", &self.fleet_id);
@@ -129,8 +129,7 @@ impl ComputeBuilder {
     }
     /// <p>A unique identifier for the fleet that the compute belongs to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that the compute belongs to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl ComputeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl ComputeBuilder {
     }
     /// <p>A descriptive label for the compute resource. For instances in a managed EC2 fleet, the compute name is an instance ID.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
     }
     /// <p>A descriptive label for the compute resource. For instances in a managed EC2 fleet, the compute name is an instance ID.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl ComputeBuilder {
     }
     /// <p>The ARN that is assigned to a compute resource and uniquely identifies it. ARNs are unique across locations. Instances in managed EC2 fleets are not assigned a ComputeARN.</p>
     pub fn set_compute_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_arn = input;
-        self
+        self.compute_arn = input; self
     }
     /// <p>The ARN that is assigned to a compute resource and uniquely identifies it. ARNs are unique across locations. Instances in managed EC2 fleets are not assigned a ComputeARN.</p>
     pub fn get_compute_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl ComputeBuilder {
     }
     /// <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +194,7 @@ impl ComputeBuilder {
     }
     /// <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP address for a compute.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +207,7 @@ impl ComputeBuilder {
     }
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
     pub fn set_compute_status(mut self, input: ::std::option::Option<crate::types::ComputeStatus>) -> Self {
-        self.compute_status = input;
-        self
+        self.compute_status = input; self
     }
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
     pub fn get_compute_status(&self) -> &::std::option::Option<crate::types::ComputeStatus> {
@@ -227,8 +220,7 @@ impl ComputeBuilder {
     }
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +233,7 @@ impl ComputeBuilder {
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -255,8 +246,7 @@ impl ComputeBuilder {
     }
     /// <p>The type of operating system on the compute resource.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The type of operating system on the compute resource.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -269,8 +259,7 @@ impl ComputeBuilder {
     }
     /// <p>The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon GameLift Anywhere fleet, this property is empty.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon GameLift Anywhere fleet, this property is empty.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
@@ -283,8 +272,7 @@ impl ComputeBuilder {
     }
     /// <p>The Amazon GameLift SDK endpoint connection for a registered compute resource in an Anywhere fleet. The game servers on the compute use this endpoint to connect to the Amazon GameLift service.</p>
     pub fn set_game_lift_service_sdk_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_lift_service_sdk_endpoint = input;
-        self
+        self.game_lift_service_sdk_endpoint = input; self
     }
     /// <p>The Amazon GameLift SDK endpoint connection for a registered compute resource in an Anywhere fleet. The game servers on the compute use this endpoint to connect to the Amazon GameLift service.</p>
     pub fn get_game_lift_service_sdk_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,18 +281,30 @@ impl ComputeBuilder {
     /// Consumes the builder and constructs a [`Compute`](crate::types::Compute).
     pub fn build(self) -> crate::types::Compute {
         crate::types::Compute {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            compute_name: self.compute_name,
-            compute_arn: self.compute_arn,
-            ip_address: self.ip_address,
-            dns_name: self.dns_name,
-            compute_status: self.compute_status,
-            location: self.location,
-            creation_time: self.creation_time,
-            operating_system: self.operating_system,
-            r#type: self.r#type,
-            game_lift_service_sdk_endpoint: self.game_lift_service_sdk_endpoint,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            compute_name: self.compute_name
+            ,
+            compute_arn: self.compute_arn
+            ,
+            ip_address: self.ip_address
+            ,
+            dns_name: self.dns_name
+            ,
+            compute_status: self.compute_status
+            ,
+            location: self.location
+            ,
+            creation_time: self.creation_time
+            ,
+            operating_system: self.operating_system
+            ,
+            r#type: self.r#type
+            ,
+            game_lift_service_sdk_endpoint: self.game_lift_service_sdk_endpoint
+            ,
         }
     }
 }
@@ -326,3 +326,4 @@ impl ::std::fmt::Debug for ComputeBuilder {
         formatter.finish()
     }
 }
+

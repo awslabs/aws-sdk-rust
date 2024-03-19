@@ -3,13 +3,13 @@
 /// <p>Container security context.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityContext {
+pub struct SecurityContext  {
     /// <p>Whether the container is privileged.</p>
     pub privileged: ::std::option::Option<bool>,
     /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
     pub allow_privilege_escalation: ::std::option::Option<bool>,
 }
-impl SecurityContext {
+impl  SecurityContext  {
     /// <p>Whether the container is privileged.</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
@@ -41,8 +41,7 @@ impl SecurityContextBuilder {
     }
     /// <p>Whether the container is privileged.</p>
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privileged = input;
-        self
+        self.privileged = input; self
     }
     /// <p>Whether the container is privileged.</p>
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl SecurityContextBuilder {
     }
     /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
     pub fn set_allow_privilege_escalation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_privilege_escalation = input;
-        self
+        self.allow_privilege_escalation = input; self
     }
     /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.</p>
     pub fn get_allow_privilege_escalation(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl SecurityContextBuilder {
     /// Consumes the builder and constructs a [`SecurityContext`](crate::types::SecurityContext).
     pub fn build(self) -> crate::types::SecurityContext {
         crate::types::SecurityContext {
-            privileged: self.privileged,
-            allow_privilege_escalation: self.allow_privilege_escalation,
+            privileged: self.privileged
+            ,
+            allow_privilege_escalation: self.allow_privilege_escalation
+            ,
         }
     }
 }
+

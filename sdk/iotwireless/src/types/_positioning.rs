@@ -3,7 +3,7 @@
 /// <p>The FPorts for the position information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Positioning {
+pub struct Positioning  {
     /// <p>The Fport value.</p>
     pub clock_sync: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
@@ -11,7 +11,7 @@ pub struct Positioning {
     /// <p>The Fport value.</p>
     pub gnss: ::std::option::Option<i32>,
 }
-impl Positioning {
+impl  Positioning  {
     /// <p>The Fport value.</p>
     pub fn clock_sync(&self) -> ::std::option::Option<i32> {
         self.clock_sync
@@ -48,8 +48,7 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_clock_sync(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.clock_sync = input;
-        self
+        self.clock_sync = input; self
     }
     /// <p>The Fport value.</p>
     pub fn get_clock_sync(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_stream(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.stream = input;
-        self
+        self.stream = input; self
     }
     /// <p>The Fport value.</p>
     pub fn get_stream(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl PositioningBuilder {
     }
     /// <p>The Fport value.</p>
     pub fn set_gnss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gnss = input;
-        self
+        self.gnss = input; self
     }
     /// <p>The Fport value.</p>
     pub fn get_gnss(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl PositioningBuilder {
     /// Consumes the builder and constructs a [`Positioning`](crate::types::Positioning).
     pub fn build(self) -> crate::types::Positioning {
         crate::types::Positioning {
-            clock_sync: self.clock_sync,
-            stream: self.stream,
-            gnss: self.gnss,
+            clock_sync: self.clock_sync
+            ,
+            stream: self.stream
+            ,
+            gnss: self.gnss
+            ,
         }
     }
 }
+

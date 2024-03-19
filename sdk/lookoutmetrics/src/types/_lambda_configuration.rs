@@ -3,22 +3,20 @@
 /// <p>Contains information about a Lambda configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaConfiguration {
+pub struct LambdaConfiguration  {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     pub role_arn: ::std::string::String,
     /// <p>The ARN of the Lambda function.</p>
     pub lambda_arn: ::std::string::String,
 }
-impl LambdaConfiguration {
+impl  LambdaConfiguration  {
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
 }
 impl LambdaConfiguration {
@@ -44,8 +42,7 @@ impl LambdaConfigurationBuilder {
     }
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl LambdaConfigurationBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl LambdaConfigurationBuilder {
     /// - [`role_arn`](crate::types::builders::LambdaConfigurationBuilder::role_arn)
     /// - [`lambda_arn`](crate::types::builders::LambdaConfigurationBuilder::lambda_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaConfiguration {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building LambdaConfiguration",
-                )
-            })?,
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building LambdaConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaConfiguration {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building LambdaConfiguration")
+                    )?
+                ,
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building LambdaConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

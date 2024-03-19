@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessGrantInput {
+pub struct CreateAccessGrantInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
@@ -27,24 +27,24 @@ pub struct CreateAccessGrantInput {
     /// <p>The type of <code>S3SubPrefix</code>. The only possible value is <code>Object</code>. Pass this value if the access grant scope is an object. Do not pass this value if the access grant scope is a bucket or a bucket and a prefix.</p>
     pub s3_prefix_type: ::std::option::Option<crate::types::S3PrefixType>,
     /// <p>The Amazon Web Services resource tags that you are adding to the access grant. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAccessGrantInput {
+impl  CreateAccessGrantInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>If you are passing the <code>default</code> location, you cannot create an access grant for the entire default location. You must also specify a bucket or a bucket and prefix in the <code>Subprefix</code> field.</p>
-    pub fn access_grants_location_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_id.as_deref()
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access. It contains the <code>S3SubPrefix</code> field. The grant scope is the result of appending the subprefix to the location scope of the registered location.</p>
-    pub fn access_grants_location_configuration(&self) -> ::std::option::Option<&crate::types::AccessGrantsLocationConfiguration> {
+    pub fn access_grants_location_configuration(&self) -> ::std::option::Option<& crate::types::AccessGrantsLocationConfiguration> {
         self.access_grants_location_configuration.as_ref()
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>The type of access that you are granting to your S3 data, which can be set to one of the following values:</p>
@@ -56,22 +56,23 @@ impl CreateAccessGrantInput {
     /// <li>
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If an application ARN is included in the request to create an access grant, the grantee can only access the S3 data through this application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The type of <code>S3SubPrefix</code>. The only possible value is <code>Object</code>. Pass this value if the access grant scope is an object. Do not pass this value if the access grant scope is a bucket or a bucket and a prefix.</p>
-    pub fn s3_prefix_type(&self) -> ::std::option::Option<&crate::types::S3PrefixType> {
+    pub fn s3_prefix_type(&self) -> ::std::option::Option<& crate::types::S3PrefixType> {
         self.s3_prefix_type.as_ref()
     }
     /// <p>The Amazon Web Services resource tags that you are adding to the access grant. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAccessGrantInput {
@@ -92,7 +93,7 @@ pub struct CreateAccessGrantInputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix_type: ::std::option::Option<crate::types::S3PrefixType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAccessGrantInputBuilder {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
@@ -103,8 +104,7 @@ impl CreateAccessGrantInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl CreateAccessGrantInputBuilder {
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>If you are passing the <code>default</code> location, you cannot create an access grant for the entire default location. You must also specify a bucket or a bucket and prefix in the <code>Subprefix</code> field.</p>
     pub fn set_access_grants_location_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_id = input;
-        self
+        self.access_grants_location_id = input; self
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>If you are passing the <code>default</code> location, you cannot create an access grant for the entire default location. You must also specify a bucket or a bucket and prefix in the <code>Subprefix</code> field.</p>
@@ -135,8 +134,7 @@ impl CreateAccessGrantInputBuilder {
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access. It contains the <code>S3SubPrefix</code> field. The grant scope is the result of appending the subprefix to the location scope of the registered location.</p>
     pub fn set_access_grants_location_configuration(mut self, input: ::std::option::Option<crate::types::AccessGrantsLocationConfiguration>) -> Self {
-        self.access_grants_location_configuration = input;
-        self
+        self.access_grants_location_configuration = input; self
     }
     /// <p>The configuration options of the grant location. The grant location is the S3 path to the data to which you are granting access. It contains the <code>S3SubPrefix</code> field. The grant scope is the result of appending the subprefix to the location scope of the registered location.</p>
     pub fn get_access_grants_location_configuration(&self) -> &::std::option::Option<crate::types::AccessGrantsLocationConfiguration> {
@@ -150,8 +148,7 @@ impl CreateAccessGrantInputBuilder {
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
@@ -181,8 +178,7 @@ impl CreateAccessGrantInputBuilder {
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The type of access that you are granting to your S3 data, which can be set to one of the following values:</p>
     /// <ul>
@@ -203,8 +199,7 @@ impl CreateAccessGrantInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If an application ARN is included in the request to create an access grant, the grantee can only access the S3 data through this application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If an application ARN is included in the request to create an access grant, the grantee can only access the S3 data through this application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +212,7 @@ impl CreateAccessGrantInputBuilder {
     }
     /// <p>The type of <code>S3SubPrefix</code>. The only possible value is <code>Object</code>. Pass this value if the access grant scope is an object. Do not pass this value if the access grant scope is a bucket or a bucket and a prefix.</p>
     pub fn set_s3_prefix_type(mut self, input: ::std::option::Option<crate::types::S3PrefixType>) -> Self {
-        self.s3_prefix_type = input;
-        self
+        self.s3_prefix_type = input; self
     }
     /// <p>The type of <code>S3SubPrefix</code>. The only possible value is <code>Object</code>. Pass this value if the access grant scope is an object. Do not pass this value if the access grant scope is a bucket or a bucket and a prefix.</p>
     pub fn get_s3_prefix_type(&self) -> &::std::option::Option<crate::types::S3PrefixType> {
@@ -231,32 +225,40 @@ impl CreateAccessGrantInputBuilder {
     /// <p>The Amazon Web Services resource tags that you are adding to the access grant. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services resource tags that you are adding to the access grant. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The Amazon Web Services resource tags that you are adding to the access grant. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccessGrantInput`](crate::operation::create_access_grant::CreateAccessGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_grant::CreateAccessGrantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_access_grant::CreateAccessGrantInput {
-            account_id: self.account_id,
-            access_grants_location_id: self.access_grants_location_id,
-            access_grants_location_configuration: self.access_grants_location_configuration,
-            grantee: self.grantee,
-            permission: self.permission,
-            application_arn: self.application_arn,
-            s3_prefix_type: self.s3_prefix_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_grant::CreateAccessGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_grant::CreateAccessGrantInput {
+                account_id: self.account_id
+                ,
+                access_grants_location_id: self.access_grants_location_id
+                ,
+                access_grants_location_configuration: self.access_grants_location_configuration
+                ,
+                grantee: self.grantee
+                ,
+                permission: self.permission
+                ,
+                application_arn: self.application_arn
+                ,
+                s3_prefix_type: self.s3_prefix_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VerifySoftwareTokenOutput {
+pub struct VerifySoftwareTokenOutput  {
     /// <p>The status of the verify software token.</p>
     pub status: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl VerifySoftwareTokenOutput {
+impl  VerifySoftwareTokenOutput  {
     /// <p>The status of the verify software token.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VerifySoftwareTokenResponseType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VerifySoftwareTokenResponseType> {
         self.status.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
-    pub fn session(&self) -> ::std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<& str> {
         self.session.as_deref()
     }
 }
-impl ::std::fmt::Debug for VerifySoftwareTokenOutput {
+impl  ::std::fmt::Debug for VerifySoftwareTokenOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySoftwareTokenOutput");
         formatter.field("status", &self.status);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for VerifySoftwareTokenOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for VerifySoftwareTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl VerifySoftwareTokenOutput {
     /// Creates a new builder-style object to manufacture [`VerifySoftwareTokenOutput`](crate::operation::verify_software_token::VerifySoftwareTokenOutput).
     pub fn builder() -> crate::operation::verify_software_token::builders::VerifySoftwareTokenOutputBuilder {
@@ -56,8 +56,7 @@ impl VerifySoftwareTokenOutputBuilder {
     }
     /// <p>The status of the verify software token.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the verify software token.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VerifySoftwareTokenResponseType> {
@@ -70,27 +69,28 @@ impl VerifySoftwareTokenOutputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`VerifySoftwareTokenOutput`](crate::operation::verify_software_token::VerifySoftwareTokenOutput).
     pub fn build(self) -> crate::operation::verify_software_token::VerifySoftwareTokenOutput {
         crate::operation::verify_software_token::VerifySoftwareTokenOutput {
-            status: self.status,
-            session: self.session,
+            status: self.status
+            ,
+            session: self.session
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +104,4 @@ impl ::std::fmt::Debug for VerifySoftwareTokenOutputBuilder {
         formatter.finish()
     }
 }
+

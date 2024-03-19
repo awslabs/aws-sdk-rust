@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApps`](crate::operation::list_apps::builders::ListAppsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_apps::builders::ListAppsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`simulation(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation that you want to list apps for.</p><br>
     ///   - [`domain(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_domain):<br>required: **false**<br><p>The name of the domain that you want to list apps for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of apps to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token):<br>required: **false**<br><p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p><br>
-    /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
+                            /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec::<SimulationAppMetadata>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>The list of apps for the given simulation and domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
+                            /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
     pub fn list_apps(&self) -> crate::operation::list_apps::builders::ListAppsFluentBuilder {
-        crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

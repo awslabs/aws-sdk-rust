@@ -3,7 +3,7 @@
 /// <p>A choice summary that has been answered on a question in your workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChoiceAnswerSummary {
+pub struct ChoiceAnswerSummary  {
     /// <p>The ID of a choice.</p>
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a choice.</p>
@@ -11,17 +11,17 @@ pub struct ChoiceAnswerSummary {
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub reason: ::std::option::Option<crate::types::ChoiceReason>,
 }
-impl ChoiceAnswerSummary {
+impl  ChoiceAnswerSummary  {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> ::std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<& str> {
         self.choice_id.as_deref()
     }
     /// <p>The status of a choice.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChoiceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ChoiceStatus> {
         self.status.as_ref()
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ChoiceReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::ChoiceReason> {
         self.reason.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ChoiceAnswerSummaryBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.choice_id = input;
-        self
+        self.choice_id = input; self
     }
     /// <p>The ID of a choice.</p>
     pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ChoiceAnswerSummaryBuilder {
     }
     /// <p>The status of a choice.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChoiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a choice.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChoiceStatus> {
@@ -76,8 +74,7 @@ impl ChoiceAnswerSummaryBuilder {
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ChoiceReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ChoiceReason> {
@@ -86,9 +83,13 @@ impl ChoiceAnswerSummaryBuilder {
     /// Consumes the builder and constructs a [`ChoiceAnswerSummary`](crate::types::ChoiceAnswerSummary).
     pub fn build(self) -> crate::types::ChoiceAnswerSummary {
         crate::types::ChoiceAnswerSummary {
-            choice_id: self.choice_id,
-            status: self.status,
-            reason: self.reason,
+            choice_id: self.choice_id
+            ,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

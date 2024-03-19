@@ -3,16 +3,17 @@
 /// <p>The sort configuration of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiSortConfiguration {
+pub struct KpiSortConfiguration  {
     /// <p>The sort configuration of the trend group fields.</p>
-    pub trend_group_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub trend_group_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
 }
-impl KpiSortConfiguration {
+impl  KpiSortConfiguration  {
     /// <p>The sort configuration of the trend group fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trend_group_sort.is_none()`.
-    pub fn trend_group_sort(&self) -> &[crate::types::FieldSortOptions] {
-        self.trend_group_sort.as_deref().unwrap_or_default()
+    pub fn trend_group_sort(&self) -> & [crate::types::FieldSortOptions] {
+        self.trend_group_sort.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KpiSortConfiguration {
@@ -26,7 +27,7 @@ impl KpiSortConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KpiSortConfigurationBuilder {
-    pub(crate) trend_group_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) trend_group_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
 }
 impl KpiSortConfigurationBuilder {
     /// Appends an item to `trend_group_sort`.
@@ -36,23 +37,24 @@ impl KpiSortConfigurationBuilder {
     /// <p>The sort configuration of the trend group fields.</p>
     pub fn trend_group_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.trend_group_sort.unwrap_or_default();
-        v.push(input);
-        self.trend_group_sort = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trend_group_sort = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn set_trend_group_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.trend_group_sort = input;
-        self
+    pub fn set_trend_group_sort(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>) -> Self {
+        self.trend_group_sort = input; self
     }
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn get_trend_group_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_trend_group_sort(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>> {
         &self.trend_group_sort
     }
     /// Consumes the builder and constructs a [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).
     pub fn build(self) -> crate::types::KpiSortConfiguration {
         crate::types::KpiSortConfiguration {
-            trend_group_sort: self.trend_group_sort,
+            trend_group_sort: self.trend_group_sort
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServerlessCacheSnapshotInput {
+pub struct DeleteServerlessCacheSnapshotInput  {
     /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServerlessCacheSnapshotInput {
+impl  DeleteServerlessCacheSnapshotInput  {
     /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
-    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteServerlessCacheSnapshotInputBuilder {
     }
     /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_snapshot_name = input;
-        self
+        self.serverless_cache_snapshot_name = input; self
     }
     /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteServerlessCacheSnapshotInput`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotInput {
-            serverless_cache_snapshot_name: self.serverless_cache_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotInput {
+                serverless_cache_snapshot_name: self.serverless_cache_snapshot_name
+                ,
+            }
+        )
     }
 }
+

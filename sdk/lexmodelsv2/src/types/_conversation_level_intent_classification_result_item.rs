@@ -3,20 +3,19 @@
 /// <p>The item listing the evaluation of intent level success or failure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLevelIntentClassificationResultItem {
+pub struct ConversationLevelIntentClassificationResultItem  {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
     pub intent_name: ::std::string::String,
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
     pub match_result: crate::types::TestResultMatchStatus,
 }
-impl ConversationLevelIntentClassificationResultItem {
+impl  ConversationLevelIntentClassificationResultItem  {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
-    pub fn intent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.intent_name.deref()
+    pub fn intent_name(&self) -> & str {
+        use std::ops::Deref; self.intent_name.deref()
     }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
-    pub fn match_result(&self) -> &crate::types::TestResultMatchStatus {
+    pub fn match_result(&self) -> & crate::types::TestResultMatchStatus {
         &self.match_result
     }
 }
@@ -43,8 +42,7 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
     }
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
     }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
     pub fn set_match_result(mut self, input: ::std::option::Option<crate::types::TestResultMatchStatus>) -> Self {
-        self.match_result = input;
-        self
+        self.match_result = input; self
     }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
     pub fn get_match_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
@@ -69,22 +66,21 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`intent_name`](crate::types::builders::ConversationLevelIntentClassificationResultItemBuilder::intent_name)
     /// - [`match_result`](crate::types::builders::ConversationLevelIntentClassificationResultItemBuilder::match_result)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ConversationLevelIntentClassificationResultItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConversationLevelIntentClassificationResultItem {
-            intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intent_name",
-                    "intent_name was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
-                )
-            })?,
-            match_result: self.match_result.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_result",
-                    "match_result was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelIntentClassificationResultItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ConversationLevelIntentClassificationResultItem {
+                intent_name: self.intent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intent_name", "intent_name was not specified but it is required when building ConversationLevelIntentClassificationResultItem")
+                    )?
+                ,
+                match_result: self.match_result
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_result", "match_result was not specified but it is required when building ConversationLevelIntentClassificationResultItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The reference that specifies where the axis label is applied to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisLabelReferenceOptions {
+pub struct AxisLabelReferenceOptions  {
     /// <p>The field that the axis label is targeted to.</p>
     pub field_id: ::std::string::String,
     /// <p>The column that the axis label is targeted to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
-impl AxisLabelReferenceOptions {
+impl  AxisLabelReferenceOptions  {
     /// <p>The field that the axis label is targeted to.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The column that the axis label is targeted to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AxisLabelReferenceOptionsBuilder {
     }
     /// <p>The field that the axis label is targeted to.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field that the axis label is targeted to.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AxisLabelReferenceOptionsBuilder {
     }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -69,14 +66,17 @@ impl AxisLabelReferenceOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::AxisLabelReferenceOptionsBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AxisLabelReferenceOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AxisLabelReferenceOptions {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building AxisLabelReferenceOptions",
-                )
-            })?,
-            column: self.column,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AxisLabelReferenceOptions {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building AxisLabelReferenceOptions")
+                    )?
+                ,
+                column: self.column
+                ,
+            }
+        )
     }
 }
+

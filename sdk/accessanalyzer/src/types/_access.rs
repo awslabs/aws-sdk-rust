@@ -3,15 +3,14 @@
 /// <p>Contains information about actions that define permissions to check against a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Access {
+pub struct Access  {
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
-    pub actions: ::std::vec::Vec<::std::string::String>,
+    pub actions: ::std::vec::Vec::<::std::string::String>,
 }
-impl Access {
+impl  Access  {
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
-    pub fn actions(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.actions.deref()
+    pub fn actions(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.actions.deref()
     }
 }
 impl Access {
@@ -25,7 +24,7 @@ impl Access {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessBuilder {
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AccessBuilder {
     /// Appends an item to `actions`.
@@ -35,30 +34,31 @@ impl AccessBuilder {
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input.into());
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`Access`](crate::types::Access).
     /// This method will fail if any of the following fields are not set:
     /// - [`actions`](crate::types::builders::AccessBuilder::actions)
     pub fn build(self) -> ::std::result::Result<crate::types::Access, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Access {
-            actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "actions",
-                    "actions was not specified but it is required when building Access",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Access {
+                actions: self.actions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("actions", "actions was not specified but it is required when building Access")
+                    )?
+                ,
+            }
+        )
     }
 }
+

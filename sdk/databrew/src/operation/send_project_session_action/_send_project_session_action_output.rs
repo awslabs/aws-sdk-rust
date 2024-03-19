@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendProjectSessionActionOutput {
+pub struct SendProjectSessionActionOutput  {
     /// <p>A message indicating the result of performing the action.</p>
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project that was affected by the action.</p>
@@ -11,15 +11,14 @@ pub struct SendProjectSessionActionOutput {
     pub action_id: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl SendProjectSessionActionOutput {
+impl  SendProjectSessionActionOutput  {
     /// <p>A message indicating the result of performing the action.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>The name of the project that was affected by the action.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn action_id(&self) -> ::std::option::Option<i32> {
@@ -27,10 +26,10 @@ impl SendProjectSessionActionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SendProjectSessionActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendProjectSessionActionOutput {
     /// Creates a new builder-style object to manufacture [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
     pub fn builder() -> crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder {
@@ -55,8 +54,7 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>A message indicating the result of performing the action.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>A message indicating the result of performing the action.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>The name of the project that was affected by the action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project that was affected by the action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,41 +81,39 @@ impl SendProjectSessionActionOutputBuilder {
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<i32> {
         &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_project_session_action::SendProjectSessionActionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_project_session_action::SendProjectSessionActionOutput {
-            result: self.result,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SendProjectSessionActionOutput",
-                )
-            })?,
-            action_id: self.action_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_project_session_action::SendProjectSessionActionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_project_session_action::SendProjectSessionActionOutput {
+                result: self.result
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SendProjectSessionActionOutput")
+                    )?
+                ,
+                action_id: self.action_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

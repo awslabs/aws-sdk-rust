@@ -3,7 +3,7 @@
 /// <p>A section of the response body that provides information about the job that is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
@@ -13,7 +13,7 @@ pub struct Job {
     /// <p>A section of the request or response body that provides information about the file that is being transcoded.</p>
     pub input: ::std::option::Option<crate::types::JobInput>,
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec::<crate::types::JobInput>>,
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
@@ -21,7 +21,7 @@ pub struct Job {
     pub output: ::std::option::Option<crate::types::JobOutput>,
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job.</p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::JobOutput>>,
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
     pub output_key_prefix: ::std::option::Option<::std::string::String>,
     /// <important>
@@ -29,7 +29,7 @@ pub struct Job {
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub playlists: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>,
+    pub playlists: ::std::option::Option<::std::vec::Vec::<crate::types::Playlist>>,
     /// <p>The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
@@ -44,49 +44,51 @@ pub struct Job {
     /// <li>
     /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
-    pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Details about the timing of a job.</p>
     pub timing: ::std::option::Option<crate::types::Timing>,
 }
-impl Job {
+impl  Job  {
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>A section of the request or response body that provides information about the file that is being transcoded.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::JobInput> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::JobInput> {
         self.input.as_ref()
     }
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
-    pub fn inputs(&self) -> &[crate::types::JobInput] {
-        self.inputs.as_deref().unwrap_or_default()
+    pub fn inputs(&self) -> & [crate::types::JobInput] {
+        self.inputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::JobOutput> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::JobOutput> {
         self.output.as_ref()
     }
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job.</p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::JobOutput] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::JobOutput] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
-    pub fn output_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn output_key_prefix(&self) -> ::std::option::Option<& str> {
         self.output_key_prefix.as_deref()
     }
     /// <important>
@@ -94,13 +96,14 @@ impl Job {
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.playlists.is_none()`.
-    pub fn playlists(&self) -> &[crate::types::Playlist] {
-        self.playlists.as_deref().unwrap_or_default()
+    pub fn playlists(&self) -> & [crate::types::Playlist] {
+        self.playlists.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
@@ -115,11 +118,11 @@ impl Job {
     /// <li>
     /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
-    pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn user_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p>Details about the timing of a job.</p>
-    pub fn timing(&self) -> ::std::option::Option<&crate::types::Timing> {
+    pub fn timing(&self) -> ::std::option::Option<& crate::types::Timing> {
         self.timing.as_ref()
     }
 }
@@ -138,13 +141,13 @@ pub struct JobBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<crate::types::JobInput>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<crate::types::JobInput>>,
     pub(crate) output: ::std::option::Option<crate::types::JobOutput>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::JobOutput>>,
     pub(crate) output_key_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) playlists: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>,
+    pub(crate) playlists: ::std::option::Option<::std::vec::Vec::<crate::types::Playlist>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) timing: ::std::option::Option<crate::types::Timing>,
 }
 impl JobBuilder {
@@ -155,8 +158,7 @@ impl JobBuilder {
     }
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +171,7 @@ impl JobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +184,7 @@ impl JobBuilder {
     }
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +197,7 @@ impl JobBuilder {
     }
     /// <p>A section of the request or response body that provides information about the file that is being transcoded.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::JobInput>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>A section of the request or response body that provides information about the file that is being transcoded.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::JobInput> {
@@ -211,17 +210,16 @@ impl JobBuilder {
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
     pub fn inputs(mut self, input: crate::types::JobInput) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobInput>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobInput>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobInput>> {
         &self.inputs
     }
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
@@ -237,8 +235,7 @@ impl JobBuilder {
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::JobOutput>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
@@ -255,19 +252,18 @@ impl JobBuilder {
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
     pub fn outputs(mut self, input: crate::types::JobOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job.</p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobOutput>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job.</p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobOutput>> {
         &self.outputs
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
@@ -277,8 +273,7 @@ impl JobBuilder {
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
     pub fn set_output_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_key_prefix = input;
-        self
+        self.output_key_prefix = input; self
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
     pub fn get_output_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,25 +290,24 @@ impl JobBuilder {
     /// <p>The maximum number of master playlists in a job is 30.</p>
     pub fn playlists(mut self, input: crate::types::Playlist) -> Self {
         let mut v = self.playlists.unwrap_or_default();
-        v.push(input);
-        self.playlists = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.playlists = ::std::option::Option::Some(v);
+                        self
     }
     /// <important>
     /// <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub fn set_playlists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>) -> Self {
-        self.playlists = input;
-        self
+    pub fn set_playlists(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Playlist>>) -> Self {
+        self.playlists = input; self
     }
     /// <important>
     /// <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub fn get_playlists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Playlist>> {
+    pub fn get_playlists(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Playlist>> {
         &self.playlists
     }
     /// <p>The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
@@ -323,8 +317,7 @@ impl JobBuilder {
     }
     /// <p>The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,9 +341,9 @@ impl JobBuilder {
     /// </ul>
     pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.user_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.user_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
@@ -364,12 +357,8 @@ impl JobBuilder {
     /// <li>
     /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
-    pub fn set_user_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.user_metadata = input;
-        self
+    pub fn set_user_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.user_metadata = input; self
     }
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
@@ -383,7 +372,7 @@ impl JobBuilder {
     /// <li>
     /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
-    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
     /// <p>Details about the timing of a job.</p>
@@ -393,8 +382,7 @@ impl JobBuilder {
     }
     /// <p>Details about the timing of a job.</p>
     pub fn set_timing(mut self, input: ::std::option::Option<crate::types::Timing>) -> Self {
-        self.timing = input;
-        self
+        self.timing = input; self
     }
     /// <p>Details about the timing of a job.</p>
     pub fn get_timing(&self) -> &::std::option::Option<crate::types::Timing> {
@@ -403,18 +391,31 @@ impl JobBuilder {
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            id: self.id,
-            arn: self.arn,
-            pipeline_id: self.pipeline_id,
-            input: self.input,
-            inputs: self.inputs,
-            output: self.output,
-            outputs: self.outputs,
-            output_key_prefix: self.output_key_prefix,
-            playlists: self.playlists,
-            status: self.status,
-            user_metadata: self.user_metadata,
-            timing: self.timing,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            pipeline_id: self.pipeline_id
+            ,
+            input: self.input
+            ,
+            inputs: self.inputs
+            ,
+            output: self.output
+            ,
+            outputs: self.outputs
+            ,
+            output_key_prefix: self.output_key_prefix
+            ,
+            playlists: self.playlists
+            ,
+            status: self.status
+            ,
+            user_metadata: self.user_metadata
+            ,
+            timing: self.timing
+            ,
         }
     }
 }
+

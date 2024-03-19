@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteArchiveInput {
+pub struct DeleteArchiveInput  {
     /// <p>The name of the archive to delete.</p>
     pub archive_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteArchiveInput {
+impl  DeleteArchiveInput  {
     /// <p>The name of the archive to delete.</p>
-    pub fn archive_name(&self) -> ::std::option::Option<&str> {
+    pub fn archive_name(&self) -> ::std::option::Option<& str> {
         self.archive_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteArchiveInputBuilder {
     }
     /// <p>The name of the archive to delete.</p>
     pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_name = input;
-        self
+        self.archive_name = input; self
     }
     /// <p>The name of the archive to delete.</p>
     pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.archive_name
     }
     /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_archive::DeleteArchiveInput {
-            archive_name: self.archive_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_archive::DeleteArchiveInput {
+                archive_name: self.archive_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A structure that stores the details of the Amazon Web Services managed policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachedManagedPolicy {
+pub struct AttachedManagedPolicy  {
     /// <p>The name of the Amazon Web Services managed policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl AttachedManagedPolicy {
+impl  AttachedManagedPolicy  {
     /// <p>The name of the Amazon Web Services managed policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AttachedManagedPolicyBuilder {
     }
     /// <p>The name of the Amazon Web Services managed policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Web Services managed policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AttachedManagedPolicyBuilder {
     }
     /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AttachedManagedPolicyBuilder {
     /// Consumes the builder and constructs a [`AttachedManagedPolicy`](crate::types::AttachedManagedPolicy).
     pub fn build(self) -> crate::types::AttachedManagedPolicy {
         crate::types::AttachedManagedPolicy {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

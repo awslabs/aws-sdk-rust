@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOriginEndpointsInput {
+pub struct ListOriginEndpointsInput  {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// The upper bound on the number of records to return.
@@ -10,9 +10,9 @@ pub struct ListOriginEndpointsInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListOriginEndpointsInput {
+impl  ListOriginEndpointsInput  {
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The upper bound on the number of records to return.
@@ -20,7 +20,7 @@ impl ListOriginEndpointsInput {
         self.max_results
     }
     /// A token used to resume pagination from the end of a previous request.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListOriginEndpointsInputBuilder {
     }
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListOriginEndpointsInputBuilder {
     }
     /// The upper bound on the number of records to return.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The upper bound on the number of records to return.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListOriginEndpointsInputBuilder {
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_origin_endpoints::ListOriginEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
-            channel_id: self.channel_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_origin_endpoints::ListOriginEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
+                channel_id: self.channel_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

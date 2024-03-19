@@ -3,13 +3,13 @@
 /// <p>Provides details about the routing configuration of the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointRoutingConfigDetails {
+pub struct AwsEventsEndpointRoutingConfigDetails  {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub failover_config: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails>,
 }
-impl AwsEventsEndpointRoutingConfigDetails {
+impl  AwsEventsEndpointRoutingConfigDetails  {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    pub fn failover_config(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails> {
+    pub fn failover_config(&self) -> ::std::option::Option<& crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails> {
         self.failover_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEventsEndpointRoutingConfigDetailsBuilder {
     }
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub fn set_failover_config(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails>) -> Self {
-        self.failover_config = input;
-        self
+        self.failover_config = input; self
     }
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub fn get_failover_config(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails> {
@@ -44,7 +43,9 @@ impl AwsEventsEndpointRoutingConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEndpointRoutingConfigDetails`](crate::types::AwsEventsEndpointRoutingConfigDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointRoutingConfigDetails {
         crate::types::AwsEventsEndpointRoutingConfigDetails {
-            failover_config: self.failover_config,
+            failover_config: self.failover_config
+            ,
         }
     }
 }
+

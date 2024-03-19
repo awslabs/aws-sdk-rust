@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHyperParameterTuningJobInput {
+pub struct DeleteHyperParameterTuningJobInput  {
     /// <p>The name of the hyperparameter tuning job that you want to delete.</p>
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHyperParameterTuningJobInput {
+impl  DeleteHyperParameterTuningJobInput  {
     /// <p>The name of the hyperparameter tuning job that you want to delete.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<& str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteHyperParameterTuningJobInputBuilder {
     }
     /// <p>The name of the hyperparameter tuning job that you want to delete.</p>
     pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hyper_parameter_tuning_job_name = input;
-        self
+        self.hyper_parameter_tuning_job_name = input; self
     }
     /// <p>The name of the hyperparameter tuning job that you want to delete.</p>
     pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_name
     }
     /// Consumes the builder and constructs a [`DeleteHyperParameterTuningJobInput`](crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobInput {
-            hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobInput {
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
+                ,
+            }
+        )
     }
 }
+

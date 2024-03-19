@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDestinationInput {
+pub struct DeleteDestinationInput  {
     /// <p>The name of the destination.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDestinationInput {
+impl  DeleteDestinationInput  {
     /// <p>The name of the destination.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteDestinationInputBuilder {
     }
     /// <p>The name of the destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>The name of the destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
     }
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_destination::DeleteDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_destination::DeleteDestinationInput {
-            destination_name: self.destination_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_destination::DeleteDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_destination::DeleteDestinationInput {
+                destination_name: self.destination_name
+                ,
+            }
+        )
     }
 }
+

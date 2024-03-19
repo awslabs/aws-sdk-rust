@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasetOutput {
+pub struct UpdateDatasetOutput  {
     /// <p>The name of the dataset that you updated.</p>
     pub name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateDatasetOutput {
+impl  UpdateDatasetOutput  {
     /// <p>The name of the dataset that you updated.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
     pub fn builder() -> crate::operation::update_dataset::builders::UpdateDatasetOutputBuilder {
@@ -42,36 +41,35 @@ impl UpdateDatasetOutputBuilder {
     }
     /// <p>The name of the dataset that you updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dataset that you updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::update_dataset::builders::UpdateDatasetOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateDatasetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_dataset::UpdateDatasetOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateDatasetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

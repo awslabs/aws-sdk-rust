@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueueInput {
+pub struct GetQueueInput  {
     /// The name of the queue that you want information about.
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetQueueInput {
+impl  GetQueueInput  {
     /// The name of the queue that you want information about.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetQueueInputBuilder {
     }
     /// The name of the queue that you want information about.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the queue that you want information about.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetQueueInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetQueueInput`](crate::operation::get_queue::GetQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_queue::GetQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_queue::GetQueueInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::get_queue::GetQueueInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

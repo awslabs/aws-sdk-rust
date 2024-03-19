@@ -3,21 +3,20 @@
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormDataTypeConfig {
+pub struct FormDataTypeConfig  {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     pub data_source_type: crate::types::FormDataSourceType,
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub data_type_name: ::std::string::String,
 }
-impl FormDataTypeConfig {
+impl  FormDataTypeConfig  {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn data_source_type(&self) -> &crate::types::FormDataSourceType {
+    pub fn data_source_type(&self) -> & crate::types::FormDataSourceType {
         &self.data_source_type
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.data_type_name.deref()
+    pub fn data_type_name(&self) -> & str {
+        use std::ops::Deref; self.data_type_name.deref()
     }
 }
 impl FormDataTypeConfig {
@@ -43,8 +42,7 @@ impl FormDataTypeConfigBuilder {
     }
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::FormDataSourceType>) -> Self {
-        self.data_source_type = input;
-        self
+        self.data_source_type = input; self
     }
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::FormDataSourceType> {
@@ -58,8 +56,7 @@ impl FormDataTypeConfigBuilder {
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn set_data_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type_name = input;
-        self
+        self.data_type_name = input; self
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn get_data_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl FormDataTypeConfigBuilder {
     /// - [`data_source_type`](crate::types::builders::FormDataTypeConfigBuilder::data_source_type)
     /// - [`data_type_name`](crate::types::builders::FormDataTypeConfigBuilder::data_type_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FormDataTypeConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormDataTypeConfig {
-            data_source_type: self.data_source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_type",
-                    "data_source_type was not specified but it is required when building FormDataTypeConfig",
-                )
-            })?,
-            data_type_name: self.data_type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type_name",
-                    "data_type_name was not specified but it is required when building FormDataTypeConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FormDataTypeConfig {
+                data_source_type: self.data_source_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_type", "data_source_type was not specified but it is required when building FormDataTypeConfig")
+                    )?
+                ,
+                data_type_name: self.data_type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type_name", "data_type_name was not specified but it is required when building FormDataTypeConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

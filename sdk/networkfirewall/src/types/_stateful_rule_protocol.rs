@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statefulruleprotocol = unimplemented!();
 /// match statefulruleprotocol {
@@ -47,16 +47,14 @@
 /// Specifically, when `statefulruleprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatefulRuleProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StatefulRuleProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Dcerpc,
@@ -98,115 +96,113 @@ pub enum StatefulRuleProtocol {
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StatefulRuleProtocol {
-    fn from(s: &str) -> Self {
-        match s {
-            "DCERPC" => StatefulRuleProtocol::Dcerpc,
-            "DHCP" => StatefulRuleProtocol::Dhcp,
-            "DNS" => StatefulRuleProtocol::Dns,
-            "FTP" => StatefulRuleProtocol::Ftp,
-            "HTTP" => StatefulRuleProtocol::Http,
-            "ICMP" => StatefulRuleProtocol::Icmp,
-            "IKEV2" => StatefulRuleProtocol::Ikev2,
-            "IMAP" => StatefulRuleProtocol::Imap,
-            "IP" => StatefulRuleProtocol::Any,
-            "KRB5" => StatefulRuleProtocol::Krb5,
-            "MSN" => StatefulRuleProtocol::Msn,
-            "NTP" => StatefulRuleProtocol::Ntp,
-            "SMB" => StatefulRuleProtocol::Smb,
-            "SMTP" => StatefulRuleProtocol::Smtp,
-            "SSH" => StatefulRuleProtocol::Ssh,
-            "TCP" => StatefulRuleProtocol::Tcp,
-            "TFTP" => StatefulRuleProtocol::Tftp,
-            "TLS" => StatefulRuleProtocol::Tls,
-            "UDP" => StatefulRuleProtocol::Udp,
-            other => StatefulRuleProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DCERPC" => StatefulRuleProtocol::Dcerpc,
+"DHCP" => StatefulRuleProtocol::Dhcp,
+"DNS" => StatefulRuleProtocol::Dns,
+"FTP" => StatefulRuleProtocol::Ftp,
+"HTTP" => StatefulRuleProtocol::Http,
+"ICMP" => StatefulRuleProtocol::Icmp,
+"IKEV2" => StatefulRuleProtocol::Ikev2,
+"IMAP" => StatefulRuleProtocol::Imap,
+"IP" => StatefulRuleProtocol::Any,
+"KRB5" => StatefulRuleProtocol::Krb5,
+"MSN" => StatefulRuleProtocol::Msn,
+"NTP" => StatefulRuleProtocol::Ntp,
+"SMB" => StatefulRuleProtocol::Smb,
+"SMTP" => StatefulRuleProtocol::Smtp,
+"SSH" => StatefulRuleProtocol::Ssh,
+"TCP" => StatefulRuleProtocol::Tcp,
+"TFTP" => StatefulRuleProtocol::Tftp,
+"TLS" => StatefulRuleProtocol::Tls,
+"UDP" => StatefulRuleProtocol::Udp,
+other => StatefulRuleProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StatefulRuleProtocol {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StatefulRuleProtocol::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StatefulRuleProtocol::from(s))
+                    }
+                }
 impl StatefulRuleProtocol {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StatefulRuleProtocol::Dcerpc => "DCERPC",
-            StatefulRuleProtocol::Dhcp => "DHCP",
-            StatefulRuleProtocol::Dns => "DNS",
-            StatefulRuleProtocol::Ftp => "FTP",
-            StatefulRuleProtocol::Http => "HTTP",
-            StatefulRuleProtocol::Icmp => "ICMP",
-            StatefulRuleProtocol::Ikev2 => "IKEV2",
-            StatefulRuleProtocol::Imap => "IMAP",
-            StatefulRuleProtocol::Any => "IP",
-            StatefulRuleProtocol::Krb5 => "KRB5",
-            StatefulRuleProtocol::Msn => "MSN",
-            StatefulRuleProtocol::Ntp => "NTP",
-            StatefulRuleProtocol::Smb => "SMB",
-            StatefulRuleProtocol::Smtp => "SMTP",
-            StatefulRuleProtocol::Ssh => "SSH",
-            StatefulRuleProtocol::Tcp => "TCP",
-            StatefulRuleProtocol::Tftp => "TFTP",
-            StatefulRuleProtocol::Tls => "TLS",
-            StatefulRuleProtocol::Udp => "UDP",
-            StatefulRuleProtocol::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN", "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS",
-            "UDP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StatefulRuleProtocol::Dcerpc => "DCERPC",
+    StatefulRuleProtocol::Dhcp => "DHCP",
+    StatefulRuleProtocol::Dns => "DNS",
+    StatefulRuleProtocol::Ftp => "FTP",
+    StatefulRuleProtocol::Http => "HTTP",
+    StatefulRuleProtocol::Icmp => "ICMP",
+    StatefulRuleProtocol::Ikev2 => "IKEV2",
+    StatefulRuleProtocol::Imap => "IMAP",
+    StatefulRuleProtocol::Any => "IP",
+    StatefulRuleProtocol::Krb5 => "KRB5",
+    StatefulRuleProtocol::Msn => "MSN",
+    StatefulRuleProtocol::Ntp => "NTP",
+    StatefulRuleProtocol::Smb => "SMB",
+    StatefulRuleProtocol::Smtp => "SMTP",
+    StatefulRuleProtocol::Ssh => "SSH",
+    StatefulRuleProtocol::Tcp => "TCP",
+    StatefulRuleProtocol::Tftp => "TFTP",
+    StatefulRuleProtocol::Tls => "TLS",
+    StatefulRuleProtocol::Udp => "UDP",
+    StatefulRuleProtocol::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN", "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS", "UDP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StatefulRuleProtocol {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StatefulRuleProtocol {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StatefulRuleProtocol {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StatefulRuleProtocol::Dcerpc => write!(f, "DCERPC"),
-            StatefulRuleProtocol::Dhcp => write!(f, "DHCP"),
-            StatefulRuleProtocol::Dns => write!(f, "DNS"),
-            StatefulRuleProtocol::Ftp => write!(f, "FTP"),
-            StatefulRuleProtocol::Http => write!(f, "HTTP"),
-            StatefulRuleProtocol::Icmp => write!(f, "ICMP"),
-            StatefulRuleProtocol::Ikev2 => write!(f, "IKEV2"),
-            StatefulRuleProtocol::Imap => write!(f, "IMAP"),
-            StatefulRuleProtocol::Any => write!(f, "IP"),
-            StatefulRuleProtocol::Krb5 => write!(f, "KRB5"),
-            StatefulRuleProtocol::Msn => write!(f, "MSN"),
-            StatefulRuleProtocol::Ntp => write!(f, "NTP"),
-            StatefulRuleProtocol::Smb => write!(f, "SMB"),
-            StatefulRuleProtocol::Smtp => write!(f, "SMTP"),
-            StatefulRuleProtocol::Ssh => write!(f, "SSH"),
-            StatefulRuleProtocol::Tcp => write!(f, "TCP"),
-            StatefulRuleProtocol::Tftp => write!(f, "TFTP"),
-            StatefulRuleProtocol::Tls => write!(f, "TLS"),
-            StatefulRuleProtocol::Udp => write!(f, "UDP"),
-            StatefulRuleProtocol::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StatefulRuleProtocol::Dcerpc => write!(f, "DCERPC"),
+StatefulRuleProtocol::Dhcp => write!(f, "DHCP"),
+StatefulRuleProtocol::Dns => write!(f, "DNS"),
+StatefulRuleProtocol::Ftp => write!(f, "FTP"),
+StatefulRuleProtocol::Http => write!(f, "HTTP"),
+StatefulRuleProtocol::Icmp => write!(f, "ICMP"),
+StatefulRuleProtocol::Ikev2 => write!(f, "IKEV2"),
+StatefulRuleProtocol::Imap => write!(f, "IMAP"),
+StatefulRuleProtocol::Any => write!(f, "IP"),
+StatefulRuleProtocol::Krb5 => write!(f, "KRB5"),
+StatefulRuleProtocol::Msn => write!(f, "MSN"),
+StatefulRuleProtocol::Ntp => write!(f, "NTP"),
+StatefulRuleProtocol::Smb => write!(f, "SMB"),
+StatefulRuleProtocol::Smtp => write!(f, "SMTP"),
+StatefulRuleProtocol::Ssh => write!(f, "SSH"),
+StatefulRuleProtocol::Tcp => write!(f, "TCP"),
+StatefulRuleProtocol::Tftp => write!(f, "TFTP"),
+StatefulRuleProtocol::Tls => write!(f, "TLS"),
+StatefulRuleProtocol::Udp => write!(f, "UDP"),
+StatefulRuleProtocol::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

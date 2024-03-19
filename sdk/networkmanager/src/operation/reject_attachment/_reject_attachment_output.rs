@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectAttachmentOutput {
+pub struct RejectAttachmentOutput  {
     /// <p>Describes the rejected attachment request.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
-impl RejectAttachmentOutput {
+impl  RejectAttachmentOutput  {
     /// <p>Describes the rejected attachment request.</p>
-    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RejectAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RejectAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`RejectAttachmentOutput`](crate::operation::reject_attachment::RejectAttachmentOutput).
     pub fn builder() -> crate::operation::reject_attachment::builders::RejectAttachmentOutputBuilder {
@@ -40,27 +40,28 @@ impl RejectAttachmentOutputBuilder {
     }
     /// <p>Describes the rejected attachment request.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
-        self.attachment = input;
-        self
+        self.attachment = input; self
     }
     /// <p>Describes the rejected attachment request.</p>
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
         &self.attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RejectAttachmentOutput`](crate::operation::reject_attachment::RejectAttachmentOutput).
     pub fn build(self) -> crate::operation::reject_attachment::RejectAttachmentOutput {
         crate::operation::reject_attachment::RejectAttachmentOutput {
-            attachment: self.attachment,
+            attachment: self.attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

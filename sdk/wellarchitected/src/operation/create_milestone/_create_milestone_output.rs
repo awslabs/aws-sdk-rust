@@ -3,7 +3,7 @@
 /// <p>Output of a create milestone call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMilestoneOutput {
+pub struct CreateMilestoneOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
@@ -11,9 +11,9 @@ pub struct CreateMilestoneOutput {
     pub milestone_number: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl CreateMilestoneOutput {
+impl  CreateMilestoneOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -23,10 +23,10 @@ impl CreateMilestoneOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMilestoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMilestoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateMilestoneOutput`](crate::operation::create_milestone::CreateMilestoneOutput).
     pub fn builder() -> crate::operation::create_milestone::builders::CreateMilestoneOutputBuilder {
@@ -50,8 +50,7 @@ impl CreateMilestoneOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl CreateMilestoneOutputBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -75,20 +73,23 @@ impl CreateMilestoneOutputBuilder {
         &self.milestone_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMilestoneOutput`](crate::operation::create_milestone::CreateMilestoneOutput).
     pub fn build(self) -> crate::operation::create_milestone::CreateMilestoneOutput {
         crate::operation::create_milestone::CreateMilestoneOutput {
-            workload_id: self.workload_id,
-            milestone_number: self.milestone_number,
+            workload_id: self.workload_id
+            ,
+            milestone_number: self.milestone_number
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

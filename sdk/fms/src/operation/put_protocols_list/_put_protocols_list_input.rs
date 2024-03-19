@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutProtocolsListInput {
+pub struct PutProtocolsListInput  {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
     pub protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     /// <p>The tags associated with the resource.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutProtocolsListInput {
+impl  PutProtocolsListInput  {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
-    pub fn protocols_list(&self) -> ::std::option::Option<&crate::types::ProtocolsListData> {
+    pub fn protocols_list(&self) -> ::std::option::Option<& crate::types::ProtocolsListData> {
         self.protocols_list.as_ref()
     }
     /// <p>The tags associated with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutProtocolsListInput {
@@ -32,7 +33,7 @@ impl PutProtocolsListInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProtocolsListInputBuilder {
     pub(crate) protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutProtocolsListInputBuilder {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
@@ -43,8 +44,7 @@ impl PutProtocolsListInputBuilder {
     }
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
     pub fn set_protocols_list(mut self, input: ::std::option::Option<crate::types::ProtocolsListData>) -> Self {
-        self.protocols_list = input;
-        self
+        self.protocols_list = input; self
     }
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
     pub fn get_protocols_list(&self) -> &::std::option::Option<crate::types::ProtocolsListData> {
@@ -57,26 +57,28 @@ impl PutProtocolsListInputBuilder {
     /// <p>The tags associated with the resource.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_protocols_list::PutProtocolsListInput {
-            protocols_list: self.protocols_list,
-            tag_list: self.tag_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_protocols_list::PutProtocolsListInput {
+                protocols_list: self.protocols_list
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

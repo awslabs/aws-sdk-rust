@@ -3,10 +3,10 @@
 /// <p>The initial event sent from the application to Amazon Lex V2 to configure the conversation, including session and request attributes and the response content type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationEvent {
+pub struct ConfigurationEvent  {
     /// <p>Request-specific information passed between the client application and Amazon Lex V2.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ pub struct ConfigurationEvent {
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>A list of messages to send to the user.</p>
     /// <p>If you set the <code>welcomeMessage</code> field, you must also set the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html"> <code>DialogAction</code> </a> structure's <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type"> <code>type</code> </a> field.</p>
-    pub welcome_messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub welcome_messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     /// <p>Determines whether Amazon Lex V2 should send audio responses to the client application.</p>
     /// <p>Set this field to false when the client is operating in a playback mode where audio responses are played to the user. If the client isn't operating in playback mode, such as a text chat application, set this to true so that Amazon Lex V2 doesn't wait for the prompt to finish playing on the client.</p>
     pub disable_playback: bool,
@@ -44,10 +44,10 @@ pub struct ConfigurationEvent {
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl ConfigurationEvent {
+impl  ConfigurationEvent  {
     /// <p>Request-specific information passed between the client application and Amazon Lex V2.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
@@ -73,20 +73,20 @@ impl ConfigurationEvent {
     /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn response_content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.response_content_type.deref()
+    pub fn response_content_type(&self) -> & str {
+        use std::ops::Deref; self.response_content_type.deref()
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.session_state.as_ref()
     }
     /// <p>A list of messages to send to the user.</p>
     /// <p>If you set the <code>welcomeMessage</code> field, you must also set the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html"> <code>DialogAction</code> </a> structure's <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type"> <code>type</code> </a> field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.welcome_messages.is_none()`.
-    pub fn welcome_messages(&self) -> &[crate::types::Message] {
-        self.welcome_messages.as_deref().unwrap_or_default()
+    pub fn welcome_messages(&self) -> & [crate::types::Message] {
+        self.welcome_messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Determines whether Amazon Lex V2 should send audio responses to the client application.</p>
     /// <p>Set this field to false when the client is operating in a playback mode where audio responses are played to the user. If the client isn't operating in playback mode, such as a text chat application, set this to true so that Amazon Lex V2 doesn't wait for the prompt to finish playing on the client.</p>
@@ -94,7 +94,7 @@ impl ConfigurationEvent {
         self.disable_playback
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -113,10 +113,10 @@ impl ConfigurationEvent {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationEventBuilder {
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) welcome_messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) welcome_messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     pub(crate) disable_playback: ::std::option::Option<bool>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_timestamp_millis: ::std::option::Option<i64>,
@@ -128,28 +128,20 @@ impl ConfigurationEventBuilder {
     ///
     /// <p>Request-specific information passed between the client application and Amazon Lex V2.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
@@ -204,8 +196,7 @@ impl ConfigurationEventBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_content_type = input;
-        self
+        self.response_content_type = input; self
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
@@ -240,8 +231,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>The state of the user's session with Amazon Lex V2.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
@@ -255,19 +245,18 @@ impl ConfigurationEventBuilder {
     /// <p>If you set the <code>welcomeMessage</code> field, you must also set the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html"> <code>DialogAction</code> </a> structure's <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type"> <code>type</code> </a> field.</p>
     pub fn welcome_messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.welcome_messages.unwrap_or_default();
-        v.push(input);
-        self.welcome_messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.welcome_messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of messages to send to the user.</p>
     /// <p>If you set the <code>welcomeMessage</code> field, you must also set the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html"> <code>DialogAction</code> </a> structure's <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type"> <code>type</code> </a> field.</p>
-    pub fn set_welcome_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
-        self.welcome_messages = input;
-        self
+    pub fn set_welcome_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>) -> Self {
+        self.welcome_messages = input; self
     }
     /// <p>A list of messages to send to the user.</p>
     /// <p>If you set the <code>welcomeMessage</code> field, you must also set the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html"> <code>DialogAction</code> </a> structure's <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type"> <code>type</code> </a> field.</p>
-    pub fn get_welcome_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+    pub fn get_welcome_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Message>> {
         &self.welcome_messages
     }
     /// <p>Determines whether Amazon Lex V2 should send audio responses to the client application.</p>
@@ -279,8 +268,7 @@ impl ConfigurationEventBuilder {
     /// <p>Determines whether Amazon Lex V2 should send audio responses to the client application.</p>
     /// <p>Set this field to false when the client is operating in a playback mode where audio responses are played to the user. If the client isn't operating in playback mode, such as a text chat application, set this to true so that Amazon Lex V2 doesn't wait for the prompt to finish playing on the client.</p>
     pub fn set_disable_playback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_playback = input;
-        self
+        self.disable_playback = input; self
     }
     /// <p>Determines whether Amazon Lex V2 should send audio responses to the client application.</p>
     /// <p>Set this field to false when the client is operating in a playback mode where audio responses are played to the user. If the client isn't operating in playback mode, such as a text chat application, set this to true so that Amazon Lex V2 doesn't wait for the prompt to finish playing on the client.</p>
@@ -294,8 +282,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +295,7 @@ impl ConfigurationEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -319,19 +305,29 @@ impl ConfigurationEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`response_content_type`](crate::types::builders::ConfigurationEventBuilder::response_content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfigurationEvent {
-            request_attributes: self.request_attributes,
-            response_content_type: self.response_content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "response_content_type",
-                    "response_content_type was not specified but it is required when building ConfigurationEvent",
-                )
-            })?,
-            session_state: self.session_state,
-            welcome_messages: self.welcome_messages,
-            disable_playback: self.disable_playback.unwrap_or_default(),
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfigurationEvent {
+                request_attributes: self.request_attributes
+                ,
+                response_content_type: self.response_content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("response_content_type", "response_content_type was not specified but it is required when building ConfigurationEvent")
+                    )?
+                ,
+                session_state: self.session_state
+                ,
+                welcome_messages: self.welcome_messages
+                ,
+                disable_playback: self.disable_playback
+                    .unwrap_or_default()
+                ,
+                event_id: self.event_id
+                ,
+                client_timestamp_millis: self.client_timestamp_millis
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

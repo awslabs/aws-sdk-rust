@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTableFromClusterSnapshotOutput {
+pub struct RestoreTableFromClusterSnapshotOutput  {
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     pub table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,
 }
-impl RestoreTableFromClusterSnapshotOutput {
+impl  RestoreTableFromClusterSnapshotOutput  {
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
-    pub fn table_restore_status(&self) -> ::std::option::Option<&crate::types::TableRestoreStatus> {
+    pub fn table_restore_status(&self) -> ::std::option::Option<& crate::types::TableRestoreStatus> {
         self.table_restore_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreTableFromClusterSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreTableFromClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput).
     pub fn builder() -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder {
@@ -40,27 +40,28 @@ impl RestoreTableFromClusterSnapshotOutputBuilder {
     }
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     pub fn set_table_restore_status(mut self, input: ::std::option::Option<crate::types::TableRestoreStatus>) -> Self {
-        self.table_restore_status = input;
-        self
+        self.table_restore_status = input; self
     }
     /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     pub fn get_table_restore_status(&self) -> &::std::option::Option<crate::types::TableRestoreStatus> {
         &self.table_restore_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput).
     pub fn build(self) -> crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput {
         crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput {
-            table_restore_status: self.table_restore_status,
+            table_restore_status: self.table_restore_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

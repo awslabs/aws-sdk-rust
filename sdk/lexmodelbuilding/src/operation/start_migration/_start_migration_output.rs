@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMigrationOutput {
+pub struct StartMigrationOutput  {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
@@ -21,45 +21,45 @@ pub struct StartMigrationOutput {
     pub migration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl StartMigrationOutput {
+impl  StartMigrationOutput  {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    pub fn v1_bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> ::std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
-    pub fn v1_bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> ::std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The locale used for the Amazon Lex V1 bot.</p>
-    pub fn v1_bot_locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn v1_bot_locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.v1_bot_locale.as_ref()
     }
     /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_id(&self) -> ::std::option::Option<& str> {
         self.v2_bot_id.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> ::std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
-    pub fn migration_id(&self) -> ::std::option::Option<&str> {
+    pub fn migration_id(&self) -> ::std::option::Option<& str> {
         self.migration_id.as_deref()
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn migration_strategy(&self) -> ::std::option::Option<&crate::types::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> ::std::option::Option<& crate::types::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn migration_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMigrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMigrationOutput {
     /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
     pub fn builder() -> crate::operation::start_migration::builders::StartMigrationOutputBuilder {
@@ -89,8 +89,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub fn set_v1_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_name = input;
-        self
+        self.v1_bot_name = input; self
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
     pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_version = input;
-        self
+        self.v1_bot_version = input; self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2.</p>
     pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The locale used for the Amazon Lex V1 bot.</p>
     pub fn set_v1_bot_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.v1_bot_locale = input;
-        self
+        self.v1_bot_locale = input; self
     }
     /// <p>The locale used for the Amazon Lex V1 bot.</p>
     pub fn get_v1_bot_locale(&self) -> &::std::option::Option<crate::types::Locale> {
@@ -131,8 +128,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
     pub fn set_v2_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_id = input;
-        self
+        self.v2_bot_id = input; self
     }
     /// <p>The unique identifier for the Amazon Lex V2 bot.</p>
     pub fn get_v2_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn set_v2_bot_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_role = input;
-        self
+        self.v2_bot_role = input; self
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn get_v2_bot_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
     pub fn set_migration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_id = input;
-        self
+        self.migration_id = input; self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
     pub fn get_migration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The strategy used to conduct the migration.</p>
     pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
-        self.migration_strategy = input;
-        self
+        self.migration_strategy = input; self
     }
     /// <p>The strategy used to conduct the migration.</p>
     pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
@@ -187,34 +180,42 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>The date and time that the migration started.</p>
     pub fn set_migration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.migration_timestamp = input;
-        self
+        self.migration_timestamp = input; self
     }
     /// <p>The date and time that the migration started.</p>
     pub fn get_migration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.migration_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
     pub fn build(self) -> crate::operation::start_migration::StartMigrationOutput {
         crate::operation::start_migration::StartMigrationOutput {
-            v1_bot_name: self.v1_bot_name,
-            v1_bot_version: self.v1_bot_version,
-            v1_bot_locale: self.v1_bot_locale,
-            v2_bot_id: self.v2_bot_id,
-            v2_bot_role: self.v2_bot_role,
-            migration_id: self.migration_id,
-            migration_strategy: self.migration_strategy,
-            migration_timestamp: self.migration_timestamp,
+            v1_bot_name: self.v1_bot_name
+            ,
+            v1_bot_version: self.v1_bot_version
+            ,
+            v1_bot_locale: self.v1_bot_locale
+            ,
+            v2_bot_id: self.v2_bot_id
+            ,
+            v2_bot_role: self.v2_bot_role
+            ,
+            migration_id: self.migration_id
+            ,
+            migration_strategy: self.migration_strategy
+            ,
+            migration_timestamp: self.migration_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

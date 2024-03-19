@@ -3,7 +3,7 @@
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserMetadata {
+pub struct UserMetadata  {
     /// <p>The ID of the user.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
@@ -15,29 +15,29 @@ pub struct UserMetadata {
     /// <p>The email address of the user.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
 }
-impl UserMetadata {
+impl  UserMetadata  {
     /// <p>The ID of the user.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The given name of the user before a rename operation.</p>
-    pub fn given_name(&self) -> ::std::option::Option<&str> {
+    pub fn given_name(&self) -> ::std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> ::std::option::Option<&str> {
+    pub fn surname(&self) -> ::std::option::Option<& str> {
         self.surname.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserMetadata {
+impl  ::std::fmt::Debug for UserMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadata");
         formatter.field("id", &self.id);
@@ -73,8 +73,7 @@ impl UserMetadataBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the user.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl UserMetadataBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The name of the user.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl UserMetadataBuilder {
     }
     /// <p>The given name of the user before a rename operation.</p>
     pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.given_name = input;
-        self
+        self.given_name = input; self
     }
     /// <p>The given name of the user before a rename operation.</p>
     pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl UserMetadataBuilder {
     }
     /// <p>The surname of the user.</p>
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.surname = input;
-        self
+        self.surname = input; self
     }
     /// <p>The surname of the user.</p>
     pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl UserMetadataBuilder {
     }
     /// <p>The email address of the user.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address of the user.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,11 +134,16 @@ impl UserMetadataBuilder {
     /// Consumes the builder and constructs a [`UserMetadata`](crate::types::UserMetadata).
     pub fn build(self) -> crate::types::UserMetadata {
         crate::types::UserMetadata {
-            id: self.id,
-            username: self.username,
-            given_name: self.given_name,
-            surname: self.surname,
-            email_address: self.email_address,
+            id: self.id
+            ,
+            username: self.username
+            ,
+            given_name: self.given_name
+            ,
+            surname: self.surname
+            ,
+            email_address: self.email_address
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for UserMetadataBuilder {
         formatter.finish()
     }
 }
+

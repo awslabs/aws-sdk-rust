@@ -3,7 +3,7 @@
 /// <p>The metadata transfer job status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetadataTransferJobStatus {
+pub struct MetadataTransferJobStatus  {
     /// <p>The metadata transfer job state.</p>
     pub state: ::std::option::Option<crate::types::MetadataTransferJobState>,
     /// <p>The metadata transfer job error.</p>
@@ -11,13 +11,13 @@ pub struct MetadataTransferJobStatus {
     /// <p>The queued position.</p>
     pub queued_position: ::std::option::Option<i32>,
 }
-impl MetadataTransferJobStatus {
+impl  MetadataTransferJobStatus  {
     /// <p>The metadata transfer job state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobState> {
         self.state.as_ref()
     }
     /// <p>The metadata transfer job error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
     /// <p>The queued position.</p>
@@ -48,8 +48,7 @@ impl MetadataTransferJobStatusBuilder {
     }
     /// <p>The metadata transfer job state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The metadata transfer job state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MetadataTransferJobState> {
@@ -62,8 +61,7 @@ impl MetadataTransferJobStatusBuilder {
     }
     /// <p>The metadata transfer job error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The metadata transfer job error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -76,8 +74,7 @@ impl MetadataTransferJobStatusBuilder {
     }
     /// <p>The queued position.</p>
     pub fn set_queued_position(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.queued_position = input;
-        self
+        self.queued_position = input; self
     }
     /// <p>The queued position.</p>
     pub fn get_queued_position(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl MetadataTransferJobStatusBuilder {
     /// Consumes the builder and constructs a [`MetadataTransferJobStatus`](crate::types::MetadataTransferJobStatus).
     pub fn build(self) -> crate::types::MetadataTransferJobStatus {
         crate::types::MetadataTransferJobStatus {
-            state: self.state,
-            error: self.error,
-            queued_position: self.queued_position,
+            state: self.state
+            ,
+            error: self.error
+            ,
+            queued_position: self.queued_position
+            ,
         }
     }
 }
+

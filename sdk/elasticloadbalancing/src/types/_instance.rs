@@ -3,13 +3,13 @@
 /// <p>The ID of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InstanceBuilder {
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            instance_id: self.instance_id,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

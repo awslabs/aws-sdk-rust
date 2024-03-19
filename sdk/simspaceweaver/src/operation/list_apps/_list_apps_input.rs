@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppsInput {
+pub struct ListAppsInput  {
     /// <p>The name of the simulation that you want to list apps for.</p>
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that you want to list apps for.</p>
@@ -12,13 +12,13 @@ pub struct ListAppsInput {
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAppsInput {
+impl  ListAppsInput  {
     /// <p>The name of the simulation that you want to list apps for.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The name of the domain that you want to list apps for.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The maximum number of apps to list.</p>
@@ -26,7 +26,7 @@ impl ListAppsInput {
         self.max_results
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The name of the simulation that you want to list apps for.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
     /// <p>The name of the simulation that you want to list apps for.</p>
     pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The name of the domain that you want to list apps for.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that you want to list apps for.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>The maximum number of apps to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of apps to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl ListAppsInputBuilder {
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,11 +102,18 @@ impl ListAppsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
-            simulation: self.simulation,
-            domain: self.domain,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_apps::ListAppsInput {
+                simulation: self.simulation
+                ,
+                domain: self.domain
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

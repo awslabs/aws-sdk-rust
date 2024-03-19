@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListAppInstanceAdminsOutput {
+pub struct ListAppInstanceAdminsOutput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each administrator.</p>
-    pub app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
+    pub app_instance_admins: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppInstanceAdminsOutput {
+impl  ListAppInstanceAdminsOutput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The information for each administrator.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instance_admins.is_none()`.
-    pub fn app_instance_admins(&self) -> &[crate::types::AppInstanceAdminSummary] {
-        self.app_instance_admins.as_deref().unwrap_or_default()
+    pub fn app_instance_admins(&self) -> & [crate::types::AppInstanceAdminSummary] {
+        self.app_instance_admins.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListAppInstanceAdminsOutput {
+impl  ::std::fmt::Debug for ListAppInstanceAdminsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceAdminsOutput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -38,10 +39,10 @@ impl ::std::fmt::Debug for ListAppInstanceAdminsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppInstanceAdminsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppInstanceAdminsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput).
     pub fn builder() -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsOutputBuilder {
@@ -54,7 +55,7 @@ impl ListAppInstanceAdminsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceAdminsOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
+    pub(crate) app_instance_admins: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceAdminSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,8 +67,7 @@ impl ListAppInstanceAdminsOutputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +80,16 @@ impl ListAppInstanceAdminsOutputBuilder {
     /// <p>The information for each administrator.</p>
     pub fn app_instance_admins(mut self, input: crate::types::AppInstanceAdminSummary) -> Self {
         let mut v = self.app_instance_admins.unwrap_or_default();
-        v.push(input);
-        self.app_instance_admins = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_instance_admins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for each administrator.</p>
-    pub fn set_app_instance_admins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>) -> Self {
-        self.app_instance_admins = input;
-        self
+    pub fn set_app_instance_admins(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceAdminSummary>>) -> Self {
+        self.app_instance_admins = input; self
     }
     /// <p>The information for each administrator.</p>
-    pub fn get_app_instance_admins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>> {
+    pub fn get_app_instance_admins(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceAdminSummary>> {
         &self.app_instance_admins
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
@@ -100,28 +99,30 @@ impl ListAppInstanceAdminsOutputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput).
     pub fn build(self) -> crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput {
         crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput {
-            app_instance_arn: self.app_instance_arn,
-            app_instance_admins: self.app_instance_admins,
-            next_token: self.next_token,
+            app_instance_arn: self.app_instance_arn
+            ,
+            app_instance_admins: self.app_instance_admins
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -136,3 +137,4 @@ impl ::std::fmt::Debug for ListAppInstanceAdminsOutputBuilder {
         formatter.finish()
     }
 }
+

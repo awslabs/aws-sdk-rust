@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportModelInput {
+pub struct ImportModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
     pub source_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
@@ -20,19 +20,19 @@ pub struct ImportModelInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportModelInput {
+impl  ImportModelInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
-    pub fn source_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_model_arn(&self) -> ::std::option::Option<& str> {
         self.source_model_arn.as_deref()
     }
     /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
@@ -42,18 +42,19 @@ impl ImportModelInput {
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn model_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.model_kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImportModelInput {
@@ -72,7 +73,7 @@ pub struct ImportModelInputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportModelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
@@ -83,8 +84,7 @@ impl ImportModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
     pub fn set_source_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_model_arn = input;
-        self
+        self.source_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
     pub fn get_source_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +97,7 @@ impl ImportModelInputBuilder {
     }
     /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl ImportModelInputBuilder {
     }
     /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +135,7 @@ impl ImportModelInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_kms_key_id = input;
-        self
+        self.model_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -157,8 +154,7 @@ impl ImportModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,28 +167,36 @@ impl ImportModelInputBuilder {
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportModelInput`](crate::operation::import_model::ImportModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::import_model::ImportModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_model::ImportModelInput {
-            source_model_arn: self.source_model_arn,
-            model_name: self.model_name,
-            version_name: self.version_name,
-            model_kms_key_id: self.model_kms_key_id,
-            data_access_role_arn: self.data_access_role_arn,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::import_model::ImportModelInput {
+                source_model_arn: self.source_model_arn
+                ,
+                model_name: self.model_name
+                ,
+                version_name: self.version_name
+                ,
+                model_kms_key_id: self.model_kms_key_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

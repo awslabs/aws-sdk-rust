@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDestinationInput {
+pub struct PutDestinationInput  {
     /// <p>A name for the destination.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
@@ -11,24 +11,24 @@ pub struct PutDestinationInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutDestinationInput {
+impl  PutDestinationInput  {
     /// <p>A name for the destination.</p>
-    pub fn destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -46,7 +46,7 @@ pub struct PutDestinationInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutDestinationInputBuilder {
     /// <p>A name for the destination.</p>
@@ -57,8 +57,7 @@ impl PutDestinationInputBuilder {
     }
     /// <p>A name for the destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>A name for the destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl PutDestinationInputBuilder {
     }
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl PutDestinationInputBuilder {
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,30 +99,34 @@ impl PutDestinationInputBuilder {
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutDestinationInput`](crate::operation::put_destination::PutDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_destination::PutDestinationInput {
-            destination_name: self.destination_name,
-            target_arn: self.target_arn,
-            role_arn: self.role_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_destination::PutDestinationInput {
+                destination_name: self.destination_name
+                ,
+                target_arn: self.target_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

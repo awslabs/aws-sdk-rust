@@ -3,7 +3,7 @@
 /// <p>The constraints that you want all returned products to match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
     pub r#type: crate::types::FilterType,
@@ -14,23 +14,21 @@ pub struct Filter {
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub value: ::std::string::String,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
-    pub fn r#type(&self) -> &crate::types::FilterType {
+    pub fn r#type(&self) -> & crate::types::FilterType {
         &self.r#type
     }
     /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
-    pub fn field(&self) -> &str {
-        use std::ops::Deref;
-        self.field.deref()
+    pub fn field(&self) -> & str {
+        use std::ops::Deref; self.field.deref()
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Filter {
@@ -59,8 +57,7 @@ impl FilterBuilder {
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FilterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of filter that you want to use.</p>
     /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>
@@ -79,8 +76,7 @@ impl FilterBuilder {
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
     /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p>
     /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
@@ -96,8 +92,7 @@ impl FilterBuilder {
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The service code or attribute value that you want to filter by. If you're filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,25 +104,25 @@ impl FilterBuilder {
     /// - [`field`](crate::types::builders::FilterBuilder::field)
     /// - [`value`](crate::types::builders::FilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Filter",
-                )
-            })?,
-            field: self.field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field",
-                    "field was not specified but it is required when building Filter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Filter")
+                    )?
+                ,
+                field: self.field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field", "field was not specified but it is required when building Filter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

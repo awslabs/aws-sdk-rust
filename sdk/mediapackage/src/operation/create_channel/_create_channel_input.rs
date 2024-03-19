@@ -3,25 +3,25 @@
 /// A new Channel configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChannelInput {
+pub struct CreateChannelInput  {
     /// A short text description of the Channel.
     pub description: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub id: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateChannelInput {
+impl  CreateChannelInput  {
     /// A short text description of the Channel.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl CreateChannelInput {
 pub struct CreateChannelInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateChannelInputBuilder {
     /// A short text description of the Channel.
@@ -48,8 +48,7 @@ impl CreateChannelInputBuilder {
     }
     /// A short text description of the Channel.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A short text description of the Channel.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateChannelInputBuilder {
     }
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,27 +75,30 @@ impl CreateChannelInputBuilder {
     /// A collection of tags associated with a resource
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
-            description: self.description,
-            id: self.id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_channel::CreateChannelInput {
+                description: self.description
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

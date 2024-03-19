@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchwriteexceptiontype = unimplemented!();
 /// match batchwriteexceptiontype {
@@ -46,16 +46,14 @@
 /// Specifically, when `batchwriteexceptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchWriteExceptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum BatchWriteExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -95,128 +93,110 @@ pub enum BatchWriteExceptionType {
     ValidationException,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for BatchWriteExceptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
-            "DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
-            "FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
-            "IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
-            "InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
-            "InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
-            "InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
-            "LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
-            "LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
-            "NotIndexException" => BatchWriteExceptionType::NotIndexException,
-            "NotNodeException" => BatchWriteExceptionType::NotNodeException,
-            "NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
-            "ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
-            "ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
-            "ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
-            "StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
-            "UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
-            "ValidationException" => BatchWriteExceptionType::ValidationException,
-            other => BatchWriteExceptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
+"DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
+"FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
+"IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
+"InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
+"InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
+"InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
+"LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
+"LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
+"NotIndexException" => BatchWriteExceptionType::NotIndexException,
+"NotNodeException" => BatchWriteExceptionType::NotNodeException,
+"NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
+"ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
+"ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
+"ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
+"StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
+"UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
+"ValidationException" => BatchWriteExceptionType::ValidationException,
+other => BatchWriteExceptionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for BatchWriteExceptionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(BatchWriteExceptionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(BatchWriteExceptionType::from(s))
+                    }
+                }
 impl BatchWriteExceptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
-            BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
-            BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
-            BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
-            BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
-            BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
-            BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
-            BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
-            BatchWriteExceptionType::NotIndexException => "NotIndexException",
-            BatchWriteExceptionType::NotNodeException => "NotNodeException",
-            BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
-            BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
-            BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
-            BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
-            BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
-            BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
-            BatchWriteExceptionType::ValidationException => "ValidationException",
-            BatchWriteExceptionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException",
-            "DirectoryNotEnabledException",
-            "FacetValidationException",
-            "IndexedAttributeMissingException",
-            "InternalServiceException",
-            "InvalidArnException",
-            "InvalidAttachmentException",
-            "LimitExceededException",
-            "LinkNameAlreadyInUseException",
-            "NotIndexException",
-            "NotNodeException",
-            "NotPolicyException",
-            "ObjectAlreadyDetachedException",
-            "ObjectNotDetachedException",
-            "ResourceNotFoundException",
-            "StillContainsLinksException",
-            "UnsupportedIndexTypeException",
-            "ValidationException",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
+    BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
+    BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
+    BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
+    BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
+    BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
+    BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
+    BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
+    BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
+    BatchWriteExceptionType::NotIndexException => "NotIndexException",
+    BatchWriteExceptionType::NotNodeException => "NotNodeException",
+    BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
+    BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
+    BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
+    BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
+    BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
+    BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
+    BatchWriteExceptionType::ValidationException => "ValidationException",
+    BatchWriteExceptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedException", "DirectoryNotEnabledException", "FacetValidationException", "IndexedAttributeMissingException", "InternalServiceException", "InvalidArnException", "InvalidAttachmentException", "LimitExceededException", "LinkNameAlreadyInUseException", "NotIndexException", "NotNodeException", "NotPolicyException", "ObjectAlreadyDetachedException", "ObjectNotDetachedException", "ResourceNotFoundException", "StillContainsLinksException", "UnsupportedIndexTypeException", "ValidationException"]
+                }
+            }
 impl ::std::convert::AsRef<str> for BatchWriteExceptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl BatchWriteExceptionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for BatchWriteExceptionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            BatchWriteExceptionType::AccessDeniedException => write!(f, "AccessDeniedException"),
-            BatchWriteExceptionType::DirectoryNotEnabledException => write!(f, "DirectoryNotEnabledException"),
-            BatchWriteExceptionType::FacetValidationException => write!(f, "FacetValidationException"),
-            BatchWriteExceptionType::IndexedAttributeMissingException => write!(f, "IndexedAttributeMissingException"),
-            BatchWriteExceptionType::InternalServiceException => write!(f, "InternalServiceException"),
-            BatchWriteExceptionType::InvalidArnException => write!(f, "InvalidArnException"),
-            BatchWriteExceptionType::InvalidAttachmentException => write!(f, "InvalidAttachmentException"),
-            BatchWriteExceptionType::LimitExceededException => write!(f, "LimitExceededException"),
-            BatchWriteExceptionType::LinkNameAlreadyInUseException => write!(f, "LinkNameAlreadyInUseException"),
-            BatchWriteExceptionType::NotIndexException => write!(f, "NotIndexException"),
-            BatchWriteExceptionType::NotNodeException => write!(f, "NotNodeException"),
-            BatchWriteExceptionType::NotPolicyException => write!(f, "NotPolicyException"),
-            BatchWriteExceptionType::ObjectAlreadyDetachedException => write!(f, "ObjectAlreadyDetachedException"),
-            BatchWriteExceptionType::ObjectNotDetachedException => write!(f, "ObjectNotDetachedException"),
-            BatchWriteExceptionType::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
-            BatchWriteExceptionType::StillContainsLinksException => write!(f, "StillContainsLinksException"),
-            BatchWriteExceptionType::UnsupportedIndexTypeException => write!(f, "UnsupportedIndexTypeException"),
-            BatchWriteExceptionType::ValidationException => write!(f, "ValidationException"),
-            BatchWriteExceptionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                BatchWriteExceptionType::AccessDeniedException => write!(f, "AccessDeniedException"),
+BatchWriteExceptionType::DirectoryNotEnabledException => write!(f, "DirectoryNotEnabledException"),
+BatchWriteExceptionType::FacetValidationException => write!(f, "FacetValidationException"),
+BatchWriteExceptionType::IndexedAttributeMissingException => write!(f, "IndexedAttributeMissingException"),
+BatchWriteExceptionType::InternalServiceException => write!(f, "InternalServiceException"),
+BatchWriteExceptionType::InvalidArnException => write!(f, "InvalidArnException"),
+BatchWriteExceptionType::InvalidAttachmentException => write!(f, "InvalidAttachmentException"),
+BatchWriteExceptionType::LimitExceededException => write!(f, "LimitExceededException"),
+BatchWriteExceptionType::LinkNameAlreadyInUseException => write!(f, "LinkNameAlreadyInUseException"),
+BatchWriteExceptionType::NotIndexException => write!(f, "NotIndexException"),
+BatchWriteExceptionType::NotNodeException => write!(f, "NotNodeException"),
+BatchWriteExceptionType::NotPolicyException => write!(f, "NotPolicyException"),
+BatchWriteExceptionType::ObjectAlreadyDetachedException => write!(f, "ObjectAlreadyDetachedException"),
+BatchWriteExceptionType::ObjectNotDetachedException => write!(f, "ObjectNotDetachedException"),
+BatchWriteExceptionType::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+BatchWriteExceptionType::StillContainsLinksException => write!(f, "StillContainsLinksException"),
+BatchWriteExceptionType::UnsupportedIndexTypeException => write!(f, "UnsupportedIndexTypeException"),
+BatchWriteExceptionType::ValidationException => write!(f, "ValidationException"),
+BatchWriteExceptionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

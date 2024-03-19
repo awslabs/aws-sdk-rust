@@ -3,7 +3,7 @@
 /// <p>A policy that specifies update behavior for the crawler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectSchemaChangePolicy {
+pub struct DirectSchemaChangePolicy  {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     pub enable_update_catalog: ::std::option::Option<bool>,
     /// <p>The update behavior when the crawler finds a changed schema.</p>
@@ -13,21 +13,21 @@ pub struct DirectSchemaChangePolicy {
     /// <p>Specifies the database that the schema change policy applies to.</p>
     pub database: ::std::option::Option<::std::string::String>,
 }
-impl DirectSchemaChangePolicy {
+impl  DirectSchemaChangePolicy  {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     pub fn enable_update_catalog(&self) -> ::std::option::Option<bool> {
         self.enable_update_catalog
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
-    pub fn update_behavior(&self) -> ::std::option::Option<&crate::types::UpdateCatalogBehavior> {
+    pub fn update_behavior(&self) -> ::std::option::Option<& crate::types::UpdateCatalogBehavior> {
         self.update_behavior.as_ref()
     }
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>Specifies the database that the schema change policy applies to.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DirectSchemaChangePolicyBuilder {
     }
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     pub fn set_enable_update_catalog(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_update_catalog = input;
-        self
+        self.enable_update_catalog = input; self
     }
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     pub fn get_enable_update_catalog(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl DirectSchemaChangePolicyBuilder {
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn set_update_behavior(mut self, input: ::std::option::Option<crate::types::UpdateCatalogBehavior>) -> Self {
-        self.update_behavior = input;
-        self
+        self.update_behavior = input; self
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn get_update_behavior(&self) -> &::std::option::Option<crate::types::UpdateCatalogBehavior> {
@@ -83,8 +81,7 @@ impl DirectSchemaChangePolicyBuilder {
     }
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>Specifies the table in the database that the schema change policy applies to.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DirectSchemaChangePolicyBuilder {
     }
     /// <p>Specifies the database that the schema change policy applies to.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>Specifies the database that the schema change policy applies to.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DirectSchemaChangePolicyBuilder {
     /// Consumes the builder and constructs a [`DirectSchemaChangePolicy`](crate::types::DirectSchemaChangePolicy).
     pub fn build(self) -> crate::types::DirectSchemaChangePolicy {
         crate::types::DirectSchemaChangePolicy {
-            enable_update_catalog: self.enable_update_catalog,
-            update_behavior: self.update_behavior,
-            table: self.table,
-            database: self.database,
+            enable_update_catalog: self.enable_update_catalog
+            ,
+            update_behavior: self.update_behavior
+            ,
+            table: self.table
+            ,
+            database: self.database
+            ,
         }
     }
 }
+

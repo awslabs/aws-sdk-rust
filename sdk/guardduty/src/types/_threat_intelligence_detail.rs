@@ -3,22 +3,23 @@
 /// <p>An instance of a threat intelligence detail that constitutes evidence for the finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThreatIntelligenceDetail {
+pub struct ThreatIntelligenceDetail  {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
     pub threat_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub threat_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ThreatIntelligenceDetail {
+impl  ThreatIntelligenceDetail  {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn threat_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn threat_list_name(&self) -> ::std::option::Option<& str> {
         self.threat_list_name.as_deref()
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_names.is_none()`.
-    pub fn threat_names(&self) -> &[::std::string::String] {
-        self.threat_names.as_deref().unwrap_or_default()
+    pub fn threat_names(&self) -> & [::std::string::String] {
+        self.threat_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ThreatIntelligenceDetail {
@@ -33,7 +34,7 @@ impl ThreatIntelligenceDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThreatIntelligenceDetailBuilder {
     pub(crate) threat_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) threat_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ThreatIntelligenceDetailBuilder {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
@@ -43,8 +44,7 @@ impl ThreatIntelligenceDetailBuilder {
     }
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
     pub fn set_threat_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.threat_list_name = input;
-        self
+        self.threat_list_name = input; self
     }
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
     pub fn get_threat_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ThreatIntelligenceDetailBuilder {
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
     pub fn threat_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.threat_names.unwrap_or_default();
-        v.push(input.into());
-        self.threat_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.threat_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn set_threat_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.threat_names = input;
-        self
+    pub fn set_threat_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.threat_names = input; self
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn get_threat_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_threat_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.threat_names
     }
     /// Consumes the builder and constructs a [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
     pub fn build(self) -> crate::types::ThreatIntelligenceDetail {
         crate::types::ThreatIntelligenceDetail {
-            threat_list_name: self.threat_list_name,
-            threat_names: self.threat_names,
+            threat_list_name: self.threat_list_name
+            ,
+            threat_names: self.threat_names
+            ,
         }
     }
 }
+

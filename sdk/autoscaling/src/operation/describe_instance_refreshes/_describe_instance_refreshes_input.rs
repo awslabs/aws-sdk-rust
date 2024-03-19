@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceRefreshesInput {
+pub struct DescribeInstanceRefreshesInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more instance refresh IDs.</p>
-    pub instance_refresh_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_refresh_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeInstanceRefreshesInput {
+impl  DescribeInstanceRefreshesInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>One or more instance refresh IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_refresh_ids.is_none()`.
-    pub fn instance_refresh_ids(&self) -> &[::std::string::String] {
-        self.instance_refresh_ids.as_deref().unwrap_or_default()
+    pub fn instance_refresh_ids(&self) -> & [::std::string::String] {
+        self.instance_refresh_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -44,7 +45,7 @@ impl DescribeInstanceRefreshesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_refresh_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_refresh_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl DescribeInstanceRefreshesInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeInstanceRefreshesInputBuilder {
     /// <p>One or more instance refresh IDs.</p>
     pub fn instance_refresh_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_refresh_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_refresh_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_refresh_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn set_instance_refresh_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_refresh_ids = input;
-        self
+    pub fn set_instance_refresh_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_refresh_ids = input; self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn get_instance_refresh_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_refresh_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_refresh_ids
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -91,8 +90,7 @@ impl DescribeInstanceRefreshesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl DescribeInstanceRefreshesInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeInstanceRefreshesInput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            instance_refresh_ids: self.instance_refresh_ids,
-            next_token: self.next_token,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                instance_refresh_ids: self.instance_refresh_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

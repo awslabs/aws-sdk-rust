@@ -5,23 +5,20 @@ pub use crate::operation::delete_object::_delete_object_input::DeleteObjectInput
 
 impl DeleteObjectInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_object::DeleteObjectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_object::DeleteObjectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_object();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_object::DeleteObjectOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_object::DeleteObjectError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_object();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteObject`.
-///
+/// 
 /// <p>Removes an object from a bucket. The behavior depends on the bucket's versioning state:</p>
 /// <ul>
 /// <li>
@@ -78,33 +75,32 @@ impl DeleteObjectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_object::builders::DeleteObjectInputBuilder,
+                    inner: crate::operation::delete_object::builders::DeleteObjectInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_object::DeleteObjectOutput,
-        crate::operation::delete_object::DeleteObjectError,
-    > for DeleteObjectFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_object::DeleteObjectOutput,
-            crate::operation::delete_object::DeleteObjectError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_object::DeleteObjectOutput,
+                    crate::operation::delete_object::DeleteObjectError,
+                > for DeleteObjectFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_object::DeleteObjectOutput,
+                        crate::operation::delete_object::DeleteObjectError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteObjectFluentBuilder {
     /// Creates a new `DeleteObject`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -113,104 +109,81 @@ impl DeleteObjectFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_object::DeleteObjectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_object::DeleteObjectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_object::DeleteObject::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_object::DeleteObject::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_object::DeleteObjectOutput,
-        crate::operation::delete_object::DeleteObjectError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
-    ///
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_object::DeleteObjectError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_object::DeleteObject::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_object::DeleteObject::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_object::DeleteObjectOutput, crate::operation::delete_object::DeleteObjectError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
+    /// 
     /// Creates a presigned request for this operation.
-    ///
+    /// 
     /// The `presigning_config` provides additional presigning-specific config values, such as the
     /// amount of time the request should be valid for after creation.
-    ///
+    /// 
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
-    ///
+    /// 
     /// _Important:_ If you're using credentials that can expire, such as those from STS AssumeRole or SSO, then
     /// the presigned request can only be valid for as long as the credentials used to create it are.
-    ///
+    /// 
     #[allow(unused_mut)]
-    pub async fn presigned(
-        mut self,
-        presigning_config: crate::presigning::PresigningConfig,
-    ) -> ::std::result::Result<
-        crate::presigning::PresignedRequest,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_object::DeleteObjectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let runtime_plugins = crate::operation::delete_object::DeleteObject::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        )
-        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(
-            presigning_config,
-            ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
-        ));
-
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let mut context = crate::operation::delete_object::DeleteObject::orchestrate_with_stop_point(
-            &runtime_plugins,
-            input,
-            ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit,
-        )
-        .await
-        .map_err(|err| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::delete_object::DeleteObjectError>()
-                    .expect("correct error type")
-            })
-        })?;
-        let request = context.take_request().expect("request set before transmit");
-        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                        pub async fn presigned(
+                            mut self,
+                            presigning_config: crate::presigning::PresigningConfig,
+                        ) -> ::std::result::Result<crate::presigning::PresignedRequest, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_object::DeleteObjectError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+        
+        
+                    let runtime_plugins = crate::operation::delete_object::DeleteObject::operation_runtime_plugins(
+                        self.handle.runtime_plugins.clone(),
+                        &self.handle.conf,
+                        self.config_override,
+                    )
+                        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(presigning_config, ::aws_sigv4::http_request::SignableBody::UnsignedPayload))
+                        ;
+        
+                    let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                    let mut context = crate::operation::delete_object::DeleteObject::orchestrate_with_stop_point(&runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit)
+                        .await
+                        .map_err(|err| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::delete_object::DeleteObjectError>().expect("correct error type")
+                            })
+                        })?;
+                    let request = context.take_request().expect("request set before transmit");
+                    crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
     }
     /// <p>The bucket name of the bucket containing the object.</p>
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -351,14 +324,22 @@ impl DeleteObjectFluentBuilder {
     }
 }
 
-impl crate::client::customize::internal::CustomizablePresigned<crate::operation::delete_object::DeleteObjectError> for DeleteObjectFluentBuilder {
-    fn presign(
-        self,
-        config_override: crate::config::Builder,
-        presigning_config: crate::presigning::PresigningConfig,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::presigning::PresignedRequest, crate::operation::delete_object::DeleteObjectError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
-    }
-}
+impl
+                    crate::client::customize::internal::CustomizablePresigned<
+                        crate::operation::delete_object::DeleteObjectError,
+                    > for DeleteObjectFluentBuilder
+                {
+                    fn presign(
+                        self,
+                        config_override: crate::config::Builder,
+                        presigning_config: crate::presigning::PresigningConfig
+                    ) -> crate::client::customize::internal::BoxFuture<
+                        crate::client::customize::internal::SendResult<
+                            crate::presigning::PresignedRequest,
+                            crate::operation::delete_object::DeleteObjectError,
+                        >,
+                    > {
+                        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
+                    }
+                }
+

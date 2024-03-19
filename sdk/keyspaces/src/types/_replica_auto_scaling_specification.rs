@@ -3,19 +3,19 @@
 /// <p>The auto scaling settings of a multi-Region table in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaAutoScalingSpecification {
+pub struct ReplicaAutoScalingSpecification  {
     /// <p>The Amazon Web Services Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The auto scaling settings for a multi-Region table in the specified Amazon Web Services Region.</p>
     pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
 }
-impl ReplicaAutoScalingSpecification {
+impl  ReplicaAutoScalingSpecification  {
     /// <p>The Amazon Web Services Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The auto scaling settings for a multi-Region table in the specified Amazon Web Services Region.</p>
-    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<& crate::types::AutoScalingSpecification> {
         self.auto_scaling_specification.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ReplicaAutoScalingSpecificationBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReplicaAutoScalingSpecificationBuilder {
     }
     /// <p>The auto scaling settings for a multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
-        self.auto_scaling_specification = input;
-        self
+        self.auto_scaling_specification = input; self
     }
     /// <p>The auto scaling settings for a multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
@@ -65,8 +63,11 @@ impl ReplicaAutoScalingSpecificationBuilder {
     /// Consumes the builder and constructs a [`ReplicaAutoScalingSpecification`](crate::types::ReplicaAutoScalingSpecification).
     pub fn build(self) -> crate::types::ReplicaAutoScalingSpecification {
         crate::types::ReplicaAutoScalingSpecification {
-            region: self.region,
-            auto_scaling_specification: self.auto_scaling_specification,
+            region: self.region
+            ,
+            auto_scaling_specification: self.auto_scaling_specification
+            ,
         }
     }
 }
+

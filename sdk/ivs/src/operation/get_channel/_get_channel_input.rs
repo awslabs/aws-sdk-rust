@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChannelInput {
+pub struct GetChannelInput  {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetChannelInput {
+impl  GetChannelInput  {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetChannelInputBuilder {
     }
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetChannelInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_channel::GetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput { arn: self.arn })
+        ::std::result::Result::Ok(
+            crate::operation::get_channel::GetChannelInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

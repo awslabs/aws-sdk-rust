@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyPairInput {
+pub struct CreateKeyPairInput  {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub key_name: ::std::option::Option<::std::string::String>,
@@ -12,15 +12,15 @@ pub struct CreateKeyPairInput {
     /// <p>Default: <code>rsa</code></p>
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>The tags to apply to the new key pair.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code></p>
     pub key_format: ::std::option::Option<crate::types::KeyFormat>,
 }
-impl CreateKeyPairInput {
+impl  CreateKeyPairInput  {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,18 +29,19 @@ impl CreateKeyPairInput {
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
+    pub fn key_type(&self) -> ::std::option::Option<& crate::types::KeyType> {
         self.key_type.as_ref()
     }
     /// <p>The tags to apply to the new key pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code></p>
-    pub fn key_format(&self) -> ::std::option::Option<&crate::types::KeyFormat> {
+    pub fn key_format(&self) -> ::std::option::Option<& crate::types::KeyFormat> {
         self.key_format.as_ref()
     }
 }
@@ -58,7 +59,7 @@ pub struct CreateKeyPairInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) key_format: ::std::option::Option<crate::types::KeyFormat>,
 }
 impl CreateKeyPairInputBuilder {
@@ -72,8 +73,7 @@ impl CreateKeyPairInputBuilder {
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
@@ -87,8 +87,7 @@ impl CreateKeyPairInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -103,8 +102,7 @@ impl CreateKeyPairInputBuilder {
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code></p>
@@ -118,17 +116,16 @@ impl CreateKeyPairInputBuilder {
     /// <p>The tags to apply to the new key pair.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the new key pair.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the new key pair.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The format of the key pair.</p>
@@ -140,8 +137,7 @@ impl CreateKeyPairInputBuilder {
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code></p>
     pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
-        self.key_format = input;
-        self
+        self.key_format = input; self
     }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code></p>
@@ -149,15 +145,21 @@ impl CreateKeyPairInputBuilder {
         &self.key_format
     }
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_key_pair::CreateKeyPairInput {
-            key_name: self.key_name,
-            dry_run: self.dry_run,
-            key_type: self.key_type,
-            tag_specifications: self.tag_specifications,
-            key_format: self.key_format,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_key_pair::CreateKeyPairInput {
+                key_name: self.key_name
+                ,
+                dry_run: self.dry_run
+                ,
+                key_type: self.key_type
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                key_format: self.key_format
+                ,
+            }
+        )
     }
 }
+

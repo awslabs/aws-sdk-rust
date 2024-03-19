@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPredictiveScalingForecastInput {
+pub struct GetPredictiveScalingForecastInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
@@ -13,22 +13,22 @@ pub struct GetPredictiveScalingForecastInput {
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetPredictiveScalingForecastInput {
+impl  GetPredictiveScalingForecastInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days.</p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl GetPredictiveScalingForecastInputBuilder {
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days.</p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days.</p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
@@ -113,17 +109,19 @@ impl GetPredictiveScalingForecastInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetPredictiveScalingForecastInput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            policy_name: self.policy_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                policy_name: self.policy_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

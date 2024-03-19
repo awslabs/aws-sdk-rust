@@ -3,15 +3,14 @@
 /// <p>A list of IP addresses and address ranges, in CIDR notation. This is part of a <code>RuleVariables</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSet {
+pub struct IpSet  {
     /// <p>The list of IP addresses and address ranges, in CIDR notation.</p>
-    pub definition: ::std::vec::Vec<::std::string::String>,
+    pub definition: ::std::vec::Vec::<::std::string::String>,
 }
-impl IpSet {
+impl  IpSet  {
     /// <p>The list of IP addresses and address ranges, in CIDR notation.</p>
-    pub fn definition(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.definition.deref()
+    pub fn definition(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.definition.deref()
     }
 }
 impl IpSet {
@@ -25,7 +24,7 @@ impl IpSet {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetBuilder {
-    pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl IpSetBuilder {
     /// Appends an item to `definition`.
@@ -35,30 +34,31 @@ impl IpSetBuilder {
     /// <p>The list of IP addresses and address ranges, in CIDR notation.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
-        v.push(input.into());
-        self.definition = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.definition = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of IP addresses and address ranges, in CIDR notation.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.definition = input; self
     }
     /// <p>The list of IP addresses and address ranges, in CIDR notation.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.definition
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`definition`](crate::types::builders::IpSetBuilder::definition)
     pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpSet {
-            definition: self.definition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "definition",
-                    "definition was not specified but it is required when building IpSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpSet {
+                definition: self.definition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("definition", "definition was not specified but it is required when building IpSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Represents the response from the server for the request to create a user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserPoolOutput {
+pub struct CreateUserPoolOutput  {
     /// <p>A container for the user pool details.</p>
     pub user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,
 }
-impl CreateUserPoolOutput {
+impl  CreateUserPoolOutput  {
     /// <p>A container for the user pool details.</p>
-    pub fn user_pool(&self) -> ::std::option::Option<&crate::types::UserPoolType> {
+    pub fn user_pool(&self) -> ::std::option::Option<& crate::types::UserPoolType> {
         self.user_pool.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateUserPoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateUserPoolOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolOutput`](crate::operation::create_user_pool::CreateUserPoolOutput).
     pub fn builder() -> crate::operation::create_user_pool::builders::CreateUserPoolOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateUserPoolOutputBuilder {
     }
     /// <p>A container for the user pool details.</p>
     pub fn set_user_pool(mut self, input: ::std::option::Option<crate::types::UserPoolType>) -> Self {
-        self.user_pool = input;
-        self
+        self.user_pool = input; self
     }
     /// <p>A container for the user pool details.</p>
     pub fn get_user_pool(&self) -> &::std::option::Option<crate::types::UserPoolType> {
         &self.user_pool
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateUserPoolOutput`](crate::operation::create_user_pool::CreateUserPoolOutput).
     pub fn build(self) -> crate::operation::create_user_pool::CreateUserPoolOutput {
         crate::operation::create_user_pool::CreateUserPoolOutput {
-            user_pool: self.user_pool,
+            user_pool: self.user_pool
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

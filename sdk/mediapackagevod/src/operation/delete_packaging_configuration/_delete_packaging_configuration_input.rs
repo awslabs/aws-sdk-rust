@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackagingConfigurationInput {
+pub struct DeletePackagingConfigurationInput  {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePackagingConfigurationInput {
+impl  DeletePackagingConfigurationInput  {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeletePackagingConfigurationInputBuilder {
     }
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

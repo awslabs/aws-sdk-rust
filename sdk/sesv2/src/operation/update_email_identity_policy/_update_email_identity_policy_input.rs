@@ -3,7 +3,7 @@
 /// <p>Represents a request to update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEmailIdentityPolicyInput {
+pub struct UpdateEmailIdentityPolicyInput  {
     /// <p>The email identity.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
@@ -13,19 +13,19 @@ pub struct UpdateEmailIdentityPolicyInput {
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEmailIdentityPolicyInput {
+impl  UpdateEmailIdentityPolicyInput  {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
     }
     /// <p>The email identity.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The email identity.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
@@ -88,8 +86,7 @@ impl UpdateEmailIdentityPolicyInputBuilder {
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
@@ -97,16 +94,17 @@ impl UpdateEmailIdentityPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`UpdateEmailIdentityPolicyInput`](crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput {
-            email_identity: self.email_identity,
-            policy_name: self.policy_name,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyInput {
+                email_identity: self.email_identity
+                ,
+                policy_name: self.policy_name
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

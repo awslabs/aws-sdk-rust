@@ -2,3 +2,4 @@
 
 /// Error types that Amazon Kinesis Video WebRTC Storage can respond with.
 pub mod error;
+

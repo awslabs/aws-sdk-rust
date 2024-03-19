@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyHsmInput {
+pub struct ModifyHsmInput  {
     /// <p>The ARN of the HSM to modify.</p>
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
@@ -18,30 +18,30 @@ pub struct ModifyHsmInput {
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub syslog_ip: ::std::option::Option<::std::string::String>,
 }
-impl ModifyHsmInput {
+impl  ModifyHsmInput  {
     /// <p>The ARN of the HSM to modify.</p>
-    pub fn hsm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> ::std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
-    pub fn eni_ip(&self) -> ::std::option::Option<&str> {
+    pub fn eni_ip(&self) -> ::std::option::Option<& str> {
         self.eni_ip.as_deref()
     }
     /// <p>The new IAM role ARN.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The new external ID.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
-    pub fn syslog_ip(&self) -> ::std::option::Option<&str> {
+    pub fn syslog_ip(&self) -> ::std::option::Option<& str> {
         self.syslog_ip.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl ModifyHsmInputBuilder {
     }
     /// <p>The ARN of the HSM to modify.</p>
     pub fn set_hsm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_arn = input;
-        self
+        self.hsm_arn = input; self
     }
     /// <p>The ARN of the HSM to modify.</p>
     pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ModifyHsmInputBuilder {
     }
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl ModifyHsmInputBuilder {
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
     pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eni_ip = input;
-        self
+        self.eni_ip = input; self
     }
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
@@ -117,8 +114,7 @@ impl ModifyHsmInputBuilder {
     }
     /// <p>The new IAM role ARN.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The new IAM role ARN.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ModifyHsmInputBuilder {
     }
     /// <p>The new external ID.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The new external ID.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl ModifyHsmInputBuilder {
     }
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn set_syslog_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.syslog_ip = input;
-        self
+        self.syslog_ip = input; self
     }
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn get_syslog_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,13 +148,22 @@ impl ModifyHsmInputBuilder {
     }
     /// Consumes the builder and constructs a [`ModifyHsmInput`](crate::operation::modify_hsm::ModifyHsmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_hsm::ModifyHsmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_hsm::ModifyHsmInput {
-            hsm_arn: self.hsm_arn,
-            subnet_id: self.subnet_id,
-            eni_ip: self.eni_ip,
-            iam_role_arn: self.iam_role_arn,
-            external_id: self.external_id,
-            syslog_ip: self.syslog_ip,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::modify_hsm::ModifyHsmInput {
+                hsm_arn: self.hsm_arn
+                ,
+                subnet_id: self.subnet_id
+                ,
+                eni_ip: self.eni_ip
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                external_id: self.external_id
+                ,
+                syslog_ip: self.syslog_ip
+                ,
+            }
+        )
     }
 }
+

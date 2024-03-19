@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectorInput {
+pub struct CreateConnectorInput  {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
@@ -17,17 +17,17 @@ pub struct CreateConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub logging_role: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
 }
-impl CreateConnectorInput {
+impl  CreateConnectorInput  {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn as2_config(&self) -> ::std::option::Option<&crate::types::As2ConnectorConfig> {
+    pub fn as2_config(&self) -> ::std::option::Option<& crate::types::As2ConnectorConfig> {
         self.as2_config.as_ref()
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
@@ -36,21 +36,22 @@ impl CreateConnectorInput {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
-    pub fn access_role(&self) -> ::std::option::Option<&str> {
+    pub fn access_role(&self) -> ::std::option::Option<& str> {
         self.access_role.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
-    pub fn logging_role(&self) -> ::std::option::Option<&str> {
+    pub fn logging_role(&self) -> ::std::option::Option<& str> {
         self.logging_role.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
+    pub fn sftp_config(&self) -> ::std::option::Option<& crate::types::SftpConnectorConfig> {
         self.sftp_config.as_ref()
     }
 }
@@ -69,7 +70,7 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
 }
 impl CreateConnectorInputBuilder {
@@ -81,8 +82,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
-        self.as2_config = input;
-        self
+        self.as2_config = input; self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn get_as2_config(&self) -> &::std::option::Option<crate::types::As2ConnectorConfig> {
@@ -120,8 +119,7 @@ impl CreateConnectorInputBuilder {
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
     /// <p><b>For AS2 connectors</b></p>
@@ -139,8 +137,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_role = input;
-        self
+        self.logging_role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,17 +150,16 @@ impl CreateConnectorInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
@@ -173,24 +169,30 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
-        self.sftp_config = input;
-        self
+        self.sftp_config = input; self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
         &self.sftp_config
     }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
-            url: self.url,
-            as2_config: self.as2_config,
-            access_role: self.access_role,
-            logging_role: self.logging_role,
-            tags: self.tags,
-            sftp_config: self.sftp_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connector::CreateConnectorInput {
+                url: self.url
+                ,
+                as2_config: self.as2_config
+                ,
+                access_role: self.access_role
+                ,
+                logging_role: self.logging_role
+                ,
+                tags: self.tags
+                ,
+                sftp_config: self.sftp_config
+                ,
+            }
+        )
     }
 }
+

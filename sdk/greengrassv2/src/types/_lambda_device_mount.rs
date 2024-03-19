@@ -3,7 +3,7 @@
 /// <p>Contains information about a device that Linux processes in a container can access.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaDeviceMount {
+pub struct LambdaDeviceMount  {
     /// <p>The mount path for the device in the file system.</p>
     pub path: ::std::string::String,
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
@@ -13,15 +13,14 @@ pub struct LambdaDeviceMount {
     /// <p>Default: <code>false</code></p>
     pub add_group_owner: ::std::option::Option<bool>,
 }
-impl LambdaDeviceMount {
+impl  LambdaDeviceMount  {
     /// <p>The mount path for the device in the file system.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::LambdaFilesystemPermission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::LambdaFilesystemPermission> {
         self.permission.as_ref()
     }
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
@@ -54,8 +53,7 @@ impl LambdaDeviceMountBuilder {
     }
     /// <p>The mount path for the device in the file system.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The mount path for the device in the file system.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl LambdaDeviceMountBuilder {
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::LambdaFilesystemPermission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
@@ -87,8 +84,7 @@ impl LambdaDeviceMountBuilder {
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.add_group_owner = input;
-        self
+        self.add_group_owner = input; self
     }
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
     /// <p>Default: <code>false</code></p>
@@ -99,15 +95,19 @@ impl LambdaDeviceMountBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::LambdaDeviceMountBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaDeviceMount, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaDeviceMount {
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building LambdaDeviceMount",
-                )
-            })?,
-            permission: self.permission,
-            add_group_owner: self.add_group_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaDeviceMount {
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building LambdaDeviceMount")
+                    )?
+                ,
+                permission: self.permission
+                ,
+                add_group_owner: self.add_group_owner
+                ,
+            }
+        )
     }
 }
+

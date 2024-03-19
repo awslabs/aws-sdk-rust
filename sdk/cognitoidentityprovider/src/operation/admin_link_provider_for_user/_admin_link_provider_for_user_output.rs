@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdminLinkProviderForUserOutput {
+pub struct AdminLinkProviderForUserOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AdminLinkProviderForUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AdminLinkProviderForUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminLinkProviderForUserOutput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput).
     pub fn builder() -> crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AdminLinkProviderForUserOutputBuilder {
 }
 impl AdminLinkProviderForUserOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AdminLinkProviderForUserOutput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput).
     pub fn build(self) -> crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput {
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput {
@@ -40,3 +40,4 @@ impl AdminLinkProviderForUserOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplatesInput {
+pub struct ListTemplatesInput  {
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
@@ -10,17 +10,17 @@ pub struct ListTemplatesInput {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListTemplatesInput {
+impl  ListTemplatesInput  {
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_arn
     }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            connector_arn: self.connector_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_templates::ListTemplatesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                connector_arn: self.connector_arn
+                ,
+            }
+        )
     }
 }
+

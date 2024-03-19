@@ -3,22 +3,23 @@
 /// <p>Provides the configuration information for processing attachments to Salesforce standard objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceStandardObjectAttachmentConfiguration {
+pub struct SalesforceStandardObjectAttachmentConfiguration  {
     /// <p>The name of the field used for the document title.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
 }
-impl SalesforceStandardObjectAttachmentConfiguration {
+impl  SalesforceStandardObjectAttachmentConfiguration  {
     /// <p>The name of the field used for the document title.</p>
-    pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_title_field_name(&self) -> ::std::option::Option<& str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
-    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.field_mappings.as_deref().unwrap_or_default()
+    pub fn field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SalesforceStandardObjectAttachmentConfiguration {
@@ -33,7 +34,7 @@ impl SalesforceStandardObjectAttachmentConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SalesforceStandardObjectAttachmentConfigurationBuilder {
     pub(crate) document_title_field_name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceStandardObjectAttachmentConfigurationBuilder {
     /// <p>The name of the field used for the document title.</p>
@@ -43,8 +44,7 @@ impl SalesforceStandardObjectAttachmentConfigurationBuilder {
     }
     /// <p>The name of the field used for the document title.</p>
     pub fn set_document_title_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_title_field_name = input;
-        self
+        self.document_title_field_name = input; self
     }
     /// <p>The name of the field used for the document title.</p>
     pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl SalesforceStandardObjectAttachmentConfigurationBuilder {
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
-        v.push(input);
-        self.field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.field_mappings = input;
-        self
+    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.field_mappings = input; self
     }
     /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
-    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SalesforceStandardObjectAttachmentConfiguration`](crate::types::SalesforceStandardObjectAttachmentConfiguration).
     pub fn build(self) -> crate::types::SalesforceStandardObjectAttachmentConfiguration {
         crate::types::SalesforceStandardObjectAttachmentConfiguration {
-            document_title_field_name: self.document_title_field_name,
-            field_mappings: self.field_mappings,
+            document_title_field_name: self.document_title_field_name
+            ,
+            field_mappings: self.field_mappings
+            ,
         }
     }
 }
+

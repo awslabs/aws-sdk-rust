@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelGremlinQueryInput {
+pub struct CancelGremlinQueryInput  {
     /// <p>The unique identifier that identifies the query to be canceled.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelGremlinQueryInput {
+impl  CancelGremlinQueryInput  {
     /// <p>The unique identifier that identifies the query to be canceled.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl CancelGremlinQueryInputBuilder {
     }
     /// <p>The unique identifier that identifies the query to be canceled.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The unique identifier that identifies the query to be canceled.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`CancelGremlinQueryInput`](crate::operation::cancel_gremlin_query::CancelGremlinQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_gremlin_query::CancelGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_gremlin_query::CancelGremlinQueryInput { query_id: self.query_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_gremlin_query::CancelGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryInput {
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

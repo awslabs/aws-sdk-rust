@@ -3,7 +3,7 @@
 /// <p>Defines settings for a method for the stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsApiGatewayMethodSettings {
+pub struct AwsApiGatewayMethodSettings  {
     /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
     pub metrics_enabled: ::std::option::Option<bool>,
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
@@ -35,7 +35,7 @@ pub struct AwsApiGatewayMethodSettings {
     /// <p>To specify the root path, use only a slash (/). You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
     pub resource_path: ::std::option::Option<::std::string::String>,
 }
-impl AwsApiGatewayMethodSettings {
+impl  AwsApiGatewayMethodSettings  {
     /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
     pub fn metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.metrics_enabled
@@ -44,7 +44,7 @@ impl AwsApiGatewayMethodSettings {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
-    pub fn logging_level(&self) -> ::std::option::Option<&str> {
+    pub fn logging_level(&self) -> ::std::option::Option<& str> {
         self.logging_level.as_deref()
     }
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
@@ -77,17 +77,17 @@ impl AwsApiGatewayMethodSettings {
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
-    pub fn unauthorized_cache_control_header_strategy(&self) -> ::std::option::Option<&str> {
+    pub fn unauthorized_cache_control_header_strategy(&self) -> ::std::option::Option<& str> {
         self.unauthorized_cache_control_header_strategy.as_deref()
     }
     /// <p>The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>The resource path for this method. Forward slashes (/) are encoded as ~1 . The initial slash must include a forward slash.</p>
     /// <p>For example, the path value <code>/resource/subresource</code> must be encoded as <code>/~1resource~1subresource</code>.</p>
     /// <p>To specify the root path, use only a slash (/). You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
-    pub fn resource_path(&self) -> ::std::option::Option<&str> {
+    pub fn resource_path(&self) -> ::std::option::Option<& str> {
         self.resource_path.as_deref()
     }
 }
@@ -123,8 +123,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
     pub fn set_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.metrics_enabled = input;
-        self
+        self.metrics_enabled = input; self
     }
     /// <p>Indicates whether CloudWatch metrics are enabled for the method.</p>
     pub fn get_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -143,8 +142,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_level = input;
-        self
+        self.logging_level = input; self
     }
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
@@ -160,8 +158,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
     pub fn set_data_trace_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_trace_enabled = input;
-        self
+        self.data_trace_enabled = input; self
     }
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
     pub fn get_data_trace_enabled(&self) -> &::std::option::Option<bool> {
@@ -174,8 +171,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>The throttling burst limit for the method.</p>
     pub fn set_throttling_burst_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throttling_burst_limit = input;
-        self
+        self.throttling_burst_limit = input; self
     }
     /// <p>The throttling burst limit for the method.</p>
     pub fn get_throttling_burst_limit(&self) -> &::std::option::Option<i32> {
@@ -188,8 +184,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>The throttling rate limit for the method.</p>
     pub fn set_throttling_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.throttling_rate_limit = input;
-        self
+        self.throttling_rate_limit = input; self
     }
     /// <p>The throttling rate limit for the method.</p>
     pub fn get_throttling_rate_limit(&self) -> &::std::option::Option<f64> {
@@ -202,8 +197,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates whether responses are cached and returned for requests. For responses to be cached, a cache cluster must be enabled on the stage.</p>
     pub fn set_caching_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.caching_enabled = input;
-        self
+        self.caching_enabled = input; self
     }
     /// <p>Indicates whether responses are cached and returned for requests. For responses to be cached, a cache cluster must be enabled on the stage.</p>
     pub fn get_caching_enabled(&self) -> &::std::option::Option<bool> {
@@ -216,8 +210,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response is cached.</p>
     pub fn set_cache_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cache_ttl_in_seconds = input;
-        self
+        self.cache_ttl_in_seconds = input; self
     }
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response is cached.</p>
     pub fn get_cache_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -230,8 +223,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates whether the cached responses are encrypted.</p>
     pub fn set_cache_data_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cache_data_encrypted = input;
-        self
+        self.cache_data_encrypted = input; self
     }
     /// <p>Indicates whether the cached responses are encrypted.</p>
     pub fn get_cache_data_encrypted(&self) -> &::std::option::Option<bool> {
@@ -244,8 +236,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
     pub fn set_require_authorization_for_cache_control(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_authorization_for_cache_control = input;
-        self
+        self.require_authorization_for_cache_control = input; self
     }
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
     pub fn get_require_authorization_for_cache_control(&self) -> &::std::option::Option<bool> {
@@ -260,8 +251,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
     pub fn set_unauthorized_cache_control_header_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unauthorized_cache_control_header_strategy = input;
-        self
+        self.unauthorized_cache_control_header_strategy = input; self
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code></p>
@@ -275,8 +265,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +282,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>For example, the path value <code>/resource/subresource</code> must be encoded as <code>/~1resource~1subresource</code>.</p>
     /// <p>To specify the root path, use only a slash (/). You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
     pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_path = input;
-        self
+        self.resource_path = input; self
     }
     /// <p>The resource path for this method. Forward slashes (/) are encoded as ~1 . The initial slash must include a forward slash.</p>
     /// <p>For example, the path value <code>/resource/subresource</code> must be encoded as <code>/~1resource~1subresource</code>.</p>
@@ -305,18 +293,31 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// Consumes the builder and constructs a [`AwsApiGatewayMethodSettings`](crate::types::AwsApiGatewayMethodSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayMethodSettings {
         crate::types::AwsApiGatewayMethodSettings {
-            metrics_enabled: self.metrics_enabled,
-            logging_level: self.logging_level,
-            data_trace_enabled: self.data_trace_enabled,
-            throttling_burst_limit: self.throttling_burst_limit,
-            throttling_rate_limit: self.throttling_rate_limit,
-            caching_enabled: self.caching_enabled,
-            cache_ttl_in_seconds: self.cache_ttl_in_seconds,
-            cache_data_encrypted: self.cache_data_encrypted,
-            require_authorization_for_cache_control: self.require_authorization_for_cache_control,
-            unauthorized_cache_control_header_strategy: self.unauthorized_cache_control_header_strategy,
-            http_method: self.http_method,
-            resource_path: self.resource_path,
+            metrics_enabled: self.metrics_enabled
+            ,
+            logging_level: self.logging_level
+            ,
+            data_trace_enabled: self.data_trace_enabled
+            ,
+            throttling_burst_limit: self.throttling_burst_limit
+            ,
+            throttling_rate_limit: self.throttling_rate_limit
+            ,
+            caching_enabled: self.caching_enabled
+            ,
+            cache_ttl_in_seconds: self.cache_ttl_in_seconds
+            ,
+            cache_data_encrypted: self.cache_data_encrypted
+            ,
+            require_authorization_for_cache_control: self.require_authorization_for_cache_control
+            ,
+            unauthorized_cache_control_header_strategy: self.unauthorized_cache_control_header_strategy
+            ,
+            http_method: self.http_method
+            ,
+            resource_path: self.resource_path
+            ,
         }
     }
 }
+

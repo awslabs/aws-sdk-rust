@@ -3,13 +3,13 @@
 /// <p>Provides error information about a schema conversion operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultErrorDetails {
+pub struct DefaultErrorDetails  {
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DefaultErrorDetails {
+impl  DefaultErrorDetails  {
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DefaultErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DefaultErrorDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`DefaultErrorDetails`](crate::types::DefaultErrorDetails).
     pub fn build(self) -> crate::types::DefaultErrorDetails {
-        crate::types::DefaultErrorDetails { message: self.message }
+        crate::types::DefaultErrorDetails {
+            message: self.message
+            ,
+        }
     }
 }
+

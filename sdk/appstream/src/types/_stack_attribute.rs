@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stackattribute = unimplemented!();
 /// match stackattribute {
@@ -40,16 +40,14 @@
 /// Specifically, when `stackattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StackAttribute {
     #[allow(missing_docs)] // documentation missing in model
     AccessEndpoints,
@@ -77,104 +75,92 @@ pub enum StackAttribute {
     UserSettings,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StackAttribute {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_ENDPOINTS" => StackAttribute::AccessEndpoints,
-            "EMBED_HOST_DOMAINS" => StackAttribute::EmbedHostDomains,
-            "FEEDBACK_URL" => StackAttribute::FeedbackUrl,
-            "IAM_ROLE_ARN" => StackAttribute::IamRoleArn,
-            "REDIRECT_URL" => StackAttribute::RedirectUrl,
-            "STORAGE_CONNECTORS" => StackAttribute::StorageConnectors,
-            "STORAGE_CONNECTOR_GOOGLE_DRIVE" => StackAttribute::StorageConnectorGoogleDrive,
-            "STORAGE_CONNECTOR_HOMEFOLDERS" => StackAttribute::StorageConnectorHomefolders,
-            "STORAGE_CONNECTOR_ONE_DRIVE" => StackAttribute::StorageConnectorOneDrive,
-            "STREAMING_EXPERIENCE_SETTINGS" => StackAttribute::StreamingExperienceSettings,
-            "THEME_NAME" => StackAttribute::ThemeName,
-            "USER_SETTINGS" => StackAttribute::UserSettings,
-            other => StackAttribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCESS_ENDPOINTS" => StackAttribute::AccessEndpoints,
+"EMBED_HOST_DOMAINS" => StackAttribute::EmbedHostDomains,
+"FEEDBACK_URL" => StackAttribute::FeedbackUrl,
+"IAM_ROLE_ARN" => StackAttribute::IamRoleArn,
+"REDIRECT_URL" => StackAttribute::RedirectUrl,
+"STORAGE_CONNECTORS" => StackAttribute::StorageConnectors,
+"STORAGE_CONNECTOR_GOOGLE_DRIVE" => StackAttribute::StorageConnectorGoogleDrive,
+"STORAGE_CONNECTOR_HOMEFOLDERS" => StackAttribute::StorageConnectorHomefolders,
+"STORAGE_CONNECTOR_ONE_DRIVE" => StackAttribute::StorageConnectorOneDrive,
+"STREAMING_EXPERIENCE_SETTINGS" => StackAttribute::StreamingExperienceSettings,
+"THEME_NAME" => StackAttribute::ThemeName,
+"USER_SETTINGS" => StackAttribute::UserSettings,
+other => StackAttribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StackAttribute {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StackAttribute::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StackAttribute::from(s))
+                    }
+                }
 impl StackAttribute {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StackAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
-            StackAttribute::EmbedHostDomains => "EMBED_HOST_DOMAINS",
-            StackAttribute::FeedbackUrl => "FEEDBACK_URL",
-            StackAttribute::IamRoleArn => "IAM_ROLE_ARN",
-            StackAttribute::RedirectUrl => "REDIRECT_URL",
-            StackAttribute::StorageConnectors => "STORAGE_CONNECTORS",
-            StackAttribute::StorageConnectorGoogleDrive => "STORAGE_CONNECTOR_GOOGLE_DRIVE",
-            StackAttribute::StorageConnectorHomefolders => "STORAGE_CONNECTOR_HOMEFOLDERS",
-            StackAttribute::StorageConnectorOneDrive => "STORAGE_CONNECTOR_ONE_DRIVE",
-            StackAttribute::StreamingExperienceSettings => "STREAMING_EXPERIENCE_SETTINGS",
-            StackAttribute::ThemeName => "THEME_NAME",
-            StackAttribute::UserSettings => "USER_SETTINGS",
-            StackAttribute::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_ENDPOINTS",
-            "EMBED_HOST_DOMAINS",
-            "FEEDBACK_URL",
-            "IAM_ROLE_ARN",
-            "REDIRECT_URL",
-            "STORAGE_CONNECTORS",
-            "STORAGE_CONNECTOR_GOOGLE_DRIVE",
-            "STORAGE_CONNECTOR_HOMEFOLDERS",
-            "STORAGE_CONNECTOR_ONE_DRIVE",
-            "STREAMING_EXPERIENCE_SETTINGS",
-            "THEME_NAME",
-            "USER_SETTINGS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StackAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
+    StackAttribute::EmbedHostDomains => "EMBED_HOST_DOMAINS",
+    StackAttribute::FeedbackUrl => "FEEDBACK_URL",
+    StackAttribute::IamRoleArn => "IAM_ROLE_ARN",
+    StackAttribute::RedirectUrl => "REDIRECT_URL",
+    StackAttribute::StorageConnectors => "STORAGE_CONNECTORS",
+    StackAttribute::StorageConnectorGoogleDrive => "STORAGE_CONNECTOR_GOOGLE_DRIVE",
+    StackAttribute::StorageConnectorHomefolders => "STORAGE_CONNECTOR_HOMEFOLDERS",
+    StackAttribute::StorageConnectorOneDrive => "STORAGE_CONNECTOR_ONE_DRIVE",
+    StackAttribute::StreamingExperienceSettings => "STREAMING_EXPERIENCE_SETTINGS",
+    StackAttribute::ThemeName => "THEME_NAME",
+    StackAttribute::UserSettings => "USER_SETTINGS",
+    StackAttribute::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_ENDPOINTS", "EMBED_HOST_DOMAINS", "FEEDBACK_URL", "IAM_ROLE_ARN", "REDIRECT_URL", "STORAGE_CONNECTORS", "STORAGE_CONNECTOR_GOOGLE_DRIVE", "STORAGE_CONNECTOR_HOMEFOLDERS", "STORAGE_CONNECTOR_ONE_DRIVE", "STREAMING_EXPERIENCE_SETTINGS", "THEME_NAME", "USER_SETTINGS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StackAttribute {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StackAttribute {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StackAttribute {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StackAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
-            StackAttribute::EmbedHostDomains => write!(f, "EMBED_HOST_DOMAINS"),
-            StackAttribute::FeedbackUrl => write!(f, "FEEDBACK_URL"),
-            StackAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
-            StackAttribute::RedirectUrl => write!(f, "REDIRECT_URL"),
-            StackAttribute::StorageConnectors => write!(f, "STORAGE_CONNECTORS"),
-            StackAttribute::StorageConnectorGoogleDrive => write!(f, "STORAGE_CONNECTOR_GOOGLE_DRIVE"),
-            StackAttribute::StorageConnectorHomefolders => write!(f, "STORAGE_CONNECTOR_HOMEFOLDERS"),
-            StackAttribute::StorageConnectorOneDrive => write!(f, "STORAGE_CONNECTOR_ONE_DRIVE"),
-            StackAttribute::StreamingExperienceSettings => write!(f, "STREAMING_EXPERIENCE_SETTINGS"),
-            StackAttribute::ThemeName => write!(f, "THEME_NAME"),
-            StackAttribute::UserSettings => write!(f, "USER_SETTINGS"),
-            StackAttribute::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StackAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
+StackAttribute::EmbedHostDomains => write!(f, "EMBED_HOST_DOMAINS"),
+StackAttribute::FeedbackUrl => write!(f, "FEEDBACK_URL"),
+StackAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
+StackAttribute::RedirectUrl => write!(f, "REDIRECT_URL"),
+StackAttribute::StorageConnectors => write!(f, "STORAGE_CONNECTORS"),
+StackAttribute::StorageConnectorGoogleDrive => write!(f, "STORAGE_CONNECTOR_GOOGLE_DRIVE"),
+StackAttribute::StorageConnectorHomefolders => write!(f, "STORAGE_CONNECTOR_HOMEFOLDERS"),
+StackAttribute::StorageConnectorOneDrive => write!(f, "STORAGE_CONNECTOR_ONE_DRIVE"),
+StackAttribute::StreamingExperienceSettings => write!(f, "STREAMING_EXPERIENCE_SETTINGS"),
+StackAttribute::ThemeName => write!(f, "THEME_NAME"),
+StackAttribute::UserSettings => write!(f, "USER_SETTINGS"),
+StackAttribute::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

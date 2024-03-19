@@ -3,7 +3,7 @@
 /// <p>An object that contains a mapping between a <code>Metric</code> and <code>MetricAggregation</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportMetric {
+pub struct ExportMetric  {
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ pub struct ExportMetric {
     /// </ul>
     pub aggregation: ::std::option::Option<crate::types::MetricAggregation>,
 }
-impl ExportMetric {
+impl  ExportMetric  {
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -61,7 +61,7 @@ impl ExportMetric {
     /// <li>
     /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::Metric> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::Metric> {
         self.name.as_ref()
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
@@ -71,7 +71,7 @@ impl ExportMetric {
     /// <li>
     /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
-    pub fn aggregation(&self) -> ::std::option::Option<&crate::types::MetricAggregation> {
+    pub fn aggregation(&self) -> ::std::option::Option<& crate::types::MetricAggregation> {
         self.aggregation.as_ref()
     }
 }
@@ -141,8 +141,7 @@ impl ExportMetricBuilder {
     /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
@@ -189,8 +188,7 @@ impl ExportMetricBuilder {
     /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::MetricAggregation>) -> Self {
-        self.aggregation = input;
-        self
+        self.aggregation = input; self
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
@@ -205,8 +203,11 @@ impl ExportMetricBuilder {
     /// Consumes the builder and constructs a [`ExportMetric`](crate::types::ExportMetric).
     pub fn build(self) -> crate::types::ExportMetric {
         crate::types::ExportMetric {
-            name: self.name,
-            aggregation: self.aggregation,
+            name: self.name
+            ,
+            aggregation: self.aggregation
+            ,
         }
     }
 }
+

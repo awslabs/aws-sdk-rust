@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSessionsInput {
+pub struct SearchSessionsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -12,9 +12,9 @@ pub struct SearchSessionsInput {
     /// <p>The search expression to filter results.</p>
     pub search_expression: ::std::option::Option<crate::types::SearchExpression>,
 }
-impl SearchSessionsInput {
+impl  SearchSessionsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -22,11 +22,11 @@ impl SearchSessionsInput {
         self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The search expression to filter results.</p>
-    pub fn search_expression(&self) -> ::std::option::Option<&crate::types::SearchExpression> {
+    pub fn search_expression(&self) -> ::std::option::Option<& crate::types::SearchExpression> {
         self.search_expression.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl SearchSessionsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl SearchSessionsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl SearchSessionsInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl SearchSessionsInputBuilder {
     }
     /// <p>The search expression to filter results.</p>
     pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::SearchExpression>) -> Self {
-        self.search_expression = input;
-        self
+        self.search_expression = input; self
     }
     /// <p>The search expression to filter results.</p>
     pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::SearchExpression> {
         &self.search_expression
     }
     /// Consumes the builder and constructs a [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            assistant_id: self.assistant_id,
-            search_expression: self.search_expression,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_sessions::SearchSessionsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                assistant_id: self.assistant_id
+                ,
+                search_expression: self.search_expression
+                ,
+            }
+        )
     }
 }
+

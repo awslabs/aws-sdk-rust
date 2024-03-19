@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartProtectedQueryInput {
+pub struct StartProtectedQueryInput  {
     /// <p>The type of the protected query to be started.</p>
     pub r#type: ::std::option::Option<crate::types::ProtectedQueryType>,
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
@@ -12,25 +12,25 @@ pub struct StartProtectedQueryInput {
     /// <p>The details needed to write the query results.</p>
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
 }
-impl StartProtectedQueryInput {
+impl  StartProtectedQueryInput  {
     /// <p>The type of the protected query to be started.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProtectedQueryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProtectedQueryType> {
         self.r#type.as_ref()
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The protected SQL query parameters.</p>
-    pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
+    pub fn sql_parameters(&self) -> ::std::option::Option<& crate::types::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
     /// <p>The details needed to write the query results.</p>
-    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedQueryResultConfiguration> {
+    pub fn result_configuration(&self) -> ::std::option::Option<& crate::types::ProtectedQueryResultConfiguration> {
         self.result_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartProtectedQueryInput {
+impl  ::std::fmt::Debug for StartProtectedQueryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartProtectedQueryInput");
         formatter.field("r#type", &self.r#type);
@@ -65,8 +65,7 @@ impl StartProtectedQueryInputBuilder {
     }
     /// <p>The type of the protected query to be started.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProtectedQueryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the protected query to be started.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProtectedQueryType> {
@@ -80,8 +79,7 @@ impl StartProtectedQueryInputBuilder {
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl StartProtectedQueryInputBuilder {
     }
     /// <p>The protected SQL query parameters.</p>
     pub fn set_sql_parameters(mut self, input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>) -> Self {
-        self.sql_parameters = input;
-        self
+        self.sql_parameters = input; self
     }
     /// <p>The protected SQL query parameters.</p>
     pub fn get_sql_parameters(&self) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
@@ -109,24 +106,26 @@ impl StartProtectedQueryInputBuilder {
     }
     /// <p>The details needed to write the query results.</p>
     pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>) -> Self {
-        self.result_configuration = input;
-        self
+        self.result_configuration = input; self
     }
     /// <p>The details needed to write the query results.</p>
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
         &self.result_configuration
     }
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_protected_query::StartProtectedQueryInput {
-            r#type: self.r#type,
-            membership_identifier: self.membership_identifier,
-            sql_parameters: self.sql_parameters,
-            result_configuration: self.result_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_protected_query::StartProtectedQueryInput {
+                r#type: self.r#type
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+                sql_parameters: self.sql_parameters
+                ,
+                result_configuration: self.result_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartProtectedQueryInputBuilder {
@@ -139,3 +138,4 @@ impl ::std::fmt::Debug for StartProtectedQueryInputBuilder {
         formatter.finish()
     }
 }
+

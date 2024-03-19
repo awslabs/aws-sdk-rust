@@ -3,7 +3,7 @@
 /// <p>A summary of a configuration profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationProfileSummary {
+pub struct ConfigurationProfileSummary  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile.</p>
@@ -13,39 +13,40 @@ pub struct ConfigurationProfileSummary {
     /// <p>The URI location of the configuration.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of validators in the configuration profile.</p>
-    pub validator_types: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>,
+    pub validator_types: ::std::option::Option<::std::vec::Vec::<crate::types::ValidatorType>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ConfigurationProfileSummary {
+impl  ConfigurationProfileSummary  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the configuration profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URI location of the configuration.</p>
-    pub fn location_uri(&self) -> ::std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The types of validators in the configuration profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validator_types.is_none()`.
-    pub fn validator_types(&self) -> &[crate::types::ValidatorType] {
-        self.validator_types.as_deref().unwrap_or_default()
+    pub fn validator_types(&self) -> & [crate::types::ValidatorType] {
+        self.validator_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -64,7 +65,7 @@ pub struct ConfigurationProfileSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) validator_types: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>,
+    pub(crate) validator_types: ::std::option::Option<::std::vec::Vec::<crate::types::ValidatorType>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationProfileSummaryBuilder {
@@ -75,8 +76,7 @@ impl ConfigurationProfileSummaryBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl ConfigurationProfileSummaryBuilder {
     }
     /// <p>The ID of the configuration profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the configuration profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ConfigurationProfileSummaryBuilder {
     }
     /// <p>The name of the configuration profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ConfigurationProfileSummaryBuilder {
     }
     /// <p>The URI location of the configuration.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>The URI location of the configuration.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +128,16 @@ impl ConfigurationProfileSummaryBuilder {
     /// <p>The types of validators in the configuration profile.</p>
     pub fn validator_types(mut self, input: crate::types::ValidatorType) -> Self {
         let mut v = self.validator_types.unwrap_or_default();
-        v.push(input);
-        self.validator_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validator_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of validators in the configuration profile.</p>
-    pub fn set_validator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>>) -> Self {
-        self.validator_types = input;
-        self
+    pub fn set_validator_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidatorType>>) -> Self {
+        self.validator_types = input; self
     }
     /// <p>The types of validators in the configuration profile.</p>
-    pub fn get_validator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatorType>> {
+    pub fn get_validator_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidatorType>> {
         &self.validator_types
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -155,8 +151,7 @@ impl ConfigurationProfileSummaryBuilder {
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
@@ -167,12 +162,19 @@ impl ConfigurationProfileSummaryBuilder {
     /// Consumes the builder and constructs a [`ConfigurationProfileSummary`](crate::types::ConfigurationProfileSummary).
     pub fn build(self) -> crate::types::ConfigurationProfileSummary {
         crate::types::ConfigurationProfileSummary {
-            application_id: self.application_id,
-            id: self.id,
-            name: self.name,
-            location_uri: self.location_uri,
-            validator_types: self.validator_types,
-            r#type: self.r#type,
+            application_id: self.application_id
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            location_uri: self.location_uri
+            ,
+            validator_types: self.validator_types
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetAssetPropertyValue`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`entries(BatchGetAssetPropertyValueEntry)`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::entries) / [`set_entries(Option<Vec::<BatchGetAssetPropertyValueEntry>>)`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::set_entries):<br>required: **true**<br><p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    /// - On success, responds with [`BatchGetAssetPropertyValueOutput`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput) with field(s):
+                            /// - On success, responds with [`BatchGetAssetPropertyValueOutput`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput) with field(s):
     ///   - [`error_entries(Vec::<BatchGetAssetPropertyValueErrorEntry>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::error_entries): <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     ///   - [`success_entries(Vec::<BatchGetAssetPropertyValueSuccessEntry>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::success_entries): <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
     ///   - [`skipped_entries(Vec::<BatchGetAssetPropertyValueSkippedEntry>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<BatchGetAssetPropertyValueError>`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError)
-    pub fn batch_get_asset_property_value(
-        &self,
-    ) -> crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder {
-        crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<BatchGetAssetPropertyValueError>`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError)
+    pub fn batch_get_asset_property_value(&self) -> crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder {
+                                crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::new(self.handle.clone())
+                            }
 }
+

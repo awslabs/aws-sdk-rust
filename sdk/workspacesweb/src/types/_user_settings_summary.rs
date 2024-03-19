@@ -3,7 +3,7 @@
 /// <p>The summary of user settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserSettingsSummary {
+pub struct UserSettingsSummary  {
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: ::std::string::String,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
@@ -23,30 +23,29 @@ pub struct UserSettingsSummary {
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
     pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
 }
-impl UserSettingsSummary {
+impl  UserSettingsSummary  {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_settings_arn.deref()
+    pub fn user_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.user_settings_arn.deref()
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn copy_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn copy_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.copy_allowed.as_ref()
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn paste_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn paste_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.paste_allowed.as_ref()
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn download_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn download_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.download_allowed.as_ref()
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn upload_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn upload_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.upload_allowed.as_ref()
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn print_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+    pub fn print_allowed(&self) -> ::std::option::Option<& crate::types::EnabledType> {
         self.print_allowed.as_ref()
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
@@ -58,11 +57,11 @@ impl UserSettingsSummary {
         self.idle_disconnect_timeout_in_minutes
     }
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
-    pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<&crate::types::CookieSynchronizationConfiguration> {
+    pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<& crate::types::CookieSynchronizationConfiguration> {
         self.cookie_synchronization_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for UserSettingsSummary {
+impl  ::std::fmt::Debug for UserSettingsSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserSettingsSummary");
         formatter.field("user_settings_arn", &self.user_settings_arn);
@@ -107,8 +106,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>The ARN of the user settings.</p>
     pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_settings_arn = input;
-        self
+        self.user_settings_arn = input; self
     }
     /// <p>The ARN of the user settings.</p>
     pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
-        self.copy_allowed = input;
-        self
+        self.copy_allowed = input; self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn get_copy_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
@@ -135,8 +132,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
-        self.paste_allowed = input;
-        self
+        self.paste_allowed = input; self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn get_paste_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
@@ -149,8 +145,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
-        self.download_allowed = input;
-        self
+        self.download_allowed = input; self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn get_download_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
@@ -163,8 +158,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
-        self.upload_allowed = input;
-        self
+        self.upload_allowed = input; self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn get_upload_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
@@ -177,8 +171,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>Specifies whether the user can print to the local device.</p>
     pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
-        self.print_allowed = input;
-        self
+        self.print_allowed = input; self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
     pub fn get_print_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
@@ -191,8 +184,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
     pub fn set_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.disconnect_timeout_in_minutes = input;
-        self
+        self.disconnect_timeout_in_minutes = input; self
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
     pub fn get_disconnect_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -205,8 +197,7 @@ impl UserSettingsSummaryBuilder {
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_disconnect_timeout_in_minutes = input;
-        self
+        self.idle_disconnect_timeout_in_minutes = input; self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn get_idle_disconnect_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -218,12 +209,8 @@ impl UserSettingsSummaryBuilder {
         self
     }
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
-    pub fn set_cookie_synchronization_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
-    ) -> Self {
-        self.cookie_synchronization_configuration = input;
-        self
+    pub fn set_cookie_synchronization_configuration(mut self, input: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>) -> Self {
+        self.cookie_synchronization_configuration = input; self
     }
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
     pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
@@ -233,22 +220,31 @@ impl UserSettingsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsSummaryBuilder::user_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::UserSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserSettingsSummary {
-            user_settings_arn: self.user_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_settings_arn",
-                    "user_settings_arn was not specified but it is required when building UserSettingsSummary",
-                )
-            })?,
-            copy_allowed: self.copy_allowed,
-            paste_allowed: self.paste_allowed,
-            download_allowed: self.download_allowed,
-            upload_allowed: self.upload_allowed,
-            print_allowed: self.print_allowed,
-            disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
-            idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
-            cookie_synchronization_configuration: self.cookie_synchronization_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserSettingsSummary {
+                user_settings_arn: self.user_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_settings_arn", "user_settings_arn was not specified but it is required when building UserSettingsSummary")
+                    )?
+                ,
+                copy_allowed: self.copy_allowed
+                ,
+                paste_allowed: self.paste_allowed
+                ,
+                download_allowed: self.download_allowed
+                ,
+                upload_allowed: self.upload_allowed
+                ,
+                print_allowed: self.print_allowed
+                ,
+                disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes
+                ,
+                idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes
+                ,
+                cookie_synchronization_configuration: self.cookie_synchronization_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UserSettingsSummaryBuilder {
@@ -266,3 +262,4 @@ impl ::std::fmt::Debug for UserSettingsSummaryBuilder {
         formatter.finish()
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDisassociateScramSecretOutput {
+pub struct BatchDisassociateScramSecretOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
-impl BatchDisassociateScramSecretOutput {
+impl  BatchDisassociateScramSecretOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_scram_secrets.is_none()`.
-    pub fn unprocessed_scram_secrets(&self) -> &[crate::types::UnprocessedScramSecret] {
-        self.unprocessed_scram_secrets.as_deref().unwrap_or_default()
+    pub fn unprocessed_scram_secrets(&self) -> & [crate::types::UnprocessedScramSecret] {
+        self.unprocessed_scram_secrets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDisassociateScramSecretOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDisassociateScramSecretOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateScramSecretOutput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput).
     pub fn builder() -> crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretOutputBuilder {
@@ -38,7 +39,7 @@ impl BatchDisassociateScramSecretOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub(crate) unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateScramSecretOutputBuilder {
@@ -49,8 +50,7 @@ impl BatchDisassociateScramSecretOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl BatchDisassociateScramSecretOutputBuilder {
     /// <p>List of errors when disassociating secrets to cluster.</p>
     pub fn unprocessed_scram_secrets(mut self, input: crate::types::UnprocessedScramSecret) -> Self {
         let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_scram_secrets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_scram_secrets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn set_unprocessed_scram_secrets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>) -> Self {
-        self.unprocessed_scram_secrets = input;
-        self
+    pub fn set_unprocessed_scram_secrets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedScramSecret>>) -> Self {
+        self.unprocessed_scram_secrets = input; self
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn get_unprocessed_scram_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>> {
+    pub fn get_unprocessed_scram_secrets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedScramSecret>> {
         &self.unprocessed_scram_secrets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDisassociateScramSecretOutput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput).
     pub fn build(self) -> crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput {
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput {
-            cluster_arn: self.cluster_arn,
-            unprocessed_scram_secrets: self.unprocessed_scram_secrets,
+            cluster_arn: self.cluster_arn
+            ,
+            unprocessed_scram_secrets: self.unprocessed_scram_secrets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

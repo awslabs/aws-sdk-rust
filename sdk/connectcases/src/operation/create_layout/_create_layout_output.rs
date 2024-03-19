@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLayoutOutput {
+pub struct CreateLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
     pub layout_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub layout_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateLayoutOutput {
+impl  CreateLayoutOutput  {
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_id.deref()
+    pub fn layout_id(&self) -> & str {
+        use std::ops::Deref; self.layout_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
-    pub fn layout_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_arn.deref()
+    pub fn layout_arn(&self) -> & str {
+        use std::ops::Deref; self.layout_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLayoutOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLayoutOutput {
     /// Creates a new builder-style object to manufacture [`CreateLayoutOutput`](crate::operation::create_layout::CreateLayoutOutput).
     pub fn builder() -> crate::operation::create_layout::builders::CreateLayoutOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateLayoutOutputBuilder {
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_id = input;
-        self
+        self.layout_id = input; self
     }
     /// <p>The unique identifier of the layout.</p>
     pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,43 +62,41 @@ impl CreateLayoutOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn set_layout_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_arn = input;
-        self
+        self.layout_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.layout_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLayoutOutput`](crate::operation::create_layout::CreateLayoutOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`layout_id`](crate::operation::create_layout::builders::CreateLayoutOutputBuilder::layout_id)
     /// - [`layout_arn`](crate::operation::create_layout::builders::CreateLayoutOutputBuilder::layout_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutOutput {
-            layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_id",
-                    "layout_id was not specified but it is required when building CreateLayoutOutput",
-                )
-            })?,
-            layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_arn",
-                    "layout_arn was not specified but it is required when building CreateLayoutOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_layout::CreateLayoutOutput {
+                layout_id: self.layout_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_id", "layout_id was not specified but it is required when building CreateLayoutOutput")
+                    )?
+                ,
+                layout_arn: self.layout_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_arn", "layout_arn was not specified but it is required when building CreateLayoutOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

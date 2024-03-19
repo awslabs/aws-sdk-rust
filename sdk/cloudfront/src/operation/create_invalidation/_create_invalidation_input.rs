@@ -3,19 +3,19 @@
 /// <p>The request to create an invalidation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInvalidationInput {
+pub struct CreateInvalidationInput  {
     /// <p>The distribution's id.</p>
     pub distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The batch information for the invalidation.</p>
     pub invalidation_batch: ::std::option::Option<crate::types::InvalidationBatch>,
 }
-impl CreateInvalidationInput {
+impl  CreateInvalidationInput  {
     /// <p>The distribution's id.</p>
-    pub fn distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_id(&self) -> ::std::option::Option<& str> {
         self.distribution_id.as_deref()
     }
     /// <p>The batch information for the invalidation.</p>
-    pub fn invalidation_batch(&self) -> ::std::option::Option<&crate::types::InvalidationBatch> {
+    pub fn invalidation_batch(&self) -> ::std::option::Option<& crate::types::InvalidationBatch> {
         self.invalidation_batch.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateInvalidationInputBuilder {
     }
     /// <p>The distribution's id.</p>
     pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_id = input;
-        self
+        self.distribution_id = input; self
     }
     /// <p>The distribution's id.</p>
     pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl CreateInvalidationInputBuilder {
     }
     /// <p>The batch information for the invalidation.</p>
     pub fn set_invalidation_batch(mut self, input: ::std::option::Option<crate::types::InvalidationBatch>) -> Self {
-        self.invalidation_batch = input;
-        self
+        self.invalidation_batch = input; self
     }
     /// <p>The batch information for the invalidation.</p>
     pub fn get_invalidation_batch(&self) -> &::std::option::Option<crate::types::InvalidationBatch> {
         &self.invalidation_batch
     }
     /// Consumes the builder and constructs a [`CreateInvalidationInput`](crate::operation::create_invalidation::CreateInvalidationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_invalidation::CreateInvalidationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_invalidation::CreateInvalidationInput {
-            distribution_id: self.distribution_id,
-            invalidation_batch: self.invalidation_batch,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_invalidation::CreateInvalidationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_invalidation::CreateInvalidationInput {
+                distribution_id: self.distribution_id
+                ,
+                invalidation_batch: self.invalidation_batch
+                ,
+            }
+        )
     }
 }
+

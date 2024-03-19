@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTerminologiesInput {
+pub struct ListTerminologiesInput  {
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListTerminologiesInput {
+impl  ListTerminologiesInput  {
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of custom terminologies returned per list request.</p>
@@ -40,8 +40,7 @@ impl ListTerminologiesInputBuilder {
     }
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl ListTerminologiesInputBuilder {
     }
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTerminologiesInput`](crate::operation::list_terminologies::ListTerminologiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_terminologies::ListTerminologiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_terminologies::ListTerminologiesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_terminologies::ListTerminologiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_terminologies::ListTerminologiesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerParameterRange {
+pub struct IntegerParameterRange  {
     /// <p>The name of the hyperparameter to tune.</p>
     pub name: ::std::string::String,
     /// <p>The maximum tunable value of the hyperparameter.</p>
@@ -42,11 +42,10 @@ pub struct IntegerParameterRange {
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub scaling_type: ::std::option::Option<crate::types::ScalingType>,
 }
-impl IntegerParameterRange {
+impl  IntegerParameterRange  {
     /// <p>The name of the hyperparameter to tune.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
     pub fn max_value(&self) -> i32 {
@@ -86,7 +85,7 @@ impl IntegerParameterRange {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::ScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<& crate::types::ScalingType> {
         self.scaling_type.as_ref()
     }
 }
@@ -115,8 +114,7 @@ impl IntegerParameterRangeBuilder {
     }
     /// <p>The name of the hyperparameter to tune.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hyperparameter to tune.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +128,7 @@ impl IntegerParameterRangeBuilder {
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
     pub fn get_max_value(&self) -> &::std::option::Option<i32> {
@@ -145,8 +142,7 @@ impl IntegerParameterRangeBuilder {
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
     pub fn get_min_value(&self) -> &::std::option::Option<i32> {
@@ -217,8 +213,7 @@ impl IntegerParameterRangeBuilder {
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::ScalingType>) -> Self {
-        self.scaling_type = input;
-        self
+        self.scaling_type = input; self
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
@@ -259,26 +254,27 @@ impl IntegerParameterRangeBuilder {
     /// - [`max_value`](crate::types::builders::IntegerParameterRangeBuilder::max_value)
     /// - [`min_value`](crate::types::builders::IntegerParameterRangeBuilder::min_value)
     pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameterRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntegerParameterRange {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IntegerParameterRange",
-                )
-            })?,
-            max_value: self.max_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_value",
-                    "max_value was not specified but it is required when building IntegerParameterRange",
-                )
-            })?,
-            min_value: self.min_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_value",
-                    "min_value was not specified but it is required when building IntegerParameterRange",
-                )
-            })?,
-            scaling_type: self.scaling_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IntegerParameterRange {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IntegerParameterRange")
+                    )?
+                ,
+                max_value: self.max_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_value", "max_value was not specified but it is required when building IntegerParameterRange")
+                    )?
+                ,
+                min_value: self.min_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_value", "min_value was not specified but it is required when building IntegerParameterRange")
+                    )?
+                ,
+                scaling_type: self.scaling_type
+                ,
+            }
+        )
     }
 }
+

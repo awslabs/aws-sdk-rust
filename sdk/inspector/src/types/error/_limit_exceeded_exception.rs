@@ -3,7 +3,7 @@
 /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     /// <p>Details of the exception error.</p>
     pub message: ::std::string::String,
     /// <p>Code that indicates the type of error that is generated.</p>
@@ -12,9 +12,9 @@ pub struct LimitExceededException {
     pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl LimitExceededException {
+impl  LimitExceededException  {
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn error_code(&self) -> &crate::types::LimitExceededErrorCode {
+    pub fn error_code(&self) -> & crate::types::LimitExceededErrorCode {
         &self.error_code
     }
     /// <p>You can immediately retry your request.</p>
@@ -24,14 +24,12 @@ impl LimitExceededException {
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "LimitExceededException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -45,9 +43,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::LimitExceededEx
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::types::error::LimitExceededException).
@@ -74,8 +70,7 @@ impl LimitExceededExceptionBuilder {
     }
     /// <p>Details of the exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Details of the exception error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl LimitExceededExceptionBuilder {
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::LimitExceededErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::LimitExceededErrorCode> {
@@ -104,50 +98,49 @@ impl LimitExceededExceptionBuilder {
     }
     /// <p>You can immediately retry your request.</p>
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
         &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`LimitExceededException`](crate::types::error::LimitExceededException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::LimitExceededExceptionBuilder::message)
     /// - [`error_code`](crate::types::error::builders::LimitExceededExceptionBuilder::error_code)
     /// - [`can_retry`](crate::types::error::builders::LimitExceededExceptionBuilder::can_retry)
     pub fn build(self) -> ::std::result::Result<crate::types::error::LimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::LimitExceededException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building LimitExceededException",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building LimitExceededException",
-                )
-            })?,
-            can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "can_retry",
-                    "can_retry was not specified but it is required when building LimitExceededException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::LimitExceededException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building LimitExceededException")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building LimitExceededException")
+                    )?
+                ,
+                can_retry: self.can_retry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("can_retry", "can_retry was not specified but it is required when building LimitExceededException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

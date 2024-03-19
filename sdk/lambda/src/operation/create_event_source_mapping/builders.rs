@@ -5,23 +5,20 @@ pub use crate::operation::create_event_source_mapping::_create_event_source_mapp
 
 impl CreateEventSourceMappingInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_event_source_mapping();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_event_source_mapping();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateEventSourceMapping`.
-///
+/// 
 /// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and invokes the function.</p>
 /// <p>For details about how to configure different event sources, see the following topics.</p>
 /// <ul>
@@ -73,33 +70,32 @@ impl CreateEventSourceMappingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventSourceMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingInputBuilder,
+                    inner: crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
-    > for CreateEventSourceMappingFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
+                    crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
+                > for CreateEventSourceMappingFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
+                        crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateEventSourceMappingFluentBuilder {
     /// Creates a new `CreateEventSourceMapping`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -108,53 +104,44 @@ impl CreateEventSourceMappingFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_event_source_mapping::CreateEventSourceMapping::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_event_source_mapping::CreateEventSourceMapping::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_source_mapping::CreateEventSourceMappingError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_event_source_mapping::CreateEventSourceMapping::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_event_source_mapping::CreateEventSourceMapping::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput, crate::operation::create_event_source_mapping::CreateEventSourceMappingError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
     /// <li>
@@ -496,12 +483,12 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_topics(input);
         self
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_topics()
     }
     /// Appends an item to `Queues`.
@@ -514,12 +501,12 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_queues(input);
         self
     }
     /// <p>(MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_queues()
     }
     /// Appends an item to `SourceAccessConfigurations`.
@@ -532,15 +519,12 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn set_source_access_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>>,
-    ) -> Self {
+    pub fn set_source_access_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceAccessConfiguration>>) -> Self {
         self.inner = self.inner.set_source_access_configurations(input);
         self
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn get_source_access_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>> {
+    pub fn get_source_access_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceAccessConfiguration>> {
         self.inner.get_source_access_configurations()
     }
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
@@ -567,12 +551,12 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn set_function_response_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>) -> Self {
+    pub fn set_function_response_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionResponseType>>) -> Self {
         self.inner = self.inner.set_function_response_types(input);
         self
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn get_function_response_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>> {
+    pub fn get_function_response_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FunctionResponseType>> {
         self.inner.get_function_response_types()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
@@ -581,10 +565,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn set_amazon_managed_kafka_event_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
-    ) -> Self {
+    pub fn set_amazon_managed_kafka_event_source_config(mut self, input: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>) -> Self {
         self.inner = self.inner.set_amazon_managed_kafka_event_source_config(input);
         self
     }
@@ -598,10 +579,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn set_self_managed_kafka_event_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
-    ) -> Self {
+    pub fn set_self_managed_kafka_event_source_config(mut self, input: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>) -> Self {
         self.inner = self.inner.set_self_managed_kafka_event_source_config(input);
         self
     }
@@ -638,3 +616,4 @@ impl CreateEventSourceMappingFluentBuilder {
         self.inner.get_document_db_event_source_config()
     }
 }
+

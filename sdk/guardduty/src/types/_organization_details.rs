@@ -3,19 +3,19 @@
 /// <p>Information about GuardDuty coverage statistics for members in your Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationDetails {
+pub struct OrganizationDetails  {
     /// <p>The timestamp at which the organization statistics was last updated. This is in UTC format.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the GuardDuty coverage statistics for members in your Amazon Web Services organization.</p>
     pub organization_statistics: ::std::option::Option<crate::types::OrganizationStatistics>,
 }
-impl OrganizationDetails {
+impl  OrganizationDetails  {
     /// <p>The timestamp at which the organization statistics was last updated. This is in UTC format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Information about the GuardDuty coverage statistics for members in your Amazon Web Services organization.</p>
-    pub fn organization_statistics(&self) -> ::std::option::Option<&crate::types::OrganizationStatistics> {
+    pub fn organization_statistics(&self) -> ::std::option::Option<& crate::types::OrganizationStatistics> {
         self.organization_statistics.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OrganizationDetailsBuilder {
     }
     /// <p>The timestamp at which the organization statistics was last updated. This is in UTC format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp at which the organization statistics was last updated. This is in UTC format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl OrganizationDetailsBuilder {
     }
     /// <p>Information about the GuardDuty coverage statistics for members in your Amazon Web Services organization.</p>
     pub fn set_organization_statistics(mut self, input: ::std::option::Option<crate::types::OrganizationStatistics>) -> Self {
-        self.organization_statistics = input;
-        self
+        self.organization_statistics = input; self
     }
     /// <p>Information about the GuardDuty coverage statistics for members in your Amazon Web Services organization.</p>
     pub fn get_organization_statistics(&self) -> &::std::option::Option<crate::types::OrganizationStatistics> {
@@ -65,8 +63,11 @@ impl OrganizationDetailsBuilder {
     /// Consumes the builder and constructs a [`OrganizationDetails`](crate::types::OrganizationDetails).
     pub fn build(self) -> crate::types::OrganizationDetails {
         crate::types::OrganizationDetails {
-            updated_at: self.updated_at,
-            organization_statistics: self.organization_statistics,
+            updated_at: self.updated_at
+            ,
+            organization_statistics: self.organization_statistics
+            ,
         }
     }
 }
+

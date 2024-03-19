@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceScanRelatedResources`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_scan_id(impl Into<String>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::resource_scan_id) / [`set_resource_scan_id(Option<String>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::set_resource_scan_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource scan.</p><br>
     ///   - [`resources(ScannedResourceIdentifier)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::resources) / [`set_resources(Option<Vec::<ScannedResourceIdentifier>>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::set_resources):<br>required: **true**<br><p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of resource scan results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p><br>
-    /// - On success, responds with [`ListResourceScanRelatedResourcesOutput`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListResourceScanRelatedResourcesOutput`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput) with field(s):
     ///   - [`related_resources(Option<Vec::<ScannedResource>>)`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput::related_resources): <p>List of up to <code>MaxResults</code> resources in the specified resource scan related to the specified resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScanRelatedResources</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
-    /// - On failure, responds with [`SdkError<ListResourceScanRelatedResourcesError>`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError)
-    pub fn list_resource_scan_related_resources(
-        &self,
-    ) -> crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder {
-        crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListResourceScanRelatedResourcesError>`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError)
+    pub fn list_resource_scan_related_resources(&self) -> crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder {
+                                crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides summary information about a slot type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotTypeSummary {
+pub struct SlotTypeSummary  {
     /// <p>The unique identifier assigned to the slot type.</p>
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the slot type.</p>
@@ -25,25 +25,25 @@ pub struct SlotTypeSummary {
     /// </ul>
     pub slot_type_category: ::std::option::Option<crate::types::SlotTypeCategory>,
 }
-impl SlotTypeSummary {
+impl  SlotTypeSummary  {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> ::std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The name of the slot type.</p>
-    pub fn slot_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> ::std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The description of the slot type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> ::std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> ::std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Indicates the type of the slot type.</p>
@@ -55,7 +55,7 @@ impl SlotTypeSummary {
     /// <li>
     /// <p><code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p></li>
     /// </ul>
-    pub fn slot_type_category(&self) -> ::std::option::Option<&crate::types::SlotTypeCategory> {
+    pub fn slot_type_category(&self) -> ::std::option::Option<& crate::types::SlotTypeCategory> {
         self.slot_type_category.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl SlotTypeSummaryBuilder {
     }
     /// <p>The unique identifier assigned to the slot type.</p>
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>The unique identifier assigned to the slot type.</p>
     pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl SlotTypeSummaryBuilder {
     }
     /// <p>The name of the slot type.</p>
     pub fn set_slot_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_type_name = input;
-        self
+        self.slot_type_name = input; self
     }
     /// <p>The name of the slot type.</p>
     pub fn get_slot_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl SlotTypeSummaryBuilder {
     }
     /// <p>The description of the slot type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the slot type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl SlotTypeSummaryBuilder {
     }
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
     pub fn set_parent_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_slot_type_signature = input;
-        self
+        self.parent_slot_type_signature = input; self
     }
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
     pub fn get_parent_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +137,7 @@ impl SlotTypeSummaryBuilder {
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +166,7 @@ impl SlotTypeSummaryBuilder {
     /// <p><code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p></li>
     /// </ul>
     pub fn set_slot_type_category(mut self, input: ::std::option::Option<crate::types::SlotTypeCategory>) -> Self {
-        self.slot_type_category = input;
-        self
+        self.slot_type_category = input; self
     }
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
@@ -189,12 +183,19 @@ impl SlotTypeSummaryBuilder {
     /// Consumes the builder and constructs a [`SlotTypeSummary`](crate::types::SlotTypeSummary).
     pub fn build(self) -> crate::types::SlotTypeSummary {
         crate::types::SlotTypeSummary {
-            slot_type_id: self.slot_type_id,
-            slot_type_name: self.slot_type_name,
-            description: self.description,
-            parent_slot_type_signature: self.parent_slot_type_signature,
-            last_updated_date_time: self.last_updated_date_time,
-            slot_type_category: self.slot_type_category,
+            slot_type_id: self.slot_type_id
+            ,
+            slot_type_name: self.slot_type_name
+            ,
+            description: self.description
+            ,
+            parent_slot_type_signature: self.parent_slot_type_signature
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            slot_type_category: self.slot_type_category
+            ,
         }
     }
 }
+

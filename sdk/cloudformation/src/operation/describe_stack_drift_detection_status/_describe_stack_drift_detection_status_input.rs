@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackDriftDetectionStatusInput {
+pub struct DescribeStackDriftDetectionStatusInput  {
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
     pub stack_drift_detection_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStackDriftDetectionStatusInput {
+impl  DescribeStackDriftDetectionStatusInput  {
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_drift_detection_id(&self) -> ::std::option::Option<& str> {
         self.stack_drift_detection_id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DescribeStackDriftDetectionStatusInputBuilder {
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
     pub fn set_stack_drift_detection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_drift_detection_id = input;
-        self
+        self.stack_drift_detection_id = input; self
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
@@ -47,16 +46,13 @@ impl DescribeStackDriftDetectionStatusInputBuilder {
         &self.stack_drift_detection_id
     }
     /// Consumes the builder and constructs a [`DescribeStackDriftDetectionStatusInput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusInput {
-                stack_drift_detection_id: self.stack_drift_detection_id,
-            },
+                stack_drift_detection_id: self.stack_drift_detection_id
+                ,
+            }
         )
     }
 }
+

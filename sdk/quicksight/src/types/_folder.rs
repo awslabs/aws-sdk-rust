@@ -3,7 +3,7 @@
 /// <p>A folder in Amazon QuickSight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Folder {
+pub struct Folder  {
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
@@ -13,7 +13,7 @@ pub struct Folder {
     /// <p>The type of folder it is.</p>
     pub folder_type: ::std::option::Option<crate::types::FolderType>,
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub folder_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub folder_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time that the folder was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
@@ -21,39 +21,40 @@ pub struct Folder {
     /// <p>The sharing scope of the folder.</p>
     pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
-impl Folder {
+impl  Folder  {
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A display name for the folder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of folder it is.</p>
-    pub fn folder_type(&self) -> ::std::option::Option<&crate::types::FolderType> {
+    pub fn folder_type(&self) -> ::std::option::Option<& crate::types::FolderType> {
         self.folder_type.as_ref()
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_path.is_none()`.
-    pub fn folder_path(&self) -> &[::std::string::String] {
-        self.folder_path.as_deref().unwrap_or_default()
+    pub fn folder_path(&self) -> & [::std::string::String] {
+        self.folder_path.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time that the folder was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The sharing scope of the folder.</p>
-    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+    pub fn sharing_model(&self) -> ::std::option::Option<& crate::types::SharingModel> {
         self.sharing_model.as_ref()
     }
 }
@@ -72,7 +73,7 @@ pub struct FolderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) folder_type: ::std::option::Option<crate::types::FolderType>,
-    pub(crate) folder_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) folder_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sharing_model: ::std::option::Option<crate::types::SharingModel>,
@@ -85,8 +86,7 @@ impl FolderBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl FolderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl FolderBuilder {
     }
     /// <p>A display name for the folder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the folder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl FolderBuilder {
     }
     /// <p>The type of folder it is.</p>
     pub fn set_folder_type(mut self, input: ::std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input;
-        self
+        self.folder_type = input; self
     }
     /// <p>The type of folder it is.</p>
     pub fn get_folder_type(&self) -> &::std::option::Option<crate::types::FolderType> {
@@ -141,17 +138,16 @@ impl FolderBuilder {
     /// <p>An array of ancestor ARN strings for the folder.</p>
     pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_path.unwrap_or_default();
-        v.push(input.into());
-        self.folder_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.folder_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn set_folder_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.folder_path = input;
-        self
+    pub fn set_folder_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.folder_path = input; self
     }
     /// <p>An array of ancestor ARN strings for the folder.</p>
-    pub fn get_folder_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_folder_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.folder_path
     }
     /// <p>The time that the folder was created.</p>
@@ -161,8 +157,7 @@ impl FolderBuilder {
     }
     /// <p>The time that the folder was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the folder was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +170,7 @@ impl FolderBuilder {
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -189,8 +183,7 @@ impl FolderBuilder {
     }
     /// <p>The sharing scope of the folder.</p>
     pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
-        self.sharing_model = input;
-        self
+        self.sharing_model = input; self
     }
     /// <p>The sharing scope of the folder.</p>
     pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
@@ -199,14 +192,23 @@ impl FolderBuilder {
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {
         crate::types::Folder {
-            folder_id: self.folder_id,
-            arn: self.arn,
-            name: self.name,
-            folder_type: self.folder_type,
-            folder_path: self.folder_path,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            sharing_model: self.sharing_model,
+            folder_id: self.folder_id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            folder_type: self.folder_type
+            ,
+            folder_path: self.folder_path
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            sharing_model: self.sharing_model
+            ,
         }
     }
 }
+

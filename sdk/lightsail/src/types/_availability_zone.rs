@@ -3,19 +3,19 @@
 /// <p>Describes an Availability Zone. This is returned only as part of a <code>GetRegions</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Availability Zone.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl AvailabilityZone {
+impl  AvailabilityZone  {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn zone_name(&self) -> ::std::option::Option<&str> {
+    pub fn zone_name(&self) -> ::std::option::Option<& str> {
         self.zone_name.as_deref()
     }
     /// <p>The state of the Availability Zone.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     pub fn set_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zone_name = input;
-        self
+        self.zone_name = input; self
     }
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     pub fn get_zone_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The state of the Availability Zone.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the Availability Zone.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AvailabilityZoneBuilder {
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            zone_name: self.zone_name,
-            state: self.state,
+            zone_name: self.zone_name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

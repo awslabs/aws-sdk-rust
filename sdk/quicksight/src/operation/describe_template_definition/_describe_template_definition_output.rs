@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTemplateDefinitionOutput {
+pub struct DescribeTemplateDefinitionOutput  {
     /// <p>The descriptive name of the template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template described.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>Errors associated with the template version.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>,
     /// <p>Status associated with the template.</p>
     /// <ul>
     /// <li>
@@ -38,20 +38,21 @@ pub struct DescribeTemplateDefinitionOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTemplateDefinitionOutput {
+impl  DescribeTemplateDefinitionOutput  {
     /// <p>The descriptive name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the template described.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>Errors associated with the template version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::TemplateError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::TemplateError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
@@ -70,16 +71,16 @@ impl DescribeTemplateDefinitionOutput {
     /// <li>
     /// <p><code>DELETED</code></p></li>
     /// </ul>
-    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The ARN of the theme of the template.</p>
-    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateVersionDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::TemplateVersionDefinition> {
         self.definition.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -87,15 +88,15 @@ impl DescribeTemplateDefinitionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTemplateDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTemplateDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
     pub fn builder() -> crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder {
@@ -109,7 +110,7 @@ impl DescribeTemplateDefinitionOutput {
 pub struct DescribeTemplateDefinitionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>,
     pub(crate) resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
@@ -125,8 +126,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The descriptive name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +139,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The ID of the template described.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The ID of the template described.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,17 +152,16 @@ impl DescribeTemplateDefinitionOutputBuilder {
     /// <p>Errors associated with the template version.</p>
     pub fn errors(mut self, input: crate::types::TemplateError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Errors associated with the template version.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Errors associated with the template version.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateError>> {
         &self.errors
     }
     /// <p>Status associated with the template.</p>
@@ -205,8 +203,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     /// <p><code>DELETED</code></p></li>
     /// </ul>
     pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.resource_status = input;
-        self
+        self.resource_status = input; self
     }
     /// <p>Status associated with the template.</p>
     /// <ul>
@@ -235,8 +232,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The ARN of the theme of the template.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
     /// <p>The ARN of the theme of the template.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +247,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateVersionDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The definition of the template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -266,8 +261,7 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -280,34 +274,43 @@ impl DescribeTemplateDefinitionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
     pub fn build(self) -> crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput {
         crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput {
-            name: self.name,
-            template_id: self.template_id,
-            errors: self.errors,
-            resource_status: self.resource_status,
-            theme_arn: self.theme_arn,
-            definition: self.definition,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            name: self.name
+            ,
+            template_id: self.template_id
+            ,
+            errors: self.errors
+            ,
+            resource_status: self.resource_status
+            ,
+            theme_arn: self.theme_arn
+            ,
+            definition: self.definition
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

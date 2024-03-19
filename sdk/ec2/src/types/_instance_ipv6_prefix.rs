@@ -3,13 +3,13 @@
 /// <p>Information about an IPv6 prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceIpv6Prefix {
+pub struct InstanceIpv6Prefix  {
     /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
     pub ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
-impl InstanceIpv6Prefix {
+impl  InstanceIpv6Prefix  {
     /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
-    pub fn ipv6_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_prefix(&self) -> ::std::option::Option<& str> {
         self.ipv6_prefix.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceIpv6PrefixBuilder {
     }
     /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
     pub fn set_ipv6_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_prefix = input;
-        self
+        self.ipv6_prefix = input; self
     }
     /// <p>One or more IPv6 prefixes assigned to the network interface.</p>
     pub fn get_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InstanceIpv6PrefixBuilder {
     /// Consumes the builder and constructs a [`InstanceIpv6Prefix`](crate::types::InstanceIpv6Prefix).
     pub fn build(self) -> crate::types::InstanceIpv6Prefix {
         crate::types::InstanceIpv6Prefix {
-            ipv6_prefix: self.ipv6_prefix,
+            ipv6_prefix: self.ipv6_prefix
+            ,
         }
     }
 }
+

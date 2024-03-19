@@ -3,19 +3,19 @@
 /// <p>Defines that on graceful expiration of the agreement (when the agreement ends on its pre-defined end date), a new agreement will be created using the accepted terms on the existing agreement. In other words, the agreement will be renewed. The presence of <code>RenewalTerm</code> in the offer document means that auto-renewal is allowed. Buyers will have the option to accept or decline auto-renewal at the offer acceptance/agreement creation. Buyers can also change this flag from <code>True</code> to <code>False</code> or <code>False</code> to <code>True</code> at anytime during the agreement's lifecycle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewalTerm {
+pub struct RenewalTerm  {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,
 }
-impl RenewalTerm {
+impl  RenewalTerm  {
     /// <p>Category of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RenewalTermConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RenewalTermConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RenewalTermBuilder {
     }
     /// <p>Category of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RenewalTermBuilder {
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RenewalTermConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RenewalTermConfiguration> {
@@ -65,8 +63,11 @@ impl RenewalTermBuilder {
     /// Consumes the builder and constructs a [`RenewalTerm`](crate::types::RenewalTerm).
     pub fn build(self) -> crate::types::RenewalTerm {
         crate::types::RenewalTerm {
-            r#type: self.r#type,
-            configuration: self.configuration,
+            r#type: self.r#type
+            ,
+            configuration: self.configuration
+            ,
         }
     }
 }
+

@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketInfo {
+pub struct BucketInfo  {
     /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
     pub data_redundancy: ::std::option::Option<crate::types::DataRedundancy>,
     /// <p>The type of bucket.</p>
     pub r#type: ::std::option::Option<crate::types::BucketType>,
 }
-impl BucketInfo {
+impl  BucketInfo  {
     /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
-    pub fn data_redundancy(&self) -> ::std::option::Option<&crate::types::DataRedundancy> {
+    pub fn data_redundancy(&self) -> ::std::option::Option<& crate::types::DataRedundancy> {
         self.data_redundancy.as_ref()
     }
     /// <p>The type of bucket.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BucketType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::BucketType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl BucketInfoBuilder {
     }
     /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
     pub fn set_data_redundancy(mut self, input: ::std::option::Option<crate::types::DataRedundancy>) -> Self {
-        self.data_redundancy = input;
-        self
+        self.data_redundancy = input; self
     }
     /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
     pub fn get_data_redundancy(&self) -> &::std::option::Option<crate::types::DataRedundancy> {
@@ -57,8 +56,7 @@ impl BucketInfoBuilder {
     }
     /// <p>The type of bucket.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BucketType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of bucket.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BucketType> {
@@ -67,8 +65,11 @@ impl BucketInfoBuilder {
     /// Consumes the builder and constructs a [`BucketInfo`](crate::types::BucketInfo).
     pub fn build(self) -> crate::types::BucketInfo {
         crate::types::BucketInfo {
-            data_redundancy: self.data_redundancy,
-            r#type: self.r#type,
+            data_redundancy: self.data_redundancy
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

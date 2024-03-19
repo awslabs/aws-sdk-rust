@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationSubnetGroupsOutput {
+pub struct DescribeReplicationSubnetGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
-    pub replication_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+    pub replication_subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationSubnetGroupsOutput {
+impl  DescribeReplicationSubnetGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication subnet groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_subnet_groups.is_none()`.
-    pub fn replication_subnet_groups(&self) -> &[crate::types::ReplicationSubnetGroup] {
-        self.replication_subnet_groups.as_deref().unwrap_or_default()
+    pub fn replication_subnet_groups(&self) -> & [crate::types::ReplicationSubnetGroup] {
+        self.replication_subnet_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationSubnetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
     pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReplicationSubnetGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+    pub(crate) replication_subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationSubnetGroupsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReplicationSubnetGroupsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeReplicationSubnetGroupsOutputBuilder {
     /// <p>A description of the replication subnet groups.</p>
     pub fn replication_subnet_groups(mut self, input: crate::types::ReplicationSubnetGroup) -> Self {
         let mut v = self.replication_subnet_groups.unwrap_or_default();
-        v.push(input);
-        self.replication_subnet_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_subnet_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn set_replication_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>) -> Self {
-        self.replication_subnet_groups = input;
-        self
+    pub fn set_replication_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationSubnetGroup>>) -> Self {
+        self.replication_subnet_groups = input; self
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn get_replication_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>> {
+    pub fn get_replication_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationSubnetGroup>> {
         &self.replication_subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
     pub fn build(self) -> crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput {
         crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput {
-            marker: self.marker,
-            replication_subnet_groups: self.replication_subnet_groups,
+            marker: self.marker
+            ,
+            replication_subnet_groups: self.replication_subnet_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

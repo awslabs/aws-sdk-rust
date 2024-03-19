@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVpceConfigurationsOutput {
+pub struct ListVpceConfigurationsOutput  {
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    pub vpce_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
+    pub vpce_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::VpceConfiguration>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListVpceConfigurationsOutput {
+impl  ListVpceConfigurationsOutput  {
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configurations.is_none()`.
-    pub fn vpce_configurations(&self) -> &[crate::types::VpceConfiguration] {
-        self.vpce_configurations.as_deref().unwrap_or_default()
+    pub fn vpce_configurations(&self) -> & [crate::types::VpceConfiguration] {
+        self.vpce_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVpceConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVpceConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpceConfigurationsOutput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput).
     pub fn builder() -> crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListVpceConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpceConfigurationsOutputBuilder {
-    pub(crate) vpce_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
+    pub(crate) vpce_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::VpceConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListVpceConfigurationsOutputBuilder {
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
     pub fn vpce_configurations(mut self, input: crate::types::VpceConfiguration) -> Self {
         let mut v = self.vpce_configurations.unwrap_or_default();
-        v.push(input);
-        self.vpce_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpce_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>) -> Self {
-        self.vpce_configurations = input;
-        self
+    pub fn set_vpce_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpceConfiguration>>) -> Self {
+        self.vpce_configurations = input; self
     }
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>> {
+    pub fn get_vpce_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpceConfiguration>> {
         &self.vpce_configurations
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListVpceConfigurationsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVpceConfigurationsOutput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput {
         crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput {
-            vpce_configurations: self.vpce_configurations,
-            next_token: self.next_token,
+            vpce_configurations: self.vpce_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

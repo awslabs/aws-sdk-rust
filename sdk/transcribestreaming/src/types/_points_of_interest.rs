@@ -3,16 +3,17 @@
 /// <p>Contains the timestamps of matched categories.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PointsOfInterest {
+pub struct PointsOfInterest  {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    pub timestamp_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>>,
+    pub timestamp_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::TimestampRange>>,
 }
-impl PointsOfInterest {
+impl  PointsOfInterest  {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamp_ranges.is_none()`.
-    pub fn timestamp_ranges(&self) -> &[crate::types::TimestampRange] {
-        self.timestamp_ranges.as_deref().unwrap_or_default()
+    pub fn timestamp_ranges(&self) -> & [crate::types::TimestampRange] {
+        self.timestamp_ranges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PointsOfInterest {
@@ -26,7 +27,7 @@ impl PointsOfInterest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointsOfInterestBuilder {
-    pub(crate) timestamp_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>>,
+    pub(crate) timestamp_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::TimestampRange>>,
 }
 impl PointsOfInterestBuilder {
     /// Appends an item to `timestamp_ranges`.
@@ -36,23 +37,24 @@ impl PointsOfInterestBuilder {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
     pub fn timestamp_ranges(mut self, input: crate::types::TimestampRange) -> Self {
         let mut v = self.timestamp_ranges.unwrap_or_default();
-        v.push(input);
-        self.timestamp_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamp_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    pub fn set_timestamp_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>>) -> Self {
-        self.timestamp_ranges = input;
-        self
+    pub fn set_timestamp_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimestampRange>>) -> Self {
+        self.timestamp_ranges = input; self
     }
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    pub fn get_timestamp_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>> {
+    pub fn get_timestamp_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimestampRange>> {
         &self.timestamp_ranges
     }
     /// Consumes the builder and constructs a [`PointsOfInterest`](crate::types::PointsOfInterest).
     pub fn build(self) -> crate::types::PointsOfInterest {
         crate::types::PointsOfInterest {
-            timestamp_ranges: self.timestamp_ranges,
+            timestamp_ranges: self.timestamp_ranges
+            ,
         }
     }
 }
+

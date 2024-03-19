@@ -3,15 +3,14 @@
 /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobExecutionsRetryConfig {
+pub struct JobExecutionsRetryConfig  {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub criteria_list: ::std::vec::Vec<crate::types::RetryCriteria>,
+    pub criteria_list: ::std::vec::Vec::<crate::types::RetryCriteria>,
 }
-impl JobExecutionsRetryConfig {
+impl  JobExecutionsRetryConfig  {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub fn criteria_list(&self) -> &[crate::types::RetryCriteria] {
-        use std::ops::Deref;
-        self.criteria_list.deref()
+    pub fn criteria_list(&self) -> & [crate::types::RetryCriteria] {
+        use std::ops::Deref; self.criteria_list.deref()
     }
 }
 impl JobExecutionsRetryConfig {
@@ -25,7 +24,7 @@ impl JobExecutionsRetryConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionsRetryConfigBuilder {
-    pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
+    pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec::<crate::types::RetryCriteria>>,
 }
 impl JobExecutionsRetryConfigBuilder {
     /// Appends an item to `criteria_list`.
@@ -35,30 +34,31 @@ impl JobExecutionsRetryConfigBuilder {
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
     pub fn criteria_list(mut self, input: crate::types::RetryCriteria) -> Self {
         let mut v = self.criteria_list.unwrap_or_default();
-        v.push(input);
-        self.criteria_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.criteria_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub fn set_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>) -> Self {
-        self.criteria_list = input;
-        self
+    pub fn set_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RetryCriteria>>) -> Self {
+        self.criteria_list = input; self
     }
     /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
-    pub fn get_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>> {
+    pub fn get_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RetryCriteria>> {
         &self.criteria_list
     }
     /// Consumes the builder and constructs a [`JobExecutionsRetryConfig`](crate::types::JobExecutionsRetryConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`criteria_list`](crate::types::builders::JobExecutionsRetryConfigBuilder::criteria_list)
     pub fn build(self) -> ::std::result::Result<crate::types::JobExecutionsRetryConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobExecutionsRetryConfig {
-            criteria_list: self.criteria_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "criteria_list",
-                    "criteria_list was not specified but it is required when building JobExecutionsRetryConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobExecutionsRetryConfig {
+                criteria_list: self.criteria_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("criteria_list", "criteria_list was not specified but it is required when building JobExecutionsRetryConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAppVersionAppComponentInput {
+pub struct UpdateAppVersionAppComponentInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the Application Component.</p>
@@ -12,29 +12,27 @@ pub struct UpdateAppVersionAppComponentInput {
     /// <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl UpdateAppVersionAppComponentInput {
+impl  UpdateAppVersionAppComponentInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Identifier of the Application Component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Name of the Application Component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.additional_info.as_ref()
     }
 }
@@ -53,7 +51,7 @@ pub struct UpdateAppVersionAppComponentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl UpdateAppVersionAppComponentInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -64,8 +62,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
     }
     /// <p>Identifier of the Application Component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Identifier of the Application Component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
     }
     /// <p>Name of the Application Component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the Application Component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +102,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
     }
     /// <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,39 +113,36 @@ impl UpdateAppVersionAppComponentInputBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`UpdateAppVersionAppComponentInput`](crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput {
-            app_arn: self.app_arn,
-            id: self.id,
-            name: self.name,
-            r#type: self.r#type,
-            additional_info: self.additional_info,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput {
+                app_arn: self.app_arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                additional_info: self.additional_info
+                ,
+            }
+        )
     }
 }
+

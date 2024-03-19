@@ -3,19 +3,19 @@
 /// <p>Information about an option group membership for a DB cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbClusterOptionGroupMembership {
+pub struct AwsRdsDbClusterOptionGroupMembership  {
     /// <p>The name of the DB cluster option group.</p>
     pub db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DB cluster option group.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbClusterOptionGroupMembership {
+impl  AwsRdsDbClusterOptionGroupMembership  {
     /// <p>The name of the DB cluster option group.</p>
-    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_option_group_name.as_deref()
     }
     /// <p>The status of the DB cluster option group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRdsDbClusterOptionGroupMembershipBuilder {
     }
     /// <p>The name of the DB cluster option group.</p>
     pub fn set_db_cluster_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_option_group_name = input;
-        self
+        self.db_cluster_option_group_name = input; self
     }
     /// <p>The name of the DB cluster option group.</p>
     pub fn get_db_cluster_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRdsDbClusterOptionGroupMembershipBuilder {
     }
     /// <p>The status of the DB cluster option group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the DB cluster option group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRdsDbClusterOptionGroupMembershipBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbClusterOptionGroupMembership`](crate::types::AwsRdsDbClusterOptionGroupMembership).
     pub fn build(self) -> crate::types::AwsRdsDbClusterOptionGroupMembership {
         crate::types::AwsRdsDbClusterOptionGroupMembership {
-            db_cluster_option_group_name: self.db_cluster_option_group_name,
-            status: self.status,
+            db_cluster_option_group_name: self.db_cluster_option_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

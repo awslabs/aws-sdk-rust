@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The source repository provider.</p>
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateConnectionInput {
+impl  CreateConnectionInput  {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The source repository provider.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateConnectionInput {
@@ -39,7 +40,7 @@ impl CreateConnectionInput {
 pub struct CreateConnectionInputBuilder {
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateConnectionInputBuilder {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -50,8 +51,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The source repository provider.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The source repository provider.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -79,27 +78,30 @@ impl CreateConnectionInputBuilder {
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
-            connection_name: self.connection_name,
-            provider_type: self.provider_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                connection_name: self.connection_name
+                ,
+                provider_type: self.provider_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

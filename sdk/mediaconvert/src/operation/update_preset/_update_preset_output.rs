@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePresetOutput {
+pub struct UpdatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,
 }
-impl UpdatePresetOutput {
+impl  UpdatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
-    pub fn preset(&self) -> ::std::option::Option<&crate::types::Preset> {
+    pub fn preset(&self) -> ::std::option::Option<& crate::types::Preset> {
         self.preset.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePresetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePresetOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePresetOutput`](crate::operation::update_preset::UpdatePresetOutput).
     pub fn builder() -> crate::operation::update_preset::builders::UpdatePresetOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdatePresetOutputBuilder {
     }
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub fn set_preset(mut self, input: ::std::option::Option<crate::types::Preset>) -> Self {
-        self.preset = input;
-        self
+        self.preset = input; self
     }
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub fn get_preset(&self) -> &::std::option::Option<crate::types::Preset> {
         &self.preset
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePresetOutput`](crate::operation::update_preset::UpdatePresetOutput).
     pub fn build(self) -> crate::operation::update_preset::UpdatePresetOutput {
         crate::operation::update_preset::UpdatePresetOutput {
-            preset: self.preset,
+            preset: self.preset
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

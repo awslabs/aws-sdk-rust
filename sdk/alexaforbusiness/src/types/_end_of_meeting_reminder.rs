@@ -3,23 +3,24 @@
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndOfMeetingReminder {
+pub struct EndOfMeetingReminder  {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub reminder_at_minutes: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl EndOfMeetingReminder {
+impl  EndOfMeetingReminder  {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reminder_at_minutes.is_none()`.
-    pub fn reminder_at_minutes(&self) -> &[i32] {
-        self.reminder_at_minutes.as_deref().unwrap_or_default()
+    pub fn reminder_at_minutes(&self) -> & [i32] {
+        self.reminder_at_minutes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
-    pub fn reminder_type(&self) -> ::std::option::Option<&crate::types::EndOfMeetingReminderType> {
+    pub fn reminder_type(&self) -> ::std::option::Option<& crate::types::EndOfMeetingReminderType> {
         self.reminder_type.as_ref()
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
@@ -38,7 +39,7 @@ impl EndOfMeetingReminder {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndOfMeetingReminderBuilder {
-    pub(crate) reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) reminder_at_minutes: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -50,17 +51,16 @@ impl EndOfMeetingReminderBuilder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn reminder_at_minutes(mut self, input: i32) -> Self {
         let mut v = self.reminder_at_minutes.unwrap_or_default();
-        v.push(input);
-        self.reminder_at_minutes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reminder_at_minutes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.reminder_at_minutes = input;
-        self
+    pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.reminder_at_minutes = input; self
     }
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.reminder_at_minutes
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
@@ -70,8 +70,7 @@ impl EndOfMeetingReminderBuilder {
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn set_reminder_type(mut self, input: ::std::option::Option<crate::types::EndOfMeetingReminderType>) -> Self {
-        self.reminder_type = input;
-        self
+        self.reminder_type = input; self
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn get_reminder_type(&self) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
@@ -84,8 +83,7 @@ impl EndOfMeetingReminderBuilder {
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -94,9 +92,13 @@ impl EndOfMeetingReminderBuilder {
     /// Consumes the builder and constructs a [`EndOfMeetingReminder`](crate::types::EndOfMeetingReminder).
     pub fn build(self) -> crate::types::EndOfMeetingReminder {
         crate::types::EndOfMeetingReminder {
-            reminder_at_minutes: self.reminder_at_minutes,
-            reminder_type: self.reminder_type,
-            enabled: self.enabled,
+            reminder_at_minutes: self.reminder_at_minutes
+            ,
+            reminder_type: self.reminder_type
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

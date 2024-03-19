@@ -3,13 +3,13 @@
 /// <p>General flags for v2 template schema that defines if the template is for a machine or a user and if the template can be issued using autoenrollment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneralFlagsV2 {
+pub struct GeneralFlagsV2  {
     /// <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow autoenrollment.</p>
     pub auto_enrollment: ::std::option::Option<bool>,
     /// <p>Defines if the template is for machines or users. Set to TRUE if the template is for machines. Set to FALSE if the template is for users.</p>
     pub machine_type: ::std::option::Option<bool>,
 }
-impl GeneralFlagsV2 {
+impl  GeneralFlagsV2  {
     /// <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow autoenrollment.</p>
     pub fn auto_enrollment(&self) -> ::std::option::Option<bool> {
         self.auto_enrollment
@@ -41,8 +41,7 @@ impl GeneralFlagsV2Builder {
     }
     /// <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow autoenrollment.</p>
     pub fn set_auto_enrollment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enrollment = input;
-        self
+        self.auto_enrollment = input; self
     }
     /// <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow autoenrollment.</p>
     pub fn get_auto_enrollment(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl GeneralFlagsV2Builder {
     }
     /// <p>Defines if the template is for machines or users. Set to TRUE if the template is for machines. Set to FALSE if the template is for users.</p>
     pub fn set_machine_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.machine_type = input;
-        self
+        self.machine_type = input; self
     }
     /// <p>Defines if the template is for machines or users. Set to TRUE if the template is for machines. Set to FALSE if the template is for users.</p>
     pub fn get_machine_type(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl GeneralFlagsV2Builder {
     /// Consumes the builder and constructs a [`GeneralFlagsV2`](crate::types::GeneralFlagsV2).
     pub fn build(self) -> crate::types::GeneralFlagsV2 {
         crate::types::GeneralFlagsV2 {
-            auto_enrollment: self.auto_enrollment,
-            machine_type: self.machine_type,
+            auto_enrollment: self.auto_enrollment
+            ,
+            machine_type: self.machine_type
+            ,
         }
     }
 }
+

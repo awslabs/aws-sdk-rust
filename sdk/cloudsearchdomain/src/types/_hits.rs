@@ -3,7 +3,7 @@
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Hits {
+pub struct Hits  {
     /// <p>The total number of documents that match the search request.</p>
     pub found: i64,
     /// <p>The index of the first matching document.</p>
@@ -11,9 +11,9 @@ pub struct Hits {
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
     pub cursor: ::std::option::Option<::std::string::String>,
     /// <p>A document that matches the search request.</p>
-    pub hit: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
+    pub hit: ::std::option::Option<::std::vec::Vec::<crate::types::Hit>>,
 }
-impl Hits {
+impl  Hits  {
     /// <p>The total number of documents that match the search request.</p>
     pub fn found(&self) -> i64 {
         self.found
@@ -23,14 +23,15 @@ impl Hits {
         self.start
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    pub fn cursor(&self) -> ::std::option::Option<&str> {
+    pub fn cursor(&self) -> ::std::option::Option<& str> {
         self.cursor.as_deref()
     }
     /// <p>A document that matches the search request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hit.is_none()`.
-    pub fn hit(&self) -> &[crate::types::Hit] {
-        self.hit.as_deref().unwrap_or_default()
+    pub fn hit(&self) -> & [crate::types::Hit] {
+        self.hit.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Hits {
@@ -47,7 +48,7 @@ pub struct HitsBuilder {
     pub(crate) found: ::std::option::Option<i64>,
     pub(crate) start: ::std::option::Option<i64>,
     pub(crate) cursor: ::std::option::Option<::std::string::String>,
-    pub(crate) hit: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
+    pub(crate) hit: ::std::option::Option<::std::vec::Vec::<crate::types::Hit>>,
 }
 impl HitsBuilder {
     /// <p>The total number of documents that match the search request.</p>
@@ -57,8 +58,7 @@ impl HitsBuilder {
     }
     /// <p>The total number of documents that match the search request.</p>
     pub fn set_found(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.found = input;
-        self
+        self.found = input; self
     }
     /// <p>The total number of documents that match the search request.</p>
     pub fn get_found(&self) -> &::std::option::Option<i64> {
@@ -71,8 +71,7 @@ impl HitsBuilder {
     }
     /// <p>The index of the first matching document.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The index of the first matching document.</p>
     pub fn get_start(&self) -> &::std::option::Option<i64> {
@@ -85,8 +84,7 @@ impl HitsBuilder {
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
     pub fn set_cursor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cursor = input;
-        self
+        self.cursor = input; self
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
     pub fn get_cursor(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,32 @@ impl HitsBuilder {
     /// <p>A document that matches the search request.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         let mut v = self.hit.unwrap_or_default();
-        v.push(input);
-        self.hit = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hit = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A document that matches the search request.</p>
-    pub fn set_hit(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>) -> Self {
-        self.hit = input;
-        self
+    pub fn set_hit(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Hit>>) -> Self {
+        self.hit = input; self
     }
     /// <p>A document that matches the search request.</p>
-    pub fn get_hit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Hit>> {
+    pub fn get_hit(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Hit>> {
         &self.hit
     }
     /// Consumes the builder and constructs a [`Hits`](crate::types::Hits).
     pub fn build(self) -> crate::types::Hits {
         crate::types::Hits {
-            found: self.found.unwrap_or_default(),
-            start: self.start.unwrap_or_default(),
-            cursor: self.cursor,
-            hit: self.hit,
+            found: self.found
+                .unwrap_or_default()
+            ,
+            start: self.start
+                .unwrap_or_default()
+            ,
+            cursor: self.cursor
+            ,
+            hit: self.hit
+            ,
         }
     }
 }
+

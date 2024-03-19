@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySelfservicePermissionsInput {
+pub struct ModifySelfservicePermissionsInput  {
     /// <p>The identifier of the directory.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
 }
-impl ModifySelfservicePermissionsInput {
+impl  ModifySelfservicePermissionsInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn selfservice_permissions(&self) -> ::std::option::Option<&crate::types::SelfservicePermissions> {
+    pub fn selfservice_permissions(&self) -> ::std::option::Option<& crate::types::SelfservicePermissions> {
         self.selfservice_permissions.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifySelfservicePermissionsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ModifySelfservicePermissionsInputBuilder {
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub fn set_selfservice_permissions(mut self, input: ::std::option::Option<crate::types::SelfservicePermissions>) -> Self {
-        self.selfservice_permissions = input;
-        self
+        self.selfservice_permissions = input; self
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub fn get_selfservice_permissions(&self) -> &::std::option::Option<crate::types::SelfservicePermissions> {
         &self.selfservice_permissions
     }
     /// Consumes the builder and constructs a [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput {
-            resource_id: self.resource_id,
-            selfservice_permissions: self.selfservice_permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput {
+                resource_id: self.resource_id
+                ,
+                selfservice_permissions: self.selfservice_permissions
+                ,
+            }
+        )
     }
 }
+

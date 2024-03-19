@@ -5,23 +5,20 @@ pub use crate::operation::update_geo_match_set::_update_geo_match_set_input::Upd
 
 impl UpdateGeoMatchSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_geo_match_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_geo_match_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateGeoMatchSet`.
-///
+/// 
 /// <note>
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
 /// <p><b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use.</p>
@@ -49,33 +46,32 @@ impl UpdateGeoMatchSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGeoMatchSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder,
+                    inner: crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-    > for UpdateGeoMatchSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
+                    crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
+                > for UpdateGeoMatchSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
+                        crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateGeoMatchSetFluentBuilder {
     /// Creates a new `UpdateGeoMatchSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -84,53 +80,44 @@ impl UpdateGeoMatchSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_geo_match_set::UpdateGeoMatchSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_geo_match_set::UpdateGeoMatchSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_geo_match_set::UpdateGeoMatchSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_geo_match_set::UpdateGeoMatchSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput, crate::operation::update_geo_match_set::UpdateGeoMatchSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.geo_match_set_id(input.into());
@@ -183,7 +170,7 @@ impl UpdateGeoMatchSetFluentBuilder {
     /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
     /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GeoMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -195,7 +182,8 @@ impl UpdateGeoMatchSetFluentBuilder {
     /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
     /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GeoMatchSetUpdate>> {
         self.inner.get_updates()
     }
 }
+

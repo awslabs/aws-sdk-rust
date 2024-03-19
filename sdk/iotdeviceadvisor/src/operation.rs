@@ -42,3 +42,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateSuiteDefinition` operation.
 pub mod update_suite_definition;
+

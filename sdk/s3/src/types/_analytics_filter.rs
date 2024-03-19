@@ -24,11 +24,7 @@ impl AnalyticsFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::AnalyticsFilter::And), extracting the inner [`AnalyticsAndOperator`](crate::types::AnalyticsAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> ::std::result::Result<&crate::types::AnalyticsAndOperator, &Self> {
-        if let AnalyticsFilter::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalyticsFilter::And(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`And`](crate::types::AnalyticsFilter::And).
     pub fn is_and(&self) -> bool {
@@ -37,11 +33,7 @@ impl AnalyticsFilter {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::AnalyticsFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AnalyticsFilter::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalyticsFilter::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::AnalyticsFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -50,11 +42,7 @@ impl AnalyticsFilter {
     /// Tries to convert the enum instance into [`Tag`](crate::types::AnalyticsFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
-        if let AnalyticsFilter::Tag(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalyticsFilter::Tag(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tag`](crate::types::AnalyticsFilter::Tag).
     pub fn is_tag(&self) -> bool {
@@ -65,3 +53,4 @@ impl AnalyticsFilter {
         matches!(self, Self::Unknown)
     }
 }
+

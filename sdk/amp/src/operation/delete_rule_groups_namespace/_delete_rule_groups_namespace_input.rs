@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DeleteRuleGroupsNamespace</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRuleGroupsNamespaceInput {
+pub struct DeleteRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace containing the rule groups namespace and definition to delete.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule groups namespace to delete.</p>
@@ -11,17 +11,17 @@ pub struct DeleteRuleGroupsNamespaceInput {
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRuleGroupsNamespaceInput {
+impl  DeleteRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace containing the rule groups namespace and definition to delete.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The name of the rule groups namespace to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The ID of the workspace containing the rule groups namespace and definition to delete.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace containing the rule groups namespace and definition to delete.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The name of the rule groups namespace to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule groups namespace to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

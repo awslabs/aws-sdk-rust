@@ -3,15 +3,14 @@
 /// <p>The container for the owner identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnerIdentifier {
+pub struct OwnerIdentifier  {
     /// <p>The contract or wallet address for the owner.</p>
     pub address: ::std::string::String,
 }
-impl OwnerIdentifier {
+impl  OwnerIdentifier  {
     /// <p>The contract or wallet address for the owner.</p>
-    pub fn address(&self) -> &str {
-        use std::ops::Deref;
-        self.address.deref()
+    pub fn address(&self) -> & str {
+        use std::ops::Deref; self.address.deref()
     }
 }
 impl OwnerIdentifier {
@@ -36,8 +35,7 @@ impl OwnerIdentifierBuilder {
     }
     /// <p>The contract or wallet address for the owner.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The contract or wallet address for the owner.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl OwnerIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`address`](crate::types::builders::OwnerIdentifierBuilder::address)
     pub fn build(self) -> ::std::result::Result<crate::types::OwnerIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OwnerIdentifier {
-            address: self.address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address",
-                    "address was not specified but it is required when building OwnerIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OwnerIdentifier {
+                address: self.address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address", "address was not specified but it is required when building OwnerIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestGridSessionAction {
+pub struct TestGridSessionAction  {
     /// <p>The action taken by the session.</p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The time that the session invoked the action.</p>
@@ -15,13 +15,13 @@ pub struct TestGridSessionAction {
     /// <p>HTTP method that the browser used to make the request.</p>
     pub request_method: ::std::option::Option<::std::string::String>,
 }
-impl TestGridSessionAction {
+impl  TestGridSessionAction  {
     /// <p>The action taken by the session.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
@@ -29,11 +29,11 @@ impl TestGridSessionAction {
         self.duration
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(&self) -> ::std::option::Option<&str> {
+    pub fn request_method(&self) -> ::std::option::Option<& str> {
         self.request_method.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>The action taken by the session.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action taken by the session.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>The time that the session invoked the action.</p>
     pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started = input;
-        self
+        self.started = input; self
     }
     /// <p>The time that the session invoked the action.</p>
     pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl TestGridSessionActionBuilder {
     }
     /// <p>HTTP method that the browser used to make the request.</p>
     pub fn set_request_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_method = input;
-        self
+        self.request_method = input; self
     }
     /// <p>HTTP method that the browser used to make the request.</p>
     pub fn get_request_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl TestGridSessionActionBuilder {
     /// Consumes the builder and constructs a [`TestGridSessionAction`](crate::types::TestGridSessionAction).
     pub fn build(self) -> crate::types::TestGridSessionAction {
         crate::types::TestGridSessionAction {
-            action: self.action,
-            started: self.started,
-            duration: self.duration,
-            status_code: self.status_code,
-            request_method: self.request_method,
+            action: self.action
+            ,
+            started: self.started
+            ,
+            duration: self.duration
+            ,
+            status_code: self.status_code
+            ,
+            request_method: self.request_method
+            ,
         }
     }
 }
+

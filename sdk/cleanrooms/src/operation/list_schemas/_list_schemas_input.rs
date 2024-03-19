@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchemasInput {
+pub struct ListSchemasInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
@@ -12,17 +12,17 @@ pub struct ListSchemasInput {
     /// <p>The maximum size of the results that is returned per call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSchemasInput {
+impl  ListSchemasInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-    pub fn schema_type(&self) -> ::std::option::Option<&crate::types::SchemaType> {
+    pub fn schema_type(&self) -> ::std::option::Option<& crate::types::SchemaType> {
         self.schema_type.as_ref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -55,8 +55,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn set_schema_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
-        self.schema_type = input;
-        self
+        self.schema_type = input; self
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn get_schema_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
@@ -83,8 +81,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,11 +102,18 @@ impl ListSchemasInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
-            collaboration_identifier: self.collaboration_identifier,
-            schema_type: self.schema_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_schemas::ListSchemasInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                schema_type: self.schema_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

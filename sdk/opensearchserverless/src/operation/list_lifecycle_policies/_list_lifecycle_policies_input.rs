@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLifecyclePoliciesInput {
+pub struct ListLifecyclePoliciesInput  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use use <code>nextToken</code> to get the next page of results. The default is 10.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListLifecyclePoliciesInput {
+impl  ListLifecyclePoliciesInput  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[::std::string::String] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [::std::string::String] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use use <code>nextToken</code> to get the next page of results. The default is 10.</p>
@@ -44,7 +45,7 @@ impl ListLifecyclePoliciesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLifecyclePoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl ListLifecyclePoliciesInputBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -71,17 +71,16 @@ impl ListLifecyclePoliciesInputBuilder {
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>Resource filters that policies can apply to. Currently, the only supported resource type is <code>index</code>.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
@@ -91,8 +90,7 @@ impl ListLifecyclePoliciesInputBuilder {
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code> operations, which returns results in the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,23 +103,26 @@ impl ListLifecyclePoliciesInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use use <code>nextToken</code> to get the next page of results. The default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use use <code>nextToken</code> to get the next page of results. The default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLifecyclePoliciesInput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput {
-            r#type: self.r#type,
-            resources: self.resources,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput {
+                r#type: self.r#type
+                ,
+                resources: self.resources
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

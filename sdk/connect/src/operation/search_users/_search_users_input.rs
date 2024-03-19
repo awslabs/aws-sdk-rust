@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchUsersInput {
+pub struct SearchUsersInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
@@ -18,15 +18,15 @@ pub struct SearchUsersInput {
     /// </note>
     pub search_criteria: ::std::option::Option<crate::types::UserSearchCriteria>,
 }
-impl SearchUsersInput {
+impl  SearchUsersInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,13 +34,13 @@ impl SearchUsersInput {
         self.max_results
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn search_filter(&self) -> ::std::option::Option<&crate::types::UserSearchFilter> {
+    pub fn search_filter(&self) -> ::std::option::Option<& crate::types::UserSearchFilter> {
         self.search_filter.as_ref()
     }
     /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
-    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::UserSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<& crate::types::UserSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl SearchUsersInputBuilder {
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
@@ -90,8 +89,7 @@ impl SearchUsersInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl SearchUsersInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -118,8 +115,7 @@ impl SearchUsersInputBuilder {
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::UserSearchFilter>) -> Self {
-        self.search_filter = input;
-        self
+        self.search_filter = input; self
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::UserSearchFilter> {
@@ -136,8 +132,7 @@ impl SearchUsersInputBuilder {
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
-        self.search_criteria = input;
-        self
+        self.search_criteria = input; self
     }
     /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
@@ -147,12 +142,20 @@ impl SearchUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_users::SearchUsersInput {
-            instance_id: self.instance_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            search_filter: self.search_filter,
-            search_criteria: self.search_criteria,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search_users::SearchUsersInput {
+                instance_id: self.instance_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                search_filter: self.search_filter
+                ,
+                search_criteria: self.search_criteria
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceProfileOutput {
+pub struct GetResourceProfileOutput  {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
     pub profile_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
@@ -13,9 +13,9 @@ pub struct GetResourceProfileOutput {
     pub statistics: ::std::option::Option<crate::types::ResourceStatistics>,
     _request_id: Option<String>,
 }
-impl GetResourceProfileOutput {
+impl  GetResourceProfileOutput  {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
-    pub fn profile_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn profile_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.profile_updated_at.as_ref()
     }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
@@ -27,15 +27,15 @@ impl GetResourceProfileOutput {
         self.sensitivity_score_overridden
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::ResourceStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::ResourceStatistics> {
         self.statistics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResourceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceProfileOutput`](crate::operation::get_resource_profile::GetResourceProfileOutput).
     pub fn builder() -> crate::operation::get_resource_profile::builders::GetResourceProfileOutputBuilder {
@@ -61,8 +61,7 @@ impl GetResourceProfileOutputBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
     pub fn set_profile_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.profile_updated_at = input;
-        self
+        self.profile_updated_at = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
     pub fn get_profile_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -75,8 +74,7 @@ impl GetResourceProfileOutputBuilder {
     }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     pub fn set_sensitivity_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sensitivity_score = input;
-        self
+        self.sensitivity_score = input; self
     }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     pub fn get_sensitivity_score(&self) -> &::std::option::Option<i32> {
@@ -89,8 +87,7 @@ impl GetResourceProfileOutputBuilder {
     }
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
     pub fn set_sensitivity_score_overridden(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sensitivity_score_overridden = input;
-        self
+        self.sensitivity_score_overridden = input; self
     }
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
     pub fn get_sensitivity_score_overridden(&self) -> &::std::option::Option<bool> {
@@ -103,30 +100,34 @@ impl GetResourceProfileOutputBuilder {
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ResourceStatistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::ResourceStatistics> {
         &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResourceProfileOutput`](crate::operation::get_resource_profile::GetResourceProfileOutput).
     pub fn build(self) -> crate::operation::get_resource_profile::GetResourceProfileOutput {
         crate::operation::get_resource_profile::GetResourceProfileOutput {
-            profile_updated_at: self.profile_updated_at,
-            sensitivity_score: self.sensitivity_score,
-            sensitivity_score_overridden: self.sensitivity_score_overridden,
-            statistics: self.statistics,
+            profile_updated_at: self.profile_updated_at
+            ,
+            sensitivity_score: self.sensitivity_score
+            ,
+            sensitivity_score_overridden: self.sensitivity_score_overridden
+            ,
+            statistics: self.statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

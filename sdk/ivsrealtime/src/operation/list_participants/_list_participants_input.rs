@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListParticipantsInput {
+pub struct ListParticipantsInput  {
     /// <p>Stage ARN.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the stage.</p>
@@ -18,17 +18,17 @@ pub struct ListParticipantsInput {
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListParticipantsInput {
+impl  ListParticipantsInput  {
     /// <p>Stage ARN.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>ID of the session within the stage.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    pub fn filter_by_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn filter_by_user_id(&self) -> ::std::option::Option<& str> {
         self.filter_by_user_id.as_deref()
     }
     /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
@@ -36,11 +36,11 @@ impl ListParticipantsInput {
         self.filter_by_published
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
-    pub fn filter_by_state(&self) -> ::std::option::Option<&crate::types::ParticipantState> {
+    pub fn filter_by_state(&self) -> ::std::option::Option<& crate::types::ParticipantState> {
         self.filter_by_state.as_ref()
     }
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
@@ -76,8 +76,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>Stage ARN.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>Stage ARN.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>ID of the session within the stage.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>ID of the session within the stage.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn set_filter_by_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_by_user_id = input;
-        self
+        self.filter_by_user_id = input; self
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
     pub fn get_filter_by_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn set_filter_by_published(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.filter_by_published = input;
-        self
+        self.filter_by_published = input; self
     }
     /// <p>Filters the response list to only show participants who published during the stage session. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn get_filter_by_published(&self) -> &::std::option::Option<bool> {
@@ -133,8 +129,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn set_filter_by_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
-        self.filter_by_state = input;
-        self
+        self.filter_by_state = input; self
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
     pub fn get_filter_by_state(&self) -> &::std::option::Option<crate::types::ParticipantState> {
@@ -147,8 +142,7 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,25 +155,32 @@ impl ListParticipantsInputBuilder {
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_participants::ListParticipantsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_participants::ListParticipantsInput {
-            stage_arn: self.stage_arn,
-            session_id: self.session_id,
-            filter_by_user_id: self.filter_by_user_id,
-            filter_by_published: self.filter_by_published,
-            filter_by_state: self.filter_by_state,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_participants::ListParticipantsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_participants::ListParticipantsInput {
+                stage_arn: self.stage_arn
+                ,
+                session_id: self.session_id
+                ,
+                filter_by_user_id: self.filter_by_user_id
+                ,
+                filter_by_published: self.filter_by_published
+                ,
+                filter_by_state: self.filter_by_state
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

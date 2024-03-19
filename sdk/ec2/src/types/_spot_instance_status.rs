@@ -3,7 +3,7 @@
 /// <p>Describes the status of a Spot Instance request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotInstanceStatus {
+pub struct SpotInstanceStatus  {
     /// <p>The status code. For a list of status codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot request status codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The description for the status code.</p>
@@ -11,17 +11,17 @@ pub struct SpotInstanceStatus {
     /// <p>The date and time of the most recent status update, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SpotInstanceStatus {
+impl  SpotInstanceStatus  {
     /// <p>The status code. For a list of status codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot request status codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The description for the status code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The date and time of the most recent status update, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl SpotInstanceStatusBuilder {
     }
     /// <p>The status code. For a list of status codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot request status codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status code. For a list of status codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot request status codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SpotInstanceStatusBuilder {
     }
     /// <p>The description for the status code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The description for the status code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SpotInstanceStatusBuilder {
     }
     /// <p>The date and time of the most recent status update, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The date and time of the most recent status update, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl SpotInstanceStatusBuilder {
     /// Consumes the builder and constructs a [`SpotInstanceStatus`](crate::types::SpotInstanceStatus).
     pub fn build(self) -> crate::types::SpotInstanceStatus {
         crate::types::SpotInstanceStatus {
-            code: self.code,
-            message: self.message,
-            update_time: self.update_time,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The configuration for default analysis settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisDefaults {
+pub struct AnalysisDefaults  {
     /// <p>The configuration for default new sheet settings.</p>
     pub default_new_sheet_configuration: ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
 }
-impl AnalysisDefaults {
+impl  AnalysisDefaults  {
     /// <p>The configuration for default new sheet settings.</p>
-    pub fn default_new_sheet_configuration(&self) -> ::std::option::Option<&crate::types::DefaultNewSheetConfiguration> {
+    pub fn default_new_sheet_configuration(&self) -> ::std::option::Option<& crate::types::DefaultNewSheetConfiguration> {
         self.default_new_sheet_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AnalysisDefaultsBuilder {
     }
     /// <p>The configuration for default new sheet settings.</p>
     pub fn set_default_new_sheet_configuration(mut self, input: ::std::option::Option<crate::types::DefaultNewSheetConfiguration>) -> Self {
-        self.default_new_sheet_configuration = input;
-        self
+        self.default_new_sheet_configuration = input; self
     }
     /// <p>The configuration for default new sheet settings.</p>
     pub fn get_default_new_sheet_configuration(&self) -> &::std::option::Option<crate::types::DefaultNewSheetConfiguration> {
@@ -45,7 +44,9 @@ impl AnalysisDefaultsBuilder {
     /// Consumes the builder and constructs a [`AnalysisDefaults`](crate::types::AnalysisDefaults).
     pub fn build(self) -> crate::types::AnalysisDefaults {
         crate::types::AnalysisDefaults {
-            default_new_sheet_configuration: self.default_new_sheet_configuration,
+            default_new_sheet_configuration: self.default_new_sheet_configuration
+            ,
         }
     }
 }
+

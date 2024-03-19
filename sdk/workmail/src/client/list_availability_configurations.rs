@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAvailabilityConfigurations`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::set_organization_id):<br>required: **true**<br><p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results. The first call does not require a token.</p><br>
-    /// - On success, responds with [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput) with field(s):
     ///   - [`availability_configurations(Option<Vec::<AvailabilityConfiguration>>)`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput::availability_configurations): <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
-    /// - On failure, responds with [`SdkError<ListAvailabilityConfigurationsError>`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError)
-    pub fn list_availability_configurations(
-        &self,
-    ) -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder {
-        crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAvailabilityConfigurationsError>`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError)
+    pub fn list_availability_configurations(&self) -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder {
+                                crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

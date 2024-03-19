@@ -21,11 +21,7 @@ impl PrivacyBudget {
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyBudget::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyPrivacyBudget`](crate::types::DifferentialPrivacyPrivacyBudget).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyPrivacyBudget, &Self> {
-        if let PrivacyBudget::DifferentialPrivacy(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PrivacyBudget::DifferentialPrivacy(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DifferentialPrivacy`](crate::types::PrivacyBudget::DifferentialPrivacy).
     pub fn is_differential_privacy(&self) -> bool {
@@ -36,3 +32,4 @@ impl PrivacyBudget {
         matches!(self, Self::Unknown)
     }
 }
+

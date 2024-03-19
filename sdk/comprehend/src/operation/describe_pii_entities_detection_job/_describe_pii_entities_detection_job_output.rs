@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePiiEntitiesDetectionJobOutput {
+pub struct DescribePiiEntitiesDetectionJobOutput  {
     /// <p>Provides information about a PII entities detection job.</p>
     pub pii_entities_detection_job_properties: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }
-impl DescribePiiEntitiesDetectionJobOutput {
+impl  DescribePiiEntitiesDetectionJobOutput  {
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn pii_entities_detection_job_properties(&self) -> ::std::option::Option<&crate::types::PiiEntitiesDetectionJobProperties> {
+    pub fn pii_entities_detection_job_properties(&self) -> ::std::option::Option<& crate::types::PiiEntitiesDetectionJobProperties> {
         self.pii_entities_detection_job_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePiiEntitiesDetectionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
     pub fn builder() -> crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobOutputBuilder {
@@ -39,31 +39,29 @@ impl DescribePiiEntitiesDetectionJobOutputBuilder {
         self
     }
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn set_pii_entities_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
-    ) -> Self {
-        self.pii_entities_detection_job_properties = input;
-        self
+    pub fn set_pii_entities_detection_job_properties(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>) -> Self {
+        self.pii_entities_detection_job_properties = input; self
     }
     /// <p>Provides information about a PII entities detection job.</p>
     pub fn get_pii_entities_detection_job_properties(&self) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties> {
         &self.pii_entities_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
     pub fn build(self) -> crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput {
         crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput {
-            pii_entities_detection_job_properties: self.pii_entities_detection_job_properties,
+            pii_entities_detection_job_properties: self.pii_entities_detection_job_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

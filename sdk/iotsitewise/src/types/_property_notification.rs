@@ -3,20 +3,19 @@
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyNotification {
+pub struct PropertyNotification  {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     pub topic: ::std::string::String,
     /// <p>The current notification state.</p>
     pub state: crate::types::PropertyNotificationState,
 }
-impl PropertyNotification {
+impl  PropertyNotification  {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(&self) -> &str {
-        use std::ops::Deref;
-        self.topic.deref()
+    pub fn topic(&self) -> & str {
+        use std::ops::Deref; self.topic.deref()
     }
     /// <p>The current notification state.</p>
-    pub fn state(&self) -> &crate::types::PropertyNotificationState {
+    pub fn state(&self) -> & crate::types::PropertyNotificationState {
         &self.state
     }
 }
@@ -43,8 +42,7 @@ impl PropertyNotificationBuilder {
     }
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl PropertyNotificationBuilder {
     }
     /// <p>The current notification state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PropertyNotificationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current notification state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PropertyNotificationState> {
@@ -70,19 +67,20 @@ impl PropertyNotificationBuilder {
     /// - [`topic`](crate::types::builders::PropertyNotificationBuilder::topic)
     /// - [`state`](crate::types::builders::PropertyNotificationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertyNotification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PropertyNotification {
-            topic: self.topic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic",
-                    "topic was not specified but it is required when building PropertyNotification",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building PropertyNotification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PropertyNotification {
+                topic: self.topic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic", "topic was not specified but it is required when building PropertyNotification")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building PropertyNotification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

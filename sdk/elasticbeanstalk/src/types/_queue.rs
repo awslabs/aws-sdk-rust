@@ -3,19 +3,19 @@
 /// <p>Describes a queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Queue {
+pub struct Queue  {
     /// <p>The name of the queue.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the queue.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl Queue {
+impl  Queue  {
     /// <p>The name of the queue.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URL of the queue.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl QueueBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the queue.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl QueueBuilder {
     }
     /// <p>The URL of the queue.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the queue.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl QueueBuilder {
     /// Consumes the builder and constructs a [`Queue`](crate::types::Queue).
     pub fn build(self) -> crate::types::Queue {
         crate::types::Queue {
-            name: self.name,
-            url: self.url,
+            name: self.name
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

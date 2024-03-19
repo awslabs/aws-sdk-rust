@@ -3,19 +3,19 @@
 /// <p>A filter that can be applied to a list of contacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactsFilter {
+pub struct ListContactsFilter  {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub filtered_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     /// <p>Used for filtering by a specific topic preference.</p>
     pub topic_filter: ::std::option::Option<crate::types::TopicFilter>,
 }
-impl ListContactsFilter {
+impl  ListContactsFilter  {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub fn filtered_status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
+    pub fn filtered_status(&self) -> ::std::option::Option<& crate::types::SubscriptionStatus> {
         self.filtered_status.as_ref()
     }
     /// <p>Used for filtering by a specific topic preference.</p>
-    pub fn topic_filter(&self) -> ::std::option::Option<&crate::types::TopicFilter> {
+    pub fn topic_filter(&self) -> ::std::option::Option<& crate::types::TopicFilter> {
         self.topic_filter.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ListContactsFilterBuilder {
     }
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub fn set_filtered_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
-        self.filtered_status = input;
-        self
+        self.filtered_status = input; self
     }
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub fn get_filtered_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
@@ -55,8 +54,7 @@ impl ListContactsFilterBuilder {
     }
     /// <p>Used for filtering by a specific topic preference.</p>
     pub fn set_topic_filter(mut self, input: ::std::option::Option<crate::types::TopicFilter>) -> Self {
-        self.topic_filter = input;
-        self
+        self.topic_filter = input; self
     }
     /// <p>Used for filtering by a specific topic preference.</p>
     pub fn get_topic_filter(&self) -> &::std::option::Option<crate::types::TopicFilter> {
@@ -65,8 +63,11 @@ impl ListContactsFilterBuilder {
     /// Consumes the builder and constructs a [`ListContactsFilter`](crate::types::ListContactsFilter).
     pub fn build(self) -> crate::types::ListContactsFilter {
         crate::types::ListContactsFilter {
-            filtered_status: self.filtered_status,
-            topic_filter: self.topic_filter,
+            filtered_status: self.filtered_status
+            ,
+            topic_filter: self.topic_filter
+            ,
         }
     }
 }
+

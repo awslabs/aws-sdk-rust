@@ -3,24 +3,25 @@
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTapesOutput {
+pub struct CreateTapesOutput  {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    pub tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tape_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateTapesOutput {
+impl  CreateTapesOutput  {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_arns.is_none()`.
-    pub fn tape_arns(&self) -> &[::std::string::String] {
-        self.tape_arns.as_deref().unwrap_or_default()
+    pub fn tape_arns(&self) -> & [::std::string::String] {
+        self.tape_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTapesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTapesOutput {
     /// Creates a new builder-style object to manufacture [`CreateTapesOutput`](crate::operation::create_tapes::CreateTapesOutput).
     pub fn builder() -> crate::operation::create_tapes::builders::CreateTapesOutputBuilder {
@@ -32,7 +33,7 @@ impl CreateTapesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapesOutputBuilder {
-    pub(crate) tape_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tape_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateTapesOutputBuilder {
@@ -43,33 +44,34 @@ impl CreateTapesOutputBuilder {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
     pub fn tape_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tape_arns.unwrap_or_default();
-        v.push(input.into());
-        self.tape_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tape_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    pub fn set_tape_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tape_arns = input;
-        self
+    pub fn set_tape_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tape_arns = input; self
     }
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    pub fn get_tape_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tape_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tape_arns
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTapesOutput`](crate::operation::create_tapes::CreateTapesOutput).
     pub fn build(self) -> crate::operation::create_tapes::CreateTapesOutput {
         crate::operation::create_tapes::CreateTapesOutput {
-            tape_arns: self.tape_arns,
+            tape_arns: self.tape_arns
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

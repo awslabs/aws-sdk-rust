@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExplainabilityExportInput {
+pub struct DescribeExplainabilityExportInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub explainability_export_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExplainabilityExportInput {
+impl  DescribeExplainabilityExportInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    pub fn explainability_export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_export_arn(&self) -> ::std::option::Option<& str> {
         self.explainability_export_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeExplainabilityExportInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explainability_export_arn = input;
-        self
+        self.explainability_export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
     pub fn get_explainability_export_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_export_arn
     }
     /// Consumes the builder and constructs a [`DescribeExplainabilityExportInput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_explainability_export::DescribeExplainabilityExportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_explainability_export::DescribeExplainabilityExportInput {
-            explainability_export_arn: self.explainability_export_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_explainability_export::DescribeExplainabilityExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_explainability_export::DescribeExplainabilityExportInput {
+                explainability_export_arn: self.explainability_export_arn
+                ,
+            }
+        )
     }
 }
+

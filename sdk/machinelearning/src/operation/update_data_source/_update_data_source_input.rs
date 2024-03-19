@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourceInput {
+pub struct UpdateDataSourceInput  {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub data_source_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDataSourceInput {
+impl  UpdateDataSourceInput  {
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
-    pub fn data_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_name(&self) -> ::std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_name = input;
-        self
+        self.data_source_name = input; self
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description.</p>
     pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_name
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
-            data_source_id: self.data_source_id,
-            data_source_name: self.data_source_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_source::UpdateDataSourceInput {
+                data_source_id: self.data_source_id
+                ,
+                data_source_name: self.data_source_name
+                ,
+            }
+        )
     }
 }
+

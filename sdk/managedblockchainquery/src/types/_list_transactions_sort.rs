@@ -3,19 +3,19 @@
 /// <p>The container for determining how the list transaction result will be sorted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransactionsSort {
+pub struct ListTransactionsSort  {
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::ListTransactionsSortBy>,
     /// <p>The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListTransactionsSort {
+impl  ListTransactionsSort  {
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListTransactionsSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListTransactionsSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ListTransactionsSortBuilder {
     }
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListTransactionsSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListTransactionsSortBy> {
@@ -55,8 +54,7 @@ impl ListTransactionsSortBuilder {
     }
     /// <p>The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl ListTransactionsSortBuilder {
     /// Consumes the builder and constructs a [`ListTransactionsSort`](crate::types::ListTransactionsSort).
     pub fn build(self) -> crate::types::ListTransactionsSort {
         crate::types::ListTransactionsSort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

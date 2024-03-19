@@ -120,3 +120,4 @@ pub mod update_scene;
 
 /// Types for the `UpdateWorkspace` operation.
 pub mod update_workspace;
+

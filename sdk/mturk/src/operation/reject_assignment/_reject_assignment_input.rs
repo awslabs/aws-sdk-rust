@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectAssignmentInput {
+pub struct RejectAssignmentInput  {
     /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub requester_feedback: ::std::option::Option<::std::string::String>,
 }
-impl RejectAssignmentInput {
+impl  RejectAssignmentInput  {
     /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
-    pub fn assignment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_id(&self) -> ::std::option::Option<& str> {
         self.assignment_id.as_deref()
     }
     /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
-    pub fn requester_feedback(&self) -> ::std::option::Option<&str> {
+    pub fn requester_feedback(&self) -> ::std::option::Option<& str> {
         self.requester_feedback.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RejectAssignmentInputBuilder {
     }
     /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_id = input;
-        self
+        self.assignment_id = input; self
     }
     /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl RejectAssignmentInputBuilder {
     }
     /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester_feedback = input;
-        self
+        self.requester_feedback = input; self
     }
     /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
         &self.requester_feedback
     }
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reject_assignment::RejectAssignmentInput {
-            assignment_id: self.assignment_id,
-            requester_feedback: self.requester_feedback,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_assignment::RejectAssignmentInput {
+                assignment_id: self.assignment_id
+                ,
+                requester_feedback: self.requester_feedback
+                ,
+            }
+        )
     }
 }
+

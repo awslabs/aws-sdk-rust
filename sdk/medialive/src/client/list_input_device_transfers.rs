@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInputDeviceTransfers`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
     ///   - [`transfer_type(impl Into<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::transfer_type) / [`set_transfer_type(Option<String>)`](crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::set_transfer_type):<br>required: **true**<br>Placeholder documentation for __string<br>
-    /// - On success, responds with [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput) with field(s):
+                            /// - On success, responds with [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput) with field(s):
     ///   - [`input_device_transfers(Option<Vec::<TransferringInputDeviceSummary>>)`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput::input_device_transfers): The list of devices that you are transferring or are being transferred to you.
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput::next_token): A token to get additional list results.
-    /// - On failure, responds with [`SdkError<ListInputDeviceTransfersError>`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersError)
+                            /// - On failure, responds with [`SdkError<ListInputDeviceTransfersError>`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersError)
     pub fn list_input_device_transfers(&self) -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder {
-        crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,21 +3,21 @@
 /// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEmailIdentityPolicyInput {
+pub struct DeleteEmailIdentityPolicyInput  {
     /// <p>The email identity.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEmailIdentityPolicyInput {
+impl  DeleteEmailIdentityPolicyInput  {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl DeleteEmailIdentityPolicyInputBuilder {
     }
     /// <p>The email identity.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The email identity.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DeleteEmailIdentityPolicyInputBuilder {
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
@@ -70,15 +68,15 @@ impl DeleteEmailIdentityPolicyInputBuilder {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeleteEmailIdentityPolicyInput`](crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput {
-            email_identity: self.email_identity,
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput {
+                email_identity: self.email_identity
+                ,
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Object for the summarized details of the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The unique identifier of the domain.</p>
     pub domain_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
@@ -11,21 +11,18 @@ pub struct DomainSummary {
     /// <p>The name of the domain.</p>
     pub name: ::std::string::String,
 }
-impl DomainSummary {
+impl  DomainSummary  {
     /// <p>The unique identifier of the domain.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    pub fn domain_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_arn.deref()
+    pub fn domain_arn(&self) -> & str {
+        use std::ops::Deref; self.domain_arn.deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl DomainSummary {
@@ -52,8 +49,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The unique identifier of the domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl DomainSummaryBuilder {
     /// - [`domain_arn`](crate::types::builders::DomainSummaryBuilder::domain_arn)
     /// - [`name`](crate::types::builders::DomainSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainSummary {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DomainSummary",
-                )
-            })?,
-            domain_arn: self.domain_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_arn",
-                    "domain_arn was not specified but it is required when building DomainSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DomainSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainSummary {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+                domain_arn: self.domain_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_arn", "domain_arn was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

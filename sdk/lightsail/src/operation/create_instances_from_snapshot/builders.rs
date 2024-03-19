@@ -5,55 +5,51 @@ pub use crate::operation::create_instances_from_snapshot::_create_instances_from
 
 impl CreateInstancesFromSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_instances_from_snapshot();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_instances_from_snapshot();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateInstancesFromSnapshot`.
-///
+/// 
 /// <p>Creates one or more new instances from a manual or automatic snapshot of an instance.</p>
 /// <p>The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstancesFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder,
+                    inner: crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-    > for CreateInstancesFromSnapshotFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
+                    crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
+                > for CreateInstancesFromSnapshotFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
+                        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateInstancesFromSnapshotFluentBuilder {
     /// Creates a new `CreateInstancesFromSnapshot`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
-        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshot::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput, crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `instanceNames`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -119,12 +106,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self
     }
     /// <p>The names for your new instances.</p>
-    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names for your new instances.</p>
-    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_instance_names()
     }
     /// Adds a key-value pair to `attachedDiskMapping`.
@@ -132,22 +119,17 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     /// To override the contents of this collection use [`set_attached_disk_mapping`](Self::set_attached_disk_mapping).
     ///
     /// <p>An object containing information about one or more disk mappings.</p>
-    pub fn attached_disk_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::DiskMap>) -> Self {
+    pub fn attached_disk_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::DiskMap>) -> Self {
         self.inner = self.inner.attached_disk_mapping(k.into(), v);
         self
     }
     /// <p>An object containing information about one or more disk mappings.</p>
-    pub fn set_attached_disk_mapping(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>>,
-    ) -> Self {
+    pub fn set_attached_disk_mapping(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::DiskMap>>>) -> Self {
         self.inner = self.inner.set_attached_disk_mapping(input);
         self
     }
     /// <p>An object containing information about one or more disk mappings.</p>
-    pub fn get_attached_disk_mapping(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DiskMap>>> {
+    pub fn get_attached_disk_mapping(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::DiskMap>>> {
         self.inner.get_attached_disk_mapping()
     }
     /// <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
@@ -253,13 +235,13 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Appends an item to `addOns`.
@@ -272,12 +254,12 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>>) -> Self {
         self.inner = self.inner.set_add_ons(input);
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddOnRequest>> {
         self.inner.get_add_ons()
     }
     /// <p>The IP address type for the instance.</p>
@@ -412,3 +394,4 @@ impl CreateInstancesFromSnapshotFluentBuilder {
         self.inner.get_use_latest_restorable_auto_snapshot()
     }
 }
+

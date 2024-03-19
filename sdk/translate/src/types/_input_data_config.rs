@@ -3,7 +3,7 @@
 /// <p>The input configuration properties for requesting a batch translation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub s3_uri: ::std::string::String,
     /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
@@ -25,11 +25,10 @@ pub struct InputDataConfig {
     /// </important>
     pub content_type: ::std::string::String,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
@@ -48,9 +47,8 @@ impl InputDataConfig {
     /// </ul><important>
     /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
 }
 impl InputDataConfig {
@@ -76,8 +74,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl InputDataConfigBuilder {
     /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
@@ -151,19 +147,20 @@ impl InputDataConfigBuilder {
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     /// - [`content_type`](crate::types::builders::InputDataConfigBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

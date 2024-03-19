@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContactChannelInput {
+pub struct CreateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact channel.</p>
@@ -32,13 +32,13 @@ pub struct CreateContactChannelInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateContactChannelInput {
+impl  CreateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The name of the contact channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
@@ -50,7 +50,7 @@ impl CreateContactChannelInput {
     /// <li>
     /// <p><code>EMAIL</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
@@ -62,7 +62,7 @@ impl CreateContactChannelInput {
     /// <li>
     /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
-    pub fn delivery_address(&self) -> ::std::option::Option<&crate::types::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> ::std::option::Option<& crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
@@ -70,7 +70,7 @@ impl CreateContactChannelInput {
         self.defer_activation
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -101,8 +101,7 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>The name of the contact channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the contact channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,7 @@ impl CreateContactChannelInputBuilder {
     /// <p><code>EMAIL</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
@@ -186,8 +183,7 @@ impl CreateContactChannelInputBuilder {
     /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
-        self.delivery_address = input;
-        self
+        self.delivery_address = input; self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -208,8 +204,7 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub fn set_defer_activation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.defer_activation = input;
-        self
+        self.defer_activation = input; self
     }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub fn get_defer_activation(&self) -> &::std::option::Option<bool> {
@@ -222,25 +217,30 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelInput {
-            contact_id: self.contact_id,
-            name: self.name,
-            r#type: self.r#type,
-            delivery_address: self.delivery_address,
-            defer_activation: self.defer_activation,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_contact_channel::CreateContactChannelInput {
+                contact_id: self.contact_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                delivery_address: self.delivery_address
+                ,
+                defer_activation: self.defer_activation
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

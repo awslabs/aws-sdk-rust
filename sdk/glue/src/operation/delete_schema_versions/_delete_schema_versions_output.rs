@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaVersionsOutput {
+pub struct DeleteSchemaVersionsOutput  {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    pub schema_version_errors: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>>,
+    pub schema_version_errors: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionErrorItem>>,
     _request_id: Option<String>,
 }
-impl DeleteSchemaVersionsOutput {
+impl  DeleteSchemaVersionsOutput  {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_version_errors.is_none()`.
-    pub fn schema_version_errors(&self) -> &[crate::types::SchemaVersionErrorItem] {
-        self.schema_version_errors.as_deref().unwrap_or_default()
+    pub fn schema_version_errors(&self) -> & [crate::types::SchemaVersionErrorItem] {
+        self.schema_version_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSchemaVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSchemaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaVersionsOutput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput).
     pub fn builder() -> crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsOutputBuilder {
@@ -31,7 +32,7 @@ impl DeleteSchemaVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaVersionsOutputBuilder {
-    pub(crate) schema_version_errors: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>>,
+    pub(crate) schema_version_errors: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionErrorItem>>,
     _request_id: Option<String>,
 }
 impl DeleteSchemaVersionsOutputBuilder {
@@ -42,33 +43,34 @@ impl DeleteSchemaVersionsOutputBuilder {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
     pub fn schema_version_errors(mut self, input: crate::types::SchemaVersionErrorItem) -> Self {
         let mut v = self.schema_version_errors.unwrap_or_default();
-        v.push(input);
-        self.schema_version_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema_version_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    pub fn set_schema_version_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>>) -> Self {
-        self.schema_version_errors = input;
-        self
+    pub fn set_schema_version_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionErrorItem>>) -> Self {
+        self.schema_version_errors = input; self
     }
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    pub fn get_schema_version_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>> {
+    pub fn get_schema_version_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionErrorItem>> {
         &self.schema_version_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSchemaVersionsOutput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput).
     pub fn build(self) -> crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput {
         crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput {
-            schema_version_errors: self.schema_version_errors,
+            schema_version_errors: self.schema_version_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

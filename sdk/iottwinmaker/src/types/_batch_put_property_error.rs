@@ -3,7 +3,7 @@
 /// <p>An error returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutPropertyError {
+pub struct BatchPutPropertyError  {
     /// <p>The error code.</p>
     pub error_code: ::std::string::String,
     /// <p>The error message.</p>
@@ -11,19 +11,17 @@ pub struct BatchPutPropertyError {
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub entry: ::std::option::Option<crate::types::PropertyValueEntry>,
 }
-impl BatchPutPropertyError {
+impl  BatchPutPropertyError  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn entry(&self) -> ::std::option::Option<&crate::types::PropertyValueEntry> {
+    pub fn entry(&self) -> ::std::option::Option<& crate::types::PropertyValueEntry> {
         self.entry.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl BatchPutPropertyErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl BatchPutPropertyErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl BatchPutPropertyErrorBuilder {
     }
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn set_entry(mut self, input: ::std::option::Option<crate::types::PropertyValueEntry>) -> Self {
-        self.entry = input;
-        self
+        self.entry = input; self
     }
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn get_entry(&self) -> &::std::option::Option<crate::types::PropertyValueEntry> {
@@ -93,20 +88,22 @@ impl BatchPutPropertyErrorBuilder {
     /// - [`error_code`](crate::types::builders::BatchPutPropertyErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchPutPropertyErrorBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchPutPropertyError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchPutPropertyError {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchPutPropertyError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchPutPropertyError",
-                )
-            })?,
-            entry: self.entry,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchPutPropertyError {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchPutPropertyError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchPutPropertyError")
+                    )?
+                ,
+                entry: self.entry
+                ,
+            }
+        )
     }
 }
+

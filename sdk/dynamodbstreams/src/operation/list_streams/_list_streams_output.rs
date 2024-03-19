@@ -3,34 +3,35 @@
 /// <p>Represents the output of a <code>ListStreams</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamsOutput {
+pub struct ListStreamsOutput  {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::Stream>>,
+    pub streams: ::std::option::Option<::std::vec::Vec::<crate::types::Stream>>,
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
     pub last_evaluated_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStreamsOutput {
+impl  ListStreamsOutput  {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
-    pub fn streams(&self) -> &[crate::types::Stream] {
-        self.streams.as_deref().unwrap_or_default()
+    pub fn streams(&self) -> & [crate::types::Stream] {
+        self.streams.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
-    pub fn last_evaluated_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn last_evaluated_stream_arn(&self) -> ::std::option::Option<& str> {
         self.last_evaluated_stream_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStreamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     pub fn builder() -> crate::operation::list_streams::builders::ListStreamsOutputBuilder {
@@ -42,7 +43,7 @@ impl ListStreamsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsOutputBuilder {
-    pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::Stream>>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec::<crate::types::Stream>>,
     pub(crate) last_evaluated_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +55,16 @@ impl ListStreamsOutputBuilder {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
     pub fn streams(mut self, input: crate::types::Stream) -> Self {
         let mut v = self.streams.unwrap_or_default();
-        v.push(input);
-        self.streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streams = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stream>>) -> Self {
-        self.streams = input;
-        self
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Stream>>) -> Self {
+        self.streams = input; self
     }
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
-    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stream>> {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Stream>> {
         &self.streams
     }
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
@@ -78,8 +78,7 @@ impl ListStreamsOutputBuilder {
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
     pub fn set_last_evaluated_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_evaluated_stream_arn = input;
-        self
+        self.last_evaluated_stream_arn = input; self
     }
     /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
@@ -88,20 +87,23 @@ impl ListStreamsOutputBuilder {
         &self.last_evaluated_stream_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     pub fn build(self) -> crate::operation::list_streams::ListStreamsOutput {
         crate::operation::list_streams::ListStreamsOutput {
-            streams: self.streams,
-            last_evaluated_stream_arn: self.last_evaluated_stream_arn,
+            streams: self.streams
+            ,
+            last_evaluated_stream_arn: self.last_evaluated_stream_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

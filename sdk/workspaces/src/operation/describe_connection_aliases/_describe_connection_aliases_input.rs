@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionAliasesInput {
+pub struct DescribeConnectionAliasesInput  {
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub alias_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alias_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of connection aliases to return.</p>
@@ -12,15 +12,16 @@ pub struct DescribeConnectionAliasesInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConnectionAliasesInput {
+impl  DescribeConnectionAliasesInput  {
     /// <p>The identifiers of the connection aliases to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_ids.is_none()`.
-    pub fn alias_ids(&self) -> &[::std::string::String] {
-        self.alias_ids.as_deref().unwrap_or_default()
+    pub fn alias_ids(&self) -> & [::std::string::String] {
+        self.alias_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The maximum number of connection aliases to return.</p>
@@ -28,7 +29,7 @@ impl DescribeConnectionAliasesInput {
         self.limit
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,7 +44,7 @@ impl DescribeConnectionAliasesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasesInputBuilder {
-    pub(crate) alias_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alias_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +57,16 @@ impl DescribeConnectionAliasesInputBuilder {
     /// <p>The identifiers of the connection aliases to describe.</p>
     pub fn alias_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alias_ids.unwrap_or_default();
-        v.push(input.into());
-        self.alias_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alias_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn set_alias_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alias_ids = input;
-        self
+    pub fn set_alias_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alias_ids = input; self
     }
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn get_alias_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alias_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alias_ids
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
@@ -76,8 +76,7 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -104,25 +102,26 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
-            alias_ids: self.alias_ids,
-            resource_id: self.resource_id,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
+                alias_ids: self.alias_ids
+                ,
+                resource_id: self.resource_id
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

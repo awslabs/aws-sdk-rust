@@ -3,7 +3,7 @@
 /// <p>Contains information about the configuration of the source connector used in the flow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceFlowConfig {
+pub struct SourceFlowConfig  {
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
@@ -13,21 +13,21 @@ pub struct SourceFlowConfig {
     /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub source_connector_properties: ::std::option::Option<crate::types::SourceConnectorProperties>,
 }
-impl SourceFlowConfig {
+impl  SourceFlowConfig  {
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
-    pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_profile_name(&self) -> ::std::option::Option<& str> {
         self.connector_profile_name.as_deref()
     }
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
-    pub fn connector_type(&self) -> &crate::types::SourceConnectorType {
+    pub fn connector_type(&self) -> & crate::types::SourceConnectorType {
         &self.connector_type
     }
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
-    pub fn incremental_pull_config(&self) -> ::std::option::Option<&crate::types::IncrementalPullConfig> {
+    pub fn incremental_pull_config(&self) -> ::std::option::Option<& crate::types::IncrementalPullConfig> {
         self.incremental_pull_config.as_ref()
     }
     /// <p>Specifies the information that is required to query a particular source connector.</p>
-    pub fn source_connector_properties(&self) -> ::std::option::Option<&crate::types::SourceConnectorProperties> {
+    pub fn source_connector_properties(&self) -> ::std::option::Option<& crate::types::SourceConnectorProperties> {
         self.source_connector_properties.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SourceFlowConfigBuilder {
     }
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_profile_name = input;
-        self
+        self.connector_profile_name = input; self
     }
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl SourceFlowConfigBuilder {
     }
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::SourceConnectorType>) -> Self {
-        self.connector_type = input;
-        self
+        self.connector_type = input; self
     }
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::SourceConnectorType> {
@@ -84,8 +82,7 @@ impl SourceFlowConfigBuilder {
     }
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
     pub fn set_incremental_pull_config(mut self, input: ::std::option::Option<crate::types::IncrementalPullConfig>) -> Self {
-        self.incremental_pull_config = input;
-        self
+        self.incremental_pull_config = input; self
     }
     /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
     pub fn get_incremental_pull_config(&self) -> &::std::option::Option<crate::types::IncrementalPullConfig> {
@@ -99,8 +96,7 @@ impl SourceFlowConfigBuilder {
     }
     /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub fn set_source_connector_properties(mut self, input: ::std::option::Option<crate::types::SourceConnectorProperties>) -> Self {
-        self.source_connector_properties = input;
-        self
+        self.source_connector_properties = input; self
     }
     /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub fn get_source_connector_properties(&self) -> &::std::option::Option<crate::types::SourceConnectorProperties> {
@@ -110,16 +106,21 @@ impl SourceFlowConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`connector_type`](crate::types::builders::SourceFlowConfigBuilder::connector_type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceFlowConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceFlowConfig {
-            connector_profile_name: self.connector_profile_name,
-            connector_type: self.connector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connector_type",
-                    "connector_type was not specified but it is required when building SourceFlowConfig",
-                )
-            })?,
-            incremental_pull_config: self.incremental_pull_config,
-            source_connector_properties: self.source_connector_properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceFlowConfig {
+                connector_profile_name: self.connector_profile_name
+                ,
+                connector_type: self.connector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connector_type", "connector_type was not specified but it is required when building SourceFlowConfig")
+                    )?
+                ,
+                incremental_pull_config: self.incremental_pull_config
+                ,
+                source_connector_properties: self.source_connector_properties
+                ,
+            }
+        )
     }
 }
+

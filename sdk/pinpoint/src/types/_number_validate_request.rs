@@ -3,19 +3,19 @@
 /// <p>Specifies a phone number to validate and retrieve information about.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberValidateRequest {
+pub struct NumberValidateRequest  {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
-impl NumberValidateRequest {
+impl  NumberValidateRequest  {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NumberValidateRequestBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NumberValidateRequestBuilder {
     }
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NumberValidateRequestBuilder {
     /// Consumes the builder and constructs a [`NumberValidateRequest`](crate::types::NumberValidateRequest).
     pub fn build(self) -> crate::types::NumberValidateRequest {
         crate::types::NumberValidateRequest {
-            iso_country_code: self.iso_country_code,
-            phone_number: self.phone_number,
+            iso_country_code: self.iso_country_code
+            ,
+            phone_number: self.phone_number
+            ,
         }
     }
 }
+

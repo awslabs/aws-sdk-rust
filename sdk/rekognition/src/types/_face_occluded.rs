@@ -4,13 +4,13 @@
 /// <p>You can use <code>FaceOccluded</code> to determine if an obstruction on a face negatively impacts using the image for face matching.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaceOccluded {
+pub struct FaceOccluded  {
     /// <p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub value: bool,
     /// <p>The confidence that the service has detected the presence of a face occlusion.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl FaceOccluded {
+impl  FaceOccluded  {
     /// <p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn value(&self) -> bool {
         self.value
@@ -42,8 +42,7 @@ impl FaceOccludedBuilder {
     }
     /// <p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
     pub fn get_value(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl FaceOccludedBuilder {
     }
     /// <p>The confidence that the service has detected the presence of a face occlusion.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence that the service has detected the presence of a face occlusion.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -66,8 +64,12 @@ impl FaceOccludedBuilder {
     /// Consumes the builder and constructs a [`FaceOccluded`](crate::types::FaceOccluded).
     pub fn build(self) -> crate::types::FaceOccluded {
         crate::types::FaceOccluded {
-            value: self.value.unwrap_or_default(),
-            confidence: self.confidence,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

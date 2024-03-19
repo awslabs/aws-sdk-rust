@@ -3,22 +3,20 @@
 /// <p>Information about the variable and its new value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetVariableAction {
+pub struct SetVariableAction  {
     /// <p>The name of the variable.</p>
     pub variable_name: ::std::string::String,
     /// <p>The new value of the variable.</p>
     pub value: ::std::string::String,
 }
-impl SetVariableAction {
+impl  SetVariableAction  {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(&self) -> &str {
-        use std::ops::Deref;
-        self.variable_name.deref()
+    pub fn variable_name(&self) -> & str {
+        use std::ops::Deref; self.variable_name.deref()
     }
     /// <p>The new value of the variable.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl SetVariableAction {
@@ -44,8 +42,7 @@ impl SetVariableActionBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_variable_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_name = input;
-        self
+        self.variable_name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_variable_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SetVariableActionBuilder {
     }
     /// <p>The new value of the variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The new value of the variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SetVariableActionBuilder {
     /// - [`variable_name`](crate::types::builders::SetVariableActionBuilder::variable_name)
     /// - [`value`](crate::types::builders::SetVariableActionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SetVariableAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SetVariableAction {
-            variable_name: self.variable_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variable_name",
-                    "variable_name was not specified but it is required when building SetVariableAction",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SetVariableAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SetVariableAction {
+                variable_name: self.variable_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("variable_name", "variable_name was not specified but it is required when building SetVariableAction")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SetVariableAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

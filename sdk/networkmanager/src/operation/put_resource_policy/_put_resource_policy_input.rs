@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>The JSON resource policy document.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutResourcePolicyInput {
+impl  PutResourcePolicyInput  {
     /// <p>The JSON resource policy document.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The ARN of the resource policy.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The JSON resource policy document.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON resource policy document.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The ARN of the resource policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            policy_document: self.policy_document,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_policy::PutResourcePolicyInput {
+                policy_document: self.policy_document
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

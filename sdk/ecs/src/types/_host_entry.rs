@@ -3,22 +3,20 @@
 /// <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <code>ContainerDefinition</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HostEntry {
+pub struct HostEntry  {
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
     pub hostname: ::std::string::String,
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub ip_address: ::std::string::String,
 }
-impl HostEntry {
+impl  HostEntry  {
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-    pub fn hostname(&self) -> &str {
-        use std::ops::Deref;
-        self.hostname.deref()
+    pub fn hostname(&self) -> & str {
+        use std::ops::Deref; self.hostname.deref()
     }
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-    pub fn ip_address(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_address.deref()
+    pub fn ip_address(&self) -> & str {
+        use std::ops::Deref; self.ip_address.deref()
     }
 }
 impl HostEntry {
@@ -44,8 +42,7 @@ impl HostEntryBuilder {
     }
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl HostEntryBuilder {
     }
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl HostEntryBuilder {
     /// - [`hostname`](crate::types::builders::HostEntryBuilder::hostname)
     /// - [`ip_address`](crate::types::builders::HostEntryBuilder::ip_address)
     pub fn build(self) -> ::std::result::Result<crate::types::HostEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HostEntry {
-            hostname: self.hostname.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hostname",
-                    "hostname was not specified but it is required when building HostEntry",
-                )
-            })?,
-            ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address",
-                    "ip_address was not specified but it is required when building HostEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HostEntry {
+                hostname: self.hostname
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hostname", "hostname was not specified but it is required when building HostEntry")
+                    )?
+                ,
+                ip_address: self.ip_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_address", "ip_address was not specified but it is required when building HostEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

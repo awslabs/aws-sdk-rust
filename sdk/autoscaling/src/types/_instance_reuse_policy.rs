@@ -4,11 +4,11 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceReusePolicy {
+pub struct InstanceReusePolicy  {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in.</p>
     pub reuse_on_scale_in: ::std::option::Option<bool>,
 }
-impl InstanceReusePolicy {
+impl  InstanceReusePolicy  {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in.</p>
     pub fn reuse_on_scale_in(&self) -> ::std::option::Option<bool> {
         self.reuse_on_scale_in
@@ -35,8 +35,7 @@ impl InstanceReusePolicyBuilder {
     }
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in.</p>
     pub fn set_reuse_on_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reuse_on_scale_in = input;
-        self
+        self.reuse_on_scale_in = input; self
     }
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in.</p>
     pub fn get_reuse_on_scale_in(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,9 @@ impl InstanceReusePolicyBuilder {
     /// Consumes the builder and constructs a [`InstanceReusePolicy`](crate::types::InstanceReusePolicy).
     pub fn build(self) -> crate::types::InstanceReusePolicy {
         crate::types::InstanceReusePolicy {
-            reuse_on_scale_in: self.reuse_on_scale_in,
+            reuse_on_scale_in: self.reuse_on_scale_in
+            ,
         }
     }
 }
+

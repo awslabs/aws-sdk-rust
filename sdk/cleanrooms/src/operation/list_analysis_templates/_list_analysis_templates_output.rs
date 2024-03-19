@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnalysisTemplatesOutput {
+pub struct ListAnalysisTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists analysis template metadata.</p>
-    pub analysis_template_summaries: ::std::vec::Vec<crate::types::AnalysisTemplateSummary>,
+    pub analysis_template_summaries: ::std::vec::Vec::<crate::types::AnalysisTemplateSummary>,
     _request_id: Option<String>,
 }
-impl ListAnalysisTemplatesOutput {
+impl  ListAnalysisTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists analysis template metadata.</p>
-    pub fn analysis_template_summaries(&self) -> &[crate::types::AnalysisTemplateSummary] {
-        use std::ops::Deref;
-        self.analysis_template_summaries.deref()
+    pub fn analysis_template_summaries(&self) -> & [crate::types::AnalysisTemplateSummary] {
+        use std::ops::Deref; self.analysis_template_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAnalysisTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAnalysisTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnalysisTemplatesOutput`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput).
     pub fn builder() -> crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAnalysisTemplatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnalysisTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>>,
+    pub(crate) analysis_template_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListAnalysisTemplatesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListAnalysisTemplatesOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListAnalysisTemplatesOutputBuilder {
     /// <p>Lists analysis template metadata.</p>
     pub fn analysis_template_summaries(mut self, input: crate::types::AnalysisTemplateSummary) -> Self {
         let mut v = self.analysis_template_summaries.unwrap_or_default();
-        v.push(input);
-        self.analysis_template_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_template_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists analysis template metadata.</p>
-    pub fn set_analysis_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>>) -> Self {
-        self.analysis_template_summaries = input;
-        self
+    pub fn set_analysis_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisTemplateSummary>>) -> Self {
+        self.analysis_template_summaries = input; self
     }
     /// <p>Lists analysis template metadata.</p>
-    pub fn get_analysis_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>> {
+    pub fn get_analysis_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisTemplateSummary>> {
         &self.analysis_template_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAnalysisTemplatesOutput`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_template_summaries`](crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder::analysis_template_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
-            next_token: self.next_token,
-            analysis_template_summaries: self.analysis_template_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_template_summaries",
-                    "analysis_template_summaries was not specified but it is required when building ListAnalysisTemplatesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
+                next_token: self.next_token
+                ,
+                analysis_template_summaries: self.analysis_template_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_template_summaries", "analysis_template_summaries was not specified but it is required when building ListAnalysisTemplatesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

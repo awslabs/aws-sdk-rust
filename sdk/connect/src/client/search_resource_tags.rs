@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchResourceTags`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`resource_types(impl Into<String>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::resource_types) / [`set_resource_types(Option<Vec::<String>>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::set_resource_types):<br>required: **false**<br><p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`search_criteria(ResourceTagsSearchCriteria)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::search_criteria) / [`set_search_criteria(Option<ResourceTagsSearchCriteria>)`](crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::set_search_criteria):<br>required: **false**<br><p>The search criteria to be used to return tags.</p><br>
-    /// - On success, responds with [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput) with field(s):
+                            /// - On success, responds with [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput) with field(s):
     ///   - [`tags(Option<Vec::<TagSet>>)`](crate::operation::search_resource_tags::SearchResourceTagsOutput::tags): <p>A list of tags used in the Amazon Connect instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_resource_tags::SearchResourceTagsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<SearchResourceTagsError>`](crate::operation::search_resource_tags::SearchResourceTagsError)
+                            /// - On failure, responds with [`SdkError<SearchResourceTagsError>`](crate::operation::search_resource_tags::SearchResourceTagsError)
     pub fn search_resource_tags(&self) -> crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder {
-        crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

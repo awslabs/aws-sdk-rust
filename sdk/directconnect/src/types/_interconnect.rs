@@ -3,7 +3,7 @@
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Interconnect {
+pub struct Interconnect  {
     /// <p>The ID of the interconnect.</p>
     pub interconnect_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the interconnect.</p>
@@ -47,17 +47,17 @@ pub struct Interconnect {
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the interconnect.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
-impl Interconnect {
+impl  Interconnect  {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(&self) -> ::std::option::Option<&str> {
+    pub fn interconnect_id(&self) -> ::std::option::Option<& str> {
         self.interconnect_id.as_deref()
     }
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(&self) -> ::std::option::Option<&str> {
+    pub fn interconnect_name(&self) -> ::std::option::Option<& str> {
         self.interconnect_name.as_deref()
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
@@ -77,31 +77,31 @@ impl Interconnect {
     /// <li>
     /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
     /// </ul>
-    pub fn interconnect_state(&self) -> ::std::option::Option<&crate::types::InterconnectState> {
+    pub fn interconnect_state(&self) -> ::std::option::Option<& crate::types::InterconnectState> {
         self.interconnect_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> ::std::option::Option<&str> {
+    pub fn bandwidth(&self) -> ::std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> ::std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device(&self) -> ::std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
@@ -109,25 +109,26 @@ impl Interconnect {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> ::std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> ::std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(&self) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> ::std::option::Option<& crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the interconnect.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
@@ -155,7 +156,7 @@ pub struct InterconnectBuilder {
     pub(crate) aws_device_v2: ::std::option::Option<::std::string::String>,
     pub(crate) aws_logical_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
 }
 impl InterconnectBuilder {
@@ -166,8 +167,7 @@ impl InterconnectBuilder {
     }
     /// <p>The ID of the interconnect.</p>
     pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interconnect_id = input;
-        self
+        self.interconnect_id = input; self
     }
     /// <p>The ID of the interconnect.</p>
     pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +180,7 @@ impl InterconnectBuilder {
     }
     /// <p>The name of the interconnect.</p>
     pub fn set_interconnect_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interconnect_name = input;
-        self
+        self.interconnect_name = input; self
     }
     /// <p>The name of the interconnect.</p>
     pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +225,7 @@ impl InterconnectBuilder {
     /// <p><code>unknown</code>: The state of the interconnect is not available.</p></li>
     /// </ul>
     pub fn set_interconnect_state(mut self, input: ::std::option::Option<crate::types::InterconnectState>) -> Self {
-        self.interconnect_state = input;
-        self
+        self.interconnect_state = input; self
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -256,8 +254,7 @@ impl InterconnectBuilder {
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +267,7 @@ impl InterconnectBuilder {
     }
     /// <p>The location of the connection.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the connection.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +280,7 @@ impl InterconnectBuilder {
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
@@ -298,8 +293,7 @@ impl InterconnectBuilder {
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn set_loa_issue_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.loa_issue_time = input;
-        self
+        self.loa_issue_time = input; self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn get_loa_issue_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -312,8 +306,7 @@ impl InterconnectBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +319,7 @@ impl InterconnectBuilder {
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn set_aws_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_device = input;
-        self
+        self.aws_device = input; self
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn get_aws_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +332,7 @@ impl InterconnectBuilder {
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.jumbo_frame_capable = input;
-        self
+        self.jumbo_frame_capable = input; self
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
@@ -354,8 +345,7 @@ impl InterconnectBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_device_v2 = input;
-        self
+        self.aws_device_v2 = input; self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
@@ -368,8 +358,7 @@ impl InterconnectBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_logical_device_id = input;
-        self
+        self.aws_logical_device_id = input; self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -382,8 +371,7 @@ impl InterconnectBuilder {
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub fn set_has_logical_redundancy(mut self, input: ::std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
-        self.has_logical_redundancy = input;
-        self
+        self.has_logical_redundancy = input; self
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub fn get_has_logical_redundancy(&self) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
@@ -396,17 +384,16 @@ impl InterconnectBuilder {
     /// <p>The tags associated with the interconnect.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the interconnect.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the interconnect.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
@@ -416,8 +403,7 @@ impl InterconnectBuilder {
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -426,21 +412,37 @@ impl InterconnectBuilder {
     /// Consumes the builder and constructs a [`Interconnect`](crate::types::Interconnect).
     pub fn build(self) -> crate::types::Interconnect {
         crate::types::Interconnect {
-            interconnect_id: self.interconnect_id,
-            interconnect_name: self.interconnect_name,
-            interconnect_state: self.interconnect_state,
-            region: self.region,
-            location: self.location,
-            bandwidth: self.bandwidth,
-            loa_issue_time: self.loa_issue_time,
-            lag_id: self.lag_id,
-            aws_device: self.aws_device,
-            jumbo_frame_capable: self.jumbo_frame_capable,
-            aws_device_v2: self.aws_device_v2,
-            aws_logical_device_id: self.aws_logical_device_id,
-            has_logical_redundancy: self.has_logical_redundancy,
-            tags: self.tags,
-            provider_name: self.provider_name,
+            interconnect_id: self.interconnect_id
+            ,
+            interconnect_name: self.interconnect_name
+            ,
+            interconnect_state: self.interconnect_state
+            ,
+            region: self.region
+            ,
+            location: self.location
+            ,
+            bandwidth: self.bandwidth
+            ,
+            loa_issue_time: self.loa_issue_time
+            ,
+            lag_id: self.lag_id
+            ,
+            aws_device: self.aws_device
+            ,
+            jumbo_frame_capable: self.jumbo_frame_capable
+            ,
+            aws_device_v2: self.aws_device_v2
+            ,
+            aws_logical_device_id: self.aws_logical_device_id
+            ,
+            has_logical_redundancy: self.has_logical_redundancy
+            ,
+            tags: self.tags
+            ,
+            provider_name: self.provider_name
+            ,
         }
     }
 }
+

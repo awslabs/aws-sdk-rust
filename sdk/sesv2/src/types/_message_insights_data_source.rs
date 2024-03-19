@@ -3,7 +3,7 @@
 /// <p>An object that contains filters applied when performing the Message Insights export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageInsightsDataSource {
+pub struct MessageInsightsDataSource  {
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
     pub start_date: ::aws_smithy_types::DateTime,
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
@@ -15,21 +15,21 @@ pub struct MessageInsightsDataSource {
     /// <p>The maximum number of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl MessageInsightsDataSource {
+impl  MessageInsightsDataSource  {
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
-    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_date
     }
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
-    pub fn end_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_date
     }
     /// <p>Filters for results to be included in the export file.</p>
-    pub fn include(&self) -> ::std::option::Option<&crate::types::MessageInsightsFilters> {
+    pub fn include(&self) -> ::std::option::Option<& crate::types::MessageInsightsFilters> {
         self.include.as_ref()
     }
     /// <p>Filters for results to be excluded from the export file.</p>
-    pub fn exclude(&self) -> ::std::option::Option<&crate::types::MessageInsightsFilters> {
+    pub fn exclude(&self) -> ::std::option::Option<& crate::types::MessageInsightsFilters> {
         self.exclude.as_ref()
     }
     /// <p>The maximum number of results.</p>
@@ -63,8 +63,7 @@ impl MessageInsightsDataSourceBuilder {
     }
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -78,8 +77,7 @@ impl MessageInsightsDataSourceBuilder {
     }
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,8 +90,7 @@ impl MessageInsightsDataSourceBuilder {
     }
     /// <p>Filters for results to be included in the export file.</p>
     pub fn set_include(mut self, input: ::std::option::Option<crate::types::MessageInsightsFilters>) -> Self {
-        self.include = input;
-        self
+        self.include = input; self
     }
     /// <p>Filters for results to be included in the export file.</p>
     pub fn get_include(&self) -> &::std::option::Option<crate::types::MessageInsightsFilters> {
@@ -106,8 +103,7 @@ impl MessageInsightsDataSourceBuilder {
     }
     /// <p>Filters for results to be excluded from the export file.</p>
     pub fn set_exclude(mut self, input: ::std::option::Option<crate::types::MessageInsightsFilters>) -> Self {
-        self.exclude = input;
-        self
+        self.exclude = input; self
     }
     /// <p>Filters for results to be excluded from the export file.</p>
     pub fn get_exclude(&self) -> &::std::option::Option<crate::types::MessageInsightsFilters> {
@@ -120,8 +116,7 @@ impl MessageInsightsDataSourceBuilder {
     }
     /// <p>The maximum number of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -132,22 +127,26 @@ impl MessageInsightsDataSourceBuilder {
     /// - [`start_date`](crate::types::builders::MessageInsightsDataSourceBuilder::start_date)
     /// - [`end_date`](crate::types::builders::MessageInsightsDataSourceBuilder::end_date)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageInsightsDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageInsightsDataSource {
-            start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_date",
-                    "start_date was not specified but it is required when building MessageInsightsDataSource",
-                )
-            })?,
-            end_date: self.end_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_date",
-                    "end_date was not specified but it is required when building MessageInsightsDataSource",
-                )
-            })?,
-            include: self.include,
-            exclude: self.exclude,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageInsightsDataSource {
+                start_date: self.start_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_date", "start_date was not specified but it is required when building MessageInsightsDataSource")
+                    )?
+                ,
+                end_date: self.end_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_date", "end_date was not specified but it is required when building MessageInsightsDataSource")
+                    )?
+                ,
+                include: self.include
+                ,
+                exclude: self.exclude
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

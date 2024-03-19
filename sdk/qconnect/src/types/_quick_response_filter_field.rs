@@ -30,30 +30,30 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickResponseFilterField {
+pub struct QuickResponseFilterField  {
     /// <p>The name of the attribute field to filter the quick responses by.</p>
     pub name: ::std::string::String,
     /// <p>The values of attribute field to filter the quick response by.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The operator to use for filtering.</p>
     pub operator: crate::types::QuickResponseFilterOperator,
     /// <p>Whether to treat null value as a match for the attribute field.</p>
     pub include_no_existence: ::std::option::Option<bool>,
 }
-impl QuickResponseFilterField {
+impl  QuickResponseFilterField  {
     /// <p>The name of the attribute field to filter the quick responses by.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values of attribute field to filter the quick response by.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The operator to use for filtering.</p>
-    pub fn operator(&self) -> &crate::types::QuickResponseFilterOperator {
+    pub fn operator(&self) -> & crate::types::QuickResponseFilterOperator {
         &self.operator
     }
     /// <p>Whether to treat null value as a match for the attribute field.</p>
@@ -73,7 +73,7 @@ impl QuickResponseFilterField {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickResponseFilterFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::QuickResponseFilterOperator>,
     pub(crate) include_no_existence: ::std::option::Option<bool>,
 }
@@ -86,8 +86,7 @@ impl QuickResponseFilterFieldBuilder {
     }
     /// <p>The name of the attribute field to filter the quick responses by.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute field to filter the quick responses by.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +99,16 @@ impl QuickResponseFilterFieldBuilder {
     /// <p>The values of attribute field to filter the quick response by.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of attribute field to filter the quick response by.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of attribute field to filter the quick response by.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for filtering.</p>
@@ -121,8 +119,7 @@ impl QuickResponseFilterFieldBuilder {
     }
     /// <p>The operator to use for filtering.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::QuickResponseFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for filtering.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::QuickResponseFilterOperator> {
@@ -135,8 +132,7 @@ impl QuickResponseFilterFieldBuilder {
     }
     /// <p>Whether to treat null value as a match for the attribute field.</p>
     pub fn set_include_no_existence(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_no_existence = input;
-        self
+        self.include_no_existence = input; self
     }
     /// <p>Whether to treat null value as a match for the attribute field.</p>
     pub fn get_include_no_existence(&self) -> &::std::option::Option<bool> {
@@ -147,21 +143,24 @@ impl QuickResponseFilterFieldBuilder {
     /// - [`name`](crate::types::builders::QuickResponseFilterFieldBuilder::name)
     /// - [`operator`](crate::types::builders::QuickResponseFilterFieldBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::QuickResponseFilterField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QuickResponseFilterField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building QuickResponseFilterField",
-                )
-            })?,
-            values: self.values,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building QuickResponseFilterField",
-                )
-            })?,
-            include_no_existence: self.include_no_existence,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QuickResponseFilterField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building QuickResponseFilterField")
+                    )?
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building QuickResponseFilterField")
+                    )?
+                ,
+                include_no_existence: self.include_no_existence
+                ,
+            }
+        )
     }
 }
+

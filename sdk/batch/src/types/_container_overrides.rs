@@ -4,7 +4,7 @@
 /// <p>For information about using Batch overrides when you connect event sources to targets, see <a href="https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_BatchContainerOverrides.html">BatchContainerOverrides</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerOverrides {
+pub struct ContainerOverrides  {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub vcpus: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct ContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
-    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The instance type to use for a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
@@ -22,11 +22,11 @@ pub struct ContainerOverrides {
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub environment: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub resource_requirements: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRequirement>>,
 }
-impl ContainerOverrides {
+impl  ContainerOverrides  {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn vcpus(&self) -> ::std::option::Option<i32> {
@@ -40,30 +40,33 @@ impl ContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
-    pub fn command(&self) -> &[::std::string::String] {
-        self.command.as_deref().unwrap_or_default()
+    pub fn command(&self) -> & [::std::string::String] {
+        self.command.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instance type to use for a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
-    pub fn environment(&self) -> &[crate::types::KeyValuePair] {
-        self.environment.as_deref().unwrap_or_default()
+    pub fn environment(&self) -> & [crate::types::KeyValuePair] {
+        self.environment.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
-    pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
-        self.resource_requirements.as_deref().unwrap_or_default()
+    pub fn resource_requirements(&self) -> & [crate::types::ResourceRequirement] {
+        self.resource_requirements.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ContainerOverrides {
@@ -79,10 +82,10 @@ impl ContainerOverrides {
 pub struct ContainerOverridesBuilder {
     pub(crate) vcpus: ::std::option::Option<i32>,
     pub(crate) memory: ::std::option::Option<i32>,
-    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub(crate) environment: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
+    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRequirement>>,
 }
 impl ContainerOverridesBuilder {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
@@ -94,8 +97,7 @@ impl ContainerOverridesBuilder {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn set_vcpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vcpus = input;
-        self
+        self.vcpus = input; self
     }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the <code>vcpus</code> parameter that's set in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>vcpus</code> parameter set in the job definition, but doesn't override any vCPU requirement specified in the <code>resourceRequirements</code> structure in the job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
@@ -111,8 +113,7 @@ impl ContainerOverridesBuilder {
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to override the memory requirements specified in the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement that's specified in the <code>resourceRequirements</code> structure in the job definition. To override memory requirements that are specified in the <code>resourceRequirements</code> structure in the job definition, <code>resourceRequirements</code> must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't override job definition resource requirements</a> in the <i>Batch User Guide</i>.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
@@ -128,21 +129,20 @@ impl ContainerOverridesBuilder {
     /// </note>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
-        v.push(input.into());
-        self.command = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.command = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
-    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.command = input;
-        self
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.command = input; self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p><note>
     /// <p>This parameter can't contain an empty string.</p>
     /// </note>
-    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.command
     }
     /// <p>The instance type to use for a multi-node parallel job.</p><note>
@@ -156,8 +156,7 @@ impl ContainerOverridesBuilder {
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type to use for a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
@@ -174,21 +173,20 @@ impl ContainerOverridesBuilder {
     /// </note>
     pub fn environment(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.environment.unwrap_or_default();
-        v.push(input);
-        self.environment = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the job definition.</p><note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>> {
         &self.environment
     }
     /// Appends an item to `resource_requirements`.
@@ -198,28 +196,34 @@ impl ContainerOverridesBuilder {
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn resource_requirements(mut self, input: crate::types::ResourceRequirement) -> Self {
         let mut v = self.resource_requirements.unwrap_or_default();
-        v.push(input);
-        self.resource_requirements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_requirements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
-        self.resource_requirements = input;
-        self
+    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceRequirement>>) -> Self {
+        self.resource_requirements = input; self
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
+    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }
     /// Consumes the builder and constructs a [`ContainerOverrides`](crate::types::ContainerOverrides).
     pub fn build(self) -> crate::types::ContainerOverrides {
         crate::types::ContainerOverrides {
-            vcpus: self.vcpus,
-            memory: self.memory,
-            command: self.command,
-            instance_type: self.instance_type,
-            environment: self.environment,
-            resource_requirements: self.resource_requirements,
+            vcpus: self.vcpus
+            ,
+            memory: self.memory
+            ,
+            command: self.command
+            ,
+            instance_type: self.instance_type
+            ,
+            environment: self.environment
+            ,
+            resource_requirements: self.resource_requirements
+            ,
         }
     }
 }
+

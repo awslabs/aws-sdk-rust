@@ -3,22 +3,23 @@
 /// <p>An object containing a segment of the generated response that is based on a source in the knowledge base, alongside information about the source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Citation {
+pub struct Citation  {
     /// <p>Contains the generated response and metadata</p>
     pub generated_response_part: ::std::option::Option<crate::types::GeneratedResponsePart>,
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    pub retrieved_references: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>,
 }
-impl Citation {
+impl  Citation  {
     /// <p>Contains the generated response and metadata</p>
-    pub fn generated_response_part(&self) -> ::std::option::Option<&crate::types::GeneratedResponsePart> {
+    pub fn generated_response_part(&self) -> ::std::option::Option<& crate::types::GeneratedResponsePart> {
         self.generated_response_part.as_ref()
     }
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retrieved_references.is_none()`.
-    pub fn retrieved_references(&self) -> &[crate::types::RetrievedReference] {
-        self.retrieved_references.as_deref().unwrap_or_default()
+    pub fn retrieved_references(&self) -> & [crate::types::RetrievedReference] {
+        self.retrieved_references.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Citation {
@@ -33,7 +34,7 @@ impl Citation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CitationBuilder {
     pub(crate) generated_response_part: ::std::option::Option<crate::types::GeneratedResponsePart>,
-    pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>,
 }
 impl CitationBuilder {
     /// <p>Contains the generated response and metadata</p>
@@ -43,8 +44,7 @@ impl CitationBuilder {
     }
     /// <p>Contains the generated response and metadata</p>
     pub fn set_generated_response_part(mut self, input: ::std::option::Option<crate::types::GeneratedResponsePart>) -> Self {
-        self.generated_response_part = input;
-        self
+        self.generated_response_part = input; self
     }
     /// <p>Contains the generated response and metadata</p>
     pub fn get_generated_response_part(&self) -> &::std::option::Option<crate::types::GeneratedResponsePart> {
@@ -57,24 +57,26 @@ impl CitationBuilder {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
     pub fn retrieved_references(mut self, input: crate::types::RetrievedReference) -> Self {
         let mut v = self.retrieved_references.unwrap_or_default();
-        v.push(input);
-        self.retrieved_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.retrieved_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub fn set_retrieved_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>) -> Self {
-        self.retrieved_references = input;
-        self
+    pub fn set_retrieved_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>) -> Self {
+        self.retrieved_references = input; self
     }
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>> {
+    pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>> {
         &self.retrieved_references
     }
     /// Consumes the builder and constructs a [`Citation`](crate::types::Citation).
     pub fn build(self) -> crate::types::Citation {
         crate::types::Citation {
-            generated_response_part: self.generated_response_part,
-            retrieved_references: self.retrieved_references,
+            generated_response_part: self.generated_response_part
+            ,
+            retrieved_references: self.retrieved_references
+            ,
         }
     }
 }
+

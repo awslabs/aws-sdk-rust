@@ -171,3 +171,4 @@ pub fn de_policy(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

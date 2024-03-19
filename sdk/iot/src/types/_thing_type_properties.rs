@@ -3,22 +3,23 @@
 /// <p>The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThingTypeProperties {
+pub struct ThingTypeProperties  {
     /// <p>The description of the thing type.</p>
     pub thing_type_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of searchable thing attribute names.</p>
-    pub searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub searchable_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ThingTypeProperties {
+impl  ThingTypeProperties  {
     /// <p>The description of the thing type.</p>
-    pub fn thing_type_description(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_description(&self) -> ::std::option::Option<& str> {
         self.thing_type_description.as_deref()
     }
     /// <p>A list of searchable thing attribute names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.searchable_attributes.is_none()`.
-    pub fn searchable_attributes(&self) -> &[::std::string::String] {
-        self.searchable_attributes.as_deref().unwrap_or_default()
+    pub fn searchable_attributes(&self) -> & [::std::string::String] {
+        self.searchable_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ThingTypeProperties {
@@ -33,7 +34,7 @@ impl ThingTypeProperties {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingTypePropertiesBuilder {
     pub(crate) thing_type_description: ::std::option::Option<::std::string::String>,
-    pub(crate) searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) searchable_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ThingTypePropertiesBuilder {
     /// <p>The description of the thing type.</p>
@@ -43,8 +44,7 @@ impl ThingTypePropertiesBuilder {
     }
     /// <p>The description of the thing type.</p>
     pub fn set_thing_type_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_description = input;
-        self
+        self.thing_type_description = input; self
     }
     /// <p>The description of the thing type.</p>
     pub fn get_thing_type_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ThingTypePropertiesBuilder {
     /// <p>A list of searchable thing attribute names.</p>
     pub fn searchable_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.searchable_attributes.unwrap_or_default();
-        v.push(input.into());
-        self.searchable_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.searchable_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn set_searchable_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.searchable_attributes = input;
-        self
+    pub fn set_searchable_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.searchable_attributes = input; self
     }
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn get_searchable_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_searchable_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.searchable_attributes
     }
     /// Consumes the builder and constructs a [`ThingTypeProperties`](crate::types::ThingTypeProperties).
     pub fn build(self) -> crate::types::ThingTypeProperties {
         crate::types::ThingTypeProperties {
-            thing_type_description: self.thing_type_description,
-            searchable_attributes: self.searchable_attributes,
+            thing_type_description: self.thing_type_description
+            ,
+            searchable_attributes: self.searchable_attributes
+            ,
         }
     }
 }
+

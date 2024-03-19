@@ -5,23 +5,20 @@ pub use crate::operation::update_custom_key_store::_update_custom_key_store_inpu
 
 impl UpdateCustomKeyStoreInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_custom_key_store();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_custom_key_store();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateCustomKeyStore`.
-///
+/// 
 /// <p>Changes the properties of a custom key store. You can use this operation to change the properties of an CloudHSM key store or an external key store.</p>
 /// <p>Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key store. Use the remaining optional parameters to change its properties. This operation does not return any property values. To verify the updated property values, use the <code>DescribeCustomKeyStores</code> operation.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p><important>
@@ -56,33 +53,32 @@ impl UpdateCustomKeyStoreInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomKeyStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreInputBuilder,
+                    inner: crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
-    > for UpdateCustomKeyStoreFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
-            crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
+                    crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
+                > for UpdateCustomKeyStoreFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
+                        crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateCustomKeyStoreFluentBuilder {
     /// Creates a new `UpdateCustomKeyStore`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -91,53 +87,44 @@ impl UpdateCustomKeyStoreFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_custom_key_store::UpdateCustomKeyStore::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_custom_key_store::UpdateCustomKeyStore::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
-        crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_key_store::UpdateCustomKeyStoreError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_custom_key_store::UpdateCustomKeyStore::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_custom_key_store::UpdateCustomKeyStore::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput, crate::operation::update_custom_key_store::UpdateCustomKeyStoreError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
@@ -293,10 +280,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
     /// <p>You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code> value in the authentication credential, even if you are only updating one value.</p>
     /// <p>This parameter doesn't establish or change your authentication credentials on the proxy. It just tells KMS the credential that you established with your external key store proxy. For example, if you rotate the credential on your external key store proxy, you can use this parameter to update the credential in KMS.</p>
     /// <p>You can change this value when the external key store is connected or disconnected.</p>
-    pub fn set_xks_proxy_authentication_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>,
-    ) -> Self {
+    pub fn set_xks_proxy_authentication_credential(mut self, input: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>) -> Self {
         self.inner = self.inner.set_xks_proxy_authentication_credential(input);
         self
     }
@@ -331,3 +315,4 @@ impl UpdateCustomKeyStoreFluentBuilder {
         self.inner.get_xks_proxy_connectivity()
     }
 }
+

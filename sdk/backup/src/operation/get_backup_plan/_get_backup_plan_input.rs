@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackupPlanInput {
+pub struct GetBackupPlanInput  {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl GetBackupPlanInput {
+impl  GetBackupPlanInput  {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetBackupPlanInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetBackupPlanInputBuilder {
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_backup_plan::GetBackupPlanInput {
-            backup_plan_id: self.backup_plan_id,
-            version_id: self.version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_backup_plan::GetBackupPlanInput {
+                backup_plan_id: self.backup_plan_id
+                ,
+                version_id: self.version_id
+                ,
+            }
+        )
     }
 }
+

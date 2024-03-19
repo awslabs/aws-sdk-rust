@@ -3,7 +3,7 @@
 /// <p>Information about the status of the query, including progress and bytes scanned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryStatus {
+pub struct QueryStatus  {
     /// <p>The progress of the query, expressed as a percentage.</p>
     pub progress_percentage: f64,
     /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started.</p>
@@ -11,7 +11,7 @@ pub struct QueryStatus {
     /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled.</p>
     pub cumulative_bytes_metered: i64,
 }
-impl QueryStatus {
+impl  QueryStatus  {
     /// <p>The progress of the query, expressed as a percentage.</p>
     pub fn progress_percentage(&self) -> f64 {
         self.progress_percentage
@@ -48,8 +48,7 @@ impl QueryStatusBuilder {
     }
     /// <p>The progress of the query, expressed as a percentage.</p>
     pub fn set_progress_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.progress_percentage = input;
-        self
+        self.progress_percentage = input; self
     }
     /// <p>The progress of the query, expressed as a percentage.</p>
     pub fn get_progress_percentage(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl QueryStatusBuilder {
     }
     /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started.</p>
     pub fn set_cumulative_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cumulative_bytes_scanned = input;
-        self
+        self.cumulative_bytes_scanned = input; self
     }
     /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started.</p>
     pub fn get_cumulative_bytes_scanned(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl QueryStatusBuilder {
     }
     /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled.</p>
     pub fn set_cumulative_bytes_metered(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cumulative_bytes_metered = input;
-        self
+        self.cumulative_bytes_metered = input; self
     }
     /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled.</p>
     pub fn get_cumulative_bytes_metered(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,16 @@ impl QueryStatusBuilder {
     /// Consumes the builder and constructs a [`QueryStatus`](crate::types::QueryStatus).
     pub fn build(self) -> crate::types::QueryStatus {
         crate::types::QueryStatus {
-            progress_percentage: self.progress_percentage.unwrap_or_default(),
-            cumulative_bytes_scanned: self.cumulative_bytes_scanned.unwrap_or_default(),
-            cumulative_bytes_metered: self.cumulative_bytes_metered.unwrap_or_default(),
+            progress_percentage: self.progress_percentage
+                .unwrap_or_default()
+            ,
+            cumulative_bytes_scanned: self.cumulative_bytes_scanned
+                .unwrap_or_default()
+            ,
+            cumulative_bytes_metered: self.cumulative_bytes_metered
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

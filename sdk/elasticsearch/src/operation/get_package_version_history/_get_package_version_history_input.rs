@@ -3,7 +3,7 @@
 /// <p>Container for request parameters to <code> <code>GetPackageVersionHistory</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageVersionHistoryInput {
+pub struct GetPackageVersionHistoryInput  {
     /// <p>Returns an audit history of versions of the package.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Limits results to a maximum number of versions.</p>
@@ -11,9 +11,9 @@ pub struct GetPackageVersionHistoryInput {
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetPackageVersionHistoryInput {
+impl  GetPackageVersionHistoryInput  {
     /// <p>Returns an audit history of versions of the package.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>Limits results to a maximum number of versions.</p>
@@ -21,7 +21,7 @@ impl GetPackageVersionHistoryInput {
         self.max_results
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetPackageVersionHistoryInputBuilder {
     }
     /// <p>Returns an audit history of versions of the package.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>Returns an audit history of versions of the package.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetPackageVersionHistoryInputBuilder {
     }
     /// <p>Limits results to a maximum number of versions.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Limits results to a maximum number of versions.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,24 +75,24 @@ impl GetPackageVersionHistoryInputBuilder {
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetPackageVersionHistoryInput`](crate::operation::get_package_version_history::GetPackageVersionHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_package_version_history::GetPackageVersionHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_package_version_history::GetPackageVersionHistoryInput {
-            package_id: self.package_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_package_version_history::GetPackageVersionHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_package_version_history::GetPackageVersionHistoryInput {
+                package_id: self.package_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

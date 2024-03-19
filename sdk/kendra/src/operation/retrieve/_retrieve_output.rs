@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveOutput {
+pub struct RetrieveOutput  {
     /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
+    pub result_items: ::std::option::Option<::std::vec::Vec::<crate::types::RetrieveResultItem>>,
     _request_id: Option<String>,
 }
-impl RetrieveOutput {
+impl  RetrieveOutput  {
     /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_items.is_none()`.
-    pub fn result_items(&self) -> &[crate::types::RetrieveResultItem] {
-        self.result_items.as_deref().unwrap_or_default()
+    pub fn result_items(&self) -> & [crate::types::RetrieveResultItem] {
+        self.result_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RetrieveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RetrieveOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
     pub fn builder() -> crate::operation::retrieve::builders::RetrieveOutputBuilder {
@@ -38,7 +39,7 @@ impl RetrieveOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
-    pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,
+    pub(crate) result_items: ::std::option::Option<::std::vec::Vec::<crate::types::RetrieveResultItem>>,
     _request_id: Option<String>,
 }
 impl RetrieveOutputBuilder {
@@ -49,8 +50,7 @@ impl RetrieveOutputBuilder {
     }
     /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The identifier of query used for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a> API.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl RetrieveOutputBuilder {
     /// <p>The results of the retrieved relevant passages for the search.</p>
     pub fn result_items(mut self, input: crate::types::RetrieveResultItem) -> Self {
         let mut v = self.result_items.unwrap_or_default();
-        v.push(input);
-        self.result_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub fn set_result_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>) -> Self {
-        self.result_items = input;
-        self
+    pub fn set_result_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RetrieveResultItem>>) -> Self {
+        self.result_items = input; self
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub fn get_result_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>> {
+    pub fn get_result_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RetrieveResultItem>> {
         &self.result_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
     pub fn build(self) -> crate::operation::retrieve::RetrieveOutput {
         crate::operation::retrieve::RetrieveOutput {
-            query_id: self.query_id,
-            result_items: self.result_items,
+            query_id: self.query_id
+            ,
+            result_items: self.result_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

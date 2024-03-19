@@ -3,13 +3,13 @@
 /// <p>Metadata for a transform job step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformJobStepMetadata {
+pub struct TransformJobStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl TransformJobStepMetadata {
+impl  TransformJobStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TransformJobStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TransformJobStepMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`TransformJobStepMetadata`](crate::types::TransformJobStepMetadata).
     pub fn build(self) -> crate::types::TransformJobStepMetadata {
-        crate::types::TransformJobStepMetadata { arn: self.arn }
+        crate::types::TransformJobStepMetadata {
+            arn: self.arn
+            ,
+        }
     }
 }
+

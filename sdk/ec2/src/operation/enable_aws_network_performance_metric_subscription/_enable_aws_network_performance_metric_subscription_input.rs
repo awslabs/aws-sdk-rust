@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAwsNetworkPerformanceMetricSubscriptionInput {
+pub struct EnableAwsNetworkPerformanceMetricSubscriptionInput  {
     /// <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
@@ -14,21 +14,21 @@ pub struct EnableAwsNetworkPerformanceMetricSubscriptionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
+impl  EnableAwsNetworkPerformanceMetricSubscriptionInput  {
     /// <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The metric used for the enabled subscription.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::MetricType> {
         self.metric.as_ref()
     }
     /// <p>The statistic used for the enabled subscription.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::StatisticType> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::StatisticType> {
         self.statistic.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -38,9 +38,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
 }
 impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder::default()
     }
 }
@@ -63,8 +61,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     }
     /// <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +74,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     }
     /// <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability Zones must be in the same Region.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +87,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     }
     /// <p>The metric used for the enabled subscription.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The metric used for the enabled subscription.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
@@ -105,8 +100,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     }
     /// <p>The statistic used for the enabled subscription.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic used for the enabled subscription.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
@@ -119,28 +113,28 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput {
-                source: self.source,
-                destination: self.destination,
-                metric: self.metric,
-                statistic: self.statistic,
-                dry_run: self.dry_run,
-            },
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                metric: self.metric
+                ,
+                statistic: self.statistic
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

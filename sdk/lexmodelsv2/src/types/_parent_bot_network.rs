@@ -3,22 +3,20 @@
 /// <p>A network of bots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParentBotNetwork {
+pub struct ParentBotNetwork  {
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
     pub bot_id: ::std::string::String,
     /// <p>The version of the network of bots.</p>
     pub bot_version: ::std::string::String,
 }
-impl ParentBotNetwork {
+impl  ParentBotNetwork  {
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-    pub fn bot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_id.deref()
+    pub fn bot_id(&self) -> & str {
+        use std::ops::Deref; self.bot_id.deref()
     }
     /// <p>The version of the network of bots.</p>
-    pub fn bot_version(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_version.deref()
+    pub fn bot_version(&self) -> & str {
+        use std::ops::Deref; self.bot_version.deref()
     }
 }
 impl ParentBotNetwork {
@@ -44,8 +42,7 @@ impl ParentBotNetworkBuilder {
     }
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ParentBotNetworkBuilder {
     }
     /// <p>The version of the network of bots.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the network of bots.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ParentBotNetworkBuilder {
     /// - [`bot_id`](crate::types::builders::ParentBotNetworkBuilder::bot_id)
     /// - [`bot_version`](crate::types::builders::ParentBotNetworkBuilder::bot_version)
     pub fn build(self) -> ::std::result::Result<crate::types::ParentBotNetwork, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParentBotNetwork {
-            bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_id",
-                    "bot_id was not specified but it is required when building ParentBotNetwork",
-                )
-            })?,
-            bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_version",
-                    "bot_version was not specified but it is required when building ParentBotNetwork",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParentBotNetwork {
+                bot_id: self.bot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "bot_id was not specified but it is required when building ParentBotNetwork")
+                    )?
+                ,
+                bot_version: self.bot_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_version", "bot_version was not specified but it is required when building ParentBotNetwork")
+                    )?
+                ,
+            }
+        )
     }
 }
+

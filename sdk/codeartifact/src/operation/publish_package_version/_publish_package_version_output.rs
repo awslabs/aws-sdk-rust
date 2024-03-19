@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishPackageVersionOutput {
+pub struct PublishPackageVersionOutput  {
     /// <p>The format of the package version.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version.</p>
@@ -19,41 +19,41 @@ pub struct PublishPackageVersionOutput {
     pub asset: ::std::option::Option<crate::types::AssetSummary>,
     _request_id: Option<String>,
 }
-impl PublishPackageVersionOutput {
+impl  PublishPackageVersionOutput  {
     /// <p>The format of the package version.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>The version of the package.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The revision of the package version.</p>
-    pub fn version_revision(&self) -> ::std::option::Option<&str> {
+    pub fn version_revision(&self) -> ::std::option::Option<& str> {
         self.version_revision.as_deref()
     }
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
-    pub fn asset(&self) -> ::std::option::Option<&crate::types::AssetSummary> {
+    pub fn asset(&self) -> ::std::option::Option<& crate::types::AssetSummary> {
         self.asset.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishPackageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishPackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishPackageVersionOutput`](crate::operation::publish_package_version::PublishPackageVersionOutput).
     pub fn builder() -> crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder {
@@ -82,8 +82,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>The format of the package version.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the package version.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -96,8 +95,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>The namespace of the package version.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package version.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>The name of the package.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>The version of the package.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the package.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>The revision of the package version.</p>
     pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_revision = input;
-        self
+        self.version_revision = input; self
     }
     /// <p>The revision of the package version.</p>
     pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -166,33 +160,40 @@ impl PublishPackageVersionOutputBuilder {
     }
     /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
     pub fn set_asset(mut self, input: ::std::option::Option<crate::types::AssetSummary>) -> Self {
-        self.asset = input;
-        self
+        self.asset = input; self
     }
     /// <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
     pub fn get_asset(&self) -> &::std::option::Option<crate::types::AssetSummary> {
         &self.asset
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishPackageVersionOutput`](crate::operation::publish_package_version::PublishPackageVersionOutput).
     pub fn build(self) -> crate::operation::publish_package_version::PublishPackageVersionOutput {
         crate::operation::publish_package_version::PublishPackageVersionOutput {
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            version: self.version,
-            version_revision: self.version_revision,
-            status: self.status,
-            asset: self.asset,
+            format: self.format
+            ,
+            namespace: self.namespace
+            ,
+            package: self.package
+            ,
+            version: self.version
+            ,
+            version_revision: self.version_revision
+            ,
+            status: self.status
+            ,
+            asset: self.asset
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

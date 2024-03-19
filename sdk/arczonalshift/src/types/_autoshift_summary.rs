@@ -5,7 +5,7 @@
 /// <p>You can stop an autoshift for a resource by disabling zonal autoshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoshiftSummary {
+pub struct AutoshiftSummary  {
     /// <p>The Availability Zone that traffic is shifted away from for a resource when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
     pub away_from: ::std::string::String,
     /// <p>The time (in UTC) when the autoshift ended.</p>
@@ -15,22 +15,21 @@ pub struct AutoshiftSummary {
     /// <p>The status for an autoshift.</p>
     pub status: crate::types::AutoshiftExecutionStatus,
 }
-impl AutoshiftSummary {
+impl  AutoshiftSummary  {
     /// <p>The Availability Zone that traffic is shifted away from for a resource when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
-    pub fn away_from(&self) -> &str {
-        use std::ops::Deref;
-        self.away_from.deref()
+    pub fn away_from(&self) -> & str {
+        use std::ops::Deref; self.away_from.deref()
     }
     /// <p>The time (in UTC) when the autoshift ended.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
     /// <p>The time (in UTC) when the autoshift started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The status for an autoshift.</p>
-    pub fn status(&self) -> &crate::types::AutoshiftExecutionStatus {
+    pub fn status(&self) -> & crate::types::AutoshiftExecutionStatus {
         &self.status
     }
 }
@@ -59,8 +58,7 @@ impl AutoshiftSummaryBuilder {
     }
     /// <p>The Availability Zone that traffic is shifted away from for a resource when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.away_from = input;
-        self
+        self.away_from = input; self
     }
     /// <p>The Availability Zone that traffic is shifted away from for a resource when Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for the resource is instead directed to other Availability Zones in the Amazon Web Services Region. An autoshift can end for a resource, for example, when Amazon Web Services ends the autoshift for the Availability Zone or when you disable zonal autoshift for the resource.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +72,7 @@ impl AutoshiftSummaryBuilder {
     }
     /// <p>The time (in UTC) when the autoshift ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time (in UTC) when the autoshift ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +86,7 @@ impl AutoshiftSummaryBuilder {
     }
     /// <p>The time (in UTC) when the autoshift started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time (in UTC) when the autoshift started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +100,7 @@ impl AutoshiftSummaryBuilder {
     }
     /// <p>The status for an autoshift.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoshiftExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status for an autoshift.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoshiftExecutionStatus> {
@@ -118,31 +113,30 @@ impl AutoshiftSummaryBuilder {
     /// - [`start_time`](crate::types::builders::AutoshiftSummaryBuilder::start_time)
     /// - [`status`](crate::types::builders::AutoshiftSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AutoshiftSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AutoshiftSummary {
-            away_from: self.away_from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "away_from",
-                    "away_from was not specified but it is required when building AutoshiftSummary",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building AutoshiftSummary",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building AutoshiftSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AutoshiftSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AutoshiftSummary {
+                away_from: self.away_from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("away_from", "away_from was not specified but it is required when building AutoshiftSummary")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building AutoshiftSummary")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building AutoshiftSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AutoshiftSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

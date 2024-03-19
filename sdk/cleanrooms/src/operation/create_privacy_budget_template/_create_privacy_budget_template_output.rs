@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePrivacyBudgetTemplateOutput {
+pub struct CreatePrivacyBudgetTemplateOutput  {
     /// <p>A summary of the elements in the privacy budget template.</p>
     pub privacy_budget_template: ::std::option::Option<crate::types::PrivacyBudgetTemplate>,
     _request_id: Option<String>,
 }
-impl CreatePrivacyBudgetTemplateOutput {
+impl  CreatePrivacyBudgetTemplateOutput  {
     /// <p>A summary of the elements in the privacy budget template.</p>
-    pub fn privacy_budget_template(&self) -> ::std::option::Option<&crate::types::PrivacyBudgetTemplate> {
+    pub fn privacy_budget_template(&self) -> ::std::option::Option<& crate::types::PrivacyBudgetTemplate> {
         self.privacy_budget_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePrivacyBudgetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePrivacyBudgetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrivacyBudgetTemplateOutput`](crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateOutput).
     pub fn builder() -> crate::operation::create_privacy_budget_template::builders::CreatePrivacyBudgetTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl CreatePrivacyBudgetTemplateOutputBuilder {
     }
     /// <p>A summary of the elements in the privacy budget template.</p>
     pub fn set_privacy_budget_template(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetTemplate>) -> Self {
-        self.privacy_budget_template = input;
-        self
+        self.privacy_budget_template = input; self
     }
     /// <p>A summary of the elements in the privacy budget template.</p>
     pub fn get_privacy_budget_template(&self) -> &::std::option::Option<crate::types::PrivacyBudgetTemplate> {
         &self.privacy_budget_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePrivacyBudgetTemplateOutput`](crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateOutput).
     pub fn build(self) -> crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateOutput {
         crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateOutput {
-            privacy_budget_template: self.privacy_budget_template,
+            privacy_budget_template: self.privacy_budget_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

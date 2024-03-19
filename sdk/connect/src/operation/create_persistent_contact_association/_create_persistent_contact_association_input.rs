@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePersistentContactAssociationInput {
+pub struct CreatePersistentContactAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the contactId of the current contact that the <code>CreatePersistentContactAssociation</code> API is being called from.</p>
@@ -60,13 +60,13 @@ pub struct CreatePersistentContactAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreatePersistentContactAssociationInput {
+impl  CreatePersistentContactAssociationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>This is the contactId of the current contact that the <code>CreatePersistentContactAssociation</code> API is being called from.</p>
-    pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn initial_contact_id(&self) -> ::std::option::Option<& str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>The contactId chosen for rehydration depends on the type chosen.</p>
@@ -116,15 +116,15 @@ impl CreatePersistentContactAssociationInput {
     /// </ul></li>
     /// </ul></li>
     /// </ul>
-    pub fn rehydration_type(&self) -> ::std::option::Option<&crate::types::RehydrationType> {
+    pub fn rehydration_type(&self) -> ::std::option::Option<& crate::types::RehydrationType> {
         self.rehydration_type.as_ref()
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    pub fn source_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_contact_id(&self) -> ::std::option::Option<& str> {
         self.source_contact_id.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -154,8 +154,7 @@ impl CreatePersistentContactAssociationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +168,7 @@ impl CreatePersistentContactAssociationInputBuilder {
     }
     /// <p>This is the contactId of the current contact that the <code>CreatePersistentContactAssociation</code> API is being called from.</p>
     pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_contact_id = input;
-        self
+        self.initial_contact_id = input; self
     }
     /// <p>This is the contactId of the current contact that the <code>CreatePersistentContactAssociation</code> API is being called from.</p>
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +274,7 @@ impl CreatePersistentContactAssociationInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_rehydration_type(mut self, input: ::std::option::Option<crate::types::RehydrationType>) -> Self {
-        self.rehydration_type = input;
-        self
+        self.rehydration_type = input; self
     }
     /// <p>The contactId chosen for rehydration depends on the type chosen.</p>
     /// <ul>
@@ -337,8 +334,7 @@ impl CreatePersistentContactAssociationInputBuilder {
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
     pub fn set_source_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_contact_id = input;
-        self
+        self.source_contact_id = input; self
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
     pub fn get_source_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -351,28 +347,28 @@ impl CreatePersistentContactAssociationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePersistentContactAssociationInput`](crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationInput {
-                instance_id: self.instance_id,
-                initial_contact_id: self.initial_contact_id,
-                rehydration_type: self.rehydration_type,
-                source_contact_id: self.source_contact_id,
-                client_token: self.client_token,
-            },
+                instance_id: self.instance_id
+                ,
+                initial_contact_id: self.initial_contact_id
+                ,
+                rehydration_type: self.rehydration_type
+                ,
+                source_contact_id: self.source_contact_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

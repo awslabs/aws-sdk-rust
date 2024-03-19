@@ -3,14 +3,14 @@
 /// <p>This output indicates the result of removing tags from the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsOutput {
+pub struct RemoveTagsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for RemoveTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveTagsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput).
     pub fn builder() -> crate::operation::remove_tags::builders::RemoveTagsOutputBuilder {
@@ -26,14 +26,14 @@ pub struct RemoveTagsOutputBuilder {
 }
 impl RemoveTagsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput).
     pub fn build(self) -> crate::operation::remove_tags::RemoveTagsOutput {
         crate::operation::remove_tags::RemoveTagsOutput {
@@ -41,3 +41,4 @@ impl RemoveTagsOutputBuilder {
         }
     }
 }
+

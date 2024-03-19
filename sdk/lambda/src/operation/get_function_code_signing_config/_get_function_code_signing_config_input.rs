@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionCodeSigningConfigInput {
+pub struct GetFunctionCodeSigningConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct GetFunctionCodeSigningConfigInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
 }
-impl GetFunctionCodeSigningConfigInput {
+impl  GetFunctionCodeSigningConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -28,7 +28,7 @@ impl GetFunctionCodeSigningConfigInput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl GetFunctionCodeSigningConfigInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -92,14 +91,13 @@ impl GetFunctionCodeSigningConfigInputBuilder {
         &self.function_name
     }
     /// Consumes the builder and constructs a [`GetFunctionCodeSigningConfigInput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput {
-            function_name: self.function_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput {
+                function_name: self.function_name
+                ,
+            }
+        )
     }
 }
+

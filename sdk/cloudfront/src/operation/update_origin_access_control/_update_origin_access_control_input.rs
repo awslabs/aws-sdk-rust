@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOriginAccessControlInput {
+pub struct UpdateOriginAccessControlInput  {
     /// <p>An origin access control.</p>
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
     /// <p>The unique identifier of the origin access control that you are updating.</p>
@@ -10,17 +10,17 @@ pub struct UpdateOriginAccessControlInput {
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateOriginAccessControlInput {
+impl  UpdateOriginAccessControlInput  {
     /// <p>An origin access control.</p>
-    pub fn origin_access_control_config(&self) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
+    pub fn origin_access_control_config(&self) -> ::std::option::Option<& crate::types::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateOriginAccessControlInputBuilder {
     }
     /// <p>An origin access control.</p>
     pub fn set_origin_access_control_config(mut self, input: ::std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
-        self.origin_access_control_config = input;
-        self
+        self.origin_access_control_config = input; self
     }
     /// <p>An origin access control.</p>
     pub fn get_origin_access_control_config(&self) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
@@ -63,8 +62,7 @@ impl UpdateOriginAccessControlInputBuilder {
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateOriginAccessControlInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateOriginAccessControlInput`](crate::operation::update_origin_access_control::UpdateOriginAccessControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_origin_access_control::UpdateOriginAccessControlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_origin_access_control::UpdateOriginAccessControlInput {
-            origin_access_control_config: self.origin_access_control_config,
-            id: self.id,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_origin_access_control::UpdateOriginAccessControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_origin_access_control::UpdateOriginAccessControlInput {
+                origin_access_control_config: self.origin_access_control_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

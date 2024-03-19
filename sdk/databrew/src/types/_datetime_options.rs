@@ -3,7 +3,7 @@
 /// <p>Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatetimeOptions {
+pub struct DatetimeOptions  {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     pub format: ::std::string::String,
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
@@ -11,18 +11,17 @@ pub struct DatetimeOptions {
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub locale_code: ::std::option::Option<::std::string::String>,
 }
-impl DatetimeOptions {
+impl  DatetimeOptions  {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
-    pub fn format(&self) -> &str {
-        use std::ops::Deref;
-        self.format.deref()
+    pub fn format(&self) -> & str {
+        use std::ops::Deref; self.format.deref()
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn timezone_offset(&self) -> ::std::option::Option<&str> {
+    pub fn timezone_offset(&self) -> ::std::option::Option<& str> {
         self.timezone_offset.as_deref()
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
-    pub fn locale_code(&self) -> ::std::option::Option<&str> {
+    pub fn locale_code(&self) -> ::std::option::Option<& str> {
         self.locale_code.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl DatetimeOptionsBuilder {
     }
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl DatetimeOptionsBuilder {
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
     pub fn set_timezone_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone_offset = input;
-        self
+        self.timezone_offset = input; self
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
     pub fn get_timezone_offset(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl DatetimeOptionsBuilder {
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub fn set_locale_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_code = input;
-        self
+        self.locale_code = input; self
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
     pub fn get_locale_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl DatetimeOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::DatetimeOptionsBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::DatetimeOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatetimeOptions {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building DatetimeOptions",
-                )
-            })?,
-            timezone_offset: self.timezone_offset,
-            locale_code: self.locale_code,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatetimeOptions {
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building DatetimeOptions")
+                    )?
+                ,
+                timezone_offset: self.timezone_offset
+                ,
+                locale_code: self.locale_code
+                ,
+            }
+        )
     }
 }
+

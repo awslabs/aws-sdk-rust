@@ -3,22 +3,23 @@
 /// <p>The tags specification for the launch template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateTagSpecification {
+pub struct LaunchTemplateTagSpecification  {
     /// <p>The type of resource to tag.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tags for the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl LaunchTemplateTagSpecification {
+impl  LaunchTemplateTagSpecification  {
     /// <p>The type of resource to tag.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tags for the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LaunchTemplateTagSpecification {
@@ -33,7 +34,7 @@ impl LaunchTemplateTagSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateTagSpecificationBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl LaunchTemplateTagSpecificationBuilder {
     /// <p>The type of resource to tag.</p>
@@ -43,8 +44,7 @@ impl LaunchTemplateTagSpecificationBuilder {
     }
     /// <p>The type of resource to tag.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource to tag.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -57,24 +57,26 @@ impl LaunchTemplateTagSpecificationBuilder {
     /// <p>The tags for the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LaunchTemplateTagSpecification`](crate::types::LaunchTemplateTagSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateTagSpecification {
         crate::types::LaunchTemplateTagSpecification {
-            resource_type: self.resource_type,
-            tags: self.tags,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

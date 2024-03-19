@@ -3,7 +3,7 @@
 /// <p>The output structure contains the Raster Data Collection Query input along with some additional metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RasterDataCollectionQueryOutput {
+pub struct RasterDataCollectionQueryOutput  {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
     pub raster_data_collection_arn: ::std::string::String,
     /// <p>The name of the raster data collection.</p>
@@ -15,31 +15,29 @@ pub struct RasterDataCollectionQueryOutput {
     /// <p>Property filters used in the search.</p>
     pub property_filters: ::std::option::Option<crate::types::PropertyFilters>,
 }
-impl RasterDataCollectionQueryOutput {
+impl  RasterDataCollectionQueryOutput  {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
-    pub fn raster_data_collection_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.raster_data_collection_arn.deref()
+    pub fn raster_data_collection_arn(&self) -> & str {
+        use std::ops::Deref; self.raster_data_collection_arn.deref()
     }
     /// <p>The name of the raster data collection.</p>
-    pub fn raster_data_collection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.raster_data_collection_name.deref()
+    pub fn raster_data_collection_name(&self) -> & str {
+        use std::ops::Deref; self.raster_data_collection_name.deref()
     }
     /// <p>The TimeRange filter used in the search.</p>
-    pub fn time_range_filter(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterOutput> {
+    pub fn time_range_filter(&self) -> ::std::option::Option<& crate::types::TimeRangeFilterOutput> {
         self.time_range_filter.as_ref()
     }
     /// <p>The Area of Interest used in the search.</p>
-    pub fn area_of_interest(&self) -> ::std::option::Option<&crate::types::AreaOfInterest> {
+    pub fn area_of_interest(&self) -> ::std::option::Option<& crate::types::AreaOfInterest> {
         self.area_of_interest.as_ref()
     }
     /// <p>Property filters used in the search.</p>
-    pub fn property_filters(&self) -> ::std::option::Option<&crate::types::PropertyFilters> {
+    pub fn property_filters(&self) -> ::std::option::Option<& crate::types::PropertyFilters> {
         self.property_filters.as_ref()
     }
 }
-impl ::std::fmt::Debug for RasterDataCollectionQueryOutput {
+impl  ::std::fmt::Debug for RasterDataCollectionQueryOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RasterDataCollectionQueryOutput");
         formatter.field("raster_data_collection_arn", &self.raster_data_collection_arn);
@@ -76,8 +74,7 @@ impl RasterDataCollectionQueryOutputBuilder {
     }
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
     pub fn set_raster_data_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raster_data_collection_arn = input;
-        self
+        self.raster_data_collection_arn = input; self
     }
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
     pub fn get_raster_data_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl RasterDataCollectionQueryOutputBuilder {
     }
     /// <p>The name of the raster data collection.</p>
     pub fn set_raster_data_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raster_data_collection_name = input;
-        self
+        self.raster_data_collection_name = input; self
     }
     /// <p>The name of the raster data collection.</p>
     pub fn get_raster_data_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl RasterDataCollectionQueryOutputBuilder {
     }
     /// <p>The TimeRange filter used in the search.</p>
     pub fn set_time_range_filter(mut self, input: ::std::option::Option<crate::types::TimeRangeFilterOutput>) -> Self {
-        self.time_range_filter = input;
-        self
+        self.time_range_filter = input; self
     }
     /// <p>The TimeRange filter used in the search.</p>
     pub fn get_time_range_filter(&self) -> &::std::option::Option<crate::types::TimeRangeFilterOutput> {
@@ -120,8 +115,7 @@ impl RasterDataCollectionQueryOutputBuilder {
     }
     /// <p>The Area of Interest used in the search.</p>
     pub fn set_area_of_interest(mut self, input: ::std::option::Option<crate::types::AreaOfInterest>) -> Self {
-        self.area_of_interest = input;
-        self
+        self.area_of_interest = input; self
     }
     /// <p>The Area of Interest used in the search.</p>
     pub fn get_area_of_interest(&self) -> &::std::option::Option<crate::types::AreaOfInterest> {
@@ -134,8 +128,7 @@ impl RasterDataCollectionQueryOutputBuilder {
     }
     /// <p>Property filters used in the search.</p>
     pub fn set_property_filters(mut self, input: ::std::option::Option<crate::types::PropertyFilters>) -> Self {
-        self.property_filters = input;
-        self
+        self.property_filters = input; self
     }
     /// <p>Property filters used in the search.</p>
     pub fn get_property_filters(&self) -> &::std::option::Option<crate::types::PropertyFilters> {
@@ -146,23 +139,26 @@ impl RasterDataCollectionQueryOutputBuilder {
     /// - [`raster_data_collection_arn`](crate::types::builders::RasterDataCollectionQueryOutputBuilder::raster_data_collection_arn)
     /// - [`raster_data_collection_name`](crate::types::builders::RasterDataCollectionQueryOutputBuilder::raster_data_collection_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RasterDataCollectionQueryOutput {
-            raster_data_collection_arn: self.raster_data_collection_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "raster_data_collection_arn",
-                    "raster_data_collection_arn was not specified but it is required when building RasterDataCollectionQueryOutput",
-                )
-            })?,
-            raster_data_collection_name: self.raster_data_collection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "raster_data_collection_name",
-                    "raster_data_collection_name was not specified but it is required when building RasterDataCollectionQueryOutput",
-                )
-            })?,
-            time_range_filter: self.time_range_filter,
-            area_of_interest: self.area_of_interest,
-            property_filters: self.property_filters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RasterDataCollectionQueryOutput {
+                raster_data_collection_arn: self.raster_data_collection_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("raster_data_collection_arn", "raster_data_collection_arn was not specified but it is required when building RasterDataCollectionQueryOutput")
+                    )?
+                ,
+                raster_data_collection_name: self.raster_data_collection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("raster_data_collection_name", "raster_data_collection_name was not specified but it is required when building RasterDataCollectionQueryOutput")
+                    )?
+                ,
+                time_range_filter: self.time_range_filter
+                ,
+                area_of_interest: self.area_of_interest
+                ,
+                property_filters: self.property_filters
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RasterDataCollectionQueryOutputBuilder {
@@ -176,3 +172,4 @@ impl ::std::fmt::Debug for RasterDataCollectionQueryOutputBuilder {
         formatter.finish()
     }
 }
+

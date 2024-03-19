@@ -3,19 +3,19 @@
 /// Error that occurred during project deletion
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectDeletionError {
+pub struct ProjectDeletionError  {
     /// Project Deletion Error Code
     pub code: ::std::option::Option<::std::string::String>,
     /// Project Deletion Error Message
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ProjectDeletionError {
+impl  ProjectDeletionError  {
     /// Project Deletion Error Code
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// Project Deletion Error Message
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ProjectDeletionErrorBuilder {
     }
     /// Project Deletion Error Code
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// Project Deletion Error Code
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProjectDeletionErrorBuilder {
     }
     /// Project Deletion Error Message
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Project Deletion Error Message
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ProjectDeletionErrorBuilder {
     /// Consumes the builder and constructs a [`ProjectDeletionError`](crate::types::ProjectDeletionError).
     pub fn build(self) -> crate::types::ProjectDeletionError {
         crate::types::ProjectDeletionError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

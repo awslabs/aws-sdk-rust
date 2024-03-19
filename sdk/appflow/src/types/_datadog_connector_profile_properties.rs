@@ -3,15 +3,14 @@
 /// <p>The connector-specific profile properties required by Datadog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatadogConnectorProfileProperties {
+pub struct DatadogConnectorProfileProperties  {
     /// <p>The location of the Datadog resource.</p>
     pub instance_url: ::std::string::String,
 }
-impl DatadogConnectorProfileProperties {
+impl  DatadogConnectorProfileProperties  {
     /// <p>The location of the Datadog resource.</p>
-    pub fn instance_url(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_url.deref()
+    pub fn instance_url(&self) -> & str {
+        use std::ops::Deref; self.instance_url.deref()
     }
 }
 impl DatadogConnectorProfileProperties {
@@ -36,8 +35,7 @@ impl DatadogConnectorProfilePropertiesBuilder {
     }
     /// <p>The location of the Datadog resource.</p>
     pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
     }
     /// <p>The location of the Datadog resource.</p>
     pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DatadogConnectorProfilePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::DatadogConnectorProfilePropertiesBuilder::instance_url)
     pub fn build(self) -> ::std::result::Result<crate::types::DatadogConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatadogConnectorProfileProperties {
-            instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_url",
-                    "instance_url was not specified but it is required when building DatadogConnectorProfileProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatadogConnectorProfileProperties {
+                instance_url: self.instance_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_url", "instance_url was not specified but it is required when building DatadogConnectorProfileProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

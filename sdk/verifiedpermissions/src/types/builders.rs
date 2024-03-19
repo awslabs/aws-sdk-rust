@@ -56,3 +56,4 @@ pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConf
 pub use crate::types::_identity_source_item_details::IdentitySourceItemDetailsBuilder;
 
 pub use crate::types::_identity_source_filter::IdentitySourceFilterBuilder;
+

@@ -3,7 +3,7 @@
 /// Contains the information of a data source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// Identifier for a resource.
@@ -25,48 +25,45 @@ pub struct DataSource {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl DataSource {
+impl  DataSource  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_id.deref()
+    pub fn data_source_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_id.deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// The status of a data source.
-    pub fn status(&self) -> &crate::types::DataSourceStatus {
+    pub fn status(&self) -> & crate::types::DataSourceStatus {
         &self.status
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Specifies a raw data source location to ingest.
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// Server-side encryption configuration.
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// Configures ingestion for a vector knowledge base
-    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
+    pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<& crate::types::VectorIngestionConfiguration> {
         self.vector_ingestion_configuration.as_ref()
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -101,8 +98,7 @@ impl DataSourceBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +112,7 @@ impl DataSourceBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +126,7 @@ impl DataSourceBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +140,7 @@ impl DataSourceBuilder {
     }
     /// The status of a data source.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of a data source.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -160,8 +153,7 @@ impl DataSourceBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +167,7 @@ impl DataSourceBuilder {
     }
     /// Specifies a raw data source location to ingest.
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// Specifies a raw data source location to ingest.
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -189,8 +180,7 @@ impl DataSourceBuilder {
     }
     /// Server-side encryption configuration.
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// Server-side encryption configuration.
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
@@ -203,8 +193,7 @@ impl DataSourceBuilder {
     }
     /// Configures ingestion for a vector knowledge base
     pub fn set_vector_ingestion_configuration(mut self, input: ::std::option::Option<crate::types::VectorIngestionConfiguration>) -> Self {
-        self.vector_ingestion_configuration = input;
-        self
+        self.vector_ingestion_configuration = input; self
     }
     /// Configures ingestion for a vector knowledge base
     pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
@@ -218,8 +207,7 @@ impl DataSourceBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,8 +221,7 @@ impl DataSourceBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -249,47 +236,48 @@ impl DataSourceBuilder {
     /// - [`created_at`](crate::types::builders::DataSourceBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DataSourceBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSource {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building DataSource",
-                )
-            })?,
-            data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_id",
-                    "data_source_id was not specified but it is required when building DataSource",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DataSource",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DataSource",
-                )
-            })?,
-            description: self.description,
-            data_source_configuration: self.data_source_configuration,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            vector_ingestion_configuration: self.vector_ingestion_configuration,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building DataSource",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building DataSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSource {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building DataSource")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_id", "data_source_id was not specified but it is required when building DataSource")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DataSource")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DataSource")
+                    )?
+                ,
+                description: self.description
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                vector_ingestion_configuration: self.vector_ingestion_configuration
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building DataSource")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building DataSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

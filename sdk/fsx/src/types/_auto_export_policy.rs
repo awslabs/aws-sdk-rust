@@ -4,7 +4,7 @@
 /// <p>The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoExportPolicy {
+pub struct AutoExportPolicy  {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
     /// <li>
@@ -15,9 +15,9 @@ pub struct AutoExportPolicy {
     /// <p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>,
 }
-impl AutoExportPolicy {
+impl  AutoExportPolicy  {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
     /// <li>
@@ -28,10 +28,11 @@ impl AutoExportPolicy {
     /// <p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::EventType] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::EventType] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoExportPolicy {
@@ -45,7 +46,7 @@ impl AutoExportPolicy {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoExportPolicyBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>,
 }
 impl AutoExportPolicyBuilder {
     /// Appends an item to `events`.
@@ -64,9 +65,9 @@ impl AutoExportPolicyBuilder {
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn events(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -78,9 +79,8 @@ impl AutoExportPolicyBuilder {
     /// <p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>) -> Self {
+        self.events = input; self
     }
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -92,11 +92,15 @@ impl AutoExportPolicyBuilder {
     /// <p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventType>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`AutoExportPolicy`](crate::types::AutoExportPolicy).
     pub fn build(self) -> crate::types::AutoExportPolicy {
-        crate::types::AutoExportPolicy { events: self.events }
+        crate::types::AutoExportPolicy {
+            events: self.events
+            ,
+        }
     }
 }
+

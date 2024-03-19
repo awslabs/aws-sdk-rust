@@ -3,7 +3,7 @@
 /// <p>A container for the UI customization information for a user pool's built-in app UI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UiCustomizationType {
+pub struct UiCustomizationType  {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the client app.</p>
@@ -19,37 +19,37 @@ pub struct UiCustomizationType {
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UiCustomizationType {
+impl  UiCustomizationType  {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The client ID for the client app.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The logo image for the UI customization.</p>
-    pub fn image_url(&self) -> ::std::option::Option<&str> {
+    pub fn image_url(&self) -> ::std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>The CSS values in the UI customization.</p>
-    pub fn css(&self) -> ::std::option::Option<&str> {
+    pub fn css(&self) -> ::std::option::Option<& str> {
         self.css.as_deref()
     }
     /// <p>The CSS version number.</p>
-    pub fn css_version(&self) -> ::std::option::Option<&str> {
+    pub fn css_version(&self) -> ::std::option::Option<& str> {
         self.css_version.as_deref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for UiCustomizationType {
+impl  ::std::fmt::Debug for UiCustomizationType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UiCustomizationType");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -89,8 +89,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The client ID for the client app.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID for the client app.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The logo image for the UI customization.</p>
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_url = input;
-        self
+        self.image_url = input; self
     }
     /// <p>The logo image for the UI customization.</p>
     pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The CSS values in the UI customization.</p>
     pub fn set_css(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.css = input;
-        self
+        self.css = input; self
     }
     /// <p>The CSS values in the UI customization.</p>
     pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The CSS version number.</p>
     pub fn set_css_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.css_version = input;
-        self
+        self.css_version = input; self
     }
     /// <p>The CSS version number.</p>
     pub fn get_css_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +167,7 @@ impl UiCustomizationTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,13 +176,20 @@ impl UiCustomizationTypeBuilder {
     /// Consumes the builder and constructs a [`UiCustomizationType`](crate::types::UiCustomizationType).
     pub fn build(self) -> crate::types::UiCustomizationType {
         crate::types::UiCustomizationType {
-            user_pool_id: self.user_pool_id,
-            client_id: self.client_id,
-            image_url: self.image_url,
-            css: self.css,
-            css_version: self.css_version,
-            last_modified_date: self.last_modified_date,
-            creation_date: self.creation_date,
+            user_pool_id: self.user_pool_id
+            ,
+            client_id: self.client_id
+            ,
+            image_url: self.image_url
+            ,
+            css: self.css
+            ,
+            css_version: self.css_version
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
@@ -206,3 +206,4 @@ impl ::std::fmt::Debug for UiCustomizationTypeBuilder {
         formatter.finish()
     }
 }
+

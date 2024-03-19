@@ -5,23 +5,20 @@ pub use crate::operation::describe_remediation_exceptions::_describe_remediation
 
 impl DescribeRemediationExceptionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_remediation_exceptions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_remediation_exceptions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeRemediationExceptions`.
-///
+/// 
 /// <p>Returns the details of one or more remediation exceptions. A detailed view of a remediation exception for a set of resources that includes an explanation of an exception and the time when the exception will be deleted. When you specify the limit and the next token, you receive a paginated response.</p><note>
 /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
 /// <p>When you specify the limit and the next token, you receive a paginated response.</p>
@@ -30,33 +27,32 @@ impl DescribeRemediationExceptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsInputBuilder,
+                    inner: crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
-    > for DescribeRemediationExceptionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
-            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
+                    crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+                > for DescribeRemediationExceptionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
+                        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeRemediationExceptionsFluentBuilder {
     /// Creates a new `DescribeRemediationExceptions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,59 +61,50 @@ impl DescribeRemediationExceptionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_remediation_exceptions::DescribeRemediationExceptions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
-        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_remediation_exceptions::DescribeRemediationExceptions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput, crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator {
-        crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator {
+                                crate::operation::describe_remediation_exceptions::paginator::DescribeRemediationExceptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Config rule.</p>
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
@@ -142,12 +129,12 @@ impl DescribeRemediationExceptionsFluentBuilder {
         self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>> {
         self.inner.get_resource_keys()
     }
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
@@ -179,3 +166,4 @@ impl DescribeRemediationExceptionsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

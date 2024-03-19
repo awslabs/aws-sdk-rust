@@ -3,7 +3,7 @@
 /// <p>Validation rules for a text field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextValidation {
+pub struct TextValidation  {
     /// <p>The minimum number of characters for the text field.</p>
     pub min_length: i32,
     /// <p>The maximum number of characters for the text field.</p>
@@ -11,7 +11,7 @@ pub struct TextValidation {
     /// <p>The regular expression used to validate the text field.</p>
     pub pattern: ::std::string::String,
 }
-impl TextValidation {
+impl  TextValidation  {
     /// <p>The minimum number of characters for the text field.</p>
     pub fn min_length(&self) -> i32 {
         self.min_length
@@ -21,9 +21,8 @@ impl TextValidation {
         self.max_length
     }
     /// <p>The regular expression used to validate the text field.</p>
-    pub fn pattern(&self) -> &str {
-        use std::ops::Deref;
-        self.pattern.deref()
+    pub fn pattern(&self) -> & str {
+        use std::ops::Deref; self.pattern.deref()
     }
 }
 impl TextValidation {
@@ -50,8 +49,7 @@ impl TextValidationBuilder {
     }
     /// <p>The minimum number of characters for the text field.</p>
     pub fn set_min_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_length = input;
-        self
+        self.min_length = input; self
     }
     /// <p>The minimum number of characters for the text field.</p>
     pub fn get_min_length(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,7 @@ impl TextValidationBuilder {
     }
     /// <p>The maximum number of characters for the text field.</p>
     pub fn set_max_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_length = input;
-        self
+        self.max_length = input; self
     }
     /// <p>The maximum number of characters for the text field.</p>
     pub fn get_max_length(&self) -> &::std::option::Option<i32> {
@@ -80,8 +77,7 @@ impl TextValidationBuilder {
     }
     /// <p>The regular expression used to validate the text field.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The regular expression used to validate the text field.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl TextValidationBuilder {
     /// - [`max_length`](crate::types::builders::TextValidationBuilder::max_length)
     /// - [`pattern`](crate::types::builders::TextValidationBuilder::pattern)
     pub fn build(self) -> ::std::result::Result<crate::types::TextValidation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TextValidation {
-            min_length: self.min_length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_length",
-                    "min_length was not specified but it is required when building TextValidation",
-                )
-            })?,
-            max_length: self.max_length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_length",
-                    "max_length was not specified but it is required when building TextValidation",
-                )
-            })?,
-            pattern: self.pattern.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pattern",
-                    "pattern was not specified but it is required when building TextValidation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TextValidation {
+                min_length: self.min_length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_length", "min_length was not specified but it is required when building TextValidation")
+                    )?
+                ,
+                max_length: self.max_length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_length", "max_length was not specified but it is required when building TextValidation")
+                    )?
+                ,
+                pattern: self.pattern
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pattern", "pattern was not specified but it is required when building TextValidation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

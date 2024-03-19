@@ -3,19 +3,19 @@
 /// <p>Specifies criteria for sorting the results of a query for Amazon Macie account quotas and usage data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageStatisticsSortBy {
+pub struct UsageStatisticsSortBy  {
     /// <p>The field to sort the results by.</p>
     pub key: ::std::option::Option<crate::types::UsageStatisticsSortKey>,
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
-impl UsageStatisticsSortBy {
+impl  UsageStatisticsSortBy  {
     /// <p>The field to sort the results by.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::UsageStatisticsSortKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::UsageStatisticsSortKey> {
         self.key.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<& crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UsageStatisticsSortByBuilder {
     }
     /// <p>The field to sort the results by.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::UsageStatisticsSortKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The field to sort the results by.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::UsageStatisticsSortKey> {
@@ -55,8 +54,7 @@ impl UsageStatisticsSortByBuilder {
     }
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
@@ -65,8 +63,11 @@ impl UsageStatisticsSortByBuilder {
     /// Consumes the builder and constructs a [`UsageStatisticsSortBy`](crate::types::UsageStatisticsSortBy).
     pub fn build(self) -> crate::types::UsageStatisticsSortBy {
         crate::types::UsageStatisticsSortBy {
-            key: self.key,
-            order_by: self.order_by,
+            key: self.key
+            ,
+            order_by: self.order_by
+            ,
         }
     }
 }
+

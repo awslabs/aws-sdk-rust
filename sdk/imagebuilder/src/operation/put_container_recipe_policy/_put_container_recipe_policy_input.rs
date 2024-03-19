@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutContainerRecipePolicyInput {
+pub struct PutContainerRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to apply to the container recipe.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutContainerRecipePolicyInput {
+impl  PutContainerRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
-    pub fn container_recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> ::std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
     /// <p>The policy to apply to the container recipe.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutContainerRecipePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
     pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_recipe_arn = input;
-        self
+        self.container_recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl PutContainerRecipePolicyInputBuilder {
     }
     /// <p>The policy to apply to the container recipe.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy to apply to the container recipe.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutContainerRecipePolicyInput`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput {
-            container_recipe_arn: self.container_recipe_arn,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput {
+                container_recipe_arn: self.container_recipe_arn
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

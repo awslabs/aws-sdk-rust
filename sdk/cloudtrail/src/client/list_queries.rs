@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListQueries`](crate::operation::list_queries::builders::ListQueriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`event_data_store(impl Into<String>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_event_data_store):<br>required: **true**<br><p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token you can use to get the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of queries to show on a page.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_start_time):<br>required: **false**<br><p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_end_time):<br>required: **false**<br><p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p><br>
     ///   - [`query_status(QueryStatus)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::query_status) / [`set_query_status(Option<QueryStatus>)`](crate::operation::list_queries::builders::ListQueriesFluentBuilder::set_query_status):<br>required: **false**<br><p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p><br>
-    /// - On success, responds with [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput) with field(s):
+                            /// - On success, responds with [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput) with field(s):
     ///   - [`queries(Option<Vec::<Query>>)`](crate::operation::list_queries::ListQueriesOutput::queries): <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_queries::ListQueriesOutput::next_token): <p>A token you can use to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListQueriesError>`](crate::operation::list_queries::ListQueriesError)
+                            /// - On failure, responds with [`SdkError<ListQueriesError>`](crate::operation::list_queries::ListQueriesError)
     pub fn list_queries(&self) -> crate::operation::list_queries::builders::ListQueriesFluentBuilder {
-        crate::operation::list_queries::builders::ListQueriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_queries::builders::ListQueriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

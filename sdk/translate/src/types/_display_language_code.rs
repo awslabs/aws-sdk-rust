@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let displaylanguagecode = unimplemented!();
 /// match displaylanguagecode {
@@ -38,16 +38,14 @@
 /// Specifically, when `displaylanguagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DisplayLanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DisplayLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     De,
@@ -71,85 +69,86 @@ pub enum DisplayLanguageCode {
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DisplayLanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de" => DisplayLanguageCode::De,
-            "en" => DisplayLanguageCode::En,
-            "es" => DisplayLanguageCode::Es,
-            "fr" => DisplayLanguageCode::Fr,
-            "it" => DisplayLanguageCode::It,
-            "ja" => DisplayLanguageCode::Ja,
-            "ko" => DisplayLanguageCode::Ko,
-            "pt" => DisplayLanguageCode::Pt,
-            "zh" => DisplayLanguageCode::Zh,
-            "zh-TW" => DisplayLanguageCode::ZhTw,
-            other => DisplayLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "de" => DisplayLanguageCode::De,
+"en" => DisplayLanguageCode::En,
+"es" => DisplayLanguageCode::Es,
+"fr" => DisplayLanguageCode::Fr,
+"it" => DisplayLanguageCode::It,
+"ja" => DisplayLanguageCode::Ja,
+"ko" => DisplayLanguageCode::Ko,
+"pt" => DisplayLanguageCode::Pt,
+"zh" => DisplayLanguageCode::Zh,
+"zh-TW" => DisplayLanguageCode::ZhTw,
+other => DisplayLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DisplayLanguageCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DisplayLanguageCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DisplayLanguageCode::from(s))
+                    }
+                }
 impl DisplayLanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DisplayLanguageCode::De => "de",
-            DisplayLanguageCode::En => "en",
-            DisplayLanguageCode::Es => "es",
-            DisplayLanguageCode::Fr => "fr",
-            DisplayLanguageCode::It => "it",
-            DisplayLanguageCode::Ja => "ja",
-            DisplayLanguageCode::Ko => "ko",
-            DisplayLanguageCode::Pt => "pt",
-            DisplayLanguageCode::Zh => "zh",
-            DisplayLanguageCode::ZhTw => "zh-TW",
-            DisplayLanguageCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DisplayLanguageCode::De => "de",
+    DisplayLanguageCode::En => "en",
+    DisplayLanguageCode::Es => "es",
+    DisplayLanguageCode::Fr => "fr",
+    DisplayLanguageCode::It => "it",
+    DisplayLanguageCode::Ja => "ja",
+    DisplayLanguageCode::Ko => "ko",
+    DisplayLanguageCode::Pt => "pt",
+    DisplayLanguageCode::Zh => "zh",
+    DisplayLanguageCode::ZhTw => "zh-TW",
+    DisplayLanguageCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DisplayLanguageCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DisplayLanguageCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DisplayLanguageCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DisplayLanguageCode::De => write!(f, "de"),
-            DisplayLanguageCode::En => write!(f, "en"),
-            DisplayLanguageCode::Es => write!(f, "es"),
-            DisplayLanguageCode::Fr => write!(f, "fr"),
-            DisplayLanguageCode::It => write!(f, "it"),
-            DisplayLanguageCode::Ja => write!(f, "ja"),
-            DisplayLanguageCode::Ko => write!(f, "ko"),
-            DisplayLanguageCode::Pt => write!(f, "pt"),
-            DisplayLanguageCode::Zh => write!(f, "zh"),
-            DisplayLanguageCode::ZhTw => write!(f, "zh-TW"),
-            DisplayLanguageCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DisplayLanguageCode::De => write!(f, "de"),
+DisplayLanguageCode::En => write!(f, "en"),
+DisplayLanguageCode::Es => write!(f, "es"),
+DisplayLanguageCode::Fr => write!(f, "fr"),
+DisplayLanguageCode::It => write!(f, "it"),
+DisplayLanguageCode::Ja => write!(f, "ja"),
+DisplayLanguageCode::Ko => write!(f, "ko"),
+DisplayLanguageCode::Pt => write!(f, "pt"),
+DisplayLanguageCode::Zh => write!(f, "zh"),
+DisplayLanguageCode::ZhTw => write!(f, "zh-TW"),
+DisplayLanguageCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

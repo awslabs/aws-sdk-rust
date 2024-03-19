@@ -2,52 +2,55 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCommitOutput {
+pub struct CreateCommitOutput  {
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The files added as part of the committed file changes.</p>
-    pub files_added: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
+    pub files_added: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
     /// <p>The files updated as part of the commited file changes.</p>
-    pub files_updated: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
+    pub files_updated: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub files_deleted: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
+    pub files_deleted: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
     _request_id: Option<String>,
 }
-impl CreateCommitOutput {
+impl  CreateCommitOutput  {
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
-    pub fn tree_id(&self) -> ::std::option::Option<&str> {
+    pub fn tree_id(&self) -> ::std::option::Option<& str> {
         self.tree_id.as_deref()
     }
     /// <p>The files added as part of the committed file changes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_added.is_none()`.
-    pub fn files_added(&self) -> &[crate::types::FileMetadata] {
-        self.files_added.as_deref().unwrap_or_default()
+    pub fn files_added(&self) -> & [crate::types::FileMetadata] {
+        self.files_added.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_updated.is_none()`.
-    pub fn files_updated(&self) -> &[crate::types::FileMetadata] {
-        self.files_updated.as_deref().unwrap_or_default()
+    pub fn files_updated(&self) -> & [crate::types::FileMetadata] {
+        self.files_updated.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_deleted.is_none()`.
-    pub fn files_deleted(&self) -> &[crate::types::FileMetadata] {
-        self.files_deleted.as_deref().unwrap_or_default()
+    pub fn files_deleted(&self) -> & [crate::types::FileMetadata] {
+        self.files_deleted.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCommitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCommitOutput {
     /// Creates a new builder-style object to manufacture [`CreateCommitOutput`](crate::operation::create_commit::CreateCommitOutput).
     pub fn builder() -> crate::operation::create_commit::builders::CreateCommitOutputBuilder {
@@ -61,9 +64,9 @@ impl CreateCommitOutput {
 pub struct CreateCommitOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
-    pub(crate) files_added: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
-    pub(crate) files_updated: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
-    pub(crate) files_deleted: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
+    pub(crate) files_added: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
+    pub(crate) files_updated: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
+    pub(crate) files_deleted: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>,
     _request_id: Option<String>,
 }
 impl CreateCommitOutputBuilder {
@@ -74,8 +77,7 @@ impl CreateCommitOutputBuilder {
     }
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +90,7 @@ impl CreateCommitOutputBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,17 +103,16 @@ impl CreateCommitOutputBuilder {
     /// <p>The files added as part of the committed file changes.</p>
     pub fn files_added(mut self, input: crate::types::FileMetadata) -> Self {
         let mut v = self.files_added.unwrap_or_default();
-        v.push(input);
-        self.files_added = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files_added = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files added as part of the committed file changes.</p>
-    pub fn set_files_added(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
-        self.files_added = input;
-        self
+    pub fn set_files_added(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>) -> Self {
+        self.files_added = input; self
     }
     /// <p>The files added as part of the committed file changes.</p>
-    pub fn get_files_added(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_added(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>> {
         &self.files_added
     }
     /// Appends an item to `files_updated`.
@@ -122,17 +122,16 @@ impl CreateCommitOutputBuilder {
     /// <p>The files updated as part of the commited file changes.</p>
     pub fn files_updated(mut self, input: crate::types::FileMetadata) -> Self {
         let mut v = self.files_updated.unwrap_or_default();
-        v.push(input);
-        self.files_updated = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files_updated = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    pub fn set_files_updated(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
-        self.files_updated = input;
-        self
+    pub fn set_files_updated(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>) -> Self {
+        self.files_updated = input; self
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    pub fn get_files_updated(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_updated(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>> {
         &self.files_updated
     }
     /// Appends an item to `files_deleted`.
@@ -142,37 +141,42 @@ impl CreateCommitOutputBuilder {
     /// <p>The files deleted as part of the committed file changes.</p>
     pub fn files_deleted(mut self, input: crate::types::FileMetadata) -> Self {
         let mut v = self.files_deleted.unwrap_or_default();
-        v.push(input);
-        self.files_deleted = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files_deleted = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub fn set_files_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
-        self.files_deleted = input;
-        self
+    pub fn set_files_deleted(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>>) -> Self {
+        self.files_deleted = input; self
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub fn get_files_deleted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_deleted(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FileMetadata>> {
         &self.files_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCommitOutput`](crate::operation::create_commit::CreateCommitOutput).
     pub fn build(self) -> crate::operation::create_commit::CreateCommitOutput {
         crate::operation::create_commit::CreateCommitOutput {
-            commit_id: self.commit_id,
-            tree_id: self.tree_id,
-            files_added: self.files_added,
-            files_updated: self.files_updated,
-            files_deleted: self.files_deleted,
+            commit_id: self.commit_id
+            ,
+            tree_id: self.tree_id
+            ,
+            files_added: self.files_added
+            ,
+            files_updated: self.files_updated
+            ,
+            files_deleted: self.files_deleted
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

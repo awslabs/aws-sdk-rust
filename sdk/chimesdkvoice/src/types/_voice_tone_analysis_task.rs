@@ -3,7 +3,7 @@
 /// <p>A representation of an asynchronous request to perform voice tone analysis on a Voice Connector call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceToneAnalysisTask {
+pub struct VoiceToneAnalysisTask  {
     /// <p>The ID of the voice tone analysis task.</p>
     pub voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
@@ -19,33 +19,33 @@ pub struct VoiceToneAnalysisTask {
     /// <p>The status of a voice tone analysis task.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl VoiceToneAnalysisTask {
+impl  VoiceToneAnalysisTask  {
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<& str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn voice_tone_analysis_task_status(&self) -> ::std::option::Option<&str> {
+    pub fn voice_tone_analysis_task_status(&self) -> ::std::option::Option<& str> {
         self.voice_tone_analysis_task_status.as_deref()
     }
     /// <p>The call details of a voice tone analysis task.</p>
-    pub fn call_details(&self) -> ::std::option::Option<&crate::types::CallDetails> {
+    pub fn call_details(&self) -> ::std::option::Option<& crate::types::CallDetails> {
         self.call_details.as_ref()
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The time at which a voice tone analysis task started.</p>
-    pub fn started_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_timestamp.as_ref()
     }
     /// <p>The status of a voice tone analysis task.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_tone_analysis_task_id = input;
-        self
+        self.voice_tone_analysis_task_id = input; self
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn set_voice_tone_analysis_task_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_tone_analysis_task_status = input;
-        self
+        self.voice_tone_analysis_task_status = input; self
     }
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn get_voice_tone_analysis_task_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The call details of a voice tone analysis task.</p>
     pub fn set_call_details(mut self, input: ::std::option::Option<crate::types::CallDetails>) -> Self {
-        self.call_details = input;
-        self
+        self.call_details = input; self
     }
     /// <p>The call details of a voice tone analysis task.</p>
     pub fn get_call_details(&self) -> &::std::option::Option<crate::types::CallDetails> {
@@ -118,8 +115,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input;
-        self
+        self.updated_timestamp = input; self
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The time at which a voice tone analysis task started.</p>
     pub fn set_started_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_timestamp = input;
-        self
+        self.started_timestamp = input; self
     }
     /// <p>The time at which a voice tone analysis task started.</p>
     pub fn get_started_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl VoiceToneAnalysisTaskBuilder {
     }
     /// <p>The status of a voice tone analysis task.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status of a voice tone analysis task.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl VoiceToneAnalysisTaskBuilder {
     /// Consumes the builder and constructs a [`VoiceToneAnalysisTask`](crate::types::VoiceToneAnalysisTask).
     pub fn build(self) -> crate::types::VoiceToneAnalysisTask {
         crate::types::VoiceToneAnalysisTask {
-            voice_tone_analysis_task_id: self.voice_tone_analysis_task_id,
-            voice_tone_analysis_task_status: self.voice_tone_analysis_task_status,
-            call_details: self.call_details,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            started_timestamp: self.started_timestamp,
-            status_message: self.status_message,
+            voice_tone_analysis_task_id: self.voice_tone_analysis_task_id
+            ,
+            voice_tone_analysis_task_status: self.voice_tone_analysis_task_status
+            ,
+            call_details: self.call_details
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            started_timestamp: self.started_timestamp
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

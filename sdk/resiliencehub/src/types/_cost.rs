@@ -3,7 +3,7 @@
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cost {
+pub struct Cost  {
     /// <p>The cost amount.</p>
     pub amount: f64,
     /// <p>The cost currency, for example <code>USD</code>.</p>
@@ -11,18 +11,17 @@ pub struct Cost {
     /// <p>The cost frequency.</p>
     pub frequency: crate::types::CostFrequency,
 }
-impl Cost {
+impl  Cost  {
     /// <p>The cost amount.</p>
     pub fn amount(&self) -> f64 {
         self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(&self) -> &str {
-        use std::ops::Deref;
-        self.currency.deref()
+    pub fn currency(&self) -> & str {
+        use std::ops::Deref; self.currency.deref()
     }
     /// <p>The cost frequency.</p>
-    pub fn frequency(&self) -> &crate::types::CostFrequency {
+    pub fn frequency(&self) -> & crate::types::CostFrequency {
         &self.frequency
     }
 }
@@ -50,8 +49,7 @@ impl CostBuilder {
     }
     /// <p>The cost amount.</p>
     pub fn set_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The cost amount.</p>
     pub fn get_amount(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,7 @@ impl CostBuilder {
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
     pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl CostBuilder {
     }
     /// <p>The cost frequency.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::CostFrequency>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>The cost frequency.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::CostFrequency> {
@@ -92,20 +88,23 @@ impl CostBuilder {
     /// - [`currency`](crate::types::builders::CostBuilder::currency)
     /// - [`frequency`](crate::types::builders::CostBuilder::frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::Cost, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Cost {
-            amount: self.amount.unwrap_or_default(),
-            currency: self.currency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "currency",
-                    "currency was not specified but it is required when building Cost",
-                )
-            })?,
-            frequency: self.frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frequency",
-                    "frequency was not specified but it is required when building Cost",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Cost {
+                amount: self.amount
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("currency", "currency was not specified but it is required when building Cost")
+                    )?
+                ,
+                frequency: self.frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frequency", "frequency was not specified but it is required when building Cost")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Indicates whether to enable CloudWatch Container Insights for the ECS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsClusterClusterSettingsDetails {
+pub struct AwsEcsClusterClusterSettingsDetails  {
     /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsClusterClusterSettingsDetails {
+impl  AwsEcsClusterClusterSettingsDetails  {
     /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsClusterClusterSettingsDetailsBuilder {
     }
     /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the setting. The valid value is <code>containerInsights</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEcsClusterClusterSettingsDetailsBuilder {
     }
     /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the setting. Valid values are <code>disabled</code> or <code>enabled</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsClusterClusterSettingsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsClusterClusterSettingsDetails`](crate::types::AwsEcsClusterClusterSettingsDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterClusterSettingsDetails {
         crate::types::AwsEcsClusterClusterSettingsDetails {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

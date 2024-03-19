@@ -3,7 +3,7 @@
 /// Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionLanguageMapping {
+pub struct CaptionLanguageMapping  {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub caption_channel: ::std::option::Option<i32>,
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
@@ -11,17 +11,17 @@ pub struct CaptionLanguageMapping {
     /// Textual description of language
     pub language_description: ::std::option::Option<::std::string::String>,
 }
-impl CaptionLanguageMapping {
+impl  CaptionLanguageMapping  {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub fn caption_channel(&self) -> ::std::option::Option<i32> {
         self.caption_channel
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
-    pub fn language_code(&self) -> ::std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// Textual description of language
-    pub fn language_description(&self) -> ::std::option::Option<&str> {
+    pub fn language_description(&self) -> ::std::option::Option<& str> {
         self.language_description.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CaptionLanguageMappingBuilder {
     }
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub fn set_caption_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.caption_channel = input;
-        self
+        self.caption_channel = input; self
     }
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     pub fn get_caption_channel(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl CaptionLanguageMappingBuilder {
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
     pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
     pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl CaptionLanguageMappingBuilder {
     }
     /// Textual description of language
     pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_description = input;
-        self
+        self.language_description = input; self
     }
     /// Textual description of language
     pub fn get_language_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl CaptionLanguageMappingBuilder {
     /// Consumes the builder and constructs a [`CaptionLanguageMapping`](crate::types::CaptionLanguageMapping).
     pub fn build(self) -> crate::types::CaptionLanguageMapping {
         crate::types::CaptionLanguageMapping {
-            caption_channel: self.caption_channel,
-            language_code: self.language_code,
-            language_description: self.language_description,
+            caption_channel: self.caption_channel
+            ,
+            language_code: self.language_code
+            ,
+            language_description: self.language_description
+            ,
         }
     }
 }
+

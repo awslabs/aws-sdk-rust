@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemovePermissionInput {
+pub struct RemovePermissionInput  {
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to remove all permissions.</p>
@@ -10,9 +10,9 @@ pub struct RemovePermissionInput {
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub event_bus_name: ::std::option::Option<::std::string::String>,
 }
-impl RemovePermissionInput {
+impl  RemovePermissionInput  {
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
     /// <p>Specifies whether to remove all permissions.</p>
@@ -20,7 +20,7 @@ impl RemovePermissionInput {
         self.remove_all_permissions
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>Specifies whether to remove all permissions.</p>
     pub fn set_remove_all_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_all_permissions = input;
-        self
+        self.remove_all_permissions = input; self
     }
     /// <p>Specifies whether to remove all permissions.</p>
     pub fn get_remove_all_permissions(&self) -> &::std::option::Option<bool> {
@@ -75,21 +73,24 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
-            statement_id: self.statement_id,
-            remove_all_permissions: self.remove_all_permissions,
-            event_bus_name: self.event_bus_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_permission::RemovePermissionInput {
+                statement_id: self.statement_id
+                ,
+                remove_all_permissions: self.remove_all_permissions
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+            }
+        )
     }
 }
+

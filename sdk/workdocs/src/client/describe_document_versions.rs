@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDocumentVersions`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`document_id(impl Into<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::document_id) / [`set_document_id(Option<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_document_id):<br>required: **true**<br><p>The ID of the document.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of versions to return with this call.</p><br>
     ///   - [`include(impl Into<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::include) / [`set_include(Option<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_include):<br>required: **false**<br><p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p><br>
     ///   - [`fields(impl Into<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::fields) / [`set_fields(Option<String>)`](crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::set_fields):<br>required: **false**<br><p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p><br>
-    /// - On success, responds with [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput) with field(s):
     ///   - [`document_versions(Option<Vec::<DocumentVersionMetadata>>)`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput::document_versions): <p>The document versions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeDocumentVersionsError>`](crate::operation::describe_document_versions::DescribeDocumentVersionsError)
+                            /// - On failure, responds with [`SdkError<DescribeDocumentVersionsError>`](crate::operation::describe_document_versions::DescribeDocumentVersionsError)
     pub fn describe_document_versions(&self) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder {
-        crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

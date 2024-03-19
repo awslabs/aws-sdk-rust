@@ -3,7 +3,7 @@
 /// <p>Settings for logging audio of conversations between Amazon Lex and a user. You specify whether to log audio and the Amazon S3 bucket where the audio file is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioLogSetting {
+pub struct AudioLogSetting  {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     pub enabled: bool,
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
@@ -11,13 +11,13 @@ pub struct AudioLogSetting {
     /// <p>The option to enable selective conversation log capture for audio.</p>
     pub selective_logging_enabled: ::std::option::Option<bool>,
 }
-impl AudioLogSetting {
+impl  AudioLogSetting  {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::AudioLogDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::AudioLogDestination> {
         self.destination.as_ref()
     }
     /// <p>The option to enable selective conversation log capture for audio.</p>
@@ -49,8 +49,7 @@ impl AudioLogSettingBuilder {
     }
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -64,8 +63,7 @@ impl AudioLogSettingBuilder {
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::AudioLogDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::AudioLogDestination> {
@@ -78,8 +76,7 @@ impl AudioLogSettingBuilder {
     }
     /// <p>The option to enable selective conversation log capture for audio.</p>
     pub fn set_selective_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.selective_logging_enabled = input;
-        self
+        self.selective_logging_enabled = input; self
     }
     /// <p>The option to enable selective conversation log capture for audio.</p>
     pub fn get_selective_logging_enabled(&self) -> &::std::option::Option<bool> {
@@ -88,9 +85,14 @@ impl AudioLogSettingBuilder {
     /// Consumes the builder and constructs a [`AudioLogSetting`](crate::types::AudioLogSetting).
     pub fn build(self) -> crate::types::AudioLogSetting {
         crate::types::AudioLogSetting {
-            enabled: self.enabled.unwrap_or_default(),
-            destination: self.destination,
-            selective_logging_enabled: self.selective_logging_enabled,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            destination: self.destination
+            ,
+            selective_logging_enabled: self.selective_logging_enabled
+            ,
         }
     }
 }
+

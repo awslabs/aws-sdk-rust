@@ -21,11 +21,7 @@ impl Credentials {
     /// Tries to convert the enum instance into [`Token`](crate::types::Credentials::Token), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_token(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Credentials::Token(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Credentials::Token(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Token`](crate::types::Credentials::Token).
     pub fn is_token(&self) -> bool {
@@ -44,3 +40,4 @@ impl ::std::fmt::Debug for Credentials {
         }
     }
 }
+

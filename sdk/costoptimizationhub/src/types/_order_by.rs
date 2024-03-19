@@ -3,19 +3,19 @@
 /// <p>Defines how rows will be sorted in the response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderBy {
+pub struct OrderBy  {
     /// <p>Sorts by dimension values.</p>
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The order that's used to sort the data.</p>
     pub order: ::std::option::Option<crate::types::Order>,
 }
-impl OrderBy {
+impl  OrderBy  {
     /// <p>Sorts by dimension values.</p>
-    pub fn dimension(&self) -> ::std::option::Option<&str> {
+    pub fn dimension(&self) -> ::std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>The order that's used to sort the data.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OrderByBuilder {
     }
     /// <p>Sorts by dimension values.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>Sorts by dimension values.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OrderByBuilder {
     }
     /// <p>The order that's used to sort the data.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order that's used to sort the data.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
@@ -65,8 +63,11 @@ impl OrderByBuilder {
     /// Consumes the builder and constructs a [`OrderBy`](crate::types::OrderBy).
     pub fn build(self) -> crate::types::OrderBy {
         crate::types::OrderBy {
-            dimension: self.dimension,
-            order: self.order,
+            dimension: self.dimension
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

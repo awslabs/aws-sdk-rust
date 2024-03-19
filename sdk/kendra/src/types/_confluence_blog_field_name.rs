@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let confluenceblogfieldname = unimplemented!();
 /// match confluenceblogfieldname {
@@ -37,16 +37,14 @@
 /// Specifically, when `confluenceblogfieldname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfluenceBlogFieldName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ConfluenceBlogFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Author,
@@ -68,92 +66,83 @@ pub enum ConfluenceBlogFieldName {
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ConfluenceBlogFieldName {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTHOR" => ConfluenceBlogFieldName::Author,
-            "DISPLAY_URL" => ConfluenceBlogFieldName::DisplayUrl,
-            "ITEM_TYPE" => ConfluenceBlogFieldName::ItemType,
-            "LABELS" => ConfluenceBlogFieldName::Labels,
-            "PUBLISH_DATE" => ConfluenceBlogFieldName::PublishDate,
-            "SPACE_KEY" => ConfluenceBlogFieldName::SpaceKey,
-            "SPACE_NAME" => ConfluenceBlogFieldName::SpaceName,
-            "URL" => ConfluenceBlogFieldName::Url,
-            "VERSION" => ConfluenceBlogFieldName::Version,
-            other => ConfluenceBlogFieldName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUTHOR" => ConfluenceBlogFieldName::Author,
+"DISPLAY_URL" => ConfluenceBlogFieldName::DisplayUrl,
+"ITEM_TYPE" => ConfluenceBlogFieldName::ItemType,
+"LABELS" => ConfluenceBlogFieldName::Labels,
+"PUBLISH_DATE" => ConfluenceBlogFieldName::PublishDate,
+"SPACE_KEY" => ConfluenceBlogFieldName::SpaceKey,
+"SPACE_NAME" => ConfluenceBlogFieldName::SpaceName,
+"URL" => ConfluenceBlogFieldName::Url,
+"VERSION" => ConfluenceBlogFieldName::Version,
+other => ConfluenceBlogFieldName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ConfluenceBlogFieldName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ConfluenceBlogFieldName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ConfluenceBlogFieldName::from(s))
+                    }
+                }
 impl ConfluenceBlogFieldName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfluenceBlogFieldName::Author => "AUTHOR",
-            ConfluenceBlogFieldName::DisplayUrl => "DISPLAY_URL",
-            ConfluenceBlogFieldName::ItemType => "ITEM_TYPE",
-            ConfluenceBlogFieldName::Labels => "LABELS",
-            ConfluenceBlogFieldName::PublishDate => "PUBLISH_DATE",
-            ConfluenceBlogFieldName::SpaceKey => "SPACE_KEY",
-            ConfluenceBlogFieldName::SpaceName => "SPACE_NAME",
-            ConfluenceBlogFieldName::Url => "URL",
-            ConfluenceBlogFieldName::Version => "VERSION",
-            ConfluenceBlogFieldName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTHOR",
-            "DISPLAY_URL",
-            "ITEM_TYPE",
-            "LABELS",
-            "PUBLISH_DATE",
-            "SPACE_KEY",
-            "SPACE_NAME",
-            "URL",
-            "VERSION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfluenceBlogFieldName::Author => "AUTHOR",
+    ConfluenceBlogFieldName::DisplayUrl => "DISPLAY_URL",
+    ConfluenceBlogFieldName::ItemType => "ITEM_TYPE",
+    ConfluenceBlogFieldName::Labels => "LABELS",
+    ConfluenceBlogFieldName::PublishDate => "PUBLISH_DATE",
+    ConfluenceBlogFieldName::SpaceKey => "SPACE_KEY",
+    ConfluenceBlogFieldName::SpaceName => "SPACE_NAME",
+    ConfluenceBlogFieldName::Url => "URL",
+    ConfluenceBlogFieldName::Version => "VERSION",
+    ConfluenceBlogFieldName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTHOR", "DISPLAY_URL", "ITEM_TYPE", "LABELS", "PUBLISH_DATE", "SPACE_KEY", "SPACE_NAME", "URL", "VERSION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ConfluenceBlogFieldName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ConfluenceBlogFieldName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ConfluenceBlogFieldName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ConfluenceBlogFieldName::Author => write!(f, "AUTHOR"),
-            ConfluenceBlogFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
-            ConfluenceBlogFieldName::ItemType => write!(f, "ITEM_TYPE"),
-            ConfluenceBlogFieldName::Labels => write!(f, "LABELS"),
-            ConfluenceBlogFieldName::PublishDate => write!(f, "PUBLISH_DATE"),
-            ConfluenceBlogFieldName::SpaceKey => write!(f, "SPACE_KEY"),
-            ConfluenceBlogFieldName::SpaceName => write!(f, "SPACE_NAME"),
-            ConfluenceBlogFieldName::Url => write!(f, "URL"),
-            ConfluenceBlogFieldName::Version => write!(f, "VERSION"),
-            ConfluenceBlogFieldName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ConfluenceBlogFieldName::Author => write!(f, "AUTHOR"),
+ConfluenceBlogFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
+ConfluenceBlogFieldName::ItemType => write!(f, "ITEM_TYPE"),
+ConfluenceBlogFieldName::Labels => write!(f, "LABELS"),
+ConfluenceBlogFieldName::PublishDate => write!(f, "PUBLISH_DATE"),
+ConfluenceBlogFieldName::SpaceKey => write!(f, "SPACE_KEY"),
+ConfluenceBlogFieldName::SpaceName => write!(f, "SPACE_NAME"),
+ConfluenceBlogFieldName::Url => write!(f, "URL"),
+ConfluenceBlogFieldName::Version => write!(f, "VERSION"),
+ConfluenceBlogFieldName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

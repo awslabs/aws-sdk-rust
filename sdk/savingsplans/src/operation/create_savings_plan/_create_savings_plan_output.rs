@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSavingsPlanOutput {
+pub struct CreateSavingsPlanOutput  {
     /// <p>The ID of the Savings Plan.</p>
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateSavingsPlanOutput {
+impl  CreateSavingsPlanOutput  {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn savings_plan_id(&self) -> ::std::option::Option<& str> {
         self.savings_plan_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSavingsPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSavingsPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateSavingsPlanOutput`](crate::operation::create_savings_plan::CreateSavingsPlanOutput).
     pub fn builder() -> crate::operation::create_savings_plan::builders::CreateSavingsPlanOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateSavingsPlanOutputBuilder {
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn set_savings_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.savings_plan_id = input;
-        self
+        self.savings_plan_id = input; self
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn get_savings_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.savings_plan_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSavingsPlanOutput`](crate::operation::create_savings_plan::CreateSavingsPlanOutput).
     pub fn build(self) -> crate::operation::create_savings_plan::CreateSavingsPlanOutput {
         crate::operation::create_savings_plan::CreateSavingsPlanOutput {
-            savings_plan_id: self.savings_plan_id,
+            savings_plan_id: self.savings_plan_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

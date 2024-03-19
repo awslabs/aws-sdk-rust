@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStatementsOutput {
+pub struct ListStatementsOutput  {
     /// <p>The SQL statements.</p>
-    pub statements: ::std::vec::Vec<crate::types::StatementData>,
+    pub statements: ::std::vec::Vec::<crate::types::StatementData>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStatementsOutput {
+impl  ListStatementsOutput  {
     /// <p>The SQL statements.</p>
-    pub fn statements(&self) -> &[crate::types::StatementData] {
-        use std::ops::Deref;
-        self.statements.deref()
+    pub fn statements(&self) -> & [crate::types::StatementData] {
+        use std::ops::Deref; self.statements.deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStatementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStatementsOutput {
     /// Creates a new builder-style object to manufacture [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
     pub fn builder() -> crate::operation::list_statements::builders::ListStatementsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStatementsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStatementsOutputBuilder {
-    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec::<crate::types::StatementData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListStatementsOutputBuilder {
     /// <p>The SQL statements.</p>
     pub fn statements(mut self, input: crate::types::StatementData) -> Self {
         let mut v = self.statements.unwrap_or_default();
-        v.push(input);
-        self.statements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The SQL statements.</p>
-    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>) -> Self {
-        self.statements = input;
-        self
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StatementData>>) -> Self {
+        self.statements = input; self
     }
     /// <p>The SQL statements.</p>
-    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatementData>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StatementData>> {
         &self.statements
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
@@ -68,37 +66,37 @@ impl ListStatementsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`statements`](crate::operation::list_statements::builders::ListStatementsOutputBuilder::statements)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_statements::ListStatementsOutput {
-            statements: self.statements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statements",
-                    "statements was not specified but it is required when building ListStatementsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_statements::ListStatementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_statements::ListStatementsOutput {
+                statements: self.statements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statements", "statements was not specified but it is required when building ListStatementsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

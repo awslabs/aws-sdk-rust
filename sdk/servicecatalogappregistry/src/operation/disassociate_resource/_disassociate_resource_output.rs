@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateResourceOutput {
+pub struct DisassociateResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DisassociateResourceOutput {
+impl  DisassociateResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
     pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder {
@@ -47,8 +47,7 @@ impl DisassociateResourceOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DisassociateResourceOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
     pub fn build(self) -> crate::operation::disassociate_resource::DisassociateResourceOutput {
         crate::operation::disassociate_resource::DisassociateResourceOutput {
-            application_arn: self.application_arn,
-            resource_arn: self.resource_arn,
+            application_arn: self.application_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

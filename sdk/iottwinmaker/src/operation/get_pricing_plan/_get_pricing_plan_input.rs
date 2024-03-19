@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPricingPlanInput {}
+pub struct GetPricingPlanInput  {
+}
 impl GetPricingPlanInput {
     /// Creates a new builder-style object to manufacture [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).
     pub fn builder() -> crate::operation::get_pricing_plan::builders::GetPricingPlanInputBuilder {
@@ -13,12 +14,15 @@ impl GetPricingPlanInput {
 /// A builder for [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetPricingPlanInputBuilder {}
+pub struct GetPricingPlanInputBuilder {
+}
 impl GetPricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_pricing_plan::GetPricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_pricing_plan::GetPricingPlanInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pricing_plan::GetPricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_pricing_plan::GetPricingPlanInput {
+            }
+        )
     }
 }
+

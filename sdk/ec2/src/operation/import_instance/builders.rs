@@ -5,23 +5,20 @@ pub use crate::operation::import_instance::_import_instance_input::ImportInstanc
 
 impl ImportInstanceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::import_instance::ImportInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::import_instance::ImportInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.import_instance();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::import_instance::ImportInstanceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::import_instance::ImportInstanceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.import_instance();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ImportInstance`.
-///
+/// 
 /// <note>
 /// <p>We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html"> <code>ImportImage</code> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
 /// </note>
@@ -32,33 +29,32 @@ impl ImportInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::import_instance::builders::ImportInstanceInputBuilder,
+                    inner: crate::operation::import_instance::builders::ImportInstanceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::import_instance::ImportInstanceOutput,
-        crate::operation::import_instance::ImportInstanceError,
-    > for ImportInstanceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::import_instance::ImportInstanceOutput,
-            crate::operation::import_instance::ImportInstanceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::import_instance::ImportInstanceOutput,
+                    crate::operation::import_instance::ImportInstanceError,
+                > for ImportInstanceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::import_instance::ImportInstanceOutput,
+                        crate::operation::import_instance::ImportInstanceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ImportInstanceFluentBuilder {
     /// Creates a new `ImportInstance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl ImportInstanceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_instance::ImportInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::import_instance::ImportInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::import_instance::ImportInstance::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::import_instance::ImportInstance::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::import_instance::ImportInstanceOutput,
-        crate::operation::import_instance::ImportInstanceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::import_instance::ImportInstanceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_instance::ImportInstanceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::import_instance::ImportInstance::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::import_instance::ImportInstance::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::import_instance::ImportInstanceOutput, crate::operation::import_instance::ImportInstanceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A description for the instance being imported.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -138,12 +125,12 @@ impl ImportInstanceFluentBuilder {
         self
     }
     /// <p>The disk image.</p>
-    pub fn set_disk_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiskImage>>) -> Self {
+    pub fn set_disk_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DiskImage>>) -> Self {
         self.inner = self.inner.set_disk_images(input);
         self
     }
     /// <p>The disk image.</p>
-    pub fn get_disk_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
+    pub fn get_disk_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DiskImage>> {
         self.inner.get_disk_images()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -189,3 +176,4 @@ impl ImportInstanceFluentBuilder {
         self.inner.get_platform()
     }
 }
+

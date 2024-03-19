@@ -3,19 +3,19 @@
 /// <p>The parent entity update request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParentEntityUpdateRequest {
+pub struct ParentEntityUpdateRequest  {
     /// <p>The type of the update.</p>
     pub update_type: crate::types::ParentEntityUpdateType,
     /// <p>The ID of the parent entity.</p>
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
 }
-impl ParentEntityUpdateRequest {
+impl  ParentEntityUpdateRequest  {
     /// <p>The type of the update.</p>
-    pub fn update_type(&self) -> &crate::types::ParentEntityUpdateType {
+    pub fn update_type(&self) -> & crate::types::ParentEntityUpdateType {
         &self.update_type
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn parent_entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_entity_id(&self) -> ::std::option::Option<& str> {
         self.parent_entity_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ParentEntityUpdateRequestBuilder {
     }
     /// <p>The type of the update.</p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::ParentEntityUpdateType>) -> Self {
-        self.update_type = input;
-        self
+        self.update_type = input; self
     }
     /// <p>The type of the update.</p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::ParentEntityUpdateType> {
@@ -56,8 +55,7 @@ impl ParentEntityUpdateRequestBuilder {
     }
     /// <p>The ID of the parent entity.</p>
     pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_entity_id = input;
-        self
+        self.parent_entity_id = input; self
     }
     /// <p>The ID of the parent entity.</p>
     pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl ParentEntityUpdateRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`update_type`](crate::types::builders::ParentEntityUpdateRequestBuilder::update_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ParentEntityUpdateRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParentEntityUpdateRequest {
-            update_type: self.update_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_type",
-                    "update_type was not specified but it is required when building ParentEntityUpdateRequest",
-                )
-            })?,
-            parent_entity_id: self.parent_entity_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParentEntityUpdateRequest {
+                update_type: self.update_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_type", "update_type was not specified but it is required when building ParentEntityUpdateRequest")
+                    )?
+                ,
+                parent_entity_id: self.parent_entity_id
+                ,
+            }
+        )
     }
 }
+

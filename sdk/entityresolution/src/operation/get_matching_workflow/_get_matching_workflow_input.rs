@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMatchingWorkflowInput {
+pub struct GetMatchingWorkflowInput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
-impl GetMatchingWorkflowInput {
+impl  GetMatchingWorkflowInput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetMatchingWorkflowInputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
     /// Consumes the builder and constructs a [`GetMatchingWorkflowInput`](crate::operation::get_matching_workflow::GetMatchingWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_matching_workflow::GetMatchingWorkflowInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_matching_workflow::GetMatchingWorkflowInput {
-            workflow_name: self.workflow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_matching_workflow::GetMatchingWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_matching_workflow::GetMatchingWorkflowInput {
+                workflow_name: self.workflow_name
+                ,
+            }
+        )
     }
 }
+

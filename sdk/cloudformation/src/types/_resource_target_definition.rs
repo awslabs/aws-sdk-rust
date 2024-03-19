@@ -3,7 +3,7 @@
 /// <p>The field that CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceTargetDefinition {
+pub struct ResourceTargetDefinition  {
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
@@ -11,17 +11,17 @@ pub struct ResourceTargetDefinition {
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
     pub requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
 }
-impl ResourceTargetDefinition {
+impl  ResourceTargetDefinition  {
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ResourceAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<& crate::types::ResourceAttribute> {
         self.attribute.as_ref()
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn requires_recreation(&self) -> ::std::option::Option<&crate::types::RequiresRecreation> {
+    pub fn requires_recreation(&self) -> ::std::option::Option<& crate::types::RequiresRecreation> {
         self.requires_recreation.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ResourceTargetDefinitionBuilder {
     }
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResourceAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResourceAttribute> {
@@ -62,8 +61,7 @@ impl ResourceTargetDefinitionBuilder {
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ResourceTargetDefinitionBuilder {
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_requires_recreation(mut self, input: ::std::option::Option<crate::types::RequiresRecreation>) -> Self {
-        self.requires_recreation = input;
-        self
+        self.requires_recreation = input; self
     }
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_requires_recreation(&self) -> &::std::option::Option<crate::types::RequiresRecreation> {
@@ -86,9 +83,13 @@ impl ResourceTargetDefinitionBuilder {
     /// Consumes the builder and constructs a [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
     pub fn build(self) -> crate::types::ResourceTargetDefinition {
         crate::types::ResourceTargetDefinition {
-            attribute: self.attribute,
-            name: self.name,
-            requires_recreation: self.requires_recreation,
+            attribute: self.attribute
+            ,
+            name: self.name
+            ,
+            requires_recreation: self.requires_recreation
+            ,
         }
     }
 }
+

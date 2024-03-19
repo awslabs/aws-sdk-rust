@@ -3,15 +3,14 @@
 /// <p>The structure that contains the information required to deliver a notification to a customer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationDestinationConfig {
+pub struct NotificationDestinationConfig  {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub uri: ::std::string::String,
 }
-impl NotificationDestinationConfig {
+impl  NotificationDestinationConfig  {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
 }
 impl NotificationDestinationConfig {
@@ -36,8 +35,7 @@ impl NotificationDestinationConfigBuilder {
     }
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl NotificationDestinationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::NotificationDestinationConfigBuilder::uri)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationDestinationConfig {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building NotificationDestinationConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationDestinationConfig {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building NotificationDestinationConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

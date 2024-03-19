@@ -3,7 +3,7 @@
 /// <p>Provides information about a document that could not be indexed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutDocumentResponseFailedDocument {
+pub struct BatchPutDocumentResponseFailedDocument  {
     /// <p>The identifier of the document.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of error that caused the document to fail to be indexed.</p>
@@ -11,17 +11,17 @@ pub struct BatchPutDocumentResponseFailedDocument {
     /// <p>A description of the reason why the document could not be indexed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchPutDocumentResponseFailedDocument {
+impl  BatchPutDocumentResponseFailedDocument  {
     /// <p>The identifier of the document.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     }
     /// <p>The identifier of the document.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the document.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -76,8 +74,7 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     /// Consumes the builder and constructs a [`BatchPutDocumentResponseFailedDocument`](crate::types::BatchPutDocumentResponseFailedDocument).
     pub fn build(self) -> crate::types::BatchPutDocumentResponseFailedDocument {
         crate::types::BatchPutDocumentResponseFailedDocument {
-            id: self.id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            id: self.id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

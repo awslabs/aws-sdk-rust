@@ -3,7 +3,7 @@
 /// <p>Describes a rule update that failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleUpdateFailure {
+pub struct RuleUpdateFailure  {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
@@ -11,17 +11,17 @@ pub struct RuleUpdateFailure {
     /// <p>The failure message.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
-impl RuleUpdateFailure {
+impl  RuleUpdateFailure  {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn rule_identifier(&self) -> ::std::option::Option<& str> {
         self.rule_identifier.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RuleUpdateFailureBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_identifier = input;
-        self
+        self.rule_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RuleUpdateFailureBuilder {
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RuleUpdateFailureBuilder {
     }
     /// <p>The failure message.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl RuleUpdateFailureBuilder {
     /// Consumes the builder and constructs a [`RuleUpdateFailure`](crate::types::RuleUpdateFailure).
     pub fn build(self) -> crate::types::RuleUpdateFailure {
         crate::types::RuleUpdateFailure {
-            rule_identifier: self.rule_identifier,
-            failure_code: self.failure_code,
-            failure_message: self.failure_message,
+            rule_identifier: self.rule_identifier
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_message: self.failure_message
+            ,
         }
     }
 }
+

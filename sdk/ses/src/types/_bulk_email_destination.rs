@@ -3,31 +3,32 @@
 /// <p>An array that contains one or more Destinations, as well as the tags and replacement data associated with each of those Destinations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkEmailDestination {
+pub struct BulkEmailDestination  {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub replacement_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub replacement_template_data: ::std::option::Option<::std::string::String>,
 }
-impl BulkEmailDestination {
+impl  BulkEmailDestination  {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replacement_tags.is_none()`.
-    pub fn replacement_tags(&self) -> &[crate::types::MessageTag] {
-        self.replacement_tags.as_deref().unwrap_or_default()
+    pub fn replacement_tags(&self) -> & [crate::types::MessageTag] {
+        self.replacement_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(&self) -> ::std::option::Option<&str> {
+    pub fn replacement_template_data(&self) -> ::std::option::Option<& str> {
         self.replacement_template_data.as_deref()
     }
 }
@@ -43,7 +44,7 @@ impl BulkEmailDestination {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkEmailDestinationBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
-    pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     pub(crate) replacement_template_data: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestinationBuilder {
@@ -59,8 +60,7 @@ impl BulkEmailDestinationBuilder {
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
@@ -75,17 +75,16 @@ impl BulkEmailDestinationBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn replacement_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.replacement_tags.unwrap_or_default();
-        v.push(input);
-        self.replacement_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replacement_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_replacement_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
-        self.replacement_tags = input;
-        self
+    pub fn set_replacement_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>) -> Self {
+        self.replacement_tags = input; self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn get_replacement_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_replacement_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>> {
         &self.replacement_tags
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
@@ -95,8 +94,7 @@ impl BulkEmailDestinationBuilder {
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn set_replacement_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replacement_template_data = input;
-        self
+        self.replacement_template_data = input; self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn get_replacement_template_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,9 +103,13 @@ impl BulkEmailDestinationBuilder {
     /// Consumes the builder and constructs a [`BulkEmailDestination`](crate::types::BulkEmailDestination).
     pub fn build(self) -> crate::types::BulkEmailDestination {
         crate::types::BulkEmailDestination {
-            destination: self.destination,
-            replacement_tags: self.replacement_tags,
-            replacement_template_data: self.replacement_template_data,
+            destination: self.destination
+            ,
+            replacement_tags: self.replacement_tags
+            ,
+            replacement_template_data: self.replacement_template_data
+            ,
         }
     }
 }
+

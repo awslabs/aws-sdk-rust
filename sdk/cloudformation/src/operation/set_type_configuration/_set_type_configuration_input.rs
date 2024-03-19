@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTypeConfigurationInput {
+pub struct SetTypeConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
@@ -20,31 +20,31 @@ pub struct SetTypeConfigurationInput {
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
 }
-impl SetTypeConfigurationInput {
+impl  SetTypeConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
-    pub fn type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn type_arn(&self) -> ::std::option::Option<& str> {
         self.type_arn.as_deref()
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
+    pub fn configuration(&self) -> ::std::option::Option<& str> {
         self.configuration.as_deref()
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
-    pub fn configuration_alias(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_alias(&self) -> ::std::option::Option<& str> {
         self.configuration_alias.as_deref()
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The type of extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThirdPartyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThirdPartyType> {
         self.r#type.as_ref()
     }
 }
@@ -77,8 +77,7 @@ impl SetTypeConfigurationInputBuilder {
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_arn = input;
-        self
+        self.type_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
@@ -96,8 +95,7 @@ impl SetTypeConfigurationInputBuilder {
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -113,8 +111,7 @@ impl SetTypeConfigurationInputBuilder {
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
     pub fn set_configuration_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_alias = input;
-        self
+        self.configuration_alias = input; self
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
@@ -130,8 +127,7 @@ impl SetTypeConfigurationInputBuilder {
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
@@ -147,8 +143,7 @@ impl SetTypeConfigurationInputBuilder {
     /// <p>The type of extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of extension.</p>
     /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
@@ -156,16 +151,21 @@ impl SetTypeConfigurationInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_type_configuration::SetTypeConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_type_configuration::SetTypeConfigurationInput {
-            type_arn: self.type_arn,
-            configuration: self.configuration,
-            configuration_alias: self.configuration_alias,
-            type_name: self.type_name,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_type_configuration::SetTypeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_type_configuration::SetTypeConfigurationInput {
+                type_arn: self.type_arn
+                ,
+                configuration: self.configuration
+                ,
+                configuration_alias: self.configuration_alias
+                ,
+                type_name: self.type_name
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

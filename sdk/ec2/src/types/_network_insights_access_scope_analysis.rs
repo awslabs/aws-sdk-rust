@@ -3,7 +3,7 @@
 /// <p>Describes a Network Access Scope analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInsightsAccessScopeAnalysis {
+pub struct NetworkInsightsAccessScopeAnalysis  {
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
@@ -25,43 +25,43 @@ pub struct NetworkInsightsAccessScopeAnalysis {
     /// <p>The number of network interfaces analyzed.</p>
     pub analyzed_eni_count: ::std::option::Option<i32>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl NetworkInsightsAccessScopeAnalysis {
+impl  NetworkInsightsAccessScopeAnalysis  {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_analysis_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_analysis_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_analysis_arn(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_analysis_arn.as_deref()
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AnalysisStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AnalysisStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The warning message.</p>
-    pub fn warning_message(&self) -> ::std::option::Option<&str> {
+    pub fn warning_message(&self) -> ::std::option::Option<& str> {
         self.warning_message.as_deref()
     }
     /// <p>The analysis start date.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The analysis end date.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>Indicates whether there are findings.</p>
-    pub fn findings_found(&self) -> ::std::option::Option<&crate::types::FindingsFound> {
+    pub fn findings_found(&self) -> ::std::option::Option<& crate::types::FindingsFound> {
         self.findings_found.as_ref()
     }
     /// <p>The number of network interfaces analyzed.</p>
@@ -69,10 +69,11 @@ impl NetworkInsightsAccessScopeAnalysis {
         self.analyzed_eni_count
     }
     /// <p>The tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NetworkInsightsAccessScopeAnalysis {
@@ -96,7 +97,7 @@ pub struct NetworkInsightsAccessScopeAnalysisBuilder {
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) findings_found: ::std::option::Option<crate::types::FindingsFound>,
     pub(crate) analyzed_eni_count: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl NetworkInsightsAccessScopeAnalysisBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
@@ -106,8 +107,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn set_network_insights_access_scope_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_analysis_id = input;
-        self
+        self.network_insights_access_scope_analysis_id = input; self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn get_network_insights_access_scope_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
     pub fn set_network_insights_access_scope_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_analysis_arn = input;
-        self
+        self.network_insights_access_scope_analysis_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
     pub fn get_network_insights_access_scope_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_id = input;
-        self
+        self.network_insights_access_scope_id = input; self
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AnalysisStatus> {
@@ -162,8 +159,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The warning message.</p>
     pub fn set_warning_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warning_message = input;
-        self
+        self.warning_message = input; self
     }
     /// <p>The warning message.</p>
     pub fn get_warning_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +185,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The analysis start date.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The analysis start date.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +198,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The analysis end date.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The analysis end date.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +211,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>Indicates whether there are findings.</p>
     pub fn set_findings_found(mut self, input: ::std::option::Option<crate::types::FindingsFound>) -> Self {
-        self.findings_found = input;
-        self
+        self.findings_found = input; self
     }
     /// <p>Indicates whether there are findings.</p>
     pub fn get_findings_found(&self) -> &::std::option::Option<crate::types::FindingsFound> {
@@ -232,8 +224,7 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     }
     /// <p>The number of network interfaces analyzed.</p>
     pub fn set_analyzed_eni_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.analyzed_eni_count = input;
-        self
+        self.analyzed_eni_count = input; self
     }
     /// <p>The number of network interfaces analyzed.</p>
     pub fn get_analyzed_eni_count(&self) -> &::std::option::Option<i32> {
@@ -246,33 +237,44 @@ impl NetworkInsightsAccessScopeAnalysisBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`NetworkInsightsAccessScopeAnalysis`](crate::types::NetworkInsightsAccessScopeAnalysis).
     pub fn build(self) -> crate::types::NetworkInsightsAccessScopeAnalysis {
         crate::types::NetworkInsightsAccessScopeAnalysis {
-            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id,
-            network_insights_access_scope_analysis_arn: self.network_insights_access_scope_analysis_arn,
-            network_insights_access_scope_id: self.network_insights_access_scope_id,
-            status: self.status,
-            status_message: self.status_message,
-            warning_message: self.warning_message,
-            start_date: self.start_date,
-            end_date: self.end_date,
-            findings_found: self.findings_found,
-            analyzed_eni_count: self.analyzed_eni_count,
-            tags: self.tags,
+            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
+            ,
+            network_insights_access_scope_analysis_arn: self.network_insights_access_scope_analysis_arn
+            ,
+            network_insights_access_scope_id: self.network_insights_access_scope_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            warning_message: self.warning_message
+            ,
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            findings_found: self.findings_found
+            ,
+            analyzed_eni_count: self.analyzed_eni_count
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

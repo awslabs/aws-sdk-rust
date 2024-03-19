@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEnvironmentInput {
+pub struct CreateEnvironmentInput  {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which the environment is created.</p>
@@ -14,42 +14,44 @@ pub struct CreateEnvironmentInput {
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
     pub environment_profile_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateEnvironmentInput {
+impl  CreateEnvironmentInput  {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The description of the Amazon DataZone environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the Amazon DataZone environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
-    pub fn environment_profile_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_profile_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_profile_identifier.as_deref()
     }
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateEnvironmentInput {
@@ -68,8 +70,8 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_profile_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
@@ -80,8 +82,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +96,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +109,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The description of the Amazon DataZone environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Amazon DataZone environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The name of the Amazon DataZone environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon DataZone environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
     pub fn set_environment_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_profile_identifier = input;
-        self
+        self.environment_profile_identifier = input; self
     }
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
     pub fn get_environment_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,17 +150,16 @@ impl CreateEnvironmentInputBuilder {
     /// <p>The user parameters of this Amazon DataZone environment.</p>
     pub fn user_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>> {
         &self.user_parameters
     }
     /// Appends an item to `glossary_terms`.
@@ -173,31 +169,38 @@ impl CreateEnvironmentInputBuilder {
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            project_identifier: self.project_identifier,
-            domain_identifier: self.domain_identifier,
-            description: self.description,
-            name: self.name,
-            environment_profile_identifier: self.environment_profile_identifier,
-            user_parameters: self.user_parameters,
-            glossary_terms: self.glossary_terms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment::CreateEnvironmentInput {
+                project_identifier: self.project_identifier
+                ,
+                domain_identifier: self.domain_identifier
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                environment_profile_identifier: self.environment_profile_identifier
+                ,
+                user_parameters: self.user_parameters
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+            }
+        )
     }
 }
+

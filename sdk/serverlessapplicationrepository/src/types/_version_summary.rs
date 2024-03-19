@@ -3,7 +3,7 @@
 /// <p>An application version summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionSummary {
+pub struct VersionSummary  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
@@ -14,22 +14,22 @@ pub struct VersionSummary {
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub source_code_url: ::std::option::Option<::std::string::String>,
 }
-impl VersionSummary {
+impl  VersionSummary  {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_url(&self) -> ::std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl VersionSummaryBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl VersionSummaryBuilder {
     }
     /// <p>The date and time this resource was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time this resource was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl VersionSummaryBuilder {
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
@@ -105,8 +102,7 @@ impl VersionSummaryBuilder {
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_url = input;
-        self
+        self.source_code_url = input; self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +111,15 @@ impl VersionSummaryBuilder {
     /// Consumes the builder and constructs a [`VersionSummary`](crate::types::VersionSummary).
     pub fn build(self) -> crate::types::VersionSummary {
         crate::types::VersionSummary {
-            application_id: self.application_id,
-            creation_time: self.creation_time,
-            semantic_version: self.semantic_version,
-            source_code_url: self.source_code_url,
+            application_id: self.application_id
+            ,
+            creation_time: self.creation_time
+            ,
+            semantic_version: self.semantic_version
+            ,
+            source_code_url: self.source_code_url
+            ,
         }
     }
 }
+

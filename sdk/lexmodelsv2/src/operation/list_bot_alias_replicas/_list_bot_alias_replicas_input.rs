@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotAliasReplicasInput {
+pub struct ListBotAliasReplicasInput  {
     /// <p>The request for the unique bot ID of the replicated bot created from the source bot alias.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The request for the secondary region of the replicated bot created from the source bot alias.</p>
@@ -12,13 +12,13 @@ pub struct ListBotAliasReplicasInput {
     /// <p>The request for the next token for the replicated bot created from the source bot alias.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListBotAliasReplicasInput {
+impl  ListBotAliasReplicasInput  {
     /// <p>The request for the unique bot ID of the replicated bot created from the source bot alias.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The request for the secondary region of the replicated bot created from the source bot alias.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The request for maximum results to list the replicated bots created from the source bot alias.</p>
@@ -26,7 +26,7 @@ impl ListBotAliasReplicasInput {
         self.max_results
     }
     /// <p>The request for the next token for the replicated bot created from the source bot alias.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListBotAliasReplicasInputBuilder {
     }
     /// <p>The request for the unique bot ID of the replicated bot created from the source bot alias.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The request for the unique bot ID of the replicated bot created from the source bot alias.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListBotAliasReplicasInputBuilder {
     }
     /// <p>The request for the secondary region of the replicated bot created from the source bot alias.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The request for the secondary region of the replicated bot created from the source bot alias.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListBotAliasReplicasInputBuilder {
     }
     /// <p>The request for maximum results to list the replicated bots created from the source bot alias.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The request for maximum results to list the replicated bots created from the source bot alias.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,23 +95,26 @@ impl ListBotAliasReplicasInputBuilder {
     }
     /// <p>The request for the next token for the replicated bot created from the source bot alias.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The request for the next token for the replicated bot created from the source bot alias.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBotAliasReplicasInput`](crate::operation::list_bot_alias_replicas::ListBotAliasReplicasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_bot_alias_replicas::ListBotAliasReplicasInput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasInput {
+                bot_id: self.bot_id
+                ,
+                replica_region: self.replica_region
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

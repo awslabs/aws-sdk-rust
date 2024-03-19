@@ -3,15 +3,14 @@
 /// <p>Information about the demodulation <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DemodulationConfig {
+pub struct DemodulationConfig  {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     pub unvalidated_json: ::std::string::String,
 }
-impl DemodulationConfig {
+impl  DemodulationConfig  {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> &str {
-        use std::ops::Deref;
-        self.unvalidated_json.deref()
+    pub fn unvalidated_json(&self) -> & str {
+        use std::ops::Deref; self.unvalidated_json.deref()
     }
 }
 impl DemodulationConfig {
@@ -36,8 +35,7 @@ impl DemodulationConfigBuilder {
     }
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     pub fn set_unvalidated_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unvalidated_json = input;
-        self
+        self.unvalidated_json = input; self
     }
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     pub fn get_unvalidated_json(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DemodulationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`unvalidated_json`](crate::types::builders::DemodulationConfigBuilder::unvalidated_json)
     pub fn build(self) -> ::std::result::Result<crate::types::DemodulationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DemodulationConfig {
-            unvalidated_json: self.unvalidated_json.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unvalidated_json",
-                    "unvalidated_json was not specified but it is required when building DemodulationConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DemodulationConfig {
+                unvalidated_json: self.unvalidated_json
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unvalidated_json", "unvalidated_json was not specified but it is required when building DemodulationConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

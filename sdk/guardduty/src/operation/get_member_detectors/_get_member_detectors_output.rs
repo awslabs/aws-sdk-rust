@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMemberDetectorsOutput {
+pub struct GetMemberDetectorsOutput  {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
+    pub member_data_source_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDataSourceConfiguration>>,
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
-impl GetMemberDetectorsOutput {
+impl  GetMemberDetectorsOutput  {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_data_source_configurations.is_none()`.
-    pub fn member_data_source_configurations(&self) -> &[crate::types::MemberDataSourceConfiguration] {
-        self.member_data_source_configurations.as_deref().unwrap_or_default()
+    pub fn member_data_source_configurations(&self) -> & [crate::types::MemberDataSourceConfiguration] {
+        self.member_data_source_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
-    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
-        self.unprocessed_accounts.as_deref().unwrap_or_default()
+    pub fn unprocessed_accounts(&self) -> & [crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMemberDetectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMemberDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput).
     pub fn builder() -> crate::operation::get_member_detectors::builders::GetMemberDetectorsOutputBuilder {
@@ -39,8 +41,8 @@ impl GetMemberDetectorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberDetectorsOutputBuilder {
-    pub(crate) member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
-    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) member_data_source_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDataSourceConfiguration>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetMemberDetectorsOutputBuilder {
@@ -51,20 +53,16 @@ impl GetMemberDetectorsOutputBuilder {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
     pub fn member_data_source_configurations(mut self, input: crate::types::MemberDataSourceConfiguration) -> Self {
         let mut v = self.member_data_source_configurations.unwrap_or_default();
-        v.push(input);
-        self.member_data_source_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_data_source_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn set_member_data_source_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
-    ) -> Self {
-        self.member_data_source_configurations = input;
-        self
+    pub fn set_member_data_source_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDataSourceConfiguration>>) -> Self {
+        self.member_data_source_configurations = input; self
     }
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn get_member_data_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>> {
+    pub fn get_member_data_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDataSourceConfiguration>> {
         &self.member_data_source_configurations
     }
     /// Appends an item to `unprocessed_accounts`.
@@ -74,34 +72,36 @@ impl GetMemberDetectorsOutputBuilder {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput).
     pub fn build(self) -> crate::operation::get_member_detectors::GetMemberDetectorsOutput {
         crate::operation::get_member_detectors::GetMemberDetectorsOutput {
-            member_data_source_configurations: self.member_data_source_configurations,
-            unprocessed_accounts: self.unprocessed_accounts,
+            member_data_source_configurations: self.member_data_source_configurations
+            ,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

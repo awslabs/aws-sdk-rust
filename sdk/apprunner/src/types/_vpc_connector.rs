@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnector {
+pub struct VpcConnector  {
     /// <p>The customer-provided VPC connector name.</p>
     pub vpc_connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
@@ -16,9 +16,9 @@ pub struct VpcConnector {
     /// </note>
     pub vpc_connector_revision: i32,
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
     pub status: ::std::option::Option<crate::types::VpcConnectorStatus>,
     /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
@@ -26,13 +26,13 @@ pub struct VpcConnector {
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl VpcConnector {
+impl  VpcConnector  {
     /// <p>The customer-provided VPC connector name.</p>
-    pub fn vpc_connector_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connector_name(&self) -> ::std::option::Option<& str> {
         self.vpc_connector_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
-    pub fn vpc_connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connector_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_connector_arn.as_deref()
     }
     /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p><note>
@@ -42,27 +42,29 @@ impl VpcConnector {
         self.vpc_connector_revision
     }
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
-    pub fn subnets(&self) -> &[::std::string::String] {
-        self.subnets.as_deref().unwrap_or_default()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        self.subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcConnectorStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcConnectorStatus> {
         self.status.as_ref()
     }
     /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
-    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
 }
@@ -80,8 +82,8 @@ pub struct VpcConnectorBuilder {
     pub(crate) vpc_connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connector_revision: ::std::option::Option<i32>,
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::VpcConnectorStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -94,8 +96,7 @@ impl VpcConnectorBuilder {
     }
     /// <p>The customer-provided VPC connector name.</p>
     pub fn set_vpc_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connector_name = input;
-        self
+        self.vpc_connector_name = input; self
     }
     /// <p>The customer-provided VPC connector name.</p>
     pub fn get_vpc_connector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl VpcConnectorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
     pub fn set_vpc_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connector_arn = input;
-        self
+        self.vpc_connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this VPC connector.</p>
     pub fn get_vpc_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +126,7 @@ impl VpcConnectorBuilder {
     /// <p>At this time, App Runner supports only one revision per name.</p>
     /// </note>
     pub fn set_vpc_connector_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vpc_connector_revision = input;
-        self
+        self.vpc_connector_revision = input; self
     }
     /// <p>The revision of this VPC connector. It's unique among all the active connectors (<code>"Status": "ACTIVE"</code>) that share the same <code>Name</code>.</p><note>
     /// <p>At this time, App Runner supports only one revision per name.</p>
@@ -142,17 +141,16 @@ impl VpcConnectorBuilder {
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets of a single Amazon VPC.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Appends an item to `security_groups`.
@@ -162,17 +160,16 @@ impl VpcConnectorBuilder {
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>A list of IDs of security groups that App Runner uses for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
@@ -182,8 +179,7 @@ impl VpcConnectorBuilder {
     }
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcConnectorStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the VPC connector. If the status of a connector revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive connector revisions are permanently removed some time after they are deleted.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcConnectorStatus> {
@@ -196,8 +192,7 @@ impl VpcConnectorBuilder {
     }
     /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the VPC connector was created. It's in Unix time stamp format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -210,8 +205,7 @@ impl VpcConnectorBuilder {
     }
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_at = input;
-        self
+        self.deleted_at = input; self
     }
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,14 +214,24 @@ impl VpcConnectorBuilder {
     /// Consumes the builder and constructs a [`VpcConnector`](crate::types::VpcConnector).
     pub fn build(self) -> crate::types::VpcConnector {
         crate::types::VpcConnector {
-            vpc_connector_name: self.vpc_connector_name,
-            vpc_connector_arn: self.vpc_connector_arn,
-            vpc_connector_revision: self.vpc_connector_revision.unwrap_or_default(),
-            subnets: self.subnets,
-            security_groups: self.security_groups,
-            status: self.status,
-            created_at: self.created_at,
-            deleted_at: self.deleted_at,
+            vpc_connector_name: self.vpc_connector_name
+            ,
+            vpc_connector_arn: self.vpc_connector_arn
+            ,
+            vpc_connector_revision: self.vpc_connector_revision
+                .unwrap_or_default()
+            ,
+            subnets: self.subnets
+            ,
+            security_groups: self.security_groups
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            deleted_at: self.deleted_at
+            ,
         }
     }
 }
+

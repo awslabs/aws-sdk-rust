@@ -3,9 +3,9 @@
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportAssetsToS3RequestDetails {
+pub struct ExportAssetsToS3RequestDetails  {
     /// <p>The destination for the asset.</p>
-    pub asset_destinations: ::std::vec::Vec<crate::types::AssetDestinationEntry>,
+    pub asset_destinations: ::std::vec::Vec::<crate::types::AssetDestinationEntry>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub data_set_id: ::std::string::String,
     /// <p>Encryption configuration for the export job.</p>
@@ -13,25 +13,22 @@ pub struct ExportAssetsToS3RequestDetails {
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub revision_id: ::std::string::String,
 }
-impl ExportAssetsToS3RequestDetails {
+impl  ExportAssetsToS3RequestDetails  {
     /// <p>The destination for the asset.</p>
-    pub fn asset_destinations(&self) -> &[crate::types::AssetDestinationEntry] {
-        use std::ops::Deref;
-        self.asset_destinations.deref()
+    pub fn asset_destinations(&self) -> & [crate::types::AssetDestinationEntry] {
+        use std::ops::Deref; self.asset_destinations.deref()
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>Encryption configuration for the export job.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::ExportServerSideEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::ExportServerSideEncryption> {
         self.encryption.as_ref()
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ExportAssetsToS3RequestDetails {
@@ -45,7 +42,7 @@ impl ExportAssetsToS3RequestDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportAssetsToS3RequestDetailsBuilder {
-    pub(crate) asset_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
+    pub(crate) asset_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::AssetDestinationEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,16 @@ impl ExportAssetsToS3RequestDetailsBuilder {
     /// <p>The destination for the asset.</p>
     pub fn asset_destinations(mut self, input: crate::types::AssetDestinationEntry) -> Self {
         let mut v = self.asset_destinations.unwrap_or_default();
-        v.push(input);
-        self.asset_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The destination for the asset.</p>
-    pub fn set_asset_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>) -> Self {
-        self.asset_destinations = input;
-        self
+    pub fn set_asset_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetDestinationEntry>>) -> Self {
+        self.asset_destinations = input; self
     }
     /// <p>The destination for the asset.</p>
-    pub fn get_asset_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>> {
+    pub fn get_asset_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetDestinationEntry>> {
         &self.asset_destinations
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
@@ -79,8 +75,7 @@ impl ExportAssetsToS3RequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +88,7 @@ impl ExportAssetsToS3RequestDetailsBuilder {
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
@@ -108,8 +102,7 @@ impl ExportAssetsToS3RequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,26 +114,27 @@ impl ExportAssetsToS3RequestDetailsBuilder {
     /// - [`data_set_id`](crate::types::builders::ExportAssetsToS3RequestDetailsBuilder::data_set_id)
     /// - [`revision_id`](crate::types::builders::ExportAssetsToS3RequestDetailsBuilder::revision_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportAssetsToS3RequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportAssetsToS3RequestDetails {
-            asset_destinations: self.asset_destinations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_destinations",
-                    "asset_destinations was not specified but it is required when building ExportAssetsToS3RequestDetails",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ExportAssetsToS3RequestDetails",
-                )
-            })?,
-            encryption: self.encryption,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ExportAssetsToS3RequestDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportAssetsToS3RequestDetails {
+                asset_destinations: self.asset_destinations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_destinations", "asset_destinations was not specified but it is required when building ExportAssetsToS3RequestDetails")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ExportAssetsToS3RequestDetails")
+                    )?
+                ,
+                encryption: self.encryption
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ExportAssetsToS3RequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

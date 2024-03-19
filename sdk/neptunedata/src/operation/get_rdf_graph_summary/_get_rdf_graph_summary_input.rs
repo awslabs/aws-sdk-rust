@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRdfGraphSummaryInput {
+pub struct GetRdfGraphSummaryInput  {
     /// <p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p>
     pub mode: ::std::option::Option<crate::types::GraphSummaryType>,
 }
-impl GetRdfGraphSummaryInput {
+impl  GetRdfGraphSummaryInput  {
     /// <p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::GraphSummaryType> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::GraphSummaryType> {
         self.mode.as_ref()
     }
 }
@@ -33,18 +33,20 @@ impl GetRdfGraphSummaryInputBuilder {
     }
     /// <p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::GraphSummaryType>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::GraphSummaryType> {
         &self.mode
     }
     /// Consumes the builder and constructs a [`GetRdfGraphSummaryInput`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput { mode: self.mode })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput {
+                mode: self.mode
+                ,
+            }
+        )
     }
 }
+

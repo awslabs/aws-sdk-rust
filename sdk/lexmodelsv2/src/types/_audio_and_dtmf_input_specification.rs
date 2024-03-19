@@ -3,7 +3,7 @@
 /// <p>Specifies the audio and DTMF input specification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioAndDtmfInputSpecification {
+pub struct AudioAndDtmfInputSpecification  {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     pub start_timeout_ms: i32,
     /// <p>Specifies the settings on audio input.</p>
@@ -11,17 +11,17 @@ pub struct AudioAndDtmfInputSpecification {
     /// <p>Specifies the settings on DTMF input.</p>
     pub dtmf_specification: ::std::option::Option<crate::types::DtmfSpecification>,
 }
-impl AudioAndDtmfInputSpecification {
+impl  AudioAndDtmfInputSpecification  {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     pub fn start_timeout_ms(&self) -> i32 {
         self.start_timeout_ms
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn audio_specification(&self) -> ::std::option::Option<&crate::types::AudioSpecification> {
+    pub fn audio_specification(&self) -> ::std::option::Option<& crate::types::AudioSpecification> {
         self.audio_specification.as_ref()
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn dtmf_specification(&self) -> ::std::option::Option<&crate::types::DtmfSpecification> {
+    pub fn dtmf_specification(&self) -> ::std::option::Option<& crate::types::DtmfSpecification> {
         self.dtmf_specification.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AudioAndDtmfInputSpecificationBuilder {
     }
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     pub fn set_start_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_timeout_ms = input;
-        self
+        self.start_timeout_ms = input; self
     }
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     pub fn get_start_timeout_ms(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl AudioAndDtmfInputSpecificationBuilder {
     }
     /// <p>Specifies the settings on audio input.</p>
     pub fn set_audio_specification(mut self, input: ::std::option::Option<crate::types::AudioSpecification>) -> Self {
-        self.audio_specification = input;
-        self
+        self.audio_specification = input; self
     }
     /// <p>Specifies the settings on audio input.</p>
     pub fn get_audio_specification(&self) -> &::std::option::Option<crate::types::AudioSpecification> {
@@ -77,8 +75,7 @@ impl AudioAndDtmfInputSpecificationBuilder {
     }
     /// <p>Specifies the settings on DTMF input.</p>
     pub fn set_dtmf_specification(mut self, input: ::std::option::Option<crate::types::DtmfSpecification>) -> Self {
-        self.dtmf_specification = input;
-        self
+        self.dtmf_specification = input; self
     }
     /// <p>Specifies the settings on DTMF input.</p>
     pub fn get_dtmf_specification(&self) -> &::std::option::Option<crate::types::DtmfSpecification> {
@@ -88,15 +85,19 @@ impl AudioAndDtmfInputSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_timeout_ms`](crate::types::builders::AudioAndDtmfInputSpecificationBuilder::start_timeout_ms)
     pub fn build(self) -> ::std::result::Result<crate::types::AudioAndDtmfInputSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudioAndDtmfInputSpecification {
-            start_timeout_ms: self.start_timeout_ms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_timeout_ms",
-                    "start_timeout_ms was not specified but it is required when building AudioAndDtmfInputSpecification",
-                )
-            })?,
-            audio_specification: self.audio_specification,
-            dtmf_specification: self.dtmf_specification,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudioAndDtmfInputSpecification {
+                start_timeout_ms: self.start_timeout_ms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_timeout_ms", "start_timeout_ms was not specified but it is required when building AudioAndDtmfInputSpecification")
+                    )?
+                ,
+                audio_specification: self.audio_specification
+                ,
+                dtmf_specification: self.dtmf_specification
+                ,
+            }
+        )
     }
 }
+

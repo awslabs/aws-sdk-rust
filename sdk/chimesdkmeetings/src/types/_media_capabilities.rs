@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediacapabilities = unimplemented!();
 /// match mediacapabilities {
@@ -32,16 +32,14 @@
 /// Specifically, when `mediacapabilities` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaCapabilities::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MediaCapabilities {
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -53,67 +51,68 @@ pub enum MediaCapabilities {
     SendReceive,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MediaCapabilities {
-    fn from(s: &str) -> Self {
-        match s {
-            "None" => MediaCapabilities::None,
-            "Receive" => MediaCapabilities::Receive,
-            "Send" => MediaCapabilities::Send,
-            "SendReceive" => MediaCapabilities::SendReceive,
-            other => MediaCapabilities::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "None" => MediaCapabilities::None,
+"Receive" => MediaCapabilities::Receive,
+"Send" => MediaCapabilities::Send,
+"SendReceive" => MediaCapabilities::SendReceive,
+other => MediaCapabilities::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MediaCapabilities {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MediaCapabilities::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MediaCapabilities::from(s))
+                    }
+                }
 impl MediaCapabilities {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MediaCapabilities::None => "None",
-            MediaCapabilities::Receive => "Receive",
-            MediaCapabilities::Send => "Send",
-            MediaCapabilities::SendReceive => "SendReceive",
-            MediaCapabilities::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["None", "Receive", "Send", "SendReceive"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MediaCapabilities::None => "None",
+    MediaCapabilities::Receive => "Receive",
+    MediaCapabilities::Send => "Send",
+    MediaCapabilities::SendReceive => "SendReceive",
+    MediaCapabilities::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["None", "Receive", "Send", "SendReceive"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MediaCapabilities {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MediaCapabilities {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MediaCapabilities {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MediaCapabilities::None => write!(f, "None"),
-            MediaCapabilities::Receive => write!(f, "Receive"),
-            MediaCapabilities::Send => write!(f, "Send"),
-            MediaCapabilities::SendReceive => write!(f, "SendReceive"),
-            MediaCapabilities::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MediaCapabilities::None => write!(f, "None"),
+MediaCapabilities::Receive => write!(f, "Receive"),
+MediaCapabilities::Send => write!(f, "Send"),
+MediaCapabilities::SendReceive => write!(f, "SendReceive"),
+MediaCapabilities::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

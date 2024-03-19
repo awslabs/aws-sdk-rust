@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFolderMembershipInput {
+pub struct CreateFolderMembershipInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
@@ -12,21 +12,21 @@ pub struct CreateFolderMembershipInput {
     /// <p>The member type of the asset that you want to add to a folder.</p>
     pub member_type: ::std::option::Option<crate::types::MemberType>,
 }
-impl CreateFolderMembershipInput {
+impl  CreateFolderMembershipInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The ID of the asset that you want to add to the folder.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The member type of the asset that you want to add to a folder.</p>
-    pub fn member_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
+    pub fn member_type(&self) -> ::std::option::Option<& crate::types::MemberType> {
         self.member_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateFolderMembershipInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateFolderMembershipInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateFolderMembershipInputBuilder {
     }
     /// <p>The ID of the asset that you want to add to the folder.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The ID of the asset that you want to add to the folder.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl CreateFolderMembershipInputBuilder {
     }
     /// <p>The member type of the asset that you want to add to a folder.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
-        self.member_type = input;
-        self
+        self.member_type = input; self
     }
     /// <p>The member type of the asset that you want to add to a folder.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
         &self.member_type
     }
     /// Consumes the builder and constructs a [`CreateFolderMembershipInput`](crate::operation::create_folder_membership::CreateFolderMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_folder_membership::CreateFolderMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_folder_membership::CreateFolderMembershipInput {
-            aws_account_id: self.aws_account_id,
-            folder_id: self.folder_id,
-            member_id: self.member_id,
-            member_type: self.member_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_folder_membership::CreateFolderMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_folder_membership::CreateFolderMembershipInput {
+                aws_account_id: self.aws_account_id
+                ,
+                folder_id: self.folder_id
+                ,
+                member_id: self.member_id
+                ,
+                member_type: self.member_type
+                ,
+            }
+        )
     }
 }
+

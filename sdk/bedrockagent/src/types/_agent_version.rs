@@ -3,7 +3,7 @@
 /// Contains the information of an agent version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AgentVersion {
+pub struct AgentVersion  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Name for a resource.
@@ -31,47 +31,43 @@ pub struct AgentVersion {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
     /// Failure Reasons for Error.
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// The recommended actions users can take to resolve an error in failureReasons.
-    pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recommended_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Configuration for prompt override.
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
 }
-impl AgentVersion {
+impl  AgentVersion  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Name for a resource.
-    pub fn agent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_name.deref()
+    pub fn agent_name(&self) -> & str {
+        use std::ops::Deref; self.agent_name.deref()
     }
     /// Arn representation of the Agent.
-    pub fn agent_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_arn.deref()
+    pub fn agent_arn(&self) -> & str {
+        use std::ops::Deref; self.agent_arn.deref()
     }
     /// Numerical Agent Version.
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
     /// Instruction for the agent.
-    pub fn instruction(&self) -> ::std::option::Option<&str> {
+    pub fn instruction(&self) -> ::std::option::Option<& str> {
         self.instruction.as_deref()
     }
     /// Schema Type for Action APIs.
-    pub fn agent_status(&self) -> &crate::types::AgentStatus {
+    pub fn agent_status(&self) -> & crate::types::AgentStatus {
         &self.agent_status
     }
     /// ARN or name of a Bedrock model.
-    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+    pub fn foundation_model(&self) -> ::std::option::Option<& str> {
         self.foundation_model.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Max Session Time.
@@ -79,40 +75,41 @@ impl AgentVersion {
         self.idle_session_ttl_in_seconds
     }
     /// ARN of a IAM role.
-    pub fn agent_resource_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_resource_role_arn.deref()
+    pub fn agent_resource_role_arn(&self) -> & str {
+        use std::ops::Deref; self.agent_resource_role_arn.deref()
     }
     /// A KMS key ARN
-    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.customer_encryption_key_arn.as_deref()
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// Failure Reasons for Error.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
     /// The recommended actions users can take to resolve an error in failureReasons.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_actions.is_none()`.
-    pub fn recommended_actions(&self) -> &[::std::string::String] {
-        self.recommended_actions.as_deref().unwrap_or_default()
+    pub fn recommended_actions(&self) -> & [::std::string::String] {
+        self.recommended_actions.as_deref()
+        .unwrap_or_default()
     }
     /// Configuration for prompt override.
-    pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
+    pub fn prompt_override_configuration(&self) -> ::std::option::Option<& crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for AgentVersion {
+impl  ::std::fmt::Debug for AgentVersion  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AgentVersion");
         formatter.field("agent_id", &self.agent_id);
@@ -158,8 +155,8 @@ pub struct AgentVersionBuilder {
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
 }
 impl AgentVersionBuilder {
@@ -171,8 +168,7 @@ impl AgentVersionBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +182,7 @@ impl AgentVersionBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_name = input;
-        self
+        self.agent_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +196,7 @@ impl AgentVersionBuilder {
     }
     /// Arn representation of the Agent.
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     /// Arn representation of the Agent.
     pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +210,7 @@ impl AgentVersionBuilder {
     }
     /// Numerical Agent Version.
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Numerical Agent Version.
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +223,7 @@ impl AgentVersionBuilder {
     }
     /// Instruction for the agent.
     pub fn set_instruction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instruction = input;
-        self
+        self.instruction = input; self
     }
     /// Instruction for the agent.
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +237,7 @@ impl AgentVersionBuilder {
     }
     /// Schema Type for Action APIs.
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// Schema Type for Action APIs.
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -259,8 +250,7 @@ impl AgentVersionBuilder {
     }
     /// ARN or name of a Bedrock model.
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.foundation_model = input;
-        self
+        self.foundation_model = input; self
     }
     /// ARN or name of a Bedrock model.
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +263,7 @@ impl AgentVersionBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +277,7 @@ impl AgentVersionBuilder {
     }
     /// Max Session Time.
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// Max Session Time.
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -303,8 +291,7 @@ impl AgentVersionBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_resource_role_arn = input;
-        self
+        self.agent_resource_role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -317,8 +304,7 @@ impl AgentVersionBuilder {
     }
     /// A KMS key ARN
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_encryption_key_arn = input;
-        self
+        self.customer_encryption_key_arn = input; self
     }
     /// A KMS key ARN
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +318,7 @@ impl AgentVersionBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -347,8 +332,7 @@ impl AgentVersionBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -361,17 +345,16 @@ impl AgentVersionBuilder {
     /// Failure Reasons for Error.
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// Failure Reasons for Error.
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// Failure Reasons for Error.
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// Appends an item to `recommended_actions`.
@@ -381,17 +364,16 @@ impl AgentVersionBuilder {
     /// The recommended actions users can take to resolve an error in failureReasons.
     pub fn recommended_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommended_actions.unwrap_or_default();
-        v.push(input.into());
-        self.recommended_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recommended_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// The recommended actions users can take to resolve an error in failureReasons.
-    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recommended_actions = input;
-        self
+    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recommended_actions = input; self
     }
     /// The recommended actions users can take to resolve an error in failureReasons.
-    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recommended_actions
     }
     /// Configuration for prompt override.
@@ -401,8 +383,7 @@ impl AgentVersionBuilder {
     }
     /// Configuration for prompt override.
     pub fn set_prompt_override_configuration(mut self, input: ::std::option::Option<crate::types::PromptOverrideConfiguration>) -> Self {
-        self.prompt_override_configuration = input;
-        self
+        self.prompt_override_configuration = input; self
     }
     /// Configuration for prompt override.
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
@@ -420,69 +401,69 @@ impl AgentVersionBuilder {
     /// - [`created_at`](crate::types::builders::AgentVersionBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AgentVersionBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentVersion {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            agent_name: self.agent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_name",
-                    "agent_name was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            agent_arn: self.agent_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_arn",
-                    "agent_arn was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            instruction: self.instruction,
-            agent_status: self.agent_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_status",
-                    "agent_status was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            foundation_model: self.foundation_model,
-            description: self.description,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "idle_session_ttl_in_seconds",
-                    "idle_session_ttl_in_seconds was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            agent_resource_role_arn: self.agent_resource_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_resource_role_arn",
-                    "agent_resource_role_arn was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            customer_encryption_key_arn: self.customer_encryption_key_arn,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentVersion",
-                )
-            })?,
-            failure_reasons: self.failure_reasons,
-            recommended_actions: self.recommended_actions,
-            prompt_override_configuration: self.prompt_override_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentVersion {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                agent_name: self.agent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_name", "agent_name was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                agent_arn: self.agent_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_arn", "agent_arn was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                instruction: self.instruction
+                ,
+                agent_status: self.agent_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_status", "agent_status was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                foundation_model: self.foundation_model
+                ,
+                description: self.description
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("idle_session_ttl_in_seconds", "idle_session_ttl_in_seconds was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                agent_resource_role_arn: self.agent_resource_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_resource_role_arn", "agent_resource_role_arn was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                customer_encryption_key_arn: self.customer_encryption_key_arn
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentVersion")
+                    )?
+                ,
+                failure_reasons: self.failure_reasons
+                ,
+                recommended_actions: self.recommended_actions
+                ,
+                prompt_override_configuration: self.prompt_override_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AgentVersionBuilder {
@@ -507,3 +488,4 @@ impl ::std::fmt::Debug for AgentVersionBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIdentityProviderConfigurationOutput {
+pub struct DescribeIdentityProviderConfigurationOutput  {
     /// <p>The type of identity provider.</p>
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
@@ -11,25 +11,25 @@ pub struct DescribeIdentityProviderConfigurationOutput {
     pub identity_provider_saml_metadata: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeIdentityProviderConfigurationOutput {
+impl  DescribeIdentityProviderConfigurationOutput  {
     /// <p>The type of identity provider.</p>
-    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<& crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    pub fn service_provider_saml_metadata(&self) -> ::std::option::Option<&str> {
+    pub fn service_provider_saml_metadata(&self) -> ::std::option::Option<& str> {
         self.service_provider_saml_metadata.as_deref()
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    pub fn identity_provider_saml_metadata(&self) -> ::std::option::Option<&str> {
+    pub fn identity_provider_saml_metadata(&self) -> ::std::option::Option<& str> {
         self.identity_provider_saml_metadata.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIdentityProviderConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIdentityProviderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
     pub fn builder() -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
     }
     /// <p>The type of identity provider.</p>
     pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
-        self.identity_provider_type = input;
-        self
+        self.identity_provider_type = input; self
     }
     /// <p>The type of identity provider.</p>
     pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
@@ -68,8 +67,7 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
     pub fn set_service_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_provider_saml_metadata = input;
-        self
+        self.service_provider_saml_metadata = input; self
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
     pub fn get_service_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
     pub fn set_identity_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_provider_saml_metadata = input;
-        self
+        self.identity_provider_saml_metadata = input; self
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
     pub fn get_identity_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput {
         crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput {
-            identity_provider_type: self.identity_provider_type,
-            service_provider_saml_metadata: self.service_provider_saml_metadata,
-            identity_provider_saml_metadata: self.identity_provider_saml_metadata,
+            identity_provider_type: self.identity_provider_type
+            ,
+            service_provider_saml_metadata: self.service_provider_saml_metadata
+            ,
+            identity_provider_saml_metadata: self.identity_provider_saml_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

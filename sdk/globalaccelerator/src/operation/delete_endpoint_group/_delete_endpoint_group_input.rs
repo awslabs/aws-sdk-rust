@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEndpointGroupInput {
+pub struct DeleteEndpointGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEndpointGroupInput {
+impl  DeleteEndpointGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteEndpointGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_group::DeleteEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_endpoint_group::DeleteEndpointGroupInput {
-            endpoint_group_arn: self.endpoint_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_endpoint_group::DeleteEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_endpoint_group::DeleteEndpointGroupInput {
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
+            }
+        )
     }
 }
+

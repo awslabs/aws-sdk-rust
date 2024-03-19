@@ -3,7 +3,7 @@
 /// <p>Information about the result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultData {
+pub struct ResultData  {
     /// <p>The identifier of the result data.</p>
     pub result_id: ::std::string::String,
     /// <p>The document.</p>
@@ -11,14 +11,13 @@ pub struct ResultData {
     /// <p>The relevance score of the results.</p>
     pub relevance_score: f64,
 }
-impl ResultData {
+impl  ResultData  {
     /// <p>The identifier of the result data.</p>
-    pub fn result_id(&self) -> &str {
-        use std::ops::Deref;
-        self.result_id.deref()
+    pub fn result_id(&self) -> & str {
+        use std::ops::Deref; self.result_id.deref()
     }
     /// <p>The document.</p>
-    pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
+    pub fn document(&self) -> ::std::option::Option<& crate::types::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the results.</p>
@@ -50,8 +49,7 @@ impl ResultDataBuilder {
     }
     /// <p>The identifier of the result data.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>The identifier of the result data.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ResultDataBuilder {
     }
     /// <p>The document.</p>
     pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The document.</p>
     pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
@@ -79,8 +76,7 @@ impl ResultDataBuilder {
     }
     /// <p>The relevance score of the results.</p>
     pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.relevance_score = input;
-        self
+        self.relevance_score = input; self
     }
     /// <p>The relevance score of the results.</p>
     pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
@@ -90,15 +86,20 @@ impl ResultDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`result_id`](crate::types::builders::ResultDataBuilder::result_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ResultData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResultData {
-            result_id: self.result_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "result_id",
-                    "result_id was not specified but it is required when building ResultData",
-                )
-            })?,
-            document: self.document,
-            relevance_score: self.relevance_score.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResultData {
+                result_id: self.result_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("result_id", "result_id was not specified but it is required when building ResultData")
+                    )?
+                ,
+                document: self.document
+                ,
+                relevance_score: self.relevance_score
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

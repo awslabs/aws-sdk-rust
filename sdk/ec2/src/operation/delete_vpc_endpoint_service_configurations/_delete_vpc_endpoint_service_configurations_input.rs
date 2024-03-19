@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcEndpointServiceConfigurationsInput {
+pub struct DeleteVpcEndpointServiceConfigurationsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the services.</p>
-    pub service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteVpcEndpointServiceConfigurationsInput {
+impl  DeleteVpcEndpointServiceConfigurationsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_ids.is_none()`.
-    pub fn service_ids(&self) -> &[::std::string::String] {
-        self.service_ids.as_deref().unwrap_or_default()
+    pub fn service_ids(&self) -> & [::std::string::String] {
+        self.service_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteVpcEndpointServiceConfigurationsInput {
@@ -32,7 +33,7 @@ impl DeleteVpcEndpointServiceConfigurationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointServiceConfigurationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,8 +43,7 @@ impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -56,31 +56,28 @@ impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
     /// <p>The IDs of the services.</p>
     pub fn service_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_ids.unwrap_or_default();
-        v.push(input.into());
-        self.service_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the services.</p>
-    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_ids = input;
-        self
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_ids = input; self
     }
     /// <p>The IDs of the services.</p>
-    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_ids
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput {
-                dry_run: self.dry_run,
-                service_ids: self.service_ids,
-            },
+                dry_run: self.dry_run
+                ,
+                service_ids: self.service_ids
+                ,
+            }
         )
     }
 }
+

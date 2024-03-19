@@ -3,18 +3,17 @@
 /// <p>The options that determine the null value format configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct NullValueFormatConfiguration {
+pub struct NullValueFormatConfiguration  {
     /// <p>Determines the null string of null values.</p>
     pub null_string: ::std::string::String,
 }
-impl NullValueFormatConfiguration {
+impl  NullValueFormatConfiguration  {
     /// <p>Determines the null string of null values.</p>
-    pub fn null_string(&self) -> &str {
-        use std::ops::Deref;
-        self.null_string.deref()
+    pub fn null_string(&self) -> & str {
+        use std::ops::Deref; self.null_string.deref()
     }
 }
-impl ::std::fmt::Debug for NullValueFormatConfiguration {
+impl  ::std::fmt::Debug for NullValueFormatConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("NullValueFormatConfiguration");
         formatter.field("null_string", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl NullValueFormatConfigurationBuilder {
     }
     /// <p>Determines the null string of null values.</p>
     pub fn set_null_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.null_string = input;
-        self
+        self.null_string = input; self
     }
     /// <p>Determines the null string of null values.</p>
     pub fn get_null_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl NullValueFormatConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`null_string`](crate::types::builders::NullValueFormatConfigurationBuilder::null_string)
     pub fn build(self) -> ::std::result::Result<crate::types::NullValueFormatConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NullValueFormatConfiguration {
-            null_string: self.null_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "null_string",
-                    "null_string was not specified but it is required when building NullValueFormatConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NullValueFormatConfiguration {
+                null_string: self.null_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("null_string", "null_string was not specified but it is required when building NullValueFormatConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for NullValueFormatConfigurationBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for NullValueFormatConfigurationBuilder {
         formatter.finish()
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowTypeFilter {
+pub struct WorkflowTypeFilter  {
     /// <p>Name of the workflow type.</p>
     pub name: ::std::string::String,
     /// <p>Version of the workflow type.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowTypeFilter {
+impl  WorkflowTypeFilter  {
     /// <p>Name of the workflow type.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Version of the workflow type.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl WorkflowTypeFilterBuilder {
     }
     /// <p>Name of the workflow type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the workflow type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl WorkflowTypeFilterBuilder {
     }
     /// <p>Version of the workflow type.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of the workflow type.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl WorkflowTypeFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WorkflowTypeFilterBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowTypeFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowTypeFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building WorkflowTypeFilter",
-                )
-            })?,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowTypeFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building WorkflowTypeFilter")
+                    )?
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SentimentAnalysisSettings {
+pub struct SentimentAnalysisSettings  {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub detect_sentiment: bool,
 }
-impl SentimentAnalysisSettings {
+impl  SentimentAnalysisSettings  {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn detect_sentiment(&self) -> bool {
         self.detect_sentiment
@@ -35,8 +35,7 @@ impl SentimentAnalysisSettingsBuilder {
     }
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn set_detect_sentiment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_sentiment = input;
-        self
+        self.detect_sentiment = input; self
     }
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn get_detect_sentiment(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,10 @@ impl SentimentAnalysisSettingsBuilder {
     /// Consumes the builder and constructs a [`SentimentAnalysisSettings`](crate::types::SentimentAnalysisSettings).
     pub fn build(self) -> crate::types::SentimentAnalysisSettings {
         crate::types::SentimentAnalysisSettings {
-            detect_sentiment: self.detect_sentiment.unwrap_or_default(),
+            detect_sentiment: self.detect_sentiment
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

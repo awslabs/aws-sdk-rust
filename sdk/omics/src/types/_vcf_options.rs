@@ -3,13 +3,13 @@
 /// <p>Formatting options for a VCF file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VcfOptions {
+pub struct VcfOptions  {
     /// <p>The file's ignore qual field setting.</p>
     pub ignore_qual_field: ::std::option::Option<bool>,
     /// <p>The file's ignore filter field setting.</p>
     pub ignore_filter_field: ::std::option::Option<bool>,
 }
-impl VcfOptions {
+impl  VcfOptions  {
     /// <p>The file's ignore qual field setting.</p>
     pub fn ignore_qual_field(&self) -> ::std::option::Option<bool> {
         self.ignore_qual_field
@@ -41,8 +41,7 @@ impl VcfOptionsBuilder {
     }
     /// <p>The file's ignore qual field setting.</p>
     pub fn set_ignore_qual_field(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_qual_field = input;
-        self
+        self.ignore_qual_field = input; self
     }
     /// <p>The file's ignore qual field setting.</p>
     pub fn get_ignore_qual_field(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl VcfOptionsBuilder {
     }
     /// <p>The file's ignore filter field setting.</p>
     pub fn set_ignore_filter_field(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_filter_field = input;
-        self
+        self.ignore_filter_field = input; self
     }
     /// <p>The file's ignore filter field setting.</p>
     pub fn get_ignore_filter_field(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl VcfOptionsBuilder {
     /// Consumes the builder and constructs a [`VcfOptions`](crate::types::VcfOptions).
     pub fn build(self) -> crate::types::VcfOptions {
         crate::types::VcfOptions {
-            ignore_qual_field: self.ignore_qual_field,
-            ignore_filter_field: self.ignore_filter_field,
+            ignore_qual_field: self.ignore_qual_field
+            ,
+            ignore_filter_field: self.ignore_filter_field
+            ,
         }
     }
 }
+

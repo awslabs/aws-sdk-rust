@@ -3,13 +3,13 @@
 /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartnerWatermarking {
+pub struct PartnerWatermarking  {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     pub nexguard_file_marker_settings: ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
 }
-impl PartnerWatermarking {
+impl  PartnerWatermarking  {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
-    pub fn nexguard_file_marker_settings(&self) -> ::std::option::Option<&crate::types::NexGuardFileMarkerSettings> {
+    pub fn nexguard_file_marker_settings(&self) -> ::std::option::Option<& crate::types::NexGuardFileMarkerSettings> {
         self.nexguard_file_marker_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl PartnerWatermarkingBuilder {
     }
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     pub fn set_nexguard_file_marker_settings(mut self, input: ::std::option::Option<crate::types::NexGuardFileMarkerSettings>) -> Self {
-        self.nexguard_file_marker_settings = input;
-        self
+        self.nexguard_file_marker_settings = input; self
     }
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     pub fn get_nexguard_file_marker_settings(&self) -> &::std::option::Option<crate::types::NexGuardFileMarkerSettings> {
@@ -44,7 +43,9 @@ impl PartnerWatermarkingBuilder {
     /// Consumes the builder and constructs a [`PartnerWatermarking`](crate::types::PartnerWatermarking).
     pub fn build(self) -> crate::types::PartnerWatermarking {
         crate::types::PartnerWatermarking {
-            nexguard_file_marker_settings: self.nexguard_file_marker_settings,
+            nexguard_file_marker_settings: self.nexguard_file_marker_settings
+            ,
         }
     }
 }
+

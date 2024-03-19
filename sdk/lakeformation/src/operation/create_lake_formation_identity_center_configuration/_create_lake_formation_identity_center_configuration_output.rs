@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLakeFormationIdentityCenterConfigurationOutput {
+pub struct CreateLakeFormationIdentityCenterConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLakeFormationIdentityCenterConfigurationOutput {
+impl  CreateLakeFormationIdentityCenterConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLakeFormationIdentityCenterConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLakeFormationIdentityCenterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLakeFormationIdentityCenterConfigurationOutput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationOutputBuilder {
         crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationOutputBuilder::default()
     }
 }
@@ -42,29 +40,28 @@ impl CreateLakeFormationIdentityCenterConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLakeFormationIdentityCenterConfigurationOutput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationOutput {
         crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationOutput {
-            application_arn: self.application_arn,
+            application_arn: self.application_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

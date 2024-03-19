@@ -5,54 +5,50 @@ pub use crate::operation::update_data_set::_update_data_set_input::UpdateDataSet
 
 impl UpdateDataSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_set::UpdateDataSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_data_set::UpdateDataSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_data_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_data_set::UpdateDataSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_data_set::UpdateDataSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_data_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDataSet`.
-///
+/// 
 /// <p>Updates a dataset. This operation doesn't support datasets that include uploaded files as a source. Partial updates are not supported by this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_data_set::builders::UpdateDataSetInputBuilder,
+                    inner: crate::operation::update_data_set::builders::UpdateDataSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_data_set::UpdateDataSetOutput,
-        crate::operation::update_data_set::UpdateDataSetError,
-    > for UpdateDataSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_data_set::UpdateDataSetOutput,
-            crate::operation::update_data_set::UpdateDataSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_data_set::UpdateDataSetOutput,
+                    crate::operation::update_data_set::UpdateDataSetError,
+                > for UpdateDataSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_data_set::UpdateDataSetOutput,
+                        crate::operation::update_data_set::UpdateDataSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDataSetFluentBuilder {
     /// Creates a new `UpdateDataSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateDataSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_set::UpdateDataSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_data_set::UpdateDataSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_data_set::UpdateDataSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_data_set::UpdateDataSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_data_set::UpdateDataSetOutput,
-        crate::operation::update_data_set::UpdateDataSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_data_set::UpdateDataSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_set::UpdateDataSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_data_set::UpdateDataSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_data_set::UpdateDataSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_data_set::UpdateDataSetOutput, crate::operation::update_data_set::UpdateDataSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -160,15 +147,12 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub fn set_physical_table_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
-    ) -> Self {
+    pub fn set_physical_table_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>>) -> Self {
         self.inner = self.inner.set_physical_table_map(input);
         self
     }
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
+    pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PhysicalTable>> {
         self.inner.get_physical_table_map()
     }
     /// Adds a key-value pair to `LogicalTableMap`.
@@ -181,15 +165,12 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub fn set_logical_table_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
-    ) -> Self {
+    pub fn set_logical_table_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>>) -> Self {
         self.inner = self.inner.set_logical_table_map(input);
         self
     }
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    pub fn get_logical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>> {
+    pub fn get_logical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LogicalTable>> {
         self.inner.get_logical_table_map()
     }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
@@ -216,12 +197,12 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>) -> Self {
+    pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>>) -> Self {
         self.inner = self.inner.set_column_groups(input);
         self
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
+    pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnGroup>> {
         self.inner.get_column_groups()
     }
     /// Adds a key-value pair to `FieldFolders`.
@@ -234,15 +215,12 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub fn set_field_folders(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
-    ) -> Self {
+    pub fn set_field_folders(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>>) -> Self {
         self.inner = self.inner.set_field_folders(input);
         self
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    pub fn get_field_folders(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
+    pub fn get_field_folders(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FieldFolder>> {
         self.inner.get_field_folders()
     }
     /// <p>The row-level security configuration for the data you want to create.</p>
@@ -265,10 +243,7 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    pub fn set_row_level_permission_tag_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
-    ) -> Self {
+    pub fn set_row_level_permission_tag_configuration(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>) -> Self {
         self.inner = self.inner.set_row_level_permission_tag_configuration(input);
         self
     }
@@ -286,15 +261,12 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn set_column_level_permission_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
-    ) -> Self {
+    pub fn set_column_level_permission_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>>) -> Self {
         self.inner = self.inner.set_column_level_permission_rules(input);
         self
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn get_column_level_permission_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>> {
+    pub fn get_column_level_permission_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnLevelPermissionRule>> {
         self.inner.get_column_level_permission_rules()
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -321,12 +293,13 @@ impl UpdateDataSetFluentBuilder {
         self
     }
     /// <p>The parameter declarations of the dataset.</p>
-    pub fn set_dataset_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>) -> Self {
+    pub fn set_dataset_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>>) -> Self {
         self.inner = self.inner.set_dataset_parameters(input);
         self
     }
     /// <p>The parameter declarations of the dataset.</p>
-    pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
+    pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetParameter>> {
         self.inner.get_dataset_parameters()
     }
 }
+

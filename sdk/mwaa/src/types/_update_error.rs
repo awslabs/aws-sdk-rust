@@ -3,19 +3,19 @@
 /// <p>Describes the error(s) encountered with the last update of the environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateError {
+pub struct UpdateError  {
     /// <p>The error code that corresponds to the error with the last update.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message that corresponds to the error code.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl UpdateError {
+impl  UpdateError  {
     /// <p>The error code that corresponds to the error with the last update.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that corresponds to the error code.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The error code that corresponds to the error with the last update.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that corresponds to the error with the last update.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateErrorBuilder {
     }
     /// <p>The error message that corresponds to the error code.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that corresponds to the error code.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl UpdateErrorBuilder {
     /// Consumes the builder and constructs a [`UpdateError`](crate::types::UpdateError).
     pub fn build(self) -> crate::types::UpdateError {
         crate::types::UpdateError {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

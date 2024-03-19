@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceProfileDetections`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p><br>
-    /// - On success, responds with [`ListResourceProfileDetectionsOutput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput) with field(s):
+                            /// - On success, responds with [`ListResourceProfileDetectionsOutput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput) with field(s):
     ///   - [`detections(Option<Vec::<Detection>>)`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput::detections): <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListResourceProfileDetectionsError>`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError)
-    pub fn list_resource_profile_detections(
-        &self,
-    ) -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder {
-        crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListResourceProfileDetectionsError>`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError)
+    pub fn list_resource_profile_detections(&self) -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder {
+                                crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

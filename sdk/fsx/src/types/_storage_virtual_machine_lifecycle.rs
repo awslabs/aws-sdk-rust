@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storagevirtualmachinelifecycle = unimplemented!();
 /// match storagevirtualmachinelifecycle {
@@ -34,16 +34,14 @@
 /// Specifically, when `storagevirtualmachinelifecycle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageVirtualMachineLifecycle::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StorageVirtualMachineLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -59,73 +57,74 @@ pub enum StorageVirtualMachineLifecycle {
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StorageVirtualMachineLifecycle {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => StorageVirtualMachineLifecycle::Created,
-            "CREATING" => StorageVirtualMachineLifecycle::Creating,
-            "DELETING" => StorageVirtualMachineLifecycle::Deleting,
-            "FAILED" => StorageVirtualMachineLifecycle::Failed,
-            "MISCONFIGURED" => StorageVirtualMachineLifecycle::Misconfigured,
-            "PENDING" => StorageVirtualMachineLifecycle::Pending,
-            other => StorageVirtualMachineLifecycle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATED" => StorageVirtualMachineLifecycle::Created,
+"CREATING" => StorageVirtualMachineLifecycle::Creating,
+"DELETING" => StorageVirtualMachineLifecycle::Deleting,
+"FAILED" => StorageVirtualMachineLifecycle::Failed,
+"MISCONFIGURED" => StorageVirtualMachineLifecycle::Misconfigured,
+"PENDING" => StorageVirtualMachineLifecycle::Pending,
+other => StorageVirtualMachineLifecycle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StorageVirtualMachineLifecycle {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StorageVirtualMachineLifecycle::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StorageVirtualMachineLifecycle::from(s))
+                    }
+                }
 impl StorageVirtualMachineLifecycle {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StorageVirtualMachineLifecycle::Created => "CREATED",
-            StorageVirtualMachineLifecycle::Creating => "CREATING",
-            StorageVirtualMachineLifecycle::Deleting => "DELETING",
-            StorageVirtualMachineLifecycle::Failed => "FAILED",
-            StorageVirtualMachineLifecycle::Misconfigured => "MISCONFIGURED",
-            StorageVirtualMachineLifecycle::Pending => "PENDING",
-            StorageVirtualMachineLifecycle::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "CREATING", "DELETING", "FAILED", "MISCONFIGURED", "PENDING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StorageVirtualMachineLifecycle::Created => "CREATED",
+    StorageVirtualMachineLifecycle::Creating => "CREATING",
+    StorageVirtualMachineLifecycle::Deleting => "DELETING",
+    StorageVirtualMachineLifecycle::Failed => "FAILED",
+    StorageVirtualMachineLifecycle::Misconfigured => "MISCONFIGURED",
+    StorageVirtualMachineLifecycle::Pending => "PENDING",
+    StorageVirtualMachineLifecycle::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "CREATING", "DELETING", "FAILED", "MISCONFIGURED", "PENDING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StorageVirtualMachineLifecycle {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StorageVirtualMachineLifecycle {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StorageVirtualMachineLifecycle {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StorageVirtualMachineLifecycle::Created => write!(f, "CREATED"),
-            StorageVirtualMachineLifecycle::Creating => write!(f, "CREATING"),
-            StorageVirtualMachineLifecycle::Deleting => write!(f, "DELETING"),
-            StorageVirtualMachineLifecycle::Failed => write!(f, "FAILED"),
-            StorageVirtualMachineLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
-            StorageVirtualMachineLifecycle::Pending => write!(f, "PENDING"),
-            StorageVirtualMachineLifecycle::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StorageVirtualMachineLifecycle::Created => write!(f, "CREATED"),
+StorageVirtualMachineLifecycle::Creating => write!(f, "CREATING"),
+StorageVirtualMachineLifecycle::Deleting => write!(f, "DELETING"),
+StorageVirtualMachineLifecycle::Failed => write!(f, "FAILED"),
+StorageVirtualMachineLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
+StorageVirtualMachineLifecycle::Pending => write!(f, "PENDING"),
+StorageVirtualMachineLifecycle::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

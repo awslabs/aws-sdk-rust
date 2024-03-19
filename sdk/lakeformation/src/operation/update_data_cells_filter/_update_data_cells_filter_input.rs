@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataCellsFilterInput {
+pub struct UpdateDataCellsFilterInput  {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     pub table_data: ::std::option::Option<crate::types::DataCellsFilter>,
 }
-impl UpdateDataCellsFilterInput {
+impl  UpdateDataCellsFilterInput  {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    pub fn table_data(&self) -> ::std::option::Option<&crate::types::DataCellsFilter> {
+    pub fn table_data(&self) -> ::std::option::Option<& crate::types::DataCellsFilter> {
         self.table_data.as_ref()
     }
 }
@@ -34,18 +34,20 @@ impl UpdateDataCellsFilterInputBuilder {
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     pub fn set_table_data(mut self, input: ::std::option::Option<crate::types::DataCellsFilter>) -> Self {
-        self.table_data = input;
-        self
+        self.table_data = input; self
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     pub fn get_table_data(&self) -> &::std::option::Option<crate::types::DataCellsFilter> {
         &self.table_data
     }
     /// Consumes the builder and constructs a [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput { table_data: self.table_data })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput {
+                table_data: self.table_data
+                ,
+            }
+        )
     }
 }
+

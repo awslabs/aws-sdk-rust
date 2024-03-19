@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetcompressiontype = unimplemented!();
 /// match targetcompressiontype {
@@ -33,16 +33,14 @@
 /// Specifically, when `targetcompressiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetCompressionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of compression to use producing records to the target cluster.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TargetCompressionType {
     #[allow(missing_docs)] // documentation missing in model
     Gzip,
@@ -56,70 +54,71 @@ pub enum TargetCompressionType {
     Zstd,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TargetCompressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GZIP" => TargetCompressionType::Gzip,
-            "LZ4" => TargetCompressionType::Lz4,
-            "NONE" => TargetCompressionType::None,
-            "SNAPPY" => TargetCompressionType::Snappy,
-            "ZSTD" => TargetCompressionType::Zstd,
-            other => TargetCompressionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "GZIP" => TargetCompressionType::Gzip,
+"LZ4" => TargetCompressionType::Lz4,
+"NONE" => TargetCompressionType::None,
+"SNAPPY" => TargetCompressionType::Snappy,
+"ZSTD" => TargetCompressionType::Zstd,
+other => TargetCompressionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TargetCompressionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TargetCompressionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TargetCompressionType::from(s))
+                    }
+                }
 impl TargetCompressionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetCompressionType::Gzip => "GZIP",
-            TargetCompressionType::Lz4 => "LZ4",
-            TargetCompressionType::None => "NONE",
-            TargetCompressionType::Snappy => "SNAPPY",
-            TargetCompressionType::Zstd => "ZSTD",
-            TargetCompressionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["GZIP", "LZ4", "NONE", "SNAPPY", "ZSTD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetCompressionType::Gzip => "GZIP",
+    TargetCompressionType::Lz4 => "LZ4",
+    TargetCompressionType::None => "NONE",
+    TargetCompressionType::Snappy => "SNAPPY",
+    TargetCompressionType::Zstd => "ZSTD",
+    TargetCompressionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GZIP", "LZ4", "NONE", "SNAPPY", "ZSTD"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TargetCompressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TargetCompressionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TargetCompressionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TargetCompressionType::Gzip => write!(f, "GZIP"),
-            TargetCompressionType::Lz4 => write!(f, "LZ4"),
-            TargetCompressionType::None => write!(f, "NONE"),
-            TargetCompressionType::Snappy => write!(f, "SNAPPY"),
-            TargetCompressionType::Zstd => write!(f, "ZSTD"),
-            TargetCompressionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TargetCompressionType::Gzip => write!(f, "GZIP"),
+TargetCompressionType::Lz4 => write!(f, "LZ4"),
+TargetCompressionType::None => write!(f, "NONE"),
+TargetCompressionType::Snappy => write!(f, "SNAPPY"),
+TargetCompressionType::Zstd => write!(f, "ZSTD"),
+TargetCompressionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

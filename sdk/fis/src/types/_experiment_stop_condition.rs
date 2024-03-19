@@ -3,19 +3,19 @@
 /// <p>Describes the stop condition for an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentStopCondition {
+pub struct ExperimentStopCondition  {
     /// <p>The source for the stop condition.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ExperimentStopCondition {
+impl  ExperimentStopCondition  {
     /// <p>The source for the stop condition.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExperimentStopConditionBuilder {
     }
     /// <p>The source for the stop condition.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source for the stop condition.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExperimentStopConditionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ExperimentStopConditionBuilder {
     /// Consumes the builder and constructs a [`ExperimentStopCondition`](crate::types::ExperimentStopCondition).
     pub fn build(self) -> crate::types::ExperimentStopCondition {
         crate::types::ExperimentStopCondition {
-            source: self.source,
-            value: self.value,
+            source: self.source
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

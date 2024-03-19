@@ -3,19 +3,19 @@
 /// <p>A structure that describes details for an IAM Identity Center access scope that is associated with a resource server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceServerScopeDetails {
+pub struct ResourceServerScopeDetails  {
     /// <p>The description of an access scope for a resource server.</p>
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>The title of an access scope for a resource server.</p>
     pub detailed_title: ::std::option::Option<::std::string::String>,
 }
-impl ResourceServerScopeDetails {
+impl  ResourceServerScopeDetails  {
     /// <p>The description of an access scope for a resource server.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The title of an access scope for a resource server.</p>
-    pub fn detailed_title(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_title(&self) -> ::std::option::Option<& str> {
         self.detailed_title.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceServerScopeDetailsBuilder {
     }
     /// <p>The description of an access scope for a resource server.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>The description of an access scope for a resource server.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResourceServerScopeDetailsBuilder {
     }
     /// <p>The title of an access scope for a resource server.</p>
     pub fn set_detailed_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detailed_title = input;
-        self
+        self.detailed_title = input; self
     }
     /// <p>The title of an access scope for a resource server.</p>
     pub fn get_detailed_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ResourceServerScopeDetailsBuilder {
     /// Consumes the builder and constructs a [`ResourceServerScopeDetails`](crate::types::ResourceServerScopeDetails).
     pub fn build(self) -> crate::types::ResourceServerScopeDetails {
         crate::types::ResourceServerScopeDetails {
-            long_description: self.long_description,
-            detailed_title: self.detailed_title,
+            long_description: self.long_description
+            ,
+            detailed_title: self.detailed_title
+            ,
         }
     }
 }
+

@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNamespacesOutput {
+pub struct ListNamespacesOutput  {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub namespaces: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>,
+    pub namespaces: ::std::option::Option<::std::vec::Vec::<crate::types::NamespaceSummary>>,
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListNamespacesOutput {
+impl  ListNamespacesOutput  {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
-    pub fn namespaces(&self) -> &[crate::types::NamespaceSummary] {
-        self.namespaces.as_deref().unwrap_or_default()
+    pub fn namespaces(&self) -> & [crate::types::NamespaceSummary] {
+        self.namespaces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNamespacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn builder() -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
@@ -41,7 +42,7 @@ impl ListNamespacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesOutputBuilder {
-    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>,
+    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec::<crate::types::NamespaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl ListNamespacesOutputBuilder {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
     pub fn namespaces(mut self, input: crate::types::NamespaceSummary) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
-        v.push(input);
-        self.namespaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.namespaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>) -> Self {
-        self.namespaces = input;
-        self
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NamespaceSummary>>) -> Self {
+        self.namespaces = input; self
     }
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NamespaceSummary>> {
         &self.namespaces
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
@@ -77,8 +77,7 @@ impl ListNamespacesOutputBuilder {
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
@@ -87,20 +86,23 @@ impl ListNamespacesOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
     pub fn build(self) -> crate::operation::list_namespaces::ListNamespacesOutput {
         crate::operation::list_namespaces::ListNamespacesOutput {
-            namespaces: self.namespaces,
-            next_token: self.next_token,
+            namespaces: self.namespaces
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

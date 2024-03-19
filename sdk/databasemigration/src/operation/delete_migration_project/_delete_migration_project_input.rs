@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMigrationProjectInput {
+pub struct DeleteMigrationProjectInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMigrationProjectInput {
+impl  DeleteMigrationProjectInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMigrationProjectInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
     /// Consumes the builder and constructs a [`DeleteMigrationProjectInput`](crate::operation::delete_migration_project::DeleteMigrationProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_migration_project::DeleteMigrationProjectInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_migration_project::DeleteMigrationProjectInput {
-            migration_project_identifier: self.migration_project_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_migration_project::DeleteMigrationProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_migration_project::DeleteMigrationProjectInput {
+                migration_project_identifier: self.migration_project_identifier
+                ,
+            }
+        )
     }
 }
+

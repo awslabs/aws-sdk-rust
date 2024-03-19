@@ -3,22 +3,20 @@
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize recources</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub tag_key: ::std::string::String,
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub tag_value: ::std::string::String,
 }
-impl Tag {
+impl  Tag  {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    pub fn tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.tag_key.deref()
+    pub fn tag_key(&self) -> & str {
+        use std::ops::Deref; self.tag_key.deref()
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn tag_value(&self) -> &str {
-        use std::ops::Deref;
-        self.tag_value.deref()
+    pub fn tag_value(&self) -> & str {
+        use std::ops::Deref; self.tag_value.deref()
     }
 }
 impl Tag {
@@ -44,8 +42,7 @@ impl TagBuilder {
     }
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TagBuilder {
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_value = input;
-        self
+        self.tag_value = input; self
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TagBuilder {
     /// - [`tag_key`](crate::types::builders::TagBuilder::tag_key)
     /// - [`tag_value`](crate::types::builders::TagBuilder::tag_value)
     pub fn build(self) -> ::std::result::Result<crate::types::Tag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tag {
-            tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_key",
-                    "tag_key was not specified but it is required when building Tag",
-                )
-            })?,
-            tag_value: self.tag_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_value",
-                    "tag_value was not specified but it is required when building Tag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tag {
+                tag_key: self.tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_key", "tag_key was not specified but it is required when building Tag")
+                    )?
+                ,
+                tag_value: self.tag_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_value", "tag_value was not specified but it is required when building Tag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

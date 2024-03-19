@@ -3,11 +3,11 @@
 /// <p>Describes updates to whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSnapshotConfigurationUpdate {
+pub struct ApplicationSnapshotConfigurationUpdate  {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub snapshots_enabled_update: bool,
 }
-impl ApplicationSnapshotConfigurationUpdate {
+impl  ApplicationSnapshotConfigurationUpdate  {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn snapshots_enabled_update(&self) -> bool {
         self.snapshots_enabled_update
@@ -35,8 +35,7 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
     }
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn set_snapshots_enabled_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.snapshots_enabled_update = input;
-        self
+        self.snapshots_enabled_update = input; self
     }
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn get_snapshots_enabled_update(&self) -> &::std::option::Option<bool> {
@@ -45,16 +44,16 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshots_enabled_update`](crate::types::builders::ApplicationSnapshotConfigurationUpdateBuilder::snapshots_enabled_update)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSnapshotConfigurationUpdate {
-            snapshots_enabled_update: self.snapshots_enabled_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshots_enabled_update",
-                    "snapshots_enabled_update was not specified but it is required when building ApplicationSnapshotConfigurationUpdate",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSnapshotConfigurationUpdate {
+                snapshots_enabled_update: self.snapshots_enabled_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshots_enabled_update", "snapshots_enabled_update was not specified but it is required when building ApplicationSnapshotConfigurationUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

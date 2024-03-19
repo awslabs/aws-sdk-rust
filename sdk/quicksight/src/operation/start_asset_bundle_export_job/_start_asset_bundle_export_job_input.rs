@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAssetBundleExportJobInput {
+pub struct StartAssetBundleExportJobInput  {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
@@ -25,7 +25,7 @@ pub struct StartAssetBundleExportJobInput {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub include_all_dependencies: ::std::option::Option<bool>,
     /// <p>The export data format.</p>
@@ -40,13 +40,13 @@ pub struct StartAssetBundleExportJobInput {
     /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
     pub validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
 }
-impl StartAssetBundleExportJobInput {
+impl  StartAssetBundleExportJobInput  {
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
-    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_bundle_export_job_id(&self) -> ::std::option::Option<& str> {
         self.asset_bundle_export_job_id.as_deref()
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
@@ -67,24 +67,23 @@ impl StartAssetBundleExportJobInput {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub fn include_all_dependencies(&self) -> ::std::option::Option<bool> {
         self.include_all_dependencies
     }
     /// <p>The export data format.</p>
-    pub fn export_format(&self) -> ::std::option::Option<&crate::types::AssetBundleExportFormat> {
+    pub fn export_format(&self) -> ::std::option::Option<& crate::types::AssetBundleExportFormat> {
         self.export_format.as_ref()
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn cloud_formation_override_property_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
+    pub fn cloud_formation_override_property_configuration(&self) -> ::std::option::Option<& crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         self.cloud_formation_override_property_configuration.as_ref()
     }
     /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
@@ -96,7 +95,7 @@ impl StartAssetBundleExportJobInput {
         self.include_tags
     }
     /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
-    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::AssetBundleExportJobValidationStrategy> {
+    pub fn validation_strategy(&self) -> ::std::option::Option<& crate::types::AssetBundleExportJobValidationStrategy> {
         self.validation_strategy.as_ref()
     }
 }
@@ -113,11 +112,10 @@ impl StartAssetBundleExportJobInput {
 pub struct StartAssetBundleExportJobInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) include_all_dependencies: ::std::option::Option<bool>,
     pub(crate) export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
-    pub(crate) cloud_formation_override_property_configuration:
-        ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
+    pub(crate) cloud_formation_override_property_configuration: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
     pub(crate) include_permissions: ::std::option::Option<bool>,
     pub(crate) include_tags: ::std::option::Option<bool>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>,
@@ -131,8 +129,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_bundle_export_job_id = input;
-        self
+        self.asset_bundle_export_job_id = input; self
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,9 +173,9 @@ impl StartAssetBundleExportJobInputBuilder {
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
@@ -199,9 +195,8 @@ impl StartAssetBundleExportJobInputBuilder {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
@@ -221,7 +216,7 @@ impl StartAssetBundleExportJobInputBuilder {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
@@ -231,8 +226,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_all_dependencies = input;
-        self
+        self.include_all_dependencies = input; self
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
@@ -246,8 +240,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>The export data format.</p>
     pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::AssetBundleExportFormat>) -> Self {
-        self.export_format = input;
-        self
+        self.export_format = input; self
     }
     /// <p>The export data format.</p>
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
@@ -255,27 +248,18 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn cloud_formation_override_property_configuration(
-        mut self,
-        input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration,
-    ) -> Self {
+    pub fn cloud_formation_override_property_configuration(mut self, input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration) -> Self {
         self.cloud_formation_override_property_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn set_cloud_formation_override_property_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
-    ) -> Self {
-        self.cloud_formation_override_property_configuration = input;
-        self
+    pub fn set_cloud_formation_override_property_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>) -> Self {
+        self.cloud_formation_override_property_configuration = input; self
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn get_cloud_formation_override_property_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
+    pub fn get_cloud_formation_override_property_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         &self.cloud_formation_override_property_configuration
     }
     /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
@@ -285,8 +269,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
     pub fn set_include_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_permissions = input;
-        self
+        self.include_permissions = input; self
     }
     /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
     pub fn get_include_permissions(&self) -> &::std::option::Option<bool> {
@@ -299,8 +282,7 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
     pub fn set_include_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_tags = input;
-        self
+        self.include_tags = input; self
     }
     /// <p>A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>
     pub fn get_include_tags(&self) -> &::std::option::Option<bool> {
@@ -313,30 +295,36 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
     pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy>) -> Self {
-        self.validation_strategy = input;
-        self
+        self.validation_strategy = input; self
     }
     /// <p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobValidationStrategy> {
         &self.validation_strategy
     }
     /// Consumes the builder and constructs a [`StartAssetBundleExportJobInput`](crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput {
-            aws_account_id: self.aws_account_id,
-            asset_bundle_export_job_id: self.asset_bundle_export_job_id,
-            resource_arns: self.resource_arns,
-            include_all_dependencies: self.include_all_dependencies,
-            export_format: self.export_format,
-            cloud_formation_override_property_configuration: self.cloud_formation_override_property_configuration,
-            include_permissions: self.include_permissions,
-            include_tags: self.include_tags,
-            validation_strategy: self.validation_strategy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput {
+                aws_account_id: self.aws_account_id
+                ,
+                asset_bundle_export_job_id: self.asset_bundle_export_job_id
+                ,
+                resource_arns: self.resource_arns
+                ,
+                include_all_dependencies: self.include_all_dependencies
+                ,
+                export_format: self.export_format
+                ,
+                cloud_formation_override_property_configuration: self.cloud_formation_override_property_configuration
+                ,
+                include_permissions: self.include_permissions
+                ,
+                include_tags: self.include_tags
+                ,
+                validation_strategy: self.validation_strategy
+                ,
+            }
+        )
     }
 }
+

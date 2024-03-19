@@ -39,3 +39,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateDeviceState` operation.
 pub mod update_device_state;
+

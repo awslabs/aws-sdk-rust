@@ -3,7 +3,7 @@
 /// <p>A complex type for an endpoint. Specifies information about the endpoint to remove from the endpoint group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointIdentifier {
+pub struct EndpointIdentifier  {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub endpoint_id: ::std::string::String,
@@ -11,12 +11,11 @@ pub struct EndpointIdentifier {
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
-impl EndpointIdentifier {
+impl  EndpointIdentifier  {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
-    pub fn endpoint_id(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint_id.deref()
+    pub fn endpoint_id(&self) -> & str {
+        use std::ops::Deref; self.endpoint_id.deref()
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
@@ -49,8 +48,7 @@ impl EndpointIdentifierBuilder {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -66,8 +64,7 @@ impl EndpointIdentifierBuilder {
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
     pub fn set_client_ip_preservation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.client_ip_preservation_enabled = input;
-        self
+        self.client_ip_preservation_enabled = input; self
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.</p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
@@ -78,14 +75,17 @@ impl EndpointIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint_id`](crate::types::builders::EndpointIdentifierBuilder::endpoint_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EndpointIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EndpointIdentifier {
-            endpoint_id: self.endpoint_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint_id",
-                    "endpoint_id was not specified but it is required when building EndpointIdentifier",
-                )
-            })?,
-            client_ip_preservation_enabled: self.client_ip_preservation_enabled,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EndpointIdentifier {
+                endpoint_id: self.endpoint_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint_id", "endpoint_id was not specified but it is required when building EndpointIdentifier")
+                    )?
+                ,
+                client_ip_preservation_enabled: self.client_ip_preservation_enabled
+                ,
+            }
+        )
     }
 }
+

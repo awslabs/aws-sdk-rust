@@ -3,22 +3,23 @@
 /// <p>An Amazon FSx for NetApp ONTAP file system has two endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. They are the <code>Management</code> and <code>Intercluster</code> endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileSystemEndpoint {
+pub struct FileSystemEndpoint  {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>IP addresses of the file system endpoint.</p>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl FileSystemEndpoint {
+impl  FileSystemEndpoint  {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[::std::string::String] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [::std::string::String] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FileSystemEndpoint {
@@ -33,7 +34,7 @@ impl FileSystemEndpoint {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemEndpointBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FileSystemEndpointBuilder {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
@@ -43,8 +44,7 @@ impl FileSystemEndpointBuilder {
     }
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl FileSystemEndpointBuilder {
     /// <p>IP addresses of the file system endpoint.</p>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).
     pub fn build(self) -> crate::types::FileSystemEndpoint {
         crate::types::FileSystemEndpoint {
-            dns_name: self.dns_name,
-            ip_addresses: self.ip_addresses,
+            dns_name: self.dns_name
+            ,
+            ip_addresses: self.ip_addresses
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a resource sync event for the resource associated with a sync configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSyncEvent {
+pub struct ResourceSyncEvent  {
     /// <p>The event for a resource sync event.</p>
     pub event: ::std::string::String,
     /// <p>The ID for a resource sync event.</p>
@@ -13,24 +13,22 @@ pub struct ResourceSyncEvent {
     /// <p>The type of resource sync event.</p>
     pub r#type: ::std::string::String,
 }
-impl ResourceSyncEvent {
+impl  ResourceSyncEvent  {
     /// <p>The event for a resource sync event.</p>
-    pub fn event(&self) -> &str {
-        use std::ops::Deref;
-        self.event.deref()
+    pub fn event(&self) -> & str {
+        use std::ops::Deref; self.event.deref()
     }
     /// <p>The ID for a resource sync event.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The time that a resource sync event occurred.</p>
-    pub fn time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn time(&self) -> & ::aws_smithy_types::DateTime {
         &self.time
     }
     /// <p>The type of resource sync event.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl ResourceSyncEvent {
@@ -58,8 +56,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The event for a resource sync event.</p>
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The event for a resource sync event.</p>
     pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The ID for a resource sync event.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The ID for a resource sync event.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The time that a resource sync event occurred.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The time that a resource sync event occurred.</p>
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -102,8 +97,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The type of resource sync event.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of resource sync event.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +109,27 @@ impl ResourceSyncEventBuilder {
     /// - [`time`](crate::types::builders::ResourceSyncEventBuilder::time)
     /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceSyncEvent {
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building ResourceSyncEvent",
-                )
-            })?,
-            external_id: self.external_id,
-            time: self.time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time",
-                    "time was not specified but it is required when building ResourceSyncEvent",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResourceSyncEvent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceSyncEvent {
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building ResourceSyncEvent")
+                    )?
+                ,
+                external_id: self.external_id
+                ,
+                time: self.time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time", "time was not specified but it is required when building ResourceSyncEvent")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResourceSyncEvent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

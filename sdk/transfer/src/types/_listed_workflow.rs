@@ -3,7 +3,7 @@
 /// <p>Contains the identifier, text description, and Amazon Resource Name (ARN) for the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedWorkflow {
+pub struct ListedWorkflow  {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the text description for the workflow.</p>
@@ -11,17 +11,17 @@ pub struct ListedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ListedWorkflow {
+impl  ListedWorkflow  {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>Specifies the text description for the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListedWorkflowBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListedWorkflowBuilder {
     }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ListedWorkflowBuilder {
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ListedWorkflowBuilder {
     /// Consumes the builder and constructs a [`ListedWorkflow`](crate::types::ListedWorkflow).
     pub fn build(self) -> crate::types::ListedWorkflow {
         crate::types::ListedWorkflow {
-            workflow_id: self.workflow_id,
-            description: self.description,
-            arn: self.arn,
+            workflow_id: self.workflow_id
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

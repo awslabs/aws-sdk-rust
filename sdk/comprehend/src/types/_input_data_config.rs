@@ -3,7 +3,7 @@
 /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub s3_uri: ::std::string::String,
@@ -18,12 +18,11 @@ pub struct InputDataConfig {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub document_reader_config: ::std::option::Option<crate::types::DocumentReaderConfig>,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
@@ -32,11 +31,11 @@ impl InputDataConfig {
     /// <li>
     /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
-    pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
+    pub fn input_format(&self) -> ::std::option::Option<& crate::types::InputFormat> {
         self.input_format.as_ref()
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn document_reader_config(&self) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
+    pub fn document_reader_config(&self) -> ::std::option::Option<& crate::types::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
     }
 }
@@ -66,8 +65,7 @@ impl InputDataConfigBuilder {
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of data files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
@@ -93,8 +91,7 @@ impl InputDataConfigBuilder {
     /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
-        self.input_format = input;
-        self
+        self.input_format = input; self
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
@@ -113,8 +110,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
-        self.document_reader_config = input;
-        self
+        self.document_reader_config = input; self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
@@ -124,15 +120,19 @@ impl InputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-            input_format: self.input_format,
-            document_reader_config: self.document_reader_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+                input_format: self.input_format
+                ,
+                document_reader_config: self.document_reader_config
+                ,
+            }
+        )
     }
 }
+

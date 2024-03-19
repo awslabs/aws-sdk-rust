@@ -10,7 +10,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueEntry {
+pub struct BatchGetAssetPropertyValueEntry  {
     /// <p>The ID of the entry.</p>
     pub entry_id: ::std::string::String,
     /// <p>The ID of the asset in which the asset property was created.</p>
@@ -20,22 +20,21 @@ pub struct BatchGetAssetPropertyValueEntry {
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetAssetPropertyValueEntry {
+impl  BatchGetAssetPropertyValueEntry  {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property, in UUID format.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl BatchGetAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl BatchGetAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl BatchGetAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl BatchGetAssetPropertyValueEntryBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_alias = input;
-        self
+        self.property_alias = input; self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,16 +112,21 @@ impl BatchGetAssetPropertyValueEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueEntryBuilder::entry_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueEntry",
-                )
-            })?,
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            property_alias: self.property_alias,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyValueEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchGetAssetPropertyValueEntry")
+                    )?
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+            }
+        )
     }
 }
+

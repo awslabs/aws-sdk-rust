@@ -3,7 +3,7 @@
 /// <p>A summary of information about a provisioning template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningTemplateSummary {
+pub struct ProvisioningTemplateSummary  {
     /// <p>The ARN of the provisioning template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
@@ -19,25 +19,25 @@ pub struct ProvisioningTemplateSummary {
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
 }
-impl ProvisioningTemplateSummary {
+impl  ProvisioningTemplateSummary  {
     /// <p>The ARN of the provisioning template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The description of the provisioning template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date when the provisioning template summary was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date when the provisioning template summary was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
@@ -45,7 +45,7 @@ impl ProvisioningTemplateSummary {
         self.enabled
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.r#type.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The ARN of the provisioning template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The ARN of the provisioning template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The description of the provisioning template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the provisioning template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The date when the provisioning template summary was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date when the provisioning template summary was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The date when the provisioning template summary was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date when the provisioning template summary was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -160,8 +154,7 @@ impl ProvisioningTemplateSummaryBuilder {
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
@@ -170,13 +163,21 @@ impl ProvisioningTemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`ProvisioningTemplateSummary`](crate::types::ProvisioningTemplateSummary).
     pub fn build(self) -> crate::types::ProvisioningTemplateSummary {
         crate::types::ProvisioningTemplateSummary {
-            template_arn: self.template_arn,
-            template_name: self.template_name,
-            description: self.description,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
-            enabled: self.enabled,
-            r#type: self.r#type,
+            template_arn: self.template_arn
+            ,
+            template_name: self.template_name
+            ,
+            description: self.description
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            enabled: self.enabled
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDataCollectionByAgentIdsOutput {
+pub struct StopDataCollectionByAgentIdsOutput  {
     /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
+    pub agents_configuration_status: ::std::option::Option<::std::vec::Vec::<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }
-impl StopDataCollectionByAgentIdsOutput {
+impl  StopDataCollectionByAgentIdsOutput  {
     /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agents_configuration_status.is_none()`.
-    pub fn agents_configuration_status(&self) -> &[crate::types::AgentConfigurationStatus] {
-        self.agents_configuration_status.as_deref().unwrap_or_default()
+    pub fn agents_configuration_status(&self) -> & [crate::types::AgentConfigurationStatus] {
+        self.agents_configuration_status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for StopDataCollectionByAgentIdsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopDataCollectionByAgentIdsOutput {
     /// Creates a new builder-style object to manufacture [`StopDataCollectionByAgentIdsOutput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput).
     pub fn builder() -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsOutputBuilder {
@@ -31,7 +32,7 @@ impl StopDataCollectionByAgentIdsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsOutputBuilder {
-    pub(crate) agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
+    pub(crate) agents_configuration_status: ::std::option::Option<::std::vec::Vec::<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }
 impl StopDataCollectionByAgentIdsOutputBuilder {
@@ -42,33 +43,34 @@ impl StopDataCollectionByAgentIdsOutputBuilder {
     /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     pub fn agents_configuration_status(mut self, input: crate::types::AgentConfigurationStatus) -> Self {
         let mut v = self.agents_configuration_status.unwrap_or_default();
-        v.push(input);
-        self.agents_configuration_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.agents_configuration_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn set_agents_configuration_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>) -> Self {
-        self.agents_configuration_status = input;
-        self
+    pub fn set_agents_configuration_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AgentConfigurationStatus>>) -> Self {
+        self.agents_configuration_status = input; self
     }
     /// <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn get_agents_configuration_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>> {
+    pub fn get_agents_configuration_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AgentConfigurationStatus>> {
         &self.agents_configuration_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopDataCollectionByAgentIdsOutput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput).
     pub fn build(self) -> crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput {
         crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput {
-            agents_configuration_status: self.agents_configuration_status,
+            agents_configuration_status: self.agents_configuration_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

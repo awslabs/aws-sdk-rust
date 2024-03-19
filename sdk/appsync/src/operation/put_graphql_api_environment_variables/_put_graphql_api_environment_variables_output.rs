@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutGraphqlApiEnvironmentVariablesOutput {
+pub struct PutGraphqlApiEnvironmentVariablesOutput  {
     /// <p>The payload containing each environmental variable in the <code>"key" : "value"</code> format.</p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl PutGraphqlApiEnvironmentVariablesOutput {
+impl  PutGraphqlApiEnvironmentVariablesOutput  {
     /// <p>The payload containing each environmental variable in the <code>"key" : "value"</code> format.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutGraphqlApiEnvironmentVariablesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutGraphqlApiEnvironmentVariablesOutput {
     /// Creates a new builder-style object to manufacture [`PutGraphqlApiEnvironmentVariablesOutput`](crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesOutput).
     pub fn builder() -> crate::operation::put_graphql_api_environment_variables::builders::PutGraphqlApiEnvironmentVariablesOutputBuilder {
@@ -29,7 +29,7 @@ impl PutGraphqlApiEnvironmentVariablesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutGraphqlApiEnvironmentVariablesOutputBuilder {
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutGraphqlApiEnvironmentVariablesOutputBuilder {
@@ -38,42 +38,36 @@ impl PutGraphqlApiEnvironmentVariablesOutputBuilder {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p>The payload containing each environmental variable in the <code>"key" : "value"</code> format.</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The payload containing each environmental variable in the <code>"key" : "value"</code> format.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>The payload containing each environmental variable in the <code>"key" : "value"</code> format.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutGraphqlApiEnvironmentVariablesOutput`](crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesOutput).
     pub fn build(self) -> crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesOutput {
         crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesOutput {
-            environment_variables: self.environment_variables,
+            environment_variables: self.environment_variables
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshot
 
 impl DescribeClusterSnapshotsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_cluster_snapshots();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_cluster_snapshots();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeClusterSnapshots`.
-///
+/// 
 /// <p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters.</p>
 /// <p>If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder,
+                    inner: crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-    > for DescribeClusterSnapshotsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+                    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+                > for DescribeClusterSnapshotsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+                        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeClusterSnapshotsFluentBuilder {
     /// Creates a new `DescribeClusterSnapshots`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl DescribeClusterSnapshotsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
-        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshots::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput, crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator {
-        crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator {
+                                crate::operation::describe_cluster_snapshots::paginator::DescribeClusterSnapshotsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
@@ -267,12 +254,12 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_tag_keys()
     }
     /// Appends an item to `TagValues`.
@@ -285,12 +272,12 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_tag_values()
     }
     /// <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows:</p>
@@ -347,12 +334,13 @@ impl DescribeClusterSnapshotsFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_sorting_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>) -> Self {
+    pub fn set_sorting_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotSortingEntity>>) -> Self {
         self.inner = self.inner.set_sorting_entities(input);
         self
     }
     /// <p></p>
-    pub fn get_sorting_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
+    pub fn get_sorting_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotSortingEntity>> {
         self.inner.get_sorting_entities()
     }
 }
+

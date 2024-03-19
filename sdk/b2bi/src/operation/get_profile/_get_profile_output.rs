@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetProfileOutput {
+pub struct GetProfileOutput  {
     /// <p>Returns the unique, system-generated identifier for the profile.</p>
     pub profile_id: ::std::string::String,
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
@@ -25,54 +25,49 @@ pub struct GetProfileOutput {
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetProfileOutput {
+impl  GetProfileOutput  {
     /// <p>Returns the unique, system-generated identifier for the profile.</p>
-    pub fn profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_id.deref()
+    pub fn profile_id(&self) -> & str {
+        use std::ops::Deref; self.profile_id.deref()
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
-    pub fn profile_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_arn.deref()
+    pub fn profile_arn(&self) -> & str {
+        use std::ops::Deref; self.profile_arn.deref()
     }
     /// <p>Returns the name of the profile, used to identify it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Returns the email address associated with this customer profile.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Returns the phone number associated with the profile.</p>
-    pub fn phone(&self) -> &str {
-        use std::ops::Deref;
-        self.phone.deref()
+    pub fn phone(&self) -> & str {
+        use std::ops::Deref; self.phone.deref()
     }
     /// <p>Returns the name for the business associated with this profile.</p>
-    pub fn business_name(&self) -> &str {
-        use std::ops::Deref;
-        self.business_name.deref()
+    pub fn business_name(&self) -> & str {
+        use std::ops::Deref; self.business_name.deref()
     }
     /// <p>Returns whether or not logging is enabled for this profile.</p>
-    pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
+    pub fn logging(&self) -> ::std::option::Option<& crate::types::Logging> {
         self.logging.as_ref()
     }
     /// <p>Returns the name of the logging group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Returns a timestamp for last time the profile was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetProfileOutput {
+impl  ::std::fmt::Debug for GetProfileOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetProfileOutput");
         formatter.field("profile_id", &self.profile_id);
@@ -90,10 +85,10 @@ impl ::std::fmt::Debug for GetProfileOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     pub fn builder() -> crate::operation::get_profile::builders::GetProfileOutputBuilder {
@@ -126,8 +121,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the unique, system-generated identifier for the profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>Returns the unique, system-generated identifier for the profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +135,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +149,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the name of the profile, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Returns the name of the profile, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +162,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the email address associated with this customer profile.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Returns the email address associated with this customer profile.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +176,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the phone number associated with the profile.</p>
     pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone = input;
-        self
+        self.phone = input; self
     }
     /// <p>Returns the phone number associated with the profile.</p>
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +190,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the name for the business associated with this profile.</p>
     pub fn set_business_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.business_name = input;
-        self
+        self.business_name = input; self
     }
     /// <p>Returns the name for the business associated with this profile.</p>
     pub fn get_business_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +203,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns whether or not logging is enabled for this profile.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>Returns whether or not logging is enabled for this profile.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
@@ -228,8 +216,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns the name of the logging group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>Returns the name of the logging group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +230,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -257,22 +243,21 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Returns a timestamp for last time the profile was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>Returns a timestamp for last time the profile was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profile_id`](crate::operation::get_profile::builders::GetProfileOutputBuilder::profile_id)
@@ -282,49 +267,49 @@ impl GetProfileOutputBuilder {
     /// - [`business_name`](crate::operation::get_profile::builders::GetProfileOutputBuilder::business_name)
     /// - [`created_at`](crate::operation::get_profile::builders::GetProfileOutputBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_profile::GetProfileOutput {
-            profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_id",
-                    "profile_id was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            profile_arn: self.profile_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_arn",
-                    "profile_arn was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            email: self.email,
-            phone: self.phone.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone",
-                    "phone was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            business_name: self.business_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "business_name",
-                    "business_name was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            logging: self.logging,
-            log_group_name: self.log_group_name,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            modified_at: self.modified_at,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_profile::GetProfileOutput {
+                profile_id: self.profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_id", "profile_id was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                profile_arn: self.profile_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_arn", "profile_arn was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                email: self.email
+                ,
+                phone: self.phone
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone", "phone was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                business_name: self.business_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("business_name", "business_name was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                logging: self.logging
+                ,
+                log_group_name: self.log_group_name
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetProfileOutputBuilder {
@@ -344,3 +329,4 @@ impl ::std::fmt::Debug for GetProfileOutputBuilder {
         formatter.finish()
     }
 }
+

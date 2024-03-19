@@ -3,26 +3,24 @@
 /// <p>A transform operation that tags a column with additional information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagColumnOperation {
+pub struct TagColumnOperation  {
     /// <p>The column that this operation acts on.</p>
     pub column_name: ::std::string::String,
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    pub tags: ::std::vec::Vec<crate::types::ColumnTag>,
+    pub tags: ::std::vec::Vec::<crate::types::ColumnTag>,
 }
-impl TagColumnOperation {
+impl  TagColumnOperation  {
     /// <p>The column that this operation acts on.</p>
-    pub fn column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.column_name.deref()
+    pub fn column_name(&self) -> & str {
+        use std::ops::Deref; self.column_name.deref()
     }
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    pub fn tags(&self) -> &[crate::types::ColumnTag] {
-        use std::ops::Deref;
-        self.tags.deref()
+    pub fn tags(&self) -> & [crate::types::ColumnTag] {
+        use std::ops::Deref; self.tags.deref()
     }
 }
 impl TagColumnOperation {
@@ -37,7 +35,7 @@ impl TagColumnOperation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagColumnOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnTag>>,
 }
 impl TagColumnOperationBuilder {
     /// <p>The column that this operation acts on.</p>
@@ -48,8 +46,7 @@ impl TagColumnOperationBuilder {
     }
     /// <p>The column that this operation acts on.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The column that this operation acts on.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,21 +61,20 @@ impl TagColumnOperationBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::ColumnTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p><note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnTag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagColumnOperation`](crate::types::TagColumnOperation).
@@ -86,19 +82,20 @@ impl TagColumnOperationBuilder {
     /// - [`column_name`](crate::types::builders::TagColumnOperationBuilder::column_name)
     /// - [`tags`](crate::types::builders::TagColumnOperationBuilder::tags)
     pub fn build(self) -> ::std::result::Result<crate::types::TagColumnOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TagColumnOperation {
-            column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_name",
-                    "column_name was not specified but it is required when building TagColumnOperation",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building TagColumnOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TagColumnOperation {
+                column_name: self.column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_name", "column_name was not specified but it is required when building TagColumnOperation")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building TagColumnOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

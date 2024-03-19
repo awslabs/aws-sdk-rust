@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartNextPendingJobExecutionInput {
+pub struct StartNextPendingJobExecutionInput  {
     /// <p>The name of the thing associated with the device.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub status_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub step_timeout_in_minutes: ::std::option::Option<i64>,
 }
-impl StartNextPendingJobExecutionInput {
+impl  StartNextPendingJobExecutionInput  {
     /// <p>The name of the thing associated with the device.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn status_details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
@@ -36,7 +36,7 @@ impl StartNextPendingJobExecutionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
-    pub(crate) status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) status_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) step_timeout_in_minutes: ::std::option::Option<i64>,
 }
 impl StartNextPendingJobExecutionInputBuilder {
@@ -48,8 +48,7 @@ impl StartNextPendingJobExecutionInputBuilder {
     }
     /// <p>The name of the thing associated with the device.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing associated with the device.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,26 +59,18 @@ impl StartNextPendingJobExecutionInputBuilder {
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn status_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.status_details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.status_details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.status_details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.status_details = input;
-        self
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.status_details = input; self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.status_details
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
@@ -89,24 +80,24 @@ impl StartNextPendingJobExecutionInputBuilder {
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub fn set_step_timeout_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.step_timeout_in_minutes = input;
-        self
+        self.step_timeout_in_minutes = input; self
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub fn get_step_timeout_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.step_timeout_in_minutes
     }
     /// Consumes the builder and constructs a [`StartNextPendingJobExecutionInput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput {
-            thing_name: self.thing_name,
-            status_details: self.status_details,
-            step_timeout_in_minutes: self.step_timeout_in_minutes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionInput {
+                thing_name: self.thing_name
+                ,
+                status_details: self.status_details
+                ,
+                step_timeout_in_minutes: self.step_timeout_in_minutes
+                ,
+            }
+        )
     }
 }
+

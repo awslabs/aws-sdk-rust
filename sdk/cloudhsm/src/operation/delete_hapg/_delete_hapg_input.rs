@@ -3,13 +3,13 @@
 /// <p>Contains the inputs for the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHapgInput {
+pub struct DeleteHapgInput  {
     /// <p>The ARN of the high-availability partition group to delete.</p>
     pub hapg_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHapgInput {
+impl  DeleteHapgInput  {
     /// <p>The ARN of the high-availability partition group to delete.</p>
-    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl DeleteHapgInputBuilder {
     }
     /// <p>The ARN of the high-availability partition group to delete.</p>
     pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hapg_arn = input;
-        self
+        self.hapg_arn = input; self
     }
     /// <p>The ARN of the high-availability partition group to delete.</p>
     pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl DeleteHapgInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgInput { hapg_arn: self.hapg_arn })
+        ::std::result::Result::Ok(
+            crate::operation::delete_hapg::DeleteHapgInput {
+                hapg_arn: self.hapg_arn
+                ,
+            }
+        )
     }
 }
+

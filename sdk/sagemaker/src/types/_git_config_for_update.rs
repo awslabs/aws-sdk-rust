@@ -3,15 +3,15 @@
 /// <p>Specifies configuration details for a Git repository when the repository is updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitConfigForUpdate {
+pub struct GitConfigForUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
-impl GitConfigForUpdate {
+impl  GitConfigForUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GitConfigForUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p><code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code></p>
@@ -48,6 +47,10 @@ impl GitConfigForUpdateBuilder {
     }
     /// Consumes the builder and constructs a [`GitConfigForUpdate`](crate::types::GitConfigForUpdate).
     pub fn build(self) -> crate::types::GitConfigForUpdate {
-        crate::types::GitConfigForUpdate { secret_arn: self.secret_arn }
+        crate::types::GitConfigForUpdate {
+            secret_arn: self.secret_arn
+            ,
+        }
     }
 }
+

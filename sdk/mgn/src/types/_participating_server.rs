@@ -3,7 +3,7 @@
 /// <p>Server participating in Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipatingServer {
+pub struct ParticipatingServer  {
     /// <p>Participating server Source Server ID.</p>
     pub source_server_id: ::std::string::String,
     /// <p>Participating server launch status.</p>
@@ -13,22 +13,21 @@ pub struct ParticipatingServer {
     /// <p>Participating server's Post Launch Actions Status.</p>
     pub post_launch_actions_status: ::std::option::Option<crate::types::PostLaunchActionsStatus>,
 }
-impl ParticipatingServer {
+impl  ParticipatingServer  {
     /// <p>Participating server Source Server ID.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> & str {
+        use std::ops::Deref; self.source_server_id.deref()
     }
     /// <p>Participating server launch status.</p>
-    pub fn launch_status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
+    pub fn launch_status(&self) -> ::std::option::Option<& crate::types::LaunchStatus> {
         self.launch_status.as_ref()
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
-    pub fn launched_ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn launched_ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.launched_ec2_instance_id.as_deref()
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn post_launch_actions_status(&self) -> ::std::option::Option<&crate::types::PostLaunchActionsStatus> {
+    pub fn post_launch_actions_status(&self) -> ::std::option::Option<& crate::types::PostLaunchActionsStatus> {
         self.post_launch_actions_status.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>Participating server Source Server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Participating server Source Server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>Participating server launch status.</p>
     pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.launch_status = input;
-        self
+        self.launch_status = input; self
     }
     /// <p>Participating server launch status.</p>
     pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
@@ -85,8 +82,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
     pub fn set_launched_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launched_ec2_instance_id = input;
-        self
+        self.launched_ec2_instance_id = input; self
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
     pub fn get_launched_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
     pub fn set_post_launch_actions_status(mut self, input: ::std::option::Option<crate::types::PostLaunchActionsStatus>) -> Self {
-        self.post_launch_actions_status = input;
-        self
+        self.post_launch_actions_status = input; self
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
     pub fn get_post_launch_actions_status(&self) -> &::std::option::Option<crate::types::PostLaunchActionsStatus> {
@@ -110,16 +105,21 @@ impl ParticipatingServerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_server_id`](crate::types::builders::ParticipatingServerBuilder::source_server_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingServer, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParticipatingServer {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building ParticipatingServer",
-                )
-            })?,
-            launch_status: self.launch_status,
-            launched_ec2_instance_id: self.launched_ec2_instance_id,
-            post_launch_actions_status: self.post_launch_actions_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParticipatingServer {
+                source_server_id: self.source_server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_server_id", "source_server_id was not specified but it is required when building ParticipatingServer")
+                    )?
+                ,
+                launch_status: self.launch_status
+                ,
+                launched_ec2_instance_id: self.launched_ec2_instance_id
+                ,
+                post_launch_actions_status: self.post_launch_actions_status
+                ,
+            }
+        )
     }
 }
+

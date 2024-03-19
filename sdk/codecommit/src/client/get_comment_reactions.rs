@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCommentReactions`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`comment_id(impl Into<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::comment_id) / [`set_comment_id(Option<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::set_comment_id):<br>required: **true**<br><p>The ID of the comment for which you want to get reactions information.</p><br>
     ///   - [`reaction_user_arn(impl Into<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::reaction_user_arn) / [`set_reaction_user_arn(Option<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::set_reaction_user_arn):<br>required: **false**<br><p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p><br>
-    /// - On success, responds with [`GetCommentReactionsOutput`](crate::operation::get_comment_reactions::GetCommentReactionsOutput) with field(s):
+                            /// - On success, responds with [`GetCommentReactionsOutput`](crate::operation::get_comment_reactions::GetCommentReactionsOutput) with field(s):
     ///   - [`reactions_for_comment(Vec::<ReactionForComment>)`](crate::operation::get_comment_reactions::GetCommentReactionsOutput::reactions_for_comment): <p>An array of reactions to the specified comment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_comment_reactions::GetCommentReactionsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    /// - On failure, responds with [`SdkError<GetCommentReactionsError>`](crate::operation::get_comment_reactions::GetCommentReactionsError)
+                            /// - On failure, responds with [`SdkError<GetCommentReactionsError>`](crate::operation::get_comment_reactions::GetCommentReactionsError)
     pub fn get_comment_reactions(&self) -> crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder {
-        crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

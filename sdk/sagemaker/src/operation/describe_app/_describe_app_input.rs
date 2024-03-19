@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppInput {
+pub struct DescribeAppInput  {
     /// <p>The domain ID.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
@@ -14,25 +14,25 @@ pub struct DescribeAppInput {
     /// <p>The name of the app.</p>
     pub app_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAppInput {
+impl  DescribeAppInput  {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The type of app.</p>
-    pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> ::std::option::Option<& crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The name of the app.</p>
-    pub fn app_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_name(&self) -> ::std::option::Option<& str> {
         self.app_name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DescribeAppInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The domain ID.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DescribeAppInputBuilder {
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_name = input;
-        self
+        self.user_profile_name = input; self
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DescribeAppInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl DescribeAppInputBuilder {
     }
     /// <p>The type of app.</p>
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input;
-        self
+        self.app_type = input; self
     }
     /// <p>The type of app.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
@@ -120,8 +116,7 @@ impl DescribeAppInputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_name = input;
-        self
+        self.app_name = input; self
     }
     /// <p>The name of the app.</p>
     pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,12 +124,20 @@ impl DescribeAppInputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput {
-            domain_id: self.domain_id,
-            user_profile_name: self.user_profile_name,
-            space_name: self.space_name,
-            app_type: self.app_type,
-            app_name: self.app_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::describe_app::DescribeAppInput {
+                domain_id: self.domain_id
+                ,
+                user_profile_name: self.user_profile_name
+                ,
+                space_name: self.space_name
+                ,
+                app_type: self.app_type
+                ,
+                app_name: self.app_name
+                ,
+            }
+        )
     }
 }
+

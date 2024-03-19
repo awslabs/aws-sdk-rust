@@ -5,56 +5,52 @@ pub use crate::operation::dispose_package_versions::_dispose_package_versions_in
 
 impl DisposePackageVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.dispose_package_versions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::dispose_package_versions::DisposePackageVersionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.dispose_package_versions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisposePackageVersions`.
-///
+/// 
 /// <p>Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted.</p>
 /// <p>To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> parameter to <code>Disposed</code>.</p>
 /// <p>To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisposePackageVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder,
+                    inner: crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        crate::operation::dispose_package_versions::DisposePackageVersionsError,
-    > for DisposePackageVersionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
+                    crate::operation::dispose_package_versions::DisposePackageVersionsError,
+                > for DisposePackageVersionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
+                        crate::operation::dispose_package_versions::DisposePackageVersionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisposePackageVersionsFluentBuilder {
     /// Creates a new `DisposePackageVersions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DisposePackageVersionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::dispose_package_versions::DisposePackageVersionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::dispose_package_versions::DisposePackageVersions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::dispose_package_versions::DisposePackageVersions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
-        crate::operation::dispose_package_versions::DisposePackageVersionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::dispose_package_versions::DisposePackageVersionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::dispose_package_versions::DisposePackageVersionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::dispose_package_versions::DisposePackageVersions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::dispose_package_versions::DisposePackageVersions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::dispose_package_versions::DisposePackageVersionsOutput, crate::operation::dispose_package_versions::DisposePackageVersionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the domain that contains the repository you want to dispose.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -234,12 +221,12 @@ impl DisposePackageVersionsFluentBuilder {
         self
     }
     /// <p>The versions of the package you want to dispose.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
     /// <p>The versions of the package you want to dispose.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_versions()
     }
     /// Adds a key-value pair to `versionRevisions`.
@@ -247,24 +234,17 @@ impl DisposePackageVersionsFluentBuilder {
     /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
     ///
     /// <p>The revisions of the package versions you want to dispose.</p>
-    pub fn version_revisions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_revisions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_revisions(k.into(), v.into());
         self
     }
     /// <p>The revisions of the package versions you want to dispose.</p>
-    pub fn set_version_revisions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_revisions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
     /// <p>The revisions of the package versions you want to dispose.</p>
-    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_version_revisions()
     }
     /// <p>The expected status of the package version to dispose.</p>
@@ -282,3 +262,4 @@ impl DisposePackageVersionsFluentBuilder {
         self.inner.get_expected_status()
     }
 }
+

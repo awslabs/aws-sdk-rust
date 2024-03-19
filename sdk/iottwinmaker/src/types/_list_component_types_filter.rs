@@ -26,11 +26,7 @@ impl ListComponentTypesFilter {
     /// Tries to convert the enum instance into [`ExtendsFrom`](crate::types::ListComponentTypesFilter::ExtendsFrom), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_extends_from(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListComponentTypesFilter::ExtendsFrom(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListComponentTypesFilter::ExtendsFrom(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ExtendsFrom`](crate::types::ListComponentTypesFilter::ExtendsFrom).
     pub fn is_extends_from(&self) -> bool {
@@ -39,11 +35,7 @@ impl ListComponentTypesFilter {
     /// Tries to convert the enum instance into [`IsAbstract`](crate::types::ListComponentTypesFilter::IsAbstract), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_abstract(&self) -> ::std::result::Result<&bool, &Self> {
-        if let ListComponentTypesFilter::IsAbstract(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListComponentTypesFilter::IsAbstract(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IsAbstract`](crate::types::ListComponentTypesFilter::IsAbstract).
     pub fn is_is_abstract(&self) -> bool {
@@ -52,11 +44,7 @@ impl ListComponentTypesFilter {
     /// Tries to convert the enum instance into [`Namespace`](crate::types::ListComponentTypesFilter::Namespace), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_namespace(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListComponentTypesFilter::Namespace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListComponentTypesFilter::Namespace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Namespace`](crate::types::ListComponentTypesFilter::Namespace).
     pub fn is_namespace(&self) -> bool {
@@ -67,3 +55,4 @@ impl ListComponentTypesFilter {
         matches!(self, Self::Unknown)
     }
 }
+

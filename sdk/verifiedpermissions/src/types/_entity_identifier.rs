@@ -5,7 +5,7 @@
 /// <p>Example: <code>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EntityIdentifier {
+pub struct EntityIdentifier  {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub entity_type: ::std::string::String,
@@ -13,21 +13,19 @@ pub struct EntityIdentifier {
     /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub entity_id: ::std::string::String,
 }
-impl EntityIdentifier {
+impl  EntityIdentifier  {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
-    pub fn entity_type(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_type.deref()
+    pub fn entity_type(&self) -> & str {
+        use std::ops::Deref; self.entity_type.deref()
     }
     /// <p>The identifier of an entity.</p>
     /// <p><code>"entityId":"<i>identifier</i>"</code></p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
 }
-impl ::std::fmt::Debug for EntityIdentifier {
+impl  ::std::fmt::Debug for EntityIdentifier  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityIdentifier");
         formatter.field("entity_type", &"*** Sensitive Data Redacted ***");
@@ -60,8 +58,7 @@ impl EntityIdentifierBuilder {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
@@ -78,8 +75,7 @@ impl EntityIdentifierBuilder {
     /// <p>The identifier of an entity.</p>
     /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of an entity.</p>
     /// <p><code>"entityId":"<i>identifier</i>"</code></p>
@@ -91,20 +87,20 @@ impl EntityIdentifierBuilder {
     /// - [`entity_type`](crate::types::builders::EntityIdentifierBuilder::entity_type)
     /// - [`entity_id`](crate::types::builders::EntityIdentifierBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityIdentifier {
-            entity_type: self.entity_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_type",
-                    "entity_type was not specified but it is required when building EntityIdentifier",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EntityIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityIdentifier {
+                entity_type: self.entity_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_type", "entity_type was not specified but it is required when building EntityIdentifier")
+                    )?
+                ,
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building EntityIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EntityIdentifierBuilder {
@@ -115,3 +111,4 @@ impl ::std::fmt::Debug for EntityIdentifierBuilder {
         formatter.finish()
     }
 }
+

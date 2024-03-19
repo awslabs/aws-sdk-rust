@@ -3,7 +3,7 @@
 /// <p>Contains summary information for all the version replication statuses applicable for Global resiliency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotVersionReplicaSummary {
+pub struct BotVersionReplicaSummary  {
     /// <p>The bot version for the summary information for all the version replication statuses.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The version replication status for all the replicated bots.</p>
@@ -11,26 +11,27 @@ pub struct BotVersionReplicaSummary {
     /// <p>The creation date and time of the replication status for all the replicated bots.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reasons for replication failure for all the replicated bots.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BotVersionReplicaSummary {
+impl  BotVersionReplicaSummary  {
     /// <p>The bot version for the summary information for all the version replication statuses.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The version replication status for all the replicated bots.</p>
-    pub fn bot_version_replication_status(&self) -> ::std::option::Option<&crate::types::BotVersionReplicationStatus> {
+    pub fn bot_version_replication_status(&self) -> ::std::option::Option<& crate::types::BotVersionReplicationStatus> {
         self.bot_version_replication_status.as_ref()
     }
     /// <p>The creation date and time of the replication status for all the replicated bots.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The reasons for replication failure for all the replicated bots.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BotVersionReplicaSummary {
@@ -47,7 +48,7 @@ pub struct BotVersionReplicaSummaryBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version_replication_status: ::std::option::Option<crate::types::BotVersionReplicationStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BotVersionReplicaSummaryBuilder {
     /// <p>The bot version for the summary information for all the version replication statuses.</p>
@@ -57,8 +58,7 @@ impl BotVersionReplicaSummaryBuilder {
     }
     /// <p>The bot version for the summary information for all the version replication statuses.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The bot version for the summary information for all the version replication statuses.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BotVersionReplicaSummaryBuilder {
     }
     /// <p>The version replication status for all the replicated bots.</p>
     pub fn set_bot_version_replication_status(mut self, input: ::std::option::Option<crate::types::BotVersionReplicationStatus>) -> Self {
-        self.bot_version_replication_status = input;
-        self
+        self.bot_version_replication_status = input; self
     }
     /// <p>The version replication status for all the replicated bots.</p>
     pub fn get_bot_version_replication_status(&self) -> &::std::option::Option<crate::types::BotVersionReplicationStatus> {
@@ -85,8 +84,7 @@ impl BotVersionReplicaSummaryBuilder {
     }
     /// <p>The creation date and time of the replication status for all the replicated bots.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time of the replication status for all the replicated bots.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,26 +97,30 @@ impl BotVersionReplicaSummaryBuilder {
     /// <p>The reasons for replication failure for all the replicated bots.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reasons for replication failure for all the replicated bots.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>The reasons for replication failure for all the replicated bots.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// Consumes the builder and constructs a [`BotVersionReplicaSummary`](crate::types::BotVersionReplicaSummary).
     pub fn build(self) -> crate::types::BotVersionReplicaSummary {
         crate::types::BotVersionReplicaSummary {
-            bot_version: self.bot_version,
-            bot_version_replication_status: self.bot_version_replication_status,
-            creation_date_time: self.creation_date_time,
-            failure_reasons: self.failure_reasons,
+            bot_version: self.bot_version
+            ,
+            bot_version_replication_status: self.bot_version_replication_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            failure_reasons: self.failure_reasons
+            ,
         }
     }
 }
+

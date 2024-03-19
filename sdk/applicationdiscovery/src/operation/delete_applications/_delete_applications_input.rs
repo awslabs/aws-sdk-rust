@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationsInput {
+pub struct DeleteApplicationsInput  {
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteApplicationsInput {
+impl  DeleteApplicationsInput  {
     /// <p>Configuration ID of an application to be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
-    pub fn configuration_ids(&self) -> &[::std::string::String] {
-        self.configuration_ids.as_deref().unwrap_or_default()
+    pub fn configuration_ids(&self) -> & [::std::string::String] {
+        self.configuration_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteApplicationsInput {
@@ -25,7 +26,7 @@ impl DeleteApplicationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationsInputBuilder {
-    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteApplicationsInputBuilder {
     /// Appends an item to `configuration_ids`.
@@ -35,25 +36,26 @@ impl DeleteApplicationsInputBuilder {
     /// <p>Configuration ID of an application to be deleted.</p>
     pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_applications::DeleteApplicationsInput {
-            configuration_ids: self.configuration_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_applications::DeleteApplicationsInput {
+                configuration_ids: self.configuration_ids
+                ,
+            }
+        )
     }
 }
+

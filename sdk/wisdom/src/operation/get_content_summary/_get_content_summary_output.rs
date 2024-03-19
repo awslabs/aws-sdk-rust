@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContentSummaryOutput {
+pub struct GetContentSummaryOutput  {
     /// <p>The content summary.</p>
     pub content_summary: ::std::option::Option<crate::types::ContentSummary>,
     _request_id: Option<String>,
 }
-impl GetContentSummaryOutput {
+impl  GetContentSummaryOutput  {
     /// <p>The content summary.</p>
-    pub fn content_summary(&self) -> ::std::option::Option<&crate::types::ContentSummary> {
+    pub fn content_summary(&self) -> ::std::option::Option<& crate::types::ContentSummary> {
         self.content_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContentSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContentSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput).
     pub fn builder() -> crate::operation::get_content_summary::builders::GetContentSummaryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetContentSummaryOutputBuilder {
     }
     /// <p>The content summary.</p>
     pub fn set_content_summary(mut self, input: ::std::option::Option<crate::types::ContentSummary>) -> Self {
-        self.content_summary = input;
-        self
+        self.content_summary = input; self
     }
     /// <p>The content summary.</p>
     pub fn get_content_summary(&self) -> &::std::option::Option<crate::types::ContentSummary> {
         &self.content_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput).
     pub fn build(self) -> crate::operation::get_content_summary::GetContentSummaryOutput {
         crate::operation::get_content_summary::GetContentSummaryOutput {
-            content_summary: self.content_summary,
+            content_summary: self.content_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

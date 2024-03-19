@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUnreferencedMergeCommitOutput {
+pub struct CreateUnreferencedMergeCommitOutput  {
     /// <p>The full commit ID of the commit that contains your merge results.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     pub tree_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateUnreferencedMergeCommitOutput {
+impl  CreateUnreferencedMergeCommitOutput  {
     /// <p>The full commit ID of the commit that contains your merge results.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
-    pub fn tree_id(&self) -> ::std::option::Option<&str> {
+    pub fn tree_id(&self) -> ::std::option::Option<& str> {
         self.tree_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateUnreferencedMergeCommitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateUnreferencedMergeCommitOutput {
     /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitOutput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput).
     pub fn builder() -> crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateUnreferencedMergeCommitOutputBuilder {
     }
     /// <p>The full commit ID of the commit that contains your merge results.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The full commit ID of the commit that contains your merge results.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateUnreferencedMergeCommitOutputBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tree_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateUnreferencedMergeCommitOutput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput).
     pub fn build(self) -> crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput {
         crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput {
-            commit_id: self.commit_id,
-            tree_id: self.tree_id,
+            commit_id: self.commit_id
+            ,
+            tree_id: self.tree_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p><i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessRules {
+pub struct AccessRules  {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
@@ -21,7 +21,7 @@ pub struct AccessRules {
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code> ACL, or to private using the <code>private</code> ACL.</p>
     pub allow_public_overrides: ::std::option::Option<bool>,
 }
-impl AccessRules {
+impl  AccessRules  {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
@@ -32,7 +32,7 @@ impl AccessRules {
     /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
     /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
-    pub fn get_object(&self) -> ::std::option::Option<&crate::types::AccessType> {
+    pub fn get_object(&self) -> ::std::option::Option<& crate::types::AccessType> {
         self.get_object.as_ref()
     }
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the <code>getObject</code> option that is currently specified.</p>
@@ -81,8 +81,7 @@ impl AccessRulesBuilder {
     /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub fn set_get_object(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
-        self.get_object = input;
-        self
+        self.get_object = input; self
     }
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
@@ -106,8 +105,7 @@ impl AccessRulesBuilder {
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the <code>getObject</code> option that is currently specified.</p>
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code> ACL, or to private using the <code>private</code> ACL.</p>
     pub fn set_allow_public_overrides(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_public_overrides = input;
-        self
+        self.allow_public_overrides = input; self
     }
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the <code>getObject</code> option that is currently specified.</p>
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code> ACL, or to private using the <code>private</code> ACL.</p>
@@ -117,8 +115,11 @@ impl AccessRulesBuilder {
     /// Consumes the builder and constructs a [`AccessRules`](crate::types::AccessRules).
     pub fn build(self) -> crate::types::AccessRules {
         crate::types::AccessRules {
-            get_object: self.get_object,
-            allow_public_overrides: self.allow_public_overrides,
+            get_object: self.get_object
+            ,
+            allow_public_overrides: self.allow_public_overrides
+            ,
         }
     }
 }
+

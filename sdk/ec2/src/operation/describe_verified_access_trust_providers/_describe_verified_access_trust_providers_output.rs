@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVerifiedAccessTrustProvidersOutput {
+pub struct DescribeVerifiedAccessTrustProvidersOutput  {
     /// <p>Details about the Verified Access trust providers.</p>
-    pub verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
+    pub verified_access_trust_providers: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAccessTrustProvider>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeVerifiedAccessTrustProvidersOutput {
+impl  DescribeVerifiedAccessTrustProvidersOutput  {
     /// <p>Details about the Verified Access trust providers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_trust_providers.is_none()`.
-    pub fn verified_access_trust_providers(&self) -> &[crate::types::VerifiedAccessTrustProvider] {
-        self.verified_access_trust_providers.as_deref().unwrap_or_default()
+    pub fn verified_access_trust_providers(&self) -> & [crate::types::VerifiedAccessTrustProvider] {
+        self.verified_access_trust_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVerifiedAccessTrustProvidersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVerifiedAccessTrustProvidersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessTrustProvidersOutput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput).
     pub fn builder() -> crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeVerifiedAccessTrustProvidersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessTrustProvidersOutputBuilder {
-    pub(crate) verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
+    pub(crate) verified_access_trust_providers: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAccessTrustProvider>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl DescribeVerifiedAccessTrustProvidersOutputBuilder {
     /// <p>Details about the Verified Access trust providers.</p>
     pub fn verified_access_trust_providers(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
         let mut v = self.verified_access_trust_providers.unwrap_or_default();
-        v.push(input);
-        self.verified_access_trust_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.verified_access_trust_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about the Verified Access trust providers.</p>
-    pub fn set_verified_access_trust_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
-    ) -> Self {
-        self.verified_access_trust_providers = input;
-        self
+    pub fn set_verified_access_trust_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAccessTrustProvider>>) -> Self {
+        self.verified_access_trust_providers = input; self
     }
     /// <p>Details about the Verified Access trust providers.</p>
-    pub fn get_verified_access_trust_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>> {
+    pub fn get_verified_access_trust_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAccessTrustProvider>> {
         &self.verified_access_trust_providers
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -72,28 +69,30 @@ impl DescribeVerifiedAccessTrustProvidersOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessTrustProvidersOutput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput).
     pub fn build(self) -> crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput {
         crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput {
-            verified_access_trust_providers: self.verified_access_trust_providers,
-            next_token: self.next_token,
+            verified_access_trust_providers: self.verified_access_trust_providers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

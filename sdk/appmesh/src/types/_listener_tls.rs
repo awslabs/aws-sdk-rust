@@ -3,7 +3,7 @@
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListenerTls {
+pub struct ListenerTls  {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct ListenerTls {
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub validation: ::std::option::Option<crate::types::ListenerTlsValidationContext>,
 }
-impl ListenerTls {
+impl  ListenerTls  {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
     /// <li>
@@ -29,15 +29,15 @@ impl ListenerTls {
     /// <li>
     /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
-    pub fn mode(&self) -> &crate::types::ListenerTlsMode {
+    pub fn mode(&self) -> & crate::types::ListenerTlsMode {
         &self.mode
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&crate::types::ListenerTlsCertificate> {
+    pub fn certificate(&self) -> ::std::option::Option<& crate::types::ListenerTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(&self) -> ::std::option::Option<&crate::types::ListenerTlsValidationContext> {
+    pub fn validation(&self) -> ::std::option::Option<& crate::types::ListenerTlsValidationContext> {
         self.validation.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl ListenerTlsBuilder {
     /// <p><b></b>DISABLED – Listener only accepts connections without TLS.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ListenerTlsMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Specify one of the following modes.</p>
     /// <ul>
@@ -104,8 +103,7 @@ impl ListenerTlsBuilder {
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::ListenerTlsCertificate>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<crate::types::ListenerTlsCertificate> {
@@ -118,8 +116,7 @@ impl ListenerTlsBuilder {
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn set_validation(mut self, input: ::std::option::Option<crate::types::ListenerTlsValidationContext>) -> Self {
-        self.validation = input;
-        self
+        self.validation = input; self
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn get_validation(&self) -> &::std::option::Option<crate::types::ListenerTlsValidationContext> {
@@ -129,15 +126,19 @@ impl ListenerTlsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::ListenerTlsBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::ListenerTls, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListenerTls {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building ListenerTls",
-                )
-            })?,
-            certificate: self.certificate,
-            validation: self.validation,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListenerTls {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building ListenerTls")
+                    )?
+                ,
+                certificate: self.certificate
+                ,
+                validation: self.validation
+                ,
+            }
+        )
     }
 }
+

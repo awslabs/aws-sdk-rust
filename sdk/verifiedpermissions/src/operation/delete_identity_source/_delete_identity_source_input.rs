@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdentitySourceInput {
+pub struct DeleteIdentitySourceInput  {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
     pub identity_source_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIdentitySourceInput {
+impl  DeleteIdentitySourceInput  {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
-    pub fn identity_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_source_id(&self) -> ::std::option::Option<& str> {
         self.identity_source_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteIdentitySourceInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteIdentitySourceInputBuilder {
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
     pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_source_id = input;
-        self
+        self.identity_source_id = input; self
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
     pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_source_id
     }
     /// Consumes the builder and constructs a [`DeleteIdentitySourceInput`](crate::operation::delete_identity_source::DeleteIdentitySourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_identity_source::DeleteIdentitySourceInput {
-            policy_store_id: self.policy_store_id,
-            identity_source_id: self.identity_source_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_identity_source::DeleteIdentitySourceInput {
+                policy_store_id: self.policy_store_id
+                ,
+                identity_source_id: self.identity_source_id
+                ,
+            }
+        )
     }
 }
+

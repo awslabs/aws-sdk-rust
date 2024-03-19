@@ -3,7 +3,7 @@
 /// <p>Amazon S3 compatible storage on Snow family devices configuration items.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3OnDeviceServiceConfiguration {
+pub struct S3OnDeviceServiceConfiguration  {
     /// <p>If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.</p>
     pub storage_limit: ::std::option::Option<f64>,
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
@@ -13,13 +13,13 @@ pub struct S3OnDeviceServiceConfiguration {
     /// <p>&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.</p>
     pub fault_tolerance: ::std::option::Option<i32>,
 }
-impl S3OnDeviceServiceConfiguration {
+impl  S3OnDeviceServiceConfiguration  {
     /// <p>If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.</p>
     pub fn storage_limit(&self) -> ::std::option::Option<f64> {
         self.storage_limit
     }
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
-    pub fn storage_unit(&self) -> ::std::option::Option<&crate::types::StorageUnit> {
+    pub fn storage_unit(&self) -> ::std::option::Option<& crate::types::StorageUnit> {
         self.storage_unit.as_ref()
     }
     /// <p>Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.</p>
@@ -55,8 +55,7 @@ impl S3OnDeviceServiceConfigurationBuilder {
     }
     /// <p>If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.</p>
     pub fn set_storage_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.storage_limit = input;
-        self
+        self.storage_limit = input; self
     }
     /// <p>If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.</p>
     pub fn get_storage_limit(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl S3OnDeviceServiceConfigurationBuilder {
     }
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
     pub fn set_storage_unit(mut self, input: ::std::option::Option<crate::types::StorageUnit>) -> Self {
-        self.storage_unit = input;
-        self
+        self.storage_unit = input; self
     }
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
     pub fn get_storage_unit(&self) -> &::std::option::Option<crate::types::StorageUnit> {
@@ -83,8 +81,7 @@ impl S3OnDeviceServiceConfigurationBuilder {
     }
     /// <p>Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.</p>
     pub fn set_service_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.service_size = input;
-        self
+        self.service_size = input; self
     }
     /// <p>Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.</p>
     pub fn get_service_size(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl S3OnDeviceServiceConfigurationBuilder {
     }
     /// <p>&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.</p>
     pub fn set_fault_tolerance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fault_tolerance = input;
-        self
+        self.fault_tolerance = input; self
     }
     /// <p>&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.</p>
     pub fn get_fault_tolerance(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl S3OnDeviceServiceConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3OnDeviceServiceConfiguration`](crate::types::S3OnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::S3OnDeviceServiceConfiguration {
         crate::types::S3OnDeviceServiceConfiguration {
-            storage_limit: self.storage_limit,
-            storage_unit: self.storage_unit,
-            service_size: self.service_size,
-            fault_tolerance: self.fault_tolerance,
+            storage_limit: self.storage_limit
+            ,
+            storage_unit: self.storage_unit
+            ,
+            service_size: self.service_size
+            ,
+            fault_tolerance: self.fault_tolerance
+            ,
         }
     }
 }
+

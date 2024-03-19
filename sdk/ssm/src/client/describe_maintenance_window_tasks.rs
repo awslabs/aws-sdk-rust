@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindowTasks`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`window_id(impl Into<String>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::set_window_id):<br>required: **true**<br><p>The ID of the maintenance window whose tasks should be retrieved.</p><br>
     ///   - [`filters(MaintenanceWindowFilter)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<MaintenanceWindowFilter>>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::set_filters):<br>required: **false**<br><p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec::<MaintenanceWindowTask>>)`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput::tasks): <p>Information about the tasks in the maintenance window.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTasksError>`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError)
-    pub fn describe_maintenance_window_tasks(
-        &self,
-    ) -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder {
-        crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTasksError>`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError)
+    pub fn describe_maintenance_window_tasks(&self) -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder {
+                                crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

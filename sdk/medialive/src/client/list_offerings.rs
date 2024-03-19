@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOfferings`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_class(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::channel_class) / [`set_channel_class(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_channel_class):<br>required: **false**<br>Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'<br>
     ///   - [`channel_configuration(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::channel_configuration) / [`set_channel_configuration(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_channel_configuration):<br>required: **false**<br>Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)<br>
     ///   - [`codec(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::codec) / [`set_codec(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_codec):<br>required: **false**<br>Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'<br>
@@ -16,11 +16,12 @@ impl super::Client {
     ///   - [`resource_type(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_resource_type):<br>required: **false**<br>Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'<br>
     ///   - [`special_feature(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::special_feature) / [`set_special_feature(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_special_feature):<br>required: **false**<br>Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'<br>
     ///   - [`video_quality(impl Into<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::video_quality) / [`set_video_quality(Option<String>)`](crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::set_video_quality):<br>required: **false**<br>Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'<br>
-    /// - On success, responds with [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput) with field(s):
+                            /// - On success, responds with [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_offerings::ListOfferingsOutput::next_token): Token to retrieve the next page of results
     ///   - [`offerings(Option<Vec::<Offering>>)`](crate::operation::list_offerings::ListOfferingsOutput::offerings): List of offerings
-    /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
+                            /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::operation::list_offerings::ListOfferingsError)
     pub fn list_offerings(&self) -> crate::operation::list_offerings::builders::ListOfferingsFluentBuilder {
-        crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_offerings::builders::ListOfferingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_featured_results_set::_update_featured_results_
 
 impl UpdateFeaturedResultsSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_featured_results_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_featured_results_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFeaturedResultsSet`.
-///
+/// 
 /// <p>Updates a set of featured results. Features results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match of a query, then one or more specific documents are featured in the search results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeaturedResultsSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder,
+                    inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-    > for UpdateFeaturedResultsSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
+                    crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+                > for UpdateFeaturedResultsSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
+                        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFeaturedResultsSetFluentBuilder {
     /// Creates a new `UpdateFeaturedResultsSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_featured_results_set::UpdateFeaturedResultsSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
-        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_featured_results_set::UpdateFeaturedResultsSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_featured_results_set::UpdateFeaturedResultsSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput, crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index used for featuring results.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -188,12 +175,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_texts(input);
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_query_texts()
     }
     /// Appends an item to `FeaturedDocuments`.
@@ -206,12 +193,13 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
+    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>) -> Self {
         self.inner = self.inner.set_featured_documents(input);
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>> {
         self.inner.get_featured_documents()
     }
 }
+

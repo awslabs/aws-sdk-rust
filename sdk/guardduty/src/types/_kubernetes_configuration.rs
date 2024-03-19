@@ -3,13 +3,13 @@
 /// <p>Describes whether any Kubernetes data sources are enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesConfiguration {
+pub struct KubernetesConfiguration  {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
 }
-impl KubernetesConfiguration {
+impl  KubernetesConfiguration  {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::KubernetesAuditLogsConfiguration> {
+    pub fn audit_logs(&self) -> ::std::option::Option<& crate::types::KubernetesAuditLogsConfiguration> {
         self.audit_logs.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl KubernetesConfigurationBuilder {
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>) -> Self {
-        self.audit_logs = input;
-        self
+        self.audit_logs = input; self
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::KubernetesAuditLogsConfiguration> {
@@ -44,6 +43,10 @@ impl KubernetesConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesConfiguration`](crate::types::KubernetesConfiguration).
     pub fn build(self) -> crate::types::KubernetesConfiguration {
-        crate::types::KubernetesConfiguration { audit_logs: self.audit_logs }
+        crate::types::KubernetesConfiguration {
+            audit_logs: self.audit_logs
+            ,
+        }
     }
 }
+

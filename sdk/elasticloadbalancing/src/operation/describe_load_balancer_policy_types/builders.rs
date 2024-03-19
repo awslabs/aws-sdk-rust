@@ -5,56 +5,52 @@ pub use crate::operation::describe_load_balancer_policy_types::_describe_load_ba
 
 impl DescribeLoadBalancerPolicyTypesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_load_balancer_policy_types();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_load_balancer_policy_types();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeLoadBalancerPolicyTypes`.
-///
+/// 
 /// <p>Describes the specified load balancer policy types or all load balancer policy types.</p>
 /// <p>The description of each type indicates how it can be used. For example, some policies can be used only with layer 7 listeners, some policies can be used only with layer 4 listeners, and some policies can be used only with your EC2 instances.</p>
 /// <p>You can use <code>CreateLoadBalancerPolicy</code> to create a policy configuration for any of these policy types. Then, depending on the policy type, use either <code>SetLoadBalancerPoliciesOfListener</code> or <code>SetLoadBalancerPoliciesForBackendServer</code> to set the policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder,
+                    inner: crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-    > for DescribeLoadBalancerPolicyTypesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
+                    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
+                > for DescribeLoadBalancerPolicyTypesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
+                        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeLoadBalancerPolicyTypesFluentBuilder {
     /// Creates a new `DescribeLoadBalancerPolicyTypes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DescribeLoadBalancerPolicyTypesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
-        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput, crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `PolicyTypeNames`.
     ///
     /// To override the contents of this collection use [`set_policy_type_names`](Self::set_policy_type_names).
@@ -120,12 +107,13 @@ impl DescribeLoadBalancerPolicyTypesFluentBuilder {
         self
     }
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn set_policy_type_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_policy_type_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_type_names(input);
         self
     }
     /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-    pub fn get_policy_type_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_type_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_policy_type_names()
     }
 }
+

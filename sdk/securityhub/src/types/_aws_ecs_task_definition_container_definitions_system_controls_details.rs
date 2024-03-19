@@ -3,19 +3,19 @@
 /// <p>A namespaced kernel parameter to set in the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails  {
     /// <p>The namespaced kernel parameter for which to set a value.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails  {
     /// <p>The namespaced kernel parameter for which to set a value.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     }
     /// <p>The namespaced kernel parameter for which to set a value.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespaced kernel parameter for which to set a value.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     }
     /// <p>The value of the parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
-            namespace: self.namespace,
-            value: self.value,
+            namespace: self.namespace
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tgwstatus = unimplemented!();
 /// match tgwstatus {
@@ -33,16 +33,14 @@
 /// Specifically, when `tgwstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TgwStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TgwStatus {
     #[allow(missing_docs)] // documentation missing in model
     FailedUpdate,
@@ -56,70 +54,71 @@ pub enum TgwStatus {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TgwStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED_UPDATE" => TgwStatus::FailedUpdate,
-            "NONE" => TgwStatus::None,
-            "SUCCESSFULLY_UPDATED" => TgwStatus::SuccessfullyUpdated,
-            "UPDATE_REQUESTED" => TgwStatus::UpdateRequested,
-            "UPDATING" => TgwStatus::Updating,
-            other => TgwStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FAILED_UPDATE" => TgwStatus::FailedUpdate,
+"NONE" => TgwStatus::None,
+"SUCCESSFULLY_UPDATED" => TgwStatus::SuccessfullyUpdated,
+"UPDATE_REQUESTED" => TgwStatus::UpdateRequested,
+"UPDATING" => TgwStatus::Updating,
+other => TgwStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TgwStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TgwStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TgwStatus::from(s))
+                    }
+                }
 impl TgwStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TgwStatus::FailedUpdate => "FAILED_UPDATE",
-            TgwStatus::None => "NONE",
-            TgwStatus::SuccessfullyUpdated => "SUCCESSFULLY_UPDATED",
-            TgwStatus::UpdateRequested => "UPDATE_REQUESTED",
-            TgwStatus::Updating => "UPDATING",
-            TgwStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FAILED_UPDATE", "NONE", "SUCCESSFULLY_UPDATED", "UPDATE_REQUESTED", "UPDATING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TgwStatus::FailedUpdate => "FAILED_UPDATE",
+    TgwStatus::None => "NONE",
+    TgwStatus::SuccessfullyUpdated => "SUCCESSFULLY_UPDATED",
+    TgwStatus::UpdateRequested => "UPDATE_REQUESTED",
+    TgwStatus::Updating => "UPDATING",
+    TgwStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED_UPDATE", "NONE", "SUCCESSFULLY_UPDATED", "UPDATE_REQUESTED", "UPDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TgwStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TgwStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TgwStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TgwStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
-            TgwStatus::None => write!(f, "NONE"),
-            TgwStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
-            TgwStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
-            TgwStatus::Updating => write!(f, "UPDATING"),
-            TgwStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TgwStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
+TgwStatus::None => write!(f, "NONE"),
+TgwStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
+TgwStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
+TgwStatus::Updating => write!(f, "UPDATING"),
+TgwStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -5,55 +5,51 @@ pub use crate::operation::validate_sol_network_package_content::_validate_sol_ne
 
 impl ValidateSolNetworkPackageContentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.validate_sol_network_package_content();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.validate_sol_network_package_content();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ValidateSolNetworkPackageContent`.
-///
+/// 
 /// <p>Validates network package content. This can be used as a dry run before uploading network package content with <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p>
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder,
+                    inner: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
-    > for ValidateSolNetworkPackageContentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
+                    crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
+                > for ValidateSolNetworkPackageContentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
+                        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ValidateSolNetworkPackageContentFluentBuilder {
     /// Creates a new `ValidateSolNetworkPackageContent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContent::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput, crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Network service descriptor file.</p>
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nsd_info_id(input.into());
@@ -152,3 +139,4 @@ impl ValidateSolNetworkPackageContentFluentBuilder {
         self.inner.get_file()
     }
 }
+

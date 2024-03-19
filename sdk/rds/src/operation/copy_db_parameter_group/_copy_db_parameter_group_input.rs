@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyDbParameterGroupInput {
+pub struct CopyDbParameterGroupInput  {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -28,16 +28,16 @@ pub struct CopyDbParameterGroupInput {
     /// <p>A description for the copied DB parameter group.</p>
     pub target_db_parameter_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CopyDbParameterGroupInput {
+impl  CopyDbParameterGroupInput  {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must specify a valid DB parameter group.</p></li>
     /// </ul>
-    pub fn source_db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_db_parameter_group_identifier(&self) -> ::std::option::Option<& str> {
         self.source_db_parameter_group_identifier.as_deref()
     }
     /// <p>The identifier for the copied DB parameter group.</p>
@@ -53,18 +53,19 @@ impl CopyDbParameterGroupInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code></p>
-    pub fn target_db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_parameter_group_identifier(&self) -> ::std::option::Option<& str> {
         self.target_db_parameter_group_identifier.as_deref()
     }
     /// <p>A description for the copied DB parameter group.</p>
-    pub fn target_db_parameter_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_parameter_group_description(&self) -> ::std::option::Option<& str> {
         self.target_db_parameter_group_description.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CopyDbParameterGroupInput {
@@ -81,7 +82,7 @@ pub struct CopyDbParameterGroupInputBuilder {
     pub(crate) source_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_parameter_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CopyDbParameterGroupInputBuilder {
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -102,8 +103,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// <p>Must specify a valid DB parameter group.</p></li>
     /// </ul>
     pub fn set_source_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_db_parameter_group_identifier = input;
-        self
+        self.source_db_parameter_group_identifier = input; self
     }
     /// <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -146,8 +146,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code></p>
     pub fn set_target_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_parameter_group_identifier = input;
-        self
+        self.target_db_parameter_group_identifier = input; self
     }
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -173,8 +172,7 @@ impl CopyDbParameterGroupInputBuilder {
     }
     /// <p>A description for the copied DB parameter group.</p>
     pub fn set_target_db_parameter_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_parameter_group_description = input;
-        self
+        self.target_db_parameter_group_description = input; self
     }
     /// <p>A description for the copied DB parameter group.</p>
     pub fn get_target_db_parameter_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,29 +185,32 @@ impl CopyDbParameterGroupInputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyDbParameterGroupInput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput {
-            source_db_parameter_group_identifier: self.source_db_parameter_group_identifier,
-            target_db_parameter_group_identifier: self.target_db_parameter_group_identifier,
-            target_db_parameter_group_description: self.target_db_parameter_group_description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput {
+                source_db_parameter_group_identifier: self.source_db_parameter_group_identifier
+                ,
+                target_db_parameter_group_identifier: self.target_db_parameter_group_identifier
+                ,
+                target_db_parameter_group_description: self.target_db_parameter_group_description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

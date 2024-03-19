@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceRequestsInput {
+pub struct ListResourceRequestsInput  {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,18 +11,18 @@ pub struct ListResourceRequestsInput {
     /// <p>The filter criteria to apply to the requests returned.</p>
     pub resource_request_status_filter: ::std::option::Option<crate::types::ResourceRequestStatusFilter>,
 }
-impl ListResourceRequestsInput {
+impl  ListResourceRequestsInput  {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
-    pub fn resource_request_status_filter(&self) -> ::std::option::Option<&crate::types::ResourceRequestStatusFilter> {
+    pub fn resource_request_status_filter(&self) -> ::std::option::Option<& crate::types::ResourceRequestStatusFilter> {
         self.resource_request_status_filter.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ListResourceRequestsInputBuilder {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
@@ -66,8 +65,7 @@ impl ListResourceRequestsInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,22 +78,24 @@ impl ListResourceRequestsInputBuilder {
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
     pub fn set_resource_request_status_filter(mut self, input: ::std::option::Option<crate::types::ResourceRequestStatusFilter>) -> Self {
-        self.resource_request_status_filter = input;
-        self
+        self.resource_request_status_filter = input; self
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
     pub fn get_resource_request_status_filter(&self) -> &::std::option::Option<crate::types::ResourceRequestStatusFilter> {
         &self.resource_request_status_filter
     }
     /// Consumes the builder and constructs a [`ListResourceRequestsInput`](crate::operation::list_resource_requests::ListResourceRequestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resource_requests::ListResourceRequestsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resource_requests::ListResourceRequestsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            resource_request_status_filter: self.resource_request_status_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_requests::ListResourceRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_requests::ListResourceRequestsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                resource_request_status_filter: self.resource_request_status_filter
+                ,
+            }
+        )
     }
 }
+

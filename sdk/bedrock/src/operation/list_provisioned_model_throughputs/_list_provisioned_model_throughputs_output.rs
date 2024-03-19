@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisionedModelThroughputsOutput {
+pub struct ListProvisionedModelThroughputsOutput  {
     /// <p>Continuation token for the next request to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
-    pub provisioned_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>,
+    pub provisioned_model_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedModelSummary>>,
     _request_id: Option<String>,
 }
-impl ListProvisionedModelThroughputsOutput {
+impl  ListProvisionedModelThroughputsOutput  {
     /// <p>Continuation token for the next request to list the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_model_summaries.is_none()`.
-    pub fn provisioned_model_summaries(&self) -> &[crate::types::ProvisionedModelSummary] {
-        self.provisioned_model_summaries.as_deref().unwrap_or_default()
+    pub fn provisioned_model_summaries(&self) -> & [crate::types::ProvisionedModelSummary] {
+        self.provisioned_model_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProvisionedModelThroughputsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProvisionedModelThroughputsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedModelThroughputsOutput`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput).
     pub fn builder() -> crate::operation::list_provisioned_model_throughputs::builders::ListProvisionedModelThroughputsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListProvisionedModelThroughputsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisionedModelThroughputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>,
+    pub(crate) provisioned_model_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedModelSummary>>,
     _request_id: Option<String>,
 }
 impl ListProvisionedModelThroughputsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListProvisionedModelThroughputsOutputBuilder {
     }
     /// <p>Continuation token for the next request to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Continuation token for the next request to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListProvisionedModelThroughputsOutputBuilder {
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
     pub fn provisioned_model_summaries(mut self, input: crate::types::ProvisionedModelSummary) -> Self {
         let mut v = self.provisioned_model_summaries.unwrap_or_default();
-        v.push(input);
-        self.provisioned_model_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_model_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
-    pub fn set_provisioned_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>) -> Self {
-        self.provisioned_model_summaries = input;
-        self
+    pub fn set_provisioned_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedModelSummary>>) -> Self {
+        self.provisioned_model_summaries = input; self
     }
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
-    pub fn get_provisioned_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>> {
+    pub fn get_provisioned_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedModelSummary>> {
         &self.provisioned_model_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProvisionedModelThroughputsOutput`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput).
     pub fn build(self) -> crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput {
         crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput {
-            next_token: self.next_token,
-            provisioned_model_summaries: self.provisioned_model_summaries,
+            next_token: self.next_token
+            ,
+            provisioned_model_summaries: self.provisioned_model_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

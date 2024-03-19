@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWebExperienceOutput {
+pub struct GetWebExperienceOutput  {
     /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q web experience.</p>
@@ -31,65 +31,65 @@ pub struct GetWebExperienceOutput {
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     _request_id: Option<String>,
 }
-impl GetWebExperienceOutput {
+impl  GetWebExperienceOutput  {
     /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
-    pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_experience_id(&self) -> ::std::option::Option<& str> {
         self.web_experience_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role with the permission to access the Amazon Q web experience and required resources.</p>
-    pub fn web_experience_arn(&self) -> ::std::option::Option<&str> {
+    pub fn web_experience_arn(&self) -> ::std::option::Option<& str> {
         self.web_experience_arn.as_deref()
     }
     /// <p>The endpoint of your Amazon Q web experience.</p>
-    pub fn default_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn default_endpoint(&self) -> ::std::option::Option<& str> {
         self.default_endpoint.as_deref()
     }
     /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WebExperienceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WebExperienceStatus> {
         self.status.as_ref()
     }
     /// <p>The Unix timestamp when the retriever was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The title for your Amazon Q web experience.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The subtitle for your Amazon Q web experience.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&str> {
+    pub fn subtitle(&self) -> ::std::option::Option<& str> {
         self.subtitle.as_deref()
     }
     /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
-    pub fn welcome_message(&self) -> ::std::option::Option<&str> {
+    pub fn welcome_message(&self) -> ::std::option::Option<& str> {
         self.welcome_message.as_deref()
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
-    pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
+    pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<& crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
     }
     /// <p>The authentication configuration information for your Amazon Q web experience.</p>
-    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebExperienceAuthConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<& crate::types::WebExperienceAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWebExperienceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWebExperienceOutput {
     /// Creates a new builder-style object to manufacture [`GetWebExperienceOutput`](crate::operation::get_web_experience::GetWebExperienceOutput).
     pub fn builder() -> crate::operation::get_web_experience::builders::GetWebExperienceOutputBuilder {
@@ -124,8 +124,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_experience_id = input;
-        self
+        self.web_experience_id = input; self
     }
     /// <p>The identifier of the Amazon Q web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role with the permission to access the Amazon Q web experience and required resources.</p>
     pub fn set_web_experience_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_experience_arn = input;
-        self
+        self.web_experience_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role with the permission to access the Amazon Q web experience and required resources.</p>
     pub fn get_web_experience_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +163,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The endpoint of your Amazon Q web experience.</p>
     pub fn set_default_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_endpoint = input;
-        self
+        self.default_endpoint = input; self
     }
     /// <p>The endpoint of your Amazon Q web experience.</p>
     pub fn get_default_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +176,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WebExperienceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the Amazon Q web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WebExperienceStatus> {
@@ -194,8 +189,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The Unix timestamp when the retriever was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the retriever was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +202,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,8 +215,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The title for your Amazon Q web experience.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title for your Amazon Q web experience.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +228,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The subtitle for your Amazon Q web experience.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle for your Amazon Q web experience.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +241,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
     pub fn set_welcome_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.welcome_message = input;
-        self
+        self.welcome_message = input; self
     }
     /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
     pub fn get_welcome_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +254,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn set_sample_prompts_control_mode(mut self, input: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>) -> Self {
-        self.sample_prompts_control_mode = input;
-        self
+        self.sample_prompts_control_mode = input; self
     }
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
@@ -278,8 +267,7 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>The authentication configuration information for your Amazon Q web experience.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>) -> Self {
-        self.authentication_configuration = input;
-        self
+        self.authentication_configuration = input; self
     }
     /// <p>The authentication configuration information for your Amazon Q web experience.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::WebExperienceAuthConfiguration> {
@@ -292,39 +280,52 @@ impl GetWebExperienceOutputBuilder {
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
         &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWebExperienceOutput`](crate::operation::get_web_experience::GetWebExperienceOutput).
     pub fn build(self) -> crate::operation::get_web_experience::GetWebExperienceOutput {
         crate::operation::get_web_experience::GetWebExperienceOutput {
-            application_id: self.application_id,
-            web_experience_id: self.web_experience_id,
-            web_experience_arn: self.web_experience_arn,
-            default_endpoint: self.default_endpoint,
-            status: self.status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            title: self.title,
-            subtitle: self.subtitle,
-            welcome_message: self.welcome_message,
-            sample_prompts_control_mode: self.sample_prompts_control_mode,
-            authentication_configuration: self.authentication_configuration,
-            error: self.error,
+            application_id: self.application_id
+            ,
+            web_experience_id: self.web_experience_id
+            ,
+            web_experience_arn: self.web_experience_arn
+            ,
+            default_endpoint: self.default_endpoint
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            title: self.title
+            ,
+            subtitle: self.subtitle
+            ,
+            welcome_message: self.welcome_message
+            ,
+            sample_prompts_control_mode: self.sample_prompts_control_mode
+            ,
+            authentication_configuration: self.authentication_configuration
+            ,
+            error: self.error
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

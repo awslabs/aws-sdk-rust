@@ -3,7 +3,7 @@
 /// <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the <code>ListEntityRecognizers</code> operation./&gt;</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityRecognizerFilter {
+pub struct EntityRecognizerFilter  {
     /// <p>The status of an entity recognizer.</p>
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>The name that you assigned the entity recognizer.</p>
@@ -13,21 +13,21 @@ pub struct EntityRecognizerFilter {
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub submit_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EntityRecognizerFilter {
+impl  EntityRecognizerFilter  {
     /// <p>The status of an entity recognizer.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The name that you assigned the entity recognizer.</p>
-    pub fn recognizer_name(&self) -> ::std::option::Option<&str> {
+    pub fn recognizer_name(&self) -> ::std::option::Option<& str> {
         self.recognizer_name.as_deref()
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    pub fn submit_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn submit_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EntityRecognizerFilterBuilder {
     }
     /// <p>The status of an entity recognizer.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an entity recognizer.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
@@ -69,8 +68,7 @@ impl EntityRecognizerFilterBuilder {
     }
     /// <p>The name that you assigned the entity recognizer.</p>
     pub fn set_recognizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recognizer_name = input;
-        self
+        self.recognizer_name = input; self
     }
     /// <p>The name that you assigned the entity recognizer.</p>
     pub fn get_recognizer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl EntityRecognizerFilterBuilder {
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn set_submit_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submit_time_before = input;
-        self
+        self.submit_time_before = input; self
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn get_submit_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl EntityRecognizerFilterBuilder {
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn set_submit_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submit_time_after = input;
-        self
+        self.submit_time_after = input; self
     }
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn get_submit_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl EntityRecognizerFilterBuilder {
     /// Consumes the builder and constructs a [`EntityRecognizerFilter`](crate::types::EntityRecognizerFilter).
     pub fn build(self) -> crate::types::EntityRecognizerFilter {
         crate::types::EntityRecognizerFilter {
-            status: self.status,
-            recognizer_name: self.recognizer_name,
-            submit_time_before: self.submit_time_before,
-            submit_time_after: self.submit_time_after,
+            status: self.status
+            ,
+            recognizer_name: self.recognizer_name
+            ,
+            submit_time_before: self.submit_time_before
+            ,
+            submit_time_after: self.submit_time_after
+            ,
         }
     }
 }
+

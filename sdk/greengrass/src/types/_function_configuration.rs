@@ -3,7 +3,7 @@
 /// The configuration of the Lambda function.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionConfiguration {
+pub struct FunctionConfiguration  {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// The environment configuration of the function.
@@ -21,21 +21,21 @@ pub struct FunctionConfiguration {
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
     pub function_runtime_override: ::std::option::Option<::std::string::String>,
 }
-impl FunctionConfiguration {
+impl  FunctionConfiguration  {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
-    pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding_type(&self) -> ::std::option::Option<& crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
     /// The environment configuration of the function.
-    pub fn environment(&self) -> ::std::option::Option<&crate::types::FunctionConfigurationEnvironment> {
+    pub fn environment(&self) -> ::std::option::Option<& crate::types::FunctionConfigurationEnvironment> {
         self.environment.as_ref()
     }
     /// The execution arguments.
-    pub fn exec_args(&self) -> ::std::option::Option<&str> {
+    pub fn exec_args(&self) -> ::std::option::Option<& str> {
         self.exec_args.as_deref()
     }
     /// The name of the function executable.
-    pub fn executable(&self) -> ::std::option::Option<&str> {
+    pub fn executable(&self) -> ::std::option::Option<& str> {
         self.executable.as_deref()
     }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
@@ -51,7 +51,7 @@ impl FunctionConfiguration {
         self.timeout
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-    pub fn function_runtime_override(&self) -> ::std::option::Option<&str> {
+    pub fn function_runtime_override(&self) -> ::std::option::Option<& str> {
         self.function_runtime_override.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The expected encoding type of the input payload for the function. The default is ''json''.
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
-        self.encoding_type = input;
-        self
+        self.encoding_type = input; self
     }
     /// The expected encoding type of the input payload for the function. The default is ''json''.
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
@@ -97,8 +96,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The environment configuration of the function.
     pub fn set_environment(mut self, input: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>) -> Self {
-        self.environment = input;
-        self
+        self.environment = input; self
     }
     /// The environment configuration of the function.
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::FunctionConfigurationEnvironment> {
@@ -111,8 +109,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The execution arguments.
     pub fn set_exec_args(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exec_args = input;
-        self
+        self.exec_args = input; self
     }
     /// The execution arguments.
     pub fn get_exec_args(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The name of the function executable.
     pub fn set_executable(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.executable = input;
-        self
+        self.executable = input; self
     }
     /// The name of the function executable.
     pub fn get_executable(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
     pub fn set_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_size = input;
-        self
+        self.memory_size = input; self
     }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
     pub fn get_memory_size(&self) -> &::std::option::Option<i32> {
@@ -153,8 +148,7 @@ impl FunctionConfigurationBuilder {
     }
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
     pub fn set_pinned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.pinned = input;
-        self
+        self.pinned = input; self
     }
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
     pub fn get_pinned(&self) -> &::std::option::Option<bool> {
@@ -167,8 +161,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -181,8 +174,7 @@ impl FunctionConfigurationBuilder {
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
     pub fn set_function_runtime_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_runtime_override = input;
-        self
+        self.function_runtime_override = input; self
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
     pub fn get_function_runtime_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl FunctionConfigurationBuilder {
     /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::types::FunctionConfiguration).
     pub fn build(self) -> crate::types::FunctionConfiguration {
         crate::types::FunctionConfiguration {
-            encoding_type: self.encoding_type,
-            environment: self.environment,
-            exec_args: self.exec_args,
-            executable: self.executable,
-            memory_size: self.memory_size,
-            pinned: self.pinned,
-            timeout: self.timeout,
-            function_runtime_override: self.function_runtime_override,
+            encoding_type: self.encoding_type
+            ,
+            environment: self.environment
+            ,
+            exec_args: self.exec_args
+            ,
+            executable: self.executable
+            ,
+            memory_size: self.memory_size
+            ,
+            pinned: self.pinned
+            ,
+            timeout: self.timeout
+            ,
+            function_runtime_override: self.function_runtime_override
+            ,
         }
     }
 }
+

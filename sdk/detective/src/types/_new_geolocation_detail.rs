@@ -3,7 +3,7 @@
 /// <p>Details new geolocations used either at the resource or account level. For example, lists an observed geolocation that is an infrequent or unused location based on previous user activity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewGeolocationDetail {
+pub struct NewGeolocationDetail  {
     /// <p>Location where the resource was accessed.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>IP address using which the resource was accessed.</p>
@@ -11,13 +11,13 @@ pub struct NewGeolocationDetail {
     /// <p>Checks if the geolocation is new for the entire account.</p>
     pub is_new_for_entire_account: bool,
 }
-impl NewGeolocationDetail {
+impl  NewGeolocationDetail  {
     /// <p>Location where the resource was accessed.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>IP address using which the resource was accessed.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>Checks if the geolocation is new for the entire account.</p>
@@ -48,8 +48,7 @@ impl NewGeolocationDetailBuilder {
     }
     /// <p>Location where the resource was accessed.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Location where the resource was accessed.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl NewGeolocationDetailBuilder {
     }
     /// <p>IP address using which the resource was accessed.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IP address using which the resource was accessed.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl NewGeolocationDetailBuilder {
     }
     /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn set_is_new_for_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_new_for_entire_account = input;
-        self
+        self.is_new_for_entire_account = input; self
     }
     /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn get_is_new_for_entire_account(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,14 @@ impl NewGeolocationDetailBuilder {
     /// Consumes the builder and constructs a [`NewGeolocationDetail`](crate::types::NewGeolocationDetail).
     pub fn build(self) -> crate::types::NewGeolocationDetail {
         crate::types::NewGeolocationDetail {
-            location: self.location,
-            ip_address: self.ip_address,
-            is_new_for_entire_account: self.is_new_for_entire_account.unwrap_or_default(),
+            location: self.location
+            ,
+            ip_address: self.ip_address
+            ,
+            is_new_for_entire_account: self.is_new_for_entire_account
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

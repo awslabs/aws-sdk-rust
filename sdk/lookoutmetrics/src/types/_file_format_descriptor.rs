@@ -3,19 +3,19 @@
 /// <p>Contains information about a source file's formatting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileFormatDescriptor {
+pub struct FileFormatDescriptor  {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
     pub csv_format_descriptor: ::std::option::Option<crate::types::CsvFormatDescriptor>,
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
     pub json_format_descriptor: ::std::option::Option<crate::types::JsonFormatDescriptor>,
 }
-impl FileFormatDescriptor {
+impl  FileFormatDescriptor  {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    pub fn csv_format_descriptor(&self) -> ::std::option::Option<&crate::types::CsvFormatDescriptor> {
+    pub fn csv_format_descriptor(&self) -> ::std::option::Option<& crate::types::CsvFormatDescriptor> {
         self.csv_format_descriptor.as_ref()
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    pub fn json_format_descriptor(&self) -> ::std::option::Option<&crate::types::JsonFormatDescriptor> {
+    pub fn json_format_descriptor(&self) -> ::std::option::Option<& crate::types::JsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl FileFormatDescriptorBuilder {
     }
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
     pub fn set_csv_format_descriptor(mut self, input: ::std::option::Option<crate::types::CsvFormatDescriptor>) -> Self {
-        self.csv_format_descriptor = input;
-        self
+        self.csv_format_descriptor = input; self
     }
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
     pub fn get_csv_format_descriptor(&self) -> &::std::option::Option<crate::types::CsvFormatDescriptor> {
@@ -55,8 +54,7 @@ impl FileFormatDescriptorBuilder {
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
     pub fn set_json_format_descriptor(mut self, input: ::std::option::Option<crate::types::JsonFormatDescriptor>) -> Self {
-        self.json_format_descriptor = input;
-        self
+        self.json_format_descriptor = input; self
     }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
     pub fn get_json_format_descriptor(&self) -> &::std::option::Option<crate::types::JsonFormatDescriptor> {
@@ -65,8 +63,11 @@ impl FileFormatDescriptorBuilder {
     /// Consumes the builder and constructs a [`FileFormatDescriptor`](crate::types::FileFormatDescriptor).
     pub fn build(self) -> crate::types::FileFormatDescriptor {
         crate::types::FileFormatDescriptor {
-            csv_format_descriptor: self.csv_format_descriptor,
-            json_format_descriptor: self.json_format_descriptor,
+            csv_format_descriptor: self.csv_format_descriptor
+            ,
+            json_format_descriptor: self.json_format_descriptor
+            ,
         }
     }
 }
+

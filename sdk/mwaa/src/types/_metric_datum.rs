@@ -4,13 +4,13 @@
 #[deprecated(note = "This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDatum {
+pub struct MetricDatum  {
     /// <p><b>Internal only</b>. The name of the metric.</p>
     pub metric_name: ::std::string::String,
     /// <p><b>Internal only</b>. The time the metric data was received.</p>
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     /// <p><b>Internal only</b>. The value for the metric.</p>
     pub value: ::std::option::Option<f64>,
     /// <p><b>Internal only</b>. The unit used to store the metric.</p>
@@ -18,32 +18,32 @@ pub struct MetricDatum {
     /// <p><b>Internal only</b>. The statistical values for the metric.</p>
     pub statistic_values: ::std::option::Option<crate::types::StatisticSet>,
 }
-impl MetricDatum {
+impl  MetricDatum  {
     /// <p><b>Internal only</b>. The name of the metric.</p>
-    pub fn metric_name(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_name.deref()
+    pub fn metric_name(&self) -> & str {
+        use std::ops::Deref; self.metric_name.deref()
     }
     /// <p><b>Internal only</b>. The time the metric data was received.</p>
-    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.timestamp
     }
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::Dimension] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::Dimension] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p><b>Internal only</b>. The value for the metric.</p>
     pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p><b>Internal only</b>. The unit used to store the metric.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::Unit> {
         self.unit.as_ref()
     }
     /// <p><b>Internal only</b>. The statistical values for the metric.</p>
-    pub fn statistic_values(&self) -> ::std::option::Option<&crate::types::StatisticSet> {
+    pub fn statistic_values(&self) -> ::std::option::Option<& crate::types::StatisticSet> {
         self.statistic_values.as_ref()
     }
 }
@@ -60,7 +60,7 @@ impl MetricDatum {
 pub struct MetricDatumBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,
     pub(crate) statistic_values: ::std::option::Option<crate::types::StatisticSet>,
@@ -74,8 +74,7 @@ impl MetricDatumBuilder {
     }
     /// <p><b>Internal only</b>. The name of the metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p><b>Internal only</b>. The name of the metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl MetricDatumBuilder {
     }
     /// <p><b>Internal only</b>. The time the metric data was received.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p><b>Internal only</b>. The time the metric data was received.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,17 +101,16 @@ impl MetricDatumBuilder {
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p><b>Internal only</b>. The value for the metric.</p>
@@ -123,8 +120,7 @@ impl MetricDatumBuilder {
     }
     /// <p><b>Internal only</b>. The value for the metric.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p><b>Internal only</b>. The value for the metric.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -137,8 +133,7 @@ impl MetricDatumBuilder {
     }
     /// <p><b>Internal only</b>. The unit used to store the metric.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p><b>Internal only</b>. The unit used to store the metric.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
@@ -151,8 +146,7 @@ impl MetricDatumBuilder {
     }
     /// <p><b>Internal only</b>. The statistical values for the metric.</p>
     pub fn set_statistic_values(mut self, input: ::std::option::Option<crate::types::StatisticSet>) -> Self {
-        self.statistic_values = input;
-        self
+        self.statistic_values = input; self
     }
     /// <p><b>Internal only</b>. The statistical values for the metric.</p>
     pub fn get_statistic_values(&self) -> &::std::option::Option<crate::types::StatisticSet> {
@@ -163,23 +157,28 @@ impl MetricDatumBuilder {
     /// - [`metric_name`](crate::types::builders::MetricDatumBuilder::metric_name)
     /// - [`timestamp`](crate::types::builders::MetricDatumBuilder::timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricDatum, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricDatum {
-            metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_name",
-                    "metric_name was not specified but it is required when building MetricDatum",
-                )
-            })?,
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building MetricDatum",
-                )
-            })?,
-            dimensions: self.dimensions,
-            value: self.value,
-            unit: self.unit,
-            statistic_values: self.statistic_values,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricDatum {
+                metric_name: self.metric_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "metric_name was not specified but it is required when building MetricDatum")
+                    )?
+                ,
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building MetricDatum")
+                    )?
+                ,
+                dimensions: self.dimensions
+                ,
+                value: self.value
+                ,
+                unit: self.unit
+                ,
+                statistic_values: self.statistic_values
+                ,
+            }
+        )
     }
 }
+

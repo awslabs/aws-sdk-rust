@@ -3,18 +3,19 @@
 /// <p>An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableExcerpt {
+pub struct TableExcerpt  {
     /// <p>A list of rows in the table excerpt.</p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
+    pub rows: ::std::option::Option<::std::vec::Vec::<crate::types::TableRow>>,
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub total_number_of_rows: ::std::option::Option<i32>,
 }
-impl TableExcerpt {
+impl  TableExcerpt  {
     /// <p>A list of rows in the table excerpt.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
-    pub fn rows(&self) -> &[crate::types::TableRow] {
-        self.rows.as_deref().unwrap_or_default()
+    pub fn rows(&self) -> & [crate::types::TableRow] {
+        self.rows.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn total_number_of_rows(&self) -> ::std::option::Option<i32> {
@@ -32,7 +33,7 @@ impl TableExcerpt {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableExcerptBuilder {
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::TableRow>>,
     pub(crate) total_number_of_rows: ::std::option::Option<i32>,
 }
 impl TableExcerptBuilder {
@@ -43,17 +44,16 @@ impl TableExcerptBuilder {
     /// <p>A list of rows in the table excerpt.</p>
     pub fn rows(mut self, input: crate::types::TableRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableRow>>) -> Self {
+        self.rows = input; self
     }
     /// <p>A list of rows in the table excerpt.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRow>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableRow>> {
         &self.rows
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
@@ -63,8 +63,7 @@ impl TableExcerptBuilder {
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn set_total_number_of_rows(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_number_of_rows = input;
-        self
+        self.total_number_of_rows = input; self
     }
     /// <p>A count of the number of rows in the original table within the document.</p>
     pub fn get_total_number_of_rows(&self) -> &::std::option::Option<i32> {
@@ -73,8 +72,11 @@ impl TableExcerptBuilder {
     /// Consumes the builder and constructs a [`TableExcerpt`](crate::types::TableExcerpt).
     pub fn build(self) -> crate::types::TableExcerpt {
         crate::types::TableExcerpt {
-            rows: self.rows,
-            total_number_of_rows: self.total_number_of_rows,
+            rows: self.rows
+            ,
+            total_number_of_rows: self.total_number_of_rows
+            ,
         }
     }
 }
+

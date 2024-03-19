@@ -3,7 +3,7 @@
 /// <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceFilters {
+pub struct ResourceFilters  {
     /// <p>The 12-digit source account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -13,21 +13,21 @@ pub struct ResourceFilters {
     /// <p>The source region.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl ResourceFilters {
+impl  ResourceFilters  {
     /// <p>The 12-digit source account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The source region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ResourceFiltersBuilder {
     }
     /// <p>The 12-digit source account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The 12-digit source account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ResourceFiltersBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ResourceFiltersBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ResourceFiltersBuilder {
     }
     /// <p>The source region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The source region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ResourceFiltersBuilder {
     /// Consumes the builder and constructs a [`ResourceFilters`](crate::types::ResourceFilters).
     pub fn build(self) -> crate::types::ResourceFilters {
         crate::types::ResourceFilters {
-            account_id: self.account_id,
-            resource_id: self.resource_id,
-            resource_name: self.resource_name,
-            region: self.region,
+            account_id: self.account_id
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_name: self.resource_name
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

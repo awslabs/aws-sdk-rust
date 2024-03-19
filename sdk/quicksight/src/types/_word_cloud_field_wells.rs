@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WordCloudFieldWells {
+pub struct WordCloudFieldWells  {
     /// <p>The aggregated field wells of a word cloud.</p>
     pub word_cloud_aggregated_field_wells: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
 }
-impl WordCloudFieldWells {
+impl  WordCloudFieldWells  {
     /// <p>The aggregated field wells of a word cloud.</p>
-    pub fn word_cloud_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::WordCloudAggregatedFieldWells> {
+    pub fn word_cloud_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::WordCloudAggregatedFieldWells> {
         self.word_cloud_aggregated_field_wells.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl WordCloudFieldWellsBuilder {
     }
     /// <p>The aggregated field wells of a word cloud.</p>
     pub fn set_word_cloud_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>) -> Self {
-        self.word_cloud_aggregated_field_wells = input;
-        self
+        self.word_cloud_aggregated_field_wells = input; self
     }
     /// <p>The aggregated field wells of a word cloud.</p>
     pub fn get_word_cloud_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::WordCloudAggregatedFieldWells> {
@@ -45,7 +44,9 @@ impl WordCloudFieldWellsBuilder {
     /// Consumes the builder and constructs a [`WordCloudFieldWells`](crate::types::WordCloudFieldWells).
     pub fn build(self) -> crate::types::WordCloudFieldWells {
         crate::types::WordCloudFieldWells {
-            word_cloud_aggregated_field_wells: self.word_cloud_aggregated_field_wells,
+            word_cloud_aggregated_field_wells: self.word_cloud_aggregated_field_wells
+            ,
         }
     }
 }
+

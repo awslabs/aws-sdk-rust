@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetUserPasswordInput {
+pub struct ResetUserPasswordInput  {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl ResetUserPasswordInput {
+impl  ResetUserPasswordInput  {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl ResetUserPasswordInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_user_password::ResetUserPasswordInput {
-            user_id: self.user_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_user_password::ResetUserPasswordInput {
+                user_id: self.user_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

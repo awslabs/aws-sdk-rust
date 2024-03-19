@@ -3,7 +3,7 @@
 /// <p>A structure describing the source of a context.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContextSource {
+pub struct ContextSource  {
     /// <p>The URI of the source.</p>
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source.</p>
@@ -11,17 +11,17 @@ pub struct ContextSource {
     /// <p>The ID of the source.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
 }
-impl ContextSource {
+impl  ContextSource  {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>The type of the source.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The ID of the source.</p>
-    pub fn source_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<& str> {
         self.source_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ContextSourceBuilder {
     }
     /// <p>The URI of the source.</p>
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
     }
     /// <p>The URI of the source.</p>
     pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ContextSourceBuilder {
     }
     /// <p>The type of the source.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of the source.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl ContextSourceBuilder {
     }
     /// <p>The ID of the source.</p>
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The ID of the source.</p>
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl ContextSourceBuilder {
     /// Consumes the builder and constructs a [`ContextSource`](crate::types::ContextSource).
     pub fn build(self) -> crate::types::ContextSource {
         crate::types::ContextSource {
-            source_uri: self.source_uri,
-            source_type: self.source_type,
-            source_id: self.source_id,
+            source_uri: self.source_uri
+            ,
+            source_type: self.source_type
+            ,
+            source_id: self.source_id
+            ,
         }
     }
 }
+

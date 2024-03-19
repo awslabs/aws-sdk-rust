@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeModelPackagingJobInput {
+pub struct DescribeModelPackagingJobInput  {
     /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The job name for the model packaging job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeModelPackagingJobInput {
+impl  DescribeModelPackagingJobInput  {
     /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The job name for the model packaging job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeModelPackagingJobInputBuilder {
     }
     /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeModelPackagingJobInputBuilder {
     }
     /// <p>The job name for the model packaging job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The job name for the model packaging job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
     /// Consumes the builder and constructs a [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput {
-            project_name: self.project_name,
-            job_name: self.job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput {
+                project_name: self.project_name
+                ,
+                job_name: self.job_name
+                ,
+            }
+        )
     }
 }
+

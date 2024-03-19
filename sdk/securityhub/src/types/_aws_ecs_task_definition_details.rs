@@ -3,9 +3,9 @@
 /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionDetails {
+pub struct AwsEcsTaskDefinitionDetails  {
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
+    pub container_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct AwsEcsTaskDefinitionDetails {
     /// <p>The name of a family that this task definition is registered to.</p>
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
+    pub inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -54,24 +54,25 @@ pub struct AwsEcsTaskDefinitionDetails {
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
     pub pid_mode: ::std::option::Option<::std::string::String>,
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
+    pub placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
     /// <p>The configuration details for the App Mesh proxy.</p>
     pub proxy_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requires_compatibilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data volume definitions for the task.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
     /// <p>The status of the task definition.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionDetails {
+impl  AwsEcsTaskDefinitionDetails  {
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
-    pub fn container_definitions(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails] {
-        self.container_definitions.as_deref().unwrap_or_default()
+    pub fn container_definitions(&self) -> & [crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails] {
+        self.container_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
@@ -86,22 +87,23 @@ impl AwsEcsTaskDefinitionDetails {
     /// <li>
     /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
-    pub fn cpu(&self) -> ::std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<& str> {
         self.cpu.as_deref()
     }
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The name of a family that this task definition is registered to.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
-    pub fn inference_accelerators(&self) -> &[crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails] {
-        self.inference_accelerators.as_deref().unwrap_or_default()
+    pub fn inference_accelerators(&self) -> & [crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails] {
+        self.inference_accelerators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -112,12 +114,12 @@ impl AwsEcsTaskDefinitionDetails {
     /// <li>
     /// <p><code>task</code></p></li>
     /// </ul>
-    pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
+    pub fn ipc_mode(&self) -> ::std::option::Option<& str> {
         self.ipc_mode.as_deref()
     }
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
-    pub fn memory(&self) -> ::std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
@@ -131,41 +133,44 @@ impl AwsEcsTaskDefinitionDetails {
     /// <li>
     /// <p><code>none</code></p></li>
     /// </ul>
-    pub fn network_mode(&self) -> ::std::option::Option<&str> {
+    pub fn network_mode(&self) -> ::std::option::Option<& str> {
         self.network_mode.as_deref()
     }
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
-    pub fn pid_mode(&self) -> ::std::option::Option<&str> {
+    pub fn pid_mode(&self) -> ::std::option::Option<& str> {
         self.pid_mode.as_deref()
     }
     /// <p>The placement constraint objects to use for tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
-    pub fn placement_constraints(&self) -> &[crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails] {
-        self.placement_constraints.as_deref().unwrap_or_default()
+    pub fn placement_constraints(&self) -> & [crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails] {
+        self.placement_constraints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
+    pub fn proxy_configuration(&self) -> ::std::option::Option<& crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
         self.proxy_configuration.as_ref()
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
-    pub fn requires_compatibilities(&self) -> &[::std::string::String] {
-        self.requires_compatibilities.as_deref().unwrap_or_default()
+    pub fn requires_compatibilities(&self) -> & [::std::string::String] {
+        self.requires_compatibilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
-    pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_role_arn(&self) -> ::std::option::Option<& str> {
         self.task_role_arn.as_deref()
     }
     /// <p>The data volume definitions for the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::AwsEcsTaskDefinitionVolumesDetails] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::AwsEcsTaskDefinitionVolumesDetails] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the task definition.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -180,20 +185,20 @@ impl AwsEcsTaskDefinitionDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionDetailsBuilder {
-    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
+    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) family: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
+    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     pub(crate) ipc_mode: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) network_mode: ::std::option::Option<::std::string::String>,
     pub(crate) pid_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
+    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
-    pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionDetailsBuilder {
@@ -204,22 +209,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The container definitions that describe the containers that make up the task.</p>
     pub fn container_definitions(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails) -> Self {
         let mut v = self.container_definitions.unwrap_or_default();
-        v.push(input);
-        self.container_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.container_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub fn set_container_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
-    ) -> Self {
-        self.container_definitions = input;
-        self
+    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>) -> Self {
+        self.container_definitions = input; self
     }
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub fn get_container_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>> {
+    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>> {
         &self.container_definitions
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
@@ -253,8 +252,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
@@ -279,8 +277,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +290,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The name of a family that this task definition is registered to.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
     }
     /// <p>The name of a family that this task definition is registered to.</p>
     pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,22 +303,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     pub fn inference_accelerators(mut self, input: crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails) -> Self {
         let mut v = self.inference_accelerators.unwrap_or_default();
-        v.push(input);
-        self.inference_accelerators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_accelerators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn set_inference_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
-    ) -> Self {
-        self.inference_accelerators = input;
-        self
+    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>) -> Self {
+        self.inference_accelerators = input; self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn get_inference_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>> {
+    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>> {
         &self.inference_accelerators
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
@@ -348,8 +338,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p><code>task</code></p></li>
     /// </ul>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipc_mode = input;
-        self
+        self.ipc_mode = input; self
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -372,8 +361,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
@@ -407,8 +395,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p><code>none</code></p></li>
     /// </ul>
     pub fn set_network_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_mode = input;
-        self
+        self.network_mode = input; self
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -431,8 +418,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
     pub fn set_pid_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pid_mode = input;
-        self
+        self.pid_mode = input; self
     }
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
     pub fn get_pid_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -445,22 +431,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The placement constraint objects to use for tasks.</p>
     pub fn placement_constraints(mut self, input: crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails) -> Self {
         let mut v = self.placement_constraints.unwrap_or_default();
-        v.push(input);
-        self.placement_constraints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.placement_constraints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub fn set_placement_constraints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
-    ) -> Self {
-        self.placement_constraints = input;
-        self
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>) -> Self {
+        self.placement_constraints = input; self
     }
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub fn get_placement_constraints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>> {
         &self.placement_constraints
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
@@ -470,8 +450,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
     pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>) -> Self {
-        self.proxy_configuration = input;
-        self
+        self.proxy_configuration = input; self
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
     pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
@@ -484,17 +463,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The task launch types that the task definition was validated against.</p>
     pub fn requires_compatibilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
-        v.push(input.into());
-        self.requires_compatibilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.requires_compatibilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.requires_compatibilities = input;
-        self
+    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.requires_compatibilities = input; self
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.requires_compatibilities
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
@@ -504,8 +482,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
     pub fn set_task_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_role_arn = input;
-        self
+        self.task_role_arn = input; self
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
     pub fn get_task_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -518,17 +495,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The data volume definitions for the task.</p>
     pub fn volumes(mut self, input: crate::types::AwsEcsTaskDefinitionVolumesDetails) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionVolumesDetails>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEcsTaskDefinitionVolumesDetails>> {
         &self.volumes
     }
     /// <p>The status of the task definition.</p>
@@ -538,8 +514,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The status of the task definition.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task definition.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -548,21 +523,37 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionDetails {
         crate::types::AwsEcsTaskDefinitionDetails {
-            container_definitions: self.container_definitions,
-            cpu: self.cpu,
-            execution_role_arn: self.execution_role_arn,
-            family: self.family,
-            inference_accelerators: self.inference_accelerators,
-            ipc_mode: self.ipc_mode,
-            memory: self.memory,
-            network_mode: self.network_mode,
-            pid_mode: self.pid_mode,
-            placement_constraints: self.placement_constraints,
-            proxy_configuration: self.proxy_configuration,
-            requires_compatibilities: self.requires_compatibilities,
-            task_role_arn: self.task_role_arn,
-            volumes: self.volumes,
-            status: self.status,
+            container_definitions: self.container_definitions
+            ,
+            cpu: self.cpu
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            family: self.family
+            ,
+            inference_accelerators: self.inference_accelerators
+            ,
+            ipc_mode: self.ipc_mode
+            ,
+            memory: self.memory
+            ,
+            network_mode: self.network_mode
+            ,
+            pid_mode: self.pid_mode
+            ,
+            placement_constraints: self.placement_constraints
+            ,
+            proxy_configuration: self.proxy_configuration
+            ,
+            requires_compatibilities: self.requires_compatibilities
+            ,
+            task_role_arn: self.task_role_arn
+            ,
+            volumes: self.volumes
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

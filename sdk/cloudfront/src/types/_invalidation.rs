@@ -3,7 +3,7 @@
 /// <p>An invalidation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Invalidation {
+pub struct Invalidation  {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
     pub id: ::std::string::String,
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
@@ -13,23 +13,21 @@ pub struct Invalidation {
     /// <p>The current invalidation information for the batch request.</p>
     pub invalidation_batch: ::std::option::Option<crate::types::InvalidationBatch>,
 }
-impl Invalidation {
+impl  Invalidation  {
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The date and time the invalidation request was first made.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The current invalidation information for the batch request.</p>
-    pub fn invalidation_batch(&self) -> ::std::option::Option<&crate::types::InvalidationBatch> {
+    pub fn invalidation_batch(&self) -> ::std::option::Option<& crate::types::InvalidationBatch> {
         self.invalidation_batch.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl InvalidationBuilder {
     }
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl InvalidationBuilder {
     }
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the invalidation request. When the invalidation batch is finished, the status is <code>Completed</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl InvalidationBuilder {
     }
     /// <p>The date and time the invalidation request was first made.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time the invalidation request was first made.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,8 +98,7 @@ impl InvalidationBuilder {
     }
     /// <p>The current invalidation information for the batch request.</p>
     pub fn set_invalidation_batch(mut self, input: ::std::option::Option<crate::types::InvalidationBatch>) -> Self {
-        self.invalidation_batch = input;
-        self
+        self.invalidation_batch = input; self
     }
     /// <p>The current invalidation information for the batch request.</p>
     pub fn get_invalidation_batch(&self) -> &::std::option::Option<crate::types::InvalidationBatch> {
@@ -116,26 +110,27 @@ impl InvalidationBuilder {
     /// - [`status`](crate::types::builders::InvalidationBuilder::status)
     /// - [`create_time`](crate::types::builders::InvalidationBuilder::create_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Invalidation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Invalidation {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Invalidation",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Invalidation",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building Invalidation",
-                )
-            })?,
-            invalidation_batch: self.invalidation_batch,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Invalidation {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Invalidation")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Invalidation")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building Invalidation")
+                    )?
+                ,
+                invalidation_batch: self.invalidation_batch
+                ,
+            }
+        )
     }
 }
+

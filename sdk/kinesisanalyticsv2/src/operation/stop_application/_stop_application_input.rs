@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopApplicationInput {
+pub struct StopApplicationInput  {
     /// <p>The name of the running application to stop.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot.</p><note>
@@ -12,9 +12,9 @@ pub struct StopApplicationInput {
     /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl StopApplicationInput {
+impl  StopApplicationInput  {
     /// <p>The name of the running application to stop.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot.</p><note>
@@ -49,8 +49,7 @@ impl StopApplicationInputBuilder {
     }
     /// <p>The name of the running application to stop.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the running application to stop.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl StopApplicationInputBuilder {
     /// <p>You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
     /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot.</p><note>
     /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
@@ -83,12 +81,15 @@ impl StopApplicationInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
-            application_name: self.application_name,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_application::StopApplicationInput {
+                application_name: self.application_name
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

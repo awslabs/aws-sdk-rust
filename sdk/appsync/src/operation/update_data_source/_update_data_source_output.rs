@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourceOutput {
+pub struct UpdateDataSourceOutput  {
     /// <p>The updated <code>DataSource</code> object.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     _request_id: Option<String>,
 }
-impl UpdateDataSourceOutput {
+impl  UpdateDataSourceOutput  {
     /// <p>The updated <code>DataSource</code> object.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
     pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateDataSourceOutputBuilder {
     }
     /// <p>The updated <code>DataSource</code> object.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The updated <code>DataSource</code> object.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
     pub fn build(self) -> crate::operation::update_data_source::UpdateDataSourceOutput {
         crate::operation::update_data_source::UpdateDataSourceOutput {
-            data_source: self.data_source,
+            data_source: self.data_source
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

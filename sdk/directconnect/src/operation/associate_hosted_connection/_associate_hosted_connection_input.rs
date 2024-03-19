@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateHostedConnectionInput {
+pub struct AssociateHostedConnectionInput  {
     /// <p>The ID of the hosted connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the interconnect or the LAG.</p>
     pub parent_connection_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociateHostedConnectionInput {
+impl  AssociateHostedConnectionInput  {
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the interconnect or the LAG.</p>
-    pub fn parent_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_connection_id(&self) -> ::std::option::Option<& str> {
         self.parent_connection_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateHostedConnectionInputBuilder {
     }
     /// <p>The ID of the hosted connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the hosted connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AssociateHostedConnectionInputBuilder {
     }
     /// <p>The ID of the interconnect or the LAG.</p>
     pub fn set_parent_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_connection_id = input;
-        self
+        self.parent_connection_id = input; self
     }
     /// <p>The ID of the interconnect or the LAG.</p>
     pub fn get_parent_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_connection_id
     }
     /// Consumes the builder and constructs a [`AssociateHostedConnectionInput`](crate::operation::associate_hosted_connection::AssociateHostedConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_hosted_connection::AssociateHostedConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_hosted_connection::AssociateHostedConnectionInput {
-            connection_id: self.connection_id,
-            parent_connection_id: self.parent_connection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_hosted_connection::AssociateHostedConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_hosted_connection::AssociateHostedConnectionInput {
+                connection_id: self.connection_id
+                ,
+                parent_connection_id: self.parent_connection_id
+                ,
+            }
+        )
     }
 }
+

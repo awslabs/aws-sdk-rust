@@ -3,19 +3,19 @@
 /// Details about the error.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// A detailed error code.
     pub detailed_error_code: ::std::option::Option<::std::string::String>,
     /// A detailed error message.
     pub detailed_error_message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorDetail {
+impl  ErrorDetail  {
     /// A detailed error code.
-    pub fn detailed_error_code(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_error_code(&self) -> ::std::option::Option<& str> {
         self.detailed_error_code.as_deref()
     }
     /// A detailed error message.
-    pub fn detailed_error_message(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_error_message(&self) -> ::std::option::Option<& str> {
         self.detailed_error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ErrorDetailBuilder {
     }
     /// A detailed error code.
     pub fn set_detailed_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detailed_error_code = input;
-        self
+        self.detailed_error_code = input; self
     }
     /// A detailed error code.
     pub fn get_detailed_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ErrorDetailBuilder {
     }
     /// A detailed error message.
     pub fn set_detailed_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detailed_error_message = input;
-        self
+        self.detailed_error_message = input; self
     }
     /// A detailed error message.
     pub fn get_detailed_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ErrorDetailBuilder {
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
         crate::types::ErrorDetail {
-            detailed_error_code: self.detailed_error_code,
-            detailed_error_message: self.detailed_error_message,
+            detailed_error_code: self.detailed_error_code
+            ,
+            detailed_error_message: self.detailed_error_message
+            ,
         }
     }
 }
+

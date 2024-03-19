@@ -3,7 +3,7 @@
 /// <p>Contains information about the DNS_REQUEST action described in this finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DnsRequestAction {
+pub struct DnsRequestAction  {
     /// <p>The domain information for the DNS query.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
@@ -13,13 +13,13 @@ pub struct DnsRequestAction {
     /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
     pub domain_with_suffix: ::std::option::Option<::std::string::String>,
 }
-impl DnsRequestAction {
+impl  DnsRequestAction  {
     /// <p>The domain information for the DNS query.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
@@ -27,7 +27,7 @@ impl DnsRequestAction {
         self.blocked
     }
     /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn domain_with_suffix(&self) -> ::std::option::Option<&str> {
+    pub fn domain_with_suffix(&self) -> ::std::option::Option<& str> {
         self.domain_with_suffix.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DnsRequestActionBuilder {
     }
     /// <p>The domain information for the DNS query.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain information for the DNS query.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DnsRequestActionBuilder {
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DnsRequestActionBuilder {
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
     pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blocked = input;
-        self
+        self.blocked = input; self
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
     pub fn get_blocked(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl DnsRequestActionBuilder {
     }
     /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
     pub fn set_domain_with_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_with_suffix = input;
-        self
+        self.domain_with_suffix = input; self
     }
     /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
     pub fn get_domain_with_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DnsRequestActionBuilder {
     /// Consumes the builder and constructs a [`DnsRequestAction`](crate::types::DnsRequestAction).
     pub fn build(self) -> crate::types::DnsRequestAction {
         crate::types::DnsRequestAction {
-            domain: self.domain,
-            protocol: self.protocol,
-            blocked: self.blocked,
-            domain_with_suffix: self.domain_with_suffix,
+            domain: self.domain
+            ,
+            protocol: self.protocol
+            ,
+            blocked: self.blocked
+            ,
+            domain_with_suffix: self.domain_with_suffix
+            ,
         }
     }
 }
+

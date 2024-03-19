@@ -3,21 +3,22 @@
 /// <p>The Online Fraud Insights (OFI) model training metric details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfiTrainingMetricsValue {
+pub struct OfiTrainingMetricsValue  {
     /// <p>The model's performance metrics data points.</p>
-    pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>>,
+    pub metric_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::OfiMetricDataPoint>>,
     /// <p>The model's overall performance score.</p>
     pub model_performance: ::std::option::Option<crate::types::OfiModelPerformance>,
 }
-impl OfiTrainingMetricsValue {
+impl  OfiTrainingMetricsValue  {
     /// <p>The model's performance metrics data points.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_points.is_none()`.
-    pub fn metric_data_points(&self) -> &[crate::types::OfiMetricDataPoint] {
-        self.metric_data_points.as_deref().unwrap_or_default()
+    pub fn metric_data_points(&self) -> & [crate::types::OfiMetricDataPoint] {
+        self.metric_data_points.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The model's overall performance score.</p>
-    pub fn model_performance(&self) -> ::std::option::Option<&crate::types::OfiModelPerformance> {
+    pub fn model_performance(&self) -> ::std::option::Option<& crate::types::OfiModelPerformance> {
         self.model_performance.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl OfiTrainingMetricsValue {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfiTrainingMetricsValueBuilder {
-    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>>,
+    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::OfiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::OfiModelPerformance>,
 }
 impl OfiTrainingMetricsValueBuilder {
@@ -43,17 +44,16 @@ impl OfiTrainingMetricsValueBuilder {
     /// <p>The model's performance metrics data points.</p>
     pub fn metric_data_points(mut self, input: crate::types::OfiMetricDataPoint) -> Self {
         let mut v = self.metric_data_points.unwrap_or_default();
-        v.push(input);
-        self.metric_data_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The model's performance metrics data points.</p>
-    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>>) -> Self {
-        self.metric_data_points = input;
-        self
+    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OfiMetricDataPoint>>) -> Self {
+        self.metric_data_points = input; self
     }
     /// <p>The model's performance metrics data points.</p>
-    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>> {
+    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OfiMetricDataPoint>> {
         &self.metric_data_points
     }
     /// <p>The model's overall performance score.</p>
@@ -63,8 +63,7 @@ impl OfiTrainingMetricsValueBuilder {
     }
     /// <p>The model's overall performance score.</p>
     pub fn set_model_performance(mut self, input: ::std::option::Option<crate::types::OfiModelPerformance>) -> Self {
-        self.model_performance = input;
-        self
+        self.model_performance = input; self
     }
     /// <p>The model's overall performance score.</p>
     pub fn get_model_performance(&self) -> &::std::option::Option<crate::types::OfiModelPerformance> {
@@ -73,8 +72,11 @@ impl OfiTrainingMetricsValueBuilder {
     /// Consumes the builder and constructs a [`OfiTrainingMetricsValue`](crate::types::OfiTrainingMetricsValue).
     pub fn build(self) -> crate::types::OfiTrainingMetricsValue {
         crate::types::OfiTrainingMetricsValue {
-            metric_data_points: self.metric_data_points,
-            model_performance: self.model_performance,
+            metric_data_points: self.metric_data_points
+            ,
+            model_performance: self.model_performance
+            ,
         }
     }
 }
+

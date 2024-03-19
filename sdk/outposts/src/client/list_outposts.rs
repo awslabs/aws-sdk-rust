@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOutposts`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum page size.</p><br>
     ///   - [`life_cycle_status_filter(impl Into<String>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::life_cycle_status_filter) / [`set_life_cycle_status_filter(Option<Vec::<String>>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::set_life_cycle_status_filter):<br>required: **false**<br><p>Filters the results by the lifecycle status.</p><br>
     ///   - [`availability_zone_filter(impl Into<String>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::availability_zone_filter) / [`set_availability_zone_filter(Option<Vec::<String>>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::set_availability_zone_filter):<br>required: **false**<br><p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p><br>
     ///   - [`availability_zone_id_filter(impl Into<String>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::availability_zone_id_filter) / [`set_availability_zone_id_filter(Option<Vec::<String>>)`](crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::set_availability_zone_id_filter):<br>required: **false**<br><p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p><br>
-    /// - On success, responds with [`ListOutpostsOutput`](crate::operation::list_outposts::ListOutpostsOutput) with field(s):
+                            /// - On success, responds with [`ListOutpostsOutput`](crate::operation::list_outposts::ListOutpostsOutput) with field(s):
     ///   - [`outposts(Option<Vec::<Outpost>>)`](crate::operation::list_outposts::ListOutpostsOutput::outposts): <p>Information about the Outposts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outposts::ListOutpostsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListOutpostsError>`](crate::operation::list_outposts::ListOutpostsError)
+                            /// - On failure, responds with [`SdkError<ListOutpostsError>`](crate::operation::list_outposts::ListOutpostsError)
     pub fn list_outposts(&self) -> crate::operation::list_outposts::builders::ListOutpostsFluentBuilder {
-        crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

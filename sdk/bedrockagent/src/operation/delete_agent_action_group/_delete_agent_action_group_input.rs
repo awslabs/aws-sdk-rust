@@ -3,7 +3,7 @@
 /// Delete Action Group Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgentActionGroupInput {
+pub struct DeleteAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Draft Version of the Agent.
@@ -13,17 +13,17 @@ pub struct DeleteAgentActionGroupInput {
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
-impl DeleteAgentActionGroupInput {
+impl  DeleteAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Draft Version of the Agent.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Id generated at the server side when an Agent ActionGroup is created
-    pub fn action_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_group_id(&self) -> ::std::option::Option<& str> {
         self.action_group_id.as_deref()
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
@@ -56,8 +56,7 @@ impl DeleteAgentActionGroupInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DeleteAgentActionGroupInputBuilder {
     }
     /// Draft Version of the Agent.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Draft Version of the Agent.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl DeleteAgentActionGroupInputBuilder {
     }
     /// Id generated at the server side when an Agent ActionGroup is created
     pub fn set_action_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_id = input;
-        self
+        self.action_group_id = input; self
     }
     /// Id generated at the server side when an Agent ActionGroup is created
     pub fn get_action_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl DeleteAgentActionGroupInputBuilder {
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input;
-        self
+        self.skip_resource_in_use_check = input; self
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
         &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteAgentActionGroupInput`](crate::operation::delete_agent_action_group::DeleteAgentActionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_agent_action_group::DeleteAgentActionGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_agent_action_group::DeleteAgentActionGroupInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            action_group_id: self.action_group_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent_action_group::DeleteAgentActionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_agent_action_group::DeleteAgentActionGroupInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                action_group_id: self.action_group_id
+                ,
+                skip_resource_in_use_check: self.skip_resource_in_use_check
+                ,
+            }
+        )
     }
 }
+

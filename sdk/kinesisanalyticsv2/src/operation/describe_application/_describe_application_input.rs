@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationInput {
+pub struct DescribeApplicationInput  {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub include_additional_details: ::std::option::Option<bool>,
 }
-impl DescribeApplicationInput {
+impl  DescribeApplicationInput  {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
@@ -41,8 +41,7 @@ impl DescribeApplicationInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DescribeApplicationInputBuilder {
     }
     /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn set_include_additional_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_additional_details = input;
-        self
+        self.include_additional_details = input; self
     }
     /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn get_include_additional_details(&self) -> &::std::option::Option<bool> {
         &self.include_additional_details
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationInput {
-            application_name: self.application_name,
-            include_additional_details: self.include_additional_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_application::DescribeApplicationInput {
+                application_name: self.application_name
+                ,
+                include_additional_details: self.include_additional_details
+                ,
+            }
+        )
     }
 }
+

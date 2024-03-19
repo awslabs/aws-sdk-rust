@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -43,16 +43,14 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingBlockUpdate,
@@ -86,116 +84,101 @@ pub enum ValidationExceptionReason {
     WriteRequestTimeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFLICTING_BLOCK_UPDATE" => ValidationExceptionReason::ConflictingBlockUpdate,
-            "INVALID_BLOCK" => ValidationExceptionReason::InvalidBlock,
-            "INVALID_BLOCK_TOKEN" => ValidationExceptionReason::InvalidBlockToken,
-            "INVALID_CONTENT_ENCODING" => ValidationExceptionReason::InvalidContentEncoding,
-            "INVALID_CUSTOMER_KEY" => ValidationExceptionReason::InvalidCustomerKey,
-            "INVALID_DEPENDENCY_REQUEST" => ValidationExceptionReason::InvalidDependencyRequest,
-            "INVALID_GRANT_TOKEN" => ValidationExceptionReason::InvalidGrantToken,
-            "INVALID_IMAGE_ID" => ValidationExceptionReason::InvalidImageId,
-            "INVALID_PAGE_TOKEN" => ValidationExceptionReason::InvalidPageToken,
-            "INVALID_PARAMETER_VALUE" => ValidationExceptionReason::InvalidParameterValue,
-            "INVALID_SNAPSHOT_ID" => ValidationExceptionReason::InvalidSnapshotId,
-            "INVALID_TAG" => ValidationExceptionReason::InvalidTag,
-            "INVALID_VOLUME_SIZE" => ValidationExceptionReason::InvalidVolumeSize,
-            "UNRELATED_SNAPSHOTS" => ValidationExceptionReason::UnrelatedSnapshots,
-            "WRITE_REQUEST_TIMEOUT" => ValidationExceptionReason::WriteRequestTimeout,
-            other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CONFLICTING_BLOCK_UPDATE" => ValidationExceptionReason::ConflictingBlockUpdate,
+"INVALID_BLOCK" => ValidationExceptionReason::InvalidBlock,
+"INVALID_BLOCK_TOKEN" => ValidationExceptionReason::InvalidBlockToken,
+"INVALID_CONTENT_ENCODING" => ValidationExceptionReason::InvalidContentEncoding,
+"INVALID_CUSTOMER_KEY" => ValidationExceptionReason::InvalidCustomerKey,
+"INVALID_DEPENDENCY_REQUEST" => ValidationExceptionReason::InvalidDependencyRequest,
+"INVALID_GRANT_TOKEN" => ValidationExceptionReason::InvalidGrantToken,
+"INVALID_IMAGE_ID" => ValidationExceptionReason::InvalidImageId,
+"INVALID_PAGE_TOKEN" => ValidationExceptionReason::InvalidPageToken,
+"INVALID_PARAMETER_VALUE" => ValidationExceptionReason::InvalidParameterValue,
+"INVALID_SNAPSHOT_ID" => ValidationExceptionReason::InvalidSnapshotId,
+"INVALID_TAG" => ValidationExceptionReason::InvalidTag,
+"INVALID_VOLUME_SIZE" => ValidationExceptionReason::InvalidVolumeSize,
+"UNRELATED_SNAPSHOTS" => ValidationExceptionReason::UnrelatedSnapshots,
+"WRITE_REQUEST_TIMEOUT" => ValidationExceptionReason::WriteRequestTimeout,
+other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ValidationExceptionReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
+                    }
+                }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::ConflictingBlockUpdate => "CONFLICTING_BLOCK_UPDATE",
-            ValidationExceptionReason::InvalidBlock => "INVALID_BLOCK",
-            ValidationExceptionReason::InvalidBlockToken => "INVALID_BLOCK_TOKEN",
-            ValidationExceptionReason::InvalidContentEncoding => "INVALID_CONTENT_ENCODING",
-            ValidationExceptionReason::InvalidCustomerKey => "INVALID_CUSTOMER_KEY",
-            ValidationExceptionReason::InvalidDependencyRequest => "INVALID_DEPENDENCY_REQUEST",
-            ValidationExceptionReason::InvalidGrantToken => "INVALID_GRANT_TOKEN",
-            ValidationExceptionReason::InvalidImageId => "INVALID_IMAGE_ID",
-            ValidationExceptionReason::InvalidPageToken => "INVALID_PAGE_TOKEN",
-            ValidationExceptionReason::InvalidParameterValue => "INVALID_PARAMETER_VALUE",
-            ValidationExceptionReason::InvalidSnapshotId => "INVALID_SNAPSHOT_ID",
-            ValidationExceptionReason::InvalidTag => "INVALID_TAG",
-            ValidationExceptionReason::InvalidVolumeSize => "INVALID_VOLUME_SIZE",
-            ValidationExceptionReason::UnrelatedSnapshots => "UNRELATED_SNAPSHOTS",
-            ValidationExceptionReason::WriteRequestTimeout => "WRITE_REQUEST_TIMEOUT",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFLICTING_BLOCK_UPDATE",
-            "INVALID_BLOCK",
-            "INVALID_BLOCK_TOKEN",
-            "INVALID_CONTENT_ENCODING",
-            "INVALID_CUSTOMER_KEY",
-            "INVALID_DEPENDENCY_REQUEST",
-            "INVALID_GRANT_TOKEN",
-            "INVALID_IMAGE_ID",
-            "INVALID_PAGE_TOKEN",
-            "INVALID_PARAMETER_VALUE",
-            "INVALID_SNAPSHOT_ID",
-            "INVALID_TAG",
-            "INVALID_VOLUME_SIZE",
-            "UNRELATED_SNAPSHOTS",
-            "WRITE_REQUEST_TIMEOUT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::ConflictingBlockUpdate => "CONFLICTING_BLOCK_UPDATE",
+    ValidationExceptionReason::InvalidBlock => "INVALID_BLOCK",
+    ValidationExceptionReason::InvalidBlockToken => "INVALID_BLOCK_TOKEN",
+    ValidationExceptionReason::InvalidContentEncoding => "INVALID_CONTENT_ENCODING",
+    ValidationExceptionReason::InvalidCustomerKey => "INVALID_CUSTOMER_KEY",
+    ValidationExceptionReason::InvalidDependencyRequest => "INVALID_DEPENDENCY_REQUEST",
+    ValidationExceptionReason::InvalidGrantToken => "INVALID_GRANT_TOKEN",
+    ValidationExceptionReason::InvalidImageId => "INVALID_IMAGE_ID",
+    ValidationExceptionReason::InvalidPageToken => "INVALID_PAGE_TOKEN",
+    ValidationExceptionReason::InvalidParameterValue => "INVALID_PARAMETER_VALUE",
+    ValidationExceptionReason::InvalidSnapshotId => "INVALID_SNAPSHOT_ID",
+    ValidationExceptionReason::InvalidTag => "INVALID_TAG",
+    ValidationExceptionReason::InvalidVolumeSize => "INVALID_VOLUME_SIZE",
+    ValidationExceptionReason::UnrelatedSnapshots => "UNRELATED_SNAPSHOTS",
+    ValidationExceptionReason::WriteRequestTimeout => "WRITE_REQUEST_TIMEOUT",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFLICTING_BLOCK_UPDATE", "INVALID_BLOCK", "INVALID_BLOCK_TOKEN", "INVALID_CONTENT_ENCODING", "INVALID_CUSTOMER_KEY", "INVALID_DEPENDENCY_REQUEST", "INVALID_GRANT_TOKEN", "INVALID_IMAGE_ID", "INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE", "INVALID_SNAPSHOT_ID", "INVALID_TAG", "INVALID_VOLUME_SIZE", "UNRELATED_SNAPSHOTS", "WRITE_REQUEST_TIMEOUT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ValidationExceptionReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ValidationExceptionReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ValidationExceptionReason::ConflictingBlockUpdate => write!(f, "CONFLICTING_BLOCK_UPDATE"),
-            ValidationExceptionReason::InvalidBlock => write!(f, "INVALID_BLOCK"),
-            ValidationExceptionReason::InvalidBlockToken => write!(f, "INVALID_BLOCK_TOKEN"),
-            ValidationExceptionReason::InvalidContentEncoding => write!(f, "INVALID_CONTENT_ENCODING"),
-            ValidationExceptionReason::InvalidCustomerKey => write!(f, "INVALID_CUSTOMER_KEY"),
-            ValidationExceptionReason::InvalidDependencyRequest => write!(f, "INVALID_DEPENDENCY_REQUEST"),
-            ValidationExceptionReason::InvalidGrantToken => write!(f, "INVALID_GRANT_TOKEN"),
-            ValidationExceptionReason::InvalidImageId => write!(f, "INVALID_IMAGE_ID"),
-            ValidationExceptionReason::InvalidPageToken => write!(f, "INVALID_PAGE_TOKEN"),
-            ValidationExceptionReason::InvalidParameterValue => write!(f, "INVALID_PARAMETER_VALUE"),
-            ValidationExceptionReason::InvalidSnapshotId => write!(f, "INVALID_SNAPSHOT_ID"),
-            ValidationExceptionReason::InvalidTag => write!(f, "INVALID_TAG"),
-            ValidationExceptionReason::InvalidVolumeSize => write!(f, "INVALID_VOLUME_SIZE"),
-            ValidationExceptionReason::UnrelatedSnapshots => write!(f, "UNRELATED_SNAPSHOTS"),
-            ValidationExceptionReason::WriteRequestTimeout => write!(f, "WRITE_REQUEST_TIMEOUT"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ValidationExceptionReason::ConflictingBlockUpdate => write!(f, "CONFLICTING_BLOCK_UPDATE"),
+ValidationExceptionReason::InvalidBlock => write!(f, "INVALID_BLOCK"),
+ValidationExceptionReason::InvalidBlockToken => write!(f, "INVALID_BLOCK_TOKEN"),
+ValidationExceptionReason::InvalidContentEncoding => write!(f, "INVALID_CONTENT_ENCODING"),
+ValidationExceptionReason::InvalidCustomerKey => write!(f, "INVALID_CUSTOMER_KEY"),
+ValidationExceptionReason::InvalidDependencyRequest => write!(f, "INVALID_DEPENDENCY_REQUEST"),
+ValidationExceptionReason::InvalidGrantToken => write!(f, "INVALID_GRANT_TOKEN"),
+ValidationExceptionReason::InvalidImageId => write!(f, "INVALID_IMAGE_ID"),
+ValidationExceptionReason::InvalidPageToken => write!(f, "INVALID_PAGE_TOKEN"),
+ValidationExceptionReason::InvalidParameterValue => write!(f, "INVALID_PARAMETER_VALUE"),
+ValidationExceptionReason::InvalidSnapshotId => write!(f, "INVALID_SNAPSHOT_ID"),
+ValidationExceptionReason::InvalidTag => write!(f, "INVALID_TAG"),
+ValidationExceptionReason::InvalidVolumeSize => write!(f, "INVALID_VOLUME_SIZE"),
+ValidationExceptionReason::UnrelatedSnapshots => write!(f, "UNRELATED_SNAPSHOTS"),
+ValidationExceptionReason::WriteRequestTimeout => write!(f, "WRITE_REQUEST_TIMEOUT"),
+ValidationExceptionReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

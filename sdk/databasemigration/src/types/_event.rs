@@ -3,7 +3,7 @@
 /// <p>Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the DMS resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The identifier of an event source.</p>
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of DMS resource that generates events.</p>
@@ -12,32 +12,33 @@ pub struct Event {
     /// <p>The event message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The event categories available for the specified source type.</p>
-    pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date of the event.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Event {
+impl  Event  {
     /// <p>The identifier of an event source.</p>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The event message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The event categories available for the specified source type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
-    pub fn event_categories(&self) -> &[::std::string::String] {
-        self.event_categories.as_deref().unwrap_or_default()
+    pub fn event_categories(&self) -> & [::std::string::String] {
+        self.event_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date of the event.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
 }
@@ -55,7 +56,7 @@ pub struct EventBuilder {
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventBuilder {
@@ -66,8 +67,7 @@ impl EventBuilder {
     }
     /// <p>The identifier of an event source.</p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_identifier = input;
-        self
+        self.source_identifier = input; self
     }
     /// <p>The identifier of an event source.</p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl EventBuilder {
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | endpoint | replication-task</p>
@@ -97,8 +96,7 @@ impl EventBuilder {
     }
     /// <p>The event message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The event message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,17 +109,16 @@ impl EventBuilder {
     /// <p>The event categories available for the specified source type.</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event categories available for the specified source type.</p>
-    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_categories = input;
-        self
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_categories = input; self
     }
     /// <p>The event categories available for the specified source type.</p>
-    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_categories
     }
     /// <p>The date of the event.</p>
@@ -131,8 +128,7 @@ impl EventBuilder {
     }
     /// <p>The date of the event.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date of the event.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,11 +137,17 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            source_identifier: self.source_identifier,
-            source_type: self.source_type,
-            message: self.message,
-            event_categories: self.event_categories,
-            date: self.date,
+            source_identifier: self.source_identifier
+            ,
+            source_type: self.source_type
+            ,
+            message: self.message
+            ,
+            event_categories: self.event_categories
+            ,
+            date: self.date
+            ,
         }
     }
 }
+

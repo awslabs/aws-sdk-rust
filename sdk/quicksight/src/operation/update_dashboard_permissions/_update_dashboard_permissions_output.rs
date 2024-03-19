@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDashboardPermissionsOutput {
+pub struct UpdateDashboardPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub dashboard_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the permissions on the dashboard.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
@@ -17,23 +17,24 @@ pub struct UpdateDashboardPermissionsOutput {
     pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateDashboardPermissionsOutput {
+impl  UpdateDashboardPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> ::std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>Information about the permissions on the dashboard.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -41,15 +42,15 @@ impl UpdateDashboardPermissionsOutput {
         self.status
     }
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
-    pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> ::std::option::Option<& crate::types::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDashboardPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDashboardPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardPermissionsOutput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput).
     pub fn builder() -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsOutputBuilder {
@@ -63,7 +64,7 @@ impl UpdateDashboardPermissionsOutput {
 pub struct UpdateDashboardPermissionsOutputBuilder {
     pub(crate) dashboard_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
@@ -77,8 +78,7 @@ impl UpdateDashboardPermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_arn = input;
-        self
+        self.dashboard_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl UpdateDashboardPermissionsOutputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID for the dashboard.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +104,16 @@ impl UpdateDashboardPermissionsOutputBuilder {
     /// <p>Information about the permissions on the dashboard.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the permissions on the dashboard.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>Information about the permissions on the dashboard.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -125,8 +123,7 @@ impl UpdateDashboardPermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl UpdateDashboardPermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -153,32 +149,39 @@ impl UpdateDashboardPermissionsOutputBuilder {
     }
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
     pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
-        self.link_sharing_configuration = input;
-        self
+        self.link_sharing_configuration = input; self
     }
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         &self.link_sharing_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDashboardPermissionsOutput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput).
     pub fn build(self) -> crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput {
         crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput {
-            dashboard_arn: self.dashboard_arn,
-            dashboard_id: self.dashboard_id,
-            permissions: self.permissions,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
-            link_sharing_configuration: self.link_sharing_configuration,
+            dashboard_arn: self.dashboard_arn
+            ,
+            dashboard_id: self.dashboard_id
+            ,
+            permissions: self.permissions
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            link_sharing_configuration: self.link_sharing_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

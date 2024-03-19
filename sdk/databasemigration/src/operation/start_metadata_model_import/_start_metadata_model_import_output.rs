@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMetadataModelImportOutput {
+pub struct StartMetadataModelImportOutput  {
     /// <p>The identifier for the import operation.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartMetadataModelImportOutput {
+impl  StartMetadataModelImportOutput  {
     /// <p>The identifier for the import operation.</p>
-    pub fn request_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn request_identifier(&self) -> ::std::option::Option<& str> {
         self.request_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMetadataModelImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMetadataModelImportOutput {
     /// Creates a new builder-style object to manufacture [`StartMetadataModelImportOutput`](crate::operation::start_metadata_model_import::StartMetadataModelImportOutput).
     pub fn builder() -> crate::operation::start_metadata_model_import::builders::StartMetadataModelImportOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMetadataModelImportOutputBuilder {
     }
     /// <p>The identifier for the import operation.</p>
     pub fn set_request_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_identifier = input;
-        self
+        self.request_identifier = input; self
     }
     /// <p>The identifier for the import operation.</p>
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMetadataModelImportOutput`](crate::operation::start_metadata_model_import::StartMetadataModelImportOutput).
     pub fn build(self) -> crate::operation::start_metadata_model_import::StartMetadataModelImportOutput {
         crate::operation::start_metadata_model_import::StartMetadataModelImportOutput {
-            request_identifier: self.request_identifier,
+            request_identifier: self.request_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

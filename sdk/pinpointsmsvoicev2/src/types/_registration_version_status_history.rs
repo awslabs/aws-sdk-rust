@@ -3,7 +3,7 @@
 /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationVersionStatusHistory {
+pub struct RegistrationVersionStatusHistory  {
     /// <p>The time when the registration was in the draft state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub draft_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The time when the registration was in the submitted state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -21,37 +21,37 @@ pub struct RegistrationVersionStatusHistory {
     /// <p>The time when the registration was in the archived state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub archived_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RegistrationVersionStatusHistory {
+impl  RegistrationVersionStatusHistory  {
     /// <p>The time when the registration was in the draft state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn draft_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn draft_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.draft_timestamp
     }
     /// <p>The time when the registration was in the submitted state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn submitted_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn reviewing_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn reviewing_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.reviewing_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn approved_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn approved_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.approved_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the discarded state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn discarded_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn discarded_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.discarded_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the denied state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn denied_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn denied_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.denied_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the revoked state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn revoked_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn revoked_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.revoked_timestamp.as_ref()
     }
     /// <p>The time when the registration was in the archived state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn archived_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn archived_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.archived_timestamp.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the draft state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_draft_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.draft_timestamp = input;
-        self
+        self.draft_timestamp = input; self
     }
     /// <p>The time when the registration was in the draft state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_draft_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -98,8 +97,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the submitted state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_submitted_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_timestamp = input;
-        self
+        self.submitted_timestamp = input; self
     }
     /// <p>The time when the registration was in the submitted state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_submitted_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -112,8 +110,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_reviewing_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.reviewing_timestamp = input;
-        self
+        self.reviewing_timestamp = input; self
     }
     /// <p>The time when the registration was in the reviewing state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_reviewing_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,8 +123,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_approved_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.approved_timestamp = input;
-        self
+        self.approved_timestamp = input; self
     }
     /// <p>The time when the registration was in the approved state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_approved_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +136,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the discarded state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_discarded_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.discarded_timestamp = input;
-        self
+        self.discarded_timestamp = input; self
     }
     /// <p>The time when the registration was in the discarded state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_discarded_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +149,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the denied state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_denied_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.denied_timestamp = input;
-        self
+        self.denied_timestamp = input; self
     }
     /// <p>The time when the registration was in the denied state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_denied_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +162,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the revoked state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_revoked_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.revoked_timestamp = input;
-        self
+        self.revoked_timestamp = input; self
     }
     /// <p>The time when the registration was in the revoked state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_revoked_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +175,7 @@ impl RegistrationVersionStatusHistoryBuilder {
     }
     /// <p>The time when the registration was in the archived state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_archived_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.archived_timestamp = input;
-        self
+        self.archived_timestamp = input; self
     }
     /// <p>The time when the registration was in the archived state, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_archived_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,20 +185,29 @@ impl RegistrationVersionStatusHistoryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`draft_timestamp`](crate::types::builders::RegistrationVersionStatusHistoryBuilder::draft_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationVersionStatusHistory, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationVersionStatusHistory {
-            draft_timestamp: self.draft_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "draft_timestamp",
-                    "draft_timestamp was not specified but it is required when building RegistrationVersionStatusHistory",
-                )
-            })?,
-            submitted_timestamp: self.submitted_timestamp,
-            reviewing_timestamp: self.reviewing_timestamp,
-            approved_timestamp: self.approved_timestamp,
-            discarded_timestamp: self.discarded_timestamp,
-            denied_timestamp: self.denied_timestamp,
-            revoked_timestamp: self.revoked_timestamp,
-            archived_timestamp: self.archived_timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationVersionStatusHistory {
+                draft_timestamp: self.draft_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("draft_timestamp", "draft_timestamp was not specified but it is required when building RegistrationVersionStatusHistory")
+                    )?
+                ,
+                submitted_timestamp: self.submitted_timestamp
+                ,
+                reviewing_timestamp: self.reviewing_timestamp
+                ,
+                approved_timestamp: self.approved_timestamp
+                ,
+                discarded_timestamp: self.discarded_timestamp
+                ,
+                denied_timestamp: self.denied_timestamp
+                ,
+                revoked_timestamp: self.revoked_timestamp
+                ,
+                archived_timestamp: self.archived_timestamp
+                ,
+            }
+        )
     }
 }
+

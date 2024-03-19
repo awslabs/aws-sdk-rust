@@ -3,13 +3,13 @@
 /// <p>Details about whether a model version is available or deprecated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FoundationModelLifecycle {
+pub struct FoundationModelLifecycle  {
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
     pub status: crate::types::FoundationModelLifecycleStatus,
 }
-impl FoundationModelLifecycle {
+impl  FoundationModelLifecycle  {
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
-    pub fn status(&self) -> &crate::types::FoundationModelLifecycleStatus {
+    pub fn status(&self) -> & crate::types::FoundationModelLifecycleStatus {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl FoundationModelLifecycleBuilder {
     }
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FoundationModelLifecycleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FoundationModelLifecycleStatus> {
@@ -46,13 +45,15 @@ impl FoundationModelLifecycleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::FoundationModelLifecycleBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::FoundationModelLifecycle, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FoundationModelLifecycle {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building FoundationModelLifecycle",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FoundationModelLifecycle {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building FoundationModelLifecycle")
+                    )?
+                ,
+            }
+        )
     }
 }
+

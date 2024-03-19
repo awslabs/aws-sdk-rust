@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProvider {
+pub struct DataProvider  {
     /// <p>The name of the data provider.</p>
     pub data_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the data provider.</p>
@@ -17,29 +17,29 @@ pub struct DataProvider {
     /// <p>The settings in JSON format for a data provider.</p>
     pub settings: ::std::option::Option<crate::types::DataProviderSettings>,
 }
-impl DataProvider {
+impl  DataProvider  {
     /// <p>The name of the data provider.</p>
-    pub fn data_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_name(&self) -> ::std::option::Option<& str> {
         self.data_provider_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the data provider.</p>
-    pub fn data_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_arn(&self) -> ::std::option::Option<& str> {
         self.data_provider_arn.as_deref()
     }
     /// <p>The time the data provider was created.</p>
-    pub fn data_provider_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_provider_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_provider_creation_time.as_ref()
     }
     /// <p>A description of the data provider. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The settings in JSON format for a data provider.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::DataProviderSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::DataProviderSettings> {
         self.settings.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DataProviderBuilder {
     }
     /// <p>The name of the data provider.</p>
     pub fn set_data_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_name = input;
-        self
+        self.data_provider_name = input; self
     }
     /// <p>The name of the data provider.</p>
     pub fn get_data_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DataProviderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the data provider.</p>
     pub fn set_data_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_arn = input;
-        self
+        self.data_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the data provider.</p>
     pub fn get_data_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DataProviderBuilder {
     }
     /// <p>The time the data provider was created.</p>
     pub fn set_data_provider_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_provider_creation_time = input;
-        self
+        self.data_provider_creation_time = input; self
     }
     /// <p>The time the data provider was created.</p>
     pub fn get_data_provider_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl DataProviderBuilder {
     }
     /// <p>A description of the data provider. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data provider. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DataProviderBuilder {
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl DataProviderBuilder {
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DataProviderSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::DataProviderSettings> {
@@ -149,12 +143,19 @@ impl DataProviderBuilder {
     /// Consumes the builder and constructs a [`DataProvider`](crate::types::DataProvider).
     pub fn build(self) -> crate::types::DataProvider {
         crate::types::DataProvider {
-            data_provider_name: self.data_provider_name,
-            data_provider_arn: self.data_provider_arn,
-            data_provider_creation_time: self.data_provider_creation_time,
-            description: self.description,
-            engine: self.engine,
-            settings: self.settings,
+            data_provider_name: self.data_provider_name
+            ,
+            data_provider_arn: self.data_provider_arn
+            ,
+            data_provider_creation_time: self.data_provider_creation_time
+            ,
+            description: self.description
+            ,
+            engine: self.engine
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

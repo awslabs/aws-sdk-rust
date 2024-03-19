@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when using SAPOData as a flow source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SapoDataSourceProperties {
+pub struct SapoDataSourceProperties  {
     /// <p>The object path specified in the SAPOData flow source.</p>
     pub object_path: ::std::option::Option<::std::string::String>,
     /// <p>Sets the number of concurrent processes that transfers OData records from your SAP instance.</p>
@@ -11,17 +11,17 @@ pub struct SapoDataSourceProperties {
     /// <p>Sets the page size for each concurrent process that transfers OData records from your SAP instance.</p>
     pub pagination_config: ::std::option::Option<crate::types::SapoDataPaginationConfig>,
 }
-impl SapoDataSourceProperties {
+impl  SapoDataSourceProperties  {
     /// <p>The object path specified in the SAPOData flow source.</p>
-    pub fn object_path(&self) -> ::std::option::Option<&str> {
+    pub fn object_path(&self) -> ::std::option::Option<& str> {
         self.object_path.as_deref()
     }
     /// <p>Sets the number of concurrent processes that transfers OData records from your SAP instance.</p>
-    pub fn parallelism_config(&self) -> ::std::option::Option<&crate::types::SapoDataParallelismConfig> {
+    pub fn parallelism_config(&self) -> ::std::option::Option<& crate::types::SapoDataParallelismConfig> {
         self.parallelism_config.as_ref()
     }
     /// <p>Sets the page size for each concurrent process that transfers OData records from your SAP instance.</p>
-    pub fn pagination_config(&self) -> ::std::option::Option<&crate::types::SapoDataPaginationConfig> {
+    pub fn pagination_config(&self) -> ::std::option::Option<& crate::types::SapoDataPaginationConfig> {
         self.pagination_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl SapoDataSourcePropertiesBuilder {
     }
     /// <p>The object path specified in the SAPOData flow source.</p>
     pub fn set_object_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_path = input;
-        self
+        self.object_path = input; self
     }
     /// <p>The object path specified in the SAPOData flow source.</p>
     pub fn get_object_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SapoDataSourcePropertiesBuilder {
     }
     /// <p>Sets the number of concurrent processes that transfers OData records from your SAP instance.</p>
     pub fn set_parallelism_config(mut self, input: ::std::option::Option<crate::types::SapoDataParallelismConfig>) -> Self {
-        self.parallelism_config = input;
-        self
+        self.parallelism_config = input; self
     }
     /// <p>Sets the number of concurrent processes that transfers OData records from your SAP instance.</p>
     pub fn get_parallelism_config(&self) -> &::std::option::Option<crate::types::SapoDataParallelismConfig> {
@@ -76,8 +74,7 @@ impl SapoDataSourcePropertiesBuilder {
     }
     /// <p>Sets the page size for each concurrent process that transfers OData records from your SAP instance.</p>
     pub fn set_pagination_config(mut self, input: ::std::option::Option<crate::types::SapoDataPaginationConfig>) -> Self {
-        self.pagination_config = input;
-        self
+        self.pagination_config = input; self
     }
     /// <p>Sets the page size for each concurrent process that transfers OData records from your SAP instance.</p>
     pub fn get_pagination_config(&self) -> &::std::option::Option<crate::types::SapoDataPaginationConfig> {
@@ -86,9 +83,13 @@ impl SapoDataSourcePropertiesBuilder {
     /// Consumes the builder and constructs a [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
     pub fn build(self) -> crate::types::SapoDataSourceProperties {
         crate::types::SapoDataSourceProperties {
-            object_path: self.object_path,
-            parallelism_config: self.parallelism_config,
-            pagination_config: self.pagination_config,
+            object_path: self.object_path
+            ,
+            parallelism_config: self.parallelism_config
+            ,
+            pagination_config: self.pagination_config
+            ,
         }
     }
 }
+

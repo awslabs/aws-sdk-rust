@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserPools`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::set_max_results):<br>required: **true**<br><p>The maximum number of results you want the request to return when listing the user pools.</p><br>
-    /// - On success, responds with [`ListUserPoolsOutput`](crate::operation::list_user_pools::ListUserPoolsOutput) with field(s):
+                            /// - On success, responds with [`ListUserPoolsOutput`](crate::operation::list_user_pools::ListUserPoolsOutput) with field(s):
     ///   - [`user_pools(Option<Vec::<UserPoolDescriptionType>>)`](crate::operation::list_user_pools::ListUserPoolsOutput::user_pools): <p>The user pools from the response to list users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_pools::ListUserPoolsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListUserPoolsError>`](crate::operation::list_user_pools::ListUserPoolsError)
+                            /// - On failure, responds with [`SdkError<ListUserPoolsError>`](crate::operation::list_user_pools::ListUserPoolsError)
     pub fn list_user_pools(&self) -> crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder {
-        crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_user_pools::builders::ListUserPoolsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

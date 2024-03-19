@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateRepositoryInput {
+pub struct AssociateRepositoryInput  {
     /// <p>The repository to associate.</p>
     pub repository: ::std::option::Option<crate::types::Repository>,
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
@@ -14,7 +14,7 @@ pub struct AssociateRepositoryInput {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
     /// <li>
@@ -24,13 +24,13 @@ pub struct AssociateRepositoryInput {
     /// </ul>
     pub kms_key_details: ::std::option::Option<crate::types::KmsKeyDetails>,
 }
-impl AssociateRepositoryInput {
+impl  AssociateRepositoryInput  {
     /// <p>The repository to associate.</p>
-    pub fn repository(&self) -> ::std::option::Option<&crate::types::Repository> {
+    pub fn repository(&self) -> ::std::option::Option<& crate::types::Repository> {
         self.repository.as_ref()
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
@@ -40,7 +40,7 @@ impl AssociateRepositoryInput {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -50,7 +50,7 @@ impl AssociateRepositoryInput {
     /// <li>
     /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
     /// </ul>
-    pub fn kms_key_details(&self) -> ::std::option::Option<&crate::types::KmsKeyDetails> {
+    pub fn kms_key_details(&self) -> ::std::option::Option<& crate::types::KmsKeyDetails> {
         self.kms_key_details.as_ref()
     }
 }
@@ -67,7 +67,7 @@ impl AssociateRepositoryInput {
 pub struct AssociateRepositoryInputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_details: ::std::option::Option<crate::types::KmsKeyDetails>,
 }
 impl AssociateRepositoryInputBuilder {
@@ -79,8 +79,7 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>The repository to associate.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The repository to associate.</p>
     pub fn get_repository(&self) -> &::std::option::Option<crate::types::Repository> {
@@ -93,8 +92,7 @@ impl AssociateRepositoryInputBuilder {
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,9 +111,9 @@ impl AssociateRepositoryInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -124,9 +122,8 @@ impl AssociateRepositoryInputBuilder {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -135,7 +132,7 @@ impl AssociateRepositoryInputBuilder {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -157,8 +154,7 @@ impl AssociateRepositoryInputBuilder {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
     /// </ul>
     pub fn set_kms_key_details(mut self, input: ::std::option::Option<crate::types::KmsKeyDetails>) -> Self {
-        self.kms_key_details = input;
-        self
+        self.kms_key_details = input; self
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
@@ -171,15 +167,19 @@ impl AssociateRepositoryInputBuilder {
         &self.kms_key_details
     }
     /// Consumes the builder and constructs a [`AssociateRepositoryInput`](crate::operation::associate_repository::AssociateRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_repository::AssociateRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_repository::AssociateRepositoryInput {
-            repository: self.repository,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            kms_key_details: self.kms_key_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_repository::AssociateRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_repository::AssociateRepositoryInput {
+                repository: self.repository
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                kms_key_details: self.kms_key_details
+                ,
+            }
+        )
     }
 }
+

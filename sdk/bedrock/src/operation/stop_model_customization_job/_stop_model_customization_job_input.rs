@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopModelCustomizationJobInput {
+pub struct StopModelCustomizationJobInput  {
     /// <p>Job identifier of the job to stop.</p>
     pub job_identifier: ::std::option::Option<::std::string::String>,
 }
-impl StopModelCustomizationJobInput {
+impl  StopModelCustomizationJobInput  {
     /// <p>Job identifier of the job to stop.</p>
-    pub fn job_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn job_identifier(&self) -> ::std::option::Option<& str> {
         self.job_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl StopModelCustomizationJobInputBuilder {
     }
     /// <p>Job identifier of the job to stop.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_identifier = input;
-        self
+        self.job_identifier = input; self
     }
     /// <p>Job identifier of the job to stop.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_identifier
     }
     /// Consumes the builder and constructs a [`StopModelCustomizationJobInput`](crate::operation::stop_model_customization_job::StopModelCustomizationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_model_customization_job::StopModelCustomizationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_model_customization_job::StopModelCustomizationJobInput {
-            job_identifier: self.job_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_model_customization_job::StopModelCustomizationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_model_customization_job::StopModelCustomizationJobInput {
+                job_identifier: self.job_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResponseHeadersPoliciesInput {
+pub struct ListResponseHeadersPoliciesInput  {
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct ListResponseHeadersPoliciesInput {
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListResponseHeadersPoliciesInput {
+impl  ListResponseHeadersPoliciesInput  {
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -24,11 +24,11 @@ impl ListResponseHeadersPoliciesInput {
     /// <li>
     /// <p><code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
@@ -71,8 +71,7 @@ impl ListResponseHeadersPoliciesInputBuilder {
     /// <p><code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
@@ -91,8 +90,7 @@ impl ListResponseHeadersPoliciesInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,24 +103,24 @@ impl ListResponseHeadersPoliciesInputBuilder {
     }
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListResponseHeadersPoliciesInput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput {
-            r#type: self.r#type,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput {
+                r#type: self.r#type
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

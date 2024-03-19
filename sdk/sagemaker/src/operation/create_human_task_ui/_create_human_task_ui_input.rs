@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHumanTaskUiInput {
+pub struct CreateHumanTaskUiInput  {
     /// <p>The name of the user interface you are creating.</p>
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
     /// <p>The Liquid template for the worker user interface.</p>
     pub ui_template: ::std::option::Option<crate::types::UiTemplate>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateHumanTaskUiInput {
+impl  CreateHumanTaskUiInput  {
     /// <p>The name of the user interface you are creating.</p>
-    pub fn human_task_ui_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_name(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_name.as_deref()
     }
     /// <p>The Liquid template for the worker user interface.</p>
-    pub fn ui_template(&self) -> ::std::option::Option<&crate::types::UiTemplate> {
+    pub fn ui_template(&self) -> ::std::option::Option<& crate::types::UiTemplate> {
         self.ui_template.as_ref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateHumanTaskUiInput {
@@ -39,7 +40,7 @@ impl CreateHumanTaskUiInput {
 pub struct CreateHumanTaskUiInputBuilder {
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
     pub(crate) ui_template: ::std::option::Option<crate::types::UiTemplate>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateHumanTaskUiInputBuilder {
     /// <p>The name of the user interface you are creating.</p>
@@ -50,8 +51,7 @@ impl CreateHumanTaskUiInputBuilder {
     }
     /// <p>The name of the user interface you are creating.</p>
     pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_name = input;
-        self
+        self.human_task_ui_name = input; self
     }
     /// <p>The name of the user interface you are creating.</p>
     pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl CreateHumanTaskUiInputBuilder {
     }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplate>) -> Self {
-        self.ui_template = input;
-        self
+        self.ui_template = input; self
     }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplate> {
@@ -79,27 +78,30 @@ impl CreateHumanTaskUiInputBuilder {
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
-            human_task_ui_name: self.human_task_ui_name,
-            ui_template: self.ui_template,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_human_task_ui::CreateHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_human_task_ui::CreateHumanTaskUiInput {
+                human_task_ui_name: self.human_task_ui_name
+                ,
+                ui_template: self.ui_template
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

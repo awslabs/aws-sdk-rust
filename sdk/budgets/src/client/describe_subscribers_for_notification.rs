@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSubscribersForNotification`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::set_account_id):<br>required: **true**<br><p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p><br>
     ///   - [`budget_name(impl Into<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::set_budget_name):<br>required: **true**<br><p>The name of the budget whose subscribers you want descriptions of.</p><br>
     ///   - [`notification(Notification)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::notification) / [`set_notification(Option<Notification>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::set_notification):<br>required: **true**<br><p>The notification whose subscribers you want to list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional integer that represents how many entries a paginated response contains.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p><br>
-    /// - On success, responds with [`DescribeSubscribersForNotificationOutput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput) with field(s):
+                            /// - On success, responds with [`DescribeSubscribersForNotificationOutput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput) with field(s):
     ///   - [`subscribers(Option<Vec::<Subscriber>>)`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput::subscribers): <p>A list of subscribers that are associated with a notification.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeSubscribersForNotificationError>`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError)
-    pub fn describe_subscribers_for_notification(
-        &self,
-    ) -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder {
-        crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeSubscribersForNotificationError>`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError)
+    pub fn describe_subscribers_for_notification(&self) -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder {
+                                crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

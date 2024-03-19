@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecommendations`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The unique identifier of the Amazon Redshift cluster for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.</p><br>
     ///   - [`namespace_arn(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::namespace_arn) / [`set_namespace_arn(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_namespace_arn):<br>required: **false**<br><p>The Amazon Redshift cluster namespace Amazon Resource Name (ARN) for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.</p><br>
     ///   - [`max_records(i32)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_marker):<br>required: **false**<br><p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p><br>
-    /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
     ///   - [`recommendations(Option<Vec::<Recommendation>>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendations): <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
-    /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
+                            /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
     pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

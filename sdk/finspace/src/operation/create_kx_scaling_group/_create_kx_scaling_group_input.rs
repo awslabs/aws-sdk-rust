@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxScalingGroupInput {
+pub struct CreateKxScalingGroupInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
@@ -29,19 +29,19 @@ pub struct CreateKxScalingGroupInput {
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateKxScalingGroupInput {
+impl  CreateKxScalingGroupInput  {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
-    pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.scaling_group_name.as_deref()
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
@@ -60,15 +60,15 @@ impl CreateKxScalingGroupInput {
     /// <li>
     /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
     /// </ul>
-    pub fn host_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_type(&self) -> ::std::option::Option<& str> {
         self.host_type.as_deref()
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -88,7 +88,7 @@ pub struct CreateKxScalingGroupInputBuilder {
     pub(crate) scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateKxScalingGroupInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -99,8 +99,7 @@ impl CreateKxScalingGroupInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl CreateKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +127,7 @@ impl CreateKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_group_name = input;
-        self
+        self.scaling_group_name = input; self
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +171,7 @@ impl CreateKxScalingGroupInputBuilder {
     /// <p><code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB memory and 96 vCPUs.</p></li>
     /// </ul>
     pub fn set_host_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_type = input;
-        self
+        self.host_type = input; self
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     /// <p>You can add one of the following values:</p>
@@ -204,8 +200,7 @@ impl CreateKxScalingGroupInputBuilder {
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,31 +213,36 @@ impl CreateKxScalingGroupInputBuilder {
     /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKxScalingGroupInput`](crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput {
-            client_token: self.client_token,
-            environment_id: self.environment_id,
-            scaling_group_name: self.scaling_group_name,
-            host_type: self.host_type,
-            availability_zone_id: self.availability_zone_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput {
+                client_token: self.client_token
+                ,
+                environment_id: self.environment_id
+                ,
+                scaling_group_name: self.scaling_group_name
+                ,
+                host_type: self.host_type
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

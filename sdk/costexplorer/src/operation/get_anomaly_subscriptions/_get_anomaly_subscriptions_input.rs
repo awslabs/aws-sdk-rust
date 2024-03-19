@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAnomalySubscriptionsInput {
+pub struct GetAnomalySubscriptionsInput  {
     /// <p>A list of cost anomaly subscription ARNs.</p>
-    pub subscription_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subscription_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Cost anomaly monitor ARNs.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -12,19 +12,20 @@ pub struct GetAnomalySubscriptionsInput {
     /// <p>The number of entries a paginated response contains.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetAnomalySubscriptionsInput {
+impl  GetAnomalySubscriptionsInput  {
     /// <p>A list of cost anomaly subscription ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_arn_list.is_none()`.
-    pub fn subscription_arn_list(&self) -> &[::std::string::String] {
-        self.subscription_arn_list.as_deref().unwrap_or_default()
+    pub fn subscription_arn_list(&self) -> & [::std::string::String] {
+        self.subscription_arn_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Cost anomaly monitor ARNs.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The number of entries a paginated response contains.</p>
@@ -43,7 +44,7 @@ impl GetAnomalySubscriptionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsInputBuilder {
-    pub(crate) subscription_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subscription_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -56,17 +57,16 @@ impl GetAnomalySubscriptionsInputBuilder {
     /// <p>A list of cost anomaly subscription ARNs.</p>
     pub fn subscription_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subscription_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.subscription_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subscription_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cost anomaly subscription ARNs.</p>
-    pub fn set_subscription_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subscription_arn_list = input;
-        self
+    pub fn set_subscription_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subscription_arn_list = input; self
     }
     /// <p>A list of cost anomaly subscription ARNs.</p>
-    pub fn get_subscription_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subscription_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subscription_arn_list
     }
     /// <p>Cost anomaly monitor ARNs.</p>
@@ -76,8 +76,7 @@ impl GetAnomalySubscriptionsInputBuilder {
     }
     /// <p>Cost anomaly monitor ARNs.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>Cost anomaly monitor ARNs.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl GetAnomalySubscriptionsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,25 +102,26 @@ impl GetAnomalySubscriptionsInputBuilder {
     }
     /// <p>The number of entries a paginated response contains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAnomalySubscriptionsInput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput {
-            subscription_arn_list: self.subscription_arn_list,
-            monitor_arn: self.monitor_arn,
-            next_page_token: self.next_page_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput {
+                subscription_arn_list: self.subscription_arn_list
+                ,
+                monitor_arn: self.monitor_arn
+                ,
+                next_page_token: self.next_page_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

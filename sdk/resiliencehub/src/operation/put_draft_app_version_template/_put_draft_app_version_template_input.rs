@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDraftAppVersionTemplateInput {
+pub struct PutDraftAppVersionTemplateInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
@@ -150,9 +150,9 @@ pub struct PutDraftAppVersionTemplateInput {
     /// </ul>
     pub app_template_body: ::std::option::Option<::std::string::String>,
 }
-impl PutDraftAppVersionTemplateInput {
+impl  PutDraftAppVersionTemplateInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
@@ -298,7 +298,7 @@ impl PutDraftAppVersionTemplateInput {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code></p>
     /// </note></li>
     /// </ul>
-    pub fn app_template_body(&self) -> ::std::option::Option<&str> {
+    pub fn app_template_body(&self) -> ::std::option::Option<& str> {
         self.app_template_body.as_deref()
     }
 }
@@ -325,8 +325,7 @@ impl PutDraftAppVersionTemplateInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -624,8 +623,7 @@ impl PutDraftAppVersionTemplateInputBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_app_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_template_body = input;
-        self
+        self.app_template_body = input; self
     }
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
     /// <p>The <code>appTemplateBody</code> JSON string has the following structure:</p>
@@ -774,15 +772,15 @@ impl PutDraftAppVersionTemplateInputBuilder {
         &self.app_template_body
     }
     /// Consumes the builder and constructs a [`PutDraftAppVersionTemplateInput`](crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
-            app_arn: self.app_arn,
-            app_template_body: self.app_template_body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
+                app_arn: self.app_arn
+                ,
+                app_template_body: self.app_template_body
+                ,
+            }
+        )
     }
 }
+

@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchProvisionedProductsOutput {
+pub struct SearchProvisionedProductsOutput  {
     /// <p>Information about the provisioned products.</p>
-    pub provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>>,
+    pub provisioned_products: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedProductAttribute>>,
     /// <p>The number of provisioned products found.</p>
     pub total_results_count: i32,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchProvisionedProductsOutput {
+impl  SearchProvisionedProductsOutput  {
     /// <p>Information about the provisioned products.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_products.is_none()`.
-    pub fn provisioned_products(&self) -> &[crate::types::ProvisionedProductAttribute] {
-        self.provisioned_products.as_deref().unwrap_or_default()
+    pub fn provisioned_products(&self) -> & [crate::types::ProvisionedProductAttribute] {
+        self.provisioned_products.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of provisioned products found.</p>
     pub fn total_results_count(&self) -> i32 {
         self.total_results_count
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchProvisionedProductsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchProvisionedProductsOutput {
     /// Creates a new builder-style object to manufacture [`SearchProvisionedProductsOutput`](crate::operation::search_provisioned_products::SearchProvisionedProductsOutput).
     pub fn builder() -> crate::operation::search_provisioned_products::builders::SearchProvisionedProductsOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchProvisionedProductsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProvisionedProductsOutputBuilder {
-    pub(crate) provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>>,
+    pub(crate) provisioned_products: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedProductAttribute>>,
     pub(crate) total_results_count: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchProvisionedProductsOutputBuilder {
     /// <p>Information about the provisioned products.</p>
     pub fn provisioned_products(mut self, input: crate::types::ProvisionedProductAttribute) -> Self {
         let mut v = self.provisioned_products.unwrap_or_default();
-        v.push(input);
-        self.provisioned_products = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_products = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the provisioned products.</p>
-    pub fn set_provisioned_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>>) -> Self {
-        self.provisioned_products = input;
-        self
+    pub fn set_provisioned_products(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedProductAttribute>>) -> Self {
+        self.provisioned_products = input; self
     }
     /// <p>Information about the provisioned products.</p>
-    pub fn get_provisioned_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>> {
+    pub fn get_provisioned_products(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedProductAttribute>> {
         &self.provisioned_products
     }
     /// <p>The number of provisioned products found.</p>
@@ -76,8 +76,7 @@ impl SearchProvisionedProductsOutputBuilder {
     }
     /// <p>The number of provisioned products found.</p>
     pub fn set_total_results_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_results_count = input;
-        self
+        self.total_results_count = input; self
     }
     /// <p>The number of provisioned products found.</p>
     pub fn get_total_results_count(&self) -> &::std::option::Option<i32> {
@@ -90,29 +89,33 @@ impl SearchProvisionedProductsOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchProvisionedProductsOutput`](crate::operation::search_provisioned_products::SearchProvisionedProductsOutput).
     pub fn build(self) -> crate::operation::search_provisioned_products::SearchProvisionedProductsOutput {
         crate::operation::search_provisioned_products::SearchProvisionedProductsOutput {
-            provisioned_products: self.provisioned_products,
-            total_results_count: self.total_results_count.unwrap_or_default(),
-            next_page_token: self.next_page_token,
+            provisioned_products: self.provisioned_products
+            ,
+            total_results_count: self.total_results_count
+                .unwrap_or_default()
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

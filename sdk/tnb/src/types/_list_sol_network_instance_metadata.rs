@@ -4,19 +4,19 @@
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolNetworkInstanceMetadata {
+pub struct ListSolNetworkInstanceMetadata  {
     /// <p>The date that the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date that the resource was last modified.</p>
     pub last_modified: ::aws_smithy_types::DateTime,
 }
-impl ListSolNetworkInstanceMetadata {
+impl  ListSolNetworkInstanceMetadata  {
     /// <p>The date that the resource was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn last_modified(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified
     }
 }
@@ -43,8 +43,7 @@ impl ListSolNetworkInstanceMetadataBuilder {
     }
     /// <p>The date that the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date that the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -58,8 +57,7 @@ impl ListSolNetworkInstanceMetadataBuilder {
     }
     /// <p>The date that the resource was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date that the resource was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,19 +68,20 @@ impl ListSolNetworkInstanceMetadataBuilder {
     /// - [`created_at`](crate::types::builders::ListSolNetworkInstanceMetadataBuilder::created_at)
     /// - [`last_modified`](crate::types::builders::ListSolNetworkInstanceMetadataBuilder::last_modified)
     pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkInstanceMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListSolNetworkInstanceMetadata {
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ListSolNetworkInstanceMetadata",
-                )
-            })?,
-            last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified",
-                    "last_modified was not specified but it is required when building ListSolNetworkInstanceMetadata",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListSolNetworkInstanceMetadata {
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ListSolNetworkInstanceMetadata")
+                    )?
+                ,
+                last_modified: self.last_modified
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified", "last_modified was not specified but it is required when building ListSolNetworkInstanceMetadata")
+                    )?
+                ,
+            }
+        )
     }
 }
+

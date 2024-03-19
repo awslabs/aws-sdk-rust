@@ -3,15 +3,14 @@
 /// <p>Describes the information used to rebuild a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebuildRequest {
+pub struct RebuildRequest  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::string::String,
 }
-impl RebuildRequest {
+impl  RebuildRequest  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
 }
 impl RebuildRequest {
@@ -36,8 +35,7 @@ impl RebuildRequestBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RebuildRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::types::builders::RebuildRequestBuilder::workspace_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RebuildRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RebuildRequest {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building RebuildRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RebuildRequest {
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building RebuildRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

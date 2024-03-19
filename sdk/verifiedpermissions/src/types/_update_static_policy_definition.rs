@@ -3,7 +3,7 @@
 /// <p>Contains information about an update to a static policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateStaticPolicyDefinition {
+pub struct UpdateStaticPolicyDefinition  {
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p><important>
@@ -28,9 +28,9 @@ pub struct UpdateStaticPolicyDefinition {
     /// </important>
     pub statement: ::std::string::String,
 }
-impl UpdateStaticPolicyDefinition {
+impl  UpdateStaticPolicyDefinition  {
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p><important>
@@ -53,12 +53,11 @@ impl UpdateStaticPolicyDefinition {
     /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     /// </important>
-    pub fn statement(&self) -> &str {
-        use std::ops::Deref;
-        self.statement.deref()
+    pub fn statement(&self) -> & str {
+        use std::ops::Deref; self.statement.deref()
     }
 }
-impl ::std::fmt::Debug for UpdateStaticPolicyDefinition {
+impl  ::std::fmt::Debug for UpdateStaticPolicyDefinition  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStaticPolicyDefinition");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -88,8 +87,7 @@ impl UpdateStaticPolicyDefinitionBuilder {
     }
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl UpdateStaticPolicyDefinitionBuilder {
     /// </ul>
     /// </important>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p><important>
     /// <p>You can change only the following elements from the original content:</p>
@@ -171,15 +168,17 @@ impl UpdateStaticPolicyDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`statement`](crate::types::builders::UpdateStaticPolicyDefinitionBuilder::statement)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateStaticPolicyDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateStaticPolicyDefinition {
-            description: self.description,
-            statement: self.statement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statement",
-                    "statement was not specified but it is required when building UpdateStaticPolicyDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateStaticPolicyDefinition {
+                description: self.description
+                ,
+                statement: self.statement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statement", "statement was not specified but it is required when building UpdateStaticPolicyDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateStaticPolicyDefinitionBuilder {
@@ -190,3 +189,4 @@ impl ::std::fmt::Debug for UpdateStaticPolicyDefinitionBuilder {
         formatter.finish()
     }
 }
+

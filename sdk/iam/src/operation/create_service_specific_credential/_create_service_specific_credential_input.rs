@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceSpecificCredentialInput {
+pub struct CreateServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateServiceSpecificCredentialInput {
+impl  CreateServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl CreateServiceSpecificCredentialInputBuilder {
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -61,25 +60,22 @@ impl CreateServiceSpecificCredentialInputBuilder {
     }
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`CreateServiceSpecificCredentialInput`](crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput {
-                user_name: self.user_name,
-                service_name: self.service_name,
-            },
+                user_name: self.user_name
+                ,
+                service_name: self.service_name
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIncidentInput {
+pub struct StartIncidentInput  {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
@@ -27,19 +27,19 @@ pub struct StartIncidentInput {
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub trigger_details: ::std::option::Option<crate::types::TriggerDetails>,
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
-    pub related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
+    pub related_items: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItem>>,
 }
-impl StartIncidentInput {
+impl  StartIncidentInput  {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
-    pub fn response_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn response_plan_arn(&self) -> ::std::option::Option<& str> {
         self.response_plan_arn.as_deref()
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
@@ -60,14 +60,15 @@ impl StartIncidentInput {
         self.impact
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn trigger_details(&self) -> ::std::option::Option<&crate::types::TriggerDetails> {
+    pub fn trigger_details(&self) -> ::std::option::Option<& crate::types::TriggerDetails> {
         self.trigger_details.as_ref()
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_items.is_none()`.
-    pub fn related_items(&self) -> &[crate::types::RelatedItem] {
-        self.related_items.as_deref().unwrap_or_default()
+    pub fn related_items(&self) -> & [crate::types::RelatedItem] {
+        self.related_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartIncidentInput {
@@ -86,7 +87,7 @@ pub struct StartIncidentInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) impact: ::std::option::Option<i32>,
     pub(crate) trigger_details: ::std::option::Option<crate::types::TriggerDetails>,
-    pub(crate) related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
+    pub(crate) related_items: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItem>>,
 }
 impl StartIncidentInputBuilder {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -96,8 +97,7 @@ impl StartIncidentInputBuilder {
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +111,7 @@ impl StartIncidentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
     pub fn set_response_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_plan_arn = input;
-        self
+        self.response_plan_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.</p>
     pub fn get_response_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl StartIncidentInputBuilder {
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,7 @@ impl StartIncidentInputBuilder {
     /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.impact = input;
-        self
+        self.impact = input; self
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
@@ -192,8 +189,7 @@ impl StartIncidentInputBuilder {
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub fn set_trigger_details(mut self, input: ::std::option::Option<crate::types::TriggerDetails>) -> Self {
-        self.trigger_details = input;
-        self
+        self.trigger_details = input; self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub fn get_trigger_details(&self) -> &::std::option::Option<crate::types::TriggerDetails> {
@@ -206,30 +202,36 @@ impl StartIncidentInputBuilder {
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
     pub fn related_items(mut self, input: crate::types::RelatedItem) -> Self {
         let mut v = self.related_items.unwrap_or_default();
-        v.push(input);
-        self.related_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.related_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
-    pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>) -> Self {
-        self.related_items = input;
-        self
+    pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItem>>) -> Self {
+        self.related_items = input; self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket.</p>
-    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
+    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelatedItem>> {
         &self.related_items
     }
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_incident::StartIncidentInput {
-            client_token: self.client_token,
-            response_plan_arn: self.response_plan_arn,
-            title: self.title,
-            impact: self.impact,
-            trigger_details: self.trigger_details,
-            related_items: self.related_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_incident::StartIncidentInput {
+                client_token: self.client_token
+                ,
+                response_plan_arn: self.response_plan_arn
+                ,
+                title: self.title
+                ,
+                impact: self.impact
+                ,
+                trigger_details: self.trigger_details
+                ,
+                related_items: self.related_items
+                ,
+            }
+        )
     }
 }
+

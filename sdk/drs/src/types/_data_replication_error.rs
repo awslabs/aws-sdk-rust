@@ -3,19 +3,19 @@
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataReplicationError {
+pub struct DataReplicationError  {
     /// <p>Error in data replication.</p>
     pub error: ::std::option::Option<crate::types::DataReplicationErrorString>,
     /// <p>Error in data replication.</p>
     pub raw_error: ::std::option::Option<::std::string::String>,
 }
-impl DataReplicationError {
+impl  DataReplicationError  {
     /// <p>Error in data replication.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::DataReplicationErrorString> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::DataReplicationErrorString> {
         self.error.as_ref()
     }
     /// <p>Error in data replication.</p>
-    pub fn raw_error(&self) -> ::std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<& str> {
         self.raw_error.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataReplicationErrorBuilder {
     }
     /// <p>Error in data replication.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::DataReplicationErrorString>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Error in data replication.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::DataReplicationErrorString> {
@@ -55,8 +54,7 @@ impl DataReplicationErrorBuilder {
     }
     /// <p>Error in data replication.</p>
     pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_error = input;
-        self
+        self.raw_error = input; self
     }
     /// <p>Error in data replication.</p>
     pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataReplicationErrorBuilder {
     /// Consumes the builder and constructs a [`DataReplicationError`](crate::types::DataReplicationError).
     pub fn build(self) -> crate::types::DataReplicationError {
         crate::types::DataReplicationError {
-            error: self.error,
-            raw_error: self.raw_error,
+            error: self.error
+            ,
+            raw_error: self.raw_error
+            ,
         }
     }
 }
+

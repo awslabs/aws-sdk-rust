@@ -3,13 +3,13 @@
 /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferBuyerAccountsFilter {
+pub struct OfferBuyerAccountsFilter  {
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card input.</p>
     pub wild_card_value: ::std::option::Option<::std::string::String>,
 }
-impl OfferBuyerAccountsFilter {
+impl  OfferBuyerAccountsFilter  {
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card input.</p>
-    pub fn wild_card_value(&self) -> ::std::option::Option<&str> {
+    pub fn wild_card_value(&self) -> ::std::option::Option<& str> {
         self.wild_card_value.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl OfferBuyerAccountsFilterBuilder {
     }
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card input.</p>
     pub fn set_wild_card_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wild_card_value = input;
-        self
+        self.wild_card_value = input; self
     }
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card input.</p>
     pub fn get_wild_card_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl OfferBuyerAccountsFilterBuilder {
     /// Consumes the builder and constructs a [`OfferBuyerAccountsFilter`](crate::types::OfferBuyerAccountsFilter).
     pub fn build(self) -> crate::types::OfferBuyerAccountsFilter {
         crate::types::OfferBuyerAccountsFilter {
-            wild_card_value: self.wild_card_value,
+            wild_card_value: self.wild_card_value
+            ,
         }
     }
 }
+

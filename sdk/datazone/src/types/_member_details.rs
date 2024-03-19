@@ -22,11 +22,7 @@ impl MemberDetails {
     /// Tries to convert the enum instance into [`Group`](crate::types::MemberDetails::Group), extracting the inner [`GroupDetails`](crate::types::GroupDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_group(&self) -> ::std::result::Result<&crate::types::GroupDetails, &Self> {
-        if let MemberDetails::Group(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MemberDetails::Group(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Group`](crate::types::MemberDetails::Group).
     pub fn is_group(&self) -> bool {
@@ -35,11 +31,7 @@ impl MemberDetails {
     /// Tries to convert the enum instance into [`User`](crate::types::MemberDetails::User), extracting the inner [`UserDetails`](crate::types::UserDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user(&self) -> ::std::result::Result<&crate::types::UserDetails, &Self> {
-        if let MemberDetails::User(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MemberDetails::User(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`User`](crate::types::MemberDetails::User).
     pub fn is_user(&self) -> bool {
@@ -50,3 +42,4 @@ impl MemberDetails {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExtensionAssociationInput {
+pub struct UpdateExtensionAssociationInput  {
     /// <p>The system-generated ID for the association.</p>
     pub extension_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the extension.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UpdateExtensionAssociationInput {
+impl  UpdateExtensionAssociationInput  {
     /// <p>The system-generated ID for the association.</p>
-    pub fn extension_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn extension_association_id(&self) -> ::std::option::Option<& str> {
         self.extension_association_id.as_deref()
     }
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl UpdateExtensionAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExtensionAssociationInputBuilder {
     pub(crate) extension_association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UpdateExtensionAssociationInputBuilder {
     /// <p>The system-generated ID for the association.</p>
@@ -41,8 +41,7 @@ impl UpdateExtensionAssociationInputBuilder {
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_association_id = input;
-        self
+        self.extension_association_id = input; self
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,29 +54,28 @@ impl UpdateExtensionAssociationInputBuilder {
     /// <p>The parameter names and values defined in the extension.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateExtensionAssociationInput`](crate::operation::update_extension_association::UpdateExtensionAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_extension_association::UpdateExtensionAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_extension_association::UpdateExtensionAssociationInput {
-            extension_association_id: self.extension_association_id,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_extension_association::UpdateExtensionAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_extension_association::UpdateExtensionAssociationInput {
+                extension_association_id: self.extension_association_id
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

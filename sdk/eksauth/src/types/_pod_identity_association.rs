@@ -3,22 +3,20 @@
 /// <p>Amazon EKS Pod Identity associations provide the ability to manage credentials for your applications, similar to the way that Amazon EC2 instance profiles provide credentials to Amazon EC2 instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PodIdentityAssociation {
+pub struct PodIdentityAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the EKS Pod Identity association.</p>
     pub association_arn: ::std::string::String,
     /// <p>The ID of the association.</p>
     pub association_id: ::std::string::String,
 }
-impl PodIdentityAssociation {
+impl  PodIdentityAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the EKS Pod Identity association.</p>
-    pub fn association_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.association_arn.deref()
+    pub fn association_arn(&self) -> & str {
+        use std::ops::Deref; self.association_arn.deref()
     }
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> &str {
-        use std::ops::Deref;
-        self.association_id.deref()
+    pub fn association_id(&self) -> & str {
+        use std::ops::Deref; self.association_id.deref()
     }
 }
 impl PodIdentityAssociation {
@@ -44,8 +42,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the EKS Pod Identity association.</p>
     pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_arn = input;
-        self
+        self.association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the EKS Pod Identity association.</p>
     pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl PodIdentityAssociationBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl PodIdentityAssociationBuilder {
     /// - [`association_arn`](crate::types::builders::PodIdentityAssociationBuilder::association_arn)
     /// - [`association_id`](crate::types::builders::PodIdentityAssociationBuilder::association_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PodIdentityAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PodIdentityAssociation {
-            association_arn: self.association_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "association_arn",
-                    "association_arn was not specified but it is required when building PodIdentityAssociation",
-                )
-            })?,
-            association_id: self.association_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "association_id",
-                    "association_id was not specified but it is required when building PodIdentityAssociation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PodIdentityAssociation {
+                association_arn: self.association_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("association_arn", "association_arn was not specified but it is required when building PodIdentityAssociation")
+                    )?
+                ,
+                association_id: self.association_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("association_id", "association_id was not specified but it is required when building PodIdentityAssociation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

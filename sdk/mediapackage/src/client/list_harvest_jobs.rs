@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListHarvestJobs`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`include_channel_id(impl Into<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::include_channel_id) / [`set_include_channel_id(Option<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::set_include_channel_id):<br>required: **false**<br>When specified, the request will return only HarvestJobs associated with the given Channel ID.<br>
     ///   - [`include_status(impl Into<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::include_status) / [`set_include_status(Option<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::set_include_status):<br>required: **false**<br>When specified, the request will return only HarvestJobs in the given status.<br>
     ///   - [`max_results(i32)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::set_max_results):<br>required: **false**<br>The upper bound on the number of records to return.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
-    /// - On success, responds with [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput) with field(s):
+                            /// - On success, responds with [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput) with field(s):
     ///   - [`harvest_jobs(Option<Vec::<HarvestJob>>)`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput::harvest_jobs): A list of HarvestJob records.
     ///   - [`next_token(Option<String>)`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    /// - On failure, responds with [`SdkError<ListHarvestJobsError>`](crate::operation::list_harvest_jobs::ListHarvestJobsError)
+                            /// - On failure, responds with [`SdkError<ListHarvestJobsError>`](crate::operation::list_harvest_jobs::ListHarvestJobsError)
     pub fn list_harvest_jobs(&self) -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder {
-        crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

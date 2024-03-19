@@ -3,20 +3,19 @@
 /// <p>Source files for a sequence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceFiles {
+pub struct SourceFiles  {
     /// <p>The location of the first file in Amazon S3.</p>
     pub source1: ::std::string::String,
     /// <p>The location of the second file in Amazon S3.</p>
     pub source2: ::std::option::Option<::std::string::String>,
 }
-impl SourceFiles {
+impl  SourceFiles  {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(&self) -> &str {
-        use std::ops::Deref;
-        self.source1.deref()
+    pub fn source1(&self) -> & str {
+        use std::ops::Deref; self.source1.deref()
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn source2(&self) -> ::std::option::Option<&str> {
+    pub fn source2(&self) -> ::std::option::Option<& str> {
         self.source2.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl SourceFilesBuilder {
     }
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn set_source1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source1 = input;
-        self
+        self.source1 = input; self
     }
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn get_source1(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SourceFilesBuilder {
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn set_source2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source2 = input;
-        self
+        self.source2 = input; self
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn get_source2(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl SourceFilesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source1`](crate::types::builders::SourceFilesBuilder::source1)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceFiles, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceFiles {
-            source1: self.source1.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source1",
-                    "source1 was not specified but it is required when building SourceFiles",
-                )
-            })?,
-            source2: self.source2,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceFiles {
+                source1: self.source1
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source1", "source1 was not specified but it is required when building SourceFiles")
+                    )?
+                ,
+                source2: self.source2
+                ,
+            }
+        )
     }
 }
+

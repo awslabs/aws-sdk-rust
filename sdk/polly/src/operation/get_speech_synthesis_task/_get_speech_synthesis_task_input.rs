@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSpeechSynthesisTaskInput {
+pub struct GetSpeechSynthesisTaskInput  {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSpeechSynthesisTaskInput {
+impl  GetSpeechSynthesisTaskInput  {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSpeechSynthesisTaskInputBuilder {
     }
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput { task_id: self.task_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput {
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endpointtypeselement = unimplemented!();
 /// match endpointtypeselement {
@@ -41,16 +41,14 @@
 /// Specifically, when `endpointtypeselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndpointTypesElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EndpointTypesElement {
     #[allow(missing_docs)] // documentation missing in model
     Adm,
@@ -80,108 +78,95 @@ pub enum EndpointTypesElement {
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EndpointTypesElement {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADM" => EndpointTypesElement::Adm,
-            "APNS" => EndpointTypesElement::Apns,
-            "APNS_SANDBOX" => EndpointTypesElement::ApnsSandbox,
-            "APNS_VOIP" => EndpointTypesElement::ApnsVoip,
-            "APNS_VOIP_SANDBOX" => EndpointTypesElement::ApnsVoipSandbox,
-            "BAIDU" => EndpointTypesElement::Baidu,
-            "CUSTOM" => EndpointTypesElement::Custom,
-            "EMAIL" => EndpointTypesElement::Email,
-            "GCM" => EndpointTypesElement::Gcm,
-            "IN_APP" => EndpointTypesElement::InApp,
-            "PUSH" => EndpointTypesElement::Push,
-            "SMS" => EndpointTypesElement::Sms,
-            "VOICE" => EndpointTypesElement::Voice,
-            other => EndpointTypesElement::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADM" => EndpointTypesElement::Adm,
+"APNS" => EndpointTypesElement::Apns,
+"APNS_SANDBOX" => EndpointTypesElement::ApnsSandbox,
+"APNS_VOIP" => EndpointTypesElement::ApnsVoip,
+"APNS_VOIP_SANDBOX" => EndpointTypesElement::ApnsVoipSandbox,
+"BAIDU" => EndpointTypesElement::Baidu,
+"CUSTOM" => EndpointTypesElement::Custom,
+"EMAIL" => EndpointTypesElement::Email,
+"GCM" => EndpointTypesElement::Gcm,
+"IN_APP" => EndpointTypesElement::InApp,
+"PUSH" => EndpointTypesElement::Push,
+"SMS" => EndpointTypesElement::Sms,
+"VOICE" => EndpointTypesElement::Voice,
+other => EndpointTypesElement::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EndpointTypesElement {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EndpointTypesElement::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EndpointTypesElement::from(s))
+                    }
+                }
 impl EndpointTypesElement {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EndpointTypesElement::Adm => "ADM",
-            EndpointTypesElement::Apns => "APNS",
-            EndpointTypesElement::ApnsSandbox => "APNS_SANDBOX",
-            EndpointTypesElement::ApnsVoip => "APNS_VOIP",
-            EndpointTypesElement::ApnsVoipSandbox => "APNS_VOIP_SANDBOX",
-            EndpointTypesElement::Baidu => "BAIDU",
-            EndpointTypesElement::Custom => "CUSTOM",
-            EndpointTypesElement::Email => "EMAIL",
-            EndpointTypesElement::Gcm => "GCM",
-            EndpointTypesElement::InApp => "IN_APP",
-            EndpointTypesElement::Push => "PUSH",
-            EndpointTypesElement::Sms => "SMS",
-            EndpointTypesElement::Voice => "VOICE",
-            EndpointTypesElement::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADM",
-            "APNS",
-            "APNS_SANDBOX",
-            "APNS_VOIP",
-            "APNS_VOIP_SANDBOX",
-            "BAIDU",
-            "CUSTOM",
-            "EMAIL",
-            "GCM",
-            "IN_APP",
-            "PUSH",
-            "SMS",
-            "VOICE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EndpointTypesElement::Adm => "ADM",
+    EndpointTypesElement::Apns => "APNS",
+    EndpointTypesElement::ApnsSandbox => "APNS_SANDBOX",
+    EndpointTypesElement::ApnsVoip => "APNS_VOIP",
+    EndpointTypesElement::ApnsVoipSandbox => "APNS_VOIP_SANDBOX",
+    EndpointTypesElement::Baidu => "BAIDU",
+    EndpointTypesElement::Custom => "CUSTOM",
+    EndpointTypesElement::Email => "EMAIL",
+    EndpointTypesElement::Gcm => "GCM",
+    EndpointTypesElement::InApp => "IN_APP",
+    EndpointTypesElement::Push => "PUSH",
+    EndpointTypesElement::Sms => "SMS",
+    EndpointTypesElement::Voice => "VOICE",
+    EndpointTypesElement::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADM", "APNS", "APNS_SANDBOX", "APNS_VOIP", "APNS_VOIP_SANDBOX", "BAIDU", "CUSTOM", "EMAIL", "GCM", "IN_APP", "PUSH", "SMS", "VOICE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EndpointTypesElement {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EndpointTypesElement {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EndpointTypesElement {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EndpointTypesElement::Adm => write!(f, "ADM"),
-            EndpointTypesElement::Apns => write!(f, "APNS"),
-            EndpointTypesElement::ApnsSandbox => write!(f, "APNS_SANDBOX"),
-            EndpointTypesElement::ApnsVoip => write!(f, "APNS_VOIP"),
-            EndpointTypesElement::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
-            EndpointTypesElement::Baidu => write!(f, "BAIDU"),
-            EndpointTypesElement::Custom => write!(f, "CUSTOM"),
-            EndpointTypesElement::Email => write!(f, "EMAIL"),
-            EndpointTypesElement::Gcm => write!(f, "GCM"),
-            EndpointTypesElement::InApp => write!(f, "IN_APP"),
-            EndpointTypesElement::Push => write!(f, "PUSH"),
-            EndpointTypesElement::Sms => write!(f, "SMS"),
-            EndpointTypesElement::Voice => write!(f, "VOICE"),
-            EndpointTypesElement::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EndpointTypesElement::Adm => write!(f, "ADM"),
+EndpointTypesElement::Apns => write!(f, "APNS"),
+EndpointTypesElement::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+EndpointTypesElement::ApnsVoip => write!(f, "APNS_VOIP"),
+EndpointTypesElement::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
+EndpointTypesElement::Baidu => write!(f, "BAIDU"),
+EndpointTypesElement::Custom => write!(f, "CUSTOM"),
+EndpointTypesElement::Email => write!(f, "EMAIL"),
+EndpointTypesElement::Gcm => write!(f, "GCM"),
+EndpointTypesElement::InApp => write!(f, "IN_APP"),
+EndpointTypesElement::Push => write!(f, "PUSH"),
+EndpointTypesElement::Sms => write!(f, "SMS"),
+EndpointTypesElement::Voice => write!(f, "VOICE"),
+EndpointTypesElement::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

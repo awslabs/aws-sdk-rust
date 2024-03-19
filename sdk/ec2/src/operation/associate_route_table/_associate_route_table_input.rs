@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateRouteTableInput {
+pub struct AssociateRouteTableInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the route table.</p>
@@ -12,21 +12,21 @@ pub struct AssociateRouteTableInput {
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociateRouteTableInput {
+impl  AssociateRouteTableInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl AssociateRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl AssociateRouteTableInputBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AssociateRouteTableInputBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl AssociateRouteTableInputBuilder {
     }
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
     /// Consumes the builder and constructs a [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_route_table::AssociateRouteTableInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_route_table::AssociateRouteTableInput {
-            dry_run: self.dry_run,
-            route_table_id: self.route_table_id,
-            subnet_id: self.subnet_id,
-            gateway_id: self.gateway_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_route_table::AssociateRouteTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_route_table::AssociateRouteTableInput {
+                dry_run: self.dry_run
+                ,
+                route_table_id: self.route_table_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                gateway_id: self.gateway_id
+                ,
+            }
+        )
     }
 }
+

@@ -28,11 +28,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`BinaryValue`](crate::types::TypedAttributeValue::BinaryValue), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_binary_value(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
-        if let TypedAttributeValue::BinaryValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TypedAttributeValue::BinaryValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BinaryValue`](crate::types::TypedAttributeValue::BinaryValue).
     pub fn is_binary_value(&self) -> bool {
@@ -41,11 +37,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::TypedAttributeValue::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> ::std::result::Result<&bool, &Self> {
-        if let TypedAttributeValue::BooleanValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TypedAttributeValue::BooleanValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::TypedAttributeValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -54,11 +46,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`DatetimeValue`](crate::types::TypedAttributeValue::DatetimeValue), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_datetime_value(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
-        if let TypedAttributeValue::DatetimeValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TypedAttributeValue::DatetimeValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DatetimeValue`](crate::types::TypedAttributeValue::DatetimeValue).
     pub fn is_datetime_value(&self) -> bool {
@@ -67,11 +55,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::types::TypedAttributeValue::NumberValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let TypedAttributeValue::NumberValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TypedAttributeValue::NumberValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NumberValue`](crate::types::TypedAttributeValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
@@ -80,11 +64,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::TypedAttributeValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let TypedAttributeValue::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TypedAttributeValue::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::TypedAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -95,3 +75,4 @@ impl TypedAttributeValue {
         matches!(self, Self::Unknown)
     }
 }
+

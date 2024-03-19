@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneratePinDataOutput {
+pub struct GeneratePinDataOutput  {
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
     pub generation_key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
@@ -19,44 +19,39 @@ pub struct GeneratePinDataOutput {
     pub pin_data: ::std::option::Option<crate::types::PinData>,
     _request_id: Option<String>,
 }
-impl GeneratePinDataOutput {
+impl  GeneratePinDataOutput  {
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
-    pub fn generation_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.generation_key_arn.deref()
+    pub fn generation_key_arn(&self) -> & str {
+        use std::ops::Deref; self.generation_key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
-    pub fn generation_key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.generation_key_check_value.deref()
+    pub fn generation_key_check_value(&self) -> & str {
+        use std::ops::Deref; self.generation_key_check_value.deref()
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn encryption_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.encryption_key_arn.deref()
+    pub fn encryption_key_arn(&self) -> & str {
+        use std::ops::Deref; self.encryption_key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
-    pub fn encryption_key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.encryption_key_check_value.deref()
+    pub fn encryption_key_check_value(&self) -> & str {
+        use std::ops::Deref; self.encryption_key_check_value.deref()
     }
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
-    pub fn encrypted_pin_block(&self) -> &str {
-        use std::ops::Deref;
-        self.encrypted_pin_block.deref()
+    pub fn encrypted_pin_block(&self) -> & str {
+        use std::ops::Deref; self.encrypted_pin_block.deref()
     }
     /// <p>The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.</p>
-    pub fn pin_data(&self) -> ::std::option::Option<&crate::types::PinData> {
+    pub fn pin_data(&self) -> ::std::option::Option<& crate::types::PinData> {
         self.pin_data.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GeneratePinDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GeneratePinDataOutput {
     /// Creates a new builder-style object to manufacture [`GeneratePinDataOutput`](crate::operation::generate_pin_data::GeneratePinDataOutput).
     pub fn builder() -> crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder {
@@ -85,8 +80,7 @@ impl GeneratePinDataOutputBuilder {
     }
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
     pub fn set_generation_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_key_arn = input;
-        self
+        self.generation_key_arn = input; self
     }
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
     pub fn get_generation_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +96,7 @@ impl GeneratePinDataOutputBuilder {
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_generation_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_key_check_value = input;
-        self
+        self.generation_key_check_value = input; self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
@@ -118,8 +111,7 @@ impl GeneratePinDataOutputBuilder {
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +127,7 @@ impl GeneratePinDataOutputBuilder {
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_encryption_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_check_value = input;
-        self
+        self.encryption_key_check_value = input; self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
@@ -151,8 +142,7 @@ impl GeneratePinDataOutputBuilder {
     }
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
     pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encrypted_pin_block = input;
-        self
+        self.encrypted_pin_block = input; self
     }
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
     pub fn get_encrypted_pin_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,22 +156,21 @@ impl GeneratePinDataOutputBuilder {
     }
     /// <p>The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.</p>
     pub fn set_pin_data(mut self, input: ::std::option::Option<crate::types::PinData>) -> Self {
-        self.pin_data = input;
-        self
+        self.pin_data = input; self
     }
     /// <p>The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.</p>
     pub fn get_pin_data(&self) -> &::std::option::Option<crate::types::PinData> {
         &self.pin_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GeneratePinDataOutput`](crate::operation::generate_pin_data::GeneratePinDataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`generation_key_arn`](crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::generation_key_arn)
@@ -189,42 +178,39 @@ impl GeneratePinDataOutputBuilder {
     /// - [`encryption_key_arn`](crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::encryption_key_arn)
     /// - [`encryption_key_check_value`](crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::encryption_key_check_value)
     /// - [`encrypted_pin_block`](crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::encrypted_pin_block)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::generate_pin_data::GeneratePinDataOutput {
-            generation_key_arn: self.generation_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "generation_key_arn",
-                    "generation_key_arn was not specified but it is required when building GeneratePinDataOutput",
-                )
-            })?,
-            generation_key_check_value: self.generation_key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "generation_key_check_value",
-                    "generation_key_check_value was not specified but it is required when building GeneratePinDataOutput",
-                )
-            })?,
-            encryption_key_arn: self.encryption_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_key_arn",
-                    "encryption_key_arn was not specified but it is required when building GeneratePinDataOutput",
-                )
-            })?,
-            encryption_key_check_value: self.encryption_key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_key_check_value",
-                    "encryption_key_check_value was not specified but it is required when building GeneratePinDataOutput",
-                )
-            })?,
-            encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encrypted_pin_block",
-                    "encrypted_pin_block was not specified but it is required when building GeneratePinDataOutput",
-                )
-            })?,
-            pin_data: self.pin_data,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_pin_data::GeneratePinDataOutput {
+                generation_key_arn: self.generation_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("generation_key_arn", "generation_key_arn was not specified but it is required when building GeneratePinDataOutput")
+                    )?
+                ,
+                generation_key_check_value: self.generation_key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("generation_key_check_value", "generation_key_check_value was not specified but it is required when building GeneratePinDataOutput")
+                    )?
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_key_arn", "encryption_key_arn was not specified but it is required when building GeneratePinDataOutput")
+                    )?
+                ,
+                encryption_key_check_value: self.encryption_key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_key_check_value", "encryption_key_check_value was not specified but it is required when building GeneratePinDataOutput")
+                    )?
+                ,
+                encrypted_pin_block: self.encrypted_pin_block
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encrypted_pin_block", "encrypted_pin_block was not specified but it is required when building GeneratePinDataOutput")
+                    )?
+                ,
+                pin_data: self.pin_data
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

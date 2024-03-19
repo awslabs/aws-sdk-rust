@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBlueprintRunInput {
+pub struct StartBlueprintRunInput  {
     /// <p>The name of the blueprint.</p>
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
@@ -10,17 +10,17 @@ pub struct StartBlueprintRunInput {
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl StartBlueprintRunInput {
+impl  StartBlueprintRunInput  {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>Specifies the IAM role used to create the workflow.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl StartBlueprintRunInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_name = input;
-        self
+        self.blueprint_name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StartBlueprintRunInputBuilder {
     }
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl StartBlueprintRunInputBuilder {
     }
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`StartBlueprintRunInput`](crate::operation::start_blueprint_run::StartBlueprintRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_blueprint_run::StartBlueprintRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_blueprint_run::StartBlueprintRunInput {
-            blueprint_name: self.blueprint_name,
-            parameters: self.parameters,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_blueprint_run::StartBlueprintRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_blueprint_run::StartBlueprintRunInput {
+                blueprint_name: self.blueprint_name
+                ,
+                parameters: self.parameters
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

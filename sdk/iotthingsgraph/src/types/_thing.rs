@@ -3,19 +3,19 @@
 /// <p>An AWS IoT thing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Thing {
+pub struct Thing  {
     /// <p>The ARN of the thing.</p>
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl Thing {
+impl  Thing  {
     /// <p>The ARN of the thing.</p>
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ThingBuilder {
     }
     /// <p>The ARN of the thing.</p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>The ARN of the thing.</p>
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ThingBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ThingBuilder {
     /// Consumes the builder and constructs a [`Thing`](crate::types::Thing).
     pub fn build(self) -> crate::types::Thing {
         crate::types::Thing {
-            thing_arn: self.thing_arn,
-            thing_name: self.thing_name,
+            thing_arn: self.thing_arn
+            ,
+            thing_name: self.thing_name
+            ,
         }
     }
 }
+

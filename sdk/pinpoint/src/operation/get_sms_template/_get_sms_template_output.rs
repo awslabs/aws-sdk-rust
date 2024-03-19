@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSmsTemplateOutput {
+pub struct GetSmsTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub sms_template_response: ::std::option::Option<crate::types::SmsTemplateResponse>,
     _request_id: Option<String>,
 }
-impl GetSmsTemplateOutput {
+impl  GetSmsTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn sms_template_response(&self) -> ::std::option::Option<&crate::types::SmsTemplateResponse> {
+    pub fn sms_template_response(&self) -> ::std::option::Option<& crate::types::SmsTemplateResponse> {
         self.sms_template_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSmsTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetSmsTemplateOutput`](crate::operation::get_sms_template::GetSmsTemplateOutput).
     pub fn builder() -> crate::operation::get_sms_template::builders::GetSmsTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSmsTemplateOutputBuilder {
     }
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub fn set_sms_template_response(mut self, input: ::std::option::Option<crate::types::SmsTemplateResponse>) -> Self {
-        self.sms_template_response = input;
-        self
+        self.sms_template_response = input; self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub fn get_sms_template_response(&self) -> &::std::option::Option<crate::types::SmsTemplateResponse> {
         &self.sms_template_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSmsTemplateOutput`](crate::operation::get_sms_template::GetSmsTemplateOutput).
     pub fn build(self) -> crate::operation::get_sms_template::GetSmsTemplateOutput {
         crate::operation::get_sms_template::GetSmsTemplateOutput {
-            sms_template_response: self.sms_template_response,
+            sms_template_response: self.sms_template_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

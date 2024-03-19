@@ -3,7 +3,7 @@
 /// <p>Describes a configuration management server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Server {
+pub struct Server  {
     /// <p>Associate a public IP address with a server that you are launching.</p>
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>The number of automated backups to keep.</p>
@@ -39,7 +39,7 @@ pub struct Server {
     /// <li>
     /// <p><code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p></li>
     /// </ul>
-    pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance profile ARN of the server.</p>
@@ -55,7 +55,7 @@ pub struct Server {
     /// <p>The preferred backup period specified for the server.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The service role ARN used to create the server.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.</p>
@@ -63,11 +63,11 @@ pub struct Server {
     /// <p>Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The subnet IDs specified in a CreateServer request.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN of the server.</p>
     pub server_arn: ::std::option::Option<::std::string::String>,
 }
-impl Server {
+impl  Server  {
     /// <p>Associate a public IP address with a server that you are launching.</p>
     pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
@@ -77,19 +77,19 @@ impl Server {
         self.backup_retention_count
     }
     /// <p>The name of the server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code></p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ARN of the CloudFormation stack that was used to create the server.</p>
-    pub fn cloud_formation_stack_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_formation_stack_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_formation_stack_arn.as_deref()
     }
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
-    pub fn custom_domain(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain(&self) -> ::std::option::Option<& str> {
         self.custom_domain.as_deref()
     }
     /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.</p>
@@ -97,15 +97,15 @@ impl Server {
         self.disable_automated_backup
     }
     /// <p>A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
-    pub fn engine_model(&self) -> ::std::option::Option<&str> {
+    pub fn engine_model(&self) -> ::std::option::Option<& str> {
         self.engine_model.as_deref()
     }
     /// <p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer().</p>
@@ -123,65 +123,68 @@ impl Server {
     /// <li>
     /// <p><code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
-    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
-        self.engine_attributes.as_deref().unwrap_or_default()
+    pub fn engine_attributes(&self) -> & [crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The instance profile ARN of the server.</p>
-    pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The key pair associated with the server.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair(&self) -> ::std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.</p>
-    pub fn maintenance_status(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
+    pub fn maintenance_status(&self) -> ::std::option::Option<& crate::types::MaintenanceStatus> {
         self.maintenance_status.as_ref()
     }
     /// <p>The preferred maintenance period specified for the server.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The preferred backup period specified for the server.</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The service role ARN used to create the server.</p>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServerStatus> {
         self.status.as_ref()
     }
     /// <p>Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The subnet IDs specified in a CreateServer request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the server.</p>
-    pub fn server_arn(&self) -> ::std::option::Option<&str> {
+    pub fn server_arn(&self) -> ::std::option::Option<& str> {
         self.server_arn.as_deref()
     }
 }
@@ -206,7 +209,7 @@ pub struct ServerBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_model: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -214,11 +217,11 @@ pub struct ServerBuilder {
     pub(crate) maintenance_status: ::std::option::Option<crate::types::MaintenanceStatus>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServerStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) server_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerBuilder {
@@ -229,8 +232,7 @@ impl ServerBuilder {
     }
     /// <p>Associate a public IP address with a server that you are launching.</p>
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.associate_public_ip_address = input;
-        self
+        self.associate_public_ip_address = input; self
     }
     /// <p>Associate a public IP address with a server that you are launching.</p>
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
@@ -243,8 +245,7 @@ impl ServerBuilder {
     }
     /// <p>The number of automated backups to keep.</p>
     pub fn set_backup_retention_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_count = input;
-        self
+        self.backup_retention_count = input; self
     }
     /// <p>The number of automated backups to keep.</p>
     pub fn get_backup_retention_count(&self) -> &::std::option::Option<i32> {
@@ -257,8 +258,7 @@ impl ServerBuilder {
     }
     /// <p>The name of the server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +271,7 @@ impl ServerBuilder {
     }
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code></p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code></p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -285,8 +284,7 @@ impl ServerBuilder {
     }
     /// <p>The ARN of the CloudFormation stack that was used to create the server.</p>
     pub fn set_cloud_formation_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_formation_stack_arn = input;
-        self
+        self.cloud_formation_stack_arn = input; self
     }
     /// <p>The ARN of the CloudFormation stack that was used to create the server.</p>
     pub fn get_cloud_formation_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +297,7 @@ impl ServerBuilder {
     }
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
     pub fn set_custom_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain = input;
-        self
+        self.custom_domain = input; self
     }
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
     pub fn get_custom_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +310,7 @@ impl ServerBuilder {
     }
     /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.</p>
     pub fn set_disable_automated_backup(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_automated_backup = input;
-        self
+        self.disable_automated_backup = input; self
     }
     /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.</p>
     pub fn get_disable_automated_backup(&self) -> &::std::option::Option<bool> {
@@ -327,8 +323,7 @@ impl ServerBuilder {
     }
     /// <p>A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -341,8 +336,7 @@ impl ServerBuilder {
     }
     /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -355,8 +349,7 @@ impl ServerBuilder {
     }
     /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
     pub fn set_engine_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_model = input;
-        self
+        self.engine_model = input; self
     }
     /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.</p>
     pub fn get_engine_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -383,9 +376,9 @@ impl ServerBuilder {
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
-        v.push(input);
-        self.engine_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer().</p>
     /// <p class="title"><b>Attributes returned in a createServer response for Chef</b></p>
@@ -402,9 +395,8 @@ impl ServerBuilder {
     /// <li>
     /// <p><code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p></li>
     /// </ul>
-    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
-        self.engine_attributes = input;
-        self
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>) -> Self {
+        self.engine_attributes = input; self
     }
     /// <p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer().</p>
     /// <p class="title"><b>Attributes returned in a createServer response for Chef</b></p>
@@ -421,7 +413,7 @@ impl ServerBuilder {
     /// <li>
     /// <p><code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p></li>
     /// </ul>
-    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.</p>
@@ -431,8 +423,7 @@ impl ServerBuilder {
     }
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -445,8 +436,7 @@ impl ServerBuilder {
     }
     /// <p>The instance profile ARN of the server.</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_arn = input;
-        self
+        self.instance_profile_arn = input; self
     }
     /// <p>The instance profile ARN of the server.</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -459,8 +449,7 @@ impl ServerBuilder {
     }
     /// <p>The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -473,8 +462,7 @@ impl ServerBuilder {
     }
     /// <p>The key pair associated with the server.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The key pair associated with the server.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
@@ -487,8 +475,7 @@ impl ServerBuilder {
     }
     /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.</p>
     pub fn set_maintenance_status(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
-        self.maintenance_status = input;
-        self
+        self.maintenance_status = input; self
     }
     /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.</p>
     pub fn get_maintenance_status(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
@@ -501,8 +488,7 @@ impl ServerBuilder {
     }
     /// <p>The preferred maintenance period specified for the server.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The preferred maintenance period specified for the server.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -515,8 +501,7 @@ impl ServerBuilder {
     }
     /// <p>The preferred backup period specified for the server.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The preferred backup period specified for the server.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -529,17 +514,16 @@ impl ServerBuilder {
     /// <p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The service role ARN used to create the server.</p>
@@ -549,8 +533,7 @@ impl ServerBuilder {
     }
     /// <p>The service role ARN used to create the server.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The service role ARN used to create the server.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -563,8 +546,7 @@ impl ServerBuilder {
     }
     /// <p>The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServerStatus> {
@@ -577,8 +559,7 @@ impl ServerBuilder {
     }
     /// <p>Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -591,17 +572,16 @@ impl ServerBuilder {
     /// <p>The subnet IDs specified in a CreateServer request.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnet IDs specified in a CreateServer request.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The subnet IDs specified in a CreateServer request.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The ARN of the server.</p>
@@ -611,8 +591,7 @@ impl ServerBuilder {
     }
     /// <p>The ARN of the server.</p>
     pub fn set_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_arn = input;
-        self
+        self.server_arn = input; self
     }
     /// <p>The ARN of the server.</p>
     pub fn get_server_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -621,30 +600,55 @@ impl ServerBuilder {
     /// Consumes the builder and constructs a [`Server`](crate::types::Server).
     pub fn build(self) -> crate::types::Server {
         crate::types::Server {
-            associate_public_ip_address: self.associate_public_ip_address,
-            backup_retention_count: self.backup_retention_count,
-            server_name: self.server_name,
-            created_at: self.created_at,
-            cloud_formation_stack_arn: self.cloud_formation_stack_arn,
-            custom_domain: self.custom_domain,
-            disable_automated_backup: self.disable_automated_backup,
-            endpoint: self.endpoint,
-            engine: self.engine,
-            engine_model: self.engine_model,
-            engine_attributes: self.engine_attributes,
-            engine_version: self.engine_version,
-            instance_profile_arn: self.instance_profile_arn,
-            instance_type: self.instance_type,
-            key_pair: self.key_pair,
-            maintenance_status: self.maintenance_status,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            preferred_backup_window: self.preferred_backup_window,
-            security_group_ids: self.security_group_ids,
-            service_role_arn: self.service_role_arn,
-            status: self.status,
-            status_reason: self.status_reason,
-            subnet_ids: self.subnet_ids,
-            server_arn: self.server_arn,
+            associate_public_ip_address: self.associate_public_ip_address
+            ,
+            backup_retention_count: self.backup_retention_count
+            ,
+            server_name: self.server_name
+            ,
+            created_at: self.created_at
+            ,
+            cloud_formation_stack_arn: self.cloud_formation_stack_arn
+            ,
+            custom_domain: self.custom_domain
+            ,
+            disable_automated_backup: self.disable_automated_backup
+            ,
+            endpoint: self.endpoint
+            ,
+            engine: self.engine
+            ,
+            engine_model: self.engine_model
+            ,
+            engine_attributes: self.engine_attributes
+            ,
+            engine_version: self.engine_version
+            ,
+            instance_profile_arn: self.instance_profile_arn
+            ,
+            instance_type: self.instance_type
+            ,
+            key_pair: self.key_pair
+            ,
+            maintenance_status: self.maintenance_status
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            preferred_backup_window: self.preferred_backup_window
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            service_role_arn: self.service_role_arn
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            server_arn: self.server_arn
+            ,
         }
     }
 }
+

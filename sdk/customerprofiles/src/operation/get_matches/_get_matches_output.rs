@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMatchesOutput {
+pub struct GetMatchesOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp this version of Match Result generated.</p>
@@ -10,16 +10,16 @@ pub struct GetMatchesOutput {
     /// <p>The number of potential matches found.</p>
     pub potential_matches: ::std::option::Option<i32>,
     /// <p>The list of matched profiles for this instance.</p>
-    pub matches: ::std::option::Option<::std::vec::Vec<crate::types::MatchItem>>,
+    pub matches: ::std::option::Option<::std::vec::Vec::<crate::types::MatchItem>>,
     _request_id: Option<String>,
 }
-impl GetMatchesOutput {
+impl  GetMatchesOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub fn match_generation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn match_generation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.match_generation_date.as_ref()
     }
     /// <p>The number of potential matches found.</p>
@@ -27,17 +27,18 @@ impl GetMatchesOutput {
         self.potential_matches
     }
     /// <p>The list of matched profiles for this instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matches.is_none()`.
-    pub fn matches(&self) -> &[crate::types::MatchItem] {
-        self.matches.as_deref().unwrap_or_default()
+    pub fn matches(&self) -> & [crate::types::MatchItem] {
+        self.matches.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMatchesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMatchesOutput {
     /// Creates a new builder-style object to manufacture [`GetMatchesOutput`](crate::operation::get_matches::GetMatchesOutput).
     pub fn builder() -> crate::operation::get_matches::builders::GetMatchesOutputBuilder {
@@ -52,7 +53,7 @@ pub struct GetMatchesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) match_generation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) potential_matches: ::std::option::Option<i32>,
-    pub(crate) matches: ::std::option::Option<::std::vec::Vec<crate::types::MatchItem>>,
+    pub(crate) matches: ::std::option::Option<::std::vec::Vec::<crate::types::MatchItem>>,
     _request_id: Option<String>,
 }
 impl GetMatchesOutputBuilder {
@@ -63,8 +64,7 @@ impl GetMatchesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl GetMatchesOutputBuilder {
     }
     /// <p>The timestamp this version of Match Result generated.</p>
     pub fn set_match_generation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.match_generation_date = input;
-        self
+        self.match_generation_date = input; self
     }
     /// <p>The timestamp this version of Match Result generated.</p>
     pub fn get_match_generation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,8 +90,7 @@ impl GetMatchesOutputBuilder {
     }
     /// <p>The number of potential matches found.</p>
     pub fn set_potential_matches(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.potential_matches = input;
-        self
+        self.potential_matches = input; self
     }
     /// <p>The number of potential matches found.</p>
     pub fn get_potential_matches(&self) -> &::std::option::Option<i32> {
@@ -105,36 +103,40 @@ impl GetMatchesOutputBuilder {
     /// <p>The list of matched profiles for this instance.</p>
     pub fn matches(mut self, input: crate::types::MatchItem) -> Self {
         let mut v = self.matches.unwrap_or_default();
-        v.push(input);
-        self.matches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of matched profiles for this instance.</p>
-    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchItem>>) -> Self {
-        self.matches = input;
-        self
+    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchItem>>) -> Self {
+        self.matches = input; self
     }
     /// <p>The list of matched profiles for this instance.</p>
-    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchItem>> {
+    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchItem>> {
         &self.matches
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMatchesOutput`](crate::operation::get_matches::GetMatchesOutput).
     pub fn build(self) -> crate::operation::get_matches::GetMatchesOutput {
         crate::operation::get_matches::GetMatchesOutput {
-            next_token: self.next_token,
-            match_generation_date: self.match_generation_date,
-            potential_matches: self.potential_matches,
-            matches: self.matches,
+            next_token: self.next_token
+            ,
+            match_generation_date: self.match_generation_date
+            ,
+            potential_matches: self.potential_matches
+            ,
+            matches: self.matches
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

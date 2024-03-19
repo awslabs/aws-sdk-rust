@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLaunchInput {
+pub struct UpdateLaunchInput  {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch that is to be updated.</p>
@@ -10,45 +10,47 @@ pub struct UpdateLaunchInput {
     /// <p>An optional description for the launch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroupConfig>>,
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
+    pub metric_monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitorConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_config: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
 }
-impl UpdateLaunchInput {
+impl  UpdateLaunchInput  {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the launch that is to be updated.</p>
-    pub fn launch(&self) -> ::std::option::Option<&str> {
+    pub fn launch(&self) -> ::std::option::Option<& str> {
         self.launch.as_deref()
     }
     /// <p>An optional description for the launch.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::LaunchGroupConfig] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::LaunchGroupConfig] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_monitors.is_none()`.
-    pub fn metric_monitors(&self) -> &[crate::types::MetricMonitorConfig] {
-        self.metric_monitors.as_deref().unwrap_or_default()
+    pub fn metric_monitors(&self) -> & [crate::types::MetricMonitorConfig] {
+        self.metric_monitors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
+    pub fn randomization_salt(&self) -> ::std::option::Option<& str> {
         self.randomization_salt.as_deref()
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_config(&self) -> ::std::option::Option<&crate::types::ScheduledSplitsLaunchConfig> {
+    pub fn scheduled_splits_config(&self) -> ::std::option::Option<& crate::types::ScheduledSplitsLaunchConfig> {
         self.scheduled_splits_config.as_ref()
     }
 }
@@ -66,8 +68,8 @@ pub struct UpdateLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
-    pub(crate) metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroupConfig>>,
+    pub(crate) metric_monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitorConfig>>,
     pub(crate) randomization_salt: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_splits_config: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
 }
@@ -80,8 +82,7 @@ impl UpdateLaunchInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +96,7 @@ impl UpdateLaunchInputBuilder {
     }
     /// <p>The name of the launch that is to be updated.</p>
     pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
     }
     /// <p>The name of the launch that is to be updated.</p>
     pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +109,7 @@ impl UpdateLaunchInputBuilder {
     }
     /// <p>An optional description for the launch.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description for the launch.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,17 +122,16 @@ impl UpdateLaunchInputBuilder {
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub fn groups(mut self, input: crate::types::LaunchGroupConfig) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroupConfig>>) -> Self {
+        self.groups = input; self
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroupConfig>> {
         &self.groups
     }
     /// Appends an item to `metric_monitors`.
@@ -143,17 +141,16 @@ impl UpdateLaunchInputBuilder {
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub fn metric_monitors(mut self, input: crate::types::MetricMonitorConfig) -> Self {
         let mut v = self.metric_monitors.unwrap_or_default();
-        v.push(input);
-        self.metric_monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>) -> Self {
-        self.metric_monitors = input;
-        self
+    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitorConfig>>) -> Self {
+        self.metric_monitors = input; self
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
+    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitorConfig>> {
         &self.metric_monitors
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
@@ -163,8 +160,7 @@ impl UpdateLaunchInputBuilder {
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.randomization_salt = input;
-        self
+        self.randomization_salt = input; self
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,25 +173,32 @@ impl UpdateLaunchInputBuilder {
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn set_scheduled_splits_config(mut self, input: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>) -> Self {
-        self.scheduled_splits_config = input;
-        self
+        self.scheduled_splits_config = input; self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn get_scheduled_splits_config(&self) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
         &self.scheduled_splits_config
     }
     /// Consumes the builder and constructs a [`UpdateLaunchInput`](crate::operation::update_launch::UpdateLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_launch::UpdateLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_launch::UpdateLaunchInput {
-            project: self.project,
-            launch: self.launch,
-            description: self.description,
-            groups: self.groups,
-            metric_monitors: self.metric_monitors,
-            randomization_salt: self.randomization_salt,
-            scheduled_splits_config: self.scheduled_splits_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_launch::UpdateLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_launch::UpdateLaunchInput {
+                project: self.project
+                ,
+                launch: self.launch
+                ,
+                description: self.description
+                ,
+                groups: self.groups
+                ,
+                metric_monitors: self.metric_monitors
+                ,
+                randomization_salt: self.randomization_salt
+                ,
+                scheduled_splits_config: self.scheduled_splits_config
+                ,
+            }
+        )
     }
 }
+
